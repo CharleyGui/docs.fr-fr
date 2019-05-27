@@ -5,12 +5,12 @@ ms.date: 03/15/2018
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: e528771d7afeec705f35fa3093a3e4f534b3a1e4
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: ce3d39c42dc35ca3038fc38edd9327e9b96fb20f
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53239850"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65633417"
 ---
 # <a name="new-operator-c-reference"></a>new, opérateur (référence C#)
 
@@ -27,7 +27,7 @@ var query = from cust in customers
             select new { Name = cust.Name, Address = cust.PrimaryAddress };
 ```
 
-L’opérateur `new` est aussi utilisé pour appeler le constructeur par défaut pour les types valeur. Par exemple :
+L’opérateur `new` est aussi utilisé pour appeler le constructeur sans paramètre pour les types valeur. Par exemple :
 
 ```csharp
 int i = new int();
@@ -41,7 +41,7 @@ int i = 0;
 
 Pour obtenir une liste complète des valeurs par défaut, consultez [Tableau des valeurs par défaut](default-values-table.md).
 
-N’oubliez pas qu’il est incorrect de déclarer un constructeur par défaut pour un [struct](struct.md), car chaque type valeur a implicitement un constructeur public par défaut. Il est possible de déclarer des constructeurs paramétrables sur un type struct pour définir ses valeurs initiales, mais cela est nécessaire uniquement si d’autres valeurs que la valeur par défaut sont requises.
+N’oubliez pas qu’il est incorrect de déclarer un constructeur sans paramètre pour un [struct](struct.md), car chaque type valeur a implicitement un constructeur public sans paramètre. Il est possible de déclarer des constructeurs paramétrables sur un type struct pour définir ses valeurs initiales, mais cela est nécessaire uniquement si d’autres valeurs que la valeur par défaut sont requises.
 
 Les objets de type valeur, tels que les structs, et les objets de type référence, tels que les classes, sont détruits automatiquement, mais les objets de type valeur sont détruits quand leur contexte contenant est détruit alors que les objets de type référence sont détruits par le garbage collector à une heure non spécifiée une fois que la dernière référence à ceux-ci est supprimée. Pour les types qui contiennent des ressources telles que des handles de fichiers ou des connexions réseau, il est préférable d’employer le nettoyage déterministe pour vous assurer que les ressources qu’ils contiennent sont libérées dès que possible. Pour plus d’informations, consultez [using, instruction](using-statement.md).
 

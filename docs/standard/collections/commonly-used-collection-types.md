@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 77740f86265db86c998af25e6e9ed4c20a7014e6
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: c21a1303cd67f5f5de42241f4d5ada929e68bf2c
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835744"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65589891"
 ---
 # <a name="commonly-used-collection-types"></a>Types de collections couramment utilisés
 Les types de collections sont des variations courantes des collections de données, telles que les tables de hachage, les files d’attente, les piles, les conteneurs, les dictionnaires et les listes.  
@@ -36,10 +36,10 @@ Les types de collections sont des variations courantes des collections de donné
   
 |Titre|Description|  
 |-----------|-----------------|  
-|[Collections et structures de données](../../../docs/standard/collections/index.md)|Présente les différents types de collections disponibles dans le [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], y compris les piles, les files d'attente, les listes, les tableaux et les structures.|  
+|[Collections et structures de données](../../../docs/standard/collections/index.md)|Présente les différents types de collection disponibles dans le .NET Framework, notamment les piles, les files d’attente, les listes, les tableaux et les dictionnaires.|  
 |[Types de collections Hashtable et Dictionary](../../../docs/standard/collections/hashtable-and-dictionary-collection-types.md)|Décrit les fonctionnalités des types de dictionnaires basés sur le hachage génériques et non génériques.|  
 |[Types de collections triées](../../../docs/standard/collections/sorted-collection-types.md)|Décrit les classes qui fournissent une fonctionnalité de tri pour les listes et les ensembles.|  
-|[Génériques](../../../docs/standard/generics/index.md)|Décrit la fonctionnalité des génériques, notamment les collections, les délégués et les interfaces génériques fournis par le [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Fournit des liens vers de la documentation sur les fonctionnalités pour C#, Visual Basic et Visual C++, ainsi que vers des technologies de prise en charge comme la réflexion.|  
+|[Génériques](../../../docs/standard/generics/index.md)|Décrit la fonctionnalité génériques, notamment les collections, délégués et interfaces génériques fournis par le .NET Framework. Fournit des liens vers de la documentation sur les fonctionnalités pour C#, Visual Basic et Visual C++, ainsi que vers des technologies de prise en charge comme la réflexion.|  
   
 ## <a name="reference"></a>Référence  
  <xref:System.Collections?displayProperty=nameWithType>  

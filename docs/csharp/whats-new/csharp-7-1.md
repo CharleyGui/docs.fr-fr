@@ -2,12 +2,12 @@
 title: Nouveautés de C# 7.1
 description: Vue d’ensemble des nouvelles fonctionnalités de C# 7.1.
 ms.date: 04/09/2019
-ms.openlocfilehash: c79c8576f9cbbd921ebf30bd84ee5a817d6dc6e7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 4b7bd96e428f990b2db91a4cfd45da01dc133aac
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59480961"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65881545"
 ---
 # <a name="whats-new-in-c-71"></a>Nouveautés de C# 7.1
 
@@ -26,7 +26,7 @@ Les nouvelles fonctionnalités de langage de cette version sont :
 * [Critères spéciaux sur les paramètres de type générique](#pattern-matching-on-generic-type-parameters)
   - Il est possible d’utiliser des expressions de critères spéciaux sur les variables dont le type est un paramètre de type générique.
 
-Enfin, le compilateur a deux options, `/refout` et `/refonly`, qui contrôlent la [génération d’assemblys de références](#reference-assembly-generation).
+Enfin, le compilateur a deux options, `-refout` et `-refonly`, qui contrôlent la [génération d’assemblys de références](#reference-assembly-generation).
 
 Pour utiliser les fonctionnalités les plus récentes dans une version mineure, vous devez [configurer la version du langage du compilateur](../language-reference/configure-language-version.md) et sélectionner la version.
 
@@ -109,5 +109,5 @@ Pour plus d’informations sur cette fonctionnalité, voir l’article [Tuples](
 
 ## <a name="reference-assembly-generation"></a>Génération d’assemblys de références
 
-Il existe deux nouvelles options du compilateur qui génèrent des *assemblys de références uniquement* : [/refout](../language-reference/compiler-options/refout-compiler-option.md) et [/refonly](../language-reference/compiler-options/refonly-compiler-option.md).
+Il existe deux nouvelles options du compilateur qui génèrent des *assemblys de références uniquement* : [-refout](../language-reference/compiler-options/refout-compiler-option.md) et [-refonly](../language-reference/compiler-options/refonly-compiler-option.md).
 Les articles en lien décrivent plus en détail ces options et les assemblys de références.

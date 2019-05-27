@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 ms.assetid: bd63ed96-9853-46dc-ade5-7bd1b0f39110
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 25b2117de40bbe7ba36fab028526116fc01ae09b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 137459acc275629bb4608218772ae969e3fcf99a
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868520"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052693"
 ---
 # <a name="example-handling-exceptions-when-binding-data"></a>Exemple : Gestion des exceptions pendant la liaison de données
 > [!NOTE]
 >  Cette rubrique fait référence à .NET Native Developer Preview, qui correspond à la version préliminaire du logiciel. Vous pouvez télécharger la préversion sur le [site web Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (inscription nécessaire).  
   
- L’exemple suivant montre comment résoudre une exception [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) qui est levée quand une application compilée avec la chaîne d’outils [!INCLUDE[net_native](../../../includes/net-native-md.md)] essaie de lier des données. Voici les informations sur l'exception :  
+ L’exemple suivant montre comment résoudre un [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) exception levée lorsqu’une application compilée avec la chaîne d’outils .NET Native essaie de lier des données. Voici les informations sur l'exception :  
   
 ```  
 This operation cannot be carried out as metadata for the following type was removed for performance reasons:   

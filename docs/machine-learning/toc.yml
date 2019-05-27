@@ -14,7 +14,7 @@
     - name: Classer des problèmes de support (classification multiclasse)
       href: tutorials/github-issue-classification.md
     - name: Prédire des prix (régression)
-      href: tutorials/taxi-fare.md
+      href: tutorials/predict-prices.md
     - name: Classer des iris (clustering k-means)
       href: tutorials/iris-clustering.md
     - name: Système de suggestion de films (factorisation de matrice)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 7aa8cb72-dee9-4716-ac54-b17b9ae8218f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9b7e8a4d92661b974fba7c88989891b30e54e94d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 4a236b3b4b5c4cde66bad2b460637bb533b764be
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59218445"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65881604"
 ---
 # <a name="reducing-system-restarts-during-net-framework-45-installations"></a>Réduction des redémarrages système lors des installations de .NET Framework 4.5
 Le programme d’installation du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] utilise le [Gestionnaire de redémarrage](https://go.microsoft.com/fwlink/?LinkId=231425) pour empêcher le redémarrage du système autant que possible pendant l’installation. Si votre programme d’installation de l’application installe .NET Framework, il peut interagir avec le Gestionnaire de redémarrage pour tirer parti de cette fonctionnalité. Pour plus d'informations, voir [Procédure : obtenir la progression à partir du programme d’installation du .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md).  
@@ -26,8 +26,7 @@ Le programme d’installation du [!INCLUDE[net_v45](../../../includes/net-v45-md
   
  Si le Gestionnaire de redémarrage détecte une situation qui requiert un redémarrage du système même si les applications sont fermées, le message n'est pas affiché.  
   
- ![Boîte de dialogue Fermer l’application](../../../docs/framework/deployment/media/closeapplicationdialog.png "CloseApplicationDialog")  
-Invite pour fermer les applications .NET Framework en cours d'utilisation  
+ ![La boîte de dialogue Fermer l’application listant les programmes en cours d’exécution.](./media/reducing-system-restarts/close-application-dialog.png)  
   
 ## <a name="using-a-chained-installer"></a>Utilisation d'un programme d'installation chaîné  
  Si vous voulez redistribuer .NET Framework avec votre application, mais si vous souhaitez utiliser votre propre programme d'installation et votre propre interface utilisateur, vous pouvez inclure (chaîner) le processus d'installation .NET Framework dans votre processus d'installation. Pour plus d’informations sur les installations chaînées, consultez [Guide de déploiement pour les développeurs](../../../docs/framework/deployment/deployment-guide-for-developers.md). Pour réduire le nombre de redémarrages du système dans les installations chaînées, le programme d'installation .NET Framework fournit à votre programme d'installation la liste des applications à fermer. Votre programme d'installation doit fournir ces informations à l'utilisateur via une interface utilisateur telle qu'une boîte de message, obtenir la réponse de l'utilisateur, puis transmettre la réponse au programme d'installation .NET Framework. Pour obtenir un exemple d’un programme d’installation chaîné, consultez l’article [Guide pratique pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md).  

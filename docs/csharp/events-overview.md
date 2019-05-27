@@ -3,12 +3,12 @@ title: Présentation des événements
 description: En savoir plus sur les événements dans .NET Core et nos objectifs de conception de langage pour les événements dans cette vue d’ensemble.
 ms.date: 06/20/2016
 ms.assetid: 9b8d2a00-1584-4a5b-8994-5003d54d8e0c
-ms.openlocfilehash: 9f14954dd2e8aeacf3c5ae70a9e891ad11a6f0d7
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: e2944100d648d90e7aa5ea5798a351b8fd382cf7
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45747093"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66051940"
 ---
 # <a name="introduction-to-events"></a>Présentation des événements
 
@@ -65,7 +65,8 @@ Vous vous abonnez à un événement à l’aide de l’opérateur `+=` :
 ```csharp
 EventHandler<FileListArgs> onProgress = (sender, eventArgs) => 
     Console.WriteLine(eventArgs.FoundFile);
-lister.Progress += onProgress;
+
+fileLister.Progress += onProgress;
 ```
 
 La méthode de gestionnaire est en général le préfixe « On » suivi du nom de l’événement, comme indiqué ci-dessus.
@@ -73,7 +74,7 @@ La méthode de gestionnaire est en général le préfixe « On » suivi du nom
 Vous pouvez vous désinscrire à l’aide de l’opérateur `-=` :
 
 ```csharp
-lister.Progress -= onProgress;
+fileLister.Progress -= onProgress;
 ```
 
 Il est important de noter que j’ai déclaré une variable locale pour l’expression qui représente le gestionnaire d’événements. Cela garantit que le désabonnement supprime le gestionnaire.

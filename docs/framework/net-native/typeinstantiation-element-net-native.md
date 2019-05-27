@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: a5eada64-075b-4162-9655-ded84e4681f2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4244d47c099fe7a5b0093b94ef44b4354bae86f1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8ea167ae15e4d0035785d228f08779406e05e873
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61867105"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052367"
 ---
 # <a name="typeinstantiation-element-net-native"></a>\<TypeInstantiation >, élément (.NET Native)
 Applique la stratégie de réflexion runtime à un type générique construit.  
@@ -103,7 +103,7 @@ Applique la stratégie de réflexion runtime à un type générique construit.
   
  [!code-csharp[ProjectN_Reflection#2](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/makegenerictype1.cs#2)]  
   
- Après la compilation avec la chaîne de l’outil [!INCLUDE[net_native](../../../includes/net-native-md.md)], l’exemple lève une exception [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) sur la ligne qui appelle la méthode <xref:System.Type.GetGenericTypeDefinition%2A?displayProperty=nameWithType>. Vous pouvez éliminer l'exception et fournir les métadonnées nécessaires en ajoutant l'élément `<TypeInstantiation>` suivant au fichier de directives runtime :  
+ Après la compilation avec la chaîne d’outils .NET Native, l’exemple lève un [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) exception sur la ligne qui appelle le <xref:System.Type.GetGenericTypeDefinition%2A?displayProperty=nameWithType> (méthode). Vous pouvez éliminer l'exception et fournir les métadonnées nécessaires en ajoutant l'élément `<TypeInstantiation>` suivant au fichier de directives runtime :  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  

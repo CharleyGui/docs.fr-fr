@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: d2758ea1-03f6-47bd-88d2-0fb7ccdb2fab
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1602479d4986109ffe89a87250297ee5687930ce
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: fcc294f09172eb2029f92d2c05821837aa10c35f
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54609575"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591500"
 ---
 # <a name="implementation-of-discretionary-behaviors-in-the-xsltransform-class"></a>Implémentation de comportements discrétionnaires dans la classe XslTransform
 
@@ -19,7 +19,7 @@ ms.locfileid: "54609575"
 
 Les comportements discrétionnaires sont décrits comme des comportement listés dans la [recommandation du World Wide Web Consortium (W3C) sur XSLT (XSL Transformations) Version 1.0](https://www.w3.org/TR/1999/REC-xslt-19991116), où le fournisseur d’implémentation choisit une option parmi plusieurs possibles pour gérer une situation. Par exemple, dans la section 7.3 sur la création d'instructions de traitement, la recommandation du W3C précise que la création de nœuds autres que des nœuds de texte lors d'une instanciation du contenu de `xsl:processing-instruction` correspond à une erreur. Pour certains problèmes, le W3C indique la décision à prendre si le processeur décide de récupérer l'erreur. Pour le problème donné dans la section 7.3, le W3C indique que l'implémentation peut récupérer cette erreur en ignorant les nœuds et leur contenu.
 
-Donc, pour chacun des comportements discrétionnaires autorisés par le W3C, le tableau suivant répertorie les comportements discrétionnaires implémentés pour l'implémentation [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] de la classe <xref:System.Xml.Xsl.XslTransform>, et la section de la recommandation du W3C sur XSLT 1.0 traitant de ce problème.
+Par conséquent, pour chacun des comportements discrétionnaires autorisés par le W3C, le tableau suivant liste les comportements discrétionnaires implémentés pour l’implémentation du .NET Framework de la classe <xref:System.Xml.Xsl.XslTransform>, ainsi que la section de la recommandation du W3C sur XSLT 1.0 traitant de ce problème.
 
 |Problème|Comportement|Section|
 |-------------|--------------|-------------|

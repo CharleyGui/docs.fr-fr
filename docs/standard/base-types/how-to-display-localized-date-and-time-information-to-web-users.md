@@ -15,12 +15,12 @@ dev_langs:
 - vb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b6bb41ad3743e19ae3f6ded48dd491542926010d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4c50cdf93d8cfcefeffd35290d26dfa432a241e1
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64633896"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882486"
 ---
 # <a name="how-to-display-localized-date-and-time-information-to-web-users"></a>Procédure : afficher des informations de date et d’heure localisées pour les utilisateurs du web
 Une page Web pouvant être affichée n’importe où dans le monde, les opérations qui analysent et mettent en forme les valeurs de date et d’heure ne doivent pas s’appuyer sur un format par défaut (généralement le format de la culture locale du serveur Web) lors de l’interaction avec l’utilisateur. Au lieu de cela, les formulaires Web qui gèrent les chaînes de date et d’heure saisies par l’utilisateur doivent analyser les chaînes en utilisant la culture préférée de l’utilisateur. De même, les données de date et d’heure doivent être affichées à l’utilisateur dans un format conforme à sa culture. Cette rubrique montre comment procéder.  
@@ -98,7 +98,7 @@ Une page Web pouvant être affichée n’importe où dans le monde, les opérati
  Votre code peut appeler la méthode <xref:System.DateTime.Parse%2A> ou <xref:System.DateTime.TryParse%2A> pour convertir la représentation de chaîne de date et d’heure de l’utilisateur en une valeur <xref:System.DateTime>. Des appels répétés à une méthode d’analyse peuvent être nécessaires pour une opération d’analyse unique. Par conséquent, la méthode <xref:System.DateTime.TryParse%2A> est préférable car elle retourne `false` si une opération d’analyse échoue. En revanche, la gestion d’exceptions répétées générées par la méthode <xref:System.DateTime.Parse%2A> peut se révéler très coûteuse dans une application Web.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Pour compiler le code, créez une page Web [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] sans code-behind. Copiez ensuite l’exemple dans la page Web pour qu’il remplace tout le code existant. La page Web [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] doit contenir les contrôles suivants :  
+ Pour compiler le code, créez une page web ASP.NET sans code-behind. Copiez ensuite l’exemple dans la page Web pour qu’il remplace tout le code existant. La page web ASP.NET doit contenir les contrôles suivants :  
   
 - Un contrôle <xref:System.Web.UI.WebControls.Label>, qui n’est pas référencé dans le code. Définissez sa propriété <xref:System.Web.UI.WebControls.TextBox.Text%2A> sur « Entrez un nombre : ».  
   

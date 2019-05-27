@@ -2,12 +2,12 @@
 title: Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 description: Applications de production réel doivent être déployée et gérée avec des orchestrateurs qui gèrent l’intégrité, les charges de travail et les cycles de vie de tous les conteneurs.
 ms.date: 02/15/2019
-ms.openlocfilehash: 6cb41e632db7c7c6b9412bf54d2efeb44deee80f
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: bde9a2815d0496608b3172582481c169cab37f04
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644723"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66195651"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 
@@ -70,7 +70,7 @@ Dans l’environnement de développement qui [Docker annoncée en juillet 2018](
 
 ## <a name="get-started-with-azure-kubernetes-service-aks"></a>Bien démarrer avec Azure Kubernetes Service (AKS)
 
-Pour commencer à utiliser AKS, vous déployez un cluster AKS à partir du portail Azure ou à l’aide de l’interface CLI. Pour plus d’informations sur le déploiement d’un cluster Azure Container Service, consultez [Déployer un cluster AKS (Azure Kubernetes Service)](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal).
+Pour commencer à utiliser AKS, vous déployez un cluster AKS à partir du portail Azure ou à l’aide de l’interface CLI. Pour plus d’informations sur le déploiement d’un cluster Kubernetes dans Azure, consultez [déployer un cluster Azure Kubernetes Service (AKS)](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal).
 
 Aucun coût n’est facturé pour les logiciels installés par défaut dans le cadre d’AKS. Toutes les options par défaut sont implémentées avec des logiciels open source. AKS est disponible pour plusieurs machines virtuelles dans Azure. Vous payez seulement pour les instances de calcul que vous choisissez ainsi que pour les autres ressources de l’infrastructure sous-jacente consommées, comme le stockage et le réseau. Aucun coût supplémentaire n’est facturé pour AKS.
 
@@ -112,7 +112,7 @@ Pour plus d’informations, consultez l’article sur [développement en équipe
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Bien démarrer avec AKS (Azure Kubernetes Service)** \
+- **Bien démarrer avec AKS (Azure Kubernetes Service)**  \
   <https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal>
 
 - **Azure Dev Spaces** \
@@ -137,7 +137,7 @@ Service Fabric est agnostique quant à la façon dont vous créez votre service,
 
 Comme indiqué dans la Figure 4-10, vous pouvez créer et exécuter des microservices dans Service Fabric en tant que processus simples ou en tant que conteneurs Docker. Il est également possible de combiner des microservices basés sur des conteneurs avec des microservices basés sur des processus dans le même cluster Service Fabric.
 
-![Comparaison d’Azure service Fabric clusters : Microservices en tant que processus où chaque nœud exécute un processus pour chaque microservice ; Microservices en tant que conteneurs où chaque nœud exécute Docker avec plusieurs conteneurs, un conteneur par microservice.](./media/azure-service-fabric-cluster-types.png)
+![Comparaison entre clusters Azure Service Fabric : microservices en tant que processus où chaque nœud exécute un processus pour chaque microservice ; microservices en tant que conteneurs où chaque nœud exécute Docker avec plusieurs conteneurs, à raison d’un conteneur par microservice.](./media/azure-service-fabric-cluster-types.png)
 
 **Figure 4-10**. Déploiement de microservices en tant que processus ou en tant que conteneurs dans Azure Service Fabric
 

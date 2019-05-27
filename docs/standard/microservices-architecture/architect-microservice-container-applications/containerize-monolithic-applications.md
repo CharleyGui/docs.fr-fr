@@ -1,17 +1,15 @@
 ---
-title: Conteneurisation d’applications monolithiques
+title: Mise en conteneur d’applications monolithiques
 description: Même si la conteneurisation d’applications monolithiques ne bénéficie pas de tous les avantages de l’architecture des microservices, elle présente des avantages importants relatifs au déploiement et disponibles immédiatement.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 09/20/2018
-ms.openlocfilehash: d1de4c4beb8c60aa543e5c71243d93b83fe52072
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 061afe86e0d38f058becde2b3afdb45b4428517a
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53130874"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65640815"
 ---
-# <a name="containerizing-monolithic-applications"></a>Conteneurisation d’applications monolithiques
+# <a name="containerizing-monolithic-applications"></a>Mise en conteneur d’applications monolithiques
 
 Vous pouvez créer une application ou un service web simple, déployé de façon monolithique, et le déployer en tant que conteneur. L’application elle-même peut ne pas être monolithique en interne, mais structurée sous la forme de plusieurs bibliothèques, de plusieurs composants ou même de plusieurs couches (couche d’application, couche de domaine, couche d’accès aux données, etc.). De manière externe, toutefois, il s’agit d’un seul conteneur : un seul processus, une seule application web ou un seul service.
 
@@ -19,7 +17,7 @@ Pour gérer ce modèle, vous déployez un seul conteneur pour représenter l’a
 
 ![La plupart des fonctionnalités d’une application conteneurisée monolithique se trouvent dans un seul conteneur, avec des couches ou bibliothèques internes, et peuvent être scalables via le clonage du conteneur sur plusieurs serveurs/machines virtuelles](./media/image1.png)
 
-**Figure 4-1**. Exemple d’architecture d’une application monolithique conteneurisée
+**Figure 4-1**. Exemple d’architecture d’une application monolithique en conteneur
 
 Vous pouvez inclure plusieurs composants, bibliothèques ou couches internes dans chaque conteneur, comme illustré dans la figure 4-1. Toutefois, ce modèle monolithique peut être en conflit avec le principe des conteneurs, selon lequel « un conteneur fait une chose et la fait dans un seul processus ». Mais dans certains cas, cela peut convenir.
 
@@ -35,7 +33,7 @@ Du point de vue de l’infrastructure, chaque serveur peut exécuter de nombreus
 
 ![Un hôte peut exécuter plusieurs applications monolithiques, chacune sur un conteneur distinct.](./media/image2.png)
 
-**Figure 4-2**. Approche monolithique : hôte exécutant plusieurs applications, chaque application s’exécutant en tant que conteneur
+**Figure 4-2**. Approche monolithique : hôte exécutant plusieurs applications, chaque application s’exécutant en tant que conteneur
 
 Les applications monolithiques dans Microsoft Azure peuvent être déployées en utilisant des machines virtuelles dédiées pour chaque instance. De plus, à l’aide des [groupes de machines virtuelles identiques Azure](https://azure.microsoft.com/documentation/services/virtual-machine-scale-sets/), vous pouvez facilement effectuer un scale-out des machines virtuelles. [Azure App Service](https://azure.microsoft.com/services/app-service/) peut également exécuter des applications monolithiques et facilement mettre à l’échelle des instances sans nécessiter la gestion des machines virtuelles. Depuis 2016, Azure App Service peut également exécuter des instances uniques de conteneurs Docker, ce qui simplifie le déploiement.
 

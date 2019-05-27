@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 ms.assetid: d5b3d13e-689f-4584-8ba6-44f5167a8590
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4ba528f8545f0781f15e4479cbef0b80feeab46d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 246584a34d6a3a8aaf4cac9845e8bb77d1654fa1
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61870667"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052433"
 ---
 # <a name="missingruntimeartifactexception-class-net-native"></a>MissingRuntimeArtifactException, classe (.NET Native)
-**.NET pour applications Windows pour Windows 10, [!INCLUDE[net_native](../../../includes/net-native-md.md)] uniquement**  
+**.NET pour les applications Windows pour Windows 10, .NET natif uniquement**  
   
  Exception levée quand les métadonnées d'un type ou d'un membre de type sont disponibles, mais que leur implémentation a été supprimée.  
   
  **Espace de noms :** System.Reflection  
   
 > [!IMPORTANT]
->  La classe `MissingRuntimeArtifactException` est réservée à un usage interne par la chaîne d'outils [!INCLUDE[net_native](../../../includes/net-native-md.md)]. Elle n'est pas destinée à être utilisée dans du code tiers ni à traiter l'exception dans le code de votre application. Au lieu de cela, éliminez l’exception en ajoutant des entrées à votre [fichier de directives runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Pour plus d'informations, consultez la section Remarques.  
+>  Le `MissingRuntimeArtifactException` classe est destinée exclusivement à un usage interne par la chaîne d’outils .NET Native. Elle n'est pas destinée à être utilisée dans du code tiers ni à traiter l'exception dans le code de votre application. Au lieu de cela, éliminez l’exception en ajoutant des entrées à votre [fichier de directives runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Pour plus d'informations, consultez la section Remarques.  
   
 ## <a name="syntax"></a>Syntaxe  
  [!code-csharp[ProjectN#22](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/missingruntimeartifactexception_syntax1.cs#22)]  
@@ -32,8 +32,8 @@ ms.locfileid: "61870667"
   
 |Constructeur|Description|  
 |-----------------|-----------------|  
-|`public MissingRuntimeArtifactException()`|Initialise une nouvelle instance de la classe `MissingRuntimeArtifactException` à l'aide d'un message système qui décrit l'erreur.<br /><br /> Ce constructeur est destiné à une utilisation interne par la chaîne d'outils [!INCLUDE[net_native](../../../includes/net-native-md.md)] uniquement.|  
-|`public MissingRuntimeArtifactException(String message)`|Initialise une nouvelle instance de la classe `MissingRuntimeArtifactException` avec un message d'erreur spécifié.<br /><br /> Ce constructeur est destiné à une utilisation interne par la chaîne d'outils [!INCLUDE[net_native](../../../includes/net-native-md.md)] uniquement.|  
+|`public MissingRuntimeArtifactException()`|Initialise une nouvelle instance de la classe `MissingRuntimeArtifactException` à l'aide d'un message système qui décrit l'erreur.<br /><br /> Ce constructeur est pour une utilisation interne par la chaîne d’outils .NET Native uniquement.|  
+|`public MissingRuntimeArtifactException(String message)`|Initialise une nouvelle instance de la classe `MissingRuntimeArtifactException` avec un message d'erreur spécifié.<br /><br /> Ce constructeur est pour une utilisation interne par la chaîne d’outils .NET Native uniquement.|  
   
 ## <a name="properties"></a>Properties  
   

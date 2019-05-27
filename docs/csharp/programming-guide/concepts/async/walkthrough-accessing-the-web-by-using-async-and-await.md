@@ -2,12 +2,12 @@
 title: 'Procédure pas à pas : Accéder au web avec async et await (C#)'
 ms.date: 07/20/2015
 ms.assetid: c95d8d71-5a98-4bf0-aaf4-45fed2ebbacd
-ms.openlocfilehash: 2c9616cc7bed3170803ee3c917fa651afc5ae6fa
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1057bdf02d20b0f685e6bd319929188ffd07c726
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64599682"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052192"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>Procédure pas à pas : Accéder au web avec async et await (C#)
 
@@ -695,6 +695,6 @@ namespace AsyncExampleWPF
 - [await](../../../../csharp/language-reference/keywords/await.md)
 - [Programmation asynchrone avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)
 - [Types de retour async (C#)](../../../../csharp/programming-guide/concepts/async/async-return-types.md)
-- [Programmation asynchrone basée sur les tâches](https://www.microsoft.com/en-us/download/details.aspx?id=19957)
+- [Programmation asynchrone basée sur les tâches](https://www.microsoft.com/download/details.aspx?id=19957)
 - [Guide pratique pour étendre la procédure pas à pas async à l’aide de Task.WhenAll (C#)](../../../../csharp/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
 - [Guide pratique pour effectuer plusieurs requêtes web en parallèle en utilisant async et await (C#)](../../../../csharp/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)

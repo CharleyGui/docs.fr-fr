@@ -9,12 +9,12 @@ helpviewer_keywords:
 - multicast event delegates
 - Windows Forms controls, events
 ms.assetid: 814a6a43-a312-4791-88d8-f75f9a4f8c4c
-ms.openlocfilehash: 3adc2891579cafff9c8aeb3e918ae74c6f3ad8a5
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: fddb51bfe998c360ca418374b119ec12f25b0fad
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591013"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052290"
 ---
 # <a name="events-overview-windows-forms"></a>Vue d'ensemble des événements (Windows Forms)
 Un événement est une action à laquelle vous pouvez répondre ou que vous pouvez « gérer » dans le code. Les événements peuvent être déclenchés par une action de l'utilisateur (quand il clique sur un bouton de la souris ou appuie sur une touche), par le code d'un programme ou par le système.
@@ -29,7 +29,7 @@ Un événement est une action à laquelle vous pouvez répondre ou que vous pouv
  Pour plus d’informations sur comment déclencher et consommer un événement, consultez [événements](../../standard/events/index.md).
 
 ## <a name="delegates-and-their-role"></a>Rôle des délégués
- Les délégués sont des classes couramment utilisées dans le .NET Framework pour générer des mécanismes de gestion des événements. Les délégués sont à peu près équivalents aux pointeurs de fonction communément utilisés dans [!INCLUDE[vcprvc](../../../includes/vcprvc-md.md)] et d'autres langages orientés objet. Toutefois à la différence des pointeurs de fonction, les délégués sont orientés objet, de type sécurisé et sûrs. De plus, alors qu'un pointeur de fonction ne contient qu'une référence à une fonction spécifique, un délégué consiste en une référence à un objet et des références à une ou plusieurs méthodes de cet objet.
+ Les délégués sont des classes couramment utilisées dans le .NET Framework pour générer des mécanismes de gestion des événements. Les délégués à peu près équivalents aux pointeurs de fonction, couramment utilisés dans Visual C++ et d’autres langages orientés objet. Toutefois à la différence des pointeurs de fonction, les délégués sont orientés objet, de type sécurisé et sûrs. De plus, alors qu'un pointeur de fonction ne contient qu'une référence à une fonction spécifique, un délégué consiste en une référence à un objet et des références à une ou plusieurs méthodes de cet objet.
 
  Ce modèle d’événement utilise *délégués* pour lier les événements aux méthodes servant à les gérer. Le délégué permet aux autres classes de s'inscrire pour la notification d'événement en spécifiant une méthode de gestionnaire. Quand l'événement se produit, le délégué appelle la méthode liée. Pour plus d’informations sur la façon de définir des délégués, consultez [événements](../../standard/events/index.md).
 

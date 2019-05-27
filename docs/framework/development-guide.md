@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 894895331c2444a8e52a09e3de9d5a47daa87e5d
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: cc7a0991ae308f1c61026e946021d22da9a4bc3b
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56092954"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65583525"
 ---
 # <a name="net-framework-development-guide"></a>Guide de développement .NET Framework
 Cette section explique comment créer, configurer, déboguer, sécuriser et déployer des applications .NET Framework. La section fournit également des informations sur les aspects technologiques, tels que la programmation dynamique, l'interopérabilité, l'extensibilité, la gestion de la mémoire et les threads.  
@@ -67,7 +67,7 @@ Cette section explique comment créer, configurer, déboguer, sécuriser et dép
  
 ## <a name="reference"></a>Référence  
  [Bibliothèque de classes .NET Framework](/dotnet/api/?view=netframework-4.7)  
- Fournit la syntaxe, des exemples de code et les informations d'utilisation associées à chaque classe qui figure dans les espaces de noms [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)].  
+ Fournit la syntaxe, des exemples de code et les informations d’utilisation associées à chaque classe qui figure dans les espaces de noms .NET Framework.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Prise en main](../../docs/framework/get-started/index.md)  

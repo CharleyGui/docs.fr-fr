@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 77aed78e7822e06b3b1e6c48b07790d93e09559c
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 390b2226cc2f345d2f42659bd092e36a4bd0c4fc
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53612723"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65632929"
 ---
 # <a name="value-types-c-reference"></a>Types valeur (référence C#)
 
@@ -34,7 +34,7 @@ Contrairement aux types référence, vous ne pouvez pas faire dériver un nouvea
 
 Les variables de type valeur ne peut pas être `null` par défaut. Toutefois, les variables des [types Nullable](../../../csharp/programming-guide/nullable-types/index.md) correspondants peuvent être `null`.
 
-Chaque type valeur a un constructeur par défaut implicite qui initialise la valeur par défaut de ce type. Pour plus d’informations sur les valeurs par défaut des types valeur, voir [Tableau des valeurs par défaut](default-values-table.md).
+Chaque type valeur a un constructeur implicite sans paramètre qui initialise la valeur par défaut de ce type. Pour plus d’informations sur les valeurs par défaut des types valeur, voir [Tableau des valeurs par défaut](default-values-table.md).
 
 ## <a name="simple-types"></a>Types simples
 
@@ -67,7 +67,7 @@ int myInt;
 Vous ne pouvez pas l’utiliser avant de l’avoir initialisée. Vous pouvez l’initialiser à l’aide de l’instruction suivante :
 
 ```csharp
-myInt = new int();  // Invoke default constructor for int type.
+myInt = new int();  // Invoke parameterless constructor for int type.
 ```
 
 Cette instruction est équivalente à l’instruction suivante :
@@ -88,12 +88,12 @@ int myInt = new int();
 int myInt = 0;
 ```
 
-L’opérateur [new](new.md) permet d’appeler le constructeur par défaut du type spécifique et d’assigner la valeur par défaut à la variable. Dans l’exemple précédent, le constructeur par défaut a assigné la valeur `0` à `myInt`. Pour plus d’informations sur les valeurs affectées en appelant les constructeurs par défaut, voir [Tableau des valeurs par défaut](default-values-table.md).
+L’opérateur [new](new.md) permet d’appeler le constructeur sans paramètre du type spécifique et d’affecter la valeur par défaut à la variable. Dans l’exemple précédent, le constructeur sans paramètre a affecté la valeur `0` à `myInt`. Pour plus d’informations sur les valeurs affectées en appelant les constructeurs par défaut, voir [Tableau des valeurs par défaut](default-values-table.md).
 
-Avec les types définis par l’utilisateur, l’opérateur [new](new.md) permet d’appeler le constructeur par défaut. Par exemple, l’instruction suivante appelle le constructeur par défaut du struct `Point` :
+Avec les types définis par l’utilisateur, l’opérateur [new](new.md) permet d’appeler le constructeur sans paramètre. Par exemple, l’instruction suivante appelle le constructeur sans paramètre du struct `Point` :
 
 ```csharp
-Point p = new Point(); // Invoke default constructor for the struct.
+Point p = new Point(); // Invoke parameterless constructor for the struct.
 ```
 
 Après cet appel, le struct est considéré comme définitivement assigné ; autrement dit, tous ses membres sont initialisés avec leurs valeurs par défaut.

@@ -2,12 +2,12 @@
 title: Migrer vos bases de données relationnelles vers azure
 description: Moderniser des Applications .NET existantes avec le Cloud Azure et les conteneurs Windows | migrer vos bases de données relationnelles vers azure
 ms.date: 04/28/2018
-ms.openlocfilehash: 1c09172f0948551edfe059be6f43d7a02278203d
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 3d4f03e61144bb6a442a50916d7fd024d38ec611
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65638893"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66051922"
 ---
 # <a name="migrate-your-relational-databases-to-azure"></a>Migrer vos bases de données relationnelles vers azure
 
@@ -81,7 +81,7 @@ La base de données SQL Azure standard est plus proche PaaS que Azure SQL Databa
 
 Une de vos options de migration consiste à déplacer votre d’origine système de gestion de base de données relationnelle (SGBDR), notamment Oracle, IBM DB2, MySQL, PostgreSQL ou SQL Server, à un serveur similaire qui s’exécute sur une machine virtuelle Azure. Si vous avez des applications existantes qui requièrent la migration le plus rapide vers le cloud avec un minimum de modifications ou aucune modification du tout, une migration directe vers IaaS dans le cloud peut être une option de répartition de charge. Il peut ne pas être la meilleure façon de tirer parti des avantages de tous les du cloud, mais il est probablement le chemin d’accès initial plus rapide.
 
-Actuellement, Microsoft Azure prend en charge jusqu'à [des serveurs de base de données différente 331](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/databases?page=1&subcategories=databases-all) déployés en tant que machines virtuelles IaaS. Ceux-ci incluent un SGBDR populaires tels que SQL Server, Oracle, MySQL, PostgreSQL et IBM DB2 et plusieurs autres bases de données NoSQL comme MongoDB, Cassandra, DataStax, MariaDB et Cloudera.
+Actuellement, Microsoft Azure prend en charge jusqu'à [des serveurs de base de données différente 331](https://azuremarketplace.microsoft.com/marketplace/apps/category/databases?page=1&subcategories=databases-all) déployés en tant que machines virtuelles IaaS. Ceux-ci incluent un SGBDR populaires tels que SQL Server, Oracle, MySQL, PostgreSQL et IBM DB2 et plusieurs autres bases de données NoSQL comme MongoDB, Cassandra, DataStax, MariaDB et Cloudera.
 
 > [!NOTE]
 > Bien que le déplacement de votre SGBDR pour une machine virtuelle Azure peut être le moyen le plus rapide pour migrer vos données vers le cloud (car il IaaS), cette approche nécessite un investissement significatif dans vos équipes informatique (administrateurs de base de données et les professionnels de l’informatique). Équipes d’entreprise doivent être en mesure de configurer et gérer une haute disponibilité, la récupération d’urgence et la mise à jour corrective pour SQL Server. Ce contexte a également besoin d’un environnement personnalisé, avec les droits d’administration complets.

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - MDI [Windows Forms], creating forms
 - child forms
 ms.assetid: 164b69bb-2eca-4339-ada3-0679eb2c6dda
-ms.openlocfilehash: fbc92c03da69dd452f35e5b4e00cd4a9ca17e252
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
+ms.openlocfilehash: 8965231307da84fd555b181440978adbea7e7244
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211183"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052841"
 ---
 # <a name="how-to-create-mdi-child-forms"></a>Procédure : Créer des formulaires MDI enfants
 
@@ -34,7 +34,7 @@ Dans la procédure suivante, vous allez utiliser Visual Studio pour créer un fo
 
 4. Dans **l’Explorateur de solutions**, cliquez sur le projet, pointez sur **ajouter**, puis sélectionnez **ajouter un nouvel élément**.
 
-5. Dans le **ajouter un nouvel élément** boîte de dialogue, sélectionnez **Windows Form** (en Visual Basic ou Visual c#) ou **Windows Forms Application (.NET)** (dans [!INCLUDE[vcprvc](../../../../includes/vcprvc-md.md)]) à partir de la  **Modèles** volet. Dans le **nom** boîte, nommez le formulaire **Form2**. Cliquez sur le **Open** pour ajouter le formulaire au projet.
+5. Dans le **ajouter un nouvel élément** boîte de dialogue, sélectionnez **Windows Form** (en Visual Basic ou dans Visual C#) ou **Windows Forms Application (.NET)** (dans Visual C++) à partir de la **Modèles** volet. Dans le **nom** boîte, nommez le formulaire **Form2**. Cliquez sur le **Open** pour ajouter le formulaire au projet.
 
     > [!NOTE]
     > Le formulaire MDI enfant que vous avez créé lors de cette étape est un Windows Form standard. Il a donc une propriété <xref:System.Windows.Forms.Form.Opacity%2A>, ce qui vous permet de contrôler la transparence du formulaire. Cependant, la propriété <xref:System.Windows.Forms.Form.Opacity%2A> a été conçue pour les fenêtres de niveau supérieur. Ne l'utilisez pas avec des formulaires MDI enfants, car des problèmes de peinture peuvent survenir.

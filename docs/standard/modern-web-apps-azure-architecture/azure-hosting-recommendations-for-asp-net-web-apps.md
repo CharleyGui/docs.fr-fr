@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 136ad9992ea94b027f095f47df0388408029f24e
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: a93009e66d63aa7d9c3b60951d43eafa3c351a63
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65638914"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053261"
 ---
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Recommandations sur l’hébergement Azure pour les applications web ASP.NET Core
 
@@ -44,7 +44,7 @@ App Service Web Apps offre une plateforme entièrement managée, optimisée pour
 
 - Intégration Visual Studio.
 
-- Prise en charge des conteneurs Linux et Windows via [Web App pour conteneurs](https://azure.microsoft.com/en-us/services/app-service/containers/).
+- Prise en charge des conteneurs Linux et Windows via [Web App pour conteneurs](https://azure.microsoft.com/services/app-service/containers/).
 
 Azure App Service est le meilleur choix pour la plupart des applications web. Le déploiement et la gestion sont intégrés à la plateforme, les sites peuvent évoluer rapidement pour gérer des charges de trafic élevées, et l’équilibrage de charge et le gestionnaire de trafic intégrés offrent une haute disponibilité. Vous pouvez déplacer facilement des sites existants vers Azure App Service avec un outil de migration en ligne, utiliser une application open source de la galerie d’applications web, ou créer un site en utilisant le framework et les outils de votre choix. La fonctionnalité WebJobs facilite l’ajout du traitement de travaux en arrière-plan à votre application web App Service.
 
@@ -101,7 +101,7 @@ La figure 11-2 montre un exemple d’architecture de référence. Ce diagramme d
   <https://docs.microsoft.com/azure/app-service/app-service-web-overview>
 
 - Web App pour conteneurs\
-  <https://azure.microsoft.com/en-us/services/app-service/containers/>
+  <https://azure.microsoft.com/services/app-service/containers/>
 
 - Présentation d’Azure Kubernetes Service (AKS)\
   <https://docs.microsoft.com/azure/aks/intro-kubernetes>

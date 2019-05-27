@@ -6,12 +6,12 @@ ms.author: mairaw
 ms.date: 05/01/2017
 ms.technology: dotnet-standard
 ms.assetid: 81c07080-acdf-4aef-a66d-0ab52fab2c04
-ms.openlocfilehash: 825d7d950726c4f416624653704a51fb405325e3
-ms.sourcegitcommit: 0888d7b24f475c346a3f444de8d83ec1ca7cd234
+ms.openlocfilehash: 50667465d25dc034b7f229716cbf327fb5f54977
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53765214"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65644690"
 ---
 # <a name="get-started"></a>Bien démarrer
 
@@ -31,6 +31,6 @@ Il existe plusieurs façons de bien démarrer avec .NET. .NET étant une platefo
 
 * Les [didacticiels .NET Core](../core/tutorials/index.md) détaillent différentes façons de bien démarrer avec .NET Core à l’aide du système d’exploitation et des outils de votre choix.
 
-## <a name="get-started-using-docker-on-net-framework"></a>Bien démarrer avec Docker sur .NET Framework
+## <a name="get-started-using-net-core-on-docker"></a>Bien démarrer avec .NET Core sur Docker
 
-L’article [Docker sur .NET Framework](../framework/docker/index.md) montre comment vous pouvez utiliser .NET Framework sur des conteneurs Docker Windows.
+L’article [Introduction à .NET et à Docker](../core/docker/intro-net-docker.md) montre comment vous pouvez utiliser .NET Core sur des conteneurs Windows Docker.

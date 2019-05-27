@@ -5,19 +5,19 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - structs [C#], using
 ms.assetid: cea4a459-9eb9-442b-8d08-490e0797ba38
-ms.openlocfilehash: d2e89c842ae83a5be65c7500e47beb7f302e23be
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 0e0ba1602468d1bcc38985c78e1af5e4d2a5912c
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59427186"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586084"
 ---
 # <a name="using-structs-c-programming-guide"></a>Utilisation de structs (Guide de programmation C#)
-Le type `struct` est approprié pour représenter des objets légers tels que `Point`, `Rectangle`et `Color`. Bien qu’il soit aussi pratique de représenter un point comme [classe](../../../csharp/language-reference/keywords/class.md) avec des [propriétés implémentées automatiquement](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md), un [struct](../../../csharp/language-reference/keywords/struct.md) peut être plus efficace dans certains scénarios. Par exemple, si vous déclarez un tableau de 1 000 objets `Point` , vous devez allouer de la mémoire supplémentaire pour faire référence à chacun des objets. Dans ce cas, un struct est moins onéreux. Étant donné que le [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] contient un objet nommé <xref:System.Drawing.Point>, le struct dans cet exemple est nommé à la place « Coords ».  
+Le type `struct` est approprié pour représenter des objets légers tels que `Point`, `Rectangle`et `Color`. Bien qu’il soit aussi pratique de représenter un point comme [classe](../../../csharp/language-reference/keywords/class.md) avec des [propriétés implémentées automatiquement](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md), un [struct](../../../csharp/language-reference/keywords/struct.md) peut être plus efficace dans certains scénarios. Par exemple, si vous déclarez un tableau de 1 000 objets `Point` , vous devez allouer de la mémoire supplémentaire pour faire référence à chacun des objets. Dans ce cas, un struct est moins onéreux. Étant donné que le .NET Framework contient un objet nommé <xref:System.Drawing.Point>, le struct utilisé dans cet exemple est nommé « Coords » à la place.  
   
  [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]  
   
- Définir un constructeur par défaut (sans paramètre) pour un struct constitue une erreur. Vous ne devez pas non plus initialiser un champ d'instance dans le corps d'un struct. Vous pouvez initialiser des membres de struct accessibles en externe seulement en utilisant un constructeur paramétrable, le constructeur par défaut implicite ou un [initialiseur d’objet](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md), ou en accédant individuellement aux membres après la déclaration du struct. Tout membre privé ou inaccessible nécessite exclusivement l’utilisation de constructeurs.
+ Définir un constructeur par défaut (sans paramètre) pour un struct constitue une erreur. Vous ne devez pas non plus initialiser un champ d'instance dans le corps d'un struct. Vous pouvez initialiser des membres de struct accessibles en externe uniquement en utilisant un constructeur paramétrable, le constructeur sans paramètre implicite ou un [initialiseur d’objet](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md), ou en accédant individuellement aux membres après la déclaration du struct. Tout membre privé ou inaccessible nécessite exclusivement l’utilisation de constructeurs.
   
  Quand vous créez un objet struct avec l’opérateur [new](../../../csharp/language-reference/keywords/new.md), cet objet est créé et le constructeur approprié est appelé conformément à la [signature du constructeur](../../../csharp/programming-guide/classes-and-structs/constructors.md#constructor-syntax). Contrairement aux classes, les structs peuvent être instanciés sans avoir recours à l’opérateur `new` . Dans un tel cas, il n’y a pas d’appel au constructeur, ce qui rend l’allocation plus efficace. Toutefois, les champs ne sont pas assignés et l’objet ne peut pas être utilisé tant que tous les champs ne sont pas initialisés. Ceci inclut l’incapacité à récupérer ou à définir des valeurs au moyen de propriétés.
  

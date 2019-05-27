@@ -2,12 +2,12 @@
 title: 'Procédure : Rechercher des fichiers ayant un attribut ou un nom donné (C#)'
 ms.date: 07/20/2015
 ms.assetid: 560e3879-b0b3-4549-ad02-0a53aff2f83c
-ms.openlocfilehash: e600899251fe08884088275307f4311f3b9787cd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 94642ff500cb065ffcb28d6099c3f9f50d43d124
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54564157"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65584330"
 ---
 # <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Procédure : Rechercher des fichiers ayant un attribut ou un nom donné (C#)
 Cet exemple montre comment rechercher tous les fichiers ayant une extension de nom de fichier spécifiée (par exemple « .txt ») dans une arborescence de répertoires spécifiée. Il montre également comment retourner le fichier le plus récent ou le plus ancien dans l’arborescence en fonction de l’heure de création.  
@@ -64,7 +64,7 @@ class FindFileByExtension
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Créez un projet qui cible le .NET Framework version 3.5 ou ultérieure, avec une référence à System.Core.dll et des directives `using` pour les espaces de noms System.Linq et System.IO.  
+  Créez un projet d’application console C#, avec des directives `using` pour les espaces de noms System.Linq et System.IO.
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -2,12 +2,12 @@
 title: Création d’un microservice CRUD simple piloté par les données
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Comprendre le processus de création d’un simple microservice (piloté par les données) CRUD dans le contexte d’une application de microservices.
 ms.date: 01/07/2019
-ms.openlocfilehash: 5dd7154fc81c7d0c3fb78bce662ea822f2392a10
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 53aba727c8dae35df8b34bc1558c0cc390fe2014
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644421"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053570"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Création d’un microservice CRUD simple piloté par les données
 
@@ -321,7 +321,7 @@ Voici pourquoi il est utile de générer des métadonnées Swagger pour votre AP
 
 - [AutoRest](https://github.com/Azure/AutoRest). Vous pouvez générer automatiquement des classes client .NET pour appeler Swagger. Cet outil peut être utilisé à partir de l’interface CLI. En outre, il s’intègre à Visual Studio pour une utilisation facilitée via l’interface utilisateur graphique.
 
-- [Microsoft Flow](https://flow.microsoft.com/en-us/). Vous pouvez [utiliser et intégrer votre API](https://flow.microsoft.com/en-us/blog/integrating-custom-api/) automatiquement dans un flux de travail Microsoft Flow de haut niveau, sans avoir de compétences en programmation.
+- [Microsoft Flow](https://flow.microsoft.com/). Vous pouvez [utiliser et intégrer votre API](https://flow.microsoft.com/blog/integrating-custom-api/) automatiquement dans un flux de travail Microsoft Flow de haut niveau, sans avoir de compétences en programmation.
 
 - [Microsoft PowerApps](https://powerapps.microsoft.com/). Vous pouvez consommer automatiquement votre API à partir [d’applications mobiles PowerApps](https://powerapps.microsoft.com/blog/register-and-use-custom-apis-in-powerapps/) créées dans [PowerApps Studio](https://powerapps.microsoft.com/build-powerapps/), sans avoir de compétences en programmation.
 

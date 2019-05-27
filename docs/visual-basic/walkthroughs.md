@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual Basic code, walkthroughs
 - walkthroughs [Visual Basic]
 ms.assetid: e4e1f849-e1ce-4cf7-8483-d9b4c4887a8e
-ms.openlocfilehash: 928df9baa770185fd5d012e760ca96f3f878cf88
-ms.sourcegitcommit: facefcacd7ae2e5645e463bc841df213c505ffd4
+ms.openlocfilehash: 47c79b8d716be6c247be3ec66c9ef00fbc021973
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55739460"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586270"
 ---
 # <a name="visual-basic-language-walkthroughs"></a>Procédures pas à pas relatives au langage Visual Basic
 Les procédures pas à pas fournissent des instructions détaillées pour les scénarios courants, ce qui en fait un bon point de départ pour apprendre à utiliser le produit ou une fonctionnalité particulière.  
@@ -72,7 +72,7 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
  Montre comment utiliser les fonctions Visual Basic pour déterminer les informations relatives à un fichier, rechercher une chaîne dans un fichier et écrire dans un fichier.  
   
  [Manipulation de fichiers à l’aide de méthodes du .NET Framework](../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
- Montre comment utiliser les méthodes du [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pour déterminer les informations relatives à un fichier, rechercher une chaîne dans un fichier et écrire dans un fichier.  
+ Montre comment utiliser les méthodes du .NET Framework pour déterminer les informations relatives à un fichier, rechercher une chaîne dans un fichier et écrire dans un fichier.  
   
  [Persistance d’un objet en Visual Basic](../visual-basic/programming-guide/concepts/serialization/walkthrough-persisting-an-object-in-visual-studio.md)  
  Montre comment créer un objet simple et rendre ses données persistantes dans un fichier.  

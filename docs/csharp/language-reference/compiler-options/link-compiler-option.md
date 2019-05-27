@@ -11,12 +11,12 @@ helpviewer_keywords:
 - -link compiler option [C#]
 - link compiler option [C#]
 ms.assetid: 00da70c6-9ea1-43c2-86f2-aa7f26c03475
-ms.openlocfilehash: 5c5f3337d1c1ff2d58d3876ed0d4ede11d22b6bb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 049d1ce7a27a812b58fb09802e1ce520e96ed925
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593068"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586022"
 ---
 # <a name="-link-c-compiler-options"></a>-link (Options du compilateur C#)
 Fait que le compilateur rend disponible pour le projet en cours de compilation les informations de type COM des assemblys spécifiés.  
@@ -51,7 +51,7 @@ Fait que le compilateur rend disponible pour le projet en cours de compilation l
   
 - Un champ, une propriété, un événement ou une méthode qui a un type de retour ou un type de paramètre de l’Assembly B est appelé.  
   
- Comme l’option [-reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) du compilateur, l’option `-link` du compilateur utilise le fichier réponse Csc.rsp, qui référence les assemblys [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] fréquemment utilisés. Utilisez l’option [-noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) du compilateur si vous ne voulez pas que le compilateur utilise le fichier Csc.rsp.  
+ Comme l’option [-reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) du compilateur, l’option `-link` utilise le fichier réponse Csc.rsp, qui référence les assemblys .NET Framework fréquemment utilisés. Utilisez l’option [-noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) du compilateur si vous ne voulez pas que le compilateur utilise le fichier Csc.rsp.  
   
  La forme abrégée de `-link` est `-l`.  
   

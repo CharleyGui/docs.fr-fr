@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: c45be261-2a9d-4c4e-9bd6-27f0931b7d25
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 54a6a1cda604cb9cdeecd9587af81dbdb810965c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f461490529f626cfc442d817840b9c2e64df4c19
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592439"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65585900"
 ---
 # <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Procédure pas à pas : émission de code dans des scénarios de confiance partielle
 L’émission de réflexion utilise le même ensemble d’API en confiance totale ou partielle, mais certaines fonctionnalités nécessitent des autorisations spéciales dans le code avec confiance partielle. En outre, l’émission de réflexion a une fonctionnalité, des méthodes dynamiques hébergées anonymement, qui est conçue pour être utilisée avec une confiance partielle et par les assemblys transparents de sécurité.  
@@ -77,12 +77,12 @@ L’émission de réflexion utilise le même ensemble d’API en confiance total
      [!code-csharp[HowToEmitCodeInPartialTrust#5](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#5)]
      [!code-vb[HowToEmitCodeInPartialTrust#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#5)]  
   
-     Le dernier paramètre de la surcharge de la méthode <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> vous permet de spécifier un ensemble d’assemblys auxquels une confiance totale est accordée, à la place du jeu d’autorisations du domaine d’application. Il n’est pas nécessaire de spécifier les assemblys [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] utilisés par votre application, car ces assemblys sont dans le Global Assembly Cache. Les assemblys présents dans le Global Assembly Cache sont toujours totalement fiables. Vous pouvez utiliser ce paramètre pour spécifier des assemblys avec nom fort qui ne sont pas dans le Global Assembly Cache.  
+     Le dernier paramètre de la surcharge de la méthode <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType> vous permet de spécifier un ensemble d’assemblys auxquels une confiance totale est accordée, à la place du jeu d’autorisations du domaine d’application. Il n’est pas nécessaire de spécifier les assemblys .NET Framework utilisés par votre application, car ces assemblys se trouvent dans le Global Assembly Cache. Les assemblys présents dans le Global Assembly Cache sont toujours totalement fiables. Vous pouvez utiliser ce paramètre pour spécifier des assemblys avec nom fort qui ne sont pas dans le Global Assembly Cache.  
   
 ### <a name="adding-restrictedmemberaccess-to-sandboxed-domains"></a>Ajout de RestrictedMemberAccess à des domaines sandbox  
  Les applications hôtes peuvent autoriser les méthodes dynamiques hébergées anonymement à accéder aux données privées dans les assemblys qui ont des niveaux de confiance inférieurs ou égaux au niveau de confiance de l’assembly qui émet le code. Pour permettre cette possibilité limitée d’ignorer les contrôles de visibilité juste-à-temps (JIT), l’application hôte ajoute un objet <xref:System.Security.Permissions.ReflectionPermission> avec l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> (RMA) au jeu d’autorisations.  
   
- Par exemple, un hôte peut accorder des autorisations Internet plus RMA à des applications Internet, pour qu’une application Internet puisse émettre du code qui accède aux données privées dans ses propres assemblys. Étant donné que l’accès est limité aux assemblys d’une confiance inférieure ou égale, une application Internet ne peut pas accéder aux membres des assemblys totalement fiables, comme les assemblys [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)].  
+ Par exemple, un hôte peut accorder des autorisations Internet plus RMA à des applications Internet, pour qu’une application Internet puisse émettre du code qui accède aux données privées dans ses propres assemblys. Étant donné que l’accès est limité aux assemblys de confiance inférieure ou égale, une application Internet ne peut pas accéder aux membres des assemblys entièrement fiables, comme les assemblys .NET Framework.  
   
 > [!NOTE]
 >  Pour empêcher une élévation de privilèges, les informations de pile de l’assembly émetteur sont incluses lors de la construction des méthodes dynamiques hébergées anonymement. Quand la méthode est appelée, les informations de pile sont vérifiées. Par conséquent, une méthode dynamique hébergée anonymement qui est appelée à partir d’un code totalement fiable est toujours limitée au niveau de confiance de l’assembly émetteur.  
@@ -169,7 +169,7 @@ L’émission de réflexion utilise le même ensemble d’API en confiance total
      [!code-csharp[HowToEmitCodeInPartialTrust#16](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/cs/source.cs#16)]
      [!code-vb[HowToEmitCodeInPartialTrust#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEmitCodeInPartialTrust/vb/source.vb#16)]  
   
-     La restriction est que la méthode dynamique hébergée anonymement peut accéder aux données privées seulement dans les assemblys avec des niveaux de confiance inférieurs ou égaux à celui de l’assembly émetteur. Par exemple, si la méthode dynamique s’exécute avec une confiance Internet, elle peut accéder aux données privées d’autres assemblys qui s’exécutent aussi avec la confiance Internet, mais elle ne peut pas accéder aux données privées des assemblys [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)]. Les assemblys [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] sont installés dans le Global Assembly Cache et sont toujours totalement fiables.  
+     La restriction est que la méthode dynamique hébergée anonymement peut accéder aux données privées seulement dans les assemblys avec des niveaux de confiance inférieurs ou égaux à celui de l’assembly émetteur. Par exemple, si la méthode dynamique s’exécute avec une confiance Internet, elle peut accéder aux données privées d’autres assemblys qui s’exécutent aussi avec la confiance Internet, mais elle ne peut pas accéder aux données privées des assemblys .NET Framework. Les assemblys .NET Framework sont installés dans le Global Assembly Cache et sont toujours entièrement fiables.  
   
      Les méthodes dynamiques hébergées anonymement peuvent utiliser cette possibilité limitée d’ignorer les contrôles de visibilité JIT seulement si l’application hôte accorde <xref:System.Security.Permissions.ReflectionPermission> avec l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType>. La demande de cette autorisation est effectuée quand la méthode est appelée.  
   

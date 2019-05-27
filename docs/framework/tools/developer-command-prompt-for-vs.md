@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 94fcf524-9045-4993-bfb2-e2d8bad44219
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cc88106a54a00b4b12e5043da7961791a98102c0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 79cfc607e20d921c7ae942cb9755eee4264336eb
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59344362"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65877056"
 ---
 # <a name="developer-command-prompt-for-visual-studio"></a>Invite de commandes développeur pour Visual Studio
 
@@ -38,7 +38,7 @@ Vous pouvez avoir plusieurs invites de commandes, en fonction de la version de V
 
 ### <a name="in-windows-81"></a>Dans Windows 8.1
 
-1. Accédez à l’écran **Démarrer**, par exemple en appuyant sur la touche du logo Windows ![Logo Windows](../get-started/media/windowskeyboardlogo.png "Windowskeyboardlogo") de votre clavier.
+1. Accédez à l’écran **Démarrer** en appuyant sur la touche de logo Windows ![Touche de logo Windows de votre clavier.](./media/developer-command-prompt-for-vs/windows-logo-key-graphic.png) de votre clavier, par exemple.
 
 2. Dans l’écran **Démarrer**, appuyez sur **Ctrl**+**Tab** pour ouvrir la liste **Applications**, puis entrez `V`. Cela entraîne l’affichage d’une liste qui inclut toutes les invites de commandes Visual Studio installées.
 
@@ -46,9 +46,9 @@ Vous pouvez avoir plusieurs invites de commandes, en fonction de la version de V
 
 ### <a name="in-windows-8"></a>Dans Windows 8
 
-1. Accédez à l’écran **Démarrer**, par exemple en appuyant sur la touche du logo Windows ![Logo Windows](../get-started/media/windowskeyboardlogo.png "Windowskeyboardlogo") de votre clavier.
+1. Accédez à l’écran **Démarrer** en appuyant sur la touche de logo Windows ![Touche de logo Windows du clavier.](./media/developer-command-prompt-for-vs/windows-logo-key-graphic.png) de votre clavier, par exemple.
 
-2. Sur l’écran **Démarrer**, appuyez sur la touche du logo Windows ![Logo Windows](../get-started/media/windowskeyboardlogo.png "Windowskeyboardlogo") `+ Z`.
+2. Sur l’écran **Démarrer**, appuyez sur la touche de logo Windows ![Touche de logo Windows du clavier.](./media/developer-command-prompt-for-vs/windows-logo-key-graphic.png) `+ Z`.
 
 3. Choisissez l’icône **Vue Applications** en bas de l’écran, puis entrez `V`. Cela entraîne l’affichage d’une liste qui inclut toutes les invites de commandes Visual Studio installées.
 

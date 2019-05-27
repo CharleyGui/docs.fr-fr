@@ -8,21 +8,21 @@ dev_langs:
 ms.assetid: 88373fe2-4a6b-44f9-8a62-8a3e348e3a46
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 05812d7bdda33f6fa06a6aae7129d1dc73144e37
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: aadb478b507cdd5d2828a2d224fbca1dc32b21b3
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64751900"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586451"
 ---
 # <a name="xsltransform-class-implements-the-xslt-processor"></a>Implémentation du processeur XSLT par la classe XslTransform
 
 > [!NOTE]
 > La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans le [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]. Vous pouvez effectuer des transformations XSLT (Extensible Stylesheet Language Transformation) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Pour plus d'informations, consultez [Utilisation de la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) et [Migration depuis la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md).
 
-La classe <xref:System.Xml.Xsl.XslTransform> est un processeur XSLT qui implémente la recommandation XSL Transformations (XSLT) version 1.0. La méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> localise et lit des feuilles de style, et la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A> transforme le document source donné. Tout magasin implémentant l'interface <xref:System.Xml.XPath.IXPathNavigable> peut être utilisé comme document source pour l'objet <xref:System.Xml.Xsl.XslTransform>. Le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] implémente actuellement l'interface <xref:System.Xml.XPath.IXPathNavigable> sur les objets <xref:System.Xml.XmlDocument>, <xref:System.Xml.XmlDataDocument> et <xref:System.Xml.XPath.XPathDocument>, de sorte qu'ils peuvent être utilisés comme le document source d'entrée d'une transformation.
+La classe <xref:System.Xml.Xsl.XslTransform> est un processeur XSLT qui implémente la recommandation XSL Transformations (XSLT) version 1.0. La méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> localise et lit des feuilles de style, et la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A> transforme le document source donné. Tout magasin implémentant l'interface <xref:System.Xml.XPath.IXPathNavigable> peut être utilisé comme document source pour l'objet <xref:System.Xml.Xsl.XslTransform>. Le .NET Framework implémente actuellement l’interface <xref:System.Xml.XPath.IXPathNavigable> sur les éléments <xref:System.Xml.XmlDocument>, <xref:System.Xml.XmlDataDocument> et <xref:System.Xml.XPath.XPathDocument>, de sorte qu’ils peuvent tous être utilisés comme le document source d’entrée d’une transformation.
 
-L'objet <xref:System.Xml.Xsl.XslTransform> du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] prend uniquement en charge la spécification XSLT 1.0, définie par l'espace de noms suivant :
+L’objet <xref:System.Xml.Xsl.XslTransform> du .NET Framework prend uniquement en charge la spécification XSLT 1.0, définie par l’espace de noms suivant :
 
 ```xml
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
@@ -213,7 +213,7 @@ print_root.xsl
 
 ## <a name="migration-of-xslt-from-net-framework-version-10-to-net-framework-version-11"></a>Migration de XSLT depuis le .NET Framework version 1.0 vers le .NET Framework version 1.1
 
-Le tableau suivant illustre les méthodes obsolètes [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] version 1.0 et les nouvelles méthodes [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] version 1.1 pour la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A>. Les nouvelles méthodes vous permettent de limiter les autorisations de la feuille de style en spécifiant une preuve.
+Le tableau suivant montre les méthodes obsolètes de .NET Framework version 1.0 et les nouvelles méthodes de .NET Framework version 1.1 pour la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A>. Les nouvelles méthodes vous permettent de limiter les autorisations de la feuille de style en spécifiant une preuve.
 
 |Méthodes Load obsolètes du .NET Framework version 1.0|Méthodes Load de remplacement du .NET Framework version 1.1|
 |------------------------------------------------------|---------------------------------------------------------|
@@ -235,7 +235,7 @@ Le tableau suivant illustre les méthodes obsolètes et nouvelles pour la métho
 |Void Transform(entrée IXPathNavigable, argument XsltArgumentList, sortie Stream)|Void Transform(entrée IXPathNavigable, argument XsltArgumentList, sortie Stream, programme de résolution XmlResolver)|
 |Void Transform(entrée String, sortie String)|Void Transform(entrée String, sortie String, programme de résolution XmlResolver)|
 
-La propriété <xref:System.Xml.Xsl.XslTransform.XmlResolver%2A?displayProperty=nameWithType> est obsolète dans le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] version 1.1. Utilisez à la place les nouvelles surcharges <xref:System.Xml.Xsl.XslTransform.Transform%2A> qui acceptent un objet <xref:System.Xml.XmlResolver>.
+La propriété <xref:System.Xml.Xsl.XslTransform.XmlResolver%2A?displayProperty=nameWithType> est obsolète dans .NET Framework version 1.1. Utilisez à la place les nouvelles surcharges <xref:System.Xml.Xsl.XslTransform.Transform%2A> qui acceptent un objet <xref:System.Xml.XmlResolver>.
 
 ## <a name="see-also"></a>Voir aussi
 

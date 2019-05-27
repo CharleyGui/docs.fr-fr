@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: de2f0dce-6b98-4908-bba7-ed150cc50355
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3afbffcbbaa5e8398a9ab10c762e60305cfc164b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 11cf0b694d75836ad903edeafc79a55ec4612b45
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615231"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586465"
 ---
 # <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a>XsltArgumentList pour les paramètres de feuille de style et les objets d'extension
 La classe <xref:System.Xml.Xsl.XsltArgumentList> contient des paramètres XSLT (Extensible Stylesheet Language for Transformations) et des objets d'extension XSLT. Lorsqu’ils sont transmis à la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A>, ces paramètres et ces objets d’extension peuvent être appelés à partir des feuilles de style.  
@@ -36,7 +36,7 @@ La classe <xref:System.Xml.Xsl.XsltArgumentList> contient des paramètres XSLT (
 ## <a name="xslt-style-sheet-parameters"></a>Paramètres de feuille de style XSLT  
  Des paramètres XSLT sont ajoutés à l'objet <xref:System.Xml.Xsl.XsltArgumentList> en utilisant la méthode <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A>. Un nom qualifié et un URI d'espace de noms sont associés à l'objet paramètre à ce stade.  
   
- L’objet paramètre doit correspondre à un type World Wide Web Consortium (W3C). Le tableau suivant présente les types W3C correspondants, les classes [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] équivalentes (type) et indique si le type W3C est un type XML Path Language (XPath) ou XSLT.  
+ L’objet paramètre doit correspondre à un type World Wide Web Consortium (W3C). Le tableau suivant présente les types W3C correspondants, les classes .NET Framework équivalentes (type) et indique si le type W3C est un type XML Path Language (XPath) ou un type XSLT.  
   
 |Type W3C|Classe .NET Framework équivalente (type)|Type XPath ou type XSLT|  
 |--------------|----------------------------------------------|-----------------------------|  

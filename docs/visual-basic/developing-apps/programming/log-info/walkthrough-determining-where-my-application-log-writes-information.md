@@ -9,12 +9,12 @@ helpviewer_keywords:
 - application event logs, output location
 - applications [Visual Basic], output location
 ms.assetid: 5b70143a-7741-45f2-ae1d-03324a3a4189
-ms.openlocfilehash: 5115973e3d8e558199f9569baeea9e272c0528b0
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 895c49fb1fde56a1c9bf8b3a0ecf9de4f29f9972
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674106"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65591218"
 ---
 # <a name="walkthrough-determining-where-myapplicationlog-writes-information-visual-basic"></a>Procédure pas à pas : Détermination de l’emplacement des informations My.Application.Log (Visual Basic)
 
@@ -35,7 +35,7 @@ Pour plus d’informations sur les emplacements de sortie par défaut, consultez
 
     Si ces sections n’existent pas, le fichier de configuration de l’ordinateur peut configurer les écouteurs de journalisation de `My.Application.Log` . Les étapes suivantes décrivent comment déterminer ce que définit le fichier de configuration de l’ordinateur :
 
-    1. Recherchez le fichier machine.config de l’ordinateur. En règle générale, il se trouve dans le répertoire *SystemRoot\Microsoft.NET\Framework\frameworkVersion\CONFIG* , où `SystemRoot` est le répertoire du système d’exploitation et `frameworkVersion` est la version du [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)].
+    1. Recherchez le fichier machine.config de l’ordinateur. En général, il se trouve dans le répertoire *SystemRoot\Microsoft.NET\Framework\frameworkVersion\CONFIG*, où `SystemRoot` est le répertoire du système d’exploitation et `frameworkVersion` est la version du .NET Framework.
 
         Les paramètres de machine.config peuvent être remplacés par le fichier de configuration d’une application.
 

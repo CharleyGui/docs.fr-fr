@@ -4,12 +4,12 @@ ms.date: 04/08/2019
 helpviewer_keywords:
 - configuring HTTP [WCF]
 ms.assetid: b0c29a86-bc0c-41b3-bc1e-4eb5bb5714d4
-ms.openlocfilehash: 86705a4f8daa327c442ac6c53c9b44c5b5c5c2ad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4bfdbbc19bb9ed72bc50ebeeac114241ccd47c25
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857361"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053414"
 ---
 # <a name="configuring-http-and-https"></a>Configuration de HTTP et HTTPS
 
@@ -57,7 +57,7 @@ netsh http add iplisten ipaddress=0.0.0.0:8000
 
 Lors de l'utilisation de <xref:System.ServiceModel.WSDualHttpBinding>, la connexion cliente utilise des valeurs par défaut qui sont compatibles avec les réservations d'espace de noms et le pare-feu de Windows. Si vous choisissez de personnaliser l'adresse cliente de base d'une connexion double, vous devez également configurer ces paramètres HTTP sur le client pour qu'ils correspondent à la nouvelle adresse.
 
-L’API de serveur HTTP a certains paramètres de configuration avancée qui ne sont pas disponibles via HttpCfg. Ces paramètres sont maintenus dans le registre et s'appliquent à toutes les applications exécutées sur les systèmes utilisant les API de serveur HTTP. Pour plus d’informations sur ces paramètres, consultez [les paramètres de Registre Http.sys pour IIS](https://support.microsoft.com/en-us/help/820129/http-sys-registry-settings-for-windows). La plupart des utilisateurs n’avez pas besoin de modifier ces paramètres.
+L’API de serveur HTTP a certains paramètres de configuration avancée qui ne sont pas disponibles via HttpCfg. Ces paramètres sont maintenus dans le registre et s'appliquent à toutes les applications exécutées sur les systèmes utilisant les API de serveur HTTP. Pour plus d’informations sur ces paramètres, consultez [les paramètres de Registre Http.sys pour IIS](https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows). La plupart des utilisateurs n’avez pas besoin de modifier ces paramètres.
 
 ## <a name="see-also"></a>Voir aussi
 

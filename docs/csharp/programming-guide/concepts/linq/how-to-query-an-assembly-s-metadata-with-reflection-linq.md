@@ -2,12 +2,12 @@
 title: 'Procédure : interroger les métadonnées d’un assembly avec la réflexion (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: c4cdce49-b1c8-4420-b12a-9ff7e6671368
-ms.openlocfilehash: 849244f1345966dbe198686f4f9024fc321b6ded
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 1e8aa8652470240d63ac950d43e5b41e8b3ef1ca
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55263496"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65584416"
 ---
 # <a name="how-to-query-an-assemblys-metadata-with-reflection-linq-c"></a>Procédure : interroger les métadonnées d’un assembly avec la réflexion (LINQ) (C#)
 L’exemple suivant montre comment utiliser LINQ avec la réflexion pour récupérer des métadonnées spécifiques concernant des méthodes qui correspondent à un critère de recherche spécifié. Ici, la requête va rechercher les noms de toutes les méthodes dans l’assembly qui retournent des types énumérables tels que des tableaux.  
@@ -52,7 +52,7 @@ namespace LINQReflection
  L’exemple utilise la méthode <xref:System.Reflection.Assembly.GetTypes%2A> pour retourner un tableau de types de l’assembly spécifié. Le filtre [where](../../../../csharp/language-reference/keywords/where-clause.md) est appliqué pour que seuls des types publics soient retournés. Pour chaque type public, une sous-requête est générée en utilisant le tableau <xref:System.Reflection.MethodInfo> qui est retourné à partir de l’appel <xref:System.Type.GetMethods%2A>. Ces résultats sont filtrés pour retourner uniquement les méthodes dont le type de retour est un tableau ou un type qui implémente <xref:System.Collections.Generic.IEnumerable%601>. Pour finir, ces résultats sont regroupés en utilisant le nom de type comme clé.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Créez un projet qui cible le .NET Framework version 3.5 ou version ultérieure, avec une référence à System.Core.dll et des directives `using` pour les espaces de noms System.Linq et System.IO.  
+ Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.  
   
 ## <a name="see-also"></a>Voir aussi
 

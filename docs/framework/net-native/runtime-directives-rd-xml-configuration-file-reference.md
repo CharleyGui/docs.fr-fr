@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 8241523f-d8e1-4fb6-bf6a-b29bfe07b38a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ca8cf76745190bd9819dde522c34e57952cd1ca
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3c6f1a2d23d5f33ba7e4f0d51f795e75d7cf785e
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61906319"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052450"
 ---
 # <a name="runtime-directives-rdxml-configuration-file-reference"></a>Guide de référence du fichier de configuration des directives runtime (rd.xml)
 
@@ -405,7 +405,7 @@ L'application de la stratégie `Serialize` à un champ implique les modification
 
 #### <a name="the-effect-of-xmlserializer-datacontractserializer-and-datacontractjsonserializer-policies"></a>L’effet des stratégies XmlSerializer, DataContractSerializer et DataContractJsonSerializer
 
-Contrairement à la stratégie `Serialize`, qui est conçue pour les sérialiseurs basés sur la réflexion, les stratégies <xref:System.Xml.Serialization.XmlSerializer>, <xref:System.Runtime.Serialization.DataContractSerializer> et <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> sont utilisées pour activer un jeu de sérialiseurs connus de la chaîne d'outils [!INCLUDE[net_native](../../../includes/net-native-md.md)]. Ces sérialiseurs ne sont pas implémentés à l'aide de la réflexion, mais le jeu de types qui peuvent être sérialisés au moment de l'exécution est déterminé de la même manière que les types pouvant faire l'objet d'une réflexion.
+Contrairement à la `Serialize` stratégie, qui est conçu pour les sérialiseurs basés sur la réflexion, le <xref:System.Xml.Serialization.XmlSerializer>, <xref:System.Runtime.Serialization.DataContractSerializer>, et <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> stratégies sont utilisées pour activer un jeu de sérialiseurs connus pour la chaîne d’outils .NET Native. Ces sérialiseurs ne sont pas implémentés à l'aide de la réflexion, mais le jeu de types qui peuvent être sérialisés au moment de l'exécution est déterminé de la même manière que les types pouvant faire l'objet d'une réflexion.
 
 Appliquer une de ces stratégies à un type permet de sérialiser celui-ci avec le sérialiseur correspondant. En outre, tous les types que le moteur de sérialisation peut déterminer de manière statique comme nécessitant une sérialisation sont également sérialisables.
 

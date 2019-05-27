@@ -8,25 +8,25 @@ dev_langs:
 ms.assetid: 500335af-f9b5-413b-968a-e6d9a824478c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: db10dda3cbb328cd143afa48e300588ccc7667a6
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 3b765cc42f7e060ad11d0e8dcd9991a841cda8b3
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58463070"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65586480"
 ---
 # <a name="xslt-transformations-with-the-xsltransform-class"></a>Transformations XSLT avec la classe XslTransform
 
 > [!NOTE]
 > La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans le [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]. Vous pouvez effectuer des transformations XSLT (Extensible Stylesheet Language Transformation) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Pour plus d'informations, consultez [Utilisation de la classe XslCompiledTransform](using-the-xslcompiledtransform-class.md) et [Migration depuis la classe XslTransform](migrating-from-the-xsltransform-class.md).
 
-Le but des transformations XSLT est de transformer le contenu d’un document XML source en un autre document différent par son format ou sa structure (par exemple, transformer du code XML en HTML afin de l’utiliser sur un site web ou le transformer en un document contenant uniquement les champs requis par une application). Ce processus de transformation est spécifié par la [recommandation sur XSLT version 1.0](https://www.w3.org/TR/1999/REC-xslt-19991116) du World Wide Web Consortium (W3C). Dans le [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], la classe <xref:System.Xml.Xsl.XslTransform>, située dans l'espace de noms <xref:System.Xml.Xsl>, est le processeur XSLT qui implémente les fonctionnalités de cette spécification. Certaines fonctionnalités n’ayant pas été implémentées à partir de la recommandation du W3C sur XSLT 1.0 sont répertoriées dans [Sorties à partir de XslTransform](outputs-from-an-xsltransform.md). La figure suivante illustre l'architecture de transformation du [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)].
+Le but des transformations XSLT est de transformer le contenu d’un document XML source en un autre document différent par son format ou sa structure (par exemple, transformer du code XML en HTML afin de l’utiliser sur un site web ou le transformer en un document contenant uniquement les champs requis par une application). Ce processus de transformation est spécifié par la [recommandation sur XSLT version 1.0](https://www.w3.org/TR/1999/REC-xslt-19991116) du World Wide Web Consortium (W3C). Dans le .NET Framework, la classe <xref:System.Xml.Xsl.XslTransform>, située dans l’espace de noms <xref:System.Xml.Xsl>, est le processeur XSLT qui implémente les fonctionnalités de cette spécification. Certaines fonctionnalités n’ayant pas été implémentées à partir de la recommandation du W3C sur XSLT 1.0 sont répertoriées dans [Sorties à partir de XslTransform](outputs-from-an-xsltransform.md). La figure suivante illustre l’architecture de transformation du .NET Framework.
 
 ## <a name="overview"></a>Vue d'ensemble
 
 ![Diagramme qui montre l’architecture de transformation XSLT.](./media/xslt-transformations-with-the-xsltransform-class/xslt-transformation-architecture.gif) 
 
-La recommandation XSLT utilise XML Path Language (XPath) pour sélectionner des parties d'un document XML, où XPath est un langage de requête utilisé pour accéder aux nœuds d'une arborescence de document. Comme illustré dans le diagramme, l’implémentation [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] de XPath est utilisée pour sélectionner des parties de XML dans plusieurs classes, telles que <xref:System.Xml.XmlDocument>, <xref:System.Xml.XmlDataDocument> et <xref:System.Xml.XPath.XPathDocument>. Un objet <xref:System.Xml.XPath.XPathDocument> est un magasin de données XSLT optimisé qui fournit des transformations XSLT performantes lorsqu'il est utilisé avec l'objet <xref:System.Xml.Xsl.XslTransform>.
+La recommandation XSLT utilise XML Path Language (XPath) pour sélectionner des parties d'un document XML, où XPath est un langage de requête utilisé pour accéder aux nœuds d'une arborescence de document. Comme illustré dans le diagramme, l’implémentation du NET Framework de XPath est utilisée pour sélectionner des parties de XML dans plusieurs classes, comme <xref:System.Xml.XmlDocument>, <xref:System.Xml.XmlDataDocument> et <xref:System.Xml.XPath.XPathDocument>. Un objet <xref:System.Xml.XPath.XPathDocument> est un magasin de données XSLT optimisé qui fournit des transformations XSLT performantes lorsqu'il est utilisé avec l'objet <xref:System.Xml.Xsl.XslTransform>.
 
 Le tableau suivant répertorie les classes généralement utilisées lors de l’utilisation de l’objet <xref:System.Xml.Xsl.XslTransform> et de XPath et leur fonction.
 

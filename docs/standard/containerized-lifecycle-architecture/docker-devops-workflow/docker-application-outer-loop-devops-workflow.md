@@ -2,12 +2,12 @@
 title: Étapes du workflow DevOps de la boucle externe pour une application Docker
 description: Découvrez les étapes pour la boucle « externe » du flux de travail DevOps
 ms.date: 02/15/2019
-ms.openlocfilehash: 194786a90fc02801211c7614eb632392d67f0109
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: e7a82d2e5a5d503e5efbe9ac8242b163baab1286
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641055"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66195614"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Étapes du workflow DevOps de la boucle externe pour une application Docker
 
@@ -152,7 +152,7 @@ Regardons premièrement le scénario moins complexes : déploiement d’hôtes 
 
 **Figure 5-6**. Déploiement de conteneurs de l’application sur simple Registre d’environnements l’hôte Docker
 
-Figure 5-7 met en évidence la façon dont vous pouvez vous connecter votre élément de configuration de build aux environnements de test/AQ via des Services Azure DevOps en cliquant sur Docker Compose dans la boîte de dialogue Ajouter une tâche. Toutefois, lors du déploiement de l’environnement intermédiaire ou de production, généralement utilisez Gestion des environnements de plusieurs des fonctionnalités de Release Management (telles que questions et réponses, intermédiaire et production). Si vous effectuez un déploiement à des hôtes Docker uniques, il utilise les Services de DevOps Azure tâche « Docker Compose » (ce qui revient à appeler le `docker-compose up` commande sous le capot). Si vous déployez dans Azure Container Service, il utilise la tâche de déploiement de Docker, comme expliqué dans la section qui suit.
+Figure 5-7 met en évidence la façon dont vous pouvez vous connecter votre élément de configuration de build aux environnements de test/AQ via des Services Azure DevOps en cliquant sur Docker Compose dans la boîte de dialogue Ajouter une tâche. Toutefois, lors du déploiement de l’environnement intermédiaire ou de production, généralement utilisez Gestion des environnements de plusieurs des fonctionnalités de Release Management (telles que questions et réponses, intermédiaire et production). Si vous effectuez un déploiement à des hôtes Docker uniques, il utilise les Services de DevOps Azure tâche « Docker Compose » (ce qui revient à appeler le `docker-compose up` commande sous le capot). Si vous effectuez un déploiement vers Azure Kubernetes Service (AKS), il utilise la tâche de déploiement de Docker, comme expliqué dans la section qui suit.
 
 ![Vue du navigateur de l’ajout d’une tâche Docker Compose.](./media/image7.png)
 
@@ -186,15 +186,15 @@ Vous pouvez déployer des conteneurs manuellement à ces clusters à partir d’
 
 Au départ, lorsque vous déployez à certains clusters ou les orchestrateurs, vous traditionnellement utiliseriez mécanismes par chaque orchestrateur (autrement dit, Kubernetes et Service Fabric disposent de mécanismes de déploiement différents) et les scripts de déploiement spécifique au lieu de la plus simple et facile à utiliser `docker-compose` outil basé sur le `docker-compose.yml` fichier de définition. Toutefois, grâce à la tâche de déploiement du Docker Services Azure DevOps, illustrée à la Figure 5-10, vous maintenant également pourrez déployer sur les orchestrateurs pris en charge en utilisant simplement votre familier `docker-compose.yml` fichier étant donné que l’outil effectue cette « traduction » pour vous (à partir de votre `docker-compose.yml`fichier au format requis par l’orchestrateur).
 
-![Tâche de déploiement de vue du navigateur du catalogue de tâches dans Azure DevOps, montrant le Docker.](./media/image10.png)
+![Affichage du navigateur du catalogue des tâches dans Azure DevOps, montrant le déployer sur les tâches de Kubernetes.](./media/add-deploy-to-kubernetes-task.png)
 
-**Figure 5-10**. Ajout de la tâche de déploiement Docker à votre gestionnaire de ressources d’environnement
+**Figure 5-10**. Ajout de la déployer à la tâche de Kubernetes à votre environnement
 
-Figure 5-11 montre comment vous pouvez modifier la tâche de déploiement de Docker et spécifier le Type de cible (Azure Container Service DC/OS, dans ce cas), votre fichier Docker Compose et la connexion au Registre de Docker (comme Azure Container Registry ou Docker Hub). Il s’agit de la tâche qui récupérera vos images Docker personnalisées de prêts à l’emploi pour être déployé en tant que conteneurs dans le cluster.
+Figure 5-11 montre comment vous pouvez modifier le déployer sur les tâches de Kubernetes avec les sections disponibles pour la configuration. Il s’agit de la tâche qui récupérera vos images Docker personnalisées de prêts à l’emploi pour être déployé en tant que conteneurs dans le cluster.
 
-![Affichage du navigateur de Azure DevOps, déployer sur la définition de tâche orchestrator.](./media/image11.png)
+![Affichage du navigateur de Azure DevOps, déployez à la définition de tâche de Kubernetes.](./media/edit-deploy-to-kubernetes-task.png)
 
-**Figure 5-11**. Déploiement de docker déployer tâche définition du Service de conteneur DC/OS pour Azure
+**Figure 5-11**. Déploiement de docker déployer tâche définition vers ACS DC/OS
 
 > [! INFORMATIONS] pour en savoir plus sur le pipeline de CD avec Azure DevOps Services et Docker, visitez <https://azure.microsoft.com/services/devops/pipelines>
 

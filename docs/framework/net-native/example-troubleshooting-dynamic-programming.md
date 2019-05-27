@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 ms.assetid: 42ed860a-a022-4682-8b7f-7c9870784671
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: af71c4916a2abdeb019e538a33ad05efa727e720
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e482303e684813574a092f0a2d5812445ed7fa6e
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868782"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052617"
 ---
 # <a name="example-troubleshooting-dynamic-programming"></a>Exemple : Résolution des problèmes de programmation dynamique
 > [!NOTE]
 >  Cette rubrique fait référence à .NET Native Developer Preview, qui correspond à la version préliminaire du logiciel. Vous pouvez télécharger la préversion sur le [site web Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (inscription nécessaire).  
   
- Tous les échecs de recherche de métadonnées dans les applications développées à l'aide de la chaîne d'outils [!INCLUDE[net_native](../../../includes/net-native-md.md)] n'aboutissent pas à une exception.  Certains peuvent se manifester de manière imprévisible dans une application.  L'exemple suivant montre une violation d'accès provoquée par le référencement d'un objet null :  
+ Pas tous les échecs de recherche de métadonnées dans les applications développement à l’aide du résultat de chaîne outil .NET Native dans une exception.  Certains peuvent se manifester de manière imprévisible dans une application.  L'exemple suivant montre une violation d'accès provoquée par le référencement d'un objet null :  
   
 ```  
 Access violation - code c0000005 (first chance)  
@@ -52,7 +52,7 @@ AppViewModel.Current.LayoutVM.PageMap
   
  Dans ce cas, l'ajout d'une directive runtime pour `App.Core.ViewModels` a résolu le problème. Le problème était dû à un appel d’API en direction de la méthode <xref:System.Type.GetType%28System.String%29?displayProperty=nameWithType> ayant retourné **null**, et l’application a ignoré silencieusement le problème jusqu’à ce qu’un incident se produise.  
   
- Dans la programmation dynamique, une bonne pratique pendant l'utilisation d'API de réflexion sous [!INCLUDE[net_native](../../../includes/net-native-md.md)] consiste à utiliser les surcharges <xref:System.Type.GetType%2A?displayProperty=nameWithType> qui lèvent une exception en cas d'échec.  
+ Dans la programmation dynamique, une bonne pratique lors de l’utilisation des API sous .NET Native de réflexion consiste à utiliser le <xref:System.Type.GetType%2A?displayProperty=nameWithType> surcharges qui lèvent une exception en cas d’échec.  
   
 ## <a name="is-this-an-isolated-case"></a>S'agit-il d'un cas isolé ?  
  D'autres problèmes peuvent également survenir pendant l'utilisation d'`App.Core.ViewModels`.  Vous devez décider s'il est nécessaire d'identifier et de corriger chaque exception de métadonnées manquantes, ou d'économiser du temps et d'ajouter des directives pour une classe de types plus grande.  En l'occurrence, ajouter des métadonnées `dynamic` pour `App.Core.ViewModels` peut être la meilleure méthode si l'augmentation résultante de la taille du fichier binaire de sortie n'est pas un problème.  

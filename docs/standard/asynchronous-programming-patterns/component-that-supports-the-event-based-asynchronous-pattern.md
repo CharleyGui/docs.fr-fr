@@ -18,17 +18,17 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 61f676b5-936f-40f6-83ce-f22805ec9c2f
-ms.openlocfilehash: bc19ee687b26025d3da4d66888902395b863f046
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d6c35398d54b91c9aa595ffdcde56004e59b7693
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64628914"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882501"
 ---
 # <a name="how-to-implement-a-component-that-supports-the-event-based-asynchronous-pattern"></a>Procédure : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements
 Si vous écrivez une classe qui comporte certaines opérations pouvant entraîner d’importants ralentissements, pensez à lui affecter des fonctionnalités asynchrones en implémentant la [Vue d’ensemble du modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
   
- Cette procédure pas à pas montre comment créer un composant qui applique le modèle asynchrone basé sur les événements. Il est implémenté à l'aide de classes d'assistance provenant de l'espace de noms <xref:System.ComponentModel?displayProperty=nameWithType>, ce qui garantit son bon fonctionnement quel que soit le modèle d’application, y compris [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)], les applications Console et les applications Windows Forms. Vous pouvez également le concevoir avec un contrôle <xref:System.Windows.Forms.PropertyGrid> et vos propres concepteurs personnalisés.  
+ Cette procédure pas à pas montre comment créer un composant qui applique le modèle asynchrone basé sur les événements. Il est implémenté à l’aide de classes d’assistance provenant de l’espace de noms <xref:System.ComponentModel?displayProperty=nameWithType>, ce qui garantit son bon fonctionnement quel que soit le modèle d’application, notamment ASP.NET, les applications console et les applications Windows Forms. Vous pouvez également le concevoir avec un contrôle <xref:System.Windows.Forms.PropertyGrid> et vos propres concepteurs personnalisés.  
   
  À la fin, vous disposerez d’une application qui calcule les nombres premiers de manière asynchrone. Votre application aura un thread d’interface utilisateur (IU) principal et un thread pour chaque calcul de nombres premiers. Bien qu’il puisse être long de tester si un grand nombre est un nombre premier, le thread d’UI principal ne sera pas interrompu par ce ralentissement, et le formulaire restera réactif tout au long des calculs. Vous pourrez lancer autant de calculs que vous le souhaiterez simultanément, et annuler de manière sélective des calculs en attente.  
   

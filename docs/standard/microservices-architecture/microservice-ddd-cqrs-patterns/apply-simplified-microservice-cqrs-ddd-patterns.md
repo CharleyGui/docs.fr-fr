@@ -1,15 +1,13 @@
 ---
 title: Application de modèles CQRS et DDD simplifiés dans un microservice
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre la relation globale entre les modèles CQRS et DDD.
-author: CESARDELATORRE
-ms.author: wiwagn
 ms.date: 10/08/2018
-ms.openlocfilehash: ef3260143c91c2500becd7c8c1a6cd0b81dbf3d2
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 36bffce37176aed6c7d9daea7f2995952b58e895
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53148065"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959375"
 ---
 # <a name="apply-simplified-cqrs-and-ddd-patterns-in-a-microservice"></a>Appliquer des modèles CQRS et DDD simplifiés dans un microservice
 
@@ -21,7 +19,7 @@ CQRS est un modèle d’architecture qui sépare les modèles pour la lecture et
 
 CQS est un concept simple : il s’agit de méthodes du même objet qui sont soit des requêtes, soit des commandes. Chaque méthode retourne l’état ou transforme l’état, mais pas les deux. Même un seul objet de modèle de dépôt peut se conformer à CQS. L’approche CQS peut être considérée comme un principe fondamental de CQRS.
 
-L’approche [CQRS (séparation des responsabilités dans les commandes et les requêtes)](https://martinfowler.com/bliki/CQRS.html), introduite par Greg Young, a été vivement plébiscitée par Udi Dahan et d’autres. Elle est basée sur le principe CQS, même si elle est plus détaillée. Elle peut être considérée comme un modèle basé sur les commandes et les événements, et éventuellement sur les messages asynchrones. Dans de nombreux cas, CQRS est lié à des scénarios plus avancés, comme disposer d’une base de données physique différente pour les lectures (requêtes) et pour les écritures (mises à jour). De plus, un système CQRS plus évolué peut implémenter la fonctionnalité d’[Event Sourcing ](http://codebetter.com/gregyoung/2010/02/20/why-use-event-sourcing/) (approvisionnement d’événements) pour votre base de données de mises à jour, de sorte que vous ne stockez que les événements du modèle de domaine au lieu de stocker les données d’état actuel. Toutefois, ce n’est pas l’approche utilisée dans ce guide. Nous utilisons l’approche CQRS la plus simple, qui consiste uniquement à séparer les requêtes des commandes.
+L’approche [CQRS (séparation des responsabilités dans les commandes et les requêtes)](https://martinfowler.com/bliki/CQRS.html), introduite par Greg Young, a été vivement plébiscitée par Udi Dahan et d’autres. Elle est basée sur le principe CQS, même si elle est plus détaillée. Elle peut être considérée comme un modèle basé sur les commandes et les événements, et éventuellement sur les messages asynchrones. Dans de nombreux cas, CQRS est lié à des scénarios plus avancés, comme disposer d’une base de données physique différente pour les lectures (requêtes) et pour les écritures (mises à jour). De plus, un système CQRS plus évolué peut implémenter la fonctionnalité d’[Event Sourcing ](https://martinfowler.com/eaaDev/EventSourcing.html) (approvisionnement d’événements) pour votre base de données de mises à jour, de sorte que vous ne stockez que les événements du modèle de domaine au lieu de stocker les données d’état actuel. Toutefois, ce n’est pas l’approche utilisée dans ce guide. Nous utilisons l’approche CQRS la plus simple, qui consiste uniquement à séparer les requêtes des commandes.
 
 L’aspect de séparation de CQRS est obtenu en regroupant les opérations de requête dans une couche et les commandes dans une autre couche. Chaque couche a son propre modèle de données (notez que nous disons « modèle », pas nécessairement une base de données différente) et est construite à l’aide de sa propre combinaison de modèles et de technologies. Plus important encore, les deux couches peuvent se trouver dans le même niveau ou microservice, comme dans l’exemple (microservice de commandes) utilisé dans ce guide. Elles peuvent également être implémentées sur des microservices ou processus différents afin de pouvoir être optimisées et adaptées séparément sans s’affecter mutuellement.
 
@@ -34,6 +32,11 @@ Il peut s’agir, par exemple, du microservice de commandes de l’application d
 **Figure 7-2**. Microservice basé sur les modèles CQRS et DDD simplifiés
 
 La couche Application peut être l’API web elle-même. Ici, l’aspect important de la conception est que le microservice a séparé les requêtes et les ViewModels (modèles de données spécialement créés pour les applications clientes) des commandes, du modèle de domaine et des transactions suivant le modèle CQRS. Avec cette approche, les requêtes restent indépendantes des restrictions et des contraintes provenant de modèles DDD qui conviennent uniquement pour les transactions et les mises à jour, comme expliqué dans des sections ultérieures.
+
+## <a name="additional-resources"></a>Ressources supplémentaires
+
+- **Greg Young. La gestion de versions dans un système provisionné par des événements** (lecture en ligne de du livre électronique gratuite) \
+   <https://leanpub.com/esversioning/read>
 
 >[!div class="step-by-step"]
 >[Précédent](index.md)

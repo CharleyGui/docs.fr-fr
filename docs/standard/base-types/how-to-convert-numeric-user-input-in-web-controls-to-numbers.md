@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f27ddfb8-7479-4b79-8879-02a3bd8402d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 29141cb43d914dd3781e9307b6a553361152a645
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5af942b5e7576c13ff7be8d11c0009fd0c4f7462
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634172"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882467"
 ---
 # <a name="how-to-convert-numeric-user-input-in-web-controls-to-numbers"></a>Procédure : convertir des entrées d’utilisateur numériques figurant dans des contrôles web en nombres
 Étant donné qu’une page web peut être affichée n’importe où dans le monde, les utilisateurs peuvent entrer des données numériques dans un contrôle <xref:System.Web.UI.WebControls.TextBox> dans un nombre de formats pratiquement illimité. Il est par conséquent très important de déterminer les paramètres régionaux et la culture de l’utilisateur d’une page web. Après avoir analysé une entrée d’utilisateur, vous pouvez appliquer les conventions de mise en forme définies par les paramètres régionaux et la culture de l’utilisateur.  
@@ -58,7 +58,7 @@ ms.locfileid: "64634172"
  Votre code peut appeler la méthode `Parse` ou `TryParse` du type numérique dans lequel sera convertie l’entrée de l’utilisateur. Des appels répétés à une méthode d’analyse peuvent être nécessaires pour une opération d’analyse unique. Par conséquent, la méthode `TryParse` est préférable, car elle retourne `false` si une opération d’analyse échoue. En revanche, la gestion d’exceptions répétées générées par la méthode `Parse` peut se révéler très coûteuse dans une application Web.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Pour compiler le code, copiez-le dans une page code-behind [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] afin qu’il remplace tout le code existant. La page web [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] doit contenir les contrôles suivants :  
+ Pour compiler le code, copiez-le dans une page code-behind ASP.NET afin qu’il remplace tout le code existant. La page web ASP.NET doit contenir les contrôles suivants :  
   
 - Un contrôle <xref:System.Web.UI.WebControls.Label>, qui n’est pas référencé dans le code. Définissez sa propriété <xref:System.Web.UI.WebControls.TextBox.Text%2A> sur « Entrez un nombre : ».  
   
@@ -66,7 +66,7 @@ ms.locfileid: "64634172"
   
 - un contrôle <xref:System.Web.UI.WebControls.Button> nommé `OKButton` ; Définissez sa propriété <xref:System.Web.UI.WebControls.Button.Text%2A> sur « OK ».  
   
- Remplacez le nom de la classe `NumericUserInput` par le nom de la classe définie par l’attribut `Inherits` de la directive `Page` de la page [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)]. Remplacez le nom de la référence d’objet `NumericInput` par le nom défini par l’attribut `id` de la balise `form` de la page [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)].  
+ Remplacez le nom de la classe `NumericUserInput` par le nom de la classe définie par l’attribut `Inherits` de la directive `Page` de la page ASP.NET. Remplacez le nom de la référence d’objet `NumericInput` par le nom défini par l’attribut `id` de la balise `form` de la page ASP.NET.  
   
 ## <a name="net-framework-security"></a>Sécurité .NET Framework  
  Pour empêcher un utilisateur d’injecter un script dans le flux de données HTML, l’entrée de l’utilisateur ne doit jamais être renvoyée directement dans la réponse du serveur. Elle doit être encodée à l’aide de la méthode <xref:System.Web.HttpServerUtility.HtmlEncode%2A?displayProperty=nameWithType>.  

@@ -882,23 +882,23 @@ f1_keywords:
 helpviewer_keywords:
 - errors [C#], additional information
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
-ms.openlocfilehash: 5b6cf68ea2e08c63abd5c093d9ffc6ed24131cd9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 168e72e3f9f09c1f13e9d34cc1048f1dfacc2592
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61684053"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052762"
 ---
 # <a name="sorry-we-dont-have-specifics-on-this-c-error"></a>Désolé, nous n'avons pas d'informations sur cette erreur C#
 Nous sommes désolés, mais nous n'avons pas d'informations spécifiques sur cette erreur. Pour plus d'informations, vous pouvez rechercher le numéro d'erreur et le texte du message sur le web. Ou vous pouvez demander d’autres développeurs à l’aide d’un des forums suivants :  
   
- [v](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharplanguage)  
+ [v](https://social.msdn.microsoft.com/Forums/home?forum=csharplanguage)  
  Propose un forum de questions et de discussions générales de l’élément visuel C# syntaxe du langage et du compilateur.  
   
- [IDE Visual C#](https://social.msdn.microsoft.com/Forums/en-US/home?forum=csharpide)  
+ [IDE Visual C#](https://social.msdn.microsoft.com/Forums/home?forum=csharpide)  
  Propose un forum de questions sur la façon de travailler dans l’environnement Visual Studio.  
   
- [Généralités Visual C#](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=csharpgeneral)  
+ [Généralités Visual C#](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=csharpgeneral)  
  Propose un forum de questions et problèmes relatifs à Visual C# qui ne sont pas abordées dans d’autres forums.  
   
  [Dépassement de capacité de la pile](https://stackoverflow.com/questions/tagged/c%23)  

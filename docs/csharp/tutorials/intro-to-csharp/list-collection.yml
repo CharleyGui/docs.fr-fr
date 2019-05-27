@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 0de2cc0434087797b9411075a98cc11dd598ed81
-  ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+  ms.openlocfilehash: 8ee13ec60f0504982c33ecc61940b731d320d2de
+  ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 01/04/2019
-  ms.locfileid: "54029487"
+  ms.lasthandoff: 05/19/2019
+  ms.locfileid: "65880562"
 items:
 - durationInMinutes: 1
   content: >
@@ -38,7 +38,7 @@ items:
     ```
 
 
-    Vous venez de créer une liste de chaînes, d’ajouter trois noms à cette liste et d’afficher les noms tout en majuscules. Vous utilisez des concepts que vous avez appris dans les tutoriels précédents pour lire la liste en boucle.
+    Vous avez créé une liste de chaînes, ajouté trois noms à cette liste et affiché les noms en majuscules. Vous utilisez des concepts que vous avez appris dans les tutoriels précédents pour lire la liste en boucle.
 
 
     Le code permettant d’afficher les noms utilise la fonctionnalité [d’interpolation de chaîne](../../language-reference/tokens/interpolated.md). Quand vous faites précéder une `string` du caractère `$`, vous pouvez incorporer le code C# dans la déclaration de chaîne. La chaîne réelle remplace ce code C# par la valeur qu’elle génère. Dans cet exemple, elle remplace `{name.ToUpper()}` par chaque nom, converti en majuscules, car vous avez appelé la méthode <xref:System.String.ToUpper%2A?displayProperty=nameWithType>.
@@ -56,7 +56,7 @@ items:
     La collection que vous avez créée utilise le type <xref:System.Collections.Generic.List%601>. Ce type stocke les séquences d’éléments. Vous spécifiez le type des éléments entre crochets angulaires.
 
 
-    Un aspect important du type <xref:System.Collections.Generic.List%601> est qu’il peut augmenter ou diminuer, ce qui vous permet d’ajouter ou de supprimer des éléments. Ajoutez le code suivant sous le code que vous avez déjà écrit :
+    Un aspect important du type <xref:System.Collections.Generic.List%601> est qu’il peut augmenter ou diminuer, ce qui vous permet d’ajouter ou de supprimer des éléments. Vous pouvez afficher les résultats en modifiant le contenu une fois que vous l’avez affiché. Ajoutez le code suivant sous le code que vous avez déjà écrit (sous la boucle qui imprime le contenu) :
 
 
     ```csharp
@@ -78,7 +78,7 @@ items:
     ```
 
 
-    Vous avez ajouté deux noms supplémentaires à la fin de la liste. Vous en avez également supprimé un.
+    Vous avez ajouté deux noms supplémentaires à la fin de la liste. Vous en avez également supprimé un. La sortie de ce bloc de code montre le contenu initial, puis imprime une ligne vide et le nouveau contenu.
 
 
     La <xref:System.Collections.Generic.List%601> vous permet en outre de faire référence à des éléments individuels par **index**. Vous accédez aux éléments à l’aide des jetons `[` et `]`. Ajoutez le code suivant sous ce que vous avez déjà écrit et effectuez un essai :
@@ -112,7 +112,7 @@ items:
 - title: Trier les listes et y effectuer des recherches
   durationInMinutes: 5
   content: >
-    Nos exemples utilisent des listes relativement petites, mais vos applications peuvent souvent générer des listes contenant beaucoup plus d’éléments, qui se comptent parfois même en milliers. Pour rechercher des éléments dans ces collections plus volumineuses, vous devez rechercher différents éléments dans la liste. La méthode <xref:System.Collections.Generic.List%601.IndexOf%2A> recherche un élément et retourne l’index de ce dernier. Effectuez un essai pour observer son fonctionnement.  Ajoutez le code suivant sous ce que vous avez écrit jusque-là :
+    Nos exemples utilisent des listes relativement petites, mais vos applications peuvent souvent générer des listes contenant beaucoup plus d’éléments, qui se comptent parfois même en milliers. Pour rechercher des éléments dans ces collections plus volumineuses, vous devez rechercher différents éléments dans la liste. La méthode <xref:System.Collections.Generic.List%601.IndexOf%2A> recherche un élément et retourne l’index de ce dernier. Essayez-la pour observer son fonctionnement.  Ajoutez le code suivant sous ce que vous avez écrit jusque-là :
 
 
     ```csharp
@@ -152,7 +152,7 @@ items:
 - title: Listes d’autres types
   durationInMinutes: 5
   content: >
-    Vous avez jusqu'à présent utilisé le type `string` dans les listes. Nous allons maintenant créer une <xref:System.Collections.Generic.List%601> en utilisant un autre type. Commençons par créer un ensemble de nombres. Supprimez le code que vous avez écrit jusque-là et remplacez-le par celui-ci :
+    Vous avez jusqu'à présent utilisé le type `string` dans les listes. Nous allons maintenant créer une <xref:System.Collections.Generic.List%601> en utilisant un autre type. Commençons par créer un ensemble de nombres. Supprimez le code que vous avez écrit jusqu’à présent et remplacez-le par le code suivant :
 
 
     ```csharp
@@ -162,7 +162,7 @@ items:
     ```
 
 
-    Cela crée une liste d’entiers et définit les deux premiers entiers sur la valeur 1. Il s’agit des deux premières valeurs d’une *séquence Fibonacci* (séquence de nombres). Chaque nombre Fibonacci suivant correspond à la somme des deux nombres précédents. Ajoutez le code suivant :
+    Cela crée une liste d’entiers et définit les deux premiers entiers sur la valeur 1. La *séquence Fibonacci*, une séquence de nombres, commence par deux 1. Chaque nombre Fibonacci suivant correspond à la somme des deux nombres précédents. Ajoutez le code suivant :
 
 
     ```csharp
@@ -230,7 +230,7 @@ items:
     Vous avez terminé le tutoriel interactif sur les listes, qui terminait l’introduction du tutoriel interactif sur C#. Vous pouvez consulter le [site .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) pour télécharger le kit SDK .NET Core, créer un projet sur votre ordinateur et continuer à coder. L’étape « Continuer à apprendre » vous ramène à ces tutoriels pour créer des projets sur votre ordinateur.
 
 
-    Pour plus d’informations sur les [Collections .NET](../../../standard/collections/index.md), voir les rubriques suivantes :
+    Pour plus d’informations sur les [collections .NET](../../../standard/collections/index.md), consultez les articles suivants :
 
     - [Sélectionner un type de collection](../../../standard/collections/selecting-a-collection-class.md)
 

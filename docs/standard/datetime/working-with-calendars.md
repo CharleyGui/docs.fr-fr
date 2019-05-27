@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0c1534e5-979b-4c8a-a588-1c24301aefb3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a0113ef84c2b3e42f6d14d25747f7fdbb836a212
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ed276d8026201af94a0259c4258d5c50fa67c0f3
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026482"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053239"
 ---
 # <a name="working-with-calendars"></a>Utilisation des calendriers
 
@@ -141,7 +141,7 @@ Les calendriers divisent en général les dates en ères. Toutefois, le <xref:Sy
 >  L’ère Reiwa, une nouvelle ère dans la <xref:System.Globalization.JapaneseCalendar> et <xref:System.Globalization.JapaneseLunisolarCalendar>, commence le 1 mai 2019. Ce changement affecte toutes les applications qui utilisent ces calendriers. Consultez les articles suivants pour plus d’informations :
 > - [Gestion d’une nouvelle ère dans le calendrier japonais dans .NET](https://devblogs.microsoft.com/dotnet/handling-a-new-era-in-the-japanese-calendar-in-net/), qui documente les fonctionnalités ajoutées à .NET pour prendre en charge plusieurs ères de calendriers et traite des meilleures pratiques à utiliser lors de la gestion des calendriers d’ère multi.
 > - [Préparer votre application pour la modification de l’ère japonais](/windows/uwp/design/globalizing/japanese-era-change), qui fournit des informations sur le test de vos applications sur Windows pour garantir leur disponibilité pour la modification de l’ère.
-> - [Résumé de la nouvelle ère japonais met à jour pour .NET Framework](https://support.microsoft.com/en-us/help/4477957/new-japanese-era-updates-for-net-framework), qui répertorie les mises à jour de .NET Framework pour les différentes versions de Windows qui sont liées à la nouvelle ère de calendrier japonais, note des nouvelles fonctionnalités de .NET Framework pour la prise en charge de l’ère multi et inclut éléments à rechercher dans le test de vos applications.
+> - [Résumé de la nouvelle ère japonais met à jour pour .NET Framework](https://support.microsoft.com/help/4477957/new-japanese-era-updates-for-net-framework), qui répertorie les mises à jour de .NET Framework pour les différentes versions de Windows qui sont liées à la nouvelle ère de calendrier japonais, note des nouvelles fonctionnalités de .NET Framework pour la prise en charge de l’ère multi et inclut éléments à rechercher dans le test de vos applications.
 
 Une ère dans la plupart des calendriers désigne une période de temps extrêmement long. Dans le calendrier grégorien, par exemple, l’ère actuelle s’étend sur plus de mille ans de deux. Pour le <xref:System.Globalization.JapaneseCalendar> et <xref:System.Globalization.JapaneseLunisolarCalendar>, les deux calendriers qui prennent en charge plusieurs ères, cela n’est pas le cas. Une ère correspond à la période d’un calendrier d’impérial. Prise en charge de plusieurs ères, en particulier lorsque la limite supérieure de l’ère actuelle est inconnue, pose des défis particuliers. 
 

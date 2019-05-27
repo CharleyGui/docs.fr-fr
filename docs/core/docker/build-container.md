@@ -4,12 +4,12 @@ description: Ce tutoriel explique comment conteneuriser une application .NET Cor
 ms.date: 04/10/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: a96f96bd91976b0966fb7e8d0c8fb6fb7842cfe3
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 2ea9e9bc2614e62fe6ec0d59e39d42c2e32a80a1
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65631868"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66051813"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Tutoriel : Conteneuriser une application .NET Core
 
@@ -410,6 +410,6 @@ Utilisez la commande `docker images` pour afficher la liste des images installé
 ## <a name="next-steps"></a>Étapes suivantes
 
 * [Essayez le tutoriel sur le microservice ASP.NET Core.](https://dotnet.microsoft.com/learn/web/aspnet-microservice-tutorial/intro)
-* [Passez en revue les services Azure qui prennent en charge des conteneurs.](https://azure.microsoft.com/en-us/overview/containers/)
+* [Passez en revue les services Azure qui prennent en charge des conteneurs.](https://azure.microsoft.com/overview/containers/)
 * [En savoir plus sur les commandes Dockerfile.](https://docs.docker.com/engine/reference/builder/)
 * [Explorez les outils de conteneur pour Visual Studio](/visualstudio/containers/overview)

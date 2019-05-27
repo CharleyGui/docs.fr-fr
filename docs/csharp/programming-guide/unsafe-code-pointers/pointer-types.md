@@ -5,12 +5,12 @@ ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: 028497bbeae26ded126ba4d7ce459a6a85e0bcb5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7f04cfbac72008332a429c4e0ad8bd3f4e60cc83
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54724042"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65880327"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Types pointeur (Guide de programmation C#)
 
@@ -75,28 +75,26 @@ Le tableau suivant répertorie les opérateurs et les instructions qui peuvent f
 
 |Opérateur/Instruction|Utilisez|
 |-------------------------|---------|
-|*|Exécute l'indirection de pointeur.|
-|->|Accède à un membre d'un struct via un pointeur.|
-|[]|Indexe un pointeur.|
+|`*`|Exécute l'indirection de pointeur.|
+|`->`|Accède à un membre d'un struct via un pointeur.|
+|`[]`|Indexe un pointeur.|
 |`&`|Obtient l'adresse d'une variable.|
-|++ et --|Incrémente et décrémente les pointeurs.|
-|+ et -|Exécute des opérations arithmétiques sur les pointeurs.|
-|==, !=, \<, >, \<= et >=|Compare des pointeurs.|
-|`stackalloc`|Alloue de la mémoire sur la pile.|
-|Instruction `fixed`|Résout temporairement une variable afin de pouvoir rechercher son adresse.|
+|`++` et `--`|Incrémente et décrémente les pointeurs.|
+|`+` et `-`|Exécute des opérations arithmétiques sur les pointeurs.|
+|`==`, `!=`, `<`, `>`, `<=` et `>=`|Compare des pointeurs.|
+|[`stackalloc`, opérateur](../../language-reference/keywords/stackalloc.md)|Alloue de la mémoire sur la pile.|
+|[instruction `fixed`](../../language-reference/keywords/fixed-statement.md)|Résout temporairement une variable afin de pouvoir rechercher son adresse.|
 
-## <a name="c-language-specification"></a>Spécification du langage C#
+Pour plus d’informations sur les opérateurs associés au pointeur, consultez [Opérateurs associés au pointeur](../../language-reference/operators/pointer-related-operators.md).
 
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+## <a name="c-language-specification"></a>spécification du langage C#
+
+Pour plus d’informations, consultez la section [Types de pointeur](~/_csharplang/spec/unsafe-code.md#pointer-types) de la [Spécification du langage C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
 - [Pointeurs et code unsafe](index.md)
 - [Conversions de pointeurs](pointer-conversions.md)
-- [Expressions de pointeur](pointer-expressions.md)
 - [Types](../../language-reference/keywords/types.md)
 - [unsafe](../../language-reference/keywords/unsafe.md)
-- [fixed, instruction](../../language-reference/keywords/fixed-statement.md)
-- [stackalloc](../../language-reference/keywords/stackalloc.md)
-- [Conversion boxing et unboxing](../types/boxing-and-unboxing.md)

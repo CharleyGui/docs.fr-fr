@@ -3,16 +3,14 @@ title: Présentation des délégués
 description: Explorez les délégués dans cette rubrique de vue d’ensemble qui présente les concepts de base et décrit les objectifs de conception de langage pour les délégués.
 ms.date: 06/20/2016
 ms.assetid: 59b61d77-84e5-457b-8da5-fb5f24ca6ed6
-ms.openlocfilehash: d42d9d10aeaa153f12933fa3a59e58719f7741e7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 43cdf9345f0bae9d5c4d0e6a31d80bc269c37fec
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33212185"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65879029"
 ---
 # <a name="introduction-to-delegates"></a>Présentation des délégués
-
-[Précédent](delegates-events.md)
 
 Les délégués fournissent un mécanisme de *liaison tardive* dans .NET. La liaison tardive signifie que vous créez un algorithme où l’appelant fournit également au moins une méthode qui implémente une partie de l’algorithme.
 
@@ -32,7 +30,7 @@ Les concepteurs de langage ont énuméré plusieurs objectifs pour la fonctionna
 
 L’équipe souhaitait une construction de langage commune pouvant être utilisée pour tout algorithme à liaison tardive. Cela permet aux développeurs d’apprendre un concept et d’utiliser ce même concept pour résoudre de nombreux problèmes logiciels différents.
 
-Ensuite, l’équipe souhaitait prendre en charge les appels de méthodes uniques et multicasts. (Les délégués multicast sont des délégués où plusieurs méthodes sont chaînées.) Vous verrez des exemples [plus loin dans cette série](delegate-class.md). 
+Ensuite, l’équipe souhaitait prendre en charge les appels de méthodes uniques et multicasts (les délégués multicasts sont des délégués qui chaînent plusieurs appels de méthode. Vous en verrez des exemples [plus loin dans cette série](delegate-class.md)). 
 
 L’équipe souhaitait que les délégués prennent en charge la même sécurité de type que celle attendue par les développeurs pour toutes les constructions C#. 
 

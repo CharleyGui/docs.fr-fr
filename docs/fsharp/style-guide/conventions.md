@@ -1,15 +1,15 @@
 ---
-title: F#conventions de codage
+title: Conventions de codage F#
 description: Découvrez des instructions générales et des idiomes lors de l’écriture F# code.
 ms.date: 05/14/2018
-ms.openlocfilehash: 1ef016184180eb8d233295e8985903e07693ad26
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4b292d0a844a4d9efc79aa865b054b4af2cb68c4
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61902133"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052796"
 ---
-# <a name="f-coding-conventions"></a>F#conventions de codage
+# <a name="f-coding-conventions"></a>Conventions de codage F#
 
 Les conventions suivantes sont formulées à partir de l’expérience d’utilisation avec de grandes F# codes base. Le [cinq principes bonne F# code](index.md#five-principles-of-good-f-code) constituent la base de chaque recommandation. Elles sont liées à la [ F# les instructions de conception de composant](component-design-guidelines.md), mais sont applicables pour toute F# de code, pas seulement les composants telles que les bibliothèques.
 
@@ -611,7 +611,7 @@ Car il n’est pas nécessaire pour une classe lors de l’interaction avec l’
 
 ## <a name="type-abbreviations"></a>Abréviations de types
 
-[Abréviations de types](../language-reference/type-abbreviations.md) sont un moyen pratique d’attribuer une étiquette à un autre type, par exemple une signature de fonction ou un type plus complexe. Par exemple, l’alias suivant attribue une étiquette pour ce qui est nécessaire pour définir un calcul avec [CNTK](https://www.microsoft.com/en-us/cognitive-toolkit/), une bibliothèque d’apprentissage approfondi :
+[Abréviations de types](../language-reference/type-abbreviations.md) sont un moyen pratique d’attribuer une étiquette à un autre type, par exemple une signature de fonction ou un type plus complexe. Par exemple, l’alias suivant attribue une étiquette pour ce qui est nécessaire pour définir un calcul avec [CNTK](https://docs.microsoft.com/cognitive-toolkit/), une bibliothèque d’apprentissage approfondi :
 
 ```fsharp
 open CNTK

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 34f0002554320f99d961d03e9eebd8d0f774f1f6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5ef6b73d683d43b2a33628db13fa592c7f02199a
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591511"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65585988"
 ---
 # <a name="security-considerations-for-reflection"></a>Considérations sur la sécurité de la réflexion
 La réflexion permet d'obtenir des informations sur les types et les membres, et d'accéder aux membres (c'est-à-dire appeler des méthodes et des constructeurs, obtenir et définir des valeurs de propriétés, ajouter et supprimer des gestionnaires d'événements, etc.). L'utilisation de la réflexion pour obtenir des informations sur les types et les membres n'est pas limitée. Tout code peut utiliser la réflexion pour effectuer les tâches suivantes :  
@@ -88,7 +88,7 @@ La réflexion permet d'obtenir des informations sur les types et les membres, et
   
 - L'assembly A peut utiliser la réflexion pour accéder aux membres privés de l'assembly B, car le jeu d'autorisations de l'assembly B n'inclut pas d'autorisations qui n'ont pas été accordées à A.  
   
-- L’assembly A ne peut pas utiliser la réflexion pour accéder aux membres privés des assemblys du [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], comme mscorlib.dll, car mscorlib.dll est d’un niveau de confiance total et dispose donc d’autorisations qui n’ont pas été accordées à l’assembly A. Une exception <xref:System.MemberAccessException> est levée quand la sécurité d’accès du code parcourt la pile au moment de l’exécution.  
+- L’assembly A ne peut pas utiliser la réflexion pour accéder aux membres privés des assemblys du .NET Framework, comme mscorlib.dll, car mscorlib.dll est d’un niveau de confiance total et dispose donc d’autorisations qui n’ont pas été accordées à l’assembly A. Une exception <xref:System.MemberAccessException> est levée quand la sécurité d’accès du code parcourt la pile au moment de l’exécution.  
   
 ## <a name="serialization"></a>Sérialisation  
  Pour la sérialisation, l'autorisation <xref:System.Security.Permissions.SecurityPermission> avec l'indicateur <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A?displayProperty=nameWithType> permet d'obtenir et de définir des membres des types sérialisables, indépendamment de l'accessibilité. Cette autorisation permet au code de découvrir et de changer l'état privé d'une instance. (En plus de disposer des autorisations appropriées, le type doit être [marqué](../../../docs/standard/attributes/applying-attributes.md) comme étant sérialisable dans les métadonnées.)  
@@ -100,7 +100,7 @@ La réflexion permet d'obtenir des informations sur les types et les membres, et
   
 - Depuis le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], le code transparent ne peut pas utiliser la réflexion pour accéder aux membres critiques de sécurité.  
   
-- L'indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> a été introduit dans le [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)]. Les versions antérieures du [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] exigent l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> pour le code qui utilise la réflexion pour accéder aux membres non publics. Il s'agit d'une autorisation qui ne doit jamais être accordée à du code d'un niveau de confiance partiel.  
+- L'indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> a été introduit dans le [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)]. Les versions antérieures du .NET Framework exigent l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> pour le code qui utilise la réflexion pour accéder aux membres non publics. Il s'agit d'une autorisation qui ne doit jamais être accordée à du code d'un niveau de confiance partiel.  
   
 - Depuis le [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)], l'utilisation de la réflexion pour obtenir des informations sur les types et les membres non publics ne nécessite aucune autorisation. Dans les versions antérieures, l’autorisation <xref:System.Security.Permissions.ReflectionPermission> avec l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> est exigée.  
   

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 3fe5848c-ecd7-4136-970b-8e48d250bde6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6bf692ff93a575858d1d1a89346611cb9c5957b3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fb3ad0d39d47297b7d26a5c28cfbbc269ce99e44
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61867041"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052412"
 ---
 # <a name="runtime-directive-elements"></a>Éléments de directive runtime
 Le format du fichier de directives runtime (rd.xml) prend en charge les éléments de directive runtime suivants. Pour voir une représentation hiérarchique, consultez [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
@@ -24,7 +24,7 @@ Le format du fichier de directives runtime (rd.xml) prend en charge les élémen
  Si sa directive [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) conteneur est un attribut, applique la stratégie runtime aux éléments de code auxquels cet attribut est appliqué.  
   
  [\<Directives>](../../../docs/framework/net-native/directives-element-net-native.md)  
- Élément racine de chaque fichier de directives runtime pour [!INCLUDE[net_native](../../../includes/net-native-md.md)]. Ses éléments enfants sont [\<Application>](../../../docs/framework/net-native/application-element-net-native.md) et [\<Library>](../../../docs/framework/net-native/library-element-net-native.md).  
+ L’élément racine dans chaque fichier de directives runtime pour .NET Native. Ses éléments enfants sont [\<Application>](../../../docs/framework/net-native/application-element-net-native.md) et [\<Library>](../../../docs/framework/net-native/library-element-net-native.md).  
   
  [\<Event>](../../../docs/framework/net-native/event-element-net-native.md)  
  Applique la stratégie runtime à un événement. Il s’agit d’un enfant des éléments [\<Type>](../../../docs/framework/net-native/type-element-net-native.md) et [\<TypeInstantiation>](../../../docs/framework/net-native/typeinstantiation-element-net-native.md).  

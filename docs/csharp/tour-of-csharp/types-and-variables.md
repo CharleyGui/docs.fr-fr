@@ -3,12 +3,12 @@ title: Variables et types C# - Visite guidée du langage C#
 description: En savoir plus sur la définition des types et la déclaration de variables en C#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: ae44dd273a2460e5718adc7324fae324e3de5bba
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 5623b4a1e85508ea7206df2c73b7aaffcbc3fbb1
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59672366"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65881979"
 ---
 # <a name="types-and-variables"></a>Types et variables
 
@@ -23,8 +23,8 @@ Ce qui suit offre une vue d'ensemble du système de types de C#.
     * Entier signé : `sbyte`, `short`, `int`, `long`
     * Entier non signé : `byte`, `ushort`, `uint`, `ulong`
     * Caractères Unicode : `char`
-    * Virgule flottante IEEE : `float`, `double`
-    * Décimale haute précision :`decimal`
+    * Virgule flottante pour valeur binaire IEEE : `float`, `double`
+    * Virgule flottante pour valeur décimale haute précision : `decimal`
     * Booléen : `bool`
   - [Types enum][EnumTypes]
     * Types définis par l'utilisateur de la forme `enum E {...}`
@@ -55,33 +55,11 @@ Ce qui suit offre une vue d'ensemble du système de types de C#.
 [DelegateTypes]: ../language-reference/keywords/delegate.md
 [ArrayTypes]: ../programming-guide/arrays/index.md
 
-Les types intégraux huit prennent en charge les valeurs 8 bits, 16 bits, 32 bits et 64 bits sous forme signée ou non signée.
-
-Les deux types à virgule flottante, `float` et `double`, sont représentés par les formats IEC 60559 32 bits simple précision et 64 bits double précision, respectivement.
-
-Le type `decimal` est un type de données 128 bits adapté aux calculs financiers et monétaires.
+Pour plus d’informations sur les types numériques, consultez [Tableau des types intégraux](../language-reference/keywords/integral-types-table.md) et [Tableau des types à virgule flottante](../language-reference/keywords/floating-point-types-table.md).
 
 Le type `bool` de C# est utilisé pour représenter des valeurs booléennes, qui peuvent être `true` ou `false`.
 
 Le traitement des caractères et chaînes dans le langage C# utilise l’encodage Unicode. Le type `char` représente une unité de code UTF-16, et le type `string` représente une séquence d’unités de code UTF-16.
-
-Ce qui suit résume les types numériques de C#.
-
-* Entier signé
-  - `sbyte`:  8 bits, entre -128 et 127
-  - `short`: 16 bits, entre -32 768 et 32 767
-  - `int`  : 32 bits, entre -2 147 483 648 et 2 147 483 647
-  - `long` : 64 bits, entre -9 223 372 036 854 775 808 et 9 223 372 036 854 775 807
-* Entier non signé
-  - `byte`   :  8 bits, entre 0 et 255
-  - `ushort` : 16 bits, entre 0 et 65 535
-  - `uint`   : 32 bits, entre 0 et 4 294 967 295
-  - `ulong`  : 64 bits, entre 0 et 18 446 744 073 709 551 615
-* Virgule flottante
-  - `float`  : 32 bits, entre 1,5 × 10<sup>-45</sup> et 3,4 × 10<sup>38</sup>,    précision de 7 chiffres
-  - `double` : 64 bits, entre 5,0 × 10<sup>-324</sup> et 1,7 × 10<sup>308</sup>, précision à 15 chiffres
-* Decimal
-  - `decimal` : 128 bits, entre au moins -7,9 × 10<sup>-28</sup> et 7,9 × 10<sup>28</sup>, avec au moins une précision à 28 chiffres
 
 Les programmes C# utilisent les *déclarations de type* pour créer de nouveaux types. Une déclaration de type spécifie le nom et les membres du nouveau type. Cinq catégories de types C# sont définies par l’utilisateur : les types de classes, les types struct, les types d’interfaces, les types enum et les types délégués.
 

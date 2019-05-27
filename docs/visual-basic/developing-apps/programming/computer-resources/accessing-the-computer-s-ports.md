@@ -5,12 +5,12 @@ helpviewer_keywords:
 - serial ports
 - My.Computer.Ports object [Visual Basic], tasks
 ms.assetid: b04a2f76-992a-4585-ab41-8bbbdbd554a1
-ms.openlocfilehash: e3ca5193db9dbcb4674680884a6372e6383c0852
-ms.sourcegitcommit: 14355b4b2fe5bcf874cac96d0a9e6376b567e4c7
+ms.openlocfilehash: 7788e08c1257ff900b08ef6b8d26d3fe42ad9116
+ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55289027"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65589329"
 ---
 # <a name="accessing-the-computers-ports-visual-basic"></a>Accès aux ports de l'ordinateur (Visual Basic)
 L’objet `My.Computer.Ports` fournit une propriété et une méthode pour accéder aux ports série de l’ordinateur.  
@@ -29,7 +29,7 @@ L’objet `My.Computer.Ports` fournit une propriété et une méthode pour accé
  Montre comment recevoir une chaîne du port série d’un ordinateur.  
   
  [Opérations relatives au port dans le .NET Framework](../../../../visual-basic/developing-apps/programming/computer-resources/port-operations-in-the-net-framework.md)  
- Montre comment utiliser le [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] pour effectuer des opérations relatives au port.  
+ Montre comment utiliser le .NET Framework pour effectuer des opérations relatives au port.  
   
 ## <a name="reference"></a>Référence  
  <xref:Microsoft.VisualBasic.Devices.Ports>  

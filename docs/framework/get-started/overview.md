@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b4aad615df6db5a29b9af21b585ea2b0dfbdedf4
-ms.sourcegitcommit: d2ccb199ae6bc5787b4762e9ea6d3f6fe88677af
+ms.openlocfilehash: f50a469327a06eabdb6a80821203f2222dcd2921
+ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56093682"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65878034"
 ---
 # <a name="overview-of-the-net-framework"></a>Vue d’ensemble du .NET Framework
 
@@ -45,7 +45,7 @@ Internet Explorer est un exemple d’application non managée qui héberge le ru
 
 L’illustration suivante montre les relations du Common Language Runtime et de la bibliothèque de classes avec vos applications et l’ensemble du système. L'illustration montre également comment le code managé opère au sein d'une architecture plus grande.
 
-![Code managé dans une architecture plus grande](../../../docs/framework/get-started/media/circle.gif "cercle") .NET Framework en contexte
+![Capture d’écran montrant comment le code managé opère au sein d’une architecture plus grande.](./media/overview/language-runtime-class-library-relationship.gif)
 
 Les sections suivantes décrivent les principales fonctionnalités du .NET Framework.
 
