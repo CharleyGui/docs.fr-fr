@@ -1,23 +1,23 @@
 ---
-title: Guide pratique pour télécharger des fichiers avec FTP
+title: 'Procédure : Télécharger des fichiers avec FTP'
 description: Cet article montre un exemple de téléchargement de fichier à partir d’un serveur FTP.
 ms.date: 06/26/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 892548b8-954a-4f6a-9bca-2ae620c3700f
-ms.openlocfilehash: 4e000aa149a9a02e6f12e9b184d9c43a065b673f
-ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
+ms.openlocfilehash: a0941d42de71029be9aab2fdbc69f8434fb73e2d
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37028303"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65632990"
 ---
-# <a name="how-to-download-files-with-ftp"></a><span data-ttu-id="e6d6a-103">Guide pratique pour télécharger des fichiers avec FTP</span><span class="sxs-lookup"><span data-stu-id="e6d6a-103">How to: Download files with FTP</span></span>
+# <a name="how-to-download-files-with-ftp"></a><span data-ttu-id="43f5d-103">Procédure : Télécharger des fichiers avec FTP</span><span class="sxs-lookup"><span data-stu-id="43f5d-103">How to: Download files with FTP</span></span>
 
-<span data-ttu-id="e6d6a-104">Cet exemple montre comment télécharger un fichier à partir d’un serveur FTP.</span><span class="sxs-lookup"><span data-stu-id="e6d6a-104">This sample shows how to download a file from an FTP server.</span></span>
+<span data-ttu-id="43f5d-104">Cet exemple montre comment télécharger un fichier à partir d’un serveur FTP.</span><span class="sxs-lookup"><span data-stu-id="43f5d-104">This sample shows how to download a file from an FTP server.</span></span>
 
-## <a name="example"></a><span data-ttu-id="e6d6a-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="e6d6a-105">Example</span></span>
+## <a name="example"></a><span data-ttu-id="43f5d-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="43f5d-105">Example</span></span>
 
 ```csharp
 using System;

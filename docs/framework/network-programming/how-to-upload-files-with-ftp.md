@@ -1,23 +1,23 @@
 ---
-title: Guide pratique pour charger des fichiers avec FTP
+title: 'Procédure : Charger des fichiers avec FTP'
 description: Cet article montre un exemple de chargement de fichier sur un serveur FTP.
 ms.date: 06/26/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: e40f17c5-dd12-4c62-9dbf-00ab491382dc
-ms.openlocfilehash: a1f067462361bb123c9d61a1d099c900a6641d6b
-ms.sourcegitcommit: f9e38d31288fe5962e6be5b0cc286da633482873
+ms.openlocfilehash: 670bbc65078e6530cffbcfa7d324c36238014ffb
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37028199"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65632806"
 ---
-# <a name="how-to-upload-files-with-ftp"></a><span data-ttu-id="31aab-103">Guide pratique pour charger des fichiers avec FTP</span><span class="sxs-lookup"><span data-stu-id="31aab-103">How to: Upload files with FTP</span></span>
+# <a name="how-to-upload-files-with-ftp"></a><span data-ttu-id="99807-103">Procédure : Charger des fichiers avec FTP</span><span class="sxs-lookup"><span data-stu-id="99807-103">How to: Upload files with FTP</span></span>
 
-<span data-ttu-id="31aab-104">Cet exemple montre comment charger un fichier sur un serveur FTP.</span><span class="sxs-lookup"><span data-stu-id="31aab-104">This sample shows how to upload a file to an FTP server.</span></span>
+<span data-ttu-id="99807-104">Cet exemple montre comment charger un fichier sur un serveur FTP.</span><span class="sxs-lookup"><span data-stu-id="99807-104">This sample shows how to upload a file to an FTP server.</span></span>
 
-## <a name="example"></a><span data-ttu-id="31aab-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="31aab-105">Example</span></span>
+## <a name="example"></a><span data-ttu-id="99807-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="99807-105">Example</span></span>
 
 ```csharp
 using System;
