@@ -9,3 +9,5 @@
       href: how-to-use-expression-trees-to-build-dynamic-queries.md
     - name: Débogage d’arborescences d’expressions
       href: debugging-expression-trees-in-visual-studio.md
+    - name: Syntaxe de DebugView
+      href: debugview-syntax.md
