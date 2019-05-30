@@ -17,18 +17,18 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8fd904ba03fd5c652b1e5e5c7f763dab2b80e517
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 08b35dd1744dbbb64d202718b61a9db5684d3bc3
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636666"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380360"
 ---
-# <a name="icorprofilercallback5conditionalweaktableelementreferences-method"></a><span data-ttu-id="26594-102">ICorProfilerCallback5::ConditionalWeakTableElementReferences, méthode</span><span class="sxs-lookup"><span data-stu-id="26594-102">ICorProfilerCallback5::ConditionalWeakTableElementReferences Method</span></span>
+# <a name="icorprofilercallback5conditionalweaktableelementreferences-method"></a><span data-ttu-id="383c6-102">ICorProfilerCallback5::ConditionalWeakTableElementReferences, méthode</span><span class="sxs-lookup"><span data-stu-id="383c6-102">ICorProfilerCallback5::ConditionalWeakTableElementReferences Method</span></span>
 
-<span data-ttu-id="26594-103">Identifie la fermeture transitive des objets référencés par ces racines via les références des champs des membres directs et via les dépendances de `ConditionalWeakTable`.</span><span class="sxs-lookup"><span data-stu-id="26594-103">Identifies the transitive closure of objects referenced by those roots through both direct member field references and through `ConditionalWeakTable` dependencies.</span></span>
+<span data-ttu-id="383c6-103">Identifie la fermeture transitive des objets référencés par ces racines via les références des champs des membres directs et via les dépendances de `ConditionalWeakTable`.</span><span class="sxs-lookup"><span data-stu-id="383c6-103">Identifies the transitive closure of objects referenced by those roots through both direct member field references and through `ConditionalWeakTable` dependencies.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="26594-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="26594-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="383c6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="383c6-104">Syntax</span></span>
 
 ```cpp
 HRESULT ConditionalWeakTableElementReferences(
@@ -39,25 +39,25 @@ HRESULT ConditionalWeakTableElementReferences(
 );
 ```
 
-## <a name="parameters"></a><span data-ttu-id="26594-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="26594-105">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="383c6-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="383c6-105">Parameters</span></span>
 
 `cRootRefs`\
-<span data-ttu-id="26594-106">[en entrée] Le nombre d'éléments dans les tableaux `keyRefIds`, `valueRefIds` et `rootIds`.</span><span class="sxs-lookup"><span data-stu-id="26594-106">[in] The number of elements in the `keyRefIds`, `valueRefIds`, and `rootIds` arrays.</span></span>
+<span data-ttu-id="383c6-106">[en entrée] Le nombre d'éléments dans les tableaux `keyRefIds`, `valueRefIds` et `rootIds`.</span><span class="sxs-lookup"><span data-stu-id="383c6-106">[in] The number of elements in the `keyRefIds`, `valueRefIds`, and `rootIds` arrays.</span></span>
 
 `keyRefIds`\
-<span data-ttu-id="26594-107">[en entrée] Un tableau d'ID d'objets, chacun contenant l'`ObjectID` pour l'élément principal de la paire de handles dépendants.</span><span class="sxs-lookup"><span data-stu-id="26594-107">[in] An array of object IDs, each of which contains the `ObjectID` for the primary element in the dependent handle pair.</span></span>
+<span data-ttu-id="383c6-107">[en entrée] Un tableau d'ID d'objets, chacun contenant l'`ObjectID` pour l'élément principal de la paire de handles dépendants.</span><span class="sxs-lookup"><span data-stu-id="383c6-107">[in] An array of object IDs, each of which contains the `ObjectID` for the primary element in the dependent handle pair.</span></span>
 
 `valueRefIds`\
-<span data-ttu-id="26594-108">[en entrée] Un tableau d'ID d'objets, chacun contenant l'`ObjectID` pour l'élément secondaire de la paire de handles dépendants.</span><span class="sxs-lookup"><span data-stu-id="26594-108">[in] An array of object IDs, each of which contains the `ObjectID` for the secondary element in the dependent handle pair.</span></span> <span data-ttu-id="26594-109">(`keyRefIds[i]` conserve `valueRefIds[i]` actif.)</span><span class="sxs-lookup"><span data-stu-id="26594-109">(`keyRefIds[i]` keeps `valueRefIds[i]` alive.)</span></span>
+<span data-ttu-id="383c6-108">[en entrée] Un tableau d'ID d'objets, chacun contenant l'`ObjectID` pour l'élément secondaire de la paire de handles dépendants.</span><span class="sxs-lookup"><span data-stu-id="383c6-108">[in] An array of object IDs, each of which contains the `ObjectID` for the secondary element in the dependent handle pair.</span></span> <span data-ttu-id="383c6-109">(`keyRefIds[i]` conserve `valueRefIds[i]` actif.)</span><span class="sxs-lookup"><span data-stu-id="383c6-109">(`keyRefIds[i]` keeps `valueRefIds[i]` alive.)</span></span>
 
 `rootIds`\
-<span data-ttu-id="26594-110">[en entrée] Un tableau de valeurs de `GCHandleID` qui pointent vers un entier contenant des informations supplémentaires sur la racine de garbage collection.</span><span class="sxs-lookup"><span data-stu-id="26594-110">[in] An array of `GCHandleID` values that point to an integer that contains additional information about the garbage collection root.</span></span>
+<span data-ttu-id="383c6-110">[en entrée] Un tableau de valeurs de `GCHandleID` qui pointent vers un entier contenant des informations supplémentaires sur la racine de garbage collection.</span><span class="sxs-lookup"><span data-stu-id="383c6-110">[in] An array of `GCHandleID` values that point to an integer that contains additional information about the garbage collection root.</span></span>
 
-<span data-ttu-id="26594-111">Aucune des valeurs d'`ObjectID` retournées par la méthode `ConditionalWeakTableElementReferences` ne sont valides pendant le rappel lui-même, car le récupérateur de mémoire peut être occupé à déplacer des objets depuis des anciens emplacements vers des nouveaux.</span><span class="sxs-lookup"><span data-stu-id="26594-111">None of the `ObjectID` values returned by the `ConditionalWeakTableElementReferences` method are valid during the callback itself, because the garbage collector may be in the process of moving objects from old to new locations.</span></span> <span data-ttu-id="26594-112">Les profileurs ne doivent donc pas essayer d'inspecter des objets pendant un appel de `ConditionalWeakTableElementReferences`.</span><span class="sxs-lookup"><span data-stu-id="26594-112">Therefore, profilers should not attempt to inspect objects during a `ConditionalWeakTableElementReferences` call.</span></span> <span data-ttu-id="26594-113">Quand l'état est `GarbageCollectionFinished`, tous les objets ont été déplacés à leur nouvel emplacement et une inspection peut être effectuée.</span><span class="sxs-lookup"><span data-stu-id="26594-113">At `GarbageCollectionFinished`, all objects have been moved to their new locations, and inspection may be done.</span></span>
+<span data-ttu-id="383c6-111">Aucune des valeurs d'`ObjectID` retournées par la méthode `ConditionalWeakTableElementReferences` ne sont valides pendant le rappel lui-même, car le récupérateur de mémoire peut être occupé à déplacer des objets depuis des anciens emplacements vers des nouveaux.</span><span class="sxs-lookup"><span data-stu-id="383c6-111">None of the `ObjectID` values returned by the `ConditionalWeakTableElementReferences` method are valid during the callback itself, because the garbage collector may be in the process of moving objects from old to new locations.</span></span> <span data-ttu-id="383c6-112">Les profileurs ne doivent donc pas essayer d'inspecter des objets pendant un appel de `ConditionalWeakTableElementReferences`.</span><span class="sxs-lookup"><span data-stu-id="383c6-112">Therefore, profilers should not attempt to inspect objects during a `ConditionalWeakTableElementReferences` call.</span></span> <span data-ttu-id="383c6-113">Quand l'état est `GarbageCollectionFinished`, tous les objets ont été déplacés à leur nouvel emplacement et une inspection peut être effectuée.</span><span class="sxs-lookup"><span data-stu-id="383c6-113">At `GarbageCollectionFinished`, all objects have been moved to their new locations, and inspection may be done.</span></span>
 
-## <a name="example"></a><span data-ttu-id="26594-114">Exemple</span><span class="sxs-lookup"><span data-stu-id="26594-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="383c6-114">Exemple</span><span class="sxs-lookup"><span data-stu-id="383c6-114">Example</span></span>
 
-<span data-ttu-id="26594-115">L’exemple de code suivant montre comment implémenter [ICorProfilerCallback5](icorprofilercallback5-interface.md) et utilisez cette méthode.</span><span class="sxs-lookup"><span data-stu-id="26594-115">The following code example demonstrates how to implement [ICorProfilerCallback5](icorprofilercallback5-interface.md) and use this method.</span></span>
+<span data-ttu-id="383c6-115">L’exemple de code suivant montre comment implémenter [ICorProfilerCallback5](icorprofilercallback5-interface.md) et utilisez cette méthode.</span><span class="sxs-lookup"><span data-stu-id="383c6-115">The following code example demonstrates how to implement [ICorProfilerCallback5](icorprofilercallback5-interface.md) and use this method.</span></span>
 
 ```cpp
 HRESULT Callback5Impl::ConditionalWeakTableElementReferences(
@@ -80,18 +80,18 @@ HRESULT Callback5Impl::ConditionalWeakTableElementReferences(
 }
 ```
 
-## <a name="remarks"></a><span data-ttu-id="26594-116">Notes</span><span class="sxs-lookup"><span data-stu-id="26594-116">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="383c6-116">Notes</span><span class="sxs-lookup"><span data-stu-id="383c6-116">Remarks</span></span>
 
-<span data-ttu-id="26594-117">Un profileur pour le [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] ou ultérieur implémente le [ICorProfilerCallback5](icorprofilercallback5-interface.md) interface et enregistre les dépendances spécifiées par le `ConditionalWeakTableElementReferences` (méthode).</span><span class="sxs-lookup"><span data-stu-id="26594-117">A profiler for the [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] or later versions implements the [ICorProfilerCallback5](icorprofilercallback5-interface.md) interface and records the dependencies specified by the `ConditionalWeakTableElementReferences` method.</span></span> <span data-ttu-id="26594-118">`ICorProfilerCallback5` fournit l’ensemble complet des dépendances entre les objets actifs représentés par `ConditionalWeakTable` entrées.</span><span class="sxs-lookup"><span data-stu-id="26594-118">`ICorProfilerCallback5` provides the complete set of dependencies among live objects represented by `ConditionalWeakTable` entries.</span></span> <span data-ttu-id="26594-119">Ces dépendances et le membre spécifiés par les références de champ la [ICorProfilerCallback::ObjectReferences](icorprofilercallback-objectreferences-method.md) méthode activer un profileur managé générer le graphique d’objet complet d’objets actifs.</span><span class="sxs-lookup"><span data-stu-id="26594-119">These dependencies and the member field references specified by the [ICorProfilerCallback::ObjectReferences](icorprofilercallback-objectreferences-method.md) method enable a managed profiler to generate the full object graph of live objects.</span></span>
+<span data-ttu-id="383c6-117">Un profileur pour le .NET Framework 4.5 ou ultérieur implémente le [ICorProfilerCallback5](icorprofilercallback5-interface.md) interface et enregistre les dépendances spécifiées par le `ConditionalWeakTableElementReferences` (méthode).</span><span class="sxs-lookup"><span data-stu-id="383c6-117">A profiler for the .NET Framework 4.5 or later versions implements the [ICorProfilerCallback5](icorprofilercallback5-interface.md) interface and records the dependencies specified by the `ConditionalWeakTableElementReferences` method.</span></span> <span data-ttu-id="383c6-118">`ICorProfilerCallback5` fournit l’ensemble complet des dépendances entre les objets actifs représentés par `ConditionalWeakTable` entrées.</span><span class="sxs-lookup"><span data-stu-id="383c6-118">`ICorProfilerCallback5` provides the complete set of dependencies among live objects represented by `ConditionalWeakTable` entries.</span></span> <span data-ttu-id="383c6-119">Ces dépendances et le membre spécifiés par les références de champ la [ICorProfilerCallback::ObjectReferences](icorprofilercallback-objectreferences-method.md) méthode activer un profileur managé générer le graphique d’objet complet d’objets actifs.</span><span class="sxs-lookup"><span data-stu-id="383c6-119">These dependencies and the member field references specified by the [ICorProfilerCallback::ObjectReferences](icorprofilercallback-objectreferences-method.md) method enable a managed profiler to generate the full object graph of live objects.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="26594-120">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="26594-120">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="383c6-120">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="383c6-120">Requirements</span></span>
 
-<span data-ttu-id="26594-121">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="26594-121">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>
+<span data-ttu-id="383c6-121">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="383c6-121">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>
 
-<span data-ttu-id="26594-122">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="26594-122">**Header:** CorProf.idl, CorProf.h</span></span>
+<span data-ttu-id="383c6-122">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="383c6-122">**Header:** CorProf.idl, CorProf.h</span></span>
 
-<span data-ttu-id="26594-123">**Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="26594-123">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>
+<span data-ttu-id="383c6-123">**Versions du .NET Framework :** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="383c6-123">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="26594-124">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="26594-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="383c6-124">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="383c6-124">See also</span></span>
 
-- [<span data-ttu-id="26594-125">ICorProfilerCallback5, interface</span><span class="sxs-lookup"><span data-stu-id="26594-125">ICorProfilerCallback5 Interface</span></span>](icorprofilercallback5-interface.md)
+- [<span data-ttu-id="383c6-125">ICorProfilerCallback5, interface</span><span class="sxs-lookup"><span data-stu-id="383c6-125">ICorProfilerCallback5 Interface</span></span>](icorprofilercallback5-interface.md)
