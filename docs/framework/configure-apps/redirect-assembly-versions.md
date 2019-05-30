@@ -8,12 +8,12 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 88fb1a17-6ac9-4b57-8028-193aec1f727c
-ms.openlocfilehash: 68169063c9cf152942ff8a7757a1b3d97886002a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fa7c0c22d070ec12cb67252dee7dca02c5160b9e
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034565"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380085"
 ---
 # <a name="redirecting-assembly-versions"></a>Redirection des versions d'assemblys
 
@@ -23,7 +23,7 @@ Vous pouvez rediriger des références de liaison de compilation vers des assemb
 ## <a name="assembly-unification-and-default-binding"></a>Unification d’assembly et liaison par défaut
  Les liaisons aux assemblys .NET Framework sont parfois redirigées via un processus appelé *unification d’assembly*. Le .NET Framework est constitué d’une version du Common Language Runtime et d’environ deux douzaines d’assemblys .NET Framework qui composent la bibliothèque de types. Ces assemblys .NET Framework sont traités par le runtime comme une unité individuelle. Par défaut, lors du lancement d’une application, toutes les références à des types dans le code exécuté par le runtime sont dirigées vers les assemblys .NET Framework dont le numéro de version est identique au runtime chargé dans un processus. Les redirections qui se produisent avec ce modèle correspondent au comportement par défaut du runtime.
 
- Par exemple, si votre application référence des types dans l’espace de noms System.XML et a été créée à l’aide du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], elle contient des références statiques à l’assembly System.XML fourni avec le runtime version 4.5. Si vous voulez rediriger la référence de liaison pour pointer vers l’assembly System.XML livré avec .NET Framework 4, vous devez écrire des informations de redirection dans le fichier de configuration de l’application. Une redirection de liaison dans un fichier de configuration pour un assembly .NET Framework unifié annule l’unification pour cet assembly.
+ Par exemple, si vos références de l’application des types dans l’espace de noms System.XML et a été créé à l’aide de .NET Framework 4.5, il contient des références statiques à l’assembly System.XML livré avec le runtime version 4.5. Si vous voulez rediriger la référence de liaison pour pointer vers l’assembly System.XML livré avec .NET Framework 4, vous devez écrire des informations de redirection dans le fichier de configuration de l’application. Une redirection de liaison dans un fichier de configuration pour un assembly .NET Framework unifié annule l’unification pour cet assembly.
 
  En outre, vous pouvez rediriger manuellement la liaison d’assembly pour les assemblys tiers s’il existe plusieurs versions disponibles.
 
@@ -55,7 +55,7 @@ Vous pouvez rediriger des références de liaison de compilation vers des assemb
 
 ### <a name="relying-on-automatic-binding-redirection"></a>Utilisation de la redirection de liaison automatique
 
-Lorsque vous créez une application de bureau dans Visual Studio qui cible le [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] ou une version ultérieure, l’application utilise la redirection de liaison automatique. Cela signifie que si deux composants référencent des versions différentes d’un même assembly avec nom fort, le runtime ajoute automatiquement une redirection de liaison vers la version la plus récente de l’assembly dans le fichier de configuration d’application de sortie (app.config). Cette redirection remplace l’unification d’assemblys qui pourrait se produire autrement. Le fichier source app.config n'est pas modifié. Par exemple, supposons que votre application référence directement un composant .NET Framework hors plage mais utilise une bibliothèque tierce qui cible une version antérieure du même composant. Lorsque vous compilez l’application, le fichier de configuration de l’application de sortie est modifié pour inclure une redirection de liaison vers la version plus récente du composant. Si vous créez une application web, vous recevez un avertissement de génération concernant le conflit de liaison, qui, à son tour, vous donne la possibilité d’ajouter la redirection de liaison nécessaire au fichier de configuration web source.
+Lorsque vous créez une application de bureau dans Visual Studio qui cible le .NET Framework 4.5.1 ou version ultérieure, l’application utilise la redirection de liaison automatique. Cela signifie que si deux composants référencent des versions différentes d’un même assembly avec nom fort, le runtime ajoute automatiquement une redirection de liaison vers la version la plus récente de l’assembly dans le fichier de configuration d’application de sortie (app.config). Cette redirection remplace l’unification d’assemblys qui pourrait se produire autrement. Le fichier source app.config n'est pas modifié. Par exemple, supposons que votre application référence directement un composant .NET Framework hors plage mais utilise une bibliothèque tierce qui cible une version antérieure du même composant. Lorsque vous compilez l’application, le fichier de configuration de l’application de sortie est modifié pour inclure une redirection de liaison vers la version plus récente du composant. Si vous créez une application web, vous recevez un avertissement de génération concernant le conflit de liaison, qui, à son tour, vous donne la possibilité d’ajouter la redirection de liaison nécessaire au fichier de configuration web source.
 
 Si vous ajoutez manuellement des redirections de liaison au fichier app.config source, au moment de la compilation, Visual Studio essaie d’unifier les assemblys basés sur les redirections de liaison que vous avez ajouté. Par exemple, supposons que vous insérez la redirection de liaison suivantes pour un assembly :
 

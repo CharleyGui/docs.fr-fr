@@ -2,15 +2,15 @@
 title: Prise en charge de SqlClient pour la haute disponibilité et la récupération d'urgence
 ms.date: 03/30/2017
 ms.assetid: 61e0b396-09d7-4e13-9711-7dcbcbd103a0
-ms.openlocfilehash: 9b928be56ac09ec707a45829c862e606b68b717c
-ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
-ms.translationtype: HT
+ms.openlocfilehash: b01db93c51c6d975c9cc951f08b64c5ffd6c1de4
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66251167"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380012"
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>Prise en charge de SqlClient pour la haute disponibilité et la récupération d'urgence
-Cette rubrique décrit la prise en charge SqlClient (ajoutée dans [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]) de la haute disponibilité, récupération d'urgence -- groupes de disponibilité AlwaysOn.  Fonctionnalité de groupes de disponibilité AlwaysOn a été ajoutée à SQL Server 2012. Pour plus d’informations sur les groupes de disponibilité AlwaysOn, consultez la documentation en ligne de SQL Server.  
+Cette rubrique décrit la prise en charge de SqlClient (ajoutée dans .NET Framework 4.5) haute disponibilité et récupération d’urgence--groupes de disponibilité AlwaysOn.  Fonctionnalité de groupes de disponibilité AlwaysOn a été ajoutée à SQL Server 2012. Pour plus d’informations sur les groupes de disponibilité AlwaysOn, consultez la documentation en ligne de SQL Server.  
   
  Vous pouvez désormais spécifier l’écouteur de groupe de disponibilité d’une (haute disponibilité et récupération d’urgence) groupe de disponibilité (AG) ou l’Instance de Cluster de basculement SQL Server 2012 dans la propriété de connexion. Si une application SqlClient est connectée à une base de données AlwaysOn qui bascule, la connexion initiale est interrompue et l'application doit ouvrir une nouvelle connexion pour continuer les tâches après le basculement.  
   
@@ -19,7 +19,7 @@ Cette rubrique décrit la prise en charge SqlClient (ajoutée dans [!INCLUDE[net
 > [!NOTE]
 >  L'augmentation du délai de connexion et l'implémentation de la logique de nouvelles tentatives de connexion augmentent la probabilité qu'une application se connecte à un groupe de disponibilité. En outre, étant donné qu'une connexion peut échouer en raison d'un basculement, vous devez implémenter la logique pour les nouvelles tentatives de connexion, nouvelle tentative de connexion jusqu'à reconnexion.  
   
- Les propriétés de connexion suivantes ont été ajoutées à SqlClient dans [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)] :  
+ Les propriétés de connexion suivantes ont été ajoutées à SqlClient dans .NET Framework 4.5 :  
   
 - `ApplicationIntent`  
   
