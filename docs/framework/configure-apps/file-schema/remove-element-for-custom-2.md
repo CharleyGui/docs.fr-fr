@@ -7,22 +7,22 @@ helpviewer_keywords:
 - remove Element
 - <remove> Element
 ms.assetid: 8d8af7f5-26c9-4db9-bbe4-b2a4e6949568
-author: guardrex
+author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: c86d231a4e3e8e15df94017a6ca461b365643ea5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 062aa3921d29cffd33db2d96096ef25c2b819030
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705090"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300698"
 ---
 # <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<Supprimer >, élément pour NameValueSectionHandler et DictionarySectionHandler
 
 Supprime un paramètre défini précédemment.
 
-[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[**\<sectionName>**](~/docs/framework/configure-apps/file-schema/custom-element-2.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**
+[ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+&nbsp;&nbsp;[ **\<sectionName>** ](~/docs/framework/configure-apps/file-schema/custom-element-2.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<remove>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,11 +40,11 @@ Supprime un paramètre défini précédemment.
 
 | Élément | Description |
 | ------- | ------------|
-| [**\<sectionName>** Element](~/docs/framework/configure-apps/file-schema/custom-element-2.md) | Définit les paramètres pour les sections de configuration personnalisées qui utilisent le <xref:System.Configuration.NameValueSectionHandler> et <xref:System.Configuration.DictionarySectionHandler> classes. |
+| [ **\<sectionName>** Element](~/docs/framework/configure-apps/file-schema/custom-element-2.md) | Définit les paramètres pour les sections de configuration personnalisées qui utilisent le <xref:System.Configuration.NameValueSectionHandler> et <xref:System.Configuration.DictionarySectionHandler> classes. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
-Aucun.
+None
 
 ## <a name="remarks"></a>Notes
 
@@ -69,7 +69,7 @@ Le code du fichier de configuration machine suivant déclare la section  **\<myS
 </configuration>
 ```
 
-Le code suivant du fichier de configuration de l’application supprime le `key2` définir à partir de  **\<mySection >**:
+Le code suivant du fichier de configuration de l’application supprime le `key2` définir à partir de  **\<mySection >** :
 
 ```xml
 <!--Application configuration file -->

@@ -3,12 +3,12 @@ title: Concevoir avec des types référence Nullable
 description: Ce tutoriel avancé présente les types référence Nullable. Il explique comment exprimer une intention de conception lorsque les valeurs de référence peuvent être Null et comment, dans le cas contraire, indiquer au compilateur qu’elles ne peuvent pas être Null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 97b41574b328c9f6bed60d4bf2943c7a726261d5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: cd73a73554514c2b7c70c78ba24038ee8d543266
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296145"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66195833"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Tutoriel : Exprimer plus clairement une intention de conception avec les types référence Nullable et non Nullable
 
@@ -36,15 +36,18 @@ Le code que vous allez écrire pour cet exemple exprime cette intention, que le 
 
 ## <a name="create-the-application-and-enable-nullable-reference-types"></a>Créer l’application et activer les types référence Nullable
 
-Créez une application console dans Visual Studio ou en ligne de commande avec `dotnet new console`. Nommez l'application `NullableIntroduction`. Une fois l’application créée, activez les fonctionnalités de la version C# 8 bêta. Ouvrez le fichier `csproj` et ajoutez un élément `LangVersion` à l'élément `PropertyGroup`. Vous devez cocher la fonctionnalité **Types référence Nullable**, même dans les projets C# 8. En effet, une fois la fonctionnalité activée, les déclarations de variables référence existantes deviennent des **types référence non Nullable**. Bien que cette décision aide à identifier les problèmes de contrôle de type Null dans le code, elle ne reflète pas forcément l’intention de conception d’origine. Activez la fonctionnalité en définissant l’élément `NullableContextOptions` sur `enable` :
+Créez une application console dans Visual Studio ou en ligne de commande avec `dotnet new console`. Nommez l'application `NullableIntroduction`. Une fois l’application créée, activez les fonctionnalités de la version C# 8 bêta. Ouvrez le fichier `csproj` et ajoutez un élément `LangVersion` à l'élément `PropertyGroup`. Vous devez cocher la fonctionnalité **Types référence Nullable**, même dans les projets C# 8. En effet, une fois la fonctionnalité activée, les déclarations de variables référence existantes deviennent des **types référence non Nullable**. Bien que cette décision aide à identifier les problèmes de contrôle de type Null dans le code, elle ne reflète pas forcément l’intention de conception d’origine. Activez la fonctionnalité en définissant l’élément `Nullable` sur `enable` :
 
 ```xml
 <LangVersion>8.0</LangVersion>
-<NullableContextOptions>enable</NullableContextOptions>
+<Nullable>enable</Nullable>
 ```
 
+> [!IMPORTANT]
+> L’élément `Nullable` était nommé `NullableContextOptions`. Les navires renommés avec Visual Studio 2019, 16.2-p1. Le kit SDK .NET Core 3.0.100-preview5-011568 n’a pas cette modification. Si vous utilisez le CLI .NET Core, vous devrez utiliser `NullableContextOptions` jusqu'à ce que la préversion suivante soit disponible.
+
 > [!NOTE]
-> Lorsque C# 8 est publié (pas en préversion), l’élément `NullableContextOptions` est ajouté par les nouveaux modèles de projet. En attendant, vous devrez l’ajouter manuellement.
+> Lorsque C# 8 est publié (pas en préversion), l’élément `Nullable` est ajouté par les nouveaux modèles de projet. En attendant, vous devrez l’ajouter manuellement.
 
 ### <a name="design-the-types-for-the-application"></a>Concevoir les types de l’application
 

@@ -14,12 +14,12 @@ ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 735fedc5869ab82d49ef4d9068c67302bf825e2e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ac4de843b3a134b840fc37e3c1d8327fe0010d79
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634683"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65960320"
 ---
 # <a name="character-encoding-in-net"></a>Encodage de caractères dans .NET
 Les caractères sont des entités abstraites qui peuvent être représentées de nombreuses façons différentes. Un encodage de caractères est un système qui associe chaque caractère d'un jeu de caractères pris en charge à une valeur qui représente ce caractère. Par exemple, le code Morse est un encodage de caractères qui associe chaque caractère de l'alphabet latin à une séquence de points et de tirets qui conviennent pour la transmission sur des lignes télégraphiques. Un encodage de caractères pour les ordinateurs associe chaque caractère d'un jeu de caractères à une valeur numérique qui représente ce caractère. Un encodage de caractères a deux composants distincts :  
@@ -78,8 +78,8 @@ Les caractères sont des entités abstraites qui peuvent être représentées de
   
  Ces encodages vous permettent de travailler avec des caractères Unicode ainsi qu'avec les encodages les plus couramment utilisés dans les applications héritées. En outre, vous pouvez créer un encodage personnalisé en définissant une classe qui dérive de <xref:System.Text.Encoding> et en remplaçant ses membres.  
   
-### <a name="platform-notes-includenetcoreincludesnet-core-mdmd"></a>Notes sur les plateformes : [!INCLUDE[net_core](../../../includes/net-core-md.md)]  
- Par défaut, [!INCLUDE[net_core](../../../includes/net-core-md.md)] ne met à disposition aucune page de codes autre que la page de codes 28591 et les encodages Unicode, comme UTF-8 et UTF-16. Vous pouvez cependant ajouter à votre application les encodages des pages de code qui se trouvent dans les applications Windows standard ciblant .NET. Pour des informations complètes, consultez la rubrique <xref:System.Text.CodePagesEncodingProvider> .  
+### <a name="platform-notes-net-core"></a>Notes sur les plateformes : .NET Core  
+ Par défaut, .NET Core ne met à disposition aucune page de codes autre que la page de codes 28591 et les encodages Unicode, comme UTF-8 et UTF-16. Vous pouvez cependant ajouter à votre application les encodages des pages de code qui se trouvent dans les applications Windows standard ciblant .NET. Pour des informations complètes, consultez la rubrique <xref:System.Text.CodePagesEncodingProvider> .  
   
 <a name="Selecting"></a>   
 ## <a name="selecting-an-encoding-class"></a>Sélection d'une classe d'encodage  

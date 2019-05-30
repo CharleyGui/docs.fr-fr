@@ -2,12 +2,12 @@
 title: Types références Nullables
 description: Cet article fournit une vue d’ensemble des types référence nullables, ajoutés dans C# 8. Vous allez découvrir comment la fonctionnalité offre une protection contre les exceptions de référence null pour les projets nouveaux ou existants.
 ms.date: 02/19/2019
-ms.openlocfilehash: 9ce9efb890f0eff5a6c6747f96c143a4d093dbfb
-ms.sourcegitcommit: 160a88c8087b0e63606e6e35f9bd57fa5f69c168
+ms.openlocfilehash: ac19cbba0e078af34801231145ee339d6e42a42b
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "57725023"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66195919"
 ---
 # <a name="nullable-reference-types"></a>Types références Nullables
 
@@ -58,7 +58,7 @@ La nullabilité d’un type dans une déclaration de variable est contrôlée pa
 
 Les contextes nullables permettent de contrôler précisément comment le compilateur interprète les variables de type référence. Le **contexte d’annotation nullable** d’une ligne source donnée est `enabled` ou `disabled`. Vous pouvez penser que le compilateur pré-C# 8 compile tout votre code dans un contexte nullable `disabled` : N’importe quel type référence peut être null. Le **contexte d’avertissements nullable** peut être défini sur `enabled`, `disabled` ou `safeonly`. Le contexte d’avertissements nullable spécifie les avertissements générés par le compilateur à l’aide de son analyse de flux.
 
-Le contexte d’annotation nullable et le contexte d’avertissement nullable peuvent être définis pour un projet avec l’élément `NullableContextOptions` de votre fichier `csproj`. Cet élément configure comment le compilateur interprète la nullabilité des types et quels avertissements sont générés. Les paramètres valides sont :
+Le contexte d’annotation nullable et le contexte d’avertissement nullable peuvent être définis pour un projet avec l’élément `Nullable` de votre fichier `csproj`. Cet élément configure comment le compilateur interprète la nullabilité des types et quels avertissements sont générés. Les paramètres valides sont :
 
 - `enable`: Le contexte d’annotation nullable est **activé**. Le contexte d’avertissement nullable est **activé**.
   - Les variables d’un type référence, `string` par exemple, sont non nullables.  Tous les avertissements de nullabilité sont activés.
@@ -70,6 +70,9 @@ Le contexte d’annotation nullable et le contexte d’avertissement nullable pe
   - Les variables d’un type référence sont oblivious. Tous les avertissements de nullabilité sont activés.
 - `safeonlywarnings`: Le contexte d’annotation nullable est **désactivé**. Le contexte d’avertissement nullable est **safeonly**.
   - Les variables d’un type référence sont oblivious. Tous les avertissements de nullabilité de protection sont activés.
+
+> [!IMPORTANT]
+> L’élément `Nullable` était nommé `NullableContextOptions`. Les navires renommés avec Visual Studio 2019, 16.2-p1. Le kit SDK .NET Core 3.0.100-preview5-011568 n’a pas cette modification. Si vous utilisez le CLI .NET Core, vous devrez utiliser `NullableContextOptions` jusqu'à ce que la préversion suivante soit disponible.
 
 Vous pouvez aussi utiliser des directives pour définir ces mêmes contextes partout dans votre projet :
 

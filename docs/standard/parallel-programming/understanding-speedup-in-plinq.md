@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 53706c7e-397d-467a-98cd-c0d1fd63ba5e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1905a61a1843427563ffcbad43ea6b2a4c161828
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 014adfbf6f9afab0eaacd574cfb181c0eec07b5b
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64654967"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65960315"
 ---
 # <a name="understanding-speedup-in-plinq"></a>Fonctionnement de l'accélération dans PLINQ
 Le principal objectif de PLINQ est d’accélérer l’exécution de requêtes LINQ to Objects en exécutant parallèlement les délégués de requête sur des ordinateurs multicœurs. PLINQ accomplit les meilleures performances lorsque le traitement de chaque élément dans une collection source est indépendant, sans aucun état partagé parmi les délégués individuels. Ces opérations sont courantes dans LINQ to Objects et PLINQ et sont souvent appelées « *délicieusement parallèles* », car elles se prêtent facilement à la planification sur plusieurs threads. Toutefois, toutes les requêtes ne sont pas entièrement constituées d’opérations délicieusement parallèles ; dans la plupart des cas, une requête concerne certains opérateurs qui ne peuvent pas être parallélisés, ou qui ralentissent l’exécution parallèle. Et même dans le cas de requêtes qui sont entièrement délicieusement parallèles, PLINQ doit encore partitionner la source de données et planifier le travail sur les threads et, généralement, fusionner les résultats lorsque la requête est terminée. Toutes ces opérations ajoutent au coût de calcul de la parallélisation ; ces coûts d’ajout de parallélisation sont appelés *surcharge*. Pour optimiser les performances dans une requête PLINQ, l’objectif est d’augmenter les parties délicieusement parallèles et de réduire au minimum les parties qui nécessitent une surcharge. Cet article fournit des informations qui vous aideront à écrire des requêtes PLINQ aussi efficaces que possible, tout en produisant des résultats corrects.  
@@ -61,7 +61,7 @@ Le principal objectif de PLINQ est d’accélérer l’exécution de requêtes L
   
 5. Le type des options de fusion.  
   
-     PLINQ peut être configuré pour mettre en mémoire tampon sa sortie et en produire des segments ou la totalité après avoir produit le jeu de résultats entier, ou enfin transmettre en continu des résultats individuels à mesure qu'ils sont produits. Le premier résultat représente le temps d'exécution réduit et les derniers résultats représentent la latence entre les éléments produits.  Tandis que les options de fusion n'ont pas toujours une incidence majeure sur les performances globales de la requête, elles peuvent affecter les performances perçues dans la mesure où elles contrôlent la durée d'attente d'un utilisateur avant consultation des résultats. Pour plus d’informations, consultez l’article [Merge Options in PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md) (Options de fusion de PLINQ).  
+     PLINQ peut être configuré pour mettre en mémoire tampon sa sortie et en produire des segments ou la totalité après avoir produit le jeu de résultats entier, ou enfin transmettre en continu des résultats individuels à mesure qu'ils sont produits. Les anciens résultats dans le délai d'exécution général réduit et les derniers résultats dans la latence réduite entre les éléments produits.  Tandis que les options de fusion n'ont pas toujours une incidence majeure sur les performances globales de la requête, elles peuvent affecter les performances perçues dans la mesure où elles contrôlent la durée d'attente d'un utilisateur avant consultation des résultats. Pour plus d’informations, consultez l’article [Merge Options in PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md) (Options de fusion de PLINQ).  
   
 6. Types de partitionnement.  
   

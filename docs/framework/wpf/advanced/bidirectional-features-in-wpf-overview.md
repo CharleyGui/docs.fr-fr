@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Span elements [WPF]
 - bidirectional features [WPF]
 ms.assetid: fd850e25-7dba-408c-b521-8873e51dc968
-ms.openlocfilehash: 16cf232ccbdcca496aaa18fc2cfac280072ca24f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a3a991a841182438dca4ef0a4067d333180f4f60
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64655488"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380179"
 ---
 # <a name="bidirectional-features-in-wpf-overview"></a>Vue d'ensemble des fonctionnalités bidirectionnelles dans WPF
 Contrairement à d’autres plateformes de développement, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] possède de nombreuses fonctionnalités qui prennent en charge le développement rapide de contenu bidirectionnel, par exemple, mixte de gauche à droite et de droite à gauche des données dans le même document. En même temps, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] crée une excellente expérience pour les utilisateurs qui ont besoin de fonctionnalités bidirectionnelles tels que les utilisateurs de langue arabe et hébreu.  
@@ -178,11 +178,11 @@ Contrairement à d’autres plateformes de développement, [!INCLUDE[TLA2#tla_wi
   
  **Substitution** :  
   
- Cette propriété spécifie le type de substitution de nombres à effectuer. Elle prend l’une des opérations suivantes <xref:System.Windows.Media.NumberSubstitutionMethod> valeurs d’énumération.  
+ Cette propriété spécifie le type de substitution de nombres à effectuer. Elle prend l’une des opérations suivantes <xref:System.Windows.Media.NumberSubstitutionMethod> valeurs d’énumération :  
   
 - <xref:System.Windows.Media.NumberSubstitutionMethod.AsCulture>: La méthode de substitution est déterminée en fonction de la culture des nombres <xref:System.Globalization.NumberFormatInfo.DigitSubstitution%2A?displayProperty=nameWithType> propriété. Il s'agit de la valeur par défaut.  
   
-- <xref:System.Windows.Media.NumberSubstitutionMethod.Context>: Si la culture des nombres est une culture arabe ou PERSANE, il spécifie que les chiffres dépendent du contexte.  
+- <xref:System.Windows.Media.NumberSubstitutionMethod.Context>: Si la culture des nombres est une culture arabe ou perse, il spécifie que les chiffres dépendent du contexte.  
   
 - <xref:System.Windows.Media.NumberSubstitutionMethod.European>: Nombres sont toujours restitués comme des chiffres européens.  
   

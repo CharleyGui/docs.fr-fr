@@ -7,22 +7,22 @@ helpviewer_keywords:
 - clear Element
 - <clear> Element
 ms.assetid: 77f1d761-ff45-4001-8f36-3a3e5c41fa63
-author: guardrex
+author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: d824ae828dd025f3292990facaa5e423add9c282
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e79def513637937262d00b0edb1b0f7676fd120b
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705348"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300801"
 ---
 # <a name="clear-element-for-configsections"></a>\<Désactivez >, élément pour \<configSections >
 
 Efface toutes les sections précédemment définies et les groupes de sections.
 
-[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[**\<configSections>**](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;**\<clear>**
+[ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+&nbsp;&nbsp;[ **\<configSections>** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<clear>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,11 +40,11 @@ Efface toutes les sections précédemment définies et les groupes de sections.
 
 |     | Description |
 | --- | ----------- |
-| [**\<configSections >** élément](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | Contient des déclarations d’espace de noms et de la section de configuration. |
+| [ **\<configSections >** élément](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | Contient des déclarations d’espace de noms et de la section de configuration. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
-Aucun.
+None
 
 ## <a name="remarks"></a>Notes
 
@@ -54,7 +54,7 @@ Le  **\<Effacer >** élément supprime toutes les sections et groupes de votre a
 
 Cet exemple définit un fichier de configuration d’ordinateur et un fichier de configuration d’application et montre comment utiliser le  **\<Effacer >** élément dans un fichier de configuration d’application pour effacer les sections définies précédemment dans le fichier de configuration machine.
 
-Le code du fichier de configuration machine suivant déclare deux sections,  **\<sampleSection >** et  **\<anotherSampleSection >**, qui sont lus avant que l’application fichier de configuration :
+Le code du fichier de configuration machine suivant déclare deux sections,  **\<sampleSection >** et  **\<anotherSampleSection >** , qui sont lus avant que l’application fichier de configuration :
 
 ```xml
 <!-- Machine.config file -->

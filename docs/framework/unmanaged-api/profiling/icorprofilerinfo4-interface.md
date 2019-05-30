@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 177e5ef8054f408dc8ec3475c56043394a636bc0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 34c358a3405262787ed495bf9d8d75462d97a71f
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049451"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380332"
 ---
 # <a name="icorprofilerinfo4-interface"></a>ICorProfilerInfo4, interface
-Fournit des méthodes que les profileurs de code utilisent pour communiquer avec le common language runtime (CLR) pour contrôler la surveillance d’événements et les informations de demande. . Le `ICorProfilerInfo4` interface est une extension de l’autre `ICorProfilerInfo` interfaces. Il fournit de nouvelles méthodes pour prendre en charge de la recompilation juste-à-temps (JIT), ajoutée dans le [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+Fournit des méthodes que les profileurs de code utilisent pour communiquer avec le common language runtime (CLR) pour contrôler la surveillance d’événements et les informations de demande. . Le `ICorProfilerInfo4` interface est une extension de l’autre `ICorProfilerInfo` interfaces. Il fournit de nouvelles méthodes pour prendre en charge de la recompilation du juste-à-temps (JIT), ajoutée dans le .NET Framework 4.5.  
   
 ## <a name="methods"></a>Méthodes  
   

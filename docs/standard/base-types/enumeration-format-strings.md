@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: dd1ff672-1052-42cf-8666-4924fb6cd1a1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b4f2a8fc10d2aad6b2d43bf128697e86aa73c411
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: be2e5dbe0d02bcec8974a1e52c0dce107d3bf46b
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644637"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052850"
 ---
 # <a name="enumeration-format-strings"></a>Chaînes de format d’énumération
 
@@ -48,7 +48,7 @@ Affiche l’entrée d’énumération comme valeur entière dans la représentat
 
 ## <a name="x-or-x"></a>X ou x
 
-Affiche l’entrée d’énumération comme valeur hexadécimale. La valeur est représentée avec des zéros non significatifs, afin qu’elle comporte au minimum huit chiffres. L’exemple suivant illustre le spécificateur de format X.
+Affiche l’entrée d’énumération comme valeur hexadécimale. La valeur est représentée avec des zéros interligne si nécessaire, pour vérifier que la chaîne de résultat a deux caractères pour chaque octet dans le [type numérique sous-jacent](xref:System.Enum.GetUnderlyingType%2A) du type d’énumération. L’exemple suivant illustre le spécificateur de format X. Dans l’exemple, le type sous-jacent des deux <xref:System.ConsoleColor> et <xref:System.IO.FileAttributes> est <xref:System.Int32> ou un entier de 32 bits (ou 4 octets), ce qui produit une chaîne de résultat de 8 caractères.
 
 [!code-csharp[Formatting.Enum#4](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#4)]      
 [!code-vb[Formatting.Enum#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#4)]

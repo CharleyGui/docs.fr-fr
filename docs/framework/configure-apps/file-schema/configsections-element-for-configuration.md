@@ -7,40 +7,40 @@ helpviewer_keywords:
 - configSections Element
 - <configSections> Element
 ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
-author: guardrex
+author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: dc2bb949c7db4f70c20c3c0b687cacafed8696df
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d522d004630dee942e24c39a936feae7dc957bd5
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674795"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300789"
 ---
 # <a name="configsections-element-for-configuration"></a>\<configSections >, élément pour \<configuration >
 
 Contient des déclarations d’espace de noms et de la section de configuration.
 
-[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;**\<configSections>**
+[ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+&nbsp;&nbsp; **\<configSections>**
 
 ## <a name="attributes"></a>Attributs
 
-Aucun.
+None
 
 ## <a name="parent-element"></a>Élément parent
 
 |     | Description |
 | --- | ----------- |
-| [**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) | Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework. |
+| [ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md) | Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
 |     | Description |
 | --- | ----------- |
-| [**\<section>**](~/docs/framework/configure-apps/file-schema/section-element.md) | Contient une déclaration de section de configuration. |
-| [**\<sectionGroup>**](~/docs/framework/configure-apps/file-schema/sectiongroup-element-for-configsections.md) | Définit un espace de noms pour les sections de configuration. |
-| [**\<remove>**](~/docs/framework/configure-apps/file-schema/remove-element-for-configsections.md) | Supprime une section prédéfinie ou le groupe de section. |
-| [**\<clear>**](~/docs/framework/configure-apps/file-schema/clear-element-for-configsections.md) | Efface toutes les sections précédemment définies et les groupes de sections. |
+| [ **\<section>** ](~/docs/framework/configure-apps/file-schema/section-element.md) | Contient une déclaration de section de configuration. |
+| [ **\<sectionGroup>** ](~/docs/framework/configure-apps/file-schema/sectiongroup-element-for-configsections.md) | Définit un espace de noms pour les sections de configuration. |
+| [ **\<remove>** ](~/docs/framework/configure-apps/file-schema/remove-element-for-configsections.md) | Supprime une section prédéfinie ou le groupe de section. |
+| [ **\<clear>** ](~/docs/framework/configure-apps/file-schema/clear-element-for-configsections.md) | Efface toutes les sections précédemment définies et les groupes de sections. |
 
 ## <a name="remarks"></a>Notes
 

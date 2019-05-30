@@ -2,12 +2,12 @@
 title: Utilisation de WorkflowIdentity et du versioning
 ms.date: 03/30/2017
 ms.assetid: b8451735-8046-478f-912b-40870a6c0c3a
-ms.openlocfilehash: 77f5663665d56209cbb1ebc5999d44d411189f04
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: acf2b2c9502487c8bc8960f2a5625db94c31945f
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64603295"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380128"
 ---
 # <a name="using-workflowidentity-and-versioning"></a>Utilisation de WorkflowIdentity et du versioning
 <xref:System.Activities.WorkflowIdentity> permet aux développeurs d'applications de workflow d'associer un nom et un <xref:System.Version> à une définition de workflow, et d'associer ces informations à une instance persistante de workflow. Ces informations d'identité peuvent être utilisées par les développeurs d'applications de workflow pour activer des scénarios tels que l'exécution côte à côte de plusieurs versions d'une définition de workflow, et fournir la base d'autres fonctionnalités telles que la mise à jour dynamique. Cette rubrique fournit une vue d'ensemble de l'utilisation de <xref:System.Activities.WorkflowIdentity> avec l'hébergement <xref:System.Activities.WorkflowApplication>. Pour plus d’informations sur l’exécution côte à côte de définitions de workflow dans un service de workflow, consultez [Versioning côte à côte dans WorkflowServiceHost](../wcf/feature-details/side-by-side-versioning-in-workflowservicehost.md). Pour plus d’informations sur la mise à jour dynamique, consultez [mise à jour dynamique](dynamic-update.md).  
@@ -139,9 +139,9 @@ wfApp.Load(instance);
 ```  
   
 ## <a name="UpdatingWF4PersistenceDatabases"></a> La mise à niveau des bases de données de .NET Framework 4 de persistance pour prendre en charge le Versioning de Workflow  
- Le script de base de données SqlWorkflowInstanceStoreSchemaUpgrade.sql est fourni pour mettre à niveau les bases de données de persistance créées à l'aide de scripts de base de données [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]. Ce script met à jour les bases de données pour prendre en charge les nouvelles fonctions de versioning introduites dans le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Des valeurs de versioning par défaut sont attribuées à toutes les instances persistantes de workflow dans les bases de données et ces instances peuvent ensuite participer côte à côte à l'exécution et à la mise à jour dynamique.  
+ Le script de base de données SqlWorkflowInstanceStoreSchemaUpgrade.sql est fourni pour mettre à niveau les bases de données de persistance créées à l'aide de scripts de base de données [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]. Ce script met à jour les bases de données pour prendre en charge les nouvelles fonctions de versioning introduites dans .NET Framework 4.5. Des valeurs de versioning par défaut sont attribuées à toutes les instances persistantes de workflow dans les bases de données et ces instances peuvent ensuite participer côte à côte à l'exécution et à la mise à jour dynamique.  
   
- Si une application de workflow [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] tente d’effectuer une opération de persistance qui utilise les nouvelles fonctionnalités de versioning sur une base de données de persistance qui n’a pas été mise à niveau à l’aide du script indiqué, une exception <xref:System.Runtime.DurableInstancing.InstancePersistenceCommandException> est levée avec un message similaire au message suivant.  
+ Si une application de flux de travail de .NET Framework 4.5 tente une opération de persistance qui utilisent les nouvelles fonctionnalités de contrôle de version sur une base de données de persistance qui pas a été mis à niveau à l’aide du script indiqué, un <xref:System.Runtime.DurableInstancing.InstancePersistenceCommandException> est levée avec un message similaire à la message suivant.  
   
  **Le SqlWorkflowInstanceStore a une version de base de données de « 4.0.0.0 ». InstancePersistenceCommand « System.Activities.DurableInstancing.CreateWorkflowOwnerWithIdentityCommand » ne peut pas être exécuté sur cette version de la base de données.  Mettez à niveau la base de données vers « 4.5.0.0 ».**  
 ### <a name="ToUpgrade"></a> Pour mettre à niveau le schéma de base de données  

@@ -5,20 +5,20 @@ helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 5fca42f3-bdce-4b81-a704-61e42c89d3ba
-ms.openlocfilehash: f646445d5fa4556646700bb5daf8ac859631da2c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b6c9c3508c53e8a68a3f7e1cb12b6b6c95600e7b
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61880109"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380100"
 ---
 # <a name="how-to-enable-and-disable-automatic-binding-redirection"></a>Procédure : Activer et désactiver la redirection de liaison automatique
 
-Lorsque vous compilez des applications dans Visual Studio qui ciblent le [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] et versions ultérieures, les redirections de liaison peuvent être automatiquement ajoutées au fichier de configuration d’application pour remplacer l’unification d’assembly. Les redirections de liaison sont ajoutées si votre application ou ses composants font référence à plusieurs versions du même assembly, même si vous spécifiez manuellement des redirections de liaison dans le fichier de configuration de votre application. La fonctionnalité de redirection de liaison automatique affecte les applications de bureau et les applications web qui ciblent le [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] ou une version ultérieure, bien que le comportement est légèrement différent pour une application web. Vous pouvez activer la redirection de liaison automatique si vous avez des applications existantes qui ciblent des versions précédentes du .NET Framework, ou vous pouvez désactiver cette fonctionnalité si vous souhaitez créer manuellement des redirections de liaison.
+Lorsque vous compilez des applications dans Visual Studio qui ciblent le .NET Framework 4.5.1 et versions ultérieures, les redirections de liaison peuvent être automatiquement ajoutées au fichier de configuration d’application pour remplacer l’unification d’assembly. Les redirections de liaison sont ajoutées si votre application ou ses composants font référence à plusieurs versions du même assembly, même si vous spécifiez manuellement des redirections de liaison dans le fichier de configuration de votre application. La fonctionnalité de redirection de liaison automatique affecte les applications web et les applications de bureau qui ciblent le .NET Framework 4.5.1 ou version ultérieure, bien que le comportement est légèrement différent pour une application web. Vous pouvez activer la redirection de liaison automatique si vous avez des applications existantes qui ciblent des versions précédentes du .NET Framework, ou vous pouvez désactiver cette fonctionnalité si vous souhaitez créer manuellement des redirections de liaison.
 
 ## <a name="disable-automatic-binding-redirects-in-desktop-apps"></a>Désactiver les redirections de liaison automatiques dans les applications de bureau
 
-Redirections de liaison automatiques sont activées par défaut pour les applications de bureau Windows qui ciblent le [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] et versions ultérieures. Les redirections de liaison sont ajoutées à la configuration de sortie (**app.config**) du fichier lorsque l’application est compilée et remplacer l’unification d’assembly qui peut avoir lieu. La source de **app.config** fichier n’est pas modifié. Vous pouvez désactiver cette fonctionnalité en modifiant le fichier projet pour l’application ou en désactivant une case à cocher dans les propriétés du projet dans Visual Studio.
+Redirections de liaison automatiques sont activées par défaut pour les applications de bureau Windows qui ciblent le .NET Framework 4.5.1 et versions ultérieures. Les redirections de liaison sont ajoutées à la configuration de sortie (**app.config**) du fichier lorsque l’application est compilée et remplacer l’unification d’assembly qui peut avoir lieu. La source de **app.config** fichier n’est pas modifié. Vous pouvez désactiver cette fonctionnalité en modifiant le fichier projet pour l’application ou en désactivant une case à cocher dans les propriétés du projet dans Visual Studio.
 
 ### <a name="disable-through-project-properties"></a>Désactivation de via les propriétés du projet
 
@@ -35,7 +35,7 @@ Si vous avez Visual Studio 2017 version 15.7 ou version ultérieure, vous pouvez
 1. Ouvrez le fichier de projet pour la modification à l’aide d’une des méthodes suivantes :
 
    - Dans Visual Studio, sélectionnez le projet dans **l’Explorateur de solutions**, puis choisissez **ouvrir le dossier dans l’Explorateur de fichiers** dans le menu contextuel. Dans l’Explorateur de fichiers, recherchez le fichier de projet (.csproj ou .vbproj) et ouvrez-le dans le bloc-notes.
-   - Dans Visual Studio, dans **l’Explorateur de solutions**, cliquez sur le projet et choisissez **décharger le projet**. Cliquez de nouveau sur le projet déchargé, puis choisissez **modifier [NomProjet.csproj]**.
+   - Dans Visual Studio, dans **l’Explorateur de solutions**, cliquez sur le projet et choisissez **décharger le projet**. Cliquez de nouveau sur le projet déchargé, puis choisissez **modifier [NomProjet.csproj]** .
 
 2. Dans le fichier projet, recherchez l'entrée de propriété suivante :
 
@@ -56,7 +56,7 @@ Vous pouvez activer les redirections de liaison automatiques dans les applicatio
 1. Ouvrez le fichier de projet pour la modification à l’aide d’une des méthodes suivantes :
 
    - Dans Visual Studio, sélectionnez le projet dans **l’Explorateur de solutions**, puis choisissez **ouvrir le dossier dans l’Explorateur de fichiers** dans le menu contextuel. Dans l’Explorateur de fichiers, recherchez le fichier de projet (.csproj ou .vbproj) et ouvrez-le dans le bloc-notes.
-   - Dans Visual Studio, dans **l’Explorateur de solutions**, cliquez sur le projet et choisissez **décharger le projet**. Cliquez de nouveau sur le projet déchargé, puis choisissez **modifier [NomProjet.csproj]**.
+   - Dans Visual Studio, dans **l’Explorateur de solutions**, cliquez sur le projet et choisissez **décharger le projet**. Cliquez de nouveau sur le projet déchargé, puis choisissez **modifier [NomProjet.csproj]** .
 
 2. Ajoutez l’élément suivant pour le premier groupe de propriétés de configuration (sous le \<PropertyGroup > balise) :
 

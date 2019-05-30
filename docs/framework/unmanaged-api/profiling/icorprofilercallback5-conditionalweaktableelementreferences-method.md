@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8fd904ba03fd5c652b1e5e5c7f763dab2b80e517
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 08b35dd1744dbbb64d202718b61a9db5684d3bc3
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636666"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380360"
 ---
 # <a name="icorprofilercallback5conditionalweaktableelementreferences-method"></a>ICorProfilerCallback5::ConditionalWeakTableElementReferences, méthode
 
@@ -82,7 +82,7 @@ HRESULT Callback5Impl::ConditionalWeakTableElementReferences(
 
 ## <a name="remarks"></a>Notes
 
-Un profileur pour le [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] ou ultérieur implémente le [ICorProfilerCallback5](icorprofilercallback5-interface.md) interface et enregistre les dépendances spécifiées par le `ConditionalWeakTableElementReferences` (méthode). `ICorProfilerCallback5` fournit l’ensemble complet des dépendances entre les objets actifs représentés par `ConditionalWeakTable` entrées. Ces dépendances et le membre spécifiés par les références de champ la [ICorProfilerCallback::ObjectReferences](icorprofilercallback-objectreferences-method.md) méthode activer un profileur managé générer le graphique d’objet complet d’objets actifs.
+Un profileur pour le .NET Framework 4.5 ou ultérieur implémente le [ICorProfilerCallback5](icorprofilercallback5-interface.md) interface et enregistre les dépendances spécifiées par le `ConditionalWeakTableElementReferences` (méthode). `ICorProfilerCallback5` fournit l’ensemble complet des dépendances entre les objets actifs représentés par `ConditionalWeakTable` entrées. Ces dépendances et le membre spécifiés par les références de champ la [ICorProfilerCallback::ObjectReferences](icorprofilercallback-objectreferences-method.md) méthode activer un profileur managé générer le graphique d’objet complet d’objets actifs.
 
 ## <a name="requirements"></a>Configuration requise
 

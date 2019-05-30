@@ -4,12 +4,12 @@ description: Ce tutoriel montre comment utiliser la fonctionnalité d’interpol
 author: rpetrusha
 ms.author: ronpet
 ms.date: 10/23/2018
-ms.openlocfilehash: 97773659ea7dd00c291aa6a96401cac531adfdc8
-ms.sourcegitcommit: a3db1a9eafca89f95ccf361bc1833b47fbb2bb30
+ms.openlocfilehash: c1e6fed2293b7447384a657e720fb847f2fa041f
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58921365"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66195897"
 ---
 # <a name="use-string-interpolation-to-construct-formatted-strings"></a>Utiliser l’interpolation de chaîne pour construire des chaînes mises en forme
 
@@ -34,19 +34,19 @@ var name = "<name>";
 Console.WriteLine($"Hello, {name}. It's a pleasure to meet you!");
 ```
 
-Essayez ce code en tapant `dotnet run` dans la fenêtre de console. Quand vous exécutez le programme, il affiche une chaîne unique qui inclut votre nom dans le message d’accueil. La chaîne qui se trouve dans l’appel de méthode <xref:System.Console.WriteLine%2A> est une *chaîne interpolée*. C’est un genre de modèle qui vous permet de construire une chaîne unique (appelée *chaîne de résultat*) à partir d’une chaîne qui comprend du code incorporé. Les chaînes interpolées sont particulièrement utiles pour insérer des valeurs dans une chaîne ou pour concaténer (joindre) des chaînes.
+Essayez ce code en tapant `dotnet run` dans la fenêtre de console. Quand vous exécutez le programme, celui-ci affiche une chaîne unique qui inclut votre nom dans le message d’accueil. La chaîne qui se trouve dans l’appel de méthode <xref:System.Console.WriteLine%2A> est une *expression de chaîne interpolée*. C’est un genre de modèle qui vous permet de construire une chaîne unique (appelée *chaîne de résultat*) à partir d’une chaîne qui comprend du code incorporé. Les chaînes interpolées sont particulièrement utiles pour insérer des valeurs dans une chaîne ou pour concaténer (joindre) des chaînes.
 
 Cet exemple simple contient les deux éléments que chaque chaîne interpolée doit avoir :
 
 - Un littéral de chaîne qui commence par le caractère `$` avant ses guillemets ouvrants. Il ne peut pas y avoir d’espace entre le symbole `$` et les guillemets. (Si vous voulez voir ce qui se passe si vous en incluez un, insérez un espace après le caractère `$`, enregistrez le fichier et réexécutez le programme en tapant `dotnet run` dans la fenêtre de console. Le compilateur C# affiche un message d’erreur « Erreur CS1056 : caractère inattendu ’$’ ».
 
-- Une ou plusieurs *expressions interpolées*. Une expression interpolée est indiquée par des accolades ouvrantes et fermantes (`{` et `}`). Vous pouvez placer n’importe quelle expression C# qui retourne une valeur (notamment `null`) à l’intérieur des accolades.
+- Une ou plusieurs *expressions d’interpolation*. Une expression d’interpolation est indiquée par des accolades ouvrantes et fermantes (`{` et `}`). Vous pouvez placer n’importe quelle expression C# qui retourne une valeur (notamment `null`) à l’intérieur des accolades.
 
 Essayons quelques autres exemples d’interpolation de chaîne avec d’autres types de données.
 
 ## <a name="include-different-data-types"></a>Inclure différents types de données
 
-Dans la section précédente, vous avez utilisé l’interpolation de chaîne pour insérer une chaîne à l’intérieur d’une autre. Le résultat d’une expression interpolée peut toutefois être de n’importe quel type de données. Nous allons insérer des valeurs de différents types de données dans une chaîne interpolée.
+Dans la section précédente, vous avez utilisé l’interpolation de chaîne pour insérer une chaîne à l’intérieur d’une autre. Le résultat d’une expression d’interpolation peut toutefois être de n’importe quel type de données. Nous allons insérer des valeurs de différents types de données dans une chaîne interpolée.
 
 Dans l’exemple suivant, nous commençons par définir une [classe](../../programming-guide/classes-and-structs/classes.md) comme type de données `Vegetable` avec la [propriété](../../properties.md) `Name` et la [méthode](../../methods.md) `ToString`, qui [remplace](../../language-reference/keywords/override.md) le comportement de la méthode <xref:System.Object.ToString?displayProperty=nameWithType>. Le [modificateur d’accès `public`](../../language-reference/keywords/public.md) permet à n’importe quel code client d’obtenir la représentation sous forme de chaîne d’une instance de `Vegetable`. Dans l’exemple, la méthode `Vegetable.ToString` retourne la valeur de la propriété `Name` qui est initialisée au niveau du [constructeur](../../programming-guide/classes-and-structs/constructors.md) `Vegetable` :
 
@@ -89,15 +89,15 @@ public class Program
 }
 ```
 
-Notez que l’expression interpolée `item` dans la chaîne interpolée correspond au texte « eggplant » (aubergines) dans la chaîne de résultat. En effet, lorsque le résultat de l’expression n’est pas de type chaîne, il est résolu en une chaîne de la façon suivante :
+Notez que l’expression d’interpolation `item` dans la chaîne interpolée résout le texte « eggplant » (aubergine) dans la chaîne de résultat. En effet, lorsque le résultat de l’expression n’est pas de type chaîne, il est résolu en une chaîne de la façon suivante :
 
-- Si l’expression interpolée a la valeur `null`, une chaîne vide («» ou <xref:System.String.Empty?displayProperty=nameWithType>) est utilisée.
+- Si l’expression d’interpolation donne une valeur `null`, une chaîne vide («» ou <xref:System.String.Empty?displayProperty=nameWithType>) est utilisée.
 
-- Si l’expression interpolée n’a pas la valeur `null`, en général, la méthode `ToString` du type du résultat est appelée. Vous pouvez tester cela en mettant à jour l’implémentation de la méthode `Vegetable.ToString`. Il n’est peut-être même pas nécessaire d’implémenter la méthode `ToString` étant donné que chaque type a déjà une implémentation de cette méthode. Pour tester cela, commentez la définition de la méthode `Vegetable.ToString` dans l’exemple (en la faisant précéder d’un symbole de commentaire `//`). Dans la sortie, la chaîne « eggplant » (aubergines) est remplacée par le nom de type complet (« Vegetable » dans cet exemple), ce qui est le comportement par défaut de la méthode <xref:System.Object.ToString?displayProperty=nameWithType>. Le comportement par défaut de la méthode `ToString` pour une valeur d’énumération est de retourner la représentation sous forme de chaîne de la valeur.
+- Si l’expression d’interpolation ne donne pas une valeur `null`, en général, la méthode `ToString` du type de résultat est appelée. Vous pouvez tester cela en mettant à jour l’implémentation de la méthode `Vegetable.ToString`. Il n’est peut-être même pas nécessaire d’implémenter la méthode `ToString` étant donné que chaque type a déjà une implémentation de cette méthode. Pour tester cela, commentez la définition de la méthode `Vegetable.ToString` dans l’exemple (en la faisant précéder d’un symbole de commentaire `//`). Dans la sortie, la chaîne « eggplant » (aubergines) est remplacée par le nom de type complet (« Vegetable » dans cet exemple), ce qui est le comportement par défaut de la méthode <xref:System.Object.ToString?displayProperty=nameWithType>. Le comportement par défaut de la méthode `ToString` pour une valeur d’énumération est de retourner la représentation sous forme de chaîne de la valeur.
 
 Dans la sortie de cet exemple, la date est trop précise (le prix des aubergines ne change pas chaque seconde) et la valeur du prix n’indique pas la devise locale. Dans la section suivante, vous découvrirez comment résoudre ces problèmes en contrôlant le format des représentations sous forme de chaînes des résultats des expressions.
 
-## <a name="control-the-formatting-of-interpolated-expressions"></a>Contrôler la mise en forme des expressions interpolées
+## <a name="control-the-formatting-of-interpolation-expressions"></a>Contrôler la mise en forme des expressions d’interpolation
 
 Dans la section précédente, deux chaînes à la mise en forme incorrecte ont été insérées dans la chaîne de résultat. L’une était une valeur de date et d’heure pour laquelle seule la date était appropriée. La deuxième était un prix qui n’indiquait pas la devise locale. Ces deux problèmes sont faciles à résoudre. En utilisant l’interpolation de chaîne, vous pouvez spécifier des *chaînes de format* qui contrôlent la mise en forme de types particuliers. Modifiez l’appel à `Console.WriteLine` de l’exemple précédent de façon à inclure les chaînes de format pour les expressions de date et de prix, comme indiqué dans la ligne de code suivante :
 
@@ -105,7 +105,7 @@ Dans la section précédente, deux chaînes à la mise en forme incorrecte ont �
 Console.WriteLine($"On {date:d}, the price of {item} was {price:C2} per {unit}.");
 ```
 
-Vous spécifiez une chaîne de format en plaçant après l’expression interpolée un signe deux-points (« : ») et la chaîne de format. « d » est une [chaîne de format de date et d’heure standard](../../../standard/base-types/standard-date-and-time-format-strings.md#the-short-date-d-format-specifier) qui représente le format de date courte. « C2 » est une [chaîne de format numérique standard](../../../standard/base-types/standard-numeric-format-strings.md#the-currency-c-format-specifier) qui représente un nombre sous forme de valeur monétaire avec deux chiffres après la virgule.
+Vous spécifiez une chaîne de format en plaçant après l’expression d’interpolation un signe deux-points (« : ») et la chaîne de format. « d » est une [chaîne de format de date et d’heure standard](../../../standard/base-types/standard-date-and-time-format-strings.md#the-short-date-d-format-specifier) qui représente le format de date courte. « C2 » est une [chaîne de format numérique standard](../../../standard/base-types/standard-numeric-format-strings.md#the-currency-c-format-specifier) qui représente un nombre sous forme de valeur monétaire avec deux chiffres après la virgule.
 
 Plusieurs types dans les bibliothèques .NET prennent en charge un ensemble prédéfini de chaînes de format. Il s’agit notamment de tous les types numériques et des types de date et d’heure. Pour obtenir une liste complète des types qui prennent en charge les chaînes de format, consultez [Chaînes de format et types de bibliothèque de classes .NET](../../../standard/base-types/formatting-types.md#stringRef) dans l’article [Mise en forme des types dans .NET](../../../standard/base-types/formatting-types.md).
 
@@ -113,9 +113,9 @@ Essayez de modifier les chaînes de format dans votre éditeur de texte et, à c
 
 En plus de contrôler la mise en forme, vous pouvez contrôler la largeur de champ et l’alignement des chaînes mises en forme qui sont incluses dans la chaîne de résultat. Dans la section suivante, vous allez découvrir comment effectuer cette opération.
 
-## <a name="control-the-field-width-and-alignment-of-interpolated-expressions"></a>Contrôler la largeur de champ et l’alignement des expressions interpolées
+## <a name="control-the-field-width-and-alignment-of-interpolation-expressions"></a>Contrôler la largeur de champ et l’alignement des expressions d’interpolation
 
-En règle générale, quand le résultat d’une expression interpolée est représenté sous forme de chaîne, la chaîne est incluse dans une chaîne de résultat sans espaces de début ou de fin. Contrôler la largeur d’un champ et l’alignement du texte vous permet de rendre une sortie plus lisible, en particulier quand vous utilisez un jeu de données. Pour voir cela, remplacez tout le code dans votre éditeur de texte par le code suivant, puis tapez `dotnet run` pour exécuter le programme :
+En règle générale, lorsque le résultat d’une expression d’interpolation est mise en forme en chaîne, cette chaîne est inclue dans une chaîne de résultats sans espace de début ou de fin. Contrôler la largeur d’un champ et l’alignement du texte vous permet de rendre une sortie plus lisible, en particulier quand vous utilisez un jeu de données. Pour voir cela, remplacez tout le code dans votre éditeur de texte par le code suivant, puis tapez `dotnet run` pour exécuter le programme :
 
 ```csharp
 using System;
@@ -141,7 +141,7 @@ public class Example
 }
 ```
 
-Les noms des auteurs sont alignés à gauche, et leurs titres sont alignés à droite. Vous spécifiez l’alignement en ajoutant une virgule (« , ») après une expression interpolée et en spécifiant la largeur de champ *minimum*. Si la valeur spécifiée est un nombre positif, le champ est aligné à droite. Si c’est un nombre négatif, le champ est aligné à gauche.
+Les noms des auteurs sont alignés à gauche, et leurs titres sont alignés à droite. Vous spécifiez l’alignement en ajoutant une virgule (« , ») après une expression d’interpolation et en spécifiant la largeur de champ *minimum*. Si la valeur spécifiée est un nombre positif, le champ est aligné à droite. Si c’est un nombre négatif, le champ est aligné à gauche.
 
 Essayez de supprimer les signes négatifs du code `{"Author",-25}` et `{title.Key,-25}`, puis réexécutez l’exemple, comme avec le code suivant :
 
@@ -153,7 +153,7 @@ foreach (var title in titles)
 
 Cette fois, les informations sur l’auteur sont alignées à droite.
 
-Vous pouvez combiner un spécificateur d’alignement et une chaîne de format pour une même expression interpolée. Pour cela, spécifiez d’abord l’alignement, puis un signe deux-points et la chaîne de format. Remplacez tout le code à l’intérieur de la méthode `Main` par le code suivant, qui affiche trois chaînes mises en forme avec des largeurs de champ définies. Ensuite, exécutez le programme en entrant la commande `dotnet run`.
+Vous pouvez combiner un spécificateur d’alignement et une chaîne de format pour une même expression d’interpolation. Pour cela, spécifiez d’abord l’alignement, puis un signe deux-points et la chaîne de format. Remplacez tout le code à l’intérieur de la méthode `Main` par le code suivant, qui affiche trois chaînes mises en forme avec des largeurs de champ définies. Ensuite, exécutez le programme en entrant la commande `dotnet run`.
 
 ```csharp
 Console.WriteLine($"[{DateTime.Now,-20:d}] Hour [{DateTime.Now,-10:HH}] [{1063.342,15:N2}] feet");

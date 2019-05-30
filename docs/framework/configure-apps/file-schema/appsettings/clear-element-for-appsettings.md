@@ -7,22 +7,22 @@ helpviewer_keywords:
 - clear Element
 - <clear> Element
 ms.assetid: 6d18c7be-27db-438b-8fb5-765d396b0b7b
-author: guardrex
+author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: 0b6a48d1fdab3cbccf40aaa77731a658f533eeba
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5d4d96143dbd1db440de2247a7dc2f0c66f20403
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705400"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66301297"
 ---
 # <a name="clear-element-for-appsettings"></a>\<Désactivez >, élément pour \<appSettings >
 
 Efface les paramètres d’application personnalisés.
 
-[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[**\<appSettings>**](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;**\<clear>**
+[ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+&nbsp;&nbsp;[ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<clear>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -34,17 +34,17 @@ Efface les paramètres d’application personnalisés.
 
 ## <a name="attributes"></a>Attributs
 
-Aucun.
+None
 
 ## <a name="parent-element"></a>Élément parent
 
 |     | Description |
 | --- | ----------- |
-| [**\<appSettings>**](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) | Contient les paramètres d’application personnalisés, tels que les chemins d’accès, des URL de service Web XML ou d’autres informations de configuration d’application personnalisée. |
+| [ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) | Contient les paramètres d’application personnalisés, tels que les chemins d’accès, des URL de service Web XML ou d’autres informations de configuration d’application personnalisée. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
-Aucun.
+None
 
 ## <a name="example"></a>Exemple
 

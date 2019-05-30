@@ -7,15 +7,15 @@ helpviewer_keywords:
 - controls [WPF], DocumentViewer
 - DocumentViewer control [WPF]
 ms.assetid: c21eb322-d6b3-474b-ab05-94527bd1b0fa
-ms.openlocfilehash: cc9031a19cb49736cf039d53d02ff2bc571ff978
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6f27b07b77fc05c548b724aaf2c905c6a9f5d420
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61911896"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378271"
 ---
 # <a name="documentviewer"></a>DocumentViewer
-Le <xref:System.Windows.Controls.DocumentViewer> contrôle sert à afficher <xref:System.Windows.Documents.FixedDocument> contenu (tel que [!INCLUDE[TLA#tla_metro](../../../../includes/tlasharptla-metro-md.md)] documents) dans un format paginé.  
+Le <xref:System.Windows.Controls.DocumentViewer> contrôle sert à afficher <xref:System.Windows.Documents.FixedDocument> contenu (tel que les documents XML Paper Specification (XPS)) dans un format paginé.  
   
 ## <a name="reference"></a>Référence  
  <xref:System.Windows.Controls.DocumentViewer>  

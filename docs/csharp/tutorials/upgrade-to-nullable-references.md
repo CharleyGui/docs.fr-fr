@@ -3,12 +3,12 @@ title: Concevoir avec des types référence Nullable
 description: Ce tutoriel avancé présente les types référence Nullable. Il explique comment exprimer une intention de conception lorsque les valeurs de référence peuvent être Null et comment, dans le cas contraire, indiquer au compilateur qu’elles ne peuvent pas être Null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: fac83d8f61b725a4a2163c9cd42911fe60d12263
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 289b864aaa0380a31e93ef223fb5b5780e35892a
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59427290"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66195847"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Tutoriel : Migrer du code existant avec des types de référence nullable
 
@@ -49,8 +49,11 @@ La mise à niveau de la version de langage sélectionne C# 8.0, mais n’active 
 Une bonne étape suivante consiste à activer le contexte d’annotation nullable et de voir combien d’avertissements sont générés. Ajoutez l’élément suivant aux fichiers csproj dans la solution, directement sous l’élément `LangVersion` :
 
 ```xml
-<NullableContextOptions>enable</NullableContextOptions>
+<Nullable>enable</Nullable>
 ```
+
+> [!IMPORTANT]
+> L’élément `Nullable` était nommé `NullableContextOptions`. Les navires renommés avec Visual Studio 2019, 16.2-p1. Le kit SDK .NET Core 3.0.100-preview5-011568 n’a pas cette modification. Si vous utilisez le CLI .NET Core, vous devrez utiliser `NullableContextOptions` jusqu'à ce que la préversion suivante soit disponible.
 
 Effectuez une build de test et notez la liste d’avertissements. Dans cette petite application, le compilateur génère cinq avertissements, il est donc probable que vous laissiez le contexte d’annotation nullable activé et commenciez à résoudre les avertissements pour l’ensemble du projet.
 
@@ -58,7 +61,7 @@ Cette stratégie fonctionne uniquement pour les projets plus petits. Pour tous l
 
 ## <a name="warnings-help-discover-original-design-intent"></a>Les avertissements contribuent à découvrir l’intention de conception d’origine
 
-Il existe deux classes qui génèrent plusieurs avertissements. Commencez avec la classe `NewsStoryViewModel`. Supprimez l’élément `NullableContextOptions` des deux fichiers csproj afin de pouvoir limiter l’étendue des avertissements aux sections de code sur lesquelles vous travaillez. Ouvrez le fichier *NewsStoryViewModel.cs*, puis ajoutez les directives suivantes pour activer le contexte d’annotation nullable pour `NewsStoryViewModel` et restaurez-le en suivant cette définition de classe :
+Il existe deux classes qui génèrent plusieurs avertissements. Commencez avec la classe `NewsStoryViewModel`. Supprimez l’élément `Nullable` des deux fichiers csproj afin de pouvoir limiter l’étendue des avertissements aux sections de code sur lesquelles vous travaillez. Ouvrez le fichier *NewsStoryViewModel.cs*, puis ajoutez les directives suivantes pour activer le contexte d’annotation nullable pour `NewsStoryViewModel` et restaurez-le en suivant cette définition de classe :
 
 ```csharp
 #nullable enable

@@ -7,12 +7,12 @@ f1_keywords:
 - fixed
 helpviewer_keywords:
 - fixed keyword [C#]
-ms.openlocfilehash: a852f36c05075365ced8ec39457b15601ca3c3fb
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 2c49c8517e15534121b0f8dbc04902b46a92ef20
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877086"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959362"
 ---
 # <a name="fixed-statement-c-reference"></a>fixed, instruction (référence C#)
 
@@ -63,13 +63,11 @@ fixed (byte* ps = srcarray, pd = dstarray)
 }
 ```
 
-Vous pouvez allouer de la mémoire à la pile, où elle n’est pas soumise au nettoyage de la mémoire et n’a donc pas besoin d’être épinglée. Pour plus d’informations, consultez [stackalloc](stackalloc.md).
+Vous pouvez allouer de la mémoire à la pile, où elle n’est pas soumise au nettoyage de la mémoire et n’a donc pas besoin d’être épinglée. Pour ce faire, utilisez l’[`stackalloc`opérateur](stackalloc.md).
 
-[!code-csharp[Initializing multiple pointers](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#4)]
+## <a name="c-language-specification"></a>spécification du langage C#
 
-## <a name="c-language-specification"></a>Spécification du langage C#
-
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Pour plus d’informations, consultez la section [Instructions fixes](~/_csharplang/spec/unsafe-code.md#the-fixed-statement) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Voir aussi
 

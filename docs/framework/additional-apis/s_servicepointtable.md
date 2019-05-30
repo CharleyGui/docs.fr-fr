@@ -10,14 +10,14 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 24459679-291c-401a-9def-e42b29466fcf
-author: guardrex
+author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: ebcf5c3f13b3bd30a8e091be09ae546eee1eaffe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 840d068d282e3ba35df5aee6a11ff96d9e6bfdbd
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675440"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66301390"
 ---
 # <a name="servicepointmanagersservicepointtable-field"></a>ServicePointManager.s\_ServicePointTable champ
 

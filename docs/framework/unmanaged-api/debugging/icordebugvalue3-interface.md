@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 300d2263c076c9028340863e2f7a3fa27a36ef9d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e4bf3605331e6900fd890e49bb3f71f4ca4409c7
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61993726"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377591"
 ---
 # <a name="icordebugvalue3-interface"></a>ICorDebugValue3, interface
 Étend les interfaces de « ICorDebugValue » et « ICorDebugValue2 » pour prendre en charge pour les tableaux qui sont supérieures à 2 Go.  
@@ -33,7 +33,7 @@ ms.locfileid: "61993726"
 |[GetSize64, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md)|Obtient la taille, en octets, de ce `ICorDebugValue3` objet.|  
   
 ## <a name="remarks"></a>Notes  
- Le [ICorDebugValue::GetSize](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md) méthode retourne une taille de l’objet qui est compris entre 0 et 2 147 483 647 octets. Dans le [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], la taille des tableaux peut dépasser 2 Go. Le `ICorDebugValue3` interface vous permet de déterminer la taille de ces tableaux.  
+ Le [ICorDebugValue::GetSize](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md) méthode retourne une taille de l’objet qui est compris entre 0 et 2 147 483 647 octets. Dans le .NET Framework 4.5, la taille des tableaux peut dépasser 2 Go. Le `ICorDebugValue3` interface vous permet de déterminer la taille de ces tableaux.  
   
 ## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  

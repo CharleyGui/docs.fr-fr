@@ -4,12 +4,12 @@ ms.date: 04/10/2018
 ms.assetid: 3ba543d8-15e5-4322-b6e7-1ebfc92ed7dd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 572fcee528098a4f2929e07dfae63efc56e93dfd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e365dff7c56ddca1d05f2e16605078ef46e4e2af
+ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61599556"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66251155"
 ---
 # <a name="corprfhighmonitor-enumeration"></a>COR_PRF_MODULE_FLAGS, énumération
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
@@ -46,7 +46,7 @@ typedef enum {
 ## <a name="remarks"></a>Notes  
  Le `COR_PRF_HIGH_MONITOR` indicateurs sont utilisés avec la `pdwEventsHigh` paramètre de la [ICorProfilerInfo5::GetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-geteventmask2-method.md) et [ICorProfilerInfo5::SetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) méthodes.  
   
-En commençant par le [!INCLUDE[net_v461](../../../../includes/net-v461-md.md)], la valeur de la `COR_PRF_HIGH_ALLOWABLE_AFTER_ATTACH` est passée de 0 à `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED` (0 x 00000002). À compter de .NET Framework 4.7.2, sa valeur a été remplacée par `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED` à `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED | COR_PRF_HIGH_MONITOR_DYNAMIC_FUNCTION_UNLOADS`.   
+En commençant par le .NET Framework 4.6.1, la valeur de la `COR_PRF_HIGH_ALLOWABLE_AFTER_ATTACH` est passée de 0 à `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED` (0 x 00000002). À compter de .NET Framework 4.7.2, sa valeur a été remplacée par `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED` à `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED | COR_PRF_HIGH_MONITOR_DYNAMIC_FUNCTION_UNLOADS`.   
 
 `COR_PRF_HIGH_MONITOR_IMMUTABLE` est destiné à être un masque de bits qui représente tous les indicateurs qui peuvent uniquement être définies lors de l’initialisation. Essayez de modifier un de ces indicateurs autre part génèrent un échec `HRESULT`.
 

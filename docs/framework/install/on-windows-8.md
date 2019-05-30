@@ -4,13 +4,13 @@ ms.custom: updateeachrelease
 description: Découvrez comment installer le .NET Framework sur Windows 8
 author: rlander
 ms.author: mairaw
-ms.date: 04/10/2018
-ms.openlocfilehash: 46f0401075f434a5406d7ba19e6ef4b7a6639caf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.date: 04/18/2019
+ms.openlocfilehash: 27a5c46a711914b32f8c934a33f5897d8ad7a6b8
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54542793"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052710"
 ---
 # <a name="install-the-net-framework-on-windows-8-and-windows-server-2012"></a>Installer le .NET Framework sur Windows 8 et Windows Server 2012
 
@@ -18,20 +18,20 @@ Un grand nombre d’applications sur Windows nécessitent l’installation du .N
 
 ![Impossible de démarrer cette application](./media/this-application-could-not-be-started.png)
 
-Ces instructions ont pour but de vous aider à installer les versions du .NET Framework dont vous avez besoin. [.NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkID=863255) est la dernière version. Cette version est prise en charge sur Windows Server 2012, mais elle ne l’est pas sur Windows 8. Elle est incluse avec [Windows 10 Mise à jour d’octobre 2018](https://support.microsoft.com/en-us/help/4028685/windows-10-get-the-update) et [Windows 10 Mise à jour d’avril 2018](https://www.microsoft.com/software-download/windows10).
+Ces instructions ont pour but de vous aider à installer les versions du .NET Framework dont vous avez besoin. [.NET Framework 4.8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) est la dernière version. Cette version est prise en charge sur Windows Server 2012, mais elle ne l’est pas sur Windows 8. Elle est fournie avec la [Mise à jour de Windows 10 de mai 2019](https://support.microsoft.com/help/4028685/windows-10-get-the-update).
 
-## <a name="net-framework-472"></a>.NET Framework 4.7.2
+## <a name="net-framework-48"></a>.NET Framework 4.8
 
 > [!div class="button"]
-> [Télécharger .NET Framework 4.7.2](https://www.microsoft.com/net/download/thank-you/net472?utm_source=ms-docs&utm_medium=referral)
+> [Télécharger .NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net48)
 
-.NET Framework 4.7.2 est pris en charge sur Windows Server 2012. Cette version n’est pas prise en charge sur Windows 8.
+.NET Framework 4.8 est pris en charge sur Windows Server 2012. Cette version n’est pas prise en charge sur Windows 8.
 
-[.NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkID=863255) peut être utilisé pour exécuter des applications conçues pour .NET Framework version 4.0 ou ultérieure.
+[.NET Framework 4.8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) peut être utilisé pour exécuter des applications conçues pour .NET Framework version 4.0 ou ultérieure.
 
 ## <a name="net-framework-46"></a>.NET Framework 4.6
 
-Le [.NET Framework 4.6](https://www.microsoft.com/en-us/download/details.aspx?id=48130) est la dernière version prise en charge du .NET Framework sur Windows 8.
+Le [.NET Framework 4.6](https://www.microsoft.com/download/details.aspx?id=48130) est la dernière version prise en charge du .NET Framework sur Windows 8.
 
 Le .NET Framework 4.6 prend en charge les applications conçues pour le .NET Framework 4.0 à 4.6.
 

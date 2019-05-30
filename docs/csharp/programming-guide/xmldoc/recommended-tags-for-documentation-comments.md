@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XML [C#], tags
 - XML documentation [C#], tags
 ms.assetid: 6e98f7a9-38f4-4d74-b644-1ff1b23320fd
-ms.openlocfilehash: 963be5273389ebbdb3458d41b0658de0d94bb2cd
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 07594d70b92e2075c3d5aba605eab23d766faed6
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634794"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052749"
 ---
 # <a name="recommended-tags-for-documentation-comments-c-programming-guide"></a>Balises recommandées pour les commentaires de documentation (Guide de programmation C#)
 Le compilateur C# traite les commentaires de documentation dans votre code et les met au format XML dans un fichier dont vous spécifiez le nom dans l’option de ligne de commande **/doc**. Pour créer la documentation finale basée sur le fichier généré par le compilateur, vous pouvez créer un outil personnalisé ou utiliser un outil tel que [DocFX](https://dotnet.github.io/docfx/) ou [Sandcastle](https://github.com/EWSoftware/SHFB).  
@@ -36,12 +36,13 @@ Le compilateur C# traite les commentaires de documentation dans votre code et l
   
  (* indique que le compilateur vérifie la syntaxe.)  
   
- Si vous voulez que des crochets pointus apparaissent dans le texte d’un commentaire de documentation, utilisez `<` et `>`, comme illustré dans l’exemple suivant.  
+ Si vous voulez que des crochets pointus apparaissent dans le texte d’un commentaire de documentation, utilisez le codage HTML de `<` et `>`, respectivement `&lt;` et `&gt;`. Ce codage est illustré dans l'exemple suivant :
   
 ```csharp  
-/// <summary cref="C < T >">  
-/// </summary>  
-```  
+/// <summary>
+/// This property always returns a value &lt; 1.
+/// </summary>
+```
   
 ## <a name="see-also"></a>Voir aussi
 

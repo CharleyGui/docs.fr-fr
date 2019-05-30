@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d09c344e-3548-4944-a3ed-051880e3f5b8
-ms.openlocfilehash: 07f48ab7ef1095ba80b1a955a4bd1ea602a75aa8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3458ebf8f5708496eef6246fa55cf528e8a32bc4
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033421"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380055"
 ---
 # <a name="return-the-set-intersection-of-two-sequences"></a>Retourner l'intersection définie de deux séquences
 Utilisez l'opérateur <xref:System.Linq.Queryable.Intersect%2A> pour retourner l'intersection définie de deux séquences.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise <xref:System.Linq.Queryable.Intersect%2A> pour retourner une séquence de tous les pays dans lesquels les `Customers` et les `Employees` habitent.  
+ Cet exemple utilise <xref:System.Linq.Queryable.Intersect%2A> pour retourner une séquence de tous les pays/régions dans lesquels les `Customers` et `Employees` live.  
   
  [!code-csharp[DLinqQueryExamples#42](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#42)]
  [!code-vb[DLinqQueryExamples#42](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#42)]  

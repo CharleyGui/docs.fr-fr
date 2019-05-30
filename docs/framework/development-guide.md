@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cc7a0991ae308f1c61026e946021d22da9a4bc3b
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 032958c24e03025fc3fc3eee2aae40bdd4491e7b
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583525"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66052731"
 ---
 # <a name="net-framework-development-guide"></a>Guide de développement .NET Framework
 Cette section explique comment créer, configurer, déboguer, sécuriser et déployer des applications .NET Framework. La section fournit également des informations sur les aspects technologiques, tels que la programmation dynamique, l'interopérabilité, l'extensibilité, la gestion de la mémoire et les threads.  
@@ -48,7 +48,7 @@ Cette section explique comment créer, configurer, déboguer, sécuriser et dép
  Explique comment utiliser des fichiers de configuration pour modifier des paramètres sans avoir à recompiler les applications .NET Framework.  
   
  [Compilation d'applications avec .NET Native](../../docs/framework/net-native/index.md)  
- Explique comment utiliser la technologie de précompilation [!INCLUDE[net_native](../../includes/net-native-md.md)] pour générer et déployer des applications du Windows Store. [!INCLUDE[net_native](../../includes/net-native-md.md)] compile des applications qui sont écrites en code managé (C#) et qui ciblent le .NET Framework sur le code natif.  
+ Explique comment utiliser la technologie de précompilation .NET Native pour générer et déployer des applications de Windows Store. .NET Native compile des applications qui sont écrites en code managé (C#) et qui ciblent .NET Framework sur le code natif.  
   
  [Sécurité](../../docs/standard/security/index.md)  
  Fournit des informations sur les classes et les services dans le .NET Framework qui facilitent le développement d'applications sécurisées.  

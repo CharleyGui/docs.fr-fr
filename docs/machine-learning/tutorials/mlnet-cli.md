@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: feddafdd6becd676f4d18aa94bdfae50f02abc6e
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: 029685be9d44ad947d4291912d7da1d8ce73d52a
+ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557956"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66053643"
 ---
 # <a name="auto-generate-a-binary-classifier-using-the-cli"></a>Générer automatiquement un classifieur binaire à l’aide de la CLI
 
@@ -142,12 +142,12 @@ Toutes les ressources listées ci-dessus seront décrites dans les étapes suiva
 
     ![Solution Visual Studio générée par la CLI](./media/mlnet-cli/generated-csharp-solution-detailed.png)
 
-    - Vous pouvez utiliser la **bibliothèque de classes** générée, qui contient le modèle ML sérialisé et les classes de données, directement dans votre application utilisateur, éventuellement en référençant directement cette bibliothèque de classes (ou en déplaçant le code, selon votre préférence).
+    - Vous pouvez utiliser la **bibliothèque de classes** générée, qui contient le modèle ML sérialisé (fichier .zip) et les classes de données (modèles de données), directement dans votre application utilisateur final, éventuellement en référençant directement cette bibliothèque de classes (ou en déplaçant le code, selon votre préférence).
     - L’**application console** générée contient le code d’exécution que vous devez revoir. Ensuite, vous réutilisez généralement le « score d’évaluation » (code qui exécute le modèle ML pour effectuer des prédictions) en déplaçant ce code simple (de quelques lignes) vers l’application utilisateur où vous souhaitez effectuer les prédictions. 
 
-1. Ouvrez maintenant les fichiers des classes **Observation.cs** et **Prediction.cs** dans le projet de bibliothèque de classes. Vous voyez que ces classes sont les « classes de données » ou les classes POCO où sont stockées les données. Il s’agit de « code réutilisable », qui peut être utile de générer si votre jeu de données contient des dizaines ou des centaines de colonnes. 
-    - La classe `SampleObservation` est utilisée pour lire les données du jeu de données. 
-    - La classe `SamplePrediction` est utilisée pour les prédictions.
+1. Ouvrez les fichiers de classes **ModelInput.cs** et **ModelOutput.cs** dans le projet de bibliothèque de classes. Vous voyez que ces classes sont les « classes de données » ou les classes POCO où sont stockées les données. Il s’agit de « code réutilisable », qui peut être utile de générer si votre jeu de données contient des dizaines ou des centaines de colonnes. 
+    - La classe `ModelInput` est utilisée pour lire les données du jeu de données. 
+    - La classe `ModelOutput` est utilisée pour obtenir le résultat de prédiction (données de prédiction).
 
 1. Ouvrez le fichier Program.cs et explorez le code. Quelques lignes suffisent pour exécuter le modèle et effectuer un exemple de prédiction.
 
@@ -160,13 +160,13 @@ Toutes les ressources listées ci-dessus seront décrites dans les étapes suiva
         //ModelBuilder.CreateModel();
 
         ITransformer mlModel = mlContext.Model.Load(MODEL_FILEPATH, out DataViewSchema inputSchema);
-        var predEngine = mlContext.Model.CreatePredictionEngine<SampleObservation, SamplePrediction>(mlModel);
+        var predEngine = mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(mlModel);
 
         // Create sample data to do a single prediction with it 
-        SampleObservation sampleData = CreateSingleDataSample(mlContext, DATA_FILEPATH);
+        ModelInput sampleData = CreateSingleDataSample(mlContext, DATA_FILEPATH);
 
         // Try a single prediction
-        SamplePrediction predictionResult = predEngine.Predict(sampleData);
+        ModelOutput predictionResult = predEngine.Predict(sampleData);
 
         Console.WriteLine($"Single Prediction --> Actual value: {sampleData.Label} | Predicted value: {predictionResult.Prediction}");
     }
@@ -178,14 +178,14 @@ Toutes les ressources listées ci-dessus seront décrites dans les étapes suiva
 
 - Dans la troisième ligne de code, vous chargez le modèle du fichier .zip de modèle sérialisé à l’aide de l’API `mlContext.Model.Load()`, en fournissant le chemin de ce fichier.
 
-- Dans la quatrième ligne de code, vous chargez le code pour créer l’objet `PredictionEngine` avec l’API `mlContext.Model.CreatePredictionEngine<TObservation, TPrediction>()`. Vous avez besoin de l’objet `PredictionEngine` chaque fois que vous souhaitez effectuer une prédiction ciblant un exemple de données unique (dans ce cas, un seul élément de texte pour prédire le sentiment).
+- Dans la quatrième ligne de code, vous chargez le code pour créer l’objet `PredictionEngine` avec l’API `mlContext.Model.CreatePredictionEngine<TSrc,TDst>(ITransformer mlModel)`. Vous avez besoin de l’objet `PredictionEngine` chaque fois que vous souhaitez effectuer une prédiction ciblant un exemple de données unique (dans ce cas, un seul élément de texte pour prédire le sentiment).
 
 - La cinquième ligne de code spécifie où vous créez cet *exemple de données unique* à utiliser pour la prédiction, en appelant la fonction `CreateSingleDataSample()`. Étant donné que l’outil CLI ne sait pas quel type d’exemple de données utiliser, au sein de cette fonction, il charge la première ligne du jeu de données. Toutefois, dans ce cas, vous pouvez également créer vos propres données « codées en dur » au lieu de l’implémentation actuelle de la fonction `CreateSingleDataSample()`, en mettant à jour ce code plus simple pour implémenter cette fonction :
 
     ```csharp
-    private static SampleObservation CreateSingleDataSample()
+    private static ModelInput CreateSingleDataSample()
     {
-        SampleObservation sampleForPrediction = new SampleObservation() { Col0 = "The ML.NET CLI is great for getting started. Very cool!", Label = true };
+        ModelInput sampleForPrediction = new ModelInput() { Col0 = "The ML.NET CLI is great for getting started. Very cool!", Label = true };
         return sampleForPrediction;
     }
     ```
@@ -219,7 +219,7 @@ Toutes les ressources listées ci-dessus seront décrites dans les étapes suiva
 
 Vous pouvez utiliser du « code d’évaluation de modèle ML » similaire pour exécuter le modèle dans votre application utilisateur et effectuer des prédictions. 
 
-Par exemple, placez ce code directement dans une application de bureau Windows de votre choix, comme **WPP** ou **WinForms**, puis exécutez le modèle de la même façon que dans l’application console.
+Par exemple, déplacez ce code directement vers une application de bureau Windows, comme **WPP** et **WinForms**, puis exécutez le modèle de la même façon que dans l’application console.
 
 Toutefois, la méthode d’implémentation de ces lignes de code pour exécuter un modèle ML doit être optimisée (notamment en mettant en cache le fichier .zip du modèle et en le chargeant une seule fois) et utiliser des objets singleton au lieu de les créer à chaque requête, en particulier si votre application doit être scalable, à l’image des applications web ou des services distribués, comme nous allons le voir dans la section suivante.
 
@@ -242,7 +242,7 @@ Ce « code de modèle d’entraînement » est actuellement généré dans la 
 
 Plus important encore, pour ce scénario particulier (modèle « Analyse des sentiments »), vous pouvez également comparer ce code d’entraînement généré avec le code décrit dans le tutoriel suivant :
 
-- Comparaison : [Tutoriel : Utiliser ML.NET dans un scénario de classification binaire d’une analyse de sentiments](https://docs.microsoft.com/en-us/dotnet/machine-learning/tutorials/sentiment-analysis).
+- Comparaison : [Tutoriel : Utiliser ML.NET dans un scénario de classification binaire d’une analyse de sentiments](sentiment-analysis.md).
 
 Il est intéressant de comparer la configuration d’algorithme et de pipeline choisie dans le tutoriel avec le code généré par l’outil CLI. Selon la durée d’itération et de recherche de meilleurs modèles, l’algorithme choisi peut être différent, tout comme sa configuration d’hyperparamètres et de pipeline.
 

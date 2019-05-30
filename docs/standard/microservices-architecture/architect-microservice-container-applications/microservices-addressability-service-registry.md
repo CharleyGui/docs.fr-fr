@@ -2,12 +2,12 @@
 title: Adressabilité des microservices et registre des services
 description: Découvrez le rôle des registres d’images conteneur dans l’architecture des microservices.
 ms.date: 09/20/2018
-ms.openlocfilehash: 5b601f19b60a8e989977e7135138add7644bd7b6
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 756be4d7102d2d8ef36ffbf172b70b08872c028c
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65639969"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66196014"
 ---
 # <a name="microservices-addressability-and-the-service-registry"></a>Adressabilité des microservices et registre des services
 
@@ -15,7 +15,7 @@ Chaque microservice a un nom unique (URL) qui est utilisé pour résoudre son em
 
 Le [modèle de registre des services](https://microservices.io/patterns/service-registry.html) est une partie essentielle dans la découverte des services. Le registre est une base de données qui contient les emplacements réseau des instances de service. Un registre des services doit être hautement disponible et à jour. Les clients peuvent mettre en cache les emplacements réseau obtenus auprès du registre des services. Cependant, ces informations finissent par être obsolètes et les clients ne peuvent alors plus découvrir les instances des services. Par conséquent, un registre des services est constitué d’un cluster de serveurs qui utilisent un protocole de réplication pour maintenir la cohérence.
 
-Dans certains environnements de déploiement de microservices (appelés clusters, que nous traitons dans une section ultérieure), la découverte des services est intégrée. Par exemple, un environnement Azure Container Service avec Kubernetes (AKS) peut prendre en charge l’inscription et la désinscription des instances de service. Il exécute également un proxy sur chaque hôte de cluster, qui joue le rôle de routeur de découverte côté serveur. Azure Service Fabric est un autre exemple, qui fournit également un registre des services via son service de nommage intégré.
+Dans certains environnements de déploiement de microservices (appelés clusters, que nous traitons dans une section ultérieure), la découverte des services est intégrée. Par exemple, un environnement Azure Kubernetes Service (AKS) peut prendre en charge l’inscription et la désinscription des instances de service. Il exécute également un proxy sur chaque hôte de cluster, qui joue le rôle de routeur de découverte côté serveur. Azure Service Fabric est un autre exemple, qui fournit également un registre des services via son service de nommage intégré.
 
 Notez qu’il existe certaines similitudes entre le modèle de registre des services et le modèle de passerelle d’API, ce qui permet également de résoudre ce problème. Par exemple, le [proxy inverse de Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reverseproxy) est un type d’implémentation d’une passerelle d’API basée sur le Service de nommage Service Fabric, et qui permet de résoudre les adresses des services internes.
 

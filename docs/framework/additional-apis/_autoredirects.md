@@ -10,14 +10,14 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: bd58e91c-4e35-4866-9d55-75ff58c3ed73
-author: guardrex
+author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: 4e42cf5747362f2257a2d777de918721181a8280
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2dde9cdeeca1cc8cca13322747d625b505e7f453
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706245"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66301054"
 ---
 # <a name="httpwebrequestautoredirects-field"></a>HttpWebRequest. \_AutoRedirects champ
 

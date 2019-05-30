@@ -2,12 +2,12 @@
 title: Prise en charge de SqlClient pour la haute disponibilité et la récupération d'urgence
 ms.date: 03/30/2017
 ms.assetid: 61e0b396-09d7-4e13-9711-7dcbcbd103a0
-ms.openlocfilehash: a2cc63cb0b9118da6eb3c381e853165f800fe61f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: MT
+ms.openlocfilehash: 9b928be56ac09ec707a45829c862e606b68b717c
+ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645917"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66251167"
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>Prise en charge de SqlClient pour la haute disponibilité et la récupération d'urgence
 Cette rubrique décrit la prise en charge SqlClient (ajoutée dans [!INCLUDE[net_v45](../../../../../includes/net-v45-md.md)]) de la haute disponibilité, récupération d'urgence -- groupes de disponibilité AlwaysOn.  Fonctionnalité de groupes de disponibilité AlwaysOn a été ajoutée à SQL Server 2012. Pour plus d’informations sur les groupes de disponibilité AlwaysOn, consultez la documentation en ligne de SQL Server.  
@@ -32,7 +32,7 @@ Cette rubrique décrit la prise en charge SqlClient (ajoutée dans [!INCLUDE[net
 2. <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A>  
 
 > [!NOTE]
->  Paramètre `MultiSubnetFailover` à `true` n’est pas nécessaire avec [!INCLUDE[net_v461](../../../../../includes/net-v461-md.md)] ou versions ultérieures.
+>  Paramètre `MultiSubnetFailover` à `true` n’est pas nécessaire avec .NET Framework 4.6.1 ou version ultérieure.
   
 ## <a name="connecting-with-multisubnetfailover"></a>Connexion avec MultiSubnetFailover  
  Spécifiez toujours `MultiSubnetFailover=True` lors de la connexion à un écouteur de groupe de disponibilité de SQL Server 2012 ou une Instance de Cluster de basculement SQL Server 2012. `MultiSubnetFailover` permet un basculement plus rapide pour tous les groupes de disponibilité et ou Instance de Cluster de basculement dans SQL Server 2012 et réduire considérablement le temps de basculement pour les topologies AlwaysOn de sous-réseaux uniques et multiples. Pendant un basculement de multi sous-réseau, le client effectue des tentatives de connexion en parallèle. Pendant un basculement de sous-réseau, le client effectue des tentatives de connexion TCP de manière agressive.  

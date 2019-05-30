@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: fdf5856d-516b-4042-849d-911c4518a6cb
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b9a9061503ae4bf68903f35eb7624deed2f34c9b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 519429da275c852ea193e95fe651cc73efc0736a
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616610"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378684"
 ---
 # <a name="clr-etw-keywords-and-levels"></a>Niveaux et mots clés ETW du CLR
 <a name="top"></a> Les événements de suivi d'événements pour Windows (ETW) peuvent être filtrés par catégorie et par niveau. Les [Mots clés ETW du CLR](#keywords) d’événement permettent de filtrer les événements par catégorie. Ils sont utilisés sous forme de combinaisons pour les fournisseurs d’arrêt et de runtime. Les [niveaux d'événement](#levels) sont identifiés par des indicateurs.  
@@ -52,7 +52,7 @@ ms.locfileid: "64616610"
 |`ContentionKeyword`|0x00004000|Active la collecte d’ [événements de conflit](../../../docs/framework/performance/contention-etw-events.md).|  
 |`ExceptionKeyword`|0x00008000|Active la collecte d’ [événements d’exception](../../../docs/framework/performance/exception-thrown-v1-etw-event.md).|  
 |`ThreadingKeyword`|0x00010000|Active la collecte d’ [événements de pool de threads](../../../docs/framework/performance/thread-pool-etw-events.md).|  
-|`OverrideAndSuppressNGenEventsKeyword`|0x00040000|(Disponible dans le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] et les versions ultérieures.) Supprime le mot clé de charge mémoire élevée `NGenKeyword` et empêche la génération d'événements pour les méthodes internes aux modules NGen. À partir du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], les outils de profilage doivent utiliser `OverrideAndSuppressNGenEventsKeyword` et `NGenKeyword` ensemble pour supprimer la génération des événements pour les méthodes dans les modules NGen. Cela permet à l'outil de profilage d’utiliser les fichiers PDB NGen plus efficaces pour obtenir des informations sur les méthodes dans les modules NGen. Le CLR dans le .NET Framework 4 et versions antérieures ne prend pas en charge la création de fichiers PDB NGen. Dans les versions antérieures, le CLR ne reconnaîtra pas `OverrideAndSuppressNGenEventsKeyword` et traitera `NGenKeyword` pour générer des événements pour les méthodes dans les modules NGen.|  
+|`OverrideAndSuppressNGenEventsKeyword`|0x00040000|(Disponible dans le .NET Framework 4.5 et versions ultérieures). Supprime le mot clé de charge mémoire élevée `NGenKeyword` et empêche la génération d'événements pour les méthodes internes aux modules NGen. À compter de .NET Framework 4.5, outils de profilage doivent utiliser `OverrideAndSuppressNGenEventsKeyword` et `NGenKeyword` ensemble pour supprimer la génération d’événements pour les méthodes dans les modules NGen. Cela permet à l'outil de profilage d’utiliser les fichiers PDB NGen plus efficaces pour obtenir des informations sur les méthodes dans les modules NGen. Le CLR dans le .NET Framework 4 et versions antérieures ne prend pas en charge la création de fichiers PDB NGen. Dans les versions antérieures, le CLR ne reconnaîtra pas `OverrideAndSuppressNGenEventsKeyword` et traitera `NGenKeyword` pour générer des événements pour les méthodes dans les modules NGen.|  
 |`PerfTrackKeyWord`|0x2000000|Active la collecte des événements `ModuleLoad` et `ModuleRange` .|  
 |`StackKeyword`|0x40000000|Active la collecte des [événements de trace de la pile](../../../docs/framework/performance/stack-etw-event.md).|  
   
@@ -71,7 +71,7 @@ ms.locfileid: "64616610"
 |`EndRundownKeyword`|0x00000100|Active l'énumération de l'état du système pendant un arrêt de fin.|  
 |`AppDomainResourceManagementRundownKeyword`|0x00000800|Active la collecte d'événements d'analyse de ressource à un niveau <xref:System.AppDomain> lorsqu'il est utilisé avec `StartRundownKeyword` ou `EndRundownKeyword`.|  
 |`ThreadingKeyword`|0x00010000|Active la collecte d’événements de pool de threads.|  
-|`OverrideAndSuppressNGenEventsRundownKeyword`|0x00040000|(Disponible dans le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] et les versions ultérieures.) Supprime le mot clé de charge mémoire élevée `NGenRundownKeyword` et empêche la génération d'événements pour les méthodes internes aux modules NGen. À partir du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], les outils de profilage doivent utiliser `OverrideAndSuppressNGenEventsRundownKeyword` et `NGenRundownKeyword` ensemble pour supprimer la génération des événements pour les méthodes dans les modules NGen. Cela permet à l'outil de profilage d’utiliser les fichiers PDB NGen plus efficaces pour obtenir des informations sur les méthodes dans les modules NGen. Le CLR dans le .NET Framework 4 et versions antérieures ne prend pas en charge la création de fichiers PDB NGen. Dans les versions antérieures, le CLR ne reconnaîtra pas `OverrideAndSuppressNGenEventsRundownKeyword` et traitera `NGenRundownKeyword` pour générer des événements pour les méthodes dans les modules NGen.|  
+|`OverrideAndSuppressNGenEventsRundownKeyword`|0x00040000|(Disponible dans le .NET Framework 4.5 et versions ultérieures). Supprime le mot clé de charge mémoire élevée `NGenRundownKeyword` et empêche la génération d'événements pour les méthodes internes aux modules NGen. À compter de .NET Framework 4.5, outils de profilage doivent utiliser `OverrideAndSuppressNGenEventsRundownKeyword` et `NGenRundownKeyword` ensemble pour supprimer la génération d’événements pour les méthodes dans les modules NGen. Cela permet à l'outil de profilage d’utiliser les fichiers PDB NGen plus efficaces pour obtenir des informations sur les méthodes dans les modules NGen. Le CLR dans le .NET Framework 4 et versions antérieures ne prend pas en charge la création de fichiers PDB NGen. Dans les versions antérieures, le CLR ne reconnaîtra pas `OverrideAndSuppressNGenEventsRundownKeyword` et traitera `NGenRundownKeyword` pour générer des événements pour les méthodes dans les modules NGen.|  
 |`PerfTrackKeyWord`|0x2000000|Active la collecte des événements `ModuleDCStart`, `ModuleDCEnd`, `ModuleRangeDCStart`et `ModuleRangeDCEnd` .|  
   
  [Retour au début](#top)  

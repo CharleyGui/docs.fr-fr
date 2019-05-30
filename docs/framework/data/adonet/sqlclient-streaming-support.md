@@ -2,16 +2,16 @@
 title: Prise en charge de la diffusion en continu pour SqlClient
 ms.date: 03/30/2017
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-ms.openlocfilehash: 6fda1dd2d46bbe5ad6b23cab0cd817365c6104eb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 83a657d1156774ec5ea342d47dca0434fd9d506c
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698445"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66379994"
 ---
 # <a name="sqlclient-streaming-support"></a>Prise en charge de la diffusion en continu pour SqlClient
 
-Prise en charge entre SQL Server et une application de diffusion en continu (nouveauté de [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) prend en charge les données non structurées sur le serveur (documents, images et fichiers multimédias). Une base de données SQL Server peut stocker des objets binaires volumineux (BLOB), mais la récupération des objets BLOB peuvent utiliser beaucoup de mémoire.
+Diffusion en continu de prise en charge entre SQL Server et une application (nouveautée de .NET Framework 4.5) prend en charge les données non structurées sur le serveur (documents, images et fichiers multimédias). Une base de données SQL Server peut stocker des objets binaires volumineux (BLOB), mais la récupération des objets BLOB peuvent utiliser beaucoup de mémoire.
 
 Diffusion en continu de prise en charge vers et depuis SQL Server simplifie l’écriture d’applications ces données de flux de données, sans devoir entièrement charger les données en mémoire, ce qui entraîne moins exceptions de dépassement de capacité de mémoire.
 
@@ -101,9 +101,9 @@ L'exemple montre comment effectuer les actions suivantes :
 
 - Éviter de bloquer un thread d'interface utilisateur en fournissant une façon asynchrone de récupérer des fichiers volumineux.
 
-- Transférer un fichier texte volumineux à partir de SQL Server dans [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].
+- Transférer un fichier texte volumineux à partir de SQL Server dans .NET Framework 4.5.
 
-- Transférer un grand fichier XML à partir de SQL Server dans [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].
+- Transférer un grand fichier XML à partir de SQL Server dans .NET Framework 4.5.
 
 - Récupérer des données à partir de SQL Server.
 
@@ -323,9 +323,9 @@ GO
 
 L'exemple montre comment effectuer les actions suivantes :
 
-- Transfert d’un objet BLOB vers SQL Server dans [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].
+- Transfert d’un objet BLOB vers SQL Server dans .NET Framework 4.5.
 
-- Transfert d’un fichier texte volumineux vers SQL Server dans [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].
+- Transfert d’un fichier texte volumineux vers SQL Server dans .NET Framework 4.5.
 
 - Utilisation de la nouvelle fonctionnalité asynchrone pour transférer un objet BLOB.
 

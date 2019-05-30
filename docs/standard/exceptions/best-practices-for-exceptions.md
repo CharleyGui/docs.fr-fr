@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-ms.openlocfilehash: 6c979483497ff640be7d1126d63ce95130f6c02b
-ms.sourcegitcommit: d938c39afb9216db377d0f0ecdaa53936a851059
+ms.openlocfilehash: cb1ef5f52b9ee0407cbd7a0634e8a7c58906d635
+ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58633749"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66195571"
 ---
 # <a name="best-practices-for-exceptions"></a>Bonnes pratiques pour les exceptions
 
@@ -54,7 +54,9 @@ Une classe peut fournir des méthodes ou propriétés qui vous permettent d’é
 [!code-csharp[Conceptual.Exception.Handling#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#5)]
 [!code-vb[Conceptual.Exception.Handling#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.exception.handling/vb/source.vb#5)]
 
-Un autre moyen d’éviter les exceptions est de retourner `null` pour les cas d’erreur très répandus au lieu de lever une exception. Un cas d'erreur très répandu peut être considéré comme un flux de contrôle normal. En retournant `null` dans ces cas-là, vous réduisez l’impact sur les performances d’une application.
+Un autre moyen d’éviter les exceptions est de retourner Null (ou une valeur par défaut) pour les cas d’erreur très répandus au lieu de lever une exception. Un cas d'erreur très répandu peut être considéré comme un flux de contrôle normal. En retournant null (ou une valeur par défaut) dans ces cas-là, vous réduisez l'impact sur les performances d'une application.
+
+Pour les types valeur, s’il faut utiliser pouvant accepter la valeur Null<T> ou une valeur par défaut comme indicateur d’erreur est quelque chose à prendre en compte pour votre application particulière. À l’aide de `Nullable<Guid>`, `default` devient `null` au lieu de `Guid.Empty`. Parfois, l’ajout de `Nullable<T>` peut éclaircir les choses, lorsqu’une valeur est présente ou absente. Autres fois, l’ajout de `Nullable<T>` peut créer des cas supplémentaires qui ne sont pas nécessaires et uniquement servir pour créer les sources potentielles d’erreurs. 
 
 ## <a name="throw-exceptions-instead-of-returning-an-error-code"></a>Lever des exceptions au lieu de retourner un code d’erreur
 

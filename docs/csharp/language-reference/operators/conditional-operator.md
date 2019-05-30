@@ -10,12 +10,12 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: a40dd4addfaf8a505cf334876192f0b2ccf66a09
-ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.openlocfilehash: 58317c26f87034991c817d0d7221d810657ca332
+ms.sourcegitcommit: 11deacc8ec9f229ab8ee3cd537515d4c2826515f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65452393"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66003710"
 ---
 # <a name="-operator-c-reference"></a>?: Opérateur (référence C#)
 
@@ -43,13 +43,12 @@ est évaluée comme étant
 a ? b : (c ? d : e)
 ```
 
-Pour vous rappeler de la valeur de cet opérateur, posez-vous la question suivante :
-
-```text
-is this condition true ? yes : no
-```
-
-Le « ? » de l’opérateur sert de point d’interrogation pour l’instruction précédente, et le suivant sert de réponse logique à cette question.
+> [!TIP]
+> Vous pouvez utiliser l’appareil mnémonique suivant pour vous souvenir du mode d’évaluation de l’opérateur conditionnel :
+>
+> ```text
+> is this condition true ? yes : no
+> ```
 
 L’exemple suivant illustre l’utilisation de l’opérateur conditionnel :
 

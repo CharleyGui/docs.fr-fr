@@ -2,15 +2,15 @@
 title: Outil « Contrat en premier »
 ms.date: 03/30/2017
 ms.assetid: 0a880690-f460-4475-a5f4-9f91ce08fcc6
-ms.openlocfilehash: 95aef67eb43176ab062b38979e714f232898f221
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7ddc3b2c733c73808d17b6e0f45129cc19d7527c
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64652075"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380375"
 ---
 # <a name="contract-first-tool"></a>Outil « Contrat en premier »
-Les contrats de service doivent souvent être créés à partir de services existants. Dans [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], les classes de contrat de données peuvent être créées automatiquement à partir des services existants à l'aide de l'outil Contrat en premier. Pour utiliser l'outil Contrat en premier, le fichier de définition de schéma XML (XSD) doit être téléchargé localement ; l'outil ne peut pas importer les contrats de données distants via HTTP.
+Les contrats de service doivent souvent être créés à partir de services existants. Dans .NET Framework 4.5, les classes de contrat de données peuvent être créés automatiquement à partir des services existants à l’aide de l’outil contrat en premier. Pour utiliser l'outil Contrat en premier, le fichier de définition de schéma XML (XSD) doit être téléchargé localement ; l'outil ne peut pas importer les contrats de données distants via HTTP.
 
  L’outil contrat en premier est intégré dans Visual Studio 2012 comme une tâche de génération. Les fichiers de code générés par la tâche de génération sont créés à chaque fois que le projet est généré, afin que le projet puisse facilement adopter les modifications du contrat de service sous-jacent.
 

@@ -2,24 +2,24 @@
 title: Prise en charge de nouvelles fonctionnalités Workflow Foundation 4.5 dans le concepteur de workflow réhébergé
 ms.date: 03/30/2017
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
-ms.openlocfilehash: 8807506866ef0f5d73065958f1102460ebcc5e9f
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 8459311239d46557405245c10b6fb5e887a4691c
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65876525"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380151"
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>Prise en charge de nouvelles fonctionnalités Workflow Foundation 4.5 dans le concepteur de workflow réhébergé
-Windows Workflow Foundation (WF) dans [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a introduit de nombreuses nouvelles fonctionnalités, notamment plusieurs améliorations à l’expérience de Concepteur de flux de travail. Cette rubrique détaille lesquelles de ces fonctionnalités sont prises en charge dans le concepteur réhébergé, et celles qui ne sont pas actuellement prises en charge.
+Windows Workflow Foundation (WF) dans .NET Framework 4.5 a introduit de nombreuses nouvelles fonctionnalités, notamment plusieurs améliorations à l’expérience de Concepteur de flux de travail. Cette rubrique détaille lesquelles de ces fonctionnalités sont prises en charge dans le concepteur réhébergé, et celles qui ne sont pas actuellement prises en charge.
 
 > [!NOTE]
->  Pour obtenir la liste de toutes les nouvelles fonctionnalités de Windows Workflow Foundation (WF) introduites dans [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], y compris celles qui ne sont pas liées au réhébergement du concepteur, consultez [What ' s New in Windows Workflow Foundation dans .NET 4.5](whats-new-in-wf-in-dotnet.md).
+>  Pour obtenir la liste de toutes les nouvelles fonctionnalités de Windows Workflow Foundation (WF) introduites dans .NET Framework 4.5, y compris ceux qui ne sont pas liées au réhébergement du concepteur, consultez [What ' s New in Windows Workflow Foundation dans .NET 4.5](whats-new-in-wf-in-dotnet.md).
 
 ## <a name="activities"></a>Activités
  La bibliothèque d'activités intégrée contient de nouvelles activités et de nouvelles fonctionnalités pour les activités existantes. Toutes ces nouvelles activités sont prises en charge dans le concepteur réhébergé. Pour plus d’informations sur ces nouvelles activités, consultez le [activités](whats-new-in-wf-in-dotnet.md#BKMK_NewActivities) section de [What ' s New in Windows Workflow Foundation dans .NET 4.5](whats-new-in-wf-in-dotnet.md).
 
 ## <a name="c-expressions"></a>Expressions C#
- Avant le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], toutes les expressions de workflow ne pouvaient être écrites que dans Visual Basic. Dans le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], les expressions Visual Basic sont uniquement utilisées pour les projets créés à l'aide de Visual Basic. Les projets Visual C# utilisent C# pour les expressions. Lors de la création de workflows dans Visual Studio 2012, un éditeur d’expressions c# fonctionnel est fourni qui a des fonctions telles que la mise en surbrillance de syntaxe et intellisense. Les projets de workflow C# créés dans les versions antérieures qui utilisent des expressions Visual Basic continueront à fonctionner.
+ Avant le .NET Framework 4.5, toutes les expressions dans les workflows ne pouvaient être écrites en Visual Basic. Dans .NET Framework 4.5, les expressions Visual Basic sont uniquement utilisées pour les projets créés à l’aide de Visual Basic. Les projets Visual C# utilisent C# pour les expressions. Lors de la création de workflows dans Visual Studio 2012, un éditeur d’expressions c# fonctionnel est fourni qui a des fonctions telles que la mise en surbrillance de syntaxe et intellisense. Les projets de workflow C# créés dans les versions antérieures qui utilisent des expressions Visual Basic continueront à fonctionner.
 
 > [!WARNING]
 >  Les expressions C# ne sont pas prises en charge dans le concepteur réhébergé.
@@ -27,20 +27,20 @@ Windows Workflow Foundation (WF) dans [!INCLUDE[net_v45](../../../includes/net-v
 ## <a name="new-designer-capabilities"></a>Nouvelles fonctions du concepteur
 
 ### <a name="designer-search"></a>Recherche du concepteur
- Le [recherche rapide](whats-new-in-wf-in-dotnet.md#BKMK_QuickFind) et [rechercher dans les fichiers](whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles) fonctionnalités introduites avec [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] ne sont pas pris en charge dans le concepteur réhébergé. La recherche `Toolbox` est prise en charge dans le concepteur réhébergé. Pour plus d’informations sur ces fonctionnalités, consultez [recherche du concepteur](whats-new-in-wf-in-dotnet.md#BKMK_DesignerSearch).
+ Le [recherche rapide](whats-new-in-wf-in-dotnet.md#BKMK_QuickFind) et [rechercher dans les fichiers](whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles) fonctionnalités introduites dans .NET Framework 4.5 ne sont pas pris en charge dans le concepteur réhébergé. La recherche `Toolbox` est prise en charge dans le concepteur réhébergé. Pour plus d’informations sur ces fonctionnalités, consultez [recherche du concepteur](whats-new-in-wf-in-dotnet.md#BKMK_DesignerSearch).
 
 > [!WARNING]
 >  [Recherche rapide](whats-new-in-wf-in-dotnet.md#BKMK_QuickFind) et [rechercher dans les fichiers](whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles) ne sont pas pris en charge dans le concepteur réhébergé.
 
 ### <a name="delete-context-menu-item-in-variable-and-argument-designer"></a>Supprimer l’élément de menu contextuel dans le concepteur de variable et d’argument
- Dans le [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], les variables et les arguments ne pouvaient être supprimés dans le concepteur qu'en utilisant le clavier. À partir du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], les variables et les arguments peuvent être supprimés à l'aide du menu contextuel. Cette fonctionnalité est prise en charge dans le concepteur réhébergé.
+ Dans le [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], les variables et les arguments ne pouvaient être supprimés dans le concepteur qu'en utilisant le clavier. À compter de .NET Framework 4.5, variables et arguments peuvent être supprimés à l’aide du menu contextuel. Cette fonctionnalité est prise en charge dans le concepteur réhébergé.
 
  La capture d’écran suivante indique le menu contextuel du concepteur de variable et d’argument.
 
  ![Menu contextuel du concepteur de variable et d’argument](./media/wf-features-in-the-rehosted-workflow-designer/designer-context-menu.png)
 
 ### <a name="auto-surround-with-sequence"></a>Encadrement automatique avec séquence
- Étant donné qu'un workflow ou certaines activités de conteneur (telles que <xref:System.Activities.Statements.NoPersistScope>) peuvent uniquement contenir une seule activité de corps, l'ajout d'une deuxième activité exigeait que le développeur supprime la première activité, ajoute une activité <xref:System.Activities.Statements.Sequence>, puis ajoute les deux activités à l'activité de séquence. À partir du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], lors de l'ajout d'une deuxième activité sur l'aire du concepteur, un activité `Sequence` est créée automatiquement pour encapsuler les deux activités. Cette fonctionnalité est prise en charge dans le concepteur réhébergé.
+ Étant donné qu'un workflow ou certaines activités de conteneur (telles que <xref:System.Activities.Statements.NoPersistScope>) peuvent uniquement contenir une seule activité de corps, l'ajout d'une deuxième activité exigeait que le développeur supprime la première activité, ajoute une activité <xref:System.Activities.Statements.Sequence>, puis ajoute les deux activités à l'activité de séquence. Depuis .NET Framework 4.5, lorsque vous ajoutez une deuxième activité à l’aire du concepteur, un `Sequence` activité sera automatiquement créée pour encapsuler les deux activités. Cette fonctionnalité est prise en charge dans le concepteur réhébergé.
 
  La capture d'écran suivante affiche une activité `WriteLine` avec le `Body` d'un `NoPersistScope`.
 
@@ -72,10 +72,10 @@ Windows Workflow Foundation (WF) dans [!INCLUDE[net_v45](../../../includes/net-v
  ![Capture d’écran du mode plan avec un workflow séquentiel dans Visual Studio](./media/wf-features-in-the-rehosted-workflow-designer/outline-view-in-workflow-designer.jpg)
 
 ### <a name="more-control-of-visibility-of-shell-bar-and-header-items"></a>Meilleur contrôle de la visibilité des éléments d'en-tête et de la barre de shell
- Dans un concepteur réhébergé, certains des contrôles d'interface utilisateur standard peuvent ne pas avoir de signification pour un workflow donné, et peuvent être désactivés. Dans le [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], cette personnalisation est prise en charge uniquement par la barre de shell en bas du concepteur. Dans [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], la visibilité des éléments d'en-tête de shell en haut du concepteur peut être ajustée en affectant à <xref:System.Activities.Presentation.View.DesignerView.WorkflowShellHeaderItemsVisibility%2A> la valeur <xref:System.Activities.Presentation.View.ShellHeaderItemsVisibility> appropriée.
+ Dans un concepteur réhébergé, certains des contrôles d'interface utilisateur standard peuvent ne pas avoir de signification pour un workflow donné, et peuvent être désactivés. Dans le [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], cette personnalisation est prise en charge uniquement par la barre de shell en bas du concepteur. Dans .NET Framework 4.5, la visibilité des éléments d’en-tête de shell en haut du concepteur peut être ajustée en définissant <xref:System.Activities.Presentation.View.DesignerView.WorkflowShellHeaderItemsVisibility%2A> avec le bon <xref:System.Activities.Presentation.View.ShellHeaderItemsVisibility> valeur.
 
 ### <a name="auto-connect-and-auto-insert-in-flowchart-and-state-machine-workflows"></a>Connexion automatique et insertion automatique dans les workflows Organigramme et Machine à états
- Dans le [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], les connexions entre les nœuds d'un workflow Organigramme devaient être ajoutées manuellement. Dans le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], les nœuds Organigramme et Machine à états ont des points de connexion automatique qui sont visibles lorsqu'une activité est déplacée de la boîte à outils vers l'aire du concepteur. Le dépôt d'une activité sur un de ces points ajoute automatiquement l'activité avec la connexion nécessaire.
+ Dans le [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], les connexions entre les nœuds d'un workflow Organigramme devaient être ajoutées manuellement. Dans .NET Framework 4.5, les nœuds organigramme et Machine à états ont points qui sont visibles lorsqu’une activité est déplacée à partir de la boîte à outils vers l’aire du Concepteur de connexion automatique. Le dépôt d'une activité sur un de ces points ajoute automatiquement l'activité avec la connexion nécessaire.
 
  La capture d'écran suivante montre les points d'attachement qui sont visibles lorsqu'une activité est déplacée depuis la boîte à outils.
 
@@ -100,7 +100,7 @@ Windows Workflow Foundation (WF) dans [!INCLUDE[net_v45](../../../includes/net-v
  Les délégués d'activité sont pris en charge dans le concepteur réhébergé.
 
 ### <a name="build-time-validation"></a>Validation au moment de la génération
- Dans le [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], les erreurs de validation de workflow n'étaient pas été comptées comme des erreurs de build pendant la génération d'un projet de workflow. Cela signifiait que la génération d'un projet de workflow pouvait réussir même lorsqu'il existait des erreurs de validation de workflow. Dans le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], des erreurs de validation de workflow provoquent l'échec de la génération.
+ Dans le [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], les erreurs de validation de workflow n'étaient pas été comptées comme des erreurs de build pendant la génération d'un projet de workflow. Cela signifiait que la génération d'un projet de workflow pouvait réussir même lorsqu'il existait des erreurs de validation de workflow. Dans .NET Framework 4.5, les erreurs de validation de flux de travail provoquent l’échec de la build.
 
 > [!WARNING]
 >  La validation au moment de la génération n'est pas prise en charge dans le concepteur réhébergé.  
@@ -111,18 +111,18 @@ Windows Workflow Foundation (WF) dans [!INCLUDE[net_v45](../../../includes/net-v
  La validation de l'arrière-plan au moment de la génération est prise en charge dans le concepteur réhébergé.  
   
 ### <a name="view-state-located-in-a-separate-location-in-xaml-files"></a>État d'affichage dans un emplacement distinct des fichiers XAML  
- Dans le [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], les informations d'état d'affichage pour un workflow sont stockées dans le fichier XAML en différents emplacements. Cela n'est pas pratique pour les développeurs qui souhaitent lire le XAML directement, ou écrire du code pour supprimer les informations d'état d'affichage. Dans [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], les informations d’état de vue dans le fichier XAML sont sérialisées comme un élément distinct dans le fichier XAML.  Les développeurs peuvent facilement localiser et modifier les informations d’état de vue d’une activité ou supprimer complètement de l’état d’affichage.  
+ Dans le [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], les informations d'état d'affichage pour un workflow sont stockées dans le fichier XAML en différents emplacements. Cela n'est pas pratique pour les développeurs qui souhaitent lire le XAML directement, ou écrire du code pour supprimer les informations d'état d'affichage. Dans .NET Framework 4.5, les informations d’état de vue dans le fichier XAML sont sérialisées comme un élément distinct dans le fichier XAML.  Les développeurs peuvent facilement localiser et modifier les informations d’état de vue d’une activité ou supprimer complètement de l’état d’affichage.  
   
  Cette fonctionnalité est prise en charge dans le concepteur de workflow réhébergé.  
   
 ### <a name="opt-in-for-workflow-45-features-in-rehosted-designer"></a>Opter pour les fonctionnalités de workflow 4.5 dans le concepteur réhébergé  
- Pour conserver la compatibilité descendante, certaines nouvelles fonctionnalités incluses dans le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] ne sont pas activées par défaut dans le concepteur réhébergé. Il s'agit de garantir que les applications existantes qui utilisent le concepteur réhébergé ne sont pas interrompues par la mise à jour vers la version la plus récente. Pour activer les nouvelles fonctionnalités du concepteur réhébergé, affectez à <xref:System.Activities.Presentation.DesignerConfigurationService.TargetFrameworkName%2A> la valeur « .Net Framework 4.5 », ou définissez des membres de <xref:System.Activities.Presentation.DesignerConfigurationService> pour activer des fonctionnalités.  
+ Pour préserver la compatibilité descendante, certaines nouvelles fonctionnalités incluses dans .NET Framework 4.5 ne sont pas activées par défaut dans le concepteur réhébergé. Il s'agit de garantir que les applications existantes qui utilisent le concepteur réhébergé ne sont pas interrompues par la mise à jour vers la version la plus récente. Pour activer les nouvelles fonctionnalités du concepteur réhébergé, affectez à <xref:System.Activities.Presentation.DesignerConfigurationService.TargetFrameworkName%2A> la valeur « .Net Framework 4.5 », ou définissez des membres de <xref:System.Activities.Presentation.DesignerConfigurationService> pour activer des fonctionnalités.  
   
 ## <a name="new-workflow-development-models"></a>Nouveaux modèles de développement de workflow  
  Outre les modèles de développement d'organigramme et workflow séquentiel, cette version inclut des workflows Machine à états, et les services de workflow Contrat en premier.  
   
 ### <a name="state-machine-workflows"></a>Workflows de machine à états  
- Workflows de machine à états ont été introduits dans le cadre du .NET Framework 4.0.1 dans le [Microsoft .NET Framework 4 Platform Update 1](https://go.microsoft.com/fwlink/?LinkID=215092). Cette mise à jour inclut plusieurs nouvelles classes et activités qui permettent aux développeurs de créer des workflow de machine à états. Ces classes et activités ont été mises à jour pour le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Les mises à jour comprennent :  
+ Workflows de machine à états ont été introduits dans le cadre du .NET Framework 4.0.1 dans le [Microsoft .NET Framework 4 Platform Update 1](https://go.microsoft.com/fwlink/?LinkID=215092). Cette mise à jour inclut plusieurs nouvelles classes et activités qui permettent aux développeurs de créer des workflow de machine à états. Ces classes et activités ont été mis à jour pour .NET Framework 4.5. Les mises à jour comprennent :  
   
 1. Possibilité de définir des points d'arrêt sur des états  
   

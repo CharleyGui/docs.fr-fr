@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 60887eed-df40-4412-b812-41e1dd329d15
-ms.openlocfilehash: 0323c0f10538eda2ed3b365a54470bdecac061a8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3ac8b2260e5da1e91c167e3e9ef91039deb983b2
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586198"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380248"
 ---
 # <a name="side-by-side-versioning-in-workflowservicehost"></a>Versioning côte à côte dans WorkflowServiceHost
-Le contrôle de version côte à côte <xref:System.ServiceModel.Activities.WorkflowServiceHost> introduit dans le [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] permet d'héberger plusieurs versions d'un service de workflow sur un seul point de terminaison. Une fonctionnalité côte à côte fournie permet de configurer un service de workflow de façon à ce que les nouvelles instances du service de workflow soient créées à l'aide de la nouvelle définition de workflow, alors que les instances en cours de exécution s'achèvent à l'aide de définition existante. Cette rubrique fournit une vue d'ensemble de l'exécution de service de workflow côte à côte à l'aide de <xref:System.ServiceModel.Activities.WorkflowServiceHost>.  
+Le <xref:System.ServiceModel.Activities.WorkflowServiceHost> versioning côte à côte introduit dans .NET Framework 4.5 offre la possibilité d’héberger plusieurs versions d’un service de flux de travail sur un seul point de terminaison. Une fonctionnalité côte à côte fournie permet de configurer un service de workflow de façon à ce que les nouvelles instances du service de workflow soient créées à l'aide de la nouvelle définition de workflow, alors que les instances en cours de exécution s'achèvent à l'aide de définition existante. Cette rubrique fournit une vue d'ensemble de l'exécution de service de workflow côte à côte à l'aide de <xref:System.ServiceModel.Activities.WorkflowServiceHost>.  
   
 > [!NOTE]
 >  Pour télécharger un exemple et regarder une procédure pas à pas vidéo du contrôle de version de workflow service côte à côte, consultez [le contrôle de version côte à côte avec un Service de Workflow Xamlx hébergé sur le Web](https://go.microsoft.com/fwlink/?LinkId=393746).  

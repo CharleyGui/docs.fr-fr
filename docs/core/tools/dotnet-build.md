@@ -2,12 +2,12 @@
 title: Commande dotnet build
 description: La commande dotnet build permet de générer un projet et l’ensemble de ses dépendances.
 ms.date: 04/24/2019
-ms.openlocfilehash: 6564aacbe520797b47095929cfe72c6b180b99a7
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: df264fe830259832e5c75db9fd71230ba70a9f18
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632135"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65959196"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
@@ -144,7 +144,7 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
   dotnet build --source c:\packages\mypackages
   ```
 
-* Générer le projet et définir la version 1.2.3.4 comme paramètre de build :
+* Générer le projet et définissez la version 1.2.3.4 comme un paramètre de build à l’aide de l’`-p` [option MSBuild](#msbuild) :
 
   ```console
   dotnet build -p:Version=1.2.3.4

@@ -2,12 +2,12 @@
 title: Visite guidée de F#
 description: Examiner certaines des fonctionnalités clés de la langue dans cette visite guidée avec exemples de code de programmation F#.
 ms.date: 11/06/2018
-ms.openlocfilehash: 4b3ec7fd2c42712440ea7d7045c560ab20390b45
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 64394342777003b33dd77028739fb7209b9f3c86
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61901724"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66301254"
 ---
 # <a name="tour-of-f"></a>Présentation du langage F\#
 
@@ -17,7 +17,7 @@ Il existe deux concepts principaux en F#: les types et les fonctions.  Cette vis
 
 ## <a name="executing-the-code-online"></a>L’exécution du code en ligne
 
-Si vous n’avez pas F# installé sur votre ordinateur, vous pouvez exécuter tous les exemples en ligne avec la [Fable REPL](https://fable.io/repl/). Fable est un dialecte F# qui s’exécute directement dans votre navigateur. Pour afficher les exemples qui suivent dans la boucle REPL, consultez **exemples > en savoir plus > visite guidée de F#**  dans la barre de menu de gauche de l’intervalle de Fable
+Si vous n’avez pas F# installé sur votre ordinateur, vous pouvez exécuter tous les exemples dans votre navigateur avec [essayez F# sur WebAssembly](https://tryfsharp.fsbolero.io/). Fable est un dialecte F# qui s’exécute directement dans votre navigateur. Pour afficher les exemples qui suivent dans la boucle REPL, consultez **exemples > en savoir plus > visite guidée de F#**  dans la barre de menu de gauche de l’intervalle de Fable
 
 ## <a name="functions-and-modules"></a>Fonctions et des Modules
 

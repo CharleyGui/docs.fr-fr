@@ -2,15 +2,15 @@
 title: 'Procédure : créer un service de workflow qui consomme un contrat de service existant'
 ms.date: 03/30/2017
 ms.assetid: 11d11b59-acc4-48bf-8e4b-e97b516aa0a9
-ms.openlocfilehash: c2ca9c349718c3939d74d052ff0ed448879cd045
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 82c9ccc21600ae0b9ff8c514a51ec9b97f8f1d37
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945572"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378129"
 ---
 # <a name="how-to-create-a-workflow-service-that-consumes-an-existing-service-contract"></a>Procédure : créer un service de workflow qui consomme un contrat de service existant
-[!INCLUDE[net_v45](../../../includes/net-v45-md.md)] offre une meilleure intégration entre les services Web et les workflows sous la forme du développement de workflow contrat en premier. L'outil de développement de workflow Contrat en premier vous permet de concevoir le contrat dans le code en premier. L'outil génère automatiquement un modèle d'activité dans la boîte à outils pour les opérations du contrat.  
+Fonctionnalités de .NET framework 4.5 une meilleure intégration entre les services web et les workflows sous la forme du développement de workflow contrat en premier. L'outil de développement de workflow Contrat en premier vous permet de concevoir le contrat dans le code en premier. L'outil génère automatiquement un modèle d'activité dans la boîte à outils pour les opérations du contrat.  
   
 > [!NOTE]
 >  Cette rubrique fournit des instructions pas à pas pour créer un service de workflow contrat en premier. Pour plus d’informations sur le développement de service de workflow contrat en premier, consultez [contrat premier Workflow Service développement](contract-first-workflow-service-development.md).  
@@ -49,7 +49,7 @@ ms.locfileid: "61945572"
   
 ### <a name="importing-the-service-contract"></a>Importation du contrat de service  
   
-1. Cliquez sur le projet dans **l’Explorateur de solutions** et sélectionnez **importer le contrat de Service**. Sous  **\<projet actif >**, ouvrez tous les sous-nœuds et sélectionnez **IBookService**. Cliquez sur **OK**.  
+1. Cliquez sur le projet dans **l’Explorateur de solutions** et sélectionnez **importer le contrat de Service**. Sous  **\<projet actif >** , ouvrez tous les sous-nœuds et sélectionnez **IBookService**. Cliquez sur **OK**.  
   
 2. Une boîte de dialogue s'ouvre indiquant que l'opération s'est achevée avec succès et que les activités personnalisées générées s'afficheront dans la boîte à outils une fois le projet construit. Cliquez sur **OK**.  
   
@@ -57,7 +57,7 @@ ms.locfileid: "61945572"
   
 4. Dans **l’Explorateur de solutions**, ouvrez Service1.xamlx. Le service de workflow apparaît dans le concepteur.  
   
-5. Sélectionnez le **séquence** activité. Dans la fenêtre Propriétés, cliquez sur le **...** bouton dans le **ImplementedContract** propriété. Dans le **éditeur de collections de Type** fenêtre qui s’affiche, cliquez sur le **Type** liste déroulante, puis sélectionnez le **rechercher des Types...** entrée. Dans le **rechercher et sélectionner un Type .NET** boîte de dialogue, sous  **\<projet actif >**, ouvrez tous les sous-nœuds et sélectionnez **IBookService**. Cliquez sur **OK**. Dans le **éditeur de collections de Type** boîte de dialogue, cliquez sur **OK**.  
+5. Sélectionnez le **séquence** activité. Dans la fenêtre Propriétés, cliquez sur le **...** bouton dans le **ImplementedContract** propriété. Dans le **éditeur de collections de Type** fenêtre qui s’affiche, cliquez sur le **Type** liste déroulante, puis sélectionnez le **rechercher des Types...** entrée. Dans le **rechercher et sélectionner un Type .NET** boîte de dialogue, sous  **\<projet actif >** , ouvrez tous les sous-nœuds et sélectionnez **IBookService**. Cliquez sur **OK**. Dans le **éditeur de collections de Type** boîte de dialogue, cliquez sur **OK**.  
   
 6. Sélectionnez et supprimez le **ReceiveRequest** et **SendResponse** activités.  
   

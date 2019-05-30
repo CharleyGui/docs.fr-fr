@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 9b5ec2cd-121b-4d49-b075-222cf26f2344
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 15f3aa8d2cd7c21fa2b77660cd668d211f8376a9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: d23a12ff92202ace69cb80ff59d6afcb5d8f8243
+ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54690616"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65960381"
 ---
 # <a name="using-threads-and-threading"></a>Utilisation des threads et du threading
 
@@ -32,7 +32,7 @@ Pour créer un thread, vous devez créer une instance de la classe <xref:System.
 
 Pour mettre fin à l’exécution d’un thread, utilisez la méthode <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Cette méthode lève une <xref:System.Threading.ThreadAbortException> sur le thread sur lequel elle est appelée. Pour plus d’informations, consultez [Destruction de threads](destroying-threads.md).
 
-À compter de .NET Framework 4, vous pouvez utiliser <xref:System.Threading.CancellationToken?displayProperty=nameWithType> pour annuler un thread de manière coopérative. Pour plus d’informations, consultez [Annulation de threads de façon coopérative](canceling-threads-cooperatively.md).
+À compter de .NET Framework 4, vous pouvez utiliser <xref:System.Threading.CancellationToken?displayProperty=nameWithType> pour annuler un thread de manière coopérative. Pour plus d’informations, consultez [Annulation dans les threads managés](cancellation-in-managed-threads.md).
 
 Utilisez la méthode <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> pour faire en sorte que le thread appelant attende l’arrêt du thread sur lequel la méthode est appelée.
 

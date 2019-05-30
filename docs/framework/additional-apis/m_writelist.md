@@ -10,14 +10,14 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 235503c1-1d01-4f59-895f-ae2cf15b3345
-author: guardrex
+author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: a7446b9cbbfd4d3a4d38368a8e24c99527cf9108
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d138e0490e849ff26f540077ec7d23ae42737606
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705933"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300909"
 ---
 # <a name="connectionmwritelist-field"></a>Connection.m\_WriteList champ
 

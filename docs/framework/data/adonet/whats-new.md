@@ -2,20 +2,20 @@
 title: Nouveautés dans ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 3bb65d38-cce2-46f5-b979-e5c505e95e10
-ms.openlocfilehash: 90ac3ffe9bae892bf20ad874e5634a3a045f776d
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 77a7aa5721a83bf7bc8d3e3cbf57a77c56267062
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877437"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66379983"
 ---
 # <a name="whats-new-in-adonet"></a>Nouveautés dans ADO.NET
 
-Les fonctionnalités suivantes sont nouvelles dans ADO.NET dans le [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].
+Les fonctionnalités suivantes sont nouvelles dans ADO.NET dans le .NET Framework 4.5.
 
 ## <a name="sqlclient-data-provider"></a>Fournisseur de données SqlClient
 
-Les fonctionnalités suivantes sont nouvelles dans le fournisseur de données .NET Framework pour SQL Server dans [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]:
+Les fonctionnalités suivantes sont nouvelles dans le fournisseur de données .NET Framework pour SQL Server dans .NET Framework 4.5 :
 
 - Les mots clés de chaîne de connexion ConnectRetryCount et ConnectRetryInterval (<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>) vous permettent de contrôler la fonctionnalité de résilience des connexions inactives.
 
@@ -51,7 +51,7 @@ Les fonctionnalités suivantes sont nouvelles dans le fournisseur de données .N
 
 ## <a name="adonet-entity-framework"></a>ADO.NET Entity Framework
 
-[!INCLUDE[net_v45](../../../../includes/net-v45-md.md)] ajoute des API qui permettent d’ajouter de nouveaux scénarios lorsque vous utilisez Entity Framework 5.0. Pour plus d’informations sur les améliorations et fonctionnalités qui ont été ajoutées à Entity Framework 5.0, consultez les rubriques suivantes : [Quelles sont les nouveautés](https://go.microsoft.com/fwlink/?LinkID=251106) et [versions et Entity Framework le contrôle de version](https://go.microsoft.com/fwlink/?LinkId=234899).
+Le .NET Framework 4.5 ajoute des API qui permettent aux nouveaux scénarios lorsque vous travaillez avec Entity Framework 5.0. Pour plus d’informations sur les améliorations et fonctionnalités qui ont été ajoutées à Entity Framework 5.0, consultez les rubriques suivantes : [Quelles sont les nouveautés](https://go.microsoft.com/fwlink/?LinkID=251106) et [versions et Entity Framework le contrôle de version](https://go.microsoft.com/fwlink/?LinkId=234899).
 
 ## <a name="see-also"></a>Voir aussi
 
