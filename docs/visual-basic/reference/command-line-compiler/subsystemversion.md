@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -subsystemversion compiler option [Visual Basic]
 - subsystemversion compiler option [Visual Basic]
 ms.assetid: 08be22b2-f447-4cd3-8203-120b1b920b54
-ms.openlocfilehash: 0eca7918e5e4b8702858f972003faef1274e56e3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e42501a002d808f31dc3d599dc030e96c573a22f
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61796241"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380322"
 ---
 # <a name="-subsystemversion-visual-basic"></a>-subsystemversion (Visual Basic)
 
@@ -60,7 +60,7 @@ La valeur par défaut de l’option du compilateur **-subsystemversion** dépend
 
   - [-platform:arm](../../../visual-basic/reference/command-line-compiler/platform.md)
 
-- La valeur par défaut est 6.00 si vous utilisez MSBuild, si vous ciblez [!INCLUDE[net_v45](~/includes/net-v45-md.md)] et si vous n’avez défini aucune des options du compilateur spécifiées plus haut dans cette liste.
+- La valeur par défaut est 6.00 si vous utilisez MSBuild, vous ciblez .NET Framework 4.5, et vous n’avez défini aucune des options du compilateur spécifiées plus haut dans cette liste.
 
 - La valeur par défaut est 4.00 si aucune des conditions précédentes n’est vraie.
 

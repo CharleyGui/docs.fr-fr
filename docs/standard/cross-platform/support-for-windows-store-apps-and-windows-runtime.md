@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: 6fa7d044-ae12-4c54-b8ee-50915607a565
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: eb2b082393656e84cedb293c3f3857e6680ed2ab
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 45e28ebb9319447f2e1ae98f1de883f90840720f
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664340"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378295"
 ---
 # <a name="net-framework-support-for-windows-store-apps-and-windows-runtime"></a>Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime
-Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] prend en charge plusieurs scénarios de développement de logiciel avec le [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Ces scénarios se répartissent en trois catégories :
+Le .NET Framework 4.5 prend en charge un nombre de scénarios de développement de logiciel avec le [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Ces scénarios se répartissent en trois catégories :
 
 - Développement [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] avec les contrôles XAML, comme décrit dans les applications [des applications de feuille de route pour Windows Store à l’aide de c# ou Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10)), [comment Ot (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/br229566(v=win.10)), et [vue d’ensemble des applications .NET pour Windows Store ](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)).
 
@@ -127,7 +127,7 @@ Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] prend en charge plusieur
 - Les types dans votre composant peuvent dériver de types [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Contrôles peuvent dériver des types de contrôles primitifs dans le <xref:Windows.UI.Xaml.Controls.Primitives> espace de noms ou de contrôles plus achevés tels que <xref:Windows.UI.Xaml.Controls.Button>.
 
     > [!IMPORTANT]
-    >  À compter de [!INCLUDE[win8](../../../includes/win8-md.md)] et [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], tous les types publics dans un composant [!INCLUDE[wrt](../../../includes/wrt-md.md)] managé doivent être sealed. Un type dans un autre composant [!INCLUDE[wrt](../../../includes/wrt-md.md)] ne peut pas dériver d’eux. Si vous souhaitez fournir un comportement polymorphe dans votre composant, vous pouvez créer une interface et l’implémenter dans les types polymorphes.
+    >  En commençant par [!INCLUDE[win8](../../../includes/win8-md.md)] et le .NET Framework 4.5, tous les types publics managé [!INCLUDE[wrt](../../../includes/wrt-md.md)] composant doit être scellé. Un type dans un autre composant [!INCLUDE[wrt](../../../includes/wrt-md.md)] ne peut pas dériver d’eux. Si vous souhaitez fournir un comportement polymorphe dans votre composant, vous pouvez créer une interface et l’implémenter dans les types polymorphes.
 
 - Tous les types de paramètres et de retour sur les types publics dans votre composant doivent être des types [!INCLUDE[wrt](../../../includes/wrt-md.md)] (notamment les types [!INCLUDE[wrt](../../../includes/wrt-md.md)] définis par votre composant).
 

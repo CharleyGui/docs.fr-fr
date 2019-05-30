@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /platform compiler option [Visual Basic]
 - -platform compiler option [Visual Basic]
 ms.assetid: f9bc61e6-e854-4ae1-87b9-d6244de23fd1
-ms.openlocfilehash: 5c01136564d64d5b2f1f56d311a6b7eadf1742f0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: eb5513c6d8e4085e1b3f69de1d36a007fa27271e
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64633081"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66380311"
 ---
 # <a name="-platform-visual-basic"></a>-platform (Visual Basic)
 Spécifie la version de plateforme du CLR (Common Language Runtime) qui peut exécuter le fichier de sortie.  
@@ -31,7 +31,7 @@ Spécifie la version de plateforme du CLR (Common Language Runtime) qui peut ex�
 |`Itanium`|Compile votre assembly pour qu'il soit exécuté par le CLR 64 bits sur un ordinateur doté d'un processeur Itanium.|  
 |`arm`|Compile votre assembly pour qu'il s'exécute sur un ordinateur doté d'un processeur ARM (Advanced RISC Machine).|  
 |`anycpu`|Compile votre assembly pour qu'il s'exécute sur n'importe quelle plateforme. L'application s'exécutera en tant qu'application 32 bits sur les versions 32 bits de Windows et en tant qu'application 64 bits sur les versions 64 bits de Windows. Cet indicateur est la valeur par défaut.|  
-|`anycpu32bitpreferred`|Compile votre assembly pour qu'il s'exécute sur n'importe quelle plateforme. L'application s'exécutera en tant qu'application 32 bits sur les versions 32 et 64 bits de Windows. Cet indicateur n'est valide que pour les fichiers exécutables (.EXE) et nécessite [!INCLUDE[net_v45](~/includes/net-v45-md.md)].|  
+|`anycpu32bitpreferred`|Compile votre assembly pour qu'il s'exécute sur n'importe quelle plateforme. L'application s'exécutera en tant qu'application 32 bits sur les versions 32 et 64 bits de Windows. Cet indicateur est valide uniquement pour les fichiers exécutables (. (EXE) et nécessite .NET Framework 4.5.|  
   
 ## <a name="remarks"></a>Notes  
  Utilisez l'option `-platform` pour spécifier le type de processeur ciblé par le fichier de sortie.  
