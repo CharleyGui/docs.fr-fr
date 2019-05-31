@@ -13,9 +13,10 @@
       href: async-return-types.md
     - name: Flux de contrôle dans les programmes Async
       href: control-flow-in-async-programs.md
-    - name: Réglage de votre application Async
-      href: fine-tuning-your-async-application.md
+    - name: Annuler des tâches et des tâches terminées de traitement
       items:
+        - name: Vue d'ensemble
+          href: fine-tuning-your-async-application.md
         - name: Annuler une tâche Asynch ou une liste de tâches
           href: cancel-an-async-task-or-a-list-of-tasks.md
         - name: Annuler des tâches Asynch après une période spécifique
