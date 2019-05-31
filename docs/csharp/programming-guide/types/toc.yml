@@ -1,6 +1,7 @@
 - name: Types
-  href: index.md
   items:
+    - name: Utiliser et définir des types
+      href: index.md
     - name: Cast et conversions de types
       href: casting-and-type-conversions.md
     - name: Conversion boxing et unboxing

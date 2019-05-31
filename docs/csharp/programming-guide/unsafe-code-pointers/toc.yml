@@ -1,13 +1,13 @@
-- name: Pointeurs et code unsafe
-  href: index.md
-  items:
-    - name: Mémoires tampons de taille fixe
-      href: fixed-size-buffers.md
-    - name: Types de pointeur
-      items:
-        - name: Vue d'ensemble
-          href: pointer-types.md
-        - name: Conversions de pointeurs
-          href: pointer-conversions.md
-        - name: "Procédure\_: utiliser des pointeurs pour copier un tableau d’octets"
-          href: how-to-use-pointers-to-copy-an-array-of-bytes.md
+items:
+  - name: Vue d’ensemble et restrictions
+    href: index.md
+  - name: Mémoires tampons de taille fixe
+    href: fixed-size-buffers.md
+  - name: Types de pointeur
+    items:
+      - name: Vue d'ensemble
+        href: pointer-types.md
+      - name: Conversions de pointeurs
+        href: pointer-conversions.md
+      - name: "Procédure\_: utiliser des pointeurs pour copier un tableau d’octets"
+        href: how-to-use-pointers-to-copy-an-array-of-bytes.md
