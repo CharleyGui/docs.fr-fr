@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7d5f24d7415ff7ecceba6b0a5fbd3098d70dcd0f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c9bbff8bb1f095502f27b649639434010453ffe1
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61796017"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423850"
 ---
 # <a name="eclroperation-enumeration"></a>EClrOperation, énumération
 Décrit l’ensemble des opérations pour lesquelles un hôte peut appliquer des actions de stratégie.  
@@ -55,7 +55,7 @@ typedef enum {
 ## <a name="remarks"></a>Notes  
  L’infrastructure de fiabilité du common language runtime (CLR) fait la distinction entre les ressources et les abandons échecs d’allocation qui se produisent dans des zones critiques du code et ceux qui se produisent dans les régions non critiques de code. Cette distinction est conçue pour permettre aux hôtes de définir différentes stratégies en fonction de l’endroit où une défaillance se produit dans le code.  
   
- Un *région critique de code* est un espace où le CLR ne peut pas garantir que l’abandon d’une tâche ou ne parvient pas à terminer une demande de ressources affectera uniquement la tâche en cours. Par exemple, si une tâche maintient un verrou et reçoit un HRESULT qui indique un échec lors d’une demande d’allocation de mémoire, il est insuffisant simplement pour abandonner cette tâche pour garantir la stabilité de la <xref:System.AppDomain>, car le <xref:System.AppDomain> peut contenir d’autres tâches en attente pour le même verrou. Abandon en cours tâche peut entraîner les autres tâches à cesser de répondre (ou se bloquer) indéfiniment. Dans ce cas, l’hôte doit pouvoir décharger l’intégralité de <xref:System.AppDomain> plutôt que d’instabilité du risque.  
+ Un *région critique de code* est un espace où le CLR ne peut pas garantir que l’abandon d’une tâche ou ne parvient pas à terminer une demande de ressources affectera uniquement la tâche en cours. Par exemple, si une tâche maintient un verrou et reçoit un HRESULT qui indique un échec lors d’une demande d’allocation de mémoire, il est insuffisant simplement pour abandonner cette tâche pour garantir la stabilité de la <xref:System.AppDomain>, car le <xref:System.AppDomain> peut contenir d’autres tâches en attente pour le même verrou. Pour abandonner actuel tâche peut entraîner des autres tâches de cesser de répondre. Dans ce cas, l’hôte doit pouvoir décharger l’intégralité de <xref:System.AppDomain> plutôt que d’instabilité du risque.  
   
  Un *région non critique de code*, quant à eux, est une région où le CLR peut garantir qu’un abandon ou un échec affectera uniquement la tâche sur laquelle l’erreur se produit.  
   

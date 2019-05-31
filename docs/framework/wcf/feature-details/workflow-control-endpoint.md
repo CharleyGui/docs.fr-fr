@@ -2,18 +2,18 @@
 title: Point de terminaison de contrôle de workflow
 ms.date: 03/30/2017
 ms.assetid: 1b883334-1590-4fbb-b0d6-65197efe0700
-ms.openlocfilehash: 40fec2902598daed178e070b02c1067c308507c9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 781a7cefaeeb8cd9cd21298471c59de2e7815244
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61929712"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66424018"
 ---
 # <a name="workflow-control-endpoint"></a>Point de terminaison de contrôle de workflow
 Le point de terminaison de contrôle de workflow permet aux développeurs d'appeler des opérations de contrôle qui permettent de contrôler à distance des instances de workflow hébergées à l'aide de <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Cette fonctionnalité peut être utilisée pour effectuer par programme des opérations de contrôle, comme interrompre, continuer et terminer.  
   
 > [!WARNING]
->  Si vous utilisez un point de terminaison de contrôle de workflow dans une transaction et le workflow contrôlé contient une activité <xref:System.Activities.Statements.Persist>, l’instance de workflow va être bloquée le temps que la transaction expire.  
+>  Si en utilisant le point de terminaison de contrôle de flux de travail au sein d’une transaction et le workflow contrôlé contient un <xref:System.Activities.Statements.Persist> activité, l’instance de workflow se bloque jusqu'à ce que la transaction n’expire.  
   
 ## <a name="workflow-instance-management"></a>Gestion de l'instance de workflow  
  [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] définit un nouveau contrat appelé <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement>. Ce contrat définit une série d'opérations de contrôle qui vous permettent de contrôler à distance les instances de workflow hébergées par <xref:System.ServiceModel.Activities.WorkflowServiceHost>. <xref:System.ServiceModel.Activities.WorkflowControlEndpoint> est un point de terminaison standard qui fournit une implémentation du contrat <xref:System.ServiceModel.Activities.IWorkflowInstanceManagement>. <xref:System.ServiceModel.Activities.WorkflowControlClient> est une classe utilisée pour envoyer les opérations de contrôle au <xref:System.ServiceModel.Activities.WorkflowControlEndpoint>.  

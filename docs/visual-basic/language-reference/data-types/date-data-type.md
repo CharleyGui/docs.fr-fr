@@ -15,12 +15,12 @@ helpviewer_keywords:
 - literals [Visual Basic], Date
 - '# specifier for Date literals'
 ms.assetid: d9edf5b0-e85e-438b-a1cf-1f321e7c831b
-ms.openlocfilehash: d6179624ffbdf423f8d9b895c65ff41ac9846f33
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 970c69b36eecd110dd81b6a3700fbb0a7eea2834
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647042"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66424039"
 ---
 # <a name="date-data-type-visual-basic"></a>Type de données date (Visual Basic)
 Contient des valeurs sous la forme IEEE 64 bits (8 octets) qui représentent des dates comprises entre le 1er janvier de l'année 0001 et le 31 décembre de l'année 9999 et des heures comprises entre de 0:00:00 (minuit) et 23:59:59,9999999. Chaque incrément représente 100 nanosecondes de durée calendaire depuis le début du 1er janvier de l’année 1 du calendrier grégorien. La valeur maximale représente 100 nanosecondes avant le début du 1er janvier de l'année 10 000.  
@@ -35,7 +35,7 @@ Contient des valeurs sous la forme IEEE 64 bits (8 octets) qui représentent d
 ## <a name="format-requirements"></a>Exigences relatives au format  
  Vous devez placer un littéral `Date` entre des signes dièse (`# #`). Vous devez spécifier la valeur de date au format M/j/aaaa, par exemple `#5/31/1993#`, ou aaaa-MM-jj, par exemple `#1993-5-31#`. Vous pouvez utiliser des barres obliques quand vous spécifiez l'année en premier.  Cette exigence est indépendante de vos paramètres régionaux et des paramètres de format de date et d’heure de votre ordinateur.  
   
- Cette restriction tient au fait que la signification de votre code ne doit jamais changer en fonction des paramètres régionaux dans lesquels votre application s'exécute. Supposez que vous codez en dur un littéral `Date` égal à `#3/4/1998#` et qu'il doit correspondre au 4 mars 1998. Dans des paramètres régionaux qui utilisent le format mm/jj/aaaa, la date 3/4/1998 est compilée comme vous le souhaitez. Supposons toutefois que vous déployiez votre application dans de nombreux pays. Dans des paramètres régionaux qui utilisent le format jj/mm/aaaa, votre littéral codé en dur sera compilé en tant que 3 avril 1998. Dans des paramètres régionaux qui utilisent le format aaaa/mm/jj, le littéral sera non valide (avril 1998, 0003) et provoquera une erreur du compilateur.  
+ Cette restriction tient au fait que la signification de votre code ne doit jamais changer en fonction des paramètres régionaux dans lesquels votre application s'exécute. Supposez que vous codez en dur un littéral `Date` égal à `#3/4/1998#` et qu'il doit correspondre au 4 mars 1998. Dans des paramètres régionaux qui utilisent le format mm/jj/aaaa, la date 3/4/1998 est compilée comme vous le souhaitez. Mais supposons que vous déployez votre application dans plusieurs pays/régions. Dans des paramètres régionaux qui utilisent le format jj/mm/aaaa, votre littéral codé en dur sera compilé en tant que 3 avril 1998. Dans des paramètres régionaux qui utilisent le format aaaa/mm/jj, le littéral sera non valide (avril 1998, 0003) et provoquera une erreur du compilateur.  
   
 ## <a name="workarounds"></a>Solutions  
  Pour convertir un littéral `Date` dans le format de vos paramètres régionaux ou dans un format personnalisé, fournissez le littéral à la fonction <xref:Microsoft.VisualBasic.Strings.Format%2A>, en spécifiant un format de date prédéfini ou défini par l'utilisateur. Cela est illustré par l'exemple suivant.  

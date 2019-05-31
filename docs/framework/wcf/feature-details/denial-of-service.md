@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - denial of service [WCF]
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
-ms.openlocfilehash: 426429eefd038008340a956ab3fa3cba21906c84
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d6dea344d5af24ba2f5bb4aa4064a4f876408380
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627026"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423887"
 ---
 # <a name="denial-of-service"></a>Refus de service
 Un déni de service se produit lorsqu'un système est saturé au point que le traitement des messages est impossible ou extrêmement lent.  
@@ -46,8 +46,8 @@ Un déni de service se produit lorsqu'un système est saturé au point que le tr
   
  Pour minimiser ce problème, affectez à la propriété <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> la valeur `true` et utilisez les propriétés de l'Observateur d'événements pour contrôler le comportement d'audit. Pour plus d’informations sur l’utilisation de l’Observateur d’événements pour afficher et gérer les journaux des événements, consultez [Observateur d’événements](https://go.microsoft.com/fwlink/?LinkId=186123). Pour plus d’informations, consultez [audit](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
   
-## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-hangs"></a>Une implémentation non valide de la stratégie IAuthorizationPolicy peut provoquer le blocage du service  
- L'appel de la méthode <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> sur une implémentation défaillante de l'interface <xref:System.IdentityModel.Policy.IAuthorizationPolicy> peut provoquer le blocage du service.  
+## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-to-become-unresponsive"></a>Une implémentation de IAuthorizationPolicy non valide peut empêcher le Service à cesser de répondre  
+ Appel de la <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> méthode sur une implémentation défaillante de la <xref:System.IdentityModel.Policy.IAuthorizationPolicy> interface peut entraîner le service ne répond plus.  
   
  Atténuation : Utilisez uniquement du code approuvé. Autrement dit, utilisez uniquement un code que vous avez vous-même écrit et testé, ou qui provient d'un fournisseur approuvé. N’autorisez pas les extensions non fiables de <xref:System.IdentityModel.Policy.IAuthorizationPolicy> à s’intégrer à votre code sans prendre toutes les précautions requises. Cela s'applique à toutes les extensions utilisées dans une implémentation de service. WCF ne fait pas de distinction entre du code d’application et du code étranger intégré à l’aide de points d’extensibilité.  
   

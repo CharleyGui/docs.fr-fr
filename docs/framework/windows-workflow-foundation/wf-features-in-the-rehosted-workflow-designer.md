@@ -2,12 +2,12 @@
 title: Prise en charge de nouvelles fonctionnalités Workflow Foundation 4.5 dans le concepteur de workflow réhébergé
 ms.date: 03/30/2017
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
-ms.openlocfilehash: 8459311239d46557405245c10b6fb5e887a4691c
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 70e4a8580a8b383bdd4e5e5299bcc5210f3210dc
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66380151"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423964"
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>Prise en charge de nouvelles fonctionnalités Workflow Foundation 4.5 dans le concepteur de workflow réhébergé
 Windows Workflow Foundation (WF) dans .NET Framework 4.5 a introduit de nombreuses nouvelles fonctionnalités, notamment plusieurs améliorations à l’expérience de Concepteur de flux de travail. Cette rubrique détaille lesquelles de ces fonctionnalités sont prises en charge dans le concepteur réhébergé, et celles qui ne sont pas actuellement prises en charge.
@@ -106,7 +106,7 @@ Windows Workflow Foundation (WF) dans .NET Framework 4.5 a introduit de nombreus
 >  La validation au moment de la génération n'est pas prise en charge dans le concepteur réhébergé.  
   
 ### <a name="design-time-background-validation"></a>Validation d'arrière-plan au moment du design  
- Dans le [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], les workflows étaient validés en tant que processus de premier plan, ce qui pouvait éventuellement bloquer l'interface utilisateur pendant les processus de validation complexes ou longs. La validation de workflow a lieu à présent sur un thread d'arrière-plan, afin que l'interface utilisateur ne soit pas bloquée.  
+ Dans [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], flux de travail ont été validés en tant qu’un processus de premier plan, ce qui peut potentiellement se bloquer l’interface utilisateur pendant le processus de validation complexes ou longs. La validation de workflow a lieu à présent sur un thread d'arrière-plan, afin que l'interface utilisateur ne soit pas bloquée.  
   
  La validation de l'arrière-plan au moment de la génération est prise en charge dans le concepteur réhébergé.  
   

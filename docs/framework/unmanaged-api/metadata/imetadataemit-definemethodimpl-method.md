@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 05b2530bde2f4532e94610a683e7bbc2f59540aa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 184ae0aee6947aa686e80541ab3ba36e0f4e1647
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62044042"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66424004"
 ---
 # <a name="imetadataemitdefinemethodimpl-method"></a>IMetaDataEmit::DefineMethodImpl, méthode
 Crée une définition pour l’implémentation d’une méthode héritée d’une interface et retourne un jeton pour cette définition de l’implémentation de la méthode.  
@@ -42,10 +42,10 @@ HRESULT DefineMethodImpl (
  [in] Le `mdTypedef` jeton de la classe d’implémentation.  
   
  `tkBody`  
- [in] Le `mdMethodDef` ou `mdMethodRef` jeton du corps du code.  
+ [in] Le `mdMethodDef` ou `mdMemberRef` jeton du corps du code.  
   
  `tkDecl`  
- [in] Le `mdMethodDef` ou `mdMethodRef` jeton de la méthode d’interface en cours d’implémentation.  
+ [in] Le `mdMethodDef` ou `mdMemberRef` jeton de la méthode d’interface en cours d’implémentation.  
   
 ## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  

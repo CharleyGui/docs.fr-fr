@@ -10,12 +10,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], overloading
 - procedures [Visual Basic], multiple versions
 ms.assetid: 825f9d56-4cde-43fd-993a-b9171717e2eb
-ms.openlocfilehash: 58c52a7d73efbd96d772dd85d6bf2c9084fb1241
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4374a229392d51b67c99210da91ae05dd3342e96
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61863647"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66424059"
 ---
 # <a name="how-to-overload-a-procedure-that-takes-optional-parameters-visual-basic"></a>Procédure : Surcharger une procédure qui accepte des paramètres optionnels (Visual Basic)
 Si une procédure possède un ou plusieurs [facultatif](../../../../visual-basic/language-reference/modifiers/optional.md) paramètres, vous ne pouvez pas définir une version surchargée corresponde à l’un de ses surcharges implicites. Pour plus d’informations, consultez « Implicite des surcharges pour les paramètres facultatifs » dans [considérations dans les procédures de surcharge](./considerations-in-overloading-procedures.md).  
@@ -51,7 +51,7 @@ Si une procédure possède un ou plusieurs [facultatif](../../../../visual-basic
   
 #### <a name="to-overload-a-procedure-that-takes-more-than-one-optional-parameter"></a>Surcharger une procédure qui accepte plusieurs paramètres facultatifs  
   
-1. Déterminer quelles combinaisons d’arguments facultatifs fournis sont acceptables pour la logique de la procédure. Une combinaison inacceptable peut survenir si un paramètre facultatif dépend d’une autre. Par exemple, si un paramètre accepte le nom de l’époux et un autre accepte âge le son, une combinaison d’arguments fournissant l’âge mais en omettant le nom est inacceptable.  
+1. Déterminer quelles combinaisons d’arguments facultatifs fournis sont acceptables pour la logique de la procédure. Une combinaison inacceptable peut survenir si un paramètre facultatif dépend d’une autre. Par exemple, si un paramètre accepte le nom d’une personne et un autre accepte l’âge de l’utilisateur, une combinaison d’arguments fournissant l’âge mais en omettant le nom est inacceptable.  
   
 2. Pour chaque combinaison acceptable d’arguments facultatifs fournis, écrivez un `Sub` ou `Function` instruction de déclaration qui définit la liste des paramètres correspondants. N’utilisez pas le `Optional` mot clé.  
   

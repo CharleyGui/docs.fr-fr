@@ -2,12 +2,12 @@
 title: Nouveautés de Windows Workflow Foundation dans .NET 4.5
 ms.date: 03/30/2017
 ms.assetid: 195c43a8-e0a8-43d9-aead-d65a9e6751ec
-ms.openlocfilehash: fb9604061fd6ccd7909a2d5b26675a1b637f2b4d
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 9bf836abaa568b3df2080500d8d2357e604dff60
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66380138"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423985"
 ---
 # <a name="whats-new-in-windows-workflow-foundation-in-net-45"></a>Nouveautés de Windows Workflow Foundation dans .NET 4.5
 
@@ -200,7 +200,7 @@ Dans le [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], les er
 
 ### <a name="BKMK_DesignTimeValidation"></a> Validation d’arrière-plan au moment du design
 
-Dans le [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], les workflows étaient validés en tant que processus de premier plan, ce qui pouvait éventuellement bloquer l'interface utilisateur pendant les processus de validation complexes ou longs. La validation de workflow a lieu à présent sur un thread d'arrière-plan, afin que l'interface utilisateur ne soit pas bloquée.
+Dans [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], flux de travail ont été validés en tant qu’un processus de premier plan, ce qui peut potentiellement se bloquer l’interface utilisateur pendant le processus de validation complexes ou longs. La validation de workflow a lieu à présent sur un thread d'arrière-plan, afin que l'interface utilisateur ne soit pas bloquée.
 
 ### <a name="BKMK_ViewState"></a> État d’affichage situé dans un emplacement distinct dans les fichiers XAML
 
