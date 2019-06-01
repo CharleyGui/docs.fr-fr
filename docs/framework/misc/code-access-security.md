@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6c8508b4ba7d6ac6e25fdcc70fb8162b8908e8fa
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: aa256fe95013494488ff52258186763fab7a85c9
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592858"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456653"
 ---
 # <a name="code-access-security"></a>Sécurité d'accès du code
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -67,7 +67,7 @@ Parcours de pile de sécurité
 |Titre|Description|  
 |-----------|-----------------|  
 |[Notions fondamentales de la sécurité d’accès du code](../../../docs/framework/misc/code-access-security-basics.md)|Décrit la sécurité d'accès du code et ses principales utilisations.|  
-|[Code Transparent de sécurité, niveau 2](../../../docs/framework/misc/security-transparent-code-level-2.md)|Décrit le modèle de transparence de sécurité dans le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].|  
+|[Code Transparent de sécurité, niveau 2](../../../docs/framework/misc/security-transparent-code-level-2.md)|Décrit le modèle de transparence de sécurité dans le .NET Framework 4.|  
 |[Utilisation de bibliothèques à partir de code d’un niveau de confiance partiel](../../../docs/framework/misc/using-libraries-from-partially-trusted-code.md)|Décrit comment activer des bibliothèques en vue d'une utilisation avec du code non managé et comment utiliser des bibliothèques à partir d'un code non managé.|  
 |[Concepts fondamentaux sur la sécurité](../../../docs/standard/security/key-security-concepts.md)|Offre une vue d'ensemble de nombreux termes et concepts clés utilisés dans le système de sécurité .NET Framework.|  
 |[Sécurité basée sur les rôles](../../../docs/standard/security/role-based-security.md)|Décrit comment incorporer la sécurité basée sur les rôles.|  

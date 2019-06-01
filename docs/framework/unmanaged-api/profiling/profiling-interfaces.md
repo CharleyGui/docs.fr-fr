@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: d9303db8-e881-4217-91b7-8c7573c8ef9e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 059fadc5607e76b871083682136fda542ae9bacf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d97960a43e1d7ce625d96755a7c597a0425d0911
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758195"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457463"
 ---
 # <a name="profiling-interfaces"></a>Interfaces de profilage
 Cette section décrit les interfaces non managées qui vous permettent de profiler un programme exécuté par le CLR (Common Language Runtime).  
@@ -65,7 +65,7 @@ Fournit une méthode de rappel que le common language runtime utilise pour infor
  Étend l'interface `ICorProfilerInfo` avec des méthodes prises en charge dans .NET Framework 2.0 et ultérieur.  
   
  [ICorProfilerInfo3, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)  
- Étend l'interface `ICorProfilerInfo2` avec des méthodes prises en charge dans [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] et ultérieur.  
+ Étend la `ICorProfilerInfo2` interface avec les méthodes prises en charge dans le .NET Framework 4 et versions ultérieures.  
   
  [ICorProfilerInfo4, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-interface.md)  
  Fournit des méthodes utilisées par les profileurs de code pour communiquer avec le CLR pour contrôler la surveillance des événements et demander des informations.  

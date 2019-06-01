@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 6888f9be-c65b-4b03-a07b-df7ebdee2436
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c50132be2755119b19e38d94919eb4b0ab28d994
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fc3f9c9c61afd4c231846adffc4b304a01d59281
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614319"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457256"
 ---
 # <a name="performance-counters-and-in-process-side-by-side-applications"></a>Compteurs de performance et applications côte à côte in-process
 À l’aide de l’Analyseur de performances (Perfmon.exe), il est possible de différencier les compteurs de performance pour chaque runtime. Cette rubrique décrit la modification du Registre nécessaire pour activer cette fonctionnalité.  
@@ -29,7 +29,7 @@ ms.locfileid: "64614319"
   
 - Quand une application utilise plusieurs instances du Common Language Runtime. Le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] prend en charge les scénarios d’hébergement côte à côte in-process ; autrement dit, un même processus ou une même application peut charger plusieurs instances du Common Language Runtime. Si une application nommée MonApp.exe charge deux instances d’exécution par défaut, elles sont désignées dans la colonne **Instance** en tant que **MonApp** et **MonApp#1**. Dans ce cas, il est difficile de savoir si **MonApp** et **MonApp#1** font référence à deux applications portant le même nom ou à la même application avec deux runtimes. Si plusieurs applications du même nom chargent plusieurs runtimes, il y a encore plus d’ambiguïté.  
   
- Vous pouvez définir une clé de Registre pour lever cette ambiguïté. Pour les applications développées à l’aide du [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], cette modification du Registre ajoute un identificateur de processus suivi d’un identificateur d’instance de runtime au nom de l’application dans la colonne **Instance**. Au lieu de *application* ou *application*#1, l’application est maintenant identifiée comme *application*_`p`*ID_processus* \_ `r` *ID_runtime* dans la colonne **Instance**. Si une application a été développée à l’aide d’une version antérieure du Common Language Runtime, cette instance est représentée en tant que *application\_*`p`*ID_processus* à condition que le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] soit installé.  
+ Vous pouvez définir une clé de Registre pour lever cette ambiguïté. Pour les applications développées à l’aide de .NET Framework 4, cette modification du Registre ajoute un identificateur de processus suivi d’un identificateur d’instance de runtime pour le nom de l’application dans le **Instance** colonne. Au lieu de *application* ou *application*#1, l’application est maintenant identifiée comme *application*_`p`*ID_processus* \_ `r` *ID_runtime* dans la colonne **Instance**. Si une application a été développée à l’aide d’une version précédente du common language runtime, cette instance est représentée en tant que *application\_* `p`*processID* autant que le. NET Framework 4 est installé.  
   
 ## <a name="performance-counters-for-in-process-side-by-side-applications"></a>Compteurs de performance pour les applications côte à côte in-process  
  Pour gérer les compteurs de performance pour plusieurs versions du Common Language Runtime hébergées dans une application unique, vous devez modifier un paramètre de clé de Registre, comme indiqué dans le tableau suivant.  
@@ -50,11 +50,11 @@ ms.locfileid: "64614319"
  [!code-csharp[Conceptual.PerfCounters.InProSxS#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.perfcounters.inprosxs/cs/regsetting1.cs#1)]
  [!code-vb[Conceptual.PerfCounters.InProSxS#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.perfcounters.inprosxs/vb/regsetting1.vb#1)]  
   
- Quand vous modifiez cette clé de Registre, Perfmon.exe affiche les noms des applications qui ciblent le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] en tant que *application*_`p`*ID_processus* \_ `r` *ID_runtime*, où *application* est le nom de l’application, *ID_processus* est l’identificateur de processus de l’application et *ID_runtime* est un identificateur du Common Language Runtime. Par exemple, si une application nommée MonApp.exe charge deux instances du Common Language Runtime, Perfmon.exe peut identifier une instance comme MonApp_p1416_r10 et la deuxième comme MonApp_p3160_r10. L’identificateur de runtime lève uniquement l’ambiguïté liée aux runtimes dans un processus ; il ne fournit aucune autre information sur le runtime. (Par exemple, l’ID de runtime n’a aucun lien avec la version ou la référence SKU du runtime.)  
+ Lorsque vous modifiez ce Registre, Perfmon.exe affiche les noms des applications qui ciblent le .NET Framework 4 en tant que *application*_`p`*processID* \_ `r` *Id_runtime*, où *application* est le nom de l’application, *processID* est l’identificateur de processus de l’application, et  *Id_runtime* est un identificateur du common language runtime. Par exemple, si une application nommée MonApp.exe charge deux instances du Common Language Runtime, Perfmon.exe peut identifier une instance comme MonApp_p1416_r10 et la deuxième comme MonApp_p3160_r10. L’identificateur de runtime lève uniquement l’ambiguïté liée aux runtimes dans un processus ; il ne fournit aucune autre information sur le runtime. (Par exemple, l’ID de runtime n’a aucun lien avec la version ou la référence SKU du runtime.)  
   
- Si le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] est installé, la modification du Registre affecte également les applications qui ont été développées à l’aide de versions antérieures du .NET Framework. Celles-ci apparaissent dans Perfmon.exe au format *application_*`p`*ID_processus*, où *application* est le nom de l’application et *ID_processus* est l’identificateur de processus. Par exemple, si les compteurs de performance de deux applications nommées MonApp.exe sont analysés, l’un d’eux peut apparaître comme MonApp_p23900 et l’autre comme MonApp_p24908.  
+ Si le .NET Framework 4 est installé, la modification du Registre affecte également les applications développées à l’aide de versions antérieures du .NET Framework. Celles-ci apparaissent dans Perfmon.exe au format *application_* `p`*ID_processus*, où *application* est le nom de l’application et *ID_processus* est l’identificateur de processus. Par exemple, si les compteurs de performance de deux applications nommées MonApp.exe sont analysés, l’un d’eux peut apparaître comme MonApp_p23900 et l’autre comme MonApp_p24908.  
   
 > [!NOTE]
 >  L’identificateur de processus élimine l’ambiguïté liée à la résolution de deux applications du même nom qui utilisent des versions antérieures du runtime. Aucun identificateur de runtime n’est nécessaire pour les versions antérieures, car les versions précédentes du Common Language Runtime ne prennent pas en charge les scénarios côte à côte.  
   
- Si le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] n’est pas présent ou a été désinstallé, la définition de la clé de Registre n’a aucun effet. Cela signifie que deux applications portant le même nom continueront d’apparaître dans Perfmon.exe comme *application* et *application#1* (par exemple, **MonApp** et **MonApp#1**).
+ Si le .NET Framework 4 n’est pas présent ou a été désinstallé, définition de la clé de Registre n’a aucun effet. Cela signifie que deux applications portant le même nom continueront d’apparaître dans Perfmon.exe comme *application* et *application#1* (par exemple, **MonApp** et **MonApp#1**).

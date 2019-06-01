@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - generics [XAML Services]
 ms.assetid: 835bfed7-585c-4216-ae67-b674edab8b92
-ms.openlocfilehash: 9263edf18872f510f5f2f4e3e9cb793e45c5d0b8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ca0c1b466f5a89730c72f32321394ccfc6d9c7a2
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61954100"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457363"
 ---
 # <a name="generics-in-xaml"></a>Génériques en XAML
 Les Services XAML .NET Framework tel qu’implémenté dans System.Xaml prend en charge l’utilisation des types CLR génériques. Cette prise en charge inclut la spécification des contraintes de génériques comme argument de type et l’application de la contrainte en appelant approprié `Add` méthode pour les cas de collection générique. Cette rubrique décrit les aspects de l’utilisation et référencement des types génériques en XAML.  
@@ -38,7 +38,7 @@ Les Services XAML .NET Framework tel qu’implémenté dans System.Xaml prend en
   
  Solutions de contournement possible pour prendre en charge des utilisations génériques incluent la définition d’une extension de balisage personnalisée qui peut retourner des types génériques, ou fournir un retour à la ligne définition qui dérive d’un type générique, mais aplanit la contrainte générique dans sa propre définition de classe de la classe.  
   
- Dans WPF et le ciblage [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], vous pouvez utiliser les fonctionnalités XAML 2009 avec `x:TypeArguments`, mais uniquement pour XAML libre (XAML non compilé par balisage). Le code XAML compilé par balisage pour WPF et la forme BAML du code XAML ne prennent actuellement pas en charge les mots clés et les fonctionnalités XAML 2009.  
+ Dans WPF et le ciblage de .NET Framework 4, vous pouvez utiliser les fonctionnalités XAML 2009 avec `x:TypeArguments`, mais uniquement pour XAML libre (XAML non compilé par balisage). Le code XAML compilé par balisage pour WPF et la forme BAML du code XAML ne prennent actuellement pas en charge les mots clés et les fonctionnalités XAML 2009.  
   
  Flux de travail personnalisés dans Windows Workflow Foundation pour [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] ne prennent pas en charge l’utilisation XAML générique.  
   

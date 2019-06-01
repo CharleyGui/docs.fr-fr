@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 19cb4d39-e38a-4262-b507-458915303115
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6d9281e52de43391a92262f85084715ccabd5515
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 796c3b03612138238cb336361ab49514d80b4d7b
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868912"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456642"
 ---
 # <a name="code-access-security-policy-compatibility-and-migration"></a>Compatibilité de la stratégie de sécurité d'accès du code et migration
 
@@ -22,7 +22,7 @@ La partie stratégie de la sécurité d'accès du code (CAS, Code Access Securit
 
 Vous pouvez éviter les avertissements et les erreurs comme suit :
 
-- [Migration](#migration) à la [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] remplacements des appels obsolètes.
+- [Migration](#migration) pour les remplacements de .NET Framework 4 pour les appels obsolètes.
 
    \- ou -
 
@@ -100,7 +100,7 @@ Voici quelques exemples. Les surcharges obsolètes sont celles qui prennent <xre
 
 Les types et membres obsolètes produisent les messages d'erreur suivants quand ils sont utilisés. Notez que le type <xref:System.Security.Policy.Evidence?displayProperty=nameWithType> lui-même n'est pas obsolète.
 
-Avertissement au moment de la compilation : 
+Avertissement au moment de la compilation :
 
 `warning CS0618: '<API Name>' is obsolete: 'This method is obsolete and will be removed in a future release of the .NET Framework. Please use <suggested alternate API>. See <link> for more information.'`
 
@@ -114,7 +114,7 @@ Exceptions runtime :
 
 ### <a name="determining-an-assemblys-trust-level"></a>Détermination du niveau de confiance d'un assembly
 
-La stratégie CAS est souvent utilisée pour déterminer le jeu d'autorisations ou le niveau de confiance d'un assembly ou d'un domaine d'application. Le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] expose les propriétés utiles suivantes qui n'ont pas besoin de résoudre la stratégie de sécurité :
+La stratégie CAS est souvent utilisée pour déterminer le jeu d'autorisations ou le niveau de confiance d'un assembly ou d'un domaine d'application. Le .NET Framework 4 expose les propriétés utiles suivantes qui n’avez pas besoin de résoudre la stratégie de sécurité :
 
 - <xref:System.Reflection.Assembly.PermissionSet%2A?displayProperty=nameWithType>
 
@@ -126,15 +126,15 @@ La stratégie CAS est souvent utilisée pour déterminer le jeu d'autorisations 
 
 ### <a name="application-domain-sandboxing"></a>Utilisation de bac à sable (sandbox) pour les domaines d'application
 
-La méthode <xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType> est généralement utilisée pour la mise en bac à sable (sandbox) des assemblys dans un domaine d'application. Le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] expose des membres qui n’ont pas à utiliser <xref:System.Security.Policy.PolicyLevel> à cet effet. Pour plus d'informations, voir [Procédure : exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md).
+La méthode <xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType> est généralement utilisée pour la mise en bac à sable (sandbox) des assemblys dans un domaine d'application. Le .NET Framework 4 expose des membres qui n’ont pas à utiliser <xref:System.Security.Policy.PolicyLevel> à cet effet. Pour plus d'informations, voir [Procédure : exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md).
 
 ### <a name="determining-a-safe-or-reasonable-permission-set-for-partially-trusted-code"></a>Détermination d'un jeu d'autorisations sécurisé ou raisonnable pour le code d'un niveau de confiance partiel
 
-Les hôtes doivent souvent déterminer les autorisations qui sont appropriées pour l'utilisation de bacs à sable (sandbox) pour le code hébergé. Avant du [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], la stratégie CAS permettait de le faire avec le <xref:System.Security.SecurityManager.ResolvePolicy%2A?displayProperty=nameWithType> (méthode). En remplacement, [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] fournit le <xref:System.Security.SecurityManager.GetStandardSandbox%2A?displayProperty=nameWithType> (méthode), qui retourne une autorisation sûr et standard pour la preuve fournie.
+Les hôtes doivent souvent déterminer les autorisations qui sont appropriées pour l'utilisation de bacs à sable (sandbox) pour le code hébergé. Avant le .NET Framework 4, stratégie CAS permettait de le faire avec le <xref:System.Security.SecurityManager.ResolvePolicy%2A?displayProperty=nameWithType> (méthode). En remplacement, .NET Framework 4 fournit le <xref:System.Security.SecurityManager.GetStandardSandbox%2A?displayProperty=nameWithType> (méthode), qui retourne une autorisation sûr et standard pour la preuve fournie.
 
 ### <a name="non-sandboxing-scenarios-overloads-for-assembly-loads"></a>Non Sandboxing scénarios : Surcharges pour les chargements d’assemblys
 
-La raison de l'utilisation d'une surcharge de chargement d'assembly peut être de recourir à des paramètres qui ne sont pas autrement disponibles, au lieu d'utiliser le sandbox pour l'assembly. En commençant par le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], les surcharges de chargement d’assembly qui ne nécessitent pas une <xref:System.Security.Policy.Evidence?displayProperty=nameWithType> objet en tant que paramètre, par exemple, <xref:System.AppDomain.ExecuteAssembly%28System.String%2CSystem.String%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Configuration.Assemblies.AssemblyHashAlgorithm%29?displayProperty=nameWithType>, activer ce scénario.
+La raison de l'utilisation d'une surcharge de chargement d'assembly peut être de recourir à des paramètres qui ne sont pas autrement disponibles, au lieu d'utiliser le sandbox pour l'assembly. À compter de .NET Framework 4, les surcharges qui ne nécessitent pas de chargement d’assembly un <xref:System.Security.Policy.Evidence?displayProperty=nameWithType> objet en tant que paramètre, par exemple, <xref:System.AppDomain.ExecuteAssembly%28System.String%2CSystem.String%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Configuration.Assemblies.AssemblyHashAlgorithm%29?displayProperty=nameWithType>, activer ce scénario.
 
 Si vous voulez utiliser un bac à sable (sandbox) pour un assembly, utilisez la surcharge <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType>.
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [WPF]
 ms.assetid: dac2c9ce-042b-4d23-91eb-28f584415cef
-ms.openlocfilehash: d8f37431279cc22b8e9c131f860b5de82f35af2e
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 4ee973eb5a81a6428ee5a5fcfc00e28425ff2a44
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591207"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457517"
 ---
 # <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>Procédure pas à pas : mise en cache des données d’application dans une application WPF
 La mise en cache vous permet de stocker des données en mémoire pour y accéder rapidement. Quand vous accédez à nouveau aux données, les applications peuvent obtenir les données à partir du cache au lieu de devoir les récupérer à partir de la source d’origine. Cela peut améliorer les performances et la scalabilité. La mise en cache rend également les données disponibles quand la source de données est temporairement indisponible.
@@ -22,7 +22,7 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
  Le .NET Framework fournit des classes qui vous permettent d’utiliser la mise en cache dans les applications .NET Framework. Ces classes se trouvent dans le <xref:System.Runtime.Caching> espace de noms.
 
 > [!NOTE]
->  Le <xref:System.Runtime.Caching> espace de noms est une nouveauté de la [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]. Cet espace de noms rend la mise en cache est disponible pour toutes les applications .NET Framework. Dans les versions précédentes du .NET Framework, la mise en cache était disponible uniquement dans le <xref:System.Web> espace de noms et nécessitait donc une dépendance vis-à-vis des classes ASP.NET.
+>  Le <xref:System.Runtime.Caching> espace de noms est une nouveauté de .NET Framework 4. Cet espace de noms rend la mise en cache est disponible pour toutes les applications .NET Framework. Dans les versions précédentes du .NET Framework, la mise en cache était disponible uniquement dans le <xref:System.Web> espace de noms et nécessitait donc une dépendance vis-à-vis des classes ASP.NET.
 
  Cette procédure pas à pas vous montre comment utiliser la fonctionnalité de mise en cache est disponible dans le .NET Framework en tant que partie d’un [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] application. Dans la procédure pas à pas, vous mettre en cache le contenu d’un fichier texte.
 
@@ -30,7 +30,7 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
 
 - Création d’un projet d’application WPF.
 
-- Ajout d’une référence à la [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)].
+- Ajout d’une référence vers le .NET Framework 4.
 
 - Initialisation d’un cache.
 
@@ -62,12 +62,12 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
 
      La boîte de dialogue **Nouveau projet** s’affiche.
 
-3. Sous **modèles installés**, sélectionnez le langage de programmation que vous souhaitez utiliser (**Visual Basic** ou **Visual C#**).
+3. Sous **modèles installés**, sélectionnez le langage de programmation que vous souhaitez utiliser (**Visual Basic** ou **Visual C#** ).
 
 4. Dans le **nouveau projet** boîte de dialogue, sélectionnez **Application WPF**.
 
     > [!NOTE]
-    >  Si vous ne voyez pas le **Application WPF** modèle, assurez-vous que vous ciblez une version du .NET Framework qui prend en charge de WPF. Dans le **nouveau projet** boîte de dialogue, sélectionnez [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] dans la liste.
+    >  Si vous ne voyez pas le **Application WPF** modèle, assurez-vous que vous ciblez une version du .NET Framework qui prend en charge de WPF. Dans le **nouveau projet** boîte de dialogue, sélectionnez .NET Framework 4 dans la liste.
 
 5. Dans le **nom** texte, entrez un nom pour votre projet. Par exemple, vous pouvez entrer **WPFCaching**.
 
@@ -78,7 +78,7 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
      Le Concepteur WPF s’ouvre dans **conception** afficher et affiche le fichier MainWindow.xaml. Visual Studio crée le **mon projet** dossier, le fichier Application.xaml et le fichier MainWindow.xaml.
 
 ## <a name="targeting-the-net-framework-and-adding-a-reference-to-the-caching-assemblies"></a>Ciblage du .NET Framework et l’ajout d’une référence aux assemblys de mise en cache
- Par défaut, les applications WPF ciblent le [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]. Pour utiliser le <xref:System.Runtime.Caching> espace de noms dans une application WPF, l’application doit cibler le [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)] (pas le [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]) et doit inclure une référence à l’espace de noms.
+ Par défaut, les applications WPF ciblent le [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]. Pour utiliser le <xref:System.Runtime.Caching> espace de noms dans une application WPF, l’application doit cibler le .NET Framework 4 (pas le [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]) et doit inclure une référence à l’espace de noms.
 
  Par conséquent, l’étape suivante consiste à modifier la cible de .NET Framework et ajoutez une référence à la <xref:System.Runtime.Caching> espace de noms.
 
@@ -97,7 +97,7 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
 
      Le **paramètres avancés du compilateur** boîte de dialogue s’affiche.
 
-4. Dans le **framework cible (toutes les configurations)** liste, sélectionnez [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]. (Ne sélectionnez pas [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].)
+4. Dans le **framework cible (toutes les configurations)** , sélectionnez .NET Framework 4. (Ne sélectionnez pas [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].)
 
 5. Cliquez sur **OK**.
 
@@ -121,7 +121,7 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
 
 2. Cliquez sur l’onglet **Application** .
 
-3. Dans le **framework cible** liste, sélectionnez [!INCLUDE[net_v40_short](../../../../includes/net-v40-short-md.md)]. (Ne sélectionnez pas **.NET Framework 4 Client Profile**.)
+3. Dans le **framework cible** , sélectionnez .NET Framework 4. (Ne sélectionnez pas **.NET Framework 4 Client Profile**.)
 
 4. Ajoutez une référence à l’assembly de mise en cache en suivant ces étapes :
 

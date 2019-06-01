@@ -9,12 +9,12 @@ helpviewer_keywords:
 - supportedRuntime element
 - <supportedRuntime> element
 ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
-ms.openlocfilehash: cc55809ecaffa4cab4fa4336f9f7f5c06debde2d
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c6bf4c6b262bc9066277a683d5eda67ada6f4d08
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634229"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456213"
 ---
 # <a name="supportedruntime-element"></a>\<supportedRuntime > élément
 
@@ -22,7 +22,7 @@ Spécifie quelle version du common language runtime et, éventuellement, la vers
 
 [\<configuration>](../configuration-element.md)  
 &nbsp;&nbsp;[\<startup>](../startup/startup-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;**\<supportedRuntime>**  
+&nbsp;&nbsp;&nbsp;&nbsp; **\<supportedRuntime>**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -51,7 +51,7 @@ Pour les applications prenant en charge les versions du runtime du .NET Framewor
 Si le  **\<supportedRuntime >** élément avec la `sku` attribut est présent dans le fichier de configuration et la version de .NET Framework installée est inférieure, puis la version prise en charge spécifiée, l’application ne parvient pas à exécuter et à la place affiche un message vous demandant d’installer la version prise en charge. Sinon, l’application tente de s’exécuter sur n’importe quelle version installée, mais il peut se comportent de façon inattendue si elle n’est pas entièrement compatible avec cette version. (Pour les différences de compatibilité entre les versions du .NET Framework, consultez [compatibilité des applications dans le .NET Framework](https://docs.microsoft.com/dotnet/framework/migration-guide/application-compatibility).) Par conséquent, nous vous conseillons d’inclure cet élément dans le fichier de configuration d’application pour les diagnostics d’erreur plus facile. (Le fichier de configuration généré automatiquement par Visual Studio lorsque vous créez un nouveau projet déjà contient.)
   
 > [!NOTE]
-> Si votre application utilise des chemins d’accès d’activation héritée, tel que le [fonction CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md), et vous souhaitez que ces chemins activent la version 4 du CLR au lieu d’une version antérieure, ou si votre application est générée avec le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]mais a une dépendance sur un assembly en mode mixte généré avec une version antérieure du .NET Framework, il n’est pas suffisant spécifier le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] dans la liste des runtimes pris en charge. En outre, dans le [ \<démarrage > élément](../startup/startup-element.md) dans votre fichier de configuration, vous devez définir le `useLegacyV2RuntimeActivationPolicy` attribut `true`. Toutefois, l'affectation de la valeur `true` à cet attribut signifie que tous les composants générés avec des versions antérieures du .NET Framework sont exécutés à l'aide de [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] plutôt qu'à l'aide des runtimes avec lesquels ils ont été générés.
+> Si votre application utilise des chemins d’accès d’activation héritée, tel que le [fonction CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md), et vous souhaitez que ces chemins activent la version 4 du CLR au lieu d’une version antérieure, ou si votre application est générée avec le .NET Framework 4 mais a une dépendance sur un assembly en mode mixte généré avec une version antérieure du .NET Framework, il n’est pas suffisant spécifier le .NET Framework 4 dans la liste des runtimes pris en charge. En outre, dans le [ \<démarrage > élément](../startup/startup-element.md) dans votre fichier de configuration, vous devez définir le `useLegacyV2RuntimeActivationPolicy` attribut `true`. Toutefois, si cet attribut `true` signifie que tous les composants générés avec les versions antérieures du .NET Framework sont exécutés à l’aide de .NET Framework 4 au lieu des runtimes, ils ont été générés.
 
 Nous vous recommandons de tester les applications avec toutes les versions du .NET Framework sur lesquelles elles peuvent s'exécuter.
 

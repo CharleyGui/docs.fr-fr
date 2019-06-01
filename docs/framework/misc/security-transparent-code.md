@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 4f3dd841-82f7-4659-aab0-6d2db2166c65
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5cb528bbb4f85cd4502b4e2efabbcf592ac6bd0c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 60f2856bea79f36beb3c467158114fa78d99e09a
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868743"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456504"
 ---
 # <a name="security-transparent-code"></a>Code transparent de sécurité (security-transparent)
 
@@ -59,14 +59,14 @@ L'attribut <xref:System.Security.SecurityRulesAttribute> au niveau niveau de l'a
 
 Voici les différents niveaux :
 
-- niveau 2 (<xref:System.Security.SecurityRuleSet.Level2>) : règles de transparence du [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] ;
+- Niveau 2 (<xref:System.Security.SecurityRuleSet.Level2>) – les règles de transparence du .NET Framework 4.
 
 - niveau 1 (<xref:System.Security.SecurityRuleSet.Level1>) : règles de transparence du .NET Framework 2.0.
 
 La principale différence entre les deux niveaux de transparence est que le niveau 1 n'applique pas les règles de transparence aux appels en provenance de l'extérieur de l'assembly et vise uniquement la compatibilité.
 
 > [!IMPORTANT]
-> Vous ne devez spécifier une transparence de niveau 1 qu'à des fins de compatibilité. Autrement dit, ne spécifiez le niveau 1 que pour du code développé avec le .NET Framework version 3.5 ou antérieure qui utilise l'attribut <xref:System.Security.AllowPartiallyTrustedCallersAttribute> ou qui n'utilise pas le modèle de transparence. Par exemple, utilisez la transparence de niveau 1 pour les assemblys du .NET Framework 2.0 qui autorisent les appels des appelants ayant un niveau de confiance partielle (APTCA). Pour du code développé pour le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], utilisez toujours la transparence de niveau 2.
+> Vous ne devez spécifier une transparence de niveau 1 qu'à des fins de compatibilité. Autrement dit, ne spécifiez le niveau 1 que pour du code développé avec le .NET Framework version 3.5 ou antérieure qui utilise l'attribut <xref:System.Security.AllowPartiallyTrustedCallersAttribute> ou qui n'utilise pas le modèle de transparence. Par exemple, utilisez la transparence de niveau 1 pour les assemblys du .NET Framework 2.0 qui autorisent les appels des appelants ayant un niveau de confiance partielle (APTCA). Pour le code développé pour le .NET Framework 4, utilisez toujours la transparence de niveau 2.
 
 ### <a name="level-2-transparency"></a>Transparence de niveau 2
 
@@ -114,7 +114,7 @@ Le modèle de transparence de niveau 1 présente les limitations suivantes :
 
 ## <a name="transparency-enforcement"></a>Mise en application de la transparence
 
-Les règles de transparence ne sont pas appliquées tant que la transparence n'est pas calculée. Dès lors, une exception <xref:System.InvalidOperationException> est levée en cas de violation d'une règle de transparence. Le moment où la transparence est calculée dépend de plusieurs facteurs et ne peut pas être prédite. Elle est calculée le plus tard possible. Dans le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], le calcul de la transparence au niveau de l'assembly intervient à un stade plus précoce que dans le .NET Framework 2.0. La seule garantie est que le calcul de la transparence se produit dès que cela est nécessaire. Cela est comparable à la façon dont le compilateur juste-à-temps (JIT) peut modifier le point au moment où une méthode est compilée et que des erreurs sont détectées dans cette méthode. Le calcul de la transparence n'est pas perceptible si votre code ne présente aucune erreur de transparence.
+Les règles de transparence ne sont pas appliquées tant que la transparence n'est pas calculée. Dès lors, une exception <xref:System.InvalidOperationException> est levée en cas de violation d'une règle de transparence. Le moment où la transparence est calculée dépend de plusieurs facteurs et ne peut pas être prédite. Elle est calculée le plus tard possible. Dans le .NET Framework 4, calcul de la transparence de niveau assembly se produit plus rapidement que dans le .NET Framework 2.0. La seule garantie est que le calcul de la transparence se produit dès que cela est nécessaire. Cela est comparable à la façon dont le compilateur juste-à-temps (JIT) peut modifier le point au moment où une méthode est compilée et que des erreurs sont détectées dans cette méthode. Le calcul de la transparence n'est pas perceptible si votre code ne présente aucune erreur de transparence.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: c08125d6-56cc-4b23-b482-813ff85dc630
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2a51b9fb485da605effbad0e81b8baf5e05e382a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 91983a0910b272e621783f0fdb68242ddbd20f03
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675089"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456180"
 ---
 # <a name="userandomizedstringhashalgorithm-element"></a>\<UseRandomizedStringHashAlgorithm > élément
 Détermine si le common language runtime calcule les codes de hachage pour les chaînes sur un domaine d’application par application.  
@@ -58,7 +58,7 @@ Détermine si le common language runtime calcule les codes de hachage pour les c
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
 ## <a name="remarks"></a>Notes  
- Par défaut, le <xref:System.StringComparer> classe et le <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> méthode utilise un algorithme de hachage unique qui produit un code de hachage cohérent entre domaines d’application. Cela revient à affecter la `enabled` attribut de la `<UseRandomizedStringHashAlgorithm>` élément à `0`. Il s’agit d’algorithme de hachage utilisé dans le [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)].  
+ Par défaut, le <xref:System.StringComparer> classe et le <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> méthode utilise un algorithme de hachage unique qui produit un code de hachage cohérent entre domaines d’application. Cela revient à affecter la `enabled` attribut de la `<UseRandomizedStringHashAlgorithm>` élément à `0`. Il s’agit de l’algorithme de hachage utilisé dans le .NET Framework 4.  
   
  Le <xref:System.StringComparer> classe et le <xref:System.String.GetHashCode%2A?displayProperty=nameWithType> méthode peut également utiliser un algorithme de hachage différent qui calcule les codes de hachage sur une par domaine d’application. Par conséquent, les codes de hachage des chaînes équivalentes varient entre domaines d’application. Il s’agit d’une fonctionnalité d’abonnement ; Pour tirer parti de celui-ci, vous devez définir le `enabled` attribut de la `<UseRandomizedStringHashAlgorithm>` élément à `1`.  
   

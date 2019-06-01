@@ -24,12 +24,12 @@ helpviewer_keywords:
 - configuration files [.NET Framework], machine
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
-ms.openlocfilehash: 972efa150d560e74f0e7daadf18688ac12b9fbf3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a8f5c6f6aba9ec4ad627fcd4d3b3caaff810ee72
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583643"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456205"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Configuration des applications à l'aide de fichiers de configuration
 Le .NET Framework, par le biais de fichiers de configuration, permet aux développeurs et administrateurs de contrôler la façon dont les applications s'exécutent avec la souplesse requise. Les fichiers de configuration sont des fichiers XML qui peuvent être modifiés selon les besoins. Un administrateur peut exercer un contrôle sur les ressources protégées auxquelles une application peut accéder, les versions d'assemblys utilisées par une application et l'endroit où sont situés les applications et objets distants. Les développeurs peuvent stocker des paramètres dans des fichiers de configuration, de façon à ce qu'il ne leur soit pas nécessaire de recompiler une application chaque fois qu'un paramètre change. Cette section décrit les éléments qui peuvent être configurés et explique en quoi la configuration d'une application peut se révéler utile.  
@@ -54,7 +54,7 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
 ## <a name="machine-configuration-files"></a>Fichiers de configuration machine  
  Le fichier de configuration machine, Machine.config, contient des paramètres qui s'appliquent à l'ordinateur tout entier. Ce fichier se trouve dans le répertoire %*chemin d'installation du runtime*%\Config. Machine.config contient les paramètres de configuration d’une liaison d’assembly à l’échelle de l’ordinateur, de [canaux de communication à distance ](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkfd3wha(v=vs.100)) intégrés et d’ASP.NET.  
   
- Le système de configuration recherche d’abord l’élément [**\<appSettings>**](~/docs/framework/configure-apps/file-schema/appsettings/index.md) et les autres sections de configuration éventuellement définies par un développeur dans le fichier de configuration machine. Ensuite, il cherche ensuite dans le fichier de configuration de l'application. Pour que le fichier de configuration machine reste gérable, il est préférable de placer ces paramètres dans le fichier de configuration de l'application. Cependant, le fait de placer les paramètres dans le fichier de configuration machine peut rendre votre système plus facile à entretenir. Par exemple, si vous possédez un composant de tiers utilisé à la fois par votre application cliente et serveur, il est plus aisé de placer les paramètres pour ce composant dans un seul emplacement. Dans ce cas, le fichier de configuration machine est l'emplacement le plus approprié pour les paramètres, de manière à éviter d'avoir les mêmes paramètres dans deux fichiers différents.  
+ Le système de configuration recherche d’abord l’élément [ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/index.md) et les autres sections de configuration éventuellement définies par un développeur dans le fichier de configuration machine. Ensuite, il cherche ensuite dans le fichier de configuration de l'application. Pour que le fichier de configuration machine reste gérable, il est préférable de placer ces paramètres dans le fichier de configuration de l'application. Cependant, le fait de placer les paramètres dans le fichier de configuration machine peut rendre votre système plus facile à entretenir. Par exemple, si vous possédez un composant de tiers utilisé à la fois par votre application cliente et serveur, il est plus aisé de placer les paramètres pour ce composant dans un seul emplacement. Dans ce cas, le fichier de configuration machine est l'emplacement le plus approprié pour les paramètres, de manière à éviter d'avoir les mêmes paramètres dans deux fichiers différents.  
   
 > [!NOTE]
 >  Le déploiement d'une application utilisant XCOPY ne copiera pas les paramètres dans le fichier de configuration machine.  
@@ -90,7 +90,7 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
  Les fichiers de configuration de sécurité contiennent des informations sur la hiérarchie du groupe de codes et des jeux d'autorisations associée à un niveau de stratégie. Nous vous recommandons vivement d’utiliser l’[outil Stratégie de sécurité d’accès du code (Caspol.exe)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md) pour modifier la stratégie de sécurité et éviter que les modifications de stratégie corrompent les fichiers de configuration de sécurité.  
   
 > [!NOTE]
->  En commençant par le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], les fichiers de configuration de sécurité sont présents uniquement si la stratégie de sécurité a été modifiée.  
+>  À compter de .NET Framework 4, les fichiers de configuration de sécurité sont présents uniquement si la stratégie de sécurité a été modifiée.  
   
  Les fichiers de configuration de sécurité se trouvent dans les emplacements suivants :  
   
