@@ -1,15 +1,15 @@
 ---
 title: Utilisation du SDK et des outils .NET Core avec l’intégration continue
 description: Informations sur l’utilisation du SDK .NET Core et de ses outils sur le serveur de builds.
-author: guardrex
+author: mairaw
 ms.date: 05/18/2017
 ms.custom: seodec18
-ms.openlocfilehash: c9fd9e359a22467cc8639109538522e4088df5ef
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 629b7a9e1f2b59981adb77ab4d3125be7036ff02
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54704093"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299969"
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Utilisation du SDK et des outils .NET Core avec l’intégration continue
 

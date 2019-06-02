@@ -1,15 +1,15 @@
 ---
 title: Créer un modèle personnalisé pour dotnet new
 description: Découvrez comment créer un modèle personnalisé pour la commande dotnet new dans ce didacticiel amusant.
-author: guardrex
+author: mairaw
 ms.date: 08/12/2017
 ms.custom: seodec18
-ms.openlocfilehash: 3b45a24c8a249eeb99fb1a4b14918483b978980b
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: e47da048584ec31c275ff9c122d157f34556268a
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57676445"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299957"
 ---
 # <a name="create-a-custom-template-for-dotnet-new"></a>Créer un modèle personnalisé pour dotnet new
 
@@ -35,7 +35,7 @@ Si vous souhaitez utiliser l’exemple téléchargé avec une distribution à pa
 
 ## <a name="create-a-template-from-a-project"></a>Créer un modèle à partir d’un projet
 
-Utilisez un projet existant dont vous savez qu’il peut être compilé et exécuté, ou créez un projet d’application console dans un dossier de votre disque dur. Ce didacticiel suppose que le dossier de projet porte le nom *GarciaSoftware.ConsoleTemplate.CSharp* et qu’il est stocké à l’emplacement *Documents\Templates* dans le profil de l’utilisateur. Le nom du modèle de projet du didacticiel est au format *\<nom de la société>.\<type de modèle>.\<langage de programmation>*, mais vous êtes libre de nommer votre projet et votre modèle comme vous le souhaitez.
+Utilisez un projet existant dont vous savez qu’il peut être compilé et exécuté, ou créez un projet d’application console dans un dossier de votre disque dur. Ce didacticiel suppose que le dossier de projet porte le nom *GarciaSoftware.ConsoleTemplate.CSharp* et qu’il est stocké à l’emplacement *Documents\Templates* dans le profil de l’utilisateur. Le nom du modèle de projet du didacticiel est au format *\<nom de la société>.\<type de modèle>.\<langage de programmation>* , mais vous êtes libre de nommer votre projet et votre modèle comme vous le souhaitez.
 
 1. Ajoutez un dossier nommé *.template.config* à la racine du projet.
 1. Dans le dossier *.template.config*, créez un fichier *template.json* pour configurer votre modèle. Pour obtenir plus d’informations et connaître les définitions de membre du fichier *template.json*, consultez la rubrique [Modèles personnalisés pour dotnet new](../tools/custom-templates.md#templatejson) et le schéma [*template.json* dans le magasin de schémas JSON](http://json.schemastore.org/template).
@@ -73,7 +73,7 @@ Le modèle est terminé. À ce stade, vous avez deux options pour distribuer le 
    | **\<authors>**     | string | Liste séparée par des virgules des auteurs de packages, qui correspondent aux noms de profil sur nuget.org. Les auteurs sont affichés dans la galerie NuGet sur nuget.org et servent à croiser les références des packages de mêmes auteurs. |
    | **\<description>** | string | Description longue du package pour l’affichage de l’interface utilisateur. |
    | **\<id>**          | string | Identificateur de package respectant la casse, qui doit être unique dans nuget.org ou dans toute autre galerie susceptible de l’héberger. Les ID ne peuvent pas contenir d’espaces ou de caractères qui ne sont pas valides pour une URL et suivent généralement les règles d’espace de noms .NET. Pour obtenir des conseils, consultez [Choix d’un identificateur de package unique et définition du numéro de version](/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number). |
-   | **\<packageType>** | string | Placez cet élément à l’intérieur d’un élément **\<packageTypes>** parmi les éléments **\<metadata>**. Affectez à l’attribut `name` de l’élément **\<packageType>** la valeur `Template`. |
+   | **\<packageType>** | string | Placez cet élément à l’intérieur d’un élément **\<packageTypes>** parmi les éléments **\<metadata>** . Affectez à l’attribut `name` de l’élément **\<packageType>** la valeur `Template`. |
    | **\<version>**     | string | Version du package, selon le format version_principale.version_secondaire.version_corrective. Les numéros de version peuvent inclure un suffixe de préversion comme décrit dans [Préversions](/nuget/create-packages/prerelease-packages#semantic-versioning). |
 
    Consultez les [informations de référence sur .nuspec](/nuget/schema/nuspec) pour connaître le schéma du fichier *nuspec*.
