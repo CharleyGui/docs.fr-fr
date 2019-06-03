@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - sizeof keyword [C#]
 ms.assetid: c548592c-677c-4f40-a4ce-e613f7529141
-ms.openlocfilehash: 8bb6d4a37b2eea3060921937cf15a1fdd1be97b4
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: a00c4f96e62f7fd7d7c352aece097acd5b600ae2
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634009"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422398"
 ---
 # <a name="sizeof-c-reference"></a>sizeof (référence C#)
 
@@ -73,7 +73,6 @@ Pour tous les autres types, y compris les structs, l’opérateur `sizeof` peut 
 - [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [Mots clés des opérateurs](operator-keywords.md)
 - [enum](enum.md)
 - [Pointeurs et code unsafe](../../programming-guide/unsafe-code-pointers/index.md)
 - [Structs](../../programming-guide/classes-and-structs/structs.md)

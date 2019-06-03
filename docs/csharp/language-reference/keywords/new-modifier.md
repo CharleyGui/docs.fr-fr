@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - new modifier keyword [C#]
 ms.assetid: a2e20856-33b9-4620-b535-a60dbce8349b
-ms.openlocfilehash: d5fd244ea22fd48bf5b81d2cdf55127f745c145b
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 3a642996da8f0126e59e21d3553a7d8ba73dab23
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835016"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422681"
 ---
 # <a name="new-modifier-c-reference"></a>new, modificateur (référence C#)
 
@@ -61,7 +61,6 @@ The keyword new is required on 'MyDerivedC.x' because it hides inherited member 
 - [Référence C#](../../language-reference/index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [Mots clés des opérateurs](operator-keywords.md)
 - [Modificateurs](modifiers.md)
 - [Versioning avec les mots clés override et new](../../programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md)
 - [Savoir quand utiliser les mots clés override et new](../../programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md)

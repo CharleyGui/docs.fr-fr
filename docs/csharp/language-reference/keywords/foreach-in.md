@@ -9,12 +9,12 @@ helpviewer_keywords:
 - foreach statement [C#]
 - in keyword [C#]
 ms.assetid: 5a9c5ddc-5fd3-457a-9bb6-9abffcd874ec
-ms.openlocfilehash: 7a1508db23f60cac487e0171c3db7756bc228fd2
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 3fbaacb96be2714aaff49679836e5d2d4a3783da
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65880536"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422472"
 ---
 # <a name="foreach-in-c-reference"></a>foreach, instruction (C#)
 
@@ -54,6 +54,5 @@ Pour plus d’informations, voir la section [Instruction foreach](~/_csharplang/
 - [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [Instructions d’itération](iteration-statements.md)
 - [Utiliser foreach avec des tableaux](../../programming-guide/arrays/using-foreach-with-arrays.md)
 - [instruction for](for.md)

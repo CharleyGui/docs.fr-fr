@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 5ac4feef-4b1a-4c61-aeb4-61d549e5dd42
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d6911ff96ca847f554e9b615aba6ab83a212efee
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.openlocfilehash: c4536a5caa789712227bfd637d65cfc4c22adf80
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58125991"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422692"
 ---
 # <a name="throw-c-reference"></a>throw (référence C#)
 
@@ -75,5 +75,4 @@ Les appelants de méthode utilisent alors un bloc `try-catch` ou `try-catch-fina
 - [try-catch](try-catch.md)
 - [Instructions try, catch et throw en C++](try-catch.md)
 - [Mots clés C#](index.md)
-- [Instructions de gestion des exceptions](exception-handling-statements.md)
 - [Guide pratique pour lever explicitement des exceptions](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - generics [C#], delegates
 - delegates [C#], generic
 ms.assetid: bdea509c-44c1-4309-aaa9-15c7aee009df
-ms.openlocfilehash: 2806eadd2d3f8a4c3e8f001b02b28d35a60daaec
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: ff19b3d71858552158a8ae5d0ab362a86dc98e65
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56970148"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423496"
 ---
 # <a name="generic-delegates-c-programming-guide"></a>Délégués génériques (guide de programmation C#)
 Un [délégué](../../../csharp/language-reference/keywords/delegate.md) peut définir ses propres paramètres de type. Le code qui référence le délégué générique peut spécifier l’argument de type pour créer un type construit fermé, comme lors de l’instanciation d’une classe générique ou d’un appel d’une méthode générique, ainsi que l’illustre l’exemple ci-dessous :  
@@ -38,7 +38,7 @@ Un [délégué](../../../csharp/language-reference/keywords/delegate.md) peut d�
 
 - <xref:System.Collections.Generic>
 - [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Introduction aux génériques](../../../csharp/programming-guide/generics/introduction-to-generics.md)
+- [Introduction aux génériques](../../../csharp/programming-guide/generics/index.md)
 - [Méthodes génériques](../../../csharp/programming-guide/generics/generic-methods.md)
 - [Classes génériques](../../../csharp/programming-guide/generics/generic-classes.md)
 - [Interfaces génériques](../../../csharp/programming-guide/generics/generic-interfaces.md)
