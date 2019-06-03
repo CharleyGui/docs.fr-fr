@@ -7,12 +7,12 @@ helpviewer_keywords:
 - types [C#], built-in
 - built-in C# types
 ms.assetid: 54f901f2-bf2f-472c-ae8d-73e8ecfc57fe
-ms.openlocfilehash: fae0cedfe8bf675dceb9cb9d5835d923cae8b4ab
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: bd8c52cd798496a4df3086411dfe3be6241fbff5
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53235622"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422348"
 ---
 # <a name="built-in-types-table-c-reference"></a>Tableau des types intégrés (référence C#)
 
@@ -36,7 +36,7 @@ Le tableau suivant liste les mots clés des types C# intégrés, qui sont des 
 |[ushort](ushort.md)|<xref:System.UInt16?displayProperty=nameWithType>|  
 |[string](string.md)|<xref:System.String?displayProperty=nameWithType>|  
   
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Hormis les types `object` et `string`, tous les types listés dans le tableau sont considérés comme des types simples.  
   
@@ -66,7 +66,6 @@ Console.WriteLine(doubleType.FullName);
 - [Référence C#](../../../csharp/language-reference/index.md)
 - [Guide de programmation C#](../../../csharp/programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [Tableaux de référence des types](reference-tables-for-types.md)
 - [Types valeur](value-types.md)
 - [Types référence](reference-types.md)
 - [Tableau des valeurs par défaut](default-values-table.md)

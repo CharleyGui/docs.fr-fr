@@ -7,12 +7,12 @@ helpviewer_keywords:
 - types [C#], value types
 - types [C#], suffixes
 ms.assetid: 67d8f631-b6e3-4d83-9910-5ec497f8c5f3
-ms.openlocfilehash: 7a2b61e7b699319bc57ff3fddcb712ef8e3c30fd
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 959d4840344ba041ae1b01fd6d202f2b53936afc
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632851"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422371"
 ---
 # <a name="value-types-table-c-reference"></a>Tableau des types valeur (référence C#)
 
@@ -52,7 +52,6 @@ Si un [littéral numérique réel](~/_csharplang/spec/lexical-structure.md#real-
 
 - [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
-- [Tableaux de référence des types](reference-tables-for-types.md)
 - [Tableau des valeurs par défaut](default-values-table.md)
 - [Types valeur](value-types.md)
 - [Tableau des formats des résultats numériques](formatting-numeric-results-table.md)
