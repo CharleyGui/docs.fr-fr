@@ -8,37 +8,36 @@ f1_keywords:
 helpviewer_keywords:
 - do keyword [C#]
 ms.assetid: 50725f79-9ba6-4898-aa78-6e331568a1bb
-ms.openlocfilehash: 4bdbd1c8efac0b7ba95d4c8d16dae3101fe6bcb0
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 5566965e77feb9d46584146829284e9e0be71539
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53239538"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422038"
 ---
-# <a name="do-c-reference"></a><span data-ttu-id="e07b3-102">do (référence C#)</span><span class="sxs-lookup"><span data-stu-id="e07b3-102">do (C# Reference)</span></span>
+# <a name="do-c-reference"></a><span data-ttu-id="787f8-102">do (référence C#)</span><span class="sxs-lookup"><span data-stu-id="787f8-102">do (C# Reference)</span></span>
 
-<span data-ttu-id="e07b3-103">L’instruction `do` exécute une instruction ou un bloc d’instructions tant qu’une expression booléenne donne la valeur `true`.</span><span class="sxs-lookup"><span data-stu-id="e07b3-103">The `do` statement executes a statement or a block of statements while a specified Boolean expression evaluates to `true`.</span></span> <span data-ttu-id="e07b3-104">Dans la mesure où cette expression est évaluée après chaque exécution de la boucle, une boucle `do-while` s’exécute une ou plusieurs fois.</span><span class="sxs-lookup"><span data-stu-id="e07b3-104">Because that expression is evaluated after each execution of the loop, a `do-while` loop executes one or more times.</span></span> <span data-ttu-id="e07b3-105">Cela diffère de la boucle [while](while.md), qui s’exécute zéro ou plusieurs fois.</span><span class="sxs-lookup"><span data-stu-id="e07b3-105">This differs from the [while](while.md) loop, which executes zero or more times.</span></span>
+<span data-ttu-id="787f8-103">L’instruction `do` exécute une instruction ou un bloc d’instructions tant qu’une expression booléenne donne la valeur `true`.</span><span class="sxs-lookup"><span data-stu-id="787f8-103">The `do` statement executes a statement or a block of statements while a specified Boolean expression evaluates to `true`.</span></span> <span data-ttu-id="787f8-104">Dans la mesure où cette expression est évaluée après chaque exécution de la boucle, une boucle `do-while` s’exécute une ou plusieurs fois.</span><span class="sxs-lookup"><span data-stu-id="787f8-104">Because that expression is evaluated after each execution of the loop, a `do-while` loop executes one or more times.</span></span> <span data-ttu-id="787f8-105">Cela diffère de la boucle [while](while.md), qui s’exécute zéro ou plusieurs fois.</span><span class="sxs-lookup"><span data-stu-id="787f8-105">This differs from the [while](while.md) loop, which executes zero or more times.</span></span>
 
-<span data-ttu-id="e07b3-106">À tout moment dans le bloc d’instructions `do`, vous pouvez sortir de la boucle à l’aide de l’instruction [break](break.md).</span><span class="sxs-lookup"><span data-stu-id="e07b3-106">At any point within the `do` statement block, you can break out of the loop by using the [break](break.md) statement.</span></span>
+<span data-ttu-id="787f8-106">À tout moment dans le bloc d’instructions `do`, vous pouvez sortir de la boucle à l’aide de l’instruction [break](break.md).</span><span class="sxs-lookup"><span data-stu-id="787f8-106">At any point within the `do` statement block, you can break out of the loop by using the [break](break.md) statement.</span></span>
 
-<span data-ttu-id="e07b3-107">Vous pouvez passer directement à l’évaluation de l’expression `while` à l’aide de l’instruction [continue](continue.md).</span><span class="sxs-lookup"><span data-stu-id="e07b3-107">You can step directly to the evaluation of the `while` expression by using the [continue](continue.md) statement.</span></span> <span data-ttu-id="e07b3-108">Si l’expression correspond à `true`, l’exécution passe à la première instruction de la boucle.</span><span class="sxs-lookup"><span data-stu-id="e07b3-108">If the expression evaluates to `true`, execution continues at the first statement in the loop.</span></span> <span data-ttu-id="e07b3-109">Sinon, l’exécution passe à la première instruction après la boucle.</span><span class="sxs-lookup"><span data-stu-id="e07b3-109">Otherwise, execution continues at the first statement after the loop.</span></span>
+<span data-ttu-id="787f8-107">Vous pouvez passer directement à l’évaluation de l’expression `while` à l’aide de l’instruction [continue](continue.md).</span><span class="sxs-lookup"><span data-stu-id="787f8-107">You can step directly to the evaluation of the `while` expression by using the [continue](continue.md) statement.</span></span> <span data-ttu-id="787f8-108">Si l’expression correspond à `true`, l’exécution passe à la première instruction de la boucle.</span><span class="sxs-lookup"><span data-stu-id="787f8-108">If the expression evaluates to `true`, execution continues at the first statement in the loop.</span></span> <span data-ttu-id="787f8-109">Sinon, l’exécution passe à la première instruction après la boucle.</span><span class="sxs-lookup"><span data-stu-id="787f8-109">Otherwise, execution continues at the first statement after the loop.</span></span>
 
-<span data-ttu-id="e07b3-110">Vous pouvez également quitter une boucle `do-while` en utilisant les instructions [goto](goto.md), [return](return.md) ou [throw](throw.md).</span><span class="sxs-lookup"><span data-stu-id="e07b3-110">You also can exit a `do-while` loop by the [goto](goto.md), [return](return.md), or [throw](throw.md) statements.</span></span>
+<span data-ttu-id="787f8-110">Vous pouvez également quitter une boucle `do-while` en utilisant les instructions [goto](goto.md), [return](return.md) ou [throw](throw.md).</span><span class="sxs-lookup"><span data-stu-id="787f8-110">You also can exit a `do-while` loop by the [goto](goto.md), [return](return.md), or [throw](throw.md) statements.</span></span>
 
-## <a name="example"></a><span data-ttu-id="e07b3-111">Exemple</span><span class="sxs-lookup"><span data-stu-id="e07b3-111">Example</span></span>
+## <a name="example"></a><span data-ttu-id="787f8-111">Exemple</span><span class="sxs-lookup"><span data-stu-id="787f8-111">Example</span></span>
 
-<span data-ttu-id="e07b3-112">L’exemple suivant illustre l’utilisation de l’instruction `do`.</span><span class="sxs-lookup"><span data-stu-id="e07b3-112">The following example shows the usage of the `do` statement.</span></span> <span data-ttu-id="e07b3-113">Sélectionnez **Exécuter** pour exécuter l’exemple de code.</span><span class="sxs-lookup"><span data-stu-id="e07b3-113">Select **Run** to run the example code.</span></span> <span data-ttu-id="e07b3-114">Après cela, vous pouvez modifier le code et le réexécuter.</span><span class="sxs-lookup"><span data-stu-id="e07b3-114">After that you can modify the code and run it again.</span></span>
+<span data-ttu-id="787f8-112">L’exemple suivant illustre l’utilisation de l’instruction `do`.</span><span class="sxs-lookup"><span data-stu-id="787f8-112">The following example shows the usage of the `do` statement.</span></span> <span data-ttu-id="787f8-113">Sélectionnez **Exécuter** pour exécuter l’exemple de code.</span><span class="sxs-lookup"><span data-stu-id="787f8-113">Select **Run** to run the example code.</span></span> <span data-ttu-id="787f8-114">Après cela, vous pouvez modifier le code et le réexécuter.</span><span class="sxs-lookup"><span data-stu-id="787f8-114">After that you can modify the code and run it again.</span></span>
 
 [!code-csharp-interactive[do loop example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#4)]
 
-## <a name="c-language-specification"></a><span data-ttu-id="e07b3-115">spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="e07b3-115">C# language specification</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="787f8-115">spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="787f8-115">C# language specification</span></span>
 
-<span data-ttu-id="e07b3-116">Pour plus d’informations, voir la section [Instruction do](~/_csharplang/spec/statements.md#the-do-statement) de la [spécification du langage C#](../language-specification/index.md).</span><span class="sxs-lookup"><span data-stu-id="e07b3-116">For more information, see [The do statement](~/_csharplang/spec/statements.md#the-do-statement) section of the [C# language specification](../language-specification/index.md).</span></span>
+<span data-ttu-id="787f8-116">Pour plus d’informations, voir la section [Instruction do](~/_csharplang/spec/statements.md#the-do-statement) de la [spécification du langage C#](../language-specification/index.md).</span><span class="sxs-lookup"><span data-stu-id="787f8-116">For more information, see [The do statement](~/_csharplang/spec/statements.md#the-do-statement) section of the [C# language specification](../language-specification/index.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="e07b3-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e07b3-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="787f8-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="787f8-117">See also</span></span>
 
-- [<span data-ttu-id="e07b3-118">Référence C#</span><span class="sxs-lookup"><span data-stu-id="e07b3-118">C# Reference</span></span>](../index.md)
-- [<span data-ttu-id="e07b3-119">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="e07b3-119">C# Programming Guide</span></span>](../../programming-guide/index.md)
-- [<span data-ttu-id="e07b3-120">Mots clés C#</span><span class="sxs-lookup"><span data-stu-id="e07b3-120">C# Keywords</span></span>](index.md)
-- [<span data-ttu-id="e07b3-121">Instructions d’itération</span><span class="sxs-lookup"><span data-stu-id="e07b3-121">Iteration Statements</span></span>](iteration-statements.md)
-- [<span data-ttu-id="e07b3-122">instruction while</span><span class="sxs-lookup"><span data-stu-id="e07b3-122">while statement</span></span>](while.md)
+- [<span data-ttu-id="787f8-118">Référence C#</span><span class="sxs-lookup"><span data-stu-id="787f8-118">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="787f8-119">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="787f8-119">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="787f8-120">Mots clés C#</span><span class="sxs-lookup"><span data-stu-id="787f8-120">C# Keywords</span></span>](index.md)
+- [<span data-ttu-id="787f8-121">instruction while</span><span class="sxs-lookup"><span data-stu-id="787f8-121">while statement</span></span>](while.md)
