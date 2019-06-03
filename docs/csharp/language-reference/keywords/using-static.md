@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 8b8f9e34-c75e-469b-ba85-6f2eb4090314
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 29610a77eadf587162731b5bddbcc4bbe7fa0714
-ms.sourcegitcommit: fa38fe76abdc8972e37138fcb4dfdb3502ac5394
+ms.openlocfilehash: 4fa8dc3c043665ca2f56facf516cb03e5c6bb9d7
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53610526"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66421754"
 ---
 # <a name="using-static-directive-c-reference"></a>using static, directive (référence C#)
 
@@ -28,7 +28,7 @@ La directive `using static` s’applique à tout type ayant des membres statique
 
 La directive `using static` a été introduite avec C# 6.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 En général, quand vous appelez un membre statique, vous indiquez le nom du type, ainsi que le nom du membre. Entrer plusieurs fois le même nom de type pour appeler des membres du type peut produire du code détaillé et peu clair. Par exemple, la définition suivante d’une classe `Circle` référence un certain nombre de membres de la classe <xref:System.Math>.
 
@@ -58,5 +58,4 @@ Dans cet exemple, la directive `using static` aurait également pu être appliqu
 - [Référence C#](../index.md)
 - [Mots clés C#](index.md)
 - [Utilisation d’espaces de noms](../../programming-guide/namespaces/using-namespaces.md)
-- [Mots clés d’espaces de noms](namespace-keywords.md)
 - [Espaces de noms](../../programming-guide/namespaces/index.md)

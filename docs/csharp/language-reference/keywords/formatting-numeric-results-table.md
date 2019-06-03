@@ -8,12 +8,12 @@ helpviewer_keywords:
 - numeric formatting [C#]
 - String.Format method
 ms.assetid: 120ba537-4448-4c62-8676-7a8fdd98f496
-ms.openlocfilehash: 12fe89e3aa63e9d3d8c3f102fe5a01a5f2225375
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: 0f2b5bc54a0e9055d64a95dc229eaadf66687b43
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53239967"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66421967"
 ---
 # <a name="formatting-numeric-results-table-c-reference"></a>Tableau des formats des résultats numériques (référence C#)
 
@@ -31,7 +31,7 @@ Le tableau suivant montre les spécificateurs de format pris en charge pour la m
 |R ou r|Aller-retour|`string s = $"{2.5:R}";`|2.5|  
 |X ou x|Hexadécimal|`string s = $"{250:X}";`<br /><br /> `string s = $"{0xffff:X}";`|FA<br /><br /> FFFF|  
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Vous utilisez un spécificateur de format pour créer une chaîne de format. La chaîne de format est au format suivant : `Axx`, où
 
@@ -54,7 +54,6 @@ Pour plus d’informations, consultez [Chaînes de format numériques standard](
 
 - [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
-- [Tableaux de référence des types](reference-tables-for-types.md)
 - [Mise en forme des types](../../../standard/base-types/formatting-types.md)
 - [Mise en forme composite](../../../standard/base-types/composite-formatting.md)
 - [Interpolation de chaîne](../tokens/interpolated.md)

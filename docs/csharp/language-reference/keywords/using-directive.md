@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - using directive [C#]
 ms.assetid: b42b8e61-5e7e-439c-bb71-370094b44ae8
-ms.openlocfilehash: 3e8daf24929339e31cda81a726ec11fdcffc687a
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: 072af9850f792cb6d7322724f2adbc978465dc84
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54029500"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66421740"
 ---
 # <a name="using-directive-c-reference"></a>using, directive (référence C#)
 
@@ -54,7 +54,7 @@ class Program
 }
 ```
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 La portée d'une directive `using` se limite au fichier dans lequel elle apparaît.
 
@@ -102,6 +102,5 @@ Pour plus d’informations, consultez [Directives using](~/_csharplang/spec/name
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Utilisation d’espaces de noms](../../programming-guide/namespaces/using-namespaces.md)
 - [Mots clés C#](index.md)
-- [Mots clés d’espaces de noms](namespace-keywords.md)
 - [Espaces de noms](../../programming-guide/namespaces/index.md)
 - [using, instruction](using-statement.md)
