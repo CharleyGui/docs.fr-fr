@@ -4,12 +4,12 @@ description: Découvrez les fonctionnalités de télémétrie du kit SDK .NET Co
 author: richlander
 ms.date: 06/20/2018
 ms.custom: seodec18
-ms.openlocfilehash: 82410863c81faa95edfb120c95ec6bc186ed1328
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 85cceab08fc6e4108a5b951c8b67c1ad5a28f6bb
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64751677"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377501"
 ---
 # <a name="net-core-sdk-telemetry"></a>Télémétrie du kit SDK .NET Core
 
@@ -79,7 +79,7 @@ Les données publiées sont disponibles tous les trimestres et sont répertorié
 
 &#8224;La colonne *Occurrences* totalise le nombre d’utilisations de la commande concernée pour les métriques de la ligne donnée le jour indiqué.
 
-&#8225;En règle générale, la colonne *Geography* affiche le nom d’un pays. Dans certains cas, le continent Antarctica (Antarctique) apparaît dans cette colonne si .NET Core est utilisé dans ce continent ou que les données de localisation sont incorrectes.
+&#8225;En règle générale, la colonne *Geography* affiche le nom d’un pays/d’une région. Dans certains cas, le continent Antarctica (Antarctique) apparaît dans cette colonne si .NET Core est utilisé dans ce continent ou que les données de localisation sont incorrectes.
 
 ### <a name="example"></a>Exemple
 
