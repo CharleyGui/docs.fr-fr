@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: cea7e588-8b8d-48d2-9ad5-8feaf3642c18
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b47c4d07fc0ee0cdaf53fe3c8199fb37dcb6c1b1
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: cb6cfc8e1c3f0409d99d31efa0a645476b47e45e
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377887"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456254"
 ---
 # <a name="throwunobservedtaskexceptions-element"></a>\<ThrowUnobservedTaskExceptions > élément
 Indique si les exceptions de tâches non gérées doivent arrêter un processus en cours d’exécution.  
@@ -65,7 +65,7 @@ Indique si les exceptions de tâches non gérées doivent arrêter un processus 
   
  Pour le rendre plus facile pour les développeurs d’écrire du code asynchrone basé sur les tâches, le .NET Framework 4.5 modifie ce comportement par défaut pour les exceptions non prise en charge. Non prises en charge les exceptions d’entraîner la <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException> événement est déclenché, mais par défaut, le processus s’arrête. Au lieu de cela, l’exception est ignorée une fois que l’événement est déclenché, indépendamment de si un gestionnaire d’événements observe l’exception.  
   
- Dans le .NET Framework 4.5, vous pouvez utiliser la [ \<ThrowUnobservedTaskExceptions > élément](../../../../../docs/framework/configure-apps/file-schema/runtime/throwunobservedtaskexceptions-element.md) dans un fichier de configuration d’application pour activer la [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] comportement de lever une exception.  
+ Dans le .NET Framework 4.5, vous pouvez utiliser la [ \<ThrowUnobservedTaskExceptions > élément](../../../../../docs/framework/configure-apps/file-schema/runtime/throwunobservedtaskexceptions-element.md) dans un fichier de configuration d’application pour activer le comportement de .NET Framework 4 de lever une exception.  
   
  Vous pouvez également spécifier le comportement d’exception dans une des manières suivantes :  
   
