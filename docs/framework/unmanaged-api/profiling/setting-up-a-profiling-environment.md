@@ -12,16 +12,16 @@ helpviewer_keywords:
 ms.assetid: fefca07f-7555-4e77-be86-3c542e928312
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dfad184e30ec94c8add265db2ef8131d0d34396f
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: cc5171b135facfbbe901b38a19fef9e9d47699b5
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457231"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490720"
 ---
 # <a name="setting-up-a-profiling-environment"></a>Configuration d'un environnement de profilage
 > [!NOTE]
->  Des modifications substantielles ont été apportées au profilage dans le [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+>  Il substantielles ont été apportées au profilage dans le .NET Framework 4.  
   
  Quand un processus managé (application ou service) démarre, il charge le Common Language Runtime (CLR). Quand le CLR est initialisé, il évalue les deux variables environnementales suivantes afin de déterminer si le processus doit se connecter à un profileur :  
   

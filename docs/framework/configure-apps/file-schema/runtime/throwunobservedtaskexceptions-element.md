@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: cea7e588-8b8d-48d2-9ad5-8feaf3642c18
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cb6cfc8e1c3f0409d99d31efa0a645476b47e45e
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 9647297bf976d26a97be0da8807d607789e8a065
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456254"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489573"
 ---
 # <a name="throwunobservedtaskexceptions-element"></a>\<ThrowUnobservedTaskExceptions > élément
 Indique si les exceptions de tâches non gérées doivent arrêter un processus en cours d’exécution.  
@@ -61,7 +61,7 @@ Indique si les exceptions de tâches non gérées doivent arrêter un processus 
 ## <a name="remarks"></a>Notes  
  Si une exception qui est associée à un <xref:System.Threading.Tasks.Task> n’a pas été observée, il existe aucune <xref:System.Threading.Tasks.Task.Wait%2A> opération, le parent n’est pas attachée et le <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> propriété Impossible de lire l’exception de la tâche est considérée comme défaillante.  
   
- Dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], par défaut, si un <xref:System.Threading.Tasks.Task> qui a une prise en charge exception collecté, le finaliseur lève une exception et met fin au processus. L’arrêt du processus est déterminée par le minutage du garbage collection et la finalisation.  
+ Dans le .NET Framework 4, par défaut, si un <xref:System.Threading.Tasks.Task> qui a une prise en charge exception collecté, le finaliseur lève une exception et met fin au processus. L’arrêt du processus est déterminée par le minutage du garbage collection et la finalisation.  
   
  Pour le rendre plus facile pour les développeurs d’écrire du code asynchrone basé sur les tâches, le .NET Framework 4.5 modifie ce comportement par défaut pour les exceptions non prise en charge. Non prises en charge les exceptions d’entraîner la <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException> événement est déclenché, mais par défaut, le processus s’arrête. Au lieu de cela, l’exception est ignorée une fois que l’événement est déclenché, indépendamment de si un gestionnaire d’événements observe l’exception.  
   

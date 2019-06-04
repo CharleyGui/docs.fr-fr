@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bbba208296dd2099c9da58c81ff66fddc78fdc86
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 07d2f08792b6fdea28bd56045de8da30ab552a4f
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61985866"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490573"
 ---
 # <a name="corbindtoruntimebycfg-function"></a>CorBindToRuntimeByCfg, fonction
 Charge le common language runtime (CLR) dans un processus à l’aide des informations de version qui sont lu à partir d’un fichier XML.  
   
- Cette fonction a été déconseillée dans le [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Cette fonction a été déconseillée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   

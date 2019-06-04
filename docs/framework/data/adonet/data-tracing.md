@@ -2,12 +2,12 @@
 title: Traçage de données dans ADO.NET
 ms.date: 03/30/2017
 ms.assetid: a6a752a5-d2a9-4335-a382-b58690ccb79f
-ms.openlocfilehash: df49fc7a5f7c437132a4dc24ed7f18492d9e7647
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 120a9e2a817401ba04e0dce8052caecb83115e0e
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583782"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489520"
 ---
 # <a name="data-tracing-in-adonet"></a>Traçage de données dans ADO.NET
 
@@ -41,7 +41,7 @@ Vous pouvez obtenir l'ID de connexion client par programme à l'aide de la propr
 
 ADO.NET envoie également un ID d'activité propre au thread L’ID d’activité est capturé dans les sessions événements étendus si les sessions sont démarrées avec l’option TRACK_CAUSALITY activée. Pour les problèmes de performances avec une connexion active, vous pouvez obtenir l'ID d'activité de la trace d'accès aux données du client (champ `ActivityID`), puis localiser l'ID d'activité dans la sortie d'événements étendus. L'ID d'activité dans des événements étendus est un GUID de 16 octets (différent du GUID de l'ID de connexion client) ajouté à un numéro séquentiel à quatre octets. Le numéro séquentiel représente l'ordre d'une demande dans un thread et indique le classement relatif des instructions par lots et RPC pour le thread. `ActivityID` est actuellement éventuellement envoyé pour les instructions par lots SQL et les demandes RPC lorsque le suivi de l'accès aux données est activé et le 18e bit dans le mot de configuration de suivi d'accès aux données est activé.
 
-Voici un exemple qui utilise [!INCLUDE[tsql](../../../../includes/tsql-md.md)] pour démarrer une session d'événements étendus qui sera enregistrée dans une mémoire tampon en anneau et indique l'ID d'activité envoyé à partir d'un client sur le RPC et les opérations par lots.
+Voici un exemple qui utilise Transact-SQL pour démarrer une session d’événements étendus qui sera stockée dans un mémoire tampon en anneau et enregistrera l’ID d’activité envoyé à partir d’un client lors des opérations par lot et RPC.
 
 ```sql
 create event session MySession on server

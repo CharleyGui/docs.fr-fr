@@ -2,12 +2,12 @@
 title: Littéraux
 description: En savoir plus sur les types de littéraux dans le F# langage de programmation.
 ms.date: 02/08/2019
-ms.openlocfilehash: 28ce34dee3c3c3d4d0cfd4107e8cbc375a23032c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 032bc82d222cd34e7ac62e42ee4394c97d975b2e
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61904564"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490974"
 ---
 # <a name="literals"></a>Littéraux
 
@@ -28,6 +28,7 @@ Le tableau suivant présente les types de littéraux dans F#. Les caractères qu
 |uint16|nombre de naturel non signé 16 bits|us|`86us`|
 |int<br /><br />int32|entier signé 32 bits|« l » ou none|`86`<br /><br />`86l`|
 |uint<br /><br />uint32|nombre de naturel non signé 32 bits|u ou ul|`86u`<br /><br />`86ul`|
+|nativeint|pointeur natif à un nombre naturel signé|n|`123n`|
 |unativeint|pointeur natif sous forme de nombre naturel non signé|Annuler|`0x00002D3Fun`|
 |int64|entier signé 64 bits|L|`86L`|
 |uint64|nombre de naturel non signé 64 bits|UL|`86UL`|

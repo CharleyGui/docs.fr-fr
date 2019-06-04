@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 84f71266d84cc98c2a5deb4aa8639e36808315a3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e18172ecf2d4300ae42cc42ecdb1783744cac105
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61628026"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490421"
 ---
 # <a name="getclridentitymanager-function"></a>GetCLRIdentityManager, fonction
 Obtient un pointeur vers une interface qui autorise le common language runtime (CLR) pour gérer les identités.  
   
- Cette fonction a été déconseillée dans le [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Cette fonction a été déconseillée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   

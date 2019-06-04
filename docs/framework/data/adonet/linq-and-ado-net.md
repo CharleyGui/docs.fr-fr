@@ -2,15 +2,15 @@
 title: LINQ et ADO.NET
 ms.date: 03/30/2017
 ms.assetid: bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec
-ms.openlocfilehash: 312eb4b1c0512ca1244daec5bcda3ed864c3646d
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: bfd5bb845917f9ca8ba3b154a51a946b610ca571
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878327"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489818"
 ---
 # <a name="linq-and-adonet"></a>LINQ et ADO.NET
-Aujourd'hui, de nombreux développeurs d’entreprise doivent utiliser des langages de programmation deux (ou plus) : un langage de haut niveau pour les couches de logique et de présentation de business (par exemple, Visual c# ou Visual Basic) et un langage de requête pour interagir avec la base de données (tel que [!INCLUDE[tsql](../../../../includes/tsql-md.md)]). Pour être efficace, le développeur doit être expert en plusieurs langages, et cela peut entraîner des incompatibilités dans l'environnement de développement. Par exemple, une application qui utilise une API d'accès aux données pour exécuter une requête sur une base de données spécifie la requête comme un littéral de chaîne en utilisant des guillemets. Cette chaîne de requête est illisible pour le compilateur et elle ne fait l'objet d'aucun contrôle d'erreur pour vérifier sa syntaxe ou l'existence des colonnes ou lignes auxquelles elle fait référence. Il n'y a aucune vérification de type des paramètres de requête et aucune prise en charge `IntelliSense`.  
+Aujourd'hui, de nombreux développeurs d’entreprise doivent utiliser des langages de programmation deux (ou plus) : un langage de haut niveau pour la logique métier vos couches présentation (tel que Visual C# ou Visual Basic) et un langage de requête pour interagir avec la base de données (par exemple, Transact-SQL) . Pour être efficace, le développeur doit être expert en plusieurs langages, et cela peut entraîner des incompatibilités dans l'environnement de développement. Par exemple, une application qui utilise une API d'accès aux données pour exécuter une requête sur une base de données spécifie la requête comme un littéral de chaîne en utilisant des guillemets. Cette chaîne de requête est illisible pour le compilateur et elle ne fait l'objet d'aucun contrôle d'erreur pour vérifier sa syntaxe ou l'existence des colonnes ou lignes auxquelles elle fait référence. Il n'y a aucune vérification de type des paramètres de requête et aucune prise en charge `IntelliSense`.  
   
  [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] permet aux développeurs de former des requêtes basées sur des ensembles dans leur code d'application, sans avoir à utiliser un langage de requête séparé. Vous pouvez écrire des requêtes [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] sur diverses sources de données énumérables (c'est-à-dire une source de données qui implémente l'interface <xref:System.Collections.IEnumerable>), comme des structures de données en mémoire, des documents XML, des bases de données SQL et des objets <xref:System.Data.DataSet>. Bien que ces sources de données énumérables soient implémentées de diverses manières, elles exposent toutes la même syntaxe et les mêmes constructions de langage. Parce que les requêtes peuvent être formées à même le langage de programmation, vous n'avez pas à utiliser un autre langage de requêtes intégré en tant que littéraux de chaîne et qui ne peut pas être compris ou vérifié par le compilateur. Intégration des requêtes dans le langage de programmation permet également aux programmeurs de Visual Studio être plus productif en fournissant le type au moment de la compilation et la vérification de la syntaxe, et `IntelliSense`. Ces fonctionnalités réduisent la nécessité du débogage de requête et de la résolution d’erreur.  
   

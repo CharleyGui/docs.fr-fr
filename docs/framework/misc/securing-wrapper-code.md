@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 1df6c516-5bba-48bd-b450-1070e04b7389
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d4adfa5d592514c9a91c93095e7199f4b425b712
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: abbc817142ab6906a04b4dc053693f87109922dc
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64596635"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487898"
 ---
 # <a name="securing-wrapper-code"></a>Sécurisation du code wrapper
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -76,7 +76,7 @@ ms.locfileid: "64596635"
 - [LinkDemand](../../../docs/framework/misc/link-demands.md) se produit au moment de la compilation juste-à-temps (JIT) et vérifie uniquement l’appelant immédiat. Cette vérification de sécurité ne vérifie pas l'appelant de l'appelant. Une fois cette vérification effectuée, il n'y a pas de charge de sécurité supplémentaire, quel que soit le nombre d'appels effectués par l'appelant. Cependant, il n'y a pas non plus de protection contre les attaques malveillantes. Avec **LinkDemand**, tout code qui réussit le test et peut référencer votre code risque de perturber la sécurité en autorisant le code nuisible d’appeler à l’aide du code autorisé. Par conséquent, n’utilisez pas **LinkDemand** , sauf si toutes les failles possibles peuvent être évités de manière approfondie.  
   
     > [!NOTE]
-    >  Dans le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], demandes de liaison ont été remplacées par le <xref:System.Security.SecurityCriticalAttribute> attribut <xref:System.Security.SecurityRuleSet.Level2> assemblys. Le <xref:System.Security.SecurityCriticalAttribute> est équivalente à une demande de liaison pour la confiance totale ; Toutefois, elle affecte également les règles d’héritage. Pour plus d’informations sur cette modification, consultez [Code Transparent de sécurité, niveau 2](../../../docs/framework/misc/security-transparent-code-level-2.md).  
+    >  Dans le .NET Framework 4, les demandes de liaison ont été remplacés par le <xref:System.Security.SecurityCriticalAttribute> attribut <xref:System.Security.SecurityRuleSet.Level2> assemblys. Le <xref:System.Security.SecurityCriticalAttribute> est équivalente à une demande de liaison pour la confiance totale ; Toutefois, elle affecte également les règles d’héritage. Pour plus d’informations sur cette modification, consultez [Code Transparent de sécurité, niveau 2](../../../docs/framework/misc/security-transparent-code-level-2.md).  
   
  Les précautions supplémentaires requises lors de l’utilisation **LinkDemand** doivent être programmées individuellement ; le système de sécurité peut aider à leur application. La moindre erreur fait apparaître une défaillance en matière de sécurité. Tout le code autorisé qui utilise votre code doit prendre en charge l'implémentation de la sécurité supplémentaire en effectuant les opérations suivantes :  
   

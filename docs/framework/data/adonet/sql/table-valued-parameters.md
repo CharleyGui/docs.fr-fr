@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
-ms.openlocfilehash: ccef487eb27a5a170d197a6bc670ec4d2bcf8bdf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a7a39677bbd975ac384357481ef419f57b96d977
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645802"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489804"
 ---
 # <a name="table-valued-parameters"></a>Paramètres table
-Les paramètres table fournissent un moyen simple de marshaler plusieurs lignes de données d'une application cliente vers SQL Server sans avoir recours à plusieurs allers-retours ou à une logique côté serveur spéciale pour le traitement des données. Les paramètres table vous permettent d'encapsuler des lignes de données dans une application cliente et d'envoyer les données au serveur dans une commande paramétrée unique. Les lignes de données entrantes sont stockées dans une variable de table qui peut ensuite être traitée en utilisant [!INCLUDE[tsql](../../../../../includes/tsql-md.md)].  
+Les paramètres table fournissent un moyen simple de marshaler plusieurs lignes de données d'une application cliente vers SQL Server sans avoir recours à plusieurs allers-retours ou à une logique côté serveur spéciale pour le traitement des données. Les paramètres table vous permettent d'encapsuler des lignes de données dans une application cliente et d'envoyer les données au serveur dans une commande paramétrée unique. Les lignes de données entrantes sont stockées dans une variable de table qui peut ensuite être traitée en utilisant Transact-SQL.  
   
- Les valeurs de colonne dans les paramètres table sont accessibles à l'aide d'instructions [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] SELECT standard. Les paramètres table sont fortement typés et leur structure est automatiquement validée. La taille des paramètres table est uniquement limitée par la mémoire du serveur.  
+ Les valeurs de colonne dans les paramètres table sont accessibles à l'aide d'instructions Transact-SQL SELECT standard. Les paramètres table sont fortement typés et leur structure est automatiquement validée. La taille des paramètres table est uniquement limitée par la mémoire du serveur.  
   
 > [!NOTE]
 >  Vous ne pouvez pas retourner de données dans un paramètre table. Les paramètres table sont des paramètres d'entrée uniquement ; le mot clé OUTPUT n'est pas pris en charge.  
@@ -39,7 +39,7 @@ Les paramètres table fournissent un moyen simple de marshaler plusieurs lignes 
 - Utiliser l'utilitaire `bcp` ou l'objet <xref:System.Data.SqlClient.SqlBulkCopy> pour charger plusieurs lignes de données dans une table. Même si cette technique est très efficace, elle ne prend pas en charge le traitement côté serveur sauf si les données sont chargées dans une table temporaire ou dans une variable de table.  
   
 ## <a name="creating-table-valued-parameter-types"></a>Création de types de paramètre table  
- Les paramètres table sont basés sur des structures de table fortement typées qui sont définies à l'aide des instructions  [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] CREATE TYPE. Vous devez créer un type de table et définir la structure dans SQL Server avant de pouvoir utiliser les paramètres table dans vos applications clientes. Pour plus d’informations sur la création des types de tables, consultez [les Types de tables définis par l’utilisateur](https://go.microsoft.com/fwlink/?LinkID=98364) dans la documentation en ligne de SQL Server.  
+ Les paramètres table sont basés sur des structures de table fortement typées qui sont définies à l'aide des instructions Transact-SQL CREATE TYPE. Vous devez créer un type de table et définir la structure dans SQL Server avant de pouvoir utiliser les paramètres table dans vos applications clientes. Pour plus d’informations sur la création des types de tables, consultez [les Types de tables définis par l’utilisateur](https://go.microsoft.com/fwlink/?LinkID=98364) dans la documentation en ligne de SQL Server.  
   
  L'instruction suivante crée un type de table nommé CategoryTableType qui se compose des colonnes CategoryID et CategoryName :  
   
@@ -48,7 +48,7 @@ CREATE TYPE dbo.CategoryTableType AS TABLE
     ( CategoryID int, CategoryName nvarchar(50) )  
 ```  
   
- Après avoir créé un type de table, vous pouvez déclarer des paramètres table basés sur celui-ci. Le fragment [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] suivant montre comment déclarer un paramètre table dans une définition de procédure stockée. Notez que le mot clé READONLY est obligatoire pour déclarer un paramètre table.  
+ Après avoir créé un type de table, vous pouvez déclarer des paramètres table basés sur celui-ci. Le fragment Transact-SQL suivant montre comment déclarer un paramètre table dans une définition de procédure stockée. Notez que le mot clé READONLY est obligatoire pour déclarer un paramètre table.  
   
 ```  
 CREATE PROCEDURE usp_UpdateCategories   
@@ -58,7 +58,7 @@ CREATE PROCEDURE usp_UpdateCategories
 ## <a name="modifying-data-with-table-valued-parameters-transact-sql"></a>Modification des données à l'aide des paramètres table (Transact-SQL)  
  Des paramètres table peuvent être utilisés dans des modifications de données basées sur des jeux qui affectent plusieurs lignes en exécutant une instruction unique. Par exemple, vous pouvez sélectionner toutes les lignes d'un paramètre table et les insérer dans une table de base de données, ou créer une instruction de mise à jour en joignant un paramètre table à la table à mettre à jour.  
   
- L'instruction  [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] UPDATE suivante montre comment utiliser un paramètre table en le joignant à la table Categories. Lorsque vous utilisez un paramètre table avec une condition JOIN dans une clause FROM, vous devez également créer des alias pour celui-ci, comme ci-après, où le paramètre table se voit attribuer l'alias "ec" :  
+ L'instruction Transact-SQL UPDATE suivante montre comment utiliser un paramètre table en le joignant à la table Categories. Lorsque vous utilisez un paramètre table avec une condition JOIN dans une clause FROM, vous devez également créer des alias pour celui-ci, comme ci-après, où le paramètre table se voit attribuer l'alias "ec" :  
   
 ```  
 UPDATE dbo.Categories  
@@ -67,7 +67,7 @@ UPDATE dbo.Categories
     ON dbo.Categories.CategoryID = ec.CategoryID;  
 ```  
   
- Cet exemple [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] montre comment sélectionner des lignes d'un paramètre table pour effectuer une insertion (INSERT) dans une opération basée sur un jeu unique.  
+ Cet exemple Transact-SQL montre comment sélectionner des lignes d'un paramètre table pour effectuer une insertion (INSERT) dans une opération basée sur un jeu unique.  
   
 ```  
 INSERT INTO dbo.Categories (CategoryID, CategoryName)  
@@ -81,7 +81,7 @@ INSERT INTO dbo.Categories (CategoryID, CategoryName)
   
 - Les paramètres table peuvent uniquement être indexés pour prendre en charge les contraintes UNIQUE ou PRIMARY KEY. SQL Server ne gère pas les statistiques sur les paramètres table.  
   
-- Les paramètres table sont en lecture seule dans le code [!INCLUDE[tsql](../../../../../includes/tsql-md.md)]. Vous ne pouvez pas mettre les valeurs de colonne à jour dans les lignes d'un paramètre table et vous ne pouvez pas insérer ni supprimer de ligne. Pour modifier les données qui sont passées à une procédure stockée ou à une instruction paramétrée dans un paramètre table, vous devez insérer les données dans une table temporaire ou dans une variable de table.  
+- Les paramètres table sont en lecture seule dans le code Transact-SQL. Vous ne pouvez pas mettre les valeurs de colonne à jour dans les lignes d'un paramètre table et vous ne pouvez pas insérer ni supprimer de ligne. Pour modifier les données qui sont passées à une procédure stockée ou à une instruction paramétrée dans un paramètre table, vous devez insérer les données dans une table temporaire ou dans une variable de table.  
   
 - Vous ne pouvez pas utiliser d'instruction ALTER TABLE pour modifier la conception des paramètres table.  
   

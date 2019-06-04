@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 19dacae05766566521f563d0d24980c01dfb7a0b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cb19f950122f7b0db66830e9ed5dff44ccd370c2
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61796121"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490439"
 ---
 # <a name="eclrfailure-enumeration"></a>EClrFailure, énumération
 Décrit l’ensemble des échecs pour lequel un hôte peut définir des actions de stratégie.  
@@ -49,7 +49,7 @@ typedef enum {
 |`FAIL_FatalRuntime`|Le common language runtime (CLR) n’est plus en mesure d’exécuter du code managé dans le processus. Désormais, les appels à des fonctions d’hébergement retournent une valeur HRESULT de HOST_E_CLRNOTAVAILABLE.|  
 |`FAIL_OrphanedLock`|Un thread n’a pas pu libérer un verrou lors du retour d’un <xref:System.AppDomain> objet. L’hôte ne peut pas définir cet échec pour provoquer l’abandon d’un thread.|  
 |`FAIL_StackOverflow`|Un débordement de pile s’est produite.|  
-|`FAIL_AccessViolation`|Une tentative a été effectuée pour lire ou écrire la mémoire protégée. Non pris en charge dans le [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].|  
+|`FAIL_AccessViolation`|Une tentative a été effectuée pour lire ou écrire la mémoire protégée. Non pris en charge dans le .NET Framework 4.|  
 |`FAIL_CodeContract`|Un échec de contrat de code s’est produite. Consultez [contrats de Code](../../../../docs/framework/debug-trace-profile/code-contracts.md).|  
   
 ## <a name="remarks"></a>Notes  

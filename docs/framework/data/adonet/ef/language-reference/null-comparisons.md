@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ef88af8c-8dfe-4556-8b56-81df960a900b
-ms.openlocfilehash: a9e519fb8b2ca021d66adb23659d83efc571afae
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f3bbb55ec65df1af776779682d307a67034e34b3
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760426"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489903"
 ---
 # <a name="null-comparisons"></a>Comparaisons null
 Une valeur `null` dans la source de données indique que la valeur est inconnue. Dans les requêtes [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], vous pouvez vérifier les valeurs Null afin que certains calculs ou certaines comparaisons soient effectués uniquement sur les lignes qui ont des données valides, ou non Null. Toutefois, la sémantique Null CLR peut différer par rapport à la sémantique Null de la source de données. La plupart des bases de données utilisent une version de logique à trois valeurs pour gérer les comparaisons de valeurs Null. Autrement dit, une comparaison par rapport à une valeur null ne correspond pas à `true` ou `false`, il renvoie la valeur `unknown`. Il s'agit souvent d'une implémentation de valeurs ANSI Null, mais ce n'est pas toujours le cas.  
   
- Par défaut dans SQL Server, la comparaison Null-égale-Null retourne une valeur Null. Dans l'exemple suivant, les lignes dans lesquelles `ShipDate` a la valeur Null sont exclues du jeu de résultats, et l'instruction [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] retournerait 0 ligne.  
+ Par défaut dans SQL Server, la comparaison Null-égale-Null retourne une valeur Null. Dans l’exemple suivant, les lignes où `ShipDate` est null sont exclues du jeu de résultats, et l’instruction Transact-SQL retournerait 0 ligne.  
   
 ```  
 -- Find order details and orders with no ship date.  

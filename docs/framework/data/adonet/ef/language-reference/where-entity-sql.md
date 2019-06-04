@@ -2,12 +2,12 @@
 title: WHERE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: a8e1061e-0028-4a6f-8f19-b9f48e96c4b8
-ms.openlocfilehash: 02eeaeb8cfa335e5545b26d3d52b91c4e1614629
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 939d4c0ec2c30bc71b22fb65ab36644e063f97de
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879435"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489845"
 ---
 # <a name="where-entity-sql"></a>WHERE (Entity SQL)
 La clause WHERE est appliquée directement après le [FROM](../../../../../../docs/framework/data/adonet/ef/language-reference/from-entity-sql.md) clause.  
@@ -23,7 +23,7 @@ La clause WHERE est appliquée directement après le [FROM](../../../../../../do
  Type booléen.  
   
 ## <a name="remarks"></a>Notes  
- La sémantique de la clause WHERE est identique à celle décrite pour [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)]. Elle restreint le nombre d’objets générés par l’expression de requête en limitant les éléments des collections sources à ceux qui répondent à la condition.  
+ La clause WHERE a la même sémantique que celles décrites pour Transact-SQL. Elle restreint le nombre d’objets générés par l’expression de requête en limitant les éléments des collections sources à ceux qui répondent à la condition.  
   
 ```  
 select c from cs as c where e  

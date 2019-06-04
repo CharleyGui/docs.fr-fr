@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 4d05610a-0da6-4f08-acea-d54c9d6143c0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a3da3e48f898797849a5304c4884b648f47a26dd
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 36c3f139564b39555370cd5d41133f39c6b271bb
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456567"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487831"
 ---
 # <a name="security-transparent-code-level-2"></a>Code transparent de sécurité, niveau 2
 
@@ -22,7 +22,7 @@ ms.locfileid: "66456567"
 
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]
 
-La transparence de niveau 2 a été introduite dans le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Les trois principes de ce modèle sont le code transparent, le code critique sécurisé et le code critique de sécurité.
+Transparence de niveau 2 a été introduite dans le .NET Framework 4. Les trois principes de ce modèle sont le code transparent, le code critique sécurisé et le code critique de sécurité.
 
 - Le code transparent, y compris le code qui s'exécute en mode confiance totale, peut appeler d'autre code transparent ou code critique sécurisé uniquement. Il ne peut effectuer que les actions autorisées par le jeu d'autorisations de confiance partielle du domaine (s'il en existe un). Voici ce que le code transparent ne peut pas faire :
 

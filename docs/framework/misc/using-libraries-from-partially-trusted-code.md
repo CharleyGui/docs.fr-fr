@@ -11,18 +11,18 @@ helpviewer_keywords:
 ms.assetid: dd66cd4c-b087-415f-9c3e-94e3a1835f74
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8500abe590d4c85dcb5ecda54212a1ba9cc7950d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6d858ef4c2f70c55b0a36e845f90d9a8e08f5e2d
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586986"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487827"
 ---
 # <a name="using-libraries-from-partially-trusted-code"></a>Utilisation de bibliothèques à partir de code d'un niveau de confiance partiel
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
 > [!NOTE]
->  Cette rubrique aborde le comportement des assemblys avec nom fort et s’applique uniquement aux [niveau 1](../../../docs/framework/misc/security-transparent-code-level-1.md) assemblys. [Code Transparent de sécurité, niveau 2](../../../docs/framework/misc/security-transparent-code-level-2.md) assemblys dans le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] ou version ultérieure ne sont pas affectées par les noms forts. Pour plus d’informations sur les modifications apportées au système de sécurité, consultez [modifications de sécurité](../../../docs/framework/security/security-changes.md).  
+>  Cette rubrique aborde le comportement des assemblys avec nom fort et s’applique uniquement aux [niveau 1](../../../docs/framework/misc/security-transparent-code-level-1.md) assemblys. [Code Transparent de sécurité, niveau 2](../../../docs/framework/misc/security-transparent-code-level-2.md) assemblys dans le .NET Framework 4 ou version ultérieure ne sont pas affectées par les noms forts. Pour plus d’informations sur les modifications apportées au système de sécurité, consultez [modifications de sécurité](../../../docs/framework/security/security-changes.md).  
   
  Les applications qui n’ont pas reçu un niveau de confiance totale de la part de leur hôte ou bac à sable (sandbox) ne sont pas autorisées à appeler les bibliothèques managées partagées, sauf si le créateur de la bibliothèque les autorise explicitement à passer outre l’utilisation de l’attribut <xref:System.Security.AllowPartiallyTrustedCallersAttribute>. Par conséquent, les auteurs d'applications doivent être conscients que certaines bibliothèques pas seront disponibles dans un contexte de confiance partielle. Par défaut, tout le code qui s’exécute dans un niveau de confiance partiel [bac à sable](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md) et n’est pas dans la liste des assemblys de confiance totale est partiellement approuvée. S'il n'est pas prévu que votre code soit exécuté dans un contexte de confiance partielle ou qu'il soit appelé par du code partiellement fiable, les informations de cette section ne vous concernent pas. Toutefois, si vous écrivez du code qui doit interagir avec du code partiellement fiable ou fonctionner dans un contexte de confiance partiel, vous devez prendre en compte les éléments suivants :  
   

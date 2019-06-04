@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 27d1837f9f9f11ad34140f50ec41aa6fe8a62160
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a81e78c0a34f766e1598dd27506f62bd3132f348
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61765243"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490160"
 ---
 # <a name="lpthreadstartroutine-function-pointer"></a>LPTHREAD_START_ROUTINE (pointeur fonction)
 Pointe vers une fonction qui avertit l’hôte qu’un thread a commencé à exécuter.  
   
- Ce pointeur de fonction a été déconseillé dans le [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Ce pointeur de fonction a été déconseillé dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   

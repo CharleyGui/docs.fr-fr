@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: da22cbfe06245d915bed6db9cba220fc32b38942
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ba02373aae33baf77b72323fabf1f6ca1fe4eecf
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627142"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490240"
 ---
 # <a name="iclrruntimehost-interface"></a>ICLRRuntimeHost, interface
 Fournit des fonctionnalités similaires à celles de la [ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md) interface fournie dans le .NET Framework version 1, avec les modifications suivantes :  
@@ -45,7 +45,7 @@ Fournit des fonctionnalités similaires à celles de la [ICorRuntimeHost](../../
 |[UnloadAppDomain, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-unloadappdomain-method.md)|Décharge le <xref:System.AppDomain> qui correspond à l’identificateur numérique spécifié.|  
   
 ## <a name="remarks"></a>Notes  
- En commençant par le [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)], utilisez le [ICLRMetaHost](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md) interface permettant d’obtenir un pointeur vers le [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface, puis appelez le [ICLRRuntimeInfo::GetInterface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getinterface-method.md) méthode pour obtenir un pointeur vers `ICLRRuntimeHost`. Dans les versions antérieures du .NET Framework, l’hôte obtient un pointeur vers un `ICLRRuntimeHost` instance en appelant [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) ou [CorBindToCurrentRuntime](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md). Pour fournir des implémentations de chacune des technologies fournies dans le .NET Framework version 2.0, vous devez utiliser `ICLRRuntimeHost` au lieu de `ICorRuntimeHost`.  
+ À compter de .NET Framework 4, utilisez le [ICLRMetaHost](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md) interface permettant d’obtenir un pointeur vers le [ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md) interface, puis appelez le [ICLRRuntimeInfo::GetInterface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getinterface-method.md)méthode pour obtenir un pointeur vers `ICLRRuntimeHost`. Dans les versions antérieures du .NET Framework, l’hôte obtient un pointeur vers un `ICLRRuntimeHost` instance en appelant [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) ou [CorBindToCurrentRuntime](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md). Pour fournir des implémentations de chacune des technologies fournies dans le .NET Framework version 2.0, vous devez utiliser `ICLRRuntimeHost` au lieu de `ICorRuntimeHost`.  
   
 > [!IMPORTANT]
 >  N’appelez pas la [Démarrer](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md) méthode avant d’appeler le [ExecuteApplication](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-executeapplication-method.md) méthode permettant d’activer une application basée sur un manifeste. Si le `Start` méthode est appelée en premier, le `ExecuteApplication` appel de méthode échoue.  

@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e7a6b73006b6842032ae90c2c7a8433f5b58d175
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0ca125932ede48aa43bc51e3d5a7851fb7762547
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665053"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490318"
 ---
 # <a name="getrequestedruntimeversionforclsid-function"></a>GetRequestedRuntimeVersionForCLSID, fonction
 Obtient les informations de version du common language runtime (CLR) approprié pour la classe avec la valeur `CLSID`.  
   
- Cette fonction a été déconseillée dans le [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Cette fonction a été déconseillée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 865e7207-d050-4442-b574-57ea29d5e2d6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 38adde3cd51a96f0e15ed5a0c539e088f2d3b480
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 31e2a075f9202439cd62c81a06528b20c4971656
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701630"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489336"
 ---
 # <a name="timespanlegacyformatmode-element"></a>\<TimeSpan_LegacyFormatMode > élément
 Détermine si le runtime conserve le comportement hérité dans les opérations avec la mise en forme <xref:System.TimeSpan?displayProperty=nameWithType> valeurs.  
@@ -58,7 +58,7 @@ Détermine si le runtime conserve le comportement hérité dans les opérations 
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
 ## <a name="remarks"></a>Notes  
- En commençant par le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], le <xref:System.TimeSpan?displayProperty=nameWithType> structure implémente le <xref:System.IFormattable> interface et prend en charge la mise en forme des opérations avec des chaînes de format standard et personnalisées. Si une méthode d’analyse rencontre un spécificateur de format non pris en charge ou de la chaîne de format, elle lève une <xref:System.FormatException>.  
+ En commençant par le .NET Framework 4, le <xref:System.TimeSpan?displayProperty=nameWithType> structure implémente le <xref:System.IFormattable> interface et prend en charge la mise en forme des opérations avec des chaînes de format standard et personnalisées. Si une méthode d’analyse rencontre un spécificateur de format non pris en charge ou de la chaîne de format, elle lève une <xref:System.FormatException>.  
   
  Dans les versions précédentes du .NET Framework, le <xref:System.TimeSpan> structure n’a pas implémenté <xref:System.IFormattable> et ne prenait pas en charge des chaînes de format. Toutefois, de nombreux développeurs supposé par erreur que <xref:System.TimeSpan> prenaient en charge un ensemble de chaînes de format et utilisé dans [opérations de mise en forme composite](../../../../../docs/standard/base-types/composite-formatting.md) avec des méthodes telles que <xref:System.String.Format%2A?displayProperty=nameWithType>. En règle générale, si un type implémente <xref:System.IFormattable> et prend en charge les chaînes, appels aux méthodes de formatage avec un format non pris en charge lèvent habituellement des chaînes de format un <xref:System.FormatException>. Toutefois, étant donné que <xref:System.TimeSpan> n’a pas implémenté <xref:System.IFormattable>, le runtime ignoré la chaîne de format et appelé à la place le <xref:System.TimeSpan.ToString?displayProperty=nameWithType> (méthode). Cela signifie que, bien que les chaînes de format n’avaient aucun effet sur l’opération de mise en forme, leur présence n’ont pas généré un <xref:System.FormatException>.  
   
@@ -76,13 +76,13 @@ Détermine si le runtime conserve le comportement hérité dans les opérations 
 12:30:45  
 ```  
   
- Cela diffère sensiblement de la sortie si vous exécutez l’exemple sur le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] ou version ultérieure :  
+ Cela diffère sensiblement de la sortie si vous exécutez l’exemple sur le .NET Framework 4 ou version ultérieure :  
   
 ```  
 Invalid Format  
 ```  
   
- Toutefois, si vous ajoutez le fichier de configuration suivant à l’exemple de répertoire de le, puis exécutez l’exemple le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] ou version ultérieure, la sortie est identique à celle produite par l’exemple lorsqu’il est exécuté sur [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)].  
+ Toutefois, si vous ajoutez le fichier de configuration suivant au répertoire de l’exemple et puis exécutez l’exemple sur le .NET Framework 4 ou version ultérieure, la sortie est identique à celle produite par l’exemple lorsqu’il est exécuté sur [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)].  
   
 ```xml  
 <?xml version ="1.0"?>  

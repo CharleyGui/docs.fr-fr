@@ -2,12 +2,12 @@
 title: Informations de référence sur les symboles et les opérateurs
 description: En savoir plus sur les symboles et opérateurs qui sont utilisés dans le F# langage de programmation.
 ms.date: 02/11/2019
-ms.openlocfilehash: 11a02792dc949b0a7a0a6e7bb59786c489b3aa9d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0ea8337a9055c8df639fe6abdb6c79445d189d64
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61982736"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490814"
 ---
 # <a name="symbol-and-operator-reference"></a>Informations de référence sur les symboles et les opérateurs
 
@@ -39,7 +39,7 @@ Le tableau suivant décrit les symboles utilisés dans le langage F#, fournit de
 |`( )`|[Type d’unité](../unit-type.md)|<ul><li>Représente la valeur unique du type d'unité.<br /></li></ul>|
 |`(...)`|[Tuples](../tuples.md)<br /><br />[Surcharge d'opérateur](../operator-overloading.md)|<ul><li>Indique l'ordre dans lequel les expressions sont analysées.<br /></li><li>Délimite un tuple.<br /></li><li>Utilisé dans les définitions d'opérateur.<br /></li></ul>|
 |`(*...*)`||<ul><li>Délimite un commentaire qui peut couvrir plusieurs lignes.<br /></li></ul>|
-|<code>(&#124;...&#124;)</code>|[Modèles actifs](../active-patterns.md)|<ul><li>Délimite un modèle actif. Également appelés *« banana clips »*.<br /></li></ul>|
+|<code>(&#124;...&#124;)</code>|[Modèles actifs](../active-patterns.md)|<ul><li>Délimite un modèle actif. Également appelés *« banana clips »* .<br /></li></ul>|
 |`*`|[Opérateurs arithmétiques](arithmetic-operators.md)<br /><br />[Tuples](../tuples.md)<br /><br />[Unités de mesure](../units-of-measure.md)|<ul><li>Lorsqu'il est utilisé comme un opérateur binaire, multiplie les côtés gauche et droit.<br /></li><li>Dans les types, indique un jumelage dans un tuple.<br /></li><li>Utilisé dans les types d'unités de mesure.<br /></li></ul>|
 |`*?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Multiplie les côtés gauche et droit, lorsque la partie droite est un type Nullable.<br /></li></ul>|
 |`**`|[Opérateurs arithmétiques](arithmetic-operators.md)|<ul><li>Calcule l’opération d’élévation à la puissance (`x ** y` signifie `x` puissance `y`).<br /></li></ul>|
@@ -127,6 +127,7 @@ Le tableau suivant indique l'ordre de priorité des opérateurs et autres mots c
 |`let`|Non associatif|
 |`function`, `fun`, `match`, `try`|Non associatif|
 |`if`|Non associatif|
+|`not`|Droit|
 |`->`|Droit|
 |`:=`|Droit|
 |`,`|Non associatif|

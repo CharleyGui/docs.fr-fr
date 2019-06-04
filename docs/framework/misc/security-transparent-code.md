@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 4f3dd841-82f7-4659-aab0-6d2db2166c65
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 60f2856bea79f36beb3c467158114fa78d99e09a
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 44003cbd0f13d2665c5b753454689c10546325b7
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456504"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487850"
 ---
 # <a name="security-transparent-code"></a>Code transparent de sécurité (security-transparent)
 
@@ -23,7 +23,7 @@ ms.locfileid: "66456504"
 La sécurité fait intervenir trois éléments interactifs : le sandboxing, les autorisations et la mise en application. Le sandboxing renvoie à la pratique qui consiste à créer des domaines isolés où une partie du code est considérée comme de niveau de confiance totale et l'autre partie du code se limite au jeu d'autorisations accordées au bac à sable (sandbox). Le code d'application qui s'exécute dans le jeu d'autorisations du bac à sable est considéré comme étant transparent. Autrement dit, il ne peut effectuer aucune opération qui puisse nuire à la sécurité. Le jeu d'autorisations octroyé au bac à sable est déterminé par la preuve (classe <xref:System.Security.Policy.Evidence>). La preuve identifie les autorisations spécifiques dont ont besoin les bacs à sable et les types de bac à sable qui peuvent être créés. La mise en application consiste à autoriser le code transparent à s'exécuter uniquement dans le cadre de son jeu d'autorisations.
 
 > [!IMPORTANT]
-> La stratégie de sécurité était un élément clé dans les versions précédentes du .NET Framework. En commençant par le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], stratégie de sécurité est obsolète. L'élimination de la stratégie de sécurité est indépendante de la transparence de la sécurité. Pour plus d’informations sur les effets de cette modification, consultez [Code Access Security Policy Compatibility et Migration](../../../docs/framework/misc/code-access-security-policy-compatibility-and-migration.md).
+> La stratégie de sécurité était un élément clé dans les versions précédentes du .NET Framework. À compter de .NET Framework 4, stratégie de sécurité est obsolète. L'élimination de la stratégie de sécurité est indépendante de la transparence de la sécurité. Pour plus d’informations sur les effets de cette modification, consultez [Code Access Security Policy Compatibility et Migration](../../../docs/framework/misc/code-access-security-policy-compatibility-and-migration.md).
 
 Cette rubrique décrit plus en détail le modèle de transparence. Elle contient les sections suivantes :
 
@@ -70,7 +70,7 @@ La principale différence entre les deux niveaux de transparence est que le nive
 
 ### <a name="level-2-transparency"></a>Transparence de niveau 2
 
-La transparence de niveau 2 a été introduite dans le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Les trois principes de ce modèle sont le code transparent, le code critique sécurisé et le code critique de sécurité.
+Transparence de niveau 2 a été introduite dans le .NET Framework 4. Les trois principes de ce modèle sont le code transparent, le code critique sécurisé et le code critique de sécurité.
 
 - Le code transparent, quelles que soient les autorisations qui lui sont octroyées (y compris le niveau de confiance totale), ne peut appeler qu'un autre code transparent ou du code critique sécurisé. Si le code bénéficie d'un niveau de confiance partielle, il ne peut effectuer que les actions autorisées par le jeu d'autorisations du domaine. Voici ce que le code transparent ne peut pas faire :
 

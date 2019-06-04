@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 9b44daee-874a-4bd1-954e-83bf53565590
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 03a17e8f30c15e98a350ef558cc1cb6ddf65cade
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: cbe9e81f0e8bef36b780878844512a36a5148fec
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584508"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489361"
 ---
 # <a name="systemruntimecaching-element-cache-settings"></a>\<System.Runtime.Caching >, élément (paramètres de Cache)
 Fournit la configuration pour l’implémentation de <xref:System.Runtime.Caching.ObjectCache> en mémoire par défaut via l’entrée `memoryCache` dans le fichier de configuration.  
@@ -51,7 +51,7 @@ Fournit la configuration pour l’implémentation de <xref:System.Runtime.Cachin
  Les classes de cet espace de noms fournissent un moyen d’utiliser des fonctionnalités de mise en cache comme celles d’ASP.NET, mais sans dépendance de l’assembly `System.Web` . Pour plus d'informations, consultez [Caching in .NET Framework Applications](../../../../../docs/framework/performance/caching-in-net-framework-applications.md).  
   
 > [!NOTE]
->  Les fonctionnalités et les types de mise en cache en sortie dans l’espace de noms <xref:System.Runtime.Caching> sont nouveaux dans [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)].  
+>  La sortie mise en cache des fonctionnalités et les types dans le <xref:System.Runtime.Caching> espace de noms sont nouveaux dans .NET Framework 4.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment configurer un cache basé sur la classe <xref:System.Runtime.Caching.MemoryCache> . L’exemple montre comment configurer une instance de l’entrée `namedCaches` pour le cache mémoire. Le nom du cache est défini sur le nom de l’entrée du cache par défaut en définissant l’attribut `name` sur « default ».  

@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e1e812445c931d45163fefdc4406b27a1fbd5d82
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4b45efb634ca9b88768d6e30884085f28ad17b7c
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634849"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490584"
 ---
 # <a name="corbindtoruntimeex-function"></a>CorBindToRuntimeEx, fonction
 Permet aux hôtes non managés de charger le common language runtime (CLR) dans un processus. Le [CorBindToRuntime](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md) et `CorBindToRuntimeEx` fonctions effectuent la même opération, mais la `CorBindToRuntimeEx` fonction vous permet de définir des indicateurs pour spécifier le comportement du CLR.  
   
- Cette fonction a été déconseillée dans le [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Cette fonction a été déconseillée dans le .NET Framework 4.  
   
  Cette fonction accepte un ensemble de paramètres qui permettent à un hôte effectuer les opérations suivantes :  
   

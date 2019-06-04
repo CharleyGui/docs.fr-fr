@@ -2,12 +2,12 @@
 title: Considérations sur la migration (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: c85b6fe8-cc32-4642-8f0a-dc0e5a695936
-ms.openlocfilehash: 4e3410c62ba2fb9b8cc3dd0c6aa80707e03793fd
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 0fafa786805a14d9adc3523a5eb876e7e5b0e9c5
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65880068"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489871"
 ---
 # <a name="migration-considerations-entity-framework"></a>Considérations sur la migration (Entity Framework)
 ADO.NET Entity Framework offre plusieurs avantages à une application existante. La possibilité d'utiliser un modèle conceptuel pour séparer des structures de données utilisées par l'application du schéma de la source de données constitue l'un de ces avantages les plus importants. Cela vous permet d'apporter facilement des modifications à venir au modèle de stockage ou à la source de données eux-mêmes sans apporter de modifications de compensation à l'application. Pour plus d’informations sur les avantages de l’utilisation de la [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], consultez [présentation d’Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md) et [Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md).  
@@ -96,7 +96,7 @@ ADO.NET Entity Framework offre plusieurs avantages à une application existante.
   
   [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] ne prend pas en charge le type de données XML natif. Cela signifie que, lorsqu'une entité est mappée à une table avec une colonne XML, la propriété d'entité équivalente de la colonne XML est une chaîne. Les objets peuvent être déconnectés et sérialisés sous forme de données XML. Pour plus d’informations, consultez [sérialisation d’objets](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738446(v=vs.100)).  
   
-  Si votre application nécessite la possibilité d'interroger des données XML, vous pouvez tout de même tirer parti des avantages des requêtes LINQ en utilisant LINQ to XML. Pour plus d’informations, consultez [LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md) ou [LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md).  
+  Si votre application nécessite la possibilité d'interroger des données XML, vous pouvez tout de même tirer parti des avantages des requêtes LINQ en utilisant LINQ to XML. Pour plus d’informations, consultez [LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) ou [LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md).  
   
 - Applications qui gèrent l'état.  
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 1e3f6ec0-1cac-4e1c-9c81-17d948ae5874
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4f098065cc005c59ec558ffa1f95202715624e7d
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 70113d98c5a4ab41700f6c9842dba89e2b49c297
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456115"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489332"
 ---
 # <a name="usesmallinternalthreadstacks-element"></a>\<UseSmallInternalThreadStacks > élément
 Les demandes que le common language runtime (CLR) réduire la mémoire utilisent en spécifiant des tailles de pile explicites lorsqu’il crée certains threads qu’il utilise en interne, au lieu d’utiliser la taille de pile par défaut pour ces threads.  
@@ -41,7 +41,7 @@ Les demandes que le common language runtime (CLR) réduire la mémoire utilisent
 |Value|Description|  
 |-----------|-----------------|  
 |true|Demander des tailles de pile explicites.|  
-|False|Utiliser la taille de pile par défaut. Il s’agit par défaut pour le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)].|  
+|False|Utiliser la taille de pile par défaut. Il s’agit de la valeur par défaut pour le .NET Framework 4.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  

@@ -9,17 +9,17 @@ helpviewer_keywords:
 ms.assetid: 91fbbb35-e543-4814-b806-371cebae8c5a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aa84ca0defd173563817673aad183a8b64226d41
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dde711f2d626d88fd80009fa83f1198dd9d47810
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61905968"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490484"
 ---
 # <a name="deprecated-clr-hosting-functions"></a>Fonction d'hébergement du CLR déconseillées
 Cette section décrit les fonctions statiques globales non managées qui a utilisent des versions antérieures de l’API d’hébergement.  
   
- À l’exception des fonctions d’infrastructure (`_Cor*` fonctions), qui sont utilisés uniquement par le .NET Framework, ces fonctions ont été déconseillées dans le [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ À l’exception des fonctions d’infrastructure (`_Cor*` fonctions), qui sont utilisés uniquement par le .NET Framework, ces fonctions ont été déconseillées dans le .NET Framework 4.  
   
 ## <a name="activation-functions"></a>Fonctions d’activation  
  [ClrCreateManagedInstance, fonction](../../../../docs/framework/unmanaged-api/hosting/clrcreatemanagedinstance-function.md)  

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WPF class library [WPF]
 - Windows Presentation Foundation class library [WPF]
 ms.assetid: dcb35927-00ad-4141-a1ab-a7a524dd3f10
-ms.openlocfilehash: 5cef189a947bcbab96b22f33251971f5794e156e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1c806147d1dfb30bfd9fa73102ed4b65c776671a
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591316"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489600"
 ---
 # <a name="class-library-wpf"></a>Bibliothèque de classes (WPF)
 Les liens suivants font référence aux espaces de noms qui contiennent des [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] [!INCLUDE[TLA#tla_api#plural](../../../includes/tlasharptla-apisharpplural-md.md)].  
@@ -124,7 +124,7 @@ Les liens suivants font référence aux espaces de noms qui contiennent des [!IN
 - <xref:UIAutomationClientsideProviders>  
   
 ## <a name="xaml-support-in-net-4"></a>Prise en charge XAML dans .NET 4  
- Espaces de noms suivants contiennent des types à partir de l’assembly System.Xaml. System.Xaml offre une prise en charge du langage XAML commun pour les infrastructures telles que WPF qui reposent sur [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)].  
+ Espaces de noms suivants contiennent des types à partir de l’assembly System.Xaml. System.Xaml offre une prise en charge du langage XAML commun pour les infrastructures telles que WPF qui reposent sur .NET Framework 4.  
   
 - <xref:System.Windows.Markup> (partagé)  
   

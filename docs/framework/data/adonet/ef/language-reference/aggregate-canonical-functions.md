@@ -2,12 +2,12 @@
 title: Fonctions d'agrégation canoniques
 ms.date: 03/30/2017
 ms.assetid: 3bcff826-ca90-41b3-a791-04d6ff0e5085
-ms.openlocfilehash: f5d3584c6e9d35c9eb69b4f54cad45187416ee59
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2738d649190b088c34272de5b3e8732d87811a59
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607451"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489514"
 ---
 # <a name="aggregate-canonical-functions"></a>Fonctions d'agrégation canoniques
 
@@ -224,7 +224,7 @@ select avg(ol.Quantity) from LOB.OrderLines as ol group by 1
 
 Les expressions figurant dans des agrégats basés sur des groupes sont évalués dans la résolution de noms de portée qui serait visible pour l’expression de la clause WHERE.
 
-Comme dans [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)], agrégats basés sur le groupe peuvent également spécifier un ALL ou modificateur DISTINCT. Si le modificateur DISTINCT est spécifié, les doublons sont éliminés de la collection d’entrée de l’agrégat, avant que celui-ci ne soit calculé. Si le modificateur ALL est spécifié (ou si aucun modificateur ne l'est), les doublons ne sont pas éliminés.
+Comme dans Transact-SQL, les agrégats basés sur le groupe peuvent également spécifier un ALL ou modificateur DISTINCT. Si le modificateur DISTINCT est spécifié, les doublons sont éliminés de la collection d’entrée de l’agrégat, avant que celui-ci ne soit calculé. Si le modificateur ALL est spécifié (ou si aucun modificateur ne l'est), les doublons ne sont pas éliminés.
 
 ## <a name="see-also"></a>Voir aussi
 

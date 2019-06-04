@@ -2,12 +2,12 @@
 title: Ordre de sérialisation personnalisé avec XmlSerializer
 ms.date: 03/30/2017
 ms.assetid: 975abd20-2a1d-42db-aed3-e898025ccce7
-ms.openlocfilehash: f63d460163c33c4253cf565a5755babc1030164f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c5934fd0cab03f754784c8515094ff4ec5e78ba4
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61776075"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490924"
 ---
 # <a name="custom-serialization-order-with-xmlserializer"></a>Ordre de sérialisation personnalisé avec XmlSerializer
 [Télécharger l’exemple](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/CustomOrder.zip.exe)  
@@ -24,7 +24,7 @@ ms.locfileid: "61776075"
   
 ### <a name="to-build-the-sample-using-visual-studio"></a>Pour générer l'exemple à l'aide de Visual Studio  
   
-1. Ouvrez l'[!INCLUDE[fileExplorer](../../../includes/fileexplorer-md.md)] et accédez à l'un des sous-répertoires spécifiques aux différents langages de l'exemple.  
+1. Ouvrez l’Explorateur de fichiers et accédez à un des sous-répertoires spécifiques au langage pour l’exemple.  
   
 2. Double-cliquez sur l'icône de CustomOrder.sln pour ouvrir le fichier dans Visual Studio.  
   

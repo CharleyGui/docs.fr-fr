@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5d4723fbf2311316184cb77c90754d7e037badcd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 40cd5b6298012ef4dc21987a2a2dbe95c02a0ff2
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61628078"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490350"
 ---
 # <a name="getrealprocaddress-function"></a>GetRealProcAddress, fonction
 Obtient l’adresse de la fonction spécifiée qui est exportée à partir de la dernière version installée pour le common language runtime (CLR).  
   
- Cette fonction a été déconseillée dans le [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Cette fonction a été déconseillée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   

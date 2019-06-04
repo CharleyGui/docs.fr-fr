@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 39fb1588-72a4-4479-af74-0605233b68bd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 60fcdd902c6acf919e68806ff65e3b8142533280
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: f7a1cf34f63b1ba0dfced8ff23c252f3363723c6
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456385"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489407"
 ---
 # <a name="netfx40pinvokestackresilience-element"></a>\<NetFx40_PInvokeStackResilience > élément
 Indique si le runtime corrige automatiquement les déclarations incorrectes d’appel de code non managé à l’exécution, au prix de transitions plus lentes entre le code managé et le code non managé.  
@@ -40,7 +40,7 @@ Indique si le runtime corrige automatiquement les déclarations incorrectes d’
   
 |Value|Description|  
 |-----------|-----------------|  
-|`0`|Le runtime utilise l’architecture introduite dans de marshaling d’interopérabilité plus rapide la [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], qui ne détecte pas et les déclarations d’appel de plateforme incorrect de correctif. Il s'agit de la valeur par défaut.|  
+|`0`|Le runtime utilise l’architecture introduite dans .NET Framework 4 ne détecte pas de marshaling d’interopérabilité plus rapide et les déclarations d’appel de plateforme incorrect de correctif. Il s'agit de la valeur par défaut.|  
 |`1`|Les runtime utilise des transitions plus lentes pour détecter et corriger la plateforme incorrecte les déclarations d’appel.|  
   
 ### <a name="child-elements"></a>Éléments enfants  

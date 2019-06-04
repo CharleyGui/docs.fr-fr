@@ -7,18 +7,18 @@ helpviewer_keywords:
 ms.assetid: 19cb4d39-e38a-4262-b507-458915303115
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 796c3b03612138238cb336361ab49514d80b4d7b
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 163ed8d00e8f0f886481dbaca956bb633a625871
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456642"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487972"
 ---
 # <a name="code-access-security-policy-compatibility-and-migration"></a>Compatibilité de la stratégie de sécurité d'accès du code et migration
 
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]
 
-La partie stratégie de la sécurité d'accès du code (CAS, Code Access Security) est devenue obsolète dans le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Par conséquent, vous pouvez rencontrer des avertissements de compilation et des exceptions runtime si vous appelez les membres et types de stratégie obsolète [explicitement](#explicit_use) ou [implicitement](#implicit_use) (via d’autres types et les membres).
+La partie de la stratégie de sécurité d’accès de code (CAS) a été rendue obsolète dans le .NET Framework 4. Par conséquent, vous pouvez rencontrer des avertissements de compilation et des exceptions runtime si vous appelez les membres et types de stratégie obsolète [explicitement](#explicit_use) ou [implicitement](#implicit_use) (via d’autres types et les membres).
 
 Vous pouvez éviter les avertissements et les erreurs comme suit :
 

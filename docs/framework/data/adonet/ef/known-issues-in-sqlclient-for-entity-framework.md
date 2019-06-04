@@ -2,12 +2,12 @@
 title: Problèmes connus dans SqlClient pour l'Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 48fe4912-4d0f-46b6-be96-3a42c54780f6
-ms.openlocfilehash: 0a6fec7e2d129523e5f68955e51ac50154cb58df
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5c500a61a00914df7b106b7e89485921123e56ec
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64631725"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489533"
 ---
 # <a name="known-issues-in-sqlclient-for-entity-framework"></a>Problèmes connus dans SqlClient pour l'Entity Framework
 Cette section décrit les problèmes connus liés au fournisseur de données .NET Framework pour SQL Server (SqlClient).  
@@ -43,9 +43,9 @@ SELECT [E] FROM Container.EntitySet AS [E] ORDER BY [E].[NonKeyColumn] DESC SKIP
 ```  
   
 ## <a name="targeting-the-correct-sql-server-version"></a>Ciblage de la version appropriée de SQL Server  
- Le [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] cibles le [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] requête basée sur la version de SQL Server qui est spécifiée dans le `ProviderManifestToken` attribut de l’élément de schéma dans le fichier de modèle (.ssdl) de stockage. Cette version de SQL Server peut ne pas correspondre à celle à laquelle vous êtes connecté. Par exemple, si vous utilisez SQL Server 2005, mais que votre attribut `ProviderManifestToken` a la valeur 2008, la requête [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] générée ne peut pas s'exécuter sur le serveur. Par exemple, une requête qui utilise les nouveaux types date/heure introduits dans SQL Server 2008 ne s'exécutera pas sur les versions antérieures de SQL Server. Si vous utilisez SQL Server 2005, mais que votre `ProviderManifestToken` attribut a la valeur 2000, le texte généré [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] requête peut être moins optimisée, ou vous pouvez obtenir une exception indiquant que la requête n’est pas pris en charge. Pour plus d'informations, voir la section Opérateurs CROSS et OUTER APPLY, plus haut dans cette rubrique.  
+ Le [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] cible la requête Transact-SQL en fonction de la version de SQL Server qui est spécifiée dans le `ProviderManifestToken` attribut de l’élément de schéma dans le fichier de modèle (.ssdl) de stockage. Cette version de SQL Server peut ne pas correspondre à celle à laquelle vous êtes connecté. Par exemple, si vous utilisez SQL Server 2005, mais que votre `ProviderManifestToken` attribut a la valeur 2008, la requête Transact-SQL générée ne peut pas s’exécuter sur le serveur. Par exemple, une requête qui utilise les nouveaux types date/heure introduits dans SQL Server 2008 ne s'exécutera pas sur les versions antérieures de SQL Server. Si vous utilisez SQL Server 2005, mais que votre `ProviderManifestToken` attribut a la valeur 2000, la requête Transact-SQL générée peut être moins optimisée, ou vous pouvez recevoir une exception indiquant que la requête n’est pas pris en charge. Pour plus d'informations, voir la section Opérateurs CROSS et OUTER APPLY, plus haut dans cette rubrique.  
   
- Certains comportements de base de données dépendent du niveau de compatibilité défini pour la base de données. Si votre attribut `ProviderManifestToken` a la valeur 2005 et que votre version de SQL Server est 2005, mais que le niveau de compatibilité d'une base de données est 80 (SQL Server 2000), le [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] généré ciblera bien SQL Server 2005, mais il est possible qu'il ne s'exécute pas comme prévu en raison du paramètre de niveau de compatibilité. Par exemple, vous pouvez perdre des informations de classement si un nom de colonne dans la liste ORDER BY correspond à un nom de colonne dans le sélecteur.  
+ Certains comportements de base de données dépendent du niveau de compatibilité défini pour la base de données. Si votre `ProviderManifestToken` attribut a la valeur 2005 et votre version de SQL Server est 2005, mais le niveau de compatibilité d’une base de données a la valeur « 80 » (SQL Server 2000), l’instruction Transact-SQL généré ciblera SQL Server 2005, mais ne peut pas s’exécuter comme prévu en raison du paramètre de niveau de compatibilité. Par exemple, vous pouvez perdre des informations de classement si un nom de colonne dans la liste ORDER BY correspond à un nom de colonne dans le sélecteur.  
   
 ## <a name="nested-queries-in-projection"></a>Requêtes imbriquées dans la projection  
  Les requêtes imbriquées d'une clause de projection peuvent être traduites en requêtes de produit cartésien sur le serveur. Sur certains serveurs principaux, y compris SQL Server, cela peut entraîner des conséquences l’augmentation de la table TempDB. et une diminution des performances du serveur.  

@@ -2,12 +2,12 @@
 title: Prise en charge de SqlClient pour la haute disponibilité et la récupération d'urgence
 ms.date: 03/30/2017
 ms.assetid: 61e0b396-09d7-4e13-9711-7dcbcbd103a0
-ms.openlocfilehash: b01db93c51c6d975c9cc951f08b64c5ffd6c1de4
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: aa4c716dc1b27d50620777613e698ca6dbab31d8
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66380012"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487633"
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>Prise en charge de SqlClient pour la haute disponibilité et la récupération d'urgence
 Cette rubrique décrit la prise en charge de SqlClient (ajoutée dans .NET Framework 4.5) haute disponibilité et récupération d’urgence--groupes de disponibilité AlwaysOn.  Fonctionnalité de groupes de disponibilité AlwaysOn a été ajoutée à SQL Server 2012. Pour plus d’informations sur les groupes de disponibilité AlwaysOn, consultez la documentation en ligne de SQL Server.  
@@ -79,7 +79,7 @@ Cette rubrique décrit la prise en charge de SqlClient (ajoutée dans .NET Frame
   
  Le mot clé `ApplicationIntent` ne fonctionne pas avec les bases de données en lecture seule héritées.  
   
- Une base de données peut autoriser ou interdire les charges de travail de lecture sur la base de données ciblée AlwaysOn. (Faites ceci avec la clause `ALLOW_CONNECTIONS` des instructions `PRIMARY_ROLE` et `SECONDARY_ROLE`[!INCLUDE[tsql](../../../../../includes/tsql-md.md)].)  
+ Une base de données peut autoriser ou interdire les charges de travail de lecture sur la base de données ciblée AlwaysOn. (Cette opération est effectuée avec la `ALLOW_CONNECTIONS` clause de le `PRIMARY_ROLE` et `SECONDARY_ROLE`instructions Transact-SQL.)  
   
  Le mot clé `ApplicationIntent` est utilisé pour permettre le routage en lecture seule.  
   

@@ -2,12 +2,12 @@
 title: Considérations sur la sécurité (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-ms.openlocfilehash: 47dbf800852e149f541c512e90a8bafef2077672
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: fe272bada02e6628b6275d2a5282f0def23074c8
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65879930"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489836"
 ---
 # <a name="security-considerations-entity-framework"></a>Considérations sur la sécurité (Entity Framework)
 Cette rubrique décrit les considérations sur la sécurité qui sont spécifiques au développement, au déploiement et à l'exécution d'applications [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Vous devez également suivre les recommandations pour la création d’applications .NET Framework sécurisées. Pour plus d’informations, consultez [vue d’ensemble de la sécurité](../../../../../docs/framework/data/adonet/security-overview.md).  
@@ -92,7 +92,7 @@ Cette rubrique décrit les considérations sur la sécurité qui sont spécifiqu
  Vous devez tenir compte des considérations sur la sécurité suivantes lors de l'interrogation d'un modèle conceptuel. Ces considérations s'appliquent aux requêtes [!INCLUDE[esql](../../../../../includes/esql-md.md)] utilisant EntityClient et aux requêtes d'objet utilisant LINQ, [!INCLUDE[esql](../../../../../includes/esql-md.md)] et les méthodes du Générateur de requêtes.  
   
 #### <a name="prevent-sql-injection-attacks"></a>Empêchez les attaques par injection de code SQL.  
- Les applications reçoivent fréquemment des entrées externes (provenant d'un utilisateur ou d'un autre agent externe) et exécutent des actions en fonction de ces entrées. Toute entrée qui provient directement ou indirectement d'un utilisateur ou d'un agent externe doit avoir un contenu qui utilise la syntaxe du langage cible afin d'exécuter des actions non autorisées. Lorsque le langage cible est un langage SQL, tel que [!INCLUDE[tsql](../../../../../includes/tsql-md.md)], cette manipulation est appelée « attaque par injection de code SQL ». Un utilisateur malveillant peut injecter des commandes directement dans la requête et déposer une table de base de données, provoquer un déni de service ou modifier d’une manière ou d’une autre la nature de l’opération en cours.  
+ Les applications reçoivent fréquemment des entrées externes (provenant d'un utilisateur ou d'un autre agent externe) et exécutent des actions en fonction de ces entrées. Toute entrée qui provient directement ou indirectement d'un utilisateur ou d'un agent externe doit avoir un contenu qui utilise la syntaxe du langage cible afin d'exécuter des actions non autorisées. Lorsque le langage cible est un langage SQL (Structured Query), tel que Transact-SQL, cette manipulation est appelée attaque par injection SQL. Un utilisateur malveillant peut injecter des commandes directement dans la requête et déposer une table de base de données, provoquer un déni de service ou modifier d’une manière ou d’une autre la nature de l’opération en cours.  
   
 - Attaques par injection [!INCLUDE[esql](../../../../../includes/esql-md.md)] :  
   

@@ -4,12 +4,12 @@ ms.date: 12/04/2017
 helpviewer_keywords:
 - FindPrivateKey
 ms.assetid: 16b54116-0ceb-4413-af0c-753bb2a785a6
-ms.openlocfilehash: 72e2f49ae7c39b4a0486ec053ff1164c2d833cbe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b89d135d7412f10cb9de1e4bda1aaab14b29cbf0
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61990091"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490774"
 ---
 # <a name="findprivatekey-sample"></a>Exemple de FindPrivateKey
 
@@ -46,7 +46,7 @@ cacls.exe "C:\Documents and Settings\All Users\Application Data\Microsoft\Crypto
 
 Pour télécharger le projet, visitez [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459).
 
-1. Ouvrez [!INCLUDE[fileExplorer](../../../../includes/fileexplorer-md.md)] et accédez à la *WF_WCF_Samples\WCF\Setup\FindPrivateKey\CS* dossier sous l’emplacement du répertoire où vous avez installé l’exemple.
+1. Ouvrez l’Explorateur de fichiers et accédez à la *WF_WCF_Samples\WCF\Setup\FindPrivateKey\CS* dossier sous l’emplacement du répertoire où vous avez installé l’exemple.
 
 2. Double-cliquez sur l'icône du fichier .sln pour ouvrir ce dernier dans Visual Studio.
 

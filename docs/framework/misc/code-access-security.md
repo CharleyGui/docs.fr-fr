@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: aa256fe95013494488ff52258186763fab7a85c9
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: b16f169ca61485cf3031076d32178a9407aa54ff
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456653"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66488003"
 ---
 # <a name="code-access-security"></a>Sécurité d'accès du code
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -34,7 +34,7 @@ ms.locfileid: "66456653"
  Le .NET Framework fournit un mécanisme de sécurité appelé sécurité d'accès du code, qui aide à protéger les systèmes informatiques contre du code mobile malveillant, pour permettre à du code d'origine inconnue de s'exécuter en toute sécurité et pour éviter que du code de confiance ne compromette la sécurité de manière intentionnelle ou accidentelle. La sécurité d'accès du code permet au code d'avoir un niveau de confiance à différents degrés, en fonction de son origine et d'autres aspects de son identité. La sécurité d'accès du code applique aussi différents niveaux de confiance au code, ce qui réduit la quantité de code dont le niveau de confiance doit être suffisant pour s'exécuter. L'utilisation de la sécurité d'accès du code peut diminuer la probabilité que votre code soit utilisé de manière abusive par du code malveillant ou rempli d'erreurs. Elle peut réduire votre responsabilité, car vous pouvez spécifier l'ensemble des opérations que votre code est autorisé à exécuter. La sécurité d'accès du code peut aussi aider à réduire les dommages qui peuvent résulter de la mise en danger de la sécurité dans votre code.  
   
 > [!NOTE]
->  Des modifications importantes ont été apportées à la sécurité d'accès du code dans le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. La modification la plus notable a été [la transparence de sécurité](../../../docs/framework/misc/security-transparent-code.md), mais il existe d’autres modifications significatives qui affectent la sécurité d’accès du code. Pour plus d’informations sur ces modifications, consultez [modifications de sécurité](../../../docs/framework/security/security-changes.md).  
+>  Modifications majeures ont été apportées à la sécurité d’accès du code dans le .NET Framework 4. La modification la plus notable a été [la transparence de sécurité](../../../docs/framework/misc/security-transparent-code.md), mais il existe d’autres modifications significatives qui affectent la sécurité d’accès du code. Pour plus d’informations sur ces modifications, consultez [modifications de sécurité](../../../docs/framework/security/security-changes.md).  
   
  La sécurité d'accès du code affecte principalement le code de bibliothèque et les applications partiellement fiables. Les développeurs de bibliothèques doivent protéger leur code contre l'accès non autorisé d'applications partiellement fiables, qui sont des applications chargées à partir de sources externes telles qu'Internet. Les applications installées sur votre poste de travail ou sur l'intranet local sont exécutées avec une confiance totale. Applications de confiance totale ne sont pas affectées par la sécurité d’accès, sauf si elles sont marquées comme [transparent de sécurité](../../../docs/framework/misc/security-transparent-code.md), car ils sont entièrement fiables. Leur seule limitation est que les applications marquées avec l'attribut <xref:System.Security.SecurityTransparentAttribute> ne peuvent pas appeler du code marqué avec l'attribut <xref:System.Security.SecurityCriticalAttribute>. Les applications partiellement fiables doivent être exécutées dans un bac à sable (sandbox) (par exemple, dans Internet Explorer) pour que la sécurité d'accès du code puisse être appliquée. Si vous téléchargez une application à partir d’Internet et que vous essayez d’exécuter à partir de votre bureau, vous obtiendrez un <xref:System.NotSupportedException> avec le message : « Une tentative a été effectuée pour charger un assembly à partir d’un emplacement réseau qui aurait entraîné l’assembly à sable (sandbox) dans les versions précédentes du .NET Framework. Cette version du .NET Framework n'activant pas la stratégie CAS par défaut, ce chargement peut être dangereux. » Si vous êtes sûr que l’application peut être approuvée, vous pouvez lui permettre d’être exécuté avec une confiance totale à l’aide de la [ \<loadFromRemoteSources > élément](../../../docs/framework/configure-apps/file-schema/runtime/loadfromremotesources-element.md). Pour plus d’informations sur l’exécution d’une application dans un bac à sable, consultez [Comment : exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)](../../../docs/framework/misc/how-to-run-partially-trusted-code-in-a-sandbox.md).  
   

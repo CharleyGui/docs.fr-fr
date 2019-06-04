@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 4eaa6535-d9fe-41a1-91d8-b437cfc16921
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8d5a5658fcb6bbba72938a16a9e5c82fd779e2e3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3c41becaa149b933d46a01f6ada0ea4b29b68fe8
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868769"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66488034"
 ---
 # <a name="code-access-security-basics"></a>Notions fondamentales de la sécurité d'accès du code
 
@@ -32,7 +32,7 @@ Vous devez connaître les concepts de sécurité d'accès du code suivants pour 
 
 - **Bibliothèques de classes sécurisées**: Une bibliothèque de classes sécurisée utilise des demandes de sécurité pour vous assurer que les appelants de la bibliothèque sont autorisés à accéder aux ressources exposées par la bibliothèque. Par exemple, une bibliothèque de classes sécurisée peut avoir une méthode de création de fichiers qui exige que ses appelants possèdent des autorisations pour créer des fichiers. Le .NET Framework se compose de bibliothèques de classes sécurisées. Vous devez connaître les autorisations nécessaires pour accéder aux bibliothèques utilisées par votre code. Pour plus d’informations, consultez le [à l’aide des bibliothèques de classes sécurisées](#secure_library) section plus loin dans cette rubrique.
 
-- **Le code transparent**: En commençant par le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], en plus d’identifier les autorisations spécifiques, vous devez également déterminer si votre code doit être transparent de sécurité. Le code transparent de sécurité ne peut pas appeler de types ni de membres critiques de sécurité. Cette règle s'applique aux applications de confiance totale et aux applications partiellement fiables. Pour plus d’informations, consultez [Code Transparent de sécurité](../../../docs/framework/misc/security-transparent-code.md).
+- **Le code transparent**: En commençant par le .NET Framework 4, en plus d’identifier les autorisations spécifiques, vous devez également déterminer si votre code doit être transparent de sécurité. Le code transparent de sécurité ne peut pas appeler de types ni de membres critiques de sécurité. Cette règle s'applique aux applications de confiance totale et aux applications partiellement fiables. Pour plus d’informations, consultez [Code Transparent de sécurité](../../../docs/framework/misc/security-transparent-code.md).
 
 <a name="typesafe_code"></a>
 
@@ -55,7 +55,7 @@ La sécurité d'accès du code n'élimine pas la possibilité d'une erreur humai
 Syntaxe de sécurité déclarative utilise [attributs](../../../docs/standard/attributes/index.md) pour placer les informations de sécurité dans le [métadonnées](../../../docs/standard/metadata-and-self-describing-components.md) de votre code. Les attributs peuvent être placés au niveau de l'assembly, de la classe ou du membre pour indiquer le type de demande, d'exigence ou de substitution que vous souhaitez utiliser. Les demandes sont utilisées dans les applications qui ciblent le Common Language Runtime pour informer le système de sécurité du runtime des autorisations dont votre application a besoin ou qu'elle refuse. Les exigences et les substitutions sont utilisées dans les bibliothèques pour protéger les ressources des appelants ou substituer le comportement de sécurité par défaut.
 
 > [!NOTE]
-> Dans le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], des modifications importantes ont été apportées à la terminologie et au modèle de sécurité du .NET Framework. Pour plus d’informations sur ces modifications, consultez [modifications de sécurité](../../../docs/framework/security/security-changes.md).
+> Dans le .NET Framework 4, ont été les modifications importantes apportées à la terminologie et le modèle de sécurité .NET Framework. Pour plus d’informations sur ces modifications, consultez [modifications de sécurité](../../../docs/framework/security/security-changes.md).
 
 Pour utiliser des appels de sécurité déclarative, vous devez initialiser les données d'état de l'objet d'autorisation afin qu'elles représentent la forme particulière de l'autorisation dont vous avez besoin. Chaque autorisation intégrée a un attribut auquel une énumération <xref:System.Security.Permissions.SecurityAction> est passée pour décrire le type d'opération de sécurité que vous souhaitez effectuer. Les autorisations acceptent toutefois aussi leurs propres paramètres qui leur sont exclusifs.
 

@@ -2,12 +2,12 @@
 title: CASE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 26a47873-e87d-4ba2-9e2c-3787c21efe89
-ms.openlocfilehash: e44f48d040fc77bf702759be0c53a618cd84f9fc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3fc916d201ec79c753e06ccfcd6514761f826eb7
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607191"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489504"
 ---
 # <a name="case-entity-sql"></a>CASE (Entity SQL)
 Évalue un ensemble d'expressions `Boolean` pour déterminer le résultat.  
@@ -41,7 +41,7 @@ END
  Retourne le type de priorité le plus élevé de l'ensemble des types dans `result_expression` ainsi que la valeur facultative `else_result_expression`.  
   
 ## <a name="remarks"></a>Notes  
- L'expression [!INCLUDE[esql](../../../../../../includes/esql-md.md)] case ressemble à l'expression [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)] case. Vous pouvez utiliser l'expression case pour effectuer une série de tests conditionnels visant à identifier l'expression qui produira le résultat approprié. Cette forme de l'expression case s'applique à une série d'une ou de plusieurs expressions `Boolean` pour déterminer l'expression résultante correcte.  
+ Le [!INCLUDE[esql](../../../../../../includes/esql-md.md)] expression case ressemble à l’expression case Transact-SQL. Vous pouvez utiliser l'expression case pour effectuer une série de tests conditionnels visant à identifier l'expression qui produira le résultat approprié. Cette forme de l'expression case s'applique à une série d'une ou de plusieurs expressions `Boolean` pour déterminer l'expression résultante correcte.  
   
  La fonction CASE évalue `Boolean_expression` pour chaque clause WHEN dans l'ordre spécifié et retourne l'expression `result_expression` de la première expression `Boolean_expression` qui prend la valeur `true`. Les expressions restantes ne sont pas évaluées. Si aucune expression `Boolean_expression` ne prend la valeur `true`, le moteur de base de données retourne l'expression `else_result_expression` si une clause ELSE est spécifiée ou la valeur Null dans le cas contraire.  
   

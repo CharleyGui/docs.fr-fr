@@ -2,12 +2,18 @@
 title: Schéma des paramètres d'exécution
 ms.date: 03/30/2017
 helpviewer_keywords:
-  - schema runtime settings
-  - 'configuration schema [.NET Framework], runtime settings'
-  - runtime settings schema
+- schema runtime settings
+- configuration schema [.NET Framework], runtime settings
+- runtime settings schema
 ms.assetid: f04816ab-110d-4e28-9283-845d6d9a4a68
 author: rpetrusha
 ms.author: ronpet
+ms.openlocfilehash: caef2a1d1230f020389c6b86015702075b9fc582
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489457"
 ---
 # <a name="runtime-settings-schema"></a>Schéma des paramètres d'exécution
 Les paramètres d’exécution sont utilisés par le common language runtime pour configurer les applications qui ciblent le .NET Framework.  
@@ -115,7 +121,7 @@ Les paramètres d’exécution sont utilisés par le common language runtime pou
 |[\<relativeBindForResources>](../../../../../docs/framework/configure-apps/file-schema/runtime/relativebindforresources-element.md)|Optimise la sonde pour les assemblys satellites.|  
 |[\<remove>](../../../../../docs/framework/configure-apps/file-schema/runtime/remove-element-for-namedcaches.md)|Supprime une entité de cache nommé de la collection `namedCaches` d’un cache mémoire.|  
 |[\<runtime>](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)|Contient des informations sur les liaisons d’assembly et le comportement du garbage collection.|  
-|[\<shadowCopyTimeStampVerification>](../../../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)|Indique si les clichés instantanés utilisent le comportement de démarrage par défaut introduit dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], ou reviennent au comportement de démarrage des versions précédentes du .NET Framework.|  
+|[\<shadowCopyTimeStampVerification>](../../../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)|Spécifie si les copies fantômes utilisent le comportement de démarrage par défaut introduit dans le .NET Framework 4 ou rétablit le comportement de démarrage des versions antérieures du .NET Framework.|  
 |[\<supportPortability>](../../../../../docs/framework/configure-apps/file-schema/runtime/supportportability-element.md)|Spécifie qu’une application peut référencer le même assembly dans deux implémentations différentes du .NET Framework, en désactivant le comportement par défaut qui traite les assemblys de façon équivalente à des fins de portabilité des applications.|  
 |[\<system.runtime.caching>](../../../../../docs/framework/configure-apps/file-schema/runtime/system-runtime-caching-element-cache-settings.md)|Fournit des informations de configuration pour le cache d’objets en mémoire par défaut.|  
 |[<Thread_UseAllCpuGroups>](../../../../../docs/framework/configure-apps/file-schema/runtime/thread-useallcpugroups-element.md)|Indique si le runtime distribue les threads managés entre tous les groupes de processeurs.|  

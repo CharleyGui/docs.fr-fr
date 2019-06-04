@@ -2,12 +2,12 @@
 title: Authentification dans SQL Server
 ms.date: 05/22/2018
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
-ms.openlocfilehash: 94de49fe89f2b7f4aabaade624e960202f9973bf
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 5809a75dbadffbd2528f6882aa586aecd3232408
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877461"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490101"
 ---
 # <a name="authentication-in-sql-server"></a>Authentification dans SQL Server
 SQL Server prend en charge deux modes d'authentification, le mode d'authentification Windows et le mode mixte.  
@@ -46,7 +46,7 @@ SQL Server prend en charge deux modes d'authentification, le mode d'authentifica
 - Applications Internet, tels que ASP.NET.  
   
 > [!NOTE]
->  La spécification de l'authentification Windows ne désactive pas les connexions SQL Server. Utilisez l’instruction ALTER LOGIN DISABLE [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] instruction pour désactiver les connexions de SQL Server disposant de privilèges élevés.  
+>  La spécification de l'authentification Windows ne désactive pas les connexions SQL Server. Utilisez l'instruction Transact-SQL ALTER LOGIN DISABLE pour désactiver des connexions SQL Server dotées de privilèges élevés.  
   
 ## <a name="login-types"></a>Types de connexions  
  SQL Server prend en charge trois types de connexions :  

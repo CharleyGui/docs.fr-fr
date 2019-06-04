@@ -2,12 +2,12 @@
 title: Prise en charge de la diffusion en continu pour SqlClient
 ms.date: 03/30/2017
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-ms.openlocfilehash: 83a657d1156774ec5ea342d47dca0434fd9d506c
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: c5325e60e8303ab46f1c32340a20473b31bcf52e
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66379994"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489790"
 ---
 # <a name="sqlclient-streaming-support"></a>Prise en charge de la diffusion en continu pour SqlClient
 
@@ -78,7 +78,7 @@ Le **Xml** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> type accepte u
 
 ## <a name="sample----streaming-from-sql-server"></a>Exemple--Diffusion en continu à partir de SQL Server
 
-Utilisez le code [!INCLUDE[tsql](../../../../includes/tsql-md.md)] suivant pour créer l'exemple de base de données :
+Utilisez Transact-SQL suivante pour créer la base de données :
 
 ```sql
 CREATE DATABASE [Demo]
@@ -300,7 +300,7 @@ namespace StreamingFromServer {
 
 ## <a name="sample----streaming-to-sql-server"></a>Exemple--Diffusion en continu vers SQL Server
 
-Utilisez le code [!INCLUDE[tsql](../../../../includes/tsql-md.md)] suivant pour créer l'exemple de base de données :
+Utilisez Transact-SQL suivante pour créer la base de données :
 
 ```sql
 CREATE DATABASE [Demo2]

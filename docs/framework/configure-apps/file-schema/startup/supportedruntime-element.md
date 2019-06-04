@@ -9,12 +9,12 @@ helpviewer_keywords:
 - supportedRuntime element
 - <supportedRuntime> element
 ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
-ms.openlocfilehash: c6bf4c6b262bc9066277a683d5eda67ada6f4d08
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 90bdd5b8c5fdebe2c5d7ec580975dc63144b2401
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456213"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489299"
 ---
 # <a name="supportedruntime-element"></a>\<supportedRuntime > élément
 
@@ -34,7 +34,7 @@ Spécifie quelle version du common language runtime et, éventuellement, la vers
 
 |Attribut|Description|
 |---------------|-----------------|
-|**version**|Attribut facultatif.<br /><br /> Valeur de chaîne qui spécifie la version du Common Language Runtime (CLR) prise en charge par cette application. Pour les valeurs valides de la `version` d’attribut, consultez le [les valeurs de « version du runtime »](#version) section. **Remarque :**  Via le .NET Framework 3.5, le «*version du runtime*» valeur prend la forme *majeure*. *mineure*. *build*. Depuis [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], seuls les numéros de version principale et secondaire sont nécessaires (c'est-à-dire "v4.0" au lieu de "v4.0.30319"). La chaîne courte est recommandée.|
+|**version**|Attribut facultatif.<br /><br /> Valeur de chaîne qui spécifie la version du Common Language Runtime (CLR) prise en charge par cette application. Pour les valeurs valides de la `version` d’attribut, consultez le [les valeurs de « version du runtime »](#version) section. **Remarque :**  Via le .NET Framework 3.5, le «*version du runtime*» valeur prend la forme *majeure*. *mineure*. *build*. Commençant par le .NET Framework 4, seuls les numéros de version majeure et mineure sont nécessaires (c'est-à-dire « v4.0 » au lieu de « v4.0.30319 »). La chaîne courte est recommandée.|
 |**sku**|Attribut facultatif.<br /><br /> Valeur de chaîne qui spécifie la référence (SKU), qui à son tour spécifie quelle mise en production du .NET Framework cette application prend en charge.<br /><br /> À compter du .NET Framework 4.0, l’utilisation de l’attribut `sku` est recommandée.  Quand il est présent, il indique la version du .NET Framework ciblée par l’application.<br /><br /> Pour obtenir des valeurs valides de l’attribut de référence (SKU), consultez le [les valeurs « id de référence (SKU) »](#sku) section.|
 
 ## <a name="remarks"></a>Notes

@@ -7,15 +7,15 @@ helpviewer_keywords:
 ms.assetid: 2f1648e5-997b-435e-a4f9-d236c574c66c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1815da141beb3dd1022fe1a74f872aa70b4ded43
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 4187d266d82783ebb72073c1da92faff95352884
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456345"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489380"
 ---
 # <a name="shadowcopyverifybytimestamp-element"></a>\<shadowCopyVerifyByTimestamp>, élément
-Indique si les clichés instantanés utilisent le comportement de démarrage par défaut introduit dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], ou reviennent au comportement de démarrage des versions précédentes du .NET Framework.  
+Spécifie si les copies fantômes utilisent le comportement de démarrage par défaut introduit dans le .NET Framework 4 ou rétablit le comportement de démarrage des versions antérieures du .NET Framework.  
   
  \<configuration > élément  
 \<runtime > élément  

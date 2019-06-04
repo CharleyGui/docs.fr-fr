@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 58d2866c-37bd-4ffa-abaf-ff35926a2939
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 27c8c1cac68aca1c40826ff549d62d9636d9b0c6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8c96d5aea150c0dbb55889e9fc26417e7803a155
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704906"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487667"
 ---
 # <a name="disablefusionupdatesfromadmanager-element"></a>\<disableFusionUpdatesFromADManager> Element
 Indique si le comportement par défaut, qui consiste à permettre à l’hôte du runtime de remplacer les paramètres de configuration d’un domaine d’application, est désactivé.  
@@ -40,7 +40,7 @@ Indique si le comportement par défaut, qui consiste à permettre à l’hôte d
   
 |Value|Description|  
 |-----------|-----------------|  
-|0|Ne désactivez pas la possibilité de remplacer les paramètres de Fusion. Il s’agit du comportement par défaut, en commençant par le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)].|  
+|0|Ne désactivez pas la possibilité de remplacer les paramètres de Fusion. Il s’agit du comportement par défaut, en commençant par le .NET Framework 4.|  
 |1|Désactiver la possibilité de remplacer les paramètres de Fusion. Cela revient au comportement des versions antérieures du .NET Framework.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -54,7 +54,7 @@ Indique si le comportement par défaut, qui consiste à permettre à l’hôte d
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="remarks"></a>Notes  
- En commençant par le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)], le comportement par défaut consiste à autoriser la <xref:System.AppDomainManager> objet à remplacer les paramètres de configuration à l’aide de la <xref:System.AppDomainSetup.ConfigurationFile%2A> propriété ou le <xref:System.AppDomainSetup.SetConfigurationBytes%2A> méthode de la <xref:System.AppDomainSetup> objet qui est passé à votre implémentation de la <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> (méthode), dans votre sous-classe de <xref:System.AppDomainManager>. Pour le domaine d’application par défaut, les paramètres que vous modifiez remplacent les paramètres qui ont été spécifiés par le fichier de configuration d’application. Pour les autres domaines d’application, ils remplacent les paramètres de configuration qui ont été passés à la <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> ou <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> (méthode).  
+ À compter de .NET Framework 4, le comportement par défaut est de permettre la <xref:System.AppDomainManager> objet à remplacer les paramètres de configuration à l’aide de la <xref:System.AppDomainSetup.ConfigurationFile%2A> propriété ou le <xref:System.AppDomainSetup.SetConfigurationBytes%2A> méthode de la <xref:System.AppDomainSetup> objet qui est passé à votre implémentation de la <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> (méthode), dans votre sous-classe de <xref:System.AppDomainManager>. Pour le domaine d’application par défaut, les paramètres que vous modifiez remplacent les paramètres qui ont été spécifiés par le fichier de configuration d’application. Pour les autres domaines d’application, ils remplacent les paramètres de configuration qui ont été passés à la <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> ou <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> (méthode).  
   
  Vous pouvez passer de nouvelles informations de configuration, ou passez la valeur null (`Nothing` en Visual Basic) pour éliminer les informations de configuration qui a été passées.  
   

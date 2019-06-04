@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: e0a55ddc-bfa8-4f3e-ac14-d1fc3330e4bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d8733e11aba30ebea30fc71a5350f76dfd041eb4
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 6191ee2169a85725f0367763874e60c0ceb1d7a4
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456416"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489434"
 ---
 # <a name="legacycorruptedstateexceptionspolicy-element"></a>\<legacyCorruptedStateExceptionsPolicy> Element
 Spécifie si le common language runtime permet au code managé d’intercepter les violations d’accès et d’autres exceptions d’état endommagé.  
@@ -56,7 +56,7 @@ Spécifie si le common language runtime permet au code managé d’intercepter l
 ## <a name="remarks"></a>Notes  
  Dans le .NET Framework version 3.5 et versions antérieure, le common language runtime autorise le code managé intercepter les exceptions qui ont été générées par les États de processus endommagé. Une violation d’accès est un exemple de ce type d’exception.  
   
- En commençant par le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)]managé code n’intercepte plus ces types d’exceptions dans `catch` blocs. Toutefois, vous pouvez remplacer cette modification et maintenir la gestion des exceptions d’état endommagé de deux manières :  
+ À compter de .NET Framework 4, le code managé n’intercepte plus ces types d’exceptions dans `catch` blocs. Toutefois, vous pouvez remplacer cette modification et maintenir la gestion des exceptions d’état endommagé de deux manières :  
   
 - Définir le `<legacyCorruptedStateExceptionsPolicy>` l’élément `enabled` attribut `true`. Ce paramètre de configuration est appliquée au niveau du processus et affecte toutes les méthodes.  
   

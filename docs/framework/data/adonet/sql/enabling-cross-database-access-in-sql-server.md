@@ -2,12 +2,12 @@
 title: Activation de l'accès entre bases de données dans SQL Server
 ms.date: 03/30/2017
 ms.assetid: 10663fb6-434c-4c81-8178-ec894b9cf895
-ms.openlocfilehash: ef018566c5d3881d2f9b77dad932712d1fb11841
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 50e2a9149074d2d29ff2e17fa2a339bd7820b984
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583698"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490080"
 ---
 # <a name="enabling-cross-database-access-in-sql-server"></a>Activation de l'accès entre bases de données dans SQL Server
 Le chaînage des propriétés des bases de données croisées se produit lorsqu'une procédure dans une base de données repose sur des objets appartenant à une autre base de données. La chaîne des propriétés des bases de données croisées fonctionne de la même manière que le chaînage des propriétés dans une seule base de données, sauf qu'une chaîne de propriétés continue nécessite le mappage de tous les propriétaires d'objets au même compte de connexion. Si l'objet source de la base de données source et les objets cibles des bases de données cibles appartiennent au même compte de connexion, SQL Server ne vérifie pas les autorisations sur les objets cibles.  
@@ -20,7 +20,7 @@ Le chaînage des propriétés des bases de données croisées se produit lorsqu'
 - Les utilisateurs avec l'autorisation CREATE DATABASE peuvent créer de nouvelles bases de données et attacher les bases de données existantes. Si le chaînage des propriétés des bases de données croisées est activé, ces utilisateurs peuvent accéder à des objets dans d'autres bases de données pour lesquels ils n'ont pas de privilèges à partir des bases de données qu'ils ont récemment créées ou attachées.  
   
 ## <a name="enabling-cross-database-ownership-chaining"></a>Activation du chaînage des propriétés des bases de données croisées  
- L'activation du chaînage des propriétés des bases de données croisées doit être réservée aux environnements dans lesquels vous pouvez faire totalement confiance aux utilisateurs disposant de privilèges élevés. Vous pouvez configurer l'activation au cours de l'installation pour l'ensemble des bases de données, ou de manière sélective pour des bases de données spécifiques à l'aide des commandes [!INCLUDE[tsql](../../../../../includes/tsql-md.md)]`sp_configure` et `ALTER DATABASE`.  
+ L'activation du chaînage des propriétés des bases de données croisées doit être réservée aux environnements dans lesquels vous pouvez faire totalement confiance aux utilisateurs disposant de privilèges élevés. Vous pouvez configurer l'activation au cours de l'installation pour l'ensemble des bases de données, ou de manière sélective pour des bases de données spécifiques à l'aide des commandes Transact-SQL `sp_configure` et `ALTER DATABASE`.  
   
  Pour configurer de manière sélective le chaînage des propriétés des bases de données croisées, utilisez `sp_configure` afin de désactiver cette option pour le serveur. Puis, utilisez la commande ALTER DATABASE avec SET DB_CHAINING ON afin de configurer le chaînage des propriétés des bases de données croisées uniquement pour les bases de données qui le nécessitent.  
   

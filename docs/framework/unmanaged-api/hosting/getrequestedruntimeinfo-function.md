@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a440cef9de12c420e7b49b794ed0bcba39e756e8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 21b96d435bdb0265d31972edbd4038d0b8cd8d2b
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665070"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490342"
 ---
 # <a name="getrequestedruntimeinfo-function"></a>GetRequestedRuntimeInfo, fonction
 Obtient des informations de version et au répertoire sur le common language runtime (CLR) demandée par une application.  
   
- Cette fonction a été déconseillée dans le [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Cette fonction a été déconseillée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   

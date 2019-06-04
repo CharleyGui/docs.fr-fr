@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7308f37ee96b4efe83aeb198586f7364fdcf9ccc
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 37551d2b43e5343ca27da69c08d522c176b2caa7
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457147"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489640"
 ---
 # <a name="cordebuginterfaceversion-enumeration"></a>CorDebugInterfaceVersion, énumération
 Spécifie une interface, une version de .NET Framework ou une version de .NET Framework où une interface a été introduite.  
@@ -235,7 +235,7 @@ typedef enum CorDebugInterfaceVersion {
   
 - Les versions 3.0 et 3.5 de .NET Framework utilisent les interfaces existantes de .NET Framework 2.0 et n'introduisent aucune nouvelle interface.  
   
-- Le [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] présente un mélange de versions de l’interface. Par exemple, `ICorDebugThread3` et `ICorDebugThread4` apparaissent respectivement comme la troisième et la quatrième version de l'interface d'`ICorDebugThread`. Le .NET Framework 4 introduit également la première version de la `ICorDebugStackWalk` interface et la deuxième version de la `ICorDebugNativeFrame` interface (`ICorDebugNativeFrame2`).  
+- Le .NET Framework 4 introduit un mélange de versions de l’interface. Par exemple, `ICorDebugThread3` et `ICorDebugThread4` apparaissent respectivement comme la troisième et la quatrième version de l'interface d'`ICorDebugThread`. Le .NET Framework 4 introduit également la première version de la `ICorDebugStackWalk` interface et la deuxième version de la `ICorDebugNativeFrame` interface (`ICorDebugNativeFrame2`).  
   
 ## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  

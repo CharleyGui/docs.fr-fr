@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: f7c2d6ec-3b18-4e0e-9991-acd97189d818
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d9d423ef71b76b2dcbbf2812e13850922fb50ac0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8be971cee4aa2ae09745a090396269c80ca62198
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625891"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487950"
 ---
 # <a name="securing-method-access"></a>Sécurisation de l'accès à la méthode
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -60,7 +60,7 @@ public class Class1
  Utilisez les déclarations illustrées dans cette section pour empêcher des classes et des méthodes spécifiques, ainsi que des propriétés et des événements, d'être utilisés par du code d'un niveau de confiance partiel. En appliquant ces déclarations à une classe, vous appliquez la protection à toutes ses méthodes, propriétés et événements ; cependant, notez que l'accès au champ n'est pas affecté par la sécurité déclarative. Notez également que les demandes de liaison ne protègent que contre les appelants immédiats et peuvent toujours faire l'objet d'attaques malveillantes.  
   
 > [!NOTE]
->  Un nouveau modèle de transparence a été ajouté au [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Le [Code Transparent de sécurité, niveau 2](../../../docs/framework/misc/security-transparent-code-level-2.md) modèle identifie le code sécurisé avec le <xref:System.Security.SecurityCriticalAttribute> attribut. Le code critique de sécurité nécessite que les appelants et les héritiers soient entièrement fiables. Les assemblys qui s'exécutent selon les règles de sécurité d'accès du code des versions antérieures du .NET Framework peuvent appeler les assemblys de niveau 2. Dans ce cas, les attributs critiques de sécurité seront traités comme des demandes de liaison pour la confiance totale.  
+>  Un nouveau modèle de transparence a été introduit dans le .NET Framework 4. Le [Code Transparent de sécurité, niveau 2](../../../docs/framework/misc/security-transparent-code-level-2.md) modèle identifie le code sécurisé avec le <xref:System.Security.SecurityCriticalAttribute> attribut. Le code critique de sécurité nécessite que les appelants et les héritiers soient entièrement fiables. Les assemblys qui s'exécutent selon les règles de sécurité d'accès du code des versions antérieures du .NET Framework peuvent appeler les assemblys de niveau 2. Dans ce cas, les attributs critiques de sécurité seront traités comme des demandes de liaison pour la confiance totale.  
   
  Dans les assemblys avec nom fort, une [LinkDemand](../../../docs/framework/misc/link-demands.md) est appliqué à toutes les méthodes accessibles publiquement, des propriétés et des événements afin de limiter leur utilisation aux appelants de confiance totale. Pour désactiver cette fonctionnalité, vous devez appliquer l’attribut <xref:System.Security.AllowPartiallyTrustedCallersAttribute>. De cette manière, marquer les classes de manière explicite afin d'exclure des appelants non fiables n'est nécessaire que pour des assemblys non signés ou des assemblys possédant cet attribut ; vous pouvez utiliser ces déclarations pour marquer un sous-ensemble de types qui ne sont pas destinés à des appelants non fiables.  
   

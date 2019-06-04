@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: ae8d5a7e-e7f7-47f7-98d9-455cc243a322
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7aa13d26ac11ed624caa4c9704325f2d604418bd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 19cd74f0e2550ec91cb56e70cf34a03bd84fc60e
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705049"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487740"
 ---
 # <a name="appdomainmanagertype-element"></a>\<appDomainManagerType > élément
 Spécifie le type qui sert de Gestionnaire de domaine d’application au domaine d’application par défaut.  
@@ -58,7 +58,7 @@ Spécifie le type qui sert de Gestionnaire de domaine d’application au domaine
   
  Le format du type et espace de noms est le même format que celui qui est utilisé pour le <xref:System.Type.FullName%2A?displayProperty=nameWithType> propriété.  
   
- Cet élément de configuration est disponible uniquement dans le [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] et versions ultérieures.  
+ Cet élément de configuration est disponible uniquement dans le .NET Framework 4 et versions ultérieures.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment spécifier que le Gestionnaire de domaine d’application pour le domaine d’application par défaut d’un processus est le `MyMgr` tapez dans le `AdMgrExample` assembly.  

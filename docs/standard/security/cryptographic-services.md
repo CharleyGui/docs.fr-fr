@@ -26,12 +26,12 @@ helpviewer_keywords:
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f070419fb8cdca178369bee12545dd1a0d89ea47
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: fa05fe1e170a0285df73d179ef39db6301059ac8
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592731"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490949"
 ---
 # <a name="cryptographic-services"></a>services de chiffrement
 
@@ -39,7 +39,7 @@ ms.locfileid: "65592731"
 
 Dans le .NET Framework, les classes de l'espace de noms <xref:System.Security.Cryptography?displayProperty=nameWithType> gèrent automatiquement divers détails liés au chiffrement. Certaines d'entre elles sont des wrappers pour l'API de chiffrement Microsoft non managée (CryptoAPI), tandis que d'autres sont de pures implémentations managées. Vous n'avez pas besoin d'être un expert en chiffrement pour utiliser ces classes. Quand vous créez une instance de l'une des classes d'algorithme de chiffrement, les clés sont générées automatiquement pour une plus grande facilité d'utilisation, et les propriétés par défaut sont aussi sûres et sécurisées que possible.
 
-Cette vue d'ensemble offre un résumé des différentes méthodes et pratiques de chiffrement prises en charge par le .NET Framework, notamment les manifestes ClickOnce et la prise en charge de Suite B et de Cryptography Next Generation (CNG) introduite dans le [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)].
+Cette présentation fournit un résumé des méthodes de chiffrement et des pratiques de prises en charge par le .NET Framework, y compris les manifestes ClickOnce, de la Suite B et prise en charge de l’infrastructure de Diagnostics Windows (CNG, Cryptography Next Generation) introduite dans .NET Framework 3.5.
 
 Cette vue d'ensemble contient les sections suivantes :
 
@@ -114,7 +114,7 @@ En supposant que Alice et Bob est deux parties qui désirent communiquer sur un 
 
 Le .NET Framework fournit les classes suivantes qui implémentent des algorithmes de chiffrement à clé secrète :
 
-- <xref:System.Security.Cryptography.AesManaged> (introduit dans le [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]).
+- <xref:System.Security.Cryptography.AesManaged> (nouveauté de .NET Framework 3.5).
 
 - <xref:System.Security.Cryptography.DESCryptoServiceProvider>.
 

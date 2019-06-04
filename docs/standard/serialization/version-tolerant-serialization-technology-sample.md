@@ -2,12 +2,12 @@
 title: Sérialisation avec tolérance de version, exemple de technologie
 ms.date: 03/30/2017
 ms.assetid: 2a183664-bfbf-4ff0-96f6-c836284ea916
-ms.openlocfilehash: d7dfcf7548571d29032495ca8be96db70f2336fc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6c30c39848be02785b6b808ecf4af711c0c9e95d
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62028263"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66482996"
 ---
 # <a name="version-tolerant-serialization-technology-sample"></a>Sérialisation avec tolérance de version, exemple de technologie
 [Télécharger l’exemple](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Runtime%20Serialization/VTS.zip.exe)  
@@ -22,7 +22,7 @@ ms.locfileid: "62028263"
   
 ### <a name="to-build-the-sample-using-visual-studio"></a>Pour générer l'exemple à l'aide de Visual Studio  
   
-1. Ouvrez l'[!INCLUDE[fileExplorer](../../../includes/fileexplorer-md.md)] et accédez à l'un des sous-répertoires spécifiques aux différents langages de l'exemple.  
+1. Ouvrez l’Explorateur de fichiers et accédez à un des sous-répertoires spécifiques au langage pour l’exemple.  
   
 2. Accédez au sous-répertoire de l'application V1 du répertoire sélectionné à l'étape précédente.  
   

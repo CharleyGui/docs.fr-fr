@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b5786444c36fcfc9547be1db0006757b0a9376c6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ddb9792c00d6b78b29b66bbc3ef59ee4ad8bd81d
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61628096"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490404"
 ---
 # <a name="getcorrequiredversion-function"></a>GetCORRequiredVersion, fonction
 Obtient le numéro de version de runtime (CLR) de langage commun requis.  
   
- Cette fonction a été déconseillée dans le [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)].  
+ Cette fonction a été déconseillée dans le .NET Framework 4.  
   
 ## <a name="syntax"></a>Syntaxe  
   

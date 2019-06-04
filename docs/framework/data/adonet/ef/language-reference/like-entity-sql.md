@@ -2,12 +2,12 @@
 title: LIKE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 8300e6d2-875b-481e-9ef4-e1e7c12d46fa
-ms.openlocfilehash: 9463a5cb522a3d3dab7725c4b71a5970d1bdf19d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 98940c075a01de2ebe061b6dff53917247fc5193
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780443"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489911"
 ---
 # <a name="like-entity-sql"></a>LIKE (Entity SQL)
 Détermine si une `String` de caractères donnée correspond à un modèle spécifié.  
@@ -49,7 +49,7 @@ match [NOT] LIKE pattern [ESCAPE escape]
 > [!NOTE]
 >  L'opérateur [!INCLUDE[esql](../../../../../../includes/esql-md.md)] LIKE et la clause ESCAPE ne peuvent pas être appliqués aux valeurs de `System.DateTime` ou `System.Guid`.  
   
- L'opérateur LIKE prend en charge les critères spéciaux ASCII et Unicode. Lorsque tous les paramètres sont des caractères ASCII, une recherche générique ASCII est effectuée. Si un ou plusieurs arguments sont de type Unicode, tous les arguments sont convertis en Unicode et une recherche générique Unicode est effectuée. Lors de l'utilisation de données Unicode avec LIKE, les espaces de droite sont significatifs ; pour les autres données, cependant, ils ne le sont pas. La syntaxe de chaîne de modèle de [!INCLUDE[esql](../../../../../../includes/esql-md.md)] est identique à celui de [!INCLUDE[tsql](../../../../../../includes/tsql-md.md)].  
+ L'opérateur LIKE prend en charge les critères spéciaux ASCII et Unicode. Lorsque tous les paramètres sont des caractères ASCII, une recherche générique ASCII est effectuée. Si un ou plusieurs arguments sont de type Unicode, tous les arguments sont convertis en Unicode et une recherche générique Unicode est effectuée. Lors de l'utilisation de données Unicode avec LIKE, les espaces de droite sont significatifs ; pour les autres données, cependant, ils ne le sont pas. La syntaxe de chaîne de modèle de [!INCLUDE[esql](../../../../../../includes/esql-md.md)] est identique à celle de Transact-SQL.  
   
  Un modèle peut comporter des caractères ordinaires et des caractères génériques. Au cours de l'analyse, les caractères normaux doivent correspondre exactement aux caractères spécifiés dans la `string` de caractères. Toutefois, les caractères génériques peuvent être associés à des portions aléatoires de la chaîne de caractères. Lorsqu'il est utilisé avec des caractères génériques, l'opérateur LIKE est plus souple que les opérateurs de comparaison de chaînes « = » et « != ».  
   
