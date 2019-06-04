@@ -22,9 +22,9 @@ ms.locfileid: "61674647"
 
 Spécifie un fichier de configuration à inclure.
 
-[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[**\<assemblyBinding>**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;**\<linkedConfiguration>**
+[ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+&nbsp;&nbsp;[ **\<assemblyBinding>** ](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp; **\<linkedConfiguration>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -42,7 +42,7 @@ Spécifie un fichier de configuration à inclure.
 
 |     | Description |
 | --- | ----------- |
-| [**\<assemblyBinding >** élément](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | Spécifie la stratégie de liaison de l’assembly au niveau de la configuration. |
+| [ **\<assemblyBinding >** élément](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | Spécifie la stratégie de liaison de l’assembly au niveau de la configuration. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
@@ -83,5 +83,5 @@ L’exemple suivant montre comment inclure le fichier de configuration à partir
 
 ## <a name="see-also"></a>Voir aussi
 
-- [**\<assemblyBinding >** élément](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md)
+- [ **\<assemblyBinding >** élément](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md)
 - [Schéma de fichier de configuration pour le .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)

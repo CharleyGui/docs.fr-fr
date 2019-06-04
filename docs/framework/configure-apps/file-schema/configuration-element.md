@@ -41,16 +41,16 @@ Aucun.
 
 |     | Description |
 | --- | ----------- |
-| [**\<assemblyBinding>**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | Spécifie la stratégie de liaison de l’assembly au niveau de la configuration.|
-| [**\<démarrage >** schéma des paramètres](~/docs/framework/configure-apps/file-schema/startup/index.md) | Tous les éléments du schéma des paramètres de démarrage. |
-| [**\<runtime >** schéma des paramètres](~/docs/framework/configure-apps/file-schema/runtime/index.md) | Tous les éléments dans le schéma des paramètres d’exécution. |
-| [**\<system.runtime.remoting>** Settings Schema](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/z415cf9a(v=vs.100)) | Tous les éléments dans le schéma de paramètres de communication à distance. |
-| [**\<system.Net >** schéma des paramètres](~/docs/framework/configure-apps/file-schema/network/index.md) | Tous les éléments du schéma des paramètres réseau. |
-| [**\<cryptographySettings >** schéma des paramètres](~/docs/framework/configure-apps/file-schema/cryptography/index.md) | Tous les éléments du schéma des paramètres de chiffrement. |
-| [**\<configuration >** schéma des Sections](~/docs/framework/configure-apps/file-schema/configuration-sections-schema.md) | Tous les éléments dans le schéma de paramètres de section de configuration. |
+| [ **\<assemblyBinding>** ](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | Spécifie la stratégie de liaison de l’assembly au niveau de la configuration.|
+| [ **\<démarrage >** schéma des paramètres](~/docs/framework/configure-apps/file-schema/startup/index.md) | Tous les éléments du schéma des paramètres de démarrage. |
+| [ **\<runtime >** schéma des paramètres](~/docs/framework/configure-apps/file-schema/runtime/index.md) | Tous les éléments dans le schéma des paramètres d’exécution. |
+| [ **\<system.runtime.remoting>** Settings Schema](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/z415cf9a(v=vs.100)) | Tous les éléments dans le schéma de paramètres de communication à distance. |
+| [ **\<system.Net >** schéma des paramètres](~/docs/framework/configure-apps/file-schema/network/index.md) | Tous les éléments du schéma des paramètres réseau. |
+| [ **\<cryptographySettings >** schéma des paramètres](~/docs/framework/configure-apps/file-schema/cryptography/index.md) | Tous les éléments du schéma des paramètres de chiffrement. |
+| [ **\<configuration >** schéma des Sections](~/docs/framework/configure-apps/file-schema/configuration-sections-schema.md) | Tous les éléments dans le schéma de paramètres de section de configuration. |
 | [Schéma des paramètres de trace et de débogage](~/docs/framework/configure-apps/file-schema/trace-debug/index.md) | Tous les éléments du schéma des paramètres de trace et debug. |
 | [Schéma de paramètres de Configuration ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100)) | Tous les éléments dans le schéma de configuration ASP.NET, qui inclut des éléments de configuration des applications et sites Web ASP.NET. Utilisé dans *Web.config* fichiers. |
-| [**\<webServices>** Settings Schema](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100)) | Tous les éléments du schéma des paramètres Web services. |
+| [ **\<webServices>** Settings Schema](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100)) | Tous les éléments du schéma des paramètres Web services. |
 | [Schéma des paramètres web](~/docs/framework/configure-apps/file-schema/web/index.md) | Tous les éléments du schéma des paramètres Web, qui inclut des éléments pour la configuration d'ASP.NET en vue d'une utilisation avec une application hôte telle qu'IIS. Utilisé dans *aspnet.config* fichiers. |
 
 ## <a name="remarks"></a>Notes

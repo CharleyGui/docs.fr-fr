@@ -18,8 +18,8 @@ ms.locfileid: "61674829"
 
 Spécifie la stratégie de liaison de l’assembly au niveau de la configuration.
 
-[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;**\<assemblyBinding>**
+[ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+&nbsp;&nbsp; **\<assemblyBinding>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -39,13 +39,13 @@ Spécifie la stratégie de liaison de l’assembly au niveau de la configuration
 
 |     | Description |
 | --- | ----------- |
-| [**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) | Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework. |
+| [ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md) | Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework. |
 
 ## <a name="child-element"></a>Élément enfant
 
 |     | Description |
 | --- | ----------- |
-| [**\<linkedConfiguration>**](~/docs/framework/configure-apps/file-schema/linkedconfiguration-element.md) | Spécifie un fichier de configuration à inclure. |
+| [ **\<linkedConfiguration>** ](~/docs/framework/configure-apps/file-schema/linkedconfiguration-element.md) | Spécifie un fichier de configuration à inclure. |
 
 ## <a name="remarks"></a>Notes
 
