@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Firefox [WPF], detecting installation
 - detecting whether the WPF plug-in for Firefox is installed [WPF]
 ms.assetid: 5f839373-e3fb-44f1-88ad-4a0761f02189
-ms.openlocfilehash: 5ae2f39883c8edd7be912bfeb8326c14ca38704a
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: f84a0a2af43931b3ada1f674390ec5d841b79a1c
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592620"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690419"
 ---
 # <a name="how-to-detect-whether-the-wpf-plug-in-for-firefox-is-installed"></a>Procédure : Détecter si le plug-in WPF de Firefox est installé
 
@@ -24,7 +24,7 @@ Windows Presentation Foundation (WPF) plug-in de Firefox permet [!INCLUDE[TLA#tl
 
 ## <a name="example"></a>Exemple
 
-Lorsque le [!INCLUDE[net_v35_short](../../../../includes/net-v35-short-md.md)] est installé, l’ordinateur client est configuré avec un plug-in WPF de Firefox. L’exemple de script suivant vérifie le plug-in WPF de Firefox, puis affiche un message d’état approprié.
+Lorsque le .NET Framework 3.5 est installé, l’ordinateur client est configuré avec un plug-in WPF de Firefox. L’exemple de script suivant vérifie le plug-in WPF de Firefox, puis affiche un message d’état approprié.
 
 ```html
 <HTML>
