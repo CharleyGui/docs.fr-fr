@@ -20,17 +20,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b95625cfe17b36c0244e6780a08dcf50ce50763d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2a28b33f80299ae6fce34f9de66b6f7f1bc70ef6
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61985814"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490570"
 ---
 # <a name="corexitprocess-function"></a>CorExitProcess, fonction
 Arrête le processus non managé en cours.  
   
- Cette fonction a été déconseillée dans le [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. Utilisez le [ICLRMetaHost::ExitProcess](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-exitprocess-method.md) méthode à la place.  
+ Cette fonction a été déconseillée dans le .NET Framework 4. Utilisez le [ICLRMetaHost::ExitProcess](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-exitprocess-method.md) méthode à la place.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,7 +47,7 @@ void STDMETHODCALLTYPE CorExitProcess (
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
->  Compter les [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)], `CorExitProcess` quitte chaque exécution commencée dans le processus, pas uniquement le runtime auquel les API héritées ont été liés.  
+>  Commençant par le .NET Framework 4, `CorExitProcess` quitte chaque exécution commencée dans le processus, pas uniquement le runtime auquel les API héritées ont été liés.  
   
 ## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
