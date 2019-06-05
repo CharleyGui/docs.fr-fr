@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 782cc82e-83f7-404a-80b7-6d3061a8b6e3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f6aef46db47f881d6a15cc1e58d46219a80194b0
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: b426eaaa2dab4d54ea4c82483c079428f3bfac57
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456445"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66689909"
 ---
 # <a name="compatsortnlsversion-element"></a>\<CompatSortNLSVersion > élément
 Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'exécution de comparaisons de chaînes.  
@@ -44,7 +44,7 @@ Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'ex�
   
 |Value|Description|  
 |-----------|-----------------|  
-|4096|ID de paramètres régionaux qui représente un ordre de tri secondaire. Dans ce cas, 4096 représente l'ordre de tri de [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)] et versions antérieures.|  
+|4096|ID de paramètres régionaux qui représente un ordre de tri secondaire. Dans ce cas, 4096 représente l’ordre de tri du .NET Framework 3.5 et les versions antérieures.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -57,7 +57,7 @@ Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'ex�
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
 ## <a name="remarks"></a>Notes  
- Étant donné que la comparaison de chaînes, le tri et les opérations de casse effectuaient par le <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> classe dans le .NET Framework 4 est conforme à la norme Unicode 5.1, les résultats des méthodes de comparaison de chaîne comme <xref:System.String.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType> et <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> peut différer de versions précédentes du .NET Framework. Si votre application dépend d'un comportement hérité, vous pouvez restaurer la comparaison de chaînes et les règles de tri utilisées dans [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)] et versions antérieures en incluant l'élément `<CompatSortNLSVersion>` dans le fichier de configuration de l'application.  
+ Étant donné que la comparaison de chaînes, le tri et les opérations de casse effectuaient par le <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> classe dans le .NET Framework 4 est conforme à la norme Unicode 5.1, les résultats des méthodes de comparaison de chaîne comme <xref:System.String.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType> et <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> peut différer de versions précédentes du .NET Framework. Si votre application dépend du comportement hérité, vous pouvez restaurer la comparaison de chaînes et le tri des règles utilisées dans le .NET Framework 3.5 et les versions antérieures en incluant le `<CompatSortNLSVersion>` élément dans le fichier de configuration de votre application.  
   
 > [!IMPORTANT]
 >  La restauration de la comparaison de chaînes héritées et des règles de tri requiert également que la bibliothèque de liens dynamiques sort00001000.dll soit disponible sur le système local.  
@@ -76,13 +76,13 @@ Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'ex�
 sta follows a in the sort order.  
 ```  
   
- Cela est complètement différent de la sortie qui s'affiche lorsque vous exécutez l'exemple sur [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)].  
+ Cela est complètement différent de la sortie qui s’affiche lorsque vous exécutez l’exemple sur le .NET Framework 3.5.  
   
 ```  
 sta equals a in the sort order.  
 ```  
   
- Toutefois, si vous ajoutez le fichier de configuration suivant au répertoire de l’exemple et puis exécutez l’exemple sur le .NET Framework 4, la sortie est identique à celle produite par l’exemple lorsqu’il est exécuté sur le [!INCLUDE[net_v35_short](../../../../../includes/net-v35-short-md.md)].  
+ Toutefois, si vous ajoutez le fichier de configuration suivant au répertoire de l’exemple et puis exécutez l’exemple sur le .NET Framework 4, la sortie est identique à celle produite par l’exemple lorsqu’il est exécuté sur le .NET Framework 3.5.  
   
 ```xml  
 <?xml version ="1.0"?>  

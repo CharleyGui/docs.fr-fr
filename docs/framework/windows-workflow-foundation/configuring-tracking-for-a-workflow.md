@@ -2,12 +2,12 @@
 title: Configuration du suivi d'un workflow
 ms.date: 03/30/2017
 ms.assetid: 905adcc9-30a0-4918-acd6-563f86db988a
-ms.openlocfilehash: c3e73c3801a41a9401ac2e636fda6362487a05af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d8d3293fd2b271c0e1a00a1fca30d5ecd166df12
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052766"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690564"
 ---
 # <a name="configuring-tracking-for-a-workflow"></a>Configuration du suivi d'un workflow
 
@@ -199,7 +199,7 @@ Si des événements doivent être écrits dans un journal des applications spéc
     </system.serviceModel>
     ```
 
-2. Copiez le fichier manifeste de %windir%\Microsoft.NET\Framework\\< version la plus récente de [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]> \Microsoft.Windows.ApplicationServer.Applications.man vers un emplacement temporaire et renommez-le Microsoft.Windows.ApplicationServer.Applications_Provider1.man
+2. Copiez le fichier manifeste de %windir%\Microsoft.NET\Framework\\\<version la plus récente de [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]> \Microsoft.Windows.ApplicationServer.Applications.man vers un emplacement temporaire et renommez-le Microsoft.Windows.ApplicationServer.Applications_Provider1.man
 
 3. Remplacez le GUID dans le fichier manifeste par le nouveau GUID.
 

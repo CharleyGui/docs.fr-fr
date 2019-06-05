@@ -26,12 +26,12 @@ helpviewer_keywords:
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fa05fe1e170a0285df73d179ef39db6301059ac8
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 1f773b6f7d0b8b4e0b8647b7086d8782d1afbb93
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490949"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690535"
 ---
 # <a name="cryptographic-services"></a>services de chiffrement
 
@@ -266,7 +266,7 @@ La classe <xref:System.Security.Cryptography.RNGCryptoServiceProvider> est une i
 
 ## <a name="clickonce-manifests"></a>Manifestes ClickOnce
 
-Dans le [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)], les classes de chiffrement suivantes vous permettent d'obtenir et de vérifier les informations sur les signatures de manifeste des applications déployées à l'aide de la [technologie ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment):
+Dans le .NET Framework 3.5, les classes de chiffrement suivantes vous permettent d’obtenir et vérifier les informations sur les signatures de manifeste pour les applications qui sont déployées à l’aide de [technologie ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment):
 
 - La classe <xref:System.Security.Cryptography.ManifestSignatureInformation> obtient des informations sur une signature de manifeste quand vous utilisez ses surcharges de méthode <xref:System.Security.Cryptography.ManifestSignatureInformation.VerifySignature%2A> .
 
@@ -290,7 +290,7 @@ Dans le [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)], les cl
 
 ## <a name="suite-b-support"></a>Prise en charge de Suite B
 
-Le [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] prend en charge le jeu d'algorithmes de chiffrement Suite B publié par la NSA (National Security Agency). Pour plus d’informations sur Suite B, consultez le [descriptif de la NSA sur le chiffrement Suite B](https://www.nsa.gov/what-we-do/information-assurance/).
+Le .NET Framework 3.5 prend en charge l’ensemble B de la Suite d’algorithmes de chiffrement publié par la NSA National Security Agency (). Pour plus d’informations sur Suite B, consultez le [descriptif de la NSA sur le chiffrement Suite B](https://www.nsa.gov/what-we-do/information-assurance/).
 
 Les algorithmes inclus sont les suivants :
 
@@ -314,7 +314,7 @@ Les classes CNG fournissent un wrapper managé autour des fonctions CNG natives.
 
 La classe <xref:System.Security.Cryptography.CngKey> sert à diverses autres opérations, notamment à ouvrir, créer, supprimer et exporter des clés. Elle permet aussi d'accéder au handle de clé sous-jacent à utiliser quand il s'agit d'appeler des fonctions natives directement.
 
-Par ailleurs, le [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] inclut diverses classes CNG de prise en charge, notamment les suivantes :
+Le .NET Framework 3.5 inclut également une variété de prendre en charge les classes CNG, tels que les éléments suivants :
 
 - <xref:System.Security.Cryptography.CngProvider> dispose d'un fournisseur de stockage de clés.
 

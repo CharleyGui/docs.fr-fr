@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 19cb4d39-e38a-4262-b507-458915303115
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 163ed8d00e8f0f886481dbaca956bb633a625871
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 15e693f716d02e6f7ef8b666ddf51a8bd352f642
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487972"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690281"
 ---
 # <a name="code-access-security-policy-compatibility-and-migration"></a>Compatibilité de la stratégie de sécurité d'accès du code et migration
 
@@ -26,7 +26,7 @@ Vous pouvez éviter les avertissements et les erreurs comme suit :
 
    \- ou -
 
-- À l’aide de la [élément de configuration < NetFx40_LegacySecurityPolicy >](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) à opter pour le comportement de stratégie CAS hérité.
+- À l’aide de la [ \<NetFx40_LegacySecurityPolicy > élément de configuration](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) à opter pour le comportement de stratégie CAS hérité.
 
 Cette rubrique contient les sections suivantes :
 
@@ -142,7 +142,7 @@ Si vous voulez utiliser un bac à sable (sandbox) pour un assembly, utilisez la 
 
 ## <a name="compatibility-using-the-cas-policy-legacy-option"></a>Compatibilité : À l’aide de l’Option hérité de la stratégie CAS
 
-Le [élément de configuration < NetFx40_LegacySecurityPolicy >](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) vous permet de spécifier qu’un processus ou une bibliothèque utilise la stratégie CAS héritée. Quand vous activez cet élément, les surcharges de stratégie et de preuve fonctionnent comme dans les versions antérieures du Framework.
+Le [ \<NetFx40_LegacySecurityPolicy > élément de configuration](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) vous permet de spécifier qu’un processus ou une bibliothèque utilise la stratégie CAS héritée. Quand vous activez cet élément, les surcharges de stratégie et de preuve fonctionnent comme dans les versions antérieures du Framework.
 
 > [!NOTE]
 > Le comportement de la stratégie CAS est spécifié par version du runtime ; la modification de la stratégie CAS pour une version du runtime n'affecte donc pas la stratégie CAS d'une autre version.

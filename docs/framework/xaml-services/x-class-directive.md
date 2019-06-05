@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML [XAML Services], x:Class attribute
 - x:Class attribute [XAML Services]
 ms.assetid: bc4a3d8e-76e2-423e-a5d1-159a023e82ec
-ms.openlocfilehash: 5f7b072e90e92070dd7fda2f0ad44814009268b9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ee94d7bf52f3fb2ea534cdb2f44d0be2cc8699eb
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62025416"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66689415"
 ---
 # <a name="xclass-directive"></a>x:Class, directive
 Configure la compilation du balisage XAML pour joindre des classes partielles entre le balisage et code-behind. La classe partielle du code est définie dans un fichier de code séparé dans un [!INCLUDE[TLA#tla_cls](../../../includes/tlasharptla-cls-md.md)] language, tandis que la classe partielle du balisage est créée par la génération de code pendant la compilation de XAML.  
@@ -32,7 +32,7 @@ Configure la compilation du balisage XAML pour joindre des classes partielles en
   
 |||  
 |-|-|  
-|`namespace`|Optionnel. Spécifie un [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] espace de noms qui contient la classe partielle identifiée par `classname`. Si `namespace` est spécifié, un point (.) sépare `namespace` et `classname`. Consultez la section Notes.|  
+|`namespace`|Facultatif. Spécifie un [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] espace de noms qui contient la classe partielle identifiée par `classname`. Si `namespace` est spécifié, un point (.) sépare `namespace` et `classname`. Consultez la section Notes.|  
 |`classname`|Obligatoire. Spécifie le [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)] nom de la classe partielle qui connecte le XAML chargé et votre code-behind pour ce XAML.|  
   
 ## <a name="dependencies"></a>Dépendances  
@@ -52,7 +52,7 @@ Configure la compilation du balisage XAML pour joindre des classes partielles en
  Un certain niveau de l’architecture, la signification de `x:Class` n’est pas définie dans les Services XAML .NET Framework. Il s’agit, car les Services XAML .NET Framework ne spécifie pas le modèle de programmation par le XAML balisage et code de stockage sont connectés. Autres utilisations de la `x:Class` directive peut être implémentée par les infrastructures spécifiques qui utilisent des modèles de programmation ou des modèles d’application pour définir comment connecter le balisage XAML et code-behind basé sur CLR. Chaque framework peut avoir ses propres actions de génération qui activent une partie du comportement ou des composants spécifiques qui doivent être inclus dans l’environnement de génération. Dans une infrastructure, les actions de génération peuvent également varier selon le langage CLR spécifique qui est utilisé pour le code-behind.  
   
 ## <a name="xclass-in-the-wpf-programming-model"></a>x : Class dans le modèle de programmation WPF  
- Dans les applications WPF et le modèle d’application WPF, `x:Class` peuvent être déclarés en tant qu’attribut pour tout élément qui est la racine d’un fichier XAML et est compilé (où le XAML est inclus dans un projet d’application WPF avec `Page` action de génération), ou pour le < C4 > <xref:System.Windows.Application>  racine dans la définition d’application d’une application WPF compilée. Déclaration `x:Class` sur un élément autre qu’une racine de la page ou de la racine de l’application, ou un fichier de WPF XAML qui n’est pas compilé, provoque une erreur de compilation sous le [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)] et [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] compilateur de WPF XAML. Pour plus d’informations sur les autres aspects de `x:Class` gestion dans WPF, consultez [Code-Behind et XAML dans WPF](../wpf/advanced/code-behind-and-xaml-in-wpf.md).  
+ Dans les applications WPF et le modèle d’application WPF, `x:Class` peuvent être déclarés en tant qu’attribut pour tout élément qui est la racine d’un fichier XAML et est compilé (où le XAML est inclus dans un projet d’application WPF avec `Page` action de génération), ou pour le < C4 > <xref:System.Windows.Application>  racine dans la définition d’application d’une application WPF compilée. Déclaration `x:Class` sur un élément autre qu’une racine de la page ou de la racine de l’application, ou un fichier de WPF XAML qui n’est pas compilé, provoque une erreur de compilation sous le [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)] et du compilateur XAML WPF de .NET Framework 3.5. Pour plus d’informations sur les autres aspects de `x:Class` gestion dans WPF, consultez [Code-Behind et XAML dans WPF](../wpf/advanced/code-behind-and-xaml-in-wpf.md).  
   
 ## <a name="xclass-for-windows-workflow-foundation"></a>x : Class pour Windows Workflow Foundation  
  Pour Windows Workflow Foundation, `x:Class` nomme la classe d’une activité personnalisée entièrement composée en XAML, ou nomme la classe partielle de la page XAML pour un concepteur d’activités avec code-behind.  
