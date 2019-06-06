@@ -6,19 +6,19 @@ helpviewer_keywords:
 - XAML [XAML Services], System.Xaml and WPF
 - System.Xaml [XAML Services], types migrated from WPF
 ms.assetid: d79dabf5-a2ec-4e8d-a37a-67c4ba8a2b91
-ms.openlocfilehash: e39c4ca5e4a6563a94fbf6f386283053a197f5ce
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: ea8ab81b192e0e8cb40988cb67cce08a7d9dab82
+ms.sourcegitcommit: 90f0bee0e8a416e45c78fa3ad4c91ef00e5228d5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690678"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66722581"
 ---
 # <a name="types-migrated-from-wpf-to-systemxaml"></a>Types migrés de WPF vers System.Xaml
 Dans .NET Framework 3.5 et [!INCLUDE[net_v30_long](../../../includes/net-v30-long-md.md)], à la fois [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] et Windows Workflow Foundation inclus une implémentation de langage XAML. La plupart des types publics qui fournissaient une extensibilité pour l'implémentation XAML WPF se trouvaient dans les assemblys WindowsBase, PresentationCore et PresentationFramework. De même, les types publics qui fournissaient une extensibilité pour Windows Workflow Foundation XAML se trouvaient dans l’assembly System.Workflow.ComponentModel. Dans le .NET Framework 4, certains des types liés à XAML sont migrés vers l’assembly System.Xaml. Une implémentation de .NET Framework courante de services de langage XAML permet de nombreux scénarios d’extensibilité XAML initialement définis par l’implémentation de XAML d’une infrastructure spécifique mais faisant désormais partie de la prise en charge globale du langage XAML de .NET Framework 4. Cette rubrique répertorie les types qui sont migrés et traite des problèmes relatifs à la migration.  
   
 <a name="assemblies_and_namespaces"></a>   
 ## <a name="assemblies-and-namespaces"></a>Assemblys et espaces de noms  
- Dans .NET Framework 3.5 et [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)], les types implémentés par WPF pour prendre en charge XAML se trouvaient généralement dans le <xref:System.Windows.Markup> espace de noms. La plupart de ces types se trouvaient dans l'assembly WindowsBase.  
+ Dans .NET Framework 3.5 et .NET Framework 3.0, les types implémentés par WPF pour prendre en charge XAML se trouvaient généralement dans le <xref:System.Windows.Markup> espace de noms. La plupart de ces types se trouvaient dans l'assembly WindowsBase.  
   
  Dans .NET Framework 4, vous trouverez un nouveau <xref:System.Xaml> espace de noms et un nouvel assembly System.Xaml. La plupart des types implémentés initialement pour XAML WPF sont maintenant fournis comme points ou services d'extensibilité pour les implémentations du langage XAML. En vue de les rendre disponibles pour des scénarios plus généraux, les types sont transférés de leur assembly WPF d'origine vers l'assembly System.Xaml. Cela permet des scénarios d’extensibilité XAML sans avoir à inclure les assemblys d’autres infrastructures (telles que WPF et Windows Workflow Foundation).  
   
@@ -37,11 +37,11 @@ Dans .NET Framework 3.5 et [!INCLUDE[net_v30_long](../../../includes/net-v30-lon
   
 <a name="markupextension"></a>   
 ## <a name="markupextension"></a>MarkupExtension  
- Dans le .NET Framework 3.5 et [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)], la <xref:System.Windows.Markup.MarkupExtension> classe pour WPF se trouvait dans l’assembly WindowsBase. Une classe parallèle pour Windows Workflow Foundation, <xref:System.Workflow.ComponentModel.Serialization.MarkupExtension>, se trouvait dans l’assembly System.Workflow.ComponentModel. Dans le .NET Framework 4, le <xref:System.Windows.Markup.MarkupExtension> classe est migrée vers l’assembly System.Xaml. Dans le .NET Framework 4, <xref:System.Windows.Markup.MarkupExtension> est destinée aux scénarios d’extensibilité XAML qui utilise les Services XAML .NET Framework, pas seulement pour ceux qui s’appuient sur des infrastructures spécifiques. Lorsque cela est possible, les infrastructures spécifiques ou le code utilisateur de l'infrastructure doivent également s'appuyer sur la classe <xref:System.Windows.Markup.MarkupExtension> pour l'extension XAML.  
+ Dans le .NET Framework 3.5 et .NET Framework 3.0, le <xref:System.Windows.Markup.MarkupExtension> classe pour WPF se trouvait dans l’assembly WindowsBase. Une classe parallèle pour Windows Workflow Foundation, <xref:System.Workflow.ComponentModel.Serialization.MarkupExtension>, se trouvait dans l’assembly System.Workflow.ComponentModel. Dans le .NET Framework 4, le <xref:System.Windows.Markup.MarkupExtension> classe est migrée vers l’assembly System.Xaml. Dans le .NET Framework 4, <xref:System.Windows.Markup.MarkupExtension> est destinée aux scénarios d’extensibilité XAML qui utilise les Services XAML .NET Framework, pas seulement pour ceux qui s’appuient sur des infrastructures spécifiques. Lorsque cela est possible, les infrastructures spécifiques ou le code utilisateur de l'infrastructure doivent également s'appuyer sur la classe <xref:System.Windows.Markup.MarkupExtension> pour l'extension XAML.  
   
 <a name="markupextension_supporting_service_classes"></a>   
 ## <a name="markupextension-supporting-service-classes"></a>Classes de services de prise en charge MarkupExtension  
- .NET framework 3.5 et [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)] pour WPF fournie plusieurs services qui étaient disponibles pour <xref:System.Windows.Markup.MarkupExtension> les implémenteurs et <xref:System.ComponentModel.TypeConverter> implémentations pour prendre en charge l’utilisation de types et des propriétés dans XAML. Ces services sont les suivants :  
+ .NET framework 3.5 et .NET Framework 3.0 pour WPF fournissaient plusieurs services qui étaient disponibles pour <xref:System.Windows.Markup.MarkupExtension> les implémenteurs et <xref:System.ComponentModel.TypeConverter> implémentations pour prendre en charge l’utilisation de types et des propriétés dans XAML. Ces services sont les suivants :  
   
 - <xref:System.Windows.Markup.IProvideValueTarget>  
   
@@ -69,11 +69,11 @@ Dans .NET Framework 3.5 et [!INCLUDE[net_v30_long](../../../includes/net-v30-lon
   
 <a name="valueserializer_and_supporting_classes"></a>   
 ## <a name="valueserializer-and-supporting-classes"></a>ValueSerializer et classes de prise en charge  
- La classe <xref:System.Windows.Markup.ValueSerializer> prend en charge la conversion de type en chaîne, en particulier dans les cas de sérialisation XAML où la sérialisation peut nécessiter plusieurs modes ou nœuds dans la sortie. Dans .NET Framework 3.5 et [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)], le <xref:System.Windows.Markup.ValueSerializer> pour WPF se trouvait dans l’assembly WindowsBase. Dans le .NET Framework 4, le <xref:System.Windows.Markup.ValueSerializer> classe se trouve dans System.Xaml et est destiné aux scénarios d’extensibilité XAML, pas seulement pour ceux qui s’appuient sur WPF. <xref:System.Windows.Markup.IValueSerializerContext> (service de prise en charge) et <xref:System.Windows.Markup.DateTimeValueSerializer> (sous-classe spécifique) sont également migrés vers System.Xaml.  
+ La classe <xref:System.Windows.Markup.ValueSerializer> prend en charge la conversion de type en chaîne, en particulier dans les cas de sérialisation XAML où la sérialisation peut nécessiter plusieurs modes ou nœuds dans la sortie. Dans .NET Framework 3.5 et .NET Framework 3.0, le <xref:System.Windows.Markup.ValueSerializer> pour WPF se trouvait dans l’assembly WindowsBase. Dans le .NET Framework 4, le <xref:System.Windows.Markup.ValueSerializer> classe se trouve dans System.Xaml et est destiné aux scénarios d’extensibilité XAML, pas seulement pour ceux qui s’appuient sur WPF. <xref:System.Windows.Markup.IValueSerializerContext> (service de prise en charge) et <xref:System.Windows.Markup.DateTimeValueSerializer> (sous-classe spécifique) sont également migrés vers System.Xaml.  
   
 <a name="xamlrelated_attributes"></a>   
 ## <a name="xaml-related-attributes"></a>Attributs XAML  
- XAML WPF incluait plusieurs attributs qui peuvent être appliqués aux types CLR pour indiquer certains éléments concernant leur comportement XAML. Voici une liste des attributs qui existaient dans les assemblys WPF dans .NET Framework 3.5 et [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)]. Ces attributs sont migrés vers System.Xaml dans .NET Framework 4.  
+ XAML WPF incluait plusieurs attributs qui peuvent être appliqués aux types CLR pour indiquer certains éléments concernant leur comportement XAML. Voici une liste des attributs qui existaient dans les assemblys WPF dans .NET Framework 3.5 et .NET Framework 3.0. Ces attributs sont migrés vers System.Xaml dans .NET Framework 4.  
   
 - <xref:System.Windows.Markup.AmbientAttribute>  
   
@@ -107,9 +107,9 @@ Dans .NET Framework 3.5 et [!INCLUDE[net_v30_long](../../../includes/net-v30-lon
   
 <a name="miscellaneous_classes"></a>   
 ## <a name="miscellaneous-classes"></a>Classes diverses  
- Le <xref:System.Windows.Markup.IComponentConnector> interface se trouvait dans WindowsBase dans le .NET Framework 3.5 et [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)], mais elle se trouve dans System.Xaml dans .NET Framework 4. <xref:System.Windows.Markup.IComponentConnector> est principalement conçu pour la prise en charge des outils et les compilateurs de balisage XAML.  
+ Le <xref:System.Windows.Markup.IComponentConnector> interface se trouvait dans WindowsBase dans le .NET Framework 3.5 et .NET Framework 3.0, mais se trouve dans System.Xaml dans .NET Framework 4. <xref:System.Windows.Markup.IComponentConnector> est principalement conçu pour la prise en charge des outils et les compilateurs de balisage XAML.  
   
- Le <xref:System.Windows.Markup.INameScope> interface se trouvait dans WindowsBase dans le .NET Framework 3.5 et [!INCLUDE[net_v30_short](../../../includes/net-v30-short-md.md)], mais elle se trouve dans System.Xaml dans .NET Framework 4. <xref:System.Windows.Markup.INameScope> définit les opérations de base pour une portée de nom XAML.  
+ Le <xref:System.Windows.Markup.INameScope> interface se trouvait dans WindowsBase dans le .NET Framework 3.5 et .NET Framework 3.0, mais se trouve dans System.Xaml dans .NET Framework 4. <xref:System.Windows.Markup.INameScope> définit les opérations de base pour une portée de nom XAML.  
   
 <a name="xamlrelated_classes_with_shared_names_that_exist_in_wpf_and_systemxaml"></a>   
 ## <a name="xaml-related-classes-with-shared-names-that-exist-in-wpf-and-systemxaml"></a>Classes XAML portant les noms partagés qui se trouvent dans WPF et System.Xaml  
