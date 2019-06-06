@@ -185,7 +185,6 @@
     - name: Prérequis pour Linux
       href: core/linux-prerequisites.md
     - name: Nouveautés de .NET Core
-      href: core/whats-new/index.md
       items:
         - name: "Nouveautés de .NET Core\_3.0"
           href: core/whats-new/dotnet-core-3-0.md
