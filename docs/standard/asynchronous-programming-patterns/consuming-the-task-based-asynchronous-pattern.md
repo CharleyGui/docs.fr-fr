@@ -11,19 +11,19 @@ helpviewer_keywords:
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f9cad5b24af86afdb1f3894dc124362fed732e93
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0e836329527740d490bc3ad96cd62d56bc0b7b3e
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64628881"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377739"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Utilisation du modèle asynchrone basé sur les tâches
 
 Lorsque vous utilisez le modèle asynchrone basé sur les tâches (TAP) pour travailler avec des opérations asynchrones, vous pouvez utiliser des rappels pour terminer l’attente sans blocage.  Pour les tâches, vous pouvez faire de même à l’aide de méthodes telles que <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>. La prise en charge asynchrone basée sur le langage masque les rappels en permettant aux opérations asynchrones d’être attendues dans le flux de contrôle normal, et le code généré par le compilateur fournit cette même prise en charge au niveau de l’API.
 
 ## <a name="suspending-execution-with-await"></a>Suspension de l’exécution avec Await
- À partir de [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], vous pouvez utiliser le mot-clé [await](~/docs/csharp/language-reference/keywords/await.md) en C# et l’[opérateur Await](~/docs/visual-basic/language-reference/operators/await-operator.md) en Visual Basic pour attendre de manière asynchrone les objets <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>. Quand vous attendez une <xref:System.Threading.Tasks.Task>, l’expression `await` est de type `void`. Quand vous attendez une <xref:System.Threading.Tasks.Task%601>, l’expression `await` est de type `TResult`. Une expression `await` doit se produire dans le corps d’une méthode asynchrone. Pour plus d’informations sur la prise en charge des langages C# et Visual Basic dans [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], consultez les spécifications des langages C# et Visual Basic.
+ À partir de .NET Framework 4.5, vous pouvez utiliser le mot clé [await](~/docs/csharp/language-reference/keywords/await.md) en C# et l’[opérateur Await](~/docs/visual-basic/language-reference/operators/await-operator.md) en Visual Basic pour attendre de manière asynchrone les objets <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>. Quand vous attendez une <xref:System.Threading.Tasks.Task>, l’expression `await` est de type `void`. Quand vous attendez une <xref:System.Threading.Tasks.Task%601>, l’expression `await` est de type `TResult`. Une expression `await` doit se produire dans le corps d’une méthode asynchrone. Pour plus d’informations sur la prise en charge des langages C# et Visual Basic dans .NET Framework 4.5, consultez les spécifications des langages C# et Visual Basic.
 
  En arrière-plan, la fonctionnalité await installe un rappel sur la tâche à l’aide d’une continuation.  Ce rappel reprend la méthode asynchrone au point d’interruption. Quand la méthode asynchrone est reprise, si l’opération attendue s’est terminée correctement et est une <xref:System.Threading.Tasks.Task%601>, son `TResult` est retourné.  Si la <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601> attendue s’est terminée dans l’état <xref:System.Threading.Tasks.TaskStatus.Canceled>, une exception <xref:System.OperationCanceledException> est levée.  Si la <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601> attendue s’est terminée dans l’état <xref:System.Threading.Tasks.TaskStatus.Faulted>, l’exception qui a entraîné l’erreur est levée. Une `Task` peut échouer à cause de plusieurs exceptions, mais seule une de ces exceptions est propagée. Toutefois, la propriété <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> retourne une exception <xref:System.AggregateException> qui contient toutes les erreurs.
 
@@ -833,7 +833,7 @@ private static void Produce(int data)
 ```
 
 > [!NOTE]
-> L’espace de noms <xref:System.Threading.Tasks.Dataflow> est disponible dans [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] via **NuGet**. Pour installer l’assembly qui contient l'espace de noms <xref:System.Threading.Tasks.Dataflow>, ouvrez votre projet dans Visual Studio, choisissez **Manage NuGet Packages** dans le menu Projet et recherchez en ligne le package Microsoft.Tpl.Dataflow.
+> L’espace de noms <xref:System.Threading.Tasks.Dataflow> est disponible dans .NET Framework 4.5 via **NuGet**. Pour installer l’assembly qui contient l'espace de noms <xref:System.Threading.Tasks.Dataflow>, ouvrez votre projet dans Visual Studio, choisissez **Manage NuGet Packages** dans le menu Projet et recherchez en ligne le package Microsoft.Tpl.Dataflow.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6ca7bf5ad4b4d145f484f46ee46220a58f326333
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 7db411e9ef38adb42c8df2059d166d1fa4184f95
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65635587"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378375"
 ---
 # <a name="whats-obsolete-in-the-net-framework-class-library"></a>Éléments obsolètes dans la bibliothèque de classes .NET Framework
 
@@ -43,7 +43,7 @@ Quand vous mettez à niveau et recompilez du code existant, l'utilisation d'un t
 
 - Examinez la documentation de ce domaine technologique pour savoir que faire face à des éléments obsolètes.
 
-Vous pouvez choisir de ne pas recompiler le code existant avec une version ultérieure du .NET Framework. À la place, vous pouvez spécifier la version du .NET Framework sur laquelle votre code compilé existant est exécuté. Supposons, par exemple, que vous possédiez une application nommée app1.exe qui a été compilée avec le [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)], mais que vous souhaitiez que l'application s'exécute avec le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Ce processus implique les étapes suivantes :
+Vous pouvez choisir de ne pas recompiler le code existant avec une version ultérieure du .NET Framework. À la place, vous pouvez spécifier la version du .NET Framework sur laquelle votre code compilé existant est exécuté. Supposons, par exemple, que vous avez une application nommée app1.exe qui a été compilée avec [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)], mais que vous souhaitez que l’application s’exécute avec .NET Framework 4.5. Ce processus implique les étapes suivantes :
 
 1. Créez un fichier de configuration pour votre fichier exécutable principal et nommez-le *Nom_app*.exe.config, où *Nom_app* est le nom du fichier exécutable de l’application. Pour l'application nommée app1.exe de notre exemple, vous devez créer un fichier de configuration intitulé app1.exe.config.
 

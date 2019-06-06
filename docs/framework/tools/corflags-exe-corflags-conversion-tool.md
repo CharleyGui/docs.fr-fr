@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: ef900f8f-71ca-4dde-9b8c-95ddb0d7d89c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7ee801a5af214e2306e6f1667b5e4ee067683fdb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 2ef10ba566842db26ed8c29643535c41aaca9806
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59093109"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378661"
 ---
 # <a name="corflagsexe-corflags-conversion-tool"></a>CorFlags.exe (outil de conversion CorFlags)
 L’outil de conversion CorFlags vous permet de configurer la section CorFlags de l’en-tête d’une image exécutable portable.  
@@ -38,8 +38,8 @@ CorFlags.exe assembly [options]
 |------------|-----------------|  
 |**/32BIT[REQ]+**|Définit l'indicateur 32BITREQUIRED.|  
 |**/32BIT[REQ]-**|Efface l'indicateur 32BITREQUIRED.|  
-|**/32BITPREF+**|Définit l'indicateur 32BITPREFERRED. L'application s'exécute comme un processus 32 bits même sur les plateformes 64 bits. Affectez cet indicateur uniquement sur les fichiers EXE. Si l'indicateur est défini sur une DLL, la DLL ne charge pas dans les processus 64 bits, et une exception <xref:System.BadImageFormatException> est levée. Un fichier EXE avec cet indicateur peut être chargé dans un processus 64 bits.<br /><br /> Nouveau dans le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].|  
-|**/32BITPREF-**|Efface l'indicateur 32BITPREFERRED.<br /><br /> Nouveau dans le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].|  
+|**/32BITPREF+**|Définit l'indicateur 32BITPREFERRED. L'application s'exécute comme un processus 32 bits même sur les plateformes 64 bits. Affectez cet indicateur uniquement sur les fichiers EXE. Si l'indicateur est défini sur une DLL, la DLL ne charge pas dans les processus 64 bits, et une exception <xref:System.BadImageFormatException> est levée. Un fichier EXE avec cet indicateur peut être chargé dans un processus 64 bits.<br /><br /> Nouveautés de .NET Framework 4.5.|  
+|**/32BITPREF-**|Efface l'indicateur 32BITPREFERRED.<br /><br /> Nouveautés de .NET Framework 4.5.|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
 |**/Force**|Force une mise à jour même si l'assembly est associé à un nom fort. **Important :**  si vous mettez à jour un assembly à nom fort, vous devez le signer à nouveau avant d’exécuter son code.|  
 |**/help**|Affiche la syntaxe et les options de commande de l'outil.|  

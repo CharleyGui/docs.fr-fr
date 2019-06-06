@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: f99126b5-c396-48f9-8233-8f36b4c9e717
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d750087cc000ad31a24d91411c0885a75d59e74f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9264d8eb7923663061f9bccfffe5b8f5254549f0
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54501942"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66379889"
 ---
 # <a name="mitigation-pointer-based-touch-and-stylus-support"></a>Atténuation : prise en charge du pointeur tactile et du stylet
 
@@ -38,7 +38,7 @@ Voici des problèmes connus avec le paramètre de pile facultative tactile/de st
 
   - Le glisser-déplacer ne peut plus être lancé par des événements tactiles/du stylet.
 
-      Cela peut éventuellement bloquer l’application jusqu'à ce que l’entrée de la souris soit détectée. Au lieu de cela, les développeurs doivent lancer le glisser-déplacer à partir des événements de souris.
+      Cela peut éventuellement entraîner une absence de réponse de la part de l’application jusqu’à ce que l’entrée de la souris soit détectée. Au lieu de cela, les développeurs doivent lancer le glisser-déplacer à partir des événements de souris.
 
 ## <a name="opting-in-to-wmpointer-based-touchstylus-support"></a>Si vous activez la prise en charge tactile/du stylet basée sur WM_POINTER
 

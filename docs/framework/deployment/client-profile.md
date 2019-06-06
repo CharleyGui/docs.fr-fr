@@ -11,21 +11,21 @@ helpviewer_keywords:
 ms.assetid: f0219919-1f02-4588-8704-327a62fd91f1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8373ed288ff3e8e3f7992729e57b366a4c0043a4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 86058eb288b54a4bc316900f165ec61e4d05eb1f
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59126748"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457283"
 ---
 # <a name="net-framework-client-profile"></a>.NET Framework Client Profile
-.NET Client Profile est un sous-ensemble du .NET Framework fourni avec [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] et les versions antérieures, et optimisé pour les applications clientes. Le .NET Framework est une plateforme de développement pour Windows Phone et Microsoft Azure qui fournit un environnement managé d'exécution d'applications et la bibliothèque de classes .NET Framework. Le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] et les versions antérieures fournissaient deux options de déploiement : le .NET Framework complet et Client Profile. Client Profile a permis d'accélérer le déploiement et de réduire les packages d'installation par rapport au .NET Framework complet.  
+.NET Client Profile est un sous-ensemble du .NET Framework fourni avec .NET Framework 4 et versions antérieures, et optimisé pour les applications clientes. Le .NET Framework est une plateforme de développement pour Windows Phone et Microsoft Azure qui fournit un environnement managé d'exécution d'applications et la bibliothèque de classes .NET Framework. .NET Framework 4 et versions antérieures fournissaient deux options de déploiement : le .NET Framework complet et Client Profile. Client Profile a permis d'accélérer le déploiement et de réduire les packages d'installation par rapport au .NET Framework complet.  
   
- Depuis le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], Client Profile a été supprimé et seul le package redistribuable complet est disponible. Les optimisations fournies par le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], telles qu'une plus petite taille de téléchargement et un déploiement plus rapide, ont été supprimées pour les besoins d'un module de déploiement distinct. Le package redistribuable unique rationalise le processus d'installation et simplifie les options de déploiement de votre application.  
+ À compter de .NET Framework 4.5, Client Profile a été supprimé et seul le package redistribuable complet est disponible. Les optimisations fournies par .NET Framework 4.5, telles qu’une plus petite taille de téléchargement et un déploiement plus rapide, ont supprimé le besoin d’un package de déploiement distinct. Le package redistribuable unique rationalise le processus d'installation et simplifie les options de déploiement de votre application.  
   
  Toutefois, si vous ciblez .NET Framework 4 ou 3.5 et que vous souhaitez en savoir plus sur Client Profile et quand l’utiliser, consultez [.NET Framework Client Profile](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc656912%28v=vs.100%29) dans la documentation .NET Framework 4.  
   
- Lorsque vous installez [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], .NET Framework 4 Client Profile est mis à jour vers la version complète du .NET Framework. Pour plus d’informations sur l’installation du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], consultez [Installer le .NET Framework pour les développeurs](../../../docs/framework/install/guide-for-developers.md).  
+ Lorsque vous installez .NET Framework 4.5, .NET Framework 4 Client Profile est mis à jour vers la version complète du .NET Framework. Pour plus d’informations sur l’installation de .NET Framework 4.5, consultez [Installer le .NET Framework pour les développeurs](../../../docs/framework/install/guide-for-developers.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

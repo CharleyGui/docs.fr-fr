@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e425394df0d04ffbb4cde41c83a9efe3c5b4abe0
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 011bb2d7a1a700ba4daf86d96d825373e353f57e
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59481260"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457428"
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (Native Image Generator)
 
@@ -139,7 +139,7 @@ Pour exécuter Ngen.exe, vous devez disposer de privilèges d'administrateur.
 > [!CAUTION]
 > N'exécutez pas Ngen.exe sur les assemblys dont le niveau de confiance n'est pas suffisant. Si vous démarrez avec le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], Ngen.exe compile des assemblys avec une confiance totale et la stratégie de sécurité d'accès du code (CAS) n'est plus évaluée.
 
-Si vous démarrez avec le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], les images natives générées avec Ngen.exe ne peuvent plus être chargées dans les applications qui s'exécutent avec une confiance partielle. À la place, le compilateur juste-à-temps (JIT) est appelé.
+À compter de .NET Framework 4, les images natives générées avec Ngen.exe ne peuvent plus être chargées dans les applications qui s’exécutent avec une confiance partielle. À la place, le compilateur juste-à-temps (JIT) est appelé.
 
 Ngen.exe génère des images natives pour l'assembly spécifié par l’argument `assemblyname` passé à l’action `install` et toutes ses dépendances. Les dépendances sont déterminées à partir de références du manifeste d'assembly. Le seul scénario dans lequel vous devez installer une dépendance séparément est lorsque l'application la charge à l'aide de la réflexion, en appelant la méthode <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> par exemple.
 

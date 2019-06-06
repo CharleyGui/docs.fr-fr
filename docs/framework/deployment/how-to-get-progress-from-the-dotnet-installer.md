@@ -9,20 +9,20 @@ helpviewer_keywords:
 ms.assetid: 0a1a3ba3-7e46-4df2-afd3-f3a8237e1c4f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bdb74259d7b034511722b1d2992b4ec16adb551e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 991053a2728ec7b8c5d9157dbf6307e0974479c6
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64750426"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66379929"
 ---
 # <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Procédure : suivre la progression du programme d’installation de .NET Framework 4.5
 
-Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] est un runtime redistribuable. Si vous développez des applications pour cette version du .NET Framework, vous pouvez inclure (chaîner) le programme d’installation du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] en tant que composant requis du programme d’installation de votre application. Pour présenter une expérience d’installation unifiée ou personnalisée, vous souhaiterez peut-être lancer le programme d’installation du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] en mode silencieux et suivre sa progression tout en affichant la progression de l’installation de votre application. Pour activer le suivi en mode silencieux, le programme d’installation du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] (qui peut être observé) définit un protocole en utilisant un segment d’E/S mappées en mémoire (MMIO) pour communiquer avec votre programme d’installation (l’observateur ou programme de chaînage). Ce protocole définit un moyen pour un programme de chaînage d’obtenir des informations sur la progression, d’obtenir des résultats détaillés, de répondre aux messages et d’annuler l’installation du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].
+.NET Framework 4.5 est un runtime redistribuable. Si vous développez des applications pour cette version du .NET Framework, vous pouvez inclure (chaîner) le programme d’installation de .NET Framework 4.5 en tant que composant requis du programme d’installation de votre application. Pour présenter une expérience d’installation unifiée ou personnalisée, vous souhaiterez peut-être lancer le programme d’installation de .NET Framework 4.5 en mode silencieux et suivre sa progression tout en affichant la progression de l’installation de votre application. Pour activer le suivi en mode silencieux, le programme d’installation de .NET Framework 4.5 (qui peut être observé) définit un protocole en utilisant un segment d’E/S mappées en mémoire (MMIO) pour communiquer avec votre programme d’installation (l’observateur ou le programme de chaînage). Ce protocole définit un moyen pour un programme de chaînage d’obtenir des informations sur la progression, d’obtenir des résultats détaillés, de répondre aux messages et d’annuler l’installation de .NET Framework 4.5.
 
-- **Invocation**. Pour appeler le programme d’installation du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] et recevoir des informations sur la progression à partir de la section MMIO, votre programme d’installation doit effectuer les opérations suivantes :
+- **Invocation**. Pour appeler le programme d’installation de .NET Framework 4.5 et recevoir des informations sur la progression à partir de la section MMIO, votre programme d’installation doit effectuer les opérations suivantes :
 
-    1. Appelez le programme redistribuable du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] :
+    1. Appeler le programme redistribuable de .NET Framework 4.5 :
 
         ```
         dotNetFx45_Full_x86_x64.exe /q /norestart /pipe section-name
@@ -36,9 +36,9 @@ Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] est un runtime redistrib
 
         Remplacez ces noms par des noms uniques à votre programme d’installation.
 
-    2. Lisez à partir de la section MMIO. Dans le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], les opérations d’installation et de téléchargement sont simultanées : une partie du .NET Framework peut s’installer pendant qu’une autre partie est en cours de téléchargement. Ainsi, la progression est renvoyée (autrement dit, écrite) dans la section MMIO sous forme de deux nombres (`m_downloadSoFar` et `m_installSoFar`) qui vont de 0 à 255. Quand la valeur 255 est écrite et que le .NET Framework se ferme, l’installation est terminée.
+    2. Lisez à partir de la section MMIO. Dans .NET Framework 4.5, les opérations d’installation et de téléchargement sont simultanées : une partie du .NET Framework peut s’installer pendant qu’une autre partie est en cours de téléchargement. Ainsi, la progression est renvoyée (autrement dit, écrite) dans la section MMIO sous forme de deux nombres (`m_downloadSoFar` et `m_installSoFar`) qui vont de 0 à 255. Quand la valeur 255 est écrite et que le .NET Framework se ferme, l’installation est terminée.
 
-- **Codes de sortie**. Les codes de sortie suivants de la commande d’appel du programme redistribuable du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] indiquent si le programme d’installation a réussi ou échoué :
+- **Codes de sortie**. Les codes de sortie suivants de la commande d’appel du programme redistribuable de .NET Framework 4.5 indiquent si le programme d’installation a réussi ou échoué :
 
   - 0 : l’installation s’est terminée correctement.
 
@@ -52,7 +52,7 @@ Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] est un runtime redistrib
 
 ## <a name="chainer-sample"></a>Exemple de programme de chaînage
 
-L’exemple de programme de chaînage lance et suit de manière silencieuse l’installation du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] tout en affichant la progression. Cet exemple est similaire à l’exemple de programme de chaînage fourni pour le .NET Framework 4. Toutefois, il peut en plus éviter les redémarrages système en traitant la boîte de message pour la fermeture des applications .NET Framework 4. Pour plus d’informations sur cette boîte de message, consultez [Réduction des redémarrages système lors des installations du .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md). Vous pouvez utiliser cet exemple avec le programme d’installation du .NET Framework 4. Dans ce scénario, le message n’est tout simplement pas envoyé.
+L’exemple de programme de chaînage lance et suit de manière silencieuse l’installation de .NET Framework 4.5 tout en affichant la progression. Cet exemple est similaire à l’exemple de programme de chaînage fourni pour le .NET Framework 4. Toutefois, il peut en plus éviter les redémarrages système en traitant la boîte de message pour la fermeture des applications .NET Framework 4. Pour plus d’informations sur cette boîte de message, consultez [Réduction des redémarrages système lors des installations du .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md). Vous pouvez utiliser cet exemple avec le programme d’installation du .NET Framework 4. Dans ce scénario, le message n’est tout simplement pas envoyé.
 
 > [!WARNING]
 > Vous devez exécuter l’exemple en tant qu’administrateur.
@@ -63,7 +63,7 @@ Les sections suivantes décrivent les fichiers importants dans cet exemple : MM
 
 #### <a name="mmiochainerh"></a>MMIOChainer.h
 
-- Le fichier MMIOChainer.h (voir le [code complet](https://go.microsoft.com/fwlink/?LinkId=231369)) contient la définition de la structure de données et la classe de base à partir de laquelle la classe de programme de chaînage doit être dérivée. Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] étend la structure de données MMIO pour gérer les données dont a besoin le programme d’installation du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Les modifications apportées à la structure MMIO sont à compatibilité descendante. Ainsi, un programme de chaînage du .NET Framework 4 peut fonctionner avec le programme d’installation du .NET Framework 4.5 sans nécessiter de recompilation. Toutefois, ce scénario ne prend pas en charge la fonctionnalité de réduction des redémarrages système.
+- Le fichier MMIOChainer.h (voir le [code complet](https://go.microsoft.com/fwlink/?LinkId=231369)) contient la définition de la structure de données et la classe de base à partir de laquelle la classe de programme de chaînage doit être dérivée. .NET Framework 4.5 étend la structure de données MMIO pour gérer les données dont a besoin le programme d’installation de .NET Framework 4.5. Les modifications apportées à la structure MMIO sont à compatibilité descendante. Ainsi, un programme de chaînage du .NET Framework 4 peut fonctionner avec le programme d’installation du .NET Framework 4.5 sans nécessiter de recompilation. Toutefois, ce scénario ne prend pas en charge la fonctionnalité de réduction des redémarrages système.
 
     Un champ de version permet d’identifier les révisions du format de message et de la structure. Le programme d’installation du .NET Framework détermine la version de l’interface de programme de chaînage en appelant la fonction `VirtualQuery` pour déterminer la taille du mappage de fichier. Si la taille est assez élevée pour contenir le champ de version, le programme d’installation du .NET Framework utilise la valeur spécifiée. Si le mappage de fichier est trop petit pour contenir un champ de version, ce qui est le cas avec le .NET Framework 4, le processus d’installation part du principe que la version est 0 (4). Si le programme de chaînage ne prend pas en charge la version du message que le programme d’installation du .NET Framework souhaite envoyer, celui-ci considère que la réponse est « Ignorer ».
 
@@ -96,7 +96,7 @@ Les sections suivantes décrivent les fichiers importants dans cet exemple : MM
         };
     ```
 
-- La structure de données `MmioDataStructure` ne doit pas être utilisée directement. Utilisez plutôt la classe `MmioChainer` pour implémenter votre programme de chaînage. Dérivez à partir de la classe `MmioChainer` pour chaîner le redistribuable du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].
+- La structure de données `MmioDataStructure` ne doit pas être utilisée directement. Utilisez plutôt la classe `MmioChainer` pour implémenter votre programme de chaînage. Dérivez à partir de la classe `MmioChainer` pour chaîner le redistribuable de .NET Framework 4.5.
 
 #### <a name="iprogressobserverh"></a>IProgressObserver.h
 
@@ -151,7 +151,7 @@ Les sections suivantes décrivent les fichiers importants dans cet exemple : MM
     }
     ```
 
-- Avant de lancer l’installation, le programme de chaînage vérifie si le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] est déjà installé en appelant `IsNetFx4Present` :
+- Avant de lancer l’installation, le programme de chaînage vérifie si .NET Framework 4.5 est déjà installé en appelant `IsNetFx4Present` :
 
     ```cpp
     ///  Checks for presence of the .NET Framework 4.
@@ -307,7 +307,7 @@ Les sections suivantes décrivent les fichiers importants dans cet exemple : MM
     ```
 
     > [!IMPORTANT]
-    > Le redistribuable du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] écrit généralement de nombreux messages de progression et un message unique qui indique l’achèvement (du côté du programme de chaînage). Il lit également de façon asynchrone, à la recherche d’enregistrements `Abort`. S’il reçoit un enregistrement `Abort`, il annule l’installation et écrit un enregistrement terminé avec E_ABORT comme données une fois que l’installation a été annulée et que les opérations d’installation ont été annulées.
+    > Le redistribuable de .NET Framework 4.5 écrit généralement de nombreux messages de progression et un message unique qui indique l’achèvement (du côté du programme de chaînage). Il lit également de façon asynchrone, à la recherche d’enregistrements `Abort`. S’il reçoit un enregistrement `Abort`, il annule l’installation et écrit un enregistrement terminé avec E_ABORT comme données une fois que l’installation a été annulée et que les opérations d’installation ont été annulées.
 
 Un serveur classique crée un nom de fichier MMIO aléatoire, crée le fichier (comme illustré dans l’exemple de code précédent, `Server::CreateSection`) et lance le redistribuable en utilisant la méthode `CreateProcess` et en passant le nom du canal avec l’option `-pipe someFileSectionName`. Le serveur doit implémenter les méthodes `OnProgress`, `Send` et `Finished` avec du code d’application propre à l’interface utilisateur.
 

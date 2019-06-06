@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: 1c4de9d7-9aba-427a-8f38-0ab9bfb8f85e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e75b838a2c6126fe82e97faac624a9ad6b7ea132
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f8811fd916afcb39c466b8c9a60f7c7ed2a62ea8
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626229"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66301436"
 ---
 # <a name="mitigation-product-versioning"></a>Atténuation : gestion de versions de produit
-Dans le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] et ultérieur, la gestion de versions de produit a changé par rapport aux versions précédentes du .NET Framework (.NET Framework 4, 4.5, 4.5.1 et 4.5.2).  
+Dans .NET Framework 4.6 et ultérieur, la gestion des versions de produit a changé par rapport aux versions précédentes du .NET Framework (.NET Framework 4, 4.5, 4.5.1 et 4.5.2).  
   
 ## <a name="product-versioning-changes"></a>Modifications de la gestion de versions de produit  
  Voici le détail des modifications :  
@@ -23,7 +23,7 @@ Dans le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] et ultérieur, la g
   
 - Les attributs <xref:System.Reflection.AssemblyFileVersionAttribute> et <xref:System.Reflection.AssemblyInformationalVersionAttribute> pour les assemblys managés ont des valeurs <xref:System.Version> au format `4.6.X.0` pour le .NET Framework 4.6 et ses versions intermédiaires, et `4.7.X.0` pour le Framework .NET 4.7.  
   
-- Dans le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], 4.6.1, 4.6.2 et 4.7, la propriété <xref:System.Environment.Version%2A?displayProperty=nameWithType> retourne la chaîne de version fixe `4.0.30319.42000`. Dans le .NET Framework 4, 4.5, 4.5.1 et 4.5.2, elle retourne les chaînes de version au format `4.0.30319.xxxxx` (par exemple, « 4.0.30319.18010 »). Notez que nous ne recommandons pas que le code d'application prenne de nouvelles dépendances sur la propriété <xref:System.Environment.Version%2A?displayProperty=nameWithType>.  
+- Dans .NET Framework 4.6, 4.6.1, 4.6.2 et 4.7, la propriété <xref:System.Environment.Version%2A?displayProperty=nameWithType> retourne la chaîne de version fixe `4.0.30319.42000`. Dans le .NET Framework 4, 4.5, 4.5.1 et 4.5.2, elle retourne les chaînes de version au format `4.0.30319.xxxxx` (par exemple, « 4.0.30319.18010 »). Notez que nous ne recommandons pas que le code d'application prenne de nouvelles dépendances sur la propriété <xref:System.Environment.Version%2A?displayProperty=nameWithType>.  
   
 ### <a name="handling-the-product-versioning-changes"></a>Gestion des modifications du contrôle de version de produit  
  En général, les applications doivent s'appuyer sur les techniques recommandées pour la détection d'éléments tels que la version de runtime du .NET Framework et le répertoire d'installation :  
@@ -37,7 +37,7 @@ Dans le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] et ultérieur, la g
   
 - Pour déterminer le chemin d'accès du répertoire du Common Language Runtime du .NET Framework, appelez la méthode <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory%2A?displayProperty=nameWithType>.  
   
-- Pour obtenir la version du CLR, appelez la méthode <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetSystemVersion%2A?displayProperty=nameWithType>.   Pour le .NET Framework 4 et ses versions intermédiaires (.NET Framework 4.5, 4.5.1, 4.5.2, ainsi que le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], 4.6.1, 4.6.2 et 4.7), elle retourne la chaîne `v4.0.30319`.  
+- Pour obtenir la version du CLR, appelez la méthode <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetSystemVersion%2A?displayProperty=nameWithType>.   Pour .NET Framework 4 et ses versions intermédiaires (.NET Framework 4.5, 4.5.1, 4.5.2 ainsi que .NET Framework 4.6, 4.6.1, 4.6.2 et 4.7), elle retourne la chaîne `v4.0.30319`.  
   
 ## <a name="see-also"></a>Voir aussi
 

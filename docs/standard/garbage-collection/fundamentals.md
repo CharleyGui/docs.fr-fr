@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ccea0aace05016f8e485de92d61f23622d7db797
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c6b7b120a5a21301ff82aa8ebd1cfc169f7884e4
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615157"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457440"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Notions de base du garbage collection
 <a name="top"></a> Dans le Common Language Runtime (CLR), le garbage collector a un rôle de gestionnaire de mémoire automatique. Il fournit les avantages suivants :  
@@ -149,7 +149,7 @@ ms.locfileid: "64615157"
   
      Étant donné que les collections de génération 2 peuvent occuper plusieurs segments, les objets promus dans la génération 2 peuvent être déplacés dans un segment plus ancien. Les survivants des générations 1 et 2 peuvent être déplacés vers un autre segment, car ils sont promus à la génération 2.  
   
-     Normalement, le tas d'objets volumineux n'est pas compacté, car la copie d'objets volumineux implique une diminution des performances. Toutefois, à partir de [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], vous pouvez utiliser la propriété <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> pour compacter le tas d'objets volumineux à la demande.  
+     Normalement, le tas d'objets volumineux n'est pas compacté, car la copie d'objets volumineux implique une diminution des performances. Toutefois, à partir de .NET Framework 4.5.1, vous pouvez utiliser la propriété <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> pour compacter le tas d’objets volumineux à la demande.  
   
  Le garbage collector utilise les informations suivantes pour déterminer si les objets sont vivants :  
   
@@ -253,7 +253,7 @@ Garbage collection simultané
  Avec le garbage collection d'arrière-plan, les générations éphémères (0 et 1) sont collectées si nécessaire pendant la collecte de la génération 2. Il n'y a aucun paramètre pour le garbage collection d'arrière-plan. Il est automatiquement activé avec le garbage collection simultané. Le garbage collection d'arrière-plan vient en remplacement du garbage collection simultané. Comme le garbage collection simultané, le garbage collection d'arrière-plan est exécuté sur un thread dédié et est uniquement applicable aux collections de génération 2.  
   
 > [!NOTE]
->  Le garbage collection d'arrière-plan est uniquement disponible dans le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] et les versions ultérieures. Dans [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], il est pris en charge uniquement pour le garbage collection de station de travail. Depuis .NET Framework 4.5, le garbage collection en arrière-plan est disponible pour les deux opérations garbage collection de station de travail et de serveur.  
+>  Le garbage collection d’arrière-plan est uniquement disponible dans .NET Framework 4 et versions ultérieures. Dans .NET Framework 4, il est pris en charge uniquement pour le garbage collection de station de travail. Depuis .NET Framework 4.5, le garbage collection en arrière-plan est disponible pour les deux opérations garbage collection de station de travail et de serveur.  
   
  Une collecte sur des générations éphémères pendant le garbage collection d'arrière-plan est appelée garbage collection de premier plan. Lorsque des opérations garbage collection de premier plan ont lieu, tous les threads managés sont suspendus.  
   

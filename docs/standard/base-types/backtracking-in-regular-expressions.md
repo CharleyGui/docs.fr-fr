@@ -20,12 +20,12 @@ ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 88e8bfadf34aecb207b1d2858eacf40338363599
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 289b6997a4d17463072418fbf17f5f99874f4988
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634727"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378166"
 ---
 # <a name="backtracking-in-regular-expressions"></a>Rétroaction dans les expressions régulières
 <a name="top"></a> La rétroaction se produit lorsqu'un modèle d'expression régulière contient des quantificateurs [facultatifs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) ou des [constructions d'alternative](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md), et que le moteur des expressions régulières retourne à l'état enregistré précédent pour poursuivre la recherche d'une correspondance. La rétroaction est essentielle à la puissance des expressions régulières ; elle permet aux expressions d'être puissantes et flexibles et de correspondre à des modèles très complexes. Cependant, cette puissance a un coût. La rétroaction est souvent le facteur le plus important qui affecte les performances du moteur des expressions régulières. Heureusement, le développeur contrôle le comportement du moteur des expressions régulières et comment il utilise la rétroaction. Cette rubrique explique comment la rétroaction fonctionne et comment elle peut être activée.  
@@ -130,7 +130,7 @@ ms.locfileid: "64634727"
   
 <a name="Timeout"></a>   
 ### <a name="defining-a-time-out-interval"></a>Définir un intervalle de délai d'attente  
- À partir de [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], vous pouvez définir une valeur de délai d'attente qui représente le plus long intervalle recherché par le moteur des expressions régulières pour une seule mise en correspondance avant qu'il n'abandonne la tentative et ne lève une exception <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> . Vous spécifiez l'intervalle de délai d'attente en donnant une valeur <xref:System.TimeSpan> au constructeur <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> pour les expressions régulières d'instances. De plus, chaque méthode de mise en correspondance statique possède une surcharge avec un paramètre <xref:System.TimeSpan> qui vous permet de spécifier une valeur de délai d'attente. Par défaut, l'intervalle de délai d'attente est défini sur <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType> et le moteur des expressions régulières n'expire pas.  
+ À partir de .NET Framework 4.5, vous pouvez définir un intervalle de délai d’attente qui représente la durée maximale pendant laquelle le moteur d’expression régulière recherche une correspondance avant d’abandonner la tentative et de lever une exception <xref:System.Text.RegularExpressions.RegexMatchTimeoutException>. Vous spécifiez l'intervalle de délai d'attente en donnant une valeur <xref:System.TimeSpan> au constructeur <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> pour les expressions régulières d'instances. De plus, chaque méthode de mise en correspondance statique possède une surcharge avec un paramètre <xref:System.TimeSpan> qui vous permet de spécifier une valeur de délai d'attente. Par défaut, l'intervalle de délai d'attente est défini sur <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType> et le moteur des expressions régulières n'expire pas.  
   
 > [!IMPORTANT]
 >  Il est recommandé de toujours définir un intervalle de délai d'attente si votre expression régulière repose sur la restauration.  

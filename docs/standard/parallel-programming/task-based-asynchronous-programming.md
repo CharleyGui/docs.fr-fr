@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0ecc1090f2697eb0243a081cde70338c0e6fffec
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: ad13a5771adbfbd389feeccd3e8c833c4c2f778a
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58409924"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66300634"
 ---
 # <a name="task-based-asynchronous-programming"></a>Programmation asynchrone basée sur les tâches
 
@@ -113,21 +113,21 @@ Les options peuvent être combinées avec une opération de bits **OR**. L’exe
 
 ## <a name="tasks-threads-and-culture"></a>Tâches, threads et culture
 
-Chaque thread possède une culture associée et une culture d'interface utilisateur, respectivement définies par les propriétés <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> et <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType>. La culture d'un thread est utilisée dans des opérations telles que la mise en forme, l'analyse, le tri et la comparaison de chaînes. La culture d'interface utilisateur d'un thread est utilisée dans la recherche de ressources. En règle générale, sauf si vous spécifiez une culture par défaut pour tous les threads dans un domaine d'application à l'aide des propriétés <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> et <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType>, la culture par défaut et la culture d'interface utilisateur d'un thread sont définies par la culture du système. Si vous définissez explicitement la culture d'un thread et lancez un nouveau thread, ce dernier n'hérite pas de la culture du thread appelant ; au lieu de cela, sa culture est la culture du système par défaut. Le modèle de programmation basé sur les tâches pour les applications qui ciblent des versions du .NET Framework antérieures à [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] respecte cette pratique.
+Chaque thread possède une culture associée et une culture d'interface utilisateur, respectivement définies par les propriétés <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> et <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType>. La culture d'un thread est utilisée dans des opérations telles que la mise en forme, l'analyse, le tri et la comparaison de chaînes. La culture d'interface utilisateur d'un thread est utilisée dans la recherche de ressources. En règle générale, sauf si vous spécifiez une culture par défaut pour tous les threads dans un domaine d'application à l'aide des propriétés <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> et <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType>, la culture par défaut et la culture d'interface utilisateur d'un thread sont définies par la culture du système. Si vous définissez explicitement la culture d'un thread et lancez un nouveau thread, ce dernier n'hérite pas de la culture du thread appelant ; au lieu de cela, sa culture est la culture du système par défaut. Le modèle de programmation basé sur les tâches pour les applications qui ciblent des versions du .NET Framework antérieures à .NET Framework 4.6 respecte cette pratique.
 
 > [!IMPORTANT]
-> Notez que la culture du thread appelant dans le cadre du contexte d’une tâche s’applique aux applications qui *ciblent* le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], et non celles qui *s’exécutent sous* le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]. Vous pouvez cibler une version particulière du .NET Framework quand vous créez votre projet dans Visual Studio en sélectionnant une version dans la liste déroulante située en haut de la boîte de dialogue **Nouveau projet**. Sinon, en dehors de Visual Studio, vous pouvez utiliser l’attribut <xref:System.Runtime.Versioning.TargetFrameworkAttribute>. Pour les applications qui ciblent des versions du .NET Framework antérieures au [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], ou qui ne ciblent pas une version spécifique du .NET Framework, la culture d'une tâche demeure déterminée par la culture du thread sur lequel la tâche s'exécute.
+> Notez que la culture du thread appelant dans le cadre du contexte d’une tâche s’applique aux applications qui *ciblent* .NET Framework 4.6, et non celles qui *s’exécutent sous* .NET Framework 4.6. Vous pouvez cibler une version particulière du .NET Framework quand vous créez votre projet dans Visual Studio en sélectionnant une version dans la liste déroulante située en haut de la boîte de dialogue **Nouveau projet**. Sinon, en dehors de Visual Studio, vous pouvez utiliser l’attribut <xref:System.Runtime.Versioning.TargetFrameworkAttribute>. Pour les applications qui ciblent des versions du .NET Framework antérieures à .NET Framework 4.6, ou qui ne ciblent pas une version spécifique du .NET Framework, la culture d’une tâche demeure déterminée par la culture du thread sur lequel la tâche s’exécute.
 
-À compter des applications qui ciblent le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], la culture du thread appelant est héritée par chaque tâche, même si la tâche s'exécute de façon asynchrone sur un thread de pool de threads.
+À compter des applications qui ciblent .NET Framework 4.6, la culture du thread appelant est héritée par chaque tâche, même si la tâche s’exécute de façon asynchrone sur un thread de pool de threads.
 
-L'exemple suivant illustre cette situation de façon simple. Il utilise l'attribut <xref:System.Runtime.Versioning.TargetFrameworkAttribute> pour cibler le [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] et définit la culture actuelle de l'application sur français (France) ou, si français (France) est déjà la culture actuelle, sur anglais (États-Unis). Il appelle ensuite un délégué nommé `formatDelegate` qui retourne des nombres mis en forme en tant que valeurs de devise dans la nouvelle culture. Que le délégué exécute une tâche de manière synchrone ou asynchrone, il retourne le résultat attendu, car la culture du thread appelant est héritée par la tâche asynchrone.
+L'exemple suivant illustre cette situation de façon simple. Il utilise l’attribut <xref:System.Runtime.Versioning.TargetFrameworkAttribute> pour cibler .NET Framework 4.6 et définit la culture actuelle de l’application sur Français (France) ou, si Français (France) est déjà la culture actuelle, sur Anglais (États-Unis). Il appelle ensuite un délégué nommé `formatDelegate` qui retourne des nombres mis en forme en tant que valeurs de devise dans la nouvelle culture. Que le délégué exécute une tâche de manière synchrone ou asynchrone, il retourne le résultat attendu, car la culture du thread appelant est héritée par la tâche asynchrone.
 
 [!code-csharp[System.Globalization.CultureInfo.Class.Async#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/cs/asyncculture1.cs#5)]
 [!code-vb[System.Globalization.CultureInfo.Class.Async#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/vb/asyncculture1.vb#5)]
 
 Si vous utilisez Visual Studio, vous pouvez omettre l'attribut <xref:System.Runtime.Versioning.TargetFrameworkAttribute>. Pour cela, vous devez sélectionner le .NET Framework 4.6 comme cible au moment de la création du projet dans la boîte de dialogue **Nouveau projet**.
 
-Pour la sortie qui reflète le comportement des applications ciblant des versions du .NET Framework antérieures à [!INCLUDE[net_v46](../../../includes/net-v46-md.md)], supprimez l'attribut <xref:System.Runtime.Versioning.TargetFrameworkAttribute> du code source. La sortie reflète les conventions de mise en forme de la culture du système par défaut, pas de la culture du thread appelant.
+Pour la sortie qui reflète le comportement des applications ciblant des versions du .NET Framework antérieures à .NET Framework 4.6, supprimez l’attribut <xref:System.Runtime.Versioning.TargetFrameworkAttribute> du code source. La sortie reflète les conventions de mise en forme de la culture du système par défaut, pas de la culture du thread appelant.
 
 Pour plus d'informations sur les tâches asynchrones et la culture, consultez la section « Culture et opérations asynchrones basées sur les tâches » dans la rubrique <xref:System.Globalization.CultureInfo>.
 
@@ -222,11 +222,11 @@ En utilisant la méthode <xref:System.Threading.Tasks.Task.FromResult%2A?display
 
 Lorsqu’une tâche lève une ou plusieurs exceptions, les exceptions sont encapsulées dans une exception <xref:System.AggregateException>. Cette exception est propagée vers le thread joint à la tâche, qui est en général le thread qui attend la fin de la tâche, ou le thread qui accède à la propriété <xref:System.Threading.Tasks.Task%601.Result%2A>. Ce comportement permet d'appliquer la stratégie .NET Framework selon laquelle toutes les exceptions non gérées doivent par défaut détruire le processus. Le code appelant peut gérer les exceptions en utilisant l’un des éléments suivants dans un bloc `try`/`catch` :
 
-- Méthode <xref:System.Threading.Tasks.Task.Wait%2A> 
+- Méthode <xref:System.Threading.Tasks.Task.Wait%2A>
 
-- Méthode <xref:System.Threading.Tasks.Task.WaitAll%2A> 
+- Méthode <xref:System.Threading.Tasks.Task.WaitAll%2A>
 
-- Méthode <xref:System.Threading.Tasks.Task.WaitAny%2A> 
+- Méthode <xref:System.Threading.Tasks.Task.WaitAny%2A>
 
 - La propriété <xref:System.Threading.Tasks.Task%601.Result%2A>
 

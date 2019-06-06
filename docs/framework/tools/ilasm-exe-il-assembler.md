@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5b73a98542dfc6fa68e79655bc5538cf005e4636
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
+ms.openlocfilehash: 2fa95755142b5ea3999cca127c868bc878da516e
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57492581"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378579"
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (Assembleur IL)
 
@@ -54,11 +54,11 @@ ilasm [options] filename [[options]filename...]
 |**/exe**|Génère un fichier exécutable en tant que sortie. Il s'agit de la valeur par défaut.|
 |**/flags:** `integer`|Assigne à ImageFlags la valeur spécifiée par `integer` dans l'en-tête du Common Language Runtime. Lorsque la directive IL .corflags est spécifiée dans le fichier, cette option se substitue à elle. Consultez CorHdr.h , COMIMAGE_FLAGS pour obtenir la liste des valeurs valides pour *integer*.|
 |**/fold**|Insère des corps de méthode identiques en un seul.|
-|/**/highentropyva**|Produit un fichier exécutable de sortie qui prend en charge l'Address Space Layout Randomization (ASLR) de forte entropie. (Par défaut pour **/appcontainer**)|
+|/ **/highentropyva**|Produit un fichier exécutable de sortie qui prend en charge l'Address Space Layout Randomization (ASLR) de forte entropie. (Par défaut pour **/appcontainer**)|
 |**/include:** `includePath`|Définit un chemin d'accès pour rechercher des fichiers fournis avec `#include`.|
 |**/itanium**|Spécifie Intel Itanium comme processeur cible.<br /><br /> Si aucune largeur de bits d'image n'est spécifiée, la valeur par défaut est **/pe64**.|
 |**/key:** `keyFile`|Compile `filename` avec une signature forte à l’aide de la clé privée figurant dans `keyFile`.|
-|**/key:** @`keySource`|Compile `filename` avec une signature forte à l’aide de la clé privée produite dans `keySource`.|
+|**/key:**  @`keySource`|Compile `filename` avec une signature forte à l’aide de la clé privée produite dans `keySource`.|
 |**/listing**|Génère un fichier listing lors de la sortie standard. Si vous omettez cette option, aucun fichier listing n'est alors généré.<br /><br /> Ce paramètre n'est pas pris en charge dans les versions 2.0 et ultérieures du .NET Framework.|
 |**/mdv:** `versionString`|Définit la chaîne de version de métadonnées.|
 |**/msv:** `major`.`minor`|Définit la version de flux de métadonnées, dans laquelle `major` et `minor` sont des entiers.|
@@ -108,7 +108,7 @@ Pour plus d'informations sur la grammaire du langage IL, consultez le fichier as
 
 ## <a name="version-information"></a>Informations sur la version
 
-Depuis le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], joignez un attribut personnalisé à une implémentation d'interface à l'aide d'un code semblable au suivant :
+À compter de .NET Framework 4.5, joignez un attribut personnalisé à une implémentation d’interface à l’aide d’un code semblable au suivant :
 
 ```
 .class interface public abstract auto ansi IMyInterface
@@ -128,7 +128,7 @@ Depuis le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], joignez un attri
       …
 ```
 
-Depuis le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], spécifiez un BLOB (Binary Large Object) marshal arbitraire à l'aide de sa représentation binaire brut, comme indiqué dans le code suivant :
+À compter de .NET Framework 4.5, spécifiez un objet blob (Binary Large Object) marshal arbitraire à l’aide de sa représentation binaire brute, comme indiqué dans le code suivant :
 
 ```
 .method public hidebysig abstract virtual

@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b6adbe4e5c82d5f886fcffd5ab272a337c377395
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 5ca4a087b60e6cb857ec78273dad099e5e5da07a
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586128"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457309"
 ---
 # <a name="security-issues-in-reflection-emit"></a>Problèmes de sécurité dans l'émission de réflexion
 Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Intermediate Language), chacune avec ses propres problèmes de sécurité :  
@@ -78,7 +78,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
   
  Comme avec tout autre code émis, l'exécution de la méthode dynamique nécessite toutes les autorisations demandées par les méthodes utilisées par la méthode dynamique.  
   
- L'assembly système qui héberge des méthodes dynamiques hébergées anonymement utilise le modèle de transparence <xref:System.Security.SecurityRuleSet.Level1?displayProperty=nameWithType>, qui est le modèle de transparence utilisé dans le .NET Framework avant le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)].  
+ L’assembly système qui héberge des méthodes dynamiques hébergées anonymement utilise le modèle de transparence <xref:System.Security.SecurityRuleSet.Level1?displayProperty=nameWithType>, qui est le modèle de transparence utilisé dans le .NET Framework avant .NET Framework 4.  
   
  Pour plus d'informations, consultez la classe <xref:System.Reflection.Emit.DynamicMethod>.  
   
@@ -139,7 +139,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
   
 <a name="Version_Information"></a>   
 ## <a name="version-information"></a>Informations sur la version  
- Depuis le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], la stratégie de sécurité à l'échelle de l'ordinateur est supprimée et la transparence de sécurité devient le mécanisme d'application par défaut. Consultez [Changements en matière de sécurité](../../../docs/framework/security/security-changes.md).  
+ À compter de .NET Framework 4, la stratégie de sécurité à l’échelle de l’ordinateur est supprimée et la transparence de sécurité devient le mécanisme d’application par défaut. Consultez [Changements en matière de sécurité](../../../docs/framework/security/security-changes.md).  
   
  À compter du [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)], <xref:System.Security.Permissions.ReflectionPermission> avec l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> n’est plus nécessaire lors de l’émission d’assemblys et de méthodes dynamiques. Cet indicateur est nécessaire dans toutes les versions antérieures du .NET Framework.  
   

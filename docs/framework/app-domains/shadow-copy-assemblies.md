@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: de8b8759-fca7-4260-896b-5a4973157672
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 00dc191d53d01d33a5dce3ed2d012942e2672dae
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 51bf359ea6ba4e5b45827928a50a095a7960a68f
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607524"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456713"
 ---
 # <a name="shadow-copying-assemblies"></a>Clichés instantanés d'assemblys
 Les clichés instantanés permettent aux assemblys qui sont utilisés dans un domaine d'application d'être mis à jour sans décharger le domaine d'application. Ceci est particulièrement utile pour les applications qui doivent être disponibles en permanence, comme des sites ASP.NET.  
@@ -67,9 +67,9 @@ Les clichés instantanés permettent aux assemblys qui sont utilisés dans un do
   
 <a name="StartupPerformance"></a>   
 ## <a name="startup-performance"></a>Performances du démarrage  
- Quand un domaine d'application qui utilise des clichés instantanés démarre, un certain délai est nécessaire pour que les assemblys du répertoire de l'application soient copiés dans le répertoire des clichés instantanés, ou pour qu'ils soient vérifiés s'ils se trouvent déjà à cet emplacement. Avant le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], tous les assemblys étaient copiés dans un répertoire temporaire. Chaque assembly était ouvert pour vérifier le nom de l'assembly et le nom fort était validé. Chaque assembly était vérifié pour voir s'il avait été mis à jour plus récemment que la copie du répertoire des clichés instantanés. Le cas échéant, il était copié dans le répertoire des clichés instantanés. Enfin, les copies temporaires étaient effacées.  
+ Quand un domaine d'application qui utilise des clichés instantanés démarre, un certain délai est nécessaire pour que les assemblys du répertoire de l'application soient copiés dans le répertoire des clichés instantanés, ou pour qu'ils soient vérifiés s'ils se trouvent déjà à cet emplacement. Avant .NET Framework 4, tous les assemblys étaient copiés dans un répertoire temporaire. Chaque assembly était ouvert pour vérifier le nom de l'assembly et le nom fort était validé. Chaque assembly était vérifié pour voir s'il avait été mis à jour plus récemment que la copie du répertoire des clichés instantanés. Le cas échéant, il était copié dans le répertoire des clichés instantanés. Enfin, les copies temporaires étaient effacées.  
   
- Depuis le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], le comportement par défaut au démarrage est de comparer directement la date et l'heure du fichier de chaque assembly du répertoire de l'application avec la date et l'heure du fichier de la copie du répertoire des clichés instantanés. Si l’assembly a été mis à jour, il est copié selon la même procédure que dans les versions antérieures du .NET Framework ; dans le cas contraire, la copie du répertoire des clichés instantanés est chargée.  
+ Depuis .NET Framework 4, le comportement par défaut au démarrage est de comparer directement la date et l’heure du fichier de chaque assembly du répertoire de l’application à la date et l’heure du fichier de la copie du répertoire des clichés instantanés. Si l’assembly a été mis à jour, il est copié selon la même procédure que dans les versions antérieures du .NET Framework ; dans le cas contraire, la copie du répertoire des clichés instantanés est chargée.  
   
  L'amélioration des performances qui en résulte est plus importante pour les applications dans lesquelles les assemblys ne changent pas souvent et où les modifications se produisent généralement dans un petit sous-ensemble d'assemblys. Si une majorité des assemblys d'une application sont fréquemment modifiés, le nouveau comportement par défaut peut provoquer une régression des performances. Vous pouvez restaurer le comportement du démarrage des versions antérieures du .NET Framework en ajoutant l’élément [\<shadowCopyVerifyByTimestamp>](../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md) au fichier de configuration, avec `enabled="false"`.  
   

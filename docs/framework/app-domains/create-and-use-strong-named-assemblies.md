@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ffbf6d9e-4a88-4a8a-9645-4ce0ee1ee5f9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 479307a0bdee162103f798e5f852cd20f259811e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 629a59cd28e58e4b08805e3bb742d12e9cacbebd
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607681"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377877"
 ---
 # <a name="create-and-use-strong-named-assemblies"></a>Créer et utiliser des assemblys avec nom fort
 
@@ -71,7 +71,7 @@ Cette fonctionnalité peut être désactivée pour des applications individuelle
 |-----------|-----------------|
 |[Guide pratique pour créer une paire de clés publique/privée](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)|Décrit comment créer une paire de clés de chiffrement pour signer un assembly.|
 |[Guide pratique pour signer un assembly avec un nom fort](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md)|Décrit comment créer un assembly avec nom fort.|
-|[Utilisation de noms forts améliorés](../../../docs/framework/app-domains/enhanced-strong-naming.md)|Décrit les améliorations apportées aux noms forts dans le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].|
+|[Utilisation de noms forts améliorés](../../../docs/framework/app-domains/enhanced-strong-naming.md)|Décrit les améliorations apportées aux noms forts dans .NET Framework 4.5.|
 |[Guide pratique pour référencer un assembly avec un nom fort](../../../docs/framework/app-domains/how-to-reference-a-strong-named-assembly.md)|Décrit comment référencer des types ou des ressources dans un assembly avec nom fort au moment de la compilation ou de l'exécution.|
 |[Guide pratique pour désactiver la fonctionnalité consistant à ignorer les noms forts](../../../docs/framework/app-domains/how-to-disable-the-strong-name-bypass-feature.md)|Décrit comment désactiver la fonctionnalité qui ignore la validation des signatures avec nom fort. Cette fonctionnalité peut être désactivée pour toutes les applications ou pour des applications spécifiques.|
 |[Création d’assemblys](../../../docs/framework/app-domains/create-assemblies.md)|Fournit une vue d'ensemble des assemblys multifichiers et à fichier unique.|

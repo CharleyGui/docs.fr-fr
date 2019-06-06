@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 6cf17a82-62a1-4f6d-8d5a-d7d06dec2bb5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7970ba4431161a1da8e0d509ee3d00c19b17c6e9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 882b1de4b1fd3b013b6b2825aec5e607a387531b
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607713"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377990"
 ---
 # <a name="enhanced-strong-naming"></a>Amélioration de l'utilisation de noms forts
 Une signature de nom fort est un mécanisme d’identité dans le .NET Framework permettant d’identifier des assemblys. Il s’agit d’une signature numérique de clé publique qui sert généralement à vérifier l’intégrité des données transmises d’un expéditeur (signataire) vers un destinataire (vérificateur). Cette signature est utilisée comme identité unique pour un assembly, et garantit que les références à l’assembly ne sont pas ambiguës. L’assembly est signé dans le cadre du processus de génération, puis vérifié quand il est chargé.  
@@ -20,9 +20,9 @@ Une signature de nom fort est un mécanisme d’identité dans le .NET Framework
  Les signatures de nom fort empêchent des parties malveillantes de falsifier un assembly et de le resigner avec la clé du signataire d’origine. Toutefois, les clés de nom fort ne contiennent pas d’informations fiables sur l’éditeur, ni de hiérarchie de certificats. Une signature de nom fort ne garantit pas la fiabilité de la personne qui a signé l’assembly, et ne garantit pas non plus que cette personne était un propriétaire légitime de la clé ; elle indique uniquement que le propriétaire de la clé a signé l’assembly. Par conséquent, nous déconseillons d’utiliser une signature de nom fort comme validateur de sécurité pour approuver du code tiers. Microsoft Authenticode est la méthode recommandée pour authentifier le code.  
   
 ## <a name="limitations-of-conventional-strong-names"></a>Limitations des noms forts classiques  
- La technologie d’affectation de noms forts utilisée dans les versions antérieures au [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a les inconvénients suivants :  
+ La technologie de nommage fort utilisée dans les versions antérieures à .NET Framework 4.5 présente les inconvénients suivants :  
   
-- Les clés subissent constamment des attaques, et le matériel et les techniques améliorés facilitent la déduction d’une clé privée à partir d’une clé publique. Pour se protéger des attaques, de plus grandes clés sont nécessaires. Les versions du .Net Framework antérieures au [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] permettent de signer avec n’importe quelle taille de clé (la taille par défaut étant 1024 bits), mais signer un assembly avec une nouvelle clé brise tous les binaires qui référencent l’ancienne identité de l’assembly. Par conséquent, il est extrêmement difficile de mettre à niveau la taille d’une clé de signature si vous voulez assurer la compatibilité.  
+- Les clés subissent constamment des attaques, et le matériel et les techniques améliorés facilitent la déduction d’une clé privée à partir d’une clé publique. Pour se protéger des attaques, de plus grandes clés sont nécessaires. Les versions du .NET Framework antérieures à .NET Framework 4.5 permettent de signer avec n’importe quelle taille de clé (la taille par défaut étant de 1 024 bits), mais la signature d’un assembly avec une nouvelle clé brise tous les binaires qui référencent l’ancienne identité de l’assembly. Par conséquent, il est extrêmement difficile de mettre à niveau la taille d’une clé de signature si vous voulez assurer la compatibilité.  
   
 - La signature de nom fort prend en charge uniquement l’algorithme SHA-1. Il a été récemment observé que SHA-1 n’était pas adéquat pour les applications de hachage sécurisées. Par conséquent, un algorithme plus fort (SHA-256 ou supérieur) est nécessaire. Il est possible que SHA-1 perde sa position conforme FIPS, ce qui poserait des problèmes pour ceux qui choisissent d’utiliser uniquement des logiciels et des algorithmes conformes FIPS.  
   
@@ -34,7 +34,7 @@ Une signature de nom fort est un mécanisme d’identité dans le .NET Framework
 - Les développeurs qui créent de nouveaux assemblys et ne sont pas concernés par les signatures de nom fort préexistantes peuvent utiliser les algorithmes SHA-2 plus sécurisés et signer les assemblys comme ils l’ont toujours fait.  
   
 ## <a name="using-enhanced-strong-names"></a>Utilisation de noms forts améliorés  
- Les clés de nom fort se composent d’une clé de signature et d’une clé d’identité. L’assembly est signé avec la clé de signature et est identifié par la clé d’identité. Avant le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], ces deux clés étaient identiques. À partir du [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], la clé d’identité est la même que dans les versions antérieures du. Net Framework, mais la clé de signature est améliorée avec un algorithme de hachage plus fort. En outre, la clé de signature est signée avec la clé d’identité pour créer une contre-signature.  
+ Les clés de nom fort se composent d’une clé de signature et d’une clé d’identité. L’assembly est signé avec la clé de signature et est identifié par la clé d’identité. Avant .NET Framework 4.5, ces deux clés étaient identiques. À partir de .NET Framework 4.5, la clé d’identité est la même que dans les versions antérieures du .NET Framework, mais la clé de signature est améliorée avec un algorithme de hachage plus fort. En outre, la clé de signature est signée avec la clé d’identité pour créer une contre-signature.  
   
  L’attribut <xref:System.Reflection.AssemblySignatureKeyAttribute> permet aux métadonnées de l’assembly d’utiliser la clé publique préexistante pour l’identité d’assembly, ce qui permet aux anciennes références d’assembly de continuer à fonctionner.  L’attribut <xref:System.Reflection.AssemblySignatureKeyAttribute> utilise la contre-signature pour garantir que le propriétaire de la nouvelle clé de signature est également le propriétaire de l’ancienne clé d’identité.  
   

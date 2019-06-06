@@ -3,12 +3,12 @@ title: Utiliser les fonctionnalités de critères spéciaux pour étendre les ty
 description: Ce tutoriel avancé montre comment utiliser des techniques de critères spéciaux pour créer des fonctionnalités à l’aide de données et d’algorithmes créés séparément.
 ms.date: 03/13/2019
 ms.custom: mvc
-ms.openlocfilehash: 5fdd65fdb96cce05f15872969bbdd401095b59e5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 58e4a9175752c7845507f48a3684747092dc609a
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59769240"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378072"
 ---
 # <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Tutoriel : Utiliser les fonctionnalités de critères spéciaux pour étendre les types de données
 
@@ -35,7 +35,7 @@ Une conception classique orientée objet exigerait de créer dans l’applicatio
 
 Ce tutoriel vise à créer et à explorer une application qui prend en entrée des données provenant de plusieurs sources externes pour un seul scénario. Nous verrons en quoi les **critères spéciaux** constituent un moyen efficace de consommer et de traiter ces données d’une autre manière que ce que prévoit le système d’origine.
 
-Prenons une grande zone urbaine qui utilise des péages et une tarification heures creuses/heures de pointe pour réguler le trafic. Nous allons écrire une application qui calcule le péage en fonction du type de véhicule. Lors d’améliorations ultérieures, nous intégrerons aux tarifs le nombre de passagers du véhicule ainsi que l’heure et le jour de la semaine.
+Prenons une grande zone métropolitaine qui utilise des péages et des tarifs heures creuses/heures de pointe pour réguler le trafic. Nous allons écrire une application qui calcule le péage en fonction du type de véhicule. Lors d’améliorations ultérieures, nous intégrerons aux tarifs le nombre de passagers du véhicule ainsi que l’heure et le jour de la semaine.
 
 À partir de cette brève description, vous avez peut-être rapidement esquissé une hiérarchie d’objets pour modéliser ce système. Cependant, les données proviennent de plusieurs sources, et notamment d’autres systèmes de gestion de l’immatriculation des véhicules. Ils fournissent des classes différentes pour modéliser ces données, sans proposer de modèle objet unique. Dans ce tutoriel, nous allons utiliser ces classes simplifiées pour modéliser les données sur les véhicules issues de ces systèmes externes, comme dans le code suivant :
 

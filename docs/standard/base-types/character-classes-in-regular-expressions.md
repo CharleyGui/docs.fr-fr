@@ -15,12 +15,12 @@ ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: e577f376b347442f6693a7a5478757ce3b698752
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 556181d32f0539b4a9e24cb1a898b4ccc3788f4e
+ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053001"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66250877"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Classes de caractères dans les expressions régulières
 
@@ -51,16 +51,18 @@ Une classe de caractères définit un jeu de caractères, chacun d'entre eux pou
  .NET prend en charge les expressions de soustraction de classe de caractères, ce qui vous permet de définir un jeu de caractères comme résultat de l’exclusion d’une classe de caractères d’une autre classe de caractères. Pour plus d’informations, consultez [Soustraction de classe de caractères](#CharacterClassSubtraction).  
   
 > [!NOTE]
->  Les classes de caractères qui font correspondre les caractères par catégorie, comme [\w](#WordCharacter) pour faire correspondre les caractères alphabétiques, ou [\p{}](#CategoryOrBlock) pour les faire correspondre à une catégorie Unicode, s’appuient sur la classe <xref:System.Globalization.CharUnicodeInfo> pour fournir des informations sur les catégories de caractères.  À compter de [!INCLUDE[net_v462](../../../includes/net-v462-md.md)], les catégories de caractères sont basées sur la [norme Unicode version 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). Dans [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], via [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], elles sont basées sur la [norme Unicode version 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/).  
+>  Les classes de caractères qui font correspondre les caractères par catégorie, comme [\w](#WordCharacter) pour faire correspondre les caractères alphabétiques, ou [\p{}](#CategoryOrBlock) pour les faire correspondre à une catégorie Unicode, s’appuient sur la classe <xref:System.Globalization.CharUnicodeInfo> pour fournir des informations sur les catégories de caractères.  À compter de .NET Framework 4.6.2, les catégories de caractères sont basées sur la [norme Unicode version 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). De [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] à .NET Framework 4.6.1, elles sont basées sur la [norme Unicode version 6.3.0](https://www.unicode.org/versions/Unicode6.3.0/).  
   
 <a name="PositiveGroup"></a>   
 ## <a name="positive-character-group--"></a>Groupe de caractères positif : [ ]  
  Un groupe de caractères positif spécifie une liste de caractères, chacun d'entre eux pouvant apparaître dans une chaîne d'entrée pour produire une correspondance. Cette liste de caractères peut être spécifiée individuellement, comme une plage, ou les deux à la fois.  
   
  La syntaxe de la spécification d'une liste de différents caractères est comme suit :  
-  
- [*groupe_caractères*]  
-  
+
+```  
+[*character_group*]  
+```
+
  où *groupe_caractères* est la liste des différents caractères pouvant apparaître dans la chaîne d’entrée pour qu’une correspondance soit établie. *groupe_caractères* peut être constitué de n’importe quelle combinaison d’un ou de plusieurs caractères littéraux, de [caractères d’échappement](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md) ou de classes de caractères.  
   
  La syntaxe de la spécification d'une plage de caractères est comme suit :  
@@ -69,9 +71,12 @@ Une classe de caractères définit un jeu de caractères, chacun d'entre eux pou
 [firstCharacter-lastCharacter]  
 ```  
   
- où *premierCaractère* est le caractère qui commence la plage et *dernierCaractère* est celui qui la termine. Une plage de caractères est une série contiguë de caractères définie par la spécification du premier caractère de la série, d'un trait d'union (-), puis du dernier caractère de la série. Deux caractères sont contigus s'ils présentent des points de code Unicode adjacents.  
-  
- Quelques modèles d'expressions régulières courants qui contiennent des classes de caractères positifs apparaissent dans le tableau suivant.  
+ où *premierCaractère* est le caractère qui commence la plage et *dernierCaractère* est celui qui la termine. Une plage de caractères est une série contiguë de caractères définie par la spécification du premier caractère de la série, d'un trait d'union (-), puis du dernier caractère de la série. Deux caractères sont contigus s'ils présentent des points de code Unicode adjacents. *premierCaractère* doit être le caractère avec le code de caractère le plus faible et *dernierCaractère* doit être le caractère avec le code de caractère le plus élevé.
+
+> [!NOTE]
+> Étant donné qu’un groupe de caractères positif peut inclure à la fois un jeu de caractères et une plage de caractères, un trait d’union (`-`) est toujours interprété comme le séparateur de plage, sauf s’il s’agit du premier ou dernier caractère du groupe.
+
+Quelques modèles d'expressions régulières courants qui contiennent des classes de caractères positifs apparaissent dans le tableau suivant.  
   
 |Motif|Description|  
 |-------------|-----------------|  
@@ -112,17 +117,24 @@ Une classe de caractères définit un jeu de caractères, chacun d'entre eux pou
 ## <a name="negative-character-group-"></a>Groupe de caractères négatif : [^]  
  Un groupe de caractères négatifs spécifie une liste de caractères qui ne doivent pas s'afficher dans une chaîne d'entrée pour produire une correspondance. La liste de caractères peut être spécifiée individuellement, comme une plage, ou les deux à la fois.  
   
- La syntaxe de la spécification d'une liste de différents caractères est comme suit :  
-  
- [^*groupe_caractères*]  
-  
+La syntaxe de la spécification d'une liste de différents caractères est comme suit :  
+
+```
+[*^character_group*]  
+```
+
  où *groupe_caractères* est la liste des différents caractères qui ne peuvent pas apparaître dans la chaîne d’entrée pour qu’une correspondance soit établie. *groupe_caractères* peut être constitué de n’importe quelle combinaison d’un ou de plusieurs caractères littéraux, de [caractères d’échappement](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md) ou de classes de caractères.  
   
  La syntaxe de la spécification d'une plage de caractères est comme suit :  
-  
- [^*firstCharacter*-*lastCharacter*]  
-  
- où *premierCaractère* est le caractère qui commence la plage et *dernierCaractère* est celui qui la termine. Une plage de caractères est une série contiguë de caractères définie par la spécification du premier caractère de la série, d'un trait d'union (-), puis du dernier caractère de la série. Deux caractères sont contigus s'ils présentent des points de code Unicode adjacents.  
+
+```
+[^*firstCharacter*-*lastCharacter*]  
+```
+
+où *premierCaractère* est le caractère qui commence la plage et *dernierCaractère* est celui qui la termine. Une plage de caractères est une série contiguë de caractères définie par la spécification du premier caractère de la série, d'un trait d'union (-), puis du dernier caractère de la série. Deux caractères sont contigus s'ils présentent des points de code Unicode adjacents. *premierCaractère* doit être le caractère avec le code de caractère le plus faible et *dernierCaractère* doit être le caractère avec le code de caractère le plus élevé.
+
+> [!NOTE]
+> Étant donné qu’un groupe de caractères négatif peut inclure à la fois un jeu de caractères et une plage de caractères, un trait d’union (`-`) est toujours interprété comme le séparateur de plage, sauf s’il s’agit du premier ou dernier caractère du groupe.
   
  Deux ou plusieurs plages de caractères peuvent être concaténées. Par exemple, pour spécifier la plage de chiffres décimaux de « 0 » à « 9 », la plage de lettres minuscules de « a » à « f » et la plage de lettres majuscules de « A » à « F », utilisez `[0-9a-fA-F]`.  
   

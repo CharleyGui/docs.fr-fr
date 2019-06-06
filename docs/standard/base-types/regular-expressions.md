@@ -22,12 +22,12 @@ helpviewer_keywords:
 ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 201dbc759b619f65599e09c78c14b96d17395952
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cb70b0ef4c6e619418f8464b543795a59c2ddff5
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64620702"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423786"
 ---
 # <a name="net-regular-expressions"></a>Expressions régulières .NET
 Les expressions régulières permettent de traiter un texte de façon puissante, souple et efficace. Grâce à la syntaxe complète des expressions régulières pour la recherche de correspondance avec un modèle, vous pouvez rapidement analyser des volumes importants de texte pour rechercher des modèles de caractères spécifiques, valider le texte pour vous assurer qu'il correspond à un modèle prédéfini (tel qu'une adresse e-mail), extraire, modifier, remplacer ou supprimer des sous-chaînes de texte et ajouter les chaînes extraites à une collection afin de générer un rapport. Pour de nombreuses applications qui traitent des chaînes ou qui analysent de grands blocs de texte, les expressions régulières constituent un outil indispensable.  
@@ -97,7 +97,7 @@ Les expressions régulières permettent de traiter un texte de façon puissante,
   
 |||  
 |-|-|  
-|`\$`|Rechercher une occurrence unique du symbole dollar ($) dans la chaîne d'entrée. La chaîne du modèle d'expression régulière comprend une barre oblique inverse pour indiquer que le symbole dollar doit être interprété littéralement et non comme une ancre d'expression régulière. (Le symbole $ seul indiquerait au moteur d'expression régulière de débuter la recherche de correspondance à la fin d'une chaîne.) Pour que le symbole de devise de la culture actuelle ne soit pas interprété à tort comme un symbole d’expression régulière, l’exemple appelle la méthode <xref:System.Text.RegularExpressions.Regex.Escape%2A> pour placer le caractère dans une séquence d’échappement.|  
+|`\$`|Rechercher une occurrence unique du symbole dollar (`$`) dans la chaîne d’entrée. La chaîne du modèle d'expression régulière comprend une barre oblique inverse pour indiquer que le symbole dollar doit être interprété littéralement et non comme une ancre d'expression régulière. (Le symbole `$` seul indiquerait au moteur d’expression régulière de débuter la recherche de correspondance à la fin d’une chaîne.) Pour que le symbole de devise de la culture actuelle ne soit pas interprété à tort comme un symbole d’expression régulière, l’exemple appelle la méthode <xref:System.Text.RegularExpressions.Regex.Escape%2A?displayProperty=nameWithType> pour placer le caractère dans une séquence d’échappement.|  
 |`\s*`|Rechercher zéro occurrence, ou plus, d'un espace blanc.|  
 |`[-+]?`|Rechercher zéro ou une occurrence d'un signe positif ou d'un signe négatif.|  
 |`([0-9]{0,3}(,[0-9]{3})*(\.[0-9]+)?)`|Les parenthèses externes de cette expression définissent celle-ci en tant que groupe de capture ou que sous-expression. Si une correspondance est trouvée, les informations sur cette partie de la chaîne correspondante peuvent être récupérées du deuxième objet <xref:System.Text.RegularExpressions.Group> dans l'objet <xref:System.Text.RegularExpressions.GroupCollection> retourné par la propriété <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>. (Le premier élément de la collection représente la correspondance entière.)|  

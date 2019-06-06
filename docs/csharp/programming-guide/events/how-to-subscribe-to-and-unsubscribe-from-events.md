@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: 56c236e2e061b473f0b188b24d3ebdd98e013aa8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 365ea55a112a4a04964a8271f2f7e5591a3b0d5d
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64595989"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66301044"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Procédure : S'abonner et se désabonner d’événements (Guide de programmation C#)
 Vous vous abonnez à un événement publié par une autre classe lorsque vous voulez écrire du code personnalisé qui doit être appelé quand cet événement est déclenché. Par exemple, vous pouvez vous abonner à l’événement `click` d’un bouton pour permettre à votre application de réagir lorsque l’utilisateur clique sur le bouton.  
@@ -104,5 +104,5 @@ Vous vous abonnez à un événement publié par une autre classe lorsque vous vo
 - [Événements](../../../csharp/programming-guide/events/index.md)
 - [event](../../../csharp/language-reference/keywords/event.md)
 - [Guide pratique pour publier des événements conformes aux indications du .NET Framework](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)
-- [-=, opérateur (référence C#)](../../language-reference/operators/subtraction-assignment-operator.md)
-- [+= (opérateur)](../../../csharp/language-reference/operators/addition-assignment-operator.md)
+- [- et -=, opérateurs](../../language-reference/operators/subtraction-operator.md)
+- [+ et +=, opérateurs](../../language-reference/operators/addition-operator.md)

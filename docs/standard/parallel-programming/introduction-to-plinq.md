@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 670ed89754aa9b4d2052bb1186e0139618190cd6
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: d41a88b7a9197a19a131cbda078297a96acdabfb
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57676887"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457491"
 ---
 # <a name="introduction-to-plinq"></a>Introduction à PLINQ
 
@@ -107,7 +107,7 @@ L’illustration suivante montre la différence entre `foreach` et <xref:System.
 
 ## <a name="cancellation"></a>Annulation
 
-PLINQ est intégré aux types d’annulation dans [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Pour plus d’informations, consultez [Cancellation in Managed Threads](../../../docs/standard/threading/cancellation-in-managed-threads.md) (Annulation dans les threads managés). Par conséquent, contrairement aux requêtes LINQ to Objects séquentielles, les requêtes PLINQ peuvent être annulées. Pour créer une requête PLINQ annulable, utilisez l’opérateur <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> sur la requête et fournissez une instance <xref:System.Threading.CancellationToken> comme argument. Lorsque la propriété <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> sur le jeton est définie sur true, PLINQ le remarque, arrête le traitement sur tous les threads et lève une <xref:System.OperationCanceledException>.
+PLINQ est intégré aux types d’annulation dans .NET Framework 4. Pour plus d’informations, consultez [Cancellation in Managed Threads](../../../docs/standard/threading/cancellation-in-managed-threads.md) (Annulation dans les threads managés). Par conséquent, contrairement aux requêtes LINQ to Objects séquentielles, les requêtes PLINQ peuvent être annulées. Pour créer une requête PLINQ annulable, utilisez l’opérateur <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> sur la requête et fournissez une instance <xref:System.Threading.CancellationToken> comme argument. Lorsque la propriété <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> sur le jeton est définie sur true, PLINQ le remarque, arrête le traitement sur tous les threads et lève une <xref:System.OperationCanceledException>.
 
 Il est possible qu’une requête PLINQ continue de traiter certains éléments après la définition du jeton d’annulation.
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a785401f0477131e6ebf0e9c04ce6d0b0b4d4f5c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: dfc55bcd97a6c1d68d4ce900b19ace7356d6ee92
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59517536"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66378570"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (Désassembleur IL)
 
@@ -53,7 +53,7 @@ Les options suivantes sont également disponibles pour les fichiers *.exe*, *.dl
 |**/linenum**|Inclut des références dans les lignes sources d'origine.|
 |**/nobar**|Supprime la fenêtre pop-up de l'indicateur de progression du code machine.|
 |**/noca**|Supprime la sortie d'attributs personnalisés.|
-|**/project**|Affiche les métadonnées telles qu'elles apparaissent dans le code managé, plutôt que telles qu'elles apparaissent dans le [!INCLUDE[wrt](../../../includes/wrt-md.md)] natif. Si `PEfilename` n'est pas un fichier de métadonnées Windows (*.winmd*), cette option n'a aucun effet. Consultez [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
+|**/project**|Affiche les métadonnées telles qu'elles apparaissent dans le code managé, plutôt que telles qu'elles apparaissent dans le [!INCLUDE[wrt](../../../includes/wrt-md.md)] natif. Si `PEfilename` n'est pas un fichier de métadonnées Windows ( *.winmd*), cette option n'a aucun effet. Consultez [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
 |**/pubonly**|Désassemble uniquement les membres et les types publics. Équivaut à **/visibility:PUB**.|
 |**/quoteallnames**|Entoure tous les noms de guillemets simples.|
 |**/raweh**|Affiche les clauses de gestion des exceptions sous une forme brute.|
@@ -69,7 +69,7 @@ Les options suivantes sont valides pour les fichiers *.exe*, *.dll* et *.winmd* 
 |**/classlist**|Inclut une liste de classes définie dans le module.|
 |**/forward**|Utilise la déclaration de classe anticipée.|
 |**/headers**|Inclut les informations d'en-tête du fichier dans la sortie.|
-|**/item:** `class`[**::** `member`[`(sig`]]|Désassemble les éléments suivants en fonction de l’argument fourni :<br /><br /> -   Désassemble la `class` spécifiée.<br />-   Désassemble le `member` spécifié de la `class`.<br />-   Désassemble le `member` de la `class` avec la signature spécifiée `sig`. Le format de `sig` est le suivant :<br />     [`instance`] `returnType`(`parameterType1`, `parameterType2`, …, `parameterTypeN`)<br />     **Remarque** Dans les versions 1.0 et 1.1 du .NET Framework, `sig` doit être suivi d’une parenthèse fermante : `(sig)`. À compter de .NET Framework 2.0, la parenthèse fermante doit être omise : `(sig`.|
+|**/item:** `class`[ **::** `member`[`(sig`]]|Désassemble les éléments suivants en fonction de l’argument fourni :<br /><br /> -   Désassemble la `class` spécifiée.<br />-   Désassemble le `member` spécifié de la `class`.<br />-   Désassemble le `member` de la `class` avec la signature spécifiée `sig`. Le format de `sig` est le suivant :<br />     [`instance`] `returnType`(`parameterType1`, `parameterType2`, …, `parameterTypeN`)<br />     **Remarque** Dans les versions 1.0 et 1.1 du .NET Framework, `sig` doit être suivi d’une parenthèse fermante : `(sig)`. À compter de .NET Framework 2.0, la parenthèse fermante doit être omise : `(sig`.|
 |**/noil**|Supprime la sortie du code d'assembly IL.|
 |**/stats**|Inclut des statistiques sur l'image.|
 |**/typelist**|Produit la liste complète des types afin de conserver le classement des types dans un aller-retour.|
@@ -111,7 +111,7 @@ Vous pouvez exécuter *Ildasm.exe* sur un fichier .exe ou *.dll* pour détermine
 
 ## <a name="version-information"></a>Informations sur la version
 
-Dans [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], *Ildasm.exe* gère un BLOB (binary large object) marshal non reconnu en affichant le contenu binaire brut. Par exemple, le code suivant montre comment un BLOB marshal généré par un programme C# s'affiche :
+À compter de .NET Framework 4.5, *Ildasm.exe* gère un objet blob (Binary Large Object) marshal non reconnu en affichant le contenu binaire brut. Par exemple, le code suivant montre comment un BLOB marshal généré par un programme C# s'affiche :
 
 ```csharp
 public void Test([MarshalAs((short)70)] int test) { }
@@ -122,7 +122,7 @@ public void Test([MarshalAs((short)70)] int test) { }
 .method public hidebysig instance void Test(int32  marshal({ 46 }) test) cil managed
 ```
 
-Dans [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], *Ildasm.exe* affiche les attributs qui sont appliqués aux implémentations d’interfaces, comme indiqué dans l’extrait suivant de la sortie d’*Ildasm.exe* :
+À compter de .NET Framework 4.5, *Ildasm.exe* affiche les attributs qui sont appliqués aux implémentations d’interfaces, comme indiqué dans l’extrait suivant de la sortie du fichier *Ildasm.exe* :
 
 ```
 .class public auto ansi beforefieldinit MyClass

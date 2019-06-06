@@ -16,12 +16,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
-ms.openlocfilehash: f923ca42e67c76f8b4296089953fada65b645f4f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: dfc8e1cfa6050a6e45373ad023ee8f358e388735
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64629010"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423868"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>Vue d’ensemble du modèle asynchrone basé sur des événements
 Les applications qui effectuent de nombreuses tâches simultanément tout en réagissant aux interventions de l’utilisateur nécessitent souvent une conception utilisant plusieurs threads. L’espace de noms <xref:System.Threading> fournit tous les outils nécessaires à la création d’applications multithread de hautes performances, mais l’utilisation de ces outils suppose une connaissance approfondie du génie logiciel multithread. Pour les applications multithread relativement simples, le composant <xref:System.ComponentModel.BackgroundWorker> fournit une solution simple. Pour les applications asynchrones plus sophistiquées, envisagez l’implémentation d’une classe obéissant au modèle asynchrone basé sur les événements.  
@@ -32,13 +32,13 @@ Les applications qui effectuent de nombreuses tâches simultanément tout en ré
   
 - d'exécuter plusieurs opérations simultanément, en recevant des notifications quand chacune d'elles se termine ;  
   
-- d'attendre que les ressources soient disponibles sans arrêter (« bloquer ») votre application ;  
+- d’attendre que les ressources soient disponibles sans arrêter (« bloquer ») votre application ;  
   
 - de communiquer avec les opérations asynchrones en attente à l'aide du modèle d'événements et de délégués connu. Pour plus d'informations sur l'utilisation des gestionnaires d'événements et des délégués, consultez la page [Événements](../../../docs/standard/events/index.md).  
   
  Une classe prenant en charge le modèle asynchrone basé sur les événements possède une ou plusieurs méthodes nommées _MethodName_**Async**. Ces méthodes peuvent refléter des versions synchrones qui exécutent la même opération sur le thread actuel. La classe peut également posséder un événement _MethodName_**Completed** et une méthode _MethodName_**AsyncCancel** (ou simplement **CancelAsync**).  
   
- <xref:System.Windows.Forms.PictureBox> est un composant courant qui prend en charge le modèle asynchrone basé sur les événements. Vous pouvez télécharger une image de façon synchrone en appelant sa méthode <xref:System.Windows.Forms.PictureBox.Load%2A>, mais si l'image est grande ou que la connexion réseau est lente, votre application s'arrête (« se bloque ») jusqu'à ce que l'opération de téléchargement soit terminée et que l'appel à <xref:System.Windows.Forms.PictureBox.Load%2A> soit retourné.  
+ <xref:System.Windows.Forms.PictureBox> est un composant courant qui prend en charge le modèle asynchrone basé sur les événements. Vous pouvez télécharger une image de façon synchrone en appelant sa méthode <xref:System.Windows.Forms.PictureBox.Load%2A>, mais si l’image est grande ou que la connexion réseau est lente, votre application cesse de répondre jusqu’à ce que l’opération de téléchargement soit terminée et que l’appel à <xref:System.Windows.Forms.PictureBox.Load%2A> soit retourné.  
   
  Si vous souhaitez que votre application continue de s'exécuter pendant le chargement de l'image, vous pouvez appeler la méthode <xref:System.Windows.Forms.PictureBox.LoadAsync%2A> et gérer l'événement <xref:System.Windows.Forms.PictureBox.LoadCompleted> tout comme vous le feriez pour tout autre événement. Quand vous appelez la méthode <xref:System.Windows.Forms.PictureBox.LoadAsync%2A>, l'exécution de votre application se poursuit pendant que le téléchargement s'effectue sur un thread séparé (« en arrière-plan »). Votre gestionnaire d'événements est appelé quand l'opération de chargement d'image est terminée, et peut examiner le paramètre <xref:System.ComponentModel.AsyncCompletedEventArgs> pour déterminer si le téléchargement s'est déroulé correctement.  
   

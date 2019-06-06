@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8bad0abdba4c14659fdfa9b8064ebb8203100b33
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6e10682dbf5615f9d1ef345cf2c7eeeafa87ec28
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607889"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377987"
 ---
 # <a name="64-bit-applications"></a>Applications 64 bits
 Lorsque vous compilez une application, vous pouvez spécifier si elle doit être exécutée sur un système d'exploitation Windows 64 bits comme une application native ou sous WOW64 (Windows 32 bits sur Windows 64 bits). WOW64 est un environnement de compatibilité qui permet à une application 32 bits de s'exécuter sur un système 64 bits. WOW64 est inclus dans toutes les versions 64 bits du système d'exploitation Windows.  
@@ -26,7 +26,7 @@ Lorsque vous compilez une application, vous pouvez spécifier si elle doit être
 > [!NOTE]
 >  En raison de la conception de l'émulation x 86 et du sous-système WOW64 pour la famille de processeurs Itanium, les applications sont limitées à l'exécution sur un seul processeur. Ces facteurs réduisent les performances et l'évolutivité des applications .NET Framework 32 bits qui s'exécutent sur des systèmes Itanium. Dans la mesure du possible, il vaut mieux utiliser [!INCLUDE[net_v40_long](../../includes/net-v40-long-md.md)], qui inclut la prise en charge 64 bits native des systèmes Itanium, pour de meilleures performances et une extensibilité accrue.  
   
- Par défaut, lorsque vous exécutez une application managée 64 bits sur un système d'exploitation Windows 64 bits, vous pouvez créer un objet dont la taille maximale est de 2 gigaoctets (Go). Toutefois, dans le [!INCLUDE[net_v45](../../includes/net-v45-md.md)], vous pouvez augmenter cette limite.  Pour plus d'informations, consultez [\<gcAllowVeryLargeObjects> element](../../docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md).  
+ Par défaut, lorsque vous exécutez une application managée 64 bits sur un système d'exploitation Windows 64 bits, vous pouvez créer un objet dont la taille maximale est de 2 gigaoctets (Go). Toutefois, dans .NET Framework 4.5, vous pouvez augmenter cette limite.  Pour plus d'informations, consultez [\<gcAllowVeryLargeObjects> element](../../docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md).  
   
  De nombreux assemblys s'exécutent de façon identique sur le CLR 32 bits et sur le CLR 64 bits. Toutefois, certains programmes peuvent se comporter différemment, selon le CLR, s'ils contiennent un ou plusieurs des éléments suivants :  
   

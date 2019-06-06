@@ -2,12 +2,12 @@
 title: Implémentation d’objets de valeur
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Découvrez les explications détaillées et les options disponibles pour implémenter des objets de valeur à l’aide des nouvelles fonctionnalités d’Entity Framework.
 ms.date: 10/08/2018
-ms.openlocfilehash: 850d571ffb92f2d200e24430a9611fb13b64e635
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: b2f7b0f36fea25c25edd47731d9387810bd2b44d
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644297"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423738"
 ---
 # <a name="implement-value-objects"></a>Implémenter des objets de valeur
 
@@ -21,7 +21,7 @@ La figure 7-13 illustre l’objet de valeur Address dans l’agrégat Order.
 
 **Figure 7-13**. Objet de valeur Address dans l’agrégat Order
 
-Comme le montre la figure 7-13, une entité est généralement composée de plusieurs attributs. Par exemple, l’entité `Order` peut être modélisée comme entité avec une identité et composée en interne d’un ensemble d’attributs comme OrderId, OrderDate, OrderItems, etc. Mais l’adresse, qui est simplement une valeur complexe comprenant un pays, une rue, une ville, etc. et qui n’a pas d’identité dans ce domaine, doit être modélisée et traitée comme objet de valeur.
+Comme le montre la figure 7-13, une entité est généralement composée de plusieurs attributs. Par exemple, l’entité `Order` peut être modélisée comme entité avec une identité et composée en interne d’un ensemble d’attributs comme OrderId, OrderDate, OrderItems, etc. Toutefois, l’adresse, qui est simplement une valeur complexe comprenant un pays ou une région, une rue, une ville, etc. et qui n’a pas d’identité dans ce domaine, doit être modélisée et traitée comme objet de valeur.
 
 ## <a name="important-characteristics-of-value-objects"></a>Caractéristiques importantes des objets de valeur
 

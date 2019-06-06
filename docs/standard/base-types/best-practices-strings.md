@@ -1,7 +1,7 @@
 ---
 title: Bonnes pratiques pour l’utilisation de chaînes dans .NET
 description: Découvrez comment utiliser efficacement les chaînes dans les applications .NET.
-ms.date: 09/13/2018
+ms.date: 05/01/2019
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -21,12 +21,12 @@ ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 82fdcae2887cf5a3428a0c874b43d9770f35afcf
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 68bcc9321d5a97620d0e8d24befbd24f4f350f94
+ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052995"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66250820"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Bonnes pratiques pour l’utilisation de chaînes dans .NET
 <a name="top"></a> .NET offre une prise en charge complète du développement d’applications localisées et globalisées, et facilite l’application des conventions de la culture actuelle ou d’une culture spécifique durant l’exécution d’opérations courantes telles que le tri et l’affichage de chaînes. Toutefois, le tri ou la comparaison de chaînes n'est pas toujours une opération dépendante de la culture. Par exemple, les chaînes utilisées en interne par une application doivent généralement être gérées de la même manière dans toutes les cultures. Quand des données de type chaîne culturellement indépendantes, telles que des balises XML, des balises HTML, des noms d'utilisateurs, des chemins d'accès aux fichiers et des noms d'objets système, sont interprétées comme si elles étaient dépendantes de la culture, le code d'application peut faire l'objet de bogues subtils, de performances médiocres et, dans certains cas, de problèmes de sécurité.  
@@ -69,7 +69,7 @@ ms.locfileid: "66052995"
   
 - Utilisez les méthodes <xref:System.String.Compare%2A?displayProperty=nameWithType> et <xref:System.String.CompareTo%2A?displayProperty=nameWithType> pour trier les chaînes, et non pour en vérifier l'égalité.  
   
-- Utilisez la mise en forme en fonction de la culture pour afficher des données non-chaînées, telles que les nombres et les dates, dans une interface utilisateur. Utilisez la mise en forme en fonction de la culture dite indifférente pour rendre les données non-chaînées sous forme de chaîne.  
+- Utilisez la mise en forme en fonction de la culture pour afficher des données non-chaînées, telles que les nombres et les dates, dans une interface utilisateur. Utilisez la mise en forme avec la [culture invariante](xref:System.Globalization.CultureInfo.InvariantCulture) pour conserver les données qui ne sont pas des chaînes sous forme de chaîne.  
   
  Quand vous utilisez des chaînes, évitez les pratiques suivantes :  
   
@@ -127,7 +127,7 @@ ms.locfileid: "66052995"
 > [!NOTE]
 > Vous pouvez télécharger les [Sorting Weight Tables](https://www.microsoft.com/download/details.aspx?id=10921), un ensemble de fichiers texte qui contiennent des informations sur les poids des caractères utilisés dans les opérations de tri et de comparaison pour les systèmes d’exploitation Windows et la [Default Unicode Collation Element Table](https://www.unicode.org/Public/UCA/latest/allkeys.txt), la version la plus récente de la table de pondération de tri pour Linux et macOS. La version spécifique de la table de pondération de tri sur Linux et macOS varie selon la version des bibliothèques [International Components for Unicode](http://site.icu-project.org/) installées sur le système. Pour plus d’informations sur les versions ICU et les versions Unicode qu’elles implémentent, consultez [Téléchargement d’ICU](http://site.icu-project.org/download).
 
- Toutefois, l'évaluation de l'égalité ou de l'ordre de tri de deux chaînes ne produit pas un résultat correct unique ; le résultat dépend des critères utilisés pour comparer les chaînes. En particulier, les comparaisons de chaînes qui sont ordinales ou basées sur les conventions de casse et de tri de la culture actuelle ou la culture dite indifférente (culture aux paramètres régionaux non spécifiés basée sur la langue anglaise) peuvent produire des résultats différents.  
+ Toutefois, l'évaluation de l'égalité ou de l'ordre de tri de deux chaînes ne produit pas un résultat correct unique ; le résultat dépend des critères utilisés pour comparer les chaînes. En particulier, les comparaisons de chaînes qui sont ordinales ou basées sur les conventions de casse et de tri de la culture actuelle ou la [culture invariante](xref:System.Globalization.CultureInfo.InvariantCulture) (culture aux paramètres régionaux non spécifiés basée sur la langue anglaise) peuvent produire des résultats différents.  
 
 En outre, les comparaisons de chaînes à l’aide de différentes versions de .NET ou à l’aide de .NET sur différents systèmes d’exploitation ou des versions différentes de système d’exploitation peuvent retourner des résultats différents. Pour plus d’informations, consultez [Chaînes et norme Unicode](xref:System.String#Unicode). 
 
@@ -348,10 +348,36 @@ En outre, les comparaisons de chaînes à l’aide de différentes versions de .
  [Retour au début](#top)  
   
 <a name="Formatted"></a>   
-## <a name="displaying-and-persisting-formatted-data"></a>Affichage et persistance des données mises en forme  
- Lorsque vous affichez des données non-chaînées telles que les nombres et les dates et heures aux utilisateurs, mettez-les en forme en utilisant les paramètres de la culture de l'utilisateur. Par défaut, la méthode <xref:System.String.Format%2A?displayProperty=nameWithType> et les méthodes `ToString` des types numériques et des types de date et d’heure, utilisent la culture du thread actuelle pour les opérations de mise en forme. Pour spécifier explicitement que la méthode de mise en forme doit utiliser la culture actuelle, vous pouvez appeler une surcharge d'une méthode de mise en forme ayant un paramètre `provider` , comme <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> ou <xref:System.DateTime.ToString%28System.IFormatProvider%29?displayProperty=nameWithType>, et lui passer la propriété <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> .  
-  
- Vous pouvez rendre persistantes des données non-chaînées soit comme données binaires, soit comme données mises en forme. Si vous choisissez de l'enregistrer en tant que données mises en forme, vous devez appeler une surcharge de méthode de mise en forme qui inclut un paramètre `provider` et le passer à la propriété <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> . La culture dite indifférente fournit un format cohérent pour les données mises en forme qui est indépendant de la culture et de l'ordinateur. En revanche, assurer la persistance de données mises en forme à l'aide de cultures autres que la culture dite indifférente a plusieurs limites :  
+## <a name="displaying-and-persisting-formatted-data"></a>Affichage et persistance des données mises en forme
+
+Lorsque vous affichez des données non-chaînées telles que les nombres et les dates et heures aux utilisateurs, mettez-les en forme en utilisant les paramètres de la culture de l'utilisateur. Par défaut, tous les éléments suivants utilisent la culture du thread actuelle dans les opérations de mise en forme :
+
+- Chaînes interpolées prises en charge par les compilateurs [C#](../../csharp/language-reference/tokens/interpolated.md) et [Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
+
+- Opérations de concaténation de chaîne qui utilisent les opérateurs de concaténation [C#](../../csharp/language-reference/operators/addition-operator.md#string-concatenation) ou [Visual Basic](../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md ), ou qui appellent directement la méthode <xref:System.String.Concat%2A?displayProperty=nameWithType>.
+
+- Méthode <xref:System.String.Format%2A?displayProperty=nameWithType>
+
+- Méthodes `ToString` des types numériques et des types de date et d’heure.
+
+Pour spécifier explicitement qu’une chaîne doit être mise en forme en utilisant les conventions d’une culture désignée ou de la [culture invariante](xref:System.Globalization.CultureInfo.InvariantCulture), vous pouvez procéder comme suit :
+
+- Quand vous utilisez les méthodes <xref:System.String.Format%2A?displayProperty=nameWithType> et `ToString`, appelez une surcharge qui a un paramètre `provider`, tel que <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> ou <xref:System.DateTime.ToString%28System.IFormatProvider%29?displayProperty=nameWithType> et passez-lui la propriété <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>, une instance <xref:System.Globalization.CultureInfo> qui représente la culture souhaitée, ou la propriété <xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType>.  
+
+- Pour la concaténation de chaîne, n’autorisez pas le compilateur à effectuer de conversions implicites. Au lieu de cela, effectuez une conversion explicite en appelant une surcharge `ToString` ayant un paramètre `provider`. Par exemple, le compilateur utilise implicitement la culture actuelle lors de la conversion d’une valeur <xref:System.Double> en une chaîne dans le code C# suivant :
+
+  [!code-csharp[Implicit String Conversion](~/samples/snippets/standard/base-types/string-practices/cs/tostring.cs#1)]
+
+  Au lieu de cela, vous pouvez spécifier explicitement la culture dont les conventions de mise en forme sont utilisées dans la conversion en appelant la méthode <xref:System.Double.ToString(System.IFormatProvider)?displayProperty=nameWithType>, comme illustré par le code C# suivant :
+
+  [!code-csharp[Explicit String Conversion](~/samples/snippets/standard/base-types/string-practices/cs/tostring.cs#2)]
+
+- Pour l’interpolation de chaîne, plutôt que d’affecter une chaîne interpolée à une instance <xref:System.String>, affectez-la à un élément <xref:System.FormattableString>. Vous pouvez ensuite appeler sa méthode <xref:System.FormattableString.ToString?displayProperty=nameWithType> pour produire une chaîne de résultat qui reflète les conventions de la culture actuelle, ou vous pouvez appeler la méthode <xref:System.FormattableString.ToString(System.IFormatProvider)?displayProperty=nameWithType> pour produire une chaîne de résultat qui reflète les conventions d’une culture spécifiée. Vous pouvez également transmettre la chaîne pouvant être mise en forme à la méthode <xref:System.FormattableString.Invariant%2A?displayProperty=nameWithType> statique pour produire une chaîne de résultat qui reflète les conventions de la culture invariante. L'exemple suivant illustre cette approche. (La sortie de l’exemple correspond à la culture actuelle en-US.)
+
+  [!code-csharp[String interpolation](~/samples/snippets/standard/base-types/string-practices/cs/formattable.cs)]
+  [!code-vb[String interpolation](~/samples/snippets/standard/base-types/string-practices/vb/formattable.vb)]
+
+Vous pouvez rendre persistantes des données non-chaînées soit comme données binaires, soit comme données mises en forme. Si vous choisissez de l'enregistrer en tant que données mises en forme, vous devez appeler une surcharge de méthode de mise en forme qui inclut un paramètre `provider` et le passer à la propriété <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> . La culture dite indifférente fournit un format cohérent pour les données mises en forme qui est indépendant de la culture et de l'ordinateur. En revanche, assurer la persistance de données mises en forme à l'aide de cultures autres que la culture dite indifférente a plusieurs limites :  
   
 - Les données seront vraisemblablement inutilisables si elles sont récupérées sur un système ayant une autre culture, ou si l'utilisateur du système actuel change la culture actuelle et essaie de récupérer les données.  
   
@@ -366,7 +392,7 @@ En outre, les comparaisons de chaînes à l’aide de différentes versions de .
   
  Toutefois, si vous remplacez la propriété <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> par <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> dans les appels à <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> et <xref:System.DateTime.Parse%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>, les données de date et d'heure persistantes sont correctement restaurées, comme le montre la sortie suivante.  
   
-```  
+```console  
 06.05.1758 21:26  
 05.05.1818 07:19  
 22.04.1870 23:54  

@@ -6,18 +6,18 @@ ms.date: 08/23/2018
 helpviewer_keywords:
 - constructors [C#], return values
 - keywords [C#], new
-- default constructor [C#]
+- parameterless constructor [C#]
 - defaults [C#]
 - value types [C#], initializing
 - variables [C#], value types
-- constructors [C#], default constructor
-- types [C#], default constructor return values
-ms.openlocfilehash: 19e9e4f94ab573f2313c185a08192d89103b98fd
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+- constructors [C#], parameterless constructor
+- types [C#], parameterless constructor return values
+ms.openlocfilehash: 4fc9a35f69540e047a97c21788015ca8e54068a0
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53237036"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66422033"
 ---
 # <a name="default-values-table-c-reference"></a>Tableau des valeurs par défaut (référence C#)
 
@@ -41,7 +41,7 @@ Le tableau suivant présente les valeurs par défaut des [types valeur](value-ty
 |[ulong](ulong.md)|0|
 |[ushort](ushort.md)|0|
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Vous ne pouvez pas utiliser des variables non initialisées en C#. Vous pouvez initialiser une variable avec la valeur par défaut de son type. Vous pouvez également utiliser la valeur par défaut d’un type pour spécifier la valeur par défaut de l’[argument facultatif](../../programming-guide/classes-and-structs/named-and-optional-arguments.md#optional-arguments) d’une méthode.
 
@@ -57,7 +57,7 @@ int a = default(int);
 int a = default;
 ```
 
-Vous pouvez également utiliser le constructeur par défaut ou le constructeur par défaut implicite pour produire la valeur par défaut d’un type valeur, comme illustré dans l’exemple suivant. Pour plus d’informations sur les constructeurs, consultez l’article [Constructeurs](../../programming-guide/classes-and-structs/constructors.md).
+Vous pouvez également utiliser le constructeur sans paramètre ou le constructeur sans paramètre implicite pour produire la valeur par défaut d’un type valeur, comme illustré dans l’exemple suivant. Pour plus d’informations sur les constructeurs, consultez l’article [Constructeurs](../../programming-guide/classes-and-structs/constructors.md).
 
 ```csharp
 int a = new int();
@@ -70,7 +70,6 @@ La valeur par défaut de tout [type référence](reference-types.md) est `null`.
 - [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [Tableaux de référence des types](reference-tables-for-types.md)
 - [Types valeur](value-types.md)
 - [Tableau des types valeur](value-types-table.md)
 - [Tableaux des types intégrés](built-in-types-table.md)

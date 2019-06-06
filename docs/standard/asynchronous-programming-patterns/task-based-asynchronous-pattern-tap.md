@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8cef1fcf-6f9f-417c-b21f-3fd8bac75007
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 96499d2a3d74deb7208fa49f9fc0927109d93a69
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 052f6a61fb1b03b060e22bbff2d8124ac3a1c0c0
+ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623791"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66377661"
 ---
 # <a name="task-based-asynchronous-pattern-tap"></a>Modèle asynchrone basé sur les tâches (TAP)
 Le modèle asynchrone basé sur des tâches (TAP) est basé sur les types <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> de l’espace de noms <xref:System.Threading.Tasks?displayProperty=nameWithType>, qui sont utilisés pour représenter les opérations asynchrones arbitraires. Le TAP est le modèle de conception asynchrone recommandé pour le nouveau développement.  
@@ -95,7 +95,7 @@ Le TAP utilise une méthode unique pour représenter le début et la fin d'une o
  Si les implémentations du TAP fournissent des surcharges qui acceptent un paramètre `progress`, elles doivent permettre à l’argument d’être `null`, dans ce cas aucune progression ne sera signalée. Les implémentations du TAP doivent signaler la progression vers l’objet <xref:System.Progress%601> de façon synchrone, ce qui permet à la méthode asynchrone de fournir rapidement la progression, et permettre au consommateur de la progression de déterminer où et comment gérer les informations. Par exemple, l'instance de progression peut choisir de marshaler les rappels et de déclencher des événements dans un contexte de synchronisation capturé.  
   
 ## <a name="iprogresst-implementations"></a>Implémentations IProgress\<T>  
- Le [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] fournit une implémentation unique de <xref:System.IProgress%601> : <xref:System.Progress%601>. La classe <xref:System.Progress%601> est déclarée comme suit :  
+ .NET Framework 4.5 fournit une implémentation unique de <xref:System.IProgress%601> : <xref:System.Progress%601>. La classe <xref:System.Progress%601> est déclarée comme suit :  
   
 ```csharp  
 public class Progress<T> : IProgress<T>  

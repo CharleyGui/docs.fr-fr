@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: da29bd6bc53b59f1f20e2272a8293b49e230bff0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 996ea7802473817594420a108470f7604170482e
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622881"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456806"
 ---
 # <a name="garbage-collection-and-performance"></a>Garbage Collection et niveau de performance
 <a name="top"></a> Cette rubrique décrit les problèmes liés au garbage collection et à l’utilisation de la mémoire. Elle apporte des solutions aux problèmes concernant les tas managés et explique comment réduire l’effet du garbage collection sur vos applications. Chaque problème contient des liens vers des procédures à suivre pour résoudre le problème.  
@@ -61,7 +61,7 @@ ms.locfileid: "64622881"
  Les profileurs peuvent fournir des informations complètes. Toutefois, les profileurs complexes peuvent potentiellement modifier le comportement d'une application.  
   
 ### <a name="application-domain-resource-monitoring"></a>Analyse de ressource de domaine d'application  
- Dans [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] et versions ultérieures, l'outil ARM (Application Domain Resource Monitoring) permet aux hôtes de surveiller l'utilisation du processeur et de la mémoire par domaine d'application. Pour plus d'informations, voir [Analyse de ressource de domaine d'application](../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md).  
+ À compter de .NET Framework 4, l’outil ARM (Application Domain Resource Monitoring) permet aux hôtes de superviser l’utilisation du processeur et de la mémoire par domaine d’application. Pour plus d'informations, voir [Analyse de ressource de domaine d'application](../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md).  
   
  [Retour au début](#top)  
   

@@ -9,17 +9,17 @@ helpviewer_keywords:
 ms.assetid: b8f99f43-9104-45fd-9bff-385a20488a23
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3b08154d1be7a8a5699682b3cee3faad4e384269
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 962c89acf12595ca5b9f27fe411b31773cc5e0c2
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836566"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66456940"
 ---
 # <a name="task-parallel-library-tpl"></a>Bibliothèque parallèle de tâches
 La bibliothèque parallèle de tâches est un ensemble de types publics et d’API dans les espaces de noms <xref:System.Threading?displayProperty=nameWithType> et <xref:System.Threading.Tasks?displayProperty=nameWithType>. L'objectif de la bibliothèque parallèle de tâches est d'accroître la productivité des développeurs en simplifiant le processus d'ajout du parallélisme et de l'accès concurrentiel aux applications. La bibliothèque parallèle de tâches met à l'échelle dynamiquement le degré d'accès concurrentiel pour utiliser plus efficacement tous les processeurs disponibles. De plus, la bibliothèque parallèle de tâches gère le partitionnement du travail, la planification de threads sur le <xref:System.Threading.ThreadPool>, la prise en charge de l'annulation, la gestion d'état et d'autres détails de bas niveau. L'utilisation de la bibliothèque parallèle de tâches vous permet de maximiser les performances de votre code tout en vous concentrant sur le travail que votre programme doit accomplir.  
   
- À partir de [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], la bibliothèque parallèle de tâches est la meilleure méthode pour écrire le code multithread et parallèle. Toutefois, tout le code est pas approprié pour la parallélisation ; par exemple, si une boucle exécute uniquement une petite quantité de travail sur chaque itération ou ne s'exécute que pour un nombre limité d'itérations, la charge mémoire de la parallélisation peut ralentir l'exécution du code. En outre, comme tout code multithread, la parallélisation rend l'exécution du programme plus complexe. Même si la bibliothèque parallèle de tâches simplifie les scénarios multithread, il est recommandé de connaître les notions fondamentales des concepts de threading, tels que les verrous, les interblocages et les conditions de concurrence critique, afin de pouvoir utiliser efficacement la bibliothèque parallèle de tâches.  
+ À compter de .NET Framework 4, la bibliothèque parallèle de tâches est la meilleure méthode pour écrire le code multithread et parallèle. Toutefois, tout le code est pas approprié pour la parallélisation ; par exemple, si une boucle exécute uniquement une petite quantité de travail sur chaque itération ou ne s'exécute que pour un nombre limité d'itérations, la charge mémoire de la parallélisation peut ralentir l'exécution du code. En outre, comme tout code multithread, la parallélisation rend l'exécution du programme plus complexe. Même si la bibliothèque parallèle de tâches simplifie les scénarios multithread, il est recommandé de connaître les notions fondamentales des concepts de threading, tels que les verrous, les interblocages et les conditions de concurrence critique, afin de pouvoir utiliser efficacement la bibliothèque parallèle de tâches.  
   
 ## <a name="related-topics"></a>Rubriques connexes  
   

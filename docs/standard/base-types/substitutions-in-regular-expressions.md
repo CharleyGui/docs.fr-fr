@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 51e22407bd20cc6aa17b242948a83d698167590e
-ms.sourcegitcommit: 3b9b7ae6771712337d40374d2fef6b25b0d53df6
+ms.openlocfilehash: 5c06a20e3d6cf3030da1cc63435423e087408aa6
+ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54030152"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66301502"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Substitutions dans les expressions régulières
 <a name="Top"></a> Les substitutions sont des éléments de langage reconnus uniquement dans des modèles de remplacement. Elles utilisent un modèle d'expression régulière pour définir tout ou partie du texte qui doit remplacer le texte correspondant dans la chaîne d'entrée. Le modèle de remplacement peut se composer d'une ou plusieurs substitutions avec des caractères littéraux. Les modèles de remplacement sont fournis aux surcharges de la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> qui a un paramètre `replacement` et à la méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> . Les méthodes remplacent le modèle correspondant par le modèle défini par le paramètre `replacement` .  
@@ -29,14 +29,14 @@ ms.locfileid: "54030152"
   
 |Substitution|Description|  
 |------------------|-----------------|  
-|`$` *nombre*|Inclut la dernière sous-chaîne correspondant au groupe de capture identifié par *nombre*, où *nombre* est une valeur décimale, dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe numéroté](#Numbered).|  
-|`${` *name* `}`|Inclut la dernière sous-chaîne correspondant au groupe nommé désigné par `(?<`*nom*`> )` dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe nommé](#Named).|  
-|`$$`|Inclut un littéral « $ » unique dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un symbole « $ »](#DollarSign).|  
-|`$&`|Inclut une copie de la correspondance entière dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution de la correspondance entière](#EntireMatch).|  
-|``$` ``|Inclut tout le texte de la chaîne d'entrée avant la correspondance dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution du texte avant la correspondance](#BeforeMatch).|  
-|`$'`|Inclut tout le texte de la chaîne d'entrée après la correspondance dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution du texte après la correspondance](#AfterMatch).|  
-|`$+`|Inclut le dernier groupe capturé dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution du dernier groupe capturé](#LastGroup).|  
-|`$_`|Inclut la chaîne d'entrée entière dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution de la chaîne d'entrée entière](#EntireString).|  
+|$ *nombre*|Inclut la dernière sous-chaîne correspondant au groupe de capture identifié par *nombre*, où *nombre* est une valeur décimale, dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe numéroté](#Numbered).|  
+|${ *nom* }|Inclut la dernière sous-chaîne correspondant au groupe nommé désigné par `(?<`*nom*`> )` dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un groupe nommé](#Named).|  
+|$$|Inclut un littéral « $ » unique dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution d'un symbole « $ »](#DollarSign).|  
+|$&|Inclut une copie de la correspondance entière dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution de la correspondance entière](#EntireMatch).|  
+|$\`|Inclut tout le texte de la chaîne d'entrée avant la correspondance dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution du texte avant la correspondance](#BeforeMatch).|  
+|$'|Inclut tout le texte de la chaîne d'entrée après la correspondance dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution du texte après la correspondance](#AfterMatch).|  
+|$+|Inclut le dernier groupe capturé dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution du dernier groupe capturé](#LastGroup).|  
+|$_|Inclut la chaîne d'entrée entière dans la chaîne de remplacement. Pour plus d'informations, consultez [Substitution de la chaîne d'entrée entière](#EntireString).|  
   
 ## <a name="substitution-elements-and-replacement-patterns"></a>Éléments de substitution et modèles de remplacement  
  Les substitutions sont les seules constructions particulières acceptées dans un modèle de remplacement. Aucun des autres éléments de langage d'expression régulière, notamment les caractères d'échappement et le point (`.`), qui correspond à n'importe quel caractère, n'est pris en charge. De la même façon, les éléments de langage de substitution sont reconnus uniquement dans les modèles de remplacement et ne sont jamais valides dans les modèles d'expressions régulières.  

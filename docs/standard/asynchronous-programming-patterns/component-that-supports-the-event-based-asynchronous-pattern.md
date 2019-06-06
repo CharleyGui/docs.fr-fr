@@ -18,12 +18,12 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 61f676b5-936f-40f6-83ce-f22805ec9c2f
-ms.openlocfilehash: d6c35398d54b91c9aa595ffdcde56004e59b7693
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 85e7f10643c57837cf0b66613825241db94c0065
+ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882501"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66423877"
 ---
 # <a name="how-to-implement-a-component-that-supports-the-event-based-asynchronous-pattern"></a>Procédure : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements
 Si vous écrivez une classe qui comporte certaines opérations pouvant entraîner d’importants ralentissements, pensez à lui affecter des fonctionnalités asynchrones en implémentant la [Vue d’ensemble du modèle asynchrone basé sur les événements](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
@@ -176,7 +176,7 @@ Si vous écrivez une classe qui comporte certaines opérations pouvant entraîne
  La méthode `CalculateWorker` est incluse dans un délégué et invoquée de façon asynchrone avec un appel à `BeginInvoke`.  
   
 > [!NOTE]
->  Le signalement de la progression est implémenté dans la méthode `BuildPrimeNumberList`. Sur les ordinateurs rapides, il est possible de déclencher les événements `ProgressChanged` à courts intervalles. Le thread du client, sur lequel ces événements sont déclenchés, doit être en mesure de gérer cette situation. Le code de l’interface utilisateur pourrait être submergé par les messages et incapable de suivre le rythme, ce qui provoquerait un blocage. Pour un exemple d’interface utilisateur qui gère cette situation, consultez [Guide pratique pour implémenter un client du modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
+>  Le signalement de la progression est implémenté dans la méthode `BuildPrimeNumberList`. Sur les ordinateurs rapides, il est possible de déclencher les événements `ProgressChanged` à courts intervalles. Le thread du client, sur lequel ces événements sont déclenchés, doit être en mesure de gérer cette situation. Le code de l’interface utilisateur pourrait être submergé par les messages et incapable de suivre le rythme, ce qui provoquerait une absence de réponse. Pour un exemple d’interface utilisateur qui gère cette situation, consultez [Guide pratique pour implémenter un client du modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md).  
   
 #### <a name="to-execute-the-prime-number-calculation-asynchronously"></a>Pour exécuter de façon asynchrone le calcul de nombres premiers :  
   

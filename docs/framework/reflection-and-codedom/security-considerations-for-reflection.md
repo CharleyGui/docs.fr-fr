@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ef6b73d683d43b2a33628db13fa592c7f02199a
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 116df78eb20d6e6c6355d07099ae5d3de9320f30
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585988"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457297"
 ---
 # <a name="security-considerations-for-reflection"></a>Considérations sur la sécurité de la réflexion
 La réflexion permet d'obtenir des informations sur les types et les membres, et d'accéder aux membres (c'est-à-dire appeler des méthodes et des constructeurs, obtenir et définir des valeurs de propriétés, ajouter et supprimer des gestionnaires d'événements, etc.). L'utilisation de la réflexion pour obtenir des informations sur les types et les membres n'est pas limitée. Tout code peut utiliser la réflexion pour effectuer les tâches suivantes :  
@@ -58,10 +58,10 @@ La réflexion permet d'obtenir des informations sur les types et les membres, et
   
  Le code d'application qui est exécuté à partir de la ligne de commande s'exécute avec une confiance totale. Tant qu'il n'est pas marqué comme transparent, il peut utiliser la réflexion pour accéder aux membres critiques de sécurité. Quand le même code est exécuté avec un niveau de confiance partiel (par exemple dans un domaine d’application sandbox), le niveau de confiance de l’assembly détermine s’il peut accéder au code critique du point de vue de la sécurité. Si l’assembly a un nom fort et qu’il est installé dans le Global Assembly Cache, c’est un assembly de confiance et il peut appeler des membres critiques de sécurité. Si elle n'est pas de confiance, il devient transparent même s'il n'était pas marqué comme tel, et il ne peut pas accéder aux membres critiques de sécurité.  
   
- Pour plus d’informations sur le modèle de sécurité dans le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], consultez [Changements en matière de sécurité](../../../docs/framework/security/security-changes.md).  
+ Pour plus d’informations sur le modèle de sécurité dans .NET Framework 4, consultez [Changements relatifs à la sécurité](../../../docs/framework/security/security-changes.md).  
   
 ## <a name="reflection-and-transparency"></a>Réflexion et transparence  
- Depuis le [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], le common language runtime détermine le niveau de transparence d'un type ou d'un membre à partir de plusieurs facteurs, notamment le niveau de confiance de l'assembly et le niveau de confiance du domaine d'application. La réflexion fournit les propriétés <xref:System.Type.IsSecurityCritical%2A>, <xref:System.Type.IsSecuritySafeCritical%2A> et <xref:System.Type.IsSecurityTransparent%2A> pour vous permettre de connaître le niveau de transparence d'un type. Le tableau suivant montre les combinaisons valides de ces propriétés.  
+ Depuis .NET Framework 4, le common language runtime détermine le niveau de transparence d’un type ou d’un membre à partir de plusieurs facteurs, notamment le niveau de confiance de l’assembly et le niveau de confiance du domaine d’application. La réflexion fournit les propriétés <xref:System.Type.IsSecurityCritical%2A>, <xref:System.Type.IsSecuritySafeCritical%2A> et <xref:System.Type.IsSecurityTransparent%2A> pour vous permettre de connaître le niveau de transparence d'un type. Le tableau suivant montre les combinaisons valides de ces propriétés.  
   
 |Niveau de sécurité|EstCritiqueDeSécurité|EstCritiqueSécurisé|EstTransparentDeSécurité|  
 |--------------------|------------------------|----------------------------|---------------------------|  

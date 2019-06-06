@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: f120a5d9-933b-4d1d-acb6-f034a57c3749
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2736c4758cbaaeda902b43aeea55611a21ea38ba
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cb99d6d78fc381e0b56efae51307eb469c535a9a
+ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623809"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66457346"
 ---
 # <a name="interop-with-other-asynchronous-patterns-and-types"></a>Interopérabilité avec d’autres types et modèles asynchrones
 .NET Framework 1.0 a introduit le modèle <xref:System.IAsyncResult> , également appelé le [Asynchronous Programming Model (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md)ou le modèle `Begin/End` .  .NET Framework 2.0 a ajouté le [Event-based Asynchronous Pattern (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).  À partir de .NET Framework 4, le [Task-based Asynchronous Pattern (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) remplace le modèle de programmation asychrone (APM, Asynchronous Programming Model) et le modèle asynchrone basé sur les évènements (EAP, Event-based Asynchronous Pattern), mais permet de créer facilement des routines de migration à partir de modèles antérieurs.  
@@ -37,7 +37,7 @@ ms.locfileid: "64623809"
   
 <a name="ApmToTap"></a>   
 ### <a name="from-apm-to-tap"></a>APM vers modèle asynchrone basé sur les tâches (TAP, Task-based Asynchronous Pattern)  
- Étant donné que le modèle [Asynchronous Programming Model (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) est très structuré, vous pouvez facilement créer un wrapper pour exposer une implémentation APM en tant qu’implémentation TAP. En effet, .NET Framework, à partir de [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], inclut des routines d’assistance sous la forme de surcharges de méthode <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> pour fournir cette traduction.  
+ Étant donné que le modèle [Asynchronous Programming Model (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) est très structuré, vous pouvez facilement créer un wrapper pour exposer une implémentation APM en tant qu’implémentation TAP. En effet, le .NET Framework, à compter de .NET Framework 4, inclut des routines d’assistance sous la forme de surcharges de méthode <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> pour fournir cette traduction.  
   
  Imaginez la classe <xref:System.IO.Stream> et ses méthodes <xref:System.IO.Stream.BeginRead%2A> et <xref:System.IO.Stream.EndRead%2A> , qui représentent la contrepartie AMP de méthode <xref:System.IO.Stream.Read%2A> synchrone :  
   
