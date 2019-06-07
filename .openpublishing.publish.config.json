@@ -9,9 +9,6 @@
   "contribution_branch_mappings": {
     "live-sxs": "live"
   },
-  "contribution_branch_mappings": {
-    "live-sxs": "live"
-  },
   "branch_target_mapping": {
     "live": [
       "Publish",
@@ -90,6 +87,11 @@
       "branch_mapping": {
         "live": "live"
       }
+    },
+    {
+      "path_to_root": "machinelearning-samples",
+      "url": "https://github.com/dotnet/machinelearning-samples",
+      "branch": "master"
     }
   ]
 }
