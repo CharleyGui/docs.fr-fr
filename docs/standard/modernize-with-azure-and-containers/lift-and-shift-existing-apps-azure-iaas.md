@@ -2,12 +2,12 @@
 title: Lift- and -shift des applications .NET existantes vers Azure IaaS (Infrastructure prête pour le Cloud)
 description: Moderniser des Applications .NET existantes avec le Cloud Azure et les conteneurs Windows.
 ms.date: 04/28/2018
-ms.openlocfilehash: 24e413ad82742067b2fee6cd3a7a99e6f0f87b0a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: cda316ad01a58f26661395c804547de04e20d052
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65643708"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758862"
 ---
 # <a name="lift-and-shift-existing-net-apps-to-azure-iaas-cloud-infrastructure-ready"></a>Lift- and -shift des applications .NET existantes vers Azure IaaS (Infrastructure prête pour le Cloud)
 
@@ -39,7 +39,7 @@ Les sections suivant est optimisé pour le Cloud des applications qui reposent p
 
 Si votre objectif consiste simplement à déplacer des applications existantes vers le cloud, tout d’abord, identifiez les applications existantes qui n’exige pas de modification importante de l’exécuter dans Azure App Service. Ces applications doivent être les premières à être concernées pour optimisé pour le Cloud. 
 
-Ensuite, pour les applications qui toujours Impossible de déplacer vers les conteneurs Windows et PaaS comme App Service ou des orchestrateurs comme Azure Service Fabric, migration vers des machines virtuelles plain (IaaS) simples des. 
+Ensuite, pour les applications qui toujours Impossible de déplacer vers les conteneurs Windows et PaaS comme App Service ou des orchestrateurs tels que Azure Kubernetes Service, migration vers des machines virtuelles plain (IaaS) simples des. 
 
 Toutefois, n’oubliez pas que correctement configuration, la sécurisation et la maintenance des machines virtuelles nécessitent beaucoup plus de temps et d’expertise en informatique comparé à l’utilisation des services PaaS dans Azure. Si vous envisagez d’utiliser des Machines virtuelles Azure, veillez à prendre en compte l’effort de maintenance continue pour les corriger, mettre à jour et gérer votre environnement de machine virtuelle. Machines virtuelles Azure est IaaS.
 

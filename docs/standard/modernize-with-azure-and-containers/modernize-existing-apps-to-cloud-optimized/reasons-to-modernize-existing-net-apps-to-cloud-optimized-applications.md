@@ -2,12 +2,12 @@
 title: Raisons de moderniser des applications .NET existantes aux applications optimisé pour le Cloud
 description: Moderniser des applications .NET existantes avec des conteneurs de Cloud Azure et Windows | Raisons de moderniser des applications .NET existantes aux applications optimisé pour le Cloud
 ms.date: 04/28/2018
-ms.openlocfilehash: e09d8066e883aaef55408336e3817158e2c14be6
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 5aa9828f65f76138461c18711fe03bdbe6a70ffd
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65639061"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758749"
 ---
 # <a name="reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications"></a>Raisons de moderniser des applications .NET existantes aux applications optimisé pour le Cloud
 
@@ -27,7 +27,7 @@ Votre application est optimisé pour le Cloud si vous pouvez dans agile manière
 
 La clé est *agilité*. Vous ne pouvez pas fournis avec agilité, sauf si vous réduisez au strict minimum de n’importe quel déploiement pour la production problèmes et les problèmes d’environnement de développement/test. Conteneurs (plus précisément, Docker, comme une norme de facto) et les services gérés ont été conçus spécialement à cet effet.
 
-Pour atteindre l’agilité, vous devez également les processus DevOps automatisés qui sont basées sur les pipelines CI/CD qui passent en plates-formes évolutives dans le cloud. Plates-formes de CI/CD (comme Azure DevOps Services ou Jenkins) déploiement sur une plateforme cloud évolutive et résiliente (comme Azure App Service, Azure Service Fabric ou Azure Kubernetes Service) sont des technologies clés permettant d’atteindre l’agilité dans le cloud.
+Pour atteindre l’agilité, vous devez également les processus DevOps automatisés qui sont basées sur les pipelines CI/CD qui passent en plates-formes évolutives dans le cloud. Plates-formes de CI/CD (comme Azure DevOps Services ou Jenkins) déploiement sur une plateforme cloud évolutive et résiliente (comme Azure App Service ou Azure Kubernetes Service) sont des technologies clés permettant d’atteindre l’agilité dans le cloud.
 
 La liste suivante décrit les principes principales ou les pratiques pour les applications optimisé pour le Cloud. Notez que vous pouvez adopter tout ou uniquement certains de ces principes, dans une approche progressive ou incrémentielle :
 

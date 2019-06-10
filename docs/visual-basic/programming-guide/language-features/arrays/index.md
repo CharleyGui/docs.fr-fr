@@ -2,13 +2,18 @@
 title: Tableaux dans Visual Basic
 ms.date: 12/06/2017
 f1_keywords:
-  - vb.Array
+- vb.Array
 helpviewer_keywords:
-  - 'arrays [Visual Basic]'
-  - 'Visual Basic, arrays'
+- arrays [Visual Basic]
+- Visual Basic, arrays
 ms.assetid: dbf29737-b589-4443-bee6-a27588d9c67e
+ms.openlocfilehash: 12846b80f04e9fa6d1188485ad55b061cd2863fa
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758849"
 ---
-
 # <a name="arrays-in-visual-basic"></a>Tableaux dans Visual Basic
 
 Un tableau est un ensemble de valeurs appelées *éléments*, qui sont liés logiquement entre eux. Par exemple, un tableau peut contenir le nombre d’étudiants de chaque niveau scolaire dans une école primaire ; chaque élément du tableau est le nombre d’étudiants dans une classe unique. De même, un tableau peut se composer de notes d’un étudiant pour une classe ; chaque élément du tableau est un niveau unique.
@@ -27,7 +32,7 @@ Voici quelques exemples sommaires avant d’entrer dans les détails :
 ' Declare a single-dimension array of 5 numbers.
 Dim numbers(4) As Integer
 
-'Declare a single-dimension array and set its 4 values.
+' Declare a single-dimension array and set its 4 values.
 Dim numbers = New Integer() {1, 2, 4, 8}
 
 ' Change the size of an existing array to 16 elements and retain the current values.

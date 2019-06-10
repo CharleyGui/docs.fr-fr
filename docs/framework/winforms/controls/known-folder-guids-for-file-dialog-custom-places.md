@@ -6,15 +6,15 @@ helpviewer_keywords:
 - Custom Places [Windows Forms], Known Folder GUIDs
 - Windows Vista Known Folder GUIDs [Windows Forms], Custom Places
 ms.assetid: d8d8b544-8b4d-4da5-ba3a-b05e93244778
-ms.openlocfilehash: 0f06ca2251ae1bf9bd5e199562eff116614e7117
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 09c51341a2b81c21804bcca3b244bbebdb7342b6
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973838"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758778"
 ---
 # <a name="known-folder-guids-for-file-dialog-custom-places"></a>GUID de dossier connus pour des emplacements personnalisés de boîtes de dialogue Fichier
-Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] dossier connu lorsque vous ajoutez des dossiers à un <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> collection. Connus GUID de dossier respectent pas la casse et sont définis dans le fichier KnownFolders.h dans le [!INCLUDE[winSDK](../../../../includes/winsdk-md.md)].  
+Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] dossier connu lorsque vous ajoutez des dossiers à un <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> collection. GUID de dossier connus ne sont pas sensible à la casse et sont définis dans le fichier KnownFolders.h dans le SDK Windows.  
   
 > [!NOTE]
 >  Dans certains cas, un dossier connu ajouté à la <xref:System.Windows.Forms.FileDialogCustomPlacesCollection> s’affichera pas dans le **liens favoris** zone. Par exemple, si le dossier connu spécifié n’est pas présent sur l’ordinateur qui exécute l’application, le dossier connu n’est pas affiché.  

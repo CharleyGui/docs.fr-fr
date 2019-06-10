@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: ccd68284-f3a8-47b8-bc3f-92e5fe3a1640
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1f97892ecf7d891113cc7524dd8c1423e144583f
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: b0c56018c61e5566043fb2b9ba8bbee042093f12
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457340"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758148"
 ---
 # <a name="runtime-profiling"></a>Génération de profils d'exécution
 Le profilage est une méthode de collecte de données de performance dans le cadre d’un scénario de développement ou de déploiement. Cette section s’adresse aux développeurs et administrateurs système qui souhaitent recueillir des informations sur les performances d’une application.  
@@ -54,7 +54,7 @@ Le profilage est une méthode de collecte de données de performance dans le cad
  Si vous voulez profiler un assembly qui existe dans une zone ou sur un partage distant, assurez-vous que l’assembly distant bénéficie d’une confiance totale sur l’ordinateur qui exécute les compteurs de performances. Si l’assembly n’a pas un niveau de confiance suffisant, les compteurs de performances ne fonctionnent pas. Pour plus d’informations sur l’octroi de confiance à différentes zones, consultez [Caspol.exe (outil Stratégie de sécurité d’accès du code)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md).  
   
 > [!NOTE]
->  Sur les systèmes sur lesquels le .NET Framework 4 est installé, l’Analyseur de performances ne peut pas afficher les données des compteurs de performances dans certaines catégories, telles que **.NET CLR Data** et **.NET CLR Networking**, pour les applications qui ont été développées à l’aide de la [!INCLUDE[net_v11_short](../../../includes/net-v11-short-md.md)]. Si c’est le cas, vous pouvez configurer l’Analyseur de performances pour qu’il affiche ces données en ajoutant l’élément [\<forcePerformanceCounterUniqueSharedMemoryReads>](../../../docs/framework/configure-apps/file-schema/runtime/forceperformancecounteruniquesharedmemoryreads-element.md) au fichier de configuration de l’application.  
+>  Sur les systèmes sur lesquels le .NET Framework 4 est installé, l’Analyseur de performances ne peut pas afficher les données des compteurs de performances dans certaines catégories, telles que **.NET CLR Data** et **.NET CLR Networking**, pour applications développées à l’aide de .NET Framework 1.1. Si c’est le cas, vous pouvez configurer l’Analyseur de performances pour qu’il affiche ces données en ajoutant l’élément [\<forcePerformanceCounterUniqueSharedMemoryReads>](../../../docs/framework/configure-apps/file-schema/runtime/forceperformancecounteruniquesharedmemoryreads-element.md) au fichier de configuration de l’application.  
   
 ## <a name="reading-and-creating-performance-counters-programmatically"></a>Lecture et création de compteurs de performances par programmation  
  Le .NET Framework fournit des classes que vous pouvez utiliser pour accéder par programme aux mêmes informations de performance qui sont disponibles dans la console de performances. Vous pouvez aussi utiliser ces classes pour créer des compteurs de performances personnalisés. Le tableau suivant décrit certaines des performances de la surveillance des classes qui sont fournies dans le .NET Framework.  
