@@ -1,17 +1,17 @@
 ---
 title: Enregistrements
 description: Découvrez comment F# enregistrements représentent des agrégats simples de valeurs nommées, éventuellement avec des membres.
-ms.date: 05/16/2016
-ms.openlocfilehash: a499755383654ddaf76af12776ee93f27834b7b0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.date: 06/09/2019
+ms.openlocfilehash: cfb8de8272b479571119ae4cf91ea1d6fd5db73c
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795419"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66816193"
 ---
 # <a name="records"></a>Enregistrements
 
-Les enregistrements représentent des agrégats simples de valeurs nommées, éventuellement avec des membres.  En commençant par F# 4.1, ils peuvent appartenir types structs ou référence.  Ils sont des types de référence par défaut.
+Les enregistrements représentent des agrégats simples de valeurs nommées, éventuellement avec des membres. Ils peuvent être soit les types de structures ou de référence.  Ils sont des types de référence par défaut.
 
 ## <a name="syntax"></a>Syntaxe
 

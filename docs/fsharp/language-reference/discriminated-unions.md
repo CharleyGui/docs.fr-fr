@@ -2,12 +2,12 @@
 title: Unions discriminées
 description: Découvrez comment utiliser F# unions discriminées.
 ms.date: 05/16/2016
-ms.openlocfilehash: 27fb9205f3f216adc435483fd1dcc839a6e13e03
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: a3958a9ffb021c0c46c24216f17a1e7ee5605dd3
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557970"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66816244"
 ---
 # <a name="discriminated-unions"></a>Unions discriminées
 
@@ -111,7 +111,7 @@ let someFunctionUsingShaderProgram (ShaderProgram id) =
 
 ## <a name="struct-discriminated-unions"></a>Unions discriminées de structs
 
-En commençant par F# 4.1, vous pouvez également représenter des Unions discriminées en tant que structures.  Cette opération est effectuée avec la `[<Struct>]` attribut.
+Vous pouvez également représenter des Unions discriminées en tant que structures.  Cette opération est effectuée avec la `[<Struct>]` attribut.
 
 ```fsharp
 [<Struct>]
@@ -164,14 +164,46 @@ Les unions discriminées fonctionnent bien si les nœuds dans l’arborescence s
 
 Lorsque ce code est exécuté, la valeur de `result` est 5.
 
+## <a name="members"></a>Membres
+
+Il est possible de définir des membres sur les unions discriminées. L’exemple suivant montre comment définir une propriété et d’implémenter une interface :
+
+```fsharp
+open System
+
+type IPrintable =
+    abstract Print: unit -> unit
+
+type Shape =
+    | Circle of float
+    | EquilateralTriangle of float
+    | Square of float
+    | Rectangle of float * float
+
+    member this.Area =
+        match this with
+        | Circle r -> 2.0 * Math.PI * r
+        | EquilateralTriangle s -> s * s * sqrt 3.0 / 4.0
+        | Square s -> s * s
+        | Rectangle(l, w) -> l * w
+
+    interface IPrintable with
+        member this.Print () =
+            match this with
+            | Circle r -> printfn "Circle with radius %f" r
+            | EquilateralTriangle s -> printfn "Equilateral Triangle of side %f" s
+            | Square s -> printfn "Square with side %f" s
+            | Rectangle(l, w) -> printfn "Rectangle with length %f and width %f" l w
+```
+
 ## <a name="common-attributes"></a>Attributs courants
 
 Les attributs suivants sont généralement visibles dans les unions discriminées :
 
-* `[RequireQualifiedAccess]`
-* `[NoEquality]`
-* `[NoComparison]`
-* `[Struct]`
+* `[<RequireQualifiedAccess>]`
+* `[<NoEquality>]`
+* `[<NoComparison>]`
+* `[<Struct>]`
 
 ## <a name="see-also"></a>Voir aussi
 
