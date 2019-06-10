@@ -2,12 +2,12 @@
 title: Référence (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 815b45e2-3527-4dee-9986-b1277a693cde
-ms.openlocfilehash: 41b9ff8a3e0aa13fa50c23fcf038ba9e918e26e4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f1233b77ede52cfafef41cadec3316673e9e7599
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54598379"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66483864"
 ---
 # <a name="reference-linq-to-xml"></a>Référence (LINQ to XML)
 Cette rubrique contient des liens vers les rubriques de référence LINQ to XML.  
@@ -21,4 +21,4 @@ Cette rubrique contient des liens vers les rubriques de référence LINQ to XML.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)
+- [LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md)

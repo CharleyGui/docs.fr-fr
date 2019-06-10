@@ -2,12 +2,12 @@
 title: Événements LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: ce7de951-cba7-4870-9962-733eb01cd680
-ms.openlocfilehash: f7ce6ed99f7279d1dc774314cdc2dde345b6a84d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8278d3eac9d1e149cbfe64e184439ef9ac3cd39b
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54736862"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66484340"
 ---
 # <a name="linq-to-xml-events-c"></a>Événements LINQ to XML (C#)
 Les événements [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vous permettent d’être averti quand une arborescence XML est modifiée.  
@@ -97,6 +97,3 @@ Total:308
 </Root>  
 ```  
   
-## <a name="see-also"></a>Voir aussi
-
-- [Programmation LINQ to XML avancée (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

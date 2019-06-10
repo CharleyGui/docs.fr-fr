@@ -9,12 +9,12 @@ helpviewer_keywords:
 - cast operator [C#]
 - () operator [C#]
 ms.assetid: 846e1f94-8a8c-42fc-a42c-fbd38e70d8cc
-ms.openlocfilehash: 412d3ac5296eaf7d67f4a5e84b7a42f6fa5bb8a5
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 8f7382a49c81b6fd8e104b864ffc2f70db7fe4a6
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633857"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758109"
 ---
 # <a name="-operator-c-reference"></a>(), opérateur (référence C#)
 
@@ -26,7 +26,7 @@ Vous utilisez également des parenthèses pour spécifier l’ordre dans lequel 
 
 L’exemple suivant montre comment appeler une méthode, avec ou sans arguments, et un délégué :
 
-[!code-csharp-interactive[use for invocation](~/samples/snippets/csharp/language-reference/operators/InvocationOperatorExamples.cs#Invocation)]
+[!code-csharp-interactive[use for invocation](~/samples/csharp/language-reference/operators/InvocationOperatorExamples.cs#Invocation)]
 
 Vous utilisez également des parenthèses quand vous appelez un [constructeur](../../programming-guide/classes-and-structs/constructors.md) avec un opérateur [`new`](../keywords/new-operator.md).
 
@@ -38,7 +38,7 @@ Une expression Cast de la forme `(T)E` appelle un opérateur de conversion pour 
 
 L’exemple suivant illustre la conversion de type entre des types numériques :
 
-[!code-csharp-interactive[use for cast](~/samples/snippets/csharp/language-reference/operators/InvocationOperatorExamples.cs#Cast)]
+[!code-csharp-interactive[use for cast](~/samples/csharp/language-reference/operators/InvocationOperatorExamples.cs#Cast)]
 
 Pour plus d’informations sur les conversions explicites prédéfinies entre des types numériques, consultez [Tableau des conversions numériques explicites](../keywords/explicit-numeric-conversions-table.md).
 

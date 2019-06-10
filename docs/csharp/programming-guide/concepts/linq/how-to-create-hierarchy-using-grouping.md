@@ -2,12 +2,12 @@
 title: 'Procédure : Créer une hiérarchie à l’aide de regroupements (C#)'
 ms.date: 07/20/2015
 ms.assetid: 0213d59e-5f76-438c-9cab-4bf11f7b971d
-ms.openlocfilehash: bd2e8ab9fb0ed1fee68cb51d2d032b202b14ba88
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 685c8ad1360ba2959dc81632ae084b935bd37c47
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54560852"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485839"
 ---
 # <a name="how-to-create-hierarchy-using-grouping-c"></a>Procédure : Créer une hiérarchie à l’aide de regroupements (C#)
 Cet exemple montre comment grouper des données, puis générer du code XML basé sur le regroupement.  
@@ -73,7 +73,3 @@ Console.WriteLine(newData);
   </Group>  
 </Root>  
 ```  
-  
-## <a name="see-also"></a>Voir aussi
-
-- [Techniques de requêtes avancées (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

@@ -2,12 +2,12 @@
 title: Projection de code XML en une autre forme (C#)
 ms.date: 07/20/2015
 ms.assetid: 4cb6b14a-32dc-4a2a-813e-bf9368fa8d86
-ms.openlocfilehash: ac9c6e05b366c9d34f82c6da9bf154d741840b3d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3b992b9eb56f978ce92f3b0210223da978f44e2b
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64596810"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66484036"
 ---
 # <a name="projecting-xml-in-a-different-shape-c"></a>Projection de code XML en une autre forme (C#)
 Cette rubrique illustre un exemple de projection de code XML dont la forme est différente du code XML source.  
@@ -235,6 +235,3 @@ class Program
   
 - [Recherche de texte dans des documents Word (C#)](../../../../csharp/programming-guide/concepts/linq/finding-text-in-word-documents.md)  
   
-## <a name="see-also"></a>Voir aussi
-
-- [Tutoriel : manipulation de contenu dans un document WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

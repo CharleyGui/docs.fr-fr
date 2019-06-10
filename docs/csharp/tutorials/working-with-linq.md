@@ -3,12 +3,12 @@ title: Utilisation de LINQ
 description: Ce didacticiel vous apprend à générer des séquences avec LINQ, à écrire des méthodes pour les requêtes LINQ et à faire la distinction entre l’évaluation stricte et l’évaluation paresseuse.
 ms.date: 10/29/2018
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: 702770650533b0549e414a1de87acf17d77af4e3
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: e51fb166ccba793f9f2aa9d11a109280bf8eea93
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063204"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66486984"
 ---
 # <a name="working-with-linq"></a>Utilisation de LINQ
 
@@ -172,7 +172,7 @@ public static IEnumerable<T> InterleaveSequenceWith<T> (this IEnumerable<T> firs
 
 On peut voir l’ajout du modificateur `this` au premier argument de la méthode. Cela signifie que vous appelez la méthode comme s’il s’agissait d’une méthode membre du type du premier argument. Cette déclaration de méthode suit également un idiome standard selon lequel les types d’entrée et de sortie sont `IEnumerable<T>`. Cette pratique permet d’enchaîner les méthodes LINQ afin d’exécuter des requêtes plus complexes.
 
-Bien entendu, le jeu ayant été coupé en deux, il faut réunir les deux moitiés. Dans le code, cela signifie énumérer d’un seul coup les deux séquences acquises avec <xref:System.Linq.Enumerable.Take%2A> et <xref:System.Linq.Enumerable.Skip%2A>, en intercalant (*`interleaving`*) les éléments pour créer une seule séquence : le jeu de cartes battu. Pour écrire une méthode LINQ qui fonctionne avec deux séquences, vous devez comprendre comment <xref:System.Collections.Generic.IEnumerable%601> fonctionne.
+Bien entendu, le jeu ayant été coupé en deux, il faut réunir les deux moitiés. Dans le code, cela signifie énumérer d’un seul coup les deux séquences acquises avec <xref:System.Linq.Enumerable.Take%2A> et <xref:System.Linq.Enumerable.Skip%2A>, en intercalant ( *`interleaving`* ) les éléments pour créer une seule séquence : le jeu de cartes battu. Pour écrire une méthode LINQ qui fonctionne avec deux séquences, vous devez comprendre comment <xref:System.Collections.Generic.IEnumerable%601> fonctionne.
 
 L’interface <xref:System.Collections.Generic.IEnumerable%601> possède une seule méthode : <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>. L’objet retourné par <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> a une méthode permettant d’atteindre l’élément suivant et une propriété qui récupère l’élément actif dans la séquence. Vous allez utiliser ces deux membres pour énumérer la collection et retourner les éléments. Cette méthode Interleave sera une méthode d’itération ; par conséquent, au lieu de créer une collection et de la retourner, vous allez utiliser la syntaxe `yield return` présentée ci-dessus.
 
@@ -340,9 +340,9 @@ En dehors de LINQ, vous avez appris une technique de tour de cartes utilisée pa
 
 Pour plus d’informations sur LINQ, voir :
 - [LINQ (Language Integrated Query)](../programming-guide/concepts/linq/index.md)
-  - [Introduction à LINQ](../programming-guide/concepts/linq/introduction-to-linq.md)
-  - [Bien démarrer avec LINQ en C#](../programming-guide/concepts/linq/getting-started-with-linq.md)
-    - [Opérations de requête LINQ de base (C#)](../programming-guide/concepts/linq/basic-linq-query-operations.md)
-    - [Transformations de données avec LINQ (C#)](../programming-guide/concepts/linq/data-transformations-with-linq.md)
-    - [Syntaxe de requête et syntaxe de méthode dans LINQ (C#)](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)
-    - [Fonctionnalités C# qui prennent en charge LINQ](../programming-guide/concepts/linq/features-that-support-linq.md)
+  - [Introduction à LINQ](../programming-guide/concepts/linq/index.md)
+  - [Opérations de requête LINQ de base (C#)](../programming-guide/concepts/linq/basic-linq-query-operations.md)
+  - [Transformations de données avec LINQ (C#)](../programming-guide/concepts/linq/data-transformations-with-linq.md)
+  - [Syntaxe de requête et syntaxe de méthode dans LINQ (C#)](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)
+  - [Fonctionnalités C# qui prennent en charge LINQ](../programming-guide/concepts/linq/features-that-support-linq.md)
+    

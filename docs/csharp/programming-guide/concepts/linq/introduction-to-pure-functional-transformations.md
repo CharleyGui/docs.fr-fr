@@ -2,15 +2,19 @@
 title: Introduction aux transformations fonctionnelles pures (C#)
 ms.date: 07/20/2015
 ms.assetid: 8495c9d9-2d02-4aa0-8a10-9e8794b985fe
-ms.openlocfilehash: 63b7a69baeb42c82fb1c94d08cee17519330025c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c9d187e9ee6750d8ad09e197839d107c3c79e4ed
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54501802"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66484493"
 ---
 # <a name="introduction-to-pure-functional-transformations-c"></a>Introduction aux transformations fonctionnelles pures (C#)
 Cette section présente les transformations fonctionnelles, y compris les concepts sous-jacents et les constructions de prise en charge. Elle décrit le contraste qu'il existe entre la programmation orientée objet et la programmation avec transformation fonctionnelle, et fournit des conseils pour aider les programmeurs à passer de l'une à l'autre. Bien que les transformations fonctionnelles puissent être utilisées dans de nombreux scénarios de programmation, la transformation XML est utilisée ici comme exemple concret.  
+  
+ Le [Tutoriel : Manipulation de contenu dans un document WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/shape-of-wordprocessingml-documents.md) fournit une série d’exemples, chacun basé sur le précédent. Ces exemples illustrent l'approche transformationnelle fonctionnelle pure de la manipulation de données XML. Ce didacticiel suppose que vous connaissez le langage C#. Aucune sémantique détaillée des constructions propres au langage n'est fournie dans ce didacticiel, mais des liens sont fournis vers la documentation de langage appropriée.  
+  
+ On suppose également que vous avez une connaissance pratique des concepts informatiques de base et du langage XML, y compris les espaces de noms XML.  
   
 ## <a name="in-this-section"></a>Dans cette section  
   
@@ -22,6 +26,3 @@ Cette section présente les transformations fonctionnelles, y compris les concep
 |[Applicabilité des transformations fonctionnelles (C#)](../../../../csharp/programming-guide/concepts/linq/applicability-of-functional-transformation.md)|Décrit des scénarios de transformation fonctionnelle courants.|  
 |[Transformation fonctionnelle de données XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md)|Décrit les transformations fonctionnelles dans le contexte de la transformation d’arborescences XML.|  
   
-## <a name="see-also"></a>Voir aussi
-
-- [Transformations fonctionnelles pures de données XML (C#)](../../../../csharp/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)

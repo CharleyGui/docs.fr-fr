@@ -2,12 +2,12 @@
 title: 'Procédure : Rechercher l’élément racine (XPath-LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4fd824e0-4d39-429b-b092-f6a5c046ee6c
-ms.openlocfilehash: a74556e4b05bc3ae02998eeb6dd3190a3bade36a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 59696e6f3487bbb09135ba413a173c32dffa0c9b
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54697164"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485411"
 ---
 # <a name="how-to-find-the-root-element-xpath-linq-to-xml-c"></a>Procédure : Rechercher l’élément racine (XPath-LINQ to XML) (C#)
 Cette rubrique montre comment obtenir l'élément racine avec XPath et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
@@ -43,7 +43,3 @@ Console.WriteLine(el1.Name);
 Results are identical  
 PurchaseOrders  
 ```  
-  
-## <a name="see-also"></a>Voir aussi
-
-- [LINQ to XML pour les utilisateurs XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

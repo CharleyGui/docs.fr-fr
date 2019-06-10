@@ -2,12 +2,12 @@
 title: 'Procédure : Créer un document avec des espaces de noms (C#) (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 37e63c57-f86d-47ac-88a7-2c2d107def30
-ms.openlocfilehash: 9277253e885ac27ccb7d98221366d404ce0902e1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c64d23e18091ca06a5f345fc603231f442ad849c
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54618527"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485867"
 ---
 # <a name="how-to-create-a-document-with-namespaces-c-linq-to-xml"></a>Procédure : Créer un document avec des espaces de noms (C#) (LINQ to XML)
 Cette rubrique montre comment créer des documents avec des espaces de noms.  
@@ -119,7 +119,7 @@ Console.WriteLine(root);
 ```  
   
 ## <a name="example"></a>Exemple  
- Une autre approche permettant d’obtenir les mêmes résultats consiste à utiliser des noms développés au lieu de déclarer et de créer un objet <xref:System.Xml.Linq.XNamespace>.  
+ Une autre approche permettant d'obtenir les mêmes résultats consiste à utiliser des noms développés au lieu de déclarer et de créer un objet <xref:System.Xml.Linq.XNamespace>.  
   
  Cette approche a des implications en termes de performances. Chaque fois que vous passez une chaîne qui contient un nom développé à [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] doit analyser le nom, rechercher l’espace de noms atomisé et rechercher le nom atomisé. Ce processus consomme du temps de processeur. Si les performances sont importantes, vous souhaiterez peut-être déclarer et utiliser un objet <xref:System.Xml.Linq.XNamespace> de manière explicite.  
   
@@ -144,4 +144,4 @@ Console.WriteLine(root);
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation des espaces de noms XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+- [Utilisation des espaces de noms XML (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md)

@@ -2,12 +2,12 @@
 title: 'Procédure : Intercepter les erreurs d’analyse (C#)'
 ms.date: 07/20/2015
 ms.assetid: bfb612d4-5605-48ef-8c93-915cf9d5dcfb
-ms.openlocfilehash: 2f56ca48278f9ad8b38f8564f54a379cc09f94ef
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 094485b24cdccee7898bd0344aa7c100e26bf4e9
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54515860"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487489"
 ---
 # <a name="how-to-catch-parsing-errors-c"></a>Procédure : Intercepter les erreurs d’analyse (C#)
 Cette rubrique montre comment détecter du code XML incorrect ou non valide.  
@@ -42,6 +42,3 @@ The 'Contacts' start tag on line 1 does not match the end tag of 'Contcts'. Line
   
  Pour plus d'informations sur les exceptions que les méthodes <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XDocument.Parse%2A?displayProperty=nameWithType>, <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> et <xref:System.Xml.Linq.XDocument.Load%2A?displayProperty=nameWithType> peuvent lever, consultez la documentation <xref:System.Xml.XmlReader>.  
   
-## <a name="see-also"></a>Voir aussi
-
-- [Analyse de code XML (C#)](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)

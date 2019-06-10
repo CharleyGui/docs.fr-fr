@@ -2,12 +2,12 @@
 title: S’abonner à des événements
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Comprendre les détails de la publication et de l’abonnement à des événements d’intégration.
 ms.date: 10/02/2018
-ms.openlocfilehash: ff165f6bba7940b99ef9712049191e356b893897
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c0eaacce51b186191431bf827bb84d3a2d2b7b1f
+ms.sourcegitcommit: 90f0bee0e8a416e45c78fa3ad4c91ef00e5228d5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65639709"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66722671"
 ---
 # <a name="subscribing-to-events"></a>S’abonner à des événements
 
@@ -322,7 +322,7 @@ Si l’indicateur de redistribution est défini, le récepteur doit en tenir com
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Forked eShopOnContainers using NServiceBus (Particular Software)** \
+- **Forked eShopOnContainers using NServiceBus (Particular Software)**  \
     <https://go.particular.net/eShopOnContainers>
 
 - **Event Driven Messaging** \
@@ -378,12 +378,6 @@ Si l’indicateur de redistribution est défini, le récepteur doit en tenir com
 
 - **Reliability Guide** (RabbitMQ documentation) \
     [https://www.rabbitmq.com/reliability.html\#consumer](https://www.rabbitmq.com/reliability.html#consumer)
-
-- **Azure Service Bus. Brokered Messaging: Duplicate Detection** \
-    <https://code.msdn.microsoft.com/Brokered-Messaging-c0acea25>
-
-- **Reliability Guide** (RabbitMQ documentation) \
-    [https://www.rabbitmq.com/reliability.html\#consumer](https://www.rabbitmq.com/reliability.html%23consumer)
 
 > [!div class="step-by-step"]
 > [Précédent](rabbitmq-event-bus-development-test-environment.md)

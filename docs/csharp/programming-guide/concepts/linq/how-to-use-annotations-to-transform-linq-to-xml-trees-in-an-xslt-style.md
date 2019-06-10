@@ -2,12 +2,12 @@
 title: 'Procédure : Utiliser des annotations dans le but de transformer des arborescences LINQ to XML en un style XSLT (C#)'
 ms.date: 07/20/2015
 ms.assetid: 12a95902-a6b7-4a1e-ad52-04a518db226f
-ms.openlocfilehash: ddb85194df540b13d64e83b1eb8852271b7e04b1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3aaf141a8ac5d8f3fc75d0a31b460fc84733a62e
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64597893"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66484800"
 ---
 # <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-c"></a>Procédure : Utiliser des annotations dans le but de transformer des arborescences LINQ to XML en un style XSLT (C#)
 Les annotations peuvent servir à faciliter les transformations d’une arborescence XML.  
@@ -425,6 +425,3 @@ After Transform
 </Root>  
 ```  
   
-## <a name="see-also"></a>Voir aussi
-
-- [Programmation LINQ to XML avancée (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

@@ -19,12 +19,12 @@ helpviewer_keywords:
 - <= operator [C#]
 - greater than or equal to operator [C#]
 - '>= operator [C#]'
-ms.openlocfilehash: 6d3751ff1ee2c6ee2f058eeda4ffd5db188a988e
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 3b123ea1ae57735cdcb763087f12c30b8008dc11
+ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633759"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66758200"
 ---
 # <a name="comparison-operators-c-reference"></a>Opérateurs de comparaison (référence C#)
 
@@ -41,25 +41,25 @@ Les [opérateurs `==` et `!=`](equality-operators.md) vérifient si leurs opéra
 
 L’opérateur `<` retourne `true` si son premier opérande est inférieur à son second opérande, `false` dans le cas contraire :
 
-[!code-csharp-interactive[less than example](~/samples/snippets/csharp/language-reference/operators/GreaterAndLessOperatorsExamples.cs#Less)]
+[!code-csharp-interactive[less than example](~/samples/csharp/language-reference/operators/ComparisonOperators.cs#Less)]
 
 ## <a name="greater-than-operator-"></a>Opérateur Supérieur à >
 
 L’opérateur `>` retourne `true` si son premier opérande est supérieur à son second opérande, `false` dans le cas contraire :
 
-[!code-csharp-interactive[greater than example](~/samples/snippets/csharp/language-reference/operators/GreaterAndLessOperatorsExamples.cs#Greater)]
+[!code-csharp-interactive[greater than example](~/samples/csharp/language-reference/operators/ComparisonOperators.cs#Greater)]
 
 ## <a name="less-than-or-equal-operator-"></a>Opérateur Inférieur ou égal à \<=
 
 L’opérateur `<=` retourne `true` si son premier opérande est inférieur ou égal à son second opérande, `false` dans le cas contraire :
 
-[!code-csharp-interactive[less than or equal example](~/samples/snippets/csharp/language-reference/operators/GreaterAndLessOperatorsExamples.cs#LessOrEqual)]
+[!code-csharp-interactive[less than or equal example](~/samples/csharp/language-reference/operators/ComparisonOperators.cs#LessOrEqual)]
 
 ## <a name="greater-than-or-equal-operator-"></a>Opérateur Supérieur ou égal à >=
 
 L’opérateur `>=` retourne `true` si son premier opérande est supérieur ou égal à son second opérande, `false` sinon :
 
-[!code-csharp-interactive[greater than or equal example](~/samples/snippets/csharp/language-reference/operators/GreaterAndLessOperatorsExamples.cs#GreaterOrEqual)]
+[!code-csharp-interactive[greater than or equal example](~/samples/csharp/language-reference/operators/ComparisonOperators.cs#GreaterOrEqual)]
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 
