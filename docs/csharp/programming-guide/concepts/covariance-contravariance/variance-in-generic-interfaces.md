@@ -1,13 +1,13 @@
 ---
 title: Variance dans les interfaces génériques (C#)
-ms.date: 04/10/2019
+ms.date: 06/06/2019
 ms.assetid: 4828a8f9-48c0-4128-9749-7fcd6bf19a06
-ms.openlocfilehash: 5874a39a57f85695bedc3d1ffa61adf19fcdbe37
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: a2d0bcc049d62978930b4e5cdef7920349e3b894
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59480779"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66815964"
 ---
 # <a name="variance-in-generic-interfaces-c"></a>Variance dans les interfaces génériques (C#)
 
@@ -31,9 +31,9 @@ ms.locfileid: "59480779"
 
 À compter de .NET Framework 4.5, les interfaces suivantes sont des variants :
 
-- <xref:System.Collections.Generic.IReadOnlyList%601> (T est contravariant)
+- <xref:System.Collections.Generic.IReadOnlyList%601> (T est covariant)
 
-- <xref:System.Collections.Generic.IReadOnlyCollection%601> (T est contravariant)
+- <xref:System.Collections.Generic.IReadOnlyCollection%601> (T est covariant)
 
 La covariance permet à une méthode d’avoir un type de retour plus dérivé que celui défini par le paramètre de type générique de l’interface. Pour illustrer la fonctionnalité de covariance, considérez ces interfaces génériques : `IEnumerable<Object>` et `IEnumerable<String>`. L’interface `IEnumerable<String>` n’hérite pas de l’interface `IEnumerable<Object>`. Toutefois, le type `String` hérite du type `Object` et, dans certains cas, vous pouvez assigner des objets de ces interfaces de l’un à l’autre. Ceci est illustré dans l’exemple de code suivant.
 
