@@ -2,12 +2,12 @@
 title: 'Procédure : Chaîner des appels à des méthodes d’axe (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 067e6da2-ee32-486d-803c-e611b328e39a
-ms.openlocfilehash: ff3a7548e2ec54e8959f9f9b5ed52c0fc6acb1f5
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 39113c1b96ea7376d61c606aaa5f79715dbe3cab
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54652200"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66485925"
 ---
 # <a name="how-to-chain-axis-method-calls-linq-to-xml-c"></a>Procédure : Chaîner des appels à des méthodes d’axe (LINQ to XML) (C#)
 Un schéma courant que vous utiliserez dans votre code consiste à appeler une méthode d’axe, puis à appeler l’un des axes de méthode d’extension.  
@@ -88,7 +88,7 @@ foreach (XElement cp in configParameters)
 ```  
   
 ## <a name="example"></a>Exemple  
- L'exemple suivant illustre la même technique pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [Utilisation des espaces de noms XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ L'exemple suivant illustre la même technique pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [Utilisation des espaces de noms XML (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md).  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur dans un espace de noms](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md).  
   
