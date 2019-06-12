@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], IIS
 ms.assetid: ddae14e8-143c-442d-b660-2046809b2d43
-ms.openlocfilehash: d881a75e95bc3c3eef1df651b380210ff51ea3ce
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 8563662a4408d0425e92b960301311ce5d423f9d
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877507"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025750"
 ---
 # <a name="hosting-in-internet-information-services"></a>Hébergement dans les services IIS (Internet Information Services)
 Une option pour l’hébergement des services Windows Communication Foundation (WCF) est à l’intérieur d’une application Internet Information Services (IIS). Ce modèle d’hébergement est similaire au modèle utilisé par ASP.NET et les Services Web ASP.NET (ASMX) de services Web.  
@@ -34,7 +34,7 @@ Une option pour l’hébergement des services Windows Communication Foundation (
   
 - Comme ASP.NET, les services WCF hébergés dans ASP.NET peuvent tirer parti du modèle d’hébergement partagé ASP.NET où plusieurs applications résident dans un processus de travail courants pour l’évolutivité et la densité de serveur améliorée.  
   
-- Les services WCF hébergés dans IIS utilisent le même modèle de compilation dynamique en tant que [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)], ce qui simplifie le développement et déploiement des services hébergés.  
+- Les services WCF hébergés dans IIS utilisent le même modèle de compilation dynamique comme ASP.NET 2.0, ce qui simplifie le développement et le déploiement des services hébergés.  
   
  Lorsque vous décidez d’héberger des services WCF dans IIS, il est important de se rappeler que IIS 5.1 et [!INCLUDE[iis601](../../../../includes/iis601-md.md)] sont limités à la communication HTTP uniquement. Pour plus d’informations sur le choix d’un environnement d’hébergement, consultez [Services d’hébergement](../../../../docs/framework/wcf/hosting-services.md).  
   

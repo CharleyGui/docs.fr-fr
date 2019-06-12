@@ -16,25 +16,25 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7c141ca9a8e1c74015883f45cb2eaa9183bb3d89
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 256fd900fa73948b4ca42ac6b6f21f145effc461
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61922289"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025890"
 ---
 # <a name="icordebugappdomain3-interface"></a>ICorDebugAppDomain3, interface
-Fournit des méthodes pour récupérer des informations sur les représentations sous forme managées de [!INCLUDE[wrt](../../../../includes/wrt-md.md)] types actuellement chargés dans un domaine d’application. Cette interface est une extension des interfaces ICorDebugAppDomain et ICorDebugAppDomain2.  
+Fournit des méthodes pour récupérer des informations sur les représentations managées des types Windows Runtime actuellement chargés dans un domaine d’application. Cette interface est une extension des interfaces ICorDebugAppDomain et ICorDebugAppDomain2.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[ICorDebugAppDomain3::GetCachedWinRTTypes](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain3-getcachedwinrttypes-method.md)|Obtient un énumérateur pour toutes les mises en cache [!INCLUDE[wrt](../../../../includes/wrt-md.md)] types.|  
-|[ICorDebugAppDomain3::GetCachedWinRTTypesForIIDs](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain3-getcachedwinrttypesforiids-method.md)|Obtient un énumérateur pour la mise en cache [!INCLUDE[wrt](../../../../includes/wrt-md.md)] types dans un domaine d’application basés sur leurs identificateurs de l’interface.|  
+|[ICorDebugAppDomain3::GetCachedWinRTTypes](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain3-getcachedwinrttypes-method.md)|Obtient un énumérateur pour tous les types Windows Runtime mis en cache.|  
+|[ICorDebugAppDomain3::GetCachedWinRTTypesForIIDs](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain3-getcachedwinrttypesforiids-method.md)|Obtient un énumérateur pour les types Windows Runtime mis en cache dans un domaine d’application en fonction de leurs identificateurs de l’interface.|  
   
 ## <a name="remarks"></a>Notes  
- Cette interface est destinée à être utilisée par un débogueur conjointement avec un appel à la fonction d’évaluation `M:System.Runtime.InteropServices.Marshal.GetInspectableIIDs(System.Object)`. Lorsque la méthode récupère les identificateurs d’interface pris en charge par un [!INCLUDE[wrt](../../../../includes/wrt-md.md)] l’objet de serveur, le débogueur peut utiliser les méthodes définies dans cette interface pour le mappage des types managés qui correspondent à ces interfaces.  
+ Cette interface est destinée à être utilisée par un débogueur conjointement avec un appel à la fonction d’évaluation `M:System.Runtime.InteropServices.Marshal.GetInspectableIIDs(System.Object)`. Lorsque la méthode récupère les identificateurs d’interface pris en charge par un objet de serveur Windows Runtime, le débogueur peut utiliser les méthodes définies dans cette interface pour le mappage des types managés qui correspondent à ces interfaces.  
   
  Pour récupérer une instance de cette interface, exécutez `QueryInterface` sur une instance de l’interface ICorDebugAppDomain ou ICorDebugAppDomain2.  
   
@@ -42,7 +42,7 @@ Fournit des méthodes pour récupérer des informations sur les représentations
 >  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** [!INCLUDE[wrt](../../../../includes/wrt-md.md)]  
+ **Plateformes :** Windows Runtime  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   

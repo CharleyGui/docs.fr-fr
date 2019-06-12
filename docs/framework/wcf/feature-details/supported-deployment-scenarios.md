@@ -2,16 +2,16 @@
 title: Scénarios de déploiement pris en charge - WCF
 ms.date: 03/30/2017
 ms.assetid: 3399f208-3504-4c70-a22e-a7c02a8b94a6
-ms.openlocfilehash: 986459e14206f073686474f5d65845ce682e1270
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 7b508f53365c1b4b90e2883ddb9d5f2a71c7e814
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881058"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025627"
 ---
 # <a name="supported-deployment-scenarios"></a>Scénarios de déploiement pris en charge
 
-Le sous-ensemble de fonctionnalités de Windows Communication Foundation (WCF) prises en charge pour une utilisation dans les applications de confiance partielle est conçu pour répondre aux exigences de certains, mais pas tous, scénarios pour l’utilisation de WCF. Sur le serveur, WCF répond aux exigences de l’échelle d’Internet partagé des fournisseurs d’hébergement qui exécutent des applications tierces dans le [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] Medium Trust jeu d’autorisations pour des raisons de sécurité. Sur le client, prise en charge de la confiance partielle WCF est conçu pour répondre aux exigences de technologies de déploiement telles que [déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ou [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]de technologie d’Application de navigateur XAML permettant transparentes et sécurisées déploiement d’applications bureautiques à partir de sites non approuvés.
+Le sous-ensemble de fonctionnalités de Windows Communication Foundation (WCF) prises en charge pour une utilisation dans les applications de confiance partielle est conçu pour répondre aux exigences de certains, mais pas tous, scénarios pour l’utilisation de WCF. Sur le serveur, WCF répond aux exigences de l’échelle d’Internet, les fournisseurs d’hébergement partagés qui exécutent des applications tierces dans l’autorisation ASP.NET 2.0 Medium Trust définies pour des raisons de sécurité. Sur le client, prise en charge de la confiance partielle WCF est conçu pour répondre aux exigences de technologies de déploiement telles que [déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ou [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]de technologie d’Application de navigateur XAML permettant transparentes et sécurisées déploiement d’applications bureautiques à partir de sites non approuvés.
 
 ## <a name="minimum-permission-requirements"></a>Autorisations minimales requises
 
@@ -27,7 +27,7 @@ Pour plus d’informations sur les fonctionnalités prises en charge dans ces je
 
 ## <a name="partial-trust-on-the-server"></a>Confiance partielle sur le serveur
 
-Imposent de nombreux fournisseurs commerciaux de services d’hébergement d’applications Web ASP.NET que les applications en cours d’exécution sur leurs serveurs s’exécutent dans le [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] jeu d’autorisations de confiance moyenne. WCF services peuvent s’exécuter dans ces environnements fournis s’ils utilisent le <xref:System.ServiceModel.BasicHttpBinding>, le <xref:System.ServiceModel.WebHttpBinding>, ou le <xref:System.ServiceModel.WSHttpBinding> avec la sécurité au niveau du transport.
+Nombreux fournisseurs commerciaux de services d’hébergement d’applications Web ASP.NET imposent que les applications en cours d’exécution sur leurs serveurs s’exécutent dans le jeu d’autorisations ASP.NET 2.0 Medium Trust. WCF services peuvent s’exécuter dans ces environnements fournis s’ils utilisent le <xref:System.ServiceModel.BasicHttpBinding>, le <xref:System.ServiceModel.WebHttpBinding>, ou le <xref:System.ServiceModel.WSHttpBinding> avec la sécurité au niveau du transport.
 
 Les services WCF en cours d’exécution dans les environnements d’hébergement de confiance moyenne peuvent également agir en tant que services de niveau intermédiaire en envoyant des messages vers d’autres serveurs en réponse aux demandes des clients. Les scénarios de couche intermédiaire sur le serveur sont pris en charge si l'environnement d'hébergement a accordé le <xref:System.Net.WebPermission> approprié à l'application pour effectuer des demandes sortantes vers le serveur souhaité.
 

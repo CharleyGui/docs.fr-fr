@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 36e6313ae7b4c67a20bee6d2a76a4ed1da84acbe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e1da347fd85e1b3856615faf49c60b607cc7f0da
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61749811"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025839"
 ---
 # <a name="icordebugcomobjectvaluegetcachedinterfacetypes-method"></a>ICorDebugComObjectValue::GetCachedInterfaceTypes, méthode
 Fournit un énumérateur pour les types d’interface que l’objet actuel a été converti en ou utilisé en tant que.  
@@ -35,7 +35,7 @@ HRESULT GetCachedInterfaceTypes(
   
 ## <a name="parameters"></a>Paramètres  
  `bIInspectableOnly`  
- [in] Une valeur qui indique si la méthode retourne uniquement [!INCLUDE[wrt](../../../../includes/wrt-md.md)] interfaces (`IInspectable` interfaces) ou des interfaces COM mis en cache par le runtime callable wrapper RCW ().  
+ [in] Une valeur qui indique si la méthode retourne uniquement les interfaces Windows Runtime (`IInspectable` interfaces) ou des interfaces COM mis en cache par le runtime callable wrapper RCW ().  
   
  `ppInterfacesEnum`  
  [out] Un pointeur vers l’adresse d’un énumérateur ICorDebugTypeEnum qui fournit l’accès aux objets de ICorDebugType qui représentent des types d’interface mis en cache est filtrée en fonction de `bIInspectableOnly`.  

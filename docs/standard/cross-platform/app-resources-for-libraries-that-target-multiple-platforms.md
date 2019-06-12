@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 72c76f0b-7255-4576-9261-3587f949669c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6c3e9e58a8cfe5f18aba2e8db56f84d089cc49df
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2c95c77d0b2e2b68750891431822e2637e5e88f9
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62055015"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025580"
 ---
 # <a name="app-resources-for-libraries-that-target-multiple-platforms"></a>Ressources d'application pour les bibliothèques qui ciblent des plateformes multiples
 Vous pouvez utiliser le .NET Framework [bibliothèque de classes Portable](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) type pour vous assurer que les ressources dans vos bibliothèques de classes sont accessible à partir de plusieurs plateformes de projet. Ce type de projet est disponible dans Visual Studio 2012 et qu’elle cible le sous-ensemble portable de la bibliothèque de classes .NET Framework. L'utilisation de [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] garantit l'accessibilité de votre bibliothèque à partir des applications de bureau, des [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], Silverlight et Windows Phone.
@@ -35,7 +35,7 @@ Vous pouvez utiliser le .NET Framework [bibliothèque de classes Portable](../..
 
  Le projet [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] inclut les quatre membres <xref:System.Resources.ResourceManager> répertoriés dans le tableau suivant. Ces constructeurs et méthodes vous permettent d'instancier un objet <xref:System.Resources.ResourceManager> et d'extraire des ressources de chaîne.
 
-|Membre`ResourceManager` |Description|
+|Membre`ResourceManager`|Description|
 |------------------------------|-----------------|
 |<xref:System.Resources.ResourceManager.%23ctor%28System.String%2CSystem.Reflection.Assembly%29>|Créé une instance <xref:System.Resources.ResourceManager> pour accéder au fichier de ressources nommé trouvé dans l'assembly spécifié.|
 |<xref:System.Resources.ResourceManager.%23ctor%28System.Type%29>|Créé une instance <xref:System.Resources.ResourceManager> qui correspond au type spécifié.|
@@ -47,9 +47,9 @@ Vous pouvez utiliser le .NET Framework [bibliothèque de classes Portable](../..
 ## <a name="the-includenetportableincludesnet-portable-mdmd-and-windows-store-apps"></a>[!INCLUDE[net_portable](../../../includes/net-portable-md.md)] et Applications Windows Store
  Les projets [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] stockent des ressources dans des fichiers .resx, qui sont alors compilés dans des fichiers .resources et incorporés dans l'assembly principal ou dans des assemblys satellites au moment de la compilation. En revanche, les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] requièrent que les ressources soient stockées dans des fichiers .resw, qui sont ensuite compilés dans un seul fichier d'index de ressource de package (PRI). Toutefois, en dépit de formats de fichier incompatibles, le [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] s'exécutera dans une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)].
 
- Pour utiliser votre bibliothèque de classes à partir d'une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], ajoutez une référence à celle-ci dans votre projet d'application Windows Store. Visual Studio extraira de façon transparente les ressources de l'assembly dans un fichier .resw et les utilisera pour générer un fichier PRI d'où [!INCLUDE[wrt](../../../includes/wrt-md.md)] peut extraire des ressources. Au moment de l'exécution, [!INCLUDE[wrt](../../../includes/wrt-md.md)] exécute le code dans [!INCLUDE[net_portable](../../../includes/net-portable-md.md)], mais il extrait les ressources de la Bibliothèque de classes portable à partir du fichier PRI.
+ Pour utiliser votre bibliothèque de classes à partir d'une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], ajoutez une référence à celle-ci dans votre projet d'application Windows Store. Visual Studio extrait les ressources à partir de votre assembly dans un fichier .resw et l’utiliser pour générer un fichier PRI à partir de laquelle le Runtime Windows peut extraire des ressources en toute transparence. Au moment de l’exécution, le Runtime Windows exécute le code dans votre [!INCLUDE[net_portable](../../../includes/net-portable-md.md)], mais il récupère les ressources de votre bibliothèque de classes Portable à partir du fichier PRI.
 
- Si le projet [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] inclut des ressources localisées, utilisez le modèle « hub and spoke » pour les déployer comme vous le feriez pour une bibliothèque dans une application de bureau. Pour utiliser votre fichier de ressources principal et n'importe quel fichier de ressources localisé dans votre application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], ajoutez une référence à l'assembly principal. Au moment de la compilation, Visual Studio extrait les ressources à partir du fichier de ressources principal et de tous les fichiers de ressources localisés dans des fichiers .resw distincts. Il compile ensuite les fichiers .resw dans un seul fichier PRI pour que le [!INCLUDE[wrt](../../../includes/wrt-md.md)] y accède au moment de l'exécution.
+ Si le projet [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] inclut des ressources localisées, utilisez le modèle « hub and spoke » pour les déployer comme vous le feriez pour une bibliothèque dans une application de bureau. Pour utiliser votre fichier de ressources principal et n'importe quel fichier de ressources localisé dans votre application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], ajoutez une référence à l'assembly principal. Au moment de la compilation, Visual Studio extrait les ressources à partir du fichier de ressources principal et de tous les fichiers de ressources localisés dans des fichiers .resw distincts. Il compile ensuite les fichiers .resw dans un seul fichier PRI qui accède à des Windows Runtime en cours d’exécution.
 
 <a name="NonLoc"></a>
 ## <a name="example-non-localized-includenetportableincludesnet-portable-mdmd"></a>Exemple : Non localisé [!INCLUDE[net_portable](../../../includes/net-portable-md.md)]

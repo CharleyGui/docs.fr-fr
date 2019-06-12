@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f48c142b2b3742d01a8f796f11d5c9174529a041
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 160ddbf9be8eb9f3b99d159aa8b36a22b58a9f55
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774567"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025806"
 ---
 # <a name="icordebugguidtotypeenumnext-method"></a>ICorDebugGuidToTypeEnum::Next, méthode
 Obtient le nombre spécifié de [CorDebugGuidToTypeMapping](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) instances qui mappent des GUID vers le type d’informations.  
@@ -42,7 +42,7 @@ HRESULT Next(
  [in] Le nombre d’objets de mappage de type-GUID à récupérer.  
   
  `values`  
- [out] Un tableau de pointeurs, chacun d’eux pointe vers un [CorDebugGuidToTypeMapping](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) objet qui mappe un [!INCLUDE[wrt](../../../../includes/wrt-md.md)] GUID à son objet ICorDebugType correspondant.  
+ [out] Un tableau de pointeurs, chacun d’eux pointe vers un [CorDebugGuidToTypeMapping](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) objet qui mappe un GUID d’exécution de Windows à son objet ICorDebugType correspondant.  
   
  `pceltFetched`  
  [out] Un pointeur vers le nombre de [CorDebugGuidToTypeMapping](../../../../docs/framework/unmanaged-api/debugging/cordebugguidtotypemapping-structure.md) réellement retournés dans des objets `values`.  
@@ -50,7 +50,7 @@ HRESULT Next(
 ## <a name="remarks"></a>Notes  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** [!INCLUDE[wrt](../../../../includes/wrt-md.md)]  
+ **Plateformes :** Windows Runtime  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
   

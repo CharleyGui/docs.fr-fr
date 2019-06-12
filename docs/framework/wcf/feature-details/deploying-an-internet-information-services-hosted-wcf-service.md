@@ -2,12 +2,12 @@
 title: Déploiement d'un service WCF hébergé dans Internet Information Services
 ms.date: 03/30/2017
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
-ms.openlocfilehash: 99ed9ce5304717073057f6712a2b96d910d43bea
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a41615ab096f3aa4f1ee94defd775248d0df4d2e
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61858315"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025735"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>Déploiement d'un service WCF hébergé dans Internet Information Services
 
@@ -41,7 +41,7 @@ Le processus d’installation de .NET Framework enregistre automatiquement WCF a
 
 ## <a name="create-a-new-iis-application-or-reuse-an-existing-aspnet-application"></a>Créer une nouvelle application IIS ou réutiliser une application ASP.NET existante
 
-Services WCF hébergés dans IIS doivent résider dans une application IIS. Vous pouvez créer une nouvelle application IIS pour héberger les services WCF exclusivement. Vous pouvez également déployer un service WCF dans une application existante qui héberge déjà [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] contenu (par exemple, les pages .aspx et les services Web ASP.NET [ASMX]). Pour plus d’informations sur ces options, consultez le « hébergement WCF côté à côte avec ASP.NET » et « Hébergement des Services WCF en Mode de compatibilité ASP.NET » sections [Services WCF et ASP.NET](wcf-services-and-aspnet.md).
+Services WCF hébergés dans IIS doivent résider dans une application IIS. Vous pouvez créer une nouvelle application IIS pour héberger les services WCF exclusivement. Vous pouvez également déployer un service WCF dans une application existante qui héberge déjà du contenu ASP.NET 2.0 (par exemple, les pages .aspx et les services Web ASP.NET [ASMX]). Pour plus d’informations sur ces options, consultez le « hébergement WCF côté à côte avec ASP.NET » et « Hébergement des Services WCF en Mode de compatibilité ASP.NET » sections [Services WCF et ASP.NET](wcf-services-and-aspnet.md).
 
 Notez que [!INCLUDE[iis601](../../../../includes/iis601-md.md)] et les versions ultérieures redémarrent périodiquement une application de programmation orientée objet isolée. La valeur par défaut est 1740 minutes. La valeur maximale est de 71,582 minutes. Ce redémarrage peut être désactivé. Pour plus d’informations sur cette propriété, consultez le [PeriodicRestartTime](https://go.microsoft.com/fwlink/?LinkId=109968).
 
@@ -65,7 +65,7 @@ Pour plus d’informations sur la syntaxe des fichiers .svc, consultez [ \@Servi
 
 ## <a name="deploy-the-service-implementation-to-the-iis-application"></a>Déployer l'implémentation de service vers l'application IIS
 
-Les services WCF hébergés dans IIS utilisent le même modèle de compilation dynamique en tant que [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)]. Comme avec ASP.NET, vous pouvez déployer le code d’implémentation pour les services WCF hébergé par IIS de plusieurs façons à différents emplacements, comme suit :
+Les services WCF hébergés dans IIS utilisent le même modèle de compilation dynamique comme ASP.NET 2.0. Comme avec ASP.NET, vous pouvez déployer le code d’implémentation pour les services WCF hébergé par IIS de plusieurs façons à différents emplacements, comme suit :
 
 - Sous forme d'un fichier .dll précompilé situé dans le cache d'assembly global (GAC, Global Assembly Cache) ou dans le répertoire \bin de l'application. Les binaires précompilés ne sont pas mis à jour tant qu'une nouvelle version de la bibliothèque de classes n'a pas été déployée.
 
@@ -73,7 +73,7 @@ Les services WCF hébergés dans IIS utilisent le même modèle de compilation d
 
 - Comme le code non compilé placé directement dans le fichier .svc. Code d’implémentation peut également être situé inline dans le fichier du service .svc, après la \@directive ServiceHost. Les transformations apportées au code inline provoquent le recyclage et la recompilation de l'application lorsque la demande suivante est reçue.
 
-Pour plus d’informations sur la [!INCLUDE[vstecasplong](../../../../includes/vstecasplong-md.md)] modèle de compilation, consultez [vue d’ensemble de la Compilation ASP.NET](https://go.microsoft.com/fwlink/?LinkId=94773).
+Pour plus d’informations sur le modèle de compilation ASP.NET 2.0, consultez [vue d’ensemble de la Compilation ASP.NET](https://go.microsoft.com/fwlink/?LinkId=94773).
 
 ## <a name="configure-the-wcf-service"></a>Configurer le service WCF
 

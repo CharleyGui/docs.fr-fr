@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: b6297c26-7624-4431-8af4-14112d07bcd5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d939063aaefb00d4db3de604df0dbd1b2175bf95
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ff589285d81a3febf887bba976b62a9ae4a573c8
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698419"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025944"
 ---
 # <a name="debugging-interfaces"></a>Interfaces de débogage
 Cette section décrit les interfaces non managées qui gèrent le débogage d'un programme s'exécutant dans le Common Language Runtime (CLR).  
@@ -53,7 +53,7 @@ Cette section décrit les interfaces non managées qui gèrent le débogage d'un
  Fournit des méthodes destinées au travail avec les tableaux, les pointeurs, les pointeurs fonction et les types ByRef. Cette interface est une extension de l'interface `ICorDebugAppDomain`.  
   
  [Icordebugappdomain3, Interface](icordebugappdomain3-interface.md)\
- Fournit des méthodes pour utiliser [!INCLUDE[wrt](../../../../includes/wrt-md.md)] dans un domaine d'application. Cette interface est une extension des interfaces `ICorDebugAppDomain` et `ICorDebugAppDomain2`.  
+ Fournit des méthodes pour travailler avec les types Windows Runtime dans un domaine d’application. Cette interface est une extension des interfaces `ICorDebugAppDomain` et `ICorDebugAppDomain2`.  
   
  [Icordebugappdomain4, Interface](icordebugappdomain4-interface.md)\
  Étend logiquement le [ICorDebugAppDomain](icordebugappdomain-interface.md) interface permettant d’obtenir un objet managé à partir d’un wrapper CCW.  
