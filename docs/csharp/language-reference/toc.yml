@@ -236,8 +236,6 @@
               href: keywords/sizeof.md
             - name: typeof
               href: keywords/typeof.md
-            - name: stackalloc
-              href: keywords/stackalloc.md
             - name: nameof
               href: keywords/nameof.md
         - name: Mots clés de conversion
@@ -367,6 +365,8 @@
           displayName: null-coalescing
         - name: '=>, opérateur'
           href: operators/lambda-operator.md
+        - name: stackalloc
+          href: operators/stackalloc.md
         - name: opérateurs true et false
           href: operators/true-false-operators.md
     - name: "Caractères spéciaux\_C#"
