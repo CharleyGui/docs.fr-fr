@@ -40,12 +40,12 @@ helpviewer_keywords:
 ms.assetid: cf624c1f-c160-46a1-bb2b-213587688da7
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 10ed899f1eda3b7fcaa95391b9af6dddb5c94560
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9b46404ee791855301611c1d883f26514b9b9d2f
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949225"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833798"
 ---
 # <a name="reliability-best-practices"></a>Meilleures pratiques pour la fiabilité
 
@@ -265,7 +265,7 @@ Les finaliseurs ne doivent pas avoir de problèmes de synchronisation. N’utili
 
 ### <a name="avoid-unmanaged-memory-if-possible"></a>Évitez si possible la mémoire non managée
 
-Il peut y avoir des fuites de mémoire non managée, comme pour un handle de système d’exploitation.  Si possible, essayez d’utiliser la mémoire sur la pile à l’aide de [stackalloc](~/docs/csharp/language-reference/keywords/stackalloc.md) ou d’un objet managé épinglé (par exemple, avec l’[instruction fixed](~/docs/csharp/language-reference/keywords/fixed-statement.md)) ou un <xref:System.Runtime.InteropServices.GCHandle> utilisant un tableau d’octets (byte[]).  <xref:System.GC> finit par nettoyer ceux-ci.  Toutefois, si vous devez allouer de la mémoire non managée, envisagez d’utiliser une classe qui dérive de <xref:System.Runtime.InteropServices.SafeHandle> pour inclure l’allocation de mémoire dans un wrapper.
+Il peut y avoir des fuites de mémoire non managée, comme pour un handle de système d’exploitation. Si possible, essayez d’utiliser la mémoire sur la pile à l’aide de [stackalloc](~/docs/csharp/language-reference/operators/stackalloc.md) ou d’un objet managé épinglé (par exemple, avec l’[instruction fixed](~/docs/csharp/language-reference/keywords/fixed-statement.md)) ou un <xref:System.Runtime.InteropServices.GCHandle> utilisant un tableau d’octets (byte[]). <xref:System.GC> finit par nettoyer ceux-ci. Toutefois, si vous devez allouer de la mémoire non managée, envisagez d’utiliser une classe qui dérive de <xref:System.Runtime.InteropServices.SafeHandle> pour inclure l’allocation de mémoire dans un wrapper.
 
 Notez que <xref:System.Runtime.InteropServices.SafeHandle> ne convient pas dans un cas au moins.  Pour les appels de méthode COM qui allouent ou libèrent de la mémoire, il est fréquent qu’une DLL alloue de la mémoire via `CoTaskMemAlloc`, puis qu’une autre DLL libère cette mémoire avec `CoTaskMemFree`.  Utiliser <xref:System.Runtime.InteropServices.SafeHandle> dans ces emplacements n’est pas adapté puisqu’il tente alors d’attacher la durée de vie de la mémoire non managée à la durée de vie de <xref:System.Runtime.InteropServices.SafeHandle> au lieu de laisser l’autre DLL contrôler la durée de vie de la mémoire.
 

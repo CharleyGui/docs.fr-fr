@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - application management [WPF]
 ms.assetid: 32b1c054-5aca-423b-b4b5-ed8dc4dc637d
-ms.openlocfilehash: c4629b18a207f1146f97327088fabf5f85a31892
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c36de23a6a49e684330fc0f47fc46bd86c55e767
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623298"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834072"
 ---
 # <a name="application-management-overview"></a>Vue d'ensemble de la gestion d'applications
 Toutes les applications tendent à partager un jeu de fonctionnalités commun qui s’applique à l’implémentation et à la gestion. Cette rubrique fournit une vue d’ensemble des fonctionnalités dans le <xref:System.Windows.Application> classe pour la création et la gestion des applications.  
@@ -127,7 +127,7 @@ Toutes les applications tendent à partager un jeu de fonctionnalités commun qu
 
 <a name="Splash_Screen"></a>   
 ### <a name="splash-screen"></a>Écran de démarrage  
- À compter de la [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)], vous pouvez spécifier une image à utiliser dans une fenêtre de démarrage, ou *écran de démarrage*. Le <xref:System.Windows.SplashScreen> classe rend plus facile d’afficher une fenêtre de démarrage pendant le chargement de votre application. Le <xref:System.Windows.SplashScreen> fenêtre est créée et affichée avant <xref:System.Windows.Application.Run%2A> est appelée. Pour plus d’informations, consultez [temps de démarrage d’Application](../advanced/application-startup-time.md) et [ajouter un écran de démarrage dans une Application WPF](how-to-add-a-splash-screen-to-a-wpf-application.md).  
+ À compter de .NET Framework 3.5 SP1, vous pouvez spécifier une image à utiliser dans une fenêtre de démarrage, ou *écran de démarrage*. Le <xref:System.Windows.SplashScreen> classe rend plus facile d’afficher une fenêtre de démarrage pendant le chargement de votre application. Le <xref:System.Windows.SplashScreen> fenêtre est créée et affichée avant <xref:System.Windows.Application.Run%2A> est appelée. Pour plus d’informations, consultez [temps de démarrage d’Application](../advanced/application-startup-time.md) et [ajouter un écran de démarrage dans une Application WPF](how-to-add-a-splash-screen-to-a-wpf-application.md).  
   
 <a name="Starting_an_Application"></a>   
 ### <a name="starting-an-application"></a>Démarrage d’une application  

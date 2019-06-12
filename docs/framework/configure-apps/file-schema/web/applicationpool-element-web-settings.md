@@ -5,12 +5,12 @@ helpviewer_keywords:
 - applicationPool element
 - <applicationPool> element
 ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
-ms.openlocfilehash: f0486e9faf70e7d5d147cfef996edcdaa8846963
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 629eb482768e4ed2b3d70ee3d27157b502eeb72b
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456293"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832723"
 ---
 # <a name="applicationpool-element-web-settings"></a>\<applicationPool >, élément (paramètres Web)
 Spécifie les paramètres de configuration qui sont utilisés par ASP.NET pour gérer le comportement au niveau du processus lorsqu’une application ASP.NET s’exécute en mode intégré [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] ou une version ultérieure.  
@@ -70,7 +70,7 @@ Spécifie les paramètres de configuration qui sont utilisés par ASP.NET pour g
   
 - [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] s’exécute en mode intégré.  
   
-- À l’aide de l’application est la [!INCLUDE[net_v35SP1_short](../../../../../includes/net-v35sp1-short-md.md)] ou une version ultérieure.  
+- L’application est à l’aide de .NET Framework 3.5 SP1 ou une version ultérieure.  
   
  Les valeurs dans l’exemple sont les valeurs par défaut.  
   

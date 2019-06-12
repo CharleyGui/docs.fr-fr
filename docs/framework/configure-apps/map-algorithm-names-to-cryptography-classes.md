@@ -7,15 +7,15 @@ helpviewer_keywords:
 - cryptographic algorithms
 - names [.NET Framework], algorithm mapping
 ms.assetid: 01327c69-c5e1-4ef6-b73f-0a58351f0492
-ms.openlocfilehash: 9e4154923b2bb0abfe48e7a530497c3d5bf28d91
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c76f80273d37f838ca52efd3b8f8c028b76a4d30
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583732"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832680"
 ---
 # <a name="mapping-algorithm-names-to-cryptography-classes"></a>Mappage de noms d'algorithmes à des classes de chiffrement
-Il existe quatre façons un développeur peut créer un objet de chiffrement à l’aide de la [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]:  
+Il existe quatre façons qu'un développeur peut créer un objet de chiffrement à l’aide du Kit de développement logiciel (SDK) Windows :  
   
 - Créer un objet à l’aide de la **nouveau** opérateur.  
   
@@ -25,7 +25,7 @@ Il existe quatre façons un développeur peut créer un objet de chiffrement à 
   
 - Créer un objet qui implémente une classe d’algorithmes de chiffrement (par exemple, un chiffrement par bloc symétriques) en appelant le **créer** méthode sur la classe abstraite pour ce type d’algorithme (tel que <xref:System.Security.Cryptography.SymmetricAlgorithm>).  
   
- Par exemple, qu'un développeur souhaite calculer le hachage SHA1 d’un jeu d’octets. Le <xref:System.Security.Cryptography> espace de noms contient deux implémentations de l’algorithme SHA1, une implémentation purement managée et une autre qui encapsule CryptoAPI. Le développeur peut choisir instancier une implémentation particulière de SHA1 (telles que la <xref:System.Security.Cryptography.SHA1Managed>) en appelant le **nouveau** opérateur. Toutefois, si elle n’a pas d’importance du common language runtime charge tant que la classe implémente l’algorithme de hachage SHA1, le développeur peut créer un objet en appelant le <xref:System.Security.Cryptography.SHA1.Create%2A?displayProperty=nameWithType> (méthode). Cette méthode appelle **System.Security.Cryptography.CryptoConfig.CreateFromName("System.Security.Cryptography.SHA1")**, qui doit retourner une implémentation de l’algorithme de hachage SHA1.  
+ Par exemple, qu'un développeur souhaite calculer le hachage SHA1 d’un jeu d’octets. Le <xref:System.Security.Cryptography> espace de noms contient deux implémentations de l’algorithme SHA1, une implémentation purement managée et une autre qui encapsule CryptoAPI. Le développeur peut choisir instancier une implémentation particulière de SHA1 (telles que la <xref:System.Security.Cryptography.SHA1Managed>) en appelant le **nouveau** opérateur. Toutefois, si elle n’a pas d’importance du common language runtime charge tant que la classe implémente l’algorithme de hachage SHA1, le développeur peut créer un objet en appelant le <xref:System.Security.Cryptography.SHA1.Create%2A?displayProperty=nameWithType> (méthode). Cette méthode appelle **System.Security.Cryptography.CryptoConfig.CreateFromName("System.Security.Cryptography.SHA1")** , qui doit retourner une implémentation de l’algorithme de hachage SHA1.  
   
  Le développeur peut également appeler **System.Security.Cryptography.CryptoConfig.CreateFromName("SHA1")** car, par défaut, la configuration de chiffrement comprend des noms courts pour les algorithmes fournis dans le .NET Framework.  
   
@@ -34,7 +34,7 @@ Il existe quatre façons un développeur peut créer un objet de chiffrement à 
 ## <a name="mapping-algorithm-names-in-configuration-files"></a>Mappage de noms d’algorithme dans les fichiers de Configuration  
  Par défaut, le runtime retourne un <xref:System.Security.Cryptography.SHA1CryptoServiceProvider> objet pour les quatre scénarios. Toutefois, un administrateur d’ordinateur permettre modifier le type d’objet renvoyées par les méthodes dans les deux derniers scénarios. Pour ce faire, vous devez mapper un nom d’algorithme convivial à la classe que vous souhaitez utiliser dans le fichier de configuration machine (Machine.config).  
   
- L’exemple suivant montre comment configurer le runtime afin que **System.Security.Cryptography.SHA1.Create**, **System.Security.CryptoConfig.CreateFromName("SHA1")**, et  **System.Security.Cryptography.HashAlgorithm.Create** retourner un `MySHA1HashClass` objet.  
+ L’exemple suivant montre comment configurer le runtime afin que **System.Security.Cryptography.SHA1.Create**, **System.Security.CryptoConfig.CreateFromName("SHA1")** , et  **System.Security.Cryptography.HashAlgorithm.Create** retourner un `MySHA1HashClass` objet.  
   
 ```xml  
 <configuration>  

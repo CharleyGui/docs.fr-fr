@@ -2,12 +2,12 @@
 title: Indications de mise en forme du code F#
 description: Découvrez des instructions pour la mise en forme F# code.
 ms.date: 02/08/2019
-ms.openlocfilehash: bfec950395312eac7e837abf8694a4381d5ca82f
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: 8be5337d3f593c7e5a2f32cb7231cb7f759fb509
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816182"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833904"
 ---
 # <a name="f-code-formatting-guidelines"></a>Indications de mise en forme du code F#
 
@@ -290,12 +290,13 @@ x ^^^ y // Bitwise xor, also for working with “flags” enumeration
 
 ### <a name="use-prefix-syntax-for-generics-foot-in-preference-to-postfix-syntax-t-foo"></a>Utiliser la syntaxe du préfixe pour les génériques (`Foo<T>`) plutôt que de la syntaxe de suffixe (`T Foo`)
 
-F#hérite à la fois le style de ML suffixe de nommage des types génériques (par exemple, `int list`), ainsi que le préfixe de style .NET (par exemple, `list<int>`). Préférer le style de .NET, à l’exception des quatre types spécifiques :
+F#hérite à la fois le style de ML suffixe de nommage des types génériques (par exemple, `int list`), ainsi que le préfixe de style .NET (par exemple, `list<int>`). Préférer le style de .NET, à l’exception des cinq types spécifiques :
 
 1. Pour F# listes, utilisez la forme suffixée : `int list` plutôt que `list<int>`.
 2. Pour F# Options, utilisez la forme suffixée : `int option` plutôt que `option<int>`.
-3. Pour F# tableaux, utilisez le nom syntaxique `int[]` plutôt que `int array` ou `array<int>`.
-4. Pour les cellules de référence, utilisez `int ref` plutôt que `ref<int>` ou `Ref<int>`.
+3. Pour F# Options de valeur, utilisez la forme suffixée : `int voption` plutôt que `voption<int>`.
+4. Pour F# tableaux, utilisez le nom syntaxique `int[]` plutôt que `int array` ou `array<int>`.
+5. Pour les cellules de référence, utilisez `int ref` plutôt que `ref<int>` ou `Ref<int>`.
 
 Pour tous les autres types, utilisez la forme de préfixe.
 

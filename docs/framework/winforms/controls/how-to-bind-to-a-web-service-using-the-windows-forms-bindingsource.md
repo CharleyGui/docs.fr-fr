@@ -12,12 +12,12 @@ helpviewer_keywords:
 - controls [Windows Forms], binding to Web service
 - BindingSource component [Windows Forms], examples
 ms.assetid: ee261207-4573-4cb9-a8cb-5185037e0fba
-ms.openlocfilehash: a8fb10fef8e4b5624d8066a15d12d6efd1e62dee
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 94564ba2614e335da36828912e43fb9db7eca91b
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65590502"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833997"
 ---
 # <a name="how-to-bind-to-a-web-service-using-the-windows-forms-bindingsource"></a>Procédure : lier un service web à l’aide du composant BindingSource de Windows Forms
 Si vous voulez lier un contrôle Windows Forms aux résultats obtenus à partir d'un appel à un service web XML, vous pouvez utiliser un composant <xref:System.Windows.Forms.BindingSource>. Cette procédure est similaire à celle d'une liaison d'un composant <xref:System.Windows.Forms.BindingSource> à un type. Vous devez créer un proxy côté client qui contienne les méthodes et les types exposés par le service web. Vous générez un proxy côté client à partir du service web (.asmx) lui-même ou à partir de son fichier WSDL. En outre, votre proxy côté client doit exposer les champs de types complexes utilisés par le service web en tant que propriétés publiques. Vous pouvez ensuite lier la <xref:System.Windows.Forms.BindingSource> à l'un des types exposés dans le proxy du service web.  
@@ -28,7 +28,7 @@ Si vous voulez lier un contrôle Windows Forms aux résultats obtenus à partir 
   
 2. Ajoutez un composant <xref:System.Windows.Forms.BindingSource> au formulaire.  
   
-3. Ouvrez l'invite de commandes [!INCLUDE[winsdklong](../../../../includes/winsdklong-md.md)], puis accédez au répertoire où se trouve votre formulaire.  
+3. Ouvrez l’invite de commandes du Kit de développement logiciel (SDK) Windows et naviguer dans le même répertoire où se trouve votre formulaire.  
   
 4. À l’aide de l’outil WSDL, entrez `wsdl` et l’URL du fichier .asmx ou WSDL du service web, suivi de l’espace de noms de votre application, et éventuellement le langage utilisé.  
   

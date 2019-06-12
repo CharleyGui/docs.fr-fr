@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: d536d141d1ac7126c5a3339f75ba374d3e071806
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 286ec3c67e296eb49776e0f2882954c75c53eed8
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591403"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833984"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Vue d'ensemble des applications de navigateur XAML
 <a name="introduction"></a>
@@ -182,7 +182,7 @@ ms.locfileid: "64591403"
 ## <a name="xbap-start-time-performance-considerations"></a>Considérations relatives au temps de démarrage des applications XPAB  
  Un facteur important de performance d’une application XBAP est son temps de démarrage. Si une application XBAP est la première application WPF à être chargée, le *démarrage à froid* prend au moins dix secondes. Cela s’explique par le fait que la page de progression est affichée par WPF, et que CLR et WPF doivent être démarrés à froid pour afficher l’application.  
   
- À partir de [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)], le temps de démarrage à froid d’une application XBAP est minimisé grâce à l’affichage précoce d’une page de progression non gérée dans le cycle de déploiement. La page de progression s’affiche quasiment immédiatement après le démarrage de l’application, car elle apparaît via le code d’hébergement natif au format HTML.  
+ À compter de .NET Framework 3.5 SP1, les temps de démarrage à froid XBAP est atténuée en affichant une page de progression non managée tôt dans le cycle de déploiement. La page de progression s’affiche quasiment immédiatement après le démarrage de l’application, car elle apparaît via le code d’hébergement natif au format HTML.  
   
  En outre, amélioration de la concurrence de la séquence de téléchargement ClickOnce améliore l’heure de début jusqu'à dix pour cent. Une fois que ClickOnce téléchargé et validé les manifestes, le téléchargement d’application démarre et la barre de progression démarre mettre à jour.  
   

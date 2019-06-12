@@ -8,12 +8,12 @@ helpviewer_keywords:
 - application startup [WPF]
 - performance [WPF], startup time
 ms.assetid: f0ec58d8-626f-4d8a-9873-c20f95e08b96
-ms.openlocfilehash: b3dcd46f1158814b836c7491cf1ed3ac468122ad
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 321aad14d17d6ef6fe0b7c112f8f694dd1c767d6
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689331"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832701"
 ---
 # <a name="application-startup-time"></a>Temps de démarrage d'une application
 La quantité de temps nécessaire pour démarrer une application WPF peut varier considérablement. Cette rubrique décrit les différentes techniques permettant de réduire le temps de démarrage (perçu et réel) pour une application Windows Presentation Foundation (WPF).  
@@ -24,7 +24,7 @@ La quantité de temps nécessaire pour démarrer une application WPF peut varier
  Le démarrage à chaud se produit lorsque la plupart des pages pour les principaux composants du common language runtime (CLR) sont déjà chargés en mémoire, ce qui réduit le temps d’accès disque coûteux. C’est pourquoi une application managée démarre plus vite lorsqu’elle s’exécute une deuxième fois.  
   
 ## <a name="implement-a-splash-screen"></a>Implémentation d’un écran de démarrage  
- Dans les cas où il y a un délai notable et inévitable entre le démarrage d’une application et l’affichage de la première interface utilisateur, optimisez le temps de démarrage perçu à l’aide un *écran de démarrage*. Cette approche affiche une image presque immédiatement après que l’utilisateur démarre l’application. Lorsque l’application est prête à afficher sa première interface utilisateur, l’écran de démarrage disparaît en fondu. À compter de la [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)], vous pouvez utiliser la <xref:System.Windows.SplashScreen> classe pour implémenter un écran de démarrage. Pour plus d’informations, consultez [Ajouter un écran de démarrage dans une application WPF](../app-development/how-to-add-a-splash-screen-to-a-wpf-application.md).  
+ Dans les cas où il y a un délai notable et inévitable entre le démarrage d’une application et l’affichage de la première interface utilisateur, optimisez le temps de démarrage perçu à l’aide un *écran de démarrage*. Cette approche affiche une image presque immédiatement après que l’utilisateur démarre l’application. Lorsque l’application est prête à afficher sa première interface utilisateur, l’écran de démarrage disparaît en fondu. À compter de .NET Framework 3.5 SP1, vous pouvez utiliser la <xref:System.Windows.SplashScreen> classe pour implémenter un écran de démarrage. Pour plus d’informations, consultez [Ajouter un écran de démarrage dans une application WPF](../app-development/how-to-add-a-splash-screen-to-a-wpf-application.md).  
   
  Vous pouvez également implémenter votre propre écran de démarrage à l’aide des graphiques Win32 natifs. Affichez votre implémentation avant le <xref:System.Windows.Application.Run%2A> méthode est appelée.  
   

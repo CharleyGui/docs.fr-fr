@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: ccd68284-f3a8-47b8-bc3f-92e5fe3a1640
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b0c56018c61e5566043fb2b9ba8bbee042093f12
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: 7214fa0342d0946044861c4e375c7797ad6a06b1
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758148"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833763"
 ---
 # <a name="runtime-profiling"></a>Génération de profils d'exécution
 Le profilage est une méthode de collecte de données de performance dans le cadre d’un scénario de développement ou de déploiement. Cette section s’adresse aux développeurs et administrateurs système qui souhaitent recueillir des informations sur les performances d’une application.  
   
 ## <a name="tracking-performance-using-the-performance-monitor-perfmonexe"></a>Suivi des performances à l’aide de l’analyseur de performances (Perfmon.exe)  
- L’Analyseur de performances est l’outil le plus simple à utiliser pour profiler votre application .NET Framework. L’analyseur de performances représente graphiquement les données trouvées dans les compteurs de performances .NET Framework qui sont installés avec le Common Language Runtime et le [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]. Ces compteurs permettent de tout surveiller, de la gestion de la mémoire jusqu’aux performances du compilateur juste-à-temps (JIT). Ils vous renseignent sur les ressources que votre application utilise, ce qui est une mesure indirecte des performances de votre application. Ces compteurs s’avèrent utiles pour comprendre le fonctionnement interne de votre application.  
+ L’Analyseur de performances est l’outil le plus simple à utiliser pour profiler votre application .NET Framework. L’Analyseur de performances représente graphiquement les données trouvées dans les compteurs de performances de .NET Framework qui sont installés avec le common language runtime et le Kit de développement logiciel (SDK) Windows. Ces compteurs permettent de tout surveiller, de la gestion de la mémoire jusqu’aux performances du compilateur juste-à-temps (JIT). Ils vous renseignent sur les ressources que votre application utilise, ce qui est une mesure indirecte des performances de votre application. Ces compteurs s’avèrent utiles pour comprendre le fonctionnement interne de votre application.  
   
 #### <a name="to-run-perfmonexe-on-windows-vista-and-later-versions"></a>Pour exécuter Perfmon.exe sur Windows Vista et les versions ultérieures  
   

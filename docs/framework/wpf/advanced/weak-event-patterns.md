@@ -6,12 +6,12 @@ helpviewer_keywords:
 - event handlers [WPF], weak event pattern
 - IWeakEventListener interface [WPF]
 ms.assetid: e7c62920-4812-4811-94d8-050a65c856f6
-ms.openlocfilehash: 92d0a61c2bbf9cc668b969c3e1420914b9f9f150
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0c5bae64fbbeddedd905e5df0b5789542e29f2f1
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650770"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833930"
 ---
 # <a name="weak-event-patterns"></a>Modèles d'événement faible
 Dans les applications, il est possible que les gestionnaires qui sont attachés à des sources d’événements ne seront pas détruits en coordination avec l’objet écouteur qui joint le gestionnaire à la source. Cette situation peut entraîner des fuites de mémoire. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] introduit un modèle de conception qui peut être utilisé pour résoudre ce problème, en fournissant une classe de gestionnaire dédiée pour des événements particuliers et en implémentant une interface sur les écouteurs de cet événement. Ce modèle de conception est appelé le *modèle d’événement faible*.  
@@ -71,7 +71,7 @@ Dans les applications, il est possible que les gestionnaires qui sont attachés 
      De même, si votre code utilise le modèle suivant pour vous désabonner d’un événement :  
   
     ```  
-    source.SomeEvent -= new SomeEventEventHandler(OnSome);  
+    source.SomeEvent -= new SomeEventEventHandler(OnSomeEvent);  
     ```  
   
      Modifier le modèle suivant :  

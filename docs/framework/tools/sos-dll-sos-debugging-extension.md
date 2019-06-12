@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 9ac1b522-77ab-4cdc-852a-20fcdc9ae498
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ddd075de6152d7f040d69682dde0361843971922
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 0821b4a680db4822cea1787edb095309e6333cbf
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65631832"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690171"
 ---
 # <a name="sosdll-sos-debugging-extension"></a>SOS.dll (extension de débogage SOS)
 
@@ -68,11 +68,11 @@ L’extension de débogage SOS (SOS.dll) vous aide à déboguer des programmes m
 |**HeapStat** [ **-inclUnrooted** &#124; **-iu**]|Affiche les tailles de génération pour chaque tas et l'espace libre total dans chaque génération sur chaque tas. Si l’option -**inclUnrooted** est spécifiée, le rapport inclut des informations sur les objets managés du tas de garbage collection qui n’est plus associé à une racine.|
 |**HistClear**|Libère toutes les ressources utilisées par la famille de commandes `Hist`.<br /><br /> En général, vous n'avez pas à appeler `HistClear`explicitement, parce que chaque `HistInit` nettoie les ressources précédentes.|
 |**HistInit**|Initialise les structures SOS du journal de contrainte enregistré dans l’élément débogué.|
-|**HistObj** *<obj_address>*|Examine tous les enregistrements de réadressage du journal de contrainte et affiche la chaîne des réadressages de garbage collection qui ont pu mener à l’adresse passée comme un argument.|
-|**HistObjFind**  *<obj_address>*|Affiche toutes les entrées de journal qui référencent un objet à l'adresse spécifiée.|
+|**HistObj** *\<obj_address>*|Examine tous les enregistrements de réadressage du journal de contrainte et affiche la chaîne des réadressages de garbage collection qui ont pu mener à l’adresse passée comme un argument.|
+|**HistObjFind**  *\<obj_address>*|Affiche toutes les entrées de journal qui référencent un objet à l'adresse spécifiée.|
 |**HistRoot** *\<root>*|Affiche les informations liées aux promotions et aux réadressages de la racine spécifiée.<br /><br /> La valeur racine peut être utilisée pour suivre le déplacement d’un objet dans les garbage collections.|
 |**IP2MD** \<*Code address*>|Affiche la structure `MethodDesc` à l'adresse spécifiée dans le code compilé juste-à-temps (JIT).|
-|`ListNearObj` (`lno`) *<obj_address>*|Affiche les objets précédant et suivant l'adresse spécifiée. La commande recherche dans le tas de garbage collection l’adresse qui ressemble à un début valide d’objet managé (selon une table de méthodes valide), ainsi que l’objet qui suit l’adresse d’argument.|
+|`ListNearObj` (`lno`) *\<obj_address>*|Affiche les objets précédant et suivant l'adresse spécifiée. La commande recherche dans le tas de garbage collection l’adresse qui ressemble à un début valide d’objet managé (selon une table de méthodes valide), ainsi que l’objet qui suit l’adresse d’argument.|
 |**MinidumpMode** [**0**] [**1**]|Empêche l'exécution de commandes potentiellement dangereuses lors de l'utilisation d'un minidump.<br /><br /> Passez **0** pour désactiver cette fonctionnalité ou **1** pour l’activer. Par défaut, la valeur de **MinidumpMode** est **0**.<br /><br /> Les minidumps créés avec la commande **.dump /m** ou **.dump** ont des données propres à CLR limitées et vous permettent uniquement d’exécuter correctement un sous-ensemble de commandes SOS. Certaines commandes peuvent échouer avec des erreurs inattendues, car des zones de mémoire requises ne sont pas mappées ou ne sont mappées que partiellement. Cette option vous empêche d'exécuter des commandes potentiellement dangereuses dans les minidumps.|
 |**Name2EE** \<*nom du module*> \<*nom du type ou de la méthode*><br /><br /> - ou -<br /><br /> **Name2EE** \<*nom du module*> **!** \<*nom du type ou de la méthode*>|Affiche la structure `MethodTable` et la structure `EEClass` pour le type ou la méthode spécifié dans le module spécifié.<br /><br /> Le module spécifié doit être chargé dans le processus.<br /><br /> Pour obtenir le nom de type correct, parcourez le module à l’aide de [Ildasm.exe (désassembleur IL)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md). Vous pouvez également passer `*` en tant que paramètre de nom de module pour rechercher tous les modules managés chargés. Le paramètre *module name* peut également correspondre au nom du débogueur pour un module, comme `mscorlib` ou `image00400000`.<br /><br /> Cette commande prend en charge la syntaxe du débogueur Windows <`module`>`!`<`type`>. Le type doit être qualifié complet.|
 |**ObjSize** [\<*Object address*>] &#124; [ **-aggregate**] [ **-stat**]|Affiche la taille de l'objet spécifié. Si vous ne spécifiez aucun paramètre, la commande **ObjSize** affiche la taille de tous les objets trouvés dans les threads managés, ainsi que tous les handles du récupérateur de mémoire dans le processus et additionne la taille de tous les objets désignés par ces handles. La commande **ObjSize** inclut la taille de tous les objets enfants en plus du parent.<br /><br /> L’option **-aggregate** peut être utilisée avec l’argument **-stat** pour obtenir une vue détaillée des types qui sont encore associés à une racine. L’utilisation de **!dumpheap -stat** et **!objsize -aggregate -stat** vous permet de déterminer les objets qui ne sont plus associés à une racine et de diagnostiquer différents problèmes de mémoire.|

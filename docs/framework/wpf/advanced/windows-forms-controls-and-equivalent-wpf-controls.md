@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Windows Forms [WPF], WPF interoperation
 - interoperability [WPF], Windows Forms
 ms.assetid: 8a157e6b-8054-46db-a5cf-a78966acc7a1
-ms.openlocfilehash: abfcb9f5398a6a8d264985543df585bea93a0446
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: acb8095b32364f1e22330f22df60085016bdc664
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59075273"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66834037"
 ---
 # <a name="windows-forms-controls-and-equivalent-wpf-controls"></a>Contrôles Windows Forms et contrôles WPF équivalents
 Nombreux [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôles ont équivalent [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] contrôles, mais certains [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôles n’ont pas d’équivalents dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Cette rubrique compare les types de contrôle fournis par les deux technologies.  
@@ -82,7 +82,7 @@ Nombreux [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-m
 |<xref:System.Windows.Forms.TreeView>|<xref:System.Windows.Controls.TreeView>||  
 |<xref:System.Windows.Forms.UserControl>|<xref:System.Windows.Controls.UserControl>||  
 |<xref:System.Windows.Forms.VScrollBar>|<xref:System.Windows.Controls.Primitives.ScrollBar>|Le défilement est intégré aux contrôles de conteneur.|  
-|<xref:System.Windows.Forms.WebBrowser>|<xref:System.Windows.Controls.Frame>, <xref:System.Windows.Controls.WebBrowser?displayProperty=nameWithType>|Le <xref:System.Windows.Controls.Frame> contrôle peut héberger des pages HTML.<br /><br /> À compter de la [!INCLUDE[net_v35SP1_short](../../../../includes/net-v35sp1-short-md.md)], le <xref:System.Windows.Controls.WebBrowser?displayProperty=nameWithType> contrôle peut héberger des pages HTML et stocker également le <xref:System.Windows.Controls.Frame> contrôle.|  
+|<xref:System.Windows.Forms.WebBrowser>|<xref:System.Windows.Controls.Frame>, <xref:System.Windows.Controls.WebBrowser?displayProperty=nameWithType>|Le <xref:System.Windows.Controls.Frame> contrôle peut héberger des pages HTML.<br /><br /> À compter de .NET Framework 3.5 SP1, le <xref:System.Windows.Controls.WebBrowser?displayProperty=nameWithType> contrôle peut héberger des pages HTML et stocker également le <xref:System.Windows.Controls.Frame> contrôle.|  
   
 ## <a name="see-also"></a>Voir aussi
 
