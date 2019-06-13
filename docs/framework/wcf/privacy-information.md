@@ -304,7 +304,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  Pour les espaces de noms suivants :  
   
- xmlns:WST = « http://schemas.xmlsoap.org/ws/2004/04/trust» et xmlns:wst = « http://schemas.xmlsoap.org/ws/2005/02/trust» (par exemple, si aucune action n’est disponible)  
+ xmlns:WST = "http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns:wst = "http://schemas.xmlsoap.org/ws/2005/02/trust" (par exemple, si aucune action n’est disponible)  
   
  Les informations sont supprimées pour ces éléments de corps, qui impliquent l'échange de clé :  
   
