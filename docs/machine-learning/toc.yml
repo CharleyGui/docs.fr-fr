@@ -17,8 +17,8 @@
       href: tutorials/predict-prices.md
     - name: Classer des iris (clustering k-means)
       href: tutorials/iris-clustering.md
-    - name: Système de suggestion de films (factorisation de matrice)
-      href: tutorials/movie-recommmendation.md
+    - name: Est recommandé de films (factorisation de matrice)
+      href: tutorials/movie-recommendation.md
     - name: Classification d’images (apprentissage par transfert)
       href: tutorials/image-classification.md
     - name: Analyse des ventes de produits (détection d’anomalie)
