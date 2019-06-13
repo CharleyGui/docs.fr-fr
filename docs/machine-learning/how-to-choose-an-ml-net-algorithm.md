@@ -4,12 +4,12 @@ description: Découvrez comment choisir un algorithme ML.NET pour votre modèle 
 author: natke
 ms.topic: overview
 ms.date: 04/20/1029
-ms.openlocfilehash: d1c637437a7b285f2b66b597d616fcf39248697f
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: 89c3c612d79f02d58a16070feadb645b081dd3e3
+ms.sourcegitcommit: 90f0bee0e8a416e45c78fa3ad4c91ef00e5228d5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557776"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66722632"
 ---
 # <a name="how-to-choose-an-mlnet-algorithm"></a>Guide pratique pour choisir un algorithme ML.NET
 
@@ -21,7 +21,7 @@ Les algorithmes fonctionnent avec des **caractéristiques**. Les caractéristiqu
 
 Un algorithme est une opération mathématique qui s’exécute pour produire un **modèle**. Différents algorithmes produisent des modèles avec des caractéristiques différentes. 
 
-Avec ML.NET, il est possible d’appliquer le même algorithme à différentes tâches. Par exemple, l’algorithme Stochastic Descent Coordinated Ascent peut s’appliquer aux tâches de classification binaire, de classification multiclasse et de régression. Le changement se trouve dans l’interprétation de la sortie de l’algorithme par rapport à la tâche. 
+Avec ML.NET, il est possible d’appliquer le même algorithme à différentes tâches. Par exemple, stochastique Ascent coordonné double utilisable pour la Classification binaire, Multiclass Classification et la régression. Le changement se trouve dans l’interprétation de la sortie de l’algorithme par rapport à la tâche. 
 
 Pour chaque combinaison algorithme/tâche, ML.NET fournit un composant qui exécute l’algorithme d’entraînement et interprète la sortie. Ces composants sont appelés des « entraîneurs ». Par exemple, <xref:Microsoft.ML.Trainers.SdcaRegressionTrainer> utilise l’algorithme **StochasticDualCoordinatedAscent** appliqué à la tâche de **régression**.
 
@@ -42,7 +42,7 @@ Les algorithmes linéaires font plusieurs passages sur les données d’entraîn
 |Algorithme|Propriétés|Entraîneurs|
 |---------|----------|--------|
 |Averaged perceptron|Idéal pour la classification de texte|<xref:Microsoft.ML.Trainers.AveragedPerceptronTrainer>|
-|Stochastic descent coordinated ascent|Performances par défaut satisfaisantes sans réglage nécessaire|<xref:Microsoft.ML.Trainers.SdcaLogisticRegressionBinaryTrainer> <xref:Microsoft.ML.Trainers.SdcaNonCalibratedBinaryTrainer> <xref:Microsoft.ML.Trainers.SdcaMaximumEntropyMulticlassTrainer> <xref:Microsoft.ML.Trainers.SdcaNonCalibratedMulticlassTrainer> <xref:Microsoft.ML.Trainers.SdcaRegressionTrainer>|
+|Stochastique ascent coordonné double|Performances par défaut satisfaisantes sans réglage nécessaire|<xref:Microsoft.ML.Trainers.SdcaLogisticRegressionBinaryTrainer> <xref:Microsoft.ML.Trainers.SdcaNonCalibratedBinaryTrainer> <xref:Microsoft.ML.Trainers.SdcaMaximumEntropyMulticlassTrainer> <xref:Microsoft.ML.Trainers.SdcaNonCalibratedMulticlassTrainer> <xref:Microsoft.ML.Trainers.SdcaRegressionTrainer>|
 |L-BFGS|À utiliser quand il y a beaucoup de caractéristiques. Génère des statistiques sur l’entraînement de régression logistique, mais est moins scalable que l’algorithme AveragedPerceptronTrainer|<xref:Microsoft.ML.Trainers.LbfgsLogisticRegressionBinaryTrainer> <xref:Microsoft.ML.Trainers.LbfgsMaximumEntropyMulticlassTrainer> <xref:Microsoft.ML.Trainers.LbfgsPoissonRegressionTrainer>|
 |Symbolic stochastic gradient descent|Entraîneur de classification binaire linéaire le plus rapide et le plus précis. S’adapte bien à divers processeurs|<xref:Microsoft.ML.Trainers.SymbolicSgdLogisticRegressionBinaryTrainer>|
 

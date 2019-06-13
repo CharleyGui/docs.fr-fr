@@ -1,5 +1,5 @@
 ---
-title: + + et +=, opérateurs - Référence C#
+title: + et les opérateurs += - C# référence
 ms.custom: seodec18
 ms.date: 05/24/2019
 f1_keywords:
@@ -14,14 +14,14 @@ helpviewer_keywords:
 - event subscription [C#]
 - += operator [C#]
 ms.assetid: 93e56486-bb42-43c1-bd43-60af11e64e67
-ms.openlocfilehash: d03743bad47c60925462d027d18445047ebc0fc9
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 14e62d53fca16212fae374b2627d1e96cbbca6ac
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300113"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025317"
 ---
-# <a name="-and--operators-c-reference"></a>+ et +=, opérateurs (référence C#)
+# <a name="-and--operators-c-reference"></a>+ et les opérateurs += (C# référence)
 
 L’opérateur `+` est pris en charge par les types numériques intégrés, le type [chaîne](../keywords/string.md) et les types [délégués](../keywords/delegate.md).
 
@@ -31,17 +31,19 @@ Pour plus d’informations sur l’opérateur arithmétique `+`, consultez les s
 
 Quand les deux opérandes ou l’un d’entre eux sont de [type chaîne](../keywords/string.md), l’opérateur `+` concatène les représentations sous forme de chaîne de ses opérandes :
 
-[!code-csharp-interactive[string concatenation](~/samples/snippets/csharp/language-reference/operators/AdditionExamples.cs#AddStrings)]
+[!code-csharp-interactive[string concatenation](~/samples/csharp/language-reference/operators/AdditionOperator.cs#AddStrings)]
 
 À partir de C# 6, l’[interpolation de chaîne](../tokens/interpolated.md) fournit un moyen plus pratique de mettre en format les chaînes :
 
-[!code-csharp-interactive[string interpolation](~/samples/snippets/csharp/language-reference/operators/AdditionExamples.cs#UseStringInterpolation)]
+[!code-csharp-interactive[string interpolation](~/samples/csharp/language-reference/operators/AdditionOperator.cs#UseStringInterpolation)]
 
 ## <a name="delegate-combination"></a>Combinaison de délégués
 
 Pour les opérandes du même type [délégué](../keywords/delegate.md), l’opérateur `+` retourne une nouvelle instance de délégué qui, lorsqu’elle est appelée, appelle le premier opérande, puis le second opérande. Si un des opérandes est `null`, l’opérateur `+` retourne la valeur de l’autre opérande (qui peut également être `null`). L’exemple suivant montre comment les délégués peuvent être combinés avec l’opérateur `+` :
 
-[!code-csharp-interactive[delegate combination](~/samples/snippets/csharp/language-reference/operators/AdditionExamples.cs#AddDelegates)]
+[!code-csharp-interactive[delegate combination](~/samples/csharp/language-reference/operators/AdditionOperator.cs#AddDelegates)]
+
+Pour effectuer la suppression de délégué, utilisez la [ `-` opérateur](subtraction-operator.md#delegate-removal).
 
 Pour plus d'informations sur les types de délégués, consultez [Délégués](../../programming-guide/delegates/index.md).
 
@@ -63,7 +65,7 @@ sauf que `x` n’est évalué qu’une seule fois.
   
 L’exemple suivant illustre l’utilisation de l’opérateur `+=` :
 
-[!code-csharp-interactive[+= examples](~/samples/snippets/csharp/language-reference/operators/AdditionExamples.cs#AddAndAssign)]
+[!code-csharp-interactive[+= examples](~/samples/csharp/language-reference/operators/AdditionOperator.cs#AddAndAssign)]
 
 Vous utilisez également l’opérateur `+=` pour spécifier une méthode de gestionnaire d’événements lorsque vous vous abonnez à un [événement](../keywords/event.md). Pour plus d’informations, consultez [Guide pratique pour s’abonner et annuler l’abonnement à des événements](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
 
@@ -73,17 +75,15 @@ Un type défini par l’utilisateur peut [surcharger](../keywords/operator.md) l
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-Pour plus d’informations, consultez les sections [Opérateur unaire plus](~/_csharplang/spec/expressions.md#unary-plus-operator) et [Opérateur d’addition](~/_csharplang/spec/expressions.md#addition-operator) de la [spécification du langage C#](../language-specification/index.md).
+Pour plus d’informations, consultez les sections [Opérateur unaire plus](~/_csharplang/spec/expressions.md#unary-plus-operator) et [Opérateur d’addition](~/_csharplang/spec/expressions.md#addition-operator) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
 - [Interpolation de chaîne](../tokens/interpolated.md)
 - [Guide pratique pour concaténer plusieurs chaînes](../../how-to/concatenate-multiple-strings.md)
 - [Délégués](../../programming-guide/delegates/index.md)
 - [Événements](../../programming-guide/events/index.md)
-- [Checked et unchecked](../keywords/checked-and-unchecked.md)
 - [Opérateurs arithmétiques](arithmetic-operators.md)
 - [- et -=, opérateurs](subtraction-operator.md)

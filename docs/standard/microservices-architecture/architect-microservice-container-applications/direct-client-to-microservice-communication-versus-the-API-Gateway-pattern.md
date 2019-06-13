@@ -2,12 +2,12 @@
 title: Modèle de passerelle API et communication directe de client à microservice
 description: Découvrez les différences et les utilisations du modèle de passerelle API et de la communication directe de client à microservice.
 ms.date: 01/07/2019
-ms.openlocfilehash: 433ad8bc8204a9a57b8b494040a9de6c533bcca8
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 4b169d5a9542b10726a36b65328bc6a3dc3839ef
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641407"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690365"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Modèle de passerelle API et communication directe de client à microservice
 
@@ -146,7 +146,7 @@ Dans ce guide et dans l’exemple d’application de référence (eShopOnContain
 
 [Ocelot](https://github.com/ThreeMammals/Ocelot) est une passerelle API légère qui est recommandée pour les approches plus simples. Ocelot est une passerelle API .NET Core open source conçue spécifiquement pour une architecture de microservices qui nécessite des points d’entrée unifiés dans son système. Elle est légère, rapide, évolutive et fournit le routage et l’authentification, parmi de nombreuses autres fonctionnalités.
 
-La principale raison de choisir Ocelot pour l’[application de référence eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) vient du fait qu’Ocelot est une passerelle API .NET Core légère que vous pouvez déployer dans le même environnement de déploiement d’application où vous déployez vos microservices/conteneurs (hôte Docker, Kubernetes, Service Fabric, etc.). Et comme elle s’appuie sur .NET Core, elle est multiplateforme et peut donc être déployée sur Windows ou Linux.
+La principale raison choisir Ocelot pour le [application de référence eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) est Ocelot étant une passerelle API .NET Core légère que vous pouvez déployer dans le même environnement de déploiement d’application où vous effectuez un déploiement vos microservices/conteneurs, notamment un hôte Docker, Kubernetes, périphérique. Et comme elle s’appuie sur .NET Core, elle est multiplateforme et peut donc être déployée sur Windows ou Linux.
 
 Les diagrammes précédents montrant des passerelles d’API personnalisée en cours d’exécution dans les conteneurs expliquent précisément comment vous pouvez également exécuter Ocelot dans un conteneur et dans une application basée sur un microservice.
 
@@ -170,7 +170,7 @@ Après les sections consacrées à l’architecture initiale et à la présentat
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Charles Richardson. Modèle : Passerelle API / Backend for Frontend (BFF)** \
+- **Charles Richardson. Modèle : Passerelle API / Backend for Frontend (BFF)**  \
   <https://microservices.io/patterns/apigateway.html>
 
 - **Modèle de passerelle API** \

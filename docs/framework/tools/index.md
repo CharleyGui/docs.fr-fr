@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: a2ca532d-91f7-426a-9303-417c2ee1247c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 81110736651db9fe00b116c3abbbdaa8d3670bee
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 995aeca60d462c96f951411aff9fcb2c772169d1
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456098"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489655"
 ---
 # <a name="net-framework-tools"></a>Outils du .NET Framework
 Les outils du .NET Framework facilitent la création, le déploiement et la gestion d'applications et de composants qui ciblent le .NET Framework.  
@@ -36,7 +36,7 @@ La plupart des outils .NET Framework décrits dans cette section sont installés
  Convertit les définitions de types d'une bibliothèque de types COM d'un contrôle ActiveX en contrôle Windows Forms.  
   
  [Caspol.exe (outil de stratégie de sécurité d’accès du code)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)  
- Permet d'afficher et de configurer la stratégie de sécurité au niveau de l'ordinateur, de l'utilisateur et de l'entreprise. Dans le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] et versions ultérieures, cet outil n’affecte pas la stratégie de sécurité d’accès du code (CAS), à moins que l’[élément \<legacyCasPolicy>](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) ait la valeur `true`. Pour plus d’informations, consultez [Changements en matière de sécurité](../../../docs/framework/security/security-changes.md).  
+ Permet d'afficher et de configurer la stratégie de sécurité au niveau de l'ordinateur, de l'utilisateur et de l'entreprise. Dans le .NET Framework 4 et versions ultérieures, cet outil n’affecte pas de stratégie de sécurité (CA) d’accès au code, sauf si le [ \<legacyCasPolicy > élément](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) est défini sur `true`. Pour plus d’informations, consultez [Changements en matière de sécurité](../../../docs/framework/security/security-changes.md).  
   
  [Cert2spc.exe (outil de test de certificat d’éditeur de logiciels)](../../../docs/framework/tools/cert2spc-exe-software-publisher-certificate-test-tool.md)  
  Crée un certificat SPC (Software Publisher's Certificate) à partir d'un ou plusieurs certificats X.509. Cet outil ne doit être utilisé qu'à des fins de test.  

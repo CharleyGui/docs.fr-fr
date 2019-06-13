@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 116df78eb20d6e6c6355d07099ae5d3de9320f30
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 6446cc3ee102fa57f5bf60c1353f7b9d5522be69
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457297"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66816128"
 ---
 # <a name="security-considerations-for-reflection"></a>Considérations sur la sécurité de la réflexion
 La réflexion permet d'obtenir des informations sur les types et les membres, et d'accéder aux membres (c'est-à-dire appeler des méthodes et des constructeurs, obtenir et définir des valeurs de propriétés, ajouter et supprimer des gestionnaires d'événements, etc.). L'utilisation de la réflexion pour obtenir des informations sur les types et les membres n'est pas limitée. Tout code peut utiliser la réflexion pour effectuer les tâches suivantes :  
@@ -26,7 +26,7 @@ La réflexion permet d'obtenir des informations sur les types et les membres, et
   
 - Énumérer et examiner les assemblys et les modules.  
   
- En revanche, l'utilisation de la réflexion pour accéder aux membres est soumise à des restrictions. Depuis le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], seul le code de confiance peut utiliser la réflexion pour accéder aux membres critiques de sécurité. En outre, seul le code de confiance peut utiliser la réflexion pour accéder aux membres non publics qui ne seraient pas directement accessibles au code compilé. Enfin, le code qui utilise la réflexion pour accéder à un membre critique sécurisé doit avoir les autorisations demandées par ce membre, tout comme avec le code compilé.  
+ En revanche, l'utilisation de la réflexion pour accéder aux membres est soumise à des restrictions. À compter de .NET Framework 4, seul le code fiable peut utiliser la réflexion pour accéder aux membres critiques de sécurité. En outre, seul le code de confiance peut utiliser la réflexion pour accéder aux membres non publics qui ne seraient pas directement accessibles au code compilé. Enfin, le code qui utilise la réflexion pour accéder à un membre critique sécurisé doit avoir les autorisations demandées par ce membre, tout comme avec le code compilé.  
   
  Moyennant les autorisations nécessaires, le code peut utiliser la réflexion pour effectuer les types d'accès suivants :  
   
@@ -42,13 +42,13 @@ La réflexion permet d'obtenir des informations sur les types et les membres, et
   
  Par exemple, le code qui est exécuté dans un domaine d'application sandbox est limité aux accès décrits dans cette liste, sauf si le domaine d'application accorde des autorisations supplémentaires.  
   
- Depuis le [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)], le fait de tenter d'accéder à des membres normalement inaccessibles génère une demande du jeu d'autorisations de l'objet cible, plus <xref:System.Security.Permissions.ReflectionPermission> avec l'indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType>. Un code qui s’exécute avec un niveau de confiance total (par exemple, le code d’une application lancée à partir de la ligne de commande) peut toujours satisfaire à ces autorisations. (Ceci est soumis aux limitations de l'accès aux membres critiques de sécurité, comme décrit plus loin dans cet article.)  
+ À compter de .NET Framework 2.0 Service Pack 1, tente d’accéder aux membres normalement inaccessibles génère une demande pour le jeu d’autorisations de l’objet cible plus <xref:System.Security.Permissions.ReflectionPermission> avec la <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> indicateur. Un code qui s’exécute avec un niveau de confiance total (par exemple, le code d’une application lancée à partir de la ligne de commande) peut toujours satisfaire à ces autorisations. (Ceci est soumis aux limitations de l'accès aux membres critiques de sécurité, comme décrit plus loin dans cet article.)  
   
  De façon facultative, un domaine d’application sandbox peut accorder <xref:System.Security.Permissions.ReflectionPermission> avec l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType>, comme décrit dans la section [Accès aux membres normalement inaccessibles](#accessingNormallyInaccessible) plus loin dans cet article.  
   
 <a name="accessingSecurityCritical"></a>   
 ## <a name="accessing-security-critical-members"></a>Accès aux membres critiques de sécurité  
- Un membre est critique du point de vue de la sécurité s'il a l'attribut <xref:System.Security.SecurityCriticalAttribute>, s'il appartient à un type qui a l'attribut <xref:System.Security.SecurityCriticalAttribute> ou s'il est dans un assembly critique du point de vue de la sécurité. Depuis le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], les règles d'accès aux membres critiques de sécurité sont les suivantes :  
+ Un membre est critique du point de vue de la sécurité s'il a l'attribut <xref:System.Security.SecurityCriticalAttribute>, s'il appartient à un type qui a l'attribut <xref:System.Security.SecurityCriticalAttribute> ou s'il est dans un assembly critique du point de vue de la sécurité. À compter de .NET Framework 4, les règles pour l’accès aux membres critiques de sécurité sont les suivantes :  
   
 - Le code transparent ne peut pas utiliser la réflexion pour accéder aux membres critiques de sécurité, même si le code est d'un niveau de confiance total. Une exception <xref:System.MethodAccessException>, <xref:System.FieldAccessException> ou <xref:System.TypeAccessException> est levée.  
   
@@ -98,9 +98,9 @@ La réflexion permet d'obtenir des informations sur les types et les membres, et
   
 ## <a name="version-information"></a>Informations sur la version  
   
-- Depuis le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], le code transparent ne peut pas utiliser la réflexion pour accéder aux membres critiques de sécurité.  
+- À compter de .NET Framework 4, le code transparent ne peut pas utiliser la réflexion pour accéder aux membres critiques de sécurité.  
   
-- L'indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> a été introduit dans le [!INCLUDE[net_v20SP1_long](../../../includes/net-v20sp1-long-md.md)]. Les versions antérieures du .NET Framework exigent l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> pour le code qui utilise la réflexion pour accéder aux membres non publics. Il s'agit d'une autorisation qui ne doit jamais être accordée à du code d'un niveau de confiance partiel.  
+- Le <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> indicateur est introduit dans .NET Framework 2.0 Service Pack 1. Les versions antérieures du .NET Framework exigent l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> pour le code qui utilise la réflexion pour accéder aux membres non publics. Il s'agit d'une autorisation qui ne doit jamais être accordée à du code d'un niveau de confiance partiel.  
   
 - Depuis le [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)], l'utilisation de la réflexion pour obtenir des informations sur les types et les membres non publics ne nécessite aucune autorisation. Dans les versions antérieures, l’autorisation <xref:System.Security.Permissions.ReflectionPermission> avec l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType> est exigée.  
   

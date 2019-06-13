@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c6b7b120a5a21301ff82aa8ebd1cfc169f7884e4
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 8d3ac6acf756a0ac468eb4483432467429ed91ca
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457440"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66483287"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Notions de base du garbage collection
 <a name="top"></a> Dans le Common Language Runtime (CLR), le garbage collector a un rôle de gestionnaire de mémoire automatique. Il fournit les avantages suivants :  
@@ -186,7 +186,7 @@ Thread qui déclenche un garbage collection
   
      Le garbage collection de station de travail peut être simultané ou non simultané. Le garbage collection simultané permet aux threads managés de continuer à fonctionner pendant un garbage collection.  
   
-     En commençant par le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], le garbage collection d'arrière-plan remplace le garbage collection simultané.  
+     À compter de .NET Framework 4, le garbage collection d’arrière-plan remplace le garbage collection simultané.  
   
 - Garbage collection de serveur, prévu pour les applications serveur qui ont besoin d'un débit et d'une extensibilité. Le garbage collection de serveur peut être non simultané ou en arrière-plan.  
   

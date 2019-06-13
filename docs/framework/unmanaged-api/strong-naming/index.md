@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 428c68b6-a7b4-44be-b280-75905f46612c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 45f3e8533bf7400566304ddb0fdd9d8e5a9b4280
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 2ee08e9ca243ac086a0b75892bf9258246e8fd7c
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456140"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490663"
 ---
 # <a name="strong-naming-unmanaged-api-reference"></a>Nom fort (Informations de référence sur les API non managées)
 L’API de nommage fort permet à un client d’administrer la signature avec noms forts pour les assemblys.  
@@ -23,7 +23,7 @@ L’API de nommage fort permet à un client d’administrer la signature avec no
 ## <a name="in-this-section"></a>Dans cette section  
   
 > [!NOTE]
->  Toutes ces fonctions sont dépréciées à compter de [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)]. Pour obtenir des suggestions d’alternatives, consultez l’interface [ICLRStrongName](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md).  
+>  Toutes ces fonctions ont été déconseillées à compter de .NET Framework 4. Pour obtenir des suggestions d’alternatives, consultez l’interface [ICLRStrongName](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md).  
   
  [GetHashFromAssemblyFile, fonction](../../../../docs/framework/unmanaged-api/strong-naming/gethashfromassemblyfile-function.md)  
  Obtient un hachage du fichier d’assembly spécifié, à l’aide de l’algorithme de hachage spécifié. Dépréciée à compter de .NET Framework 4.  

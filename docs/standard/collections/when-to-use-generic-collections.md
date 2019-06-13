@@ -8,17 +8,17 @@ helpviewer_keywords:
 ms.assetid: e7b868b1-11fe-4ac5-bed3-de68aca47739
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 01c82f2867097b98b04727592cf72c29712075ba
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b553ec62cf493b94b87079cddd3ec3d1d60daf9d
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664528"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66491010"
 ---
 # <a name="when-to-use-generic-collections"></a>Quand utiliser les collections génériques
 L'utilisation de collections génériques est généralement recommandée, car elle permet de bénéficier immédiatement de la cohérence des types sans avoir à dériver d'un type de collection de base et à implémenter des membres spécifiques au type. Les types de collections génériques sont généralement plus performants que leurs équivalents non génériques (et mieux que les types dérivés de types de collections de base non génériques) quand les éléments de collection sont des types valeur, car grâce aux génériques, aucun boxing d'éléments n'est nécessaire.  
   
- Pour les programmes qui ciblent le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] ou version ultérieure, vous devez utiliser les classes de collections génériques dans l'espace de noms <xref:System.Collections.Concurrent> quand plusieurs threads sont susceptibles d'ajouter ou de supprimer simultanément des éléments de la collection.  
+ Pour les programmes qui ciblent le .NET Framework 4 ou version ultérieur, vous devez utiliser les classes de collection génériques dans le <xref:System.Collections.Concurrent> espace de noms lorsque plusieurs threads peuvent ajouter ou supprimer simultanément des éléments de la collection.  
   
  Les types génériques suivants correspondent à des types de collections existants :  
   

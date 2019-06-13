@@ -10,12 +10,12 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: 58317c26f87034991c817d0d7221d810657ca332
-ms.sourcegitcommit: 11deacc8ec9f229ab8ee3cd537515d4c2826515f
+ms.openlocfilehash: ae3039df2c1260211f4c7ec3e813db1d0c6cd42b
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66003710"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66815939"
 ---
 # <a name="-operator-c-reference"></a>?: Opérateur (référence C#)
 
@@ -52,7 +52,7 @@ a ? b : (c ? d : e)
 
 L’exemple suivant illustre l’utilisation de l’opérateur conditionnel :
 
-[!code-csharp[non ref conditional](~/samples/snippets/csharp/language-reference/operators/ConditionalExamples.cs#ConditionalValue)]
+[!code-csharp-interactive[non ref conditional](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalValue)]
 
 ## <a name="conditional-ref-expression"></a>Expression ref conditionnelle
 
@@ -70,7 +70,7 @@ Dans le cas de l’expression ref conditionnelle, `consequent` et `alternative` 
 
 L’exemple suivant illustre l’utilisation de l’expression ref conditionnelle :
 
-[!code-csharp[conditional ref](~/samples/snippets/csharp/language-reference/operators/ConditionalExamples.cs#ConditionalRef)]
+[!code-csharp-interactive[conditional ref](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalRef)]
 
 Pour plus d’informations, voir la [proposition de fonctionnalité](../../../../_csharplang/proposals/csharp-7.2/conditional-ref.md).
 
@@ -78,7 +78,7 @@ Pour plus d’informations, voir la [proposition de fonctionnalité](../../../..
 
 Sur une instruction [if-else](../keywords/if-else.md), l’opérateur conditionnel permet de rester concis dans l’écriture du code lorsque l’objectif est de calculer une valeur sous condition. L’exemple suivant montre deux façons de classer un entier comme négatif ou non :
 
-[!code-csharp[conditional and if-else](~/samples/snippets/csharp/language-reference/operators/ConditionalExamples.cs#CompareWithIf)]
+[!code-csharp[conditional and if-else](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#CompareWithIf)]
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 
@@ -86,7 +86,7 @@ L'opérateur conditionnel ne peut pas être surchargé.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-Pour plus d’informations, voir la section [Opérateur conditionnel](~/_csharplang/spec/expressions.md#conditional-operator) de la [spécification du langage C#](../language-specification/index.md).
+Pour plus d’informations, voir la section [Opérateur conditionnel](~/_csharplang/spec/expressions.md#conditional-operator) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -95,5 +95,5 @@ Pour plus d’informations, voir la section [Opérateur conditionnel](~/_csharpl
 - [Opérateurs C#](index.md)
 - [Instruction if-else](../keywords/if-else.md)
 - [Opérateurs ?. et ?[]](member-access-operators.md#null-conditional-operators--and-)
-- [?? Opérateur](null-coalescing-operator.md)
+- [?? opérateur](null-coalescing-operator.md)
 - [ref, mot clé](../keywords/ref.md)

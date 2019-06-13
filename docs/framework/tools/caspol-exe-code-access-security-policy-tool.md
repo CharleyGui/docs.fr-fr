@@ -17,18 +17,18 @@ helpviewer_keywords:
 ms.assetid: d2bf6123-7b0c-4e60-87ad-a39a1c3eb2e0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f2a0e8d95595d663585639c47be34262f7452e94
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: ccb1d78f939d2faf90013392fc60d5597bc3922e
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457412"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66489677"
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (outil Stratégie de sécurité d'accès du code)
 L'outil Stratégie de sécurité d'accès du code (CAS) (Caspol.exe) permet aux utilisateurs et aux administrateurs de modifier la stratégie de sécurité au niveau de l'ordinateur, de l'utilisateur et de l'entreprise.  
   
 > [!IMPORTANT]
->  À compter de [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], Caspol.exe n'affecte pas la stratégie CAS, sauf si l'[\<élément <legacyCasPolicy>](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) est défini sur `true`. Tous les paramètres affichés ou modifiés par CasPol.exe affectent uniquement les applications qui choisissent d'utiliser la stratégie CAS. Pour plus d’informations, consultez [Changements en matière de sécurité](../../../docs/framework/security/security-changes.md).  
+>  À compter de .NET Framework 4, Caspol.exe n’affecte pas la stratégie CAS, sauf si le [ \<legacyCasPolicy > élément](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) est défini sur `true`. Tous les paramètres affichés ou modifiés par CasPol.exe affectent uniquement les applications qui choisissent d'utiliser la stratégie CAS. Pour plus d’informations, consultez [Changements en matière de sécurité](../../../docs/framework/security/security-changes.md).  
   
 > [!NOTE]
 >  Les ordinateurs 64 bits comprennent des versions 64 bits et 32 bits de stratégie de sécurité. Pour garantir que vos modifications de stratégie s'appliquent aux applications 32 bits et 64 bits, exécutez les versions 32 bits et 64 bits de Caspol.exe.  

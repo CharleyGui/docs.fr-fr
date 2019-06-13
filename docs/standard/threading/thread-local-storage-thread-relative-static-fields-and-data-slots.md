@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: c633a4dc-a790-4ed1-96b5-f72bd968b284
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 681a9e71dcfb139c364d750383f13cdabbf33366
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7beb22c68450d7ae4aeb6d0bcae45fafdfe78191
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64644895"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66490920"
 ---
 # <a name="thread-local-storage-thread-relative-static-fields-and-data-slots"></a>Stockage local des threads : champs statiques et emplacements de données relatifs à un thread
 Vous pouvez utiliser le stockage local des threads (TLS) managé pour stocker des données uniques à un thread et à un domaine d’application. Le .NET Framework permet d’utiliser le TLS managé de deux manières : champs statiques relatifs à un thread et emplacement de données.  
@@ -26,7 +26,7 @@ Vous pouvez utiliser le stockage local des threads (TLS) managé pour stocker de
   
  Dans C++ non géré, vous utilisez `TlsAlloc` pour allouer dynamiquement des emplacements et `__declspec(thread)` pour déclarer qu’une variable doit être allouée dans un stockage relatif à un thread. Des champs statiques relatifs à un thread et des emplacements de données fournissent la version managée de ce comportement.  
   
- Dans le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], vous pouvez utiliser la classe <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> pour créer des objets locaux de thread initialisés tardivement lorsque l’objet est tout d’abord consommé. Pour plus d’informations, consultez [Initialisation tardive](../../../docs/framework/performance/lazy-initialization.md).  
+ Dans le .NET Framework 4, vous pouvez utiliser la <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> classe pour créer des objets locaux de thread initialisés tardivement lorsque l’objet est tout d’abord consommé. Pour plus d’informations, consultez [Initialisation tardive](../../../docs/framework/performance/lazy-initialization.md).  
   
 ## <a name="uniqueness-of-data-in-managed-tls"></a>Unicité des données dans TLS managé  
  Si vous utilisez les champs statiques relatifs à un thread ou des emplacements de données, les données dans TLS managé sont uniques à la combinaison du thread et du domaine d’application.  

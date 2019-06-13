@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: de8b8759-fca7-4260-896b-5a4973157672
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 51bf359ea6ba4e5b45827928a50a095a7960a68f
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 5bbf579540ccb93101dba05c5b2577ae8f24ec09
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456713"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66486526"
 ---
 # <a name="shadow-copying-assemblies"></a>Clichés instantanés d'assemblys
 Les clichés instantanés permettent aux assemblys qui sont utilisés dans un domaine d'application d'être mis à jour sans décharger le domaine d'application. Ceci est particulièrement utile pour les applications qui doivent être disponibles en permanence, comme des sites ASP.NET.  
@@ -32,7 +32,7 @@ Les clichés instantanés permettent aux assemblys qui sont utilisés dans un do
   
 - [Activation et utilisation des clichés instantanés](#EnablingAndUsing) décrit l’utilisation de base et les options disponibles pour les clichés instantanés.  
   
-- [Performances du démarrage](#StartupPerformance) décrit les changements apportés aux clichés instantanés dans le [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] pour améliorer les performances du démarrage, et comment rétablir le comportement des versions antérieures.  
+- [Performances de démarrage](#StartupPerformance) décrit les modifications apportées aux clichés instantanés dans le .NET Framework 4 pour améliorer les performances de démarrage et comment rétablir le comportement des versions antérieures.  
   
 - [Méthodes obsolètes](#ObsoleteMethods) décrit les changements apportés aux propriétés et aux méthodes qui contrôlent les clichés instantanés dans le [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)].  
   

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c4c9e85b2a884f6f348d801a27b7f362bd0236b0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 16e20214981bb5c0f96b26f34be99026aac19266
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61644047"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690186"
 ---
 # <a name="get-started-with-the-net-framework"></a>Bien démarrer avec le .NET Framework
 
@@ -53,7 +53,7 @@ En règle générale, vous ne devez pas désinstaller les versions du .NET Frame
 
 - Si une application que vous utilisez dépend d’une version spécifique du .NET Framework, elle peut cesser de fonctionner si cette version est supprimée.
 
-- Certaines versions du .NET Framework sont des mises à jour sur place de versions antérieures. Par exemple, le [!INCLUDE[net_v35_short](../../../includes/net-v35-short-md.md)] est une mise à jour sur place de la version 2.0, et le .NET Framework 4.8 est une mise à jour sur place des versions 4 à 4.7.2. Pour plus d’informations, consultez [Versions et dépendances du .NET Framework](../migration-guide/versions-and-dependencies.md).
+- Certaines versions du .NET Framework sont des mises à jour sur place de versions antérieures. Par exemple, le .NET Framework 3.5 est une mise à jour sur place vers la version 2.0, et le 4.8 du Framework .NET est une mise à jour sur place pour les versions 4 à 4.7.2. Pour plus d’informations, consultez [Versions et dépendances du .NET Framework](../migration-guide/versions-and-dependencies.md).
 
 Sur les versions Windows antérieures à Windows 8, si vous choisissez de supprimer le .NET Framework, désinstallez-le toujours à l’aide de l’option **Programmes et fonctionnalités** du Panneau de configuration. Ne supprimez jamais manuellement une version du .NET Framework. Sur Windows 8 et versions ultérieures, le .NET Framework est un composant du système d’exploitation qui ne peut pas être désinstallé séparément.
 

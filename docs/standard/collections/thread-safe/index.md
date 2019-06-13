@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 2e7ca21f-786c-4367-96be-0cf3f3dcc6bd
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0b4639402ee99d215edb3fb28ababe6f750fb353
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 0bc333a828a9d18cd5ad98af42a91c1d53c2569b
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457074"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66816207"
 ---
 # <a name="thread-safe-collections"></a>Collections thread-safe
 .NET Framework 4 introduit l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType>, qui contient plusieurs classes de collection qui sont à la fois thread-safe et scalables. Plusieurs threads peuvent, sans risque et de façon efficace, ajouter ou supprimer des éléments dans ces collections, sans nécessiter une synchronisation supplémentaire dans le code utilisateur. Quand vous écrivez du code, utilisez des classes de collections simultanées si plusieurs threads écrivent en même temps dans la collection. Si vous lisez seulement dans une collection partagée, vous pouvez utiliser les classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType>. Nous vous recommandons de ne pas utiliser les classes de collections 1.0, à moins que vous ne deviez cibler le runtime .NET Framework 1.1 ou une version antérieure.  
@@ -22,7 +22,7 @@ ms.locfileid: "66457074"
   
  Les classes de collection introduites dans le .NET Framework 2.0 se trouvent dans l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType>. Elles comprennent notamment <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.Dictionary%602>, etc. Ces classes garantissent une cohérence des types et des performances améliorées par rapport aux classes du .NET Framework 1.0. Toutefois, les classes de collections .NET Framework 2.0 ne fournissent pas de synchronisation des threads. Le code utilisateur doit fournir toute la synchronisation quand des éléments sont ajoutés ou supprimés simultanément sur plusieurs threads.  
   
- Nous vous recommandons les classes de collections simultanées de .NET Framework 4, car elles offrent non seulement la cohérence des types des classes de collections .NET Framework 2.0, mais également une cohérence de thread plus efficace et plus complète que les collections [!INCLUDE[net_v10_short](../../../../includes/net-v10-short-md.md)].  
+ Nous recommandons les classes de collections simultanées dans le .NET Framework 4, car elles offrent non seulement la cohérence des types des classes de collection .NET Framework 2.0, mais également plus d’efficacité et sécurité des threads que les collections .NET Framework 1.0 fournir.  
   
 ## <a name="fine-grained-locking-and-lock-free-mechanisms"></a>Verrouillage de granularité fine et mécanismes sans verrou  
  Certains types de collections simultanées utilisent des mécanismes de synchronisation légers, comme <xref:System.Threading.SpinLock>, <xref:System.Threading.SpinWait>, <xref:System.Threading.SemaphoreSlim> et <xref:System.Threading.CountdownEvent>, qui sont nouveaux dans .NET Framework 4. Ces types de synchronisation utilisent généralement la *rotation intensive* pendant de courtes périodes avant de mettre le thread dans un véritable état d’attente. Lorsque les temps d’attente sont supposés être très courts, la rotation est beaucoup moins gourmande en ressources informatiques que l’attente, qui implique une transition de noyau coûteuse. Pour les classes de collections qui utilisent la rotation, cette efficacité signifie que plusieurs threads peuvent ajouter et supprimer des éléments à un taux très élevé. Pour plus d'informations sur la rotation et le blocage, consultez [SpinLock](../../../../docs/standard/threading/spinlock.md) et [SpinWait](../../../../docs/standard/threading/spinwait.md).  

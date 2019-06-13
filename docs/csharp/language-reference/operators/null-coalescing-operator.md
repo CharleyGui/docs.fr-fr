@@ -1,45 +1,66 @@
 ---
 title: ?? opérateur - Référence C#
 ms.custom: seodec18
-ms.date: 07/20/2015
+ms.date: 06/07/2019
 f1_keywords:
 - ??_CSharpKeyword
 helpviewer_keywords:
-- coalesce operator [C#]
+- null-coalescing operator [C#]
 - ?? operator [C#]
-- conditional-AND operator (&&) [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-ms.openlocfilehash: e1e981f9ec6a87f6e7de1900008520cde8e46095
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 8ca97261b348b7813ab179abbc1f2c5f535966a1
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633944"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66816009"
 ---
 # <a name="-operator-c-reference"></a>?? operator (référence C#)
 
-L'opérateur `??` est appelé l'l'opérateur de fusion Null.  Il retourne l’opérande de partie gauche si ce dernier n’est pas Null ; dans le cas contraire, il retourne l’opérande de partie droite.
+L’opérateur de fusion null `??` retourne la valeur de l’opérande de gauche si elle n’est pas `null`; sinon, elle évalue l’opérande de droite et retourne son résultat. Le `??` opérateur n’évalue pas son opérande de droite si l’opérande de gauche a la valeur non null.
 
-## <a name="remarks"></a>Remarques
+L’opérateur de fusion null est associatif à droite, autrement dit, une expression sous la forme
 
-Un type Nullable peut représenter une valeur à partir du domaine du type, ou la valeur peut être non définie (auquel cas la valeur est Null). Utilisez la simplicité de syntaxe de l’opérateur `??` pour retourner une valeur appropriée (l’opérande de partie droite) si l’opérande de partie gauche a un type Nullable dont la valeur est Null. Si vous essayez d'assigner un type valeur Nullable à un type valeur non Nullable sans utiliser l'opérateur `??`, vous générez une erreur au moment de la compilation. Si vous utilisez un cast et si le type valeur Nullable est actuellement non défini, une exception `InvalidOperationException` est levée.
+```csharp
+a ?? b ?? c
+```
 
-Pour plus d’informations, consultez [Types Nullable](../../programming-guide/nullable-types/index.md).
+est évaluée comme étant
 
-Le résultat d’un opérateur ?? n’est pas considéré comme une constante même si ses deux arguments sont des constantes.
+```csharp
+a ?? (b ?? c)
+```
 
-## <a name="example"></a>Exemple
+Le `??` opérateur peut être utile dans les scénarios suivants :
 
-[!code-csharp[csRefOperators#53](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefOperators/CS/csrefOperators.cs#53)]
+- Dans les expressions avec la [opérateurs conditionnels null ?. et ?] ](member-access-operators.md#null-conditional-operators--and-), vous pouvez utiliser l’opérateur de fusion null pour fournir une autre expression à évaluer au cas où le résultat de l’expression avec les opérations de condition null est `null`:
+
+  [!code-csharp-interactive[with null-conditional](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#WithNullConditional)]
+
+- Lorsque vous travaillez avec [types valeur nullable](../../programming-guide/nullable-types/index.md) et devez fournir une valeur d’un type valeur sous-jacent, utilisez l’opérateur de fusion null pour spécifier la valeur à fournir au cas où une valeur de type nullable est `null`:
+
+  [!code-csharp-interactive[with nullable types](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#WithNullableTypes)]
+
+  Utilisez le <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType> méthode si la valeur à utiliser lorsqu’une valeur de type nullable est `null` doit avoir la valeur par défaut du type valeur sous-jacent.
+
+- En commençant par C# 7.0, vous pouvez utiliser un [ `throw` expression](../keywords/throw.md#the-throw-expression) comme opérande droit de l’opérateur de fusion null pour rendre le code de vérification d’argument plus concis :
+
+  [!code-csharp[with throw expression](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#WithThrowExpression)]
+
+  L’exemple précédent montre également comment utiliser [membres expression-bodied](../../programming-guide/statements-expressions-operators/expression-bodied-members.md) pour définir une propriété.
+
+## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
+
+L’opérateur de fusion null ne peut pas être surchargé.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-Pour plus d’informations, consultez [Opérateur de fusion de Null](~/_csharplang/spec/expressions.md#the-null-coalescing-operator) dans la [spécification du langage C#](../language-specification/index.md). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
+Pour plus d’informations, consultez [l’opérateur de fusion null](~/_csharplang/spec/expressions.md#the-null-coalescing-operator) section de la [ C# spécification du langage](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Opérateurs C#](index.md)
-- [Types Nullable](../../programming-guide/nullable-types/index.md)
-- [Que signifie réellement « Lifted » ?](https://blogs.msdn.microsoft.com/ericlippert/2007/06/27/what-exactly-does-lifted-mean/)
+- [Opérateurs ?. et ?[]](member-access-operators.md#null-conditional-operators--and-)
+- [?:, opérateur](conditional-operator.md)

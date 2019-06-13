@@ -2,12 +2,12 @@
 title: Communication dans une architecture de microservices
 description: Explorez les différents modes de communication entre les microservices, et découvrez les implications des modes synchrone et asynchrone.
 ms.date: 09/20/2018
-ms.openlocfilehash: 7f7a65ef53d401a8533f82168db5a412d5ac9756
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 25d99d3d9b00b8c20c5ded6d8b40c77fcbe0eb46
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644348"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690558"
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Communication dans une architecture de microservices
 
@@ -67,9 +67,9 @@ Les sections suivantes expliquent les différents styles de communication que vo
 
 ## <a name="communication-styles"></a>Styles de communication
 
-De nombreux protocoles et choix sont disponibles pour la communication, en fonction du type de communication que vous voulez utiliser. Si vous utilisez un mécanisme de communication de type requête-réponse synchrone, les protocoles tels que HTTP et REST sont les plus courants, en particulier si vous publiez vos services en dehors de l’hôte Docker ou du cluster de microservices. Si vous communiquez entre des services de manière interne (au sein de votre hôte Docker ou de votre cluster de microservices), vous pouvez également utiliser des mécanismes de communication au format binaire (par exemple la communication à distance de Service Fabric ou WCF à l’aide de TCP et d’un format binaire). Vous pouvez aussi utiliser des mécanismes de communication asynchrones basés sur des messages, comme AMQP.
+De nombreux protocoles et choix sont disponibles pour la communication, en fonction du type de communication que vous voulez utiliser. Si vous utilisez un mécanisme de communication de type requête-réponse synchrone, les protocoles tels que HTTP et REST sont les plus courants, en particulier si vous publiez vos services en dehors de l’hôte Docker ou du cluster de microservices. Si vous communiquez entre les services en interne (au sein de votre cluster hôte ou microservices Docker), vous souhaiterez également utiliser des mécanismes de communication de format binaire (par exemple, WCF à l’aide de TCP et un format binaire). Vous pouvez aussi utiliser des mécanismes de communication asynchrones basés sur des messages, comme AMQP.
 
-Il existe également plusieurs formats de message, comme JSON ou XML, ou même des formats binaires, qui peuvent être plus efficaces. Si le format binaire choisi n’est pas standard, il n’est probablement pas judicieux de publier vos services et de les rendre publics à l’aide de ce format. Vous pouvez utiliser un format non standard pour la communication interne entre vos microservices. Vous pouvez procéder ainsi pour la communication entre microservices dans votre hôte Docker ou votre cluster de microservices (orchestrateurs Docker ou Azure Service Fabric), ou pour des applications clientes propriétaires qui communiquent avec les microservices.
+Il existe également plusieurs formats de message, comme JSON ou XML, ou même des formats binaires, qui peuvent être plus efficaces. Si le format binaire choisi n’est pas standard, il n’est probablement pas judicieux de publier vos services et de les rendre publics à l’aide de ce format. Vous pouvez utiliser un format non standard pour la communication interne entre vos microservices. Vous pouvez procéder ainsi lors de la communication entre les microservices au sein de votre cluster hôte ou microservice Docker (par exemple, les orchestrateurs Docker), ou pour les applications clientes propriétaires qui communiquent avec les microservices.
 
 ### <a name="requestresponse-communication-with-http-and-rest"></a>Communication demande/réponse avec HTTP et REST
 

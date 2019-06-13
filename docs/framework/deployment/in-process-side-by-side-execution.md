@@ -7,15 +7,15 @@ helpviewer_keywords:
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: adf2e3e3d10f4f32952dbca270be4ca0924d0b73
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 89dfe697f49e8144d15586cc9c1075f69d1f3a07
+ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457268"
+ms.lasthandoff: 06/10/2019
+ms.locfileid: "66816056"
 ---
 # <a name="in-process-side-by-side-execution"></a>Exécution côte à côte in-process
-Depuis [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], vous pouvez utiliser l’hébergement côte à côte in-process pour exécuter plusieurs versions du CLR (Common Language Runtime) dans un processus unique. Par défaut, les composants COM managés s’exécutent avec la version du .NET Framework avec laquelle ils ont été générés, indépendamment de la version du .NET Framework chargée pour le processus.  
+À compter de .NET Framework 4, vous pouvez utiliser dans le processus côté à côte pour exécuter plusieurs versions du common language runtime (CLR) dans un seul processus d’hébergement. Par défaut, les composants COM managés s’exécutent avec la version du .NET Framework avec laquelle ils ont été générés, indépendamment de la version du .NET Framework chargée pour le processus.  
   
 ## <a name="background"></a>Présentation  
  Le .NET Framework a toujours fourni un hébergement côte à côte pour les applications de code managé, mais avant .NET Framework 4, il ne fournissait pas cette fonctionnalité pour les composants COM managés. Dans le passé, les composants COM managés chargés dans un processus étaient exécutés avec la version du runtime déjà chargée ou avec la version installée la plus récente du .NET Framework. Si cette version n’était pas compatible avec le composant COM, le composant échouait.  
@@ -56,7 +56,7 @@ Depuis [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], vous pouv
   
      Que faire : dans ce scénario, ne faites rien. Les composants COM s’exécuteront avec la version du .NET Framework avec laquelle ils ont été inscrits.  
   
-- **Scénario 2** : application managée créée avec [!INCLUDE[net_v20SP1_short](../../../includes/net-v20sp1-short-md.md)] que vous préféreriez exécuter avec [!INCLUDE[dnprdnext](../../../includes/dnprdnext-md.md)], mais que vous voulez bien exécuter sur .NET Framework 4 si la version 2.0 est absente.  
+- **Scénario 2** : Application managée créée avec le .NET Framework 2.0 SP1 vous préféreriez exécuter avec les [!INCLUDE[dnprdnext](../../../includes/dnprdnext-md.md)], mais vous êtes disposé à exécuter sur le .NET Framework 4, si la version 2.0 n’est pas présente.  
   
      Versions du .NET Framework installées : une version antérieure du .NET Framework et .NET Framework 4.  
   
@@ -88,7 +88,7 @@ Depuis [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], vous pouv
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre un hôte COM non managé qui exécute un composant COM managé à l’aide de la version du .NET Framework dans laquelle le composant a été compilé.  
   
- Pour exécuter l’exemple suivant, compilez et inscrivez le composant COM managé suivant avec [!INCLUDE[net_v35_long](../../../includes/net-v35-long-md.md)]. Pour inscrire le composant, dans le menu **Projet**, cliquez sur **Propriétés**, sur l’onglet **Générer**, puis cochez la case **Inscrire pour COM Interop**.  
+ Pour exécuter l’exemple suivant, compilez et inscrivez le composant COM managé suivant à l’aide de .NET Framework 3.5. Pour inscrire le composant, dans le menu **Projet**, cliquez sur **Propriétés**, sur l’onglet **Générer**, puis cochez la case **Inscrire pour COM Interop**.  
   
 ```csharp
 using System;  

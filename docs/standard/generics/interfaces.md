@@ -10,24 +10,24 @@ helpviewer_keywords:
 ms.assetid: 88bf5b04-d371-4edb-ba38-01ec7cabaacf
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3085812f2467c1e73d94335530441d6bb12db6af
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 9570578e8ae4397f060805b891f86d7d4f273cd4
+ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54613803"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66487044"
 ---
 # <a name="generic-interfaces"></a>Interfaces génériques
 Cette rubrique donne une vue d'ensemble des interfaces génériques qui fournissent des fonctionnalités communes à plusieurs familles de types génériques.  
   
 ## <a name="generic-interfaces"></a>Interfaces génériques  
- Les interfaces génériques fournissent des contreparties de type sécurisé aux interfaces non génériques pour les comparaisons de classement et d'égalité, et pour les fonctionnalités partagées par les types de collections génériques.  
+ Les interfaces génériques fournissent des contreparties de type sécurisé aux interfaces non génériques pour les comparaisons de classement et d’égalité, et pour les fonctionnalités partagées par les types de collections génériques.  
   
 > [!NOTE]
->  Depuis [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], les paramètres de type de plusieurs interfaces génériques sont marqués comme étant covariants ou contravariants, en fournissant une plus grande flexibilité pour l’affectation et l’utilisation des types qui implémentent ces interfaces. Consultez [Covariance et contravariance](../../../docs/standard/generics/covariance-and-contravariance.md).  
+>  À compter de .NET Framework 4, le type paramètres de plusieurs interfaces génériques sont marqués comme étant covariants ou contravariants, en fournissant une plus grande flexibilité pour l’assignation et l’utilisation de types qui implémentent ces interfaces. Consultez [Covariance et contravariance](../../../docs/standard/generics/covariance-and-contravariance.md).  
   
 ### <a name="equality-and-ordering-comparisons"></a>Comparaisons d'égalité et de classement  
- Dans l'espace de noms <xref:System>, les interfaces génériques <xref:System.IComparable%601?displayProperty=nameWithType> et <xref:System.IEquatable%601?displayProperty=nameWithType>, comme leurs contreparties non génériques, définissent respectivement des méthodes pour les comparaisons de classement et les comparaisons d'égalité. Les types implémentent ces interfaces pour offrir la possibilité d'effectuer de telles comparaisons.  
+ Dans l'espace de noms <xref:System>, les interfaces génériques <xref:System.IComparable%601?displayProperty=nameWithType> et <xref:System.IEquatable%601?displayProperty=nameWithType>, comme leurs contreparties non génériques, définissent respectivement des méthodes pour les comparaisons de classement et les comparaisons d'égalité. Les types implémentent ces interfaces pour offrir la capacité à réaliser de telles comparaisons.  
   
  Dans l'espace de noms <xref:System.Collections.Generic>, les interfaces génériques <xref:System.Collections.Generic.IComparer%601> et <xref:System.Collections.Generic.IEqualityComparer%601> offrent un moyen de définir une comparaison de classement ou d'égalité pour les types qui n'implémentent pas les interfaces génériques <xref:System.IComparable%601?displayProperty=nameWithType> ou <xref:System.IEquatable%601?displayProperty=nameWithType>, et ils permettent de redéfinir ces relations pour les types qui les implémentent. Ces interfaces sont utilisées par les méthodes et les constructeurs de nombreuses classes de collection génériques. Par exemple, vous pouvez passer un objet <xref:System.Collections.Generic.IComparer%601> générique au constructeur de la classe <xref:System.Collections.Generic.SortedDictionary%602> pour spécifier un ordre de tri pour un type qui n'implémente pas l'interface générique <xref:System.IComparable%601?displayProperty=nameWithType>. Il existe des surcharges de la méthode statique générique <xref:System.Array.Sort%2A?displayProperty=nameWithType> et de la méthode d'instance <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> pour le tri des tableaux et des listes à l'aide  d'implémentations génériques de <xref:System.Collections.Generic.IComparer%601>.  
   

@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-ms.openlocfilehash: cb1ef5f52b9ee0407cbd7a0634e8a7c58906d635
-ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
+ms.openlocfilehash: 752a7e5233d8b1d88b49be450972fc964f82d2c4
+ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66195571"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66690659"
 ---
 # <a name="best-practices-for-exceptions"></a>Bonnes pratiques pour les exceptions
 
@@ -56,7 +56,7 @@ Une classe peut fournir des méthodes ou propriétés qui vous permettent d’é
 
 Un autre moyen d’éviter les exceptions est de retourner Null (ou une valeur par défaut) pour les cas d’erreur très répandus au lieu de lever une exception. Un cas d'erreur très répandu peut être considéré comme un flux de contrôle normal. En retournant null (ou une valeur par défaut) dans ces cas-là, vous réduisez l'impact sur les performances d'une application.
 
-Pour les types valeur, s’il faut utiliser pouvant accepter la valeur Null<T> ou une valeur par défaut comme indicateur d’erreur est quelque chose à prendre en compte pour votre application particulière. À l’aide de `Nullable<Guid>`, `default` devient `null` au lieu de `Guid.Empty`. Parfois, l’ajout de `Nullable<T>` peut éclaircir les choses, lorsqu’une valeur est présente ou absente. Autres fois, l’ajout de `Nullable<T>` peut créer des cas supplémentaires qui ne sont pas nécessaires et uniquement servir pour créer les sources potentielles d’erreurs. 
+Pour les types valeur, s’il faut utiliser `Nullable<T>` ou par défaut comme indicateur d’erreur est quelque chose à prendre en compte pour votre application. À l’aide de `Nullable<Guid>`, `default` devient `null` au lieu de `Guid.Empty`. Parfois, l’ajout de `Nullable<T>` peut éclaircir les choses, lorsqu’une valeur est présente ou absente. Autres fois, l’ajout de `Nullable<T>` peut créer des cas supplémentaires qui ne sont pas nécessaires et uniquement servir pour créer les sources potentielles d’erreurs. 
 
 ## <a name="throw-exceptions-instead-of-returning-an-error-code"></a>Lever des exceptions au lieu de retourner un code d’erreur
 
