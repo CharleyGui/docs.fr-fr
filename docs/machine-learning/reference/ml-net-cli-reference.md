@@ -3,12 +3,12 @@ title: Commande auto-train dans l’outil CLI ML.NET
 description: Vue d’ensemble, exemples et informations de référence sur la commande auto-train dans l’outil CLI ML.NET.
 ms.date: 04/16/2019
 ms.custom: ''
-ms.openlocfilehash: 28eb56eb018e3d1cc76f300ee78c298af77c9b91
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: ce5994f392c492e80676b9e65ce54fe010cf03ab
+ms.sourcegitcommit: 90f0bee0e8a416e45c78fa3ad4c91ef00e5228d5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557944"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66722600"
 ---
 # <a name="the-auto-train-command-in-mlnet-cli"></a>Commande « auto-train » dans l’outil CLI ML.NET
 
@@ -228,7 +228,7 @@ Pour que l’argument `--label-column-name` puisse être utilisé, le fichier de
 
 `--max-exploration-time | -x` (chaîne)
 
-Par défaut, la durée maximale d’exploration est de 10 secondes.
+Par défaut, la durée maximale d’exploration est de 30 minutes.
 
 Cet argument définit la durée maximale (en secondes) dont dispose le processus pour explorer plusieurs entraîneurs et configurations. La durée configurée peut être dépassée si la durée fournie est trop courte (par exemple, 2 secondes) pour une seule itération. Dans ce cas, la durée réelle est le temps nécessaire pour produire une seule configuration de modèle dans une seule itération.
 
