@@ -4,12 +4,12 @@ description: Ce tutoriel vous montre comment créer une application console .NET
 ms.date: 05/13/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: e145e65e22c955bd547b67de545b883fb0fb3bc2
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 674dc2d12cb8f65753730e187e13fc5e522ff6b3
+ms.sourcegitcommit: ced0cccf15adfd492f8196cb739f01dde52c9252
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593417"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67135693"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Tutoriel : Analyser les sentiments dans les commentaires des sites web à l’aide d’une classification binaire dans ML.NET
 
@@ -46,7 +46,7 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 ## <a name="prepare-your-data"></a>Préparer vos données
 
 > [!NOTE]
-> Les jeux de données utilisés dans ce tutoriel proviennent de « From Group to Individual Labels using Deep Features » (Kotzias et. al., KDD 2015), hébergé dans le référentiel UCI Machine Learning (Dua, D. et Karra Taniskidou, E., 2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml]. Irvine (Californie) : Université de Californie, School of Information and Computer Science.
+> Les jeux de données utilisés dans ce tutoriel proviennent de « From Group to Individual Labels using Deep Features » (Kotzias et. al., KDD 2015), hébergé dans le référentiel UCI Machine Learning (Dua, D. et Karra Taniskidou, E., 2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml ]. Irvine (Californie) : Université de Californie, School of Information and Computer Science.
 
 1. Téléchargez le [fichier zip du jeu de données UCI Sentiment Labeled Sentences](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip), puis décompressez-le.
 
@@ -276,13 +276,13 @@ Utilisez le code suivant pour afficher les métriques :
 
     [!code-csharp[CallUseModelWithSingleItem](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CallUseModelWithSingleItem "Call the UseModelWithSingleItem method")]
 
-3. Ajoutez le code suivant comme première ligne dans la méthode `Predict()` :
+3. Ajoutez le code suivant comme première ligne dans la méthode `UseModelWithSingleItem()` :
 
     [!code-csharp[CreatePredictionEngine](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreatePredictionEngine1 "Create the PredictionEngine")]
 
     [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API utile qui vous permet de passer et d’exécuter une prédiction sur une seule instance de données.
 
-4. Ajoutez un commentaire pour tester la prédiction du modèle formé dans la méthode `Predict()` en créant une instance de `SentimentData` :
+4. Ajoutez un commentaire pour tester la prédiction du modèle formé dans la méthode `UseModelWithSingleItem()` en créant une instance de `SentimentData` :
 
     [!code-csharp[PredictionData](~/samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#CreateTestIssue1 "Create test data for single prediction")]
 
