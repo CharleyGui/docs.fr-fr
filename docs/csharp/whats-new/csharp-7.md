@@ -222,7 +222,7 @@ La modification d’une méthode en un membre expression-bodied est une [modific
 
 ## <a name="throw-expressions"></a>Expressions throw
 
-En C#, `throw` a toujours été une instruction. Étant donné que `throw` est une instruction, et non pas une expression, certaines constructions C# ne pouvaient pas l’utiliser. Il s’agit notamment des expressions conditionnelles, des expressions de fusion null, ainsi que de certaines expressions lambda. L’ajout de membres expression-bodied ajoute des emplacements supplémentaires où les expressions `throw` seraient utiles. Afin que vous puissiez écrire toutes ces constructions, C# 7.0 introduit [ *expressions throw*](../language-reference/keywords/throw.md#the-throw-expression).
+En C#, `throw` a toujours été une instruction. Étant donné que `throw` est une instruction, et non pas une expression, certaines constructions C# ne pouvaient pas l’utiliser. Il s’agit notamment des expressions conditionnelles, des expressions de fusion null, ainsi que de certaines expressions lambda. L’ajout de membres expression-bodied ajoute des emplacements supplémentaires où les expressions `throw` seraient utiles. Pour vous permettre d’écrire n’importe laquelle de ces constructions, C# 7.0 introduit les [*expressions throw*](../language-reference/keywords/throw.md#the-throw-expression).
 
 Cet ajout facilite l’écriture de code davantage basé sur des expressions. Vous n’avez pas besoin d’instructions supplémentaires pour la vérification des erreurs.
 

@@ -228,7 +228,7 @@ Pour que l’argument `--label-column-name` puisse être utilisé, le fichier de
 
 `--max-exploration-time | -x` (chaîne)
 
-Par défaut, la durée maximale d’exploration est de 30 minutes.
+Par défaut, la durée maximale d’exploration est de 30 minutes.
 
 Cet argument définit la durée maximale (en secondes) dont dispose le processus pour explorer plusieurs entraîneurs et configurations. La durée configurée peut être dépassée si la durée fournie est trop courte (par exemple, 2 secondes) pour une seule itération. Dans ce cas, la durée réelle est le temps nécessaire pour produire une seule configuration de modèle dans une seule itération.
 

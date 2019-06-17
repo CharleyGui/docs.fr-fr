@@ -186,7 +186,7 @@ Une interface double générée automatiquement peut être appropriée dans de r
 
 ### <a name="ensure-that-all-com-event-notifications-are-late-bound"></a>Vérifiez que toutes les notifications d’événements COM sont à liaison tardive.
 
-Par défaut, les informations du type COM sont intégrées directement aux assemblys managés, ce qui éviter d’avoir à utiliser des assemblys PIA (Primary Interop Assembly). Toutefois, une des limitations des informations de type incorporées est qu’il ne prend pas en charge la remise de notifications d’événements COM par des appels à liaison anticipée vtable, mais prend uniquement en charge à liaison tardive `IDispatch::Invoke` appels.
+Par défaut, les informations du type COM sont intégrées directement aux assemblys managés, ce qui éviter d’avoir à utiliser des assemblys PIA (Primary Interop Assembly). Les informations de type incorporées présentent toutefois une limitation : elles ne prennent pas en charge la distribution des notifications d’événements COM par des appels vtable à liaison anticipée, mais seulement par des appels `IDispatch::Invoke` à liaison tardive.
 
 Si votre application exige des appels à liaison anticipée à des méthodes d’interface d’événements COM, vous pouvez définir la propriété **Incorporer les types Interop** sur `true` dans Visual Studio, ou inclure l’élément suivant dans votre fichier projet :
 

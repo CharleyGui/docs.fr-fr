@@ -19,12 +19,12 @@ ms.locfileid: "66815947"
 Lorsque vous compilez une application, vous pouvez spécifier si elle doit être exécutée sur un système d'exploitation Windows 64 bits comme une application native ou sous WOW64 (Windows 32 bits sur Windows 64 bits). WOW64 est un environnement de compatibilité qui permet à une application 32 bits de s'exécuter sur un système 64 bits. WOW64 est inclus dans toutes les versions 64 bits du système d'exploitation Windows.  
   
 ## <a name="running-32-bit-vs-64-bit-applications-on-windows"></a>Comparaison de l'exécution d'applications 32 bits et d'applications 64 bits sur Windows  
- Toutes les applications basées sur les versions 1.0 ou 1.1 de .NET Framework sont traitées comme des applications 32 bits sous un système d'exploitation 64 bits et toujours exécutées sous WOW64 et le Common Language Runtime (CLR) 32 bits. les applications 32 bits qui sont appuient sur le .NET Framework 4 ou versions ultérieures s’exécutent également sous WOW64 sur les systèmes 64 bits.  
+ Toutes les applications basées sur les versions 1.0 ou 1.1 de .NET Framework sont traitées comme des applications 32 bits sous un système d'exploitation 64 bits et toujours exécutées sous WOW64 et le Common Language Runtime (CLR) 32 bits. Les applications 32 bits basées sur .NET Framework 4 ou versions ultérieures s’exécutent également sous WOW64 sur les systèmes 64 bits.  
   
  Visual Studio installe la version 32 bits du CLR sur un ordinateur x86, ainsi que la version 32 bits et la version 64 bits appropriée du CLR sur un ordinateur Windows 64 bits. (Dans la mesure où Visual Studio est une application 32 bits, lorsque celle-ci est installée sur un système 64 bits, elle s'exécute sous WOW64.)  
   
 > [!NOTE]
->  En raison de la conception de l'émulation x 86 et du sous-système WOW64 pour la famille de processeurs Itanium, les applications sont limitées à l'exécution sur un seul processeur. Ces facteurs réduisent les performances et l'évolutivité des applications .NET Framework 32 bits qui s'exécutent sur des systèmes Itanium. Nous vous recommandons d’utiliser le .NET Framework 4, qui inclut une prise en charge 64 bits native pour les systèmes basés sur Itanium, pour meilleures performances et évolutivité.  
+>  En raison de la conception de l'émulation x 86 et du sous-système WOW64 pour la famille de processeurs Itanium, les applications sont limitées à l'exécution sur un seul processeur. Ces facteurs réduisent les performances et l'évolutivité des applications .NET Framework 32 bits qui s'exécutent sur des systèmes Itanium. Nous vous recommandons d’utiliser .NET Framework 4, qui inclut la prise en charge 64 bits native des systèmes Itanium, pour de meilleures performances et une extensibilité accrue.  
   
  Par défaut, lorsque vous exécutez une application managée 64 bits sur un système d'exploitation Windows 64 bits, vous pouvez créer un objet dont la taille maximale est de 2 gigaoctets (Go). Toutefois, dans .NET Framework 4.5, vous pouvez augmenter cette limite.  Pour plus d'informations, consultez [\<gcAllowVeryLargeObjects> element](../../docs/framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md).  
   
@@ -45,7 +45,7 @@ Lorsque vous compilez une application, vous pouvez spécifier si elle doit être
   
 - Pour plus d'informations sur la version 64 bits du CLR sur un ordinateur Windows 64 bits, consultez le [Centre de développement .NET Framework](https://go.microsoft.com/fwlink/?LinkId=37079) sur le site Web MSDN.  
   
-- Dans la documentation du Kit de développement logiciel Windows, consultez [Guide de programmation pour 64 bits Windows](https://go.microsoft.com/fwlink/p/?LinkId=253512).  
+- Dans la documentation du SDK Windows, consultez le [Guide de programmation pour Windows 64 bits](https://go.microsoft.com/fwlink/p/?LinkId=253512).  
   
 - Pour plus d'informations sur le téléchargement d'une version 64 bits du CLR, consultez la rubrique [Téléchargements du Centre de développement .NET Framework](https://go.microsoft.com/fwlink/?LinkId=50953) sur le site Web MSDN.  
   

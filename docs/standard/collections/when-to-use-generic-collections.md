@@ -18,7 +18,7 @@ ms.locfileid: "66491010"
 # <a name="when-to-use-generic-collections"></a>Quand utiliser les collections génériques
 L'utilisation de collections génériques est généralement recommandée, car elle permet de bénéficier immédiatement de la cohérence des types sans avoir à dériver d'un type de collection de base et à implémenter des membres spécifiques au type. Les types de collections génériques sont généralement plus performants que leurs équivalents non génériques (et mieux que les types dérivés de types de collections de base non génériques) quand les éléments de collection sont des types valeur, car grâce aux génériques, aucun boxing d'éléments n'est nécessaire.  
   
- Pour les programmes qui ciblent le .NET Framework 4 ou version ultérieur, vous devez utiliser les classes de collection génériques dans le <xref:System.Collections.Concurrent> espace de noms lorsque plusieurs threads peuvent ajouter ou supprimer simultanément des éléments de la collection.  
+ Pour les programmes qui ciblent .NET Framework 4 ou version ultérieure, vous devez utiliser les classes de collections génériques dans l’espace de noms <xref:System.Collections.Concurrent> quand plusieurs threads sont susceptibles d’ajouter ou de supprimer simultanément des éléments de la collection.  
   
  Les types génériques suivants correspondent à des types de collections existants :  
   

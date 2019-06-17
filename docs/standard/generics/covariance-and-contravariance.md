@@ -59,7 +59,7 @@ ms.locfileid: "66490745"
   
  La covariance et la contravariance sont désignées collectivement sous le nom de *variation*. Un paramètre de type générique qui n'est marqué ni comme étant covariant, ni comme étant contravariant, est appelé *indifférent*. Récapitulatif des informations relatives à la variance dans le common language runtime :  
   
-- Dans le .NET Framework 4, les paramètres de type variant sont limitées à l’interface générique et types délégués génériques.  
+- Dans .NET Framework 4, les paramètres de type variant sont limités aux types d’interfaces génériques et aux types délégués génériques.  
   
 - Un type d'interface générique ou un type délégué générique peut avoir des paramètres de type covariant et contravariant.  
   

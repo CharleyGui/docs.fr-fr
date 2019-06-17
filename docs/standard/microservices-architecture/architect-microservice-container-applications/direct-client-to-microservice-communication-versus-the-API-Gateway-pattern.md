@@ -146,7 +146,7 @@ Dans ce guide et dans l’exemple d’application de référence (eShopOnContain
 
 [Ocelot](https://github.com/ThreeMammals/Ocelot) est une passerelle API légère qui est recommandée pour les approches plus simples. Ocelot est une passerelle API .NET Core open source conçue spécifiquement pour une architecture de microservices qui nécessite des points d’entrée unifiés dans son système. Elle est légère, rapide, évolutive et fournit le routage et l’authentification, parmi de nombreuses autres fonctionnalités.
 
-La principale raison choisir Ocelot pour le [application de référence eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) est Ocelot étant une passerelle API .NET Core légère que vous pouvez déployer dans le même environnement de déploiement d’application où vous effectuez un déploiement vos microservices/conteneurs, notamment un hôte Docker, Kubernetes, périphérique. Et comme elle s’appuie sur .NET Core, elle est multiplateforme et peut donc être déployée sur Windows ou Linux.
+La principale raison de choisir Ocelot pour l’[application de référence eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) vient du fait qu’Ocelot est une passerelle API .NET Core légère que vous pouvez déployer dans le même environnement de déploiement d’application où vous déployez vos microservices/conteneurs (hôte Docker, Kubernetes et ainsi de suite). Et comme elle s’appuie sur .NET Core, elle est multiplateforme et peut donc être déployée sur Windows ou Linux.
 
 Les diagrammes précédents montrant des passerelles d’API personnalisée en cours d’exécution dans les conteneurs expliquent précisément comment vous pouvez également exécuter Ocelot dans un conteneur et dans une application basée sur un microservice.
 

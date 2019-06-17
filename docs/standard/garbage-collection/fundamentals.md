@@ -186,7 +186,7 @@ Thread qui déclenche un garbage collection
   
      Le garbage collection de station de travail peut être simultané ou non simultané. Le garbage collection simultané permet aux threads managés de continuer à fonctionner pendant un garbage collection.  
   
-     À compter de .NET Framework 4, le garbage collection d’arrière-plan remplace le garbage collection simultané.  
+     À compter de .NET Framework 4, le garbage collection d’arrière-plan remplace le garbage collection simultané.  
   
 - Garbage collection de serveur, prévu pour les applications serveur qui ont besoin d'un débit et d'une extensibilité. Le garbage collection de serveur peut être non simultané ou en arrière-plan.  
   

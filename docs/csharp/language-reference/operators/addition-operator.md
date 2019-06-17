@@ -1,5 +1,5 @@
 ---
-title: + et les opérateurs += - C# référence
+title: + et +=, opérateurs - Référence C#
 ms.custom: seodec18
 ms.date: 05/24/2019
 f1_keywords:
@@ -21,7 +21,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 06/12/2019
 ms.locfileid: "67025317"
 ---
-# <a name="-and--operators-c-reference"></a>+ et les opérateurs += (C# référence)
+# <a name="-and--operators-c-reference"></a>+ et +=, opérateurs (référence C#)
 
 L’opérateur `+` est pris en charge par les types numériques intégrés, le type [chaîne](../keywords/string.md) et les types [délégués](../keywords/delegate.md).
 
@@ -43,7 +43,7 @@ Pour les opérandes du même type [délégué](../keywords/delegate.md), l’op�
 
 [!code-csharp-interactive[delegate combination](~/samples/csharp/language-reference/operators/AdditionOperator.cs#AddDelegates)]
 
-Pour effectuer la suppression de délégué, utilisez la [ `-` opérateur](subtraction-operator.md#delegate-removal).
+Pour effectuer la suppression de délégué, utilisez l’[opérateur `-`](subtraction-operator.md#delegate-removal).
 
 Pour plus d'informations sur les types de délégués, consultez [Délégués](../../programming-guide/delegates/index.md).
 

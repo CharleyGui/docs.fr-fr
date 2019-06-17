@@ -46,7 +46,7 @@ La classe <xref:System.Collections.SortedList?displayProperty=nameWithType>, la 
 > [!NOTE]
 >  Pour les valeurs qui contiennent leurs propres clés (par exemple, des enregistrements d’employés qui contiennent un numéro d’ID de l’employé), vous pouvez créer une collection à clé qui possède certaines caractéristiques d’une liste et certaines caractéristiques d’un dictionnaire en dérivant de la classe générique <xref:System.Collections.ObjectModel.KeyedCollection%602>.  
   
- En commençant par le .NET Framework 4, le <xref:System.Collections.Generic.SortedSet%601> classe fournit une arborescence auto-équilibrée qui maintient les données dans un ordre trié après les insertions, suppressions et les recherches. Cette classe et la classe <xref:System.Collections.Generic.HashSet%601> implémentent l’interface <xref:System.Collections.Generic.ISet%601>.  
+ À partir de .NET Framework 4, la classe <xref:System.Collections.Generic.SortedSet%601> fournit une arborescence autonome qui maintient les données triées dans un certain ordre après les insertions, les suppressions et les recherches. Cette classe et la classe <xref:System.Collections.Generic.HashSet%601> implémentent l’interface <xref:System.Collections.Generic.ISet%601>.  
   
 ## <a name="see-also"></a>Voir aussi
 

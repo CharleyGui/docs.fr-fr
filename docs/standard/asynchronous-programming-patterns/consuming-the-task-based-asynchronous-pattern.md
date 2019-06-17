@@ -64,7 +64,7 @@ await someTask.ConfigureAwait(continueOnCapturedContext:false);
 ```
 
 ## <a name="canceling-an-asynchronous-operation"></a>Annulation d'une opération asynchrone
- À compter de .NET Framework 4, les méthodes TAP qui prennent en charge l’annulation fournissent au moins une surcharge qui accepte un jeton d’annulation (<xref:System.Threading.CancellationToken> objet).
+ À compter de .NET Framework 4, les méthodes TAP qui prennent en charge l’annulation fournissent au moins une surcharge qui accepte un jeton d’annulation (objet <xref:System.Threading.CancellationToken>).
 
  Un jeton d’annulation est créé via une source de jeton d’annulation (objet <xref:System.Threading.CancellationTokenSource>).  La propriété <xref:System.Threading.CancellationTokenSource.Token%2A> de la source retourne le jeton d’annulation qui sera signalé quand la méthode <xref:System.Threading.CancellationTokenSource.Cancel%2A> de la source sera appelée.  Par exemple, si vous souhaitez télécharger une page web unique et que vous souhaitiez être en mesure d’annuler l’opération, vous créez un objet <xref:System.Threading.CancellationTokenSource>, passez son jeton à la méthode TAP et appelez ensuite la méthode <xref:System.Threading.CancellationTokenSource.Cancel%2A> de la source quand vous êtes prêt à annuler l’opération :
 

@@ -33,7 +33,7 @@ Le .NET Framework comporte deux principaux composants, dont les versions sont d�
 >
 > Il existe une différence entre la version du .NET Framework et la version du CLR :
 > - La version du .NET Framework dépend du jeu d’assemblys qui constituent la bibliothèque de classes du .NET Framework. Par exemple, 4.5, 4.6.1 et 4.7.2 sont des versions de .NET Framework.
->- La version du CLR dépend du runtime sur lequel les applications .NET Framework s’exécutent. En règle générale, une version particulière du CLR prend en charge plusieurs versions du .NET Framework. Par exemple, CLR version 4.0.30319. *xxxxx* prend en charge des versions du .NET Framework 4 à 4.5.2, où *xxxxx* est inférieur à 42000 et le CLR version 4.0.30319.42000 prend en charge les versions du .NET Framework en commençant par le .NET Framework 4.6.
+>- La version du CLR dépend du runtime sur lequel les applications .NET Framework s’exécutent. En règle générale, une version particulière du CLR prend en charge plusieurs versions du .NET Framework. Par exemple, le CLR version 4.0.30319.*xxxxx* prend en charge les versions 4 à 4.5.2 du .NET Framework, où *xxxxx* est inférieur à 42000, tandis que le CLR version 4.0.30319.42000 prend en charge toutes les versions du .NET Framework à partir de .NET Framework 4.6.
 >
 > Pour plus d’informations sur les versions, consultez [Versions et dépendances du .NET Framework](versions-and-dependencies.md).
 
@@ -90,7 +90,7 @@ Le tableau suivant présente la valeur DWORD **Version** sur les différents sys
 |.NET Framework 4.7|Sur Windows 10 Creators Update : 460798<br />Sur tous les autres systèmes d’exploitation Windows (y compris d’autres systèmes d’exploitation Windows 10) : 460805|
 |.NET Framework 4.7.1|Sur Windows 10 Fall Creators Update et Windows Server, version 1709 : 461308<br/>Sur tous les autres systèmes d’exploitation Windows (y compris d’autres systèmes d’exploitation Windows 10) : 461310|
 |.NET Framework 4.7.2|Sur Windows 10 avec la mise à jour d’avril 2018 et Windows Server, version 1803 : 461808<br/>Sur tous les systèmes d’exploitation Windows autres que la mise à jour d’avril 2018 de Windows 10 et la version 1803 de Windows Server : 461814|
-|.NET Framework 4.8|Sur la mise à jour du 10 mai 2019 Windows : 528040<br/>Sur tous les autres systèmes d’exploitation de Windows (y compris les autres systèmes d’exploitation de Windows 10) : 528049|
+|.NET Framework 4.8|Sur la mise à jour de mai 2019 de Windows 10 : 528040<br/>Sur tous les autres systèmes d’exploitation Windows (y compris d’autres systèmes d’exploitation Windows 10) : 528049|
 
 Vous pouvez utiliser ces valeurs de différentes manières :
 
@@ -204,7 +204,7 @@ Utilisez l’[outil de version CLR (Clrver.exe)](../tools/clrver-exe-clr-version
 
     L’objet `System.Version` retourné identifie la version du runtime qui est en train d’exécuter le code. Il ne retourne pas les versions d’assembly ni d’autres versions du runtime susceptibles d’avoir été installées sur l’ordinateur.
 
-    Pour les versions de .NET Framework 4, 4.5, 4.5.1 et 4.5.2, la représentation sous forme de chaîne de retourné <xref:System.Version> objet a la forme, 4.0.30319. *XXXXX*, où *xxxxx* est inférieure à 42000. Pour les versions 4.6 et ultérieures du .NET Framework, la forme est 4.0.30319.42000.
+    Pour les versions 4, 4.5, 4.5.1 et 4.5.2 du .NET Framework, la représentation sous forme de chaîne de l’objet <xref:System.Version> retourné a la forme 4.0.30319.*xxxxx*, où *xxxxx* est inférieur à 42000. Pour les versions 4.6 et ultérieures du .NET Framework, la forme est 4.0.30319.42000.
 
 2. Une fois que vous avez l’objet `Version`, interrogez-le comme suit :
 

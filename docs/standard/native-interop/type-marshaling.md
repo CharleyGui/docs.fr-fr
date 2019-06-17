@@ -4,12 +4,12 @@ description: Découvrez comment .NET marshale vos types en une représentation n
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: cb18a7607a3d99907401543b4d37995a956a3920
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 2cb8898b52b4b4afba1184a886e16c9f7f68f03a
+ms.sourcegitcommit: c4dfe37032c64a1fba2cc3d5947550d79f95e3b5
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65065962"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67041787"
 ---
 # <a name="type-marshaling"></a>Marshaling de types
 
@@ -79,6 +79,20 @@ Certains types ne peuvent être marshalés que comme paramètres, et non comme c
 | `System.Runtime.InteropServices.HandleRef` | `void*` |
 
 Si ces valeurs par défaut ne vous conviennent pas tout à fait, vous pouvez personnaliser la façon dont les paramètres sont marshalés. L’article [Marshaling des paramètres](customize-parameter-marshaling.md) explique comment faire, pour différents types de paramètres.
+
+## <a name="default-marshaling-in-com-scenarios"></a>Marshaling par défaut dans les scénarios COM
+
+Quand vous appelez des méthodes sur des objets COM dans .NET, le runtime .NET modifie les règles de marshaling par défaut pour qu’elles correspondent à la sémantique COM courante. Le tableau suivant liste les règles utilisées par les runtimes .NET dans les scénarios COM :
+
+| Type .NET | Type natif (appels de méthodes COM) |
+|-----------|--------------------------------|
+| `bool`    | `VARIANT_BOOL`                 |
+| `StringBuilder` | `LPWSTR`                 |
+| `string`  | `BSTR`                         |
+| Types délégués | `_Delegate*` dans le .NET Framework. Interdits dans .NET Core. |
+| `System.Drawing.Color` | `OLECOLOR`        |
+| Tableau .NET | `SAFEARRAY`                   |
+| `string[]` | `SAFEARRAY` de `BSTR`s        |
 
 ## <a name="marshaling-classes-and-structs"></a>Marshaling de classes et de structures
 

@@ -32,7 +32,7 @@ Les clichés instantanés permettent aux assemblys qui sont utilisés dans un do
   
 - [Activation et utilisation des clichés instantanés](#EnablingAndUsing) décrit l’utilisation de base et les options disponibles pour les clichés instantanés.  
   
-- [Performances de démarrage](#StartupPerformance) décrit les modifications apportées aux clichés instantanés dans le .NET Framework 4 pour améliorer les performances de démarrage et comment rétablir le comportement des versions antérieures.  
+- [Performances du démarrage](#StartupPerformance) décrit les changements apportés aux clichés instantanés dans .NET Framework 4 pour améliorer les performances du démarrage, et comment rétablir le comportement des versions antérieures.  
   
 - [Méthodes obsolètes](#ObsoleteMethods) décrit les changements apportés aux propriétés et aux méthodes qui contrôlent les clichés instantanés dans le [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)].  
   

@@ -27,7 +27,7 @@ Pour aller au-delà de la gestion de conteneurs individuels ou d’applications 
 
 Du point de vue de l’architecture et du développement, si vous générez de grosses applications d’entreprise basées sur des microservices, il est important de comprendre les plateformes et les produits suivants, qui prennent en charge des scénarios avancés :
 
-**Clusters et orchestrateurs.** Quand vous devez effectuer un scale-out des applications sur plusieurs hôtes Docker, comme dans le cas d’une application imposante basée sur des microservices, il est essentiel de pouvoir gérer tous ces hôtes sous la forme d’un seul cluster, en faisant abstraction de la complexité de la plateforme sous-jacente. C’est précisément ce que les clusters de conteneurs et les orchestrateurs permettent de faire. Kubernetes est un exemple d’un orchestrateur et est disponible dans Azure via Azure Kubernetes Service.
+**Clusters et orchestrateurs.** Quand vous devez effectuer un scale-out des applications sur plusieurs hôtes Docker, comme dans le cas d’une application imposante basée sur des microservices, il est essentiel de pouvoir gérer tous ces hôtes sous la forme d’un seul cluster, en faisant abstraction de la complexité de la plateforme sous-jacente. C’est précisément ce que les clusters de conteneurs et les orchestrateurs permettent de faire. Kubernetes est un exemple d’orchestrateur disponible dans Azure par le biais d’Azure Kubernetes Service.
 
 **Planificateurs.** La *planification* signifie qu’un administrateur a la possibilité de lancer des conteneurs dans un cluster : ils doivent donc également fournir une interface utilisateur. Un planificateur de cluster a plusieurs responsabilités : utiliser efficacement les ressources du cluster, définir les contraintes fournies par l’utilisateur, équilibrer efficacement la charge des conteneurs entre les nœuds ou les hôtes, et faire preuve de robustesse face aux erreurs, tout en offrant une haute disponibilité.
 
@@ -53,7 +53,7 @@ Les concepts de cluster et de planificateur sont étroitement liés : les produi
 
 ## <a name="using-container-based-orchestrators-in-microsoft-azure"></a>Utilisation d’orchestrateurs basés sur des conteneurs dans Microsoft Azure
 
-Plusieurs fournisseurs de cloud offrent la prise en charge des conteneurs Docker, ainsi que celle des clusters et de l’orchestration Docker, notamment Microsoft Azure, Amazon EC2 Container Service et Google Container Engine. Microsoft Azure fournit Docker orchestrator et cluster prise en charge par le biais d’Azure Kubernetes Service (AKS).
+Plusieurs fournisseurs de cloud offrent la prise en charge des conteneurs Docker, ainsi que celle des clusters et de l’orchestration Docker, notamment Microsoft Azure, Amazon EC2 Container Service et Google Container Engine. Microsoft Azure fournit une prise en charge des clusters et des orchestrateurs Docker par le biais d’Azure Kubernetes Service (AKS).
 
 ## <a name="using-azure-kubernetes-service"></a>Utilisation d’Azure Kubernetes Service
 

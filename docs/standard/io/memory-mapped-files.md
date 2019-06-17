@@ -19,7 +19,7 @@ ms.lasthandoff: 06/04/2019
 ms.locfileid: "66487054"
 ---
 # <a name="memory-mapped-files"></a>Fichiers mappés en mémoire
-Un fichier mappé en mémoire comporte le contenu d'un fichier en mémoire virtuelle. Ce mappage entre un fichier et un espace mémoire permet à une application incluant plusieurs processus de modifier le fichier en lisant et en écrivant directement dans la mémoire. À compter de .NET Framework 4, vous pouvez utiliser le code managé pour accéder aux fichiers mappés en mémoire de la même façon que les fonctions Windows natives accéder aux fichiers mappés en mémoire, comme décrit dans [Mapped Files](https://docs.microsoft.com/previous-versions/ms810613(v=msdn.10)).  
+Un fichier mappé en mémoire comporte le contenu d'un fichier en mémoire virtuelle. Ce mappage entre un fichier et un espace mémoire permet à une application incluant plusieurs processus de modifier le fichier en lisant et en écrivant directement dans la mémoire. À compter de .NET Framework 4, vous pouvez utiliser du code managé pour accéder aux fichiers mappés en mémoire de la même façon que les fonctions Windows natives accèdent à des fichiers mappés en mémoire, comme décrit dans [Gestion des fichiers mappés en mémoire](https://docs.microsoft.com/previous-versions/ms810613(v=msdn.10)).  
   
  Il existe deux types de fichiers mappés en mémoire :  
   

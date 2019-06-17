@@ -23,7 +23,7 @@ Dans .NET Framework 4.6 et ultérieur, la gestion des versions de produit a cha
   
 - Les attributs <xref:System.Reflection.AssemblyFileVersionAttribute> et <xref:System.Reflection.AssemblyInformationalVersionAttribute> pour les assemblys managés ont des valeurs <xref:System.Version> au format `4.6.X.0` pour le .NET Framework 4.6 et ses versions intermédiaires, et `4.7.X.0` pour le Framework .NET 4.7.  
   
-- Depuis .NET Framework 4.6, la <xref:System.Environment.Version%2A?displayProperty=nameWithType> propriété retourne la chaîne de version fixe `4.0.30319.42000`. Dans le .NET Framework 4, 4.5, 4.5.1 et 4.5.2, elle retourne les chaînes de version dans le format `4.0.30319.xxxxx` où `xxxxx` est inférieure à 42000 (par exemple, « 4.0.30319.18010 »). Notez que nous ne recommandons pas que le code d'application prenne de nouvelles dépendances sur la propriété <xref:System.Environment.Version%2A?displayProperty=nameWithType>.
+- À compter de .NET Framework 4.6, la propriété <xref:System.Environment.Version%2A?displayProperty=nameWithType> retourne la chaîne de version fixe `4.0.30319.42000`. Dans .NET Framework 4, 4.5, 4.5.1 et 4.5.2, elle retourne les chaînes de version au format `4.0.30319.xxxxx`, où `xxxxx` est inférieur à 42000 (par exemple « 4.0.30319.18010 »). Notez que nous ne recommandons pas que le code d'application prenne de nouvelles dépendances sur la propriété <xref:System.Environment.Version%2A?displayProperty=nameWithType>.
   
 ### <a name="handling-the-product-versioning-changes"></a>Gestion des modifications du contrôle de version de produit  
  En général, les applications doivent s'appuyer sur les techniques recommandées pour la détection d'éléments tels que la version de runtime du .NET Framework et le répertoire d'installation :  

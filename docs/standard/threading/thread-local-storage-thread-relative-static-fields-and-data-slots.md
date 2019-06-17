@@ -26,7 +26,7 @@ Vous pouvez utiliser le stockage local des threads (TLS) managé pour stocker de
   
  Dans C++ non géré, vous utilisez `TlsAlloc` pour allouer dynamiquement des emplacements et `__declspec(thread)` pour déclarer qu’une variable doit être allouée dans un stockage relatif à un thread. Des champs statiques relatifs à un thread et des emplacements de données fournissent la version managée de ce comportement.  
   
- Dans le .NET Framework 4, vous pouvez utiliser la <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> classe pour créer des objets locaux de thread initialisés tardivement lorsque l’objet est tout d’abord consommé. Pour plus d’informations, consultez [Initialisation tardive](../../../docs/framework/performance/lazy-initialization.md).  
+ Dans .NET Framework 4, vous pouvez utiliser la classe <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> pour créer des objets locaux de thread initialisés tardivement quand l’objet est initialement consommé. Pour plus d’informations, consultez [Initialisation tardive](../../../docs/framework/performance/lazy-initialization.md).  
   
 ## <a name="uniqueness-of-data-in-managed-tls"></a>Unicité des données dans TLS managé  
  Si vous utilisez les champs statiques relatifs à un thread ou des emplacements de données, les données dans TLS managé sont uniques à la combinaison du thread et du domaine d’application.  

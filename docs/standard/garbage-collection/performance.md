@@ -44,7 +44,7 @@ ms.locfileid: "66489584"
   
 <a name="etw"></a>   
 ### <a name="garbage-collection-etw-events"></a>Événements ETW de garbage collection  
- Le suivi d'événements pour Windows (ETW) est un système de suivi qui complète la prise en charge du profilage et du débogage fournie par .NET Framework. En commençant par le .NET Framework 4, [événements ETW de garbage collection](../../../docs/framework/performance/garbage-collection-etw-events.md) capturent des informations utiles pour l’analyse du tas managé d’un point de vue statistique. Par exemple, l'événement `GCStart_V1`, qui est déclenché quand un garbage collection est sur le point de se produire, fournit les informations suivantes :  
+ Le suivi d'événements pour Windows (ETW) est un système de suivi qui complète la prise en charge du profilage et du débogage fournie par .NET Framework. À compter de .NET Framework 4, les [événements ETW de garbage collection](../../../docs/framework/performance/garbage-collection-etw-events.md) capturent des informations utiles pour l’analyse du tas managé d’un point de vue statistique. Par exemple, l'événement `GCStart_V1`, qui est déclenché quand un garbage collection est sur le point de se produire, fournit les informations suivantes :  
   
 - La génération d'objets qui est collectée  
   
@@ -323,7 +323,7 @@ ms.locfileid: "66489584"
   
      Dans cet exemple, la taille de la région libre la plus grande est d'environ 24 000 Ko (3A980 en hexadécimal). Cette région est beaucoup plus petite que ce dont le garbage collector a besoin pour un segment.  
   
-     - ou -  
+     \- ou -  
   
 - Utilisez la commande **vmstat** :  
   

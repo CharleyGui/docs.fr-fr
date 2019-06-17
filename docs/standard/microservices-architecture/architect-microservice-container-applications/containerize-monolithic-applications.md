@@ -63,9 +63,9 @@ Que vous vouliez obtenir la validation d’un conteneur déployé sur Azure ou q
 
 **Figure 4-4**. Publication d’une application basée sur un seul conteneur sur Azure App Service à partir de Visual Studio
 
-Sans Docker, si vous avez besoin d’autres fonctionnalités, frameworks ou dépendances qui ne sont pas pris en charge dans Azure App Service, vous devez attendre que l’équipe Azure mette à jour ces dépendances dans App Service. Ou bien, vous deviez basculer vers d’autres services tels qu’Azure Cloud Services ou machines virtuelles, où vous aviez davantage de contrôle et vous pouviez installer un framework ou un composant requis pour votre application.
+Sans Docker, si vous avez besoin d’autres fonctionnalités, frameworks ou dépendances qui ne sont pas pris en charge dans Azure App Service, vous devez attendre que l’équipe Azure mette à jour ces dépendances dans App Service. Vous pouviez aussi passer à d’autres services, comme Azure Cloud Services ou des machines virtuelles, où vous aviez davantage de contrôle et où vous pouviez installer un composant ou un framework nécessaire à votre application.
 
-Prise en charge des conteneurs dans Visual Studio 2017 et versions ultérieures vous donne la possibilité d’inclure tout ce que vous voulez dans votre environnement d’application, comme indiqué dans la Figure 4-4. Dans la mesure où vous l’exécutez dans un conteneur, si vous ajoutez une dépendance à votre application, vous pouvez inclure la dépendance dans votre fichier Dockerfile ou votre image Docker.
+La prise en charge des conteneurs dans Visual Studio 2017 et versions ultérieures vous donne la possibilité d’inclure tout ce que vous voulez dans l’environnement de votre application, comme le montre la figure 4-4. Dans la mesure où vous l’exécutez dans un conteneur, si vous ajoutez une dépendance à votre application, vous pouvez inclure la dépendance dans votre fichier Dockerfile ou votre image Docker.
 
 Comme le montre la figure 4-4, le flux de publication pousse (push) une image via un registre de conteneurs. Il peut s’agir d’Azure Container Registry (registre proche de vos déploiements dans Azure, et sécurisé par des comptes et des groupes Azure Active Directory), ou de tout autre registre Docker, comme Docker Hub ou un registre local.
 
