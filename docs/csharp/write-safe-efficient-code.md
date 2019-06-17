@@ -3,12 +3,12 @@ title: Écrire du code C# sécurisé et efficace
 description: Les améliorations récentes apportées au langage C# vous permettent d’écrire du code sécurisé vérifiable que les performances associaient précédemment à du code non sécurisé.
 ms.date: 10/23/2018
 ms.custom: mvc
-ms.openlocfilehash: 259ce0b9405dfd74adf51a9cc046ffe3f08d242f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 73ad7a84d2ad47f0e0242825d250247ffb39928e
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753886"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832941"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Écrire du code C# sécurisé et efficace
 
@@ -189,7 +189,7 @@ Vous pouvez voir un exemple de programme qui montre les différences de performa
 
 Une autre fonctionnalité associée du langage est la possibilité de déclarer un type valeur qui doit être contraint à un seul frame de pile. Cette restriction permet au compilateur d’effectuer plusieurs optimisations. Cette fonctionnalité vise principalement <xref:System.Span%601> et ses structures associées. Vous obtiendrez de meilleures performances de ces améliorations en utilisant les API .NET nouvelles et mises à jour, qui facilitent l’utilisation du type <xref:System.Span%601>.
 
-Vous pouvez avoir des exigences similaires quand vous utilisez de la mémoire créée avec [`stackalloc`](language-reference/keywords/stackalloc.md) ou de la mémoire provenant d’API d’interopérabilité. Pour répondre à ces besoins, vous pouvez définir vos propres types `ref struct`.
+Vous pouvez avoir des exigences similaires quand vous utilisez de la mémoire créée avec [`stackalloc`](language-reference/operators/stackalloc.md) ou de la mémoire provenant d’API d’interopérabilité. Pour répondre à ces besoins, vous pouvez définir vos propres types `ref struct`.
 
 ## <a name="readonly-ref-struct-type"></a>Type `readonly ref struct`
 

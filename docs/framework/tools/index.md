@@ -36,7 +36,7 @@ La plupart des outils .NET Framework décrits dans cette section sont installés
  Convertit les définitions de types d'une bibliothèque de types COM d'un contrôle ActiveX en contrôle Windows Forms.  
   
  [Caspol.exe (outil de stratégie de sécurité d’accès du code)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)  
- Permet d'afficher et de configurer la stratégie de sécurité au niveau de l'ordinateur, de l'utilisateur et de l'entreprise. Dans le .NET Framework 4 et versions ultérieures, cet outil n’affecte pas de stratégie de sécurité (CA) d’accès au code, sauf si le [ \<legacyCasPolicy > élément](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) est défini sur `true`. Pour plus d’informations, consultez [Changements en matière de sécurité](../../../docs/framework/security/security-changes.md).  
+ Permet d'afficher et de configurer la stratégie de sécurité au niveau de l'ordinateur, de l'utilisateur et de l'entreprise. Dans .NET Framework 4 et versions ultérieures, cet outil n’affecte pas la stratégie de sécurité d’accès du code (CAS), à moins que l’[élément \<legacyCasPolicy>](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) soit défini sur `true`. Pour plus d’informations, consultez [Changements en matière de sécurité](../../../docs/framework/security/security-changes.md).  
   
  [Cert2spc.exe (outil de test de certificat d’éditeur de logiciels)](../../../docs/framework/tools/cert2spc-exe-software-publisher-certificate-test-tool.md)  
  Crée un certificat SPC (Software Publisher's Certificate) à partir d'un ou plusieurs certificats X.509. Cet outil ne doit être utilisé qu'à des fins de test.  

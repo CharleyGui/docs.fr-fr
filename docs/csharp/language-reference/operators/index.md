@@ -1,5 +1,5 @@
 ---
-title: C#opérateurs - C# référence
+title: Opérateur C# - Référence C#
 ms.date: 04/30/2019
 f1_keywords:
 - cs.operators
@@ -25,7 +25,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 06/12/2019
 ms.locfileid: "67025139"
 ---
-# <a name="c-operators-c-reference"></a>C#opérateurs (C# référence)
+# <a name="c-operators-c-reference"></a>Opérateur C# (Référence C#)
 
 C# fournit plusieurs opérateurs prédéfinis pris en charge par les types intégrés. Par exemple, les [opérateurs arithmétiques](arithmetic-operators.md) effectuent des opérations arithmétiques avec des opérandes de types numériques intégrés et les [opérateurs logiques booléens](boolean-logical-operators.md) effectuent des opérations logiques avec les opérandes [bool](../keywords/bool.md).
 

@@ -2,12 +2,12 @@
 title: Types de collection F#
 description: En savoir plus sur F# quoi ils diffèrent des types de collections dans le .NET Framework et les types de collections.
 ms.date: 05/16/2016
-ms.openlocfilehash: a3cfc3f06582c31a79dce43b583eca39f69ddf1e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b370d850deaacc961dff9515ffa8c20634af4ed6
+ms.sourcegitcommit: c4dfe37032c64a1fba2cc3d5947550d79f95e3b5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61996812"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67041724"
 ---
 # <a name="f-collection-types"></a>Types de collection F#
 
@@ -83,6 +83,7 @@ Cette section compare les fonctions qui sont disponibles sur F# types de collect
 |iteri|O(N)|O(N)|O(N)|-|-|Applique la fonction donnée à chaque élément de la collection. L’entier qui est passé à la fonction indique l’index de l’élément.|
 |iteri2|O(N)|O(N)|-|-|-|Applique la fonction donnée à une paire d’éléments qui sont obtenue en faisant correspondre les index de deux tableaux. L’entier qui est passé à la fonction indique l’index des éléments. Les deux tableaux doivent avoir la même longueur.|
 |iter2|O(N)|O(N)|O(N)|-|-|Applique la fonction donnée à une paire d’éléments qui sont obtenue en faisant correspondre les index de deux tableaux. Les deux tableaux doivent avoir la même longueur.|
+|last|O(1)|O(N)|O(N)|-|-|Retourne le dernier élément dans la collection applicable.|
 |length|O(1)|O(N)|O(N)|-|-|Retourne le nombre d’éléments dans la collection.|
 |map|O(N)|O(N)|O(1)|-|-|Génère une collection dont les éléments sont les résultats de l’application de la fonction donnée à chaque élément du tableau.|
 |map2|O(N)|O(N)|O(1)|-|-|Génère une collection dont les éléments sont les résultats de l’application de la fonction donnée aux éléments correspondants des deux collections par paire. Les deux tableaux d’entrée doivent avoir la même longueur.|

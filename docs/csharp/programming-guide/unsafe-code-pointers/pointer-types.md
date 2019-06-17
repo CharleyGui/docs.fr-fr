@@ -5,12 +5,12 @@ ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: 7f04cfbac72008332a429c4e0ad8bd3f4e60cc83
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 3183f8434dd8a6bc8182e2257d0ab3c7e7c014c4
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65880327"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833440"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Types pointeur (Guide de programmation C#)
 
@@ -45,7 +45,7 @@ Un pointeur ne peut pas pointer vers une référence ou vers un [struct](../../l
 
 La valeur de la variable pointeur de type `myType*` est l'adresse d'une variable de type `myType`. Les éléments suivants sont des exemples de déclarations de type pointeur :
 
-|Exemple|Description|
+|Exemples|Description|
 |-------------|-----------------|
 |`int* p`|`p` est un pointeur vers un entier.|
 |`int** p`|`p` est un pointeur vers un pointeur vers un entier.|
@@ -82,7 +82,7 @@ Le tableau suivant répertorie les opérateurs et les instructions qui peuvent f
 |`++` et `--`|Incrémente et décrémente les pointeurs.|
 |`+` et `-`|Exécute des opérations arithmétiques sur les pointeurs.|
 |`==`, `!=`, `<`, `>`, `<=` et `>=`|Compare des pointeurs.|
-|[`stackalloc`, opérateur](../../language-reference/keywords/stackalloc.md)|Alloue de la mémoire sur la pile.|
+|[`stackalloc`, opérateur](../../language-reference/operators/stackalloc.md)|Alloue de la mémoire sur la pile.|
 |[instruction `fixed`](../../language-reference/keywords/fixed-statement.md)|Résout temporairement une variable afin de pouvoir rechercher son adresse.|
 
 Pour plus d’informations sur les opérateurs associés au pointeur, consultez [Opérateurs associés au pointeur](../../language-reference/operators/pointer-related-operators.md).

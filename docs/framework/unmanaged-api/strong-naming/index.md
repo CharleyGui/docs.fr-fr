@@ -23,7 +23,7 @@ L’API de nommage fort permet à un client d’administrer la signature avec no
 ## <a name="in-this-section"></a>Dans cette section  
   
 > [!NOTE]
->  Toutes ces fonctions ont été déconseillées à compter de .NET Framework 4. Pour obtenir des suggestions d’alternatives, consultez l’interface [ICLRStrongName](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md).  
+>  Toutes ces fonctions sont dépréciées à compter de .NET Framework 4. Pour obtenir des suggestions d’alternatives, consultez l’interface [ICLRStrongName](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md).  
   
  [GetHashFromAssemblyFile, fonction](../../../../docs/framework/unmanaged-api/strong-naming/gethashfromassemblyfile-function.md)  
  Obtient un hachage du fichier d’assembly spécifié, à l’aide de l’algorithme de hachage spécifié. Dépréciée à compter de .NET Framework 4.  
