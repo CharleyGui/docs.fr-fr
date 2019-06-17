@@ -43,7 +43,7 @@ Quand vous mettez à niveau et recompilez du code existant, l'utilisation d'un t
 
 - Examinez la documentation de ce domaine technologique pour savoir que faire face à des éléments obsolètes.
 
-Vous pouvez choisir de ne pas recompiler le code existant avec une version ultérieure du .NET Framework. À la place, vous pouvez spécifier la version du .NET Framework sur laquelle votre code compilé existant est exécuté. Par exemple, supposons que vous avez une application nommée app1.exe qui a été compilée avec le .NET Framework 3.5, mais que vous souhaitez que l’application s’exécute avec le .NET Framework 4.5. Ce processus implique les étapes suivantes :
+Vous pouvez choisir de ne pas recompiler le code existant avec une version ultérieure du .NET Framework. À la place, vous pouvez spécifier la version du .NET Framework sur laquelle votre code compilé existant est exécuté. Supposez, par exemple, que vous avez une application nommée app1.exe qui a été compilée avec .NET Framework 3.5, mais que vous souhaitez que l’application s’exécute avec .NET Framework 4.5. Ce processus implique les étapes suivantes :
 
 1. Créez un fichier de configuration pour votre fichier exécutable principal et nommez-le *Nom_app*.exe.config, où *Nom_app* est le nom du fichier exécutable de l’application. Pour l'application nommée app1.exe de notre exemple, vous devez créer un fichier de configuration intitulé app1.exe.config.
 

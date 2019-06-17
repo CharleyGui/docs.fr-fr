@@ -35,7 +35,7 @@ Vous ne pouvez pas exécuter les projets de service Windows directement à parti
 
 ### <a name="install-your-service-manually"></a>Installer votre service manuellement
 
-1. Dans le menu **Démarrer**, sélectionnez le répertoire **Visual Studio \<*version*>** , puis **Invite de commandes développeur pour VS \<*version*>** .
+1. Dans le menu **Démarrer**, sélectionnez le répertoire **Visual Studio \<*version*>**, puis **Invite de commandes développeur pour VS \<*version*>**.
 
      L’invite de commandes développeur pour Visual Studio s’affiche.
 
@@ -47,7 +47,7 @@ Vous ne pouvez pas exécuter les projets de service Windows directement à parti
     installutil <yourproject>.exe
     ```
 
-     Si vous utilisez l’invite de commandes développeur pour Visual Studio, *InstallUtil.exe* doit se trouver dans le chemin système. Si ce n’est pas le cas, vous pouvez l’ajouter au chemin ou utiliser le chemin complet pour l’appeler. Cet outil est installé avec le .NET Framework dans *% WINDIR%\Microsoft.NET\Framework[64]\\< version_framework\>* .
+     Si vous utilisez l’invite de commandes développeur pour Visual Studio, *InstallUtil.exe* doit se trouver dans le chemin système. Si ce n’est pas le cas, vous pouvez l’ajouter au chemin ou utiliser le chemin complet pour l’appeler. Cet outil est installé avec le .NET Framework dans *%WINDIR%\Microsoft.NET\Framework[64]\\<version_framework>\>*.
 
      Par exemple :
      - Pour la version 32 bits de .NET Framework 4 ou 4.5 et ultérieur, si votre répertoire d’installation Windows est *C:\Windows*, le chemin par défaut est *C:\Windows\Microsoft.NET\Framework\v4.0.30319\InstallUtil.exe*.
@@ -55,7 +55,7 @@ Vous ne pouvez pas exécuter les projets de service Windows directement à parti
 
 ### <a name="uninstall-your-service-manually"></a>Désinstaller votre service manuellement
 
-1. Dans le menu **Démarrer**, sélectionnez le répertoire **Visual Studio \<*version*>** , puis **Invite de commandes développeur pour VS \<*version*>** .
+1. Dans le menu **Démarrer**, sélectionnez le répertoire **Visual Studio \<*version*>**, puis **Invite de commandes développeur pour VS \<*version*>**.
 
      L’invite de commandes développeur pour Visual Studio s’affiche.
 

@@ -364,7 +364,7 @@ Windows offre une API native riche sous la forme d’API C plates, de COM et de 
 
 Le type <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> prend en charge le protocole HTTP/2. La prise en charge est désactivée, mais vous pouvez l’activer en appelant `AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2Support", true);` avant d’utiliser <xref:System.Net.Http.HttpClient>. Vous pouvez également activer la prise en charge de HTTP/2 en définissant la variable d’environnement `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2SUPPORT` sur `true` avant d’exécuter votre application.
 
-Si HTTP/2 est activée, la version du protocole HTTP est négociée par le biais de TLS/ALPN et HTTP/2 servira uniquement si le serveur choisit d’utiliser.
+Si HTTP/2 est activé, la version du protocole HTTP est négociée par le biais de TLS/ALPN, et HTTP/2 n’est utilisé que si le serveur le choisit.
 
 ## <a name="tls-13--openssl-111-on-linux"></a>TLS 1.3 et OpenSSL 1.1.1 sous Linux
 

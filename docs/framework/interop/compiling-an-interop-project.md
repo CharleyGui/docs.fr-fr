@@ -24,7 +24,7 @@ Les projets de COM Interop qui référencent un ou plusieurs assemblys contenant
 
  Il existe deux façons de référencer des assemblys d’interopérabilité :
 
-- En utilisant des types interop incorporés : Depuis .NET Framework 4 et Visual Studio 2010, vous pouvez indiquer au compilateur d’incorporer les informations de type à partir d’un assembly d’interopérabilité dans votre fichier exécutable. Il s'agit de la technique recommandée.
+- En utilisant des types interop incorporés : à compter de .NET Framework 4 et Visual Studio 2010, vous pouvez indiquer au compilateur d’incorporer les informations de type d’un assembly d’interopérabilité dans votre exécutable. Il s'agit de la technique recommandée.
 
 - En déployant des assemblys d’interopérabilité : vous pouvez créer une référence standard à un assembly d’interopérabilité. Dans ce cas, l’assembly d’interopérabilité doit être déployé avec votre application.
 
