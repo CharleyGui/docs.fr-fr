@@ -62,7 +62,7 @@
           href: linq-to-objects.md
         - name: LINQ et chaînes
           href: linq-and-strings.md
-        - name: Articles Comment
+        - name: Articles de procédure
           items:
             - name: "Procédure\_: compter les occurrences d’un mot dans une chaîne (LINQ)"
               href: how-to-count-occurrences-of-a-word-in-a-string-linq.md
