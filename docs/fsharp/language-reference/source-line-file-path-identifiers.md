@@ -2,12 +2,12 @@
 title: Identificateurs de ligne, de fichier et de chemin d’accès source
 description: Découvrez comment utiliser intégrée F# valeurs d’identificateur qui vous permettent d’accéder à la source de ligne numéro, directory et nom de fichier dans votre code.
 ms.date: 05/16/2016
-ms.openlocfilehash: 4b145fe1fe20e3d7f868558e33bab26204fb0125
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3f2048aed9ef75037b43cd091a749e3d6bbaf9a3
+ms.sourcegitcommit: 5e05f983e63d5bbd8c0b246d02c6e4f23d2fc1db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663620"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67152049"
 ---
 # <a name="source-line-file-and-path-identifiers"></a>Identificateurs de ligne, de fichier et de chemin d’accès source
 
@@ -31,7 +31,7 @@ Le tableau suivant récapitule les identificateurs de ligne, de fichier et chemi
 |---------------------|-----------|
 |`__LINE__`|Prend la valeur de numéro de ligne en cours, vous envisagez `#line` directives.|
 |`__SOURCE_DIRECTORY__`|Prend la valeur actuelle chemin d’accès complet du répertoire source, envisagez `#line` directives.|
-|`__SOURCE_FILE__`|A pour valeur le nom de fichier source actuel et son chemin d’accès, vous envisagez `#line` directives.|
+|`__SOURCE_FILE__`|Prend la valeur du nom de fichier source actuel, sans son chemin d’accès, vous envisagez `#line` directives.|
 
 Pour plus d’informations sur la `#line` directive, consultez [Directives de compilateur](compiler-directives.md).
 
@@ -46,7 +46,7 @@ Sortie :
 ```
 Line: 4
 Source Directory: C:\Users\username\Documents\Visual Studio 2017\Projects\SourceInfo\SourceInfo
-Source File: C:\Users\username\Documents\Visual Studio 2017\Projects\SourceInfo\SourceInfo\Program.fs
+Source File: Program.fs
 ```
 
 ## <a name="see-also"></a>Voir aussi
