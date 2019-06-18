@@ -7,12 +7,12 @@ helpviewer_keywords:
 - flicker [Windows Forms], reducing in Windows Forms
 - buffering [Windows Forms], double buffering
 ms.assetid: dc484e33-7101-4e4b-ada5-d3c96155fbcd
-ms.openlocfilehash: ac6c9b7f2cc1fea86a75eaaf4a2dde1ea60e4f40
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5b22336221c7bdda3c9dd7adf23308a2b0bad450
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777154"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169917"
 ---
 # <a name="using-double-buffering"></a>Utilisation de doubles tampons d'enregistrements
 Vous pouvez utiliser des graphiques de double tampon pour réduire le scintillement dans vos applications qui contiennent des opérations de dessin complexes. Le .NET Framework contient une prise en charge intégrée de double tampon, ou vous pouvez gérer et restituer manuellement des graphiques.  
@@ -31,11 +31,9 @@ Vous pouvez utiliser des graphiques de double tampon pour réduire le scintillem
  Montre comment restituer des graphiques mis en mémoire tampon double.  
   
 ## <a name="reference"></a>Référence  
- <xref:System.Windows.Forms.Control.SetStyle%2A> ,  
- Méthode de contrôle qui permet la double mise en tampon.  
+ <xref:System.Windows.Forms.Control.SetStyle%2A> Méthode de contrôle qui permet la double mise en tampon.  
   
- <xref:System.Drawing.BufferedGraphicsContext> ,  
- Fournit des méthodes pour créer des mémoires tampons de graphiques.  
+ <xref:System.Drawing.BufferedGraphicsContext> Fournit des méthodes pour créer des mémoires tampons de graphiques.  
   
  <xref:System.Drawing.BufferedGraphicsManager>  
  Fournit l’accès au contexte graphique mis en mémoire tampon pour un domaine d’application.

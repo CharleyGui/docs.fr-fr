@@ -2,16 +2,16 @@
 title: Scénarios de déploiement pris en charge - WCF
 ms.date: 03/30/2017
 ms.assetid: 3399f208-3504-4c70-a22e-a7c02a8b94a6
-ms.openlocfilehash: 7b508f53365c1b4b90e2883ddb9d5f2a71c7e814
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 2da55176cbfe618b332f2df210e3e1c0516b17ae
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025627"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170051"
 ---
 # <a name="supported-deployment-scenarios"></a>Scénarios de déploiement pris en charge
 
-Le sous-ensemble de fonctionnalités de Windows Communication Foundation (WCF) prises en charge pour une utilisation dans les applications de confiance partielle est conçu pour répondre aux exigences de certains, mais pas tous, scénarios pour l’utilisation de WCF. Sur le serveur, WCF répond aux exigences de l’échelle d’Internet, les fournisseurs d’hébergement partagés qui exécutent des applications tierces dans l’autorisation ASP.NET 2.0 Medium Trust définies pour des raisons de sécurité. Sur le client, prise en charge de la confiance partielle WCF est conçu pour répondre aux exigences de technologies de déploiement telles que [déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ou [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]de technologie d’Application de navigateur XAML permettant transparentes et sécurisées déploiement d’applications bureautiques à partir de sites non approuvés.
+Le sous-ensemble de fonctionnalités de Windows Communication Foundation (WCF) prises en charge pour une utilisation dans les applications de confiance partielle est conçu pour répondre aux exigences de certains, mais pas tous, scénarios pour l’utilisation de WCF. Sur le serveur, WCF répond aux exigences de l’échelle d’Internet, les fournisseurs d’hébergement partagés qui exécutent des applications tierces dans l’autorisation ASP.NET 2.0 Medium Trust définies pour des raisons de sécurité. Sur le client, prise en charge de la confiance partielle WCF est conçu pour répondre aux exigences de technologies de déploiement telles que [déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ou une technologie d’Application de navigateur XAML de WPF, qui autorise un déploiement transparent et sécurisé de applications de bureau à partir de sites non approuvés.
 
 ## <a name="minimum-permission-requirements"></a>Autorisations minimales requises
 
@@ -39,7 +39,7 @@ Pour plus d'informations, voir [Procédure : Utiliser la confiance moyenne dans
 
 ## <a name="partial-trust-on-the-client"></a>Confiance partielle sur le client
 
-Certaines précautions de sécurité doivent être prises lors du téléchargement et de l'exécution du code à partir de sites Internet non fiables. La technologie [ClickOnce Deployment](/visualstudio/deployment/clickonce-security-and-deployment) (Déploiement ClickOnce) et la technologie d’application du navigateur XAML (XBAP) de [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]utilisent la confiance de niveau partiel pour accorder des autorisations limitées (zone Internet) au code non fiable.
+Certaines précautions de sécurité doivent être prises lors du téléchargement et de l'exécution du code à partir de sites Internet non fiables. Les deux [déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) et WPF de XAML navigateur Application (XBAP) technologie utiliser de confiance partielle pour accorder des autorisations limitées (Zone Internet) au code non fiable.
 
 WCF peut être utilisé pour communiquer avec des serveurs distants à partir d’applications de confiance partiel déployées par soit [déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ou XBAP. Le jeu d’autorisations de Zone Internet inclut <xref:System.Net.WebPermission> pour l’hôte d’origine, ce qui autorise ces applications à communiquer avec leur serveur d’origine en utilisant l’une des liaisons WCF pris en charge décrites dans [Partial Trust Feature Compatibility ](partial-trust-feature-compatibility.md).
 

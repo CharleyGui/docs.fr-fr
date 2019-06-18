@@ -2,12 +2,12 @@
 title: Hébergement dans une application managée
 ms.date: 03/30/2017
 ms.assetid: af70132d-e9e1-4f32-b20f-f0014629758a
-ms.openlocfilehash: c1f4d91994ba44407ff5c93dbd34aa0bdef9332b
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 1895f6622f7c528979badd741f5994970bbd1a8c
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591735"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169798"
 ---
 # <a name="hosting-in-a-managed-application"></a>Hébergement dans une application managée
 Services de Windows Communication Foundation (WCF) peuvent être hébergés dans n’importe quelle application .NET Framework. Les services auto-hébergés constituent l'option d'hébergement la plus flexible parce qu'ils requièrent le déploiement de moins d'infrastructure. Toutefois, il est également l’option d’hébergement moins fiable, car les applications gérées ne fournissent pas d’hébergement avancés et de fonctionnalités de gestion d’autres options d’hébergement dans WCF, comme les services Internet Information Services (IIS) et Windows.  
@@ -22,7 +22,7 @@ Services de Windows Communication Foundation (WCF) peuvent être hébergés dans
  Scénarios courants qui permet à l’auto-hébergement sont les services WCF qui s’exécutent dans des applications de console. Hébergement d’un service WCF à l’intérieur d’une application console est généralement utile pendant la phase de développement du service. Cela simplifie son débogage, l'obtention des informations de suivi pour déterminer ce qui se passe à l'intérieur de l'application, et son déplacement en la copiant vers un nouvel emplacement.  
   
 ## <a name="rich-client-applications"></a>Applications clientes complexes  
- Autres scénarios courants qu’auto-hébergement sont les applications clientes riches, tels que ceux basés sur Windows Presentation Foundation (WPF) ou Windows Forms (WinForms). Cette option d'hébergement permet aux applications clientes complexes, comme [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] et WinForms, de communiquer facilement avec le monde extérieur. Par exemple, un client de collaboration pair à pair qui utilise [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)] pour son interface utilisateur et héberge également un service WCF qui permet aux autres clients pour vous connecter à celui-ci et partager des informations.  
+ Autres scénarios courants qu’auto-hébergement sont les applications clientes riches, tels que ceux basés sur Windows Presentation Foundation (WPF) ou Windows Forms (WinForms). Cette option d’hébergement rend également plus facile pour les applications clientes riches, telles que les applications WPF et WinForms, pour communiquer avec le monde extérieur. Par exemple, un client de collaboration pair à pair qui utilise WPF pour son interface utilisateur et héberge également un service WCF qui permet aux autres clients pour vous connecter à celui-ci et partager des informations.  
   
 ## <a name="see-also"></a>Voir aussi
 

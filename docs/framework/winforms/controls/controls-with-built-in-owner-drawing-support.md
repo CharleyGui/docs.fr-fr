@@ -8,12 +8,12 @@ helpviewer_keywords:
 - custom drawing
 - owner drawing
 ms.assetid: 3823d01e-9610-43e6-864d-99f9b7c2b351
-ms.openlocfilehash: df3a61dae9ad926f56da4e9d15e0e8b8c6f1c8a3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c053c14bb06d1bb28c7b7e6652ccc6e41af9c4e5
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648247"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170607"
 ---
 # <a name="controls-with-built-in-owner-drawing-support"></a>Contrôles avec prise en charge intégrée des dessins owner-drawn
 Le dessin owner-drawn dans Windows Forms, qui est également appelé dessin personnalisé, est une technique permettant de changer l’apparence visuelle de certains contrôles.  
@@ -46,7 +46,7 @@ Le dessin owner-drawn dans Windows Forms, qui est également appelé dessin pers
   
 - <xref:System.Windows.Forms.TabControl>  
   
- Les contrôles suivants prennent en charge owner-drawn seulement dans le [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] :  
+ Les contrôles suivants prennent en charge le dessin owner-drawn uniquement dans le .NET Framework 2.0 :  
   
 - <xref:System.Windows.Forms.ToolTip>  
   
@@ -54,7 +54,7 @@ Le dessin owner-drawn dans Windows Forms, qui est également appelé dessin pers
   
 - <xref:System.Windows.Forms.TreeView>  
   
- Les contrôles suivants prennent en charge le dessin owner-drawn et sont nouveaux dans le [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)] :  
+ Les contrôles suivants prennent en charge le dessin owner-drawn et sont Nouveautés dans .NET Framework 2.0 :  
   
 - <xref:System.Windows.Forms.DataGridView>  
   

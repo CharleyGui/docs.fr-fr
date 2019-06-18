@@ -2,17 +2,17 @@
 title: 'Tâche 2 : héberger le concepteur de flux de travail'
 ms.date: 03/30/2017
 ms.assetid: 0a29b138-270d-4846-b78e-2b875e34e501
-ms.openlocfilehash: cce90c6b7f5edfaf960415f0a5d0787f8eee526b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 553a02732e08fa148ffdee250df0305deb8e63b7
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665286"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169998"
 ---
 # <a name="task-2-host-the-workflow-designer"></a>Tâche 2 : héberger le concepteur de flux de travail
 Cette rubrique décrit la procédure pour l’hébergement d’une instance de la [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] dans une application Windows Presentation Foundation (WPF).  
   
- La procédure configure le **grille** contrôle qui contient le concepteur, crée par programmation une instance de la <xref:System.Activities.Presentation.WorkflowDesigner> qui contient une valeur par défaut <xref:System.Activities.Statements.Sequence> activité, enregistre les métadonnées de concepteur pour fournir prise en charge de concepteur pour des hôtes et des activités intégrées tout le [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] dans le [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] application.  
+ La procédure configure le **grille** contrôle qui contient le concepteur, crée par programmation une instance de la <xref:System.Activities.Presentation.WorkflowDesigner> qui contient une valeur par défaut <xref:System.Activities.Statements.Sequence> activité, enregistre les métadonnées de concepteur pour fournir prise en charge de concepteur pour des hôtes et des activités intégrées tout le [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] dans l’application WPF.  
   
 ### <a name="to-host-the-workflow-designer"></a>Pour héberger le concepteur de workflow  
   
@@ -22,7 +22,7 @@ Cette rubrique décrit la procédure pour l’hébergement d’une instance de l
   
 3. Définir le nom de la grille en sélectionnant le **grille** panneau dans le concepteur (cliquez sur la zone à l’intérieur de la **MainWindow**) et en définissant le **nom** propriété en haut de la  **Propriétés** fenêtre valeur « grid1 ».  
   
-4. Dans le **propriétés** fenêtre, cliquez sur le bouton de sélection (**...** ) à côté du `ColumnDefinitions` propriété pour ouvrir le **éditeur de collections** boîte de dialogue.  
+4. Dans le **propriétés** fenêtre, cliquez sur le bouton de sélection ( **...** ) à côté du `ColumnDefinitions` propriété pour ouvrir le **éditeur de collections** boîte de dialogue.  
   
 5. Dans le **éditeur de collections** boîte de dialogue, cliquez sur le **ajouter** bouton trois fois pour insérer trois colonnes dans la disposition. La première colonne contiendra la **boîte à outils**, la deuxième colonne hébergera le [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], et la troisième colonne sera utilisée pour l’inspecteur de propriété.  
   

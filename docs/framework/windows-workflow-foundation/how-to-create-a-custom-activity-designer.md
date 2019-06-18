@@ -2,12 +2,12 @@
 title: 'Procédure : créer un concepteur d’activités personnalisées'
 ms.date: 03/30/2017
 ms.assetid: 2f3aade6-facc-44ef-9657-a407ef8b9b31
-ms.openlocfilehash: e455d00ebd128c37eacb19df0e7f864505df04e0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7c6d2ae695a04c85ade6ae4da0b812f4043fa2f6
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945650"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170663"
 ---
 # <a name="how-to-create-a-custom-activity-designer"></a>Procédure : créer un concepteur d’activités personnalisées
 
@@ -17,7 +17,7 @@ Les concepteurs d'activités personnalisées héritent généralement d'<xref:Sy
 
 Pour faciliter le développement de concepteurs d'activités personnalisées, <xref:System.Activities.Presentation.ActivityDesigner> utilise deux contrôles d'assistance, <xref:System.Activities.Presentation.WorkflowItemPresenter> et <xref:System.Activities.Presentation.WorkflowItemsPresenter>. Ceux-ci gèrent les fonctionnalités communes telles que le glisser-déposer, la suppression, la sélection et l’ajout d’éléments enfants. Le <xref:System.Activities.Presentation.WorkflowItemPresenter> permet un seul enfant d’élément d’interface utilisateur à l’intérieur, en fournissant la « zone de dépôt », tandis que le <xref:System.Activities.Presentation.WorkflowItemsPresenter> peut fournir la prise en charge de plusieurs éléments d’interface utilisateur, notamment des fonctionnalités supplémentaires telles que le classement, le déplacement, la suppression et ajout d’éléments enfants.
 
-L'autre aspect essentiel qu'il faut mettre en évidence dans l'implémentation d'un concepteur d'activités personnalisées concerne la façon dont les modifications sur place sont liées à l'aide de la liaison de données [!INCLUDE[avalon2](../../../includes/avalon2-md.md)] à l'instance stockée en mémoire de ce que nous modifions dans le concepteur. Cette tâche est effectuée par l’arborescence des éléments de modèles, qui est également chargée de l’activation de la notification de modification et du suivi d’événements tels que les modifications d’états.
+L’autre aspect essentiel qu’il faut mettre en évidence dans l’implémentation d’un concepteur d’activités personnalisées concerne la façon dont les modifications sur place sont liées à l’aide de la liaison de données WPF à l’instance stockée en mémoire de ce que nous modifions dans le concepteur. Cette tâche est effectuée par l’arborescence des éléments de modèles, qui est également chargée de l’activation de la notification de modification et du suivi d’événements tels que les modifications d’états.
 
 Cette rubrique présente deux procédures.
 

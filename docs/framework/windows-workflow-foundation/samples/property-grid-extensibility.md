@@ -2,12 +2,12 @@
 title: Extensibilité de la propriété grille - exemple WF
 ms.date: 03/30/2017
 ms.assetid: 3530c3a3-756d-4712-9f10-fb2897414d3a
-ms.openlocfilehash: d22b6e21fbf2d5deb4d47fce683553378e990000
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 1cc8b8b34d6236e263f95439da84994e35d627ed
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637679"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170352"
 ---
 # <a name="property-grid-extensibility"></a>Extensibilité de grille de propriétés
 
@@ -69,7 +69,7 @@ L'exemple d'éditeur de boîtes de dialogue montre les points suivants :
 
 1. Il crée un type qui dérive de <xref:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor>.
 
-2. Il définit la valeur <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor.InlineEditorTemplate%2A> dans le constructeur avec un modèle de données [!INCLUDE[avalon2](../../../../includes/avalon2-md.md)]. Cet élément peut être créé en XAML, mais dans cet exemple, il est créé dans le code.
+2. Définit la <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor.InlineEditorTemplate%2A> valeur dans le constructeur avec un modèle de données WPF. Cet élément peut être créé en XAML, mais dans cet exemple, il est créé dans le code.
 
 3. Le modèle de données a un contexte de données du <xref:System.Activities.Presentation.PropertyEditing.PropertyValue> de l'élément restitué dans la grille des propriétés. Dans le code suivant, ce contexte crée ensuite une liaison avec la propriété `Value`. Il est essentiel d'inclure également un <xref:System.Activities.Presentation.PropertyEditing.EditModeSwitchButton> pour fournir le bouton qui affiche la boîte de dialogue dans FilePickerEditor.cs.
 
