@@ -4,12 +4,12 @@ ms.date: 04/12/2018
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: fbe36f7a-7cfa-4f77-a8d4-2be5958568e3
-ms.openlocfilehash: 333bfb539fc375fd8f2dd170a187002fcf81ea2b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b945edca8bd739e6f122ed8b3e950508ecc28510
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61649761"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268163"
 ---
 # <a name="visual-basic-compiler-options-listed-by-category"></a>Options du compilateur Visual Basic par catégorie
 Le compilateur de ligne de commande Visual Basic est fourni comme alternative aux programmes de compilation dans l’environnement de développement intégré (IDE) Visual Studio. Voici une liste des options du compilateur de ligne de commande Visual Basic triées par catégorie fonctionnelle.  
@@ -39,7 +39,7 @@ Le compilateur de ligne de commande Visual Basic est fourni comme alternative au
 |---|---|  
 |[-doc](../../../visual-basic/reference/command-line-compiler/doc.md)|Traite les commentaires de documentation pour les diriger vers un fichier XML.|  
 |[-deterministic](../../../visual-basic/reference/command-line-compiler/deterministic.md)|Indique au compilateur de générer un assembly dont le contenu binaire est identique dans les compilations si les entrées sont identiques.|
-|[-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|Configure le compilateur pour cibler le [!INCLUDE[Compact](~/includes/compact-md.md)].|  
+|[-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|Configure le compilateur pour cibler le .NET Compact Framework.|  
 |[-out](../../../visual-basic/reference/command-line-compiler/out.md)|Spécifie un fichier de sortie.|  
 |[-refonly](refonly-compiler-option.md)|Génère un assembly de référence uniquement.|
 |[/refout](refout-compiler-option.md)|Spécifie le chemin de sortie d’un assembly de référence.|

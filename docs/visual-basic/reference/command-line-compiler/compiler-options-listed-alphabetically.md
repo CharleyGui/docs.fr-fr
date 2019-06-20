@@ -4,12 +4,12 @@ ms.date: 04/12/2018
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: e67febba-bacf-4e1f-a143-c141e063f90e
-ms.openlocfilehash: 846d033c62d0168bab4661b9ab2b71a2139e2fcb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 98d8b3eef0afd780b4a6568e8c067296d2243087
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61649814"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268190"
 ---
 # <a name="visual-basic-compiler-options-listed-alphabetically"></a>Options du compilateur Visual Basic répertoriées par ordre alphabétique
 Le compilateur de ligne de commande Visual Basic est fourni comme alternative aux programmes de compilation à partir de l’environnement de développement intégré (IDE) Visual Studio. Voici une liste des options du compilateur de ligne de commande Visual Basic par ordre alphabétique.  
@@ -45,7 +45,7 @@ Le compilateur de ligne de commande Visual Basic est fourni comme alternative au
 |[-main](../../../visual-basic/reference/command-line-compiler/main.md)|Spécifie la classe qui contient le `Sub Main` procédure à utiliser au démarrage.|  
 |[-moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)|Spécifie le nom de l'assembly dont un module fera partie.|  
 |`-modulename:<string>`|Spécifiez le nom du module source.|  
-|[-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|Configure le compilateur pour cibler le [!INCLUDE[Compact](~/includes/compact-md.md)].|  
+|[-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|Configure le compilateur pour cibler le .NET Compact Framework.|  
 |[-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)|Ne compilez pas avec Vbc.rsp.|  
 |[-nologo](../../../visual-basic/reference/command-line-compiler/nologo.md)|Supprime les informations de bannière du compilateur.|  
 |[-nostdlib](../../../visual-basic/reference/command-line-compiler/nostdlib.md)|Configure le compilateur pour ne pas référencer les bibliothèques standard.|  

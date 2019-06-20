@@ -7,11 +7,11 @@ helpviewer_keywords:
 - directives
 ms.assetid: 20d5fe65-490a-4c23-88c2-ee4f490ed762
 ms.openlocfilehash: 38d54feae5cf7bf41a825d1f6000811e2b56f319
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61858507"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268204"
 ---
 # <a name="directives-visual-basic"></a>Directives (Visual Basic)
 Les rubriques de cette section documentent les directives du compilateur de code source Visual Basic.  

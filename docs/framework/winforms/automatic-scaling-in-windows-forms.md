@@ -5,12 +5,12 @@ helpviewer_keywords:
 - scalability [Windows Forms], automatic in Windows Forms
 - Windows Forms, automatic scaling
 ms.assetid: 68fad25b-afbc-44bd-8e1b-966fc43507a4
-ms.openlocfilehash: cacda830a2501dcd127248955848d207d80bbe2c
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: f8afece073076b9ae94faaba8477f2a13e11b295
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636969"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268086"
 ---
 # <a name="automatic-scaling-in-windows-forms"></a>Automatique mise à l’échelle dans les Windows Forms
 
@@ -48,7 +48,7 @@ Même si ce mécanisme était suffisant dans la plupart des cas, il souffrait de
 
 - Il n’est pas compatible avec les gestionnaires de mise en page plus récents introduits avec le .NET Framework version 2.0, tels que <xref:System.Windows.Forms.FlowLayoutPanel> et <xref:System.Windows.Forms.TableLayoutPanel>.
 
-- Ce mécanisme ne prenait pas en charge la mise à l'échelle basée directement sur la résolution d'affichage, qui est nécessaire pour la compatibilité avec [!INCLUDE[compact](../../../includes/compact-md.md)].
+- Il ne prenait pas en charge la mise à l’échelle basée directement sur la résolution d’affichage qui est requise pour la compatibilité avec .NET Compact Framework.
 
 Bien que ce mécanisme soit conservé dans le .NET Framework version 2.0 pour assurer la compatibilité descendante, il a été remplacé par le mécanisme de mise à l’échelle plus fiable décrit ci-après. Par conséquent, <xref:System.Windows.Forms.Form.AutoScale%2A>, <xref:System.Windows.Forms.Form.ApplyAutoScaling%2A>, <xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A> et certaines surcharges <xref:System.Windows.Forms.Control.Scale%2A> sont marquées comme obsolètes.
 
@@ -63,7 +63,7 @@ Le .NET Framework version 2.0 élimine les limitations précédentes en introdui
 
 - La classe <xref:System.Windows.Forms.Control> comporte également plusieurs nouveaux membres qui lui permettent de participer à la mise à l'échelle et de prendre en charge la mise à l'échelle mixte sur le même formulaire. En particulier les membres <xref:System.Windows.Forms.Control.Scale%2A>, <xref:System.Windows.Forms.Control.ScaleChildren%2A>, et <xref:System.Windows.Forms.Control.GetScaledBounds%2A> prennent en charge la mise à l'échelle.
 
-- La prise en charge de la mise à l'échelle en fonction de la résolution d'écran a été ajoutée pour compléter la prise en charge de la police système, comme défini par l'énumération <xref:System.Windows.Forms.AutoScaleMode>. Ce mode est compatible avec la mise à l'échelle automatique prise en charge par [!INCLUDE[compact](../../../includes/compact-md.md)], ce qui simplifie la migration des applications.
+- La prise en charge de la mise à l'échelle en fonction de la résolution d'écran a été ajoutée pour compléter la prise en charge de la police système, comme défini par l'énumération <xref:System.Windows.Forms.AutoScaleMode>. Ce mode est compatible avec la mise à l’échelle automatique pris en charge par le .NET Compact Framework migration des applications plus facile.
 
 - La compatibilité avec les gestionnaires de présentation tels que <xref:System.Windows.Forms.FlowLayoutPanel> et <xref:System.Windows.Forms.TableLayoutPanel> a été ajoutée à l'implémentation de la mise à l'échelle automatique.
 
