@@ -1,23 +1,23 @@
 ---
 title: Principes de conception communs des conteneurs
-description: Découvrez un principe fondamental de la conception de conteneur bon, c’est qu’un conteneur doit héberger qu’un seul processus.
+description: Découvrez un principe fondamental d’une bonne conception de conteneurs, à savoir qu’un conteneur doit héberger un seul processus.
 ms.date: 02/15/2019
 ms.openlocfilehash: 69f3ff6c9303f0c4082695d861a8c90031295b6a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: MT
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65644793"
 ---
 # <a name="common-container-design-principles"></a>Principes de conception communs des conteneurs
 
-À l’avance d’aborder le processus de développement, il existe quelques concepts de base intéressant de mentionner en ce qui concerne la façon dont vous utilisez des conteneurs.
+Avant d’aborder le processus de développement, il est bon de mentionner quelques concepts de base liés à la façon dont vous utilisez les conteneurs.
 
-## <a name="container-equals-a-process"></a>Conteneur est égal à un processus
+## <a name="container-equals-a-process"></a>Un conteneur est égal à un processus
 
-Dans le modèle de conteneur, un conteneur représente un processus unique. En définissant un conteneur comme une limite de processus, commencer à créer les primitives utilisées pour la mise à l’échelle, ou désactivé par lots, les processus. Lorsque vous exécutez un conteneur Docker, vous verrez un [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#/entrypoint) définition. Cela définit le processus et la durée de vie du conteneur. Lorsque le processus terminé, le cycle de vie de conteneur se termine. Il existe des processus longs, tels que les serveurs web et les processus de courte durée, telles que des traitements par lots, qui peuvent avoir été implémentés en tant que Microsoft Azure [WebJobs](https://azure.microsoft.com/documentation/articles/websites-webjobs-resources/). Si le processus échoue, le conteneur prend fin et l’orchestrateur prend le contrôle. Si l’orchestrateur a été réglé pour conserver les cinq instances en cours d’exécution et un échoue, l’orchestrateur crée un autre conteneur pour remplacer le processus ayant échoué. Dans un programme de traitement par lots, le processus démarre avec des paramètres. Quand le processus prend fin, le travail est terminé.
+Dans le modèle à base de conteneurs, un conteneur représente un processus unique. En définissant un conteneur comme limite de processus, vous commencez à créer les primitives utilisées pour la mise à l’échelle des processus. Quand vous exécutez un conteneur Docker, vous voyez une définition [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#/entrypoint). Celle-ci définit le processus et la durée de vie du conteneur. Une fois le processus terminé, le cycle de vie du conteneur prend fin. Il existe des processus longs, tels que les serveurs web, et des processus de courte durée, tels que des traitements par lots, qui peuvent avoir été implémentés en tant que [WebJobs](https://azure.microsoft.com/documentation/articles/websites-webjobs-resources/) Microsoft Azure. Si le processus échoue, le conteneur prend fin et l’orchestrateur prend le contrôle. Si l’orchestrateur a été configuré pour maintenir cinq instances en exécution et qu’une défaillance touche l’une d’elles, l’orchestrateur crée un autre conteneur pour remplacer le processus défaillant. Dans un programme de traitement par lots, le processus démarre avec des paramètres. Quand le processus prend fin, le travail est terminé.
 
-Vous pouvez trouver un scénario dans lequel vous souhaitez plusieurs processus en cours d’exécution dans un seul conteneur. Dans n’importe quel document d’architecture, il n’est jamais un « jamais » ni aucune toujours une « toujours ». Pour les scénarios qui requièrent plusieurs processus, un modèle courant consiste à utiliser [superviseur](http://supervisord.org/).
+Le cas peut se présenter où vous voulez que plusieurs processus s’exécutent dans un même conteneur. Dans tout document d’architecture, il n’est jamais question de « jamais » et il n’y a pas toujours un « toujours ». Pour les scénarios qui nécessitent plusieurs processus, un modèle courant consiste à utiliser un [superviseur](http://supervisord.org/).
 
 >[!div class="step-by-step"]
 >[Précédent](design-docker-applications.md)
