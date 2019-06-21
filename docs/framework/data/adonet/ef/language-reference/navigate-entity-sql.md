@@ -2,83 +2,83 @@
 title: NAVIGATE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: f107f29d-005f-4e39-a898-17f163abb1d0
-ms.openlocfilehash: 993c07b824d30c89773c5cfea90c7c194c6b3869
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6ce88cecf210d8b3cf541fe7e870e19a59e344ec
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760413"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307332"
 ---
-# <a name="navigate-entity-sql"></a><span data-ttu-id="d7167-102">NAVIGATE (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="d7167-102">NAVIGATE (Entity SQL)</span></span>
+# <a name="navigate-entity-sql"></a><span data-ttu-id="fbb0c-102">NAVIGATE (Entity SQL)</span><span class="sxs-lookup"><span data-stu-id="fbb0c-102">NAVIGATE (Entity SQL)</span></span>
 
-<span data-ttu-id="d7167-103">Parcourt la relation établie entre des entités.</span><span class="sxs-lookup"><span data-stu-id="d7167-103">Navigates over the relationship established between entities.</span></span>
+<span data-ttu-id="fbb0c-103">Parcourt la relation établie entre des entités.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-103">Navigates over the relationship established between entities.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="d7167-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d7167-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="fbb0c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fbb0c-104">Syntax</span></span>
 
 ```
 navigate(instance-expression, [relationship-type], [to-end [, from-end] ])
 ```
 
-## <a name="arguments"></a><span data-ttu-id="d7167-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="d7167-105">Arguments</span></span>
+## <a name="arguments"></a><span data-ttu-id="fbb0c-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="fbb0c-105">Arguments</span></span>
 
-<span data-ttu-id="d7167-106">`instance-expression` Une instance d’une entité.</span><span class="sxs-lookup"><span data-stu-id="d7167-106">`instance-expression` An instance of an entity.</span></span>
+<span data-ttu-id="fbb0c-106">`instance-expression` Une instance d’une entité.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-106">`instance-expression` An instance of an entity.</span></span>
 
-<span data-ttu-id="d7167-107">`relationship-type` Le nom de type de la relation, à partir du fichier conceptual schema definition language (CSDL).</span><span class="sxs-lookup"><span data-stu-id="d7167-107">`relationship-type` The type name of the relationship, from the conceptual schema definition language (CSDL) file.</span></span> <span data-ttu-id="d7167-108">Le `relationship-type` est qualifié en tant que \<espace de noms >.\< nom de type de relation >.</span><span class="sxs-lookup"><span data-stu-id="d7167-108">The `relationship-type` is qualified as \<namespace>.\<relationship type name>.</span></span>
+<span data-ttu-id="fbb0c-107">`relationship-type` Le nom de type de la relation, à partir du fichier conceptual schema definition language (CSDL).</span><span class="sxs-lookup"><span data-stu-id="fbb0c-107">`relationship-type` The type name of the relationship, from the conceptual schema definition language (CSDL) file.</span></span> <span data-ttu-id="fbb0c-108">Le `relationship-type` est qualifié en tant que \<espace de noms >.\< nom de type de relation >.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-108">The `relationship-type` is qualified as \<namespace>.\<relationship type name>.</span></span>
 
-<span data-ttu-id="d7167-109">`to` La fin de la relation.</span><span class="sxs-lookup"><span data-stu-id="d7167-109">`to` The end of the relationship.</span></span>
+<span data-ttu-id="fbb0c-109">`to` La fin de la relation.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-109">`to` The end of the relationship.</span></span>
 
-<span data-ttu-id="d7167-110">`from` Début de la relation.</span><span class="sxs-lookup"><span data-stu-id="d7167-110">`from` The beginning of the relationship.</span></span>
+<span data-ttu-id="fbb0c-110">`from` Début de la relation.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-110">`from` The beginning of the relationship.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="d7167-111">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="d7167-111">Return Value</span></span>
+## <a name="return-value"></a><span data-ttu-id="fbb0c-111">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="fbb0c-111">Return Value</span></span>
 
-<span data-ttu-id="d7167-112">Si la cardinalité de la terminaison To est 1, la valeur retournée est `Ref<T>`.</span><span class="sxs-lookup"><span data-stu-id="d7167-112">If the cardinality of the to end is 1, the return value will be `Ref<T>`.</span></span> <span data-ttu-id="d7167-113">Si la cardinalité de la terminaison To est n, la valeur retournée est `Collection<Ref<T>>`.</span><span class="sxs-lookup"><span data-stu-id="d7167-113">If the cardinality of the to end is n, the return value will be `Collection<Ref<T>>`.</span></span>
+<span data-ttu-id="fbb0c-112">Si la cardinalité de la terminaison To est 1, la valeur retournée est `Ref<T>`.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-112">If the cardinality of the to end is 1, the return value will be `Ref<T>`.</span></span> <span data-ttu-id="fbb0c-113">Si la cardinalité de la terminaison To est n, la valeur retournée est `Collection<Ref<T>>`.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-113">If the cardinality of the to end is n, the return value will be `Collection<Ref<T>>`.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="d7167-114">Notes</span><span class="sxs-lookup"><span data-stu-id="d7167-114">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="fbb0c-114">Notes</span><span class="sxs-lookup"><span data-stu-id="fbb0c-114">Remarks</span></span>
 
-<span data-ttu-id="d7167-115">Les relations sont des constructions de première classe dans le modèle EDM ( [!INCLUDE[adonet_edm](../../../../../../includes/adonet-edm-md.md)] ).</span><span class="sxs-lookup"><span data-stu-id="d7167-115">Relationships are first-class constructs in the [!INCLUDE[adonet_edm](../../../../../../includes/adonet-edm-md.md)] (EDM).</span></span> <span data-ttu-id="d7167-116">Elles peuvent être établies entre plusieurs types d'entités et les utilisateurs peuvent les parcourir d'une terminaison (entité) à l'autre.</span><span class="sxs-lookup"><span data-stu-id="d7167-116">Relationships can be established between two or more entity types, and users can navigate over the relationship from one end (entity) to another.</span></span> <span data-ttu-id="d7167-117">`from` et `to` sont facultatifs à la condition qu'il n'existe aucune ambiguïté au niveau de la résolution des noms dans la relation.</span><span class="sxs-lookup"><span data-stu-id="d7167-117">`from` and `to` are conditionally optional when there is no ambiguity in name resolution within the relationship.</span></span>
+<span data-ttu-id="fbb0c-115">Les relations sont des constructions de première classe dans le modèle EDM (Entity Data Model).</span><span class="sxs-lookup"><span data-stu-id="fbb0c-115">Relationships are first-class constructs in the Entity Data Model (EDM).</span></span> <span data-ttu-id="fbb0c-116">Elles peuvent être établies entre plusieurs types d'entités et les utilisateurs peuvent les parcourir d'une terminaison (entité) à l'autre.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-116">Relationships can be established between two or more entity types, and users can navigate over the relationship from one end (entity) to another.</span></span> <span data-ttu-id="fbb0c-117">`from` et `to` sont facultatifs à la condition qu'il n'existe aucune ambiguïté au niveau de la résolution des noms dans la relation.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-117">`from` and `to` are conditionally optional when there is no ambiguity in name resolution within the relationship.</span></span>
 
-<span data-ttu-id="d7167-118">NAVIGATE est valide dans l'espace O et C.</span><span class="sxs-lookup"><span data-stu-id="d7167-118">NAVIGATE is valid in O and C space.</span></span>
+<span data-ttu-id="fbb0c-118">NAVIGATE est valide dans l'espace O et C.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-118">NAVIGATE is valid in O and C space.</span></span>
 
-<span data-ttu-id="d7167-119">Une construction de navigation se présente généralement sous la forme suivante :</span><span class="sxs-lookup"><span data-stu-id="d7167-119">The general form of a navigation construct is the following:</span></span>
+<span data-ttu-id="fbb0c-119">Une construction de navigation se présente généralement sous la forme suivante :</span><span class="sxs-lookup"><span data-stu-id="fbb0c-119">The general form of a navigation construct is the following:</span></span>
 
-<span data-ttu-id="d7167-120">navigate(`instance-expression`, `relationship-type`, [ `to-end` [, `from-end` ] ] )</span><span class="sxs-lookup"><span data-stu-id="d7167-120">navigate(`instance-expression`, `relationship-type`, [ `to-end` [, `from-end` ] ] )</span></span>
+<span data-ttu-id="fbb0c-120">navigate(`instance-expression`, `relationship-type`, [ `to-end` [, `from-end` ] ] )</span><span class="sxs-lookup"><span data-stu-id="fbb0c-120">navigate(`instance-expression`, `relationship-type`, [ `to-end` [, `from-end` ] ] )</span></span>
 
-<span data-ttu-id="d7167-121">Exemple :</span><span class="sxs-lookup"><span data-stu-id="d7167-121">For example:</span></span>
+<span data-ttu-id="fbb0c-121">Exemple :</span><span class="sxs-lookup"><span data-stu-id="fbb0c-121">For example:</span></span>
 
 ```sql
 Select o.Id, navigate(o, OrderCustomer, Customer, Order)
 From LOB.Orders as o
 ```
 
-<span data-ttu-id="d7167-122">Où OrderCustomer est le `relationship`, et Client et Order sont les terminaisons `to-end` (customer) et `from-end` (order) de la relation.</span><span class="sxs-lookup"><span data-stu-id="d7167-122">Where OrderCustomer is the `relationship`, and Customer and Order are the `to-end` (customer) and `from-end` (order) of the relationship.</span></span> <span data-ttu-id="d7167-123">Si OrderCustomer était une relation de type n : 1, le type de résultat de l’expression de navigation est Ref\<client >.</span><span class="sxs-lookup"><span data-stu-id="d7167-123">If OrderCustomer was a n:1 relationship, then the result type of the navigate expression is Ref\<Customer>.</span></span>
+<span data-ttu-id="fbb0c-122">Où OrderCustomer est le `relationship`, et Client et Order sont les terminaisons `to-end` (customer) et `from-end` (order) de la relation.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-122">Where OrderCustomer is the `relationship`, and Customer and Order are the `to-end` (customer) and `from-end` (order) of the relationship.</span></span> <span data-ttu-id="fbb0c-123">Si OrderCustomer était une relation de type n : 1, le type de résultat de l’expression de navigation est Ref\<client >.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-123">If OrderCustomer was a n:1 relationship, then the result type of the navigate expression is Ref\<Customer>.</span></span>
 
-<span data-ttu-id="d7167-124">Voici la même expression sous une forme plus simple :</span><span class="sxs-lookup"><span data-stu-id="d7167-124">The simpler form of this expression is the following:</span></span>
+<span data-ttu-id="fbb0c-124">Voici la même expression sous une forme plus simple :</span><span class="sxs-lookup"><span data-stu-id="fbb0c-124">The simpler form of this expression is the following:</span></span>
 
 ```sql
 Select o.Id, navigate(o, OrderCustomer)
 From LOB.Orders as o
 ```
 
-<span data-ttu-id="d7167-125">De même, dans une requête sous la forme suivante, l’expression de navigation produirait le résultat Collection < Ref\<ordre >>.</span><span class="sxs-lookup"><span data-stu-id="d7167-125">Similarly, in a query of the following form, The navigate expression would produce a Collection<Ref\<Order>>.</span></span>
+<span data-ttu-id="fbb0c-125">De même, dans une requête sous la forme suivante, l’expression de navigation produirait le résultat Collection < Ref\<ordre >>.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-125">Similarly, in a query of the following form, The navigate expression would produce a Collection<Ref\<Order>>.</span></span>
 
 ```sql
 Select c.Id, navigate(c, OrderCustomer, Order, Customer)
 From LOB.Customers as c
 ```
 
-<span data-ttu-id="d7167-126">L'expression d'instance doit être un type entity/ref.</span><span class="sxs-lookup"><span data-stu-id="d7167-126">The instance-expression must be an entity/ref type.</span></span>
+<span data-ttu-id="fbb0c-126">L'expression d'instance doit être un type entity/ref.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-126">The instance-expression must be an entity/ref type.</span></span>
 
-## <a name="example"></a><span data-ttu-id="d7167-127">Exemple</span><span class="sxs-lookup"><span data-stu-id="d7167-127">Example</span></span>
+## <a name="example"></a><span data-ttu-id="fbb0c-127">Exemple</span><span class="sxs-lookup"><span data-stu-id="fbb0c-127">Example</span></span>
 
-<span data-ttu-id="d7167-128">La requête Entity SQL suivante utilise l'opérateur NAVIGATE pour parcourir la relation établie entre les types d'entités Address et SalesOrderHeader.</span><span class="sxs-lookup"><span data-stu-id="d7167-128">The following Entity SQL query uses the NAVIGATE operator to navigate over the relationship established between Address and SalesOrderHeader entity types.</span></span> <span data-ttu-id="d7167-129">Cette requête est basée sur le modèle de vente AdventureWorks Sales Model.</span><span class="sxs-lookup"><span data-stu-id="d7167-129">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="d7167-130">Pour compiler et exécuter cette requête, procédez comme suit :</span><span class="sxs-lookup"><span data-stu-id="d7167-130">To compile and run this query, follow these steps:</span></span>
+<span data-ttu-id="fbb0c-128">La requête Entity SQL suivante utilise l'opérateur NAVIGATE pour parcourir la relation établie entre les types d'entités Address et SalesOrderHeader.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-128">The following Entity SQL query uses the NAVIGATE operator to navigate over the relationship established between Address and SalesOrderHeader entity types.</span></span> <span data-ttu-id="fbb0c-129">Cette requête est basée sur le modèle de vente AdventureWorks Sales Model.</span><span class="sxs-lookup"><span data-stu-id="fbb0c-129">The query is based on the AdventureWorks Sales Model.</span></span> <span data-ttu-id="fbb0c-130">Pour compiler et exécuter cette requête, procédez comme suit :</span><span class="sxs-lookup"><span data-stu-id="fbb0c-130">To compile and run this query, follow these steps:</span></span>
 
-1. <span data-ttu-id="d7167-131">Suivez la procédure décrite dans [Comment : Exécuter une requête qui retourne des résultats StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span><span class="sxs-lookup"><span data-stu-id="d7167-131">Follow the procedure in [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span></span>
+1. <span data-ttu-id="fbb0c-131">Suivez la procédure décrite dans [Comment : Exécuter une requête qui retourne des résultats StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span><span class="sxs-lookup"><span data-stu-id="fbb0c-131">Follow the procedure in [How to: Execute a Query that Returns StructuralType Results](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).</span></span>
 
-2. <span data-ttu-id="d7167-132">Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :</span><span class="sxs-lookup"><span data-stu-id="d7167-132">Pass the following query as an argument to the `ExecuteStructuralTypeQuery` method:</span></span>
+2. <span data-ttu-id="fbb0c-132">Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :</span><span class="sxs-lookup"><span data-stu-id="fbb0c-132">Pass the following query as an argument to the `ExecuteStructuralTypeQuery` method:</span></span>
 
  [!code-csharp[DP EntityServices Concepts 2#NAVIGATE](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts 2/cs/entitysql.cs#navigate)]
 
-## <a name="see-also"></a><span data-ttu-id="d7167-133">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d7167-133">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fbb0c-133">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fbb0c-133">See also</span></span>
 
-- [<span data-ttu-id="d7167-134">Référence Entity SQL</span><span class="sxs-lookup"><span data-stu-id="d7167-134">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [<span data-ttu-id="d7167-135">Guide pratique pour Parcourir les relations avec l’opérateur Navigate</span><span class="sxs-lookup"><span data-stu-id="d7167-135">How to: Navigate Relationships with Navigate Operator</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/navigate-entity-sql.md)
+- [<span data-ttu-id="fbb0c-134">Référence Entity SQL</span><span class="sxs-lookup"><span data-stu-id="fbb0c-134">Entity SQL Reference</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [<span data-ttu-id="fbb0c-135">Guide pratique pour Parcourir les relations avec l’opérateur Navigate</span><span class="sxs-lookup"><span data-stu-id="fbb0c-135">How to: Navigate Relationships with Navigate Operator</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/navigate-entity-sql.md)
