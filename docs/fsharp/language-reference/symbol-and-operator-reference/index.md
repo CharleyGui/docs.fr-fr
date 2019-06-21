@@ -2,12 +2,12 @@
 title: Informations de référence sur les symboles et les opérateurs
 description: En savoir plus sur les symboles et opérateurs qui sont utilisés dans le F# langage de programmation.
 ms.date: 02/11/2019
-ms.openlocfilehash: 0ea8337a9055c8df639fe6abdb6c79445d189d64
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 14ea7a66f7e9a79d24b62a4aa0564eecb891ee1a
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490814"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306185"
 ---
 # <a name="symbol-and-operator-reference"></a>Informations de référence sur les symboles et les opérateurs
 
@@ -47,7 +47,7 @@ Le tableau suivant décrit les symboles utilisés dans le langage F#, fournit de
 |`+?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Ajoute les côtés gauche et droit, lorsque la partie droite est un type Nullable.<br /></li></ul>|
 |`,`|[Tuples](../tuples.md)|<ul><li>Sépare les éléments d’un tuple, ou les paramètres de type.<br /></li></ul>|
 |`-`|[Opérateurs arithmétiques](arithmetic-operators.md)|<ul><li>Lorsqu'il est utilisé comme opérateur binaire, soustrait le côté droit du côté gauche.<br /></li><li>Lorsqu'il est utilisé comme opérateur unaire, effectue une opération de négation.<br /></li></ul>|
-|`-`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Soustrait le côté droit du côté gauche, lorsque la partie droite est un type Nullable.<br /></li></ul>|
+|`-?`|[Opérateurs autorisant la valeur Null](nullable-operators.md)|<ul><li>Soustrait le côté droit du côté gauche, lorsque la partie droite est un type Nullable.<br /></li></ul>|
 |`->`|[Fonctions](../functions/index.md)<br /><br />[Expressions match](../match-expressions.md)|<ul><li>Dans les types de fonction, délimite les arguments et les valeurs de retour.<br /></li><li>Génère une expression (dans les expressions de séquence) ; équivalent au mot clé `yield`.<br /></li><li>Utilisé dans les expressions de correspondance<br /></li></ul>|
 |`.`|[Membres](../members/index.md)<br /><br />[Types primitifs](../primitive-types.md)|<ul><li>Accède à un membre et sépare les noms individuels dans un nom complet.<br /></li><li>Spécifie une virgule décimale dans les nombres à virgule flottante.<br /></li></ul>|
 |`..`|[Boucles : `for...in` Expression](../loops-for-in-expression.md)|<ul><li>Spécifie une plage.<br /></li></ul>|

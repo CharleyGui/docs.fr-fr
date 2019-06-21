@@ -2,12 +2,12 @@
 title: Résolution des problèmes
 ms.date: 03/30/2017
 ms.assetid: 8cd4401c-b12c-4116-a421-f3dcffa65670
-ms.openlocfilehash: ebcfec475d20492f5ce1f971163544d9faa52223
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8b34336871d599b72e548e2db90487c17377ba66
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613762"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307206"
 ---
 # <a name="troubleshooting"></a>Résolution des problèmes
 Les informations suivantes exposent quelques problèmes que vous pouvez rencontrer dans vos applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] et fournissent des suggestions pour les éviter, ou du moins en réduire l'effet.  
@@ -42,7 +42,7 @@ Les informations suivantes exposent quelques problèmes que vous pouvez rencontr
 ## <a name="expression-not-queryable"></a>Expression non requêtable  
  Si vous obtenez l'erreur "L'expression de type [expression] ne peut pas être interrogée. Vérifiez que vous n'omettez pas une référence d'assembly et/ou une importation d'espace de noms pour le fournisseur LINQ." , vérifiez que :  
   
-- Votre application cible [!INCLUDE[compact_v35_short](../../../../../../includes/compact-v35-short-md.md)].  
+- Votre application cible .NET Compact Framework 3.5.  
   
 - Il y a une référence à `System.Core.dll` et `System.Data.Linq.dll`.  
   

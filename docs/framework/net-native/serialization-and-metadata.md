@@ -4,22 +4,24 @@ ms.date: 03/30/2017
 ms.assetid: 619ecf1c-1ca5-4d66-8934-62fe7aad78c6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c1ee70c2701492acd331e5faed849ff0b2e8b559
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: f046341b1b02c3552ecf8db7d38d2a0c7bc74fba
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052376"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306369"
 ---
 # <a name="serialization-and-metadata"></a>Sérialisation et métadonnées
+
 Si votre application sérialise et désérialise des objets, vous devrez peut-être ajouter des entrées à votre fichier de directives runtime (.rd.xml) pour que les métadonnées nécessaires soient présentes au moment de l'exécution. Il existe deux catégories de sérialiseurs et chacune nécessite un traitement différent dans votre fichier de directives runtime :  
   
 - Sérialiseurs tiers basés sur la réflexion. Ils nécessitent des modifications dans votre fichier de directives runtime et sont décrits dans la section suivante.  
   
 - Sérialiseurs non basés sur la réflexion figurant dans la bibliothèque de classes .NET Framework. Ceux-ci peuvent nécessiter des modifications dans votre fichier de directives runtime et sont décrits dans la section [Sérialiseurs Microsoft](#Microsoft).  
   
-<a name="ThirdParty"></a>   
-## <a name="third-party-serializers"></a>Sérialiseurs tiers  
+<a name="ThirdParty"></a>
+## <a name="third-party-serializers"></a>Sérialiseurs tiers
+
  Les sérialiseurs tiers, y compris Newtonsoft.JSON, sont généralement basés sur la réflexion. Avec un objet BLOB (Binary Large Object) de données sérialisées, les champs de données sont affectés à un type concret en fonction des noms des champs du type cible. L’utilisation de ces bibliothèques entraîne au minimum des exceptions [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) pour chaque objet <xref:System.Type> que vous essayez de sérialiser ou de désérialiser dans une collection `List<Type>`.  
   
  La façon la plus simple de résoudre les problèmes causés par les métadonnées manquantes pour ces sérialiseurs consiste à collecter les types qui seront utilisés dans la sérialisation dans un espace de noms unique (tel que `App.Models`) et à lui appliquer une directive de métadonnées `Serialize` :  
@@ -30,19 +32,22 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
   
  Pour plus d’informations sur la syntaxe utilisée dans l’exemple, consultez [\<Namespace>, élément](../../../docs/framework/net-native/namespace-element-net-native.md).  
   
-<a name="Microsoft"></a>   
-## <a name="microsoft-serializers"></a>Sérialiseurs Microsoft  
+<a name="Microsoft"></a>
+## <a name="microsoft-serializers"></a>Sérialiseurs Microsoft
+
  Bien que les classes <xref:System.Runtime.Serialization.DataContractSerializer>, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> et <xref:System.Xml.Serialization.XmlSerializer> ne reposent pas sur la réflexion, elles nécessitent la génération de code en fonction de l'objet à sérialiser ou à désérialiser. Les constructeurs surchargés pour chaque sérialiseur incluent un paramètre <xref:System.Type> qui spécifie le type à sérialiser ou à désérialiser. La façon dont vous spécifiez ce type dans votre code définit l'action à entreprendre, comme indiqué dans les deux sections suivantes.  
   
-### <a name="typeof-used-in-the-constructor"></a>typeof utilisé dans le constructeur  
- Si vous appelez un constructeur de ces classes de sérialisation et que vous incluez le mot clé C# [typeof](~/docs/csharp/language-reference/keywords/typeof.md) dans l’appel de la méthode, **vous n’avez rien à faire de plus**. Par exemple, dans chacun des appels suivants d'un constructeur de classe de sérialisation, le mot clé `typeof` est utilisé dans le cadre de l'expression passée au constructeur.  
+### <a name="typeof-used-in-the-constructor"></a>typeof utilisé dans le constructeur
+
+ Si vous appelez un constructeur de ces classes de sérialisation et inclure le C# [typeof](~/docs/csharp/language-reference/operators/type-testing-and-conversion-operators.md#typeof-operator) opérateur dans l’appel de méthode **vous n’êtes pas obligé de faire de plus**. Par exemple, dans chacun des appels suivants d'un constructeur de classe de sérialisation, le mot clé `typeof` est utilisé dans le cadre de l'expression passée au constructeur.  
   
  [!code-csharp[ProjectN#5](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#5)]  
   
  Le compilateur .NET Native gère automatiquement ce code.  
   
-### <a name="typeof-used-outside-the-constructor"></a>typeof utilisé à l'extérieur du constructeur  
- Si vous appelez un constructeur de ces classes de sérialisation et que vous utilisez le C# [typeof](~/docs/csharp/language-reference/keywords/typeof.md) mot clé en dehors de l’expression fournie pour le constructeur <xref:System.Type> Impossible de paramètre, comme dans le code suivant, le compilateur .NET Native résoudre le type :  
+### <a name="typeof-used-outside-the-constructor"></a>typeof utilisé à l'extérieur du constructeur
+
+ Si vous appelez un constructeur de ces classes de sérialisation et que vous utilisez le C# [typeof](~/docs/csharp/language-reference/operators/type-testing-and-conversion-operators.md#typeof-operator) opérateur en dehors de l’expression fournie pour le constructeur <xref:System.Type> paramètre, comme dans le code suivant, le compilateur .NET Native Impossible de résoudre le type :  
   
  [!code-csharp[ProjectN#6](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#6)]  
   

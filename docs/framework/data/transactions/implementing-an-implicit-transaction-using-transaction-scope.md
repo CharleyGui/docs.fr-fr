@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 49d1706a-1e0c-4c85-9704-75c908372eb9
-ms.openlocfilehash: e9e5e09bdde82c7b818fd47275bdbfeda5850682
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f45019ccc54056371954965e105e309fd41d9ffd
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645755"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306217"
 ---
 # <a name="implementing-an-implicit-transaction-using-transaction-scope"></a>Implémentation d'une transaction implicite à l'aide de l'étendue de transaction
 La classe <xref:System.Transactions.TransactionScope> offre un moyen simple pour indiquer qu'un bloc de code participe à une transaction, sans avoir à intervenir sur la transaction même. Une étendue de transaction peut sélectionner et gérer automatiquement la transaction ambiante. En raison de sa facilité d'utilisation et de son efficacité, il est recommandé d'utiliser la classe <xref:System.Transactions.TransactionScope> lors du développement d'une application de transaction.  
@@ -124,7 +124,9 @@ using(TransactionScope scope1 = new TransactionScope())
  Cet exemple montre un bloc de code sans transaction ambiante créant une nouvelle étendue (`scope1`) avec <xref:System.Transactions.TransactionScopeOption.Required>. La portée `scope1` est une portée racine, car elle crée une transaction (Transaction A) pour en faire la transaction ambiante. `Scope1` crée ensuite trois objets de plus, chacun avec un autre <xref:System.Transactions.TransactionScopeOption> valeur. Par exemple, `scope2` est créée avec <xref:System.Transactions.TransactionScopeOption.Required> et puisqu'il s'agit d'une transaction ambiante, elle joint la première transaction créée par `scope1`. Notez que `scope3` est l'étendue racine d'une nouvelle transaction et que `scope4` ne dispose pas de transaction ambiante.  
   
  Bien que la valeur par défaut, et la plus utilisée, de <xref:System.Transactions.TransactionScopeOption> est <xref:System.Transactions.TransactionScopeOption.Required>, chacune des autres valeurs a une fonction unique.  
-  
+
+### <a name="non-transactional-code-inside-a-transaction-scope"></a>Code non transactionnel à l’intérieur d’une étendue de transaction
+
  <xref:System.Transactions.TransactionScopeOption.Suppress> est utile lorsque vous souhaitez conserver les opérations effectuées par la section de code et que vous ne souhaitez pas abandonner la transaction ambiante si les opérations échouent. Pour effectuer des opérations d'enregistrement ou d'audit par exemple, ou pour publier des événements aux abonnés, indépendamment de la validation ou de l'abandon de votre transaction ambiante. Cette valeur vous permet d'avoir une section de code non transactionnelle dans une étendue de transaction, comme illustré dans l'exemple suivant.  
   
 ```csharp  

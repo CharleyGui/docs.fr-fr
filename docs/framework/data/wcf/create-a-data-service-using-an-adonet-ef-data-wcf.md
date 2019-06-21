@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services, providers
 - WCF Data Services, Entity Framework
 ms.assetid: 6d11fec8-0108-42f5-8719-2a7866d04428
-ms.openlocfilehash: 78286cde925a4583a3610ce100d23e16adcefe49
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 7dd93e5aa44effcf9fc41598e41f6f612a209c86
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878086"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307143"
 ---
 # <a name="how-to-create-a-data-service-using-an-adonet-entity-framework-data-source-wcf-data-services"></a>Procédure : Créer un Service de données à l’aide d’une Source de données ADO.NET Entity Framework (WCF Data Services)
 
@@ -26,7 +26,7 @@ Le [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] fournit égalemen
 
 3. Entrez le nom du modèle, puis activez **ajouter**.
 
-     La première page de l'Assistant [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)].
+     La première page de l'Assistant Entity Data Model s'affiche.
 
 4. Dans le **choisir le contenu du modèle** boîte de dialogue, sélectionnez **générer à partir de la base de données**. Cliquez ensuite sur **Suivant**.
 

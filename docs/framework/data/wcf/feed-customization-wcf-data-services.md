@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Atom Publishing Protocol [WCF Data Services]
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
-ms.openlocfilehash: f35c1387d54fdc02cb421af477671a5a75939c57
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 36f0d50994593d1d575a836dfbd04e8c63a21204
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626395"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306278"
 ---
 # <a name="feed-customization-wcf-data-services"></a>Personnalisation des flux (services de données WCF)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] utilise le [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] pour exposer des données en tant que flux. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] prend en charge les formats Atom et JavaScript Objet Notation (JSON) pour les flux de données. Lorsque vous utilisez un flux Atom, [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] fournit une méthode standard pour sérialiser les données, telles que les entités et relations, dans un format XML qui peut être inclus dans le corps du message HTTP. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] définit un mappage de propriété d’entité par défaut entre les données contenues dans les entités et les éléments Atom. Pour plus d’informations, consultez [OData : Format Atom](https://go.microsoft.com/fwlink/?LinkID=185794).  
@@ -42,7 +42,7 @@ ms.locfileid: "64626395"
  Pour plus d'informations, voir [Procédure : Personnaliser les flux avec le fournisseur Entity Framework](../../../../docs/framework/data/wcf/how-to-customize-feeds-with-ef-provider-wcf-data-services.md).  
   
 > [!NOTE]
->  Étant donné que les extensions au modèle de données ne sont pas prises en charge par le Concepteur d'entités, vous devez modifier manuellement le fichier XML qui contient le modèle de données. Pour plus d’informations sur le fichier .edmx généré par le [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] tools, consultez [présentation (Entity Framework) d’un fichier .edmx](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100)).  
+>  Étant donné que les extensions au modèle de données ne sont pas prises en charge par le Concepteur d'entités, vous devez modifier manuellement le fichier XML qui contient le modèle de données. Pour plus d’informations sur le fichier .edmx généré par les outils Entity Data Model, consultez [présentation (Entity Framework) d’un fichier .edmx](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100)).  
   
 ### <a name="custom-feed-attributes"></a>Attributs de flux personnalisés  
  La table suivante affiche les attributs XML qui personnalisent les flux que vous pouvez ajouter au CSDL (Conceptual Schema Definition Language) qui définit le modèle de données. Ces attributs sont équivalents aux propriétés de <xref:System.Data.Services.Common.EntityPropertyMappingAttribute> utilisées avec le fournisseur de réflexion.  

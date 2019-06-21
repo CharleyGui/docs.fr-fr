@@ -2,12 +2,12 @@
 title: Considérations sur la sécurité (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-ms.openlocfilehash: fe272bada02e6628b6275d2a5282f0def23074c8
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 66f8a9217a007ed1faf975638dfa8148e2f1c5ba
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489836"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307302"
 ---
 # <a name="security-considerations-entity-framework"></a>Considérations sur la sécurité (Entity Framework)
 Cette rubrique décrit les considérations sur la sécurité qui sont spécifiques au développement, au déploiement et à l'exécution d'applications [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Vous devez également suivre les recommandations pour la création d’applications .NET Framework sécurisées. Pour plus d’informations, consultez [vue d’ensemble de la sécurité](../../../../../docs/framework/data/adonet/security-overview.md).  
@@ -86,7 +86,7 @@ Cette rubrique décrit les considérations sur la sécurité qui sont spécifiqu
  Le nom invariant du fournisseur est modifiable dans le fichier app.config. L'application cliente doit prendre la responsabilité de l'accès au fournisseur sous-jacent via le modèle Factory du fournisseur standard en utilisant un nom fort.  
   
 #### <a name="restrict-permissions-to-the-model-and-mapping-files"></a>Limitez les autorisations aux fichiers de modèle et de mappage.  
- Un administrateur doit limiter l'accès en écriture aux fichiers de modèle et de mappage (.edmx, .csdl, .ssdl et .msl) uniquement aux utilisateurs qui modifient le modèle ou les mappages. Le [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] uniquement requiert un accès en lecture à ces fichiers au moment de l’exécution. Un administrateur doit également limiter l'accès aux fichiers de couche objet et aux fichiers de code source de vue précompilés qui sont générés par les outils [!INCLUDE[adonet_edm](../../../../../includes/adonet-edm-md.md)].  
+ Un administrateur doit limiter l'accès en écriture aux fichiers de modèle et de mappage (.edmx, .csdl, .ssdl et .msl) uniquement aux utilisateurs qui modifient le modèle ou les mappages. Le [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] uniquement requiert un accès en lecture à ces fichiers au moment de l’exécution. Un administrateur doit également limiter l’accès à la couche objet et les fichiers de code de source de vue précompilés qui sont générés par les outils Entity Data Model.  
   
 ## <a name="security-considerations-for-queries"></a>Considérations sur la sécurité pour les requêtes  
  Vous devez tenir compte des considérations sur la sécurité suivantes lors de l'interrogation d'un modèle conceptuel. Ces considérations s'appliquent aux requêtes [!INCLUDE[esql](../../../../../includes/esql-md.md)] utilisant EntityClient et aux requêtes d'objet utilisant LINQ, [!INCLUDE[esql](../../../../../includes/esql-md.md)] et les méthodes du Générateur de requêtes.  

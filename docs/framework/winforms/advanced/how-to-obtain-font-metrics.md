@@ -8,12 +8,12 @@ helpviewer_keywords:
 - fonts [Windows Forms], obtaining metrics
 - font metrics [Windows Forms], obtaining
 ms.assetid: ff7c0616-67f7-4fa2-84ee-b8d642f2b09b
-ms.openlocfilehash: 75177b609f14d335aa57aba77d647827f50a8692
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 7d7ad92199bb8a8f01290066f8ae023a14c2f9ce
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881862"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307422"
 ---
 # <a name="how-to-obtain-font-metrics"></a>Procédure : obtenir des métriques de polices
 Le <xref:System.Drawing.FontFamily> classe fournit les méthodes suivantes qui récupèrent diverses métriques pour une combinaison famille/style particulière :  
@@ -26,7 +26,7 @@ Le <xref:System.Drawing.FontFamily> classe fournit les méthodes suivantes qui r
   
 - <xref:System.Drawing.FontFamily.GetLineSpacing%2A>(FontStyle)  
   
- Les nombres retournés par ces méthodes sont en unités de design de police, afin qu’ils soient indépendants de la taille et les unités d’un particulier <xref:System.Drawing.Font> objet.  
+ Les valeurs retournées par ces méthodes sont en unités de design de police, afin qu’ils soient indépendants de la taille et les unités d’un particulier <xref:System.Drawing.Font> objet.  
   
  L’illustration suivante montre les différentes mesures :
   

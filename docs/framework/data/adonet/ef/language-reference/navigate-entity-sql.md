@@ -2,12 +2,12 @@
 title: NAVIGATE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: f107f29d-005f-4e39-a898-17f163abb1d0
-ms.openlocfilehash: 993c07b824d30c89773c5cfea90c7c194c6b3869
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6ce88cecf210d8b3cf541fe7e870e19a59e344ec
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760413"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307332"
 ---
 # <a name="navigate-entity-sql"></a>NAVIGATE (Entity SQL)
 
@@ -35,7 +35,7 @@ Si la cardinalité de la terminaison To est 1, la valeur retournée est `Ref<T>`
 
 ## <a name="remarks"></a>Notes
 
-Les relations sont des constructions de première classe dans le modèle EDM ( [!INCLUDE[adonet_edm](../../../../../../includes/adonet-edm-md.md)] ). Elles peuvent être établies entre plusieurs types d'entités et les utilisateurs peuvent les parcourir d'une terminaison (entité) à l'autre. `from` et `to` sont facultatifs à la condition qu'il n'existe aucune ambiguïté au niveau de la résolution des noms dans la relation.
+Les relations sont des constructions de première classe dans le modèle EDM (Entity Data Model). Elles peuvent être établies entre plusieurs types d'entités et les utilisateurs peuvent les parcourir d'une terminaison (entité) à l'autre. `from` et `to` sont facultatifs à la condition qu'il n'existe aucune ambiguïté au niveau de la résolution des noms dans la relation.
 
 NAVIGATE est valide dans l'espace O et C.
 
