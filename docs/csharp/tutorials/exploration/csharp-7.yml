@@ -8,12 +8,12 @@ metadata:
   ms.date: 03/20/2019
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 1b1de22769c86f75684f41635287a73558d1d15a
-  ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+  ms.openlocfilehash: 7cec35e0749ea0b38162244171459f311d27cb25
+  ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
   ms.translationtype: HT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 04/28/2019
-  ms.locfileid: "64750383"
+  ms.lasthandoff: 06/18/2019
+  ms.locfileid: "67170226"
 items:
 - durationInMinutes: 1
   content: >
@@ -202,7 +202,7 @@ items:
     Afin de modifier la référence retournée, vous devez ajouter le modificateur `ref` à la déclaration de variable locale et avant l’appel à `Find` pour faire de la variable une référence quand la valeur de retour est une référence. Modifiez le code de test dans votre navigateur pour qu’il corresponde au suivant :
 
 
-    [!code-csharp[EverythingByValue](~/samples/snippets/csharp/new-in-7/MatrixSearch.cs#TestByValue "test code for return object by reference")]
+    [!code-csharp[TestByRef](~/samples/snippets/csharp/new-in-7/MatrixSearch.cs#TestByRef "test code for return object by reference")]
 
 
     À présent, la seconde instruction `WriteLine` dans l’exemple ci-dessus imprime la valeur `24`, indiquant que le stockage dans la matrice a été modifié. La variable locale a été déclarée avec le modificateur `ref`, et elle prendra un retour `ref`. Vous devez initialiser une variable `ref` au moment de sa déclaration ; vous ne pouvez pas séparer la déclaration et l’initialisation.

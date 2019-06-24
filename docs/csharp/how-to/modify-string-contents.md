@@ -3,12 +3,12 @@ title: 'Procédure : Modifier le contenu des chaînes - Guide C#'
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: 48be71f35634222dd9898199f004ea1190b62f35
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2cc1166d98a6cc07e0827a138cecb09c0530b899
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54664013"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67267763"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Procédure : Modifier le contenu des chaînes en C\#
 
@@ -67,7 +67,7 @@ L’exemple suivant montre comment remplacer un jeu de caractères dans une cha�
 Le code **unsafe** vous permet de modifier une chaîne « sur place » une fois celle-ci créée. Ce code ignore les nombreuses fonctionnalités de .NET conçues pour réduire certains types de bogues dans le code. Vous devez utiliser du code unsafe pour modifier une chaîne sur place, car la classe string est par conception un type **immuable**. Une fois la chaîne créée, sa valeur ne change pas. Pour contourner cette propriété, le code unsafe accède à la mémoire utilisée par un `string` et la modifie sans recourir aux méthodes `string` normales.
 L’exemple suivant est fourni dans les rares cas où vous souhaiteriez modifier une chaîne sur place à l’aide de code unsafe. L’exemple montre comment utiliser le mot clé `fixed`. Le mot clé `fixed` empêche le garbage collector (GC) de déplacer l’objet string en mémoire pendant que le code accède à la mémoire à l’aide du pointeur unsafe. Il montre également un effet secondaire possible des opérations risquées effectuées sur les chaînes, lié à la façon dont le compilateur C# stocke (intègre) les chaînes en interne. En général, il est préférable de ne pas utiliser cette technique, sauf en cas d’absolue nécessité. Pour plus d’informations, consultez les articles sur [unsafe](../language-reference/keywords/unsafe.md) et [fixed](../language-reference/keywords/fixed-statement.md). Les informations de référence sur l’API pour <xref:System.String.Intern%2A> comprennent des informations sur la centralisation des chaînes.
 
-[!code-csharp-interactive[unsafe ways to create a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#7)]
+[!code-csharp[unsafe ways to create a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#7)]
 
 Vous pouvez essayer ces exemples en examinant le code dans notre [dépôt GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Vous pouvez aussi télécharger les exemples [sous forme de fichier zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
 

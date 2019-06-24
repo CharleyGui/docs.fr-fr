@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9ad78c37dda00e0b52ec8e84b8c996ee3dca09a5
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 342c570bff89d4c03780cdc280199c722b53890a
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66378670"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170461"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>Versions et dépendances de .NET Framework
 Chaque version du .NET Framework contient le Common Language Runtime (CLR), les bibliothèques de classes de base et d'autres bibliothèques managées. Cette rubrique décrit les principales fonctionnalités du .NET Framework par version, fournit des informations sur les versions CLR sous-jacentes et les environnements de développement associés, et identifie les versions installées par le système d'exploitation Windows.  
@@ -27,7 +27,9 @@ Chaque version du .NET Framework contient le Common Language Runtime (CLR), les 
  Pour obtenir la liste complète des systèmes d’exploitation pris en charge, consultez la [Configuration requise](../../../docs/framework/get-started/system-requirements.md). Pour les téléchargements, consultez [Installer le .NET Framework pour les développeurs](../../../docs/framework/install/guide-for-developers.md). Pour déterminer les versions du .NET Framework qui sont installées sur un ordinateur, consultez [Guide pratique pour déterminer les versions du .NET Framework installées](how-to-determine-which-versions-are-installed.md).  
   
  Dans le tableau, les versions du .NET Framework qui sont installées sur les versions de système d’exploitation marquées par un ✓ dans les colonnes **Inclus dans/Peut être installé sur Windows** et **Inclus dans/Peut être installé sur Windows Server** doivent être [activées dans le Panneau de configuration](../../../docs/framework/install/dotnet-35-windows-10.md) (pour Windows) ou activées par le biais du Gestionnaire de serveur (pour Windows Server).  
-  
+
+[!INCLUDE[Release key values note](~/includes/version-keys-note.md)]
+ 
 |Version du .NET Framework|Version CLR|Inclus dans<br /> Visual Studio<br/>version|✓ Inclus dans<br />+ Peut être installé sur<br />Windows|✓ Inclus dans<br />+ Peut être installé sur<br />Windows Server|Pour déterminer la version .NET installée|  
 |----------------------------|-----------------|--------------|---------------------------------------|----------------------------------------------------|-----------------------------------------------------------|-----------------------------------------| 
 |4.8<br/><br/>[Nouvelles fonctionnalités](../whats-new/index.md#whats-new-in-net-framework-48)<br/><br/>[Nouveautés de l’accessibilité](../whats-new/whats-new-in-accessibility.md#whats-new-in-accessibility-in-net-framework-48)<br /><br >[Notes de publication](https://github.com/Microsoft/dotnet/tree/master/releases/net48/README.md)|4| | ✓ Windows 10 Mise à jour de mai 2019<br/><br/> + Windows 10 Mise à jour d’octobre 2018 (Version 1809) <br/> + Windows 10 Mise à jour d’avril 2018 (Version 1803) <br/> + Windows 10 Fall Creators Update (Version 1709) <br/> + Windows 10 Creators Update (Version 1703) <br/> + Mise à jour anniversaire Windows 10 (Version 1607) <br/> + 8.1 <br/> +7 | + Windows Server 2019<br/> + Windows Server, version 1809 <br/> + Windows Server, version 1803 <br/> + 2016 <br/> + 2012 R2 <br/> + 2012 <br/> + 2008 R2 SP1 |Utilisez `Release` DWORD:<br/><br/> - 528040 (Windows 10 Mise à jour de mai 2019) <br/> - 528049 (toutes les autres versions du système d’exploitation) <br/><br/> (voir les [instructions](how-to-determine-which-versions-are-installed.md))|

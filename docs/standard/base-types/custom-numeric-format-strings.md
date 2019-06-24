@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ab06c2d87de9483d7a3e9eb810f4be1f3278ddc2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4e55ae32fc83d7879de9d1ecb743d17598bc175d
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634524"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268216"
 ---
 # <a name="custom-numeric-format-strings"></a>Chaînes de format numériques personnalisées
 
@@ -85,7 +85,7 @@ Vous pouvez créer une chaîne de format numérique personnalisée, qui est comp
  Pour retourner une chaîne de résultat dans laquelle les chiffres absents ou les zéros non significatifs sont remplacés par des espaces, utilisez la [fonctionnalité de mise en forme composite](../../../docs/standard/base-types/composite-formatting.md) et spécifiez une largeur de champ, comme l’illustre l’exemple suivant.  
   
  [!code-cpp[Formatting.Numeric.Custom#12](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/SpaceOrDigit1.cpp#12)]
- [!code-csharp-interactive[Formatting.Numeric.Custom#12](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/SpaceOrDigit1.cs#12)]
+ [!code-csharp[Formatting.Numeric.Custom#12](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/SpaceOrDigit1.cs#12)]
  [!code-vb[Formatting.Numeric.Custom#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/SpaceOrDigit1.vb#12)]  
   
  [Retour au tableau](#table)  
@@ -254,7 +254,7 @@ L’exemple suivant utilise les deux approches pour inclure des caractères rés
  [Retour au tableau](#table)  
   
 <a name="example"></a>   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple suivant présente deux chaînes de format numériques personnalisées. Dans les deux cas, l'espace réservé de chiffre (`#`) affiche les données numériques, et tous les autres caractères sont copiés dans la chaîne de résultat.  
   
  [!code-cpp[Formatting.Numeric.Custom#10](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/example1.cpp#10)]

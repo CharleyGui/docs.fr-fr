@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 90e9dbbd43751412c25dd5ca4dae2d503139db69
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b4d7cd61a771f1c9658b5bc98ec85259da1c77f9
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634551"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67268232"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Chaînes de format de date et d’heure personnalisées
 
@@ -41,7 +41,7 @@ Les chaînes de format de date et d'heure personnalisées peuvent être utilisé
 
 Dans les opérations d'analyse, les chaînes de format de date et d'heure personnalisées peuvent être utilisées avec les méthodes <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType>, <xref:System.DateTime.TryParseExact%2A?displayProperty=nameWithType>, <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType> et <xref:System.DateTimeOffset.TryParseExact%2A?displayProperty=nameWithType>. Pour que l’opération d’analyse aboutisse, il faut qu’une chaîne d’entrée soit parfaitement conforme à un modèle particulier. L'exemple suivant illustre un appel à la méthode <xref:System.DateTimeOffset.ParseExact%28System.String%2CSystem.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> pour analyser une date qui doit comprendre un jour, un mois et une année sur deux chiffres.
 
-[!code-csharp-interactive[Formatting.DateAndTime.Custom#18](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/custandparsing1.cs#18)]
+[!code-csharp[Formatting.DateAndTime.Custom#18](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/custandparsing1.cs#18)]
 [!code-vb[Formatting.DateAndTime.Custom#18](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/custandparsing1.vb#18)]
 
 Le tableau suivant décrit les spécificateurs de format de date et d'heure personnalisés et affiche une chaîne de résultat produite par chaque spécificateur de format. Par défaut, les chaînes de résultat reflètent les conventions de mise en forme de la culture en-US. Si un spécificateur de format particulier produit une chaîne de résultat localisée, l'exemple indique également la culture à laquelle la chaîne de résultat s'applique. Pour plus d’informations sur les chaînes de format de date et d’heure personnalisées, voir la section [Remarques](#notes).
@@ -509,7 +509,7 @@ Dans une opération d'analyse, une année à deux chiffres qui est analysée ave
 
 L'exemple suivant inclut le spécificateur de format personnalisé "yy" dans une chaîne de format personnalisé.
 
-[!code-csharp-interactive[Formatting.DateAndTime.Custom#13](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#13)]
+[!code-csharp[Formatting.DateAndTime.Custom#13](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#13)]
 [!code-vb[Formatting.DateAndTime.Custom#13](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#13)]
 
 [Retour au tableau](#table)
@@ -638,7 +638,7 @@ Tous les autres caractères sont toujours interprétés comme des caractères li
 
 L’exemple suivant inclut les caractères littéraux « PST » (pour Pacific Standard Time, heure normale du Pacifique) et « PDT » (pour Pacific Daylight Time, heure d’été du Pacifique) pour représenter le fuseau horaire local dans une chaîne de format. Notez que la chaîne est incluse dans la chaîne de résultat, et qu’une chaîne qui inclut la chaîne du fuseau horaire local est également analysée avec succès.
 
-[!code-csharp-interactive[Formatting.DateAndTime.Custom#20](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx1.cs#20)]
+[!code-csharp[Formatting.DateAndTime.Custom#20](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx1.cs#20)]
 [!code-vb[Formatting.DateAndTime.Custom#20](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/LiteralsEx1.vb#20)]
 
 Il existe deux façons d’indiquer que les caractères doivent être interprétés comme des caractères littéraux, et non comme des caractères réservés, pour qu’ils puissent être inclus dans une chaîne de résultat ou analysés correctement dans une chaîne d’entrée :
@@ -647,12 +647,12 @@ Il existe deux façons d’indiquer que les caractères doivent être interprét
 
 L’exemple suivant inclut les caractères littéraux « pst » (pour Pacific Standard Time, heure normale du Pacifique) pour représenter le fuseau horaire local dans une chaîne de format. Étant donné que « s » et « t » sont des chaînes de format personnalisées, les deux caractères doivent être placés dans des séquences d’échappement pour être interprétés comme des littéraux de caractères.
 
-[!code-csharp-interactive[Formatting.DateAndTime.Custom#21](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx2.cs#21)]
+[!code-csharp[Formatting.DateAndTime.Custom#21](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx2.cs#21)]
 [!code-vb[Formatting.DateAndTime.Custom#21](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/LiteralsEx2.vb#21)]
 
 - En plaçant la totalité de la chaîne littérale entre guillemets ou apostrophes. L’exemple suivant est semblable au précédent, excepté que « pst » est placé entre guillemets pour indiquer que la totalité de la chaîne délimitée doit être interprétée comme des littéraux de caractères.
 
-[!code-csharp-interactive[Formatting.DateAndTime.Custom#22](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx3.cs#22)]
+[!code-csharp[Formatting.DateAndTime.Custom#22](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx3.cs#22)]
 [!code-vb[Formatting.DateAndTime.Custom#22](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/LiteralsEx3.vb#22)]
 
 ## <a name="notes"></a>Notes

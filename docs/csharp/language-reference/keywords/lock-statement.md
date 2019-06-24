@@ -9,12 +9,12 @@ f1_keywords:
 helpviewer_keywords:
 - lock keyword [C#]
 ms.assetid: 656da1a4-707e-4ef6-9c6e-6d13b646af42
-ms.openlocfilehash: 6bf53cba73c4d7331b2a1c68bf7187c13281d844
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c7d5d4ef7d812e186813cd08f9e4e2adf2ab1a58
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633448"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306656"
 ---
 # <a name="lock-statement-c-reference"></a>lock, instruction (référence C#)
 
@@ -54,7 +54,7 @@ Vous ne pouvez pas utiliser le mot clé [await](await.md) dans le corps d’une 
 Quand vous synchronisez l’accès des threads à une ressource partagée, verrouillez une instance d’objet dédiée (par exemple `private readonly object balanceLock = new object();`) ou toute autre instance peu susceptible d’être utilisée comme objet de verrouillage par des parties du code non associées. Évitez d’utiliser la même instance d’objet de verrouillage pour différentes ressources partagées, car cela peut entraîner une contention d’interblocage ou de verrouillage. En particulier, évitez d’utiliser les éléments suivants en tant qu’objets de verrouillage :
 
 - `this`, qui peut être utilisé en tant que verrou par les appelants.
-- Les instances de <xref:System.Type>, qui peuvent être obtenues par l’opérateur [typeof](typeof.md) ou par réflexion.
+- Les instances de <xref:System.Type>, qui peuvent être obtenues par l’opérateur [typeof](../operators/type-testing-and-conversion-operators.md#typeof-operator) ou par réflexion.
 - Les instances de chaîne, notamment les littéraux de chaîne, qui peuvent être [internés](/dotnet/api/system.string.intern#remarks).
 
 ## <a name="example"></a>Exemple

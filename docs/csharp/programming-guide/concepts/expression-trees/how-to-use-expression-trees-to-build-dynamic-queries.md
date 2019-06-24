@@ -2,12 +2,12 @@
 title: 'Procédure : Utiliser des arborescences d’expressions dans le but de générer des requêtes dynamiques (C#)'
 ms.date: 07/20/2015
 ms.assetid: 52cd44dd-a3ec-441e-b93a-4eca388119c7
-ms.openlocfilehash: 33dbca31af3c088f4cd4af830c690cf9cdaea657
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: dc8ff7504464e05ce19df3f0dfe907476a17413a
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586099"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170333"
 ---
 # <a name="how-to-use-expression-trees-to-build-dynamic-queries-c"></a>Procédure : Utiliser des arborescences d’expressions dans le but de générer des requêtes dynamiques (C#)
 Dans LINQ, des arborescences d’expressions sont utilisées pour représenter des requêtes structurées qui ciblent des sources de données qui implémentent <xref:System.Linq.IQueryable%601>. Par exemple, le fournisseur LINQ implémente l’interface <xref:System.Linq.IQueryable%601> pour interroger des magasins de données relationnelles. Le compilateur C# compile les requêtes qui ciblent de telles sources de données dans du code qui génère une arborescence d’expressions lors de l’exécution. Le fournisseur de requêtes peut ensuite parcourir la structure de données de l’arborescence d’expressions et la traduire en un langage de requête qui convienne à la source de données.  
@@ -16,10 +16,13 @@ Dans LINQ, des arborescences d’expressions sont utilisées pour représenter d
   
  Cette rubrique explique comment utiliser des arborescences d’expressions pour créer des requêtes LINQ dynamiques. Les requêtes dynamiques sont utiles lorsque les caractéristiques d’une requête ne sont pas connues au moment de la compilation. Par exemple, une application peut fournir une interface utilisateur qui permet aux utilisateurs de spécifier un ou plusieurs prédicats pour filtrer des données. Si vous souhaitez utiliser LINQ pour interroger des données, ce type d’application doit utiliser des arborescences d’expressions pour créer la requête LINQ au moment de l’exécution.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant montre comment utiliser des arborescences d’expressions pour construire une requête et l’exécuter sur une source de données `IQueryable`. Le code génère une arborescence d’expressions pour représenter la requête suivante :  
   
- `companies.Where(company => (company.ToLower() == "coho winery" || company.Length > 16)).OrderBy(company => company)`  
+ ```csharp
+ companies.Where(company => (company.ToLower() == "coho winery" || company.Length > 16))
+          .OrderBy(company => company)
+ ```
   
  Les méthodes de fabrique de l’espace de noms <xref:System.Linq.Expressions> sont utilisées pour créer des arborescences d’expressions qui représentent les expressions qui composent l’ensemble de la requête. Les expressions qui représentent des appels aux méthodes d’opérateur de requête standard font référence aux implémentations <xref:System.Linq.Queryable> de ces méthodes. L’arborescence d’expression finale est passée à l’implémentation <xref:System.Linq.IQueryProvider.CreateQuery%60%601%28System.Linq.Expressions.Expression%29> du fournisseur de la source de données `IQueryable` pour créer une requête exécutable de type `IQueryable`. Les résultats sont obtenus par l’énumération de cette variable de requête.  
   

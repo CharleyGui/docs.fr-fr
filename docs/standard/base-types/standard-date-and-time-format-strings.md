@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6939efa608f4887dfdb00abe8292bec841929440
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ddf4b84d44abb353cb9a5e025291690fb14b9461
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664637"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67267915"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Chaînes de format de date et d'heure standard
 Une chaîne de format de date et d'heure standard utilise un spécificateur de format unique pour définir la représentation textuelle d'une valeur de date et d'heure. Toute chaîne de format de date et d’heure contenant plusieurs caractères, y compris un espace, est interprétée comme une chaîne de format de date et d’heure personnalisée. Pour plus d’informations, consultez [Chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md). Une chaîne de format standard ou personnalisée peut être utilisée de deux façons :  
@@ -92,7 +92,7 @@ Les chaînes de format de date et d'heure standard peuvent être utilisées avec
   
  Les chaînes de format standard peuvent également utilisées dans les opérations d'analyses avec les méthodes <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType> ou <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType>. Pour que l'opération d'analyse aboutisse, ces méthodes requièrent qu'une chaîne d'entrée se conforme exactement à un modèle particulier. De nombreuses chaînes de format standard peuvent être mappées à plusieurs chaînes de format personnalisées, afin qu'une valeur de date et d'heure puisse être représentée dans divers formats et que l'opération d'analyse puisse continuer à aboutir. Vous pouvez déterminer les chaînes de format personnalisées qui correspondent à une chaîne de format standard en appelant la méthode <xref:System.Globalization.DateTimeFormatInfo.GetAllDateTimePatterns%28System.Char%29?displayProperty=nameWithType>. L’exemple suivant affiche les chaînes de format personnalisées qui sont mappées à la chaîne de format standard « d » (modèle de date courte).  
   
- [!code-csharp-interactive[Formatting.DateAndTime.Standard#17](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/stdandparsing1.cs#17)]
+ [!code-csharp[Formatting.DateAndTime.Standard#17](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/stdandparsing1.cs#17)]
  [!code-vb[Formatting.DateAndTime.Standard#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Standard/vb/stdandparsing1.vb#17)]  
   
  Les sections suivantes décrivent les spécificateurs de format standard pour les valeurs <xref:System.DateTime> et <xref:System.DateTimeOffset>.  
@@ -261,7 +261,7 @@ Les chaînes de format de date et d'heure standard peuvent être utilisées avec
   
  L’exemple suivant utilise le spécificateur de format « o » pour afficher une série de valeurs <xref:System.DateTime> et une valeur <xref:System.DateTimeOffset> sur un système situé dans le fuseau horaire Pacifique (États-Unis).  
   
- [!code-csharp-interactive[Formatting.DateAndTime.Standard#8](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/o1.cs#8)]
+ [!code-csharp[Formatting.DateAndTime.Standard#8](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Standard/cs/o1.cs#8)]
  [!code-vb[Formatting.DateAndTime.Standard#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Standard/vb/o1.vb#8)]  
   
  L'exemple suivant utilise le spécificateur de format "o" pour créer une chaîne mise en forme, puis restaure la valeur de date et d'heure d'origine en appelant une méthode `Parse` de date et d'heure.  
