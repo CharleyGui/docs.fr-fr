@@ -2,12 +2,12 @@
 title: Performances de Windows Workflow Foundation 4
 ms.date: 03/30/2017
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-ms.openlocfilehash: 701e05301e82537aa6119ab3ec894483daee41f3
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 51cd5b248789c85ab06073f1bb41a83e5f97c139
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592536"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348533"
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Performances de Windows Workflow Foundation 4
 
@@ -31,7 +31,7 @@ ms.locfileid: "65592536"
 ### <a name="wf-runtime"></a>Runtime WF
  À la base du runtime [!INCLUDE[wf1](../../../includes/wf1-md.md)] se trouve un planificateur asynchrone qui gère l'exécution des activités dans un workflow. Il fournit un environnement d'exécution performant et prévisible pour les activités. L'environnement dispose d'un contrat bien défini pour l'exécution, la continuation, l'achèvement, l'annulation et les exceptions, ainsi que d'un modèle de thread prévisible.
 
- Par rapport à WF3, le runtime WF4 est doté d'un planificateur plus efficace. Il s’appuie sur le même pool de threads d’e/s qui est utilisé pour WCF, qui est très efficace pour l’exécution des éléments de travail par lot. La file d’attente interne du planificateur d’éléments de travail est optimisée pour les modèles d’utilisation les plus courants. Le runtime WF4 gère également les états d'exécution de façon très simplifiée avec une synchronisation et une logique de gestion des événements minimales, tandis que WF3 dépend d'une inscription aux événements et de l'appel de fonctions lourdes pour effectuer une synchronisation complexe pour les transitions d'état.
+ Par rapport à WF3, le runtime WF4 est doté d'un planificateur plus efficace. Il s’appuie sur le même pool de threads d’e/s qui est utilisé pour WCF, qui est très efficace pour l’exécution des éléments de travail par lot. La file d’attente interne du planificateur d’éléments de travail est optimisée pour les modèles d’utilisation les plus courants. Le runtime WF4 gère également les États d’exécution d’une manière très léger avec synchronisation minimale et la gestion logique, tandis que WF3 dépend de l’inscription d’événement de lourdes et l’appel à effectuer une synchronisation complexe pour les transitions d’état d’événement.
 
 ### <a name="data-storage-and-flow"></a>Stockage et flux de données
  Dans WF3, les données associées à une activité sont modélisées à l'aide des propriétés de dépendance implémentées par le type <xref:System.Windows.DependencyProperty>. Le modèle de propriété de dépendance a été introduit dans Windows Presentation Foundation (WPF). En général, ce modèle est très flexible afin de faciliter la liaison de données et de prendre en charge d’autres fonctionnalités. Toutefois, ce modèle nécessite de définir les propriétés en tant que champs static dans la définition du workflow. Lorsque le runtime [!INCLUDE[wf1](../../../includes/wf1-md.md)] définit ou obtient les valeurs de propriétés, cela implique une logique de recherche lourde.
@@ -43,7 +43,7 @@ ms.locfileid: "65592536"
 ### <a name="control-flow"></a>Flux de contrôle
  Comme dans tout autre langage de programmation, [!INCLUDE[wf1](../../../includes/wf1-md.md)] fournit la prise en charge des flux de contrôle pour les définitions de workflow en introduisant un ensemble d'activités de flux de contrôle pour la mise en séquence, les boucles, les branchements et autres modèles. Dans WF3, lorsque la même activité doit être exécutée à nouveau, un <xref:System.Workflow.ComponentModel.ActivityExecutionContext> est créé et l'activité est clonée à l'aide d'une logique de sérialisation et de désérialisation lourde basée sur <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>. Les performances des flux de contrôle itératif sont généralement bien plus lentes que lors de l'exécution d'une séquence d'activités.
 
- WF4 traite cela de façon très différente. Il utilise le modèle d'activité pour créer un nouvel objet ActivityInstance qu'il ajoute à la file d'attente du planificateur. Ce processus implique seulement la création d'objets explicites et il est très léger.
+ WF4 traite cela de façon très différente. Il utilise le modèle d'activité pour créer un nouvel objet ActivityInstance qu'il ajoute à la file d'attente du planificateur. Ce processus implique la création d’objet explicite uniquement et est très légère.
 
 ### <a name="asynchronous-programming"></a>Programmation asynchrone
  Les performances et l'évolutivité des applications sont généralement meilleures grâce à la programmation asynchrone pour les opérations à durée d'exécution longue et bloquantes telles que les opérations d'E/S ou de traitement distribué. WF4 fournit la prise en charge asynchrone à l'aide des types d'activité de base <xref:System.Activities.AsyncCodeActivity> et <xref:System.Activities.AsyncCodeActivity%601>. Le runtime comprend les activités asynchrones en mode natif et peut donc placer automatiquement l'instance dans une zone sans persistance pendant que le travail asynchrone est en attente. Les activités personnalisées peuvent ainsi dériver de ces types pour effectuer un travail asynchrone sans maintenir le thread du service de planification de workflow. Elles peuvent également bloquer toute activité qui peut s'exécuter en parallèle.
@@ -67,7 +67,7 @@ ms.locfileid: "65592536"
 ### <a name="environment-setup"></a>Configuration de l'environnement
  ![Configuration de l’environnement pour la mesure de performances de flux de travail](./media/performance/performance-test-environment.gif)
 
- La figure ci-dessus illustre la configuration de l'ordinateur utilisée pour la mesure des performances au niveau du composant. Un serveur unique et cinq clients connectés par le biais d'une interface réseau Ethernet de 1 Gbit/s.  Pour faciliter les mesures, le serveur est configuré pour utiliser un seul cœur d'un serveur double processeur/quatre cœurs exécutant Windows Server 2008 x86. L'utilisation de l'UC système est maintenue aux alentours de 100 %.
+ La figure ci-dessus illustre la configuration de l'ordinateur utilisée pour la mesure des performances au niveau du composant. Un serveur unique et cinq clients connectés par le biais d'une interface réseau Ethernet de 1 Gbit/s. Pour faciliter les mesures, le serveur est configuré pour utiliser un seul cœur d'un serveur double processeur/quatre cœurs exécutant Windows Server 2008 x86. L'utilisation de l'UC système est maintenue aux alentours de 100 %.
 
 ### <a name="test-details"></a>Détails du test
  <xref:System.Workflow.Activities.CodeActivity> de WF3 est sans doute l'activité la plus simple pouvant être utilisée dans un workflow WF3.  Cette activité appelle une méthode du code-behind où le programmeur de workflow peut entrer du code personnalisé.  Dans WF4, il n'existe aucun équivalent direct à <xref:System.Workflow.Activities.CodeActivity> de WF3 qui fournit les mêmes fonctionnalités.  Notez que WF4 contient une classe de base <xref:System.Activities.CodeActivity> qui n'est pas liée à <xref:System.Workflow.Activities.CodeActivity> de WF3.  Les auteurs de workflow sont encouragés à créer des activités personnalisées et à concevoir des workflows en XAML uniquement.  Dans les tests ci-dessous, une activité appelée `Comment` est utilisée à la place d'une <xref:System.Workflow.Activities.CodeActivity> vide dans les workflows WF4.  Le code de l'activité `Comment` est le suivant :

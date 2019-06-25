@@ -4,16 +4,16 @@ ms.date: 04/23/2017
 helpviewer_keywords:
 - tuples [Visual Basic]
 ms.assetid: 3e66cd1b-3432-4e1d-8c37-5ebacae8f53f
-ms.openlocfilehash: 146e9c2360cea153d2f487769d5b983516861e8d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 16934232e1e202f1b100680a5101332aa622f2cc
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663295"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348501"
 ---
 # <a name="tuples-visual-basic"></a>Tuples (Visual Basic)
 
-À partir de Visual Basic 2017, le langage Visual Basic offre une prise en charge intégrée pour les tuples qui permet de créer des tuples et accéder aux éléments de tuples plus facile. Un tuple est une structure de données de légers qui possède un nombre spécifique et une séquence de valeurs. Lorsque vous instanciez le tuple, vous définissez le nombre et le type de données de chaque valeur (ou élément). Par exemple, un tuple de 2 (ou paire) a deux éléments. Le premier peut être un `Boolean` valeur, tandis que la deuxième est un `String`. Étant donné que les tuples facilitent la stocker plusieurs valeurs dans un seul objet, ils sont souvent utilisés comme un moyen léger pour retourner plusieurs valeurs à partir d’une méthode.
+À partir de Visual Basic 2017, le langage Visual Basic offre une prise en charge intégrée pour les tuples qui permet de créer des tuples et accéder aux éléments de tuples plus facile. Un tuple est une structure de données léger qui a un nombre spécifique et une séquence de valeurs. Lorsque vous instanciez le tuple, vous définissez le nombre et le type de données de chaque valeur (ou élément). Par exemple, un tuple de 2 (ou paire) a deux éléments. Le premier peut être un `Boolean` valeur, tandis que la deuxième est un `String`. Étant donné que les tuples facilitent la stocker plusieurs valeurs dans un seul objet, ils sont souvent utilisés comme un moyen léger pour retourner plusieurs valeurs à partir d’une méthode.
 
 > [!IMPORTANT]
 > Prise en charge de tuple nécessite le <xref:System.ValueTuple> type. Si le .NET Framework 4.7 n’est pas installé, vous devez ajouter le package NuGet `System.ValueTuple`, qui est disponible dans la galerie NuGet. Sans ce package, vous pouvez obtenir une erreur de compilation semblable à « Type prédéfini 'ValueTuple(Of,,,)' n’est pas défini ou importé. »

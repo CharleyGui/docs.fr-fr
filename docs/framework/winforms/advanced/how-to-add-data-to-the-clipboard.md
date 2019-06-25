@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Clipboard [Windows Forms], copying data to
 - data [Windows Forms], copying to Clipboard
 ms.assetid: 25152454-0e78-40a9-8a9e-a2a5a274e517
-ms.openlocfilehash: 4d035dd6611909c9a6b67662d17f80057dc33386
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 06ce64de5e2a6b4aa299b9ad9c41982b7c1924c7
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67169951"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348273"
 ---
 # <a name="how-to-add-data-to-the-clipboard"></a>Procédure : ajouter des données au Presse-papiers
 Le <xref:System.Windows.Forms.Clipboard> classe fournit des méthodes que vous pouvez utiliser pour interagir avec la fonctionnalité de Presse-papiers du système d’exploitation Windows. De nombreuses applications utilisent le Presse-papiers comme référentiel temporaire pour les données. Par exemple, les traitements de texte utiliser le Presse-papiers lors des opérations de couper-coller. Le Presse-papiers est également utile pour transférer des données d’une application vers un autre.  
@@ -53,7 +53,7 @@ Le <xref:System.Windows.Forms.Clipboard> classe fournit des méthodes que vous p
   
 ### <a name="to-add-data-to-the-clipboard-in-multiple-formats"></a>Pour ajouter des données dans le Presse-papiers dans plusieurs formats  
   
-1. Utilisez le <xref:System.Windows.Forms.Clipboard.SetDataObject%2A> (méthode) et passez un <xref:System.Windows.Forms.DataObject> qui contient vos données. Vous devez utiliser cette méthode pour ajouter des données dans le Presse-papiers sur les versions antérieures à [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)].  
+1. Utilisez le <xref:System.Windows.Forms.Clipboard.SetDataObject%2A?displayProperty=nameWithType> (méthode) et passez un <xref:System.Windows.Forms.DataObject> qui contient vos données. Vous devez utiliser cette méthode pour ajouter des données dans le Presse-papiers sur les versions antérieures à .NET Framework 2.0.  
   
      [!code-csharp[System.Windows.Forms.Clipboard#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/CS/form1.cs#4)]
      [!code-vb[System.Windows.Forms.Clipboard#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Clipboard/vb/form1.vb#4)]  

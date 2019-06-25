@@ -4,26 +4,26 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
-ms.openlocfilehash: e78616acc56e75dd06445f7a569ab94e65e20cc0
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 8449fe048cc9149e8e8cf02f27f131c0d90d6984
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592231"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348202"
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Vue d’ensemble des liaisons Windows Communication Foundation
 Les liaisons sont des objets qui sont utilisés pour spécifier les détails de communication qui sont requises pour se connecter au point de terminaison d’un service Windows Communication Foundation (WCF). Chaque point de terminaison dans un service WCF requiert une liaison soit spécifiée correctement. Cette rubrique décrit les types de détails de communication définis par les liaisons, les éléments d’une liaison, les liaisons incluses dans WCF et comment une liaison peut être spécifiée pour un point de terminaison.  
   
 ## <a name="what-a-binding-defines"></a>Ce que définit une liaison  
- Les informations contenues dans une liaison peuvent être basiques ou très complexes. La liaison la plus basique spécifie uniquement le protocole de transport (par exemple HTTP) qui doit être utilisé pour se connecter au point de terminaison. Plus généralement, les informations d'une liaison relatives à la procédure de connexion à un point de terminaison appartiennent à l'une des catégories suivantes.  
+ Les informations contenues dans une liaison peuvent être basiques ou très complexes. La liaison la plus basique spécifie uniquement le protocole de transport (par exemple HTTP) qui doit être utilisé pour se connecter au point de terminaison. En règle générale, les informations que contient une liaison sur la façon de se connecter à un point de terminaison appartiennent à une des catégories suivantes :  
   
- Protocoles  
+ **Protocoles**  
  Détermine le mécanisme de sécurité utilisé : soit une fonction de messagerie fiable, soit des paramètres de flux de contexte de transaction.  
   
- Encodage  
+ **Encodage**  
  Détermine l'encodage de message (par exemple, texte ou binaire).  
   
- Transport  
+ **Transport**  
  Détermine le protocole de transport sous-jacent à utiliser (par exemple, TCP ou HTTP).  
   
 ## <a name="the-elements-of-a-binding"></a>Les éléments d’une liaison  

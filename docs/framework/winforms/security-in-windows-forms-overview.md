@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security [Windows Forms], about security
 - access control [Windows Forms], Windows Forms
 ms.assetid: 4810dc9f-ea23-4ce1-8ea1-657f0ff1d820
-ms.openlocfilehash: 4a669b4eefeeb91c0835dc41a1c8736aacf0e14f
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: a2d0f5f740186d3dd7483408f88d612711f57575
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586653"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348469"
 ---
 # <a name="security-in-windows-forms-overview"></a>Vue d'ensemble de la sécurité dans les Windows Forms
 
@@ -52,7 +52,7 @@ Quand vous développez une application qui s'exécute avec une confiance partiel
 
 Quand vous demandez des autorisations facultatives, vous devez gérer les exceptions de sécurité qui seront générées si votre application effectue une action qui nécessite des autorisations qui ne lui ont pas été accordées. Une gestion appropriée de <xref:System.Security.SecurityException> garantit que votre application peut continuer à fonctionner. Votre application peut utiliser l’exception pour déterminer si une fonctionnalité doit être désactivée pour l’utilisateur. Par exemple, une application peut désactiver l’option de menu **Enregistrer** si l’autorisation de fichier nécessaire n’est pas accordée.
 
-Il est parfois difficile de savoir si vous avez déclaré toutes les autorisations requises. Par exemple, un appel de méthode apparemment anodin peut accéder au système de fichiers à un moment donné de son exécution. Si vous ne déployez pas votre application avec toutes les autorisations requises, les tests peuvent réussir lors du débogage sur votre bureau, mais échouer lors du déploiement. Les deux le [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] Kit de développement logiciel et Visual Studio 2005 contient des outils permettant de calculer les autorisations requises par une application : il commande MT.exe outil en ligne et la fonctionnalité calculer les autorisations de Visual Studio, respectivement.
+Il est parfois difficile de savoir si vous avez déclaré toutes les autorisations requises. Par exemple, un appel de méthode apparemment anodin peut accéder au système de fichiers à un moment donné de son exécution. Si vous ne déployez pas votre application avec toutes les autorisations requises, les tests peuvent réussir lors du débogage sur votre bureau, mais échouer lors du déploiement. À la fois le Kit de développement logiciel .NET Framework 2.0 et Visual Studio 2005 contiennent des outils permettant de calculer les autorisations requises par une application : il commande MT.exe outil en ligne et la fonctionnalité calculer les autorisations de Visual Studio, respectivement.
 
 Les rubriques suivantes décrivent les fonctionnalités de sécurité supplémentaires de Windows Forms.
 
@@ -77,7 +77,7 @@ Le tableau suivant décrit ces technologies.
 
 La technologie adoptée dépendra de votre environnement de déploiement. Pour plus d’informations, consultez [Choix d’une stratégie de déploiement ClickOnce](/visualstudio/deployment/choosing-a-clickonce-deployment-strategy).
 
-Par défaut, [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] applications déployées à l’aide de Visual Studio ou le [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] outils SDK (Mage.exe et MageUI.exe) sont configurés pour s’exécuter sur un ordinateur client qui a la confiance totale. Si vous déployez votre application avec une confiance partielle ou en utilisant uniquement certaines autorisations supplémentaires, vous devez modifier ce comportement par défaut. Vous pouvez le faire avec Visual Studio ou le [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] outil du Kit de développement logiciel MageUI.exe lorsque vous configurez votre déploiement. Pour plus d’informations sur l’utilisation de MageUI.exe, consultez la procédure pas à pas : Déploiement d’une Application ClickOnce à partir de la ligne de commande.  Voir également [Guide pratique pour Définir des autorisations personnalisées pour une Application ClickOnce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hafybdaa(v=vs.110)) ou [Comment : Définir des autorisations personnalisées pour une Application ClickOnce](/visualstudio/deployment/how-to-set-custom-permissions-for-a-clickonce-application).
+Par défaut, [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] applications déployées à l’aide de Visual Studio ou les outils de développement .NET Framework SDK (Mage.exe et MageUI.exe) sont configurées pour s’exécuter sur un ordinateur client qui a la confiance totale. Si vous déployez votre application avec une confiance partielle ou en utilisant uniquement certaines autorisations supplémentaires, vous devez modifier ce comportement par défaut. Vous pouvez faire avec Visual Studio ou l’outil de développement .NET Framework SDK MageUI.exe lorsque vous configurez votre déploiement. Pour plus d’informations sur l’utilisation de MageUI.exe, consultez la procédure pas à pas : Déploiement d’une Application ClickOnce à partir de la ligne de commande.  Voir également [Guide pratique pour Définir des autorisations personnalisées pour une Application ClickOnce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hafybdaa(v=vs.110)) ou [Comment : Définir des autorisations personnalisées pour une Application ClickOnce](/visualstudio/deployment/how-to-set-custom-permissions-for-a-clickonce-application).
 
 Pour plus d’informations sur les aspects de sécurité dans [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] et sur l’élévation d’autorisations, consultez [Déploiement et sécurité ClickOnce](/visualstudio/deployment/securing-clickonce-applications). Pour plus d’informations sur le déploiement d’applications approuvées, consultez [Vue d’ensemble du déploiement d’applications approuvées](/visualstudio/deployment/trusted-application-deployment-overview).
 

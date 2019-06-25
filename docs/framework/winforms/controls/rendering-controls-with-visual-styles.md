@@ -10,12 +10,12 @@ helpviewer_keywords:
 - user controls [Windows Forms], painting
 - visual styles [Windows Forms], rendering Windows Forms controls
 ms.assetid: a5b178ba-610e-46c4-a6c0-509c0886a744
-ms.openlocfilehash: 4dbccfc881e777309394aed9711a93b8a25315be
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 558600c9256f205598288f9e20d38cb94608c920
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592605"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348487"
 ---
 # <a name="rendering-controls-with-visual-styles"></a>Rendu des contrôles avec les styles visuels
 Le .NET Framework prend en charge pour le rendu des contrôles et d’autres utilisateurs de Windows les éléments d’interface (UI) à l’aide de styles visuels dans les systèmes d’exploitation qui les prennent en charge. Cette rubrique aborde les différents niveaux de prise en charge dans le .NET Framework pour le rendu des contrôles et autres éléments d’interface utilisateur avec le style visuel actuel du système d’exploitation.  
@@ -23,7 +23,7 @@ Le .NET Framework prend en charge pour le rendu des contrôles et d’autres uti
 ## <a name="rendering-classes-for-common-controls"></a>Classes de rendu pour les contrôles courants  
  Le rendu d’un contrôle fait référence au dessin de l’interface utilisateur d’un contrôle. L’espace de noms <xref:System.Windows.Forms?displayProperty=nameWithType> fournit la classe <xref:System.Windows.Forms.ControlPaint> pour le rendu de certains contrôles Windows Forms courants. Cependant, cette classe dessine des contrôles dans le style Windows classique, ce qui peut rendre difficile de maintenir cohérente une expérience de l’interface utilisateur quand des contrôles personnalisés sont dessinés dans des applications où les styles visuels sont activés.  
   
- Le [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)] inclut des classes dans l’espace de noms <xref:System.Windows.Forms?displayProperty=nameWithType> qui rendent les parties et les états de contrôles courants avec des styles visuels. Chacune de ces classes inclut des méthodes `static` permettant de dessiner le contrôle ou des parties du contrôle dans un état particulier avec le style visuel actuel du système d’exploitation.  
+ Le .NET Framework 2.0 inclut des classes dans le <xref:System.Windows.Forms?displayProperty=nameWithType> espace de noms qui rendent les parties et les États de contrôles courants avec les styles visuels. Chacune de ces classes inclut des méthodes `static` permettant de dessiner le contrôle ou des parties du contrôle dans un état particulier avec le style visuel actuel du système d’exploitation.  
   
  Certaines de ces classes sont conçues pour dessiner le contrôle concerné, que les styles visuels soient ou non disponibles. Si les styles visuels sont activés, les membres de la classe dessinent le contrôle concerné avec des styles visuels ; si les styles visuels sont désactivés, les membres de la classe dessinent le contrôle dans le style Windows classique. Ces classes incluent :  
   

@@ -2,12 +2,12 @@
 title: 'Encodeur de message personnalisé : Encodeur de compression'
 ms.date: 03/30/2017
 ms.assetid: 57450b6c-89fe-4b8a-8376-3d794857bfd7
-ms.openlocfilehash: 6ada1cdeee02eb747f9f85abc9c99602d5f26b72
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 32ca96987a86c04c227f8bb0d680f647898dfccf
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878458"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348424"
 ---
 # <a name="custom-message-encoder-compression-encoder"></a>Encodeur de message personnalisé : Encodeur de compression
 Cet exemple montre comment implémenter un encodeur personnalisé à l’aide de la plateforme Windows Communication Foundation (WCF).  
@@ -222,7 +222,7 @@ binding.Namespace = "http://tempuri.org/bindings";
   
  Même si cela peut s'avérer suffisant pour la majorité de scénarios utilisateur, la prise en charge d'une configuration de fichier est critique si un service doit être hébergé sur le Web. Pour prendre en charge le scénario hébergé sur le Web, vous devez développer un gestionnaire de configuration personnalisé afin de permettre la configuration d'un élément de liaison personnalisé dans un fichier.  
   
- Vous pouvez créer un gestionnaire de configuration pour l’élément de liaison en plus du système de configuration fourni par [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)]. Ce gestionnaire de configuration doit dériver de la classe <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. La propriété `BindingElementType` permet d’indiquer au système de configuration le type d’élément de liaison à créer pour cette section. Tous les aspects de `BindingElement` qui peuvent être définis doivent être exposés en tant que propriétés dans la classe dérivée <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. <xref:System.Configuration.ConfigurationPropertyAttribute> permet de mapper les attributs d'élément de configuration aux propriétés et d'affecter des valeurs par défaut si les attributs ne sont pas définis. Après avoir chargé et appliqué les valeurs de la configuration aux propriétés, la méthode <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A> est appelée et convertit les propriétés en instance concrète d'un élément de liaison. La méthode <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.ApplyConfiguration%2A> permet de convertir les propriétés sur la classe dérivée <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> en valeurs à définir sur l’élément de liaison récemment créé.  
+ Vous pouvez créer un gestionnaire de configuration pour l’élément de liaison sur le système de configuration. Ce gestionnaire de configuration doit dériver de la classe <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. Le <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.BindingElementType?displayProperty=nameWithType> informe le système de configuration du type d’élément de liaison à créer pour cette section. Tous les aspects de `BindingElement` qui peuvent être définis doivent être exposés en tant que propriétés dans la classe dérivée <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. Le <xref:System.Configuration.ConfigurationPropertyAttribute> permet de mapper les attributs d’élément de configuration aux propriétés et d’affecter des valeurs par défaut si les attributs sont manquants. Après avoir chargé et appliqué les valeurs de la configuration aux propriétés, la méthode <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A?displayProperty=nameWithType> est appelée et convertit les propriétés en instance concrète d'un élément de liaison. Le <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.ApplyConfiguration%2A?displayProperty=nameWithType> méthode est utilisée pour convertir les propriétés sur la <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> classe dérivée dans les valeurs à définir sur l’élément de liaison qui vient d’être créée.  
   
  L'exemple de code suivant présente l'implémentation de `GZipMessageEncodingElement`.  
   
