@@ -6,12 +6,12 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: 6e51b93d53e1ad65b2f19f81de8833e83bfb18c1
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 13108e86d76b0d806eddf71b2f7e50337ca0afba
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65582766"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348301"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Présentation de Windows Communication Foundation
 Windows Communication Foundation (WCF) est une infrastructure pour la création d’applications orientées service. À l’aide de WCF, vous pouvez envoyer données sous forme de messages asynchrones à partir d’un point de terminaison à un autre. Un point de terminaison de service peut faire partie d'un service disponible en continu et hébergé par IIS, ou il peut s'agir d'un service hébergé dans une application. Un point de terminaison peut être un client d'un service qui demande des données auprès d'un point de terminaison de service. Les messages peuvent être simplement constitués d'un caractère ou d'un mot unique envoyé au format XML, ou se présenter sous la forme d'un flux de données binaires plus complexe. Voici quelques exemples de scénarios :
@@ -92,7 +92,7 @@ Microsoft BizTalk Server R2 utilise également WCF comme une technologie de comm
 
 Microsoft Silverlight est une plate-forme de création d'applications Web enrichies interopérables qui permettent aux développeurs de créer des sites Web comportant de nombreux médias (tels que la vidéo en continu). Depuis la version 2, Silverlight a intégré WCF comme une technologie de communication pour connecter les applications Silverlight aux points de terminaison WCF.
 
-Le [!INCLUDE[dublin](../../../includes/dublin-md.md)] application server est spécifiquement conçu pour déployer et gérer des applications qui utilisent WCF pour la communication. Le [!INCLUDE[dublin2](../../../includes/dublin2-md.md)] inclut des options de configuration et des outils riches, spécialement conçues pour les applications WCF.
+Les fonctionnalités d’hébergement du serveur d’applications Windows Server AppFabric conçues spécifiquement pour le déploiement et la gestion des applications qui utilisent WCF pour la communication. Le [!INCLUDE[dublin2](../../../includes/dublin2-md.md)] inclut des options de configuration et des outils riches, spécialement conçues pour les applications WCF.
 
 ## <a name="see-also"></a>Voir aussi
 
