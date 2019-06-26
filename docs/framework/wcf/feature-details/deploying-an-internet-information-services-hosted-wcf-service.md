@@ -2,12 +2,12 @@
 title: Déploiement d'un service WCF hébergé dans Internet Information Services
 ms.date: 03/30/2017
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
-ms.openlocfilehash: a41615ab096f3aa4f1ee94defd775248d0df4d2e
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 4c46a7ac0482e0f9c969505b87558d240bb1391e
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025735"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402297"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>Déploiement d'un service WCF hébergé dans Internet Information Services
 
@@ -43,7 +43,7 @@ Le processus d’installation de .NET Framework enregistre automatiquement WCF a
 
 Services WCF hébergés dans IIS doivent résider dans une application IIS. Vous pouvez créer une nouvelle application IIS pour héberger les services WCF exclusivement. Vous pouvez également déployer un service WCF dans une application existante qui héberge déjà du contenu ASP.NET 2.0 (par exemple, les pages .aspx et les services Web ASP.NET [ASMX]). Pour plus d’informations sur ces options, consultez le « hébergement WCF côté à côte avec ASP.NET » et « Hébergement des Services WCF en Mode de compatibilité ASP.NET » sections [Services WCF et ASP.NET](wcf-services-and-aspnet.md).
 
-Notez que [!INCLUDE[iis601](../../../../includes/iis601-md.md)] et les versions ultérieures redémarrent périodiquement une application de programmation orientée objet isolée. La valeur par défaut est 1740 minutes. La valeur maximale est de 71,582 minutes. Ce redémarrage peut être désactivé. Pour plus d’informations sur cette propriété, consultez le [PeriodicRestartTime](https://go.microsoft.com/fwlink/?LinkId=109968).
+Notez que IIS 6.0 et versions ultérieures redémarrent périodiquement une application isolée de programmation orientée objet. La valeur par défaut est 1740 minutes. La valeur maximale est de 71,582 minutes. Ce redémarrage peut être désactivé. Pour plus d’informations sur cette propriété, consultez le [PeriodicRestartTime](https://go.microsoft.com/fwlink/?LinkId=109968).
 
 ## <a name="create-an-svc-file-for-the-wcf-service"></a>Créer un fichier .svc pour le service WCF
 
@@ -103,7 +103,7 @@ Vous devez toujours utiliser des adresses de point de terminaison relatives pour
 
 ### <a name="available-transports"></a>Transports disponibles
 
-Services WCF hébergés dans IIS 5.1 et [!INCLUDE[iis601](../../../../includes/iis601-md.md)] sont limités à l’utilisation de communication basée sur HTTP. Sur ces plateformes IIS, configurer un service hébergé pour utiliser une liaison non-HTTP entraîne une erreur pendant l'activation du service. Pour [!INCLUDE[iisver](../../../../includes/iisver-md.md)], les transports pris en charge incluent HTTP, Net.TCP, Net.Pipe, Net.MSMQ et msmq.formatname pour la compatibilité descendante avec les applications MSMQ existantes.
+WCF services hébergés dans IIS 5.1 et IIS 6.0 sont limités à l’utilisation de communication basée sur HTTP. Sur ces plateformes IIS, configurer un service hébergé pour utiliser une liaison non-HTTP entraîne une erreur pendant l'activation du service. Pour [!INCLUDE[iisver](../../../../includes/iisver-md.md)], les transports pris en charge incluent HTTP, Net.TCP, Net.Pipe, Net.MSMQ et msmq.formatname pour la compatibilité descendante avec les applications MSMQ existantes.
 
 ### <a name="http-transport-security"></a>Sécurité de transport HTTP
 

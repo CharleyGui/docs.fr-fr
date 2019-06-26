@@ -2,12 +2,12 @@
 title: Introduction à LINQ (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: c6339c12-9b2d-433e-961c-0d2b7f0091c2
-ms.openlocfilehash: 95c1d99604ba9f87e34b5bb423d42bf97c0cd29e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7c42cf73dce91bfb4da1b886613635532460f0e6
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648798"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402408"
 ---
 # <a name="introduction-to-linq-visual-basic"></a>Introduction à LINQ (Visual Basic)
 LINQ (Language-Integrated Query) est une nouveauté du .NET Framework 3.5 qui crée un pont entre le monde des objets et celui des données.  
@@ -20,7 +20,7 @@ LINQ (Language-Integrated Query) est une nouveauté du .NET Framework 3.5 qui c
   
  L’illustration suivante de Visual Studio montre une requête LINQ partiellement terminée, exécutée sur une base de données SQL Server, en C# et en Visual Basic, avec un contrôle de type complet et une prise en charge IntelliSense.  
   
- ![Diagramme qui shwos une requête LINQ avec Intellisense.](./media/introduction-to-linq/linq-query-intellisense.png)  
+ ![Diagramme qui montre une requête LINQ avec Intellisense.](./media/introduction-to-linq/linq-query-intellisense.png)  
   
 ## <a name="next-steps"></a>Étapes suivantes  
  Pour plus d’informations sur LINQ, commencez par vous familiariser avec certains concepts de base dans la section mise en route [mise en route avec LINQ en Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md), puis lisez la documentation de la technologie LINQ dans lequel vous êtes vous souhaitez :  

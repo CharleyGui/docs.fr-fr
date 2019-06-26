@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - choosing transports [WCF]
 ms.assetid: b169462b-f7b6-4cf4-9fca-d306909ee8bf
-ms.openlocfilehash: 4d5fe4c92f0d456942219bc3f7014f09a005aa5d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 611e8df29b37efd880ee1d19515697d899e4fa7e
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62048294"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402154"
 ---
 # <a name="choosing-a-transport"></a>Choix d'un transport
 Cette rubrique traite des critères permettant de choisir parmi les trois principaux transports inclus dans Windows Communication Foundation (WCF) : HTTP, TCP et canaux nommés. WCF inclut également un message queuing (également appelé MSMQ) de transport, mais ce document ne couvre pas de message queuing.  
@@ -52,8 +52,8 @@ Cette rubrique traite des critères permettant de choisir parmi les trois princi
   
 |Attribut|Description|Transports préconisés|  
 |---------------|-----------------|------------------------|  
-|Diagnostics|Les diagnostics vous permettent de détecter automatiquement les problèmes de connectivité de transport. Tous les transports prennent en charge la possibilité de renvoyer des informations de panne qui décrivent la connectivité. Cependant, WCF n’inclut pas les outils de diagnostic pour l’examen des problèmes de réseau.|Aucun.|  
-|Hébergement|Tous les points de terminaison WCF doivent être hébergés dans une application. [!INCLUDE[iis601](../../../../includes/iis601-md.md)] et les versions antérieures ne prennent en charge que l'hébergement des applications qui utilisent le transport HTTP. Sur [!INCLUDE[wv](../../../../includes/wv-md.md)], prise en charge est ajoutée pour héberger tous les transports WCF, y compris TCP et canaux nommé. Pour plus d’informations, consultez [hébergement dans Internet Information Services](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md) et [hébergement dans Windows Process Activation Service](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).|HTTP|  
+|Diagnostics|Les diagnostics vous permettent de détecter automatiquement les problèmes de connectivité de transport. Tous les transports prennent en charge la possibilité de renvoyer des informations de panne qui décrivent la connectivité. Cependant, WCF n’inclut pas les outils de diagnostic pour l’examen des problèmes de réseau.|None|  
+|Hébergement|Tous les points de terminaison WCF doivent être hébergés dans une application. IIS 6.0 et prise en charge de versions antérieures que l’hébergement des applications qui utilisent le transport HTTP. Sur [!INCLUDE[wv](../../../../includes/wv-md.md)], prise en charge est ajoutée pour héberger tous les transports WCF, y compris TCP et canaux nommé. Pour plus d’informations, consultez [hébergement dans Internet Information Services](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md) et [hébergement dans Windows Process Activation Service](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).|HTTP|  
 |Inspection|L'inspection est la capacité d'extraire et de traiter les informations des messages au cours de la transmission. Le protocole HTTP effectue le tri entre les informations de routage et de contrôle, et les données, ce qui simplifie la création d'outils chargés d'inspecter et d'analyser des messages. Les transports qui sont faciles à inspecter peuvent également nécessiter une puissance de traitement moindre dans les appareils de réseau. Le niveau de sécurité utilisé détermine la possibilité d'inspecter ou non les messages.|HTTP|  
 |Latence|La latence est la durée minimale requise pour procéder à un échange de messages. Toutes les opérations de réseau offrent plus ou moins de latence selon le choix de transport. L’utilisation de la communication en duplex ou unidirectionnelle avec un transport dont le modèle d’échange de messages natif est demande/réponse (HTTP, par exemple) peut provoquer une latence supplémentaire en raison de la corrélation forcée des messages. Dans ce cas, vous pouvez utiliser un transport dont le modèle d’échange de messages natif est duplex, tel que TCP.|TCP, Canal<br /><br /> nommé|  
 |Portée|La portée d'un transport décrit la capacité de connexion de ce transport avec d'autres systèmes. Le transport de canal nommé a une portée très réduite ; il peut se connecter uniquement aux services qui s'exécutent sur le même ordinateur. Les transports TCP et HTTP ont une portée excellente et peuvent pénétrer des configurations NAT et de pare-feu. Pour plus d’informations, consultez [utilisation des NAT et pare-feu](../../../../docs/framework/wcf/feature-details/working-with-nats-and-firewalls.md).|HTTP, TCP|  

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - port activation [WCF]
 - port sharing [WCF]
 ms.assetid: f13692ee-a179-4439-ae72-50db9534eded
-ms.openlocfilehash: 8eb0a2a5b8b6edad17477e1fd65f72b540a8a674
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: 4d7f28c692c7eb3527a851c6456473afc20a9aeb
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65960037"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402466"
 ---
 # <a name="nettcp-port-sharing"></a>Partage de ports Net.TCP
 Windows Communication Foundation (WCF) fournit un nouveau protocole réseau basé sur TCP (net.tcp://) pour une communication hautes performances. WCF introduit également un nouveau composant système, le Service de partage Net.TCP Port qui permet le partage de ports net.tcp à travers plusieurs processus utilisateur.  
@@ -22,7 +22,7 @@ Windows Communication Foundation (WCF) fournit un nouveau protocole réseau bas�
   
  Le modèle HTTP.SYS dans lequel le trafic pour de nombreuses applications HTTP différentes est multiplexé sur un port TCP unique, est devenu le standard sur la plate-forme Windows. Cela fournit un point de contrôle commun aux administrateurs de pare-feu tout en permettant aux développeurs d'applications de réduire le coût de déploiement lié à la génération des nouvelles applications pouvant utiliser le réseau.  
   
- La capacité de partager des ports à travers plusieurs applications HTTP a longtemps été une fonctionnalité des services IIS (Internet Information Services). Toutefois, ce n'est qu'avec l'introduction de HTTP.SYS (l'écouteur de protocole HTTP en mode noyau) avec [!INCLUDE[iis601](../../../../includes/iis601-md.md)] que cette infrastructure a été pleinement généralisée. D'une façon générale, HTTP.SYS permet aux processus utilisateur arbitraires de partager les ports TCP dédiés au trafic HTTP. Cette capacité permet à de nombreuses applications HTTP de coexister sur le même ordinateur physique dans des processus séparés et isolés, tout en partageant l'infrastructure réseau requise pour envoyer et recevoir le trafic sur le port TCP 80. Le Service de partage de ports Net.TCP active le même type de partage de ports pour les applications net.tcp.  
+ La capacité de partager des ports à travers plusieurs applications HTTP a longtemps été une fonctionnalité des services IIS (Internet Information Services). Toutefois, il était uniquement avec l’introduction de HTTP. SYS (le noyau écouteur de protocole HTTP) avec IIS 6.0, que cette infrastructure a été pleinement généralisée. D'une façon générale, HTTP.SYS permet aux processus utilisateur arbitraires de partager les ports TCP dédiés au trafic HTTP. Cette capacité permet à de nombreuses applications HTTP de coexister sur le même ordinateur physique dans des processus séparés et isolés, tout en partageant l'infrastructure réseau requise pour envoyer et recevoir le trafic sur le port TCP 80. Le Service de partage de ports Net.TCP active le même type de partage de ports pour les applications net.tcp.  
   
 ## <a name="port-sharing-architecture"></a>Architecture de partage de ports  
  L’architecture de partage de Port dans WCF a trois composants principaux :  

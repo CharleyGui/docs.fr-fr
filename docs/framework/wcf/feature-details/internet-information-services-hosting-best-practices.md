@@ -2,12 +2,12 @@
 title: Meilleures pratiques pour l'hébergement dans Internet Information Services
 ms.date: 03/30/2017
 ms.assetid: 0834768e-9665-46bf-86eb-d4b09ab91af5
-ms.openlocfilehash: 85b8efadca03de71fd98b0f0d1bf5aeb47fe76be
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: bb60330aeedfe4b16a2a53d644e79a4a16636afa
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878607"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402434"
 ---
 # <a name="internet-information-services-hosting-best-practices"></a>Meilleures pratiques pour l'hébergement dans Internet Information Services
 Cette rubrique décrit certaines meilleures pratiques pour l’hébergement des services Windows Communication Foundation (WCF).  
@@ -16,7 +16,7 @@ Cette rubrique décrit certaines meilleures pratiques pour l’hébergement des 
  Implémentation d’un service WCF service comme une DLL qui est déployée dans le répertoire \bin d’une application Web vous permet de que réutiliser le service en dehors du modèle d’application Web, par exemple, dans un environnement de test qui ne peut pas avoir déployé Internet Information Services (IIS).  
   
 ## <a name="service-hosts-in-iis-hosted-applications"></a>Hôtes de service dans les applications hébergées par IIS  
- N'utilisez pas les API auto-hébergées impératives pour créer de nouveaux hôtes de service qui écoutent les transports de réseau non pris en charge en mode natif par l'environnement d'hébergement IIS (par exemple, [!INCLUDE[iis601](../../../../includes/iis601-md.md)] pour héberger les services TCP, étant donné que la communication TCP n'est pas prise en charge en mode natif sur [!INCLUDE[iis601](../../../../includes/iis601-md.md)]). Cette approche n'est pas recommandée. Les hôtes de service créés de manière impérative ne sont pas connus dans l'environnement d'hébergement IIS. Le point critique est que le traitement effectué par les services créés de manière impérative n'est pas pris en charge par les services IIS lorsqu'il détermine si le pool d'applications d'hébergement est inactif. Le résultat est que les applications qui possèdent ce type d'hôtes de service ont un environnement d'hébergement IIS qui élimine systématiquement les processus d'hôte IIS.  
+ N’utilisez pas les API auto-hébergées impératives pour créer de nouveaux hôtes de service qui écoute sur des transports réseau pas en mode natif pris en charge par l’environnement d’hébergement IIS (par exemple, IIS 6.0 à un hôte TCP services, étant donné que les communications TCP ne sont pas pris en charge en mode natif sur IIS 6.0). Cette approche n'est pas recommandée. Les hôtes de service créés de manière impérative ne sont pas connus dans l'environnement d'hébergement IIS. Le point critique est que le traitement effectué par les services créés de manière impérative n'est pas pris en charge par les services IIS lorsqu'il détermine si le pool d'applications d'hébergement est inactif. Le résultat est que les applications qui possèdent ce type d'hôtes de service ont un environnement d'hébergement IIS qui élimine systématiquement les processus d'hôte IIS.  
   
 ## <a name="uris-and-iis-hosted-endpoints"></a>URI et points de terminaison hébergés par IIS  
  Les points de terminaison pour un service hébergé par IIS doivent être configurés à l'aide d'URI relatifs, pas d'adresses absolues. De cette manière, vous êtes certain que l'adresse du point de terminaison se situe dans le jeu des adresses URI qui appartiennent à l'application d'hébergement et que l'activation basée sur message se produit comme prévu.  
