@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: 57781dd5a988435778587636cc458256b966446c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e193d6a51c3d4f1d81e3b74b1474d0e7cdcfca53
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61678502"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398126"
 ---
 # <a name="strings-c-programming-guide"></a>Chaînes (Guide de programmation C#)
 Une chaîne est un objet de type <xref:System.String> dont la valeur est du texte. En interne, le texte est stocké sous la forme d’une collection séquentielle en lecture seule d’objets <xref:System.Char>. Il n’existe aucun caractère de fin Null à la fin d’une chaîne C# ; par conséquent, une chaîne C# peut contenir n’importe quel nombre de caractères Null incorporés ('\0'). La propriété <xref:System.String.Length%2A> d’une chaîne représente le nombre d’objets `Char` qu’elle contient, et non pas le nombre de caractères Unicode. Pour accéder à des points de code Unicode individuels dans une chaîne, utilisez l’objet <xref:System.Globalization.StringInfo>.  
@@ -24,7 +24,7 @@ Une chaîne est un objet de type <xref:System.String> dont la valeur est du text
   
  [!code-csharp[csProgGuideStrings#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#1)]  
   
- Notez que vous n’utilisez pas l’opérateur [new](../../../csharp/language-reference/keywords/new-operator.md) pour créer un objet String, excepté lors de l’initialisation de la chaîne avec un tableau de caractères.  
+ Notez que vous n’utilisez pas l’opérateur [new](../../../csharp/language-reference/operators/new-operator.md) pour créer un objet String, excepté lors de l’initialisation de la chaîne avec un tableau de caractères.  
   
  Initialisez une chaîne avec la valeur constante <xref:System.String.Empty> pour créer un objet <xref:System.String> dont la chaîne est de longueur nulle. La représentation de littéral de chaîne d’une chaîne de longueur nulle est "". En initialisant les chaînes avec la valeur <xref:System.String.Empty> au lieu de [null](../../../csharp/language-reference/keywords/null.md), vous pouvez réduire les risques de levée de l’exception <xref:System.NullReferenceException>. Utilisez la méthode statique <xref:System.String.IsNullOrEmpty%28System.String%29> pour vérifier la valeur d’une chaîne avant de tenter d’y accéder.  
   
