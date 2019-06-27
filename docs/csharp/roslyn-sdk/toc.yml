@@ -1,7 +1,7 @@
 - name: Kit SDK .NET Compiler Platform (API Roslyn)
   href: index.md
   items:
-    - name: Vue d’ensemble
+    - name: Vue d'ensemble
       href: index.md
     - name: Comprendre le modèle de l’API du compilateur
       href: compiler-api-model.md
