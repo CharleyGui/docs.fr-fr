@@ -2,12 +2,12 @@
 title: Custom Token
 ms.date: 03/30/2017
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-ms.openlocfilehash: 862b4b26295ef3e90064b27ecd753e9b541471a7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 11b89f6d4f2800f079ba6576801b39c85324f6e0
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650214"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425073"
 ---
 # <a name="custom-token"></a>Custom Token
 Cet exemple montre comment ajouter une implémentation de jeton personnalisé dans une application Windows Communication Foundation (WCF). Cet exemple utilise un `CreditCardToken` pour transmettre de manière sécurisée les informations de carte de crédit du client au service. Le jeton est transmis dans l’en-tête de message WS-Security. Il est signé et chiffré à l’aide de l’élément de liaison de sécurité symétrique en même temps que le corps du message et que les autres en-têtes de message. Cette particularité est utile lorsque les jetons intégrés ne sont pas suffisants. Cet exemple illustre comment fournir un jeton de sécurité personnalisé à un service au lieu d'utiliser l'un des jetons intégrés. Le service implémente un contrat qui définit un modèle de communication demande-réponse.
@@ -251,7 +251,7 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
 
  Dans cet exemple, nous utilisons uniquement un fournisseur de jetons sur le client et un authentificateur de jetons sur le service, le jeton de carte de crédit étant transmis uniquement dans le sens client-service.
 
- Côté client, cette fonctionnalité figure dans les classes `CreditCardClientCrendentials`, `CreditCardClientCredentialsSecurityTokenManager` et `CreditCardTokenProvider`.
+ Côté client, cette fonctionnalité figure dans les classes `CreditCardClientCredentials`, `CreditCardClientCredentialsSecurityTokenManager` et `CreditCardTokenProvider`.
 
  Côté service, cette fonctionnalité figure dans les classes `CreditCardServiceCredentials`, `CreditCardServiceCredentialsSecurityTokenManager`, `CreditCardTokenAuthenticator` et `CreditCardTokenAuthorizationPolicy`.
 

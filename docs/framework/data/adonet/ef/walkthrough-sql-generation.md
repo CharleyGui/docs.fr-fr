@@ -2,12 +2,12 @@
 title: 'Procédure pas à pas : Génération SQL'
 ms.date: 03/30/2017
 ms.assetid: 16c38aaa-9927-4f3c-ab0f-81636cce57a3
-ms.openlocfilehash: 380ab80a577fa103c33328047cd24cce6be5cb6e
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 5d8723c6a6d1ab12a2ba1f0f2f7cd5e09e82bfad
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690344"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422775"
 ---
 # <a name="walkthrough-sql-generation"></a>Procédure pas à pas : Génération SQL
 
@@ -128,7 +128,7 @@ L'entrée droite est traitée de la même façon que l'entrée gauche. L'état a
 
 ![Diagram](../../../../../docs/framework/data/adonet/ef/media/cd2afa99-7256-4c63-aaa9-c2d13f18a3d8.gif "cd2afa99-7256-4c63-aaa9-c2d13f18a3d8")
 
-La valeur « false » suivante est ajoutée à la pile IsParentAJoin et la condition de jointure Var(Extent1).CategoryID == Var(Extent2).CategoryID est traitée. Var (extent1) est résolue en \<symbol_Extent1 > après une recherche dans la table de symboles. L’instance étant résolue en un symbole simple, à la suite de traitement Var(Extent1). CategoryID, un SqlBuilder avec \<symbol1 >. » CategoryID » est retourné. De la même façon, l'autre partie de la comparaison est traitée et le résultat de la visite de la condition de jointure est ajouté à la clause FROM de SelectStatement1 et la valeur « false » est retirée de la pile IsParentAJoin.
+La valeur « false » suivante est ajoutée à la pile IsParentAJoin et la condition de jointure Var(Extent1).CategoryID == Var(Extent2).CategoryID est traitée. Var(Extent1) est résolu en \<symbol_Extent1 > après une recherche dans la table de symboles. L’instance étant résolue en un symbole simple, à la suite de traitement Var(Extent1). CategoryID, un SqlBuilder avec \<symbol1 >. » CategoryID » est retourné. De la même façon, l'autre partie de la comparaison est traitée et le résultat de la visite de la condition de jointure est ajouté à la clause FROM de SelectStatement1 et la valeur « false » est retirée de la pile IsParentAJoin.
 
 Avec ceci, Join1 a été traité complètement et une étendue est dépilée de la table de symboles.
 

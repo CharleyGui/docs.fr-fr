@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 3e3e04de-99d1-4658-b716-44cb669d9589
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eca84aa3a3d7bffaac31cc36ed14e5d5bb5a37cc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 75a66ee7ca1d7c99de6e2cc9a1d502ea58dbf9f7
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775841"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422824"
 ---
 # <a name="windows-forms-add-configuration-element"></a>Windows Forms Add, élément de Configuration
 
@@ -43,7 +43,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 | ---------- | ------ | ----------- |
 | "AnchorLayout.DisableSinglePassControlScaling" | "true"&#124;"false" | Indique si les contrôles ancrés sont mis à l’échelle en un seul passage. « true » pour désactiver unique passer mise à l’échelle ; Sinon, false. Consultez la section « Unique pass mise à l’échelle » dans le [remarques](#remarks) pour plus d’informations. |
 | « DpiAwareness » | "PerMonitorV2"&#124;"false" | Indique si une application prend en charge DPI. Définissez la clé à « PerMonitorV2 » pour prendre en charge de la prise en charge Dpi ; Sinon, affectez-lui la valeur « false ». Prise en charge DPI est une fonctionnalité d’abonnement ; Pour tirer parti de la prise en charge DPI élevée de Windows Forms, vous devez définir sa valeur à « PerMonitorV2 ». Consultez le [notes](#remarks) section pour plus d’informations. |
-| "CheckedListBox.DisableHighDpiImprovements" | "true"&#124;"false" | Indique si le <xref:System.Windows.Forms.CheckedListBox> contrôle tire parti de la mise à l’échelle et la disposition des améliorations introduites dans le .NET Framework 4.7. « true » pour ne pas les améliorations caling et mise en page ; Sinon, « false ». |
+| "CheckedListBox.DisableHighDpiImprovements" | "true"&#124;"false" | Indique si le <xref:System.Windows.Forms.CheckedListBox> contrôle tire parti de la mise à l’échelle et la disposition des améliorations introduites dans le .NET Framework 4.7. « true » pour désactiver les améliorations de mise à l’échelle et de disposition ; Sinon, « false ». |
 | "DataGridView.DisableHighDpiImprovements" | "true"&#124;"false" | Indique si le <xref:System.Windows.Forms.DataGridView> contrôler la mise à l’échelle et la disposition des améliorations introduites dans le .NET Framework 4.7. « true » pour désactiver la prise en charge DPI ; « false » dans le cas contraire. |
 | "DisableDpiChangedMessageHandling" | "true"&#124;"false" | « true » pour désactiver la réception des messages relatifs à la résolution de mise à l’échelle des modifications ; « false » dans le cas contraire. Consultez le [notes](#remarks) section pour plus d’informations. |
 | "EnableWindowsFormsHighDpiAutoResizing" | "true"&#124;"false" | Indique si une application Windows Forms est automatiquement redimensionnée en raison de modifications de mise à l’échelle PPP. « true » pour activer le redimensionnement automatique ; Sinon, false. |

@@ -2,12 +2,12 @@
 title: <namedPipeTransport>
 ms.date: 03/30/2017
 ms.assetid: 9fc3f42f-43e2-4ab1-8bc7-3c95a9220df1
-ms.openlocfilehash: fd7dc38e229b6135f91fc159596ed1669d43701a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 819639eabf0332a34d6a7250159d24e42552f874
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772357"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423091"
 ---
 # <a name="namedpipetransport"></a>\<namedPipeTransport>
 Définit un transport qui entraîne un canal à transférer des messages à l’aide de canaux nommés lorsqu’il est inclus dans une liaison personnalisée.  
@@ -34,7 +34,7 @@ Définit un transport qui entraîne un canal à transférer des messages à l’
                     transferMode="Buffered/Streamed/StreamedRequest/StreamedResponse">
   <connectionPoolSettings groupName="String"
                           idleTimeout="TimeSpan"
-                          maxOutboundConnectionsPerEndpopint="Integer" />
+                          maxOutboundConnectionsPerEndpoint="Integer" />
 </namedPipeTransport>
 ```  
   

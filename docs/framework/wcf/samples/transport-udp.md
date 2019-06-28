@@ -2,12 +2,12 @@
 title: 'Transport : UDP'
 ms.date: 03/30/2017
 ms.assetid: 738705de-ad3e-40e0-b363-90305bddb140
-ms.openlocfilehash: 12981e970706c5fc1d954c237309f12c85320c75
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4ae4bf22f452035d10ecba6bcf93bf580ab7f5f8
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64617369"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422163"
 ---
 # <a name="transport-udp"></a>Transport : UDP
 L’exemple UDP Transport montre comment implémenter la monodiffusion UDP et multidiffusion comme un transport personnalisé de Windows Communication Foundation (WCF). L’exemple décrit la procédure recommandée pour la création d’un transport personnalisé dans WCF, en utilisant l’infrastructure de canal et en suivant les bonnes pratiques WCF. Les étapes de la création d'un transport personnalisé sont les suivantes :  
@@ -446,7 +446,7 @@ Press <ENTER> to terminate the service and exit...
  Pour régénérer le code client et la configuration à l'aide de Svcutil.exe, démarrez l'application de service, puis exécutez le fichier Svcutil.exe suivant à partir du répertoire racine de l'exemple.  
   
 ```console
-svcutil http://localhost:8000/udpsample/ /reference:UdpTranport\bin\UdpTransport.dll /svcutilConfig:svcutil.exe.config  
+svcutil http://localhost:8000/udpsample/ /reference:UdpTransport\bin\UdpTransport.dll /svcutilConfig:svcutil.exe.config  
 ```  
   
  Svcutil.exe ne générant pas de configuration d’extension de liaison pour `SampleProfileUdpBinding`, vous devez donc l’ajouter manuellement.  

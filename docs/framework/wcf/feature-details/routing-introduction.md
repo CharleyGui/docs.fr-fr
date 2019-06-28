@@ -2,12 +2,12 @@
 title: Introduction au routage
 ms.date: 03/30/2017
 ms.assetid: bf6ceb38-6622-433b-9ee7-f79bc93497a1
-ms.openlocfilehash: 41545d0340ae222e427d1e6d428ed1e3f7b4fa76
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 478c9aa6563cab4ba7769c56d7084c8716c43c58
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64912488"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425368"
 ---
 # <a name="routing-introduction"></a>Introduction au routage
 Le service de routage fournit un intermédiaire SOAP générique connectable, capable de router des messages en fonction du contenu. Le service de routage vous permet de créer une logique de routage complexe et d'implémenter des scénarios, tels que l'agrégation de service, le contrôle des versions de service, le routage par priorité et en mode multidiffusion. Le service de routage fournit également une gestion des erreurs qui vous permet de définir des listes de points de terminaison de sauvegarde auxquels sont envoyés les messages en cas d'échec de l'envoi au point de terminaison de destination primaire.  
@@ -250,7 +250,7 @@ rc.SoapProcessingEnabled = false;
 ### <a name="dynamic-configuration"></a>Configuration Dynamique  
  Lorsque vous ajoutez des points de terminaison clients supplémentaires, ou que vous devez modifier les filtres utilisés pour router les messages, vous devez pouvoir mettre la configuration à jour dynamiquement au moment de l'exécution afin d'éviter une interruption de service aux points de terminaison qui reçoivent actuellement des messages via le service de routage. Modifier un fichier de configuration ou le code de l'application hôte n'est pas toujours suffisant, car l'une ou l'autre méthode requiert le recyclage de l'application, ce qui signifierait la perte potentielle de tous les messages actuellement en transit et le risque d'un temps mort en attendant le redémarrage du service.  
   
- Vous pouvez uniquement modifier le **RoutingConfiguration** par programmation. Vous pouvez initialement configurer le service à l’aide d’un fichier de configuration, vous pouvez uniquement modifier la configuration au moment de l’exécution en créant un nouveau **RoutingConfigution** et en lui passant comme paramètre à la <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> (méthode) exposées par le <xref:System.ServiceModel.Routing.RoutingExtension> extension du service. Tous les messages actuellement en transit continuent d’être routés à l’aide de la configuration précédente, alors que les messages reçus après l’appel à **ApplyConfiguration** utilisent la nouvelle configuration. L'exemple suivant montre la création d'une instance du service de routage, suivie d'une modification de la configuration.  
+ Vous pouvez uniquement modifier le **RoutingConfiguration** par programmation. Vous pouvez initialement configurer le service à l’aide d’un fichier de configuration, vous pouvez uniquement modifier la configuration au moment de l’exécution en créant un nouveau **RoutingConfiguration** et en lui passant comme paramètre à la <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> (méthode) exposées par le <xref:System.ServiceModel.Routing.RoutingExtension> extension du service. Tous les messages actuellement en transit continuent d’être routés à l’aide de la configuration précédente, alors que les messages reçus après l’appel à **ApplyConfiguration** utilisent la nouvelle configuration. L'exemple suivant montre la création d'une instance du service de routage, suivie d'une modification de la configuration.  
   
 ```csharp  
 RoutingConfiguration routingConfig = new RoutingConfiguration();  

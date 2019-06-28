@@ -3,12 +3,12 @@ title: Modèle d’identité basée sur les revendications
 ms.date: 03/30/2017
 ms.assetid: 4a96a9af-d980-43be-bf91-341a23401431
 author: BrucePerlerMS
-ms.openlocfilehash: 8560c7fd1969cfed6e43e2982fb69313c45c9405
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b7cafa727251c28b79615a37adce4effe6885392
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650461"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422404"
 ---
 # <a name="claims-based-identity-model"></a>Modèle d’identité basée sur les revendications
 Lorsque vous créez des applications qui prennent en charge les revendications, l'identité de l'utilisateur est représentée dans votre application comme un ensemble de revendications. Une revendication peut être le nom d’utilisateur, un autre peut être une adresse de messagerie. L'idée est qu'un système d'identité externe soit configuré pour fournir à votre application tout ce qu'elle doit savoir à propos de l'utilisateur avec chaque demande effectuée, ainsi que l'assurance de chiffrement que les données d'identité que vous recevez proviennent d'une source approuvée.  
@@ -58,7 +58,7 @@ Lorsque vous créez des applications qui prennent en charge les revendications, 
  Lorsque vous créez une application qui se base sur les revendications, vous créez une application de partie de confiance. Parmi les synonymes de partie de confiance on trouve « application prenant en charge les revendications » et « application basée sur les revendications ». Les applications Web et les services Web peuvent être des parties de confiance. Une application de partie de confiance consomme des jetons créés par STS et extrait les revendications des jetons pour les utiliser pour les tâches d’identité associées. WIF offre des fonctionnalités pour vous aider à générer des applications de partie de confiance.  
   
 ### <a name="standards"></a>Normes  
- Afin de rendre tout cela interopérable, plusieurs normes WS-* sont utilisées dans le scénario précédent. La stratégie est récupérée à l'aide de WS-MetadataExchange, et la stratégie elle-même est structurée selon la spécification WS-Policy. STS expose les points de terminaison qui implémentent la spécification WS-Trust, qui décrit comment demander et recevoir des jetons de sécurité. La plupart des STS publient aujourd'hui des jetons mis en forme avec SAML (Security Assertion Markup Language). SAML est une terminologie XML reconnue dans l'industrie qui peut être utilisée pour représenter les revendications de façon interopérable. Ou, dans une situation de multi-plateforme, cela vous permet de communiquer avec STS sur une plateforme entièrement différente et d'obtenir une authentification unique pour toutes vos applications, indépendamment de la plateforme.  
+ Afin de rendre tout cela interopérable, plusieurs normes WS-* sont utilisées dans le scénario précédent. La stratégie est récupérée à l'aide de WS-MetadataExchange, et la stratégie elle-même est structurée selon la spécification WS-Policy. STS expose les points de terminaison qui implémentent la spécification WS-Trust, qui décrit comment demander et recevoir des jetons de sécurité. La plupart des STS publient aujourd'hui des jetons mis en forme avec Security Assertion Markup Language (SAML). SAML est une terminologie XML reconnue dans l'industrie qui peut être utilisée pour représenter les revendications de façon interopérable. Ou, dans une situation de multi-plateforme, cela vous permet de communiquer avec STS sur une plateforme entièrement différente et d'obtenir une authentification unique pour toutes vos applications, indépendamment de la plateforme.  
   
 ### <a name="browser-based-applications"></a>Applications basées sur un navigateur  
  Les clients intelligents ne sont pas les seuls à pouvoir utiliser le modèle d'identité basée sur des revendications. Les applications basées sur un navigateur (également appelées clients passifs) peuvent également l'utiliser. Le scénario suivant décrit comment cela fonctionne.  

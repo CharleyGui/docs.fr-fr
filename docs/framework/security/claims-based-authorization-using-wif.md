@@ -3,12 +3,12 @@ title: Autorisation basée sur les revendications utilisant WIF
 ms.date: 03/30/2017
 ms.assetid: e24000a3-8fd8-4c0e-bdf0-39882cc0f6d8
 author: BrucePerlerMS
-ms.openlocfilehash: 0c99053610c8df9b6825c773a09cb1330d1e22f4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9d20f8fbce916a038fc8224492a4077e1978ed8c
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650447"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422369"
 ---
 # <a name="claims-based-authorization-using-wif"></a>Autorisation basée sur les revendications utilisant WIF
 Dans une application de partie de confiance, une autorisation détermine les ressources auxquelles une identité authentifié est autorisé à accéder et les opérations qu'elle est autorisée à exécuter sur ces ressources. Une autorisation incorrecte ou faible entraîne la divulgation d'informations et la falsification de données. Cette rubrique présente les méthodes disponibles pour implémenter une autorisation pour les applications Web ASP.NET qui prennent en charge les revendications et les services qui utilisent Windows Identity Foundation (WIF) et le service d'émission de jetons de sécurité (STS), par exemple, le service de contrôle d'accès (ACS) Microsoft Azure.  
@@ -23,13 +23,13 @@ Dans une application de partie de confiance, une autorisation détermine les res
  RBAC est une méthode d'autorisation dans laquelle les autorisations utilisateur sont gérées et appliquées par une application basée sur les rôles d'utilisateurs. Si un utilisateur a un rôle requis pour exécuter une action, l'accès est autorisé ; sinon, il est refusé.  
   
 ### <a name="iprincipalisinrole-method"></a>Méthode IPrincipal.IsInRole  
- Pour implémenter la méthode RBAC dans les applications prenant en charge les revendications, utilisez la méthode **IsInRole()** dans l’interface **IPrinicpal**, comme vous le feriez dans des applications qui ne prennent pas en charge les revendications. Il existe plusieurs façons d’utiliser la méthode **IsInRole()**  :  
+ Pour implémenter la méthode RBAC dans les applications prenant en charge les revendications, utilisez le **IsInRole()** méthode dans le **IPrincipal** interface, comme vous le feriez dans les applications non-claims-aware. Il existe plusieurs façons d’utiliser la méthode **IsInRole()**  :  
   
-- En appelant explicitement **IPrincipal.IsInRole("Administrator")**. Dans cette approche, les résultats sont une valeur booléenne. Utilisez-les dans vos instructions conditionnelles. Ils peuvent être utilisés arbitrairement n'importe où dans votre code.  
+- En appelant explicitement **IPrincipal.IsInRole("Administrator")** . Dans cette approche, les résultats sont une valeur booléenne. Utilisez-les dans vos instructions conditionnelles. Ils peuvent être utilisés arbitrairement n'importe où dans votre code.  
   
-- En utilisant la demande de sécurité **PrincipalPermission.Demand()**. Dans cette approche, le résultat est une exception si jamais la demande n'est pas satisfaite. Cela doit répondre à votre stratégie de gestion des exceptions. La levée d’exceptions est beaucoup plus coûteuse du point de vue des performances que le retour de valeurs booléennes. Elle peut être utilisée n'importe où dans votre code.  
+- En utilisant la demande de sécurité **PrincipalPermission.Demand()** . Dans cette approche, le résultat est une exception si jamais la demande n'est pas satisfaite. Cela doit répondre à votre stratégie de gestion des exceptions. La levée d’exceptions est beaucoup plus coûteuse du point de vue des performances que le retour de valeurs booléennes. Elle peut être utilisée n'importe où dans votre code.  
   
-- En utilisant les attributs déclaratifs **[PrincipalPermission(SecurityAction.Demand, Role = "Administrator")]**. Cette approche est appelée déclarative parce qu'elle est utilisée pour décorer les méthodes. Elle ne peut pas être utilisée dans les blocs de code dans les implémentations de la méthode. Le résultat est une exception si jamais la demande n'est pas satisfaite. Vous devez vous assurer qu'elle répond à votre stratégie de gestion des exceptions.  
+- En utilisant les attributs déclaratifs **[PrincipalPermission(SecurityAction.Demand, Role = "Administrator")]** . Cette approche est appelée déclarative parce qu'elle est utilisée pour décorer les méthodes. Elle ne peut pas être utilisée dans les blocs de code dans les implémentations de la méthode. Le résultat est une exception si jamais la demande n'est pas satisfaite. Vous devez vous assurer qu'elle répond à votre stratégie de gestion des exceptions.  
   
 - En utilisant l’autorisation d’URL, à l’aide de la section **\<authorization>** dans **web.config**. Cette approche convient lorsque vous gérez une autorisation au niveau d'une URL. Il s'agit du niveau le plus simple parmi ceux précédemment mentionnés. L'avantage de cette méthode est que des modifications sont apportées au fichier de configuration, ce qui signifie que le code ne doit pas être compilé pour tirer parti de la modification.  
   

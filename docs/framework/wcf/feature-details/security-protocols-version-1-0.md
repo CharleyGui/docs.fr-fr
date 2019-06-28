@@ -2,12 +2,12 @@
 title: Protocoles de sécurité version 1.0
 ms.date: 03/30/2017
 ms.assetid: ee3402d2-1076-410b-a3cb-fae0372bd7af
-ms.openlocfilehash: 8114183109befcb77c3bf2b35fe246118da5afde
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 71855b73bb08d5edef05747dcff9e1ac04fb951f
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586884"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425096"
 ---
 # <a name="security-protocols-version-10"></a>Protocoles de sécurité version 1.0
 Les protocoles Web Services Security fournissent des mécanismes de sécurité des services Web qui couvrent l’ensemble des exigences de sécurité de la messagerie de l’entreprise. Cette section décrit les détails de la version 1.0 de Windows Communication Foundation (WCF) (implémenté dans le <xref:System.ServiceModel.Channels.SecurityBindingElement>) pour les services Web suivants protocoles de sécurité.  
@@ -129,7 +129,7 @@ Les protocoles Web Services Security fournissent des mécanismes de sécurité d
  WCF prend en charge les profils de jeton WSS SAML 1.0 et 1.1 des jetons SAML v1.1. Il est possible d'implémenter d'autres versions de formats de jeton SAML.  
   
 ### <a name="15-security-context-token"></a>1.5 Jeton de contexte de sécurité  
- WCF prend en charge le jeton SCT (Security Context) introduit dans WS-SecureCoversation. Le SCT est utilisé pour représenter un contexte de sécurité établi dans SecureConversation ainsi que les protocoles de négociation binaire TLS et SSPI, tel que décrit ci-après.  
+ WCF prend en charge le jeton SCT (Security Context) introduit dans WS-SecureConversation. Le SCT est utilisé pour représenter un contexte de sécurité établi dans SecureConversation ainsi que les protocoles de négociation binaire TLS et SSPI, tel que décrit ci-après.  
   
 ## <a name="2-common-message-security-parameters"></a>2. Paramètres de sécurité de message courants  
   

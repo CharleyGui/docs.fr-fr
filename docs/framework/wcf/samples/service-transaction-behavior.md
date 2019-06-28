@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Service Transaction Behavior Sample [Windows Communication Foundation]
 ms.assetid: 1a9842a3-e84d-427c-b6ac-6999cbbc2612
-ms.openlocfilehash: 63d7fed125396e809eb2cba89663db73a56f7cec
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fc71d077e219481281be8f8bf22352bd19baebac
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753035"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425474"
 ---
 # <a name="service-transaction-behavior"></a>Service Transaction Behavior
 
@@ -163,7 +163,7 @@ public class CalculatorService : ICalculator
         return runningTotal;
     }
 
-    // Logging method ommitted for brevity
+    // Logging method omitted for brevity
 }
 ```
 

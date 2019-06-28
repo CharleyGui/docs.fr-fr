@@ -2,12 +2,12 @@
 title: Gestion des exceptions et des erreurs
 ms.date: 03/30/2017
 ms.assetid: a64d01c6-f221-4f58-93e5-da4e87a5682e
-ms.openlocfilehash: f2042bac30ee84530c0da9c30193919dfb99a608
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e99ef5721791af229c68a958e4840a0703d34ac9
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64654995"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424941"
 ---
 # <a name="handling-exceptions-and-faults"></a>Gestion des exceptions et des erreurs
 Les exceptions sont utilisées pour communiquer localement des erreurs au sein du service ou de l'implémentation cliente. Les erreurs, en revanche, sont utilisées pour communiquer des erreurs au-delà des limites du service, notamment du serveur au client ou vice versa. En plus des erreurs, les canaux de transport utilisent souvent des mécanismes propres au transport pour communiquer des erreurs de niveau transport. Par exemple, le transport HTTP utilise des codes d'état tels que 404 pour communiquer une URL de point de terminaison inexistante (il n'existe aucun point de terminaison pour renvoyer une erreur). Ce document se compose de trois sections qui fournissent des indications aux auteurs de canaux personnalisés. La première section indique quand et comment définir et lever des exceptions. La deuxième section fournir des indications sur la génération et la consommation des erreurs. La troisième section explique comment fournir des informations de suivi afin d'aider l'utilisateur de votre canal personnalisé à résoudre les problèmes des applications en cours d'exécution.  
@@ -286,7 +286,7 @@ public override bool OnTryCreateException(
  Pour les conditions d'erreur spécifiques dont les scénarios de récupération diffèrent, envisagez de définir une classe dérivée de `ProtocolException`.  
   
 ### <a name="mustunderstand-processing"></a>Traitement de MustUnderstand  
- SOAP définit une erreur générale pour signaler qu'un en-tête requis n'a pas été compris par le destinataire. Cette erreur est connu en tant qu'erreur `mustUnderstand`. Dans WCF, des canaux personnalisés génèrent jamais `mustUnderstand` erreurs. Au lieu de cela, le répartiteur de WCF, qui se trouve en haut de la pile de communication WCF, vérifie que tous les en-têtes marqués comme MustUndestand = true ont été compris par la pile sous-jacente. Si certains n'ont pas été compris, une erreur `mustUnderstand` est générée à ce stade. (L'utilisateur peut choisir de désactiver ce traitement `mustUnderstand` et de faire recevoir à l'application tous les en-têtes de message. Dans ce cas, l'application est chargée d'exécuter le traitement `mustUnderstand`.) L'erreur générée inclut un en-tête NotUnderstood qui contient les noms de tous les en-têtes avec MustUnderstand=true qui n'ont pas été compris.  
+ SOAP définit une erreur générale pour signaler qu'un en-tête requis n'a pas été compris par le destinataire. Cette erreur est connu en tant qu'erreur `mustUnderstand`. Dans WCF, des canaux personnalisés génèrent jamais `mustUnderstand` erreurs. Au lieu de cela, le répartiteur de WCF, qui se trouve en haut de la pile de communication WCF, vérifie que tous les en-têtes qui ont été marqués comme MustUnderstand = true ont été compris par la pile sous-jacente. Si certains n'ont pas été compris, une erreur `mustUnderstand` est générée à ce stade. (L'utilisateur peut choisir de désactiver ce traitement `mustUnderstand` et de faire recevoir à l'application tous les en-têtes de message. Dans ce cas, l'application est chargée d'exécuter le traitement `mustUnderstand`.) L'erreur générée inclut un en-tête NotUnderstood qui contient les noms de tous les en-têtes avec MustUnderstand=true qui n'ont pas été compris.  
   
  Si votre canal de protocole envoie un en-tête personnalisé avec MustUnderstand=true et reçoit une erreur `mustUnderstand`, il doit déterminer si cette erreur est due à l'en-tête qu'il a envoyé. Il existe deux membres sur la classe `MessageFault` qui s'avèrent utiles à cette fin :  
   

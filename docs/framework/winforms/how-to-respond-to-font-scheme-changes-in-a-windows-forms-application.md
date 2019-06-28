@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - Windows Forms, font scheme changes
 ms.assetid: 4db27702-22e7-43bf-a07d-9a004549853c
-ms.openlocfilehash: 6aad851770fb886de5d5c00b544ac6eac2857e42
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9fd7f99b35730cf867bfad5da24bc3f223e9a0f8
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61801853"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425335"
 ---
 # <a name="how-to-respond-to-font-scheme-changes-in-a-windows-forms-application"></a>Procédure : répondre aux modifications du jeu de polices dans une application Windows Forms
 Dans les systèmes d’exploitation Windows, un utilisateur peut modifier les paramètres de police de l’échelle du système pour afficher la police par défaut supérieure ou inférieure. Modification de ces paramètres de police est essentiel pour les utilisateurs malvoyants et nécessitent un type plus grand lire le texte sur leurs écrans. Vous pouvez ajuster votre application Windows Forms de réagir à ces modifications en augmentant ou diminuant la taille du formulaire et tous ses texte chaque fois que le jeu de polices change. Si vous souhaitez que votre formulaire pour prendre en compte les modifications dans les tailles de police dynamiquement, vous pouvez ajouter le code à votre formulaire.  
@@ -62,7 +62,7 @@ Dans les systèmes d’exploitation Windows, un utilisateur peut modifier les pa
  [!code-csharp[WinFormsAutoScaling#1](~/samples/snippets/csharp/VS_Snippets_Winforms/WinFormsAutoScaling/CS/Form1.cs#1)]
  [!code-vb[WinFormsAutoScaling#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/WinFormsAutoScaling/VB/Form1.vb#1)]  
   
- Dans cet exemple de code, le constructeur contienne un appel à `InitializeComponent`, qui est défini lorsque vous créez un nouveau projet Windows Forms dans Visual Studio. Supprimer cette ligne de code si vous générez votre application sur la ligne de commande.  
+ Le constructeur dans cet exemple de code contienne un appel à `InitializeComponent`, qui est défini lorsque vous créez un nouveau projet Windows Forms dans Visual Studio. Supprimer cette ligne de code si vous générez votre application sur la ligne de commande.  
   
 ## <a name="see-also"></a>Voir aussi
 

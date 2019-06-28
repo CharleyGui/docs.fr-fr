@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: f642276b-33fb-4a81-b882-8808c31ba69e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eda4f8d3819af05b022e0633d6883cca940f67e5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ce001ed25d7704301d7f809887a445e3492e93fc
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61866853"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422534"
 ---
 # <a name="library-element-net-native"></a>\<Bibliothèque >, élément (.NET Native)
 Définit l'assembly qui contient des types et des membres de types dont les métadonnées sont disponibles pour la réflexion au moment de l'exécution.  
@@ -58,7 +58,7 @@ Définit l'assembly qui contient des types et des membres de types dont les mét
   
  L'élément `<Library>` sert de conteneur pour la définition des éléments de programme dont les métadonnées sont nécessaires au moment de l'exécution ; cet élément n'exprime pas la stratégie. Au moment de la compilation, les outils du compilateur recherchent uniquement dans la bibliothèque désignée par l'élément `<Library>` les éléments de programme identifiés par ses éléments enfants. En revanche, les outils du compilateur recherchent dans toutes les bibliothèques, y compris les bibliothèques principales du Framework .NET, les éléments de programme identifiés par les éléments enfants de l’élément [\<Application>](../../../docs/framework/net-native/application-element-net-native.md).  
   
- Les directives `<Library>` peuvent être utilisées de manière conditionnelle. Si le nom de la `<Library>` élément commence et se termine par un astérisque (\*), la `<Library>` directive a un effet uniquement si l’assembly spécifié entre les astérisques est référencé par l’application. Par exemple, la directive runtime suivante ne s'applique que si l'assembly Utillities.dll est référencé par l'application.  
+ Les directives `<Library>` peuvent être utilisées de manière conditionnelle. Si le nom de la `<Library>` élément commence et se termine par un astérisque (\*), la `<Library>` directive a un effet uniquement si l’assembly spécifié entre les astérisques est référencé par l’application. Par exemple, la directive runtime suivante s’applique uniquement si l’assembly Utilities.dll est référencé par l’application.  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
