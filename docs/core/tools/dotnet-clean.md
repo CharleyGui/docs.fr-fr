@@ -1,13 +1,13 @@
 ---
 title: Commande dotnet clean
 description: La commande dotnet clean nettoie le répertoire actif.
-ms.date: 04/14/2019
-ms.openlocfilehash: fa19f1b041e4031082f928135395a5f06ce702e9
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 06/26/2019
+ms.openlocfilehash: 36630c046ff8f1ad8d513b4e64cfb74a8625776b
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65631818"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422015"
 ---
 # <a name="dotnet-clean"></a>dotnet clean
 
@@ -24,7 +24,8 @@ ms.locfileid: "65631818"
 ## <a name="synopsis"></a>Résumé
 
 ```
-dotnet clean [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--interactive] [-o|--output] [-r|--runtime] [-v|--verbosity]
+dotnet clean [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--interactive] 
+    [--nologo] [-o|--output] [-r|--runtime] [-v|--verbosity]
 dotnet clean [-h|--help]
 ```
 
@@ -55,6 +56,10 @@ Projet ou solution MSBuild à nettoyer. Si vous ne spécifiez pas de fichier pro
 * **`--interactive`**
 
   Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Option disponible à partir du kit SDK .NET Core 3.0.
+
+* **`--nologo`**
+
+  N’affiche pas la bannière de démarrage ni le message de copyright. Option disponible à partir du kit SDK .NET Core 3.0.
 
 * **`-o|--output <OUTPUT_DIRECTORY>`**
 

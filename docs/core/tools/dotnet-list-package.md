@@ -1,13 +1,13 @@
 ---
 title: Commande dotnet list package
 description: La commande 'dotnet list package' est pratique pour lister les références de packages à un projet ou à une solution.
-ms.date: 04/09/2019
-ms.openlocfilehash: 88ef3302a955eadc4167384312e4eb721dd496fb
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 06/26/2019
+ms.openlocfilehash: 98cc456fff02364310cec98f0282700f7697f07e
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65631766"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67421949"
 ---
 # <a name="dotnet-list-package"></a>dotnet list package
 
@@ -20,8 +20,8 @@ ms.locfileid: "65631766"
 ## <a name="synopsis"></a>Résumé
 
 ```
-dotnet list [<PROJECT | SOLUTION>] package [--config] [--framework] [--highest-minor] [--highest-patch] 
-   [--include-prerelease] [--include-transitive] [--outdated] [--source]
+dotnet list [<PROJECT>|<SOLUTION>] package [--config] [--framework] [--highest-minor] [--highest-patch] 
+   [--include-prerelease] [--include-transitive] [--interactive] [--outdated] [--source]
 dotnet list package [-h|--help]
 ```
 
@@ -104,6 +104,10 @@ Le fichier projet ou solution à traiter. Si aucun fichier n’est spécifié, l
 * **`--include-transitive`**
 
   Liste les packages transitifs, en plus des packages de niveau supérieur. Si vous spécifiez cette option, vous obtenez une liste des packages dont dépendent les packages de niveau supérieur.
+
+* **`--interactive`**
+
+  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Option disponible à partir du kit SDK .NET Core 3.0.
 
 * **`--outdated`**
 
