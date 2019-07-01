@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - decimal keyword [C#]
 ms.assetid: b6522132-b5ee-4be3-ad13-3adfdb7de7a1
-ms.openlocfilehash: 7bc806cd5516666c86780bb53842725f0c0c1617
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 7ad01f9e4f5a8b1a153b1ef306e9d6168335eb3d
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54600698"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424305"
 ---
 # <a name="decimal-c-reference"></a>decimal (référence C#)
 
@@ -61,7 +61,7 @@ Pour plus d’informations sur les conversions numériques explicites, consultez
 
 Vous pouvez appliquer un format à un résultat à l'aide de la méthode `String.Format`, ou de la méthode <xref:System.Console.Write%2A?displayProperty=nameWithType>, qui appelle `String.Format()`. Le format monétaire est spécifié à l'aide du format de chaîne monétaire standard « C » ou « c », comme le montre le second exemple traité ultérieurement dans cet article. Pour plus d'informations sur la méthode `String.Format`, consultez <xref:System.String.Format%2A?displayProperty=nameWithType>.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L’exemple suivant provoque une erreur du compilateur en essayant d’ajouter les variables [double](../../../csharp/language-reference/keywords/double.md) et `decimal`.
 
@@ -81,11 +81,11 @@ Le résultat est l'erreur suivante :
 
 `Operator '+' cannot be applied to operands of type 'double' and 'decimal'`
 
-Dans cet exemple, un `decimal` et un [int](../../../csharp/language-reference/keywords/int.md) sont combinés dans la même expression. Le résultat est de type `decimal`.
+Dans cet exemple, un `decimal` et un [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md) sont combinés dans la même expression. Le résultat est de type `decimal`.
 
 [!code-csharp[csrefKeywordsTypes#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#6)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Dans cet exemple, le résultat est mis en forme à l'aide de la chaîne de format monétaire. Notez que la valeur `x` est arrondie, car le nombre de décimales excède 0,99 $. La variable `y`, représentant le nombre maximal exact de chiffres, est affichée dans le format correct.
 
@@ -101,7 +101,7 @@ Dans cet exemple, le résultat est mis en forme à l'aide de la chaîne de forma
 - [Référence C#](../../../csharp/language-reference/index.md)
 - [Guide de programmation C#](../../../csharp/programming-guide/index.md)
 - [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
-- [Tableau des types intégraux](../../../csharp/language-reference/keywords/integral-types-table.md)
+- [Types intégraux](../../../csharp/language-reference/builtin-types/integral-numeric-types.md)
 - [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)
 - [Tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)
 - [Tableau des conversions numériques explicites](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)

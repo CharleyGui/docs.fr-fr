@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: 9bce692c767169536d762a36ea2b9343655680c7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a7cd450fbc2e0a5acd32675ab2c6b46dc2c92757
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583068"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398368"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorphisme (Guide de programmation C#)
 Le polymorphisme est souvent considéré comme le troisième pilier d'une programmation orientée objet, après l'encapsulation et l'héritage. Le polymorphisme est le mot grec qui signifie « plusieurs formes » et il prend deux aspects distincts :  
@@ -54,7 +54,7 @@ Le polymorphisme est souvent considéré comme le troisième pilier d'une progra
  Les méthodes et propriétés virtuelles permettent aux classes dérivées d'étendre une classe de base sans avoir besoin d'utiliser l'implémentation de classe de base d'une méthode. Pour plus d’informations, consultez [Versioning avec les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md). Une interface fournit un autre moyen pour définir une méthode ou un ensemble de méthodes dont l'implémentation est confiée aux classes dérivées. Pour plus d’informations, consultez [Interfaces](../../../csharp/programming-guide/interfaces/index.md).  
   
 ### <a name="hiding-base-class-members-with-new-members"></a>Masquage des membres de classe de base par de nouveaux membres  
- Si vous voulez que votre membre dérivé ait le même nom qu’un membre d’une classe de base, mais que vous ne voulez pas qu’il participe à l’appel virtuel, vous pouvez utiliser le mot clé [new](../../../csharp/language-reference/keywords/new.md). Le mot clé `new` est placé avec le type de retour d'un membre de classe qui est remplacé. Le code suivant est fourni à titre d'exemple :  
+ Si vous voulez que votre membre dérivé ait le même nom qu’un membre d’une classe de base, mais que vous ne voulez pas qu’il participe à l’appel virtuel, vous pouvez utiliser le mot clé [new](../../../csharp/language-reference/keywords/new-modifier.md). Le mot clé `new` est placé avec le type de retour d'un membre de classe qui est remplacé. Le code suivant est fourni à titre d'exemple :  
   
  [!code-csharp[csProgGuideInheritance#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#18)]  
   

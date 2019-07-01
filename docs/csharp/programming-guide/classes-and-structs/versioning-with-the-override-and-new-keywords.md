@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, versioning
 - C# language, override and new
 ms.assetid: 88247d07-bd0d-49e9-a619-45ccbbfdf0c5
-ms.openlocfilehash: ec6040081d44a389bd42bb50cdd81ac0634abf91
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6b5097df8ee559f11bc29c12570e938965e6a9a5
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583124"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398083"
 ---
 # <a name="versioning-with-the-override-and-new-keywords-c-programming-guide"></a>Versioning avec les mots clés override et new (Guide de programmation C#)
 Le langage C# est conçu de telle sorte que la gestion de version entre les classes de [base](../../../csharp/language-reference/keywords/base.md) et les classes dérivées dans différentes bibliothèques puisse évoluer et préserver une compatibilité descendante. Cela signifie, par exemple, que l’introduction dans une [classe](../../../csharp/language-reference/keywords/class.md) de base d’un nouveau membre portant le même nom qu’un membre dans une classe dérivée est totalement prise en charge par C# et n’engendre pas de comportement imprévisible. Cela signifie également qu'une classe doit indiquer de façon explicite si une méthode est conçue pour se substituer à une méthode héritée ou s'il s'agit d'une nouvelle méthode qui masque une méthode héritée portant un nom similaire.  
@@ -20,7 +20,7 @@ Le langage C# est conçu de telle sorte que la gestion de version entre les cla
   
 - La méthode de classe de base doit être définie comme [virtuelle](../../../csharp/language-reference/keywords/virtual.md).  
   
-- Si la méthode dans la classe dérivée n’est pas précédée des mots clés [new](../../../csharp/language-reference/keywords/new.md) ou [override](../../../csharp/language-reference/keywords/override.md), le compilateur émet un avertissement et la méthode se comporte comme si le mot clé `new` était présent.  
+- Si la méthode dans la classe dérivée n’est pas précédée des mots clés [new](../../../csharp/language-reference/keywords/new-modifier.md) ou [override](../../../csharp/language-reference/keywords/override.md), le compilateur émet un avertissement et la méthode se comporte comme si le mot clé `new` était présent.  
   
 - Si la méthode dans la classe dérivée est précédée du mot clé `new`, la méthode est définie comme étant indépendante de la méthode dans la classe de base.  
   

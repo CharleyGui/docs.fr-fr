@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ranges of floating-point types [C#]
 - types [C#], floating-point types
 ms.assetid: da886cc5-e01e-4f62-b3ec-6428c8f7a102
-ms.openlocfilehash: 6dcab8e546ef12ebec5f8b57c66458172fc6f5d0
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: d1d8773edb1d835a8718fa7752e70c07c3c4330b
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422331"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424189"
 ---
 # <a name="floating-point-types-table-c-reference"></a>Tableau des types virgule flottante (référence C#)
 
@@ -30,7 +30,7 @@ Le tableau suivant indique la plage de valeurs approximative et la précision po
 - [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [Tableau des types intégraux](integral-types-table.md)
+- [Types intégraux](../../../csharp/language-reference/builtin-types/integral-numeric-types.md)
 - [Tableau des valeurs par défaut](default-values-table.md)
 - [Tableau des formats des résultats numériques](formatting-numeric-results-table.md)
 - [Tableaux des types intégrés](built-in-types-table.md)

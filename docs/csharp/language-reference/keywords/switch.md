@@ -12,12 +12,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 960394bd61f9e9163fe93c4324bf708d50ec3e08
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 5257d1d677246cdd6d826cd71ed3ffe116d2a4a6
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59481455"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424123"
 ---
 # <a name="switch-c-reference"></a>switch (informations de référence sur C#)
 
@@ -46,7 +46,7 @@ Avec C# 6 (et les versions antérieures), l’expression de correspondance doit
 - [char](char.md),
 - [string](string.md),
 - [bool](bool.md),
-- valeur intégrale, telle que [int](int.md) ou [long](long.md),
+- valeur intégrale, telle que [int](../builtin-types/integral-numeric-types.md) ou [long](../builtin-types/integral-numeric-types.md),
 - ou valeur [enum](enum.md).
 
 À compter de C# 7.0, l’expression de correspondance peut être toute expression non Null.
@@ -121,7 +121,7 @@ Le modèle de constante teste si l’expression de correspondance est égale à 
 où *constant* est la valeur à tester. *constant* peut être l’une quelconque des expressions constantes suivantes :
 
 - Un littéral de [valeur booléenne](bool.md), `true` ou `false`
-- Toute constante intégrale, de type [int](int.md), [long](long.md) ou [byte](byte.md)
+- Toute constante intégrale, de type [int](../builtin-types/integral-numeric-types.md), [long](../builtin-types/integral-numeric-types.md) ou [byte](../builtin-types/integral-numeric-types.md)
 - Le nom d’une variable `const` déclarée
 - Une constante d’énumération
 - Un littéral de type [char](char.md)

@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - object equality [C#]
 ms.assetid: 10b865ea-4e7b-4127-9242-c9b8f57d9f04
-ms.openlocfilehash: 7cbd1a2c1a9968ae8ed4f96d503d472bbe9b32c4
-ms.sourcegitcommit: 4a8c2b8d0df44142728b68ebc842575840476f6d
+ms.openlocfilehash: 50b1cdb8b7e5087f1fd6669e7163e2c15e9b23bf
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58545453"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423657"
 ---
 # <a name="equality-comparisons-c-programming-guide"></a>Comparaisons d’égalité (Guide de programmation C#)
 
@@ -28,7 +28,7 @@ Il est parfois nécessaire de comparer l’égalité de deux valeurs. Dans certa
 
 ## <a name="value-equality"></a>Égalité des valeurs
 
- L’égalité de valeur signifie que deux objets contiennent les mêmes valeurs. Pour les types valeur primitifs tels que [int](../../../csharp/language-reference/keywords/int.md) ou [bool](../../../csharp/language-reference/keywords/bool.md), les tests d’égalité de valeur sont simples. Vous pouvez utiliser l’opérateur [==](../../../csharp/language-reference/operators/equality-operators.md#equality-operator-), comme indiqué dans l’exemple suivant.  
+ L’égalité de valeur signifie que deux objets contiennent les mêmes valeurs. Pour les types valeur primitifs tels que [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md) ou [bool](../../../csharp/language-reference/keywords/bool.md), les tests d’égalité de valeur sont simples. Vous pouvez utiliser l’opérateur [==](../../../csharp/language-reference/operators/equality-operators.md#equality-operator-), comme indiqué dans l’exemple suivant.  
   
 ```csharp  
 int a = GetOriginalValue();  

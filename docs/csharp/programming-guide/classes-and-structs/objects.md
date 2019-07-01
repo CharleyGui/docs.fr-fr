@@ -6,23 +6,23 @@ helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: de44f0c416de798fb42fba93e30ec6aa6ed0208d
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 1ba179c23d9b0e526cdc0dd436ca545377a0db81
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585987"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398413"
 ---
 # <a name="objects-c-programming-guide"></a>Objets (Guide de programmation C#)
 Une définition de classe ou de struct s’apparente à un plan qui spécifie ce que le type peut faire. Un objet est fondamentalement un bloc de mémoire qui a été alloué et configuré selon le plan. Un programme peut créer de nombreux objets de la même classe. Les objets sont également appelés instances. Ils peuvent être stockés dans une variable nommée, dans un tableau ou dans une collection. Le code client est le code qui utilise ces variables pour appeler les méthodes et accéder aux propriétés publiques de l’objet. Dans un langage orienté objet tel que C#, un programme classique se compose de plusieurs objets qui interagissent de façon dynamique.  
   
 > [!NOTE]
->  Les types statiques se comportent différemment de ce qui est décrit ici. Pour plus d’informations, consultez [Classes statiques et membres de classe statique](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
+> Les types statiques se comportent différemment de ce qui est décrit ici. Pour plus d’informations, consultez [Classes statiques et membres de classe statique](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).
   
 ## <a name="struct-instances-vs-class-instances"></a>Comparaison des instances de struct et des instances de classe  
  Étant donné que les classes sont des types référence, une variable d’un objet de classe conserve une référence à l’adresse de l’objet sur le tas managé. Si un deuxième objet du même type est assigné au premier objet, les deux variables font référence à l’objet à cette adresse. Ce point est abordé en détail plus loin dans cette rubrique.  
   
- Les instances de classes sont créées à l’aide de l’[opérateur new](../../../csharp/language-reference/keywords/new-operator.md). Dans l’exemple suivant, `Person` est le type, et `person1` et `person 2` sont des instances, ou objets, de ce type.  
+ Les instances de classes sont créées à l’aide de l’[opérateur new](../../../csharp/language-reference/operators/new-operator.md). Dans l’exemple suivant, `Person` est le type, et `person1` et `person 2` sont des instances, ou objets, de ce type.  
   
  [!code-csharp[csProgGuideStatements#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#30)]  
   
@@ -33,7 +33,7 @@ Une définition de classe ou de struct s’apparente à un plan qui spécifie ce
  La mémoire pour `p1` et `p2` est allouée sur la pile de threads. Cette mémoire est récupérée avec le type ou la méthode où elle est déclarée. C’est l’une des raisons pour lesquelles les structs sont copiés au moment de l’assignation. En revanche, la mémoire allouée pour une instance de classe est récupérée automatiquement (garbage collection) par le common language runtime quand toutes les références à l’objet sont hors de la portée. Il n’est pas possible de détruire de façon déterministe un objet de classe comme vous pouvez le faire dans C++. Pour plus d’informations sur l’opération de garbage collection dans le .NET Framework, consultez [Garbage collection](../../../standard/garbage-collection/index.md).  
   
 > [!NOTE]
->  L’allocation et la libération de mémoire sur le tas managé sont des opérations très optimisées dans le common language runtime. Dans la plupart des cas, il n’y a pas de différence significative sur le plan des performances entre l’allocation d’une instance de classe sur le tas et l’allocation d’une instance de struct sur la pile.  
+> L’allocation et la libération de mémoire sur le tas managé sont des opérations très optimisées dans le common language runtime. Dans la plupart des cas, il n’y a pas de différence significative sur le plan des performances entre l’allocation d’une instance de classe sur le tas et l’allocation d’une instance de struct sur la pile.
   
 ## <a name="object-identity-vs-value-equality"></a>Comparaison de l’égalité de l’identité et des valeurs des objets  
  Quand vous effectuez une comparaison d’égalité entre deux objets, vous devez d’abord décider si vous souhaitez savoir si les deux variables représentent le même objet en mémoire, ou si les valeurs d’un ou de plusieurs de leurs champs sont équivalentes. Si vous projetez de comparer les valeurs, vous devez établir si les objets sont des instances de types valeur (structs) ou de types référence (classes, délégués, tableaux).  
@@ -68,5 +68,5 @@ Une définition de classe ou de struct s’apparente à un plan qui spécifie ce
 - [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md)
 - [class](../../../csharp/language-reference/keywords/class.md)
 - [struct](../../../csharp/language-reference/keywords/struct.md)
-- [new, opérateur](../../../csharp/language-reference/keywords/new-operator.md)
+- [new, opérateur](../../../csharp/language-reference/operators/new-operator.md)
 - [Système de type commun](../../../standard/base-types/common-type-system.md)

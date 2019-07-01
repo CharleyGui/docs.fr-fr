@@ -7,17 +7,17 @@ helpviewer_keywords:
 - classes [C#]
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
-ms.openlocfilehash: 4cea68e76c17e5393ab7213f457c0875cdc5b53b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ad19099242a3bedbb7283219dfd7733db13231ec
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54596698"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398588"
 ---
 # <a name="classes-c-programming-guide"></a>Classes (Guide de programmation C#)
 
 ## <a name="reference-types"></a>Types référence  
-Un type défini comme [class](../../../csharp/language-reference/keywords/class.md) est un *type référence*. Au moment de l’exécution, quand vous déclarez une variable de type référence, celle-ci contient la valeur [Null](../../../csharp/language-reference/keywords/null.md) tant que vous n’avez pas explicitement créé une instance de la classe à l’aide de l’opérateur [new](../../../csharp/language-reference/keywords/new.md), ou que vous ne lui avez pas assigné un objet existant d’un type compatible, comme indiqué dans l’exemple suivant :
+Un type défini comme [class](../../../csharp/language-reference/keywords/class.md) est un *type référence*. Au moment de l’exécution, quand vous déclarez une variable de type référence, celle-ci contient la valeur [Null](../../../csharp/language-reference/keywords/null.md) tant que vous n’avez pas explicitement créé une instance de la classe à l’aide de l’opérateur [new](../../../csharp/language-reference/operators/new-operator.md), ou que vous ne lui avez pas assigné un objet existant d’un type compatible, comme indiqué dans l’exemple suivant :
 
 ```csharp
 //Declaring an object of type MyClass.
@@ -47,7 +47,7 @@ Quand l’objet est créé, une quantité de mémoire suffisante est allouée su
 
 Bien qu’ils soient parfois employés indifféremment, une classe et un objet sont deux choses différentes. Une classe définit un type d’objet, mais il ne s’agit pas d’un objet en soi. Un objet, qui est une entité concrète basée sur une classe, est parfois désigné par le terme « instance de classe ».  
   
- Vous pouvez créer des objets en utilisant le mot clé [new](../../language-reference/keywords/new.md) suivi du nom de la classe sur laquelle l’objet est basé, comme suit :  
+ Vous pouvez créer des objets en utilisant le mot clé [new](../../language-reference/operators/new-operator.md) suivi du nom de la classe sur laquelle l’objet est basé, comme suit :  
 
  ```csharp
  Customer object1 = new Customer();

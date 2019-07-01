@@ -2,12 +2,12 @@
 title: PII Security Lockdown
 ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
-ms.openlocfilehash: 18095845db094f0911578816e6bacdb7f3776156
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 83c100459ca5cf522b9040a807008e66e1a5c9d8
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664781"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425422"
 ---
 # <a name="pii-security-lockdown"></a>PII Security Lockdown
 Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la sécurité d’un service Windows Communication Foundation (WCF) par :  
@@ -37,7 +37,7 @@ Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la s�
  Cet exemple illustre comment contrôler la fonctionnalité d'enregistrement des informations d'identification personnelle connues, telles que le nom d'utilisateur et le mot de passe, dans les journaux de suivi et de message. Par défaut, l'enregistrement des PII connues est désactivé. Toutefois, dans certaines situations, leur enregistrement peut s'avérer essentiel lors du débogage des applications. Cet exemple est basé sur le [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md). En outre, cet exemple utilise l'enregistrement des suivis et des messages. Pour plus d’informations, consultez le [Tracing and Message Logging](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) exemple.  
   
 ## <a name="encrypting-configuration-file-elements"></a>Chiffrement des éléments de fichier de configuration  
- Pour des raisons de sécurité, dans le cadre d'un environnement partagé avec hébergement Web, le chiffrement de certains éléments de configuration tels que les chaînes de connexion aux bases de données, susceptibles de contenir des informations sensibles, peut s'avérer souhaitable. De tels éléments peuvent être chiffrés à l’aide de l’outil aspnet_regiis.exe figurant dans le dossier .NET Framework, WINDIR%\Micrsoft.NET\Framework\v4.0.20728.  
+ Pour des raisons de sécurité, dans le cadre d'un environnement partagé avec hébergement Web, le chiffrement de certains éléments de configuration tels que les chaînes de connexion aux bases de données, susceptibles de contenir des informations sensibles, peut s'avérer souhaitable. Un élément de configuration peut-être être chiffré à l’aide de l’outil aspnet_regiis.exe figurant dans le dossier .NET Framework, par exemple, % WINDIR%\Microsoft.NET\Framework\v4.0.20728.  
   
 #### <a name="to-encrypt-the-values-in-the-appsettings-section-in-webconfig-for-the-sample"></a>Pour chiffrer les valeurs dans la section appSettings du fichier Web.config de l'exemple  
   

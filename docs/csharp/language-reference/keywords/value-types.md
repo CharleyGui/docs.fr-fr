@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: af3eab1c2453f37aa5bd881dc9804d7504c89298
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 9907811a43f408020e2ee76621d4975a53945570
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422124"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424033"
 ---
 # <a name="value-types-c-reference"></a>Types valeur (référence C#)
 
@@ -40,11 +40,11 @@ Chaque type valeur a un constructeur implicite sans paramètre qui initialise la
 
 Les *types simples* sont un ensemble de types struct prédéfinis fournis par C#, composé des types suivants :
 
-- [Types intégraux](integral-types-table.md) : types numériques entiers et type [char](char.md)
+- [Types intégraux](../builtin-types/integral-numeric-types.md) : types numériques entiers et type [char](char.md)
 - [Types virgule flottante](floating-point-types-table.md)
 - [bool](bool.md)
 
-Les types simples sont identifiés par des mots clés, qui sont simplement des alias de types struct prédéfinis dans l’espace de noms <xref:System>. Par exemple, [int](int.md) est un alias de <xref:System.Int32?displayProperty=nameWithType>. Pour connaître la liste complète des alias, voir [Tableau des types intégrés](built-in-types-table.md).
+Les types simples sont identifiés par des mots clés, qui sont simplement des alias de types struct prédéfinis dans l’espace de noms <xref:System>. Par exemple, [int](../builtin-types/integral-numeric-types.md) est un alias de <xref:System.Int32?displayProperty=nameWithType>. Pour connaître la liste complète des alias, voir [Tableau des types intégrés](built-in-types-table.md).
 
 Les types simples diffèrent des autres types struct en ce qu’ils autorisent des opérations supplémentaires :
 
@@ -88,9 +88,9 @@ int myInt = new int();
 int myInt = 0;
 ```
 
-L’opérateur [new](new.md) permet d’appeler le constructeur sans paramètre du type spécifique et d’affecter la valeur par défaut à la variable. Dans l’exemple précédent, le constructeur sans paramètre a affecté la valeur `0` à `myInt`. Pour plus d’informations sur les valeurs affectées en appelant les constructeurs par défaut, voir [Tableau des valeurs par défaut](default-values-table.md).
+L’opérateur [new](../operators/new-operator.md) permet d’appeler le constructeur sans paramètre du type spécifique et d’affecter la valeur par défaut à la variable. Dans l’exemple précédent, le constructeur sans paramètre a affecté la valeur `0` à `myInt`. Pour plus d’informations sur les valeurs affectées en appelant les constructeurs par défaut, voir [Tableau des valeurs par défaut](default-values-table.md).
 
-Avec les types définis par l’utilisateur, l’opérateur [new](new.md) permet d’appeler le constructeur sans paramètre. Par exemple, l’instruction suivante appelle le constructeur sans paramètre du struct `Point` :
+Avec les types définis par l’utilisateur, l’opérateur [new](../operators/new-operator.md) permet d’appeler le constructeur sans paramètre. Par exemple, l’instruction suivante appelle le constructeur sans paramètre du struct `Point` :
 
 ```csharp
 Point p = new Point(); // Invoke parameterless constructor for the struct.
@@ -98,7 +98,7 @@ Point p = new Point(); // Invoke parameterless constructor for the struct.
 
 Après cet appel, le struct est considéré comme définitivement assigné ; autrement dit, tous ses membres sont initialisés avec leurs valeurs par défaut.
 
-Pour plus d'informations sur l'opérateur `new`, voir [new](new.md).
+Pour plus d'informations sur l'opérateur `new`, voir [new](../operators/new-operator.md).
 
 Pour plus d’informations sur la mise en forme de la sortie des types numériques, voir [Tableau des formats des résultats numériques](formatting-numeric-results-table.md).
 

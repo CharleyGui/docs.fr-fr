@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- expliciting defining cache behavior
+- explicitly defining cache behavior
 - location-based cache policies
 - local cache
 - request cache policies
 - cache [.NET Framework], location-based policies
 ms.assetid: 683bb88e-3411-4f46-9686-3411b6ba511c
-ms.openlocfilehash: 1bbbb558134e5f11537de0efef594be2b964cdcb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5b4936a54627e6016cabc41954d1a18ae82cdf90
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647383"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422476"
 ---
 # <a name="how-to-set-a-location-based-cache-policy-for-an-application"></a>Procédure : définir une stratégie de cache basée sur l’emplacement pour une application
 Avec une stratégie de cache basée sur l’emplacement, une application peut définir explicitement le comportement de cache en fonction de l’emplacement de la ressource demandée. Cette rubrique explique comment définir la stratégie de cache par programmation. Pour plus d’informations sur la définition de la stratégie pour une application en utilisant les fichiers de configuration, consultez [\<requestCaching>, élément (paramètres réseau)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md).  

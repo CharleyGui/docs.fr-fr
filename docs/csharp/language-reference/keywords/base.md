@@ -10,12 +10,12 @@ f1_keywords:
 helpviewer_keywords:
 - base keyword [C#]
 ms.assetid: 8b645dbe-1a33-49b8-8716-1c401f9a5ea5
-ms.openlocfilehash: ef7995c9f7737d29d7e9479c3b84a25b13943be3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 2ef0d07aed595fa630459171482e0b0849aed877
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54681753"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401592"
 ---
 # <a name="base-c-reference"></a>base (référence C#)
 
@@ -31,15 +31,15 @@ L’utilisation du mot clé `base` à partir d’une méthode statique est une e
 
 La classe de base accessible est la classe de base spécifiée dans la déclaration de classe. Par exemple, si vous spécifiez `class ClassB : ClassA`, les membres de ClassA sont accessibles à partir de ClassB, quelle que soit la classe de base de ClassA.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Dans cet exemple, la classe de base `Person` et la classe dérivée `Employee` ont toutes les deux une méthode nommée `Getinfo`. En utilisant le mot clé `base`, vous pouvez appeler la méthode `Getinfo` de la classe de base à partir de la classe dérivée.
 
 [!code-csharp[csrefKeywordsAccess#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsAccess/CS/csrefKeywordsAccess.cs#1)]
 
-Pour obtenir d’autres exemples, consultez [new](../../../csharp/language-reference/keywords/new.md), [virtual](../../../csharp/language-reference/keywords/virtual.md) et [override](../../../csharp/language-reference/keywords/override.md).
+Pour obtenir d’autres exemples, consultez [new](new-modifier.md), [virtual](virtual.md) et [override](override.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Cet exemple montre comment spécifier le constructeur de classe de base qui est appelé lors de la création d’instances d’une classe dérivée.
 

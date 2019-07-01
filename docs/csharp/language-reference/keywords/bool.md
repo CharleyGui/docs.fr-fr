@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - bool keyword [C#]
 ms.assetid: 551cfe35-2632-4343-af49-33ad12da08e2
-ms.openlocfilehash: d87da29872582e9c0d47a6c999312ce88252a5cc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: a6aae34433ee6f5d141d95f0c434af1825e9bf4b
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59334170"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424435"
 ---
 # <a name="bool-c-reference"></a>bool (référence C#)
 
@@ -40,7 +40,7 @@ Pour tester une variable du type `int`, vous devez la comparer explicitement à 
 
 [!code-csharp[csrefKeywordsTypes#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#3)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Dans cet exemple, vous tapez un caractère, et le programme vérifie si le caractère entré est une lettre. Si c’est une lettre, le programme vérifie s’il s’agit d’une minuscule ou d’une majuscule. Ces vérifications sont effectuées avec les méthodes <xref:System.Char.IsLetter%2A>, et <xref:System.Char.IsLower%2A>, qui retournent toutes les deux le type `bool` :
 
@@ -55,7 +55,7 @@ Dans cet exemple, vous tapez un caractère, et le programme vérifie si le carac
 - [Référence C#](../../../csharp/language-reference/index.md)
 - [Guide de programmation C#](../../../csharp/programming-guide/index.md)
 - [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
-- [Tableau des types intégraux](../../../csharp/language-reference/keywords/integral-types-table.md)
+- [Types intégraux](../../../csharp/language-reference/builtin-types/integral-numeric-types.md)
 - [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)
 - [Tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)
 - [Tableau des conversions numériques explicites](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)

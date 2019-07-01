@@ -6,12 +6,12 @@ helpviewer_keywords:
 - method parameters [C#], reference types
 - parameters [C#], reference
 ms.assetid: 9e6eb65c-942e-48ab-920a-b7ba9df4ea20
-ms.openlocfilehash: 34e3370b0f6d28160be3ad9d918c110fc93f51fe
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 1b2aae49fbea138646b5f325919246238b2401ae
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674079"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398355"
 ---
 # <a name="passing-reference-type-parameters-c-programming-guide"></a>Passage de paramètres de type référence (Guide de programmation C#)
 Une variable d’un [type référence](../../../csharp/language-reference/keywords/reference-types.md) ne contient pas directement ses données ; il contient une référence à ses données. Quand vous passez un paramètre de type référence par valeur, il est possible de changer les données appartenant à l’objet référencé, comme la valeur d’un membre de classe. En revanche, vous ne pouvez pas changer la valeur de la référence elle-même ; par exemple, vous ne pouvez pas utiliser la même référence pour allouer de la mémoire à un nouvel objet et la faire persister en dehors de la méthode. Pour cela, passez le paramètre en utilisant le mot clé [ref](../../../csharp/language-reference/keywords/ref.md) ou [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md). Pour des raisons de simplicité, les exemples suivants utilisent `ref`.  
@@ -21,7 +21,7 @@ Une variable d’un [type référence](../../../csharp/language-reference/keywor
   
  [!code-csharp[csProgGuideParameters#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideParameters/CS/Parameters.cs#7)]  
   
- Dans l’exemple précédent, le tableau `arr`, qui est un type référence, est passé à la méthode sans le paramètre `ref`. Dans ce cas, une copie de la référence, qui pointe vers `arr`, est passée à la méthode. La sortie montre que la méthode peut modifier le contenu d’un élément du tableau, dans ce cas de `1` à `888`. Cependant, si vous allouez une nouvelle portion de mémoire via l’opérateur [new](../../../csharp/language-reference/keywords/new.md) à l’intérieur de la méthode `Change`, la variable `pArray` fait référence à un nouveau tableau. Par conséquent, les modifications apportées à la suite de cette opération n’ont pas d’effet sur le tableau d’origine (`arr`), qui est créé à l’intérieur de `Main`. En fait, deux tableaux sont créés dans cet exemple : un à l’intérieur de `Main` et un autre à l’intérieur de la méthode `Change`.  
+ Dans l’exemple précédent, le tableau `arr`, qui est un type référence, est passé à la méthode sans le paramètre `ref`. Dans ce cas, une copie de la référence, qui pointe vers `arr`, est passée à la méthode. La sortie montre que la méthode peut modifier le contenu d’un élément du tableau, dans ce cas de `1` à `888`. Cependant, si vous allouez une nouvelle portion de mémoire via l’opérateur [new](../../../csharp/language-reference/operators/new-operator.md) à l’intérieur de la méthode `Change`, la variable `pArray` fait référence à un nouveau tableau. Par conséquent, les modifications apportées à la suite de cette opération n’ont pas d’effet sur le tableau d’origine (`arr`), qui est créé à l’intérieur de `Main`. En fait, deux tableaux sont créés dans cet exemple : un à l’intérieur de `Main` et un autre à l’intérieur de la méthode `Change`.  
   
 ## <a name="passing-reference-types-by-reference"></a>Passage de types référence par référence  
  L’exemple suivant est identique au précédent, sauf que le mot clé `ref` est ajouté à l’en-tête et à l’appel de la méthode. Les modifications qui se produisent dans la méthode affectent la variable d’origine dans le programme appelant.  

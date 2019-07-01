@@ -3,12 +3,12 @@ title: Nombres en C# – Tutoriel d’introduction à C#
 description: Découvrez C# en explorant les types numériques, leurs propriétés et méthodes.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: 1b09a65b42395bfa1caf9e564120d3df1f3f1ed5
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 65b31c29fa9662619f92efb7977577f12d23fb30
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57673858"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423417"
 ---
 # <a name="manipulate-integral-and-floating-point-numbers-in-c"></a>Manipuler les nombres intégraux et à virgule flottante en C\#
 
@@ -320,7 +320,7 @@ Vous avez terminé le guide de démarrage rapide « Nombres en C# ». Vous pouve
 
 Pour en savoir plus sur les nombres en C#, consultez les rubriques suivantes :
 
-- [Tableau des types intégraux](../../language-reference/keywords/integral-types-table.md)
+- [Types intégraux](../../language-reference/builtin-types/integral-numeric-types.md)
 - [Tableau des types virgule flottante](../../language-reference/keywords/floating-point-types-table.md)
 - [Tableau des types intégrés](../../language-reference/keywords/built-in-types-table.md)
 - [Tableau des conversions numériques implicites](../../language-reference/keywords/implicit-numeric-conversions-table.md)

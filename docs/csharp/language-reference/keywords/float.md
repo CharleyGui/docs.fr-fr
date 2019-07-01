@@ -9,12 +9,12 @@ helpviewer_keywords:
 - float keyword [C#]
 - floating-point numbers [C#], float keyword
 ms.assetid: 1e77db7b-dedb-48b7-8dd1-b055e96a9258
-ms.openlocfilehash: 6bf8043b97d23fdb91ca5798ed46cdea783bad7e
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: db0139f2000c1bc2c5a13a3a542164201e73f0fb
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54514127"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424207"
 ---
 # <a name="float-c-reference"></a>float (référence C#)
 
@@ -54,9 +54,9 @@ Une expression à virgule flottante peut contenir les ensembles de valeurs suiva
 
 Pour plus d’informations sur ces valeurs, consultez IEEE Standard for Binary Floating-Point Arithmetic, disponible sur le site web de [l’IEEE](https://www.ieee.org).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
-Dans l’exemple suivant, un [int](int.md), un [short](short.md) et un `float` sont inclus dans une expression mathématique produisant un résultat `float`. (N’oubliez pas que `float` est un alias du type <xref:System.Single?displayProperty=nameWithType>.) Notez qu’il n’y a aucune valeur [double](double.md) dans l’expression.
+Dans l’exemple suivant, un [int](../builtin-types/integral-numeric-types.md), un [short](../builtin-types/integral-numeric-types.md) et un `float` sont inclus dans une expression mathématique produisant un résultat `float`. (N’oubliez pas que `float` est un alias du type <xref:System.Single?displayProperty=nameWithType>.) Notez qu’il n’y a aucune valeur [double](double.md) dans l’expression.
 
 [!code-csharp[csrefKeywordsTypes#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#13)]
 
@@ -71,7 +71,7 @@ Dans l’exemple suivant, un [int](int.md), un [short](short.md) et un `float` s
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Cast et conversions de types](../../programming-guide/types/casting-and-type-conversions.md)
 - [Mots clés C#](index.md)
-- [Tableau des types intégraux](integral-types-table.md)
+- [Types intégraux](../../../csharp/language-reference/builtin-types/integral-numeric-types.md)
 - [Tableau des types intégrés](built-in-types-table.md)
 - [Tableau des conversions numériques implicites](implicit-numeric-conversions-table.md)
 - [Tableau des conversions numériques explicites](explicit-numeric-conversions-table.md)

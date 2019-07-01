@@ -6,12 +6,12 @@ ms.author: ronpet
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
-ms.openlocfilehash: 3e4fed8ddde007eb9ce233eea942d6c052f0f2c4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1e825efcb2a352c823391fb0dad3d566189da001
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615177"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67425535"
 ---
 # <a name="framework-libraries"></a>Bibliothèques de framework
 
@@ -28,11 +28,11 @@ Les bibliothèques de classes de base fournissent les types les plus fondamentau
 .NET inclut un ensemble de types primitifs qui sont utilisés (à des degrés divers) dans tous les programmes. Ces types contiennent des données, comme des nombres, des chaînes, des octets et des objets arbitraires. Le langage C# comprend des mots clés pour ces types. Un exemple d’ensemble de ces types est indiqué ci-dessous, avec les mots clés C# correspondants.
 
 * <xref:System.Object?displayProperty=nameWithType> ([object](../csharp/language-reference/keywords/object.md)) : Classe de base par excellence dans le système de type CRL. Elle constitue la racine de la hiérarchie des types.
-* <xref:System.Int16?displayProperty=nameWithType> ([short](../csharp/language-reference/keywords/short.md)) : Type entier signé 16 bits. L’entier non signé <xref:System.UInt16> existe également.
-* <xref:System.Int32?displayProperty=nameWithType> ([int](../csharp/language-reference/keywords/int.md)) : Type entier signée 32 bits. L’entier non signé [UInt32](../csharp/language-reference/keywords/uint.md) existe également.
+* <xref:System.Int16?displayProperty=nameWithType> ([short](../csharp/language-reference/builtin-types/integral-numeric-types.md)) : Type entier signé 16 bits. L’entier non signé <xref:System.UInt16> existe également.
+* <xref:System.Int32?displayProperty=nameWithType> ([int](../csharp/language-reference/builtin-types/integral-numeric-types.md)) : Type entier signée 32 bits. L’entier non signé [UInt32](../csharp/language-reference/builtin-types/integral-numeric-types.md) existe également.
 * <xref:System.Single?displayProperty=nameWithType> ([float](../csharp/language-reference/keywords/float.md)) : Type virgule flottante 32 bits.
 * <xref:System.Decimal?displayProperty=nameWithType> ([decimal](../csharp/language-reference/keywords/decimal.md)) : Type décimal 128 bits.
-* <xref:System.Byte?displayProperty=nameWithType> ([byte](../csharp/language-reference/keywords/byte.md)) : Entier non signé 8 bits qui représente un octet de mémoire.
+* <xref:System.Byte?displayProperty=nameWithType> ([byte](../csharp/language-reference/builtin-types/integral-numeric-types.md)) : Entier non signé 8 bits qui représente un octet de mémoire.
 * <xref:System.Boolean?displayProperty=nameWithType>([bool](../csharp/language-reference/keywords/bool.md)) : Type booléen qui représente `true` ou `false`.
 * <xref:System.Char?displayProperty=nameWithType> ([char](../csharp/language-reference/keywords/char.md)) : Type numérique 16 bits qui représente un caractère Unicode.
 * <xref:System.String?displayProperty=nameWithType> ([string](../csharp/language-reference/keywords/string.md)) : Représente une série de caractères. Différent de `char[]`, mais permet l’indexation dans chaque `char` individuel de `string`.

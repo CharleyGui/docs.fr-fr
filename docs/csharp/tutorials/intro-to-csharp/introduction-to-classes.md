@@ -3,12 +3,12 @@ title: Classes et objets – Présentation du tutoriel C#
 description: Créez votre premier programme C# et explorez les concepts orientés objet
 ms.date: 10/11/2017
 ms.custom: mvc
-ms.openlocfilehash: 6b4c135b7adf96de3a234cde02485a1e84fc9fd3
-ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
+ms.openlocfilehash: 0932ae8a9d3facd4b2a8469664922f163fe4c679
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55204780"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397826"
 ---
 # <a name="explore-object-oriented-programming-with-classes-and-objects"></a>Explorez la programmation orientée objet avec des classes et des objets
 
@@ -89,7 +89,7 @@ public BankAccount(string name, decimal initialBalance)
 }
 ```
 
-Les constructeurs sont appelés quand vous créez un objet à l’aide de [`new`](../../language-reference/keywords/new.md). Remplacez la ligne `Console.WriteLine("Hello World!");` dans ***program.cs*** par la ligne suivante (remplacez `<name>` par votre nom) :
+Les constructeurs sont appelés quand vous créez un objet à l’aide de [`new`](../../language-reference/operators/new-operator.md). Remplacez la ligne `Console.WriteLine("Hello World!");` dans ***program.cs*** par la ligne suivante (remplacez `<name>` par votre nom) :
 
 ```csharp
 var account = new BankAccount("<name>", 1000);
