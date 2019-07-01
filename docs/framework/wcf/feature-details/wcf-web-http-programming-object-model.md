@@ -2,12 +2,12 @@
 title: Modèle objet de programmation Web HTTP WCF
 ms.date: 03/30/2017
 ms.assetid: ed96b5fc-ca2c-4b0d-bdba-d06b77c3cb2a
-ms.openlocfilehash: f8bda6292506b64057dee006fa59b7723fa406b2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2401a8a051ed4dcd386c7794a2197672709ea423
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648412"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487694"
 ---
 # <a name="wcf-web-http-programming-object-model"></a>Modèle objet de programmation Web HTTP WCF
 Le modèle de programmation WCF WEB HTTP permet aux développeurs d’exposer des services Web de Windows Communication Foundation (WCF) via les demandes HTTP de base sans avoir recours à SOAP. Le modèle de programmation WCF WEB HTTP repose sur le modèle d’extensibilité WCF existant. Il définit les classes suivantes :  
@@ -74,7 +74,7 @@ Le modèle de programmation WCF WEB HTTP permet aux développeurs d’exposer de
  La classe <xref:System.UriTemplateTable> représente un jeu associatif d'objets <xref:System.UriTemplate> liés à un objet choisi par le développeur. Elle vous permet de faire correspondre les URI (Uniform Resource Identifiers) des candidats par rapport aux modèles du jeu et de récupérer les données associées aux modèles correspondants. <xref:System.UriTemplateTable> est utilisé en interne par le modèle de programmation WCF WEB HTTP pour mapper des URI spécifiques ou des groupes d’URI aux opérations de service.  
   
 ## <a name="webservicehost"></a>WebServiceHost  
- <xref:System.ServiceModel.Web.WebServiceHost> étend le <xref:System.ServiceModel.ServiceHost> de manière à faciliter l'hébergement d'un service de style Web non-SOAP. Si <xref:System.ServiceModel.Web.WebServiceHost> ne trouve aucun point de terminaison dans la description du service, il crée automatiquement un point de terminaison par défaut au niveau de l'adresse de base du service. Lors de la création d'un point de terminaison HTTP par défaut, <xref:System.ServiceModel.Web.WebServiceHost> désactive également la page d'aide HTTP et la fonctionnalité WSDL (Web Services Description Language) GET afin que le point de terminaison des métadonnées n'interfère pas avec le point de terminaison HTTP par défaut.  <xref:System.ServiceModel.Web.WebServiceHost> garantit également que le <xref:System.ServiceModel.WebHttpBinding> requis soit attaché à tous les points de terminaison qui utilisent <xref:System.ServiceModel.Description.WebHttpBehavior>. Enfin, <xref:System.ServiceModel.Web.WebServiceHost> configure automatiquement la liaison du point de terminaison afin qu’il puisse profiter des paramètres de sécurité IIS (Internet Information Services) en cas d’utilisation dans un répertoire virtuel sécurisé.  
+ <xref:System.ServiceModel.Web.WebServiceHost> étend le <xref:System.ServiceModel.ServiceHost> de manière à faciliter l'hébergement d'un service de style Web non-SOAP. Si <xref:System.ServiceModel.Web.WebServiceHost> ne trouve aucun point de terminaison dans la description du service, il crée automatiquement un point de terminaison par défaut au niveau de l'adresse de base du service. Lors de la création d'un point de terminaison HTTP par défaut, <xref:System.ServiceModel.Web.WebServiceHost> désactive également la page d'aide HTTP et la fonctionnalité WSDL (Web Services Description Language) GET afin que le point de terminaison des métadonnées n'interfère pas avec le point de terminaison HTTP par défaut. <xref:System.ServiceModel.Web.WebServiceHost> garantit également que le <xref:System.ServiceModel.WebHttpBinding> requis soit attaché à tous les points de terminaison qui utilisent <xref:System.ServiceModel.Description.WebHttpBehavior>. Enfin, <xref:System.ServiceModel.Web.WebServiceHost> configure automatiquement la liaison du point de terminaison afin qu’il puisse profiter des paramètres de sécurité IIS (Internet Information Services) en cas d’utilisation dans un répertoire virtuel sécurisé.  
   
 ## <a name="webservicehostfactory"></a>WebServiceHostFactory  
  La classe <xref:System.ServiceModel.Activation.WebServiceHostFactory> est utilisée pour créer dynamiquement un <xref:System.ServiceModel.Web.WebServiceHost> lorsqu'un service est hébergé dans les services IIS (Internet Information Services) ou WAS (Windows Process Activation Service). À la différence d'un service auto-hébergé où l'application d'hébergement instancie le <xref:System.ServiceModel.Web.WebServiceHost>, les services hébergés dans les services IIS ou WAS utilisent cette classe pour créer le <xref:System.ServiceModel.Web.WebServiceHost> pour ces services. La méthode <xref:System.ServiceModel.Activation.WebServiceHostFactory.CreateServiceHost%28System.Type%2CSystem.Uri%5B%5D%29> est appelée lorsqu'une demande entrante pour le service est reçue.  
@@ -97,7 +97,7 @@ Le modèle de programmation WCF WEB HTTP permet aux développeurs d’exposer de
  Le modèle de programmation WCF WEB HTTP n’utilise pas de messages basés sur SOAP et par conséquent ne prend pas en charge WS-* protocoles. Vous pouvez toutefois exposer le même contrat par deux points de terminaison différents, l'un utilisant SOAP et l'autre pas. Voir [Guide pratique pour Exposer un contrat à des Clients SOAP et Web](../../../../docs/framework/wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md) pour obtenir un exemple.  
   
 ## <a name="security"></a>Sécurité  
- Étant donné que le modèle de programmation WCF WEB HTTP ne prend pas en charge WS-* protocoles, la seule façon de sécuriser un service Web basé sur le modèle de programmation WCF WEB HTTP consiste à exposer votre service à l’aide de SSL. Pour plus d’informations sur la configuration de SSL avec [!INCLUDE[iisver](../../../../includes/iisver-md.md)] consultez [comment implémenter SSL dans IIS](https://go.microsoft.com/fwlink/?LinkId=131613)  
+ Étant donné que le modèle de programmation WCF WEB HTTP ne prend pas en charge WS-* protocoles, la seule façon de sécuriser un service Web basé sur le modèle de programmation WCF WEB HTTP consiste à exposer votre service à l’aide de SSL. Pour plus d’informations sur la configuration de SSL avec IIS 7.0, consultez [comment implémenter SSL dans IIS](https://go.microsoft.com/fwlink/?LinkId=131613)  
   
 ## <a name="see-also"></a>Voir aussi
 

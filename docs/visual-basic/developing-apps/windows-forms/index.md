@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows applications
 - Windows Forms, Visual Basic
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
-ms.openlocfilehash: d1f43a5b7a539c89a753d168fbf0e05ca4118f58
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: dd3385d6459199d56f74abfb1b8e0e218a2adf78
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347985"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487789"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Concepts de base de l'application Windows Forms (Visual Basic)
 Une partie importante de Visual Basic est la possibilité de créer des applications Windows Forms qui s’exécutent localement sur les ordinateurs des utilisateurs. Vous pouvez utiliser Visual Studio pour créer l’interface utilisateur et d’applications à l’aide de Windows Forms. Une application Windows Forms repose sur les classes de le <xref:System.Windows.Forms> espace de noms.  
@@ -71,19 +71,19 @@ Une partie importante de Visual Basic est la possibilité de créer des applicat
 |Utiliser la fenêtre Sources de données|[Procédure pas à pas : Affichage de données sur un formulaire Windows](/visualstudio/data-tools/accessing-data-in-visual-studio)|  
   
 ## <a name="deploying-applications-to-client-computers"></a>Déploiement d'applications sur les ordinateurs clients  
- Une fois que vous avez écrit votre application, vous devez l’envoyer à vos utilisateurs afin qu’ils peuvent installer et exécuter sur leurs propres ordinateurs clients. À l’aide de la [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] technologie, vous pouvez déployer vos applications depuis Visual Studio à l’aide de quelques clics et fournir aux utilisateurs une URL pointant vers votre application sur le Web. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] gère tous les éléments et dépendances dans votre application et s’assure que l’application est correctement installée sur l’ordinateur client.  
+ Une fois que vous avez écrit votre application, vous devez l’envoyer à vos utilisateurs afin qu’ils peuvent installer et exécuter sur leurs propres ordinateurs clients. À l’aide de la technologie ClickOnce, vous pouvez déployer vos applications depuis Visual Studio à l’aide de quelques clics et fournir aux utilisateurs une URL pointant vers votre application sur le Web. ClickOnce gère tous les éléments et dépendances dans votre application et s’assure que l’application est correctement installée sur l’ordinateur client.  
   
- Vous pouvez configurer les applications [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] pour qu'elles s'exécutent uniquement quand l'utilisateur est connecté au réseau ou pour qu'elles s'exécutent en ligne et hors connexion. Lorsque vous spécifiez qu’une application doit prendre en charge une opération hors connexion, [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] ajoute un lien à votre application de l’utilisateur **Démarrer** menu, afin que l’utilisateur puisse l’ouvrir sans utiliser l’URL.  
+ Applications ClickOnce peuvent être configurées pour s’exécuter uniquement quand l’utilisateur est connecté au réseau, ou pour s’exécuter à la fois en ligne et hors connexion. Lorsque vous spécifiez qu’une application doit prendre en charge une opération hors connexion, ClickOnce ajoute un lien à votre application de l’utilisateur **Démarrer** menu, afin que l’utilisateur puisse l’ouvrir sans utiliser l’URL.  
   
- Quand vous mettez à jour votre application, vous publiez un nouveau manifeste de déploiement et une nouvelle copie de votre application sur votre serveur web. [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] détecte les mises à jour disponibles et met à niveau d’installation de l’utilisateur ; aucune programmation personnalisée n’est nécessaire pour mettre à jour les anciens assemblys.  
+ Quand vous mettez à jour votre application, vous publiez un nouveau manifeste de déploiement et une nouvelle copie de votre application sur votre serveur web. ClickOnce détecte qu’il est une mise à jour disponible et met à niveau d’installation de l’utilisateur ; aucune programmation personnalisée n’est nécessaire pour mettre à jour les anciens assemblys.  
   
- Pour obtenir une introduction complète à [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)], consultez [Sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment). Pour obtenir des informations détaillées sur l’utilisation de ces fonctionnalités, consultez les rubriques d’aide suivantes :  
+ Pour une introduction complète à ClickOnce, consultez [ClickOnce Security and Deployment](/visualstudio/deployment/clickonce-security-and-deployment). Pour obtenir des informations détaillées sur l’utilisation de ces fonctionnalités, consultez les rubriques d’aide suivantes :  
   
 |À|Voir|  
 |--------|---------|  
-|Déployer une application avec [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[Guide pratique pour publier une application ClickOnce à l’aide de l’Assistant Publication](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [Procédure pas à pas : déploiement manuel d'une application ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|  
-|Mise à jour un [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)] déploiement|[Guide pratique pour gérer les mises à jour d’une application ClickOnce](/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|  
-|Gérer la sécurité avec [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]|[Guide pratique pour activer les paramètres de sécurité ClickOnce](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|  
+|Déployer une application avec ClickOnce|[Guide pratique pour publier une application ClickOnce à l’aide de l’Assistant Publication](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [Procédure pas à pas : déploiement manuel d'une application ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|  
+|Mettre à jour un déploiement ClickOnce|[Guide pratique pour gérer les mises à jour d’une application ClickOnce](/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|  
+|Gérer la sécurité avec ClickOnce|[Guide pratique pour activer les paramètres de sécurité ClickOnce](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|  
   
 ## <a name="other-controls-and-features"></a>Autres contrôles et fonctionnalités  
  Il existe de nombreuses autres fonctionnalités dans Windows Forms qui simplifient et accélèrent l'implémentation des tâches courantes, par exemple la prise en charge de la création de boîtes de dialogue, de l'impression, de l'ajout d'aide et de documentation et de la localisation de votre application en plusieurs langues. En outre, Windows Forms repose sur le système de sécurité robuste du .NET Framework, ce qui vous permet de publier des applications plus sécurisées à vos clients.  

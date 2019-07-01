@@ -13,12 +13,12 @@ helpviewer_keywords:
 - file access [Windows Forms]
 - security [Windows Forms], data access
 ms.assetid: 3cd3e55b-2f5e-40dd-835d-f50f7ce08967
-ms.openlocfilehash: c804a0a751969377c292613fdae8cc19b266ffa9
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 8ad64ddcb25aa7037e30ad0618d16d654d9855d6
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834058"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487251"
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Accès plus sécurisé aux fichiers et aux données dans les Windows Forms
 Le .NET Framework utilise des autorisations pour aider à protéger les ressources et les données. L'emplacement où votre application peut lire ou écrire des données dépend des autorisations qui lui sont accordées. Quand votre application s'exécute dans un environnement de confiance partielle, vous n'avez peut-être pas accès à vos données ou vous devrez peut-être modifier la manière dont vous accédez aux données.  
@@ -26,7 +26,7 @@ Le .NET Framework utilise des autorisations pour aider à protéger les ressourc
  Quand vous rencontrez une restriction de sécurité, vous avez deux options : déclarer l'autorisation (en supposant qu'elle a été accordée à votre application) ou utiliser une version de la fonctionnalité écrite pour fonctionner en mode de confiance partielle. Les sections suivantes décrivent comment gérer l'accès aux fichiers, aux bases de données et au Registre à partir d'applications qui s'exécutent dans un environnement de confiance partielle.  
   
 > [!NOTE]
->  Par défaut, les outils qui génèrent des déploiements [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] font en sorte que ces déploiements demandent par défaut une confiance totale aux ordinateurs sur lesquels ils s'exécutent. Si vous décidez que vous voulez bénéficier de renforcer la sécurité de l’exécution en confiance partielle, vous devez modifier cette valeur par défaut dans Visual Studio ou un des outils de Kit de développement logiciel (SDK) Windows (Mage.exe ou MageUI.exe). Pour plus d’informations sur la sécurité Windows Forms et sur la façon de déterminer le niveau de confiance approprié pour votre application, consultez [Security in Windows Forms Overview](security-in-windows-forms-overview.md).  
+>  Par défaut, les outils qui génèrent des déploiements ClickOnce par défaut ces déploiements à la demande de confiance totale à partir des ordinateurs sur lesquels elles s’exécutent. Si vous décidez que vous voulez bénéficier de renforcer la sécurité de l’exécution en confiance partielle, vous devez modifier cette valeur par défaut dans Visual Studio ou un des outils de Kit de développement logiciel (SDK) Windows (Mage.exe ou MageUI.exe). Pour plus d’informations sur la sécurité Windows Forms et sur la façon de déterminer le niveau de confiance approprié pour votre application, consultez [Security in Windows Forms Overview](security-in-windows-forms-overview.md).  
   
 ## <a name="file-access"></a>Accès aux fichiers  
  Le <xref:System.Security.Permissions.FileIOPermission> classe contrôle l’accès de fichiers et dossiers dans le .NET Framework. Par défaut, le système de sécurité n'accorde pas <xref:System.Security.Permissions.FileIOPermission> aux environnements de confiance partielle tels que les zones Intranet local et Internet. Cependant, une application qui nécessite l'accès aux fichiers peut quand même fonctionner dans ces environnements si vous modifiez la conception de votre application ou si vous utilisez des méthodes différentes pour accéder aux fichiers. Par défaut, la zone Intranet local est autorisée à accéder au même site et au même répertoire, à se reconnecter au site de son origine et à lire à partir de son répertoire d'installation. Par défaut, la zone Internet est autorisée uniquement à se reconnecter au site de son origine.  

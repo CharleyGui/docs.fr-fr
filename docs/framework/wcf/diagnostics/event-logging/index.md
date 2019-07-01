@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - event logging [WCF]
 ms.assetid: aac0530d-f44c-45a1-bada-e30e0677b41f
-ms.openlocfilehash: adff5bf2fad9f78fccbb606a5bd27f2f1dc32647
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c4f73480208fbf900bb8742eb6d7b2e2c0e6a4ff
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638765"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486624"
 ---
 # <a name="event-logging-in-wcf"></a>Journalisation des événements dans WCF
 Windows Communication Foundation (WCF) effectue le suivi des événements internes dans le journal des événements Windows.  
@@ -24,7 +24,7 @@ Windows Communication Foundation (WCF) effectue le suivi des événements intern
   
 - Écouteur partagé : Le Service de partage de Port TCP WCF journalise un événement lorsqu’il ne démarre.  
   
-- [!INCLUDE[infocard](../../../../../includes/infocard-md.md)]: Journalise des événements lorsque le service ne parvient pas à démarrer.  
+- CardSpace : Journalise des événements lorsque le service ne parvient pas à démarrer.  
   
 - Événements critiques et erreurs, tels que les échecs de démarrage ou les blocages  
   

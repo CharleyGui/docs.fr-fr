@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - denial of service [WCF]
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
-ms.openlocfilehash: d6dea344d5af24ba2f5bb4aa4064a4f876408380
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 0946e123e10fbad7357c9be356287e5e87b271d2
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423887"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486935"
 ---
 # <a name="denial-of-service"></a>Refus de service
 Un déni de service se produit lorsqu'un système est saturé au point que le traitement des messages est impossible ou extrêmement lent.  
@@ -67,7 +67,7 @@ Un déni de service se produit lorsqu'un système est saturé au point que le tr
  Dans les rares cas où un certificat X.509 contient plusieurs noms de sujet de remplacement, et que vous autorisez l'utilisation du nom de sujet de remplacement, l'autorisation peut échouer.  
   
 ## <a name="protect-configuration-files-with-acls"></a>Protection des fichiers de configuration avec des listes ACL  
- Vous pouvez spécifier des revendications requises et facultatives dans des fichiers de code et de configuration pour des jetons émis par [!INCLUDE[infocard](../../../../includes/infocard-md.md)]. Cette procédure entraîne l'émission d'éléments correspondants dans les messages `RequestSecurityToken` envoyés au service de jeton de sécurité. Un intrus peut modifier un code ou une configuration pour supprimer des revendications requises ou facultatives et éventuellement faire en sorte que le service de jeton de sécurité publie un jeton qui n'autorise pas l'accès au service cible.  
+ Vous pouvez spécifier des revendications obligatoires et facultatifs dans les fichiers de code et la configuration pour les jetons émis de CardSpace. Cette procédure entraîne l'émission d'éléments correspondants dans les messages `RequestSecurityToken` envoyés au service de jeton de sécurité. Un intrus peut modifier un code ou une configuration pour supprimer des revendications requises ou facultatives et éventuellement faire en sorte que le service de jeton de sécurité publie un jeton qui n'autorise pas l'accès au service cible.  
   
  Pour atténuer : Requièrent l’accès à l’ordinateur pour modifier le fichier de configuration. Utilisez les listes de contrôle d'accès au fichier (ACL) pour sécuriser les fichiers de configuration. WCF nécessite que code dans le répertoire de l’application ou le global assembly cache avant d’autoriser ce code à charger à partir de la configuration. Utilisez des listes ACL de répertoire pour sécuriser des répertoires.  
   

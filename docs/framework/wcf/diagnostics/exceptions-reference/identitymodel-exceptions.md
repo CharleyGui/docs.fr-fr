@@ -2,12 +2,12 @@
 title: Exceptions IdentityModel
 ms.date: 03/30/2017
 ms.assetid: 4ef34497-8ff5-4621-b773-7731cc721231
-ms.openlocfilehash: ee0b5537a415e1ea53c653ae8e8485e94cc713fd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4b8af2620b6179ce4cff59d7f9871377f06ffe5f
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61998515"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486664"
 ---
 # <a name="identitymodel-exceptions"></a>Exceptions IdentityModel
 Cette rubrique répertorie toutes les exceptions générées par IdentityModel.  
@@ -100,11 +100,11 @@ Cette rubrique répertorie toutes les exceptions générées par IdentityModel.
 |SAMLAssertionMissingMajorVersionAttributeOnRead|L'attribut MajorVersion pour l'élément SamlAssertion qui est lu est manquant ou de longueur 0.|  
 |SamlAttributeClaimRightShouldBePossessProperty|Ce constructeur SamlAttribute requiert que la valeur du Droit de la revendication soit définie sur System.IdentityModel.Claims.Rights.PossessProperty.|  
 |AuthorizationPolicyEvaluated|Évaluation de la stratégie avec l'ID spécifique.|  
-|SAMLUnableToLoadCondtions|Le \<SAML : conditions > Échec du chargement de l’élément.|  
+|SAMLUnableToLoadCondtions<!-- the misspelling here is deliberate. -->|Le \<SAML : conditions > Échec du chargement de l’élément.|  
 |AESKeyLengthNotSupported|La clé de bits spécifique n'est pas prise en charge. Seule la clé de 128, 192 et 256 bits est prise en charge.|  
 |UserNameCannotBeEmpty|Le nom d'utilisateur ne peut pas être vide.|  
 |AlgorithmAndPublicKeyMisMatch|L'algorithme spécifié et la clé publique ne correspondent pas.|  
-|SAMLUnableToLoadCondtion|Le \<SAML : conditions > Échec du chargement de l’élément.|  
+|SAMLUnableToLoadCondtion<!-- the misspelling here is deliberate. -->|Le \<SAML : conditions > Échec du chargement de l’élément.|  
 |SamlAssertionMissingSigningCredentials|La valeur de SigningCredentials n'est pas définie sur l'élément SamlAssertion. SamlAssertions doit être signé, définissez cette valeur pour poursuivre.|  
 |SspiPayloadNotEncrypted|Les données binaires n'ont pas été chiffrées avec le contexte de sécurité SSPI.|  
 |SAMLAuthorizationDecisionShouldHaveOneActionOnRead|L'élément SamlAuthorizationDecisionStatement qui est lu ne contient aucun SamlAction.|  

@@ -1,13 +1,13 @@
 ---
 title: Chaînes
 description: Découvrez comment la F# type 'string' représente le texte immuable sous la forme d’une séquence de caractères Unicode.
-ms.date: 05/16/2016
-ms.openlocfilehash: c2fda4d936abab5bc3f4653613991a7f5471d81d
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 06/28/2019
+ms.openlocfilehash: 8bd7a65a8d8e9e6a2d3930cd1fc9e800342d9a18
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65642076"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487770"
 ---
 # <a name="strings"></a>Chaînes
 
@@ -29,7 +29,7 @@ Littéraux de chaîne sont délimitées par le caractère guillemet ("). Le cara
 |Barre oblique inverse|`\\`|
 |Guillemet|`\"`|
 |Apostrophe|`\'`|
-|caractère Unicode|`\uXXXX` ou `\UXXXX` (où `X` indique un chiffre hexadécimal)|
+|caractère Unicode|`\uXXXX` (UTF-16) ou `\U00XXXXXX` (UTF-32) (où `X` indique un chiffre hexadécimal)|
 
 Si précédé par le symbole @, le littéral est une chaîne textuelle. Cela signifie que les séquences d’échappement sont ignorés, sauf que deux caractères de guillemet sont interprétés comme un seul guillemet.
 

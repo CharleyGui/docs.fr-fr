@@ -5,12 +5,12 @@ helpviewer_keywords:
 - distributed application security [WCF]
 - security [WCF], transfer
 ms.assetid: 53928a10-e474-46d0-ab90-5f98f8d7b668
-ms.openlocfilehash: 70ed0fe9191c18e88198871319b3c3ee3c0b4ab4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c4feb52cbefe7e3f8bab7f90568b231302b77372
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626969"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486860"
 ---
 # <a name="distributed-application-security"></a>Sécurité des applications distribuées
 Sécurité de Windows Communication Foundation (WCF) est divisée en trois zones fonctionnelles principales : sécurité de transfert, contrôle d’accès et l’audit. La sécurité de transfert fournit l'intégrité, la confidentialité et l'authentification. La sécurité de transfert est fournie par l'un des éléments suivants : sécurité de transport, sécurité de message ou `TransportWithMessageCredential`.  
@@ -80,7 +80,7 @@ Sécurité de Windows Communication Foundation (WCF) est divisée en trois zones
 |Windows|Autorise les échanges de messages SOAP à se produire sous le contexte authentifié d'une information d'identification Windows. Utilise le mécanisme de négociation SSPI pour sélectionner le protocole Kerberos ou NTLM comme service d'authentification.|  
 |Utilisateur|Autorise le service à exiger que le client soit authentifié avec des informations d'identification de nom d'utilisateur. Notez que WCF n’autorise pas les opérations de chiffrement avec le nom d’utilisateur, telles que la génération d’une signature ou chiffrement des données. Par conséquent, WCF met en œuvre que le transport est sécurisé lors de l’utilisation des informations d’identification utilisateur.|  
 |Certificat|Autorise le service à exiger une authentification du client via un certificat.|  
-|[!INCLUDE[infocard](../../../../includes/infocard-md.md)]|Autorise le service à imposer que le client soit authentifié à l'aide d'un [!INCLUDE[infocard](../../../../includes/infocard-md.md)].|  
+|CardSpace|Permet au service d’exiger que le client soit authentifié à l’aide d’un CardSpace.|  
   
 ### <a name="programming-credentials"></a>Programmation d'informations d'identification  
  Pour chacun des types d’informations d’identification client, le modèle de programmation WCF vous permet de spécifier les valeurs et validateurs des informations d’identification à l’aide de comportements de service et comportements du canal.  

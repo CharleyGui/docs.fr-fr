@@ -2,24 +2,24 @@
 title: Options d'hébergement de workflow
 ms.date: 03/30/2017
 ms.assetid: 37bcd668-9c5c-4e7c-81da-a1f1b3a16514
-ms.openlocfilehash: 2a03c7b5e15b76eabc714f44624f04d3385720d4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b0cd9748c28cd6206e1fedffc5772b2849462dba
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670219"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487368"
 ---
 # <a name="workflow-hosting-options"></a>Options d'hébergement de workflow
-La plupart des exemples Windows Workflow Foundation (WF) utilisent des workflows hébergés dans une application console, mais ce n’est pas un scénario réaliste pour les workflows réels. Les workflows dans les applications d'entreprise réelles sont hébergés dans des processus persistants, un service Windows créé par le développeur ou une application serveur telle que [!INCLUDE[iisver](../../../includes/iisver-md.md)] ou AppFabric. Les différences entre ces approches sont les suivantes.  
+La plupart des exemples Windows Workflow Foundation (WF) utilisent des workflows hébergés dans une application console, mais ce n’est pas un scénario réaliste pour les workflows réels. Flux de travail dans les applications d’entreprise réelles sera hébergée dans un service Windows créé persistant processus-par le développeur ou une application de serveur telles que IIS 7.0 ou AppFabric. Les différences entre ces approches sont les suivantes.  
   
 ## <a name="hosting-workflows-in-iis-with-windows-appfabric"></a>Hébergement de workflows dans IIS avec Windows AppFabric  
  IIS avec AppFabric est l'hôte par défaut pour les workflows. L'application hôte de workflows utilisant AppFabric est WAS (Windows Activation Services), qui supprime la dépendance de HTTP sur IIS uniquement.  
   
 ## <a name="hosting-workflows-in-iis-alone"></a>Hébergement de workflows dans IIS uniquement  
- Il n'est pas recommandé d'utiliser uniquement [!INCLUDE[iisver](../../../includes/iisver-md.md)], car il existe des outils de gestion et d'analyse disponibles avec AppFabric qui facilitent la maintenance des applications en cours d'exécution. Les workflows doivent être hébergés dans [!INCLUDE[iisver](../../../includes/iisver-md.md)] uniquement si vous rencontrez des problèmes d'infrastructure lors de la migration vers AppFabric.  
+ À l’aide d’IIS 7.0 uniquement n’est pas recommandé, il existe des outils d’analyse disponibles avec AppFabric qui facilitent la maintenance des applications en cours d’exécution et de gestion. Flux de travail doit être hébergés dans IIS 7.0 uniquement si vous rencontrez des problèmes d’infrastructure avec la migration vers AppFabric.  
   
 > [!WARNING]
->  [!INCLUDE[iisver](../../../includes/iisver-md.md)] recycle les pools d'applications régulièrement pour différentes raisons. Lorsqu'un pool d'applications est recyclé, IIS cesse de recevoir des messages de l'ancien pool, et instancie un pool d'applications pour recevoir de nouvelles demandes. Si un workflow continue de fonctionner après avoir envoyé une réponse, [!INCLUDE[iisver](../../../includes/iisver-md.md)] ne se rendra pas compte du travail effectué, et peut recycler le pool d'applications d'hébergement. Si cela se produit, le workflow s’interrompra, et des services de suivi enregistreront un [1004 - WorkflowInstanceAborted](1004-workflowinstanceaborted.md) message avec un champ de raison vide.  
+>  IIS 7.0 recycle périodiquement les pools d’applications pour diverses raisons. Lorsqu'un pool d'applications est recyclé, IIS cesse de recevoir des messages de l'ancien pool, et instancie un pool d'applications pour recevoir de nouvelles demandes. Si un workflow continue de fonctionner après l’envoi d’une réponse, IIS 7.0 ne sera pas connaissance des travaux en cours et peut recycler le pool d’application d’hébergement. Si cela se produit, le workflow s’interrompra, et des services de suivi enregistreront un [1004 - WorkflowInstanceAborted](1004-workflowinstanceaborted.md) message avec un champ de raison vide.  
 >   
 >  Si la persistance est utilisée, l'hôte doit explicitement redémarrer les instances interrompues à partir du dernier point de persistance.  
 >   

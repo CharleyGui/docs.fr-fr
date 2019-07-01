@@ -8,12 +8,12 @@ helpviewer_keywords:
 - HTML DOM [Windows Forms], accessing
 - managed HTML DOM [Windows Forms], accessing
 ms.assetid: 40fa5cd5-1ed8-42f6-a93f-9ac01608bbeb
-ms.openlocfilehash: 0374e63191f5f81891a0c7c78c5e739ac5ec7984
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2a195dc6583d5a0a72bd08b66f8933f4002e879a
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624161"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487276"
 ---
 # <a name="how-to-access-the-managed-html-document-object-model"></a>Procédure : accéder au modèle objet de document HTML managé
 Vous pouvez accéder au modèle DOM (Document Object Model) HTML géré à partir de deux types d'applications :  
@@ -43,7 +43,7 @@ Vous pouvez accéder au modèle DOM (Document Object Model) HTML géré à parti
   
 ## <a name="net-framework-security"></a>Sécurité .NET Framework  
   
-1. Votre application ou <xref:System.Windows.Forms.UserControl> nécessite la confiance totale pour accéder au modèle DOM HTML géré. Si vous déployez une application Windows Forms à l’aide de [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)], vous pouvez demander une confiance totale en utilisant les options d’élévation d’autorisations ou de déploiement d’application approuvée. Pour plus d’informations, consultez [Sécurisation des applications ClickOnce](/visualstudio/deployment/securing-clickonce-applications).  
+1. Votre application ou <xref:System.Windows.Forms.UserControl> nécessite la confiance totale pour accéder au modèle DOM HTML géré. Si vous déployez une application Windows Forms à l’aide de ClickOnce, vous pouvez demander une confiance totale à l’aide de l’élévation d’autorisations ou de déploiement d’applications approuvées ; consultez [sécurisation des Applications ClickOnce](/visualstudio/deployment/securing-clickonce-applications) pour plus d’informations.  
   
 ## <a name="see-also"></a>Voir aussi
 

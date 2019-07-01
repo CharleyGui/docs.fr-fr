@@ -2,12 +2,12 @@
 title: Microsoft.Transactions.TransactionBridge.DurableParticipantReplayWhilePreparing
 ms.date: 03/30/2017
 ms.assetid: 10ef3876-6f8e-4d4e-8444-f47847b64795
-ms.openlocfilehash: f5d74d73cc43b500d3920ca03905f4eb7543619a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 93354fbdd0c1726280526ca07a8b3dd1c57c8a25
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61779741"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486770"
 ---
 # <a name="microsofttransactionstransactionbridgedurableparticipantreplaywhilepreparing"></a>Microsoft.Transactions.TransactionBridge.DurableParticipantReplayWhilePreparing
 Le service de protocole WS-AT a reçu un message Replay d'un participant durable n'ayant pas répondu au message Prepared. Par conséquent, la transaction a été abandonnée.  
@@ -15,8 +15,9 @@ Le service de protocole WS-AT a reçu un message Replay d'un participant durable
 ## <a name="description"></a>Description  
  Un suivi est généré si un message Replay est reçu lorsqu'un participant durable est encore en cours de préparation. Il s’agit d’un message illégal pour cet état et la transaction va être abandonnée.  
   
-## <a name="troubleshooting"></a>Résolution des problèmes  
- Recevoir ce message d'erreur peut indiquer que la défaillance du participant durable (notamment d'un gestionnaire de transactions subalterne) est à présent résolue. Cependant, le résultat de la transaction étant incertain, une requête de statut est envoyée.  
+## <a name="troubleshooting"></a>Résolution des problèmes
+
+Réception de cette erreur peut indiquer qu’un participant Durable (y compris le subalterne) a récupéré à partir de l’échec ; Toutefois, il n’est pas sûr du résultat et demande son état.  
   
 ## <a name="see-also"></a>Voir aussi
 

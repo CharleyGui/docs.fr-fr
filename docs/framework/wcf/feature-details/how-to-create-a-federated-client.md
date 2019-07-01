@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 56ece47e-98bf-4346-b92b-fda1fc3b4d9c
-ms.openlocfilehash: 19ffe7e3fb0de9b377279d9cd274f998a104c6b2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8de673fae16da8189589e20b6d9a66b96e1823ba
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62047813"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487107"
 ---
 # <a name="how-to-create-a-federated-client"></a>Procédure : créer un client fédéré
 Dans Windows Communication Foundation (WCF), création d’un client pour un *service fédéré* se compose de trois étapes principales :  
@@ -39,7 +39,7 @@ Dans Windows Communication Foundation (WCF), création d’un client pour un *se
   
 4. Examiner toute supplémentaires [ \<issuedTokenParameters >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md) éléments à l’intérieur de la commenté out <`alternativeIssuedTokenParameters`> élément. Lors de l'utilisation de l'outil Svcutil.exe pour générer la configuration pou un service fédéré, si le service fédéré ou tous les services d'émission de jeton de sécurité intermédiaires ne spécifient pas une adresse d'émetteur, mais spécifie une adresse de métadonnées pour un service d'émission de jeton de sécurité qui expose plusieurs points de terminaison, le fichier de configuration résultant fait référence au premier point de terminaison. Points de terminaison supplémentaires se trouvent dans le fichier de configuration comme commenté <`alternativeIssuedTokenParameters`> éléments.  
   
-     Déterminez si un de ces <`issuedTokenParameters`> est préférable à celui déjà présent dans la configuration. Par exemple, le client peut choisir de s'authentifier auprès d'un service d'émission de jeton de sécurité à l'aide d'un jeton [!INCLUDE[infocard](../../../../includes/infocard-md.md)] Windows plutôt qu'une paire de nom d'utilisateur/mot de passe.  
+     Déterminez si un de ces <`issuedTokenParameters`> est préférable à celui déjà présent dans la configuration. Par exemple, le client peut choisir de s’authentifier à un service de jeton de sécurité à l’aide d’un jeton Windows CardSpace plutôt que d’une paire nom/mot de passe d’utilisateur.  
   
     > [!NOTE]
     >  Dans le cas où plusieurs services d'émission de jeton de sécurité doivent être parcourus avant de communiquer avec le service, il est possible pour un service d'émission de jeton de sécurité intermédiaire de diriger le client vers un service d'émission de jeton de sécurité incorrect. Par conséquent, vérifiez que le point de terminaison pour le service de jeton de sécurité dans le [ \<issuedTokenParameters >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md) est le service de jeton de sécurité attendu et pas un service de jeton de sécurité inconnu.  
@@ -84,7 +84,7 @@ Dans Windows Communication Foundation (WCF), création d’un client pour un *se
   
 2. Si la mise en cache de jeton n’est pas obligatoire, définissez le `cacheIssuedTokens` attribut (de la <`issuedToken`> élément) à `false`.  
   
-3. Si une limite de temps est requise sur les jetons mis en cache, affectez la `maxIssuedTokenCachingTime` d’attribut sur le <`issuedToken`> élément une valeur appropriée. Exemple :  
+3. Si une limite de temps est requise sur les jetons mis en cache, affectez la `maxIssuedTokenCachingTime` d’attribut sur le <`issuedToken`> élément une valeur appropriée. Par exemple :  
     `<issuedToken maxIssuedTokenCachingTime='00:10:00' />`  
   
 4. Si vous préférez utiliser une valeur autre que la valeur par défaut, définissez la `issuedTokenRenewalThresholdPercentage` d’attribut sur le <`issuedToken`> élément une valeur appropriée, par exemple :  
@@ -99,7 +99,7 @@ Dans Windows Communication Foundation (WCF), création d’un client pour un *se
     <issuedToken defaultKeyEntropyMode = "ServerEntropy" />  
     ```  
   
-6. Optionnel. Configurez tout comportement de point de terminaison personnalisé spécifique à l’émetteur en créant un <`issuerChannelBehaviors`> élément en tant qu’enfant de la <`issuedToken`> élément. Pour chaque comportement, créez un <`add`> élément en tant qu’enfant de la <`issuerChannelBehaviors`> élément. Spécifiez l’adresse de l’émetteur du comportement en définissant le `issuerAddress` d’attribut sur le <`add`> élément. Spécifiez le comportement lui-même en définissant le `behaviorConfiguration` d’attribut sur le <`add`> élément.  
+6. Facultatif. Configurez tout comportement de point de terminaison personnalisé spécifique à l’émetteur en créant un <`issuerChannelBehaviors`> élément en tant qu’enfant de la <`issuedToken`> élément. Pour chaque comportement, créez un <`add`> élément en tant qu’enfant de la <`issuerChannelBehaviors`> élément. Spécifiez l’adresse de l’émetteur du comportement en définissant le `issuerAddress` d’attribut sur le <`add`> élément. Spécifiez le comportement lui-même en définissant le `behaviorConfiguration` d’attribut sur le <`add`> élément.  
   
     ```xml  
     <issuerChannelBehaviors>  

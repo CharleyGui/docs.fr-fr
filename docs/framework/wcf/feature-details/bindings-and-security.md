@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-ms.openlocfilehash: 12296fbd503a7e9f1866f407964a5e223d1afadd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 58dcfacba302ef3b85a8bc7b24b17f2435115594
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650331"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486650"
 ---
 # <a name="bindings-and-security"></a>Liaisons et sécurité
 Les liaisons fournies par le système incluses avec Windows Communication Foundation (WCF) offrent un moyen rapide de programmer des applications WCF. À une exception près, la méthode de sécurité par défaut de toutes les liaisons est activée. Cette rubrique vous permet de sélectionner la liaison appropriée à vos besoins de sécurité.  
@@ -210,7 +210,7 @@ Les liaisons fournies par le système incluses avec Windows Communication Founda
 |NTLM|Authentification NTLM (NT LAN Manager).|  
 |Windows|Authentification Windows.|  
 |Certificat|Authentification effectuée à l'aide d'un certificat.|  
-|IssuedToken|Autorise le service à imposer que le client soit authentifié à l'aide d'un jeton émis par un service d'émission de jeton de sécurité ou par [!INCLUDE[infocard](../../../../includes/infocard-md.md)]. Pour plus d’informations, consultez [fédération et jetons émis](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
+|IssuedToken|Permet au service d’exiger que le client soit authentifié à l’aide d’un jeton émis par un service de jeton de sécurité ou CardSpace. Pour plus d’informations, consultez [fédération et jetons émis](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
   
 ### <a name="message-client-credentials-in-bindings"></a>Informations d'identification du client de message dans les liaisons  
  Le tableau suivant répertorie les types d'informations d'identification du client disponibles lors de l'utilisation d'une liaison en mode de sécurité Message.  

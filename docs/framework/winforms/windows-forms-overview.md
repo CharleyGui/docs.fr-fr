@@ -5,12 +5,12 @@ helpviewer_keywords:
 - smart clients
 - Windows Forms, about Windows Forms
 ms.assetid: 3a2b6284-c8d6-4e1c-8c69-0bed38f38cd4
-ms.openlocfilehash: 08e85828451ba6c66b13ff31e3d6c106871b8154
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 71bf50bdcf058e94981dc5df4731b5d32dcc2069
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65875884"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487204"
 ---
 # <a name="windows-forms-overview"></a>Vue d’ensemble des Windows Forms
 
@@ -72,21 +72,21 @@ Pour obtenir des informations détaillées sur l'utilisation de ces fonctionnali
 
 ### <a name="deploy-apps-to-client-computers"></a>Déployer des applications sur les ordinateurs clients
 
-Une fois que vous avez écrit votre application, vous devez l'envoyer à vos utilisateurs pour qu'ils puissent l'installer et l'exécuter sur leurs propres ordinateurs clients. Lorsque vous utilisez le [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] technologie, vous pouvez déployer vos applications depuis Visual Studio à l’aide de quelques clics et fournir aux utilisateurs une URL pointant vers votre application sur le Web. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] gère tous les éléments et dépendances dans votre application et s'assure que l'application est correctement installée sur l'ordinateur client.
+Une fois que vous avez écrit votre application, vous devez l'envoyer à vos utilisateurs pour qu'ils puissent l'installer et l'exécuter sur leurs propres ordinateurs clients. Lorsque vous utilisez la technologie ClickOnce, vous pouvez déployer vos applications depuis Visual Studio à l’aide de quelques clics et fournir aux utilisateurs une URL pointant vers votre application sur le Web. ClickOnce gère tous les éléments et dépendances dans votre application et garantit que l’application est correctement installée sur l’ordinateur client.
 
-Vous pouvez configurer les applications [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] pour qu'elles s'exécutent uniquement quand l'utilisateur est connecté au réseau ou pour qu'elles s'exécutent en ligne et hors connexion. Quand vous spécifiez qu’une application doit prendre en charge l’exécution hors connexion, [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] ajoute un lien à votre application dans le menu **Démarrer** de l’utilisateur. L'utilisateur peut alors ouvrir l'application sans utiliser l'URL.
+Applications ClickOnce peuvent être configurées pour s’exécuter uniquement quand l’utilisateur est connecté au réseau, ou pour s’exécuter à la fois en ligne et hors connexion. Lorsque vous spécifiez qu’une application doit prendre en charge une opération hors connexion, ClickOnce ajoute un lien à votre application de l’utilisateur **Démarrer** menu. L'utilisateur peut alors ouvrir l'application sans utiliser l'URL.
 
-Quand vous mettez à jour votre application, vous publiez un nouveau manifeste de déploiement et une nouvelle copie de votre application sur votre serveur web. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] détectera qu'une mise à jour est disponible et mettra à niveau l'installation de l'utilisateur. Aucune programmation personnalisée n'est nécessaire pour mettre à jour les anciens assemblys.
+Quand vous mettez à jour votre application, vous publiez un nouveau manifeste de déploiement et une nouvelle copie de votre application sur votre serveur web. ClickOnce détecte qu’il existe une mise à jour est disponible et que vous mettez à niveau d’installation de l’utilisateur ; aucune programmation personnalisée n’est nécessaire pour mettre à jour les anciens assemblys.
 
 #### <a name="deploy-clickonce-apps"></a>Déployer des applications ClickOnce
 
-Pour obtenir une introduction complète à [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)], consultez [Sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment). Pour obtenir des informations détaillées sur l’utilisation de ces fonctionnalités, consultez les rubriques d’aide suivantes.
+Pour une introduction complète à ClickOnce, consultez [ClickOnce Security and Deployment](/visualstudio/deployment/clickonce-security-and-deployment). Pour obtenir des informations détaillées sur l’utilisation de ces fonctionnalités, consultez les rubriques d’aide suivantes.
 
 |Description|Rubrique d'aide|
 |-----------------|----------------|
-|Déploiement d'une application à l'aide de [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]|[Guide pratique pour publier une application ClickOnce à l’aide de l’Assistant Publication](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [Procédure pas à pas : déploiement manuel d'une application ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|
-|Mise à jour d'un déploiement [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]|[Guide pratique pour gérer les mises à jour d’une application ClickOnce](/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|
-|Gestion de la sécurité avec [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)]|[Guide pratique pour activer les paramètres de sécurité ClickOnce](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|
+|Déploiement d’une application à l’aide de ClickOnce|[Guide pratique pour publier une application ClickOnce à l’aide de l’Assistant Publication](/visualstudio/deployment/how-to-publish-a-clickonce-application-using-the-publish-wizard)<br /><br /> [Procédure pas à pas : déploiement manuel d'une application ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)|
+|La mise à jour d’un déploiement ClickOnce|[Guide pratique pour gérer les mises à jour d’une application ClickOnce](/visualstudio/deployment/how-to-manage-updates-for-a-clickonce-application)|
+|Gestion de la sécurité avec ClickOnce|[Guide pratique pour activer les paramètres de sécurité ClickOnce](/visualstudio/deployment/how-to-enable-clickonce-security-settings)|
 
 ### <a name="other-controls-and-features"></a>Autres contrôles et fonctionnalités
 

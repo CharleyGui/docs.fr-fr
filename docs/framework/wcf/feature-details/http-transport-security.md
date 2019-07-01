@@ -2,12 +2,12 @@
 title: Sécurité de transport HTTP
 ms.date: 03/30/2017
 ms.assetid: d3439262-c58e-4d30-9f2b-a160170582bb
-ms.openlocfilehash: 386c24a9b51be56bf5a8195123e573cfced6392f
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 456df42848c009dcf42022ac674a1d27e5b33972
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402306"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487015"
 ---
 # <a name="http-transport-security"></a>Sécurité de transport HTTP
 Lors de l'utilisation du protocole HTTP comme transport, la sécurité est fournie par une implémentation SSL (Secure Sockets Layer). SSL est largement utilisé sur Internet pour authentifier un service auprès d'un client, puis pour fournir la confidentialité (chiffrement) au canal. Cette rubrique explique comment SSL fonctionne et comment il est implémenté dans Windows Communication Foundation (WCF).  
@@ -38,9 +38,9 @@ Lors de l'utilisation du protocole HTTP comme transport, la sécurité est fourn
 ### <a name="using-iis-for-transport-security"></a>Utilisation des services Internet (IIS) pour la sécurité de transport  
   
 #### <a name="iis-70"></a>IIS 7,0  
- Comment configurer la [!INCLUDE[iisver](../../../../includes/iisver-md.md)] comme hôte sécurisé (à l’aide de SSL), consultez [IIS 7.0 Beta : Configuration sécurisée du protocole SSL dans IIS 7.0](https://go.microsoft.com/fwlink/?LinkId=88600).  
+ Pour configurer IIS 7.0 comme hôte sécurisé (à l’aide de SSL), consultez [configuration du protocole SSL dans IIS 7.0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771438(v=ws.10)).  
   
- Pour configurer des certificats pour une utilisation avec [!INCLUDE[iisver](../../../../includes/iisver-md.md)], consultez [IIS 7.0 Beta : Configuration des certificats de serveur dans IIS 7.0](https://go.microsoft.com/fwlink/?LinkID=88595).  
+Pour configurer des certificats pour une utilisation avec IIS 7.0, consultez [configuration des certificats de serveur dans IIS 7.0](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)).  
   
 #### <a name="iis-60"></a>IIS 6.0  
  Pour configurer IIS 6.0 comme hôte sécurisé (à l’aide de SSL), consultez [configuration du protocole SSL](https://go.microsoft.com/fwlink/?LinkId=88601).  

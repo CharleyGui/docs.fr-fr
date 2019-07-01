@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 149ab165-0ef3-490a-83a9-4322a07bd98a
-ms.openlocfilehash: 4200918057a32d077dbc44f48057f8e886d87a44
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7b09578bf39a081b1bed83614cff755f234f8e45
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624503"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487098"
 ---
 # <a name="how-to-configure-credentials-on-a-federation-service"></a>Procédure : configurer des informations d’identification sur un service de fédération
 Dans Windows Communication Foundation (WCF), création d’un service fédéré comprend les principales procédures suivantes :  
@@ -28,7 +28,7 @@ Dans Windows Communication Foundation (WCF), création d’un service fédéré 
   
 1. Utilisez la propriété <xref:System.ServiceModel.Description.ServiceCredentials.IssuedTokenAuthentication%2A> de la classe <xref:System.ServiceModel.Description.ServiceCredentials> pour retourner une référence à une instance <xref:System.ServiceModel.Security.IssuedTokenServiceCredential>. La propriété est accessible à partir de la propriété <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> de la classe <xref:System.ServiceModel.ServiceHostBase>.  
   
-2. Affectez <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.AllowUntrustedRsaIssuers%2A> à la propriété `true` si les jetons auto-émis, tels que les cartes [!INCLUDE[infocard](../../../../includes/infocard-md.md)], doivent être authentifiés. La valeur par défaut est `false`.  
+2. Définir le <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.AllowUntrustedRsaIssuers%2A> propriété `true` si les jetons auto-émis comme des cartes CardSpace doivent être authentifiés. La valeur par défaut est `false`.  
   
 3. Remplissez la collection retournée par la propriété <xref:System.ServiceModel.Security.IssuedTokenServiceCredential.KnownCertificates%2A> avec les instances de la classe <xref:System.Security.Cryptography.X509Certificates.X509Certificate2>. Chaque instance représente un émetteur à partir duquel le service authentifiera des jetons.  
   
@@ -47,7 +47,7 @@ Dans Windows Communication Foundation (WCF), création d’un service fédéré 
   
 1. Créer un `<issuedTokenAuthentication>` élément en tant qu’enfant d’un <`serviceCredentials`> élément.  
   
-2. Affectez `allowUntrustedRsaIssuers` à l'attribut `<issuedTokenAuthentication>` de l'élément `true` en cas d'authentification d'un jeton auto-émis, tel qu'une carte [!INCLUDE[infocard](../../../../includes/infocard-md.md)].  
+2. Définir le `allowUntrustedRsaIssuers` attribut de la `<issuedTokenAuthentication>` élément à `true` si l’authentification d’un jeton auto-émis, tel qu’une carte CardSpace.  
   
 3. Créez un élément `<knownCertificates>` en tant qu'enfant de l'élément `<issuedTokenAuthentication>`.  
   

@@ -2,12 +2,12 @@
 title: Déploiement d'un service WCF hébergé dans Internet Information Services
 ms.date: 03/30/2017
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
-ms.openlocfilehash: 4c46a7ac0482e0f9c969505b87558d240bb1391e
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: fcfad4c6cd7ffb0bf1233bab842b57a10bcc7f87
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402297"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486929"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>Déploiement d'un service WCF hébergé dans Internet Information Services
 
@@ -103,7 +103,7 @@ Vous devez toujours utiliser des adresses de point de terminaison relatives pour
 
 ### <a name="available-transports"></a>Transports disponibles
 
-WCF services hébergés dans IIS 5.1 et IIS 6.0 sont limités à l’utilisation de communication basée sur HTTP. Sur ces plateformes IIS, configurer un service hébergé pour utiliser une liaison non-HTTP entraîne une erreur pendant l'activation du service. Pour [!INCLUDE[iisver](../../../../includes/iisver-md.md)], les transports pris en charge incluent HTTP, Net.TCP, Net.Pipe, Net.MSMQ et msmq.formatname pour la compatibilité descendante avec les applications MSMQ existantes.
+WCF services hébergés dans IIS 5.1 et IIS 6.0 sont limités à l’utilisation de communication basée sur HTTP. Sur ces plateformes IIS, configurer un service hébergé pour utiliser une liaison non-HTTP entraîne une erreur pendant l'activation du service. Pour IIS 7.0, les transports pris en charge incluent HTTP, Net.TCP, Net.Pipe, Net.MSMQ et msmq.formatname pour descendante compatibilité avec les applications MSMQ existantes.
 
 ### <a name="http-transport-security"></a>Sécurité de transport HTTP
 

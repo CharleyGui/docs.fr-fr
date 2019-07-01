@@ -1,13 +1,13 @@
 ---
-title: QuoiF#
+title: Qu’est-ce que F# ?
 description: En savoir plus sur ce que le F# langage de programmation est et ce qu’il F# ressemble par programmation. En savoir plus sur les types de données enrichis, fonctions et comment ils s’imbriquent.
 ms.date: 08/03/2018
-ms.openlocfilehash: 9d5b0de9828aa91857d3961bf7d40c02c344adaa
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: fc4f4db771c43a4ec08cc9d3a247cf1f38e60457
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641570"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67486831"
 ---
 # <a name="what-is-f"></a>Nouveautés de F\#
 
@@ -100,7 +100,7 @@ F#les fonctions sont également une excellente, ce qui signifie que peuvent êtr
 F#a une prise en charge complète pour les objets qui sont des types de données utiles lorsque vous avez besoin fusionner des données et des fonctionnalités. F#fonctions sont utilisées pour manipuler des objets.
 
 ```fsharp
-type Set<[<EqualityConditionOn>] ‘T when ‘T: comparison>(elements: seq<'T>) =
+type Set<[<EqualityConditionOn>] 'T when 'T: comparison>(elements: seq<'T>) =
     member s.IsEmpty = // Implementation elided
     member s.Contains (value) =// Implementation elided
     member s.Add (value) = // Implementation elided
