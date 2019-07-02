@@ -18,12 +18,12 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 98f73ed958f8b43cd4fea700a478cf3337ea68db
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: fecfe8473a33be1a777fc5dde80c292f940e0d41
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025139"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347863"
 ---
 # <a name="c-operators-c-reference"></a>Opérateur C# (Référence C#)
 
@@ -53,7 +53,7 @@ Ce sont les opérateurs dont la priorité est la plus élevée.
 
 [new](../keywords/new-operator.md) : instanciation de type.
 
-[typeof](../keywords/typeof.md) : retourne l’objet <xref:System.Type> qui représente l’opérande.
+[typeof](type-testing-and-conversion-operators.md#typeof-operator) : retourne l’objet <xref:System.Type> qui représente l’opérande.
 
 [checked](../keywords/checked.md) : active le contrôle de dépassement de capacité pour les opérations sur les entiers.
 
@@ -87,7 +87,7 @@ Ces opérateurs ont une priorité supérieure à celle de la section suivante et
 
 [--x](arithmetic-operators.md#decrement-operator---) : décrément préfixé. Retourne la valeur de x après avoir mis à jour l’emplacement de stockage avec la valeur de x diminuée d’une unité (soustrait généralement l’entier 1).
 
-[(T)x](invocation-operator.md) : cast de type.
+[(T)x](type-testing-and-conversion-operators.md#cast-operator-) : cast de type.
 
 [await](../keywords/await.md) : attend un `Task`.
 
@@ -137,9 +137,9 @@ Ces opérateurs ont une priorité supérieure à celle de la section suivante et
 
 [x >= y](comparison-operators.md#greater-than-or-equal-operator-) : supérieur ou égal à.
 
-[is](../keywords/is.md) : compatibilité du type. Retourne true si l’opérande de gauche évalué peut être converti en type spécifié dans l’opérande de droite (type statique).
+[is](type-testing-and-conversion-operators.md#is-operator) : compatibilité du type. Retourne `true` si l’opérande de gauche évalué peut être casté dans le type spécifié par l’opérande de droite.
 
-[as](../keywords/as.md) : conversion de type. Retourne l'opérande de gauche converti en type spécifié par l'opérande de droite (type statique), mais `as` retourne `null` où `(T)x` lèverait une exception.
+[as](type-testing-and-conversion-operators.md#as-operator) : conversion de type. Retourne l'opérande de gauche converti en type spécifié par l'opérande de droite, mais `as` retourne `null` où `(T)x` lèverait une exception.
 
 ## <a name="equality-operators"></a>Opérateurs d'égalité
 
@@ -171,13 +171,13 @@ Cet opérateur a une priorité supérieure à celle de la section suivante et un
 
 Cet opérateur a une priorité supérieure à celle de la section suivante et une priorité inférieure à celle de la section précédente.
 
-[x && y](boolean-logical-operators.md#conditional-logical-and-operator-) : ET logique. Si le premier opérande prend la valeur false, C# n’évalue pas le second opérande.
+[x && y](boolean-logical-operators.md#conditional-logical-and-operator-) : ET logique. Si `x` prend la valeur `false`, alors `y` n’est pas évalué.
 
 ## <a name="conditional-or-operator"></a>Opérateur OR conditionnel
 
 Cet opérateur a une priorité supérieure à celle de la section suivante et une priorité inférieure à celle de la section précédente.
 
-[x &#124;&#124; y](boolean-logical-operators.md#conditional-logical-or-operator-) : OU logique. Si le premier opérande prend la valeur true, C# n’évalue pas le second opérande.
+[x &#124;&#124; y](boolean-logical-operators.md#conditional-logical-or-operator-) : OU logique. Si `x` prend la valeur `true`, alors `y` n’est pas évalué.
 
 ## <a name="null-coalescing-operator"></a>Opérateur de fusion de Null
 
