@@ -10,15 +10,15 @@ helpviewer_keywords:
 - pens [Windows Forms], drawing lines
 - drawing lines [Windows Forms], line caps
 ms.assetid: eb68c3e1-c400-4886-8a04-76978a429cb6
-ms.openlocfilehash: 682474120cbeeeb4cb83b69188a5a125228279d3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 34abfc86e980a24ebb835cfd88d2522f8372c68d
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64631631"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506025"
 ---
 # <a name="how-to-draw-a-line-with-line-caps"></a>Procédure : dessiner une ligne avec des extrémités de fin
-Vous pouvez dessiner le début ou la fin d’une ligne dans plusieurs formes appelé embouts de ligne. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] prend en charge plusieurs embouts de ligne, tels que round, carré, losange et pointe de flèche.  
+Vous pouvez dessiner le début ou la fin d’une ligne dans plusieurs formes appelé embouts de ligne. GDI + prend en charge plusieurs embouts de ligne, tels que round, carré, losange et pointe de flèche.  
   
 ## <a name="example"></a>Exemple  
  Vous pouvez spécifier des embouts de ligne pour le début d’une ligne (extrémité de début), la fin d’une ligne (extrémité de fin) ou les tirets d’une ligne en pointillés (cap dash).  

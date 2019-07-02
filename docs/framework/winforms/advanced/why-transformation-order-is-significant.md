@@ -7,18 +7,18 @@ dev_langs:
 helpviewer_keywords:
 - transformations [Windows Forms], order significance
 ms.assetid: 37d5f9dc-a5cf-4475-aa5d-34d714e808a9
-ms.openlocfilehash: 4a65e588984241affea3083810b4901266480ea4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 08927ebaa460e19e558dce22f39c13c31f0e49d0
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61747457"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504909"
 ---
 # <a name="why-transformation-order-is-significant"></a>Importance de l'ordre des transformations
 Un seul <xref:System.Drawing.Drawing2D.Matrix> objet peut stocker une seule transformation ou une séquence de transformations. Celle-ci est appelée une transformation composite. La matrice d’une transformation composite est obtenue en multipliant les matrices des différentes transformations.  
   
 ## <a name="composite-transform-examples"></a>Exemples de transformations composites  
- Dans une transformation composite, l’ordre des diverses transformations est important. Par exemple, si vous tout d’abord faire pivoter, mettre à l’échelle, puis traduisez, vous obtenez un résultat différent que si vous convertissez tout d’abord, faire pivoter, puis mettre à l’échelle. Dans [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], transformations composites sont construites de gauche à droite. Si S, R et T sont respectivement des matrices de mise à l’échelle, de rotation et de traduction, puis le produit SRT (dans cet ordre) est la matrice de la transformation composite qui s’adapte premier, puis fait pivoter, puis traduit. La matrice produite par le produit SRT est différente de la matrice produite par le produit TRS.  
+ Dans une transformation composite, l’ordre des diverses transformations est important. Par exemple, si vous tout d’abord faire pivoter, mettre à l’échelle, puis traduisez, vous obtenez un résultat différent que si vous convertissez tout d’abord, faire pivoter, puis mettre à l’échelle. Dans GDI +, les transformations composites sont construites de gauche à droite. Si S, R et T sont respectivement des matrices de mise à l’échelle, de rotation et de traduction, puis le produit SRT (dans cet ordre) est la matrice de la transformation composite qui s’adapte premier, puis fait pivoter, puis traduit. La matrice produite par le produit SRT est différente de la matrice produite par le produit TRS.  
   
  Un ordre est important parce que les transformations telles que rotation et mise à l’échelle sont effectuées par rapport à l’origine du système de coordonnées. Mise à l’échelle un objet qui est centré à l’origine de produit le même résultat que la mise à l’échelle un objet qui a été déplacé en dehors de l’origine. De même, la rotation d’un objet qui est centré à l’origine produit le même résultat que la rotation d’un objet qui a été déplacé en dehors de l’origine.  
   

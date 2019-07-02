@@ -7,15 +7,15 @@ helpviewer_keywords:
 - examples [Windows Forms], pens
 - drawing
 ms.assetid: 8a7542ab-3e9e-443f-8405-2d6053528e20
-ms.openlocfilehash: 3846c59712cec6003c35f336714041544dec94b3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d20b4e47c9f8a5dd7a144e6ebb3151d3ab65a800
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777245"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505141"
 ---
 # <a name="using-a-pen-to-draw-lines-and-shapes"></a>Utilisation d'un stylet pour dessiner des lignes et des formes
-Utilisez [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] `Pen` objets pour dessiner des segments de ligne, des courbes et des contours des formes. Dans cette section, *ligne* fait référence à un de ces éléments, sauf indication contraire pour signifier uniquement un segment de ligne. Définir les propriétés d’un stylet pour contrôler la couleur, la largeur, l’alignement et le style des lignes dessinées avec ce stylet.  
+Utiliser GDI + `Pen` objets pour dessiner des segments de ligne, des courbes et des contours des formes. Dans cette section, *ligne* fait référence à un de ces éléments, sauf indication contraire pour signifier uniquement un segment de ligne. Définir les propriétés d’un stylet pour contrôler la couleur, la largeur, l’alignement et le style des lignes dessinées avec ce stylet.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Guide pratique pour Utiliser un stylet pour dessiner des lignes](how-to-use-a-pen-to-draw-lines.md)  

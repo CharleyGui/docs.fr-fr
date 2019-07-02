@@ -5,15 +5,15 @@ helpviewer_keywords:
 - examples [Windows Forms], regions
 - regions [Windows Forms], using
 ms.assetid: 7809295b-870f-4107-a8b5-8386c298acd5
-ms.openlocfilehash: ec11b8c7d2eeb153eb4a8c8772fef24977310e13
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c881cec3aa6fd8ab528b1ae6f5b7e2920ba51f90
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61791103"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505029"
 ---
 # <a name="using-regions"></a>Utilisation de régions
-Le [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Region> classe vous permet de définir une forme personnalisée. La forme peut être constituée de lignes, des polygones et des courbes.  
+GDI + <xref:System.Drawing.Region> classe vous permet de définir une forme personnalisée. La forme peut être constituée de lignes, des polygones et des courbes.  
   
  Deux utilisations courantes pour les régions sont atteints de test et le découpage. Le test de positionnement consiste à déterminer si l’utilisateur a cliqué sur la souris dans une région de l’écran. Le découpage est limité à une certaine zone de dessin.  
   

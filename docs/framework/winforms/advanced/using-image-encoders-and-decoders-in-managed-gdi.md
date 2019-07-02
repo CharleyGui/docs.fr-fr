@@ -5,17 +5,17 @@ helpviewer_keywords:
 - image encoders [Windows Forms], using
 - image decoders [Windows Forms], using
 ms.assetid: 0e838ea1-4e7e-4334-b882-ab25df607b8b
-ms.openlocfilehash: e56bc20eb55d694d19b25d9e94e5c9d9e3952628
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8cd66f3ce3da462867da9e23c38b3f6d877c058c
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64666443"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505093"
 ---
 # <a name="using-image-encoders-and-decoders-in-managed-gdi"></a>Utilisation d'encodeurs et de décodeurs d'images dans GDI+ managé
-Le <xref:System.Drawing> espace de noms fournit le <xref:System.Drawing.Image> et <xref:System.Drawing.Bitmap> classes pour stocker et manipuler des images. À l’aide d’encodeurs d’images dans [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], vous pouvez écrire des images de la mémoire sur le disque. À l’aide de décodeurs d’images dans [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], vous pouvez charger des images à partir du disque dans la mémoire. Un encodeur traduit les données dans un <xref:System.Drawing.Image> ou <xref:System.Drawing.Bitmap> objet dans un format de fichier de disque désigné. Un décodeur traduit les données dans un fichier de disque au format requis par le <xref:System.Drawing.Image> et <xref:System.Drawing.Bitmap> objets.  
+Le <xref:System.Drawing> espace de noms fournit le <xref:System.Drawing.Image> et <xref:System.Drawing.Bitmap> classes pour stocker et manipuler des images. En utilisant des encodeurs d’images dans GDI +, vous pouvez écrire des images de la mémoire sur le disque. À l’aide de décodeurs d’images dans GDI +, vous pouvez charger des images à partir du disque dans la mémoire. Un encodeur traduit les données dans un <xref:System.Drawing.Image> ou <xref:System.Drawing.Bitmap> objet dans un format de fichier de disque désigné. Un décodeur traduit les données dans un fichier de disque au format requis par le <xref:System.Drawing.Image> et <xref:System.Drawing.Bitmap> objets.  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] a intégré encodeurs et décodeurs qui prennent en charge les types de fichiers suivants :  
+ GDI + a intégré encodeurs et décodeurs qui prennent en charge les types de fichiers suivants :  
   
 - BMP  
   
@@ -27,7 +27,7 @@ Le <xref:System.Drawing> espace de noms fournit le <xref:System.Drawing.Image> e
   
 - TIFF  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] contient également des décodeurs intégrés qui prennent en charge les types de fichiers suivants :  
+ GDI + possède également des décodeurs intégrés qui prennent en charge les types de fichiers suivants :  
   
 - WMF  
   

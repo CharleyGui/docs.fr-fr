@@ -6,19 +6,19 @@ helpviewer_keywords:
 - GDI+
 - graphics [Windows Forms], GDI+
 ms.assetid: a98a76ab-e455-49c9-891c-0491ac932f2c
-ms.openlocfilehash: 4c7632933e29a59c1db46f84360e271f27edf8b8
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 73d1759aec3abe2e3e9c371f949cf051930d103c
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65588616"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506130"
 ---
 # <a name="about-gdi-managed-code"></a>À propos du code managé GDI+
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] est la partie du système d'exploitation Windows qui fournit des graphismes vectoriels en deux dimensions, l'imagerie et la typographie. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] constitue une amélioration par rapport à [!INCLUDE[ndptecgdi](../../../../includes/ndptecgdi-md.md)] (l'interface GDI fournie avec les versions antérieures de Windows) grâce à l'ajout de nouvelles fonctionnalités et à l'optimisation des fonctionnalités existantes.  
+GDI + est la partie du système d’exploitation Windows qui fournit des graphiques vectoriels, les images et la typographie. GDI + améliore GDI (l’Interface graphique inclus avec les versions antérieures de Windows) en ajoutant de nouvelles fonctionnalités et en optimisant les fonctionnalités existantes.  
   
- Le [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] interface de classes managées (ensemble de wrappers) fait partie du .NET Framework, un environnement de création, déploiement et les services Web XML et autres applications en cours d’exécution.  
+ L’interface de classe managée GDI + (il s’agit d’un ensemble de wrappers) fait partie du .NET Framework, un environnement de création, déploiement et les services Web XML et autres applications en cours d’exécution.  
   
- Cette section fournit des informations sur l'API [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] pour les programmeurs qui utilisent du code managé.  
+ Cette section fournit des informations sur l’API GDI + pour les programmeurs qui utilisent du code managé.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Lignes, courbes et formes](lines-curves-and-shapes.md)  
@@ -28,7 +28,7 @@ ms.locfileid: "65588616"
  Décrit le type d'images disponibles et comment les utiliser.  
   
  [Systèmes de coordonnées et transformations](coordinate-systems-and-transformations.md)  
- Décrit comment transformer des graphismes avec [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)].  
+ Explique comment transformer des graphiques avec GDI +.  
   
 ## <a name="reference"></a>Référence  
  <xref:System.Drawing.Graphics?displayProperty=nameWithType>  
