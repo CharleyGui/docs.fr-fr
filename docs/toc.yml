@@ -194,6 +194,12 @@
           href: core/whats-new/dotnet-core-2-1.md
         - name: Nouveautés de .NET Core 2.0
           href: core/whats-new/dotnet-core-2-0.md
+    - name: Compatibilité des applications
+      items:
+        - name: Évaluer les changements cassants
+          href: core/compatibility/index.md
+        - name: Catégories de changements cassants
+          href: core/compatibility/categories.md
     - name: Didacticiels
       href: core/tutorials/index.md
       items:
