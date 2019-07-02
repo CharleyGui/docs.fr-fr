@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Paint event [Windows Forms], handling in Windows Forms custom control
 - OnPaint method [Windows Forms], overriding in Windows Forms custom controls
 ms.assetid: e9ca2723-0107-4540-bb21-4f5ffb4a9906
-ms.openlocfilehash: 92aaeabfc12e964ac294fbd69998c4671fc8763c
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: e3c48aec830cdc3ccceb8683f93e3a99ee6364e2
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65582607"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506196"
 ---
 # <a name="overriding-the-onpaint-method"></a>Substitution de la méthode OnPaint
 Les étapes de base pour la substitution d’un événement défini dans le .NET Framework sont identiques et sont résumés dans la liste suivante.  
@@ -82,7 +82,7 @@ public class PaintEventArgs : EventArgs {
 }  
 ```  
   
- <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> est le rectangle à peindre et la <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> propriété fait référence à un <xref:System.Drawing.Graphics> objet. Les classes dans le <xref:System.Drawing?displayProperty=nameWithType> espace de noms sont gérés les classes qui fournissent l’accès aux fonctionnalités de [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], la nouvelle bibliothèque de graphiques Windows. Le <xref:System.Drawing.Graphics> objet possède des méthodes pour dessiner des points, chaînes, lignes, arcs, points de suspension et de nombreuses autres formes.  
+ <xref:System.Windows.Forms.PaintEventArgs.ClipRectangle%2A> est le rectangle à peindre et la <xref:System.Windows.Forms.PaintEventArgs.Graphics%2A> propriété fait référence à un <xref:System.Drawing.Graphics> objet. Les classes dans le <xref:System.Drawing?displayProperty=nameWithType> espace de noms sont gérés les classes qui fournissent l’accès aux fonctionnalités de GDI +, la nouvelle bibliothèque de graphiques Windows. Le <xref:System.Drawing.Graphics> objet possède des méthodes pour dessiner des points, chaînes, lignes, arcs, points de suspension et de nombreuses autres formes.  
   
  Un contrôle appelle son <xref:System.Windows.Forms.Control.OnPaint%2A> méthode chaque fois qu’il doit modifier son affichage visuel. Cette méthode déclenche à son tour le <xref:System.Windows.Forms.Control.Paint> événement.  
   

@@ -9,15 +9,15 @@ helpviewer_keywords:
 - antialiasing [Windows Forms], smoothing modes
 - GDI+, antialiasing
 ms.assetid: 810da1a4-c136-4abf-88df-68e49efdd8d4
-ms.openlocfilehash: cbc9033f18f1ab255862c8f8e2891aa9b68cf8d6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 871c5cb3cd9356f677633acb04fe82021a9787c5
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61961106"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506141"
 ---
 # <a name="antialiasing-with-lines-and-curves"></a>Anticrénelage avec des lignes et des courbes
-Lorsque vous utilisez [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] pour dessiner une ligne, vous fournissez le point de départ et le point de fin de la ligne, mais vous n’êtes pas obligé de fournir toutes les informations concernant les pixels individuels sur la ligne. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] fonctionne conjointement avec le logiciel de pilote d’affichage pour déterminer quels pixels seront activées pour afficher la ligne sur un périphérique d’affichage particulier.  
+Lorsque vous utilisez GDI + pour dessiner une ligne, vous fournissez le point de départ et le point de fin de la ligne, mais vous n’êtes pas obligé de fournir toutes les informations concernant les pixels individuels sur la ligne. GDI + fonctionne conjointement avec le logiciel de pilote d’affichage pour déterminer quels pixels seront activées pour afficher la ligne sur un périphérique d’affichage particulier.  
   
 ## <a name="aliasing"></a>Utilisation d’alias  
  Envisagez la ligne droites rouge qui va du point (4, 2) au point (16, 10). Supposons que le système de coordonnées a son origine dans le coin supérieur gauche et que l’unité de mesure est le pixel. Supposons également que l’axe des x pointant vers la droite et les points de l’axe des y vers le bas. L’illustration suivante montre une vue agrandie de la ligne rouge dessinée sur un arrière-plan multicolore.  

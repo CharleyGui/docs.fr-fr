@@ -13,15 +13,15 @@ helpviewer_keywords:
 - gradient brushes
 - brushes [Windows Forms], gradient
 ms.assetid: e863e2a7-0294-4130-99b6-f1ea3201e7cd
-ms.openlocfilehash: 683b5966f993ac3a69c8bf7c1233b6df3d65e19a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ad3a4af2474ace61bbf35ea1357a2a6037af039a
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61779420"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506239"
 ---
 # <a name="brushes-and-filled-shapes-in-gdi"></a>Pinceaux et remplissage de formes dans GDI+
-Une forme fermée, comme un rectangle ou une ellipse, se compose d’un plan et un intérieur. Le contour est dessiné avec un stylet et l’intérieur est rempli avec un pinceau. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] fournit plusieurs classes de pinceau pour remplir l’intérieur des formes fermées : <xref:System.Drawing.SolidBrush>, <xref:System.Drawing.Drawing2D.HatchBrush>, <xref:System.Drawing.TextureBrush>, <xref:System.Drawing.Drawing2D.LinearGradientBrush>, et <xref:System.Drawing.Drawing2D.PathGradientBrush>. Toutes ces classes héritent de la <xref:System.Drawing.Brush> classe. L’illustration suivante montre un rectangle rempli avec un pinceau uni et une ellipse remplie avec un pinceau de hachurage.  
+Une forme fermée, comme un rectangle ou une ellipse, se compose d’un plan et un intérieur. Le contour est dessiné avec un stylet et l’intérieur est rempli avec un pinceau. GDI + fournit plusieurs classes de pinceau pour remplir l’intérieur des formes fermées : <xref:System.Drawing.SolidBrush>, <xref:System.Drawing.Drawing2D.HatchBrush>, <xref:System.Drawing.TextureBrush>, <xref:System.Drawing.Drawing2D.LinearGradientBrush>, et <xref:System.Drawing.Drawing2D.PathGradientBrush>. Toutes ces classes héritent de la <xref:System.Drawing.Brush> classe. L’illustration suivante montre un rectangle rempli avec un pinceau uni et une ellipse remplie avec un pinceau de hachurage.  
   
  ![Formes pleines](./media/aboutgdip02-art17.gif "Aboutgdip02_art17")  
   
@@ -40,7 +40,7 @@ Une forme fermée, comme un rectangle ou une ellipse, se compose d’un plan et 
  [!code-csharp[LinesCurvesAndShapes#122](~/samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#122)]
  [!code-vb[LinesCurvesAndShapes#122](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#122)]  
   
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] fournit plus de 50 styles de hachurage. les trois styles présentés dans l’illustration suivante sont <xref:System.Drawing.Drawing2D.HatchStyle.Horizontal>, <xref:System.Drawing.Drawing2D.HatchStyle.ForwardDiagonal>, et <xref:System.Drawing.Drawing2D.HatchStyle.Cross>.  
+ GDI + offre plus de 50 styles de hachurage. les trois styles présentés dans l’illustration suivante sont <xref:System.Drawing.Drawing2D.HatchStyle.Horizontal>, <xref:System.Drawing.Drawing2D.HatchStyle.ForwardDiagonal>, et <xref:System.Drawing.Drawing2D.HatchStyle.Cross>.  
   
  ![Formes pleines](./media/aboutgdip02-art18.gif "Aboutgdip02_art18")  
   
@@ -59,7 +59,7 @@ Une forme fermée, comme un rectangle ou une ellipse, se compose d’un plan et 
  ![Rempli forme](./media/aboutgdip02-art20.gif "AboutGdip02_Art20")  
   
 ## <a name="gradient-brushes"></a>Pinceaux de dégradé  
- [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] propose deux types de pinceaux de dégradé : linéaire et chemin d’accès. Vous pouvez utiliser un pinceau dégradé linéaire pour remplir une forme avec une couleur qui change graduellement à mesure que vous déplacer entre la forme horizontalement, verticalement ou en diagonale. L’exemple de code suivant montre comment remplir une ellipse avec un pinceau de dégradé horizontal qui passe du bleu au vert lorsque vous déplacez le bord gauche de l’ellipse vers le bord droit.  
+ GDI + offre deux types de pinceaux de dégradé : linéaire et chemin d’accès. Vous pouvez utiliser un pinceau dégradé linéaire pour remplir une forme avec une couleur qui change graduellement à mesure que vous déplacer entre la forme horizontalement, verticalement ou en diagonale. L’exemple de code suivant montre comment remplir une ellipse avec un pinceau de dégradé horizontal qui passe du bleu au vert lorsque vous déplacez le bord gauche de l’ellipse vers le bord droit.  
   
  [!code-csharp[LinesCurvesAndShapes#124](~/samples/snippets/csharp/VS_Snippets_Winforms/LinesCurvesAndShapes/CS/Class1.cs#124)]
  [!code-vb[LinesCurvesAndShapes#124](~/samples/snippets/visualbasic/VS_Snippets_Winforms/LinesCurvesAndShapes/VB/Class1.vb#124)]  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security [Windows Forms], about security
 - access control [Windows Forms], Windows Forms
 ms.assetid: 4810dc9f-ea23-4ce1-8ea1-657f0ff1d820
-ms.openlocfilehash: 471ed75a922ab8a7df18f2e4a3ccd89ede171248
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 88301663a78bb7d6f31c23bb03409ca44a2e55a9
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487262"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506170"
 ---
 # <a name="security-in-windows-forms-overview"></a>Vue d'ensemble de la sécurité dans les Windows Forms
 
@@ -77,7 +77,7 @@ Le tableau suivant décrit ces technologies.
 
 La technologie adoptée dépendra de votre environnement de déploiement. Pour plus d’informations, consultez [Choix d’une stratégie de déploiement ClickOnce](/visualstudio/deployment/choosing-a-clickonce-deployment-strategy).
 
-Par défaut, les applications ClickOnce déployées à l’aide de Visual Studio ou les outils de développement .NET Framework SDK (Mage.exe et MageUI.exe) sont configurées pour s’exécuter sur un ordinateur client qui a la confiance totale. Si vous déployez votre application avec une confiance partielle ou en utilisant uniquement certaines autorisations supplémentaires, vous devez modifier ce comportement par défaut. Vous pouvez faire avec Visual Studio ou l’outil de développement .NET Framework SDK MageUI.exe lorsque vous configurez votre déploiement. Pour plus d’informations sur l’utilisation de MageUI.exe, consultez la procédure pas à pas : Déploiement d’une Application ClickOnce à partir de la ligne de commande.  Voir également [Guide pratique pour Définir des autorisations personnalisées pour une Application ClickOnce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hafybdaa(v=vs.110)) ou [Comment : Définir des autorisations personnalisées pour une Application ClickOnce](/visualstudio/deployment/how-to-set-custom-permissions-for-a-clickonce-application).
+Par défaut, les applications ClickOnce déployées à l’aide de Visual Studio ou les outils de développement .NET Framework SDK (Mage.exe et MageUI.exe) sont configurées pour s’exécuter sur un ordinateur client qui a la confiance totale. Si vous déployez votre application avec une confiance partielle ou en utilisant uniquement certaines autorisations supplémentaires, vous devez modifier ce comportement par défaut. Vous pouvez faire avec Visual Studio ou l’outil de développement .NET Framework SDK MageUI.exe lorsque vous configurez votre déploiement. Pour plus d’informations sur l’utilisation de MageUI.exe, consultez [procédure pas à pas : Déploiement manuel d’une application ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application).  Voir également [Guide pratique pour Définir des autorisations personnalisées pour une Application ClickOnce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hafybdaa(v=vs.110)) ou [Comment : Définir des autorisations personnalisées pour une Application ClickOnce](/visualstudio/deployment/how-to-set-custom-permissions-for-a-clickonce-application).
 
 Pour plus d’informations sur les aspects de sécurité de l’élévation d’autorisations et de ClickOnce, consultez [sécurisation des Applications ClickOnce](/visualstudio/deployment/securing-clickonce-applications). Pour plus d’informations sur le déploiement d’applications approuvées, consultez [Vue d’ensemble du déploiement d’applications approuvées](/visualstudio/deployment/trusted-application-deployment-overview).
 

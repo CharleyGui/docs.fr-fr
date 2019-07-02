@@ -20,12 +20,12 @@ helpviewer_keywords:
 - bitmaps [Windows Forms], file format
 - Exchangeable Image File
 ms.assetid: 6be085a2-2c13-47c8-b80a-c18b32777d8d
-ms.openlocfilehash: f41585ba8816e0b1894a9f01163191848ae391e3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e678195e96aea881777c44ab14bb2e56aef015bb
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663916"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505294"
 ---
 # <a name="types-of-bitmaps"></a>Types de bitmaps
 Une image bitmap est un tableau de bits qui spécifient la couleur de chaque pixel dans un tableau rectangulaire de pixels. Le nombre de bits associés à un pixel détermine le nombre de couleurs qui peuvent être affectés à ce pixel. Par exemple, si chaque pixel est représenté par 4 bits, puis un pixel donné peut avoir une des 16 couleurs différentes (2 ^ 4 = 16). Le tableau suivant présente quelques exemples du nombre de couleurs qui peuvent être attribués à un pixel représenté par un nombre donné de bits.  
@@ -53,7 +53,7 @@ Une image bitmap est un tableau de bits qui spécifient la couleur de chaque pix
  ![Exemple de bitmap](./media/aboutgdip03-art02.gif "AboutGdip03_Art02")  
   
 ## <a name="graphics-file-formats"></a>Formats de fichiers graphiques  
- Il existe de nombreux formats standards pour enregistrer des bitmaps dans les fichiers de disque. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] prend en charge le fichier graphique formats décrits dans les paragraphes suivants.  
+ Il existe de nombreux formats standards pour enregistrer des bitmaps dans les fichiers de disque. GDI + prend en charge le fichier graphique formats décrits dans les paragraphes suivants.  
   
 ### <a name="bmp"></a>BMP  
  BMP est un format standard utilisé par Windows pour stocker des images indépendantes du périphérique et indépendant des applications. Le nombre de bits par pixel (1, 4, 8, 15, 24, 32 ou 64) pour un fichier BMP donné est spécifié dans un en-tête de fichier. Fichiers BMP dotés de 24 bits par pixel sont courants. Fichiers BMP sont généralement pas compressés et, par conséquent, ne sont pas adaptés pour le transfert sur Internet.  

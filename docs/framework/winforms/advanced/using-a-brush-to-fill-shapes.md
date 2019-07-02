@@ -6,15 +6,15 @@ helpviewer_keywords:
 - shapes [Windows Forms], filling
 - brushes
 ms.assetid: bf8f7fff-5a90-41e8-9051-494449fb2844
-ms.openlocfilehash: 95112321794359dc282749b94fd9061305b42c23
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bb8112076bf0b835b558a9f88ae2ff59bdb8476d
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61926943"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505174"
 ---
 # <a name="using-a-brush-to-fill-shapes"></a>Utilisation d'un pinceau pour remplir des formes
-Un [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] <xref:System.Drawing.Brush> objet est utilisé pour remplir l’intérieur d’une forme fermée. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] définit plusieurs styles de remplissage : couleur unie, motif hachuré, texture d’image et dégradé de couleur.  
+GDI + <xref:System.Drawing.Brush> objet est utilisé pour remplir l’intérieur d’une forme fermée. GDI + définit plusieurs styles de remplissage : couleur unie, motif hachuré, texture d’image et dégradé de couleur.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Guide pratique pour Remplir une forme avec une couleur unie](how-to-fill-a-shape-with-a-solid-color.md)  

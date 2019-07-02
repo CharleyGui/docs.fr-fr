@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c1a78fa8-9f0c-40bc-a372-5575a48708fe
-ms.openlocfilehash: deb8f4396700086627aaef35ead7f15f38d9320c
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: f8fabd38ec49070bc588196b38ec64942feab93f
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583871"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504715"
 ---
 # <a name="queries-in-linq-to-dataset"></a>Requêtes dans LINQ to DataSet
 Une requête est une expression qui récupère des données d'une source de données. En général, les requêtes sont exprimées dans un langage de requête spécialisé, tel que SQL pour les bases de données relationnelles et Xquery pour XML. Par conséquent, les développeurs ont dû apprendre un nouveau langage de requête pour chaque type de source de données ou format de données qu'ils interrogent. [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] offre un modèle simplifié et cohérent qui permet d'utiliser des données de types de sources et de formats diversifiés. Dans une requête [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)], vous travaillez toujours avec des objets de programmation.  
   
  Une opération de requête [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] consiste en trois actions : obtenir la ou les source(s) de données, créer la requête, puis l'exécuter.  
   
- Les sources de données qui implémentent l'interface générique de <xref:System.Collections.Generic.IEnumerable%601> peuvent être interrogées via [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]. Appel <xref:System.Data.DataTableExtensions.AsEnumerable%2A> sur un <xref:System.Data.DataTable> retourne un objet qui implémente le modèle générique <xref:System.Collections.Generic.IEnumerable%601> interface, qui sert de source de données pour [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] requêtes.  
+ Les sources de données qui implémentent l'interface générique de <xref:System.Collections.Generic.IEnumerable%601> peuvent être interrogées via [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]. Appel <xref:System.Data.DataTableExtensions.AsEnumerable%2A> sur un <xref:System.Data.DataTable> retourne un objet qui implémente le modèle générique <xref:System.Collections.Generic.IEnumerable%601> interface, qui sert de la source de données pour LINQ aux requêtes de jeu de données.  
   
  Dans la requête, vous spécifiez exactement les informations que vous voulez récupérer à partir de la source de données. Une requête peut également spécifier la manière dont ces informations doivent être triées, regroupées et mises en forme avant d'être retournées. Dans [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)], une requête est stockée dans une variable. Si la requête est conçue pour retourner une séquence de valeurs, la variable de requête doit elle-même être de type dénombrable. Cette variable de requête n'effectue aucune action et ne retourne aucune donnée ; elle stocke uniquement les informations de requête. Une fois que vous avez créé une requête, vous devez l'exécuter pour extraire des données.  
   
@@ -26,7 +26,7 @@ Une requête est une expression qui récupère des données d'une source de donn
  Contrairement aux requêtes différées qui retournent une séquence de valeurs, les requêtes qui retournent une valeur singleton sont exécutées immédiatement. Les requêtes <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Average%2A> et <xref:System.Linq.Enumerable.First%2A> en sont quelques exemples. Elles s'exécutent immédiatement parce que les résultats de la requête sont nécessaires pour calculer le résultat singleton. Par exemple, pour trouver la moyenne des résultats, la requête doit être exécutée pour que la fonction de moyenne dispose de données sur lesquelles effectuer ses calculs. Vous pouvez également utiliser les méthodes <xref:System.Linq.Enumerable.ToList%2A> ou <xref:System.Linq.Enumerable.ToArray%2A> sur une requête pour forcer l'exécution immédiate d'une requête qui ne produit pas de valeur singleton. Ces techniques peuvent être utiles lorsque vous souhaitez mettre en cache les résultats d'une requête.
   
 ## <a name="queries"></a>Requêtes  
- [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] les requêtes peuvent être formulées dans deux syntaxes différentes : syntaxe d’expression et la syntaxe de requête fondée sur une méthode de requête.  
+ Requêtes LINQ to DataSet peuvent être formulée dans deux syntaxes différentes : syntaxe d’expression et la syntaxe de requête fondée sur une méthode de requête.  
   
 ### <a name="query-expression-syntax"></a>Syntaxe d'expression de requête  
  Les expressions de requête utilisent une syntaxe de requête déclarative. Cette syntaxe permet au développeur d'écrire des requêtes en C# ou Visual Basic dans un format similaire à SQL. En utilisant la syntaxe d'expression de requête, vous pouvez même effectuer des opérations de filtrage, de classement et de regroupement complexes sur des sources de données avec un minimum de code. Pour plus d’informations, consultez [Expressions de requête LINQ](../../../csharp/linq/index.md#query-expression-overview) et [opérations de requête de base (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).
@@ -39,7 +39,7 @@ Une requête est une expression qui récupère des données d'une source de donn
  [!code-vb[DP LINQ to DataSet Examples#SelectSimple1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#selectsimple1)]  
   
 ### <a name="method-based-query-syntax"></a>Syntaxe de requête fondée sur une méthode  
- L'autre manière de formuler des requêtes [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] consiste à utiliser des requêtes fondées sur une méthode. La syntaxe de requête fondée sur une méthode est une séquence d’appels directs de méthodes d’opérateur [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] passant des expressions lambda comme paramètres. Pour plus d’informations, consultez [Expressions lambda](~/docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
+ L’autre pour formuler LINQ aux requêtes de jeu de données consiste à utiliser des requêtes fondées sur une méthode. La syntaxe de requête fondée sur une méthode est une séquence d’appels directs de méthodes d’opérateur [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] passant des expressions lambda comme paramètres. Pour plus d’informations, consultez [Expressions lambda](~/docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
   
  Cet exemple utilise <xref:System.Linq.Enumerable.Select%2A> pour retourner toutes les lignes de `Product` et afficher les noms de produits.  
   

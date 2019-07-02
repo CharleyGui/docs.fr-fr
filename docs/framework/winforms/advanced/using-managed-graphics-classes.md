@@ -6,19 +6,19 @@ helpviewer_keywords:
 - graphics [Windows Forms], using in Windows Forms
 - graphics [Windows Forms], managed classes
 ms.assetid: e6d1a42d-2100-46aa-97e6-a5ddc0baaae5
-ms.openlocfilehash: 86f6b3fff1937694f4b7890249e36d5e12b769dc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1b6811e1412e1dc5b0731810f159bac633cd1eb2
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766166"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505034"
 ---
 # <a name="using-managed-graphics-classes"></a>Utilisation de classes graphiques managées
-Les rubriques suivantes décrivent comment utiliser le [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] API dans le cadre de la classe managée.  
+Les rubriques suivantes décrivent comment utiliser l’API GDI + dans le cadre de la classe managée.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Mise en route de la programmation graphique](getting-started-with-graphics-programming.md)  
- Explique comment accomplir des tâches de base avec [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)].  
+ Décrit comment accomplir des tâches de base avec GDI +.  
   
  [Utilisation d'un stylet pour dessiner des lignes et des formes](using-a-pen-to-draw-lines-and-shapes.md)  
  Montre comment construire un stylet et l’utiliser pour dessiner une variété de lignes et des formes.  

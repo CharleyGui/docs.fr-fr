@@ -8,12 +8,12 @@ helpviewer_keywords:
 - private font collections [Windows Forms], creating
 - fonts [Windows Forms], creating private collections
 ms.assetid: 6533d5e5-a8dc-4b76-9fc4-3bf75c8b9212
-ms.openlocfilehash: 1aa3030d9daea57bb9b8970baa78f8117a07bd1a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0bb7293a5423004a13cf98b79bba0a6c411a7c97
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624202"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505516"
 ---
 # <a name="how-to-create-a-private-font-collection"></a>Procédure : créer une collection de polices privée
 Le <xref:System.Drawing.Text.PrivateFontCollection> classe hérite de la <xref:System.Drawing.Text.FontCollection> classe de base abstraite. Vous pouvez utiliser un <xref:System.Drawing.Text.PrivateFontCollection> objet pour maintenir un ensemble de polices spécifiquement pour votre application. Une collection de polices privées peut inclure des polices système installés, ainsi que des polices qui n’ont pas été installés sur l’ordinateur. Pour ajouter un fichier de polices à une collection de polices privées, appelez le <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile%2A> méthode d’un <xref:System.Drawing.Text.PrivateFontCollection> objet.  
@@ -41,9 +41,9 @@ Le <xref:System.Drawing.Text.PrivateFontCollection> classe hérite de la <xref:S
   
  ![Capture d’écran qui affiche le texte dans des polices différentes.](./media/how-to-create-a-private-font-collection/various-fonts-text-output.png)  
   
- Arial.tff (qui a été ajouté à la collection de polices privées dans l’exemple de code suivant) est le fichier de police pour le style Arial regular. Toutefois, notez que la sortie du programme montre plusieurs styles disponibles autres que standard pour la famille de polices Arial. C’est parce que [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] peut simuler les styles italique, gras et italiques et gras depuis le style Normal. [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] peut également produire des soulignements et des barrés depuis le style Normal.  
+ Arial.tff (qui a été ajouté à la collection de polices privées dans l’exemple de code suivant) est le fichier de police pour le style Arial regular. Toutefois, notez que la sortie du programme montre plusieurs styles disponibles autres que standard pour la famille de polices Arial. C’est parce que GDI + peut simuler les styles italique, gras et italiques et gras depuis le style Normal. GDI + peut également produire des soulignements et barrés depuis le style Normal.  
   
- De même, [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] peut simuler le style gras et italique à partir du style gras ou italique. La sortie du programme montre que le style italique gras est disponible pour la famille de fois bien que TimesBd.tff (Times New Roman, gras) est le seul fichier fois dans la collection.  
+ De même, GDI + peut simuler le style gras et italique à partir du style gras ou italique. La sortie du programme montre que le style italique gras est disponible pour la famille de fois bien que TimesBd.tff (Times New Roman, gras) est le seul fichier fois dans la collection.  
   
  [!code-csharp[System.Drawing.FontsAndText#51](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.FontsAndText/CS/Class1.cs#51)]
  [!code-vb[System.Drawing.FontsAndText#51](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.FontsAndText/VB/Class1.vb#51)]  

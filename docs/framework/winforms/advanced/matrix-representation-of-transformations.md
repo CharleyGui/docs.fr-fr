@@ -16,12 +16,12 @@ helpviewer_keywords:
 - transformations [Windows Forms], translation
 - affine transformations
 ms.assetid: 0659fe00-9e0c-41c4-9118-016f2404c905
-ms.openlocfilehash: c87be8eaf715e373da75dd8f91889b0e396dba0d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ceaad7b4bb5a70a890d261e39bc608becb388c17
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61967462"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505640"
 ---
 # <a name="matrix-representation-of-transformations"></a>Représentation matricielle des transformations
 Une matrice m × n est un ensemble de nombres organisés dans des millions de lignes et colonnes n. L’illustration suivante montre plusieurs matrices.  
@@ -66,7 +66,7 @@ Une matrice m × n est un ensemble de nombres organisés dans des millions de li
   
  ![Transformations](./media/aboutgdip05-art10.gif "AboutGdip05_art10")  
   
- Dans [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] vous pouvez stocker une transformation affine dans un <xref:System.Drawing.Drawing2D.Matrix> objet. Étant donné que la troisième colonne d’une matrice qui représente une transformation affine est toujours (0, 0, 1), vous spécifiez uniquement les six nombres dans les deux premières colonnes lorsque vous construisez un <xref:System.Drawing.Drawing2D.Matrix> objet. L’instruction `Matrix myMatrix = new Matrix(0, 1, -1, 0, 3, 4)` construit la matrice affichée dans la figure précédente.  
+ Dans GDI +, vous pouvez stocker une transformation affine dans un <xref:System.Drawing.Drawing2D.Matrix> objet. Étant donné que la troisième colonne d’une matrice qui représente une transformation affine est toujours (0, 0, 1), vous spécifiez uniquement les six nombres dans les deux premières colonnes lorsque vous construisez un <xref:System.Drawing.Drawing2D.Matrix> objet. L’instruction `Matrix myMatrix = new Matrix(0, 1, -1, 0, 3, 4)` construit la matrice affichée dans la figure précédente.  
   
 ## <a name="composite-transformations"></a>Transformations composites  
  Une transformation composite est une séquence de transformations, une après l’autre. Prenez en compte les matrices et les transformations dans la liste suivante :  

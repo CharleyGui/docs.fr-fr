@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 2df2cd11-6aac-4bdf-ab7b-ea5f464cd5ca
-ms.openlocfilehash: a8129b2c8674fb5ecc4d513f57236fde66fdff14
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fe5cb97b4802c2b638a4b218a27da05468dc50fb
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64659923"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505552"
 ---
 # <a name="binding-sources-overview"></a>Vue d'ensemble des sources de liaison
 Dans la liaison de données, l’objet de source de liaison fait référence à l’objet à partir duquel vous obtenez des données. Cette rubrique décrit les types d’objets que vous pouvez utiliser comme source de liaison.  
@@ -24,7 +24,7 @@ Dans la liaison de données, l’objet de source de liaison fait référence à 
 |--------------------|-----------------|  
 |Objets [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)].|Vous pouvez lier des propriétés publiques, des sous-propriétés, ainsi que des indexeurs de n’importe quel objet [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]. Le moteur de liaison utilise la réflexion [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] pour obtenir les valeurs des propriétés. Vous pouvez également des objets qui implémentent <xref:System.ComponentModel.ICustomTypeDescriptor> ou avez inscrit <xref:System.ComponentModel.TypeDescriptionProvider> fonctionnent également avec le moteur de liaison.<br /><br /> Pour plus d’informations sur la façon d’implémenter une classe qui peut servir de source de liaison, consultez la page [Implémentation d’une classe pour la source de liaison](#classes) plus loin dans cette rubrique.|  
 |objets dynamiques|Vous pouvez lier aux propriétés disponibles et aux indexeurs d’un objet qui implémente le <xref:System.Dynamic.IDynamicMetaObjectProvider> interface. Si vous pouvez accéder au membre dans le code, vous pouvez lier celui-ci. Par exemple, si un objet dynamique vous permet d’accéder à un membre dans le code via `someObjet.AProperty`, vous pouvez le lier en affectant le chemin de liaison `AProperty`.|  
-|Objets [!INCLUDE[TLA#tla_adonet](../../../../includes/tlasharptla-adonet-md.md)].|Vous pouvez lier à [!INCLUDE[TLA2#tla_adonet](../../../../includes/tla2sharptla-adonet-md.md)] objets, tels que <xref:System.Data.DataTable>. Le [!INCLUDE[TLA2#tla_adonet](../../../../includes/tla2sharptla-adonet-md.md)] <xref:System.Data.DataView> implémente le <xref:System.ComponentModel.IBindingList> interface, qui fournit des notifications de modification que le moteur de liaison écoute.|  
+|Objets [!INCLUDE[TLA#tla_adonet](../../../../includes/tlasharptla-adonet-md.md)].|Vous pouvez lier aux objets ADO.NET, tels que <xref:System.Data.DataTable>. ADO.NET <xref:System.Data.DataView> implémente le <xref:System.ComponentModel.IBindingList> interface, qui fournit des notifications de modification que le moteur de liaison écoute.|  
 |Objets [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)].|Vous pouvez lier et exécuter `XPath` interroge le service sur un <xref:System.Xml.XmlNode>, <xref:System.Xml.XmlDocument>, ou <xref:System.Xml.XmlElement>. Un moyen pratique d’accéder aux [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] données constituant la source de liaison dans le balisage consiste à utiliser un <xref:System.Windows.Data.XmlDataProvider> objet. Pour plus d’informations, consultez [Effectuer une liaison à des données XML à l'aide d'un XMLDataProvider et de requêtes XPath](how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).<br /><br /> Vous pouvez également lier à un <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XDocument>, ou lier aux résultats de requêtes exécutées sur des objets de ces types à l’aide de LINQ to XML. Un moyen pratique d’utiliser LINQ to XML pour accéder aux données XML qui est la source de liaison dans le balisage consiste à utiliser un <xref:System.Windows.Data.ObjectDataProvider> objet. Pour plus d’informations, consultez [Effectuer une liaison avec XDocument, XElement ou LINQ pour des résultats de requête XML](how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md).|  
 |Objets <xref:System.Windows.DependencyObject>.|Vous pouvez lier aux propriétés de dépendance de n’importe quel <xref:System.Windows.DependencyObject>. Pour obtenir un exemple, consultez [Lier les propriétés de deux contrôles](how-to-bind-the-properties-of-two-controls.md).|  
   

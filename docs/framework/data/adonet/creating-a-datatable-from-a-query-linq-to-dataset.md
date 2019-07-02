@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1b97afeb-03f8-41e2-8eb3-58aff65f7d18
-ms.openlocfilehash: b25de14267bc31ad0ac5e3f51d4cd964b5a0535f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 88abd0e5b7f56702c7a7009842253d3ca552d01f
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607334"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67504203"
 ---
 # <a name="creating-a-datatable-from-a-query-linq-to-dataset"></a>Création d'un DataTable à partir d'une requête (LINQ to DataSet)
 La liaison de données est une utilisation courante de l’objet <xref:System.Data.DataTable>. La méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> prend les résultats d'une requête et copie les données dans un objet <xref:System.Data.DataTable> qui peut ensuite être utilisé pour la liaison de données. Une fois les opérations de données effectuées, le nouveau <xref:System.Data.DataTable> est refusionné dans le <xref:System.Data.DataTable> source.  
   
  La méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> utilise le processus suivant pour créer un <xref:System.Data.DataTable> à partir d'une requête :  
   
-1. La méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> clone une <xref:System.Data.DataTable> de la table source (un objet <xref:System.Data.DataTable> qui implémente l'interface <xref:System.Linq.IQueryable%601>). La source <xref:System.Collections.IEnumerable> provient généralement d'une requête d'expression ou de méthode [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].  
+1. La méthode <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> clone une <xref:System.Data.DataTable> de la table source (un objet <xref:System.Data.DataTable> qui implémente l'interface <xref:System.Linq.IQueryable%601>). Le <xref:System.Collections.IEnumerable> source provient généralement d’un LINQ à la requête d’expression ou de méthode de jeu de données.  
   
 2. Le schéma de la <xref:System.Data.DataTable> clonée est créé à partir des colonnes du premier objet <xref:System.Data.DataRow> énuméré dans la table source et le nom de la table clonée est celui de la table source auquel le mot « query » est accolé.  
   

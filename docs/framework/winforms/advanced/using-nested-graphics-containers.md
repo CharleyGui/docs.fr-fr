@@ -9,15 +9,15 @@ helpviewer_keywords:
 - graphics [Windows Forms], clipping
 - graphics [Windows Forms], transformations in nested objects
 ms.assetid: a0d9f178-43a4-4323-bb5a-d3e3f77ae6c1
-ms.openlocfilehash: 6bbf7918ccff184e597204b35aa005ab17d8d8af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4533fbba62c36714f55cd8bd55fde7a1c8f6c9e6
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766264"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505047"
 ---
 # <a name="using-nested-graphics-containers"></a>Utilisation de conteneurs graphiques imbriqués
-[!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] Fournit des conteneurs que vous pouvez utiliser pour remplacer ou augmenter la partie de l’état dans temporairement un <xref:System.Drawing.Graphics> objet. Vous créez un conteneur en appelant le <xref:System.Drawing.Graphics.BeginContainer%2A> méthode d’un <xref:System.Drawing.Graphics> objet. Vous pouvez appeler <xref:System.Drawing.Graphics.BeginContainer%2A> à plusieurs reprises pour former des conteneurs imbriqués. Chaque appel à <xref:System.Drawing.Graphics.BeginContainer%2A> doit être associé à un appel à <xref:System.Drawing.Graphics.EndContainer%2A>.  
+GDI + fournit des conteneurs que vous pouvez utiliser pour remplacer ou augmenter la partie de l’état dans temporairement un <xref:System.Drawing.Graphics> objet. Vous créez un conteneur en appelant le <xref:System.Drawing.Graphics.BeginContainer%2A> méthode d’un <xref:System.Drawing.Graphics> objet. Vous pouvez appeler <xref:System.Drawing.Graphics.BeginContainer%2A> à plusieurs reprises pour former des conteneurs imbriqués. Chaque appel à <xref:System.Drawing.Graphics.BeginContainer%2A> doit être associé à un appel à <xref:System.Drawing.Graphics.EndContainer%2A>.  
   
 ## <a name="transformations-in-nested-containers"></a>Transformations dans les conteneurs imbriqués  
  L’exemple suivant crée un <xref:System.Drawing.Graphics> objet et un conteneur dans qui <xref:System.Drawing.Graphics> objet. La transformation universelle de la <xref:System.Drawing.Graphics> objet est une translation 100 unités sur l’axe x et 80 unités dans la direction y. La transformation universelle du conteneur est une rotation de 30 degrés. Le code effectue l’appel `DrawRectangle(pen, -60, -30, 120, 60)` à deux reprises. Le premier appel à <xref:System.Drawing.Graphics.DrawRectangle%2A> est à l’intérieur du conteneur ; autrement dit, l’appel est entre les appels à <xref:System.Drawing.Graphics.BeginContainer%2A> et <xref:System.Drawing.Graphics.EndContainer%2A>. Le deuxième appel à <xref:System.Drawing.Graphics.DrawRectangle%2A> est après l’appel à <xref:System.Drawing.Graphics.EndContainer%2A>.  

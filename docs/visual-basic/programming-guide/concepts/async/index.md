@@ -2,12 +2,12 @@
 title: Programmation asynchrone avec Async et Await (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: bd7e462b-583b-4395-9c36-45aa9e61072c
-ms.openlocfilehash: 030ef4549bc820cab66d33fa81c205158c09fff9
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 0d8810da424b0759dcfba882efe462514a14145a
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67026101"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505954"
 ---
 # <a name="asynchronous-programming-with-async-and-await-visual-basic"></a>Programmation asynchrone avec Async et Await (Visual Basic)
 
@@ -39,7 +39,7 @@ L'approche basée sur async ajoute l'équivalent d'une transmission automatique 
 
 ## <a name="BKMK_HowtoWriteanAsyncMethod"></a> Les méthodes Async sont plus faciles à écrire
 
-Les mots clés [async](../../../../visual-basic/language-reference/modifiers/async.md) et [await](../../../../visual-basic/language-reference/modifiers/async.md) en Visual Basic sont au cœur de la programmation async. Avec ces deux mots clés, vous pouvez utiliser des ressources dans .NET Framework ou Windows Runtime pour créer une méthode asynchrone presque aussi facilement qu’une méthode synchrone. Les méthodes asynchrones définies avec `Async` et `Await` sont appelées méthodes async.
+Les mots clés [async](../../../../visual-basic/language-reference/modifiers/async.md) et [await](../../../../visual-basic/language-reference/operators/await-operator.md) en Visual Basic sont au cœur de la programmation async. Avec ces deux mots clés, vous pouvez utiliser des ressources dans .NET Framework ou Windows Runtime pour créer une méthode asynchrone presque aussi facilement qu’une méthode synchrone. Les méthodes asynchrones définies avec `Async` et `Await` sont appelées méthodes async.
 
 L'exemple suivant illustre une méthode async. Presque tous les éléments du code doivent vous sembler familiers. Les commentaires indiquent les fonctionnalités que vous ajoutez pour créer le comportement asynchrone.
 

@@ -8,19 +8,19 @@ helpviewer_keywords:
 - x:Array [XAML Services]
 - XAML [XAML Services], x:Array markup extension
 ms.assetid: c5358e14-d24c-44c7-b5eb-6062a4fd981c
-ms.openlocfilehash: 4f4e26eb3e5ccaf66b2173c7fc9952375c5f2a58
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8acb732841aa7aaaad3e8fdd2cf2962ff44dd60b
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62025403"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67506062"
 ---
 # <a name="xarray-markup-extension"></a>x:Array, extension de balisage
 Fournit la prise en charge générale pour les tableaux d’objets dans XAML via une extension de balisage. Cela correspond à la `x:ArrayExtension` type XAML dans [MS-XAML].  
   
 ## <a name="xaml-object-element-usage"></a>Utilisation d'éléments objet XAML  
   
-```  
+```xaml
 <x:Array Type="typeName">  
   arrayContents  
 </x:Array>  
@@ -55,17 +55,14 @@ Fournit la prise en charge générale pour les tableaux d’objets dans XAML via
   
  Par exemple, Voici un tableau simple de deux chaînes, avec le `sys` préfixe (et également `x`) définis au niveau du tableau.  
   
- [xaml]  
-  
- `<x:Array Type="sys:String" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`  
-  
- `xmlns:sys="clr-namespace:System;assembly=mscorlib">`  
-  
- `<sys:String>Hello</sys:String>`  
-  
- `<sys:String>World</sys:String>`  
-  
- `</x:Array>`  
+```xaml
+<x:Array Type="sys:String"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String>Hello</sys:String>
+    <sys:String>World</sys:String>
+</x:Array>
+```
   
  Pour les types personnalisés qui sont utilisés comme éléments de tableau, la classe doit également en charge la configuration requise pour instanciée en XAML en tant qu’éléments de l’objet. Pour plus d’informations, consultez [XAML et Classes personnalisées pour WPF](../wpf/advanced/xaml-and-custom-classes-for-wpf.md).  
   

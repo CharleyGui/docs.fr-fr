@@ -8,15 +8,15 @@ helpviewer_keywords:
 - lines [Windows Forms], drawing
 - curves [Windows Forms], drawing
 ms.assetid: ace6e8d4-4e94-486b-9681-758a6667dc7f
-ms.openlocfilehash: 746d757510776b8d6894c456bb1860a5d68632c1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fef3361ca29ed3e118a54b3e81dd82e48b831bef
+ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61942972"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67505654"
 ---
 # <a name="lines-curves-and-shapes"></a>Lignes, courbes et formes
-La partie de graphisme vectoriel de [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] est utilisé pour dessiner des lignes, courbes et pour dessiner et remplir des formes.  
+La partie de graphisme vectoriel de GDI + est utilisée pour dessiner des lignes, courbes et pour dessiner et remplir des formes.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Vue d'ensemble des graphismes vectoriels](vector-graphics-overview.md)  
