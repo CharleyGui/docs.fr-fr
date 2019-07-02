@@ -2,18 +2,18 @@
 title: LINQ to ADO.NET (page de portail)
 ms.date: 07/20/2015
 ms.assetid: bbbd7c76-2981-4b91-b8d2-437547181f52
-ms.openlocfilehash: 21d6ddb4b793d2502b315888d79fb826741fed2e
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
-ms.translationtype: MT
+ms.openlocfilehash: 04fb330b1a8eaea9c5c64f633322696236eb492e
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307482"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487809"
 ---
 # <a name="linq-to-adonet-portal-page"></a>LINQ to ADO.NET (page de portail)
-[!INCLUDE[linq_adonet](~/includes/linq-adonet-md.md)] vous permet d’interroger tout objet énumérable dans ADO.NET à l’aide du modèle de programmation [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)].  
+LINQ to ADO.NET vous permet d’interroger tout objet énumérable dans ADO.NET à l’aide de la [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] modèle de programmation.  
   
 > [!NOTE]
->  La documentation [!INCLUDE[linq_adonet](~/includes/linq-adonet-md.md)] se trouve dans la section ADO.NET du SDK .NET Framework : [LINQ et ADO.NET](../../../../framework/data/adonet/linq-and-ado-net.md).
+>  LINQ to ADO.NET documentation se trouve dans la section ADO.NET du kit SDK .NET Framework : [LINQ et ADO.NET](../../../../framework/data/adonet/linq-and-ado-net.md).
   
  Il existe trois technologies ADO.NET [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] différentes : [!INCLUDE[linq_dataset](~/includes/linq-dataset-md.md)], [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] et [!INCLUDE[linq_entities](~/includes/linq-entities-md.md)]. [!INCLUDE[linq_dataset](~/includes/linq-dataset-md.md)] assure une interrogation plus riche et optimisée du <xref:System.Data.DataSet>, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] vous permet d’interroger directement des schémas de base de données SQL Server, et [!INCLUDE[linq_entities](~/includes/linq-entities-md.md)] vous permet d’interroger un Entity Data Model.  
   
