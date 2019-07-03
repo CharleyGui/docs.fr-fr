@@ -2,18 +2,18 @@
 title: Méthodes LINQ prises en charge et non prises en charge (LINQ to Entities)
 ms.date: 03/30/2017
 ms.assetid: 7f3ffa5f-f819-4730-bcdb-09b23de3b6d0
-ms.openlocfilehash: 74b3973f931fa6f0d1f5b380833b8d5e5566563b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 338069b5139999a046d1b1b10a8eac4acb1d9e06
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61797681"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539428"
 ---
 # <a name="supported-and-unsupported-linq-methods-linq-to-entities"></a>Méthodes LINQ prises en charge et non prises en charge (LINQ to Entities)
-Cette section fournit des informations sur les opérateurs de requête standard LINQ (Language-Integrated Query) qui sont pris en charge ou non pris en charge dans les requêtes [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)]. De nombreux opérateurs de requête standard LINQ ont une version surchargée qui accepte un argument entier. L’argument entier correspond à un index de base zéro de la séquence qui est désignée pour l’opération, un <xref:System.Collections.Generic.IEqualityComparer%601>, ou <xref:System.Collections.Generic.IComparer%601>. Sauf spécification contraire, ces versions surchargées des opérateurs de requête standard LINQ ne sont pas prises en charge et toute tentative pour les utiliser lèvera une exception.  
+Cette section fournit des informations sur les opérateurs de requête standard Language-Integrated Query (LINQ) qui sont pris en charge ou non pris en charge dans LINQ aux requêtes d’entités. De nombreux opérateurs de requête standard LINQ ont une version surchargée qui accepte un argument entier. L’argument entier correspond à un index de base zéro de la séquence qui est désignée pour l’opération, un <xref:System.Collections.Generic.IEqualityComparer%601>, ou <xref:System.Collections.Generic.IComparer%601>. Sauf spécification contraire, ces versions surchargées des opérateurs de requête standard LINQ ne sont pas prises en charge et toute tentative pour les utiliser lèvera une exception.  
   
 ## <a name="projection-and-restriction-methods"></a>Méthodes de projection et de restriction  
- La plupart des méthodes de projection et de restriction LINQ sont prises en charge dans les requêtes [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], à l'exception de celles qui acceptent un argument positionnel. Pour plus d’informations, consultez [des opérateurs de requête Standard dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Le tableau suivant répertorie les méthodes de projection et de restriction prises en charge et non prises en charge.  
+ La plupart des méthodes de projection et de restriction LINQ est prises en charge dans LINQ aux requêtes d’entités, à l’exception de celles qui acceptent un argument positionnel. Pour plus d’informations, consultez [des opérateurs de requête Standard dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Le tableau suivant répertorie les méthodes de projection et de restriction prises en charge et non prises en charge.  
   
 |Méthode|Assistance|Signature de fonction Visual Basic|Signature de méthode C#|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -27,7 +27,7 @@ Cette section fournit des informations sur les opérateurs de requête standard 
 |<xref:System.Linq.Queryable.Where%2A>|Non pris en charge|`Function Where(Of TSource) ( _ source As IQueryable(Of TSource), _ predicate As Expression(Of Func(Of TSource, Integer, Boolean)) _ ) As IQueryable(Of TSource)`|`IQueryable<TSource> Where<TSource>( this IQueryable<TSource> source, Expression<Func\<TSource, int, bool>> predicate )`|  
   
 ## <a name="join-methods"></a>Méthodes de jointure  
- Les méthodes de jointure LINQ sont prises en charge dans [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], à l'exception de celles qui acceptent un `IEqualityComparer`, car le comparateur ne peut pas être traduit dans la source de données. Pour plus d’informations, consultez [des opérateurs de requête Standard dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Le tableau suivant répertorie les méthodes de jointure prises en charge et non prises en charge.  
+ Les méthodes de jointure LINQ sont prises en charge dans LINQ to Entities, à l’exception de celles qui acceptent un `IEqualityComparer` , car le comparateur ne peut pas être traduit dans la source de données. Pour plus d’informations, consultez [des opérateurs de requête Standard dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Le tableau suivant répertorie les méthodes de jointure prises en charge et non prises en charge.  
   
 |Méthode|Assistance|Signature de fonction Visual Basic|Signature de méthode C#|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -37,7 +37,7 @@ Cette section fournit des informations sur les opérateurs de requête standard 
 |<xref:System.Linq.Queryable.Join%2A>|Non prise en charge|`Function Join(Of TOuter, TInner, TKey, TResult) ( _ outer As IQueryable(Of TOuter), _ inner As IEnumerable(Of TInner), _ outerKeySelector As Expression(Of Func(Of TOuter, TKey)), _ innerKeySelector As Expression(Of Func(Of TInner, TKey)), _ resultSelector As Expression(Of Func(Of TOuter, TInner, TResult)), _ comparer As IEqualityComparer(Of TKey) _ ) As IQueryable(Of TResult)`|`IQueryable<TResult> Join\<TOuter, TInner, TKey, TResult>( this IQueryable<TOuter> outer, IEnumerable<TInner> inner, Expression<Func\<TOuter, TKey>> outerKeySelector, Expression<Func\<TInner, TKey>> innerKeySelector, Expression<Func\<TOuter, TInner, TResult>> resultSelector, IEqualityComparer<TKey> comparer )`|  
   
 ## <a name="set-methods"></a>Définir des méthodes  
- La plupart de l’ensemble LINQ sont prises en charge dans [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] requêtes, à l’exception de celles qui utilisent un <xref:System.Collections.Generic.EqualityComparer%601>. Pour plus d’informations, consultez [des opérateurs de requête Standard dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Le tableau suivant répertorie les méthodes de définition prises en charge et non prises en charge.  
+ La plupart des méthodes d’ensemble LINQ est prises en charge dans LINQ aux requêtes d’entités, à l’exception de celles qui utilisent un <xref:System.Collections.Generic.EqualityComparer%601>. Pour plus d’informations, consultez [des opérateurs de requête Standard dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Le tableau suivant répertorie les méthodes de définition prises en charge et non prises en charge.  
   
 |Méthode|Assistance|Signature de fonction Visual Basic|Signature de méthode C#|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -59,7 +59,7 @@ Cette section fournit des informations sur les opérateurs de requête standard 
 |<xref:System.Linq.Queryable.Union%2A>|Non pris en charge|`Function Union(Of TSource) ( _ source1 As IQueryable(Of TSource), _ source2 As IEnumerable(Of TSource), _ comparer As IEqualityComparer(Of TSource) _ ) As IQueryable(Of TSource)`|`IQueryable<TSource> Union<TSource>( this IQueryable<TSource> source1, IEnumerable<TSource> source2, IEqualityComparer<TSource> comparer )`|  
   
 ## <a name="ordering-methods"></a>Méthodes de classement  
- La plupart des méthodes de classement LINQ est prises en charge dans [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], à l’exception de celles qui acceptent un <xref:System.Collections.Generic.IComparer%601>, car le comparateur ne peut pas être traduit dans la source de données. Pour plus d’informations, consultez [des opérateurs de requête Standard dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Le tableau suivant répertorie les méthodes de tri prises en charge et non prises en charge.  
+ La plupart des méthodes de classement LINQ est prises en charge dans LINQ to Entities, à l’exception de celles qui acceptent un <xref:System.Collections.Generic.IComparer%601>, car le comparateur ne peut pas être traduit dans la source de données. Pour plus d’informations, consultez [des opérateurs de requête Standard dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Le tableau suivant répertorie les méthodes de tri prises en charge et non prises en charge.  
   
 |Méthode|Assistance|Signature de fonction Visual Basic|Signature de méthode C#|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -74,7 +74,7 @@ Cette section fournit des informations sur les opérateurs de requête standard 
 |<xref:System.Linq.Queryable.Reverse%2A>|Non pris en charge|`Function Reverse(Of TSource) ( _ source As IQueryable(Of TSource) _ ) As IQueryable(Of TSource)`|`IQueryable<TSource> Reverse<TSource>( this IQueryable<TSource> source )`|  
   
 ## <a name="grouping-methods"></a>Méthodes de regroupement  
- La plupart des méthodes de regroupement LINQ est prises en charge dans [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], à l’exception de celles qui acceptent un <xref:System.Collections.Generic.IEqualityComparer%601>, car le comparateur ne peut pas être traduit dans la source de données. Pour plus d’informations, consultez [des opérateurs de requête Standard dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Le tableau suivant répertorie les méthodes de regroupement prises en charge et non prises en charge.  
+ La plupart des méthodes de regroupement LINQ est prises en charge dans LINQ to Entities, à l’exception de celles qui acceptent un <xref:System.Collections.Generic.IEqualityComparer%601>, car le comparateur ne peut pas être traduit dans la source de données. Pour plus d’informations, consultez [des opérateurs de requête Standard dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Le tableau suivant répertorie les méthodes de regroupement prises en charge et non prises en charge.  
   
 |Méthode|Assistance|Signature de fonction Visual Basic|Signature de méthode C#|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -88,7 +88,7 @@ Cette section fournit des informations sur les opérateurs de requête standard 
 |<xref:System.Linq.Queryable.GroupBy%2A>|Non pris en charge|`Function GroupBy(Of TSource, TKey, TElement, TResult) ( _ source As IQueryable(Of TSource), _ keySelector As Expression(Of Func(Of TSource, TKey)), _ elementSelector As Expression(Of Func(Of TSource, TElement)), _ resultSelector As Expression(Of Func(Of TKey, IEnumerable(Of TElement), TResult)), _ comparer As IEqualityComparer(Of TKey) _ ) As IQueryable(Of TResult)`|`IQueryable<TResult> GroupBy<TSource, TKey, TElement, TResult>( this IQueryable<TSource> source, Expression<Func<TSource, TKey>> keySelector, Expression<Func<TSource, TElement>> elementSelector, Expression<Func<TKey, IEnumerable<TElement>, TResult>> resultSelector, IEqualityComparer<TKey> comparer )`|  
   
 ## <a name="aggregate-methods"></a>Méthodes d'agrégation  
- La plupart des méthodes d'agrégation qui acceptent des types de données primitifs sont prises en charge dans [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)]. Pour plus d’informations, consultez [des opérateurs de requête Standard dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Le tableau suivant répertorie les méthodes d'agrégation prises en charge et non prises en charge.  
+ La plupart des méthodes d’agrégation qui acceptent des types de données primitifs est prises en charge dans LINQ to Entities. Pour plus d’informations, consultez [des opérateurs de requête Standard dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Le tableau suivant répertorie les méthodes d'agrégation prises en charge et non prises en charge.  
   
 |Méthode|Assistance|Signature de fonction Visual Basic|Signature de méthode C#|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -153,7 +153,7 @@ Cette section fournit des informations sur les opérateurs de requête standard 
 |<xref:System.Linq.Queryable.OfType%2A>|Prise en charge pour <xref:System.Data.Metadata.Edm.EntityType>|`Function OfType(Of TResult) ( _ source As IQueryable _ ) As IQueryable(Of TResult)`|`IQueryable<TResult> OfType<TResult>( this IQueryable source )`|  
   
 ## <a name="paging-methods"></a>Méthodes de pagination  
- Certaines méthodes de pagination LINQ ne sont pas prises en charge dans les requêtes [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)]. Pour plus d’informations, consultez [des opérateurs de requête Standard dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Le tableau suivant répertorie les méthodes de pagination prises en charge et non prises en charge.  
+ Un nombre de méthodes de pagination LINQ n’est pas pris en charge dans LINQ aux requêtes d’entités. Pour plus d’informations, consultez [des opérateurs de requête Standard dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/standard-query-operators-in-linq-to-entities-queries.md). Le tableau suivant répertorie les méthodes de pagination prises en charge et non prises en charge.  
   
 |Méthode|Assistance|Signature de fonction Visual Basic|Signature de méthode C#|  
 |------------|-------------|-------------------------------------|--------------------------|  

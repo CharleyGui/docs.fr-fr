@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: bcd7b699-4e50-4523-8c33-2f54a103d94e
-ms.openlocfilehash: 98dbb0185de88c6fd69c6daf1540e997c14cc9e2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 165fb1524daa781c29037bf1c9cb2b3013504177
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64641427"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539741"
 ---
 # <a name="query-results"></a>Résultats de requête
-Une fois qu'une requête [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] a été convertie en arborescences de commandes puis exécutée, les résultats de la requête sont généralement retournés sous l'une des formes suivantes :  
+Une fois une requête LINQ to Entities est convertie en arborescences de commandes et exécutée, les résultats de requête sont généralement retournés sous une des opérations suivantes :  
   
 - une collection de zéro, un ou plusieurs objets entité typés ou une projection de types complexes dans le modèle conceptuel ;  
   

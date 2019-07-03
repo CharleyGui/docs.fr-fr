@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8025ba1d-29c7-4407-841b-d5a3bed40b7a
-ms.openlocfilehash: f3ba6bfd0f83270bc6b9e980fe92f6630c90ad49
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d3f24fb335169c2b38ce945377bc4e64a47fe9d5
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785344"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539918"
 ---
 # <a name="compiled-queries--linq-to-entities"></a>Requêtes compilées (LINQ to Entities)
 Lorsque vous possédez une application qui exécute de nombreuses fois des requêtes similaires d’un point de vue structurel dans Entity Framework, vous pouvez souvent améliorer les performances en compilant la requête une fois et en l’exécutant plusieurs fois avec des paramètres différents. Par exemple, une application peut avoir besoin de récupérer tous les clients d'une ville spécifique ; la ville est spécifiée à l'exécution par l'utilisateur dans un formulaire. À cette fin, LINQ to Entities prend en charge l'utilisation des requêtes compilées.  
@@ -19,7 +19,7 @@ Lorsque vous possédez une application qui exécute de nombreuses fois des requ�
   
  La classe <xref:System.Data.Objects.CompiledQuery> permet la compilation et la mise en cache des requêtes en vue de leur réutilisation. Conceptuellement, cette classe contient une méthode <xref:System.Data.Objects.CompiledQuery>'s `Compile` avec plusieurs surcharges. Appelez la méthode `Compile` pour créer un nouveau délégué pour représenter la requête compilée. Les méthodes `Compile`, fournies avec un objet <xref:System.Data.Objects.ObjectContext> et des valeurs de paramètres, retournent un délégué qui produit un résultat (tel qu'une instance de <xref:System.Linq.IQueryable%601>). La requête compile une fois durant la première exécution uniquement. Les options de fusion définies pour la requête au moment de la compilation ne peuvent pas être modifiées ultérieurement. Une fois la requête compilée vous pouvez seulement fournir des paramètres de type primitif, mais vous ne pouvez pas remplacer des parties de la requête qui modifieraient le SQL généré. Pour plus d’informations, consultez [Options de fusion Entity Framework et requêtes compilées](https://go.microsoft.com/fwlink/?LinkId=199591)  
   
- Le [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] expression de requête qui la <xref:System.Data.Objects.CompiledQuery>de `Compile` méthode Compile est représentée par un des génériques `Func` délégués, tels que <xref:System.Func%605>. Au maximum, l'expression de requête peut encapsuler un paramètre `ObjectContext`, un paramètre de retour et seize paramètres de requête. Si plus de seize paramètres de requête sont requis, vous pouvez créer une structure dont les propriétés représentent des paramètres de requête. Vous pouvez alors utiliser les propriétés sur la structure dans l'expression de requête une fois les propriétés définies.  
+ L’expression LINQ to Entities requête qui la <xref:System.Data.Objects.CompiledQuery>de `Compile` méthode Compile est représentée par un des génériques `Func` délégués, tels que <xref:System.Func%605>. Au maximum, l'expression de requête peut encapsuler un paramètre `ObjectContext`, un paramètre de retour et seize paramètres de requête. Si plus de seize paramètres de requête sont requis, vous pouvez créer une structure dont les propriétés représentent des paramètres de requête. Vous pouvez alors utiliser les propriétés sur la structure dans l'expression de requête une fois les propriétés définies.  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant compile puis appelle une requête qui accepte un paramètre d'entrée <xref:System.Decimal> et retourne une séquence de commandes où le montant total dû est supérieur à 200,00 $ :  

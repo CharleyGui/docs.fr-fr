@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: acd71129-5ff0-4b4e-b266-c72cc0c53601
-ms.openlocfilehash: 303e46e79786ce7f062db4a1a3ffb6c321169af8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e84319c60534c3ecf154c3f58973bcc429a73842
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64631303"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539821"
 ---
 # <a name="known-issues-and-considerations-in-linq-to-entities"></a>Problèmes connus et éléments à prendre en compte dans LINQ to Entities
-Cette section fournit des informations sur les problèmes connus au niveau des requêtes [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)].  
+Cette section fournit des informations sur les problèmes connus avec LINQ aux requêtes d’entités.  
   
 - [Requêtes LINQ qui ne peut pas être mis en cache](#LINQQueriesThatAreNotCached)  
   
@@ -42,7 +42,7 @@ Cette section fournit des informations sur les problèmes connus au niveau des r
   
 <a name="UnsignedIntsUnsupported"></a>   
 ## <a name="unsigned-integers-not-supported"></a>Entiers non signés non pris en charge  
- La définition d'un type d'entier non signé dans une requête [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] n'est pas prise en charge, car [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] ne prend pas en charge les entiers non signés. Si vous spécifiez un entier non signé, un <xref:System.ArgumentException> exception est levée pendant la traduction d’expression de requête, comme illustré dans l’exemple suivant. Dans cet exemple, la requête vise à extraire une commande dont le numéro est 48000.  
+ Spécification d’un type d’entier non signé dans une requête LINQ to Entities n’est pas pris en charge, car le [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] ne prend pas en charge les entiers non signés. Si vous spécifiez un entier non signé, un <xref:System.ArgumentException> exception est levée pendant la traduction d’expression de requête, comme illustré dans l’exemple suivant. Dans cet exemple, la requête vise à extraire une commande dont le numéro est 48000.  
   
  [!code-csharp[DP L2E Conceptual Examples#UIntAsQueryParam](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#uintasqueryparam)]
  [!code-vb[DP L2E Conceptual Examples#UIntAsQueryParam](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#uintasqueryparam)]  

@@ -2,24 +2,24 @@
 title: Opérateurs de requête standard dans les requêtes LINQ to Entities
 ms.date: 08/21/2018
 ms.assetid: 7fa55a9b-6219-473d-b1e5-2884a32dcdff
-ms.openlocfilehash: 5c666bad40d0e433ee5f8d2b1155e881d7042a85
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f2661f1b492ff8f2ed18c7b396326562050ca45b
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61797720"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539443"
 ---
 # <a name="standard-query-operators-in-linq-to-entities-queries"></a>Opérateurs de requête standard dans les requêtes LINQ to Entities
 Dans une requête, vous indiquez les informations que vous voulez extraire de la source de données. Une requête peut également spécifier la manière dont ces informations doivent être triées, regroupées et mises en forme avant d'être retournées. LINQ fournit un ensemble de méthodes de requête standard utilisables dans une requête. La plupart de ces méthodes fonctionne sur des séquences ; Dans ce contexte, une séquence est un objet dont le type implémente le <xref:System.Collections.Generic.IEnumerable%601> interface ou le <xref:System.Linq.IQueryable%601> interface. Les fonctionnalités de requête des opérateurs de requête standard incluent le filtrage, la projection, l'agrégation, le tri, le regroupement, la pagination, etc. Certains des opérateurs de requête standard les plus couramment utilisés ont une syntaxe de mots clés dédiée qui leur permet d'être appelés à l'aide d'une syntaxe d'expression de requête. Une expression de requête est une façon différente et plus lisible d'exprimer une requête que son équivalent fondé sur une méthode. Les clauses d'expression de requête sont traduites en appels aux méthodes de requête lors de la compilation. Pour obtenir la liste des opérateurs de requête standard qui comportent des clauses d’expression de requête équivalente, consultez [vue d’ensemble des opérateurs de requête Standard](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/bb397896(v=vs.120)).  
   
- Certains opérateurs de requête standard ne sont pas pris en charge dans les requêtes [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)]. Pour plus d’informations, consultez [pris en charge et les méthodes LINQ non prises en charge (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md). Cette rubrique fournit des informations sur les opérateurs de requête standard qui sont spécifiques à [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)]. Pour plus d’informations sur les problèmes connus dans [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] de requêtes, consultez [problèmes connus et des considérations dans LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md).  
+ Tous les opérateurs de requête standard sont pris en charge dans LINQ aux requêtes d’entités. Pour plus d’informations, consultez [pris en charge et les méthodes LINQ non prises en charge (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md). Cette rubrique fournit des informations sur les opérateurs de requête standard qui sont spécifiques à LINQ to Entities. Pour plus d’informations sur les problèmes connus dans LINQ aux requêtes d’entités, consultez [problèmes connus et des considérations dans LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md).  
   
 ## <a name="projection-and-filtering-methods"></a>Méthodes de projection et de filtrage  
  *Projection* fait référence à la transformation des éléments d’un jeu de résultats dans une forme souhaitée. Par exemple, vous pouvez projeter un sous-ensemble des propriétés dont vous avez besoin de chaque objet du jeu de résultats, vous pouvez projeter une propriété et lui appliquer un calcul mathématique, ou vous pouvez projeter l'objet entier à partir du jeu de résultats. Les méthodes de projection sont `Select` et `SelectMany`.  
   
  *Filtrage* fait référence à l’opération de restriction du jeu de résultats à contienne uniquement les éléments qui correspondent à une condition spécifiée. La méthode de filtrage est `Where`.  
   
- La plupart des surcharges des méthodes de projection et de filtrage sont prises en charge dans [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], à l’exception de celles qui acceptent un argument positionnel.  
+ La plupart des surcharges de la projection et les méthodes de filtrage sont prises en charge dans LINQ to Entities, à l’exception de celles qui acceptent un argument positionnel.  
   
 ## <a name="join-methods"></a>Méthodes de jointure  
  La jointure est une opération importante dans les requêtes qui ciblent des sources de données qui n'ont pas de relations explorables les unes avec les autres. Une jointure de deux sources de données est l'association d'objets dans une source de données avec des objets dans l'autre source de données qui partagent un attribut commun ou une propriété commune. Les méthodes de jointure sont `Join` et `GroupJoin`.  
@@ -29,7 +29,7 @@ Dans une requête, vous indiquez les informations que vous voulez extraire de la
 ## <a name="set-methods"></a>Définir des méthodes  
  Les opérations de définition dans LINQ sont des opérations de requête qui basent leurs jeux de résultats sur la présence ou l'absence d'éléments équivalents dans une collection (ou un ensemble) identique ou distincte. Les méthodes de définition sont `All`, `Any`, `Concat`, `Contains`, `DefaultIfEmpty`, `Distinct`, `EqualAll`, `Except`, `Intersect` et `Union`.  
   
- La plupart des surcharges des méthodes de définition sont prises en charge dans [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], bien qu'il existe des différences de comportement par rapport à LINQ to Objects. Toutefois, définir des méthodes qui utilisent un <xref:System.Collections.Generic.IEqualityComparer%601> ne sont pas pris en charge, car le comparateur ne peut pas être traduit dans la source de données.  
+ La plupart des surcharges des méthodes set sont pris en charge dans LINQ to Entities, bien qu’il existe des différences de comportement par rapport à LINQ to Objects. Toutefois, définir des méthodes qui utilisent un <xref:System.Collections.Generic.IEqualityComparer%601> ne sont pas pris en charge, car le comparateur ne peut pas être traduit dans la source de données.  
   
 ## <a name="ordering-methods"></a>Méthodes de classement  
  Le classement, ou tri, fait référence au classement des éléments d'un jeu de résultats en fonction d'un ou de plusieurs attributs. En spécifiant plus d'un critère de classement, vous pouvez rompre les liens au sein d'un groupe.  

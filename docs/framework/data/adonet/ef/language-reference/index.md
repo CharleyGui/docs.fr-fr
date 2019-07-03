@@ -2,15 +2,15 @@
 title: Guide de référence du langage Entity SQL
 ms.date: 03/30/2017
 ms.assetid: bb07282c-161d-47e8-856d-b2374ba18181
-ms.openlocfilehash: 158240678eec7eb4699263c4febe9b6991196e11
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 32e70c67bb36df167f7a6fbc8f2a855d63ed815a
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61613648"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539486"
 ---
 # <a name="entity-sql-language-reference"></a>Guide de référence du langage Entity SQL
-Cette section fournit une documentation détaillée sur [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], [!INCLUDE[esql](../../../../../../includes/esql-md.md)] et sur les langages de modélisation et de mappage utilisés par [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].  
+Cette section fournit une documentation détaillée sur LINQ to Entities, [!INCLUDE[esql](../../../../../../includes/esql-md.md)]et les langages de modélisation et mappage utilisés par le [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Spécifications CSDL, SSDL et MSL](../../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)  

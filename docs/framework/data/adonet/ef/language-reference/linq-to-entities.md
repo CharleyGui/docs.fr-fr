@@ -2,12 +2,12 @@
 title: LINQ to Entities
 ms.date: 03/30/2017
 ms.assetid: 641f9b68-9046-47a1-abb0-1c8eaeda0e2d
-ms.openlocfilehash: 570d6a60e4f34e89e758b505353a083b959d9def
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8a69d74966b99d78b4a7addaa4323d61d82ce8d5
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64630733"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539774"
 ---
 # <a name="linq-to-entities"></a>LINQ to Entities
 LINQ to Entities assure une prise en charge de la technologie LINQ (Language Integrated Query), ce qui permet aux développeurs d'écrire des requêtes par rapport au modèle conceptuel Entity Framework à l'aide du langage Visual Basic ou Visual C#. Les requêtes exécutées avec Entity Framework sont représentées par des requêtes d'arborescence de commandes, lesquelles s'exécutent par rapport au contexte de l'objet. LINQ to Entities convertit les requêtes LINQ (Language-Integrated Query) en requêtes d'arborescence de commandes, exécute les requêtes avec Entity Framework, puis retourne les objets qui peuvent être utilisés aussi bien par Entity Framework que par LINQ. Voici le processus de création et d'exécution d'une requête LINQ to Entities :  
@@ -47,7 +47,7 @@ LINQ to Entities assure une prise en charge de la technologie LINQ (Language Int
   
  Pour plus d’informations sur la façon dont les appels de méthode CLR sont mappés aux fonctions canoniques dans la source de données, consultez [méthode CLR pour le mappage de fonction canonique](../../../../../../docs/framework/data/adonet/ef/language-reference/clr-method-to-canonical-function-mapping.md).  
   
- Pour plus d’informations sur comment appeler canonique, base de données et de fonctions personnalisées depuis [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] de requêtes, consultez [appel à des fonctions dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md).  
+ Pour plus d’informations sur l’appel canonique, base de données et des fonctions personnalisées à partir de dans LINQ aux requêtes d’entités, consultez [appel à des fonctions dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md).  
   
 ## <a name="query-execution"></a>Exécution de la requête  
  Une fois la requête LINQ créée par l’utilisateur, elle est convertie en une représentation compatible avec Entity Framework (sous la forme d’arborescences de commandes), qui est ensuite exécutée sur la source de données. Au moment de l'exécution de la requête, l'ensemble des expressions de requête (ou des composants de la requête) sont évalués sur le client ou sur le serveur. Cela comprend les expressions qui sont utilisées dans la matérialisation des résultats ou les projections d'entités. Pour plus d’informations, consultez [l’exécution des requêtes](../../../../../../docs/framework/data/adonet/ef/language-reference/query-execution.md). Pour plus d’informations sur la façon d’améliorer les performances en compilant une requête une seule fois et puis l’exécuter plusieurs fois avec des paramètres différents, consultez [requêtes compilées (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/compiled-queries-linq-to-entities.md).  
