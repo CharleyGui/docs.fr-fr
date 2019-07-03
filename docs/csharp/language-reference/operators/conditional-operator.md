@@ -1,5 +1,5 @@
 ---
-title: '?: , opérateur - Référence C#'
+title: 'Opérateur ?: - Référence C#'
 ms.custom: seodec18
 ms.date: 11/20/2018
 f1_keywords:
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: ae3039df2c1260211f4c7ec3e813db1d0c6cd42b
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: 2717505a0a09b9ac1c6ad43153c52771c13f7b5c
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66815939"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025197"
 ---
-# <a name="-operator-c-reference"></a>?: Opérateur (référence C#)
+# <a name="-operator-c-reference"></a>Opérateur ?: (référence C#)
 
 L’opérateur conditionnel `?:`, souvent appelé opérateur conditionnel ternaire, évalue une expression booléenne et retourne le résultat de l’évaluation d’une des deux expressions, selon que l’expression booléenne donne `true` ou `false`. À partir de C# 7.2, [l’expression ref conditionnelle](#conditional-ref-expression) retourne la référence au résultat d’une des deux expressions.
 
@@ -90,8 +90,7 @@ Pour plus d’informations, voir la section [Opérateur conditionnel](~/_csharpl
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
 - [Instruction if-else](../keywords/if-else.md)
 - [Opérateurs ?. et ?[]](member-access-operators.md#null-conditional-operators--and-)

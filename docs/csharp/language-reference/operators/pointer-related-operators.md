@@ -1,5 +1,5 @@
 ---
-title: Opérateurs associés au pointeur - Référence C#
+title: Opérateurs associés au pointeur - Référence C#
 description: Découvrez les opérateurs C# que vous pouvez utiliser avec les pointeurs.
 ms.date: 05/20/2019
 author: pkulikov
@@ -20,12 +20,12 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: 6196cb52cb1b42b3354bc7f8836a171397d0af1e
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: 50243f148f37f5f33f0c69ddd896549e7aea9462
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758101"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025104"
 ---
 # <a name="pointer-related-operators-c-reference"></a>Opérateurs associés au pointeur (référence C#)
 
@@ -96,7 +96,7 @@ L’exemple suivant montre comment accéder à des éléments tableau avec un po
 
 [!code-csharp[pointer element access](~/samples/csharp/language-reference/operators/PointerOperators.cs#ElementAccess)]
 
-L’exemple utilise l’[opérateur `stackalloc`](../keywords/stackalloc.md) pour allouer un bloc de mémoire à la pile.
+L’exemple utilise l’[opérateur `stackalloc`](stackalloc.md) pour allouer un bloc de mémoire à la pile.
 
 > [!NOTE]
 > L’opérateur d’accès aux éléments de pointeur ne recherche pas les erreurs de dépassement des limites.
@@ -187,11 +187,10 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
 - [Types de pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md)
-- [Mot clé `unsafe`](../keywords/unsafe.md)
-- [Mot clé `fixed`](../keywords/fixed-statement.md)
-- [`stackalloc`, opérateur](../keywords/stackalloc.md)
-- [`sizeof`, opérateur](../keywords/sizeof.md)
+- [mot clé unsafe](../keywords/unsafe.md)
+- [Mot clé fixed](../keywords/fixed-statement.md)
+- [Opérateur stackalloc](stackalloc.md)
+- [Opérateur sizeof](../keywords/sizeof.md)

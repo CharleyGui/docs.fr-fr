@@ -8,12 +8,12 @@ helpviewer_keywords:
 - dynamic [C#]
 - dynamic keyword [C#]
 ms.assetid: 9e797102-cc83-4964-bf58-afe4f54d16bc
-ms.openlocfilehash: d2aef5b2ed291aab917573408abf26b9fbedfbd6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c8748f1869e8e2d5246910fac0100a6c70790579
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540323"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306648"
 ---
 # <a name="dynamic-c-reference"></a>dynamic (Référence C#)
 
@@ -56,7 +56,7 @@ Le mot clé `dynamic` peut apparaître directement ou en tant que composant d’
 
     [!code-csharp[csrefKeywordsTypes#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/dynamic1.cs#24)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L’exemple suivant utilise `dynamic` dans plusieurs déclarations. La méthode `Main` compare également la vérification de type au moment de la compilation avec la vérification de type au moment de l’exécution.
 
@@ -68,10 +68,10 @@ Pour obtenir plus d’informations et d’exemples, consultez [Utilisation du ty
 
 - <xref:System.Dynamic.ExpandoObject?displayProperty=nameWithType>
 - <xref:System.Dynamic.DynamicObject?displayProperty=nameWithType>
-- [Utilisation du type dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md)
-- [object](../../../csharp/language-reference/keywords/object.md)
-- [is](../../../csharp/language-reference/keywords/is.md)
-- [as](../../../csharp/language-reference/keywords/as.md)
-- [typeof](../../../csharp/language-reference/keywords/typeof.md)
+- [Utilisation du type dynamic](../../programming-guide/types/using-type-dynamic.md)
+- [object](object.md)
+- [is](../operators/type-testing-and-conversion-operators.md#is-operator)
+- [as](../operators/type-testing-and-conversion-operators.md#as-operator)
+- [typeof](../operators/type-testing-and-conversion-operators.md#typeof-operator)
 - [Guide pratique pour caster de manière sécurisée avec les critères spéciaux, ainsi que les opérateurs is et as](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
-- [Procédure pas à pas : Création et utilisation d’objets dynamiques](../../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)
+- [Procédure pas à pas : création et utilisation d’objets dynamiques](../../programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)

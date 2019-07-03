@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b967e6441ae3f3d43e5a6276cfcf79e3c44f74cf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2d69fd06f4048667a05ddbfec571067c16f9e86a
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613973"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833718"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Méthode de localisation des assemblys par le runtime
 Pour déployer correctement votre application .NET Framework, il est important de bien comprendre comment le common language runtime localise les assemblys qui composent votre application et comment il établit des liaisons à ces assemblys. Par défaut, le runtime essaie d'établir une liaison avec la version exacte d'un assembly avec lequel l'application a été générée. Ce comportement par défaut peut être substitué par les paramètres du fichier de configuration.  
@@ -24,7 +24,7 @@ Pour déployer correctement votre application .NET Framework, il est important d
  Le common language runtime effectue plusieurs étapes pour essayer de localiser un assembly et résoudre une référence d'assembly. Chaque étape est expliquée dans les sections ci-dessous. Le terme « détection » est souvent utilisé pour décrire la manière dont le runtime localise les assemblys. Il fait référence au jeu de paramètres heuristiques utilisé pour localiser l'assembly en fonction de son nom et de sa culture.  
   
 > [!NOTE]
->  Vous pouvez afficher les informations de liaison du fichier journal en utilisant la [visionneuse du journal de liaison d'assembly (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), fournie dans le [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].  
+>  Vous pouvez afficher les informations de liaison du fichier journal en utilisant la [visionneuse du journal de liaison d'assembly (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), fournie dans le kit de développement logiciel (SDK) Windows.  
   
 ## <a name="initiating-the-bind"></a>Initiation de la liaison  
  Le processus de localisation et de liaison d'un assembly débute quand le runtime tente de résoudre une référence à un autre assembly. Cette référence peut être statique ou dynamique. Le compilateur enregistre les références statiques dans les métadonnées du manifeste d'assembly au moment de la build. Les références dynamiques sont créées instantanément après l’appel à différentes méthodes, telles que <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>.  
@@ -130,7 +130,7 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
  Un fichier de stratégie d'éditeur est utilisé quand un composant partagé est mis à jour et que la nouvelle version de ce composant doit être utilisée par toutes les applications partageant le composant. Les paramètres définis dans le fichier de stratégie d'éditeur substituent ceux du fichier de configuration de l'application, sauf si ce dernier applique le mode sans échec.  
   
 #### <a name="safe-mode"></a>Mode sans échec  
- Les fichiers de stratégie d'éditeur sont généralement installés explicitement avec un Service Pack ou une mise à jour de programme. En cas de problème avec le composant partagé mis à jour, vous pouvez ignorer les substitutions spécifiées dans le fichier de stratégie d'éditeur en utilisant le mode sans échec. Le mode sans échec est déterminé par l’élément **\<publisherPolicy apply="yes**&#124;**no"/>**, situé uniquement dans le fichier de configuration d’application. Il spécifie si les informations de configuration du fichier de stratégie d'éditeur doivent être supprimées du processus de liaison.  
+ Les fichiers de stratégie d'éditeur sont généralement installés explicitement avec un Service Pack ou une mise à jour de programme. En cas de problème avec le composant partagé mis à jour, vous pouvez ignorer les substitutions spécifiées dans le fichier de stratégie d'éditeur en utilisant le mode sans échec. Le mode sans échec est déterminé par l’élément **\<publisherPolicy apply="yes**&#124;**no"/>** , situé uniquement dans le fichier de configuration d’application. Il spécifie si les informations de configuration du fichier de stratégie d'éditeur doivent être supprimées du processus de liaison.  
   
  Le mode sans échec peut être défini pour toute l'application ou pour des assemblys spécifiques. Autrement dit, vous pouvez désactiver la stratégie pour tous les assemblys qui composent votre application ou l'activer pour certains assemblys seulement. Pour appliquer sélectivement la stratégie d’éditeur aux assemblys qui composent une application, définissez l’élément **\<publisherPolicy apply\=no/>** et spécifiez les assemblys auxquels appliquer la stratégie à l’aide de l’élément \<**dependentAssembly**>. Pour appliquer la stratégie d’éditeur à tous les assemblys composant l’application, définissez l’élément **\<publisherPolicy apply\=no/>** sans aucun élément d’assembly dépendant. Pour plus d'informations sur la configuration, consultez [Configuration des applications à l'aide de fichiers de configuration](../../../docs/framework/configure-apps/index.md).  
   

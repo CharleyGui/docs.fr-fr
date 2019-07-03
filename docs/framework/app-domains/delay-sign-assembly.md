@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9d300e17-5bf1-4360-97da-2aa55efd9070
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 31c43607a710316696a9765feb6f36b7676f906f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: eb055285af7365536f7e1ad7c7d9290e51be50db
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593641"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832865"
 ---
 # <a name="delay-signing-an-assembly"></a>Temporisation de signature d'un assembly
 Une entreprise peut avoir une paire de clés protégées auxquelles les développeurs n’ont pas accès tous les jours. La clé publique est souvent disponible, mais l’accès à la clé privée est limité à quelques personnes. Lors du développement d’assemblys avec des noms forts, chaque assembly qui référence l’assembly cible avec nom fort contient le jeton de la clé publique utilisée pour affecter un nom fort à l’assembly cible. La clé publique doit donc être disponible pendant le processus de développement.  
@@ -28,7 +28,7 @@ Une entreprise peut avoir une paire de clés protégées auxquelles les dévelop
   
  Les étapes suivantes décrivent le processus permettant de différer la signature d’un assembly :  
   
-1. Obtenez la partie clé publique de la paire de clés auprès de la société qui effectuera la signature. En règle générale, cette clé se présente sous la forme d’un fichier .snk, qui peut être créé à l’aide de l’[outil Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) fourni dans le [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].  
+1. Obtenez la partie clé publique de la paire de clés auprès de la société qui effectuera la signature. En règle générale, cette clé se présente sous la forme d’un fichier .snk, qui peut être créé à l’aide de l’[outil Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) fourni dans le kit de développement logiciel (SDK) Windows.  
   
 2. Annotez le code source de l’assembly avec deux attributs personnalisés de <xref:System.Reflection> :  
   

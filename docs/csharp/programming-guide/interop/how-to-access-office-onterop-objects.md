@@ -10,12 +10,12 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: 382ecb17654377e8d37e1b3a572ed84442d76b1a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 76bd9d9bce8e41605b96e979c2a39ea15e1d15ad
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59302996"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169942"
 ---
 # <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Procédure : Accéder aux objets Office Interop à l’aide des fonctionnalités Visual C# (Guide de programmation C#)
 Visual C# offre des fonctionnalités qui simplifient l’accès aux objets d’API Office. Les nouvelles fonctionnalités incluent les arguments nommés et les arguments facultatifs, un nouveau type appelé `dynamic` et la possibilité de passer des arguments aux paramètres de référence dans les méthodes COM comme s'il s'agissait de paramètres de valeur.  
@@ -34,7 +34,7 @@ Visual C# offre des fonctionnalités qui simplifient l’accès aux objets d’
   
 2. Dans le menu **Fichier** , pointez sur **Nouveau**, puis cliquez sur **Projet**. La boîte de dialogue **Nouveau projet** s’affiche.  
   
-3. Dans le volet **Modèles installés**, développez **Visual C#**, puis cliquez sur **Windows**.  
+3. Dans le volet **Modèles installés**, développez **Visual C#** , puis cliquez sur **Windows**.  
   
 4. Vérifiez en haut de la boîte de dialogue **Nouveau projet** que **.NET Framework 4** (ou version ultérieure) est sélectionné comme version cible de .NET Framework.  
   
@@ -76,7 +76,7 @@ Visual C# offre des fonctionnalités qui simplifient l’accès aux objets d’
   
 1. Ajoutez la méthode suivante à la classe `Program` pour définir une feuille de calcul Excel.  
   
-     La méthode <xref:Microsoft.Office.Interop.Excel.Workbooks.Add%2A> a un paramètre facultatif pour spécifier un modèle particulier. Les paramètres optionnels, introduits dans [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], vous permettent d'omettre l'argument du paramètre, si vous souhaitez utiliser la valeur par défaut de ce dernier. Dans la mesure où aucun argument n'est envoyé dans le code suivant, `Add` utilise le modèle par défaut et crée un classeur. L'instruction équivalente dans les versions antérieures de C# nécessite un argument d'espace réservé : `ExcelApp.Workbooks.Add(Type.Missing)`.  
+     La méthode <xref:Microsoft.Office.Interop.Excel.Workbooks.Add%2A> a un paramètre facultatif pour spécifier un modèle particulier. Les paramètres optionnels, introduits dans C# 4, vous permettent d'omettre l'argument du paramètre, si vous souhaitez utiliser la valeur par défaut de ce dernier. Dans la mesure où aucun argument n'est envoyé dans le code suivant, `Add` utilise le modèle par défaut et crée un classeur. L'instruction équivalente dans les versions antérieures de C# nécessite un argument d'espace réservé : `ExcelApp.Workbooks.Add(Type.Missing)`.  
   
      [!code-csharp[csProgGuideOfficeHowTo#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#4)]  
   
@@ -96,7 +96,7 @@ Visual C# offre des fonctionnalités qui simplifient l’accès aux objets d’
   
      [!code-csharp[csProgGuideOfficeHowTo#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#14)]  
   
-     [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], ainsi que les versions ultérieures, convertit automatiquement l’`Object` retourné en `dynamic` si l’assembly est référencé par l’option du compilateur [/link](../../../csharp/language-reference/compiler-options/link-compiler-option.md) ou si la propriété Excel **Incorporer les types interop** a la valeur true. La valeur par défaut de cette propriété est true.  
+     C# 4, ainsi que les versions ultérieures, convertit automatiquement l’`Object` retourné en `dynamic` si l’assembly est référencé par l’option du compilateur [/link](../../../csharp/language-reference/compiler-options/link-compiler-option.md) ou si la propriété Excel **Incorporer les types interop** a la valeur true. La valeur par défaut de cette propriété est true.  
   
 ## <a name="to-run-the-project"></a>Pour exécuter le projet  
   
@@ -110,13 +110,13 @@ Visual C# offre des fonctionnalités qui simplifient l’accès aux objets d’
   
 ## <a name="to-add-a-word-document"></a>Pour ajouter un document Word  
   
-1. Pour illustrer d'autres façons grâce auxquelles [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], ainsi que les versions ultérieures, améliore la programmation Office, le code suivant ouvre une application Word et crée une icône liée à la feuille de calcul Excel.  
+1. Pour illustrer d'autres façons grâce auxquelles C# 4, ainsi que les versions ultérieures, améliore la programmation Office, le code suivant ouvre une application Word et crée une icône liée à la feuille de calcul Excel.  
   
-     Collez la méthode `CreateIconInWordDoc`, fournie ultérieurement dans cette étape, dans la classe `Program`. `CreateIconInWordDoc` utilise des arguments nommés et facultatifs pour réduire la complexité des appels de méthode à <xref:Microsoft.Office.Interop.Word.Documents.Add%2A> et <xref:Microsoft.Office.Interop.Word.Selection.PasteSpecial%2A>. Ces appels incorporent deux autres nouvelles fonctionnalités introduites dans [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], qui simplifient les appels aux méthodes COM comportant des paramètres de référence. Premièrement, vous pouvez envoyer des arguments aux paramètres de référence comme s'il s'agissait de paramètres de valeur. Autrement dit, vous pouvez envoyer les valeurs directement, sans créer une variable pour chaque paramètre de référence. Le compilateur génère des variables temporaires pour stocker les valeurs d'argument et les ignore lors du retour de l'appel. Ensuite, vous pouvez omettre le mot clé `ref` dans la liste d'arguments.  
+     Collez la méthode `CreateIconInWordDoc`, fournie ultérieurement dans cette étape, dans la classe `Program`. `CreateIconInWordDoc` utilise des arguments nommés et facultatifs pour réduire la complexité des appels de méthode à <xref:Microsoft.Office.Interop.Word.Documents.Add%2A> et <xref:Microsoft.Office.Interop.Word.Selection.PasteSpecial%2A>. Ces appels incorporent deux autres nouvelles fonctionnalités introduites dans C# 4, qui simplifient les appels aux méthodes COM comportant des paramètres de référence. Premièrement, vous pouvez envoyer des arguments aux paramètres de référence comme s'il s'agissait de paramètres de valeur. Autrement dit, vous pouvez envoyer les valeurs directement, sans créer une variable pour chaque paramètre de référence. Le compilateur génère des variables temporaires pour stocker les valeurs d'argument et les ignore lors du retour de l'appel. Ensuite, vous pouvez omettre le mot clé `ref` dans la liste d'arguments.  
   
-     La méthode `Add` comporte quatre paramètres de référence, tous facultatifs. Dans [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], ou versions ultérieures, vous pouvez omettre les arguments de tout ou partie des paramètres si vous voulez utiliser leur valeur par défaut. Dans [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] et versions antérieures, un argument doit être fourni pour chaque paramètre et l'argument doit être une variable, car les paramètres sont des paramètres de référence.  
+     La méthode `Add` comporte quatre paramètres de référence, tous facultatifs. Dans C# 4 ou versions ultérieures, vous pouvez omettre les arguments de tout ou partie des paramètres si vous voulez utiliser leur valeur par défaut. Dans [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] et versions antérieures, un argument doit être fourni pour chaque paramètre et l'argument doit être une variable, car les paramètres sont des paramètres de référence.  
   
-     La méthode `PasteSpecial` insère le contenu du Presse-papiers. La méthode comporte sept paramètres de référence, tous facultatifs. Le code suivant spécifie des arguments pour deux d'entre eux : `Link` pour créer un lien vers la source du contenu du Presse-papiers et `DisplayAsIcon` pour afficher le lien sous forme d'icône. Dans [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], vous pouvez utiliser des arguments nommés pour ces deux-là et omettre les autres. Bien qu'il s'agisse de paramètres de référence, vous n'avez pas à utiliser le mot clé `ref` ou à créer des variables à envoyer tant qu'arguments. Vous pouvez envoyer les valeurs directement. Dans [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] et versions antérieures, vous devez envoyer un argument de variable pour chaque paramètre de référence.  
+     La méthode `PasteSpecial` insère le contenu du Presse-papiers. La méthode comporte sept paramètres de référence, tous facultatifs. Le code suivant spécifie des arguments pour deux d'entre eux : `Link` pour créer un lien vers la source du contenu du Presse-papiers et `DisplayAsIcon` pour afficher le lien sous forme d'icône. Dans C# 4, vous pouvez utiliser des arguments nommés pour ces deux-là et omettre les autres. Bien qu'il s'agisse de paramètres de référence, vous n'avez pas à utiliser le mot clé `ref` ou à créer des variables à envoyer tant qu'arguments. Vous pouvez envoyer les valeurs directement. Dans [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] et versions antérieures, vous devez envoyer un argument de variable pour chaque paramètre de référence.  
   
      [!code-csharp[csProgGuideOfficeHowTo#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#9)]  
   
@@ -142,7 +142,7 @@ Visual C# offre des fonctionnalités qui simplifient l’accès aux objets d’
   
      En outre, la programmation est plus facile, car les types qui sont requis et retournés par les méthodes COM peuvent être représentés par l'utilisation du type `dynamic` à la place d'`Object`. Les variables de type `dynamic` ne sont pas évaluées avant l'exécution, ce qui élimine la nécessité d'un cast explicite. Pour plus d’informations, consultez [Utilisation du type dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md).  
   
-     Dans [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], l'incorporation des informations de type au lieu de l'utilisation des assemblys PIA est le comportement par défaut. En raison de ce comportement par défaut, plusieurs des exemples précédents sont simplifiés, car un cast explicite n'est pas requis. Par exemple, la déclaration de `worksheet` dans `DisplayInExcel` est écrite sous la forme `Excel._Worksheet workSheet = excelApp.ActiveSheet` plutôt que sous la forme `Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet`. Les appels à `AutoFit` dans la même méthode nécessiteraient également un cast explicite sans la valeur par défaut, parce que `ExcelApp.Columns[1]` retourne un `Object` et que `AutoFit` est une méthode Excel. Le code suivant illustre le cast.  
+     Dans C# 4, l'incorporation des informations de type au lieu de l'utilisation des assemblys PIA est le comportement par défaut. En raison de ce comportement par défaut, plusieurs des exemples précédents sont simplifiés, car un cast explicite n'est pas requis. Par exemple, la déclaration de `worksheet` dans `DisplayInExcel` est écrite sous la forme `Excel._Worksheet workSheet = excelApp.ActiveSheet` plutôt que sous la forme `Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet`. Les appels à `AutoFit` dans la même méthode nécessiteraient également un cast explicite sans la valeur par défaut, parce que `ExcelApp.Columns[1]` retourne un `Object` et que `AutoFit` est une méthode Excel. Le code suivant illustre le cast.  
   
      [!code-csharp[csProgGuideOfficeHowTo#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#14)]  
   
@@ -168,7 +168,7 @@ Visual C# offre des fonctionnalités qui simplifient l’accès aux objets d’
   
      [!code-csharp[csProgGuideOfficeHowTo#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#17)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple de code suivant illustre l'exemple complet.  
   
  [!code-csharp[csProgGuideOfficeHowTo#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/walkthrough.cs#18)]  

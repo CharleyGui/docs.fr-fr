@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 7ead0cb3-3b19-414a-8417-a1c1fa198d9e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 441a65f9a72dd0fcffb062710df74bb529767cef
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: 9671dd87e3185e9d4b997e2ea75770f756605efb
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816059"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833518"
 ---
 # <a name="migrating-from-the-net-framework-11"></a>Migration à partir du .NET Framework 1.1
 
@@ -60,9 +60,9 @@ Pour évaluer l'impact de modifications avec rupture possibles sur votre applica
 
 - L’article traitant des [changements cassants dans .NET Framework 2.0](https://go.microsoft.com/fwlink/?LinkId=125263) décrit les changements dans .NET Framework 2.0 SP1 qui peuvent affecter une application ciblant .NET Framework 1.1.
 
-- L’article traitant des [modifications apportées dans .NET Framework 3.5 SP1](https://go.microsoft.com/fwlink/?LinkID=186989) décrit les modifications intervenues entre .NET Framework 3.5 et [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)].
+- L’article traitant des [modifications apportées dans .NET Framework 3.5 SP1](https://go.microsoft.com/fwlink/?LinkID=186989) décrit les modifications intervenues entre .NET Framework 3.5 et .NET Framework 3.5 SP1.
 
-- [Problèmes de migration de .NET Framework 4](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md) décrit les changements intervenus entre [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)] et .NET Framework 4.
+- [Problèmes de migration de .NET Framework 4](../../../docs/framework/migration-guide/net-framework-4-migration-issues.md) décrit les changements intervenus entre .NET Framework 3.5 SP1 et .NET Framework 4.
 
 ## <a name="obsolete-types-and-members"></a>Types et membres obsolètes
 

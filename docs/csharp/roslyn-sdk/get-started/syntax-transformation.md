@@ -3,12 +3,12 @@ title: Bien démarrer avec la transformation de la syntaxe (API Roslyn)
 description: Une introduction à la façon de parcourir et d’interroger les arborescences de syntaxe.
 ms.date: 06/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 3ca6ba19f84366b4e1f74ac4a0dea1edef3cee05
-ms.sourcegitcommit: 5d9f4b805787f890ca6e0dc7ea30a43018bc9cbb
+ms.openlocfilehash: bbd56f445a9f06b530a7d094b06f60e6123788da
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57788438"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306930"
 ---
 # <a name="get-started-with-syntax-transformation"></a>Bien démarrer avec la transformation de la syntaxe
 
@@ -30,7 +30,7 @@ Vous choisissez une des deux stratégies pour les transformations de syntaxe. Le
 
 La première transformation de syntaxe montre les méthodes de fabrique. Vous allez remplacer une instruction `using System.Collections;` par une instruction `using System.Collections.Generic;`. Cet exemple montre comment créer des objets <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode?displayProperty=nameWithType> à l’aide des méthodes de fabrique <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory?displayProperty=nameWithType>. Pour chaque type de **nœud**, **jeton** ou **trivia**, il existe une méthode de fabrique qui crée une instance de ce type. Vous créez des arborescences de syntaxe en composant hiérarchiquement des nœuds de façon ascendante. Puis vous transformez le programme existant en remplaçant les nœuds existants par la nouvelle arborescence que vous avez créée.
 
-Démarrez Visual Studio, puis créez un nouveau projet C# **Outil d’analyse du code autonome**. Dans Visual Studio, choisissez **Fichier** > **Nouveau** > **Projet** pour afficher la boîte de dialogue Nouveau projet. Sous **Visual C#** > **Extensibilité**, choisissez **Outil d’analyse du code autonome**. Ce démarrage rapide inclut deux exemples de projets, par conséquent, nommez la solution **SyntaxTransformationQuickStart**, puis nommez le projet **ConstructionCS**. Cliquez sur **OK**.
+Démarrez Visual Studio, puis créez un nouveau projet C# **Outil d’analyse du code autonome**. Dans Visual Studio, choisissez **Fichier** > **Nouveau** > **Projet** pour afficher la boîte de dialogue Nouveau projet. Sous **Visual C#**  > **Extensibilité**, choisissez **Outil d’analyse du code autonome**. Ce démarrage rapide inclut deux exemples de projets, par conséquent, nommez la solution **SyntaxTransformationQuickStart**, puis nommez le projet **ConstructionCS**. Cliquez sur **OK**.
 
 Ce projet utilise les méthodes de classe <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory?displayProperty=nameWithType> pour construire un élément <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax?displayProperty=nameWithType> représentant l’espace de noms `System.Collections.Generic`.
 
@@ -94,9 +94,9 @@ Réexécutez le programme. Cette fois, l’arborescence importe correctement l�
 
 Les méthodes `With*` et <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions.ReplaceNode%2A> constituent une solution pratique pour transformer des branches individuelles en une arborescence de syntaxe. La classe <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter?displayProperty=nameWithType> effectue plusieurs transformations sur une arborescence de syntaxe. La classe <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter?displayProperty=nameWithType> est une sous-classe de <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor%601?displayProperty=nameWithType>. <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter> applique une transformation à un type spécifique de <xref:Microsoft.CodeAnalysis.SyntaxNode>. Vous pouvez appliquer des transformations à plusieurs types d’objets <xref:Microsoft.CodeAnalysis.SyntaxNode> là où elles apparaissent dans une arborescence de syntaxe. Le second projet de ce démarrage rapide crée une refactorisation de ligne de commande qui supprime des types explicites dans des déclarations de variables locales partout où une inférence de type peut être utilisée.
 
-Créez un projet C# **Outil d’analyse du code autonome**. Dans Visual Studio, cliquez avec le bouton droit sur le nœud de la solution `SyntaxTransformationQuickStart`. Choisissez **Ajouter** > **Nouveau projet** pour afficher la boîte de dialogue **Nouveau projet**. Sous **Visual C#** > **Extensibilité**, choisissez **Outil d’analyse du code autonome**. Nommez votre projet `TransformationCS`, puis cliquez sur OK.
+Créez un projet C# **Outil d’analyse du code autonome**. Dans Visual Studio, cliquez avec le bouton droit sur le nœud de la solution `SyntaxTransformationQuickStart`. Choisissez **Ajouter** > **Nouveau projet** pour afficher la boîte de dialogue **Nouveau projet**. Sous **Visual C#**  > **Extensibilité**, choisissez **Outil d’analyse du code autonome**. Nommez votre projet `TransformationCS`, puis cliquez sur OK.
 
-La première étape consiste à créer une classe dérivée de <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter> pour effectuer vos transformations. Ajoutez un nouveau fichier de classe au projet. Dans Visual Studio, choisissez **Projet** > **Ajouter une classe...**. Dans la boîte de dialogue **Ajouter un nouvel élément**, tapez `TypeInferenceRewriter.cs` comme nom de fichier.
+La première étape consiste à créer une classe dérivée de <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter> pour effectuer vos transformations. Ajoutez un nouveau fichier de classe au projet. Dans Visual Studio, choisissez **Projet** > **Ajouter une classe...** . Dans la boîte de dialogue **Ajouter un nouvel élément**, tapez `TypeInferenceRewriter.cs` comme nom de fichier.
 
 Ajoutez le code suivant à l’aide de directives dans le fichier `TypeInferenceRewriter.cs` :
 
@@ -112,7 +112,7 @@ Ajoutez le code suivant pour déclarer un champ en lecture seule privé qui cont
 
 Remplacez la méthode <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter.VisitLocalDeclarationStatement(Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax)> :
 
-```C#
+```csharp
 public override SyntaxNode VisitLocalDeclarationStatement(LocalDeclarationStatementSyntax node)
 {
 

@@ -1,5 +1,5 @@
 ---
-title: '- - et -=, opérateurs - Référence C#'
+title: '- et -=, opérateurs - Référence C#'
 ms.custom: seodec18
 ms.date: 05/27/2019
 f1_keywords:
@@ -13,14 +13,14 @@ helpviewer_keywords:
 - event unsubscription [C#]
 - -= operator [C#]
 ms.assetid: 4de7a4fa-c69d-48e6-aff1-3130af970b2d
-ms.openlocfilehash: aae10f8b03a16e55f0b26981f17585c8790e00c1
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: 8e93b1d66a375f1f0af104e2a5dd6dfcbb39428d
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816074"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024914"
 ---
-# <a name="--and---operators-c-reference"></a>- et -=, opérateurs (référence C#)
+# <a name="--and---operators-c-reference"></a>Opérateurs - et -=, opérateurs - (référence C#)
 
 L’opérateur `-` est pris en charge par les types numériques intégrés et les types [délégués](../keywords/delegate.md).
 
@@ -80,11 +80,9 @@ Pour plus d’informations, consultez les sections [Opérateur moins unaire](~/_
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
 - [Délégués](../../programming-guide/delegates/index.md)
 - [Événements](../../programming-guide/events/index.md)
-- [Checked et unchecked](../keywords/checked-and-unchecked.md)
 - [Opérateurs arithmétiques](arithmetic-operators.md)
 - [+ et +=, opérateurs](addition-operator.md)

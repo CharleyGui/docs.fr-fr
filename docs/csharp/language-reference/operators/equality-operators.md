@@ -1,5 +1,5 @@
 ---
-title: Opérateurs d’égalité - Informations de référence sur C#
+title: Opérateurs d’égalité - Référence C#
 description: Découvrez les opérateurs de comparaison d’égalité C#.
 ms.date: 03/28/2019
 author: pkulikov
@@ -15,14 +15,14 @@ helpviewer_keywords:
 - inequality operator [C#]
 - not equals operator [C#]
 - '!= operator [C#]'
-ms.openlocfilehash: 3b2aeceae8371f0728da2bcebbbe597ee135f256
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: f60d62d1823a8bd06b0417638719a81e95d7438b
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758267"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67267699"
 ---
-# <a name="equality-operators-c-reference"></a>Opérateurs d’égalité (Informations de référence sur C#)
+# <a name="equality-operators-c-reference"></a>Opérateurs d’égalité (référence C#)
 
 Les opérateurs [`==` (égalité)](#equality-operator-) et [`!=` (inégalité)](#inequality-operator-) vérifient si leurs opérandes sont égaux ou non.
 
@@ -57,7 +57,7 @@ Il s’agit d’une comparaison ordinale respectant la casse. Pour plus d’info
 
 Deux opérandes de type référence autres que `string` sont égaux lorsqu’ils font référence au même objet :
 
-[!code-csharp-interactive[reference type equality](~/samples/csharp/language-reference/operators/EqualityOperators.cs#ReferenceTypesEquality)]
+[!code-csharp[reference type equality](~/samples/csharp/language-reference/operators/EqualityOperators.cs#ReferenceTypesEquality)]
 
 Comme le montre l’exemple, les types référence définis par l’utilisateur prennent en charge l’opérateur `==` par défaut. Un type référence défini par l’utilisateur peut toutefois surcharger l’opérateur `==`. Si un type référence surcharge l’opérateur `==`, utilisez la méthode <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> pour vérifier si deux références de ce type font référence au même objet.
 
@@ -79,8 +79,7 @@ Pour plus d’informations, consultez la section [Opérateurs relationnels et de
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
 - <xref:System.IEquatable%601?displayProperty=nameWithType>
 - <xref:System.Object.Equals%2A?displayProperty=nameWithType>

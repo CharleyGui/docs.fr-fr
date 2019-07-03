@@ -5,17 +5,17 @@ ms.technology: dotnet-standard
 ms.assetid: d2758ea1-03f6-47bd-88d2-0fb7ccdb2fab
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fcc294f09172eb2029f92d2c05821837aa10c35f
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: d0a6b3faff0208634e711b9d7908e3fd8dc640ae
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591500"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170843"
 ---
 # <a name="implementation-of-discretionary-behaviors-in-the-xsltransform-class"></a>Implémentation de comportements discrétionnaires dans la classe XslTransform
 
 > [!NOTE]
-> La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans le [!INCLUDE[dnprdnext](../../../../includes/dnprdnext-md.md)]. Vous pouvez effectuer des transformations XSLT (Extensible Stylesheet Language Transformation) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Pour plus d'informations, consultez [Utilisation de la classe XslCompiledTransform](using-the-xslcompiledtransform-class.md) et [Migration depuis la classe XslTransform](migrating-from-the-xsltransform-class.md).
+> La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans .NET Framework 2.0. Vous pouvez effectuer des transformations XSLT (Extensible Stylesheet Language Transformation) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Pour plus d'informations, consultez [Utilisation de la classe XslCompiledTransform](using-the-xslcompiledtransform-class.md) et [Migration depuis la classe XslTransform](migrating-from-the-xsltransform-class.md).
 
 Les comportements discrétionnaires sont décrits comme des comportement listés dans la [recommandation du World Wide Web Consortium (W3C) sur XSLT (XSL Transformations) Version 1.0](https://www.w3.org/TR/1999/REC-xslt-19991116), où le fournisseur d’implémentation choisit une option parmi plusieurs possibles pour gérer une situation. Par exemple, dans la section 7.3 sur la création d'instructions de traitement, la recommandation du W3C précise que la création de nœuds autres que des nœuds de texte lors d'une instanciation du contenu de `xsl:processing-instruction` correspond à une erreur. Pour certains problèmes, le W3C indique la décision à prendre si le processeur décide de récupérer l'erreur. Pour le problème donné dans la section 7.3, le W3C indique que l'implémentation peut récupérer cette erreur en ignorant les nœuds et leur contenu.
 
@@ -77,7 +77,7 @@ Le tableau suivant présente les fonctionnalités facultatives à implémenter p
 
 |Fonctionnalité|Emplacement de référence|Notes|
 |-------------|------------------------|-----------|
-|Attribut `disable-output-escaping` sur les balises `<xsl:text...>` et `<xsl:value-of...>`.|Recommandation du W3C sur XSLT 1.0, <br /><br /> Section 16.4|L'attribut `disable-output-escaping` est ignoré lorsque l'élément `xsl:text` ou `xsl:value-of` est utilisé dans un élément `xsl:comment`, `xsl:processing-instruction` ou `xsl:attribute`.<br /><br /> Les fragments d'arborescence résultat qui contiennent du texte et la sortie de texte ayant fait l'objet d'un échappement ne sont pas pris en charge.<br /><br /> L'attribut disable-output-escaping est ignoré lors de sa transformation en un objet <xref:System.Xml.XmlReader> ou <xref:System.Xml.XmlWriter>.|
+|Attribut `disable-output-escaping` sur les balises `<xsl:text...>` et `<xsl:value-of...>`.|Recommandation du W3C sur XSLT 1.0,<br /><br /> Section 16.4|L'attribut `disable-output-escaping` est ignoré lorsque l'élément `xsl:text` ou `xsl:value-of` est utilisé dans un élément `xsl:comment`, `xsl:processing-instruction` ou `xsl:attribute`.<br /><br /> Les fragments d'arborescence résultat qui contiennent du texte et la sortie de texte ayant fait l'objet d'un échappement ne sont pas pris en charge.<br /><br /> L'attribut disable-output-escaping est ignoré lors de sa transformation en un objet <xref:System.Xml.XmlReader> ou <xref:System.Xml.XmlWriter>.|
 
 ## <a name="see-also"></a>Voir aussi
 

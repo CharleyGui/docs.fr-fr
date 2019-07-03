@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 89dfe697f49e8144d15586cc9c1075f69d1f3a07
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: b7964b2a59c67380d7f19077c01efa0a4a636cff
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816056"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170517"
 ---
 # <a name="in-process-side-by-side-execution"></a>Exécution côte à côte in-process
 À compter de .NET Framework 4, vous pouvez utiliser l’hébergement côte à côte in-process pour exécuter plusieurs versions du CLR (Common Language Runtime) dans un processus unique. Par défaut, les composants COM managés s’exécutent avec la version du .NET Framework avec laquelle ils ont été générés, indépendamment de la version du .NET Framework chargée pour le processus.  
@@ -56,7 +56,7 @@ ms.locfileid: "66816056"
   
      Que faire : dans ce scénario, ne faites rien. Les composants COM s’exécuteront avec la version du .NET Framework avec laquelle ils ont été inscrits.  
   
-- **Scénario 2** : application managée créée avec .NET Framework 2.0 SP1 que vous préféreriez exécuter avec [!INCLUDE[dnprdnext](../../../includes/dnprdnext-md.md)], mais que vous voulez bien exécuter sur .NET Framework 4 si la version 2.0 est absente.  
+- **Scénario 2** : application managée créée avec .NET Framework 2.0 SP1 que vous préféreriez exécuter avec .NET Framework 2.0, mais que vous voulez bien exécuter sur .NET Framework 2.0 si la version 4 est absente.  
   
      Versions du .NET Framework installées : une version antérieure du .NET Framework et .NET Framework 4.  
   
@@ -85,7 +85,7 @@ ms.locfileid: "66816056"
     </configuration>  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant montre un hôte COM non managé qui exécute un composant COM managé à l’aide de la version du .NET Framework dans laquelle le composant a été compilé.  
   
  Pour exécuter l’exemple suivant, compilez et inscrivez le composant COM managé suivant avec .NET Framework 3.5. Pour inscrire le composant, dans le menu **Projet**, cliquez sur **Propriétés**, sur l’onglet **Générer**, puis cochez la case **Inscrire pour COM Interop**.  

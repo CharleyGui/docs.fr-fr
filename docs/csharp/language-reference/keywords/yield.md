@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - yield keyword [C#]
 ms.assetid: 1089194f-9e53-46a2-8642-53ccbe9d414d
-ms.openlocfilehash: 60ee4b8c5ac3a572fd352140c968a8ec8f3a084a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 3e5bb96357293c42d4bd2161756260fd849cc099
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632995"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67267790"
 ---
 # <a name="yield-c-reference"></a>yield (Référence C#)
 
@@ -30,7 +30,7 @@ yield break;
 
 Utilisez une instruction `yield return` pour retourner chaque élément un par un.
 
-Vous consommez une méthode Iterator à l’aide d’une instruction [foreach](foreach-in.md) ou d’une requête LINQ. Chaque itération de la boucle `foreach` appelle la méthode Iterator. Lorsqu'une instruction `yield return` est atteinte dans la méthode Iterator, `expression` est retourné, et l'emplacement dans le code est conservé. L'exécution redémarrera à partir de cet emplacement la prochaine fois que la fonction d'itérateur sera appelée.
+La séquence retournée par une méthode d’itérateur peut être consommée à l’aide d’une instruction [foreach](foreach-in.md) ou d’une requête LINQ. Chaque itération de la boucle `foreach` appelle la méthode Iterator. Lorsqu'une instruction `yield return` est atteinte dans la méthode Iterator, `expression` est retourné, et l'emplacement dans le code est conservé. L'exécution redémarrera à partir de cet emplacement la prochaine fois que la fonction d'itérateur sera appelée.
 
 Utilisez une instruction `yield break` pour terminer l'itération.
 
@@ -78,7 +78,7 @@ Dans une itération de la boucle `foreach`, la méthode <xref:System.Collections
 
 À chaque itération suivante de la boucle `foreach`, l'exécution du corps de l'itérateur reprend à partir de l'emplacement où elle s'est interrompue, et s'arrête encore lorsqu'elle atteint une instruction `yield return`. La boucle `foreach` se termine lorsque à la fin de la méthode Iterator ou lorsqu'une instruction `yield break` est atteinte.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L'exemple suivant comprend une instruction `yield return` située dans une boucle `for`. Chaque itération du corps d’instruction `foreach` dans la méthode `Main` crée un appel à la fonction d’itérateur `Power`. Chaque appel à la fonction d'itérateur continue vers l'exécution suivante de l'instruction `yield return`, qui se produit pendant l'itération suivante de la boucle `for`.
 
@@ -86,7 +86,7 @@ Le type de retour de la méthode Iterator est <xref:System.Collections.IEnumerab
 
 [!code-csharp[csrefKeywordsContextual#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#5)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L'exemple suivant illustre un accesseur `get` qui est un itérateur. Dans cet exemple, chaque instruction `yield return` retourne une instance d'une classe définie par l'utilisateur.
 

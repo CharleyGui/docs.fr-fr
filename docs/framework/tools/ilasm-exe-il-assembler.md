@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2fa95755142b5ea3999cca127c868bc878da516e
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 78a601e8b2da4fda0951c1d4f7b565753f0ca03a
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66378579"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833885"
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (Assembleur IL)
 
@@ -104,7 +104,7 @@ Pour que cette utilisation conjointe d’*Ildasm.exe* et d’*Ilasm.exe* soit la
 > [!NOTE]
 > *Ildasm.exe* ne fonctionne qu’avec des fichiers stockés sur le disque. Il ne fonctionne pas avec des fichiers installés dans le Global Assembly Cache.
 
-Pour plus d'informations sur la grammaire du langage IL, consultez le fichier asmparse.grammar dans le [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].
+Pour plus d’informations sur la grammaire du langage intermédiaire, consultez le fichier asmparse.grammar dans le Kit de développement logiciel (SDK) Windows.
 
 ## <a name="version-information"></a>Informations sur la version
 
@@ -137,7 +137,7 @@ Pour plus d'informations sur la grammaire du langage IL, consultez le fichier as
         Test(object A_1) cil managed
 ```
 
-Pour plus d'informations sur la grammaire du langage IL, consultez le fichier asmparse.grammar dans le [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].
+Pour plus d’informations sur la grammaire du langage intermédiaire, consultez le fichier asmparse.grammar dans le Kit de développement logiciel (SDK) Windows.
 
 ## <a name="examples"></a>Exemples
 

@@ -6,16 +6,16 @@ helpviewer_keywords:
 - dynamic [C#], about dynamic type
 - dynamic type [C#]
 ms.assetid: 3828989d-c967-4a51-b948-857ebc8fdf26
-ms.openlocfilehash: 18e737ec1f6c6f76ff882d48ad311a45ba7b756b
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: a9e1f1fafcee4723c4aed37a0473c0f75512e11a
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456738"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169861"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>Utilisation du type dynamic (Guide de programmation C#)
 
-[!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] introduit un nouveau type, appelé `dynamic`. Il s’agit d’un type statique ; toutefois, un objet de type `dynamic` ignore la vérification des types statiques. Dans la plupart des cas, il fonctionne comme s’il était de type `object`. Au moment de la compilation, un élément de type `dynamic` est supposé prendre en charge n’importe quelle opération. Par conséquent, vous n’avez pas besoin de vous demander si l’objet obtient sa valeur d’une API COM, d’un langage dynamique tel qu’IronPython, du modèle DOM (Document Object Model) HTML, de la réflexion ou d’une autre partie du programme. Toutefois, si le code n’est pas valide, des erreurs sont détectées au moment de l’exécution.
+C# 4 introduit un nouveau type, `dynamic`. Il s’agit d’un type statique ; toutefois, un objet de type `dynamic` ignore la vérification des types statiques. Dans la plupart des cas, il fonctionne comme s’il était de type `object`. Au moment de la compilation, un élément de type `dynamic` est supposé prendre en charge n’importe quelle opération. Par conséquent, vous n’avez pas besoin de vous demander si l’objet obtient sa valeur d’une API COM, d’un langage dynamique tel qu’IronPython, du modèle DOM (Document Object Model) HTML, de la réflexion ou d’une autre partie du programme. Toutefois, si le code n’est pas valide, des erreurs sont détectées au moment de l’exécution.
 
 Par exemple, si la méthode d’instance `exampleMethod1` du code suivant ne comporte qu’un seul paramètre, le compilateur reconnaît que le premier appel à la méthode, `ec.exampleMethod1(10, 4)`, n’est pas valide car il contient deux arguments. Cet appel entraîne une erreur du compilateur. Le deuxième appel à la méthode, `dynamic_ec.exampleMethod1(10, 4)`, n’est pas vérifié par le compilateur, car le type de `dynamic_ec` est `dynamic`. Par conséquent, aucune erreur de compilateur n’est signalée. Toutefois, l’erreur ne passe pas indéfiniment inaperçue. Elle est détectée au moment de l’exécution et provoque une exception runtime.
 
@@ -64,7 +64,7 @@ Le composant Dynamic Language Runtime (DLR) est une nouvelle API de .NET Framewo
 
 ## <a name="com-interop"></a>COM interop
 
-[!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] inclut plusieurs fonctionnalités qui améliorent l’interopérabilité avec les API COM telles que les API Office Automation. L’utilisation du type `dynamic` et des [arguments nommés et facultatifs](../classes-and-structs/named-and-optional-arguments.md) fait partie des améliorations offertes.
+C# 4 inclut plusieurs fonctionnalités qui améliorent l’interopérabilité avec les API COM telles que les API Office Automation. L’utilisation du type `dynamic` et des [arguments nommés et facultatifs](../classes-and-structs/named-and-optional-arguments.md) fait partie des améliorations offertes.
 
 De nombreuses méthodes COM autorisent une variation des types d’arguments et du type de retour en désignant les types comme `object`. Cela a nécessité un cast explicite des valeurs pour la coordination avec les variables fortement typées en C#. Si vous effectuez la compilation à l’aide de l’option [/link (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/link-compiler-option.md), l’introduction du type `dynamic` vous permet de traiter les occurrences d’`object` dans les signatures COM comme si elles étaient de type `dynamic`, vous évitant ainsi une grande partie des opérations de cast. Par exemple, les instructions suivantes permettent de comparer la façon dont vous accédez à une cellule d’une feuille de calcul Microsoft Office Excel avec le type `dynamic` et sans le type `dynamic`.
 

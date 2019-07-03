@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ffbf6d9e-4a88-4a8a-9645-4ce0ee1ee5f9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 629a59cd28e58e4b08805e3bb742d12e9cacbebd
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 9a3ba9b86a1611408f510098726ac49f543f8451
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377877"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832883"
 ---
 # <a name="create-and-use-strong-named-assemblies"></a>Créer et utiliser des assemblys avec nom fort
 
@@ -51,7 +51,7 @@ Le scénario suivant met en avant le processus de signature d'un assembly avec n
 
 ## <a name="bypass-signature-verification-of-trusted-assemblies"></a>Ignorer la vérification de signature des assemblys approuvés
 
-À partir du [!INCLUDE[net_v35SP1_long](../../../includes/net-v35sp1-long-md.md)], les signatures de nom fort ne sont pas validées quand un assembly est chargé dans un domaine d'application de confiance totale tel que le domaine de l'application par défaut pour la zone `MyComputer`. Cette fonctionnalité permet d'ignorer les noms forts. Dans un environnement de confiance totale, les demandes de <xref:System.Security.Permissions.StrongNameIdentityPermission> aboutissent toujours pour les assemblys de confiance totale signés, quelle que soit leur signature. La fonctionnalité consistant à ignorer les noms forts évite les traitements inutiles liés à la vérification de signature de nom fort des assemblys de confiance totale dans cette situation, ce qui permet un chargement plus rapide des assemblys.
+À partir du .NET Framework 3.5 Service Pack 1, les signatures de nom fort ne sont pas validées quand un assembly est chargé dans un domaine d'application de confiance totale tel que le domaine de l'application par défaut pour la zone `MyComputer`. Cette fonctionnalité permet d'ignorer les noms forts. Dans un environnement de confiance totale, les demandes de <xref:System.Security.Permissions.StrongNameIdentityPermission> aboutissent toujours pour les assemblys de confiance totale signés, quelle que soit leur signature. La fonctionnalité consistant à ignorer les noms forts évite les traitements inutiles liés à la vérification de signature de nom fort des assemblys de confiance totale dans cette situation, ce qui permet un chargement plus rapide des assemblys.
 
 Cette fonctionnalité s'applique à tout assembly signé avec un nom fort qui présente les caractéristiques suivantes :
 

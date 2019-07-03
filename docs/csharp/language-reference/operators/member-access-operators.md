@@ -25,12 +25,12 @@ helpviewer_keywords:
 - method invocation [C#]
 - delegate invocation [C#]
 - () operator [C#]
-ms.openlocfilehash: de0715a2ac946fa47f0d83ac8569595e622f0b97
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: b6bca26cc05a13e1384c4fc9642264f65b159ff7
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758088"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306541"
 ---
 # <a name="member-access-operators-c-reference"></a>Opérateurs d’accès aux membres (référence C#)
 
@@ -147,7 +147,7 @@ Vous utilisez également des parenthèses quand vous appelez un [constructeur](.
 
 Vous utilisez également des parenthèses pour spécifier l’ordre dans lequel évaluer les opérations dans une expression. Pour plus d’informations, consultez la section [Ajout de parenthèses](../../programming-guide/statements-expressions-operators/operators.md#adding-parentheses) de l’article [Opérateurs](../../programming-guide/statements-expressions-operators/operators.md). Pour obtenir la liste des opérateurs classés par niveau de priorité, consultez [Opérateurs C#](index.md).
 
-Les [expressions cast](invocation-operator.md#cast-expression), qui appellent un opérateur de conversion, utilisent également des parenthèses.
+[Les expressions cast](type-testing-and-conversion-operators.md#cast-operator-), qui effectuent des conversions de type explicites, utilisent aussi des parenthèses.
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 
@@ -164,7 +164,6 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
 - [?? (opérateur de fusion Null)](null-coalescing-operator.md)

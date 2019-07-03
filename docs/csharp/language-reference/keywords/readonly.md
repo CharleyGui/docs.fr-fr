@@ -8,18 +8,24 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: c7f3b1b1525277bf948070c9121d151f9f520127
-ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
+ms.openlocfilehash: c3d18a52068b17b4a4259200754819dd43e28a03
+ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55204663"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67267649"
 ---
 # <a name="readonly-c-reference"></a>readonly (référence C#)
 
 Le mot clé `readonly` est un modificateur qui peut être utilisé dans trois contextes :
 
-- Dans une [déclaration de champ](#readonly-field-example), `readonly` indique qu’une affectation à destination d’un champ peut survenir uniquement dans le cadre de la déclaration ou dans un constructeur de la même classe.
+- Dans une [déclaration de champ](#readonly-field-example), `readonly` indique qu’une affectation à destination d’un champ peut survenir uniquement dans le cadre de la déclaration ou dans un constructeur de la même classe. Un champ en lecture seule peut être affecté et réaffecté plusieurs fois dans la déclaration de champ et le constructeur. Un champ `readonly` ne peut pas être affecté après l’arrêt du constructeur. Cela a des implications différentes selon les types de valeur et les types de référence :
+- Étant donné que les types de valeur contiennent directement leurs données, un champ qui est un type de valeur `readonly` est immuable. 
+- Étant donné que les types de référence contiennent une référence à leurs données, un champ qui est un type de référence `readonly` doit toujours faire référence au même objet. Cet objet n’est pas immuable. Le modificateur `readonly` empêche le champ d’être remplacé par une autre instance du type de référence. Toutefois, le modificateur n’empêche pas les données d’instance du champ d’être modifiées par le champ en lecture seule.
+
+> [!WARNING]
+> Un type visible de l’extérieur qui contient un champ en lecture seule visible de l’extérieur qui est un type de référence mutable peut être une faille de sécurité et peut déclencher l’avertissement [CA2104](/visualstudio/code-quality/ca2104-do-not-declare-read-only-mutable-reference-types) : « Ne déclarez pas les types référence mutables en lecture seule »
+
 - Dans une définition [`readonly struct`](#readonly-struct-example), `readonly` indique que le `struct` est immuable.
 - Dans un [`ref readonly`retour de la méthode](#ref-readonly-return-example), le modificateur `readonly` indique que la méthode retourne une référence et que les écritures ne sont pas autorisés pour cette référence.
 
@@ -55,7 +61,9 @@ Ces contextes de constructeur sont aussi les seuls contextes dans lesquels il es
 
 Dans l’exemple précédent, si vous utilisez une instruction telle que dans l’exemple suivant :
 
-`p2.y = 66;        // Error`
+```csharp
+p2.y = 66;        // Error
+```
 
 vous obtenez le message d’erreur du compilateur :
 

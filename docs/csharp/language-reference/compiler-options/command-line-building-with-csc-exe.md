@@ -5,12 +5,12 @@ helpviewer_keywords:
 - builds [C#]
 - command line [C#]
 ms.assetid: 66e70056-dd20-453c-a9b3-507e0478b015
-ms.openlocfilehash: 68f0c12d173587e8efc0fe283617b5805c6f7eae
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 0ebc4fa3029e16c5ee89da7d9af8b89924b2c4dc
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877030"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66833358"
 ---
 # <a name="command-line-build-with-cscexe"></a>Génération à partir de la ligne de commande avec csc.exe
 Vous pouvez appeler le compilateur C# en tapant le nom de son fichier exécutable (*csc.exe*) dans une invite de commandes.
@@ -19,11 +19,11 @@ Si vous utilisez la fenêtre **Invite de commandes développeur pour Visual Stud
 
 Si vous utilisez une fenêtre d’invite de commandes standard, vous devez ajuster votre chemin avant de pouvoir appeler *csc.exe* à partir de n’importe quel sous-répertoire de votre ordinateur. Vous devez également exécuter *vsvars32.bat* pour définir les variables d’environnement appropriées pour prendre en charge les générations à partir de la ligne de commande. Pour plus d’informations sur *vsvars32.bat*, notamment les instructions pour le rechercher et l’exécuter, consultez [Guide pratique pour définir des variables d’environnement pour la ligne de commande Visual Studio](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md).
 
-Si vous utilisez un ordinateur disposant uniquement du [!INCLUDE[winsdklong](~/includes/winsdklong-md.md)], vous pouvez utiliser le compilateur C# dans l’**invite de commandes du kit SDK**, disponible à partir de l’option de menu **Microsoft .NET Framework SDK**.
+Si vous utilisez un ordinateur disposant uniquement du Kit de développement logiciel (SDK) Windows, vous pouvez utiliser le compilateur C# dans l’**invite de commandes du kit SDK**, disponible à partir de l’option de menu **Microsoft .NET Framework SDK**.
 
 Vous pouvez également utiliser MSBuild pour générer des programmes en C# par programmation. Pour plus d’informations, consultez [MSBuild](/visualstudio/msbuild/msbuild).
 
-Le fichier exécutable *csc.exe* se trouve généralement dans le dossier Microsoft.NET\Framework\\*\<Version>* sous le répertoire *Windows*. Son emplacement peut varier en fonction de la configuration exacte de l’ordinateur utilisé. Si plusieurs versions du .NET Framework sont installées sur votre ordinateur, vous trouverez plusieurs versions de ce fichier. Pour plus d’informations sur ces installations, consultez [Guide pratique pour déterminer les versions installées du .NET Framework](../../../framework/migration-guide/how-to-determine-which-versions-are-installed.md).
+Le fichier exécutable *csc.exe* se trouve généralement dans le dossier Microsoft.NET\Framework\\ *\<Version>* sous le répertoire *Windows*. Son emplacement peut varier en fonction de la configuration exacte de l’ordinateur utilisé. Si plusieurs versions du .NET Framework sont installées sur votre ordinateur, vous trouverez plusieurs versions de ce fichier. Pour plus d’informations sur ces installations, consultez [Guide pratique pour déterminer les versions installées du .NET Framework](../../../framework/migration-guide/how-to-determine-which-versions-are-installed.md).
 
 > [!TIP]
 >  Quand vous générez un projet à l’aide de l’IDE de Visual Studio, vous pouvez introduire la commande **csc** et ses options de compilation associées dans la fenêtre **Sortie**. Pour afficher ces informations, suivez les instructions figurant dans [Guide pratique pour afficher, enregistrer et configurer des fichiers journaux de génération](/visualstudio/ide/how-to-view-save-and-configure-build-log-files#to-change-the-amount-of-information-included-in-the-build-log) pour définir le niveau de détail des données de journal sur **Normal** ou **Détaillé**. Après avoir régénéré votre projet, recherchez **csc** dans la fenêtre **Sortie** pour rechercher l’appel du compilateur C#.
@@ -93,7 +93,7 @@ csc -target:library -out:Something.xyz *.cs
 ```
 
 ## <a name="differences-between-c-compiler-and-c-compiler-output"></a>Différences entre les résultats de la compilation en C# et ceux de la compilation en C++
-Aucun fichier objet (*.obj*) n’est créé par l’appel du compilateur C#. Les fichiers de sortie sont créés directement. Le compilateur C# n’a donc pas besoin d’un éditeur de liens.
+Aucun fichier objet ( *.obj*) n’est créé par l’appel du compilateur C#. Les fichiers de sortie sont créés directement. Le compilateur C# n’a donc pas besoin d’un éditeur de liens.
 
 ## <a name="see-also"></a>Voir aussi
 

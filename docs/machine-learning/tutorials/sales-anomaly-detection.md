@@ -1,19 +1,19 @@
 ---
-title: Utiliser ML.NET pour détecter des anomalies dans un scénario de ventes
-description: Apprenez à utiliser ML.NET pour détecter des anomalies dans un scénario de ventes d’un produit et découvrez comment identifier des pics et des points de changement dans les données afin de prendre les mesures appropriées.
-ms.date: 05/29/2019
+title: 'Tutoriel : Détecter les anomalies dans les ventes de produits'
+description: Découvrez comment créer une application de détection des anomalies pour des données de ventes de produit. Ce didacticiel crée une application de console .NET Core à l’aide de C# dans Visual Studio 2019.
+ms.date: 06/11/2019
 ms.topic: tutorial
-ms.custom: mvc
-ms.openlocfilehash: e092aea66ca9f439cf97c1ebee83097def0f520b
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.custom: mvc, title-hack-0612
+ms.openlocfilehash: 3e3e368ed3bcb35e7e2c8bdf08abe71afd4ae87c
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758796"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67306227"
 ---
-# <a name="tutorial-use-mlnet-for-product-sales-anomaly-detection"></a>Tutoriel : Utiliser ML.NET pour détecter des anomalies dans les ventes d’un produit 
+# <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Tutoriel : Détecter les anomalies dans les ventes de produits avec ML.NET
 
-Ce tutoriel montre comment utiliser ML.NET pour détecter des anomalies dans les données de ventes d’un produit afin de prendre les mesures appropriées. Pour cela, vous allez créer une application console .NET Core en C# dans Visual Studio 2019. 
+Découvrez comment créer une application de détection des anomalies pour des données de ventes de produit. Ce didacticiel crée une application de console .NET Core à l’aide de C# dans Visual Studio.
 
 Dans ce didacticiel, vous apprendrez à :
 > [!div class="checklist"]

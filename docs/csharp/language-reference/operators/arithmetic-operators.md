@@ -1,5 +1,5 @@
 ---
-title: Opérateurs arithmétiques - Informations de référence sur C#
+title: Opérateurs arithmétiques - Référence C#
 description: Découvrez les opérateurs C# qui effectuent des opérations de multiplication, division, reste, addition et soustraction avec des types numériques.
 ms.date: 03/27/2019
 author: pkulikov
@@ -27,14 +27,14 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: 69b4f3fb52ce5da25081f3da7a8909151e1492f6
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: af3f7a9379aa8ac12ef8c12abc99a0ded9188eb8
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758410"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025307"
 ---
-# <a name="arithmetic-operators-c-reference"></a>Opérateurs arithmétiques (Informations de référence sur C#)
+# <a name="arithmetic-operators-c-reference"></a>Opérateurs arithmétiques (référence C#)
 
 Les opérateurs suivants effectuent des opérations arithmétiques avec des types numériques :
 
@@ -264,8 +264,7 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
 - <xref:System.Math?displayProperty=nameWithType>
 - <xref:System.MathF?displayProperty=nameWithType>

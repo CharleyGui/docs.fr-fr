@@ -3,12 +3,12 @@ title: Nouveautés de C# 7.0 | Guide C#
 description: Découvrez les nouvelles fonctionnalités disponibles dans la version 7.0 du langage C#.
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 9b4569f31211afc69efb1b853723fded9329ae41
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: c3fdee2bdb974640b56bfab3af4be57133ad2f7a
+ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66815973"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67307152"
 ---
 # <a name="whats-new-in-c-70"></a>Nouveautés de C# 7.0
 

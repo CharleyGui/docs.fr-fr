@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dfc55bcd97a6c1d68d4ce900b19ace7356d6ee92
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 2239b73eb8418d469085ad72b8a28093146a1f6b
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66378570"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025967"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (Désassembleur IL)
 
@@ -53,7 +53,7 @@ Les options suivantes sont également disponibles pour les fichiers *.exe*, *.dl
 |**/linenum**|Inclut des références dans les lignes sources d'origine.|
 |**/nobar**|Supprime la fenêtre pop-up de l'indicateur de progression du code machine.|
 |**/noca**|Supprime la sortie d'attributs personnalisés.|
-|**/project**|Affiche les métadonnées telles qu'elles apparaissent dans le code managé, plutôt que telles qu'elles apparaissent dans le [!INCLUDE[wrt](../../../includes/wrt-md.md)] natif. Si `PEfilename` n'est pas un fichier de métadonnées Windows ( *.winmd*), cette option n'a aucun effet. Consultez [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
+|**/project**|Affiche les métadonnées telles qu'elles apparaissent dans le code managé, plutôt que telles qu'elles apparaissent dans le Windows Runtime natif. Si `PEfilename` n'est pas un fichier de métadonnées Windows ( *.winmd*), cette option n'a aucun effet. Consultez [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
 |**/pubonly**|Désassemble uniquement les membres et les types publics. Équivaut à **/visibility:PUB**.|
 |**/quoteallnames**|Entoure tous les noms de guillemets simples.|
 |**/raweh**|Affiche les clauses de gestion des exceptions sous une forme brute.|
@@ -100,7 +100,7 @@ Le fichier texte généré par *Ildasm.exe* peut servir d'entrée dans l'Assembl
 > [!NOTE]
 > Actuellement, vous ne pouvez pas utiliser cette technique avec des fichiers exécutables portables qui contiennent du code natif incorporé (par exemple, des fichiers exécutables portables générés par Visual C++).  
 
-Vous pouvez utiliser l’interface graphique utilisateur par défaut du Désassembleur IL pour afficher, sous forme d’arborescence, le code désassemblé et les métadonnées de tout fichier exécutable portable existant. Pour utiliser l’interface graphique utilisateur, tapez **ildasm** au niveau de la ligne de commande sans préciser l’argument *PEfilename* ni d’options. Dans le menu **Fichier**, vous pouvez naviguer jusqu’au fichier PE que vous souhaitez charger dans *Ildasm.exe*. Pour enregistrer les métadonnées et le code désassemblé affichés pour le PE sélectionné, sélectionnez la commande **Dump** dans le menu **Fichier**. Pour enregistrer uniquement l’affichage d’arborescence hiérarchique, sélectionnez la commande **Dump de l’arborescence** dans le menu **Fichier**. Pour plus d’informations sur le chargement d’un fichier dans *Ildasm.exe* et l’interprétation de la sortie, consultez le didacticiel *Ildasm.exe*, qui se trouve dans le dossier Samples fourni avec le [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)].
+Vous pouvez utiliser l’interface graphique utilisateur par défaut du Désassembleur IL pour afficher, sous forme d’arborescence, le code désassemblé et les métadonnées de tout fichier exécutable portable existant. Pour utiliser l’interface graphique utilisateur, tapez **ildasm** au niveau de la ligne de commande sans préciser l’argument *PEfilename* ni d’options. Dans le menu **Fichier**, vous pouvez naviguer jusqu’au fichier PE que vous souhaitez charger dans *Ildasm.exe*. Pour enregistrer les métadonnées et le code désassemblé affichés pour le PE sélectionné, sélectionnez la commande **Dump** dans le menu **Fichier**. Pour enregistrer uniquement l’affichage d’arborescence hiérarchique, sélectionnez la commande **Dump de l’arborescence** dans le menu **Fichier**. Pour plus d’informations sur le chargement d’un fichier dans *Ildasm.exe* et l’interprétation de la sortie, consultez le didacticiel *Ildasm.exe*, qui se trouve dans le dossier Samples fourni avec le kit de développement logiciel (SDK) Windows.
 
 Si vous utilisez *Ildasm.exe* avec un argument *PEfilename* comportant des ressources incorporées, l’outil génère alors plusieurs fichiers de sortie : un fichier texte comprenant du code IL et, pour chaque ressource managée incorporée, un fichier .resources généré à l’aide du nom de la ressource issu des métadonnées. Si une ressource non managée est incorporée dans *PEfilename*, un fichier .res est généré à l’aide du nom de fichier spécifié pour la sortie IL par l’option **/output**.
 

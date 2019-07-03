@@ -6,14 +6,14 @@ helpviewer_keywords:
 - false operator [C#]
 - true operator [C#]
 ms.assetid: 81a888fd-011e-4589-b242-6c261fea505e
-ms.openlocfilehash: b1acf9a16dd977ec49a7f1dc3bea4ee41792e9be
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: f4391e73b17c3700dc04240e1289b523c4bdc596
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758140"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025035"
 ---
-# <a name="true-and-false-operators-c-reference"></a>Opérateurs true et false (Référence C#)
+# <a name="true-and-false-operators-c-reference"></a>Opérateurs true et false (rférence C#)
 
 L’opérateur `true` retourne la valeur [bool](../keywords/bool.md) `true` pour indiquer qu’un opérande est true. L’opérateur `false` retourne la valeur `bool` `true` pour indiquer qu’un opérande est false. Les opérateurs `true` et `false` ne sont pas forcément complémentaires. Autrement dit, les opérateurs `true` et `false` peuvent retourner la valeur `bool` `false` pour le même opérande. Si un type définit un des deux opérateurs, il doit aussi définir un autre opérateur.
 
@@ -37,8 +37,7 @@ Wait!
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
-- [`true`, littéral](../keywords/true-literal.md)
-- [`false`, littéral](../keywords/false-literal.md)
+- [true, littéral](../keywords/true-literal.md)
+- [false, littéral](../keywords/false-literal.md)

@@ -5,12 +5,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 9e7434f2267baf82021dfb3875f2da39552e72ef
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
+ms.openlocfilehash: 0decc563fdcf068c0b9dc88a55b2bd6f4e3657cd
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58186076"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025092"
 ---
 # <a name="methods"></a>Méthodes
 
@@ -144,9 +144,9 @@ Un appelant peut alors appeler la méthode de trois façons :
 - En passant une liste d’arguments individuels séparés par des virgules et du type approprié à la méthode.
 - En ne fournissant pas d’argument au tableau de paramètres.
 
-L’exemple suivant définit une méthode nommée `DoStringOperation` qui effectue l’opération de chaîne spécifiée par son premier paramètre, qui est un membre d’une énumération `StringOperation`. Les chaînes sur lesquelles elle doit effectuer l’opération sont définies par un tableau de paramètres. La méthode `Main` montre les trois façons d’appeler la méthode. Notez que la méthode est avec le mot clé `params` doit être prête à gérer le cas où aucun argument n’est fourni pour le tableau de paramètres, sa valeur étant alors `null`.
+L’exemple suivant définit une méthode nommée `GetVowels` qui retourne toutes les voyelles à partir d’un tableau de paramètres. La méthode `Main` montre les trois façons d’appeler la méthode. Les appelants n’ont pas nécessairement à fournir tous les arguments pour les paramètres qui incluent le modificateur `params`. Dans ce cas, le paramètre est `null`.
 
-[!code-csharp[csSnippets.Methods#106](../../samples/snippets/csharp/concepts/methods/byref108.cs#108)]
+[!code-csharp[csSnippets.Methods#75](~/samples/snippets/csharp/concepts/methods/params75.cs#75)]
 
 <a name="optional"></a>
 
@@ -157,7 +157,7 @@ Une définition de méthode peut spécifier que ses paramètres sont obligatoire
 La valeur par défaut du paramètre doit être affectée par un des types d’expressions suivants :
 
 - Une constante, comme une chaîne littérale ou un nombre.
-- Une expression de la forme `new ValType`, où `ValType` est un type valeur. Notez que ceci appelle le constructeur par défaut implicite du type valeur, qui n’est pas un membre réel du type.
+- Une expression de la forme `new ValType`, où `ValType` est un type valeur. Notez que ceci appelle le constructeur sans paramètre implicite du type valeur, qui n’est pas un membre réel du type.
 - Une expression de la forme `default(ValType)`, où `ValType` est un type valeur.
 
 Si une méthode comprend à la fois des paramètres obligatoires et des paramètres facultatifs, les paramètres facultatifs sont définis à la fin de la liste des paramètres, après tous les paramètres obligatoires.

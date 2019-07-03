@@ -1,5 +1,5 @@
 ---
-title: ?? opérateur - Référence C#
+title: ?? Opérateur - Référence C#
 ms.custom: seodec18
 ms.date: 06/07/2019
 f1_keywords:
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - null-coalescing operator [C#]
 - ?? operator [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-ms.openlocfilehash: 8ca97261b348b7813ab179abbc1f2c5f535966a1
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: a19b5558da36ffb11dabd1b9bec419a3623a0f17
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816009"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67024991"
 ---
-# <a name="-operator-c-reference"></a>?? opérateur (référence C#)
+# <a name="-operator-c-reference"></a>?? Opérateur (référence C#)
 
 L’opérateur de fusion null `??` retourne la valeur de l’opérande de gauche si elle n’est pas `null` ; sinon, il évalue l’opérande de droite et retourne son résultat. L’opérateur `??` n’évalue pas son opérande de droite si l’opérande de gauche n’est pas Null.
 
@@ -59,8 +59,7 @@ Pour plus d’informations, consultez la section [Opérateur de fusion Null](~/_
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
 - [Opérateurs ?. et ?[]](member-access-operators.md#null-conditional-operators--and-)
 - [?:, opérateur](conditional-operator.md)

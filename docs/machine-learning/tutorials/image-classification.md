@@ -1,21 +1,19 @@
 ---
-title: 'Tutoriel : Créer un classifieur d’images personnalisé ML.NET avec TensorFlow'
-description: Découvrez comment créer un classifieur d’images personnalisé ML.NET dans un scénario d’apprentissage par transfert TensorFlow pour classer des images en réutilisant un modèle TensorFlow préentraîné.
-ms.date: 05/06/2019
+title: 'Tutoriel : Reformer le classifieur d’images TensorFlow - Apprentissage par transfert'
+description: Apprenez à reformer un modèle de classification des images TensorFlow avec apprentissage par transfert et ML.NET. Le modèle d’origine a été formé pour classer des images individuelles. Après reformation, le nouveau modèle organise les images en grandes catégories.
+ms.date: 06/12/2019
 ms.topic: tutorial
-ms.custom: mvc
-ms.openlocfilehash: e248c5ae73281ed6cd492592ba4a51791db75aa2
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.custom: mvc, title-hack-0612
+ms.openlocfilehash: 2ad9e71f572cb694897fd12ecbb15da069afe338
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593420"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67026086"
 ---
-# <a name="tutorial-build-an-mlnet-custom-image-classifier-with-tensorflow"></a>Tutoriel : Créer un classifieur d’images personnalisé ML.NET avec TensorFlow
+# <a name="tutorial-retrain-a-tensorflow-image-classifier-with-transfer-learning-and-mlnet"></a>Tutoriel : Reformer un classifieur d’images TensorFlow avec apprentissage par transfert et ML.NET
 
-Cet exemple de tutoriel montre comment utiliser un modèle `TensorFlow` de classifieur d’images déjà entraîné pour créer un nouveau modèle personnalisé permettant de classer des images dans plusieurs catégories.
-
-Et si vous pouviez réutiliser un modèle déjà entraîné pour résoudre un problème et réentraîner une partie ou la totalité de ses couches de sorte qu’il résolve un problème similaire ? Cette technique se nomme [apprentissage par transfert](https://en.wikipedia.org/wiki/Transfer_learning).
+Apprenez à reformer un modèle de classification des images TensorFlow avec apprentissage par transfert et ML.NET. Le modèle d’origine a été formé pour classer des images individuelles. Après reformation, le nouveau modèle organise les images en grandes catégories. 
 
 Pour entraîner un modèle de [Classification d’images](https://en.wikipedia.org/wiki/Outline_of_object_recognition) à partir de zéro, il faut définir des millions de paramètres, disposer d’une multitude de données d’apprentissage étiquetées et posséder une grande quantité de ressources de calcul (des centaines d’heures GPU). S’il n’est pas aussi efficace que l’apprentissage d’un modèle personnalisé à partir de zéro, l’apprentissage par transfert permet de raccourcir ce processus : il s’agit de travailler avec des milliers (et non des millions) d’images étiquetées et de créer assez vite un modèle personnalisé (en une heure sur un ordinateur sans GPU).
 
@@ -24,6 +22,10 @@ Dans ce didacticiel, vous apprendrez à :
 > * Comprendre le problème
 > * Réutiliser et paramétrer le modèle préentraîné
 > * Classer des images
+
+## <a name="what-is-transfer-learning"></a>Qu’est-ce que l’apprentissage par transfert ?
+
+Et si vous pouviez réutiliser un modèle déjà entraîné pour résoudre un problème et réentraîner une partie ou la totalité de ses couches de sorte qu’il résolve un problème similaire ? Cette technique se nomme [apprentissage par transfert](https://en.wikipedia.org/wiki/Transfer_learning).
 
 ## <a name="image-classification-sample-overview"></a>Vue d’ensemble de l’exemple de classification d’images
 
@@ -71,7 +73,7 @@ La classification d’images est une tâche courante de Machine Learning qui per
 > * « 119px-Nalle_-_a_small_brown_teddy_bear.jpg », de [Jonik](https://commons.wikimedia.org/wiki/User:Jonik) (photographie personnelle), CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=48166 ;
 > * « 193px Broodrooster.jpg », de [M. Minderhoud](https://nl.wikipedia.org/wiki/Gebruiker:Michiel1972) (travail personnel), CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=27403.
 
-L’apprentissage par transfert comporte quelques stratégies, comme *réentraîner toutes les couches* et *avant-dernière couche*. Ce tutoriel explique et montre comment utiliser la *stratégie de l’avant-dernière couche*. Cette stratégie réutilise un modèle déjà entraîné pour résoudre un problème spécifique. Elle réentraîne la couche finale de ce modèle de sorte qu’il résolve un nouveau problème. Le fait de réutiliser le modèle préentraîné dans le nouveau modèle permet de gagner beaucoup de temps et d’économiser de nombreuses ressources.
+L’apprentissage par transfert comporte quelques stratégies, comme *réentraîner toutes les couches* et *avant-dernière couche*. Ce tutoriel explique et montre comment utiliser la *stratégie de l’avant-dernière couche*. Cette *stratégie* réutilise un modèle déjà entraîné pour résoudre un problème spécifique. Elle réentraîne la couche finale de ce modèle de sorte qu’il résolve un nouveau problème. Le fait de réutiliser le modèle préentraîné dans le nouveau modèle permet de gagner beaucoup de temps et d’économiser de nombreuses ressources.
 
 Le modèle de classification d’images réutilise le [modèle Inception](https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip), un modèle TensorFlow classique de reconnaissance d’images, entraîné sur le jeu de données `ImageNet`, qui tente de classer des images entières en un millier de classes, comme « Parapluie », « Pull » et « Lave-vaisselle ».
 

@@ -1,6 +1,6 @@
 ---
 title: Formats de chemin de fichier sur les systèmes Windows
-ms.date: 06/28/2018
+ms.date: 06/06/2019
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -11,12 +11,12 @@ helpviewer_keywords:
 - path formats, Windows
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ecaae9e1af359ead1c15a9e431eac21e41040efe
-ms.sourcegitcommit: bd28ff1e312eaba9718c4f7ea272c2d4781a7cac
+ms.openlocfilehash: 75261bc44b938432c9c22b90dc4db30ca00d630b
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56835822"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67170732"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formats de chemin de fichier sur les systèmes Windows
 
@@ -37,7 +37,7 @@ Si les trois composants sont présents, le chemin est absolu. Si aucune lettre d
 | `C:\Documents\Newsletters\Summer2018.pdf` | Chemin de fichier absolu à partir de la racine du lecteur C:. |
 | `\Program Files\Custom Utilities\StringFinder.exe` | Chemin absolu à partir de la racine du lecteur actif. |
 | `2018\January.xlsx` | Chemin relatif à un fichier dans un sous-répertoire du répertoire actif. |
-| `..\Publications\TravelBrochure.pdf` | Chemin relatif à un fichier dans un répertoire qui est un pair du répertoire actif. |
+| `..\Publications\TravelBrochure.pdf` | Chemin relatif à un fichier dans répertoire qui est un pair du répertoire actif. |
 | `C:\Projects\apilibrary\apilibrary.sln` | Chemin absolu à un fichier à partir de la racine du lecteur C:. |
 | `C:Projects\apilibrary\apilibrary.sln` | Chemin relatif à partir du répertoire actif du lecteur C:. |
 
@@ -67,7 +67,7 @@ Voici quelques exemples de chemins UNC :
 | `\\system07\C$\` | Répertoire racine du lecteur C: sur `system07`. |
 | `\\Server2\Share\Test\Foo.txt` | Fichier Foo.txt dans le répertoire Test du volume \\\\Server2\\Share.|
 
-Les chemins UNC doivent toujours être complets. Ils peuvent inclure des segments de répertoire relatifs (`.` et `..`), mais ils doivent faire partie d’un chemin complet. Pour utiliser des chemins relatifs, vous devez impérativement mapper un chemin UNC à une lettre de lecteur.
+Les chemins UNC doivent toujours être complets. Ils peuvent inclure des segments de répertoire relatifs (`.` et `..`), mais il doivent faire partie d’un chemin complet. Pour utiliser des chemins relatifs, vous devez impérativement mapper un chemin UNC à une lettre de lecteur.
 
 ## <a name="dos-device-paths"></a>Chemins de périphérique DOS
 
@@ -75,6 +75,11 @@ Le système d’exploitation Windows a un modèle objet unifié qui pointe vers 
 
 `\\.\C:\Test\Foo.txt`  
 `\\?\C:\Test\Foo.txt`
+
+En plus d’identifier un lecteur par sa lettre de lecteur, vous pouvez identifier un volume à l’aide de son GUID de volume. Cela prend la forme :
+
+`\\.\Volume{b75e2c83-0000-0000-0000-602f00000000}\Test\Foo.txt`
+`\\?\Volume{b75e2c83-0000-0000-0000-602f00000000}\Test\Foo.txt`
 
 > [!NOTE]
 > La syntaxe des chemins de périphérique DOS est prise en charge sur les implémentations .NET s’exécutant sur Windows à compter de .NET Core 1.1 et .NET Framework 4.6.2.
@@ -85,12 +90,12 @@ Le chemin de périphérique DOS comprend les composants suivants :
 
    > [!NOTE]
    > Le spécificateur `\\?\` est pris en charge dans toutes les versions de .NET Core et dans le .NET Framework à compter de la version 4.6.2.
-   
-- Un lien symbolique vers l’objet de périphérique « réel » (C: dans le cas présent).
+
+- Un lien symbolique vers le « vrai » objet d’appareil (C: dans le cas d’un nom de lecteur, ou Volume{b75e2c83-0000-0000-0000-602f00000000} dans le cas d’un GUID de volume).
 
    Le premier segment du chemin de périphérique DOS après le spécificateur de chemin de périphérique identifie le volume ou le lecteur. (Par exemple, `\\?\C:\` et `\\.\BootPartition\`.)
 
-   Il existe un lien spécifique pour les chemins UNC. Celui-ci s’appelle, sans surprise, `UNC`. Exemple :
+   Il existe un lien spécifique pour les chemins UNC. Celui-ci s’appelle, sans surprise, `UNC`. Par exemple :
 
   `\\.\UNC\Server\Share\Test\Foo.txt`  
   `\\?\UNC\Server\Share\Test\Foo.txt`

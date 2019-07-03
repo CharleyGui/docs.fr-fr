@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 16776e83c8bae6cc82329a8f709fd9d1d7cab145
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 63a3ee099d4256a4bc800f74615fca8eaec2a77f
+ms.sourcegitcommit: ced0cccf15adfd492f8196cb739f01dde52c9252
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634340"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67135682"
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Constructions de regroupement dans les expressions régulières
 Les constructions de regroupement délimitent les sous-expressions d'une expression régulière et capturent les sous-chaînes d'une chaîne d'entrée. Utilisez les constructions de regroupement pour effectuer les opérations suivantes :  
@@ -187,7 +187,7 @@ Les constructions de regroupement délimitent les sous-expressions d'une express
   
  où *name1* est le groupe actuel (facultatif), *name2* un groupe précédemment défini et *subexpression* un modèle d'expression régulière valide. La définition de groupe d'équilibrage supprime la définition de *name2* et stocke l'intervalle entre *name2* et *name1* dans *name1*. Si aucun groupe *name2* n'est défini, la recherche de correspondance s'effectue de façon rétroactive. Comme la suppression de la dernière définition de *name2* révèle la définition antérieure de *name2*, cette construction vous permet d'utiliser la pile de captures du groupe *name2* en tant que compteur pour effectuer le suivi des constructions imbriquées, telles que des parenthèses ou des crochets ouvrants et fermants.  
   
- La définition de groupe d'équilibrage utilise *name2* comme pile. Le caractère initial de chaque construction imbriquée est placé dans le groupe et dans sa collection <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> . Quand le caractère fermant est mis en correspondance, le caractère ouvrant correspondant est supprimé du groupe, et la collection <xref:System.Text.RegularExpressions.Group.Captures%2A> est diminuée d'une unité. Une fois que les caractères ouvrant et fermant de toutes les constructions imbriquées ont été mis en correspondance, *name1* est vide.  
+ La définition de groupe d'équilibrage utilise *name2* comme pile. Le caractère initial de chaque construction imbriquée est placé dans le groupe et dans sa collection <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> . Quand le caractère fermant est mis en correspondance, le caractère ouvrant correspondant est supprimé du groupe, et la collection <xref:System.Text.RegularExpressions.Group.Captures%2A> est diminuée d'une unité. Une fois que les caractères ouvrant et fermant de toutes les constructions imbriquées ont été mis en correspondance, *name2* est vide.  
   
 > [!NOTE]
 >  Une fois que vous avez modifié l'expression régulière dans l'exemple suivant pour utiliser les caractères ouvrant et fermant appropriés d'une construction imbriquée, vous pouvez l'utiliser pour gérer la plupart des constructions imbriquées, telles que les expressions mathématiques ou les lignes de code de programme qui comprennent plusieurs appels de méthode imbriqués.  

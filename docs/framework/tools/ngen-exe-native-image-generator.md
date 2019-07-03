@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0c806366e8f80e9fd770b45a5f1154d388ac49ab
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: fd1773b184b9ea39b83b91c139acb09658beae11
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489664"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832828"
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe (Native Image Generator)
 
@@ -80,7 +80,7 @@ Le tableau ci-après décrit la syntaxe de chaque `action`. Pour obtenir une des
 |`uninstall` [`assemblyName` &#124; `assemblyPath`] [`scenarios`] [`config`]|Supprimer les images natives d'un assembly et ses dépendances du cache des images natives.<br /><br /> Pour désinstaller une seule image et ses dépendances, utilisez les mêmes arguments de ligne de commande que ceux utilisés pour installer l’image. **Remarque :**  À compter de .NET Framework 4, l’action `uninstall` * n’est plus prise en charge.|
 |`update` [`/queue`]|Mettre à jour des images natives qui sont devenues non valides.<br /><br /> Si `/queue` est spécifié, les mises à jour sont mises en file d'attente pour le service d'images natives. Les mises à jour sont toujours planifiées à la priorité 3, de sorte qu'elles s'exécutent lorsque l'ordinateur est inactif.|
 |`display` [`assemblyName` &#124; `assemblyPath`]|Afficher l'état des images natives pour un assembly et ses dépendances.<br /><br /> Si aucun argument n’est fourni, tout dans le cache des images natives est affiché.|
-|`executeQueuedItems` [<code>1&#124;2&#124;3</code>]<br /><br /> - ou -<br /><br /> `eqi` [1&#124;2&#124;3]|Exécuter les travaux de compilation en attente.<br /><br /> Si une priorité est spécifiée, les travaux de compilation présentant une priorité supérieure ou égale sont exécutés. Si aucune priorité n'est spécifiée, tous les travaux de compilation en attente sont exécutés.|
+|`executeQueuedItems` [<code>1&#124;2&#124;3</code>]<br /><br /> -ou-<br /><br /> `eqi` [1&#124;2&#124;3]|Exécuter les travaux de compilation en attente.<br /><br /> Si une priorité est spécifiée, les travaux de compilation présentant une priorité supérieure ou égale sont exécutés. Si aucune priorité n'est spécifiée, tous les travaux de compilation en attente sont exécutés.|
 |`queue` {`pause` &#124; `continue` &#124; `status`}|Suspendre le service d'images natives, reprendre le service suspendu ou interroger l'état du service.|
 
 <a name="ArgumentTable"></a>
@@ -233,7 +233,7 @@ La précompilation des assemblys avec Ngen.exe peut améliorer le temps de déma
 La liaison matérielle peut affecter le temps de démarrage, car toutes les images qui sont liées par une liaison matérielle à l'assembly d'application principale doivent être chargées en même temps.
 
 > [!NOTE]
-> Avant le [!INCLUDE[net_v35SP1_long](../../../includes/net-v35sp1-long-md.md)], vous devez mettre les composants partagés avec nom fort dans le Global Assembly Cache, étant donné que le chargeur exécute une validation supplémentaire sur les assemblys avec nom fort qui ne sont pas dans le Global Assembly Cache, en éliminant efficacement toute amélioration du temps de démarrage gagné à l'aide des images natives. Les optimisations présentées dans le [!INCLUDE[net_v35SP1_short](../../../includes/net-v35sp1-short-md.md)] ont supprimé la validation supplémentaire.
+> Avant .NET Framework 3.5 Service Pack 1, vous devez mettre les composants partagés avec nom fort dans le Global Assembly Cache, étant donné que le chargeur exécute une validation supplémentaire sur les assemblys avec nom fort qui ne sont pas dans le Global Assembly Cache, en éliminant efficacement toute amélioration du temps de démarrage gagné à l'aide des images natives. Les optimisations présentées dans .NET Framework 3.5 SP1 ont supprimé la validation supplémentaire.
 
 <a name="UsageSummary"></a>
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: 594f97d47d87d846ba27fc192096005e94587dd1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 80f0b97d38b17740916ea5407b78f298aa42604b
+ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64608275"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67169850"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Procédure pas à pas : Programmation Office (C# et Visual Basic)
 Visual Studio offre des fonctionnalités dans C# et Visual Basic qui améliorent la programmation Microsoft Office. Les fonctionnalités utiles de C# incluent des arguments nommés et facultatifs ainsi que des valeurs de retour de type `dynamic`. Dans la programmation COM, vous pouvez omettre le mot clé `ref` et accéder aux propriétés indexées. Les fonctionnalités de Visual Basic incluent les propriétés implémentées automatiquement, les instructions dans les expressions lambda et les initialiseurs de collection.
@@ -37,9 +37,9 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
   
 2. Dans le menu **Fichier** , pointez sur **Nouveau**, puis cliquez sur **Projet**.  
   
-3. Dans le volet **Modèles installés**, développez **Visual Basic** ou **Visual C#**, **Office**, puis cliquez sur l’année de version du produit Office.  
+3. Dans le volet **Modèles installés**, développez **Visual Basic** ou **Visual C#** , **Office**, puis cliquez sur l’année de version du produit Office.  
   
-4. Dans le volet **Modèles**, cliquez sur **Complément Excel \<version>**.  
+4. Dans le volet **Modèles**, cliquez sur **Complément Excel \<version>** .  
   
 5. Regardez en haut du volet **Modèles** pour vérifier que **.NET Framework 4**, ou version ultérieure, apparaît dans la zone **Framework cible**.  
   
@@ -93,7 +93,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
   
      Deux nouvelles fonctionnalités C# sont utilisées dans cette méthode. Ces deux fonctionnalités existent déjà en Visual Basic.  
   
-    - La méthode [Add](<xref:Microsoft.Office.Interop.Excel.Workbooks.Add%2A>) possède un *paramètre facultatif* pour spécifier un modèle particulier. Les paramètres optionnels, introduits dans [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], vous permettent d'omettre l'argument du paramètre, si vous souhaitez utiliser la valeur par défaut de ce dernier. Dans la mesure où aucun argument n'est envoyé dans l'exemple précédent, `Add` utilise le modèle par défaut et crée un classeur. L'instruction équivalente dans les versions antérieures de C# nécessite un argument d'espace réservé : `excelApp.Workbooks.Add(Type.Missing)`.  
+    - La méthode [Add](<xref:Microsoft.Office.Interop.Excel.Workbooks.Add%2A>) possède un *paramètre facultatif* pour spécifier un modèle particulier. Les paramètres optionnels, introduits dans C# 4, vous permettent d'omettre l'argument du paramètre, si vous souhaitez utiliser la valeur par défaut de ce dernier. Dans la mesure où aucun argument n'est envoyé dans l'exemple précédent, `Add` utilise le modèle par défaut et crée un classeur. L'instruction équivalente dans les versions antérieures de C# nécessite un argument d'espace réservé : `excelApp.Workbooks.Add(Type.Missing)`.  
   
          Pour plus d’informations, consultez [Arguments nommés et facultatifs](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md).  
   
@@ -159,7 +159,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
   
 3. Tapez `ildasm` dans la fenêtre Invite de commandes développeur pour Visual Studio, puis appuyez sur Entrée. La fenêtre IL DASM s'affiche.  
   
-4. Dans le menu **Fichier** de la fenêtre IL DASM, sélectionnez **Fichier** > **Ouvrir**. Double-cliquez sur **Visual Studio \<version>**, puis sur **Projets**. Ouvrez le dossier de votre projet et, dans le dossier bin/Debug, recherchez *nom de votre projet*.dll. Double-cliquez sur *nom de votre projet*.dll. Une nouvelle fenêtre affiche les attributs de votre projet, en plus des références à d'autres modules et assemblys. Remarquez que les espaces de noms `Microsoft.Office.Interop.Excel` et `Microsoft.Office.Interop.Word` sont inclus dans l'assembly. Par défaut, dans Visual Studio, le compilateur importe les types dont vous avez besoin à partir d’un assembly PIA référencé dans votre assembly.  
+4. Dans le menu **Fichier** de la fenêtre IL DASM, sélectionnez **Fichier** > **Ouvrir**. Double-cliquez sur **Visual Studio \<version>** , puis sur **Projets**. Ouvrez le dossier de votre projet et, dans le dossier bin/Debug, recherchez *nom de votre projet*.dll. Double-cliquez sur *nom de votre projet*.dll. Une nouvelle fenêtre affiche les attributs de votre projet, en plus des références à d'autres modules et assemblys. Remarquez que les espaces de noms `Microsoft.Office.Interop.Excel` et `Microsoft.Office.Interop.Word` sont inclus dans l'assembly. Par défaut, dans Visual Studio, le compilateur importe les types dont vous avez besoin à partir d’un assembly PIA référencé dans votre assembly.  
   
      Pour plus d'informations, voir [Procédure : afficher le contenu d’un assembly](../../../framework/app-domains/how-to-view-assembly-contents.md).  
   

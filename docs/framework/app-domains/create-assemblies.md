@@ -9,16 +9,16 @@ helpviewer_keywords:
 ms.assetid: 54832ee9-dca8-4c8b-913c-c0b9d265e9a4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3a8b6c37df398b7273bfcf082def572d4d0e7d87
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 8e544976b0b801b08af238b2aeb36b5611154379
+ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634532"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66832900"
 ---
 # <a name="creating-assemblies"></a>Création d'assemblys
 
-Vous pouvez créer des assemblys monofichiers ou multifichiers à l’aide d’un IDE, comme Visual Studio, ou des compilateurs et des outils fournis par le [!INCLUDE[winsdklong](../../../includes/winsdklong-md.md)]. L’assembly le plus simple est un fichier unique qui a un nom simple et qui est chargé dans un seul domaine d’application. Cet assembly ne peut pas être référencé par d’autres assemblys en dehors du répertoire de l’application et n’est pas soumis à la vérification de la version. Pour désinstaller l’application constituée de l’assembly, vous supprimez simplement le répertoire où il se trouve. Pour de nombreux développeurs, un assembly avec ces fonctionnalités est tout ce qui est nécessaire pour déployer une application.
+Vous pouvez créer des assemblys monofichiers ou multifichiers à l’aide d’un IDE, comme Visual Studio, ou des compilateurs et des outils fournis par le kit de développement logiciel (SDK) Windows. L’assembly le plus simple est un fichier unique qui a un nom simple et qui est chargé dans un seul domaine d’application. Cet assembly ne peut pas être référencé par d’autres assemblys en dehors du répertoire de l’application et n’est pas soumis à la vérification de la version. Pour désinstaller l’application constituée de l’assembly, vous supprimez simplement le répertoire où il se trouve. Pour de nombreux développeurs, un assembly avec ces fonctionnalités est tout ce qui est nécessaire pour déployer une application.
 
 Vous pouvez créer un assembly multifichier à partir de plusieurs modules de code et fichiers de ressources. Vous pouvez également créer un assembly qui peut être partagé par plusieurs applications. Un assembly partagé doit avoir un nom fort et peut être déployé dans le Global Assembly Cache.
 

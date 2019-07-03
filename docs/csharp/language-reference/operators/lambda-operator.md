@@ -1,5 +1,5 @@
 ---
-title: =>, opérateur - Référence C#
+title: Opérateur >= - Référence C#
 ms.custom: seodec18
 ms.date: 01/22/2019
 f1_keywords:
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - lambda operator [C#]
 - => operator [C#]
 - lambda expressions [C#], => operator
-ms.openlocfilehash: 4c075cedb3cf479f53409f3b0acf4463fc3d7a03
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: a7fea9810cb02269278638ec71cd106463b029e9
+ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758211"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67025014"
 ---
-# <a name="-operator-c-reference"></a>=>, opérateur (référence C#)
+# <a name="-operator-c-reference"></a>Opérateur >= (référence C#)
 
 Le jeton `=>` est pris en charge sous deux formes : comme opérateur lambda, et comme séparateur d’un nom de membre et de l’implémentation de membre dans une définition de corps d’expression.
 
@@ -76,8 +76,7 @@ Pour plus d’informations, consultez la section [Expressions de fonction anonym
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
 - [Expressions lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md)
 - [Membres expression-bodied](../../programming-guide/statements-expressions-operators/expression-bodied-members.md)
