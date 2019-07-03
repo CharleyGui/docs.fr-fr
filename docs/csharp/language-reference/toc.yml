@@ -8,7 +8,7 @@
       items:
         - name: Vue d'ensemble
           href: keywords/index.md
-        - name: Types
+        - name: Types intégrés
           items:
             - name: Types valeur
               items:
@@ -16,8 +16,9 @@
                   href: keywords/value-types.md
                 - name: bool
                   href: keywords/bool.md
-                - name: byte
-                  href: keywords/byte.md
+                - name: Types numériques intégraux
+                  displayName: 'sbyte, byte, short, ushort, int, uint, long, ulong, integer'
+                  href: builtin-types/integral-numeric-types.md
                 - name: char
                   href: keywords/char.md
                 - name: decimal
@@ -28,22 +29,8 @@
                   href: keywords/enum.md
                 - name: float
                   href: keywords/float.md
-                - name: int
-                  href: keywords/int.md
-                - name: long
-                  href: keywords/long.md
-                - name: sbyte
-                  href: keywords/sbyte.md
-                - name: short
-                  href: keywords/short.md
                 - name: struct
                   href: keywords/struct.md
-                - name: uint
-                  href: keywords/uint.md
-                - name: ulong
-                  href: keywords/ulong.md
-                - name: ushort
-                  href: keywords/ushort.md
             - name: Types référence
               items:
                 - name: Caractéristiques des types référence
@@ -68,8 +55,6 @@
               items:
                 - name: Table des types intégrés
                   href: keywords/built-in-types-table.md
-                - name: Table des types intégraux
-                  href: keywords/integral-types-table.md
                 - name: Table des types à virgule flottante
                   href: keywords/floating-point-types-table.md
                 - name: Table des types valeur
@@ -118,6 +103,8 @@
               href: keywords/extern.md
             - name: in (modificateur générique)
               href: keywords/in-generic-modifier.md
+            - name: new (modificateur de membre)
+              href: keywords/new-modifier.md
             - name: out (modificateur générique)
               href: keywords/out-generic-modifier.md
             - name: override
@@ -218,20 +205,16 @@
           items:
             - name: est
               href: keywords/is.md
+        - name: Mots clés de contrainte de type générique
+          items:
+            - name: 'new, contrainte'
+              href: keywords/new-constraint.md
+            - name: où
+              href: keywords/where-generic-type-constraint.md
         - name: Mots clés des opérateurs
           items:
             - name: await
               href: keywords/await.md
-            - name: new
-              items:
-                - name: 'new, opérateur, modificateur et contrainte'
-                  href: keywords/new.md
-                - name: 'new, opérateur'
-                  href: keywords/new-operator.md
-                - name: 'new, modificateur'
-                  href: keywords/new-modifier.md
-                - name: 'new, contrainte'
-                  href: keywords/new-constraint.md
             - name: sizeof
               href: keywords/sizeof.md
             - name: nameof
@@ -280,8 +263,6 @@
               href: keywords/set.md
             - name: when (condition de filtre)
               href: keywords/when.md
-            - name: where (contrainte de type générique)
-              href: keywords/where-generic-type-constraint.md
             - name: par défaut
               href: keywords/value.md
             - name: yield
@@ -367,6 +348,8 @@
         - name: '::, opérateur'
           href: operators/namespace-alias-qualifer.md
           displayName: namespace alias qualifier
+        - name: 'new, opérateur'
+          href: operators/new-operator.md
         - name: Opérateur stackalloc
           href: operators/stackalloc.md
         - name: opérateurs true et false

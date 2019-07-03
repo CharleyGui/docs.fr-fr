@@ -3,12 +3,12 @@ title: Modèles personnalisés pour dotnet new
 description: Découvrez les modèles personnalisés pour tout type de projet ou de fichier .NET.
 author: thraka
 ms.date: 06/14/2019
-ms.openlocfilehash: d7e9c549ff132deb4682ba81ab5ff354d6cc1522
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 738c6b07f77bdbf6fd946253f95c8691e4172f31
+ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67169630"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410348"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Modèles personnalisés pour dotnet new
 
@@ -100,7 +100,7 @@ Le fichier *.csproj* est légèrement différent d’un fichier de projet de cod
 01. Le paramètre `<PackageType>` est ajouté et défini sur `Template`.
 01. Le paramètre `<PackageVersion>` est ajouté et défini sur un [numéro de version de NuGet](/nuget/reference/package-versioning) valide.
 01. Le paramètre `<PackageId>` est ajouté et la valeur est définie sur un identificateur unique. Cet identificateur est utilisé pour désinstaller le pack de modèle et est utilisé par les flux NuGet pour inscrire votre pack de modèle.
-01. Les paramètres de métadonnées génériques doivent être définis : `<Title>`, `<Authors>`, `<Description>` et `<Tags>`.
+01. Les paramètres de métadonnées génériques doivent être définis : `<Title>`, `<Authors>`, `<Description>` et `<PackageTags>`.
 01. Le paramètre `<TargetFramework>` doit être défini, même si le fichier binaire généré par le processus de modèle n’est pas utilisé. Dans l’exemple ci-dessous, il est défini sur `netstandard2.0`.
 
 Un pack de modèle, sous la forme d’un package NuGet *.nupkg*, requiert que tous les modèles soient stockés dans le dossier *content* du package. Il existe quelques paramètres supplémentaires à ajouter à un fichier *.csproj* pour vous assurer que le *.nupkg* généré peut être installé en tant que pack de modèle :
@@ -125,7 +125,7 @@ Voici un exemple de fichier *.csproj* respectant toutes les instructions ci-dess
     <Title>AdatumCorporation Templates</Title>
     <Authors>Me</Authors>
     <Description>Templates to use when creating an application for Adatum Corporation.</Description>
-    <Tags>dotnet-new;templates;contoso</Tags>
+    <PackageTags>dotnet-new;templates;contoso</PackageTags>
     <TargetFramework>netstandard2.0</TargetFramework>
 
     <IncludeContentInPack>true</IncludeContentInPack>

@@ -8,23 +8,26 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: c3d18a52068b17b4a4259200754819dd43e28a03
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: 4a51bb0e854de127c632c28f613a7602bf09f432
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67267649"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348008"
 ---
 # <a name="readonly-c-reference"></a>readonly (référence C#)
 
 Le mot clé `readonly` est un modificateur qui peut être utilisé dans trois contextes :
 
-- Dans une [déclaration de champ](#readonly-field-example), `readonly` indique qu’une affectation à destination d’un champ peut survenir uniquement dans le cadre de la déclaration ou dans un constructeur de la même classe. Un champ en lecture seule peut être affecté et réaffecté plusieurs fois dans la déclaration de champ et le constructeur. Un champ `readonly` ne peut pas être affecté après l’arrêt du constructeur. Cela a des implications différentes selon les types de valeur et les types de référence :
-- Étant donné que les types de valeur contiennent directement leurs données, un champ qui est un type de valeur `readonly` est immuable. 
-- Étant donné que les types de référence contiennent une référence à leurs données, un champ qui est un type de référence `readonly` doit toujours faire référence au même objet. Cet objet n’est pas immuable. Le modificateur `readonly` empêche le champ d’être remplacé par une autre instance du type de référence. Toutefois, le modificateur n’empêche pas les données d’instance du champ d’être modifiées par le champ en lecture seule.
+- Dans une [déclaration de champ](#readonly-field-example), `readonly` indique qu’une affectation à destination d’un champ peut survenir uniquement dans le cadre de la déclaration ou dans un constructeur de la même classe. Un champ en lecture seule peut être affecté et réaffecté plusieurs fois dans la déclaration de champ et le constructeur. 
+  
+  Un champ `readonly` ne peut pas être affecté après l’arrêt du constructeur. Cela a des implications différentes selon les types de valeur et les types de référence :
+  
+  - Étant donné que les types de valeur contiennent directement leurs données, un champ qui est un type de valeur `readonly` est immuable. 
+  - Étant donné que les types de référence contiennent une référence à leurs données, un champ qui est un type de référence `readonly` doit toujours faire référence au même objet. Cet objet n’est pas immuable. Le modificateur `readonly` empêche le champ d’être remplacé par une autre instance du type de référence. Toutefois, le modificateur n’empêche pas les données d’instance du champ d’être modifiées par le champ en lecture seule.
 
-> [!WARNING]
-> Un type visible de l’extérieur qui contient un champ en lecture seule visible de l’extérieur qui est un type de référence mutable peut être une faille de sécurité et peut déclencher l’avertissement [CA2104](/visualstudio/code-quality/ca2104-do-not-declare-read-only-mutable-reference-types) : « Ne déclarez pas les types référence mutables en lecture seule »
+  > [!WARNING]
+  > Un type visible de l’extérieur qui contient un champ en lecture seule visible de l’extérieur qui est un type de référence mutable peut être une faille de sécurité et peut déclencher l’avertissement [CA2104](/visualstudio/code-quality/ca2104-do-not-declare-read-only-mutable-reference-types) : « Ne déclarez pas les types référence mutables en lecture seule »
 
 - Dans une définition [`readonly struct`](#readonly-struct-example), `readonly` indique que le `struct` est immuable.
 - Dans un [`ref readonly`retour de la méthode](#ref-readonly-return-example), le modificateur `readonly` indique que la méthode retourne une référence et que les écritures ne sont pas autorisés pour cette référence.
@@ -41,9 +44,9 @@ Vous pouvez affecter une valeur à un champ `readonly` uniquement dans les conte
 
 - Lorsque la variable est initialisée dans la déclaration, par exemple :
 
-```csharp
-public readonly int y = 5;
-```
+  ```csharp
+  public readonly int y = 5;
+  ```
 
 - Dans un constructeur d’instance de la classe qui contient la déclaration de champ d’instance.
 - Dans le constructeur statique de la classe qui contient la déclaration de champ statique.
