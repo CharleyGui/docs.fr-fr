@@ -6,19 +6,19 @@ dev_langs:
 - vb
 author: thraka
 ms.author: adegeo
-ms.date: 05/06/2019
-ms.openlocfilehash: 369c74d2d8e82f157de0eec4294a5ee50542292b
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.date: 06/14/2019
+ms.openlocfilehash: bb100ea064585235768ecb46781eb830c7dae0c6
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67169783"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401960"
 ---
-# <a name="whats-new-in-net-core-30-preview-5"></a>Nouveautés de .NET Core 3.0 (Preview 5)
+# <a name="whats-new-in-net-core-30-preview-6"></a>Nouveautés de .NET Core 3.0 (Preview 6)
 
-Cet article décrit les nouveautés de .NET Core 3.0 (jusqu’à Preview 5). Une des principales améliorations est la prise en charge des applications de bureau Windows (Windows uniquement). En utilisant le composant du SDK .NET Core 3.0 Windows Desktop, vous pouvez porter vos applications Windows Forms et Windows Presentation Foundation (WPF). Pour être clair, le composant Windows Desktop est pris en charge et inclus seulement sur Windows. Pour plus d’informations, consultez la section [Bureau Windows](#windows-desktop) plus loin dans cet article.
+Cet article décrit les nouveautés de .NET Core 3.0 (jusqu’à Preview 6). Une des principales améliorations est la prise en charge des applications de bureau Windows (Windows uniquement). En utilisant le composant du SDK .NET Core 3.0 Windows Desktop, vous pouvez porter vos applications Windows Forms et Windows Presentation Foundation (WPF). Pour être clair, le composant Windows Desktop est pris en charge et inclus seulement sur Windows. Pour plus d’informations, consultez la section [Bureau Windows](#windows-desktop) plus loin dans cet article.
 
-.NET Core 3.0 prend en charge C# 8.0. Nous vous recommandons vivement d’utiliser la dernière version de Visual Studio 2019 Update 1 Preview ou VSCode avec l’extension OmniSharp.
+.NET Core 3.0 prend en charge C# 8.0. Nous vous recommandons vivement d’utiliser la [dernière version de Visual Studio Preview](https://visualstudio.microsoft.com/vs/preview/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+preview) ou Visual Studio Code avec l’extension OmniSharp.
 
 [Téléchargez et commencez à utiliser .NET Core 3.0 Preview 6](https://aka.ms/netcore3download) dès maintenant sur Windows, Mac et Linux.
 
@@ -55,7 +55,7 @@ Bien que .NET Core 3.0 prenne en charge **.NET Standard 2.1**, le modèle `dot
 </Project>
 ```
 
-Si vous utilisez Visual Studio, vous avez besoin de Visual Studio 2019, car Visual Studio 2017 ne prend pas en charge **.NET Standard 2.1** ou **.NET Core 3.0**. Nous vous recommandons vivement d’utiliser [Visual Studio 2019 Update 1 Preview](https://visualstudio.microsoft.com/vs/preview/).
+Si vous utilisez Visual Studio, vous avez besoin de [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019), car Visual Studio 2017 ne prend pas en charge **.NET Standard 2.1** ou **.NET Core 3.0**.
 
 ## <a name="improved-net-core-version-apis"></a>API de version de .NET Core améliorées
 
@@ -187,7 +187,7 @@ dotnet publish -c Release -r win-x64 --self-contained true
 
 Le compilateur ReadyToRun ne prend actuellement pas en charge le ciblage croisé. Vous devez compiler sur une cible donnée. Par exemple, si vous souhaitez avoir des images R2R Windows x64, vous devez exécuter la commande de publication sur cet environnement.
 
-Exceptions au ciblage croisé :
+Exceptions au ciblage croisé :
 
 - Windows x64 peut être utilisé pour compiler des images Windows ARM32, ARM64 et x86.
 - Windows x86 peut être utilisé pour compiler des images Windows ARM32.
