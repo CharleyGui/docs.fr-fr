@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - virtual keyword [C#]
 ms.assetid: 5da9abae-bc1e-434f-8bea-3601b8dcb3b2
-ms.openlocfilehash: fa201b90a6d0e4afd15034c04b36bbbd25352886
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 2568eed5a889f6c03e237875194b8adcb9334ef7
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633082"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401812"
 ---
 # <a name="virtual-c-reference"></a>virtual (référence C#)
 
@@ -44,7 +44,7 @@ Les propriétés virtuelles se comportent comme les méthodes abstraites, à l�
 
 - Une propriété virtuelle héritée peut être substituée dans une classe dérivée en incluant une déclaration de propriété qui utilise le modificateur `override`.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Dans cet exemple, la classe `Shape` contient les deux coordonnées `x` et `y`, ainsi que la méthode virtuelle `Area()`. Différentes classes de formes, telles que `Circle`, `Cylinder` et `Sphere`, héritent de la classe `Shape`, et la surface est calculée pour chaque figure. Chaque classe dérivée a sa propre implémentation de substitution de `Area()`.
 
@@ -71,4 +71,4 @@ Le programme suivant calcule et affiche la zone appropriée pour chaque figure e
 - [Polymorphisme](../../programming-guide/classes-and-structs/polymorphism.md)
 - [abstract](abstract.md)
 - [override](override.md)
-- [new](new.md)
+- [new (modificateur)](new-modifier.md)

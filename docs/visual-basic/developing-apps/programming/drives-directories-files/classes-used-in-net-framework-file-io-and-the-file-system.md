@@ -4,17 +4,17 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - file I/O classes
 ms.assetid: 4a5ca924-eea8-4a95-a5f0-6ac10de276a3
-ms.openlocfilehash: 2fdbeb2b77e88f144bc541d01ee2e904f8a84678
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: f9d898756b6b17ae69d1af7dd747c20a26d88417
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58832526"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67348003"
 ---
 # <a name="classes-used-in-net-framework-file-io-and-the-file-system-visual-basic"></a>Classes utilisées dans les E/S de fichier du .NET Framework et le système de fichiers (Visual Basic)
 Les tableaux suivants répertorient les classes couramment utilisées pour les E/S de fichier du .NET Framework. Ces classes sont réparties dans les catégories suivantes : classes d’E/S de fichier, classes utilisées pour créer des flux et classes utilisées pour lire et écrire dans les flux.  
   
- Pour accéder à la documentation du [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)] et obtenir une liste plus complète, consultez [Vue d’ensemble de la bibliothèque de classes](../../../../standard/class-library-overview.md).  
+Pour obtenir une liste plus complète, consultez [Vue d’ensemble de la bibliothèque de classes](../../../../standard/class-library-overview.md).  
   
 ## <a name="basic-io-classes-for-files-drives-and-directories"></a>Classes d’E/S de base pour les fichiers, les lecteurs et les répertoires  
  Le tableau suivant répertorie et décrit les principales classes utilisées pour les E/S de fichier.  

@@ -1,22 +1,22 @@
 ---
-title: Inspecter les valeurs de données intermédiaires lors du traitement dans ML.NET
-description: Découvrez comment inspecter les valeurs de données intermédiaires pendant le traitement du pipeline de machine learning de ML.NET
-ms.date: 04/29/2019
+title: Inspecter les données intermédiaires pendant le traitement dans ML.NET
+description: Découvrez comment inspecter les données intermédiaires pendant les étapes de chargement, de traitement et d’entraînement du modèle du pipeline Machine Learning de ML.NET.
+ms.date: 06/25/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc, how-to
-ms.openlocfilehash: 06c4a473841db62a10dfc24025f842df7ae2c583
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.custom: mvc, how-to, title-hack-0625
+ms.openlocfilehash: d6ddeb523fb229eb0ebc9c2f22809312060e4266
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063518"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67402392"
 ---
-# <a name="inspect-intermediate-data-values-during-processing"></a>Inspecter les valeurs de données intermédiaires lors du traitement
+# <a name="inspect-intermediate-data-during-processing"></a>Inspecter les données intermédiaires pendant le traitement
 
-Découvrez comment inspecter les valeurs pendant les étapes de chargement, de traitement et d’entraînement dans ML.NET.
+Découvrez comment inspecter les données intermédiaires pendant les étapes de chargement, de traitement et d’entraînement du modèle dans ML.NET. Les données intermédiaires sont les résultats de chaque étape dans le pipeline Machine Learning.
 
-Les données telles que celles représentées ci-dessous qui sont chargées dans un [`IDataView`](xref:Microsoft.ML.IDataView) peuvent être inspectées de plusieurs façons dans ML.NET.
+Les données intermédiaires comme celles représentées ci-dessous, qui sont chargées dans un [`IDataView`](xref:Microsoft.ML.IDataView), peuvent être inspectées de plusieurs façons dans ML.NET.
  
 ```csharp
 HousingData[] housingData = new HousingData[]
@@ -62,9 +62,9 @@ HousingData[] housingData = new HousingData[]
 
 ## <a name="convert-idataview-to-ienumerable"></a>Convertir IDataView en IEnumerable
 
-Un des moyens les plus rapides pour inspecter les valeurs d’un [`IDataView`](xref:Microsoft.ML.IDataView) consiste à le convertir en un [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601). Pour convertir un [`IDataView`](xref:Microsoft.ML.IDataView) en [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601), utilisez la méthode [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*). 
+Un des moyens les plus rapides pour inspecter un [`IDataView`](xref:Microsoft.ML.IDataView) consiste à le convertir en un [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601). Pour convertir un [`IDataView`](xref:Microsoft.ML.IDataView) en [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601), utilisez la méthode [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*). 
 
-Pour optimiser les performances, définissez la valeur de `reuseRowObject` sur `true`. Cette opération remplit tardivement le même objet avec les données de la ligne actuelle au moment de son évaluation, par opposition à la création d’un objet pour chaque ligne dans le jeu de données.
+Pour optimiser les performances, définissez `reuseRowObject` sur `true`. Cette opération remplit tardivement le même objet avec les données de la ligne actuelle au moment de son évaluation, par opposition à la création d’un objet pour chaque ligne dans le jeu de données.
 
 ```csharp
 // Create an IEnumerable of HousingData objects from IDataView
@@ -78,6 +78,8 @@ foreach (HousingData row in housingDataEnumerable)
     Console.WriteLine(row.Size);
 }
 ```
+
+## <a name="accessing-specific-indices-with-ienumerable"></a>Accès à des index spécifiques avec IEnumerable
 
 Si vous devez uniquement accéder à une partie des données ou à des index spécifiques, utilisez [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) et définissez la valeur du paramètre `reuseRowObject` sur `false` afin qu’un objet soit créé pour chaque ligne demandée dans le jeu de données. Convertissez ensuite le [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601) en tableau ou liste.
 

@@ -5,23 +5,24 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - constructors [C#], about constructors
 ms.assetid: 464253b2-fd5d-469a-836d-df0fdf2a43f7
-ms.openlocfilehash: 7422267d6ce067ed30d0fbd4be8de2fd122b4a90
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 14ff272fe940c265dc8984d6b20985bb2d2ba12d
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57200635"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398252"
 ---
 # <a name="using-constructors-c-programming-guide"></a>Utilisation de constructeurs (Guide de programmation C#)
+
 Quand une [classe](../../../csharp/language-reference/keywords/class.md) ou un [struct](../../../csharp/language-reference/keywords/struct.md) est créé, son constructeur est appelé. Les constructeurs portent le même nom que la classe ou le struct, et ils initialisent généralement les membres de données du nouvel objet.  
   
- Dans l’exemple suivant, une classe nommée `Taxi` est définie en utilisant un constructeur simple. Cette classe est ensuite instanciée à l’aide de l’opérateur [new](../../../csharp/language-reference/keywords/new.md). Le constructeur `Taxi` est appelé par l’opérateur `new` immédiatement après l’allocation de la mémoire pour le nouvel objet.  
+ Dans l’exemple suivant, une classe nommée `Taxi` est définie en utilisant un constructeur simple. Cette classe est ensuite instanciée à l’aide de l’opérateur [new](../../../csharp/language-reference/operators/new-operator.md). Le constructeur `Taxi` est appelé par l’opérateur `new` immédiatement après l’allocation de la mémoire pour le nouvel objet.  
   
  [!code-csharp[csProgGuideObjects#53](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#53)]  
   
- Un constructeur qui ne prend pas de paramètres est appelé *constructeur par défaut*. Les constructeurs par défaut sont appelés chaque fois qu’un objet est instancié à l’aide de l’opérateur `new` et qu’aucun argument n’est fourni à `new`. Pour plus d’informations, consultez [Constructeurs d’instances](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
+ Un constructeur qui ne prend pas de paramètres est appelé *constructeur sans paramètre*. Les constructeurs par défaut sont appelés chaque fois qu’un objet est instancié à l’aide de l’opérateur `new` et qu’aucun argument n’est fourni à `new`. Pour plus d’informations, consultez [Constructeurs d’instances](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md).  
   
- À moins que la classe soit [statique](../../../csharp/language-reference/keywords/static.md), les classes sans constructeurs se voient attribuer un constructeur public par défaut par le compilateur C# pour activer l’instanciation de classe. Pour plus d’informations, consultez [Classes statiques et membres de classe statique](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
+ À moins d’être [statiques](../../../csharp/language-reference/keywords/static.md), les classes sans constructeur se voient attribuer un constructeur public sans paramètre par le compilateur C#, afin d’activer l’instanciation de classe. Pour plus d’informations, consultez [Classes statiques et membres de classe statique](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
   
  Vous pouvez empêcher qu’une classe soit instanciée en rendant le constructeur privé, comme suit :  
   
@@ -29,7 +30,7 @@ Quand une [classe](../../../csharp/language-reference/keywords/class.md) ou un [
   
  Pour plus d’informations, consultez [Constructeurs privés](../../../csharp/programming-guide/classes-and-structs/private-constructors.md).  
   
- Les constructeurs pour les types [struct](../../../csharp/language-reference/keywords/struct.md) ressemblent aux constructeurs de classe, mais les `structs` ne peuvent pas contenir de constructeur par défaut explicite, car le compilateur en fournit automatiquement un. Ce constructeur initialise chaque champ du `struct` aux valeurs par défaut. Pour plus d’informations, consultez [Tableau des valeurs par défaut](../../../csharp/language-reference/keywords/default-values-table.md). Toutefois, ce constructeur par défaut est appelé uniquement si le `struct` est instancié avec `new`. Par exemple, ce code utilise le constructeur par défaut pour <xref:System.Int32>. Vous êtes par conséquent assuré que l’entier est initialisé :  
+ Les constructeurs des types [struct](../../../csharp/language-reference/keywords/struct.md) ressemblent aux constructeurs de classe, mais les `structs` ne peuvent pas contenir de constructeur explicite sans paramètre, car le compilateur en fournit automatiquement un. Ce constructeur initialise chaque champ du `struct` aux valeurs par défaut. Pour plus d’informations, consultez [Tableau des valeurs par défaut](../../../csharp/language-reference/keywords/default-values-table.md). Toutefois, ce constructeur sans paramètre est appelé uniquement si le `struct` est instancié avec `new`. Par exemple, ce code utilise le constructeur sans paramètre pour <xref:System.Int32>. Vous avez ainsi la garantie que l’entier est initialisé :  
   
 ```csharp  
 int i = new int();  
@@ -52,9 +53,9 @@ b = 33;      // Or assign it before using it.
 Console.WriteLine("{0}, {1}", a, b);  
 ```  
   
- Ainsi, l’appel du constructeur par défaut pour un type valeur n’est pas obligatoire.  
+ L’appel du constructeur sans paramètre pour un type valeur n’est donc pas obligatoire.  
   
- Les classes et les `structs` peuvent tous les deux définir des constructeurs qui prennent des paramètres. Les constructeurs qui prennent des paramètres doivent être appelés à l’aide d’une instruction `new` ou d’une instruction [base](../../../csharp/language-reference/keywords/base.md). Les classes et les `structs` peuvent également définir plusieurs constructeurs, et ni l’un ni l’autre n’est nécessaire pour définir un constructeur par défaut. Par exemple :  
+ Les classes et les `structs` peuvent tous les deux définir des constructeurs qui prennent des paramètres. Les constructeurs qui prennent des paramètres doivent être appelés à l’aide d’une instruction `new` ou d’une instruction [base](../../../csharp/language-reference/keywords/base.md). Les classes et les `structs` peuvent également définir plusieurs constructeurs, et ni les classes ni les structs ne sont nécessaires pour définir un constructeur sans paramètre. Par exemple :  
   
  [!code-csharp[csProgGuideObjects#54](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#54)]  
   
@@ -68,13 +69,13 @@ Console.WriteLine("{0}, {1}", a, b);
   
  Dans cet exemple, le constructeur de la classe de base est appelé avant que le bloc du constructeur ne soit exécuté. Le mot clé `base` peut être utilisé avec ou sans paramètres. Tous les paramètres du constructeur peuvent être utilisés comme paramètres pour `base` ou comme partie d’une expression. Pour plus d’informations, consultez [base](../../../csharp/language-reference/keywords/base.md).  
   
- Dans une classe dérivée, si un constructeur de classe de base n’est pas appelé explicitement à l’aide du mot clé `base`, le constructeur par défaut, s’il existe, est appelé implicitement. Cela signifie que les déclarations de constructeur suivantes sont en fait les mêmes :  
+ Dans une classe dérivée, si un constructeur de classe de base n’est pas appelé explicitement à l’aide du mot clé `base`, le constructeur sans paramètre, s’il existe, est appelé implicitement. Cela signifie que les déclarations de constructeur suivantes sont en fait les mêmes :  
   
  [!code-csharp[csProgGuideObjects#58](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#58)]  
   
  [!code-csharp[csProgGuideObjects#57](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#57)]  
   
- Si une classe de base n’offre pas de constructeur par défaut, la classe dérivée doit faire un appel explicite à un constructeur de base à l’aide du mot clé `base`.  
+ Si une classe de base n’offre pas de constructeur sans paramètre, la classe dérivée doit faire un appel explicite à un constructeur de base à l’aide de `base`.  
   
  Un constructeur peut appeler un autre constructeur dans le même objet à l’aide du mot clé [this](../../../csharp/language-reference/keywords/this.md). Comme `base`, `this` peut être utilisé avec ou sans paramètres, et tous les paramètres dans le constructeur sont disponibles comme paramètres pour `this` ou comme partie d’une expression. Par exemple, le deuxième constructeur de l’exemple précédent peut être récrit à l’aide de `this` :  
   

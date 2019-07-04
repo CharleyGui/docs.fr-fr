@@ -4,12 +4,12 @@ description: Découvrez comment créer et déboguer votre première application 
 author: kendrahavens
 ms.date: 12/05/2018
 ms.custom: seodec18
-ms.openlocfilehash: 7ea2aed3b340b7ae7a6dcd83df30f9453380af15
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1268a943d7cbf1033531a6c51f42c6fd672eaed3
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64750869"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401836"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Prise en main de C# et Visual Studio Code
 
@@ -68,7 +68,7 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
 
 3. Pour ouvrir la vue de débogage, cliquez sur l’icône de débogage dans le menu de gauche.
 
-    ![Ouvrir l’onglet Déboguer dans Visual Studio Code](media/with-visual-studio-code/open-debug-tab.png)
+    ![Ouvrir l’onglet Débogage dans Visual Studio Code](media/with-visual-studio-code/open-debug-tab.png)
 
 4. Cherchez la flèche verte en haut du volet. Assurez-vous que `.NET Core Launch (console)` est sélectionné dans la liste déroulante à côté du volet.
 

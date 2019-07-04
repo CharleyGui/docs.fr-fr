@@ -1,13 +1,13 @@
 ---
 title: Commande dotnet add package
 description: La commande « dotnet add package » est une option pratique pour ajouter une référence de package NuGet à un projet.
-ms.date: 04/24/2019
-ms.openlocfilehash: 82f178026b46eb0237243b8ae49d17fbcc1af6ec
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.date: 06/26/2019
+ms.openlocfilehash: f387d32cbf706e1711439e393c1a7811bc8f47bd
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65959242"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422054"
 ---
 # <a name="dotnet-add-package"></a>dotnet add package
 
@@ -74,7 +74,7 @@ Le fichier *ToDo.csproj* contient à présent un élément [`<PackageReference>`
 
 * **`--interactive`**
 
-  Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (par exemple, s’authentifier). Disponible à partir du kit SDK .NET Core 2.1, version 2.1.400 (ou version ultérieure).
+  Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (son authentification, par exemple). Disponible à partir du kit SDK .NET Core 2.1, version 2.1.400 (ou version ultérieure).
 
 * **`-n|--no-restore`**
 
@@ -82,7 +82,7 @@ Le fichier *ToDo.csproj* contient à présent un élément [`<PackageReference>`
 
 * **`--package-directory <PACKAGE_DIRECTORY>`**
 
-  Répertoire où restaurer les packages.
+  Répertoire où restaurer les packages. L’emplacement de restauration de package par défaut est `%userprofile%\.nuget\packages` sur Windows, et `~/.nuget/packages` sur macOS et Linux. Pour plus d’informations, consultez [Gérer les dossiers de packages globaux, les dossiers de cache et les dossiers temporaires dans NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders).
 
 * **`-s|--source <SOURCE>`**
 
@@ -111,3 +111,8 @@ Le fichier *ToDo.csproj* contient à présent un élément [`<PackageReference>`
   ```console
   dotnet add package Microsoft.AspNetCore.StaticFiles -s https://dotnet.myget.org/F/dotnet-core/api/v3/index.json
   ```
+
+## <a name="see-also"></a>Voir aussi
+
+- [Gestion des dossiers de packages globaux, des dossiers de cache et des dossiers temporaires dans NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders)
+- [Gestion des versions des packages NuGet](https://docs.microsoft.com/nuget/reference/package-versioning)

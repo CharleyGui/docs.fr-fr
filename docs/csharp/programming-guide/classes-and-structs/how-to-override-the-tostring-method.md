@@ -6,14 +6,15 @@ helpviewer_keywords:
 - ToString method, overriding in C#
 - inheritance [C#], overriding OnPaint and ToString
 ms.assetid: 8016db69-1f19-420c-8e17-98e8bebb7749
-ms.openlocfilehash: 18734627e299c696e23bb0ec9bc63ed37fe3e601
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: b12aeaeb5414d911abea4dfda654183ffa02b3e6
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59294975"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398456"
 ---
 # <a name="how-to-override-the-tostring-method-c-programming-guide"></a>Procédure : Guide pratique pour substituer la méthode ToString (Guide de programmation C#)
+
 En C#, chaque classe ou struct hérite implicitement de la classe <xref:System.Object>. Ainsi, chaque objet en C# obtient la méthode <xref:System.Object.ToString%2A>, qui retourne une représentation sous forme de chaîne de cet objet. Par exemple, toutes les variables de type `int` ont une méthode `ToString`, ce qui leur permet de retourner leur contenu sous forme de chaîne :  
   
  [!code-csharp[csProgGuideInheritance#37](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#37)]  
@@ -23,9 +24,9 @@ En C#, chaque classe ou struct hérite implicitement de la classe <xref:System.O
  Pour plus d’informations sur l’utilisation de chaînes de format et d’autres types de mise en forme personnalisée avec la méthode `ToString`, consultez [Mise en forme des types](../../../standard/base-types/formatting-types.md).  
   
 > [!IMPORTANT]
->  Quand vous choisissez les informations à fournir par l’intermédiaire de cette méthode, déterminez si votre classe ou struct sera utilisé par du code non fiable. Veillez à ne pas fournir d’informations susceptibles d’être exploitées par du code malveillant.  
+> Quand vous choisissez les informations à fournir par l’intermédiaire de cette méthode, déterminez si votre classe ou struct sera utilisé par du code non fiable. Veillez à ne pas fournir d’informations susceptibles d’être exploitées par du code malveillant.  
   
-### <a name="to-override-the-tostring-method-in-your-class-or-struct"></a>Pour substituer la méthode ToString dans votre classe ou struct  
+Pour substituer la méthode `ToString` dans votre classe ou struct :
   
 1. Déclarez une méthode `ToString` avec les modificateurs et le type de retour suivants :  
   
@@ -50,7 +51,6 @@ En C#, chaque classe ou struct hérite implicitement de la classe <xref:System.O
 - [Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md)
 - [Chaînes](../../../csharp/programming-guide/strings/index.md)
 - [string](../../../csharp/language-reference/keywords/string.md)
-- [new](../../../csharp/language-reference/keywords/new.md)
 - [override](../../../csharp/language-reference/keywords/override.md)
 - [virtual](../../../csharp/language-reference/keywords/virtual.md)
 - [Mise en forme des types](../../../standard/base-types/formatting-types.md)

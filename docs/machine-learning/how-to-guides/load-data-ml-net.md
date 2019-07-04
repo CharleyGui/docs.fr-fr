@@ -1,18 +1,18 @@
 ---
-title: Charger des données
-description: Charger un fichier de données et envoyer des données en streaming dans ML.NET
-ms.date: 05/03/2019
-ms.custom: mvc,how-to
-ms.openlocfilehash: 6edcc92b610e2e1f5e21c371b9f0aefd0b216d31
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+title: Charger des données depuis des fichiers et d’autres sources
+description: Ce guide pratique vous montre comment charger des données à des fins de traitement et d’entraînement dans ML.NET. Les données sont stockées à l’origine dans des fichiers ou d’autres sources de données, comme des bases de données, du JSON, du XML ou des collections en mémoire.
+ms.date: 06/25/2019
+ms.custom: mvc,how-to, title-hack-0625
+ms.openlocfilehash: fafbe3fed9e3f0b509eda4f9d8967965bde19767
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063650"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397742"
 ---
-# <a name="load-data-from-file-and-in-memory-sources"></a>Charger des données à partir de sources de fichier et en mémoire
+# <a name="load-data-from-files-and-other-sources"></a>Charger des données depuis des fichiers et d’autres sources
 
-Ce guide pratique vous montre comment charger des données à des fins de traitement et d’entraînement dans ML.NET. Les données sont stockées à l’origine dans des fichiers ou des sources de données en temps réel ou de streaming.
+Ce guide pratique vous montre comment charger des données à des fins de traitement et d’entraînement dans ML.NET. Les données sont stockées à l’origine dans des fichiers ou d’autres sources de données, comme des bases de données, du JSON, du XML ou des collections en mémoire.
 
 ## <a name="create-the-data-model"></a>Créer le modèle de données
 
@@ -102,16 +102,15 @@ TextLoader textLoader = mlContext.Data.CreateTextLoader<HousingData>(separatorCh
 IDataView data = textLoader.Load("DataFolder/SubFolder1/1.txt", "DataFolder/SubFolder2/1.txt");
 ```
 
-## <a name="load-data-from-a-streaming-source"></a>Charger des données à partir d’une source de streaming
+## <a name="load-data-from-other-sources"></a>Charger des données depuis d’autres sources
 
-Outre le chargement de données stockées sur disque, ML.NET prend en charge le chargement de données à partir de diverses sources de streaming, telles que les suivantes :
+En plus du chargement de données stockées dans des fichiers, ML.NET prend en charge le chargement de données depuis des sources incluant notamment celles-ci :
 
 - Collections en mémoire
 - JSON/XML
 - Bases de données
 
-> [!IMPORTANT]
-> Notez que quand vous utilisez des sources de streaming, ML.NET s’attend à ce que l’entrée se présente sous la forme d’une collection en mémoire. Ainsi, quand vous utilisez des sources telles que JSON/XML, veillez à convertir les données en une collection en mémoire.
+Notez que quand vous utilisez des sources de streaming, ML.NET s’attend à ce que l’entrée se présente sous la forme d’une collection en mémoire. Ainsi, quand vous utilisez des sources telles que JSON/XML, veillez à convertir les données en une collection en mémoire.
 
 Soit la collection en mémoire suivante :
 

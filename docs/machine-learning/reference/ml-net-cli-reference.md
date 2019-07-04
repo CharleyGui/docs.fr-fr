@@ -3,12 +3,12 @@ title: Commande auto-train dans l’outil CLI ML.NET
 description: Vue d’ensemble, exemples et informations de référence sur la commande auto-train dans l’outil CLI ML.NET.
 ms.date: 04/16/2019
 ms.custom: ''
-ms.openlocfilehash: ce5994f392c492e80676b9e65ce54fe010cf03ab
-ms.sourcegitcommit: 90f0bee0e8a416e45c78fa3ad4c91ef00e5228d5
+ms.openlocfilehash: 73bae0165af76226152de322d2951086646a1a1d
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66722600"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397659"
 ---
 # <a name="the-auto-train-command-in-mlnet-cli"></a>Commande « auto-train » dans l’outil CLI ML.NET
 
@@ -44,7 +44,7 @@ La commande `mlnet auto-train` génère les ressources suivantes :
 
 Les deux premières ressources peuvent être utilisées directement dans vos applications utilisateur (application web ASP.NET Core, services, application de bureau, etc.) pour effectuer des prédictions à l’aide de ce modèle ML généré.
 
-La troisième ressource, le code d’entraînement, montre quel code de l’API ML.NET a été utilisé par la CLI pour entraîner le modèle généré. Vous pouvez ainsi savoir quels entraîneur/algorithme et hyperparamètres spécifiques ont été sélectionnés par la CLI et le moteur AutoML ML.NET.
+La troisième ressource, le code d’entraînement, montre quel code de l’API ML.NET a été utilisé par l’interface CLI pour entraîner le modèle généré. Vous pouvez ainsi savoir quel entraîneur/algorithme et quels hyperparamètres spécifiques ont été sélectionnés par l’interface CLI et le moteur AutoML ML.NET.
 
 ## <a name="the-auto-train-command-uses-the-automl-engine"></a>La commande « auto-train » utilise le moteur AutoML
 

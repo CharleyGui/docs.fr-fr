@@ -5,12 +5,12 @@ author: rlander
 ms.author: mairaw
 ms.date: 04/18/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 69c647e57dead3b4f61bb45202c6b039099f0499
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 13ccdafc00f7a43d456126e3ec3afc1ae5897564
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052176"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422668"
 ---
 # <a name="install-the-net-framework-on-windows-10-and-windows-server-2016-and-later"></a>Installer le .NET Framework sur Windows 10 et Windows Server 2016 et ultérieur
 
@@ -34,7 +34,7 @@ La version .NET Framework 4.8 est fournie avec :
 Vous pouvez installer [.NET Framework 4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48) sur :
 
 * Mise à jour de Windows 10 d’octobre 2018 (Version 1809)
-* Mise à jour de Windows 10 d’avril 2018 (version 1803)
+* Windows 10 - Mise à jour d’avril 2018 (version 1803)
 * Windows 10 Fall Creators Update (version 1709)
 * Windows 10 Creators Update (version 1703)
 * Mise à jour anniversaire Windows 10 (version 1607)

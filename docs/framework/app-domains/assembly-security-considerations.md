@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 1b5439c1-f3d5-4529-bd69-01814703d067
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0f6f6fa8afe2e4aaea6e9f2b96329542b7fe5292
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6b78b770417b9599719ea219041a9fd6adaf5a84
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607696"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423410"
 ---
 # <a name="assembly-security-considerations"></a>Aspects de la sécurité des assemblys
 <a name="top"></a>Lorsque vous générez un assembly, vous pouvez spécifier un jeu d’autorisations que l’assembly doit exécuter. L'octroi ou non de certaines autorisations à un assembly repose sur la preuve.  
@@ -31,7 +31,7 @@ ms.locfileid: "64607696"
   
 - La preuve d’entrée est fusionnée avec la preuve rassemblée par le chargeur afin de constituer un jeu final de preuves utilisé pour la résolution de stratégie. Les méthodes qui utilisent cette sémantique sont **Assembly.Load**, **Assembly.LoadFrom** et **Activator.CreateInstance**.  
   
-- La preuve d’entrée est utilisée sans altération comme jeu final de preuves utilisé pour la résolution de stratégie. Les méthodes qui utilisent cette sémantique sont **Assembly.Load(byte[])** et **AppDomain.DefineDynamicAssembly()**.  
+- La preuve d’entrée est utilisée sans altération comme jeu final de preuves utilisé pour la résolution de stratégie. Les méthodes qui utilisent cette sémantique sont **Assembly.Load(byte[])** et **AppDomain.DefineDynamicAssembly()** .  
   
  Des autorisations facultatives peuvent être accordées par la [stratégie de sécurité](../../../docs/framework/misc/code-access-security-basics.md) définie sur l’ordinateur sur lequel l’assembly s’exécute. Si vous souhaitez que votre code gère toutes les exceptions de sécurité possibles, vous pouvez effectuer l'une des opérations suivantes :  
   
@@ -53,7 +53,7 @@ ms.locfileid: "64607696"
   
  Aucun niveau de confiance n’est associé à un nom fort, d’où l’importance accordée à l’outil de signature [SignTool.exe](../../../docs/framework/tools/signtool-exe.md). Les deux outils de signature exigent d'un éditeur qu'il prouve son identité à une tierce autorité et obtienne un certificat. Ce certificat est ensuite incorporé à votre fichier et peut être utilisé par un administrateur pour décider d'approuver ou non l'authenticité du code.  
   
- Vous pouvez attribuer à un assembly un nom fort et une signature numérique créés à l’aide de [SignTool.exe (outil de signature) ](../../../docs/framework/tools/signtool-exe.md), ou utiliser l’un ou l’autre indépendamment. Les deux outils de signature ne peuvent signer qu'un fichier à la fois ; pour un assembly multifichier, vous signez le fichier qui contient le manifeste d'assembly. Un nom fort est stocké dans un fichier qui contient le manifeste d’assembly, tandis qu’une signature créée à l’aide de l’outil de signature [SignTool.exe](../../../docs/framework/tools/signtool-exe.md) est stockée dans un emplacement réservé à cet effet, dans un fichier exécutable portable qui contient le manifeste d’assembly. La signature d’un assembly à l’aide de [l’outil de signature SignTool.exe](../../../docs/framework/tools/signtool-exe.md) peut être utilisée (avec ou sans nom fort) lorsque vous possédez déjà une hiérarchie de confiance qui s’appuie sur les signatures générées par cet [outil de signature SignTool.exe](../../../docs/framework/tools/signtool-exe.md), ou lorsque votre stratégie n’utilise que la partie propre à la clé et ne contrôle pas de chaîne de confiance.  
+ Vous pouvez attribuer à un assembly un nom fort et une signature numérique créés à l’aide de [SignTool.exe (outil de signature) ](../../../docs/framework/tools/signtool-exe.md), ou utiliser l’un ou l’autre indépendamment. Les deux outils de signature ne peuvent signer qu'un fichier à la fois ; pour un assembly multifichier, vous signez le fichier qui contient le manifeste d'assembly. Un nom fort est stocké dans un fichier qui contient le manifeste d’assembly, tandis qu’une signature créée à l’aide de l’outil de signature [SignTool.exe](../../../docs/framework/tools/signtool-exe.md) est stockée dans un emplacement réservé à cet effet, dans un fichier exécutable portable qui contient le manifeste d’assembly. La signature d’un assembly à l’aide de l’[outil de signature SignTool.exe](../../../docs/framework/tools/signtool-exe.md) peut être utilisée (avec ou sans nom fort) lorsque vous avez déjà une hiérarchie d’approbations qui s’appuie sur les signatures générées par cet [outil de signature SignTool.exe](../../../docs/framework/tools/signtool-exe.md), ou lorsque votre stratégie n’utilise que la partie propre à la clé et ne contrôle pas de chaîne de confiance.  
   
 > [!NOTE]
 >  Lorsque vous utilisez à la fois un nom fort et une signature générée par un outil avec un assembly, le nom fort doit être assigné en premier.  

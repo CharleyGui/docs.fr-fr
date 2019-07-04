@@ -3,12 +3,12 @@ title: Variables et types C# - Visite guidée du langage C#
 description: En savoir plus sur la définition des types et la déclaration de variables en C#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: 5623b4a1e85508ea7206df2c73b7aaffcbc3fbb1
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: a3f31eca296265c1e7f0c14a9540e267a2165ec1
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881979"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67423454"
 ---
 # <a name="types-and-variables"></a>Types et variables
 
@@ -39,7 +39,7 @@ Ce qui suit offre une vue d'ensemble du système de types de C#.
     * Types définis par l'utilisateur de la forme `class C {...}`
   - [Types interface][InterfaceTypes]
     * Types définis par l'utilisateur de la forme `interface I {...}`
-  - [Types tableau][ArrayTypes]
+  - [Types de tableaux][ArrayTypes]
     * Uni et multidimensionnels, par exemple `int[]` et `int[,]`
   - [Types délégués][DelegateTypes]
     * Types définis par l'utilisateur de la forme `delegate int D(...)`
@@ -55,7 +55,7 @@ Ce qui suit offre une vue d'ensemble du système de types de C#.
 [DelegateTypes]: ../language-reference/keywords/delegate.md
 [ArrayTypes]: ../programming-guide/arrays/index.md
 
-Pour plus d’informations sur les types numériques, consultez [Tableau des types intégraux](../language-reference/keywords/integral-types-table.md) et [Tableau des types à virgule flottante](../language-reference/keywords/floating-point-types-table.md).
+Pour plus d’informations sur les types numériques, consultez [Types intégraux](../language-reference/builtin-types/integral-numeric-types.md) et [Tableau des types à virgule flottante](../language-reference/keywords/floating-point-types-table.md).
 
 Le type `bool` de C# est utilisé pour représenter des valeurs booléennes, qui peuvent être `true` ou `false`.
 

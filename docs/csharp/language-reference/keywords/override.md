@@ -8,18 +8,18 @@ f1_keywords:
 helpviewer_keywords:
 - override keyword [C#]
 ms.assetid: dd1907a8-acf8-46d3-80b9-c2ca4febada8
-ms.openlocfilehash: 6a8e79da3897e867fa3becab5fcfc70afe72e614
-ms.sourcegitcommit: bdd930b5df20a45c29483d905526a2a3e4d17c5b
+ms.openlocfilehash: cedce26373c49d33ee17602b621f71ef6732d145
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53244438"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401547"
 ---
 # <a name="override-c-reference"></a>override (référence C#)
 
 Le modificateur `override` est nécessaire pour étendre ou modifier l’implémentation abstraite ou virtuelle d’une méthode, d’une propriété, d’un indexeur ou d’un événement hérités.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Dans cet exemple, la classe `Square` doit fournir une implémentation substituée de `Area`, car `Area` est héritée de la classe abstraite `ShapesClass` :
 
@@ -37,7 +37,7 @@ Une déclaration de propriété de substitution doit spécifier exactement les m
 
 Pour plus d’informations sur l’utilisation du mot clé `override`, consultez [Gestion de version avec les mots clés override et new](../../programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) et [Savoir quand utiliser les mots clés override et new](../../programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Cet exemple définit une classe de base nommée `Employee` et une classe dérivée nommée `SalesEmployee`. La classe `SalesEmployee` inclut un champ supplémentaire (`salesbonus`) et substitue la méthode `CalculatePay` afin de la prendre en compte.
 
@@ -56,5 +56,5 @@ Cet exemple définit une classe de base nommée `Employee` et une classe dériv�
 - [Modificateurs](modifiers.md)
 - [abstract](abstract.md)
 - [virtual](virtual.md)
-- [new](new.md)
+- [new (modificateur)](new-modifier.md)
 - [Polymorphisme](../../programming-guide/classes-and-structs/polymorphism.md)

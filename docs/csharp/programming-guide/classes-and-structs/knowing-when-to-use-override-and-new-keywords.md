@@ -7,15 +7,16 @@ helpviewer_keywords:
 - new keyword [C#]
 - polymorphism [C#], using override and new [C#]
 ms.assetid: 323db184-b136-46fc-8839-007886e7e8b0
-ms.openlocfilehash: d653761236cae580eb78a35f9697764f600ec6ee
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: eae57ae1f285e7f0e44c49e3d54fbd81bb4be591
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583111"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398430"
 ---
 # <a name="knowing-when-to-use-override-and-new-keywords-c-programming-guide"></a>Savoir quand utiliser les mots clés override et new (Guide de programmation C#)
-En C#, une méthode dans une classe dérivée peut avoir le même nom qu’une méthode dans la classe de base. Vous pouvez spécifier le mode d’interaction des méthodes avec les mots clés [new](../../../csharp/language-reference/keywords/new.md) et [override](../../../csharp/language-reference/keywords/override.md). Le modificateur `override` *étend* la méthode de classe de base et le modificateur `new` la *masque*. La différence est illustrée dans les exemples de cette rubrique.  
+
+En C#, une méthode dans une classe dérivée peut avoir le même nom qu’une méthode dans la classe de base. Vous pouvez spécifier le mode d’interaction des méthodes avec les mots clés [new](../../../csharp/language-reference/keywords/new-modifier.md) et [override](../../../csharp/language-reference/keywords/override.md). Le modificateur `override` *étend* la méthode `virtual` de la classe de base, tandis que le modificateur `new` *masque* une méthode de classe de base accessible. La différence est illustrée dans les exemples de cette rubrique.  
   
  Dans une application console, déclarez les deux classes suivantes, `BaseClass` et `DerivedClass`. `DerivedClass` hérite de `BaseClass`.  
   

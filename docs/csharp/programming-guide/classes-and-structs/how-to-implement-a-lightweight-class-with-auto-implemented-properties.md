@@ -6,24 +6,28 @@ helpviewer_keywords:
 - auto-implemented properties [C#]
 - properties [C#], auto-implemented
 ms.assetid: 1dc5a8ad-a4f7-4f32-8506-3fc6d8c8bfed
-ms.openlocfilehash: be4d7e5cf4d2f7c117766858dbba9c7c59c74b73
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: f9884f353e58ff6119e3bc3b95aa55f0f60d0ad5
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67267682"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398499"
 ---
 # <a name="how-to-implement-a-lightweight-class-with-auto-implemented-properties-c-programming-guide"></a>Procédure : Implémenter une classe Lightweight avec des propriétés implémentées automatiquement (Guide de programmation C#)
-Cet exemple montre comment créer une classe légère immuable qui sert uniquement à encapsuler un jeu de propriétés implémentées automatiquement. Utilisez ce type de construction à la place d'un struct quand vous devez utiliser une sémantique de type de référence.  
-  
- Vous pouvez rendre une propriété immuable de deux manières.  Vous pouvez déclarer l’accesseur [set](../../../csharp/language-reference/keywords/set.md) comme étant [private](../../../csharp/language-reference/keywords/private.md).  La propriété peut uniquement être définie dans le type, mais elle est immuable pour les consommateurs.  Vous pouvez autrement déclarer uniquement l’accesseur [get](../../../csharp/language-reference/keywords/get.md), ce qui rend la propriété immuable partout sauf dans le constructeur du type.  
-  
- Quand vous déclarez un accesseur `set` privé, vous ne pouvez pas utiliser un initialiseur d'objet pour initialiser la propriété. Vous devez utiliser un constructeur ou une méthode de fabrique.  
-  
-## <a name="example"></a>Exemple  
- L'exemple suivant montre deux façons d'implémenter une classe immuable qui possède des propriétés implémentées automatiquement. Chaque façon déclare l'une des propriétés avec un `set` privé et l'autre avec un `get` uniquement.  La première classe utilise un constructeur uniquement pour initialiser les propriétés et la deuxième classe utilise une méthode de fabrique statique qui appelle un constructeur.  
-  
-```csharp  
+
+Cet exemple montre comment créer une classe légère immuable qui sert uniquement à encapsuler un jeu de propriétés implémentées automatiquement. Utilisez ce type de construction à la place d'un struct quand vous devez utiliser une sémantique de type de référence.
+
+Vous pouvez rendre une propriété immuable de deux manières :
+- Vous pouvez déclarer l’accesseur [set](../../../csharp/language-reference/keywords/set.md) comme étant [private](../../../csharp/language-reference/keywords/private.md).  La propriété peut uniquement être définie dans le type, mais elle est immuable pour les consommateurs.
+
+  Quand vous déclarez un accesseur `set` privé, vous ne pouvez pas utiliser un initialiseur d'objet pour initialiser la propriété. Vous devez utiliser un constructeur ou une méthode de fabrique.
+- Vous pouvez déclarer uniquement l’accesseur [get](../../../csharp/language-reference/keywords/get.md), ce qui rend la propriété immuable partout, sauf dans le constructeur du type.
+
+## <a name="example"></a>Exemples
+
+L'exemple suivant montre deux façons d'implémenter une classe immuable qui possède des propriétés implémentées automatiquement. Chaque façon déclare l'une des propriétés avec un `set` privé et l'autre avec un `get` uniquement.  La première classe utilise un constructeur uniquement pour initialiser les propriétés et la deuxième classe utilise une méthode de fabrique statique qui appelle un constructeur.
+
+```csharp
 // This class is immutable. After an object is created,
 // it cannot be modified from outside the class. It uses a
 // constructor to initialize its properties.
@@ -102,18 +106,18 @@ public class Program
         Console.ReadKey();
     }
 }
-  
-/* Output:  
-    Terry Adams, 123 Main St.  
-    Fadi Fakhouri, 345 Cypress Ave.  
-    Hanying Feng, 678 1st Ave  
-    Cesar Garcia, 12 108th St.  
-    Debra Garcia, 89 E. 42nd St.  
-*/  
-```  
-  
- Le compilateur crée des champs de stockage pour chaque propriété implémentée automatiquement. Les champs ne sont pas accessibles directement à partir du code source.  
-  
+
+/* Output:
+    Terry Adams, 123 Main St.
+    Fadi Fakhouri, 345 Cypress Ave.
+    Hanying Feng, 678 1st Ave
+    Cesar Garcia, 12 108th St.
+    Debra Garcia, 89 E. 42nd St.
+*/
+```
+
+Le compilateur crée des champs de stockage pour chaque propriété implémentée automatiquement. Les champs ne sont pas accessibles directement à partir du code source.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Propriétés](../../../csharp/programming-guide/classes-and-structs/properties.md)

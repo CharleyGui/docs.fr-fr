@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - enum keyword [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: 768d8da320022a686f2ecfe5222880eccacee7dd
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6af1f7f23447f9f1379ac6d223e198a4a2ea5645
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54727636"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67424244"
 ---
 # <a name="enum-c-reference"></a>enum (référence C#)
 
@@ -35,13 +35,12 @@ enum Day {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
 
 Dans cette énumération, le début de la séquence des éléments est forcé à `1` au lieu de `0`. Il est cependant recommandé d’inclure une constante qui a la valeur 0. Pour plus d’informations, consultez [Types énumération](../../programming-guide/enumeration-types.md).
 
-Chaque type énumération a un type sous-jacent qui peut être tout type intégral sauf [char](char.md). Le type sous-jacent par défaut des éléments de l’énumération est [int](int.md). Pour déclarer une énumération d’un autre type intégral, comme [byte](byte.md), utilisez un signe deux-points après l’identificateur, suivi du type, comme illustré dans l’exemple suivant.
+Chaque type énumération a un type sous-jacent qui peut correspondre à n’importe quel [type numérique intégral](../builtin-types/integral-numeric-types.md). Le type [char](char.md) ne peut pas être un type sous-jacent d’une énumération. Le type sous-jacent par défaut des éléments de l’énumération est [int](../builtin-types/integral-numeric-types.md). Pour déclarer une énumération d’un autre type intégral, comme [byte](../builtin-types/integral-numeric-types.md), utilisez un signe deux-points après l’identificateur, suivi du type, comme illustré dans l’exemple suivant.
 
 ```csharp
 enum Day : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
 ```
 
-Les types approuvés d’une énumération sont [byte](byte.md), [sbyte](sbyte.md), [short](short.md), [ushort](ushort.md), [int](int.md), [uint](uint.md), [long](long.md) ou [ulong](ulong.md).
 
 Une variable de type énumération peut avoir n’importe quelle valeur de la plage du type sous-jacent ; les valeurs ne sont pas limitées aux constantes nommées.
 
@@ -50,7 +49,7 @@ La valeur par défaut de `enum E` est la valeur produite par l’expression `(E)
 > [!NOTE]
 > Le nom d’un énumérateur ne peut pas contenir d’espaces.
 
-Le type sous-jacent spécifie la quantité de stockage allouée pour chaque énumérateur. Cependant, un cast explicite est nécessaire pour convertir du type `enum` en un type intégral. Par exemple, l’instruction suivante affecte l’énumérateur `Sun` à une variable du type [int](int.md) en utilisant un cast pour convertir de `enum` en `int`.
+Le type sous-jacent spécifie la quantité de stockage allouée pour chaque énumérateur. Cependant, un cast explicite est nécessaire pour convertir du type `enum` en un type intégral. Par exemple, l’instruction suivante affecte l’énumérateur `Sun` à une variable du type [int](../builtin-types/integral-numeric-types.md) en utilisant un cast pour convertir de `enum` en `int`.
 
 ```csharp
 int x = (int)Day.Sun;
@@ -66,19 +65,19 @@ L’affectation de valeurs supplémentaires à de nouvelles versions d’énumé
 
 Si d’autres développeurs utilisent votre code, vous devez fournir des instructions sur la manière dont leur code doit réagir si de nouveaux éléments sont ajoutés à des types `enum` .
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Dans l’exemple suivant, une énumération, `Day`, est déclarée. Deux énumérateurs sont explicitement convertis en entiers et affectés à des variables entières.
 
 [!code-csharp[csrefKeywordsTypes#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#10)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Dans l’exemple suivant, l’option de type de base est utilisée pour déclarer une `enum` dont les membres sont de type `long`. Notez que même si le type sous-jacent de l’énumération est `long`, les membres de l’énumération doivent toujours être explicitement convertis en type `long` en utilisant un cast.
 
 [!code-csharp[csrefKeywordsTypes#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#11)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L’exemple de code suivant montre l’utilisation et l’effet de l’attribut <xref:System.FlagsAttribute?displayProperty=nameWithType> sur une déclaration `enum` .
 
@@ -101,7 +100,7 @@ Si vous supprimez `Flags`, l’exemple affiche les valeurs suivantes :
 - [Référence C#](../index.md)
 - [Types d’énumération](../../programming-guide/enumeration-types.md)
 - [Mots clés C#](index.md)
-- [Tableau des types intégraux](integral-types-table.md)
+- [Types intégraux](../../../csharp/language-reference/builtin-types/integral-numeric-types.md)
 - [Tableau des types intégrés](built-in-types-table.md)
 - [Tableau des conversions numériques implicites](implicit-numeric-conversions-table.md)
 - [Tableau des conversions numériques explicites](explicit-numeric-conversions-table.md)

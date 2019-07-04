@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - for keyword [C#]
 ms.assetid: 34041a40-2c87-467a-9ffb-a0417d8f67a8
-ms.openlocfilehash: 166f8a99a3556664f5f3701c94aa8593ac7ebe32
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: a0252493ffd251b8d760927345c71e2f5ef55aaa
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422081"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401522"
 ---
 # <a name="for-c-reference"></a>for (référence C#)
 
@@ -51,7 +51,7 @@ Les instructions figurant dans la section *initialiseur* sont exécutées une se
 
   - Expression de [décrémentation](../operators/arithmetic-operators.md#decrement-operator---) préfixée ou suffixée, telle que `--i` ou `i--`
 
-  - Création d’un objet à l’aide du mot clé [new](new-operator.md)
+  - Création d’un objet à l’aide de l’opérateur [new](../operators/new-operator.md)
 
   - Expression [await](await.md)
 
@@ -83,7 +83,7 @@ La section *itérateur* définit ce qui se produit après chaque itération du c
 
 - Expression de [décrémentation](../operators/arithmetic-operators.md#decrement-operator---) préfixée ou suffixée, telle que `--i` ou `i--`
 
-- Création d’un objet à l’aide du mot clé [new](new-operator.md)
+- Création d’un objet à l’aide de l’opérateur [new](../operators/new-operator.md)
 
 - Expression [await](await.md)
 

@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 434a88e305f833a5a95bb62835b5badd4a2c4949
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: 4579e00bdaf89b4cf5d0da24a343fb5070609863
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816137"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347313"
 ---
 # <a name="security-issues-in-reflection-emit"></a>Problèmes de sécurité dans l'émission de réflexion
 Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Intermediate Language), chacune avec ses propres problèmes de sécurité :  
@@ -151,7 +151,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
  Pour finir, .NET Framework 2.0 SP1 introduit des méthodes hébergées anonymement.  
   
 ### <a name="obtaining-information-on-types-and-members"></a>Obtention d'informations sur les types et les membres  
- Depuis le [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)], aucune autorisation n'est requise pour obtenir des informations sur les types et les membres non publics. La réflexion est utilisée pour obtenir les informations nécessaires à l'émission de méthodes dynamiques. Par exemple, les objets <xref:System.Reflection.MethodInfo> sont utilisés pour émettre des appels de méthode. Les versions antérieures du .NET Framework exigent <xref:System.Security.Permissions.ReflectionPermission> avec l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType>. Pour plus d’informations, consultez [Considérations relatives à la sécurité de la réflexion](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md).  
+ Depuis .NET Framework 2.0, aucune autorisation n’est nécessaire pour obtenir des informations sur les types et les membres non publics. La réflexion est utilisée pour obtenir les informations nécessaires à l'émission de méthodes dynamiques. Par exemple, les objets <xref:System.Reflection.MethodInfo> sont utilisés pour émettre des appels de méthode. Les versions antérieures du .NET Framework exigent <xref:System.Security.Permissions.ReflectionPermission> avec l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation?displayProperty=nameWithType>. Pour plus d’informations, consultez [Considérations relatives à la sécurité de la réflexion](../../../docs/framework/reflection-and-codedom/security-considerations-for-reflection.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

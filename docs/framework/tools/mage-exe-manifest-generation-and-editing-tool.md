@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - Mage.exe
 ms.assetid: 77dfe576-2962-407e-af13-82255df725a1
-ms.openlocfilehash: 2109c764d0143a843f75fc0c14cc0d09550efd85
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 549eca835b2161429668a2ee340a71dfae658524
+ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877574"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67422357"
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (outil Manifest Generation and Editing)
 
@@ -20,7 +20,7 @@ Vous pouvez également utiliser *MageUI.exe*, une application graphique, à la p
 
 Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’Invite de commandes développeur pour Visual Studio. Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
 
-Deux versions de *Mage.exe* et *MageUI.exe* sont founies avec Visual Studio. Pour afficher les informations de version, exécutez *MageUI.exe* et sélectionnez **Aide / ?**, puis **À propos de**. Cette documentation décrit la version 4.0.x.x de *Mage.exe* et *MageUI.exe*.
+Deux versions de *Mage.exe* et *MageUI.exe* sont founies avec Visual Studio. Pour afficher les informations de version, exécutez *MageUI.exe* et sélectionnez **Aide / ?** , puis **À propos de**. Cette documentation décrit la version 4.0.x.x de *Mage.exe* et *MageUI.exe*.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -57,7 +57,7 @@ Le tableau suivant affiche les options prises en charge par les commandes `-New`
 |**-if, -IconFile**  `filePath`||Manifestes d'application.|Spécifie le chemin d'accès complet à un fichier icône .ICO. Cette icône s'affiche à côté du nom de votre application dans le menu Démarrage et dans son entrée Ajout/Suppression de programmes. Si aucune icône n'est fournie, une icône par défaut est utilisée.|
 |**-ip, -IncludeProviderURL**  `url`|true|Manifestes de déploiement.|Indique si le manifeste du déploiement inclut la valeur de l’emplacement de la mise à jour définie par **-ProviderURL**.|
 |**-i, -Install** `willInstall`|true|Manifestes de déploiement.|Indique si l'application ClickOnce doit être installée ou non sur l'ordinateur local ou si elle doit s'exécuter à partir du Web. Lorsqu'une application est installée, elle figure dans le menu **Démarrer** de Windows. Les valeurs valides sont "true" ou "t", et "false" ou "f".<br /><br /> Si vous spécifiez l’option **-MinVersion** et qu’un utilisateur dispose d’une version antérieure à la version **-MinVersion** installée, ceci force l’installation de l’application, indépendamment de la valeur passée à **-Install**.<br /><br /> Cette option ne peut pas être utilisée avec l’option **-BrowserHosted** . Toute tentative de spécifier ces deux options pour le même manifeste générera une erreur.|
-|**-kc, -KeyContainer** `name`||Tous les types de fichiers.|Spécifie le conteneur de clés contenant le nom de la clé privée. L’option **CryptoProvider** est requise.<br/><br/>Disponible à partir de .NET Framework 4.7.|
+|**-kc, -KeyContainer** `name`||Tous les types de fichiers.|Spécifie le conteneur de clés contenant le nom de la clé privée. L’option **CryptoProvider** est nécessaire.<br/><br/>Disponible à partir de .NET Framework 4.7.|
 |**-mv, -MinVersion**  `[version]`|Version répertoriée dans le manifeste de déploiement ClickOnce telle que spécifiée par l’indicateur **-Version** .|Manifestes de déploiement.|Version minimale de cette application qu'un utilisateur peut exécuter. Cet indicateur rend obligatoire la mise à jour avec la version nommée de votre application. Si vous publiez une version de votre produit avec une mise à jour corrigeant une rupture ou une vulnérabilité de sécurité critique, vous pouvez utiliser cet indicateur pour spécifier que cette mise à jour doit être installée et que l’utilisateur ne peut pas continuer à exécuter des versions antérieures.<br /><br /> `version` a la même sémantique que l’argument pour l’indicateur **-Version** .|
 |**-n, -Name** `nameString`|Déployer|Tous les types de fichiers.|Nom utilisé pour identifier l'application. ClickOnce utilise ce nom pour identifier l'application dans le menu **Démarrer** (si l'application est configurée pour s'installer elle-même) et dans les boîtes de dialogue Permission Elevation. **Remarque :**  si vous mettez à jour un manifeste existant sans spécifier de nom d’éditeur avec cette option, *Mage.exe* utilise le nom de l’organisation défini sur l’ordinateur. Pour utiliser un nom différent, veillez à utiliser cette option et spécifiez le nom voulu pour l'éditeur.|
 |**-pwd, -Password** `passwd`||Tous les types de fichiers.|Mot de passe utilisé pour signer un manifeste avec un certificat numérique. Cette option doit être utilisée conjointement avec l’option **-CertFile** .|
@@ -81,7 +81,7 @@ Le tableau suivant affiche les options prises en charge par la commande `-Sign` 
 |**-cf, -CertFile** `filePath`|Spécifie l'emplacement d'un certificat numérique servant à signer un manifeste. Vous pouvez utiliser cette option avec l’option **-Password** si le certificat exige un mot de passe pour les fichiers PFX (Personal Information Exchange). À partir de .NET Framework 4.7, si le fichier ne contient pas de clé privée, l’association des options **- CryptoProvider** et **- KeyContainer** est obligatoire.<br/><br/>À partir de .NET Framework 4.6.2, *Mage.exe* signes les manifestes avec des certificats CNG et CAPI.|
 |**-ch, -CertHash** `hashSignature`|Hachage d'un certificat numérique stocké dans le magasin de certificats personnel de l'ordinateur client. Il correspond à la propriété d'empreinte numérique d'un certificat numérique affiché dans la console Certificats Windows.<br /><br /> `hashSignature` peut être en majuscules ou en minuscules et fourni en tant que chaîne unique ou avec chaque octet de l'empreinte numérique séparé par des espaces et l'empreinte numérique complète entre guillemets.|
 **-csp, -CryptoProvider** `provider-name`|Spécifie le nom d’un fournisseur de services de chiffrement (CSP) contenant le conteneur de clés privées. L’option **- KeyContainer** est requise.<br/><br/>Disponible à partir de .NET Framework 4.7.|
-|**-kc, -KeyContainer** `name`|Spécifie le conteneur de clés contenant le nom de la clé privée. L’option **CryptoProvider** est requise.<br/><br/>Disponible à partir de .NET Framework 4.7.|
+|**-kc, -KeyContainer** `name`|Spécifie le conteneur de clés contenant le nom de la clé privée. L’option **CryptoProvider** est nécessaire.<br/><br/>Disponible à partir de .NET Framework 4.7.|
 |**-pwd, -Password** `passwd`|Mot de passe utilisé pour signer un manifeste avec un certificat numérique. Cette option doit être utilisée conjointement avec l’option **-CertFile** .|
 |**-t, -ToFile** `filePath`|Spécifie le chemin de sortie du fichier créé ou modifié.|
 
@@ -214,7 +214,7 @@ mage -Sign deploy.application -CertFile cert.pfx -Password <passwd>
 L'exemple suivant signe un manifeste de déploiement existant à l'aide d'un certificat numérique et d’une clé privée dans le répertoire de travail actif.
 
 ```console
-mage -Sign deploy.application -CertFile cert.pfx -KeyContainer keyfile.snk -CryptoProvider "Microsoft Enghanced Cryptographic Provider v1.0"
+mage -Sign deploy.application -CertFile cert.pfx -KeyContainer keyfile.snk -CryptoProvider "Microsoft Enhanced Cryptographic Provider v1.0"
 ```
 
 ## <a name="see-also"></a>Voir aussi

@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: f6ebb1a1-f2ca-49b9-92c9-0150940cf6e6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 93b414eea5849ed020b521fcd5e5d5f5d194c35f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6c37e494431eae9d17f442b2c32dea5f0b4bcf2b
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64589810"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397798"
 ---
 # <a name="xml-integration-with-relational-data-and-adonet"></a>Intégration de XML aux données relationnelles et à ADO.NET
 LaLa classe **XmlDataDocument** est une classe dérivée de **XmlDocument** et contient des données XML. L'avantage de **XmlDataDocument** est de fournir une passerelle entre les données relationnelles et hiérarchiques. Il s’agit d’un **XmlDocument** qui peut être lié à un **DataSet** et les deux classes peuvent synchroniser des changements apportés aux données contenues dans ces deux classes. Un **XmlDocument** lié à un **DataSet** permet à du XML de s'intégrer à des données relationnelles, et il n'est pas nécessaire que vos données soient représentées soit sous la forme XML, soit dans un format relationnel. Vous pouvez effectuer les deux sans être limité à une représentation unique des données.  
@@ -45,7 +45,7 @@ LaLa classe **XmlDataDocument** est une classe dérivée de **XmlDocument** et c
   
  Si le chargement et l'écriture de XML directement dans un et à partir d’un **DataSet** répond à vos besoins, voir [Chargement d'un DataSet à partir de XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) et [Écriture d'un DataSet sous forme de données XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md).  
   
- Si le chargement du **DataSet** à partir d’un **XmlDataDocument** répond à vos besoins, voir [Synchronisation d’un DataSet avec un document XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md).  
+ Si le chargement du **DataSet** à partir d’un **XmlDataDocument** répond à vos besoins, consultez [Synchronisation d’un DataSet avec un document XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -5,24 +5,20 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - new constraint keyword [C#]
 ms.assetid: 58850b64-cb97-4136-be50-1f3bc7fc1da9
-ms.openlocfilehash: 2aa68bec13322e332bfe3841bc99403f72301183
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 7c788be52010cdfadbd3c03f9e570815d25bdbef
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66421799"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401496"
 ---
 # <a name="new-constraint-c-reference"></a>new, contrainte (référence C#)
 
-La contrainte `new` spécifie que tout argument de type dans une déclaration de classe générique doit avoir un constructeur sans paramètre public. Pour utiliser la contrainte new, le type ne doit pas être abstract.
+La contrainte `new` spécifie que tout argument de type dans une déclaration de classe générique doit avoir un constructeur sans paramètre public. Pour utiliser la contrainte `new`, le type ne doit pas être abstract.
 
-## <a name="example"></a>Exemple
-
-Appliquez la contrainte `new` à un paramètre de type quand votre classe générique crée des instances du type, comme illustré dans l’exemple suivant :
+Appliquez la contrainte `new` à un paramètre de type quand une classe générique crée des instances du type, comme illustré dans l’exemple suivant :
 
 [!code-csharp[csrefKeywordsOperator#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsOperator/CS/csrefKeywordsOperators.cs#5)]
-
-## <a name="example"></a>Exemple
 
 Si vous utilisez la contrainte `new()` avec d’autres contraintes, spécifiez-la en dernier :
 
@@ -30,13 +26,14 @@ Si vous utilisez la contrainte `new()` avec d’autres contraintes, spécifiez-l
 
 Pour plus d’informations, consultez [Contraintes sur les paramètres de type](../../programming-guide/generics/constraints-on-type-parameters.md).
 
+Vous pouvez également utiliser le mot clé `new` pour [créer une instance d’un type](../operators/new-operator.md) ou l’utiliser comme un [modificateur de déclaration de membre](new-modifier.md).
+
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Pour plus d’informations, consultez la section [Contraintes de paramètre de type](~/_csharplang/spec/classes.md#type-parameter-constraints) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- <xref:System.Collections.Generic>
 - [Référence C#](../../language-reference/index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)

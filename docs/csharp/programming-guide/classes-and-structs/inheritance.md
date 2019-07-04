@@ -10,12 +10,12 @@ helpviewer_keywords:
 - virtual methods [C#]
 - C# language, inheritance
 ms.assetid: 81d64ee4-50f9-4d6c-a8dc-257c348d2eea
-ms.openlocfilehash: 9ad7253fb9efc891e1f0fdea118e1fe7bde6a857
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.openlocfilehash: 8f49118ebff8dcdfee45ce30de9b35437141e2bb
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58125913"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398471"
 ---
 # <a name="inheritance-c-programming-guide"></a>Héritage (Guide de programmation C#)
 
@@ -40,7 +40,7 @@ L’héritage, avec l’encapsulation et le polymorphisme, est l’une des trois
  Lorsqu’une classe de base déclare une méthode comme étant [virtual](../../../csharp/language-reference/keywords/virtual.md) (virtuelle), une classe dérivée peut [substituer](../../../csharp/language-reference/keywords/override.md) la méthode avec sa propre implémentation. Si une classe de base déclare un membre comme étant [abstract](../../../csharp/language-reference/keywords/abstract.md) (abstraite), la méthode doit être substituée dans toutes les classes non abstraites qui héritent directement de cette classe. Si une classe dérivée est abstraite, elle hérite des membres abstraits sans les implémenter. Les membres virtuels et abstraits sont la base du polymorphisme, qui est la deuxième caractéristique principale de la programmation orientée objet. Pour plus d’informations, consultez [Polymorphisme](../../../csharp/programming-guide/classes-and-structs/polymorphism.md).  
   
 ## <a name="abstract-base-classes"></a>Classes de base abstraites  
- Vous pouvez déclarer une classe comme étant [abstract](../../../csharp/language-reference/keywords/abstract.md) si vous voulez empêcher l’instanciation directe à l’aide du mot clé [new](../../../csharp/language-reference/keywords/new.md). Si vous procédez ainsi, la classe ne peut être utilisée que si une nouvelle classe en est dérivée. Une classe abstraite peut contenir une ou plusieurs signatures de méthode qui sont également déclarées comme abstraites. Ces signatures spécifient les paramètres et la valeur de retour, mais n’ont aucune implémentation (corps de méthode). Une classe abstraite ne doit pas nécessairement contenir des membres abstraits. Toutefois, si une classe contient un membre abstrait, elle doit être déclarée comme abstraite. Les classes dérivées qui ne sont pas abstraites doivent fournir une implémentation pour toutes les méthodes abstraites d’une classe de base abstraite. Pour plus d’informations, consultez la page [Classes abstraites et scellées et membres de classe](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
+ Pour empêcher l’instanciation directe, vous pouvez déclarer une classe comme étant [abstract](../../../csharp/language-reference/keywords/abstract.md) à l’aide de l’opérateur [new](../../../csharp/language-reference/operators/new-operator.md). Si vous procédez ainsi, la classe ne peut être utilisée que si une nouvelle classe en est dérivée. Une classe abstraite peut contenir une ou plusieurs signatures de méthode qui sont également déclarées comme abstraites. Ces signatures spécifient les paramètres et la valeur de retour, mais n’ont aucune implémentation (corps de méthode). Une classe abstraite ne doit pas nécessairement contenir des membres abstraits. Toutefois, si une classe contient un membre abstrait, elle doit être déclarée comme abstraite. Les classes dérivées qui ne sont pas abstraites doivent fournir une implémentation pour toutes les méthodes abstraites d’une classe de base abstraite. Pour plus d’informations, consultez la page [Classes abstraites et scellées et membres de classe](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
   
 ## <a name="interfaces"></a>Interfaces  
  Une *interface* est un type référence similaire à une classe de base abstraite qui se compose uniquement de membres abstraits. Quand une classe implémente une interface, elle doit fournir une implémentation pour tous les membres de l’interface. Une classe peut implémenter plusieurs interfaces, même si elle ne peut dériver que d’une seule classe de base directe.  
@@ -51,7 +51,7 @@ L’héritage, avec l’encapsulation et le polymorphisme, est l’une des trois
  Une classe peut empêcher d’autres classes d’hériter d’elle, ou de l’un de ses membres, en se déclarant elle-même ou en déclarant un membre comme [sealed](../../../csharp/language-reference/keywords/sealed.md) (scellé). Pour plus d’informations, consultez [Classes abstract et sealed, et membres de classe](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
   
 ## <a name="derived-class-hiding-of-base-class-members"></a>Masquage des membres de la classe de base par une classe dérivée  
- Une classe dérivée peut masquer des membres de la classe de base en déclarant les membres à l’aide du même nom et de la même signature. Le modificateur [new](../../../csharp/language-reference/keywords/new.md) peut être utilisé pour indiquer explicitement que le membre n’est pas censé substituer le membre de base. L’utilisation du modificateur [new](../../../csharp/language-reference/keywords/new.md) n’est pas obligatoire. Toutefois, un avertissement du compilateur est généré si [new](../../../csharp/language-reference/keywords/new.md) n’est pas utilisé. Pour plus d’informations, consultez [Gestion de version avec les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) et [Savoir quand utiliser les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).  
+ Une classe dérivée peut masquer des membres de la classe de base en déclarant les membres à l’aide du même nom et de la même signature. Le modificateur [new](../../../csharp/language-reference/keywords/new-modifier.md) peut être utilisé pour indiquer explicitement que le membre n’est pas censé substituer le membre de base. L’utilisation du modificateur [new](../../../csharp/language-reference/keywords/new-modifier.md) n’est pas obligatoire. Toutefois, un avertissement du compilateur est généré si [new](../../../csharp/language-reference/keywords/new-modifier.md) n’est pas utilisé. Pour plus d’informations, consultez [Gestion de version avec les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) et [Savoir quand utiliser les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

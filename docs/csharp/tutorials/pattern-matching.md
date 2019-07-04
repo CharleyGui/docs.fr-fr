@@ -3,12 +3,12 @@ title: Utiliser les fonctionnalités de critères spéciaux pour étendre les ty
 description: Ce tutoriel avancé montre comment utiliser des techniques de critères spéciaux pour créer des fonctionnalités à l’aide de données et d’algorithmes créés séparément.
 ms.date: 03/13/2019
 ms.custom: mvc
-ms.openlocfilehash: 58e4a9175752c7845507f48a3684747092dc609a
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: c42a917deee763e7c3e4e24949ec5c896d55016f
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66378072"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397834"
 ---
 # <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Tutoriel : Utiliser les fonctionnalités de critères spéciaux pour étendre les types de données
 
@@ -145,7 +145,7 @@ On commence à voir comment les modèles peuvent nous aider à créer des algori
 L’autorité de péage souhaite inciter les véhicules à circuler à capacité maximale. Elle a décidé de fixer un tarif plus élevé pour les véhicules transportant peu de passagers et un prix inférieur pour les véhicules pleins, de façon à encourager ces derniers :
 
 - Voitures et taxis sans passager : +0,50 $.
-- Voitures et taxis avec deux passagers : -0,50 $.
+- Voitures et taxis avec deux passagers : remise de 0,50 $.
 - Voitures et taxis avec trois passagers ou plus : -1,00 $.
 - Bus remplis à moins de 50 % : +2,00 $.
 - Bus remplis à plus de 90 % : -1,00 $.
@@ -199,7 +199,12 @@ vehicle switch
 };
 ```
 
-L’autorité de péage ne se soucie pas du nombre de passagers des camions de livraison, mais fixe le tarif en fonction de leur classe de poids. Camions de plus de 5 000 lb : +5,00 $. Camions de moins de 3000 lb : -2,00 $. Cette règle est implémentée dans le code suivant :
+L’autorité de péage ne se soucie pas du nombre de passagers des camions de livraison, et ajuste le montant en fonction du poids du camion, en procédant ainsi :
+
+- Camions de plus de 5 000 lb : +5,00 $.
+- Camions de moins de 3000 lb : -2,00 $.
+
+Cette règle est implémentée dans le code suivant :
 
 ```csharp
 vehicle switch

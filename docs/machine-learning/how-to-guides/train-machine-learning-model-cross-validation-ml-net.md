@@ -1,20 +1,20 @@
 ---
-title: Entraîner et évaluer un modèle Machine Learning avec la validation croisée
-description: Découvrez comment entraîner et évaluer un modèle Machine Learning avec la validation croisée
-ms.date: 05/03/2019
+title: Entraîner un modèle Machine Learning avec la validation croisée
+description: Découvrez comment utiliser la validation croisée pour générer des modèles Machine Learning plus robustes dans ML.NET. La validation croisée est une technique d’entraînement et d’évaluation de modèle qui fractionne les données en plusieurs partitions sur lesquelles elle entraîne plusieurs algorithmes.
+ms.date: 06/25/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc,how-to
-ms.openlocfilehash: a06711ca83ea545adc7292cf6d8173f006fdb94d
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.custom: mvc,how-to,title-hack-0625
+ms.openlocfilehash: c68c2b61054f59f03b4743ec30a694e94086ebab
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557835"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397656"
 ---
-# <a name="train-and-evaluate-a-machine-learning-model-using-cross-validation"></a>Entraîner et évaluer un modèle Machine Learning avec la validation croisée
+# <a name="train-a-machine-learning-model-using-cross-validation"></a>Entraîner un modèle Machine Learning avec la validation croisée
 
-Découvrez comment utiliser la validation croisée pour générer des modèles Machine Learning plus robustes dans ML.NET. 
+Découvrez comment utiliser la validation croisée pour entraîner des modèles Machine Learning plus robustes dans ML.NET. 
 
 La validation croisée est une technique d’entraînement et d’évaluation de modèle qui fractionne les données en plusieurs partitions sur lesquelles elle entraîne plusieurs algorithmes. Cette technique améliore la robustesse du modèle en réservant des données à partir du processus d’entraînement. Outre améliorer les performances sur les observations invisibles, dans les environnements limités en données, cette technique peut être un outil efficace pour entraîner des modèles avec un jeu de données plus petit.
 
@@ -93,7 +93,7 @@ var cvResults = mlContext.Regression.CrossValidate(transformedData, sdcaEstimato
 
 Le résultat stocké dans `cvResults` est une collection d’objets [`CrossValidationResult`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601). Cet objet inclut le modèle entraîné ainsi que les métriques, qui sont respectivement accessibles à partir des propriétés [`Model`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601.Model) et [`Metrics`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601.Metrics). Dans cet échantillon, la propriété `Model` est de type [`ITransformer`](xref:Microsoft.ML.ITransformer), tandis que la propriété `Metrics` est de type [`RegressionMetrics`](xref:Microsoft.ML.Data.RegressionMetrics). 
 
-## <a name="extract-metrics"></a>Extraire les métriques
+## <a name="evaluate-the-model"></a>Évaluer le modèle
 
 Les métriques des différents modèles entraînés sont accessibles via la propriété `Metrics` de l’objet [`CrossValidationResult`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601) concerné. En l’occurrence, la [métrique du coefficient de détermination](https://en.wikipedia.org/wiki/Coefficient_of_determination) est accessible et stockée dans la variable `rSquared`. 
 
@@ -103,11 +103,7 @@ IEnumerable<double> rSquared =
         .Select(fold => fold.Metrics.RSquared);
 ```
 
-Si vous inspectez le contenu de la variable `rSquared`, la sortie doit comporter cinq valeurs comprises entre 0 et 1, où plus une valeur est proche de 1, meilleure est la qualité.
-
-## <a name="select-the-best-performing-model"></a>Sélectionner le modèle le plus performant
-
-À l’aide de métriques telles que le coefficient de détermination, sélectionnez les modèles du plus au moins performant. Ensuite, sélectionnez le meilleur modèle avec lequel faire des prédictions ou effectuer des opérations supplémentaires.
+Si vous inspectez le contenu de la variable `rSquared`, la sortie doit comporter cinq valeurs comprises entre 0 et 1, où plus une valeur est proche de 1, meilleure est la qualité. À l’aide de métriques telles que le coefficient de détermination, sélectionnez les modèles du plus au moins performant. Ensuite, sélectionnez le meilleur modèle avec lequel faire des prédictions ou effectuer des opérations supplémentaires.
 
 ```csharp
 // Select all models

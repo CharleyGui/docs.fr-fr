@@ -2,12 +2,12 @@
 title: Types de retour async (C#)
 ms.date: 05/29/2017
 ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
-ms.openlocfilehash: 327168e3ac77ab1ed7c9841d592781c704839660
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ca429db9b3ad81555df3c7e02d8827136734e26c
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64599787"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347742"
 ---
 # <a name="async-return-types-c"></a>Types de retour async (C#)
 Les méthodes async peuvent avoir les types de retour suivants :
@@ -73,7 +73,7 @@ L’exemple suivant illustre le comportement d’un gestionnaire d’événement
  
 Étant donné que <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601> sont des types référence, l’allocation de mémoire dans des chemins critiques pour les performances, en particulier quand les allocations se produisent dans des boucles serrées, peuvent nuire aux performances. La prise en charge de types de retour généralisés signifie que vous pouvez retourner un type valeur léger au lieu d’un type référence pour éviter des allocations de mémoire supplémentaires. 
 
-Le .NET fournit la structure <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> comme implémentation non activable d’une valeur retournant des tâches généralisées. Pour utiliser le type <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType>, vous devez ajouter le package NuGet `System.Threading.Tasks.Extensions` à votre projet. L’exemple suivant utilise la structure <xref:System.Threading.Tasks.ValueTask%601> pour récupérer la valeur de deux dés. 
+Le .NET fournit la structure <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType> comme implémentation légère d’une valeur retournant des tâches généralisées. Pour utiliser le type <xref:System.Threading.Tasks.ValueTask%601?displayProperty=nameWithType>, vous devez ajouter le package NuGet `System.Threading.Tasks.Extensions` à votre projet. L’exemple suivant utilise la structure <xref:System.Threading.Tasks.ValueTask%601> pour récupérer la valeur de deux dés. 
   
 [!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-valuetask.cs)]
 

@@ -2,12 +2,12 @@
 title: Commande dotnet test
 description: La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné.
 ms.date: 05/29/2018
-ms.openlocfilehash: 1b2a3917a930db0c0a49ebea41f568aaf4a58ee3
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6b67273f549edd7712237756a5aba13d5cb59a61
+ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54535280"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410367"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -120,7 +120,7 @@ Répertoire où les résultats de test doivent être placés. Si le répertoire 
 
 `-s|--settings <SETTINGS_FILE>`
 
-Paramètres à utiliser durant l’exécution des tests.
+Fichier `.runsettings` à utiliser pour exécuter les tests. [Configurez des tests unitaires à l’aide d’un fichier `.runsettings`.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file?view=vs-2019)
 
 `-t|--list-tests`
 
@@ -190,7 +190,7 @@ Répertoire où les résultats de test doivent être placés. Si le répertoire 
 
 `-s|--settings <SETTINGS_FILE>`
 
-Paramètres à utiliser durant l’exécution des tests.
+Fichier `.runsettings` à utiliser pour exécuter les tests. [Configurez des tests unitaires à l’aide d’un fichier `.runsettings`.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file?view=vs-2019)
 
 `-t|--list-tests`
 
@@ -240,7 +240,7 @@ Répertoire dans lequel rechercher les binaires à exécuter.
 
 `-s|--settings <SETTINGS_FILE>`
 
-Paramètres à utiliser durant l’exécution des tests.
+Fichier `.runsettings` à utiliser pour exécuter les tests. [Configurez des tests unitaires à l’aide d’un fichier `.runsettings`.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file?view=vs-2019)
 
 `-t|--list-tests`
 

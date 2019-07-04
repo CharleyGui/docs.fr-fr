@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: de8b8759-fca7-4260-896b-5a4973157672
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5bbf579540ccb93101dba05c5b2577ae8f24ec09
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 30e013d39d403bef5fe060fd1c64dc435de5be06
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486526"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347393"
 ---
 # <a name="shadow-copying-assemblies"></a>Clichés instantanés d'assemblys
 Les clichés instantanés permettent aux assemblys qui sont utilisés dans un domaine d'application d'être mis à jour sans décharger le domaine d'application. Ceci est particulièrement utile pour les applications qui doivent être disponibles en permanence, comme des sites ASP.NET.  
@@ -34,7 +34,7 @@ Les clichés instantanés permettent aux assemblys qui sont utilisés dans un do
   
 - [Performances du démarrage](#StartupPerformance) décrit les changements apportés aux clichés instantanés dans .NET Framework 4 pour améliorer les performances du démarrage, et comment rétablir le comportement des versions antérieures.  
   
-- [Méthodes obsolètes](#ObsoleteMethods) décrit les changements apportés aux propriétés et aux méthodes qui contrôlent les clichés instantanés dans le [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)].  
+- [Méthodes obsolètes](#ObsoleteMethods) décrit les changements apportés aux propriétés et aux méthodes qui contrôlent les clichés instantanés dans .NET Framework 2.0.  
   
 <a name="EnablingAndUsing"></a>   
 ## <a name="enabling-and-using-shadow-copying"></a>Activation et utilisation des clichés instantanés  
