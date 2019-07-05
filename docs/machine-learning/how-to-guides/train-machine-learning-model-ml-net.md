@@ -1,20 +1,20 @@
 ---
 title: Entraîner et évaluer un modèle
-description: Découvrez comment créer des modèles Machine Learning, extraire des paramètres appris et mesurer les performances avec ML.NET. Bien que cet exemple entraîne un modèle de régression, les concepts s’appliquent à la majorité des autres algorithmes.
-ms.date: 06/11/2019
+description: Découvrez comment générer des modèles Machine Learning, collecter des mesures et mesurer les performances avec ML.NET. Un modèle Machine Learning identifie les modèles au sein des données d’apprentissage pour élaborer des prédictions à l’aide de nouvelles données.
+ms.date: 06/25/2019
 author: luisquintanilla
 ms.author: luquinta
-ms.custom: mvc, how-to, title-hack-0612
-ms.openlocfilehash: d93353a3503ba67bde5fb61dc88f45d26e2f4306
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.custom: mvc, how-to, title-hack-0625
+ms.openlocfilehash: 61cdaf693c417d02da95d1d79ab30eb2d30a057b
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307442"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397641"
 ---
 # <a name="train-and-evaluate-a-model"></a>Entraîner et évaluer un modèle
 
-Découvrez comment créer des modèles Machine Learning, extraire des paramètres appris et mesurer les performances avec ML.NET. Bien que cet exemple entraîne un modèle de régression, les concepts s’appliquent à la majorité des autres algorithmes.
+Découvrez comment générer des modèles Machine Learning, collecter des mesures et mesurer les performances avec ML.NET. Bien que cet exemple entraîne un modèle de régression, les concepts s’appliquent à la majorité des autres algorithmes.
 
 ## <a name="split-data-for-training-and-testing"></a>Fractionner les données à des fins d’entraînement et de test
 

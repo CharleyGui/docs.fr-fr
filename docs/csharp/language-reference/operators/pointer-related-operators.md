@@ -20,12 +20,12 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: 50243f148f37f5f33f0c69ddd896549e7aea9462
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 03d6ed19ef01be7712ff2fdde0c1be2a6673e64f
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025104"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67401440"
 ---
 # <a name="pointer-related-operators-c-reference"></a>Opérateurs associés au pointeur (référence C#)
 
@@ -42,7 +42,7 @@ Pour plus d’informations sur les types de pointeurs, consultez [Types pointeur
 > [!NOTE]
 > Toutes les opérations impliquant des pointeurs nécessitent un contexte [unsafe](../keywords/unsafe.md). Le code qui contient des blocs unsafe doit être compilé avec l’option de compilateur [`-unsafe`](../compiler-options/unsafe-compiler-option.md).
 
-## <a name="address-of-operator-amp"></a>Opérateur address-of &amp;
+## <a name="address-of-operator-"></a> Opérateur address-of &amp;
 
 L’opérateur unaire `&` retourne l’adresse de son opérande :
 

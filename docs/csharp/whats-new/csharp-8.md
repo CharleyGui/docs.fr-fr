@@ -2,12 +2,12 @@
 title: Nouveautés de C# 8.0 – Guide C#
 description: Vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 8.0. Cet article a été actualisé par rapport à la préversion 5.
 ms.date: 02/12/2019
-ms.openlocfilehash: 99056c9cd330c0c3ae6c63239989a2e9e9dc496c
-ms.sourcegitcommit: 5e05f983e63d5bbd8c0b246d02c6e4f23d2fc1db
+ms.openlocfilehash: 962829b68c5d02c3a7e563a00d391c4698024d47
+ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67151981"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67397768"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 
@@ -30,7 +30,12 @@ Vous pouvez d’ores et déjà tester les nombreuses améliorations apportées a
 > [!NOTE]
 > La dernière mise à jour de cet article date de la préversion 5 de C# 8.0.
 
-La suite de cet article décrit brièvement ces fonctionnalités. Lorsque des articles détaillés sont disponibles, des liens vers ces tutoriels et vues d’ensemble sont indiqués.
+La suite de cet article décrit brièvement ces fonctionnalités. Lorsque des articles détaillés sont disponibles, des liens vers ces tutoriels et vues d’ensemble sont indiqués. Vous pouvez explorer ces fonctionnalités dans votre environnement à l’aide de l’outil global `dotnet try` :
+
+1. Installez l’outil global [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup).
+1. Clonez le référentiel [dotnet/try-samples](https://github.com/dotnet/try-samples).
+1. Définissez le répertoire actuel sur le sous-répertoire *csharp8* pour le référentiel *try-samples*.
+1. Exécutez `dotnet try`.
 
 ## <a name="readonly-members"></a>Membres ReadOnly
 
@@ -425,7 +430,7 @@ Les exemples suivants créent des plages ouvertes au début, à la fin ou les de
 ```csharp
 var allWords = words[..]; // contains "The" through "dog".
 var firstPhrase = words[..4]; // contains "The" through "fox"
-var lastPhrase = words[6..]; // contains "the, "lazy" and "dog"
+var lastPhrase = words[6..]; // contains "the", "lazy" and "dog"
 ```
 
 Vous pouvez également déclarer des plages comme variables :

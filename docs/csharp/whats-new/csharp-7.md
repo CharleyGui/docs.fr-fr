@@ -3,12 +3,12 @@ title: Nouveautés de C# 7.0 | Guide C#
 description: Découvrez les nouvelles fonctionnalités disponibles dans la version 7.0 du langage C#.
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: c3fdee2bdb974640b56bfab3af4be57133ad2f7a
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 58d43167341b69e7e9ac67024e9993cf51c26c0b
+ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307152"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67347460"
 ---
 # <a name="whats-new-in-c-70"></a>Nouveautés de C# 7.0
 
@@ -34,7 +34,12 @@ C# 7.0 ajoute un certain nombre de nouvelles fonctionnalités au langage C# :
 * [Améliorations de la syntaxe littérale numérique](#numeric-literal-syntax-improvements)
   - De nouveaux jetons améliorent la lisibilité des constantes numériques.
 
-Le reste de cet article présente une vue d’ensemble de chaque fonctionnalité. Vous découvrirez la logique de chacune d’elles. Vous allez apprendre leur syntaxe. Vous pouvez découvrir ces fonctionnalités dans le cadre de notre [exploration interactive](../tutorials/exploration/csharp-7.yml).
+Le reste de cet article présente une vue d’ensemble de chaque fonctionnalité. Vous découvrirez la logique de chacune d’elles. Vous allez apprendre leur syntaxe. Vous pouvez explorer ces fonctionnalités dans votre environnement à l’aide de l’outil global `dotnet try` :
+
+1. Installez l’outil global [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup).
+1. Clonez le référentiel [dotnet/try-samples](https://github.com/dotnet/try-samples).
+1. Définissez le répertoire actuel sur le sous-répertoire *csharp7* pour le référentiel *try-samples*.
+1. Exécutez `dotnet try`.
 
 ## <a name="out-variables"></a>Variables `out`
 
