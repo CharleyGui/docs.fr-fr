@@ -2,12 +2,12 @@
 title: Littéraux
 description: En savoir plus sur les types de littéraux dans le F# langage de programmation.
 ms.date: 06/28/2019
-ms.openlocfilehash: 53647d8cbc2a59527a50e122bc1abc6055c1fce5
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 0c9ced0b505817a161ca39c6c9f853f94cedf410
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487782"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610152"
 ---
 # <a name="literals"></a>Littéraux
 
@@ -69,7 +69,7 @@ let Literal3 = System.IO.FileAccess.Read ||| System.IO.FileAccess.Write
 
 ## <a name="remarks"></a>Notes
 
-Chaînes Unicode peuvent contenir des encodages explicites que vous pouvez spécifier à l’aide de `\u` suivi d’un code hexadécimal à 16 bits (0000 - FFFF), ou des encodages UTF-32 que vous pouvez spécifier à l’aide de `\U` suivie d’un code hexadécimal 32 bits qui représente n’importe quel point de code Unicode (00000000 - 00010FFFF).
+Chaînes Unicode peuvent contenir des encodages explicites que vous pouvez spécifier à l’aide de `\u` suivi d’un code hexadécimal à 16 bits (0000 - FFFF), ou des encodages UTF-32 que vous pouvez spécifier à l’aide de `\U` suivie d’un code hexadécimal 32 bits qui représente n’importe quel point de code Unicode (00000000 - 0010FFFF).
 
 L’utilisation d’autres opérateurs de bits autres que `|||` n’est pas autorisé.
 

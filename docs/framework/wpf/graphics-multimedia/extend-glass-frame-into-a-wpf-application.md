@@ -10,12 +10,12 @@ helpviewer_keywords:
 - extending glass frames into applications [WPF]
 - glass frames [WPF], extending into applications
 ms.assetid: 74388a3a-4b69-4a9d-ba1f-e107636bd660
-ms.openlocfilehash: 8da1f49bf5b7d3daf6319906fb49390c008d209c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1c3316fa88d3024af4e81072cbe64c13cfbdb18e
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762969"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610294"
 ---
 # <a name="extend-glass-frame-into-a-wpf-application"></a>Étendre le cadre de transparence dans une application WPF
 
@@ -30,7 +30,7 @@ L’image suivante illustre le cadre de transparence étendu dans la barre d’a
 
 ![Capture d’écran cadre de transparence étendu derrière la barre d’adresse IE7.](./media/extend-glass-frame-into-a-wpf-application/internet-explorer-glass-frame-extended-address-bar.png)
 
-Pour étendre le cadre de transparence sur une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], un accès à l’élément non géré [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] est nécessaire. L’exemple de code suivant effectue un appel de code non géré (pinvoke) pour les deux éléments [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] nécessaires pour étendre le cadre dans la zone cliente. Chacun de ces éléments [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] sont déclarés dans une classe appelée **NonClientRegionAPI**.
+Pour étendre le cadre de transparence sur une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], un accès à l’élément non géré [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] est nécessaire. L’exemple de code suivant effectue un code non managé (pinvoke) pour les deux API nécessaires pour étendre le cadre dans la zone cliente. Chacune de ces API sont déclarés dans une classe appelée **NonClientRegionAPI**.
 
 ```csharp
 [StructLayout(LayoutKind.Sequential)]

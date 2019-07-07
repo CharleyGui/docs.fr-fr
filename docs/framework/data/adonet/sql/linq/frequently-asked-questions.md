@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 252ed666-0679-4eea-b71b-2f14117ef443
-ms.openlocfilehash: 05ba633415f782d5edea7028c1b82b8031428576
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 68d4215129cf4481beb2d8561c1569b3049a287e
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878249"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610582"
 ---
 # <a name="frequently-asked-questions"></a>Questions fréquemment posées
 Les sections suivantes fournissent des réponses à quelques problèmes courants que vous êtes susceptible de rencontrer lors de l'implémentation de [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
@@ -132,9 +132,9 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
 ```  
   
 ## <a name="errors-using-sql-compact-35"></a>Erreurs lors de l'utilisation de SQL Compact 3.5  
- Q. J'obtiens une erreur lorsque je fais glisser des tables hors d'une base de données [!INCLUDE[ssEW](../../../../../../includes/ssew-md.md)].  
+ Q. J’obtiens une erreur lorsque je fais glisser des tables hors d’une base de données SQL Server Compact 3.5.  
   
- Un fichier . Le [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] ne prend pas en charge [!INCLUDE[ssEW](../../../../../../includes/ssew-md.md)], alors que c'est le cas du runtime [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Dans ce cas, vous devez créer vos propres classes d'entité et ajouter les attributs appropriés.  
+ Un fichier . Le [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] ne prend pas en charge SQL Server Compact 3.5, bien que le [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] runtime fait. Dans ce cas, vous devez créer vos propres classes d'entité et ajouter les attributs appropriés.  
   
 ## <a name="errors-in-inheritance-relationships"></a>Erreurs dans les relations d'héritage  
  Q. J'ai utilisé la forme de l'héritage de la boîte à outils dans [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] pour connecter deux entités, mais j'obtiens des erreurs.  
@@ -144,7 +144,7 @@ dlo.LoadWith<Order>(o => o.OrderDetails);
 ## <a name="provider-model"></a>Modèle de fournisseur  
  Q. Un modèle de fournisseur public est-il disponible ?  
   
- Un fichier . Aucun modèle de fournisseur public n'est disponible. À ce stade, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prend en charge de SQL Server et [!INCLUDE[ssEW](../../../../../../includes/ssew-md.md)] uniquement.  
+ Un fichier . Aucun modèle de fournisseur public n'est disponible. À ce stade, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prend uniquement en charge SQL Server et SQL Server Compact 3.5.  
   
 ## <a name="sql-injection-attacks"></a>Attaques par injection de code SQL  
  Q. Comment [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] est-il protégé contre les attaques par injection de code SQL ?  

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a60c30fa-1e68-45fe-b984-f6abb9ede40e
-ms.openlocfilehash: 280557a5098c513111557f52d835b20d9a2eeb62
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ab93a5bae3c83bcce8fa46800ef759d8a2a7f858
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61876879"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610552"
 ---
 # <a name="standard-query-operator-translation"></a>Traduction des opérateurs de requête standard
 
@@ -198,7 +198,7 @@ Pour plus d’informations sur le mappage à ces types de date et d’heure SQL 
 
 ## <a name="sql-server-2000-support"></a>Prise en charge de SQL Server 2000
 
-Les limitations [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)] suivantes (par rapport à [!INCLUDE[sqprsqext](../../../../../../includes/sqprsqext-md.md)]) affectent la prise en charge de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].
+Ce qui suit [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)] limitations (par rapport à Microsoft SQL Server 2005) affectent [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prennent en charge.
 
 ### <a name="cross-apply-and-outer-apply-operators"></a>Opérateurs Cross Apply et Outer Apply
 
@@ -208,7 +208,7 @@ Ces opérateurs ne sont pas disponibles dans [!INCLUDE[ss2k](../../../../../../i
 
 ### <a name="text--ntext"></a>text / ntext
 
-Types de données `text`  /  `ntext` ne peut pas être utilisé dans certaines opérations de requête par rapport à `varchar(max)`  /  `nvarchar(max)`, qui sont pris en charge par [!INCLUDE[sqprsqext](../../../../../../includes/sqprsqext-md.md)].
+Types de données `text`  /  `ntext` ne peut pas être utilisé dans certaines opérations de requête par rapport à `varchar(max)`  /  `nvarchar(max)`, qui sont pris en charge par Microsoft SQL Server 2005.
 
 Aucune résolution n’est disponible pour cette limitation. Précisément, vous ne pouvez pas utiliser `Distinct()` sur des résultats contenant des membres mappés à des colonnes `text` ou `ntext`.
 

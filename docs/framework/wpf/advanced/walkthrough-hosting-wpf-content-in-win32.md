@@ -6,12 +6,12 @@ dev_langs:
 helpviewer_keywords:
 - hosting WPF content in Win32 window [WPF]
 ms.assetid: 38ce284a-4303-46dd-b699-c9365b22a7dc
-ms.openlocfilehash: 01ac0e2cafc704b64634f1fb36145387b49c34a0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9042548c52a7a82f75b4287323097655ffec48bf
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650786"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610423"
 ---
 # <a name="walkthrough-hosting-wpf-content-in-win32"></a>Procédure pas à pas : hébergement de contenu WPF dans Win32
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] propose un environnement de création d'applications élaboré. Cependant, si vous avez écrit une bonne partie du code [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)], il est peut-être plus judicieux d'ajouter la fonctionnalité [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] à votre application plutôt que de réécrire le code d'origine. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit un mécanisme simple pour l’hébergement [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] contenu dans un [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] fenêtre.  
@@ -22,7 +22,7 @@ ms.locfileid: "64650786"
 ## <a name="requirements"></a>Configuration requise  
  Ce didacticiel suppose que vous avez des connaissances de base en matière de programmation [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]. Pour obtenir une présentation générale [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] programmation, consultez [mise en route](../getting-started/index.md). Pour une introduction aux [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] de programmation, vous devez référencer un des nombreux ouvrages sur le sujet, en particulier *Windows programmation* de Charles Petzold.  
   
- Étant donné que l’exemple qui accompagne ce didacticiel est implémenté dans [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)], ce didacticiel suppose que vous êtes familiarisé avec l’utilisation de [!INCLUDE[TLA#tla_cpp](../../../../includes/tlasharptla-cpp-md.md)] au programme le [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] ainsi que d’une compréhension de la programmation de code managé. Il est également souhaitable de connaître [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)], même si cela n'est pas indispensable.  
+ Étant donné que l’exemple qui accompagne ce didacticiel est implémenté dans [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)], ce didacticiel suppose que vous êtes familiarisé avec l’utilisation de [!INCLUDE[TLA#tla_cpp](../../../../includes/tlasharptla-cpp-md.md)] au programme le [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]API ainsi qu’une compréhension de programmation de code géré. Il est également souhaitable de connaître [!INCLUDE[TLA#tla_cppcli](../../../../includes/tlasharptla-cppcli-md.md)], même si cela n'est pas indispensable.  
   
 > [!NOTE]
 >  Ce didacticiel comprend plusieurs exemples de code tirés de l'exemple associé. Cependant, pour une meilleure lecture, il n'inclut pas la totalité de l'exemple de code. Pour l’exemple de code complet, consultez [hébergement de contenu WPF dans un exemple de fenêtre Win32](https://go.microsoft.com/fwlink/?LinkID=160004).  

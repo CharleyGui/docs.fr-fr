@@ -5,12 +5,12 @@ helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: ce54c3299d599e990fa02abd3cea1460d588e280
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 28aeaae7292224dc8f56787efbde82712340af11
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662254"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610402"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Vue d’ensemble de la globalisation et de la localisation WPF
 
@@ -90,7 +90,7 @@ Lorsque vous développez un [!INCLUDE[TLA2#tla_winclient](../../../../includes/t
 
 Le processus de localisation commence après le non localisé `MyDialog.resources.dll` fichier est généré. Le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] éléments et les propriétés dans votre original [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] sont extraits à partir du formulaire BAML de XAML en paires clé-valeur à l’aide de la [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] sous <xref:System.Windows.Markup.Localizer>. Les localiseurs utilisent les paires clé-valeur pour localiser l’application. Vous pouvez générer un nouveau fichier .resource.dll à partir des nouvelles valeurs une fois la localisation terminée.
   
- Les clés des paires clé-valeur sont `x:Uid` valeurs placées par le développeur dans la version d’origine [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Ces `x:Uid` valeurs activer le [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] pour suivre et de fusionner les modifications qui interviennent entre le développeur et le localisateur lors de la localisation. Par exemple, si le développeur modifie le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] une fois que le localisateur a commencé la localisation, vous pouvez fusionner les modifications des développements avec le travail de localisation terminé afin que le travail réalisé en traduction est perdue.  
+ Les clés des paires clé-valeur sont `x:Uid` valeurs placées par le développeur dans la version d’origine [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Ces `x:Uid` valeurs permettent à l’API suivre et de fusionner les modifications qui interviennent entre le développeur et le localisateur lors de la localisation. Par exemple, si le développeur modifie le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] une fois que le localisateur a commencé la localisation, vous pouvez fusionner les modifications des développements avec le travail de localisation terminé afin que le travail réalisé en traduction est perdue.  
   
  Le graphique suivant montre un flux de travail de localisation standard basé sur le formulaire BAML de XAML. Ce diagramme suppose que le développeur écrit l’application en anglais. Le développeur crée et globalise l’application WPF. Dans le fichier projet, le développeur définit `<UICulture>en-US</UICulture>` afin que lors de la génération, un assembly principal indépendant est généré avec un satellite. resources.dll contenant toutes les ressources localisables. Si vous le voulez, vous pouvez conserver la langue source dans l’assembly principal, car nos API de localisation WPF prennent en charge l’extraction à partir de l’assembly principal. Après le processus de génération, le code XAML est compilé en BAML. Le fichier MyDialog.exe.resources.dll indépendant de la culture est livré aux clients anglophones.  
   
@@ -283,7 +283,7 @@ Le processus de localisation commence après le non localisé `MyDialog.resource
   
  [!code-xaml[LocalizationComAtt#LocalizationAttributesOverridden](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizationComAtt/CSharp/Attributes.xaml#localizationattributesoverridden)]  
   
- La localisation par défaut des attributs qui [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit peut également être remplacée par le biais de code, vous pouvez définir correctement les valeurs par défaut adéquates pour les contrôles personnalisés. Exemple :  
+ La localisation par défaut des attributs qui [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit peut également être remplacée par le biais de code, vous pouvez définir correctement les valeurs par défaut adéquates pour les contrôles personnalisés. Par exemple :  
 
 ```csharp 
 [Localizability(Readability = Readability.Readable, Modifiability=Modifiability.Unmodifiable, LocalizationCategory.None)] 

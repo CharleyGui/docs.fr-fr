@@ -5,12 +5,12 @@ helpviewer_keywords:
 - XAML [WPF], code-behind
 - code-behind files [WPF], XAML
 ms.assetid: 9df6d3c9-aed3-471c-af36-6859b19d999f
-ms.openlocfilehash: 01122991e99e41259c3b83a38eba002734d749ee
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6a47f5a93cb161c9a87df25403cc86247619cd81
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64655524"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610533"
 ---
 # <a name="code-behind-and-xaml-in-wpf"></a>Code-behind et XAML dans WPF
 <a name="introduction"></a> Code-behind est un terme utilisé pour décrire le code joint avec les objets définis par le balisage, quand un [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] page est compilé par balisage. Cette rubrique décrit la configuration requise pour le code-behind ainsi qu’un mécanisme alternatif incorporé code pour le code dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
@@ -56,7 +56,7 @@ ms.locfileid: "64655524"
   
 <a name="Inline_Code_Limitations"></a>   
 ## <a name="inline-code-limitations"></a>Limitations de Code inline  
- Vous devez envisager d’éviter ou de limiter l’utilisation de code inline. En termes d’architecture et de philosophie du codage, la séparation entre le balisage et code-behind conserve les concepteurs et les développeurs rôles bien distincts. À un niveau plus technique, le code que vous écrivez pour le code inline peut être plus difficile à écrire, étant donné que vous écrivez toujours dans la [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] classe partielle générée et pouvez utiliser uniquement les mappages d’espace de noms XML par défaut. Étant donné que vous ne pouvez pas ajouter `using` instructions, vous devez qualifier entièrement la plupart de la [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] appels que vous apportez. La valeur par défaut [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] mappages incluent la plupart mais pas tout [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] espaces de noms qui sont présents dans le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] assemblys ; vous devez qualifier complètement les appels aux types et membres contenus dans les autres espaces de noms CLR. Vous également ne peut pas définir n’importe quoi au-delà de la classe partielle dans le code inline, et toutes les entités de code utilisateur que vous référencez doivent exister en tant que membre ou variable dans la classe partielle générée. Autres langage spécifique fonctionnalités de programmation, tels que des macros ou `#ifdef` par rapport à des variables globales ou des variables de génération, ne sont pas disponibles. Pour plus d’informations, consultez [x : Code de Type XAML intrinsèque](../../xaml-services/x-code-intrinsic-xaml-type.md).  
+ Vous devez envisager d’éviter ou de limiter l’utilisation de code inline. En termes d’architecture et de philosophie du codage, la séparation entre le balisage et code-behind conserve les concepteurs et les développeurs rôles bien distincts. À un niveau plus technique, le code que vous écrivez pour le code inline peut être plus difficile à écrire, étant donné que vous écrivez toujours dans la [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] classe partielle générée et pouvez utiliser uniquement les mappages d’espace de noms XML par défaut. Étant donné que vous ne pouvez pas ajouter `using` instructions, vous devez qualifier complètement beaucoup d’appels API que vous apportez. La valeur par défaut [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] mappages incluent la plupart mais pas tout [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] espaces de noms qui sont présents dans le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] assemblys ; vous devez qualifier complètement les appels aux types et membres contenus dans les autres espaces de noms CLR. Vous également ne peut pas définir n’importe quoi au-delà de la classe partielle dans le code inline, et toutes les entités de code utilisateur que vous référencez doivent exister en tant que membre ou variable dans la classe partielle générée. Autres langage spécifique fonctionnalités de programmation, tels que des macros ou `#ifdef` par rapport à des variables globales ou des variables de génération, ne sont pas disponibles. Pour plus d’informations, consultez [x : Code de Type XAML intrinsèque](../../xaml-services/x-code-intrinsic-xaml-type.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

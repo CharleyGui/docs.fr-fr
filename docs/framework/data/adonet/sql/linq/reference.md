@@ -2,12 +2,12 @@
 title: Référence
 ms.date: 03/30/2017
 ms.assetid: 312c3935-a947-4220-a837-0039d9fc458b
-ms.openlocfilehash: a874cb659bc8701d7f894617d4e1db25f949fbcd
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 659bd64fe06e2de7bd9dd8e929faa5d0353a5b58
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881310"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610565"
 ---
 # <a name="reference"></a>Référence
 Cette section fournit des informations de référence pour les développeurs [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
@@ -31,7 +31,7 @@ Cette section fournit des informations de référence pour les développeurs [!I
  Fournit des réponses aux questions fréquentes concernant [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
  [SQL Server Compact et LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/sql-server-compact-and-linq-to-sql.md)  
- Décrit comment [!INCLUDE[ssEW](../../../../../../includes/ssew-md.md)] diffère de SQL Server dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] applications.  
+ Décrit comment SQL Server Compact 3.5 est différente de SQL Server dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] applications.  
   
  [Traduction des opérateurs de requête standard](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)  
  Décrit comment [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] se traduit par des opérateurs de requête Standard en commandes SQL.  

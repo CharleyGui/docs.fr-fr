@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 0ffbde0d-701d-45a3-a6fa-dd71f4d9772e
-ms.openlocfilehash: 997ea7bd1c18d3817457ad109cd611c989f50d8a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cbae3011634fb6c6b68e477a10931a1ef13c3f55
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650737"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610362"
 ---
 # <a name="wpf-and-win32-interoperation"></a>Interopérabilité WPF et Win32
 Cette rubrique fournit une vue d’ensemble de l’interopérabilité du code [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)]. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] propose un environnement de création d'applications élaboré. Toutefois, si vous avez déjà écrit beaucoup de code [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)], vous avez peut-être intérêt à réutiliser une partie de ce code.  
@@ -29,7 +29,7 @@ Cette rubrique fournit une vue d’ensemble de l’interopérabilité du code [!
   
 <a name="projects"></a>   
 ## <a name="wpf-interoperation-projects"></a>Projets d’interopérabilité WPF  
- Les interfaces [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sont constituées de code managé, mais la plupart des programmes [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] existants sont écrits en code [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)] non managé.  Vous ne pouvez pas appeler une interface [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] à partir d’un vrai programme non managé. Toutefois, vous avez la possibilité d’utiliser l’option `/clr` avec le compilateur [!INCLUDE[TLA#tla_visualcpp](../../../../includes/tlasharptla-visualcpp-md.md)] pour créer un programme managé/non managé mixte dans lequel vous pouvez combiner des appels d’[!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] managées et non managées de façon transparente.  
+ Les interfaces [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sont constituées de code managé, mais la plupart des programmes [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] existants sont écrits en code [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)] non managé.  Vous ne pouvez pas appeler une interface [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] à partir d’un vrai programme non managé. Toutefois, en utilisant le `/clr` option avec la [!INCLUDE[TLA#tla_visualcpp](../../../../includes/tlasharptla-visualcpp-md.md)] compilateur, vous pouvez créer un programme/non managé mixte dans lequel vous pouvez combiner des appels d’API managées et en toute transparence.  
   
  L’un des problèmes au niveau du projet est l’impossibilité de compiler des fichiers [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] dans un projet [!INCLUDE[TLA2#tla_cpp](../../../../includes/tla2sharptla-cpp-md.md)].  Il existe toutefois plusieurs techniques de division du projet qui permettent de contourner ce problème.  
   

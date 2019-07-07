@@ -17,12 +17,12 @@ helpviewer_keywords:
 - events [WPF], suppressing
 - bubbling events [WPF]
 ms.assetid: 5e745508-4861-4b48-b5f6-5fc7ce5289d2
-ms.openlocfilehash: 8cce3d1effa163c35cd219a6a52504b0f4d98c73
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a1004ce10baf6293c4c93efc61b91b3b6361377f
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64598654"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610370"
 ---
 # <a name="marking-routed-events-as-handled-and-class-handling"></a>Marquage des événements routés comme étant gérés et gestion de classe
 Les gestionnaires d’un événement routé peuvent marquer l’événement comme étant géré dans les données d’événement. La gestion de l’événement a pour effet de raccourcir efficacement l’itinéraire. La gestion de classe est un concept de programmation pris en charge par les événements routés. Un gestionnaire de classe peut gérer un événement routé particulier au niveau d’une classe à l’aide d’un gestionnaire appelé avant tout gestionnaire d’instance sur une instance de la classe.  
@@ -49,7 +49,7 @@ Les gestionnaires d’un événement routé peuvent marquer l’événement comm
   
 <a name="Class_Handlers_and_Instance_Handlers"></a>   
 ## <a name="class-handlers-and-instance-handlers"></a>Gestionnaires de classe et gestionnaires d’instance  
- Les événements routés reconnaissent deux types d’écouteur d’événement : les écouteurs de classe et les écouteurs d’instance. Écouteurs de classe existent parce que les types ont appelé un particulier <xref:System.Windows.EventManager> [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] ,<xref:System.Windows.EventManager.RegisterClassHandler%2A>, dans leur constructeur statique, ou ont remplacé une méthode virtuelle de gestionnaire de classe à partir d’une classe de base d’élément. Écouteurs d’instance sont des éléments/instances de classe particulier où un ou plusieurs gestionnaires ont été associés à cet événement routé par un appel à <xref:System.Windows.UIElement.AddHandler%2A>. Existant [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] événements routés effectuer des appels vers <xref:System.Windows.UIElement.AddHandler%2A> dans le cadre de la [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] wrapper d’événement ajouter{} et supprimer{} implémentations de l’événement, qui est également comment la simple [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] mécanisme de l’attachement gestionnaires d’événements via une syntaxe d’attribut est activée. Par conséquent même simple [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] utilisation équivaut en fin de compte à un <xref:System.Windows.UIElement.AddHandler%2A> appeler.  
+ Les événements routés reconnaissent deux types d’écouteur d’événement : les écouteurs de classe et les écouteurs d’instance. Écouteurs de classe existent parce que les types ont appelé un particulier <xref:System.Windows.EventManager> API,<xref:System.Windows.EventManager.RegisterClassHandler%2A>, dans leur constructeur statique, ou ont remplacé une méthode virtuelle de gestionnaire de classe à partir d’une classe de base d’élément. Écouteurs d’instance sont des éléments/instances de classe particulier où un ou plusieurs gestionnaires ont été associés à cet événement routé par un appel à <xref:System.Windows.UIElement.AddHandler%2A>. Existant [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] événements routés effectuer des appels vers <xref:System.Windows.UIElement.AddHandler%2A> dans le cadre de la [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] wrapper d’événement ajouter{} et supprimer{} implémentations de l’événement, qui est également comment la simple [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] mécanisme de l’attachement gestionnaires d’événements via une syntaxe d’attribut est activée. Par conséquent même simple [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] utilisation équivaut en fin de compte à un <xref:System.Windows.UIElement.AddHandler%2A> appeler.  
   
  Les éléments de l’arborescence d’éléments visuels sont vérifiés pour déterminer s’ils comportent des implémentations de gestionnaire enregistré. Les gestionnaires sont potentiellement appelés tout au long de l’itinéraire, dans l’ordre inhérent au type de la stratégie de routage pour cet événement routé. Par exemple, les événements routés de propagation appellent d’abord les gestionnaires associés à l’élément qui a déclenché l’événement routé. Les événements routés sont ensuite « propagés » au prochain élément parent, et ainsi de suite jusqu’à ce que l’élément racine de l’application soit atteint.  
   

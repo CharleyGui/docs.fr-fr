@@ -1,13 +1,13 @@
 ---
 title: Chaînes
 description: Découvrez comment la F# type 'string' représente le texte immuable sous la forme d’une séquence de caractères Unicode.
-ms.date: 06/28/2019
-ms.openlocfilehash: 8bd7a65a8d8e9e6a2d3930cd1fc9e800342d9a18
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.date: 07/05/2019
+ms.openlocfilehash: b252aef7d7e6e299df8282407198714971e80cd5
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487770"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610165"
 ---
 # <a name="strings"></a>Chaînes
 
@@ -22,14 +22,26 @@ Littéraux de chaîne sont délimitées par le caractère guillemet ("). Le cara
 
 |Caractère|Séquence d'échappement|
 |---------|---------------|
+|Alerte|`\a`|
 |Retour arrière|`\b`|
+|Saut de page|`\f`|
 |Saut de ligne|`\n`|
 |Retour chariot|`\r`|
 |Onglet|`\t`|
+|Tabulation verticale|`\v`|
 |Barre oblique inverse|`\\`|
 |Guillemet|`\"`|
 |Apostrophe|`\'`|
-|caractère Unicode|`\uXXXX` (UTF-16) ou `\U00XXXXXX` (UTF-32) (où `X` indique un chiffre hexadécimal)|
+|caractère Unicode|`\DDD` (où `D` indique un nombre décimal à chiffres ; la plage de 000 - 255 ; par exemple, `\231` = « ç »)|
+|caractère Unicode|`\xHH` (où `H` indique un chiffre hexadécimal ; la plage 00 - FF ; par exemple, `\xE7` = « ç »)|
+|caractère Unicode|`\uHHHH` (UTF-16) (où `H` indique un chiffre hexadécimal ; plage 0000 - FFFF ;  par exemple, `\u00E7` = « ç »)|
+|caractère Unicode|`\U00HHHHHH` (UTF-32) (où `H` indique un chiffre hexadécimal ; plage 000000 - 10FFFF ;  par exemple, `\U0001F47D` = «👽»)|
+
+> [!IMPORTANT]
+> Le `\DDD` séquence d’échappement est la notation décimale, notation octale pas comme dans la plupart des autres langages. Par conséquent, les chiffres `8` et `9` sont valides et une séquence de `\032` représente un espace (U + 0020), alors que ce même point de code en notation octale serait `\040`.
+
+> [!NOTE]
+> Limitée à une plage de 0 - 255 (0xFF), le `\DDD` et `\x` sont effectivement des séquences d’échappement le [ISO-8859-1](https://en.wikipedia.org/wiki/ISO/IEC_8859-1#Code_page_layout) jeu, de caractères dans la mesure où les 256 premiers points de code Unicode correspondant.
 
 Si précédé par le symbole @, le littéral est une chaîne textuelle. Cela signifie que les séquences d’échappement sont ignorés, sauf que deux caractères de guillemet sont interprétés comme un seul guillemet.
 

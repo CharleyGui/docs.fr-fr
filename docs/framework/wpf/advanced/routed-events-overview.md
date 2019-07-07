@@ -15,12 +15,12 @@ helpviewer_keywords:
 - button set [WPF], grouped
 - bubbling [WPF]
 ms.assetid: 1a2189ae-13b4-45b0-b12c-8de2e49c29d2
-ms.openlocfilehash: 7712ed02d20d692842267464a645bfc93ca8fd73
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 326900087f755b6c92d9ebb77dad36e5880fd2c0
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063891"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610439"
 ---
 # <a name="routed-events-overview"></a>Vue d'ensemble des événements routés
 Cette rubrique explique le concept d’événements routés dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Elle définit les termes utilisés pour les événements routés, elle explique comment ces événements sont routés via une arborescence d’éléments, elle résume la façon dont sont gérés les événements routés et elle explique comment créer ses propres événements routés personnalisés.
@@ -98,7 +98,7 @@ Cette rubrique explique le concept d’événements routés dans [!INCLUDE[TLA#t
   
  Les événements routés deviennent puissants lorsqu’ils sont utilisés dans l’un des scénarios suivants : définition de gestionnaires communs au niveau d’une racine commune, composition de votre propre contrôle ou définition de votre propre classe de contrôle personnalisé.  
   
- Les écouteurs et les sources d’événements routés n’ont pas besoin de partager un événement commun dans leur hiérarchie. N’importe quel <xref:System.Windows.UIElement> ou <xref:System.Windows.ContentElement> peut être un écouteur d’événements pour tout événement routé. Par conséquent, vous pouvez utiliser le jeu complet d’événements routés disponibles dans l’ensemble des [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] comme une « interface » conceptuelle où différents éléments de l’application peuvent échanger des informations sur les événements. Ce concept d’« interface » pour les événements routés s’applique plus particulièrement aux événements d’entrée.  
+ Les écouteurs et les sources d’événements routés n’ont pas besoin de partager un événement commun dans leur hiérarchie. N’importe quel <xref:System.Windows.UIElement> ou <xref:System.Windows.ContentElement> peut être un écouteur d’événements pour tout événement routé. Par conséquent, vous pouvez utiliser l’ensemble des événements routés disponibles dans l’API de travail définie comme conceptuelle « interface » différents éléments dans l’application peuvent échanger des informations sur les événements. Ce concept d’« interface » pour les événements routés s’applique plus particulièrement aux événements d’entrée.  
   
  Les événements routés peuvent également servir à communiquer au sein de l’arborescence d’éléments, car les données de l’événement sont propagées vers chaque élément rencontré sur l’itinéraire. Si un élément change les données d’événement, ce changement est disponible pour l’élément suivant dans l’itinéraire.  
   
