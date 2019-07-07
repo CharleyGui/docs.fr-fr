@@ -2,17 +2,21 @@
 title: Commande dotnet nuget delete
 description: La commande nuget-dotnet-delete supprime ou retire un package du serveur.
 author: karann-msft
-ms.date: 12/04/2018
-ms.openlocfilehash: e1362413aa6458674518d68340634741994b34a3
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 06/26/2019
+ms.openlocfilehash: 0b2ba64b70bae5e06f213457e30fedeca26a9819
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632058"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539255"
 ---
 # <a name="dotnet-nuget-delete"></a>dotnet nuget delete
 
+**Cette rubrique s’applique à : ✓** SDK .NET Core 1.x et ultérieur
+
+<!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+-->
 
 ## <a name="name"></a>Name
 
@@ -20,23 +24,11 @@ ms.locfileid: "65632058"
 
 ## <a name="synopsis"></a>Résumé
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
-
 ```
 dotnet nuget delete [<PACKAGE_NAME> <PACKAGE_VERSION>] [--force-english-output] [--interactive] [-k|--api-key] [--no-service-endpoint]
     [--non-interactive] [-s|--source]
 dotnet nuget delete [-h|--help]
 ```
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-```
-dotnet nuget delete [<PACKAGE_NAME> <PACKAGE_VERSION>] [--force-english-output] [-k|--api-key] [--non-interactive]
-    [-s|--source]
-dotnet nuget delete [-h|--help]
-```
-
----
 
 ## <a name="description"></a>Description
 
@@ -53,8 +45,6 @@ La commande `dotnet nuget delete` supprime ou retire un package du serveur. Pour
   Version du package à supprimer.
 
 ## <a name="options"></a>Options
-
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 * **`--force-english-output`**
 
@@ -83,30 +73,6 @@ La commande `dotnet nuget delete` supprime ou retire un package du serveur. Pour
 * **`-s|--source <SOURCE>`**
 
   Spécifie l’URL du serveur. Les URL prises en charge pour nuget.org incluent `https://www.nuget.org`, `https://www.nuget.org/api/v3` et `https://www.nuget.org/api/v2/package`. Pour les flux privés, remplacez le nom d’hôte (par exemple, `%hostname%/api/v3`).
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-* **`--force-english-output`**
-
-  Force l’application à s’exécuter avec les paramètres régionaux Anglais (culture indifférente).
-
-* **`-h|--help`**
-
-  Affiche une aide brève pour la commande.
-
-* **`-k|--api-key <API_KEY>`**
-
-  Clé d’API pour le serveur.
-
-* **`--non-interactive`**
-
-  Ne demande pas de saisie ou de confirmation de la part de l’utilisateur.
-
-* **`-s|--source <SOURCE>`**
-
-  Spécifie l’URL du serveur. Les URL prises en charge pour nuget.org incluent `https://www.nuget.org`, `https://www.nuget.org/api/v3` et `https://www.nuget.org/api/v2/package`. Pour les flux privés, remplacez le nom d’hôte (par exemple, `%hostname%/api/v3`).
-
----
 
 ## <a name="examples"></a>Exemples
 
