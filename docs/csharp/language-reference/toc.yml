@@ -1,4 +1,4 @@
-- name: Informations de référence sur le langage
+- name: Référence sur le langage
   items:
     - name: 'Informations de référence sur le langage C#'
       href: index.md
@@ -21,7 +21,7 @@
                   href: builtin-types/integral-numeric-types.md
                 - name: char
                   href: keywords/char.md
-                - name: decimal
+                - name: décimal
                   href: keywords/decimal.md
                 - name: double
                   href: keywords/double.md
@@ -39,11 +39,11 @@
                   href: keywords/class.md
                 - name: délégué
                   href: keywords/delegate.md
-                - name: dynamic
+                - name: dynamique
                   href: keywords/dynamic.md
                 - name: interface
                   href: keywords/interface.md
-                - name: object
+                - name: objet
                   href: keywords/object.md
                 - name: string
                   href: keywords/string.md
@@ -71,7 +71,7 @@
           items:
             - name: Modificateurs d’accès
               items:
-                - name: Aide-mémoire
+                - name: Référence rapide
                   href: keywords/access-modifiers.md
                 - name: Niveaux d’accessibilité
                   href: keywords/accessibility-levels.md
@@ -79,7 +79,7 @@
                   href: keywords/accessibility-domain.md
                 - name: Restrictions concernant l’utilisation des niveaux d’accessibilité
                   href: keywords/restrictions-on-using-accessibility-levels.md
-                - name: internal
+                - name: Interne
                   href: keywords/internal.md
                 - name: private
                   href: keywords/private.md
@@ -129,7 +129,7 @@
               items:
                 - name: if-else
                   href: keywords/if-else.md
-                - name: switch
+                - name: commutateur
                   href: keywords/switch.md
             - name: Instructions d'itération
               items:
@@ -175,7 +175,7 @@
               href: keywords/lock-statement.md
         - name: Paramètres de méthodes
           items:
-            - name: Passage de paramètres
+            - name: Transmission des paramètres
               href: keywords/method-parameters.md
             - name: params
               href: keywords/params.md
@@ -203,13 +203,13 @@
               href: keywords/extern-alias.md
         - name: Mots clés de test de type
           items:
-            - name: est
+            - name: is
               href: keywords/is.md
         - name: Mots clés de contrainte de type générique
           items:
             - name: 'new, contrainte'
               href: keywords/new-constraint.md
-            - name: où
+            - name: where
               href: keywords/where-generic-type-constraint.md
         - name: Mots clés des opérateurs
           items:
@@ -225,13 +225,11 @@
               href: keywords/explicit.md
             - name: implicit
               href: keywords/implicit.md
-            - name: operator
-              href: keywords/operator.md
         - name: Mots clés d’accès
           items:
             - name: de base
               href: keywords/base.md
-            - name: this
+            - name: ceci
               href: keywords/this.md
         - name: Mots clés littéraux
           items:
@@ -239,13 +237,13 @@
               href: keywords/null.md
             - name: 'true'
               href: keywords/true-literal.md
-            - name: 'False'
+            - name: 'false'
               href: keywords/false-literal.md
             - name: default
               href: keywords/default.md
         - name: Mots clés contextuels
           items:
-            - name: Aide-mémoire
+            - name: Référence rapide
               href: keywords/contextual-keywords.md
             - name: add
               href: keywords/add.md
@@ -259,17 +257,17 @@
               href: keywords/partial-method.md
             - name: remove
               href: keywords/remove.md
-            - name: définir
+            - name: set
               href: keywords/set.md
             - name: when (condition de filtre)
               href: keywords/when.md
-            - name: par défaut
+            - name: value
               href: keywords/value.md
             - name: yield
               href: keywords/yield.md
         - name: "Mots\_clés de requête"
           items:
-            - name: Aide-mémoire
+            - name: Référence rapide
               href: keywords/query-keywords.md
             - name: 'from, clause'
               href: keywords/from-clause.md
@@ -285,7 +283,7 @@
               href: keywords/orderby-clause.md
             - name: 'join, clause'
               href: keywords/join-clause.md
-            - name: 'let, clause'
+            - name: clause let
               href: keywords/let-clause.md
             - name: ascending
               href: keywords/ascending.md
@@ -297,7 +295,7 @@
               href: keywords/equals.md
             - name: by
               href: keywords/by.md
-            - name: dans
+            - name: commencer
               href: keywords/in.md
     - name: 'Opérateurs C#'
       items:
@@ -354,6 +352,8 @@
           href: operators/stackalloc.md
         - name: opérateurs true et false
           href: operators/true-false-operators.md
+        - name: Surcharge d’opérateur
+          href: operators/operator-overloading.md
     - name: "Caractères spéciaux\_C#"
       items:
         - name: Vue d'ensemble
@@ -400,7 +400,7 @@
           href: compiler-options/index.md
         - name: Génération à partir de la ligne de commande avec csc.exe
           href: compiler-options/command-line-building-with-csc-exe.md
-        - name: "Procédure\_: Définir des variables d’environnement pour la ligne de commande Visual Studio"
+        - name: Activation Définir des variables d’environnement pour la ligne de commande Visual Studio
           href: compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md
         - name: 'Options du compilateur C# par catégorie'
           href: compiler-options/listed-by-category.md
@@ -534,7 +534,7 @@
           href: ../../../_csharplang/spec/basic-concepts.md
         - name: Types
           href: ../../../_csharplang/spec/types.md
-        - name: Variables
+        - name: variables
           href: ../../../_csharplang/spec/variables.md
         - name: Conversions
           href: ../../../_csharplang/spec/conversions.md
