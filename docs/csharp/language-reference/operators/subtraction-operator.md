@@ -13,12 +13,12 @@ helpviewer_keywords:
 - event unsubscription [C#]
 - -= operator [C#]
 ms.assetid: 4de7a4fa-c69d-48e6-aff1-3130af970b2d
-ms.openlocfilehash: 7c9863134cb2a12072954bb283c7828abece3adb
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 80603107beb708e76a2c7446f300d71ede411570
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347915"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67609854"
 ---
 # <a name="--and---operators-c-reference"></a>Opérateurs - et -=, opérateurs - (référence C#)
 
@@ -72,7 +72,7 @@ Vous utilisez également l’opérateur `-=` pour spécifier une méthode de ges
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 
-Un type défini par l’utilisateur peut [surcharger](../keywords/operator.md) l’opérateur `-`. Quand un opérateur binaire `-` est surchargé, l’opérateur `-=` est aussi implicitement surchargé. Un type défini par l’utilisateur ne peut pas surcharger explicitement l’opérateur `-=`.
+Un type défini par l’utilisateur peut [surcharger](operator-overloading.md) l’opérateur `-`. Quand un opérateur binaire `-` est surchargé, l’opérateur `-=` est aussi implicitement surchargé. Un type défini par l’utilisateur ne peut pas surcharger explicitement l’opérateur `-=`.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
