@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 1faebe2ce1a59798621888e3a518900234720be5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 5b45a24e719a03d052c88b5afd64bbe13eb0793e
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59116254"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610068"
 ---
 # <a name="ref-c-reference"></a>ref (référence C#)
 
@@ -138,7 +138,7 @@ La conservation d’un type `ref struct` comme variable allouée par la pile int
 
 - Vous ne pouvez pas effectuer d’opération box sur un `ref struct`. Vous ne pouvez pas assigner un type `ref struct` à une variable de type `object`, `dynamic` ou tout type interface.
 - Les types `ref struct` ne peuvent pas implémenter les interfaces.
-- Vous ne pouvez pas déclarer `ref struct` comme membre d’une classe ou d’un struct normal.
+- Vous ne pouvez pas déclarer `ref struct` comme membre de champ d’une classe ou d’un struct normal. Cela comprend la déclaration d’une propriété implémentée automatiquement, qui crée un champ de stockage généré par le compilateur. 
 - Vous ne pouvez pas déclarer des variables locales qui sont des types `ref struct` dans des méthodes async. Vous pouvez les déclarer dans des méthodes synchrones qui retournent des types semblables à <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601> ou `Task`.
 - Vous ne pouvez pas déclarer de variables locales `ref struct` dans des itérateurs.
 - Vous ne pouvez pas capturer de variables `ref struct` dans des expressions lambda ou des fonctions locales.

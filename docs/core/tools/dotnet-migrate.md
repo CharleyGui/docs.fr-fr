@@ -1,21 +1,28 @@
 ---
 title: Commande dotnet migrate
 description: La commande dotnet migrate permet de migrer un projet et l’ensemble de ses dépendances.
-ms.date: 05/25/2018
-ms.openlocfilehash: 861cd2cb982c6f41baf00a2cbd7e04b26816af76
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 06/26/2019
+ms.openlocfilehash: 3304f666d15d9188cdae76a401747d91791f817f
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65631948"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539400"
 ---
 # <a name="dotnet-migrate"></a>dotnet migrate
 
+**Cette rubrique s’applique à : ✓** SDK .NET Core 1.x et ultérieur
+
+<!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+-->
 
 ## <a name="name"></a>Name
 
-`dotnet migrate` : migre un projet .NET Core Preview 2 vers un projet SDK .NET Core 1.0.
+`dotnet migrate` : migre un projet .NET Core Preview 2 vers un projet de style SDK .NET Core.
+
+> [!NOTE]
+> `dotnet migrate` sera retiré du SDK .NET Core 3.0 dans la prochaine préversion.
 
 ## <a name="synopsis"></a>Résumé
 
@@ -26,7 +33,7 @@ dotnet migrate [-h|--help]
 
 ## <a name="description"></a>Description
 
-La commande `dotnet migrate` migre un projet *project.json* Preview 2 valide vers un projet *csproj* SDK .NET Core 1.0 valide.
+La commande `dotnet migrate` migre un projet *project.json* Preview 2 valide vers un projet *csproj* de style SDK .NET Core valide.
 
 Par défaut, la commande migre le projet racine et toutes les références de projet qu’il contient. Ce comportement peut être désactivé à l’aide de l’option `--skip-project-references` au moment de l’exécution.
 

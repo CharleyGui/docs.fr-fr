@@ -7,12 +7,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 06/14/2019
-ms.openlocfilehash: bb100ea064585235768ecb46781eb830c7dae0c6
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: a808a35876df8d2f6cee3c240c606b7bd979e9ee
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67401960"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539271"
 ---
 # <a name="whats-new-in-net-core-30-preview-6"></a>Nouveautés de .NET Core 3.0 (Preview 6)
 
@@ -107,6 +107,15 @@ La commande `dotnet publish` prend en charge l’empaquetage de votre applicatio
 
 Pour publier un exécutable monofichier, définissez `PublishSingleFile` dans votre projet ou sur la ligne de commande avec la commande `dotnet publish` :
 
+```xml
+<PropertyGroup>
+  <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+  <PublishSingleFile>true</PublishSingleFile>
+</PropertyGroup>
+```
+
+-ou-
+
 ```console
 dotnet publish -r win10-x64 /p:PublishSingleFile=true
 ```
@@ -121,7 +130,7 @@ Les applications autonomes incluent tous les éléments nécessaires pour exécu
 
 .NET Core inclut désormais un paramètre qui utilisera l’outil [Éditeur de liens de langage intermédiaire](https://github.com/mono/linker) analyser le langage intermédiaire de votre application. Cet outil détecte ce que le code nécessite et supprime les bibliothèques inutilisées. Cet outil peut réduire considérablement la taille de déploiement de certaines applications.
 
-Pour activer cet outil, définissez `<PublishTrimmed>` dans votre projet et publiez une application autonome :
+Pour activer cet outil, ajoutez le paramètre `<PublishTrimmed>` dans votre projet et publiez une application autonome :
 
 ```xml
 <PropertyGroup>

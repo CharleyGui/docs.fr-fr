@@ -2,17 +2,21 @@
 title: Commande dotnet nuget push
 description: La commande dotnet nuget push exécute un envoi (push) d’un package sur le serveur et le publie.
 author: karann-msft
-ms.date: 12/04/2018
-ms.openlocfilehash: 7382cb93da3d7ed68f5731b3996c735c3f1461e4
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.date: 06/26/2019
+ms.openlocfilehash: 4d5efa94c6a4494158aea447be98256d2a307cd6
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65631711"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539131"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
+**Cette rubrique s’applique à : ✓** SDK .NET Core 1.x et ultérieur
+
+<!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+-->
 
 ## <a name="name"></a>Name
 
@@ -20,23 +24,11 @@ ms.locfileid: "65631711"
 
 ## <a name="synopsis"></a>Résumé
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
-
 ```
 dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [--interactive] [-k|--api-key] [-n|--no-symbols]
     [--no-service-endpoint] [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
 dotnet nuget push [-h|--help]
 ```
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-```
-dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [-k|--api-key] [-n|--no-symbols]
-    [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
-dotnet nuget push [-h|--help]
-```
-
----
 
 ## <a name="description"></a>Description
 
@@ -49,8 +41,6 @@ La commande `dotnet nuget push` exécute un push d’un package sur le serveur e
   Spécifie le chemin de fichier au package devant faire l’objet d’un envoi (push).
 
 ## <a name="options"></a>Options
-
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 * **`-d|--disable-buffering`**
 
@@ -96,46 +86,6 @@ Affiche une aide brève pour la commande.
 
   Spécifie le délai d’attente, en secondes, pour effectuer un push vers un serveur. La valeur par défaut est 300 secondes (5 minutes). Si vous spécifiez 0 (zéro seconde), la valeur par défaut s’applique.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-* **`-d|--disable-buffering`**
-
-  Désactive la mise en mémoire tampon pendant le transfert push vers un serveur HTTP(S) afin de réduire l’utilisation de la mémoire.
-
-* **`--force-english-output`**
-
-  Force l’application à s’exécuter avec les paramètres régionaux Anglais (culture indifférente).
-
-* **`-h|--help`**
-
-  Affiche une aide brève pour la commande.
-
-* **`-k|--api-key <API_KEY>`**
-
-  Clé d’API pour le serveur.
-
-* **`-n|--no-symbols`**
-
-  N’envoie pas les symboles (même s’ils sont présents).
-
-* **`-s|--source <SOURCE>`**
-
-  Spécifie l’URL du serveur. Cette option est obligatoire, sauf si la valeur de configuration de `DefaultPushSource` est définie dans le fichier de configuration NuGet.
-
-* **`-sk|--symbol-api-key <API_KEY>`**
-
-  Clé d’API pour le serveur de symboles.
-
-* **`-ss|--symbol-source <SOURCE>`**
-
-  Spécifie l’URL du serveur de symboles.
-
-* **`-t|--timeout <TIMEOUT>`**
-
-  Spécifie le délai d’attente, en secondes, pour effectuer un push vers un serveur. La valeur par défaut est 300 secondes (5 minutes). Si vous spécifiez 0 (zéro seconde), la valeur par défaut s’applique.
-
----
-
 ## <a name="examples"></a>Exemples
 
 * Envoie (push) *foo.nupkg* à la source de push par défaut, en spécifiant une clé API :
@@ -173,3 +123,7 @@ Affiche une aide brève pour la commande.
   ```console
   dotnet nuget push *.nupkg
   ```
+  
+  > [!NOTE]
+  > Si cette commande ne fonctionne pas, cela peut être dû à un bogue qui existait dans les versions antérieures du SDK (Kit SDK .NET Core 2.1 et versions antérieures).
+  > Pour résoudre ce problème, mettez à niveau votre version du SDK ou exécutez la commande suivante à la place : `dotnet nuget push **/*.nupkg`

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - MageUI.exe
 ms.assetid: f9e130a6-8117-49c4-839c-c988f641dc14
-ms.openlocfilehash: 029e4983ef270bb5272ad0bf541ee34febd9399c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 3f303583b1cff785ab0020e616fee58ef02a1c58
+ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59222339"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67487045"
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (outil Manifest Generation and Editing, client graphique)
 
@@ -18,7 +18,7 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
 
  Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).
 
- Deux versions de Mage.exe et MageUI.exe sont incluses en tant que composant d’installation de Visual Studio. Pour afficher les informations de version, exécutez MageUI.exe et sélectionnez **Aide / ?**, puis **À propos de**. Cette documentation décrit la version 4.0.x.x de Mage.exe et MageUI.exe.
+ Deux versions de Mage.exe et MageUI.exe sont incluses en tant que composant d’installation de Visual Studio. Pour afficher les informations de version, exécutez MageUI.exe et sélectionnez **Aide / ?** , puis **À propos de**. Cette documentation décrit la version 4.0.x.x de Mage.exe et MageUI.exe.
 
 > [!NOTE]
 > MageUI.exe ne prend pas en charge l’élément [compatibleFrameworks](/visualstudio/deployment/compatibleframeworks-element-clickonce-deployment) lors de l’enregistrement d’un manifeste d’application qui a déjà été signé avec un certificat utilisant MageUI.exe. À la place, vous devez utiliser [Mage.exe](../../../docs/framework/tools/mage-exe-manifest-generation-and-editing-tool.md).  
@@ -50,7 +50,7 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
 |Élément d'interface utilisateur|Description|  
 |----------------|-----------------|  
 |**Signer à l’enregistrement**|Vous invite à signer un fichier chaque fois que vous enregistrez vos modifications.|  
-|**Utiliser le certificat de signature par défaut**|Utilise la clé entrée dans la zone de texte **Fichier de certificat** pour signer tous les fichiers. L’invite de signature qui apparaît généralement lorsque vous enregistrez un fichier ne s’affiche plus et **Signer à l’enregistrement** est sélectionné. Utilisez le bouton de sélection (**…**) en regard de la zone de texte **Fichier de certificat** pour sélectionner un fichier de clé.|  
+|**Utiliser le certificat de signature par défaut**|Utilise la clé entrée dans la zone de texte **Fichier de certificat** pour signer tous les fichiers. L’invite de signature qui apparaît généralement lorsque vous enregistrez un fichier ne s’affiche plus et **Signer à l’enregistrement** est sélectionné. Utilisez le bouton de sélection ( **…** ) en regard de la zone de texte **Fichier de certificat** pour sélectionner un fichier de clé.|  
 |Algorithme de condensat|Définit l'algorithme avec lequel générer des compactés de dépendance. La valeur doit être « sha256RSA » ou « sha1RSA ». Utilise SHA1 comme valeur par défaut. Utilisée à la fois par les manifestes d'application et de déploiement. Si l'utilisateur fournit un certificat en enregistrant le manifeste, les algorithmes du certificat sont utilisés pour générer des condensés de dépendance.|  
   
 ## <a name="signing-options-dialog-box"></a>Boîte de dialogue Options de signature  
@@ -63,7 +63,7 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
 |**Signer avec le fichier de certificat**|Signe le manifeste avec un certificat numérique stocké dans le système de fichiers.|  
 |**Fichier**|Fournit une zone pour taper le chemin d’accès au fichier .pfx qui représente le certificat.|  
 |**...**|Ouvre une boîte de dialogue **Choisir un fichier** pour sélectionner un fichier .pfx existant.|  
-|**Nouveau**|Génère un nouveau fichier .pfx qui ne peut pas être vérifié par une Autorité de certification. Pour plus d’informations sur les types de certificats utilisés pour signer les déploiements [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)], consultez [Vue d’ensemble du déploiement d’applications approuvées](/visualstudio/deployment/trusted-application-deployment-overview).|  
+|**Nouveau**|Génère un nouveau fichier .pfx qui ne peut pas être vérifié par une Autorité de certification. Pour plus d’informations sur les types de certificats utilisés pour signer les déploiements ClickOnce, consultez [Vue d’ensemble du déploiement d’applications approuvées](/visualstudio/deployment/trusted-application-deployment-overview).|  
 |**Mot de passe**|Fournit une zone dans laquelle entrer le mot de passe utilisé pour signer ce certificat. Le cas échéant, peut être vide.|  
 |**Signer avec le certificat stocké**|Affiche une liste dans laquelle sélectionner des certificats numériques stockés dans le magasin de certificats de votre ordinateur.|  
 |**URI du service d’horodatage**|Affiche l'URI (Uniform Resource Identifier) d'un service d'horodatage numérique. Horodater les manifestes vous évite d'avoir à signer de nouveau les manifestes si votre certificat numérique expire avant le déploiement de la version suivante de votre application. Pour plus d’informations, consultez [Configurer des racines de confiance et des certificats non autorisés](https://go.microsoft.com/fwlink/?LinkId=159000) et [ClickOnce et Authenticode](/visualstudio/deployment/clickonce-and-authenticode).|  
@@ -92,8 +92,8 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
 |----------------|-----------------|  
 |**Name**|Obligatoire. Nom du manifeste d'application. Généralement identique au nom de fichier.|  
 |**Version**|Obligatoire. Numéro de version du déploiement sous la forme *N.N.N.N*. Seul le premier numéro de build majeur est obligatoire. Par exemple, pour la version 1.0 d’une application, les valeurs valides incluent `1`, `1.0`, `1.0.0` et `1.0.0.0`.|  
-|**Processeur**|Optionnel. Architecture d'ordinateur sur laquelle ce déploiement peut s'exécuter. La valeur par défaut est `msil` (Microsoft Intermediate Language), ce qui correspond au format par défaut de tous les assemblys managés. Modifiez ce champ si vous avez précompilé les assemblys dans votre application pour une architecture spécifique. Pour plus d’informations sur la précompilation, consultez [Ngen.exe (Native Image Generator)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).|  
-|**Culture**|Optionnel. Code pays et région ISO en deux parties dans lequel cette application s'exécute. La valeur par défaut est `neutral`.|  
+|**Processeur**|facultatif. Architecture d'ordinateur sur laquelle ce déploiement peut s'exécuter. La valeur par défaut est `msil` (Microsoft Intermediate Language), ce qui correspond au format par défaut de tous les assemblys managés. Modifiez ce champ si vous avez précompilé les assemblys dans votre application pour une architecture spécifique. Pour plus d’informations sur la précompilation, consultez [Ngen.exe (Native Image Generator)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).|  
+|**Culture**|facultatif. Code pays et région ISO en deux parties dans lequel cette application s'exécute. La valeur par défaut est `neutral`.|  
 |**Jeton de clé publique**|Facultatif. Clé publique utilisée pour signer ce manifeste d'application. S’il s’agit d’un manifeste nouveau ou non signé, ce champ affiche `Unsigned`.|  
   
 ### <a name="description-tab"></a>Onglet Description  
@@ -116,7 +116,7 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
   
 |Élément d'interface utilisateur|Description|  
 |----------------|-----------------|  
-|**Répertoire de l’application**|Répertoire dans lequel résident les fichiers de l'application. Utilisez le bouton de sélection (**…**) pour sélectionner le répertoire.|  
+|**Répertoire de l’application**|Répertoire dans lequel résident les fichiers de l'application. Utilisez le bouton de sélection ( **…** ) pour sélectionner le répertoire.|  
 |**Remplir**|Ajoute tous les fichiers dans le répertoire de l'application et les sous-répertoires au manifeste de l'application. Si MageUI.exe trouve un seul fichier exécutable dans le répertoire, celui-ci est automatiquement marqué comme étant le point d'entrée, à savoir le fichier exécuté en premier quand l'application ClickOnce est lancée sur le client.|  
 |**Fichiers de l’application**|Répertorie tous les fichiers dans l'application. Chaque fichier possède trois attributs modifiables, présentés ci-dessous.|  
 |**Type de fichier**|Le type de fichier peut correspondre à l'une des quatre valeurs suivantes :<br /><br /> - Aucun.<br />- Point d’entrée. Fichier exécutable principal de l'application. Un seul fichier exécutable peut être marqué comme point d'entrée.<br />- Fichier de données. Fichier, tel qu'un fichier XML, qui fournit des données à l'application.<br />- Fichier icône. Icône d'application, comme celle qui apparaît sur le Bureau ou dans le coin de la fenêtre de l'application.|  
@@ -139,7 +139,7 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
 |**Name**|Spécifie les informations d'identification sur ce déploiement.|  
 |**Description**|Spécifie des informations sur l'éditeur, le produit et la prise en charge.|  
 |**Options de déploiement**|Spécifie des informations supplémentaires sur le déploiement, telles que le type d'application et l'emplacement de départ.|  
-|**Options de mise à jour**|Spécifie à quelle fréquence [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] doit vérifier les mises à jour de l'application.|  
+|**Options de mise à jour**|Spécifie à quelle fréquence ClickOnce doit vérifier les mises à jour de l’application.|  
 |**Référence d’application**|Spécifie le manifeste d'application pour ce déploiement.|  
   
 ### <a name="name-tab"></a>Onglet Nom  
@@ -149,9 +149,9 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
 |----------------|-----------------|  
 |**Name**|Obligatoire. Nom du manifeste de déploiement. Généralement identique au nom de fichier.|  
 |**Version**|Obligatoire. Numéro de version du déploiement sous la forme *N.N.N.N*. Seul le premier numéro de build majeur est obligatoire. Par exemple, pour la version 1.0 d’une application, les valeurs valides incluent `1`, `1.0`, `1.0.0` et `1.0.0.0`.|  
-|**Processeur**|Optionnel. Architecture d'ordinateur sur laquelle ce déploiement peut s'exécuter. La valeur par défaut est `msil` (Microsoft Intermediate Language), ce qui correspond au format par défaut de tous les assemblys managés. Modifiez ce champ si vous avez compilé les assemblys dans votre application pour une architecture spécifique.|  
-|**Culture**|Optionnel. Code pays/région ISO en deux parties dans lequel cette application s'exécute. La valeur par défaut est `neutral`.|  
-|**Jeton de clé publique**|Optionnel. Clé publique utilisée pour signer ce manifeste de déploiement. S’il s’agit d’un manifeste nouveau ou non signé, ce champ affiche `Unsigned`.|  
+|**Processeur**|facultatif. Architecture d'ordinateur sur laquelle ce déploiement peut s'exécuter. La valeur par défaut est `msil` (Microsoft Intermediate Language), ce qui correspond au format par défaut de tous les assemblys managés. Modifiez ce champ si vous avez compilé les assemblys dans votre application pour une architecture spécifique.|  
+|**Culture**|facultatif. Code pays/région ISO en deux parties dans lequel cette application s'exécute. La valeur par défaut est `neutral`.|  
+|**Jeton de clé publique**|facultatif. Clé publique utilisée pour signer ce manifeste de déploiement. S’il s’agit d’un manifeste nouveau ou non signé, ce champ affiche `Unsigned`.|  
   
 ### <a name="description-tab"></a>Onglet Description  
   
@@ -159,17 +159,17 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
 |----------------|-----------------|  
 |**Serveur de publication**|Obligatoire. Nom de la personne ou de l'organisation responsable de l'application. Cette valeur est utilisée comme nom de dossier du menu Démarrer.|  
 |**Produit**|Obligatoire. Nom complet du produit. Si vous avez sélectionné **Installation locale** pour l’élément **Type d’application** sous l’onglet **Options de déploiement**, ce nom apparaîtra dans le lien du menu **Démarrer** et dans **Ajout/Suppression de programmes** pour cette application.|  
-|**Emplacement du support**|Optionnel. URL à partir de laquelle les clients peuvent obtenir de l'aide pour l'application.|  
+|**Emplacement du support**|facultatif. URL à partir de laquelle les clients peuvent obtenir de l'aide pour l'application.|  
   
 ### <a name="deployment-options-tab"></a>Onglet Options de déploiement  
   
 |Élément d'interface utilisateur|Description|  
 |----------------|-----------------|  
-|**Type d’application**|Optionnel. Spécifie si cette application s’installe sur l’ordinateur client (**Installation locale**), s’exécute en ligne (**En ligne uniquement**) ou constitue une application WPF qui s’exécute dans le navigateur (**Application de navigateur WPF**). La valeur par défaut est **Installation locale**.|  
-|**Emplacement de démarrage**|Optionnel. URL à partir de laquelle l'application doit réellement être démarrée. Utile lors du déploiement d'une application à partir d'un CD qui doit se mettre à jour lui-même à partir du web.|  
-|**Inclure l’emplacement de démarrage (ProviderURL) dans le manifeste**|Optionnel. Spécifie l'URL examinée par [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] pour les mises à jour d'application.|  
-|**Exécuter automatiquement l’application après l’installation**|Obligatoire. Spécifie que l'application [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] doit s'exécuter immédiatement après l'installation initiale à partir d'une URL. Par défaut, la case est cochée.|  
-|**Autoriser les paramètres d’URL à être transmis à l’application**|Obligatoire. Autorise le transfert de données de paramètre à l'application [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] via une chaîne de requête ajoutée à l'URL du manifeste de déploiement. Par défaut, la case est décochée.|  
+|**Type d’application**|facultatif. Spécifie si cette application s’installe sur l’ordinateur client (**Installation locale**), s’exécute en ligne (**En ligne uniquement**) ou constitue une application WPF qui s’exécute dans le navigateur (**Application de navigateur WPF**). La valeur par défaut est **Installation locale**.|  
+|**Emplacement de démarrage**|facultatif. URL à partir de laquelle l'application doit réellement être démarrée. Utile lors du déploiement d'une application à partir d'un CD qui doit se mettre à jour lui-même à partir du web.|  
+|**Inclure l’emplacement de démarrage (ProviderURL) dans le manifeste**|facultatif. Spécifie l'URL vérifiée par ClickOnce pour les mises à jour d'application.|  
+|**Exécuter automatiquement l’application après l’installation**|Obligatoire. Spécifie que l’application ClickOnce doit s’exécuter immédiatement après l’installation initiale à partir d’une URL. Par défaut, la case est cochée.|  
+|**Autoriser les paramètres d’URL à être transmis à l’application**|Obligatoire. Autorise le transfert de données de paramètre à l’application ClickOnce par le biais d’une chaîne de requête ajoutée à l’URL du manifeste de déploiement. Par défaut, la case est décochée.|  
 |**Utiliser l’extension de fichier .deploy**|Obligatoire. Lorsque cette case est cochée, tous les fichiers du manifeste d'application doivent avoir l'extension .deploy. Par défaut, la case est décochée.|  
   
 ### <a name="update-options-tab"></a>Onglet Options de mise à jour  
@@ -177,10 +177,10 @@ MageUI.exe prend en charge les mêmes fonctionnalités que l'outil de ligne de c
   
 |Élément d'interface utilisateur|Description|  
 |----------------|-----------------|  
-|**Cette application doit vérifier les mises à jour**|Indique si [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] doit vérifier les mises à jour de l'application. Si cette case n'est pas cochée, l'application ne vérifie pas les mises à jour, sauf si vous la mettez à jour par programme à l'aide des API de l'espace de noms <xref:System.Deployment.Application>.|  
+|**Cette application doit vérifier les mises à jour**|Indique si ClickOnce doit vérifier les mises à jour de l’application. Si cette case n'est pas cochée, l'application ne vérifie pas les mises à jour, sauf si vous la mettez à jour par programme à l'aide des API de l'espace de noms <xref:System.Deployment.Application>.|  
 |**Choisir le moment auquel l’application doit rechercher les mises à jour**|Fournit deux options pour les vérifications des mises à jour :<br /><br /> -   **Avant le démarrage de l’application**. La vérification des mises à jour est effectuée avant l'exécution de l'application.<br />-   **Après le démarrage de l’application**. La vérification des mises à jour commence une fois que le formulaire principal de l'application s'est initialisé et s'exécutera au prochain démarrage de l'application.|  
-|**Fréquence de vérification des mises à jour**|Détermine la fréquence à laquelle [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] doit vérifier les mises à jour :<br /><br /> -   **Vérifier à chaque exécution de l’application**. [!INCLUDE[ndptecclick](../../../includes/ndptecclick-md.md)] exécute une vérification des mises à jour chaque fois que l'utilisateur ouvre l'application.<br />-   **Vérifier après** : Sélectionnez un intervalle de temps et une unité (heures, jours ou semaines) avant la vérification des mises à jour.|  
-|**Spécifier une version minimale requise pour cette application**|Optionnel. Spécifie qu'une version spécifique de votre application est une installation obligatoire, pour empêcher les utilisateurs d'utiliser une version antérieure.|  
+|**Fréquence de vérification des mises à jour**|Détermine la fréquence à laquelle ClickOnce doit vérifier les mises à jour :<br /><br /> -   **Vérifier à chaque exécution de l’application**. ClickOnce effectue une vérification des mises à jour chaque fois que l’utilisateur ouvre l’application.<br />-   **Vérifier après** : Sélectionnez un intervalle de temps et une unité (heures, jours ou semaines) avant la vérification des mises à jour.|  
+|**Spécifier une version minimale requise pour cette application**|facultatif. Spécifie qu'une version spécifique de votre application est une installation obligatoire, pour empêcher les utilisateurs d'utiliser une version antérieure.|  
 |**Version**|Obligatoire si la case **Spécifier une version minimale requise pour cette application** est cochée. Le numéro de version fourni doit être au format *N.N.N.N*. Seul le premier numéro de build majeur est obligatoire. Par exemple, pour la version 1.0 d’une application, les valeurs valides incluent `1`, `1.0`, `1.0.0` et `1.0.0.0`.|  
   
 ### <a name="application-reference-tab"></a>Onglet Référence d'application  

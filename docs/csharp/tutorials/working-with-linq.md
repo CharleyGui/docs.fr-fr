@@ -3,12 +3,12 @@ title: Utilisation de LINQ
 description: Ce didacticiel vous apprend à générer des séquences avec LINQ, à écrire des méthodes pour les requêtes LINQ et à faire la distinction entre l’évaluation stricte et l’évaluation paresseuse.
 ms.date: 10/29/2018
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: e51fb166ccba793f9f2aa9d11a109280bf8eea93
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: e37c013add02f651875db7b908ae2b49711d996d
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486984"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67609309"
 ---
 # <a name="working-with-linq"></a>Utilisation de LINQ
 
@@ -268,6 +268,14 @@ Dans votre fichier `Extensions.cs`, tapez ou copiez la méthode d’extension ci
 
 [!CODE-csharp[LogQuery](../../../samples/csharp/getting-started/console-linq/extensions.cs?name=snippet3)]
 
+Vous verrez une ligne ondulée rouge sous `File`, ce qui signifie qu’elle n’existe pas. Elle ne sera pas compilée, puisque le compilateur ne sait pas ce qu’est `File`. Pour résoudre ce problème, veillez à ajouter la ligne de code suivante sous la première ligne dans `Extensions.cs` :
+
+```csharp
+using System.IO;
+```
+
+Cela devrait résoudre le problème et faire disparaître l’erreur rouge.
+
 Instrumentez ensuite la définition de chaque requête avec un message de journalisation :
 
 ```csharp
@@ -345,4 +353,3 @@ Pour plus d’informations sur LINQ, voir :
   - [Transformations de données avec LINQ (C#)](../programming-guide/concepts/linq/data-transformations-with-linq.md)
   - [Syntaxe de requête et syntaxe de méthode dans LINQ (C#)](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)
   - [Fonctionnalités C# qui prennent en charge LINQ](../programming-guide/concepts/linq/features-that-support-linq.md)
-    

@@ -15,12 +15,12 @@ helpviewer_keywords:
 - inequality operator [C#]
 - not equals operator [C#]
 - '!= operator [C#]'
-ms.openlocfilehash: 72e790dc008857a48602c92c9236588c531b64f9
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 3caacf8628e6ab07b731f0574ca3a0f7e973adcd
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423926"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67609892"
 ---
 # <a name="equality-operators-c-reference"></a>Opérateurs d’égalité (référence C#)
 
@@ -45,6 +45,14 @@ Par défaut, les types [struct](../keywords/struct.md) définis par l’utilisat
 
 À compter de C# 7.3, les opérateurs `==` et `!=` sont pris en charge par les [tuples](../../tuples.md) C#. Pour plus d’informations, consultez la section [Égalité et tuples](../../tuples.md#equality-and-tuples) de l’article [Types de tuple C#](../../tuples.md).
 
+### <a name="reference-types-equality"></a>Égalité de types référence
+
+Par défaut, deux opérandes de type référence sont égaux s’ils font référence au même objet :
+
+[!code-csharp[reference type equality](~/samples/csharp/language-reference/operators/EqualityOperators.cs#ReferenceTypesEquality)]
+
+Comme le montre l’exemple, les types référence définis par l’utilisateur prennent en charge l’opérateur `==` par défaut. Un type référence peut toutefois surcharger l’opérateur `==`. Si un type référence surcharge l’opérateur `==`, utilisez la méthode <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> pour vérifier si deux références de ce type font référence au même objet.
+
 ### <a name="string-equality"></a>Égalité de chaîne
 
 Deux opérandes [string](../keywords/string.md) sont égaux lorsque les deux sont `null` ou lorsque les deux instances de chaîne sont de même longueur et ont des caractères identiques dans chaque position de caractère :
@@ -53,15 +61,7 @@ Deux opérandes [string](../keywords/string.md) sont égaux lorsque les deux son
 
 Il s’agit d’une comparaison ordinale respectant la casse. Pour plus d’informations sur la comparaison de chaînes, consultez [Comment comparer des chaînes en C#](../../how-to/compare-strings.md).
 
-### <a name="reference-types-equality"></a>Égalité de types référence
-
-Deux opérandes de type référence autres que `string` sont égaux lorsqu’ils font référence au même objet :
-
-[!code-csharp[reference type equality](~/samples/csharp/language-reference/operators/EqualityOperators.cs#ReferenceTypesEquality)]
-
-Comme le montre l’exemple, les types référence définis par l’utilisateur prennent en charge l’opérateur `==` par défaut. Un type référence défini par l’utilisateur peut toutefois surcharger l’opérateur `==`. Si un type référence surcharge l’opérateur `==`, utilisez la méthode <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> pour vérifier si deux références de ce type font référence au même objet.
-
-## <a name="delegate-equality"></a>Égalité de délégué
+### <a name="delegate-equality"></a>Égalité de délégué
 
 Deux opérandes de [délégué](../../programming-guide/delegates/index.md) du même type de runtime sont égaux si les deux sont `null` ou si leurs listes d’appel sont de même longueur et ont des entrées égales dans chaque position :
 
@@ -83,7 +83,7 @@ L’exemple suivant illustre l’utilisation de l’opérateur `!=` :
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 
-Un type défini par l’utilisateur peut [surcharger](../keywords/operator.md) les opérateurs `==` et `!=`. Si un type surcharge un des deux opérateurs, il doit aussi en surcharger un autre.
+Un type défini par l’utilisateur peut [surcharger](operator-overloading.md) les opérateurs `==` et `!=`. Si un type surcharge un des deux opérateurs, il doit aussi en surcharger un autre.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 

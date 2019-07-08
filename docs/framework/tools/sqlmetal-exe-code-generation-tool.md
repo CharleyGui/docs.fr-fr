@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LINQ to SQL, DBML files
 - LINQ to SQL, SQLMetal
 ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
-ms.openlocfilehash: b6f7450b4f682ea5ac69fd1bab434b27451e58df
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: d2ee9537df540936e0a5ec448e6aaddbbbc162b1
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586055"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67610540"
 ---
 # <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (outil de génération de code)
 L’outil en ligne de commande SqlMetal génère le code et le mappage du composant [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] du .NET Framework. En appliquant les options qui apparaissent ultérieurement dans cette rubrique, vous pouvez ordonner à SqlMetal d'exécuter plusieurs actions différentes, dont les suivantes :  
@@ -49,7 +49,7 @@ sqlmetal [options] [<input file>]
 |**/database:** *\<nom>*|Spécifie le catalogue de base de données sur le serveur.|  
 |**/user:** *\<nom>*|Spécifie l'ID de connexion de l'utilisateur. Valeur par défaut : Utilisez l’authentification Windows.|  
 |**/password:** *\<mot_de_passe>*|Spécifie le mot de passe d'ouverture de session. Valeur par défaut : Utilisez l’authentification Windows.|  
-|**/conn:** *\<chaîne_connexion>*|Spécifie la chaîne de connexion de base de données. Ne peut pas être utilisée avec les options **/server**, **/database**, **/user**ou **/password** .<br /><br /> N'inclut pas le nom de fichier dans la chaîne de connexion. Ajoutez plutôt le nom de fichier à la ligne de commande comme fichier d'entrée. Par exemple, la ligne suivante spécifie "c:\northwnd.mdf" comme fichier d’entrée : **sqlmetal /code:"c:\northwind.cs" /language:csharp "c:\northwnd.mdf"**.|  
+|**/conn:** *\<chaîne_connexion>*|Spécifie la chaîne de connexion de base de données. Ne peut pas être utilisée avec les options **/server**, **/database**, **/user**ou **/password** .<br /><br /> N'inclut pas le nom de fichier dans la chaîne de connexion. Ajoutez plutôt le nom de fichier à la ligne de commande comme fichier d'entrée. Par exemple, la ligne suivante spécifie "c:\northwnd.mdf" comme fichier d’entrée : **sqlmetal /code:"c:\northwind.cs" /language:csharp "c:\northwnd.mdf"** .|  
 |**/timeout:** *\<secondes>*|Spécifie la valeur du délai d'attente lorsque SqlMetal accède à la base de données. Valeur par défaut : 0 (à savoir, aucune limite de temps).|  
   
  **Options d'extraction**  
@@ -83,7 +83,7 @@ sqlmetal [options] [<input file>]
   
 |Option|Description|  
 |------------|-----------------|  
-|**\<fichier_entrée>**|Spécifie un fichier SQL Server Express .mdf, un fichier [!INCLUDE[ssEW](../../../includes/ssew-md.md)] .sdf, ou un fichier intermédiaire .dbml.|  
+|**\<fichier_entrée>**|Spécifie un fichier SQL Server Express .mdf, un fichier SQL Server Compact 3.5 .sdf, ou un fichier intermédiaire .dbml.|  
   
 ## <a name="remarks"></a>Remarques  
  La fonctionnalité SqlMetal implique en fait deux étapes :  
@@ -98,7 +98,7 @@ sqlmetal [options] [<input file>]
   
  Si **/server** n’est pas spécifié, **localhost/sqlexpress** est supposé.  
   
- [!INCLUDE[sqprsqext](../../../includes/sqprsqext-md.md)] lève une exception si une ou plusieurs conditions parmi les suivantes est vraie :  
+ Microsoft SQL Server 2005 lève une exception si au moins l’une des conditions suivantes est remplie :  
   
 - SqlMetal essaie d'extraire une procédure stockée qui s'appelle elle-même.  
   

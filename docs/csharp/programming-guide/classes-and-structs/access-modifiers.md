@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# Language, access modifiers
 - access modifiers [C#], about
 ms.assetid: 6e81ee82-224f-4a12-9baf-a0dca2656c5b
-ms.openlocfilehash: d328f8e73824a4773c6e10f506f3021d3c88d085
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: 6622612e927b800e1a4769c99df0e2fa7d99a33d
+ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57378050"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67609650"
 ---
 # <a name="access-modifiers-c-programming-guide"></a>Modificateurs d’accès (Guide de programmation C#)
 Tous les types et membres de type ont un niveau d’accessibilité, qui détermine s’ils peuvent être utilisés à partir d’un autre code de votre assembly ou d’autres assemblys. Utilisez les modificateurs d’accès suivants pour spécifier l’accessibilité d’un type ou d’un membre au moment où vous le déclarez :  
@@ -53,7 +53,7 @@ Tous les types et membres de type ont un niveau d’accessibilité, qui détermi
   
  Le type d’un membre qui est un champ, une propriété ou un événement doit être au moins aussi accessible que le membre lui-même. De la même façon, le type de retour et les types de paramètres d’un membre qui est une méthode, un indexeur ou un délégué doivent être au moins aussi accessibles que le membre lui-même. Par exemple, vous ne pouvez pas avoir une méthode public `M` qui retourne une classe `C`, sauf si `C` est également public. Vous ne pouvez pas non plus avoir une propriété protected de type `A` si `A` est déclaré comme private.  
   
- Les opérateurs définis par l’utilisateur doivent toujours être déclarés comme public. Pour plus d’informations, consultez [operator (référence C#)](../../../csharp/language-reference/keywords/operator.md).  
+ Les opérateurs définis par l’utilisateur doivent toujours être déclarés comme public et static. Pour plus d’informations, consultez [Surcharge d’opérateur](../../../csharp/language-reference/operators/operator-overloading.md).  
   
  Les finaliseurs ne peuvent pas avoir de modificateurs d’accessibilité.  
   

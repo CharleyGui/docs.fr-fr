@@ -1,20 +1,18 @@
 ---
 title: Sélectionner la version .NET Core à utiliser
 description: Découvrez comment .NET Core recherche et choisit automatiquement les versions du runtime pour votre programme. En outre, cet article vous apprend à forcer l’utiliser d’une version spécifique.
-author: billwagner
-ms.author: wiwagn
-ms.date: 06/27/2018
+author: thraka
+ms.author: adegeo
+ms.date: 06/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3e9a60221a5769d124bcc137d9401367a7713abb
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
+ms.openlocfilehash: 7ec22acf33884a5da0062b6e7aaded5dd4a0c665
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53127236"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539301"
 ---
 # <a name="select-the-net-core-version-to-use"></a>Sélectionner la version .NET Core à utiliser
-
-[!INCLUDE [topic-appliesto-net-core-2plus](../../../includes/topic-appliesto-net-core-2plus.md)]
 
 Cet article explique les stratégies utilisées par les outils .NET Core, le kit SDK et le runtime pour sélectionner les versions. Ces stratégies concilient l’exécution des applications avec les versions spécifiées et la facilité de mise à niveau des machines des développeurs et des utilisateurs finaux. Voici les actions effectuées par ces stratégies :
 
@@ -87,19 +85,20 @@ L’hôte choisit la dernière version de correctif installée sur la machine. P
 
 Si aucune version acceptable de `2.0.*` n’est trouvée, une nouvelle version `2.*` est utilisée. Par exemple, si vous avez spécifié `netcoreapp2.0` et que seule la version `2.1.0` est installée, l’application s’exécute en utilisant le runtime `2.1.0`. Ce comportement est appelé « restauration par progression d’une version mineure ». Les versions antérieures ne sont pas non plus prises en considération. Quand aucun runtime acceptable n’est installé, l’application ne s’exécute pas.
 
-Voici quelques exemples d’utilisation pour illustrer le comportement :
+Voici quelques exemples d’utilisation pour illustrer le comportement, si vous ciblez la version 2.0 :
 
-- La version 2.0.4 est requise. La version 2.0.5 est la version de correctif installée la plus élevée. La version 2.0.5 est utilisée.
-- La version 2.0.4 est requise. Aucune version 2.0.* n’est installée. La version 1.1.1 correspond à la version de runtime installée la plus élevée. Un message d’erreur s’affiche.
-- La version 2.0.4 est requise. La version 2.0.0 correspond à la version installée la plus élevée. Un message d’erreur s’affiche.
-- La version 2.0.4 est requise. Aucune version 2.0.* n’est installée. La version 2.2.2 correspond à la version de runtime 2.x installée la plus élevée. La version 2.2.2 est utilisée.
-- La version 2.0.4 est requise. Aucune version 2.x n’est installée. La version 3.0.0 (version non disponible actuellement) est installée. Un message d’erreur s’affiche.
+- 2.0 est spécifié. La version 2.0.5 est la version de correctif installée la plus élevée. La version 2.0.5 est utilisée.
+- 2.0 est spécifié. Aucune version 2.0.* n’est installée. La version 1.1.1 correspond à la version de runtime installée la plus élevée. Un message d’erreur s’affiche.
+- 2.0 est spécifié. Aucune version 2.0.* n’est installée. La version 2.2.2 correspond à la version de runtime 2.x installée la plus élevée. La version 2.2.2 est utilisée.
+- 2.0 est spécifié. Aucune version 2.x n’est installée. La version 3.0.0 est installée. Un message d’erreur s’affiche.
 
 La restauration par progression de la version mineure présente un effet secondaire qui peut toucher les utilisateurs finaux. Penchons-nous sur le scénario suivant :
 
-- La version 2.0.4 est requise. Aucune version 2.0.* n’est installée. La version 2.2.2 est installée. La version 2.2.2 est utilisée.
-- La version 2.0.5 est installée ultérieurement. La version 2.0.5 sera utilisée pour les lancements suivants de l’application, et non la version 2.2.2. Le dernier correctif de la version mineure requise est préféré à une version mineure supérieure.
-- Il est possible que les versions 2.0.5 et 2.2.2 se comportent différemment, en particulier dans certains scénarios comme la sérialisation de données binaires.
+1. L’application spécifie que 2.0 est obligatoire.
+2. En cas d’exécution, la version 2.0.* n’est pas installée, mais la version 2.2.2 l’est. La version 2.2.2 sera utilisée.
+3. Plus tard, l’utilisateur installe la version 2.0.5 et réexécute l’application. La version 2.0.5 sera maintenant utilisée.
+
+Il est possible que les versions 2.0.5 et 2.2.2 se comportent différemment, en particulier dans certains scénarios comme la sérialisation de données binaires.
 
 ## <a name="self-contained-deployments-include-the-selected-runtime"></a>Les déploiements autonomes incluent le runtime sélectionné
 
