@@ -4,16 +4,16 @@ description: Comment utiliser Model Builder ML.NET pour entraîner automatiqueme
 author: natke
 ms.date: 06/26/2019
 ms.custom: overview
-ms.openlocfilehash: 6f5bbe3c389e3ca42550a48ef3e6edbc963ac2e9
-ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
+ms.openlocfilehash: 6049db79753986544de18faebfd047aa190af153
+ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67410587"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67539812"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>Qu’est-ce que Model Builder et comment fonctionne-t-il ?
 
-Model Builder ML.NET est une extension graphique de Visual Studio facile à comprendre, qui permet de générer, d’entraîner et de déployer des modèles Machine Learning personnalisés. 
+Model Builder ML.NET est une extension graphique de Visual Studio facile à comprendre, qui permet de générer, d’entraîner et de déployer des modèles Machine Learning personnalisés.
 
 Model Builder utilise le Machine Learning automatisé (AutoML) pour explorer différents algorithmes et paramètres de machine learning afin de vous aider à trouver le modèle qui convient le mieux à votre scénario.
 
@@ -52,7 +52,7 @@ La classification binaire est utilisée pour catégoriser des données en deux c
 - Cette transaction de carte de crédit est-elle frauduleuse ? (détection des fraudes)
 
 Si votre scénario nécessite une classification en deux catégories, vous pouvez utiliser ce modèle avec votre propre jeu de données.
- 
+
 #### <a name="issue-classification-multiclass-classification"></a>Classification des problèmes (classification multiclasse)
 
 La classification des problèmes peut être utilisée pour catégoriser des problèmes indiqués dans les commentaires de clients (par exemple sur GitHub) en utilisant le titre du problème et sa description. C’est un exemple de tâche de classification multiclasse.
@@ -142,10 +142,10 @@ Vous pouvez fournir une durée d’entraînement. En règle générale, un entra
 Taille du jeu de données  | Type du jeu de données       | Avg. Durée de l’entraînement
 ------------- | ------------------ | --------------
 0 - 10 Mo     | Numérique et texte   | 10 s
-10 - 100 Mo   | Numérique et texte   | 10 min 
-100 - 500 Mo  | Numérique et texte   | 30 min 
-500 - 1 Go    | Numérique et texte   | 60 min 
-\+ de 1 Go         | Numérique et texte   | \+ de 3 heures 
+10 - 100 Mo   | Numérique et texte   | 10 min
+100 - 500 Mo  | Numérique et texte   | 30 min
+500 - 1 Go    | Numérique et texte   | 60 min
+\+ de 1 Go         | Numérique et texte   | \+ de 3 heures
 
 La durée exacte de l’entraînement dépend également des éléments suivants :
 
@@ -160,13 +160,13 @@ Model Builder a été testé à grande échelle avec un jeu de données de 1 To
 
 L’évaluation est le processus consistant à utiliser le modèle entraîné pour faire des prédictions avec de nouvelles données de test, puis à mesurer la qualité des prédictions.
 
-Model Builder divise les données d’entraînement en un jeu d’entraînement et un jeu de test. Les données d’entraînement (80 %) sont utilisées pour entraîner votre modèle et les données de test (20 %) sont conservées à part pour évaluer votre modèle.  Les métriques utilisées pour l’évaluation dépendent de la tâche ML. Pour plus d’informations, consultez [Métriques d’évaluation des modèles](resources/metrics.md).  
+Model Builder divise les données d’entraînement en un jeu d’entraînement et un jeu de test. Les données d’entraînement (80 %) sont utilisées pour entraîner votre modèle et les données de test (20 %) sont conservées à part pour évaluer votre modèle.  Les métriques utilisées pour l’évaluation dépendent de la tâche ML. Pour plus d’informations, consultez [Métriques d’évaluation des modèles](resources/metrics.md).
 
 ### <a name="sentiment-analysis-binary-classification"></a>Analyse des sentiments (classification binaire)
 
 La métrique par défaut pour les problèmes de classification binaire est la **précision**. La précision définit la proportion de prédictions correctes faites par votre modèle sur le jeu de données de test . **Plus elle est proche de 100 %, plus elle est bonne**.
 
-D’autres métriques sont produites, comme AUC (Aire sous la courbe), qui mesure le taux de vrais positifs par rapport au taux de faux positifs, et qui doit être supérieure à 0,50 pour que les modèles soient acceptables. 
+D’autres métriques sont produites, comme AUC (Aire sous la courbe), qui mesure le taux de vrais positifs par rapport au taux de faux positifs, et qui doit être supérieure à 0,50 pour que les modèles soient acceptables.
 
 Vous pouvez utiliser des métriques supplémentaires comme le score F1 pour contrôler l’équilibre entre la précision (taux de prédictions correctes par rapport au nombre total de prédictions de cette classe) et le rappel (proportion de prédictions correctes pour le nombre total de membres réels de cette classe).
 
@@ -176,15 +176,14 @@ La métrique par défaut pour les problèmes de classification multiclasse est l
 
 Pour les problèmes où les données sont catégorisées en plusieurs classes, il existe deux types de précision :
 
-- Microprécision : la fraction de prédictions correctes parmi toutes les instances. Dans le scénario de classification des problèmes, la microprécision est la proportion de problèmes entrants qui sont affectés à la catégorie correcte. 
+- Microprécision : la fraction de prédictions correctes parmi toutes les instances. Dans le scénario de classification des problèmes, la microprécision est la proportion de problèmes entrants qui sont affectés à la catégorie correcte.
 - Macroprécision : la précision moyenne au niveau de la classe. Dans le scénario de classification des problèmes, la précision est mesurée pour chaque catégorie, puis les précisions des catégories sont moyennées. Pour cette métrique, toutes les classes reçoivent une pondération égale. Pour les jeux de données parfaitement équilibrés (où il y a un nombre égal d’exemples de chaque catégorie), la microprécision et la macroprécision sont identiques.
-
 
 ### <a name="price-prediction-regression"></a>Prédiction des prix (régression)
 
 La métrique par défaut pour les problèmes de régression est **RSquared**. 1 est la meilleure valeur possible. Plus RSquared est proche de 1, meilleur est votre modèle.
 
-D’autres métriques produites, comme l’erreur absolue, l’erreur quadratique et l’erreur quadratique moyenne (RMS), peuvent être utilisées pour comprendre votre modèle et pour le comparer à d’autres modèles de régression. 
+D’autres métriques produites, comme l’erreur absolue, l’erreur quadratique et l’erreur quadratique moyenne (RMS), peuvent être utilisées pour comprendre votre modèle et pour le comparer à d’autres modèles de régression.
 
 ## <a name="improve"></a>Améliorer
 
@@ -192,7 +191,7 @@ Si le score de performances de votre modèle n’est pas aussi bon que souhaité
 
 * Entraîner sur une période de temps plus longue. Avec plus de temps, le moteur Machine Learning automatisé va essayer plus d’algorithmes et de paramètres.
 
-* Ajouter des données. Parfois, la quantité de données n’est pas suffisante pour entraîner un modèle Machine Learning de haute qualité. 
+* Ajouter des données. Parfois, la quantité de données n’est pas suffisante pour entraîner un modèle Machine Learning de haute qualité.
 
 * Équilibrer vos données. Pour les tâches de classification, vérifiez que le jeu d’entraînement est équilibré entre les différentes catégories. Par exemple, si vous avez quatre classes pour 100 exemples d’entraînement et que les deux premières classes (étiquette1 et étiquette2) sont utilisées pour 90 enregistrements, mais que les deux autres (étiquette3 et étiquette4) sont utilisées seulement sur les 10 enregistrements restants, l’absence de données équilibrées peut faire que votre modèle aura du mal à prédire correctement étiquette3 ou étiquette4.
 
