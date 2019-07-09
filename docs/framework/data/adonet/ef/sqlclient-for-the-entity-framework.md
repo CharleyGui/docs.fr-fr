@@ -2,12 +2,12 @@
 title: SqlClient pour Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 9a5d6d39-d955-43a5-a5c2-931c239398f1
-ms.openlocfilehash: d81499961e7e47bba3b2594ddddd192c87a4a936
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e8933a975c075407066bff97672f1b82f125bb47
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879114"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67662107"
 ---
 # <a name="sqlclient-for-the-entity-framework"></a>SqlClient pour Entity Framework
 Cette section décrit le fournisseur de données .NET Framework pour SQL Server (SqlClient) qui permet à Entity Framework de travailler sur Microsoft SQL Server.  
@@ -20,7 +20,7 @@ Cette section décrit le fournisseur de données .NET Framework pour SQL Serve
 ## <a name="providermanifesttoken-schema-attribute"></a>Attribut de schéma ProviderManifestToken  
  `ProviderManifestToken` est un attribut obligatoire de l'élément `Schema` en SSDL. Ce jeton permet de charger le manifeste du fournisseur pour les scénarios hors connexion. Pour plus d’informations sur `ProviderManifestToken` d’attribut, consultez [élément de schéma (SSDL)](/ef/ef6/modeling/designer/advanced/edmx/ssdl-spec#schema-element-ssdl).  
   
- SqlClient peut être utilisé comme un fournisseur de données pour différentes versions de SQL Server. Ces versions ont des fonctionnalités différentes. Par exemple, [!INCLUDE[ssVersion2000](../../../../../includes/ssversion2000-md.md)] ne prend pas en charge les types `varchar(max)` et `nvarchar(max)` introduits par [!INCLUDE[ssVersion2005](../../../../../includes/ssversion2005-md.md)].  
+ SqlClient peut être utilisé comme un fournisseur de données pour différentes versions de SQL Server. Ces versions ont des fonctionnalités différentes. Par exemple, SQL Server 2000 ne prend pas en charge `varchar(max)` et `nvarchar(max)` des types qui ont été introduits avec SQL Server 2005.  
   
  SqlClient produit et accepte les jetons du manifeste du fournisseur suivants pour les différentes versions de SQL Server.  
   

@@ -9,15 +9,15 @@ helpviewer_keywords:
 - clipping regions defined [WPF]
 - hit-test objects [WPF]
 ms.assetid: 47ad531d-a4da-4e99-b12e-1de710c32493
-ms.openlocfilehash: 57e32d3e56c3f319f7ee8aa58020d37e46a6454d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e98575b2569ebc20a5421de54bc13fb14cb3cdac
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762268"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663151"
 ---
 # <a name="geometries"></a>Géométries
-<xref:System.Windows.Media.Geometry> est une classe flexible, permettant de restituer [!INCLUDE[TLA#tla_2d](../../../../includes/tlasharptla-2d-md.md)] graphiques, les objets de test de positionnement et définir des régions de découpage  
+<xref:System.Windows.Media.Geometry> est une classe flexible, utilisée pour restituer des graphiques 2D, objets de test de positionnement et définir les régions de découpage  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Syntaxe XAML pour les tracés](path-markup-syntax.md)  

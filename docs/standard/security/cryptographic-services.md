@@ -26,12 +26,12 @@ helpviewer_keywords:
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1f773b6f7d0b8b4e0b8647b7086d8782d1afbb93
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: c026174e881768af245860d1b719184dc47f1798
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690535"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663997"
 ---
 # <a name="cryptographic-services"></a>services de chiffrement
 
@@ -207,19 +207,19 @@ Les deux parties que constituent Alice et Jean peuvent utiliser une fonction de 
 
 - Alice envoie le message de texte en clair et le message haché (signature numérique) à Jean. Jean reçoit et hache le message et compare sa valeur de hachage à celle qu'il a reçue d'Alice. Si les valeurs de hachage sont identiques, cela signifie que le message n'a pas été modifié. Si les valeurs ne sont pas identiques, le message a été modifié après avoir été rédigé par Alice.
 
-    Malheureusement, cette méthode ne permet pas d'établir l'authenticité de l'expéditeur. N'importe qui peut emprunter l'identité d'Alice et envoyer un message à Jean. L'usurpateur peut utiliser le même algorithme de hachage pour signer son message et tout ce que Jean pourra constater, c'est que le message présente la même signature. Il s'agit d'une forme d'attaque de l'intercepteur. Pour plus d’informations, consultez [exemple de Communication sécurisée génération CNG (Cryptography Next)](https://docs.microsoft.com/previous-versions/cc488018(v=vs.100)).
+  Malheureusement, cette méthode ne permet pas d'établir l'authenticité de l'expéditeur. N'importe qui peut emprunter l'identité d'Alice et envoyer un message à Jean. L'usurpateur peut utiliser le même algorithme de hachage pour signer son message et tout ce que Jean pourra constater, c'est que le message présente la même signature. Il s'agit d'une forme d'attaque de l'intercepteur. Pour plus d’informations, consultez [exemple de Communication sécurisée génération CNG (Cryptography Next)](https://docs.microsoft.com/previous-versions/cc488018(v=vs.100)).
 
 - Alice envoie le message de texte en clair à Jean via un canal public non sécurisé. Elle envoie le message haché à Jean via un canal privé sécurisé. Jean reçoit le message de texte en clair, le hache et compare le hachage à celui échangé en privé. Si les hachages correspondent, Jean peut en déduire deux choses :
 
-    - le message n'a pas été modifié ;
+  - le message n'a pas été modifié ;
 
-    - l'expéditeur du message (Alice) est authentique.
+  - l'expéditeur du message (Alice) est authentique.
 
-    Pour que ce système fonctionne, Alice doit cacher sa valeur de hachage d'origine à tous les tiers, à l'exception de Jean.
+  Pour que ce système fonctionne, Alice doit cacher sa valeur de hachage d'origine à tous les tiers, à l'exception de Jean.
 
 - Alice envoie le message de texte en clair à Jean via un canal public non sécurisé et place le message haché sur son site web accessible publiquement.
 
-    Cette méthode évite toute falsification du message en empêchant quiconque de modifier la valeur de hachage. Même si le message et son hachage peuvent être lus par n'importe qui, la valeur de hachage ne peut être modifiée que par Alice. Une personne malveillante qui chercherait à emprunter l'identité d'Alice doit avoir accès au site web d'Alice.
+  Cette méthode évite toute falsification du message en empêchant quiconque de modifier la valeur de hachage. Même si le message et son hachage peuvent être lus par n'importe qui, la valeur de hachage ne peut être modifiée que par Alice. Une personne malveillante qui chercherait à emprunter l'identité d'Alice doit avoir accès au site web d'Alice.
 
 Aucune des méthodes précédentes n'empêchera quiconque de lire les messages d'Alice, car ils sont transmis sous forme de texte en clair. Pour bénéficier d'une sécurité complète, les signatures numériques (signature des messages) et le chiffrement s'avèrent nécessaires.
 

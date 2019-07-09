@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Security Development Lifecycle (SDL), critical code management
 - threat modeling [WPF]
 ms.assetid: 0fc04394-4e47-49ca-b0cf-8cd1161d95b9
-ms.openlocfilehash: 9123d59709b483c72ab49652bda1e547430fa33d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c28fc87a71a1262ed5b3a6a04f615efc58e685ab
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663246"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663342"
 ---
 # <a name="wpf-security-strategy---security-engineering"></a>Stratégie de sécurité de WPF - ingénierie de sécurité
 Trustworthy Computing (informatique de confiance) est une initiative de Microsoft qui vise à garantir la production de code sécurisé. Un élément clé de l'initiative Trustworthy Computing est [!INCLUDE[TLA#tla_sdl](../../../includes/tlasharptla-sdl-md.md)]. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] est une pratique d’ingénierie utilisée en association avec des processus d’ingénierie standard pour faciliter la livraison de code sécurisé. [!INCLUDE[TLA2#tla_sdl](../../../includes/tla2sharptla-sdl-md.md)] se compose de dix phases qui associent les meilleures pratiques à la formalisation, à la mesurabilité et à une structure supplémentaire qui comprend les aspects suivants :  
@@ -71,13 +71,13 @@ Trustworthy Computing (informatique de confiance) est une initiative de Microsof
   
 - **Prefix/Prefast**: Recherche les failles de sécurité et les problèmes de sécurité courants dans le code non managé, telles que les dépassements de mémoire tampon, les problèmes de chaîne de format et la vérification des erreurs.  
   
-- **API interdites**: Recherche du code pour identifier une utilisation accidentelle de fonctions connues pour provoquer des problèmes de sécurité, telles que source `strcpy`. Une fois identifiées, ces fonctions sont remplacées par d'autres, plus sûres.  
+- **API interdites**: Recherche du code pour identifier une utilisation accidentelle de fonctions connues pour provoquer des problèmes de sécurité, telles que source `strcpy`. Une fois identifiées, ces fonctions sont remplacées par d’autres sont plus sécurisées.  
   
 <a name="techniques"></a>   
 ### <a name="testing-techniques"></a>Techniques de test  
  [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] utilise plusieurs techniques de test de sécurité, à savoir :  
   
-- **Test boîte blanche**: Afficher le code source les testeurs et les tests d’attaque  
+- **Test boîte blanche**: Testeurs afficher le code source et les tests d’attaque.
   
 - **Test boîte noire**: Testeurs essaie de trouver les failles de sécurité en examinant l’API et les fonctionnalités, puis essaient d’attaquer le produit.  
   

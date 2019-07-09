@@ -2,12 +2,12 @@
 title: Services WCF et ASP.NET
 ms.date: 03/30/2017
 ms.assetid: b980496a-f0b0-4319-8e55-a0f0fa32da70
-ms.openlocfilehash: ef772a360ea53c2b5f177ed88ad14c4a1e1277ef
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: d42787492b00b8e0a5a732d641947fec61b5ff96
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637555"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663680"
 ---
 # <a name="wcf-services-and-aspnet"></a>Services WCF et ASP.NET
 
@@ -29,15 +29,15 @@ Les résultats du modèle côte à côte est le suivant :
 
 - Dans un AppDomain, les fonctionnalités implémentées par le runtime HTTP s’appliquent au contenu ASP.NET mais pas à WCF. Nombreuses fonctionnalités spécifiques à HTTP de la plate-forme d’application ASP.NET ne s’appliquent pas aux Services WCF hébergés dans un AppDomain qui contient le contenu ASP.NET. Voici des exemples de ces fonctionnalités :
 
-    - HttpContext : <xref:System.Web.HttpContext.Current%2A> est toujours `null` lorsque vous y accédez à partir d’un service WCF. Utilisez plutôt <xref:System.ServiceModel.Channels.RequestContext>.
+  - HttpContext : <xref:System.Web.HttpContext.Current%2A> est toujours `null` lorsque vous y accédez à partir d’un service WCF. Utilisez plutôt <xref:System.ServiceModel.Channels.RequestContext>.
 
-    - Autorisation basée sur le fichier : Le modèle de sécurité WCF n’autorise pas la liste de contrôle d’accès (ACL) appliquée au fichier .svc du service lorsque vous décidez si une demande de service est autorisée.
+  - Autorisation basée sur le fichier : Le modèle de sécurité WCF n’autorise pas la liste de contrôle d’accès (ACL) appliquée au fichier .svc du service lorsque vous décidez si une demande de service est autorisée.
 
-    - Autorisation d’URL basée sur la configuration : De même, le modèle de sécurité WCF n’est pas conforme à toutes les règles d’autorisation basée sur l’URL spécifiées dans de System.Web \<autorisation > élément de configuration. Si un service se trouve dans un espace d’URL sécurisé par ASP, ces paramètres sont ignorés pour les demandes WCF. Règles d’autorisation de NET URL.
+  - Autorisation d’URL basée sur la configuration : De même, le modèle de sécurité WCF n’est pas conforme à toutes les règles d’autorisation basée sur l’URL spécifiées dans de System.Web \<autorisation > élément de configuration. Si un service se trouve dans un espace d’URL sécurisé par ASP, ces paramètres sont ignorés pour les demandes WCF. Règles d’autorisation de NET URL.
 
-    - Extensibilité HttpModule : L’infrastructure d’hébergement WCF WCF intercepte les demandes quand le <xref:System.Web.HttpApplication.PostAuthenticateRequest> événement est déclenché et ne retourne pas de traitement au pipeline HTTP ASP.NET. Les modules qui a été codés pour intercepter les demandes à des étapes ultérieures du pipeline n’interceptent pas les demandes WCF.
+  - Extensibilité HttpModule : L’infrastructure d’hébergement WCF WCF intercepte les demandes quand le <xref:System.Web.HttpApplication.PostAuthenticateRequest> événement est déclenché et ne retourne pas de traitement au pipeline HTTP ASP.NET. Les modules qui a été codés pour intercepter les demandes à des étapes ultérieures du pipeline n’interceptent pas les demandes WCF.
 
-    - Emprunt d’identité ASP.NET : Par défaut, WCF demande toujours s’exécute comme IIS identité de processus, même si ASP.NET est configuré pour activer l’emprunt d’identité à l’aide de System.Web \<identity impersonate = « true » / > option de configuration.
+  - Emprunt d’identité ASP.NET : Par défaut, WCF demande toujours s’exécute comme IIS identité de processus, même si ASP.NET est configuré pour activer l’emprunt d’identité à l’aide de System.Web \<identity impersonate = « true » / > option de configuration.
 
 Ces restrictions s’appliquent uniquement aux services WCF hébergés dans une application IIS. Le comportement du contenu ASP.NET n’est pas affecté par la présence de WCF.
 

@@ -2,12 +2,12 @@
 title: Remontée de la gestion des transactions
 ms.date: 03/30/2017
 ms.assetid: 1e96331e-31b6-4272-bbbd-29ed1e110460
-ms.openlocfilehash: 1e40244e1f6b5ffd7b52584a5da121d1203f8376
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: df2597d6fcce7fbd51f6f17bd42469cb7fcf3fdf
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64630570"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67662463"
 ---
 # <a name="transaction-management-escalation"></a>Remontée de la gestion des transactions
 Windows héberge un ensemble de services et de modules qui constituent ensemble un gestionnaire de transactions. La remontée de la gestion des transactions décrit le processus de migration d'une transaction de l'un des composants du gestionnaire de transactions à un autre.  
@@ -25,7 +25,7 @@ Windows héberge un ensemble de services et de modules qui constituent ensemble 
   
 - lorsqu'au moins une ressource durable qui ne prend pas en charge les notifications à phase unique est inscrite pour la transaction.  
   
-- lorsqu'au moins deux ressources durables qui prennent en charge les notifications à phase unique sont inscrites pour la transaction. Par exemple, l'inscription à une connexion unique avec [!INCLUDE[sqprsqlong](../../../../includes/sqprsqlong-md.md)] n'entraîne pas la promotion d'une transaction. Toutefois, lorsque vous établissez une seconde connexion à une base de données [!INCLUDE[sqprsqlong](../../../../includes/sqprsqlong-md.md)], entraînant son inscription, l'infrastructure <xref:System.Transactions> détecte qu'il s'agit de la seconde ressource durable dans la transaction et la remonte vers une transaction MSDTC.  
+- lorsqu'au moins deux ressources durables qui prennent en charge les notifications à phase unique sont inscrites pour la transaction. Par exemple, l’inscription d’une seule connexion avec SQL Server 2005 n’entraîne pas une transaction à promouvoir. Toutefois, chaque fois que vous ouvrez une seconde connexion à une base de données SQL Server 2005 à l’origine de la base de données à inscrire, le <xref:System.Transactions> infrastructure détecte qu’il est la seconde ressource durable dans la transaction et qu’il transmet à une transaction MSDTC.  
   
 - Une requête visant à « marshaler » la transaction vers un domaine d'application ou un processus différent est appelée. Par exemple, la sérialisation de l'objet de transaction au-delà d'une limite de domaine d'application. L'objet de transaction est marshalé par valeur, ce qui signifie que chaque tentative de passage au-delà d'une limite de domaine d'application (même au sein d'un même processus) entraîne la sérialisation de l'objet de transaction. Vous pouvez passer les objets de transaction en appelant une méthode distante qui utilise <xref:System.Transactions.Transaction> en tant que paramètre ou tenter d'accéder à un composant distant pris en charge par transaction. Cette opération entraîne la sérialisation de l'objet de transaction et provoque une remontée, comme lorsqu'une transaction est sérialisée au-delà d'un domaine d'application. Il est distribué et le gestionnaire de transactions local devient inadapté.  
   

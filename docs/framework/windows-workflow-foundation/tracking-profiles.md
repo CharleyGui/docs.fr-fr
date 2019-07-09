@@ -2,12 +2,12 @@
 title: Modèles de suivi
 ms.date: 03/30/2017
 ms.assetid: 22682566-1cd9-4672-9791-fb3523638e18
-ms.openlocfilehash: c934ec9fd0524506577ab4457a2ec194d4d0cba7
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: a643cf37bbb3e72baefb434249aa54b386060627
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589937"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67660927"
 ---
 # <a name="tracking-profiles"></a>Modèles de suivi
 
@@ -112,199 +112,199 @@ Les modèles de suivi sont structurés comme des abonnements déclaratifs aux en
 
 - Objet <xref:System.Activities.Tracking.WorkflowInstanceQuery> - Permet de suivre les changements dans le cycle de vie de l'instance de flux de travail comme les événements `Started` et `Completed` montrés précédemment. L'objet <xref:System.Activities.Tracking.WorkflowInstanceQuery> sert à s'abonner aux objets <xref:System.Activities.Tracking.TrackingRecord> suivants :
 
-    - <xref:System.Activities.Tracking.WorkflowInstanceRecord>
+  - <xref:System.Activities.Tracking.WorkflowInstanceRecord>
 
-    - <xref:System.Activities.Tracking.WorkflowInstanceAbortedRecord>
+  - <xref:System.Activities.Tracking.WorkflowInstanceAbortedRecord>
 
-    - <xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord>
+  - <xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord>
 
-    - <xref:System.Activities.Tracking.WorkflowInstanceTerminatedRecord>
+  - <xref:System.Activities.Tracking.WorkflowInstanceTerminatedRecord>
 
-    - <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>
+  - <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>
 
-    Les états auxquels vous pouvez vous abonner sont spécifiés dans la classe <xref:System.Activities.Tracking.WorkflowInstanceStates>.
+  Les états auxquels vous pouvez vous abonner sont spécifiés dans la classe <xref:System.Activities.Tracking.WorkflowInstanceStates>.
 
-    L'exemple suivant indique la configuration ou le code servant à s'abonner aux enregistrements de suivi de flux de travail au niveau de l'instance, pour l'état de l'instance `Started`, à l'aide de l'objet <xref:System.Activities.Tracking.WorkflowInstanceQuery>.
+  L'exemple suivant indique la configuration ou le code servant à s'abonner aux enregistrements de suivi de flux de travail au niveau de l'instance, pour l'état de l'instance `Started`, à l'aide de l'objet <xref:System.Activities.Tracking.WorkflowInstanceQuery>.
 
-    ```xml
-    <workflowInstanceQueries>
-        <workflowInstanceQuery>
-          <states>
-            <state name="Started"/>
-          </states>
-        </workflowInstanceQuery>
-    </workflowInstanceQueries>
-    ```
+  ```xml
+  <workflowInstanceQueries>
+      <workflowInstanceQuery>
+        <states>
+          <state name="Started"/>
+        </states>
+      </workflowInstanceQuery>
+  </workflowInstanceQueries>
+  ```
 
-    ```csharp
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()
-    {
-        Name = "Sample Tracking Profile",
-        Queries =
-        {
-            new WorkflowInstanceQuery()
-            {
-                States = { WorkflowInstanceStates.Started}
-            }
-        }
-    };
-    ```
+  ```csharp
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()
+  {
+      Name = "Sample Tracking Profile",
+      Queries =
+      {
+          new WorkflowInstanceQuery()
+          {
+              States = { WorkflowInstanceStates.Started}
+          }
+      }
+  };
+  ```
 
 - Objet <xref:System.Activities.Tracking.ActivityStateQuery> - Permet de suivre les changements dans le cycle de vie des activités qui composent une instance de workflow. Par exemple, vous souhaiterez effectuer le suivi de chaque fois que l’activité « Envoyer un message électronique » se termine dans une instance de workflow. Cette requête est nécessaire pour qu'un objet <xref:System.Activities.Tracking.TrackingParticipant> s'abonne à des objets <xref:System.Activities.Tracking.ActivityStateRecord>. Les états disponibles auxquels s'abonner sont spécifiés dans l'objet <xref:System.Activities.Tracking.ActivityStates>.
 
-    L'exemple suivant indique la configuration et le code servant à s'abonner à des enregistrements de suivi d'état d'activité qui utilisent l'objet <xref:System.Activities.Tracking.ActivityStateQuery> pour l'activité `SendEmailActivity`.
+  L'exemple suivant indique la configuration et le code servant à s'abonner à des enregistrements de suivi d'état d'activité qui utilisent l'objet <xref:System.Activities.Tracking.ActivityStateQuery> pour l'activité `SendEmailActivity`.
 
-    ```xml
-    <activityStateQueries>
-      <activityStateQuery activityName="SendEmailActivity">
-        <states>
-          <state name="Closed"/>
-        </states>
-      </activityStateQuery>
-    </activityStateQueries>
-    ```
+  ```xml
+  <activityStateQueries>
+    <activityStateQuery activityName="SendEmailActivity">
+      <states>
+        <state name="Closed"/>
+      </states>
+    </activityStateQuery>
+  </activityStateQueries>
+  ```
 
-    ```csharp
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()
-    {
-        Name = "Sample Tracking Profile",
-        Queries =
-        {
-            new ActivityStateQuery()
-            {
-                ActivityName = "SendEmailActivity",
-                States = { ActivityStates.Closed }
-            }
-        }
-    };
-    ```
+  ```csharp
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()
+  {
+      Name = "Sample Tracking Profile",
+      Queries =
+      {
+          new ActivityStateQuery()
+          {
+              ActivityName = "SendEmailActivity",
+              States = { ActivityStates.Closed }
+          }
+      }
+  };
+  ```
 
-    > [!NOTE]
-    > Si plusieurs éléments activityStateQuery ont le même nom, seuls les états dans le dernier élément sont utilisés dans le modèle de suivi.
+  > [!NOTE]
+  > Si plusieurs éléments activityStateQuery ont le même nom, seuls les états dans le dernier élément sont utilisés dans le modèle de suivi.
 
 - Objet <xref:System.Activities.Tracking.ActivityScheduledQuery> - Cette requête vous permet de suivre une activité devant être exécutée par une activité parente. La requête est nécessaire pour qu'un objet <xref:System.Activities.Tracking.TrackingParticipant> s'abonne à des objets <xref:System.Activities.Tracking.ActivityScheduledRecord>.
 
-    L'exemple suivant indique la configuration et le code servant à s'abonner à des enregistrements associés à l'activité enfant `SendEmailActivity` en cours de planification, à l'aide de l'objet <xref:System.Activities.Tracking.ActivityScheduledQuery>.
+  L'exemple suivant indique la configuration et le code servant à s'abonner à des enregistrements associés à l'activité enfant `SendEmailActivity` en cours de planification, à l'aide de l'objet <xref:System.Activities.Tracking.ActivityScheduledQuery>.
 
-    ```xml
-    <activityScheduledQueries>
-      <activityScheduledQuery activityName="ProcessNotificationsActivity" childActivityName="SendEmailActivity" />
-     </activityScheduledQueries>
-    ```
+  ```xml
+  <activityScheduledQueries>
+    <activityScheduledQuery activityName="ProcessNotificationsActivity" childActivityName="SendEmailActivity" />
+  </activityScheduledQueries>
+  ```
 
-    ```csharp
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()
-    {
-        Name = "Sample Tracking Profile",
-        Queries =
-        {
-            new ActivityScheduledQuery()
-            {
-                ActivityName = "ProcessNotificationsActivity",
-                ChildActivityName = "SendEmailActivity"
-            }
-        }
-    };
-    ```
+  ```csharp
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()
+  {
+      Name = "Sample Tracking Profile",
+      Queries =
+      {
+          new ActivityScheduledQuery()
+          {
+              ActivityName = "ProcessNotificationsActivity",
+              ChildActivityName = "SendEmailActivity"
+          }
+      }
+  };
+  ```
 
 - Objet <xref:System.Activities.Tracking.FaultPropagationQuery> - Permet de suivre la gestion des erreurs qui se produisent dans une activité. La requête est nécessaire pour qu'un objet <xref:System.Activities.Tracking.TrackingParticipant> s'abonne à des objets <xref:System.Activities.Tracking.FaultPropagationRecord>.
 
-    L'exemple suivant indique la configuration et le code servant à s'abonner à des enregistrements associés à la propagation d'erreur à l'aide de l'objet <xref:System.Activities.Tracking.FaultPropagationQuery>.
+  L'exemple suivant indique la configuration et le code servant à s'abonner à des enregistrements associés à la propagation d'erreur à l'aide de l'objet <xref:System.Activities.Tracking.FaultPropagationQuery>.
 
-    ```xml
-    <faultPropagationQueries>
-      <faultPropagationQuery faultSourceActivityName="SendEmailActivity" faultHandlerActivityName="NotificationsFaultHandler" />
-    </faultPropagationQueries>
-    ```
+  ```xml
+  <faultPropagationQueries>
+    <faultPropagationQuery faultSourceActivityName="SendEmailActivity" faultHandlerActivityName="NotificationsFaultHandler" />
+  </faultPropagationQueries>
+  ```
 
-    ```csharp
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()
-    {
-        Name = "Sample Tracking Profile",
-        Queries =
-        {
-            new FaultPropagationQuery()
-            {
-                FaultSourceActivityName = "SendEmailActivity",
-                FaultHandlerActivityName = "NotificationsFaultHandler"
-            }
-        }
-    };
-    ```
+  ```csharp
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()
+  {
+      Name = "Sample Tracking Profile",
+      Queries =
+      {
+          new FaultPropagationQuery()
+          {
+              FaultSourceActivityName = "SendEmailActivity",
+              FaultHandlerActivityName = "NotificationsFaultHandler"
+          }
+      }
+  };
+  ```
 
 - Objet <xref:System.Activities.Tracking.CancelRequestedQuery> - Permet de suivre les demandes d'annulation d'une activité enfant par l'activité parente. La requête est nécessaire pour qu'un objet <xref:System.Activities.Tracking.TrackingParticipant> s'abonne à des objets <xref:System.Activities.Tracking.CancelRequestedRecord>.
 
-    La configuration et le code utilisé pour s’abonner aux enregistrements liés à l’activité à l’aide de l’annulation <xref:System.Activities.Tracking.CancelRequestedQuery> est illustré dans l’exemple suivant.
+  La configuration et le code utilisé pour s’abonner aux enregistrements liés à l’activité à l’aide de l’annulation <xref:System.Activities.Tracking.CancelRequestedQuery> est illustré dans l’exemple suivant.
 
-    ```xml
-    <cancelRequestedQueries>
-      <cancelRequestedQuery activityName="ProcessNotificationsActivity" childActivityName="SendEmailActivity" />
-    </cancelRequestedQueries>
-    ```
+  ```xml
+  <cancelRequestedQueries>
+    <cancelRequestedQuery activityName="ProcessNotificationsActivity" childActivityName="SendEmailActivity" />
+  </cancelRequestedQueries>
+  ```
 
-    ```csharp
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()
-    {
-        Name = "Sample Tracking Profile",
-        Queries =
-        {
-            new CancelRequestedQuery()
-            {
-                ActivityName = "ProcessNotificationsActivity",
-                ChildActivityName = "SendEmailActivity"
-            }
-        }
-    };
-    ```
+  ```csharp
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()
+  {
+      Name = "Sample Tracking Profile",
+      Queries =
+      {
+          new CancelRequestedQuery()
+          {
+              ActivityName = "ProcessNotificationsActivity",
+              ChildActivityName = "SendEmailActivity"
+          }
+      }
+  };
+  ```
 
 - Objet <xref:System.Activities.Tracking.CustomTrackingQuery> - Permet de suivre les événements que vous définissez dans vos activités de code. La requête est nécessaire pour qu'un objet <xref:System.Activities.Tracking.TrackingParticipant> s'abonne à des objets <xref:System.Activities.Tracking.CustomTrackingRecord>.
 
-    L'exemple suivant indique la configuration et le code servant à s'abonner à des enregistrements associés aux enregistrements de suivi personnalisé à l'aide de l'objet <xref:System.Activities.Tracking.CustomTrackingQuery>.
+  L'exemple suivant indique la configuration et le code servant à s'abonner à des enregistrements associés aux enregistrements de suivi personnalisé à l'aide de l'objet <xref:System.Activities.Tracking.CustomTrackingQuery>.
 
-    ```xml
-    <customTrackingQueries>
-      <customTrackingQuery name="EmailAddress" activityName="SendEmailActivity" />
-    </customTrackingQueries>
-    ```
+  ```xml
+  <customTrackingQueries>
+    <customTrackingQuery name="EmailAddress" activityName="SendEmailActivity" />
+  </customTrackingQueries>
+  ```
 
-    ```csharp
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()
-    {
-        Name = "Sample Tracking Profile",
-        Queries =
-        {
-            new CustomTrackingQuery()
-            {
-                Name = "EmailAddress",
-                ActivityName = "SendEmailActivity"
-            }
-        }
-    };
-    ```
+  ```csharp
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()
+  {
+      Name = "Sample Tracking Profile",
+      Queries =
+      {
+          new CustomTrackingQuery()
+          {
+              Name = "EmailAddress",
+              ActivityName = "SendEmailActivity"
+          }
+      }
+  };
+  ```
 
 - Objet <xref:System.Activities.Tracking.BookmarkResumptionQuery> - Permet de suivre la reprise d'un signet dans une instance de flux de travail. Cette requête est nécessaire pour qu'un objet <xref:System.Activities.Tracking.TrackingParticipant> s'abonne à des objets <xref:System.Activities.Tracking.BookmarkResumptionRecord>.
 
-    L'exemple suivant indique la configuration et le code servant à s'abonner à des enregistrements associés à la reprise de signet à l'aide de l'objet <xref:System.Activities.Tracking.BookmarkResumptionQuery>.
+  L'exemple suivant indique la configuration et le code servant à s'abonner à des enregistrements associés à la reprise de signet à l'aide de l'objet <xref:System.Activities.Tracking.BookmarkResumptionQuery>.
 
-    ```xml
-    <bookmarkResumptionQueries>
-      <bookmarkResumptionQuery name="SentEmailBookmark" />
-    </bookmarkResumptionQueries>
-    ```
+  ```xml
+  <bookmarkResumptionQueries>
+    <bookmarkResumptionQuery name="SentEmailBookmark" />
+  </bookmarkResumptionQueries>
+  ```
 
-    ```csharp
-    TrackingProfile sampleTrackingProfile = new TrackingProfile()
-    {
-        Name = "Sample Tracking Profile",
-        Queries =
-        {
-            new BookmarkResumptionQuery()
-            {
-                Name = "sentEmailBookmark"
-            }
-        }
-    };
-    ```
+  ```csharp
+  TrackingProfile sampleTrackingProfile = new TrackingProfile()
+  {
+      Name = "Sample Tracking Profile",
+      Queries =
+      {
+          new BookmarkResumptionQuery()
+          {
+              Name = "sentEmailBookmark"
+          }
+      }
+  };
+  ```
 
 ### <a name="annotations"></a>Annotations
 
@@ -352,38 +352,38 @@ Voici quelques exemples communs de profils de suivi :
 
 - Modèle de suivi permettant d'obtenir les enregistrements et les erreurs de l'instance de flux de travail.
 
-```xml
-<trackingProfile name="Instance and Fault Records">
-  <workflow activityDefinitionId="*">
-    <workflowInstanceQueries>
-      <workflowInstanceQuery>
-        <states>
-          <state name="*" />
-        </states>
-      </workflowInstanceQuery>
-    </workflowInstanceQueries>
-    <activityStateQueries>
-      <activityStateQuery activityName="*">
-        <states>
-          <state name="Faulted"/>
-        </states>
-      </activityStateQuery>
-    </activityStateQueries>
-  </workflow>
-</trackingProfile>
-```
+  ```xml
+  <trackingProfile name="Instance and Fault Records">
+    <workflow activityDefinitionId="*">
+      <workflowInstanceQueries>
+        <workflowInstanceQuery>
+          <states>
+            <state name="*" />
+          </states>
+        </workflowInstanceQuery>
+      </workflowInstanceQueries>
+      <activityStateQueries>
+        <activityStateQuery activityName="*">
+          <states>
+            <state name="Faulted"/>
+          </states>
+        </activityStateQuery>
+      </activityStateQueries>
+    </workflow>
+  </trackingProfile>
+  ```
 
-1. Modèle de suivi permettant d'obtenir tous les enregistrements de suivi personnalisé.
+- Modèle de suivi permettant d'obtenir tous les enregistrements de suivi personnalisé.
 
-```xml
-<trackingProfile name="Instance_And_Custom_Records">
-  <workflow activityDefinitionId="*">
-    <customTrackingQueries>
-      <customTrackingQuery name="*" activityName="*" />
-    </customTrackingQueries>
-  </workflow>
-</trackingProfile>
-```
+  ```xml
+  <trackingProfile name="Instance_And_Custom_Records">
+    <workflow activityDefinitionId="*">
+      <customTrackingQueries>
+        <customTrackingQuery name="*" activityName="*" />
+      </customTrackingQueries>
+    </workflow>
+  </trackingProfile>
+  ```
 
 ## <a name="see-also"></a>Voir aussi
 

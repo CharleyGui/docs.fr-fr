@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: acd71129-5ff0-4b4e-b266-c72cc0c53601
-ms.openlocfilehash: e84319c60534c3ecf154c3f58973bcc429a73842
-ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
+ms.openlocfilehash: d7d87a3e95cf66efb91b71f6ff3c7c9bb1fbb311
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67539821"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67662151"
 ---
 # <a name="known-issues-and-considerations-in-linq-to-entities"></a>Problèmes connus et éléments à prendre en compte dans LINQ to Entities
 Cette section fournit des informations sur les problèmes connus avec LINQ aux requêtes d’entités.  
@@ -35,7 +35,7 @@ Cette section fournit des informations sur les problèmes connus avec LINQ aux r
   
 <a name="OrderingInfoLost"></a>   
 ## <a name="ordering-information-lost"></a>Perte des informations de tri  
- La projection de colonnes dans un type anonyme entraînera la perte des informations de tri dans certains requêtes exécutées sur une base de données [!INCLUDE[ssVersion2005](../../../../../../includes/ssversion2005-md.md)] définie à un niveau de compatibilité de « 80 ».  Cela se produit lorsqu'un nom de colonne figurant dans la liste Order by correspond à un nom de colonne dans le sélecteur, comme l'illustre l'exemple suivant :  
+ Projection de colonnes dans un type anonyme entraînera des informations de classement perdu de certaines requêtes sont exécutées sur une base de données SQL Server 2005 un niveau de compatibilité de « 80 ».  Cela se produit lorsqu'un nom de colonne figurant dans la liste Order by correspond à un nom de colonne dans le sélecteur, comme l'illustre l'exemple suivant :  
   
  [!code-csharp[DP L2E Conceptual Examples#SBUDT543840](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#sbudt543840)]
  [!code-vb[DP L2E Conceptual Examples#SBUDT543840](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#sbudt543840)]  

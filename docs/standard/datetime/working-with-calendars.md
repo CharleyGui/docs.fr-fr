@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0c1534e5-979b-4c8a-a588-1c24301aefb3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ed276d8026201af94a0259c4258d5c50fa67c0f3
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 989c1dec8056502e94e4b9652af89d66a2795dd5
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053239"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661154"
 ---
 # <a name="working-with-calendars"></a>Utilisation des calendriers
 
@@ -138,12 +138,12 @@ Toutefois, il existe une exception importante. La valeur par défaut (non initia
 Les calendriers divisent en général les dates en ères. Toutefois, le <xref:System.Globalization.Calendar> classes dans .NET ne prennent pas en charge chaque ère définie par un calendrier et la plupart de la <xref:System.Globalization.Calendar> classes prennent en charge qu’une seule ère. Seules les classes <xref:System.Globalization.JapaneseCalendar> et <xref:System.Globalization.JapaneseLunisolarCalendar> prennent en charge plusieurs ères.
 
 > [!IMPORTANT]
->  L’ère Reiwa, une nouvelle ère dans la <xref:System.Globalization.JapaneseCalendar> et <xref:System.Globalization.JapaneseLunisolarCalendar>, commence le 1 mai 2019. Ce changement affecte toutes les applications qui utilisent ces calendriers. Consultez les articles suivants pour plus d’informations :
+> L’ère Reiwa, une nouvelle ère dans la <xref:System.Globalization.JapaneseCalendar> et <xref:System.Globalization.JapaneseLunisolarCalendar>, commence le 1 mai 2019. Ce changement affecte toutes les applications qui utilisent ces calendriers. Consultez les articles suivants pour plus d’informations :
 > - [Gestion d’une nouvelle ère dans le calendrier japonais dans .NET](https://devblogs.microsoft.com/dotnet/handling-a-new-era-in-the-japanese-calendar-in-net/), qui documente les fonctionnalités ajoutées à .NET pour prendre en charge plusieurs ères de calendriers et traite des meilleures pratiques à utiliser lors de la gestion des calendriers d’ère multi.
 > - [Préparer votre application pour la modification de l’ère japonais](/windows/uwp/design/globalizing/japanese-era-change), qui fournit des informations sur le test de vos applications sur Windows pour garantir leur disponibilité pour la modification de l’ère.
 > - [Résumé de la nouvelle ère japonais met à jour pour .NET Framework](https://support.microsoft.com/help/4477957/new-japanese-era-updates-for-net-framework), qui répertorie les mises à jour de .NET Framework pour les différentes versions de Windows qui sont liées à la nouvelle ère de calendrier japonais, note des nouvelles fonctionnalités de .NET Framework pour la prise en charge de l’ère multi et inclut éléments à rechercher dans le test de vos applications.
 
-Une ère dans la plupart des calendriers désigne une période de temps extrêmement long. Dans le calendrier grégorien, par exemple, l’ère actuelle s’étend sur plus de mille ans de deux. Pour le <xref:System.Globalization.JapaneseCalendar> et <xref:System.Globalization.JapaneseLunisolarCalendar>, les deux calendriers qui prennent en charge plusieurs ères, cela n’est pas le cas. Une ère correspond à la période d’un calendrier d’impérial. Prise en charge de plusieurs ères, en particulier lorsque la limite supérieure de l’ère actuelle est inconnue, pose des défis particuliers. 
+Une ère dans la plupart des calendriers désigne une période de temps extrêmement long. Dans le calendrier grégorien, par exemple, l’ère actuelle s’étend sur plus de mille ans de deux. Pour le <xref:System.Globalization.JapaneseCalendar> et <xref:System.Globalization.JapaneseLunisolarCalendar>, les deux calendriers qui prennent en charge plusieurs ères, cela n’est pas le cas. Une ère correspond à la période d’un calendrier d’impérial. Prise en charge de plusieurs ères, en particulier lorsque la limite supérieure de l’ère actuelle est inconnue, pose des défis particuliers.
 
 ### <a name="eras-and-era-names"></a>Ères et noms d’ères
 
@@ -181,21 +181,21 @@ Toutefois, si l’ère change, l’objectif de ce code devient ambigu. La date d
 
 - La valeur de date et l’heure à l’aide de la valeur par défaut d’instancier <xref:System.Globalization.GregorianCalendar> classe. Vous pouvez ensuite utiliser le calendrier japonais ou le calendrier lunisolaire japonais pour la représentation sous forme de chaîne de dates, comme le montre l’exemple suivant.
 
-   [!code-csharp[Insantiating a Gregorian date](~/samples/snippets/standard/datetime/calendars/gregorian/cs/program.cs)]
-   [!code-vb[Instantiating a Gregorian date](~/samples/snippets/standard/datetime/calendars/gregorian/vb/program.vb)]
+  [!code-csharp[Insantiating a Gregorian date](~/samples/snippets/standard/datetime/calendars/gregorian/cs/program.cs)]
+  [!code-vb[Instantiating a Gregorian date](~/samples/snippets/standard/datetime/calendars/gregorian/vb/program.vb)]
 
 - Appeler une méthode de date et d’heure qui spécifie explicitement une ère. Cela inclut les méthodes suivantes :
 
-   - Le <xref:System.Globalization.Calendar.ToDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)> méthode de la <xref:System.Globalization.JapaneseCalendar> ou <xref:System.Globalization.JapaneseLunisolarCalendar> classe.
+  - Le <xref:System.Globalization.Calendar.ToDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)> méthode de la <xref:System.Globalization.JapaneseCalendar> ou <xref:System.Globalization.JapaneseLunisolarCalendar> classe.
 
-   - Un <xref:System.DateTime> ou <xref:System.DateTimeOffset> méthode, d’analyse comme <xref:System.DateTime.Parse%2A>, <xref:System.DateTime.TryParse%2A>, <xref:System.DateTime.ParseExact%2A>, ou <xref:System.DateTime.TryParseExact%2A>, qui inclut la chaîne à analyser et éventuellement un <xref:System.Globalization.DateTimeStyles> argument si la culture actuelle est le japonais (Japon) ( » ja-JP ») et le calendrier de cette culture est la <xref:System.Globalization.JapaneseCalendar>. La chaîne à analyser doit inclure l’ère.
+  - Un <xref:System.DateTime> ou <xref:System.DateTimeOffset> méthode, d’analyse comme <xref:System.DateTime.Parse%2A>, <xref:System.DateTime.TryParse%2A>, <xref:System.DateTime.ParseExact%2A>, ou <xref:System.DateTime.TryParseExact%2A>, qui inclut la chaîne à analyser et éventuellement un <xref:System.Globalization.DateTimeStyles> argument si la culture actuelle est le japonais (Japon) ( » ja-JP ») et le calendrier de cette culture est la <xref:System.Globalization.JapaneseCalendar>. La chaîne à analyser doit inclure l’ère.
 
-   - Un <xref:System.DateTime> ou <xref:System.DateTimeOffset> l’analyse de méthode qui inclut un `provider` paramètre de type <xref:System.IFormatProvider>. `provider` doit être un <xref:System.Globalization.CultureInfo> objet qui représente la culture Japonais (Japon) (« ja-JP ») dont le calendrier actuel est <xref:System.Globalization.JapaneseCalendar> ou un <xref:System.Globalization.DateTimeFormatInfo> de l’objet dont la propriété <xref:System.Globalization.DateTimeFormatInfo.Calendar> propriété est <xref:System.Globalization.JapaneseCalendar>. La chaîne à analyser doit inclure l’ère.
+  - Un <xref:System.DateTime> ou <xref:System.DateTimeOffset> l’analyse de méthode qui inclut un `provider` paramètre de type <xref:System.IFormatProvider>. `provider` doit être un <xref:System.Globalization.CultureInfo> objet qui représente la culture Japonais (Japon) (« ja-JP ») dont le calendrier actuel est <xref:System.Globalization.JapaneseCalendar> ou un <xref:System.Globalization.DateTimeFormatInfo> de l’objet dont la propriété <xref:System.Globalization.DateTimeFormatInfo.Calendar> propriété est <xref:System.Globalization.JapaneseCalendar>. La chaîne à analyser doit inclure l’ère.
 
-   L’exemple suivant utilise trois de ces méthodes pour instancier une date et une heure dans l’ère Meiji, qui a commencé le 8 septembre 1868 et a pris fin le 29 juillet 1912. 
+  L’exemple suivant utilise trois de ces méthodes pour instancier une date et une heure dans l’ère Meiji, qui a commencé le 8 septembre 1868 et a pris fin le 29 juillet 1912.
 
-   [!code-csharp[A date in a specified era](~/samples/snippets/standard/datetime/calendars/specify-era/cs/program.cs)]
-   [!code-vb[A date in a specified era](~/samples/snippets/standard/datetime/calendars/specify-era/vb/program.vb)]
+  [!code-csharp[A date in a specified era](~/samples/snippets/standard/datetime/calendars/specify-era/cs/program.cs)]
+  [!code-vb[A date in a specified era](~/samples/snippets/standard/datetime/calendars/specify-era/vb/program.vb)]
 
 > [!TIP]
 > Lorsque vous travaillez avec des calendriers qui prennent en charge plusieurs ères, *toujours* la date du calendrier grégorien permet d’instancier une date, ou spécifiez l’ère lorsque vous instanciez une date et heure en fonction de ce calendrier.
@@ -212,40 +212,40 @@ Très bien comme des calendriers individuels ont pris en charge les plages de da
 
 L’exemple suivant tente d’instancier une date dans l’année 65e de l’ère Showa, qui a commencé le 25 décembre 1926 et a pris fin le 7 janvier 1989. Cette date correspond à 9 janvier 1990, qui est en dehors de la plage de l’ère Showa dans le <xref:System.Globalization.JapaneseCalendar>. Comme l’illustre la sortie de l’exemple, la date affichée par l’exemple est le 9 janvier 1990, dans la deuxième année de l’ère Heisei.
 
-   [!code-csharp[Relaxed range checks](~/samples/snippets/standard/datetime/calendars/relaxed-range/cs/program.cs)]
-   [!code-vb[Relaxed range checks](~/samples/snippets/standard/datetime/calendars/relaxed-range/vb/program.vb)]
+  [!code-csharp[Relaxed range checks](~/samples/snippets/standard/datetime/calendars/relaxed-range/cs/program.cs)]
+  [!code-vb[Relaxed range checks](~/samples/snippets/standard/datetime/calendars/relaxed-range/vb/program.vb)]
 
 Si les vérifications de la plage souple sont indésirables, vous pouvez restaurer les vérifications de la plage strict dans une de plusieurs façons, selon la version de .NET sur laquelle votre application est en cours d’exécution :
 
 - **.NET core :** Vous pouvez ajouter le code suivant à la *. netcore.runtime.json* fichier de configuration :
 
-   ```json
-   "runtimeOptions": {
-      "configProperties": {
-         "Switch.System.Globalization.EnforceJapaneseEraYearRanges": true
-      } 
-   }
-   ```
+  ```json
+  "runtimeOptions": {
+    "configProperties": {
+        "Switch.System.Globalization.EnforceJapaneseEraYearRanges": true
+    }
+  }
+  ```
 
 - **.NET framework 4.6 ou version ultérieure :** Vous pouvez définir le commutateur AppContext suivant :
 
-   ```xml
-   <?xml version="1.0" encoding="utf-8"?>
-   <configuration>
-     <runtime>
-       <AppContextSwitchOverrides value="Switch.System.Globalization.EnforceJapaneseEraYearRanges=true" />
-     </runtime>
-   </configuration>
-   ```
+  ```xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <configuration>
+    <runtime>
+      <AppContextSwitchOverrides value="Switch.System.Globalization.EnforceJapaneseEraYearRanges=true" />
+    </runtime>
+  </configuration>
+  ```
 
 - **.NET framework 4.5.2 ou version antérieure :** Vous pouvez définir la valeur de Registre suivante :
 
-   |  |  |
-   |--|--|
-   |Touche | HKEY_LOCAL_MACHINE\Software\Microsoft.NETFramework\AppContext |
-   |Nom | Switch.System.Globalization.EnforceJapaneseEraYearRanges |
-   |Type | REG_SZ |
-   |Value | 1 |
+  |  |  |
+  |--|--|
+  |Touche | HKEY_LOCAL_MACHINE\Software\Microsoft.NETFramework\AppContext |
+  |Nom | Switch.System.Globalization.EnforceJapaneseEraYearRanges |
+  |Type | REG_SZ |
+  |Value | 1 |
 
 Avec les vérifications de la plage strict est activées, l’exemple précédent lève une <xref:System.ArgumentOutOfRangeException> et affiche la sortie suivante :
 
@@ -287,40 +287,40 @@ Dans les calendriers japonais, la première année d’une ère est appelée Gan
 
 Par exemple, l’exemple suivant affiche une date dans la première année de l’ère Heisei dans le <xref:System.Globalization.JapaneseCalendar> .
 
-   [!code-csharp[gannen](~/samples/snippets/standard/datetime/calendars/gannen/cs/program.cs)]
-   [!code-vb[gannen](~/samples/snippets/standard/datetime/calendars/gannen/vb/gannen-fmt.vb)]
+  [!code-csharp[gannen](~/samples/snippets/standard/datetime/calendars/gannen/cs/program.cs)]
+  [!code-vb[gannen](~/samples/snippets/standard/datetime/calendars/gannen/vb/gannen-fmt.vb)]
 
 Si ce comportement n’est pas souhaitable dans les opérations de mise en forme, vous pouvez restaurer le comportement précédent, qui représente toujours la première année d’une ère « 1 » au lieu de « Gannen », en procédant comme suit, selon la version de .NET :
 
 - **.NET core :** Vous pouvez ajouter le code suivant à la *. netcore.runtime.json* fichier de configuration :
 
-   ```json
-   "runtimeOptions": {
-      "configProperties": {
-         "Switch.System.Globalization.FormatJapaneseFirstYearAsANumber": true
-      } 
-   }
-   ```
+  ```json
+  "runtimeOptions": {
+    "configProperties": {
+        "Switch.System.Globalization.FormatJapaneseFirstYearAsANumber": true
+    }
+  }
+  ```
 
 - **.NET framework 4.6 ou version ultérieure :** Vous pouvez définir le commutateur AppContext suivant :
 
-   ```xml
-   <?xml version="1.0" encoding="utf-8"?>
-   <configuration>
-     <runtime>
-       <AppContextSwitchOverrides value="Switch.System.Globalization.FormatJapaneseFirstYearAsANumber=true" />
-     </runtime>
-   </configuration>
-   ```
+  ```xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <configuration>
+    <runtime>
+      <AppContextSwitchOverrides value="Switch.System.Globalization.FormatJapaneseFirstYearAsANumber=true" />
+    </runtime>
+  </configuration>
+  ```
 
 - **.NET framework 4.5.2 ou version antérieure :** Vous pouvez définir la valeur de Registre suivante :
 
-   |  |  |
-   |--|--|
-   |Touche | HKEY_LOCAL_MACHINE\Software\Microsoft.NETFramework\AppContext |
-   |Nom | Switch.System.Globalization.FormatJapaneseFirstYearAsANumber |
-   |Type | REG_SZ |
-   |Value | 1 |
+  |  |  |
+  |--|--|
+  |Touche | HKEY_LOCAL_MACHINE\Software\Microsoft.NETFramework\AppContext |
+  |Nom | Switch.System.Globalization.FormatJapaneseFirstYearAsANumber |
+  |Type | REG_SZ |
+  |Value | 1 |
 
 Prend en charge Gannen du désactivé des opérations de mise en forme, l’exemple précédent affiche la sortie suivante :
 
@@ -332,33 +332,33 @@ Japanese calendar date: 平成1年8月18日 (Gregorian: Friday, August 18, 1989)
 
 - **.NET core :** Vous pouvez ajouter le code suivant à la *. netcore.runtime.json* fichier de configuration :
 
-   ```json
-   "runtimeOptions": {
-      "configProperties": {
-         "Switch.System.Globalization.EnforceLegacyJapaneseDateParsing": true
-      } 
-   }
-   ```
+  ```json
+  "runtimeOptions": {
+    "configProperties": {
+        "Switch.System.Globalization.EnforceLegacyJapaneseDateParsing": true
+    }
+  }
+  ```
 
 - **.NET framework 4.6 ou version ultérieure :** Vous pouvez définir le commutateur AppContext suivant :
 
-   ```xml
-   <?xml version="1.0" encoding="utf-8"?>
-   <configuration>
-     <runtime>
-       <AppContextSwitchOverrides value="Switch.System.Globalization.EnforceLegacyJapaneseDateParsing=true" />
-     </runtime>
-   </configuration>
-   ```
+  ```xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <configuration>
+    <runtime>
+      <AppContextSwitchOverrides value="Switch.System.Globalization.EnforceLegacyJapaneseDateParsing=true" />
+    </runtime>
+  </configuration>
+  ```
 
 - **.NET framework 4.5.2 ou version antérieure :** Vous pouvez définir la valeur de Registre suivante :
 
-   |  |  |
-   |--|--|  
-   |Touche | HKEY_LOCAL_MACHINE\Software\Microsoft.NETFramework\AppContext |
-   |Nom | Switch.System.Globalization.EnforceLegacyJapaneseDateParsing |
-   |Type | REG_SZ |
-   |Value | 1 | 
+  |  |  |
+  |--|--|
+  |Touche | HKEY_LOCAL_MACHINE\Software\Microsoft.NETFramework\AppContext |
+  |Nom | Switch.System.Globalization.EnforceLegacyJapaneseDateParsing |
+  |Type | REG_SZ |
+  |Value | 1 |
 
 ## <a name="see-also"></a>Voir aussi
 

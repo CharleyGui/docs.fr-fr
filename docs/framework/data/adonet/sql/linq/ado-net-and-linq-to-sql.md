@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 49ac6da0-f2e1-46fa-963e-1b6dcb63fef7
-ms.openlocfilehash: 4f2f9fa1cb1be421be57ae0671573150871ebd1d
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 6a6e057b45c1305a889ce4ed915b437a29ab2794
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65880468"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67662065"
 ---
 # <a name="adonet-and-linq-to-sql"></a>ADO.NET et LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fait partie de la famille ADO.NET de technologies. Il est basé sur les services fournis par le modèle de fournisseur ADO.NET. Vous pouvez donc combiner [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] de code avec les applications ADO.NET existantes et migrer des solutions ADO.NET actuelles à [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. L'illustration suivante fournit une vue d'ensemble de la relation.  
@@ -36,7 +36,7 @@ ms.locfileid: "65880468"
  [!code-csharp[DLinqAdoNet#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqAdoNet/cs/Program.cs#2)]
  [!code-vb[DLinqAdoNet#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqAdoNet/vb/Module1.vb#2)]  
   
- Vous ne pouvez pas utiliser cette approche pour toutes les bases de données. Par exemple, la connexion SqlClient ne peut pas effectuer la promotion des transactions système lorsqu’elle fonctionne sur un serveur [!INCLUDE[ss2k](../../../../../../includes/ss2k-md.md)]. Elle s’inscrit automatiquement à une transaction distribuée complète à chaque fois qu’elle voit qu’une portée de transaction est utilisée.  
+ Vous ne pouvez pas utiliser cette approche pour toutes les bases de données. Par exemple, la connexion SqlClient ne peut pas promouvoir des transactions système lorsqu’elle fonctionne sur un serveur SQL Server 2000. Elle s’inscrit automatiquement à une transaction distribuée complète à chaque fois qu’elle voit qu’une portée de transaction est utilisée.  
   
 ## <a name="direct-sql-commands"></a>Commandes SQL directes  
  Il peut arriver que la capacité du <xref:System.Data.Linq.DataContext> en termes d'interrogation ou de soumission de modifications soit insuffisante pour la tâche spécialisée que vous souhaitez effectuer. Dans ce cas, vous pouvez utiliser la méthode <xref:System.Data.Linq.DataContext.ExecuteQuery%2A> pour transmettre des commandes SQL à la base de données et convertir les résultats de la requête en objets.  

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 70055c4b-1173-47a3-be80-b5bce6f59e9a
-ms.openlocfilehash: 403b0125e6b1966d201c891448ad25ec83f42be5
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: b28981196490e249d053ecd1704f6ba978585520
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65881933"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67662865"
 ---
 # <a name="custom-composite-designers---workflow-items-presenter"></a>Concepteurs composites personnalisés - Présentateur d'éléments de workflow
 
@@ -45,7 +45,7 @@ Le code de cet exemple illustre les points suivants :
   - <xref:System.Activities.Presentation.WorkflowItemsPresenter.ItemsPanel?displayProperty=nameWithType> est un modèle qui peut être fourni pour déterminer la disposition des éléments dans la collection. Dans le cas présent, un panneau d'empilement horizontal est utilisé.
 
   L'exemple de code suivant illustre ce point.
-  
+
   ```xaml
   <sad:WorkflowItemsPresenter HintText="Drop Activities Here"
                                 Items="{Binding Path=ModelItem.Branches}">
@@ -64,7 +64,7 @@ Le code de cet exemple illustre les points suivants :
 
 - Effectuez une association de `DesignerAttribute` au type `Parallel`, puis fournissez en sortie les attributs signalés.
 
-    - En premier lieu, enregistrez tous les concepteurs par défaut.
+  - En premier lieu, enregistrez tous les concepteurs par défaut.
 
     Voici l'exemple de code.
 
@@ -82,7 +82,7 @@ Le code de cet exemple illustre les points suivants :
     RegisterCustomMetadata()
     ```
 
-    - Ensuite, substituez la parallèle dans la méthode `RegisterCustomMetadata`.
+  - Ensuite, substituez la parallèle dans la méthode `RegisterCustomMetadata`.
 
     Le code suivant illustre ce point en C# et en Visual Basic.
 
