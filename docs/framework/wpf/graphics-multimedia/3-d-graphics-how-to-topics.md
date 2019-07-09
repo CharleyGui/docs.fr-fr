@@ -7,36 +7,36 @@ helpviewer_keywords:
 - 3-D graphics [WPF]
 - graphics [WPF], 3-D
 ms.assetid: 4f091835-28d1-498c-b660-9b3acf34ed13
-ms.openlocfilehash: 1f78d2f0ff8887ca5cf1cd1129fb946d2224246d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9689e3c42010b7de641bee47af34e6888c415ed9
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62020281"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663954"
 ---
-# <a name="3-d-graphics-how-to-topics"></a><span data-ttu-id="1f0b3-102">Rubriques "Comment" relatives aux graphiques 3D</span><span class="sxs-lookup"><span data-stu-id="1f0b3-102">3-D Graphics How-to Topics</span></span>
-<span data-ttu-id="1f0b3-103">Les rubriques de cette section montrent comment utiliser [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] graphiques dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span><span class="sxs-lookup"><span data-stu-id="1f0b3-103">The topics in this section demonstrate how to use [!INCLUDE[TLA#tla_3d](../../../../includes/tlasharptla-3d-md.md)] graphics in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span>  
+# <a name="3-d-graphics-how-to-topics"></a><span data-ttu-id="1849f-102">Rubriques "Comment" relatives aux graphiques 3D</span><span class="sxs-lookup"><span data-stu-id="1849f-102">3-D Graphics How-to Topics</span></span>
+<span data-ttu-id="1849f-103">Les rubriques de cette section montrent comment utiliser des graphiques 3D dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span><span class="sxs-lookup"><span data-stu-id="1849f-103">The topics in this section demonstrate how to use 3-D graphics in [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="1f0b3-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="1f0b3-104">In This Section</span></span>  
- [<span data-ttu-id="1f0b3-105">Créer une scène 3D</span><span class="sxs-lookup"><span data-stu-id="1f0b3-105">Create a 3-D Scene</span></span>](how-to-create-a-3-d-scene.md)  
- [<span data-ttu-id="1f0b3-106">Appliquer un dessin à un modèle 3D</span><span class="sxs-lookup"><span data-stu-id="1f0b3-106">Apply a Drawing to a 3-D Model</span></span>](how-to-apply-a-drawing-to-a-3-d-model.md)  
- [<span data-ttu-id="1f0b3-107">Appliquer un matériau à l’avant et l’arrière d’un objet 3D</span><span class="sxs-lookup"><span data-stu-id="1f0b3-107">Apply Material to the Front and Back of a 3-D Object</span></span>](how-to-apply-material-to-the-front-and-back-of-a-3-d-object.md)  
- [<span data-ttu-id="1f0b3-108">Appliquer un matériau émissif à un objet 3D</span><span class="sxs-lookup"><span data-stu-id="1f0b3-108">Apply Emissive Material to a 3-D Object</span></span>](how-to-apply-emissive-material-to-a-3-d-object.md)  
- [<span data-ttu-id="1f0b3-109">Transformer l’échelle d’un modèle 3D</span><span class="sxs-lookup"><span data-stu-id="1f0b3-109">Transform the Scale of a 3-D Model</span></span>](how-to-transform-the-scale-of-a-3-d-model.md)  
- [<span data-ttu-id="1f0b3-110">Appliquer plusieurs transformations à un modèle 3D</span><span class="sxs-lookup"><span data-stu-id="1f0b3-110">Apply Multiple Transformations to a 3-D Model</span></span>](how-to-apply-multiple-transformations-to-a-3-d-model.md)  
- [<span data-ttu-id="1f0b3-111">Animer des translations 3D</span><span class="sxs-lookup"><span data-stu-id="1f0b3-111">Animate 3-D Translations</span></span>](how-to-animate-3-d-translations.md)  
- [<span data-ttu-id="1f0b3-112">Animer une rotation 3D à l’aide de storyboards</span><span class="sxs-lookup"><span data-stu-id="1f0b3-112">Animate a 3-D Rotation Using Storyboards</span></span>](how-to-animate-a-3-d-rotation-using-storyboards.md)  
- [<span data-ttu-id="1f0b3-113">Animer une rotation 3D à l’aide de Rotation3DAnimation</span><span class="sxs-lookup"><span data-stu-id="1f0b3-113">Animate a 3-D Rotation Using Rotation3DAnimation</span></span>](how-to-animate-a-3-d-rotation-using-rotation3danimation.md)  
- [<span data-ttu-id="1f0b3-114">Animer une rotation 3D à l'aide de quaternions</span><span class="sxs-lookup"><span data-stu-id="1f0b3-114">Animate a 3-D Rotation Using Quaternions</span></span>](how-to-animate-a-3-d-rotation-using-quaternions.md)  
- [<span data-ttu-id="1f0b3-115">Animer une rotation 3D à l’aide d’images clés (Rotation3DAnimationUsingKeyFrames)</span><span class="sxs-lookup"><span data-stu-id="1f0b3-115">Animate a 3-D Rotation Using Key Frames (Rotation3DAnimationUsingKeyFrames)</span></span>](how-to-animate-a-3-d-rotation-using-key-frames.md)  
- [<span data-ttu-id="1f0b3-116">Animer une rotation 3D à l’aide d’images clés (QuaternionAnimationUsingKeyFrames)</span><span class="sxs-lookup"><span data-stu-id="1f0b3-116">Animate a 3-D Rotation Using Key Frames (QuaternionAnimationUsingKeyFrames)</span></span>](animate-a-3-d-rotation-quaternionanimationusingkeyframes.md)  
- [<span data-ttu-id="1f0b3-117">Animer la position et la direction de la caméra d’une scène 3D</span><span class="sxs-lookup"><span data-stu-id="1f0b3-117">Animate Camera Position and Direction in a 3D Scene</span></span>](how-to-animate-camera-position-and-direction-in-a-3d-scene.md)  
- [<span data-ttu-id="1f0b3-118">Animer la position et la direction de la caméra à l’aide d’images clés</span><span class="sxs-lookup"><span data-stu-id="1f0b3-118">Animate Camera Position and Direction Using Key Frames</span></span>](how-to-animate-camera-position-and-direction-using-key-frames.md)  
- [<span data-ttu-id="1f0b3-119">Animer les propriétés de matériel dans une scène 3D</span><span class="sxs-lookup"><span data-stu-id="1f0b3-119">Animate Material Properties in a 3-D Scene</span></span>](how-to-animate-material-properties-in-a-3-d-scene.md)  
- [<span data-ttu-id="1f0b3-120">Effectuer un test de positionnement dans un Viewport3D</span><span class="sxs-lookup"><span data-stu-id="1f0b3-120">Hit Test in a Viewport3D</span></span>](how-to-hit-test-in-a-viewport3d.md)  
- [<span data-ttu-id="1f0b3-121">Tester l'égalité et l'inégalité de structures Point4D</span><span class="sxs-lookup"><span data-stu-id="1f0b3-121">Test Point4D structures for equality and inequality</span></span>](how-to-test-point4d-structures-for-equality-and-inequality.md)  
+## <a name="in-this-section"></a><span data-ttu-id="1849f-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="1849f-104">In This Section</span></span>  
+ [<span data-ttu-id="1849f-105">Créer une scène 3D</span><span class="sxs-lookup"><span data-stu-id="1849f-105">Create a 3-D Scene</span></span>](how-to-create-a-3-d-scene.md)  
+ [<span data-ttu-id="1849f-106">Appliquer un dessin à un modèle 3D</span><span class="sxs-lookup"><span data-stu-id="1849f-106">Apply a Drawing to a 3-D Model</span></span>](how-to-apply-a-drawing-to-a-3-d-model.md)  
+ [<span data-ttu-id="1849f-107">Appliquer un matériau à l’avant et l’arrière d’un objet 3D</span><span class="sxs-lookup"><span data-stu-id="1849f-107">Apply Material to the Front and Back of a 3-D Object</span></span>](how-to-apply-material-to-the-front-and-back-of-a-3-d-object.md)  
+ [<span data-ttu-id="1849f-108">Appliquer un matériau émissif à un objet 3D</span><span class="sxs-lookup"><span data-stu-id="1849f-108">Apply Emissive Material to a 3-D Object</span></span>](how-to-apply-emissive-material-to-a-3-d-object.md)  
+ [<span data-ttu-id="1849f-109">Transformer l’échelle d’un modèle 3D</span><span class="sxs-lookup"><span data-stu-id="1849f-109">Transform the Scale of a 3-D Model</span></span>](how-to-transform-the-scale-of-a-3-d-model.md)  
+ [<span data-ttu-id="1849f-110">Appliquer plusieurs transformations à un modèle 3D</span><span class="sxs-lookup"><span data-stu-id="1849f-110">Apply Multiple Transformations to a 3-D Model</span></span>](how-to-apply-multiple-transformations-to-a-3-d-model.md)  
+ [<span data-ttu-id="1849f-111">Animer des translations 3D</span><span class="sxs-lookup"><span data-stu-id="1849f-111">Animate 3-D Translations</span></span>](how-to-animate-3-d-translations.md)  
+ [<span data-ttu-id="1849f-112">Animer une rotation 3D à l’aide de storyboards</span><span class="sxs-lookup"><span data-stu-id="1849f-112">Animate a 3-D Rotation Using Storyboards</span></span>](how-to-animate-a-3-d-rotation-using-storyboards.md)  
+ [<span data-ttu-id="1849f-113">Animer une rotation 3D à l’aide de Rotation3DAnimation</span><span class="sxs-lookup"><span data-stu-id="1849f-113">Animate a 3-D Rotation Using Rotation3DAnimation</span></span>](how-to-animate-a-3-d-rotation-using-rotation3danimation.md)  
+ [<span data-ttu-id="1849f-114">Animer une rotation 3D à l'aide de quaternions</span><span class="sxs-lookup"><span data-stu-id="1849f-114">Animate a 3-D Rotation Using Quaternions</span></span>](how-to-animate-a-3-d-rotation-using-quaternions.md)  
+ [<span data-ttu-id="1849f-115">Animer une rotation 3D à l’aide d’images clés (Rotation3DAnimationUsingKeyFrames)</span><span class="sxs-lookup"><span data-stu-id="1849f-115">Animate a 3-D Rotation Using Key Frames (Rotation3DAnimationUsingKeyFrames)</span></span>](how-to-animate-a-3-d-rotation-using-key-frames.md)  
+ [<span data-ttu-id="1849f-116">Animer une rotation 3D à l’aide d’images clés (QuaternionAnimationUsingKeyFrames)</span><span class="sxs-lookup"><span data-stu-id="1849f-116">Animate a 3-D Rotation Using Key Frames (QuaternionAnimationUsingKeyFrames)</span></span>](animate-a-3-d-rotation-quaternionanimationusingkeyframes.md)  
+ [<span data-ttu-id="1849f-117">Animer la position et la direction de la caméra d’une scène 3D</span><span class="sxs-lookup"><span data-stu-id="1849f-117">Animate Camera Position and Direction in a 3D Scene</span></span>](how-to-animate-camera-position-and-direction-in-a-3d-scene.md)  
+ [<span data-ttu-id="1849f-118">Animer la position et la direction de la caméra à l’aide d’images clés</span><span class="sxs-lookup"><span data-stu-id="1849f-118">Animate Camera Position and Direction Using Key Frames</span></span>](how-to-animate-camera-position-and-direction-using-key-frames.md)  
+ [<span data-ttu-id="1849f-119">Animer les propriétés de matériel dans une scène 3D</span><span class="sxs-lookup"><span data-stu-id="1849f-119">Animate Material Properties in a 3-D Scene</span></span>](how-to-animate-material-properties-in-a-3-d-scene.md)  
+ [<span data-ttu-id="1849f-120">Effectuer un test de positionnement dans un Viewport3D</span><span class="sxs-lookup"><span data-stu-id="1849f-120">Hit Test in a Viewport3D</span></span>](how-to-hit-test-in-a-viewport3d.md)  
+ [<span data-ttu-id="1849f-121">Tester l'égalité et l'inégalité de structures Point4D</span><span class="sxs-lookup"><span data-stu-id="1849f-121">Test Point4D structures for equality and inequality</span></span>](how-to-test-point4d-structures-for-equality-and-inequality.md)  
   
-## <a name="reference"></a><span data-ttu-id="1f0b3-122">Référence</span><span class="sxs-lookup"><span data-stu-id="1f0b3-122">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="1849f-122">Référence</span><span class="sxs-lookup"><span data-stu-id="1849f-122">Reference</span></span>  
  <xref:System.Windows.Controls.Viewport3D>  
   
  <xref:System.Windows.Media.Media3D.PerspectiveCamera>  
@@ -45,5 +45,5 @@ ms.locfileid: "62020281"
   
  <xref:System.Windows.Media.Media3D.Material>  
   
-## <a name="related-sections"></a><span data-ttu-id="1f0b3-123">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="1f0b3-123">Related Sections</span></span>  
- [<span data-ttu-id="1f0b3-124">Graphiques et multimédia</span><span class="sxs-lookup"><span data-stu-id="1f0b3-124">Graphics and Multimedia</span></span>](index.md)
+## <a name="related-sections"></a><span data-ttu-id="1849f-123">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="1849f-123">Related Sections</span></span>  
+ [<span data-ttu-id="1849f-124">Graphiques et multimédia</span><span class="sxs-lookup"><span data-stu-id="1849f-124">Graphics and Multimedia</span></span>](index.md)

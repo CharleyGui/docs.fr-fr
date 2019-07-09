@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 0b5c67541bd4883427ae8b7c3029adde6ae7fbc1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: c2f888cf44a6e470227e0248783afaab39d53244
+ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61696822"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "67663092"
 ---
-<span data-ttu-id="37535-101">ClickOnce</span><span class="sxs-lookup"><span data-stu-id="37535-101">ClickOnce</span></span>
+<span data-ttu-id="498c7-101">ClickOnce</span><span class="sxs-lookup"><span data-stu-id="498c7-101">ClickOnce</span></span>
