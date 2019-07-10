@@ -1,4 +1,4 @@
-- name: Référence sur le langage
+- name: Informations de référence sur le langage
   items:
     - name: 'Informations de référence sur le langage C#'
       href: index.md
@@ -19,16 +19,13 @@
                 - name: Types numériques intégraux
                   displayName: 'sbyte, byte, short, ushort, int, uint, long, ulong, integer'
                   href: builtin-types/integral-numeric-types.md
+                - name: Types numériques à virgule flottante
+                  displayName: 'float, decimal, double, rational, real'
+                  href: builtin-types/floating-point-numeric-types.md
                 - name: char
                   href: keywords/char.md
-                - name: décimal
-                  href: keywords/decimal.md
-                - name: double
-                  href: keywords/double.md
                 - name: enum
                   href: keywords/enum.md
-                - name: float
-                  href: keywords/float.md
                 - name: struct
                   href: keywords/struct.md
             - name: Types référence
@@ -39,11 +36,11 @@
                   href: keywords/class.md
                 - name: délégué
                   href: keywords/delegate.md
-                - name: dynamique
+                - name: dynamic
                   href: keywords/dynamic.md
                 - name: interface
                   href: keywords/interface.md
-                - name: objet
+                - name: object
                   href: keywords/object.md
                 - name: string
                   href: keywords/string.md
@@ -55,8 +52,6 @@
               items:
                 - name: Table des types intégrés
                   href: keywords/built-in-types-table.md
-                - name: Table des types à virgule flottante
-                  href: keywords/floating-point-types-table.md
                 - name: Table des types valeur
                   href: keywords/value-types-table.md
                 - name: Table des valeurs par défaut
@@ -71,7 +66,7 @@
           items:
             - name: Modificateurs d’accès
               items:
-                - name: Référence rapide
+                - name: Aide-mémoire
                   href: keywords/access-modifiers.md
                 - name: Niveaux d’accessibilité
                   href: keywords/accessibility-levels.md
@@ -79,7 +74,7 @@
                   href: keywords/accessibility-domain.md
                 - name: Restrictions concernant l’utilisation des niveaux d’accessibilité
                   href: keywords/restrictions-on-using-accessibility-levels.md
-                - name: Interne
+                - name: internal
                   href: keywords/internal.md
                 - name: private
                   href: keywords/private.md
@@ -129,7 +124,7 @@
               items:
                 - name: if-else
                   href: keywords/if-else.md
-                - name: commutateur
+                - name: switch
                   href: keywords/switch.md
             - name: Instructions d'itération
               items:
@@ -175,7 +170,7 @@
               href: keywords/lock-statement.md
         - name: Paramètres de méthodes
           items:
-            - name: Transmission des paramètres
+            - name: Passage de paramètres
               href: keywords/method-parameters.md
             - name: params
               href: keywords/params.md
@@ -203,13 +198,13 @@
               href: keywords/extern-alias.md
         - name: Mots clés de test de type
           items:
-            - name: is
+            - name: est
               href: keywords/is.md
         - name: Mots clés de contrainte de type générique
           items:
             - name: 'new, contrainte'
               href: keywords/new-constraint.md
-            - name: where
+            - name: où
               href: keywords/where-generic-type-constraint.md
         - name: Mots clés des opérateurs
           items:
@@ -229,7 +224,7 @@
           items:
             - name: de base
               href: keywords/base.md
-            - name: ceci
+            - name: this
               href: keywords/this.md
         - name: Mots clés littéraux
           items:
@@ -237,13 +232,13 @@
               href: keywords/null.md
             - name: 'true'
               href: keywords/true-literal.md
-            - name: 'false'
+            - name: 'False'
               href: keywords/false-literal.md
             - name: default
               href: keywords/default.md
         - name: Mots clés contextuels
           items:
-            - name: Référence rapide
+            - name: Aide-mémoire
               href: keywords/contextual-keywords.md
             - name: add
               href: keywords/add.md
@@ -257,17 +252,17 @@
               href: keywords/partial-method.md
             - name: remove
               href: keywords/remove.md
-            - name: set
+            - name: définir
               href: keywords/set.md
             - name: when (condition de filtre)
               href: keywords/when.md
-            - name: value
+            - name: par défaut
               href: keywords/value.md
             - name: yield
               href: keywords/yield.md
         - name: "Mots\_clés de requête"
           items:
-            - name: Référence rapide
+            - name: Aide-mémoire
               href: keywords/query-keywords.md
             - name: 'from, clause'
               href: keywords/from-clause.md
@@ -283,7 +278,7 @@
               href: keywords/orderby-clause.md
             - name: 'join, clause'
               href: keywords/join-clause.md
-            - name: clause let
+            - name: 'let, clause'
               href: keywords/let-clause.md
             - name: ascending
               href: keywords/ascending.md
@@ -295,7 +290,7 @@
               href: keywords/equals.md
             - name: by
               href: keywords/by.md
-            - name: commencer
+            - name: dans
               href: keywords/in.md
     - name: 'Opérateurs C#'
       items:
@@ -400,7 +395,7 @@
           href: compiler-options/index.md
         - name: Génération à partir de la ligne de commande avec csc.exe
           href: compiler-options/command-line-building-with-csc-exe.md
-        - name: Activation Définir des variables d’environnement pour la ligne de commande Visual Studio
+        - name: "Procédure\_: Définir des variables d’environnement pour la ligne de commande Visual Studio"
           href: compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md
         - name: 'Options du compilateur C# par catégorie'
           href: compiler-options/listed-by-category.md
@@ -534,7 +529,7 @@
           href: ../../../_csharplang/spec/basic-concepts.md
         - name: Types
           href: ../../../_csharplang/spec/types.md
-        - name: variables
+        - name: Variables
           href: ../../../_csharplang/spec/variables.md
         - name: Conversions
           href: ../../../_csharplang/spec/conversions.md
