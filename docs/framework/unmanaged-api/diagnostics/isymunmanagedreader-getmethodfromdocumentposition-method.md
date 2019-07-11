@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4ed13397748b2668c275b221e38bd75c0dd37f03
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a1935b831902e975616557f512789c339baf49c5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61969180"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67776976"
 ---
-# <a name="isymunmanagedreadergetmethodfromdocumentposition-method"></a><span data-ttu-id="69699-102">ISymUnmanagedReader::GetMethodFromDocumentPosition, méthode</span><span class="sxs-lookup"><span data-stu-id="69699-102">ISymUnmanagedReader::GetMethodFromDocumentPosition Method</span></span>
-<span data-ttu-id="69699-103">Retourne la méthode qui contient le point d’arrêt à la position donnée dans un document.</span><span class="sxs-lookup"><span data-stu-id="69699-103">Returns the method that contains the breakpoint at the given position in a document.</span></span>  
+# <a name="isymunmanagedreadergetmethodfromdocumentposition-method"></a><span data-ttu-id="29e81-102">ISymUnmanagedReader::GetMethodFromDocumentPosition, méthode</span><span class="sxs-lookup"><span data-stu-id="29e81-102">ISymUnmanagedReader::GetMethodFromDocumentPosition Method</span></span>
+<span data-ttu-id="29e81-103">Retourne la méthode qui contient le point d’arrêt à la position donnée dans un document.</span><span class="sxs-lookup"><span data-stu-id="29e81-103">Returns the method that contains the breakpoint at the given position in a document.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="69699-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="69699-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="29e81-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="29e81-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetMethodFromDocumentPosition (  
     [in]  ISymUnmanagedDocument*  document,  
     [in]  ULONG32  line,  
@@ -37,25 +37,25 @@ HRESULT GetMethodFromDocumentPosition (
     [out, retval] ISymUnmanagedMethod**  pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="69699-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="69699-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="29e81-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="29e81-105">Parameters</span></span>  
  `document`  
- <span data-ttu-id="69699-106">[in] Le document spécifié.</span><span class="sxs-lookup"><span data-stu-id="69699-106">[in] The specified document.</span></span>  
+ <span data-ttu-id="29e81-106">[in] Le document spécifié.</span><span class="sxs-lookup"><span data-stu-id="29e81-106">[in] The specified document.</span></span>  
   
  `line`  
- <span data-ttu-id="69699-107">[in] La ligne du document spécifié.</span><span class="sxs-lookup"><span data-stu-id="69699-107">[in] The line of the specified document.</span></span>  
+ <span data-ttu-id="29e81-107">[in] La ligne du document spécifié.</span><span class="sxs-lookup"><span data-stu-id="29e81-107">[in] The line of the specified document.</span></span>  
   
  `column`  
- <span data-ttu-id="69699-108">[in] La colonne du document spécifié.</span><span class="sxs-lookup"><span data-stu-id="69699-108">[in] The column of the specified document.</span></span>  
+ <span data-ttu-id="29e81-108">[in] La colonne du document spécifié.</span><span class="sxs-lookup"><span data-stu-id="29e81-108">[in] The column of the specified document.</span></span>  
   
  `pRetVal`  
- <span data-ttu-id="69699-109">[out] Un pointeur vers l’adresse d’un [ISymUnmanagedMethod, Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) objet qui représente la méthode contenant le point d’arrêt.</span><span class="sxs-lookup"><span data-stu-id="69699-109">[out] A pointer to the address of a [ISymUnmanagedMethod Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) object that represents the method containing the breakpoint.</span></span>  
+ <span data-ttu-id="29e81-109">[out] Un pointeur vers l’adresse d’un [ISymUnmanagedMethod, Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) objet qui représente la méthode contenant le point d’arrêt.</span><span class="sxs-lookup"><span data-stu-id="29e81-109">[out] A pointer to the address of a [ISymUnmanagedMethod Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) object that represents the method containing the breakpoint.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="69699-110">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="69699-110">Return Value</span></span>  
- <span data-ttu-id="69699-111">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="69699-111">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="29e81-110">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="29e81-110">Return Value</span></span>  
+ <span data-ttu-id="29e81-111">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="29e81-111">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="69699-112">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="69699-112">Requirements</span></span>  
- <span data-ttu-id="69699-113">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="69699-113">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="29e81-112">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="29e81-112">Requirements</span></span>  
+ <span data-ttu-id="29e81-113">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="29e81-113">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="69699-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="69699-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="29e81-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="29e81-114">See also</span></span>
 
-- [<span data-ttu-id="69699-115">ISymUnmanagedReader, interface</span><span class="sxs-lookup"><span data-stu-id="69699-115">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [<span data-ttu-id="29e81-115">ISymUnmanagedReader, interface</span><span class="sxs-lookup"><span data-stu-id="29e81-115">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

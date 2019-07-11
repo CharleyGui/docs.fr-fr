@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 31d26ed6249bad8a7e2fbaab01264c1b32e1ff55
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a69e32d418478071f9b99a391e6bef9095d6f4ad
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638648"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67749923"
 ---
-# <a name="iclrreferenceassemblyenumget-method"></a><span data-ttu-id="15bdb-102">ICLRReferenceAssemblyEnum::Get, méthode</span><span class="sxs-lookup"><span data-stu-id="15bdb-102">ICLRReferenceAssemblyEnum::Get Method</span></span>
-<span data-ttu-id="15bdb-103">Obtient l’identité d’assembly à l’index fourni.</span><span class="sxs-lookup"><span data-stu-id="15bdb-103">Gets the assembly identity at the supplied index.</span></span>  
+# <a name="iclrreferenceassemblyenumget-method"></a><span data-ttu-id="04dad-102">ICLRReferenceAssemblyEnum::Get, méthode</span><span class="sxs-lookup"><span data-stu-id="04dad-102">ICLRReferenceAssemblyEnum::Get Method</span></span>
+<span data-ttu-id="04dad-103">Obtient l’identité d’assembly à l’index fourni.</span><span class="sxs-lookup"><span data-stu-id="04dad-103">Gets the assembly identity at the supplied index.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="15bdb-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="15bdb-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="04dad-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="04dad-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT Get (  
     [in] DWORD dwIndex,  
     [out, size_is(*pcchBufferSize)] LPWSTR pwzBuffer,  
@@ -37,42 +37,42 @@ HRESULT Get (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="15bdb-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="15bdb-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="04dad-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="04dad-105">Parameters</span></span>  
  `dwIndex`  
- <span data-ttu-id="15bdb-106">[in] Index de base zéro de l’identité d’assembly à retourner.</span><span class="sxs-lookup"><span data-stu-id="15bdb-106">[in] The zero-based index of the assembly identity to return.</span></span>  
+ <span data-ttu-id="04dad-106">[in] Index de base zéro de l’identité d’assembly à retourner.</span><span class="sxs-lookup"><span data-stu-id="04dad-106">[in] The zero-based index of the assembly identity to return.</span></span>  
   
  `pwzBuffer`  
- <span data-ttu-id="15bdb-107">[out] Une mémoire tampon contenant les données d’identité.</span><span class="sxs-lookup"><span data-stu-id="15bdb-107">[out] A buffer containing the assembly identity data.</span></span>  
+ <span data-ttu-id="04dad-107">[out] Une mémoire tampon contenant les données d’identité.</span><span class="sxs-lookup"><span data-stu-id="04dad-107">[out] A buffer containing the assembly identity data.</span></span>  
   
  `pcchBufferSize`  
- <span data-ttu-id="15bdb-108">[in, out] La taille de la `pwzBuffer` mémoire tampon.</span><span class="sxs-lookup"><span data-stu-id="15bdb-108">[in, out] The size of the `pwzBuffer` buffer.</span></span>  
+ <span data-ttu-id="04dad-108">[in, out] La taille de la `pwzBuffer` mémoire tampon.</span><span class="sxs-lookup"><span data-stu-id="04dad-108">[in, out] The size of the `pwzBuffer` buffer.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="15bdb-109">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="15bdb-109">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="04dad-109">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="04dad-109">Return Value</span></span>  
   
-|<span data-ttu-id="15bdb-110">HRESULT</span><span class="sxs-lookup"><span data-stu-id="15bdb-110">HRESULT</span></span>|<span data-ttu-id="15bdb-111">Description</span><span class="sxs-lookup"><span data-stu-id="15bdb-111">Description</span></span>|  
+|<span data-ttu-id="04dad-110">HRESULT</span><span class="sxs-lookup"><span data-stu-id="04dad-110">HRESULT</span></span>|<span data-ttu-id="04dad-111">Description</span><span class="sxs-lookup"><span data-stu-id="04dad-111">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="15bdb-112">S_OK</span><span class="sxs-lookup"><span data-stu-id="15bdb-112">S_OK</span></span>|<span data-ttu-id="15bdb-113">`Get` retourné avec succès.</span><span class="sxs-lookup"><span data-stu-id="15bdb-113">`Get` returned successfully.</span></span>|  
-|<span data-ttu-id="15bdb-114">ERROR_INSUFFICIENT_BUFFER</span><span class="sxs-lookup"><span data-stu-id="15bdb-114">ERROR_INSUFFICIENT_BUFFER</span></span>|<span data-ttu-id="15bdb-115">`pwzBuffer` est trop petit.</span><span class="sxs-lookup"><span data-stu-id="15bdb-115">`pwzBuffer` is too small.</span></span>|  
-|<span data-ttu-id="15bdb-116">ERROR_NO_MORE_ITEMS</span><span class="sxs-lookup"><span data-stu-id="15bdb-116">ERROR_NO_MORE_ITEMS</span></span>|<span data-ttu-id="15bdb-117">L’énumération ne contient aucun élément plus.</span><span class="sxs-lookup"><span data-stu-id="15bdb-117">The enumeration contains no more items.</span></span>|  
-|<span data-ttu-id="15bdb-118">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="15bdb-118">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="15bdb-119">Le common language runtime (CLR) n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.</span><span class="sxs-lookup"><span data-stu-id="15bdb-119">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="15bdb-120">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="15bdb-120">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="15bdb-121">L’appel a expiré.</span><span class="sxs-lookup"><span data-stu-id="15bdb-121">The call timed out.</span></span>|  
-|<span data-ttu-id="15bdb-122">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="15bdb-122">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="15bdb-123">L’appelant ne possède pas le verrou.</span><span class="sxs-lookup"><span data-stu-id="15bdb-123">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="15bdb-124">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="15bdb-124">HOST_E_ABANDONED</span></span>|<span data-ttu-id="15bdb-125">Un événement a été annulé alors qu’un thread bloqué ou Fibre l’attendait.</span><span class="sxs-lookup"><span data-stu-id="15bdb-125">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="15bdb-126">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="15bdb-126">E_FAIL</span></span>|<span data-ttu-id="15bdb-127">Une défaillance catastrophique inconnue s’est produite.</span><span class="sxs-lookup"><span data-stu-id="15bdb-127">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="15bdb-128">Si une méthode retourne E_FAIL, le CLR n’est plus utilisable au sein du processus.</span><span class="sxs-lookup"><span data-stu-id="15bdb-128">If a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="15bdb-129">Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="15bdb-129">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="04dad-112">S_OK</span><span class="sxs-lookup"><span data-stu-id="04dad-112">S_OK</span></span>|<span data-ttu-id="04dad-113">`Get` retourné avec succès.</span><span class="sxs-lookup"><span data-stu-id="04dad-113">`Get` returned successfully.</span></span>|  
+|<span data-ttu-id="04dad-114">ERROR_INSUFFICIENT_BUFFER</span><span class="sxs-lookup"><span data-stu-id="04dad-114">ERROR_INSUFFICIENT_BUFFER</span></span>|<span data-ttu-id="04dad-115">`pwzBuffer` est trop petit.</span><span class="sxs-lookup"><span data-stu-id="04dad-115">`pwzBuffer` is too small.</span></span>|  
+|<span data-ttu-id="04dad-116">ERROR_NO_MORE_ITEMS</span><span class="sxs-lookup"><span data-stu-id="04dad-116">ERROR_NO_MORE_ITEMS</span></span>|<span data-ttu-id="04dad-117">L’énumération ne contient aucun élément plus.</span><span class="sxs-lookup"><span data-stu-id="04dad-117">The enumeration contains no more items.</span></span>|  
+|<span data-ttu-id="04dad-118">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="04dad-118">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="04dad-119">Le common language runtime (CLR) n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.</span><span class="sxs-lookup"><span data-stu-id="04dad-119">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="04dad-120">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="04dad-120">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="04dad-121">L’appel a expiré.</span><span class="sxs-lookup"><span data-stu-id="04dad-121">The call timed out.</span></span>|  
+|<span data-ttu-id="04dad-122">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="04dad-122">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="04dad-123">L’appelant ne possède pas le verrou.</span><span class="sxs-lookup"><span data-stu-id="04dad-123">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="04dad-124">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="04dad-124">HOST_E_ABANDONED</span></span>|<span data-ttu-id="04dad-125">Un événement a été annulé alors qu’un thread bloqué ou Fibre l’attendait.</span><span class="sxs-lookup"><span data-stu-id="04dad-125">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="04dad-126">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="04dad-126">E_FAIL</span></span>|<span data-ttu-id="04dad-127">Une défaillance catastrophique inconnue s’est produite.</span><span class="sxs-lookup"><span data-stu-id="04dad-127">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="04dad-128">Si une méthode retourne E_FAIL, le CLR n’est plus utilisable au sein du processus.</span><span class="sxs-lookup"><span data-stu-id="04dad-128">If a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="04dad-129">Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="04dad-129">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="15bdb-130">Notes</span><span class="sxs-lookup"><span data-stu-id="15bdb-130">Remarks</span></span>  
- <span data-ttu-id="15bdb-131">`Get` est généralement appelée deux fois.</span><span class="sxs-lookup"><span data-stu-id="15bdb-131">`Get` is typically called twice.</span></span> <span data-ttu-id="15bdb-132">Le premier appel fournit une valeur null pour `pwzBuffer`et définit `pcchBufferSize` à la taille appropriée pour `pwzBuffer`.</span><span class="sxs-lookup"><span data-stu-id="15bdb-132">The first call supplies a null value for `pwzBuffer`, and sets `pcchBufferSize` to the size appropriate for `pwzBuffer`.</span></span> <span data-ttu-id="15bdb-133">Le deuxième appel fournit une taille appropriée `pwzBuffer`et contient les données d’identité assembly canonique à l’achèvement.</span><span class="sxs-lookup"><span data-stu-id="15bdb-133">The second call supplies an appropriately sized `pwzBuffer`, and contains the canonical assembly identity data upon completion.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="04dad-130">Notes</span><span class="sxs-lookup"><span data-stu-id="04dad-130">Remarks</span></span>  
+ <span data-ttu-id="04dad-131">`Get` est généralement appelée deux fois.</span><span class="sxs-lookup"><span data-stu-id="04dad-131">`Get` is typically called twice.</span></span> <span data-ttu-id="04dad-132">Le premier appel fournit une valeur null pour `pwzBuffer`et définit `pcchBufferSize` à la taille appropriée pour `pwzBuffer`.</span><span class="sxs-lookup"><span data-stu-id="04dad-132">The first call supplies a null value for `pwzBuffer`, and sets `pcchBufferSize` to the size appropriate for `pwzBuffer`.</span></span> <span data-ttu-id="04dad-133">Le deuxième appel fournit une taille appropriée `pwzBuffer`et contient les données d’identité assembly canonique à l’achèvement.</span><span class="sxs-lookup"><span data-stu-id="04dad-133">The second call supplies an appropriately sized `pwzBuffer`, and contains the canonical assembly identity data upon completion.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="15bdb-134">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="15bdb-134">Requirements</span></span>  
- <span data-ttu-id="15bdb-135">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="15bdb-135">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="04dad-134">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="04dad-134">Requirements</span></span>  
+ <span data-ttu-id="04dad-135">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="04dad-135">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="15bdb-136">**En-tête :** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="15bdb-136">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="04dad-136">**En-tête :** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="04dad-136">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="15bdb-137">**Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="15bdb-137">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="04dad-137">**Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="04dad-137">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="15bdb-138">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="15bdb-138">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="04dad-138">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="04dad-138">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="15bdb-139">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="15bdb-139">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="04dad-139">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="04dad-139">See also</span></span>
 
-- [<span data-ttu-id="15bdb-140">ICLRAssemblyReferenceList, interface</span><span class="sxs-lookup"><span data-stu-id="15bdb-140">ICLRAssemblyReferenceList Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
-- [<span data-ttu-id="15bdb-141">ICLRReferenceAssemblyEnum, interface</span><span class="sxs-lookup"><span data-stu-id="15bdb-141">ICLRReferenceAssemblyEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md)
+- [<span data-ttu-id="04dad-140">ICLRAssemblyReferenceList, interface</span><span class="sxs-lookup"><span data-stu-id="04dad-140">ICLRAssemblyReferenceList Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)
+- [<span data-ttu-id="04dad-141">ICLRReferenceAssemblyEnum, interface</span><span class="sxs-lookup"><span data-stu-id="04dad-141">ICLRReferenceAssemblyEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrreferenceassemblyenum-interface.md)
