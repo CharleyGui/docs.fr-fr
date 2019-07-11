@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 14d42a4032c3e2b1c231414678912e1658e759d4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 57520b4a67eb164c8f8631dc4d63d32c655dafa2
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775009"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67753821"
 ---
 # <a name="corprffunction-structure"></a>COR_PRF_FUNCTION, structure
 Fournit une représentation unique d'une fonction en combinant son ID avec l'ID de sa version recompilée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef struct _COR_PRF_FUNCTION {    FunctionID functionId;    ReJITID    reJitId;} COR_PRF_FUNCTION;  
 ```  
   

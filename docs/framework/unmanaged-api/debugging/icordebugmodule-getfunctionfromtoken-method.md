@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c1af0f8f792c856c0b27b4d3d9ff557bcc5fce82
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 547986633172d6f5e6549ad2048833dc9fb0cef3
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61994862"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67763466"
 ---
 # <a name="icordebugmodulegetfunctionfromtoken-method"></a>ICorDebugModule::GetFunctionFromToken, méthode
 Obtient la fonction qui est spécifiée par le jeton de métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetFunctionFromToken(  
     [in] mdMethodDef methodDef,  
     [out] ICorDebugFunction **ppFunction  

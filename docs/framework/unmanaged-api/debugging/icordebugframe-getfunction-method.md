@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a48396f8ef668cfe7755b2718180317b465793b6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8f801dae69f16f2848b4ffa30f458c084fe9750a
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61995837"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67754900"
 ---
 # <a name="icordebugframegetfunction-method"></a>ICorDebugFrame::GetFunction, méthode
 Obtient la fonction qui contient le code associé à ce frame de pile.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetFunction (  
     [out] ICorDebugFunction  **ppFunction  
 );  

@@ -2,12 +2,12 @@
 title: 'Procédure pas à pas : Interrogation entre relations (C#)'
 ms.date: 03/30/2017
 ms.assetid: 552abeb1-18f2-4e93-a9c6-ef7b2db30c32
-ms.openlocfilehash: d9233bc7501544fff04c1c9eae215bd981fa4bd0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f36f618cfcb82847f6763641ee64565dcdedd919
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64618025"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742651"
 ---
 # <a name="walkthrough-querying-across-relationships-c"></a>Procédure pas à pas : Interrogation entre relations (C#)
 Cette procédure pas à pas illustre l’utilisation de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] *associations* pour représenter les relations de clé étrangère dans la base de données.  
@@ -19,7 +19,7 @@ Cette procédure pas à pas illustre l’utilisation de [!INCLUDE[vbtecdlinq](..
 ## <a name="prerequisites"></a>Prérequis  
  Vous devez avoir terminé [procédure pas à pas : Requête et modèle objet simples (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md). Cette procédure pas à pas est basée sur cette dernière, y compris la présence du fichier northwnd.mdf dans c:\linqtest5.  
   
-## <a name="overview"></a>Vue d'ensemble  
+## <a name="overview"></a>Présentation  
  Cette procédure pas à pas se compose de trois tâches principales :  
   
 - Ajout d'une classe d'entité pour représenter la table Orders dans l'exemple de base de données Northwind.  
@@ -31,7 +31,7 @@ Cette procédure pas à pas illustre l’utilisation de [!INCLUDE[vbtecdlinq](..
 ## <a name="mapping-relationships-across-tables"></a>Mappage de relations entre des tables  
  Une fois la définition de classe `Customer` terminée, créez la définition de classe d'entité `Order` qui inclut le code suivant indiquant que `Order.Customer` est une clé étrangère de `Customer.CustomerID`.  
   
-#### <a name="to-add-the-order-entity-class"></a>Pour ajouter la classe d'entité Order  
+### <a name="to-add-the-order-entity-class"></a>Pour ajouter la classe d'entité Order  
   
 - Tapez ou collez le code suivant après la classe `Customer` :  
   
@@ -40,7 +40,7 @@ Cette procédure pas à pas illustre l’utilisation de [!INCLUDE[vbtecdlinq](..
 ## <a name="annotating-the-customer-class"></a>Annotation de la classe Customer  
  Dans cette étape, annotez la classe `Customer` pour indiquer sa relation avec la classe `Order`. Cet ajout n'est pas strictement nécessaire étant donné que la définition de la relation dans chacune des directions est suffisante pour créer le lien. Cependant, l'ajout de cette annotation vous permet de naviguer facilement parmi les objets dans chacune des directions.  
   
-#### <a name="to-annotate-the-customer-class"></a>Pour annoter la classe Customer  
+### <a name="to-annotate-the-customer-class"></a>Pour annoter la classe Customer  
   
 - Tapez ou collez le code suivant dans la classe `Customer` :  
   
@@ -49,7 +49,7 @@ Cette procédure pas à pas illustre l’utilisation de [!INCLUDE[vbtecdlinq](..
 ## <a name="creating-and-running-a-query-across-the-customer-order-relationship"></a>Création et exécution d'une requête dans la relation entre les classes Order et Customer  
  Vous pouvez désormais accéder aux objets `Order` directement à partir des objets `Customer` ou inversement. Vous n’avez pas besoin explicite *jointure* entre customers et orders.  
   
-#### <a name="to-access-order-objects-by-using-customer-objects"></a>Pour accéder aux objets Order à l'aide d'objets Customer  
+### <a name="to-access-order-objects-by-using-customer-objects"></a>Pour accéder aux objets Order à l'aide d'objets Customer  
   
 1. Modifiez la méthode `Main` en tapant ou en collant le code suivant dans la méthode :  
   
@@ -67,7 +67,7 @@ Cette procédure pas à pas illustre l’utilisation de [!INCLUDE[vbtecdlinq](..
   
  Dans les étapes suivantes, vous créerez `Customers` comme table fortement typée qui mappe à la table Customers dans la base de données.  
   
-#### <a name="to-strongly-type-the-datacontext-object"></a>Pour effectuer un typage fort de l'objet DataContext  
+### <a name="to-strongly-type-the-datacontext-object"></a>Pour effectuer un typage fort de l'objet DataContext  
   
 1. Ajoutez le code suivant au-dessus de la déclaration de classe `Customer`.  
   

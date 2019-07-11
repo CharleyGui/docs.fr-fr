@@ -3,12 +3,12 @@ title: 'Procédure : Afficher l’état Connecté à l’aide de WIF'
 ms.date: 03/30/2017
 ms.assetid: 4d1174e4-5397-4962-9a5f-3b1ad7b3fc14
 author: BrucePerlerMS
-ms.openlocfilehash: a41f24faa5b535c02feef99ae0d592bd7d13db4e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6d81bd2023886799f939fc9851db516a00aa92df
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626097"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742455"
 ---
 # <a name="how-to-display-signed-in-status-using-wif"></a>Procédure : Afficher l’état Connecté à l’aide de WIF
 ## <a name="applies-to"></a>S'applique à  
@@ -22,7 +22,7 @@ ms.locfileid: "64626097"
   
 ## <a name="contents"></a>Sommaire  
   
-- Vue d'ensemble  
+- Présentation  
   
 - Résumé des étapes  
   
@@ -36,7 +36,7 @@ ms.locfileid: "64626097"
   
 - Étape 5 : tester l’intégration entre WIF et votre application ASP.NET  
   
-## <a name="overview"></a>Vue d'ensemble  
+## <a name="overview"></a>Présentation  
  Cette rubrique montre comment créer une simple application prenant en charge les revendications à l’aide de WIF et indiquer facilement si un utilisateur est connecté ou non. Les étapes suivantes utilisent le service STS de développement local qui est inclus avec l’extension Visual Studio Identity and Access Tool. Le service STS de développement local est conçu pour un environnement de développement et de test afin de fournir une méthode simple d’intégration des revendications dans votre application. Il ne doit jamais être utilisé dans un environnement de production, car il n’effectue pas de véritable authentification et les informations d’identification ne sont pas requises. Toutefois, le code impératif dans les étapes suivantes est le même pour une application prête pour la production qui utilise l’authentification réelle.  
   
 ## <a name="summary-of-steps"></a>Résumé des étapes  
@@ -54,7 +54,7 @@ ms.locfileid: "64626097"
 ## <a name="step-1--install-the-identity-and-access-extension"></a>Étape 1 : installer l’extension Identity and Access Tool  
  Cette étape explique comment configurer l’extension Identity and Access Tool pour Visual Studio 2012. Cette extension automatise le processus de configuration de votre application afin de communiquer avec les points de terminaison STS.  
   
-#### <a name="to-install-the-identity-and-access-extension"></a>Pour installer l’extension Identity and Access Tool  
+### <a name="to-install-the-identity-and-access-extension"></a>Pour installer l’extension Identity and Access Tool  
   
 1. Démarrez Visual Studio en mode élevé en tant qu’administrateur.  
   
@@ -73,7 +73,7 @@ ms.locfileid: "64626097"
 ## <a name="step-2--create-a-relying-party-aspnet-application"></a>Étape 2 : créer une application ASP.NET par partie de confiance  
  Cette étape décrit comment créer une application Web Forms ASP.NET par partie de confiance qui s’intègre avec WIF.  
   
-#### <a name="to-create-a-simple-aspnet-application"></a>Pour créer une application ASP.NET simple  
+### <a name="to-create-a-simple-aspnet-application"></a>Pour créer une application ASP.NET simple  
   
 1. Démarrez Visual Studio et cliquez sur **Fichier**, **Nouveau**, puis **Projet**.  
   
@@ -84,7 +84,7 @@ ms.locfileid: "64626097"
 ## <a name="step-3--enable-local-development-sts-to-authenticate-users"></a>Étape 3 : activer le service STS de développement local pour authentifier les utilisateurs  
  Cette étape décrit comment activer le service STS de développement local dans votre application. Le service STS de développement local est activé à l’aide de l’extension Identity and Access Tool pour Visual Studio.  
   
-#### <a name="to-enable-local-development-sts-in-your-aspnet-application"></a>Pour activer le service STS de développement local dans votre application ASP.NET  
+### <a name="to-enable-local-development-sts-in-your-aspnet-application"></a>Pour activer le service STS de développement local dans votre application ASP.NET  
   
 1. Dans Visual Studio, cliquez avec le bouton droit sur le projet **TestApp** sous l’**Explorateur de solutions**, puis sélectionnez **Identity and Access** (Identity and Access Tool).  
   
@@ -93,7 +93,7 @@ ms.locfileid: "64626097"
 ## <a name="step-4--modify-your-aspnet-application-to-display-sign-in-status"></a>Étape 4 : modifier votre application ASP.NET pour afficher l’état de connexion  
  Cette étape explique comment modifier votre application ASP.NET afin d’indiquer dynamiquement si l’utilisateur actuel est connecté. Une fois que votre fournisseur STS a été configuré, WIF traite les revendications entrantes. Vous devez maintenant configurer le code de votre application pour afficher le résultat de l’authentification.  
   
-#### <a name="to-display-sign-in-status"></a>Pour afficher l’état de connexion  
+### <a name="to-display-sign-in-status"></a>Pour afficher l’état de connexion  
   
 1. Dans Visual Studio, ouvrez le fichier **Default.aspx** sous le projet **TestApp**.  
   
@@ -149,8 +149,8 @@ ms.locfileid: "64626097"
 ## <a name="step-5--test-the-integration-between-wif-and-your-aspnet-application"></a>Étape 5 : tester l’intégration entre WIF et votre application ASP.NET  
  Cette étape explique comment tester l’intégration entre WIF et votre application ASP.NET.  
   
-#### <a name="to-test-the-integration-between-wif-and-aspnet"></a>Pour tester l’intégration entre WIF et ASP.NET  
+### <a name="to-test-the-integration-between-wif-and-aspnet"></a>Pour tester l’intégration entre WIF et ASP.NET  
   
 1. Dans Visual Studio, appuyez sur **F5** pour démarrer le débogage de l’application. Si aucune erreur n’est trouvée, une nouvelle fenêtre de navigateur s’ouvre.  
   
-2. Vous pouvez remarquer que le navigateur redirige en mode silencieux votre demande vers le service STS, puis ouvre la page Default.aspx. Si WIF est correctement configuré, vous devriez voir le site pour afficher le texte suivant : **« Vous êtes connecté »**.
+2. Vous pouvez remarquer que le navigateur redirige en mode silencieux votre demande vers le service STS, puis ouvre la page Default.aspx. Si WIF est correctement configuré, vous devriez voir le site pour afficher le texte suivant : **« Vous êtes connecté »** .

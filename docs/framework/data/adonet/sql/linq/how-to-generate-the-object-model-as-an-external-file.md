@@ -2,27 +2,27 @@
 title: 'Procédure : Générer le modèle objet sous forme de fichier externe'
 ms.date: 03/30/2017
 ms.assetid: 2496fa06-3df4-4ecb-86c4-70a49ea08565
-ms.openlocfilehash: 2e439cd6628daa5b574be2049393dc2964896679
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 828e92903447b5c7cd3d7d27ed72bfe61d0dc6a9
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033746"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743294"
 ---
 # <a name="how-to-generate-the-object-model-as-an-external-file"></a>Procédure : Générer le modèle objet sous forme de fichier externe
 Comme alternative au mappage basé sur les attributs, vous pouvez générer votre modèle objet comme un fichier XML externe à l'aide de l'outil de ligne de commande SQLMetal. Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). En utilisant un fichier de mappage XML externe, vous réduisez l'encombrement dans votre code. Vous pouvez également modifier le comportement en modifiant le fichier externe sans recompiler les binaires de votre application. Pour plus d’informations, consultez [mappage externe](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
   
 > [!NOTE]
->  [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] ne prend pas en charge la génération d'un fichier de mappage externe.  
+>  Le concepteur objet/relationnel ne prend pas en charge la génération d’un fichier de mappage externe.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  La commande suivante génère un fichier de mappage externe à partir de l'exemple de base de données Northwind.  
   
 ```  
 sqlmetal /server:myserver /database:northwind /map:externalfile.xml  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'extrait suivant d'un fichier de mappage externe montre le mappage de la table Customers dans la base de données d'exemple Northwind. Cet extrait a été généré en exécutant SQLMetal avec le **/mapper** option.  
   
 ```xml  

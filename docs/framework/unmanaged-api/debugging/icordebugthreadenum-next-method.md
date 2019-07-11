@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b80e0cc026ce80950c14436abb2e84548f9adb64
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5e9e33e65b1cdeabe203c67ee4d4f259e2f7ac99
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61903316"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67770070"
 ---
 # <a name="icordebugthreadenumnext-method"></a>ICorDebugThreadEnum::Next, méthode
 Obtient le nombre d’instances de ICorDebugThread spécifiés à partir de l’énumération, en commençant à la position actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Next (  
     [in] ULONG celt,  
     [out, size_is(celt), length_is(*pceltFetched)]  

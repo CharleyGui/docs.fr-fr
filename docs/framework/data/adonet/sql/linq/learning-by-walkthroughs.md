@@ -2,18 +2,18 @@
 title: Apprentissage par les procédures pas à pas
 ms.date: 03/30/2017
 ms.assetid: a8ae2965-6a49-4155-89b0-7fab2c488ab1
-ms.openlocfilehash: d5c8457bc1e484d3c7c2b57225261a3ef74023d1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e6b5f77d6d918ae1402074c9c3037ccadec8ac02
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64582917"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743032"
 ---
 # <a name="learning-by-walkthroughs"></a>Apprentissage par les procédures pas à pas
 Le [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documentation fournit plusieurs procédures pas à pas. Cette rubrique aborde certains problèmes généraux de procédure pas à pas (y compris leur résolution) et fournit des liens vers plusieurs procédures pas à pas de base pour découvrir [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
 > [!NOTE]
->  Les procédures pas à pas de cette section Mise en route vous exposent le code de base qui prend en charge la technologie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. En pratique, vous utiliserez généralement les projets [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] et Windows Forms pour implémenter vos applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. À cette fin, la documentation du [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] fournit des exemples et des procédures pas à pas.  
+>  Les procédures pas à pas de cette section Mise en route vous exposent le code de base qui prend en charge la technologie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Dans la pratique, vous utiliserez généralement les projets concepteur objet/relationnel et Windows Forms pour implémenter votre [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] applications. La documentation du Concepteur O/R fournit des exemples et procédures pas à pas à cet effet.  
   
 ## <a name="getting-started-walkthroughs"></a>Procédures pas à pas de mise en route  
  Plusieurs procédures pas à pas sont disponibles dans cette section. Ces procédures pas à pas sont basées sur l’exemple de base de données Northwind et présentent des fonctionnalités de complexité minimale [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] à un rythme abordable.  
@@ -27,7 +27,7 @@ Le [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documenta
 |Ajoutez, modifiez et supprimez des éléments dans la base de données.|[Procédure pas à pas : Manipulation de données (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-visual-basic.md)|[Procédure pas à pas : Manipulation de données (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)|  
 |Utilisez des procédures stockées.|[Procédure pas à pas : À l’aide de procédures stockées uniquement (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-visual-basic.md)|[Procédure pas à pas : À l’aide de procédures stockées uniquement (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-csharp.md)|  
   
-## <a name="general"></a>Général  
+## <a name="general"></a>Généralités  
  Les informations suivantes se rapportent à ces procédures pas à pas en général :  
   
 - Environnement : Chaque [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] procédure pas à pas utilise Visual Studio comme environnement de développement intégré (IDE).  
@@ -45,7 +45,7 @@ Le [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documenta
   
 - Le nom de la classe qui représente en général la table Orders dans l'exemple de base de données Northwind est `[Order]`. La séquence d’échappement est nécessaire car `Order` est un mot clé dans Visual Basic.  
   
-## <a name="troubleshooting"></a>Résolution des problèmes  
+## <a name="troubleshooting"></a>Résolution de problèmes  
  Des erreurs d'exécution peuvent se produire car vous ne disposez pas des autorisations suffisantes pour accéder aux bases de données utilisées dans ces procédures pas à pas. Consultez les étapes suivantes pour résoudre les problèmes les plus courants.  
   
 ### <a name="log-on-issues"></a>Problèmes de connexion  
@@ -57,7 +57,7 @@ Le [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documenta
   
 2. Dans le volet gauche de la **Gestionnaire de Configuration SQL Server**, cliquez sur **SQL Server 2005 Services**.  
   
-3. Dans le volet droit, cliquez sur **SQL Server (SQLEXPRESS)**, puis cliquez sur **propriétés**.  
+3. Dans le volet droit, cliquez sur **SQL Server (SQLEXPRESS)** , puis cliquez sur **propriétés**.  
   
 4. Cliquez sur le **ouverture de session** onglet et vérifiez la façon dont vous tentez d’ouvrir une session sur le serveur.  
   
@@ -83,9 +83,9 @@ Le [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documenta
   
 1. Dans le volet gauche de la **Gestionnaire de Configuration SQL Server**, cliquez sur **SQL Server 2005 Services**.  
   
-2. Dans le volet droit, cliquez sur **SQL Server (SQLEXPRESS)**, puis cliquez sur **arrêter**.  
+2. Dans le volet droit, cliquez sur **SQL Server (SQLEXPRESS)** , puis cliquez sur **arrêter**.  
   
-3. Avec le bouton droit **SQL Server (SQLEXPRESS)**, puis cliquez sur **redémarrer**.  
+3. Avec le bouton droit **SQL Server (SQLEXPRESS)** , puis cliquez sur **redémarrer**.  
   
 ## <a name="see-also"></a>Voir aussi
 

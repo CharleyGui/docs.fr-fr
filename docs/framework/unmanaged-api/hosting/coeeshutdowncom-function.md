@@ -20,19 +20,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0d2b82bc056acd2e620461081b5f8c9d45fc152c
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 74548df512f68761b006e064a6db968e82b03813
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490648"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67779121"
 ---
 # <a name="coeeshutdowncom-function"></a>CoEEShutDownCOM, fonction
 Force le common language runtime (CLR) pour libérer tous les pointeurs d’interface qu’il conserve dans callable wrappers RCW (runtime). Cela a pour effet de libérer tous les caches de wrapper RCW. Cette fonction globale est déconseillée dans le .NET Framework 4. Au lieu de cela, utilisez le point d’entrée pour une exécution spécifique.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 void CoEEShutDownCOM ();  
 ```  
   

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b7cfc1917604644090f7f9aebb6c5184269f04b2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0d9c44420edfa4bd2d159f8044e72e5e913401f2
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61942322"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67766331"
 ---
 # <a name="icordebugobjectvaluegetmanagedcopy-method"></a>ICorDebugObjectValue::GetManagedCopy, méthode
 `GetManagedCopy` est obsolète. N'appelez pas cette méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetManagedCopy (  
     [out] IUnknown           **ppObject  
 );  

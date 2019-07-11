@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fa85fb2cebb47ecbd7b0f091cb79f6ea0936b1cb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c9a7d55b5a4867dcdc4e816bd3eac2cf29c68564
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61598998"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67751981"
 ---
 # <a name="corprfsnapshotinfo-enumeration"></a>COR_PRF_SNAPSHOT_INFO, énumération
 Spécifie la quantité de données à retourner avec un instantané de pile dans chaque appel à du profileur [StackSnapshotCallback](../../../../docs/framework/unmanaged-api/profiling/stacksnapshotcallback-function.md) (fonction).  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum _COR_PRF_SNAPSHOT_INFO {  
     COR_PRF_SNAPSHOT_DEFAULT = 0x0,  
     COR_PRF_SNAPSHOT_REGISTER_CONTEXT = 0x1,  

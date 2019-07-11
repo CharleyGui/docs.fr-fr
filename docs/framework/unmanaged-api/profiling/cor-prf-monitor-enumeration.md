@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0fc3329d8b6d49c2924c991e4d606a437eff9d2d
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: b6916c223aee615fad0bb9e5a47691122db41c98
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268008"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67752053"
 ---
 # <a name="corprfmonitor-enumeration"></a>COR_PRF_MONITOR, énumération
 Contient des valeurs utilisées pour spécifier un comportement, des fonctionnalités ou des événements auxquels le profileur veut s'abonner.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum {  
     COR_PRF_MONITOR_NONE                = 0x00000000,  
     COR_PRF_MONITOR_FUNCTION_UNLOADS    = 0x00000001,  
@@ -153,8 +153,8 @@ typedef enum {
 |`COR_PRF_ENABLE_FRAME_INFO`|Active la récupération d’une manière exacte `ClassID` pour une fonction générique en appelant le [GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) méthode avec un `COR_PRF_FRAME_INFO` valeur retournée par la [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) rappel.|  
 |`COR_PRF_ENABLE_FUNCTION_ARGS`|Traçage de l’argument permet à l’aide du [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) rappel ou [FunctionEnter3WithInfo](../../../../docs/framework/unmanaged-api/profiling/functionenter3withinfo-function.md) rappel et le [GetFunctionEnter3Info](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getfunctionenter3info-method.md) (méthode).|  
 |`COR_PRF_ENABLE_FUNCTION_RETVAL`|Active le traçage des valeurs de retour à l’aide de la [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md) rappel ou [FunctionLeave3WithInfo](../../../../docs/framework/unmanaged-api/profiling/functionleave3withinfo-function.md) rappel et [GetFunctionLeave3Info](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getfunctionleave3info-method.md) (méthode).|  
-|`COR_PRF_ENABLE_INPROC_DEBUGGING`|Obsolète.<br /><br /> Le débogage in-process n'est pas pris en charge. Cet indicateur est sans effet.|  
-|`COR_PRF_ENABLE_JIT_MAPS`|Obsolète.<br /><br /> Permet au profileur d’obtenir des mappages de langage intermédiaire – natif à l’aide de [GetILToNativeMapping](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md). Depuis .NET Framework 2.0, le runtime fait toujours le suivi des mappes Langage intermédiaire – Natif. Cet indicateur est donc toujours considéré comme étant défini.|  
+|`COR_PRF_ENABLE_INPROC_DEBUGGING`|Action déconseillée.<br /><br /> Le débogage in-process n'est pas pris en charge. Cet indicateur est sans effet.|  
+|`COR_PRF_ENABLE_JIT_MAPS`|Action déconseillée.<br /><br /> Permet au profileur d’obtenir des mappages de langage intermédiaire – natif à l’aide de [GetILToNativeMapping](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md). Depuis .NET Framework 2.0, le runtime fait toujours le suivi des mappes Langage intermédiaire – Natif. Cet indicateur est donc toujours considéré comme étant défini.|  
 |`COR_PRF_ENABLE_OBJECT_ALLOCATED`|Informe le runtime que le profileur est susceptible de demander l'allocation d'objets. Cet indicateur doit être défini lors de l'initialisation. Il permet au profileur d’utiliser ensuite le `COR_PRF_MONITOR_OBJECT_ALLOCATED` indicateur recevoir [ObjectAllocated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md) rappels.|  
 |`COR_PRF_ENABLE_REJIT`|Active les appels à la [RequestReJIT](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-requestrejit-method.md) et [RequestRevert](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-requestrevert-method.md) méthodes. Le profileur doit définir cet indicateur au démarrage.  Si le profileur spécifie cet indicateur, il doit aussi spécifier `COR_PRF_DISABLE_ALL_NGEN_IMAGES`.|  
 |`COR_PRF_ENABLE_STACK_SNAPSHOT`|Active les appels à la [DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) (méthode).|  

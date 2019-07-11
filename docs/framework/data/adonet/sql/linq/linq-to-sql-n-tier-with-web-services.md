@@ -2,18 +2,18 @@
 title: Applications multicouches LINQ to SQL avec les services Web
 ms.date: 03/30/2017
 ms.assetid: 9cb10eb8-957f-4beb-a271-5f682016fed2
-ms.openlocfilehash: 7b13a0cd77925423a12c093b1b5ac9b63ad7e019
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4fafaa60dd75def98b486e18faa5bd3ecd1d6315
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033533"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743054"
 ---
 # <a name="linq-to-sql-n-tier-with-web-services"></a>Applications multicouches LINQ to SQL avec les services Web
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] est conçu pour être utilisé sur la couche intermédiaire dans une couche d’accès aux données faiblement couplées (DAL) tel qu’un service Web. Si la couche Présentation est une page web ASP.NET, vous utilisez le contrôle serveur web <xref:System.Web.UI.WebControls.LinqDataSource> pour gérer le transfert de données entre l’interface utilisateur et [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] sur la couche intermédiaire. Si la couche de présentation n’est pas une page ASP.NET, la couche intermédiaire et la couche de présentation doivent exécuter des tâches supplémentaires pour gérer la sérialisation et la désérialisation des données.  
   
 ## <a name="setting-up-linq-to-sql-on-the-middle-tier"></a>Configuration de LINQ to SQL sur la couche intermédiaire  
- Dans un service Web ou une application multicouche, la couche intermédiaire contient le contexte des données et les classes d'entité. Vous pouvez créer ces classes manuellement, ou à l'aide de SQLMetal.exe ou d'[!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)], comme décrit dans une autre partie de la documentation. Au moment du design, vous pouvez choisir de rendre les classes d'entité sérialisables. Pour plus d'informations, voir [Procédure : Rendre les entités sérialisables](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md). Vous avez également la possibilité de créer un ensemble de classes distinct qui encapsule les données à sérialiser, puis de le projeter en types sérialisables lorsque vous retournez les données dans vos requêtes [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
+ Dans un service Web ou une application multicouche, la couche intermédiaire contient le contexte des données et les classes d'entité. Vous pouvez créer ces classes manuellement ou à l’aide de SQLMetal.exe ou le concepteur objet/relationnel comme décrit dans la documentation. Au moment du design, vous pouvez choisir de rendre les classes d'entité sérialisables. Pour plus d’informations, consultez [Guide pratique pour Rendre les entités sérialisables](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md). Vous avez également la possibilité de créer un ensemble de classes distinct qui encapsule les données à sérialiser, puis de le projeter en types sérialisables lorsque vous retournez les données dans vos requêtes [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
   
  Vous définissez ensuite l'interface avec les méthodes que les clients appelleront pour extraire, insérer et mettre à jour les données. Ces méthodes d'interface encapsulent vos requêtes [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)]. Vous pouvez utiliser tout type de mécanisme de sérialisation pour gérer les appels de méthode distants et la sérialisation de données. La seule contrainte à respecter est la suivante : si votre modèle objet comporte des relations circulaires ou bidirectionnelles, comme entre Customers et Orders dans le modèle objet Northwind standard, vous devez utiliser un sérialiseur qui le prend en charge. Windows Communication Foundation (WCF) <xref:System.Runtime.Serialization.DataContractSerializer> prend en charge les relations bidirectionnelles, mais ce n'est pas le cas de XmlSerializer qui est utilisé avec des services Web autres que WCF. Si vous choisissez d'utiliser le XmlSerializer, vous devez vous assurer que votre modèle objet ne comporte pas de relations cycliques.  
   

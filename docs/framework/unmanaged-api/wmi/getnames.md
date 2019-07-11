@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f664edf29e5d2f9ec4e523aa7f7b204cf999e01b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e75bf9aab820216373f2f33fe8aa567f10befcb1
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61724081"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67746520"
 ---
 # <a name="getnames-function"></a>GetNames, fonction
 Récupère une partie ou l’ensemble des noms des propriétés d’un objet. 
@@ -30,7 +30,7 @@ Récupère une partie ou l’ensemble des noms des propriétés d’un objet.
     
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetNames (
    [in] int                 vFunc, 
    [in] IWbemClassObject*   ptr, 
@@ -65,7 +65,7 @@ HRESULT GetNames (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Value  |Description  |
+|Constante  |Valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_FAILED` | 0x80041001 | Il y a eu une défaillance générale. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un ou plusieurs paramètres ne sont pas valides, ou une combinaison incorrecte des indicateurs et des paramètres a été spécifiée. |
@@ -82,19 +82,19 @@ L’indicateur des valeurs dans `lFlags` sont des champs de bits
 
 Les indicateurs qui peuvent être passés en tant que le `lEnumFlags` argument sont des champs de bits qui sont définis dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code.  Vous pouvez combiner un indicateur de chaque groupe avec n’importe quel indicateur à partir d’un autre groupe. Toutefois, les indicateurs à partir du même groupe sont mutuellement exclusifs. 
 
-| Indicateurs de groupe 1 |Value  |Description  |
+| Indicateurs de groupe 1 |Valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_ALWAYS` | 0 | Retourner tous les noms de propriété. `strQualifierName` et `pQualifierVal` ne sont pas utilisés. |
 | `WBEM_FLAG_ONLY_IF_TRUE` | 1 | Retourner uniquement des propriétés qui ont un qualificateur de nom spécifié par le `strQualifierName` paramètre. Si cet indicateur est utilisé, vous devez spécifier `strQualifierName`. |
 |`WBEM_FLAG_ONLY_IF_FALSE` | 2 |  Retourner uniquement des propriétés qui n’ont pas d’un qualificateur de nom spécifié par le `strQualifierName` paramètre. Si cet indicateur est utilisé, vous devez spécifier `strQualifierName`. |
 |`WBEM_FLAG_ONLY_IF_IDENTICAL` | 3 | Retourne uniquement les propriétés qui ont un qualificateur de nom spécifié par le `wszQualifierName` paramètre et également avoir une valeur identique à celui spécifié par le `pQualifierVal` structure. Si cet indicateur est utilisé, vous devez spécifier à la fois un `wszQualifierName` et un `pQualifierValue`. |
 
-| Indicateurs de groupe 2 |Value  |Description  |
+| Indicateurs de groupe 2 |Valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_FLAG_KEYS_ONLY` | 0x4 | Retourner uniquement les noms des propriétés qui définissent les clés. |
 |`WBEM_FLAG_REFS_ONLY` | 0x8 | Retour seuls noms de propriétés qui sont des références d’objet. |
 
-| Indicateurs de groupe 3 |Value  |Description  |
+| Indicateurs de groupe 3 |`Value`  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Retourner uniquement les noms de propriétés qui appartiennent à la classe la plus dérivée. Exclure les propriétés des classes parentes. |
 | `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Retourner uniquement les noms de propriétés qui appartiennent à des classes parentes. |

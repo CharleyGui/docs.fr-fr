@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7be1bd2934fbb2e09a39c3042fa9ae314e89d629
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 080c16d3a7baceaa277b3418ac2e17391090f00c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61905604"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67750599"
 ---
 # <a name="iceegenallocatemethodbuffer-method"></a>ICeeGen::AllocateMethodBuffer, méthode
 Crée une mémoire tampon de la taille spécifiée pour une méthode et obtient l’adresse virtuelle relative de la méthode.  
@@ -31,7 +31,7 @@ Crée une mémoire tampon de la taille spécifiée pour une méthode et obtient 
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT AllocateMethodBuffer (   
     [in]  ULONG    cchBuffer,   
     [out] UCHAR    **lpBuffer,  

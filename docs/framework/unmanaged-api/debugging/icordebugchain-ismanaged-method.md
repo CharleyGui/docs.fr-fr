@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a27ea95ca78f7db8f67ec2a13f02767e67619e97
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7e14ff1cd85810a0b2f9e14c3ab4c8d12d883d17
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61989337"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67745621"
 ---
 # <a name="icordebugchainismanaged-method"></a>ICorDebugChain::IsManaged, méthode
 Obtient une valeur qui indique si cette chaîne est en cours d’exécution du code managé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT IsManaged (  
     [out] BOOL               *pManaged  
 );  

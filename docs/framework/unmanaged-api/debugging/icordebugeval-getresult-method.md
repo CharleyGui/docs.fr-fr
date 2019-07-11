@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b8e7fcb4f44d6bdf6f18c93b1046b549331621a4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b12ba5ad5c85643d1f4c91585cf7abca210d22bd
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61667117"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67752941"
 ---
 # <a name="icordebugevalgetresult-method"></a>ICorDebugEval::GetResult, méthode
 Obtient les résultats de cette évaluation.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetResult (  
     [out] ICorDebugValue    **ppResult  
 );  

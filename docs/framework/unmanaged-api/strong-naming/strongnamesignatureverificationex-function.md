@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 049b7b11473a05d74dc311ca6ee79947039b0dd1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 80df33e9064d9843873c67272bac7a34dbe734cc
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61794418"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67751611"
 ---
 # <a name="strongnamesignatureverificationex-function"></a>StrongNameSignatureVerificationEx, fonction
 Obtient une valeur indiquant si le manifeste d’assembly au chemin fourni contient une signature de nom fort.  
@@ -31,7 +31,7 @@ Obtient une valeur indiquant si le manifeste d’assembly au chemin fourni conti
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 BOOLEAN StrongNameSignatureVerificationEx (  
     [in]  LPCWSTR   wszFilePath,  
     [in]  BOOLEAN   fForceVerification,  

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d0f029c8fbab97afe3089956391e8446d4cc5e15
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 57ed64ad8a6ae8ef46f423471436c3fce29d6fe5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760158"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67767807"
 ---
 # <a name="ihostmemorymanagerneedsvirtualaddressspace-method"></a>IHostMemoryManager::NeedsVirtualAddressSpace, méthode
 Avertit l’hôte que le common language runtime (CLR) va essayer d’utiliser la mémoire spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT NeedsVirtualAddressSpace (  
     [in] LPVOID  startAddress,  
     [in] SIZE_T  size  

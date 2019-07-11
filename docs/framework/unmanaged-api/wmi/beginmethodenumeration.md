@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2d6de2a5ff4d2743c7aca2e46b3af848138c15fb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 46ef53acdfa06b0c2be9d2aa55e89ce8fa34dfb0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61917356"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67761742"
 ---
 # <a name="beginenumeration-function"></a>BeginEnumeration, fonction
 Commence une énumération des méthodes disponibles pour l’objet.  
@@ -30,7 +30,7 @@ Commence une énumération des méthodes disponibles pour l’objet.
     
 ## <a name="syntax"></a>Syntaxe  
   
-``` 
+```cpp 
 HRESULT BeginMethodEnumeration (
    [in] int               vFunc, 
    [in] IWbemClassObject* ptr, 
@@ -49,7 +49,7 @@ HRESULT BeginMethodEnumeration (
 `lEnumFlags`  
 [in] Zéro (0) pour toutes les méthodes, ou un indicateur qui spécifie la portée de l’énumération. Les indicateurs suivants sont définis dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-Constante  |Value  |Description  |
+Constante  |Valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Limiter l’énumération pour les méthodes qui sont définies dans la classe elle-même. |
 | `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Limiter l’énumération de propriétés qui sont héritées de classes de base. |
@@ -58,7 +58,7 @@ Constante  |Value  |Description  |
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Value  |Description  |
+|Constante  |Valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | `lEnnumFlags` est différent de zéro et ne fait pas partie des indicateurs spécifiés. |
 |`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |

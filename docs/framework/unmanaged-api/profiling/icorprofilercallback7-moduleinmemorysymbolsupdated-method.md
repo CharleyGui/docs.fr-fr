@@ -11,12 +11,12 @@ api_type:
 ms.assetid: f362a896-3247-4894-9727-e48dbbcd2c78
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 12414064bf0651eab443951bde2a50dcff7b2291
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0a6e00d55157046679ee1de0a7ff8e2764c1e357
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61992093"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67758052"
 ---
 # <a name="icorprofilercallback7moduleinmemorysymbolsupdated-method"></a>ICorProfilerCallback7::ModuleInMemorySymbolsUpdated (méthode)
 [Prise en charge dans le .NET Framework 4.6.1 et versions ultérieures]  
@@ -25,7 +25,7 @@ ms.locfileid: "61992093"
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT ModuleInMemorySymbolsUpdated(  
      ModuleID moduleId  
 );  

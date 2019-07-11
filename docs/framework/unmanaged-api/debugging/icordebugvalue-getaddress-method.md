@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ac550ee7b1d66612557b30d15c275c90cf09b8af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5dc29663153f837b660262eae51b6f032617d027
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61986854"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67765072"
 ---
 # <a name="icordebugvaluegetaddress-method"></a>ICorDebugValue::GetAddress, méthode
 Obtient l’adresse de cet objet « ICorDebugValue », qui est en cours de débogage.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetAddress (  
     [out] CORDB_ADDRESS   *pAddress  
 );  

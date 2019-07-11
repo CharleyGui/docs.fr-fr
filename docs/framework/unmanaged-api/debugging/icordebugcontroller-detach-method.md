@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 85a9bde77f7c393756ec1d3e7d30b96392aa6a94
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f687e48413cb227ad715720e24bd645065309553
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61749629"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67748846"
 ---
 # <a name="icordebugcontrollerdetach-method"></a>ICorDebugController::Detach, méthode
 Détache le débogueur du processus ou domaine d’application.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Detach ();  
 ```  
   

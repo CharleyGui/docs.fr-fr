@@ -4,24 +4,24 @@ ms.date: 03/30/2017
 ms.assetid: 790e0426-e5cd-49fd-a792-f8c8635d72fe
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 74be827dc97213507b96da9e025923f859011acd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bd12861b34d577a002fbf0cc8a7962b7bfc35fe1
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946144"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67775342"
 ---
 # <a name="icordebugvirtualunwindernext-method"></a>Icordebugvirtualunwinder::Next, méthode
 Avance jusqu'au contexte de l'appelant.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Next();  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
- Aucun.  
+ Aucune.  
   
 ## <a name="return-value"></a>Valeur de retour  
  `S_OK` en cas de réussite du déroulement ou `CORDBG_S_AT_END_OF_STACK` si le déroulement ne peut pas être effectué étant donné qu'il ne reste plus de frames.  

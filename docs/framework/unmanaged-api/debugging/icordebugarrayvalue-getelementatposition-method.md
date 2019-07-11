@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 76100116f2ca3a9b9a99477ca2352d5fa1335ab2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4cfdaeb1bc298c10cbae01c946ffb867cef21d17
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61645680"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67737549"
 ---
 # <a name="icordebugarrayvaluegetelementatposition-method"></a>ICorDebugArrayValue::GetElementAtPosition, méthode
 Obtient l’élément à la position donnée, en traitant le tableau comme un tableau unidimensionnel de base zéro.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetElementAtPosition (  
     [in]  ULONG32          nPosition,  
     [out] ICorDebugValue   **ppValue  

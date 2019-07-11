@@ -5,23 +5,23 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a15ae411-8dc2-4ca3-84d2-01c9d5f1972a
-ms.openlocfilehash: ff2b2f6575c82f3769823431ec6363775bf9d698
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1ff6f8b58e01c86ae1c1e2e1533b1997ba2eb6b0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616079"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742889"
 ---
 # <a name="serialization"></a>Sérialisation
 Cette rubrique décrit [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fonctions de sérialisation. Les paragraphes qui suivent fournissent des informations sur l'ajout de la sérialisation pendant la génération de code au moment du design et le comportement de sérialisation à l'exécution de classes [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
  Vous pouvez ajouter du code de sérialisation au moment du design selon l'un des méthodes suivantes :  
   
-- Dans le [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)], modifiez le **Mode de sérialisation** propriété **Serialization**.  
+- Dans le concepteur objet/relationnel, modifiez le **Mode de sérialisation** propriété **Serialization**.  
   
 - Sur la ligne de commande SQLMetal, ajoutez le **/serialization** option. Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
-## <a name="overview"></a>Vue d'ensemble  
+## <a name="overview"></a>Présentation  
  Le code généré par [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fournit des fonctions de chargement différé par défaut. Le chargement différé est très utile au niveau intermédiaire pour le chargement transparent de données à la demande. Il pose toutefois problème pour la sérialisation car le sérialiseur déclenche un chargement différé, qu'il soit voulu ou non. En effet, lorsqu'un objet est sérialisé, sa fermeture transitive dans toutes les références à chargement différé en sortie est sérialisée.  
   
  Le [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fonctionnalité de sérialisation résout ce problème, principalement par le biais de deux mécanismes :  

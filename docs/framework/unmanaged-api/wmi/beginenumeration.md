@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 07396428dafbaa76e7771a4022bb493768f9f6c1
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 5ccf39c019094d896ca20534fccbbccf38ab1dd3
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636802"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67761808"
 ---
 # <a name="beginenumeration-function"></a>BeginEnumeration, fonction
 Réinitialise l’énumérateur au début de l’énumération.  
@@ -30,7 +30,7 @@ Réinitialise l’énumérateur au début de l’énumération.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT BeginEnumeration (
    [in] int               vFunc, 
    [in] IWbemClassObject* ptr, 
@@ -53,7 +53,7 @@ HRESULT BeginEnumeration (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Value  |Description  |
+|Constante  |`Value`  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | La combinaison d’indicateurs dans `lEnumFlags` n’est pas valide ou non valide argument a été spécifié. |
 |`WBEM_E_UNEXPECTED` | 0x8004101d | Un deuxième appel à `BeginEnumeration` a été effectuée sans appel intermédiaire à [ `EndEnumeration` ](endenumeration.md). |
@@ -68,21 +68,21 @@ Les indicateurs qui peuvent être passés en tant que le `lEnumFlags` argument s
 
 **Groupe 1**
 
-|Constante  |Value  |Description  |
+|Constante  |Valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_FLAG_KEYS_ONLY` | 0x4 | Inclure les propriétés qui constituent la clé uniquement. |
 |`WBEM_FLAG_REFS_ONLY` | 0x8 | Inclure les propriétés qui sont des références d’objet. |
 
 **Groupe 2**
 
-Constante  |Value  |Description  |
+Constante  |Valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_FLAG_SYSTEM_ONLY` | 0x30 | Limiter l’énumération aux propriétés du système. |
 |`WBEM_FLAG_NONSYSTEM_ONLY` | 0x40 | Les propriétés locales et propagées mais exclut les propriétés système à partir de l’énumération. |
 
 Pour les classes :
 
-Constante  |Value  |Description  |
+Constante  |Valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_FLAG_CLASS_OVERRIDES_ONLY` | 0x100 | Limiter l’énumération aux propriétés de substitution dans la définition de classe. |
 |`WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES` | 0x100 | Limiter l’énumération aux propriétés de substitution dans la définition de classe en cours et de nouvelles propriétés définies dans la classe. |
@@ -92,7 +92,7 @@ Constante  |Value  |Description  |
 
 Pour les instances :
 
-Constante  |Value  |Description  |
+Constante  |Valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Limiter l’énumération aux propriétés qui sont définies ou modifiées dans la classe elle-même. |
 | `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Limiter l’énumération de propriétés qui sont héritées de classes de base. |

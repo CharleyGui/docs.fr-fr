@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: c8b3f338659e2784db8deca3e1776e7926c30c32
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d26cf45a0243d61757af5d9d0c00cf135ae15bdf
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61609678"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67740868"
 ---
 # <a name="clrdatasourcetype-enumeration"></a>Énumération de CLRDataSourceType
 
@@ -30,7 +30,7 @@ Fournit des valeurs qui sont utilisées par la structure CLRDATA_IL_ADDRESS_MAP.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 typedef enum
 {
     CLRDATA_SOURCE_TYPE_INVALID        = 0x00, // To indicate that nothing else applies
@@ -50,8 +50,8 @@ Cette énumération réside dans le runtime et n’est pas exposée par le biais
 ## <a name="requirements"></a>Configuration requise
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun.  
-**Bibliothèque :** Aucun.  
+**En-tête :** Aucun  
+**Bibliothèque :** Aucun  
 **Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi

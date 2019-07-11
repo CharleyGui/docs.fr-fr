@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 193caa894b8697a65e8821c01a63dde9cc5b5ccc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6b21e08d3bf6845b9fc44d5a5edef0ea39b91da5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608942"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67746537"
 ---
 # <a name="getmethodorigin-function"></a>GetMethodOrigin, fonction
 Détermine la classe dans laquelle une méthode est déclarée.
@@ -30,7 +30,7 @@ Détermine la classe dans laquelle une méthode est déclarée.
     
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetMethodOrigin (
    [in] int                 vFunc, 
    [in] IWbemClassObject*   ptr, 
@@ -57,7 +57,7 @@ HRESULT GetMethodOrigin (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Value  |Description  |
+|Constante  |Valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_NOT_FOUND` | 0x80041002 | La méthode spécifiée est introuvable. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un ou plusieurs paramètres ne sont pas valides. |

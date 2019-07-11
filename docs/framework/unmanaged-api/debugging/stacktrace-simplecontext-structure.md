@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b0625dc72d44485dbb69b42cba5387085d1862bb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bc0fc18e31b89b22ffd30d99a8b079ed7b87fa1b
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61986529"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67752501"
 ---
 # <a name="stacktracesimplecontext-structure"></a>StackTrace_SimpleContext
 Fournit un contexte simple qui peut être utilisé à la place d'une structure `CONTEXT` complète.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 struct StackTrace_SimpleContext  
 {  
     ULONG64 StackOffset;       // ESP on x86  

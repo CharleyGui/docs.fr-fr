@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 315d6dd522f3c6be2d36b1eb411d9f471350df60
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f101fe2a84a26efb23f57bac3aaf4f0e64a4d36c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61651751"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67740032"
 ---
 # <a name="cordebuggctype-enumeration"></a>CorDebugGCType, énumération
 Indique si le récupérateur de mémoire s'exécute sur une station de travail ou sur un serveur.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum CorDebugGCType {  
     CorDebugWorkstationGC  = 0,  
     CorDebugServerGC       = ( CorDebugWorkstationGC + 1 )  

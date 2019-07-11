@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b9ee87c926d2377ff8eef53f930fe75251b28ceb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a75d31f0a2c844895363bb4693dbcb5aba4cce1f
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61597870"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67775511"
 ---
 # <a name="icorprofilercallbackassemblyunloadfinished-method"></a>ICorProfilerCallback::AssemblyUnloadFinished, méthode
 Informe le profileur qu’un assembly a été déchargé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT AssemblyUnloadFinished(  
     [in] AssemblyID assemblyId,  
     [in] HRESULT    hrStatus);  

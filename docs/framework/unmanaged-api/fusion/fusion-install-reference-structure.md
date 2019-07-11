@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 611b4a543a1de7c6163ec45ff7f17d07726569ba
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ec18d5d5a6574cb0e08a6c4d6eaedcbcbf6886cd
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936485"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67759368"
 ---
 # <a name="fusioninstallreference-structure"></a>FUSION_INSTALL_REFERENCE, structure
 Représente une référence par une application à un assembly de l’application a installé dans le global assembly cache.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef struct _FUSION_INSTALL_REFERENCE_ {  
     DWORD    cbSize,  
     DWORD    dwFlags,  

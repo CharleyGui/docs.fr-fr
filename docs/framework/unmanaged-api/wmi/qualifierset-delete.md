@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 543cc63b3e2188c11a6a8bf1eaa846461375be99
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 956abe8ddf8075b7b8f8c057db0aa7187982e1d5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61597269"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782612"
 ---
 # <a name="qualifiersetdelete-function"></a>QualifierSet_Delete (fonction)
 Supprime un qualificateur spécifié par nom.  
@@ -30,7 +30,7 @@ Supprime un qualificateur spécifié par nom.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT QualifierSet_Delete (
    [in] int                  vFunc, 
    [in] IWbemQualifierSet*   ptr, 
@@ -53,7 +53,7 @@ HRESULT QualifierSet_Delete (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Value  |Description  |
+|Constante  |Valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Le paramètre `wszName` n’est pas valide. |
 |`WBEM_E_INVALID_OPERATION` | 0x80041016 | La suppression de ce qualificateur est non conforme. |

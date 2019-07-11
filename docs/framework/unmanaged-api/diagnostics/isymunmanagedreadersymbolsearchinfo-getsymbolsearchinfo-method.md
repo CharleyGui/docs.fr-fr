@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 519fa1b2c2866a6906d833251e18d86b7b43d525
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3d910f9e93dbd90f9e23c5f32903a8d819ea01f8
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61986286"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67751471"
 ---
 # <a name="isymunmanagedreadersymbolsearchinfogetsymbolsearchinfo-method"></a>ISymUnmanagedReaderSymbolSearchInfo::GetSymbolSearchInfo, méthode
 Obtient des informations de recherche de symbole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetSymbolSearchInfo(  
     [in]  ULONG32  cSearchInfo,  
     [out] ULONG32  *pcSearchInfo,  
