@@ -17,30 +17,30 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cd01dcbd45ecae84ccccffb510c20f580ae8c598
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f5140462ae3c869d58187351d2e0ff11f7b6e179
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61939826"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67776692"
 ---
-# <a name="isymunmanageddocumentgetlanguagevendor-method"></a><span data-ttu-id="e2d63-102">ISymUnmanagedDocument::GetLanguageVendor, méthode</span><span class="sxs-lookup"><span data-stu-id="e2d63-102">ISymUnmanagedDocument::GetLanguageVendor Method</span></span>
-<span data-ttu-id="e2d63-103">Obtient le fournisseur de langage de ce document.</span><span class="sxs-lookup"><span data-stu-id="e2d63-103">Gets the language vendor of this document.</span></span>  
+# <a name="isymunmanageddocumentgetlanguagevendor-method"></a><span data-ttu-id="ad040-102">ISymUnmanagedDocument::GetLanguageVendor, méthode</span><span class="sxs-lookup"><span data-stu-id="ad040-102">ISymUnmanagedDocument::GetLanguageVendor Method</span></span>
+<span data-ttu-id="ad040-103">Obtient le fournisseur de langage de ce document.</span><span class="sxs-lookup"><span data-stu-id="ad040-103">Gets the language vendor of this document.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e2d63-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e2d63-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ad040-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ad040-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetLanguageVendor(  
     [out, retval]  GUID*  pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="e2d63-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="e2d63-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="ad040-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="ad040-105">Parameters</span></span>  
  `pRetVal`  
- <span data-ttu-id="e2d63-106">[out] Pointeur vers une variable qui reçoit le fournisseur de langage.</span><span class="sxs-lookup"><span data-stu-id="e2d63-106">[out] A pointer to a variable that receives the language vendor.</span></span>  
+ <span data-ttu-id="ad040-106">[out] Pointeur vers une variable qui reçoit le fournisseur de langage.</span><span class="sxs-lookup"><span data-stu-id="ad040-106">[out] A pointer to a variable that receives the language vendor.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="e2d63-107">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="e2d63-107">Return Value</span></span>  
- <span data-ttu-id="e2d63-108">S_OK si la méthode réussit.</span><span class="sxs-lookup"><span data-stu-id="e2d63-108">S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="ad040-107">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="ad040-107">Return Value</span></span>  
+ <span data-ttu-id="ad040-108">S_OK si la méthode réussit.</span><span class="sxs-lookup"><span data-stu-id="ad040-108">S_OK if the method succeeds.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e2d63-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e2d63-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ad040-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ad040-109">See also</span></span>
 
-- [<span data-ttu-id="e2d63-110">ISymUnmanagedDocument, interface</span><span class="sxs-lookup"><span data-stu-id="e2d63-110">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+- [<span data-ttu-id="ad040-110">ISymUnmanagedDocument, interface</span><span class="sxs-lookup"><span data-stu-id="ad040-110">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)

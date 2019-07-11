@@ -17,41 +17,41 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a8a979e86dbe52577d0b58089015338e4a87750d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b58da58897edbf3ec9492c1f9f1b2f3d7b83e07a
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61700174"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67780083"
 ---
-# <a name="icorruntimehostmapfile-method"></a><span data-ttu-id="8c04f-102">ICorRuntimeHost::MapFile, méthode</span><span class="sxs-lookup"><span data-stu-id="8c04f-102">ICorRuntimeHost::MapFile Method</span></span>
-<span data-ttu-id="8c04f-103">Mappe le fichier spécifié dans la mémoire.</span><span class="sxs-lookup"><span data-stu-id="8c04f-103">Maps the specified file into memory.</span></span> <span data-ttu-id="8c04f-104">Cette méthode est obsolète.</span><span class="sxs-lookup"><span data-stu-id="8c04f-104">This method is obsolete.</span></span>  
+# <a name="icorruntimehostmapfile-method"></a><span data-ttu-id="1b0ee-102">ICorRuntimeHost::MapFile, méthode</span><span class="sxs-lookup"><span data-stu-id="1b0ee-102">ICorRuntimeHost::MapFile Method</span></span>
+<span data-ttu-id="1b0ee-103">Mappe le fichier spécifié dans la mémoire.</span><span class="sxs-lookup"><span data-stu-id="1b0ee-103">Maps the specified file into memory.</span></span> <span data-ttu-id="1b0ee-104">Cette méthode est obsolète.</span><span class="sxs-lookup"><span data-stu-id="1b0ee-104">This method is obsolete.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="8c04f-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8c04f-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1b0ee-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1b0ee-105">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT MapFile(  
     [in]  HANDLE    hFile,  
     [out] HMODULE*  hMapAddress  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="8c04f-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="8c04f-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="1b0ee-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="1b0ee-106">Parameters</span></span>  
  `hFile`  
- <span data-ttu-id="8c04f-107">[in] Le handle du fichier à mapper.</span><span class="sxs-lookup"><span data-stu-id="8c04f-107">[in] The handle of the file to be mapped.</span></span>  
+ <span data-ttu-id="1b0ee-107">[in] Le handle du fichier à mapper.</span><span class="sxs-lookup"><span data-stu-id="1b0ee-107">[in] The handle of the file to be mapped.</span></span>  
   
  `hMapAddress`  
- <span data-ttu-id="8c04f-108">[out] L’adresse mémoire de départ à partir duquel commencer le fichier de mappage.</span><span class="sxs-lookup"><span data-stu-id="8c04f-108">[out] The starting memory address at which to begin mapping the file.</span></span>  
+ <span data-ttu-id="1b0ee-108">[out] L’adresse mémoire de départ à partir duquel commencer le fichier de mappage.</span><span class="sxs-lookup"><span data-stu-id="1b0ee-108">[out] The starting memory address at which to begin mapping the file.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="8c04f-109">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="8c04f-109">Requirements</span></span>  
- <span data-ttu-id="8c04f-110">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="8c04f-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1b0ee-109">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="1b0ee-109">Requirements</span></span>  
+ <span data-ttu-id="1b0ee-110">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1b0ee-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="8c04f-111">**En-tête :** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="8c04f-111">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="1b0ee-111">**En-tête :** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="1b0ee-111">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="8c04f-112">**Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="8c04f-112">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="1b0ee-112">**Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="1b0ee-112">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="8c04f-113">**Version du .NET framework :** 1.0, 1.1</span><span class="sxs-lookup"><span data-stu-id="8c04f-113">**.NET Framework Version:** 1.0, 1.1</span></span>  
+ <span data-ttu-id="1b0ee-113">**Version du .NET framework :** 1.0, 1.1</span><span class="sxs-lookup"><span data-stu-id="1b0ee-113">**.NET Framework Version:** 1.0, 1.1</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8c04f-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8c04f-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1b0ee-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1b0ee-114">See also</span></span>
 
-- [<span data-ttu-id="8c04f-115">ICorRuntimeHost, interface</span><span class="sxs-lookup"><span data-stu-id="8c04f-115">ICorRuntimeHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
+- [<span data-ttu-id="1b0ee-115">ICorRuntimeHost, interface</span><span class="sxs-lookup"><span data-stu-id="1b0ee-115">ICorRuntimeHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)

@@ -17,31 +17,31 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4d3497d3167715d3e8a04f10a6687260949e4a36
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fd7131c55f9c06a8fcfc0cad859c18e410169c78
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934054"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67778196"
 ---
-# <a name="isymunmanagedwriterclose-method"></a><span data-ttu-id="d398e-102">ISymUnmanagedWriter::Close, méthode</span><span class="sxs-lookup"><span data-stu-id="d398e-102">ISymUnmanagedWriter::Close Method</span></span>
-<span data-ttu-id="d398e-103">Ferme le writer de symbole après avoir validé les symboles dans le magasin de symboles.</span><span class="sxs-lookup"><span data-stu-id="d398e-103">Closes the symbol writer after committing the symbols to the symbol store.</span></span>  
+# <a name="isymunmanagedwriterclose-method"></a><span data-ttu-id="c0374-102">ISymUnmanagedWriter::Close, méthode</span><span class="sxs-lookup"><span data-stu-id="c0374-102">ISymUnmanagedWriter::Close Method</span></span>
+<span data-ttu-id="c0374-103">Ferme le writer de symbole après avoir validé les symboles dans le magasin de symboles.</span><span class="sxs-lookup"><span data-stu-id="c0374-103">Closes the symbol writer after committing the symbols to the symbol store.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d398e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d398e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c0374-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c0374-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT Close();  
 ```  
   
-## <a name="return-value"></a><span data-ttu-id="d398e-105">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="d398e-105">Return Value</span></span>  
- <span data-ttu-id="d398e-106">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="d398e-106">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="c0374-105">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="c0374-105">Return Value</span></span>  
+ <span data-ttu-id="c0374-106">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="c0374-106">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="d398e-107">Notes</span><span class="sxs-lookup"><span data-stu-id="d398e-107">Remarks</span></span>  
- <span data-ttu-id="d398e-108">Après cet appel, le writer de symbole devient non valide pour les nouvelles mises à jour.</span><span class="sxs-lookup"><span data-stu-id="d398e-108">After this call, the symbol writer becomes invalid for further updates.</span></span> <span data-ttu-id="d398e-109">Pour fermer le writer de symbole sans valider les symboles, utilisez le [ISymUnmanagedWriter::Abort](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-abort-method.md) méthode à la place.</span><span class="sxs-lookup"><span data-stu-id="d398e-109">To close the symbol writer without committing the symbols, use the [ISymUnmanagedWriter::Abort](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-abort-method.md) method instead.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c0374-107">Notes</span><span class="sxs-lookup"><span data-stu-id="c0374-107">Remarks</span></span>  
+ <span data-ttu-id="c0374-108">Après cet appel, le writer de symbole devient non valide pour les nouvelles mises à jour.</span><span class="sxs-lookup"><span data-stu-id="c0374-108">After this call, the symbol writer becomes invalid for further updates.</span></span> <span data-ttu-id="c0374-109">Pour fermer le writer de symbole sans valider les symboles, utilisez le [ISymUnmanagedWriter::Abort](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-abort-method.md) méthode à la place.</span><span class="sxs-lookup"><span data-stu-id="c0374-109">To close the symbol writer without committing the symbols, use the [ISymUnmanagedWriter::Abort](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-abort-method.md) method instead.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d398e-110">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="d398e-110">Requirements</span></span>  
- <span data-ttu-id="d398e-111">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="d398e-111">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c0374-110">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="c0374-110">Requirements</span></span>  
+ <span data-ttu-id="c0374-111">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="c0374-111">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d398e-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d398e-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c0374-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c0374-112">See also</span></span>
 
-- [<span data-ttu-id="d398e-113">ISymUnmanagedWriter, interface</span><span class="sxs-lookup"><span data-stu-id="d398e-113">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [<span data-ttu-id="c0374-113">ISymUnmanagedWriter, interface</span><span class="sxs-lookup"><span data-stu-id="c0374-113">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
