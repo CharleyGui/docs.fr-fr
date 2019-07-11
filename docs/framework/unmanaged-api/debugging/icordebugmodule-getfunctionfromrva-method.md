@@ -17,26 +17,26 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: edd9407f05e30eb420e83fb042c2412e99b0a022
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0ab8d56a457db0a70b47293684f0de73ce9ff5f4
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61953749"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67763364"
 ---
-# <a name="icordebugmodulegetfunctionfromrva-method"></a><span data-ttu-id="c5c54-102">ICorDebugModule::GetFunctionFromRVA, méthode</span><span class="sxs-lookup"><span data-stu-id="c5c54-102">ICorDebugModule::GetFunctionFromRVA Method</span></span>
-<span data-ttu-id="c5c54-103">Cette méthode n’a pas été implémentée dans la version actuelle du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="c5c54-103">This method has not been implemented in the current version of the .NET Framework.</span></span>  
+# <a name="icordebugmodulegetfunctionfromrva-method"></a><span data-ttu-id="e3e69-102">ICorDebugModule::GetFunctionFromRVA, méthode</span><span class="sxs-lookup"><span data-stu-id="e3e69-102">ICorDebugModule::GetFunctionFromRVA Method</span></span>
+<span data-ttu-id="e3e69-103">Cette méthode n’a pas été implémentée dans la version actuelle du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="e3e69-103">This method has not been implemented in the current version of the .NET Framework.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c5c54-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c5c54-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e3e69-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e3e69-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetFunctionFromRVA(  
     [in]  CORDB_ADDRESS      rva,  
     [out] ICorDebugFunction  **ppFunction  
 );  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="c5c54-105">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="c5c54-105">Requirements</span></span>  
- <span data-ttu-id="c5c54-106">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c5c54-106">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e3e69-105">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="e3e69-105">Requirements</span></span>  
+ <span data-ttu-id="e3e69-106">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="e3e69-106">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c5c54-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c5c54-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e3e69-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e3e69-107">See also</span></span>

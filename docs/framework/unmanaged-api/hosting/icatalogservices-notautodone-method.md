@@ -17,22 +17,22 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 499ba1887846cc670dc763ec998ef335c17a9ae5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a66fb16462cf7b12d1b0dfadb7df63be96b3f70f
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61969999"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67766694"
 ---
-# <a name="icatalogservicesnotautodone-method"></a><span data-ttu-id="671a3-102">ICatalogServices::NotAutodone, méthode</span><span class="sxs-lookup"><span data-stu-id="671a3-102">ICatalogServices::NotAutodone Method</span></span>
-<span data-ttu-id="671a3-103">Cette m&#233;thode prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.</span><span class="sxs-lookup"><span data-stu-id="671a3-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
+# <a name="icatalogservicesnotautodone-method"></a><span data-ttu-id="9120f-102">ICatalogServices::NotAutodone, méthode</span><span class="sxs-lookup"><span data-stu-id="9120f-102">ICatalogServices::NotAutodone Method</span></span>
+<span data-ttu-id="9120f-103">Cette m&#233;thode prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.</span><span class="sxs-lookup"><span data-stu-id="9120f-103">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="671a3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="671a3-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9120f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9120f-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT NotAutodone ( );  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="671a3-105">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="671a3-105">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9120f-105">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9120f-105">See also</span></span>
 
-- [<span data-ttu-id="671a3-106">Interfaces d’hébergement</span><span class="sxs-lookup"><span data-stu-id="671a3-106">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
+- [<span data-ttu-id="9120f-106">Interfaces d’hébergement</span><span class="sxs-lookup"><span data-stu-id="9120f-106">Hosting Interfaces</span></span>](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)

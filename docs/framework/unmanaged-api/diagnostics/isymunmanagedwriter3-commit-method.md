@@ -17,28 +17,28 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f531b96211a1dd6072d62937b9f93fc17f105d4d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bcfa0c01dc36a68711c42a7e8318cea023b1772f
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777980"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67752434"
 ---
-# <a name="isymunmanagedwriter3commit-method"></a><span data-ttu-id="a9667-102">ISymUnmanagedWriter3::Commit, méthode</span><span class="sxs-lookup"><span data-stu-id="a9667-102">ISymUnmanagedWriter3::Commit Method</span></span>
-<span data-ttu-id="a9667-103">Valide les modifications écrites jusqu'à présent dans le flux.</span><span class="sxs-lookup"><span data-stu-id="a9667-103">Commits the changes written so far to the stream.</span></span>  
+# <a name="isymunmanagedwriter3commit-method"></a><span data-ttu-id="fe327-102">ISymUnmanagedWriter3::Commit, méthode</span><span class="sxs-lookup"><span data-stu-id="fe327-102">ISymUnmanagedWriter3::Commit Method</span></span>
+<span data-ttu-id="fe327-103">Valide les modifications écrites jusqu'à présent dans le flux.</span><span class="sxs-lookup"><span data-stu-id="fe327-103">Commits the changes written so far to the stream.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a9667-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a9667-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="fe327-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fe327-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT Commit();  
 ```  
   
-## <a name="return-value"></a><span data-ttu-id="a9667-105">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="a9667-105">Return Value</span></span>  
- <span data-ttu-id="a9667-106">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="a9667-106">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="fe327-105">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="fe327-105">Return Value</span></span>  
+ <span data-ttu-id="fe327-106">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="fe327-106">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="a9667-107">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="a9667-107">Requirements</span></span>  
- <span data-ttu-id="a9667-108">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="a9667-108">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="fe327-107">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="fe327-107">Requirements</span></span>  
+ <span data-ttu-id="fe327-108">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="fe327-108">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a9667-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a9667-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fe327-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fe327-109">See also</span></span>
 
-- [<span data-ttu-id="a9667-110">ISymUnmanagedWriter3, interface</span><span class="sxs-lookup"><span data-stu-id="a9667-110">ISymUnmanagedWriter3 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)
+- [<span data-ttu-id="fe327-110">ISymUnmanagedWriter3, interface</span><span class="sxs-lookup"><span data-stu-id="fe327-110">ISymUnmanagedWriter3 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)

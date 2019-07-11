@@ -17,46 +17,46 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 354d2f278bcb0618b823b7300079278fc4c3315c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c04b7862363b441ab35d6dd364c4dffaf7464153
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758481"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67769230"
 ---
-# <a name="icorprofilercallbackmoduleloadfinished-method"></a><span data-ttu-id="f00d4-102">ICorProfilerCallback::ModuleLoadFinished, méthode</span><span class="sxs-lookup"><span data-stu-id="f00d4-102">ICorProfilerCallback::ModuleLoadFinished Method</span></span>
-<span data-ttu-id="f00d4-103">Notifie le profileur qu’un module a été chargé.</span><span class="sxs-lookup"><span data-stu-id="f00d4-103">Notifies the profiler that a module has finished loading.</span></span>  
+# <a name="icorprofilercallbackmoduleloadfinished-method"></a><span data-ttu-id="68a53-102">ICorProfilerCallback::ModuleLoadFinished, méthode</span><span class="sxs-lookup"><span data-stu-id="68a53-102">ICorProfilerCallback::ModuleLoadFinished Method</span></span>
+<span data-ttu-id="68a53-103">Notifie le profileur qu’un module a été chargé.</span><span class="sxs-lookup"><span data-stu-id="68a53-103">Notifies the profiler that a module has finished loading.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f00d4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f00d4-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="68a53-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="68a53-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT ModuleLoadFinished(  
     [in] ModuleID moduleId,  
     [in] HRESULT  hrStatus);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="f00d4-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="f00d4-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="68a53-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="68a53-105">Parameters</span></span>  
  `moduleId`  
- <span data-ttu-id="f00d4-106">[in] L’ID du module qui le chargement est terminé.</span><span class="sxs-lookup"><span data-stu-id="f00d4-106">[in] The ID of the module that has finished loading.</span></span>  
+ <span data-ttu-id="68a53-106">[in] L’ID du module qui le chargement est terminé.</span><span class="sxs-lookup"><span data-stu-id="68a53-106">[in] The ID of the module that has finished loading.</span></span>  
   
  `hrStatus`  
- <span data-ttu-id="f00d4-107">[in] HRESULT qui indique si le module a été chargé avec succès.</span><span class="sxs-lookup"><span data-stu-id="f00d4-107">[in] An HRESULT that indicates whether the module was loaded successfully.</span></span>  
+ <span data-ttu-id="68a53-107">[in] HRESULT qui indique si le module a été chargé avec succès.</span><span class="sxs-lookup"><span data-stu-id="68a53-107">[in] An HRESULT that indicates whether the module was loaded successfully.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="f00d4-108">Notes</span><span class="sxs-lookup"><span data-stu-id="f00d4-108">Remarks</span></span>  
- <span data-ttu-id="f00d4-109">La valeur de `moduleId` n’est pas valide pour une demande d’informations jusqu'à ce que le `ModuleLoadFinished` méthode est appelée.</span><span class="sxs-lookup"><span data-stu-id="f00d4-109">The value of `moduleId` is not valid for an information request until the `ModuleLoadFinished` method is called.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="68a53-108">Notes</span><span class="sxs-lookup"><span data-stu-id="68a53-108">Remarks</span></span>  
+ <span data-ttu-id="68a53-109">La valeur de `moduleId` n’est pas valide pour une demande d’informations jusqu'à ce que le `ModuleLoadFinished` méthode est appelée.</span><span class="sxs-lookup"><span data-stu-id="68a53-109">The value of `moduleId` is not valid for an information request until the `ModuleLoadFinished` method is called.</span></span>  
   
- <span data-ttu-id="f00d4-110">Certaines parties du chargement du module peuvent continuer après le `ModuleLoadFinished` rappel.</span><span class="sxs-lookup"><span data-stu-id="f00d4-110">Some parts of loading the module might continue after the `ModuleLoadFinished` callback.</span></span> <span data-ttu-id="f00d4-111">Un HRESULT d’échec dans `hrStatus` indique un échec.</span><span class="sxs-lookup"><span data-stu-id="f00d4-111">A failure HRESULT in `hrStatus` indicates a failure.</span></span> <span data-ttu-id="f00d4-112">Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du chargement du module a réussi.</span><span class="sxs-lookup"><span data-stu-id="f00d4-112">However, a success HRESULT in `hrStatus` indicates only that the first part of loading the module has succeeded.</span></span>  
+ <span data-ttu-id="68a53-110">Certaines parties du chargement du module peuvent continuer après le `ModuleLoadFinished` rappel.</span><span class="sxs-lookup"><span data-stu-id="68a53-110">Some parts of loading the module might continue after the `ModuleLoadFinished` callback.</span></span> <span data-ttu-id="68a53-111">Un HRESULT d’échec dans `hrStatus` indique un échec.</span><span class="sxs-lookup"><span data-stu-id="68a53-111">A failure HRESULT in `hrStatus` indicates a failure.</span></span> <span data-ttu-id="68a53-112">Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du chargement du module a réussi.</span><span class="sxs-lookup"><span data-stu-id="68a53-112">However, a success HRESULT in `hrStatus` indicates only that the first part of loading the module has succeeded.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f00d4-113">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="f00d4-113">Requirements</span></span>  
- <span data-ttu-id="f00d4-114">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f00d4-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="68a53-113">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="68a53-113">Requirements</span></span>  
+ <span data-ttu-id="68a53-114">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="68a53-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f00d4-115">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="f00d4-115">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="68a53-115">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="68a53-115">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="f00d4-116">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="f00d4-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="68a53-116">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="68a53-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="f00d4-117">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f00d4-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="68a53-117">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="68a53-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f00d4-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f00d4-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="68a53-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="68a53-118">See also</span></span>
 
-- [<span data-ttu-id="f00d4-119">ICorProfilerCallback, interface</span><span class="sxs-lookup"><span data-stu-id="f00d4-119">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [<span data-ttu-id="f00d4-120">ModuleLoadStarted, méthode</span><span class="sxs-lookup"><span data-stu-id="f00d4-120">ModuleLoadStarted Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadstarted-method.md)
+- [<span data-ttu-id="68a53-119">ICorProfilerCallback, interface</span><span class="sxs-lookup"><span data-stu-id="68a53-119">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [<span data-ttu-id="68a53-120">ModuleLoadStarted, méthode</span><span class="sxs-lookup"><span data-stu-id="68a53-120">ModuleLoadStarted Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadstarted-method.md)

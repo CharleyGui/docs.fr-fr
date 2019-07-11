@@ -17,49 +17,49 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 93cae803b42d80dc0f868e2189de442eedea43f0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0d83f9c0b187ad8b2955bc12ff168e0c4f26b909
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61993874"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67765231"
 ---
-# <a name="icordebugthread4getblockingobjects-method"></a><span data-ttu-id="e1c0f-102">ICorDebugThread4::GetBlockingObjects, méthode</span><span class="sxs-lookup"><span data-stu-id="e1c0f-102">ICorDebugThread4::GetBlockingObjects Method</span></span>
-<span data-ttu-id="e1c0f-103">Fournit une énumération ordonnée de [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structures qui fournissent des informations de blocage de thread.</span><span class="sxs-lookup"><span data-stu-id="e1c0f-103">Provides an ordered enumeration of [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structures that provide thread blocking information.</span></span>  
+# <a name="icordebugthread4getblockingobjects-method"></a><span data-ttu-id="c13e3-102">ICorDebugThread4::GetBlockingObjects, méthode</span><span class="sxs-lookup"><span data-stu-id="c13e3-102">ICorDebugThread4::GetBlockingObjects Method</span></span>
+<span data-ttu-id="c13e3-103">Fournit une énumération ordonnée de [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structures qui fournissent des informations de blocage de thread.</span><span class="sxs-lookup"><span data-stu-id="c13e3-103">Provides an ordered enumeration of [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structures that provide thread blocking information.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e1c0f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e1c0f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c13e3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c13e3-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetBlockingObjects (  
     [out] ICorDebugBlockingObjectEnum **ppBlockingObjectEnum  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="e1c0f-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="e1c0f-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c13e3-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="c13e3-105">Parameters</span></span>  
  `ppBlockingObjectEnum`  
- <span data-ttu-id="e1c0f-106">[out] Un pointeur vers une énumération ordonnée de [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structures.</span><span class="sxs-lookup"><span data-stu-id="e1c0f-106">[out] A pointer to an ordered enumeration of [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structures.</span></span>  
+ <span data-ttu-id="c13e3-106">[out] Un pointeur vers une énumération ordonnée de [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structures.</span><span class="sxs-lookup"><span data-stu-id="c13e3-106">[out] A pointer to an ordered enumeration of [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structures.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="e1c0f-107">Notes</span><span class="sxs-lookup"><span data-stu-id="e1c0f-107">Remarks</span></span>  
- <span data-ttu-id="e1c0f-108">Le premier élément dans l’énumération retournée correspond à la première structure qui bloque le thread.</span><span class="sxs-lookup"><span data-stu-id="e1c0f-108">The first element in the returned enumeration corresponds to the first structure that is blocking the thread.</span></span> <span data-ttu-id="e1c0f-109">Le deuxième élément correspond à un élément de blocage rencontré lors de l’exécution d’un appel de procédure asynchrone (APC) lorsque bloquée sur le premier et ainsi de suite.</span><span class="sxs-lookup"><span data-stu-id="e1c0f-109">The second element corresponds to a blocking item that is encountered while running an asynchronous procedure call (APC) when blocked on the first, and so on.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c13e3-107">Notes</span><span class="sxs-lookup"><span data-stu-id="c13e3-107">Remarks</span></span>  
+ <span data-ttu-id="c13e3-108">Le premier élément dans l’énumération retournée correspond à la première structure qui bloque le thread.</span><span class="sxs-lookup"><span data-stu-id="c13e3-108">The first element in the returned enumeration corresponds to the first structure that is blocking the thread.</span></span> <span data-ttu-id="c13e3-109">Le deuxième élément correspond à un élément de blocage rencontré lors de l’exécution d’un appel de procédure asynchrone (APC) lorsque bloquée sur le premier et ainsi de suite.</span><span class="sxs-lookup"><span data-stu-id="c13e3-109">The second element corresponds to a blocking item that is encountered while running an asynchronous procedure call (APC) when blocked on the first, and so on.</span></span>  
   
- <span data-ttu-id="e1c0f-110">L’énumération est valide uniquement pour la durée de l’état synchronisé actuel.</span><span class="sxs-lookup"><span data-stu-id="e1c0f-110">The enumeration is valid only for the duration of the current synchronized state.</span></span>  
+ <span data-ttu-id="c13e3-110">L’énumération est valide uniquement pour la durée de l’état synchronisé actuel.</span><span class="sxs-lookup"><span data-stu-id="c13e3-110">The enumeration is valid only for the duration of the current synchronized state.</span></span>  
   
- <span data-ttu-id="e1c0f-111">Cette méthode doit être appelée pendant que le programme débogué est dans un état synchronisé.</span><span class="sxs-lookup"><span data-stu-id="e1c0f-111">This method must be called while the debuggee is in a synchronized state.</span></span>  
+ <span data-ttu-id="c13e3-111">Cette méthode doit être appelée pendant que le programme débogué est dans un état synchronisé.</span><span class="sxs-lookup"><span data-stu-id="c13e3-111">This method must be called while the debuggee is in a synchronized state.</span></span>  
   
- <span data-ttu-id="e1c0f-112">Si `ppBlockingObjectEnum` n’est pas un pointeur valide, le résultat est indéfini.</span><span class="sxs-lookup"><span data-stu-id="e1c0f-112">If `ppBlockingObjectEnum` is not a valid pointer, the result is undefined.</span></span>  
+ <span data-ttu-id="c13e3-112">Si `ppBlockingObjectEnum` n’est pas un pointeur valide, le résultat est indéfini.</span><span class="sxs-lookup"><span data-stu-id="c13e3-112">If `ppBlockingObjectEnum` is not a valid pointer, the result is undefined.</span></span>  
   
- <span data-ttu-id="e1c0f-113">Si un thread est bloqué et l’erreur ne peut pas être déterminée, la méthode retourne un HRESULT qui indique un échec ; Sinon, elle retourne S_OK.</span><span class="sxs-lookup"><span data-stu-id="e1c0f-113">If a thread is blocked and the error cannot be determined, the method returns an HRESULT that indicates failure; otherwise, it returns S_OK.</span></span>  
+ <span data-ttu-id="c13e3-113">Si un thread est bloqué et l’erreur ne peut pas être déterminée, la méthode retourne un HRESULT qui indique un échec ; Sinon, elle retourne S_OK.</span><span class="sxs-lookup"><span data-stu-id="c13e3-113">If a thread is blocked and the error cannot be determined, the method returns an HRESULT that indicates failure; otherwise, it returns S_OK.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="e1c0f-114">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="e1c0f-114">Requirements</span></span>  
- <span data-ttu-id="e1c0f-115">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e1c0f-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c13e3-114">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="c13e3-114">Requirements</span></span>  
+ <span data-ttu-id="c13e3-115">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c13e3-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="e1c0f-116">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="e1c0f-116">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="c13e3-116">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="c13e3-116">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="e1c0f-117">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e1c0f-117">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="c13e3-117">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="c13e3-117">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="e1c0f-118">**Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e1c0f-118">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="c13e3-118">**Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c13e3-118">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="e1c0f-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e1c0f-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c13e3-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c13e3-119">See also</span></span>
 
-- [<span data-ttu-id="e1c0f-120">ICorDebugThread4, interface</span><span class="sxs-lookup"><span data-stu-id="e1c0f-120">ICorDebugThread4 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)
-- [<span data-ttu-id="e1c0f-121">Interfaces de débogage</span><span class="sxs-lookup"><span data-stu-id="e1c0f-121">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [<span data-ttu-id="e1c0f-122">Débogage</span><span class="sxs-lookup"><span data-stu-id="e1c0f-122">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [<span data-ttu-id="c13e3-120">ICorDebugThread4, interface</span><span class="sxs-lookup"><span data-stu-id="c13e3-120">ICorDebugThread4 Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)
+- [<span data-ttu-id="c13e3-121">Interfaces de débogage</span><span class="sxs-lookup"><span data-stu-id="c13e3-121">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="c13e3-122">Débogage</span><span class="sxs-lookup"><span data-stu-id="c13e3-122">Debugging</span></span>](../../../../docs/framework/unmanaged-api/debugging/index.md)
