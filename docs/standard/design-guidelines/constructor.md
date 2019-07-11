@@ -9,23 +9,23 @@ helpviewer_keywords:
 - type constructors
 - virtual members
 - constructors, types
-- default constructors
+- parameterless constructors
 - static constructors
 ms.assetid: b4496afe-5fa7-4bb0-85ca-70b0ef21e6fc
 author: KrzysztofCwalina
-ms.openlocfilehash: 68192e3b75a120c73b82c34005d4dee650540bf3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 074aa391b71257584a01171e95da7472354cdc2c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61925461"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67746780"
 ---
 # <a name="constructor-design"></a>Conception de constructeurs
 Il existe deux types de constructeurs : tapez des constructeurs et des constructeurs d’instance.  
   
  Constructeurs de type sont statiques et sont exécutés par le CLR avant que le type est utilisé. Constructeurs d’instance exécuté lorsqu’une instance d’un type est créée.  
   
- Constructeurs de type ne peut pas prendre tous les paramètres. Constructeurs d’instance peuvent. Constructeurs d’instance qui ne prennent pas tous les paramètres sont souvent appelées des constructeurs par défaut.  
+ Constructeurs de type ne peut pas prendre tous les paramètres. Constructeurs d’instance peuvent. Constructeurs d’instance qui ne prennent pas tous les paramètres sont souvent appelées des constructeurs sans paramètre.  
   
  Constructeurs sont le moyen le plus naturel pour créer des instances d’un type. La plupart des développeurs recherche et essayez d’utiliser un constructeur avant d’autres méthodes de création d’instances (par exemple, les méthodes de fabrique).  
   
@@ -49,15 +49,15 @@ Il existe deux types de constructeurs : tapez des constructeurs et des construc
   
  **✓ DO** lever des exceptions à partir des constructeurs d’instance, le cas échéant.  
   
- **✓ DO** déclarer explicitement le constructeur public par défaut dans les classes, si un tel constructeur est nécessaire.  
+ **FAIRE ✓** déclarer explicitement le constructeur sans paramètre public dans les classes, si ce constructeur est nécessaire.  
   
- Si vous ne déclarez explicitement tous les constructeurs sur un type, nombreux langages (tel que c#) ajoute automatiquement un constructeur public par défaut. (Les classes abstraites obtenir un constructeur protégé.)  
+ Si vous ne déclarez explicitement les constructeurs sur un type, de nombreux langages (tels que C#) ajoute automatiquement un constructeur sans paramètre public. (Les classes abstraites obtenir un constructeur protégé.)  
   
- Ajout d’un constructeur paramétrable à une classe empêche le compilateur d’ajouter le constructeur par défaut. Cela entraîne souvent des modifications avec rupture accidentelle.  
+ Ajout d’un constructeur paramétrable à une classe empêche le compilateur d’ajouter le constructeur sans paramètre. Cela entraîne souvent des modifications avec rupture accidentelle.  
   
- **X AVOID** définition explicite des constructeurs par défaut sur les structures.  
+ **X Évitez** définition explicite des constructeurs sans paramètre sur les structures.  
   
- Cela accélère la création de tableau, car si le constructeur par défaut n’est pas défini, il n’a pas à être exécuté sur tous les emplacements dans le tableau. Notez que de nombreux compilateurs, y compris C#, ne pas autoriser les structs peuvent avoir des constructeurs sans paramètre pour cette raison.  
+ Cela accélère la création de tableau, car si le constructeur sans paramètre n’est pas défini, il n’a pas à être exécuté sur tous les emplacements dans le tableau. Notez que de nombreux compilateurs, y compris C#, ne pas autoriser les structs peuvent avoir des constructeurs sans paramètre pour cette raison.  
   
  **X AVOID** appel des membres virtuels sur un objet à l’intérieur de son constructeur.  
   

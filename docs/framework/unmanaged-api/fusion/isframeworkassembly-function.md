@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a6c715183d3ae04130b729a9680335d65959836a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 989d046bba1ba3170649e9d908a850bd1177fdd2
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946729"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67773832"
 ---
 # <a name="isframeworkassembly-function"></a>IsFrameworkAssembly, fonction
 Obtient une valeur qui indique si l’assembly spécifié est géré.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT IsFrameworkAssembly (  
     [in]  LPCWSTR pwzAssemblyReference,  
     [out] LPBOOL  pbIsFrameworkAssembly,  

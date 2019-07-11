@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 ms.assetid: 7e470150-2b92-4425-989c-315f48964fd2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e8ea777755aebb59f3e865df26c38c74ef68ae31
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3073abb3b9a44cccba323f282859c97c96bdf91d
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946393"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67760109"
 ---
 # <a name="icordebuginstancefieldsymbolgetoffset-method"></a>ICorDebugInstanceFieldSymbol::GetOffset, méthode
 Obtient l'offset en octets de ce champ d'instance dans sa classe parente.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetOffset(  
    [out] ULONG32 *pcbOffset  
 );  

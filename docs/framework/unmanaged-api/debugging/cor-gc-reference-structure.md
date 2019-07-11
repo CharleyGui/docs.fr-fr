@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 848765a4ea9657020bd84e476f992ae69750dda9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 61a9cad9d0ce807d62c811e77402b8cc6d8c6905
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64617692"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67740691"
 ---
 # <a name="corgcreference-structure"></a>COR_GC_REFERENCE, structure
 Contient des informations sur un objet qui doit faire l'objet d'une récupération de mémoire.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef struct _COR_GC_REFERENCE {  
     ICorDebugAppDomain *domain;   
     ICorDebugValue *location;  
@@ -55,7 +55,7 @@ typedef struct _COR_GC_REFERENCE {
   
 - Objets à partir de la file d’attente du finaliseur (`CorGCReferenceType.CorReferenceFinalizer`). La file d’attente du finaliseur racines des objets jusqu'à ce que le finaliseur s’est exécutée.  
   
- Le `extraData` champ contient des données supplémentaires en fonction de la source (ou type) de la référence. Les valeurs possibles sont :  
+ Le `extraData` champ contient des données supplémentaires en fonction de la source (ou type) de la référence. Les valeurs possibles sont les suivantes :  
   
 - `DependentSource`. Si le `type` est `CorGCREferenceType.CorHandleStrongDependent`, ce champ est l’objet qui, si elle est actif, de l’objet pour le garbage collector à racines `COR_GC_REFERENCE.Location`.  
   

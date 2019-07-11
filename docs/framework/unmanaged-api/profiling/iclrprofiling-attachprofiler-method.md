@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0e3898fb836409df3b685d985d0d72ab63230a93
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: efc097fd9b4da668aafce90ce601a3143ea57dc7
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61598692"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67763169"
 ---
 # <a name="iclrprofilingattachprofiler-method"></a>ICLRProfiling::AttachProfiler, méthode
 Attache le profileur spécifié au processus spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT AttachProfiler(  
   [in] DWORD dwProfileeProcessID,  
   [in] DWORD dwMillisecondsMax,                     // optional  

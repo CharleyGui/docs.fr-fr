@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5276c69da05cedcd3195a09da12ddc5b2d0fed67
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3ebf8c736cdd1362cae1b1e0b734ce14bea49b18
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61991781"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67751889"
 ---
 # <a name="icorprofilerinfo2getarrayobjectinfo-method"></a>ICorProfilerInfo2::GetArrayObjectInfo, méthode
 Obtient des informations détaillées sur un objet tableau.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetArrayObjectInfo(  
     [in] ObjectID objectId,  
     [in] ULONG32 cDimensions,  

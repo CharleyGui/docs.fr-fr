@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aa1f6852544dddcdf514b14710ade3949818c93e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c85040a31966a92ead6ca4786f62852f17923056
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61948865"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67736920"
 ---
 # <a name="icordebugprocess2getthreadfortaskid-method"></a>ICorDebugProcess2::GetThreadForTaskID, méthode
 Obtient le thread sur lequel s’exécute la tâche avec l’identificateur spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetThreadForTaskID (  
     [in]  TASKID            taskid,  
     [out] ICorDebugThread2  **ppThread  
