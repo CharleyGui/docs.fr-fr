@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1b33b50e53c454f2b62253d12943ea044240d8cc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b4f34340c18fddc46695fe64946c3afd90ed7454
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62045199"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67772296"
 ---
-# <a name="cortokentype-enumeration"></a><span data-ttu-id="ff1fe-102">CorTokenType, énumération</span><span class="sxs-lookup"><span data-stu-id="ff1fe-102">CorTokenType Enumeration</span></span>
-<span data-ttu-id="ff1fe-103">Indique le type d’un jeton de métadonnées.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-103">Indicates the type of a metadata token.</span></span>  
+# <a name="cortokentype-enumeration"></a><span data-ttu-id="c5ff0-102">CorTokenType, énumération</span><span class="sxs-lookup"><span data-stu-id="c5ff0-102">CorTokenType Enumeration</span></span>
+<span data-ttu-id="c5ff0-103">Indique le type d’un jeton de métadonnées.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-103">Indicates the type of a metadata token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ff1fe-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ff1fe-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c5ff0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c5ff0-104">Syntax</span></span>  
   
-```  
+```cpp  
 typedef enum CorTokenType {  
   
     mdtModule                       = 0x00000000,  
@@ -61,47 +61,47 @@ typedef enum CorTokenType {
 } CorTokenType;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="ff1fe-105">Membres</span><span class="sxs-lookup"><span data-stu-id="ff1fe-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="c5ff0-105">Membres</span><span class="sxs-lookup"><span data-stu-id="c5ff0-105">Members</span></span>  
   
-|<span data-ttu-id="ff1fe-106">Membre</span><span class="sxs-lookup"><span data-stu-id="ff1fe-106">Member</span></span>|<span data-ttu-id="ff1fe-107">Description</span><span class="sxs-lookup"><span data-stu-id="ff1fe-107">Description</span></span>|  
+|<span data-ttu-id="c5ff0-106">Membre</span><span class="sxs-lookup"><span data-stu-id="c5ff0-106">Member</span></span>|<span data-ttu-id="c5ff0-107">Description</span><span class="sxs-lookup"><span data-stu-id="c5ff0-107">Description</span></span>|  
 |------------|-----------------|  
-|`mdtModule`|<span data-ttu-id="ff1fe-108">Un `mdModule` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-108">An `mdModule` token.</span></span>|  
-|`mdtTypeRef`|<span data-ttu-id="ff1fe-109">Un `mdTypeRef` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-109">An `mdTypeRef` token.</span></span>|  
-|`mdtTypeDef`|<span data-ttu-id="ff1fe-110">Un `mdTypeDef` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-110">An `mdTypeDef` token.</span></span>|  
-|`mdtFieldDef`|<span data-ttu-id="ff1fe-111">Un `mdFieldDef` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-111">An `mdFieldDef` token.</span></span>|  
-|`mdtMethodDef`|<span data-ttu-id="ff1fe-112">Un `mdMethodDef` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-112">An `mdMethodDef` token.</span></span>|  
-|`mdtParamDef`|<span data-ttu-id="ff1fe-113">Un `mdParamDef` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-113">An `mdParamDef` token.</span></span>|  
-|`mdtInterfaceImpl`|<span data-ttu-id="ff1fe-114">Un `mdInterfaceImpl` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-114">An `mdInterfaceImpl` token.</span></span>|  
-|`mdtMemberRef`|<span data-ttu-id="ff1fe-115">Un `mdMemberRef` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-115">An `mdMemberRef` token.</span></span>|  
-|`mdtCustomAttribute`|<span data-ttu-id="ff1fe-116">Un `mdCustomAttribute` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-116">An `mdCustomAttribute` token.</span></span>|  
-|`mdtPermission`|<span data-ttu-id="ff1fe-117">Un `mdPermission` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-117">An `mdPermission` token.</span></span>|  
-|`mdtSignature`|<span data-ttu-id="ff1fe-118">Un `mdSignature` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-118">An `mdSignature` token.</span></span>|  
-|`mdtEvent`|<span data-ttu-id="ff1fe-119">Un `mdEvent` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-119">An `mdEvent` token.</span></span>|  
-|`mdtProperty`|<span data-ttu-id="ff1fe-120">Un `mdProperty` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-120">An `mdProperty` token.</span></span>|  
-|`mdtModuleRef`|<span data-ttu-id="ff1fe-121">Un `mdModuleRef` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-121">An `mdModuleRef` token.</span></span>|  
-|`mdtTypeSpec`|<span data-ttu-id="ff1fe-122">Un `mdTypeSpec` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-122">An `mdTypeSpec` token.</span></span>|  
-|`mdtAssembly`|<span data-ttu-id="ff1fe-123">Un `mdAssembly` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-123">An `mdAssembly` token.</span></span>|  
-|`mdtAssemblyRef`|<span data-ttu-id="ff1fe-124">Un `mdAssemblyRef` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-124">An `mdAssemblyRef` token.</span></span>|  
-|`mdtFile`|<span data-ttu-id="ff1fe-125">Un `mdFile` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-125">An `mdFile` token.</span></span>|  
-|`mdtExportedType`|<span data-ttu-id="ff1fe-126">Un `mdExportedType` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-126">An `mdExportedType` token.</span></span>|  
-|`mdtManifestResource`|<span data-ttu-id="ff1fe-127">Un `mdManifestResource` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-127">An `mdManifestResource` token.</span></span>|  
-|`mdtGenericParam`|<span data-ttu-id="ff1fe-128">Un `mdGenericParam` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-128">An `mdGenericParam` token.</span></span>|  
-|`mdtMethodSpec`|<span data-ttu-id="ff1fe-129">Un `mdMethodSpec` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-129">An `mdMethodSpec` token.</span></span>|  
-|`mdtGenericParamConstraint`|<span data-ttu-id="ff1fe-130">Un `mdGenericParamConstraint` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-130">An `mdGenericParamConstraint` token.</span></span>|  
-|`mdtString`|<span data-ttu-id="ff1fe-131">Un `mdString` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-131">An `mdString` token.</span></span>|  
-|`mdtName`|<span data-ttu-id="ff1fe-132">Un `mdName` jeton.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-132">An `mdName` token.</span></span>|  
-|`mdtBaseType`|<span data-ttu-id="ff1fe-133">Non utilisé.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-133">Not used.</span></span>|  
+|`mdtModule`|<span data-ttu-id="c5ff0-108">Un `mdModule` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-108">An `mdModule` token.</span></span>|  
+|`mdtTypeRef`|<span data-ttu-id="c5ff0-109">Un `mdTypeRef` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-109">An `mdTypeRef` token.</span></span>|  
+|`mdtTypeDef`|<span data-ttu-id="c5ff0-110">Un `mdTypeDef` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-110">An `mdTypeDef` token.</span></span>|  
+|`mdtFieldDef`|<span data-ttu-id="c5ff0-111">Un `mdFieldDef` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-111">An `mdFieldDef` token.</span></span>|  
+|`mdtMethodDef`|<span data-ttu-id="c5ff0-112">Un `mdMethodDef` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-112">An `mdMethodDef` token.</span></span>|  
+|`mdtParamDef`|<span data-ttu-id="c5ff0-113">Un `mdParamDef` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-113">An `mdParamDef` token.</span></span>|  
+|`mdtInterfaceImpl`|<span data-ttu-id="c5ff0-114">Un `mdInterfaceImpl` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-114">An `mdInterfaceImpl` token.</span></span>|  
+|`mdtMemberRef`|<span data-ttu-id="c5ff0-115">Un `mdMemberRef` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-115">An `mdMemberRef` token.</span></span>|  
+|`mdtCustomAttribute`|<span data-ttu-id="c5ff0-116">Un `mdCustomAttribute` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-116">An `mdCustomAttribute` token.</span></span>|  
+|`mdtPermission`|<span data-ttu-id="c5ff0-117">Un `mdPermission` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-117">An `mdPermission` token.</span></span>|  
+|`mdtSignature`|<span data-ttu-id="c5ff0-118">Un `mdSignature` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-118">An `mdSignature` token.</span></span>|  
+|`mdtEvent`|<span data-ttu-id="c5ff0-119">Un `mdEvent` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-119">An `mdEvent` token.</span></span>|  
+|`mdtProperty`|<span data-ttu-id="c5ff0-120">Un `mdProperty` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-120">An `mdProperty` token.</span></span>|  
+|`mdtModuleRef`|<span data-ttu-id="c5ff0-121">Un `mdModuleRef` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-121">An `mdModuleRef` token.</span></span>|  
+|`mdtTypeSpec`|<span data-ttu-id="c5ff0-122">Un `mdTypeSpec` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-122">An `mdTypeSpec` token.</span></span>|  
+|`mdtAssembly`|<span data-ttu-id="c5ff0-123">Un `mdAssembly` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-123">An `mdAssembly` token.</span></span>|  
+|`mdtAssemblyRef`|<span data-ttu-id="c5ff0-124">Un `mdAssemblyRef` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-124">An `mdAssemblyRef` token.</span></span>|  
+|`mdtFile`|<span data-ttu-id="c5ff0-125">Un `mdFile` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-125">An `mdFile` token.</span></span>|  
+|`mdtExportedType`|<span data-ttu-id="c5ff0-126">Un `mdExportedType` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-126">An `mdExportedType` token.</span></span>|  
+|`mdtManifestResource`|<span data-ttu-id="c5ff0-127">Un `mdManifestResource` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-127">An `mdManifestResource` token.</span></span>|  
+|`mdtGenericParam`|<span data-ttu-id="c5ff0-128">Un `mdGenericParam` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-128">An `mdGenericParam` token.</span></span>|  
+|`mdtMethodSpec`|<span data-ttu-id="c5ff0-129">Un `mdMethodSpec` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-129">An `mdMethodSpec` token.</span></span>|  
+|`mdtGenericParamConstraint`|<span data-ttu-id="c5ff0-130">Un `mdGenericParamConstraint` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-130">An `mdGenericParamConstraint` token.</span></span>|  
+|`mdtString`|<span data-ttu-id="c5ff0-131">Un `mdString` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-131">An `mdString` token.</span></span>|  
+|`mdtName`|<span data-ttu-id="c5ff0-132">Un `mdName` jeton.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-132">An `mdName` token.</span></span>|  
+|`mdtBaseType`|<span data-ttu-id="c5ff0-133">Non utilisé.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-133">Not used.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="ff1fe-134">Notes</span><span class="sxs-lookup"><span data-stu-id="ff1fe-134">Remarks</span></span>  
- <span data-ttu-id="ff1fe-135">Chaque valeur est égale à la valeur de l’octet dans le jeton de métadonnées correspondant.</span><span class="sxs-lookup"><span data-stu-id="ff1fe-135">Each value is equal to the value of the top byte in the corresponding metadata token.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c5ff0-134">Notes</span><span class="sxs-lookup"><span data-stu-id="c5ff0-134">Remarks</span></span>  
+ <span data-ttu-id="c5ff0-135">Chaque valeur est égale à la valeur de l’octet dans le jeton de métadonnées correspondant.</span><span class="sxs-lookup"><span data-stu-id="c5ff0-135">Each value is equal to the value of the top byte in the corresponding metadata token.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ff1fe-136">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="ff1fe-136">Requirements</span></span>  
- <span data-ttu-id="ff1fe-137">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ff1fe-137">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c5ff0-136">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="c5ff0-136">Requirements</span></span>  
+ <span data-ttu-id="c5ff0-137">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c5ff0-137">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ff1fe-138">**En-tête :** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="ff1fe-138">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="c5ff0-138">**En-tête :** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="c5ff0-138">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="ff1fe-139">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ff1fe-139">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="c5ff0-139">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c5ff0-139">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ff1fe-140">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ff1fe-140">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c5ff0-140">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c5ff0-140">See also</span></span>
 
-- [<span data-ttu-id="ff1fe-141">Énumérations de métadonnées</span><span class="sxs-lookup"><span data-stu-id="ff1fe-141">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="c5ff0-141">Énumérations de métadonnées</span><span class="sxs-lookup"><span data-stu-id="c5ff0-141">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

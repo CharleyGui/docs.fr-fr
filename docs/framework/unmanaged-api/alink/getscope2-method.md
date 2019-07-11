@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a3c6b9e1239dc1baed9428d4fe967eb8274a9304
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0c0abc63610f3f1ed6e8a556c44ee15edc1ea20b
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789803"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67741844"
 ---
-# <a name="getscope2-method"></a><span data-ttu-id="f3ac8-102">GetScope2, méthode</span><span class="sxs-lookup"><span data-stu-id="f3ac8-102">GetScope2 Method</span></span>
-<span data-ttu-id="f3ac8-103">Obtient une portée d’importation.</span><span class="sxs-lookup"><span data-stu-id="f3ac8-103">Gets an import scope.</span></span>  
+# <a name="getscope2-method"></a><span data-ttu-id="6d309-102">GetScope2, méthode</span><span class="sxs-lookup"><span data-stu-id="6d309-102">GetScope2 Method</span></span>
+<span data-ttu-id="6d309-103">Obtient une portée d’importation.</span><span class="sxs-lookup"><span data-stu-id="6d309-103">Gets an import scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f3ac8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f3ac8-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="6d309-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6d309-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetScope2(  
     mdAssembly AssemblyID,  
     mdToken FileToken,  
@@ -37,27 +37,27 @@ HRESULT GetScope2(
 ) PURE;   
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="f3ac8-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="f3ac8-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="6d309-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="6d309-105">Parameters</span></span>  
  `AssemblyID`  
- <span data-ttu-id="f3ac8-106">ID de l’assembly cible.</span><span class="sxs-lookup"><span data-stu-id="f3ac8-106">ID of target assembly.</span></span>  
+ <span data-ttu-id="6d309-106">ID de l’assembly cible.</span><span class="sxs-lookup"><span data-stu-id="6d309-106">ID of target assembly.</span></span>  
   
  `FileToken`  
- <span data-ttu-id="f3ac8-107">ID du fichier à partir duquel importer.</span><span class="sxs-lookup"><span data-stu-id="f3ac8-107">ID of file from which to import.</span></span>  
+ <span data-ttu-id="6d309-107">ID du fichier à partir duquel importer.</span><span class="sxs-lookup"><span data-stu-id="6d309-107">ID of file from which to import.</span></span>  
   
  `dwScope`  
- <span data-ttu-id="f3ac8-108">Portée de base zéro à importer.</span><span class="sxs-lookup"><span data-stu-id="f3ac8-108">Zero-based scope to import.</span></span>  
+ <span data-ttu-id="6d309-108">Portée de base zéro à importer.</span><span class="sxs-lookup"><span data-stu-id="6d309-108">Zero-based scope to import.</span></span>  
   
  `ppImportScope`  
- <span data-ttu-id="f3ac8-109">Reçoit le pointeur vers [IMetaDataImport2, Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md) interface pour la portée indiquée.</span><span class="sxs-lookup"><span data-stu-id="f3ac8-109">Receives pointer to [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md) interface for indicated scope.</span></span>  
+ <span data-ttu-id="6d309-109">Reçoit le pointeur vers [IMetaDataImport2, Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md) interface pour la portée indiquée.</span><span class="sxs-lookup"><span data-stu-id="6d309-109">Receives pointer to [IMetaDataImport2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md) interface for indicated scope.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="f3ac8-110">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="f3ac8-110">Return Value</span></span>  
- <span data-ttu-id="f3ac8-111">Retourne S_OK si la méthode réussit.</span><span class="sxs-lookup"><span data-stu-id="f3ac8-111">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="6d309-110">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="6d309-110">Return Value</span></span>  
+ <span data-ttu-id="6d309-111">Retourne S_OK si la méthode réussit.</span><span class="sxs-lookup"><span data-stu-id="6d309-111">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f3ac8-112">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="f3ac8-112">Requirements</span></span>  
- <span data-ttu-id="f3ac8-113">Nécessite alink.h.</span><span class="sxs-lookup"><span data-stu-id="f3ac8-113">Requires alink.h.</span></span>  
+## <a name="requirements"></a><span data-ttu-id="6d309-112">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="6d309-112">Requirements</span></span>  
+ <span data-ttu-id="6d309-113">Nécessite alink.h.</span><span class="sxs-lookup"><span data-stu-id="6d309-113">Requires alink.h.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f3ac8-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f3ac8-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6d309-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6d309-114">See also</span></span>
 
-- [<span data-ttu-id="f3ac8-115">IALink2, interface</span><span class="sxs-lookup"><span data-stu-id="f3ac8-115">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [<span data-ttu-id="f3ac8-116">IALink, interface</span><span class="sxs-lookup"><span data-stu-id="f3ac8-116">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [<span data-ttu-id="f3ac8-117">API ALink</span><span class="sxs-lookup"><span data-stu-id="f3ac8-117">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [<span data-ttu-id="6d309-115">IALink2, interface</span><span class="sxs-lookup"><span data-stu-id="6d309-115">IALink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
+- [<span data-ttu-id="6d309-116">IALink, interface</span><span class="sxs-lookup"><span data-stu-id="6d309-116">IALink Interface</span></span>](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
+- [<span data-ttu-id="6d309-117">API ALink</span><span class="sxs-lookup"><span data-stu-id="6d309-117">ALink API</span></span>](../../../../docs/framework/unmanaged-api/alink/index.md)

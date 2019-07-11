@@ -15,22 +15,22 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: e88897342bf18111ebd4914948ab45085c35ea08
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 66e4768acff7ab735c6ac9e8f8f51a9511f7e371
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61942361"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744681"
 ---
-# <a name="ixclrdatamethodinstancegetiladdressmap-method"></a><span data-ttu-id="03e7a-102">IXCLRDataMethodInstance::GetILAddressMap Method</span><span class="sxs-lookup"><span data-stu-id="03e7a-102">IXCLRDataMethodInstance::GetILAddressMap Method</span></span>
+# <a name="ixclrdatamethodinstancegetiladdressmap-method"></a><span data-ttu-id="65ad8-102">IXCLRDataMethodInstance::GetILAddressMap Method</span><span class="sxs-lookup"><span data-stu-id="65ad8-102">IXCLRDataMethodInstance::GetILAddressMap Method</span></span>
 
-<span data-ttu-id="03e7a-103">Obtient le langage intermédiaire aux informations de mappage d’adresse.</span><span class="sxs-lookup"><span data-stu-id="03e7a-103">Gets the IL to address mapping information.</span></span>
+<span data-ttu-id="65ad8-103">Obtient le langage intermédiaire aux informations de mappage d’adresse.</span><span class="sxs-lookup"><span data-stu-id="65ad8-103">Gets the IL to address mapping information.</span></span>
 
 [!INCLUDE[debugging-api-recommended-note](../../../../includes/debugging-api-recommended-note.md)]
 
-## <a name="syntax"></a><span data-ttu-id="03e7a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="03e7a-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="65ad8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="65ad8-104">Syntax</span></span>
 
-```
+```cpp
 HRESULT GetILAddressMap(
     [in] ULONG32                                   mapLen,
     [out] ULONG32                                 *mapNeeded,
@@ -38,29 +38,29 @@ HRESULT GetILAddressMap(
 );
 ```
 
-## <a name="parameters"></a><span data-ttu-id="03e7a-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="03e7a-105">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="65ad8-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="65ad8-105">Parameters</span></span>
 
 `mapLen`\
-<span data-ttu-id="03e7a-106">[in] La longueur du tableau des mappages fournis.</span><span class="sxs-lookup"><span data-stu-id="03e7a-106">[in] The length of the provided maps array.</span></span>
+<span data-ttu-id="65ad8-106">[in] La longueur du tableau des mappages fournis.</span><span class="sxs-lookup"><span data-stu-id="65ad8-106">[in] The length of the provided maps array.</span></span>
 
 `mapNeeded`\
-<span data-ttu-id="03e7a-107">[out] Le nombre d’entrées de mappage dont a besoin de la méthode.</span><span class="sxs-lookup"><span data-stu-id="03e7a-107">[out] The number of map entries that the method needs.</span></span>
+<span data-ttu-id="65ad8-107">[out] Le nombre d’entrées de mappage dont a besoin de la méthode.</span><span class="sxs-lookup"><span data-stu-id="65ad8-107">[out] The number of map entries that the method needs.</span></span>
 
 `maps`\
-<span data-ttu-id="03e7a-108">[out, size_is(mapLen)] Le tableau pour stocker les entrées de mappage.</span><span class="sxs-lookup"><span data-stu-id="03e7a-108">[out, size_is(mapLen)] The array for storing the map entries.</span></span>
+<span data-ttu-id="65ad8-108">[out, size_is(mapLen)] Le tableau pour stocker les entrées de mappage.</span><span class="sxs-lookup"><span data-stu-id="65ad8-108">[out, size_is(mapLen)] The array for storing the map entries.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="03e7a-109">Notes</span><span class="sxs-lookup"><span data-stu-id="03e7a-109">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="65ad8-109">Notes</span><span class="sxs-lookup"><span data-stu-id="65ad8-109">Remarks</span></span>
 
-<span data-ttu-id="03e7a-110">La méthode fournie fait partie de la `IXCLRDataMethodInstance` interface et correspond à l’emplacement de la table de la méthode virtuelle de 14.</span><span class="sxs-lookup"><span data-stu-id="03e7a-110">The provided method is part of the `IXCLRDataMethodInstance` interface and corresponds to the 14th slot of the virtual method table.</span></span>
+<span data-ttu-id="65ad8-110">La méthode fournie fait partie de la `IXCLRDataMethodInstance` interface et correspond à l’emplacement de la table de la méthode virtuelle de 14.</span><span class="sxs-lookup"><span data-stu-id="65ad8-110">The provided method is part of the `IXCLRDataMethodInstance` interface and corresponds to the 14th slot of the virtual method table.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="03e7a-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="03e7a-111">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="65ad8-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="65ad8-111">Requirements</span></span>
 
-<span data-ttu-id="03e7a-112">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="03e7a-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
-<span data-ttu-id="03e7a-113">**En-tête :** Aucun.</span><span class="sxs-lookup"><span data-stu-id="03e7a-113">**Header:** None</span></span>  
-<span data-ttu-id="03e7a-114">**Bibliothèque :** Aucun.</span><span class="sxs-lookup"><span data-stu-id="03e7a-114">**Library:** None</span></span>  
-<span data-ttu-id="03e7a-115">**Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]</span><span class="sxs-lookup"><span data-stu-id="03e7a-115">**.NET Framework Versions:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]</span></span>  
+<span data-ttu-id="65ad8-112">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="65ad8-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+<span data-ttu-id="65ad8-113">**En-tête :** Aucun</span><span class="sxs-lookup"><span data-stu-id="65ad8-113">**Header:** None</span></span>  
+<span data-ttu-id="65ad8-114">**Bibliothèque :** Aucun</span><span class="sxs-lookup"><span data-stu-id="65ad8-114">**Library:** None</span></span>  
+<span data-ttu-id="65ad8-115">**Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]</span><span class="sxs-lookup"><span data-stu-id="65ad8-115">**.NET Framework Versions:** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]</span></span>  
 
-## <a name="see-also"></a><span data-ttu-id="03e7a-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="03e7a-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="65ad8-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="65ad8-116">See also</span></span>
 
-- [<span data-ttu-id="03e7a-117">Débogage</span><span class="sxs-lookup"><span data-stu-id="03e7a-117">Debugging</span></span>](index.md)
-- [<span data-ttu-id="03e7a-118">Interface de IXCLRDataMethodInstance</span><span class="sxs-lookup"><span data-stu-id="03e7a-118">IXCLRDataMethodInstance Interface</span></span>](ixclrdatamethodinstance-interface.md)
+- [<span data-ttu-id="65ad8-117">Débogage</span><span class="sxs-lookup"><span data-stu-id="65ad8-117">Debugging</span></span>](index.md)
+- [<span data-ttu-id="65ad8-118">Interface de IXCLRDataMethodInstance</span><span class="sxs-lookup"><span data-stu-id="65ad8-118">IXCLRDataMethodInstance Interface</span></span>](ixclrdatamethodinstance-interface.md)

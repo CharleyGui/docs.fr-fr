@@ -17,39 +17,39 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 90af015de4428f75330de89978a7fc0a4b26750b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3eed83cbc983d59e99b3a42e667e9e126316c263
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61700746"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67780099"
 ---
-# <a name="icorruntimehostlocksheldbylogicalthread-method"></a><span data-ttu-id="c68e8-102">ICorRuntimeHost::LocksHeldByLogicalThread, méthode</span><span class="sxs-lookup"><span data-stu-id="c68e8-102">ICorRuntimeHost::LocksHeldByLogicalThread Method</span></span>
-<span data-ttu-id="c68e8-103">Récupère le nombre de verrous que le thread actif détient.</span><span class="sxs-lookup"><span data-stu-id="c68e8-103">Retrieves the number of locks that current thread holds.</span></span>  
+# <a name="icorruntimehostlocksheldbylogicalthread-method"></a><span data-ttu-id="84b36-102">ICorRuntimeHost::LocksHeldByLogicalThread, méthode</span><span class="sxs-lookup"><span data-stu-id="84b36-102">ICorRuntimeHost::LocksHeldByLogicalThread Method</span></span>
+<span data-ttu-id="84b36-103">Récupère le nombre de verrous que le thread actif détient.</span><span class="sxs-lookup"><span data-stu-id="84b36-103">Retrieves the number of locks that current thread holds.</span></span>  
   
- <span data-ttu-id="c68e8-104">Cette m&#233;thode prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.</span><span class="sxs-lookup"><span data-stu-id="c68e8-104">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
+ <span data-ttu-id="84b36-104">Cette m&#233;thode prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.</span><span class="sxs-lookup"><span data-stu-id="84b36-104">This method supports the .NET Framework infrastructure and is not intended to be used directly from your code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c68e8-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c68e8-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="84b36-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="84b36-105">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT LocksHeldByLogicalThread(  
     [out] DWORD *pCount  
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="c68e8-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="c68e8-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="84b36-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="84b36-106">Parameters</span></span>  
  `pCount`  
- <span data-ttu-id="c68e8-107">[out] Pointeur vers le nombre de verrous maintenus par le thread actuel.</span><span class="sxs-lookup"><span data-stu-id="c68e8-107">[out] A pointer to the number of locks that the current thread holds.</span></span>  
+ <span data-ttu-id="84b36-107">[out] Pointeur vers le nombre de verrous maintenus par le thread actuel.</span><span class="sxs-lookup"><span data-stu-id="84b36-107">[out] A pointer to the number of locks that the current thread holds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c68e8-108">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="c68e8-108">Requirements</span></span>  
- <span data-ttu-id="c68e8-109">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c68e8-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="84b36-108">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="84b36-108">Requirements</span></span>  
+ <span data-ttu-id="84b36-109">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="84b36-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c68e8-110">**En-tête :** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="c68e8-110">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="84b36-110">**En-tête :** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="84b36-110">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="c68e8-111">**Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="c68e8-111">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="84b36-111">**Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="84b36-111">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="c68e8-112">**Versions du .NET framework :** 1.0, 1.1</span><span class="sxs-lookup"><span data-stu-id="c68e8-112">**.NET Framework Versions:** 1.0, 1.1</span></span>  
+ <span data-ttu-id="84b36-112">**Versions du .NET framework :** 1.0, 1.1</span><span class="sxs-lookup"><span data-stu-id="84b36-112">**.NET Framework Versions:** 1.0, 1.1</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c68e8-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c68e8-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="84b36-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="84b36-113">See also</span></span>
 
-- [<span data-ttu-id="c68e8-114">ICorRuntimeHost, interface</span><span class="sxs-lookup"><span data-stu-id="c68e8-114">ICorRuntimeHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
+- [<span data-ttu-id="84b36-114">ICorRuntimeHost, interface</span><span class="sxs-lookup"><span data-stu-id="84b36-114">ICorRuntimeHost Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)
