@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 63b6e85b6abe20e9e1f0b00648a06a31735e63c7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4f6dc1254261197583f2369587a61b5e179d760b
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61944636"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67779642"
 ---
 # <a name="iclrhostprotectionmanagersetprotectedcategories-method"></a>ICLRHostProtectionManager::SetProtectedCategories, méthode
 Spécifie les catégories de types managés et les membres ne doivent pas recevoir en cours d’exécution dans du code partiellement fiable.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetProtectedCategories (  
     [in] EApiCategories  categories  
 );  

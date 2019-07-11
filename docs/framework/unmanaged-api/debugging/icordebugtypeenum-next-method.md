@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d47f14ff2adb37fca16cf6774a2b80cb2e074b17
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5efc83152763c5ef8b65a1fad33460c5354c0dc5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61993770"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67772429"
 ---
 # <a name="icordebugtypeenumnext-method"></a>ICorDebugTypeEnum::Next, méthode
 Obtient le nombre d’instances de « ICorDebugType » spécifiée par `celt` à partir de l’énumération, en commençant à la position actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Next (  
     [in]  ULONG  celt,  
     [out, size_is(celt), length_is(*pceltFetched)]  

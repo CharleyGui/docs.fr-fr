@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f7b384bb24cbf7ab7379949fd85a22121a1310e3
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: ab660769a49cf12b129cb7f44b8378053a231f8c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636868"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67761627"
 ---
 # <a name="cloneenumwbemclassobject-function"></a>CloneEnumWbemClassObject, fonction
 Effectue une copie logique d’un énumérateur, en conservant sa position actuelle dans une énumération.
@@ -30,7 +30,7 @@ Effectue une copie logique d’un énumérateur, en conservant sa position actue
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 HRESULT CloneEnumWbemClassObject (
    [out] IEnumWbemClassObject**  ppEnum, 
    [in] DWORD                    authLevel,
@@ -68,7 +68,7 @@ HRESULT CloneEnumWbemClassObject (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Value  |Description  |
+|Constante  |Valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | Il y a eu une défaillance générale. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
@@ -84,7 +84,7 @@ Cette méthode effectue une copie « meilleur effort ». En raison de la natur
 
 Si l’appel de fonction échoue, vous pouvez obtenir des informations d’erreur supplémentaires en appelant le [GetErrorInfo](geterrorinfo.md) (fonction).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Pour obtenir un exemple, consultez le [IEnumWbemClassObject::Clone](/windows/desktop/api/wbemcli/nf-wbemcli-ienumwbemclassobject-clone) (méthode).
 

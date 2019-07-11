@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f40e6bfdbebdadc41da52564348c6070c18372c8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 05ce699669095e9c0b45882b18a01ec326640038
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777687"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67779004"
 ---
 # <a name="imetadataimportgetmodulefromscope-method"></a>IMetaDataImport::GetModuleFromScope, méthode
 Obtient les métadonnées jeton pour le module référencé dans la portée de métadonnées actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetModuleFromScope (  
    [out] mdModule    *pmd  
 );  

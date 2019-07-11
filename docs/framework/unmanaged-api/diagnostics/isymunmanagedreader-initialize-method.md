@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 661c27b9c21f77104b8a86163d3c92d44f8a85df
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 1986ed730c6f0a1ba8a2d8e3c688e6872184da9d
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59181777"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67736757"
 ---
 # <a name="isymunmanagedreaderinitialize-method"></a>ISymUnmanagedReader::Initialize, méthode
 Initialise le lecteur de symboles avec l’interface d’importateur de métadonnées qui ce lecteur sera associé, ainsi que le nom de fichier du module.  
@@ -32,7 +32,7 @@ Initialise le lecteur de symboles avec l’interface d’importateur de métadon
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Initialize (  
     [in]  IUnknown     *importer,  
     [in]  const WCHAR  *filename,  

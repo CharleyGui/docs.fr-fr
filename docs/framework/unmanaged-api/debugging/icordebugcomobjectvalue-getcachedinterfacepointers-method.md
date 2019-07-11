@@ -15,19 +15,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4a77e7f20aba1908a63d77b4ccada7fabacf55f7
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: bdbec0101de269b3d5b09e750d552c993a0198ab
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025852"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67748484"
 ---
 # <a name="icordebugcomobjectvaluegetcachedinterfacepointers-method"></a>ICorDebugComObjectValue::GetCachedInterfacePointers, méthode
 Obtient les pointeurs d’interface brut mis en cache sur le cours callable wrapper RCW (runtime).  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetCachedInterfacePointers(  
     [in] BOOL bIInspectableOnly,  
     [in] ULONG32 celt,  

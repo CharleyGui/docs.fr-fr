@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ecbecec86d81357000679ab50e12f06d91c9f50d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 31329a8674a9991a3f306eeff44ee3437ad64a5c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61765373"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67779437"
 ---
 # <a name="ivalidatorformateventinfo-method"></a>IValidator::FormatEventInfo, méthode
 Obtient le message d’erreur correspondant à l’erreur de validation spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT FormatEventInfo(  
     [in] HRESULT            hVECode,  
     [in] VEContext          Context,  

@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 51104516008ffee0694c72733cb5f82b5ba6d8cf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 426420175a7d05f39859b9e217a888a8c01b6d63
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61609443"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67740509"
 ---
 # <a name="cortypeid-structure"></a>COR_TYPEID, structure
 Contient un identificateur de type.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef struct COR_TYPEID{  
     UINT64 token1;  
     UINT64 token2;  

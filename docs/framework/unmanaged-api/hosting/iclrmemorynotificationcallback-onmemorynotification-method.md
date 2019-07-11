@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5c7866e0ecc62f037284a5329cb5785be90088f7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0c933389e1398d294d79f82a69a609a77aa820f3
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61984618"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67779821"
 ---
 # <a name="iclrmemorynotificationcallbackonmemorynotification-method"></a>ICLRMemoryNotificationCallback::OnMemoryNotification, méthode
 Notifie le common language runtime (CLR) de la charge de mémoire sur l’ordinateur.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT OnMemoryNotification (  
     [in] EMemoryAvailable eMemoryAvailable  
 );  

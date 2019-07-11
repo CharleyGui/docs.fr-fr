@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5e1734ca91fd48cc15b8dbf25f11518ed0455b6f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1bfc503bfc2b278d7a7344b94cb089cd8e019890
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61750772"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67747763"
 ---
 # <a name="icordebugclass2getparameterizedtype-method"></a>ICorDebugClass2::GetParameterizedType, méthode
 Obtient la déclaration de type pour cette classe.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetParameterizedType (  
     [in] CorElementType                      elementType,  
     [in] ULONG32                             nTypeArgs,  

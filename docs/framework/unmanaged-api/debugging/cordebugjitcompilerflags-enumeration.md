@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 66a8ba59d221bb3fa2e815a1cbcfa79c474666cc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 39bc1316bb7d8e2aba3390499437aadf263dac07
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792728"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67739848"
 ---
 # <a name="cordebugjitcompilerflags-enumeration"></a>CorDebugJITCompilerFlags, énumération
 Contient des valeurs qui influencent le comportement du compilateur juste-à-temps managé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum CorDebugJITCompilerFlags {  
   
     CORDEBUG_JIT_DEFAULT = 0x1,  

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1e2d7a344cabb1ab816e4fe696ebb47276397ec3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 53b892cddbf716afbd137ead36a69aa42f22d331
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774554"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67752229"
 ---
 # <a name="icordebugenumskip-method"></a>ICorDebugEnum::Skip, méthode
 Déplace le curseur vers l’avant dans l’énumération par le nombre spécifié d’éléments.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Skip (  
     [in] ULONG celt  
 );  

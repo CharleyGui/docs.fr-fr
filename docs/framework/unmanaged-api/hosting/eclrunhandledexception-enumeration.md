@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7e5fb3ab1d2dedb220fd4a486409512414233021
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ba0c2ea7733f098b7fac95f51b5eb16d083174e8
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795965"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67779363"
 ---
 # <a name="eclrunhandledexception-enumeration"></a>EClrUnhandledException, énumération
 Décrit les options disponibles pour la gestion des exceptions qui ne sont pas gérées dans le code utilisateur.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum {  
     eRuntimeDeterminedPolicy,  
     eHostDeterminedPolicy  

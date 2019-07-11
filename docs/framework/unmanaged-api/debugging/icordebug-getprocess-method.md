@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dcb869bed71be05e0450580b50dfa9f2a0fca525
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e77046745381d3ecc35c24d5af3f9181b9132e9e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61996292"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67738161"
 ---
 # <a name="icordebuggetprocess-method"></a>ICorDebug::GetProcess, méthode
 Obtient un pointeur vers l’instance « ICorDebugProcess » pour le processus spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetProcess (  
     [in] DWORD               dwProcessId,  
     [out] ICorDebugProcess   **ppProcess  

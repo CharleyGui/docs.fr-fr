@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 18099e6e658391d6dae7a666cd0cebefa5859b1a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7281f1aa0da417eba618b748ac68ba1fefb4907d
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61971546"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67780851"
 ---
 # <a name="icorprofilerinfo4getfunctionfromip2-method"></a>ICorProfilerInfo4::GetFunctionFromIP2, méthode
 Mappe un pointeur d’instruction de code managé vers la version recompilée au juste d’une fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetFunctionFromIP2(  
     [in]  LPCBYTE    ip,  
     [out] FunctionID *pFunctionId,  

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6ec45004f5dd87983187690a0a4feefb35b05e85
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c1c75e1844fca4e592faa924a55432dd42fa7355
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61748953"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67772623"
 ---
 # <a name="icordebugunmanagedcallbackdebugevent-method"></a>ICorDebugUnmanagedCallback::DebugEvent, méthode
 Notifie le débogueur qu’un événement natif a été déclenché.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT DebugEvent (  
     [in] LPDEBUG_EVENT  pDebugEvent,  
     [in] BOOL           fOutOfBand  

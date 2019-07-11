@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e56a509d08b19cf449177984e7b59481eb7b09a9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 026115adc01e7dcdac3012255f0378cff6348f89
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049399"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67780701"
 ---
 # <a name="gethashfromassemblyfile-function"></a>GetHashFromAssemblyFile, fonction
 Obtient un hachage du fichier d’assembly spécifié, à l’aide de l’algorithme de hachage spécifié.  
@@ -30,7 +30,7 @@ Obtient un hachage du fichier d’assembly spécifié, à l’aide de l’algori
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetHashFromAssemblyFile (  
     [in]  LPCSTR   szFilePath,  
     [in, out] unsigned int   *piHashAlg,  

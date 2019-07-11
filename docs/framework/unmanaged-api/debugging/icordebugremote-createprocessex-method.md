@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a38812803127857281f9766fa3ed551971ec0330
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d05384af8201fae8cf81650d38c99a5c44e6bd16
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782783"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744776"
 ---
 # <a name="icordebugremotecreateprocessex-method"></a>ICorDebugRemote::CreateProcessEx, méthode
 Lance un processus sur un ordinateur distant sous le débogueur.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT CreateProcessEx (  
     [in]  ICorDebugRemoteTarget*      pRemoteTarget,  
     [in]  LPCWSTR                     lpApplicationName,  

@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: faa6af54714f7f0b7ac91c7836673c163195d5f6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 198141545119976cb9107bc9c09b913572e266ce
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64656455"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781125"
 ---
 # <a name="mdainfo-structure"></a>MDAInfo, structure
 Fournit des détails sur la `Event_MDAFired` événement qui déclenche la création d’un assistant débogage managé (MDA).  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef struct _MDAInfo {  
     LPCWSTR  lpMDACaption;  
     LPCWSTR  lpMDAMessage  

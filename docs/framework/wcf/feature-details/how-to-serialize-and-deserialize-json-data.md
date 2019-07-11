@@ -2,12 +2,12 @@
 title: 'Procédure : sérialiser et désérialiser des données JSON'
 ms.date: 03/25/2019
 ms.assetid: 88abc1fb-8196-4ee3-a23b-c6934144d1dd
-ms.openlocfilehash: 7edce66a23021fa03a6f98b3b847a5b671c17124
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0c56b298737dc9b9902f13c586edffb3d05257f8
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61972989"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67783014"
 ---
 # <a name="how-to-serialize-and-deserialize-json-data"></a>Procédure : Sérialiser et désérialiser des données JSON
 JSON (JavaScript Object Notation) est un format d'encodage de données efficace qui permet l'échange rapide de petites quantités de données entre les navigateurs clients et les services Web compatibles AJAX.  
@@ -42,7 +42,7 @@ JSON (JavaScript Object Notation) est un format d'encodage de données efficace 
 1. Créez une instance du type `Person`.  
   
     ```csharp  
-    Person p = new Person();  
+    var p = new Person();  
     p.name = "John";  
     p.age = 42;  
     ```  
@@ -50,8 +50,8 @@ JSON (JavaScript Object Notation) est un format d'encodage de données efficace 
 2. Sérialiser le `Person` objet dans un flux de mémoire à l’aide de la <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
   
     ```csharp  
-    MemoryStream stream1 = new MemoryStream();  
-    DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Person));  
+    var stream1 = new MemoryStream();  
+    var ser = new DataContractJsonSerializer(typeof(Person));  
     ```  
   
 3. Utilisez la méthode <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A> pour écrire les données JSON dans le flux.  
@@ -64,7 +64,7 @@ JSON (JavaScript Object Notation) est un format d'encodage de données efficace 
   
     ```csharp  
     stream1.Position = 0;  
-    StreamReader sr = new StreamReader(stream1);  
+    var sr = new StreamReader(stream1);  
     Console.Write("JSON form of Person object: ");  
     Console.WriteLine(sr.ReadToEnd());  
     ```  
@@ -75,7 +75,7 @@ JSON (JavaScript Object Notation) est un format d'encodage de données efficace 
   
     ```csharp  
     stream1.Position = 0;  
-    Person p2 = (Person)ser.ReadObject(stream1);  
+    var p2 = (Person)ser.ReadObject(stream1);  
     ```  
   
 2. Affichez les résultats.  
@@ -84,20 +84,20 @@ JSON (JavaScript Object Notation) est un format d'encodage de données efficace 
     Console.WriteLine($"Deserialized back, got name={p2.name}, age={p2.age}");  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
   
 ```csharp  
 // Create a User object and serialize it to a JSON stream.  
 public static string WriteFromObject()  
 {  
-    //Create User object.  
-    User user = new User("Bob", 42);  
+    // Create User object.  
+    var user = new User("Bob", 42);  
   
-    //Create a stream to serialize the object to.  
-    MemoryStream ms = new MemoryStream();  
+    // Create a stream to serialize the object to.  
+    var ms = new MemoryStream();  
   
     // Serializer the User object to the stream.  
-    DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(User));  
+    var ser = new DataContractJsonSerializer(typeof(User));  
     ser.WriteObject(ms, user);  
     byte[] json = ms.ToArray();  
     ms.Close();  
@@ -107,9 +107,9 @@ public static string WriteFromObject()
 // Deserialize a JSON stream to a User object.  
 public static User ReadToObject(string json)  
 {  
-    User deserializedUser = new User();  
-    MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(json));  
-    DataContractJsonSerializer ser = new DataContractJsonSerializer(deserializedUser.GetType());  
+    var deserializedUser = new User();  
+    var ms = new MemoryStream(Encoding.UTF8.GetBytes(json));  
+    var ser = new DataContractJsonSerializer(deserializedUser.GetType());  
     deserializedUser = ser.ReadObject(ms) as User;  
     ms.Close();  
     return deserializedUser;  

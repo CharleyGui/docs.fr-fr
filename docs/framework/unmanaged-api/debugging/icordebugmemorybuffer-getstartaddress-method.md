@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 ms.assetid: f804d9ab-8c88-44f0-b278-5fcca7f87726
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 58649a0fc12ce63a1307af5d831dbf5e0d5a776a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9208d07b697c3bb8a99e13582eda70dcb8dd826b
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61916524"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67752775"
 ---
 # <a name="icordebugmemorybuffergetstartaddress-method"></a>Icordebugmemorybuffer::getstartaddress, méthode
 Obtient l'adresse de départ de la mémoire tampon.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetStartAddress(  
    [out] LPCVOID *address  
 );  

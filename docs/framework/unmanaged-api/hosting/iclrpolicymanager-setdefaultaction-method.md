@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3d339fbadc3260d20fac848ad7f1a9031c3443aa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 63398902071b4cfa1964f77b5641baa6e6239eb5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638799"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67757357"
 ---
 # <a name="iclrpolicymanagersetdefaultaction-method"></a>ICLRPolicyManager::SetDefaultAction, méthode
 Spécifie l’action de stratégie que le common language runtime (CLR) doit prendre lorsque l’opération spécifiée se produit.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetDefaultAction (  
     [in] EClrOperation operation,  
     [in] EPolicyAction action  

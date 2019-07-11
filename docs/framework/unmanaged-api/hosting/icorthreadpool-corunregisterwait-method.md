@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: af41a20bcdcbfc44a5a4b0b30947ab9093948291
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c9ab5ca0a007422a2193d84a4915e2c0c67d855d
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61699575"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67753185"
 ---
 # <a name="icorthreadpoolcorunregisterwait-method"></a>ICorThreadpool::CorUnregisterWait, méthode
 Cette m&#233;thode prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT CorUnregisterWait (  
     [in] HANDLE hWaitObject,  
     [in] HANDLE CompletionEvent,  

@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 ms.assetid: 5a6c9a5a-ec72-4c40-a9c3-cee7baa63687
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e233fe78f6b2c721114f0307a8ca414625a0087e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8a45f233fdec23a504a71a68370e9da8e38ac0bd
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61782640"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67760873"
 ---
 # <a name="icordebugstaticfieldsymbolgetaddress-method"></a>ICorDebugStaticFieldSymbol::GetAddress, méthode
 Obtient l’adresse d’un champ static.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetAddress(  
    [out] CORDB_ADDRESS *pRVA  
 );  

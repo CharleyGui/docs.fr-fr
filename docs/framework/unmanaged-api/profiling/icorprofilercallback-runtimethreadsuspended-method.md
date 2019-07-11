@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a0748802599926f4ec218362e6f7d086aab2d8f9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b6d03e760d2b08cd9ee8cdfd85e2e28223aeacd4
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62041741"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67747235"
 ---
 # <a name="icorprofilercallbackruntimethreadsuspended-method"></a>ICorProfilerCallback::RuntimeThreadSuspended, méthode
 Notifie le profileur que le thread spécifié a été suspendu ou qu’il doit être interrompu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT RuntimeThreadSuspended(  
     [in] ThreadID threadId);  
 ```  

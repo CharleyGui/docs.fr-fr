@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aed6ccd938761385aafd21802829bd741847b4ba
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b1e045c475b57f863071eb81194868b7db3c5a3c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61988200"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67755803"
 ---
 # <a name="icordebugmanagedcallbackexitappdomain-method"></a>ICorDebugManagedCallback::ExitAppDomain, méthode
 Notifie le débogueur qu’un domaine d’application s’est arrêté.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT ExitAppDomain (  
     [in] ICorDebugProcess   *pProcess,  
     [in] ICorDebugAppDomain *pAppDomain  

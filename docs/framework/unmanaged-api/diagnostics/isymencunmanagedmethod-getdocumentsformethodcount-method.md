@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ef1b8dce5c84382a9039787d2205f1ac8ccbc5bc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bf8cca7751dd9705fd3c4371e36e836ca19be5c9
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940281"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67736211"
 ---
 # <a name="isymencunmanagedmethodgetdocumentsformethodcount-method"></a>ISymENCUnmanagedMethod::GetDocumentsForMethodCount, méthode
 Obtient le nombre de documents que cette méthode a des lignes.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetDocumentsForMethodCount(  
     [out, retval] ULONG32* pRetVal);  
 ```  

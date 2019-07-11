@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 28b240159c36b03b2c476f56f7e6ad7b33f20649
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a7fa192a8e8b8a876f672e36bb906a714b1266e2
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61986347"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67736667"
 ---
 # <a name="isymunmanagedreader2getmethodsindocument-method"></a>ISymUnmanagedReader2::GetMethodsInDocument, méthode
 Obtient toutes les méthodes ayant des informations de ligne dans le document fourni.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetMethodsInDocument(  
     [in]  ISymUnmanagedDocument *document,  
     [in]  ULONG32 cMethod,  

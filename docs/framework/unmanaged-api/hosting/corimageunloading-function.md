@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1cb5f9decbcdfb71f67a5132dc59773f1de8b0a9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b488b6a887b0c66d8c17f8ea78f48f7d2ea31011
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61985801"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67758398"
 ---
 # <a name="corimageunloading-function"></a>_CorImageUnloading, fonction
 Notifie le chargeur lorsque les images de modules managés sont déchargées.  
@@ -30,7 +30,7 @@ Notifie le chargeur lorsque les images de modules managés sont déchargées.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 STDAPI (VOID) _CorImageUnloading(   
    [in] PVOID* ImageBase  
 );  

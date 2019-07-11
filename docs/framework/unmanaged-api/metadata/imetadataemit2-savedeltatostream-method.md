@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 31bed2019eef5a37e1086624afdae3e8f2c58632
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 270fdecb6afbf252b7d0531cab0f18dded44298d
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61927229"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67777117"
 ---
 # <a name="imetadataemit2savedeltatostream-method"></a>IMetaDataEmit2::SaveDeltaToStream, méthode
 Enregistre les modifications de la session active modifier et continuer dans le flux spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SaveDeltaToStream (  
     [in] IStream     *pIStream,   
     [in] DWORD       dwSaveFlags  

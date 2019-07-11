@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0c6279c790e9b28e5f3bac93d5d0fdd411dd8c0d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1193af7b7375dfd3367c12fdb0067c9c30c614f0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61753481"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67741751"
 ---
 # <a name="importfile2-method"></a>ImportFile2, méthode
 Importe des assemblys et modules indépendants. Cette méthode est comparable à [ImportFile, méthode](../../../../docs/framework/unmanaged-api/alink/importfile-method.md), mais fonctionne même si le fichier importé n’existe pas sur le disque.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT ImportFile2(  
     LPCWSTR         pszFilename,  
     LPCWSTR         pszTargetName,  

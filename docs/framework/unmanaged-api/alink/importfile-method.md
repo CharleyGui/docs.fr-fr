@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 69e48c6c3179ced167fdc39ae4df859f161727ec
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d76e9b4e18b46d0b546d6c66fa572c35cb9fcefe
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61753515"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67741769"
 ---
 # <a name="importfile-method"></a>ImportFile, méthode
 Importe des assemblys et modules indépendants.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT ImportFile(  
     LPCWSTR pszFilename,  
     LPCWSTR pszTargetName,  

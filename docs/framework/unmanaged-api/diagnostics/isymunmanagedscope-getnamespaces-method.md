@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3dc3c842bbb4b86b82d03848751673400bed193b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d2c64d7ead2f7ce3d76b40f4fdc604506ee85561
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61986113"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67777889"
 ---
 # <a name="isymunmanagedscopegetnamespaces-method"></a>ISymUnmanagedScope::GetNamespaces, méthode
 Obtient les espaces de noms qui sont utilisés dans cette étendue.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetNamespaces(  
     [in]  ULONG32  cNameSpaces,  
     [out] ULONG32  *pcNameSpaces,  

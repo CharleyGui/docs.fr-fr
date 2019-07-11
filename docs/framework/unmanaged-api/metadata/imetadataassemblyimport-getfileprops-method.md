@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: da38c04f5d67dc0220b1828ba0e5cdeb84346bb6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4f3883b0cd1b7aca6265b738eace483c81eb37b9
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62044458"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67760139"
 ---
 # <a name="imetadataassemblyimportgetfileprops-method"></a>IMetaDataAssemblyImport::GetFileProps, méthode
 Obtient les propriétés du fichier avec la signature de métadonnées spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetFileProps (  
     [in]  mdFile      mdf,   
     [out] LPWSTR      szName,   

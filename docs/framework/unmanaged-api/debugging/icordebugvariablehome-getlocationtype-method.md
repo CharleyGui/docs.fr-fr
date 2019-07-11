@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: af879cbbf8edfd05e79d9b77b0c1fb71b2c835c3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7b7b95c79b41737ade42e6a9a2741f9c43a41130
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61993653"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67774471"
 ---
 # <a name="icordebugvariablehomegetlocationtype-method"></a>ICorDebugVariableHome::GetLocationType (méthode)
 Obtient le type d’emplacement native de la variable.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetLocationType(  
     [out] VariableLocationType *pLocationType  
 );  

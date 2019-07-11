@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4ebde1d506a120a99e1c637c660b45d698994f5a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 93ca394eb877a86e4242d5f9f18eb26f5628db7e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61992470"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67751078"
 ---
 # <a name="imetadataemitsetfieldrva-method"></a>IMetaDataEmit::SetFieldRVA, méthode
 Définit une valeur de variable globale pour l’adresse virtuelle relative du champ référencé par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetFieldRVA (   
     [in]  mdFieldDef  fd,   
     [in]  ULONG       ulRVA   

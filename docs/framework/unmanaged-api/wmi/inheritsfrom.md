@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0d2af1b41f47a3906c0e573c104847aa3ff36cf8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5c04a08c9712359453b9c5a9d136e22e1de8648a
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62040584"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67746509"
 ---
 # <a name="inheritsfrom-function"></a>InheritsFrom (fonction)
 Détermine si l’instance ou la classe active dérive d’une classe parente spécifié.
@@ -30,7 +30,7 @@ Détermine si l’instance ou la classe active dérive d’une classe parente sp
     
 ## <a name="syntax"></a>Syntaxe  
   
-```
+```cpp
 HRESULT InheritsFrom (
    [in] int               vFunc, 
    [in] IWbemClassObject* ptr, 
@@ -53,7 +53,7 @@ HRESULT InheritsFrom (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Value  |Description  |
+|Constante  |Valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_S_NO_ERROR` | 0 | L’objet actuel hérite `wszAncestor`.  |
 | `WBEM_S_FALSE` | 1 | L’objet en cours n’hérite pas de `wszAncestor`. |

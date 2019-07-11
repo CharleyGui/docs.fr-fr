@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 25d5e412dc52e4ce26995ff88454b33ccea64c89
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 984ec5dea757971081ce05c858788473a0f616e7
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59110095"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67775271"
 ---
 # <a name="imetadataassemblyemitsetassemblyrefprops-method"></a>IMetaDataAssemblyEmit::SetAssemblyRefProps, méthode
 Modifie la structure de métadonnées `AssemblyRef` spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetAssemblyRefProps (  
     [in] mdAssemblyRef              ar,  
     [in] const void                 *pbPublicKeyOrToken,  

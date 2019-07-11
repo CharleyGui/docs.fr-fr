@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5760287e01257e3f0fc99a18ba20f2f2a1b2b3af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d3aa76b88d89e83c400b3f372d846c1a31add255
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61988154"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67761479"
 ---
 # <a name="icordebugmanagedcallbackloadassembly-method"></a>ICorDebugManagedCallback::LoadAssembly, méthode
 Notifie le débogueur qu’un assembly du common language runtime (CLR) a été chargé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT LoadAssembly (  
     [in] ICorDebugAppDomain *pAppDomain,  
     [in] ICorDebugAssembly  *pAssembly  

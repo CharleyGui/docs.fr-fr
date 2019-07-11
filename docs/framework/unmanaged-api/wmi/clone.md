@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bf9cca10a580af7991889de6993e931347fc27ea
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 80faf1a5a6297f5b105fdb609366f6774f8692b3
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61968153"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67761650"
 ---
 # <a name="clone-function"></a>Clone, fonction
 Retourne un nouvel objet qui est un clone complet de l’objet actuel.   
@@ -30,7 +30,7 @@ Retourne un nouvel objet qui est un clone complet de l’objet actuel.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Clone (
    [in] int                  vFunc, 
    [in] IWbemClassObject*    ptr, 
@@ -53,7 +53,7 @@ HRESULT Clone (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Value  |Description  |
+|Constante  |`Value`  |Description  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | Il y a eu une défaillance générale. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | `null` a été spécifié en tant que paramètre, et n’est pas autorisé dans ce cas. |

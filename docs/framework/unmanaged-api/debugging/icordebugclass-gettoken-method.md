@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c4f33bb15a351be5fe8318dcc3339d429dec039e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b944112ce0b00e84da6243e2e48917e2318b0f1c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61750760"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67746841"
 ---
 # <a name="icordebugclassgettoken-method"></a>ICorDebugClass::GetToken, méthode
 Obtient le `TypeDef` jeton de métadonnées qui fait référence à la définition de cette classe.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetToken (  
     [out] mdTypeDef          *pTypeDef  
 );  

@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c9bbff8bb1f095502f27b649639434010453ffe1
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 01b000ed3d75ddb6a7882cb8f03ff2cec64fb9fe
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423850"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67767877"
 ---
 # <a name="eclroperation-enumeration"></a>EClrOperation, énumération
 Décrit l’ensemble des opérations pour lesquelles un hôte peut appliquer des actions de stratégie.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum {  
     OPR_ThreadAbort,  
     OPR_ThreadRudeAbortInNonCriticalRegion,  

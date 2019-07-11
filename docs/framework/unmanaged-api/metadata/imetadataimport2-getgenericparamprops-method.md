@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 55a765fe3942cbf71a8460187e829dc7f3ca877e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cf9f6cc1e568463f2ca9afa38c10f50d0c247013
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049854"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67755343"
 ---
 # <a name="imetadataimport2getgenericparamprops-method"></a>IMetaDataImport2::GetGenericParamProps, méthode
 Obtient les métadonnées associées au paramètre générique représenté par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetGenericParamProps (  
    [in]  mdGenericParam  gp,  
    [out] ULONG           *pulParamSeq,  

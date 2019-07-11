@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: cbea6c0562c68ae5d18247dc97bc53eb9dfbfd7e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 145b06f89b45b165b9d6329a4c16ac5739406113
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61965932"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67739185"
 ---
 # <a name="dacpgetmoduleaddress-structure"></a>DacpGetModuleAddress Structure
 
@@ -30,7 +30,7 @@ Définit le conteneur pour une demande d’adresse de module.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 struct DacpGetModuleAddress
 {
     CLRDATA_ADDRESS ModulePtr;
@@ -55,8 +55,8 @@ Cette structure se trouve au sein du runtime et n’est pas exposée par le biai
 
 ## <a name="requirements"></a>Configuration requise
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun.  
-**Bibliothèque :** Aucun.  
+**En-tête :** Aucun  
+**Bibliothèque :** Aucun  
 **Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi

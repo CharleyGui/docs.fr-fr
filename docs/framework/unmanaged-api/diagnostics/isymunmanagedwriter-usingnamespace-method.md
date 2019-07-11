@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d0739cc38d1f12967f0daef2d6828e04a256ade6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0076b70c85c21f0c4b1fb140b15000f99dbff742
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650672"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67755138"
 ---
 # <a name="isymunmanagedwriterusingnamespace-method"></a>ISymUnmanagedWriter::UsingNamespace, méthode
 Spécifie que le nom d’espace de noms complet donné est utilisé dans la portée lexicale actuellement ouverte. L’espace de noms sera utilisé dans toutes les portées qui héritent de la portée actuellement ouverte. Fermeture de la portée actuelle s’arrête également l’utilisation de l’espace de noms.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT UsingNamespace(  
     [in] const WCHAR *fullName);  
 ```  

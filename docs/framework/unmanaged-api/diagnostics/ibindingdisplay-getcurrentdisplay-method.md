@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 472e06c3a00762a7bb012fbcb525d8e0b3a9271a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d075aeeb904469613999829a1444511d069b9918
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61599518"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67775979"
 ---
 # <a name="ibindingdisplaygetcurrentdisplay-method"></a>IBindingDisplay::GetCurrentDisplay, méthode
 Retourne les informations d’affichage de liaison actuel.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetCurrentDisplay (  
     [out, retval] SAFEARRAY(struct BindingDisplayTabControl) *display  
 );  

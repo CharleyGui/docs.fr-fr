@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 218279684304b766a9bf009f5891ac4910254a3c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0d74da502492065dbffb5e5499581263760636c7
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61994381"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67737067"
 ---
 # <a name="icordebugprocessreadmemory-method"></a>ICorDebugProcess::ReadMemory, méthode
 Lit une zone spécifiée de mémoire pour ce processus.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT ReadMemory(  
     [in]  CORDB_ADDRESS address,   
     [in]  DWORD size,  

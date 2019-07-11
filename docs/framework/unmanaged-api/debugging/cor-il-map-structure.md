@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 02a7bff021387f615c823b2df96615c1284cb82b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 74f515626f5001cbea1a25e8268338c588524bde
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64617719"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67740537"
 ---
 # <a name="corilmap-structure"></a>COR_IL_MAP, structure
 Spécifie des modifications dans le décalage relatif d'une fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef struct _COR_IL_MAP {  
     ULONG32 oldOffset;   
     ULONG32 newOffset;   

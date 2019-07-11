@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 845994b96445d8ec2a0e37affc5164b432894a91
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6338034d6714e8770e06ff61994fdf4433eb1684
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62045709"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781789"
 ---
 # <a name="corlocalrefpreservation-enumeration"></a>CorLocalRefPreservation, énumération
 Contient des valeurs d'indicateur pour le traitement des références locales.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum CorLocalRefPreservation  
 {  
     MDPreserveLocalRefsNone     =   0x00000000,  

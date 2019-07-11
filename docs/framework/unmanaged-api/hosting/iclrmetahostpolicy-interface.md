@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 426d77114d3deeff94c39e2f5fc1f2e56e753641
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 56a34a8f185ce600f4792cf05c3e95623b70ad6c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490277"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67776541"
 ---
 # <a name="iclrmetahostpolicy-interface"></a>ICLRMetaHostPolicy, interface
 Fournit le [GetRequestedRuntime](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) (méthode), qui retourne un pointeur vers une interface commune de runtime (CLR) langue selon un critère de stratégie, gérés de fichier de configuration, de la version et de l’assembly.  
@@ -35,7 +35,7 @@ Fournit le [GetRequestedRuntime](../../../../docs/framework/unmanaged-api/hostin
 ## <a name="remarks"></a>Notes  
  Vous pouvez obtenir une référence à cette interface en appelant le [CLRCreateInstance](../../../../docs/framework/unmanaged-api/hosting/clrcreateinstance-function.md) fonction comme indiqué dans le code suivant :  
   
-```  
+```cpp  
 ICLRMetaHostPolicy *pMetaHostPolicy = NULL;  
 HRESULT hr = CLRCreateInstance(CLSID_CLRMetaHostPolicy,  
                    IID_ICLRMetaHostPolicy, (LPVOID*)&pMetaHostPolicy);  

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 37815d8aead1ec89826c13db6f012f2cd17bc792
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 85247f2f3672e7827f4dd0c93e50cd5da914ee8f
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61988180"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67755777"
 ---
 # <a name="icordebugmanagedcallbackexitthread-method"></a>ICorDebugManagedCallback::ExitThread, méthode
 Notifie le débogueur qu’un thread qui exécutait le code managé s’est arrêté.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT ExitThread (  
     [in] ICorDebugAppDomain *pAppDomain,  
     [in] ICorDebugThread    *thread  

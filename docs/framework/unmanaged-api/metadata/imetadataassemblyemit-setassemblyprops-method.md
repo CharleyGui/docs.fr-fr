@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3361212f9a7f7ff0739e8544419a2b67abc8f457
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 34335321207e98a518ff3e0fdb5ea1dc3ac68b75
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62044731"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67776263"
 ---
 # <a name="imetadataassemblyemitsetassemblyprops-method"></a>IMetaDataAssemblyEmit::SetAssemblyProps, méthode
 Modifie la structure de métadonnées `Assembly` spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetAssemblyProps (  
     [in] mdAssembly               pma,  
     [in] const void               *pbPublicKey,  

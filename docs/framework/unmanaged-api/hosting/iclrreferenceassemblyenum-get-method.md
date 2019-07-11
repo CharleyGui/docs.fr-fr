@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 31d26ed6249bad8a7e2fbaab01264c1b32e1ff55
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a69e32d418478071f9b99a391e6bef9095d6f4ad
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638648"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67749923"
 ---
 # <a name="iclrreferenceassemblyenumget-method"></a>ICLRReferenceAssemblyEnum::Get, méthode
 Obtient l’identité d’assembly à l’index fourni.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Get (  
     [in] DWORD dwIndex,  
     [out, size_is(*pcchBufferSize)] LPWSTR pwzBuffer,  

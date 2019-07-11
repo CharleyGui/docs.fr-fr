@@ -11,12 +11,12 @@ helpviewer_keywords:
 - DllImport attribute, calling Windows API
 - Declare statement [Visual Basic], declaring DLL functions
 ms.assetid: 9280ca96-7a93-47a3-8d01-6d01be0657cb
-ms.openlocfilehash: 70914d63773c6a94ad92cf6301a8e2bc1368e7a1
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: d2dc80ec689f3e9fd2f36c36c3847ec4e5d1a576
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592710"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67783158"
 ---
 # <a name="walkthrough-calling-windows-apis-visual-basic"></a>Procédure pas à pas : Appel d’API Windows (Visual Basic)
 Les API Windows sont des bibliothèques de liens dynamiques (DLL) qui font partie du système d’exploitation Windows. Elles permettent d’effectuer des tâches lorsqu’il est difficile d’écrire des procédures équivalentes de votre choix. Par exemple, Windows fournit une fonction nommée `FlashWindowEx` qui permet d’effectuer la barre de titre pour une application alternez entre clairs et foncés.  
@@ -32,7 +32,7 @@ Les API Windows sont des bibliothèques de liens dynamiques (DLL) qui font parti
 ## <a name="api-calls-using-declare"></a>Déclarent des appels d’API à l’aide de  
  La méthode la plus courante d’appeler les API de Windows est à l’aide de la `Declare` instruction.  
   
-#### <a name="to-declare-a-dll-procedure"></a>Pour déclarer une procédure DLL  
+### <a name="to-declare-a-dll-procedure"></a>Pour déclarer une procédure DLL  
   
 1. Déterminer le nom de la fonction que vous souhaitez appeler, ainsi que ses arguments, les types d’arguments et retourner une valeur, ainsi que le nom et l’emplacement de la DLL qui la contient.  
   
@@ -69,7 +69,7 @@ Les API Windows sont des bibliothèques de liens dynamiques (DLL) qui font parti
 #### <a name="windows-api-constants"></a>Constantes de l’API de Windows  
  Certains arguments sont des combinaisons de constantes. Par exemple, le `MessageBox` API indiqué dans cette procédure pas à pas accepte un argument entier appelé `Typ` qui contrôle comment la boîte de message s’affiche. Vous pouvez déterminer la valeur numérique de ces constantes en examinant le `#define` instructions dans le fichier WinUser.h. Les valeurs numériques sont généralement affichés au format hexadécimal, vous pouvez donc utiliser une calculatrice pour les ajouter et convertir en nombre décimal. Par exemple, si vous souhaitez combiner les constantes pour le style d’exclamation `MB_ICONEXCLAMATION` 0 x 00000030 et la valeur Oui/aucun style `MB_YESNO` 0 x 00000004, vous pouvez ajouter les nombres et obtenir un résultat de 0 x 00000034, ou 52 décimales. Bien que vous pouvez utiliser le résultat décimal directement, il est préférable de déclarer ces valeurs en tant que constantes dans votre application et de les combiner à l’aide de la `Or` opérateur.  
   
-###### <a name="to-declare-constants-for-windows-api-calls"></a>Pour déclarer des constantes pour les appels d’API de Windows  
+##### <a name="to-declare-constants-for-windows-api-calls"></a>Pour déclarer des constantes pour les appels d’API de Windows  
   
 1. Consultez la documentation de la fonction Windows que vous appelez. Déterminer le nom de l’une des constantes qu’il utilise et le nom du fichier .h qui contient les valeurs numériques pour ces constantes.  
   
@@ -77,7 +77,7 @@ Les API Windows sont des bibliothèques de liens dynamiques (DLL) qui font parti
   
      `#define MB_ICONQUESTION             0x00000020L`  
   
-3. Ajouter équivalent `Const` instructions pour votre classe ou module pour rendre ces constantes disponibles pour votre application. Exemple :  
+3. Ajouter équivalent `Const` instructions pour votre classe ou module pour rendre ces constantes disponibles pour votre application. Par exemple :  
   
      [!code-vb[VbVbalrInterop#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#11)]  
   
@@ -94,7 +94,7 @@ Les API Windows sont des bibliothèques de liens dynamiques (DLL) qui font parti
 #### <a name="data-marshaling"></a>Marshaling de données  
  Visual Basic convertit automatiquement les types de données des paramètres et valeurs de retour pour les appels d’API de Windows, mais vous pouvez utiliser le `MarshalAs` attribut pour spécifier explicitement les types de données non managée qui attend une API. Pour plus d’informations sur le marshaling d’interopérabilité, consultez [Marshaling d’interopérabilité](../../../framework/interop/interop-marshaling.md).  
   
-###### <a name="to-use-declare-and-marshalas-in-an-api-call"></a>Pour utiliser Declare et MarshalAs dans un appel d’API  
+##### <a name="to-use-declare-and-marshalas-in-an-api-call"></a>Pour utiliser Declare et MarshalAs dans un appel d’API  
   
 1. Déterminer le nom de la fonction que vous souhaitez appeler, ses arguments, les types de données, et la valeur de retour.  
   
@@ -111,7 +111,7 @@ Les API Windows sont des bibliothèques de liens dynamiques (DLL) qui font parti
   
  Vous pouvez utiliser `DllImport` avec la plupart des API Windows appelle tant que l’appel fait référence à un partage (parfois appelé *statique*) méthode. Vous ne pouvez pas utiliser des méthodes qui requièrent une instance d’une classe. Contrairement aux `Declare` instructions, `DllImport` appels ne peut pas utiliser le `MarshalAs` attribut.  
   
-#### <a name="to-call-a-windows-api-using-the-dllimport-attribute"></a>Pour appeler une API Windows à l’aide de l’attribut DllImport  
+### <a name="to-call-a-windows-api-using-the-dllimport-attribute"></a>Pour appeler une API Windows à l’aide de l’attribut DllImport  
   
 1. Ouvrez un nouveau projet d’Application de Windows en cliquant sur **New** sur le **fichier** menu, puis en cliquant sur **projet**. La boîte de dialogue **Nouveau projet** s’affiche.  
   

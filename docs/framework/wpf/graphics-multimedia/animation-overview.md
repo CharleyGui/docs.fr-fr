@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Storyboards [WPF], animations
 - animations [WPF], overview
 ms.assetid: bd9ce563-725d-4385-87c9-d7ee38cf79ea
-ms.openlocfilehash: 63353f670528cd52f3e2927426ae715432422504
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 5c776942bced836437fdcb8aaf30faef48e3aaff
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663863"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67780147"
 ---
 # <a name="animation-overview"></a>Vue d'ensemble de l'animation
 
@@ -62,7 +62,7 @@ Vous pouvez utiliser des animations presque n’importe où, y compris dans les 
 
 <a name="storyboardwalkthrough"></a>
 
-## <a name="example-make-an-element-fade-in-and-out-of-view"></a>Exemple : Effectuer un fondu de l’élément hors de l’affichage
+## <a name="example-make-an-element-fade-in-and-out-of-view"></a>Exemple : Effectuer un fondu de l’élément hors de l’affichage
 
 Cet exemple montre comment utiliser un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] animation pour animer la valeur d’une propriété de dépendance. Il utilise un <xref:System.Windows.Media.Animation.DoubleAnimation>, qui est un type d’animation qui génère <xref:System.Double> valeurs, pour animer la <xref:System.Windows.UIElement.Opacity%2A> propriété d’un <xref:System.Windows.Shapes.Rectangle>. Par conséquent, le <xref:System.Windows.Shapes.Rectangle> fondu dans et hors de vue.
 
@@ -112,7 +112,7 @@ Une façon de faire apparaître et disparaître un élément est d’animer sa <
 
 <a name="opacity_animation_step2"></a>
 
-### <a name="part-2-create-a-storyboard"></a>Partie 2 : Créer une table de montage séquentiel
+### <a name="part-2-create-a-storyboard"></a>Partie 2 : Créer une table de montage séquentiel
 
 Pour appliquer une animation à un objet, vous créez un <xref:System.Windows.Media.Animation.Storyboard> et utiliser le <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> et <xref:System.Windows.Media.Animation.Storyboard.TargetProperty> attaché des propriétés pour spécifier l’objet et la propriété à animer.
 
@@ -231,10 +231,10 @@ Le tableau suivant montre plusieurs types d’animations courants et certaines p
 
 |Type de propriété|Animation de base (From/To/By) correspondante|Animation d’image clé correspondante|Animation de tracé correspondante|Exemple d’utilisation|
 |-------------------|----------------------------------------------------|---------------------------------------|----------------------------------|-------------------|
-|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|None|Animer la <xref:System.Windows.Media.SolidColorBrush.Color%2A> d’un <xref:System.Windows.Media.SolidColorBrush> ou un <xref:System.Windows.Media.GradientStop>.|
+|<xref:System.Windows.Media.Color>|<xref:System.Windows.Media.Animation.ColorAnimation>|<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>|Aucun|Animer la <xref:System.Windows.Media.SolidColorBrush.Color%2A> d’un <xref:System.Windows.Media.SolidColorBrush> ou un <xref:System.Windows.Media.GradientStop>.|
 |<xref:System.Double>|<xref:System.Windows.Media.Animation.DoubleAnimation>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.DoubleAnimationUsingPath>|Animer le <xref:System.Windows.FrameworkElement.Width%2A> d’un <xref:System.Windows.Controls.DockPanel> ou <xref:System.Windows.FrameworkElement.Height%2A> d’un <xref:System.Windows.Controls.Button>.|
 |<xref:System.Windows.Point>|<xref:System.Windows.Media.Animation.PointAnimation>|<xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>|<xref:System.Windows.Media.Animation.PointAnimationUsingPath>|Animer la <xref:System.Windows.Media.EllipseGeometry.Center%2A> position d’un <xref:System.Windows.Media.EllipseGeometry>.|
-|<xref:System.String>|None|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|None|Animer le <xref:System.Windows.Controls.TextBlock.Text%2A> d’un <xref:System.Windows.Controls.TextBlock> ou <xref:System.Windows.Controls.ContentControl.Content%2A> d’un <xref:System.Windows.Controls.Button>.|
+|<xref:System.String>|Aucun|<xref:System.Windows.Media.Animation.StringAnimationUsingKeyFrames>|Aucun|Animer le <xref:System.Windows.Controls.TextBlock.Text%2A> d’un <xref:System.Windows.Controls.TextBlock> ou <xref:System.Windows.Controls.ContentControl.Content%2A> d’un <xref:System.Windows.Controls.Button>.|
 
 <a name="animationsaretimelines"></a>
 
@@ -372,7 +372,7 @@ Les exemples suivants peuvent vous aider à commencer à ajouter animation à vo
 |[Vue d'ensemble de l'animation et du système de minutage](animation-and-timing-system-overview.md)|Décrit comment le système de minutage utilise le <xref:System.Windows.Media.Animation.Timeline> et <xref:System.Windows.Media.Animation.Clock> les classes qui vous permettent de créer des animations.|
 |[Conseils et astuces sur les animations](animation-tips-and-tricks.md)|Répertorie des conseils utiles pour résoudre les problèmes d’animation, tels que les performances.|
 |[Vue d'ensemble des animations personnalisées](custom-animations-overview.md)|Décrit comment étendre le système d’animation avec des images clés, des classes d’animation ou des rappels image par image.|
-|Vue d'ensemble des animations From/To/By|Décrit comment créer une animation qui effectue la transition entre deux valeurs.|
+|[Vue d’ensemble des animations From/To/By](from-to-by-animations-overview.md)|Décrit comment créer une animation qui effectue la transition entre deux valeurs.|
 |[Vue d'ensemble des animations d'image clé](key-frame-animations-overview.md)|Décrit comment créer une animation avec plusieurs valeurs cibles, notamment la possibilité de contrôler la méthode d’interpolation.|
 |[Fonctions d'accélération](easing-functions.md)|Explique comment appliquer des formules mathématiques à vos animations pour obtenir un comportement réaliste, tel que rebondissement.|
 |[Vue d'ensemble des animations de tracés](path-animations-overview.md)|Décrit comment déplacer ou faire pivoter un objet sur un tracé complexe.|

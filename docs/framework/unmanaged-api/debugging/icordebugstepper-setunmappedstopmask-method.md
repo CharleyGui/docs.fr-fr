@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: da799b0d4f4e5e4b281445baa35d95f992ba0b63
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c0a273c54559e8e297e09740ba9c770ce12d72d1
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61987452"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67760584"
 ---
 # <a name="icordebugsteppersetunmappedstopmask-method"></a>ICorDebugStepper::SetUnmappedStopMask, méthode
 Définit une valeur qui spécifie le type de code non mappé dans lequel l’exécution s’arrêtera.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetUnmappedStopMask (  
     [in] CorDebugUnmappedStop   mask  
 );  

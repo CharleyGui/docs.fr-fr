@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d667013b23da3fb53ab87069748f6f5f646efeeb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 967bab92ddf452fcbc3ad32fdee2ba43fc018e88
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936927"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67778992"
 ---
 # <a name="icorruntimehostcreatelogicalthreadstate-method"></a>ICorRuntimeHost::CreateLogicalThreadState, méthode
 Cette m&#233;thode prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT CreateLogicalThreadState ( );  
 ```  
   

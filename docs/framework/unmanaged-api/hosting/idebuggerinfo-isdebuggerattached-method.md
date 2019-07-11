@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0708a3b501a99b5f71be5ba4c6cc4ea2b754d12a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f381cc687b4c28dd58a02aea8cf931f569cf9611
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61699888"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67780520"
 ---
 # <a name="idebuggerinfoisdebuggerattached-method"></a>IDebuggerInfo::IsDebuggerAttached, méthode
 Obtient une valeur qui indique si un débogueur managé est attaché à ce processus.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT IsDebuggerAttached (  
     [out] BOOL *pbAttached  
 );  

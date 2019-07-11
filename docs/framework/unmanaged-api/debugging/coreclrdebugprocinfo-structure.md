@@ -18,19 +18,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b9d4b27ca0bf454b42f15b849008e5a3019bb09a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 21fc34add4038d25d60e4728847e0d84914a14e3
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61864076"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67739417"
 ---
 # <a name="coreclrdebugprocinfo-structure"></a>Structure CoreClrDebugProcInfo
 Représente un processus qui s'exécute sur un ordinateur distant.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 struct  CoreClrDebugProcInfo {  
     DWORD m_dwPID;  
     DWORD m_dwInternalID;  

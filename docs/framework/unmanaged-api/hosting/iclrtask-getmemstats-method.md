@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 668e570c315f5473f222905a061f05ac94afa81a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ab388459df88e91093459658ced4d4b4eb023460
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61763566"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67758991"
 ---
 # <a name="iclrtaskgetmemstats-method"></a>ICLRTask::GetMemStats, méthode
 Obtient des informations sur l’utilisation de mémoire de statistiques relatives à la tâche qui en cours [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) représente l’instance.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetMemStats (  
     [out] COR_GC_THREAD_STATS *pMemUsage  
 );  

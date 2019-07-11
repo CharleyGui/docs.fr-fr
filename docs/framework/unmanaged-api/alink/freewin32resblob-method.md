@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 196a57b3e919ea4ccbc0b91e5b6f281ad3c30b62
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 75aec187452e2f9f442a5d4856fe6777c03f34c1
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789881"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67741978"
 ---
 # <a name="freewin32resblob-method"></a>FreeWin32ResBlob, méthode
 Libère le blob de ressources Win32 et les ressources associées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT FreeWin32ResBlob(  
     const void** ppResBlob  
 ) PURE;  

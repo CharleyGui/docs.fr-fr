@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 ms.assetid: 09c19f5f-afc4-4e0c-bffe-cd7147bc7a43
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: affe67006c9e37d55b0f9d107c92441da44c9ab8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 84d9e30a2baf08f6b7ff530f2fce049d49386a60
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61768821"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67774845"
 ---
 # <a name="icordebugvariablesymbolgetslotindex-method"></a>Méthode ICorDebugVariableSymbol::GetSlotIndex
 Obtient l'index d'emplacement géré d'une variable locale.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetSlotIndex(  
    [out] ULONG32 *pSlotIndex  
 );  

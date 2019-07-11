@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f256195a4cd5b18f568e05156db867aa5dba9161
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 73098077e3860d3f4a8a02921ecedf8dff24165b
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61627961"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67774049"
 ---
 # <a name="etasktype-enumeration"></a>ETaskType, énumération
 Contient des valeurs qui indiquent le type de tâche est représentée par un [ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) ou un [IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md) interface.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum ETaskType {  
     TT_DEBUGGERHELPER           = 0x1,  
     TT_GC                       = 0x2,  

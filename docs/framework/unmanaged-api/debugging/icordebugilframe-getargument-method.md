@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 46852ed8ac53c3a7720edff4833f3dc3cce42bbb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9e9f627f1ba213f663f042d1107afd1eb05b56b0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61995525"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67757864"
 ---
 # <a name="icordebugilframegetargument-method"></a>ICorDebugILFrame::GetArgument, méthode
 Obtient la valeur de l’argument spécifié dans ce frame de pile Microsoft intermediate language (MSIL).  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetArgument (  
     [in] DWORD                  dwIndex,  
     [out] ICorDebugValue        **ppValue  
