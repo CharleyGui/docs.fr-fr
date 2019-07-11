@@ -7,17 +7,17 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - Video How tos, Visual Basic
 ms.assetid: 0f53a553-efd6-466d-80bf-6b679e5cd174
-ms.openlocfilehash: 775c40cbb62272f913297d5a58914a0c82c5a7d7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 850e20fe8b5b6bfd392c80c87950a81a1a8a5c24
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780833"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67755199"
 ---
 # <a name="how-to-declare-an-object-by-using-an-object-initializer-visual-basic"></a>Procédure : Déclarez un objet à l’aide d’un initialiseur d’objet (Visual Basic)
 Initialiseurs d’objets permettent de déclarer et instancier une instance d’une classe dans une instruction unique. En outre, vous pouvez initialiser un ou plusieurs membres de l’instance en même temps, sans appeler un constructeur paramétrable.  
   
- Lorsque vous utilisez un initialiseur d’objet pour créer une instance d’un type nommé, le constructeur par défaut pour la classe est appelé, suivie de l’initialisation de membres désignés dans l’ordre que vous spécifiez.  
+ Lorsque vous utilisez un initialiseur d’objet pour créer une instance d’un type nommé, le constructeur sans paramètre pour la classe est appelé, suivie de l’initialisation de membres désignés dans l’ordre que vous spécifiez.  
   
  La procédure suivante montre comment créer une instance d’un `Student` classe de trois façons différentes. La classe a prénom, nom de famille, propriétés et de classe année, entre autres. Chacune des trois déclarations de crée une nouvelle instance de `Student`, avec la propriété `First` défini sur « Michael, « propriété `Last` défini sur « Tucker », et tous les autres membres définissent à leurs valeurs par défaut. Le résultat de chaque déclaration dans la procédure est équivalent à l’exemple suivant, qui n’utilise pas un initialiseur d’objet.  
   
@@ -62,6 +62,6 @@ Initialiseurs d’objets permettent de déclarer et instancier une instance d’
 ## <a name="see-also"></a>Voir aussi
 
 - [Inférence de type local](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [Guide pratique pour Créer une liste d’éléments](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)
+- [Guide pratique : Créer une liste d’éléments](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)
 - [Initialiseurs d’objets : Types nommés et anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
 - [Types anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)

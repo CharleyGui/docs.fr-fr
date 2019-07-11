@@ -26,12 +26,12 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: a914adf8-e68f-4819-a6b1-200d1cf1c21c
-ms.openlocfilehash: 829ff08fe3805f37bc6189a66a6675b3518da138
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 19988e766d0f9ec895a24dddfcd17d0854aaf8ad
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64601009"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67757397"
 ---
 # <a name="how-to-define-a-class-that-can-provide-identical-functionality-on-different-data-types-visual-basic"></a>Procédure : Définissez une classe qui fournisse des fonctionnalités identiques pour différents Types de données (Visual Basic)
 Vous pouvez définir une classe à partir de laquelle vous créez des objets qui fournissent les mêmes fonctions pour des types de données différents. Pour cela, vous spécifiez un ou plusieurs *paramètres de type* dans la définition. La classe peut ensuite servir de modèle pour les objets qui utilisent différents types de données. Une classe définie de cette façon est appelée *classe générique*.  
@@ -62,7 +62,7 @@ Vous pouvez définir une classe à partir de laquelle vous créez des objets qui
   
 6. Vérifiez que votre code utilise uniquement des opérations et des méthodes qui sont prises en charge par tous les types de données qu’il peut fournir à `itemType`.  
   
-     L’exemple suivant définit une classe qui gère une liste très simple. Cette liste est contenue dans le tableau interne `items`. Le code utilisé peut déclarer le type de données des éléments de la liste. Un constructeur paramétrable permet au code utilisé de définir la limite supérieure de `items`, et le constructeur par défaut définit cette limite à 9 (sur un total de 10 éléments).  
+     L’exemple suivant définit une classe qui gère une liste très simple. Cette liste est contenue dans le tableau interne `items`. Le code utilisé peut déclarer le type de données des éléments de la liste. Un constructeur paramétrable permet au code pour définir la limite supérieure de `items`, et le constructeur sans paramètre définit ce à 9 (pour un total de 10 éléments).  
   
      [!code-vb[VbVbalrDataTypes#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#7)]  
   
@@ -81,5 +81,5 @@ Vous pouvez définir une classe à partir de laquelle vous créez des objets qui
 - [Indépendance du langage et composants indépendants du langage](../../../../standard/language-independence-and-language-independent-components.md)
 - [Of](../../../../visual-basic/language-reference/statements/of-clause.md)
 - [Liste de types](../../../../visual-basic/language-reference/statements/type-list.md)
-- [Guide pratique pour utiliser une classe générique](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
+- [Guide pratique : utiliser une classe générique](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
 - [Object (type de données)](../../../../visual-basic/language-reference/data-types/object-data-type.md)

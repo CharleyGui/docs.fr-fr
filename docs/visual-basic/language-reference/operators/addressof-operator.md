@@ -8,15 +8,15 @@ helpviewer_keywords:
 - AddressOf operator [Visual Basic]
 - addresses, passing to API procedures
 ms.assetid: 8105a59d-60d8-4ab5-b221-5899cdfacbf4
-ms.openlocfilehash: 9d8515b6d5b0caf3552ed05a7e0cd4a271efaf54
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 098ca95687d8b0e9f4ac90d5c7e0df9a9a0ad950
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608344"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67760375"
 ---
 # <a name="addressof-operator-visual-basic"></a>Opérateur AddressOf (Visual Basic)
-Crée une instance de délégué de procédure qui fait référence à la procédure spécifique.  
+Crée une instance de délégué qui fait référence à la procédure spécifique.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,10 +26,10 @@ AddressOf procedurename
   
 ## <a name="parts"></a>Composants  
  `procedurename`  
- Obligatoire. Indique la procédure à référencer par le délégué de procédure nouvellement créé.  
+ Requis. Indique la procédure à référencer par le délégué nouvellement créé.  
   
 ## <a name="remarks"></a>Notes  
- Le `AddressOf` opérateur crée un délégué de fonction qui pointe vers la fonction spécifiée par `procedurename`. Lorsque la procédure spécifiée est qu'une méthode d’instance puis le délégué de fonction fait référence à l’instance et la méthode. Ensuite, lorsque le délégué de fonction est appelé la méthode spécifiée de l’instance spécifiée est appelée.  
+ Le `AddressOf` opérateur crée un délégué qui pointe vers le sub ou de la fonction spécifiée par `procedurename`. Lorsque la procédure spécifiée est qu'une méthode d’instance puis le délégué fait référence à l’instance et la méthode. Ensuite, lorsque le délégué est appelé la méthode spécifiée de l’instance spécifiée est appelée.  
   
  Le `AddressOf` opérateur peut être utilisé comme opérande d’un constructeur délégué ou il peut être utilisé dans un contexte dans lequel le type du délégué peut être déterminé par le compilateur.  
   

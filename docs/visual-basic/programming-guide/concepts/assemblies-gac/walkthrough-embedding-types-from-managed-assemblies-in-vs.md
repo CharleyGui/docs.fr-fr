@@ -2,12 +2,12 @@
 title: 'Procédure pas à pas : Incorporer des types provenant d’assemblys managés dans Visual Studio (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 56ed12ba-adff-4e9c-a668-7fcba80c4795
-ms.openlocfilehash: 18f22a771ab7279f177fe39d8c372a8517056890
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0c0de529a0005c9dbaf1f8d0f25957b217280e31
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64754829"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67753025"
 ---
 # <a name="walkthrough-embedding-types-from-managed-assemblies-in-visual-studio-visual-basic"></a>Procédure pas à pas : Incorporer des types provenant d’assemblys managés dans Visual Studio (Visual Basic)
 
@@ -51,7 +51,7 @@ Après avoir spécifié les interfaces publiques qui peuvent être incorporées,
 
 ## <a name="creating-an-interface"></a>Création d’une interface
 
-#### <a name="to-create-the-type-equivalence-interface-project"></a>Pour créer le projet d’interface d’équivalence des types
+### <a name="to-create-the-type-equivalence-interface-project"></a>Pour créer le projet d’interface d’équivalence des types
 
 1. Dans Visual Studio, dans le menu **Fichier**,pointez sur **Nouveau**, puis cliquez sur **Projet**.
 
@@ -61,7 +61,7 @@ Après avoir spécifié les interfaces publiques qui peuvent être incorporées,
 
 4. Cliquez avec le bouton droit sur le projet TypeEquivalenceInterface, puis cliquez sur **Propriétés**. Cliquez sur l’onglet **Compiler**. Affectez au chemin de sortie un emplacement valide sur votre ordinateur de développement, tel que `C:\TypeEquivalenceSample`. Cet emplacement sera également utilisé dans une étape ultérieure de cette procédure pas à pas.
 
-5. Tout en modifiant les propriétés de projet, cliquez sur l’onglet **Signature**. Sélectionnez l’option **Signer l’assembly**. Dans la liste **Choisir un fichier de clé de nom fort**, cliquez sur **<Nouveau...>**. Dans la zone **Nom du fichier de clé**, tapez `key.snk`. Décochez la case **Protéger mon fichier de clé par un mot de passe**. Cliquez sur **OK**.
+5. Tout en modifiant les propriétés de projet, cliquez sur l’onglet **Signature**. Sélectionnez l’option **Signer l’assembly**. Dans la liste **Choisir un fichier de clé de nom fort**, cliquez sur **<Nouveau...>** . Dans la zone **Nom du fichier de clé**, tapez `key.snk`. Décochez la case **Protéger mon fichier de clé par un mot de passe**. Cliquez sur **OK**.
 
 6. Ouvrez le fichier ISampleInterface.vb. Ajoutez le code suivant au fichier de classe ISampleInterface pour créer l’interface ISampleInterface.
 
@@ -96,7 +96,7 @@ Après avoir spécifié les interfaces publiques qui peuvent être incorporées,
 
 ## <a name="creating-a-runtime-class"></a>Création d’une classe runtime
 
-#### <a name="to-create-the-type-equivalence-runtime-project"></a>Pour créer le projet d’exécution d’équivalence des types
+### <a name="to-create-the-type-equivalence-runtime-project"></a>Pour créer le projet d’exécution d’équivalence des types
 
 1. Dans Visual Studio, dans le menu **Fichier**,pointez sur **Nouveau**, puis cliquez sur **Projet**.
 
@@ -106,7 +106,7 @@ Après avoir spécifié les interfaces publiques qui peuvent être incorporées,
 
 4. Cliquez avec le bouton droit sur le projet TypeEquivalenceRuntime, puis cliquez sur **Propriétés**. Cliquez sur l’onglet **Compiler**. Affectez au chemin de sortie le même emplacement que celui que vous avez utilisé dans le projet TypeEquivalenceInterface, par exemple `C:\TypeEquivalenceSample`.
 
-5. Tout en modifiant les propriétés de projet, cliquez sur l’onglet **Signature**. Sélectionnez l’option **Signer l’assembly**. Dans la liste **Choisir un fichier de clé de nom fort**, cliquez sur **<Nouveau...>**. Dans la zone **Nom du fichier de clé**, tapez `key.snk`. Décochez la case **Protéger mon fichier de clé par un mot de passe**. Cliquez sur **OK**.
+5. Tout en modifiant les propriétés de projet, cliquez sur l’onglet **Signature**. Sélectionnez l’option **Signer l’assembly**. Dans la liste **Choisir un fichier de clé de nom fort**, cliquez sur **<Nouveau...>** . Dans la zone **Nom du fichier de clé**, tapez `key.snk`. Décochez la case **Protéger mon fichier de clé par un mot de passe**. Cliquez sur **OK**.
 
 6. Cliquez avec le bouton droit sur le projet TypeEquivalenceRuntime, puis cliquez sur **Ajouter une référence**. Cliquez sur l’onglet **Parcourir** et recherchez le dossier du chemin de sortie. Sélectionnez le fichier TypeEquivalenceInterface.dll et cliquez sur **OK**.
 
@@ -142,7 +142,7 @@ Après avoir spécifié les interfaces publiques qui peuvent être incorporées,
 
 ## <a name="creating-a-client-project"></a>Création d’un projet client
 
-#### <a name="to-create-the-type-equivalence-client-project"></a>Pour créer le projet client d’équivalence des types
+### <a name="to-create-the-type-equivalence-client-project"></a>Pour créer le projet client d’équivalence des types
 
 1. Dans Visual Studio, dans le menu **Fichier**,pointez sur **Nouveau**, puis cliquez sur **Projet**.
 
@@ -181,7 +181,7 @@ Après avoir spécifié les interfaces publiques qui peuvent être incorporées,
 
 ## <a name="modifying-the-interface"></a>Modification de l’interface
 
-#### <a name="to-modify-the-interface"></a>Pour modifier l’interface
+### <a name="to-modify-the-interface"></a>Pour modifier l’interface
 
 1. Dans Visual Studio, dans le menu **Fichier**, pointez sur **Ouvrir**, puis cliquez sur **Projet/Solution**.
 
@@ -201,7 +201,7 @@ Après avoir spécifié les interfaces publiques qui peuvent être incorporées,
 
 ## <a name="modifying-the-runtime-class"></a>Modification de la classe runtime
 
-#### <a name="to-modify-the-runtime-class"></a>Pour modifier la classe runtime
+### <a name="to-modify-the-runtime-class"></a>Pour modifier la classe runtime
 
 1. Dans Visual Studio, dans le menu **Fichier**, pointez sur **Ouvrir**, puis cliquez sur **Projet/Solution**.
 

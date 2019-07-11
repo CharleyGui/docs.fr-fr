@@ -5,12 +5,12 @@ helpviewer_keywords:
 - classes [Visual Basic]
 - objects [Visual Basic]
 ms.assetid: c68c5752-1006-46e1-975a-6717b62a42fc
-ms.openlocfilehash: 216de8f70e0ad6856bf5d708347a7e5f852fe4c6
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: dd2968f7ab528fa07ef0c5af85f2a7f07147a76e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591568"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67755169"
 ---
 # <a name="objects-and-classes-in-visual-basic"></a>Objets et classes dans Visual Basic
 
@@ -28,7 +28,7 @@ Pour comprendre la relation entre un objet et sa classe, prenez l’exemple des 
 
 Vous devez créer un objet pour pouvoir accéder à ses membres.
 
-#### <a name="to-create-an-object-from-a-class"></a>Pour créer un objet à partir d’une classe
+### <a name="to-create-an-object-from-a-class"></a>Pour créer un objet à partir d’une classe
 
 1. Déterminez à partir de quelle classe vous souhaitez créer un objet.
 
@@ -121,7 +121,7 @@ Notez qu’une méthode est simplement une *procédure* qui est exposée par un 
 
 Pour plus d’informations, consultez [Procédures](../../../../visual-basic/programming-guide/language-features/procedures/index.md).
 
-### <a name="events"></a>Événements
+### <a name="events"></a>Events
 
 Un événement est une action reconnue par un objet, par exemple le fait de cliquer sur la souris ou d’appuyer sur une touche, et pour laquelle vous pouvez écrire du code en réponse. Les événements peuvent se produire à la suite d’une action de l’utilisateur ou du code de programme, ou ils peuvent être provoqués par le système. On dit que le code qui signale un événement le *déclenche* et le code qui y répond le *gère*.
 
@@ -135,7 +135,7 @@ Les membres déclarés avec le mot clé `Shared` sont des *membres partagés*, q
 
 #### <a name="accessing-nonshared-members"></a>Accès aux membres non partagés
 
-###### <a name="to-access-a-nonshared-member-of-an-object"></a>Pour accéder à un membre non partagé d’un objet
+##### <a name="to-access-a-nonshared-member-of-an-object"></a>Pour accéder à un membre non partagé d’un objet
 
 1. Assurez-vous que l’objet a été créé à partir de sa classe et assigné à une variable objet.
 
@@ -151,7 +151,7 @@ Les membres déclarés avec le mot clé `Shared` sont des *membres partagés*, q
 
 #### <a name="accessing-shared-members"></a>Accès aux membres partagés
 
-###### <a name="to-access-a-shared-member-of-an-object"></a>Pour accéder à un membre partagé d’un objet
+##### <a name="to-access-a-shared-member-of-an-object"></a>Pour accéder à un membre partagé d’un objet
 
 - Faites suivre le nom de classe de *l’opérateur member-access* (`.`), puis du nom du membre. Vous devez toujours accéder à un membre `Shared` de l’objet directement via le nom de la classe.
 
@@ -204,7 +204,7 @@ Lorsque les classes sont dérivées de classes plus fondamentales, elles ont une
 
 Dans l’exemple suivant, supposons que vous souhaitez définir un type spécial de <xref:System.Windows.Forms.Button> qui agit comme un <xref:System.Windows.Forms.Button> normal, mais expose également une méthode qui inverse les couleurs de premier plan et d’arrière-plan.
 
-##### <a name="to-define-a-class-is-derived-from-an-already-existing-class"></a>Pour définir une classe dérivée d’une classe déjà existante
+#### <a name="to-define-a-class-is-derived-from-an-already-existing-class"></a>Pour définir une classe dérivée d’une classe déjà existante
 
 1. Utilisez [l’instruction Class](../../../../visual-basic/language-reference/statements/class-statement.md) pour définir une classe à partir de laquelle créer l’objet dont vous avez besoin.
 
@@ -239,7 +239,7 @@ Dans l’exemple suivant, supposons que vous souhaitez définir un type spécial
 
 Les classes dérivées héritent des membres de la classe que dont ils dépendent, ce qui vous permet d’ajouter de la complexité au fur et à mesure que vous progressez dans la hiérarchie. Pour plus d’informations, consultez [Concepts de base de l’héritage](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md).
 
-#### <a name="compiling-the-code"></a>Compilation du code
+### <a name="compiling-the-code"></a>Compilation du code
 
 Assurez-vous que le compilateur peut accéder à la classe à partir de laquelle vous souhaitez dériver votre nouvelle classe. Cela peut signifier qualifier complètement son nom, comme dans l’exemple précédent ou identifier son espace de noms dans une [instruction Imports (espace de noms et type .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md). Si la classe se trouve dans un autre projet, vous devrez peut-être ajouter une référence à ce projet. Pour plus d’informations, consultez [Gestion des références dans un projet](/visualstudio/ide/managing-references-in-a-project).
 
@@ -271,5 +271,5 @@ Décrit comment créer et utiliser les types anonymes, qui vous permettent de cr
 [Initialiseurs d’objets : Types nommés et anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)\
 Décrit les initialiseurs d’objets, qui servent à créer des instances de types nommés et anonymes à l’aide d’une expression unique.
 
-[Guide pratique pour Déduire les Types dans les déclarations de types anonymes et les noms de propriété](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)\
+[Guide pratique : Déduire les Types dans les déclarations de types anonymes et les noms de propriété](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)\
 Explique comment déduire les types et les noms de propriétés dans des déclarations de types anonymes. Fournit des exemples d’inférence possible et impossible.
