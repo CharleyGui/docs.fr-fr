@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8833daa9cd385a1a76c5b706f15a76bb15139b84
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 804a295cf74067eb23ed8e8c860252a1f2fcf5d5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61763423"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67770186"
 ---
 # <a name="iclrtaskmanagercreatetask-method"></a>ICLRTaskManager::CreateTask, méthode
 Demande explicitement que le common language runtime (CLR) crée une nouvelle tâche.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT CreateTask (  
     [out] ICLRTask **pTask  
 );  

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 350221ae205636cef82581f3fe11367006dd8b2b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5e00e7f39bc2f8c14db0676102a52089c7710bd6
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61968075"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67772255"
 ---
 # <a name="icorprofilerinfoisarrayclass-method"></a>ICorProfilerInfo::IsArrayClass, méthode
 Détermine si la classe spécifiée est une classe array.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT IsArrayClass(  
     [in]  ClassID        classId,  
     [out] CorElementType *pBaseElemType,  

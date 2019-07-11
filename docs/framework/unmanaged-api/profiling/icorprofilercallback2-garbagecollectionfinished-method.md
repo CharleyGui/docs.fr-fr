@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f613842c12b50b8a58aac1b71bf2f3c53aaf961f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 736e76a57e6dbce76267ad0fdd242897b4bfdbd2
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61914483"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67746895"
 ---
 # <a name="icorprofilercallback2garbagecollectionfinished-method"></a>ICorProfilerCallback2::GarbageCollectionFinished, méthode
 Notifie le profileur que le garbage collection est terminée et que tous les rappels de garbage collection ont été publiés.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GarbageCollectionFinished();  
 ```  
   

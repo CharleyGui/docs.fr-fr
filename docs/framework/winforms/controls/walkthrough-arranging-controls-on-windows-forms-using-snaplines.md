@@ -7,12 +7,12 @@ helpviewer_keywords:
 - SnapLine class [Windows Forms], walkthroughs
 - Windows Forms controls, arranging
 ms.assetid: d5c9edc7-cf30-4a97-8ebe-201d569340f8
-ms.openlocfilehash: a0b78afb653d3a47fa12b856de730131e5f8448e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c91fecf9e786f4a8e35486e7b30e9efe36c972e5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64606411"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67771644"
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-snaplines"></a>Procédure pas à pas : organisation des contrôles dans des Windows Forms à l’aide de lignes d’alignement
 Le positionnement précis des contrôles sur votre formulaire constitue une haute priorité pour de nombreuses applications. Le Concepteur de formulaires Windows offre de nombreux outils de disposition pour effectuer cette opération. Une des plus importantes est la <xref:System.Windows.Forms.Design.Behavior.SnapLine> fonctionnalité.  
@@ -53,7 +53,7 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
 ## <a name="creating-the-project"></a>Création du projet  
  La première étape consiste à créer le projet et à configurer le formulaire.  
   
-#### <a name="to-create-the-project"></a>Pour créer le projet  
+### <a name="to-create-the-project"></a>Pour créer le projet  
   
 1. Créer un projet d’application Windows appelé « SnaplineExample » (**fichier** > **New** > **projet**  >  **Visual C#** ou **Visual Basic** > **bureau classique** > **Windows Forms Application**).  
   
@@ -62,7 +62,7 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
 ## <a name="spacing-and-aligning-controls-using-snaplines"></a>Espacement et alignement des contrôles à l’aide des lignes d’alignement  
  Les lignes d’alignement vous donnent un moyen précis et intuitif pour aligner des contrôles sur votre formulaire. Elles apparaissent lorsque vous déplacez un ou plusieurs contrôles sélectionnés près d’une position qui serait aligner avec un autre contrôle ou un ensemble de contrôles. Votre sélection se « aligne » à la position suggérée que vous dépassez les autres contrôles.  
   
-#### <a name="to-arrange-controls-using-snaplines"></a>Pour réorganiser des contrôles à l’aide des lignes d’alignement  
+### <a name="to-arrange-controls-using-snaplines"></a>Pour réorganiser des contrôles à l’aide des lignes d’alignement  
   
 1. Faites glisser un contrôle <xref:System.Windows.Forms.Button> de la **boîte à outils** vers le formulaire.  
   
@@ -85,7 +85,7 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
 ## <a name="aligning-to-form-and-container-margins"></a>Alignement sur le formulaire et les marges de conteneur  
  Les lignes d’alignement vous aident à aligner vos contrôles aux marges de formulaire et le conteneur de manière cohérente.  
   
-#### <a name="to-align-controls-to-form-and-container-margins"></a>Pour aligner des contrôles pour les marges de formulaires et de conteneurs  
+### <a name="to-align-controls-to-form-and-container-margins"></a>Pour aligner des contrôles pour les marges de formulaires et de conteneurs  
   
 1. Sélectionnez une de la <xref:System.Windows.Forms.Button> contrôle et déplacez-le proche de la bordure droite du formulaire jusqu'à ce qu’une ligne d’alignement apparaît. Distance de la ligne d’alignement à partir de la bordure droite est la somme du contrôle <xref:System.Windows.Forms.Control.Margin%2A> propriété et du formulaire <xref:System.Windows.Forms.Control.Padding%2A> valeurs de propriété.  
   
@@ -107,7 +107,7 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
 ## <a name="aligning-to-grouped-controls"></a>Alignement des contrôles groupés  
  Vous pouvez utiliser les lignes d’alignement pour aligner des contrôles groupés ainsi que des contrôles dans un <xref:System.Windows.Forms.GroupBox> contrôle.  
   
-#### <a name="to-align-to-grouped-controls"></a>Pour aligner des contrôles groupés  
+### <a name="to-align-to-grouped-controls"></a>Pour aligner des contrôles groupés  
   
 1. Sélectionnez deux contrôles sur votre formulaire. Déplacer la sélection et notez les lignes d’alignement qui apparaissent entre votre sélection et les autres contrôles.  
   
@@ -120,7 +120,7 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
 ## <a name="using-snaplines-to-place-a-control-by-outlining-its-size"></a>À l’aide des lignes d’alignement pour placer un contrôle en définissant sa taille  
  Les lignes d’alignement vous aident à qu'aligner contrôle quand vous placez d’abord les sur un formulaire.  
   
-#### <a name="to-use-snaplines-to-place-a-control-by-outlining-its-size"></a>Pour utiliser les lignes d’alignement pour placer un contrôle en définissant sa taille  
+### <a name="to-use-snaplines-to-place-a-control-by-outlining-its-size"></a>Pour utiliser les lignes d’alignement pour placer un contrôle en définissant sa taille  
   
 1. Dans la **boîte à outils**, cliquez sur l’icône de contrôle <xref:System.Windows.Forms.Button> . Ne la faites pas glisser sur le formulaire.  
   
@@ -137,7 +137,7 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
 ## <a name="using-snaplines-when-dragging-a-control-from-the-toolbox"></a>À l’aide des lignes d’alignement lorsque vous faites glisser un contrôle à partir de la boîte à outils  
  Les lignes d’alignement vous aident à aligner contrôle lorsque vous les faites glisser à partir de la **boîte à outils** vers votre formulaire.  
   
-#### <a name="to-use-snaplines-when-dragging-a-control-from-the-toolbox"></a>Pour utiliser les lignes d’alignement lorsque vous faites glisser un contrôle à partir de la boîte à outils  
+### <a name="to-use-snaplines-when-dragging-a-control-from-the-toolbox"></a>Pour utiliser les lignes d’alignement lorsque vous faites glisser un contrôle à partir de la boîte à outils  
   
 1. Faites glisser un <xref:System.Windows.Forms.Button> contrôle depuis la **boîte à outils** vers votre formulaire, mais ne relâchez pas le bouton de la souris.  
   
@@ -150,7 +150,7 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
 ## <a name="resizing-controls-using-snaplines"></a>Redimensionnement de contrôles à l’aide des lignes d’alignement  
  Les lignes d’alignement vous aident à aligner des contrôles lorsque vous les redimensionnez.  
   
-#### <a name="to-resize-a-control-using-snaplines"></a>Pour redimensionner un contrôle à l’aide des lignes d’alignement  
+### <a name="to-resize-a-control-using-snaplines"></a>Pour redimensionner un contrôle à l’aide des lignes d’alignement  
   
 1. Faites glisser un contrôle <xref:System.Windows.Forms.Button> de la **boîte à outils** vers le formulaire.  
   
@@ -163,7 +163,7 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
 ## <a name="aligning-a-label-to-a-controls-text"></a>Alignement d’une étiquette de texte d’un contrôle  
  Certains contrôles offrent une ligne d’alignement pour aligner les autres contrôles au texte affiché.  
   
-#### <a name="to-align-a-label-to-a-controls-text"></a>Pour aligner une étiquette pour le texte d’un contrôle  
+### <a name="to-align-a-label-to-a-controls-text"></a>Pour aligner une étiquette pour le texte d’un contrôle  
   
 1. Faites glisser un contrôle <xref:System.Windows.Forms.TextBox> de la **boîte à outils** vers le formulaire. Lorsque vous déposez le <xref:System.Windows.Forms.TextBox> contrôle vers le formulaire, cliquez sur le glyphe de balise active et sélectionnez le **la valeur texte textBox1** option. Pour plus d’informations, consultez [procédure pas à pas : Effectuer des tâches courantes à l’aide de balises actives sur les Windows Forms contrôles](performing-common-tasks-using-smart-tags-on-wf-controls.md).  
   
@@ -178,7 +178,7 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
 ## <a name="using-snaplines-with-keyboard-navigation"></a>À l’aide des lignes d’alignement avec la Navigation au clavier  
  Les lignes d’alignement vous aident à qu'aligner contrôle lorsque vous les réorganisez à l’aide des touches de direction du clavier.  
   
-#### <a name="to-use-snaplines-with-keyboard-navigation"></a>Pour utiliser les lignes d’alignement avec la navigation au clavier  
+### <a name="to-use-snaplines-with-keyboard-navigation"></a>Pour utiliser les lignes d’alignement avec la navigation au clavier  
   
 1. Faites glisser un contrôle <xref:System.Windows.Forms.Button> de la **boîte à outils** vers le formulaire. Placez-le dans le coin supérieur gauche du formulaire.  
   
@@ -199,7 +199,7 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
 ## <a name="snaplines-and-layout-panels"></a>Les lignes d’alignement et de panneaux de disposition  
  Les lignes d’alignement sont désactivés dans les panneaux de disposition.  
   
-#### <a name="to-selectively-disable-snaplines"></a>Pour désactiver de manière sélective les lignes d’alignement  
+### <a name="to-selectively-disable-snaplines"></a>Pour désactiver de manière sélective les lignes d’alignement  
   
 1. Faites glisser un contrôle <xref:System.Windows.Forms.TableLayoutPanel> de la **boîte à outils** vers le formulaire.  
   
@@ -214,13 +214,13 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
 ## <a name="disabling-snaplines"></a>Désactiver les lignes d’alignement  
  Les lignes d’alignement sont activées par défaut. Vous pouvez désactiver sélectivement les lignes d’alignement, ou vous pouvez les désactiver dans l’environnement de conception.  
   
-#### <a name="to-selectively-disable-snaplines"></a>Pour désactiver de manière sélective les lignes d’alignement  
+### <a name="to-selectively-disable-snaplines"></a>Pour désactiver de manière sélective les lignes d’alignement  
   
 - Appuyez sur la touche ALT et tout en déplaçant un contrôle autour du formulaire.  
   
      Notez que sans les lignes d’alignement apparaissent et que le contrôle ne s’aligne sur les positions d’alignement potentielles.  
   
-#### <a name="to-disable-snaplines-in-the-design-environment"></a>Pour désactiver les lignes d’alignement dans l’environnement de conception  
+### <a name="to-disable-snaplines-in-the-design-environment"></a>Pour désactiver les lignes d’alignement dans l’environnement de conception  
   
 1. À partir de la **outils** menu, ouvrez le **Options** boîte de dialogue. Ouvrez la boîte de dialogue Windows Forms Designer. Pour plus d’informations, consultez [général, le Concepteur Windows Forms, boîte de dialogue Options](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/5aazxs78(v=vs.100)).  
   
@@ -231,7 +231,7 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
 4. Sélectionnez un contrôle sur votre formulaire et déplacez-le sur les autres contrôles. Notez que les lignes d’alignement n’apparaissent pas.  
   
 ## <a name="next-steps"></a>Étapes suivantes  
- Les lignes d’alignement offrent un moyen intuitif de l’alignement des contrôles sur votre formulaire. Voici quelques suggestions à explorer :  
+ Les lignes d’alignement offrent un moyen intuitif de l’alignement des contrôles sur votre formulaire. Suggestions pour des recherches approfondies :  
   
 - Essayez d’imbriquer un <xref:System.Windows.Forms.GroupBox> contrôle dans une autre <xref:System.Windows.Forms.GroupBox> contrôle. Place un <xref:System.Windows.Forms.Button> contrôle au sein de l’enfant <xref:System.Windows.Forms.GroupBox> contrôle et l’autre dans le parent <xref:System.Windows.Forms.GroupBox> contrôle. Déplacer le <xref:System.Windows.Forms.Button> contrôles autour pour voir comment les lignes d’accrochage franchissent les limites du conteneur.  
   

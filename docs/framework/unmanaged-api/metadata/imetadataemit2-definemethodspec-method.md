@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ce6df232f3793b8b61d9fa7c18c9c90ca9fa3900
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a4185ec41fc9f7d1d919a79b57c02625210ad72a
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62043691"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67777182"
 ---
 # <a name="imetadataemit2definemethodspec-method"></a>IMetaDataEmit2::DefineMethodSpec, méthode
 Crée une instance d’une méthode générique et obtient un jeton pour la définition.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT DefineMethodSpec (  
     [in]  mdToken           tkParent,   
     [in]  PCCOR_SIGNATURE   pvSigBlob,   

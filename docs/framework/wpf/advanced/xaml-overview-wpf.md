@@ -19,12 +19,12 @@ helpviewer_keywords:
 - Extensible Application Markup Language (see XAML)
 - attribute syntax [XAML]
 ms.assetid: a80db4cd-dd0f-479f-a45f-3740017c22e4
-ms.openlocfilehash: f03d9481a2af3edebe83df5b1b725b7290d30d00
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: e0d277eb039c1fb1668f292d83ab9e7dbe4be70e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457541"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67762323"
 ---
 # <a name="xaml-overview-wpf"></a>Vue d’ensemble XAML (WPF)
 Cette rubrique décrit les fonctionnalités du langage XAML et montre comment utiliser XAML pour écrire des applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Cette rubrique décrit en particulier le langage XAML tel qu’il est implémenté par [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Le XAML lui-même est un concept de langage plus vaste que [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -188,7 +188,7 @@ Cette rubrique décrit les fonctionnalités du langage XAML et montre comment u
  [!code-xaml[XAMLOvwSupport#MarginVerbose](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page7.xaml#marginverbose)]  
   
 > [!NOTE]
->  Il existe également un nombre limité d’objets pour lesquels la conversion de type est la seule manière publique de définir une propriété pour le type voulu, sans impliquer une sous-classe, car le type lui-même n’a pas de constructeur par défaut. Par exemple, <xref:System.Windows.Input.Cursor>.  
+>  Il existe également un nombre limité d’objets pour lesquels la conversion de type est la seule manière publique de définir une propriété pour le type voulu, sans impliquer une sous-classe, car le type lui-même n’a pas de constructeur par défaut. Par exemple <xref:System.Windows.Input.Cursor>.  
   
  Pour plus d’informations sur la prise en charge de la conversion de type et de son utilisation avec la syntaxe d’attributs, consultez [TypeConverters et XAML](typeconverters-and-xaml.md).  
   
@@ -208,7 +208,7 @@ Cette rubrique décrit les fonctionnalités du langage XAML et montre comment u
  L’implémentation [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] de son processeur XAML inclut une infrastructure qui a connaissance des assemblys principaux WPF. Les assemblys principaux [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sont connus pour contenir les types qui prennent en charge les mappages [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] à l’espace de noms XAML par défaut. Cette option est activée par le biais de la configuration faisant partie du fichier de build de votre projet et des systèmes de projet et de build WPF. Par conséquent, déclarer l’espace de noms XAML par défaut comme `xmlns` par défaut est la seule chose à faire pour référencer les éléments XAML provenant des assemblys [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
 ### <a name="the-x-prefix"></a>Le préfixe x:  
- Dans l’exemple d’élément racine précédent, le préfixe `x:` a été utilisé pour mapper l’espace de noms XAML [!INCLUDE[TLA#tla_xamlxmlnsv1](../../../../includes/tlasharptla-xamlxmlnsv1-md.md)], qui est l’espace de noms XAML dédié prenant en charge les constructions du langage XAML. Ce préfixe `x:` est utilisé pour mapper cet espace de noms XAML dans les modèles de projets, les exemples et dans la documentation de ce [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]. L’espace de noms XAML du langage XAML contient plusieurs constructions de programmation que vous allez être amené à utiliser très fréquemment dans votre XAML. Voici une liste de constructions de programmation avec le préfixe `x:` parmi les plus courantes que vous allez utiliser :  
+ Dans l’exemple d’élément racine précédent, le préfixe `x:` a été utilisé pour mapper l’espace de noms XAML [!INCLUDE[TLA#tla_xamlxmlnsv1](../../../../includes/tlasharptla-xamlxmlnsv1-md.md)], qui est l’espace de noms XAML dédié prenant en charge les constructions du langage XAML. Ce préfixe `x:` est utilisé pour mapper cet espace de noms XAML dans les modèles de projets, les exemples et dans la documentation de ce [!INCLUDE[TLA2#tla_sdk](../../../../includes/tla2sharptla-sdk-md.md)]. L’espace de noms XAML du langage XAML contient plusieurs constructions de programmation que vous utiliserez très fréquemment dans votre XAML. Voici une liste de constructions de programmation avec le préfixe `x:` parmi les plus courantes que vous allez utiliser :  
   
 - [x : Key](../../xaml-services/x-key-directive.md): Définit une clé unique pour chaque ressource dans un <xref:System.Windows.ResourceDictionary> (ou les concepts de dictionnaires semblables dans d’autres infrastructures). `x:Key` représente probablement 90 % des utilisations de `x:` que vous pouvez voir dans le balisage classique d’une application WPF.  
   

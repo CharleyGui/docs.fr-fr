@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2138dd32cf39db7b7c8989ba5827178d1a1e46c7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0c88c12646a13e5a24f2475bd2db04c8c831141c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62045563"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781764"
 ---
 # <a name="cormethodimpl-enumeration"></a>CorMethodImpl, énumération
 Contient des valeurs qui décrivent les fonctionnalités d’implémentation d’une méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum CorMethodImpl {  
   
     miCodeTypeMask      =   0x0003,  

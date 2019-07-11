@@ -2,12 +2,12 @@
 title: Résolution des problèmes
 ms.date: 03/30/2017
 ms.assetid: 8cd4401c-b12c-4116-a421-f3dcffa65670
-ms.openlocfilehash: c09871abcdfb9243b5170386ffe79012c9c3f71d
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 697432dce5f7698a8b4eabde3586bb4f77fd62de
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661866"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742746"
 ---
 # <a name="troubleshooting"></a>Résolution des problèmes
 Les informations suivantes exposent quelques problèmes que vous pouvez rencontrer dans vos applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] et fournissent des suggestions pour les éviter, ou du moins en réduire l'effet.  
@@ -26,7 +26,7 @@ Les informations suivantes exposent quelques problèmes que vous pouvez rencontr
  Pour spécifier un nom de fichier d'entrée, ajoutez son nom à la ligne de commande comme fichier d'entrée. L’inclusion du nom de fichier dans la chaîne de connexion (avec l’option **/conn** ) n’est pas prise en charge. Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
 ## <a name="class-library-projects"></a>Projets de bibliothèque de classe  
- [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] crée une chaîne de connexion dans le fichier `app.config` du projet. Dans les projets de bibliothèque de classes, le fichier `app.config` n'est pas utilisé. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] utilise la chaîne de connexion fournie dans les fichiers au moment du design. La modification de la valeur dans `app.config` ne modifie pas la base de données à laquelle votre application se connecte.  
+ Le concepteur objet/relationnel crée une chaîne de connexion dans le `app.config` fichier du projet. Dans les projets de bibliothèque de classes, le fichier `app.config` n'est pas utilisé. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] utilise la chaîne de connexion fournie dans les fichiers au moment du design. La modification de la valeur dans `app.config` ne modifie pas la base de données à laquelle votre application se connecte.  
   
 ## <a name="cascade-delete"></a>Suppression en cascade  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne prend pas en charge ni ne reconnaît les opérations de suppression en cascade. Si vous souhaitez supprimer une ligne dans une table comportant des contraintes sur cette suppression, vous devez effectuer l'une des actions suivantes :  

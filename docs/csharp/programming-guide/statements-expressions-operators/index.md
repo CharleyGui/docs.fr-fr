@@ -10,18 +10,18 @@ helpviewer_keywords:
 - C# language, expressions
 - statements [C#]
 ms.assetid: 20f8469d-5a6a-4084-ad90-0856b7e97e45
-ms.openlocfilehash: 2f7505051cce3aee99e6b6ea88a6a94498926214
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 7073ddc50b47ff239e8b310c0a5a1fbd84504133
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67609630"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743882"
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a>Instructions, expressions et opérateurs (guide de programmation C#)
 
 Le code C# qui comprend une application se compose d’instructions à base de mots clés, d’expressions et d’opérateurs. Cette section contient des informations concernant ces éléments fondamentaux d’un programme C#.
 
- Pour plus d'informations, consultez les pages suivantes :
+ Pour plus d'informations, voir :
 
 - [Instructions](statements.md)
 
@@ -32,12 +32,6 @@ Le code C# qui comprend une application se compose d’instructions à base de m
 - [Opérateurs](operators.md)
 
 - [Fonctions anonymes](anonymous-functions.md)
-
-- [Opérateurs de conversion](conversion-operators.md)
-
-  - [Utilisation d’opérateurs de conversion](using-conversion-operators.md)
-
-  - [Guide pratique pour implémenter des conversions définies par l’utilisateur entre des structs](how-to-implement-user-defined-conversions-between-structs.md)
 
 - [Comparaisons d’égalité](equality-comparisons.md)
 

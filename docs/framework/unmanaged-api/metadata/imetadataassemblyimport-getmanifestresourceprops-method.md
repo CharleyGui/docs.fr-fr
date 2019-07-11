@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ba99d84686974b425bcdee0bbf4770e4843e1351
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e47b1807e51427487d6af2f96ff5af437c4653eb
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61992574"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67760951"
 ---
 # <a name="imetadataassemblyimportgetmanifestresourceprops-method"></a>IMetaDataAssemblyImport::GetManifestResourceProps, méthode
 Obtient le jeu de propriétés de la ressource de manifeste avec la signature de métadonnées spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetManifestResourceProps (  
     [in]  mdManifestResource   mdmr,   
     [out] LPWSTR               szName,   

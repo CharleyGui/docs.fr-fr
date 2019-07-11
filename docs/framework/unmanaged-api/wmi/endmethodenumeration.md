@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e7f29c365e9f6ba85f85ceb232f7af89446af2a1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f62ea692c055b0537394ad5e16501d4162faef12
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62040597"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67746831"
 ---
 # <a name="endmethodenumeration-function"></a>EndMethodEnumeration, fonction
 Met fin à une séquence d’énumération démarrée avec un appel à la [beginmethodenumeration, fonction](beginmethodenumeration.md).  
@@ -30,7 +30,7 @@ Met fin à une séquence d’énumération démarrée avec un appel à la [begin
     
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT EndMethodEnumeration (
    [in] int               vFunc, 
    [in] IWbemClassObject* ptr 
@@ -49,7 +49,7 @@ HRESULT EndMethodEnumeration (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Value  |Description  |
+|Constante  |Valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_UNEXPECTED` | 0x8004101d | Une erreur interne s’est produite. |
 |`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |

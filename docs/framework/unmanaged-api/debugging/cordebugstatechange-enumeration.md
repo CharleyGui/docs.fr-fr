@@ -12,12 +12,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 05a29022d3ebad37322aef9826f10689d2b5b06b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 676489880cb30ca540cb78d70797dbf4eedf7395
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61723067"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67739588"
 ---
 # <a name="cordebugstatechange-enumeration"></a>CorDebugStateChange, énumération
 
@@ -25,7 +25,7 @@ Représente la quantité de données mises en cache à ignorer sur la base des m
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 typedef enum CorDebugStateChange
 {
     PROCESS_RUNNING = 0x0000001,

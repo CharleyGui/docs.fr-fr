@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: babe098b16729cfcd41b48075a49b9ae9be7dfdc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 83f8ae068552ba83a016b5484e3ac6641417fa99
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049802"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781569"
 ---
 # <a name="imetadatatablesgetblob-method"></a>IMetaDataTables::GetBlob, méthode
 Obtient un pointeur vers l’objet binaire volumineux (BLOB) à l’index de colonne spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetBlob (  
     [in]  ULONG          ixBlob,  
     [out] ULONG          *pcbData,  

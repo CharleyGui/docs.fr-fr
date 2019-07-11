@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ac0f5d522a24394369583692f8c564254529bf13
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7de5a6d38d43c20ce52f609ef6514a1f28022416
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61796035"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781137"
 ---
 # <a name="stackoverflowinfo-structure"></a>StackOverflowInfo, structure
 Stocke le type de dépassement de capacité s’est produite et des informations sur l’exception qui a été levée en raison du dépassement de capacité.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef struct _StackOverflowInfo {  
     StackOverflowType   soType;  
     EXCEPTION_POINTERS  *pExceptionInfo;  

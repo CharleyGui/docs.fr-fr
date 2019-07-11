@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 95ff27143453e7772b4a463fa66ca039bbb715fc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dd1ec9caa70dd7016253ae4385b16dbfb982f956
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789933"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742022"
 ---
 # <a name="exporttype-method"></a>ExportType, méthode
 Spécifie qu’un type est exportable.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT ExportType(  
     mdAssembly      AssemblyID,  
     mdToken         FileToken,  

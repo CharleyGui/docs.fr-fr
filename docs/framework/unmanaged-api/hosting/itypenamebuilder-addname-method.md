@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 603b8d214869c88e391d05ef645ac5e0c3db299b
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 5c8854e6aeccf7ea51bfc4cff8657a3403f55619
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "61672794"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67753138"
 ---
 # <a name="itypenamebuilderaddname-method"></a>ITypeNameBuilder::AddName, méthode
 Cette m&#233;thode prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT AddName (  
     [in] LPCWSTR szName  
 );  

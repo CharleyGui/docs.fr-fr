@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 94279675b5a50bf2a19bb080876b91b85599c077
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 07ad83da2bc608e3c5925664a68eec4a548860e1
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65630095"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67739229"
 ---
 # <a name="dacpgetmoduleaddressrequest-method"></a>DacpGetModuleAddress::Request (méthode)
 
@@ -30,7 +30,7 @@ Exécute une requête pour remplir la structure à partir de la structure de run
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 HRESULT Request(
     [in] IXCLRDataModule* pDataModule
 );
@@ -50,8 +50,8 @@ Cette structure se trouve au sein du runtime et n’est pas exposée par le biai
 ## <a name="requirements"></a>Configuration requise
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** None     
-**Bibliothèque :** None  
+**En-tête :** Aucun     
+**Bibliothèque :** Aucun  
 **Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi

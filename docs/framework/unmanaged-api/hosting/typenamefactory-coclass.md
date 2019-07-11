@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a915ed72350f278a5df01191e69c95a4917f1230
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 14266f02dd402e81928b72d155f224e10e910592
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61944597"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781246"
 ---
 # <a name="typenamefactory-coclass"></a>Coclasse TypeNameFactory
 Fournit une interface pour gérer la destruction d’un nom de type.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 coclass TypeNameFactory {  
     [default] interface ITypeNameFactory;  
 };  
@@ -38,7 +38,7 @@ coclass TypeNameFactory {
   
 |Interface|Description|  
 |---------------|-----------------|  
-|[ITypeNameFactory, interface](../../../../docs/framework/unmanaged-api/hosting/itypenamefactory-interface.md)|Cette interface prend en charge l'infrastructure .NET Framework et n'est pas destin&amp;#233;e &amp;#224; &amp;#234;tre utilis&amp;#233;e directement &amp;#224; partir de votre code.|  
+|[ITypeNameFactory, interface](../../../../docs/framework/unmanaged-api/hosting/itypenamefactory-interface.md)|Cette interface prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.|  
   
 ## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  

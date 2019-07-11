@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0915027ce6a3768ff854eafc5496c5057081cc4d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bd68df77adafb8b21e7684b28fe978722ca37e16
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946209"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67736790"
 ---
 # <a name="icordebugtypegetclass-method"></a>ICorDebugType::GetClass, méthode
 Obtient un pointeur d’interface ICorDebugClass qui représente le type générique non instancié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetClass (  
     [out] ICorDebugClass   **ppClass  
 );  

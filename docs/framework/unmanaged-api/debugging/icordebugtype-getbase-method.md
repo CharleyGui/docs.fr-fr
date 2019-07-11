@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1d04bc67013a2227f295ac3a41be027b9f9b04e2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c24d6e9c42a091eafbe6d4bdee2bb4e055fd8852
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946305"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67772032"
 ---
 # <a name="icordebugtypegetbase-method"></a>ICorDebugType::GetBase, méthode
 Obtient un pointeur d’interface vers ICorDebugType qui représente le type de base, s’il en existe, du type représenté par ce `ICorDebugType`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetBase (  
     [out] ICorDebugType   **pBase  
 );  

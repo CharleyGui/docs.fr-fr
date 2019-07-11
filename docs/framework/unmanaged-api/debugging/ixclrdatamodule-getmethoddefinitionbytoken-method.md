@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 727005437289b4bc66ab90f280b80a79f4db06db
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2c0cf56f108396226b7c7399f6da75e5f47d36f3
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775495"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744672"
 ---
 # <a name="ixclrdatamodulegetmethoddefinitionbytoken-method"></a>IXCLRDataModule::GetMethodDefinitionByToken Method
 
@@ -30,7 +30,7 @@ Obtient la définition de méthode correspondant à un jeton de métadonnées do
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 HRESULT GetMethodDefinitionByToken(
     [in] mdMethodDef token,
     [out] IXCLRDataMethodDefinition** methodDefinition
@@ -52,8 +52,8 @@ La méthode fournie fait partie de la `IXCLRDataModule` interface et correspond 
 ## <a name="requirements"></a>Configuration requise
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun.  
-**Bibliothèque :** Aucun.  
+**En-tête :** Aucun  
+**Bibliothèque :** Aucun  
 **Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
  
 ## <a name="see-also"></a>Voir aussi

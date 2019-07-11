@@ -10,12 +10,12 @@ helpviewer_keywords:
 - inheritance [Windows Forms], walkthroughs
 - custom controls [Windows Forms], inheritance
 ms.assetid: fb58d7c8-b702-4478-ad31-b00cae118882
-ms.openlocfilehash: b606de4b7cf4648fdc7ada3c1f6faec81342d02c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bcd65f231ab0e05da0ec152b05878233558f2cd9
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792182"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67772064"
 ---
 # <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic"></a>Procédure pas à pas : héritage d’un contrôle Windows Forms avec Visual Basic
 Avec Visual Basic, vous pouvez créer des contrôles personnalisés puissants via *héritage*. L’héritage vous permet de créer des contrôles qui conservent toutes les fonctionnalités inhérentes des contrôles Windows Forms standard, tout en intégrant des fonctionnalités personnalisées. Dans cette procédure pas à pas, vous allez créer un contrôle hérité simple appelé `ValueButton`. Ce bouton héritera des fonctionnalités des formulaires Windows standard <xref:System.Windows.Forms.Button> contrôler et exposera une propriété personnalisée nommée `ButtonValue`.  
@@ -26,7 +26,7 @@ Avec Visual Basic, vous pouvez créer des contrôles personnalisés puissants vi
 ## <a name="creating-the-project"></a>Création du projet  
  Lorsque vous créez un nouveau projet, vous spécifiez son nom afin de définir l’espace de noms racine, le nom de l’assembly et le nom de projet, et de vous assurer que le composant par défaut sera placé dans l’espace de noms approprié.  
   
-#### <a name="to-create-the-valuebuttonlib-control-library-and-the-valuebutton-control"></a>Pour créer la bibliothèque de contrôles ValueButtonLib et le contrôle ValueButton  
+### <a name="to-create-the-valuebuttonlib-control-library-and-the-valuebutton-control"></a>Pour créer la bibliothèque de contrôles ValueButtonLib et le contrôle ValueButton  
   
 1. Dans le menu **Fichier**, pointez sur **Nouveau**, puis cliquez sur **Projet** pour ouvrir la boîte de dialogue **Nouveau projet**.  
   
@@ -54,7 +54,7 @@ Avec Visual Basic, vous pouvez créer des contrôles personnalisés puissants vi
 ## <a name="adding-a-property-to-your-inherited-control"></a>Ajout d’une propriété à votre contrôle hérité  
  Les contrôles Windows Forms hérités permettent notamment de créer des contrôles ayant la même apparence et le même comportement (aspect) que les contrôles Windows Forms standard, mais qui exposent des propriétés personnalisées. Dans cette section, vous allez ajouter une propriété appelée `ButtonValue` à votre contrôle.  
   
-#### <a name="to-add-the-value-property"></a>Pour ajouter la propriété Valeur  
+### <a name="to-add-the-value-property"></a>Pour ajouter la propriété Valeur  
   
 1. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **ValueButton.vb**, puis cliquez sur **Afficher le code** dans le menu contextuel.  
   
@@ -84,13 +84,13 @@ Avec Visual Basic, vous pouvez créer des contrôles personnalisés puissants vi
 ## <a name="testing-your-control"></a>Test de votre contrôle  
  Les contrôles ne sont pas des projets autonomes ; ils doivent être hébergés dans un conteneur. Pour tester votre contrôle, vous devez fournir un projet de test dans lequel il sera exécuté. Vous devez également rendre votre contrôle accessible au projet de test en le générant (compilant). Dans cette section, vous allez générer votre contrôle et le tester dans un environnement Windows Form.  
   
-#### <a name="to-build-your-control"></a>Pour générer votre contrôle  
+### <a name="to-build-your-control"></a>Pour générer votre contrôle  
   
 1. Dans le menu **Générer** , cliquez sur **Générer la solution**.  
   
      L’opération doit s’exécuter sans aucun avertissement ou erreur de compilation.  
   
-#### <a name="to-create-a-test-project"></a>Pour créer un projet de test  
+### <a name="to-create-a-test-project"></a>Pour créer un projet de test  
   
 1. Dans le menu **Fichier**, pointez vers**Ajouter**, puis cliquez sur **Nouveau projet** pour ouvrir la boîte de dialogue **Ajouter un nouveau projet**.  
   
@@ -108,7 +108,7 @@ Avec Visual Basic, vous pouvez créer des contrôles personnalisés puissants vi
   
 8. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **Test**, puis sélectionnez **Générer**.  
   
-#### <a name="to-add-your-control-to-the-form"></a>Pour ajouter votre contrôle au formulaire  
+### <a name="to-add-your-control-to-the-form"></a>Pour ajouter votre contrôle au formulaire  
   
 1. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **Form1.vb** et sélectionnez **Concepteur de vues** dans le menu contextuel.  
   

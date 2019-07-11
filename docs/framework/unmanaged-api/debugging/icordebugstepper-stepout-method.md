@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f663f5134cf34bf9beb66da20bbb5886baff5415
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 36a33b74a692761d772a888ce918aa28a2d92678
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61987426"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67760557"
 ---
 # <a name="icordebugstepperstepout-method"></a>ICorDebugStepper::StepOut, méthode
 Provoque ICorDebugStepper pas à pas son thread conteneur et se termine lorsque le frame actuel retourne le contrôle au frame appelant.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT StepOut ();  
 ```  
   

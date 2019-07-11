@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9c2d6a66eca080b480b508afea36c33b3e0aeec0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 362c01e0b08145919793cec011a856f0090e5c47
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61989038"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67752989"
 ---
 # <a name="icordebugevalnewobject-method"></a>ICorDebugEval::NewObject, méthode
 Alloue une nouvelle instance d’objet et appelle la méthode de constructeur spécifié.  
@@ -31,7 +31,7 @@ Alloue une nouvelle instance d’objet et appelle la méthode de constructeur sp
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT NewObject (  
     [in] ICorDebugFunction  *pConstructor,  
     [in] ULONG32            nArgs,  

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 67073f04cfe981dd383369029d9a4b436929a0a6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7dfcc2db3f1f0d8646f903fedb1eb06b39928d00
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790024"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742123"
 ---
 # <a name="emitassemblycustomattribute-method"></a>EmitAssemblyCustomAttribute, méthode
 Appel permettant de définir les attributs personnalisés de niveau assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT EmitAssemblyCustomAttribute(  
     mdAssembly   AssemblyID,  
     mdToken      FileToken,  

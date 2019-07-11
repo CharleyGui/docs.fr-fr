@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 412aa8fd30294ac9681a5edd02bb4bdfe25b3fab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 540fda24a8085a3066dc0485228d3ea3bc56fb98
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61993055"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67747779"
 ---
 # <a name="iclrstrongnamestrongnamekeydelete-method"></a>Méthode ICLRStrongName::StrongNameKeyDelete
 Supprime le conteneur de clé spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT StrongNameKeyDelete (  
     [in]  LPCWSTR   wszKeyContainer  
 );  

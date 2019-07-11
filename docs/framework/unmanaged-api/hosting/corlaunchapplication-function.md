@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 64527221e81569bf08a3cfd34a66681725755a55
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 9861de733a9acb43c7e2a4b4941f9945fc5f0ba7
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490540"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67758373"
 ---
 # <a name="corlaunchapplication-function"></a>CorLaunchApplication, fonction
 Démarre l’application sur le chemin d’accès réseau spécifié, à l’aide des manifestes spécifiés et autres données d’application.  
@@ -31,7 +31,7 @@ Démarre l’application sur le chemin d’accès réseau spécifié, à l’aid
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT CorLaunchApplication (  
     [in]  HOST_TYPE                dwClickOnceHost,  
     [in]  LPCWSTR                  pwzAppFullName,  

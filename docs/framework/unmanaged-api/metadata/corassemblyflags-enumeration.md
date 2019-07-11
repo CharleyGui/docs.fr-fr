@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 43bfec471fbcfc481e178f6610e0318e9538ee34
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 3532ca0a30d83aa8f61bc4397090f3d589b73257
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025771"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67780929"
 ---
 # <a name="corassemblyflags-enumeration"></a>CorAssemblyFlags, énumération
 Contient des valeurs qui décrivent les métadonnées appliquées à une compilation d'assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum CorAssemblyFlags {  
   
     afPublicKey             =   0x0001,  

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ddb9792c00d6b78b29b66bbc3ef59ee4ad8bd81d
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 8597b68b75d2b5f77f68fc13c3fb78bfdae46178
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490404"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67736291"
 ---
 # <a name="getcorrequiredversion-function"></a>GetCORRequiredVersion, fonction
 Obtient le numéro de version de runtime (CLR) de langage commun requis.  
@@ -30,7 +30,7 @@ Obtient le numéro de version de runtime (CLR) de langage commun requis.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetCORRequiredVersion (  
     [out] LPWSTR   pbuffer,  
     [in]  DWORD    cchBuffer,  

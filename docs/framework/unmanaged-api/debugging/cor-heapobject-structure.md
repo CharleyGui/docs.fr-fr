@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f179b58ff8eb51e2843780d3212cf38ed7d13216
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a236103b8ca1501ae4c9109c1fd9e78865ab9c9c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61609441"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67740603"
 ---
 # <a name="corheapobject-structure"></a>COR_HEAPOBJECT, structure
 Fournit des informations à propos d’un objet sur le tas managé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef struct _COR_HEAPOBJECT {  
     CORDB_ADDRESS address;    
     ULONG64 size;             

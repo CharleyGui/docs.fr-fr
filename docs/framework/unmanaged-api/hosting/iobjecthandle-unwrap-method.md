@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4c18607d5373b415228846350a3dd0637ade1b45
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dc5bed553ac54eb708beae23f5c29cbedcb2b4e0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61917588"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67749063"
 ---
 # <a name="iobjecthandleunwrap-method"></a>IObjectHandle::Unwrap, méthode
 Désencapsule un objet marshalé par valeur à partir de l’indirection.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Unwrap (  
     [out, retval] VARIANT *ppv  
 );  
