@@ -10,12 +10,12 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - named types [Visual Basic]
 ms.assetid: e2df3807-a70f-49dd-ac94-f1e07f472b1b
-ms.openlocfilehash: bf608ebb36a2e8f29e8429b77e023eced67273e1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 151c2f6cbb560d83ef0fcfef518bc50cec246ca2
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649770"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67783241"
 ---
 # <a name="object-initializers-named-and-anonymous-types-visual-basic"></a>Initialiseurs d’objets : Types nommés et anonymes (Visual Basic)
 Initialiseurs d’objets permettent de spécifier les propriétés d’un objet complexe à l’aide d’une expression unique. Ils peuvent être utilisés pour créer des instances de types nommés et de types anonymes.  
@@ -32,7 +32,7 @@ Initialiseurs d’objets permettent de spécifier les propriétés d’un objet 
  La configuration requise et les résultats des deux déclarations ne sont pas les mêmes. Pour `namedCust`, un `Customer` classe a un `Name` propriété doit déjà exister, et la déclaration crée une instance de cette classe. Pour `anonymousCust`, le compilateur définit une nouvelle classe qui possède une propriété, une chaîne appelée `Name`et crée une nouvelle instance de cette classe.  
   
 ## <a name="named-types"></a>Types nommés  
- Initialiseurs d’objets fournissent un moyen simple pour appeler le constructeur d’un type, puis définissez les valeurs de certaines ou toutes les propriétés dans une instruction unique. Le compilateur appelle le constructeur approprié pour l’instruction : le constructeur par défaut si aucun argument n’est présenté, ou un constructeur paramétrable, si un ou plusieurs arguments sont envoyés. Après cela, les propriétés spécifiées sont initialisées dans l’ordre dans lequel elles sont présentées dans la liste d’initialiseurs.  
+ Initialiseurs d’objets fournissent un moyen simple pour appeler le constructeur d’un type, puis définissez les valeurs de certaines ou toutes les propriétés dans une instruction unique. Le compilateur appelle le constructeur approprié pour l’instruction : le constructeur sans paramètre, si aucun argument n’est présenté, ou un constructeur paramétrable, si un ou plusieurs arguments sont envoyés. Après cela, les propriétés spécifiées sont initialisées dans l’ordre dans lequel elles sont présentées dans la liste d’initialiseurs.  
   
  Chaque initialisation de la liste d’initialiseurs se compose de l’assignation d’une valeur initiale à un membre de la classe. Les noms et types de données des membres sont déterminées lors de la classe est définie. Dans les exemples suivants, le `Customer` classe doit exister et doivent comporter des membres nommés `Name` et `City` qui peut accepter des valeurs de chaîne.  
   
@@ -42,7 +42,7 @@ Initialiseurs d’objets permettent de spécifier les propriétés d’un objet 
   
  [!code-vb[VbVbalrObjectInit#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#4)]  
   
- Chacune de ces déclarations est équivalente à l’exemple suivant, qui crée un `Customer` de l’objet à l’aide du constructeur par défaut, puis spécifie des valeurs initiales pour la `Name` et `City` propriétés en utilisant un `With` instruction.  
+ Chacune de ces déclarations est équivalente à l’exemple suivant, qui crée un `Customer` de l’objet à l’aide du constructeur sans paramètre et puis spécifie des valeurs initiales pour la `Name` et `City` propriétés en utilisant un `With` instruction.  
   
  [!code-vb[VbVbalrObjectInit#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#5)]  
   
@@ -134,4 +134,4 @@ Initialiseurs d’objets permettent de spécifier les propriétés d’un objet 
 - [Introduction à LINQ en Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Guide pratique pour Déduire les Types dans les déclarations de types anonymes et les noms de propriété](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)
 - [Key](../../../../visual-basic/language-reference/modifiers/key.md)
-- [Guide pratique pour Déclarez un objet à l’aide d’un initialiseur d’objet](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)
+- [Guide pratique : Déclarez un objet à l’aide d’un initialiseur d’objet](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)

@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a98103367f497b18f9b8fbd61a37abf9816b8356
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 47120ff9de9e6e4802c5aea990841b235cd6c74c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62040402"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67783066"
 ---
 # <a name="writepropertyvalue-function"></a>WritePropertyValue (fonction)
 Écrit un nombre spécifié d’octets dans une propriété identifiée par un descripteur de propriété.
@@ -30,7 +30,7 @@ ms.locfileid: "62040402"
     
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT WritePropertyValue (
    [in] int                  vFunc, 
    [in] IWbemObjectAccess*   ptr, 
@@ -61,7 +61,7 @@ HRESULT WritePropertyValue (
 
 Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
 
-|Constante  |Value  |Description  |
+|Constante  |Valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
 |`WBEM_E_TYPE_MISMATCH` | 0x80041005 | Une incompatibilité de type s’est produite. |

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 41a9ff2c94c98a5acc930d68e648b0ea577a82c3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 94d8fbf4d93bbfbaaeb7c1268004aada22b9b7df
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61986841"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67768914"
 ---
 # <a name="icordebugvaluegetsize-method"></a>ICorDebugValue::GetSize, méthode
 Obtient la taille, en octets, de cet objet « ICorDebugValue ».  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetSize (  
     [out] ULONG32   *pSize  
 );  

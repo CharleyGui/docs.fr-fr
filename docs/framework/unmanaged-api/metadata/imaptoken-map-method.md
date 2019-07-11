@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a85dc586b0c08fabdd34c018e82314c9003eeded
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8ac12d5b6bc2911e3bd879285a9a12f65c426f0d
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62044900"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67745855"
 ---
 # <a name="imaptokenmap-method"></a>IMapToken::Map, méthode
 Mappe une relation entre les assemblys à l’aide de signatures de métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT Map (  
     [in]  mdToken tkImp,   
     [in]  mdToken tkEmit  

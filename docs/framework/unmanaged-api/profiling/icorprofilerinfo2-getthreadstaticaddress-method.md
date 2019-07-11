@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: de0e46f4703479daeb96cb83276ec14150125e7f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8f8c18935069e4162236f99c411312087ce73bdc
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587441"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782215"
 ---
 # <a name="icorprofilerinfo2getthreadstaticaddress-method"></a>ICorProfilerInfo2::GetThreadStaticAddress, méthode
 Obtient l’adresse du champ statique de thread spécifié qui est dans la portée du thread spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetThreadStaticAddress(  
     [in] ClassID     classId,  
     [in] mdFieldDef  fieldToken,  

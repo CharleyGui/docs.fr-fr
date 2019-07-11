@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: be2dfd6bb521dee14afd3728bdd9c446cb779e85
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 206d6448835b60c55b378636ff5daa5fa4f8b5d0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61598842"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782594"
 ---
 # <a name="qualifiersetendenumeration-function"></a>QualifierSet_EndEnumeration (fonction)
 Met fin à l’énumération commencée avec un appel à la [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) (fonction).  
@@ -30,7 +30,7 @@ Met fin à l’énumération commencée avec un appel à la [QualifierSet_BeginE
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT QualifierSet_EndEnumeration (
    [in] int                  vFunc, 
    [in] IWbemQualifierSet*   ptr
@@ -49,7 +49,7 @@ HRESULT QualifierSet_EndEnumeration (
 
 La valeur suivante est retournée par cette fonction est définie dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez la définir en tant que constante dans votre code :
 
-|Constante  |Value  |Description  |
+|Constante  |`Value`  |Description  |
 |---------|---------|---------|
 |`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
   

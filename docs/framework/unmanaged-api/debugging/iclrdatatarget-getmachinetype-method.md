@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ff9c88d534e0bfe51075a76581af37aba791a3da
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 958968fb1a84b598b0c3e92151fbad58fc5e79d4
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61698250"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67738739"
 ---
 # <a name="iclrdatatargetgetmachinetype-method"></a>ICLRDataTarget::GetMachineType, méthode
 Obtient l’identificateur pour le genre de jeu d’instructions qui utilise le processus cible.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetMachineType (  
     [out] ULONG32     *machineType  
 );  

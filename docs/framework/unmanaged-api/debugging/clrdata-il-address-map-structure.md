@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 3aac7e24fa9cd03350aebf5f441063bcedfaed04
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2f34ae3e6687027aeb75e7ea169487fc8cbda466
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61961289"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67741036"
 ---
 # <a name="clrdatailaddressmap-structure"></a>CLRDATA_IL_ADDRESS_MAP, structure
 
@@ -30,7 +30,7 @@ Définit un langage intermédiaire pour le mappage d’adresses.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 typedef struct
 {
     ULONG32 ilOffset;
@@ -56,8 +56,8 @@ Cette structure se trouve au sein du runtime et n’est pas exposée par le biai
 ## <a name="requirements"></a>Configuration requise
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun.  
-**Bibliothèque :** Aucun.   
+**En-tête :** Aucun  
+**Bibliothèque :** Aucun   
 **Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi

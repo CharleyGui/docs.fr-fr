@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 177f191d5f438cef106d835b0b9d204a9b19d1f0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bed3c461935c5a2bc912ed9ed16d147fddaf8a1a
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616262"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67739656"
 ---
 # <a name="cordebugregister-enumeration"></a>CorDebugRegister, énumération
 Spécifie les registres associés à une architecture de processeur donnée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum CorDebugRegister {  
   
     REGISTER_INSTRUCTION_POINTER = 0,  

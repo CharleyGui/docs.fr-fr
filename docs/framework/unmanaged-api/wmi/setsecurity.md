@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5cecd8538b8f2b5d04cb9f1822751661ce9f8728
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: a2cb71263201c86a93ca0bfbd783f2b8512055e6
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636215"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67783114"
 ---
 # <a name="setsecurity-function"></a>SetSecurity (fonction)
 
@@ -31,7 +31,7 @@ Récupère le jeton d’emprunt d’identité associé au thread actif.
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```cpp
 HRESULT SetSecurity (
    [out] boolean* pNeedToReset, 
    [out] HANDLE* pCurrentThreadToken

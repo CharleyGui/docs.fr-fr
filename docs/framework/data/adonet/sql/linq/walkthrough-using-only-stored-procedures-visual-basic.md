@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 5a736a30-ba66-4adb-b87c-57d19476e862
-ms.openlocfilehash: 22db347afb45b981602d5a92516271f75b8e4359
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 270b0f2123a20787a8e75d40f56a675c55824243
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648679"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742564"
 ---
 # <a name="walkthrough-using-only-stored-procedures-visual-basic"></a>Procédure pas à pas : Utilisation de procédures stockées uniquement (Visual Basic)
 Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] de base complet pour accéder aux données à l'aide de procédures stockées uniquement. Cette approche est souvent utilisée par les administrateurs de base de données pour limiter les moyens d'accès au magasin de données.  
@@ -19,7 +19,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
  Dans le cadre de cette procédure pas à pas, vous allez utiliser deux méthodes qui ont été mappés à des procédures stockées dans la base de données Northwind : CustOrdersDetail et CustOrderHist. Le mappage se produit lorsque vous exécutez l’outil de ligne de commande SqlMetal pour générer un fichier Visual Basic. Pour plus d'informations, consultez la section Composants requis par la suite dans cette procédure pas à pas.  
   
- Cette procédure pas à pas ne s'appuie pas sur le [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)]. Les développeurs à l’aide de Visual Studio peuvent également utiliser le [!INCLUDE[vs_ordesigner_short](../../../../../../includes/vs-ordesigner-short-md.md)] pour implémenter des fonctionnalités de procédure stockée. Consultez [outils LINQ to SQL dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
+ Cette procédure pas à pas ne repose pas sur le concepteur objet/relationnel. Les développeurs à l’aide de Visual Studio peuvent également utiliser le Concepteur O/R pour implémenter des fonctionnalités de procédure stockée. Consultez [outils LINQ to SQL dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
@@ -42,7 +42,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
      Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
-## <a name="overview"></a>Vue d'ensemble  
+## <a name="overview"></a>Présentation  
  Cette procédure pas à pas se compose de six tâches principales :  
   
 - Configurer le [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] solution dans Visual Studio.  
@@ -60,7 +60,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
 ## <a name="creating-a-linq-to-sql-solution"></a>Création d'une solution LINQ to SQL  
  Dans cette première tâche, vous créez une solution Visual Studio qui contient les références nécessaires pour générer et exécuter un [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projet.  
   
-#### <a name="to-create-a-linq-to-sql-solution"></a>Pour créer une solution LINQ to SQL  
+### <a name="to-create-a-linq-to-sql-solution"></a>Pour créer une solution LINQ to SQL  
   
 1. Dans le menu **Fichier** de Visual Studio, cliquez sur **Nouveau projet**.  
   
@@ -77,7 +77,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
 ## <a name="adding-the-linq-to-sql-assembly-reference"></a>Ajout de la référence à l'assembly LINQ to SQL  
  L'assembly [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] n'est pas inclus dans le modèle Application Windows Forms standard. Vous devrez ajouter l'assembly vous-même, comme expliqué dans les étapes suivantes :  
   
-#### <a name="to-add-systemdatalinqdll"></a>Pour ajouter System.Data.Linq.dll  
+### <a name="to-add-systemdatalinqdll"></a>Pour ajouter System.Data.Linq.dll  
   
 1. Dans **l’Explorateur de solutions**, cliquez sur **afficher tous les fichiers**.  
   
@@ -90,7 +90,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
 ## <a name="adding-the-northwind-code-file-to-the-project"></a>Ajout du fichier de code Northwind au projet  
  Ces étapes supposent que vous avez utilisé l'outil SQLMetal pour générer un fichier de code à partir de l'exemple de base de données Northwind. Pour plus d'informations, consultez la section Composants requis au début de cette procédure pas à pas.  
   
-#### <a name="to-add-the-northwind-code-file-to-the-project"></a>Pour ajouter le fichier de code Northwind au projet  
+### <a name="to-add-the-northwind-code-file-to-the-project"></a>Pour ajouter le fichier de code Northwind au projet  
   
 1. Sur le **projet** menu, cliquez sur **ajouter un élément existant**.  
   
@@ -101,7 +101,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
 ## <a name="creating-a-database-connection"></a>Création d'une connexion à une base de données  
  Au cours de cette étape, vous allez définir la connexion à l'exemple de base de données Northwind. Cette procédure pas à pas utilise "c:\linqtest3\northwnd.mdf" comme chemin d'accès.  
   
-#### <a name="to-create-the-database-connection"></a>Pour créer la connexion de base de données  
+### <a name="to-create-the-database-connection"></a>Pour créer la connexion de base de données  
   
 1. Dans **l’Explorateur de solutions**, avec le bouton droit **Form1.vb**, puis cliquez sur **afficher le Code**.  
   
@@ -114,9 +114,9 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
 ## <a name="setting-up-the-user-interface"></a>Configuration de l'interface utilisateur.  
  Au cours de cette tâche, vous allez créez une interface pour permettre aux utilisateurs d’exécuter des procédures stockées pour accéder aux données de la base de données. Dans l'application que vous développez avec cette procédure pas à pas, les utilisateurs peuvent accéder aux données de la base de données uniquement en utilisant les procédures stockées incorporées dans l'application.  
   
-#### <a name="to-set-up-the-user-interface"></a>Pour configurer l'interface utilisateur  
+### <a name="to-set-up-the-user-interface"></a>Pour configurer l'interface utilisateur  
   
-1. Revenez à la Windows Forms concepteur (**Form1.vb [Design]**).  
+1. Revenez à la Windows Forms concepteur (**Form1.vb [Design]** ).  
   
 2. Dans le menu **Affichage** , cliquez sur **Boîte à outils**.  
   
@@ -131,9 +131,9 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 4. Avec le bouton droit **Label1**, puis cliquez sur **propriétés**.  
   
-5. Modifier le **texte** propriété à partir de **Label1** à **Enter OrderID :**.  
+5. Modifier le **texte** propriété à partir de **Label1** à **Enter OrderID :** .  
   
-6. Dans la même façon pour **Label2**, modifiez le **texte** propriété à partir de **Label2** à **Enter CustomerID :**.  
+6. Dans la même façon pour **Label2**, modifiez le **texte** propriété à partir de **Label2** à **Enter CustomerID :** .  
   
 7. Dans la même façon, modifiez le **texte** propriété pour **Button1** à **Order Details**.  
   
@@ -141,7 +141,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
      Élargissez les contrôles boutons afin que tout le texte soit visible.  
   
-#### <a name="to-handle-button-clicks"></a>Pour gérer des clics de bouton  
+### <a name="to-handle-button-clicks"></a>Pour gérer des clics de bouton  
   
 1. Double-cliquez sur **Order Details** sur **Form1** pour créer le `Button1` Gestionnaire d’événements et ouvrez l’éditeur de code.  
   
@@ -158,7 +158,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
 ## <a name="testing-the-application"></a>Test de l'application  
  Vous allez maintenant tester votre application. Notez que votre contact avec le magasin de données est limité aux actions que les deux procédures stockées peuvent accepter. Ces actions consistent à retourner les produits inclus pour n'importe quel orderID que vous entrez ou à retourner un historique des produits commandés pour n'importe quel CustomerID que vous entrez.  
   
-#### <a name="to-test-the-application"></a>Pour tester l'application  
+### <a name="to-test-the-application"></a>Pour tester l'application  
   
 1. Appuyez sur F5 pour démarrer le débogage.  
   

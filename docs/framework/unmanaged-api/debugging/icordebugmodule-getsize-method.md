@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 540288f83de9c3c6ff2111330c77ded48abd6d5f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 46ee21a9fd7b9267672a14107c1706af5d5cdcc5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61761661"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67763568"
 ---
 # <a name="icordebugmodulegetsize-method"></a>ICorDebugModule::GetSize, méthode
 Obtient la taille, en octets, du module.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetSize(  
     [out] ULONG32 *pcBytes  
 );  

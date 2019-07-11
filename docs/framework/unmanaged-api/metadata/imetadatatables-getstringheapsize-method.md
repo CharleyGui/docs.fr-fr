@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8fe6559eca2fef1c9481c8996b19ffb8a08c6019
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b842fb4d0853f473ae8e237a42e800cf0af8dc11
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62049750"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781388"
 ---
 # <a name="imetadatatablesgetstringheapsize-method"></a>IMetaDataTables::GetStringHeapSize, méthode
 Obtient la taille, en octets, du tas de chaîne.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetStringHeapSize (  
     [out] ULONG   *pcbStrings  
 );  

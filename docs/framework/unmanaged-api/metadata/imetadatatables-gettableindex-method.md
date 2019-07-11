@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: eebef02babdca5305deaa4ae11e4bca3bf8bf504
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 195642d9186016417db310402b664a1043d09e71
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62042183"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781368"
 ---
 # <a name="imetadatatablesgettableindex-method"></a>IMetaDataTables::GetTableIndex, méthode
 Obtient l’index pour la table référencée par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetTableIndex (  
     [in]  ULONG   token,  
     [out] ULONG   *pixTbl  

@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 28076a36880febad20d457ff5a6b290de3d6f173
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9c8ca51a9b1875e28a6e4824da40090f17e38f07
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61672976"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67780540"
 ---
 # <a name="itypenamegetnames-method"></a>ITypeName::GetNames, méthode
 Cette m&#233;thode prend en charge l'infrastructure .NET Framework et n'est pas destin&#233;e &#224; &#234;tre utilis&#233;e directement &#224; partir de votre code.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetNames (  
     [in] DWORD           count,  
     [out] BSTR*          rgbszNames,  

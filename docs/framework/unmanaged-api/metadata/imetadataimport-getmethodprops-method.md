@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c61931f5f6a4bbbf66446d68b0d1b2d1df958a66
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 27b2867019085bf5b44f2ee364c07af66144d4b5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777739"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782331"
 ---
 # <a name="imetadataimportgetmethodprops-method"></a>IMetaDataImport::GetMethodProps, méthode
 Obtient les métadonnées associées à la méthode référencée par le jeton MethodDef spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetMethodProps (  
     [in]  mdMethodDef         mb,  
     [out] mdTypeDef           *pClass,  

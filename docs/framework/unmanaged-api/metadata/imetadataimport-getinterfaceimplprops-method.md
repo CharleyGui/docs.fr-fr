@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 76e2ebbd47a5e36a722fce33ba67d7efb4db8675
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2a4305b94d785a764671a2d73f43facefd0da0e6
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777765"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782374"
 ---
 # <a name="imetadataimportgetinterfaceimplprops-method"></a>IMetaDataImport::GetInterfaceImplProps, méthode
 Obtient un pointeur vers les jetons de métadonnées pour le <xref:System.Type> qui implémente la méthode spécifiée, et pour l’interface qui déclare cette méthode.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetInterfaceImplProps (  
    [in]  mdInterfaceImpl        iiImpl,  
    [out] mdTypeDef              *pClass,  
@@ -62,8 +62,8 @@ Conceptuellement, ces informations sont stockées dans une table de mise en œuv
 | Numéro de ligne | Jeton de classe | Jeton de l’interface |
 |------------|-------------|-----------------|
 | 4          |             |                 |
-| 5          | 02000007    | 02000003        |
-| 6          | 02000007    | 0100000A        |
+| 5\.          | 02000007    | 02000003        |
+| 6\.          | 02000007    | 0100000A        |
 | 7          |             |                 |
 | 8          | 02000007    | 0200001C        |
 

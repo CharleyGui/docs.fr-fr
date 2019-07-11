@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c3133d53-83ed-4a4d-af8b-82edcf3831db
-ms.openlocfilehash: 8ce30d60b05e600e4f6906221d4c360c7ad8c396
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 570b3d382157d4be832f57265ad3a064fcd3df9e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586678"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67743469"
 ---
 # <a name="data-retrieval-and-cud-operations-in-n-tier-applications-linq-to-sql"></a>Récupération de données et opérations CUD dans les applications multicouches (LINQ to SQL)
 Lorsque vous sérialisez des objets d'entité tels que Customers ou Orders vers un client sur un réseau, ces entités sont détachées de leur contexte de données. Le contexte de données ne suit plus leurs modifications ou leurs associations avec d'autres objets. Ceci ne constitue pas un problème tant que les clients lisent uniquement les données. Il est également relativement simple de permettre aux clients d'ajouter de nouvelles lignes à une base de données. Toutefois, si votre application nécessite que les clients puissent mettre à jour ou supprimer des données, vous devez attacher les entités à un nouveau contexte de données avant d'appeler <xref:System.Data.Linq.DataContext.SubmitChanges%2A?displayProperty=nameWithType>. De plus, si vous utilisez un contrôle d'accès concurrentiel optimiste avec les valeurs d'origine, vous aurez également besoin de trouver une manière de fournir à la base de données à la fois l'entité d'origine et l'entité modifiée. Les méthodes `Attach` sont fournies pour vous permettre de placer des entités dans un nouveau contexte de données après qu'elles ont été détachées.  
   
  Même si vous sérialisez des objets proxy à la place de la [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] entités, que vous avez toujours construire une entité sur la couche d’accès aux données (DAL), et l’associer à un nouveau <xref:System.Data.Linq.DataContext?displayProperty=nameWithType>, afin de soumettre les données à la base de données.  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] est absolument pas comment les entités sont sérialisées. Pour plus d’informations sur l’utilisation de la [!INCLUDE[vs_ordesigner_long](../../../../../../includes/vs-ordesigner-long-md.md)] et outils SQLMetal pour générer des classes qui sont sérialisables à l’aide de Windows Communication Foundation (WCF), consultez [Comment : Rendre les entités sérialisables](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md).  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] est absolument pas comment les entités sont sérialisées. Pour plus d’informations sur la façon d’utiliser les outils de concepteur objet/relationnel et SQLMetal pour générer des classes qui sont sérialisables à l’aide de Windows Communication Foundation (WCF), consultez [Comment : Rendre les entités sérialisables](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md).  
   
 > [!NOTE]
 >  Appelez uniquement les méthodes `Attach` sur des entités nouvelles ou désérialisées. La seule manière de détacher une entité de son contexte de données d'origine est de la sérialiser. Si vous tentez d'attacher une entité détachée à un nouveau contexte de données et que cette entité comporte encore des chargeurs différés provenant de son contexte de données précédent, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] lèvera une exception. Une entité comportant des chargeurs différés provenant de deux contextes de données différents peut produire des résultats non désirés lorsque vous exécutez des opérations d'insertion, de mise à jour et de suppression sur cette entité. Pour plus d’informations sur les chargeurs différés, consultez [différée / le chargement immédiat](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md).  
@@ -121,7 +121,7 @@ public IEnumerable<Product> GetProductsByCategory(int categoryID)
   
  Une instance d'un contexte de données doit avoir une durée de vie d'une "unité de travail". Dans un environnement faiblement couplé, une unité de travail est généralement petite, éventuellement une seule transaction optimiste, y compris un appel unique à `SubmitChanges`. Par conséquent, le contexte de données est créé et supprimé à la portée de la méthode. Si l'unité de travail inclut des appels à la logique de règles métier, vous souhaiterez généralement conserver l'instance `DataContext` pour cette opération entière. Dans tous les cas, les instances `DataContext` ne sont pas conçues pour être gardées actives sur de longues périodes pour des nombres arbitraires de transactions.  
   
- Cette méthode retourne des objets Product, mais pas la collection des objets Order_Detail associés à chaque objet Product. Utilisez l'objet <xref:System.Data.Linq.DataLoadOptions> pour modifier ce comportement par défaut. Pour plus d'informations, voir [Procédure : Contrôler la quantité de données liée récupérée](../../../../../../docs/framework/data/adonet/sql/linq/how-to-control-how-much-related-data-is-retrieved.md).  
+ Cette méthode retourne des objets Product, mais pas la collection des objets Order_Detail associés à chaque objet Product. Utilisez l'objet <xref:System.Data.Linq.DataLoadOptions> pour modifier ce comportement par défaut. Pour plus d’informations, consultez [Guide pratique pour Contrôler la quantité de données liée récupérée](../../../../../../docs/framework/data/adonet/sql/linq/how-to-control-how-much-related-data-is-retrieved.md).  
   
 ## <a name="inserting-data"></a>Insertion de données  
  Pour insérer un nouvel objet, la couche Présentation appelle simplement la méthode pertinente sur l'interface de couche intermédiaire et passe le nouvel objet à insérer. Dans certains cas, il peut être plus efficace pour le client de passer seulement quelques valeurs et de laisser la couche intermédiaire générer l'objet complet.  

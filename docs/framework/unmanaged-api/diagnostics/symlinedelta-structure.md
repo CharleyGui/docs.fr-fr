@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fabc8f77b12865d0d971b5934d7de27b52f3e813
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d98ebed2eb853d5dc8177b0b044bf654c3978494
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61914639"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744347"
 ---
 # <a name="symlinedelta-structure"></a>SYMLINEDELTA, structure
 Fournit des informations pour le Gestionnaire de symboles sur les méthodes qui ont été déplacées à la suite de modifications.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef struct _SYMLINEDELTA  
     {  
         mdMethodDef  mdMethod;  

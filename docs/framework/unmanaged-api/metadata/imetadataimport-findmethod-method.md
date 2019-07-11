@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 28aa8313e7ba0c071187d0f1f6d78431b16fc005
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4225794740b7786c6f758c9a0953d323c31a1081
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777869"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782491"
 ---
 # <a name="imetadataimportfindmethod-method"></a>IMetaDataImport::FindMethod, méthode
 Obtient un pointeur vers le MethodDef jeton pour la méthode qui est comprise par le <xref:System.Type> et qui a la signature de nom et de métadonnées spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT FindMethod (  
    [in]  mdTypeDef          td,  
    [in]  LPCWSTR            szName,   

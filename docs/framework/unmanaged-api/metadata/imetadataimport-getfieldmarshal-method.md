@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 35e780c330d0184d40bd99f34c3454f83075c1e0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 40d1817b9eb7f341899efddb469c7fa17a8f8c0e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777778"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782395"
 ---
 # <a name="imetadataimportgetfieldmarshal-method"></a>IMetaDataImport::GetFieldMarshal, méthode
 Obtient un pointeur vers le type natif non managé du champ représenté par le jeton de métadonnées de champ spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetFieldMarshal (  
    [in]  mdToken             tk,   
    [out] PCCOR_SIGNATURE     *ppvNativeType,  

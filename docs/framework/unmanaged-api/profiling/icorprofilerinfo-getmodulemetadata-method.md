@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 89a2424548bb577e3580d6eaa72f61e5cf9ccc7d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2e63cf698e41e70084c9b71bdf58d7ac60723d53
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61991807"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782789"
 ---
 # <a name="icorprofilerinfogetmodulemetadata-method"></a>ICorProfilerInfo::GetModuleMetaData, méthode
 Obtient une instance d’interface de métadonnées qui mappe au module spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetModuleMetaData(  
     [in]  ModuleID moduleId,  
     [in]  DWORD    dwOpenFlags,  

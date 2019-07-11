@@ -18,19 +18,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4e549e13c0d51e4aa708a674a2224168ab66f8ad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 76ada8400573dd61c25e0dce3f49ce66b5fb30c1
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774528"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67773804"
 ---
 # <a name="nukedownloadedcache-function"></a>NukeDownloadedCache, fonction
 Supprime le cache de téléchargement du common language runtime (CLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT NukeDownloadedCache();  
 ```  
   

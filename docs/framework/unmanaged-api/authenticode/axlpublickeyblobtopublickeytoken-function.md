@@ -10,19 +10,19 @@ api_type:
 ms.assetid: 2d92a746-d68c-4f53-a16e-727f071a2d80
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1b2535441da173ee13653c68f25039fd1431261a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3e2459b4f91e7e189990b65fa4d7ca860ff73c51
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61948952"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67741317"
 ---
-# <a name="axlpublickeyblobtopublickeytoken-function"></a>_AxlPublicKeyBlobToPublicKeyToken, fonction
+# <a name="axlpublickeyblobtopublickeytoken-function"></a>\_AxlPublicKeyBlobToPublicKeyToken (fonction)
 Calcule le jeton de clé publique de nom fort à partir d'un format CSP PUBLICKEYBLOB.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT _AxlPublicKeyBlobToPublicKeyToken (  
     [in]  PCCERT_CHAIN_CONTEXT   pCspPublicKeyBlob,  
     [out] LPWSTR                 *ppwszPublicKeyToken  

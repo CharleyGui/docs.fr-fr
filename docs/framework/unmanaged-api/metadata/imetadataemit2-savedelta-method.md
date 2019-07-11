@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d97f536d54ac1cb77c5d0413d2437508374ac7f4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 212625fd460e88201dd4799754297861826d3aa7
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62042911"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67777148"
 ---
 # <a name="imetadataemit2savedelta-method"></a>IMetaDataEmit2::SaveDelta, méthode
 Enregistre les modifications de la session active modifier et continuer dans le fichier spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SaveDelta (  
     [in] LPCWSTR     szFile,   
     [in] DWORD       dwSaveFlags  

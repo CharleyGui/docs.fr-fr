@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a02719651d8169c1122f5a46b1b8df39b28612ea
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 98fc95c618a7a06f5e6c219d7707af291770c06a
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61779793"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781414"
 ---
 # <a name="imetadatatablesgetrow-method"></a>IMetaDataTables::GetRow, méthode
 Obtient la ligne à l’index de la ligne spécifiée, dans la table à l’index de la table spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetRow (   
     [in]  ULONG   ixTbl,  
     [in]  ULONG   rid,  

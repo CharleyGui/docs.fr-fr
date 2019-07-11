@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 ms.assetid: c6858b06-ae26-4312-b325-ea6025016675
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 36cf8647b3caafeaae2db3c2fd53471496e922fa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bb7861e33a02b994c4c29569a811f4e2f3c44cec
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61666947"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67762314"
 ---
 # <a name="icordebugmergedassemblyrecordgetversion-method"></a>ICorDebugMergedAssemblyRecord::GetVersion, méthode
 Obtient les informations de version de l'assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetVersion(  
    [out] USHORT *pMajor,   
    [out] USHORT *pMinor,   

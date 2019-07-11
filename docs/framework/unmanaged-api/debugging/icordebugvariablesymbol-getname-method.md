@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 ms.assetid: c922b7d4-44e5-45e4-aef3-cc9c35a0be80
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3f514acbd772c9d33ec4372cfaccb778d6bb41eb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6aff2686830290e38df3d3a79b2bea6fa0b4a280
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61993627"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67774879"
 ---
 # <a name="icordebugvariablesymbolgetname-method"></a>Méthode ICorDebugVariableSymbol::GetName
 Obtient le nom d'une variable.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetName(  
    [in] ULONG32 cchName,   
    [out] ULONG32 *pcchName,   

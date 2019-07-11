@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 54652727b4684d71068a19eb5eeb2e862f413f25
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3ea71439c9a6c494c218a7cfc18508f4f8173b03
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61609254"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67740388"
 ---
 # <a name="cordebugblockingreason-enumeration"></a>CorDebugBlockingReason, énumération
 Spécifie les raisons pour lesquelles un thread peut être bloqué sur un objet donné.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 Typedef enum CorDebugBlockingReason  
 {  
    BLOCKING_NONE = 0  

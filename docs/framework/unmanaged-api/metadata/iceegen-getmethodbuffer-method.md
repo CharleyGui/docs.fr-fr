@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c0aea6185095a30aae9197c875aa9b9ac581d406
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 14ea8dab2c4258fe490ef362fd527d80bd8a0178
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62044965"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67746107"
 ---
 # <a name="iceegengetmethodbuffer-method"></a>ICeeGen::GetMethodBuffer, méthode
 Obtient une mémoire tampon de la taille appropriée pour la méthode à l’adresse virtuelle relative spécifiée.  
@@ -31,7 +31,7 @@ Obtient une mémoire tampon de la taille appropriée pour la méthode à l’adr
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetMethodBuffer (  
     [in]  ULONG       RVA,  
     [out] UCHAR       **lpBuffer  

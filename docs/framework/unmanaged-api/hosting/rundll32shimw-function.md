@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fa7df47ab55b8dc7ef3f55f5591b44614052bcee
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 569efa9d14ef10d8c5cf735091778a6c78882815
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490140"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781164"
 ---
 # <a name="rundll32shimw-function"></a>RunDll32ShimW, fonction
 Exécute la commande spécifiée.  
@@ -30,7 +30,7 @@ Exécute la commande spécifiée.
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT RunDll32ShimW (  
     [in] HWND        hwnd,  
     [in] HINSTANCE   hinst,  

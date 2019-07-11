@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7e6eb2a30dd6722309fd80c1611ad9200ab14ae5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6be71878ba354ebe53b4b8b9b40db3222ec828f3
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62045446"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67781739"
 ---
 # <a name="cornativelinkflags-enumeration"></a>CorNativeLinkFlags, énumération
 Fournit des valeurs d'indicateur utilisées par l'éditeur de liens lors de la liaison du code natif.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 typedef enum  
 {  
     nlfNone         = 0x00,  

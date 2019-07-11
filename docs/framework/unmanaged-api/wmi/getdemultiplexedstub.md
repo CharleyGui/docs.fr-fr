@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 872164e2f48f1ef234b729b28aa9b1af1589c0fc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1b519ea4062682a56b5b4e277de22b14799f65d0
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608981"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67783218"
 ---
 # <a name="getdemultiplexedstub-function"></a>GetDemultiplexedStub function
 Crée un récepteur de redirecteur d’objet pour aider un client lors de la réception des appels asynchrones WMI.
@@ -30,7 +30,7 @@ Crée un récepteur de redirecteur d’objet pour aider un client lors de la ré
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetDemultiplexedStub (
    [in] IUnknown*    pObject, 
    [in] boolean      isLocal, 
