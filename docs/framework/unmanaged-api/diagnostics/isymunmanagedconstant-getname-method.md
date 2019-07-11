@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1da8d89cf9ae2eed7b846774434d6ea472afbb94
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 73ece48a21ac40320379f5bf4ea309a3ec36b40f
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61939969"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67736766"
 ---
-# <a name="isymunmanagedconstantgetname-method"></a><span data-ttu-id="06bc7-102">ISymUnmanagedConstant::GetName, méthode</span><span class="sxs-lookup"><span data-stu-id="06bc7-102">ISymUnmanagedConstant::GetName Method</span></span>
-<span data-ttu-id="06bc7-103">Obtient le nom de la constante.</span><span class="sxs-lookup"><span data-stu-id="06bc7-103">Gets the name of the constant.</span></span>  
+# <a name="isymunmanagedconstantgetname-method"></a><span data-ttu-id="bdf78-102">ISymUnmanagedConstant::GetName, méthode</span><span class="sxs-lookup"><span data-stu-id="bdf78-102">ISymUnmanagedConstant::GetName Method</span></span>
+<span data-ttu-id="bdf78-103">Obtient le nom de la constante.</span><span class="sxs-lookup"><span data-stu-id="bdf78-103">Gets the name of the constant.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="06bc7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="06bc7-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="bdf78-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bdf78-104">Syntax</span></span>  
   
-```  
+```cpp  
 HRESULT GetName(  
     [in]  ULONG32  cchName,  
     [out] ULONG32  *pcchName,  
@@ -37,24 +37,24 @@ HRESULT GetName(
         length_is(*pcchName)] WCHAR szName[]);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="06bc7-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="06bc7-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="bdf78-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="bdf78-105">Parameters</span></span>  
  `cchName`  
- <span data-ttu-id="06bc7-106">[in] La longueur de la mémoire tampon qui le `szName` paramètre pointe vers.</span><span class="sxs-lookup"><span data-stu-id="06bc7-106">[in] The length of the buffer that the `szName` parameter points to.</span></span>  
+ <span data-ttu-id="bdf78-106">[in] La longueur de la mémoire tampon qui le `szName` paramètre pointe vers.</span><span class="sxs-lookup"><span data-stu-id="bdf78-106">[in] The length of the buffer that the `szName` parameter points to.</span></span>  
   
  `pcchName`  
- <span data-ttu-id="06bc7-107">[out] Un pointeur vers un `ULONG32` qui reçoit la taille, en caractères, de la mémoire tampon requise pour contenir le nom, y compris le caractère null de fin.</span><span class="sxs-lookup"><span data-stu-id="06bc7-107">[out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the name, including the null termination.</span></span>  
+ <span data-ttu-id="bdf78-107">[out] Un pointeur vers un `ULONG32` qui reçoit la taille, en caractères, de la mémoire tampon requise pour contenir le nom, y compris le caractère null de fin.</span><span class="sxs-lookup"><span data-stu-id="bdf78-107">[out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the name, including the null termination.</span></span>  
   
  `szName`  
- <span data-ttu-id="06bc7-108">[out] La mémoire tampon qui stocke le nom.</span><span class="sxs-lookup"><span data-stu-id="06bc7-108">[out] The buffer that stores the name.</span></span>  
+ <span data-ttu-id="bdf78-108">[out] La mémoire tampon qui stocke le nom.</span><span class="sxs-lookup"><span data-stu-id="bdf78-108">[out] The buffer that stores the name.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="06bc7-109">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="06bc7-109">Return Value</span></span>  
- <span data-ttu-id="06bc7-110">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="06bc7-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="bdf78-109">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="bdf78-109">Return Value</span></span>  
+ <span data-ttu-id="bdf78-110">S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="bdf78-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="06bc7-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="06bc7-111">Requirements</span></span>  
- <span data-ttu-id="06bc7-112">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="06bc7-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="bdf78-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="bdf78-111">Requirements</span></span>  
+ <span data-ttu-id="bdf78-112">**En-tête :** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="bdf78-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="06bc7-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="06bc7-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bdf78-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="bdf78-113">See also</span></span>
 
-- [<span data-ttu-id="06bc7-114">ISymUnmanagedConstant, interface</span><span class="sxs-lookup"><span data-stu-id="06bc7-114">ISymUnmanagedConstant Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-interface.md)
-- [<span data-ttu-id="06bc7-115">GetSignature, méthode</span><span class="sxs-lookup"><span data-stu-id="06bc7-115">GetSignature Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getsignature-method.md)
-- [<span data-ttu-id="06bc7-116">GetValue, méthode</span><span class="sxs-lookup"><span data-stu-id="06bc7-116">GetValue Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getvalue-method.md)
+- [<span data-ttu-id="bdf78-114">ISymUnmanagedConstant, interface</span><span class="sxs-lookup"><span data-stu-id="bdf78-114">ISymUnmanagedConstant Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-interface.md)
+- [<span data-ttu-id="bdf78-115">GetSignature, méthode</span><span class="sxs-lookup"><span data-stu-id="bdf78-115">GetSignature Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getsignature-method.md)
+- [<span data-ttu-id="bdf78-116">GetValue, méthode</span><span class="sxs-lookup"><span data-stu-id="bdf78-116">GetValue Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getvalue-method.md)
