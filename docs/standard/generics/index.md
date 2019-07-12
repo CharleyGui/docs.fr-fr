@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4e13689e0c8324781b86ae7b9568cb441a31ec70
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: c4f59bdb0537ab6ce404ed0623c40f9f3b31598d
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423958"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67766824"
 ---
 # <a name="generics-in-net"></a>Génériques en .NET
 
@@ -83,7 +83,7 @@ ms.locfileid: "66423958"
   
 - La*covariance* et la *contravariance* des paramètres de type générique permettent d'utiliser des types génériques construits dont les arguments de type sont plus dérivés (covariance) ou moins dérivés (contravariance) qu'un type construit cible. La covariance et la contravariance sont désignées collectivement sous le nom de *variation*. Pour plus d’informations, consultez [Covariance et contravariance](../../../docs/standard/generics/covariance-and-contravariance.md).  
   
-- Les*contraintes* sont des limites appliquées aux paramètres de type générique. Par exemple, vous pouvez limiter un paramètre de type aux types qui implémentent l'interface générique <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> afin que les instances de ce type puissent être classées. Vous pouvez également limiter les paramètres de type aux types qui ont une classe de base particulière, un constructeur par défaut, ou qui sont des types référence ou des types valeur. Les utilisateurs du type générique ne peuvent pas remplacer les arguments de type qui ne respectent pas les contraintes.  
+- Les*contraintes* sont des limites appliquées aux paramètres de type générique. Par exemple, vous pouvez limiter un paramètre de type aux types qui implémentent l'interface générique <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> afin que les instances de ce type puissent être classées. Vous pouvez également limiter les paramètres de type à des types qui ont une classe de base particulière, qui ont un constructeur sans paramètre, ou qui sont des types référence ou des types valeur. Les utilisateurs du type générique ne peuvent pas remplacer les arguments de type qui ne respectent pas les contraintes.  
   
 - Une *définition de méthode générique* est une méthode qui comporte deux listes de paramètres : une liste de paramètres de type générique et une liste de paramètres formels. Les paramètres de type peuvent apparaître comme le type de retour ou comme les types des paramètres formels, comme le montre le code suivant.  
   

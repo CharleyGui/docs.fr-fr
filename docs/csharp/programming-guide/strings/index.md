@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: 668b3b927ac059acf160f5d96e8fbc614f57ddff
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 21ada083f69b0acf49490b331c5a416361a2ee84
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67504001"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67802314"
 ---
 # <a name="strings-c-programming-guide"></a>Chaînes (Guide de programmation C#)
 Une chaîne est un objet de type <xref:System.String> dont la valeur est du texte. En interne, le texte est stocké sous la forme d’une collection séquentielle en lecture seule d’objets <xref:System.Char>. Il n’existe aucun caractère de fin Null à la fin d’une chaîne C# ; par conséquent, une chaîne C# peut contenir n’importe quel nombre de caractères Null incorporés ('\0'). La propriété <xref:System.String.Length%2A> d’une chaîne représente le nombre d’objets `Char` qu’elle contient, et non pas le nombre de caractères Unicode. Pour accéder à des points de code Unicode individuels dans une chaîne, utilisez l’objet <xref:System.Globalization.StringInfo>.  
@@ -62,10 +62,10 @@ Une chaîne est un objet de type <xref:System.String> dont la valeur est du text
 |\n|Nouvelle ligne|0x000A|  
 |\r|Retour chariot|0x000D|  
 |\t|Tabulation horizontale|0x0009|  
-|\U|Séquence d’échappement Unicode (UTF-32)|`\U00nnnnnn` (par ex. `\U0001F47D` = "&#x1F47D;")|  
-|\u|Séquence d’échappement Unicode (UTF-16)|`\unnnn` (par ex. `\u0041` = "A")|  
 |\v|Tabulation verticale|0x000B|  
-|\x|Séquence d’échappement Unicode similaire à "\u", mais avec une longueur variable.|`\x0041` ou `\x41` = "A"|  
+|\u|Séquence d’échappement Unicode (UTF-16)|`\uHHHH` (plage : 0000 - FFFF ; exemple : `\u00E7` = "ç")|  
+|\U|Séquence d’échappement Unicode (UTF-32)|`\U00HHHHHH` (plage : 000000 - 10FFFF ; exemple : `\U0001F47D` = "&#x1F47D;")|  
+|\x|Séquence d’échappement Unicode similaire à "\u", mais avec une longueur variable|`\xH[H][H][H]` (plage : 0 - FFFF ; exemple : `\x00E7` or `\x0E7` or `\xE7` = "ç")|  
   
 > [!WARNING]
 >  Quand vous utilisez la séquence d’échappement `\x` et spécifiez moins de 4 chiffres hexadécimaux, si les caractères qui suivent immédiatement la séquence d’échappement sont des chiffres hexadécimaux valides (par ex. 0-9, A-F et a-f), ils sont interprétés comme faisant partie de la séquence d’échappement. Par exemple, `\xA1` donne "&#161;", qui est le point de code U+00A1. Toutefois, si le caractère suivant est « A » ou « a », la séquence d’échappement est plutôt être interprétée comme étant `\xA1A` et donne "&#x0A1A;", qui est le point de code U+0A1A. Dans ce cas, la spécification des 4 chiffres hexadécimaux (par ex. `\x00A1`) empêche toute mauvaise interprétation possible.  

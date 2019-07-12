@@ -2,12 +2,12 @@
 title: Articles de guide pratique (Guide C#)
 description: Série de petits conseils et d’exemples de code spécifiques courts
 ms.date: 12/20/2017
-ms.openlocfilehash: 062ce64f4f369ae70074fd81f39b60de29e4d7d2
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 011e2a8208e647fb2df2ea2e949bfe2d2274eb37
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67609256"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744273"
 ---
 # <a name="how-to-c"></a>Guides pratiques (C#)
 
@@ -66,7 +66,7 @@ Vous aurez peut-être besoin de convertir un objet en un autre type.
 - [Convertir un tableau d’octets en int](../programming-guide/types/how-to-convert-a-byte-array-to-an-int.md).
 - [Convertir une chaîne en nombre ](../programming-guide/types/how-to-convert-a-string-to-a-number.md).
 - [Utiliser les critères spéciaux et les opérateurs `as` et `is` pour caster sans risque en un autre type](../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md).
-- [Définir des opérateurs de conversion pour les types `struct`](../programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md).
+- [Définir des conversions de type personnalisé](../language-reference/operators/user-defined-conversion-operators.md).
 - [Déterminer si un type est un type valeur nullable](../programming-guide/nullable-types/how-to-identify-a-nullable-type.md).
 - [Convertir entre des types valeur nullable et non nullable](../programming-guide/nullable-types/using-nullable-types.md#conversion-from-a-nullable-type-to-an-underlying-type).
 

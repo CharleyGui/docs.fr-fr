@@ -4,12 +4,12 @@ description: Pour en savoir plus sur les façons dont .NET Core tente de mainten
 author: rpetrusha
 ms.author: ronpet
 ms.date: 06/10/2019
-ms.openlocfilehash: b58edd9ff0bd56b12b861162cc92d484a3b36c8b
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: c68a19b8b98a98bb9c64f5b9fa60b378935e6e93
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307552"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67736560"
 ---
 # <a name="evaluate-breaking-changes-in-net-core"></a>Évaluer les changements cassants dans .NET Core
 
@@ -107,7 +107,7 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
 
 - **✔ Ajout d’un constructeur à une classe, ainsi que d’un constructeur par défaut (sans paramètre) si la classe n’avait auparavant aucun constructeur️**
 
-   Toutefois, l’ajout d’un constructeur à une classe qui n’avait précédemment aucun constructeur *sans* ajouter le constructeur par défaut n’est pas autorisé.
+   Cependant, ajouter un constructeur à une classe qui n’avait auparavant aucun constructeur *sans* ajouter le constructeur sans paramètre n’est pas autorisé.
 
 - **✔ Changement d’un membre de️ [abstract](../../csharp/language-reference/keywords/abstract.md) à [virtual](../../csharp/language-reference/keywords/virtual.md)**
 
@@ -174,7 +174,7 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
 
   Cela empêche de fonctionner les clients existants qui étaient liés à la surcharge précédente. Par exemple, si une classe a une seule version d’une méthode qui accepte un <xref:System.UInt32>, un consommateur existant est correctement lié à cette surcharge lors du passage d’une valeur <xref:System.Int32>. Toutefois, si vous ajoutez une surcharge qui accepte un <xref:System.Int32> lors de la recompilation ou à l’aide d’une liaison tardive, le compilateur est maintenant lié à la nouvelle surcharge. Si un comportement différent se produit, il s’agit d’un changement cassant.
 
-- **❌ Ajout d’un constructeur pour une classe qui n’avait précédemment aucun constructeur sans ajouter le constructeur par défaut**
+- **❌ Ajout d’un constructeur à une classe qui n’avait auparavant pas de constructeur sans ajout du constructeur sans paramètre**
 
 - **❌️ Ajout de [readonly](../../csharp/language-reference/keywords/readonly.md) à un champ**
 

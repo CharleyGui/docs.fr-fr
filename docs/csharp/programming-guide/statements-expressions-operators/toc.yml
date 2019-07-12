@@ -7,7 +7,7 @@
       href: expressions.md
     - name: Membres expression-bodied
       href: expression-bodied-members.md
-    - name: Operators
+    - name: Opérateurs
       href: operators.md
     - name: Fonctions anonymes
       items:
@@ -15,27 +15,19 @@
           href: anonymous-functions.md
         - name: Expressions lambda
           href: lambda-expressions.md
-        - name: Activation Utiliser des expressions lambda dans une requête
+        - name: "Procédure\_: Utiliser des expressions lambda dans une requête"
           href: how-to-use-lambda-expressions-in-a-query.md
-        - name: "Activation Utiliser des expressions lambda en\_dehors de LINQ"
+        - name: "Procédure\_: Utiliser des expressions lambda en\_dehors de LINQ"
           href: how-to-use-lambda-expressions-outside-linq.md
         - name: Méthodes anonymes
           href: anonymous-methods.md
-    - name: Opérateurs de conversion
-      items:
-        - name: Vue d’ensemble des conversions
-          href: conversion-operators.md
-        - name: Utilisation d’opérateurs de conversion
-          href: using-conversion-operators.md
-        - name: Activation Implémenter des conversions définies par l’utilisateur entre structs
-          href: how-to-implement-user-defined-conversions-between-structs.md
     - name: Expressions de valeur par défaut
       href: default-value-expressions.md
     - name: Égalité et comparaisons d’égalité
       items:
         - name: Comparaisons d’égalité
           href: equality-comparisons.md
-        - name: Activation Définir l’égalité de valeurs pour un type
+        - name: "Procédure\_: Définir l’égalité de valeurs pour un type"
           href: how-to-define-value-equality-for-a-type.md
-        - name: Activation Tester l’égalité des références (identité)
+        - name: "Procédure\_: Tester l’égalité des références (identité)"
           href: how-to-test-for-reference-equality-identity.md
