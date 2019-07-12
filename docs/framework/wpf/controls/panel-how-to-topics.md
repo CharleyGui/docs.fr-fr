@@ -7,23 +7,23 @@ helpviewer_keywords:
 - Panel control [WPF], how-to topics
 - controls [WPF], Panel
 ms.assetid: 28d8faf2-490c-4e17-a447-df25a66f6679
-ms.openlocfilehash: a0cb1e0b569fb69adf1e474ca3666d5e387274ce
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 45a5b67edeea46a29e5c2fc3aea86d34fa4f5e7a
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61770680"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860073"
 ---
-# <a name="panel-how-to-topics"></a><span data-ttu-id="009b6-102">Rubriques "Comment utiliser le Panel"</span><span class="sxs-lookup"><span data-stu-id="009b6-102">Panel How-to Topics</span></span>
-<span data-ttu-id="009b6-103">Les rubriques de cette section décrivent comment utiliser le <xref:System.Windows.Controls.Panel> élément et connexes [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].</span><span class="sxs-lookup"><span data-stu-id="009b6-103">The topics in this section describe how to use the <xref:System.Windows.Controls.Panel> element and related [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].</span></span>  
+# <a name="panel-how-to-topics"></a><span data-ttu-id="cbfc1-102">Rubriques "Comment utiliser le Panel"</span><span class="sxs-lookup"><span data-stu-id="cbfc1-102">Panel How-to Topics</span></span>
+<span data-ttu-id="cbfc1-103">Les rubriques de cette section décrivent comment utiliser le <xref:System.Windows.Controls.Panel> élément et les API associées.</span><span class="sxs-lookup"><span data-stu-id="cbfc1-103">The topics in this section describe how to use the <xref:System.Windows.Controls.Panel> element and related APIs.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="009b6-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="009b6-104">In This Section</span></span>  
- [<span data-ttu-id="009b6-105">Créer un élément Panel personnalisé</span><span class="sxs-lookup"><span data-stu-id="009b6-105">Create a Custom Panel Element</span></span>](how-to-create-a-custom-panel-element.md)  
- [<span data-ttu-id="009b6-106">Substituer la méthode OnRender de Panel</span><span class="sxs-lookup"><span data-stu-id="009b6-106">Override the Panel OnRender Method</span></span>](how-to-override-the-panel-onrender-method.md)  
- [<span data-ttu-id="009b6-107">Définir les propriétés Height d’un élément</span><span class="sxs-lookup"><span data-stu-id="009b6-107">Set the Height Properties of an Element</span></span>](how-to-set-the-height-properties-of-an-element.md)  
- [<span data-ttu-id="009b6-108">Définir les propriétés Width d’un élément</span><span class="sxs-lookup"><span data-stu-id="009b6-108">Set the Width Properties of an Element</span></span>](how-to-set-the-width-properties-of-an-element.md)  
+## <a name="in-this-section"></a><span data-ttu-id="cbfc1-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="cbfc1-104">In This Section</span></span>  
+ [<span data-ttu-id="cbfc1-105">Créer un élément Panel personnalisé</span><span class="sxs-lookup"><span data-stu-id="cbfc1-105">Create a Custom Panel Element</span></span>](how-to-create-a-custom-panel-element.md)  
+ [<span data-ttu-id="cbfc1-106">Substituer la méthode OnRender de Panel</span><span class="sxs-lookup"><span data-stu-id="cbfc1-106">Override the Panel OnRender Method</span></span>](how-to-override-the-panel-onrender-method.md)  
+ [<span data-ttu-id="cbfc1-107">Définir les propriétés Height d’un élément</span><span class="sxs-lookup"><span data-stu-id="cbfc1-107">Set the Height Properties of an Element</span></span>](how-to-set-the-height-properties-of-an-element.md)  
+ [<span data-ttu-id="cbfc1-108">Définir les propriétés Width d’un élément</span><span class="sxs-lookup"><span data-stu-id="cbfc1-108">Set the Width Properties of an Element</span></span>](how-to-set-the-width-properties-of-an-element.md)  
   
-## <a name="reference"></a><span data-ttu-id="009b6-109">Référence</span><span class="sxs-lookup"><span data-stu-id="009b6-109">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="cbfc1-109">Référence</span><span class="sxs-lookup"><span data-stu-id="cbfc1-109">Reference</span></span>  
  <xref:System.Windows.Controls.Panel>  
   
  <xref:System.Windows.Controls.Canvas>  
@@ -38,9 +38,9 @@ ms.locfileid: "61770680"
   
  <xref:System.Windows.Controls.WrapPanel>  
   
-## <a name="related-sections"></a><span data-ttu-id="009b6-110">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="009b6-110">Related Sections</span></span>  
- [<span data-ttu-id="009b6-111">Disposition</span><span class="sxs-lookup"><span data-stu-id="009b6-111">Layout</span></span>](../advanced/layout.md)  
+## <a name="related-sections"></a><span data-ttu-id="cbfc1-110">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="cbfc1-110">Related Sections</span></span>  
+ [<span data-ttu-id="cbfc1-111">Disposition</span><span class="sxs-lookup"><span data-stu-id="cbfc1-111">Layout</span></span>](../advanced/layout.md)  
   
- [<span data-ttu-id="009b6-112">Procédure pas à pas : Ma première application de bureau WPF</span><span class="sxs-lookup"><span data-stu-id="009b6-112">Walkthrough: My first WPF desktop application</span></span>](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
+ [<span data-ttu-id="cbfc1-112">Procédure pas à pas : Ma première application de bureau WPF</span><span class="sxs-lookup"><span data-stu-id="cbfc1-112">Walkthrough: My first WPF desktop application</span></span>](../getting-started/walkthrough-my-first-wpf-desktop-application.md)  
   
- [<span data-ttu-id="009b6-113">Vue d’ensemble de ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="009b6-113">ScrollViewer Overview</span></span>](scrollviewer-overview.md)
+ [<span data-ttu-id="cbfc1-113">Vue d’ensemble de ScrollViewer</span><span class="sxs-lookup"><span data-stu-id="cbfc1-113">ScrollViewer Overview</span></span>](scrollviewer-overview.md)
