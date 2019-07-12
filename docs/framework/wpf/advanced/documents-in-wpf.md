@@ -10,12 +10,12 @@ helpviewer_keywords:
 - documents [WPF], types of
 - documents [WPF], browser-viewable
 ms.assetid: 6e8db7bc-050a-4070-aa72-bb8c46e87ff8
-ms.openlocfilehash: b83d9c972dbdadb721bae8b7d616c94a0c1c831f
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 020ea101ae38b9be854398a55ddd31e67b9fda35
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67804742"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859668"
 ---
 # <a name="documents-in-wpf"></a>Documents dans WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] offre une large gamme de fonctionnalités liées aux documents qui permettent de créer du contenu haute fidélité conçu pour être accessible et lu plus facilement que sur les générations précédentes de [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]. En plus d’une amélioration des capacités et de la qualité, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit également des services intégrés pour l’affichage, le packaging et la sécurité des documents. Cette rubrique fournit une introduction aux types et au packaging des documents [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -59,7 +59,7 @@ ms.locfileid: "67804742"
   
 <a name="packaging"></a>   
 ## <a name="document-packaging"></a>Packaging de documents  
- Le <xref:System.IO.Packaging> [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] offrent un moyen efficace pour organiser les données d’application et les ressources associées dans un conteneur unique facile d’accès, portable et facile à distribuer du contenu du document. Un fichier ZIP est un exemple d’un <xref:System.IO.Packaging.Package> type capable de contenir plusieurs objets dans une seule unité. L’empaquetage [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] fournir une valeur par défaut <xref:System.IO.Packaging.ZipPackage> implémentation conçue à l’aide d’une norme Open Packaging Conventions avec une architecture de fichiers XML et ZIP. Les [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] de packaging [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] simplifient la création de packages, ainsi que le stockage et l’accès aux objets s’y trouvant. Un objet stocké dans un <xref:System.IO.Packaging.Package> est appelé un <xref:System.IO.Packaging.PackagePart> (« partie »). Les packages peuvent également inclure des certificats numériques signés pouvant être utilisés pour identifier le créateur d’une partie, et pour valider que le contenu d’un package n’a pas été modifié.  Les packages comprennent également une <xref:System.IO.Packaging.PackageRelationship> fonctionnalité qui permet d’obtenir des informations supplémentaires à ajouter à un package ou associés à des parties spécifiques sans modifier réellement le contenu des parties existantes.  Les services de package prennent aussi en charge [!INCLUDE[TLA#tla_rm](../../../../includes/tlasharptla-rm-md.md)].  
+ Le <xref:System.IO.Packaging> API fournissent un moyen efficace d’organiser les données d’application et les ressources associées dans un conteneur unique facile d’accès, portable et facile à distribuer du contenu du document. Un fichier ZIP est un exemple d’un <xref:System.IO.Packaging.Package> type capable de contenir plusieurs objets dans une seule unité. API de packaging fournissent une valeur par défaut <xref:System.IO.Packaging.ZipPackage> implémentation conçue à l’aide d’une norme Open Packaging Conventions avec une architecture de fichiers XML et ZIP. Le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] empaquetage API facilitent pour créer des packages et pour stocker et accéder aux objets qu’ils contiennent. Un objet stocké dans un <xref:System.IO.Packaging.Package> est appelé un <xref:System.IO.Packaging.PackagePart> (« partie »). Les packages peuvent également inclure des certificats numériques signés pouvant être utilisés pour identifier le créateur d’une partie, et pour valider que le contenu d’un package n’a pas été modifié.  Les packages comprennent également une <xref:System.IO.Packaging.PackageRelationship> fonctionnalité qui permet d’obtenir des informations supplémentaires à ajouter à un package ou associés à des parties spécifiques sans modifier réellement le contenu des parties existantes.  Les services de package prennent aussi en charge [!INCLUDE[TLA#tla_rm](../../../../includes/tlasharptla-rm-md.md)].  
   
  L’architecture de package [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sert de base à de nombreuses technologies clés :  
   
@@ -71,7 +71,7 @@ ms.locfileid: "67804742"
   
  Basé sur les API, d’empaquetage un <xref:System.Windows.Xps.Packaging.XpsDocument> est spécialement conçu pour stocker [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] contenu de documents fixes. Un <xref:System.Windows.Xps.Packaging.XpsDocument> est un document autonome qui peut être ouvert dans une visionneuse, affichée dans un <xref:System.Windows.Controls.DocumentViewer> contrôle, routé vers un spool d’impression ou envoyé directement à un [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]-imprimante compatible.  
   
- Les sections suivantes fournissent des informations supplémentaires sur le <xref:System.IO.Packaging.Package> et <xref:System.Windows.Xps.Packaging.XpsDocument> [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] fourni avec [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
+ Les sections suivantes fournissent des informations supplémentaires sur le <xref:System.IO.Packaging.Package> et <xref:System.Windows.Xps.Packaging.XpsDocument> API fournies avec [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
 <a name="packages"></a>   
 ### <a name="package-components"></a>Composants d’un package  

@@ -10,19 +10,19 @@ helpviewer_keywords:
 - printers [WPF], availability
 - print jobs [WPF], timing
 ms.assetid: 7e9c8ec1-abf6-4b3d-b1c6-33b35d3c4063
-ms.openlocfilehash: c68e6a69553f2cb14eb442c31e5138009f3c8411
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ee38caedc5d5a29d2221d6e5a6bf6cf74617bf8c
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619443"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859716"
 ---
 # <a name="how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day"></a>Procédure : Déterminer si un travail d’impression peut être imprimé à cette heure de la journée
 Files d’attente ne concernent pas toujours disponibles 24 heures par jour. Ils ont des propriétés au moment de début et de fin qui peuvent être définies pour les rendre indisponibles à certains moments de la journée. Cette fonctionnalité peut être utilisée, par exemple, pour réserver une imprimante à l’usage exclusif d’un département après 17 h 00. Ce département aurait une autre file d’attente l’imprimante que les autres services à utiliser. La file d’attente pour les autres départements serait défini comme être indisponible après 17 h 00, tandis que la file d’attente pour le département privilégié peut être définie pour être disponible à tout moment.  
   
  En outre, les travaux d’impression eux-mêmes peuvent être définis pour être imprimables uniquement dans un intervalle de temps spécifié.  
   
- Le <xref:System.Printing.PrintQueue> et <xref:System.Printing.PrintSystemJobInfo> classes exposées dans le [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] du Microsoft .NET Framework fournissent un moyen de vérifier à distance si un travail d’impression donné peut imprimer sur une file d’attente donnée à l’heure actuelle.  
+ Le <xref:System.Printing.PrintQueue> et <xref:System.Printing.PrintSystemJobInfo> classes exposées dans l’API de Microsoft .NET Framework fournissent un moyen de vérifier à distance si un travail d’impression donné peut imprimer sur une file d’attente donnée à l’heure actuelle.  
   
 ## <a name="example"></a>Exemple  
  L’exemple ci-dessous est un exemple qui peut diagnostiquer les problèmes liés à un travail d’impression.  
@@ -54,7 +54,7 @@ Files d’attente ne concernent pas toujours disponibles 24 heures par jour. Ils
  Les deux surcharges de la **ReportAvailabilityAtThisTime** méthode sont identiques à l’exception du type passé pour eux, afin que seuls les <xref:System.Printing.PrintQueue> version est présentée ci-dessous.  
   
 > [!NOTE]
->  Le fait que les méthodes sont identiques à l’exception de type soulève la question de savoir pourquoi l’exemple ne crée pas une méthode générique **ReportAvailabilityAtThisTime\<T >**. La raison est qu’une telle méthode devrait être limité à une classe qui possède le **StartTimeOfDay** et **UntilTimeOfDay** propriétés qui appelle la méthode, mais une méthode générique peut uniquement être limité à un l’unique classe et la seule classe commune aux deux <xref:System.Printing.PrintQueue> et <xref:System.Printing.PrintSystemJobInfo> l’héritage arborescence est <xref:System.Printing.PrintSystemObject> n’ayant pas de propriétés.  
+>  Le fait que les méthodes sont identiques à l’exception de type soulève la question de savoir pourquoi l’exemple ne crée pas une méthode générique **ReportAvailabilityAtThisTime\<T >** . La raison est qu’une telle méthode devrait être limité à une classe qui possède le **StartTimeOfDay** et **UntilTimeOfDay** propriétés qui appelle la méthode, mais une méthode générique peut uniquement être limité à un l’unique classe et la seule classe commune aux deux <xref:System.Printing.PrintQueue> et <xref:System.Printing.PrintSystemJobInfo> l’héritage arborescence est <xref:System.Printing.PrintSystemObject> n’ayant pas de propriétés.  
   
  Le **ReportAvailabilityAtThisTime** (méthode) (présenté dans l’exemple de code ci-dessous) commence par initialiser un <xref:System.Boolean> variable sentinel à `true`. Elle sera réinitialisée à `false`, si la file d’attente n’est pas disponible.  
   

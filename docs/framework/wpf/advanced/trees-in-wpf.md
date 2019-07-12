@@ -6,12 +6,12 @@ helpviewer_keywords:
 - element tree [WPF]
 - visual tree [WPF]
 ms.assetid: e83f25e5-d66b-4fc7-92d2-50130c9a6649
-ms.openlocfilehash: f9b507c874dfe0ab3feca19e7fcf79df5af93e10
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 14ab9b5b36eee607679ee95423c2af912ed02310
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774996"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860004"
 ---
 # <a name="trees-in-wpf"></a>Arborescences dans WPF
 Dans de nombreuses technologies, les éléments et les composants sont organisés en une arborescence, où les développeurs manipulent directement les nœuds d’objet dans l’arborescence pour modifier le rendu ou le comportement d’une application. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] utilise également plusieurs métaphores d’arborescence pour définir des relations entre des éléments du programme. Pour la plupart, les développeurs WPF peuvent créer une application dans le code ou définir des parties de l’application en XAML, en se représentant mentalement la métaphore de l’arborescence des objets, mais en appelant pour cela une API spécifique ou en utilisant un balisage spécifique, au lieu d’utiliser une API générale de manipulation d’une arborescence d’objets, comme ce peut être le cas dans le modèle DOM XML. WPF expose deux classes d’assistance qui fournissent une vue de la métaphore de l’arborescence, <xref:System.Windows.LogicalTreeHelper> et <xref:System.Windows.Media.VisualTreeHelper>. Les termes « arborescence d’éléments visuels » et « arborescence logique » sont également utilisés dans la documentation WPF, car ils sont utiles pour comprendre le comportement de certaines fonctionnalités clés de WPF. Cette rubrique définit ce que représentent l’arborescence d’éléments visuels et l’arborescence logique, explique la relation de ces arborescences avec le concept d’arborescence d’un objet global et introduit <xref:System.Windows.LogicalTreeHelper> et <xref:System.Windows.Media.VisualTreeHelper>s.  
@@ -51,7 +51,7 @@ Dans de nombreuses technologies, les éléments et les composants sont organisé
   
 <a name="override_logical_tree"></a>   
 ### <a name="overriding-the-logical-tree"></a>Remplacement de l’arborescence logique  
- Les créateurs de contrôles avancés peuvent remplacer l’arborescence logique en remplaçant plusieurs [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] qui définissent la façon dont un objet ou un modèle de contenu général ajoute ou supprime des objets dans l’arborescence logique. Pour obtenir un exemple montrant comment remplacer l’arborescence logique, consultez [Remplacer l’arborescence logique](how-to-override-the-logical-tree.md).  
+ Les auteurs de contrôles avancés peuvent remplacer l’arborescence logique en remplaçant plusieurs API qui définissent la façon dont un objet général ou un modèle de contenu ajoute ou supprime des objets dans l’arborescence logique. Pour obtenir un exemple montrant comment remplacer l’arborescence logique, consultez [Remplacer l’arborescence logique](how-to-override-the-logical-tree.md).  
   
 <a name="pvi"></a>   
 ### <a name="property-value-inheritance"></a>Héritage de la valeur de propriété  

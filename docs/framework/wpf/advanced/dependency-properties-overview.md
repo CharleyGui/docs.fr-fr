@@ -14,12 +14,12 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-ms.openlocfilehash: 443ea9ad56d13d26191231104ce3998b2691fc34
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 483710281feafdf97cfef9b72a67af035dcf0efa
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052935"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860173"
 ---
 # <a name="dependency-properties-overview"></a>Vue d’ensemble des propriétés de dépendance
 
@@ -78,7 +78,7 @@ Pour obtenir une valeur de propriété, il suffit aussi généralement d’appel
 [!code-csharp[PropertiesOvwSupport#ProceduralPropertyGet](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport/CSharp/Page1.xaml.cs#proceduralpropertyget)]
  [!code-vb[PropertiesOvwSupport#ProceduralPropertyGet](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport/visualbasic/page1.xaml.vb#proceduralpropertyget)]
 
-Vous pouvez également appeler le système de propriétés [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] <xref:System.Windows.DependencyObject.GetValue%2A> et <xref:System.Windows.DependencyObject.SetValue%2A> directement. Ce n’est généralement pas nécessaire si vous utilisez des propriétés existantes (les wrappers sont plus pratiques et fournissent une meilleure exposition de la propriété pour les outils de développement), mais appeler les [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] directement convient pour certains scénarios.
+Vous pouvez également appeler les API du système de propriété <xref:System.Windows.DependencyObject.GetValue%2A> et <xref:System.Windows.DependencyObject.SetValue%2A> directement. Cela n’est pas nécessaire en général, si vous utilisez des propriétés existantes (les wrappers sont plus pratiques et fournissent une meilleure exposition de la propriété pour les outils de développement), mais appeler directement des API est appropriée pour certains scénarios.
 
 Vous pouvez aussi définir les propriétés en XAML et y accéder ultérieurement dans le code, par l’intermédiaire du code-behind. Pour plus d’informations, consultez [Code-behind et XAML dans WPF](code-behind-and-xaml-in-wpf.md).
 

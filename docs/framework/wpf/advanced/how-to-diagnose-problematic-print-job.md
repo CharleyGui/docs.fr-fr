@@ -10,17 +10,17 @@ helpviewer_keywords:
 - print jobs [WPF], troubleshooting
 - print jobs [WPF], diagnosing problems
 ms.assetid: b081a170-84c6-48f9-a487-5766a8d58a82
-ms.openlocfilehash: c9da2e1daff23ef9ba39d8b5d53cb3be67f35a27
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: d64e77b7fc6862eead3cb7e791b3a8f68ac52713
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878206"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859731"
 ---
 # <a name="how-to-diagnose-problematic-print-job"></a>Procédure : Diagnostiquer un travail d’impression problématique
-Les administrateurs réseau reçoivent souvent des plaintes d’utilisateurs concernant des travaux d’impression qui échouent ou s’impriment lentement. L’ensemble des propriétés du travail d’impression exposées dans le [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] du Microsoft .NET Framework fournissent un moyen pour effectuer un diagnostic rapide et à distance des travaux d’impression.  
+Les administrateurs réseau reçoivent souvent des plaintes d’utilisateurs concernant des travaux d’impression qui échouent ou s’impriment lentement. L’ensemble des propriétés de travail d’impression exposées dans l’API de Microsoft .NET Framework fournissent un moyen pour effectuer un diagnostic rapide et à distance des travaux d’impression.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Voici les principales étapes à suivre pour créer ce type d’utilitaire.  
   
 1. Identifiez le travail d’impression à l’origine de la plainte de l’utilisateur. Les utilisateurs sont rarement en mesure de l’identifier avec précision. Ils peuvent par exemple ne pas connaître les noms des serveurs d’impression ou des imprimantes. Ils peuvent décrire l’emplacement de l’imprimante avec une terminologie différente de celle utilisée dans le paramètre son <xref:System.Printing.PrintQueue.Location%2A> propriété. Par conséquent, il est judicieux de générer une liste des travaux envoyés par l’utilisateur. S’il y en a plusieurs, l’utilisateur peut contacter l’administrateur du système d’impression pour identifier le travail qui pose problème. La procédure est la suivante.  

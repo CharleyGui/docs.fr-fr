@@ -8,12 +8,12 @@ helpviewer_keywords:
 - interoperability [WPF], Windows Forms
 - hybrid control [WPF interoperability]
 ms.assetid: 9e8aa6b6-112c-4579-98d1-c974917df499
-ms.openlocfilehash: 6b8fcfb6b2795b1b41b5292a3d2c61ecd017f173
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b2e0ee85a7edd07e7372b04c3a26a06416fb39d9
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662278"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859881"
 ---
 # <a name="wpf-and-windows-forms-interoperation"></a>Interopérabilité WPF et Windows Forms
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] présentent deux architectures différentes pour créer des interfaces d’application. Le <xref:System.Windows.Forms.Integration?displayProperty=nameWithType> espace de noms fournit des classes qui permettent les scénarios d’interopérabilité communs. Les deux principales classes qui implémentent les fonctionnalités d’interopérabilité sont <xref:System.Windows.Forms.Integration.WindowsFormsHost> et <xref:System.Windows.Forms.Integration.ElementHost>. Cette rubrique décrit les scénarios d’interopérabilité qui sont pris en charge et ceux qui ne le sont pas.  
@@ -35,7 +35,7 @@ ms.locfileid: "64662278"
   
 - Il peut héberger un formulaire maître/détail avec un maître [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] et des détails [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
-- Il peut héberger un ou plusieurs contrôles [!INCLUDE[TLA2#tla_actx](../../../../includes/tla2sharptla-actx-md.md)].  
+- Il peut héberger un ou plusieurs contrôles ActiveX.  
   
 - Il peut héberger un ou plusieurs contrôles composites.  
   
@@ -64,7 +64,7 @@ ms.locfileid: "64662278"
 ### <a name="behavior"></a>Comportement  
  Le tableau suivant décrit le comportement d’interopérabilité.  
   
-|Comportement|Prise en charge|Non pris en charge|  
+|Comportement|Pris en charge|Non pris en charge|  
 |--------------|---------------|-------------------|  
 |Transparence|Le rendu d’un contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] prend en charge la transparence. L’arrière-plan du contrôle parent [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] peut devenir l’arrière-plan de contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] hébergés.|Certains contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ne prennent pas en charge la transparence. Par exemple, le <xref:System.Windows.Forms.TextBox> et <xref:System.Windows.Forms.ComboBox> contrôles ne seront pas transparents quand ils sont hébergés par [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].|  
 |Tabulation|L’ordre de tabulation des contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] hébergés est le même que celui des contrôles hébergés dans une application [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].<br /><br /> La tabulation d’un contrôle [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] à un contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] à l’aide de la touche Tab et des touches Maj+Tab fonctionne normalement.<br /><br /> [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] les contrôles qui ont un <xref:System.Windows.Forms.Control.TabStop%2A> valeur de propriété `false` ne reçoivent pas le focus lorsque l’utilisateur via des contrôles.<br /><br /> -Chaque <xref:System.Windows.Forms.Integration.WindowsFormsHost> contrôle a un <xref:System.Windows.Forms.Integration.WindowsFormsHost.TabIndex%2A> valeur, qui détermine le moment qui <xref:System.Windows.Forms.Integration.WindowsFormsHost> contrôle reçoit le focus.<br />-   [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] les contrôles qui figurent à l’intérieur d’un <xref:System.Windows.Forms.Integration.WindowsFormsHost> conteneur respectent l’ordre spécifié par le <xref:System.Windows.Forms.Control.TabIndex%2A> propriété. L’utilisation de la tabulation à partir du dernier index de tabulation rend actif le contrôle [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] suivant disponible. S’il n’y a pas d’autre contrôle [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pouvant être actif, la tabulation retourne au premier contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] dans l’ordre de tabulation.<br />-   <xref:System.Windows.Forms.Integration.WindowsFormsHost.TabIndex%2A> valeurs pour les contrôles à l’intérieur de la <xref:System.Windows.Forms.Integration.WindowsFormsHost> sont frères [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôles contenus dans le <xref:System.Windows.Forms.Integration.WindowsFormsHost> contrôle.<br />-   La tabulation respecte le comportement spécifique de chaque contrôle. Par exemple, en appuyant sur la touche TAB dans un <xref:System.Windows.Forms.TextBox> contrôle qui a un <xref:System.Windows.Forms.TextBoxBase.AcceptsTab%2A> valeur de propriété `true` entre un onglet dans la zone de texte au lieu de déplacer le focus.|Non applicable.|  
@@ -107,7 +107,7 @@ ms.locfileid: "64662278"
 ### <a name="behavior"></a>Comportement  
  Le tableau suivant décrit le comportement d’interopérabilité.  
   
-|Comportement|Prise en charge|Non pris en charge|  
+|Comportement|Pris en charge|Non pris en charge|  
 |--------------|---------------|-------------------|  
 |Transparence|Le rendu d’un contrôle [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prend en charge la transparence. L’arrière-plan du contrôle parent [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] peut devenir l’arrière-plan de contrôles [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hébergés.|Non applicable.|  
 |Multithreading|Tous les types de multithreading sont pris en charge.|Les technologies [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] et [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] supposent l’utilisation d’un modèle concurrentiel à thread unique. Pendant le débogage, les appels aux objets de framework d’autres threads lèvent une exception pour appliquer cette exigence.|  

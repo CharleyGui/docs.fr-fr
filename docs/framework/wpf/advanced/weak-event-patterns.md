@@ -6,12 +6,12 @@ helpviewer_keywords:
 - event handlers [WPF], weak event pattern
 - IWeakEventListener interface [WPF]
 ms.assetid: e7c62920-4812-4811-94d8-050a65c856f6
-ms.openlocfilehash: 0c5bae64fbbeddedd905e5df0b5789542e29f2f1
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 61e7f6d29cf9275004238ca776d5af9bf027004f
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833930"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859914"
 ---
 # <a name="weak-event-patterns"></a>Modèles d'événement faible
 Dans les applications, il est possible que les gestionnaires qui sont attachés à des sources d’événements ne seront pas détruits en coordination avec l’objet écouteur qui joint le gestionnaire à la source. Cette situation peut entraîner des fuites de mémoire. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] introduit un modèle de conception qui peut être utilisé pour résoudre ce problème, en fournissant une classe de gestionnaire dédiée pour des événements particuliers et en implémentant une interface sur les écouteurs de cet événement. Ce modèle de conception est appelé le *modèle d’événement faible*.  
@@ -21,7 +21,7 @@ Dans les applications, il est possible que les gestionnaires qui sont attachés 
   
  Cette technique crée une référence forte à partir de la source d’événements à l’écouteur d’événements. En règle générale, y attacher un gestionnaire d’événements pour un écouteur de provoque l’écouteur avoir une durée de vie d’objet qui est influencée par la durée de vie de la source (à moins que le Gestionnaire d’événements est supprimé explicitement). Toutefois, dans certaines circonstances, vous pouvez la durée de vie de l’écouteur à être contrôlé par d’autres facteurs, tels que si elle appartient actuellement à l’arborescence visuelle de l’application et non par la durée de vie de la source. Chaque fois que la durée de vie source s’étend au-delà de la durée de vie de l’écouteur, le modèle d’événement normal entraîne une fuite de mémoire : l’écouteur est maintenu actif plus longtemps que prévu.  
   
- Le modèle d’événement faible est conçu pour résoudre ce problème de fuite de mémoire. Le modèle d’événement faible peut être utilisé chaque fois qu’un écouteur doit s’inscrire à un événement, mais l’écouteur ne sait pas explicitement quand annuler l’inscription. Le modèle d’événement faible peut également servir à chaque fois que la durée de vie de la source dépasse la durée de vie utile de l’écouteur. (Dans ce cas, *utile* est déterminée par vous.) Le modèle d’événement faible permet à l’écouteur pour vous inscrire et recevoir l’événement sans affecter les caractéristiques de durée de vie d’objet de l’écouteur en aucune façon. En effet, la référence implicite à partir de la source ne détermine pas si l’écouteur est éligible pour le garbage collection. La référence est une référence faible, d'où le nom du modèle d’événement faible et connexes [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)]. L’écouteur peut être le garbage collector ou détruit, et la source peut continuer sans conserver des références de gestionnaire non-collectable à un objet détruit.  
+ Le modèle d’événement faible est conçu pour résoudre ce problème de fuite de mémoire. Le modèle d’événement faible peut être utilisé chaque fois qu’un écouteur doit s’inscrire à un événement, mais l’écouteur ne sait pas explicitement quand annuler l’inscription. Le modèle d’événement faible peut également servir à chaque fois que la durée de vie de la source dépasse la durée de vie utile de l’écouteur. (Dans ce cas, *utile* est déterminée par vous.) Le modèle d’événement faible permet à l’écouteur pour vous inscrire et recevoir l’événement sans affecter les caractéristiques de durée de vie d’objet de l’écouteur en aucune façon. En effet, la référence implicite à partir de la source ne détermine pas si l’écouteur est éligible pour le garbage collection. La référence est une référence faible, d'où le nom du modèle d’événement faible et les API connexes. L’écouteur peut être le garbage collector ou détruit, et la source peut continuer sans conserver des références de gestionnaire non-collectable à un objet détruit.  
   
 ## <a name="who-should-implement-the-weak-event-pattern"></a>Qui doit implémenter le modèle d’événement faible ?  
  L’implémentation du modèle d’événement faible est intéressante principalement pour les auteurs de contrôles. En tant qu’auteur de contrôle, il vous incombe en grande partie pour le comportement et la relation contenant-contenu de votre contrôle et l’impact sur les applications dans lequel elle est insérée. Cela inclut le comportement de durée de vie l’objet contrôle, notamment la gestion du problème de fuite de mémoire décrit.  

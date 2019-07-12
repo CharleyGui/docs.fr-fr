@@ -6,12 +6,12 @@ helpviewer_keywords:
 - documents [WPF], storage
 - documents [WPF], serialization
 ms.assetid: 4839cd87-e206-4571-803f-0200098ad37b
-ms.openlocfilehash: a1a3d422ea4d9766e6a9f8dda079c3739be4a626
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: b60b3964ff8e1b1f05b6c0820c63ec06d9ea0f4c
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663665"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859656"
 ---
 # <a name="document-serialization-and-storage"></a>Sérialisation et stockage de documents
 
@@ -23,7 +23,7 @@ Microsoft .NET Framework fournit un environnement puissant pour créer et affich
 
 Dans l’idéal, les processus de sérialisation et de désérialisation d’un document depuis et vers la mémoire sont transparents pour l’application.  L’application appelle une méthode de sérialiseur « en écriture » pour enregistrer le document, tandis qu’une méthode de désérialiseur « en lecture » accède au magasin de données pour recréer l’instance d’origine en mémoire.  Le format spécifique de stockage des données ne concerne généralement pas l’application tant que les processus de sérialisation et de désérialisation recréent le document d’origine.
 
-Les applications fournissent souvent plusieurs options de sérialisation qui permettent à l’utilisateur d’enregistrer des documents sur différents médias ou dans un format différent.  Par exemple, une application peut proposer des options « Enregistrer sous » pour stocker un document dans un fichier sur disque, une base de données ou un service web.  De même, différents sérialiseurs peuvent stocker le document sous divers formats, tels que les formats HTML, RTF, XML ou XPS, ou encore un format tiers.  Pour l’application, la sérialisation définit une interface qui isole les détails du média de stockage dans l’implémentation de chaque sérialiseur spécifique.  Outre les avantages de l’encapsulation des détails de stockage, le .NET Framework <xref:System.Windows.Documents.Serialization> [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] offrent plusieurs autres fonctionnalités importantes.
+Les applications fournissent souvent plusieurs options de sérialisation qui permettent à l’utilisateur d’enregistrer des documents sur différents médias ou dans un format différent.  Par exemple, une application peut proposer des options « Enregistrer sous » pour stocker un document dans un fichier sur disque, une base de données ou un service web.  De même, différents sérialiseurs peuvent stocker le document sous divers formats, tels que les formats HTML, RTF, XML ou XPS, ou encore un format tiers.  Pour l’application, la sérialisation définit une interface qui isole les détails du média de stockage dans l’implémentation de chaque sérialiseur spécifique.  Outre les avantages de l’encapsulation des détails de stockage, le .NET Framework <xref:System.Windows.Documents.Serialization> API fournissent plusieurs autres fonctionnalités importantes.
 
 ### <a name="features-of-net-framework-30-document-serializers"></a>Fonctionnalités des sérialiseurs de documents .NET Framework 3.0
 
@@ -88,4 +88,4 @@ Les sérialiseurs de plug-ins et les sérialiseurs liés utilisent les mêmes m�
 - <xref:System.Windows.Xps.Packaging.XpsDocument>
 - [Documents dans WPF](documents-in-wpf.md)
 - [Vue d’ensemble de l’impression](printing-overview.md)
-- [XML Paper Specification : vue d’ensemble](https://go.microsoft.com/fwlink?LinkID=106246)
+- [XML Paper Specification : Vue d’ensemble](https://go.microsoft.com/fwlink?LinkID=106246)

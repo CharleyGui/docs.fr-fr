@@ -11,15 +11,15 @@ helpviewer_keywords:
 - remotely surveying printer status [WPF]
 - status [WPF], printers [WPF], surveying remotely
 ms.assetid: d6324759-8292-4c23-9584-9c708887dc94
-ms.openlocfilehash: da2576696b514dca882636125cfb3e31a82d7f6e
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 4140152079b93e3c0a3d5fcda0e1b2c6f9fb89a4
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878200"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859865"
 ---
 # <a name="how-to-remotely-survey-the-status-of-printers"></a>Procédure : Observer à distance l’état d’imprimantes
-Dans les moyennes et grandes entreprises, il peut arriver à tout moment que plusieurs imprimantes ne fonctionnent pas en raison d’un bourrage papier, d’un manque de papier ou d’un autre problème. L’ensemble des propriétés de l’imprimante exposé dans le [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)] du Microsoft .NET Framework fournissent un moyen de mener une enquête rapide de l’état des imprimantes.  
+Dans les moyennes et grandes entreprises, il peut arriver à tout moment que plusieurs imprimantes ne fonctionnent pas en raison d’un bourrage papier, d’un manque de papier ou d’un autre problème. L’ensemble des propriétés de l’imprimante exposé dans l’API de Microsoft .NET Framework fournissent un moyen pour mener une enquête rapide de l’état des imprimantes.  
   
 ## <a name="example"></a>Exemple  
  Voici les principales étapes à suivre pour créer ce type d’utilitaire.  

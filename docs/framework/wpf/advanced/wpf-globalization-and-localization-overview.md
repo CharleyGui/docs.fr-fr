@@ -5,12 +5,12 @@ helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: 374ab546cb0ba7a4b1fd789b13aca0158f22f686
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 6bccff6bf3bb061a430a9105d99f2fee3511c7fd
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662901"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859903"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Vue d’ensemble de la globalisation et de la localisation WPF
 
@@ -82,13 +82,13 @@ Quand vous localisez un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2s
 
 Lorsque vous développez un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application, le processus de génération pour la localisation est la suivante :
 
-- Le développeur crée et globalise le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application. Dans le fichier projet, le développeur définit `<UICulture>en-US</UICulture>` afin que lorsque l’application est compilée, un assembly principal indépendant de la langue est généré. Cet assembly a un fichier .resources.dll satellite qui contient toutes les ressources localisables. Si vous le souhaitez, vous pouvez conserver la langue source dans l’assembly principal, car notre localisation [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] prennent en charge l’extraction à partir de l’assembly principal.
+- Le développeur crée et globalise le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application. Dans le fichier projet, le développeur définit `<UICulture>en-US</UICulture>` afin que lorsque l’application est compilée, un assembly principal indépendant de la langue est généré. Cet assembly a un fichier .resources.dll satellite qui contient toutes les ressources localisables. Si vous le souhaitez, vous pouvez conserver la langue source dans l’assembly principal, car nos API de localisation prennent en charge l’extraction à partir de l’assembly principal.
 
 - Lorsque le fichier est compilé dans la build, le [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] est converti en formulaire BAML de XAML. Culturellement neutre `MyDialog.exe` et la culture dépendante (en anglais) `MyDialog.resources.dll` sont publiés pour le client anglophone.
 
 ### <a name="localization-workflow"></a>Flux du travail de localisation
 
-Le processus de localisation commence après le non localisé `MyDialog.resources.dll` fichier est généré. Le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] éléments et les propriétés dans votre original [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] sont extraits à partir du formulaire BAML de XAML en paires clé-valeur à l’aide de la [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] sous <xref:System.Windows.Markup.Localizer>. Les localiseurs utilisent les paires clé-valeur pour localiser l’application. Vous pouvez générer un nouveau fichier .resource.dll à partir des nouvelles valeurs une fois la localisation terminée.
+Le processus de localisation commence après le non localisé `MyDialog.resources.dll` fichier est généré. Le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] éléments et les propriétés dans votre original [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] sont extraits à partir du formulaire BAML de XAML en paires clé-valeur à l’aide de l’API sous <xref:System.Windows.Markup.Localizer>. Les localiseurs utilisent les paires clé-valeur pour localiser l’application. Vous pouvez générer un nouveau fichier .resource.dll à partir des nouvelles valeurs une fois la localisation terminée.
 
 Les clés des paires clé-valeur sont `x:Uid` valeurs placées par le développeur dans la version d’origine [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Ces `x:Uid` valeurs permettent à l’API suivre et de fusionner les modifications qui interviennent entre le développeur et le localisateur lors de la localisation. Par exemple, si le développeur modifie le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] une fois que le localisateur a commencé la localisation, vous pouvez fusionner les modifications des développements avec le travail de localisation terminé afin que le travail réalisé en traduction est perdue.
 
@@ -130,9 +130,9 @@ La propriété Window précédente redimensionne automatiquement la fenêtre en 
 
 `<Grid x:Uid="Grid_1">`
 
-<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> les propriétés sont nécessaires afin que [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] localisation [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] fonctionne correctement.
+<xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> les propriétés sont nécessaires afin que [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] localisation API fonctionne correctement.
 
-Elles sont utilisées par [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] localisation [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] pour suivre les modifications entre le développement et la localisation de la [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> propriétés vous permettent de fusionner une version plus récente de la [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] avec une localisation plus ancienne de la [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Vous ajoutez un <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> propriété en exécutant `msbuild -t:updateuid RunDialog.csproj` dans un interpréteur de commandes. C’est la méthode recommandée de l’ajout <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> propriétés, car les ajouter manuellement est généralement long et moins précis. Vous pouvez vous assurer que <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> propriétés sont correctement définies en exécutant `msbuild -t:checkuid RunDialog.csproj`.
+Elles sont utilisées par [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] localisation API pour suivre les modifications entre le développement et la localisation de la [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> propriétés vous permettent de fusionner une version plus récente de la [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] avec une localisation plus ancienne de la [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Vous ajoutez un <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> propriété en exécutant `msbuild -t:updateuid RunDialog.csproj` dans un interpréteur de commandes. C’est la méthode recommandée de l’ajout <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> propriétés, car les ajouter manuellement est généralement long et moins précis. Vous pouvez vous assurer que <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> propriétés sont correctement définies en exécutant `msbuild -t:checkuid RunDialog.csproj`.
 
 Le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] est structuré à l’aide de la <xref:System.Windows.Controls.Grid> contrôle, qui est un contrôle très utile pour tirer parti de la disposition automatique dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Notez que la boîte de dialogue est divisée en trois lignes et cinq colonnes. Pas une des définitions de ligne et de colonne a une taille fixe ; Par conséquent, le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] éléments sont positionnés dans chaque cellule peuvent s’adapter aux augmentations et diminutions de taille lors de la localisation.
 
@@ -178,26 +178,26 @@ Après avoir généré l’application, la première étape de la localisation e
 
 Utilisez votre éditeur CSV préféré prenant en charge Unicode pour éditer ce fichier. Filtrez toutes les entrées avec la catégorie de localisation « None ». Vous devez voir les entrées suivantes :
 
-|Clé de la ressource|Catégorie de localisation|Value|
+|Clé de la ressource|Catégorie de localisation|Valeur|
 |-|-|-|
 |Button_1:System.Windows.Controls.Button.$Content|Bouton|OK|
 |Button_2:System.Windows.Controls.Button.$Content|Bouton|Annuler|
 |Button_3:System.Windows.Controls.Button.$Content|Bouton|Parcourir...|
 |ComboBox_1:System.Windows.Controls.ComboBox.$Content|ComboBox||
-|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Texte|Entrez le nom d’un programme, dossier, document ou ressource Internet, et Windows l’ouvrira pour vous.|
-|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Texte|Ouvrir :|
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|Entrez le nom d’un programme, dossier, document ou ressource Internet, et Windows l’ouvrira pour vous.|
+|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Text|Ouvrir :|
 |Window_1:System.Windows.Window.Title|Titre|Exécuter|
 
 La Localisation de l’application en allemand nécessiterait les traductions suivantes :
 
-|Clé de la ressource|Catégorie de localisation|Value|
+|Clé de la ressource|Catégorie de localisation|Valeur|
 |-|-|-|
 |Button_1:System.Windows.Controls.Button.$Content|Bouton|OK|
 |Button_2:System.Windows.Controls.Button.$Content|Bouton|Abbrechen|
 |Button_3:System.Windows.Controls.Button.$Content|Bouton|Durchsuchen…|
 |ComboBox_1:System.Windows.Controls.ComboBox.$Content|ComboBox||
 |TextBlock_1:System.Windows.Controls.TextBlock.$Content|Texte|Geben Sie den Namen eines Programms, Ordners, Dokuments oder einer Internetresource an.|
-|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Texte|Öffnen :|
+|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Text|Öffnen :|
 |Window_1:System.Windows.Window.Title|Titre|Exécuter|
 
 **Générer**
@@ -267,9 +267,9 @@ Dans de nombreux cas, le contenu peut être ambigu et difficile à traduire. Le 
 
 Ce commentaire est associé au contenu de TextBlock_1 et dans le cas de l’outil LocBaml (consultez [localiser une Application](how-to-localize-an-application.md)), il peut être consulté dans la colonne 6 de la ligne TextBlock_1 dans le fichier de sortie .csv :
 
-|Clé de la ressource|Category|Lisible|Modifiable|Commentaire|Value|
+|Clé de la ressource|Catégorie|Lisible|Modifiable|Commentaire|`Value`|
 |-|-|-|-|-|-|
-|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Texte|TRUE|TRUE|Ce caractère est utilisé comme règle de décoration.|&#124;|
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|TRUE|TRUE|Ce caractère est utilisé comme règle de décoration.|&#124;|
 
 Les commentaires peuvent être placés sur le contenu ou la propriété de n’importe quel élément en utilisant la syntaxe suivante :
 
@@ -285,7 +285,7 @@ En plus des attributs Modifiabilité et une meilleure lisibilité [!INCLUDE[TLA2
 
 [!code-xaml[LocalizationComAtt#LocalizationAttributesOverridden](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizationComAtt/CSharp/Attributes.xaml#localizationattributesoverridden)]
 
-La localisation par défaut des attributs qui [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit peut également être remplacée par le biais de code, vous pouvez définir correctement les valeurs par défaut adéquates pour les contrôles personnalisés. Par exemple :
+La localisation par défaut des attributs qui [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit peut également être remplacée par le biais de code, vous pouvez définir correctement les valeurs par défaut adéquates pour les contrôles personnalisés. Par exemple :
 
 ```csharp
 [Localizability(Readability = Readability.Readable, Modifiability=Modifiability.Unmodifiable, LocalizationCategory.None)]
