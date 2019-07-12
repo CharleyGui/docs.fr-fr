@@ -6,12 +6,12 @@ helpviewer_keywords:
 - client-side UI Automation provider, implementation
 - provider implementation, UI Automation
 ms.assetid: 3584c0a1-9cd0-4968-8b63-b06390890ef6
-ms.openlocfilehash: 9e3f0941d2fd92b8657d2d9df5b050e7793eb1d1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 02d77dfeb7a00292639131cad72cff7e079704c5
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647215"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67802222"
 ---
 # <a name="client-side-ui-automation-provider-implementation"></a>Implémentation de fournisseur UI Automation côté client
 > [!NOTE]
@@ -23,7 +23,7 @@ ms.locfileid: "64647215"
   
  Toutefois, les contrôles plus anciens tels que ceux de [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] et [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] ne prennent pas directement en charge [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. En effet, ces contrôles sont traités par des fournisseurs qui existent dans le processus client et obtiennent des informations sur les contrôles à l’aide de la communication entre processus. C’est le cas, par exemple, avec la surveillance des messages de fenêtres à destination et en provenance des contrôles. Ces fournisseurs côté client sont parfois appelés des proxies.  
   
- [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)] prévoit des fournisseurs pour l’édition standard [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] et contrôles Windows Forms. En outre, un fournisseur de secours assure une prise en charge [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] partielle pour les contrôles non traités par un autre fournisseur côté serveur ou un proxy, mais disposant d’une implémentation de [!INCLUDE[TLA#tla_aa](../../../includes/tlasharptla-aa-md.md)] . Tous ces fournisseurs sont automatiquement chargés et disponibles pour les applications clientes.  
+ [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)] prévoit des fournisseurs pour l’édition standard [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] et contrôles Windows Forms. En outre, un fournisseur de secours assure partielle [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] prend en charge à n’importe quel contrôle qui n’est pas pris en charge par un autre fournisseur côté serveur ou proxy, mais dispose d’une implémentation de Microsoft Active Accessibility. Tous ces fournisseurs sont automatiquement chargés et disponibles pour les applications clientes.  
   
  Pour plus d’informations sur la prise en charge de [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] et contrôles Windows Forms, consultez [UI Automation Support for Standard Controls](../../../docs/framework/ui-automation/ui-automation-support-for-standard-controls.md).  
   

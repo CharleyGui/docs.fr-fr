@@ -6,12 +6,12 @@ helpviewer_keywords:
 - user interface, see UI
 - accessibility, UI automation
 ms.assetid: 65847654-9994-4a9e-b36d-2dd5d998770b
-ms.openlocfilehash: 06cbc82f3636c4063b445a0ccbe871e0be1dd847
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 02700c75152c32ebee3a0898de1e322ddf9b6e17
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032394"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67802232"
 ---
 # <a name="ui-automation-overview"></a>Vue d'ensemble d'UI Automation
 > [!NOTE]
@@ -28,7 +28,7 @@ ms.locfileid: "62032394"
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] fournit des fonctionnalités complètes dans [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)], [!INCLUDE[TLA#tla_winxp](../../../includes/tlasharptla-winxp-md.md)]et [!INCLUDE[TLA2#tla_winnetsvrfam](../../../includes/tla2sharptla-winnetsvrfam-md.md)].  
   
- Les fournisseurs UI Automation offrent une prise en charge pour les applications clientes [!INCLUDE[TLA#tla_aa](../../../includes/tlasharptla-aa-md.md)] via un service de liaison intégré.  
+ Fournisseurs UI Automation offrent une prise en charge pour les applications clientes Microsoft Active Accessibility, via un service de liaison intégré.  
   
 <a name="Providers_and_Clients"></a>   
 ## <a name="providers-and-clients"></a>Fournisseurs et clients  
@@ -43,7 +43,7 @@ ms.locfileid: "62032394"
   
  Du point de vue des développeurs de logiciels, il existe deux façons d’utiliser [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]: pour créer une prise en charge pour les contrôles personnalisés (à l’aide de l’API fournisseur) et pour créer des applications qui utilisent le noyau [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pour communiquer avec les éléments d’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] (à l’aide de l’API client). Selon votre objectif, reportez-vous à différentes parties de cette documentation. Les sections suivantes vous permettront d’approfondir les concepts et d’obtenir des connaissances pratiques.  
   
-|Section|Sujet|Public|  
+|Section|Sujet|Audience|  
 |-------------|--------------------|--------------|  
 |[Notions de base UI Automation](../../../docs/framework/ui-automation/index.md) (cette section)|Présentation générale des concepts.|Tout le monde.|  
 |[Fournisseurs UI Automation pour le code managé](../../../docs/framework/ui-automation/ui-automation-providers-for-managed-code.md)|Présentations et rubriques « Comment » destinées à vous aider à utiliser l’API du fournisseur.|Développeurs de contrôles.|  

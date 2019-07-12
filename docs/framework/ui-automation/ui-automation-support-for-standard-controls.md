@@ -5,12 +5,12 @@ helpviewer_keywords:
 - controls, UI Automation support for
 - UI Automation, support for standard controls
 ms.assetid: 3770ea8a-2655-4add-9c59-fe0610ad5084
-ms.openlocfilehash: 3fde9779205ea7d0902ddd99ed192f097a159d2c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 641fc3f8dfca3ff6506354c076b98cc88073a1b7
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59221477"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67802119"
 ---
 # <a name="ui-automation-support-for-standard-controls"></a>Prise en charge d'UI Automation pour les contrôles standard
 > [!NOTE]
@@ -44,13 +44,13 @@ ms.locfileid: "59221477"
 |Modifier|Document|  
 |Modifier|Modifier|  
 |SysLink|Lien hypertexte|  
-|Statique|Texte|  
+|statique|Text|  
 |Statique|Image|  
 |SysIPAddress32|Personnalisé|  
 |SysHeader32|Header/HeaderItem|  
 |SysListView32|DataGrid|  
-|SysListView32|Liste|  
-|ListBox|Liste|  
+|SysListView32|Énumérer|  
+|ListBox|Énumérer|  
 |ListBox|ListItem|  
 |#32768|Menu|  
 |#32768|MenuItem|  
@@ -136,7 +136,7 @@ ms.locfileid: "59221477"
 |VscrollBar|  
 |Navigateur web|  
   
- Les contrôles suivants sont exposés à [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] uniquement via leur prise en charge de [!INCLUDE[TLA#tla_aa](../../../includes/tlasharptla-aa-md.md)]. Certaines fonctionnalités ne sont peut-être pas disponibles.  
+ Les contrôles suivants sont exposés à [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] uniquement par le biais de leur prise en charge pour Microsoft Active Accessibility. Certaines fonctionnalités ne sont peut-être pas disponibles.  
   
 |Nom du contrôle|  
 |------------------|  
