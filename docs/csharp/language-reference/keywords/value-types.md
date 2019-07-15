@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 9907811a43f408020e2ee76621d4975a53945570
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: fd865f2a9c4a6d2c17f79a21866103a2db982e5f
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67424033"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661589"
 ---
 # <a name="value-types-c-reference"></a>Types valeur (référence C#)
 
@@ -41,7 +41,7 @@ Chaque type valeur a un constructeur implicite sans paramètre qui initialise la
 Les *types simples* sont un ensemble de types struct prédéfinis fournis par C#, composé des types suivants :
 
 - [Types intégraux](../builtin-types/integral-numeric-types.md) : types numériques entiers et type [char](char.md)
-- [Types virgule flottante](floating-point-types-table.md)
+- [Types virgule flottante](../builtin-types/floating-point-numeric-types.md)
 - [bool](bool.md)
 
 Les types simples sont identifiés par des mots clés, qui sont simplement des alias de types struct prédéfinis dans l’espace de noms <xref:System>. Par exemple, [int](../builtin-types/integral-numeric-types.md) est un alias de <xref:System.Int32?displayProperty=nameWithType>. Pour connaître la liste complète des alias, voir [Tableau des types intégrés](built-in-types-table.md).
@@ -93,7 +93,7 @@ L’opérateur [new](../operators/new-operator.md) permet d’appeler le constru
 Avec les types définis par l’utilisateur, l’opérateur [new](../operators/new-operator.md) permet d’appeler le constructeur sans paramètre. Par exemple, l’instruction suivante appelle le constructeur sans paramètre du struct `Point` :
 
 ```csharp
-Point p = new Point(); // Invoke parameterless constructor for the struct.
+var p = new Point(); // Invoke parameterless constructor for the struct.
 ```
 
 Après cet appel, le struct est considéré comme définitivement assigné ; autrement dit, tous ses membres sont initialisés avec leurs valeurs par défaut.

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - variables [C#], value types
 - constructors [C#], parameterless constructor
 - types [C#], parameterless constructor return values
-ms.openlocfilehash: dfab5107d4a0ad14c3ffbfc6a5f3c4317b44d17c
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: ec5fb4681f0e0562c5aefdf336841416f96bdf98
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67424224"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661415"
 ---
 # <a name="default-values-table-c-reference"></a>Tableau des valeurs par défaut (référence C#)
 
@@ -28,10 +28,10 @@ Le tableau suivant présente les valeurs par défaut des [types valeur](value-ty
 |[bool](bool.md)|`false`|
 |[byte](../builtin-types/integral-numeric-types.md)|0|
 |[char](char.md)|'\0'|
-|[decimal](decimal.md)|0M|
-|[double](double.md)|0.0D|
+|[decimal](../builtin-types/floating-point-numeric-types.md)|0M|
+|[double](../builtin-types/floating-point-numeric-types.md)|0.0D|
 |[enum](enum.md)|Valeur produite par l’expression `(E)0`, où `E` est l’identificateur de l’enum.|
-|[float](float.md)|0.0F|
+|[float](../builtin-types/floating-point-numeric-types.md)|0.0F|
 |[int](../builtin-types/integral-numeric-types.md)|0|
 |[long](../builtin-types/integral-numeric-types.md)|0L|
 |[sbyte](../builtin-types/integral-numeric-types.md)|0|

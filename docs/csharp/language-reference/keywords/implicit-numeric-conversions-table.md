@@ -8,12 +8,12 @@ helpviewer_keywords:
 - numeric conversions [C#], implicit
 - types [C#], implicit numeric conversions
 ms.assetid: 72eb5a94-0491-48bf-8032-d7ebfdfeb8d8
-ms.openlocfilehash: 9c3efe1dbea355e8bc00ef44e08efcc9d0e0bdca
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 516505ccacfd2a8a5c275b0de033e1316fa06d3a
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67424180"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661340"
 ---
 # <a name="implicit-numeric-conversions-table-c-reference"></a>Tableau des conversions numériques implicites (référence C#)
 
@@ -30,11 +30,11 @@ Le tableau suivant montre les conversions implicites prédéfinies entre les typ
 |[uint](../builtin-types/integral-numeric-types.md)|`long`, `ulong`, `float`, `double` ou `decimal`|  
 |[long](../builtin-types/integral-numeric-types.md)|`float`, `double`ou `decimal`|  
 |[ulong](../builtin-types/integral-numeric-types.md)|`float`, `double`ou `decimal`|  
-|[float](float.md)|`double`|  
+|[float](../builtin-types/floating-point-numeric-types.md)|`double`|  
   
 ## <a name="remarks"></a>Remarques  
 
-- Un [type intégral](../builtin-types/integral-numeric-types.md) est implicitement convertible en [type à virgule flottante](floating-point-types-table.md).
+- Un [type intégral](../builtin-types/integral-numeric-types.md) est implicitement convertible en [type à virgule flottante](../builtin-types/floating-point-numeric-types.md).
 
 - La précision, et non la magnitude, peut être perdue dans les conversions de `int`, `uint`, `long` ou `ulong` à `float`, et de `long` ou `ulong` à `double`.  
   
@@ -58,7 +58,7 @@ Pour plus d’informations sur les conversions implicites, consultez la section 
 - [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Types intégraux](../builtin-types/integral-numeric-types.md)
-- [Tableau des types à virgule flottante](floating-point-types-table.md)
+- [Tableau des types à virgule flottante](../builtin-types/floating-point-numeric-types.md)
 - [Tableaux des types intégrés](built-in-types-table.md)
 - [Tableau des conversions numériques explicites](explicit-numeric-conversions-table.md)
 - [Cast et conversions de types](../../programming-guide/types/casting-and-type-conversions.md)
