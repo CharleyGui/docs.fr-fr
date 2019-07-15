@@ -2,12 +2,12 @@
 title: Moderniser les Applications .NET existantes avec Azure Cloud et les conteneurs Windows (2nd edition)
 description: Apprenez à migrer et moderniser les applications existantes vers le cloud Azure et les conteneurs avec ce livre électronique.
 ms.date: 04/28/2018
-ms.openlocfilehash: 79e06c64867a7e1bb6c5d7da718886a713cb3c4c
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 4e632fcfbb8904a9def3fdad992286055c5df4f0
+ms.sourcegitcommit: 6472349821dbe202d01182bc2cfe9d7176eaaa6c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834009"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67870596"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Moderniser des applications .NET existantes avec le cloud Azure et les conteneurs Windows (2nd edition)
 
@@ -44,7 +44,7 @@ Participants et réviseurs :
 > **Unai Zorrilla**, développeur en chef, Plain Concepts  
 > **Javier Valero**, chef des opérations chez Grupo Solutio  
 
-## <a name="introduction"></a>Introduction
+## <a name="introduction"></a>Présentation
 
 Lorsque vous décidez de moderniser vos applications web ou les services et les déplacer vers le cloud, vous ne sont pas nécessairement de remanier complètement vos applications. Remaniement d’une application à l’aide d’une approche avancée comme celle des microservices n’est pas toujours une option en raison des restrictions de coûts et de temps. Selon le type d’application, remaniement d’une application également peut-être pas nécessaire. Pour optimiser la rentabilité de la stratégie de migration vers le cloud de votre organisation, il est important de prendre en compte les besoins de votre activité et les exigences de vos applications. Vous devez déterminer :
 
@@ -98,7 +98,7 @@ Le tableau 1-1 décrit les principaux avantages et les raisons de choisir chaque
 | **Avantages**|
 | <li>Aucun code remaniement, aucune nouvelle <li> Moins de travail pour une migration rapide <li> Plus petit dénominateur commun pris en charge dans Azure <li> Garanties de disponibilité de base <li> Après être passé au cloud, il est plus facile de moderniser encore plus | <li> Aucun remaniement <li> Modifications de code/configuration minimale <li> Déploiement amélioré et meilleure agilité de DevOps pour la production de nouvelles versions grâce aux conteneurs <li> Densité accrue et coûts de déploiement inférieurs <li> Portabilité des applications et des dépendances <li> Flexibilité des cibles d’hôte : Les approches PaaS ou IaaS | <li> Architecte pour le cloud, vous obtenez de meilleurs à partir du cloud mais le nouveau code est nécessaire. <li> Approches natives pour le cloud avec des microservices <li> Critiques des applications modernes, résilientes sur le cloud hyper évolutif <li> Services entièrement gérés <li> Optimisé pour la mise à l’échelle <li> Optimisé pour une agilité autonome par sous-système <li> S’appuyant sur le déploiement et sur DevOps |
 | **Difficultés éventuelles** |
-| <li> Valeur cloud inférieure, autre que la variation des dépenses d’exploitation ou la fermeture de centres de données <li> Peu est géré : Aucun système d’exploitation ou la mise à jour corrective des intergiciels (middleware) ; peut utiliser des solutions d’infrastructure, comme Terraform, Spinnaker ou Puppet | <li> Mise en conteneur est une étape supplémentaire dans la courbe d’apprentissage pour les développeurs et les opérations informatiques <li> Pipelines de DevOps et CI/CD est généralement « » de cette approche. Si ce n’est pas actuellement présents dans la culture de l’organisation, il peut être un défi supplémentaire| <li> Nécessite de reconcevoir l’architecture pour les applications natives cloud et les architectures de microservice et nécessite généralement du code significatif refactorisation ou une réécriture de modernisation (temps et budget accrus) <li> Pipelines de DevOps et CI/CD est généralement « » de cette approche. Si ce n’est pas actuellement présents dans la culture de l’organisation, il peut être un défi supplémentaire|
+| <li> Valeur cloud inférieure, autre que la variation des dépenses d’exploitation ou la fermeture de centres de données <li> Peu est géré : Aucun système d’exploitation ou la mise à jour corrective des intergiciels (middleware) ; peut utiliser des solutions d’infrastructure, comme Terraform, Spinnaker ou Puppet | <li> Mise en conteneur est une étape supplémentaire dans la courbe d’apprentissage pour les développeurs et les opérations informatiques <li> DevOps et pipelines CI/CD sont généralement « incontournables » pour cette approche. Si ce n’est pas actuellement présents dans la culture de l’organisation, il peut être un défi supplémentaire| <li> Nécessite de reconcevoir l’architecture pour les applications natives cloud et les architectures de microservice et nécessite généralement du code significatif refactorisation ou une réécriture de modernisation (temps et budget accrus)|
 > **Tableau 1-1.** Avantages et difficultés éventuelles des parcours de modernisation pour les applications et les services .NET existants
 
 ### <a name="key-technologies-and-architectures-by-maturity-level"></a>Technologies et architectures principales par niveau de maturité
