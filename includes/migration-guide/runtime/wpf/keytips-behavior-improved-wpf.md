@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 946096cb9510ca12bbd2cecd00099142308b072a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: d7cf32eb369e2607ee540d7188cc680b9506c261
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803824"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67856938"
 ---
 ### <a name="keytips-behavior-improved-in-wpf"></a>Amélioration du comportement des touches d’accès dans WPF
 
@@ -15,3 +15,4 @@ ms.locfileid: "59803824"
 |Portée|Microsoft Edge|
 |Version|4.7.2|
 |Type|Runtime|
+

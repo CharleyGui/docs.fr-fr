@@ -9,12 +9,12 @@ helpviewer_keywords:
 - what's new [.NET Framework]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 19d9752e1c7cfbc0a7c85e7cf8053c09c5baca7a
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: da73df97524b9e394fac795daf14a3f0fb1f4e3d
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425578"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661386"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Nouveautés du .NET Framework dans le domaine de l’accessibilité
 
@@ -257,39 +257,39 @@ Dans .NET Framework 4.8, WPF expose ces deux propriétés à UIAutomation dans 
 
 - En utilisant des propriétés de dépendance.
 
-   WPF comprend deux nouvelles propriétés de dépendance : <xref:System.Windows.Automation.AutomationProperties.SizeOfSet?displayProperty=nameWithType> et <xref:System.Windows.Automation.AutomationProperties.PositionInSet?displayProperty=nameWithType>. Un développeur peut utiliser du code XAML pour définir les valeurs :
+  WPF comprend deux nouvelles propriétés de dépendance : <xref:System.Windows.Automation.AutomationProperties.SizeOfSet?displayProperty=nameWithType> et <xref:System.Windows.Automation.AutomationProperties.PositionInSet?displayProperty=nameWithType>. Un développeur peut utiliser du code XAML pour définir les valeurs :
 
-   ```xaml
-   <Button AutomationProperties.SizeOfSet="3"
-     AutomationProperties.PositionInSet="1">Button 1</Button>
+  ```xaml
+  <Button AutomationProperties.SizeOfSet="3"
+    AutomationProperties.PositionInSet="1">Button 1</Button>
 
-   <Button AutomationProperties.SizeOfSet="3"
-     AutomationProperties.PositionInSet="2">Button 2</Button>
+  <Button AutomationProperties.SizeOfSet="3"
+    AutomationProperties.PositionInSet="2">Button 2</Button>
 
-   <Button AutomationProperties.SizeOfSet="3"
-     AutomationProperties.PositionInSet="3">Button 3</Button>
-   ```
+  <Button AutomationProperties.SizeOfSet="3"
+    AutomationProperties.PositionInSet="3">Button 3</Button>
+  ```
 
 - En substituant les méthodes virtuelles AutomationPeer.
 
-   Les méthodes virtuelles <xref:System.Windows.Automation.Peers.AutomationPeer.GetSizeOfSetCore> et <xref:System.Windows.Automation.Peers.AutomationPeer.GetPositionInSetCore> ont été ajoutées à la classe AutomationPeer. Un développeur peut fournir des valeurs pour `SizeOfSet` et `PositionInSet` en remplaçant ces méthodes, comme dans l’exemple suivant :
+  Les méthodes virtuelles <xref:System.Windows.Automation.Peers.AutomationPeer.GetSizeOfSetCore> et <xref:System.Windows.Automation.Peers.AutomationPeer.GetPositionInSetCore> ont été ajoutées à la classe AutomationPeer. Un développeur peut fournir des valeurs pour `SizeOfSet` et `PositionInSet` en remplaçant ces méthodes, comme dans l’exemple suivant :
 
-   ```csharp
-   public class MyButtonAutomationPeer : ButtonAutomationPeer
-   {
-      protected override int GetSizeOfSetCore()
-      {
-         // Call into your own logic to provide a value for SizeOfSet
-         return CalculateSizeOfSet();
-      }
+  ```csharp
+  public class MyButtonAutomationPeer : ButtonAutomationPeer
+  {
+    protected override int GetSizeOfSetCore()
+    {
+        // Call into your own logic to provide a value for SizeOfSet
+        return CalculateSizeOfSet();
+    }
 
-      protected override int GetPositionInSetCore()
-      {
-         // Call into your own logic to provide a value for PositionInSet
-         return CalculatePositionInSet();
-      }
-   }
-   ```
+    protected override int GetPositionInSetCore()
+    {
+        // Call into your own logic to provide a value for PositionInSet
+        return CalculatePositionInSet();
+    }
+  }
+  ```
 
 En outre, les éléments des instances <xref:System.Windows.Controls.ItemsControl> fournissent automatiquement une valeur pour ces propriétés, sans autre action nécessaire de la part du développeur. Si un <xref:System.Windows.Controls.ItemsControl> est regroupé, la collection de groupes est représentée comme un ensemble, et chaque groupe est comptabilisé comme un ensemble distinct. Chaque élément du groupe fournit sa position à l’intérieur de celui-ci, ainsi que la taille du groupe. Les valeurs automatiques ne sont pas affectées par la virtualisation. Même si un élément n’est pas réalisé, il est comptabilisé dans la taille totale de l’ensemble, et affecte la position de ses éléments frères dans l’ensemble.
 
@@ -447,10 +447,10 @@ Pour prendre en charge les zones dynamiques, les API suivantes ont été ajouté
 
 - Énumération <xref:System.Windows.Automation.AutomationLiveSetting?displayProperty=nameWithType>, qui définit les valeurs **LiveSetting** possibles suivantes :
 
-   - <xref:System.Windows.Automation.AutomationLiveSetting.Off?displayProperty=nameWithType>. L’élément n’envoie pas de notification si le contenu de la zone dynamique a changé.
-   - <xref:System.Windows.Automation.AutomationLiveSetting.Polite?displayProperty=nameWithType>. L’élément envoie des notifications qui ne provoquent pas d’interruption si le contenu de la zone dynamique a changé.
+  - <xref:System.Windows.Automation.AutomationLiveSetting.Off?displayProperty=nameWithType>. L’élément n’envoie pas de notification si le contenu de la zone dynamique a changé.
+  - <xref:System.Windows.Automation.AutomationLiveSetting.Polite?displayProperty=nameWithType>. L’élément envoie des notifications qui ne provoquent pas d’interruption si le contenu de la zone dynamique a changé.
 
-   - <xref:System.Windows.Automation.AutomationLiveSetting.Assertive?displayProperty=nameWithType>. L’élément envoie des notifications qui provoquent des interruptions si le contenu de la zone dynamique a changé.
+  - <xref:System.Windows.Automation.AutomationLiveSetting.Assertive?displayProperty=nameWithType>. L’élément envoie des notifications qui provoquent des interruptions si le contenu de la zone dynamique a changé.
 
 Vous pouvez créer une zone dynamique en définissant la propriété **AutomationProperties.LiveSetting** sur l’élément qui vous intéresse, comme indiqué dans l’exemple suivant :
 
@@ -478,81 +478,81 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 - Contrôle <xref:System.Windows.Controls.Expander>
 
-    L’élément visuel de focus pour le contrôle <xref:System.Windows.Controls.Expander> est désormais visible. Les éléments visuels de clavier pour les contrôles <xref:System.Windows.Controls.ComboBox>, <xref:System.Windows.Controls.ListBox> et <xref:System.Windows.Controls.RadioButton> sont également visibles. Par exemple :
+  L’élément visuel de focus pour le contrôle <xref:System.Windows.Controls.Expander> est désormais visible. Les éléments visuels de clavier pour les contrôles <xref:System.Windows.Controls.ComboBox>, <xref:System.Windows.Controls.ListBox> et <xref:System.Windows.Controls.RadioButton> sont également visibles. Par exemple :
 
-    Avant : 
+  Avant : 
 
-    ![Contrôle Expander avec focus avant les améliorations apportées à l’accessibilité](media/expander-before.png)
+  ![Contrôle Expander avec focus avant les améliorations apportées à l’accessibilité](media/expander-before.png)
 
-    Après : 
+  Après : 
 
-    ![Contrôle Expander avec focus après les améliorations apportées à l’accessibilité](media/expander-after.png)
+  ![Contrôle Expander avec focus après les améliorations apportées à l’accessibilité](media/expander-after.png)
 
 - Contrôles <xref:System.Windows.Controls.CheckBox> et <xref:System.Windows.Controls.RadioButton>
 
-    Le texte dans les contrôles <xref:System.Windows.Controls.CheckBox> et <xref:System.Windows.Controls.RadioButton> est désormais plus facile à voir quand il est sélectionné dans les thèmes à contraste élevé. Par exemple :
+  Le texte dans les contrôles <xref:System.Windows.Controls.CheckBox> et <xref:System.Windows.Controls.RadioButton> est désormais plus facile à voir quand il est sélectionné dans les thèmes à contraste élevé. Par exemple :
 
-    Avant : 
+  Avant : 
 
-    ![Case d’option à contraste élevé avec focus avant les améliorations apportées à l’accessibilité](media/radio-button-before.png)
+  ![Case d’option à contraste élevé avec focus avant les améliorations apportées à l’accessibilité](media/radio-button-before.png)
 
-    Après : 
+  Après : 
 
-    ![Case d’option à contraste élevé avec focus après les améliorations apportées à l’accessibilité](media/radio-button-after.png)
+  ![Case d’option à contraste élevé avec focus après les améliorations apportées à l’accessibilité](media/radio-button-after.png)
 
 - Contrôle <xref:System.Windows.Controls.ComboBox>
 
-    À compter de .NET Framework 4.7.1, la bordure d’un contrôle <xref:System.Windows.Controls.ComboBox> désactivé est de la même couleur que le texte désactivé. Par exemple :
+  À compter de .NET Framework 4.7.1, la bordure d’un contrôle <xref:System.Windows.Controls.ComboBox> désactivé est de la même couleur que le texte désactivé. Par exemple :
 
-    Avant : 
+  Avant : 
 
-     ![Texte et bordure d’un contrôle ComboBox désactivé avant les améliorations apportées à l’accessibilité](media/combo-disabled-before.png)
+  ![Texte et bordure d’un contrôle ComboBox désactivé avant les améliorations apportées à l’accessibilité](media/combo-disabled-before.png)
 
-    Après :   
+  Après :   
 
-     ![Texte et bordure d’un contrôle ComboBox désactivé après les améliorations apportées à l’accessibilité](media/combo-disabled-after.png)
+  ![Texte et bordure d’un contrôle ComboBox désactivé après les améliorations apportées à l’accessibilité](media/combo-disabled-after.png)
 
-    En outre, les boutons désactivés et actifs utilisent la couleur de thème correcte.
+  En outre, les boutons désactivés et actifs utilisent la couleur de thème correcte.
 
-    Avant :
+  Avant :
 
-    ![Couleurs de thème des boutons avant les améliorations apportées à l’accessibilité](media/button-themes-before.png) 
+  ![Couleurs de thème des boutons avant les améliorations apportées à l’accessibilité](media/button-themes-before.png) 
 
-    Après : 
+  Après : 
 
-    ![Couleurs de thème des boutons après les améliorations apportées à l’accessibilité](media/button-themes-after.png) 
+  ![Couleurs de thème des boutons après les améliorations apportées à l’accessibilité](media/button-themes-after.png) 
 
-    Enfin, dans .NET Framework 4.7 et versions antérieures, la définition du style d’un contrôle <xref:System.Windows.Controls.ComboBox> sur `Toolbar.ComboBoxStyleKey` rendait la flèche déroulante invisible. Ce problème est résolu depuis .NET Framework 4.7.1. Par exemple :
+  Enfin, dans .NET Framework 4.7 et versions antérieures, la définition du style d’un contrôle <xref:System.Windows.Controls.ComboBox> sur `Toolbar.ComboBoxStyleKey` rendait la flèche déroulante invisible. Ce problème est résolu depuis .NET Framework 4.7.1. Par exemple :
 
-    Avant : 
+  Avant : 
 
-    ![Toolbar.ComboBoxStyleKey avant les améliorations apportées à l’accessibilité](media/comboboxstylekey-before.png) 
+  ![Toolbar.ComboBoxStyleKey avant les améliorations apportées à l’accessibilité](media/comboboxstylekey-before.png) 
 
-    Après : 
+  Après : 
 
-    ![Toolbar.ComboBoxStyleKey après les améliorations apportées à l’accessibilité](media/comboboxstylekey-after.png) 
+  ![Toolbar.ComboBoxStyleKey après les améliorations apportées à l’accessibilité](media/comboboxstylekey-after.png) 
 
 - Contrôle <xref:System.Windows.Controls.DataGrid>
 
-    À compter de .NET Framework 4.7.1, la flèche d’indicateur de tri dans les contrôles <xref:System.Windows.Controls.DataGrid> utilise maintenant les couleurs de thème correctes. Par exemple :
+  À compter de .NET Framework 4.7.1, la flèche d’indicateur de tri dans les contrôles <xref:System.Windows.Controls.DataGrid> utilise maintenant les couleurs de thème correctes. Par exemple :
 
-    Avant : 
+  Avant : 
 
-    ![Flèche d’indicateur de tri avant les améliorations apportées à l’accessibilité](media/sort-indicator-before.png) 
+  ![Flèche d’indicateur de tri avant les améliorations apportées à l’accessibilité](media/sort-indicator-before.png) 
 
-    Après :   
+  Après :   
 
-    ![Flèche d’indicateur de tri après les améliorations apportées à l’accessibilité](media/sort-indicator-after.png) 
+  ![Flèche d’indicateur de tri après les améliorations apportées à l’accessibilité](media/sort-indicator-after.png) 
 
-    En outre, dans .NET Framework 4.7 et versions antérieures, le style de lien par défaut prenait une couleur incorrecte lorsque l’utilisateur pointait avec la souris dans des modes de contraste élevé. Ce problème est résolu depuis .NET Framework 4.7.1. De même, depuis .NET Framework 4.7.1, les colonnes de cases à cocher <xref:System.Windows.Controls.DataGrid> utilisent les couleurs attendues pour les commentaires de focus clavier.
+  En outre, dans .NET Framework 4.7 et versions antérieures, le style de lien par défaut prenait une couleur incorrecte lorsque l’utilisateur pointait avec la souris dans des modes de contraste élevé. Ce problème est résolu depuis .NET Framework 4.7.1. De même, depuis .NET Framework 4.7.1, les colonnes de cases à cocher <xref:System.Windows.Controls.DataGrid> utilisent les couleurs attendues pour les commentaires de focus clavier.
 
-    Avant : 
+  Avant : 
 
-    ![Style de lien par défaut DataGrid avant les améliorations apportées à l’accessibilité](media/default-link-style-before.png) 
+  ![Style de lien par défaut DataGrid avant les améliorations apportées à l’accessibilité](media/default-link-style-before.png) 
 
-    Après :    
+  Après :    
 
-    ![Style de lien par défaut DataGrid après les améliorations apportées à l’accessibilité](media/default-link-style-after.png) 
+  ![Style de lien par défaut DataGrid après les améliorations apportées à l’accessibilité](media/default-link-style-after.png) 
 
 Pour plus d’informations sur les améliorations apportées à l’accessibilité WPF dans .NET Framework 4.7.1, consultez [Améliorations apportées à l’accessibilité dans WPF](../migration-guide/retargeting/4.7-4.7.1.md#accessibility-improvements-in-wpf).
 
@@ -581,13 +581,13 @@ Voici quelques exemples de modifications du contraste élevé :
 
 - Le texte désactivé est plus facile à lire. Par exemple :
 
-    Avant :
+  Avant :
 
-    ![Texte désactivé avant les améliorations apportées à l’accessibilité](media/wf-disabled-before.png) 
+  ![Texte désactivé avant les améliorations apportées à l’accessibilité](media/wf-disabled-before.png) 
 
-    Après :
+  Après :
 
-    ![Texte désactivé après les améliorations apportées à l’accessibilité](media/wf-disabled-after.png) 
+  ![Texte désactivé après les améliorations apportées à l’accessibilité](media/wf-disabled-after.png) 
 
 - Améliorations du contraste élevé dans la boîte de dialogue Thread Exception (Exception de thread).
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 - text files [Visual Basic], reading
 - I/O [Visual Basic], reading text from files
 ms.assetid: 7d2109eb-f98a-4389-b43d-30f384aaa7d5
-ms.openlocfilehash: f3fecf521ca4a9397bacffbb084c4107af97f5b2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: fc96baaff3b70fcb32e19e2ce08bdb0187c86c01
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59345272"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67783202"
 ---
 # <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>Procédure pas à pas : Manipulation de fichiers à l’aide de méthodes du .NET Framework (Visual Basic)
 Cette procédure pas à pas illustre comment ouvrir et lire un fichier à l’aide de la classe <xref:System.IO.StreamReader>, vérifier si une tentative d’accès à un fichier est en cours, rechercher une chaîne dans un fichier lu avec une instance de la classe <xref:System.IO.StreamReader> et écrire dans un fichier à l’aide de la classe <xref:System.IO.StreamWriter>.  
@@ -30,7 +30,7 @@ Cette procédure pas à pas illustre comment ouvrir et lire un fichier à l’ai
 ## <a name="creating-the-application"></a>Création de l’application  
  Démarrez Visual Studio et commencez le projet par la création d’un formulaire qui permet à l’utilisateur d’écrire dans le fichier désigné.  
   
-#### <a name="to-create-the-project"></a>Pour créer le projet  
+### <a name="to-create-the-project"></a>Pour créer le projet  
   
 1. Dans le menu **Fichier**, sélectionnez **Nouveau projet**.  
   
@@ -51,7 +51,7 @@ Cette procédure pas à pas illustre comment ouvrir et lire un fichier à l’ai
 ## <a name="writing-to-the-file"></a>Écriture dans le fichier  
  Pour permettre l’écriture dans un fichier via l’application, utilisez la classe <xref:System.IO.StreamWriter>. La classe <xref:System.IO.StreamWriter> est conçue pour la sortie de caractères dans un encodage particulier, tandis que la classe <xref:System.IO.Stream> est conçue pour l’entrée et la sortie d’octets. Utilisez <xref:System.IO.StreamWriter> pour écrire des lignes d’informations dans un fichier texte standard. Pour plus d’informations sur la classe <xref:System.IO.StreamWriter>, consultez <xref:System.IO.StreamWriter>.  
   
-#### <a name="to-add-writing-functionality"></a>Pour ajouter une fonctionnalité d’écriture  
+### <a name="to-add-writing-functionality"></a>Pour ajouter une fonctionnalité d’écriture  
   
 1. Dans le menu **Affichage**, choisissez **Code** pour ouvrir l’éditeur de code.  
   
@@ -96,7 +96,7 @@ Cette procédure pas à pas illustre comment ouvrir et lire un fichier à l’ai
 |<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **Texte**|`GetEntries`<br /><br /> **Obtenir des entrées**|  
 |<xref:System.Windows.Forms.ComboBox>|**Name**<br /><br /> **Text**<br /><br /> **Activé**|`PickEntries`<br /><br /> **Sélectionner une entrée**<br /><br /> `False`|  
   
-#### <a name="to-populate-the-combo-box"></a>Pour remplir la zone de liste déroulante  
+### <a name="to-populate-the-combo-box"></a>Pour remplir la zone de liste déroulante  
   
 1. Le contrôle `PickEntries`<xref:System.Windows.Forms.ComboBox> permet d’afficher les dates auxquelles un utilisateur soumet une entrée. Ainsi, celui-ci peut sélectionner une entrée associée à une date déterminée. Créez un gestionnaire d’événements <xref:System.Windows.Forms.Control.Click> au bouton `GetEntries` et ajoutez le code suivant.  
   
@@ -104,7 +104,7 @@ Cette procédure pas à pas illustre comment ouvrir et lire un fichier à l’ai
   
 2. Pour tester votre code, appuyez sur F5 pour compiler l’application, puis cliquez sur **Obtenir des entrées**. Cliquez sur la flèche déroulante dans le <xref:System.Windows.Forms.ComboBox> pour afficher les dates d’entrée.  
   
-#### <a name="to-choose-and-display-individual-entries"></a>Pour sélectionner et afficher des entrées individuelles  
+### <a name="to-choose-and-display-individual-entries"></a>Pour sélectionner et afficher des entrées individuelles  
   
 1. Créez un gestionnaire d’événements <xref:System.Windows.Forms.Control.Click> pour le bouton `Display` et ajoutez le code suivant.  
   
@@ -123,7 +123,7 @@ Cette procédure pas à pas illustre comment ouvrir et lire un fichier à l’ai
 |<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **Text**<br /><br /> **Activé**|`EditEntry`<br /><br /> **Modifier l’entrée**<br /><br /> `False`|  
 |<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **Text**<br /><br /> **Activé**|`SubmitEdit`<br /><br /> **Envoyer la modification**<br /><br /> `False`|  
   
-#### <a name="to-enable-deletion-and-modification-of-entries"></a>Pour activer la suppression et la modification d’entrées  
+### <a name="to-enable-deletion-and-modification-of-entries"></a>Pour activer la suppression et la modification d’entrées  
   
 1. Ajoutez le code suivant à l’événement <xref:System.Windows.Forms.Control.Click> du bouton `Display`, après `DisplayEntry.Text = ReadString`.  
   

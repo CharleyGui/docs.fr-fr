@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 735278848cb7399e414a128afc650a0a1f882337
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 38dd0b33202b8e8f1708ebec689333bd5367c93f
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803874"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67857552"
 ---
 ### <a name="changing-the-isenabled-property-of-the-parent-of-a-textblock-control-affects-any-child-controls"></a>La modification de la propriété IsEnabled du parent d’un contrôle TextBlock affecte tous les contrôles enfants
 
@@ -16,3 +16,4 @@ ms.locfileid: "59803874"
 |Version|4.6.2|
 |Type|Runtime|
 |API affectées|<ul><li><xref:System.Windows.UIElement.IsEnabled?displayProperty=nameWithType></li></ul>|
+

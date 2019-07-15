@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a51738fa75ba2dd4574549fce2570df8231c4cae
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 7f551fbc194d2da2fdae6bcc7025c20b03aadda2
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59234922"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67859250"
 ---
 ### <a name="path-colon-checks-are-stricter"></a>Les vérifications des signes deux-points dans les chemins sont plus strictes
 
@@ -16,3 +16,4 @@ ms.locfileid: "59234922"
 |Version|4.6.2|
 |Type|Reciblage|
 |API affectées|<ul><li><xref:System.IO.Path.GetDirectoryName(System.String)?displayProperty=nameWithType></li><li><xref:System.IO.Path.GetPathRoot(System.String)?displayProperty=nameWithType></li></ul>|
+

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cbd599f7467c3b360bbe1c76a65abfdb840a1530
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: 0d8108ef1c5b815b42003c247b4ff39099b2361a
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59236641"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67803243"
 ---
 ### <a name="wpf-spawns-a-wisptisexe-process-which-can-freeze-the-mouse"></a>WPF génère un processus wisptis.exe qui peut figer la souris
 
@@ -15,3 +15,4 @@ ms.locfileid: "59236641"
 |Portée|Majeur|
 |Version|4.5.2|
 |Type|Runtime|
+

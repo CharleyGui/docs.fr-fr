@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: c45be261-2a9d-4c4e-9bd6-27f0931b7d25
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7238edb35e7fd69c0161adbc3b80b122575bbf75
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: f13a07be13294cc408cd381bef6eec1f9095365f
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690312"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67742462"
 ---
 # <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Procédure pas à pas : émission de code dans des scénarios de confiance partielle
 L’émission de réflexion utilise le même ensemble d’API en confiance totale ou partielle, mais certaines fonctionnalités nécessitent des autorisations spéciales dans le code avec confiance partielle. En outre, l’émission de réflexion a une fonctionnalité, des méthodes dynamiques hébergées anonymement, qui est conçue pour être utilisée avec une confiance partielle et par les assemblys transparents de sécurité.  
@@ -57,7 +57,7 @@ L’émission de réflexion utilise le même ensemble d’API en confiance total
   
  La procédure suivante crée un domaine d’application sandbox qui exécute votre code avec une confiance partielle pour tester des scénarios dans lesquels le code émis peut accéder seulement à des membres publics de types public. La procédure qui vient après montre comment ajouter <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> pour tester des scénarios dans lesquels le code émis peut accéder aux types et aux membres non publics dans les assemblys bénéficiant d’autorisations inférieures ou égales.  
   
-##### <a name="to-create-an-application-domain-with-partial-trust"></a>Pour créer un domaine d’application avec une confiance partielle  
+#### <a name="to-create-an-application-domain-with-partial-trust"></a>Pour créer un domaine d’application avec une confiance partielle  
   
 1. Créez un jeu d’autorisations à accorder aux assemblys dans le domaine d’application sandbox. Dans ce cas, le jeu d’autorisations de la zone Internet est utilisé.  
   
@@ -87,7 +87,7 @@ L’émission de réflexion utilise le même ensemble d’API en confiance total
 > [!NOTE]
 >  Pour empêcher une élévation de privilèges, les informations de pile de l’assembly émetteur sont incluses lors de la construction des méthodes dynamiques hébergées anonymement. Quand la méthode est appelée, les informations de pile sont vérifiées. Par conséquent, une méthode dynamique hébergée anonymement qui est appelée à partir d’un code totalement fiable est toujours limitée au niveau de confiance de l’assembly émetteur.  
   
-##### <a name="to-create-an-application-domain-with-partial-trust-plus-rma"></a>Pour créer un domaine d’application avec une confiance partielle plus RMA  
+#### <a name="to-create-an-application-domain-with-partial-trust-plus-rma"></a>Pour créer un domaine d’application avec une confiance partielle plus RMA  
   
 1. Créez un objet <xref:System.Security.Permissions.ReflectionPermission> avec l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> (RMA) et utilisez la méthode <xref:System.Security.PermissionSet.SetPermission%2A?displayProperty=nameWithType> pour ajouter l’autorisation au jeu d’autorisations.  
   
@@ -182,7 +182,7 @@ L’émission de réflexion utilise le même ensemble d’API en confiance total
     >  La possibilité limitée d’ignorer les contrôles de visibilité est une fonctionnalité des méthodes dynamiques hébergées anonymement. Quand des méthodes dynamiques ordinaires ignorent les contrôles de visibilité JIT, une confiance totale leur est accordée.  
   
 <a name="Example"></a>   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
   
 ### <a name="description"></a>Description  
  L’exemple de code suivant montre l’utilisation de l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> pour permettre aux méthodes dynamiques hébergées anonymement d’ignorer les contrôles de visibilité JIT, mais seulement quand le membre cible est à un niveau de confiance inférieur ou égal à celui de l’assembly qui émet le code.  

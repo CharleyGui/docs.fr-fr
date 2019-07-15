@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1148d040aa3b292d5c37eb50224413b6ddd202e2
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: c4b293cf7db3762831be7f3a7a355748ff5758c5
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803906"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67859032"
 ---
 ### <a name="servicebase-doesnt-propagate-onstart-exceptions"></a>ServiceBase ne propage pas les exceptions OnStart
 
@@ -16,3 +16,4 @@ ms.locfileid: "59803906"
 |Version|4.7.1|
 |Type|Reciblage|
 |API affectées|<ul><li><xref:System.ServiceProcess.ServiceBase.Run(System.ServiceProcess.ServiceBase)?displayProperty=nameWithType></li><li><xref:System.ServiceProcess.ServiceBase.Run(System.ServiceProcess.ServiceBase[])?displayProperty=nameWithType></li></ul>|
+

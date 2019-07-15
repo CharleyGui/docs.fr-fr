@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 71c81cf188fa4c2300661f10eb87e7ae00e031f6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 9ad283af76085c228bedceb6db723a1d18b10210
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803882"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67804424"
 ---
 ### <a name="etw-event-names-cannot-differ-only-by-a-start-or-stop-suffix"></a>Les noms d’événements ETW ne peuvent pas différer uniquement par le suffixe « Start » ou « Stop »
 
@@ -15,3 +15,4 @@ ms.locfileid: "59803882"
 |Portée|Microsoft Edge|
 |Version|4.6|
 |Type|Reciblage|
+

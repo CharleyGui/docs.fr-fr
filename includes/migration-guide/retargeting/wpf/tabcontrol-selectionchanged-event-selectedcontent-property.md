@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 923105114c9e8da02c61c842cc02bed1ead3eddc
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: e80748c183a10cac4ef66c96ab48458cd9baa806
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803893"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67858975"
 ---
 ### <a name="tabcontrol-selectionchanged-event-and-selectedcontent-property"></a>Événement TabControl SelectionChanged et propriété SelectedContent
 
@@ -16,3 +16,4 @@ ms.locfileid: "59803893"
 |Version|4.7.1|
 |Type|Reciblage|
 |API affectées|<ul><li><xref:System.Windows.Controls.TabControl.SelectedContent?displayProperty=nameWithType></li><li><xref:System.Windows.Controls.Primitives.Selector.SelectionChanged?displayProperty=nameWithType></li></ul>|
+

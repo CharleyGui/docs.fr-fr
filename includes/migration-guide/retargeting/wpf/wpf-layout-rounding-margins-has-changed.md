@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 73096e5f61e5257e062df9743cae0f5464892357
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: a4f27c0b2bf95ed19e485881aba3c52073114117
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803844"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67804591"
 ---
 ### <a name="wpf-layout-rounding-of-margins-has-changed"></a>L’arrondi des marges dans la disposition WPF a changé
 
@@ -15,3 +15,4 @@ ms.locfileid: "59803844"
 |Portée|Mineur|
 |Version|4.6|
 |Type|Reciblage|
+

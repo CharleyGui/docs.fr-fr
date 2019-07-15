@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c7a207618c290d016dd66ba52cae0494c11cc5bb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: f7f8cec632965a75ac262fd6f1853a954d02ebec
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803920"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67803486"
 ---
 ### <a name="accessibility-improvements-in-windows-workflow-foundation-wf-workflow-designer"></a>Améliorations de l’accessibilité dans le Concepteur de flux de travail Windows Workflow Foundation (WF)
 
@@ -15,3 +15,4 @@ ms.locfileid: "59803920"
 |Portée|Mineur|
 |Version|4.7.1|
 |Type|Reciblage|
+

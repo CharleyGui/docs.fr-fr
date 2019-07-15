@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3f553f95941eaf36cf335e9765a670a05bd157f4
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
+ms.openlocfilehash: ab7731d34aad5b6b6481f13ba11b778393e2cac2
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59234145"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67858458"
 ---
 ### <a name="appdomainsetupdynamicbase-is-no-longer-randomized-by-userandomizedstringhashalgorithm"></a>AppDomainSetup.DynamicBase n’est plus aléatoire en activant UseRandomizedStringHashAlgorithm
 
@@ -16,3 +16,4 @@ ms.locfileid: "59234145"
 |Version|4.6|
 |Type|Runtime|
 |API affectées|<ul><li><xref:System.AppDomainSetup.DynamicBase?displayProperty=nameWithType></li></ul>|
+

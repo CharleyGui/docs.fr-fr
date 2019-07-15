@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 68da7216890da1819a994161507355a0b5ea1f9f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 2c54912e5c29b2ed8f4c8163550050e12e367263
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59803857"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67857536"
 ---
 ### <a name="signedxml-and-encryptedxml-breaking-changes"></a>Modifications avec rupture pour SignedXml et EncryptedXml
 
@@ -16,3 +16,4 @@ ms.locfileid: "59803857"
 |Version|4.6.2|
 |Type|Runtime|
 |API affectées|<ul><li><xref:System.Security.Cryptography.Xml.Transform?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform?displayProperty=nameWithType></li><li><xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform?displayProperty=nameWithType></li></ul>|
+

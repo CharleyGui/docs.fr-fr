@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 921baed7381fad363cc832c6b6af69068c2c8f43
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 9500907c6a1ba5b27008dcad4c9b47aef9092106
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59236048"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67802443"
 ---
 ### <a name="ribbongroup-background-is-set-to-transparent-in-localized-builds"></a>L’arrière-plan de RibbonGroup est défini sur Transparent dans les versions localisées
 
@@ -15,3 +15,4 @@ ms.locfileid: "59236048"
 |Portée|Microsoft Edge|
 |Version|4.6.2|
 |Type|Runtime|
+

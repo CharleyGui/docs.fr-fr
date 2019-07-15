@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 34d7395e72f6ef252ac68366bcd346cd8d464036
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: c8a6870a9d34889dd8f5305035744bfc63be6af6
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59236125"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67856997"
 ---
 ### <a name="support-special-relative-uri-notation-when-unicode-is-present"></a>Prise en charge d’une notation d’URI relatif spéciale quand des caractères Unicode sont présents
 
@@ -16,3 +16,4 @@ ms.locfileid: "59236125"
 |Version|4.7.2|
 |Type|Runtime|
 |API affectées|<ul><li><xref:System.Uri.TryCreate(System.Uri,System.Uri,System.Uri@)?displayProperty=nameWithType></li><li><xref:System.Uri.TryCreate(System.String,System.UriKind,System.Uri@)?displayProperty=nameWithType></li><li><xref:System.Uri.TryCreate(System.Uri,System.String,System.Uri@)?displayProperty=nameWithType></li></ul>|
+

@@ -7,12 +7,12 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.openlocfilehash: 79b74090a5a443c944df94f9df1c3f4d283df02f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: af266a551a194f55bc4951a8bdb0e9af6f823663
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59214739"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663002"
 ---
 # <a name="language-independence-and-language-independent-components"></a>Indépendance du langage et composants indépendants du langage
 
@@ -29,35 +29,35 @@ Dans cet article :
 
 * [Règles de conformité CLS](#cls-compliance-rules)
 
-    * [Types et signatures de membres de types](#types-and-type-member-signatures)
+  * [Types et signatures de membres de types](#types-and-type-member-signatures)
 
-    * [Conventions d’attribution d’un nom](#naming-conventions)
+  * [Conventions d’attribution d’un nom](#naming-conventions)
 
-    * [Conversion de type](#type-conversion)
+  * [Conversion de type](#type-conversion)
 
-    * [Tableaux](#arrays)
+  * [Tableaux](#arrays)
 
-    * [Interfaces](#interfaces)
+  * [Interfaces](#interfaces)
 
-    * [Énumérations](#enumerations)
+  * [Énumérations](#enumerations)
 
-    * [Membres de types en général](#type-members-in-general)
+  * [Membres de types en général](#type-members-in-general)
 
-    * [Accessibilité des membres](#member-accessibility)
+  * [Accessibilité des membres](#member-accessibility)
 
-    * [Types et membres génériques](#generic-types-and-members)
+  * [Types et membres génériques](#generic-types-and-members)
 
-    * [Constructeurs](#constructors)
+  * [Constructeurs](#constructors)
 
-    * [Propriétés](#properties)
+  * [Propriétés](#properties)
 
-    * [Événements](#events)
+  * [Événements](#events)
 
-    * [Surcharges](#overloads)
+  * [Surcharges](#overloads)
 
-    * [Exceptions](#exceptions)
+  * [Exceptions](#exceptions)
 
-    * [Attributs](#attributes)
+  * [Attributs](#attributes)
 
 * [Attribut CLSCompliantAttribute](#the-clscompliantattribute-attribute)
 
@@ -1307,11 +1307,11 @@ Les énumérations conformes à CLS doivent suivre ces règles :
 
 * Il existe deux types d'énumérations :
 
-    * Une énumération qui représente un jeu de valeurs entières nommées qui s'excluent mutuellement. Ce type d’énumération est indiqué par l’absence de l’attribut personnalisé [System.FlagsAttribute](xref:System.FlagsAttribute).
+  * Une énumération qui représente un jeu de valeurs entières nommées qui s'excluent mutuellement. Ce type d’énumération est indiqué par l’absence de l’attribut personnalisé [System.FlagsAttribute](xref:System.FlagsAttribute).
 
-    * Une énumération qui représente un jeu d'indicateurs binaires qui peuvent être combinés pour générer une valeur sans nom. Ce type d’énumération est indiqué par la présence de l’attribut personnalisé [System.FlagsAttribute](xref:System.FlagsAttribute).
+  * Une énumération qui représente un jeu d'indicateurs binaires qui peuvent être combinés pour générer une valeur sans nom. Ce type d’énumération est indiqué par la présence de l’attribut personnalisé [System.FlagsAttribute](xref:System.FlagsAttribute).
 
- Pour plus d’informations, consultez la documentation de la structure [Enum](xref:System.Enum).
+Pour plus d’informations, consultez la documentation de la structure [Enum](xref:System.Enum).
 
 * La valeur d'une énumération ne se limite pas à la plage de ses valeurs spécifiées. En d'autres termes, la plage de valeurs d'une énumération est la plage de sa valeur sous-jacente. Vous pouvez utiliser la méthode `Enum.IsDefined` pour déterminer si une valeur spécifiée est membre d'une énumération.
 

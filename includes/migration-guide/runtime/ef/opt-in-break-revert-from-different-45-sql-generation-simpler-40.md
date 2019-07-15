@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e5d81d791e1a2f1a2dbdafc787dec1227423883d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 64d540278544e74c46d46b77c97bccd26d4116dd
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59774254"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67803260"
 ---
 ### <a name="opt-in-break-to-revert-from-different-45-sql-generation-to-simpler-40-sql-generation"></a>Rupture d’adhésion pour rétrograder de la génération 4.5 de SQL à la génération 4.0 de SQL plus simple
 
@@ -15,3 +15,4 @@ ms.locfileid: "59774254"
 |Portée|Transparent|
 |Version|4.5.2|
 |Type|Runtime|
+

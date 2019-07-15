@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d0c9447e53a874da856eb59932ec3871a9a1371d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f4f8e25edb7d61e21406a5f7719f6dc98f686a9e
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64654426"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67755054"
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Procédure pas à pas : utilisation d’un dataflow dans une application Windows Forms
 Ce document montre comment créer un réseau de blocs de flux de données qui effectuent un traitement des images dans une application Windows Forms.  
@@ -41,7 +41,7 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
 ## <a name="creating-the-windows-forms-application"></a>Création de l’application Windows Forms  
  Cette section décrit comment créer l’application Windows Forms de base et ajouter des contrôles au formulaire principal.  
   
-#### <a name="to-create-the-windows-forms-application"></a>Pour créer une Application Windows Forms  
+### <a name="to-create-the-windows-forms-application"></a>Pour créer une Application Windows Forms  
   
 1. Dans Visual Studio, créez un projet **Application Windows Forms** en Visual C# ou en Visual Basic. Dans ce document, le projet est nommé `CompositeImages`.  
   
@@ -57,7 +57,7 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
 ## <a name="creating-the-dataflow-network"></a>Création du réseau de flux de données  
  Cette section décrit comment créer le réseau de flux de données qui effectue le traitement des images.  
   
-#### <a name="to-create-the-dataflow-network"></a>Pour créer le réseau de flux de données  
+### <a name="to-create-the-dataflow-network"></a>Pour créer le réseau de flux de données  
   
 1. Dans votre projet, ajoutez une référence à System.Threading.Tasks.Dataflow.dll.  
   
@@ -107,7 +107,7 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
 ## <a name="connecting-the-dataflow-network-to-the-user-interface"></a>Connexion du réseau de flux de données à l’interface utilisateur  
  Cette section décrit comment connecter le réseau de flux de données à l’interface utilisateur. La création de l’image composite et l’annulation de l’opération sont lancées à partir des boutons **Choisir le dossier** et **Annuler**. Lorsque l’utilisateur clique sur l’un de ces boutons, l’action appropriée est lancée de manière asynchrone.  
   
-#### <a name="to-connect-the-dataflow-network-to-the-user-interface"></a>Connecter le réseau de flux de données à l’interface utilisateur  
+### <a name="to-connect-the-dataflow-network-to-the-user-interface"></a>Connecter le réseau de flux de données à l’interface utilisateur  
   
 1. Dans le concepteur de formulaires du formulaire principal, créez un gestionnaire d'événements pour l'événement <xref:System.Windows.Forms.ToolStripItem.Click> du bouton **Annuler**.  
   

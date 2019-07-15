@@ -2,12 +2,12 @@
 title: Implémentation de la couche de persistance de l’infrastructure avec Entity Framework Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer les détails d’implémentation de la couche de persistance de l’infrastructure avec Entity Framework Core.
 ms.date: 10/08/2018
-ms.openlocfilehash: c6b0a022dfecb24c479a0fd3c84dbde719a390a8
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 7e3480999b115ac13f8d7ebcaed826b407aa7637
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65639523"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67778058"
 ---
 # <a name="implement-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Implémenter la couche de persistance de l’infrastructure avec Entity Framework Core
 
@@ -21,7 +21,7 @@ Entity Framework (EF) Core est une version légère, extensible et multiplatefor
 
 Dans la mesure où une introduction à EF Core est déjà disponible dans la documentation Microsoft, nous indiquons simplement ici les liens vers ces informations.
 
-#### <a name="additional-resources"></a>Ressources supplémentaires
+### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Entity Framework Core** \
   [https://docs.microsoft.com/ef/core/](/ef/core/)
@@ -230,7 +230,7 @@ builder.RegisterType<OrderRepository>()
 
 Notez que l’utilisation de la durée de vie singleton pour le dépôt peut vous causer des problèmes d’accès concurrentiel graves quand votre DbContext a une durée de vie délimitée (InstancePerLifetimeScope), durée de vie par défaut d’un DBContext.
 
-#### <a name="additional-resources"></a>Ressources supplémentaires
+### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Implementing the Repository and Unit of Work Patterns in an ASP.NET MVC Application** \
   <https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application>
@@ -447,7 +447,7 @@ En plus de l’encapsulation de la logique de filtrage, la spécification peut s
 
 Même si nous ne recommandons pas de retourner des données IQueryable à partir d’un référentiel, vous pouvez parfaitement les utiliser dans le référentiel pour générer un jeu de résultats. Vous pouvez voir cette approche utilisée dans la méthode List ci-dessus, qui utilise des expressions IQueryable intermédiaires pour générer la liste des fichiers Include de la requête avant d’exécuter la requête avec les critères de la spécification sur la dernière ligne.
 
-#### <a name="additional-resources"></a>Ressources supplémentaires
+### <a name="additional-resources"></a>Ressources supplémentaires
 
 - **Table Mapping** \
   [https://docs.microsoft.com/ef/core/modeling/relational/tables](/ef/core/modeling/relational/tables)

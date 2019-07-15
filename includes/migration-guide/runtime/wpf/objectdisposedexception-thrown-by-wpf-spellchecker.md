@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a3f5f512fd17ab2b076f868be24e5c73d8698c49
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 9d09f598538b9d5ee3f995d6281b8eb4b2668050
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59774233"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67802559"
 ---
 ### <a name="objectdisposedexception-thrown-by-wpf-spellchecker"></a>ObjectDisposedException levée par le vérificateur orthographique de WPF
 
@@ -15,3 +15,4 @@ ms.locfileid: "59774233"
 |Portée|Microsoft Edge|
 |Version|4.6.1|
 |Type|Runtime|
+
