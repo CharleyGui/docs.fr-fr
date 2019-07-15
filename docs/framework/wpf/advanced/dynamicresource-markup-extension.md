@@ -8,12 +8,12 @@ helpviewer_keywords:
 - XAML [WPF], DynamicResource markup extension
 - DynamicResource markup extensions [WPF]
 ms.assetid: 7324f243-03af-4c2b-b0db-26ac6cdfcbe4
-ms.openlocfilehash: d07816718ebee2507f1888cffb70e6f8037bb996
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 90768a0c816e790138ba60bd24afee242e41e652
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62010395"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860288"
 ---
 # <a name="dynamicresource-markup-extension"></a>DynamicResource, extension de balisage
 Fournit une valeur pour tout [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] attribut de propriété en différant cette valeur pour être une référence à une ressource définie. Le comportement de recherche pour cette ressource est analogue à la recherche au moment de l’exécution.  
@@ -52,7 +52,7 @@ Fournit une valeur pour tout [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2s
   
  Une clé de ressource peut être n’importe quelle chaîne définie dans le [XamlName, grammaire](../../xaml-services/xamlname-grammar.md). Une clé de ressource peut être également les autres types d’objets, comme un <xref:System.Type>. Un <xref:System.Type> clé est essentielle à la façon dont styles peuvent leur être par des thèmes. Pour plus d’informations, consultez [Vue d’ensemble de la création de contrôles](../controls/control-authoring-overview.md).  
   
- [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] pour la recherche de valeurs de ressources, telles que <xref:System.Windows.FrameworkElement.FindResource%2A>, suivent la même logique de recherche de ressources que celles utilisées par `DynamicResource`.  
+ Valeurs des API pour la recherche des ressources, telles que <xref:System.Windows.FrameworkElement.FindResource%2A>, suivent la même logique de recherche de ressources que celles utilisées par `DynamicResource`.  
   
  L’autre moyen déclaratif de référencement d’une ressource est comme un [Extension de balisage StaticResource](staticresource-markup-extension.md).  
   
