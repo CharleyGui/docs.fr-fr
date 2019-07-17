@@ -10,12 +10,12 @@ helpviewer_keywords:
 - extending glass frames into applications [WPF]
 - glass frames [WPF], extending into applications
 ms.assetid: 74388a3a-4b69-4a9d-ba1f-e107636bd660
-ms.openlocfilehash: 1c3316fa88d3024af4e81072cbe64c13cfbdb18e
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 11c872767b5e3595da1fb4982d3b12e0fc77db98
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67610294"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238591"
 ---
 # <a name="extend-glass-frame-into-a-wpf-application"></a>Étendre le cadre de transparence dans une application WPF
 
@@ -30,7 +30,7 @@ L’image suivante illustre le cadre de transparence étendu dans la barre d’a
 
 ![Capture d’écran cadre de transparence étendu derrière la barre d’adresse IE7.](./media/extend-glass-frame-into-a-wpf-application/internet-explorer-glass-frame-extended-address-bar.png)
 
-Pour étendre le cadre de transparence sur une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], un accès à l’élément non géré [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] est nécessaire. L’exemple de code suivant effectue un code non managé (pinvoke) pour les deux API nécessaires pour étendre le cadre dans la zone cliente. Chacune de ces API sont déclarés dans une classe appelée **NonClientRegionAPI**.
+Pour étendre le cadre de transparence sur une [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application, accès aux API non managée est nécessaire. L’exemple de code suivant effectue un code non managé (pinvoke) pour les deux API nécessaires pour étendre le cadre dans la zone cliente. Chacune de ces API sont déclarés dans une classe appelée **NonClientRegionAPI**.
 
 ```csharp
 [StructLayout(LayoutKind.Sequential)]
@@ -64,7 +64,7 @@ End Function
 
 [DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea) est la fonction DWM qui étend le cadre dans la zone cliente. Elle nécessite deux paramètres ; un handle de fenêtre et une structure [MARGINS](/windows/desktop/api/uxtheme/ns-uxtheme-_margins). [MARGINS](/windows/desktop/api/uxtheme/ns-uxtheme-_margins) indique à DWM le niveau d’extension du cadre dans la zone cliente.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Pour utiliser la fonction [DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea), un handle de fenêtre doit être obtenu. Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], le handle de fenêtre peut être obtenu à partir de la <xref:System.Windows.Interop.HwndSource.Handle%2A> propriété d’un <xref:System.Windows.Interop.HwndSource>. Dans l’exemple suivant, le cadre est étendu dans la zone cliente sur le <xref:System.Windows.FrameworkElement.Loaded> événement de la fenêtre.
 

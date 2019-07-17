@@ -9,12 +9,12 @@ helpviewer_keywords:
 - graphics [WPF], rendering tiers
 - software rendering pipeline [WPF]
 ms.assetid: bfb89bae-7aab-4cac-a26c-a956eda8fce2
-ms.openlocfilehash: d40d1636b510fcfe667ab3e728d1688ce38641d4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 13812fa5429bbe33341e51e4b3be14fbbcb361cb
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64611945"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238449"
 ---
 # <a name="optimizing-performance-taking-advantage-of-hardware"></a>Optimisation des performances : Tirer parti du matériel
 L’architecture interne de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a deux pipelines de rendu matériel et logiciel. Cette rubrique fournit des informations sur ces pipelines de rendu pour vous aider à prendre des décisions sur les optimisations des performances de vos applications.  
@@ -30,7 +30,7 @@ L’architecture interne de [!INCLUDE[TLA2#tla_winclient](../../../../includes/t
 ### <a name="graphics-rendering-tiers"></a>Couches de rendu graphiques  
  Il peut être très difficile de prévoir la configuration matérielle qui fonctionnent sur votre application. Toutefois, vous souhaiterez peut-être envisager une conception qui permet à votre application basculer en toute transparence fonctionnalités lors de l’exécution sur un matériel différent, afin qu’elle puisse tirer pleinement parti de chaque configuration matérielle.  
   
- Pour y parvenir, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit des fonctionnalités permettant de déterminer la capacité de graphique d’un système lors de l’exécution. Des fonctionnalités graphiques sont déterminée en classant la carte vidéo comme l’un des trois couches de rendu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] expose un [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] qui permet à une application interroger le niveau de fonctionnalité de rendu. Votre application peut alors prendre des chemins de code différents au moment de l’exécution en fonction de la couche de rendu pris en charge par le matériel.  
+ Pour y parvenir, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit des fonctionnalités permettant de déterminer la capacité de graphique d’un système lors de l’exécution. Des fonctionnalités graphiques sont déterminée en classant la carte vidéo comme l’un des trois couches de rendu. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] expose une API qui permet à une application interroger le niveau de fonctionnalité de rendu. Votre application peut alors prendre des chemins de code différents au moment de l’exécution en fonction de la couche de rendu pris en charge par le matériel.  
   
  Les fonctionnalités du matériel graphique qui ont le plus d’impact sur les niveaux de la couche de rendu sont les suivantes :  
   

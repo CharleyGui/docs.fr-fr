@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f814ff82-fe2b-4614-aebb-b768c3e61179
-ms.openlocfilehash: c47e1ba89179b38055244c01507318836c899fda
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: a7784f37c9e8009adc3735974a6fb0423f24ea37
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637521"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238516"
 ---
 # <a name="how-to-run-a-workflow"></a>Procédure : exécuter un workflow
 Cette rubrique est la suite du didacticiel le Guide de mise en route de Windows Workflow Foundation et explique comment créer un hôte de workflow et exécuter le workflow défini dans le précédent [Comment : Créer un flux de travail](how-to-create-a-workflow.md) rubrique.
@@ -30,7 +30,7 @@ Cette rubrique est la suite du didacticiel le Guide de mise en route de Windows 
     > [!TIP]
     >  Si la fenêtre **Explorateur de solutions** n'est pas affichée, sélectionnez **Explorateur de solutions** dans le menu **Affichage** .
 
-3. Dans le nœud **Installé** , sélectionnez **Visual C#**, **Workflow** (ou **Visual Basic**, **Workflow**).
+3. Dans le nœud **Installé** , sélectionnez **Visual C#** , **Workflow** (ou **Visual Basic**, **Workflow**).
 
     > [!NOTE]
     >  En fonction du langage de programmation qui est configuré comme langage principal dans Visual Studio, le nœud **Visual C#** ou **Visual Basic** peut se trouver sous le nœud **Autres langages** dans le nœud **Installé** .
@@ -51,13 +51,13 @@ Cette rubrique est la suite du didacticiel le Guide de mise en route de Windows 
      Étant donné que ce projet a été créé à l'aide du modèle **Application console de workflow** , **Program.cs** ou **Module1.vb** contient le code d'hébergement de workflow de base suivant.
 
     ```vb
-    ' Create and cache the workflow definition
-    Activity workflow1 = new Workflow1()
+    ' Create and cache the workflow definition.
+    Dim workflow1 As Activity = New Workflow1()
     WorkflowInvoker.Invoke(workflow1)
     ```
 
     ```csharp
-    // Create and cache the workflow definition
+    // Create and cache the workflow definition.
     Activity workflow1 = new Workflow1();
     WorkflowInvoker.Invoke(workflow1);
     ```
@@ -150,7 +150,7 @@ Cette rubrique est la suite du didacticiel le Guide de mise en route de Windows 
 
      Pour savoir comment ajouter la persistance à une application de workflow, consultez la rubrique suivante, [Comment : Créer et exécuter un Long en cours d’exécution du flux de travail](how-to-create-and-run-a-long-running-workflow.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
  L'exemple suivant constitue l'intégralité du code de la méthode `Main` .
 
 > [!NOTE]
