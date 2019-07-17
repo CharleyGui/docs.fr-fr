@@ -23,7 +23,7 @@ Cet exemple montre comment générer la pile de canaux de façon personnalisée 
  Le répartiteur ouvre d'abord l'écouteur de canal, puis accepte le canal de réponse singleton. Avec le canal, il commence à envoyer des messages (demandes) dans une boucle infinie. Pour chaque demande, il crée un message de réponse qu'il renvoie au client.  
   
 ## <a name="creating-a-response-message"></a>Création d'un message de réponse  
- Le traitement des messages est implémenté dans le type `MyServiceManager`. Dans la méthode `HandleRequest`, l'en-tête `Action` du message est vérifié en premier pour voir si la demande est prise en charge. Action SOAP prédéfinie « http://tempuri.org/HelloWorld/Hello» est définie pour assurer le filtrage des messages. Cela est similaire au concept de contrat de service dans l’implémentation WCF de <xref:System.ServiceModel.ServiceHost>.  
+ Le traitement des messages est implémenté dans le type `MyServiceManager`. Dans la méthode `HandleRequest`, l'en-tête `Action` du message est vérifié en premier pour voir si la demande est prise en charge. Action SOAP prédéfinie "http://tempuri.org/HelloWorld/Hello" est définie pour assurer le filtrage des messages. Cela est similaire au concept de contrat de service dans l’implémentation WCF de <xref:System.ServiceModel.ServiceHost>.  
   
  Pour le cas de l'action SOAP appropriée, l'exemple récupère les données de message demandées et génère une réponse correspondante à la demande similaire à celle du cas <xref:System.ServiceModel.ServiceHost>.  
   
