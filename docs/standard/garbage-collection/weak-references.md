@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 6a600fe5-3af3-4c64-82da-10a0a8e2d79b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f2e2fd6f46a430424e6010adbe0662b5bd3db7ea
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 246e6572deefaf4546afe6fb5326ecc2286215a5
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622658"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67766812"
 ---
 # <a name="weak-references"></a>Références faibles
 Le Garbage collector ne peut pas collecter un objet actuellement utilisé par une application, tandis que le code de l’application peut accéder à cet objet. On dit de l’application qu’elle a une référence forte à l’objet.  
@@ -35,7 +35,7 @@ Le Garbage collector ne peut pas collecter un objet actuellement utilisé par un
   
 - Courte  
   
-     La cible d’une référence faible courte devient `null` quand l’objet est récupéré par le garbage collection. La référence faible est elle-même un objet managé et fait l’objet d’un garbage collection comme tout autre objet managé.  Une référence faible courte est le constructeur par défaut <xref:System.WeakReference>.  
+     La cible d’une référence faible courte devient `null` quand l’objet est récupéré par le garbage collection. La référence faible est elle-même un objet managé et fait l’objet d’un garbage collection comme tout autre objet managé.  Une référence faible courte est le constructeur sans paramètre pour <xref:System.WeakReference>.  
   
 - Longue  
   

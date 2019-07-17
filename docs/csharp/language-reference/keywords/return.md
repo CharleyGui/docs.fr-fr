@@ -9,12 +9,12 @@ helpviewer_keywords:
 - return statement [C#]
 - return keyword [C#]
 ms.assetid: 6da6e152-5b58-4448-8f3f-470dd0617ecd
-ms.openlocfilehash: 3e89f2f854d1f66ca2d7bf1cfa5a507c267798f8
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: a845ce257bf7f0cf0e64d6815b2278f6cec946e7
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422728"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67661616"
 ---
 # <a name="return-c-reference"></a>return (référence C#)
 
@@ -22,9 +22,9 @@ L’instruction `return` met un terme à l’exécution de la méthode dans laqu
 
  Si l’instruction return est à l’intérieur d’un bloc `try`, le bloc `finally`, le cas échéant, est exécuté avant que le contrôle retourne à la méthode d’appel.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
- Dans l’exemple suivant, la méthode `CalculateArea()` retourne la variable locale `area` en tant que valeur [double](double.md).
+ Dans l’exemple suivant, la méthode `CalculateArea()` retourne la variable locale `area` en tant que valeur `double`.
 
 [!code-csharp[csrefKeywordsJump#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsJump/CS/csrefKeywordsJump.cs#6)]  
 

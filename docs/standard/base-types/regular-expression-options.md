@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9bb3120887a1a42d01b8d8ddc3351d1209294ffc
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 5e77fac49db4a2faadb5785c4ef15e401f340d8b
+ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57677563"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67663986"
 ---
 # <a name="regular-expression-options"></a>Options des expressions régulières
 
@@ -44,26 +44,26 @@ Vous pouvez spécifier les options des expressions régulières de trois façons
 
 - Dans le paramètre `options` d’un constructeur de classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> ou d’une méthode de mise en correspondance de modèle statique (`Shared` en Visual Basic), comme <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> ou <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType>. Le paramètre `options` est une combinaison OR au niveau du bit de valeurs énumérées <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>.
 
-    Quand des options sont fournies à une instance de <xref:System.Text.RegularExpressions.Regex> à l'aide du paramètre `options` d'un constructeur de classe, les options sont affectées à la propriété <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>. Cependant, la propriété <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> ne reflète pas les options inline dans le modèle d'expression régulière lui-même.
+  Quand des options sont fournies à une instance de <xref:System.Text.RegularExpressions.Regex> à l'aide du paramètre `options` d'un constructeur de classe, les options sont affectées à la propriété <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>. Cependant, la propriété <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> ne reflète pas les options inline dans le modèle d'expression régulière lui-même.
 
-    L'exemple suivant illustre cette situation. Il utilise le paramètre `options` de la méthode <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> pour autoriser la correspondance qui ne respecte pas la casse et pour ignorer l’espace blanc du modèle pendant l’identification des mots commençant par la lettre « d ».
+  L'exemple suivant illustre cette situation. Il utilise le paramètre `options` de la méthode <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> pour autoriser la correspondance qui ne respecte pas la casse et pour ignorer l’espace blanc du modèle pendant l’identification des mots commençant par la lettre « d ».
 
-    [!code-csharp[Conceptual.Regex.Language.Options#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#6)]
-    [!code-vb[Conceptual.Regex.Language.Options#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#6)]
+  [!code-csharp[Conceptual.Regex.Language.Options#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#6)]
+  [!code-vb[Conceptual.Regex.Language.Options#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#6)]
 
 - En appliquant des options inline dans un modèle d'expression régulière avec la syntaxe `(?imnsx-imnsx)`. L’option s’applique au modèle depuis le point où elle est définie jusqu’à la fin du modèle ou jusqu’au point auquel sa définition est annulée par une autre option inline. Notez que la propriété <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> d'une instance de <xref:System.Text.RegularExpressions.Regex> ne reflète pas ces options inline. Pour plus d’informations, consultez la rubrique [Constructions diverses](../../../docs/standard/base-types/miscellaneous-constructs-in-regular-expressions.md).
 
-    L'exemple suivant illustre cette situation. Il utilise des options inline pour autoriser la correspondance qui ne respecte pas la casse et pour ignorer l’espace blanc du modèle pendant l’identification des mots commençant par la lettre « d ».
+  L'exemple suivant illustre cette situation. Il utilise des options inline pour autoriser la correspondance qui ne respecte pas la casse et pour ignorer l’espace blanc du modèle pendant l’identification des mots commençant par la lettre « d ».
 
-    [!code-csharp[Conceptual.Regex.Language.Options#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#7)]
-    [!code-vb[Conceptual.Regex.Language.Options#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#7)]
+  [!code-csharp[Conceptual.Regex.Language.Options#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#7)]
+  [!code-vb[Conceptual.Regex.Language.Options#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#7)]
 
 - En appliquant des options inline dans une construction de regroupement particulière au sein d’un modèle d’expression régulière avec la syntaxe `(?imnsx-imnsx:`*sous-expression*`)`. L'absence de signe avant un jeu d'options active ce dernier, tandis qu'un signe moins le désactive. (`?` est une partie fixe de la syntaxe de la construction du langage qui est obligatoire, que les options soient activées ou désactivées.) L'option ne s'applique qu'à ce groupe. Pour plus d’informations, consultez [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
 
-    L'exemple suivant illustre cette situation. Il utilise des options inline dans une construction de regroupement pour autoriser la correspondance qui ne respecte pas la casse et pour ignorer l’espace blanc du modèle pendant l’identification des mots commençant par la lettre « d ».
+  L'exemple suivant illustre cette situation. Il utilise des options inline dans une construction de regroupement pour autoriser la correspondance qui ne respecte pas la casse et pour ignorer l’espace blanc du modèle pendant l’identification des mots commençant par la lettre « d ».
 
-    [!code-csharp[Conceptual.Regex.Language.Options#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#8)]
-    [!code-vb[Conceptual.Regex.Language.Options#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#8)]
+  [!code-csharp[Conceptual.Regex.Language.Options#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#8)]
+  [!code-vb[Conceptual.Regex.Language.Options#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#8)]
 
 Si des options sont spécifiées inline, un signe moins (`-`) avant une option ou un jeu d'options désactive ces options. Par exemple, la construction inline `(?ix-ms)` active les options <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> et <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> et désactive les options <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> et <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType>. Toutes les options d'expression régulière sont désactivées par défaut.
 
@@ -296,9 +296,9 @@ Toutefois, dans les cas suivants, les espaces blancs d’une expression réguli�
 
 - L'espace blanc n'est pas autorisé dans une séquence de caractères qui introduit un élément de langage. Par exemple :
 
-    - L’élément de langage `(?:`*sous-expression*`)` représente un groupe sans capture, et la partie `(?:` de l’élément ne peut pas comporter d’espaces. Le modèle `(? :`*sous-expression*`)` lève une <xref:System.ArgumentException> au moment de l’exécution, car le moteur d’expression régulière ne peut pas l’analyser, et le modèle `( ?:`*sous-expression*`)` ne parvient pas à mettre en correspondance *sous-expression*.
+  - L’élément de langage `(?:`*sous-expression*`)` représente un groupe sans capture, et la partie `(?:` de l’élément ne peut pas comporter d’espaces. Le modèle `(? :`*sous-expression*`)` lève une <xref:System.ArgumentException> au moment de l’exécution, car le moteur d’expression régulière ne peut pas l’analyser, et le modèle `( ?:`*sous-expression*`)` ne parvient pas à mettre en correspondance *sous-expression*.
 
-    - L’élément de langage `\p{`*nom*`}`, qui représente une catégorie Unicode ou un bloc nommé, ne peut pas comporter d’espaces dans sa partie `\p{`. Si vous incluez un espace blanc, l'élément lève une <xref:System.ArgumentException> au moment de l'exécution.
+  - L’élément de langage `\p{`*nom*`}`, qui représente une catégorie Unicode ou un bloc nommé, ne peut pas comporter d’espaces dans sa partie `\p{`. Si vous incluez un espace blanc, l'élément lève une <xref:System.ArgumentException> au moment de l'exécution.
 
 L'activation de cette option permet de simplifier les expressions régulières qui sont souvent difficiles à analyser et à comprendre. Elle améliore la lisibilité et rend possible la documentation d'une expression régulière.
 
@@ -362,34 +362,34 @@ L'option <xref:System.Text.RegularExpressions.RegexOptions.ECMAScript?displayPro
 
 Le comportement des expressions régulières ECMAScript et canoniques diffère dans trois domaines : la syntaxe de la classe de caractères, les groupes de capture avec référence circulaire et l’interprétation des séquences d’échappement octales ou des références arrière.
 
-- Syntaxe de la classe de caractères. Comme les expressions régulières canoniques prennent en charge Unicode, contrairement à ECMAScript, les classes de caractères dans ECMAScript possèdent une syntaxe plus limitée, et certains éléments de langage des classes de caractères ont une signification différente. Par exemple, ECMAScript ne prend pas en charge les éléments de langage tels que la catégorie Unicode ou les éléments de bloc `\p` et `\P`. De même, l'élément `\w`, qui correspond à un caractère alphabétique, est équivalent à la classe de caractères `[a-zA-Z_0-9]`, dans le cas de l'utilisation d'ECMAScript, et à `[\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}\p{Lm}]`, dans le cas de l'utilisation du comportement canonique. Pour plus d'informations, consultez [Classes de caractères](../../../docs/standard/base-types/character-classes-in-regular-expressions.md).
+- Syntaxe de la classe de caractères. Comme les expressions régulières canoniques prennent en charge Unicode, contrairement à ECMAScript, les classes de caractères dans ECMAScript possèdent une syntaxe plus limitée, et certains éléments de langage des classes de caractères ont une signification différente. Par exemple, ECMAScript ne prend pas en charge les éléments de langage tels que la catégorie Unicode ou les éléments de bloc `\p` et `\P`. De même, l'élément `\w`, qui correspond à un caractère alphabétique, est équivalent à la classe de caractères `[a-zA-Z_0-9]`, dans le cas de l'utilisation d'ECMAScript, et à `[\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}\p{Lm}]`, dans le cas de l'utilisation du comportement canonique. Pour plus d’informations, consultez [Classes de caractères](../../../docs/standard/base-types/character-classes-in-regular-expressions.md).
 
-    L’exemple suivant illustre la différence entre les mises en correspondance de modèle canonique et ECMAScript. Il définit une expression régulière, `\b(\w+\s*)+`, qui met en correspondance les mots suivis d'espaces blancs. L'entrée se compose de deux chaînes ; l'une d'elles utilise le jeu de caractères latin, l'autre le jeu de caractères cyrillique. Comme le montre la sortie, l’appel de méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> qui utilise la correspondance ECMAScript ne parvient pas à mettre en correspondance les mots cyrilliques, contrairement à l’appel de méthode qui utilise la correspondance canonique.
+  L’exemple suivant illustre la différence entre les mises en correspondance de modèle canonique et ECMAScript. Il définit une expression régulière, `\b(\w+\s*)+`, qui met en correspondance les mots suivis d'espaces blancs. L'entrée se compose de deux chaînes ; l'une d'elles utilise le jeu de caractères latin, l'autre le jeu de caractères cyrillique. Comme le montre la sortie, l’appel de méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> qui utilise la correspondance ECMAScript ne parvient pas à mettre en correspondance les mots cyrilliques, contrairement à l’appel de méthode qui utilise la correspondance canonique.
 
-    [!code-csharp[Conceptual.Regex.Language.Options#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/ecmascript1.cs#16)]
-    [!code-vb[Conceptual.Regex.Language.Options#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/ecmascript1.vb#16)]
+  [!code-csharp[Conceptual.Regex.Language.Options#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/ecmascript1.cs#16)]
+  [!code-vb[Conceptual.Regex.Language.Options#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/ecmascript1.vb#16)]
 
 - Groupes de capture avec référence circulaire. Une classe de capture d'expression régulière avec une référence arrière à elle-même doit être mise à jour à chaque itération de capture. Comme le montre l'exemple suivant, cette fonctionnalité permet à l'expression régulière `((a+)(\1) ?)+` de mettre en correspondance la chaîne d'entrée «  aa aaaa aaaaaa  » dans le cas de l'utilisation de la correspondance ECMAScript, mais pas dans le cas de l'utilisation de la correspondance canonique.
 
-    [!code-csharp[Conceptual.Regex.Language.Options#21](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/ecmascript2.cs#21)]
-    [!code-vb[Conceptual.Regex.Language.Options#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/ecmascript2.vb#21)]
+  [!code-csharp[Conceptual.Regex.Language.Options#21](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/ecmascript2.cs#21)]
+  [!code-vb[Conceptual.Regex.Language.Options#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/ecmascript2.vb#21)]
 
-    L'expression régulière est définie comme indiqué dans le tableau suivant.
+  L'expression régulière est définie comme indiqué dans le tableau suivant.
 
-    |Motif|Description|
-    |-------------|-----------------|
-    |(a+)|Mettre en correspondance la lettre « a » une ou plusieurs fois. Il s'agit du deuxième groupe de capture.|
-    |(\1)|Mettre en correspondance la sous-chaîne capturée par le premier groupe de capture. Il s'agit du troisième groupe de capture.|
-    |?|Mettre en correspondance zéro ou un espace.|
-    |((a+)(\1) ?)+|Mettre en correspondance le modèle d'un ou plusieurs caractères « a » suivis d'une chaîne correspondant au premier groupe de capture, suivie de zéro ou un espace, une ou plusieurs fois. Il s'agit du premier groupe de capture.|
+  |Motif|Description|
+  |-------------|-----------------|
+  |(a+)|Mettre en correspondance la lettre « a » une ou plusieurs fois. Il s'agit du deuxième groupe de capture.|
+  |(\1)|Mettre en correspondance la sous-chaîne capturée par le premier groupe de capture. Il s'agit du troisième groupe de capture.|
+  |?|Mettre en correspondance zéro ou un espace.|
+  |((a+)(\1) ?)+|Mettre en correspondance le modèle d'un ou plusieurs caractères « a » suivis d'une chaîne correspondant au premier groupe de capture, suivie de zéro ou un espace, une ou plusieurs fois. Il s'agit du premier groupe de capture.|
 
 - Résolution des ambiguïtés entre les séquences d'échappement octales et les références arrière. Le tableau suivant compare la façon dont les expressions régulières canoniques et ECMAScript interprètent les séquences d'échappement octales et les références arrière.
 
-    |Expression régulière|Comportement canonique|Comportement ECMAScript|
-    |------------------------|------------------------|-------------------------|
-    |`\0` suivi de 0 à 2 chiffres octaux|Interpréter comme un octal. Par exemple, `\044` est toujours interprété comme une valeur octale et signifie « $ ».|Même comportement.|
-    |`\` suivi d'un chiffre entre 1 et 9, non suivi de chiffres décimaux.|Interpréter comme une référence arrière. Par exemple, `\9` signifie toujours référence arrière 9, même si un neuvième groupe de capture n'existe pas. Si le groupe de capture n'existe pas, l'analyseur de l'expression régulière lève une <xref:System.ArgumentException>.|Si un groupe de capture avec chiffre décimal unique existe, effectuer une référence arrière au niveau de ce chiffre. Sinon, interpréter la valeur en tant que littéral.|
-    |`\` suivi d'un chiffre entre 1 et 9, suivi de chiffres décimaux supplémentaires.|Interpréter les chiffres en tant que valeur décimale. Si ce groupe de capture existe, interpréter l'expression en tant que référence arrière.<br /><br /> Sinon, interpréter les chiffres octaux de début jusqu'à l'octal 377 ; en d'autres termes, ne prendre en compte que les 8 bits de poids faible de la valeur. Interpréter les autres chiffres comme des littéraux. Par exemple, dans l'expression `\3000`, si le groupe de capture 300 existe, interpréter en tant que référence arrière 300, sinon, interpréter en tant qu'octal 300 suivi de 0.|Interpréter en tant que référence arrière en convertissant autant de chiffres que possible en valeur décimale pouvant faire référence à une capture. Si aucun chiffre ne peut être converti, interpréter en tant qu'octal en utilisant les chiffres octaux de début jusqu'à l'octal 377 ; interpréter les autres chiffres en tant que littéraux.|
+  |Expression régulière|Comportement canonique|Comportement ECMAScript|
+  |------------------------|------------------------|-------------------------|
+  |`\0` suivi de 0 à 2 chiffres octaux|Interpréter comme un octal. Par exemple, `\044` est toujours interprété comme une valeur octale et signifie « $ ».|Même comportement.|
+  |`\` suivi d’un chiffre entre 1 et 9, non suivi de chiffres décimaux |Interpréter comme une référence arrière. Par exemple, `\9` signifie toujours référence arrière 9, même si un neuvième groupe de capture n'existe pas. Si le groupe de capture n'existe pas, l'analyseur de l'expression régulière lève une <xref:System.ArgumentException>.|Si un groupe de capture avec chiffre décimal unique existe, effectuer une référence arrière au niveau de ce chiffre. Sinon, interpréter la valeur en tant que littéral.|
+  |`\` suivi d’un chiffre entre 1 et 9, suivi par d’autres chiffres décimaux |Interpréter les chiffres comme une valeur décimale. Si ce groupe de capture existe, interpréter l'expression en tant que référence arrière.<br /><br /> Sinon, interpréter les chiffres octaux de début jusqu'à l'octal 377 ; en d'autres termes, ne prendre en compte que les 8 bits de poids faible de la valeur. Interpréter les autres chiffres comme des littéraux. Par exemple, dans l'expression `\3000`, si le groupe de capture 300 existe, interpréter en tant que référence arrière 300, sinon, interpréter en tant qu'octal 300 suivi de 0.|Interpréter en tant que référence arrière en convertissant autant de chiffres que possible en valeur décimale pouvant faire référence à une capture. Si aucun chiffre ne peut être converti, interpréter en tant qu'octal en utilisant les chiffres octaux de début jusqu'à l'octal 377 ; interpréter les autres chiffres en tant que littéraux.|
 
 [Retour au début](#Top)
 
@@ -399,7 +399,7 @@ Le comportement des expressions régulières ECMAScript et canoniques diffère d
 
 Par défaut, quand le moteur d'expression régulière effectue des comparaisons sans respect de la casse, il utilise les conventions de gestion de la casse de la culture actuelle pour déterminer les caractères majuscules et minuscules équivalents.
 
-Toutefois, ce comportement n'est pas souhaitable pour certains types de comparaisons, notamment celles entre les entrées utilisateur et les noms de ressources système, comme les mots de passe, les fichiers ou les URL. L'exemple suivant illustre un scénario de ce type. Le code est destiné à bloquer l’accès à toute ressource dont l’URL commence par **FILE://**. Le moteur d'expression régulière essaie d'effectuer une mise en correspondance sans respect de la casse avec la chaîne en utilisant l'expression régulière `$FILE://`. Toutefois, quand la culture système actuelle est tr-TR (Turc-Turquie), « I » n'est pas l'équivalent en majuscule de « i ». L'appel de la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> renvoie donc `false`, et l'accès au fichier est autorisé.
+Toutefois, ce comportement n'est pas souhaitable pour certains types de comparaisons, notamment celles entre les entrées utilisateur et les noms de ressources système, comme les mots de passe, les fichiers ou les URL. L'exemple suivant illustre un scénario de ce type. Le code est destiné à bloquer l’accès à toute ressource dont l’URL commence par **FILE://** . Le moteur d'expression régulière essaie d'effectuer une mise en correspondance sans respect de la casse avec la chaîne en utilisant l'expression régulière `$FILE://`. Toutefois, quand la culture système actuelle est tr-TR (Turc-Turquie), « I » n'est pas l'équivalent en majuscule de « i ». L'appel de la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> renvoie donc `false`, et l'accès au fichier est autorisé.
 
 [!code-csharp[Conceptual.Regex.Language.Options#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/culture1.cs#14)]
 [!code-vb[Conceptual.Regex.Language.Options#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/culture1.vb#14)]

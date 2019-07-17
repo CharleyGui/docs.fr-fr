@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 02/16/2019
-ms.openlocfilehash: 7d127476e37b9eefa9ddc13d26991145b6245b45
-ms.sourcegitcommit: acd8ed14fe94e9d4e3a7fb685fe83d05e941073c
+ms.openlocfilehash: 74ff7196ce17807b98a975687a524041f15a7f5b
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56442982"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67775903"
 ---
 # <a name="architectural-principles"></a>Principes de l’architecture
 
@@ -50,7 +50,7 @@ L’application du principe d’inversion de dépendance permet à A d’appeler
 
 ### <a name="explicit-dependencies"></a>Dépendances explicites
 
-**Les méthodes et les classes doivent demander explicitement tous les objets de collaboration dont ils ont besoin pour fonctionner correctement.** Les constructeurs de classe offrent une occasion pour les classes d’identifier les éléments dont ils ont besoin pour être dans un état valide et pour fonctionner correctement. Si vous définissez des classes qui peuvent être construites et appelées, mais qui fonctionnent correctement seulement si certains composants globaux ou d’infrastructure sont en place, ces classes *trompent* leurs clients. Le contrat du constructeur indique au client qu’il a seulement besoin des choses spécifiées (éventuellement de rien si la classe utilise seulement un constructeur par défaut), mais lors de l’exécution, il apparaît que l’objet avait en fait besoin d’autre chose.
+**Les méthodes et les classes doivent demander explicitement tous les objets de collaboration dont ils ont besoin pour fonctionner correctement.** Les constructeurs de classe offrent une occasion pour les classes d’identifier les éléments dont ils ont besoin pour être dans un état valide et pour fonctionner correctement. Si vous définissez des classes qui peuvent être construites et appelées, mais qui fonctionnent correctement seulement si certains composants globaux ou d’infrastructure sont en place, ces classes *trompent* leurs clients. Le contrat du constructeur indique au client qu’il a seulement besoin des choses spécifiées (éventuellement de rien si la classe utilise seulement un constructeur sans paramètre), mais lors de l’exécution, il apparaît que l’objet avait en fait besoin d’autre chose.
 
 En suivant le principe des dépendances explicites, vos classes et vos méthodes sont honnêtes avec leurs clients quant à ce dont elles ont besoin pour fonctionner. Ceci rend votre code mieux autodocumenté et vos contrats de codage plus conviviaux, car les utilisateurs leur font alors confiance dès lors qu’ils fournissent ce qui est nécessaire sous la forme de paramètres de méthode ou de constructeur, les objets avec lesquels ils travaillent se comportant alors correctement à l’exécution.
 
@@ -85,7 +85,7 @@ Voici quelques exemples de violation de ce principe :
 
 - Des classes responsables de leur propre enregistrement (comme le modèle Enregistrement actif).
 
-- Un constructeur par défaut obligatoire.
+- Un constructeur sans paramètre obligatoire.
 
 - Des propriétés nécessitant un mot clé virtuel.
 

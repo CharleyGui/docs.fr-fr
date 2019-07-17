@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: e93c33ae29268c3968ccb59739e899966ae4339d
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: 941c73f9a8b7b4c4336adfaec45775feec738f51
+ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58463707"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67804718"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Tester des applications ASP.NET Core MVC
 
@@ -34,7 +34,7 @@ Même si vous avez la bonne idée d’encapsuler votre code qui interagit avec u
 
 Les procédures de configuration et de désactivation (teardown) des tests d’intégration sont souvent plus complexes que pour les tests unitaires. Par exemple, un test d’intégration exécuté sur une base de données réelle doit avoir un moyen de rétablir la base de données à un état connu avant chaque nouveau test. À mesure que de nouveaux tests sont ajoutés et que le schéma de la base de données de production évolue, la taille et la complexité des scripts de test augmentent. Sur la plupart des grands systèmes, il est quasiment impossible d’exécuter des suites entières de tests d’intégration sur les stations de travail de développement avant d’enregistrer les modifications apportées dans le contrôle de code source partagé. Dans ces cas de figure, les tests d’intégration peuvent être exécutés sur un serveur de builds.
 
-La classe d’implémentation LocalFileImageService implémente la logique nécessaire pour récupérer (fetch) et retourner les octets d’un fichier image à partir d’un dossier spécifique, avec un id donné :
+La classe d’implémentation `LocalFileImageService` implémente la logique nécessaire pour récupérer et retourner les octets d’un fichier image à partir d’un dossier spécifique, avec un id donné :
 
 ```csharp
 public class LocalFileImageService : IImageService
@@ -147,7 +147,7 @@ public IActionResult GetImage(int id)
 }
 ```
 
-Il est difficile d’utiliser des tests unitaires pour tester cette méthode à cause de sa dépendance directe vis-à-vis de System.IO.File, qu’elle utilise pour lire les données du système de fichiers. Vous pouvez tester ce comportement pour vous assurer qu’il fonctionne comme prévu, mais vous devez utiliser un test d’intégration sur les fichiers réels. Il est important de noter que vous ne pouvez pas utiliser de tests unitaires pour tester la route de cette méthode. Vous verrez bientôt comment le faire avec un test fonctionnel.
+Il est difficile d’utiliser des tests unitaires pour tester cette méthode à cause de sa dépendance directe vis-à-vis de `System.IO.File`, qu’elle utilise pour lire les données du système de fichiers. Vous pouvez tester ce comportement pour vous assurer qu’il fonctionne comme prévu, mais vous devez utiliser un test d’intégration sur les fichiers réels. Il est important de noter que vous ne pouvez pas utiliser de tests unitaires pour tester la route de cette méthode. Vous verrez bientôt comment le faire avec un test fonctionnel.
 
 Si vous ne pouvez pas utiliser de tests unitaires pour tester directement le comportement du système de fichiers, et que vous ne pouvez pas tester l’itinéraire, que reste-t-il à tester ? En fait, après avoir refactorisé le code pour rendre les tests unitaires possibles, vous risquez de découvrir des cas de test et un comportement manquant, comme la gestion des erreurs. Que fait la méthode quand il manque un fichier ? Que doit-elle faire ? Dans cet exemple, la méthode refactorisée ressemble à ceci :
 
@@ -175,7 +175,7 @@ Dans la plupart des cas, vous souhaiterez utiliser des gestionnaires d’excepti
 
 ## <a name="integration-testing-aspnet-core-apps"></a>Tests d’intégration dans les applications ASP.NET Core
 
-La plupart des tests d’intégration figurant dans vos applications ASP.NET Core doivent tester les services et les autres types d’implémentation définis dans votre projet Infrastructure. La meilleure façon de vérifier le bon comportement de votre projet ASP.NET Core MVC consiste à utiliser les tests fonctionnels qui s’exécutent par rapport à votre application en cours d’exécution dans un hôte de test. Un exemple de test d’intégration d’une classe d’accès aux données est indiqué dans la section Tests d’intégration, plus haut dans ce chapitre.
+La plupart des tests d’intégration figurant dans vos applications ASP.NET Core doivent tester les services et les autres types d’implémentation définis dans votre projet Infrastructure. Par exemple, vous pouvez [tester qu’EF Core a été correctement mis à jour et a récupéré les données que vous attendez](https://docs.microsoft.com/ef/core/miscellaneous/testing/) à partir de vos classes d’accès aux données résidant dans le projet Infrastructure. La meilleure façon de vérifier le bon comportement de votre projet ASP.NET Core MVC consiste à utiliser les tests fonctionnels qui s’exécutent par rapport à votre application en cours d’exécution dans un hôte de test.
 
 ## <a name="functional-testing-aspnet-core-apps"></a>Tests fonctionnels dans les applications ASP.NET Core
 
@@ -308,6 +308,15 @@ namespace Microsoft.eShopWeb.FunctionalTests.WebRazorPages
 ```
 
 Ce test fonctionnel utilise la pile entière de l’application ASP.NET Core MVC/Razor Pages, notamment tous les intergiciels (middleware), filtres, classeurs, etc. existants. Il vérifie qu’un itinéraire donné (« / ») retourne le code d’état de réussite attendu et la sortie HTML. Il effectue cette opération sans configurer de serveur web réel, ce qui permet d’éviter une grande part des problèmes de fiabilité que pose l’utilisation d’un serveur web réel pour les tests (par exemple, les problèmes liés aux paramètres de pare-feu). Les tests fonctionnels exécutés sur le TestServer sont généralement plus lents que les tests d’intégration et les tests unitaires, mais ils sont beaucoup plus rapides que les tests exécutés sur un serveur web de test via le réseau. Vous devez utiliser des tests fonctionnels pour garantir que la pile front-end de votre application fonctionne comme prévu. Ces tests sont particulièrement utiles quand vous trouvez un doublon dans vos contrôleurs ou pages et que vous corrigez ce problème en ajoutant des filtres. Dans l’idéal, cette refactorisation ne modifie pas le comportement de l’application, et une suite de tests fonctionnels vérifie que c’est bien le cas.
+
+> ### <a name="references--test-aspnet-core-mvc-apps"></a>Références – Tester des applications ASP.NET Core MVC
+>
+> - **Test dans ASP.NET Core**  
+>   <https://docs.microsoft.com/aspnet/core/testing/>
+> - **Convention de nommage des tests unitaires**  
+>   <https://ardalis.com/unit-test-naming-convention>
+> - **Test d’EF Core**  
+>   <https://docs.microsoft.com/ef/core/miscellaneous/testing/>
 
 >[!div class="step-by-step"]
 >[Précédent](work-with-data-in-asp-net-core-apps.md)

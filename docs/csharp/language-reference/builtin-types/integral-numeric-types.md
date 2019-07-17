@@ -32,12 +32,12 @@ helpviewer_keywords:
 - uint keyword [C#]
 - long keyword [C#]
 - ulong keyword [C#]
-ms.openlocfilehash: bde0b7cea52951cd72bde6cfd7d8f1c7dbcb8f46
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 0a1ed01d9e6cb86ea177e8b947627f9dc02eedae
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425594"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744216"
 ---
 # <a name="integral-numeric-types--c-reference"></a>Types numériques intégraux (référence C#)
 
@@ -76,14 +76,14 @@ var binaryLiteral = 0b_0010_1010;
 
 Les littéraux décimaux ne nécessitent aucun préfixe. Les préfixes `x` ou `X` correspondent à un *littéral hexadécimal*. Les préfixes `b` ou `B` correspondent à un *littéral binaire*. La déclaration de `binaryLiteral` illustre l’utilisation de `_` comme un *séparateur numérique*. Vous pouvez aussi utiliser le séparateur numérique avec tous les littéraux numériques. Les littéraux binaires et le séparateur numérique `_` sont pris en charge dans C# 7.0.
 
-## <a name="literal-suffixes"></a>Suffixes littéraux 
+### <a name="literal-suffixes"></a>Suffixes littéraux 
 
 Les suffixes `l` ou `L` indiquent que le littéral intégral doit être de type `long`. Les suffixes `ul` et `UL` spécifient le type `ulong`. Si le suffixe `L` est utilisé sur un littéral qui est supérieur à 9 223 372 036 854 775 807 (la valeur maximale de `long`), la valeur est convertie vers le type `ulong`. Si la valeur représentée par un littéral entier dépasse <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, une erreur de compilation [CS1021](../../misc/cs1021.md) se produit. 
 
 > [!NOTE]
 > Vous pouvez utiliser la lettre minuscule « l » comme suffixe. Toutefois, ceci génère un avertissement du compilateur, car la lettre « l » peut être facilement confondue avec le chiffre « 1 ». Utilisez « L » pour plus de clarté.
 
-## <a name="type-of-an-integral-literal"></a>Type d’un littéral intégral
+### <a name="type-of-an-integral-literal"></a>Type d’un littéral intégral
 
 Quand un littéral intégral n’a pas de suffixe, son type est le premier des types suivants dans lesquels sa valeur peut être représentée :
 
@@ -118,8 +118,16 @@ Vous devez utiliser un cast explicite pour convertir un type intégral en un aut
 
 - [Spécification du langage C# - Types intégraux](~/_csharplang/spec/types.md#integral-types)
 - [Informations de référence sur C#](../index.md)
-- [Tableau des types à virgule flottante](../keywords/floating-point-types-table.md)
+- [Types virgule flottante](floating-point-numeric-types.md)
 - [Tableau des valeurs par défaut](../keywords/default-values-table.md)
 - [Tableau des formats des résultats numériques](../keywords/formatting-numeric-results-table.md)
 - [Tableaux des types intégrés](../keywords/built-in-types-table.md)
 - [Valeurs numériques dans .NET](../../../standard/numerics.md)
+- <xref:System.Byte?displayProperty=nameWithType>
+- <xref:System.SByte?displayProperty=nameWithType>
+- <xref:System.Int16?displayProperty=nameWithType>
+- <xref:System.UInt16?displayProperty=nameWithType>
+- <xref:System.Int32?displayProperty=nameWithType>
+- <xref:System.UInt32?displayProperty=nameWithType>
+- <xref:System.Int64?displayProperty=nameWithType>
+- <xref:System.UInt64?displayProperty=nameWithType>

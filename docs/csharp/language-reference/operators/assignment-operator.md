@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: ef9c9bab5c1cebb06edf934254507180e2197349
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 1277b35723777760deebb6606ddc90bd21e654ec
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306565"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744118"
 ---
 # <a name="-operator-c-reference"></a>Opérateur >= (référence C#)
 
@@ -64,7 +64,7 @@ L’assignation composée est prise en charge par les opérateurs [arithmétique
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 
-Un type défini par l’utilisateur ne peut pas surcharger l’opérateur d’assignation. Toutefois, il peut définir une conversion implicite vers un autre type. Ainsi, la valeur d’un type défini par l’utilisateur peut être assignée à une variable, une propriété ou un élément d’indexeur d’un autre type. Pour plus d'informations, voir l’article [implicit, mot clé](../keywords/implicit.md).
+Un type défini par l’utilisateur ne peut pas surcharger l’opérateur d’assignation. Toutefois, il peut définir une conversion implicite vers un autre type. Ainsi, la valeur d’un type défini par l’utilisateur peut être assignée à une variable, une propriété ou un élément d’indexeur d’un autre type. Pour plus d’informations, consultez [Opérateurs de conversion définie par l’utilisateur](user-defined-conversion-operators.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 

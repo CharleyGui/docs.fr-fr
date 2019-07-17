@@ -18,12 +18,12 @@ helpviewer_keywords:
 - cast expression [C#]
 - () operator [C#]
 - typeof operator [C#]
-ms.openlocfilehash: 4468bc86634ad97f2dfbdb5f842eb5206f957a79
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: a9e5139e6d650aa6935bff934ca25502fdc14775
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307513"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67744075"
 ---
 # <a name="type-testing-and-conversion-operators-c-reference"></a>Opérateurs de conversion et de test de type (Référence C#)
 
@@ -109,7 +109,7 @@ L’exemple suivant montre des conversions numériques et de référence explici
 
 [!code-csharp-interactive[cast expression](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#Cast)]
 
-Pour plus d’informations sur les conversions explicites prises en charge, consultez la section [Conversions explicites](~/_csharplang/spec/conversions.md#explicit-conversions) de la [Spécification du langage C#](~/_csharplang/spec/introduction.md). Pour plus d’informations sur la façon de définir une conversion de type explicite ou implicite personnalisée, consultez l’article sur le mot clé [explicit](../keywords/explicit.md) ou [implicit](../keywords/implicit.md), respectivement.
+Pour plus d’informations sur les conversions explicites prises en charge, consultez la section [Conversions explicites](~/_csharplang/spec/conversions.md#explicit-conversions) de la [Spécification du langage C#](~/_csharplang/spec/introduction.md). Pour plus d’informations sur la façon de définir une conversion de type explicite ou implicite personnalisée, consultez [Opérateurs de conversion définie par l’utilisateur](user-defined-conversion-operators.md).
 
 ### <a name="other-usages-of-"></a>Autres utilisations de ()
 
@@ -139,7 +139,7 @@ Utilisez l’opérateur `typeof` pour vérifier si le type de runtime du résult
 
 Les opérateurs `is`, `as` et `typeof` ne sont pas surchargeables.
 
-Un type défini par l’utilisateur ne peut pas surcharger l’opérateur `()`, mais vous pouvez définir des conversions de type personnalisées qui peuvent être effectuées par une expression cast. Pour plus d’informations, consultez les articles sur les mots clés [explicit](../keywords/explicit.md) et [implicit](../keywords/implicit.md).
+Un type défini par l’utilisateur ne peut pas surcharger l’opérateur `()`, mais vous pouvez définir des conversions de type personnalisées qui peuvent être effectuées par une expression cast. Pour plus d’informations, consultez [Opérateurs de conversion définie par l’utilisateur](user-defined-conversion-operators.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 

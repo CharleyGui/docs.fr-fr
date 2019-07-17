@@ -2,12 +2,12 @@
 title: Commande dotnet
 description: Découvrez la commande dotnet (le pilote générique des outils .NET Core CLI) et comment l’utiliser.
 ms.date: 06/04/2018
-ms.openlocfilehash: 5278adf44d12e428cdeacf1d475377ce9155c314
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.openlocfilehash: 2134bf8ed66157619499b027f01d39e03e84411f
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59613003"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859554"
 ---
 # <a name="dotnet-command"></a>Commande dotnet
 
@@ -304,7 +304,7 @@ Exécutez une DLL d’application, par exemple `myapp.dll` :
 
 `DOTNET_PACKAGES`
 
-Cache du package principal. S’il n’est pas défini, les valeurs par défaut sont `$HOME/.nuget/packages` sous Unix et `%HOME%\NuGet\Packages` sous Windows.
+Le dossier de packages global. S’il n’est pas défini, les valeurs par défaut sont `~/.nuget/packages` sous Unix et `%userprofile%\.nuget\packages` sous Windows.
 
 `DOTNET_SERVICING`
 
@@ -326,7 +326,7 @@ Désactive la restauration par progression d’une version mineure, si la valeur
 
 `DOTNET_PACKAGES`
 
-Cache du package principal. S’il n’est pas défini, les valeurs par défaut sont `$HOME/.nuget/packages` sous Unix et `%HOME%\NuGet\Packages` sous Windows.
+Cache du package principal. S’il n’est pas défini, les valeurs par défaut sont `$HOME/.nuget/packages` sous Unix et `%userprofile%\.nuget\packages` sous Windows.
 
 `DOTNET_SERVICING`
 
@@ -344,7 +344,7 @@ Spécifie si le runtime .NET Core, le framework partagé ou le SDK sont résolus
 
 `DOTNET_PACKAGES`
 
-Cache du package principal. S’il n’est pas défini, les valeurs par défaut sont `$HOME/.nuget/packages` sous Unix et `%HOME%\NuGet\Packages` sous Windows.
+Cache du package principal. S’il n’est pas défini, les valeurs par défaut sont `$HOME/.nuget/packages` sous Unix et `%userprofile%\.nuget\packages` sous Windows.
 
 `DOTNET_SERVICING`
 

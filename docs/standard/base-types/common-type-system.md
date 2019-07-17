@@ -19,12 +19,12 @@ ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: fdd7eef0994ca9c7b0533b6497d76a4720dd1f64
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e916d7d335bcdeff64393a25ab697748209d147c
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634641"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67782634"
 ---
 # <a name="common-type-system"></a>Système de type commun
 Le système de type commun (CTS, Common Type System) définit la façon dont les types sont déclarés, utilisés et managés dans le Common Language Runtime ; il constitue également une partie importante de la prise en charge, par le runtime, de l'intégration interlangage. Le système de type commun met en œuvre les fonctions suivantes :  
@@ -86,7 +86,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
   
  Les membres de classe sans implémentation sont des membres abstraits. Une classe qui possède un ou plusieurs membres abstraits est elle-même abstraite ; il n'est pas possible d'en créer de nouvelles instances. Certains langages qui ciblent le runtime vous permettent de marquer une classe comme abstraite même si aucun de ses membres n'est abstrait. Vous pouvez utiliser une classe abstraite lorsque vous voulez encapsuler un ensemble de fonctionnalités de base dont des classes dérivées peuvent hériter ou qu'elles peuvent substituer lorsque cela est approprié. Les classes qui ne sont pas abstraites sont qualifiées de classes concrètes.  
   
- Une classe peut implémenter n'importe quel nombre d'interfaces, mais elle ne peut hériter que d'une seule classe de base en plus de la classe <xref:System.Object?displayProperty=nameWithType>, de laquelle toutes les classes héritent implicitement. Toutes les classes doivent avoir au moins un constructeur qui initialise de nouvelles instances de la classe. Si vous ne définissez pas explicitement un constructeur, la plupart des compilateurs fourniront automatiquement un constructeur par défaut (sans paramètre).  
+ Une classe peut implémenter n'importe quel nombre d'interfaces, mais elle ne peut hériter que d'une seule classe de base en plus de la classe <xref:System.Object?displayProperty=nameWithType>, de laquelle toutes les classes héritent implicitement. Toutes les classes doivent avoir au moins un constructeur qui initialise de nouvelles instances de la classe. Si vous ne définissez pas explicitement un constructeur, la plupart des compilateurs fournissent automatiquement un constructeur sans paramètre.  
   
 <a name="Structures"></a>   
 ### <a name="structures"></a>Structures  
@@ -273,9 +273,9 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
 ### <a name="constructors"></a>Constructeurs  
  Un constructeur est un genre de méthode particulier qui crée de nouvelles instances d'une classe ou d'une structure. Comme n'importe quelle autre méthode, un constructeur peut inclure des paramètres ; toutefois, les constructeurs n'ont pas de valeur de retour (en d'autres termes, ils retournent `void`).  
   
- Si le code source d'une classe ne définit pas explicitement un constructeur, le compilateur inclut un constructeur par défaut (sans paramètre). Toutefois, si le code source d'une classe définit uniquement des constructeurs paramétrables, les compilateurs Visual Basic et C# ne génèrent pas de constructeur sans paramètre.  
+ Si le code source d’une classe ne définit pas explicitement un constructeur, le compilateur inclut un constructeur sans paramètre. Toutefois, si le code source d'une classe définit uniquement des constructeurs paramétrables, les compilateurs Visual Basic et C# ne génèrent pas de constructeur sans paramètre.  
   
- Si le code source d'une structure définit des constructeurs, ils doivent être paramétrables ; une structure ne peut pas définir un constructeur (sans paramètre) par défaut et les compilateurs ne génèrent pas de constructeur sans paramètre pour les structures ou les autres types valeurs. Tous les types valeurs disposent d'un constructeur implicite par défaut. Ce constructeur est implémenté par le Common Language Runtime et initialise tous les champs de la structure avec leurs valeurs par défaut.  
+ Si le code source d’une structure définit des constructeurs, ceux-ci doivent être paramétrés ; une structure ne peut pas définir un constructeur sans paramètre et les compilateurs ne génèrent pas de constructeur sans paramètre pour les structures ou autres types valeur. Tous les types valeurs disposent d’un constructeur sans paramètre implicite. Ce constructeur est implémenté par le Common Language Runtime et initialise tous les champs de la structure avec leurs valeurs par défaut.  
   
 <a name="Events"></a>   
 ### <a name="events"></a>Événements  

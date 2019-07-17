@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ec0a8d63-11b3-4acd-b398-da1e37e97382
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 314977cb55d9c927ddf96a9279ebb83d8f69e936
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 4f9741944dcf8a5fcc05c169a1c3c3f679902474
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59200920"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67859679"
 ---
 # <a name="tlbimpexe-type-library-importer"></a>Tlbimp.exe (Type Library Importer)
 L''importateur de bibliothèques de types convertit les définitions de types présentes dans une bibliothèque de types COM en définitions équivalentes dans un assembly de Common Language Runtime. Le résultat de Tlbimp.exe est un fichier binaire (un assembly) qui contient les métadonnées de runtime pour les types définis dans la bibliothèque de types d'origines. Vous pouvez examiner ce fichier à l’aide d’outils comme [Ildasm.exe](ildasm-exe-il-disassembler.md).  
@@ -43,7 +43,7 @@ tlbimp tlbFile [options]
 |**/asmversion:** *versionnumber*|Spécifie le numéro de version de l'assembly à produire. Spécifiez *versionnumber* au format *major.minor.build.revision*.|  
 |**/company:** `companyinformation`|Ajoute les informations de l'entreprise à l'assembly de sortie.|  
 |**/copyright:** `copyrightinformation`|Ajoute les informations de copyright à l'assembly de sortie. Ces informations peuvent être affichées dans la boîte de dialogue **Propriétés du fichier** de l’assembly.|  
-|**/delaysign**|Indique à Tlbimp.exe de signer l'assembly résultant avec un nom fort à l'aide d'une signature différée. Vous devez spécifier cette option avec l’option **/keycontainer:**, **/keyfile:** ou **/publickey:**. Pour plus d’informations sur le processus de signature différée, consultez [Temporisation de signature d’un assembly](../app-domains/delay-sign-assembly.md).|  
+|**/delaysign**|Indique à Tlbimp.exe de signer l'assembly résultant avec un nom fort à l'aide d'une signature différée. Vous devez spécifier cette option avec l’option **/keycontainer:** , **/keyfile:** ou **/publickey:** . Pour plus d’informations sur le processus de signature différée, consultez [Temporisation de signature d’un assembly](../app-domains/delay-sign-assembly.md).|  
 |**/help**|Affiche la syntaxe et les options de commande de l'outil.|  
 |**/keycontainer:** *containername*|Signe l’assembly obtenu avec un nom fort en utilisant la paire de clés publique/privée présente dans le conteneur de clé spécifié par *containername*.|  
 |**/keyfile:** *filename*|Signe l’assembly obtenu avec un nom fort en utilisant la paire de clés publique/privée officielle de l’éditeur présente dans *filename*.|  
@@ -55,7 +55,7 @@ tlbimp tlbFile [options]
 |**/primary**|Produit un assembly PIA (Primary Interop Assembly) pour la bibliothèque de types spécifiée. Des informations sont ajoutées à l'assembly pour indiquer qu'il a été produit par l'éditeur de la bibliothèque de types. En spécifiant un assembly PIA, vous différenciez l'assembly d'un éditeur des autres assemblys créés à partir de la bibliothèque de types à l'aide de Tlbimp.exe. Vous devez utiliser uniquement l’option **/primary** si vous êtes l’éditeur de la bibliothèque de types que vous importez avec Tlbimp.exe. Notez que vous devez signer un assembly PIA (Primary Interop Assembly) avec un [nom fort](../app-domains/strong-named-assemblies.md). Pour plus d’informations, consultez [Assemblys PIA (Primary Interop Assembly)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100)).|  
 |**/product:** `productinformation`|Ajoute les informations produit à l'assembly de sortie. Ces informations peuvent être affichées dans la boîte de dialogue **Propriétés du fichier** de l’assembly.|  
 |**/productversion:** `productversioninformation`|Ajoute les informations de version du produit à l'assembly de sortie. Il n'existe aucune restriction de format. Ces informations peuvent être affichées dans la boîte de dialogue **Propriétés du fichier** de l’assembly.|  
-|**/publickey:** *filename*|Spécifie le fichier contenant la clé publique à utiliser pour signer l'assembly résultant. Si vous spécifiez l’option **/keyfile:** ou **/keycontainer:** au lieu de **/publickey:**, Tlbimp.exe génère la clé publique à partir de la paire de clés publique/privée fournie avec **/keyfile:** ou **/keycontainer:**. L’option **/publickey:** prend en charge les scénarios de clé de test et de signature différée. Le fichier est au format généré par Sn.exe. Pour plus d’informations, consultez l’option **-p** de Sn.exe dans l’[outil Strong Name (Sn.exe)](sn-exe-strong-name-tool.md).|  
+|**/publickey:** *filename*|Spécifie le fichier contenant la clé publique à utiliser pour signer l'assembly résultant. Si vous spécifiez l’option **/keyfile:** ou **/keycontainer:** au lieu de **/publickey:** , Tlbimp.exe génère la clé publique à partir de la paire de clés publique/privée fournie avec **/keyfile:** ou **/keycontainer:** . L’option **/publickey:** prend en charge les scénarios de clé de test et de signature différée. Le fichier est au format généré par Sn.exe. Pour plus d’informations, consultez l’option **-p** de Sn.exe dans l’[outil Strong Name (Sn.exe)](sn-exe-strong-name-tool.md).|  
 |**/reference:** *filename*|Spécifie le fichier d'assembly à utiliser pour résoudre les références aux types définis en dehors de la bibliothèque de types en cours. Si vous ne spécifiez pas l’option **/reference**, Tlbimp.exe importe automatiquement de manière récursive les bibliothèques de types externes que la bibliothèque de types importée référence. Si vous spécifiez l’option **/reference**, l’outil essaie de résoudre les types externes des assemblys référencés avant d’importer d’autres bibliothèques de types.|  
 |**/silence:** `warningnumber`|Supprime l'affichage de l'avertissement spécifié. Cette option ne peut pas être utilisée avec **/silent**.|  
 |**/silent**|Supprime l'affichage des messages indiquant la réussite des opérations. Cette option ne peut pas être utilisée avec **/silence**.|  
@@ -78,8 +78,10 @@ tlbimp tlbFile [options]
   
  Il est souvent utile ou nécessaire d’assigner des [noms forts](../app-domains/strong-named-assemblies.md) aux assemblys. Par conséquent, Tlbimp.exe comprend des options permettant de fournir les informations nécessaires pour générer des assemblys portant un nom fort. Les options **/keyfile:** et **/keycontainer:** permettent de signer les assemblys avec des noms forts. Par conséquent, il est logique de fournir uniquement une seule de ces options à la fois.  
   
- Vous pouvez spécifier plusieurs assemblys de référence en utilisant l’option **/reference** plusieurs fois.  
-  
+ Vous pouvez spécifier plusieurs assemblys de référence en utilisant l’option **/reference** plusieurs fois.
+ 
+ En raison de la façon dont Tlbimp.exe génère des assemblys, il n’est pas possible de rediriger un assembly vers une autre version `mscorlib`. Par exemple, si vous souhaitez générer un assembly qui cible .NET Framework 2.0, vous devez utiliser le fichier Tlbimp.exe fourni avec le kit SDK .NET Framework 2.0/3.0/3.5. Pour cibler .NET Framework 4.x, vous devez utiliser le Tlbimp.exe fourni avec un kit SDK .NET Framework 4.x.
+ 
  Un ID de ressource peut être ajouté de manière facultative à un fichier bibliothèque de types lors de l'importation d'une bibliothèque de types à partir d'un module contenant plusieurs bibliothèques de types. Tlbimp.exe peut localiser ce fichier uniquement s'il se trouve dans le répertoire en cours, ou si vous spécifiez le chemin d'accès complet. Consultez l'exemple décrit plus loin dans cette rubrique.  
   
 ## <a name="examples"></a>Exemples  

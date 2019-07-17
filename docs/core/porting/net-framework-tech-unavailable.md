@@ -4,12 +4,12 @@ description: Découvrir les technologies .NET Framework non disponibles sur .NET
 author: cartermp
 ms.author: mairaw
 ms.date: 04/30/2019
-ms.openlocfilehash: 4a798e85adc056b09761bd17b5d9a143643e77ad
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: bfeea58f4d80b789a7174a77e0784f2326906416
+ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397621"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67737088"
 ---
 # <a name="net-framework-technologies-unavailable-on-net-core"></a>Technologies .NET Framework non disponibles sur .NET Core
 

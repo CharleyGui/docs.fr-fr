@@ -15,7 +15,7 @@ sections:
   - title: Bien démarrer
     items:
       - type: paragraph
-        text: 'Pour savoir comment créer une application de machine learning avec ML.NET, lisez <a href="/dotnet/machine-learning/how-does-mldotnet-work">Présentation de ML.NET et de son fonctionnement</a>. Ou démarrez par l’ajout du package NuGet <b>Microsoft.ML</b> à votre application.'
+        text: 'Pour savoir comment créer une application de machine learning avec ML.NET, lisez <a href="/dotnet/machine-learning/how-does-mldotnet-work">Présentation de ML.NET et de son fonctionnement</a>. Ou commencez par ajouter le package NuGet <b>Microsoft.ML</b> à votre application.'
   - title: Tutoriels pas à pas
     items:
       - type: paragraph

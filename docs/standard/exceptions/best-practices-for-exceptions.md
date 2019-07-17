@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-ms.openlocfilehash: 752a7e5233d8b1d88b49be450972fc964f82d2c4
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: d212ba9beaa0ccc229204045c5a8174381440dfc
+ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690659"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67860150"
 ---
 # <a name="best-practices-for-exceptions"></a>Bonnes pratiques pour les exceptions
 
@@ -80,7 +80,7 @@ Quand une exception personnalisée est nécessaire, nommez-la de manière approp
 
 ## <a name="include-three-constructors-in-custom-exception-classes"></a>Inclure trois constructeurs dans des classes d’exception personnalisées
 
-Utilisez au moins les trois constructeurs communs pendant la création de vos propres classes d’exception : le constructeur par défaut, un constructeur qui prend un message de type chaîne et un constructeur qui prend un message de type chaîne et une exception interne.
+Utilisez au moins les trois constructeurs communs pendant la création de vos propres classes d’exception : le constructeur sans paramètre, un constructeur qui prend un message de type chaîne et un constructeur qui prend un message de type chaîne et une exception interne.
 
 * <xref:System.Exception.%23ctor>, qui utilise les valeurs par défaut.
 
@@ -143,6 +143,14 @@ public void TransferFunds(Account from, Account to, decimal amount)
 }
 ```
 
+```vb
+Public Sub TransferFunds(from As Account, [to] As Account, amount As Decimal)
+    from.Withdrawal(amount)
+    ' If the deposit fails, the withdrawal shouldn't remain in effect.
+    [to].Deposit(amount)
+End Sub
+```
+
 La méthode ci-dessus ne lève pas directement d’exceptions, mais doit être écrite avec précaution afin d’inverser le retrait si l’opération de dépôt échoue.
 
 Pour gérer cette situation, vous pouvez intercepter toutes les exceptions levées par la transaction de dépôt et annuler le retrait.
@@ -163,19 +171,43 @@ private static void TransferFunds(Account from, Account to, decimal amount)
 }
 ```
 
+```vb
+Private Shared Sub TransferFunds(from As Account, [to] As Account, amount As Decimal)
+    Dim withdrawalTrxID As String = from.Withdrawal(amount)
+    Try
+        [to].Deposit(amount)
+    Catch
+        from.RollbackTransaction(withdrawalTrxID)
+        Throw
+    End Try
+End Sub
+```
+
 Cet exemple illustre l’utilisation de `throw` pour lever de nouveau l’exception d’origine, ce qui peut permettre aux appelants de voir plus facilement la véritable cause du problème sans avoir à examiner la propriété <xref:System.Exception.InnerException>. Vous pouvez aussi lever une nouvelle exception et inclure l’exception d’origine comme exception interne :
 
 ```csharp
 catch (Exception ex)
 {
     from.RollbackTransaction(withdrawalTrxID);
-    throw new TransferFundsException("Withdrawal failed", innerException: ex)
+    throw new TransferFundsException("Withdrawal failed.", innerException: ex)
     {
         From = from,
         To = to,
         Amount = amount
     };
 }
+```
+
+```vb
+Catch ex As Exception
+    from.RollbackTransaction(withdrawalTrxID)
+    Throw New TransferFundsException("Withdrawal failed.", innerException:=ex) With
+    {
+        .From = from,
+        .[To] = [to],
+        .Amount = amount
+    }
+End Try
 ```
 
 ## <a name="see-also"></a>Voir aussi
