@@ -5,19 +5,19 @@ helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: 6dca154dc6ff560fe589ea56ee49d761a2622fe9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ca00b4a0450539741719f5f5a56d241e4bebfcc2
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614552"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331719"
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Déploiement d'une application WPF (WPF)
-Une fois que les applications de Windows Presentation Foundation (WPF) sont créées, elles doivent être déployées. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] et le .NET Framework inclut plusieurs technologies de déploiement. La technologie de déploiement utilisée pour déployer une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] dépend du type d’application. Cette rubrique fournit une vue d’ensemble des différentes technologies de déploiement et explique leur utilisation avec les spécifications de déploiement de chaque type d’application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
+Une fois les applications Windows Presentation Foundation (WPF) générées, elles doivent être déployées. [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]et les .NET Framework incluent plusieurs technologies de déploiement. La technologie de déploiement utilisée pour déployer une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] dépend du type d’application. Cette rubrique fournit une vue d’ensemble des différentes technologies de déploiement et explique leur utilisation avec les spécifications de déploiement de chaque type d’application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
 
 <a name="Deployment_Technologies"></a>   
 ## <a name="deployment-technologies"></a>Technologies de déploiement  
- [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] et le .NET Framework inclut plusieurs technologies de déploiement, notamment :  
+ [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]et les .NET Framework incluent plusieurs technologies de déploiement, notamment:  
   
 - Déploiement XCopy.  
   
@@ -43,7 +43,7 @@ Une fois que les applications de Windows Presentation Foundation (WPF) sont cré
   
  [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)] simplifie l’installation et la désinstallation d’applications, mais ne fournit pas de fonctions permettant de garantir que les applications installées sont actualisées du point de vue de la gestion de version.  
   
- Pour plus d’informations sur le programme d’installation de Windows, consultez [déploiement de Windows Installer](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
+ Pour plus d’informations sur la Windows Installer, consultez [Windows Installer le déploiement](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
   
 <a name="ClickOnce_Deployment"></a>   
 ### <a name="clickonce-deployment"></a>déploiement ClickOnce  
@@ -81,7 +81,7 @@ Une fois que les applications de Windows Presentation Foundation (WPF) sont cré
   
  Pour plus d’informations sur la sécurité pour les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], consultez [Sécurité](../security-wpf.md).  
   
- Les pages [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] à balisage peuvent être installées sur le système de fichiers local à l’aide de XCopy ou de [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]. Ces pages peuvent être visualisés [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] ou de l’Explorateur Windows.  
+ Les pages [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] à balisage peuvent être installées sur le système de fichiers local à l’aide de XCopy ou de [!INCLUDE[TLA2#tla_wininstall](../../../../includes/tla2sharptla-wininstall-md.md)]. Ces pages peuvent être affichées à [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] l’aide de ou de l’Explorateur Windows.  
   
  Pour plus d’informations sur XAML, consultez [Vue d’ensemble du langage XAML (WPF)](../advanced/xaml-overview-wpf.md).  
   
@@ -89,16 +89,16 @@ Une fois que les applications de Windows Presentation Foundation (WPF) sont cré
 ### <a name="deploying-xaml-browser-applications"></a>Déploiement d’applications du navigateur XAML  
  Les [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] sont des applications compilées qui nécessitent le déploiement des trois fichiers suivants :  
   
-- *ApplicationName*.exe : Fichier application de l’assembly exécutable.  
+- *ApplicationName*. exe: Fichier d’application de l’assembly exécutable.  
   
-- *ApplicationName*.xbap : Le manifeste de déploiement.  
+- *ApplicationName*. XBAP: Manifeste de déploiement.  
   
-- *ApplicationName*. exe.manifest : Manifeste d’application.  
+- *ApplicationName*. exe. manifest: Manifeste d’application.  
   
 > [!NOTE]
 >  Pour plus d’informations sur les manifestes de déploiement et d’application, consultez [Génération d’une application WPF](building-a-wpf-application-wpf.md).  
   
- Ces fichiers sont produits quand une [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] est générée. Pour plus d'informations, voir [Procédure : Créer un nouveau projet d’Application de navigateur WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100)). Comme les pages [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] à balisage, les [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] sont généralement publiées sur un serveur web et affichées avec [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)].  
+ Ces fichiers sont produits quand une [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] est générée. Pour plus d’informations, consultez [Guide pratique pour Créez un projet](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100))d’application de navigateur WPF. Comme les pages [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] à balisage, les [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] sont généralement publiées sur un serveur web et affichées avec [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)].  
   
  Les [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] peuvent être déployées sur les clients à l’aide de toute technique de déploiement. Toutefois, [!INCLUDE[TLA#tla_clickonce](../../../../includes/tlasharptla-clickonce-md.md)] est recommandé puisqu’il fournit les fonctions suivantes :  
   
@@ -112,13 +112,13 @@ Une fois que les applications de Windows Presentation Foundation (WPF) sont cré
   
 <a name="Installing__NET_Framework_3_0"></a>   
 ## <a name="installing-the-net-framework"></a>Installation du .NET Framework  
- Pour exécuter un [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application, Microsoft .NET Framework doit être installé sur le client. [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] détecte automatiquement si les clients sont installés avec le .NET Framework lorsque [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] applications hébergées par un navigateur sont affichées. Si le .NET Framework n’est pas installé, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] invitant les utilisateurs à installer.  
+ Pour exécuter une [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application, le Microsoft .NET Framework doit être installé sur le client. [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]détecte automatiquement si les clients sont installés avec .NET Framework lorsque [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] les applications hébergées sur le navigateur sont affichées. Si le .NET Framework n’est pas installé [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] , invite l’utilisateur à l’installer.  
   
- Pour détecter si .NET Framework est installé, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] inclut une application de programme d’amorçage qui est inscrit en tant que la procédure de secours [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] gestionnaire pour les fichiers de contenu avec les extensions suivantes : .xaml, .xps, .xbap et .application. Si vous accédez à ces types de fichiers et le .NET Framework n’est pas installé sur le client, le programme d’amorçage demande l’autorisation pour l’installer. Si l’autorisation n’est pas fournie, l’application ni .NET Framework est installée.  
+ Pour détecter si le .NET Framework est installé, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] comprend une application de programme d’amorçage qui est inscrite [!INCLUDE[TLA#tla_mime](../../../../includes/tlasharptla-mime-md.md)] comme gestionnaire de secours pour les fichiers de contenu avec les extensions suivantes:. xaml,. XPS,. XBAP et. application. Si vous accédez à ces types de fichiers et que le .NET Framework n’est pas installé sur le client, l’application du programme d’amorçage demande l’autorisation de l’installer. Si aucune autorisation n’est fournie, le .NET Framework ou l’application n’est pas installé.  
   
- Si l’autorisation est accordée, [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] télécharge et installe le .NET Framework à l’aide de la [!INCLUDE[TLA#tla_bits](../../../../includes/tlasharptla-bits-md.md)]. Après l’installation du .NET Framework, le fichier demandé à l’origine est ouvert dans une nouvelle fenêtre de navigateur.  
+ Si l’autorisation est accordée [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] , télécharge et installe le .NET Framework à l’aide de Microsoft service de transfert intelligent en arrière-plan (bits). Une fois l’installation de la .NET Framework réussie, le fichier demandé à l’origine est ouvert dans une nouvelle fenêtre de navigateur.  
   
- La détection automatique de .NET framework est disponible sur [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)], [!INCLUDE[TLA#tla_winxpsp2](../../../../includes/tlasharptla-winxpsp2-md.md)], et [!INCLUDE[TLA#tla_winnetsvrfamsp1](../../../../includes/tlasharptla-winnetsvrfamsp1-md.md)] les clients qui ont [!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)] ou version ultérieure.  
+ .NET Framework la détection automatique est disponible sur [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)]les [!INCLUDE[TLA#tla_winxpsp2](../../../../includes/tlasharptla-winxpsp2-md.md)]clients, [!INCLUDE[TLA#tla_winnetsvrfamsp1](../../../../includes/tlasharptla-winnetsvrfamsp1-md.md)] et sur lesquels [!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)] ou une version ultérieure est installée.  
   
  Pour plus d’informations, consultez [Déploiement d’applications et du .NET Framework](../../deployment/index.md).  
   

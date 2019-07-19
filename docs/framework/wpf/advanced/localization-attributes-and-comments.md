@@ -5,12 +5,12 @@ helpviewer_keywords:
 - localization [WPF], attributes
 - localization [WPF], comments
 ms.assetid: ead2d9ac-b709-4ec1-a924-39927a29d02f
-ms.openlocfilehash: a242dc1f69c79b2c1a67c1a9235d3e942553caf1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1ef18802ab3568df00e29eb4ccaf717f4bdf4863
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64598722"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68330998"
 ---
 # <a name="localization-attributes-and-comments"></a>Attributs et commentaires de localisation
 Les commentaires de localisation [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] sont des propriétés, à l’intérieure du code source [!INCLUDE[TLA#tla_titlexaml](../../../../includes/tlasharptla-titlexaml-md.md)], fournies par les développeurs pour communiquer des règles et des conseils pour la localisation. Les commentaires de localisation [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] contiennent deux ensembles d’informations : les attributs d’adaptabilité et les commentaires de localisation au format libre. Les attributs d’adaptabilité sont utilisés par l’API de localisation [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pour indiquer les ressources à localiser. Les commentaires au format libre sont des informations que l’auteur de l’application veut inclure.  
@@ -33,7 +33,7 @@ Les commentaires de localisation [!INCLUDE[TLA#tla_winclient](../../../../includ
   
     - **All** : les commentaires et les attributs sont retirés de l’assembly et placés dans un fichier LocFile distinct.  
   
-4. Quand les ressources localisables sont extraites de [!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)], les attributs d’adaptabilité sont respectés par l’API de localisation [!INCLUDE[TLA2#tla_baml](../../../../includes/tla2sharptla-baml-md.md)].  
+4. Lorsque les ressources localisables sont extraites de BAML, les attributs d’adaptabilité sont respectés par l’API de localisation BAML.  
   
 5. Les fichiers de commentaires de localisation, qui contiennent uniquement des commentaires au format libre, sont incorporés ultérieurement au processus de localisation.  
   
@@ -82,13 +82,13 @@ Les commentaires de localisation [!INCLUDE[TLA#tla_winclient](../../../../includ
   
  Ces attributs peuvent être spécifiés dans n’importe quel ordre et doivent être séparés par un espace. Si des attributs dupliqués sont spécifiés, le dernier attribut remplace les précédents. Par exemple, Localization.Attributes = "Unmodifiable Modifiable" indique que la valeur est Modifiable, car c’est le dernier attribut indiqué.  
   
- La signification des attributs Modifiabilité et Lisibilité est évidente. L’attribut Catégorie comprend des catégories prédéfinies qui aident le localisateur à traduire le texte. Certaines catégories, telles que Text, Label et Title, renseignent le localisateur sur la façon de traduire le texte. Il existe également des catégories spéciales : None, hériter, ignorer et NeverLocalize.  
+ La signification des attributs Modifiabilité et Lisibilité est évidente. L’attribut Catégorie comprend des catégories prédéfinies qui aident le localisateur à traduire le texte. Certaines catégories, telles que Text, Label et Title, renseignent le localisateur sur la façon de traduire le texte. Il existe également des catégories spéciales: None, Inherit, ignore et NeverLocalize.  
   
  Le tableau suivant indique la signification de ces catégories spéciales.  
   
-|Category|Signification|  
+|Catégorie|Signification|  
 |--------------|-------------|  
-|None|La valeur ciblée n’a pas de catégorie définie.|  
+|Aucun|La valeur ciblée n’a pas de catégorie définie.|  
 |Inherit|La valeur ciblée hérite de la catégorie de son parent.|  
 |Ignore|La valeur ciblée est ignorée dans le processus de localisation. Cette catégorie affecte uniquement la valeur actuelle. Elle n’affecte pas les nœuds enfants.|  
 |NeverLocalize|La valeur actuelle ne peut pas être localisée. Cette catégorie est héritée par les enfants d’un élément.|  
