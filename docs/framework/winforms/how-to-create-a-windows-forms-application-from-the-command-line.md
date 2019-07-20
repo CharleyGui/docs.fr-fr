@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: 45ad3f8b-1c26-4c9f-91a9-3bb0759a47a4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 72195dd49c163b26a5bcfa739768718f2a32f346
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 6c87419a4d730f72a7ee15fcc3127781a8eaff75
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65588981"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68364213"
 ---
 # <a name="how-to-create-a-windows-forms-application-from-the-command-line"></a>Procédure : Créer une application Windows Forms à partir de la ligne de commande
-Les procédures suivantes décrivent les étapes de base que vous devez effectuer pour créer et exécuter une application Windows Forms à partir de la ligne de commande. Ces procédures sont très bien prises en charge dans Visual Studio.  Consultez également [procédure pas à pas : Hébergement d’un Windows contrôle Forms dans WPF](../wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md).  
+Les procédures suivantes décrivent les étapes de base que vous devez effectuer pour créer et exécuter une application Windows Forms à partir de la ligne de commande. Ces procédures sont très bien prises en charge dans Visual Studio.  Consultez [également la procédure pas à pas: Hébergement d’un contrôle de Windows Forms](../wpf/advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md)dans WPF.  
   
 ## <a name="procedure"></a>Procédure  
   
@@ -35,7 +35,7 @@ Les procédures suivantes décrivent les étapes de base que vous devez effectue
      [!code-csharp[System.Windows.Forms.BasicForm#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BasicForm/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.BasicForm#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BasicForm/VB/Form1.vb#3)]  
   
-3. Créez un constructeur par défaut pour `Form1`.  
+3. Créez un constructeur sans paramètre pour `Form1`.  
   
      Vous ajouterez du code au constructeur lors d'une procédure ultérieure.  
   
@@ -44,7 +44,7 @@ Les procédures suivantes décrivent les étapes de base que vous devez effectue
   
 4. Ajoutez une méthode `Main` à la classe.  
   
-    1. Appliquer le <xref:System.STAThreadAttribute> c# `Main` méthode pour spécifier votre application Windows Forms est un thread unique cloisonné. (L’attribut n’est pas nécessaire en Visual Basic, dans la mesure où Windows forms applications développées avec Visual Basic utilisez un modèle de thread unique cloisonné par défaut.)  
+    1. Appliquez à la C# `Main` méthode pour spécifier votre Windows Forms application est un thread unique cloisonné. <xref:System.STAThreadAttribute> (L’attribut n’est pas nécessaire dans Visual Basic, puisque les applications Windows Forms développées avec Visual Basic utilisent un modèle à thread unique cloisonné par défaut.)  
   
     2. Appelez <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> pour appliquer des styles de système d’exploitation à votre application.  
   
@@ -59,18 +59,18 @@ Les procédures suivantes décrivent les étapes de base que vous devez effectue
   
 2. Compilez le formulaire.  
   
-    - Si vous utilisez c#, tapez : `csc form1.cs`  
+    - Si vous utilisez C#, tapez:`csc form1.cs`  
   
          `-or-`  
   
-    - Si vous utilisez Visual Basic, tapez : `vbc form1.vb`  
+    - Si vous utilisez Visual Basic, tapez:`vbc form1.vb`  
   
-3. À l’invite de commandes, tapez : `Form1.exe`  
+3. À l’invite de commandes, tapez:`Form1.exe`  
   
 ## <a name="adding-a-control-and-handling-an-event"></a>Ajout d'un contrôle et gestion d'un événement  
- Les étapes de la procédure précédente illustrent simplement comment créer un Windows Form de base qui se compile et s'exécute. La procédure suivante illustre comment créer et ajouter un contrôle au formulaire et comment gérer un événement pour le contrôle. Pour plus d’informations sur les contrôles que vous pouvez ajouter aux Windows Forms, consultez [des contrôles Windows Forms](./controls/index.md).  
+ Les étapes de la procédure précédente illustrent simplement comment créer un Windows Form de base qui se compile et s'exécute. La procédure suivante illustre comment créer et ajouter un contrôle au formulaire et comment gérer un événement pour le contrôle. Pour plus d’informations sur les contrôles que vous pouvez ajouter à Windows Forms, consultez [Windows Forms contrôles](./controls/index.md).  
   
- Outre la création d’applications Windows Forms, vous devez comprendre la programmation basée sur les événements et comment gérer l’entrée d’utilisateur. Pour plus d’informations, consultez [création de gestionnaires d’événements dans les Windows Forms](creating-event-handlers-in-windows-forms.md), et [gestion des entrées utilisateur](./controls/handling-user-input.md)  
+ Outre la création d’applications Windows Forms, vous devez comprendre la programmation basée sur les événements et comment gérer l’entrée d’utilisateur. Pour plus d’informations, consultez [création de gestionnaires d’événements dans Windows Forms](creating-event-handlers-in-windows-forms.md)et [gestion des entrées d’utilisateur](./controls/handling-user-input.md)  
   
 #### <a name="to-declare-a-button-control-and-handle-its-click-event"></a>Pour déclarer un contrôle bouton et gérer son événement click  
   

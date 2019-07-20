@@ -9,28 +9,28 @@ helpviewer_keywords:
 - data contracts [WCF], collection types
 - collection types [WCF]
 ms.assetid: 9b45b28e-0a82-4ea3-8c33-ec0094aff9d5
-ms.openlocfilehash: 20ed5a0dab9dfc67a242ef09f459b3d00d766593
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 810238ee631808dac472456f910eb52f8bbf550c
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663450"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363815"
 ---
 # <a name="collection-types-in-data-contracts"></a>Types de collections dans les contrats de données
 
-Une *collection* est une liste d'éléments d'un certain type. Dans le .NET Framework, ces listes peuvent être représentées à l’aide de tableaux ou une gamme d’autres types (liste générique, génériques <xref:System.ComponentModel.BindingList%601>, <xref:System.Collections.Specialized.StringCollection>, ou <xref:System.Collections.ArrayList>). Par exemple, une collection peut contenir une liste d'adresses pour un client donné. Ces collections sont appelées *collections liste*, indépendamment de leur type réel.
+Une *collection* est une liste d'éléments d'un certain type. Dans le .NET Framework, ces listes peuvent être représentées à l’aide de tableaux ou de divers autres types (liste <xref:System.ComponentModel.BindingList%601>générique <xref:System.Collections.Specialized.StringCollection>, générique <xref:System.Collections.ArrayList>, ou). Par exemple, une collection peut contenir une liste d'adresses pour un client donné. Ces collections sont appelées *collections liste*, indépendamment de leur type réel.
 
-Il existe une forme spéciale de collection qui représente une association entre un élément (la "clé") et un autre élément (la "valeur"). Dans le .NET Framework, ils sont représentés par les types tels que <xref:System.Collections.Hashtable> et le dictionnaire générique. Par exemple, une collection association peut mapper une ville ("clé") à sa population ("valeur"). Ces collections sont appelées *collections dictionnaire*, indépendamment de leur type réel.
+Il existe une forme spéciale de collection qui représente une association entre un élément (la "clé") et un autre élément (la "valeur"). Dans le .NET Framework, ils sont représentés par des types tels <xref:System.Collections.Hashtable> que et le dictionnaire générique. Par exemple, une collection association peut mapper une ville ("clé") à sa population ("valeur"). Ces collections sont appelées *collections dictionnaire*, indépendamment de leur type réel.
 
 Les collections reçoivent un traitement spécial dans le modèle de contrat de données.
 
 Les types qui implémentent l'interface <xref:System.Collections.IEnumerable> , y compris des tableaux et des collections génériques, sont reconnus en tant que collections. Parmi eux, les types qui implémentent les interfaces <xref:System.Collections.IDictionary> ou <xref:System.Collections.Generic.IDictionary%602> générique sont des collections dictionnaire ; tous les autres sont des collections liste.
 
-Des spécifications supplémentaires relatives aux types de collections, telles qu'avoir une méthode appelée `Add` et un constructeur par défaut, sont présentées en détail dans les sections ci-dessous. Cela garantit que les types de collections peuvent être à la fois sérialisés et désérialisés. Cela signifie que certaines collections ne sont pas prises en charge directement, telles que <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> générique (car elle n'a aucun constructeur par défaut). Toutefois, pour plus d'informations sur la façon de contourner ces restrictions, consultez la section « Utilisation des types d'interfaces de collection et des collections en lecture seule » plus loin dans cette rubrique.
+Des exigences supplémentaires sur les types de collections, telles que le `Add` fait d’avoir une méthode appelée et un constructeur sans paramètre, sont décrites en détail dans les sections suivantes. Cela garantit que les types de collections peuvent être à la fois sérialisés et désérialisés. Cela signifie que certaines collections ne sont pas prises en charge directement, telles <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> que le générique (car elle n’a aucun constructeur sans paramètre). Toutefois, pour plus d'informations sur la façon de contourner ces restrictions, consultez la section « Utilisation des types d'interfaces de collection et des collections en lecture seule » plus loin dans cette rubrique.
 
-Les types contenus dans les collections doivent être des types de contrat de données ou, dans le cas contraire, ils doivent être sérialisables. Pour plus d’informations, consultez [Types pris en charge par le sérialiseur de contrat de données](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).
+Les types contenus dans les collections doivent être des types de contrat de données ou, dans le cas contraire, ils doivent être sérialisables. Pour plus d’informations, consultez [types pris en charge par le sérialiseur de contrat de données](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md).
 
-Pour plus d’informations sur les nouveautés et ce qui n’est pas considéré comme une collection valide, ainsi que sur la façon dont les collections sont sérialisées, consultez les informations sur la sérialisation des collections dans la section « Règles de Collection avancées » de cette rubrique.
+Pour plus d’informations sur ce qui est et ce qui n’est pas considéré comme une collection valide, ainsi que sur la façon dont les collections sont sérialisées, consultez les informations relatives à la sérialisation des collections dans la section «règles de collection avancées» de cette rubrique.
 
 ## <a name="interchangeable-collections"></a>Collections interchangeables
 
@@ -74,15 +74,15 @@ Les types d'interfaces de collection (<xref:System.Collections.IEnumerable>, <xr
 [!code-csharp[c_collection_types_in_data_contracts#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_collection_types_in_data_contracts/cs/program.cs#1)]
 [!code-vb[c_collection_types_in_data_contracts#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_collection_types_in_data_contracts/vb/program.vb#1)]
 
-Pendant la sérialisation, lorsque le type déclaré est une interface, le type d'instance réel utilisé peut être tout type qui implémente cette interface. Les restrictions présentées précédemment (avoir un constructeur par défaut et une méthode `Add` ) ne s'appliquent pas. Par exemple, vous pouvez définir les adresses dans Customer2 sur une instance de <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> générique d'adresse, bien que vous ne puissiez pas déclarer directement un membre de données de type <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>générique.
+Pendant la sérialisation, lorsque le type déclaré est une interface, le type d'instance réel utilisé peut être tout type qui implémente cette interface. Les restrictions présentées précédemment (avec un constructeur sans paramètre et `Add` une méthode) ne s’appliquent pas. Par exemple, vous pouvez définir les adresses dans Customer2 sur une instance de <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> générique d'adresse, bien que vous ne puissiez pas déclarer directement un membre de données de type <xref:System.Collections.ObjectModel.ReadOnlyCollection%601>générique.
 
-Pendant la désérialisation, lorsque le type déclaré est une interface, le moteur de sérialisation choisit un type qui implémente l'interface déclarée, et ce type est instancié. Le types connus mécanisme (décrites dans [Data Contract Known Types](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)) n’a aucun effet ici ; le choix du type est intégré à WCF.
+Pendant la désérialisation, lorsque le type déclaré est une interface, le moteur de sérialisation choisit un type qui implémente l'interface déclarée, et ce type est instancié. Le mécanisme des types connus (décrit dans [types de contrat de données connus](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)) n’a aucun effet ici; le choix du type est intégré à WCF.
 
 ## <a name="customizing-collection-types"></a>Personnalisation des types de collections
 
 Vous pouvez personnaliser les types de collections à l'aide de l'attribut <xref:System.Runtime.Serialization.CollectionDataContractAttribute> , qui présente plusieurs utilisations.
 
-Notez que la personnalisation de types collection compromet l'interchangeabilité des collections. Il est donc généralement recommandé d'éviter d'appliquer cet attribut chaque fois que cela est possible. Pour plus d’informations sur ce problème, consultez la section « Règles de Collection avancées » plus loin dans cette rubrique.
+Notez que la personnalisation de types collection compromet l'interchangeabilité des collections. Il est donc généralement recommandé d'éviter d'appliquer cet attribut chaque fois que cela est possible. Pour plus d’informations sur ce problème, consultez la section «règles de collection avancées» plus loin dans cette rubrique.
 
 ### <a name="collection-data-contract-naming"></a>Attribution de noms aux contrats de données de collection
 
@@ -144,13 +144,13 @@ Le XML obtenu est semblable au code suivant :
 </cust_list>
 ```
 
-Pour plus d’informations, consultez la section « Règles de Collection avancées » plus loin dans cette rubrique.
+Pour plus d’informations, consultez la section «règles de collection avancées» plus loin dans cette rubrique.
 
 ### <a name="customizing-the-repeating-element-name-in-list-collections"></a>Personnalisation du nom d'élément répétitif dans les collections liste
 
 Les collections liste contiennent des entrées répétitives. Normalement, chaque entrée répétitive est représentée comme un élément nommé en fonction du nom de contrat de données du type contenu dans la collection.
 
-Dans les exemples `CustomerList` , les collections contenaient des chaînes. Le nom de contrat de données pour le type primitif de chaîne est « string », donc l’élément répétitif était «\<chaîne > ».
+Dans les exemples `CustomerList` , les collections contenaient des chaînes. Le nom du contrat de données pour le type primitif de chaîne est «String», donc l’élément répétitif\<était «String >».
 
 Toutefois, le nom de cet élément répétitif peut être personnalisé à l'aide de la propriété <xref:System.Runtime.Serialization.CollectionDataContractAttribute.ItemName%2A> sur l'attribut <xref:System.Runtime.Serialization.CollectionDataContractAttribute> . Pour obtenir un exemple, consultez le type suivant.
 
@@ -197,7 +197,7 @@ En cas de sérialisation, le XML obtenu est semblable au code ci-dessous.
 </CountriesOrRegionsWithCapitals>
 ```
 
-Pour plus d’informations sur les collections de dictionnaires, consultez la section « Règles de Collection avancées » plus loin dans cette rubrique.
+Pour plus d’informations sur les collections de dictionnaires, consultez la section «règles de collection avancées» plus loin dans cette rubrique.
 
 ## <a name="collections-and-known-types"></a>Collections et types connus
 
@@ -232,7 +232,7 @@ Les types de collections personnalisés, les interfaces de collection et les tab
 
 Toutes les collections équivalentes ont la même représentation dans le schéma XSD (XML Schema Definition). C'est pourquoi vous n'obtiendrez normalement pas le même type de collection dans le code client généré que sur le serveur. Par exemple, le serveur peut utiliser un contrat de données avec un membre de données <xref:System.Collections.Generic.List%601> générique d'éléments Integer, alors que, dans le code client généré, le même membre de données peut devenir un tableau d'entiers.
 
-Collections dictionnaire sont marquées avec une annotation de schéma spécifique au WCF qui indiquent qu’ils sont des dictionnaires ; Sinon, ils ne se distinguent pas de listes simples qui contiennent des entrées avec une clé et une valeur. Pour une description exacte de la façon dont les collections sont représentées dans le schéma de contrat de données, consultez [Data Contract Schema Reference](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).
+Les collections dictionnaire sont marquées avec une annotation de schéma spécifique à WCF qui indique qu’il s’agit de dictionnaires; dans le cas contraire, ils ne peuvent pas être différenciés des listes simples qui contiennent des entrées avec une clé et une valeur. Pour une description exacte de la façon dont les collections sont représentées dans le schéma de contrat de données, consultez [Data Contract Schema Reference](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).
 
 Par défaut, les types ne sont pas générés pour les collections non personnalisées dans le code importé. Les membres de données des types de collections liste sont importés en tant que tableaux, alors que les membres de données des types de collections dictionnaire sont importés en tant que dictionnaire générique.
 
@@ -255,7 +255,7 @@ Pour choisir des types de collections à générer, passez une liste de types de
 Lorsque des types génériques sont référencés, il doit s'agir de génériques complètement ouverts ou complètement fermés.
 
 > [!NOTE]
-> Lorsque vous utilisez l’outil Svcutil.exe, cette référence peut être réalisée à l’aide du commutateur de ligne de commande **/collectionType** (forme abrégée : **/ct**). N’oubliez pas que vous devez également spécifier l’assembly pour les types de collections référencés à l’aide du commutateur **/reference** (forme abrégée : **/r**). Si le type est générique, il doit être suivi par une apostrophe inverse et le nombre de paramètres génériques. L’apostrophe inverse (\`) ne doit ne pas être confondue avec le caractère guillemet simple ('). Vous pouvez spécifier plusieurs types de collections référencés en utilisant plusieurs fois le commutateur **/collectionType** .
+> Lorsque vous utilisez l’outil Svcutil.exe, cette référence peut être réalisée à l’aide du commutateur de ligne de commande **/collectionType** (forme abrégée : **/ct**). N’oubliez pas que vous devez également spécifier l’assembly pour les types de collections référencés à l’aide du commutateur **/reference** (forme abrégée : **/r**). Si le type est générique, il doit être suivi par une apostrophe inverse et le nombre de paramètres génériques. Le guillemet (\`) ne doit pas être confondu avec le caractère guillemet simple ('). Vous pouvez spécifier plusieurs types de collections référencés en utilisant plusieurs fois le commutateur **/collectionType** .
 
 Par exemple, pour provoquer l'importation de toutes les listes en tant que <xref:System.Collections.Generic.List%601>générique.
 
@@ -281,8 +281,8 @@ Pour les collections liste, seuls les cas indiqués dans le tableau suivant sont
 
 |Type référencé|Interface implémentée par le type référencé|Exemple|Type traité comme :|
 |---------------------|----------------------------------------------|-------------|----------------------|
-|Non générique ou générique fermé (nombre de paramètres quelconque)|Non générique|`MyType : IList`<br /><br /> ou<br /><br /> `MyType<T> : IList`<br /><br /> où T= `int`|Générique fermé d' `Object` (par exemple, `IList<object>`)|
-|Non générique ou générique fermé (nombre quelconque de paramètres qui ne correspondent pas nécessairement au type de collection)|Générique fermé|`MyType : IList<string>`<br /><br /> ou<br /><br /> `MyType<T> : IList<string>` où T=`int`|Générique fermé (par exemple, `IList<string>`)|
+|Non générique ou générique fermé (nombre de paramètres quelconque)|Non générique|`MyType : IList`<br /><br /> ou Gestionnaire de configuration<br /><br /> `MyType<T> : IList`<br /><br /> où T= `int`|Générique fermé d' `Object` (par exemple, `IList<object>`)|
+|Non générique ou générique fermé (nombre quelconque de paramètres qui ne correspondent pas nécessairement au type de collection)|Générique fermé|`MyType : IList<string>`<br /><br /> ou Gestionnaire de configuration<br /><br /> `MyType<T> : IList<string>` où T=`int`|Générique fermé (par exemple, `IList<string>`)|
 |Générique fermé avec un nombre quelconque de paramètres|Générique ouvert utilisant un des paramètres du type|`MyType<T,U,V> : IList<U>`<br /><br /> où T=`int`, U=`string`, V=`bool`|Générique fermé (par exemple, `IList<string>`)|
 |Générique ouvert avec un paramètre|Générique ouvert utilisant le paramètre du type|`MyType<T> : IList<T>`, T est ouvert|Générique ouvert (par exemple, `IList<T>`)|
 
@@ -296,9 +296,9 @@ Pour les collections dictionnaire, seuls les cas indiqués dans le tableau suiva
 
 |Type référencé|Interface implémentée par le type référencé|Exemple|Type traité comme|
 |---------------------|----------------------------------------------|-------------|---------------------|
-|Non générique ou générique fermé (nombre de paramètres quelconque)|<xref:System.Collections.IDictionary>|`MyType : IDictionary`<br /><br /> ou<br /><br /> `MyType<T> : IDictionary` où T=`int`|Générique fermé `IDictionary<object,object>`|
+|Non générique ou générique fermé (nombre de paramètres quelconque)|<xref:System.Collections.IDictionary>|`MyType : IDictionary`<br /><br /> ou Gestionnaire de configuration<br /><br /> `MyType<T> : IDictionary` où T=`int`|Générique fermé `IDictionary<object,object>`|
 |Générique fermé (nombre quelconque de paramètres)|<xref:System.Collections.Generic.IDictionary%602>, fermé|`MyType<T> : IDictionary<string, bool>` où T=`int`|Générique fermé (par exemple, `IDIctionary<string,bool>`)|
-|Générique fermé (nombre quelconque de paramètres)|<xref:System.Collections.Generic.IDictionary%602>générique, la clé ou la valeur est fermée, l'autre est ouverte et utilise un des paramètres du type|`MyType<T,U,V> : IDictionary<string,V>` où T=`int`, U=`float`, V=`bool`<br /><br /> ou<br /><br /> `MyType<Z> : IDictionary<Z,bool>` où Z=`string`|Générique fermé (par exemple, `IDictionary<string,bool>`)|
+|Générique fermé (nombre quelconque de paramètres)|<xref:System.Collections.Generic.IDictionary%602>générique, la clé ou la valeur est fermée, l'autre est ouverte et utilise un des paramètres du type|`MyType<T,U,V> : IDictionary<string,V>` où T=`int`, U=`float`, V=`bool`<br /><br /> ou Gestionnaire de configuration<br /><br /> `MyType<Z> : IDictionary<Z,bool>` où Z=`string`|Générique fermé (par exemple, `IDictionary<string,bool>`)|
 |Générique fermé (nombre quelconque de paramètres)|<xref:System.Collections.Generic.IDictionary%602>générique, la clé et la valeur sont ouvertes et chacune d'elles utilise un des paramètres du type|`MyType<T,U,V> : IDictionary<V,U>` où T=`int`, U=`bool`, V=`string`|Générique fermé (par exemple, `IDictionary<string,bool>`)|
 |Générique ouvert (deux paramètres)|<xref:System.Collections.Generic.IDictionary%602>générique, ouvert, utilise les deux paramètres génériques du type dans l'ordre où ils apparaissent|`MyType<K,V> : IDictionary<K,V>`, K et V sont ouverts tous les deux|Générique ouvert (par exemple, `IDictionary<K,V>`)|
 
@@ -316,7 +316,7 @@ La liste suivante répertorie les règles de collection pour la sérialisation :
 
 - L'association de types de collections (avoir des collections de collections) est autorisée. Les tableaux en escalier sont traités comme des collections de collections. Les tableaux multidimensionnels ne sont pas pris en charge.
 
-- Les tableaux d'octets et les tableaux de <xref:System.Xml.XmlNode> sont des types de tableau spéciaux qui sont traités comme des primitifs, pas comme des collections. La sérialisation d'un tableau d'octets génère un élément XML unique qui contient un segment de données encodées en Base64, au lieu d'un élément distinct pour chaque octet. Pour plus d’informations sur la façon un tableau de <xref:System.Xml.XmlNode> est traité, consultez [Types XML et ADO.NET dans les contrats de données](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md). Naturellement, ces types spéciaux peuvent eux-mêmes participer aux collections : un tableau de tableaux d'octets génère plusieurs éléments XML contenant chacun un segment de données encodées en Base64.
+- Les tableaux d'octets et les tableaux de <xref:System.Xml.XmlNode> sont des types de tableau spéciaux qui sont traités comme des primitifs, pas comme des collections. La sérialisation d'un tableau d'octets génère un élément XML unique qui contient un segment de données encodées en Base64, au lieu d'un élément distinct pour chaque octet. Pour plus d’informations sur la façon dont <xref:System.Xml.XmlNode> un tableau de est traité, consultez [types XML et ADO.net dans les contrats de données](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md). Naturellement, ces types spéciaux peuvent eux-mêmes participer aux collections : un tableau de tableaux d'octets génère plusieurs éléments XML contenant chacun un segment de données encodées en Base64.
 
 - Si l'attribut <xref:System.Runtime.Serialization.DataContractAttribute> est appliqué à un type de collection, le type est traité comme un type de contrat de données standard, pas comme une collection.
 
@@ -342,25 +342,25 @@ La liste suivante répertorie les règles de collection pour la sérialisation :
 
 Le tableau précédent répertorie les interfaces de collection dans l'ordre de priorité décroissant. Cela signifie, par exemple, que si un type implémente à la fois <xref:System.Collections.IList> et <xref:System.Collections.Generic.IEnumerable%601>générique, la collection est sérialisée et désérialisée en fonction des règles <xref:System.Collections.IList> :
 
-- Lors de la désérialisation, toutes les collections sont désérialisées en créant en premier lieu une instance du type en appelant le constructeur par défaut, qui doit être présent pour que le sérialiseur traite un type de collection comme une collection lors de la sérialisation et de la désérialisation.
+- Lors de la désérialisation, toutes les collections sont désérialisées en créant d’abord une instance du type en appelant le constructeur sans paramètre, qui doit être présent pour que le sérialiseur traite un type de collection comme une collection lors de la sérialisation et la désérialisation.
 
 - Si la même interface de collection générique est implémentée plusieurs fois (par exemple, si un type implémente à la fois le <xref:System.Collections.Generic.ICollection%601> générique d'éléments `Integer` et le <xref:System.Collections.Generic.ICollection%601> générique d'éléments <xref:System.String>) et qu'aucune interface de priorité supérieure n'est trouvée, la collection n'est pas traitée comme une collection valide.
 
 - L'attribut <xref:System.SerializableAttribute> peut être appliqué aux types de collections et ces derniers peuvent implémenter l'interface <xref:System.Runtime.Serialization.ISerializable> . Ces deux éléments sont ignorés. Toutefois, si le type ne satisfait pas pleinement les spécifications de type de collection (par exemple, si la méthode `Add` est manquante), le type n'est pas considéré comme un type de collection, et par conséquent l'attribut <xref:System.SerializableAttribute> et l'interface <xref:System.Runtime.Serialization.ISerializable> sont utilisés pour déterminer si le type peut être sérialisé.
 
-- L'application de l'attribut <xref:System.Runtime.Serialization.CollectionDataContractAttribute> à une collection pour la personnaliser supprime le mécanisme de secours <xref:System.SerializableAttribute> mentionné précédemment. À la place, si une collection personnalisée ne satisfait pas les spécifications de type de collection, une exception <xref:System.Runtime.Serialization.InvalidDataContractException> est levée. La chaîne d'exception contient souvent des informations qui expliquent pourquoi un type donné n'est pas considéré comme une collection valide (aucune méthode `Add` , aucun constructeur par défaut, etc.), si bien qu'il est souvent utile d'appliquer l'attribut <xref:System.Runtime.Serialization.CollectionDataContractAttribute> à des fins de débogage.
+- L'application de l'attribut <xref:System.Runtime.Serialization.CollectionDataContractAttribute> à une collection pour la personnaliser supprime le mécanisme de secours <xref:System.SerializableAttribute> mentionné précédemment. À la place, si une collection personnalisée ne satisfait pas les spécifications de type de collection, une exception <xref:System.Runtime.Serialization.InvalidDataContractException> est levée. La chaîne d’exception contient souvent des informations qui expliquent pourquoi un type donné n’est pas considéré comme `Add` une collection valide (aucune méthode, aucun constructeur sans paramètre, etc.). il est donc souvent <xref:System.Runtime.Serialization.CollectionDataContractAttribute> utile d’appliquer l’attribut pour le débogage opérations.
 
 ### <a name="collection-naming"></a>Attribution des noms de collections
 
 La liste suivante répertorie les règles d'attribution des noms des collections :
 
-- L’espace de noms par défaut pour tous les contrats de données de collection dictionnaire, ainsi que pour les contrats de données de collection liste qui contiennent des types primitifs, est `http://schemas.microsoft.com/2003/10/Serialization/Arrays` sauf substitution à l’aide de Namespace. Les types qui correspondent aux types XSD intégrés, ainsi que les types `char`, `Timespan`et `Guid` , sont considérés comme des primitifs à cette fin.
+- L’espace de noms par défaut pour tous les contrats de données de collection de dictionnaires, ainsi que pour les contrats de `http://schemas.microsoft.com/2003/10/Serialization/Arrays` données de collection de listes qui contiennent des types primitifs, est, sauf s’il est substitué à l’aide de l’espace Les types qui correspondent aux types XSD intégrés, ainsi que les types `char`, `Timespan`et `Guid` , sont considérés comme des primitifs à cette fin.
 
 - L'espace de noms par défaut des types de collections contenant des types non primitifs, à moins qu'il soit remplacé à l'aide de Namespace, est le même que celui des noms de contrat de données du type inclus dans la collection.
 
 - Le nom par défaut pour les contrats de données de collection de liste, à moins qu'il ne soit remplacé à l'aide de Name, est la chaîne "ArrayOf" associée au nom du contrat de données du type inclus dans la collection. Par exemple, le nom du contrat de données pour une liste générique d'éléments Integer est "ArrayOfint". N'oubliez pas que le nom de contrat de données d' `Object` est "anyType", afin que le nom de contrat de données de listes non génériques comme <xref:System.Collections.ArrayList> soit "ArrayOfanyType".
 
-Le nom par défaut pour les contrats de données de collection dictionnaire, à moins qu'il soit remplacé à l'aide de `Name`, est la chaîne "ArrayOfKeyValueOf" associée au nom du contrat de données du type de clé suivie par le nom du contrat de données du type de valeur. Par exemple, le nom du contrat de données pour un dictionnaire générique d'éléments String et Integer est "ArrayOfKeyValueOfstringint". En outre, si les types de clé ou de valeur ne sont pas des types primitifs, un hachage d'espace de noms des espaces de noms de contrat de données des types de clé et de valeur est ajouté au nom. Pour plus d’informations sur les hachages de l’espace de noms, consultez [Data Contract Names](../../../../docs/framework/wcf/feature-details/data-contract-names.md).
+Le nom par défaut pour les contrats de données de collection dictionnaire, à moins qu'il soit remplacé à l'aide de `Name`, est la chaîne "ArrayOfKeyValueOf" associée au nom du contrat de données du type de clé suivie par le nom du contrat de données du type de valeur. Par exemple, le nom du contrat de données pour un dictionnaire générique d'éléments String et Integer est "ArrayOfKeyValueOfstringint". En outre, si les types de clé ou de valeur ne sont pas des types primitifs, un hachage d'espace de noms des espaces de noms de contrat de données des types de clé et de valeur est ajouté au nom. Pour plus d’informations sur les hachages d’espaces de noms, consultez [noms de contrat de données](../../../../docs/framework/wcf/feature-details/data-contract-names.md).
 
 Chaque contrat de données de collection dictionnaire possède un contrat de données auxiliaire qui représente une entrée dans le dictionnaire. Son nom est le même que pour le contrat de données de dictionnaire, à l'exception du préfixe "ArrayOf", et son espace de noms est le même que pour le contrat de données de dictionnaire. Par exemple, pour le contrat de données de dictionnaire "ArrayOfKeyValueOfstringint", le contrat de données "KeyValueofstringint" représente une entrée dans le dictionnaire. Vous pouvez personnaliser le nom de ce contrat de données en utilisant la propriété `ItemName` tel que cela est décrit dans la section suivante.
 
@@ -387,20 +387,20 @@ En raison des personnalisations, il est possible d'utiliser par inadvertance un 
 [!code-csharp[c_collection_types_in_data_contracts#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_collection_types_in_data_contracts/cs/program.cs#11)]
 [!code-vb[c_collection_types_in_data_contracts#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_collection_types_in_data_contracts/vb/program.vb#11)]
 
-Dans ce cas, une instance de `Marks1` peut être assignée à `testMarks`. Toutefois, `Marks2` ne doit pas être utilisé car son contrat de données n'est pas considéré équivalent au contrat de données `IList<int>` . Le nom de contrat de données est « Marks2 » et pas « ArrayOfint », et le nom d’élément répétitif est «\<marquer > » et non «\<int > ».
+Dans ce cas, une instance de `Marks1` peut être assignée à `testMarks`. Toutefois, `Marks2` ne doit pas être utilisé car son contrat de données n'est pas considéré équivalent au contrat de données `IList<int>` . Le nom du contrat de données est «marks2» et non «ArrayOfint», et le nom de l’élément\<répétitif est «Mark >»\<et non «int >».
 
 Les règles indiquées dans le tableau ci-dessous s'appliquent à l'assignation polymorphe de collections.
 
 |Type déclaré|Assignation d'une collection non personnalisée|Assignation d'une collection personnalisée|
 |-------------------|--------------------------------------------|---------------------------------------|
 |Object|Le nom de contrat est sérialisé.|Le nom de contrat est sérialisé.<br /><br /> La personnalisation est utilisée.|
-|Interface de collection|Le nom de contrat n'est pas sérialisé.|Le nom de contrat n'est pas sérialisé.<br /><br /> Personnalisation n’est pas utilisée.\*|
+|Interface de collection|Le nom de contrat n'est pas sérialisé.|Le nom de contrat n'est pas sérialisé.<br /><br /> La personnalisation n’est pas utilisée.\*|
 |Collection non personnalisée|Le nom de contrat n'est pas sérialisé.|Le nom de contrat est sérialisé.<br /><br /> La personnalisation est utilisée.**|
-|Collection personnalisée|Le nom de contrat est sérialisé. Personnalisation n’est pas utilisée.\*\*|Le nom de contrat est sérialisé.<br /><br /> Personnalisation du type assigné est utilisée.\*\*|
+|Collection personnalisée|Le nom de contrat est sérialisé. La personnalisation n’est pas utilisée.\*\*|Le nom de contrat est sérialisé.<br /><br /> La personnalisation du type assigné est utilisée.\*\*|
 
-\*Avec le <xref:System.Runtime.Serialization.NetDataContractSerializer> (classe), personnalisation est utilisée dans ce cas. La classe <xref:System.Runtime.Serialization.NetDataContractSerializer> sérialise également le nom de type réel dans ce cas, si bien que la désérialisation fonctionne comme prévu.
+\*Avec la <xref:System.Runtime.Serialization.NetDataContractSerializer> classe, la personnalisation est utilisée dans ce cas. La classe <xref:System.Runtime.Serialization.NetDataContractSerializer> sérialise également le nom de type réel dans ce cas, si bien que la désérialisation fonctionne comme prévu.
 
-\*\*Ces cas entraînent des instances de schéma non valide et doivent donc être évitées.
+\*\*Ces cas entraînent des instances de schéma non valides et doivent donc être évitées.
 
 Dans les cas où le nom de contrat est sérialisé, le type de collection assigné doit figurer dans la liste des types connus. Le contraire est également vrai : dans les cas où le nom n'est pas sérialisé, l'ajout du type dans la liste des types connus n'est pas nécessaire.
 

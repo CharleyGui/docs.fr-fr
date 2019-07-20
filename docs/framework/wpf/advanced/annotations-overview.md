@@ -9,17 +9,17 @@ helpviewer_keywords:
 - documents [WPF], annotations
 - sticky notes [WPF]
 ms.assetid: 716bf474-29bd-4c74-84a4-8e0744bdad62
-ms.openlocfilehash: faf2e9bbe23acfd46ee98e1f0fca01b7563ede73
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 861a757effee8d68d1e41682dd91ffadba20c536
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61777317"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68364370"
 ---
 # <a name="annotations-overview"></a>Vue d'ensemble des annotations
 Écrire des notes ou des commentaires sur des documents papier est une activité si banale que nous pensons qu’elle va de soi. Ces notes ou commentaires sont des « annotations » que nous ajoutons à un document pour marquer des informations ou mettre en évidence des éléments présentant un intérêt particulier afin de nous y référer plus tard. Bien que la rédaction de notes sur des documents imprimés soit une tâche simple et banale, la possibilité d’ajouter des commentaires personnels à des documents électroniques, quand cette fonctionnalité est disponible, est généralement très limitée.  
   
- Cette rubrique passe en revue plusieurs types d’annotations, en particulier les pense-bêtes et les surbrillances, courants et illustre comment la [!INCLUDE[TLA#tla_caf](../../../../includes/tlasharptla-caf-md.md)] simplifie ces types d’annotations dans les applications via le document de Windows Presentation Foundation (WPF) contrôles d’affichage.  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] incluent des contrôles d’affichage de document qui prennent en charge les annotations <xref:System.Windows.Controls.FlowDocumentReader> et <xref:System.Windows.Controls.FlowDocumentScrollViewer>, ainsi que les contrôles dérivés de <xref:System.Windows.Controls.Primitives.DocumentViewerBase> comme <xref:System.Windows.Controls.DocumentViewer> et <xref:System.Windows.Controls.FlowDocumentPageViewer>.  
+ Cette rubrique passe en revue plusieurs types d’annotations courants, en particulier les pense-bêtes et les mises en évidence, et illustre comment l’infrastructure des annotations Microsoft facilite ces types d’annotations dans les applications via le Windows Presentation Foundation (WPF ) des contrôles d’affichage de document.  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]les contrôles d’affichage de document qui prennent <xref:System.Windows.Controls.FlowDocumentReader> en <xref:System.Windows.Controls.FlowDocumentScrollViewer>charge les annotations incluent et, ainsi <xref:System.Windows.Controls.DocumentViewer> que <xref:System.Windows.Controls.FlowDocumentPageViewer>les contrôles dérivés de <xref:System.Windows.Controls.Primitives.DocumentViewerBase> tels que et.  
 
 <a name="caf1_type_stickynotes"></a>   
 ## <a name="sticky-notes"></a>Pense-bêtes  
@@ -36,19 +36,19 @@ ms.locfileid: "61777317"
   
 <a name="caf1_type_callouts"></a>   
 ## <a name="highlights"></a>Mises en surbrillance  
- Nous utilisons diverses méthodes créatives pour attirer l’attention sur des éléments présentant un intérêt particulier sur un document papier, par exemple en soulignant, en surlignant ou en encerclant des mots dans une phrase, ou en mettant des marques ou des annotations dans la marge.  Les annotations en surbrillance de [!INCLUDE[TLA#tla_caf](../../../../includes/tlasharptla-caf-md.md)] fournissent une fonctionnalité similaire pour marquer les informations affichées dans les contrôles d’affichage de document [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
+ Nous utilisons diverses méthodes créatives pour attirer l’attention sur des éléments présentant un intérêt particulier sur un document papier, par exemple en soulignant, en surlignant ou en encerclant des mots dans une phrase, ou en mettant des marques ou des annotations dans la marge.  Les annotations en surbrillance dans Microsoft annotations Framework offrent une fonctionnalité similaire [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pour marquer les informations affichées dans les contrôles d’affichage de document.  
   
  L’illustration suivante montre un exemple d’annotation en surbrillance.  
   
  ![Annotation en surbrillance](./media/caf-callouts.png "CAF_Callouts")  
   
- Les utilisateurs créent généralement des annotations en sélectionnant du texte ou un élément d’intérêt, puis en cliquant pour afficher un <xref:System.Windows.Controls.ContextMenu> des options d’annotation.  L’exemple suivant montre le [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] vous pouvez utiliser pour déclarer un <xref:System.Windows.Controls.ContextMenu> avec les commandes routées auxquelles les utilisateurs peuvent accéder pour créer et gérer des annotations.  
+ Les utilisateurs créent généralement des annotations en sélectionnant d’abord du texte ou un élément digne d’intérêt, puis en <xref:System.Windows.Controls.ContextMenu> cliquant avec le bouton droit pour afficher un des options d’annotation.  L’exemple suivant montre le [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] que vous pouvez utiliser pour déclarer <xref:System.Windows.Controls.ContextMenu> un avec des commandes routées auxquelles les utilisateurs peuvent accéder pour créer et gérer des annotations.  
   
  [!code-xaml[DocViewerAnnotationsXps#CreateDeleteAnnotations](~/samples/snippets/csharp/VS_Snippets_Wpf/DocViewerAnnotationsXps/CSharp/Window1.xaml#createdeleteannotations)]  
   
 <a name="caf1_framework_data_anchoring"></a>   
 ## <a name="data-anchoring"></a>Ancrage des données  
- [!INCLUDE[TLA2#tla_caf](../../../../includes/tla2sharptla-caf-md.md)] lie les annotations aux données que l’utilisateur sélectionne, pas seulement à une position dans l’affichage. Ainsi, en cas de changement de l’affichage du document, par exemple si l’utilisateur fait défiler ou redimensionne la fenêtre d’affichage, l’annotation suit la sélection de données à laquelle elle est liée. Le graphique suivant illustre une annotation que l’utilisateur a faite sur une sélection de texte. En cas de changement de l’affichage du document (défilements, redimensionnements, mises à l’échelle ou tout autre type de déplacement), l’annotation en surbrillance se déplace avec la sélection de données d’origine.  
+ L’infrastructure des annotations lie les annotations aux données que l’utilisateur sélectionne, et pas seulement à une position sur l’affichage. Ainsi, en cas de changement de l’affichage du document, par exemple si l’utilisateur fait défiler ou redimensionne la fenêtre d’affichage, l’annotation suit la sélection de données à laquelle elle est liée. Le graphique suivant illustre une annotation que l’utilisateur a faite sur une sélection de texte. En cas de changement de l’affichage du document (défilements, redimensionnements, mises à l’échelle ou tout autre type de déplacement), l’annotation en surbrillance se déplace avec la sélection de données d’origine.  
   
  ![Ancrage des données d’annotation](./media/caf-dataanchoring.png "CAF_DataAnchoring")  
   
@@ -61,7 +61,7 @@ ms.locfileid: "61777317"
  [!code-csharp[FlowDocumentAnnotatedViewer#Handler](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentAnnotatedViewer/CSharp/Window1.xaml.cs#handler)]
  [!code-vb[FlowDocumentAnnotatedViewer#Handler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentAnnotatedViewer/visualbasic/window1.xaml.vb#handler)]  
   
- Un autre exemple de scénario implique des applications qui permettent l’échange d’annotations et de pense-bêtes entre des lecteurs de document par courrier électronique. Grâce à cette fonctionnalité, les applications peuvent amener le lecteur à la page qui contient l’annotation échangée.  
+ Un autre exemple de scénario concerne les applications qui permettent l’échange d’annotations et de pense-bête entre les lecteurs de document par courrier électronique. Grâce à cette fonctionnalité, les applications peuvent amener le lecteur à la page qui contient l’annotation échangée.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -75,4 +75,4 @@ ms.locfileid: "61777317"
 - [Vue d’ensemble de ContextMenu](../controls/contextmenu-overview.md)
 - [Vue d’ensemble des commandes](commanding-overview.md)
 - [Vue d’ensemble des documents dynamiques](flow-document-overview.md)
-- [Guide pratique pour Ajouter une commande à un MenuItem](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms741839(v=vs.90))
+- [Guide pratique : Ajouter une commande à un MenuItem](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms741839(v=vs.90))
