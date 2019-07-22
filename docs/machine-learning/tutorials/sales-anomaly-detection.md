@@ -1,23 +1,23 @@
 ---
-title: 'Tutoriel : Détecter les anomalies dans les ventes de produits'
+title: 'Didacticiel : Détecter les anomalies dans les ventes de produits'
 description: Découvrez comment créer une application de détection des anomalies pour des données de ventes de produit. Ce didacticiel crée une application de console .NET Core à l’aide de C# dans Visual Studio 2019.
-ms.date: 06/11/2019
+ms.date: 07/17/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: 3e3e368ed3bcb35e7e2c8bdf08abe71afd4ae87c
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: e87034733b048153202bc11ab94ed7605749f60c
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306227"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331697"
 ---
-# <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Tutoriel : Détecter les anomalies dans les ventes de produits avec ML.NET
+# <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Didacticiel : Détecter les anomalies dans les ventes de produits avec ML.NET
 
 Découvrez comment créer une application de détection des anomalies pour des données de ventes de produit. Ce didacticiel crée une application de console .NET Core à l’aide de C# dans Visual Studio.
 
-Dans ce didacticiel, vous apprendrez à :
+Ce tutoriel vous montre comment effectuer les opérations suivantes :
 > [!div class="checklist"]
-> * Charger les données
+> * Chargement des données
 > * Entraîner le modèle pour détecter des pics
 > * Détecter des pics avec le modèle entraîné
 > * Entraîner le modèle pour détecter des points de changement
@@ -34,7 +34,7 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 >[!NOTE]
 > Le format de données dans `product-sales.csv` est basé sur le jeu de données « Shampoo Sales Over a Three Year Period », disponible sur DataMarket et fourni dans la bibliothèque TSDL (Time Series Data Library) créée par Rob Hyndman. Ce jeu de données est concédé sous la licence Open par défaut de DataMarket.
 
-## <a name="create-a-console-application"></a>Créer une application console
+## <a name="create-a-console-application"></a>Création d’une application console
 
 1. Créez une **application console .NET Core** appelée « ProductSalesAnomalyDetection ».
 
@@ -111,7 +111,7 @@ Remplacez la ligne `Console.WriteLine("Hello World!")` dans la méthode `Main` p
 
 [!code-csharp[CreateMLContext](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#CreateMLContext "Create the ML Context")]
 
-### <a name="load-the-data"></a>Charger les données
+### <a name="load-the-data"></a>Chargement des données
 
 Les données dans ML.NET sont représentées en tant que [classe IDataView](xref:Microsoft.ML.IDataView). `IDataView` est un moyen flexible et efficace de décrire des données tabulaires (numériques et texte). Les données peuvent être chargées à partir d’un fichier texte ou en temps réel (par exemple, fichiers journaux ou de base de données SQL) dans un objet `IDataView`. Ajoutez le code suivant comme prochaine ligne de la méthode `Main()` :
 
@@ -127,7 +127,7 @@ La détection d’anomalie signale des événements ou des comportements inatten
 
 La détection d’anomalie est le processus d’identification des valeurs hors norme dans une série chronologique donnée, c’est-à-dire les points dont le comportement est inattendu ou « étrange ».
 
-Cela peut être utile à bien des égards. Par exemple :
+Cela peut être utile à bien des égards. Exemple :
 
 Si vous avez une voiture, il est bon de savoir si l’indicateur de niveau d’huile est normal ou si vous avez une fuite.
 Si vous analysez la consommation d’énergie, il est important de connaître l’existence d’une panne.
@@ -169,7 +169,7 @@ static void DetectSpike(MLContext mlContext, int docSize, IDataView productSales
 }
 ```
 
-Utilisez [IidSpikeEstimator](xref:Microsoft.ML.Transforms.TimeSeries.IidSpikeEstimator) pour entraîner le modèle à la détection de pics. Ajoutez-le à la méthode `DetectChangepoint()` avec le code suivant :
+Utilisez [IidSpikeEstimator](xref:Microsoft.ML.Transforms.TimeSeries.IidSpikeEstimator) pour entraîner le modèle à la détection de pics. Ajoutez-le à la méthode `DetectSpike()` avec le code suivant :
 
 [!code-csharp[AddSpikeTrainer](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#AddSpikeTrainer)]
 
@@ -361,9 +361,9 @@ Félicitations ! Vous venez de générer des modèles de machine learning pour 
 
 Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/ProductSalesAnomalyDetection).
 
-Dans ce didacticiel, vous avez appris à :
+Dans ce tutoriel, vous avez appris à :
 > [!div class="checklist"]
-> * Charger les données
+> * Chargement des données
 > * Entraîner le modèle pour détecter des pics
 > * Détecter des pics avec le modèle entraîné
 > * Entraîner le modèle pour détecter des points de changement

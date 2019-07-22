@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1ece2bb2d5e4ce93f201536d03aabeff5eb0012e
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
+ms.openlocfilehash: 9678c077e278a9d76ffd5c2ce10e63ebe3ad09f7
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67804317"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68235481"
 ---
 ### <a name="x509certificateclaimsetfindclaims-considers-all-claimtypes"></a>X509CertificateClaimSet.FindClaims prend en compte tous les claimTypes
 
@@ -16,4 +16,3 @@ ms.locfileid: "67804317"
 |Version|4.6.1|
 |Type|Reciblage|
 |API affectées|<ul><li><xref:System.IdentityModel.Claims.X509CertificateClaimSet.FindClaims(System.String,System.String)?displayProperty=nameWithType></li></ul>|
-

@@ -1,25 +1,25 @@
 ---
-title: 'Tutoriel : Analyser les commentaires des sites web - classification binaire'
+title: 'Didacticiel : Analyser les commentaires des sites web - classification binaire'
 description: Ce tutoriel vous montre comment créer une application console .NET Core qui classifie les sentiments analysés dans les commentaires des sites web et qui exécute l’action appropriée. Le classifieur de sentiments binaire utilise C# dans Visual Studio.
 ms.date: 05/13/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 833aeeb045ef1fd7bb0e6dbd2236bc3d9da2e8fc
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 2dc4d68eb6a3aa5890e4d091e33c4624d79317e9
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67506149"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68238370"
 ---
-# <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Tutoriel : Analyser les sentiments dans les commentaires des sites web à l’aide d’une classification binaire dans ML.NET
+# <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>Didacticiel : Analyser les sentiments dans les commentaires des sites web à l’aide d’une classification binaire dans ML.NET
 
 Ce tutoriel vous montre comment créer une application console .NET Core qui classifie les sentiments analysés dans les commentaires des sites web et qui exécute l’action appropriée. Le classifieur binaire de sentiments utilise C# dans Visual Studio 2017.
 
-Dans ce didacticiel, vous apprendrez à :
+Ce tutoriel vous montre comment effectuer les opérations suivantes :
 > [!div class="checklist"]
-> * Créer une application console
+> * Création d’une application console
 > * Préparer les données
-> * Charger les données
+> * Chargement des données
 > * Générer et entraîner le modèle
 > * Évaluer le modèle
 > * Utiliser le modèle pour effectuer une prédiction
@@ -33,7 +33,7 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 
 * [Jeu de données « UCI Sentiment Labeled Sentences »](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) (fichier zip)
 
-## <a name="create-a-console-application"></a>Créer une application console
+## <a name="create-a-console-application"></a>Création d’une application console
 
 1. Créez une **application console .NET Core** appelée « SentimentAnalysis ».
 
@@ -46,7 +46,7 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 ## <a name="prepare-your-data"></a>Préparer vos données
 
 > [!NOTE]
-> Les jeux de données utilisés dans ce tutoriel proviennent de « From Group to Individual Labels using Deep Features » (Kotzias et. al., KDD 2015), hébergé dans le référentiel UCI Machine Learning (Dua, D. et Karra Taniskidou, E., 2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml ]. Irvine (Californie) : Université de Californie, School of Information and Computer Science.
+> Les jeux de données utilisés dans ce tutoriel proviennent de « From Group to Individual Labels using Deep Features » (Kotzias et. al., KDD 2015), hébergé dans le référentiel UCI Machine Learning (Dua, D. et Karra Taniskidou, E., 2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml ]. Irvine (Californie) : University of California, School of Information and Computer Science.
 
 1. Téléchargez le [fichier zip du jeu de données UCI Sentiment Labeled Sentences](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip), puis décompressez-le.
 
@@ -99,7 +99,7 @@ La classe de sortie `SentimentPrediction` contient deux autres propriétés calc
 
 Pour ce tutoriel, la propriété la plus importante est `Prediction`.
 
-## <a name="load-the-data"></a>Charger les données
+## <a name="load-the-data"></a>Chargement des données
 Les données dans ML.NET sont représentées en tant que [classe IDataView](xref:Microsoft.ML.IDataView). `IDataView` est un moyen flexible et efficace de décrire des données tabulaires (numériques et texte). Les données peuvent être chargées à partir d’un fichier texte ou en temps réel (par exemple, fichiers journaux ou de base de données SQL) dans un objet `IDataView`.
 
 La [classe MLContext](xref:Microsoft.ML.MLContext) constitue un point de départ pour toutes les opérations ML.NET. L’initialisation de `mlContext` crée un environnement ML.NET qui peut être partagé par les objets du workflow de création de modèle. Sur le plan conceptuel, elle est similaire à `DBContext` dans Entity Framework.
@@ -179,7 +179,7 @@ Quand vous préparez un modèle, vous utilisez une partie du jeu de données pou
 
     La méthode `FeaturizeText()` dans le code précédent convertit la colonne de texte (`SentimentText`) en une colonne `Features` de type clé numérique, qui est utilisée par l’algorithme de machine learning, et l’ajoute comme nouvelle colonne au jeu de données :
 
-    |SentimentText                         |Sentiment |Fonctionnalités              |
+    |SentimentText                         |Sentiment |Caractéristiques              |
     |--------------------------------------|----------|----------------------|
     |La serveuse était un peu lente durant le service.|    0     |[0.76, 0.65, 0.44, …] |
     |La pâte n’est pas bonne.                    |    0     |[0.98, 0.43, 0.54, …] |
@@ -196,7 +196,7 @@ Ajoutez la tâche de machine learning aux définitions de transformations des do
 
 [SdcaLogisticRegressionBinaryTrainer](xref:Microsoft.ML.Trainers.SdcaLogisticRegressionBinaryTrainer) est votre algorithme d’entraînement de classification. Il est ajouté à `estimator` et accepte les caractéristiques `SentimentText` (`Features`) ainsi que les paramètres d’entrée `Label` pour apprendre à partir des données d’historique.
 
-### <a name="train-the-model"></a>Effectuer l’apprentissage du modèle
+### <a name="train-the-model"></a>Formation du modèle
 
 Ajustez le modèle aux données `splitTrainSet` et retournez le modèle entraîné en ajoutant la ligne de code suivante dans la méthode `BuildAndTrainModel()` :
 
@@ -362,7 +362,6 @@ F1Score: 84.04%
 Sentiment: This was a very bad steak | Prediction: Negative | Probability: 0.1027377
 =============== End of Predictions ===============
 
-
 =============== Prediction Test of loaded model with a multiple samples ===============
 
 Sentiment: This was a horrible meal | Prediction: Negative | Probability: 0.1369192
@@ -382,11 +381,11 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce didacticiel, vous avez appris à :
+Dans ce tutoriel, vous avez appris à :
 > [!div class="checklist"]
-> * Créer une application console
+> * Création d’une application console
 > * Préparer les données
-> * Charger les données
+> * Chargement des données
 > * Générer et entraîner le modèle
 > * Évaluer le modèle
 > * Utiliser le modèle pour effectuer une prédiction
