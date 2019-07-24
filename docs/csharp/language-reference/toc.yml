@@ -43,6 +43,8 @@
               href: keywords/void.md
             - name: var
               href: keywords/var.md
+            - name: "Types non\_managés"
+              href: builtin-types/unmanaged-types.md
             - name: Tables de référence des types
               items:
                 - name: Table des types intégrés
