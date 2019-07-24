@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 2df2cd11-6aac-4bdf-ab7b-ea5f464cd5ca
-ms.openlocfilehash: 48df7083d990dde157c9b7b2a062c865954cf38a
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 9bb77146a55bae4aed17bdd3ef48eca7890d4807
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364207"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68401440"
 ---
 # <a name="binding-sources-overview"></a>Vue d'ensemble des sources de liaison
 Dans la liaison de données, l’objet de source de liaison fait référence à l’objet à partir duquel vous obtenez des données. Cette rubrique décrit les types d’objets que vous pouvez utiliser comme source de liaison.  
@@ -22,7 +22,7 @@ Dans la liaison de données, l’objet de source de liaison fait référence à 
   
 |Source de liaison|Description|  
 |--------------------|-----------------|  
-|Objets [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)].|Vous pouvez lier des propriétés publiques, des sous-propriétés, ainsi que des indexeurs de n’importe quel objet [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)]. Le moteur de liaison utilise la réflexion [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] pour obtenir les valeurs des propriétés. Les objets qui implémentent <xref:System.ComponentModel.ICustomTypeDescriptor> ou ont un inscrit <xref:System.ComponentModel.TypeDescriptionProvider> fonctionnent également avec le moteur de liaison.<br /><br /> Pour plus d’informations sur la façon d’implémenter une classe qui peut servir de source de liaison, consultez la page [Implémentation d’une classe pour la source de liaison](#classes) plus loin dans cette rubrique.|  
+|objets common language runtime (CLR)|Vous pouvez lier des propriétés publiques, des sous-propriétés, ainsi que des indexeurs, de n’importe quel objet common language runtime (CLR). Le moteur de liaison utilise la réflexion CLR pour récupérer les valeurs des propriétés. Les objets qui implémentent <xref:System.ComponentModel.ICustomTypeDescriptor> ou ont un inscrit <xref:System.ComponentModel.TypeDescriptionProvider> fonctionnent également avec le moteur de liaison.<br /><br /> Pour plus d’informations sur la façon d’implémenter une classe qui peut servir de source de liaison, consultez la page [Implémentation d’une classe pour la source de liaison](#classes) plus loin dans cette rubrique.|  
 |objets dynamiques|Vous pouvez lier aux propriétés et indexeurs disponibles d’un objet qui implémente l' <xref:System.Dynamic.IDynamicMetaObjectProvider> interface. Si vous pouvez accéder au membre dans le code, vous pouvez lier celui-ci. Par exemple, si un objet dynamique vous permet d’accéder à un membre dans le code via `someObjet.AProperty`, vous pouvez le lier en affectant le chemin de liaison `AProperty`.|  
 |Objets ADO.NET|Vous pouvez lier des objets ADO.NET, tels que <xref:System.Data.DataTable>. Le ADO.NET <xref:System.Data.DataView> implémente l' <xref:System.ComponentModel.IBindingList> interface, qui fournit des notifications de modification que le moteur de liaison écoute.|  
 |Objets [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)].|Vous pouvez lier et `XPath` exécuter des requêtes sur un <xref:System.Xml.XmlNode>, <xref:System.Xml.XmlDocument>ou. <xref:System.Xml.XmlElement> Un moyen pratique d’accéder [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] aux données qui est la source de liaison dans le balisage <xref:System.Windows.Data.XmlDataProvider> consiste à utiliser un objet. Pour plus d’informations, consultez [Effectuer une liaison à des données XML à l'aide d'un XMLDataProvider et de requêtes XPath](how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries.md).<br /><br /> Vous pouvez également effectuer une liaison <xref:System.Xml.Linq.XElement> à <xref:System.Xml.Linq.XDocument>une ou à une liaison avec les résultats de requêtes exécutées sur des objets de ces types à l’aide de LINQ to XML. Un moyen pratique d’utiliser LINQ to XML pour accéder aux données XML qui est la source de liaison dans le balisage <xref:System.Windows.Data.ObjectDataProvider> consiste à utiliser un objet. Pour plus d’informations, consultez [Effectuer une liaison avec XDocument, XElement ou LINQ pour des résultats de requête XML](how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results.md).|  
@@ -33,9 +33,9 @@ Dans la liaison de données, l’objet de source de liaison fait référence à 
  Vous pouvez créer vos propres sources de liaison. Cette section décrit les éléments que vous devez connaître si vous implémentez une classe pour servir de source de liaison.  
   
 ### <a name="providing-change-notifications"></a>Fournir des notifications de modification  
- Si vous utilisez une <xref:System.Windows.Data.BindingMode.OneWay> liaison ou <xref:System.Windows.Data.BindingMode.TwoWay> (car vous souhaitez que votre [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] se met à jour lorsque les propriétés de la source de liaison changent dynamiquement), vous devez implémenter un mécanisme de notification de modification de propriété approprié. Le mécanisme recommandé est que la [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] classe dynamique ou implémente l' <xref:System.ComponentModel.INotifyPropertyChanged> interface. Pour plus d’informations, consultez [Implémenter la notification des modifications de propriétés](how-to-implement-property-change-notification.md).  
+ Si vous utilisez une <xref:System.Windows.Data.BindingMode.OneWay> liaison ou <xref:System.Windows.Data.BindingMode.TwoWay> (car vous souhaitez que votre [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] se met à jour lorsque les propriétés de la source de liaison changent dynamiquement), vous devez implémenter un mécanisme de notification de modification de propriété approprié. Le mécanisme recommandé est que le CLR ou la classe dynamique implémente <xref:System.ComponentModel.INotifyPropertyChanged> l’interface. Pour plus d’informations, consultez [Implémenter la notification des modifications de propriétés](how-to-implement-property-change-notification.md).  
   
- Si vous créez un [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] objet qui n’implémente <xref:System.ComponentModel.INotifyPropertyChanged>pas, vous devez disposer de votre propre système de notification pour vous assurer que les données utilisées dans une liaison restent à jour. Vous pouvez fournir des notifications de modification en prenant en charge le modèle `PropertyChanged` pour chaque propriété pour laquelle vous souhaitez obtenir des notifications de modification. Pour prendre en charge ce modèle, vous définissez un événement *PropertyName*Changed pour chaque propriété, où *PropertyName* est le nom de la propriété. Vous déclenchez l’événement chaque fois que la propriété est modifiée.  
+ Si vous créez un objet CLR qui n’implémente <xref:System.ComponentModel.INotifyPropertyChanged>pas, vous devez disposer de votre propre système de notification pour vous assurer que les données utilisées dans une liaison restent à jour. Vous pouvez fournir des notifications de modification en prenant en charge le modèle `PropertyChanged` pour chaque propriété pour laquelle vous souhaitez obtenir des notifications de modification. Pour prendre en charge ce modèle, vous définissez un événement *PropertyName*Changed pour chaque propriété, où *PropertyName* est le nom de la propriété. Vous déclenchez l’événement chaque fois que la propriété est modifiée.  
   
  Si votre source de liaison implémente un de ces mécanismes de notification, les mises à jour de la cible sont effectuées automatiquement. Si, pour une raison quelconque, votre source de liaison ne fournit pas les notifications de modification de propriété appropriées, <xref:System.Windows.Data.BindingExpression.UpdateTarget%2A> vous avez la possibilité d’utiliser la méthode pour mettre à jour la propriété cible explicitement.  
   
@@ -80,7 +80,7 @@ Dans la liaison de données, l’objet de source de liaison fait référence à 
   
  Ce tableau décrit les points importants suivants à propos des exigences relatives à l’autorisation dans la liaison de données :  
   
-- Pour les propriétés [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)], la liaison de données fonctionne tant que le moteur de liaison est en mesure d’accéder à la propriété de source de liaison à l’aide de la réflexion. Sinon, le moteur de liaison émet un avertissement indiquant que la propriété ne peut pas être trouvée et utilise la valeur de secours ou la valeur par défaut, si elle est disponible.  
+- Pour les propriétés CLR, la liaison de données fonctionne tant que le moteur de liaison est en mesure d’accéder à la propriété de source de liaison à l’aide de la réflexion. Sinon, le moteur de liaison émet un avertissement indiquant que la propriété ne peut pas être trouvée et utilise la valeur de secours ou la valeur par défaut, si elle est disponible.  
   
 - Vous pouvez lier des propriétés sur les objets dynamiques qui sont définies au moment de la compilation ou de l’exécution.  
   
