@@ -2,16 +2,16 @@
 title: Articles de guide pratique (Guide C#)
 description: Série de petits conseils et d’exemples de code spécifiques courts
 ms.date: 12/20/2017
-ms.openlocfilehash: 63410d687bd09f95a5ce7ce9304f2281b2f8d334
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: 09e39e3c9bea5d4b9240039e37d2a5998fe1ebf8
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859533"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68400734"
 ---
 # <a name="how-to-c"></a>Guides pratiques (C#)
 
-Dans la section Guides pratiques du guide C#, vous trouverez rapidement des réponses à des questions courantes. Dans certains cas, les articles peuvent figurer dans plusieurs sections. Nous avons souhaité les rendre plus faciles à trouver via plusieurs voies de recherche. 
+Dans la section Guides pratiques du guide C#, vous trouverez rapidement des réponses à des questions courantes. Dans certains cas, les articles peuvent figurer dans plusieurs sections. Nous avons souhaité les rendre plus faciles à trouver via plusieurs voies de recherche.
 
 ## <a name="general-c-concepts"></a>Concepts C# généraux
 
@@ -19,7 +19,6 @@ Plusieurs conseils et astuces sont des pratiques courantes des développeurs en 
 
 - [Initialiser des objets à l’aide d’un initialiseur d’objet](../programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md).
 - [Découvrir les différences entre le passage d’un struct et d’une classe à une méthode](../programming-guide/classes-and-structs/how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md).
-- [Guide pratique pour utiliser des expressions lambda](../programming-guide/statements-expressions-operators/how-to-use-lambda-expressions-outside-linq.md).
 - [Résoudre les conflits de nom de type à l’aide de l’alias d’espace de noms global](../programming-guide/namespaces/how-to-use-the-global-namespace-alias.md).
 - [Utiliser la surcharge d’opérateur](../language-reference/operators/operator-overloading.md).
 - [Implémenter et appeler une méthode d’extension personnalisée](../programming-guide/classes-and-structs/how-to-implement-and-call-a-custom-extension-method.md).
