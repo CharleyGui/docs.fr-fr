@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: fd865f2a9c4a6d2c17f79a21866103a2db982e5f
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 72771ee494b6be7142ce3f9bec43dcb8aa8a8401
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661589"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363087"
 ---
 # <a name="value-types-c-reference"></a>Types valeur (référence C#)
 
@@ -88,7 +88,7 @@ int myInt = new int();
 int myInt = 0;
 ```
 
-L’opérateur [new](../operators/new-operator.md) permet d’appeler le constructeur sans paramètre du type spécifique et d’affecter la valeur par défaut à la variable. Dans l’exemple précédent, le constructeur sans paramètre a affecté la valeur `0` à `myInt`. Pour plus d’informations sur les valeurs affectées en appelant les constructeurs par défaut, voir [Tableau des valeurs par défaut](default-values-table.md).
+L’opérateur [new](../operators/new-operator.md) permet d’appeler le constructeur sans paramètre du type spécifique et d’affecter la valeur par défaut à la variable. Dans l’exemple précédent, le constructeur sans paramètre a affecté la valeur `0` à `myInt`. Pour plus d’informations sur les valeurs affectées en appelant les constructeurs sans paramètre, voir [Tableau des valeurs par défaut](default-values-table.md).
 
 Avec les types définis par l’utilisateur, l’opérateur [new](../operators/new-operator.md) permet d’appeler le constructeur sans paramètre. Par exemple, l’instruction suivante appelle le constructeur sans paramètre du struct `Point` :
 

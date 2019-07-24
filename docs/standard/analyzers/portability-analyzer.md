@@ -1,15 +1,15 @@
 ---
 title: Analyseur de portabilité .NET – .NET
 description: Découvrez comment utiliser l’outil Analyseur de portabilité .NET pour évaluer la portabilité de votre code sur les différentes implémentations de .NET, notamment .NET Core, .NET Standard, UWP et Xamarin.
-ms.date: 07/10/2019
+ms.date: 07/18/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: f05d4f4a2fce8fa9a4d2e334f44190ea37335038
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: 433936480aa1181370a6ebc2bd2ba9914a50dfa2
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859792"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331746"
 ---
 # <a name="the-net-portability-analyzer"></a>Analyseur de portabilité .NET
 
@@ -52,7 +52,7 @@ Seules les API qui ne sont pas prises en charge par une plateforme cible apparai
 
 ![Synthèse de la portabilité](./media/portability-analyzer/portabilitysummary.png)
 
-La section sur la synthèse de la portabilité du rapport montre le pourcentage de portabilité de chaque assembly inclus lors de l’exécution. Dans l’exemple précédent, 89,74 % des API .NET Framework utilisées dans l’application `ConsoleAppFramework` sont disponibles dans .NET Core + Extensions de plateforme v2.2. Si vous exécutez l’outil Analyseur de portabilité .NET sur plusieurs assemblys, chaque assembly doit avoir une ligne dans le rapport de synthèse de la portabilité.
+La section sur la synthèse de la portabilité du rapport montre le pourcentage de portabilité de chaque assembly inclus lors de l’exécution. Dans l’exemple précédent, 71,24 % des API .NET Framework utilisées dans l’application `svcutil` sont disponibles dans .NET Core + Extensions de plateforme. Si vous exécutez l’outil Analyseur de portabilité .NET sur plusieurs assemblys, chaque assembly doit avoir une ligne dans le rapport de synthèse de la portabilité.
 
 #### <a name="details"></a>Détails
 
@@ -60,11 +60,11 @@ La section sur la synthèse de la portabilité du rapport montre le pourcentage 
 
 La section des détails du rapport liste les API manquantes de l’une des plateformes cibles. 
 
- - Type cible : le type a une API manquante dans une plateforme cible 
- - Membre cible : la méthode est manquante dans une plateforme cible 
- - Nom de l’assembly : assembly .NET Framework dans lequel réside l’API manquante. 
- - Chacune des plateformes cibles sélectionnées est une colonne, comme « .NET Core » : La valeur « Non pris en charge » signifie que l’API n’est pas prise en charge sur cette plateforme cible. 
- - Changements recommandés : API ou technologie de remplacement recommandée. Actuellement, ce champ est vide ou obsolète pour un grand nombre d’API. En raison du grand nombre d’API, il est très difficile de le maintenir à jour. Nous étudions d’autres solutions pour fournir des informations utiles aux clients.
+- Type cible : le type a une API manquante dans une plateforme cible 
+- Membre cible : la méthode est manquante dans une plateforme cible 
+- Nom de l’assembly : assembly .NET Framework dans lequel réside l’API manquante. 
+- Chacune des plateformes cibles sélectionnées est une colonne, comme « .NET Core » : La valeur « Non pris en charge » signifie que l’API n’est pas prise en charge sur cette plateforme cible. 
+- Changements recommandés : API ou technologie de remplacement recommandée. Actuellement, ce champ est vide ou obsolète pour un grand nombre d’API. En raison du grand nombre d’API, il est très difficile de le maintenir à jour. Nous étudions d’autres solutions pour fournir des informations utiles aux clients.
 
 #### <a name="missing-assemblies"></a>Assemblys manquants
 
@@ -73,5 +73,3 @@ La section des détails du rapport liste les API manquantes de l’une des plate
 Vous trouverez peut-être une section sur les assemblys manquants dans votre rapport. Elle vous indique que cette liste d’assemblys est référencée par vos assemblys analysés et qu’ils n’ont pas été analysés. Si c’est un assembly qui vous appartient, incluez-le dans l’exécution de l’Analyseur de portabilité d’Api afin d’obtenir un rapport de portabilité détaillé au niveau de l’API. S’il s’agit d’une bibliothèque tierce, regardez si elle a une version plus récente prenant en charge votre plateforme cible. Si oui, passez à la version plus récente. Au final, vous devriez obtenir une liste qui inclut tous les assemblys tiers dont dépend votre application et qui confirme qu’ils ont une version prenant en charge votre plateforme cible.  
 
 Pour plus d’informations sur l’Analyseur de portabilité .NET, consultez la [documentation GitHub](https://github.com/Microsoft/dotnet-apiport#documentation) et la vidéo Channel 9 [A brief look at the .NET Portability Analyzer](https://channel9.msdn.com/Blogs/Seth-Juarez/A-Brief-Look-at-the-NET-Portability-Analyzer) (Aperçu rapide de l’Analyseur de portabilité .NET).
-
-

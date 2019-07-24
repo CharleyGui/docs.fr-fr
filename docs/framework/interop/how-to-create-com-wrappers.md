@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : créer des wrappers COM'
+title: Activation créer des wrappers COM
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM,wrappers creating
@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: bdf89bea-1623-45ee-a57b-cf7c90395efa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b0e34785fce3cd88bfe4fe4b075ba34b8d22bff4
-ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
+ms.openlocfilehash: e10b6fd7df003de739b57bbb3e17deb46215763f
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469648"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363994"
 ---
-# <a name="how-to-create-com-wrappers"></a>Procédure : créer des wrappers COM
+# <a name="how-to-create-com-wrappers"></a>Activation créer des wrappers COM
 
 Vous pouvez créer des wrappers COM (Component Object Model) à l’aide des fonctionnalités Visual Studio 2005 ou des outils .NET Framework Tlbimp.exe et Regasm.exe. Ces deux méthodes génèrent deux types de wrappers COM :
 
@@ -53,7 +53,7 @@ Vous pouvez maintenant écrire le code pour accéder à l’objet COM. Vous pouv
   
 ### <a name="to-create-a-com-callable-wrapper-using-visual-studio"></a>Pour créer un wrapper CCW à l’aide de Visual Studio  
   
-1. Créez un projet de bibliothèque de classes pour la classe managée que vous souhaitez exécuter en code natif. La classe doit avoir un constructeur par défaut.  
+1. Créez un projet de bibliothèque de classes pour la classe managée que vous souhaitez exécuter en code natif. La classe doit avoir un constructeur sans paramètre.  
   
      Vérifiez que vous disposez d’un numéro de version à quatre parties complet pour votre assembly dans le fichier AssemblyInfo. Ce numéro est requis pour assurer le contrôle de version dans le Registre Windows. Pour plus d’informations sur les numéros de version, consultez [Contrôle de version des assemblys](../../../docs/framework/app-domains/assembly-versioning.md).  
   

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - types [C#], built-in
 - built-in C# types
 ms.assetid: 54f901f2-bf2f-472c-ae8d-73e8ecfc57fe
-ms.openlocfilehash: e770c305afe098e633700b039efb51770c77ada7
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 5db982c0a94814bfece087eb4db119a4df246094
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661449"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68330968"
 ---
 # <a name="built-in-types-table-c-reference"></a>Tableau des types intégrés (référence C#)
 
@@ -40,7 +40,7 @@ Le tableau suivant liste les mots clés des types C# intégrés, qui sont des 
 
 Hormis les types `object` et `string`, tous les types listés dans le tableau sont considérés comme des types simples.  
   
-Les mots clés des types C# et leurs alias sont interchangeables. Par exemple, vous pouvez déclarer une variable de type entier à l’aide de l’une des deux déclarations suivantes :  
+Les types .NET et leurs alias de mots clés de type C# sont interchangeables. Par exemple, vous pouvez déclarer une variable de type entier à l’aide de l’une des deux déclarations suivantes :  
 
 ```csharp
 int x = 123;

@@ -32,35 +32,40 @@ helpviewer_keywords:
 - uint keyword [C#]
 - long keyword [C#]
 - ulong keyword [C#]
-ms.openlocfilehash: 0a1ed01d9e6cb86ea177e8b947627f9dc02eedae
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: dfb1298abaff0cfe8eae7536f94511a30012a4a9
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744216"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68236078"
 ---
 # <a name="integral-numeric-types--c-reference"></a>Types numériques intégraux (référence C#)
 
-Les **types numériques intégraux** sont un sous-ensemble des **types simples** et peuvent être initialisés avec des [*littéraux*](#integral-literals). Tous les types intégraux sont également des types valeur.
+Les **types numériques intégraux** sont un sous-ensemble des **types simples** et peuvent être initialisés avec des [*littéraux*](#integral-literals). Tous les types intégraux sont également des types valeur. Tous les types numériques intégraux prennent en charge les opérateurs [arithmétiques](../operators/arithmetic-operators.md), les opérateurs [logiques au niveau du bit](../operators/bitwise-and-shift-operators.md), ainsi que les opérateurs [de comparaison et d’égalité](../operators/equality-operators.md).
 
-Tous les types numériques intégraux prennent en charge les opérateurs [arithmétiques](../operators/arithmetic-operators.md), les opérateurs [logiques au niveau du bit](../operators/bitwise-and-shift-operators.md), ainsi que les opérateurs [de comparaison et d’égalité](../operators/equality-operators.md).
+## <a name="characteristics-of-the-integral-types"></a>Caractéristiques des types intégraux
 
-## <a name="sizes-and-ranges"></a>Tailles et plages
+C# prend en charge les types intégraux prédéfinis suivants :
 
-Le tableau suivant indique les tailles et les plages des types intégraux :
+|C# type/mot clé|Plage|Size|Type .NET|
+|----------|-----------|----------|-------------|
+|`sbyte`|-128 à 127|Entier 8 bits signé|<xref:System.SByte?displayProperty=nameWithType>|
+|`byte`|0 à 255|Entier 8 bits non signé|<xref:System.Byte?displayProperty=nameWithType>|
+|`short`|de -32 768 à 32 767|Entier 16 bits signé|<xref:System.Int16?displayProperty=nameWithType>|
+|`ushort`|0 à 65 535|Entier 16 bits non signé|<xref:System.UInt16?displayProperty=nameWithType>|
+|`int`|-2,147,483,648 en 2,147,483,647|Entier 32 bits signé|<xref:System.Int32?displayProperty=nameWithType>|
+|`uint`|de 0 à 4 294 967 295|Entier 32 bits non signé|<xref:System.UInt32?displayProperty=nameWithType>|
+|`long`|-9 223 372 036 854 775 808 à 9 223 372 036 854 775 807|Entier 64 bits signé|<xref:System.Int64?displayProperty=nameWithType>|
+|`ulong`|de 0 à 18 446 744 073 709 551 615|Entier 64 bits non signé|<xref:System.UInt64?displayProperty=nameWithType>|
 
-|Type|Plage|Size|  
-|----------|-----------|----------|  
-|`sbyte`|-128 à 127|Entier 8 bits signé|  
-|`byte`|0 à 255|Entier 8 bits non signé|  
-|`short`|de -32 768 à 32 767|Entier 16 bits signé|  
-|`ushort`|0 à 65 535|Entier 16 bits non signé|  
-|`int`|-2,147,483,648 en 2,147,483,647|Entier 32 bits signé|  
-|`uint`|de 0 à 4 294 967 295|Entier 32 bits non signé|  
-|`long`|-9 223 372 036 854 775 808 à 9 223 372 036 854 775 807|Entier 64 bits signé|  
-|`ulong`|de 0 à 18 446 744 073 709 551 615|Entier 64 bits non signé|  
+Dans le tableau précédent, chaque mot clé de type C# de la colonne la plus à gauche est un alias pour le type .NET correspondant. Ils sont interchangeables. Par exemple, les déclarations suivantes déclarent des variables du même type :
 
-`0` est la valeur par défaut de tous les types intégraux. Chaque type intégral a des constantes nommées `MinValue` et `MaxValue` correspondant à la valeur minimale et à la valeur maximale.
+```csharp
+int a = 123;
+System.Int32 b = 123;
+```
+
+La valeur par défaut pour chaque type intégral est zéro, `0`. Chacun des types intégraux a les constantes `MinValue` et `MaxValue` qui fournissent la valeur minimale et maximale de ce type.
 
 Utilisez la structure <xref:System.Numerics.BigInteger?displayProperty=nameWithType> pour représenter un entier signé sans limites supérieures ou inférieures.
 
@@ -76,7 +81,7 @@ var binaryLiteral = 0b_0010_1010;
 
 Les littéraux décimaux ne nécessitent aucun préfixe. Les préfixes `x` ou `X` correspondent à un *littéral hexadécimal*. Les préfixes `b` ou `B` correspondent à un *littéral binaire*. La déclaration de `binaryLiteral` illustre l’utilisation de `_` comme un *séparateur numérique*. Vous pouvez aussi utiliser le séparateur numérique avec tous les littéraux numériques. Les littéraux binaires et le séparateur numérique `_` sont pris en charge dans C# 7.0.
 
-### <a name="literal-suffixes"></a>Suffixes littéraux 
+### <a name="literal-suffixes"></a>Suffixes littéraux
 
 Les suffixes `l` ou `L` indiquent que le littéral intégral doit être de type `long`. Les suffixes `ul` et `UL` spécifient le type `ulong`. Si le suffixe `L` est utilisé sur un littéral qui est supérieur à 9 223 372 036 854 775 807 (la valeur maximale de `long`), la valeur est convertie vers le type `ulong`. Si la valeur représentée par un littéral entier dépasse <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, une erreur de compilation [CS1021](../../misc/cs1021.md) se produit. 
 
@@ -123,11 +128,3 @@ Vous devez utiliser un cast explicite pour convertir un type intégral en un aut
 - [Tableau des formats des résultats numériques](../keywords/formatting-numeric-results-table.md)
 - [Tableaux des types intégrés](../keywords/built-in-types-table.md)
 - [Valeurs numériques dans .NET](../../../standard/numerics.md)
-- <xref:System.Byte?displayProperty=nameWithType>
-- <xref:System.SByte?displayProperty=nameWithType>
-- <xref:System.Int16?displayProperty=nameWithType>
-- <xref:System.UInt16?displayProperty=nameWithType>
-- <xref:System.Int32?displayProperty=nameWithType>
-- <xref:System.UInt32?displayProperty=nameWithType>
-- <xref:System.Int64?displayProperty=nameWithType>
-- <xref:System.UInt64?displayProperty=nameWithType>

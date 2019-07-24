@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 4b8afb52-fb8d-4e65-b47c-fd82956a3cdd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2e57ec1a70aaae384f73b1ffdbf92e93fc0a7bdd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8b2e14a7508d4a5e8069a3b98dee38a0ac62750c
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648563"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363984"
 ---
 # <a name="qualifying-net-types-for-interoperation"></a>Qualification des types .NET en vue d'une interopérabilité
 Si vous envisagez d’exposer les types d’un assembly à des applications COM, prenez en compte les exigences COM Interop au moment de la conception. Les types managés (classe, interface, structure et énumération) s’intègrent parfaitement aux types COM lorsque vous respectez les consignes suivantes :  
@@ -37,9 +37,9 @@ Si vous envisagez d’exposer les types d’un assembly à des applications COM
   
      Les membres des types publics doivent également être publics pour être visibles par COM. Vous pouvez restreindre la visibilité d’un assembly, d’un type public ou de membres publics d’un type public en appliquant <xref:System.Runtime.InteropServices.ComVisibleAttribute>. Par défaut, tous les membres et types publics sont visibles.  
   
-- Les types doivent avoir un constructeur public par défaut pour être activés dans COM.  
+- Les types doivent avoir un constructeur sans paramètre public pour être activés dans COM.  
   
-     Les types publics managés sont visibles par COM. Toutefois, sans constructeur public par défaut (constructeur sans arguments), les clients COM ne peuvent pas créer le type. Les clients COM peuvent toujours utiliser le type s’il est activé par d’autres moyens.  
+     Les types publics managés sont visibles par COM. Toutefois, sans constructeur public sans paramètre (constructeur sans arguments), les clients COM ne peuvent pas créer le type. Les clients COM peuvent toujours utiliser le type s’il est activé par d’autres moyens.  
   
 - Les types ne peuvent pas être abstraits.  
   

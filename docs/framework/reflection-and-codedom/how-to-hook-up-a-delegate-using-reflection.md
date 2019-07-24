@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : raccorder un délégué à l’aide de la réflexion'
+title: Activation raccorder un délégué à l’aide de la réflexion
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,14 +12,14 @@ helpviewer_keywords:
 ms.assetid: 076ee62d-a964-449e-a447-c31b33518b81
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a4640e776cc76ef56227858f6a4aa04e77ecbbdc
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 8b07c3eb9d96bb6f675a6a2ca742cc9bdf3c3826
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586005"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68364067"
 ---
-# <a name="how-to-hook-up-a-delegate-using-reflection"></a>Procédure : raccorder un délégué à l’aide de la réflexion
+# <a name="how-to-hook-up-a-delegate-using-reflection"></a>Activation raccorder un délégué à l’aide de la réflexion
 Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous ne pouvez pas utiliser des fonctionnalités de langage telles que l’opérateur C# `+=` ou l’[instruction Visual Basic AddHandler](~/docs/visual-basic/language-reference/statements/addhandler-statement.md) pour raccorder des événements. Les procédures suivantes montrent comment raccorder une méthode existante à un événement en obtenant tous les types nécessaires par réflexion, et comment créer une méthode dynamique à l’aide de l’émission de réflexion et la raccorder à un événement.  
   
 > [!NOTE]
@@ -33,7 +33,7 @@ Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous 
      [!code-csharp[HookUpDelegate#3](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#3)]
      [!code-vb[HookUpDelegate#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HookUpDelegate/vb/source.vb#3)]  
   
-2. Obtenez un objet <xref:System.Type> représentant le type et créez une instance du type. La méthode <xref:System.Activator.CreateInstance%28System.Type%29> est utilisée dans le code suivant car le formulaire a un constructeur par défaut. Vous pouvez utiliser plusieurs autres surcharges de la méthode <xref:System.Activator.CreateInstance%2A> si le type que vous créez n’a pas de constructeur par défaut. La nouvelle instance est stockée en tant que type <xref:System.Object> pour conserver l’illusion que l’assembly est inconnu. (La réflexion vous autorise à obtenir les types dans un assembly sans connaître leurs noms à l’avance.)  
+2. Obtenez un objet <xref:System.Type> représentant le type et créez une instance du type. La méthode <xref:System.Activator.CreateInstance%28System.Type%29> est utilisée dans le code suivant car le formulaire a un constructeur sans paramètre. Vous pouvez utiliser plusieurs autres surcharges de la méthode <xref:System.Activator.CreateInstance%2A> si le type que vous créez n’a pas de constructeur sans paramètre. La nouvelle instance est stockée en tant que type <xref:System.Object> pour conserver l’illusion que l’assembly est inconnu. (La réflexion vous autorise à obtenir les types dans un assembly sans connaître leurs noms à l’avance.)  
   
      [!code-cpp[HookUpDelegate#4](../../../samples/snippets/cpp/VS_Snippets_CLR/HookUpDelegate/cpp/source.cpp#4)]
      [!code-csharp[HookUpDelegate#4](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#4)]
@@ -98,7 +98,7 @@ Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous 
      [!code-csharp[HookUpDelegate#12](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#12)]
      [!code-vb[HookUpDelegate#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HookUpDelegate/vb/source.vb#12)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple de code suivant montre comment raccorder une méthode existante à un événement à l’aide de la réflexion, et également comment utiliser la classe <xref:System.Reflection.Emit.DynamicMethod> pour émettre une méthode au moment de l’exécution et la raccorder à un événement.  
   
  [!code-cpp[HookUpDelegate#1](../../../samples/snippets/cpp/VS_Snippets_CLR/HookUpDelegate/cpp/source.cpp#1)]

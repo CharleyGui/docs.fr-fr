@@ -1,21 +1,21 @@
 ---
 title: Présentation de ML.NET et de son fonctionnement
-description: ML.NET vous donne la possibilité d’ajouter le machine learning aux applications .NET. Avec cette fonctionnalité, vous pouvez ensuite effectuer des prédictions automatiques à partir des données disponibles dans votre application. Cet article explique les principes de base du machine learning dans ML.NET.
-ms.date: 04/10/2019
+description: ML.NET vous donne la possibilité d’ajouter le Machine Learning aux applications .NET, dans des scénarios en ligne ou hors connexion. Avec cette fonctionnalité, vous pouvez ensuite effectuer des prédictions automatiques à partir des données disponibles dans votre application sans devoir être connecté à un réseau pour utiliser ML.NET. Cet article explique les principes de base du machine learning dans ML.NET.
+ms.date: 07/17/2019
 ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: 30e96d85ecc04332bc5e6c8f57badd000f729904
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 23e71e86b75854042068b6a68f90cf995749ee58
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660638"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331581"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Présentation de ML.NET et de son fonctionnement
 
-ML.NET vous donne la possibilité d’ajouter le machine learning aux applications .NET. Avec cette fonctionnalité, vous pouvez ensuite effectuer des prédictions automatiques à partir des données disponibles dans votre application. Cet article explique les principes de base du machine learning dans ML.NET. 
+ML.NET vous donne la possibilité d’ajouter le Machine Learning aux applications .NET, dans des scénarios en ligne ou hors connexion. Avec cette fonctionnalité, vous pouvez ensuite effectuer des prédictions automatiques à partir des données disponibles dans votre application sans devoir être connecté à un réseau. Cet article explique les principes de base du machine learning dans ML.NET. 
 
 Voici des exemples de types de prédictions possibles avec ML.NET :
 
@@ -98,7 +98,7 @@ Revoyons maintenant tous ces concepts un peu plus en détail.
 
 Un modèle ML.NET est un objet qui contient des transformations à effectuer sur vos données d’entrée pour produire la sortie prédite.
 
-### <a name="basic"></a>Basic
+### <a name="basic"></a>De base
 
 Le modèle de base, le plus simple, est la régression linéaire à deux dimensions, où une quantité continue est proportionnelle à une autre, comme dans l’exemple des prix de maisons ci-dessus. 
 
@@ -169,11 +169,11 @@ Au démarrage de toute application ML.NET, il y a un objet <xref:Microsoft.ML.ML
 |Préparation des données||<xref:Microsoft.ML.TransformsCatalog>||
 |Algorithmes d’entraînement|Classification binaire|<xref:Microsoft.ML.BinaryClassificationCatalog>||
 ||Classification multiclasse|<xref:Microsoft.ML.MulticlassClassificationCatalog>||
-||Détection d’anomalie|<xref:Microsoft.ML.AnomalyDetectionCatalog>||
+||Détection des anomalies|<xref:Microsoft.ML.AnomalyDetectionCatalog>||
 ||Clustering|<xref:Microsoft.ML.ClusteringCatalog>||
 ||Prévisions|<xref:Microsoft.ML.ForecastingCatalog>||
 ||Classement|<xref:Microsoft.ML.RankingCatalog>||
-||Régression|<xref:Microsoft.ML.RegressionCatalog>||
+||régression ;|<xref:Microsoft.ML.RegressionCatalog>||
 ||Recommandation|<xref:Microsoft.ML.RecommendationCatalog>|Ajouter le package NuGet `Microsoft.ML.Recommender`|
 ||TimeSeries|<xref:Microsoft.ML.TimeSeriesCatalog>|Ajouter le package NuGet `Microsoft.ML.TimeSeries`|
 |Utilisation du modèle ||<xref:Microsoft.ML.ModelOperationsCatalog>||
@@ -195,7 +195,7 @@ Dans l’extrait de code, `Concatenate` et `Sdca` sont deux méthodes figurant d
 
 À ce stade, les objets sont seulement créés. Ils ne sont pas exécutés.
 
-### <a name="train-the-model"></a>Effectuer l’apprentissage du modèle
+### <a name="train-the-model"></a>Formation du modèle
 
 Une fois que les objets dans le pipeline ont été créés, les données peuvent être utilisées pour entraîner le modèle.
 

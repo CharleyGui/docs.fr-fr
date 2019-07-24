@@ -2,12 +2,12 @@
 title: Nouveautés de C# 6 | Guide C#
 description: Découvrez les nouvelles fonctionnalités de C# version 6
 ms.date: 12/12/2018
-ms.openlocfilehash: 478fd512f6b6facfce6d7f70f9691ce15e418d6e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 49247109bd1acbf697f5700b5cfe9a2b85393b2c
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58920673"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68235719"
 ---
 # <a name="whats-new-in-c-6"></a>Nouveautés de C# 6
 
@@ -137,7 +137,7 @@ Les *filtres d’exception* sont des clauses qui déterminent quand une clause c
 
 ## <a name="the-nameof-expression"></a>Expression `nameof`
 
-L’expression `nameof` prend comme valeur le nom d’un symbole. C’est un très bon moyen d’obtenir les outils fonctionnant chaque fois que vous avez besoin du nom d’une variable, d’une propriété ou d’un champ de membre. L’une des utilisations les plus courantes de `nameof` est la fourniture du nom d’un symbole qui a provoqué une exception :
+L’expression [nameof](../language-reference/operators/nameof.md) prend comme valeur le nom d’un symbole. C’est un très bon moyen d’obtenir les outils fonctionnant chaque fois que vous avez besoin du nom d’une variable, d’une propriété ou d’un champ de membre. L’une des utilisations les plus courantes de `nameof` est la fourniture du nom d’un symbole qui a provoqué une exception :
 
 [!code-csharp[nameof](../../../samples/snippets/csharp/new-in-6/NewCode.cs#UsingStaticString)]
 

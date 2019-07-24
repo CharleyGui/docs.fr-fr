@@ -2,12 +2,12 @@
 title: Nouveautés de C# 8.0 – Guide C#
 description: Vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 8.0. Cet article a été actualisé par rapport à la préversion 5.
 ms.date: 02/12/2019
-ms.openlocfilehash: 962829b68c5d02c3a7e563a00d391c4698024d47
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: bf67baba926effd012ae01d3d802ba921e41ad5a
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397768"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363898"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 
@@ -265,7 +265,6 @@ static void WriteLinesToFile(IEnumerable<string> lines)
     using var file = new System.IO.StreamWriter("WriteLines2.txt");
     foreach (string line in lines)
     {
-        // If the line doesn't contain the word 'Second', write the line to the file.
         if (!line.Contains("Second"))
         {
             file.WriteLine(line);
@@ -275,7 +274,7 @@ static void WriteLinesToFile(IEnumerable<string> lines)
 }
 ```
 
-Dans l’exemple précédent, le fichier est supprimé une fois l’accolade fermante de la méthode atteinte. C’est la fin de la portée dans laquelle `file` est déclaré. Le code précédent équivaut au suivant, qui utilise des [instructions using](../language-reference/keywords/using-statement.md) classiques :
+Dans l’exemple précédent, le fichier est supprimé une fois l’accolade fermante de la méthode atteinte. C’est la fin de la portée dans laquelle `file` est déclaré. Le code précédent équivaut au suivant, qui utilise [l’instruction using](../language-reference/keywords/using-statement.md) classique :
 
 ```csharp
 static void WriteLinesToFile(IEnumerable<string> lines)
@@ -284,7 +283,6 @@ static void WriteLinesToFile(IEnumerable<string> lines)
     {
         foreach (string line in lines)
         {
-            // If the line doesn't contain the word 'Second', write the line to the file.
             if (!line.Contains("Second"))
             {
                 file.WriteLine(line);
@@ -296,7 +294,7 @@ static void WriteLinesToFile(IEnumerable<string> lines)
 
 Dans l’exemple précédent, le fichier est supprimé une fois l’accolade fermante associée à l’instruction `using` atteinte.
 
-Dans les deux cas, le compilateur génère l’appel à `Dispose()`. Il soulève une erreur si l’expression qui se trouve dans l’instruction using n’est pas jetable.
+Dans les deux cas, le compilateur génère l’appel à `Dispose()`. Il soulève une erreur si l’expression qui se trouve dans l’instruction `using` n’est pas jetable.
 
 ## <a name="static-local-functions"></a>Fonctions locales statiques
 
@@ -382,7 +380,7 @@ Cette prise en charge linguistique s’appuie sur deux nouveaux types et deux no
 - <xref:System.Index?displayProperty=nameWithType> représente un index au sein d’une séquence.
 - L’opérateur `^` spécifie qu’un index est relatif à la fin de la séquence.
 - <xref:System.Range?displayProperty=nameWithType> représente une sous-plage d’une séquence.
-- L’opérateur de plage (`..`) indique le début et la fin d’une plage en tant qu’opérandes.
+- L’opérateur de plage (`..`) spécifie le début et la fin d’une plage comme ses opérandes.
 
 Commençons par les règles concernant les index. Prenons pour exemple un tableau `sequence`. L’index `0` est identique à l’index `sequence[0]`. L’index `^0` est identique à l’index `sequence[sequence.Length]`. Notez que `sequence[^0]` lève une exception, tout comme `sequence[sequence.Length]`. Pour n’importe quel nombre `n`, l’index `^n` est identique à l’index `sequence.Length - n`.
 

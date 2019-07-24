@@ -17,30 +17,39 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 - double data type [C#]
 - decimal keyword [C#]
-ms.openlocfilehash: 738368abd9db75fbd97d1913324cab3b6e869c56
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 0d97b3ffd587e8398e5572706a47937716a6e709
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67664189"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68236058"
 ---
 # <a name="floating-point-numeric-types-c-reference"></a>Types numériques à virgule flottante (Référence C#)
 
 Les **types numériques à virgule flottante** sont un sous-ensemble des **types simples** et peuvent être initialisés avec des [*littéraux*](#floating-point-literals). Tous les types virgule flottante sont également des types valeur. Tous les types numériques à virgule flottante prennent en charge les opérateurs [arithmétiques](../operators/arithmetic-operators.md) et les opérateurs de [comparaison et d’égalité](../operators/equality-operators.md).
 
-Le tableau suivant indique la plage de valeurs approximative et la précision pour les types virgule flottante :
-  
-|Type|Plage approximative|Précision|  
-|----------|-----------------------|---------------|  
-|`float`|±1,5 x 10<sup>−45</sup> à ±3,4 x 10<sup>38</sup>|~6-9 chiffres|  
-|`double`|De ±5,0 × 10<sup>−324</sup> à ±1,7 × 10<sup>308</sup>|~15-17 chiffres|  
-|`decimal`|±1,0 x 10<sup>-28</sup> to ±7,9228 x 10<sup>28</sup>|28 à 29 chiffres|  
+## <a name="characteristics-of-the-floating-point-types"></a>Caractéristiques des types à virgule flottante
 
-La valeur par défaut pour tous les types virgule flottante est `0`. Chaque type virgule flottante a des constantes nommées `MinValue` et `MaxValue` correspondant à la valeur minimale et à la valeur maximale. Les types `float` et `double` ont des constantes supplémentaires pour `PositiveInfinity`, `NegativeInfinity` et `NaN` (pour « Pas un nombre »). Le type `decimal` contient des constantes pour `Zero`, `One` et `MinusOne`.
+C# prend en charge les types à virgule flottante prédéfinis suivants :
+  
+|C# type/mot clé|Plage approximative|Precision|Type .NET|
+|----------|-----------------------|---------------|--------------|
+|`float`|±1,5 x 10<sup>−45</sup> à ±3,4 x 10<sup>38</sup>|~6-9 chiffres|<xref:System.Single?displayProperty=nameWithType>|
+|`double`|De ±5,0 × 10<sup>−324</sup> à ±1,7 × 10<sup>308</sup>|~15-17 chiffres|<xref:System.Double?displayProperty=nameWithType>|
+|`decimal`|±1,0 x 10<sup>-28</sup> to ±7,9228 x 10<sup>28</sup>|28 à 29 chiffres|<xref:System.Decimal?displayProperty=nameWithType>|
+
+Dans le tableau précédent, chaque mot clé de type C# de la colonne la plus à gauche est un alias pour le type .NET correspondant. Ils sont interchangeables. Par exemple, les déclarations suivantes déclarent des variables du même type :
+
+```csharp
+double a = 12.3;
+System.Double b = 12.3;
+```
+
+La valeur par défaut pour tous les types virgule flottante est zéro, `0`. Chacun des types à virgule flottante a les constantes `MinValue` et `MaxValue` qui fournissent la valeur finie minimale et maximale de ce type. Les types `float` et `double` fournissent également des constantes qui représentent des valeurs NaN (Not-a-Number) et d’infini. Par exemple, le type `double` fournit les constantes suivantes : <xref:System.Double.NaN?displayProperty=nameWithType>, <xref:System.Double.NegativeInfinity?displayProperty=nameWithType> et <xref:System.Double.PositiveInfinity?displayProperty=nameWithType>.
 
 Le type `decimal` fournit une plus grande précision et une plage de valeurs plus petite que `float` et `double`, ce qui le rend particulièrement approprié aux calculs financiers et monétaires.
 
-Vous pouvez combiner des types intégraux et des types virgule flottante dans une expression. Dans ce cas, les types intégraux sont convertis en types virgule flottante. L’évaluation de l’expression est exécutée d’après les règles suivantes :
+Vous pouvez combiner des types [intégraux](integral-numeric-types.md) et des types virgule flottante dans une expression. Dans ce cas, les types intégraux sont convertis en types virgule flottante. L’évaluation de l’expression est exécutée d’après les règles suivantes :
 
 - Si l’un des types virgule flottante est `double`, l’expression prend la valeur `double` ou [bool](../keywords/bool.md) dans les comparaisons relationnelles ou les comparaisons d’égalité.
 - S’il n’y a aucun type `double` dans l’expression, celle-ci prend la valeur `float` ou [bool](../keywords/bool.md) dans les comparaisons relationnelles ou les comparaisons d’égalité.
@@ -77,7 +86,7 @@ myMoney = 400.75M;
 
 ## <a name="conversions"></a>Conversions
 
-Il existe une conversion implicite (appelée *conversion étendue*) de `float` en `double` parce que la plage de valeurs `float` est un sous-ensemble de `double` et qu’aucune perte de précision ne se produit de `float` en `double`. 
+Il existe une conversion implicite (appelée *conversion étendue*) de `float` en `double` parce que la plage de valeurs `float` est un sous-ensemble de `double` et qu’aucune perte de précision ne se produit de `float` en `double`.
 
 Vous devez utiliser un cast explicite pour convertir un type virgule flottante en un autre type virgule flottante, lorsqu’une conversion implicite n’est pas définie entre le type source et le type de destination. C’est ce qu’on appelle une *conversion restrictive*. Un scénario explicite est nécessaire, car la conversion peut entraîner une perte de données. Il n’existe aucune conversion implicite entre les autres types virgule flottante et le type `decimal` parce que le type `decimal` a une plus grande précision que celle de `float` ou `double`.
 
@@ -89,15 +98,11 @@ Pour plus d’informations sur les conversions numériques explicites, consultez
 
 - [Référence C#](../index.md)
 - [Types intégraux](integral-numeric-types.md)
-- [Tableau des valeurs par défaut](../keywords/default-values-table.md)
-- [Tableau des formats des résultats numériques](../keywords/formatting-numeric-results-table.md)
 - [Tableaux des types intégrés](../keywords/built-in-types-table.md)
 - [Valeurs numériques dans .NET](../../../standard/numerics.md)
 - [Cast et conversions de types](../../programming-guide/types/casting-and-type-conversions.md)
 - [Tableau des conversions numériques implicites](../keywords/implicit-numeric-conversions-table.md)
 - [Tableau des conversions numériques explicites](../keywords/explicit-numeric-conversions-table.md)
-- <xref:System.Single?displayProperty=nameWithType>
-- <xref:System.Double?displayProperty=nameWithType>
-- <xref:System.Decimal?displayProperty=nameWithType>
 - <xref:System.Numerics.Complex?displayProperty=nameWithType>
+- [Tableau des formats des résultats numériques](../keywords/formatting-numeric-results-table.md)
 - [Standard Numeric Format Strings](../../../standard/base-types/standard-numeric-format-strings.md)

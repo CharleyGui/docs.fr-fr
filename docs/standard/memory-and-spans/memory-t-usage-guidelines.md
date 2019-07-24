@@ -6,16 +6,16 @@ helpviewer_keywords:
 - using Memory&lt;T&gt; and Span&lt;T&gt;
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 380c0eef137eb5142c30e63f5446f5d60723087a
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 5aa778477abf3b91e32d9cb8ffdf50baaca5f001
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834045"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68362909"
 ---
 # <a name="memoryt-and-spant-usage-guidelines"></a>Instructions d’utilisation de Memory\<T> et de Span\<T>
 
-.NET Core inclut un nombre de types qui représentent une région contiguë arbitraire de mémoire. .NET Core 2.0 a introduit <xref:System.Span%601> et <xref:System.ReadOnlySpan%601>, qui sont des mémoires tampons légères pouvant être sauvegardées par de la mémoire managée ou non managée. Ces types pouvant être stockés sur la pile, ils sont ne sont pas adaptés à plusieurs scénarios, notamment les appels de méthode asynchrone. .NET Core 2.1 ajoute un certain nombre de types supplémentaires, notamment <xref:System.Memory%601>, <xref:System.ReadOnlyMemory%601>, <xref:System.Buffers.IMemoryOwner%601> et <xref:System.Buffers.MemoryPool%601>. Comme <xref:System.Span%601>, <xref:System.Memory%601> et ses types associés peuvent être sauvegardés par la mémoire managée et non managée. Contrairement à <xref:System.Span%601>, <xref:System.Memory%601> peut uniquement être stockée sur le tas managé.
+.NET Core inclut un nombre de types qui représentent une région contiguë arbitraire de mémoire. .NET Core 2.0 a introduit <xref:System.Span%601> et <xref:System.ReadOnlySpan%601>, qui sont des mémoires tampons légères pouvant être sauvegardées par de la mémoire managée ou non managée. Ces types pouvant uniquement être stockés sur la pile, ils sont ne sont pas adaptés à plusieurs scénarios, notamment les appels de méthode asynchrone. .NET Core 2.1 ajoute un certain nombre de types supplémentaires, notamment <xref:System.Memory%601>, <xref:System.ReadOnlyMemory%601>, <xref:System.Buffers.IMemoryOwner%601> et <xref:System.Buffers.MemoryPool%601>. Comme <xref:System.Span%601>, <xref:System.Memory%601> et ses types associés peuvent être sauvegardés par la mémoire managée et non managée. Contrairement à <xref:System.Span%601>, <xref:System.Memory%601> peut être stockée sur le tas managé.
 
 <xref:System.Span%601> et <xref:System.Memory%601> sont des mémoires tampons de données structurées qui peuvent être utilisées dans les pipelines. Autrement dit, elles sont conçues afin que certaines données ou leur totalité puissent être transmises efficacement à des composants du pipeline qui puissent les traiter et, éventuellement, modifier la mémoire tampon. Étant donné que <xref:System.Memory%601> et ses types associés sont accessibles par plusieurs composants ou par plusieurs threads, il est important que les développeurs suivent des instructions d’utilisation standard pour produire un code robuste.
 

@@ -2,12 +2,12 @@
 title: Commande dotnet publish
 description: La commande dotnet publish publie votre projet .NET Core dans un répertoire.
 ms.date: 05/29/2018
-ms.openlocfilehash: 24490bd0fbfca65692d7025b5ed2aea659c35473
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.openlocfilehash: 8cefeae17e464e14abc54dce1feb414a72c44164
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611547"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331029"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -51,7 +51,7 @@ dotnet publish [-h|--help]
 
 * Le code de langage intermédiaire (IL) dans un assembly avec l’extension *dll*.
 * Le fichier *.deps.json* qui inclut toutes les dépendances du projet.
-* Le fichier *.runtime.config.json* qui spécifie le runtime partagé attendu par l’application, ainsi que d’autres options de configuration pour le runtime (par exemple, le type de garbage collection).
+* Le fichier *.runtimeconfig.json* qui spécifie le runtime partagé attendu par l’application, ainsi que d’autres options de configuration pour le runtime (par exemple, le type de garbage collection).
 * Les dépendances de l’application, qui sont copiées à partir du cache NuGet dans le dossier de sortie.
 
 La sortie de la commande `dotnet publish` est prête pour le déploiement sur un système d’hébergement (par exemple, un serveur, PC, Mac, ordinateur portable) à des fins d’exécution. Il s’agit de la seule façon officiellement prise en charge pour préparer l’application au déploiement. En fonction du type de déploiement que spécifie le projet, le runtime .NET Core partagé peut ou non être installé sur le système d’hébergement. Pour plus d’informations, consultez la page [Déploiement d’applications .NET Core](../deploying/index.md). Pour connaître la structure des répertoires d’une application publiée, consultez la page [Structure de répertoires](/aspnet/core/hosting/directory-structure).

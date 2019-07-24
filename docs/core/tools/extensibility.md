@@ -3,12 +3,12 @@ title: Modèle d’extensibilité des outils CLI .NET Core
 description: Découvrez comment étendre les outils de l’interface de ligne de commande (CLI).
 ms.date: 04/12/2017
 ms.custom: seodec18
-ms.openlocfilehash: ca6bf30fb6aaf815a859a00bc391ef790566acaf
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: 784eb50dfdbc0f88050a9f727ddbf53db34d3209
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57675093"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331006"
 ---
 # <a name="net-core-cli-tools-extensibility-model"></a>Modèle d’extensibilité des outils CLI .NET Core
 
@@ -69,7 +69,7 @@ Comme nous l’avons mentionné précédemment, les outils sont des applications
 Une fois l’outil créé, utilisez la commande [`dotnet pack`](dotnet-pack.md) pour créer un package NuGet (fichier .nupkg) devant contenir votre code, les informations sur ses dépendances, etc. Vous pouvez donner n’importe quel nom au package. Toutefois, l’application qui s’y trouve, le fichier binaire de l’outil, doit respecter la convention de `dotnet-<command>` pour pouvoir être appelée par `dotnet`.
 
 > [!NOTE]
-> Dans les versions antérieures à RC3 des outils en ligne de commande .NET Core, la commande `dotnet pack` présentait un bogue qui empêchait la compression de `runtime.config.json` avec l’outil. L’absence de ce fichier aboutit à des erreurs lors de l’exécution. Si vous rencontrez ce comportement, veillez à utiliser les outils les plus récents et essayez `dotnet pack` une nouvelle fois.
+> Dans les versions antérieures à RC3 des outils en ligne de commande .NET Core, la commande `dotnet pack` présentait un bogue qui empêchait la compression de *.runtimeconfig.json* avec l’outil. L’absence de ce fichier aboutit à des erreurs lors de l’exécution. Si vous rencontrez ce comportement, veillez à utiliser les outils les plus récents et essayez `dotnet pack` une nouvelle fois.
 
 Étant donné que les outils sont des applications portables, l’utilisateur qui utilise un outil doit disposer de la version des bibliothèques .NET Core à l’aide desquelles l’outil a été développé, afin de pouvoir l’exécuter. Toute autre dépendance que l’outil utilise et qui ne figure pas dans les bibliothèques .NET Core est restaurée et placée dans le cache de NuGet. L’outil entier est, par conséquent, exécuté à l’aide des assemblys des bibliothèques .NET Core et du cache de NuGet.
 

@@ -2,12 +2,12 @@
 title: Commande dotnet build
 description: La commande dotnet build permet de générer un projet et l’ensemble de ses dépendances.
 ms.date: 04/24/2019
-ms.openlocfilehash: df264fe830259832e5c75db9fd71230ba70a9f18
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: db2c859529d3dd21d2cd43445419b99a4256b42e
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65959196"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331064"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
@@ -32,7 +32,7 @@ dotnet build [-h|--help]
 
 ## <a name="description"></a>Description
 
-La commande `dotnet build` génère le projet et ses dépendances dans un ensemble de fichiers binaires. Les fichiers binaires incluent le code du projet dans des fichiers en langage intermédiaire (IL) avec une extension *.dll* et les fichiers de symboles utilisés pour le débogage avec une extension *.pdb*. Un fichier JSON de dépendances (*\*.deps.json*) est généré. Il répertorie les dépendances de l’application. Un fichier *\*.runtimeconfig.json* est généré. Il spécifie le runtime partagé et sa version pour l’application.
+La commande `dotnet build` génère le projet et ses dépendances dans un ensemble de fichiers binaires. Les fichiers binaires incluent le code du projet dans des fichiers en langage intermédiaire (IL) avec une extension *.dll* et les fichiers de symboles utilisés pour le débogage avec une extension *.pdb*. Un fichier JSON de dépendances ( *.deps.json*) est généré. Il répertorie les dépendances de l’application. Un fichier *.runtimeconfig.json* est généré. Il spécifie le runtime partagé et sa version pour l’application.
 
 Si le projet a des dépendances tierces, comme des bibliothèques NuGet, elles sont résolues à partir du cache NuGet et ne sont pas disponibles avec la sortie générée du projet. Par conséquent, le produit de `dotnet build` ne peut pas être transféré en l’état vers un autre ordinateur pour exécution. Ce comportement contraste avec celui du .NET Framework dans lequel la génération d’un projet exécutable (une application) produit une sortie exécutable sur n’importe quel ordinateur où le .NET Framework est installé. Pour obtenir un résultat similaire dans .NET Core, vous devez utiliser la commande [dotnet publish](dotnet-publish.md). Pour plus d’informations, consultez [Déploiement d’applications .NET Core](../deploying/index.md).
 

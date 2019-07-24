@@ -2,12 +2,12 @@
 title: Gestion des versions du langage C# - Guide C#
 description: Découvrez comment la version du langage C# est déterminée en fonction de votre projet, et les différentes valeurs que vous pouvez y ajuster manuellement.
 ms.date: 07/10/2019
-ms.openlocfilehash: 2d593ca0588f291c61cdf52fbc1eb60a1f3f7ecb
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: e35fdf2bcdb1a31b752c760f3f6df59232e498a4
+ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859602"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68236098"
 ---
 # <a name="c-language-versioning"></a>Gestion des versions du langage C#
 
@@ -21,8 +21,8 @@ Le compilateur détermine une valeur par défaut en fonction de ces règles :
 |----------------|-------|---------------------------|
 |.NET Core|3.x|C# 8.0|
 |.NET Core|2.x|C# 7.3|
-|.NET Standard|all|C# 7.3|
-|.NET Framework|all|C# 7.3|
+|.NET Standard|tout|C# 7.3|
+|.NET Framework|tout|C# 7.3|
 
 ## <a name="default-for-previews"></a>Valeur par défaut pour les préversions
 
@@ -34,7 +34,7 @@ Si vous devez spécifier votre version C# explicitement, vous pouvez le faire de
 
 - Modifiez manuellement votre [fichier projet](#edit-the-project-file).
 - Définissez la version du langage [pour plusieurs projets d’un sous-répertoire](#configure-multiple-projects).
-- Configurez l’[option de compilateur `-langversion`](#set-the-langversion-compiler-option).
+- Configurez l’option de compilateur [`-langversion` ](compiler-options/langversion-compiler-option.md)
 
 ### <a name="edit-the-project-file"></a>Modifier le fichier projet
 
@@ -66,18 +66,18 @@ Maintenant, les builds de chaque sous-répertoire du répertoire contenant ce fi
 
 Le tableau suivant montre toutes les versions actuelles du langage C#. Votre compilateur peut ne pas nécessairement comprendre chaque valeur si celle-ci est plus ancienne. Si vous installez .NET Core 3.0, vous avez accès à toutes les versions listées.
 
-|Value|Signification|
+|Valeur|Signification|
 |------------|-------------|
 |preview|Le compilateur accepte toute la syntaxe de langage valide de la dernière préversion.|
 |latest|Le compilateur accepte la syntaxe de la dernière version publiée du compilateur (versions mineures incluses).|
 |latestMajor|Le compilateur accepte la syntaxe de la dernière version principale publiée du compilateur.|
 |8.0|Le compilateur accepte uniquement la syntaxe incluse dans C# 8.0 ou une version antérieure.|
 |7.3|Le compilateur accepte uniquement la syntaxe incluse dans C# 7.3 ou une version antérieure.|
-|7.2|Le compilateur accepte uniquement la syntaxe incluse dans C# 7.2 ou une version antérieure.|
+|7,2|Le compilateur accepte uniquement la syntaxe incluse dans C# 7.2 ou une version antérieure.|
 |7.1|Le compilateur accepte uniquement la syntaxe incluse dans C# 7.1 ou une version antérieure.|
 |7|Le compilateur accepte uniquement la syntaxe incluse dans C# 7.0 ou une version antérieure.|
 |6|Le compilateur accepte uniquement la syntaxe incluse dans C# 6.0 ou une version antérieure.|
-|5|Le compilateur accepte uniquement la syntaxe incluse dans C# 5.0 ou une version antérieure.|
+|5\.|Le compilateur accepte uniquement la syntaxe incluse dans C# 5.0 ou une version antérieure.|
 |4|Le compilateur accepte uniquement la syntaxe incluse dans C# 4.0 ou une version antérieure.|
 |3|Le compilateur accepte uniquement la syntaxe incluse dans C# 3.0 ou une version antérieure.|
 |ISO-2|Le compilateur accepte uniquement la syntaxe incluse dans ISO/IEC 23270:2006 C# (2.0) |

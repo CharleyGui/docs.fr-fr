@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 90f308b9-82dc-414a-bce1-77e0155e56bd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4a3de327001f987b6c35d547b7cf3cbe7feeac49
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ed8525cad7dd56fe026070786b0f0cf51c0fec2d
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648526"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363977"
 ---
 # <a name="registration-free-com-interop"></a>COM Interop sans inscription
 COM Interop sans inscription active un composant sans utiliser le Registre Windows pour stocker les informations d'assembly. Au lieu d’inscrire un composant sur un ordinateur pendant le déploiement, vous créez des fichiers manifeste de type Win32 au moment du design qui contiennent des informations sur la liaison et l’activation. Ces fichiers manifeste, plutôt que les clés de Registre, dirigent l'activation d'un objet.  
@@ -34,14 +34,14 @@ COM Interop sans inscription active un composant sans utiliser le Registre Windo
   
 1. La prise en charge de COM Interop sans inscription varie légèrement selon le type d'assembly de bibliothèque, plus précisément, si l'assembly est non managé (côte à côte COM) ou managé ( basé sur .NET). Le tableau suivant présente les conditions requises concernant le système d'exploitation et la version de .NET Framework pour chaque type d'assembly.  
   
-    |Type d'assembly|Système d'exploitation|Version du .NET Framework|  
+    |Type d'assembly|Système d’exploitation|Version du .NET Framework|  
     |-------------------|----------------------|----------------------------|  
-    |Côte à côte COM|Microsoft Windows XP|Non requis|  
+    |Côte à côte COM|Microsoft Windows XP|Non requis.|  
     |Basé sur .NET|Windows XP SP2|.NET Framework version 1.1 ou ultérieure|  
   
      La famille Windows Server 2003 prend également en charge COM Interop sans inscription pour les assemblys .NET.  
   
-     Pour qu'une classe .NET soit compatible avec l'activation de COM sans inscription, elle doit avoir un constructeur par défaut et doit être publique.  
+     Pour qu'une classe .NET soit compatible avec l'activation de COM sans inscription, elle doit avoir un constructeur sans paramètre et doit être publique.  
   
 ### <a name="configuring-com-components-for-registration-free-activation"></a>Configuration des composants COM pour l'activation sans inscription  
   

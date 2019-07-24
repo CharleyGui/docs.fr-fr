@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 49b787ff-2741-4836-ad51-c3017dc592d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 09eb37fd2c1bf77e981a2eb7952b1fff5110e977
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
+ms.openlocfilehash: bed67019fdd3bb81585d08349715a895dfe5a681
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57357298"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68363959"
 ---
 # <a name="attributed-programming-model-overview-mef"></a>Vue d'ensemble du modèle de programmation par attributs (MEF)
 
@@ -268,7 +268,7 @@ Le nom de contrat et le type de contrat peuvent être spécifiés dans l'attribu
 
 Les composants MEF exportés sont généralement créés par le moteur de composition, en réponse à une demande directe ou au besoin de remplir une importation dotée d'une correspondance. Par défaut, lors de la création d'un composant, le moteur de composition utilise le constructeur sans paramètre. Pour que le moteur utilise un autre constructeur, vous pouvez le marquer avec l'attribut `ImportingConstructor` .
 
-Chaque composant peut faire utiliser un seul constructeur au moteur de composition. Ne fournir aucun constructeur par défaut ni aucun attribut `ImportingConstructor` , ou fournir plusieurs attributs `ImportingConstructor` , génère une erreur.
+Chaque composant peut faire utiliser un seul constructeur au moteur de composition. Ne fournir aucun constructeur sans paramètre ni aucun attribut `ImportingConstructor`, ou fournir plusieurs attributs `ImportingConstructor`, génère une erreur.
 
 Pour remplir les paramètres d'un constructeur marqué avec l'attribut `ImportingConstructor` , tous ces paramètres sont automatiquement déclarés en tant qu'importations. Il s'agit d'une méthode pratique pour déclarer des importations utilisées pendant l'initialisation des composants. La classe suivante utilise `ImportingConstructor` pour déclarer une importation.
 
@@ -277,7 +277,7 @@ Public Class MyClass1
 
     Private _theAddin As IMyAddin
 
-    'Default constructor will NOT be used
+    'Parameterless constructor will NOT be used
     'because the ImportingConstructor
     'attribute is present.
     Public Sub New()
@@ -300,7 +300,7 @@ public class MyClass
 {
     private IMyAddin _theAddin;
 
-    //Default constructor will NOT be
+    //Parameterless constructor will NOT be
     //used because the ImportingConstructor
     //attribute is present.
     public MyClass() { }

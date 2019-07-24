@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 02ce6699-49b5-4a0b-b0d5-1003c491232e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9e018d8c83165b3e025ad4db7f3d59b6ba58b72a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 60f48422d23fc5db743eeb05e3eddeb732bff102
+ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616093"
+ms.lasthandoff: 07/20/2019
+ms.locfileid: "68364024"
 ---
 # <a name="mgmtclassgenexe-management-strongly-typed-class-generator"></a>Mgmtclassgen.exe (Management Strongly Typed Class Generator)
 L'outil Management Strongly Typed Class Generator vous permet de générer rapidement une classe managée à liaison anticipée pour une classe WMI (Windows Management Instrumentation) spécifiée. La classe générée simplifie le code à écrire pour accéder à une instance de la classe WMI.  
@@ -64,8 +64,8 @@ WMIClass [options]
 |CIM_UINT64|**UInt64**|  
 |CIM_REAL32|**Single**|  
 |CIM_REAL64|**Double**|  
-|CIM_BOOLEAN|**Boolean**|  
-|CIM_String|**String**|  
+|CIM_BOOLEAN|**Booléen**|  
+|CIM_String|**Chaîne**|  
 |CIM_DATETIME|**DateTime** ou **TimeSpan**|  
 |CIM_REFERENCE|**ManagementPath**|  
 |CIM_CHAR16|**Char**|  
@@ -83,7 +83,7 @@ WMIClass [options]
   
 - Une propriété numérique peut être modifiée par les qualificateurs **Values** et **ValueMaps** pour indiquer que seules des valeurs autorisées et spécifiées peuvent lui être affectées. Une énumération est générée avec ces qualificateurs **Values** et **ValueMaps**, et la propriété est mappée à l’énumération.  
   
-- WMI utilise le singleton de terme pour décrire une classe qui ne peut avoir qu'une seule instance. C'est pourquoi le constructeur par défaut d'une classe singleton initialisera la classe à la seule instance de la classe.  
+- WMI utilise le singleton de terme pour décrire une classe qui ne peut avoir qu'une seule instance. C'est pourquoi le constructeur sans paramètre d’une classe singleton initialisera la classe à la seule instance de la classe.  
   
 - Une classe WMI peut avoir des objets pour propriétés. Lorsque vous générez une classe fortement typée pour ce type de classe WMI, n'oubliez pas de générer également des classes fortement typées pour les types des propriétés de l'objet incorporé. Cela vous permettra d'accéder aux objets incorporés de manière fortement typée. Il est possible que le code généré ne puisse pas détecter le type de l'objet incorporé. Dans ce cas, un commentaire sera créé dans le code généré pour vous informer de ce problème. Vous pouvez alors modifier le code généré pour typer la propriété vers l'autre classe générée.  
   
@@ -155,5 +155,5 @@ public class App
 - <xref:System.Management>
 - <xref:System.Management.ManagementClass.GetStronglyTypedClassCode%2A?displayProperty=nameWithType>
 - <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>
-- [Outils](../../../docs/framework/tools/index.md)
+- [outils](../../../docs/framework/tools/index.md)
 - [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

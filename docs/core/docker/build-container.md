@@ -4,12 +4,12 @@ description: Ce tutoriel explique comment conteneuriser une application .NET Cor
 ms.date: 06/26/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 16edb129be679179450c485ced2586cea9ed9763
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 81b3ce2d6ebb73648d9026c92f490dcc723014f6
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67609296"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68331043"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Tutoriel : Conteneuriser une application .NET Core
 
@@ -30,7 +30,7 @@ Vous découvrirez la création d’un conteneur Docker et les tâches de déploi
 Installez les éléments requis suivants :
 
 * [Kit SDK .NET Core 2.2](https://dotnet.microsoft.com/download)\
-Si .NET Core est installé, utilisez la commande `dotnet --info` pour identifier le Kit SDK que vous utilisez
+Si .NET Core est installé, utilisez la commande `dotnet --info` pour identifier le Kit SDK que vous utilisez.
 
 * [Docker Community Edition](https://www.docker.com/products/docker-desktop)
 
@@ -177,7 +177,7 @@ Le fichier *Dockerfile* est utilisé par la commande `docker build` pour créer 
 Dans votre terminal, accédez au dossier de travail que vous avez créé au début. Créez un fichier nommé *Dockerfile* dans votre dossier de travail et ouvrez-le dans un éditeur de texte. Ajoutez la commande suivante comme première ligne du fichier :
 
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
+FROM mcr.microsoft.com/dotnet/core/runtime:2.2
 ```
 
 La commande `FROM` indique à Docker d’extraire l’image marquée **2.2** du référentiel **mcr.microsoft.com/dotnet/core/runtime**. Veillez à extraire le runtime .NET Core correspondant au runtime ciblé par votre Kit SDK. Par exemple, l’application créée dans la précédente section utilisait le Kit SDK .NET Core 2.2 et créait une application qui ciblait .NET Core 2.2. Ainsi, l’image de base mentionnée dans le *Dockerfile* est marquée **2.2**.
@@ -205,7 +205,13 @@ docker-working
     └───obj
 ```
 
-Dans votre terminal, exécutez `docker build -t myimage -f Dockerfile .` : Docker traitera chaque ligne du *Dockerfile*. L’élément `.` de la commande `docker build` indique à docker d’utiliser le dossier actif pour rechercher un *Dockerfile*. Cette commande génère l’image et crée un référentiel local nommé **myimage** qui pointe vers cette image. Une fois cette commande terminée, exécutez `docker images` pour afficher une liste des images installées :
+Dans votre terminal, exécutez la commande suivante :
+
+```console
+docker build -t myimage -f Dockerfile .
+```
+
+Docker traitera chaque ligne du *Dockerfile*. L’élément `.` de la commande `docker build` indique à Docker d’utiliser le dossier actif pour rechercher un *Dockerfile*. Cette commande génère l’image et crée un référentiel local nommé **myimage** qui pointe vers cette image. Une fois cette commande terminée, exécutez `docker images` pour afficher une liste des images installées :
 
 ```console
 > docker images
@@ -224,7 +230,7 @@ ENTRYPOINT ["dotnet", "app/myapp.dll"]
 
 La commande `COPY` indique à Docker de copier le dossier spécifié sur votre ordinateur, dans un dossier du conteneur. Dans cet exemple, le dossier **publish** est copié vers un dossier nommé **app** dans le conteneur.
 
-La commande suivante, `ENTRYPOINT`, indique à docker de configurer le conteneur afin de l’exécuter comme un fichier exécutable. Au démarrage du conteneur, la commande `ENTRYPOINT` s’exécute. Lorsque cette commande se termine, le conteneur s’arrête automatiquement.
+La commande suivante, `ENTRYPOINT`, indique à Docker de configurer le conteneur afin de l’exécuter comme un fichier exécutable. Au démarrage du conteneur, la commande `ENTRYPOINT` s’exécute. Lorsque cette commande se termine, le conteneur s’arrête automatiquement.
 
 Dans votre terminal, exécutez `docker build -t myimage -f Dockerfile .` puis, une fois la commande terminée, exécutez `docker images`.
 
@@ -241,7 +247,6 @@ Removing intermediate container f34da5c18e7c
  ---> ddcc6646461b
 Successfully built ddcc6646461b
 Successfully tagged myimage:latest
-
 
 > docker images
 REPOSITORY                              TAG                 IMAGE ID            CREATED             SIZE
