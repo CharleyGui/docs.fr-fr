@@ -7,47 +7,47 @@ helpviewer_keywords:
 - types [C#], built-in
 - built-in C# types
 ms.assetid: 54f901f2-bf2f-472c-ae8d-73e8ecfc57fe
-ms.openlocfilehash: e770c305afe098e633700b039efb51770c77ada7
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 5db982c0a94814bfece087eb4db119a4df246094
+ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661449"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68330968"
 ---
-# <a name="built-in-types-table-c-reference"></a><span data-ttu-id="c5040-103">Tableau des types intégrés (référence C#)</span><span class="sxs-lookup"><span data-stu-id="c5040-103">Built-in types table (C# Reference)</span></span>
+# <a name="built-in-types-table-c-reference"></a><span data-ttu-id="56368-103">Tableau des types intégrés (référence C#)</span><span class="sxs-lookup"><span data-stu-id="56368-103">Built-in types table (C# Reference)</span></span>
 
-<span data-ttu-id="c5040-104">Le tableau suivant liste les mots clés des types C# intégrés, qui sont des alias des types prédéfinis de l’espace de noms <xref:System>.</span><span class="sxs-lookup"><span data-stu-id="c5040-104">The following table shows the keywords for built-in C# types, which are aliases of predefined types in the <xref:System> namespace.</span></span>  
+<span data-ttu-id="56368-104">Le tableau suivant liste les mots clés des types C# intégrés, qui sont des alias des types prédéfinis de l’espace de noms <xref:System>.</span><span class="sxs-lookup"><span data-stu-id="56368-104">The following table shows the keywords for built-in C# types, which are aliases of predefined types in the <xref:System> namespace.</span></span>  
   
-|<span data-ttu-id="c5040-105">Type C#</span><span class="sxs-lookup"><span data-stu-id="c5040-105">C# type</span></span>|<span data-ttu-id="c5040-106">Type .NET</span><span class="sxs-lookup"><span data-stu-id="c5040-106">.NET type</span></span>|  
+|<span data-ttu-id="56368-105">Type C#</span><span class="sxs-lookup"><span data-stu-id="56368-105">C# type</span></span>|<span data-ttu-id="56368-106">Type .NET</span><span class="sxs-lookup"><span data-stu-id="56368-106">.NET type</span></span>|  
 |--------------|-------------------------|  
-|[<span data-ttu-id="c5040-107">bool</span><span class="sxs-lookup"><span data-stu-id="c5040-107">bool</span></span>](bool.md)|<xref:System.Boolean?displayProperty=nameWithType>|  
-|[<span data-ttu-id="c5040-108">byte</span><span class="sxs-lookup"><span data-stu-id="c5040-108">byte</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.Byte?displayProperty=nameWithType>|  
-|[<span data-ttu-id="c5040-109">sbyte</span><span class="sxs-lookup"><span data-stu-id="c5040-109">sbyte</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.SByte?displayProperty=nameWithType>|  
-|[<span data-ttu-id="c5040-110">char</span><span class="sxs-lookup"><span data-stu-id="c5040-110">char</span></span>](char.md)|<xref:System.Char?displayProperty=nameWithType>|  
-|[<span data-ttu-id="c5040-111">decimal</span><span class="sxs-lookup"><span data-stu-id="c5040-111">decimal</span></span>](../builtin-types/floating-point-numeric-types.md)|<xref:System.Decimal?displayProperty=nameWithType>|  
-|[<span data-ttu-id="c5040-112">double</span><span class="sxs-lookup"><span data-stu-id="c5040-112">double</span></span>](../builtin-types/floating-point-numeric-types.md)|<xref:System.Double?displayProperty=nameWithType>|  
-|[<span data-ttu-id="c5040-113">float</span><span class="sxs-lookup"><span data-stu-id="c5040-113">float</span></span>](../builtin-types/floating-point-numeric-types.md)|<xref:System.Single?displayProperty=nameWithType>|  
-|[<span data-ttu-id="c5040-114">int</span><span class="sxs-lookup"><span data-stu-id="c5040-114">int</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.Int32?displayProperty=nameWithType>|  
-|[<span data-ttu-id="c5040-115">uint</span><span class="sxs-lookup"><span data-stu-id="c5040-115">uint</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.UInt32?displayProperty=nameWithType>|  
-|[<span data-ttu-id="c5040-116">long</span><span class="sxs-lookup"><span data-stu-id="c5040-116">long</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.Int64?displayProperty=nameWithType>|  
-|[<span data-ttu-id="c5040-117">ulong</span><span class="sxs-lookup"><span data-stu-id="c5040-117">ulong</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.UInt64?displayProperty=nameWithType>|  
-|[<span data-ttu-id="c5040-118">object</span><span class="sxs-lookup"><span data-stu-id="c5040-118">object</span></span>](object.md)|<xref:System.Object?displayProperty=nameWithType>|  
-|[<span data-ttu-id="c5040-119">short</span><span class="sxs-lookup"><span data-stu-id="c5040-119">short</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.Int16?displayProperty=nameWithType>|  
-|[<span data-ttu-id="c5040-120">ushort</span><span class="sxs-lookup"><span data-stu-id="c5040-120">ushort</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.UInt16?displayProperty=nameWithType>|  
-|[<span data-ttu-id="c5040-121">string</span><span class="sxs-lookup"><span data-stu-id="c5040-121">string</span></span>](string.md)|<xref:System.String?displayProperty=nameWithType>|  
+|[<span data-ttu-id="56368-107">bool</span><span class="sxs-lookup"><span data-stu-id="56368-107">bool</span></span>](bool.md)|<xref:System.Boolean?displayProperty=nameWithType>|  
+|[<span data-ttu-id="56368-108">byte</span><span class="sxs-lookup"><span data-stu-id="56368-108">byte</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.Byte?displayProperty=nameWithType>|  
+|[<span data-ttu-id="56368-109">sbyte</span><span class="sxs-lookup"><span data-stu-id="56368-109">sbyte</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.SByte?displayProperty=nameWithType>|  
+|[<span data-ttu-id="56368-110">char</span><span class="sxs-lookup"><span data-stu-id="56368-110">char</span></span>](char.md)|<xref:System.Char?displayProperty=nameWithType>|  
+|[<span data-ttu-id="56368-111">decimal</span><span class="sxs-lookup"><span data-stu-id="56368-111">decimal</span></span>](../builtin-types/floating-point-numeric-types.md)|<xref:System.Decimal?displayProperty=nameWithType>|  
+|[<span data-ttu-id="56368-112">double</span><span class="sxs-lookup"><span data-stu-id="56368-112">double</span></span>](../builtin-types/floating-point-numeric-types.md)|<xref:System.Double?displayProperty=nameWithType>|  
+|[<span data-ttu-id="56368-113">float</span><span class="sxs-lookup"><span data-stu-id="56368-113">float</span></span>](../builtin-types/floating-point-numeric-types.md)|<xref:System.Single?displayProperty=nameWithType>|  
+|[<span data-ttu-id="56368-114">int</span><span class="sxs-lookup"><span data-stu-id="56368-114">int</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.Int32?displayProperty=nameWithType>|  
+|[<span data-ttu-id="56368-115">uint</span><span class="sxs-lookup"><span data-stu-id="56368-115">uint</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.UInt32?displayProperty=nameWithType>|  
+|[<span data-ttu-id="56368-116">long</span><span class="sxs-lookup"><span data-stu-id="56368-116">long</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.Int64?displayProperty=nameWithType>|  
+|[<span data-ttu-id="56368-117">ulong</span><span class="sxs-lookup"><span data-stu-id="56368-117">ulong</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.UInt64?displayProperty=nameWithType>|  
+|[<span data-ttu-id="56368-118">object</span><span class="sxs-lookup"><span data-stu-id="56368-118">object</span></span>](object.md)|<xref:System.Object?displayProperty=nameWithType>|  
+|[<span data-ttu-id="56368-119">short</span><span class="sxs-lookup"><span data-stu-id="56368-119">short</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.Int16?displayProperty=nameWithType>|  
+|[<span data-ttu-id="56368-120">ushort</span><span class="sxs-lookup"><span data-stu-id="56368-120">ushort</span></span>](../builtin-types/integral-numeric-types.md)|<xref:System.UInt16?displayProperty=nameWithType>|  
+|[<span data-ttu-id="56368-121">string</span><span class="sxs-lookup"><span data-stu-id="56368-121">string</span></span>](string.md)|<xref:System.String?displayProperty=nameWithType>|  
   
-## <a name="remarks"></a><span data-ttu-id="c5040-122">Remarques</span><span class="sxs-lookup"><span data-stu-id="c5040-122">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="56368-122">Remarques</span><span class="sxs-lookup"><span data-stu-id="56368-122">Remarks</span></span>
 
-<span data-ttu-id="c5040-123">Hormis les types `object` et `string`, tous les types listés dans le tableau sont considérés comme des types simples.</span><span class="sxs-lookup"><span data-stu-id="c5040-123">All of the types in the table, except `object` and `string`, are referred to as simple types.</span></span>  
+<span data-ttu-id="56368-123">Hormis les types `object` et `string`, tous les types listés dans le tableau sont considérés comme des types simples.</span><span class="sxs-lookup"><span data-stu-id="56368-123">All of the types in the table, except `object` and `string`, are referred to as simple types.</span></span>  
   
-<span data-ttu-id="c5040-124">Les mots clés des types C# et leurs alias sont interchangeables.</span><span class="sxs-lookup"><span data-stu-id="c5040-124">The C# type keywords and their aliases are interchangeable.</span></span> <span data-ttu-id="c5040-125">Par exemple, vous pouvez déclarer une variable de type entier à l’aide de l’une des deux déclarations suivantes :</span><span class="sxs-lookup"><span data-stu-id="c5040-125">For example, you can declare an integer variable by using either of the following declarations:</span></span>  
+<span data-ttu-id="56368-124">Les types .NET et leurs alias de mots clés de type C# sont interchangeables.</span><span class="sxs-lookup"><span data-stu-id="56368-124">The .NET types and their C# type keyword aliases are interchangeable.</span></span> <span data-ttu-id="56368-125">Par exemple, vous pouvez déclarer une variable de type entier à l’aide de l’une des deux déclarations suivantes :</span><span class="sxs-lookup"><span data-stu-id="56368-125">For example, you can declare an integer variable by using either of the following declarations:</span></span>  
 
 ```csharp
 int x = 123;
 System.Int32 y = 123;
 ```
 
-<span data-ttu-id="c5040-126">Utilisez l’opérateur [typeof](../operators/type-testing-and-conversion-operators.md#typeof-operator) pour obtenir l’instance de <xref:System.Type?displayProperty=nameWithType>, qui représente le type spécifié :</span><span class="sxs-lookup"><span data-stu-id="c5040-126">Use the [typeof](../operators/type-testing-and-conversion-operators.md#typeof-operator) operator to get the <xref:System.Type?displayProperty=nameWithType> instance that represents the specified type:</span></span>
+<span data-ttu-id="56368-126">Utilisez l’opérateur [typeof](../operators/type-testing-and-conversion-operators.md#typeof-operator) pour obtenir l’instance de <xref:System.Type?displayProperty=nameWithType>, qui représente le type spécifié :</span><span class="sxs-lookup"><span data-stu-id="56368-126">Use the [typeof](../operators/type-testing-and-conversion-operators.md#typeof-operator) operator to get the <xref:System.Type?displayProperty=nameWithType> instance that represents the specified type:</span></span>
 
 ```csharp
 Type stringType = typeof(string);
@@ -61,12 +61,12 @@ Console.WriteLine(doubleType.FullName);
 // System.Double
 ```
 
-## <a name="see-also"></a><span data-ttu-id="c5040-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c5040-127">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="56368-127">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="56368-127">See also</span></span>
 
-- [<span data-ttu-id="c5040-128">Référence C#</span><span class="sxs-lookup"><span data-stu-id="c5040-128">C# Reference</span></span>](../../../csharp/language-reference/index.md)
-- [<span data-ttu-id="c5040-129">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="c5040-129">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
-- [<span data-ttu-id="c5040-130">Mots clés C#</span><span class="sxs-lookup"><span data-stu-id="c5040-130">C# Keywords</span></span>](index.md)
-- [<span data-ttu-id="c5040-131">Types valeur</span><span class="sxs-lookup"><span data-stu-id="c5040-131">Value types</span></span>](value-types.md)
-- [<span data-ttu-id="c5040-132">Types référence</span><span class="sxs-lookup"><span data-stu-id="c5040-132">Reference types</span></span>](reference-types.md)
-- [<span data-ttu-id="c5040-133">Tableau des valeurs par défaut</span><span class="sxs-lookup"><span data-stu-id="c5040-133">Default values table</span></span>](default-values-table.md)
-- [<span data-ttu-id="c5040-134">dynamic</span><span class="sxs-lookup"><span data-stu-id="c5040-134">dynamic</span></span>](dynamic.md)
+- [<span data-ttu-id="56368-128">Référence C#</span><span class="sxs-lookup"><span data-stu-id="56368-128">C# Reference</span></span>](../../../csharp/language-reference/index.md)
+- [<span data-ttu-id="56368-129">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="56368-129">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
+- [<span data-ttu-id="56368-130">Mots clés C#</span><span class="sxs-lookup"><span data-stu-id="56368-130">C# Keywords</span></span>](index.md)
+- [<span data-ttu-id="56368-131">Types valeur</span><span class="sxs-lookup"><span data-stu-id="56368-131">Value types</span></span>](value-types.md)
+- [<span data-ttu-id="56368-132">Types référence</span><span class="sxs-lookup"><span data-stu-id="56368-132">Reference types</span></span>](reference-types.md)
+- [<span data-ttu-id="56368-133">Tableau des valeurs par défaut</span><span class="sxs-lookup"><span data-stu-id="56368-133">Default values table</span></span>](default-values-table.md)
+- [<span data-ttu-id="56368-134">dynamic</span><span class="sxs-lookup"><span data-stu-id="56368-134">dynamic</span></span>](dynamic.md)
