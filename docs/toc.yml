@@ -68,12 +68,7 @@
     - name: Gestion et levée des exceptions
       href: standard/exceptions/
     - name: Assemblys dans .NET
-      href: standard/assembly/index.md
-      items:
-        - name: Format de fichier d’assembly .NET
-          href: standard/assembly/file-format.md
-        - name: "Procédure\_: Utiliser et déboguer la non-chargeabilité d’assembly dans .NET Core"
-          href: standard/assembly/unloadability-howto.md
+      href: standard/assembly/
     - name: Garbage Collection
       href: standard/garbage-collection/
     - name: Types génériques
