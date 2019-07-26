@@ -12,15 +12,15 @@ helpviewer_keywords:
 - x:Null markup extension [XAML Services]
 - XAML [XAML Services], x:Null markup extension
 ms.assetid: 2e3ccc21-4996-481d-91b5-3910d8b3bfa3
-ms.openlocfilehash: e46d8561b62d9137d4fed4df447338a97fc0577b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7dbea2c7d4010d8defc572dbdc14a0dfd6d7601e
+ms.sourcegitcommit: 4b9c2d893b45d47048c6598b4182ba87759b1b59
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938908"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68484709"
 ---
 # <a name="xnull-markup-extension"></a>x:Null, extension de balisage
-Spécifie `null` en tant que valeur pour un membre XAML.  
+Spécifie `null` comme valeur pour un membre XAML.  
   
 ## <a name="xaml-attribute-usage"></a>Utilisation d'attributs XAML  
   
@@ -29,20 +29,20 @@ Spécifie `null` en tant que valeur pour un membre XAML.
 ```  
   
 ## <a name="remarks"></a>Notes  
- Le mot clé pour une référence null dans C# et [!INCLUDE[TLA#tla_cpp](../../../includes/tlasharptla-cpp-md.md)] a la valeur null. Le mot clé Microsoft Visual Basic pour une référence null est `Nothing`, mais vous utilisez toujours `{x:Null}` en tant que l’utilisation XAML, quel que soit le langage de code-behind associer avec le XAML.  
+ Le mot clé pour une référence null C# dans C++ et est null. Le mot clé Microsoft Visual Basic pour une référence null `Nothing`est, mais vous utilisez `{x:Null}` toujours comme utilisation XAML quel que soit le langage code-behind que vous associez au XAML.  
   
- Le `x:Null` extension de balisage ne possède aucune propriété définissable.  
+ L' `x:Null` extension de balisage n’a pas de propriétés définissables.  
   
- L’utilisation d’une valeur null est souvent associée à l’exposition des membres XAML d’un type CLR <xref:System.Nullable%601> valeur.  
+ Une utilisation null est souvent associée à l’exposition du membre XAML d’une <xref:System.Nullable%601> valeur CLR.  
   
- Le `x:Null` extension de balisage, comme toutes les extensions de balisage XAML, utilise les accolades (`{,}`) pour la gestion des valeurs d’attribut soient autre chose que des littéraux ou des références de gestionnaire d’événements de séquence d’échappement. Syntaxe d’attribut est la syntaxe plus fréquemment utilisée avec cette extension de balisage. Syntaxe d’élément objet `<x:Null />` est techniquement possible, mais est rarement utilisé, car le `x:Null` extension de balisage n’a pas les paramètres positionnels ou les arguments de construction.  
+ L' `x:Null` extension de balisage, comme toutes les extensions de balisage XAML,`{,}`utilise les accolades () pour échapper la gestion des valeurs d’attribut à d’autres littéraux ou références de gestionnaires d’événements. La syntaxe d’attribut est la syntaxe la plus couramment utilisée avec cette extension de balisage. Une syntaxe `<x:Null />` d’élément objet est techniquement possible, mais est rarement utilisée, `x:Null` car l’extension de balisage n’a pas de paramètres positionnels ou d’arguments de construction.  
   
- Pour plus d’informations sur les extensions de balisage, consultez [Extensions de balisage et WPF XAML](../wpf/advanced/markup-extensions-and-wpf-xaml.md).  
+ Pour plus d’informations sur les extensions de balisage, consultez [extensions de balisage et XAML WPF](../wpf/advanced/markup-extensions-and-wpf-xaml.md).  
   
- Dans les Services XAML .NET Framework, la gestion de cette extension de balisage est définie par le <xref:System.Windows.Markup.NullExtension> classe.  
+ Dans .NET Framework services XAML, la gestion de cette extension de balisage est définie <xref:System.Windows.Markup.NullExtension> par la classe.  
   
-## <a name="wpf-usage-notes"></a>Remarques sur l’utilisation WPF  
- Notez que `null` n’est pas nécessairement la valeur initiale non définie pour une propriété de dépendance de type référence. La valeur par défaut initiale peut varier pour chaque propriété de dépendance et peut être basée sur les métadonnées spécifiques à la propriété. De nombreuses propriétés de dépendance n’acceptent pas `null` en tant que valeur, par le biais de balisage ou le code en raison de leurs implémentations de rappel de validation. Pour plus d’informations sur les propriétés de dépendance, consultez [vue d’ensemble des propriétés de dépendance](../wpf/advanced/dependency-properties-overview.md).  
+## <a name="wpf-usage-notes"></a>Remarques sur l’utilisation de WPF  
+ Notez qu' `null` il ne s’agit pas nécessairement de la valeur initiale non définie pour une propriété de dépendance de type référence. La valeur par défaut initiale peut varier pour chaque propriété de dépendance et peut être basée sur des métadonnées spécifiques à la propriété. De nombreuses propriétés de dépendance n' `null` acceptent pas comme valeur, par le biais du balisage ou du code en raison de leurs implémentations de rappel de validation. Pour plus d’informations sur les propriétés de dépendance, consultez [vue d’ensemble des propriétés de dépendance](../wpf/advanced/dependency-properties-overview.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

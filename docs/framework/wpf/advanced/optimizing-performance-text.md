@@ -1,5 +1,5 @@
 ---
-title: 'Optimisation des performances : Texte'
+title: 'Optimisation des performances: Text'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,22 +11,22 @@ helpviewer_keywords:
 - text [WPF], performance
 - glyphs [WPF]
 ms.assetid: 66b1b9a7-8618-48db-b616-c57ea4327b98
-ms.openlocfilehash: 67549e75244790973554d08de8f4dac99d28bd80
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 4835fb42a8976d94be223d8306d1eb16e330f8f5
+ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660772"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68434008"
 ---
-# <a name="optimizing-performance-text"></a>Optimisation des performances : Texte
+# <a name="optimizing-performance-text"></a>Optimisation des performances: Text
 
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prend en charge la présentation de contenu de texte par le biais de l’utilisation de contrôles [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] avec de nombreuses fonctionnalités. En général, vous pouvez diviser le rendu du texte en trois couches :
 
-1. À l’aide de la <xref:System.Windows.Documents.Glyphs> et <xref:System.Windows.Media.GlyphRun> objets directement.
+1. Utilisation directe <xref:System.Windows.Documents.Glyphs> des <xref:System.Windows.Media.GlyphRun> objets et.
 
-2. À l’aide de la <xref:System.Windows.Media.FormattedText> objet.
+2. À l' <xref:System.Windows.Media.FormattedText> aide de l’objet.
 
-3. À l’aide de contrôles de niveau supérieur, tels que le <xref:System.Windows.Controls.TextBlock> et <xref:System.Windows.Documents.FlowDocument> objets.
+3. À l’aide de contrôles de haut niveau, <xref:System.Windows.Controls.TextBlock> tels <xref:System.Windows.Documents.FlowDocument> que les objets et.
 
 Cette rubrique fournit des recommandations relatives aux performances de rendu de texte.
 
@@ -34,7 +34,7 @@ Cette rubrique fournit des recommandations relatives aux performances de rendu d
 
 ## <a name="rendering-text-at-the-glyph-level"></a>Rendu de texte au niveau du glyphe
 
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Fournit la prise en charge de texte avancée, y compris le balisage au niveau du glyphe avec accès direct à <xref:System.Windows.Documents.Glyphs> pour les clients qui souhaitent intercepter et rendre le texte persistant après la mise en forme. Ces fonctionnalités assurent une prise en charge critique pour les différentes spécifications de rendu de texte propres à chacun des scénarios suivants.
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]fournit une prise en charge de texte avancée, notamment le balisage <xref:System.Windows.Documents.Glyphs> au niveau du glyphe avec un accès direct à pour les clients qui souhaitent intercepter et conserver du texte après la mise en forme. Ces fonctionnalités assurent une prise en charge critique pour les différentes spécifications de rendu de texte propres à chacun des scénarios suivants.
 
 - Affichage à l’écran de documents de format fixe.
 
@@ -51,29 +51,29 @@ Cette rubrique fournit des recommandations relatives aux performances de rendu d
 - Représentation sous forme de document de format fixe, notamment des clients pour des versions précédentes de [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] et autres appareils informatiques.
 
 > [!NOTE]
-> <xref:System.Windows.Documents.Glyphs> et <xref:System.Windows.Media.GlyphRun> sont conçus pour la présentation de documents à format fixe et les scénarios d’impression. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit plusieurs éléments pour la présentation générale et [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] scénarios comme <xref:System.Windows.Controls.Label> et <xref:System.Windows.Controls.TextBlock>. Pour plus d’informations sur les scénarios de disposition et d’[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], consultez [Typographie dans WPF](typography-in-wpf.md).
+> <xref:System.Windows.Documents.Glyphs>et <xref:System.Windows.Media.GlyphRun> sont conçus pour des scénarios de présentation et d’impression de documents de format fixe. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]fournit plusieurs éléments pour la mise en [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] page générale et <xref:System.Windows.Controls.Label> les <xref:System.Windows.Controls.TextBlock>scénarios tels que et. Pour plus d’informations sur les scénarios de disposition et d’[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], consultez [Typographie dans WPF](typography-in-wpf.md).
 
-Les exemples suivants montrent comment définir des propriétés pour un <xref:System.Windows.Documents.Glyphs> dans l’objet [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. Le <xref:System.Windows.Documents.Glyphs> objet représente la sortie d’un <xref:System.Windows.Media.GlyphRun> dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Ces exemples supposent que les polices Arial, Courrier New et Times New Roman sont installées dans le dossier **C:\WINDOWS\Fonts** sur l’ordinateur local.
+Les exemples suivants montrent comment définir les propriétés d’un <xref:System.Windows.Documents.Glyphs> objet dans [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]. L' <xref:System.Windows.Documents.Glyphs> objet représente la sortie d’un <xref:System.Windows.Media.GlyphRun> dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Ces exemples supposent que les polices Arial, Courrier New et Times New Roman sont installées dans le dossier **C:\WINDOWS\Fonts** sur l’ordinateur local.
 
 [!code-xaml[GlyphsOvwSample1#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GlyphsOvwSample1/CS/default.xaml#1)]
 
 ### <a name="using-drawglyphrun"></a>Utilisation de DrawGlyphRun
 
-Si vous avez un contrôle personnalisé et que vous souhaitez afficher des glyphes, utilisez le <xref:System.Windows.Media.DrawingContext.DrawGlyphRun%2A> (méthode).
+Si vous avez un contrôle personnalisé et que vous souhaitez restituer des glyphes <xref:System.Windows.Media.DrawingContext.DrawGlyphRun%2A> , utilisez la méthode.
 
-[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit également des services de niveau inférieur pour le texte personnalisé à l’aide de la mise en forme le <xref:System.Windows.Media.FormattedText> objet. Le moyen le plus efficace de rendu du texte dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] est de générer le contenu de texte au niveau de glyphe à l’aide <xref:System.Windows.Documents.Glyphs> et <xref:System.Windows.Media.GlyphRun>. Toutefois, le coût de cette efficacité est la perte de facile à utiliser texte enrichi, qui sont des fonctionnalités intégrées de [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] contrôles, tels que <xref:System.Windows.Controls.TextBlock> et <xref:System.Windows.Documents.FlowDocument>.
+[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]fournit également des services de niveau inférieur pour la mise en forme de texte personnalisée par <xref:System.Windows.Media.FormattedText> le biais de l’utilisation de l’objet. La méthode la plus efficace pour afficher du [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] texte dans est de générer du contenu de texte au <xref:System.Windows.Documents.Glyphs> niveau <xref:System.Windows.Media.GlyphRun>du glyphe à l’aide de et de. Toutefois, le coût de cette efficacité est la perte d’une mise en forme de texte enrichi facile à utiliser, qui sont des fonctionnalités [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] intégrées de contrôles, <xref:System.Windows.Controls.TextBlock> telles <xref:System.Windows.Documents.FlowDocument>que et.
 
 <a name="FormattedText_Object"></a>
 
 ## <a name="formattedtext-object"></a>Objet FormattedText
 
-Le <xref:System.Windows.Media.FormattedText> objet permet de dessiner du texte multiligne, dans lequel chaque caractère du texte peut être mis en forme individuellement. Pour plus d'informations, consultez [Dessin du texte mis en forme](drawing-formatted-text.md).
+L' <xref:System.Windows.Media.FormattedText> objet vous permet de dessiner du texte multiligne, dans lequel chaque caractère du texte peut être mis en forme individuellement. Pour plus d'informations, consultez [Dessin du texte mis en forme](drawing-formatted-text.md).
 
-Pour créer le texte mis en forme, appelez le <xref:System.Windows.Media.FormattedText.%23ctor%2A> constructeur pour créer un <xref:System.Windows.Media.FormattedText> objet. Une fois que vous avez créé la chaîne initiale de texte mis en forme, vous pouvez appliquer différents styles de mise en forme. Si votre application souhaite implémenter sa propre disposition, puis le <xref:System.Windows.Media.FormattedText> objet est à l’aide d’un contrôle, comme le meilleur choix <xref:System.Windows.Controls.TextBlock>. Pour plus d’informations sur la <xref:System.Windows.Media.FormattedText> d’objets, consultez [dessin du texte mis en forme](drawing-formatted-text.md) .
+Pour créer du texte mis en forme <xref:System.Windows.Media.FormattedText.%23ctor%2A> , appelez le constructeur <xref:System.Windows.Media.FormattedText> pour créer un objet. Une fois que vous avez créé la chaîne initiale de texte mis en forme, vous pouvez appliquer différents styles de mise en forme. Si votre application souhaite implémenter sa propre disposition, l' <xref:System.Windows.Media.FormattedText> objet est mieux adapté à l’utilisation d’un contrôle, tel que. <xref:System.Windows.Controls.TextBlock> Pour plus d’informations sur <xref:System.Windows.Media.FormattedText> l’objet, consultez [dessin du texte mis en forme](drawing-formatted-text.md) .
 
-Le <xref:System.Windows.Media.FormattedText> objet fournit la fonctionnalité de mise en forme de texte de bas niveau. Vous pouvez appliquer plusieurs styles de mise en forme à un ou plusieurs caractères. Par exemple, vous pouvez appeler à la fois le <xref:System.Windows.Media.FormattedText.SetFontSize%2A> et <xref:System.Windows.Media.FormattedText.SetForegroundBrush%2A> méthodes pour modifier la mise en forme des cinq premiers caractères dans le texte.
+L' <xref:System.Windows.Media.FormattedText> objet fournit une fonctionnalité de mise en forme du texte de bas niveau. Vous pouvez appliquer plusieurs styles de mise en forme à un ou plusieurs caractères. Par exemple, vous pouvez appeler <xref:System.Windows.Media.FormattedText.SetFontSize%2A> les méthodes et <xref:System.Windows.Media.FormattedText.SetForegroundBrush%2A> pour modifier la mise en forme des cinq premiers caractères du texte.
 
-L’exemple de code suivant crée un <xref:System.Windows.Media.FormattedText> de l’objet et effectue le rendu.
+L’exemple de code suivant crée <xref:System.Windows.Media.FormattedText> un objet et le rend.
 
 [!code-csharp[formattedtextsnippets#FormattedTextSnippets1](~/samples/snippets/csharp/VS_Snippets_Wpf/FormattedTextSnippets/CSharp/Window1.xaml.cs#formattedtextsnippets1)]
 [!code-vb[formattedtextsnippets#FormattedTextSnippets1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FormattedTextSnippets/visualbasic/window1.xaml.vb#formattedtextsnippets1)]
@@ -86,27 +86,27 @@ L’exemple de code suivant crée un <xref:System.Windows.Media.FormattedText> d
 
 ### <a name="flowdocument-impacts-performance-more-than-textblock-or-label"></a>FlowDocument influe davantage sur les performances que TextBlock ou Label
 
-En règle générale, le <xref:System.Windows.Controls.TextBlock> élément doit être utilisé lors de la prise en charge de texte limitée est requis, par exemple, une courte phrase dans un [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Controls.Label> peut être utilisé lors de la prise en charge de texte minimale est requise. Le <xref:System.Windows.Documents.FlowDocument> élément est un conteneur pour les documents qui prennent en charge la présentation enrichie du contenu et par conséquent, a un impact sur les performances supérieur que l’utilisation de la <xref:System.Windows.Controls.TextBlock> ou <xref:System.Windows.Controls.Label> contrôles.
+En général, l' <xref:System.Windows.Controls.TextBlock> élément doit être utilisé quand une prise en charge de texte limitée est nécessaire, par exemple une [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]courte phrase dans un. <xref:System.Windows.Controls.Label>peut être utilisé quand une prise en charge minimale du texte est requise. L' <xref:System.Windows.Documents.FlowDocument> élément est un conteneur pour les documents refluides qui prennent en charge la présentation enrichie de contenu et, par conséquent, a un impact <xref:System.Windows.Controls.TextBlock> accru <xref:System.Windows.Controls.Label> sur les performances par rapport à l’utilisation des contrôles ou.
 
-Pour plus d’informations sur <xref:System.Windows.Documents.FlowDocument>, consultez [vue d’ensemble du Document de flux](flow-document-overview.md).
+Pour plus d’informations <xref:System.Windows.Documents.FlowDocument>sur, consultez [vue d’ensemble des documents dynamiques](flow-document-overview.md).
 
 ### <a name="avoid-using-textblock-in-flowdocument"></a>Éviter l’utilisation de TextBlock dans FlowDocument
 
-Le <xref:System.Windows.Controls.TextBlock> élément est dérivé de <xref:System.Windows.UIElement>. Le <xref:System.Windows.Documents.Run> élément est dérivé de <xref:System.Windows.Documents.TextElement>, qui est moins cher à utiliser qu’un <xref:System.Windows.UIElement>-objet dérivé. Si possible, utilisez <xref:System.Windows.Documents.Run> plutôt que <xref:System.Windows.Controls.TextBlock> pour afficher du texte contenu dans un <xref:System.Windows.Documents.FlowDocument>.
+L' <xref:System.Windows.Controls.TextBlock> élément est dérivé de <xref:System.Windows.UIElement>. L' <xref:System.Windows.Documents.Run> élément est dérivé de <xref:System.Windows.Documents.TextElement>, ce qui est moins coûteux à utiliser qu' <xref:System.Windows.UIElement>un objet dérivé de. Lorsque cela est possible <xref:System.Windows.Documents.Run> , utilisez <xref:System.Windows.Controls.TextBlock> plutôt que pour afficher le contenu <xref:System.Windows.Documents.FlowDocument>de texte dans un.
 
-L’exemple de balisage suivant illustre deux façons de définir le contenu de texte dans un <xref:System.Windows.Documents.FlowDocument>:
+L’exemple de balisage suivant illustre deux façons de définir le contenu de <xref:System.Windows.Documents.FlowDocument>texte dans un:
 
 [!code-xaml[Performance#PerformanceSnippet13](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/FlowDocument.xaml#performancesnippet13)]
 
 ### <a name="avoid-using-run-to-set-text-properties"></a>Éviter l’utilisation de Run pour définir des propriétés de texte
 
-En règle générale, à l’aide un <xref:System.Windows.Documents.Run> au sein d’un <xref:System.Windows.Controls.TextBlock> est performances plus performante que celle de ne pas utiliser de <xref:System.Windows.Documents.Run> tout de l’objet. Si vous utilisez un <xref:System.Windows.Documents.Run> afin de définir les propriétés de texte, définissez ces propriétés directement sur le <xref:System.Windows.Controls.TextBlock> à la place.
+En général, l’utilisation <xref:System.Windows.Documents.Run> d’un <xref:System.Windows.Controls.TextBlock> dans un est plus gourmande en performances que <xref:System.Windows.Documents.Run> l’utilisation d’un objet explicite. Si vous utilisez un <xref:System.Windows.Documents.Run> pour définir des propriétés de texte, définissez ces propriétés directement sur le à la <xref:System.Windows.Controls.TextBlock> place.
 
-L’exemple de balisage suivant illustre ces deux façons de définir une propriété de texte, dans ce cas, le <xref:System.Windows.Controls.TextBlock.FontWeight%2A> propriété :
+L’exemple de balisage suivant illustre ces deux méthodes de définition d’une propriété de texte, dans ce <xref:System.Windows.Controls.TextBlock.FontWeight%2A> cas, la propriété:
 
 [!code-xaml[Performance#PerformanceSnippet12](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Window1.xaml#performancesnippet12)]
 
-Le tableau suivant montre le coût de l’affichage de 1000 <xref:System.Windows.Controls.TextBlock> objets avec et sans explicite <xref:System.Windows.Documents.Run>.
+Le tableau suivant montre le coût de l’affichage <xref:System.Windows.Controls.TextBlock> des objets 1000 avec et sans <xref:System.Windows.Documents.Run>Explicit.
 
 |**Type de TextBlock**|**Durée de création (ms)**|**Durée d’affichage (ms)**|
 |------------------------|------------------------------|----------------------------|
@@ -115,9 +115,9 @@ Le tableau suivant montre le coût de l’affichage de 1000 <xref:System.Windows
 
 ### <a name="avoid-databinding-to-the-labelcontent-property"></a>Éviter la liaison de données à la propriété Label.Content
 
-Imaginez un scénario où vous avez un <xref:System.Windows.Controls.Label> objet qui est fréquemment mis à jour à partir d’un <xref:System.String> source. Lors de la liaison de données la <xref:System.Windows.Controls.Label> l’élément <xref:System.Windows.Controls.ContentControl.Content%2A> propriété le <xref:System.String> source de l’objet, vous pouvez rencontrer des performances médiocres. Chaque fois que la source de <xref:System.String> est mis à jour, l’ancien <xref:System.String> objet est ignoré et un nouveau <xref:System.String> est recréé, car un <xref:System.String> objet est immuable, il ne peut pas être modifié. Ceci, à son tour, provoque la <xref:System.Windows.Controls.ContentPresenter> de la <xref:System.Windows.Controls.Label> objet à ignorer son ancien contenu et à régénérer le nouveau contenu pour afficher le nouveau <xref:System.String>.
+Imaginez un scénario dans lequel vous disposez <xref:System.Windows.Controls.Label> d’un objet qui est fréquemment mis <xref:System.String> à jour à partir d’une source. Lorsque des données lient <xref:System.Windows.Controls.Label> la propriété <xref:System.Windows.Controls.ContentControl.Content%2A> de l’élément <xref:System.String> à l’objet source, vous pouvez constater des performances médiocres. Chaque fois que la <xref:System.String> source est mise à jour <xref:System.String> , l’ancien objet est supprimé et un <xref:System.String> nouveau est recréé, car un <xref:System.String> objet est immuable et ne peut pas être modifié. Cela entraîne, à son tour, <xref:System.Windows.Controls.ContentPresenter> la suppression <xref:System.Windows.Controls.Label> de son ancien contenu par le de l’objet et la régénération du nouveau contenu <xref:System.String>pour afficher le nouveau.
 
-La solution à ce problème est simple. Si le <xref:System.Windows.Controls.Label> n’est pas défini sur un personnalisé <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> , remplacez le <xref:System.Windows.Controls.Label> avec un <xref:System.Windows.Controls.TextBlock> et lier les données son <xref:System.Windows.Controls.TextBlock.Text%2A> propriété à la chaîne source.
+La solution à ce problème est simple. <xref:System.Windows.Controls.TextBlock.Text%2A> <xref:System.Windows.Controls.TextBlock> <xref:System.Windows.Controls.Label> <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> Si n’est pas défini sur une valeur personnalisée, remplacez le par un et liez sa propriété à la chaîne source. <xref:System.Windows.Controls.Label>
 
 |**Propriété liée aux données**|**Durée de la mise à jour (ms)**|
 |-----------------------------|----------------------------|
@@ -128,7 +128,7 @@ La solution à ce problème est simple. Si le <xref:System.Windows.Controls.Labe
 
 ## <a name="hyperlink"></a>Lien hypertexte
 
-Le <xref:System.Windows.Documents.Hyperlink> objet est un élément de contenu de flux inline qui permet d’héberger des liens hypertexte dans le contenu de flux.
+L' <xref:System.Windows.Documents.Hyperlink> objet est un élément de contenu de workflow au niveau de la ligne qui vous permet d’héberger des liens hypertexte dans le contenu dynamique.
 
 ### <a name="combine-hyperlinks-in-one-textblock-object"></a>Combiner des liens hypertexte en un objet TextBlock
 
@@ -136,27 +136,27 @@ Vous pouvez optimiser l’utilisation de plusieurs <xref:System.Windows.Document
 
 Page d’accueil MSN &#124; Mon MSN
 
-L’exemple de balisage suivant montre plusieurs <xref:System.Windows.Controls.TextBlock> éléments utilisés pour afficher les liens hypertexte :
+L’exemple de balisage suivant <xref:System.Windows.Controls.TextBlock> montre plusieurs éléments utilisés pour afficher les liens hypertexte:
 
 [!code-xaml[Performance#PerformanceSnippet9](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml#performancesnippet9)]
 
-L’exemple de balisage suivant montre un moyen plus efficace d’afficher les liens hypertexte, cette fois, à l’aide d’un seul <xref:System.Windows.Controls.TextBlock>:
+L’exemple de balisage suivant montre un moyen plus efficace d’afficher les liens hypertexte, cette fois, à l' <xref:System.Windows.Controls.TextBlock>aide d’un seul:
 
 [!code-xaml[Performance#PerformanceSnippet10](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml#performancesnippet10)]
 
 ### <a name="showing-underlines-on-hyperlinks-only-on-mouseenter-events"></a>Affichage du soulignement des liens hypertexte uniquement pour les événements MouseEnter
 
-Un <xref:System.Windows.TextDecoration> objet est une ornementation visuelle que vous pouvez ajouter au texte ; Toutefois, il peut être performances intensif à instancier. Si vous utilisez beaucoup de <xref:System.Windows.Documents.Hyperlink> éléments, envisagez d’afficher un soulignement uniquement lors du déclenchement d’un événement, tel que le <xref:System.Windows.ContentElement.MouseEnter> événement. Pour plus d’informations, consultez [Spécifier si un lien hypertexte est souligné ou non](how-to-specify-whether-a-hyperlink-is-underlined.md).
+Un <xref:System.Windows.TextDecoration> objet est un ornement visuel que vous pouvez ajouter à du texte. Toutefois, il peut s’agir d’une utilisation intensive des performances pour instancier. Si vous utilisez beaucoup d' <xref:System.Windows.Documents.Hyperlink> éléments, envisagez d’afficher un soulignement uniquement lors du déclenchement d’un événement, tel que l' <xref:System.Windows.ContentElement.MouseEnter> événement. Pour plus d’informations, consultez [Spécifier si un lien hypertexte est souligné ou non](how-to-specify-whether-a-hyperlink-is-underlined.md).
 
-L’illustration suivante montre comment l’événement MouseEnter déclenche le lien hypertexte souligné :
+L’illustration suivante montre comment l’événement MouseEnter déclenche le lien hypertexte souligné:
 
 ![Liens hypertexte affichant TextDecorations](./media/how-to-specify-whether-a-hyperlink-is-underlined/text-decorations-hyperlinks.png)
 
-L’exemple de balisage suivant montre un <xref:System.Windows.Documents.Hyperlink> défini avec et sans soulignement :
+L’exemple de balisage suivant <xref:System.Windows.Documents.Hyperlink> montre un défini avec et sans soulignement:
 
 [!code-xaml[Performance#PerformanceSnippet11](~/samples/snippets/csharp/VS_Snippets_Wpf/Performance/CSharp/Hyperlink.xaml#performancesnippet11)]
 
-Le tableau suivant montre le coût de performances de l’affichage de 1000 <xref:System.Windows.Documents.Hyperlink> éléments avec et sans soulignement.
+Le tableau suivant indique le coût des performances de l' <xref:System.Windows.Documents.Hyperlink> affichage de 1000 éléments avec et sans soulignement.
 
 |**Lien hypertexte**|**Durée de création (ms)**|**Durée d’affichage (ms)**|
 |-------------------|------------------------------|----------------------------|
@@ -171,15 +171,15 @@ Le tableau suivant montre le coût de performances de l’affichage de 1000 <xre
 
 ### <a name="avoid-unnecessary-use-of-hyphenation"></a>Éviter l’utilisation inutile de la coupure de mots
 
-Coupure de mots automatique recherche des points d’arrêt de trait d’union pour des lignes de texte et autorise des positions d’arrêt supplémentaires pour les lignes de <xref:System.Windows.Controls.TextBlock> et <xref:System.Windows.Documents.FlowDocument> objets. Par défaut, la fonctionnalité de coupure de mots automatique est désactivée dans ces objets. Vous pouvez activer cette fonctionnalité en définissant la propriété IsHyphenationEnabled de l’objet sur `true`. Toutefois, si vous activez cette fonctionnalité, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] lance l’interopérabilité [!INCLUDE[TLA#tla_com](../../../../includes/tlasharptla-com-md.md)], ce qui peut affecter les performances de l’application. Nous vous recommandons de ne pas utiliser la coupure de mots automatique, sauf si vous en avez besoin.
+La césure automatique détecte les points d’arrêt de trait d’Union pour les lignes de texte et autorise <xref:System.Windows.Controls.TextBlock> des <xref:System.Windows.Documents.FlowDocument> positions de rupture supplémentaires pour les lignes dans les objets et. Par défaut, la fonctionnalité de coupure de mots automatique est désactivée dans ces objets. Vous pouvez activer cette fonctionnalité en définissant la propriété IsHyphenationEnabled de l’objet sur `true`. Toutefois, l’activation de cette [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fonctionnalité entraîne l’initiation de l’interopérabilité COM (Component Object Model), ce qui peut avoir un impact sur les performances de l’application. Nous vous recommandons de ne pas utiliser la coupure de mots automatique, sauf si vous en avez besoin.
 
 ### <a name="use-figures-carefully"></a>Utiliser les figures avec précaution
 
-Un <xref:System.Windows.Documents.Figure> élément représente une partie de contenu de flux qui peut être positionnés de manière absolue dans une page de contenu. Dans certains cas, un <xref:System.Windows.Documents.Figure> peut entraîner une page entière de reformater automatiquement si sa position est en conflit avec le contenu qui a déjà été disposé. Vous pouvez réduire la probabilité de la remise en forme inutile en regroupant <xref:System.Windows.Documents.Figure> éléments en regard les uns des autres, ou en les déclarant près du début du contenu dans un scénario de taille de page fixe.
+Un <xref:System.Windows.Documents.Figure> élément représente une partie du contenu dynamique qui peut être positionnée de manière absolue dans une page de contenu. Dans certains cas, un <xref:System.Windows.Documents.Figure> peut entraîner la remise en forme automatique d’une page entière si sa position est en conflit avec du contenu qui a déjà été disposé. Vous pouvez réduire la possibilité d’un reformatage inutile en regroupant <xref:System.Windows.Documents.Figure> les éléments les uns à côté des autres ou en les déclarant vers le haut du contenu dans un scénario de taille de page fixe.
 
 ### <a name="optimal-paragraph"></a>Paragraphe optimal
 
-La fonctionnalité de paragraphe optimal de la <xref:System.Windows.Documents.FlowDocument> objet dispose les paragraphes afin que les blancs soient distribués de manière aussi égale que possible. Par défaut, la fonctionnalité de paragraphe optimal est désactivée. Vous pouvez activer cette fonctionnalité en définissant l’objet <xref:System.Windows.Documents.FlowDocument.IsOptimalParagraphEnabled%2A> propriété `true`. Toutefois, l’activation de cette fonctionnalité affecte les performances de l’application. Nous vous recommandons de ne pas utiliser la fonctionnalité de paragraphe optimal, sauf si vous en avez besoin.
+La fonctionnalité de paragraphe optimal de <xref:System.Windows.Documents.FlowDocument> l’objet dispose des paragraphes afin que l’espace blanc soit distribué aussi uniformément que possible. Par défaut, la fonctionnalité de paragraphe optimal est désactivée. Vous pouvez activer cette fonctionnalité en affectant à <xref:System.Windows.Documents.FlowDocument.IsOptimalParagraphEnabled%2A> `true`la propriété de l’objet la valeur. Toutefois, l’activation de cette fonctionnalité affecte les performances de l’application. Nous vous recommandons de ne pas utiliser la fonctionnalité de paragraphe optimal, sauf si vous en avez besoin.
 
 ## <a name="see-also"></a>Voir aussi
 

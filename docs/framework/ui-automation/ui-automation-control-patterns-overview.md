@@ -5,12 +5,12 @@ helpviewer_keywords:
 - control patterns
 - UI Automation, control patterns
 ms.assetid: cc229b33-234b-469b-ad60-f0254f32d45d
-ms.openlocfilehash: 7587c8cd24197252506967208869bd454b4f27f2
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 6e2b5eaff3ee80434d5cdf39391273685da9faf0
+ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400676"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68434073"
 ---
 # <a name="ui-automation-control-patterns-overview"></a>Vue d'ensemble des modèles de contrôle UI Automation
 > [!NOTE]
@@ -33,7 +33,7 @@ ms.locfileid: "68400676"
   
 - Les propriétés et les événements fournissent des informations sur les fonctionnalités du modèle de contrôle, ainsi que des informations sur l’état du contrôle.  
   
- Les modèles de contrôle sont liés à l’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] de la même manière que les interfaces sont liées aux objets [!INCLUDE[TLA#tla_com](../../../includes/tlasharptla-com-md.md)] . Dans [!INCLUDE[TLA2#tla_com](../../../includes/tla2sharptla-com-md.md)], vous pouvez faire une requête sur un objet pour connaître les interfaces qu’il prend en charge, puis utiliser ces interfaces pour accéder aux fonctionnalités. Dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], les clients UI Automation peuvent demander à un contrôle les modèles de contrôle qu’il prend en charge, puis interagir avec le contrôle via les propriétés, les méthodes, les événements et les structures exposées par les modèles de contrôle pris en charge. Par exemple, pour une zone d’édition multiligne, les fournisseurs UI Automation implémentent <xref:System.Windows.Automation.Provider.IScrollProvider>. Lorsqu’un client sait qu’un <xref:System.Windows.Automation.AutomationElement> prend en charge le modèle de contrôle <xref:System.Windows.Automation.ScrollPattern> , il peut utiliser les propriétés, les méthodes et les événements exposés par ce modèle de contrôle pour manipuler le contrôle ou accéder aux informations concernant le contrôle.  
+ Les modèles de contrôle [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] sont liés à car les interfaces sont liées aux objets COM (Component Object Model). Dans COM, vous pouvez interroger un objet pour demander les interfaces qu’il prend en charge, puis utiliser ces interfaces pour accéder aux fonctionnalités. Dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], les clients UI Automation peuvent demander à un contrôle les modèles de contrôle qu’il prend en charge, puis interagir avec le contrôle via les propriétés, les méthodes, les événements et les structures exposées par les modèles de contrôle pris en charge. Par exemple, pour une zone d’édition multiligne, les fournisseurs UI Automation implémentent <xref:System.Windows.Automation.Provider.IScrollProvider>. Lorsqu’un client sait qu’un <xref:System.Windows.Automation.AutomationElement> prend en charge le modèle de contrôle <xref:System.Windows.Automation.ScrollPattern> , il peut utiliser les propriétés, les méthodes et les événements exposés par ce modèle de contrôle pour manipuler le contrôle ou accéder aux informations concernant le contrôle.  
   
 <a name="uiautomation_control_pattern_client_provider"></a>   
 ## <a name="ui-automation-providers-and-clients"></a>Fournisseurs et clients UI Automation  
