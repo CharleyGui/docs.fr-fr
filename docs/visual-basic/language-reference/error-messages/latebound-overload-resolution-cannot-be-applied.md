@@ -8,62 +8,64 @@ helpviewer_keywords:
 - overload resolution [Visual Basic], with late-bound argument
 - BC30933
 ms.assetid: 8182eea0-dd34-4d6e-9ca0-41d8713e9dc4
-ms.openlocfilehash: 8ceff80842ec4e7364a55578c1c3fdb870c73ece
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1fe3c4a29b542302b3615459142a3c565aa8244f
+ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64661976"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68513027"
 ---
-# <a name="latebound-overload-resolution-cannot-be-applied-to-procedurename-because-the-accessing-instance-is-an-interface-type"></a>Résolution de surcharge à liaison tardive ne peut pas être appliquée à '\<nom_procédure >', car l’instance d’accès est un type interface
-Le compilateur tente de résoudre une référence à une propriété surchargée ou une procédure, mais la référence échoue, car un argument est de type `Object` et l’objet de référence a le type de données d’une interface. Le `Object` argument force le compilateur à résoudre la référence en tant qu’à liaison tardive.  
-  
- Dans ces circonstances, le compilateur résout la surcharge via la classe d’implémentation à la place de l’interface sous-jacente. Si la classe renomme une des versions surchargées, le compilateur ne considère pas cette version comme une surcharge car son nom est différent. Ceci provoque à son tour au compilateur d’ignorer la version renommée lorsqu’il est peut-être le bon choix pour résoudre la référence.  
-  
- **ID d’erreur :** BC30933  
-  
-## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
-  
-- Utilisez `CType` pour effectuer un cast de l’argument de `Object` au type spécifié par la signature de la surcharge que vous souhaitez appeler.  
-  
-     Notez que cela ne permet pas d’effectuer un cast de l’objet de référence à l’interface sous-jacente. Vous devez effectuer un cast de l’argument pour éviter cette erreur.  
-  
-## <a name="example"></a>Exemple  
- L’exemple suivant montre un appel à une procédure surchargée `Sub` procédure qui provoque cette erreur au moment de la compilation.  
-  
-```  
-Module m1  
-    Interface i1  
-        Sub s1(ByVal p1 As Integer)  
-        Sub s1(ByVal p1 As Double)  
-    End Interface  
-    Class c1  
-        Implements i1  
-        Public Overloads Sub s1(ByVal p1 As Integer) Implements i1.s1  
-        End Sub  
-        Public Overloads Sub s2(ByVal p1 As Double) Implements i1.s1  
-        End Sub  
-    End Class  
-    Sub Main()  
-        Dim refer As i1 = New c1  
-        Dim o1 As Object = 3.1415  
-        ' The following reference is INVALID and causes a compiler error.  
-        refer.s1(o1)   
-    End Sub  
-End Module  
-```  
-  
- Dans l’exemple précédent, si le compilateur a autorisé l’appel à `s1` comme écrit, la résolution a lieu via la classe `c1` au lieu de l’interface `i1`. Cela signifie que le compilateur ne tient pas compte `s2` car son nom est différent dans `c1`, même s’il est le bon choix, tel que défini par `i1`.  
-  
- Vous pouvez corriger l’erreur en modifiant l’appel à une des lignes de code suivantes :  
-  
-```  
-refer.s1(CType(o1, Integer))  
-refer.s1(CType(o1, Double))  
-```  
-  
- Chacune des lignes de code précédents effectue un cast explicite le `Object` variable `o1` à un des types de paramètres définis pour les surcharges.  
-  
+# <a name="latebound-overload-resolution-cannot-be-applied-to-procedurename-because-the-accessing-instance-is-an-interface-type"></a>La résolution de surcharge à liaison tardive ne\<peut pas être appliquée à’NomProcédure > ', car l’instance d’accès est un type interface
+
+Le compilateur tente de résoudre une référence à une propriété ou une procédure surchargée, mais la référence échoue parce qu’un argument est de `Object` type et que l’objet de référence a le type de données d’une interface. L' `Object` argument force le compilateur à résoudre la référence comme étant à liaison tardive.
+
+Dans ces circonstances, le compilateur résout la surcharge par le biais de la classe d’implémentation plutôt que par le biais de l’interface sous-jacente. Si la classe renomme une des versions surchargées, le compilateur ne considère pas cette version comme étant une surcharge, car son nom est différent. Cela indique à son tour que le compilateur ignore la version renommée lorsqu’il peut être le bon choix pour résoudre la référence.
+
+**ID d’erreur:** BC30933
+
+## <a name="to-correct-this-error"></a>Pour corriger cette erreur
+
+- Utilisez `CType` pour effectuer un cast de `Object` l’argument de vers le type spécifié par la signature de la surcharge que vous souhaitez appeler.
+
+  Notez qu’il ne permet pas d’effectuer un cast de l’objet de référence en interface sous-jacente. Vous devez effectuer un cast de l’argument pour éviter cette erreur.
+
+## <a name="example"></a>Exemple
+
+L’exemple suivant montre un appel à une `Sub` procédure surchargée qui provoque cette erreur au moment de la compilation.
+
+```vb
+Module m1
+    Interface i1
+        Sub s1(ByVal p1 As Integer)
+        Sub s1(ByVal p1 As Double)
+    End Interface
+    Class c1
+        Implements i1
+        Public Overloads Sub s1(ByVal p1 As Integer) Implements i1.s1
+        End Sub
+        Public Overloads Sub s2(ByVal p1 As Double) Implements i1.s1
+        End Sub
+    End Class
+    Sub Main()
+        Dim refer As i1 = New c1
+        Dim o1 As Object = 3.1415
+        ' The following reference is INVALID and causes a compiler error.
+        refer.s1(o1)
+    End Sub
+End Module
+```
+
+Dans l’exemple précédent, si le compilateur a autorisé l’appel `s1` à comme étant écrit, la résolution a lieu via la `c1` classe au lieu de `i1`l’interface. Cela signifie que le compilateur ne tient pas compte `s2` du fait que son nom est `c1`différent dans, même s’il s’agit du bon choix `i1`, tel que défini par.
+
+Vous pouvez corriger l’erreur en modifiant l’appel à l’une ou l’autre des lignes de code suivantes:
+
+```vb
+refer.s1(CType(o1, Integer))
+refer.s1(CType(o1, Double))
+```
+
+Chacune des lignes précédentes de code convertit explicitement la `Object` variable `o1` en l’un des types de paramètres définis pour les surcharges.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Surcharge de procédure](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)

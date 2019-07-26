@@ -9,83 +9,90 @@ helpviewer_keywords:
 - rectangular arrays
 - ranking, arrays
 ms.assetid: 385e911b-18c1-4e98-9924-c6d279101dd9
-ms.openlocfilehash: 0b4e7c9e253f94e1e28700c8669d28799ab69d91
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bbc9e523e9b74cf380c65135e7416f1feba01a2e
+ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62053715"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68512893"
 ---
 # <a name="array-dimensions-in-visual-basic"></a>Dimensions du tableau dans Visual Basic
-Un *dimension* est une direction dans laquelle vous pouvez modifier la spécification d’éléments d’un tableau. Un tableau qui contient les ventes total pour chaque jour du mois possède une dimension (le jour du mois). Un tableau qui concerne les ventes total par service pour chaque jour du mois possède deux dimensions (le numéro de service et le jour du mois). Le nombre de dimensions que possède un tableau est appelé son *rang*.  
-  
+
+Une *dimension* est un sens dans lequel vous pouvez faire varier la spécification des éléments d’un tableau. Un tableau qui contient le total des ventes pour chaque jour du mois a une dimension (le jour du mois). Un tableau qui contient le total des ventes par département pour chaque jour du mois a deux dimensions (le numéro de service et le jour du mois). Le nombre de dimensions d’un tableau est appelé son *rang*.
+
 > [!NOTE]
->  Vous pouvez utiliser le <xref:System.Array.Rank%2A> propriété pour déterminer le nombre de dimensions d’un tableau.  
-  
-## <a name="working-with-dimensions"></a>Utilisation des Dimensions  
- Vous spécifiez un élément d’un tableau en fournissant un *index* ou *indice* pour chacune de ses dimensions. Les éléments sont contigus pour chaque dimension de l’index 0 jusqu'à l’index le plus élevé pour cette dimension.  
-  
- Les illustrations suivantes montrent la structure conceptuelle de tableaux avec des classements différents. Chaque élément dans les illustrations affiche les valeurs d’index qui y accèdent. Par exemple, vous pouvez accéder le premier élément de la deuxième ligne du tableau à deux dimensions en spécifiant l’index `(1, 0)`.  
-  
- ![Diagramme illustrant un tableau unidimensionnel.](./media/array-dimensions/one-dimensional-array.gif)  
-  
- ![Diagramme illustrant un tableau à deux dimensions.](./media/array-dimensions/two-dimensional-array.gif)  
-  
- ![Diagramme illustrant un tableau tridimensionnel.](./media/array-dimensions/three-dimensional-array.gif)  
-  
-### <a name="one-dimension"></a>Une Dimension  
- De nombreux groupes ont une seule dimension, telles que le nombre de personnes chaque âge. La seule exigence pour spécifier un élément est l’âge pour lequel cet élément conserve le nombre. Par conséquent, un tel tableau utilise un seul index. L’exemple suivant déclare une variable qui doit contenir un *tableau unidimensionnel* d’âge du nombre d’âges 0 à 120.  
-  
-```  
-Dim ageCounts(120) As UInteger  
-```  
-  
-### <a name="two-dimensions"></a>Deux Dimensions  
- Certains tableaux ont deux dimensions, telles que le nombre de bureaux à chaque étage de chaque bâtiment d’un campus. La spécification d’un élément requiert le numéro du bâtiment et le plancher, et chaque élément contient le nombre pour cette combinaison de bâtiment et étage. Par conséquent, un tel tableau utilise deux index. L’exemple suivant déclare une variable qui doit contenir un *tableau à deux dimensions* de comptes de bureau, pour les bâtiments 0 à 40 et les étages de 0 à 5.  
-  
-```  
-Dim officeCounts(40, 5) As Byte  
-```  
-  
- Un tableau à deux dimensions est également appelé un *tableau rectangulaire*.  
-  
-### <a name="three-dimensions"></a>Trois Dimensions  
- Certains tableaux ont trois dimensions, telles que les valeurs dans un espace tridimensionnel. Ce type de tableau utilise trois index, qui dans ce cas représentent le x, y et les coordonnées z de l’espace physique. L’exemple suivant déclare une variable qui doit contenir un *tableau tridimensionnel* de température à différents points dans un volume en trois dimensions.  
-  
-```  
-Dim airTemperatures(99, 99, 24) As Single  
-```  
-  
-### <a name="more-than-three-dimensions"></a>Plus de trois Dimensions  
- Bien qu’un tableau peut avoir jusqu'à 32 dimensions, il est rare d’avoir plus de trois.  
-  
+> Vous pouvez utiliser la <xref:System.Array.Rank%2A> propriété pour déterminer le nombre de dimensions d’un tableau.
+
+## <a name="working-with-dimensions"></a>Utilisation de dimensions
+
+Vous spécifiez un élément d’un tableau en fournissant un *index* ou un *indice* pour chacune de ses dimensions. Les éléments sont contigus le long de chaque dimension à partir de l’index 0 jusqu’à l’index le plus élevé pour cette dimension.
+
+Les illustrations suivantes montrent la structure conceptuelle des tableaux avec des rangs différents. Chaque élément dans les illustrations affiche les valeurs d’index qui y accèdent. Par exemple, vous pouvez accéder au premier élément de la deuxième ligne du tableau à deux dimensions en spécifiant des index `(1, 0)`.
+
+![Diagramme qui montre un tableau unidimensionnel.](./media/array-dimensions/one-dimensional-array.gif)
+
+![Diagramme qui montre un tableau à deux dimensions.](./media/array-dimensions/two-dimensional-array.gif)
+
+![Diagramme qui montre un tableau à trois dimensions.](./media/array-dimensions/three-dimensional-array.gif)
+
+### <a name="one-dimension"></a>Une dimension
+
+De nombreux tableaux n’ont qu’une seule dimension, comme le nombre de personnes de chaque âge. La seule condition requise pour spécifier un élément est l’âge pour lequel cet élément contient le nombre. Par conséquent, un tel tableau utilise un seul index. L’exemple suivant déclare une variable qui doit contenir un *tableau unidimensionnel* de nombres d’âge pour les âges de 0 à 120.
+
+```vb
+Dim ageCounts(120) As UInteger
+```
+
+### <a name="two-dimensions"></a>Deux dimensions
+
+Certains tableaux ont deux dimensions, telles que le nombre de bureaux à chaque étage de chaque bâtiment sur un campus. La spécification d’un élément nécessite à la fois le numéro de bâtiment et le plancher, et chaque élément contient le nombre pour cette combinaison de construction et d’étage. Par conséquent, un tel tableau utilise deux index. L’exemple suivant déclare une variable destinée à contenir un *tableau à deux dimensions* de nombres de bureaux, pour les bâtiments de 0 à 40 et les étages de 0 à 5.
+
+```vb
+Dim officeCounts(40, 5) As Byte
+```
+
+Un tableau à deux dimensions est également appelé *tableau rectangulaire*.
+
+### <a name="three-dimensions"></a>Trois dimensions
+
+Quelques tableaux ont trois dimensions, telles que des valeurs dans un espace tridimensionnel. Ce type de tableau utilise trois index, qui dans ce cas représentent les coordonnées x, y et z de l’espace physique. L’exemple suivant déclare une variable qui doit contenir un *tableau à trois dimensions* de températures atmosphériques à différents points d’un volume tridimensionnel.
+
+```vb
+Dim airTemperatures(99, 99, 24) As Single
+```
+
+### <a name="more-than-three-dimensions"></a>Plus de trois dimensions
+
+Bien qu’un tableau puisse avoir jusqu’à 32 dimensions, il est rare d’en avoir plus de trois.
+
 > [!NOTE]
->  Lorsque vous ajoutez des dimensions à un tableau, le stockage total nécessaire pour le tableau augmente considérablement, c’est le cas des tableaux multidimensionnels utiliser avec précaution.  
-  
-## <a name="using-different-dimensions"></a>À l’aide de différentes Dimensions  
- Supposons que vous souhaitez effectuer le suivi des montants des ventes pour tous les jours du mois en cours. Vous pouvez déclarer un tableau unidimensionnel avec 31 éléments, un pour chaque jour du mois, comme dans l’exemple suivant montre.  
-  
-```  
-Dim salesAmounts(30) As Double  
-```  
-  
- Maintenant Supposons que vous souhaitez suivre les mêmes informations non seulement pour tous les jours du mois, mais également pour chaque mois de l’année. Vous pouvez déclarer un tableau à deux dimensions avec 12 lignes (pour les mois) et 31 colonnes (pour les jours), comme le montre l’exemple suivant.  
-  
-```  
-Dim salesAmounts(11, 30) As Double  
-```  
-  
- Maintenant Supposons que vous voulez que votre tableau contiennent des informations pour plusieurs années. Si vous souhaitez effectuer le suivi des montants des ventes pendant 5 ans, vous pouvez déclarer un tableau tridimensionnel avec 5 couches, 12 lignes et 31 colonnes, comme le montre l’exemple suivant.  
-  
-```  
-Dim salesAmounts(4, 11, 30) As Double  
-```  
-  
- Notez que, étant donné que chaque index varie de 0 à sa valeur maximale, chaque dimension du `salesAmounts` est déclaré comme un de moins que la longueur requise pour cette dimension. Notez également que la taille du tableau augmente avec chaque nouvelle dimension. Les trois tailles dans les exemples précédents sont respectivement 31, 372 et 1 860 éléments.  
-  
+> Lorsque vous ajoutez des dimensions à un tableau, le stockage total requis par le tableau augmente considérablement, donc utilisez des tableaux multidimensionnels avec précaution.
+
+## <a name="using-different-dimensions"></a>Utilisation de différentes dimensions
+
+Supposons que vous souhaitez effectuer le suivi des montants des ventes pour chaque jour du mois présent. Vous pouvez déclarer un tableau unidimensionnel avec 31 éléments, un pour chaque jour du mois, comme le montre l’exemple suivant.
+
+```vb
+Dim salesAmounts(30) As Double
+```
+
+Supposons à présent que vous souhaitiez suivre les mêmes informations non seulement pour chaque jour du mois, mais également pour chaque mois de l’année. Vous pouvez déclarer un tableau à deux dimensions avec 12 lignes (pour les mois) et 31 colonnes (pour les jours), comme le montre l’exemple suivant.
+
+```vb
+Dim salesAmounts(11, 30) As Double
+```
+
+Supposons à présent que vous décidiez que votre tableau conserve les informations pendant plus d’un an. Si vous souhaitez effectuer le suivi des montants des ventes pendant 5 ans, vous pouvez déclarer un tableau à trois dimensions avec 5 couches, 12 lignes et 31 colonnes, comme le montre l’exemple suivant.
+
+```vb
+Dim salesAmounts(4, 11, 30) As Double
+```
+
+Notez que, étant donné que chaque index varie de 0 à son maximum, chaque `salesAmounts` dimension de est déclarée comme une valeur inférieure à la longueur requise pour cette dimension. Notez également que la taille du tableau augmente avec chaque nouvelle dimension. Les trois tailles dans les exemples précédents sont respectivement 31, 372 et 1 860 éléments.
+
 > [!NOTE]
->  Vous pouvez créer un tableau sans utiliser le `Dim` instruction ou le `New` clause. Par exemple, vous pouvez appeler la <xref:System.Array.CreateInstance%2A> (méthode), ou un autre composant peut passer à votre code un tableau créé de cette manière. Un tel tableau peut avoir une limite inférieure différente de 0. Vous pouvez toujours tester la limite inférieure d’une dimension à l’aide de la <xref:System.Array.GetLowerBound%2A> méthode ou le `LBound` (fonction).  
-  
+> Vous pouvez créer un tableau sans utiliser l' `Dim` instruction ou la `New` clause. Par exemple, vous pouvez appeler la <xref:System.Array.CreateInstance%2A> méthode, ou un autre composant peut passer votre code à un tableau créé de cette manière. Un tel tableau peut avoir une limite inférieure différente de 0. Vous pouvez toujours tester la limite inférieure d’une dimension à l’aide de <xref:System.Array.GetLowerBound%2A> la méthode `LBound` ou de la fonction.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
