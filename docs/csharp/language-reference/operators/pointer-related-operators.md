@@ -20,12 +20,12 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: 03d6ed19ef01be7712ff2fdde0c1be2a6673e64f
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 830aef8546191df3df4a70e350ba561367a9e474
+ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67401440"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68512354"
 ---
 # <a name="pointer-related-operators-c-reference"></a>Opérateurs associés au pointeur (référence C#)
 
@@ -124,7 +124,7 @@ Pour un pointeur `p` de type `T*` et une expression `n` d’un type implicitemen
 - Les expressions `p + n` et `n + p` produisent un pointeur de type `T*` qui est obtenu en ajoutant `n * sizeof(T)` à l’adresse fournie par `p`.
 - L’expression `p - n` produit un pointeur de type `T*` qui est obtenu en soustrayant `n * sizeof(T)` de l’adresse fournie par `p`.
 
-L’[opérateur `sizeof`](../keywords/sizeof.md) permet d’obtenir la taille d’un type en octets.
+L’[opérateur `sizeof`](sizeof.md) permet d’obtenir la taille d’un type en octets.
 
 L’exemple suivant illustre l’utilisation de l’opérateur `+` avec un pointeur :
 
@@ -193,4 +193,4 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 - [mot clé unsafe](../keywords/unsafe.md)
 - [Mot clé fixed](../keywords/fixed-statement.md)
 - [Opérateur stackalloc](stackalloc.md)
-- [Opérateur sizeof](../keywords/sizeof.md)
+- [Opérateur sizeof](sizeof.md)

@@ -2,12 +2,12 @@
 title: Nouveautés de C# 7.3
 description: Vue d’ensemble des nouvelles fonctionnalités de C# 7.3
 ms.date: 05/16/2018
-ms.openlocfilehash: 768070ead2b180d5f4491ac87be6c248c39e9944
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: ca53073db1b61300186a483001f79bf0caa79169
+ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397778"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433523"
 ---
 # <a name="whats-new-in-c-73"></a>Nouveautés de C# 7.3
 
@@ -37,8 +37,8 @@ Les nouvelles options du compilateur sont les suivantes :
 Le reste de cet article fournit des détails et des liens pour en savoir plus sur chacune de ces améliorations. Vous pouvez explorer ces fonctionnalités dans votre environnement à l’aide de l’outil global `dotnet try` :
 
 1. Installez l’outil global [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup).
-1. Clonez le dépôt [dotnet/try-samples](https://github.com/dotnet/try-samples).
-1. Définissez le répertoire actuel sur le sous-répertoire *csharp7* pour le dépôt *try-samples*.
+1. Clonez le référentiel [dotnet/try-samples](https://github.com/dotnet/try-samples).
+1. Définissez le répertoire actuel sur le sous-répertoire *csharp7* pour le référentiel *try-samples*.
 1. Exécutez `dotnet try`.
 
 ## <a name="enabling-more-efficient-safe-code"></a>Code sécurisé plus performant
@@ -129,7 +129,7 @@ Pour plus d’informations, consultez l’article [Instruction `fixed`](../langu
 
 Vous pouvez maintenant spécifier le type <xref:System.Enum?displayProperty=nameWithType> ou <xref:System.Delegate?displayProperty=nameWithType> en tant que contraintes de classe de base pour un paramètre de type.
 
-Vous pouvez également utiliser la nouvelle contrainte `unmanaged` pour spécifier qu’un paramètre de type doit être un **type non managé**. Un **type non managé** est un type qui n’est pas un type référence et ne contient pas de type référence à tous les niveaux d’imbrication.
+Vous pouvez également utiliser la nouvelle contrainte `unmanaged` pour spécifier qu’un paramètre de type doit être un [type non managé](../language-reference/builtin-types/unmanaged-types.md).
 
 Pour plus d’informations, consultez les articles sur les [contraintes génériques `where`](../language-reference/keywords/where-generic-type-constraint.md) et les [contraintes sur les paramètres de type](../programming-guide/generics/constraints-on-type-parameters.md).
 
