@@ -19,10 +19,6 @@
     - name: Exposition de composants .NET Framework à COM
       href: exposing-dotnet-components-to-com.md
       items:
-        - name: Qualification des types .NET en vue d'une interopérabilité
-          href: qualifying-net-types-for-interoperation.md
-        - name: Application d'attributs d'interopérabilité
-          href: applying-interop-attributes.md
         - name: Empaquetage d'un assembly pour COM
           href: packaging-an-assembly-for-com.md
         - name: Inscription d'assemblys dans COM
@@ -94,15 +90,8 @@
               href: how-to-migrate-managed-code-dcom-to-wcf.md
     - name: "Procédure\_: mapper des HRESULT et des exceptions"
       href: how-to-map-hresults-and-exceptions.md
-    - name: Wrappers COM
-      href: com-wrappers.md
-      items:
-        - name: Wrapper pouvant être appelé par le runtime
-          href: runtime-callable-wrapper.md
-        - name: Wrapper pouvant être appelé par COM
-          href: com-callable-wrapper.md
-        - name: "Procédure\_: créer des wrappers COM"
-          href: how-to-create-com-wrappers.md
+    - name: "Procédure\_: créer des wrappers COM"
+      href: how-to-create-com-wrappers.md
     - name: Équivalence des types et types interop incorporés
       href: type-equivalence-and-embedded-interop-types.md
     - name: "Procédure\_: générer des assemblys PIA à l’aide de Tlbimp.exe"

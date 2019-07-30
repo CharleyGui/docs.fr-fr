@@ -329,7 +329,7 @@
           href: operators/lambda-operator.md
           displayName: lambda
         - name: '::, opérateur'
-          href: operators/namespace-alias-qualifer.md
+          href: operators/namespace-alias-qualifier.md
           displayName: namespace alias qualifier
         - name: opérateur délégué
           href: operators/delegate-operator.md
