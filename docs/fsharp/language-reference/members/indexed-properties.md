@@ -1,17 +1,17 @@
 ---
 title: Propriétés indexées
-description: En savoir plus sur les propriétés indexées dans F#, qui permettent l’accès de type tableau aux données ordonnées.
+description: En savoir plus sur les propriétés F#indexées dans, qui permettent un accès de type tableau aux données ordonnées.
 ms.date: 10/17/2018
-ms.openlocfilehash: 7fc8f46e029255c6ed985a43b92c8f7c2908c428
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 379417e31b8e178d8c939e5b23dc144bfb17e562
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489481"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627559"
 ---
 # <a name="indexed-properties"></a>Propriétés indexées
 
-Lorsque vous définissez une classe qui effectue l’abstraction sur le tri des données, il peut parfois être utile de fournir un accès indexé à ces données sans exposer l’implémentation sous-jacente. Cette opération est effectuée avec la `Item` membre.
+Lors de la définition d’une classe qui soustrait des données ordonnées, il peut parfois être utile de fournir un accès indexé à ces données sans exposer l’implémentation sous-jacente. Cette opération est effectuée avec `Item` le membre.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -36,19 +36,19 @@ member self-identifier.Item
 
 ## <a name="remarks"></a>Notes
 
-Les formes de la syntaxe précédente montrent comment définir des propriétés indexées qui ont les deux un `get` et un `set` (méthode), ont un `get` méthode uniquement, ou avoir un `set` méthode uniquement. Vous pouvez également combiner les deux la syntaxe indiquée pour get uniquement et la syntaxe indiquée pour set uniquement et produire une propriété qui possède à la fois get et set. Cette dernière forme vous permet de placer des modificateurs d’accessibilité différente et des attributs sur la méthode get et de définir des méthodes.
+Les formes de la syntaxe précédente montrent comment définir des propriétés indexées qui ont à la `get` fois une `set` méthode et une méthode `get` , une méthode uniquement ou une `set` méthode uniquement. Vous pouvez également combiner la syntaxe indiquée pour obtenir uniquement et la syntaxe indiquée pour Set only, et produire une propriété qui a à la fois la valeur obtenir et définir. Ce dernier formulaire vous permet de placer des modificateurs et des attributs d’accessibilité différents sur les méthodes d’extraction et de définition.
 
-En utilisant le nom `Item`, le compilateur traite la propriété comme une propriété indexée par défaut. Un *propriété indexée par défaut* est une propriété que vous pouvez accéder à l’aide de la syntaxe de type tableau sur l’instance d’objet. Par exemple, si `o` est un objet du type qui définit cette propriété, la syntaxe `o.[index]` est utilisé pour accéder à la propriété.
+En utilisant le nom `Item`, le compilateur traite la propriété comme une propriété indexée par défaut. Une *propriété indexée par défaut* est une propriété à laquelle vous pouvez accéder à l’aide d’une syntaxe de type tableau sur l’instance d’objet. Par exemple, si `o` est un objet du type qui définit cette propriété, la syntaxe `o.[index]` est utilisée pour accéder à la propriété.
 
-La syntaxe permettant d’accéder à une propriété indexée par défaut consiste à fournir le nom de la propriété et l’index entre parenthèses, comme un membre régulier. Par exemple, si la propriété sur `o` est appelée `Ordinal`, vous écrivez `o.Ordinal(index)` pour y accéder.
+La syntaxe permettant d’accéder à une propriété indexée non définie par défaut consiste à fournir le nom de la propriété et l’index entre parenthèses, tout comme un membre normal. Par exemple, si la propriété sur `o` est appelée `Ordinal`, vous écrivez `o.Ordinal(index)` pour y accéder.
 
-Quelle que soit la forme que vous utilisez, vous devez toujours utiliser la forme curryfiée pour la méthode set sur une propriété indexée. Pour plus d’informations sur les fonctions curryfiées, consultez [fonctions](../functions/index.md).
+Quel que soit le formulaire que vous utilisez, vous devez toujours utiliser le formulaire curryfiée pour la méthode Set sur une propriété indexée. Pour plus d’informations sur les fonctions curryfiés, consultez [fonctions](../functions/index.md).
 
 ## <a name="example"></a>Exemple
 
-L’exemple de code suivant illustre la définition et l’utilisation de la valeur par défaut et les propriétés indexées par défaut qui ont get et définir des méthodes.
+L’exemple de code suivant illustre la définition et l’utilisation de propriétés indexées par défaut et non définies par défaut qui ont des méthodes d’extraction et de définition.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3301.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3301.fs)]
 
 ## <a name="output"></a>Sortie
 
@@ -60,7 +60,7 @@ seven seventh eight eighth nine ninth ten tenth
 
 ## <a name="indexed-properties-with-multiple-index-values"></a>Propriétés indexées avec plusieurs valeurs d’index
 
-Propriétés indexées peuvent avoir plusieurs valeurs d’index. Dans ce cas, les valeurs sont séparées par des virgules lorsque la propriété est utilisée. La méthode set dans une telle propriété doit avoir deux arguments curryfiés, le premier d'entre eux est un tuple qui contient les clés et le second est la valeur à définir.
+Les propriétés indexées peuvent avoir plusieurs valeurs d’index. Dans ce cas, les valeurs sont séparées par des virgules lorsque la propriété est utilisée. La méthode Set dans une telle propriété doit avoir deux arguments curryfiés, le premier étant un tuple contenant les clés et le second est la valeur à définir.
 
 Le code suivant illustre l’utilisation d’une propriété indexée avec plusieurs valeurs d’index.
 

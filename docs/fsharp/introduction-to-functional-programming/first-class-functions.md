@@ -1,197 +1,197 @@
 ---
 title: Fonctions de première classe
-description: En savoir plus sur les fonctions de première classe et la façon dont elles sont importantes pour la programmation fonctionnelle dans F#.
+description: En savoir plus sur les fonctions de première classe et leur importance pour la programmation F#fonctionnelle dans.
 ms.date: 10/29/2018
-ms.openlocfilehash: 505ad686614b53d779cb617fc04ac74c2a88b31b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4681d32abd59cc4aade6f4cb2d062e7888bcfbbc
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772760"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629715"
 ---
 # <a name="first-class-functions"></a>Fonctions de première classe
 
-Une caractéristique des langages de programmation fonctionnelle est l’élévation des fonctions à l’état de première classe. Vous pourrez faire avec une fonction, comme vous pouvez faire avec les valeurs des autres types intégrés et être en mesure de le faire avec un degré comparable d’effort.
+Une caractéristique de définition des langages de programmation fonctionnelle est l’élévation de fonctions à l’état de première classe. Vous devez être en mesure de faire avec une fonction tout ce que vous pouvez faire avec les valeurs des autres types intégrés et être en mesure de le faire avec un degré comparable d’effort.
 
-Les mesures de l’état de première classe courantes sont les suivantes :
+Les mesures typiques de l’état de première classe sont les suivantes:
 
-- Vous liez des fonctions aux identificateurs ? Autrement dit, pouvez vous donner les noms ?
+- Pouvez-vous lier des fonctions à des identificateurs? Autrement dit, pouvez-vous leur attribuer des noms?
 
-- Peut stocker des fonctions dans les structures de données, comme dans une liste ?
+- Pouvez-vous stocker des fonctions dans des structures de données, comme dans une liste?
 
-- Vous passez une fonction en tant qu’argument dans un appel de fonction ?
+- Pouvez-vous passer une fonction en tant qu’argument dans un appel de fonction?
 
-- Vous pouvez retourner une fonction à partir d’un appel de fonction ?
+- Pouvez-vous retourner une fonction à partir d’un appel de fonction?
 
-Les deux dernières mesures définissent ce que l'on *opérations d’ordre supérieur* ou *fonctions d’ordre supérieur*. Fonctions d’ordre supérieur acceptent des fonctions en tant qu’arguments et retournent des fonctions en tant que la valeur des appels de fonction. Ces opérations prennent en charge les éléments aussi essentiels de la programmation fonctionnelle que le mappage des fonctions et la composition de fonctions.
+Les deux dernières mesures définissent ce que l’on appelle des *opérations d’ordre supérieur* ou *des fonctions d’ordre supérieur*. Les fonctions d’ordre supérieur acceptent des fonctions comme arguments et retournent des fonctions comme valeur d’appels de fonction. Ces opérations prennent en charge un tel mainstays de la programmation fonctionnelle comme fonctions de mappage et la composition de fonctions.
 
 ## <a name="give-the-value-a-name"></a>Donnez un nom à la valeur
 
-Si une fonction est une valeur de première classe, vous devez être en mesure de nom, tout comme vous pouvez nommer les entiers, chaînes et autres types intégrés. Cela s’appelle dans la programmation fonctionnelle en tant que liant un identificateur à une valeur. F#utilise [ `let` liaisons](../language-reference/functions/let-bindings.md) pour lier des noms aux valeurs : `let <identifier> = <value>`. Le code suivant montre deux exemples.
+Si une fonction est une valeur de première classe, vous devez être en mesure de la nommer, tout comme vous pouvez nommer des entiers, des chaînes et d’autres types intégrés. Pour ce faire, vous pouvez faire appel à la documentation sur la programmation fonctionnelle pour lier un identificateur à une valeur. F#`let <identifier> = <value>`utilise [ `let` des liaisons](../language-reference/functions/let-bindings.md) pour lier les noms aux valeurs:. Le code suivant illustre deux exemples.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet20.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet20.fs)]
 
-Vous pouvez nommer une fonction aussi facilement. L’exemple suivant définit une fonction nommée `squareIt` en liant l’identificateur `squareIt` à la [expression lambda](../language-reference/functions/lambda-expressions-the-fun-keyword.md) `fun n -> n * n`. Fonction `squareIt` a un paramètre, `n`, et elle retourne le carré de ce paramètre.
+Vous pouvez nommer une fonction tout aussi facilement. L’exemple suivant définit une fonction nommée `squareIt` en liant l' `squareIt` identificateur à l' [expression](../language-reference/functions/lambda-expressions-the-fun-keyword.md) `fun n -> n * n`lambda. La `squareIt` fonction a un paramètre `n`,, et retourne le carré de ce paramètre.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet21.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet21.fs)]
 
-F#fournit les éléments suivants une syntaxe plus concise pour obtenir le même résultat avec moins de frappe.
+F#fournit la syntaxe plus concise suivante pour obtenir le même résultat avec moins de frappe.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet22.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet22.fs)]
 
-Les exemples qui suivent principalement utilisent le premier style, `let <function-name> = <lambda-expression>`, pour mettre en évidence les similitudes entre la déclaration de fonctions et la déclaration d’autres types de valeurs. Toutefois, toutes les fonctions nommées peuvent également être écrits avec la syntaxe concise. Certains exemples sont écrits dans les deux sens.
+Les exemples qui suivent utilisent principalement le premier style, `let <function-name> = <lambda-expression>`, pour mettre en évidence les similarités entre la déclaration de fonctions et la déclaration d’autres types de valeurs. Toutefois, toutes les fonctions nommées peuvent également être écrites avec la syntaxe concise. Certains des exemples sont écrits d’une manière ou d’une autre.
 
-## <a name="store-the-value-in-a-data-structure"></a>Store de la valeur dans une Structure de données
+## <a name="store-the-value-in-a-data-structure"></a>Stocker la valeur dans une structure de données
 
-Une valeur de première classe peut être stockée dans une structure de données. Le code suivant montre des exemples qui stockent des valeurs dans les listes et des tuples.
+Une valeur de première classe peut être stockée dans une structure de données. Le code suivant montre des exemples qui stockent des valeurs dans des listes et dans des tuples.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet23.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet23.fs)]
 
-Pour vérifier qu’un nom de fonction stocké dans un tuple correspond en fait à une fonction, l’exemple suivant utilise le `fst` et `snd` opérateurs pour extraire le premier et le second élément de tuple `funAndArgTuple`. Le premier élément du tuple est `squareIt` et le deuxième élément est `num`. Identificateur `num` est liée dans un exemple précédent à l’entier 10, un argument valide pour le `squareIt` (fonction). La deuxième expression applique le premier élément du tuple au deuxième élément du tuple : `squareIt num`.
+Pour vérifier qu’un nom de fonction stocké dans un tuple correspond en fait à une fonction, l’exemple suivant utilise `fst` les `snd` opérateurs et pour extraire le premier et le deuxième élément `funAndArgTuple`du tuple. Le premier élément du tuple est `squareIt` et le deuxième élément est. `num` L’identificateur `squareIt` est lié dans un exemple précédent à l’entier 10, un argument valide pour la fonction. `num` La deuxième expression applique le premier élément du tuple au deuxième élément du tuple: `squareIt num`.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet24.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet24.fs)]
 
-Tout comme l’identificateur `num` et entière 10 peut être utilisés indifféremment, peut donc identificateur `squareIt` et expression lambda `fun n -> n * n`.
+De même, tout comme l’identificateur `num` et l’entier 10 peuvent être utilisés indifféremment, l' `squareIt` identificateur et l’expression `fun n -> n * n`lambda peuvent être utilisés.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet25.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet25.fs)]
 
-## <a name="pass-the-value-as-an-argument"></a>Passez la valeur en tant qu’Argument
+## <a name="pass-the-value-as-an-argument"></a>Passer la valeur en tant qu’argument
 
-Si une valeur a un état de première classe dans un langage, vous pouvez le passer en tant qu’argument à une fonction. Par exemple, il est courant pour passer des entiers et des chaînes en tant qu’arguments. Le code suivant montre des entiers et les chaînes passées comme arguments dans F#.
+Si une valeur a un état de première classe dans une langue, vous pouvez la passer en tant qu’argument à une fonction. Par exemple, il est courant de passer des entiers et des chaînes en tant qu’arguments. Le code suivant affiche les entiers et les chaînes passés comme F#arguments dans.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet26.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet26.fs)]
 
-Si les fonctions ont un état de première classe, vous devez être en mesure de les passer en tant qu’arguments de la même façon. N’oubliez pas qu’il s’agit de la première caractéristique des fonctions d’ordre supérieur.
+Si les fonctions ont l’état de première classe, vous devez être en mesure de les passer comme arguments de la même façon. N’oubliez pas qu’il s’agit de la première caractéristique des fonctions d’ordre supérieur.
 
-Dans l’exemple suivant, fonction `applyIt` a deux paramètres, `op` et `arg`. Si vous envoyez une fonction qui a un paramètre pour `op` et un argument approprié pour la fonction `arg`, la fonction retourne le résultat de l’application `op` à `arg`. Dans l’exemple suivant, l’argument de fonction et l’argument entier sont envoyées de la même façon, à l’aide de leurs noms.
+Dans l’exemple suivant, la `applyIt` fonction a deux paramètres `op` , `arg`et. Si vous envoyez dans une fonction avec `op` un paramètre pour et un argument approprié pour la fonction à `arg`, la fonction retourne le résultat de l’application `op` de `arg`à. Dans l’exemple suivant, l’argument de fonction et l’argument entier sont envoyés de la même manière, à l’aide de leurs noms.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet27.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet27.fs)]
 
-Permet d’envoyer une fonction en tant qu’argument à une autre fonction se trouve sous les abstractions communes dans les langages de programmation fonctionnelle, telles que les opérations de mappage ou de filtrage. Une opération de mappage, par exemple, est une fonction d’ordre supérieur qui capture le calcul partagé par les fonctions dans une liste, effectuer une opération sur chaque élément et puis retournent une liste des résultats. Vous pouvez faire pour incrémenter chaque élément dans une liste d’entiers, ou à un carré de chaque élément ou pour convertir chaque élément dans une liste de chaînes en majuscules. La partie sujette aux erreurs du calcul est le processus récursif qui parcourt la liste et génère une liste des résultats à retourner. Cette partie est capturée dans la fonction de mappage. Il vous suffit d’écrire pour une application particulière est la fonction que vous souhaitez appliquer individuellement à chaque élément de liste (ajout, mise au carré, changement de casse). Cette fonction est envoyée en tant qu’argument à la fonction de mappage, tout comme `squareIt` est envoyé à `applyIt` dans l’exemple précédent.
+La possibilité d’envoyer une fonction en tant qu’argument à une autre fonction sous-tend des abstractions courantes dans des langages de programmation fonctionnelle, tels que des opérations de mappage ou de filtre. Une opération de mappage, par exemple, est une fonction d’ordre supérieur qui capture le calcul partagé par des fonctions qui parcourent une liste, effectuent une opération sur chaque élément, puis renvoient une liste des résultats. Vous pouvez incrémenter chaque élément dans une liste d’entiers, ou pour placer chaque élément dans une liste de chaînes en majuscules. La partie sujette aux erreurs du calcul est le processus récursif qui parcourt la liste et génère une liste des résultats à retourner. Cette partie est capturée dans la fonction de mappage. Tout ce que vous devez écrire pour une application particulière est la fonction que vous souhaitez appliquer à chaque élément de la liste (ajout, élévation, modification de la casse). Cette fonction est envoyée en tant qu’argument à la fonction de mappage, `squareIt` de la même `applyIt` façon que dans l’exemple précédent.
 
-F#Fournit des méthodes de mappage pour la plupart des types de collection, y compris [répertorie](../language-reference/lists.md), [tableaux](../language-reference/arrays.md), et [séquences](../language-reference/sequences.md). Les exemples suivants utilisent des listes. La syntaxe est `List.map <the function> <the list>`.
+F#fournit des méthodes de mappage pour la plupart des types de collections, y compris les [listes](../language-reference/lists.md), les [tableaux](../language-reference/arrays.md)et les [séquences](../language-reference/sequences.md). Les exemples suivants utilisent des listes. La syntaxe est `List.map <the function> <the list>`.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet28.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet28.fs)]
 
-Pour plus d’informations, consultez [répertorie](../language-reference/lists.md).
+Pour plus d’informations, consultez [listes](../language-reference/lists.md).
 
-## <a name="return-the-value-from-a-function-call"></a>Retourner la valeur d’un appel de fonction
+## <a name="return-the-value-from-a-function-call"></a>Retourne la valeur d’un appel de fonction
 
-Enfin, si une fonction a un état de première classe dans un langage, vous devez être en mesure de renvoyer la valeur d’un appel de fonction, tout comme retourner d’autres types, tels que des entiers et des chaînes.
+Enfin, si une fonction a l’état de première classe dans un langage, vous devez être en mesure de la retourner comme valeur d’un appel de fonction, de la même façon que vous retournez d’autres types, tels que des entiers et des chaînes.
 
 Les appels de fonction suivants retournent des entiers et les affichent.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet29.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet29.fs)]
 
 L’appel de fonction suivant retourne une chaîne.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet30.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet30.fs)]
 
-L’appel de fonction suivant, déclaré inline, retourne une valeur booléenne. La valeur affichée est `True`.
+L’appel de fonction suivant, déclaré Inline, retourne une valeur booléenne. La valeur affichée est `True`.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet31.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet31.fs)]
 
-La possibilité de retourner une fonction en tant que la valeur d’un appel de fonction est la deuxième caractéristique des fonctions d’ordre supérieur. Dans l’exemple suivant, `checkFor` est défini comme étant une fonction qui accepte un seul argument, `item`et retourne une nouvelle fonction en tant que sa valeur. La fonction retournée prend une liste comme argument, `lst`et recherche `item` dans `lst`. Si `item` est présent, la fonction retourne `true`. Si `item` n’est pas présent, la fonction retourne `false`. Comme dans la section précédente, le code suivant utilise une fonction de la liste fournie, [List.exists](https://msdn.microsoft.com/library/15a3ebd5-98f0-44c0-8220-7dedec3e68a8), pour rechercher la liste.
+La possibilité de retourner une fonction comme valeur d’un appel de fonction est la deuxième caractéristique des fonctions d’ordre supérieur. Dans l’exemple suivant, `checkFor` est défini comme une fonction qui accepte un argument, `item`, et retourne une nouvelle fonction comme sa valeur. La fonction retournée prend une liste comme argument, `lst`, et `item` recherche dans `lst`. Si `item` est présent, la fonction retourne `true`. Si `item` n’est pas présent, la fonction `false`retourne. Comme dans la section précédente, le code suivant utilise une fonction de liste fournie, [List. Exists](https://msdn.microsoft.com/library/15a3ebd5-98f0-44c0-8220-7dedec3e68a8), pour effectuer une recherche dans la liste.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet32.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet32.fs)]
 
-Le code suivant utilise `checkFor` pour créer une nouvelle fonction qui accepte un seul argument, une liste et recherche 7 dans la liste.
+Le code suivant utilise `checkFor` pour créer une fonction qui accepte un argument, une liste et recherche 7 dans la liste.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet33.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet33.fs)]
 
-L’exemple suivant utilise l’état de première classe de fonctions dans F# pour déclarer une fonction, `compose`, qui retourne une composition de deux arguments de fonction.
+L’exemple suivant utilise l’état de première classe des fonctions dans F# pour déclarer une fonction, `compose`, qui retourne une composition de deux arguments de fonction.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet34.fs)]
-
-> [!NOTE]
-> Pour obtenir une version encore plus courte, consultez la section suivante, « Fonctions curryfiées ».
-
-Le code suivant envoie deux fonctions en tant qu’arguments à `compose`, à la fois de qui acceptent un argument unique du même type. La valeur de retour est une nouvelle fonction qui est une composition de deux arguments de fonction.
-
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet35.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet34.fs)]
 
 > [!NOTE]
-> F#fournit deux opérateurs, `<<` et `>>`, qui composent des fonctions. Par exemple, `let squareAndDouble2 = doubleIt << squareIt` équivaut à `let squareAndDouble = compose doubleIt squareIt` dans l’exemple précédent.
+> Pour une version encore plus concise, consultez la section suivante, «fonctions curryfiée».
 
-L’exemple de retour d’une fonction en tant que la valeur d’un appel de fonction suivant crée un jeu d’estimation simple. Pour créer un jeu, appelez `makeGame` avec la valeur que vous voulez que quelqu'un à deviner envoyé pour `target`. La valeur de retour à partir de la fonction `makeGame` est une fonction qui prend un argument (l’estimation) et indique si l’estimation est correcte.
+Le code suivant envoie deux fonctions comme arguments à `compose`, qui acceptent toutes deux un seul argument du même type. La valeur de retour est une nouvelle fonction qui est une composition des deux arguments de fonction.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet36.fs)]
-
-Le code suivant appelle `makeGame`, envoi de la valeur `7` pour `target`. Identificateur `playGame` est lié à l’expression lambda retournée. Par conséquent, `playGame` est une fonction qui prend comme une argument valeur pour `guess`.
-
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet37.fs)]
-
-## <a name="curried-functions"></a>Fonctions curryfiées
-
-La plupart des exemples dans la section précédente peuvent être écrites plus concise en tirant parti de l’implicite *curryfication* dans F# déclarations de fonction. La curryfication est un processus qui transforme une fonction qui a plusieurs paramètres dans une série de fonctions intégrées, chacun d’eux possède un seul paramètre. Dans F#, fonctions qui ont plusieurs paramètres sont intrinsèquement curryfiées. Par exemple, `compose` à partir de la section précédente peut être écrite comme indiqué dans le style concis suivant, avec trois paramètres.
-
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet38.fs)]
-
-Toutefois, le résultat est une fonction d’un paramètre qui retourne une fonction d’un paramètre qui retourne à son tour une autre fonction d’un paramètre, comme indiqué dans `compose4curried`.
-
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet39.fs)]
-
-Vous pouvez accéder à cette fonction de plusieurs façons. Chacun des exemples suivants retourne et affiche 18. Vous pouvez remplacer `compose4` avec `compose4curried` dans chacun des exemples.
-
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet40.fs)]
-
-Pour vérifier que la fonction fonctionne toujours comme avant, essayez à nouveau les cas de test d’origine.
-
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet41.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet35.fs)]
 
 > [!NOTE]
-> Vous pouvez limiter la curryfication en englobant les paramètres dans les tuples. Pour plus d’informations, consultez « Modèles de paramètre » dans [paramètres et Arguments](../language-reference/parameters-and-arguments.md).
+> F#fournit deux opérateurs, `<<` et `>>`, qui composent des fonctions. Par exemple, `let squareAndDouble2 = doubleIt << squareIt` est équivalent à `let squareAndDouble = compose doubleIt squareIt` dans l’exemple précédent.
 
-L’exemple suivant utilise des curryfication implicite pour écrire une version plus courte de `makeGame`. Les détails de la façon `makeGame` construit et retourne le `game` fonction n’est pas explicitement dans ce format, mais vous pouvez vérifier en utilisant les cas de test d’origine que le résultat est le même.
+L’exemple suivant de retour d’une fonction comme valeur d’un appel de fonction crée un jeu d’estimation simple. Pour créer un jeu, appelez `makeGame` avec la valeur que vous souhaitez qu’une personne devine soit `target`envoyée pour. La valeur de retour de `makeGame` la fonction est une fonction qui accepte un argument (l’estimation) et indique si l’estimation est correcte.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet42.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet36.fs)]
 
-Pour plus d’informations sur la curryfication, consultez « Application partielle d’Arguments » dans [fonctions](../language-reference/functions/index.md).
+Le code suivant appelle `makeGame`, en envoyant la `7` valeur `target`pour. L’identificateur `playGame` est lié à l’expression lambda retournée. Par conséquent `playGame` , est une fonction qui prend comme valeur un argument pour. `guess`
 
-## <a name="identifier-and-function-definition-are-interchangeable"></a>Identificateur et la définition de fonction sont interchangeables
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet37.fs)]
 
-Le nom de variable `num` dans les précédents exemples évalue à l’entier 10, et il n’est pas surprenant dans laquelle `num` est valide, 10 est également valide. Cela vaut identificateurs de fonction et leurs valeurs : partout où le nom de la fonction peut être utilisé, l’expression lambda à laquelle il est lié peut être utilisée.
+## <a name="curried-functions"></a>Fonctions curryfiée
 
-L’exemple suivant définit un `Boolean` fonction appelée `isNegative`, puis utilise le nom de la fonction et la définition de la fonction indifféremment. Les trois exemples suivants retournent et affichent tous `False`.
+La plupart des exemples de la section précédente peuvent être écrits de façon plus concise en tirant parti de la curryfication F# implicite dans les déclarations de fonction. La curryfication est un processus qui transforme une fonction qui a plusieurs paramètres en une série de fonctions incorporées, chacune d’elles ayant un seul paramètre. Dans F#, les fonctions qui ont plusieurs paramètres sont curryfiée par nature. Par exemple, `compose` dans la section précédente, vous pouvez écrire comme indiqué dans le style concis suivant, avec trois paramètres.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet43.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet38.fs)]
 
-Pour aller plus loin il une seule étape, remplacez la valeur qui `applyIt` lié à pour `applyIt`.
+Toutefois, le résultat est une fonction d’un paramètre qui retourne une fonction d’un paramètre qui, à son tour, retourne une autre fonction d’un paramètre `compose4curried`, comme indiqué dans.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet44.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet39.fs)]
 
-## <a name="functions-are-first-class-values-in-f"></a>Les fonctions sont des valeurs de première classe f\#
+Vous pouvez accéder à cette fonction de plusieurs façons. Chacun des exemples suivants retourne et affiche 18. Vous pouvez remplacer `compose4` par `compose4curried` dans l’un des exemples.
 
-Les exemples dans les sections précédentes montrent que les fonctions dans F# répondent aux critères de valeurs de première classe dans F#:
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet40.fs)]
+
+Pour vérifier que la fonction fonctionne toujours comme auparavant, réessayez les cas de test d’origine.
+
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet41.fs)]
+
+> [!NOTE]
+> Vous pouvez restreindre la curryfication en encadrant les paramètres dans les tuples. Pour plus d’informations, consultez «modèles de paramètres» dans [paramètres et arguments](../language-reference/parameters-and-arguments.md).
+
+L’exemple suivant utilise une curryfication implicite pour écrire une version plus `makeGame`petite de. Les détails de la `makeGame` façon dont construit et retourne `game` la fonction sont moins explicites dans ce format, mais vous pouvez vérifier en utilisant les cas de test d’origine que le résultat est le même.
+
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet42.fs)]
+
+Pour plus d’informations sur la curryfication, consultez «application partielle d’arguments» dans les [fonctions](../language-reference/functions/index.md).
+
+## <a name="identifier-and-function-definition-are-interchangeable"></a>L’identificateur et la définition de fonction sont interchangeables
+
+Le nom `num` de la variable dans les exemples précédents correspond à l’entier 10, et il n’est pas surprenant `num` que, si est valide, 10 soit également valide. Il en va de même pour les identificateurs de fonction et leurs valeurs: partout où le nom de la fonction peut être utilisé, l’expression lambda à laquelle elle est liée peut être utilisée.
+
+L’exemple suivant définit une `Boolean` fonction appelée `isNegative`, puis utilise le nom de la fonction et la définition de la fonction de façon interchangeable. Les trois exemples suivants retournent et `False`affichent.
+
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet43.fs)]
+
+Pour aller plus loin, remplacez la valeur `applyIt` de pour. `applyIt`
+
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet44.fs)]
+
+## <a name="functions-are-first-class-values-in-f"></a>Les fonctions sont des valeurs de première classe en F\#
+
+Les exemples des sections précédentes montrent que les fonctions de F# répondent aux critères pour les valeurs de première classe dans F#:
 
 - Vous pouvez lier un identificateur à une définition de fonction.
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet21.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet21.fs)]
 
 - Vous pouvez stocker une fonction dans une structure de données.
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet45.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet45.fs)]
 
-- Vous pouvez passer une fonction en tant qu’argument.
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet46.fs)]
+- Vous pouvez passer une fonction comme argument.
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet46.fs)]
 
-- Vous pouvez retourner une fonction en tant que la valeur d’un appel de fonction.
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet32.fs)]
+- Vous pouvez retourner une fonction comme valeur d’un appel de fonction.
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet32.fs)]
 
-Pour plus d’informations sur F#, consultez le [ F# référence du langage](../language-reference/index.md).
+Pour plus d’informations F#sur, consultez la référence sur le [ F# langage](../language-reference/index.md).
 
 ## <a name="example"></a>Exemple
 
 ### <a name="description"></a>Description
 
-Le code suivant contient tous les exemples dans cette rubrique.
+Le code suivant contient tous les exemples de cette rubrique.
 
 ### <a name="code"></a>Code
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/contour/snippet47.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/contour/snippet47.fs)]
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Listes](../language-reference/lists.md)
 - [Tuples](../language-reference/tuples.md)
 - [Fonctions](../language-reference/functions/index.md)
-- [`let` liaisons](../language-reference/functions/let-bindings.md)
-- [Expressions lambda : le mot clé `fun` ](../language-reference/functions/lambda-expressions-the-fun-keyword.md)
+- [`let`Liaisons](../language-reference/functions/let-bindings.md)
+- [Expressions lambda: le mot clé `fun` ](../language-reference/functions/lambda-expressions-the-fun-keyword.md)

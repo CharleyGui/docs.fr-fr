@@ -1,17 +1,17 @@
 ---
-title: 'Fonctions récursives : Le mot clé rec'
-description: Découvrez comment la F# mot clé « rec » est utilisé avec le mot clé 'let' pour définir une fonction récursive.
+title: 'Fonctions récursives: Mot clé Rec'
+description: Découvrez comment le F# mot clé’Rec’est utilisé avec le mot clé’Let’pour définir une fonction récursive.
 ms.date: 05/16/2016
-ms.openlocfilehash: 86eaf1c8a5566d8b9cbc4dcb72f945e2497e5439
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 7edaa7206b2109c7b1a405624b9b2330968f9c52
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645291"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630653"
 ---
-# <a name="recursive-functions-the-rec-keyword"></a>Fonctions récursives : Le mot clé rec
+# <a name="recursive-functions-the-rec-keyword"></a>Fonctions récursives: Mot clé Rec
 
-Le `rec` mot clé est utilisée conjointement avec la `let` mot clé pour définir une fonction récursive.
+Le `rec` mot clé est utilisé conjointement avec `let` le mot clé pour définir une fonction récursive.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,24 +30,24 @@ function2-body
 
 ## <a name="remarks"></a>Notes
 
-Fonctions récursives, les fonctions qui appellent elles-mêmes, sont identifiées explicitement dans le F# langage. L’identificateur qui est en cours de définition sont ainsi disponibles dans la portée de la fonction.
+Les fonctions récursives, les fonctions qui s’appellent, sont identifiées F# explicitement dans le langage. Cela rend l’identificateur qui est défini comme étant disponible dans l’étendue de la fonction.
 
-Le code suivant illustre une fonction récursive qui calcule le *n*<sup>th</sup> nombre Fibonacci.
+Le code suivant illustre une fonction récursive qui calcule le *n*<sup>ième</sup> nombre de Fibonacci.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet4001.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet4001.fs)]
 
 > [!NOTE]
-> Dans la pratique, code comme celui ci-dessus est inutile de mémoire et le temps processeur, car il implique le recalcul des valeurs précédemment calculées.
+> Dans la pratique, le code comme celui ci-dessus est gaspillant la mémoire et le temps processeur, car il implique le recalcul des valeurs calculées précédemment.
 
-Les méthodes sont implicitement récursives dans le type ; Il est inutile d’ajouter le `rec` mot clé. Liaisons let dans les classes ne sont pas implicitement récursifs.
+Les méthodes sont implicitement récursives dans le type; Il n’est pas nécessaire d’ajouter `rec` le mot clé. Les liaisons Let dans les classes ne sont pas implicitement récursives.
 
 ## <a name="mutually-recursive-functions"></a>Fonctions mutuellement récursives
 
-Parfois, les fonctions sont *mutuellement récursives*, ce qui signifie que les appels forment un cercle, où une fonction appelle une autre qui à son tour appelle la première, avec n’importe quel nombre d’appels entre les deux. Vous devez définir de telles fonctions dans celui `let` à l’aide de la liaison la `and` mot clé pour les relier.
+Parfois, lesfonctions sont mutuellement récursives, ce qui signifie que les appels forment un cercle, où une fonction appelle une autre qui, à son tour, appelle la première, avec un nombre quelconque d’appels entre les deux. Vous devez définir de telles fonctions dans une `let` liaison, en utilisant le `and` mot clé pour les lier ensemble.
 
-L’exemple suivant montre deux mutuellement fonctions récursives.
+L’exemple suivant montre deux fonctions mutuellement récursives.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet4002.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet4002.fs)]
 
 ## <a name="see-also"></a>Voir aussi
 

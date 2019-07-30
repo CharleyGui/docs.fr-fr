@@ -1,17 +1,17 @@
 ---
 title: Unités de mesure
-description: Découvrez comment flottantes et de valeurs entières signées F# peuvent avoir des unités de mesure, qui sont généralement utilisées pour indiquer la longueur, le volume et masse associées.
+description: Découvrez comment les valeurs entières à virgule flottante et les entiers signés dans F# peuvent avoir des unités de mesure associées, qui sont généralement utilisées pour indiquer la longueur, le volume et la masse.
 ms.date: 05/16/2016
-ms.openlocfilehash: 217ef67912625c0a4b187a7ee13a739de811cfcb
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: f97eac9984f934c55aff8cf9f287afbc3aa098f3
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641633"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630156"
 ---
 # <a name="units-of-measure"></a>Unités de mesure
 
-Virgule flottante et de valeurs entières signées F# peuvent avoir des unités de mesure, qui sont généralement utilisées pour indiquer la longueur, volume, en série et ainsi de suite associées. À l’aide de quantités avec des unités, vous activez le compilateur de vérifier que les relations arithmétiques ont les bonnes unités, qui permet d’éviter des erreurs de programmation.
+Les valeurs de type virgule flottante F# et entier signé dans peuvent être associées à des unités de mesure, qui sont généralement utilisées pour indiquer la longueur, le volume, la masse, etc. En utilisant des quantités avec des unités, vous permettez au compilateur de vérifier que les relations arithmétiques disposent des unités appropriées, ce qui permet d’éviter les erreurs de programmation.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,65 +21,65 @@ Virgule flottante et de valeurs entières signées F# peuvent avoir des unités 
 
 ## <a name="remarks"></a>Notes
 
-Définit la syntaxe précédente *nom de l’unité* en tant qu’unité de mesure. La partie facultative permet de définir une nouvelle mesure en termes d’unités précédemment définies. Par exemple, la ligne suivante définit la mesure `cm` (centimètre).
+La syntaxe précédente définit *unit-name* comme unité de mesure. La partie facultative est utilisée pour définir une nouvelle mesure en termes d’unités précédemment définies. Par exemple, la ligne suivante définit la mesure `cm` (centimètre).
 
 ```fsharp
 [<Measure>] type cm
 ```
 
-La ligne suivante définit la mesure `ml` (millilitre) comme un centimètre cube (`cm^3`).
+La ligne suivante définit la mesure `ml` (milliliter) en tant que centimètre cube`cm^3`().
 
 ```fsharp
 [<Measure>] type ml = cm^3
 ```
 
-Dans la syntaxe précédente, *mesure* est une formule qui implique des unités. Dans les formules qui impliquent des unités, puissances intégrales sont prises en charge (positives et négatives), les espaces entre les unités indiquent un produit des deux unités, `*` indique également un produit d’unités, et `/` indique un quotient d’unités. Pour une unité réciproque, vous pouvez utiliser une puissance entier négatif ou une `/` qui indique une séparation entre le numérateur et le dénominateur d’une formule d’unité. Plusieurs unités dans le dénominateur doivent être placées entre parenthèses. Unités séparant par des espaces après un `/` sont interprétées comme faisant partie du dénominateur, mais aucune unité suivant un `*` sont interprétées comme faisant partie du numérateur.
+Dans la syntaxe précédente, *measure* est une formule qui implique des unités. Dans les formules qui impliquent des unités, les puissances entières sont prises en charge (positives et négatives), les espaces entre les `*` unités indiquent un produit des deux unités, `/` indiquent également un produit d’unités et indiquent un quotient d’unités. Pour une unité réciproque, vous pouvez utiliser un entier négatif ou une `/` valeur qui indique une séparation entre le numérateur et le dénominateur d’une formule d’unité. Les unités multiples dans le dénominateur doivent être placées entre parenthèses. Les unités séparées par des espaces `/` après un sont interprétées comme faisant partie du dénominateur, mais toutes les `*` unités qui suivent un sont interprétées comme faisant partie du numérateur.
 
-Vous pouvez utiliser 1 dans les expressions d’unité, soit seul pour indiquer une quantité sans dimension, ou avec d’autres unités, comme dans le numérateur. Par exemple, les unités pour un taux sont écrites en tant que `1/s`, où `s` indique les secondes. Parenthèses ne sont pas utilisées dans les formules d’unité. Vous ne spécifiez pas de constantes de conversion numérique dans les formules d’unité ; Toutefois, vous pouvez définir séparément des constantes de conversion avec des unités et les utiliser dans les calculs de vérification des unités.
+Vous pouvez utiliser 1 dans les expressions d’unité, soit pour indiquer une quantité sans dimension, soit avec d’autres unités, comme dans le numérateur. Par exemple, les unités d’un taux sont écrites sous la `1/s`forme, `s` où indique des secondes. Les parenthèses ne sont pas utilisées dans les formules d’unité. Vous ne spécifiez pas de constantes de conversion numérique dans les formules d’unité; Toutefois, vous pouvez définir des constantes de conversion avec des unités séparément et les utiliser dans des calculs Check Unit.
 
-Formules d’unité qui ont la même signification peuvent être écrit de différentes manières équivalentes. Par conséquent, le compilateur convertit les formules d’unité dans un format cohérent, qui convertit des puissances négatives réciproques, unités de groupes en un seul numérateur et dénominateur et les trie par ordre alphabétique les unités dans le numérateur et dénominateur.
+Les formules d’unités qui signifient la même chose peuvent être écrites de différentes façons équivalentes. Par conséquent, le compilateur convertit les formules d’unités sous une forme cohérente, ce qui convertit les puissances négatives en valeurs réciproques, regroupe les unités en un seul numérateur et un dénominateur, et alphabetizes les unités dans le numérateur et le dénominateur.
 
-Par exemple, les formules d’unité `kg m s^-2` et `m /s s * kg` sont convertis en `kg m/s^2`.
+Par exemple, les formules `kg m s^-2` d’unité et `m /s s * kg` sont toutes deux `kg m/s^2`converties en.
 
-Vous utilisez des unités de mesure dans les expressions virgule flottante. À l’aide de nombres à virgule flottante avec unités associées de mesure ajoute un autre niveau de sécurité de type et permet d’éviter les erreurs d’incompatibilité unité qui peuvent se produire dans les formules lorsque vous utilisez des nombres à virgule flottante faiblement typée. Si vous écrivez flottante expression point qui utilise des unités, les unités dans l’expression doivent correspondre.
+Les unités de mesure sont utilisées dans les expressions à virgule flottante. L’utilisation de nombres à virgule flottante avec des unités de mesure associées ajoute un autre niveau de sécurité de type et permet d’éviter les erreurs d’incompatibilité d’unités qui peuvent se produire dans les formules lorsque vous utilisez des nombres à virgule flottante faiblement typés. Si vous écrivez une expression à virgule flottante qui utilise des unités, les unités de l’expression doivent correspondre.
 
-Vous pouvez annoter des littéraux avec une formule d’unité figurant entre crochets, comme indiqué dans les exemples suivants.
+Vous pouvez annoter des littéraux à l’aide d’une formule d’unité entre crochets pointus, comme indiqué dans les exemples suivants.
 
 ```fsharp
 1.0<cm>
 55.0<miles/hour>
 ```
 
-Vous ne placez pas d’espace entre le nombre et le crochet angulaire ; Toutefois, vous pouvez inclure un suffixe littéral comme `f`, comme dans l’exemple suivant.
+Vous ne placez pas d’espace entre le nombre et le Chevron; Toutefois, vous pouvez inclure un suffixe littéral, `f`tel que, comme dans l’exemple suivant.
 
 ```fsharp
 // The f indicates single-precision floating point.
 55.0f<miles/hour>
 ```
 
-Une telle annotation modifie le type du littéral de son type primitif (tel que `float`) en un type dimensionné, tel que `float<cm>` ou, dans ce cas, `float<miles/hour>`. Une annotation d’unité `<1>` indique une quantité sans dimension et son type est équivalent au type primitif sans paramètre d’unité.
+Une telle annotation modifie le type du littéral de son type primitif (tel que `float`) en un type dimensionné, tel que `float<cm>` ou, dans ce cas, `float<miles/hour>`. Une annotation d’unité `<1>` de indique une quantité sans dimension, et son type est équivalent au type primitif sans paramètre d’unité.
 
-Le type d’une unité de mesure est une virgule flottante ou signés de type intégral avec une annotation d’unité supplémentaire, indiquée entre crochets. Par conséquent, lorsque vous écrivez le type d’une conversion de `g` (g) à `kg` (kilogrammes), vous décrivez les types comme suit.
+Le type d’une unité de mesure est une virgule flottante ou un type intégral signé avec une annotation d’unité supplémentaire, indiquée entre crochets. Ainsi, lorsque vous écrivez le type d’une conversion de `g` (grammes) à `kg` (kilogrammes), vous décrivez les types comme suit.
 
 ```fsharp
 let convertg2kg (x : float<g>) = x / 1000.0<g/kg>
 ```
 
-Unités de mesure sont utilisées pour la vérification des unités au moment de la compilation, mais ne sont pas conservées dans l’environnement d’exécution. Par conséquent, elles n’affectent pas les performances.
+Les unités de mesure sont utilisées pour la vérification des unités au moment de la compilation, mais ne sont pas conservées dans l’environnement d’exécution. Par conséquent, elles n’affectent pas les performances.
 
-Unités de mesure peuvent être appliquées à n’importe quel type, pas seulement types à virgule flottante ; Toutefois, les seuls types à virgule flottante, connecté types intégraux et les types décimaux prise en charge de dimensionner les quantités. Par conséquent, il convient uniquement pour les unités de mesure sur les types primitifs et les agrégats qui contiennent ces types primitifs.
+Les unités de mesure peuvent être appliquées à n’importe quel type, pas seulement aux types à virgule flottante; Toutefois, seuls les types à virgule flottante, les types intégraux signés et les types décimaux prennent en charge les quantités dimensionnelles. Par conséquent, il est judicieux d’utiliser des unités de mesure sur les types primitifs et sur les agrégats qui contiennent ces types primitifs.
 
 L’exemple suivant illustre l’utilisation d’unités de mesure.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6901.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6901.fs)]
 
-L’exemple de code suivant illustre comment convertir à partir d’un nombre à virgule flottante sans dimension en une valeur à virgule flottante dimensionnée. Vous multipliez simplement par 1.0, appliquant les dimensions à la version 1.0. Vous pouvez l’extraire dans une fonction comme `degreesFahrenheit`.
+L’exemple de code suivant montre comment convertir un nombre à virgule flottante sans dimension en valeur à virgule flottante dimensionnée. Vous multipliez simplement par 1,0, en appliquant les dimensions aux 1,0. Vous pouvez l’extraire dans une fonction comme `degreesFahrenheit`.
 
-En outre, lorsque vous transmettez des valeurs dimensionnées aux fonctions qui attendent des nombres à virgule flottante sans dimension, vous devez annuler les unités ou effectuer un cast en `float` à l’aide de la `float` opérateur. Dans cet exemple, vous divisez par `1.0<degC>` pour les arguments de `printf` car `printf` attend des quantités sans dimension.
+En outre, lorsque vous transmettez des valeurs dimensionnées à des fonctions qui attendent des nombres à virgule flottante sans dimension, vous devez `float` annuler les unités `float` ou effectuer un cast en à l’aide de l’opérateur. Dans cet exemple, vous divisez par `1.0<degC>` pour les arguments à `printf` , car `printf` attend des quantités sans dimension.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6902.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6902.fs)]
 
-La session de l’exemple suivant montre les entrées à ce code et sorties.
+L’exemple de session suivant montre les sorties de et les entrées de ce code.
 
 ```
 Enter a temperature in degrees Fahrenheit.
@@ -89,33 +89,33 @@ That temperature in degrees Celsius is    32.22.
 
 ## <a name="using-generic-units"></a>Utilisation d’unités génériques
 
-Vous pouvez écrire des fonctions génériques qui fonctionnent sur les données associées à une unité de mesure. Cela en spécifiant un type avec une unité générique comme un paramètre de type, comme illustré dans l’exemple de code suivant.
+Vous pouvez écrire des fonctions génériques qui opèrent sur des données qui ont une unité de mesure associée. Pour ce faire, vous devez spécifier un type avec une unité générique comme paramètre de type, comme indiqué dans l’exemple de code suivant.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6903.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6903.fs)]
 
-## <a name="creating-aggregate-types-with-generic-units"></a>Créer des Types d’agrégats avec unités génériques
+## <a name="creating-aggregate-types-with-generic-units"></a>Création de types d’agrégats avec des unités génériques
 
-Le code suivant montre comment créer un type d’agrégation qui se compose de valeurs à virgule flottante individuels qui ont des unités qui sont génériques. Ainsi, un seul type qui fonctionne avec un large éventail d’unités doit être créé. Unités génériques conservent également, la sécurité de type en veillant à ce qu’un type générique qui a un ensemble d’unités est un autre type que le même type générique avec un autre ensemble d’unités. La base de cette technique est que le `Measure` attribut peut être appliqué au paramètre de type.
+Le code suivant montre comment créer un type d’agrégat qui se compose de valeurs à virgule flottante individuelles qui ont des unités génériques. Cela permet de créer un type unique qui fonctionne avec diverses unités. En outre, les unités génériques préservent la cohérence des types en s’assurant qu’un type générique qui a un ensemble d’unités est un type différent du même type générique avec un autre ensemble d’unités. La base de cette technique est que l' `Measure` attribut peut être appliqué au paramètre de type.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6904.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6904.fs)]
 
-## <a name="units-at-runtime"></a>Unités lors de l’exécution
+## <a name="units-at-runtime"></a>Unités au moment de l’exécution
 
-Unités de mesure sont utilisées pour la vérification de type statique. Lorsque des valeurs à virgule flottante sont compilées, les unités de mesure sont éliminées, par conséquent, les unités sont perdues au moment de l’exécution. Par conséquent, toute tentative pour implémenter des fonctionnalités qui dépendent de la vérification des unités au moment de l’exécution n’est pas possible. Par exemple, mise en œuvre un `ToString` (fonction) pour imprimer le nombre d’unités n’est pas possible.
+Les unités de mesure sont utilisées pour la vérification de type statique. Lorsque les valeurs à virgule flottante sont compilées, les unités de mesure sont éliminées, de sorte que les unités sont perdues au moment de l’exécution. Par conséquent, toute tentative d’implémentation de la fonctionnalité qui dépend de la vérification des unités au moment de l’exécution n’est pas possible. Par exemple, l’implémentation `ToString` d’une fonction pour imprimer les unités n’est pas possible.
 
 ## <a name="conversions"></a>Conversions
 
-Pour convertir un type qui a des unités (par exemple, `float<'u>`) à un type qui n’a pas d’unités, vous pouvez utiliser la fonction de conversion standard. Par exemple, vous pouvez utiliser `float` pour convertir un `float` valeur qui n’a pas d’unités, comme indiqué dans le code suivant.
+Pour convertir un type qui a des unités (par exemple `float<'u>`,) en un type qui n’a pas d’unités, vous pouvez utiliser la fonction de conversion standard. Par exemple, vous pouvez utiliser `float` pour convertir en une `float` valeur qui n’a pas d’unités, comme illustré dans le code suivant.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6905.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6905.fs)]
 
-Pour convertir une valeur sans unité en une valeur qui a des unités, vous pouvez multiplier par une valeur de 1 ou 1.0 annotée avec les unités appropriées. Toutefois, pour écrire des couches d’interopérabilité, il existe également certaines fonctions explicites que vous pouvez utiliser pour convertir des valeurs sans unité avec les unités. Il s’agit dans le [Microsoft.FSharp.Core.LanguagePrimitives](https://msdn.microsoft.com/library/69d08ac5-5d51-4c20-bf1e-850fd312ece3) module. Par exemple, pour convertir un sans unité `float` à un `float<cm>`, utilisez [FloatWithMeasure](https://msdn.microsoft.com/library/69520bc7-d67b-46b8-9004-7cac9646b8d9), comme illustré dans le code suivant.
+Pour convertir une valeur sans unité en une valeur qui a des unités, vous pouvez multiplier par une valeur 1 ou 1,0 qui est annotée avec les unités appropriées. Toutefois, pour écrire des couches d’interopérabilité, il existe également des fonctions explicites que vous pouvez utiliser pour convertir des valeurs sans unité en valeurs avec unités. Celles-ci se trouvent dans le module [Microsoft. FSharp. Core. LanguagePrimitives](https://msdn.microsoft.com/library/69d08ac5-5d51-4c20-bf1e-850fd312ece3) . Par exemple, pour effectuer une conversion d’une `float` unité sans `float<cm>`unité en, utilisez [FloatWithMeasure](https://msdn.microsoft.com/library/69520bc7-d67b-46b8-9004-7cac9646b8d9), comme indiqué dans le code suivant.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6906.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6906.fs)]
 
-## <a name="units-of-measure-in-the-f-core-library"></a>Unités de mesure dans le F# bibliothèque principale
+## <a name="units-of-measure-in-the-f-core-library"></a>Unités de mesure dans la F# bibliothèque principale
 
-Une unité de bibliothèque est disponible dans le `FSharp.Data.UnitSystems.SI` espace de noms. Il inclut des unités SI dans les deux leur forme de symbole (comme `m` compteur) dans le `UnitSymbols` sub-espace de noms et leur nom complet (comme `meter` compteur) dans le `UnitNames` sub-espace de noms.
+Une bibliothèque d’unités est disponible dans `FSharp.Data.UnitSystems.SI` l’espace de noms. Elle comprend des unités si dans leur forme de symbole ( `m` comme pour le compteur) `UnitSymbols` dans le sous-espace de noms, et leur `meter` nom complet (comme pour `UnitNames` le compteur) dans le sous-espace de noms.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,17 +1,17 @@
 ---
 title: 'Exceptions : invalidArg (fonction)'
-description: Découvrez comment la F# « invalidArg » fonction génère une exception d’argument.
+description: Découvrez comment la F# fonction «invalidArg» génère une exception d’argument.
 ms.date: 05/16/2016
-ms.openlocfilehash: 1f0cbc9b7e805822544d6d54bc1fc69adf82967a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 010dbfe313f539093b4ee7a19984ef54500b072d
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645499"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630306"
 ---
 # <a name="exceptions-the-invalidarg-function"></a>Exceptions : invalidArg (fonction)
 
-Le `invalidArg` fonction génère une exception d’argument.
+La `invalidArg` fonction génère une exception d’argument.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,13 +21,13 @@ invalidArg parameter-name error-message-string
 
 ## <a name="remarks"></a>Notes
 
-Le nom de paramètre dans la syntaxe précédente est une chaîne avec le nom du paramètre dont l’argument n’est pas valide. Le *chaîne du message d’erreur* est une chaîne littérale ou une valeur de type `string`. Il devient le `Message` propriété de l’objet exception.
+Le nom du paramètre dans la syntaxe précédente est une chaîne avec le nom du paramètre dont l’argument n’était pas valide. La *chaîne de message d’erreur* est une chaîne littérale ou une valeur de `string`type. Il devient la `Message` propriété de l’objet exception.
 
-L’exception générée par `invalidArg` est un `System.ArgumentException` exception. Le code suivant illustre l’utilisation de `invalidArg` pour lever une exception.
+L’exception générée par `invalidArg` est une `System.ArgumentException` exception. Le code suivant illustre l’utilisation de `invalidArg` pour lever une exception.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet6101.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6101.fs)]
 
-La sortie est la suivante, suivie d’une trace de pile (non illustrée).
+La sortie est la suivante, suivie d’une trace de la pile (non affichée).
 
 ```
 December
@@ -39,7 +39,7 @@ System.ArgumentException: Month parameter out of range.
 
 - [Gestion des exceptions](index.md)
 - [Types d'exceptions](exception-types.md)
-- [Exceptions : Le `try...with` Expression](the-try-with-expression.md)
-- [Exceptions : Le `try...finally` Expression](the-try-finally-expression.md)
+- [Exceptions : L' `try...with` expression](the-try-with-expression.md)
+- [Exceptions : L' `try...finally` expression](the-try-finally-expression.md)
 - [Exceptions : fonction `raise`](the-raise-function.md)
-- [Exceptions : Le `failwith` (fonction)](the-failwith-function.md)
+- [Exceptions : La `failwith` fonction](the-failwith-function.md)

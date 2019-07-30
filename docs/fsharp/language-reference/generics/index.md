@@ -1,13 +1,13 @@
 ---
 title: Génériques
-description: Découvrez comment utiliser F# fonctions génériques et les types qui vous permettent d’écrire du code qui fonctionne avec divers types sans avoir à répéter le code.
+description: Découvrez comment utiliser F# des fonctions et des types génériques, qui vous permettent d’écrire du code qui fonctionne avec divers types sans code répétitif.
 ms.date: 05/16/2016
-ms.openlocfilehash: e30b00343e48d3a8abd51f62c003ba0d1984db18
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 47eed0b8e074cfb591e6d8e2c382b9ea6a6e97f0
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641856"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630613"
 ---
 # <a name="generics"></a>Génériques
 
@@ -49,27 +49,27 @@ Quand le compilateur F# déduit les types dans votre code, il traite automatiqu
 
 Dans l’exemple de code suivant, `makeList` est générique, même si ni celui-ci ni ses paramètres ne sont explicitement déclarés comme étant génériques.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1700.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1700.fs)]
 
 La signature de la fonction est déduite pour être `'a -> 'a -> 'a list`. Dans cet exemple, notez que `a` et `b` sont déduits pour avoir le même type. Cela est dû au fait qu’ils sont regroupés dans une liste et que tous les éléments d’une même liste doivent être du même type.
 
 Vous pouvez également affecter un caractère générique à une fonction en utilisant la syntaxe contenant des guillemets simples dans une annotation de type, afin d’indiquer qu’un type de paramètre est un paramètre de type générique. Dans le code suivant, `function1` est générique car ses paramètres sont déclarés de cette manière, comme des paramètres de type.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1701.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1701.fs)]
 
 ## <a name="explicitly-generic-constructs"></a>Constructions explicitement génériques
 
 Vous pouvez également rendre une fonction générique en déclarant explicitement ses paramètres de type entre crochets pointus (`<type-parameter>`). Le code suivant illustre ce comportement :
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1703.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1703.fs)]
 
 ## <a name="using-generic-constructs"></a>Utilisation de constructions génériques
 
-Quand vous utilisez des fonctions ou des méthodes génériques, il est possible que vous n’ayez pas à spécifier les arguments de type. Le compilateur utilise l’inférence de type pour déduire les arguments de type appropriés. S’il reste une ambiguïté, vous pouvez fournir des arguments de type figurant entre crochets, pour séparer plusieurs arguments de type par des virgules.
+Quand vous utilisez des fonctions ou des méthodes génériques, il est possible que vous n’ayez pas à spécifier les arguments de type. Le compilateur utilise l’inférence de type pour déduire les arguments de type appropriés. S’il y a toujours une ambiguïté, vous pouvez fournir des arguments de type entre crochets pointus, en séparant plusieurs arguments de type par des virgules.
 
 Le code suivant présente l’utilisation des fonctions définies aux sections précédentes.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1702.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1702.fs)]
 
 > [!NOTE]
 > Il existe deux manières de faire référence à un type générique sur la base du nom. Par exemple, `list<int>` et `int list` sont deux manières de faire référence à un type générique `list` qui dispose d’un argument de type unique `int`. Cette dernière forme n’est traditionnellement utilisée qu’avec des types F# intégrés, comme `list` et `option`. S’il existe plusieurs arguments de type, vous utilisez en principe la syntaxe `Dictionary<int, string>`, mais vous pouvez également utiliser la syntaxe `(int, string) Dictionary`.
@@ -78,7 +78,7 @@ Le code suivant présente l’utilisation des fonctions définies aux sections p
 
 Pour spécifier qu’un argument de type doit être déduit par le compilateur, vous pouvez utiliser le trait de soulignement ou le caractère générique (`_`) à la place d’un argument de type nommé. Ceci est illustré dans le code suivant.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1704.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1704.fs)]
 
 ## <a name="constraints-in-generic-types-and-functions"></a>Contraintes concernant les types et fonctions génériques
 
@@ -90,7 +90,7 @@ Il existe deux genres de paramètres de type qui peuvent être utilisés dans de
 
 ## <a name="examples"></a>Exemples
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1705.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1705.fs)]
 
 ## <a name="see-also"></a>Voir aussi
 

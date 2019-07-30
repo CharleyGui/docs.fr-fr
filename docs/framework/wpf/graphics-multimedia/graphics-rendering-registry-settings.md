@@ -8,12 +8,12 @@ helpviewer_keywords:
 - troubleshooting graphics rendering [WPF]
 - graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-ms.openlocfilehash: b1c61aa333c428e5cb811a5d19469516cbb813e3
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: c3544769480a45068be0ca64e90f91253daf3e16
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663156"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629779"
 ---
 # <a name="graphics-rendering-registry-settings"></a>Paramètres du Registre pour le rendu des graphiques
 Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le rendu des graphiques [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] qui affectent les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -33,7 +33,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
 |Paramètre|Description|  
 |-------------|-----------------|  
 |**Option Désactiver l’accélération matérielle**|Spécifie si l’accélération matérielle doit être activée.|  
-|**Valeur d’échantillonnage multiple maximale**|Spécifie le degré d’échantillonnage multiple pour le contenu 3D de l’anticrénelage.|  
+|**Valeur d’échantillonnage multiple maximale**|Spécifie le degré d’échantillonnage multiple pour l’anticrénelage du contenu 3D.|  
 |**Paramètre Date de pilote vidéo requise**|Spécifie si le système désactive l’accélération matérielle pour les pilotes commercialisés avant novembre 2004.|  
 |**Option Utiliser le rastériseur de référence**|Spécifie si [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] doit utiliser le rastériseur de référence.|  
   
@@ -57,9 +57,9 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\MaxMultisampleType`|DWORD|  
   
- Le **valeur d’échantillonnage multiple maximale** vous permet d’ajuster la quantité maximale de l’anticrénelage du contenu 3D. Ce niveau permet de désactiver l’anticrénelage 3D dans [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] ou activez-le dans [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)].  
+ La **valeur d’échantillonnage multiples maximale** vous permet d’ajuster la quantité maximale d’anticrénelage du contenu 3D. Utilisez ce niveau pour désactiver l’anticrénelage 3D dans [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] ou l’activer dans. [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)]  
   
- La **valeur d’échantillonnage multiple maximale** est une valeur DWORD comprise entre 0 et 16. La valeur 0 spécifie que l’anticrénelage d’échantillonnage multiple du contenu 3D doit être désactivé, et la valeur 16 essaye d’utiliser jusqu’à 16 anticrénelages d’échantillonnage multiple, si cela est pris en charge par la carte vidéo. Prenez garde que définissant cette valeur de clé de Registre sur les ordinateurs à l’aide de pilotes XPDM que les applications utilisent une grande quantité de mémoire vidéo supplémentaire, diminuer les performances de rendu 3D, et est susceptible d’introduire la stabilité et les erreurs de rendu problèmes.  
+ La **valeur d’échantillonnage multiple maximale** est une valeur DWORD comprise entre 0 et 16. La valeur 0 spécifie que l’anticrénelage d’échantillonnage multiple du contenu 3D doit être désactivé, et la valeur 16 essaye d’utiliser jusqu’à 16 anticrénelages d’échantillonnage multiple, si cela est pris en charge par la carte vidéo. Veillez à ce que la définition de cette valeur de clé de Registre sur les ordinateurs utilisant des pilotes XPDM entraîne l’utilisation par les applications d’une grande quantité de mémoire vidéo supplémentaire, de la diminution des performances du rendu 3D et de la possibilité d’introduire des erreurs de rendu et de la stabilité. problèmes.  
   
  Si cette clé de Registre n’est pas définie, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise la valeur par défaut de 0 pour les pilotes XPDM et de 4 pour les pilotes WDDM.  
   
@@ -68,7 +68,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
   
 |Clé du Registre|Type de valeur|  
 |------------------|----------------|  
-|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\RequiredVideoDriverDate`|Chaîne|  
+|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\RequiredVideoDriverDate`|String|  
   
  En novembre 2004, [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] a publié une nouvelle version des instructions de test de pilote. Les pilotes créés après cette date offrent une meilleure stabilité. Par défaut, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise le pipeline d’accélération matérielle pour ces pilotes et revient au rendu logiciel pour les pilotes XPDM publiés avant cette date.  
   
@@ -89,7 +89,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\UseReferenceRasterizer`|DWORD|  
   
- **L’option Utiliser le rastériseur de référence** vous permet de forcer [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans un mode de rendu matériel simulé pour le débogage : [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] passe en mode matériel, mais utilise le rastériseur logiciel de référence [!INCLUDE[TLA#tla_d3d](../../../../includes/tlasharptla-d3d-md.md)], d3dref9.dll, au lieu d’un appareil matériel.  
+ L' **option utiliser le rastériseur de référence** vous permet de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] forcer un mode de rendu matériel simulé pour le débogage: [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] passe en mode matériel, mais utilise le rastériseur logiciel de référence Microsoft Direct3D, d3dref9. dll, au lieu d’un périphérique matériel réel.  
   
  Le rastériseur de référence est très lent, mais contourne votre pilote vidéo pour éviter tout problème de rendu provoqué par les problèmes liés au pilote. Pour cette raison, vous pouvez utiliser le rastériseur de référence pour déterminer si les problèmes de rendu sont provoqués par le pilote vidéo. Le fichier d3dref9.dll doit être dans un emplacement où l’application peut y accéder, comme n’importe quel emplacement dans le chemin d’accès système ou dans le répertoire local de l’application.  
   

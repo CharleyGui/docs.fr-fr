@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LocBaml tool [WPF]
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
-ms.openlocfilehash: 68bb3b8cd080e5b454776433e65027b7d18e7c3b
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 749ba2dd9318976289d9d4140cfadd711e0548d4
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331556"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629874"
 ---
 # <a name="how-to-localize-an-application"></a>Procédure : Localiser une application
 Ce didacticiel explique comment créer une application localisée à l'aide de l'outil LocBaml.  
@@ -66,7 +66,7 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
 ## <a name="create-the-neutral-language-resources-satellite-assembly"></a>Créer l'assembly satellite de ressources de langage neutre  
  Après avoir configuré l'application pour générer un assembly satellite de ressources de langage neutre, vous devez générer l'application. Cela a pour effet de générer l'assembly d'application principal, ainsi que l'assembly satellite de ressources de langage neutre dont a besoin LocBaml pour la localisation. Pour générer l'application :  
   
-1. Compilez HelloApp pour créer une [!INCLUDE[TLA#tla_dll](../../../../includes/tlasharptla-dll-md.md)] :  
+1. Compilez HelloApp pour créer une bibliothèque de liens dynamiques (DLL):  
   
      **msbuild helloapp.csproj**  
   
@@ -91,7 +91,7 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
   
 4. Les options que vous pouvez spécifier pendant l'exécution de LocBaml sont les suivantes :  
   
-    - **Parse** ou **-p:** Analyse le BAML, les ressources ou [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] les fichiers pour générer un fichier. csv ou. txt.  
+    - **Parse** ou **-p:** Analyse les fichiers BAML, les ressources ou les DLL pour générer un fichier. csv ou. txt.  
   
     - **générer** ou **-g:** Génère un fichier binaire localisé à l’aide d’un fichier traduit.  
   

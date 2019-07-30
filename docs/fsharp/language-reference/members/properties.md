@@ -1,17 +1,17 @@
 ---
 title: Properties
-description: En savoir plus sur F# propriétés, qui sont des membres qui représentent des valeurs associées à un objet.
+description: En savoir F# plus sur les propriétés, qui sont des membres qui représentent des valeurs associées à un objet.
 ms.date: 05/16/2016
-ms.openlocfilehash: bf605ee1135bd3b3561bde9a8ae66353497931b0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c202927fd0022e042703640cd55fb632c7e36068
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61666363"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627416"
 ---
 # <a name="properties"></a>Properties
 
-*Propriétés* sont des membres qui représentent des valeurs associées à un objet.
+Les *Propriétés* sont des membres qui représentent des valeurs associées à un objet.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -57,17 +57,17 @@ with set parameter =
 
 ## <a name="remarks"></a>Notes
 
-Propriétés représentent la » a un « relation dans la programmation orientée objet, qui représente les données qui sont associé à des instances d’objet ou, pour les propriétés statiques, avec le type.
+Les propriétés représentent la relation «has a» dans la programmation orientée objet, représentant les données associées aux instances d’objet ou, pour les propriétés statiques, avec le type.
 
-Vous pouvez déclarer des propriétés de deux manières, selon si vous souhaitez spécifier explicitement la valeur sous-jacente (également appelée magasin de stockage) pour la propriété, ou si vous souhaitez permettre au compilateur de générer automatiquement le magasin de stockage pour vous. En règle générale, vous devez utiliser le mode plus explicite si la propriété a une implémentation non triviale et automatique lorsque la propriété est simplement un wrapper simple pour une valeur ou une variable. Pour déclarer explicitement une propriété, utilisez le `member` mot clé. Cette syntaxe déclarative est suivie par la syntaxe qui spécifie le `get` et `set` méthodes, également nommés *accesseurs*. Les formes de la syntaxe explicite indiquée dans la section syntaxe sont utilisés pour les propriétés en lecture/écriture, en lecture seule et en écriture seule. Pour les propriétés en lecture seule, vous définissez uniquement un `get` méthode ; pour les propriétés en écriture seule, définissez uniquement un `set` (méthode). Notez que lorsqu’une propriété a les deux `get` et `set` accesseurs, l’autre syntaxe vous permet de spécifier les attributs et les modificateurs d’accessibilité qui sont différents pour chaque accesseur, comme indiqué dans le code suivant.
+Vous pouvez déclarer des propriétés de deux façons, selon que vous souhaitez spécifier explicitement la valeur sous-jacente (également appelée magasin de stockage) pour la propriété, ou si vous souhaitez autoriser le compilateur à générer automatiquement le magasin de stockage pour vous. En général, vous devez utiliser la méthode la plus explicite si la propriété a une implémentation non triviale et la façon automatique lorsque la propriété est simplement un wrapper simple pour une valeur ou une variable. Pour déclarer explicitement une propriété, utilisez le `member` mot clé. Cette syntaxe déclarative est suivie par la syntaxe qui spécifie les `get` méthodes `set` et, également appelées *accesseurs*. Les différentes formes de syntaxe explicite indiquées dans la section syntaxe sont utilisées pour les propriétés en lecture/écriture, en lecture seule et en écriture seule. Pour les propriétés en lecture seule, vous définissez uniquement `get` une méthode; pour les propriétés en écriture seule, définissez `set` uniquement une méthode. Notez que lorsqu’une propriété possède des `get` accesseurs et `set` , l’autre syntaxe vous permet de spécifier des attributs et des modificateurs d’accessibilité qui sont différents pour chaque accesseur, comme indiqué dans le code suivant.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3201.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3201.fs)]
 
-Pour les propriétés en lecture/écriture, qui ont tous deux un `get` et `set` (méthode), l’ordre des `get` et `set` peut être inversée. Vous pouvez également fournir la syntaxe indiquée pour `get` uniquement et la syntaxe indiquée pour `set` uniquement au lieu d’utiliser la syntaxe combinée. Cela facilite pour commenter l’individu `get` ou `set` (méthode), si ce n’est que vous pouvez être amené à faire. Cette alternative à l’utilisation de la syntaxe combinée est indiquée dans le code suivant.
+Pour les propriétés en lecture/écriture, qui ont `get` à `set` la fois une méthode et `get` , `set` l’ordre de et peut être inversé. Vous pouvez également fournir la syntaxe indiquée pour `get` uniquement et la syntaxe indiquée pour `set` uniquement au lieu d’utiliser la syntaxe combinée. Cela simplifie la procédure de commentaire de la personne `get` ou `set` de la méthode, si c’est une opération que vous devrez peut-être faire. Cette alternative à l’utilisation de la syntaxe combinée est illustrée dans le code suivant.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3203.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3203.fs)]
 
-Cette suspension, les données pour les propriétés sont appelées des valeurs privé *magasins de stockage*. Pour que le compilateur de créer le magasin de stockage automatiquement, utilisez les mots clés `member val`, omettez l’auto-identificateur, puis fournir une expression pour initialiser la propriété. Si la propriété est mutable, incluez `with get, set`. Par exemple, le type de classe suivant inclut deux propriétés implémentées automatiquement. `Property1` est en lecture seule et est initialisé à l’argument fourni au constructeur principal, et `Property2` est une propriété définissable initialisée à une chaîne vide :
+Les valeurs privées qui contiennent les données pour les propriétés sont appelées *magasins*de stockage. Pour que le compilateur crée automatiquement le magasin de stockage, utilisez les mots `member val`clés, omettez l’auto-identificateur, puis fournissez une expression pour initialiser la propriété. Si la propriété doit être mutable, incluez `with get, set`. Par exemple, le type de classe suivant comprend deux propriétés implémentées automatiquement. `Property1`est en lecture seule et est initialisé à l’argument fourni au constructeur principal, et `Property2` est une propriété définissable initialisée à une chaîne vide:
 
 ```fsharp
 type MyClass(property1 : int) =
@@ -75,7 +75,7 @@ member val Property1 = property1
 member val Property2 = "" with get, set
 ```
 
-Propriétés implémentées automatiquement font partie de l’initialisation d’un type, afin qu’ils doivent figurer avant les autres définitions de membre, comme `let` liaisons et `do` liaisons dans une définition de type. Notez que l’expression qui initialise une propriété implémentée automatiquement n’est évaluée lors de l’initialisation, et non chaque fois que la propriété est accessible. Ce comportement diffère du comportement d’une propriété implémentée explicitement. Ce que cela signifie qui est le code pour initialiser ces propriétés est ajouté au constructeur de classe. Prenons le code suivant qui illustre cette différence :
+Les propriétés implémentées automatiquement font partie de l’initialisation d’un type. elles doivent donc être incluses avant toute autre définition de membre, `let` tout comme les `do` liaisons et les liaisons dans une définition de type. Notez que l’expression qui initialise une propriété implémentée automatiquement n’est évaluée qu’au moment de l’initialisation, et non à chaque accès à la propriété. Ce comportement diffère du comportement d’une propriété implémentée explicitement. Cela signifie que le code permettant d’initialiser ces propriétés est ajouté au constructeur d’une classe. Prenons le code suivant qui illustre cette différence:
 
 ```fsharp
 type MyClass() =
@@ -100,48 +100,48 @@ class1.ExplicitProperty = 978922705
 class1.ExplicitProperty = 1131210765
 ```
 
-La sortie du code précédent montre que la valeur de AutoProperty est inchangée lorsqu’elle est appelée à plusieurs reprises, tandis que le ExplicitProperty change chaque fois qu’elle est appelée. Cet exemple montre que l’expression pour une propriété implémentée automatiquement n’est pas évaluée à chaque fois, en l’état de la méthode d’accesseur Get pour la propriété explicite.
+La sortie du code précédent indique que la valeur de la propriété autoproperty est inchangée quand elle est appelée à plusieurs reprises, tandis que le ExplicitProperty change chaque fois qu’elle est appelée. Cela démontre que l’expression pour une propriété implémentée automatiquement n’est pas évaluée à chaque fois, comme c’est le cas de la méthode Getter pour la propriété Explicit.
 
 >[!WARNING]
->Il existe certaines bibliothèques, telles que de Entity Framework (`System.Data.Entity`) qui effectuent des opérations personnalisées dans les constructeurs de classe de base qui ne fonctionnent pas correctement avec l’initialisation des propriétés implémentées automatiquement. Dans ce cas, essayez d’utiliser des propriétés explicites.
+>Certaines bibliothèques, telles que le Entity Framework (`System.Data.Entity`), effectuent des opérations personnalisées dans les constructeurs de classe de base qui ne fonctionnent pas correctement avec l’initialisation des propriétés implémentées automatiquement. Dans ce cas, essayez d’utiliser des propriétés explicites.
 
-Propriétés peuvent être membres de classes, des structures, des unions discriminées, des enregistrements, des interfaces et des extensions de type et peuvent également être définies dans les expressions d’objet.
+Les propriétés peuvent être des membres de classes, de structures, d’unions discriminées, d’enregistrements, d’interfaces et d’extensions de type. elles peuvent également être définies dans des expressions d’objet.
 
-Attributs peuvent être appliqués aux propriétés. Pour appliquer un attribut à une propriété, écrire l’attribut sur une ligne distincte avant la propriété. Pour plus d’informations, consultez [Attributs](../attributes.md).
+Les attributs peuvent être appliqués aux propriétés. Pour appliquer un attribut à une propriété, écrivez l’attribut sur une ligne distincte avant la propriété. Pour plus d’informations, consultez [Attributs](../attributes.md).
 
-Par défaut, les propriétés sont publiques. Les modificateurs d’accessibilité peuvent également être appliqués aux propriétés. Pour appliquer un modificateur d’accessibilité, ajoutez-le immédiatement avant le nom de la propriété si elle est censée s’appliquent aux deux le `get` et `set` méthodes ; l’ajouter avant le `get` et `set` mots clés si une accessibilité différente est obligatoire pour chaque accesseur. Le *-modificateur d’accessibilité* peut prendre l’une des opérations suivantes : `public`, `private`, `internal`. Pour plus d’informations, consultez [Contrôle d’accès](../access-control.md).
+Par défaut, les propriétés sont publiques. Les modificateurs d’accessibilité peuvent également être appliqués aux propriétés. Pour appliquer un modificateur d’accessibilité, ajoutez-le immédiatement avant le nom de la propriété s’il est destiné à s’appliquer `get` aux `set` deux méthodes et. Ajoutez- `get` le `set` avant les mots clés et si une accessibilité différente est obligatoire pour chaque accesseur. Le *modificateur Accessibility* peut être l’un des suivants: `public`, `private`, `internal`. Pour plus d’informations, consultez [Contrôle d’accès](../access-control.md).
 
-Les implémentations de propriété sont exécutées à chaque accès à une propriété.
+Les implémentations de propriétés sont exécutées chaque fois qu’un utilisateur accède à une propriété.
 
-## <a name="static-and-instance-properties"></a>Statique et les propriétés de l’Instance
+## <a name="static-and-instance-properties"></a>Propriétés statiques et d’instance
 
-Propriétés peuvent être statiques ou propriétés de l’instance. Propriétés statiques peuvent être appelées sans une instance et sont utilisées pour les valeurs associées de type, pas avec des objets individuels. Pour les propriétés statiques, omettez l’auto-identificateur. L’auto-identificateur est requis pour les propriétés de l’instance.
+Les propriétés peuvent être des propriétés statiques ou d’instance. Les propriétés statiques peuvent être appelées sans instance et sont utilisées pour les valeurs associées au type, et non avec des objets individuels. Pour les propriétés statiques, omettez l’auto-identificateur. L’auto-identificateur est requis pour les propriétés d’instance.
 
-La définition de propriété statique suivante est basée sur un scénario dans lequel vous avez un champ statique `myStaticValue` qui est le magasin de stockage pour la propriété.
+La définition de propriété statique suivante est basée sur un scénario dans lequel vous avez un champ `myStaticValue` statique qui est le magasin de stockage pour la propriété.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3204.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3204.fs)]
 
-Propriétés peuvent être également de type tableau, auquel cas elles sont appelées *des propriétés indexées*. Pour plus d’informations, consultez [propriétés indexées](indexed-properties.md).
+Les propriétés peuvent également être de type tableau, auquel cas elles sont appelées *propriétés indexées*. Pour plus d’informations, consultez [propriétés indexées](indexed-properties.md).
 
 ## <a name="type-annotation-for-properties"></a>Annotation de type pour les propriétés
 
-Dans de nombreux cas, le compilateur a suffisamment d’informations pour déduire le type d’une propriété du type de magasin de stockage, mais vous pouvez définir explicitement le type en ajoutant une annotation de type.
+Dans de nombreux cas, le compilateur dispose de suffisamment d’informations pour déduire le type d’une propriété à partir du type du magasin de stockage, mais vous pouvez définir le type explicitement en ajoutant une annotation de type.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3205.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3205.fs)]
 
-## <a name="using-property-set-accessors"></a>À l’aide de la propriété des accesseurs set
+## <a name="using-property-set-accessors"></a>Utilisation d’accesseurs set de propriété
 
-Vous pouvez définir des propriétés qui fournissent des `set` accesseurs à l’aide de la `<-` opérateur.
+Vous pouvez définir des propriétés qui `set` fournissent des accesseurs à `<-` l’aide de l’opérateur.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3206.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3206.fs)]
 
 La sortie est **20**.
 
 ## <a name="abstract-properties"></a>Propriétés abstraites
 
-Les propriétés peuvent être abstraites. Comme avec les méthodes, `abstract` signifie simplement qu’il existe un dispatch virtuel est associé à la propriété. Propriétés abstraites peuvent être vraiment abstraites, autrement dit, sans une définition dans la même classe. La classe qui contient une telle propriété est par conséquent une classe abstraite. Vous pouvez également abstraite peut signifier simplement qu’une propriété est virtuelle, et dans ce cas, une définition doit figurer dans la même classe. Notez que les propriétés abstraites ne doivent pas être privées, et si un accesseur est abstrait, l’autre doit également être abstraite. Pour plus d’informations sur les classes abstraites, consultez [Classes abstraites](../abstract-classes.md).
+Les propriétés peuvent être abstraites. Comme pour les méthodes `abstract` , signifie simplement qu’il existe une répartition virtuelle associée à la propriété. Les propriétés abstraites peuvent être véritablement abstraites, autrement dit, sans définition dans la même classe. La classe qui contient une telle propriété est par conséquent une classe abstraite. Abstraite peut simplement signifier qu’une propriété est virtuelle, et dans ce cas, une définition doit être présente dans la même classe. Notez que les propriétés abstraites ne doivent pas être privées et, si un accesseur est abstrait, l’autre doit également être abstraite. Pour plus d’informations sur les classes abstraites, consultez [classes abstraites](../abstract-classes.md).
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3207.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3207.fs)]
 
 ## <a name="see-also"></a>Voir aussi
 

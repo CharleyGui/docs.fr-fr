@@ -1,17 +1,17 @@
 ---
 title: Interfaces
-description: Découvrez comment F# Interfaces spécifient des jeux de membres associés qui implémentent des autres classes.
+description: Découvrez comment F# les interfaces spécifient des jeux de membres associés que d’autres classes implémentent.
 ms.date: 05/16/2016
-ms.openlocfilehash: 5b57769af6c05b83b3a112635033abf4efaca772
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 8f054a668ad0fbc2453a45883e8052471280eca3
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645376"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627652"
 ---
 # <a name="interfaces"></a>Interfaces
 
-*Interfaces* spécifient les jeux de membres connexes que d’autres classes implémentent.
+Les *interfaces* spécifient des ensembles de membres associés que d’autres classes implémentent.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -43,53 +43,53 @@ let class-name (argument-list) =
 
 ## <a name="remarks"></a>Notes
 
-Déclarations d’interface ressemblent aux déclarations de classe, à ceci près qu’aucun membre n’est implémentées. Au lieu de cela, tous les membres sont abstraits, comme indiqué par le mot clé `abstract`. Vous ne fournissez pas un corps de méthode pour les méthodes abstraites. Toutefois, vous pouvez fournir une implémentation par défaut en incluant une définition séparée du membre comme une méthode avec le `default` mot clé. Cela équivaut à la création d’une méthode virtuelle dans une classe de base dans d’autres langages .NET. Une telle méthode virtuelle peut être substituée dans les classes qui implémentent l’interface.
+Les déclarations d’interface ressemblent aux déclarations de classe, à ceci près qu’aucun membre n’est implémenté. Au lieu de cela, tous les membres sont abstraits, comme `abstract`indiqué par le mot clé. Vous ne fournissez pas de corps de méthode pour les méthodes abstraites. Toutefois, vous pouvez fournir une implémentation par défaut en incluant également une définition distincte du membre en tant que méthode avec le `default` mot clé. Cela revient à créer une méthode virtuelle dans une classe de base dans d’autres langages .NET. Une telle méthode virtuelle peut être substituée dans les classes qui implémentent l’interface.
 
-L’accessibilité par défaut pour les interfaces est `public`.
+L’accessibilité par défaut pour les `public`interfaces est.
 
-Vous pouvez éventuellement nommer chaque paramètre de méthode en utilisant normal F# syntaxe :
+Vous pouvez éventuellement attribuer un nom à chaque paramètre de méthode à F# l’aide d’une syntaxe normale:
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet24032.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet24032.fs)]
 
-Dans l’exemple ci-dessus `ISprintable` exemple, le `Print` méthode a un paramètre unique du type `string` portant le nom `format`.
+Dans l’exemple `ISprintable` ci-dessus `Print` , la méthode a un seul paramètre du `string` type portant le `format`nom.
 
-Il existe deux façons d’implémenter les interfaces : à l’aide d’expressions d’objet et à l’aide des types de classe. Dans les deux cas, l’expression de type ou un objet de classe fournit le corps de méthode pour les méthodes abstraites de l’interface. Les implémentations sont spécifiques à chaque type qui implémente l’interface. Par conséquent, les méthodes d’interface sur différents types peuvent différer entre eux.
+Il existe deux façons d’implémenter des interfaces: en utilisant des expressions d’objet et des types de classe. Dans les deux cas, le type de classe ou l’expression d’objet fournit des corps de méthode pour les méthodes abstraites de l’interface. Les implémentations sont spécifiques à chaque type qui implémente l’interface. Par conséquent, les méthodes d’interface sur des types différents peuvent être différentes les unes des autres.
 
-Les mots clés `interface` et `end`, qui marquent le début et la fin de la définition, sont facultatifs lorsque vous utilisez la syntaxe simplifiée. Si vous n’utilisez pas ces mots clés, le compilateur tente de déduire si le type est une classe ou une interface en analysant les constructions que vous utilisez. Si vous définissez un membre ou que vous utilisez la syntaxe de la classe, le type est interprété comme une classe.
+Les mots `interface` clés `end`et, qui marquent le début et la fin de la définition, sont facultatifs lorsque vous utilisez la syntaxe simplifiée. Si vous n’utilisez pas ces mots clés, le compilateur tente de déduire si le type est une classe ou une interface en analysant les constructions que vous utilisez. Si vous définissez un membre ou utilisez une autre syntaxe de classe, le type est interprété comme une classe.
 
-Style de codage .NET consiste à commencer à toutes les interfaces avec une majuscule `I`.
+Le style de codage .NET consiste à commencer toutes les interfaces en `I`majuscules.
 
-## <a name="implementing-interfaces-by-using-class-types"></a>Implémentation des Interfaces à l’aide de Types de classe
+## <a name="implementing-interfaces-by-using-class-types"></a>Implémentation d’interfaces à l’aide de types de classe
 
-Vous pouvez implémenter une ou plusieurs interfaces dans un type de classe à l’aide de la `interface` mot clé, le nom de l’interface et le `with` mot clé, suivi par les définitions de membre d’interface, comme illustré dans le code suivant.
+Vous pouvez implémenter une ou plusieurs interfaces dans un type de classe en `interface` utilisant le mot clé, le nom de l’interface `with` et le mot clé, suivis par les définitions de membres d’interface, comme indiqué dans le code suivant.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2801.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2801.fs)]
 
-Implémentations d’interface sont héritées, donc toutes les classes dérivées n’êtes pas obligé de les implémenter de nouveau.
+Les implémentations d’interface sont héritées, de sorte que toutes les classes dérivées n’ont pas besoin de les réimplémenter.
 
-## <a name="calling-interface-methods"></a>Appel de méthodes d’Interface
+## <a name="calling-interface-methods"></a>Appeler des méthodes d’interface
 
-Méthodes d’interface peuvent être appelées uniquement par le biais de l’interface, non par le biais de n’importe quel objet du type qui implémente l’interface. Par conséquent, vous devrez peut-être un upcast vers le type d’interface à l’aide de la `:>` opérateur ou la `upcast` opérateur afin d’appeler ces méthodes.
+Les méthodes d’interface peuvent être appelées uniquement par le biais de l’interface, et non par l’intermédiaire d’un objet du type qui implémente l’interface. Par conséquent, vous devrez peut-être effectuer une conversion vers le type d' `:>` interface à l' `upcast` aide de l’opérateur ou de l’opérateur pour appeler ces méthodes.
 
-Pour appeler la méthode d’interface lorsque vous avez un objet de type `SomeClass`, vous devez effectuer un upcast l’objet pour le type d’interface, comme indiqué dans le code suivant.
+Pour appeler la méthode d’interface quand vous avez un objet de `SomeClass`type, vous devez effectuer un upcast de l’objet vers le type d’interface, comme indiqué dans le code suivant.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2802.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2802.fs)]
 
 Une alternative consiste à déclarer une méthode sur l’objet qui effectue un upcast et appelle la méthode d’interface, comme dans l’exemple suivant.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2803.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2803.fs)]
 
-## <a name="implementing-interfaces-by-using-object-expressions"></a>Implémentation des Interfaces à l’aide d’Expressions d’objet
+## <a name="implementing-interfaces-by-using-object-expressions"></a>Implémentation d’interfaces à l’aide d’expressions d’objet
 
-Expressions d’objet fournissent une méthode rapide pour implémenter une interface. Elles sont utiles lorsque vous n’êtes pas obligé de créer un type nommé, et que vous souhaitez qu’un objet qui prend en charge les méthodes d’interface, sans méthodes supplémentaires. Une expression d’objet est illustrée dans le code suivant.
+Les expressions d’objet fournissent un bref moyen d’implémenter une interface. Elles sont utiles lorsque vous n’avez pas besoin de créer un type nommé et que vous souhaitez simplement un objet qui prend en charge les méthodes d’interface, sans aucune méthode supplémentaire. Une expression d’objet est illustrée dans le code suivant.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2804.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2804.fs)]
 
 ## <a name="interface-inheritance"></a>Héritage de l'interface
 
-Les interfaces peuvent hériter d’une ou plusieurs interfaces de base.
+Les interfaces peuvent hériter d’une ou de plusieurs interfaces de base.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2805.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2805.fs)]
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,17 +1,17 @@
 ---
 title: Liaisons do dans les classes
-description: Découvrez comment utiliser un F# 'do' liaison dans une définition de classe, qui effectue des actions lorsque l’objet est construit ou lorsque le type est tout d’abord utilisé.
+description: Apprenez à utiliser une F# liaison’do’dans une définition de classe, qui effectue des actions lorsque l’objet est construit ou lorsque le type est utilisé pour la première fois.
 ms.date: 05/16/2016
-ms.openlocfilehash: c924c882974989436d8ea404ebee0a7ef3c54fd3
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: ced4f1bb17d9e23bf51cc79b5a275cc334cca013
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641797"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627589"
 ---
 # <a name="do-bindings-in-classes"></a>Liaisons do dans les classes
 
-Un `do` liaison dans une définition de classe effectue des actions lorsque l’objet est construit ou, pour une analyse statique `do` liaison, lorsque le type est tout d’abord utilisé.
+Une `do` liaison dans une définition de classe effectue des actions lorsque l’objet est construit ou, pour `do` une liaison statique, lorsque le type est utilisé pour la première fois.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,21 +21,21 @@ Un `do` liaison dans une définition de classe effectue des actions lorsque l’
 
 ## <a name="remarks"></a>Notes
 
-Un `do` liaison apparaît avec ou après `let` liaisons mais avant les définitions de membre dans une définition de classe. Bien que le `do` mot clé est facultatif pour `do` liaisons au niveau du module, il n’est pas facultatif pour `do` liaisons dans une définition de classe.
+Une `do` liaison s’affiche avec les liaisons `let` or after, mais avant les définitions de membres dans une définition de classe. Bien que `do` le mot clé soit `do` facultatif pour les liaisons au niveau du module, il n’est `do` pas facultatif pour les liaisons dans une définition de classe.
 
-Pour la construction de chaque objet d’un type donné, non statique `do` liaisons et non statiques `let` sont exécutées dans l’ordre dans lequel ils apparaissent dans la définition de classe. Plusieurs `do` liaisons peuvent se produire dans un type. Le non-static `let` liaisons et non statiques `do` deviennent le corps du constructeur principal. Le code dans le non-static `do` section des liaisons peut référencer les paramètres du constructeur principal et des valeurs ou des fonctions qui sont définies dans le `let` section des liaisons.
+Pour la construction de chaque objet d’un type donné, les liaisons non `do` statiques et les liaisons non `let` statiques sont exécutées dans l’ordre dans lequel elles apparaissent dans la définition de classe. Plusieurs `do` liaisons peuvent se produire dans un type. Les liaisons non statiques `let` et les liaisons non statiques `do` deviennent le corps du constructeur principal. Le code dans la section liaisons non `do` statiques peut référencer les paramètres du constructeur principal et toutes les valeurs ou fonctions qui sont définies `let` dans la section liaisons.
 
-Non statiques `do` liaisons peuvent accéder aux membres de la classe tant que la classe a un auto-identificateur défini par un `as` mot clé dans la classe de titre et tant que toutes les utilisations de ces membres sont qualifiées avec l’auto-identificateur pour la classe.
+Les liaisons non `do` statiques peuvent accéder aux membres de la classe tant que la classe a un auto-identificateur défini par un `as` mot clé dans l’en-tête de la classe, et tant que toutes les utilisations de ces membres sont qualifiées avec l’auto-identificateur pour la classe.
 
-Étant donné que `let` liaisons initialisent les champs privés d’une classe, ce qui est souvent nécessaire pour garantir que les membres se comportent comme prévu, `do` liaisons sont généralement placées après `let` liaisons afin que le code dans le `do` peut de liaison exécuter avec un objet entièrement initialisé. Si votre code tente d’utiliser un membre avant l’initialisation est terminée, une exception InvalidOperationException est déclenchée.
+Étant `let` donné que les liaisons initialisent les champs privés d’une classe, ce qui est souvent nécessaire pour garantir que les membres `do` se comportent comme prévu `let` , les liaisons sont généralement placées `do` après des liaisons afin que le code de la liaison puisse Exécutez avec un objet entièrement initialisé. Si votre code tente d’utiliser un membre avant la fin de l’initialisation, une exception InvalidOperationException est levée.
 
-Statique `do` liaisons peuvent référencer des membres statiques ou champs de la classe, mais pas de membres ou des champs de l’instance. Statique `do` liaisons deviennent partie intégrante de l’initialiseur statique pour la classe, qui est toujours exécuté avant la première utilisation de la classe.
+Les `do` liaisons statiques peuvent référencer des membres statiques ou des champs de la classe englobante, mais pas des membres d’instance ou des champs. Les `do` liaisons statiques font partie de l’initialiseur statique de la classe, qui est garantie de s’exécuter avant la première utilisation de la classe.
 
-Les attributs sont ignorés pour `do` liaisons dans les types. Si un attribut n’est requis pour le code qui s’exécute dans un `do` de liaison, elle doit s’appliquer au constructeur principal.
+Les attributs sont ignorés pour les liaisons dans les `do` types. Si un attribut est requis pour du code qui s’exécute dans `do` une liaison, il doit être appliqué au constructeur principal.
 
-Dans le code suivant, une classe a statique `do` liaison et non statiques `do` liaison. L’objet a un constructeur qui possède deux paramètres, `a` et `b`, et deux champs privés sont définis dans le `let` liaisons pour la classe. Deux propriétés sont également définies. Tous ces éléments sont dans la portée de la non statique `do` section des liaisons, comme cela est illustré par la ligne qui imprime toutes ces valeurs.
+Dans le code suivant, une classe a une liaison `do` statique et une liaison non statique `do` . L’objet a un constructeur qui a deux paramètres, `a` et `b`, et deux champs privés sont définis dans les `let` liaisons de la classe. Deux propriétés sont également définies. Toutes ces valeurs se trouvent dans la portée de la section `do` liaisons non statiques, comme illustré par la ligne qui imprime toutes ces valeurs.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3101.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet3101.fs)]
 
 La sortie est la suivante.
 
@@ -50,4 +50,4 @@ Initializing object 1 2 2 4 8 16
 - [Classes](../classes.md)
 - [Constructeurs](constructors.md)
 - [Liaisons `let` dans des classes](let-bindings-in-classes.md)
-- [`do` liaisons](../functions/do-Bindings.md)
+- [`do`Liaisons](../functions/do-Bindings.md)

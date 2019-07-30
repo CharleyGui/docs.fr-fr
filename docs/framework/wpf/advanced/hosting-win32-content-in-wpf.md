@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 3cc8644a-34f3-4082-9ddc-77623e4df2d8
-ms.openlocfilehash: ee260d58cdb4dc971fc32ca5c889b459b6a48489
-ms.sourcegitcommit: 4b9c2d893b45d47048c6598b4182ba87759b1b59
+ms.openlocfilehash: 10bdeae8fe46f78e60d278fdbe93883a1c6bd356
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68484737"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629885"
 ---
 # <a name="hosting-win32-content-in-wpf"></a>Hébergement de contenu Win32 dans WPF
 
@@ -48,11 +48,11 @@ virtual void DestroyWindowCore(HandleRef hwnd) override {
 
 Mais supposons [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] que le code n’est pas tout à fait autonome? Dans ce cas, vous pouvez créer [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] une boîte de dialogue et incorporer son contenu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans une application plus volumineuse. L’exemple illustre cela dans [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] et C++, bien qu’il soit également possible de le faire dans un autre langage ou sur la ligne de commande.
 
-Démarrez avec une boîte de dialogue simple, qui est compilée dans un C++ [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)] projet.
+Démarrez avec une boîte de dialogue simple, qui est compilée dans un C++ projet dll.
 
 Ensuite, introduisez la boîte de dialogue [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans l’application la plus volumineuse:
 
-- Compiler comme managé (`/clr`) [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)]
+- Compilez la DLL comme`/clr`géré ()
 
 - Transformez la boîte de dialogue en contrôle
 
@@ -120,7 +120,7 @@ public ref class MyHwndHost : public HwndHost, IKeyboardInputSink {
         }
 ```
 
-Ici, vous utilisez `CreateDialog` le pour créer la boîte de dialogue qui est vraiment un contrôle. Étant donné qu’il s’agit de l’une des premières [!INCLUDE[TLA2#tla_dll](../../../../includes/tla2sharptla-dll-md.md)]méthodes appelées dans le, vous [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] devez également effectuer une initialisation standard en appelant une fonction que vous `InitializeGlobals()`allez définir ultérieurement, appelée:
+Ici, vous utilisez `CreateDialog` le pour créer la boîte de dialogue qui est vraiment un contrôle. Étant donné qu’il s’agit de l’une des premières méthodes appelées dans la dll, vous [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] devez également effectuer une initialisation standard en appelant une fonction que vous `InitializeGlobals()`allez définir ultérieurement, appelée:
 
 ```cpp
 bool initialized = false;

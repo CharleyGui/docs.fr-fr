@@ -13,12 +13,12 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-ms.openlocfilehash: 8d01e018e570a1ab530f476368d80f4082a73bda
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: ec026fd9273e99c88ec2e30cf46c3147419ace94
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400795"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629814"
 ---
 # <a name="security-wpf"></a>Sécurité (WPF)
 <a name="introduction"></a>Lors du développement d’applications autonomes et hébergées par un navigateur Windows Presentation Foundation (WPF), vous devez prendre en compte le modèle de sécurité. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]les applications autonomes s’exécutent avec des autorisations illimitées (jeu d’autorisations**FULLTRUST** cas), qu’elles soient déployées à l’aide de Windows Installer (. msi), xcopy ou ClickOnce. Le déploiement d’applications WPF autonomes de confiance partielle avec ClickOnce n’est pas pris en charge. Toutefois, une application hôte de confiance totale peut créer un niveau de confiance <xref:System.AppDomain> partiel à l’aide du modèle de complément .NET Framework. Pour plus d’informations, consultez [vue d’ensemble des compléments WPF](./app-development/wpf-add-ins-overview.md).  
@@ -81,7 +81,7 @@ ms.locfileid: "68400795"
   
 - **Zone**. Le contenu cible de la navigation se trouve sur Internet ou sur l’intranet local.  
   
-- **Protocole**. Le protocole utilisé est **http**, https , **file**ou **mailto**.  
+- **Protocole**. Le protocole utilisé est **http**, https, **file**ou **mailto**.  
   
  Si une [!INCLUDE[TLA2#tla_xbap](../../../includes/tla2sharptla-xbap-md.md)] tente d’accéder au contenu d’une manière qui n’est pas conforme à ces conditions, une <xref:System.Security.SecurityException> est levée.  
   
@@ -216,9 +216,9 @@ ms.locfileid: "68400795"
   
 <a name="APTCA"></a>   
 ## <a name="disabling-aptca-assemblies-for-partially-trusted-client-applications"></a>Désactivation des assemblys APTCA pour les applications clientes partiellement fiables  
- Lorsque des assemblys managés sont installés [!INCLUDE[TLA#tla_gac](../../../includes/tlasharptla-gac-md.md)]dans le, ils deviennent entièrement fiables, car l’utilisateur doit fournir une autorisation explicite pour les installer. Dans la mesure où ils sont entièrement fiables, seules les applications clientes managées entièrement fiables peuvent les utiliser. Pour permettre aux applications de confiance partielle de les utiliser, elles doivent être marquées avec l' <xref:System.Security.AllowPartiallyTrustedCallersAttribute> attribut (APTCA). Seuls les assemblys dont la sécurité d’exécution a été testée pour une confiance partielle doivent être marqués avec cet attribut.  
+ Lorsque des assemblys managés sont installés dans le Global Assembly Cache (GAC), ils deviennent entièrement fiables, car l’utilisateur doit fournir une autorisation explicite pour les installer. Dans la mesure où ils sont entièrement fiables, seules les applications clientes managées entièrement fiables peuvent les utiliser. Pour permettre aux applications de confiance partielle de les utiliser, elles doivent être marquées avec l' <xref:System.Security.AllowPartiallyTrustedCallersAttribute> attribut (APTCA). Seuls les assemblys dont la sécurité d’exécution a été testée pour une confiance partielle doivent être marqués avec cet attribut.  
   
- Toutefois, il est possible pour un assembly APTCA d’exposer une faille de sécurité après son installation [!INCLUDE[TLA2#tla_gac](../../../includes/tla2sharptla-gac-md.md)]dans le. Lorsqu’une faille de sécurité est découverte, les éditeurs d’assembly peuvent produire une mise à jour de sécurité pour résoudre le problème sur les installations existantes et pour assurer une protection vis-à-vis des installations effectuées après la détection du problème. Pour la mise à jour, une option consiste à désinstaller l’assembly, bien que cela risque de bloquer d’autres applications clientes entièrement fiables qui utilisent l’assembly.  
+ Toutefois, il est possible pour un assembly APTCA d’exposer une faille de sécurité après son installation dans le GAC. Lorsqu’une faille de sécurité est découverte, les éditeurs d’assembly peuvent produire une mise à jour de sécurité pour résoudre le problème sur les installations existantes et pour assurer une protection vis-à-vis des installations effectuées après la détection du problème. Pour la mise à jour, une option consiste à désinstaller l’assembly, bien que cela risque de bloquer d’autres applications clientes entièrement fiables qui utilisent l’assembly.  
   
  [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]fournit un mécanisme par lequel un assembly APTCA peut être désactivé pour une [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)] confiance partielle sans désinstaller l’assembly APTCA.  
   

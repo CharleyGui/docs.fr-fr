@@ -15,12 +15,12 @@ helpviewer_keywords:
 - feature security requirements [WPF]
 - managing permissions [WPF]
 ms.assetid: ef2c0810-1dbf-4511-babd-1fab95b523b5
-ms.openlocfilehash: 259db84c8ab3b9bbad809b9636ba18537dd6fe62
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: b8234dcb33e9d429329c6d68900119382ff2f1cb
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400723"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629792"
 ---
 # <a name="wpf-partial-trust-security"></a>Sécurité de confiance partielle de WPF
 <a name="introduction"></a> En général, les applications Internet doivent disposer d’un accès direct limité aux ressources système critiques, afin d’éviter des dommages dus à des actes de malveillance. Par défaut, [!INCLUDE[TLA#tla_html](../../../includes/tlasharptla-html-md.md)] et les langages de script côté client ne sont pas en mesure d’accéder aux ressources système critiques. Étant donné que les applications hébergées par un navigateur Windows Presentation Foundation (WPF) peuvent être lancées à partir du navigateur, elles doivent être conformes à un ensemble similaire de restrictions. Pour appliquer ces restrictions, [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] s’appuie sur la sécurité d’accès du code (cas) et ClickOnce (consultez [stratégie de sécurité de WPF-sécurité](wpf-security-strategy-platform-security.md)de la plateforme). Par défaut, les applications hébergées par un navigateur demandent le jeu d’autorisations de la zone Internet, qu’elles soient lancées à partir d’Internet, de l’intranet local ou de l’ordinateur local. Les applications qui sont exécutées sans jeu d’autorisations complet sont exécutées avec une confiance dite partielle.  
@@ -113,7 +113,7 @@ ms.locfileid: "68400723"
   
  Dans de nombreux cas, vous devez pouvoir trouver une alternative à la confiance partielle.  
   
- Dans un environnement contrôlé, tel qu’un intranet, les infrastructures managées personnalisées peuvent être installées sur la base [!INCLUDE[TLA#tla_gac](../../../includes/tlasharptla-gac-md.md)]du client dans le. Ces bibliothèques peuvent exécuter du code qui requiert une confiance totale et être référencées à partir d’applications qui ne bénéficient que d' <xref:System.Security.AllowPartiallyTrustedCallersAttribute> une confiance partielle à l’aide de (pour plus d’informations, consultez [sécurité](security-wpf.md) et [stratégie de sécurité de WPF-sécurité](wpf-security-strategy-platform-security.md)de la plateforme).  
+ Dans un environnement contrôlé, tel qu’un intranet, les infrastructures managées personnalisées peuvent être installées sur la base du client dans le Global Assembly Cache (GAC). Ces bibliothèques peuvent exécuter du code qui requiert une confiance totale et être référencées à partir d’applications qui ne bénéficient que d' <xref:System.Security.AllowPartiallyTrustedCallersAttribute> une confiance partielle à l’aide de (pour plus d’informations, consultez [sécurité](security-wpf.md) et [stratégie de sécurité de WPF-sécurité](wpf-security-strategy-platform-security.md)de la plateforme).  
   
 <a name="Browser_Host_Detection"></a>   
 ### <a name="browser-host-detection"></a>Détermination de l’hôte de navigateur  

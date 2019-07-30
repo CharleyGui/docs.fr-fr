@@ -1,17 +1,17 @@
 ---
 title: Paramètres de type résolus statiquement
-description: Découvrez comment utiliser un F# paramètre de type résolus statiquement, qui est remplacé par un type réel au moment de la compilation plutôt qu’au moment de l’exécution.
+description: Découvrez comment utiliser un F# paramètre de type résolu statiquement, qui est remplacé par un type réel au moment de la compilation plutôt qu’au moment de l’exécution.
 ms.date: 05/16/2016
-ms.openlocfilehash: 337d4f40418ee76cb18397add27acba75f756091
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 43ed79b6e5f43a499a27b05e26472b021c455e44
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645257"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630583"
 ---
 # <a name="statically-resolved-type-parameters"></a>Paramètres de type résolus statiquement
 
-Un *paramètre de type résolus statiquement* est un paramètre de type est remplacé par un type réel au moment de la compilation plutôt qu’au moment de l’exécution. Elles sont précédées d’un symbole de signe insertion (^).
+Un *paramètre de type résolu statiquement* est un paramètre de type qui est remplacé par un type réel au moment de la compilation plutôt qu’au moment de l’exécution. Elles sont précédées d’un symbole de signe insertion (^).
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,28 +21,28 @@ Un *paramètre de type résolus statiquement* est un paramètre de type est remp
 
 ## <a name="remarks"></a>Notes
 
-Dans le F# langage, il existe deux types distincts de paramètres de type. Le premier type est le paramètre de type générique standard. Elles sont signalées par une apostrophe ('), comme dans `'T` et `'U`. Ils sont équivalents aux paramètres de type générique dans d’autres langages .NET Framework. L’autre type est résolu statiquement et est indiqué par un symbole de signe insertion, comme dans `^T` et `^U`.
+Dans le F# langage, il existe deux genres distincts de paramètres de type. Le premier type est le paramètre de type générique standard. Celles-ci sont indiquées par une apostrophe ('), `'T` comme `'U`dans et. Ils sont équivalents aux paramètres de type générique dans d’autres langages de .NET Framework. L’autre type est résolu statiquement et est indiqué par un symbole de signe insertion, comme `^T` dans `^U`et.
 
-Paramètres de type résolus statiquement sont principalement utiles conjointement avec les contraintes de membre, qui sont des contraintes qui vous permettent de spécifier qu’un argument de type doit avoir un membre particulier ou membres pour pouvoir être utilisé. Il n’existe aucun moyen de créer ce type de contrainte en utilisant un paramètre de type générique standard.
+Les paramètres de type résolus statiquement sont principalement utiles avec les contraintes de membre, qui sont des contraintes qui vous permettent de spécifier qu’un argument de type doit avoir un membre ou des membres particuliers pour être utilisé. Il n’existe aucun moyen de créer ce type de contrainte à l’aide d’un paramètre de type générique standard.
 
-Le tableau suivant résume les similitudes et les différences entre les deux types de paramètres de type.
+Le tableau suivant récapitule les similitudes et les différences entre les deux genres de paramètres de type.
 
-|Fonctionnalité|Generic|Résolus statiquement|
+|Fonctionnalité|Générique|Résolu statiquement|
 |-------|-------|-------------------|
 |Syntaxe|`'T`, `'U`|`^T`, `^U`|
-|Temps de résolution|Au moment de l'exécution|Temps de compilation|
-|Contraintes de membre|Ne peut pas être utilisé avec les contraintes de membre.|Peut être utilisé avec les contraintes de membre.|
-|Génération de code|Un type (ou méthode) avec les paramètres de type générique standard entraîne la génération d’un type générique unique ou d’une méthode.|Plusieurs instanciations de types et méthodes sont générées, un pour chaque type qui est nécessaire.|
-|Utiliser avec des types|Peut être utilisé sur les types.|Ne peut pas être utilisé sur les types.|
-|Utiliser avec les fonctions inline|Non. Une fonction inline ne peut pas être paramétrée avec un paramètre de type générique standard.|Oui. Paramètres de type résolus statiquement ne peut pas être utilisés sur les fonctions ou méthodes qui ne sont pas inline.|
+|Temps de résolution|En cours d’exécution|Temps de compilation|
+|Contraintes de membre|Ne peut pas être utilisé avec des contraintes de membre.|Peut être utilisé avec des contraintes de membre.|
+|Génération de code|Un type (ou une méthode) avec des paramètres de type générique standard entraîne la génération d’un type ou d’une méthode générique unique.|Plusieurs instanciations de types et de méthodes sont générées, une pour chaque type requis.|
+|Utiliser avec les types|Peut être utilisé sur les types.|Ne peut pas être utilisé sur les types.|
+|Utiliser avec des fonctions inline|Non. Une fonction inline ne peut pas être paramétrée avec un paramètre de type générique standard.|Oui. Les paramètres de type résolus statiquement ne peuvent pas être utilisés sur des fonctions ou des méthodes qui ne sont pas Inline.|
 
-Nombreux F# fonctions de bibliothèque principales, notamment les opérateurs, ont résolus statiquement de paramètres de type. Ces fonctions et opérateurs sont inline et entraînent la génération de code efficace pour effectuer des calculs numériques.
+De F# nombreuses fonctions de bibliothèque principales, en particulier les opérateurs, ont des paramètres de type résolus statiquement. Ces fonctions et opérateurs sont inline et produisent une génération de code efficace pour les calculs numériques.
 
-Méthodes inline et les fonctions qui utilisent des opérateurs, ou utilisent d’autres fonctions qui ont des paramètres de type résolus statiquement peuvent également utiliser les paramètres de type résolus statiquement proprement dits. Souvent, l’inférence de type déduit de ces fonctions inline ont des paramètres de type résolus statiquement. L’exemple suivant illustre une définition d’opérateur qui est déduite pour avoir un paramètre de type résolus statiquement.
+Les méthodes inline et les fonctions qui utilisent des opérateurs, ou utilisent d’autres fonctions qui ont des paramètres de type résolus statiquement, peuvent également utiliser des paramètres de type résolus statiquement eux-mêmes. Souvent, l’inférence de type déduit que ces fonctions inline ont des paramètres de type résolus statiquement. L’exemple suivant illustre une définition d’opérateur qui est déduite pour avoir un paramètre de type résolu statiquement.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-3/snippet401.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-3/snippet401.fs)]
 
-Le type résolu de `(+@)` repose sur l’utilisation des deux `(+)` et `(*)`, les deux qui amènent l’inférence de type déduire les contraintes de membre sur les paramètres de type résolus statiquement. Le type résolu, comme indiqué dans le F# interpréteur, se présente comme suit.
+Le type résolu de `(+@)` est basé sur l’utilisation `(+)` de et `(*)`, les deux ayant provoqué l’inférence de type pour déduire les contraintes de membre sur les paramètres de type résolus statiquement. Le type résolu, comme indiqué dans l' F# interpréteur, est le suivant.
 
 ```fsharp
 ^a -> ^c -> ^d
@@ -57,7 +57,7 @@ La sortie est la suivante.
 1.500000
 ```
 
-En commençant par F# 4.1, vous pouvez également spécifier des noms de type concret dans les signatures de paramètres de type résolus statiquement.  Dans les versions précédentes de la langue, le nom de type peut réellement être déduit par le compilateur, mais ne peut pas réellement spécifié dans la signature.  En tant que de F# 4.1, vous pouvez également spécifier des noms de type concret dans les signatures de paramètres de type résolus statiquement. Voici un exemple :
+À partir F# de 4,1, vous pouvez également spécifier des noms de types concrets dans des signatures de paramètre de type résolues statiquement.  Dans les versions antérieures du langage, le nom de type pouvait être inféré en fait par le compilateur, mais il n’a pas pu être spécifié dans la signature.  À partir F# de 4,1, vous pouvez également spécifier des noms de types concrets dans des signatures de paramètre de type résolues statiquement. Voici un exemple :
 
 ```fsharp
 let inline konst x _ = x

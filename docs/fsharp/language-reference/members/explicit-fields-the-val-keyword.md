@@ -1,17 +1,17 @@
 ---
-title: 'Champs explicites : Val mot clé'
-description: En savoir plus sur les F# mot clé « val », ce qui est utilisée pour déclarer un emplacement pour stocker une valeur dans un type classe ou structure sans initialiser le type.
+title: 'Champs explicites : Mot clé Val'
+description: En savoir plus F# sur le mot clé’Val', qui est utilisé pour déclarer un emplacement pour stocker une valeur dans un type de classe ou de structure sans initialiser le type.
 ms.date: 05/16/2016
-ms.openlocfilehash: 6557514f13a9e86c7f367713775535db79e99a0c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 13e0ba2875e8accfd1c0da0e1c6fef4973309f9b
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61904915"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627536"
 ---
-# <a name="explicit-fields-the-val-keyword"></a>Champs explicites : Val mot clé
+# <a name="explicit-fields-the-val-keyword"></a>Champs explicites : Mot clé Val
 
-Le mot clé `val` est utilisé pour déclarer un emplacement pour stocker une valeur dans un type de classe ou de structure sans l'initialiser. Emplacements de stockage déclarés de cette manière sont appelés *champs explicites*. Une autre utilisation du mot clé `val` consiste à l'associer avec le mot clé `member` pour déclarer une propriété implémentée automatiquement. Pour plus d’informations sur les propriétés implémentées automatiquement, consultez [propriétés](properties.md).
+Le mot clé `val` est utilisé pour déclarer un emplacement pour stocker une valeur dans un type de classe ou de structure sans l'initialiser. Les emplacements de stockage déclarés de cette manière sont appelés *champs explicites*. Une autre utilisation du mot clé `val` consiste à l'associer avec le mot clé `member` pour déclarer une propriété implémentée automatiquement. Pour plus d’informations sur les propriétés implémentées automatiquement, consultez [Propriétés](properties.md).
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -23,9 +23,9 @@ val [ mutable ] [ access-modifier ] field-name : type-name
 
 La façon habituelle de définir des champs dans un type de classe ou de structure consiste à utiliser une liaison `let`. Toutefois, les liaisons `let` doivent être initialisées dans le cadre du constructeur de classe, ce qui n'est pas toujours possible, nécessaire ou souhaitable. Vous pouvez utiliser le mot clé `val` quand vous voulez un champ qui n'est pas initialisé.
 
-Les champs explicites peuvent être statiques ou non statiques. Le *modificateur d’accès* peut être `public`, `private`, ou `internal`. Par défaut, les champs explicites sont publics. À la différence des liaisons `let` dans les classes, qui elles sont toujours privées.
+Les champs explicites peuvent être statiques ou non statiques. Le *modificateur d’accès* peut être `public`, `private`ou. `internal` Par défaut, les champs explicites sont publics. À la différence des liaisons `let` dans les classes, qui elles sont toujours privées.
 
-Le [DefaultValue](https://msdn.microsoft.com/library/a3a3307b-8c05-441e-b109-245511614d58) attribut est requis sur les champs explicites dans les types de classe qui ont un constructeur principal. Cet attribut spécifie que le champ est initialisé à zéro. Le type du champ doit prendre en charge l'initialisation à zéro. Un type prend en charge l'initialisation à zéro s'il s'agit d'un type suivant :
+L’attribut [DefaultValue](https://msdn.microsoft.com/library/a3a3307b-8c05-441e-b109-245511614d58) est requis sur les champs explicites dans les types de classe qui ont un constructeur principal. Cet attribut spécifie que le champ est initialisé à zéro. Le type du champ doit prendre en charge l'initialisation à zéro. Un type prend en charge l'initialisation à zéro s'il s'agit d'un type suivant :
 
 - Type primitif qui a une valeur zéro.
 
@@ -40,11 +40,11 @@ Par exemple, un champ immuable appelé `someField` a un champ de stockage dans l
 Pour un champ mutable, la représentation compilée .NET est un champ .NET.
 
 >[!WARNING]
->L’espace de noms .NET Framework `System.ComponentModel` contient un attribut qui porte le même nom. Pour plus d'informations sur cet attribut, consultez `System.ComponentModel.DefaultValueAttribute`.
+>L’espace de `System.ComponentModel` noms .NET Framework contient un attribut qui porte le même nom. Pour plus d'informations sur cet attribut, consultez `System.ComponentModel.DefaultValueAttribute`.
 
 Le code suivant illustre l'utilisation de champs explicites et, à titre de comparaison, d'une liaison `let` dans une classe qui a un constructeur principal. Notez que le champ lié à `let``myInt1` est privé. Quand le champ lié à `let``myInt1` est référencé à partir d'une méthode membre, l'auto-identificateur `this` n'est pas requis. Mais quand vous référencez les champs explicites `myInt2` et `myString`, l'auto-identificateur est requis.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet6701.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6701.fs)]
 
 La sortie est la suivante :
 
@@ -55,19 +55,19 @@ La sortie est la suivante :
 
 Le code suivant illustre l'utilisation de champs explicites dans une classe qui n'a pas de constructeur principal. Dans ce cas, l'attribut `DefaultValue` n'est pas requis, mais tous les champs doivent être initialisés dans les constructeurs définis pour le type.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet6702.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6702.fs)]
 
 Le résultat est `35 22`.
 
 Le code suivant illustre l'utilisation de champs explicites dans une structure. Comme une structure est un type valeur, elle a automatiquement un constructeur par défaut qui définit les valeurs de ses champs à zéro. Ainsi, l'attribut `DefaultValue` n'est pas requis.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet6703.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6703.fs)]
 
 Le résultat est `11 xyz`.
 
-**Soyez attentif aux**, si vous vous apprêtez à initialiser votre structure avec `mutable` champs sans `mutable` mot clé, vos attributions fonctionnera sur une copie de la structure qui sera ignorée juste après l’attribution. Par conséquent, votre structure ne changera pas.
+**Attention**: Si vous envisagez d’initialiser votre structure avec `mutable` des champs `mutable` sans mot clé, vos attributions fonctionneront sur une copie de la structure qui sera ignorée juste après l’affectation. Par conséquent, votre structure ne changera pas.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet6704.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6704.fs)]
 
 Les champs explicites n'ont pas vocation à être utilisés dans le cadre d'une routine. En général, quand cela est possible, vous devez utiliser une liaison `let` dans une classe au lieu d’un champ explicite. Les champs explicites s'avèrent utiles dans certains scénarios d'interopérabilité, notamment quand vous devez définir une structure qui sera utilisée dans un appel de code non managé à une API native ou dans des scénarios COM interop. Pour plus d’informations, consultez [fonctions externes](../functions/external-functions.md). Une autre situation dans laquelle un champ explicite peut s'avérer nécessaire est liée à l'utilisation d'un générateur de code F# qui émet des classes sans constructeur principal. Les champs explicites s'avèrent également utiles pour les variables static de thread ou les constructions similaires. Pour plus d'informations, consultez `System.ThreadStaticAttribute`.
 

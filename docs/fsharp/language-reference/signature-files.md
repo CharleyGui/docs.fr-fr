@@ -1,13 +1,13 @@
 ---
 title: Fichiers de signature
-description: Découvrez comment utiliser F# pour conserver les informations sur les signatures publiques d’un ensemble de fichiers de signature F# éléments, tels que des types, des espaces de noms et des modules de programme.
+description: Découvrez comment utiliser F# des fichiers de signature pour stocker des informations sur les signatures publiques d’un F# ensemble d’éléments de programme, tels que des types, des espaces de noms et des modules.
 ms.date: 06/15/2018
-ms.openlocfilehash: 88938309a7c2bd12428f06ba8088141fd5349e80
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c04ac8bf4ee360a2caa15be8f2bbea41105bd160
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61770446"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627155"
 ---
 # <a name="signatures"></a>Signatures
 
@@ -19,7 +19,7 @@ Pour chaque fichier de code F#, vous pouvez avoir un *fichier de signature*, qui
 
 Un fichier de signature décrit les espaces de noms, modules, types et membres dans le fichier d’implémentation correspondant. Les informations dans un fichier de signature vous permettent de spécifier les parties du code dans le fichier d’implémentation correspondant auxquelles le code peut accéder à l’extérieur du fichier d’implémentation, ainsi que les parties qui sont internes au fichier d’implémentation. Les espaces de noms, modules et types inclus dans le fichier de signature doivent être un sous-ensemble des espaces de noms, des modules et des types inclus dans le fichier d’implémentation. À quelques exceptions près notées plus loin dans cette rubrique, les éléments de langage qui n’apparaissent pas dans le fichier de signature sont considérés comme privés pour le fichier d’implémentation. Si aucun fichier de signature n’est trouvé dans le projet ou la ligne de commande, l’accessibilité par défaut est utilisée.
 
-Pour plus d’informations sur l’accessibilité par défaut, consultez [contrôle d’accès](access-control.md).
+Pour plus d’informations sur l’accessibilité par défaut, consultez [Access Control](access-control.md).
 
 Dans un fichier de signature, vous ne répétez pas la définition des types et les implémentations de chaque méthode ou fonction. Au lieu de cela, vous utilisez la signature pour chaque méthode et fonction, qui sert de spécification complète des fonctionnalités implémentées par un fragment de module ou d’espace de noms. La syntaxe pour une signature de type est la même que celle utilisée dans les déclarations de méthode abstraites dans les interfaces et les classes abstraites, et est également indiquée par IntelliSense et l’interpréteur F# fsi.exe lorsqu’il affiche correctement l’entrée compilée.
 
@@ -56,15 +56,15 @@ Les signatures de valeur obéissent aux règles suivantes :
 
 - Le modèle de paramètres (aussi appelé *arité*) des signatures et des implémentations doit être cohérent.
 
-- Si les noms de paramètre dans un fichier de signature diffèrent à partir du fichier d’implémentation correspondant, le nom dans le fichier de signature servira à la place, ce qui peut provoquer des problèmes lors du débogage ou de profilage. Si vous souhaitez être averti de telles incompatibilités, enable avertissement 3218 dans votre fichier projet ou lors de l’appel du compilateur (consultez `--warnon` sous [Options du compilateur](compiler-options.md)).
+- Si les noms de paramètres dans un fichier de signature diffèrent du fichier d’implémentation correspondant, le nom figurant dans le fichier de signature est utilisé à la place, ce qui peut provoquer des problèmes lors du débogage ou du profilage. Si vous souhaitez être informé de ces incompatibilités, activez l’avertissement 3218 dans votre fichier projet ou lors de l’appel du compilateur ( `--warnon` consultez sous [Options du compilateur](compiler-options.md)).
 
 Le code suivant illustre un exemple de fichier de signature contenant des signatures d’espace de noms, de module, de valeur de fonction et de type avec les attributs appropriés. Il indique également le fichier d’implémentation correspondant.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/fssignatures/snippet9002.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/fssignatures/snippet9002.fs)]
 
 Le code suivant représente le fichier d’implémentation.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/fssignatures/snippet9001.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/fssignatures/snippet9001.fs)]
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -5,24 +5,24 @@ helpviewer_keywords:
 - Visual Basic code, COM interop
 - COM interop [Visual Basic], in Visual Basic
 ms.assetid: 3ffd1bdf-1b8d-47f5-87eb-75b659f64294
-ms.openlocfilehash: dfd256fa7ccd8f089fab6eb1d42579deb2c4a64d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1bcfba25c86c46f986c061241a5d09f9aaa6d248
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62022413"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627073"
 ---
 # <a name="com-interop-visual-basic"></a>COM Interop (Visual Basic)
-Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonctionnalités à d’autres composants et d’héberger des applications. La plupart des logiciels actuels incluent des objets COM. Bien que les assemblys .NET représentent le meilleur choix pour les nouvelles applications, vous devrez peut-être parfois utiliser des objets COM. Cette section aborde certains des problèmes liés à la création et l’utilisation des objets COM avec Visual Basic.  
+Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonctionnalités à d’autres composants et d’héberger des applications. La plupart des logiciels actuels incluent des objets COM. Bien que les assemblys .NET représentent le meilleur choix pour les nouvelles applications, vous devrez peut-être parfois utiliser des objets COM. Cette section aborde certains des problèmes liés à la création et à l’utilisation d’objets COM avec Visual Basic.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Introduction à COM Interop](../../../visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)  
  Fournit une vue d’ensemble de l’interopérabilité COM.  
   
- [Guide pratique pour Objets de référence COM à partir de Visual Basic](../../../visual-basic/programming-guide/com-interop/how-to-reference-com-objects.md)  
+ [Guide pratique : Référencer des objets COM à partir de Visual Basic](../../../visual-basic/programming-guide/com-interop/how-to-reference-com-objects.md)  
  Décrit la procédure à suivre pour ajouter des références aux objets COM qui ont des bibliothèques de types.  
   
- [Guide pratique pour utiliser les contrôles ActiveX](../../../visual-basic/programming-guide/com-interop/how-to-work-with-activex-controls.md)  
+ [Guide pratique : utiliser les contrôles ActiveX](../../../visual-basic/programming-guide/com-interop/how-to-work-with-activex-controls.md)  
  Montre comment utiliser des contrôles ActiveX existants pour ajouter des fonctionnalités à la boîte à outils Visual Studio.  
   
  [Procédure pas à pas : Appel des API Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)  
@@ -31,7 +31,7 @@ Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonct
  [Guide pratique pour Appeler des API Windows](../../../visual-basic/programming-guide/com-interop/how-to-call-windows-apis.md)  
  Montre comment définir et appeler la fonction `MessageBox` dans User32.dll.  
   
- [Guide pratique pour appeler une fonction Windows qui possède des types non signés](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
+ [Guide pratique : appeler une fonction Windows qui possède des types non signés](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
  Montre comment appeler une fonction Windows qui a un paramètre de type non signé.  
   
  [Procédure pas à pas : Création d’objets COM avec Visual Basic](../../../visual-basic/programming-guide/com-interop/walkthrough-creating-com-objects.md)  
@@ -56,5 +56,5 @@ Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonct
  [Exposition de composants .NET Framework à COM](../../../framework/interop/exposing-dotnet-components-to-com.md)  
  Décrit la préparation et l’utilisation de types managés à partir de COM.  
   
- [Application d’attributs d’interopérabilité](../../../framework/interop/applying-interop-attributes.md)  
+ [Application d’attributs d’interopérabilité](../../../standard/native-interop/apply-interop-attributes.md)  
  Aborde les attributs que vous pouvez utiliser lors de l’utilisation de code non managé.

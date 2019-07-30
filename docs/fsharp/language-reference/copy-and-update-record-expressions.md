@@ -1,18 +1,18 @@
 ---
 title: Copie et mise à jour des expressions d’enregistrement
-description: Découvrez comment écrire une « copie et mise à jour expression » qui copie un enregistrement existant ou enregistrement anonyme, les mises à jour spécifié de champs et retourne l’enregistrement mis à jour ou anonyme.
+description: Découvrez comment écrire une «copie et une expression de mise à jour» qui copie un enregistrement ou un enregistrement anonyme existant, met à jour les champs spécifiés et retourne l’enregistrement ou l’enregistrement anonyme mis à jour.
 author: ChrSteinert
 ms.date: 06/12/2019
-ms.openlocfilehash: d16f5ca337047ab2eecc8828b21d8a423bf39a1f
-ms.sourcegitcommit: c4dfe37032c64a1fba2cc3d5947550d79f95e3b5
+ms.openlocfilehash: dfb20a6ff8282ae5988772cc0f0841db23aad942
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67041733"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630381"
 ---
 # <a name="copy-and-update-record-expressions"></a>Copie et mise à jour des expressions d’enregistrement
 
-Un *copier et mettre à jour d’expression d’enregistrement* est une expression qui copie un enregistrement existant, met à jour les champs spécifiés et retourne l’enregistrement mis à jour.
+Une *expression d’enregistrement de copie et de mise à jour* est une expression qui copie un enregistrement existant, met à jour les champs spécifiés et retourne l’enregistrement mis à jour.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -26,17 +26,17 @@ Un *copier et mettre à jour d’expression d’enregistrement* est une expressi
 
 ## <a name="remarks"></a>Notes
 
-Enregistrements et des enregistrements anonymes sont immuables par défaut, pour qu’il n’y a aucune mise à jour un enregistrement existant possible. Pour créer un enregistrement mis à jour tous les champs d’un enregistrement devrait être spécifiés à nouveau. Pour simplifier cette tâche un *copier et mettre à jour expression* peut être utilisé. Cette expression prend un enregistrement existant, crée un nouveau du même type à l’aide des champs spécifiés à partir de l’expression et le champ manquant spécifié par l’expression.
+Par défaut, les enregistrements et les enregistrements anonymes sont immuables, ce qui signifie qu’il n’existe pas de mise à jour d’un enregistrement existant. Pour créer un enregistrement mis à jour, tous les champs d’un enregistrement doivent être spécifiés à nouveau. Pour simplifier cette tâche, vous pouvez utiliser une *expression de copie et de mise à jour* . Cette expression prend un enregistrement existant, crée un nouveau du même type en utilisant les champs spécifiés de l’expression et le champ manquant spécifié par l’expression.
 
 Cela peut être utile lorsque vous devez copier un enregistrement existant et éventuellement modifier certaines valeurs de champ.
 
-Prenez par exemple un enregistrement qui vient d’être créé.
+Prenons l’exemple d’un enregistrement nouvellement créé.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1905.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1905.fs)]
 
-Si vous deviez mettre à jour uniquement sur le champ de cet enregistrement, vous pouvez utiliser la *copier et mettre à jour d’expression d’enregistrement* comme suit :
+Si vous mettez à jour uniquement le champ de cet enregistrement, vous pouvez utiliser l' *expression d’enregistrement copier et mettre à jour* comme suit:
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1906.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1906.fs)]
 
 ## <a name="see-also"></a>Voir aussi
 

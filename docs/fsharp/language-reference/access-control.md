@@ -1,56 +1,56 @@
 ---
-title: Contrôle d'accès
-description: Découvrez comment contrôler l’accès aux éléments de programmation, tels que les types, méthodes et fonctions, dans le F# langage de programmation.
+title: Contrôle d’accès
+description: Découvrez comment contrôler l’accès aux éléments de programmation, tels que les types, les méthodes et les fonctions F# , dans le langage de programmation.
 ms.date: 05/16/2016
-ms.openlocfilehash: a284d2fa4f98e444279276f58b70a15560537ca4
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: ed77a09cf87aabf9a4134276e89e84aa42abd3c3
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645607"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629962"
 ---
-# <a name="access-control"></a>Contrôle d'accès
+# <a name="access-control"></a>Contrôle d’accès
 
-*Contrôle d’accès* fait référence à la déclaration de clients qui peuvent utiliser certains éléments de programme, tels que les types, méthodes et fonctions.
+*Le contrôle d’accès* fait référence à la déclaration des clients qui peuvent utiliser certains éléments de programme, tels que des types, des méthodes et des fonctions.
 
-## <a name="basics-of-access-control"></a>Principes de base du contrôle d’accès
+## <a name="basics-of-access-control"></a>Notions de base de Access Control
 
-Dans F#, les spécificateurs de contrôle d’accès `public`, `internal`, et `private` peuvent être appliquées à des modules, types, méthodes, des définitions de valeur, fonctions, propriétés et champs explicites.
+Dans F#, les spécificateurs `public`de contrôle d' `internal`accès, `private` et peuvent être appliqués à des modules, des types, des méthodes, des définitions de valeur, des fonctions, des propriétés et des champs explicites.
 
-- `public` Indique que l’entité est accessible par tous les appelants.
+- `public`indique que l’entité est accessible par tous les appelants.
 
-- `internal` Indique que l’entité est accessible uniquement à partir du même assembly.
+- `internal`indique que l’entité est accessible uniquement à partir du même assembly.
 
-- `private` Indique que l’entité est accessible uniquement à partir de type ou un module englobant.
+- `private`indique que l’entité est accessible uniquement à partir du type englobant ou du module.
 
 > [!NOTE]
-> Le spécificateur d’accès `protected` n’est pas utilisé dans F#, bien qu’il soit acceptable si vous utilisez des types créés dans les langages qui prennent en charge `protected` accès. Par conséquent, si vous substituez une méthode protégée, votre méthode reste accessible uniquement au sein de la classe et ses descendants.
+> Le spécificateur `protected` d’accès n’est pas utilisé F#dans, bien qu’il soit acceptable si vous utilisez des types créés dans des langages `protected` qui prennent en charge l’accès. Par conséquent, si vous substituez une méthode protégée, votre méthode reste accessible uniquement dans la classe et ses descendants.
 
-En général, le spécificateur est placé devant le nom de l’entité, sauf quand une `mutable` ou `inline` spécificateur est utilisé, qui apparaît après le spécificateur de contrôle d’accès.
+En général, le spécificateur est placé devant le nom de l’entité, sauf quand un spécificateur ou `mutable` `inline` est utilisé, qui apparaît après le spécificateur de contrôle d’accès.
 
-Si aucun spécificateur d’accès n’est utilisé, la valeur par défaut est `public`, à l’exception de `let` liaisons dans un type, qui sont toujours `private` au type.
+Si aucun spécificateur d’accès n’est utilisé, la valeur `public`par défaut est `let` , à l’exception des liaisons dans un type `private` , qui sont toujours au type.
 
-Signatures dans F# fournissent un autre mécanisme pour contrôler l’accès à F# éléments de programme. Les signatures ne sont pas requises pour le contrôle d’accès. Pour plus d’informations, consultez [Signatures](signatures.md).
+Les signatures F# dans fournissent un autre mécanisme de contrôle F# de l’accès aux éléments de programme. Les signatures ne sont pas requises pour le contrôle d’accès. Pour plus d’informations, consultez [Signatures](signatures.md).
 
-## <a name="rules-for-access-control"></a>Règles de contrôle d’accès
+## <a name="rules-for-access-control"></a>Règles pour Access Control
 
-Contrôle d’accès est soumis aux règles suivantes :
+Le contrôle d’accès est soumis aux règles suivantes:
 
-- Déclarations d’héritage (autrement dit, l’utilisation de `inherit` pour spécifier une classe de base pour une classe), déclarations d’interface (c'est-à-dire spécifier qu’une classe implémente une interface) et d’abstraire membres ont toujours la même accessibilité que le type englobant. Par conséquent, un spécificateur de contrôle d’accès ne peut pas être utilisé sur ces constructions.
+- Les déclarations d’héritage (autrement dit, l' `inherit` utilisation de pour spécifier une classe de base pour une classe), les déclarations d’interface (c’est-à-dire la spécification d’une classe qui implémente une interface) et les membres abstraits ont toujours la même accessibilité que le type englobant. Par conséquent, un spécificateur de contrôle d’accès ne peut pas être utilisé sur ces constructions.
 
-- Accessibilité pour les cas individuels dans une union discriminée est déterminée par l’accessibilité de l’union discriminée lui-même. Autrement dit, un cas d’union particulier n’est pas moins accessible que l’union elle-même.
+- L’accessibilité des cas individuels dans une union discriminée est déterminée par l’accessibilité de l’union discriminée elle-même. Autrement dit, un cas d’Union particulier n’est pas moins accessible que l’Union elle-même.
 
-- Accessibilité pour les champs individuels d’un type d’enregistrement ne peut pas est déterminée par l’accessibilité de l’enregistrement lui-même. Autrement dit, une étiquette d’enregistrement particulier n’est pas moins accessible que l’enregistrement lui-même.
+- L’accessibilité des champs individuels d’un type d’enregistrement ne peut pas être déterminée par l’accessibilité de l’enregistrement lui-même. Autrement dit, une étiquette d’enregistrement particulière n’est pas moins accessible que l’enregistrement lui-même.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
-Le code suivant illustre l’utilisation de spécificateurs de contrôle d’accès. Il existe deux fichiers dans le projet, `Module1.fs` et `Module2.fs`. Chaque fichier est implicitement un module. Par conséquent, il existe deux modules, `Module1` et `Module2`. Un type privé et un type interne sont définis dans `Module1`. Le type privé n’est pas accessible à partir de `Module2`, mais le type interne.
+Le code suivant illustre l’utilisation de spécificateurs de contrôle d’accès. Il y a deux fichiers dans le projet `Module1.fs` , `Module2.fs`et. Chaque fichier est implicitement un module. Par conséquent, il existe deux modules `Module1` , `Module2`et. Un type privé et un type interne sont définis dans `Module1`. Le type privé n’est pas accessible `Module2`à partir de, mais le type interne peut.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/access-control/snippet1.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/access-control/snippet1.fs)]
 
 Le code suivant teste l’accessibilité des types créés dans `Module1.fs`.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/access-control/snippet2.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/access-control/snippet2.fs)]
 
 ## <a name="see-also"></a>Voir aussi
 

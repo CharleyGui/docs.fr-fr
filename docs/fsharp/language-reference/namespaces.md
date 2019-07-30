@@ -1,17 +1,17 @@
 ---
 title: Espaces de noms
-description: Découvrez comment un F# espace de noms vous permet d’organiser le code en zones de fonctionnalités connexes en vous permettant de joindre un nom à un regroupement d’éléments de programme.
+description: Découvrez comment un F# espace de noms vous permet d’organiser le code en zones de fonctionnalités associées en vous permettant de joindre un nom à un regroupement d’éléments de programme.
 ms.date: 12/08/2018
-ms.openlocfilehash: b315d654dad0d36e3584564ad027c68fb3c94cce
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: d295f25cae81bc28b4fcb522bdcacde862f9517a
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645269"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627380"
 ---
 # <a name="namespaces"></a>Espaces de noms
 
-Un espace de noms vous permet d’organiser le code en zones de fonctionnalités connexes en vous permettant de joindre un nom à un regroupement de F# éléments de programme. Espaces de noms sont des éléments en général de niveau supérieur dans F# fichiers.
+Un espace de noms vous permet d’organiser le code en zones de fonctionnalités associées en vous permettant de joindre un nom à F# un regroupement d’éléments de programme. Les espaces de noms sont généralement des éléments de F# niveau supérieur dans les fichiers.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,27 +21,27 @@ namespace [rec] [parent-namespaces.]identifier
 
 ## <a name="remarks"></a>Notes
 
-Si vous souhaitez placer le code dans un espace de noms, la première déclaration dans le fichier doit déclarer l’espace de noms. Le contenu du fichier entier puis deviennent partie intégrante de l’espace de noms, fournie par aucune autre déclaration d’espaces de noms n’existe plus dans le fichier. Si tel est le cas, tout le code jusqu'à la déclaration d’espace de noms suivant est considéré comme se situer dans le premier espace de noms.
+Si vous souhaitez placer du code dans un espace de noms, la première déclaration du fichier doit déclarer l’espace de noms. Le contenu du fichier entier devient alors partie intégrante de l’espace de noms, à condition qu’il n’y ait plus de déclaration d’espaces de noms supplémentaire dans le fichier. Si tel est le cas, tout le code jusqu’à la déclaration d’espace de noms suivante est considéré comme étant dans le premier espace de noms.
 
-Espaces de noms ne peut pas contenir directement les fonctions et les valeurs. Au lieu de cela, les fonctions et les valeurs doivent figurer dans les modules et les modules sont inclus dans les espaces de noms. Espaces de noms peuvent contenir des types, des modules.
+Les espaces de noms ne peuvent pas contenir directement des valeurs et des fonctions. Au lieu de cela, les valeurs et les fonctions doivent être incluses dans les modules, et les modules sont inclus dans les espaces de noms. Les espaces de noms peuvent contenir des types, des modules.
 
-Commentaires de documentation XML peuvent être déclarés au-dessus d’un espace de noms, mais ils sont ignorés. Directives de compilateur peuvent également être déclarées au-dessus d’un espace de noms.
+Les commentaires de documentation XML peuvent être déclarés au-dessus d’un espace de noms, mais ils sont ignorés. Les directives de compilateur peuvent également être déclarées au-dessus d’un espace de noms.
 
-Espaces de noms peuvent être déclarés explicitement avec le mot clé d’espace de noms, ou implicitement lors de la déclaration d’un module. Pour déclarer un espace de noms explicitement, utilisez le mot clé namespace suivi du nom de l’espace de noms. L’exemple suivant montre un fichier de code qui déclare un espace de noms `Widgets` avec un type et un module inclus dans cet espace de noms.
+Les espaces de noms peuvent être déclarés explicitement avec le mot clé namespace ou implicitement lors de la déclaration d’un module. Pour déclarer un espace de noms explicitement, utilisez le mot clé namespace suivi du nom de l’espace de noms. L’exemple suivant montre un fichier de code qui déclare un espace `Widgets` de noms avec un type et un module inclus dans cet espace de noms.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6406.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6406.fs)]
 
-Si tout le contenu du fichier est dans un module, vous pouvez également déclarer espaces de noms implicitement à l’aide de la `module` mot clé et en fournissant le nouveau nom de l’espace de noms dans le nom qualifié complet du module. L’exemple suivant montre un fichier de code qui déclare un espace de noms `Widgets` et un module `WidgetsModule`, qui contient une fonction.
+Si le contenu entier du fichier se trouve dans un module, vous pouvez également déclarer des espaces de noms implicitement en `module` utilisant le mot clé et en fournissant le nouveau nom d’espace de noms dans le nom de module complet. L’exemple suivant montre un fichier de code qui déclare un espace `Widgets` de noms et `WidgetsModule`un module, qui contient une fonction.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6401.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6401.fs)]
 
 Le code suivant est équivalent au code précédent, mais le module est une déclaration de module locale. Dans ce cas, l’espace de noms doit apparaître sur sa propre ligne.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/namespaces/snippet6402.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/namespaces/snippet6402.fs)]
 
-Si plusieurs modules est requis dans le même fichier dans un ou plusieurs espaces de noms, vous devez utiliser des déclarations de module locales. Lorsque vous utilisez des déclarations de module locales, vous ne pouvez pas utiliser l’espace de noms qualifié dans les déclarations de module. Le code suivant montre un fichier qui a une déclaration d’espace de noms et deux déclarations de module locales. Dans ce cas, les modules sont contenus directement dans l’espace de noms ; Il n’existe aucun module créé implicitement qui porte le même nom que le fichier. N’importe quel autre code dans le fichier, comme un `do` , la liaison est dans l’espace de noms mais pas dans les modules internes, vous devez qualifier le membre de module `widgetFunction` en utilisant le nom de module.
+Si plusieurs modules sont requis dans le même fichier dans un ou plusieurs espaces de noms, vous devez utiliser des déclarations de module locales. Lorsque vous utilisez des déclarations de modules locaux, vous ne pouvez pas utiliser l’espace de noms qualifié dans les déclarations de module. Le code suivant montre un fichier qui a une déclaration d’espace de noms et deux déclarations de module locales. Dans ce cas, les modules sont contenus directement dans l’espace de noms; Il n’existe aucun module créé implicitement qui porte le même nom que le fichier. Tout autre code dans le fichier, tel qu’une `do` liaison, se trouve dans l’espace de noms, mais pas dans les modules internes. vous devez donc qualifier `widgetFunction` le membre du module à l’aide du nom du module.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6403.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6403.fs)]
 
 La sortie de cet exemple est la suivante.
 
@@ -50,33 +50,33 @@ Module1 10 20
 Module2 5 6
 ```
 
-Pour plus d’informations, consultez [Modules](modules.md).
+Pour plus d’informations, consultez [modules](modules.md).
 
 ## <a name="nested-namespaces"></a>Espaces de noms imbriqués
 
-Lorsque vous créez un espace de noms imbriqué, vous devez le qualifier complètement. Sinon, vous créez un nouvel espace de noms de niveau supérieur. Mise en retrait est ignorée dans les déclarations d’espace de noms.
+Lorsque vous créez un espace de noms imbriqué, vous devez le qualifier entièrement. Sinon, vous créez un espace de noms de niveau supérieur. La mise en retrait est ignorée dans les déclarations d’espaces de noms.
 
 L’exemple suivant montre comment déclarer un espace de noms imbriqué.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6404.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6404.fs)]
 
-## <a name="namespaces-in-files-and-assemblies"></a>Espaces de noms dans les fichiers et assemblys
+## <a name="namespaces-in-files-and-assemblies"></a>Espaces de noms dans les fichiers et les assemblys
 
-Espaces de noms peut s’étendre sur plusieurs fichiers dans un projet unique ou de la compilation. Le terme *fragment de l’espace de noms* décrit la partie d’un espace de noms qui est inclus dans un seul fichier. Espaces de noms peuvent également couvrir plusieurs assemblys. Par exemple, le `System` espace de noms inclut l’ensemble .NET Framework, qui couvre de nombreux assemblys et contient de nombreux espaces de noms imbriqués.
+Les espaces de noms peuvent s’étendre sur plusieurs fichiers dans un projet unique ou une compilation. Le terme *fragment d’espace de noms* décrit la partie d’un espace de noms qui est incluse dans un fichier. Les espaces de noms peuvent également s’étendre sur plusieurs assemblys. Par exemple, l' `System` espace de noms inclut le .NET Framework entier, qui s’étend sur de nombreux assemblys et contient de nombreux espaces de noms imbriqués.
 
-## <a name="global-namespace"></a>Global Namespace
+## <a name="global-namespace"></a>Espace de noms global
 
-Vous utilisez l’espace de noms prédéfini `global` pour mettre des noms dans l’espace de noms de niveau supérieur de .NET.
+Vous utilisez l’espace de noms `global` prédéfini pour placer les noms dans l’espace de noms de niveau supérieur .net.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6407.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6407.fs)]
 
-Vous pouvez également utiliser global pour référencer l’espace de noms .NET niveau supérieur, par exemple, pour résoudre les conflits de noms avec d’autres espaces de noms.
+Vous pouvez également utiliser global pour référencer l’espace de noms .NET de niveau supérieur, par exemple, pour résoudre les conflits de noms avec d’autres espaces de noms.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6408.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet6408.fs)]
 
-## <a name="recursive-namespaces"></a>Espaces de noms récursive
+## <a name="recursive-namespaces"></a>Espaces de noms récursifs
 
-Espaces de noms peuvent également être déclarées comme récursive pour autoriser tout le code relation contenant-contenu de s’exclure mutuellement récursives.  Cette opération est effectuée `namespace rec`. Utilisation de `namespace rec` peuvent atténuer certains problèmes rencontrés dans l’impossibilité d’écrire du code mutuellement référentielle entre les types et les modules. Voici un exemple de ceci :
+Les espaces de noms peuvent également être déclarés comme récursifs pour permettre à tous les codes contenus d’être mutuellement récursifs.  Cette opération est effectuée `namespace rec`via. L’utilisation `namespace rec` de peut atténuer les difficultés liées à l’impossibilité d’écrire du code mutuellement référentiel entre les types et les modules. Voici un exemple:
 
 ```fsharp
 namespace rec MutualReferences
@@ -117,12 +117,12 @@ module BananaHelpers =
         | Down -> b |> peelSides
 ```
 
-Notez que l’exception `DontSqueezeTheBananaException` et la classe `Banana` tous deux se font mutuellement référence.  En outre, le module `BananaHelpers` et la classe `Banana` également se font mutuellement référence. Cela ne serait pas possible d’exprimer dans F# si vous avez supprimé le `rec` mot clé à partir de la `MutualReferences` espace de noms.
+Notez que l’exception `DontSqueezeTheBananaException` et la classe `Banana` font toutes les deux référence.  En outre, le module `BananaHelpers` et la classe `Banana` font également référence l’un à l’autre. Cela ne serait pas possible d’exprimer F# dans si vous avez `rec` supprimé le mot `MutualReferences` clé de l’espace de noms.
 
-Cette fonctionnalité est également disponible pour niveau supérieur [Modules](modules.md).
+Cette fonctionnalité est également disponible pour les [modules](modules.md)de niveau supérieur.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence du langage F#](index.md)
 - [Modules](modules.md)
-- [F#RFC FS-1009 - autoriser les types mutuellement référentielles et des modules sur des étendues plus grandes dans les fichiers](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.1/FS-1009-mutually-referential-types-and-modules-single-scope.md)
+- [F#RFC FS-1009-autoriser les types et les modules mutuellement référentiels sur des étendues plus grandes au sein des fichiers](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.1/FS-1009-mutually-referential-types-and-modules-single-scope.md)

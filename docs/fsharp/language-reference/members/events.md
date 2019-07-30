@@ -1,15 +1,15 @@
 ---
-title: Événements
-description: Découvrez comment F# événements permettent d’associer des appels de fonction avec des actions utilisateur, qui sont importantes dans la programmation GUI.
+title: Events
+description: Découvrez comment F# les événements vous permettent d’associer des appels de fonction à des actions de l’utilisateur, qui sont importantes dans la programmation de l’interface graphique.
 ms.date: 05/16/2016
-ms.openlocfilehash: ad2e8001b81f48fdeb783bee2423a3dc9e22ac79
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: eed2caff569638ea5aa972a000dfa71a3b64f60b
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645220"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627566"
 ---
-# <a name="events"></a>Événements
+# <a name="events"></a>Events
 
 > [!NOTE]
 > Les liens des informations de référence sur les API qui figurent dans cet article pointent vers MSDN.  Les informations de référence sur les API docs.microsoft.com ne sont pas terminées.
@@ -20,19 +20,19 @@ Les événements vous permettent d'associer des appels de fonction à des action
 
 Lorsque vous utilisez une bibliothèque d'interfaces GUI telle que Windows Forms ou Windows Presentation Foundation (WPF), une grande partie du code dans votre application s'exécute en réponse à des événements prédéfinis par la bibliothèque. Ces événements prédéfinis sont membres de classes GUI, comme les formulaires et les contrôles. Vous pouvez ajouter un comportement personnalisé à un événement préexistant, tel qu'un clic de bouton, en référençant l'événement nommé spécifique présentant un intérêt (par exemple, l'événement `Click` de la classe `Form`) et en appelant la méthode `Add`, comme indiqué dans le code suivant. Si vous exécutez ceci à partir de F# Interactive, omettez d'appeler `System.Windows.Forms.Application.Run(System.Windows.Forms.Form)`.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet3601.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3601.fs)]
 
 Le type de la méthode `Add` est `('a -> unit) -> unit`. Par conséquent, la méthode du gestionnaire d’événements prend un paramètre, en général les arguments d’événement, et retourne `unit`. L’exemple précédent présente le gestionnaire d’événements en tant qu’expression lambda. Le gestionnaire d'événements peut également être une valeur de fonction, comme dans l'exemple de code suivant. L'exemple de code suivant illustre également l'utilisation des paramètres du gestionnaire d'événements, qui fournissent des informations spécifiques au type d'événement. Pour un événement `MouseMove`, le système passe un objet `System.Windows.Forms.MouseEventArgs`, qui contient les positions `X` et `Y` du pointeur.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet3602.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3602.fs)]
 
 ## <a name="creating-custom-events"></a>Création d'événements personnalisés
 
-F#les événements sont représentés par le F# [événement](https://msdn.microsoft.com/library/f3b47c8a-4ee5-4ce8-9a72-ad305a17c4b9) classe qui implémente le [IEvent](https://msdn.microsoft.com/library/8dbca0df-f8a1-40bd-8d50-aa26f6a8b862) interface. `IEvent` est une interface qui combine les fonctionnalités de deux autres interfaces, `System.IObservable<'T>` et [IDelegateEvent](https://msdn.microsoft.com/library/3d849465-6b8e-4fc5-b36c-2941d734268a). Par conséquent, les `Event`s ont les fonctionnalités équivalentes des délégués dans d'autres langues, plus les fonctionnalités supplémentaires d'`IObservable`, ce qui signifie que les événements F# prennent en charge le filtrage d'événements, ainsi que l'utilisation de fonctions de première classe F# et expressions lambda comme gestionnaires d'événements. Cette fonctionnalité est fournie dans le [module événements](https://msdn.microsoft.com/library/8b883baa-a460-4840-9baa-de8260351bc7).
+F#les événements sont représentés par F# la classe d' [événements](https://msdn.microsoft.com/library/f3b47c8a-4ee5-4ce8-9a72-ad305a17c4b9) , qui implémente l’interface [IEvent](https://msdn.microsoft.com/library/8dbca0df-f8a1-40bd-8d50-aa26f6a8b862) . `IEvent`est lui-même une interface qui combine les fonctionnalités de deux autres `System.IObservable<'T>` interfaces et [IDelegateEvent](https://msdn.microsoft.com/library/3d849465-6b8e-4fc5-b36c-2941d734268a). Par conséquent, les `Event`s ont les fonctionnalités équivalentes des délégués dans d'autres langues, plus les fonctionnalités supplémentaires d'`IObservable`, ce qui signifie que les événements F# prennent en charge le filtrage d'événements, ainsi que l'utilisation de fonctions de première classe F# et expressions lambda comme gestionnaires d'événements. Cette fonctionnalité est fournie dans le [module Event](https://msdn.microsoft.com/library/8b883baa-a460-4840-9baa-de8260351bc7).
 
-Pour créer un événement sur une classe qui agit juste comme tout autre événement .NET Framework, ajoutez à la classe une liaison `let` qui définit un `Event` comme un champ dans une classe. Vous pouvez spécifier le type d'argument d'événement souhaité comme argument de type ou le laisser vide et indiquer au compilateur de déduire le type approprié. Vous devez également définir un membre d'événement qui expose l'événement comme un événement CLI. Ce membre doit avoir la [CLIEvent](https://msdn.microsoft.com/library/d359f1dd-ffa5-42fb-8808-b4c8131a0333) attribut. Il est déclaré comme une propriété et son implémentation est simplement un appel à la [publier](https://msdn.microsoft.com/library/b0fdaad5-25e5-43d0-9c0c-ce37c4aeb68e) propriété de l’événement. Les utilisateurs de votre classe peuvent utiliser la méthode `Add` de l'événement publié pour ajouter un gestionnaire. L'argument de la méthode `Add` peut être une expression lambda. Vous pouvez utiliser la propriété `Trigger` de l’événement pour le déclencher, en passant les arguments à la fonction de gestionnaire. L'exemple de code suivant illustre ceci. Dans cet exemple, l'argument de type déduit pour l'événement est un tuple, qui représente les arguments de l'expression lambda.
+Pour créer un événement sur une classe qui agit juste comme tout autre événement .NET Framework, ajoutez à la classe une liaison `let` qui définit un `Event` comme un champ dans une classe. Vous pouvez spécifier le type d'argument d'événement souhaité comme argument de type ou le laisser vide et indiquer au compilateur de déduire le type approprié. Vous devez également définir un membre d'événement qui expose l'événement comme un événement CLI. Ce membre doit avoir l’attribut [CLIEvent](https://msdn.microsoft.com/library/d359f1dd-ffa5-42fb-8808-b4c8131a0333) . Elle est déclarée comme une propriété et son implémentation est simplement un appel à la propriété [Publish](https://msdn.microsoft.com/library/b0fdaad5-25e5-43d0-9c0c-ce37c4aeb68e) de l’événement. Les utilisateurs de votre classe peuvent utiliser la méthode `Add` de l'événement publié pour ajouter un gestionnaire. L'argument de la méthode `Add` peut être une expression lambda. Vous pouvez utiliser la propriété `Trigger` de l’événement pour le déclencher, en passant les arguments à la fonction de gestionnaire. L'exemple de code suivant illustre ceci. Dans cet exemple, l'argument de type déduit pour l'événement est un tuple, qui représente les arguments de l'expression lambda.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet3605.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3605.fs)]
 
 La sortie est la suivante.
 
@@ -42,7 +42,7 @@ Event1 occurred! Object data: Hello World!
 
 Les fonctionnalités supplémentaires fournies par le module `Event` sont illustrées ici. L'exemple de code suivant illustre l'utilisation de base d'`Event.create` pour créer un événement et une méthode de déclencheur, ajouter deux gestionnaires d'événements sous forme d'expressions lambda, puis déclencher l'événement pour exécuter les deux expressions lambda.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet3603.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3603.fs)]
 
 La sortie du code précédent est la suivante.
 
@@ -53,13 +53,13 @@ Given a value: Event occurred.
 
 ## <a name="processing-event-streams"></a>Traitement de flux d'événements
 
-Au lieu d’ajouter simplement un gestionnaire d’événements pour un événement à l’aide de la [Event.add](https://msdn.microsoft.com/library/10670d3b-8d47-4f6e-b8df-ebc6f64ef4fd) (fonction), vous pouvez utiliser les fonctions dans le `Event` module pour traiter des flux d’événements de manière hautement personnalisée. Pour cela, vous utilisez le canal (`|>`) avec l'événement comme première valeur dans une série d'appels de fonction, et les fonctions du module `Event` comme appels de fonction suivants.
+Au lieu d’ajouter simplement un gestionnaire d’événements pour un événement à l’aide de la fonction [Event. Add](https://msdn.microsoft.com/library/10670d3b-8d47-4f6e-b8df-ebc6f64ef4fd) , vous pouvez utiliser `Event` les fonctions du module pour traiter des flux d’événements de manière hautement personnalisée. Pour cela, vous utilisez le canal (`|>`) avec l'événement comme première valeur dans une série d'appels de fonction, et les fonctions du module `Event` comme appels de fonction suivants.
 
 L'exemple de code suivant illustre comment configurer un événement pour lequel le gestionnaire est uniquement appelé sous certaines conditions.
 
-[!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet3604.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3604.fs)]
 
-Le [module Observable](https://msdn.microsoft.com/library/16b8610b-b30a-4df7-aa99-d9d352276227) contient des fonctions semblables qui opèrent sur les objets observables. Les objets observables sont semblables aux événements, mais s'abonnent activement aux événements uniquement s'ils font eux-mêmes l'objet d'un abonnement.
+Le [module observable](https://msdn.microsoft.com/library/16b8610b-b30a-4df7-aa99-d9d352276227) contient des fonctions similaires qui opèrent sur des objets observables. Les objets observables sont semblables aux événements, mais s'abonnent activement aux événements uniquement s'ils font eux-mêmes l'objet d'un abonnement.
 
 ## <a name="implementing-an-interface-event"></a>Implémentation d'un évènement d'interface
 
@@ -176,7 +176,7 @@ Application.Run(appForm)
 
 - [Membres](index.md)
 - [Gestion et déclenchement d’événements](../../../../docs/standard/events/index.md)
-- [Expressions lambda : le mot clé `fun` ](../functions/lambda-expressions-the-fun-keyword.md)
-- [Control.Event, Module](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event-module-%5bfsharp%5d)
-- [Control.Event&#60;l '&#62; classe](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27t%5d-class-%5bfsharp%5d)
-- [Control.Event&#60;'Delegate,'Args&#62; Class](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27delegate%2c%27args%5d-class-%5bfsharp%5d)
+- [Expressions lambda: le mot clé `fun` ](../functions/lambda-expressions-the-fun-keyword.md)
+- [Module Control. Event](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event-module-%5bfsharp%5d)
+- [Control. Event&#60;'&#62; classe'](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27t%5d-class-%5bfsharp%5d)
+- [Control. Event&#60;'Delegate, 'args&#62; , classe](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27delegate%2c%27args%5d-class-%5bfsharp%5d)

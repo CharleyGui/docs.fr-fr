@@ -1,20 +1,20 @@
 ---
-title: Gérer la réentrance dans Async Apps (Visual Basic)
+title: Gestion de la réentrance dans les applications Async (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: ef3dc73d-13fb-4c5f-a686-6b84148bbffe
-ms.openlocfilehash: 35d2b75e14d6223463b45d585c6742e62cdad2a6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bc8156b1d2baa53255870364e680d62d7b93a50f
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64751018"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630939"
 ---
-# <a name="handling-reentrancy-in-async-apps-visual-basic"></a>Gérer la réentrance dans Async Apps (Visual Basic)
+# <a name="handling-reentrancy-in-async-apps-visual-basic"></a>Gestion de la réentrance dans les applications Async (Visual Basic)
 
 Quand vous incluez du code asynchrone dans votre application, vous devez prendre en compte et éventuellement empêcher la réentrance, qui fait référence à une nouvelle entrée d'une opération asynchrone avant qu'elle soit terminée. Si vous n'identifiez pas et ne gérez pas les possibilités de réentrance, les résultats peuvent être inattendus.
 
 > [!NOTE]
->  Pour exécuter l’exemple, Visual Studio version 2012 ou ultérieure et .NET Framework version 4.5 ou ultérieure doivent être installés sur votre ordinateur.
+> Pour exécuter l’exemple, Visual Studio version 2012 ou ultérieure et .NET Framework version 4.5 ou ultérieure doivent être installés sur votre ordinateur.
 
 ## <a name="BKMK_RecognizingReentrancy"></a> Identification de la réentrance
 
@@ -94,7 +94,7 @@ Vous pouvez gérer la réentrance de différentes façons, selon ce que vous vou
 
 Vous pouvez bloquer le bouton **Démarrer** pendant l’exécution d’une opération en désactivant le bouton en haut du gestionnaire d’événements `StartButton_Click`. Ensuite, vous pouvez réactiver le bouton depuis un bloc `Finally` quand l'opération se termine pour que les utilisateurs puissent exécuter à nouveau l'application.
 
-Le code suivant illustre ces modifications, marquées par des astérisques. Vous pouvez ajouter les modifications apportées au code à la fin de cette rubrique, ou vous pouvez télécharger l’application finalisée dans [exemples Async : Reentrancy in .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06) (Exemples Async : réentrance dans les applications de bureau .NET). Le nom du projet est DisableStartButton.
+Le code suivant illustre ces modifications, marquées par des astérisques. Vous pouvez ajouter les modifications apportées au code à la fin de cette rubrique, ou vous pouvez télécharger l’application [finie à partir des exemples Async: Reentrancy in .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06) (Exemples Async : réentrance dans les applications de bureau .NET). Le nom du projet est DisableStartButton.
 
 ```vb
 Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)
@@ -123,7 +123,7 @@ Suite aux modifications, le bouton ne répond pas pendant que `AccessTheWebAsync
 
 Au lieu de désactiver le bouton **Démarrer**, vous pouvez garder le bouton actif. Toutefois, si l’utilisateur choisit de nouveau ce bouton, annulez l’opération qui est déjà en cours d’exécution et laissez continuer l’opération le plus récemment démarrée.
 
-Pour plus d’informations sur l’annulation, consultez [réglage (Visual Basic) de votre Application Async](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md).
+Pour plus d’informations sur l’annulation, consultez [réglage de votre application Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md).
 
 Pour configurer ce scénario, apportez les modifications suivantes au code de base fourni dans [Examen et exécution de l’exemple d’application](#BKMD_SettingUpTheExample). Vous pouvez également télécharger l’application finalisée à partir de la page [Async Samples: Reentrancy in .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06) (Exemples Async : réentrance dans les applications de bureau .NET). Le nom de ce projet est CancelAndRestart.
 
@@ -136,7 +136,7 @@ Pour configurer ce scénario, apportez les modifications suivantes au code de ba
         Dim cts As CancellationTokenSource
     ```
 
-2. Dans `StartButton_Click`, déterminez si une opération est déjà en cours d'exécution. Si la valeur de `cts` est `Nothing`, aucune opération n’est déjà active. Si la valeur n’est pas `Nothing`, l’opération est déjà en cours d’exécution est annulée.
+2. Dans `StartButton_Click`, déterminez si une opération est déjà en cours d'exécution. Si la valeur de `cts` est `Nothing`, aucune opération n’est déjà active. Si la valeur n' `Nothing`est pas, l’opération qui est déjà en cours d’exécution est annulée.
 
     ```vb
     ' *** If a download process is already underway, cancel it.
@@ -153,7 +153,7 @@ Pour configurer ce scénario, apportez les modifications suivantes au code de ba
     cts = newCTS
     ```
 
-4. À la fin de `StartButton_Click`, le processus en cours est terminé, par conséquent, définissez la valeur de `cts` à `Nothing`.
+4. À la fin de `StartButton_Click`, le processus en cours est terminé, donc réaffectez `cts` la valeur `Nothing`à.
 
     ```vb
     ' *** When the process completes, signal that another process can proceed.
@@ -513,7 +513,7 @@ La sortie affiche les modèles suivants.
   TOTAL bytes returned:  915908
   ```
 
-- Le `pendingWork` tâche est `Nothing` au début de `FinishOneGroupAsync` uniquement pour le groupe A, ce qui a démarré en premier. Le groupe A n'a pas encore terminé une expression await quand il atteint `FinishOneGroupAsync`. Par conséquent, le contrôle n'a pas retourné à `AccessTheWebAsync`, et la première assignation à `pendingWork` ne s'est pas produite.
+- La `pendingWork` tâche se `Nothing` trouve au début de `FinishOneGroupAsync` uniquement pour le groupe a, qui a démarré en premier. Le groupe A n'a pas encore terminé une expression await quand il atteint `FinishOneGroupAsync`. Par conséquent, le contrôle n'a pas retourné à `AccessTheWebAsync`, et la première assignation à `pendingWork` ne s'est pas produite.
 
 - Les deux lignes suivantes apparaissent toujours ensemble dans la sortie. Le code n'est jamais interrompu entre le démarrage d'une opération de groupe dans `StartButton_Click` et l'affectation d'une tâche pour le groupe à `pendingWork`.
 
@@ -557,7 +557,7 @@ La section suivante fournit le code pour générer l’exemple comme une applica
 
      La boîte de dialogue **Nouveau projet** s'affiche.
 
-3. Dans le **modèles installés** volet, développez **Visual Basic**, puis développez **Windows**.
+3. Dans le volet **modèles installés** , développez **Visual Basic**, puis développez **Windows**.
 
 4. Dans la liste des types de projets, choisissez **Application WPF**.
 
@@ -591,9 +591,9 @@ La section suivante fournit le code pour générer l’exemple comme une applica
 
 8. Ajoutez une référence pour <xref:System.Net.Http>.
 
-9. Dans **l’Explorateur de solutions**, ouvrez le menu contextuel pour MainWindow.xaml.vb, puis choisissez **afficher le Code**.
+9. Dans **Explorateur de solutions**, ouvrez le menu contextuel de MainWindow. Xaml. vb, puis choisissez **afficher le code**.
 
-10. Dans MainWindow.xaml.vb, remplacez le code par le code suivant.
+10. Dans MainWindow. Xaml. vb, remplacez le code par le code suivant.
 
     ```vb
     ' Add the following Imports statements, and add a reference for System.Net.Http.
@@ -677,5 +677,5 @@ La section suivante fournit le code pour générer l’exemple comme une applica
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Procédure pas à pas : Accès Web à l’aide d’Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Procédure pas à pas : Accès au Web avec Async et await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Programmation asynchrone avec Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
