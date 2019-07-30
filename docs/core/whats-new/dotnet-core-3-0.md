@@ -7,12 +7,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 06/14/2019
-ms.openlocfilehash: a808a35876df8d2f6cee3c240c606b7bd979e9ee
-ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
+ms.openlocfilehash: b1dd243d754bfc3b682c084820547f6b7846f0ea
+ms.sourcegitcommit: 4b9c2d893b45d47048c6598b4182ba87759b1b59
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67539271"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68484658"
 ---
 # <a name="whats-new-in-net-core-30-preview-6"></a>Nouveautés de .NET Core 3.0 (Preview 6)
 
@@ -33,7 +33,7 @@ Pour plus d’informations sur chaque préversion, consultez les annonces suivan
 
 ## <a name="net-core-sdk-windows-installer"></a>Windows Installer pour le kit SDK .NET Core
 
-Le programme d’installation MSI pour Windows a changé à compter de .NET Core 3.0. Les programmes d’installation du SDK mettent désormais à niveau les versions des plages de fonctionnalités du SDK. Les plages de fonctionnalités sont définies dans les groupes *hundreds* de la section *patch* du numéro de version. Par exemple, **3.0.*101*** et **3.0.*201*** sont des versions dans deux plages de fonctionnalités différentes, tandis que **3.0.*101*** et **3.0.*199*** se trouvent dans la même plages de fonctionnalités. En outre, quand SDK .NET Core **3.0.*101*** est installé, SDK .NET Core **3.0.*100*** est supprimé de la machine s’il existe. Quand SDK .NET Core **3.0.*200*** est installé sur la même machine, SDK .NET Core **3.0.*101*** n’est pas supprimé.
+Le programme d’installation MSI pour Windows a changé à compter de .NET Core 3.0. Les programmes d’installation du SDK mettent désormais à niveau les versions des plages de fonctionnalités du SDK. Les plages de fonctionnalités sont définies dans les groupes *hundreds* de la section *patch* du numéro de version. Par exemple, **3.0._101_** et **3.0._201_** sont des versions dans deux plages de fonctionnalités différentes, tandis que **3.0._101_** et **3.0._199_** se trouvent dans la même plages de fonctionnalités. En outre, quand le SDK .NET Core **3.0._101_** est installé, le SDK .NET Core **3.0._100_** est supprimé de la machine s’il existe. Quand le SDK .NET Core **3.0._200_** est installé sur la même machine, le SDK .NET Core **3.0._101_** n’est pas supprimé.
 
 Pour plus d’informations sur la gestion des versions, consultez [Vue d’ensemble de la gestion des versions .NET Core](../versions/index.md).
 

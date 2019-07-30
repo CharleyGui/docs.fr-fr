@@ -7,12 +7,12 @@ f1_keywords:
 - fixed
 helpviewer_keywords:
 - fixed keyword [C#]
-ms.openlocfilehash: 88e2b93fda786db15b3a3a693bdb9293ed31df4c
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: d3c87f0e71095bbcc7c5a1d64b026e92838a6306
+ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833219"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433751"
 ---
 # <a name="fixed-statement-c-reference"></a>fixed, instruction (référence C#)
 
@@ -26,7 +26,7 @@ Vous pouvez initialiser un pointeur à l’aide d’un tableau, d’une chaîne,
 
 [!code-csharp[Initializing fixed size buffers](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#2)]
 
-À compter de C# 7.3, l’instruction `fixed` s’applique à d’autres types au-delà des tableaux, chaînes, mémoires tampons de taille fixe ou variables non managées. Tout type qui implémente une méthode nommée `GetPinnableReference` peut être épinglé. `GetPinnableReference` doit retourner une variable `ref` d’un type non géré. Consultez la rubrique consacrée aux [types pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md) pour plus d’informations. Les types .NET <xref:System.Span%601?displayProperty=nameWithType> et <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> introduits dans .NET Core 2.0 utilisent ce modèle et peuvent être épinglés. Ceci est illustré dans l'exemple suivant :
+À compter de C# 7.3, l’instruction `fixed` s’applique à d’autres types au-delà des tableaux, chaînes, mémoires tampons de taille fixe ou variables non managées. Tout type qui implémente une méthode nommée `GetPinnableReference` peut être épinglé. `GetPinnableReference` doit retourner une variable `ref` d’un [type non managé](../builtin-types/unmanaged-types.md). Les types .NET <xref:System.Span%601?displayProperty=nameWithType> et <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> introduits dans .NET Core 2.0 utilisent ce modèle et peuvent être épinglés. Ceci est illustré dans l'exemple suivant :
 
 [!code-csharp[Accessing fixed memory](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#FixedSpan)]
 
@@ -75,4 +75,5 @@ Pour plus d’informations, consultez la section [Instructions fixes](~/_csharpl
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [unsafe](unsafe.md)
+- [Types de pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - [Mémoires tampons de taille fixe](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md)

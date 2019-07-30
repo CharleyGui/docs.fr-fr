@@ -5,12 +5,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 07/18/2016
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
-ms.openlocfilehash: d7c5946f5df8a94bf8b54c10f33234b40338a622
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 5d37f9567570666c280be437aa0472a620a16c63
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67348158"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68400408"
 ---
 # <a name="deconstructing-tuples-and-other-types"></a>Déconstruction de tuples et d’autres types
 
@@ -64,9 +64,9 @@ L’exemple suivant illustre l’utilisation de tuples avec des éléments ignor
 
 [!code-csharp[Tuple-discard](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/discard-tuple1.cs)]
 
-### <a name="deconstructing-user-defined-types"></a>Déconstruction de types définis par l’utilisateur
+## <a name="deconstructing-user-defined-types"></a>Déconstruction de types définis par l’utilisateur
 
-Les types autres que les tuples n’offrent pas de prise en charge intégrée pour les éléments ignorés. Cependant, en tant que créateur d’une classe, d’un struct ou d’une interface, vous pouvez permettre la déconstruction du type en implémentant une ou plusieurs méthodes `Deconstruct`. La méthode retourne void, et chaque valeur à déconstruire est indiquée par un paramètre [out](language-reference/keywords/out-parameter-modifier.md) dans la signature de la méthode. Par exemple, la méthode `Deconstruct` suivante d’une classe `Person` retourne le prénom, le deuxième prénom et le nom :
+C# n’offre pas de prise en charge intégrée pour déconstruire les types non-tuple. Cependant, en tant que créateur d’une classe, d’un struct ou d’une interface, vous pouvez permettre la déconstruction du type en implémentant une ou plusieurs méthodes `Deconstruct`. La méthode retourne void, et chaque valeur à déconstruire est indiquée par un paramètre [out](language-reference/keywords/out-parameter-modifier.md) dans la signature de la méthode. Par exemple, la méthode `Deconstruct` suivante d’une classe `Person` retourne le prénom, le deuxième prénom et le nom :
 
 [!code-csharp[Class-deconstruct](../../samples/snippets/csharp/programming-guide/deconstructing-tuples/deconstruct-class1.cs#1)]
 

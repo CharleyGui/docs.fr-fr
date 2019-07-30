@@ -5,12 +5,12 @@ ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: 59846affb1eea5bd9d6a80c623eab5e3aa9db87c
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 704af9aae23571abdb82ae851066e3c03dbe7161
+ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661080"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433549"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Types pointeur (Guide de programmation C#)
 
@@ -21,16 +21,7 @@ type* identifier;
 void* identifier; //allowed but not recommended
 ```
 
-Le type spécifié avant `*` dans un type de pointeur est appelé **type référent**. Chacun des types suivants peut être un type référent :
-
-- Tout type intégral : [sbyte](../../language-reference/builtin-types/integral-numeric-types.md), [byte](../../language-reference/builtin-types/integral-numeric-types.md), [short](../../language-reference/builtin-types/integral-numeric-types.md), [ushort](../../language-reference/builtin-types/integral-numeric-types.md), [int](../../language-reference/builtin-types/integral-numeric-types.md), [uint](../../language-reference/builtin-types/integral-numeric-types.md), [long](../../language-reference/builtin-types/integral-numeric-types.md), [ulong](../../language-reference/builtin-types/integral-numeric-types.md).
-- Tout type à virgule flottante : [float](../../language-reference/builtin-types/floating-point-numeric-types.md), [double](../../language-reference/builtin-types/floating-point-numeric-types.md).
-- [char](../../language-reference/keywords/char.md).
-- [bool](../../language-reference/keywords/bool.md).
-- [decimal](../../language-reference/builtin-types/floating-point-numeric-types.md).
-- Tout type [enum](../../language-reference/keywords/enum.md).
-- Tout type pointeur. Des expressions comme `void**` sont ainsi autorisées.
-- Tout type struct défini par l'utilisateur qui contient des champs de types unmanaged uniquement.
+Le type spécifié avant `*` dans un type de pointeur est appelé **type référent**. Seul un [type non managé](../../language-reference/builtin-types/unmanaged-types.md) peut être un type référent.
 
 Les types pointeur n’héritent pas de [object](../../language-reference/keywords/object.md), et aucune conversion n’est possible entre les types pointeur et `object`. Par ailleurs, le boxing et l'unboxing ne prennent pas en charge les pointeurs. Cependant, vous pouvez effectuer des conversions entre différents types pointeur ainsi qu'entre des types pointeur et des types intégraux.
 

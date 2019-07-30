@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: 365ea55a112a4a04964a8271f2f7e5591a3b0d5d
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 777eb3be5cbefe0a136bf49f826ad67685a8456d
+ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301044"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68401079"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Procédure : S'abonner et se désabonner d’événements (Guide de programmation C#)
 Vous vous abonnez à un événement publié par une autre classe lorsque vous voulez écrire du code personnalisé qui doit être appelé quand cet événement est déclenché. Par exemple, vous pouvez vous abonner à l’événement `click` d’un bouton pour permettre à votre application de réagir lorsque l’utilisateur clique sur le bouton.  
@@ -46,7 +46,7 @@ Vous vous abonnez à un événement publié par une autre classe lorsque vous vo
     }  
     ```  
   
-2. Utilisez l’opérateur d’assignation d’addition (`+=`) pour attacher votre gestionnaire d’événements à l’événement. Dans l’exemple suivant, nous allons supposer qu’un objet nommé `publisher` a un événement nommé `RaiseCustomEvent`. Notez que la classe d’abonné nécessite une référence à la classe d’éditeur pour s’abonner à ses événements.  
+2. Utilisez l’opérateur d’affectation d’addition (`+=`) pour attacher un gestionnaire d’événements à l’événement. Dans l’exemple suivant, nous allons supposer qu’un objet nommé `publisher` a un événement nommé `RaiseCustomEvent`. Notez que la classe d’abonné nécessite une référence à la classe d’éditeur pour s’abonner à ses événements.  
   
     ```csharp
     publisher.RaiseCustomEvent += HandleCustomEvent;  
@@ -58,19 +58,18 @@ Vous vous abonnez à un événement publié par une autre classe lorsque vous vo
     publisher.RaiseCustomEvent += new CustomEventHandler(HandleCustomEvent);  
     ```  
   
-     Vous pouvez également ajouter un gestionnaire d’événements à l’aide d’une expression lambda :  
+     Vous pouvez également utiliser une [expression lambda](../statements-expressions-operators/lambda-expressions.md) pour spécifier un gestionnaire d’événements :
   
     ```csharp
     public Form1()  
     {  
         InitializeComponent();  
-        // Use a lambda expression to define an event handler.  
-        this.Click += (s,e) => { MessageBox.Show(  
-           ((MouseEventArgs)e).Location.ToString());};  
+        this.Click += (s,e) =>
+            {
+                MessageBox.Show(((MouseEventArgs)e).Location.ToString());
+            };
     }  
     ```  
-  
-     Pour plus d'informations, voir [Procédure : Utiliser des expressions lambda en dehors de LINQ](../../../csharp/programming-guide/statements-expressions-operators/how-to-use-lambda-expressions-outside-linq.md).  
   
 ### <a name="to-subscribe-to-events-by-using-an-anonymous-method"></a>Pour s’abonner aux événements à l’aide d’une méthode anonyme  
   

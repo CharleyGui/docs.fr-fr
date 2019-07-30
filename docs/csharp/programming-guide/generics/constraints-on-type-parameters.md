@@ -7,12 +7,12 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 44ab9766bead15c97a1397ef1f47de75f72643a3
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: f09f93f27aa4f50cfb7e09b9d6d4f98f22e1ac9a
+ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423535"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433555"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Contraintes sur les paramètres de type (Guide de programmation C#)
 
@@ -22,7 +22,7 @@ Les contraintes informent le compilateur sur les fonctionnalités que doit avoir
 |----------------|-----------------|
 |`where T : struct`|L’argument de type doit être un type valeur. Tout type valeur, excepté <xref:System.Nullable%601>, peut être spécifié. Pour plus d’informations sur les types Nullable en C#, consultez [Types Nullable](../nullable-types/index.md).|
 |`where T : class`|L’argument de type doit être un type référence. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau.|
-|`where T : unmanaged`|L’argument de type ne doit pas être un type référence et ne doit contenir aucun membre de type référence à tous les niveaux d’imbrication.|
+|`where T : unmanaged`|L’argument de type doit être un [type non managé](../../language-reference/builtin-types/unmanaged-types.md).|
 |`where T : new()`|L’argument de type doit avoir un constructeur sans paramètre public. Quand vous utilisez la contrainte `new()` avec d’autres contraintes, elle doit être spécifiée en dernier.|
 |`where T :` *\<nom_classe_de_base>*|L’argument de type doit être la classe de base spécifiée ou en dériver.|
 |`where T :` *\<nom_interface>*|L’argument de type doit être ou implémenter l’interface spécifiée. Plusieurs contraintes d’interface peuvent être spécifiées. L’interface qui impose les contraintes peut également être générique.|
@@ -78,7 +78,7 @@ L’utilité des paramètres de type en tant que contraintes avec les classes g�
 
 ## <a name="unmanaged-constraint"></a>Contrainte non managée
 
-À partir de C# 7.3, vous pouvez utiliser la contrainte `unmanaged` pour spécifier que le paramètre de type doit être un **type non managé**. Un **type non managé** est un type qui n’est pas un type référence et ne contient pas de champs de type référence à tous les niveaux d’imbrication. La contrainte `unmanaged` vous permet d’écrire des routines réutilisables à appliquer aux types qui peuvent être manipulés comme blocs de mémoire, comme illustré dans l’exemple suivant :
+À partir de C# 7.3, vous pouvez utiliser la contrainte `unmanaged` pour spécifier que le paramètre de type doit être un [type non managé](../../language-reference/builtin-types/unmanaged-types.md). La contrainte `unmanaged` vous permet d’écrire des routines réutilisables à appliquer aux types qui peuvent être manipulés comme blocs de mémoire, comme illustré dans l’exemple suivant :
 
 [!code-csharp[using the unmanaged constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#15)]
 

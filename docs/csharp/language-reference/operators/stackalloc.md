@@ -6,16 +6,18 @@ f1_keywords:
 - stackalloc_CSharpKeyword
 helpviewer_keywords:
 - stackalloc operator [C#]
-ms.openlocfilehash: 3be4e827e75e4e26a34d9ed70423af5aa317e7fb
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: f211acaa8c47ab42a1f7f06cff6c35570cd22b75
+ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025004"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68433826"
 ---
 # <a name="stackalloc-operator-c-reference"></a>Opérateur stackalloc (Référence C#)
 
 L’opérateur `stackalloc` alloue un bloc de mémoire dans la pile. Un bloc de mémoire alloué dans la pile pendant l’exécution de la méthode est automatiquement supprimé lorsque cette méthode retourne un résultat. Vous ne pouvez pas libérer explicitement la mémoire allouée avec l’opérateur `stackalloc`. Un bloc de mémoire alloué dans la pile n’est pas soumis au [nettoyage de la mémoire](../../../standard/garbage-collection/index.md) et ne doit pas être épinglé avec [l’instruction `fixed`](../keywords/fixed-statement.md).
+
+Dans l’expression `stackalloc T[E]`, `T` doit être un [type non managé](../builtin-types/unmanaged-types.md) et `E` doit être une expression de type `int`.
 
 Vous pouvez attribuer le résultat de l’opérateur `stackalloc` à une variable d’un des types suivants :
 

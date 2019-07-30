@@ -5,12 +5,12 @@ author: Thraka
 ms.author: adegeo
 ms.date: 03/27/2019
 ms.custom: ''
-ms.openlocfilehash: 5c7e3aca0a473abb831693244d1b194985f2ef7f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 9885f666e68b795b9b6aba9cf31f9750e30fd170
+ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59342204"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68512282"
 ---
 # <a name="how-to-port-a-wpf-desktop-app-to-net-core"></a>Procédure : Porter une application de bureau WPF sur .NET Core
 
@@ -25,6 +25,9 @@ Dans cet article, différents noms sont utilisés pour identifier les types de f
 | **MyWPFCore.csproj** | Nom du nouveau projet .NET Core en création. |
 | **MyAppCore.exe** | Exécutable de l’application WPF .NET Core. |
 
+>[!IMPORTANT]
+>Bien que cet article utilise C# comme langage cible, les étapes sont les mêmes pour VB.NET, à ceci près que VB.NET utilise des fichiers *.vbproj* et *.vb* au lieu de fichiers *.csproj* et *.cs*, respectivement.
+
 ## <a name="prerequisites"></a>Prérequis
 
 - [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) pour tout le travail de conception.
@@ -34,11 +37,10 @@ Dans cet article, différents noms sont utilisés pour identifier les types de f
   - Développement multiplateforme .NET
 
 - Un projet WPF de travail dans une solution qui se génère et s’exécute sans problème.
-- Le projet doit être codé en C#. 
 - Installez la dernière préversion de [.NET Core 3.0](https://aka.ms/netcore3download).
 
 >[!NOTE]
->**Visual Studio 2017** ne prend pas en charge les projets .NET Core 3.0. **Visual Studio 2019** est compatible avec les projets .NET Core 3.0, mais ne gère pas encore le concepteur visuel pour les projets WPF .NET Core 3.0. Pour utiliser le concepteur visuel, la solution doit comporter un projet WPF .NET qui partage ses fichiers avec le projet .NET Core.
+>**Visual Studio 2017** ne prend pas en charge les projets .NET Core 3.0. **Visual Studio 2019** prend en charge les projet .NET Core 3.0, mais offre une prise en charge limitée du concepteur visuel WPF .NET Core. Pour utiliser un concepteur visuel entièrement pris en charge, votre solution doit comporter un projet WPF .NET Framework qui partage ses fichiers avec le projet .NET Core.
 
 ### <a name="consider"></a>Consider
 
@@ -218,10 +220,10 @@ La commande précédente ajoute le code suivant au projet **MyWPFCore.csproj** 
 Comme nous l’avons indiqué dans cet article, Visual Studio 2019 ne prend en charge le Concepteur WPF que dans les projets .NET Framework. En créant un projet .NET Core côte à côte, vous pouvez tester votre projet avec .NET Core tout en utilisant le projet .NET Framework pour concevoir des formulaires. Le fichier de solution comporte à la fois les projets .NET Framework et .NET Core. Ajoutez et concevez vos formulaires et vos contrôles dans le projet .NET Framework ; à partir des modèles Glob de fichier que nous avons ajoutés aux projets .NET Core, les nouveaux fichiers et les fichiers modifiés sont automatiquement intégrés au projet .NET Core.
 
 Dès que Visual Studio 2019 prendra en charge le Concepteur WPF, vous pourrez copier/coller le contenu de votre fichier projet .NET Core dans le fichier projet .NET Framework, puis supprimer les modèles Glob de fichier ajoutés avec les éléments `<Source>` et `<EmbeddedResource>`. Résolvez le chemin d’accès des références de projet utilisées par votre application. Le projet .NET Framework est ainsi mis à niveau en un projet .NET Core.
- 
+
 ## <a name="next-steps"></a>Étapes suivantes
 
-* En savoir plus sur le [Pack de compatibilité Windows][compat-pack].
-* Regardez une [vidéo sur le portage](https://www.youtube.com/watch?v=5MomsgkWkVw&list=PLS__JrkRveTMiWxG-Lv4cBwYfMQ6m2gmt) de projets WPF .NET Framework vers .NET Core.
+- Découvrez-en plus sur le [Pack de compatibilité Windows][compat-pack].
+- Regardez une [vidéo sur le portage](https://www.youtube.com/watch?v=5MomsgkWkVw&list=PLS__JrkRveTMiWxG-Lv4cBwYfMQ6m2gmt) de projets WPF .NET Framework vers .NET Core.
 
 [compat-pack]: windows-compat-pack.md
