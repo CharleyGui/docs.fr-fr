@@ -9,6 +9,25 @@
         - name: Navigateur d’API .NET
           tocHref: /dotnet/api/
           topicHref: /dotnet/api/index
+        - name: Guide de l’architecture des applications .NET
+          tocHref: /dotnet/architecture/
+          topicHref: /dotnet/architecture/index
+          items:
+            - name: Applications web ASP.NET modernes (livre électronique)
+              tocHref: /dotnet/architecture/modern-web-apps-azure/
+              topicHref: /dotnet/architecture/modern-web-apps-azure/index
+            - name: Microservices .NET - Architecture (livre électronique)
+              tocHref: /dotnet/architecture/microservices/
+              topicHref: /dotnet/architecture/microservices/index
+            - name: Modernisation des applications .NET (livre électronique)
+              tocHref: /dotnet/architecture/modernize-with-azure-containers/
+              topicHref: /dotnet/architecture/modernize-with-azure-containers/index
+            - name: Microservices .NET - DevOps (livre électronique)
+              tocHref: /dotnet/architecture/containerized-lifecycle/
+              topicHref: /dotnet/architecture/containerized-lifecycle/index
+            - name: Livre électronique sur les applications serverless
+              tocHref: /dotnet/architecture/serverless/
+              topicHref: /dotnet/architecture/serverless/index
         - name: Guide de .NET
           tocHref: /dotnet/standard/
           topicHref: /dotnet/standard/index
@@ -19,21 +38,6 @@
             - name: Conseils sur la bibliothèque open source
               tocHref: /dotnet/standard/library-guidance/
               topicHref: /dotnet/standard/library-guidance/index
-            - name: Applications web ASP.NET modernes (livre électronique)
-              tocHref: /dotnet/standard/modern-web-apps-azure-architecture/
-              topicHref: /dotnet/standard/modern-web-apps-azure-architecture/index
-            - name: Microservices .NET - Architecture (livre électronique)
-              tocHref: /dotnet/standard/microservices-architecture/
-              topicHref: /dotnet/standard/microservices-architecture/index
-            - name: Modernisation des applications .NET (livre électronique)
-              tocHref: /dotnet/standard/modernize-with-azure-and-containers/
-              topicHref: /dotnet/standard/modernize-with-azure-and-containers/index
-            - name: Microservices .NET - DevOps (livre électronique)
-              tocHref: /dotnet/standard/containerized-lifecycle-architecture/
-              topicHref: /dotnet/standard/containerized-lifecycle-architecture/index
-            - name: Livre électronique sur les applications serverless
-              tocHref: /dotnet/standard/serverless-architecture/
-              topicHref: /dotnet/standard/serverless-architecture/index
             - name: Modèles de programmation asynchrone
               tocHref: /dotnet/standard/asynchronous-programming-patterns/
               topicHref: /dotnet/standard/asynchronous-programming-patterns/index
@@ -439,7 +443,7 @@
                   tocHref: /dotnet/csharp/programming-guide/concepts/
                   topicHref: /dotnet/csharp/programming-guide/concepts/index
                   items:
-                    - name: Assemblys et Global Assembly Cache
+                    - name: Assemblys
                       tocHref: /dotnet/csharp/programming-guide/concepts/assemblies-gac/
                       topicHref: /dotnet/csharp/programming-guide/concepts/assemblies-gac/index
                     - name: Programmation asynchrone
@@ -535,7 +539,7 @@
               tocHref: /dotnet/visual-basic/programming-guide/concepts/
               topicHref: /dotnet/visual-basic/programming-guide/concepts/index
               items:
-                - name: Assemblys et Global Assembly Cache
+                - name: Assemblys
                   tocHref: /dotnet/visual-basic/programming-guide/concepts/assemblies-gac/
                   topicHref: /dotnet/visual-basic/programming-guide/concepts/assemblies-gac/index
                 - name: Programmation asynchrone

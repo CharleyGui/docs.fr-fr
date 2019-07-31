@@ -18,19 +18,6 @@
       href: standard/frameworks.md
     - name: Glossaire .NET
       href: standard/glossary.md
-    - name: Aide sur l’architecture
-      href: standard/guidance-architecture.md
-      items:
-        - name: Architecturer des applications web modernes avec ASP.NET Core et Microsoft Azure
-          href: standard/modern-web-apps-azure-architecture/
-        - name: Moderniser des applications .NET existantes avec le cloud Azure et des conteneurs Windows
-          href: standard/modernize-with-azure-and-containers/
-        - name: Cycle de vie des applications Docker conteneurisées avec la plateforme et les outils Microsoft
-          href: standard/containerized-lifecycle-architecture/
-        - name: 'Microservices .NET : Architecture pour les applications .NET en conteneur'
-          href: standard/microservices-architecture/
-        - name: "Applications serverless\_: architecture, modèles et implémentation Azure"
-          href: standard/serverless-architecture/
     - name: Aide sur la bibliothèque open source
       href: standard/library-guidance/
     - name: Choix entre .NET Core et .NET Framework pour les applications serveur
@@ -113,6 +100,20 @@
           href: standard/native-interop/best-practices.md
         - name: Charsets et marshaling
           href: standard/native-interop/charset.md
+        - name: COM Interop
+          href: standard/native-interop/cominterop.md
+          items:
+            - name: Wrappers COM
+              href: standard/native-interop/com-wrappers.md
+              items:
+                - name: Wrapper pouvant être appelé par le runtime
+                  href: standard/native-interop/runtime-callable-wrapper.md
+                - name: Wrapper pouvant être appelé par COM
+                  href: standard/native-interop/com-callable-wrapper.md
+            - name: Qualification des types .NET en vue de l’interopérabilité COM
+              href: standard/native-interop/qualify-net-types-for-interoperation.md
+        - name: Application d'attributs d'interopérabilité
+          href: standard/native-interop/apply-interop-attributes.md
     - name: Collections et structures de données
       href: standard/collections/
     - name: Valeurs numériques dans .NET
@@ -222,6 +223,10 @@
           href: core/tutorials/aspnet-core.md
         - name: Hébergement .NET Core à partir du code natif
           href: core/tutorials/netcore-hosting.md
+    - name: Interopérabilité native
+      items:
+        - name: Exposition de composants .NET Core à COM
+          href: core/native-interop/expose-components-to-com.md
     - name: 'Packages, métapackages et frameworks'
       href: core/packages.md
     - name: Vue d’ensemble des changements de l’interface CLI
@@ -1037,6 +1042,24 @@
     - name: Concepts de programmation
       href: visual-basic/programming-guide/concepts/index.md
       items:
+        - name: Assemblys
+          items:
+            - name: Assemblys friend
+              items:
+                - name: "Procédure\_: créer des assemblys friend non signés"
+                  href: visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md
+                - name: "Procédure\_: créer des assemblys friend signés"
+                  href: visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md
+            - name: "Procédure\_: créer et utiliser des assemblys à l’aide de la ligne de commande"
+              href: visual-basic/programming-guide/concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md
+            - name: "Procédure\_: déterminer si un fichier est un assembly"
+              href: visual-basic/programming-guide/concepts/assemblies-gac/how-to-determine-if-a-file-is-an-assembly.md
+            - name: "Procédure\_: charger et décharger des assemblys"
+              href: visual-basic/programming-guide/concepts/assemblies-gac/how-to-load-and-unload-assemblies.md
+            - name: "Procédure\_: partager un assembly avec d’autres applications"
+              href: visual-basic/programming-guide/concepts/assemblies-gac/how-to-share-an-assembly-with-other-applications.md
+            - name: "Procédure pas à pas\_: incorporation de types provenant d’assemblys managés"
+              href: visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-vs.md
         - name: Programmation asynchrone avec Async et Await
           href: visual-basic/programming-guide/concepts/async/index.md
         - name: Attributs
@@ -2393,5 +2416,7 @@
   href: machine-learning/index.yml
 - name: Guide .NET pour Apache Spark
   href: spark/index.yml
+- name: Guide de l’architecture des applications .NET
+  href: architecture/index.yml
 - name: Exemples et didacticiels
   href: samples-and-tutorials/index.md
