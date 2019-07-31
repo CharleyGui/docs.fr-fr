@@ -16,12 +16,12 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: 440a6d76e5295613d2887c0a77d9a49e870e580b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 39cf4b60262afb1e3745a82c734391385669f5d3
+ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629815"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671907"
 ---
 # <a name="wpf-architecture"></a>Architecture de WPF
 Cette rubrique fournit une visite guidée de la hiérarchie de classes Windows Presentation Foundation (WPF). Elle couvre la plupart des principaux sous-systèmes de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] et décrit leur mode d’interaction. Elle passe également en revue certains choix opérés par les architectes de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
@@ -76,9 +76,9 @@ Cette rubrique fournit une visite guidée de la hiérarchie de classes Windows P
   
  Un autre point important à noter, que le diagramme ne montre pas vraiment, est la façon dont le système effectue réellement la composition.  
   
- Dans User32 et [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)], le système fonctionne selon un système de découpage en mode immédiat. Quand un composant doit être affiché, le système établit les limites de la zone de découpage en dehors de laquelle le composant n’est pas autorisé à manipuler les pixels, puis il demande au composant de dessiner les pixels dans cette zone. Cette approche est particulièrement efficace dans les systèmes à mémoire limitée, car lorsqu’un changement est effectué, vous avez uniquement à intervenir sur le composant concerné (la couleur d’un pixel étant toujours définie par un seul composant).  
+ Dans User32 et GDI, le système fonctionne sur un système de découpage en mode immédiat. Quand un composant doit être affiché, le système établit les limites de la zone de découpage en dehors de laquelle le composant n’est pas autorisé à manipuler les pixels, puis il demande au composant de dessiner les pixels dans cette zone. Cette approche est particulièrement efficace dans les systèmes à mémoire limitée, car lorsqu’un changement est effectué, vous avez uniquement à intervenir sur le composant concerné (la couleur d’un pixel étant toujours définie par un seul composant).  
   
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] utilise le modèle de dessin « algorithme du peintre ». Cela signifie que chaque composant doit effectuer le rendu de l’arrière vers l’avant de l’affichage, au lieu de procéder par découpage. Chaque composant peut ainsi dessiner par-dessus l’affichage du composant précédent. L’avantage de ce modèle est que vous pouvez afficher des formes complexes partiellement transparentes. Avec les cartes graphiques actuelles, ce modèle est relativement rapide (ce qui n’était pas le cas quand les interfaces User32 et [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] ont été créées).  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] utilise le modèle de dessin « algorithme du peintre ». Cela signifie que chaque composant doit effectuer le rendu de l’arrière vers l’avant de l’affichage, au lieu de procéder par découpage. Chaque composant peut ainsi dessiner par-dessus l’affichage du composant précédent. L’avantage de ce modèle est que vous pouvez afficher des formes complexes partiellement transparentes. Avec le matériel graphique moderne d’aujourd’hui, ce modèle est relativement rapide (ce qui n’était pas le cas lors de la création de User32/GDI).  
   
  Comme mentionné plus haut, une philosophie essentielle de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] est de passer à un modèle de programmation « axé sur les propriétés », davantage déclaratif. Cela s’observe à deux endroits intéressants du système visuel.  
   

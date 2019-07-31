@@ -9,12 +9,12 @@ helpviewer_keywords:
 - interoperability [WPF], airspace
 - Win32 code [WPF], window regions
 ms.assetid: b7cc350f-b9e2-48b1-be14-60f3d853222e
-ms.openlocfilehash: e2c93f4471db2d72851a5d5bd8806b59a3e5ee28
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: a169064052a567694b1cbd1e2f8ac2f00b047a68
+ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629863"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671832"
 ---
 # <a name="technology-regions-overview"></a>Vue d'ensemble des régions de technologie
 Si plusieurs technologies de présentation sont utilisées dans une application (par exemple, WPF, Win32 ou DirectX), elles doivent partager les zones de rendu dans une fenêtre de niveau supérieur commune. Cette rubrique décrit les problèmes qui peuvent avoir un impact sur la présentation et les entrées de votre application d’interopérabilité WPF.  
@@ -52,13 +52,13 @@ Si plusieurs technologies de présentation sont utilisées dans une application 
   
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]prend en charge hrgn; Toutefois, il n’existe aucune API managée pour cette fonctionnalité. Vous pouvez utiliser l’appel de <xref:System.Windows.Interop.HwndSource> code non managé et [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] appeler les API pertinentes. Pour plus d’informations, consultez [Appel à des fonctions natives à partir de code managé](/cpp/dotnet/calling-native-functions-from-managed-code).  
   
- Les fenêtres superposées [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ont des fonctionnalités différentes en fonction des systèmes d’exploitation. Cela est dû [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] au fait que utilise DirectX pour le rendu et que les fenêtres superposées étaient principalement conçues pour le rendu, et non pour [!INCLUDE[TLA2#tla_gdi](../../../../includes/tla2sharptla-gdi-md.md)] le rendu DirectX.  
+ Les fenêtres superposées [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ont des fonctionnalités différentes en fonction des systèmes d’exploitation. Cela est dû [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] au fait que utilise DirectX pour le rendu et que les fenêtres superposées étaient principalement conçues pour le rendu GDI, et non pour le rendu DirectX.  
   
 - [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prend en charge les fenêtres superposées à accélération matérielle sur [!INCLUDE[TLA#tla_longhorn](../../../../includes/tlasharptla-longhorn-md.md)] et versions ultérieures. Les fenêtres superposées à accélération [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)] matérielle sur requièrent la prise en charge de Microsoft DirectX. par conséquent, les fonctionnalités dépendent de la version de Microsoft DirectX sur cet ordinateur.  
   
 - [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ne prend pas en charge les clés de couleur de transparence, car [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ne peut pas garantir l’affichage de la couleur exacte demandée, surtout s’il s’agit d’un rendu à accélération matérielle.  
   
-- Si votre application s’exécute sur [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)], des fenêtres superposées sur des surfaces DirectX scintillent lorsque l’application DirectX est rendue.  (La séquence [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] de rendu réelle masque la fenêtre superposée, puis DirectX dessine, [!INCLUDE[TLA#tla_gdi](../../../../includes/tlasharptla-gdi-md.md)] puis replace la fenêtre superposée).  Les fenêtres superposées autres que [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ont également cette limitation.  
+- Si votre application s’exécute sur [!INCLUDE[TLA2#tla_winxp](../../../../includes/tla2sharptla-winxp-md.md)], des fenêtres superposées sur des surfaces DirectX scintillent lorsque l’application DirectX est rendue.  (La séquence de rendu réelle est que Microsoft Windows Graphics Device Interface (GDI) masque la fenêtre superposée, puis DirectX dessine, puis Microsoft Windows Graphics Device Interface (GDI) ramène la fenêtre superposée).  Les fenêtres superposées autres que [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ont également cette limitation.  
   
 ## <a name="see-also"></a>Voir aussi
 

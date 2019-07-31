@@ -19,19 +19,20 @@ helpviewer_keywords:
 - Extensible Application Markup Language (see XAML)
 - attribute syntax [XAML]
 ms.assetid: a80db4cd-dd0f-479f-a45f-3740017c22e4
-ms.openlocfilehash: 4f3d8a9f275a41b96b6518d63552ce9873cca0fb
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: ee5318b8ba1284f2805b80b3e41fab3ae739158c
+ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400817"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671995"
 ---
 # <a name="xaml-overview-wpf"></a>Vue d’ensemble du langage XAML (WPF)
+
 Cette rubrique décrit les fonctionnalités du langage XAML et montre comment utiliser XAML pour écrire des applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Cette rubrique décrit en particulier le langage XAML tel qu’il est implémenté par [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Le XAML lui-même est un concept de langage plus vaste que [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
 
 <a name="what_is_xaml"></a>   
 ## <a name="what-is-xaml"></a>Qu’est-ce que XAML ?  
- XAML est un langage de balisage déclaratif. Comme appliqué au modèle de programmation .NET Framework, XAML simplifie la création [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] d’un pour une application .NET Framework. Vous pouvez créer les éléments [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] visibles dans le balisage XAML déclaratif, puis séparer la logique de la définition de l’interface [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] au moment de l’exécution, en utilisant les fichiers code-behind joints au balisage par le biais de définitions de classe partielle. XAML représente directement l’instanciation d’objets dans un ensemble spécifique de types de stockage définis dans des assemblys. C’est ce qui le différencie de la plupart des autres langages de balisage, qui sont en général des langages interprétés sans un lien aussi direct à un système de type de stockage. XAML permet un flux de travail dans lequel des parties distinctes peuvent travailler sur l’interface [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] et la logique d’une application avec des outils pouvant être différents.  
+ XAML est un langage de balisage déclaratif. Comme appliqué au modèle de programmation .NET Framework, XAML simplifie la création [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] d’un pour une application .NET Framework. Vous pouvez créer des [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] éléments visibles dans le balisage XAML déclaratif, puis séparer la [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] définition de la logique d’exécution en utilisant des fichiers code-behind joints à la balise par le biais de définitions de classe partielles. XAML représente directement l’instanciation d’objets dans un ensemble spécifique de types de stockage définis dans des assemblys. C’est ce qui le différencie de la plupart des autres langages de balisage, qui sont en général des langages interprétés sans un lien aussi direct à un système de type de stockage. XAML permet un flux de travail dans lequel des parties distinctes peuvent travailler sur l’interface [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] et la logique d’une application avec des outils pouvant être différents.  
   
  Représentés sous forme de texte, les fichiers XAML sont des fichiers XML qui ont généralement l’extension `.xaml`. Les fichiers peuvent être encodés par un encodage XML, même si UTF-8 est l’encodage classique.  
   
@@ -104,7 +105,7 @@ Cette rubrique décrit les fonctionnalités du langage XAML et montre comment u
   
  En tant que règle du langage XAML, la valeur d’une propriété de contenu XAML doit figurer soit entièrement avant soit entièrement après tous les autres éléments de propriété sur cet élément objet. Par exemple, le balisage suivant n’est pas compilé :  
   
-```  
+```xaml
 <Button>I am a   
   <Button.Background>Blue</Button.Background>  
   blue button</Button>  
@@ -188,7 +189,7 @@ Cette rubrique décrit les fonctionnalités du langage XAML et montre comment u
  [!code-xaml[XAMLOvwSupport#MarginVerbose](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page7.xaml#marginverbose)]  
   
 > [!NOTE]
->  Il existe également un nombre limité d’objets où la conversion de type est la seule méthode publique pour définir une propriété sur ce type sans impliquer une sous-classe, parce que le type lui-même n’a pas de constructeur sans paramètre. Par exemple <xref:System.Windows.Input.Cursor>.  
+> Il existe également un nombre limité d’objets où la conversion de type est la seule méthode publique pour définir une propriété sur ce type sans impliquer une sous-classe, parce que le type lui-même n’a pas de constructeur sans paramètre. Par exemple <xref:System.Windows.Input.Cursor>.  
   
  Pour plus d’informations sur la prise en charge de la conversion de type et de son utilisation avec la syntaxe d’attributs, consultez [TypeConverters et XAML](typeconverters-and-xaml.md).  
   
@@ -228,7 +229,7 @@ Cette rubrique décrit les fonctionnalités du langage XAML et montre comment u
   
  Voici un exemple très simple de fonctionnement des préfixes personnalisés dans le balisage XAML. Le préfixe `custom` est défini dans la balise d’élément racine et mappé à un assembly spécifique qui est empaqueté et disponible avec l’application. Cet assembly contient un type `NumericUpDown`, qui est implémenté pour prendre en charge l’utilisation générale de XAML ainsi que l’utilisation d’un héritage de classe, autorisant son insertion à ce stade dans un modèle de contenu XAML WPF. Une instance de ce contrôle `NumericUpDown` est déclaré comme élément objet en utilisant le préfixe afin qu’un analyseur XAML identifie quel espace de noms XAML contient le type et par conséquent l’emplacement de l’assembly de stockage contenant la définition de type.  
   
-```  
+```xaml
 <Page  
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"   
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"   
