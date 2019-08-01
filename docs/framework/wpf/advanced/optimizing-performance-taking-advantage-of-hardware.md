@@ -9,18 +9,18 @@ helpviewer_keywords:
 - graphics [WPF], rendering tiers
 - software rendering pipeline [WPF]
 ms.assetid: bfb89bae-7aab-4cac-a26c-a956eda8fce2
-ms.openlocfilehash: 7acf5a3f48ac4987037873c63111d988ec3a4979
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: a47a4aae785d817904c30fe7c865a1c033eb3cca
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629650"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68709224"
 ---
 # <a name="optimizing-performance-taking-advantage-of-hardware"></a>Optimisation des performances: Tirer parti du matériel
 L’architecture interne de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dispose de deux pipelines de rendu, matériels et logiciels. Cette rubrique fournit des informations sur ces pipelines de rendu pour vous aider à prendre des décisions sur les optimisations de performances de vos applications.  
   
 ## <a name="hardware-rendering-pipeline"></a>Pipeline de rendu matériel  
- L’un des facteurs les plus importants pour [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] déterminer les performances est qu’il s’agit d’un rendu lié: plus il y a de pixels à afficher, plus le coût des performances est élevé. Toutefois, plus le rendu peut être déchargé dans [!INCLUDE[TLA#tla_gpu](../../../../includes/tlasharptla-gpu-md.md)], plus les performances que vous pouvez obtenir sont avantageuses. Le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pipeline de rendu matériel des applications tire pleinement parti des fonctionnalités de Microsoft DirectX sur du matériel qui prend en charge Microsoft DirectX version 7,0 au minimum. D’autres optimisations peuvent être obtenues par le matériel qui prend en charge les fonctionnalités de Microsoft DirectX version 7,0 et PixelShader 2.0 +.  
+ L’un des facteurs les plus importants pour [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] déterminer les performances est qu’il s’agit d’un rendu lié: plus il y a de pixels à afficher, plus le coût des performances est élevé. Toutefois, plus il est possible de décharger l’unité de traitement graphique (GPU), plus les gains de performances que vous pouvez obtenir sont nombreux. Le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pipeline de rendu matériel des applications tire pleinement parti des fonctionnalités de Microsoft DirectX sur du matériel qui prend en charge Microsoft DirectX version 7,0 au minimum. D’autres optimisations peuvent être obtenues par le matériel qui prend en charge les fonctionnalités de Microsoft DirectX version 7,0 et PixelShader 2.0 +.  
   
 ## <a name="software-rendering-pipeline"></a>Pipeline de rendu logiciel  
  Le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] pipeline de rendu logiciel est entièrement lié à l’UC. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]tire parti des jeux d’instructions SSE et SSE2 dans le processeur pour implémenter un rastériseur logiciel optimisé et complet. Le recours au logiciel est transparent à chaque fois que la fonctionnalité de l’application ne peut pas être rendue à l’aide du pipeline de rendu matériel.  

@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Rechercher les Descendants avec un nom d’élément spécifique (Visual Basic)'
+title: 'Procédure : Rechercher les descendants avec un nom d’élément spécifique (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 78915518-0d25-4051-ab55-929779989510
-ms.openlocfilehash: c7dadec961420988a7f4cc1d6be72d7cdba5c047
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0084f04db5af7b012748b66187e029c77d0cfce5
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780495"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68710263"
 ---
-# <a name="how-to-find-descendants-with-a-specific-element-name-visual-basic"></a>Procédure : Rechercher les Descendants avec un nom d’élément spécifique (Visual Basic)
+# <a name="how-to-find-descendants-with-a-specific-element-name-visual-basic"></a>Procédure : Rechercher les descendants avec un nom d’élément spécifique (Visual Basic)
 Parfois, vous souhaitez rechercher tous les descendants avec un nom particulier. Vous pourriez écrire du code pour itérer au sein de tous les descendants, mais il est plus facile d'utiliser l'axe <xref:System.Xml.Linq.XContainer.Descendants%2A>.  
   
 ## <a name="example"></a>Exemple  
@@ -54,7 +54,7 @@ Some text that is broken up into multiple segments.
 ```  
   
 ## <a name="example"></a>Exemple  
- L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [utilisation des espaces de noms XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [vue d’ensemble des espaces de noms (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
   
 ```vb  
 Imports <xmlns='http://www.adatum.com'>  

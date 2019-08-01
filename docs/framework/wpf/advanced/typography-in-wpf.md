@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-ms.openlocfilehash: 743b9ec45c138053fcfcb5cbb1ea9c8490ba919e
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 818d013356c3ca8151e9b5bb675bce4726759f6c
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629907"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68710345"
 ---
 # <a name="typography-in-wpf"></a>Typographie dans WPF
 Cette rubrique présente les principales fonctionnalités typographiques de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Ces fonctionnalités incluent l’amélioration de la qualité et des performances de rendu de texte, une prise en charge de la typographie [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)], un texte international amélioré, une prise en charge de police améliorée et de nouvelles interfaces de programmation d’applications (API, Application Programming Interface) texte.  
@@ -73,7 +73,7 @@ Texte avec anticrénelage ClearType dans la direction y
 ## <a name="new-text-application-programming-interfaces-apis"></a>Nouvelles interfaces de programmation d’applications (API) texte  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]fournit plusieurs API de texte que les développeurs peuvent utiliser lors de l’inclusion de texte dans leurs applications. Ces API sont regroupées en trois catégories:  
   
-- **Disposition et interface utilisateur**. Contrôles de texte courants pour l’interface graphique utilisateur ([!INCLUDE[TLA#tla_gui](../../../../includes/tlasharptla-gui-md.md)]).  
+- **Disposition et interface utilisateur**. Contrôles de texte courants pour l’interface utilisateur graphique (GUI).  
   
 - **Dessin de texte léger**. Permet de dessiner du texte directement sur des objets.  
   

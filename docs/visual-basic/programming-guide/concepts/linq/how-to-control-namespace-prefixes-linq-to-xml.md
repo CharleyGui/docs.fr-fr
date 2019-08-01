@@ -1,21 +1,21 @@
 ---
-title: 'Procédure : Contrôle les préfixes Namespace (Visual Basic) (LINQ to XML)'
+title: 'Procédure : Préfixes d’espaces de noms de contrôle (Visual Basic) (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 2fcf28a5-31b6-409d-84ea-27c22f71fc9f
-ms.openlocfilehash: 7e5a05d2fa93e61338f450d0a4d890fa94c04fd2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2b89b49aa76df526c08143cad49685386ffd5e7c
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855398"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68709819"
 ---
-# <a name="how-to-control-namespace-prefixes-visual-basic-linq-to-xml"></a>Procédure : Contrôle les préfixes Namespace (Visual Basic) (LINQ to XML)
+# <a name="how-to-control-namespace-prefixes-visual-basic-linq-to-xml"></a>Procédure : Préfixes d’espaces de noms de contrôle (Visual Basic) (LINQ to XML)
 Cette rubrique décrit comment contrôler les préfixes d'espaces de noms.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
   
 ### <a name="description"></a>Description  
- Cet exemple déclare deux espaces de noms. Il spécifie que le `http://www.adventure-works.com` espace de noms a le préfixe `aw`et que le `www.fourthcoffee.com` espace de noms a le préfixe `fc`.  
+ Cet exemple déclare deux espaces de noms. Il spécifie que `http://www.adventure-works.com` l’espace de noms `aw`a le préfixe `www.fourthcoffee.com` et que l’espace de `fc`noms a le préfixe.  
   
 ### <a name="code"></a>Code  
   
@@ -55,4 +55,4 @@ End Module
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation des espaces de noms XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+- [Vue d’ensemble des espaces de noms (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)
