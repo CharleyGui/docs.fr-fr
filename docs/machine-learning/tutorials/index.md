@@ -3,12 +3,12 @@ title: Tutoriels ML.NET
 description: Consultez les tutoriels ML.NET pour découvrir comment créer des solutions IA personnalisées et comment les intégrer à vos applications .NET.
 ms.custom: seodec18
 ms.date: 07/08/2019
-ms.openlocfilehash: 16311a892f9b1da5d6de10f52bec2ad9410966b7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: dfc4779a94ae74e35095f654571c6e7c43f295a0
+ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777968"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671884"
 ---
 # <a name="mlnet-tutorials"></a>Tutoriels ML.NET 
 
@@ -21,6 +21,7 @@ Les tutoriels suivants vous permettent de comprendre comment utiliser [ML.NET](.
 - [Recommandation](movie-recommendation.md) : générez des **recommandations** de films en fonction des évaluations utilisateur précédentes
 - [Classification d’images](image-classification.md) : montre comment réentraîner un modèle TensorFlow existant pour créer un classifieur d’images personnalisées avec ML.NET.
 - [Détection d’anomalie](sales-anomaly-detection.md) : montre comment créer une application de détection des anomalies pour une analyse des données de ventes de produits.
+- [Détecter des objets dans des images](object-detection-onnx.md) : montre comment détecter des objets dans des images à l’aide d’un modèle ONNX pré-formé.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
