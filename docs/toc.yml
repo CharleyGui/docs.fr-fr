@@ -595,14 +595,16 @@
       items:
         - name: 'Système de type C#'
           href: csharp/programming-guide/types/index.md
+        - name: Types références Nullables
+          href: csharp/nullable-references.md
+        - name: Décrire les API Nullables à l’aide d’attributs et de contraintes
+          href: csharp/nullable-attributes.md
         - name: Espaces de noms
           href: csharp/programming-guide/namespaces/index.md
         - name: Types de base
           href: csharp/basic-types.md
         - name: Classes
           href: csharp/programming-guide/classes-and-structs/classes.md
-        - name: Types références Nullables
-          href: csharp/nullable-references.md
         - name: Structs
           href: csharp/structs.md
         - name: Tuples
