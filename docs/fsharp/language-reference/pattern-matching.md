@@ -2,12 +2,12 @@
 title: Critères spéciaux
 description: Découvrez comment les modèles sont utilisés F# dans pour comparer des données avec des structures logiques, décomposer des données en parties constituantes ou extraire des informations à partir de données.
 ms.date: 05/16/2016
-ms.openlocfilehash: 156bb670e0c494a3d515eab03e2e4672d6743dec
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 60e0d6cd550724bc8448fddd7b163c2c9f1637be
+ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627296"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68733465"
 ---
 # <a name="pattern-matching"></a>Critères spéciaux
 
@@ -15,7 +15,7 @@ Les modèles sont des règles de transformation des données d’entrée. Elles 
 
 ## <a name="remarks"></a>Notes
 
-Les modèles sont utilisés dans de nombreuses constructions de langage, telles `match` que l’expression. Elles sont utilisées lorsque vous traitez des arguments pour les `let` fonctions dans les liaisons, les expressions lambda et dans les gestionnaires d’exceptions associés `try...with` à l’expression. Pour plus d’informations, consultez [expressions de correspondance](match-expressions.md), [liaisons Let](./functions/let-bindings.md), [expressions lambda: Le `fun` mot](./functions/lambda-expressions-the-fun-keyword.md)clé, [et les exceptions: `try...with` Expression.](/.exception-handling/the-try-with-expression.md)
+Les modèles sont utilisés dans de nombreuses constructions de langage, telles `match` que l’expression. Elles sont utilisées lorsque vous traitez des arguments pour les `let` fonctions dans les liaisons, les expressions lambda et dans les gestionnaires d’exceptions associés `try...with` à l’expression. Pour plus d’informations, consultez [expressions de correspondance](match-expressions.md), [liaisons Let](./functions/let-bindings.md), [expressions lambda: Le `fun` mot](./functions/lambda-expressions-the-fun-keyword.md)clé, [et les exceptions: `try...with` Expression.](./exception-handling/the-try-with-expression.md)
 
 Par exemple, dans l' `match` expression, le *modèle* correspond à ce qui suit le symbole de barre verticale.
 
@@ -29,7 +29,7 @@ Chaque modèle agit comme une règle de transformation d’entrée d’une certa
 
 Les modèles pris en charge sont présentés dans le tableau suivant. Au moment de l’exécution, l’entrée est testée par rapport à chacun des modèles suivants dans l’ordre indiqué dans le tableau, et les modèles sont appliqués de manière récursive, de la première à la dernière telle qu’ils apparaissent dans votre code, et de gauche à droite pour les modèles sur chaque ligne.
 
-|Name|Description|Exemple|
+|Nom|Description|Exemples|
 |----|-----------|-------|
 |Modèle de constante|Tout littéral numérique, de caractère ou de chaîne, une constante d’énumération ou un identificateur littéral défini|`1.0`, `"test"`, `30`, `Color.Red`|
 |Modèle d’identificateur|Une valeur case d’une union discriminée, une étiquette d’exception ou un cas de modèle actif|`Some(x)`<br /><br />`Failure(msg)`|
@@ -103,7 +103,7 @@ match shape with
 
 Les modèles actifs vous permettent de définir des critères spéciaux personnalisés plus complexes. Pour plus d’informations sur les modèles actifs, consultez [modèles actifs](active-patterns.md).
 
-Le cas dans lequel l’identificateur est une exception est utilisé dans les critères spéciaux dans le contexte des gestionnaires d’exceptions. Pour plus d’informations sur les critères spéciaux dans la [gestion des exceptions, consultez exceptions: `try...with` Expression.](/.exception-handling/the-try-with-expression.md)
+Le cas dans lequel l’identificateur est une exception est utilisé dans les critères spéciaux dans le contexte des gestionnaires d’exceptions. Pour plus d’informations sur les critères spéciaux dans la [gestion des exceptions, consultez exceptions: `try...with` Expression.](./exception-handling/the-try-with-expression.md)
 
 ## <a name="variable-patterns"></a>Modèles de variables
 
