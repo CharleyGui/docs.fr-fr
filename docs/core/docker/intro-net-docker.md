@@ -3,12 +3,12 @@ title: Présentation de Docker
 description: Cet article présente Docker et en brosse une vue d’ensemble dans le contexte d’une application .NET Core.
 ms.date: 03/20/2019
 ms.custom: mvc, seodec18
-ms.openlocfilehash: d0bce09d7acdcf474fbb8849c8fc82dae4a69598
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5da71215e3b539f10993677d23d89e2b8a49cb39
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753300"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68626481"
 ---
 # <a name="introduction-to-net-and-docker"></a>Introduction à .NET et à Docker
 
@@ -32,7 +32,7 @@ Un conteneur est une instance exécutable d’une image. Lorsque vous générez 
 
 ### <a name="registries"></a>Registres
 
-Les registres de conteneurs sont une collection de référentiels d’images. Vous pouvez baser vos images sur une image de registre. Il est possible de créer directement des conteneurs à partir d’une image d’un registre. La [relation entre les conteneurs, les images et les Registres Docker](../../standard/microservices-architecture/container-docker-introduction/docker-containers-images-registries.md) est un concept important pour la [conception et création d’applications ou de microservices en conteneur](../../standard/microservices-architecture/architect-microservice-container-applications/index.md). Cette approche réduit considérablement le temps nécessaire entre le développement et le déploiement.
+Les registres de conteneurs sont une collection de référentiels d’images. Vous pouvez baser vos images sur une image de registre. Il est possible de créer directement des conteneurs à partir d’une image d’un registre. La [relation entre les conteneurs, les images et les Registres Docker](../../architecture/microservices/container-docker-introduction/docker-containers-images-registries.md) est un concept important pour la [conception et création d’applications ou de microservices en conteneur](../../architecture/microservices/architect-microservice-container-applications/index.md). Cette approche réduit considérablement le temps nécessaire entre le développement et le déploiement.
 
 Docker offre un registre public hébergé sur [Docker Hub](https://hub.docker.com/), où sont listées les [images associées à .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/). 
 

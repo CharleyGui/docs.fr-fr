@@ -4,12 +4,12 @@ description: Découvrez les nouvelles fonctionnalités de .NET Core.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 08/13/2017
-ms.openlocfilehash: 2d0f6a9faaec4d4438452054624751a40c96c8e5
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
+ms.openlocfilehash: f48b8e88a716df0f07a5626bdc8f66000cfaeed8
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58464071"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68626357"
 ---
 # <a name="whats-new-in-net-core-20"></a>Nouveautés de .NET Core 2.0
 
@@ -56,7 +56,7 @@ Pour plus d’informations sur la migration de votre projet vers .NET Core 2.0, 
 
 ## <a name="language-support"></a>Langages pris en charge
 
-En plus de la prise en charge de C# et F#, .NET Core 2.0 prend également en charge Visual Basic.
+En plus de la prise en charge de c# et F#, .NET Core 2.0 prend également en charge Visual Basic.
 
 ### <a name="visual-basic"></a>Visual Basic
 
@@ -156,8 +156,8 @@ Vous pouvez maintenant installer le Kit SDK .NET Core indépendamment de Visual 
 
 [L’architecture de l’application .NET](https://www.microsoft.com/net/learn/architecture) vous donne accès à un ensemble de livres électroniques qui fournissent des instructions, des bonnes pratiques et des exemples d’applications lors de l’utilisation de .NET pour générer :
 
-- [Containers de microservices et Docker](../../standard/microservices-architecture/index.md)
-- [Applications web avec ASP.NET](../../standard/modern-web-apps-azure-architecture/index.md)
+- [Containers de microservices et Docker](../../architecture/microservices/index.md)
+- [Applications web avec ASP.NET](../../architecture/modern-web-apps-azure/index.md)
 - [Applications mobiles avec Xamarin](/xamarin/xamarin-forms/enterprise-application-patterns/index)
 - [Applications déployées sur le cloud avec Azure](/azure/architecture/reference-architectures/index)
 

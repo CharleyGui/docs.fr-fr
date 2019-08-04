@@ -1,14 +1,14 @@
 ---
 title: Vue d’ensemble du SDK .NET Core
 description: Découvrez le Kit SDK .NET Core, un ensemble de bibliothèques et d’outils permettant de créer des projets .NET Core.
-ms.date: 05/13/2019
+ms.date: 07/31/2019
 ms.technology: dotnet-cli
-ms.openlocfilehash: f56d7238eaaaa677db38430358ce94890632469e
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: 0231c08f780455c4956c044815a2e80cef4d827e
+ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65959231"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68733389"
 ---
 # <a name="net-core-sdk-overview"></a>Vue d’ensemble du SDK .NET Core
 
@@ -16,7 +16,7 @@ Le Kit de développement logiciel (SDK) .NET Core est un ensemble de bibliothèq
 
 - Les outils CLI .NET Core
 - Les bibliothèques .NET Core et Runtime
-- Le [pilote](/tools/index.md#driver) `dotnet`
+- Le [pilote](tools/index.md#driver) `dotnet`
 
 ## <a name="acquiring-the-net-core-sdk"></a>Obtention du SDK .NET Core
 
@@ -29,11 +29,11 @@ Les programmes d’installation natifs s’adressent principalement aux ordinate
 
 Les scripts d’installation, quant à eux, ne nécessitent pas de privilèges d’administration. En revanche, ils n’installent pas les prérequis sur l’ordinateur. Vous devez donc tous les installer manuellement. Les scripts visent principalement à configurer les serveurs de builds et permettent d’installer les outils sans privilèges d’administration (notez les mises en garde concernant les prérequis répertoriés ci-dessus). Vous trouverez des informations complémentaires dans l’article de [ référence sur les scripts d’installation](tools/dotnet-install-script.md). Pour savoir comment configurer le SDK sur votre serveur de builds CI, consultez l’article [Utilisation du SDK et des outils .NET Core avec l’intégration continue](tools/using-ci-with-cli.md).
 
-Par défaut, le SDK est installé en mode côte à côte (SxS), ce qui signifie que plusieurs versions des outils CLI peuvent coexister à tout moment sur un même ordinateur. Pour plus d’informations sur la façon dont la version est choisie lorsque vous exécutez des commandes CLI, consultez l’article [Sélectionner la version .NET Core à utiliser](/versions/selection.md).
+Par défaut, le SDK est installé en mode côte à côte (SxS), ce qui signifie que plusieurs versions des outils CLI peuvent coexister à tout moment sur un même ordinateur. Pour plus d’informations sur la façon dont la version est choisie lorsque vous exécutez des commandes CLI, consultez l’article [Sélectionner la version .NET Core à utiliser](versions/selection.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [CLI .NET Core](tools/index.md)
-- [Vue d’ensemble de la gestion des versions .NET Core](/versions/index.md)
+- [Vue d’ensemble de la gestion des versions .NET Core](versions/index.md)
 - [Guide pratique pour supprimer un SDK et un Runtime .NET Core](versions/remove-runtime-sdk-versions.md)
-- [Sélectionner la version .NET Core à utiliser](/versions/selection.md)
+- [Sélectionner la version .NET Core à utiliser](versions/selection.md)
