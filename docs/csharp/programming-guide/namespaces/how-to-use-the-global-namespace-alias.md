@@ -7,12 +7,12 @@ helpviewer_keywords:
 - namespaces [C#], global namespace qualifier
 - global namespace [C#]
 ms.assetid: 98a1d89b-3c5a-44f7-8400-c4a3c0ec22a9
-ms.openlocfilehash: 6d3e0740a472f74116712e737e49f86d4202dea5
-ms.sourcegitcommit: 4c10802ad003374641a2c2373b8a92e3c88babc8
+ms.openlocfilehash: f44bb1f010f154973fc6982882c9b5a09528da76
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65452794"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629447"
 ---
 # <a name="how-to-use-the-global-namespace-alias-c-programming-guide"></a>Procédure : Utiliser l'alias d'espace de noms global (Guide de programmation C#)
 La possibilité d’accéder à un membre dans l’[espace de noms ](../../../csharp/language-reference/keywords/namespace.md) global est utile quand le membre peut être masqué par une autre entité de même nom.  
@@ -37,7 +37,7 @@ La possibilité d’accéder à un membre dans l’[espace de noms ](../../../cs
   
  Bien entendu, il n’est pas recommandé de créer des espaces de noms personnalisés sous le nom `System`, et il est peu probable que vous en rencontriez dans du code. Cependant, dans les projets à grande échelle, il est tout à fait possible qu’un espace de noms soit dupliqué d’une façon ou d’une autre. En pareil cas, le qualificateur d’espace de noms global est la garantie que vous pouvez spécifier l’espace de noms racine.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Dans cet exemple, l’espace de noms `System` est utilisé pour inclure la classe `TestClass`. De ce fait, `global::System.Console` doit être utilisé pour faire référence à la classe `System.Console`, qui est masquée par l’espace de noms `System`. Par ailleurs, l’alias `colAlias` est utilisé pour faire référence à l’espace de noms `System.Collections` ; par conséquent, l’instance d’un <xref:System.Collections.Hashtable?displayProperty=nameWithType> a été créée en utilisant cet alias plutôt que l’espace de noms.  
   
  [!code-csharp[csProgGuideNamespaces#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#5)]  
@@ -50,5 +50,5 @@ La possibilité d’accéder à un membre dans l’[espace de noms ](../../../cs
 
 - [Guide de programmation C#](../../../csharp/programming-guide/index.md)
 - [Espaces de noms](../../../csharp/programming-guide/namespaces/index.md)
-- [:: Opérateur](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)
+- [:: Opérateur](../../../csharp/language-reference/operators/namespace-alias-qualifier.md)
 - [extern](../../../csharp/language-reference/keywords/extern.md)

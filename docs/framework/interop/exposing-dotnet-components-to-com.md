@@ -8,21 +8,21 @@ helpviewer_keywords:
 ms.assetid: e42a65f7-1e61-411f-b09a-aca1bbce24c6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b2b2f550b21a8d64968c6280cc1a29c1d18bfabd
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: c88466df32a4167b2b32a7cc0f64eb306e392611
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364005"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629343"
 ---
 # <a name="exposing-net-framework-components-to-com"></a>Exposition de composants .NET Framework à COM
 L’écriture d’un type .NET et l’utilisation de ce type à partir de code non managé sont deux activités distinctes pour les développeurs. Cette section contient plusieurs conseils pour l’écriture de code managé interagissant avec des clients COM :  
   
-- [Qualification des types .NET pour l’interopérabilité](../../../docs/framework/interop/qualifying-net-types-for-interoperation.md).  
+- [Qualification des types .NET pour l’interopérabilité](../../../docs/standard/native-interop/qualify-net-types-for-interoperation.md).  
   
      Tous les types, méthodes, propriétés, champs et événements managés que vous voulez exposer à COM doivent être publics. Les types doivent avoir un constructeur public sans paramètre, qui est le seul constructeur pouvant être appelé dans COM.  
   
-- [Application d’attributs d’interopérabilité](../../../docs/framework/interop/applying-interop-attributes.md).  
+- [Application d’attributs d’interopérabilité](../../../docs/standard/native-interop/apply-interop-attributes.md).  
   
      Les attributs personnalisés dans du code managé peuvent améliorer l’interopérabilité d’un composant.  
   

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 482c0d83-7144-4497-b626-87d2351b78d0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4b7e9401cbd26c62f88ccb4a4b8c2caeb78768d9
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 69cc2459f1944c8101be9c58b1462217ee7ac78f
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59119195"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629572"
 ---
 # <a name="aximpexe-windows-forms-activex-control-importer"></a>Aximp.exe (Windows Forms ActiveX Control Importer)
 L'importateur de contrôles ActiveX convertit les définitions de types d'une bibliothèque de types COM associées à un contrôle ActiveX en un contrôle Windows Forms.  
@@ -49,7 +49,7 @@ aximp [options]{file.dll | file.ocx}
 |`/nologo`|Supprime l'affichage de la bannière de démarrage Microsoft.|  
 |`/out:` *nom_fichier*|Spécifie le nom de l'assembly à créer.|  
 |`/publickey:` *nom_fichier*|Signe le contrôle résultant avec un nom fort en utilisant la clé publique présente dans le fichier spécifié par *nom_fichier*.|  
-|`/rcw:` *nom_fichier*|Utilise le wrapper RCW spécifié plutôt que d'en générer un nouveau. Vous pouvez spécifier plusieurs instances. Le répertoire actif est utilisé pour les chemins d’accès relatifs. Pour plus d’informations, consultez [Wrapper pouvant être appelé par le runtime](../../../docs/framework/interop/runtime-callable-wrapper.md).|  
+|`/rcw:` *nom_fichier*|Utilise le wrapper RCW spécifié plutôt que d'en générer un nouveau. Vous pouvez spécifier plusieurs instances. Le répertoire actif est utilisé pour les chemins d’accès relatifs. Pour plus d’informations, consultez [Wrapper pouvant être appelé par le runtime](../../../docs/standard/native-interop/runtime-callable-wrapper.md).|  
 |`/silent`|Supprime l'affichage des messages indiquant la réussite des opérations.|  
 |`/source`|Génère le code source C# pour le wrapper Windows Forms.|  
 |`/verbose`|Spécifie le mode Commentaires ; affiche des informations supplémentaires sur la progression de l'opération.|  
@@ -72,7 +72,7 @@ aximp [options]{file.dll | file.ocx}
   
  L'utilisation d'Aximp.exe avec shdocvw.dll pour créer un assembly .NET en vue de son utilisation dans le développement d'une application peut également poser problème. Dans ce cas, votre application chargera la version système de shdocvw.dll ainsi que la version générée, et pourrait donner la priorité à la version système. Dans ce cas, lorsque vous essayez de charger une page web dans le contrôle webBrowser ActiveX, une boîte de dialogue Ouvrir/Enregistrer peut s’afficher. Si l’utilisateur clique sur **Ouvrir**, la page web s’ouvre dans Internet Explorer. Cela ne se produit que sur les ordinateurs exécutant Internet Explorer version 6 ou antérieure. Pour éviter ce problème, utilisez le contrôle <xref:System.Windows.Forms.WebBrowser> managé ou Visual Studio pour générer le fichier shdocvw.dll managé, comme décrit dans [Guide pratique pour ajouter des références aux bibliothèques de types](../../../docs/framework/interop/how-to-add-references-to-type-libraries.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  La commande suivante génère MediaPlayer.dll et AxMediaPlayer.dll pour le contrôle Media Player `msdxm.ocx`.  
   
 ```  

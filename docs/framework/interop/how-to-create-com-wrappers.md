@@ -1,5 +1,5 @@
 ---
-title: Activation créer des wrappers COM
+title: 'Procédure : créer des wrappers COM'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM,wrappers creating
@@ -7,20 +7,20 @@ helpviewer_keywords:
 ms.assetid: bdf89bea-1623-45ee-a57b-cf7c90395efa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e10b6fd7df003de739b57bbb3e17deb46215763f
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: f4ae9710b99c85cfcbe3de2669c7ee85d0d24ef4
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363994"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629335"
 ---
-# <a name="how-to-create-com-wrappers"></a>Activation créer des wrappers COM
+# <a name="how-to-create-com-wrappers"></a>Procédure : créer des wrappers COM
 
 Vous pouvez créer des wrappers COM (Component Object Model) à l’aide des fonctionnalités Visual Studio 2005 ou des outils .NET Framework Tlbimp.exe et Regasm.exe. Ces deux méthodes génèrent deux types de wrappers COM :
 
-- un [wrapper RCW (Runtime Callable Wrapper)](../../../docs/framework/interop/runtime-callable-wrapper.md) d’une bibliothèque de types pour exécuter un objet COM en code managé ;
+- un [wrapper RCW (Runtime Callable Wrapper)](../../../docs/standard/native-interop/runtime-callable-wrapper.md) d’une bibliothèque de types pour exécuter un objet COM en code managé ;
 
-- un [wrapper CCW (COM Callable Wrapper)](../../../docs/framework/interop/com-callable-wrapper.md) avec les paramètres de Registre requis pour exécuter un objet managé dans une application native.
+- un [wrapper CCW (COM Callable Wrapper)](../../../docs/standard/native-interop/com-callable-wrapper.md) avec les paramètres de Registre requis pour exécuter un objet managé dans une application native.
 
 Dans Visual Studio 2005, vous pouvez ajouter le wrapper COM à votre projet en tant que référence.
 
@@ -75,5 +75,5 @@ Vous pouvez exécuter Regasm.exe sur un assembly situé dans n’importe quel r�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Wrapper pouvant être appelé par le runtime](../../../docs/framework/interop/runtime-callable-wrapper.md)
-- [Wrapper CCW (COM Callable Wrapper)](../../../docs/framework/interop/com-callable-wrapper.md)
+- [Wrapper pouvant être appelé par le runtime](../../../docs/standard/native-interop/runtime-callable-wrapper.md)
+- [Wrapper CCW (COM Callable Wrapper)](../../../docs/standard/native-interop/com-callable-wrapper.md)

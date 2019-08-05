@@ -8,12 +8,12 @@ helpviewer_keywords:
 - fully qualified names [C#]
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
-ms.openlocfilehash: abd4c34661d96d8c3188e92dd2d76f847e17aae7
-ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
+ms.openlocfilehash: bf194e207262ecea0511a0b67bbafeadd8d5d31d
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433537"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68629490"
 ---
 # <a name="using-namespaces-c-programming-guide"></a>Utilisation d'espaces de noms (Guide de programmation C#)
 Les espaces de noms sont largement utilisés dans les programmes C#, et ce de deux façons différentes. En premier lieu, les classes .NET Framework utilisent les espaces de noms à des fins d’organisation. En deuxième lieu, la déclaration de vos propres espaces de noms peut faciliter le contrôle de la portée des noms de classes et de méthodes dans les projets de programmation de plus grande envergure.  
@@ -93,5 +93,5 @@ Les espaces de noms sont largement utilisés dans les programmes C#, et ce de de
 - [Guide de programmation C#](../../../csharp/programming-guide/index.md)
 - [Espaces de noms](../../../csharp/programming-guide/namespaces/index.md)
 - [. Opérateur](../../../csharp/language-reference/operators/member-access-operators.md#member-access-operator-)
-- [:: Opérateur](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)
-- [extern](../../../csharp/language-reference/keywords/extern.md)
+- [:: Opérateur](../../../csharp/language-reference/operators/namespace-alias-qualifier.md)
+- [extern alias](../../../csharp/language-reference/keywords/extern-alias.md)

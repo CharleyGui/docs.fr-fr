@@ -9,12 +9,12 @@ helpviewer_keywords:
 - aliases [C#], extern keyword
 - aliases, extern keyword
 ms.assetid: f487bf4f-c943-4fca-851b-e540c83d9027
-ms.openlocfilehash: d2ecd566731c3d2d472034ecb6412432af24c847
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: cfb662203216aa6ca208ceec20d55164c65163dc
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422056"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68626647"
 ---
 # <a name="extern-alias-c-reference"></a>extern alias (référence C#)
 Il se peut que vous deviez référencer deux versions d’assemblys qui ont le même nom de type qualifié complet. Par exemple, vous pourriez avoir à utiliser plusieurs versions d’un assembly dans la même application. En utilisant un alias d’assembly externe, vous pouvez encapsuler les espaces de noms de chaque assembly dans des espaces de noms racines nommés par l’alias, ce qui permet de les utiliser dans le même fichier.  
@@ -46,5 +46,5 @@ Il se peut que vous deviez référencer deux versions d’assemblys qui ont le m
 - [Référence C#](../../../csharp/language-reference/index.md)
 - [Guide de programmation C#](../../../csharp/programming-guide/index.md)
 - [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
-- [:: Opérateur](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)
+- [:: Opérateur](../../../csharp/language-reference/operators/namespace-alias-qualifier.md)
 - [/reference (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)
