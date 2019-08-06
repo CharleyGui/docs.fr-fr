@@ -5,18 +5,18 @@ helpviewer_keywords:
 - controls [Windows Forms]
 - Windows Forms controls, list of
 ms.assetid: dec51976-eae0-4398-a537-20bca7974722
-ms.openlocfilehash: 3d8e6d37a5c27eac6af303819fb50b28acd225c6
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 114b9a6db7b41c5aac24bcd1badcf5f5b4b2fb08
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589045"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796267"
 ---
 # <a name="controls-to-use-on-windows-forms"></a>Contrôles à utiliser dans les Windows Forms
 Voici une liste alphabétique des contrôles et composants qui peuvent être utilisés dans les Windows Forms. Outre les contrôles Windows Forms abordés dans cette section, vous pouvez ajouter des contrôles ActiveX et des contrôles personnalisés à Windows Forms. Si vous ne trouvez pas ici le contrôle donc vous avez besoin, vous pouvez également créer votre propre contrôle. Pour plus d’informations, consultez [Développement de contrôles Windows Forms au moment du design](developing-windows-forms-controls-at-design-time.md). Pour plus d’informations sur le choix du contrôle dont vous avez besoin, consultez [Classement par fonction des contrôles Windows Forms](windows-forms-controls-by-function.md).  
   
 > [!NOTE]
->  Contrôles Visual Basic sont basées sur les classes fournies par le .NET Framework.  
+>  Les contrôles Visual Basic sont basés sur les classes fournies par le .NET Framework.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Classement par fonction des contrôles Windows Forms](windows-forms-controls-by-function.md)  
@@ -50,10 +50,10 @@ Voici une liste alphabétique des contrôles et composants qui peuvent être uti
  Affiche les données dans une zone de liste déroulante fixe.  
   
  [ContextMenu, composant](contextmenu-component-windows-forms.md)  
- Fournit aux utilisateurs un menu facilement accessible des commandes fréquemment utilisées qui sont associées à l’objet sélectionné. Bien que <xref:System.Windows.Forms.ContextMenuStrip> remplace et ajoute des fonctionnalités à la <xref:System.Windows.Forms.ContextMenu> contrôle des versions antérieures, <xref:System.Windows.Forms.ContextMenu> est conservée pour compatibilité descendante et une utilisation future si tel est votre choix.  
+ Fournit aux utilisateurs un menu facilement accessible des commandes fréquemment utilisées qui sont associées à l’objet sélectionné. Bien <xref:System.Windows.Forms.ContextMenuStrip> que remplace et ajoute des fonctionnalités <xref:System.Windows.Forms.ContextMenu> au contrôle des versions antérieures <xref:System.Windows.Forms.ContextMenu> , est conservé pour la compatibilité descendante et l’utilisation future si tel est votre choix.  
   
  [ContextMenuStrip, contrôle](contextmenustrip-control.md)  
- Représente un menu contextuel. Bien que <xref:System.Windows.Forms.ContextMenuStrip> remplace et ajoute des fonctionnalités à la <xref:System.Windows.Forms.ContextMenu> contrôle des versions antérieures, <xref:System.Windows.Forms.ContextMenu> est conservée pour compatibilité descendante et une utilisation future si tel est votre choix.  
+ Représente un menu contextuel. Bien <xref:System.Windows.Forms.ContextMenuStrip> que remplace et ajoute des fonctionnalités <xref:System.Windows.Forms.ContextMenu> au contrôle des versions antérieures <xref:System.Windows.Forms.ContextMenu> , est conservé pour la compatibilité descendante et l’utilisation future si tel est votre choix.  
   
  [DataGrid, contrôle](datagrid-control-windows-forms.md)  
  Affiche des données tabulaires à partir d’un dataset et permet les mises à jour de la source de données.  
@@ -73,7 +73,7 @@ Voici une liste alphabétique des contrôles et composants qui peuvent être uti
  [ErrorProvider, composant](errorprovider-component-windows-forms.md)  
  Affiche des informations d’erreur à l’utilisateur de façon non intrusive.  
   
- [FileDialog, classe](filedialog-class.md) fournit les fonctionnalités de la classe de base pour les boîtes de dialogue de fichier.
+ [FileDialog, classe](filedialog-class.md) Fournit les fonctionnalités de la classe de base pour les boîtes de dialogue de fichier.
 
  [FlowLayoutPanel, contrôle](flowlayoutpanel-control-windows-forms.md)  
  Représente un panneau qui dispose dynamiquement son contenu horizontalement ou verticalement.  
@@ -162,13 +162,13 @@ Voici une liste alphabétique des contrôles et composants qui peuvent être uti
  [SaveFileDialog, composant](savefiledialog-component-windows-forms.md)  
  Sélectionne des fichiers à enregistrer et où les enregistrer.  
   
- [Classe SoundPlayer](soundplayer-class.md) vous permet d’inclure facilement des sons dans vos applications.
+ [SoundPlayer, classe](soundplayer-class.md) Vous permet d’inclure facilement des sons dans vos applications.
   
  [SplitContainer, contrôle](splitcontainer-control-windows-forms.md)  
  Permet à l’utilisateur de redimensionner un contrôle fixé.  
   
  [Splitter, contrôle](splitter-control-windows-forms.md)  
- Permet à l’utilisateur de redimensionner un contrôle ancré (version du .NET Framework 1.x).  
+ Permet à l’utilisateur de redimensionner un contrôle ancré (.NET Framework version 1. x).  
   
  [StatusBar, contrôle](statusbar-control-windows-forms.md)  
  Affiche des informations d’état relatives au contrôle qui a le focus. Bien que <xref:System.Windows.Forms.StatusStrip> remplace et étende le contrôle <xref:System.Windows.Forms.StatusBar> des versions antérieures, <xref:System.Windows.Forms.StatusBar> est conservé à des fins de compatibilité descendante et pour une utilisation ultérieure si tel est votre choix.  
@@ -195,13 +195,13 @@ Voici une liste alphabétique des contrôles et composants qui peuvent être uti
  Crée des barres d’outils et des menus personnalisés dans vos applications Windows Forms. Bien que <xref:System.Windows.Forms.ToolStrip> remplace et ajoute des fonctionnalités au contrôle <xref:System.Windows.Forms.ToolBar> des versions antérieures, <xref:System.Windows.Forms.ToolBar> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix.  
   
  [ToolStripContainer, contrôle](toolstripcontainer-control.md)  
- Fournit des panneaux sur chaque côté d’un formulaire pour ancrer, effectuer un rafting et organiser <xref:System.Windows.Forms.ToolStrip> contrôles et un central <xref:System.Windows.Forms.ToolStripContentPanel> pour les contrôles traditionnels.  
+ Fournit des panneaux sur chaque côté d’un formulaire pour l’ancrage, le rafting et l' <xref:System.Windows.Forms.ToolStrip> Organisation des contrôles, ainsi <xref:System.Windows.Forms.ToolStripContentPanel> qu’un centre pour les contrôles traditionnels.  
   
  [ToolStripPanel, contrôle](toolstrippanel-control.md)  
- Fournit un panneau pour fixer, effectuer un rafting et organiser <xref:System.Windows.Forms.ToolStrip> contrôles.  
+ Fournit un panneau pour l’ancrage, le rafting et la <xref:System.Windows.Forms.ToolStrip> réorganisation des contrôles.  
   
  [Vue d’ensemble du contrôle ToolStripProgressBar](toolstripprogressbar-control-overview.md)  
- Indique de façon graphique la progression d’une action. Le <xref:System.Windows.Forms.ToolStripProgressBar> sont généralement contenues dans un <xref:System.Windows.Forms.StatusStrip>.  
+ Indique de façon graphique la progression d’une action. Est généralement contenu dans un <xref:System.Windows.Forms.StatusStrip>. <xref:System.Windows.Forms.ToolStripProgressBar>  
   
  [ToolStripStatusLabel, contrôle](toolstripstatuslabel-control.md)  
  Représente un panneau dans un contrôle <xref:System.Windows.Forms.StatusStrip>.  
@@ -229,7 +229,7 @@ Voici une liste alphabétique des contrôles et composants qui peuvent être uti
  Fournit des liens vers des rubriques pas à pas, des recommandations sur le type de contrôle à créer et d’autres informations sur la création de votre propre contrôle.  
   
  [Comparaison des contrôles et des objets programmables dans divers langages et bibliothèques](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/0061wezk(v=vs.100))  
- Fournit une table qui mappe les contrôles Visual Basic 6.0 aux contrôles correspondants dans Visual Basic. Notez que les contrôles sont désormais des classes dans le .NET Framework.  
+ Fournit une table qui mappe les contrôles de Visual Basic 6,0 au contrôle correspondant dans Visual Basic .NET. Notez que les contrôles sont maintenant des classes dans le .NET Framework.  
   
- [Guide pratique pour Ajouter des contrôles ActiveX aux Windows Forms](how-to-add-activex-controls-to-windows-forms.md)  
+ [Guide pratique pour Ajouter des contrôles ActiveX à Windows Forms](how-to-add-activex-controls-to-windows-forms.md)  
  Décrit comment utiliser des contrôles ActiveX dans les Windows Forms.

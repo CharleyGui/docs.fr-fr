@@ -15,15 +15,15 @@ helpviewer_keywords:
 - feature security requirements [WPF]
 - managing permissions [WPF]
 ms.assetid: ef2c0810-1dbf-4511-babd-1fab95b523b5
-ms.openlocfilehash: b8234dcb33e9d429329c6d68900119382ff2f1cb
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 34beee309f080c53ecb16436beb0c4c6be7733e5
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629792"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796789"
 ---
 # <a name="wpf-partial-trust-security"></a>Sécurité de confiance partielle de WPF
-<a name="introduction"></a> En général, les applications Internet doivent disposer d’un accès direct limité aux ressources système critiques, afin d’éviter des dommages dus à des actes de malveillance. Par défaut, [!INCLUDE[TLA#tla_html](../../../includes/tlasharptla-html-md.md)] et les langages de script côté client ne sont pas en mesure d’accéder aux ressources système critiques. Étant donné que les applications hébergées par un navigateur Windows Presentation Foundation (WPF) peuvent être lancées à partir du navigateur, elles doivent être conformes à un ensemble similaire de restrictions. Pour appliquer ces restrictions, [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] s’appuie sur la sécurité d’accès du code (cas) et ClickOnce (consultez [stratégie de sécurité de WPF-sécurité](wpf-security-strategy-platform-security.md)de la plateforme). Par défaut, les applications hébergées par un navigateur demandent le jeu d’autorisations de la zone Internet, qu’elles soient lancées à partir d’Internet, de l’intranet local ou de l’ordinateur local. Les applications qui sont exécutées sans jeu d’autorisations complet sont exécutées avec une confiance dite partielle.  
+<a name="introduction"></a> En général, les applications Internet doivent disposer d’un accès direct limité aux ressources système critiques, afin d’éviter des dommages dus à des actes de malveillance. Par défaut, les langages de script HTML et côté client ne sont pas en mesure d’accéder aux ressources système critiques. Étant donné que les applications hébergées par un navigateur Windows Presentation Foundation (WPF) peuvent être lancées à partir du navigateur, elles doivent être conformes à un ensemble similaire de restrictions. Pour appliquer ces restrictions, [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] s’appuie sur la sécurité d’accès du code (cas) et ClickOnce (consultez [stratégie de sécurité de WPF-sécurité](wpf-security-strategy-platform-security.md)de la plateforme). Par défaut, les applications hébergées par un navigateur demandent le jeu d’autorisations de la zone Internet, qu’elles soient lancées à partir d’Internet, de l’intranet local ou de l’ordinateur local. Les applications qui sont exécutées sans jeu d’autorisations complet sont exécutées avec une confiance dite partielle.  
   
  [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]fournit une grande variété de prise en charge pour garantir que le plus grand nombre possible de fonctionnalités pouvant être utilisées en toute sécurité avec une confiance partielle, et avec les autorités de certification, offre une prise en charge supplémentaire de la programmation de confiance partielle.  
   

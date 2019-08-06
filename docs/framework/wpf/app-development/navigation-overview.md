@@ -24,18 +24,18 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-ms.openlocfilehash: 24b872fcf58db3ef0ef7d04165129804dc46d641
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: ee2f6050eeea6eec840156ed5dce9fb9b6172149
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364286"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796868"
 ---
 # <a name="navigation-overview"></a>Vue d'ensemble de la navigation
 
 Windows Presentation Foundation (WPF) prend en charge la navigation de style navigateur qui peut être utilisée dans deux types d’applications: [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)]les applications autonomes et. Pour empaqueter le contenu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pour la <xref:System.Windows.Controls.Page> navigation, fournit la classe. Vous pouvez naviguer de l' <xref:System.Windows.Controls.Page> un à l’autre de façon déclarative <xref:System.Windows.Documents.Hyperlink>, en utilisant un, ou par programme, <xref:System.Windows.Navigation.NavigationService>à l’aide de. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] utilise le journal pour se souvenir des pages visitées et y revenir.
 
-<xref:System.Windows.Controls.Page>,, et le journal forment le cœur de la prise en charge de la navigation offerte par [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. <xref:System.Windows.Documents.Hyperlink> <xref:System.Windows.Navigation.NavigationService> Cette vue d’ensemble explore ces fonctionnalités en détail avant de couvrir la prise en charge de [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] la navigation [!INCLUDE[TLA#tla_html](../../../../includes/tlasharptla-html-md.md)] avancée qui comprend la navigation vers des fichiers, des fichiers et des objets libres.
+<xref:System.Windows.Controls.Page>,, et le journal forment le cœur de la prise en charge de la navigation offerte par [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. <xref:System.Windows.Documents.Hyperlink> <xref:System.Windows.Navigation.NavigationService> Cette vue d’ensemble explore ces fonctionnalités en détail avant de couvrir la prise en charge de [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] la navigation avancée qui comprend la navigation vers des fichiers libres, des fichiers HTML et des objets.
 
 > [!NOTE]
 > Dans cette rubrique, le terme «navigateur» fait référence uniquement aux navigateurs qui peuvent [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] héberger des applications, [!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] qui incluent actuellement et Firefox. Lorsque des [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fonctionnalités spécifiques sont prises en charge uniquement par un navigateur particulier, la version du navigateur est indiquée.
@@ -79,7 +79,7 @@ Cette section explique et illustre les aspects suivants de la navigation :
 
 ### <a name="implementing-a-page"></a>Implémentation d’une page
 
-Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], vous pouvez accéder à plusieurs types de contenu qui incluent des objets .NET Framework, des objets personnalisés, des valeurs d' [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] énumération, [!INCLUDE[TLA#tla_html](../../../../includes/tlasharptla-html-md.md)] des contrôles utilisateur, des fichiers et des fichiers. Toutefois, vous constaterez que la méthode la plus courante et la plus pratique pour empaqueter le contenu consiste à utiliser <xref:System.Windows.Controls.Page>. En outre <xref:System.Windows.Controls.Page> , implémente des fonctionnalités spécifiques à la navigation pour améliorer leur apparence et simplifier le développement.
+Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], vous pouvez accéder à plusieurs types de contenu qui incluent des objets .NET Framework, des objets personnalisés, des valeurs d' [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] énumération, des contrôles utilisateur, des fichiers et des fichiers html. Toutefois, vous constaterez que la méthode la plus courante et la plus pratique pour empaqueter le contenu consiste à utiliser <xref:System.Windows.Controls.Page>. En outre <xref:System.Windows.Controls.Page> , implémente des fonctionnalités spécifiques à la navigation pour améliorer leur apparence et simplifier le développement.
 
 À <xref:System.Windows.Controls.Page>l’aide de, vous pouvez implémenter de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] manière déclarative une page navigable de contenu à l’aide d’un balisage similaire à ce qui suit.
 
@@ -218,7 +218,7 @@ L’exemple `Hyperlink` suivant montre un qui est configuré pour naviguer vers 
 > Cette section décrit l’implémentation de la navigation par [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]fragment par défaut dans. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]vous permet également d’implémenter votre propre schéma de navigation de fragment qui, en partie, <xref:System.Windows.Navigation.NavigationService.FragmentNavigation?displayProperty=nameWithType> requiert la gestion de l’événement.
 
 > [!IMPORTANT]
-> Vous pouvez naviguer vers des fragments dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] des pages libres (fichiers [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] avec balisage uniquement avec `Page` comme élément racine) uniquement si les pages peuvent être parcourues via [!INCLUDE[TLA2#tla_http](../../../../includes/tla2sharptla-http-md.md)].
+> Vous pouvez naviguer vers des fragments dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] des pages libres (fichiers [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] de balisage uniquement avec `Page` comme élément racine) uniquement si les pages peuvent être parcourues via http.
 >
 > Toutefois, une page [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] libre peut accéder à ses propres fragments.
 
@@ -539,7 +539,7 @@ Voici quelques-unes des façons dont les cookies sont pris en [!INCLUDE[TLA2#tla
 
 - Les applications [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] du même domaine peuvent créer et partager des cookies.
 
-- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]les [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] pages et du même domaine peuvent créer et partager des cookies.
+- [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]et les pages HTML du même domaine peuvent créer et partager des cookies.
 
 - Les cookies sont distribués quand [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] et les pages libres [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] effectuent des requêtes Web.
 
@@ -683,7 +683,7 @@ Comme cela a déjà été mentionné, plusieurs journaux peuvent exister dans un
 
 Tout au long de <xref:System.Windows.Controls.Page> cette rubrique [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] , et Pack ont été utilisés pour illustrer les [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]différentes fonctionnalités de navigation de. Toutefois, un <xref:System.Windows.Controls.Page> qui est compilé dans une application n’est pas le seul type de contenu vers lequel une navigation peut être établie, [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] et Pack ne sont pas le seul moyen d’identifier le contenu.
 
-Comme le montre cette section, vous pouvez également accéder à [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] des fichiers [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] , des fichiers et des objets libres.
+Comme le montre cette section, vous pouvez également naviguer vers [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] des fichiers libres, des fichiers HTML et des objets.
 
 <a name="Navigating_to_Loose_XAML_Files"></a>
 
@@ -724,19 +724,19 @@ L’une des limitations en matière [!INCLUDE[TLA2#tla_xaml](../../../../include
 
 ### <a name="navigating-to-html-files-by-using-frame"></a>Navigation vers des fichiers HTML à l’aide d’un Frame
 
-Comme vous pouvez vous y attendre, vous pouvez également [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)]accéder à. Il vous suffit de fournir un [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] qui utilise le schéma http. Par exemple, le code [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] suivant montre <xref:System.Windows.Controls.Frame> un qui navigue vers [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] une page.
+Comme vous pouvez vous y attendre, vous pouvez également accéder au code HTML. Il vous suffit de fournir un [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] qui utilise le schéma http. Par exemple, le code [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] suivant montre <xref:System.Windows.Controls.Frame> un qui navigue vers une page html.
 
 [!code-xaml[NavigationOverviewSnippets#FrameHtmlNavMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/FrameHTMLNavPage.xaml#framehtmlnavmarkup)]
 
-La navigation vers [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] nécessite des autorisations spéciales. Par exemple, vous ne pouvez pas naviguer [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] à partir d’un qui s’exécute dans le bac à sable de sécurité de confiance partielle de la zone Internet. Pour plus d’informations, consultez [Sécurité de confiance partielle de WPF](../wpf-partial-trust-security.md).
+La navigation vers le code HTML nécessite des autorisations spéciales. Par exemple, vous ne pouvez pas naviguer [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] à partir d’un qui s’exécute dans le bac à sable de sécurité de confiance partielle de la zone Internet. Pour plus d’informations, consultez [Sécurité de confiance partielle de WPF](../wpf-partial-trust-security.md).
 
 <a name="Navigating_to_HTML_Files_Using_WebBrowser"></a>
 
 ### <a name="navigating-to-html-files-by-using-the-webbrowser-control"></a>Navigation vers des fichiers HTML à l’aide du contrôle WebBrowser
 
-Le <xref:System.Windows.Controls.WebBrowser> contrôle prend [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] en charge l’hébergement de documents, la navigation et l’interopérabilité de code managé/de script. Pour plus d’informations sur <xref:System.Windows.Controls.WebBrowser> le contrôle, <xref:System.Windows.Controls.WebBrowser>consultez.
+Le <xref:System.Windows.Controls.WebBrowser> contrôle prend en charge l’hébergement de documents html, la navigation et l’interopérabilité du code managé/de script. Pour plus d’informations sur <xref:System.Windows.Controls.WebBrowser> le contrôle, <xref:System.Windows.Controls.WebBrowser>consultez.
 
-À <xref:System.Windows.Controls.Frame>l’instar de [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] , <xref:System.Windows.Controls.WebBrowser> la navigation jusqu’à l’utilisation nécessite des autorisations spéciales. Par exemple, à partir d’une application de confiance partielle, vous pouvez naviguer [!INCLUDE[TLA2#tla_html](../../../../includes/tla2sharptla-html-md.md)] uniquement vers situé sur le site d’origine. Pour plus d’informations, consultez [Sécurité de confiance partielle de WPF](../wpf-partial-trust-security.md).
+À <xref:System.Windows.Controls.Frame>l’instar de, la <xref:System.Windows.Controls.WebBrowser> navigation vers HTML à l’aide de requiert des autorisations spéciales. Par exemple, à partir d’une application de confiance partielle, vous pouvez naviguer uniquement jusqu’au code HTML situé sur le site d’origine. Pour plus d’informations, consultez [Sécurité de confiance partielle de WPF](../wpf-partial-trust-security.md).
 
 <a name="Navigating_to_Objects"></a>
 

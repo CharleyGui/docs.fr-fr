@@ -28,12 +28,12 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: ffb397c673333b26649a815fce7a5d4e63e5b987
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 519afa7f39f669b184ccc269546ef930c114c404
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68401728"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796772"
 ---
 # <a name="wpf-windows-overview"></a>Vue d'ensemble des fenêtres WPF
 Les utilisateurs interagissent avec les applications autonomes de Windows Presentation Foundation (WPF) par le biais de Windows. L’objectif principal d’une fenêtre est d’héberger du contenu qui permet aux utilisateurs de visualiser les données et d’interagir avec celles-ci. Les [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] applications autonomes fournissent leur propre Windows en <xref:System.Windows.Window> utilisant la classe. Cette rubrique présente <xref:System.Windows.Window> les principes fondamentaux de la création et de la gestion de fenêtres dans des applications autonomes.  
@@ -167,7 +167,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
   
 - être réduite, agrandie et restaurée sans affecter l’autre fenêtre.  
   
- Certaines fenêtres nécessitent une relation avec la fenêtre qui les ouvre. Par exemple, une [!INCLUDE[TLA#tla_ide](../../../../includes/tlasharptla-ide-md.md)] application peut ouvrir des fenêtres de propriétés et des fenêtres outil dont le comportement standard consiste à couvrir la fenêtre qui les crée. De plus, ces fenêtres doivent toujours se fermer, se réduire, s’agrandir et se restaurer conjointement avec la fenêtre qui les a créées. Une telle relation peut être établie en créant une fenêtre en *une autre et* en définissant la <xref:System.Windows.Window.Owner%2A> propriété de la *fenêtre possédée* avec une référence à la *fenêtre propriétaire*. L'exemple suivant le démontre.  
+ Certaines fenêtres nécessitent une relation avec la fenêtre qui les ouvre. Par exemple, une application d’environnement de développement intégré (IDE) peut ouvrir des fenêtres de propriétés et des fenêtres outil dont le comportement standard consiste à couvrir la fenêtre qui les crée. De plus, ces fenêtres doivent toujours se fermer, se réduire, s’agrandir et se restaurer conjointement avec la fenêtre qui les a créées. Une telle relation peut être établie en créant une fenêtre en une autre et en définissant la <xref:System.Windows.Window.Owner%2A> propriété de la *fenêtre possédée* avec une référence à la *fenêtre propriétaire*. L'exemple suivant le démontre.  
   
  [!code-csharp[WindowOwnerOwnedWindowsSnippets#SetWindowOwnerCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowOwnerOwnedWindowsSnippets/CSharp/MainWindow.xaml.cs#setwindowownercode)]
  [!code-vb[WindowOwnerOwnedWindowsSnippets#SetWindowOwnerCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WindowOwnerOwnedWindowsSnippets/visualbasic/mainwindow.xaml.vb#setwindowownercode)]  
@@ -401,7 +401,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
 
 <a name="Resize_Mode"></a>   
 ### <a name="resize-mode"></a>Mode de redimensionnement  
- En fonction de la <xref:System.Windows.Window.WindowStyle%2A> propriété, vous pouvez contrôler la façon dont les utilisateurs peuvent redimensionner la fenêtre. Le choix du style de fenêtre détermine si un utilisateur peut redimensionner la fenêtre en faisant glisser sa bordure avec la souris, que les boutons **réduire**, **agrandir**et redimensionner apparaissent sur la zone non cliente et, le cas échéant, s’ils sont  désactivé.  
+ En fonction de la <xref:System.Windows.Window.WindowStyle%2A> propriété, vous pouvez contrôler la façon dont les utilisateurs peuvent redimensionner la fenêtre. Le choix du style de fenêtre détermine si un utilisateur peut redimensionner la fenêtre en faisant glisser sa bordure avec la souris, que les boutons **réduire**, **agrandir**et redimensionner apparaissent sur la zone non cliente et, le cas échéant, s’ils sont désactivé.  
   
  Vous pouvez configurer le mode de redimensionnement d’une fenêtre <xref:System.Windows.Window.ResizeMode%2A> en définissant sa propriété, qui peut être <xref:System.Windows.ResizeMode> l’une des valeurs d’énumération suivantes:  
   
