@@ -18,12 +18,12 @@ helpviewer_keywords:
 - nested message processing [WPF]
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
-ms.openlocfilehash: 6bea25fbd321eead9137caaeb212b76a9d528e88
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: da9eaf127a4db02cddbb36e53a0d0ddb5b28b841
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710395"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68818048"
 ---
 # <a name="threading-model"></a>Modèle de thread
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] est conçu pour épargner aux développeurs les difficultés d’utilisation des threads. Par conséquent, la majorité des [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] développeurs n’auront pas à écrire une interface qui utilise plus d’un thread. Comme les programmes multithreads sont complexes et difficiles à déboguer, il est préférable de les éviter quand des solutions à thread unique existent.  
@@ -143,7 +143,7 @@ ms.locfileid: "68710395"
   
  L’Explorateur [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] fonctionne de cette manière. Chaque nouvelle fenêtre de l’Explorateur appartient au processus d’origine, mais elle est créée sous le contrôle d’un thread indépendant.  
   
- À l’aide [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] d’un <xref:System.Windows.Controls.Frame> contrôle, nous pouvons afficher des pages Web. Nous pouvons facilement créer un substitut [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] simple. Nous commençons par une fonctionnalité importante : la possibilité d’ouvrir une nouvelle fenêtre d’explorateur. Quand l’utilisateur clique sur le bouton « new window » (nouvelle fenêtre), nous lançons une copie de notre fenêtre dans un thread distinct. De cette façon, les opérations longues ou bloquantes dans une des fenêtres ne verrouillent pas toutes les autres fenêtres.  
+ À l’aide [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] d’un <xref:System.Windows.Controls.Frame> contrôle, nous pouvons afficher des pages Web. Nous pouvons facilement créer un substitut simple d’Internet Explorer. Nous commençons par une fonctionnalité importante : la possibilité d’ouvrir une nouvelle fenêtre d’explorateur. Quand l’utilisateur clique sur le bouton « new window » (nouvelle fenêtre), nous lançons une copie de notre fenêtre dans un thread distinct. De cette façon, les opérations longues ou bloquantes dans une des fenêtres ne verrouillent pas toutes les autres fenêtres.  
   
  En réalité, le modèle de navigateur web a son propre modèle de thread complexe. Nous l’avons choisi, car la plupart des lecteurs le connaissent probablement bien.  
   

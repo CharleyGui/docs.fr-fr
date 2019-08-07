@@ -28,18 +28,18 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: 519afa7f39f669b184ccc269546ef930c114c404
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: 6ab547951b00cc4a479034129254e4060486348d
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796772"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817944"
 ---
 # <a name="wpf-windows-overview"></a>Vue d'ensemble des fenêtres WPF
 Les utilisateurs interagissent avec les applications autonomes de Windows Presentation Foundation (WPF) par le biais de Windows. L’objectif principal d’une fenêtre est d’héberger du contenu qui permet aux utilisateurs de visualiser les données et d’interagir avec celles-ci. Les [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] applications autonomes fournissent leur propre Windows en <xref:System.Windows.Window> utilisant la classe. Cette rubrique présente <xref:System.Windows.Window> les principes fondamentaux de la création et de la gestion de fenêtres dans des applications autonomes.  
   
 > [!NOTE]
->  Les applications hébergées [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] par un navigateur, [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] y compris [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] et les pages libres, ne fournissent pas leurs propres fenêtres. Au lieu de cela, ils sont hébergés [!INCLUDE[TLA#tla_iegeneric](../../../../includes/tlasharptla-iegeneric-md.md)]dans Windows fourni par. Consultez [vue d’ensemble des applications de navigateur XAML WPF](wpf-xaml-browser-applications-overview.md).  
+>  Les applications hébergées [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] par un navigateur, [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] y compris [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] et les pages libres, ne fournissent pas leurs propres fenêtres. Au lieu de cela, ils sont hébergés dans Windows fourni par Windows Internet Explorer. Consultez [vue d’ensemble des applications de navigateur XAML WPF](wpf-xaml-browser-applications-overview.md).  
 
 <a name="TheWindowClass"></a>   
 ## <a name="the-window-class"></a>Window, classe  

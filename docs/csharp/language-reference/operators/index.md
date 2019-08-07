@@ -18,12 +18,12 @@ helpviewer_keywords:
 - keywords [C#], operators
 - arithmetic operators [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 13ad16ab768cdaee96cab29811e2ed058dee977a
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: bc5e2c88314c2f590aeddcfd37bd04c3a7400804
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512238"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796476"
 ---
 # <a name="c-operators-c-reference"></a>Opérateur C# (Référence C#)
 
@@ -59,7 +59,7 @@ Ce sont les opérateurs dont la priorité est la plus élevée.
 
 [unchecked](../keywords/unchecked.md) : désactive le contrôle de dépassement de capacité pour les opérations sur les entiers. Il s'agit du comportement de compilateur par défaut.
 
-[default(T)](../../programming-guide/statements-expressions-operators/default-value-expressions.md) – produit la valeur par défaut du type T.
+[default(T)](default.md) – produit la valeur par défaut du type T.
 
 [nameof](nameof.md) : obtient le nom simple (non qualifié) d’une variable, d’un type ou d’un membre sous forme de chaîne constante.
 

@@ -17,8 +17,6 @@
           href: lambda-expressions.md
         - name: Guide pratique pour utiliser des expressions lambda dans une requête
           href: how-to-use-lambda-expressions-in-a-query.md
-    - name: Expressions de valeur par défaut
-      href: default-value-expressions.md
     - name: Égalité et comparaisons d’égalité
       items:
         - name: Comparaisons d’égalité

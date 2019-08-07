@@ -24,12 +24,12 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-ms.openlocfilehash: ee2f6050eeea6eec840156ed5dce9fb9b6172149
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: 145c4e33bd601fa61750df56b949bda5d43cc372
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796868"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68818003"
 ---
 # <a name="navigation-overview"></a>Vue d'ensemble de la navigation
 
@@ -38,7 +38,7 @@ Windows Presentation Foundation (WPF) prend en charge la navigation de style nav
 <xref:System.Windows.Controls.Page>,, et le journal forment le cœur de la prise en charge de la navigation offerte par [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. <xref:System.Windows.Documents.Hyperlink> <xref:System.Windows.Navigation.NavigationService> Cette vue d’ensemble explore ces fonctionnalités en détail avant de couvrir la prise en charge de [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] la navigation avancée qui comprend la navigation vers des fichiers libres, des fichiers HTML et des objets.
 
 > [!NOTE]
-> Dans cette rubrique, le terme «navigateur» fait référence uniquement aux navigateurs qui peuvent [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] héberger des applications, [!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] qui incluent actuellement et Firefox. Lorsque des [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fonctionnalités spécifiques sont prises en charge uniquement par un navigateur particulier, la version du navigateur est indiquée.
+> Dans cette rubrique, le terme «navigateur» fait référence uniquement aux navigateurs qui peuvent [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] héberger des applications, ce qui comprend actuellement Microsoft Internet Explorer et Firefox. Lorsque des [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fonctionnalités spécifiques sont prises en charge uniquement par un navigateur particulier, la version du navigateur est indiquée.
 
 ## <a name="navigation-in-wpf-applications"></a>Navigation dans les applications WPF
 
@@ -180,7 +180,7 @@ L’illustration suivante montre un [!INCLUDE[TLA2#tla_xbap](../../../../include
 
 ![Page avec lien hypertexte](./media/navigation-overview/xbap-with-a-page-with-a-hyperlink.png "Cela montre une application XBAP avec une page avec un lien hypertexte.")
 
-Comme vous pouvez vous y attendre, <xref:System.Windows.Documents.Hyperlink> si vous [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] cliquez sur, le <xref:System.Windows.Controls.Page> accède au qui est identifié `NavigateUri` par l’attribut. En outre, le [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] ajoute une entrée pour le précédent <xref:System.Windows.Controls.Page> à la liste des pages récentes [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]dans. Ce cas est illustré dans la figure suivante.
+Comme vous pouvez vous y attendre, <xref:System.Windows.Documents.Hyperlink> si vous [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] cliquez sur, le <xref:System.Windows.Controls.Page> accède au qui est identifié `NavigateUri` par l’attribut. En outre, le [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] ajoute une entrée pour le précédent <xref:System.Windows.Controls.Page> à la liste des pages récentes dans Internet Explorer. Ce cas est illustré dans la figure suivante.
 
 ![Boutons précédent et suivant](./media/navigation-overview/back-and-forward-navigation.png "Naviguez avec les boutons précédent et suivant.")
 
@@ -367,16 +367,16 @@ Si vous inscrivez un gestionnaire avec un événement de navigation à <xref:Sys
 
 #### <a name="navigating-the-journal-from-internet-explorer"></a>Navigation dans le journal à partir d’Internet Explorer
 
-D’un **plan** conceptuel, le journal fonctionne de la même façon que les boutons précédent [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] et **suivant** dans do. Ces boutons sont représentés dans la figure suivante.
+D’un plan conceptuel, le journal fonctionne de la même façon que les boutons **précédent** et **suivant** dans Internet Explorer. Ces boutons sont représentés dans la figure suivante.
 
 ![Boutons précédent et suivant](./media/navigation-overview/back-and-forward-navigation.png "Naviguez avec les boutons précédent et suivant.")
 
-Pour [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] les qui sont hébergés [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] par [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)], intègre le journal dans la [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] navigation [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]de. Cela permet aux utilisateurs de parcourir les pages [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] d’un à l’aide des boutons **précédent**, **suivant**et **pages récentes** dans [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]. Le journal n’est pas intégré [!INCLUDE[TLA2#tla_ie6](../../../../includes/tla2sharptla-ie6-md.md)] dans de la même façon que pour [!INCLUDE[TLA2#tla_ie7](../../../../includes/tla2sharptla-ie7-md.md)] ou Internet Explorer 8. Au lieu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] de cela, effectue le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]rendu d’une navigation de substitution.
+Pour [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] les qui sont hébergés par Internet [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Explorer, intègre le journal dans la [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] navigation d’Internet Explorer. Cela permet aux utilisateurs de parcourir les pages [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)] d’un à l’aide des boutons **précédent**, **suivant**et **pages récentes** dans Internet Explorer.
 
 > [!IMPORTANT]
-> Dans [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)], quand un utilisateur quitte et revient à un [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)], seules les entrées de journal pour les pages qui n’étaient pas gardées actives sont conservées dans le journal. Pour plus d’informations sur la conservation des pages actives, consultez [durée de vie de la page et le journal](#PageLifetime) plus loin dans cette rubrique.
+> Dans Internet Explorer, quand un utilisateur quitte et revient à un [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)], seules les entrées de journal pour les pages qui n’étaient pas gardées actives sont conservées dans le journal. Pour plus d’informations sur la conservation des pages actives, consultez [durée de vie de la page et le journal](#PageLifetime) plus loin dans cette rubrique.
 
-Par défaut, le texte de chaque <xref:System.Windows.Controls.Page> qui apparaît dans la liste des **pages récentes** de [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] est [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] le pour <xref:System.Windows.Controls.Page>le. Dans de nombreux cas, cela n’est pas particulièrement explicite pour l’utilisateur. Heureusement, vous pouvez changer le texte à l’aide d’une des options suivantes :
+Par défaut, le texte de chaque <xref:System.Windows.Controls.Page> qui apparaît dans la liste **pages récentes** d’Internet Explorer est le [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] pour le <xref:System.Windows.Controls.Page>. Dans de nombreux cas, cela n’est pas particulièrement explicite pour l’utilisateur. Heureusement, vous pouvez changer le texte à l’aide d’une des options suivantes :
 
 1. Valeur de `JournalEntry.Name` l’attribut attaché.
 
@@ -400,7 +400,7 @@ L’exemple suivant utilise l' `Page.Title` attribut pour modifier le texte qui 
 
 #### <a name="navigating-the-journal-using-wpf"></a>Navigation dans le journal à l’aide de WPF
 
-Bien qu’un utilisateur puisse naviguer dans le journal à l’aide des pages **précédent**, **suivant**et [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)] **récent** dans, vous pouvez également naviguer dans le journal à l’aide des mécanismes déclaratifs [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]et de programmation fournis par. L’une des raisons pour cela consiste à fournir une [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] navigation personnalisée dans vos pages.
+Bien qu’un utilisateur puisse naviguer dans le journal à l’aide des pages **précédent**, **suivant**et **récent** dans Internet Explorer, vous pouvez également naviguer dans le journal à l’aide des mécanismes déclaratifs [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]et de programmation fournis par. L’une des raisons pour cela consiste à fournir une [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] navigation personnalisée dans vos pages.
 
 Vous pouvez ajouter de façon déclarative la prise en charge de la navigation dans <xref:System.Windows.Input.NavigationCommands>le journal à l’aide des commandes de navigation exposées par. L’exemple suivant montre comment utiliser la `BrowseBack` commande de navigation.
 
@@ -547,7 +547,7 @@ Voici quelques-unes des façons dont les cookies sont pris en [!INCLUDE[TLA2#tla
 
 - La prise en [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] charge des cookies dans est la même pour tous les navigateurs pris en charge.
 
-- Dans [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)], la stratégie P3P relative aux cookies est honorée par, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]en particulier en ce qui concerne les fournisseurs tiers et tiers [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)].
+- Dans Internet Explorer, la stratégie P3P relative aux cookies est respectée par, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]en particulier par rapport au tiers et tiers. [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]
 
 <a name="Structured_Navigation"></a>
 
@@ -606,7 +606,7 @@ L’illustration suivante affiche le résultat.
 
 ![Boîte de dialogue](./media/navigation-overview/navigation-window-as-dialog-box.png "Fenêtre de navigation en tant que boîte de dialogue")
 
-Comme vous pouvez le voir <xref:System.Windows.Navigation.NavigationWindow> , [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]affiche les boutons **précédent** et **suivant** qui permettent aux utilisateurs de naviguer dans le journal. Ces boutons fournissent la même expérience utilisateur, comme le montre la figure suivante.
+Comme vous pouvez le voir <xref:System.Windows.Navigation.NavigationWindow> , affiche les boutons **précédent** et **suivant** de style Internet Explorer qui permettent aux utilisateurs de naviguer dans le journal. Ces boutons fournissent la même expérience utilisateur, comme le montre la figure suivante.
 
 ![Boutons précédent et suivant dans une NavigationWindow](./media/navigation-overview/back-and-forward-buttons-in-navigation-window.png "Boutons précédent et suivant dans une fenêtre de navigation")
 
@@ -646,7 +646,7 @@ L’illustration suivante montre l’effet de la navigation dans un <xref:System
 
 ![Frame qui utilise son propre journal](./media/navigation-overview/frame-uses-its-own-journal.png "Cela montre l’effet de la navigation dans un frame qui utilise son propre journal.")
 
-Notez que les entrées de journal sont affichées par la [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] navigation dans <xref:System.Windows.Controls.Frame>le, plutôt que [!INCLUDE[TLA2#tla_ie](../../../../includes/tla2sharptla-ie-md.md)]par.
+Notez que les entrées de journal sont affichées par la [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] navigation dans <xref:System.Windows.Controls.Frame>le, plutôt que par Internet Explorer.
 
 > [!NOTE]
 > Si un <xref:System.Windows.Controls.Frame> fait partie du contenu hébergé dans un <xref:System.Windows.Window>, <xref:System.Windows.Controls.Frame> utilise son propre journal et, par conséquent, affiche sa propre navigation [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)].

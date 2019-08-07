@@ -24,12 +24,12 @@ helpviewer_keywords:
 - focus [WPF]
 - mouse position [WPF]
 ms.assetid: ee5258b7-6567-415a-9b1c-c0cbe46e79ef
-ms.openlocfilehash: 1149a70fc723a82144d13cbd079e3287b52ec4fb
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 8fa9f2dd668efca6a3108973ff792cc17b37b410
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68401486"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68818036"
 ---
 # <a name="input-overview"></a>Vue d'ensemble des entrées
 <a name="introduction"></a>Le [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] sous-système fournit une API puissante pour obtenir des entrées à partir d’un large éventail d’appareils, notamment la souris, le clavier, le toucher et le stylet. Cette rubrique décrit les services fournis par [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et explique l’architecture des systèmes d’entrée.
@@ -113,7 +113,7 @@ ms.locfileid: "68401486"
 ## <a name="text-input"></a>Entrée de texte
  L' <xref:System.Windows.ContentElement.TextInput> événement vous permet d’écouter l’entrée de texte d’une manière indépendante du périphérique. Le clavier est le principal moyen d’entrer du texte, mais la voix, l’écriture manuscrite et d’autres périphériques d’entrée peuvent aussi générer du texte.
 
- Pour les entrées au [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] clavier, envoie d' <xref:System.Windows.ContentElement.KeyDown> abord les événements appropriés /. <xref:System.Windows.ContentElement.KeyUp> Si ces événements ne sont pas gérés et que la clé est textuelle (au lieu d’une touche de contrôle telle que des flèches directionnelles ou <xref:System.Windows.ContentElement.TextInput> des touches de fonction), un événement est déclenché.  Il n’existe pas toujours un mappage un-à-un simple <xref:System.Windows.ContentElement.KeyDown> entre <xref:System.Windows.ContentElement.TextInput> / <xref:System.Windows.ContentElement.KeyUp> des événements et, car plusieurs séquences de touches peuvent générer un caractère unique d’entrée de texte et les séquences de touches peuvent générer plusieurs caractères celles.  Ceci est particulièrement valable pour des langues telles que le chinois, le japonais et le coréen, qui utilisent des [!INCLUDE[TLA#tla_ime#plural](../../../../includes/tlasharptla-imesharpplural-md.md)] pour générer les milliers de caractères possibles dans leurs alphabets correspondants.
+ Pour les entrées au [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] clavier, envoie d' <xref:System.Windows.ContentElement.KeyDown> abord les événements appropriés /. <xref:System.Windows.ContentElement.KeyUp> Si ces événements ne sont pas gérés et que la clé est textuelle (au lieu d’une touche de contrôle telle que des flèches directionnelles ou <xref:System.Windows.ContentElement.TextInput> des touches de fonction), un événement est déclenché.  Il n’existe pas toujours un mappage un-à-un simple <xref:System.Windows.ContentElement.KeyDown> entre <xref:System.Windows.ContentElement.TextInput> / <xref:System.Windows.ContentElement.KeyUp> des événements et, car plusieurs séquences de touches peuvent générer un caractère unique d’entrée de texte et les séquences de touches peuvent générer plusieurs caractères celles.  Cela est particulièrement vrai pour les langues telles que le chinois, le japonais et le coréen qui utilisent des éditeurs de méthode d’entrée (IME) pour générer les milliers de caractères possibles dans les alphabets correspondants.
 
  Lorsque [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] envoie un <xref:System.Windows.ContentElement.KeyUp> <xref:System.Windows.Input.Key.System?displayProperty=nameWithType> <xref:System.Windows.ContentElement.TextInput> événement, a<xref:System.Windows.Input.KeyEventArgs.Key%2A> la valeur si les séquences de touches peuvent faire partie d’un événement (en appuyant sur ALT + S, par exemple). / <xref:System.Windows.ContentElement.KeyDown> Cela permet au code dans <xref:System.Windows.ContentElement.KeyDown> un gestionnaire d’événements de <xref:System.Windows.Input.Key.System?displayProperty=nameWithType> vérifier et, s’il existe, de conserver le traitement du gestionnaire de <xref:System.Windows.ContentElement.TextInput> l’événement déclenché par la suite. Dans ces cas, les différentes propriétés de l' <xref:System.Windows.Input.TextCompositionEventArgs> argument peuvent être utilisées pour déterminer les séquences de touches d’origine. De même, si un [!INCLUDE[TLA2#tla_ime](../../../../includes/tla2sharptla-ime-md.md)] est actif, <xref:System.Windows.Input.Key> a la valeur <xref:System.Windows.Input.Key.ImeProcessed?displayProperty=nameWithType>et <xref:System.Windows.Input.KeyEventArgs.ImeProcessedKey%2A> donne la séquence d’origine ou les séquences de touches.
 

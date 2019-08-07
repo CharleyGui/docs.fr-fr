@@ -5,19 +5,19 @@ helpviewer_keywords:
 - WPF [WPF], about application development
 - application development [WPF], about
 ms.assetid: 2996ce5e-81e9-49ae-881b-952db3dd1b7e
-ms.openlocfilehash: 56dbdfd70dd335d32224d11c31a5e64abd3124af
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a988baa64025dd9c188e367949c07d861413c197
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64655464"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817987"
 ---
 # <a name="application-development"></a>Développement de l'application
-<a name="introduction"></a> Windows Presentation Foundation (WPF) est une infrastructure de présentation qui peut être utilisée pour développer les types d’applications suivants :  
+<a name="introduction"></a>Windows Presentation Foundation (WPF) est une infrastructure de présentation qui peut être utilisée pour développer les types d’applications suivants:  
   
 - Applications autonomes (applications [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] de style traditionnel générées sous forme d’assemblys exécutables qui sont installés et exécutés sur l’ordinateur client).  
   
-- [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] (applications composées de pages de navigation générées sous forme d’assemblys exécutables et hébergées par des navigateurs web tels que [!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] ou Mozilla Firefox).  
+- [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)](applications composées de pages de navigation générées sous forme d’assemblys exécutables et hébergées par des navigateurs Web tels que Microsoft Internet Explorer ou Mozilla Firefox).  
   
 - Bibliothèques de contrôles personnalisés (assemblys non exécutables contenant des contrôles réutilisables).  
   
@@ -54,7 +54,7 @@ ms.locfileid: "64655464"
   
 <a name="WPF_Application_Resource__Content__and_Data_Files"></a>   
 ## <a name="wpf-application-resource-content-and-data-files"></a>Fichiers de ressources, de contenu et de données d'une application WPF  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] étend la prise en charge de base dans le Microsoft .NET Framework pour les ressources incorporées avec prise en charge pour les trois types de fichiers de données non exécutables : ressources, de contenu et de données. Pour plus d’informations, consultez [Fichiers de ressources, de contenu et de données d’une application WPF](wpf-application-resource-content-and-data-files.md).  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]étend la prise en charge de base dans l’infrastructure Microsoft .NET pour les ressources incorporées avec la prise en charge de trois types de fichiers de données non exécutables: ressource, contenu et données. Pour plus d’informations, consultez [Fichiers de ressources, de contenu et de données d’une application WPF](wpf-application-resource-content-and-data-files.md).  
   
  Un composant clé de la prise en charge des fichiers de données WPF non exécutables est la capacité à les identifier et à les charger à l’aide d’un [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] unique. Pour plus d’informations, consultez [URI à en-tête pack dans WPF](pack-uris-in-wpf.md).  
   
@@ -74,7 +74,7 @@ ms.locfileid: "64655464"
   
  <xref:System.Windows.Window> prend en charge la capacité à créer un type spécial de fenêtre appelé « boîte de dialogue ». Deux types de boîtes de dialogue, modales et non modales, peuvent être créés.  
   
- Pour plus de commodité et les avantages de réutilisation et une expérience utilisateur cohérente entre les applications, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] expose trois des boîtes de dialogue Windows communes : <xref:Microsoft.Win32.OpenFileDialog>, <xref:Microsoft.Win32.SaveFileDialog>, et <xref:System.Windows.Controls.PrintDialog>.  
+ Pour des raisons pratiques, ainsi que des avantages de la réutilisation et d’une expérience [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] utilisateur cohérente entre les applications, expose trois <xref:Microsoft.Win32.OpenFileDialog>boîtes de dialogue <xref:System.Windows.Controls.PrintDialog>Windows communes:, <xref:Microsoft.Win32.SaveFileDialog>et.  
   
  Une boîte de message est un type spécial de boîte de dialogue qui permet d’afficher des informations textuelles importantes aux utilisateurs et de poser des questions simples du type Oui/Non/OK/Annuler. Vous utilisez la classe <xref:System.Windows.MessageBox> pour créer et afficher des boîtes de message.  
   
@@ -108,7 +108,7 @@ ms.locfileid: "64655464"
   
 <a name="Hosting"></a>   
 ## <a name="hosting"></a>Hébergement  
- Les [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] peuvent être hébergées dans [!INCLUDE[TLA#tla_ie](../../../../includes/tlasharptla-ie-md.md)] ou Firefox. Chaque modèle d’hébergement possède son propre ensemble de considérations et de contraintes qui sont couvertes dans la rubrique [Hébergement d’applications WPF](hosting-wpf-applications.md).  
+ [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)]peut être hébergé dans Microsoft Internet Explorer ou Firefox. Chaque modèle d’hébergement possède son propre ensemble de considérations et de contraintes qui sont couvertes dans la rubrique [Hébergement d’applications WPF](hosting-wpf-applications.md).  
   
 <a name="Build_and_Deploy"></a>   
 ## <a name="build-and-deploy"></a>Génération et déploiement  

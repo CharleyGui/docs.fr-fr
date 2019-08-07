@@ -2,12 +2,12 @@
 title: Contrôle d’accès
 description: Découvrez comment contrôler l’accès aux éléments de programmation, tels que les types, les méthodes et les fonctions F# , dans le langage de programmation.
 ms.date: 05/16/2016
-ms.openlocfilehash: ed77a09cf87aabf9a4134276e89e84aa42abd3c3
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 38f8f3fd4114c0428fbe8baca71594cd07740b2c
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629962"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817855"
 ---
 # <a name="access-control"></a>Contrôle d’accès
 
@@ -40,9 +40,9 @@ Le contrôle d’accès est soumis aux règles suivantes:
 
 - L’accessibilité des cas individuels dans une union discriminée est déterminée par l’accessibilité de l’union discriminée elle-même. Autrement dit, un cas d’Union particulier n’est pas moins accessible que l’Union elle-même.
 
-- L’accessibilité des champs individuels d’un type d’enregistrement ne peut pas être déterminée par l’accessibilité de l’enregistrement lui-même. Autrement dit, une étiquette d’enregistrement particulière n’est pas moins accessible que l’enregistrement lui-même.
+- L’accessibilité des champs individuels d’un type d’enregistrement est déterminée par l’accessibilité de l’enregistrement lui-même. Autrement dit, une étiquette d’enregistrement particulière n’est pas moins accessible que l’enregistrement lui-même.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Le code suivant illustre l’utilisation de spécificateurs de contrôle d’accès. Il y a deux fichiers dans le projet `Module1.fs` , `Module2.fs`et. Chaque fichier est implicitement un module. Par conséquent, il existe deux modules `Module1` , `Module2`et. Un type privé et un type interne sont définis dans `Module1`. Le type privé n’est pas accessible `Module2`à partir de, mais le type interne peut.
 

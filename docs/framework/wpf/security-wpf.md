@@ -13,17 +13,17 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-ms.openlocfilehash: ec026fd9273e99c88ec2e30cf46c3147419ace94
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 6bd597cd2719fb96b8633f724da46a76e416b454
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629814"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817895"
 ---
 # <a name="security-wpf"></a>Sécurité (WPF)
 <a name="introduction"></a>Lors du développement d’applications autonomes et hébergées par un navigateur Windows Presentation Foundation (WPF), vous devez prendre en compte le modèle de sécurité. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]les applications autonomes s’exécutent avec des autorisations illimitées (jeu d’autorisations**FULLTRUST** cas), qu’elles soient déployées à l’aide de Windows Installer (. msi), xcopy ou ClickOnce. Le déploiement d’applications WPF autonomes de confiance partielle avec ClickOnce n’est pas pris en charge. Toutefois, une application hôte de confiance totale peut créer un niveau de confiance <xref:System.AppDomain> partiel à l’aide du modèle de complément .NET Framework. Pour plus d’informations, consultez [vue d’ensemble des compléments WPF](./app-development/wpf-add-ins-overview.md).  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]les applications hébergées par un navigateur [!INCLUDE[TLA#tla_iegeneric](../../../includes/tlasharptla-iegeneric-md.md)] sont hébergées par ou Firefox. [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)] il peut [!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)] s’agir d’un document ou de pièces détachées. pour plus d’informations, consultez [vue d’ensemble des applications de navigateur XAML WPF](./app-development/wpf-xaml-browser-applications-overview.md).  
+ [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]les applications hébergées par un navigateur sont hébergées par Windows Internet Explorer ou Firefox et [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)] peuvent être [!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)] des documents ou des pièces détachées. pour plus d’informations, consultez [vue d’ensemble des applications de navigateur XAML WPF](./app-development/wpf-xaml-browser-applications-overview.md).  
   
  [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]les applications hébergées par un navigateur s’exécutent dans un bac à sable (sandbox) de sécurité de confiance partielle, qui est limité au jeu d’autorisations de la zone**Internet** de l’autorité de certification par défaut. Cela isole [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] efficacement les applications hébergées par le navigateur de l’ordinateur client de la même façon que les applications Web typiques sont isolées. Une application XBAP peut élever des privilèges jusqu’à la confiance totale, selon la zone de sécurité de l’URL de déploiement et la configuration de sécurité du client. Pour plus d’informations, consultez [Sécurité de confiance partielle de WPF](wpf-partial-trust-security.md).  
   
@@ -89,7 +89,7 @@ ms.locfileid: "68629814"
 ## <a name="web-browsing-software-security-settings"></a>Paramètres de sécurité des logiciels de navigation web  
  Les paramètres de sécurité de votre ordinateur déterminent l’accès accordé à n’importe quel logiciel de navigation web. Le logiciel de navigation Web inclut tout composant ou application qui utilise les API [WinInet](https://go.microsoft.com/fwlink/?LinkId=179379) ou [urlmon](https://go.microsoft.com/fwlink/?LinkId=179383) , y compris Internet Explorer et PresentationHost. exe.  
   
- [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)]fournit un mécanisme permettant de configurer les fonctionnalités autorisées à être exécutées par ou à partir [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)]de, y compris les éléments suivants:  
+ Internet Explorer fournit un mécanisme permettant de configurer les fonctionnalités autorisées à être exécutées par ou à partir d’Internet Explorer, y compris les éléments suivants:  
   
 - Composants dépendants de la .NET Framework  
   
@@ -120,11 +120,11 @@ ms.locfileid: "68629814"
 > [!NOTE]
 >  Vous pouvez également accéder à la boîte de dialogue Options Internet à partir d’Internet Explorer. Cliquez sur **Outils** , puis sur **Options Internet**.  
   
- À [!INCLUDE[TLA#tla_ie7](../../../includes/tlasharptla-ie7-md.md)]compter de, les paramètres de sécurité suivants, spécifiquement pour .NET Framework, sont inclus:  
+ À compter de Windows Internet Explorer 7, les paramètres de sécurité suivants, spécifiquement pour .NET Framework, sont inclus:  
   
-- **XAML libre**. Contrôle si [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] peut naviguer vers et des [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] fichiers libres. (Options Activer, Désactiver et Demander).  
+- **XAML libre**. Contrôle si Internet Explorer peut accéder aux [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] fichiers et les libérer. (Options Activer, Désactiver et Demander).  
   
-- **Applications du navigateur XAML**. Contrôle si [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] peut naviguer jusqu’à et [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)]s’exécuter. (Options Activer, Désactiver et Demander).  
+- **Applications du navigateur XAML**. Contrôle si Internet Explorer peut naviguer vers et exécuter [!INCLUDE[TLA2#tla_xbap#plural](../../../includes/tla2sharptla-xbapsharpplural-md.md)]. (Options Activer, Désactiver et Demander).  
   
  Par défaut, ces paramètres sont tous activés pour les zones **Internet**, **Intranet local**et **sites de confiance** , et sont désactivés pour la zone **sites sensibles** .  
   
@@ -207,7 +207,7 @@ ms.locfileid: "68629814"
 |---------------------|  
 |FEATURE_ENABLE_SCRIPT_PASTE_URLACTION_IF_PROMPT|  
   
- Si vous exécutez un niveau de confiance [!INCLUDE[TLA#tla_xbap](../../../includes/tlasharptla-xbap-md.md)] partiel qui comprend un <xref:System.Windows.Controls.WebBrowser> contrôle WPF [!INCLUDE[TLA#tla_iegeneric](../../../includes/tlasharptla-iegeneric-md.md)]dans, WPF héberge le contrôle ActiveX WebBrowser dans l’espace d’adressage du processus Internet Explorer. Étant donné que le contrôle ActiveX WebBrowser est hébergé [!INCLUDE[TLA2#tla_iegeneric](../../../includes/tla2sharptla-iegeneric-md.md)] dans le processus, tous les contrôles de fonctionnalités pour Internet Explorer sont également activés pour le contrôle ActiveX WebBrowser.  
+ Si vous exécutez un niveau de confiance [!INCLUDE[TLA#tla_xbap](../../../includes/tlasharptla-xbap-md.md)] partiel qui comprend un <xref:System.Windows.Controls.WebBrowser> contrôle WPF dans Windows Internet Explorer, WPF héberge le contrôle ActiveX WebBrowser dans l’espace d’adressage du processus Internet Explorer. Étant donné que le contrôle ActiveX WebBrowser est hébergé dans le processus Internet Explorer, tous les contrôles de fonctionnalités pour Internet Explorer sont également activés pour le contrôle ActiveX WebBrowser.  
   
  Les applications XBAP exécutées dans Internet Explorer bénéficient également d’un niveau de sécurité supplémentaire par rapport aux applications autonomes normales. Cette sécurité supplémentaire est due au fait qu’Internet Explorer et, par conséquent, le contrôle ActiveX WebBrowser, s’exécute [!INCLUDE[TLA#tla_winvista](../../../includes/tlasharptla-winvista-md.md)] en [!INCLUDE[win7](../../../includes/win7-md.md)]mode protégé par défaut sur et. Pour plus d’informations sur le mode protégé, consultez [présentation et utilisation du mode protégé d’Internet Explorer](https://go.microsoft.com/fwlink/?LinkId=179393).  
   

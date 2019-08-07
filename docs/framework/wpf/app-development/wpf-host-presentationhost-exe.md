@@ -5,15 +5,15 @@ helpviewer_keywords:
 - WPF Host application [WPF]
 - PresentationHost.exe
 ms.assetid: 3215bfa1-722c-4ac8-a7c5-bdd02d30afbd
-ms.openlocfilehash: 3f51f274a4cba77f6bc7b62d6e31d476625072a5
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: 88e4c6895039c84a57ed215a37a10a4b68851b2d
+ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796893"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68817924"
 ---
 # <a name="wpf-host-presentationhostexe"></a>Hôte WPF (PresentationHost.exe)
-L’hôte Windows Presentation Foundation (WPF) (PresentationHost. exe) est l’application qui [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] permet aux applications d’être hébergées dans des navigateurs compatibles (y compris [!INCLUDE[TLA#tla_ie6](../../../../includes/tlasharptla-ie6-md.md)] et versions ultérieures). Par défaut, l’hôte Windows Presentation Foundation (WPF) est inscrit en tant que [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] Shell et gestionnaire pour le [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] contenu hébergé par le navigateur, ce qui comprend les éléments suivants:  
+L’hôte Windows Presentation Foundation (WPF) (PresentationHost. exe) est l’application qui [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] permet aux applications d’être hébergées dans des navigateurs compatibles (y compris Microsoft Internet Explorer 6 et versions ultérieures). Par défaut, l’hôte Windows Presentation Foundation (WPF) est inscrit en tant que [!INCLUDE[TLA2#tla_mime](../../../../includes/tla2sharptla-mime-md.md)] Shell et gestionnaire pour le [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] contenu hébergé par le navigateur, ce qui comprend les éléments suivants:  
   
 - les fichiers [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (.xaml) libre (non compilés) ;  
   
@@ -41,7 +41,7 @@ L’hôte Windows Presentation Foundation (WPF) (PresentationHost. exe) est l’
 |-debugSecurityZoneURL \<url>|Utilisé avec une valeur [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)] pour indiquer à PresentationHost.exe qu’une application doit être déboguée comme si elle était déployée à partir de la valeur [!INCLUDE[TLA2#tla_url](../../../../includes/tla2sharptla-url-md.md)] spécifiée. Cela permet de déterminer à la fois la zone de déploiement et le site d’origine.|  
 |-embedding|Imposé par OLE. Si le paramètre `-event` ou `-debug` est spécifié, il n’est pas nécessaire de spécifier le paramètre `-embedding`, car celui-ci est défini de façon interne.|  
 |-event \<eventname>|Ouvrez l’événement ayant ce nom, puis signalez-le quand PresentationHost.exe est initialisé et prêt à héberger le contenu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. PresentationHost.exe se termine si une erreur se produit à l’ouverture de l’événement, par exemple s’il n’a pas encore été créé.|  
-|-launchApplication \<url>|Lance une application ClickOnce autonome à partir de l’URL spécifiée. Les stratégies de sécurité [!INCLUDE[TLA2#tla_iegeneric](../../../../includes/tla2sharptla-iegeneric-md.md)] et WinINet relatives aux applications .NET sont appliquées.|  
+|-launchApplication \<url>|Lance une application ClickOnce autonome à partir de l’URL spécifiée. La stratégie de sécurité Internet Explorer et WinINet concernant les applications .NET sont appliquées.|  
   
 ## <a name="scenarios"></a>Scénarios  
   
