@@ -1,9 +1,0 @@
----
-ms.openlocfilehash: 4afe64f0d85c1551879bce5ac5fc2be228926c21
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65670112"
----
-<span data-ttu-id="2a02a-101">JPEG</span><span class="sxs-lookup"><span data-stu-id="2a02a-101">JPEG</span></span>
