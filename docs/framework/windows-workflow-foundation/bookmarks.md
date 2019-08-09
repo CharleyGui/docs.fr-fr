@@ -1,13 +1,13 @@
 ---
-title: Bookmarks1
+title: Signets-WF
 ms.date: 03/30/2017
 ms.assetid: 9b51a346-09ae-455c-a70a-e2264ddeb9e2
-ms.openlocfilehash: 8b7ca9549327087e30d6c72a8b784aa37ad09f3c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a15a28cc39a4227765c238a6f2b86c72197f1a39
+ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774114"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68868918"
 ---
 # <a name="bookmarks"></a>Signets
 Les signets sont le mécanisme qui permet à une activité d'attendre passivement l'entrée sans maintenir sur un thread de workflow. Lorsqu'une activité signale qu'il attend l'impulsion, il peut créer un signet. Cela indique à l'exécution que l'exécution de l'activité ne doit pas être considérée comme terminé même quand les recettes de méthode (lequel a créé le <xref:System.Activities.Bookmark>) actuellement exécutant.  
