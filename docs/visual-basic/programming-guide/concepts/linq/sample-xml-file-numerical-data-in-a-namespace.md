@@ -1,18 +1,18 @@
 ---
-title: 'Exemple de fichier XML : Données numériques dans un espace de noms1'
+title: 'Exemple de fichier XML : Données numériques dans un espace de noms'
 ms.date: 07/20/2015
 ms.assetid: f01cc0a1-fb55-4b42-8380-16f4be47d6f4
-ms.openlocfilehash: 09954798615954d238273b3d4ed71b5ff475394f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3a067afc6d59c76a50c7c9f91673bb631edd085b
+ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786969"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68869101"
 ---
-# <a name="sample-xml-file-numerical-data-in-a-namespace"></a><span data-ttu-id="3b58e-102">Exemple de fichier XML : Données numériques dans un espace de noms</span><span class="sxs-lookup"><span data-stu-id="3b58e-102">Sample XML File: Numerical Data in a Namespace</span></span>
-<span data-ttu-id="3b58e-103">Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="3b58e-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="3b58e-104">Ce fichier contient des données numériques pour effectuer des additions, des moyennes et des regroupements.</span><span class="sxs-lookup"><span data-stu-id="3b58e-104">This file contains numerical data for summing, averaging, and grouping.</span></span> <span data-ttu-id="3b58e-105">Le code XML se trouve dans un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="3b58e-105">The XML is in a namespace.</span></span>  
+# <a name="sample-xml-file-numerical-data-in-a-namespace"></a><span data-ttu-id="56593-102">Exemple de fichier XML : Données numériques dans un espace de noms</span><span class="sxs-lookup"><span data-stu-id="56593-102">Sample XML File: Numerical Data in a Namespace</span></span>
+<span data-ttu-id="56593-103">Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="56593-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="56593-104">Ce fichier contient des données numériques pour effectuer des additions, des moyennes et des regroupements.</span><span class="sxs-lookup"><span data-stu-id="56593-104">This file contains numerical data for summing, averaging, and grouping.</span></span> <span data-ttu-id="56593-105">Le code XML se trouve dans un espace de noms.</span><span class="sxs-lookup"><span data-stu-id="56593-105">The XML is in a namespace.</span></span>  
   
-## <a name="data"></a><span data-ttu-id="3b58e-106">Données</span><span class="sxs-lookup"><span data-stu-id="3b58e-106">Data</span></span>  
+## <a name="data"></a><span data-ttu-id="56593-106">Données</span><span class="sxs-lookup"><span data-stu-id="56593-106">Data</span></span>  
   
 ```xml  
 <Root xmlns='http://www.adatum.com'>  
@@ -55,6 +55,6 @@ ms.locfileid: "61786969"
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="3b58e-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3b58e-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="56593-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="56593-107">See also</span></span>
 
-- [<span data-ttu-id="3b58e-108">Exemples de documents XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="3b58e-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [<span data-ttu-id="56593-108">Exemples de documents XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="56593-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
