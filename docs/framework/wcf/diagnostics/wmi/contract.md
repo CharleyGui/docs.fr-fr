@@ -1,13 +1,13 @@
 ---
-title: Contract1
+title: Contrat
 ms.date: 03/30/2017
 ms.assetid: aa00f6b3-7e1f-4213-841a-206463fca20b
-ms.openlocfilehash: 10789f9a2940c239ae20c8fd1e9d48bca0e820ed
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e4a21e95a6f1f1860ed36c968d17bb8ac8465dce
+ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61963694"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68868430"
 ---
 # <a name="contract"></a>Contrat
 Contrat  
@@ -38,63 +38,63 @@ class Contract
 ### <a name="appdomainid"></a>AppDomainId  
  Type de données : sint32  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d’accès: Lecture seule  
   
  ID du domaine d'application qui héberge le contrat.  
   
 ### <a name="behaviors"></a>comportements  
- Type de données : Tableau de comportements  
+ Type de données: Tableau de comportements  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d’accès: Lecture seule  
   
  Comportements associés à ce contrat.  
   
-### <a name="name"></a>Nom  
+### <a name="name"></a>Name  
  Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d’accès: Lecture seule  
   
  Nom du contrat dans WSDL.  
   
 ### <a name="namespace"></a>Espace de noms  
  Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d’accès: Lecture seule  
   
  Espace de noms de l'élément `portType` dans WSDL.  
   
 ### <a name="operations"></a>Opérations  
- Type de données : Tableau d’opérations  
+ Type de données: Tableau d’opérations  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d’accès: Lecture seule  
   
  Opérations de ce contrat.  
   
 ### <a name="processid"></a>ProcessId  
  Type de données : sint32  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d’accès: Lecture seule  
   
  ID du processus qui héberge le contrat.  
   
 ### <a name="ref"></a>ref  
- Type de données : Contrat  
+ Type de données: Contrat  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d’accès: Lecture seule  
   
  Type de rappel lorsque le contrat est un contrat duplex.  
   
 ### <a name="sessionmode"></a>SessionMode  
  Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d’accès: Lecture seule  
   
  Indique si le contrat nécessite que la liaison associée à ce contrat utilise les sessions de canal.  
   
 ### <a name="type"></a>Type  
  Type de données : chaîne  
   
- Type d’accès : Propriétés en lecture seule  
+ Type d’accès: Lecture seule  
   
  Type du contrat.  
   

@@ -1,13 +1,13 @@
 ---
-title: 'Exemple de fichier XML : Clients et commandes dans un espace de noms1'
+title: 'Exemple de fichier XML : Clients et commandes dans un espace de noms'
 ms.date: 07/20/2015
 ms.assetid: 9fe81dbb-e51f-4e80-a49b-e34ac0b1f980
-ms.openlocfilehash: ca12478ab81d114759c07b5d44749aee5a620bbb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 63bb6cf5065e2189380bbcd67812c5ae8d6dd372
+ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787058"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68869113"
 ---
 # <a name="sample-xml-file-customers-and-orders-in-a-namespace"></a>Exemple de fichier XML : Clients et commandes dans un espace de noms
 Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Ce fichier contient des clients et des commandes. Le code XML se trouve dans un espace de noms.  
