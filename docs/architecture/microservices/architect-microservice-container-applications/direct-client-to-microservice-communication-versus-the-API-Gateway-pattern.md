@@ -2,12 +2,12 @@
 title: Modèle de passerelle API et communication directe de client à microservice
 description: Découvrez les différences et les utilisations du modèle de passerelle API et de la communication directe de client à microservice.
 ms.date: 01/07/2019
-ms.openlocfilehash: 4b169d5a9542b10726a36b65328bc6a3dc3839ef
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 9ebd544bdc137a68f03d1ab38cf23bf0d02c420c
+ms.sourcegitcommit: 46c68557bf6395f0ab9915f7558f2faae0097695
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673166"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68892234"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Modèle de passerelle API et communication directe de client à microservice
 
@@ -128,7 +128,7 @@ Il peut y avoir plusieurs problèmes transversaux générés par les produits de
 
 En plus de répondre à vos besoins de passerelle API, le service [Gestion des API Azure](https://azure.microsoft.com/services/api-management/) (comme illustré à la figure 4-14) offre plusieurs fonctionnalités, telles que la collecte d’insights à partir de vos API. Si vous utilisez une solution de gestion des API globale, une passerelle API est simplement un composant de cette solution.
 
-![Le service Gestion des API Azure apporte des réponses à vos besoins de passerelle API et de gestion (journalisation, sécurité, contrôle, etc.).](./media/image14.png)
+![Le service Gestion des API Azure apporte des réponses à vos besoins de passerelle API et de gestion (journalisation, sécurité, contrôle, etc.).](./media/api-gateway-azure-api-management.png)
 
 **Figure 4-14**. Utilisation de Gestion des API Azure pour votre passerelle d’API
 
