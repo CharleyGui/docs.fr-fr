@@ -1,5 +1,5 @@
 ---
-title: lock, instruction - Référence C#
+title: instruction lock - référence C#
 ms.custom: seodec18
 description: Utilisez l’instruction lock en C# pour synchroniser l’accès des threads à une ressource partagée
 ms.date: 10/01/2018
@@ -9,14 +9,14 @@ f1_keywords:
 helpviewer_keywords:
 - lock keyword [C#]
 ms.assetid: 656da1a4-707e-4ef6-9c6e-6d13b646af42
-ms.openlocfilehash: c7d5d4ef7d812e186813cd08f9e4e2adf2ab1a58
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 96609264044e531bcc8671cb226a02fdc1b962b8
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306656"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796457"
 ---
-# <a name="lock-statement-c-reference"></a>lock, instruction (référence C#)
+# <a name="lock-statement-c-reference"></a>instruction lock (référence C#)
 
 L’instruction `lock` obtient le verrou d’exclusion mutuelle d’un objet donné, exécute un bloc d’instructions, puis libère le verrou. Tant qu’un verrou est maintenu, le thread qui contient le verrou peut à nouveau obtenir et libérer le verrou. Tout autre thread se voit bloquer l’obtention du verrou et attend que ce dernier soit libéré.
 
@@ -65,14 +65,13 @@ L’exemple suivant définit une classe `Account`, qui synchronise l’accès à
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Pour plus d’informations, voir la section [Instruction lock](~/_csharplang/spec/statements.md#the-lock-statement) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Threading.Monitor?displayProperty=nameWithType>
 - <xref:System.Threading.SpinLock?displayProperty=nameWithType>
 - <xref:System.Threading.Interlocked?displayProperty=nameWithType>
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Mots clés C#](index.md)
-- [Mots clés d’instructions](statement-keywords.md)
 - [Vue d’ensemble des primitives de synchronisation](../../../standard/threading/overview-of-synchronization-primitives.md)

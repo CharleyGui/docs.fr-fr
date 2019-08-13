@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 364ac31744d41d95ba20b598f8f137257ddbc608
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 64ffd57d8c0bce1d9f409adebd169b4fd3e17e06
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663656"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796856"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Notions de base du garbage collection
 
 <a name="top"></a> Dans le Common Language Runtime (CLR), le garbage collector a un rôle de gestionnaire de mémoire automatique. Il fournit les avantages suivants :
 
-- Il vous permet de développer votre application sans avoir à libérer de la mémoire.
+- Il vous permet de développer votre application sans avoir à libérer de la mémoire pour les objets que vous créez.
 
 - Il alloue efficacement les objets sur le tas managé.
 

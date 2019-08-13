@@ -8,18 +8,19 @@ f1_keywords:
 helpviewer_keywords:
 - default keyword [C#]
 ms.assetid: 14c48aaa-7d35-4058-a1a4-f53353050579
-ms.openlocfilehash: d1ee9dc731f3cb96bd40935b94113c7c2aa91ff4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: f64cab1f6666a0b6c6816eb0d6deeec21dcb454d
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59183194"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796307"
 ---
 # <a name="default-c-reference"></a>default (référence C#)
 
 Le mot clé `default` peut être utilisé de deux façons :
-- [l’instruction `switch`](switch.md) pour spécifier l’étiquette par défaut ;
-- une [expression de valeur par défaut](../../programming-guide/statements-expressions-operators/default-value-expressions.md) pour produire la valeur par défaut d’un type.
+
+- Pour spécifier l’étiquette par défaut dans l’[instruction `switch`](switch.md).
+- Comme [opérateur ou littéral par défaut](../operators/default.md) pour produire la valeur par défaut d'un type.
 
 ## <a name="see-also"></a>Voir aussi
 

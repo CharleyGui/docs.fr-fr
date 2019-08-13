@@ -18,12 +18,12 @@ helpviewer_keywords:
 - cast expression [C#]
 - () operator [C#]
 - typeof operator [C#]
-ms.openlocfilehash: a9e5139e6d650aa6935bff934ca25502fdc14775
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 81e7678bc21529c159b8137b06b93774af0ff434
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744075"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796497"
 ---
 # <a name="type-testing-and-conversion-operators-c-reference"></a>Opérateurs de conversion et de test de type (Référence C#)
 
@@ -119,7 +119,7 @@ Une autre utilisation des parenthèses est pour spécifier l’ordre dans lequel
 
 ## <a name="typeof-operator"></a>Opérateur typeof
 
-L’opérateur `typeof` obtient l’instance <xref:System.Type?displayProperty=nameWithType> pour un type. Un argument de l’opérateur `typeof` doit avoir le nom d’un type ou d’un paramètre de type, comme le montre l’exemple suivant :
+L’opérateur `typeof` obtient l’instance <xref:System.Type?displayProperty=nameWithType> pour un type. L’argument de l’opérateur `typeof` doit avoir le nom d’un type ou d’un paramètre de type, comme le montre l’exemple suivant :
 
 [!code-csharp-interactive[typeof operator](~/samples/csharp/language-reference/operators/TypeTestingAndConversionOperators.cs#TypeOf)]
 

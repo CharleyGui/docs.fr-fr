@@ -8,17 +8,19 @@ helpviewer_keywords:
 - fully qualified names [C#]
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
-ms.openlocfilehash: bf194e207262ecea0511a0b67bbafeadd8d5d31d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 06ebb9edfaf4753b98c3305a90b52e93ee7b4486
+ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629490"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68796639"
 ---
 # <a name="using-namespaces-c-programming-guide"></a>Utilisation d'espaces de noms (Guide de programmation C#)
+
 Les espaces de noms sont largement utilisés dans les programmes C#, et ce de deux façons différentes. En premier lieu, les classes .NET Framework utilisent les espaces de noms à des fins d’organisation. En deuxième lieu, la déclaration de vos propres espaces de noms peut faciliter le contrôle de la portée des noms de classes et de méthodes dans les projets de programmation de plus grande envergure.  
   
-## <a name="accessing-namespaces"></a>Accès aux espaces de noms  
+## <a name="accessing-namespaces"></a>Accès aux espaces de noms
+
  La plupart des applications C# commencent par une section de directives `using`. Cette section répertorie les espaces de noms que l’application est appelée à utiliser fréquemment et évite au programmeur de spécifier un nom qualifié complet chaque fois qu’une méthode qu’elle contient est utilisée.  
   
  Par exemple, en incluant la ligne :  
@@ -33,17 +35,20 @@ Les espaces de noms sont largement utilisés dans les programmes C#, et ce de de
   
  [!code-csharp[csProgGuide#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#30)]  
   
-## <a name="namespace-aliases"></a>Alias d’espace de noms  
- La [directive using](../../../csharp/language-reference/keywords/using-directive.md) peut aussi servir à créer un alias pour un [espace de noms](../../../csharp/language-reference/keywords/namespace.md). Par exemple, si vous utilisez un espace de noms écrit précédemment qui contient des espaces de noms imbriqués, vous pouvez déclarer un alias pour offrir un moyen rapide d’en référencer un en particulier, comme dans l’exemple suivant :  
+## <a name="namespace-aliases"></a>Alias d’espace de noms
+
+ Vous pouvez aussi utiliser la [directive`using`](../../language-reference/keywords/using-directive.md) afin de créer un alias pour un espace de noms. Utilisez le [qualificateur d'alias d’espace de noms`::`](../../language-reference/operators/namespace-alias-qualifier.md) pour accéder aux membres de l'espace de noms avec alias. L'exemple suivant montre comment créer et utiliser un alias d’espace de noms :
   
- [!code-csharp[csProgGuideNamespaces#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces2.cs#7)]  
+[!code-csharp[csProgGuideNamespaces#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#5)]
   
-## <a name="using-namespaces-to-control-scope"></a>Utilisation d’espaces de noms pour contrôler la portée  
+## <a name="using-namespaces-to-control-scope"></a>Utilisation d’espaces de noms pour contrôler la portée
+
  Le mot clé `namespace` est utilisé pour déclarer une portée. La possibilité de créer des portées au sein de votre projet facilite l’organisation du code et vous permet de créer des types globalement uniques. Dans l’exemple suivant, une classe intitulée `SampleClass` est définie dans deux espaces de noms, l’un étant imbriqué à l’intérieur de l’autre. L’[opérateur `.` d’accès aux membres](../../language-reference/operators/member-access-operators.md#member-access-operator-) est utilisé pour différencier la méthode appelée.  
   
  [!code-csharp[csProgGuideNamespaces#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces.cs#8)]  
   
-## <a name="fully-qualified-names"></a>noms qualifiés complets  
+## <a name="fully-qualified-names"></a>Noms qualifiés complets
+
  Les espaces de noms et les types portent des titres uniques décrits par des noms qualifiés complets qui indiquent une hiérarchie logique. Par exemple, l’instruction `A.B` implique que `A` est le nom de l’espace de noms ou du type et que `B` est imbriqué en son sein.  
   
  Dans l’exemple suivant, il y a des classes et des espaces de noms imbriqués. Le nom qualifié complet est indiqué sous forme de commentaire à la suite de chaque entité.  
@@ -92,6 +97,6 @@ Les espaces de noms sont largement utilisés dans les programmes C#, et ce de de
 
 - [Guide de programmation C#](../../../csharp/programming-guide/index.md)
 - [Espaces de noms](../../../csharp/programming-guide/namespaces/index.md)
-- [. Opérateur](../../../csharp/language-reference/operators/member-access-operators.md#member-access-operator-)
-- [:: Opérateur](../../../csharp/language-reference/operators/namespace-alias-qualifier.md)
+- [., opérateur](../../../csharp/language-reference/operators/member-access-operators.md#member-access-operator-)
+- [:: opérateur](../../../csharp/language-reference/operators/namespace-alias-qualifier.md)
 - [extern alias](../../../csharp/language-reference/keywords/extern-alias.md)
