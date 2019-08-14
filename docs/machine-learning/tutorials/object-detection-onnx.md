@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 08/01/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 3e5b6b482dfbd1ff06347883a93a561944200a9f
-ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
+ms.openlocfilehash: e44ea5795beb90bafe3faf0bafb463d49ba1fc41
+ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68733397"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68868723"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Tutoriel : Détecter des objets avec ONNX dans ML.NET
 
@@ -19,7 +19,7 @@ Découvrez comment utiliser un modèle ONNX préentraîné dans ML.NET pour dét
 
 L’entraînement d’un modèle de détection d’objets à partir de zéro nécessite de définir des millions de paramètres et d’avoir un grand nombre de données d’entraînement étiquetées et de ressources de calcul (des centaines d’heures GPU). L’utilisation d’un modèle préentraîné vous permet de raccourcir le processus d’entraînement.
 
-Dans ce tutoriel, vous allez apprendre à :
+Dans ce didacticiel, vous apprendrez à :
 > [!div class="checklist"]
 > * Comprendre le problème
 > * Découvrir ce qu’est ONNX et comment il fonctionne avec ML.NET
@@ -27,9 +27,9 @@ Dans ce tutoriel, vous allez apprendre à :
 > * Réutiliser le modèle préentraîné
 > * Détecter les objets avec un modèle chargé
 
-## <a name="pre-requisites"></a>Prérequis
+## <a name="pre-requisites"></a>Conditions préalables
 
-- [Visual Studio 2017 15.6 ou ultérieur](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017), avec la charge de travail « Développement multiplateforme .Net Core » installée.
+- [Visual Studio 2017 15.6 ou version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017), avec la charge de travail « Développement multiplateforme .Net Core » installée.
 - [Package NuGet Microsoft.ML](https://www.nuget.org/packages/Microsoft.ML/)
 - [Package NuGet Microsoft.ML.ImageAnalytics](https://www.nuget.org/packages/Microsoft.ML.ImageAnalytics/)
 - [Package NuGet Microsoft.ML.OnnxTransformer](https://www.nuget.org/packages/Microsoft.ML.OnnxTransformer/)
@@ -344,7 +344,6 @@ Maintenant que les classes pour les dimensions et les rectangles englobants sont
     - `CELL_HEIGHT` est la hauteur d’une cellule dans la grille de l’image.
     - `channelStride` est la position de départ de la cellule active dans la grille.
 
-
     Lorsque le modèle score une image, il divise l’entrée `416px x 416px` en grille de cellules `13 x 13`. Chaque cellule contient `32px x 32px`. Dans chaque cellule, il y a 5 rectangles englobants contenant chacun 5 caractéristiques (x, y, largeur, hauteur, confiance). Chaque rectangle englobant contient aussi la probabilité de chacune des classes qui, dans le cas présent, est de 20. Par conséquent, chaque cellule contient 125 informations différentes (5 caractéristiques + 20 probabilités de classe). 
 
 Créez une liste d’ancres sous `channelStride` pour les 5 rectangles englobants :
@@ -525,7 +524,7 @@ Parfait ! Il est maintenant temps d’utiliser ce code avec le modèle de scori
 
 Tout comme le post-traitement, il faut suivre quelques étapes pour le scoring. Pour vous y aider, ajoutez une classe qui contiendra la logique de scoring à votre projet.
 
-1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **Nouvel élément**.
+1. Dans l **’Explorateur de solutions**, cliquez avec le bouton de droite sur le projet, puis sélectionnez **Ajouter** > **Nouvel élément**.
 1. Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez **Classe** et remplacez la valeur du champ **Nom** par *OnnxModelScorer.cs*. Ensuite, sélectionnez le bouton **Ajouter**.
 
     Le fichier *OnnxModelScorer.cs* s’ouvre dans l’éditeur de code. Ajoutez l’instruction `using` suivante en haut de *OnnxModelScorer.cs* :
@@ -655,7 +654,6 @@ Enfin, ajoutez une logique de journalisation avec la méthode `LogDetectedObject
 
 [!code-csharp [LogPredictionsOutput](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L54)]
 
-
 Après l’instruction try-catch, ajoutez une logique supplémentaire pour indiquer que le processus a fini l’exécution.
 
 [!code-csharp [EndProcessLog](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L62-L63)]
@@ -702,9 +700,9 @@ Pour voir les images avec les rectangles englobants, accédez au répertoire `as
 
 Félicitations ! Vous avez créé un modèle Machine Learning pour la détection d’objets en réutilisant un modèle `ONNX` préentraîné dans ML.NET.
 
-Vous trouverez le code source de ce tutoriel dans le dépôt [dotnet/samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx).
+Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx).
 
-Dans ce tutoriel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
 > * Comprendre le problème
 > * Découvrir ce qu’est ONNX et comment il fonctionne avec ML.NET
@@ -714,4 +712,4 @@ Dans ce tutoriel, vous avez appris à :
 
 Consultez le dépôt d’exemples Machine Learning GitHub pour voir un exemple détaillé de détection d’objets.
 > [!div class="nextstepaction"]
-> [Dépôt GitHub dotnet/machinelearning-samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/end-to-end-apps/DeepLearning_ObjectDetection_Onnx)
+> [Référentiel GitHub dotnet/machinelearning-samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/end-to-end-apps/DeepLearning_ObjectDetection_Onnx)
