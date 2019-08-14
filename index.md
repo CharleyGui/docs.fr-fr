@@ -6,12 +6,12 @@ title: Documentation .NET
 description: Découvrez comment utiliser .NET pour créer diverses applications sur n’importe quelle plateforme en C#, Visual Basic et F#. Parcourez les informations de référence sur les API, les exemples de code, les didacticiels et plus encore.
 ms.custom: updateeachrelease
 ms.date: 12/04/2018
-ms.openlocfilehash: 7cf46b0c4d88b7657a5c82c7aa0ae30655c9d5ce
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: a6f6bc91a3055ffd0efe9f6b89ba0499921ed1d4
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589988"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68972383"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">
@@ -77,7 +77,7 @@ ms.locfileid: "65589988"
         <h1>Documentation .NET</h1>
         <ul class="pivots">
             <li>
-                <a data-default="true" href="#docs">Documents</a>
+                <a data-default="true" href="#docs">Docs</a>
                 <ul id="docs">
                     <li>
                         <a href="#getstarted">Bien démarrer</a>
@@ -309,7 +309,7 @@ ms.locfileid: "65589988"
                                 </a>
                             </li>
                             <li>
-                                <a href="/aspnet/overview">
+                                <a href="/aspnet/core/">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -319,8 +319,8 @@ ms.locfileid: "65589988"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Qu’est-ce qu’ASP.NET ?</h3>
-                                                    <p>Découvrez comment créer des applications web ASP.NET.</p>
+                                                    <h3>Qu’est-ce qu’ASP.NET Core ?</h3>
+                                                    <p>Découvrez comment créer des applications web ASP.NET Core.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -682,7 +682,7 @@ ms.locfileid: "65589988"
                         </ul>
                     </li>
                     <li>
-                        <a href="#ml-ai">Machine Learning et IA</a>
+                        <a href="#ml-ai">Machine Learning et AI</a>
                         <ul id="ml-ai" class="cardsC">
                             <li>
                                 <a href="/dotnet/machine-learning">
