@@ -6,15 +6,15 @@ f1_keywords:
 helpviewer_keywords:
 - fonts [WPF]
 ms.assetid: 6c766a95-ad03-475e-a36f-2243e9495941
-ms.openlocfilehash: eb8a02445511935d64ebaa6d78d4b05c0b75167e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cab39cdb13b92c0bfcb697de4bb8c05feae4c146
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61703365"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68972392"
 ---
 # <a name="fonts-wpf"></a>Polices (WPF)
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] prend en charge la présentation enrichie du texte à l’aide [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] polices. Un exemple de pack de [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] polices est inclus avec le [!INCLUDE[TLA2#tla_lhsdk](../../../../includes/tla2sharptla-lhsdk-md.md)].  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]prend en charge la présentation enrichie de [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] texte à l’aide de polices. Un exemple de Pack [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] de polices est inclus dans le SDK Windows.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Fonctionnalités des polices OpenType](opentype-font-features.md)  
