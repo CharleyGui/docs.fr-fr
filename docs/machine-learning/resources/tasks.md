@@ -4,12 +4,12 @@ description: Explorez les différentes tâches Machine Learning ainsi que les t�
 ms.custom: seodec18
 ms.date: 04/23/2019
 author: natke
-ms.openlocfilehash: ed6361fdcbca11c100ee5cae4ca76e152ddfba11
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: bcd967c11156ca9b837631560e78722b13fc7ae0
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063548"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68630057"
 ---
 # <a name="machine-learning-tasks-in-mlnet"></a>Tâches Machine Learning dans ML.NET
 
@@ -47,7 +47,7 @@ Vous pouvez entraîner un modèle de classification binaire en utilisant les alg
 
 ### <a name="binary-classification-inputs-and-outputs"></a>Entrées et sorties de classification binaire
 
-Pour tirer le meilleur parti de la classification binaire, vous devez équilibrer les données d’entraînement (c’est-à-dire avoir le même nombre de données d’entraînement positives que négatives). Les valeurs manquantes doivent être traitées avant l’entraînement.
+Pour tirer le meilleur parti de la classification binaire, vous devez équilibrer les données d’entraînement (autrement dit, avoir le même nombre de données d’entraînement positives que négatives). Les valeurs manquantes doivent être traitées avant l’entraînement.
 
 Les données de la colonne d’étiquettes d’entrée doivent être <xref:System.Boolean>.
 Les données de la colonne des caractéristiques d’entrée doivent être un vecteur de taille fixe de <xref:System.Single>.

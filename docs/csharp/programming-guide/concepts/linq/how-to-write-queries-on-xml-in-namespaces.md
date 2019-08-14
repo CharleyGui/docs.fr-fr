@@ -2,12 +2,12 @@
 title: 'Procédure : Écrire des requêtes à exécuter sur du code XML dans des espaces de noms (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7c54df81-15e4-4091-8c81-a87637029130
-ms.openlocfilehash: d33ecc22d8eb6ea4a08b56fbed6b6b437a5e3216
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: ef7d970b5e34106bd6f17d4a2caf4ca378dd2258
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484631"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68709891"
 ---
 # <a name="how-to-write-queries-on-xml-in-namespaces-c"></a>Procédure : Écrire des requêtes à exécuter sur du code XML dans des espaces de noms (C#)
 Pour écrire des requêtes sur du code XML qui est dans un espace de noms, vous devez utiliser des objets <xref:System.Xml.Linq.XName> qui ont l'espace de noms correct.  
@@ -16,7 +16,7 @@ Pour écrire des requêtes sur du code XML qui est dans un espace de noms, vous 
   
  Le premier ensemble d’exemples de cette rubrique montre comment créer une arborescence XML dans un espace de noms par défaut. Le second ensemble illustre la création d’une arborescence XML dans un espace de noms avec un préfixe.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant crée une arborescence XML qui est dans un espace de noms par défaut. Il récupère ensuite une collection d'éléments.  
   
 ```csharp  
@@ -45,7 +45,7 @@ foreach (XElement el in c1)
 3  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  En C#, vous écrivez des requêtes de la même manière, que ce soit sur une arborescence XML qui utilise un espace de noms avec un préfixe ou sur une arborescence XML avec un espace de noms par défaut.  
   
  L’exemple suivant crée une arborescence XML qui est dans un espace de noms avec un préfixe. Il récupère ensuite une collection d'éléments.  
@@ -78,4 +78,4 @@ foreach (XElement el in c1)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation des espaces de noms XML (C#)](../../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md)
+- [Vue d’ensemble des espaces de noms (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md)

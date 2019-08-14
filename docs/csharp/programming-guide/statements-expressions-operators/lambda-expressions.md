@@ -1,7 +1,7 @@
 ---
 title: Expressions lambda - Guide de programmation C#
 ms.custom: seodec18
-ms.date: 03/14/2019
+ms.date: 07/29/2019
 helpviewer_keywords:
 - lambda expressions [C#]
 - outer variables [C#]
@@ -9,38 +9,44 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: 546feb6f3c4515ceecdb5b5afa14c0fc99ab7020
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 36dab520d67d08d1b3304f1453bfb2c07a2f1c32
+ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363912"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671708"
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Expressions lambda (Guide de programmation C#)
 
-Une *expression lambda* est un bloc de code (une expression ou un bloc d’instructions) qui est traité comme un objet. Elle peut être passée comme argument à des méthodes, et peut aussi être retournée par des appels de méthode. Les expressions lambda sont largement utilisées pour :
+Une *expression lambda* est une expression de l’une des deux formes suivantes :
 
-- Passer le code à exécuter à des méthodes asynchrones, comme <xref:System.Threading.Tasks.Task.Run(System.Action)?displayProperty=nameWithType>.
+- [Expression lambda](#expression-lambdas) qui a une expression comme corps :
 
-- Écrire des [expressions de requête LINQ](../../linq/index.md).
+  ```csharp
+  (input-parameters) => expression
+  ```
 
-- Créer des [arborescences d’expressions](../concepts/expression-trees/index.md).
+- [Instruction lambda](#statement-lambdas) qui a un bloc d’instructions comme corps :
 
-Les expressions lambda sont du code qui peut être représenté comme un délégué, ou comme une arborescence d’expressions qui est compilée en délégué. Le type délégué spécifique d’une expression lambda dépend de ses paramètres et de sa valeur de retour. Les expressions lambda qui ne retournent pas de valeur correspondent à un délégué `Action` spécifique, en fonction du nombre de ses paramètres. Les expressions lambda qui retournent une valeur correspondent à un délégué `Func` spécifique, en fonction du nombre de ses paramètres. Par exemple, une expression lambda qui a deux paramètres, mais qui ne retourne aucune valeur correspond à un délégué <xref:System.Action%602>. Une expression lambda qui a un paramètre et qui retourne une valeur correspond à un délégué <xref:System.Func%602>.
+  ```csharp  
+  (input-parameters) => { <sequence-of-statements> }
+  ```
 
-Une expression lambda utilise `=>`, l’[opérateur de déclaration lambda](../../language-reference/operators/lambda-operator.md), pour séparer la liste des paramètres de l’expression lambda de son code exécutable. Pour créer une expression lambda, vous spécifiez des paramètres d’entrée (le cas échéant) du côté gauche de l’opérateur lambda, et vous placez l’expression ou le bloc d’instructions de l’autre côté. Par exemple, l’expression lambda d’une seule ligne `x => x * x` spécifie un paramètre nommé `x` et retourne la valeur `x` élevée au carré. Vous pouvez assigner cette expression à un type délégué, comme dans l'exemple suivant :
+Utilisez l’[opérateur de déclaration lambda`=>`](../../language-reference/operators/lambda-operator.md) pour séparer la liste des paramètres de l’expression lambda de son corps. Pour créer une expression lambda, vous spécifiez des paramètres d’entrée (le cas échéant) à gauche de l’opérateur lambda et une expression ou un bloc d’instructions de l’autre côté.
+
+Toute expression lambda peut être convertie en type [délégué](../../language-reference/builtin-types/reference-types.md#the-delegate-type). Le type délégué vers lequel une expression lambda peut être convertie est défini par les types de ses paramètres et de sa valeur de retour. Si une expression lambda ne retourne pas de valeur, elle peut être convertie en l’un des types délégués `Action` ; sinon, elle peut être convertie en l’un des types délégués `Func`. Par exemple, une expression lambda qui a deux paramètres et qui ne retourne aucune valeur peut être convertie en un délégué <xref:System.Action%602>. Une expression lambda qui a un paramètre et qui retourne une valeur peut être convertie en un délégué <xref:System.Func%602>. Dans l’exemple suivant, l’expression lambda `x => x * x`, qui spécifie un paramètre nommé `x` et retourne la valeur du carré de `x`, est assignée à une variable d’un type délégué :
 
 [!code-csharp-interactive[lambda is delegate](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#Delegate)]
 
-Il est également possible d’affecter une expression lambda à un type d’arborescence d’expression :
+Les expressions lambda peuvent également être converties en types d’[arborescence d’expression](../concepts/expression-trees/index.md), comme le montre l’exemple suivant :
 
 [!code-csharp-interactive[lambda is expression tree](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#ExpressionTree)]
 
-Vous pouvez aussi le passer directement comme argument de méthode :
+Vous pouvez utiliser des expressions lambda dans tout code qui requiert des instances de types délégués ou d’arborescences d’expressions, par exemple en tant qu’argument de la méthode <xref:System.Threading.Tasks.Task.Run(System.Action)?displayProperty=nameWithType> pour passer le code qui doit être exécuté en arrière-plan. Vous pouvez également utiliser des expressions lambda quand vous écrivez des [expressions de requête LINQ](../../linq/index.md), comme le montre l’exemple suivant :
 
-[!code-csharp-interactive[lambda is argument](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#Argument)]
+[!code-csharp-interactive[lambda is argument in LINQ](~/samples/snippets/csharp/programming-guide/lambda-expressions/Introduction.cs#Argument)]
 
-Lorsque la méthode <xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType> est appelée avec une syntaxe fondée sur une méthode dans la classe <xref:System.Linq.Enumerable?displayProperty=nameWithType> (comme dans LINQ to Objects et LINQ to XML), le paramètre est un type délégué <xref:System.Func%602?displayProperty=nameWithType>. Une expression lambda est la méthode la plus commode pour créer ce délégué. Si la méthode <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType> est appelée dans la classe <xref:System.Linq.Queryable?displayProperty=nameWithType> (comme dans LINQ to SQL), le paramètre est un type d’arborescence d’expression [`Expression<Func<TSource,TResult>>`](<xref:System.Linq.Expressions.Expression%601>). Une expression lambda est simplement une méthode très concise pour construire cette arborescence de l'expression. Les lambdas font apparaître les appels `Select` comme semblables bien qu'en fait, le type d'objet créé à partir du lambda soit différent.
+Lorsque la méthode <xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType> est appelée avec une syntaxe fondée sur une méthode dans la classe <xref:System.Linq.Enumerable?displayProperty=nameWithType> (par exemple, dans LINQ to Objects et LINQ to XML), le paramètre est un type délégué <xref:System.Func%602?displayProperty=nameWithType>. Si la méthode <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType> est appelée dans la classe <xref:System.Linq.Queryable?displayProperty=nameWithType> (par exemple, dans LINQ to SQL), le paramètre est un type d’arborescence d’expression [`Expression<Func<TSource,TResult>>`](<xref:System.Linq.Expressions.Expression%601>). Dans les deux cas, vous pouvez utiliser la même expression lambda pour spécifier la valeur de paramètre. Les deux appels `Select` semblent ainsi semblables alors qu’en fait le type des objets créés à partir des lambdas est différent.
   
 ## <a name="expression-lambdas"></a>Expressions lambdas
 
@@ -73,7 +79,7 @@ Le corps d’une expression lambda peut se composer d’un appel de méthode. Ce
 Une instruction lambda ressemble à une expression lambda, mais l'instruction ou les instructions sont mises entre accolades :
 
 ```csharp  
-(input-parameters) => { statement; }
+(input-parameters) => { <sequence-of-statements> }
 ```
 
 Le corps d'une instruction lambda peut se composer d'un nombre illimité d'instructions ; toutefois, en pratique, leur nombre est généralement de deux ou trois.

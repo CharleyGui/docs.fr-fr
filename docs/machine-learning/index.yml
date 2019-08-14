@@ -29,10 +29,11 @@ sections:
           - html: <a href="/dotnet/machine-learning/tutorials/iris-clustering">Classer les fleurs en fonction de caractéristiques à l’aide du clustering</a>
           - html: <a href="/dotnet/machine-learning/tutorials/movie-recommendation">Créer un système de suggestion de films à l’aide de la factorisation de matrice</a>
           - html: <a href="/dotnet/machine-learning/tutorials/image-classification">Créer un classifieur d’images personnalisé avec TensorFlow</a>
+          - html: <a href="/dotnet/machine-learning/tutorials/object-detection-onnx">Détecter des objets dans des images avec ONNX</a>
   - title: Informations de référence et ressources
     items:
       - type: paragraph
-        text: "L’API ML.NET comporte deux sortes de packages\_: des composants de version et des composants de préversion. L’API de version contient des composants pour le traitement des données, les algorithmes de classification binaire, de classification multiclasse, de régression, de détection d’anomalie et de classement, l’enregistrement et le chargement de modèles, et bien plus encore\_! L’API en préversion contient des composants pour la gestion des modèles ONNX et TensorFlow, les algorithmes des tâches de recommandation, et le traitement des données de série chronologique."
+        text: "L’API ML.NET comporte deux sortes de packages\_: des composants de version et des composants de préversion. L’API de version contient des composants pour le traitement des données, les algorithmes de classification binaire, de classification multiclasse, de régression, de détection d’anomalie, de série chronologique et de prévision, de classement, d’enregistrement et de chargement de modèles, de gestion des modèles ONNX et TensorFlow, et bien plus encore\_! L’API en préversion contient des algorithmes pour les tâches de recommandation et la prise en charge des modèles d’apprentissage profond standard."
       - type: list
         style: unordered
         items:

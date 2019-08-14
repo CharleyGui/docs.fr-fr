@@ -4,16 +4,21 @@ description: Explorez les composants d’ingénierie de fonctionnalité pris en 
 author: natke
 ms.author: nakersha
 ms.date: 04/02/2019
-ms.openlocfilehash: 7ea06e19b4651017079a6ae57136f033e0ce981c
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: cbcdef5b8f5f6334d5545f100976347ade9ee6fd
+ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65558011"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68671871"
 ---
 # <a name="data-transformations"></a>Transformations de données
 
-Les transformations de données servent à préparer les données en vue d’effectuer l’apprentissage du modèle. Les transformations abordées dans ce guide retournent des classes qui implémentent l’interface [IEstimator](xref:Microsoft.ML.IEstimator%601). Les transformations de données peuvent s’enchaîner. Chacune transformation attend et génère des données de type et de format spécifiques, indiqués dans le lien de la documentation de référence.
+Les transformations de données sont utilisées pour :
+- préparer les données pour l’entraînement de modèles
+- appliquer un modèle importé au format TensorFlow ou ONNX
+- traiter les données après qu’elles ont été transmises par le biais d’un modèle
+
+Les transformations abordées dans ce guide retournent des classes qui implémentent l’interface [IEstimator](xref:Microsoft.ML.IEstimator%601). Les transformations de données peuvent s’enchaîner. Chacune transformation attend et génère des données de type et de format spécifiques, indiqués dans le lien de la documentation de référence.
 
 Certaines transformations de données ont besoin de données d’apprentissage pour calculer leurs paramètres. Par exemple, le transformateur <xref:Microsoft.ML.NormalizationCatalog.NormalizeMeanVariance%2A> calcule la moyenne et la variance des données d’apprentissage au cours de l’opération `Fit()` et utilise ces paramètres dans l’opération `Transform()`. 
 
@@ -78,6 +83,7 @@ D’autres transformations de données n’exigent pas les données d’apprenti
 | <xref:Microsoft.ML.ImageEstimatorsCatalog.ExtractPixels*> | Convertir les pixels d’une image d’entrée en un vecteur de nombres |
 | <xref:Microsoft.ML.ImageEstimatorsCatalog.LoadImages*> | Charger les images d’un dossier en mémoire |
 | <xref:Microsoft.ML.ImageEstimatorsCatalog.ResizeImages*> | Redimensionner les images |
+| <xref:Microsoft.ML.OnnxCatalog.DnnFeaturizeImage*> | Appliquer un modèle DNN (Deep Neural Network) préentraîné pour transformer une image d’entrée en un vecteur de fonctionnalité |
 
 ## <a name="categorical-data-transformations"></a>Transformations de données catégoriques
 
@@ -85,6 +91,17 @@ D’autres transformations de données n’exigent pas les données d’apprenti
 | --- | --- |
 | <xref:Microsoft.ML.CategoricalCatalog.OneHotEncoding*> | Convertir une ou plusieurs colonnes de texte en vecteurs encodés [one-hot](https://en.wikipedia.org/wiki/One-hot) |
 | <xref:Microsoft.ML.CategoricalCatalog.OneHotHashEncoding*> | Convertir une ou plusieurs colonnes de texte en vecteurs encodés one-hot par hachage |
+
+## <a name="time-series-data-transformations"></a>Transformations de données de séries chronologiques
+
+| Transformer | Définition |
+| --- | --- |
+| <xref:Microsoft.ML.TimeSeriesCatalog.DetectAnomalyBySrCnn*> | Détecter les anomalies dans les données de séries chronologiques d’entrée à l’aide de l’algorithme SR (Spectral Residual) |
+| <xref:Microsoft.ML.TimeSeriesCatalog.DetectChangePointBySsa*> | Détecter les points de changement dans les données de séries chronologiques à l’aide de l’analyse de spectre singulier (SSA) |
+| <xref:Microsoft.ML.TimeSeriesCatalog.DetectIidChangePoint*> | Détecter les points de changement dans des données de séries chronologiques indépendantes et identiquement distribuées à l’aide d’estimations de densité de noyau adaptative et de scores martingales |
+| <xref:Microsoft.ML.TimeSeriesCatalog.ForecastBySsa*> | Prévoir des données de séries chronologiques à l’aide de l’analyse de spectre singulier (SSA) |
+| <xref:Microsoft.ML.TimeSeriesCatalog.DetectSpikeBySsa*> | Détecter les pics dans les données de séries chronologiques à l’aide de l’analyse de spectre singulier (SSA) |
+| <xref:Microsoft.ML.TimeSeriesCatalog.DetectIidSpike*> | Détecter les pics dans des données de séries chronologiques indépendantes et identiquement distribuées à l’aide d’estimations de densité de noyau adaptative et de scores martingales |
 
 ## <a name="missing-values"></a>Valeurs manquantes
 
@@ -99,6 +116,35 @@ D’autres transformations de données n’exigent pas les données d’apprenti
 | --- | --- |
 | <xref:Microsoft.ML.FeatureSelectionCatalog.SelectFeaturesBasedOnCount*> | Sélectionner les caractéristiques dont les valeurs par défaut sont supérieures à un seuil |
 | <xref:Microsoft.ML.FeatureSelectionCatalog.SelectFeaturesBasedOnMutualInformation*> | Sélectionnez les caractéristiques dont les données de la colonne d’étiquette dépendent le plus |
+
+## <a name="feature-transformations"></a>Transformations de fonctionnalités
+
+| Transformer | Définition |
+| --- | --- |
+| <xref:Microsoft.ML.KernelExpansionCatalog.ApproximatedKernelMap*> | Mapper chaque vecteur d’entrée à un espace de fonctionnalité dimensionnelle inférieur, où les produits internes se rapprochent d’une fonction de noyau, afin que les fonctionnalités puissent être utilisées comme entrées des algorithmes linéaires |
+| <xref:Microsoft.ML.PcaCatalog.ProjectToPrincipalComponents*> | Réduire les dimensions du vecteur de fonctionnalité d’entrée en appliquant l’algorithme Principal Component Analysis (PCA) |
+
+## <a name="explainability-transformations"></a>Transformations d’explicabilité
+
+| Transformer | Définition |
+| --- | --- |
+| <xref:Microsoft.ML.ExplainabilityCatalog.CalculateFeatureContribution*> | Calculer les scores de contribution pour chaque élément d’un vecteur de fonctionnalité |
+
+## <a name="calibration-transformations"></a>Transformations d’étalonnage
+
+| Transformer | Définition |
+| --- | --- |
+|<xref:Microsoft.ML.BinaryClassificationCatalog.CalibratorsCatalog.Platt%28System.String%2CSystem.String%2CSystem.String%29> | Transforme un score brut de classifieur binaire en une probabilité de classe à l’aide de la régression logistique avec les paramètres estimés à l’aide des données d’entraînement |
+| <xref:Microsoft.ML.BinaryClassificationCatalog.CalibratorsCatalog.Platt%28System.Double%2CSystem.Double%2CSystem.String%29> | Transforme un score brut de classifieur binaire en une probabilité de classe à l’aide de la régression logistique avec les paramètres fixes |
+| <xref:Microsoft.ML.BinaryClassificationCatalog.CalibratorsCatalog.Naive*> | Transforme un score brut de classifieur binaire en une probabilité de classe en affectant des scores à des emplacements et en calculant la probabilité en fonction de la répartition entre les emplacements |
+| <xref:Microsoft.ML.BinaryClassificationCatalog.CalibratorsCatalog.Isotonic*> | Transforme un score brut de classifieur binaire en une probabilité de classe en affectant des scores à des emplacements, où la position des limites et la taille des emplacements sont estimées à l’aide des données d’entraînement  |
+
+## <a name="deep-learning-transformations"></a>Transformations d’apprentissage profond
+
+| Transformer | Définition |
+| --- | --- |
+| <xref:Microsoft.ML.OnnxCatalog.ApplyOnnxModel*> | Transformer les données d’entrée avec un modèle ONNX importé |
+| <xref:Microsoft.ML.TensorflowCatalog.LoadTensorFlowModel*> | Transformer les données d’entrée avec un modèle TensorFlow importé |
 
 ## <a name="custom-transformations"></a>Transformations personnalisées
 

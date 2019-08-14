@@ -2,13 +2,14 @@
 title: Glossaire de l’apprentissage automatique
 description: La liste suivante est une compilation des principaux termes Machine Learning, utiles lorsque vous générez vos modèles personnalisés.
 ms.custom: seodec18
-ms.date: 05/09/2019
-ms.openlocfilehash: 7d098dc9d3dc6cb7bb08b5689b50afff01ba1d7f
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.topic: reference
+ms.date: 07/31/2019
+ms.openlocfilehash: 1c979d2c4567285146ab87f359116efb506815a1
+ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557983"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68710538"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>Glossaire Machine Learning des principaux termes
 
@@ -109,6 +110,10 @@ Cas de [classification](#classification) où l’[étiquette](#label) provient d
 
 Un schéma d’extraction de fonctionnalité pour les données texte : toute séquence de N termes se transforme en une valeur [fonctionnalité](#feature).
 
+## <a name="normalization"></a>Normalisation
+
+La normalisation est le processus de mise à l’échelle des données à virgule flottante en valeurs comprises entre 0 et 1. La plupart des algorithmes d’entraînement utilisés dans ML.NET requièrent la normalisation des données de fonctionnalités d’entrée. ML.NET fournit une série de [transformations pour la normalisation](transforms.md#normalization-and-scaling)
+
 ## <a name="numerical-feature-vector"></a>Vecteur de fonctionnalité numérique
 
 Un vecteur de [fonctionnalité](#feature) constitué uniquement de valeurs numériques. Cette valeur est similaire à `double[]`.
@@ -147,6 +152,10 @@ Dans une [régression](#regression), une métrique d’évaluation correspondant
 ## <a name="root-of-mean-squared-error-rmse"></a>Racine de l’erreur quadratique moyenne (RMSE)
 
 Dans une [régression](#regression), une métrique d’évaluation correspondant à la racine carrée de la moyenne des carrés des erreurs.
+
+## <a name="scoring"></a>Notation
+
+Le score est le processus qui consiste à appliquer de nouvelles données à un modèle d’apprentissage automatique entraîné et à générer des prédictions. Le calcul des scores est également appelé « inférence ». Selon le type de modèle, le score peut être une valeur brute, une probabilité ou une catégorie.
 
 ## <a name="supervised-machine-learning"></a>Apprentissage automatique supervisé
 
