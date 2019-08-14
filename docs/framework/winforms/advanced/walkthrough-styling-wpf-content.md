@@ -6,14 +6,14 @@ helpviewer_keywords:
 - interoperability [WDF]
 - styles [Windows Forms], WPF content
 ms.assetid: e574aac7-7ea4-4cdb-8034-bab541f000df
-ms.openlocfilehash: b689bb7299d541708db7ae786bff62a1007608e5
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: 32ca9658ddf4ab6e8690f29797b7ac7b09df2ca7
+ms.sourcegitcommit: d98fdb087d9c8aba7d2cb93fe4b4ee35a2308cee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557891"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69012955"
 ---
-# <a name="walkthrough-style-wpf-content"></a>Procédure pas à pas : Contenu WPF de style
+# <a name="walkthrough-style-wpf-content"></a>Procédure pas à pas : Contenu WPF du style
 
 Cette procédure pas à pas montre comment appliquer des styles à un contrôle WPF (Windows Presentation Foundation) hébergé sur un Windows Form.
 
@@ -23,7 +23,7 @@ Cette procédure pas à pas montre comment appliquer des styles à un contrôle 
 
 - créer le type de contrôle WPF ;
 
-- Appliquer un style à la control.a WPF
+- appliquer un style au contrôle WPF.
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -31,38 +31,38 @@ Cette procédure pas à pas nécessite Visual Studio.
 
 ## <a name="create-the-project"></a>Créer le projet
 
-Ouvrez Visual Studio et créez un nouveau projet d’Application de Windows Forms dans Visual Basic ou Visual C# nommé `StylingWpfContent`.
+Ouvrez Visual Studio et créez un projet d’application Windows Forms dans Visual Basic ou un C# visuel `StylingWpfContent`nommé.
 
 > [!NOTE]
 > Lors de l'hébergement de contenu WPF, seuls les projets Visual Basic et C# sont pris en charge.
 
-## <a name="create-the-wpf-control-types"></a>Créer des types de contrôles WPF
+## <a name="create-the-wpf-control-types"></a>Créer les types de contrôles WPF
 
 Une fois que vous avez ajouté un type de contrôle WPF au projet, vous pouvez l'héberger dans un contrôle <xref:System.Windows.Forms.Integration.ElementHost>.
 
-1. Ajoutez un nouveau projet <xref:System.Windows.Controls.UserControl> WPF à la solution. Utilisez le nom par défaut pour le type de contrôle, `UserControl1.xaml`. Pour plus d’informations, consultez [Procédure pas à pas : Création de contenu WPF dans les Windows Forms au moment du Design](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md).
+1. Ajoutez un nouveau projet <xref:System.Windows.Controls.UserControl> WPF à la solution. Utilisez le nom par défaut pour le type de contrôle, `UserControl1.xaml`. Pour plus d’informations, consultez [Procédure pas à pas : Création d’un contenu WPF sur Windows Forms au moment](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)de la conception.
 
-2. En mode Design, assurez-vous que `UserControl1` est sélectionné. Pour plus d'informations, voir [Procédure : Sélectionner et déplacer des éléments sur l’aire de conception](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514527(v=vs.100)).
+2. En mode Design, assurez-vous que `UserControl1` est sélectionné. Pour plus d'informations, voir [Procédure : Sélectionner et déplacer des éléments sur la](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514527(v=vs.100))aire de conception.
 
-3. Dans le **propriétés** fenêtre, définissez la valeur de la <xref:System.Windows.FrameworkElement.Width%2A> et <xref:System.Windows.FrameworkElement.Height%2A> propriétés à `200`.
+3. Dans la fenêtre **Propriétés** , affectez à <xref:System.Windows.FrameworkElement.Width%2A> `200`la valeur des <xref:System.Windows.FrameworkElement.Height%2A> propriétés et la valeur.
 
-4. Ajouter un <xref:System.Windows.Controls.Button?displayProperty=nameWithType> le contrôle à la <xref:System.Windows.Controls.UserControl> et définissez la valeur de la <xref:System.Windows.Controls.ContentControl.Content%2A> propriété **Annuler**.
+4. Ajoutez un <xref:System.Windows.Controls.Button?displayProperty=nameWithType> <xref:System.Windows.Controls.UserControl> contrôle au et <xref:System.Windows.Controls.ContentControl.Content%2A> affectez la valeur **Cancel**à la propriété.
 
-5. Ajoutez une deuxième <xref:System.Windows.Controls.Button?displayProperty=nameWithType> le contrôle à la <xref:System.Windows.Controls.UserControl> et définissez la valeur de la <xref:System.Windows.Controls.ContentControl.Content%2A> propriété **OK**.
+5. Ajoutez un deuxième <xref:System.Windows.Controls.Button?displayProperty=nameWithType> contrôle <xref:System.Windows.Controls.UserControl> à et <xref:System.Windows.Controls.ContentControl.Content%2A> affectez la valeur **OK**à la propriété.
 
 6. Générez le projet.
 
-## <a name="apply-a-style-to-a-wpf-control"></a>Appliquer un Style à un contrôle WPF
+## <a name="apply-a-style-to-a-wpf-control"></a>Appliquer un style à un contrôle WPF
 
 Vous pouvez appliquer différents styles à un contrôle WPF pour modifier son apparence et son comportement.
 
 1. Ouvrez `Form1` dans le Concepteur Windows Forms.
 
-1. Dans le **boîte à outils**, double-cliquez sur `UserControl1` pour créer une instance de `UserControl1` sur le formulaire.
+1. Dans la **boîte à outils**, double `UserControl1` -cliquez sur pour créer `UserControl1` une instance de sur le formulaire.
 
      Une instance de `UserControl1` est hébergée dans un nouveau contrôle <xref:System.Windows.Forms.Integration.ElementHost> nommé `elementHost1`.
 
-1. Dans le panneau des balises actives pour `elementHost1`, cliquez sur **modifier le contenu hébergé** dans la liste déroulante.
+1. Dans le panneau des `elementHost1`balises actives, cliquez sur modifier le **contenu hébergé** dans la liste déroulante.
 
      `UserControl1` s'ouvre dans le [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].
 
@@ -124,7 +124,7 @@ Vous pouvez appliquer différents styles à un contrôle WPF pour modifier son a
    Style="{StaticResource SimpleButton}
    ```
 
-   Votre déclaration de bouton ressemblera le XAML suivant :
+   Votre déclaration de bouton ressemble au code XAML suivant:
 
    ```xaml
    <Button Height="23" Margin="41,52,98,0" Name="button1" VerticalAlignment="Top"
@@ -137,7 +137,7 @@ Vous pouvez appliquer différents styles à un contrôle WPF pour modifier son a
 
 1. Le nouveau style est appliqué au contrôle de bouton.
 
-1. À partir de la **déboguer** menu, sélectionnez **démarrer le débogage** pour exécuter l’application.
+1. Dans le menu Déboguer, sélectionnez **Démarrer** le débogage pour exécuter l’application.
 
 1. Cliquez sur les boutons OK et Annuler et observez les différences.
 
