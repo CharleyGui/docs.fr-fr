@@ -5,31 +5,28 @@ helpviewer_keywords:
 - data binding [Windows Forms], simple data binding
 - Windows Forms controls, data binding
 ms.assetid: 3bcaded8-0f1a-4cc0-8830-f59be253bf4e
-ms.openlocfilehash: 5c92b7bfd5026b0569397dc05cca216fbdab0753
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: ed1d0e423a3cdf77a242ec3214720f1466f65897
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689304"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039507"
 ---
 # <a name="how-to-create-a-simple-bound-control-on-a-windows-form"></a>Procédure : créer un contrôle à liaison simple dans un formulaire Windows
 
-Avec *liaison simple*, vous pouvez afficher un seul élément de données, telle qu’une valeur de colonne à partir d’une table de dataset dans un contrôle. Vous pouvez créer une liaison simple n’importe quelle propriété d’un contrôle à une valeur de données.
+Avec une *liaison simple*, vous pouvez afficher un élément de données unique, tel qu’une valeur de colonne à partir d’une table de DataSet, dans un contrôle. Vous pouvez facilement lier n’importe quelle propriété d’un contrôle à une valeur de données.
 
-> [!NOTE]
-> Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnaliser l’IDE Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).
+### <a name="to-simple-bind-a-control"></a>Pour lier un contrôle de façon simple
 
-### <a name="to-simple-bind-a-control"></a>Pour un contrôle à liaison simple
+1. Connectez-vous à une source de données. Pour plus d’informations, consultez [connexion à une source de données](../data/adonet/connecting-to-a-data-source.md).
 
-1. Connectez-vous à une source de données. Pour plus d’informations, consultez [connexion à une Source de données](../data/adonet/connecting-to-a-data-source.md).
+2. Dans le formulaire, sélectionnez le contrôle et affichez la fenêtre **Propriétés** .
 
-2. Dans le formulaire, sélectionnez le contrôle et affichez la **propriétés** fenêtre.
+3. Développez la propriété **(DataBindings)** .
 
-3. Développez le **(DataBindings)** propriété.
+     Les propriétés les plus souvent liées sont affichées sous la propriété **(DataBindings)** . Par exemple, dans la plupart des contrôles, la propriété **Text** est la plus souvent liée.
 
-     Les propriétés les plus souvent liées sont affichées sous la **(DataBindings)** propriété. Par exemple, dans la plupart des contrôles, le **texte** propriété est liée plus fréquemment.
-
-4. Si la propriété dont vous souhaitez lier ne fait pas partie des propriétés couramment liées, cliquez sur le **points de suspension** bouton (![bouton les points de suspension (...) dans la fenêtre Propriétés de Visual Studio.](./media/how-to-create-a-simple-bound-control-on-a-windows-form/visual-studio-ellipsis-button.png)) dans le **() Avancé)** à cocher pour afficher le **mise en forme et liaison avancée** boîte de dialogue avec une liste complète des propriétés pour ce contrôle.
+4. Si la propriété que vous souhaitez lier ne fait pas partie des propriétés couramment liées, cliquez sur le bouton de![sélection (le bouton de sélection (...) dans la fenêtre Propriétés de](./media/how-to-create-a-simple-bound-control-on-a-windows-form/visual-studio-ellipsis-button.png)Visual Studio). dans la zone **(avancé)** pour afficher la  **Boîte de dialogue mise en forme et liaison avancée** avec la liste complète des propriétés de ce contrôle.
 
 5. Sélectionnez la propriété que vous souhaitez lier, puis cliquez sur la flèche déroulante sous **liaison**.
 
@@ -39,12 +36,12 @@ Avec *liaison simple*, vous pouvez afficher un seul élément de données, telle
 
 7. Cliquez sur le nom d'un élément avec lequel établir une liaison.
 
-8. Si vous travailliez le **mise en forme et liaison avancée** boîte de dialogue, cliquez sur **OK** pour revenir à la **propriétés** fenêtre.
+8. Si vous travailliez dans la boîte de dialogue **mise en forme et liaison avancée** , cliquez sur **OK** pour revenir à la fenêtre **Propriétés** .
 
-9. Si vous souhaitez lier d’autres propriétés du contrôle, répétez les étapes 3 à 7.
+9. Si vous souhaitez lier des propriétés supplémentaires du contrôle, répétez les étapes 3 à 7.
 
     > [!NOTE]
-    > Étant donné que les contrôles de liaison simple affichent uniquement un seul élément de données, il est très courant d’inclure une logique de navigation dans un formulaire Windows avec des contrôles de liaison simple.
+    > Étant donné que les contrôles à liaison simple n’affichent qu’un seul élément de données, il est très courant d’inclure la logique de navigation dans un Windows Form avec des contrôles à liaison simple.
 
 ## <a name="see-also"></a>Voir aussi
 

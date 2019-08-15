@@ -10,12 +10,12 @@ helpviewer_keywords:
 - extending glass frames into applications [WPF]
 - glass frames [WPF], extending into applications
 ms.assetid: 74388a3a-4b69-4a9d-ba1f-e107636bd660
-ms.openlocfilehash: 11c872767b5e3595da1fb4982d3b12e0fc77db98
-ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
+ms.openlocfilehash: f8d50cb4d0112232f86579542650418a1906bda2
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68238591"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039842"
 ---
 # <a name="extend-glass-frame-into-a-wpf-application"></a>Étendre le cadre de transparence dans une application WPF
 
@@ -26,11 +26,11 @@ Cette rubrique montre comment étendre le [!INCLUDE[TLA#tla_winvista](../../../.
 
 ## <a name="example"></a>Exemple
 
-L’image suivante illustre le cadre de transparence étendu dans la barre d’adresse d’Internet Explorer 7 :
+L’illustration suivante montre le cadre de transparence étendu dans la barre d’adresses d’Internet Explorer 7:
 
-![Capture d’écran cadre de transparence étendu derrière la barre d’adresse IE7.](./media/extend-glass-frame-into-a-wpf-application/internet-explorer-glass-frame-extended-address-bar.png)
+![Capture d’écran montrant le cadre de transparence étendu en arrière-plan de la barre d’adresses IE7.](./media/extend-glass-frame-into-a-wpf-application/internet-explorer-glass-frame-extended-address-bar.png)
 
-Pour étendre le cadre de transparence sur une [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application, accès aux API non managée est nécessaire. L’exemple de code suivant effectue un code non managé (pinvoke) pour les deux API nécessaires pour étendre le cadre dans la zone cliente. Chacune de ces API sont déclarés dans une classe appelée **NonClientRegionAPI**.
+Pour étendre le cadre de transparence sur [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] une application, l’accès à l’API non managée est nécessaire. L’exemple de code suivant effectue un appel de code non managé (PInvoke) pour les deux API nécessaires à l’extension du frame dans la zone cliente. Chacune de ces API est déclarée dans une classe appelée **NonClientRegionAPI**.
 
 ```csharp
 [StructLayout(LayoutKind.Sequential)]
@@ -62,11 +62,11 @@ Public Shared Function DwmExtendFrameIntoClientArea(ByVal hwnd As IntPtr, ByRef 
 End Function
 ```
 
-[DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea) est la fonction DWM qui étend le cadre dans la zone cliente. Elle nécessite deux paramètres ; un handle de fenêtre et une structure [MARGINS](/windows/desktop/api/uxtheme/ns-uxtheme-_margins). [MARGINS](/windows/desktop/api/uxtheme/ns-uxtheme-_margins) indique à DWM le niveau d’extension du cadre dans la zone cliente.
+[DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea) est la fonction DWM qui étend le cadre dans la zone cliente. Elle nécessite deux paramètres ; un handle de fenêtre et une structure [MARGINS](/windows/win32/api/uxtheme/ns-uxtheme-margins). [MARGINS](/windows/win32/api/uxtheme/ns-uxtheme-margins) indique à DWM le niveau d’extension du cadre dans la zone cliente.
 
 ## <a name="example"></a>Exemples
 
-Pour utiliser la fonction [DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea), un handle de fenêtre doit être obtenu. Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], le handle de fenêtre peut être obtenu à partir de la <xref:System.Windows.Interop.HwndSource.Handle%2A> propriété d’un <xref:System.Windows.Interop.HwndSource>. Dans l’exemple suivant, le cadre est étendu dans la zone cliente sur le <xref:System.Windows.FrameworkElement.Loaded> événement de la fenêtre.
+Pour utiliser la fonction [DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea), un handle de fenêtre doit être obtenu. Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], le handle de fenêtre peut être obtenu à <xref:System.Windows.Interop.HwndSource.Handle%2A> partir de la <xref:System.Windows.Interop.HwndSource>propriété d’un. Dans l’exemple suivant, le frame est étendu dans la zone cliente sur <xref:System.Windows.FrameworkElement.Loaded> l’événement de la fenêtre.
 
 ```csharp
 void OnLoaded(object sender, RoutedEventArgs e)
@@ -111,7 +111,7 @@ void OnLoaded(object sender, RoutedEventArgs e)
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre une simple fenêtre dans laquelle le cadre est étendu dans la zone cliente. Le cadre est étendu derrière la bordure supérieure contenant les deux <xref:System.Windows.Controls.TextBox> objets.
+L’exemple suivant montre une simple fenêtre dans laquelle le cadre est étendu dans la zone cliente. Le cadre est étendu derrière la bordure supérieure qui contient les deux <xref:System.Windows.Controls.TextBox> objets.
 
 ```xaml
 <Window x:Class="SDKSample.Window1"
@@ -145,12 +145,12 @@ L’exemple suivant montre une simple fenêtre dans laquelle le cadre est étend
 </Window>
 ```
 
-L’image suivante illustre le cadre de transparence étendu dans une [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application :
+L’illustration suivante montre le cadre de transparence étendu dans une [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] application:
 
 ![Capture d’écran montrant un cadre de transparence étendu dans une application WPF.](./media/extend-glass-frame-into-a-wpf-application/glass-frame-extended-wpf-application.png)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble du Gestionnaire de fenêtrage](/windows/desktop/dwm/dwm-overview)
-- [Vue d’ensemble du flou du Gestionnaire de fenêtrage](/windows/desktop/dwm/blur-ovw)
+- [Présentation de Gestionnaire de fenêtrage](/windows/desktop/dwm/dwm-overview)
+- [Gestionnaire de fenêtrage vue d’ensemble du flou](/windows/desktop/dwm/blur-ovw)
 - [DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea)
