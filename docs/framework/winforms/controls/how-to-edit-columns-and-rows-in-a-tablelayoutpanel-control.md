@@ -8,41 +8,40 @@ helpviewer_keywords:
 - TableLayoutPanel control [Windows Forms], editing
 - rows [Windows Forms], editing
 ms.assetid: c367ed43-40dc-49eb-9e0f-ba70e83dfec0
-ms.openlocfilehash: 2149cac7fb15052c2602ef20a6684696730aae1b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 99ff3286592da0a097835b8f35d687475ca54fb0
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61941516"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040291"
 ---
 # <a name="how-to-edit-columns-and-rows-in-a-tablelayoutpanel-control"></a>Procédure : modifier des colonnes et des lignes dans un contrôle TableLayoutPanel
-Vous pouvez utiliser l’éditeur de collections de la <xref:System.Windows.Forms.TableLayoutPanel> contrôle, appelé le **Styles de ligne et colonne** boîte de dialogue pour modifier les lignes et colonnes de vos contrôles.  
-  
+
+Vous pouvez utiliser l’éditeur de collections du <xref:System.Windows.Forms.TableLayoutPanel> contrôle, appelé boîte de dialogue **styles de colonne et de ligne** , pour modifier les lignes et les colonnes de vos contrôles.
+
 > [!NOTE]
->  Si vous souhaitez un contrôle pour s’étendre sur plusieurs lignes ou colonnes, définissez la `RowSpan` et `ColumnSpan` propriétés sur le contrôle. Pour plus d’informations, consultez [Procédure pas à pas : Organisation des contrôles dans les formulaires de Windows à l’aide d’un TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).  
->   
->  Si vous souhaitez aligner un contrôle dans une cellule, ou si vous souhaitez un contrôle à étendre au sein d’une cellule, utilisez le contrôle <xref:System.Windows.Forms.Control.Anchor%2A> propriété. Pour plus d’informations, consultez [Procédure pas à pas : Organisation des contrôles dans les formulaires de Windows à l’aide d’un TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).  
->   
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnaliser l’IDE Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-### <a name="to-edit-rows-and-columns"></a>Pour modifier les lignes et colonnes  
-  
-1. Faites glisser un contrôle <xref:System.Windows.Forms.TableLayoutPanel> de la **boîte à outils** vers le formulaire.  
-  
-2. Cliquez sur le <xref:System.Windows.Forms.TableLayoutPanel> glyphe de balise active du contrôle (![glyphe de balise active](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) et sélectionnez **modifier les lignes et colonnes** pour ouvrir le  **Styles de ligne et colonne** boîte de dialogue. Vous pouvez également avec le bouton droit sur le <xref:System.Windows.Forms.TableLayoutPanel> contrôler et sélectionnez **modifier les lignes et colonnes** dans le menu contextuel.  
-  
-3. Pour ajouter ou supprimer des colonnes, sélectionnez **colonnes** à partir de la **type de membre** zone de liste déroulante.  
-  
-4. Pour ajouter ou supprimer des lignes, sélectionnez **lignes** à partir de la **type de membre** zone de liste déroulante.  
-  
-5. Cliquez sur le **ajouter** pour ajouter une ligne ou une colonne à la fin de la **membre** liste.  
-  
-6. Cliquez sur le **insérer** pour ajouter une ligne ou une colonne avant l’élément actuellement sélectionné dans la liste.  
-  
-7. Si vous ajoutez une ligne ou colonne, sélectionnez le **taille Type** pour la nouvelle ligne ou la colonne. Pour plus d'informations, consultez <xref:System.Windows.Forms.SizeType>.  
-  
-8. Pour supprimer une ligne ou colonne, cliquez sur le **supprimer** bouton pour supprimer l’élément actuellement sélectionné dans le **membre** liste.  
-  
+> Si vous souhaitez qu’un contrôle s’étende sur plusieurs lignes ou colonnes `RowSpan` , `ColumnSpan` définissez les propriétés et sur le contrôle. Pour plus d’informations, consultez [Procédure pas à pas : Réorganisation des contrôles sur Windows Forms à l'](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)aide d’un TableLayoutPanel.
+>
+> Si vous souhaitez aligner un contrôle dans une cellule ou si vous souhaitez étirer un contrôle dans une cellule, utilisez la propriété du <xref:System.Windows.Forms.Control.Anchor%2A> contrôle. Pour plus d’informations, consultez [Procédure pas à pas : Réorganisation des contrôles sur Windows Forms à l'](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)aide d’un TableLayoutPanel.
+
+## <a name="to-edit-rows-and-columns"></a>Pour modifier des lignes et des colonnes
+
+1. Faites glisser un contrôle <xref:System.Windows.Forms.TableLayoutPanel> de la **boîte à outils** vers le formulaire.
+
+2. Cliquez sur <xref:System.Windows.Forms.TableLayoutPanel> le glyphe de balise active du contrôle (![glyphe de balise active](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) et sélectionnez **modifier les lignes et les colonnes** pour ouvrir la boîte de dialogue Styles de ligne et de **colonne** . Vous pouvez également cliquer avec le bouton <xref:System.Windows.Forms.TableLayoutPanel> droit sur le contrôle et sélectionner **modifier les lignes et les colonnes** dans le menu contextuel.
+
+3. Pour ajouter ou supprimer des colonnes, sélectionnez **colonnes** dans la zone de liste déroulante **type de membre** .
+
+4. Pour ajouter ou supprimer des lignes, sélectionnez **lignes** dans la zone de liste déroulante **type de membre** .
+
+5. Cliquez sur le bouton **Ajouter** pour ajouter une ligne ou une colonne à la fin de la liste des **membres** .
+
+6. Cliquez sur le bouton **Insérer** pour ajouter une ligne ou une colonne avant l’élément actuellement sélectionné dans la liste.
+
+7. Si vous ajoutez une ligne ou une colonne, sélectionnez le **type de taille** pour la nouvelle ligne ou colonne. Pour plus d'informations, consultez <xref:System.Windows.Forms.SizeType>.
+
+8. Pour supprimer une ligne ou une colonne, cliquez sur le bouton **supprimer** pour supprimer l’élément actuellement sélectionné dans la liste des **membres** .
+
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.SizeType>

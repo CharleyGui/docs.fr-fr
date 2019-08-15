@@ -10,50 +10,47 @@ helpviewer_keywords:
 - controls [Windows Forms], setting tab order
 - Windows Forms, setting tab order
 ms.assetid: 71fa8e76-0472-414b-ad3c-0f90166e0ad7
-ms.openlocfilehash: 50f5f91a946aeebc4d82630b25d18d8f8d2ea4be
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5559a3a3e4e62ce9e620de23feef3cbfa0ab8f60
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013125"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039856"
 ---
 # <a name="how-to-set-the-tab-order-on-windows-forms"></a>Procédure : définir l’ordre de tabulation dans des Windows Forms
-L’ordre de tabulation est l’ordre dans lequel un utilisateur déplace le focus d’un contrôle à un autre en appuyant sur la touche TAB. Chaque écran a son propre ordre de tabulation. Par défaut, l’ordre de tabulation est identique à l’ordre dans lequel vous avez créé les contrôles. Ordre de tabulation la numérotation commence à zéro.  
-  
-> [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnaliser l’IDE Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-### <a name="to-set-the-tab-order-of-a-control"></a>Pour définir l’ordre de tabulation d’un contrôle  
-  
-1. Sur le **vue** menu, cliquez sur **l’ordre de tabulation**.  
-  
-     Cela permet d’activer le mode de sélection d’ordre de tabulation sur le formulaire. Un nombre (représentant le <xref:System.Windows.Forms.Control.TabIndex%2A> propriété) apparaît dans le coin supérieur gauche de chaque contrôle.  
-  
-2. Cliquez sur les contrôles de manière séquentielle pour établir l’ordre de tabulation.  
-  
+L’ordre de tabulation est l’ordre dans lequel un utilisateur déplace le focus d’un contrôle à un autre en appuyant sur la touche TAB. Chaque formulaire possède son propre ordre de tabulation. Par défaut, l’ordre de tabulation est le même que l’ordre dans lequel vous avez créé les contrôles. La numérotation de l’ordre des tabulations commence par zéro.
+
+## <a name="to-set-the-tab-order-of-a-control"></a>Pour définir l’ordre de tabulation d’un contrôle
+
+1. Dans le menu **affichage** , cliquez sur **ordre de tabulation**.
+
+     Cela active le mode de sélection de l’ordre des onglets sur le formulaire. Un nombre (représentant la <xref:System.Windows.Forms.Control.TabIndex%2A> propriété) s’affiche dans l’angle supérieur gauche de chaque contrôle.
+
+2. Cliquez sur les contrôles de façon séquentielle pour définir l’ordre de tabulation souhaité.
+
     > [!NOTE]
-    >  Place d’un contrôle dans l’ordre de tabulation peut être définie à n’importe quelle valeur supérieure ou égale à 0. En cas de doublons, l’ordre de plan des contrôles est évaluée et le contrôle supérieur est avec onglets en premier. (L’ordre de plan est la superposition visuelle des contrôles sur un formulaire sur l’axe z [profondeur]. L’ordre de plan détermine quels contrôles sont devant les autres contrôles.) Pour plus d’informations sur l’ordre de plan, consultez [superposition d’objets dans les Windows Forms](how-to-layer-objects-on-windows-forms.md).  
-  
-3. Lorsque vous avez terminé, cliquez sur **l’ordre de tabulation** sur le **vue** menu pour quitter le mode d’ordre de tabulation.  
-  
+    >  L’emplacement d’un contrôle dans l’ordre de tabulation peut être défini sur n’importe quelle valeur supérieure ou égale à 0. Lorsque des doublons se produisent, l’ordre de plan des deux contrôles est évalué et le contrôle en haut est tabulé à la première. (L’ordre de plan est la superposition visuelle des contrôles sur un formulaire le long de l’axe z [profondeur] du formulaire. L’ordre de plan détermine les contrôles devant d’autres contrôles.) Pour plus d’informations sur l’ordre de plan, consultez [superposition d’objets sur Windows Forms](how-to-layer-objects-on-windows-forms.md).
+
+3. Lorsque vous avez terminé, cliquez à nouveau sur **ordre de tabulation** dans le menu **affichage** pour conserver le mode d’ordre de tabulation.
+
     > [!NOTE]
-    >  Les contrôles qui ne peut pas obtenir le focus, ainsi que les contrôles désactivés et invisibles, n’ont pas un <xref:System.Windows.Forms.Control.TabIndex%2A> propriété et le sont pas inclus dans l’ordre de tabulation. Comme un utilisateur appuie sur la touche TAB, ces contrôles sont ignorés.  
-  
- Aussi, ordre de tabulation peut être configurée dans la fenêtre Propriétés en utilisant le <xref:System.Windows.Forms.Control.TabIndex%2A> propriété. Le <xref:System.Windows.Forms.Control.TabIndex%2A> propriété d’un contrôle détermine où elle est placée dans l’ordre de tabulation. Par défaut, le premier contrôle a un <xref:System.Windows.Forms.Control.TabIndex%2A> valeur égale à 0, le deuxième a une <xref:System.Windows.Forms.Control.TabIndex%2A> de 1 et ainsi de suite.  
-  
- En outre, par défaut, un <xref:System.Windows.Forms.GroupBox> contrôle possède son propre <xref:System.Windows.Forms.Control.TabIndex%2A> valeur, qui est un nombre entier. Un <xref:System.Windows.Forms.GroupBox> contrôle proprement dit ne peut pas avoir le focus au moment de l’exécution. Par conséquent, chaque contrôle dans un <xref:System.Windows.Forms.GroupBox> a son propre décimale <xref:System.Windows.Forms.Control.TabIndex%2A> valeur, en commençant par.0. Naturellement, comme le <xref:System.Windows.Forms.Control.TabIndex%2A> d’un <xref:System.Windows.Forms.GroupBox> contrôle est incrémenté, les contrôles qu’il contient seront incrémentées. Si vous avez modifié un <xref:System.Windows.Forms.Control.TabIndex%2A> valeur comprise entre 5 et 6, la <xref:System.Windows.Forms.Control.TabIndex%2A> valeur du premier contrôle dans son groupe devient automatiquement 6.0 et ainsi de suite.  
-  
- Enfin, n’importe quel contrôle des nombreux sur votre formulaire peut être ignoré dans l’ordre de tabulation. En règle générale, en appuyant sur TAB successivement au moment de l’exécution sélectionne chaque contrôle dans l’ordre de tabulation. En désactivant le <xref:System.Windows.Forms.Control.TabStop%2A> propriété, vous pouvez créer un contrôle survolé dans l’ordre de tabulation du formulaire.  
-  
-#### <a name="to-remove-a-control-from-the-tab-order"></a>Pour supprimer un contrôle à partir de l’ordre de tabulation  
-  
-1. Définir le contrôle <xref:System.Windows.Forms.Control.TabStop%2A> propriété `false` dans la fenêtre Propriétés.  
-  
-     Un contrôle dont <xref:System.Windows.Forms.Control.TabStop%2A> propriété a été définie sur `false` conserve sa position dans l’ordre de tabulation, même si le contrôle est ignoré lorsque vous faites défiler les contrôles avec la touche TAB.  
-  
+    >  Les contrôles qui ne peuvent pas obtenir le focus, ainsi que les contrôles désactivés et invisibles, n’ont pas de <xref:System.Windows.Forms.Control.TabIndex%2A> propriété et ne sont pas inclus dans l’ordre de tabulation. Quand un utilisateur appuie sur la touche TAB, ces contrôles sont ignorés.
+
+ Vous pouvez également définir l’ordre de tabulation dans le fenêtre Propriétés à l' <xref:System.Windows.Forms.Control.TabIndex%2A> aide de la propriété. La <xref:System.Windows.Forms.Control.TabIndex%2A> propriété d’un contrôle détermine où il est positionné dans l’ordre de tabulation. Par défaut, le premier contrôle dessiné a une <xref:System.Windows.Forms.Control.TabIndex%2A> valeur de 0, le deuxième <xref:System.Windows.Forms.Control.TabIndex%2A> a la valeur 1, et ainsi de suite.
+
+ En outre, par défaut, un <xref:System.Windows.Forms.GroupBox> contrôle a sa propre <xref:System.Windows.Forms.Control.TabIndex%2A> valeur, qui est un nombre entier. Un <xref:System.Windows.Forms.GroupBox> contrôle lui-même ne peut pas avoir le focus au moment de l’exécution. Ainsi, chaque contrôle dans un <xref:System.Windows.Forms.GroupBox> a sa propre valeur <xref:System.Windows.Forms.Control.TabIndex%2A> décimale, à partir de. 0. Naturellement, à mesure <xref:System.Windows.Forms.Control.TabIndex%2A> que le <xref:System.Windows.Forms.GroupBox> d’un contrôle est incrémenté, les contrôles qu’il contient seront incrémentés en conséquence. Si vous avez modifié <xref:System.Windows.Forms.Control.TabIndex%2A> une valeur comprise entre 5 <xref:System.Windows.Forms.Control.TabIndex%2A> et 6, la valeur du premier contrôle dans son groupe devient automatiquement 6,0, et ainsi de suite.
+
+ Enfin, n’importe quel contrôle de la plupart de votre formulaire peut être ignoré dans l’ordre de tabulation. En règle générale, le fait d’appuyer sur TAB successivement au moment de l’exécution sélectionne chaque contrôle dans l’ordre de tabulation. En désactivant la <xref:System.Windows.Forms.Control.TabStop%2A> propriété, vous pouvez faire en sorte qu’un contrôle soit passé dans l’ordre de tabulation du formulaire.
+
+## <a name="to-remove-a-control-from-the-tab-order"></a>Pour supprimer un contrôle de l’ordre de tabulation
+
+1. Affectez à `false` la <xref:System.Windows.Forms.Control.TabStop%2A> propriété du contrôle la valeur dans la fenêtre Propriétés.
+
+     Un contrôle dont <xref:System.Windows.Forms.Control.TabStop%2A> la propriété a la valeur `false` continue à conserver sa position dans l’ordre de tabulation, même si le contrôle est ignoré lorsque vous parcourez les contrôles à l’aide de la touche Tab.
+
     > [!NOTE]
-    >  Un groupe de cases d’option a un seul onglet arrêter au moment de l’exécution. Le bouton sélectionné (autrement dit, le bouton avec son <xref:System.Windows.Forms.RadioButton.Checked%2A> propriété définie sur `true`) a sa <xref:System.Windows.Forms.Control.TabStop%2A> propriété est automatiquement définie sur `true`, tandis que les autres boutons ont leur <xref:System.Windows.Forms.Control.TabStop%2A> propriété définie sur `false`. Pour plus d’informations sur le regroupement <xref:System.Windows.Forms.RadioButton> contrôles, consultez [regroupement Windows Forms contrôles RadioButton en tant qu’ensemble](how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md).  
-  
+    >  Un groupe de cases d’option a un seul taquet de tabulation au moment de l’exécution. Le bouton sélectionné (autrement dit, le bouton <xref:System.Windows.Forms.RadioButton.Checked%2A> dont la propriété a la `true`valeur) a sa <xref:System.Windows.Forms.Control.TabStop%2A> propriété définie automatiquement `true` <xref:System.Windows.Forms.Control.TabStop%2A> sur, tandis que la propriété des autres boutons `false`a la valeur. Pour plus d’informations sur le <xref:System.Windows.Forms.RadioButton> regroupement de contrôles, consultez [regroupement Windows Forms contrôles RadioButton pour qu’ils fonctionnent comme un ensemble](how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md).
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Contrôles Windows Forms](index.md)

@@ -1,6 +1,6 @@
 ---
-title: Get, fonction (référence des API non managées)
-description: La fonction Get récupère la valeur de propriété spécifiée.
+title: Fonction d’extraction (référence des API non managées)
+description: La fonction obtenir récupère la valeur de propriété spécifiée.
 ms.date: 11/06/2017
 api_name:
 - Get
@@ -16,16 +16,16 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c1f838c26d45c0f3cfbd50ac0ce02d234b82ddae
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 265d3edbd3175eebcf6fd35be24f5b66144c960f
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67746662"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69037953"
 ---
 # <a name="get-function"></a>Get, fonction
 
-Récupère la valeur de propriété spécifiée si elle existe.
+Récupère la valeur de propriété spécifiée, si elle existe.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -46,55 +46,55 @@ HRESULT Get (
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`\
-[in] Ce paramètre n’est pas utilisé.
+dans Ce paramètre n’est pas utilisé.
 
 `ptr`\
-[in] Un pointeur vers un [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `wszName`\
-[in] Le nom de la propriété.
+dans Nom de la propriété.
 
 `lFlags`\
-[in] Réservée. Ce paramètre doit être 0.
+[in] Réservée. Ce paramètre doit avoir la valeur 0.
 
 `pVal`\
-[out] Si la fonction a été retournée avec succès, contient la valeur de la `wszName` propriété. Le `pval` argument reçoit le type correct et la valeur du qualificateur.
+à Si la fonction est correctement retournée, contient la valeur `wszName` de la propriété. Le `pval` type et la valeur corrects pour le qualificateur sont assignés à l’argument.
 
 `pvtType`\
-[out] Si la fonction a été retournée avec succès, contient un [constante de type CIM](/windows/desktop/api/wbemcli/ne-wbemcli-tag_cimtype_enumeration) qui indique le type de propriété. Sa valeur peut également être `null`. 
+à Si la fonction est correctement retournée, contient une [constante de type CIM](/windows/win32/api/wbemcli/ne-wbemcli-cimtype_enumeration) qui indique le type de propriété. Sa valeur peut également être `null`. 
 
 `plFlavor`\
-[out] Si la fonction a été retournée avec succès, reçoit des informations sur l’origine de la propriété. Sa valeur peut être `null`, ou l’une des constantes WBEM_FLAVOR_TYPE suivantes définies dans le *WbemCli.h* fichier d’en-tête : 
+à Si la fonction est correctement retournée, reçoit des informations sur l’origine de la propriété. Sa valeur peut être `null`, ou l’une des constantes WBEM_FLAVOR_TYPE suivantes définies dans le fichier d’en-tête *WbemCli. h* : 
 
 |Constante  |Valeur  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAVOR_ORIGIN_SYSTEM` | 0x40 | La propriété est une propriété système standard. |
-| `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | Pour une classe : La propriété est héritée de la classe parente. <br> Pour une instance : La propriété, tandis que héritée de la classe parente, n’a pas été modifiée par l’instance.  |
-| `WBEM_FLAVOR_ORIGIN_LOCAL` | 0 | Pour une classe : La propriété appartient à la classe dérivée. <br> Pour une instance : Cette propriété est modifiée par l’instance ; Autrement dit, une valeur a été fournie, ou un qualificateur a été ajouté ou modifié. |
+| `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | Pour une classe: La propriété est héritée de la classe parente. <br> Pour une instance: La propriété, bien qu’héritée de la classe parente, n’a pas été modifiée par l’instance de.  |
+| `WBEM_FLAVOR_ORIGIN_LOCAL` | 0 | Pour une classe: La propriété appartient à la classe dérivée. <br> Pour une instance: La propriété est modifiée par l’instance; autrement dit, une valeur a été fournie ou un qualificateur a été ajouté ou modifié. |
 
 ## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code:
 
 |Constante  |Valeur  |Description  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Il y a eu une défaillance générale. |
+|`WBEM_E_FAILED` | 0x80041001 | Une défaillance générale s’est produite. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un ou plusieurs paramètres ne sont pas valides. |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | La propriété spécifiée est introuvable. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Mémoire est insuffisante pour terminer l’opération. |
-|`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | La mémoire disponible est insuffisante pour terminer l’opération. |
+|`WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
 
 ## <a name="remarks"></a>Notes
 
-Cette fonction encapsule un appel à la [IWbemClassObject::Get](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-get) (méthode).
+Cette fonction encapsule un appel à la méthode [IWbemClassObject:: obtenir](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-get) .
 
-Le `Get` fonction peut également retourner les propriétés système.
+La `Get` fonction peut également retourner des propriétés système.
 
-Le `pVal` argument reçoit le type correct et la valeur pour le qualificateur et le modèle COM [VariantInit](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantinit) (fonction)
+Le `pVal` type et la valeur corrects pour le qualificateur et la fonction com [VariantInit](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-variantinit) sont assignés à l’argument
 
 ## <a name="requirements"></a>Configuration requise
 
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 
  **En-tête :** WMINet_Utils.idl
 
@@ -102,4 +102,4 @@ Le `pVal` argument reçoit le type correct et la valeur pour le qualificateur et
 
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performances (référence des API non managées)](index.md)
+- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)

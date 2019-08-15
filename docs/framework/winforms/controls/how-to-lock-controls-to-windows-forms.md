@@ -5,47 +5,44 @@ helpviewer_keywords:
 - Windows Forms controls, locking
 - controls [Windows Forms], locking
 ms.assetid: 94efe0d2-c14e-4d14-b903-63ea9b07e290
-ms.openlocfilehash: ac5fbf33564ed2dd1a030132a35b36164f777519
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cbf82f1481ee9779cec5cfbf3fb057b7ea399a1c
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638565"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039904"
 ---
 # <a name="how-to-lock-controls-to-windows-forms"></a>Procédure : verrouiller des contrôles avec des Windows Forms
-Lorsque vous concevez l’interface utilisateur (IU) de votre application Windows, vous pouvez verrouiller les contrôles une fois qu’ils sont correctement placés, afin que vous ne pas par inadvertance de déplacer ou de les redimensionner lors de la définition d’autres propriétés.  
-  
- En outre, vous pouvez verrouiller et déverrouiller tous les contrôles sur le formulaire à la fois, ce qui est utile pour les formulaires avec de nombreux contrôles, ou vous pouvez déverrouiller des contrôles individuels. Une fois que vous avez passé tous les contrôles où vous le souhaitez sur le formulaire, les verrouiller tout en place pour empêcher un mouvement erroné.  
-  
-> [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnaliser l’IDE Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-### <a name="to-lock-a-control"></a>Pour verrouiller un contrôle  
-  
-1. Dans le **propriétés** fenêtre, cliquez sur le **verrouillé** propriété et sélectionnez `true`. (Double-cliquez sur le nom Active ou désactive le paramètre de propriété.)  
-  
-     Ou bien, cliquez sur le contrôle et choisissez **verrouille les contrôles**.  
-  
+Lorsque vous concevez l’interface utilisateur de votre application Windows, vous pouvez verrouiller les contrôles une fois qu’ils sont positionnés correctement, afin de ne pas les déplacer ou les redimensionner par inadvertance lors de la définition d’autres propriétés.
+
+ En outre, vous pouvez verrouiller et déverrouiller tous les contrôles du formulaire à la fois, ce qui est utile pour les formulaires avec de nombreux contrôles, ou vous pouvez déverrouiller des contrôles individuels. Une fois que vous avez placé tous les contrôles à l’emplacement souhaité sur le formulaire, verrouillez-les pour éviter tout mouvement erroné.
+
+## <a name="to-lock-a-control"></a>Pour verrouiller un contrôle
+
+1. Dans la fenêtre **Propriétés** , cliquez sur la propriété **verrouillé** , `true`puis sélectionnez. (Si vous double-cliquez sur le nom, le paramètre de propriété est activé.)
+
+     Vous pouvez également cliquer avec le bouton droit sur le contrôle et choisir **verrouiller les contrôles**.
+
     > [!NOTE]
-    >  Contrôles de verrouillage empêche les glissé vers une nouvelle taille ou l’emplacement sur l’aire de conception. Toutefois, vous pouvez toujours modifier la taille ou l’emplacement des contrôles au moyen de la **propriétés** fenêtre ou dans le code.  
-  
-### <a name="to-lock-all-the-controls-on-a-form"></a>Pour verrouiller tous les contrôles sur un formulaire  
-  
-1. À partir de la **Format** menu, choisissez **verrouille les contrôles**.  
-  
+    >  Le verrouillage des contrôles empêche leur déplacement vers une nouvelle taille ou un nouvel emplacement sur l’aire de conception. Toutefois, vous pouvez toujours modifier la taille ou l’emplacement des contrôles à l’aide de la fenêtre **Propriétés** ou dans le code.
+
+## <a name="to-lock-all-the-controls-on-a-form"></a>Pour verrouiller tous les contrôles d’un formulaire
+
+1. Dans le menu **format** , choisissez **verrouiller les contrôles**.
+
     > [!NOTE]
-    >  Cette commande verrouille la taille du formulaire, car un formulaire est un contrôle.  
-  
-### <a name="to-unlock-all-locked-controls-on-a-form"></a>Pour déverrouiller verrouillés tous les contrôles sur un formulaire  
-  
-1. À partir de la **Format** menu, choisissez **verrouille les contrôles**.  
-  
-     Tous les contrôles précédemment verrouillés sur le formulaire sont maintenant déverrouillée.  
-  
-### <a name="to-unlock-locked-controls-individually"></a>Pour déverrouiller les contrôles verrouillés individuellement  
-  
-1. Dans le **propriétés** fenêtre, cliquez sur le **verrouillé** propriété et sélectionnez `false`. (Double-cliquez sur le nom Active ou désactive le paramètre de propriété.)  
-  
+    >  Cette commande verrouille également la taille du formulaire, car un formulaire est un contrôle.
+
+## <a name="to-unlock-all-locked-controls-on-a-form"></a>Pour déverrouiller tous les contrôles verrouillés dans un formulaire
+
+1. Dans le menu **format** , choisissez **verrouiller les contrôles**.
+
+     Tous les contrôles précédemment verrouillés sur le formulaire sont maintenant déverrouillés.
+
+## <a name="to-unlock-locked-controls-individually"></a>Pour déverrouiller des contrôles verrouillés individuellement
+
+1. Dans la fenêtre **Propriétés** , cliquez sur la propriété **verrouillé** , `false`puis sélectionnez. (Si vous double-cliquez sur le nom, le paramètre de propriété est activé.)
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Contrôles Windows Forms](index.md)

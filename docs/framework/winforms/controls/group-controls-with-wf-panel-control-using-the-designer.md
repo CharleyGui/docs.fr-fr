@@ -6,31 +6,28 @@ helpviewer_keywords:
 - controls [Windows Forms], grouping
 - Windows Forms controls, grouping
 ms.assetid: 7e1cd708-fdb1-49d8-9ca2-5640b276bf2e
-ms.openlocfilehash: 662343af42f72816a5a673d2cd6d839a5dca9190
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cadfa715b140c63b216ec0ca2e6d6a6589ae3458
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61971299"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040389"
 ---
 # <a name="how-to-group-controls-with-the-windows-forms-panel-control-using-the-designer"></a>Procédure : regrouper des contrôles avec le contrôle Panel Windows Forms à l’aide du concepteur
-Windows Forms <xref:System.Windows.Forms.Panel> contrôles sont utilisés pour regrouper d’autres contrôles. Il existe trois raisons pour regrouper des contrôles. Regroupement d’éléments connexes pour une interface utilisateur claire ; visuel regroupement de programmation, des cases d’option, par exemple ; la dernière est pour déplacer les contrôles en tant qu’unité au moment du design.  
-  
-> [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnaliser l’IDE Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
-  
-### <a name="to-create-a-group-of-controls"></a>Pour créer un groupe de contrôles  
-  
-1. Faites glisser un <xref:System.Windows.Forms.Panel> contrôle depuis la **Windows Forms** onglet de la boîte à outils sur un formulaire.  
-  
-2. Ajoutez des contrôles pour le dessin du panneau, chacun à l’intérieur du panneau.  
-  
-     Si vous avez des contrôles existants que vous souhaitez placer dans un panneau, vous pouvez sélectionner tous les contrôles, les couper dans le Presse-papiers, sélectionnez le <xref:System.Windows.Forms.Panel> contrôler et collez-les dans le panneau de configuration. Vous pouvez également faites-les glisser dans le panneau de configuration.  
-  
-3. (Facultatif) Si vous souhaitez ajouter une bordure à un panneau, définissez son <xref:System.Windows.Forms.BorderStyle> propriété. Il existe trois possibilités : <xref:System.Windows.Forms.BorderStyle.Fixed3D>, <xref:System.Windows.Forms.BorderStyle.FixedSingle>, et <xref:System.Windows.Forms.BorderStyle.None>.  
-  
+Les <xref:System.Windows.Forms.Panel> contrôles Windows Forms sont utilisés pour regrouper d’autres contrôles. Il existe trois raisons pour regrouper des contrôles. L’un est le regroupement visuel d’éléments de formulaire associés pour une interface utilisateur claire; un autre est le regroupement par programmation, des cases d’option, par exemple; le dernier est de déplacer les contrôles en tant qu’unité au moment du Design.
+
+## <a name="to-create-a-group-of-controls"></a>Pour créer un groupe de contrôles
+
+1. Faites glisser <xref:System.Windows.Forms.Panel> un contrôle de l’onglet **Windows Forms** de la boîte à outils vers un formulaire.
+
+2. Ajoutez d’autres contrôles au panneau, en dessinant chacun à l’intérieur du panneau.
+
+     Si vous disposez de contrôles existants que vous souhaitez encadrer dans un panneau, vous pouvez sélectionner tous les contrôles, les couper dans le presse- <xref:System.Windows.Forms.Panel> papiers, sélectionner le contrôle, puis les coller dans le panneau. Vous pouvez également les faire glisser dans le panneau.
+
+3. Facultatif Si vous souhaitez ajouter une bordure à un panneau, définissez sa <xref:System.Windows.Forms.BorderStyle> propriété. Trois options s’offrent à <xref:System.Windows.Forms.BorderStyle.Fixed3D>vous <xref:System.Windows.Forms.BorderStyle.FixedSingle>:, <xref:System.Windows.Forms.BorderStyle.None>et.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Panel, contrôle](panel-control-windows-forms.md)
 - [Vue d’ensemble du contrôle Panel](panel-control-overview-windows-forms.md)
-- [Guide pratique pour Définir l’arrière-plan d’un panneau](how-to-set-the-background-of-a-windows-forms-panel.md)
+- [Guide pratique : Définir l’arrière-plan d’un panneau](how-to-set-the-background-of-a-windows-forms-panel.md)

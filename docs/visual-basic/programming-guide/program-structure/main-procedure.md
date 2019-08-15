@@ -8,105 +8,105 @@ helpviewer_keywords:
 - Main method [Visual Basic]
 - main function
 ms.assetid: f0db283e-f283-4464-b521-b90858cc1b44
-ms.openlocfilehash: a1eebc3d384d2efef050672a9c589b14559977f5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b6c8ec4052d834d410df7fef12e59434f5fdfb44
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648754"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039983"
 ---
 # <a name="main-procedure-in-visual-basic"></a>Procédure Main dans Visual Basic
-Toutes les applications Visual Basic doivent contenir une procédure appelée `Main`. Cette procédure sert de point de départ et contrôle général de votre application. Le .NET Framework appelle votre `Main` procédure lorsqu’il a chargé votre application et est prêt à passer le contrôle. Sauf si vous créez une application Windows Forms, vous devez écrire le `Main` procédure pour les applications qui s’exécutent sur leurs propres.  
-  
- `Main` contient le code qui s’exécute en premier. Dans `Main`, vous pouvez déterminer quelle forme doit d’abord être chargé au démarrage du programme, savoir si une copie de votre application est déjà en cours d’exécution sur le système, définir un ensemble de variables pour votre application ou ouvrir une base de données requis par l’application.  
-  
-## <a name="requirements-for-the-main-procedure"></a>Configuration requise pour la procédure principale  
- Un fichier qui s’exécute sur sa propre (généralement avec l’extension .exe) doit contenir un `Main` procédure. Une bibliothèque (par exemple avec l’extension .dll) ne s’exécute pas son propre et ne nécessite pas un `Main` procédure. La configuration requise pour les différents types de projets que vous pouvez créer est les suivantes :  
-  
-- Applications console s’exécutent leurs propres, et vous devez fournir au moins un `Main` procédure. .  
-  
-- Applications Windows Forms s’exécutent sur leurs propres. Toutefois, le compilateur Visual Basic génère automatiquement un `Main` procédure telle une application et vous n’avez pas besoin d’écrire un.  
-  
-- Bibliothèques de classes ne nécessitent pas une `Main` procédure. Ceux-ci incluent des bibliothèques de contrôles Windows et les bibliothèques de contrôles Web. Applications Web sont déployées en tant que bibliothèques de classes.  
-  
-## <a name="declaring-the-main-procedure"></a>Déclaration de la procédure principale  
- Il existe quatre façons de déclarer la `Main` procédure. Il peut accepter des arguments ou non, et elle peut retourner une valeur ou non.  
-  
+Chaque Visual Basic application doit contenir une procédure appelée `Main`. Cette procédure sert de point de départ et de contrôle global pour votre application. Le .NET Framework appelle votre `Main` procédure lorsqu’il a chargé votre application et qu’il est prêt à lui transmettre le contrôle. À moins que vous ne soyez en train de créer une application `Main` Windows Forms, vous devez écrire la procédure pour les applications qui s’exécutent de manière autonome.
+
+ `Main`contient le code qui s’exécute en premier. Dans `Main`, vous pouvez déterminer le formulaire à charger en premier au démarrage du programme, savoir si une copie de votre application est déjà en cours d’exécution sur le système, établir un ensemble de variables pour votre application ou ouvrir une base de données dont l’application a besoin.
+
+## <a name="requirements-for-the-main-procedure"></a>Conditions requises pour la procédure main
+ Un fichier qui s’exécute seul (généralement avec l’extension. exe) doit contenir une `Main` procédure. Une bibliothèque (par exemple, avec l’extension. dll) n’est pas exécutée de manière autonome et `Main` ne nécessite pas de procédure. La configuration requise pour les différents types de projets que vous pouvez créer est la suivante:
+
+- Les applications console s’exécutent de manière autonome et vous devez fournir au `Main` moins une procédure.
+
+- Windows Forms applications s’exécutent de manière autonome. Toutefois, le compilateur Visual Basic génère automatiquement une `Main` procédure dans une telle application, et vous n’avez pas besoin d’en écrire un.
+
+- Les bibliothèques de classes ne nécessitent `Main` pas de procédure. Celles-ci incluent les bibliothèques de contrôles Windows et les bibliothèques de contrôles Web. Les applications Web sont déployées en tant que bibliothèques de classes.
+
+## <a name="declaring-the-main-procedure"></a>Déclaration de la procédure main
+ Il existe quatre façons de déclarer la `Main` procédure. Elle peut accepter ou non des arguments, et elle peut retourner une valeur ou non.
+
 > [!NOTE]
->  Si vous déclarez `Main` dans une classe, vous devez utiliser le `Shared` mot clé. Dans un module, `Main` pas nécessairement être `Shared`.  
-  
-- La façon la plus simple consiste à déclarer un `Sub` procédure qui ne pas accepter des arguments ou retourner une valeur.  
-  
-    ```  
-    Module mainModule  
-        Sub Main()  
-            MsgBox("The Main procedure is starting the application.")  
-            ' Insert call to appropriate starting place in your code.  
-            MsgBox("The application is terminating.")  
-        End Sub  
-    End Module  
-    ```  
-  
-- `Main` peut également retourner un `Integer` valeur, que le système d’exploitation utilise comme le code de sortie de votre programme. Autres programmes peuvent tester ce code en examinant la valeur ERRORLEVEL de Windows. Pour retourner un code de sortie, vous devez déclarer `Main` comme un `Function` procédure au lieu d’un `Sub` procédure.  
-  
-    ```  
-    Module mainModule  
-        Function Main() As Integer  
-            MsgBox("The Main procedure is starting the application.")  
-            Dim returnValue As Integer = 0  
-            ' Insert call to appropriate starting place in your code.  
-            ' On return, assign appropriate value to returnValue.  
-            ' 0 usually means successful completion.  
-            MsgBox("The application is terminating with error level " &  
-                 CStr(returnValue) & ".")  
-            Return returnValue  
-        End Function  
-    End Module  
-    ```  
-  
-- `Main` peut également prendre un `String` tableau comme argument. Chaque chaîne dans le tableau contient un des arguments de ligne de commande utilisées pour appeler votre programme. Vous pouvez effectuer des actions différentes en fonction de leurs valeurs.  
-  
-    ```  
-    Module mainModule  
-        Function Main(ByVal cmdArgs() As String) As Integer  
-            MsgBox("The Main procedure is starting the application.")  
-            Dim returnValue As Integer = 0  
-            ' See if there are any arguments.  
-            If cmdArgs.Length > 0 Then  
-                For argNum As Integer = 0 To UBound(cmdArgs, 1)  
-                    ' Insert code to examine cmdArgs(argNum) and take  
-                    ' appropriate action based on its value.  
-                Next argNum  
-            End If  
-            ' Insert call to appropriate starting place in your code.  
-            ' On return, assign appropriate value to returnValue.  
-            ' 0 usually means successful completion.  
-            MsgBox("The application is terminating with error level " &  
-                 CStr(returnValue) & ".")  
-            Return returnValue  
-        End Function  
-    End Module  
-    ```  
-  
-- Vous pouvez déclarer `Main` à examiner les arguments de ligne de commande, mais pas retourner un code de sortie, comme suit.  
-  
-    ```  
-    Module mainModule  
-        Sub Main(ByVal cmdArgs() As String)  
-            MsgBox("The Main procedure is starting the application.")  
-            Dim returnValue As Integer = 0  
-            ' See if there are any arguments.  
-            If cmdArgs.Length > 0 Then  
-                For argNum As Integer = 0 To UBound(cmdArgs, 1)  
-                    ' Insert code to examine cmdArgs(argNum) and take  
-                    ' appropriate action based on its value.  
-                Next argNum  
-            End If  
-            ' Insert call to appropriate starting place in your code.  
-            MsgBox("The application is terminating.")  
-        End Sub  
-    End Module  
-    ```  
+>  Si vous déclarez `Main` dans une classe, vous devez utiliser `Shared` le mot clé. Dans un module, `Main` n’a pas besoin d' `Shared`être.
+
+- La méthode la plus simple consiste à déclarer `Sub` une procédure qui ne prend pas d’arguments ou ne retourne pas de valeur.
+
+    ```vb
+    Module mainModule
+        Sub Main()
+            MsgBox("The Main procedure is starting the application.")
+            ' Insert call to appropriate starting place in your code.
+            MsgBox("The application is terminating.")
+        End Sub
+    End Module
+    ```
+
+- `Main`peut également retourner une `Integer` valeur, que le système d’exploitation utilise comme code de sortie pour votre programme. D’autres programmes peuvent tester ce code en examinant la valeur Windows ERRORLEVEL. Pour retourner un code de sortie, vous devez `Main` déclarer comme `Function` une procédure au lieu `Sub` d’une procédure.
+
+    ```vb
+    Module mainModule
+        Function Main() As Integer
+            MsgBox("The Main procedure is starting the application.")
+            Dim returnValue As Integer = 0
+            ' Insert call to appropriate starting place in your code.
+            ' On return, assign appropriate value to returnValue.
+            ' 0 usually means successful completion.
+            MsgBox("The application is terminating with error level " &
+                 CStr(returnValue) & ".")
+            Return returnValue
+        End Function
+    End Module
+    ```
+
+- `Main`peut également prendre un `String` tableau en tant qu’argument. Chaque chaîne du tableau contient l’un des arguments de ligne de commande utilisés pour appeler votre programme. Vous pouvez effectuer différentes actions en fonction de leurs valeurs.
+
+    ```vb
+    Module mainModule
+        Function Main(ByVal cmdArgs() As String) As Integer
+            MsgBox("The Main procedure is starting the application.")
+            Dim returnValue As Integer = 0
+            ' See if there are any arguments.
+            If cmdArgs.Length > 0 Then
+                For argNum As Integer = 0 To UBound(cmdArgs, 1)
+                    ' Insert code to examine cmdArgs(argNum) and take
+                    ' appropriate action based on its value.
+                Next
+            End If
+            ' Insert call to appropriate starting place in your code.
+            ' On return, assign appropriate value to returnValue.
+            ' 0 usually means successful completion.
+            MsgBox("The application is terminating with error level " &
+                 CStr(returnValue) & ".")
+            Return returnValue
+        End Function
+    End Module
+    ```
+
+- Vous pouvez déclarer `Main` pour examiner les arguments de ligne de commande, mais ne pas retourner de code de sortie, comme suit.
+
+    ```vb
+    Module mainModule
+        Sub Main(ByVal cmdArgs() As String)
+            MsgBox("The Main procedure is starting the application.")
+            Dim returnValue As Integer = 0
+            ' See if there are any arguments.
+            If cmdArgs.Length > 0 Then
+                For argNum As Integer = 0 To UBound(cmdArgs, 1)
+                    ' Insert code to examine cmdArgs(argNum) and take
+                    ' appropriate action based on its value.
+                Next
+            End If
+            ' Insert call to appropriate starting place in your code.
+            MsgBox("The application is terminating.")
+        End Sub
+    End Module
+    ```
   
 ## <a name="see-also"></a>Voir aussi
 

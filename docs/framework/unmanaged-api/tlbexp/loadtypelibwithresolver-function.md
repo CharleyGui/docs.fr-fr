@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5d2f5ad2afb2e73acead82369782f142aa10aac3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6b9bec757071a98e085ccdeee3fc66bfc07f52bc
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782711"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69040164"
 ---
 # <a name="loadtypelibwithresolver-function"></a>LoadTypeLibWithResolver, fonction
-Charge une bibliothèque de types et utilise fourni [ITypeLibResolver, interface](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) pour résoudre toutes bibliothèques de types référencées en interne.  
+Charge une bibliothèque de types et utilise l' [interface ITypeLibResolver](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) fournie pour résoudre toutes les bibliothèques de types référencées en interne.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,62 +38,62 @@ HRESULT LoadTypeLibWithResolver(
   
 ## <a name="parameters"></a>Paramètres  
  `szFile`  
- [in] Le chemin d’accès de fichier de la bibliothèque de types.  
+ dans Chemin d’accès de fichier de la bibliothèque de types.  
   
  `regkind`  
- [in] Un [énumération de regkind a](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/ne-oleauto-tagregkind) indicateur qui contrôle comment la bibliothèque de types est enregistrée. Ses valeurs possibles sont :  
+ dans Indicateur d' [énumération REGKIND](https://docs.microsoft.com/windows/win32/api/oleauto/ne-oleauto-regkind) qui contrôle la façon dont la bibliothèque de types est inscrite. Les valeurs possibles sont les suivantes:  
   
-- `REGKIND_DEFAULT`: Utiliser le comportement de l’inscription par défaut.  
+- `REGKIND_DEFAULT`: Utilisez le comportement d’inscription par défaut.  
   
 - `REGKIND_REGISTER`: Inscrire cette bibliothèque de types.  
   
-- `REGKIND_NONE`: N’enregistrez pas cette bibliothèque de types.  
+- `REGKIND_NONE`: N’inscrivez pas cette bibliothèque de types.  
   
  `pTlbResolver`  
- [in] Un pointeur vers l’implémentation de la [ITypeLibResolver, interface](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md).  
+ dans Pointeur vers l’implémentation de l' [interface ITypeLibResolver](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md).  
   
  `pptlib`  
- [out] Une référence à la bibliothèque de types en cours de chargement.  
+ à Référence à la bibliothèque de types en cours de chargement.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Une des valeurs HRESULT répertoriés dans le tableau suivant.  
+ L’une des valeurs HRESULT indiquées dans le tableau suivant.  
   
 |Valeur de retour|Signification|  
 |------------------|-------------|  
 |`S_OK`|Opération réussie.|  
 |`E_OUTOFMEMORY`|Mémoire insuffisante.|  
-|`E_POINTER`|Un ou plusieurs des pointeurs ne sont pas valides.|  
-|`E_INVALIDARG`|Un ou plusieurs des arguments ne sont pas valides.|  
+|`E_POINTER`|Un ou plusieurs pointeurs ne sont pas valides.|  
+|`E_INVALIDARG`|Un ou plusieurs arguments ne sont pas valides.|  
 |`TYPE_E_IOERROR`|La fonction n’a pas pu écrire dans le fichier.|  
-|`TYPE_E_REGISTRYACCESS`|La base de données système d’inscription n’a pas pu être ouvert.|  
-|`TYPE_E_INVALIDSTATE`|La bibliothèque de types n’a pas pu être ouvert.|  
-|`TYPE_E_CANTLOADLIBRARY`|La bibliothèque de types ou de la DLL n’a pas pu être chargé.|  
+|`TYPE_E_REGISTRYACCESS`|Impossible d’ouvrir la base de données d’inscription du système.|  
+|`TYPE_E_INVALIDSTATE`|Impossible d’ouvrir la bibliothèque de types.|  
+|`TYPE_E_CANTLOADLIBRARY`|La bibliothèque de types ou la DLL n’a pas pu être chargée.|  
   
 ## <a name="remarks"></a>Notes  
- Le [Tlbexp.exe (exportateur)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) appelle le `LoadTypeLibWithResolver` fonction pendant le processus de conversion de l’assembly de bibliothèque de types.  
+ [Tlbexp. exe (exportateur de bibliothèques de types)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) appelle la `LoadTypeLibWithResolver` fonction pendant le processus de conversion d’assembly en bibliothèque de types.  
   
- Cette fonction charge la bibliothèque de types spécifiée avec un accès minimal au Registre. La fonction examine ensuite la bibliothèque de types pour les bibliothèques de types référencées en interne, chacun d’eux doit être chargé et ajouté à la bibliothèque de type parent.  
+ Cette fonction charge la bibliothèque de types spécifiée avec un accès minimal au registre. La fonction examine ensuite la bibliothèque de types pour les bibliothèques de types référencées en interne, chacune d’elles devant être chargée et ajoutée à la bibliothèque de types parente.  
   
- Avant de la bibliothèque de types référencée peut être chargée, son chemin d’accès du fichier de référence doit être résolu en un chemin d’accès complet du fichier. Ceci est accompli par le [ResolveTypeLib, méthode](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md) qui est fourni par le [ITypeLibResolver, interface](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md), qui est transmis dans le `pTlbResolver` paramètre.  
+ Pour pouvoir charger une bibliothèque de types référencée, son chemin d’accès au fichier de référence doit être résolu en chemin d’accès complet au fichier. Pour ce faire, vous devez utiliser la [méthode ResolveTypeLib (](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md) fournie par l' [interface ITypeLibResolver](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md), qui est transmise `pTlbResolver` dans le paramètre.  
   
- Lorsque le chemin d’accès de fichier complet de la bibliothèque de types référencée est connu, le `LoadTypeLibWithResolver` fonction charge et ajoute la bibliothèque de types référencée à la bibliothèque de type parent, création d’une bibliothèque de types principale combinée.  
+ Lorsque le chemin de fichier complet de la bibliothèque de types référencée est connu `LoadTypeLibWithResolver` , la fonction se charge et ajoute la bibliothèque de types référencée à la bibliothèque de types parente, en créant une bibliothèque de types principaux combinée.  
   
- Une fois que la fonction et chargement de toutes les bibliothèques de types référencées en interne, elle retourne une référence à la bibliothèque de types résolue principale dans le `pptlib` paramètre.  
+ Une fois que la fonction a résolu et chargé toutes les bibliothèques de types référencées en interne, elle retourne une référence à la bibliothèque de types `pptlib` résolue principale dans le paramètre.  
   
- Le `LoadTypeLibWithResolver` fonction est généralement appelée par le [Tlbexp.exe (exportateur)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md), qui fournit sa propre interne [ITypeLibResolver, interface](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) mise en œuvre dans le `pTlbResolver` paramètre.  
+ La `LoadTypeLibWithResolver` fonction est généralement appelée par [Tlbexp. exe (exportateur de bibliothèques de types)](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md), qui fournit sa propre implémentation d' [interface ITypeLibResolver](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) interne dans le `pTlbResolver` paramètre.  
   
- Si vous appelez `LoadTypeLibWithResolver` directement, vous devez fournir votre propre [ITypeLibResolver, interface](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) implémentation.  
+ Si vous appelez `LoadTypeLibWithResolver` directement, vous devez fournir votre propre implémentation d' [interface ITypeLibResolver](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) .  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** TlbRef.h  
+ **En-tête :** TlbRef. h  
   
- **Bibliothèque :** TlbRef.lib  
+ **Bibliothèque** TlbRef.lib  
   
- **Version du .NET framework :** 3.5, 3.0, 2.0  
+ **Version de .NET Framework:** 3.5, 3.0, 2.0  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Fonctions d’assistance Tlbexp](../../../../docs/framework/unmanaged-api/tlbexp/index.md)
-- [LoadTypeLibEx de le dont (fonction)](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)
+- [LoadTypeLibEx fonction)](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)
