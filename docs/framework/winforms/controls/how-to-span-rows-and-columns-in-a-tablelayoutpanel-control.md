@@ -10,31 +10,28 @@ helpviewer_keywords:
 - rows [Windows Forms], spanning
 - cells [Windows Forms], merging
 ms.assetid: a8a2fdd3-a848-48b0-a4cd-4e85ebded87e
-ms.openlocfilehash: 02db78b07930676235e55e535fb24f6ff618d823
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a215b2b4e05bab5c81d2779d4b67d5b9d57b6ba5
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012969"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039702"
 ---
-# <a name="how-to-span-rows-and-columns-in-a-tablelayoutpanel-control"></a><span data-ttu-id="9097c-102">Procédure : étendre des lignes et des colonnes dans un contrôle TableLayoutPanel</span><span class="sxs-lookup"><span data-stu-id="9097c-102">How to: Span Rows and Columns in a TableLayoutPanel Control</span></span>
-<span data-ttu-id="9097c-103">Contrôles dans un <xref:System.Windows.Forms.TableLayoutPanel> contrôle peut s’étendre sur les lignes et colonnes adjacentes.</span><span class="sxs-lookup"><span data-stu-id="9097c-103">Controls in a <xref:System.Windows.Forms.TableLayoutPanel> control can span adjacent rows and columns.</span></span>  
-  
-> [!NOTE]
->  <span data-ttu-id="9097c-104">Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée.</span><span class="sxs-lookup"><span data-stu-id="9097c-104">The dialog boxes and menu commands you see might differ from those described in Help depending on your active settings or edition.</span></span> <span data-ttu-id="9097c-105">Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** .</span><span class="sxs-lookup"><span data-stu-id="9097c-105">To change your settings, choose **Import and Export Settings** on the **Tools** menu.</span></span> <span data-ttu-id="9097c-106">Pour plus d’informations, consultez [Personnaliser l’IDE Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).</span><span class="sxs-lookup"><span data-stu-id="9097c-106">For more information, see [Personalize the Visual Studio IDE](/visualstudio/ide/personalizing-the-visual-studio-ide).</span></span>  
-  
-### <a name="to-span-columns-and-rows"></a><span data-ttu-id="9097c-107">Pour couvrir des colonnes et lignes</span><span class="sxs-lookup"><span data-stu-id="9097c-107">To span columns and rows</span></span>  
-  
-1. <span data-ttu-id="9097c-108">Faites glisser un contrôle <xref:System.Windows.Forms.TableLayoutPanel> de la **boîte à outils** vers le formulaire.</span><span class="sxs-lookup"><span data-stu-id="9097c-108">Drag a <xref:System.Windows.Forms.TableLayoutPanel> control from the **Toolbox** onto your form.</span></span>  
-  
-2. <span data-ttu-id="9097c-109">Faites glisser un <xref:System.Windows.Forms.Button> contrôler à partir de la **boîte à outils** dans la cellule supérieure gauche de la <xref:System.Windows.Forms.TableLayoutPanel> contrôle.</span><span class="sxs-lookup"><span data-stu-id="9097c-109">Drag a <xref:System.Windows.Forms.Button> control from the **Toolbox** into the upper-left cell of the <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span>  
-  
-3. <span data-ttu-id="9097c-110">Définir le <xref:System.Windows.Forms.Button> du contrôle **ColumnSpan** propriété **2**.</span><span class="sxs-lookup"><span data-stu-id="9097c-110">Set the <xref:System.Windows.Forms.Button> control's **ColumnSpan** property to **2**.</span></span> <span data-ttu-id="9097c-111">Notez que le <xref:System.Windows.Forms.Button> contrôle s’étend sur les première et deuxième colonnes.</span><span class="sxs-lookup"><span data-stu-id="9097c-111">Note that the <xref:System.Windows.Forms.Button> control spans the first and second columns.</span></span>  
-  
-4. <span data-ttu-id="9097c-112">Définir le <xref:System.Windows.Forms.Button> du contrôle **RowSpan** propriété **2**.</span><span class="sxs-lookup"><span data-stu-id="9097c-112">Set the <xref:System.Windows.Forms.Button> control's **RowSpan** property to **2**.</span></span> <span data-ttu-id="9097c-113">Notez que le <xref:System.Windows.Forms.Button> contrôle s’étend sur les première et deuxième lignes.</span><span class="sxs-lookup"><span data-stu-id="9097c-113">Note that the <xref:System.Windows.Forms.Button> control spans the first and second rows.</span></span>  
-  
-5. <span data-ttu-id="9097c-114">Définir le <xref:System.Windows.Forms.Button> du contrôle **ColumnSpan** propriété **1**.</span><span class="sxs-lookup"><span data-stu-id="9097c-114">Set the <xref:System.Windows.Forms.Button> control's **ColumnSpan** property to **1**.</span></span> <span data-ttu-id="9097c-115">Notez que le <xref:System.Windows.Forms.Button> contrôle se déplace dans la première colonne et couvre les première et deuxième lignes.</span><span class="sxs-lookup"><span data-stu-id="9097c-115">Note that the <xref:System.Windows.Forms.Button> control moves into the first column and spans the first and second rows.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="9097c-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9097c-116">See also</span></span>
+# <a name="how-to-span-rows-and-columns-in-a-tablelayoutpanel-control"></a><span data-ttu-id="9cf2c-102">Procédure : étendre des lignes et des colonnes dans un contrôle TableLayoutPanel</span><span class="sxs-lookup"><span data-stu-id="9cf2c-102">How to: Span Rows and Columns in a TableLayoutPanel Control</span></span>
+<span data-ttu-id="9cf2c-103">Les contrôles d' <xref:System.Windows.Forms.TableLayoutPanel> un contrôle peuvent couvrir des lignes et des colonnes adjacentes.</span><span class="sxs-lookup"><span data-stu-id="9cf2c-103">Controls in a <xref:System.Windows.Forms.TableLayoutPanel> control can span adjacent rows and columns.</span></span>
 
-- [<span data-ttu-id="9097c-117">TableLayoutPanel, contrôle</span><span class="sxs-lookup"><span data-stu-id="9097c-117">TableLayoutPanel Control</span></span>](tablelayoutpanel-control-windows-forms.md)
+## <a name="to-span-columns-and-rows"></a><span data-ttu-id="9cf2c-104">Pour étendre les colonnes et les lignes</span><span class="sxs-lookup"><span data-stu-id="9cf2c-104">To span columns and rows</span></span>
+
+1. <span data-ttu-id="9cf2c-105">Faites glisser un contrôle <xref:System.Windows.Forms.TableLayoutPanel> de la **boîte à outils** vers le formulaire.</span><span class="sxs-lookup"><span data-stu-id="9cf2c-105">Drag a <xref:System.Windows.Forms.TableLayoutPanel> control from the **Toolbox** onto your form.</span></span>
+
+2. <span data-ttu-id="9cf2c-106">Faites glisser <xref:System.Windows.Forms.Button> un contrôle de la **boîte à outils** vers la cellule supérieure <xref:System.Windows.Forms.TableLayoutPanel> gauche du contrôle.</span><span class="sxs-lookup"><span data-stu-id="9cf2c-106">Drag a <xref:System.Windows.Forms.Button> control from the **Toolbox** into the upper-left cell of the <xref:System.Windows.Forms.TableLayoutPanel> control.</span></span>
+
+3. <span data-ttu-id="9cf2c-107">Affectez <xref:System.Windows.Forms.Button> à la propriété **ColumnSpan** du contrôle la valeur **2**.</span><span class="sxs-lookup"><span data-stu-id="9cf2c-107">Set the <xref:System.Windows.Forms.Button> control's **ColumnSpan** property to **2**.</span></span> <span data-ttu-id="9cf2c-108">Notez que le <xref:System.Windows.Forms.Button> contrôle s’étend sur la première et la deuxième colonne.</span><span class="sxs-lookup"><span data-stu-id="9cf2c-108">Note that the <xref:System.Windows.Forms.Button> control spans the first and second columns.</span></span>
+
+4. <span data-ttu-id="9cf2c-109">Affectez <xref:System.Windows.Forms.Button> à la propriété **RowSpan** du contrôle la valeur **2**.</span><span class="sxs-lookup"><span data-stu-id="9cf2c-109">Set the <xref:System.Windows.Forms.Button> control's **RowSpan** property to **2**.</span></span> <span data-ttu-id="9cf2c-110">Notez que le <xref:System.Windows.Forms.Button> contrôle s’étend sur la première et la deuxième ligne.</span><span class="sxs-lookup"><span data-stu-id="9cf2c-110">Note that the <xref:System.Windows.Forms.Button> control spans the first and second rows.</span></span>
+
+5. <span data-ttu-id="9cf2c-111">Affectez <xref:System.Windows.Forms.Button> à la propriété **ColumnSpan** du contrôle la valeur **1**.</span><span class="sxs-lookup"><span data-stu-id="9cf2c-111">Set the <xref:System.Windows.Forms.Button> control's **ColumnSpan** property to **1**.</span></span> <span data-ttu-id="9cf2c-112">Notez que le <xref:System.Windows.Forms.Button> contrôle se déplace dans la première colonne et s’étend sur la première et la deuxième ligne.</span><span class="sxs-lookup"><span data-stu-id="9cf2c-112">Note that the <xref:System.Windows.Forms.Button> control moves into the first column and spans the first and second rows.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="9cf2c-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="9cf2c-113">See also</span></span>
+
+- [<span data-ttu-id="9cf2c-114">TableLayoutPanel, contrôle</span><span class="sxs-lookup"><span data-stu-id="9cf2c-114">TableLayoutPanel Control</span></span>](tablelayoutpanel-control-windows-forms.md)
