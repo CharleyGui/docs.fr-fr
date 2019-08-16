@@ -1,25 +1,25 @@
 ---
 title: Tranches (F#)
-description: En savoir plus sur l’utilisation des tranches pour existant F# types de données et comment définir vos propres sections pour les autres types de données.
+description: Découvrez comment utiliser des tranches pour les types F# de données existants et comment définir vos propres tranches pour d’autres types de données.
 ms.date: 01/22/2019
-ms.openlocfilehash: 1d8bb029ad18c8853ab58888959967ed279fb368
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3067982c2b4249312c7e9365bbfb994be840911d
+ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61925986"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68627149"
 ---
-# <a name="slices"></a>Tranches
+# <a name="slices"></a>Sections
 
-Dans F#, une tranche est un sous-ensemble d’un type de données. Pour être en mesure de prendre une tranche à partir d’un type de données, le type de données doit définir soit un `GetSlice` méthode ou dans un [tapez extension](type-extensions.md) qui est dans la portée. Cet article explique comment prendre des tranches d’existant F# types et comment définir les vôtres.
+Dans F#, une tranche est un sous-ensemble d’un type de données. Pour pouvoir prendre une tranche d’un type de données, le type de données doit définir une `GetSlice` méthode ou dans une extension de [type](type-extensions.md) qui se trouve dans la portée. Cet article explique comment prendre des tranches de types F# existants et comment définir les vôtres.
 
-Les tranches sont similaires aux [indexeurs](members/indexed-properties.md), mais au lieu de donner une valeur unique à partir de la structure de données sous-jacente, ils produisent plusieurs.
+Les tranches sont similaires aux [indexeurs](./members/indexed-properties.md), mais au lieu de produire une valeur unique à partir de la structure de données sous-jacente, elles produisent plusieurs valeurs.
 
-F#n’a actuellement une prise en charge intrinsèque pour le découpage des chaînes, des listes, des tableaux et des tableaux 2D.
+F#prend actuellement en charge la découpage des chaînes, des listes, des tableaux et des tableaux 2D.
 
-## <a name="basic-slicing-with-f-lists-and-arrays"></a>Segmentation de base avec F# listes et des tableaux
+## <a name="basic-slicing-with-f-lists-and-arrays"></a>Découpage de F# base avec des listes et des tableaux
 
-Types de données les plus courants sont découpées sont F# listes et des tableaux. L’exemple suivant montre comment effectuer cette opération avec des listes :
+Les types de données les plus courants qui sont découpés sont F# des listes et des tableaux. L’exemple suivant montre comment effectuer cette opération avec des listes:
 
 ```fsharp
 // Generate a list of 100 integers
@@ -38,7 +38,7 @@ let unboundedEnd = fullList.[94..]
 printfn "Unbounded end slice: %A" unboundedEnd
 ```
 
-Tableaux de découpage s’apparente à découpage des listes :
+Le découpage de tableaux se présente comme des listes de découpage:
 
 ```fsharp
 // Generate an array of 100 integers
@@ -59,9 +59,9 @@ printfn "Unbounded end slice: %A" unboundedEnd
 
 ## <a name="slicing-multidimensional-arrays"></a>Découpage de tableaux multidimensionnels
 
-F#prend en charge les tableaux multidimensionnels dans le F# bibliothèque principale. Comme avec les tableaux unidimensionnels, les tranches de tableaux multidimensionnels peuvent également être utiles. Toutefois, l’introduction des dimensions supplémentaires impose une syntaxe légèrement différente afin que vous puissiez prendre les tranches de lignes et colonnes spécifiques.
+F#prend en charge les tableaux multidimensionnels F# dans la bibliothèque principale. Comme avec les tableaux unidimensionnels, les secteurs des tableaux multidimensionnels peuvent également être utiles. Toutefois, l’introduction de dimensions supplémentaires impose une syntaxe légèrement différente pour vous permettre de prendre des tranches de lignes et de colonnes spécifiques.
 
-Les exemples suivants montrent comment segmenter un tableau 2D :
+Les exemples suivants montrent comment découper un tableau 2D:
 
 ```fsharp
 // Generate a 3x3 2D matrix
@@ -89,13 +89,13 @@ let twoByTwo = A.[0..1,0..1]
 printfn "%A" twoByTwo
 ```
 
-Le F# ne définit pas de bibliothèque principale `GetSlice`pour les tableaux 3D. Si vous souhaitez découper ceux ou autres tableaux de plusieurs dimensions, vous devez définir le `GetSlice` membre vous-même.
+La F# bibliothèque principale n’est pas `GetSlice`définie pour les tableaux 3D. Si vous souhaitez découper ces tableaux ou d’autres dimensions, vous devez définir le `GetSlice` membre vous-même.
 
-## <a name="defining-slices-for-other-data-structures"></a>Définition des tranches pour les autres structures de données
+## <a name="defining-slices-for-other-data-structures"></a>Définition de tranches pour d’autres structures de données
 
-Le F# bibliothèque principale définit les tranches pour un ensemble limité de types. Si vous souhaitez définir des coupes de plusieurs types de données, vous pouvez le faire dans la définition de type ou dans une extension de type.
+La F# bibliothèque principale définit des tranches pour un ensemble limité de types. Si vous souhaitez définir des tranches pour davantage de types de données, vous pouvez le faire soit dans la définition de type elle-même, soit dans une extension de type.
 
-Par exemple, voici comment vous pouvez définir des tranches pour la <xref:System.ArraySegment%601> classe permettant d’autoriser pour la manipulation des données pratique :
+Par exemple, voici comment vous pouvez définir des secteurs pour la <xref:System.ArraySegment%601> classe afin de faciliter la manipulation de données:
 
 ```fsharp
 open System
@@ -110,9 +110,9 @@ let arr = ArraySegment [| 1 .. 10 |]
 let slice = arr.[2..5] //[ 3; 4; 5]
 ```
 
-### <a name="use-inlining-to-avoid-boxing-if-it-is-necessary"></a>Utilisez cette fonctionnalité pour éviter le boxing s’il est nécessaire
+### <a name="use-inlining-to-avoid-boxing-if-it-is-necessary"></a>Utilisez l’incorporation pour éviter le boxing si nécessaire.
 
-Si vous définissez des tranches pour un type qui est en fait un struct, il est recommandé que vous `inline` le `GetSlice` membre. Le F# compilateur optimise les arguments facultatifs, en évitant les allocations de tas à la suite de découpage. Cela est extrêmement important de découpage tel que les constructions <xref:System.Span%601> qui ne peut pas être alloué sur le tas.
+Si vous définissez des tranches pour un type qui est en fait un struct, nous vous recommandons `inline` d' `GetSlice` utiliser le membre. Le F# compilateur optimise les arguments facultatifs, évitant ainsi toute allocation de tas résultant du découpage. Cela est très important pour les constructions de découpage, <xref:System.Span%601> telles que, qui ne peuvent pas être allouées sur le tas.
 
 ```fsharp
 open System
@@ -137,4 +137,4 @@ printSpan sp.[1..2] // |2; 3|]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Propriétés indexées](members/indexed-properties.md)
+- [Propriétés indexées](./members/indexed-properties.md)
