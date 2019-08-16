@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, namespaces
 - namespaces [C#]
 ms.assetid: b1c4ab46-3fad-4ffa-9deb-dd50a2d8c65a
-ms.openlocfilehash: 79b7057b1f6a9cdba2215124160b28efb9a1c0be
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: cf5a7f239cf7d3cd3a6e39f31d16adb830646afc
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629522"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039495"
 ---
 # <a name="namespaces-c-programming-guide"></a>Espaces de noms (Guide de programmation C#)
 
@@ -42,15 +42,14 @@ Les espaces de noms ont les propriétés suivantes :
 - La directive `using` évite de devoir spécifier le nom de l’espace de noms pour chaque classe.  
 - L’espace de noms `global` est l’espace de noms « racine » : `global::System` fait toujours référence à l’espace de noms <xref:System> .NET.  
 
-## <a name="c-language-specification"></a>Spécification du langage C#
+## <a name="c-language-specification"></a>spécification du langage C#
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+Pour plus d’informations, voir la section [Espace de noms](~/_csharplang/spec/namespaces.md) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
 - [Utilisation d’espaces de noms](using-namespaces.md)
-- [Guide pratique pour utiliser l’alias d’espace de noms global](how-to-use-the-global-namespace-alias.md)
 - [Guide pratique pour utiliser l’espace de noms My](how-to-use-the-my-namespace.md)
 - [Noms d’identificateur](../inside-a-program/identifier-names.md)
 - [using, directive](../../language-reference/keywords/using-directive.md)
