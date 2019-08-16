@@ -7,12 +7,12 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: 099d6b94f9094ac9baed25e5060d8a166e27573b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: bcd0a11aef2372cc6e5830892eb3b71fa841ba2f
+ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629923"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69545255"
 ---
 # <a name="globalization-for-wpf"></a>Globalisation pour WPF
 Cette rubrique présente les problèmes que vous devez connaître lors de l' [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] écriture d’applications pour le marché mondial. Les éléments de programmation de la globalisation `System.Globalization`sont définis dans [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] dans.
@@ -123,9 +123,9 @@ L’exemple suivant montre une référence de caractère hexadécimale. Notez qu
 
 - Sinhala
 
- Tous les moteurs de système d' [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] écriture prennent en charge les polices. [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)]les polices peuvent inclure [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] les tableaux de disposition qui permettent aux créateurs de polices de concevoir de meilleures polices typographiques internationales et haut de gamme. Les [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] tableaux de disposition des polices contiennent des informations sur les substitutions de glyphe, le positionnement des glyphes, la justification et le positionnement de la ligne de base, ce qui permet aux applications de traitement de texte d’améliorer la disposition du texte.
+ Tous les moteurs de système d’écriture prennent en charge les polices OpenType. Les polices OpenType peuvent inclure les tableaux de disposition OpenType qui permettent aux créateurs de polices de concevoir de meilleures polices typographiques internationales et haut de gamme. Les tableaux de disposition des polices OpenType contiennent des informations sur les substitutions de glyphe, le positionnement des glyphes, la justification et le positionnement de la ligne de base, ce qui permet aux applications de traitement de texte d’améliorer la disposition du texte.
 
- [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)]les polices permettent de gérer des jeux de glyphes volumineux à l’aide [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)] de l’encodage. Cet encodage est largement pris en charge au niveau international, comme les variantes de glyphes typographiques.
+ Les polices OpenType permettent de gérer des jeux de glyphes volumineux à l’aide de l' [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)] encodage. Cet encodage est largement pris en charge au niveau international, comme les variantes de glyphes typographiques.
 
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]le rendu du texte est alimenté par la technologie de sous-pixel ClearType de Microsoft qui prend en charge l’indépendance de la résolution. La lisibilité est ainsi considérablement améliorée et les documents haute qualité de style magazine peuvent être pris en charge pour tous les scripts.
 

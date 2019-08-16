@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-ms.openlocfilehash: 5f3560c899373b9835e2ead79590cf73777b2375
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 7c83cfa22770695861b07e3bff29a38fcd125dd2
+ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972404"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69545235"
 ---
 # <a name="typography-in-wpf"></a>Typographie dans WPF
-Cette rubrique présente les principales fonctionnalités typographiques de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Ces fonctionnalités incluent l’amélioration de la qualité et des performances de rendu de texte, une prise en charge de la typographie [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)], un texte international amélioré, une prise en charge de police améliorée et de nouvelles interfaces de programmation d’applications (API, Application Programming Interface) texte.  
+Cette rubrique présente les principales fonctionnalités typographiques de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Ces fonctionnalités incluent une amélioration de la qualité et des performances du rendu du texte, de la prise en charge de typographie OpenType, du texte international amélioré, de la prise en charge améliorée des polices et des nouvelles interfaces de programmation d’applications (API) de texte.  
   
 <a name="Improved_Quality_and_Performance_of_Text"></a>   
 ## <a name="improved-quality-and-performance-of-text"></a>Amélioration de la qualité et des performances du texte  
@@ -29,9 +29,9 @@ Texte avec anticrénelage ClearType dans la direction y
   
 <a name="Rich_Typography"></a>   
 ## <a name="rich-typography"></a>Typographie riche  
- Le format de police [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] est une extension du format de police [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)]. Le format de police [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)], développé conjointement par [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] et Adobe, offre un large éventail de fonctionnalités typographiques avancées. L' <xref:System.Windows.Documents.Typography> objet expose un grand nombre des fonctionnalités avancées [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] des polices, telles que les remplaçants stylistiques et les paraphes. Le SDK Windows fournit un ensemble d’exemples [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] de polices conçus avec des fonctionnalités riches, telles que les polices Pericles et Pescadero. Pour plus d’informations, consultez [Exemple de pack de polices OpenType](sample-opentype-font-pack.md).  
+ Le format de police OpenType est une extension du [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] format de police. Le format de police OpenType a été développé [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] conjointement par et Adobe, et offre un large éventail de fonctionnalités typographiques avancées. L' <xref:System.Windows.Documents.Typography> objet expose un grand nombre des fonctionnalités avancées des polices OpenType, telles que les remplaçants stylistiques et les paraphes. Le SDK Windows fournit un ensemble d’exemples de polices OpenType conçues avec des fonctionnalités riches, telles que les polices Pericles et Pescadero. Pour plus d’informations, consultez [Exemple de pack de polices OpenType](sample-opentype-font-pack.md).  
   
- La police [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)] Pericles contient des glyphes supplémentaires qui représentent des variantes stylistiques au jeu de glyphes standard. Le texte suivant présente des glyphes de style alternatif.  
+ La police OpenType Pericles contient des glyphes supplémentaires qui fournissent des variantes stylistiques à l’ensemble de glyphes standard. Le texte suivant présente des glyphes de style alternatif.  
   
  ![Texte utilisant] des glyphes de style alternatif OpenType (./media/typography-in-wpf/opentype-stylistic-alternate-glyphs.gif "Texte utilisant") des glyphes de style alternatif OpenType  
   
@@ -39,7 +39,7 @@ Texte avec anticrénelage ClearType dans la direction y
   
  ![Texte utilisant des glyphes standard et ornés OpenType](./media/typography-in-wpf/opentype-standard-swash-glyphs.gif "Texte utilisant des glyphes standard et ornés OpenType")  
   
- Pour plus d’informations sur les fonctionnalités [!INCLUDE[TLA2#tla_opentype](../../../../includes/tla2sharptla-opentype-md.md)], consultez [Fonctionnalités des polices OpenType](opentype-font-features.md).  
+ Pour plus d’informations sur les fonctionnalités OpenType, consultez [caractéristiques des polices OpenType](opentype-font-features.md).  
   
 <a name="Enhanced_International_Text_Support"></a>   
 ## <a name="enhanced-international-text-support"></a>Prise en charge améliorée du texte international  

@@ -8,15 +8,15 @@ helpviewer_keywords:
 - text [WPF], typography
 - typography [WPF]
 ms.assetid: e4ef38db-b7d1-4bda-87ab-8bb738440ddc
-ms.openlocfilehash: 144b137550ff44a8ea4927e6cf611d4761fcb01a
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: bbefaba4491fca1b21b6a214048d9db1394c4bc7
+ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629612"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69545335"
 ---
 # <a name="typography"></a>Typographie
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]prend en charge la présentation enrichie de contenu de texte. Le texte [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans est rendu à l’aide de Microsoft ClearType, qui améliore la clarté et la lisibilité du texte. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]prend également [!INCLUDE[TLA#tla_opentype](../../../../includes/tlasharptla-opentype-md.md)] en charge les polices, qui fournissent des fonctionnalités supplémentaires au [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] -delà de celles définies par le format.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]prend en charge la présentation enrichie de contenu de texte. Le texte [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans est rendu à l’aide de Microsoft ClearType, qui améliore la clarté et la lisibilité du texte. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]prend également en charge les polices OpenType, qui fournissent des fonctionnalités supplémentaires au [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] -delà de celles définies par le format.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Typographie dans WPF](typography-in-wpf.md)  
