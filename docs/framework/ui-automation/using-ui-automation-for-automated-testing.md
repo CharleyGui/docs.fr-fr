@@ -6,12 +6,12 @@ helpviewer_keywords:
 - testing, UI Automation
 - UI Automation, automated testing
 ms.assetid: 3a0435c0-a791-4ad7-ba92-a4c1d1231fde
-ms.openlocfilehash: 47cba2344071ecf9b85f4b0235e02ea88deb6498
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 3fb5d1107a2dacdc4dfd2210322c312becdfd90b
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710240"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69566944"
 ---
 # <a name="using-ui-automation-for-automated-testing"></a>Utilisation d'UI Automation pour des tests automatisés
 > [!NOTE]
@@ -103,7 +103,7 @@ ms.locfileid: "68710240"
 ## <a name="related-tools-and-technologies"></a>Outils et technologies associés  
  Plusieurs outils et technologies associés prennent en charge les tests automatisés avec [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   
-- Inspect. exe est une application d’interface graphique utilisateur (GUI) qui peut être utilisée pour [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] collecter des informations pour le développement et le débogage du fournisseur et du client. Inspect. exe est inclus dans le [!INCLUDE[TLA#tla_winfxsdk](../../../includes/tlasharptla-winfxsdk-md.md)].  
+- Inspect. exe est une application d’interface graphique utilisateur (GUI) qui peut être utilisée pour [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] collecter des informations pour le développement et le débogage du fournisseur et du client. Inspect. exe est inclus dans le SDK Windows.  
   
 - MSAABridge expose [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] des informations aux clients Active Accessibility. L’objectif principal du pontage [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] à Active Accessibility est d’autoriser les clients Active Accessibility existants à interagir avec n’importe quel Framework implémenté. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]  
   

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 619ecf1c-1ca5-4d66-8934-62fe7aad78c6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f046341b1b02c3552ecf8db7d38d2a0c7bc74fba
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 440debe875a0d00d240849ba4b60b548f46e2c0e
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306369"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567047"
 ---
 # <a name="serialization-and-metadata"></a>Sérialisation et métadonnées
 
@@ -39,7 +39,7 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
   
 ### <a name="typeof-used-in-the-constructor"></a>typeof utilisé dans le constructeur
 
- Si vous appelez un constructeur de ces classes de sérialisation et inclure le C# [typeof](~/docs/csharp/language-reference/operators/type-testing-and-conversion-operators.md#typeof-operator) opérateur dans l’appel de méthode **vous n’êtes pas obligé de faire de plus**. Par exemple, dans chacun des appels suivants d'un constructeur de classe de sérialisation, le mot clé `typeof` est utilisé dans le cadre de l'expression passée au constructeur.  
+ Si vous appelez un constructeur de ces classes de sérialisation et incluez C# l’opérateur [typeof](~/docs/csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator) dans l’appel de méthode, **vous n’avez pas à effectuer d’autres tâches**. Par exemple, dans chacun des appels suivants d'un constructeur de classe de sérialisation, le mot clé `typeof` est utilisé dans le cadre de l'expression passée au constructeur.  
   
  [!code-csharp[ProjectN#5](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#5)]  
   
@@ -47,7 +47,7 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
   
 ### <a name="typeof-used-outside-the-constructor"></a>typeof utilisé à l'extérieur du constructeur
 
- Si vous appelez un constructeur de ces classes de sérialisation et que vous utilisez le C# [typeof](~/docs/csharp/language-reference/operators/type-testing-and-conversion-operators.md#typeof-operator) opérateur en dehors de l’expression fournie pour le constructeur <xref:System.Type> paramètre, comme dans le code suivant, le compilateur .NET Native Impossible de résoudre le type :  
+ Si vous appelez un constructeur de ces classes de sérialisation et que vous C# utilisez l’opérateur [typeof](~/docs/csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator) en dehors de l’expression fournie <xref:System.Type> au paramètre du constructeur, comme dans le code suivant, le compilateur .net Native ne peut pas résoudre le type:  
   
  [!code-csharp[ProjectN#6](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#6)]  
   
@@ -57,7 +57,7 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
 <Type Name="DataSet" Browse="Required Public" />  
 ```  
   
- De même, si vous appelez un constructeur tel que <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Type%5B%5D%29?displayProperty=nameWithType> et fournir un tableau d’autres <xref:System.Type> objets à sérialiser, comme dans le code suivant, le compilateur .NET Native ne peut pas résoudre ces types.  
+ De même, si vous appelez un constructeur tel que <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Type%5B%5D%29?displayProperty=nameWithType> et que vous fournissez un <xref:System.Type> tableau d’objets supplémentaires à sérialiser, comme dans le code suivant, le compilateur .net Native ne peut pas résoudre ces types.  
   
  [!code-csharp[ProjectN#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#7)]  
   
@@ -73,5 +73,5 @@ Si votre application sérialise et désérialise des objets, vous devrez peut-ê
 
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
 - [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md)
-- [\<Type > élément](../../../docs/framework/net-native/type-element-net-native.md)
+- [\<Type >, élément](../../../docs/framework/net-native/type-element-net-native.md)
 - [\<Namespace>, élément](../../../docs/framework/net-native/namespace-element-net-native.md)

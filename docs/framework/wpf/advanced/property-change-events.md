@@ -13,18 +13,18 @@ helpviewer_keywords:
 - identifying changed property events [WPF]
 - property triggers [WPF], definition of
 ms.assetid: 0a7989df-9674-4cc1-bc50-5d8ef5d9c055
-ms.openlocfilehash: f8d0d5e65101ffda0edaaeabdea2870287ba0f1f
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 06056b492439531aa60becbb7bca250a439bfb68
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400841"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567427"
 ---
 # <a name="property-change-events"></a>Événements de changement de propriété
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] définit plusieurs événements déclenchés en réponse au changement de la valeur d’une propriété. Souvent, la propriété est une propriété de dépendance. L’événement lui-même est parfois un événement routé et est parfois un événement de common language runtime standard (CLR). La définition de l’événement varie selon le scénario, car certains changements de propriété sont routés de façon plus appropriée à travers une arborescence d’éléments, tandis que d’autres changements de propriété ne concernent en général que l’objet sur lequel la propriété a changé.  
   
 ## <a name="identifying-a-property-change-event"></a>Identification d’un événement de changement de propriété  
- Les événements qui signalent un changement de propriété ne sont pas tous explicitement identifiés comme événement de changement de propriété, selon le modèle de signature ou le modèle de renommage. En règle générale, la description de l’événement dans la documentation du [!INCLUDE[TLA#tla_sdk](../../../../includes/tlasharptla-sdk-md.md)] indique si l’événement est directement lié à un changement de valeur de propriété et fournit des références croisées entre la propriété et l’événement.  
+ Les événements qui signalent un changement de propriété ne sont pas tous explicitement identifiés comme événement de changement de propriété, selon le modèle de signature ou le modèle de renommage. En règle générale, la description de l’événement dans la documentation du kit de développement logiciel (SDK) indique si l’événement est directement lié à une modification de valeur de propriété et fournit des références croisées entre la propriété et l’événement.  
   
 ### <a name="routedpropertychanged-events"></a>Événements RoutedPropertyChanged  
  Certains événements utilisent un type de données d’événement et un délégué destinés explicitement aux événements de changement de propriété. Le type de données d' <xref:System.Windows.RoutedPropertyChangedEventArgs%601>événement est, et le <xref:System.Windows.RoutedPropertyChangedEventHandler%601>délégué est. Les données d’événement et le délégué ont tous deux un paramètre de type générique utilisé pour spécifier le type réel de la propriété changée quand vous définissez le gestionnaire. Les données d’événement contiennent deux propriétés <xref:System.Windows.RoutedPropertyChangedEventArgs%601.OldValue%2A> , <xref:System.Windows.RoutedPropertyChangedEventArgs%601.NewValue%2A>et, qui sont à la fois passées comme argument de type dans les données d’événement.  
