@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
-ms.openlocfilehash: 8d30b7b98648e36a3008ac015f9560620f77b363
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: df2a99b6fe288cfa8b8a5d60bb127849323ed3a9
+ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64751821"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69545324"
 ---
 # <a name="tutorial-create-a-windows-service-app"></a>Tutoriel : Créer une application de service Windows
 
@@ -37,7 +37,7 @@ Pour commencer, créez le projet et définissez les valeurs nécessaires au fonc
 
 3. Dans **Nom**, entrez *MyNewService*, puis sélectionnez **OK**.
 
-   L’onglet **Conception** apparaît (**Service1.cs [Conception]** ou **Service1.vb [Conception]**).
+   L’onglet **Conception** apparaît (**Service1.cs [Conception]** ou **Service1.vb [Conception]** ).
 
    Le modèle de projet inclut une classe Component appelée `Service1` qui hérite de <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>. Elle contient une grande partie du code de service de base, comme le code pour démarrer le service.
 
@@ -67,7 +67,7 @@ Dans cette section, vous ajoutez un journal des événements personnalisé au se
 
 1. Dans l’**Explorateur de solutions**, dans le menu contextuel de **MyNewService.cs** ou **MyNewService.vb**, choisissez **Concepteur de vues**.
 
-2. Dans **Boîte à outils**, développez **Composants**, puis faites glisser le composant **EventLog** vers l’onglet **Service1.cs [Conception]** ou  **Service1.vb [Conception]**.
+2. Dans **Boîte à outils**, développez **Composants**, puis faites glisser le composant **EventLog** vers l’onglet **Service1.cs [Conception]** ou  **Service1.vb [Conception]** .
 
 3. Dans l’**Explorateur de solutions**, dans le menu contextuel de **MyNewService.cs** ou **MyNewService.vb**, choisissez **Afficher le code**.
 
@@ -162,7 +162,7 @@ Pour configurer un mécanisme d’interrogation simple, utilisez le composant <x
    Private eventId As Integer = 1
    ```
 
-Au lieu d’exécuter tout votre travail sur le thread principal, vous pouvez exécuter des tâches à l’aide de threads de travail en arrière-plan. Pour plus d'informations, consultez <xref:System.ComponentModel.BackgroundWorker?displayProperty=fullName>.
+Au lieu d’exécuter tout votre travail sur le thread principal, vous pouvez exécuter des tâches à l’aide de threads de travail en arrière-plan. Pour plus d’informations, consultez <xref:System.ComponentModel.BackgroundWorker?displayProperty=fullName>.
 
 ### <a name="define-what-occurs-when-the-service-is-stopped"></a>Définir les actions à effectuer lors de l'arrêt du service
 
@@ -249,7 +249,7 @@ Vous pouvez implémenter les paramètres d’état SERVICE_START_PENDING et SERV
     ```
 
     > [!NOTE]
-    > Le Gestionnaire de contrôle des services utilise les membres `dwWaitHint` et `dwCheckpoint` de la [structure SERVICE_STATUS](/windows/desktop/api/winsvc/ns-winsvc-_service_status) pour déterminer le délai d’attente avant le démarrage ou l’arrêt d’un service Windows. Si l’exécution de vos méthodes `OnStart` et `OnStop` est longue, votre service peut demander plus de temps en appelant à nouveau `SetServiceStatus` avec une valeur `dwCheckPoint` incrémentée.
+    > Le Gestionnaire de contrôle des services utilise les membres `dwWaitHint` et `dwCheckpoint` de la [structure SERVICE_STATUS](/windows/win32/api/winsvc/ns-winsvc-service_status) pour déterminer le délai d’attente avant le démarrage ou l’arrêt d’un service Windows. Si l’exécution de vos méthodes `OnStart` et `OnStop` est longue, votre service peut demander plus de temps en appelant à nouveau `SetServiceStatus` avec une valeur `dwCheckPoint` incrémentée.
 
 3. Dans la classe `MyNewService`, déclarez la fonction [SetServiceStatus](/windows/desktop/api/winsvc/nf-winsvc-setservicestatus) à l’aide d’un [appel de code non managé](../interop/consuming-unmanaged-dll-functions.md) :
 
@@ -482,7 +482,7 @@ Maintenant que vous avez généré le service Windows, vous pouvez l'installer. 
 
     Si le service s’installe correctement, la commande signale une réussite.
 
-    Si le système ne trouve pas *installutil.exe*, vérifiez qu’il existe sur votre ordinateur. Cet outil est installé avec le .NET Framework dans le dossier *%windir%\Microsoft.NET\Framework[64]\\&lt;version du framework&gt;*. Par exemple, le chemin par défaut pour la version 64 bits est *%windir%\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe*.
+    Si le système ne trouve pas *installutil.exe*, vérifiez qu’il existe sur votre ordinateur. Cet outil est installé avec le .NET Framework dans le dossier *%windir%\Microsoft.NET\Framework[64]\\&lt;version du framework&gt;* . Par exemple, le chemin par défaut pour la version 64 bits est *%windir%\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe*.
 
     Si le processus **installutil.exe** échoue, examinez le journal d’installation pour en connaître la raison. Par défaut, le journal se trouve dans le même dossier que l’exécutable du service. L’installation peut échouer si :
     - La classe <xref:System.ComponentModel.RunInstallerAttribute> n’est pas présente sur la classe `ProjectInstaller`.
@@ -538,11 +538,11 @@ Si vous n’avez plus besoin de l’application de service Windows, vous pouvez 
 
 Maintenant que vous avez créé le service, vous pouvez :
 
-- Créer un programme d’installation autonome utilisable par d’autres personnes pour installer votre service Windows. Utiliser [WiX Toolset](http://wixtoolset.org/) pour créer un programme d’installation pour un service Windows. Pour d’autres idées, consultez [Créer un package de programme d’installation](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
+- Créer un programme d’installation autonome utilisable par d’autres personnes pour installer votre service Windows. Utiliser [WiX Toolset](https://wixtoolset.org/) pour créer un programme d’installation pour un service Windows. Pour d’autres idées, consultez [Créer un package de programme d’installation](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
 
 - Explorer le composant <xref:System.ServiceProcess.ServiceController>, qui vous permet d’envoyer des commandes au service que vous avez installé.
 
-- Au lieu de créer le journal des événements quand l’application s’exécute, utilisez un programme d’installation pour créer un journal des événements quand vous installez l’application. Le journal des événements est supprimé par le programme d’installation quand vous désinstallez l’application. Pour plus d'informations, consultez <xref:System.Diagnostics.EventLogInstaller>.
+- Au lieu de créer le journal des événements quand l’application s’exécute, utilisez un programme d’installation pour créer un journal des événements quand vous installez l’application. Le journal des événements est supprimé par le programme d’installation quand vous désinstallez l’application. Pour plus d’informations, consultez <xref:System.Diagnostics.EventLogInstaller>.
 
 ## <a name="see-also"></a>Voir aussi
 

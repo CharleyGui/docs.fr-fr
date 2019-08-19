@@ -2,21 +2,21 @@
 title: 'Procédure : Calculer des valeurs de colonnes dans un fichier texte CSV (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4747f37a-a198-4df2-8efe-5b0731e0ea27
-ms.openlocfilehash: 07fb81b474bd967d73dc9ff6a08e0c67e6ec0122
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 0bc212ab40bccf5612ef6dea85608c439d2105f4
+ms.sourcegitcommit: d98fdb087d9c8aba7d2cb93fe4b4ee35a2308cee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585790"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69012942"
 ---
 # <a name="how-to-compute-column-values-in-a-csv-text-file-linq-c"></a>Procédure : Calculer des valeurs de colonnes dans un fichier texte CSV (LINQ) (C#)
 Cet exemple montre comment effectuer des calculs d’agrégation tels que Sum, Average, Min et Max, avec les colonnes d’un fichier .csv. Les exemples de principes montrés ici sont applicables à d’autres types de texte structuré.  
   
-### <a name="to-create-the-source-file"></a>Pour créer le fichier source  
+## <a name="to-create-the-source-file"></a>Pour créer le fichier source  
   
 1. Copiez les lignes suivantes dans un fichier nommé scores.csv, puis enregistrez-le dans votre dossier de projet. Supposons que la première colonne contienne un ID d’étudiant et que les colonnes suivantes contiennent les résultats de quatre examens.  
   
-    ```  
+    ```csv
     111, 97, 92, 81, 60  
     112, 75, 84, 91, 39  
     113, 88, 94, 65, 91  
@@ -31,7 +31,7 @@ Cet exemple montre comment effectuer des calculs d’agrégation tels que Sum, A
     122, 94, 92, 91, 91  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
   
 ```csharp  
 class SumColumns  
@@ -159,7 +159,7 @@ class SumColumns
  La requête fonctionne à l’aide de la méthode <xref:System.String.Split%2A> pour convertir chaque ligne de texte en un tableau. Chaque élément du tableau représente une colonne. Enfin, le texte de chaque colonne est converti en sa représentation numérique. Si votre fichier est un fichier séparé par des tabulations, remplacez l’argument de la méthode `Split` par `\t`.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Créez un projet d’application console C#, avec des directives `using` pour les espaces de noms System.Linq et System.IO.  
+ Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.  
   
 ## <a name="see-also"></a>Voir aussi
 

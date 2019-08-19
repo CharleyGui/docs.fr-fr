@@ -10,12 +10,12 @@ helpviewer_keywords:
 - types [C#], explicit numeric conversions
 - type conversion [C#], explicit numeric
 ms.assetid: f3bb9e76-6b92-4df7-bc36-f866c24e1dfd
-ms.openlocfilehash: d1533872850a953a38800aaeac85b9e6e565d374
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 4dee46d075ea3d45d53ac0f64b539231188cf867
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661366"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69566319"
 ---
 # <a name="explicit-numeric-conversions-table-c-reference"></a>Tableau des conversions numériques explicites (référence C#)
 
@@ -68,7 +68,7 @@ Le tableau suivant indique les conversions explicites prédéfinies entre les ty
 
 - [Informations de référence sur C#](../index.md)
 - [Cast et conversions de types](../../programming-guide/types/casting-and-type-conversions.md)
-- [opérateur ()](../operators/type-testing-and-conversion-operators.md#cast-operator-)
+- [opérateur ()](../operators/type-testing-and-cast.md#cast-operator-)
 - [Types intégraux](../builtin-types/integral-numeric-types.md)
 - [Tableau des types à virgule flottante](../builtin-types/floating-point-numeric-types.md)
 - [Tableaux des types intégrés](built-in-types-table.md)

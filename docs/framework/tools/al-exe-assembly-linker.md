@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: b5382965-0053-47cf-b92f-862860275a01
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 87fcf4221dc5b334c6e9342c2aaac04a417a9f46
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: d75412394ce42f786da88f3d334853b99f266aca
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66832773"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567187"
 ---
 # <a name="alexe-assembly-linker"></a>Al.exe (Assembly Linker)
 
@@ -108,7 +108,7 @@ Le tableau suivant liste les erreurs générées par *Al.exe*.
 |al1015|Fichier de messages 'alinkui.dll' introuvable<br /><br /> *Al.exe* nécessite *Alinkui.dll*. Assurez-vous que ce fichier se trouve dans votre chemin d'accès. Si nécessaire, copiez-le à partir du CD du produit.|
 |al1016|Aucun fichier d'entrée valide n'a été spécifié.<br /><br /> *Al.exe* nécessite un ou plusieurs fichiers d’entrée qui n’ont pas d’informations sur l’assembly.|
 |al1017|Aucun nom de fichier cible n'a été spécifié.<br /><br /> L’option obligatoire **/out** spécifiant le nom du fichier cible est manquante.|
-|al1018|Impossible de charger le fichier requis 'fichier'<br /><br /> Certains fichiers DLL ne peuvent pas être chargés. Réinstallez Visual Studio ou le Kit de développement de logiciel (SDK) Windows.|
+|al1018|Impossible de charger le fichier requis 'fichier'<br /><br /> Certains fichiers DLL ne peuvent pas être chargés. Réinstallez Visual Studio ou le SDK Windows.|
 |AL1019|Échec des métadonnées pendant la création de l'assembly — raison<br /><br /> La génération de l'assembly a été interrompue pour la raison spécifiée. Par exemple, cette erreur se produit si un fichier que vous spécifiez avec l’option **/win32res** est introuvable.|
 |al1020|L'assembly inclus 'fichier' est ignoré<br /><br /> Un fichier d'entrée qui contenait un assembly a été spécifié. Les fichiers d’entrée *Al.exe* ne peuvent pas contenir d’assemblys.|
 |al1021|'paramètre' : substitution du paramètre précédent<br /><br /> Pour un paramètre particulier, un module avait une valeur, sans doute assignée par des attributs personnalisés, qui a été remplacée par une valeur passée à l’aide d’une option de ligne de commande *Al.exe*.|

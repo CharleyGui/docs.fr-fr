@@ -4,12 +4,12 @@ description: Découvrez les fonctionnalités de télémétrie de la CLI ML.NET, 
 ms.topic: conceptual
 ms.date: 05/05/2019
 ms.custom: ''
-ms.openlocfilehash: eab1e37d7d0d47251c4f92422730b105cf2db265
-ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
+ms.openlocfilehash: b9f6ccf7ff76f0cf4ce806f39909b7607a20b9f6
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433792"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567493"
 ---
 # <a name="telemetry-collection-by-the-mlnet-cli"></a>Collecte des données de télémétrie par la CLI ML.NET
 
@@ -36,7 +36,7 @@ La télémétrie *est activée* quand vous exécutez une [commande CLI ML.NET](.
 
 La fonctionnalité de télémétrie de la CLI ML.NET est activée par défaut.
 
-Pour la désactiver, affectez la valeur `1` ou `true` à la variable d’environnement `DOTNET_CLI_TELEMETRY_OPTOUT`. Cette variable d’environnement s’applique globalement à l’outil CLI .NET.
+Pour la désactiver, affectez la valeur `1` ou `true` à la variable d’environnement `MLDOTNET_CLI_TELEMETRY_OPTOUT`. Cette variable d’environnement s’applique globalement à l’outil CLI .NET.
 
 ## <a name="data-points-collected"></a>Points de données collectés
 

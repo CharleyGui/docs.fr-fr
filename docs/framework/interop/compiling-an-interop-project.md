@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 6fcf6588-5e25-41af-b4ae-780974f2c3df
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 153df821b0dacccdcbf279bd20bfb106580f3392
-ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
+ms.openlocfilehash: 37dda10a3dcbcb0968674e04292c5dc1a79be66f
+ms.sourcegitcommit: d98fdb087d9c8aba7d2cb93fe4b4ee35a2308cee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68733425"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69013000"
 ---
 # <a name="compiling-an-interop-project"></a>Compilation d'un projet d'interopérabilité
 
@@ -44,6 +44,6 @@ Les projets de COM Interop qui référencent un ou plusieurs assemblys contenant
 - [Exposition de composants COM au .NET Framework](exposing-com-components.md)
 - [Indépendance du langage et composants indépendants du langage](../../standard/language-independence-and-language-independent-components.md)
 - [Utilisation de types COM dans du code managé](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
-- [Procédure pas à pas : Incorporation de types provenant d’assemblys managés dans Visual Studio (C#)](/docs/csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)
-- [Procédure pas à pas : Incorporation de types provenant d’assemblys managés dans Visual Studio (Visual Basic)](/docs/visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-vs.md)
+- [Procédure pas à pas : Incorporation de types provenant d’assemblys managés dans Visual Studio (C#)](../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)
+- [Procédure pas à pas : Incorporation de types provenant d’assemblys managés dans Visual Studio (Visual Basic)](../../visual-basic/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-vs.md)
 - [Importation d'une bibliothèque de types sous la forme d'un assembly](importing-a-type-library-as-an-assembly.md)

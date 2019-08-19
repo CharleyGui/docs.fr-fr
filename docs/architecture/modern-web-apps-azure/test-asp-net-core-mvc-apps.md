@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 941c73f9a8b7b4c4336adfaec45775feec738f51
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 46c2e53540c3fd929ad2ad1c5e107b538edd5884
+ms.sourcegitcommit: d98fdb087d9c8aba7d2cb93fe4b4ee35a2308cee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68672876"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69038122"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Tester des applications ASP.NET Core MVC
 
@@ -33,32 +33,6 @@ Les tests unitaires, du fait qu’ils testent une seule unité de votre code, sa
 Même si vous avez la bonne idée d’encapsuler votre code qui interagit avec une infrastructure comme les bases de données et les systèmes de fichiers, il reste toujours une partie de ce code à tester. En outre, vous devez vérifier que les différentes couches de votre code interagissent comme prévu quand les dépendances de votre application sont entièrement résolues. Cet aspect est de la responsabilité des tests d’intégration. Les tests d’intégration sont généralement plus lents et plus difficiles à configurer que les tests unitaires, car ils dépendent souvent d’une infrastructure et de dépendances externes. Par conséquent, évitez d’utiliser des tests d’intégration pour tester des éléments qui peuvent l’être à l’aide de tests unitaires. Si vous pouvez tester un scénario donné avec un test unitaire, choisissez cette méthode. Si cela n’est pas possible, utilisez un test d’intégration.
 
 Les procédures de configuration et de désactivation (teardown) des tests d’intégration sont souvent plus complexes que pour les tests unitaires. Par exemple, un test d’intégration exécuté sur une base de données réelle doit avoir un moyen de rétablir la base de données à un état connu avant chaque nouveau test. À mesure que de nouveaux tests sont ajoutés et que le schéma de la base de données de production évolue, la taille et la complexité des scripts de test augmentent. Sur la plupart des grands systèmes, il est quasiment impossible d’exécuter des suites entières de tests d’intégration sur les stations de travail de développement avant d’enregistrer les modifications apportées dans le contrôle de code source partagé. Dans ces cas de figure, les tests d’intégration peuvent être exécutés sur un serveur de builds.
-
-La classe d’implémentation `LocalFileImageService` implémente la logique nécessaire pour récupérer et retourner les octets d’un fichier image à partir d’un dossier spécifique, avec un id donné :
-
-```csharp
-public class LocalFileImageService : IImageService
-{
-    private readonly IHostingEnvironment _env;
-    public LocalFileImageService(IHostingEnvironment env)
-    {
-        _env = env;
-    }
-    public byte[] GetImageBytesById(int id)
-    {
-        try
-        {
-            var contentRoot = _env.ContentRootPath + "//Pics";
-            var path = Path.Combine(contentRoot, id + ".png");
-            return File.ReadAllBytes(path);
-        }
-        catch (FileNotFoundException ex)
-        {
-            throw new CatalogImageMissingException(ex);
-        }
-    }
-}
-```
 
 ### <a name="functional-tests"></a>Tests fonctionnels
 
@@ -152,7 +126,7 @@ Il est difficile d’utiliser des tests unitaires pour tester cette méthode à 
 Si vous ne pouvez pas utiliser de tests unitaires pour tester directement le comportement du système de fichiers, et que vous ne pouvez pas tester l’itinéraire, que reste-t-il à tester ? En fait, après avoir refactorisé le code pour rendre les tests unitaires possibles, vous risquez de découvrir des cas de test et un comportement manquant, comme la gestion des erreurs. Que fait la méthode quand il manque un fichier ? Que doit-elle faire ? Dans cet exemple, la méthode refactorisée ressemble à ceci :
 
 ```csharp
-[HttpGet("[controller]/pic/{id}")\]
+[HttpGet("[controller]/pic/{id}")]
 public IActionResult GetImage(int id)
 {
     byte[] imageBytes;
