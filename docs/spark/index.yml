@@ -1,0 +1,33 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Documentation .NET pour Apache Spark
+metadata:
+  document_id: na
+  title: 'Documentation .NET pour Apache Spark-didacticiels, informations de référence sur les API'
+  meta.description: 'Learn how to use .NET for Apache Spark, the .NET bindings for Spark written on the Spark interop layer. You can process batches of data, real-time streams, machine learning, and ad-hoc query with Apache Spark anywhere you write .NET code.'
+  ms.prod: dotnet-spark
+  ms.topic: landing-page
+  ms.date: 05/17/2019
+  ms.author: mamccrea
+  author: mamccrea
+abstract:
+  description: 'Découvrez comment utiliser .NET pour Apache Spark, les liaisons .NET pour Spark écrites sur la couche Spark Interop. Vous pouvez traiter des lots de données, des flux en temps réel, des Machine Learning et des requêtes ad hoc avec Apache Spark où vous écrivez du code .NET. Des tutoriels, des exemples de code, des informations de référence sur les API et autre documentation vous montrent comment faire.'
+sections:
+  - title: Tutoriels pas à pas
+    items:
+      - type: paragraph
+        text: 'Donnez la puissance des Apache Spark à vos applications .NET:'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/dotnet/spark/tutorials/get-started">Prise en main de .NET pour Apache Spark</a>
+          - html: <a href="/dotnet/spark/tutorials/hdinsight-deployment">Déployer une application .NET pour Apache Spark sur Azure HDInsight</a>
+          - html: <a href="/dotnet/spark/tutorials/amazon-emr-spark-deployment">Déployer une application .NET pour Apache Spark sur Amazon le Spark</a>
+          - html: <a href="/dotnet/spark/tutorials/databricks-deployment">Déployer une application .NET pour Apache Spark sur Databricks</a>
+  - title: Informations de référence et ressources
+    items:
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/dotnet/api/?view=spark-dotnet">API .NET pour Apache Spark</a>
+          - html: '<a href="https://github.com/dotnet/spark">.NET pour Apache Spark sur le Hub git</a>'
