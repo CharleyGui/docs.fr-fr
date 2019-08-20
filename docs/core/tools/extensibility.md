@@ -3,12 +3,12 @@ title: Modèle d’extensibilité des outils CLI .NET Core
 description: Découvrez comment étendre les outils de l’interface de ligne de commande (CLI).
 ms.date: 04/12/2017
 ms.custom: seodec18
-ms.openlocfilehash: 784eb50dfdbc0f88050a9f727ddbf53db34d3209
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 400d47f9d5bca53a23d09eb4eb94519f9824b473
+ms.sourcegitcommit: d98fdb087d9c8aba7d2cb93fe4b4ee35a2308cee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331006"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69012985"
 ---
 # <a name="net-core-cli-tools-extensibility-model"></a>Modèle d’extensibilité des outils CLI .NET Core
 
@@ -44,7 +44,7 @@ Vous devez ajouter un élément `<DotNetCliToolReference>` à votre fichier proj
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-Pour les outils qui doivent charger la sortie de génération du projet pour l’exécution, il existe généralement une autre dépendance qui est répertoriée sous les dépendances régulières du fichier projet. Étant donné que l’interface CLI utilise MSBuild comme moteur de génération, nous vous recommandons d’écrire ces parties de l’outil sous forme de [cibles](/visualstudio/msbuild/msbuild-targets) et [tâches](/visualstudio/msbuild/msbuild-tasks) MSBuild personnalisées puisqu’elles peuvent ensuite prendre part à l’ensemble du processus de génération. Elles peuvent aussi facilement récupérer tout ou partie des données produites par la génération, notamment l’emplacement des fichiers de sortie ou la configuration en cours de génération. Toutes ces informations deviennent un jeu de propriétés MSBuild qui peut être lu à partir de toutes les cibles. Vous verrez comment ajouter une cible personnalisée à l’aide de NuGet plus loin dans ce document.
+Pour les outils qui doivent charger la sortie de génération du projet pour l’exécution, il existe généralement une autre dépendance qui est répertoriée sous les dépendances régulières du fichier projet. Étant donné que l’interface CLI utilise MSBuild comme moteur de génération, nous vous recommandons d’écrire ces parties de l’outil sous forme de [cibles](/visualstudio/msbuild/msbuild-targets) et [tâches](/visualstudio/msbuild/msbuild-tasks) MSBuild personnalisées puisqu’elles peuvent ensuite prendre part à l’ensemble du processus de génération. Elles peuvent aussi facilement récupérer tout ou partie des données produites par la génération, notamment l’emplacement des fichiers de sortie ou la configuration en cours de génération, etc. Toutes ces informations deviennent un jeu de propriétés MSBuild qui peut être lu à partir de toutes les cibles. Vous verrez comment ajouter une cible personnalisée à l’aide de NuGet plus loin dans ce document.
 
 Voyons un exemple d’ajout d’un outil simple de type « tools-only » à un projet simple. Prenons un exemple de commande appelé `dotnet-api-search` qui vous permette de parcourir les packages NuGet à la recherche de l’API spécifiée. Voici le fichier projet de l’application console qui utilise cet outil :
 
@@ -79,7 +79,8 @@ Vous trouverez des exemples plus complets dans le [dépôt sur les outils CLI .
 Vous pouvez également voir l’[implémentation des outils utilisés](https://github.com/dotnet/cli/tree/release/2.1/TestAssets/TestPackages) dans le même dépôt.
 
 ## <a name="custom-targets"></a>Cibles personnalisées
-NuGet peut [empaqueter des fichiers de cibles et de propriétés MSBuild personnalisées](/nuget/create-packages/creating-a-package#including-msbuild-props-and-targets-in-a-package). Suite à l’adoption de MSBuild dans les outils CLI .NET Core, le même mécanisme d’extensibilité s’applique désormais aux projets .NET Core. Vous utilisez ce type d’extensibilité quand vous souhaitez étendre le processus de génération, accéder à tous les artefacts dans le processus de génération, tels que les fichiers générés, inspecter la configuration sous laquelle la build est appelée, etc.
+
+NuGet peut [empaqueter des fichiers de cibles et de propriétés MSBuild personnalisées](/nuget/create-packages/creating-a-package#include-msbuild-props-and-targets-in-a-package). Suite à l’adoption de MSBuild dans les outils CLI .NET Core, le même mécanisme d’extensibilité s’applique désormais aux projets .NET Core. Vous utilisez ce type d’extensibilité quand vous souhaitez étendre le processus de génération, accéder à tous les artefacts dans le processus de génération, tels que les fichiers générés, inspecter la configuration sous laquelle la build est appelée, etc.
 
 Dans l’exemple suivant, vous pouvez voir le fichier projet de la cible à l’aide de la syntaxe `csproj`. Celle-ci indique à la commande [`dotnet pack`](dotnet-pack.md) les éléments à empaqueter. Les fichiers de cibles et les assemblys sont placés dans le dossier *build* à l’intérieur du package. Notez l’élément `<ItemGroup>` dont la propriété `Label` a la valeur `dotnet pack instructions`, et la cible définie en dessous.
 

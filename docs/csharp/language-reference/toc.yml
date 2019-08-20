@@ -298,8 +298,8 @@
       href: operators/member-access-operators.md
       displayName: '., [], ?., ?[], (), indexer, null-conditional, Elvis, invocation'
     - name: Opérateurs de conversion et de test de type
-      href: operators/type-testing-and-conversion-operators.md
-      displayName: 'is operator, is keyword, as operator, as keyword, typeof, (), cast'
+      href: operators/type-testing-and-cast.md
+      displayName: 'is operator, is keyword, as operator, as keyword, typeof, (), conversion'
     - name: Opérateurs de conversion définie par l’utilisateur
       href: operators/user-defined-conversion-operators.md
       displayName: 'implicit, explicit'
