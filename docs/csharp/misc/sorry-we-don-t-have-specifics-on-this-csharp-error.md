@@ -882,33 +882,33 @@ f1_keywords:
 helpviewer_keywords:
 - errors [C#], additional information
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
-ms.openlocfilehash: 168e72e3f9f09c1f13e9d34cc1048f1dfacc2592
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 6f5a76e5d90a8d3b1cf6284af2e753f56494af74
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052762"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69597371"
 ---
 # <a name="sorry-we-dont-have-specifics-on-this-c-error"></a>Désolé, nous n'avons pas d'informations sur cette erreur C#
-Nous sommes désolés, mais nous n'avons pas d'informations spécifiques sur cette erreur. Pour plus d'informations, vous pouvez rechercher le numéro d'erreur et le texte du message sur le web. Ou vous pouvez demander d’autres développeurs à l’aide d’un des forums suivants :  
+Nous sommes désolés, mais nous n'avons pas d'informations spécifiques sur cette erreur. Pour plus d'informations, vous pouvez rechercher le numéro d'erreur et le texte du message sur le web. Vous pouvez aussi demander à d’autres développeurs d’utiliser l’un des forums suivants:  
   
  [v](https://social.msdn.microsoft.com/Forums/home?forum=csharplanguage)  
- Propose un forum de questions et de discussions générales de l’élément visuel C# syntaxe du langage et du compilateur.  
+ Propose un forum de questions et de discussions générales sur la syntaxe C# du langage visuel et le compilateur.  
   
  [IDE Visual C#](https://social.msdn.microsoft.com/Forums/home?forum=csharpide)  
- Propose un forum de questions sur la façon de travailler dans l’environnement Visual Studio.  
+ Propose un forum de questions sur le fonctionnement de l’environnement Visual Studio.  
   
  [Généralités Visual C#](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=csharpgeneral)  
- Propose un forum de questions et problèmes relatifs à Visual C# qui ne sont pas abordées dans d’autres forums.  
+ Propose un forum de questions et de problèmes avec les C# éléments visuels qui ne sont pas abordés dans d’autres forums.  
   
- [Dépassement de capacité de la pile](https://stackoverflow.com/questions/tagged/c%23)  
- Propose un forum de questions et problèmes relatifs à Visual C#.  
+ [Stack Overflow](https://stackoverflow.com/questions/tagged/c%23)  
+ Propose un forum de questions et de problèmes liés à C#Visual.  
   
  Voir aussi :  
- [Ressources supplémentaires pour les programmeurs Visual C#](../../csharp/getting-started/additional-resources.md)  
+ [Ressources supplémentaires pour les programmeurs Visual C#](../getting-started/additional-resources.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../csharp/programming-guide/index.md)
-- [Référence C#](../../csharp/language-reference/index.md)
+- [Guide de programmation C#](../programming-guide/index.md)
+- [Référence C#](../language-reference/index.md)
 - [Nous contacter](/visualstudio/ide/talk-to-us)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: ebaa5c2f3a2e1770a50a401fb6771d8c5ad3ba63
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 8017895450c989683b7fb246c9c1fb7c23fa9e5e
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972226"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69611473"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Vue d'ensemble des applications de navigateur XAML
 <a name="introduction"></a>
@@ -52,7 +52,7 @@ ms.locfileid: "68972226"
 |Fichier manifeste d’application (.manifest)|Ce fichier contient les métadonnées associées à l’application et porte l’extension .manifest.|  
 |Fichier manifeste de déploiement (.xbap)|Ce fichier contient les informations utilisées par ClickOnce pour déployer l’application et l’extension. xbap.|  
   
- Les applications XBAP sont déployées sur un serveur web, par exemple [!INCLUDE[TLA#tla_iis50](../../../../includes/tlasharptla-iis50-md.md)] ou une version ultérieure. Vous n’avez pas besoin d’installer le .NET Framework sur le serveur Web, mais vous devez enregistrer les types [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] MIME (Multipurpose Internet Mail Extensions) et les extensions de nom de fichier. Pour plus d’informations, consultez l’article [Configurer IIS 5.0 et IIS 6.0 pour déployer des applications WPF](how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md).  
+ Vous déployez des applications XBAP sur un serveur Web, par exemple Microsoft Internet Information Services (IIS) 5,0 ou versions ultérieures. Vous n’avez pas besoin d’installer le .NET Framework sur le serveur Web, mais vous devez enregistrer les types [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] MIME (Multipurpose Internet Mail Extensions) et les extensions de nom de fichier. Pour plus d’informations, consultez l’article [Configurer IIS 5.0 et IIS 6.0 pour déployer des applications WPF](how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md).  
   
  Pour préparer votre application XBAP au déploiement, copiez le fichier .exe et les manifestes associés sur le serveur web. Créez une page HTML qui contient un lien hypertexte pour ouvrir le manifeste de déploiement, c’est-à-dire le fichier qui porte l’extension .xbap. Quand l’utilisateur clique sur le lien vers le fichier. XBAP, ClickOnce gère automatiquement les mécanismes de téléchargement et de démarrage de l’application. L’exemple de code suivant montre une page HTML qui contient un lien hypertexte vers une application XBAP.  
   
