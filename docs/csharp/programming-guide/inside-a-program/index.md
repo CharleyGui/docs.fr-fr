@@ -5,12 +5,12 @@ helpviewer_keywords:
 - C# language, about C# program
 - Visual C#, program structure
 ms.assetid: 9551354b-33f0-4e11-bbf0-1a35e3702b22
-ms.openlocfilehash: 7a18285e6eec8f4e71c1b0e8cb3a0ebdc4203939
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: a180dc30c7fab11e5b939682244dbb90eb7615eb
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65635258"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589255"
 ---
 # <a name="inside-a-c-program"></a>À l’intérieur d’un programme C#
 
@@ -30,7 +30,7 @@ La section traite de la structure générale d’un programme C# et inclut l’e
 
 - [Bien démarrer avec C#](../../getting-started/index.md)
 
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Guide de programmation C#](../index.md)
 
 - [Référence C#](../../language-reference/index.md)
 
@@ -42,4 +42,4 @@ La section traite de la structure générale d’un programme C# et inclut l’e
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Guide de programmation C#](../index.md)

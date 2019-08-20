@@ -2,26 +2,26 @@
 title: Arborescences d’expressions (C#)
 ms.date: 07/20/2015
 ms.assetid: 7d0ac21a-6d90-4e2e-8903-528cb78615b7
-ms.openlocfilehash: 7744954d3a3f552d5765e6e7085950f08a5adf55
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eb0276f705ccb333e5739a4873ee6832e7a1878f
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61702735"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595003"
 ---
 # <a name="expression-trees-c"></a>Arborescences d’expressions (C#)
 Les arborescences d'expressions représentent du code dans une structure de données arborescente, où chaque nœud est une expression, par exemple un appel de méthode ou une opération binaire comme `x < y`.  
   
- Vous pouvez compiler et exécuter du code représenté par des arborescences d'expressions. Ceci permet la modification dynamique du code exécutable, l'exécution de requêtes LINQ dans différentes bases de données et la création de requêtes dynamiques. Pour plus d'informations sur les arborescences d'expressions dans LINQ, consultez [Guide pratique pour utiliser des arborescences d’expressions dans le but de générer des requêtes dynamiques (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-use-expression-trees-to-build-dynamic-queries.md).  
+ Vous pouvez compiler et exécuter du code représenté par des arborescences d'expressions. Ceci permet la modification dynamique du code exécutable, l'exécution de requêtes LINQ dans différentes bases de données et la création de requêtes dynamiques. Pour plus d'informations sur les arborescences d'expressions dans LINQ, consultez [Guide pratique pour utiliser des arborescences d’expressions dans le but de générer des requêtes dynamiques (C#)](./how-to-use-expression-trees-to-build-dynamic-queries.md).  
   
- Les arborescences d’expressions sont également utilisées dans l’environnement d’exécution de langage dynamique (DLR, Dynamic Language Runtime) pour fournir une interopérabilité entre les langages dynamiques et .NET Framework, ainsi que pour permettre aux writers de compilateur d’émettre des arborescences d’expressions au lieu d’utiliser le langage intermédiaire MSIL (Microsoft Intermediate Language). Pour plus d’informations sur le DLR, consultez [Vue d’ensemble du Dynamic Language Runtime](../../../../../docs/framework/reflection-and-codedom/dynamic-language-runtime-overview.md).  
+ Les arborescences d’expressions sont également utilisées dans l’environnement d’exécution de langage dynamique (DLR, Dynamic Language Runtime) pour fournir une interopérabilité entre les langages dynamiques et .NET Framework, ainsi que pour permettre aux writers de compilateur d’émettre des arborescences d’expressions au lieu d’utiliser le langage intermédiaire MSIL (Microsoft Intermediate Language). Pour plus d’informations sur le DLR, consultez [Vue d’ensemble du Dynamic Language Runtime](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md).  
   
  Le compilateur C# ou Visual Basic peut créer pour vous une arborescence d'expressions basée sur une expression lambda anonyme. Vous pouvez aussi créer manuellement des arborescences d'expressions en utilisant l'espace de noms <xref:System.Linq.Expressions>.  
   
 ## <a name="creating-expression-trees-from-lambda-expressions"></a>Création d'arborescences d'expressions à partir d'expressions lambda  
  Quand une expression lambda est affectée à une variable de type <xref:System.Linq.Expressions.Expression%601>, le compilateur produit du code pour générer une arborescence d'expressions qui représente l'expression lambda.  
   
- Le compilateur C# peut générer des arborescences d’expressions seulement à partir d’expressions lambda (ou de lambdas sur une seule ligne). Ils ne peuvent pas analyser des lambdas d'instruction (ou lambdas multilignes). Pour plus d’informations sur les expressions lambda en C#, consultez [Expressions lambda](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
+ Le compilateur C# peut générer des arborescences d’expressions seulement à partir d’expressions lambda (ou de lambdas sur une seule ligne). Ils ne peuvent pas analyser des lambdas d'instruction (ou lambdas multilignes). Pour plus d’informations sur les expressions lambda en C#, consultez [Expressions lambda](../../statements-expressions-operators/lambda-expressions.md).  
   
  Les exemples de code suivants montrent comment le compilateur C# crée une arborescence d’expressions qui représente l’expression lambda `num => num < 5`.  
   
@@ -118,7 +118,7 @@ Console.WriteLine("Decomposed expression: {0} => {1} {2} {3}",
 ```  
   
 ## <a name="immutability-of-expression-trees"></a>Immuabilité des arborescences d’expressions  
- Les arborescences d'expressions doivent être immuables. Cela signifie que si vous voulez modifier une arborescence d'expressions, vous devez construire une nouvelle arborescence d'expressions en copiant l'arborescence existante et en y remplaçant les nœuds. Vous pouvez utiliser un visiteur d’arborescence d’expressions pour parcourir l’arborescence d’expressions existante. Pour plus d'informations, voir [Procédure : Modifier des arborescences d’expressions (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md).  
+ Les arborescences d'expressions doivent être immuables. Cela signifie que si vous voulez modifier une arborescence d'expressions, vous devez construire une nouvelle arborescence d'expressions en copiant l'arborescence existante et en y remplaçant les nœuds. Vous pouvez utiliser un visiteur d’arborescence d’expressions pour parcourir l’arborescence d’expressions existante. Pour plus d'informations, voir [Procédure : Modifier des arborescences d’expressions (C#)](./how-to-modify-expression-trees.md).  
   
 ## <a name="compiling-expression-trees"></a>Compilation des arborescences d’expressions  
  Le type <xref:System.Linq.Expressions.Expression%601> fournit la méthode <xref:System.Linq.Expressions.Expression%601.Compile%2A> qui compile le code représenté par une arborescence d'expressions en un délégué exécutable.  
@@ -145,13 +145,13 @@ Console.WriteLine(expr.Compile()(4));
 // Also prints True.  
 ```  
   
- Pour plus d'informations, voir [Procédure : Exécuter des arborescences d’expressions (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md).  
+ Pour plus d'informations, voir [Procédure : Exécuter des arborescences d’expressions (C#)](./how-to-execute-expression-trees.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq.Expressions>
-- [Guide pratique pour exécuter des arborescences d’expressions (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
-- [Guide pratique pour modifier des arborescences d’expressions (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)
-- [Expressions lambda](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)
-- [Vue d’ensemble du Dynamic Language Runtime](../../../../../docs/framework/reflection-and-codedom/dynamic-language-runtime-overview.md)
-- [Concepts de programmation (C#)](../../../../csharp/programming-guide/concepts/index.md)
+- [Guide pratique pour exécuter des arborescences d’expressions (C#)](./how-to-execute-expression-trees.md)
+- [Guide pratique pour modifier des arborescences d’expressions (C#)](./how-to-modify-expression-trees.md)
+- [Expressions lambda](../../statements-expressions-operators/lambda-expressions.md)
+- [Vue d’ensemble du Dynamic Language Runtime](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)
+- [Concepts de programmation (C#)](../index.md)

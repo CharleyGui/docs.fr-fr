@@ -7,12 +7,12 @@ helpviewer_keywords:
 - exceptions [C#]
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-ms.openlocfilehash: 34357ac313e20c5bab5505984f92ea06df80a5c2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c2b991a45a53ce4a8295d6181da11cb09fda6ddb
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64595401"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69590197"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Exceptions et gestion des exceptions (Guide de programmation C#)
 Les fonctionnalités de gestion des exceptions du langage C# vous aident à gérer les situations inattendues ou exceptionnelles qui se produisent lorsqu’un programme est en cours d’exécution. La gestion des exceptions utilise les mots clés `try`, `catch` et `finally` pour tenter des actions susceptibles de ne pas réussir, pour gérer les défaillances lorsque vous pensez que c’est justifié et pour nettoyer ensuite les ressources. Les exceptions peuvent être générées par le common language runtime (CLR), par .NET Framework ou des bibliothèques tierces, ou par le code de l’application. Les exceptions sont créées avec le mot clé `throw`.  
@@ -49,17 +49,17 @@ Les fonctionnalités de gestion des exceptions du langage C# vous aident à gér
 ## <a name="related-sections"></a>Rubriques connexes  
  Consultez les rubriques suivantes pour plus d’informations sur les exceptions et la gestion des exceptions :  
   
-- [Utilisation d’exceptions](../../../csharp/programming-guide/exceptions/using-exceptions.md)  
+- [Utilisation d’exceptions](./using-exceptions.md)  
   
-- [Gestion des exceptions](../../../csharp/programming-guide/exceptions/exception-handling.md)  
+- [Gestion des exceptions](./exception-handling.md)  
   
-- [Création et levée d’exceptions](../../../csharp/programming-guide/exceptions/creating-and-throwing-exceptions.md)  
+- [Création et levée d’exceptions](./creating-and-throwing-exceptions.md)  
   
-- [Exceptions générées par le compilateur](../../../csharp/programming-guide/exceptions/compiler-generated-exceptions.md)  
+- [Exceptions générées par le compilateur](./compiler-generated-exceptions.md)  
   
-- [Guide pratique pour gérer une exception à l’aide de try/catch (Guide de programmation C#)](../../../csharp/programming-guide/exceptions/how-to-handle-an-exception-using-try-catch.md)  
+- [Guide pratique pour gérer une exception à l’aide de try/catch (Guide de programmation C#)](./how-to-handle-an-exception-using-try-catch.md)  
   
-- [Guide pratique pour exécuter le code de nettoyage à l’aide de finally](../../../csharp/programming-guide/exceptions/how-to-execute-cleanup-code-using-finally.md)  
+- [Guide pratique pour exécuter le code de nettoyage à l’aide de finally](./how-to-execute-cleanup-code-using-finally.md)  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
 
@@ -68,10 +68,10 @@ Pour plus d’informations, consultez [Exceptions](~/_csharplang/spec/exceptions
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.SystemException>
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
-- [throw](../../../csharp/language-reference/keywords/throw.md)
-- [try-catch](../../../csharp/language-reference/keywords/try-catch.md)
-- [try-finally](../../../csharp/language-reference/keywords/try-finally.md)
-- [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)
+- [Guide de programmation C#](../index.md)
+- [Mots clés C#](../../language-reference/keywords/index.md)
+- [throw](../../language-reference/keywords/throw.md)
+- [try-catch](../../language-reference/keywords/try-catch.md)
+- [try-finally](../../language-reference/keywords/try-finally.md)
+- [try-catch-finally](../../language-reference/keywords/try-catch-finally.md)
 - [Exceptions](../../../standard/exceptions/index.md)

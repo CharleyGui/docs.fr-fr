@@ -6,27 +6,27 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: 21ada083f69b0acf49490b331c5a416361a2ee84
-ms.sourcegitcommit: 46c68557bf6395f0ab9915f7558f2faae0097695
+ms.openlocfilehash: 1b80082d10ad9ee760a184f496793ad5c69202da
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67802314"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69588481"
 ---
 # <a name="strings-c-programming-guide"></a>Chaînes (Guide de programmation C#)
 Une chaîne est un objet de type <xref:System.String> dont la valeur est du texte. En interne, le texte est stocké sous la forme d’une collection séquentielle en lecture seule d’objets <xref:System.Char>. Il n’existe aucun caractère de fin Null à la fin d’une chaîne C# ; par conséquent, une chaîne C# peut contenir n’importe quel nombre de caractères Null incorporés ('\0'). La propriété <xref:System.String.Length%2A> d’une chaîne représente le nombre d’objets `Char` qu’elle contient, et non pas le nombre de caractères Unicode. Pour accéder à des points de code Unicode individuels dans une chaîne, utilisez l’objet <xref:System.Globalization.StringInfo>.  
   
 ## <a name="string-vs-systemstring"></a>Comparatif entre string et System.String  
- En C#, le mot clé `string` est un alias pour <xref:System.String>. Par conséquent, `String` et `string` sont équivalents et vous pouvez utiliser la convention d’affectation de noms que vous préférez. La classe `String` fournit de nombreuses méthodes pour créer, manipuler et comparer des chaînes en toute sécurité. En outre, le langage C# surcharge certains opérateurs pour simplifier les opérations de chaînes courantes. Pour plus d’informations sur le mot clé, voir [chaîne](../../../csharp/language-reference/keywords/string.md). Pour plus d’informations sur le type et ses méthodes, consultez <xref:System.String>.  
+ En C#, le mot clé `string` est un alias pour <xref:System.String>. Par conséquent, `String` et `string` sont équivalents et vous pouvez utiliser la convention d’affectation de noms que vous préférez. La classe `String` fournit de nombreuses méthodes pour créer, manipuler et comparer des chaînes en toute sécurité. En outre, le langage C# surcharge certains opérateurs pour simplifier les opérations de chaînes courantes. Pour plus d’informations sur le mot clé, voir [chaîne](../../language-reference/keywords/string.md). Pour plus d’informations sur le type et ses méthodes, consultez <xref:System.String>.  
   
 ## <a name="declaring-and-initializing-strings"></a>Déclaration et initialisation de chaînes  
  Vous pouvez déclarer et initialiser des chaînes de différentes manières, comme illustré dans l’exemple suivant :  
   
  [!code-csharp[csProgGuideStrings#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#1)]  
   
- Notez que vous n’utilisez pas l’opérateur [new](../../../csharp/language-reference/operators/new-operator.md) pour créer un objet String, excepté lors de l’initialisation de la chaîne avec un tableau de caractères.  
+ Notez que vous n’utilisez pas l’opérateur [new](../../language-reference/operators/new-operator.md) pour créer un objet String, excepté lors de l’initialisation de la chaîne avec un tableau de caractères.  
   
- Initialisez une chaîne avec la valeur constante <xref:System.String.Empty> pour créer un objet <xref:System.String> dont la chaîne est de longueur nulle. La représentation de littéral de chaîne d’une chaîne de longueur nulle est "". En initialisant les chaînes avec la valeur <xref:System.String.Empty> au lieu de [null](../../../csharp/language-reference/keywords/null.md), vous pouvez réduire les risques de levée de l’exception <xref:System.NullReferenceException>. Utilisez la méthode statique <xref:System.String.IsNullOrEmpty%28System.String%29> pour vérifier la valeur d’une chaîne avant de tenter d’y accéder.  
+ Initialisez une chaîne avec la valeur constante <xref:System.String.Empty> pour créer un objet <xref:System.String> dont la chaîne est de longueur nulle. La représentation de littéral de chaîne d’une chaîne de longueur nulle est "". En initialisant les chaînes avec la valeur <xref:System.String.Empty> au lieu de [null](../../language-reference/keywords/null.md), vous pouvez réduire les risques de levée de l’exception <xref:System.NullReferenceException>. Utilisez la méthode statique <xref:System.String.IsNullOrEmpty%28System.String%29> pour vérifier la valeur d’une chaîne avant de tenter d’y accéder.  
   
 ## <a name="immutability-of-string-objects"></a>Immuabilité des objets String  
  Les objets String sont *immuables* : ils ne peuvent pas être modifiés une fois qu’ils ont été créés. Toutes les méthodes <xref:System.String> et tous les opérateurs C# qui semblent modifier une chaîne retournent en fait les résultats dans un nouvel objet string. Dans l’exemple suivant, lorsque les contenus de `s1` et `s2` sont concaténés pour former une chaîne unique, les deux chaînes d’origine restent inchangées. L’opérateur `+=` crée une nouvelle chaîne qui contient le contenu combiné. Ce nouvel objet est assigné à la variable `s1` et l’objet d’origine qui a été assigné à `s1` est libéré pour la garbage collection, car aucune autre variable ne le référence.  
@@ -125,7 +125,7 @@ string s = String.Empty;
  [!code-csharp[TestStringBuilder#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/TestStringBuilder.cs)]
   
 ## <a name="strings-extension-methods-and-linq"></a>Chaînes, méthodes d’extension et LINQ  
- Étant donné que le type <xref:System.String> implémente <xref:System.Collections.Generic.IEnumerable%601>, vous pouvez utiliser les méthodes d’extension définies dans la classe <xref:System.Linq.Enumerable> sur des chaînes. Pour éviter une surcharge visuelle, ces méthodes sont exclues d’IntelliSense pour le type <xref:System.String>, mais elles restent néanmoins disponibles. Vous pouvez également utiliser des expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] sur les chaînes. Pour plus d’informations, consultez [LINQ et Strings](../../../csharp/programming-guide/concepts/linq/linq-and-strings.md).  
+ Étant donné que le type <xref:System.String> implémente <xref:System.Collections.Generic.IEnumerable%601>, vous pouvez utiliser les méthodes d’extension définies dans la classe <xref:System.Linq.Enumerable> sur des chaînes. Pour éviter une surcharge visuelle, ces méthodes sont exclues d’IntelliSense pour le type <xref:System.String>, mais elles restent néanmoins disponibles. Vous pouvez également utiliser des expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] sur les chaînes. Pour plus d’informations, consultez [LINQ et Strings](../concepts/linq/linq-and-strings.md).  
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
@@ -136,12 +136,12 @@ string s = String.Empty;
 |[Guide pratique pour concaténer plusieurs chaînes](../../how-to/concatenate-multiple-strings.md)|Illustre différentes manières de joindre plusieurs chaînes pour en former une.|
 |[Guide pratique pour analyser des chaînes à l’aide de String.Split](../../how-to/parse-strings-using-split.md)|Contient un exemple de code qui illustre l’utilisation de la méthode `String.Split` pour analyser des chaînes.|  
 |[Guide pratique pour rechercher des chaînes](../../how-to/search-strings.md)|Explique comment rechercher du texte ou des modèles spécifiques dans des chaînes.|  
-|[Guide pratique pour déterminer si une chaîne représente une valeur numérique](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)|Montre comment analyser une chaîne en toute sécurité pour déterminer si elle possède une valeur numérique valide.|  
+|[Guide pratique pour déterminer si une chaîne représente une valeur numérique](./how-to-determine-whether-a-string-represents-a-numeric-value.md)|Montre comment analyser une chaîne en toute sécurité pour déterminer si elle possède une valeur numérique valide.|  
 |[Interpolation de chaîne](../../language-reference/tokens/interpolated.md)|Décrit la fonctionnalité d’interpolation de chaîne qui fournit une syntaxe pratique pour les chaînes de format.|
-|[Opérations de chaînes de base](../../../../docs/standard/base-types/basic-string-operations.md)|Fournit des liens vers des rubriques utilisant les méthodes <xref:System.String?displayProperty=nameWithType> et <xref:System.Text.StringBuilder?displayProperty=nameWithType> pour effectuer des opérations de chaînes de base.|  
+|[Opérations de chaînes de base](../../../standard/base-types/basic-string-operations.md)|Fournit des liens vers des rubriques utilisant les méthodes <xref:System.String?displayProperty=nameWithType> et <xref:System.Text.StringBuilder?displayProperty=nameWithType> pour effectuer des opérations de chaînes de base.|  
 |[Parsing Strings](../../../standard/base-types/parsing-strings.md)|Décrit comment convertir des représentations sous forme de chaîne de types de base .NET en instances de types correspondants.|  
 |[Analyse des chaînes de date et d’heure dans .NET](../../../standard/base-types/parsing-datetime.md)|Montre comment convertir une chaîne telle que « 24/01/2008 » en objet <xref:System.DateTime?displayProperty=nameWithType>.|  
-|[Comparaison de chaînes](../../../../docs/standard/base-types/comparing.md)|Inclut des informations sur la façon de comparer des chaînes et fournit des exemples en C# et Visual Basic.|  
+|[Comparaison de chaînes](../../../standard/base-types/comparing.md)|Inclut des informations sur la façon de comparer des chaînes et fournit des exemples en C# et Visual Basic.|  
 |[Utilisation de la classe StringBuilder](../../../standard/base-types/stringbuilder.md)|Explique comment créer et modifier des objets string dynamiques avec la classe <xref:System.Text.StringBuilder>.|  
-|[LINQ et chaînes](../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)|Fournit des informations sur l’exécution de différentes opérations sur des chaînes à l’aide de requêtes LINQ.|  
-|[Guide de programmation C#](../../../csharp/programming-guide/index.md)|Fournit des liens vers des rubriques qui expliquent les constructions de programmation en C#.|  
+|[LINQ et chaînes](../concepts/linq/linq-and-strings.md)|Fournit des informations sur l’exécution de différentes opérations sur des chaînes à l’aide de requêtes LINQ.|  
+|[Guide de programmation C#](../index.md)|Fournit des liens vers des rubriques qui expliquent les constructions de programmation en C#.|  

@@ -6,15 +6,15 @@ helpviewer_keywords:
 - C# language, delegates
 - delegates [C#]
 ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
-ms.openlocfilehash: 62785753cf0eb11965f93e517d6a784081b41a13
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: dfb957247a50d16d2aa4c3c4be147e6badf0703a
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363800"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69590614"
 ---
 # <a name="delegates-c-programming-guide"></a>Délégués (Guide de programmation C#)
-Un [délégué](../../../csharp/language-reference/keywords/delegate.md) est un type qui représente des références aux méthodes avec une liste de paramètres et un type de retour particuliers. Lorsque vous instanciez un délégué, vous pouvez associer son instance à toute méthode ayant une signature et un type de retour compatibles. Vous pouvez appeler la méthode par le biais l'instance de délégué.  
+Un [délégué](../../language-reference/keywords/delegate.md) est un type qui représente des références aux méthodes avec une liste de paramètres et un type de retour particuliers. Lorsque vous instanciez un délégué, vous pouvez associer son instance à toute méthode ayant une signature et un type de retour compatibles. Vous pouvez appeler la méthode par le biais l'instance de délégué.  
   
  Les délégués sont utilisés pour passer des méthodes comme arguments à d'autres méthodes. Les gestionnaires d'événements sont tout simplement des méthodes appelées par le biais de délégués. Vous créez une méthode personnalisée, et une classe telle qu'un contrôle Windows peut appeler votre méthode lorsqu'un certain événement se produit. L'exemple suivant illustre une déclaration de délégué :  
   
@@ -38,23 +38,23 @@ Un [délégué](../../../csharp/language-reference/keywords/delegate.md) est un 
   
 - Les délégués peuvent être chaînés ; par exemple, plusieurs méthodes peuvent être appelées sur un seul événement.  
   
-- Les méthodes ne doivent pas correspondre exactement au type du délégué. Pour plus d’informations, consultez [Utilisation de la variance dans les délégués](../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md).  
+- Les méthodes ne doivent pas correspondre exactement au type du délégué. Pour plus d’informations, consultez [Utilisation de la variance dans les délégués](../concepts/covariance-contravariance/using-variance-in-delegates.md).  
   
-- C# version 2.0 a introduit le concept de [méthodes anonymes](../../../csharp/language-reference/operators/delegate-operator.md), qui permet de passer des blocs de code en tant que paramètres à la place d'une méthode définie séparément. C# 3.0 a introduit les expressions lambda comme un moyen plus concis d’écrire des blocs de code inline. Les méthodes anonymes et les expressions lambda (dans certains contextes) sont toutes deux compilées en types de délégué. Ces fonctionnalités sont désormais conjointement désignées par l’expression « fonctions anonymes ». Pour plus d’informations sur les expressions lambda, voir [Expressions lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).
+- C# version 2.0 a introduit le concept de [méthodes anonymes](../../language-reference/operators/delegate-operator.md), qui permet de passer des blocs de code en tant que paramètres à la place d'une méthode définie séparément. C# 3.0 a introduit les expressions lambda comme un moyen plus concis d’écrire des blocs de code inline. Les méthodes anonymes et les expressions lambda (dans certains contextes) sont toutes deux compilées en types de délégué. Ces fonctionnalités sont désormais conjointement désignées par l’expression « fonctions anonymes ». Pour plus d’informations sur les expressions lambda, voir [Expressions lambda](../statements-expressions-operators/lambda-expressions.md).
   
 ## <a name="in-this-section"></a>Dans cette section  
   
-- [Utilisation de délégués](../../../csharp/programming-guide/delegates/using-delegates.md)  
+- [Utilisation de délégués](./using-delegates.md)  
   
 - [Quand utiliser des délégués à la place d’interfaces (Guide de programmation C#)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms173173(v=vs.100))  
   
-- [Délégués avec méthodes nommées et méthodes anonymes](../../../csharp/programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md)  
+- [Délégués avec méthodes nommées et méthodes anonymes](./delegates-with-named-vs-anonymous-methods.md)  
   
-- [Utilisation de la variance dans les délégués](../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md)  
+- [Utilisation de la variance dans les délégués](../concepts/covariance-contravariance/using-variance-in-delegates.md)  
   
-- [Guide pratique pour combiner des délégués (délégués multicast)](../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)  
+- [Guide pratique pour combiner des délégués (délégués multicast)](./how-to-combine-delegates-multicast-delegates.md)  
   
-- [Guide pratique pour déclarer, instancier et utiliser un délégué](../../../csharp/programming-guide/delegates/how-to-declare-instantiate-and-use-a-delegate.md)  
+- [Guide pratique pour déclarer, instancier et utiliser un délégué](./how-to-declare-instantiate-and-use-a-delegate.md)  
 
 ## <a name="c-language-specification"></a>Spécification du langage C#  
 
@@ -68,5 +68,5 @@ Pour plus d’informations, consultez [Délégués](~/_csharplang/spec/delegates
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Delegate>
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Événements](../../../csharp/programming-guide/events/index.md)
+- [Guide de programmation C#](../index.md)
+- [Événements](../events/index.md)

@@ -8,12 +8,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 04/05/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 0c97a5b843d27258f58d654d35420a262d5b741a
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: ba5d2a9fb74b877c9b847343a9012ccb9624335e
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65062961"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69604220"
 ---
 # <a name="get-started-with-c"></a>Bien démarrer avec C\#
 
@@ -43,15 +43,15 @@ Les rubriques suivantes sont disponibles :
 
 ## <a name="related-sections"></a>Rubriques connexes
 
-* [Guide de programmation C#](../../csharp/programming-guide/index.md)
+* [Guide de programmation C#](../programming-guide/index.md)
 
     Fournit des informations sur les concepts de la programmation C# et explique comment effectuer différentes tâches en C#.
 
-* [Référence C#](../../csharp/language-reference/index.md)
+* [Référence C#](../language-reference/index.md)
 
     Fournit des informations de référence détaillées sur les mots clés C#, les opérateurs, les directives de préprocesseur, les options du compilateur, et les erreurs et avertissements du compilateur.
 
-* [Procédures pas à pas](../../csharp/walkthroughs.md)
+* [Procédures pas à pas](../walkthroughs.md)
 
     Fournit des liens vers des procédures pas-à-pas de programmation qui utilisent C# et une brève description de chaque procédure pas-à-pas.
 

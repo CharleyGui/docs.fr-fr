@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, generics
 - generics [C#]
 ms.assetid: 75ea8509-a4ea-4e7a-a2b3-cf72482e9282
-ms.openlocfilehash: e32eb7c60e01ca72824ffb3a1e1269cf34650f5a
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 7d212aeaa7d7a8c3f152f8610a7ef3fe5de0fe23
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423401"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589594"
 ---
 # <a name="generics-c-programming-guide"></a>Génériques (guide de programmation C#)
 Les génériques ont été ajoutés à la version 2.0 du langage C# et du Common Language Runtime (CLR). Les génériques introduisent le concept des paramètres de type dans .NET Framework, qui permettent de concevoir des classes et des méthodes qui diffèrent la spécification d’un ou de plusieurs types jusqu’à ce que la classe ou la méthode soit déclarée et instanciée par le code client. Par exemple, à l’aide d’un paramètre de type générique T, vous pouvez écrire une seule classe qui peut être utilisée par un autre code client sans impliquer le coût ou le risque des casts ou des opérations de boxing à l’exécution, comme illustré ici :  
@@ -53,23 +53,23 @@ Les méthodes et les classes génériques combinent la réutilisabilité, la coh
 ## <a name="related-sections"></a>Rubriques connexes  
  Pour plus d'informations :  
   
-- [Paramètres de type générique](../../../csharp/programming-guide/generics/generic-type-parameters.md)  
+- [Paramètres de type générique](./generic-type-parameters.md)  
   
-- [Contraintes sur les paramètres de type](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)  
+- [Contraintes sur les paramètres de type](./constraints-on-type-parameters.md)  
   
-- [Classes génériques](../../../csharp/programming-guide/generics/generic-classes.md)  
+- [Classes génériques](./generic-classes.md)  
   
-- [Interfaces génériques](../../../csharp/programming-guide/generics/generic-interfaces.md)  
+- [Interfaces génériques](./generic-interfaces.md)  
   
-- [Méthodes génériques](../../../csharp/programming-guide/generics/generic-methods.md)  
+- [Méthodes génériques](./generic-methods.md)  
   
-- [Délégués génériques](../../../csharp/programming-guide/generics/generic-delegates.md)  
+- [Délégués génériques](./generic-delegates.md)  
   
-- [Différences entre les modèles C++ et les génériques C#](../../../csharp/programming-guide/generics/differences-between-cpp-templates-and-csharp-generics.md)  
+- [Différences entre les modèles C++ et les génériques C#](./differences-between-cpp-templates-and-csharp-generics.md)  
   
-- [Génériques et réflexion](../../../csharp/programming-guide/generics/generics-and-reflection.md)  
+- [Génériques et réflexion](./generics-and-reflection.md)  
   
-- [Génériques dans le runtime](../../../csharp/programming-guide/generics/generics-in-the-run-time.md)  
+- [Génériques dans le runtime](./generics-in-the-run-time.md)  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
  Pour plus d'informations, voir la [spécification du langage C#](~/_csharplang/spec/types.md#constructed-types).  
@@ -77,8 +77,8 @@ Les méthodes et les classes génériques combinent la réutilisabilité, la coh
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Collections.Generic>
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Types](../../../csharp/programming-guide/types/index.md)
-- [\<typeparam>](../../../csharp/programming-guide/xmldoc/typeparam.md)
-- [\<typeparamref>](../../../csharp/programming-guide/xmldoc/typeparamref.md)
+- [Guide de programmation C#](../index.md)
+- [Types](../types/index.md)
+- [\<typeparam>](../xmldoc/typeparam.md)
+- [\<typeparamref>](../xmldoc/typeparamref.md)
 - [Génériques en .NET](../../../standard/generics/index.md)

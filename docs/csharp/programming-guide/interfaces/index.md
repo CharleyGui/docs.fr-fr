@@ -6,12 +6,12 @@ helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: 330e4e8b36f03b028786920422cd325b31d814e0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 30c44b9f98bcc61d54b8103b6b40d14fd35715f4
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61711198"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589176"
 ---
 # <a name="interfaces-c-programming-guide"></a>Interfaces (Guide de programmation C#)
 
@@ -31,7 +31,7 @@ La définition de `IEquatable<T>` ne fournit pas d'implémentation pour `Equals`
   
 Pour plus d’informations sur les classes abstraites, consultez [Classes abstract et sealed et membres de classe](../classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
   
-Les interfaces peuvent contenir des méthodes, propriétés, événements, indexeurs ou toute combinaison de ces quatre types de membres. Pour obtenir des liens vers des exemples, consultez les [Sections connexes](../interfaces/index.md#BKMK_RelatedSections). Une interface ne peut pas contenir de constantes, champs, opérateurs, constructeurs d'instance, finaliseurs ou types. Les membres d’interface sont automatiquement publics et ils ne peuvent pas inclure de modificateurs d’accès. Les membres ne peuvent pas non plus être [statiques](../../language-reference/keywords/static.md).  
+Les interfaces peuvent contenir des méthodes, propriétés, événements, indexeurs ou toute combinaison de ces quatre types de membres. Pour obtenir des liens vers des exemples, consultez les [Sections connexes](./index.md#BKMK_RelatedSections). Une interface ne peut pas contenir de constantes, champs, opérateurs, constructeurs d'instance, finaliseurs ou types. Les membres d’interface sont automatiquement publics et ils ne peuvent pas inclure de modificateurs d’accès. Les membres ne peuvent pas non plus être [statiques](../../language-reference/keywords/static.md).  
   
 Pour implémenter un membre d'interface, le membre correspondant de la classe d'implémentation doit être public, non statique et porter le même nom et la même signature que le membre d'interface.  
   

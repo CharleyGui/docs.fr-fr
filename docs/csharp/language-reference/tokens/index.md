@@ -13,22 +13,22 @@ helpviewer_keywords:
 ms.assetid: 4c5c0539-2e37-40b7-91ce-75af5aabd3f9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7231b43551e0b0ad0a9f32e1938106895d687818
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5093969744b5c1d240cb3c18141917906babef57
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61688915"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69608718"
 ---
 # <a name="c-special-characters"></a>Caractères spéciaux C#
 
 Les caractères spéciaux sont des caractères contextuels prédéfinis qui modifient l’élément de programme (chaîne littérale, identificateur ou nom d’attribut) auquel ils sont ajoutés. C# prend en charge les caractères spéciaux suivants : 
 
-- [@](../../../csharp/language-reference/tokens/verbatim.md), le caractère identificateur textuel. 
+- [@](./verbatim.md), le caractère identificateur textuel. 
 
-- [$](../../../csharp/language-reference/tokens/interpolated.md), le caractère de chaîne interpolé.
+- [$](./interpolated.md), le caractère de chaîne interpolé.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../../csharp/language-reference/index.md)
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)

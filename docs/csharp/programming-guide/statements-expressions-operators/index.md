@@ -10,12 +10,12 @@ helpviewer_keywords:
 - C# language, expressions
 - statements [C#]
 ms.assetid: 20f8469d-5a6a-4084-ad90-0856b7e97e45
-ms.openlocfilehash: 7073ddc50b47ff239e8b310c0a5a1fbd84504133
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 29d8b11cb82fe795c332afadeda8215cc660abd5
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67743882"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69588676"
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a>Instructions, expressions et opérateurs (guide de programmation C#)
 
@@ -41,5 +41,5 @@ Le code C# qui comprend une application se compose d’instructions à base de m
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Cast et conversions de types](../../../csharp/programming-guide/types/casting-and-type-conversions.md)
+- [Guide de programmation C#](../index.md)
+- [Cast et conversions de types](../types/casting-and-type-conversions.md)
