@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2d69fd06f4048667a05ddbfec571067c16f9e86a
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: ceae33501330719a27e2d0015c21249dca62d551
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833718"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69566854"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Méthode de localisation des assemblys par le runtime
 Pour déployer correctement votre application .NET Framework, il est important de bien comprendre comment le common language runtime localise les assemblys qui composent votre application et comment il établit des liaisons à ces assemblys. Par défaut, le runtime essaie d'établir une liaison avec la version exacte d'un assembly avec lequel l'application a été générée. Ce comportement par défaut peut être substitué par les paramètres du fichier de configuration.  
@@ -24,7 +24,7 @@ Pour déployer correctement votre application .NET Framework, il est important d
  Le common language runtime effectue plusieurs étapes pour essayer de localiser un assembly et résoudre une référence d'assembly. Chaque étape est expliquée dans les sections ci-dessous. Le terme « détection » est souvent utilisé pour décrire la manière dont le runtime localise les assemblys. Il fait référence au jeu de paramètres heuristiques utilisé pour localiser l'assembly en fonction de son nom et de sa culture.  
   
 > [!NOTE]
->  Vous pouvez afficher les informations de liaison du fichier journal en utilisant la [visionneuse du journal de liaison d'assembly (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), fournie dans le kit de développement logiciel (SDK) Windows.  
+>  Vous pouvez afficher les informations de liaison du fichier journal en utilisant la [visionneuse du journal de liaison d’assembly (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md), fournie dans le SDK Windows.  
   
 ## <a name="initiating-the-bind"></a>Initiation de la liaison  
  Le processus de localisation et de liaison d'un assembly débute quand le runtime tente de résoudre une référence à un autre assembly. Cette référence peut être statique ou dynamique. Le compilateur enregistre les références statiques dans les métadonnées du manifeste d'assembly au moment de la build. Les références dynamiques sont créées instantanément après l’appel à différentes méthodes, telles que <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>.  

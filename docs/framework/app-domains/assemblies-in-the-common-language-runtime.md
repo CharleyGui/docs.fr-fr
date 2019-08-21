@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 2cfebe19-7436-49f1-bd99-3c4019f0b676
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a3b516e43c07666f4b52e67f85cb567ab310f020
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: b27a8d89b0345082b8cf06c3eb141e73e2bf0faf
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66832917"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567362"
 ---
 # <a name="assemblies-in-the-common-language-runtime"></a>Assemblys dans le Common Language Runtime
 Les assemblys sont les composantes des applications .NET Framework. Ils forment l’unité fondamentale de déploiement, de gestion de version, de réutilisation, de portée d’activation et des autorisations de sécurité. Un assembly est une collection de types et de ressources conçus pour opérer ensemble et former une unité logique de fonctionnalité. Un assembly fournit au Common Language Runtime les informations dont il a besoin pour connaître les implémentations de type. Pour le runtime, un type n'existe pas en dehors du contexte d'un assembly.  
@@ -42,7 +42,7 @@ Les assemblys sont les composantes des applications .NET Framework. Ils forment 
   
  Les assemblys peuvent être statiques ou dynamiques. Les assemblys statiques peuvent inclure des types .NET Framework (interfaces et classes), ainsi que des ressources d'assembly (bitmaps, fichiers JPEG, fichiers de ressources, etc.). Les assemblys statiques sont stockés sur le disque dans des fichiers exécutables portables (PE). Vous pouvez également utiliser le .NET Framework pour créer des assemblys dynamiques, directement exécutés à partir de la mémoire et non enregistrés sur le disque avant leur exécution. Vous pouvez enregistrer des assemblys dynamiques sur le disque une fois qu'ils ont été exécutés.  
   
- Pour créer des assemblys, différentes possibilités s'offrent à vous. Vous pouvez utiliser les outils de développement, comme Visual Studio, que vous avez utilisés par le passé pour créer des fichiers .dll ou .exe. Vous pouvez utiliser les outils fournis dans le Kit de développement logiciel (SDK) Windows pour créer des assemblys avec des modules créés dans d'autres environnements de développement. Vous pouvez également utiliser les API du Common Language Runtime, comme <xref:System.Reflection.Emit?displayProperty=nameWithType>, pour créer des assemblys dynamiques.  
+ Pour créer des assemblys, différentes possibilités s'offrent à vous. Vous pouvez utiliser les outils de développement, comme Visual Studio, que vous avez utilisés par le passé pour créer des fichiers .dll ou .exe. Vous pouvez utiliser les outils fournis dans le SDK Windows pour créer des assemblys avec des modules créés dans d’autres environnements de développement. Vous pouvez également utiliser les API du Common Language Runtime, comme <xref:System.Reflection.Emit?displayProperty=nameWithType>, pour créer des assemblys dynamiques.  
   
 ## <a name="related-topics"></a>Rubriques connexes  
   

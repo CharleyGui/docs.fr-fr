@@ -5,14 +5,15 @@ ms.date: 03/07/2017
 helpviewer_keywords:
 - contextual keywords [C#]
 ms.assetid: 7c76bc29-a754-4389-b0ab-f6b441018298
-ms.openlocfilehash: bce8901b4fec4386462ebaa85436b52aedc3f3bf
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8f8dc21b407e7286010b7425b835a481cc90287a
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54708439"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68971320"
 ---
 # <a name="contextual-keywords-c-reference"></a>Mots clés contextuels (référence C#)
+
 Un mot clé contextuel sert à donner une signification spécifique dans le code, sans pour autant être un mot réservé en C#. Cette section traite des mots clés contextuels suivants :  
   
 |Mot clé|Description|  
@@ -22,7 +23,7 @@ Un mot clé contextuel sert à donner une signification spécifique dans le code
 |[await](../../../csharp/language-reference/keywords/await.md)|Interrompt une méthode async jusqu’à ce qu’une tâche attendue soit terminée.|  
 |[dynamic](../../../csharp/language-reference/keywords/dynamic.md)|Définit un type référence qui permet des opérations au cours desquelles il ignore la vérification de type au moment de la compilation.|  
 |[get](../../../csharp/language-reference/keywords/get.md)|Définit une méthode d’accesseur pour une propriété ou un indexeur.|  
-|[global](../../../csharp/language-reference/keywords/global.md)|Spécifie l’espace de noms global par défaut qui, sinon, reste sans nom.|  
+|[global](../../../csharp/language-reference/operators/namespace-alias-qualifier.md)|Alias de l’espace de noms global, qui sinon n’a pas de nom.|  
 |[partial](../../../csharp/language-reference/keywords/partial-type.md)|Définit des classes, des structures et des interfaces partielles dans la même unité de compilation.|  
 |[remove](../../../csharp/language-reference/keywords/remove.md)|Définit un accesseur d’événement personnalisé qui est appelé quand le code client annule son abonnement à l’événement.|  
 |[set](../../../csharp/language-reference/keywords/set.md)|Définit une méthode d’accesseur pour une propriété ou un indexeur.|  

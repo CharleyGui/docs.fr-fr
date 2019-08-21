@@ -8,12 +8,12 @@ helpviewer_keywords:
 - lambda operator [C#]
 - => operator [C#]
 - lambda expressions [C#], => operator
-ms.openlocfilehash: a7fea9810cb02269278638ec71cd106463b029e9
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 3b3a5c2e96e92271da66cbd8f1039a9ec97544fa
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025014"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68971233"
 ---
 # <a name="-operator-c-reference"></a>Opérateur >= (référence C#)
 
@@ -45,7 +45,7 @@ La syntaxe générale d’une définition de corps d’expression est la suivant
 member => expression;
 ```
 
-où *expression* est une expression valide. Notez que *expression* peut être une *expression d’instruction* seulement si le type de retour du membre est `void`, ou si le membre est un constructeur, un finaliseur ou un accesseur de propriété `set`.
+où `expression` est une expression valide. Le type de retour de `expression` doit être implicitement convertible en type de retour du membre. Si le type de retour du membre est `void` ou si le membre est un constructeur, un finaliseur ou un accesseur `set` de propriété, `expression` doit être une [*expression de déclaration*](~/_csharplang/spec/statements.md#expression-statements) : elle peut alors être de n’importe quel type.
 
 L’exemple suivant montre une définition de corps d’expression pour une méthode `Person.ToString` :
 

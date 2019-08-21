@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2239b73eb8418d469085ad72b8a28093146a1f6b
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: e476e92ba4a9366a8a380c53d7dcd0d4dddb16e4
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025967"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567306"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (Désassembleur IL)
 
@@ -100,7 +100,7 @@ Le fichier texte généré par *Ildasm.exe* peut servir d'entrée dans l'Assembl
 > [!NOTE]
 > Actuellement, vous ne pouvez pas utiliser cette technique avec des fichiers exécutables portables qui contiennent du code natif incorporé (par exemple, des fichiers exécutables portables générés par Visual C++).  
 
-Vous pouvez utiliser l’interface graphique utilisateur par défaut du Désassembleur IL pour afficher, sous forme d’arborescence, le code désassemblé et les métadonnées de tout fichier exécutable portable existant. Pour utiliser l’interface graphique utilisateur, tapez **ildasm** au niveau de la ligne de commande sans préciser l’argument *PEfilename* ni d’options. Dans le menu **Fichier**, vous pouvez naviguer jusqu’au fichier PE que vous souhaitez charger dans *Ildasm.exe*. Pour enregistrer les métadonnées et le code désassemblé affichés pour le PE sélectionné, sélectionnez la commande **Dump** dans le menu **Fichier**. Pour enregistrer uniquement l’affichage d’arborescence hiérarchique, sélectionnez la commande **Dump de l’arborescence** dans le menu **Fichier**. Pour plus d’informations sur le chargement d’un fichier dans *Ildasm.exe* et l’interprétation de la sortie, consultez le didacticiel *Ildasm.exe*, qui se trouve dans le dossier Samples fourni avec le kit de développement logiciel (SDK) Windows.
+Vous pouvez utiliser l’interface graphique utilisateur par défaut du Désassembleur IL pour afficher, sous forme d’arborescence, le code désassemblé et les métadonnées de tout fichier exécutable portable existant. Pour utiliser l’interface graphique utilisateur, tapez **ildasm** au niveau de la ligne de commande sans préciser l’argument *PEfilename* ni d’options. Dans le menu **Fichier**, vous pouvez naviguer jusqu’au fichier PE que vous souhaitez charger dans *Ildasm.exe*. Pour enregistrer les métadonnées et le code désassemblé affichés pour le PE sélectionné, sélectionnez la commande **Dump** dans le menu **Fichier**. Pour enregistrer uniquement l’affichage d’arborescence hiérarchique, sélectionnez la commande **Dump de l’arborescence** dans le menu **Fichier**. Pour plus d’informations sur le chargement d’un fichier dans *Ildasm.exe* et l’interprétation de la sortie, consultez le tutoriel *Ildasm.exe*, qui se trouve dans le dossier Samples fourni avec le SDK Windows.
 
 Si vous utilisez *Ildasm.exe* avec un argument *PEfilename* comportant des ressources incorporées, l’outil génère alors plusieurs fichiers de sortie : un fichier texte comprenant du code IL et, pour chaque ressource managée incorporée, un fichier .resources généré à l’aide du nom de la ressource issu des métadonnées. Si une ressource non managée est incorporée dans *PEfilename*, un fichier .res est généré à l’aide du nom de fichier spécifié pour la sortie IL par l’option **/output**.
 

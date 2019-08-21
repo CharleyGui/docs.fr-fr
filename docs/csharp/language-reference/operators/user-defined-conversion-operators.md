@@ -10,12 +10,12 @@ helpviewer_keywords:
 - implicit keyword [C#]
 - conversion operator [C#]
 - user-defined conversion [C#]
-ms.openlocfilehash: 5d1882048b2af12c29a3771055cbeba9565b7dab
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8788883a6c60032de2ffab658fcf2721654fc6f7
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67787395"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69566676"
 ---
 # <a name="user-defined-conversion-operators-c-reference"></a>Opérateurs de conversion définie par l’utilisateur (Référence C#)
 
@@ -23,7 +23,7 @@ Un type défini par l’utilisateur peut définir une conversion implicite ou ex
 
 Les conversions implicites ne nécessitent pas une syntaxe spéciale à appeler et peuvent se produire dans diverses situations, par exemple, dans les appels de méthodes et les affectations. Les conversions implicites C# prédéfinies réussissent toujours et ne lèvent jamais d’exception ni ne perdent d’informations. Les conversions implicites définies par l’utilisateur doivent aussi se comporter de cette façon. Si une conversion personnalisée peut lever une exception ou perdre des informations, définissez-la comme conversion explicite.
 
-Les conversions définies par l’utilisateur ne sont pas prises en compte par les opérateurs [is](type-testing-and-conversion-operators.md#is-operator) et [as](type-testing-and-conversion-operators.md#as-operator). Utilisez l’[opérateur de cast ()](type-testing-and-conversion-operators.md#cast-operator-) pour appeler une conversion explicite définie par l’utilisateur.
+Les conversions définies par l’utilisateur ne sont pas prises en compte par les opérateurs [is](type-testing-and-cast.md#is-operator) et [as](type-testing-and-cast.md#as-operator). Utilisez l’[opérateur de cast ()](type-testing-and-cast.md#cast-operator-) pour appeler une conversion explicite définie par l’utilisateur.
 
 Utilisez les mots clés `operator` et `implicit` ou `explicit` pour définir une conversion implicite ou explicite, respectivement. Le type qui définit une conversion doit être un type source ou un type cible de cette conversion. Une conversion entre deux types définis par l’utilisateur peut être définie dans l’un ou l’autre des deux types.
 
@@ -47,6 +47,6 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 - [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
 - [Surcharge d’opérateur](operator-overloading.md)
-- [Opérateurs de conversion et de test de type](type-testing-and-conversion-operators.md)
+- [Opérateurs de test et de cast de type](type-testing-and-cast.md)
 - [Cast et conversion de types](../../programming-guide/types/casting-and-type-conversions.md)
 - [Conversions explicites définies par l’utilisateur chaînées en C#](https://blogs.msdn.microsoft.com/ericlippert/2007/04/16/chained-user-defined-explicit-conversions-in-c/)

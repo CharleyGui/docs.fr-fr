@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 9d300e17-5bf1-4360-97da-2aa55efd9070
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eb055285af7365536f7e1ad7c7d9290e51be50db
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: fc4ff8f914f0e049a0fdf27b5008b1e39bc40116
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66832865"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69566780"
 ---
 # <a name="delay-signing-an-assembly"></a>Temporisation de signature d'un assembly
 Une entreprise peut avoir une paire de clés protégées auxquelles les développeurs n’ont pas accès tous les jours. La clé publique est souvent disponible, mais l’accès à la clé privée est limité à quelques personnes. Lors du développement d’assemblys avec des noms forts, chaque assembly qui référence l’assembly cible avec nom fort contient le jeton de la clé publique utilisée pour affecter un nom fort à l’assembly cible. La clé publique doit donc être disponible pendant le processus de développement.  
@@ -28,7 +28,7 @@ Une entreprise peut avoir une paire de clés protégées auxquelles les dévelop
   
  Les étapes suivantes décrivent le processus permettant de différer la signature d’un assembly :  
   
-1. Obtenez la partie clé publique de la paire de clés auprès de la société qui effectuera la signature. En règle générale, cette clé se présente sous la forme d’un fichier .snk, qui peut être créé à l’aide de l’[outil Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) fourni dans le kit de développement logiciel (SDK) Windows.  
+1. Obtenez la partie clé publique de la paire de clés auprès de la société qui effectuera la signature. En règle générale, cette clé se présente sous la forme d’un fichier .snk, qui peut être créé avec l’[outil Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) fourni par le SDK Windows.  
   
 2. Annotez le code source de l’assembly avec deux attributs personnalisés de <xref:System.Reflection> :  
   

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ffbf6d9e-4a88-4a8a-9645-4ce0ee1ee5f9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9a3ba9b86a1611408f510098726ac49f543f8451
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 5dcdf6a88b12d12e67056657fd532dfa28c40299
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66832883"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69566815"
 ---
 # <a name="create-and-use-strong-named-assemblies"></a>Créer et utiliser des assemblys avec nom fort
 
@@ -38,7 +38,7 @@ Le scénario suivant met en avant le processus de signature d'un assembly avec n
 
     - En utilisant un environnement de développement qui prend en charge la création de noms forts, tel que Visual Studio.
 
-    - En créant une paire de clés de chiffrement avec l’[outil Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) et en l’assignant à l’assembly à l’aide d’un compilateur de ligne de commande ou de [Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md). Le Kit de développement logiciel (SDK) Windows fournit Sn.exe et Al.exe.
+    - En créant une paire de clés de chiffrement avec l’[outil Strong Name (Sn.exe)](../../../docs/framework/tools/sn-exe-strong-name-tool.md) et en l’assignant à l’assembly à l’aide d’un compilateur de ligne de commande ou de [Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md). Le SDK Windows fournit Sn.exe et Al.exe.
 
 2. L'environnement de développement ou l'outil signe le hachage du fichier contenant le manifeste de l'assembly avec la clé privée du développeur. Cette signature numérique est stockée dans le fichier exécutable portable (PE) qui contient le manifeste de l'assembly A.
 

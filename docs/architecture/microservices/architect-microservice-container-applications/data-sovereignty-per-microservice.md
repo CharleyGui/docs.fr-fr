@@ -1,13 +1,13 @@
 ---
 title: Souveraineté des données par microservice
-description: La souveraineté des données par microservice est l’un des points clés des microservices. Chaque microservice doit être le seul propriétaire de sa base de données. Il ne doit la partager avec aucun autre. Bien entendu, toutes les instances d’un microservice se connectent à la même base de données à haute disponibilité.
+description: La souveraineté des données par microservice est un des points clés des microservices. Chaque microservice doit être le seul propriétaire de sa base de données. Il ne doit la partager avec aucun autre. Bien entendu, toutes les instances d’un microservice se connectent à la même base de données à haute disponibilité.
 ms.date: 09/20/2018
-ms.openlocfilehash: ccb12451cd7cd44938e09d171eb29e614786f469
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: cd7be23800394b231e15bdc503d15a960a25a20a
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68673176"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69566205"
 ---
 # <a name="data-sovereignty-per-microservice"></a>Souveraineté des données par microservice
 

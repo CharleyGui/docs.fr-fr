@@ -8,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: 45e37dcb15e178fe37907e00cc14ef48c1bf230d
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: a04105137fad7cd3a25b869c3aa7fcbe91ed20ab
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67306589"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69566310"
 ---
 # <a name="is-c-reference"></a>is (référence C#)
 
-L’opérateur `is` vérifie si le résultat d’une expression est compatible avec un type donné, ou (à compter de C# 7.0) teste une expression par rapport à un modèle. Pour plus d’informations sur l’opérateur de test de type `is`, consultez la section [Opérateur is](../operators/type-testing-and-conversion-operators.md#is-operator) de l’article [Opérateurs de conversion et de test de type](../operators/type-testing-and-conversion-operators.md).
+L’opérateur `is` vérifie si le résultat d’une expression est compatible avec un type donné, ou (à compter de C# 7.0) teste une expression par rapport à un modèle. Pour plus d’informations sur l’opérateur de test de type `is`, consultez la section [Opérateur is](../operators/type-testing-and-cast.md#is-operator) de l’article [Opérateurs de test et de cast de type](../operators/type-testing-and-cast.md).
 
 ## <a name="pattern-matching-with-is"></a>Utilisation des critères spéciaux avec `is`
 
@@ -128,4 +128,4 @@ Pour plus d’informations, consultez la section [L’opérateur is](~/_csharpla
 
 - [Informations de référence sur C#](../index.md)
 - [Mots clés C#](index.md)
-- [Opérateurs de conversion et de test de type](../operators/type-testing-and-conversion-operators.md)
+- [Opérateurs de test et de cast de type](../operators/type-testing-and-cast.md)

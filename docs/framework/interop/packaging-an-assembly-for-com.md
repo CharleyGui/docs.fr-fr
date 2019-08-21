@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1ca87d688d6802df967ea81b8297b099350f1c86
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 11777f21d34da8b529352122bbf185f1938d3eb5
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629325"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567235"
 ---
 # <a name="packaging-a-net-framework-assembly-for-com"></a>Empaquetage d’un assembly .NET Framework pour COM
 
@@ -49,7 +49,7 @@ Les développeurs COM peuvent tirer parti des informations suivantes sur les typ
 
 - Inclusion de bibliothèque de types
 
-  La plupart des types nécessitent une bibliothèque de types en cas de consommation par une application COM. Vous pouvez générer une bibliothèque de types ou demander aux développeurs COM d’effectuer cette tâche. Le Kit de développement logiciel (SDK) Windows fournit les options suivantes pour générer une bibliothèque de types :
+  La plupart des types nécessitent une bibliothèque de types en cas de consommation par une application COM. Vous pouvez générer une bibliothèque de types ou demander aux développeurs COM d’effectuer cette tâche. Le SDK Windows fournit les options suivantes pour générer une bibliothèque de types :
 
   - [Exportateur de bibliothèques de types](#cpconpackagingassemblyforcomanchor1)
 

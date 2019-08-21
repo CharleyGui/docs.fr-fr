@@ -3,12 +3,12 @@ title: Mettre à jour des interfaces de manière sécurisée à l’aide des mem
 description: Ce tutoriel avancé explore comment vous pouvez ajouter de manière sécurisée de nouvelles fonctionnalités aux définitions d’une interface existante sans rompre toutes les classes et tous les structs qui implémentent cette interface.
 ms.date: 05/06/2019
 ms.custom: mvc
-ms.openlocfilehash: 2daa40ead5902454c6d45390233e1491fe6d369b
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 2d7265b7705fc931d356a3b7fe3504ab7f21c0b3
+ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877916"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68971439"
 ---
 # <a name="tutorial-update-interfaces-with-default-interface-members-in-c-80"></a>Tutoriel : Mettre à jour des interfaces avec les membres d’interface par défaut dans C# 8.0
 
@@ -87,6 +87,6 @@ Dans une implémentation d’une classe qui implémente cette interface, le remp
 
 [!code-csharp[VersionTwoImplementation](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/SampleCustomer.cs?name=SnippetOverrideAndExtend)]
 
-L’ensemble du code terminé est disponible dans notre [dépôt samples sur GitHub] (vous pouvez obtenir l’application de démarrage à partir de notre [dépôt samples sur GitHub](https://github.com/dotnet/samples/tree/master/csharp/tutorials/default-interface-members-versions/finished/customer-relationship).
+Vous pouvez voir l’intégralité du code terminé dans notre [dépôt d’exemples sur GitHub](https://github.com/dotnet/samples/tree/master/csharp/tutorials/default-interface-members-versions/finished/customer-relationship). Vous pouvez obtenir l’application de démarrage à partir de notre [dépôt samples sur GitHub](https://github.com/dotnet/samples/tree/master/csharp/tutorials/default-interface-members-versions/starter/customer-relationship).
 
 Ces nouvelles fonctionnalités signifient que les interfaces peuvent être mises à jour de manière sécurisée quand il existe une implémentation par défaut raisonnable pour les nouveaux membres. Concevez soigneusement les interfaces pour exprimer des idées fonctionnelles uniques pouvant être implémentées par plusieurs classes. Cela facilite la mise à niveau de ces définitions d’interface quand de nouvelles exigences sont découvertes pour cette même idée fonctionnelle.

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - namespace keyword [C#]
 - scope [C#]
 ms.assetid: 0a788423-9110-42e0-97d9-bda41ca4870f
-ms.openlocfilehash: df921ecc670bf12411dc8b0d828d6c19bb0a1aec
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 8cc1d1461a33ab94f8ae399d6ff40f26eaf7f74a
+ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422746"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69039451"
 ---
 # <a name="namespace-c-reference"></a>namespace (référence C#)
 
@@ -46,30 +46,21 @@ Il est possible de définir un espace de noms dans deux déclarations ou plus. P
 
 [!code-csharp[csrefKeywordsNamespace#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#2)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L’exemple suivant montre comment appeler une méthode statique dans un espace de noms imbriqué.
 
 [!code-csharp[csrefKeywordsNamespace#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsNamespace/CS/csrefKeywordsNamespace.cs#3)]
 
-## <a name="related-resources"></a>Ressources connexes
-
-Pour plus d’informations sur l’utilisation des espaces de noms, consultez les rubriques suivantes :
-
-- [Espaces de noms](../../programming-guide/namespaces/index.md)
-
-- [Utilisation d’espaces de noms](../../programming-guide/namespaces/using-namespaces.md)
-
-- [Guide pratique pour utiliser l’alias d’espace de noms global](../../programming-guide/namespaces/how-to-use-the-global-namespace-alias.md)
-
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Pour plus d’informations, voir la section [Espace de noms](~/_csharplang/spec/namespaces.md) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../language-reference/index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Informations de référence sur C#](../index.md)
 - [Mots clés C#](index.md)
 - [using](using-directive.md)
 - [using static](using-static.md)
+- [Qualificateur d’alias d’espace de noms`::`](../operators/namespace-alias-qualifier.md)
+- [Espaces de noms](../../programming-guide/namespaces/index.md)
