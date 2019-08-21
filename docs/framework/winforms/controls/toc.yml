@@ -47,22 +47,17 @@
           href: how-to-add-activex-controls-to-windows-forms.md
         - name: Considérations sur l'hébergement d'un contrôle ActiveX dans un Windows Form
           href: considerations-when-hosting-an-activex-control-on-a-windows-form.md
-    - name: Création d'étiquettes et de raccourcis pour les contrôles Windows Forms
-      href: labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md
+    - name: Étiqueter les contrôles et fournir des raccourcis
       items:
-        - name: "Procédure\_: créer des clés d’accès pour les contrôles Windows Forms"
+        - name: Vue d'ensemble
+          href: labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md
+        - name: Créer des touches d’accès pour les contrôles
           href: how-to-create-access-keys-for-windows-forms-controls.md
-        - name: "Procédure\_: créer des clés d’accès pour les contrôles Windows Forms à l’aide du concepteur"
-          href: how-to-create-access-keys-for-windows-forms-controls-using-the-designer.md
-        - name: "Procédure\_: définir le texte affiché par un contrôle Windows Forms"
+        - name: Définir le texte affiché par un contrôle
           href: how-to-set-the-text-displayed-by-a-windows-forms-control.md
-        - name: "Procédure\_: définir le texte affiché par un contrôle Windows Forms à l’aide du concepteur"
-          href: how-to-set-the-text-displayed-by-a-windows-forms-control-using-the-designer.md
-        - name: "Procédure\_: définir l’image affichée par un contrôle Windows Forms"
+        - name: Définir l’image affichée par un contrôle
           href: how-to-set-the-image-displayed-by-a-windows-forms-control.md
-        - name: "Procédure\_: définir l’image affichée par un contrôle Windows Forms à l’aide du concepteur"
-          href: how-to-set-the-image-displayed-by-a-windows-forms-control-using-the-designer.md
-        - name: Informations d'accessibilité sur les contrôles d'un Windows Form
+        - name: Fournir des informations d’accessibilité pour les contrôles
           href: providing-accessibility-information-for-controls-on-a-windows-form.md
     - name: Contrôles à utiliser dans les Windows Forms
       href: controls-to-use-on-windows-forms.md
