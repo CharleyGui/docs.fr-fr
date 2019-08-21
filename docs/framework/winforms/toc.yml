@@ -35,8 +35,6 @@
           items:
             - name: "Procédure\_: répondre aux modifications du jeu de polices dans une application Windows Forms"
               href: how-to-respond-to-font-scheme-changes-in-a-windows-forms-application.md
-            - name: Désactiver la prise en charge DPI dans Visual Studio
-              href: disable-dpi-awareness-visual-studio.md
         - name: Prise en charge de la haute résolution dans Windows Forms
           href: high-dpi-support-in-windows-forms.md
     - name: Modification de l'apparence des Windows Forms

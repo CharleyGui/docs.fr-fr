@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c4f59bdb0537ab6ce404ed0623c40f9f3b31598d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 32a4f4f3735c8952cf1458c63655eb56a82fd18f
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766824"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666433"
 ---
 # <a name="generics-in-net"></a>Génériques en .NET
 
@@ -148,7 +148,7 @@ ms.locfileid: "67766824"
   
  Le Common Language Runtime fournit de nouveaux codes d'opérations et préfixes pour la prise en charge des types génériques dans le langage MSIL (Microsoft Intermediate Language), notamment <xref:System.Reflection.Emit.OpCodes.Stelem>, <xref:System.Reflection.Emit.OpCodes.Ldelem>, <xref:System.Reflection.Emit.OpCodes.Unbox_Any>, <xref:System.Reflection.Emit.OpCodes.Constrained>et <xref:System.Reflection.Emit.OpCodes.Readonly>.  
   
- Visual C++, C# et Visual Basic fournissent une prise en charge complète de la définition et de l'utilisation des génériques. Pour plus d'informations sur la prise en charge des langages, consultez [Types génériques en Visual Basic](~/docs/visual-basic/programming-guide/language-features/data-types/generic-types.md), [Introduction aux génériques](~/docs/csharp/programming-guide/generics/index.md) et [Vue d'ensemble des génériques dans Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp).  
+ Visual C++, C# et Visual Basic fournissent une prise en charge complète de la définition et de l'utilisation des génériques. Pour plus d'informations sur la prise en charge des langages, consultez [Types génériques en Visual Basic](../../visual-basic/programming-guide/language-features/data-types/generic-types.md), [Introduction aux génériques](../../csharp/programming-guide/generics/index.md) et [Vue d'ensemble des génériques dans Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp).  
   
  [Retour au début](#top)  
   
@@ -170,8 +170,8 @@ ms.locfileid: "67766824"
 |[Types de collections couramment utilisés](../../../docs/standard/collections/commonly-used-collection-types.md)|Fournit des informations récapitulatives sur les caractéristiques et les scénarios d’utilisation des types de collections de .NET, notamment les types génériques.|  
 |[Quand utiliser les collections génériques](../../../docs/standard/collections/when-to-use-generic-collections.md)|Traite des règles générales permettant de déterminer le moment auquel utiliser des types de collections génériques.|  
 |[Guide pratique pour définir un type générique avec l’émission de réflexion](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)|Explique comment générer des assemblys dynamiques qui incluent des types et des méthodes génériques.|  
-|[Generic Types in Visual Basic](~/docs/visual-basic/programming-guide/language-features/data-types/generic-types.md)|Explique la fonction des génériques pour les utilisateurs de Visual Basic et fournit des procédures concernant l'utilisation et la définition des types génériques.|  
-|[Introduction aux génériques](~/docs/csharp/programming-guide/generics/index.md)|Fournit une vue d'ensemble de la définition et de l'utilisation des types génériques pour les utilisateurs de C#.|  
+|[Generic Types in Visual Basic](../../visual-basic/programming-guide/language-features/data-types/generic-types.md)|Explique la fonction des génériques pour les utilisateurs de Visual Basic et fournit des procédures concernant l'utilisation et la définition des types génériques.|  
+|[Introduction aux génériques](../../csharp/programming-guide/generics/index.md)|Fournit une vue d'ensemble de la définition et de l'utilisation des types génériques pour les utilisateurs de C#.|  
 |[Vue d’ensemble de génériques dans Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp)|Explique la fonction des génériques pour les utilisateurs C++, y compris les différences entre les génériques et les modèles.|  
   
 <a name="reference"></a>   

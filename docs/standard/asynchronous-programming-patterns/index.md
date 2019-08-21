@@ -8,22 +8,22 @@ helpviewer_keywords:
 ms.assetid: 4ece5c0b-f8fe-4114-9862-ac02cfe5a5d7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 50d76aef201fead37923a65cfeead16638b09842
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e3535e2979d2430fcb434a578f94d8d5b3925631
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62031172"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666570"
 ---
 # <a name="asynchronous-programming-patterns"></a>Modèles de programmation asynchrone
 
 .NET propose trois modèles d’exécution d’opérations asynchrones :  
 
-- Le **modèle asynchrone basé sur les tâches (TAP)**, qui utilise une méthode unique pour représenter le lancement et l’achèvement d’une opération asynchrone. TAP a été introduit avec le .NET Framework 4. **Il est recommandé pour la programmation asynchrone dans .NET.** Les mots clés [async](~/docs/csharp/language-reference/keywords/async.md) et [await](~/docs/csharp/language-reference/keywords/await.md) en C#, ainsi que les opérateurs [Async](~/docs/visual-basic/language-reference/modifiers/async.md) et [Await](~/docs/visual-basic/language-reference/operators/await-operator.md) en Visual Basic, ajoutent au modèle TAP la prise en charge des langages. Pour plus d’informations, consultez [Modèle asynchrone basé sur des tâches (TAP)](task-based-asynchronous-pattern-tap.md).  
+- Le **modèle asynchrone basé sur les tâches (TAP)** , qui utilise une méthode unique pour représenter le lancement et l’achèvement d’une opération asynchrone. TAP a été introduit avec le .NET Framework 4. **Il est recommandé pour la programmation asynchrone dans .NET.** Les mots clés [async](../../csharp/language-reference/keywords/async.md) et [await](../../csharp/language-reference/keywords/await.md) en C#, ainsi que les opérateurs [Async](../../visual-basic/language-reference/modifiers/async.md) et [Await](../../visual-basic/language-reference/operators/await-operator.md) en Visual Basic, ajoutent au modèle TAP la prise en charge des langages. Pour plus d’informations, consultez [Modèle asynchrone basé sur des tâches (TAP)](task-based-asynchronous-pattern-tap.md).  
 
-- Le **modèle asynchrone basé sur les événements (EAP)**, qui est le modèle hérité basé sur les événements pour fournir un comportement asynchrone. Il nécessite une méthode avec le suffixe `Async`, ainsi qu’un ou plusieurs événements, des types de délégués de gestionnaire d’événements et des types dérivés de `EventArg`. Ce modèle a été introduit avec le .NET Framework 2.0. Il n’est plus recommandé pour les nouveaux développements. Pour plus d'informations, consultez [Modèle asynchrone basé sur des événements (EAP)](event-based-asynchronous-pattern-eap.md).  
+- Le **modèle asynchrone basé sur les événements (EAP)** , qui est le modèle hérité basé sur les événements pour fournir un comportement asynchrone. Il nécessite une méthode avec le suffixe `Async`, ainsi qu’un ou plusieurs événements, des types de délégués de gestionnaire d’événements et des types dérivés de `EventArg`. Ce modèle a été introduit avec le .NET Framework 2.0. Il n’est plus recommandé pour les nouveaux développements. Pour plus d'informations, consultez [Modèle asynchrone basé sur des événements (EAP)](event-based-asynchronous-pattern-eap.md).  
 
-- Le **modèle de programmation asynchrone (APM)**, également appelé modèle <xref:System.IAsyncResult>, qui est le modèle hérité qui utilise l’interface <xref:System.IAsyncResult> pour fournir un comportement asynchrone. Dans ce modèle, les opérations synchrones nécessitent les méthodes `Begin` et `End` (par exemple, `BeginWrite` et `EndWrite` pour implémenter une opération d’écriture asynchrone). Ce modèle n’est plus recommandé pour un futur développement. Pour plus d’informations sur la programmation asynchrone, consultez [Modèle de programmation asynchrone (APM)](asynchronous-programming-model-apm.md).  
+- Le **modèle de programmation asynchrone (APM)** , également appelé modèle <xref:System.IAsyncResult>, qui est le modèle hérité qui utilise l’interface <xref:System.IAsyncResult> pour fournir un comportement asynchrone. Dans ce modèle, les opérations synchrones nécessitent les méthodes `Begin` et `End` (par exemple, `BeginWrite` et `EndWrite` pour implémenter une opération d’écriture asynchrone). Ce modèle n’est plus recommandé pour un futur développement. Pour plus d’informations sur la programmation asynchrone, consultez [Modèle de programmation asynchrone (APM)](asynchronous-programming-model-apm.md).  
   
 ## <a name="comparison-of-patterns"></a>Comparaison des modèles
 
@@ -70,6 +70,6 @@ public class MyClass
 ## <a name="see-also"></a>Voir aussi
 
 - [Async en détail](../async-in-depth.md)
-- [Programmation asynchrone en C#](~/docs/csharp/async.md)
-- [Programmation asynchrone en F#](~/docs/fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)
-- [Programmation asynchrone avec Async et Await (Visual Basic)](~/docs/visual-basic/programming-guide/concepts/async/index.md)
+- [Programmation asynchrone en C#](../../csharp/async.md)
+- [Programmation asynchrone en F#](../../fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)
+- [Programmation asynchrone avec Async et Await (Visual Basic)](../../visual-basic/programming-guide/concepts/async/index.md)

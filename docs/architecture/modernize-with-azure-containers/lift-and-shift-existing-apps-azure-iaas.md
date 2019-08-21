@@ -2,12 +2,12 @@
 title: Tirez et passez des applications .NET existantes à Azure IaaS (Cloud Infrastructure-prêt)
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure.
 ms.date: 04/28/2018
-ms.openlocfilehash: cda316ad01a58f26661395c804547de04e20d052
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: e25ddbf9b6e62c264f3f4d4580d7df3553d262ea
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "69578392"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69660743"
 ---
 # <a name="lift-and-shift-existing-net-apps-to-azure-iaas-cloud-infrastructure-ready"></a>Tirez et passez des applications .NET existantes à Azure IaaS (Cloud Infrastructure-prêt)
 
@@ -107,4 +107,4 @@ La figure 2-3 illustre l’exécution de plusieurs migrations de machine virtuel
 
 >[!div class="step-by-step"]
 >[Précédent](index.md)
->[Suivant](migrate-your-relational-databases-to-azure.md)
+>[Suivant](migrate-your-relational-databases-to-azure.md) <!-- Next Chapter -->

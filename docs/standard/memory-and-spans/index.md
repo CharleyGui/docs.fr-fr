@@ -9,18 +9,18 @@ helpviewer_keywords:
 - pipeline processing
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0ada6003cd6d1cd19036c42a3d0d976e18568f3a
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: fbfd091c821f59febfc8c7a203334454e7b59c12
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833971"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666423"
 ---
 # <a name="memory--and-span-related-types"></a>Types liés à la mémoire et l’étendue
 
 À partir de .NET Core 2.1, .NET inclut plusieurs types reliés entre eux qui représentent une région contiguë et fortement typée de mémoire arbitraire. Elles incluent notamment :
 
-- <xref:System.Span%601?displayProperty=nameWithType>, un type utilisé pour accéder à une zone contiguë de mémoire. Une instance <xref:System.Span%601> peut être sauvegardée par un tableau de type `T`, un objet <xref:System.String>, une mémoire tampon allouée avec [stackalloc](~/docs/csharp/language-reference/operators/stackalloc.md), ou un pointeur vers une mémoire non managée. Comme elle doit être allouée sur la pile, elle comporte plusieurs restrictions. Par exemple, un champ dans une classe ne peut pas être de type <xref:System.Span%601>, et l’étendue ne peut pas être utilisée dans des opérations asynchrones.
+- <xref:System.Span%601?displayProperty=nameWithType>, un type utilisé pour accéder à une zone contiguë de mémoire. Une instance <xref:System.Span%601> peut être sauvegardée par un tableau de type `T`, un objet <xref:System.String>, une mémoire tampon allouée avec [stackalloc](../../csharp/language-reference/operators/stackalloc.md), ou un pointeur vers une mémoire non managée. Comme elle doit être allouée sur la pile, elle comporte plusieurs restrictions. Par exemple, un champ dans une classe ne peut pas être de type <xref:System.Span%601>, et l’étendue ne peut pas être utilisée dans des opérations asynchrones.
 
 - <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>, une version immuable de la structure <xref:System.Span%601>.
 
