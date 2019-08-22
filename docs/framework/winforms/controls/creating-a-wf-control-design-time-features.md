@@ -10,12 +10,12 @@ helpviewer_keywords:
 - DocumentDesigner class [Windows Forms]
 - walkthroughs [Windows Forms], controls
 ms.assetid: 6f487c59-cb38-4afa-ad2e-95edacb1d626
-ms.openlocfilehash: 733f22c122dd6acdad41371419375e55e977c016
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: c8d04725a576c9e24a4b7d4aec1251516a8c544c
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039927"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666227"
 ---
 # <a name="walkthrough-creating-a-windows-forms-control-that-takes-advantage-of-visual-studio-design-time-features"></a>Procédure pas à pas : création d’un contrôle Windows Forms qui tire parti des fonctionnalités au moment du design de Visual Studio
 
@@ -63,7 +63,6 @@ Une fois que vous avez terminé, votre contrôle personnalisé ressemble à ce q
 
 Pour obtenir la liste complète du code [, consultez Procédure: Créez un contrôle de Windows Forms qui tire parti des fonctionnalités](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120))au moment du Design.
 
-
 ## <a name="prerequisites"></a>Prérequis
 
 Pour effectuer cette procédure pas à pas, vous avez besoin de Visual Studio.
@@ -82,11 +81,11 @@ L’étape suivante consiste à créer le projet de bibliothèque de contrôles.
 
 1. Ajoutez un projet de bibliothèque de contrôles Windows Forms à la solution. Nommez le projet «MarqueeControlLibrary».
 
-2. À l’aide de **Explorateur de solutions**, supprimez le contrôle par défaut du projet en supprimant le fichier source nommé «UserControl1.cs» ou «UserControl1. vb», selon le langage de votre choix. Pour plus d'informations, voir [Procédure : Supprimer, supprimer et exclure des éléments](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/0ebzhwsk(v=vs.100)).
+2. À l’aide de **Explorateur de solutions**, supprimez le contrôle par défaut du projet en supprimant le fichier source nommé «UserControl1.cs» ou «UserControl1. vb», selon le langage de votre choix. Pour plus d’informations, consultez [Guide pratique pour Supprimer, supprimer et exclure des éléments](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/0ebzhwsk(v=vs.100)).
 
 3. Ajoutez un nouvel <xref:System.Windows.Forms.UserControl> élément `MarqueeControlLibrary` au projet. Donnez au nouveau fichier source le nom de base «MarqueeControl».
 
-4. À l’aide de **Explorateur de solutions**, créez un nouveau `MarqueeControlLibrary` dossier dans le projet. Pour plus d'informations, voir [Procédure : Ajoutez de nouveaux éléments](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w0572c5b(v=vs.100))de projet. Nommez le nouveau dossier «Design».
+4. À l’aide de **Explorateur de solutions**, créez un nouveau `MarqueeControlLibrary` dossier dans le projet. Pour plus d’informations, consultez [Guide pratique pour Ajoutez de nouveaux éléments](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w0572c5b(v=vs.100))de projet. Nommez le nouveau dossier «Design».
 
 5. Cliquez avec le bouton droit sur le dossier **Design** et ajoutez une nouvelle classe. Donnez au fichier source le nom de base «MarqueeControlRootDesigner».
 
@@ -483,7 +482,7 @@ Lorsque l’exécution d’un **test** est appelée, le gestionnaire d’événe
 
 ## <a name="creating-a-custom-uitypeeditor"></a>Création d’un UITypeEditor personnalisé
 
-Quand vous créez une expérience personnalisée au moment de la conception pour les utilisateurs, il est souvent préférable de créer une interaction personnalisée avec l’Fenêtre Propriétés. Pour ce faire, vous pouvez créer <xref:System.Drawing.Design.UITypeEditor>un. Pour plus d’informations, consultez [Guide pratique pour Créez un éditeur](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/fd3kt7d5(v=vs.120))de type d’interface utilisateur.
+Quand vous créez une expérience personnalisée au moment de la conception pour les utilisateurs, il est souvent préférable de créer une interaction personnalisée avec l’Fenêtre Propriétés. Pour ce faire, vous pouvez créer <xref:System.Drawing.Design.UITypeEditor>un. Pour plus d'informations, voir [Procédure : Créez un éditeur](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/fd3kt7d5(v=vs.120))de type d’interface utilisateur.
 
 Le `MarqueeBorder` contrôle expose plusieurs propriétés dans le fenêtre Propriétés. Deux de ces propriétés, `MarqueeSpinDirection` et `MarqueeLightShape` sont représentées par des énumérations. Pour illustrer l’utilisation d’un éditeur de type d' `MarqueeLightShape` interface utilisateur, la propriété <xref:System.Drawing.Design.UITypeEditor> aura une classe associée.
 
@@ -637,7 +636,7 @@ private void stopButton_Click(object sender, System.EventArgs e)
 
 - Personnalisez davantage l’expérience au moment de la conception. Vous pouvez essayer d’occulter davantage de <xref:System.Windows.Forms.Control.Enabled%2A> propriétés <xref:System.Windows.Forms.Control.Visible%2A>que et, et vous pouvez ajouter de nouvelles propriétés. Ajoutez de nouveaux verbes de concepteur pour simplifier les tâches courantes, comme l’ancrage des contrôles enfants.
 
-- `MarqueeControl`Licence. Pour plus d’informations, consultez [Guide pratique pour Composants et contrôles](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/fe8b1eh9(v=vs.120))de licence.
+- `MarqueeControl`Licence. Pour plus d'informations, voir [Procédure : Composants et contrôles](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/fe8b1eh9(v=vs.120))de licence.
 
 - Contrôlez la façon dont vos contrôles sont sérialisés et la façon dont le code est généré pour eux. Pour plus d’informations, consultez [génération et compilation de code source dynamique](../../reflection-and-codedom/dynamic-source-code-generation-and-compilation.md).
 

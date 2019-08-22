@@ -10,16 +10,16 @@ helpviewer_keywords:
 - bypasslist, remove element
 - remove element, bypasslist
 ms.assetid: 61dcfb4a-e3d9-4abf-a2cd-7d685fe2f64b
-ms.openlocfilehash: a04cca3e57af5cc422776c5b2444a140e86f98b9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0fd8de9af00aa861d92c8c201ef89545e108c790
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674465"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659239"
 ---
-# <a name="remove-element-for-bypasslist-network-settings"></a>\<Supprimer >, élément de bypasslist (paramètres réseau)
+# <a name="remove-element-for-bypasslist-network-settings"></a>\<supprimer > élément pour BypassList (paramètres réseau)
 
-Supprime une adresse IP ou le nom DNS de la liste de contournement proxy.
+Supprime une adresse IP ou un nom DNS de la liste de contournement du proxy.
 
 \<configuration>\
 \<system.net>\
@@ -43,7 +43,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |**Attribut**|**Description**|
 |-------------------|---------------------|
-|`address`|Une expression régulière décrivant une adresse IP ou un nom DNS.|
+|`address`|Expression régulière décrivant une adresse IP ou un nom DNS.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -53,15 +53,15 @@ Aucun.
 
 |**Élément**|**Description**|
 |-----------------|---------------------|
-|[bypasslist](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Fournit un ensemble d’expressions régulières décrivant les adresses qui n’utilisent pas un proxy.|
+|[bypasslist](bypasslist-element-network-settings.md)|Fournit un ensemble d’expressions régulières qui décrivent les adresses qui n’utilisent pas de proxy.|
 
 ## <a name="remarks"></a>Notes
 
-Le `remove` élément supprime des expressions régulières décrivant les adresses IP ou des noms de serveur DNS dans la liste des adresses qui contournent un serveur proxy. Les adresses ont été définis précédemment dans le fichier de configuration ou à un niveau supérieur dans la hiérarchie de configuration.
+L' `remove` élément supprime les expressions régulières décrivant des adresses IP ou des noms de serveurs DNS de la liste des adresses qui contournent un serveur proxy. Les adresses ont été définies précédemment dans le fichier de configuration ou à un niveau supérieur dans la hiérarchie de configuration.
 
-La valeur de la `address` attribut doit être une expression régulière qui décrit un ensemble d’adresses IP ou noms d’hôte.
+La valeur de l' `address` attribut doit être une expression régulière qui décrit un ensemble d’adresses IP ou de noms d’hôtes.
 
-Pour plus d’informations sur les expressions régulières, consultez. [Expressions régulières .NET framework](../../../../../docs/standard/base-types/regular-expressions.md).
+Pour plus d’informations sur les expressions régulières, consultez. [.NET Framework des expressions régulières](../../../../../docs/standard/base-types/regular-expressions.md).
 
 ## <a name="configuration-files"></a>Fichiers de configuration
 
@@ -69,7 +69,7 @@ Cet élément peut être défini dans le fichier de configuration de l'applicati
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant supprime toute définition précédente pour le domaine adventure-works.com, puis ajoute le domaine contoso.com à la liste de contournement.
+L’exemple suivant supprime toute définition précédente du domaine adventure-works.com, puis ajoute le domaine contoso.com à la liste de contournement.
 
 ```xml
 <configuration>
@@ -87,4 +87,4 @@ L’exemple suivant supprime toute définition précédente pour le domaine adve
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Net.WebProxy?displayProperty=nameWithType>
-- [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma des paramètres réseau](index.md)

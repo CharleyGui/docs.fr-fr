@@ -5,19 +5,18 @@ helpviewer_keywords:
 - ListView control [Windows Forms], adding column headers
 - columns [Windows Forms], adding to ListView controls
 ms.assetid: 5b1a8b4d-587e-479a-95c1-f9b90884f13a
-ms.openlocfilehash: e82fbcf63047873ebc6e5c40b8b9fbeb14a672e5
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 10963fcb6d87ed74f73ecf4f1831a56eae5a392d
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69038179"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658455"
 ---
 # <a name="how-to-add-columns-to-the-windows-forms-listview-control-using-the-designer"></a>Procédure : ajouter des colonnes au contrôle ListView Windows Forms à l’aide du concepteur
 
 Le contrôle <xref:System.Windows.Forms.ListView> Windows Forms peut afficher plusieurs colonnes pour chaque élément de liste en mode **Détails** . Vous pouvez utiliser les colonnes pour afficher plusieurs types d’informations sur chaque élément de liste. Par exemple, une liste de fichiers peut afficher le nom du fichier, le type de fichier, la taille et la date de la dernière modification du fichier. Pour plus d’informations sur le remplissage des colonnes une fois qu' [elles sont créées, consultez Procédure: Affichez des sous-éléments en colonnes avec le](how-to-display-subitems-in-columns-with-the-windows-forms-listview-control.md)contrôle ListView Windows Forms.
 
 La procédure suivante requiert un projet d' **application Windows** avec un formulaire contenant <xref:System.Windows.Forms.ListView> un contrôle. Pour plus d’informations sur la configuration d’un tel [projet, consultez Procédure: Créez un projet](/visualstudio/ide/step-1-create-a-windows-forms-application-project) d’application Windows Forms [et procédez comme suit: Ajoutez des contrôles à](how-to-add-controls-to-windows-forms.md)Windows Forms.
-
 
 ### <a name="to-add-columns-in-the-designer"></a>Pour ajouter des colonnes dans le concepteur
 
@@ -32,7 +31,7 @@ La procédure suivante requiert un projet d' **application Windows** avec un for
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble du contrôle ListView](listview-control-overview-windows-forms.md)
-- [Guide pratique pour Ajouter et supprimer des éléments avec le contrôle ListView Windows Forms](how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)
-- [Guide pratique pour Afficher des sous-éléments en colonnes avec le contrôle ListView Windows Forms](how-to-display-subitems-in-columns-with-the-windows-forms-listview-control.md)
+- [Guide pratique : Ajouter et supprimer des éléments avec le contrôle ListView Windows Forms](how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)
+- [Guide pratique : Afficher des sous-éléments en colonnes avec le contrôle ListView Windows Forms](how-to-display-subitems-in-columns-with-the-windows-forms-listview-control.md)
 - [Guide pratique pour Afficher les icônes pour le contrôle ListView Windows Forms](how-to-display-icons-for-the-windows-forms-listview-control.md)
 - [Guide pratique pour Ajouter des informations personnalisées à un contrôle TreeView ou ListView (Windows Forms)](add-custom-information-to-a-treeview-or-listview-control-wf.md)

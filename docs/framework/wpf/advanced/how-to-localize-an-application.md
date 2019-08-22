@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LocBaml tool [WPF]
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
-ms.openlocfilehash: 749ba2dd9318976289d9d4140cfadd711e0548d4
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 4d7271e792c96dd896d73a52a31ad136acc19e26
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629874"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666788"
 ---
 # <a name="how-to-localize-an-application"></a>Procédure : Localiser une application
 Ce didacticiel explique comment créer une application localisée à l'aide de l'outil LocBaml.  
@@ -36,7 +36,7 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
   
 <a name="create_sample_app"></a>   
 ## <a name="create-a-sample-application"></a>Créer un exemple d'application  
- Dans cette étape, vous allez préparer votre application en vue de sa localisation. L'exemple HelloApp, qui est fourni dans les exemples [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], sera utilisé dans les exemples de code fournis dans ce document. Si vous souhaitez utiliser cet exemple, téléchargez les [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] fichiers à partir de l’exemple d' [outil LocBaml](https://go.microsoft.com/fwlink/?LinkID=160016).  
+ Dans cette étape, vous allez préparer votre application en vue de sa localisation. L'exemple HelloApp, qui est fourni dans les exemples [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], sera utilisé dans les exemples de code fournis dans ce document. Si vous souhaitez utiliser cet exemple, téléchargez les [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] fichiers à partir de l’exemple d' [outil LocBaml](https://github.com/microsoft/WPF-Samples/tree/master/Tools/LocBaml).  
   
 1. Développez votre application jusqu'au point où vous voulez démarrer la localisation.  
   

@@ -8,15 +8,15 @@ helpviewer_keywords:
 - <defaultFtpCachePolicy> element
 - defaultFtpCachePolicy element
 ms.assetid: 0eb0c5cb-dd97-484d-8614-785e88877abb
-ms.openlocfilehash: 36d174beea58ff96674bd873bfbcb8be89591669
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7ff44f0251936d51b4e396c37c53322efa110227
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674556"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659419"
 ---
 # <a name="defaultftpcachepolicy-element-network-settings"></a>\<defaultFtpCachePolicy >, élément (paramètres réseau)
-Décrit si la mise en cache FTP est active et décrit la valeur par défaut, la mise en cache de stratégie.  
+Indique si la mise en cache FTP est active et décrit la stratégie de mise en cache par défaut.  
   
  \<configuration>  
 \<system.net>  
@@ -38,20 +38,20 @@ Décrit si la mise en cache FTP est active et décrit la valeur par défaut, la 
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`policyLevel`|Spécifie la mise en cache de stratégie FTP. La valeur par défaut est `Default`.|  
+|`policyLevel`|Spécifie la stratégie de mise en cache FTP. La valeur par défaut est `Default`.|  
   
-## <a name="policylevel-attribute"></a>policyLevel attribut  
+## <a name="policylevel-attribute"></a>policyLevel (attribut)  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|`Default`|Retourne la ressource mise en cache si la ressource est actualisée, la longueur du contenu est précise, et l’expiration, la modification et attributs de la longueur du contenu sont présents.|  
+|`Default`|Retourne la ressource mise en cache si la ressource est actualisée, si la longueur du contenu est exacte et si les attributs d’expiration, de modification et de longueur du contenu sont présents.|  
 |`BypassCache`|Retourne la ressource à partir du serveur.|  
-|`CacheOnly`|Retourne la ressource mise en cache si la longueur du contenu est présente et qu’il correspond à la taille d’entrée.|  
-|`CacheIfAvailable`|Retourne la ressource mise en cache si la longueur du contenu est fournie et correspond à la taille d’entrée ; Sinon, la ressource est téléchargée à partir du serveur et est retournée à l’appelant.|  
-|`Revalidate`|Retourne la ressource mise en cache si l’horodatage de la ressource mise en cache est identique à l’horodatage de la ressource sur le serveur ; Sinon, la ressource est téléchargée à partir du serveur, stockée dans le cache et retournée à l’appelant.|  
-|`Reload`|Télécharge la ressource à partir du serveur, il stocke dans le cache et retourne la ressource à l’appelant.|  
+|`CacheOnly`|Retourne la ressource mise en cache si la longueur du contenu est présente et correspond à la taille de l’entrée.|  
+|`CacheIfAvailable`|Retourne la ressource mise en cache si la longueur du contenu est fournie et correspond à la taille de l’entrée; dans le cas contraire, la ressource est téléchargée à partir du serveur et est retournée à l’appelant.|  
+|`Revalidate`|Retourne la ressource mise en cache si l’horodateur de la ressource mise en cache est le même que celui de la ressource sur le serveur; dans le cas contraire, la ressource est téléchargée à partir du serveur, stockée dans le cache et retournée à l’appelant.|  
+|`Reload`|Télécharge la ressource à partir du serveur, la stocke dans le cache et retourne la ressource à l’appelant.|  
 |`NoCacheNoStore`|Si une ressource mise en cache existe, elle est supprimée. La ressource est téléchargée à partir du serveur et est retournée à l’appelant.|  
-|`Revalidate`|Satisfait une demande à l’aide de la copie mise en cache de la ressource si l’horodatage est le même que l’horodatage de la ressource sur le serveur ; Sinon, la ressource est téléchargée à partir du serveur, présentée à l’appelant et stockée dans le cache.|  
+|`Revalidate`|Satisfait une demande en utilisant la copie mise en cache de la ressource si l’horodatage est le même que celui de la ressource sur le serveur; dans le cas contraire, la ressource est téléchargée à partir du serveur, présentée à l’appelant et stockée dans le cache.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -60,12 +60,12 @@ Décrit si la mise en cache FTP est active et décrit la valeur par défaut, la 
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[requestCaching](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|Contrôle le mécanisme de mise en cache pour les demandes réseau.|  
+|[requestCaching](requestcaching-element-network-settings.md)|Contrôle le mécanisme de mise en cache pour les demandes réseau.|  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre comment spécifier une FTP mise en cache de la stratégie de `NoCacheNoStore`.  
+## <a name="example"></a>Exemples  
+ L’exemple suivant montre comment spécifier une stratégie de mise en cache `NoCacheNoStore`FTP de.  
   
 ```xml  
 <configuration>  
@@ -84,4 +84,4 @@ Décrit si la mise en cache FTP est active et décrit la valeur par défaut, la 
 - <xref:System.Net.Cache>
 - <xref:System.Net.WebRequest>
 - <xref:System.Net.Cache.RequestCacheLevel>
-- [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma des paramètres réseau](index.md)

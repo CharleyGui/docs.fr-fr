@@ -8,15 +8,15 @@ helpviewer_keywords:
 - mailSettings element
 - <mailSettings> element
 ms.assetid: 54f0f153-17e5-4f49-afdc-deadb940c9c1
-ms.openlocfilehash: 54fb68ab0bf8aa2665d70391350c626131ccb4bc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b8ea08cbd76e60a3665703bc50924dd94500cd87
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674495"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659330"
 ---
 # <a name="mailsettings-element-network-settings"></a>\<mailSettings >, élément (paramètres réseau)
-Configure les options d’envoi du courrier.  
+Configure les options d’envoi de courrier.  
 
 \<configuration>  
 \<system.net>  
@@ -40,16 +40,16 @@ Configure les options d’envoi du courrier.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|[\<SMTP >, élément (paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/smtp-element-network-settings.md)|Configure les options de Simple Mail Transport Protocol.|  
+|[\<Élément > SMTP (paramètres réseau)](smtp-element-network-settings.md)|Configure les options de protocole de transport de messagerie simple.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[\<system.Net>, élément (Paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
+|[\<system.Net>, élément (Paramètres réseau)](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant spécifie les paramètres SMTP appropriés pour envoyer un e-mail à l’aide des informations d’identification du réseau par défaut.  
+ L’exemple suivant spécifie les paramètres SMTP appropriés pour envoyer des messages électroniques à l’aide des informations d’identification réseau par défaut.  
   
 ```xml  
 <configuration>  
@@ -70,4 +70,4 @@ Configure les options d’envoi du courrier.
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Net.Mail.SmtpClient>
-- [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma des paramètres réseau](index.md)

@@ -9,15 +9,15 @@ helpviewer_keywords:
 - controls [WPF], layout system
 - layout system [WPF]
 ms.assetid: 3eecdced-3623-403a-a077-7595453a9221
-ms.openlocfilehash: 1aa182ced462e5fc90b22019aaf424d400bb4fd5
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 648adb34664ccb2a475e32aba4d0d76d99cf49d8
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629665"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666762"
 ---
 # <a name="layout"></a>Mise en page
-Cette rubrique décrit le système de disposition de [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Pour créer des interfaces utilisateur dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], il est essentiel de comprendre quand et comment interviennent les calculs de disposition.  
+Cette rubrique décrit le système de disposition Windows Presentation Foundation (WPF). Il est essentiel de comprendre comment et quand les calculs de disposition se produisent sont essentiels pour créer des interfaces utilisateur dans WPF.  
   
  Cette rubrique contient les sections suivantes :  
   
@@ -37,7 +37,7 @@ Cette rubrique décrit le système de disposition de [!INCLUDE[TLA#tla_winclient
   
 <a name="LayoutSystem_BoundingBox"></a>   
 ## <a name="element-bounding-boxes"></a>Zones englobantes d’élément  
- Avant de considérer la disposition dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], il est important de comprendre ce qu’est la zone englobante qui entoure tous les éléments. Chaque <xref:System.Windows.FrameworkElement> consommé par le système de disposition peut être considéré comme un rectangle qui est fendu dans la disposition. La <xref:System.Windows.Controls.Primitives.LayoutInformation> classe retourne les limites de l’allocation de disposition d’un élément ou de l’emplacement. La taille du rectangle est déterminée en calculant l’espace d’écran disponible, la taille de toutes les contraintes, les propriétés spécifiques à la disposition (par exemple, marge et marge intérieure) et le comportement <xref:System.Windows.Controls.Panel> individuel de l’élément parent. En traitant ces données, le système de disposition est en mesure de calculer la position de tous les enfants <xref:System.Windows.Controls.Panel>d’un particulier. Il est important de se souvenir que les caractéristiques de dimensionnement définies sur l’élément parent <xref:System.Windows.Controls.Border>, telles que, affectent ses enfants.  
+ Lorsque vous réfléchissez à la disposition dans WPF, il est important de comprendre le cadre englobant qui entoure tous les éléments. Chaque <xref:System.Windows.FrameworkElement> consommé par le système de disposition peut être considéré comme un rectangle qui est fendu dans la disposition. La <xref:System.Windows.Controls.Primitives.LayoutInformation> classe retourne les limites de l’allocation de disposition d’un élément ou de l’emplacement. La taille du rectangle est déterminée en calculant l’espace d’écran disponible, la taille de toutes les contraintes, les propriétés spécifiques à la disposition (par exemple, marge et marge intérieure) et le comportement <xref:System.Windows.Controls.Panel> individuel de l’élément parent. En traitant ces données, le système de disposition est en mesure de calculer la position de tous les enfants <xref:System.Windows.Controls.Panel>d’un particulier. Il est important de se souvenir que les caractéristiques de dimensionnement définies sur l’élément parent <xref:System.Windows.Controls.Border>, telles que, affectent ses enfants.  
   
  L’illustration suivante représente une disposition simple.  
   
@@ -101,7 +101,7 @@ Cette rubrique décrit le système de disposition de [!INCLUDE[TLA#tla_winclient
   
 <a name="LayoutSystem_PanelsCustom"></a>   
 ## <a name="panel-elements-and-custom-layout-behaviors"></a>Comportements des éléments de panneau et de disposition personnalisée  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]comprend un groupe d’éléments qui dérivent de <xref:System.Windows.Controls.Panel>. Ces <xref:System.Windows.Controls.Panel> éléments activent de nombreuses dispositions complexes. Par exemple, l’empilement d’éléments peut facilement être obtenu <xref:System.Windows.Controls.StackPanel> à l’aide de l’élément, alors que des dispositions plus complexes et plus dynamiques <xref:System.Windows.Controls.Canvas>sont possibles à l’aide d’un.  
+WPF comprend un groupe d’éléments qui dérivent de <xref:System.Windows.Controls.Panel>. Ces <xref:System.Windows.Controls.Panel> éléments activent de nombreuses dispositions complexes. Par exemple, l’empilement d’éléments peut facilement être obtenu <xref:System.Windows.Controls.StackPanel> à l’aide de l’élément, alors que des dispositions plus complexes et plus dynamiques <xref:System.Windows.Controls.Canvas>sont possibles à l’aide d’un.  
   
  Le tableau suivant récapitule les éléments de disposition <xref:System.Windows.Controls.Panel> disponibles.  
   
@@ -114,7 +114,7 @@ Cette rubrique décrit le système de disposition de [!INCLUDE[TLA#tla_winclient
 |<xref:System.Windows.Controls.VirtualizingPanel>|Fournit une infrastructure pour <xref:System.Windows.Controls.Panel> les éléments qui virtualisent leur collection de données enfants. Il s’agit d’une classe abstraite.|  
 |<xref:System.Windows.Controls.WrapPanel>|Positionne des éléments enfants dans un ordre séquentiel de gauche à droite, en faisant passer le contenu à la ligne suivante au bord de la zone conteneur. Le classement suivant se produit séquentiellement de haut en bas ou de droite à gauche, selon la valeur de <xref:System.Windows.Controls.WrapPanel.Orientation%2A> la propriété.|  
   
- Pour les applications qui requièrent une disposition qui n’est pas possible à l’aide de l' <xref:System.Windows.Controls.Panel> un des éléments prédéfinis, les comportements de disposition personnalisés peuvent <xref:System.Windows.Controls.Panel> être obtenus en héritant <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> de et en substituant les <xref:System.Windows.FrameworkElement.MeasureOverride%2A> méthodes et. Pour obtenir un exemple, consultez [Exemple de panneau radial personnalisé](https://go.microsoft.com/fwlink/?LinkID=159982).  
+ Pour les applications qui requièrent une disposition qui n’est pas possible à l’aide de l' <xref:System.Windows.Controls.Panel> un des éléments prédéfinis, les comportements de disposition personnalisés peuvent <xref:System.Windows.Controls.Panel> être obtenus en héritant <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> de et en substituant les <xref:System.Windows.FrameworkElement.MeasureOverride%2A> méthodes et.  
   
 <a name="LayoutSystem_Performance"></a>   
 ## <a name="layout-performance-considerations"></a>Considérations sur les performances de disposition  
@@ -138,7 +138,7 @@ Cette rubrique décrit le système de disposition de [!INCLUDE[TLA#tla_winclient
   
 <a name="LayoutSystem_LayoutRounding"></a>   
 ## <a name="sub-pixel-rendering-and-layout-rounding"></a>Rendu d’une précision inférieure au pixel et arrondi de disposition  
- Le système graphique [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise des unités indépendantes de l’appareil pour assurer une indépendance de la résolution et de l’appareil. Chaque pixel indépendant du périphérique est automatiquement mis à l’échelle avec le paramètre points par pouce (dpi) du système. Cela permet [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aux applications de mettre à l’échelle correctement les différents paramètres ppp et de rendre l’application compatible avec la résolution automatique.  
+ Le système graphique WPF utilise des unités indépendantes du périphérique pour permettre la résolution et l’indépendance des appareils. Chaque pixel indépendant du périphérique est automatiquement mis à l’échelle avec le paramètre points par pouce (dpi) du système. Cela permet aux applications WPF de mettre à l’échelle correctement les différents paramètres ppp et de rendre l’application compatible avec la résolution automatique.  
   
  Toutefois, cette indépendance ppp peut créer un rendu de périphérie irrégulier en raison de l’anticrénelage. Ces artefacts, qui se présentent généralement sous la forme de bords flous ou semi-transparents, peuvent apparaître quand l’emplacement d’un bord se trouve au milieu d’un pixel d’appareil et non entre des pixels d’appareil. Le système de disposition permet d’y remédier grâce à l’arrondi de disposition. L’arrondi de disposition intervient quand le système de disposition arrondit des valeurs de pixel non intégrales pendant la passe de disposition.  
   
@@ -146,7 +146,7 @@ Cette rubrique décrit le système de disposition de [!INCLUDE[TLA#tla_winclient
   
 <a name="LayoutSystem_whatsnext"></a>   
 ## <a name="whats-next"></a>Étapes suivantes  
- Pour bien comprendre en quoi consiste la disposition, il convient dans un premier temps de comprendre comment les éléments sont mesurés et organisés. Pour plus d’informations sur les <xref:System.Windows.Controls.Panel> éléments disponibles, consultez [vue d’ensemble des panneaux](../controls/panels-overview.md). Pour mieux comprendre les différentes propriétés de positionnement qui peuvent affecter la disposition, consultez [Vue d’ensemble de l’alignement, des marges et du remplissage](alignment-margins-and-padding-overview.md). Pour obtenir un exemple d’élément <xref:System.Windows.Controls.Panel> personnalisé, consultez [exemple de panneau radial personnalisé](https://go.microsoft.com/fwlink/?LinkID=159982). Lorsque vous êtes prêt à tout réunir dans une application légère, consultez [procédure pas à pas: Ma première application](../getting-started/walkthrough-my-first-wpf-desktop-application.md)de bureau WPF.  
+ Pour bien comprendre en quoi consiste la disposition, il convient dans un premier temps de comprendre comment les éléments sont mesurés et organisés. Pour plus d’informations sur les <xref:System.Windows.Controls.Panel> éléments disponibles, consultez [vue d’ensemble des panneaux](../controls/panels-overview.md). Pour mieux comprendre les différentes propriétés de positionnement qui peuvent affecter la disposition, consultez [Vue d’ensemble de l’alignement, des marges et du remplissage](alignment-margins-and-padding-overview.md). Lorsque vous êtes prêt à tout réunir dans une application légère, consultez [procédure pas à pas: Ma première application](../getting-started/walkthrough-my-first-wpf-desktop-application.md)de bureau WPF.  
   
 ## <a name="see-also"></a>Voir aussi
 

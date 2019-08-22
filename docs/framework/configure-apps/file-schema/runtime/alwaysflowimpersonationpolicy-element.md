@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: ee622801-9e46-470b-85ab-88c4b1dd2ee1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ec411039363cfb118fee06dff88daf50bbc97a86
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b42c141362d99090db922d3a6b429f05592130cd
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704932"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659012"
 ---
-# <a name="alwaysflowimpersonationpolicy-element"></a>\<alwaysFlowImpersonationPolicy > élément
+# <a name="alwaysflowimpersonationpolicy-element"></a>\<alwaysFlowImpersonationPolicy >, élément
 Spécifie que l’identité Windows est toujours transmise entre des points asynchrones, indépendamment du mode d’emprunt d’identité.  
   
  \<configuration>  
@@ -38,14 +38,14 @@ Spécifie que l’identité Windows est toujours transmise entre des points asyn
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Indique si l’identité Windows est transmise entre des points asynchrones.|  
+|`enabled`|Attribut requis.<br /><br /> Indique si l’identité Windows circule entre des points asynchrones.|  
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Value|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
-|`false`|L’identité n’est pas transmise entre des points asynchrones, à moins que l’emprunt d’identité est effectuée par le biais de Windows telles que les méthodes managées <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A>. Il s'agit de la valeur par défaut.|  
-|`true`|L’identité Windows est toujours transmise entre des points asynchrones, indépendamment du mode d’emprunt d’identité.|  
+|`false`|L’identité Windows ne passe pas entre des points asynchrones, sauf si l’emprunt d’identité est effectué via des <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A>méthodes managées telles que. Il s'agit de la valeur par défaut.|  
+|`true`|L’identité Windows est toujours transgérée entre les points asynchrones, indépendamment de la façon dont l’emprunt d’identité a été effectué.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -58,24 +58,24 @@ Spécifie que l’identité Windows est toujours transmise entre des points asyn
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="remarks"></a>Notes  
- Dans les versions 1.0 et 1.1 du .NET Framework, l’identité de Windows n’est pas transmise entre des points asynchrones. Dans le .NET Framework version 2.0, il existe un <xref:System.Threading.ExecutionContext> objet qui contient des informations sur le thread en cours d’exécution et les transmet entre des points asynchrones au sein d’un domaine d’application. Le <xref:System.Security.Principal.WindowsIdentity> également flux en tant que partie des informations qui circulent entre des points asynchrones, fournie par l’emprunt d’identité a été obtenue à l’aide de méthodes managées telles que <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> et non par le biais d’autres moyens, tels que platform invoke vers des méthodes natives. Cet élément est utilisé pour spécifier que l’identité Windows est transmise entre des points asynchrones, indépendamment de la manière dont l’emprunt d’identité a été atteint.  
+ Dans les versions 1,0 et 1,1 de .NET Framework, l’identité Windows ne passe pas entre les points asynchrones. Dans la .NET Framework version 2,0, il existe un <xref:System.Threading.ExecutionContext> objet qui contient des informations sur le thread en cours d’exécution et le transmet entre des points asynchrones au sein d’un domaine d’application. Le <xref:System.Security.Principal.WindowsIdentity> flux est également inclus dans les informations qui circulent entre les points asynchrones, à condition que l’emprunt d’identité ait été obtenu <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> à l’aide de méthodes managées telles que et non par d’autres moyens tels que l’appel de code non managé aux méthodes natives. Cet élément est utilisé pour spécifier que l’identité Windows circule entre des points asynchrones, quelle que soit la façon dont l’emprunt d’identité a été atteint.  
   
- Vous pouvez modifier ce comportement par défaut de deux manières :  
+ Vous pouvez modifier ce comportement par défaut de deux manières:  
   
-1. Dans le code managé sur un thread par thread.  
+1. En code managé pour chaque thread.  
   
-     Vous pouvez supprimer le flux sur un thread par thread en modifiant le <xref:System.Threading.ExecutionContext> et <xref:System.Security.SecurityContext> paramètres à l’aide de la <xref:System.Threading.ExecutionContext.SuppressFlow%2A?displayProperty=nameWithType>, <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A?displayProperty=nameWithType>, ou <xref:System.Security.SecurityContext.SuppressFlow%2A?displayProperty=nameWithType> (méthode).  
+     Vous pouvez supprimer le workflow pour chaque <xref:System.Threading.ExecutionContext> thread en modifiant les paramètres et <xref:System.Security.SecurityContext> à l’aide de la <xref:System.Threading.ExecutionContext.SuppressFlow%2A?displayProperty=nameWithType>méthode, <xref:System.Security.SecurityContext.SuppressFlowWindowsIdentity%2A?displayProperty=nameWithType>ou <xref:System.Security.SecurityContext.SuppressFlow%2A?displayProperty=nameWithType> .  
   
 2. Dans l’appel à l’interface d’hébergement non managée pour charger le common language runtime (CLR).  
   
-     Si une interface d’hébergement non managée (au lieu d’un simple fichier exécutable managé) est utilisée pour charger le CLR, vous pouvez spécifier un indicateur spécial dans l’appel à la [fonction CorBindToRuntimeEx](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) (fonction). Pour activer le mode de compatibilité pour l’ensemble du processus, définissez la `flags` paramètre pour [fonction CorBindToRuntimeEx](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) à `STARTUP_ALWAYSFLOW_IMPERSONATION`.  
+     Si une interface d’hébergement non managée (au lieu d’un simple exécutable managé) est utilisée pour charger le CLR, vous pouvez spécifier un indicateur spécial dans l’appel à la fonction [CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md) . Pour activer le mode de compatibilité pour l’ensemble du processus, `flags` définissez le paramètre de la `STARTUP_ALWAYSFLOW_IMPERSONATION` [fonction CorBindToRuntimeEx](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md) sur.  
   
 ## <a name="configuration-file"></a>Fichier de configuration  
- Dans une application .NET Framework, cet élément peut être utilisé uniquement dans le fichier de configuration d’application.  
+ Dans une application .NET Framework, cet élément peut être utilisé uniquement dans le fichier de configuration de l’application.  
   
- Pour une application ASP.NET, le flux de l’emprunt d’identité peut être configuré dans le fichier aspnet.config dans le \<Windows dossier > \Microsoft.NET\Framework\vx.x.xxxx directory.  
+ Pour une application ASP.net, le workflow d’emprunt d’identité peut être configuré dans le fichier Aspnet. config qui se \<trouve dans le dossier Windows > répertoire \Microsoft.NET\Framework\vx.x.xxxx.  
   
- ASP.NET par défaut désactive le flux de l’emprunt d’identité dans le fichier aspnet.config à l’aide des paramètres de configuration suivants :  
+ Par défaut, ASP.NET désactive le workflow d’emprunt d’identité dans le fichier Aspnet. config à l’aide des paramètres de configuration suivants:  
   
 ```xml
 <configuration>  
@@ -86,7 +86,7 @@ Spécifie que l’identité Windows est toujours transmise entre des points asyn
 </configuration>  
 ```  
   
- Dans ASP.NET, si vous souhaitez autoriser le flux d’emprunt d’identité au lieu de cela, vous devez utiliser explicitement les paramètres de configuration suivants :  
+ Dans ASP.NET, si vous souhaitez autoriser le workflow d’emprunt d’identité à la place, vous devez utiliser explicitement les paramètres de configuration suivants:  
   
 ```xml  
 <configuration>  
@@ -97,8 +97,8 @@ Spécifie que l’identité Windows est toujours transmise entre des points asyn
 </configuration>  
 ```  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre comment spécifier que l’identité Windows est transmise entre des points asynchrones, même lorsque l’emprunt d’identité est obtenue par des moyens autres que des méthodes managées.  
+## <a name="example"></a>Exemples  
+ L’exemple suivant montre comment spécifier que l’identité Windows passe d’un point asynchrone à un autre, même lorsque l’emprunt d’identité est réalisé à l’aide d’autres moyens que les méthodes managées.  
   
 ```xml  
 <configuration>  
@@ -110,6 +110,6 @@ Spécifie que l’identité Windows est toujours transmise entre des points asyn
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<legacyImpersonationPolicy > élément](../../../../../docs/framework/configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)
+- [\<legacyImpersonationPolicy >, élément](legacyimpersonationpolicy-element.md)

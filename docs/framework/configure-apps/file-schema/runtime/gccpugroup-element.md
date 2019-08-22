@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: c1fc7d6c-7220-475c-a312-5b8b201f66e0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1251f286a4e6168ef1d18b05288e0c5f353ad828
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 197ab9dbc1ec85bf8961f60bb26496eab788e63f
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689883"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663698"
 ---
-# <a name="gccpugroup-element"></a>\<GCCpuGroup > élément
+# <a name="gccpugroup-element"></a>\<GCCpuGroup >, élément
 
 Indique si le garbage collection prend en charge plusieurs groupes de processeurs.
 
 \<configuration>\
-\<runtime>\
+\<> du runtime \
 \<GCCpuGroup>
 
 ## <a name="syntax"></a>Syntaxe
@@ -41,10 +41,10 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="enabled-attribute"></a>Attribut enabled
 
-|Value|Description|
+|Valeur|Description|
 |-----------|-----------------|
 |`false`|Le garbage collection ne prend pas en charge plusieurs groupes d’UC. Il s'agit de la valeur par défaut.|
-|`true`|Le garbage collection prend en charge plusieurs groupes d’UC, si le garbage collection côté serveur est activé.|
+|`true`|Le garbage collection prend en charge plusieurs groupes de PROCESSEURs, si le serveur garbage collection est activé.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -59,14 +59,14 @@ Aucun.
 
 ## <a name="remarks"></a>Notes
 
-Quand un ordinateur a plusieurs groupes d’UC et de garbage collection côté serveur est activé (voir la [ \<< gcServer >](../../../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) élément), l’activation de cet élément s’étend le garbage collection dans tous les groupes d’UC et prend tous les cœurs dans compte lors de la création et l’équilibrage des segments de mémoire.
+Quand un ordinateur a plusieurs groupes d’UC et que la garbage collection du serveur est activée (Voir l' [ \<élément gcServer >](gcserver-element.md) ), l’activation de cet élément étend garbage collection sur tous les groupes de processeurs et prend en compte tous les cœurs lors de la création et équilibrage des tas.
 
 > [!NOTE]
-> Cet élément s’applique uniquement aux threads de garbage collection. Pour activer le runtime distribuer les threads utilisateur sur tous les groupes d’UC, vous devez également activer le [ \<Thread_UseAllCpuGroups >](../../../../../docs/framework/configure-apps/file-schema/runtime/thread-useallcpugroups-element.md) élément.
+> Cet élément s’applique uniquement aux threads garbage collections. Pour permettre au runtime de distribuer des threads utilisateur sur tous les groupes de processeurs, vous devez également activer l' [ \<élément Thread_UseAllCpuGroups >](thread-useallcpugroups-element.md) .
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment activer le garbage collection pour plusieurs groupes d’UC.
+L’exemple suivant montre comment activer garbage collection pour plusieurs groupes d’UC.
 
 ```xml
 <configuration>
@@ -79,7 +79,7 @@ L’exemple suivant montre comment activer le garbage collection pour plusieurs 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Pour désactiver le garbage collection simultané](gcconcurrent-element.md#to-disable-background-garbage-collection)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)
+- [Pour désactiver les garbage collection simultanées](gcconcurrent-element.md#to-disable-background-garbage-collection)
 - [Garbage collection de station de travail et de serveur](../../../../../docs/standard/garbage-collection/fundamentals.md#workstation_and_server_garbage_collection)

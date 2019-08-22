@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 ms.assetid: fda998a5-f538-4f8b-a18c-ee7f35e16938
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4bcde1bbb5419de2c363b422c327d55c2ce9eea1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4a62bd3507c14e42798c903ae51edb0187e666c8
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607308"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663762"
 ---
-# <a name="enableampmparseadjustment-element"></a>\<EnableAmPmParseAdjustment > élément
-Détermine si date et l’heure de méthodes d’analyse utilisent un ensemble de règles ajusté pour analyser des chaînes de date qui contiennent un jour, un mois, une heure et un indicateur AM/PM.  
+# <a name="enableampmparseadjustment-element"></a>\<EnableAmPmParseAdjustment >, élément
+Détermine si les méthodes d’analyse de date et d’heure utilisent un ensemble de règles ajusté pour analyser les chaînes de date qui contiennent un jour, un mois, une heure et un indicateur AM/PM.  
   
  \<configuration>  
  \<runtime>  
-\<EnableAmPmParseAdjustment>  
+\<EnableAmPmParseAdjustment >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,14 +31,14 @@ Détermine si date et l’heure de méthodes d’analyse utilisent un ensemble d
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Spécifie si date et l’heure de méthodes d’analyse utilisent un ensemble de règles ajusté pour analyser des chaînes de date qui contiennent uniquement un jour, mois, les heures et indicateur AM/PM.|  
+|`enabled`|Attribut requis.<br /><br /> Spécifie si les méthodes d’analyse de date et d’heure utilisent un ensemble de règles ajusté pour analyser les chaînes de date qui contiennent uniquement un jour, un mois, une heure et un indicateur AM/PM.|  
   
 ### <a name="enabled-attribute"></a>Attribut enabled  
   
-|Value|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
-|0|Date et heure de méthodes d’analyse n’utilisent pas de règles ajustés pour analyser les chaînes de date qui contiennent uniquement un jour, mois, les heures et indicateur AM/PM.|  
-|1|Date et heure de méthodes d’analyse utilisent règles ajustés pour analyser les chaînes de date qui contiennent uniquement un jour, mois, les heures et indicateur AM/PM.|  
+|0|Les méthodes d’analyse de date et d’heure n’utilisent pas de règles ajustées pour analyser les chaînes de date qui contiennent uniquement un jour, un mois, une heure et un indicateur AM/PM.|  
+|1|Les méthodes d’analyse de date et d’heure utilisent des règles ajustées pour analyser les chaînes de date qui contiennent uniquement un jour, un mois, une heure et un indicateur AM/PM.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -51,7 +51,7 @@ Détermine si date et l’heure de méthodes d’analyse utilisent un ensemble d
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
 ## <a name="remarks"></a>Notes  
- Le `<EnableAmPmParseAdjustment>` élément contrôle comment les méthodes suivantes analysent une chaîne de date qui contient un numéro du jour et le mois, suivie d’une heure et un indicateur AM/PM (par exemple, « 4/10 6 h ») :  
+ L' `<EnableAmPmParseAdjustment>` élément contrôle la façon dont les méthodes suivantes analysent une chaîne de date contenant un jour et un mois numériques suivis d’une heure et d’un indicateur AM/PM (par exemple, «4/10 6 AM»):  
   
 - <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>  
   
@@ -63,25 +63,25 @@ Détermine si date et l’heure de méthodes d’analyse utilisent un ensemble d
   
 - <xref:System.Convert.ToDateTime%2A?displayProperty=nameWithType>  
   
- Aucune des autres modèles ne sont affectés.  
+ Aucun autre modèle n’est affecté.  
   
- Le `<EnableAmPmParseAdjustment>` élément n’a aucun effet le <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType>, <xref:System.DateTime.TryParseExact%2A?displayProperty=nameWithType>, <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType>, et <xref:System.DateTimeOffset.TryParseExact%2A?displayProperty=nameWithType> méthodes.  
+ L' `<EnableAmPmParseAdjustment>` élément n’a aucun effet sur <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType>les <xref:System.DateTime.TryParseExact%2A?displayProperty=nameWithType>méthodes <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType>,, <xref:System.DateTimeOffset.TryParseExact%2A?displayProperty=nameWithType> et.  
   
 > [!IMPORTANT]
->  Dans .NET Core et .NET Native, les règles d’analyse ajustées AM/PM sont activés par défaut.  
+>  Dans .NET Core et .NET Native, les règles d’analyse AM/PM ajustées sont activées par défaut.  
   
- Si la règle d’ajustement analyse n’est pas activée, le premier chiffre de la chaîne est interprété comme l’heure de l’horloge de 12 heures, et le reste de la chaîne à l’exception de l’indicateur AM/PM est ignoré. La date et l’heure retournée par la méthode d’analyse se compose de la date actuelle et l’heure de la journée extraite à partir de la chaîne de date.  
+ Si la règle d’ajustement d’analyse n’est pas activée, le premier chiffre de la chaîne est interprété comme l’heure de l’horloge de 12 heures, et le reste de la chaîne, à l’exception de l’indicateur AM/PM, est ignoré. La date et l’heure retournées par la méthode d’analyse se composent de la date actuelle et de l’heure du jour extraite de la chaîne de date.  
   
- Si la règle d’ajustement analyse est activée, la méthode d’analyse interpréter le jour et le mois comme appartenant à l’année en cours et interpréter le temps que l’heure de l’horloge de 12 heures.  
+ Si la règle d’ajustement de l’analyse est activée, la méthode d’analyse interprète le jour et le mois comme appartenant à l’année en cours et interprète l’heure comme l’heure de l’horloge de 12 heures.  
   
- Le tableau suivant illustre la différence entre la <xref:System.DateTime> valeur lorsque le <xref:System.DateTime.Parse%28System.String%29?displayProperty=nameWithType> méthode est utilisée pour analyser la chaîne « « 4/10 de 6 h » avec le `<EnableAmPmParseAdjustment>` l’élément `enabled` propriété la valeur « 0 » ou « 1 ». Il suppose que la date du jour est le 5 janvier 2017 et affiche la date comme si elle est mise en forme à l’aide de la chaîne de format « G » de la culture spécifiée.  
+ Le tableau suivant <xref:System.DateTime> illustre la différence de valeur lorsque la <xref:System.DateTime.Parse%28System.String%29?displayProperty=nameWithType> méthode est utilisée pour analyser la chaîne «4/10 6 AM» avec la propriété de `enabled` l' `<EnableAmPmParseAdjustment>` élément définie sur «0» ou «1». Elle suppose que la date du jour est le 5 janvier 2017 et affiche la date comme si elle était mise en forme à l’aide de la chaîne de format «G» de la culture spécifiée.  
   
-|Nom de culture|enabled="0"|enabled="1"|  
+|Nom de la culture|enabled="0"|enabled="1"|  
 |------------------|------------------|------------------|  
-|fr-FR|1/5/2017 4:00:00 AM|4/10/2017 6:00:00 AM|  
+|en-US|1/5/2017 4:00:00|4/10/2017 6:00:00|  
 |en-GB|5/1/2017 6:00:00|10/4/2017 6:00:00|  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<runtime > élément](../../../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md)
-- [\<configuration>, élément](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)
+- [\<Élément > du Runtime](runtime-element.md)
+- [\<configuration>, élément](../configuration-element.md)

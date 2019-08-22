@@ -9,12 +9,12 @@ helpviewer_keywords:
 - tables [Windows Forms], formatting in DataGrid control
 - formatting [Windows Forms]
 ms.assetid: 533b9814-6124-49dc-9fda-085f1502609f
-ms.openlocfilehash: d6e31d55ab271376501064c3aa9a9ce38c14063d
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: b3a85f5f9e51dae50a40058b8f07f92976da66f2
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039738"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666160"
 ---
 # <a name="how-to-format-the-windows-forms-datagrid-control-using-the-designer"></a>Procédure : mettre en forme le contrôle DataGrid Windows Forms à l’aide du concepteur
 
@@ -33,8 +33,7 @@ Il existe trois aspects de base de la mise <xref:System.Windows.Forms.DataGrid> 
 
 En guise d’étape initiale dans la mise en forme d’une grille de données, vous <xref:System.Windows.Forms.DataGrid> pouvez définir les propriétés du lui-même. Ces options de couleur et de format forment une base à partir de laquelle vous pouvez apporter des modifications en fonction des tables de données et des colonnes affichées.
 
-La procédure suivante requiert un projet d' **application Windows** avec un formulaire contenant <xref:System.Windows.Forms.DataGrid> un contrôle. Pour plus d’informations sur la configuration d’un tel [projet, consultez Procédure: Créez un projet](/visualstudio/ide/step-1-create-a-windows-forms-application-project) d’application Windows Forms [et procédez comme suit: Ajoutez des contrôles à](how-to-add-controls-to-windows-forms.md)Windows Forms. Dans Visual Studio 2005, le <xref:System.Windows.Forms.DataGrid> contrôle ne se trouve pas dans la **boîte à outils** par défaut. Pour plus d’informations, consultez [Guide pratique pour Ajoutez des éléments à la](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165355(v=vs.100))boîte à outils.
-
+La procédure suivante requiert un projet d' **application Windows** avec un formulaire contenant <xref:System.Windows.Forms.DataGrid> un contrôle. Pour plus d’informations sur la configuration d’un tel [projet, consultez Procédure: Créez un projet](/visualstudio/ide/step-1-create-a-windows-forms-application-project) d’application Windows Forms [et procédez comme suit: Ajoutez des contrôles à](how-to-add-controls-to-windows-forms.md)Windows Forms. Dans Visual Studio 2005, le <xref:System.Windows.Forms.DataGrid> contrôle ne se trouve pas dans la **boîte à outils** par défaut. Pour plus d'informations, voir [Procédure : Ajoutez des éléments à la](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165355(v=vs.100))boîte à outils.
 
 ### <a name="to-establish-a-default-style-for-the-datagrid-control"></a>Pour établir un style par défaut pour le contrôle DataGrid
 
@@ -71,7 +70,7 @@ La procédure suivante requiert un projet d' **application Windows** avec un for
     > [!NOTE]
     > Lorsque vous personnalisez les couleurs des contrôles, il est possible de rendre le contrôle inaccessible en raison d’un choix de couleurs médiocres (par exemple, rouge et vert). Utilisez les couleurs disponibles dans la palette **couleurs système** pour éviter ce problème.
 
-    La procédure suivante requiert un <xref:System.Windows.Forms.DataGrid> contrôle lié à une table de données. Pour plus d’informations, consultez [Guide pratique pour Liez le contrôle Windows Forms DataGrid à une source](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)de données.
+    La procédure suivante requiert un <xref:System.Windows.Forms.DataGrid> contrôle lié à une table de données. Pour plus d'informations, voir [Procédure : Liez le contrôle Windows Forms DataGrid à une source](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)de données.
 
 ### <a name="to-set-the-table-and-column-style-of-a-data-table-at-design-time"></a>Pour définir le style de table et de colonne d’une table de données au moment de la conception
 

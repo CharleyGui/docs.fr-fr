@@ -1,18 +1,18 @@
 ---
-title: Utilisation de la Variance pour les délégués Func et Action générique (Visual Basic)
+title: Utilisation de la variance pour les délégués génériques Func et action (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 36c3012f-b39c-493b-b90f-079b5912ac1b
-ms.openlocfilehash: f2f45a9b6536859499f882b4cd585595176208f2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ce560f6246469620032ececa4afeeffe69baf407
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787268"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664358"
 ---
-# <a name="using-variance-for-func-and-action-generic-delegates-visual-basic"></a>Utilisation de la Variance pour les délégués Func et Action générique (Visual Basic)
+# <a name="using-variance-for-func-and-action-generic-delegates-visual-basic"></a>Utilisation de la variance pour les délégués génériques Func et action (Visual Basic)
 Ces exemples montrent comment utiliser la covariance et la contravariance dans les délégués génériques `Func` et `Action` pour permettre de réutiliser des méthodes et fournir davantage de flexibilité dans votre code.  
   
- Pour plus d’informations sur la covariance et la contravariance, consultez [Variance dans les délégués (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md).  
+ Pour plus d’informations sur la covariance et la contravariance, consultez [variance dans les délégués (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md).  
   
 ## <a name="using-delegates-with-covariant-type-parameters"></a>Utilisation des délégués avec les paramètres de type covariant  
  L’exemple suivant illustre les avantages de la prise en charge de la covariance dans les délégués génériques `Func`. La méthode `FindByTitle` prend un paramètre de type `String` et retourne un objet de type `Employee`. Toutefois, vous pouvez assigner cette méthode au délégué `Func(Of String, Person)`, car `Employee` hérite de `Person`.  
@@ -92,4 +92,4 @@ End Class
 ## <a name="see-also"></a>Voir aussi
 
 - [Covariance et contravariance (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/index.md)
-- [Génériques](~/docs/standard/generics/index.md)
+- [Génériques](../../../../standard/generics/index.md)

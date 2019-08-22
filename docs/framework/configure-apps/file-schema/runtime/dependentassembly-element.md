@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: 14e95627-dd79-4b82-ac85-e682aa3a31d8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ac83a0b27a965721dabe1bdf2e05afbdc9b9c961
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4bf1a15ff27f4390f1985a2d2730b1acfcaab2c1
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704776"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663827"
 ---
-# <a name="dependentassembly-element"></a>\<dependentAssembly > élément
-Encapsule la stratégie de liaisons et l’emplacement de chaque assembly. Utilisez une `dependentAssembly` élément pour chaque assembly.  
+# <a name="dependentassembly-element"></a>\<Élément > dependentAssembly
+Encapsule la stratégie de liaisons et l’emplacement de chaque assembly. Utilisez un `dependentAssembly` seul élément pour chaque assembly.  
   
  \<configuration>  
 \<runtime>  
@@ -44,7 +44,7 @@ Encapsule la stratégie de liaisons et l’emplacement de chaque assembly. Utili
 |Élément|Description|  
 |-------------|-----------------|  
 |`assemblyIdentity`|Contient des informations d’identification sur l’assembly. Cet élément doit être inclus dans chaque `dependentAssembly` élément.|  
-|`codeBase`|Spécifie où le runtime peut trouver un assembly partagé s’il n’est pas installé sur l’ordinateur.|  
+|`codeBase`|Spécifie l’emplacement où le runtime peut trouver un assembly partagé s’il n’est pas installé sur l’ordinateur.|  
 |`bindingRedirect`|Redirige une version d'assembly vers une autre.|  
 |`publisherPolicy`|Spécifie si le runtime applique la stratégie d’éditeur pour cet assembly.|  
   
@@ -57,7 +57,7 @@ Encapsule la stratégie de liaisons et l’emplacement de chaque assembly. Utili
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment encapsuler des informations sur les deux assemblys.  
+ L’exemple suivant montre comment encapsuler des informations d’assembly pour deux assemblys.  
   
 ```xml  
 <configuration>  
@@ -82,6 +82,6 @@ Encapsule la stratégie de liaisons et l’emplacement de chaque assembly. Utili
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Redirection des versions d'assemblys](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)
+- [Redirection des versions d'assemblys](../../redirect-assembly-versions.md)

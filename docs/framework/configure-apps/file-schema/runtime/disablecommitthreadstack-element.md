@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: 3559d46a-7640-4c72-9a11-7e980768929e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a5852579758e85bb033af9b6d036fe76444bb8e4
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 4b1f55f056ef1aed4a5eff655650cefe778c97ae
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583856"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663783"
 ---
-# <a name="disablecommitthreadstack-element"></a>\<disableCommitThreadStack> Element
+# <a name="disablecommitthreadstack-element"></a>\<disableCommitThreadStack >, élément
 Spécifie si la pile des threads complète est validée quand un thread est démarré.  
   
  \<configuration>  
@@ -41,7 +41,7 @@ Spécifie si la pile des threads complète est validée quand un thread est dém
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |0|Ne pas désactiver le comportement par défaut du Common Language Runtime, qui consiste à valider la pile des threads complète quand un thread est démarré.|  
 |1|Désactiver le comportement par défaut du Common Language Runtime, qui consiste à valider la pile des threads complète quand un thread est démarré.|  
@@ -60,7 +60,7 @@ Spécifie si la pile des threads complète est validée quand un thread est dém
  Le comportement par défaut du Common Language Runtime consiste à valider la pile des threads complète quand un thread est démarré. Si un grand nombre de threads doivent être créés sur un serveur disposant d’une mémoire limitée, et que la plupart de ces threads utilisent très peu d’espace de pile, les performances du serveur peuvent être améliorées si le Common Language Runtime ne valide pas la pile des threads complète immédiatement quand un thread est démarré.  
   
 > [!NOTE]
->  Les hôtes non managés peuvent utiliser l’indicateur de démarrage `STARTUP_DISABLE_COMMITTHREADSTACK` dans l’énumération [STARTUP_FLAGS](../../../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md) pour obtenir le même résultat.  
+>  Les hôtes non managés peuvent utiliser l’indicateur de démarrage `STARTUP_DISABLE_COMMITTHREADSTACK` dans l’énumération [STARTUP_FLAGS](../../../unmanaged-api/hosting/startup-flags-enumeration.md) pour obtenir le même résultat.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment désactiver le comportement par défaut du Common Language Runtime, qui consiste à valider la pile des threads complète lors du démarrage d’un thread.  
@@ -75,5 +75,5 @@ Spécifie si la pile des threads complète est validée quand un thread est dém
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)

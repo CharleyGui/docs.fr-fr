@@ -10,14 +10,14 @@ helpviewer_keywords:
 - add element, connectionManagement
 - connectionManagement, add element
 ms.assetid: 856bf57d-1c63-46c7-a178-03d97b0a4149
-ms.openlocfilehash: 3a046fd386536b29ea2dcad5660c65c08b7e4478
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 608c591b910252dd60950bf2aa7565d6df04d5fc
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705270"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664228"
 ---
-# <a name="add-element-for-connectionmanagement-network-settings"></a>\<Ajouter >, élément de connectionManagement (paramètres réseau)
+# <a name="add-element-for-connectionmanagement-network-settings"></a>\<Ajouter > élément pour connectionManagement (paramètres réseau)
 Ajoute une adresse IP ou un nom DNS à la liste de gestion des connexions.  
   
  \<configuration>  
@@ -51,7 +51,7 @@ Ajoute une adresse IP ou un nom DNS à la liste de gestion des connexions.
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[connectionManagement](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Spécifie le nombre maximal de connexions à un hôte réseau.|  
+|[connectionManagement](connectionmanagement-element-network-settings.md)|Spécifie le nombre maximal de connexions à un hôte réseau.|  
   
 ## <a name="remarks"></a>Notes  
  La valeur de l'attribut `address` doit être un astérisque pour spécifier toutes les connexions, ou une chaîne au format `<schema>://<idn_hostname>[:<port>]`.  
@@ -62,7 +62,7 @@ Ajoute une adresse IP ou un nom DNS à la liste de gestion des connexions.
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant configure une application d’utiliser quatre connexions au serveur `www.contoso.com` et deux connexions à tous les autres serveurs.  
+ L’exemple suivant configure une application pour qu’elle utilise quatre connexions au serveur `www.contoso.com` et deux connexions à tous les autres serveurs.  
   
 ```xml  
 <configuration>  
@@ -79,4 +79,4 @@ Ajoute une adresse IP ou un nom DNS à la liste de gestion des connexions.
 
 - <xref:System.Net.ServicePoint>
 - <xref:System.Net.ServicePointManager>
-- [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma des paramètres réseau](index.md)

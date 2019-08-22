@@ -8,30 +8,23 @@ helpviewer_keywords:
 - ElementHost control
 - WPF user control [Windows Forms], hosting in Windows Forms
 ms.assetid: 2e92d8e8-f0e4-4df7-9f07-2acf35cd798c
-ms.openlocfilehash: 889e81053d4e2264755468446a4e1681216ae22e
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+author: gewarren
+ms.author: gewarren
+manager: jillfra
+ms.openlocfilehash: e3fb6e42270cc0a530646b656470ec99fcfc7f1f
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040377"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666249"
 ---
 # <a name="walkthrough-create-new-wpf-content-on-windows-forms-at-design-time"></a>Procédure pas à pas : Créer un contenu WPF sur Windows Forms au moment de la conception
 
 Cet article vous montre comment créer un contrôle Windows Presentation Foundation (WPF) à utiliser dans vos applications basées sur Windows Forms.
 
-Lors de cette procédure pas à pas, vous allez exécuter les tâches suivantes :
-
-- créer le projet ;
-
-- créer un projet WPF ;
-
-- ajouter le nouveau contrôle WPF à un Windows Form. Le contrôle WPF est hébergé dans un contrôle <xref:System.Windows.Forms.Integration.ElementHost>.
-
 ## <a name="prerequisites"></a>Prérequis
 
-Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :
-
-- Visual Studio
+Cette procédure pas à pas nécessite Visual Studio.
 
 ## <a name="create-the-project"></a>Créer le projet
 
@@ -51,17 +44,17 @@ Pour créer un contrôle WPF:
 
 1. Dans **Explorateur de solutions**, ajoutez un nouveau projet de **bibliothèque de contrôles utilisateur (.NET Framework) WPF** à la solution. Utilisez le nom par défaut pour la bibliothèque de contrôles, `WpfControlLibrary1`. Le nom du contrôle par défaut est `UserControl1.xaml`.
 
-     L’ajout du nouveau contrôle a les effets suivants:
+   L’ajout du nouveau contrôle a les effets suivants:
 
-    - Le fichier UserControl1.xaml est ajouté.
+   - Le fichier UserControl1.xaml est ajouté.
 
-    - Le fichier UserControl1.xaml.cs ou UserControl1.xaml.vb est ajouté. Ce fichier contient le code-behind pour les gestionnaires d'événements et autre implémentation.
+   - Le fichier UserControl1.xaml.cs (ou UserControl1. Xaml. vb) est ajouté. Ce fichier contient le code-behind pour les gestionnaires d'événements et autre implémentation.
 
-    - Les références aux assemblys WPF sont ajoutées.
+   - Les références aux assemblys WPF sont ajoutées.
 
-    - Le fichier UserControl1.xaml s'ouvre dans le [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)].
+   - Le fichier UserControl1. xaml s’ouvre dans le Concepteur WPF pour Visual Studio.
 
-2. En mode Design, assurez-vous que `UserControl1` est sélectionné. Pour plus d'informations, voir [Procédure : Sélectionner et déplacer des éléments sur la](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514527(v=vs.100))aire de conception.
+2. En mode Design, assurez-vous que `UserControl1` est sélectionné.
 
 3. Dans la fenêtre **Propriétés** , affectez à la valeur <xref:System.Windows.FrameworkElement.Width%2A> des <xref:System.Windows.FrameworkElement.Height%2A> propriétés et la valeur **200**.
 
@@ -69,8 +62,8 @@ Pour créer un contrôle WPF:
 
 5. Dans la fenêtre **Propriétés** , affectez la valeur <xref:System.Windows.Controls.TextBox.Text%2A> **contenu hébergé**à la propriété.
 
-    > [!NOTE]
-    > En général, vous devez héberger du contenu WPF plus sophistiqué. Le contrôle <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> est utilisé ici uniquement à titre d'illustration.
+   > [!NOTE]
+   > En général, vous devez héberger du contenu WPF plus sophistiqué. Le contrôle <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> est utilisé ici uniquement à titre d'illustration.
 
 6. Générez le projet.
 

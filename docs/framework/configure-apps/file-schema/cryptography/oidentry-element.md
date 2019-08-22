@@ -8,14 +8,14 @@ helpviewer_keywords:
 - <oidEntry> element
 - oidEntry element
 ms.assetid: 22fb88b0-bf27-489c-9ca0-e65950ac136c
-ms.openlocfilehash: c686d2b99ad66aec753a356b09fa3c7151193808
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 013994e36c4c63410a753967cbac92c38783ae62
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674744"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659587"
 ---
-# <a name="oidentry-element"></a>\<oidEntry > élément
+# <a name="oidentry-element"></a>\<oidEntry >, élément
 Mappe un identificateur d’objet (OID) ASN.1 à un nom convivial.  
   
  \<configuration>  
@@ -37,8 +37,8 @@ Mappe un identificateur d’objet (OID) ASN.1 à un nom convivial.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|**OID**|Attribut requis.<br /><br /> Spécifie l’OID ASN.1 correspondant à l’algorithme implémenté par votre classe.|  
-|**name**|Attribut requis.<br /><br /> Spécifie la valeur de la **nom** d’attribut dans le [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) balise.|  
+|**OID**|Attribut requis.<br /><br /> Spécifie l’OID ASN. 1 correspondant à l’algorithme implémenté par votre classe.|  
+|**name**|Attribut requis.<br /><br /> Spécifie la valeur de l’attribut **Name** dans la [ \<balise > élément nameEntry](nameentry-element.md) .|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -49,14 +49,14 @@ Mappe un identificateur d’objet (OID) ASN.1 à un nom convivial.
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`cryptographySettings`|Contient des paramètres de chiffrement.|  
-|`mscorlib`|Contient le `cryptographySettings` élément.|  
-|`oidMap`|Contient des mappages d’identificateur (OID) d’objet ASN.1 aux classes.|  
+|`mscorlib`|Contient l' `cryptographySettings` élément.|  
+|`oidMap`|Contient les mappages de l’identificateur d’objet (OID) ASN. 1 aux classes.|  
   
 ## <a name="remarks"></a>Notes  
- OID ASN.1 identifient les algorithmes dans certains formats de chiffrement. Mapper des identificateurs d’objets à des noms conviviaux pour les algorithmes que vous souhaitez identifier.  
+ Les identificateurs d’objets ASN. 1 identifient les algorithmes dans certains formats de chiffrement. Mappez les identificateurs d’objet à des noms conviviaux pour les algorithmes que vous souhaitez identifier.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser le  **\<oidEntry >** élément pour mapper un identificateur d’objet pour l’algorithme de hachage RIPEMD-160 à une implémentation de cet algorithme de hachage.  
+ L’exemple suivant montre comment utiliser l'  **\<élément oidEntry >** pour mapper un identificateur d’objet pour l’algorithme de hachage RIPEMD-160 à une implémentation de cet algorithme de hachage.  
   
 ```xml  
 <configuration>  
@@ -80,8 +80,8 @@ Mappe un identificateur d’objet (OID) ASN.1 à un nom convivial.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Schéma des paramètres de chiffrement](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)
+- [Schéma des fichiers de configuration](../index.md)
+- [Schéma des paramètres de chiffrement](index.md)
 - [Cryptographic Services](../../../../../docs/standard/security/cryptographic-services.md)
-- [Configuration des classes de chiffrement](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)
-- [Mappage d'identificateurs d'objet à des algorithmes de chiffrement](../../../../../docs/framework/configure-apps/map-object-identifiers-to-cryptography-algorithms.md)
+- [Configuration des classes de chiffrement](../../configure-cryptography-classes.md)
+- [Mappage d'identificateurs d'objet à des algorithmes de chiffrement](../../map-object-identifiers-to-cryptography-algorithms.md)

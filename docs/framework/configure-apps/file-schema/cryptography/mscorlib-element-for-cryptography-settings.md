@@ -8,15 +8,15 @@ helpviewer_keywords:
 - mscorlib element
 - <mscorlib> element
 ms.assetid: d549668f-31f1-4b92-8021-a9135c09ca3c
-ms.openlocfilehash: ec328bc4c63bd4754c6f975ac03e610718304245
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 312db8ea5ae4b66fd00faad1b788eac0356aeaa7
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674739"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659599"
 ---
-# <a name="mscorlib-element-for-cryptography-settings"></a>\<mscorlib >, élément pour les paramètres de chiffrement
-Contient le [ \<cryptographySettings > élément](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptographysettings-element.md).  
+# <a name="mscorlib-element-for-cryptography-settings"></a>\<Élément > mscorlib pour les paramètres de chiffrement
+Contient l' [ \<élément cryptographySettings >](cryptographysettings-element.md).  
   
  \<configuration>  
 \<mscorlib>  
@@ -46,8 +46,8 @@ Contient le [ \<cryptographySettings > élément](../../../../../docs/framework/
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser le  **\<mscorlib >** élément à référencer une classe de chiffrement et configurer le runtime. Vous pouvez ensuite passer la chaîne « RSA » à la <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> méthode et l’utilisation du <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> méthode pour retourner un `MyCryptoRSAClass` objet.  
+## <a name="example"></a>Exemples  
+ L’exemple suivant montre comment utiliser l'  **\<élément mscorlib >** pour référencer une classe de chiffrement et configurer le Runtime. Vous pouvez ensuite passer la chaîne «RSA» à la <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> méthode et utiliser la <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> méthode pour retourner un `MyCryptoRSAClass` objet.  
   
 ```xml  
 <configuration>  
@@ -72,7 +72,7 @@ Contient le [ \<cryptographySettings > élément](../../../../../docs/framework/
 
 - <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A>
 - <xref:System.Security.Cryptography>
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Schéma des paramètres de chiffrement](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)
+- [Schéma des fichiers de configuration](../index.md)
+- [Schéma des paramètres de chiffrement](index.md)
 - [Cryptographic Services](../../../../../docs/standard/security/cryptographic-services.md)
-- [Configuration des classes de chiffrement](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)
+- [Configuration des classes de chiffrement](../../configure-cryptography-classes.md)

@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 846ffa47-7257-4ce3-8cac-7ff627e0e34f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 15156eaf883fc9ec162e0a85525564d49522b01d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 859e8a12421ea92aa48c54317e052683eb8e83f8
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592670"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663483"
 ---
-# <a name="relativebindforresources-element"></a>\<relativeBindForResources > élément
+# <a name="relativebindforresources-element"></a>\<relativeBindForResources >, élément
 Optimise la sonde pour les assemblys satellites.  
   
- \<configuration > élément  
-\<runtime > élément  
-\<relativeBindForResources > élément  
+ \<Élément de > de configuration  
+\<Élément > du Runtime  
+\<relativeBindForResources >, élément  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +39,7 @@ Optimise la sonde pour les assemblys satellites.
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Value|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |`false`|Le runtime n’optimise pas la sonde pour les assemblys satellites. Valeur par défaut.|  
 |`true`|Le runtime optimise la sonde pour les assemblys satellites.|  
@@ -55,24 +55,24 @@ Optimise la sonde pour les assemblys satellites.
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
 ## <a name="remarks"></a>Notes  
- En règle générale, Resource Manager tente de détecter des ressources, comme indiqué dans le [Packaging and Deploying Resources](../../../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md) rubrique. Cela signifie que lorsque Resource Manager tente de détecter une version localisée particulière d’une ressource, il peut rechercher dans le global assembly cache, de rechercher dans un dossier spécifique à la culture dans la requête de base, de code de l’application Windows Installer pour les assemblys satellites et déclencher le <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> événement. Le `<relativeBindForResources>` élément optimise celle dans laquelle Resource Manager tente de détecter les assemblys satellites. Elle peut améliorer les performances lors de la détection pour les ressources dans les conditions suivantes :  
+ En général, Gestionnaire des ressources sondes pour les ressources, comme indiqué dans la rubrique empaquetage [et déploiement de ressources](../../../resources/packaging-and-deploying-resources-in-desktop-apps.md) . Cela signifie que lorsque Gestionnaire des ressources détecte une version localisée particulière d’une ressource, il peut regarder dans le Global Assembly Cache, Rechercher dans un dossier propre à la culture dans la base de code de l’application, interroger Windows Installer pour les assemblys satellites et déclencher l’opération <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> événement. L' `<relativeBindForResources>` élément optimise la façon dont gestionnaire des ressources sondes pour les assemblys satellites. Elle peut améliorer les performances lors de la détection des ressources dans les conditions suivantes:  
   
-- Lorsque l’assembly satellite est déployé dans le même emplacement que l’assembly de code. En d’autres termes, si l’assembly de code est installé dans le global assembly cache, les assemblys satellites doivent également être installés il. Si l’assembly de code est installé dans la base de code de l’application, les assemblys satellites doivent également être installés dans un dossier spécifique à la culture dans la base de code.  
+- Lorsque l’assembly satellite est déployé dans le même emplacement que l’assembly de code. En d’autres termes, si l’assembly de code est installé dans le Global Assembly Cache, les assemblys satellites doivent également être installés ici. Si l’assembly de code est installé dans la base de code de l’application, les assemblys satellites doivent également être installés dans un dossier propre à la culture dans la base de code.  
   
-- Lorsque le programme d’installation de Windows n’est pas utilisé ou est rarement utilisé pour l’installation à la demande des assemblys satellites.  
+- Lorsque Windows Installer n’est pas utilisé ou est rarement utilisé pour l’installation à la demande d’assemblys satellites.  
   
-- Lorsque le code d’application ne gère pas la <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> événement.  
+- Lorsque le code d’application ne gère <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> pas l’événement.  
   
- Définition de la `enabled` attribut de la `<relativeBindForResources>` élément à `true` optimise la sonde du Gestionnaire de ressources pour les assemblys satellites comme suit :  
+ La définition `enabled` de l’attribut `<relativeBindForResources>` de l' `true` élément pour optimiser la sonde de gestionnaire des ressources pour les assemblys satellites comme suit:  
   
-- Il utilise l’emplacement de l’assembly de code parent pour détecter l’assembly satellite.  
+- Elle utilise l’emplacement de l’assembly de code parent pour détecter l’assembly satellite.  
   
-- Il n’interroge pas le programme d’installation de Windows pour les assemblys satellites.  
+- Il n’interroge pas Windows Installer pour les assemblys satellites.  
   
-- Elle ne déclenche pas le <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> événement.  
+- Elle ne déclenche pas l' <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> événement.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Empaquetage et déploiement de ressources](../../../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Empaquetage et déploiement de ressources](../../../resources/packaging-and-deploying-resources-in-desktop-apps.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)

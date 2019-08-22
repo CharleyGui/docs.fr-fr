@@ -9,12 +9,12 @@ helpviewer_keywords:
 - icons [Windows Forms], toolbar buttons
 - ToolBar control [Windows Forms], adding icons to buttons
 ms.assetid: d848f38e-67f2-49d4-8e88-01c845c06c02
-ms.openlocfilehash: 5de7645ecbf2123df849046a152643cd629b4898
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 49e93f12bebbf409e6b3a06634556b9103c85f44
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69038237"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666205"
 ---
 # <a name="how-to-define-an-icon-for-a-toolbar-button-using-the-designer"></a>Procédure : définir une icône pour un bouton de barre d’outils à l’aide du concepteur
 
@@ -25,10 +25,9 @@ ms.locfileid: "69038237"
 
 La procédure suivante requiert un projet d' **application Windows** avec un formulaire contenant <xref:System.Windows.Forms.ToolBar> un contrôle et <xref:System.Windows.Forms.ImageList> un composant. Pour plus d’informations sur la configuration d’un tel [projet, consultez Procédure: Créez un projet](/visualstudio/ide/step-1-create-a-windows-forms-application-project) d’application Windows Forms [et procédez comme suit: Ajoutez des contrôles à](how-to-add-controls-to-windows-forms.md)Windows Forms.
 
-
 ### <a name="to-set-an-icon-for-a-toolbar-button-at-design-time"></a>Pour définir une icône pour un bouton de barre d’outils au moment du design
 
-1. Ajoutez des <xref:System.Windows.Forms.ImageList> images au composant. Pour plus d'informations, voir [Procédure : Ajoutez ou supprimez des images ImageList avec](how-to-add-or-remove-imagelist-images-with-the-designer.md)le concepteur.
+1. Ajoutez des <xref:System.Windows.Forms.ImageList> images au composant. Pour plus d’informations, consultez [Guide pratique pour Ajoutez ou supprimez des images ImageList avec](how-to-add-or-remove-imagelist-images-with-the-designer.md)le concepteur.
 
 2. Sélectionnez le <xref:System.Windows.Forms.ToolBar> contrôle sur votre formulaire.
 

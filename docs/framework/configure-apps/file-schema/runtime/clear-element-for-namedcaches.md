@@ -5,15 +5,15 @@ helpviewer_keywords:
 - <clear> element for <namedCaches>
 - clear element for <namedCaches>
 ms.assetid: ea01a858-65da-4348-800f-5e3df59d4d79
-ms.openlocfilehash: e563f8f27538e70ba90465fc28d300754509f7a4
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: a90970e468359714bbbb858f3f300c26b5757a4d
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423318"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658860"
 ---
-# <a name="clear-element-for-namedcaches"></a>\<Désactivez >, élément pour \<namedCaches >
-Efface tous les `namedCache` entrées dans le `namedCaches` collection pour un cache mémoire.  
+# <a name="clear-element-for-namedcaches"></a>\<Effacer > élément pour \<namedCaches >
+Efface toutes `namedCache` les entrées de `namedCaches` la collection pour un cache mémoire.  
   
  \<system.runtime.caching>  
 \<memoryCache>  
@@ -45,11 +45,11 @@ Efface tous les `namedCache` entrées dans le `namedCaches` collection pour un c
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<namedCaches>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|Contient une collection de paramètres de configuration pour l’élément nommé <xref:System.Runtime.Caching.MemoryCache> instances.|  
+|[\<namedCaches>](namedcaches-element-cache-settings.md)|Contient une collection de paramètres de configuration pour les <xref:System.Runtime.Caching.MemoryCache> instances nommées.|  
   
 ## <a name="remarks"></a>Notes  
- Le `clear` élément efface tous les `namedCache` entrées dans la collection de cache nommé pour un cache mémoire. Vous pouvez utiliser la `clear` élément avant d’utiliser le `add` élément à ajouter une nouvelle entrée de cache nommé afin d’être certain qu’il n’existe aucun autre cache nommé dans la collection.  
+ L' `clear` élément efface toutes `namedCache` les entrées de la collection de caches nommée pour un cache mémoire. Vous pouvez utiliser l' `clear` élément avant d’utiliser l' `add` élément pour ajouter une nouvelle entrée de cache nommée afin d’être certain qu’il n’existe aucun autre cache nommé dans la collection.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [\<namedCaches >, élément (paramètres de Cache)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)
+- [\<namedCaches >, élément (paramètres de cache)](namedcaches-element-cache-settings.md)
