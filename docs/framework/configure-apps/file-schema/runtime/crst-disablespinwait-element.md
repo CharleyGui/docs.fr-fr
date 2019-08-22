@@ -1,5 +1,5 @@
 ---
-title: élément de < Crst_DisableSpinWait >
+title: < élément Crst_DisableSpinWait >
 ms.date: 04/18/2019
 f1_keywords:
 - Crst_DisableSpinWait
@@ -7,16 +7,16 @@ helpviewer_keywords:
 - Crst_DisableSpinWait element
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f89f0558c11e229fef2ca3cd619e3c033f12c858
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a52dd671f1fbf6fda5bdc92c0935784181eb4b03
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64754673"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663839"
 ---
-# <a name="crstdisablespinwait-element"></a>\<Crst_DisableSpinWait > élément
+# <a name="crst_disablespinwait-element"></a>\<Crst_DisableSpinWait >, élément
 
-Spécifie s’il faut désactiver l’attente de spins pour une section critique lors de conflits.  
+Spécifie s’il faut désactiver l’attente de spin pour une section critique en cas de conflit.  
   
  \<configuration>  
 \<runtime>  
@@ -36,14 +36,14 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|**enabled**|Spécifie si l’attente de spins pour les sections critiques lorsqu’ils sont de conflits est désactivé.|  
+|**enabled**|Spécifie si la rotation en attente des sections critiques lorsqu’elles sont confrontées est désactivée.|  
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|1|Désactiver l’attente de toupie (spin) lorsqu’une section critique ne peut pas être acquis.|  
-|0|Ne désactivez pas l’attente de spins lorsqu’une section critique ne peut pas être acquis. Valeur par défaut.|  
+|1|Désactivez l’attente de spin quand une section critique ne peut pas être acquise.|  
+|0|Ne désactivez pas l’attente de spin quand une section critique ne peut pas être acquise. Valeur par défaut.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -53,11 +53,11 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`runtime`|Contient des informations sur les différents paramètres de configuration du runtime.|  
+|`runtime`|Contient des informations sur les différents paramètres de configuration du Runtime.|  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
 
-L’exemple suivant désactive toupie (spin) en attente dans des sections critiques de conflits.  
+L’exemple suivant désactive l’attente de spin-Wait dans les sections critiques en cas de conflit.  
   
 ```xml  
 <configuration>  
@@ -69,5 +69,5 @@ L’exemple suivant désactive toupie (spin) en attente dans des sections critiq
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)

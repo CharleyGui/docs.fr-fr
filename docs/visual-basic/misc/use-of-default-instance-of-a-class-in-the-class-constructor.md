@@ -2,12 +2,12 @@
 title: L’utilisation de l’instance par défaut d’une classe dans le constructeur de classe pourrait entraîner des appels récurrents infinis
 ms.date: 07/20/2015
 ms.assetid: 9645b47f-7de5-46d0-bb45-d5fdaa8aaa2a
-ms.openlocfilehash: 1cad1e3cf3943e945d519aee061a877c91684b4a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cec3d3d462822ca571cab59a2e4d7e730d2aec46
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623470"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664367"
 ---
 # <a name="use-of-default-instance-of-a-class-in-the-class-constructor-could-lead-to-infinite-recursive-call"></a>L’utilisation de l’instance par défaut d’une classe dans le constructeur de classe pourrait entraîner des appels récurrents infinis
 Une instance par défaut d’une classe a été utilisée dans le constructeur de la classe. Cela peut entraîner un appel récurrent infini, également appelé « boucle infinie ».  
@@ -18,4 +18,4 @@ Une instance par défaut d’une classe a été utilisée dans le constructeur d
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Constructeurs](~/docs/visual-basic/programming-guide/concepts/object-oriented-programming.md#constructors)
+- [Constructeurs](../programming-guide/concepts/object-oriented-programming.md#constructors)

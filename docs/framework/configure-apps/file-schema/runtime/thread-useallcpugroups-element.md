@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 ms.assetid: d30fe7c5-8469-46e2-b804-e3eec7b24256
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9758e009e012c8af5f5f7bd19dcd21f34b8c7d96
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: e9ee6bdb7094ea2bc9e283e331c0f6ad9b68e4f9
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689737"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663421"
 ---
-# <a name="threaduseallcpugroups-element"></a>\<Thread_UseAllCpuGroups > élément
+# <a name="thread_useallcpugroups-element"></a>\<Thread_UseAllCpuGroups >, élément
 
 Indique si le runtime distribue les threads managés entre tous les groupes de processeurs.
 
 \<configuration>\
-\<runtime>\
+\<> du runtime \
 \<Thread_UseAllCpuGroups>
 
 ## <a name="syntax"></a>Syntaxe
@@ -38,10 +38,10 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="enabled-attribute"></a>Attribut enabled
 
-|Value|Description|
+|Valeur|Description|
 |-----------|-----------------|
-|`false`|Le runtime ne distribue pas les threads managés entre plusieurs groupes d’UC. Il s'agit de la valeur par défaut.|
-|`true`|Le runtime distribue les threads managés entre plusieurs groupes d’UC, si l’ordinateur dispose de plusieurs groupes d’UC et le [ \<GCCpuGroup >](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md) élément est activé.|
+|`false`|Le runtime ne distribue pas les threads managés sur plusieurs groupes d’UC. Il s'agit de la valeur par défaut.|
+|`true`|Le runtime distribue des threads managés sur plusieurs groupes de processeurs, si l’ordinateur a plusieurs groupes de processeurs et que l' [ \<élément GCCpuGroup >](gccpugroup-element.md) est activé.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -56,9 +56,9 @@ Aucun.
 
 ## <a name="remarks"></a>Notes
 
-Lorsqu’un ordinateur a plusieurs groupes d’UC, l’activation de cet élément, le runtime répartir les threads managés entre tous les groupes d’UC. Pour utiliser cette fonctionnalité, vous devez également activer le [ \<GCCpuGroup >](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md) élément, qui étend le garbage collection pour tous les groupes d’UC et tous les cœurs ne prend en compte lors de la création et l’équilibrage des segments de mémoire. L’activation de la [ \<GCCpuGroup >](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md) élément requiert l’activation de la [ \<< gcServer >](../../../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) élément. Si ces éléments ne sont pas activées, l’activation de la `<Thread_UseAllCpuGroups>` élément n’a aucun effet.
+Lorsqu’un ordinateur possède plusieurs groupes d’UC, l’activation de cet élément amène le runtime à distribuer des threads managés sur tous les groupes de PROCESSEURs. Pour utiliser cette fonctionnalité, vous devez également activer l' [ \<élément GCCpuGroup >](gccpugroup-element.md) , qui étend garbage collection à tous les groupes de processeurs et prend en compte tous les cœurs lors de la création et de l’équilibrage des tas. L’activation de l' [ \<élément GCCpuGroup >](gccpugroup-element.md) nécessite l’activation de l' [ \<élément gcServer >](gcserver-element.md) . Si ces éléments ne sont pas activés, `<Thread_UseAllCpuGroups>` l’activation de l’élément n’a aucun effet.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L’exemple suivant montre comment activer la prise en charge de plusieurs groupes d’UC.
 
@@ -74,6 +74,6 @@ L’exemple suivant montre comment activer la prise en charge de plusieurs group
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<GCCpuGroup > élément](../../../../../docs/framework/configure-apps/file-schema/runtime/gccpugroup-element.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)
+- [\<GCCpuGroup >, élément](gccpugroup-element.md)

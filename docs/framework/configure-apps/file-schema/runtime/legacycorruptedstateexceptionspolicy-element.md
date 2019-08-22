@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: e0a55ddc-bfa8-4f3e-ac14-d1fc3330e4bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6191ee2169a85725f0367763874e60c0ceb1d7a4
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 2715548a40579375cebbdd5fb9003738a42ff714
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489434"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663650"
 ---
-# <a name="legacycorruptedstateexceptionspolicy-element"></a>\<legacyCorruptedStateExceptionsPolicy> Element
+# <a name="legacycorruptedstateexceptionspolicy-element"></a>\<legacyCorruptedStateExceptionsPolicy >, élément
 Spécifie si le common language runtime permet au code managé d’intercepter les violations d’accès et d’autres exceptions d’état endommagé.  
   
  \<configuration>  
@@ -34,14 +34,14 @@ Spécifie si le common language runtime permet au code managé d’intercepter l
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Spécifie que l’application interceptera endommager des échecs d’état d’exception telles que des violations d’accès.|  
+|`enabled`|Attribut requis.<br /><br /> Spécifie que l’application intercepte les échecs d’exception d’État, tels que les violations d’accès.|  
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|`false`|L’application n’intercepte pas endommager les échecs d’état d’exception telles que des violations d’accès. Il s'agit de la valeur par défaut.|  
-|`true`|L’application interceptera endommager des échecs d’état d’exception telles que des violations d’accès.|  
+|`false`|L’application n’intercepte pas les échecs d’exception d’État endommagés, tels que les violations d’accès. Il s'agit de la valeur par défaut.|  
+|`true`|L’application intercepte les échecs d’exception d’État, tels que les violations d’accès.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -54,20 +54,20 @@ Spécifie si le common language runtime permet au code managé d’intercepter l
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="remarks"></a>Notes  
- Dans le .NET Framework version 3.5 et versions antérieure, le common language runtime autorise le code managé intercepter les exceptions qui ont été générées par les États de processus endommagé. Une violation d’accès est un exemple de ce type d’exception.  
+ Dans la .NET Framework version 3,5 et les versions antérieures, le common language runtime permettait au code managé d’intercepter les exceptions levées par des États de processus endommagés. Une violation d’accès est un exemple de ce type d’exception.  
   
- À compter de .NET Framework 4, le code managé n’intercepte plus ces types d’exceptions dans `catch` blocs. Toutefois, vous pouvez remplacer cette modification et maintenir la gestion des exceptions d’état endommagé de deux manières :  
+ À partir du .NET Framework 4, le code managé n’intercepte plus ces types d' `catch` exceptions dans des blocs. Toutefois, vous pouvez remplacer cette modification et maintenir la gestion des exceptions d’état endommagé de deux manières:  
   
-- Définir le `<legacyCorruptedStateExceptionsPolicy>` l’élément `enabled` attribut `true`. Ce paramètre de configuration est appliquée au niveau du processus et affecte toutes les méthodes.  
+- Affectez `<legacyCorruptedStateExceptionsPolicy>` `enabled` à`true`l’attribut de l’élément la valeur. Ce paramètre de configuration est appliqué échelle et affecte toutes les méthodes.  
   
  ou  
   
-- Appliquer le <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute?displayProperty=nameWithType> d’attribut à la méthode qui contient les exceptions `catch` bloc.  
+- Appliquez l' <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute?displayProperty=nameWithType> attribut à la méthode qui contient le bloc `catch` exceptions.  
   
- Cet élément de configuration est disponible uniquement dans le .NET Framework 4 et versions ultérieures.  
+ Cet élément de configuration n’est disponible que dans le .NET Framework 4 et versions ultérieures.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment spécifier que l’application doit rétablir le comportement avant le .NET Framework 4 et intercepter des échecs d’exception altérer tout état.  
+ L’exemple suivant montre comment spécifier que l’application doit rétablir le comportement avant le .NET Framework 4 et intercepter tous les échecs d’exception d’état endommagé.  
   
 ```xml  
 <configuration>  
@@ -80,5 +80,5 @@ Spécifie si le common language runtime permet au code managé d’intercepter l
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)

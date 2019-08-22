@@ -8,12 +8,12 @@ helpviewer_keywords:
 - requestCaching element
 - <requestCaching> element
 ms.assetid: 9962a2fe-cbda-41a6-9377-571811eaea84
-ms.openlocfilehash: af290e4b9258a08425a15e297ff538502edea916
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2a3d0b182acad2351ed095934ca97c6194d344fc
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674426"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659132"
 ---
 # <a name="requestcaching-element-network-settings"></a>\<requestCaching>, élément (paramètres réseau)
 Contrôle le mécanisme de mise en cache pour les demandes réseau.  
@@ -42,39 +42,39 @@ Contrôle le mécanisme de mise en cache pour les demandes réseau.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`isPrivateCache`|Spécifie si le cache fournit une isolation entre les informations d’utilisateurs différents. La valeur par défaut est `true`. Cette valeur doit être `false` pour les applications de couche intermédiaire.|  
+|`isPrivateCache`|Spécifie si le cache assure l’isolement entre les informations des différents utilisateurs. La valeur par défaut est `true`. Cette valeur doit être `false` pour les applications de niveau intermédiaire.|  
 |`disableAllCaching`|Spécifie que la mise en cache est désactivée pour toutes les réponses Web et ne peut pas être substituée par programmation.|  
 |`defaultPolicyLevel`|Une des valeurs dans l’énumération <xref:System.Net.Cache.RequestCacheLevel>. La valeur par défaut est `BypassCache`.|  
-|`unspecifiedMaximumAge`|Spécifie la durée par défaut après lequel le contenu est marqué comme ayant expiré.|  
+|`unspecifiedMaximumAge`|Spécifie l’heure par défaut après laquelle le contenu est marqué comme ayant expiré.|  
   
-## <a name="policylevel-attribute"></a>policyLevel attribut  
+## <a name="policylevel-attribute"></a>policyLevel (attribut)  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|`Default`|Retourne la ressource mise en cache si la ressource est actualisée, la longueur du contenu est précise, et l’expiration, la modification et attributs de la longueur du contenu sont présents.|  
+|`Default`|Retourne la ressource mise en cache si la ressource est actualisée, si la longueur du contenu est exacte et si les attributs d’expiration, de modification et de longueur du contenu sont présents.|  
 |`BypassCache`|Retourne la ressource à partir du serveur.|  
-|`CacheOnly`|Retourne la ressource mise en cache si la longueur du contenu est présente et qu’il correspond à la taille d’entrée.|  
-|`CacheIfAvailable`|Retourne la ressource mise en cache si la longueur du contenu est fournie et correspond à la taille d’entrée ; Sinon, la ressource est téléchargée à partir du serveur et est retournée à l’appelant.|  
-|`Revalidate`|Retourne la ressource mise en cache si l’horodatage de la ressource mise en cache est identique à l’horodatage de la ressource sur le serveur ; Sinon, la ressource est téléchargée à partir du serveur, stocké dans le cache et est retournée à l’appelant.|  
-|`Reload`|Télécharge la ressource à partir du serveur, il stocke dans le cache et retourne la ressource à l’appelant.|  
+|`CacheOnly`|Retourne la ressource mise en cache si la longueur du contenu est présente et correspond à la taille de l’entrée.|  
+|`CacheIfAvailable`|Retourne la ressource mise en cache si la longueur du contenu est fournie et correspond à la taille de l’entrée; dans le cas contraire, la ressource est téléchargée à partir du serveur et est retournée à l’appelant.|  
+|`Revalidate`|Retourne la ressource mise en cache si l’horodateur de la ressource mise en cache est le même que celui de la ressource sur le serveur; dans le cas contraire, la ressource est téléchargée à partir du serveur, stockée dans le cache, et est retournée à l’appelant.|  
+|`Reload`|Télécharge la ressource à partir du serveur, la stocke dans le cache et retourne la ressource à l’appelant.|  
 |`NoCacheNoStore`|Si une ressource mise en cache existe, elle est supprimée. La ressource est téléchargée à partir du serveur et est retournée à l’appelant.|  
-|`Revalidate`|Satisfait une demande à l’aide de la copie mise en cache de la ressource si l’horodatage est le même que l’horodatage de la ressource sur le serveur ; Sinon, la ressource est téléchargée à partir du serveur, présenté à l’appelant et est stockée dans le cache,|  
+|`Revalidate`|Satisfait une demande en utilisant la copie mise en cache de la ressource si l’horodatage est le même que celui de la ressource sur le serveur; dans le cas contraire, la ressource est téléchargée à partir du serveur, présentée à l’appelant et stockée dans le cache.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[defaultHttpCachePolicy](../../../../../docs/framework/configure-apps/file-schema/network/defaulthttpcachepolicy-element-network-settings.md)|Élément facultatif.<br /><br /> Décrit si la mise en cache HTTP est active et décrit la valeur par défaut, la mise en cache de stratégie.|  
-|[\<defaultFtpCachePolicy >, élément (paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/defaultftpcachepolicy-element-network-settings.md)|Élément facultatif.<br /><br /> Décrit si la mise en cache FTP est active et décrit la valeur par défaut, la mise en cache de stratégie.|  
+|[defaultHttpCachePolicy](defaulthttpcachepolicy-element-network-settings.md)|Élément facultatif.<br /><br /> Indique si la mise en cache HTTP est active et décrit la stratégie de mise en cache par défaut.|  
+|[\<defaultFtpCachePolicy >, élément (paramètres réseau)](defaultftpcachepolicy-element-network-settings.md)|Élément facultatif.<br /><br /> Indique si la mise en cache FTP est active et décrit la stratégie de mise en cache par défaut.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
+|[system.net](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment désactiver toute mise en cache.  
+ L’exemple suivant montre comment désactiver toute la mise en cache.  
   
 ```xml  
 <configuration>  
@@ -89,4 +89,4 @@ Contrôle le mécanisme de mise en cache pour les demandes réseau.
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Net.Cache?displayProperty=nameWithType>
-- [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma des paramètres réseau](index.md)

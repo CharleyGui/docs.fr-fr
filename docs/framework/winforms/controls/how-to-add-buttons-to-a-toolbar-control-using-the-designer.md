@@ -8,12 +8,12 @@ helpviewer_keywords:
 - examples [Windows Forms], toolbars
 - ToolBar control [Windows Forms], adding drop-down menus
 ms.assetid: d9ce3040-3e21-4e2d-80ae-b430982b2db8
-ms.openlocfilehash: e5069dd46a31a65f65a17d750b685d82762e3d11
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 4d7a49633599aabc96153e4793e50c1a4d6d092d
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69038205"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666218"
 ---
 # <a name="how-to-add-buttons-to-a-toolbar-control-using-the-designer"></a>Procédure : ajouter des boutons à un contrôle ToolBar à l’aide du concepteur
 
@@ -23,7 +23,6 @@ ms.locfileid: "69038205"
 Les boutons que vous y <xref:System.Windows.Forms.ToolBar> ajoutez sont une partie intégrante du contrôle. Elles peuvent être utilisées pour fournir un accès facile aux commandes de menu ou, autrement, elles peuvent être placées dans une autre zone de l’interface utilisateur de votre application pour exposer à vos utilisateurs des commandes qui ne sont pas disponibles dans la structure de menu.
 
 La procédure suivante requiert un projet d' **application Windows** avec un formulaire contenant <xref:System.Windows.Forms.ToolBar> un contrôle. Pour plus d’informations sur la configuration d’un tel [projet, consultez Procédure: Créez un projet](/visualstudio/ide/step-1-create-a-windows-forms-application-project) d’application Windows Forms [et procédez comme suit: Ajoutez des contrôles à](how-to-add-controls-to-windows-forms.md)Windows Forms.
-
 
 ### <a name="to-add-buttons-at-design-time"></a>Pour ajouter des boutons au moment du design
 
@@ -50,6 +49,6 @@ La procédure suivante requiert un projet d' **application Windows** avec un for
 
 - <xref:System.Windows.Forms.ToolBar>
 - [Guide pratique pour Définir une icône pour un bouton de barre d’outils](how-to-define-an-icon-for-a-toolbar-button.md)
-- [Guide pratique : Déclencher des événements de menu pour les boutons de barre d’outils](how-to-trigger-menu-events-for-toolbar-buttons.md)
+- [Guide pratique pour Déclencher des événements de menu pour les boutons de barre d’outils](how-to-trigger-menu-events-for-toolbar-buttons.md)
 - [Vue d’ensemble du contrôle ToolBar](toolbar-control-overview-windows-forms.md)
 - [ToolBar, contrôle](toolbar-control-windows-forms.md)
