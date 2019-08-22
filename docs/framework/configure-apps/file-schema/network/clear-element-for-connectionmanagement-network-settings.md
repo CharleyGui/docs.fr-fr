@@ -10,14 +10,14 @@ helpviewer_keywords:
 - clear element, connectionManagement
 - <connectionManagement>, clear element
 ms.assetid: fb259282-84c4-4dc4-a226-78d904a6edc3
-ms.openlocfilehash: 733c70b0575de7e2635afaab58ad48591f035fc0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 86a7a0ab402c8c40ec3b824402a1dba984412b68
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705237"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659444"
 ---
-# <a name="clear-element-for-connectionmanagement-network-settings"></a>\<Désactivez >, élément de connectionManagement (paramètres réseau)
+# <a name="clear-element-for-connectionmanagement-network-settings"></a>\<Effacer > élément pour connectionManagement (paramètres réseau)
 Efface la liste de gestion des connexions.  
   
  \<configuration>  
@@ -44,16 +44,16 @@ Efface la liste de gestion des connexions.
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[connectionManagement](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Spécifie le nombre maximal de connexions à un hôte réseau.|  
+|[connectionManagement](connectionmanagement-element-network-settings.md)|Spécifie le nombre maximal de connexions à un hôte réseau.|  
   
 ## <a name="remarks"></a>Notes  
- Le `clear` élément efface toutes les entrées dans la liste de gestion de connexion.  
+ L' `clear` élément efface toutes les entrées de la liste de gestion des connexions.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant efface la liste de gestion des connexions et ajoute ensuite les nouvelles entrées de gestion de connexion pour le serveur `www.contoso.com` et tous les autres hôtes de réseau.  
+ L’exemple suivant efface la liste de gestion des connexions, puis ajoute de nouvelles entrées de gestion `www.contoso.com` des connexions pour le serveur et tous les autres hôtes réseau.  
   
 ```xml  
 <configuration>  
@@ -71,4 +71,4 @@ Efface la liste de gestion des connexions.
 
 - <xref:System.Net.ServicePoint>
 - <xref:System.Net.ServicePointManager>
-- [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma des paramètres réseau](index.md)

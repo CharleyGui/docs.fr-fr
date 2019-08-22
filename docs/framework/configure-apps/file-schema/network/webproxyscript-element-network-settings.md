@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <webProxyScript> element
 - webProxyScript element
 ms.assetid: a13c26db-6218-4af3-9696-38f24b23bfac
-ms.openlocfilehash: e73ba86cc17fa51cbf4030f2304ab9141fcc0f26
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8a77c2567401fd80e355bb7fcee17b6684653ebe
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674365"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659047"
 ---
 # <a name="webproxyscript-element-network-settings"></a>\<webProxyScript >, élément (paramètres réseau)
 Configure les caractéristiques du script utilisé pour découvrir les proxys Web.  
@@ -38,7 +38,7 @@ Configure les caractéristiques du script utilisé pour découvrir les proxys We
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`downloadTimeout`|Spécifie la durée maximale de téléchargement du script en heures, minutes et secondes. La valeur par défaut est une minute.|  
+|`downloadTimeout`|Spécifie la durée maximale de téléchargement du script en heures, minutes et secondes. La valeur par défaut est d’une minute.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -47,7 +47,7 @@ Configure les caractéristiques du script utilisé pour découvrir les proxys We
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Configure les options réseau de base pour l’espace de noms <xref:System.Net>.|  
+|[settings](settings-element-network-settings.md)|Configure les options réseau de base pour l’espace de noms <xref:System.Net>.|  
   
 ## <a name="remarks"></a>Notes  
   
@@ -56,4 +56,4 @@ Configure les caractéristiques du script utilisé pour découvrir les proxys We
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma des paramètres réseau](index.md)

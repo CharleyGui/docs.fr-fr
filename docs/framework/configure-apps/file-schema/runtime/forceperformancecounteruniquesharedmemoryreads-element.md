@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 91149858-4810-4f65-9b48-468488172c9b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 00af9cf60d0bd2bac60950617b1315579d1a5a4d
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 96d38abad37f9460230164de784a1258e7e937a4
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347337"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663721"
 ---
 # <a name="forceperformancecounteruniquesharedmemoryreads-element"></a>\<forcePerformanceCounterUniqueSharedMemoryReads> Element
 Indique si PerfCounter.dll utilise le paramètre de Registre CategoryOptions dans une application.NET Framework version 1.1 pour déterminer s’il faut charger des données du compteur de performance à partir de la mémoire globale ou de la mémoire partagée propre à la catégorie.  
@@ -35,14 +35,14 @@ enabled="true|false"/>
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Indique si PerfCounter.dll utilise le paramètre de Registre CategoryOptions pour déterminer s’il faut charger des données de compteur de performances à partir de la mémoire partagée spécifique à la catégorie ou de la mémoire globale.|  
+|`enabled`|Attribut requis.<br /><br /> Indique si PerfCounter. dll utilise le paramètre de Registre CategoryOptions pour déterminer s’il faut charger les données du compteur de performance à partir de la mémoire partagée ou de la mémoire globale spécifique à la catégorie.|  
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|`false`|PerfCounter.dll n’utilise pas les CategoryOptions ce paramètre de Registre est la valeur par défaut.|  
-|`true`|PerfCounter.dll n’utilise pas le paramètre de Registre CategoryOptions.|  
+|`false`|PerfCounter. dll n’utilise pas le paramètre de Registre CategoryOptions. il s’agit de la valeur par défaut.|  
+|`true`|PerfCounter. dll utilise le paramètre de Registre CategoryOptions.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -55,21 +55,21 @@ enabled="true|false"/>
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="remarks"></a>Notes  
- Dans les versions du .NET Framework antérieures au .NET Framework 4, la version de PerfCounter.dll chargée correspondait à l’exécution qui a été chargée dans le processus. Si un ordinateur dispose de la version 1.1 du .NET Framework et .NET Framework 2.0 est installé, une application .NET Framework 1.1 chargerait le .NET Framework version 1.1 de PerfCounter.dll. À compter de .NET Framework 4, la dernière version installée de PerfCounter.dll est chargée. Cela signifie qu’une application .NET Framework 1.1 chargera la version de .NET Framework 4 de PerfCounter.dll si le .NET Framework 4 est installé sur l’ordinateur.  
+ Dans les versions du .NET Framework avant le .NET Framework 4, la version de PerfCounter. dll qui a été chargée correspond au runtime qui a été chargé dans le processus. Si le .NET Framework version 1,1 et le .NET Framework 2,0 ont été installés sur un ordinateur, une application .NET Framework 1,1 chargera la version .NET Framework 1,1 de PerfCounter. dll. À partir du .NET Framework 4, la dernière version installée de PerfCounter. dll est chargée. Cela signifie qu’une application .NET Framework 1,1 chargera la version .NET Framework 4 de PerfCounter. dll si le .NET Framework 4 est installé sur l’ordinateur.  
   
- À compter de .NET Framework 4, lors de l’utilisation des compteurs de performance, PerfCounter.dll vérifie l’entrée de Registre CategoryOptions pour chaque fournisseur pour déterminer s’il doit lire à partir de la mémoire partagée spécifique à la catégorie ou de la mémoire partagée globale. Le PerfCounter.dll .NET Framework 1.1 ne lit pas cette entrée de Registre, car elle n’a pas connaissance de la mémoire partagée spécifique à la catégorie ; Il lit toujours à partir de la mémoire partagée globale.  
+ À partir du .NET Framework 4, lors de l’utilisation de compteurs de performance, PerfCounter. dll vérifie l’entrée de Registre CategoryOptions pour chaque fournisseur afin de déterminer si elle doit lire à partir de la mémoire partagée spécifique à la catégorie ou de la mémoire partagée globale. Le .NET Framework 1,1 PerfCounter. dll ne lit pas cette entrée de Registre, car il n’est pas conscient de la mémoire partagée propre à la catégorie; Il lit toujours à partir de la mémoire partagée globale.  
   
- Pour la compatibilité descendante, le PerfCounter.dll de 4 de .NET Framework ne vérifie pas l’entrée de Registre CategoryOptions lors de l’exécution dans une application .NET Framework 1.1. Elle utilise simplement la mémoire partagée globale, comme le PerfCounter.dll .NET Framework 1.1. Toutefois, vous pouvez indiquer le PerfCounter.dll de 4 .NET Framework pour vérifier le paramètre de Registre en activant le `<forcePerformanceCounterUniqueSharedMemoryReads>` élément.  
+ Pour la compatibilité descendante, le .NET Framework 4 PerfCounter. dll ne vérifie pas l’entrée de Registre CategoryOptions lors de l’exécution dans une application .NET Framework 1,1. Elle utilise simplement la mémoire partagée globale, comme le .NET Framework 1,1 PerfCounter. dll. Toutefois, vous pouvez indiquer au .NET Framework 4 PerfCounter. dll de vérifier le paramètre de registre en activant `<forcePerformanceCounterUniqueSharedMemoryReads>` l’élément.  
   
 > [!NOTE]
->  L’activation de la `<forcePerformanceCounterUniqueSharedMemoryReads>` élément ne garantit pas que la mémoire partagée spécifique à la catégorie sera utilisée. Paramètre est activé à `true` uniquement, PerfCounter.dll référence le paramètre du Registre CategoryOptions. Le paramètre par défaut CategoryOptions consiste à utiliser la mémoire partagée spécifique à la catégorie ; Toutefois, vous pouvez modifier CategoryOptions pour indiquer que la mémoire partagée globale doit être utilisée.  
+>  L’activation `<forcePerformanceCounterUniqueSharedMemoryReads>` de l’élément ne garantit pas que la mémoire partagée propre à la catégorie sera utilisée. Si vous affectez la valeur à `true` activé, PerfCounter. dll fait référence au paramètre de Registre CategoryOptions. Le paramètre par défaut pour CategoryOptions consiste à utiliser la mémoire partagée propre à la catégorie. Toutefois, vous pouvez modifier CategoryOptions pour indiquer que la mémoire partagée globale doit être utilisée.  
   
- La clé de Registre qui contient le paramètre CategoryOptions est HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\\< categoryName\>\Performance. Par défaut, CategoryOptions a la valeur 3, qui indique à PerfCounter.dll d’utiliser la mémoire partagée spécifique à la catégorie. Si CategoryOptions est définie sur 0, PerfCounter.dll utilise la mémoire partagée globale. Données d’instance seront réutilisées uniquement si le nom de l’instance en cours de création est identique à l’instance est réutilisé. Toutes les versions seront en mesure d’écrire à la catégorie. Si CategoryOptions est définie sur 1, mémoire partagée globale est utilisée, mais les données d’instance peuvent être réutilisées si le nom de catégorie est la même longueur que la catégorie est réutilisée.  
+ La clé de Registre qui contient le paramètre CategoryOptions est\\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services <\>CategoryName \Performance. Par défaut, CategoryOptions a la valeur 3, ce qui indique à PerfCounter. dll d’utiliser la mémoire partagée propre à la catégorie. Si CategoryOptions a la valeur 0, PerfCounter. dll utilise la mémoire partagée globale. Les données d’instance sont réutilisées uniquement si le nom de l’instance en cours de création est identique à l’instance réutilisée. Toutes les versions seront en mesure d’écrire dans la catégorie. Si CategoryOptions a la valeur 1, la mémoire partagée globale est utilisée, mais les données d’instance peuvent être réutilisées si le nom de la catégorie a la même longueur que la catégorie réutilisée.  
   
- Les paramètres 0 et 1 peuvent entraîner des fuites de mémoire et la saturation de mémoire de compteur de performances.  
+ Les paramètres 0 et 1 peuvent entraîner des fuites de mémoire et la saturation de la mémoire du compteur de performances.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment spécifier que PerfCounter.dll doit référencer l’entrée de Registre CategoryOptions pour déterminer s’il doit utiliser la mémoire partagée spécifique à la catégorie.  
+ L’exemple suivant montre comment spécifier que PerfCounter. dll doit faire référence à l’entrée du Registre CategoryOptions pour déterminer si elle doit utiliser la mémoire partagée propre à la catégorie.  
   
 ```xml  
 <configuration>  
@@ -81,5 +81,5 @@ enabled="true|false"/>
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)

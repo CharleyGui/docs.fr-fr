@@ -6,12 +6,12 @@ helpviewer_keywords:
 - TableLayoutPanel control [Windows Forms], walkthroughs
 - Windows Forms controls, arranging
 ms.assetid: d474885e-12cc-4ab7-b997-2a23a643049b
-ms.openlocfilehash: 7566f19282ffd5a3cac86693a64899f25ce37b9f
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 289a8427540c713758c3f155e72efffe9f3c85bc
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040277"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666807"
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel"></a>Procédure pas à pas : organisation des contrôles dans Windows Forms à l’aide d’un TableLayoutPanel
 
@@ -46,7 +46,6 @@ Cette procédure pas à pas décrit notamment les tâches suivantes :
 - Réassignation de contrôles existants à un parent différent
 
 À l’issue de cette procédure, vous comprendrez le rôle joué par ces fonctionnalités de disposition importantes.
-
 
 ## <a name="creating-the-project"></a>Création du projet
 

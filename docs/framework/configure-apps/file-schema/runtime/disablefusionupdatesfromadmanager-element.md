@@ -7,18 +7,18 @@ helpviewer_keywords:
 ms.assetid: 58d2866c-37bd-4ffa-abaf-ff35926a2939
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8c96d5aea150c0dbb55889e9fc26417e7803a155
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: a1923e70143ea2a158447eccdb35d347fe4f51ea
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487667"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663771"
 ---
-# <a name="disablefusionupdatesfromadmanager-element"></a>\<disableFusionUpdatesFromADManager> Element
+# <a name="disablefusionupdatesfromadmanager-element"></a>\<disableFusionUpdatesFromADManager >, élément
 Indique si le comportement par défaut, qui consiste à permettre à l’hôte du runtime de remplacer les paramètres de configuration d’un domaine d’application, est désactivé.  
   
- \<configuration > élément  
-\<runtime > élément  
+ \<Élément de > de configuration  
+\<Élément > du Runtime  
 \<disableFusionUpdatesFromADManager>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,14 +34,14 @@ Indique si le comportement par défaut, qui consiste à permettre à l’hôte d
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|enabled|Attribut requis.<br /><br /> Spécifie si la possibilité de valeur par défaut pour remplacer les paramètres de Fusion est désactivée.|  
+|enabled|Attribut requis.<br /><br /> Spécifie si la capacité par défaut de remplacer les paramètres de fusion est désactivée.|  
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|0|Ne désactivez pas la possibilité de remplacer les paramètres de Fusion. Il s’agit du comportement par défaut, en commençant par le .NET Framework 4.|  
-|1|Désactiver la possibilité de remplacer les paramètres de Fusion. Cela revient au comportement des versions antérieures du .NET Framework.|  
+|0|Ne désactivez pas la possibilité de remplacer les paramètres de fusion. Il s’agit du comportement par défaut, à partir du .NET Framework 4.|  
+|1|Désactivez la possibilité de remplacer les paramètres de fusion. Cela revient au comportement des versions antérieures du .NET Framework.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -54,18 +54,18 @@ Indique si le comportement par défaut, qui consiste à permettre à l’hôte d
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="remarks"></a>Notes  
- À compter de .NET Framework 4, le comportement par défaut est de permettre la <xref:System.AppDomainManager> objet à remplacer les paramètres de configuration à l’aide de la <xref:System.AppDomainSetup.ConfigurationFile%2A> propriété ou le <xref:System.AppDomainSetup.SetConfigurationBytes%2A> méthode de la <xref:System.AppDomainSetup> objet qui est passé à votre implémentation de la <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> (méthode), dans votre sous-classe de <xref:System.AppDomainManager>. Pour le domaine d’application par défaut, les paramètres que vous modifiez remplacent les paramètres qui ont été spécifiés par le fichier de configuration d’application. Pour les autres domaines d’application, ils remplacent les paramètres de configuration qui ont été passés à la <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> ou <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> (méthode).  
+ À partir du .NET Framework 4, le comportement par défaut consiste à autoriser <xref:System.AppDomainManager> l’objet à substituer des paramètres de configuration <xref:System.AppDomainSetup.ConfigurationFile%2A> à l’aide <xref:System.AppDomainSetup.SetConfigurationBytes%2A> de la propriété <xref:System.AppDomainSetup> ou de la méthode de l’objet qui est passé à votre implémentation. de la <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> méthode, dans votre sous-classe <xref:System.AppDomainManager>de. Pour le domaine d’application par défaut, les paramètres que vous modifiez remplacent ceux qui ont été spécifiés par le fichier de configuration de l’application. Pour les autres domaines d’application, ils remplacent les paramètres de configuration qui ont <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> été <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> passés à la méthode ou.  
   
- Vous pouvez passer de nouvelles informations de configuration, ou passez la valeur null (`Nothing` en Visual Basic) pour éliminer les informations de configuration qui a été passées.  
+ Vous pouvez transmettre de nouvelles informations de configuration ou passer la valeur`Nothing` null (dans Visual Basic) pour éliminer les informations de configuration qui ont été transmises.  
   
- Ne passez pas les informations de configuration à la fois à la <xref:System.AppDomainSetup.ConfigurationFile%2A> propriété et la <xref:System.AppDomainSetup.SetConfigurationBytes%2A> (méthode). Si vous transmettez des informations de configuration pour les deux, les informations que vous passez à la <xref:System.AppDomainSetup.ConfigurationFile%2A> propriété est ignorée, car le <xref:System.AppDomainSetup.SetConfigurationBytes%2A> méthode substitue les informations de configuration à partir du fichier de configuration d’application. Si vous utilisez le <xref:System.AppDomainSetup.ConfigurationFile%2A> propriété, vous pouvez passer null (`Nothing` en Visual Basic) pour le <xref:System.AppDomainSetup.SetConfigurationBytes%2A> méthode pour éliminer les octets de configuration qui ont été spécifiés dans l’appel à la <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> ou <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> (méthode).  
+ Ne transmettez pas d’informations de configuration <xref:System.AppDomainSetup.ConfigurationFile%2A> à la fois <xref:System.AppDomainSetup.SetConfigurationBytes%2A> à la propriété et à la méthode. Si vous passez des informations de configuration aux deux, les informations que vous <xref:System.AppDomainSetup.ConfigurationFile%2A> passez à la propriété sont ignorées, car la <xref:System.AppDomainSetup.SetConfigurationBytes%2A> méthode remplace les informations de configuration du fichier de configuration de l’application. Si vous utilisez la <xref:System.AppDomainSetup.ConfigurationFile%2A> propriété, vous pouvez passer NULL (`Nothing` en Visual Basic) à la <xref:System.AppDomainSetup.SetConfigurationBytes%2A> méthode pour éliminer les octets de configuration qui ont été spécifiés dans l' <xref:System.AppDomainManager.CreateDomain%2A?displayProperty=nameWithType> appel <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> à la méthode ou.  
   
- En plus des informations de configuration, vous pouvez modifier les paramètres suivants sur le <xref:System.AppDomainSetup> objet qui est passé à votre implémentation de la <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> méthode : <xref:System.AppDomainSetup.ApplicationBase%2A>, <xref:System.AppDomainSetup.ApplicationName%2A>, <xref:System.AppDomainSetup.CachePath%2A>, <xref:System.AppDomainSetup.DisallowApplicationBaseProbing%2A>, <xref:System.AppDomainSetup.DisallowBindingRedirects%2A> , <xref:System.AppDomainSetup.DisallowCodeDownload%2A>, <xref:System.AppDomainSetup.DisallowPublisherPolicy%2A>, <xref:System.AppDomainSetup.DynamicBase%2A>, <xref:System.AppDomainSetup.LoaderOptimization%2A>, <xref:System.AppDomainSetup.PrivateBinPath%2A>, <xref:System.AppDomainSetup.PrivateBinPathProbe%2A>, <xref:System.AppDomainSetup.ShadowCopyDirectories%2A>, et <xref:System.AppDomainSetup.ShadowCopyFiles%2A>.  
+ En plus des informations de configuration, vous pouvez modifier les paramètres suivants sur <xref:System.AppDomainSetup> l’objet qui est passé à votre implémentation de <xref:System.AppDomainManager.InitializeNewDomain%2A?displayProperty=nameWithType> la <xref:System.AppDomainSetup.DisallowApplicationBaseProbing%2A>méthode <xref:System.AppDomainSetup.ApplicationBase%2A>: <xref:System.AppDomainSetup.ApplicationName%2A>, <xref:System.AppDomainSetup.CachePath%2A>,, <xref:System.AppDomainSetup.DisallowBindingRedirects%2A> , <xref:System.AppDomainSetup.DisallowCodeDownload%2A>,, <xref:System.AppDomainSetup.DisallowPublisherPolicy%2A>, ,,<xref:System.AppDomainSetup.LoaderOptimization%2A>,, et<xref:System.AppDomainSetup.ShadowCopyDirectories%2A>. <xref:System.AppDomainSetup.PrivateBinPath%2A> <xref:System.AppDomainSetup.PrivateBinPathProbe%2A> <xref:System.AppDomainSetup.DynamicBase%2A> <xref:System.AppDomainSetup.ShadowCopyFiles%2A>  
   
- Comme alternative à l’utilisation de la `<disableFusionUpdatesFromADManager>` élément, vous pouvez désactiver le comportement par défaut en créant un paramètre de Registre ou en définissant une variable d’environnement. Dans le Registre, créez une valeur DWORD nommée `COMPLUS_disableFusionUpdatesFromADManager` sous `HKCU\Software\Microsoft\.NETFramework` ou `HKLM\Software\Microsoft\.NETFramework`et définissez la valeur sur 1. Sur la ligne de commande, définissez la variable d’environnement `COMPLUS_disableFusionUpdatesFromADManager` sur 1.  
+ En guise d’alternative à `<disableFusionUpdatesFromADManager>` l’utilisation de l’élément, vous pouvez désactiver le comportement par défaut en créant un paramètre de registre ou en définissant une variable d’environnement. Dans le registre, créez une valeur DWORD nommée `COMPLUS_disableFusionUpdatesFromADManager` sous `HKCU\Software\Microsoft\.NETFramework` ou `HKLM\Software\Microsoft\.NETFramework`, puis définissez la valeur sur 1. Sur la ligne de commande, affectez la `COMPLUS_disableFusionUpdatesFromADManager` valeur 1 à la variable d’environnement.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment désactiver la possibilité de substituer des paramètres Fusion à l’aide de la `<disableFusionUpdatesFromADManager>` élément.  
+ L’exemple suivant montre comment désactiver la possibilité de substituer des paramètres de fusion à l' `<disableFusionUpdatesFromADManager>` aide de l’élément.  
   
 ```xml  
 <configuration>  
@@ -77,6 +77,6 @@ Indique si le comportement par défaut, qui consiste à permettre à l’hôte d
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Méthode de localisation des assemblys par le runtime](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)
+- [Méthode de localisation des assemblys par le runtime](../../../deployment/how-the-runtime-locates-assemblies.md)

@@ -8,21 +8,21 @@ helpviewer_keywords:
 - providerOptions
 - provideroption element
 ms.assetid: 014f2e0b-c0b5-4fc4-92d3-73f02978b2a1
-ms.openlocfilehash: 9c69ea7bf95b311a796ec29d90410a77b748c3c6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 37f4d8c5eeacd82f8fc37179c478d026ca25f459
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705322"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664301"
 ---
-# <a name="provideroption-element"></a>\<providerOption > élément
-Spécifie les attributs de version du compilateur pour un fournisseur de langage.  
+# <a name="provideroption-element"></a>\<providerOption >, élément
+Spécifie les attributs de version du compilateur pour un fournisseur de langages.  
   
- \<Élément de configuration >  
-\<System.CodeDom (élément) >  
-\<compilers, élément >  
-\<compilateur > élément  
-\<providerOption > élément  
+ \<> de l’élément de configuration  
+\<System. CodeDom, élément >  
+\<compilateurs, élément >  
+\<Élément de > du compilateur  
+\<providerOption >, élément  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,8 +40,8 @@ Spécifie les attributs de version du compilateur pour un fournisseur de langage
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`name`|Attribut requis.<br /><br /> Spécifie le nom de l’option ; par exemple, « CompilerVersion ».|  
-|`value`|Attribut requis.<br /><br /> Spécifie la valeur de l’option ; par exemple, « v3.5 ».|  
+|`name`|Attribut requis.<br /><br /> Spécifie le nom de l’option; par exemple, «CompilerVersion».|  
+|`value`|Attribut requis.<br /><br /> Spécifie la valeur de l’option. par exemple, «v 3.5».|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -50,22 +50,22 @@ Spécifie les attributs de version du compilateur pour un fournisseur de langage
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<configuration>, élément](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Élément racine dans chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|[\<System.CodeDom > élément](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|Spécifie les paramètres de configuration du compilateur pour les fournisseurs de langages disponibles.|  
-|[\<compilateurs > élément](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|Conteneur pour les éléments de configuration de compilateur ; contient zéro ou plusieurs `<compiler>` éléments.|  
-|[\<compiler> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|Spécifie les attributs de configuration du compilateur pour un fournisseur de langage.|  
+|[\<configuration>, élément](../configuration-element.md)|Élément racine dans chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
+|[\<System. CodeDom >, élément](system-codedom-element.md)|Spécifie les paramètres de configuration du compilateur pour les fournisseurs de langages disponibles.|  
+|[\<compilateurs > élément](compilers-element.md)|Conteneur pour les éléments de configuration du compilateur; contient zéro ou plusieurs `<compiler>` éléments.|  
+|[\<compiler> Element](compiler-element.md)|Spécifie les attributs de configuration du compilateur pour un fournisseur de langage.|  
   
 ## <a name="remarks"></a>Notes  
- Dans le .NET Framework version 3.5, les fournisseurs de code Code Document Object Model (CodeDOM) peuvent prendre en charge les options spécifiques au fournisseur à l’aide de la `<providerOption>` élément.  
+ Dans la version 3,5, .NET Framework les fournisseurs de code Code Document Object Model (CodeDom) peuvent prendre en charge des options spécifiques `<providerOption>` au fournisseur à l’aide de l’élément.  
   
- Le .NET Framework 3.5 inclut des assemblys .NET Framework 2.0 mis à jour et fournit des assemblys 3.5 qui contiennent de nouveaux types. Les fournisseurs de code Microsoft c# et Visual Basic sont contenus dans les assemblys .NET Framework 2.0, mais ont été mis à jour pour prendre en charge les compilateurs de la version 3.5. Par défaut, les fournisseurs de code mis à jour génèrent du code pour les compilateurs de la version 2.0. Vous pouvez utiliser le `<providerOption>` élément pour modifier la version de compilateur cible en 3.5. Pour ce faire, spécifiez « CompilerVersion » pour le `name` attribut et « v3.5 » pour le `value` attribut. Vous devez faire précéder le numéro de version avec un « v » en minuscules.  
+ Le .NET Framework 3,5 inclut des assemblys .NET Framework 2,0 mis à jour et fournit de nouveaux assemblys de version 3,5 qui contiennent de nouveaux types. Les fournisseurs C# de code Microsoft et Visual Basic sont contenus dans les assemblys .NET Framework 2,0, mais ils ont été mis à jour pour prendre en charge les compilateurs de version 3,5. Par défaut, les fournisseurs de code mis à jour génèrent du code pour la version 2,0 des compilateurs. Vous pouvez utiliser l' `<providerOption>` élément pour remplacer la version du compilateur cible par 3,5. Pour ce faire, spécifiez «CompilerVersion» pour `name` l’attribut et «v 3.5» pour `value` l’attribut. Vous devez faire précéder le numéro de version d’un «v» en minuscules.  
   
- Vous pouvez rendre la spécification de version global en ajoutant le `<providerOption>` élément au fichier racine Web.config ou Machine.config de .NET Framework 2.0. Si vous mettez à jour la version de compilateur par défaut à 3.5 dans le fichier Machine.config, vous pouvez le modifier à 2.0 sur chaque application à l’aide de la `<providerOption>` élément dans le fichier de configuration d’application.  
+ Vous pouvez rendre la spécification de version globale en ajoutant `<providerOption>` l’élément au fichier .NET Framework 2,0 machine. config ou racine Web. config. Si vous mettez à jour la version du compilateur par défaut à 3,5 dans le fichier machine. config, vous pouvez la remodifier en 2,0 pour chaque application en utilisant `<providerOption>` l’élément dans le fichier de configuration de l’application.  
   
- Les implémenteurs de fournisseur de code codeDOM peuvent traiter des options personnalisées en fournissant un constructeur qui accepte un `providerOptions` paramètre de type <xref:System.Collections.Generic.IDictionary%602>.  
+ Les implémenteurs de fournisseurs de code CodeDom peuvent traiter des options personnalisées en fournissant `providerOptions` un constructeur qui <xref:System.Collections.Generic.IDictionary%602>accepte un paramètre de type.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment spécifier la version 3.5 du fournisseur de code c# doit être utilisée.  
+ L’exemple suivant montre comment spécifier que la C# version 3,5 du fournisseur de code doit être utilisée.  
   
 ```xml  
 <configuration>  
@@ -93,7 +93,7 @@ Spécifie les attributs de version du compilateur pour un fournisseur de langage
 
 - <xref:System.CodeDom.Compiler.CompilerInfo>
 - <xref:System.CodeDom.Compiler.CodeDomProvider>
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<compilateurs > élément](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)
-- [Spécification des noms de types complets](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)
-- [compiler, élément de compilers pour compilation (schéma des paramètres ASP.NET)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a15ebt6c(v=vs.100))
+- [Schéma des fichiers de configuration](../index.md)
+- [\<compilateurs > élément](compilers-element.md)
+- [Spécification des noms de types complets](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md)
+- [compiler, élément de compilateurs pour compilation (schéma des paramètres ASP.NET)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a15ebt6c(v=vs.100))

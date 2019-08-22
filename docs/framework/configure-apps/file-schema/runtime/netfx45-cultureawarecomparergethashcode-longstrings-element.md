@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 3a5f38d1-ebc8-44de-aaeb-2929f6e6b48f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 23917977add2343732957eaa8dad5d2176315acf
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: bd59d1bcc489f248cbeb397afffb638071df17b6
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689862"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663585"
 ---
-# <a name="netfx45cultureawarecomparergethashcodelongstrings-element"></a>\<NetFx45_CultureAwareComparerGetHashCode_LongStrings > élément
+# <a name="netfx45_cultureawarecomparergethashcode_longstrings-element"></a>\<NetFx45_CultureAwareComparerGetHashCode_LongStrings >, élément
 
 Spécifie si le runtime utilise une quantité de mémoire fixe pour calculer les codes de hachage pour la méthode <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> .
 
 \<configuration>\
-\<runtime>\
+\<> du runtime \
 \<NetFx45_CultureAwareComparerGetHashCode_LongStrings>
 
 ## <a name="syntax"></a>Syntaxe
@@ -42,7 +42,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="enabled-attribute"></a>Attribut enabled
 
-|Value|Description|
+|`Value`|Description|
 |-----------|-----------------|
 |0|Le Common Langage Runtime alloue une quantité de mémoire variable à la méthode <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> pour calculer les codes de hachage. Il s'agit de la valeur par défaut.|
 |1|Le Common Langage Runtime alloue une quantité de mémoire fixe à la méthode <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> pour calculer les codes de hachage.|
@@ -68,5 +68,5 @@ Par défaut, le CLR alloue une quantité de mémoire variable à la méthode <xr
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType>
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)

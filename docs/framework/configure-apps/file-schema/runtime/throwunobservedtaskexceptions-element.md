@@ -10,14 +10,14 @@ helpviewer_keywords:
 ms.assetid: cea7e588-8b8d-48d2-9ad5-8feaf3642c18
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9647297bf976d26a97be0da8807d607789e8a065
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 876452a0a56d10f169526138cdbbbd153572f457
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489573"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658849"
 ---
-# <a name="throwunobservedtaskexceptions-element"></a>\<ThrowUnobservedTaskExceptions > élément
+# <a name="throwunobservedtaskexceptions-element"></a>\<ThrowUnobservedTaskExceptions >, élément
 Indique si les exceptions de tâches non gérées doivent arrêter un processus en cours d’exécution.  
   
  \<configuration>  
@@ -38,14 +38,14 @@ Indique si les exceptions de tâches non gérées doivent arrêter un processus 
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`enabled`|Attribut requis.<br /><br /> Spécifie si les exceptions de tâche non gérée doivent s’arrêter le processus en cours d’exécution.|  
+|`enabled`|Attribut requis.<br /><br /> Spécifie si les exceptions de tâche non gérée doivent mettre fin au processus en cours d’exécution.|  
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|`false`|N’arrête pas le processus en cours d’exécution pour une exception de tâche non prise en charge. Il s'agit de la valeur par défaut.|  
-|`true`|Met fin au processus en cours d’exécution pour une exception de tâche non prise en charge.|  
+|`false`|N’arrête pas le processus en cours d’exécution pour une exception de tâche non gérée. Il s'agit de la valeur par défaut.|  
+|`true`|Met fin au processus en cours d’exécution pour une exception de tâche non gérée.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -59,22 +59,22 @@ Indique si les exceptions de tâches non gérées doivent arrêter un processus 
 |||  
   
 ## <a name="remarks"></a>Notes  
- Si une exception qui est associée à un <xref:System.Threading.Tasks.Task> n’a pas été observée, il existe aucune <xref:System.Threading.Tasks.Task.Wait%2A> opération, le parent n’est pas attachée et le <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> propriété Impossible de lire l’exception de la tâche est considérée comme défaillante.  
+ Si une exception associée à un <xref:System.Threading.Tasks.Task> n’a pas été observée, il n’y a aucune <xref:System.Threading.Tasks.Task.Wait%2A> opération, le parent n’est pas attaché <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> et la propriété n’a pas été lue. l’exception de tâche est considérée comme non prise en compte.  
   
- Dans le .NET Framework 4, par défaut, si un <xref:System.Threading.Tasks.Task> qui a une prise en charge exception collecté, le finaliseur lève une exception et met fin au processus. L’arrêt du processus est déterminée par le minutage du garbage collection et la finalisation.  
+ Dans le .NET Framework 4, par défaut, si un <xref:System.Threading.Tasks.Task> qui a une exception non prise en compte est récupéré par le garbage collector, le finaliseur lève une exception et met fin au processus. L’arrêt du processus est déterminé par le minutage de la garbage collection et de la finalisation.  
   
- Pour le rendre plus facile pour les développeurs d’écrire du code asynchrone basé sur les tâches, le .NET Framework 4.5 modifie ce comportement par défaut pour les exceptions non prise en charge. Non prises en charge les exceptions d’entraîner la <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException> événement est déclenché, mais par défaut, le processus s’arrête. Au lieu de cela, l’exception est ignorée une fois que l’événement est déclenché, indépendamment de si un gestionnaire d’événements observe l’exception.  
+ Pour permettre aux développeurs d’écrire plus facilement du code asynchrone basé sur des tâches, le .NET Framework 4,5 modifie ce comportement par défaut pour les exceptions non prises en compte. Les exceptions non prises en même <xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException> temps entraînent le déclenchement de l’événement, mais par défaut, le processus ne se termine pas. Au lieu de cela, l’exception est ignorée une fois que l’événement est déclenché, qu’un gestionnaire d’événements observe l’exception ou non.  
   
- Dans le .NET Framework 4.5, vous pouvez utiliser la [ \<ThrowUnobservedTaskExceptions > élément](../../../../../docs/framework/configure-apps/file-schema/runtime/throwunobservedtaskexceptions-element.md) dans un fichier de configuration d’application pour activer le comportement de .NET Framework 4 de lever une exception.  
+ Dans le .NET Framework 4,5, vous pouvez utiliser l' [ \<élément ThrowUnobservedTaskExceptions >](throwunobservedtaskexceptions-element.md) dans un fichier de configuration de l’application pour permettre au comportement .NET Framework 4 de lever une exception.  
   
- Vous pouvez également spécifier le comportement d’exception dans une des manières suivantes :  
+ Vous pouvez également spécifier le comportement de l’exception de l’une des manières suivantes:  
   
-- En définissant la variable d’environnement `COMPlus_ThrowUnobservedTaskExceptions` (`set COMPlus_ThrowUnobservedTaskExceptions=1`).  
+- En définissant la variable `COMPlus_ThrowUnobservedTaskExceptions` d'`set COMPlus_ThrowUnobservedTaskExceptions=1`environnement ().  
   
-- En définissant le Registre DWORD, valeur ThrowUnobservedTaskExceptions = 1 dans les clés HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework clé.  
+- En définissant la valeur de Registre DWORD ThrowUnobservedTaskExceptions = 1 dans\\le HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft. Clé NETFramework.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment activer la levée d’exceptions des tâches à l’aide d’un fichier de configuration d’application.  
+ L’exemple suivant montre comment activer la levée d’exceptions dans des tâches à l’aide d’un fichier de configuration de l’application.  
   
 ```xml  
 <configuration>   
@@ -85,12 +85,12 @@ Indique si les exceptions de tâches non gérées doivent arrêter un processus 
 ```  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment une propagation de l’exception est levée à partir d’une tâche. Le code doit être exécuté comme un programme lancé fonctionne correctement.  
+ L’exemple suivant montre comment une exception non détectée est levée à partir d’une tâche. Le code doit être exécuté comme un programme libéré pour fonctionner correctement.  
   
  [!code-csharp[ThrowUnobservedTaskExceptions#1](../../../../../samples/snippets/csharp/VS_Snippets_CLR/throwunobservedtaskexceptions/cs/program.cs#1)]
  [!code-vb[ThrowUnobservedTaskExceptions#1](../../../../../samples/snippets/visualbasic/VS_Snippets_CLR/throwunobservedtaskexceptions/vb/program.vb#1)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)

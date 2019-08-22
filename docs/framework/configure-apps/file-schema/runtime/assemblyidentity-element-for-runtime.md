@@ -9,14 +9,14 @@ helpviewer_keywords:
 - container tags, <assemblyIdentity> element
 - assemblyIdentity element
 ms.assetid: cea4d187-6398-4da4-af09-c1abc6a349c1
-ms.openlocfilehash: d5766b76f18dce441cb260887a753dcf64642a6f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 815e1c26a328d986f91992a1e67e438a563ffea6
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674231"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663885"
 ---
-# <a name="assemblyidentity-element-for-runtime"></a>\<assemblyIdentity >, élément pour \<runtime >
+# <a name="assemblyidentity-element-for-runtime"></a>\<élément assemblyIdentity > pour \<le runtime >
 Contient des informations d’identification sur l’assembly.  
   
  \<configuration>  
@@ -41,19 +41,19 @@ culture="assembly culture"/>
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`name`|Attribut requis.<br /><br /> Le nom de l’assembly|  
-|`culture`|Attribut facultatif.<br /><br /> Chaîne qui spécifie la langue et le pays/région de l’assembly.|  
-|`publicKeyToken`|Attribut facultatif.<br /><br /> Une valeur hexadécimale qui spécifie le nom fort de l’assembly.|  
-|`processorArchitecture`|Attribut facultatif.<br /><br /> Une des valeurs « x86 », « amd64 », « msil » ou « ia64 », en spécifiant l’architecture de processeur pour un assembly qui contient le code spécifique au processeur. Les valeurs ne respectent pas la casse. Si l’attribut est assigné à une autre valeur, l’ensemble `<assemblyIdentity>` élément est ignoré. Consultez <xref:System.Reflection.ProcessorArchitecture>.|  
+|`name`|Attribut requis.<br /><br /> Nom de l’assembly|  
+|`culture`|Attribut facultatif.<br /><br /> Chaîne qui spécifie la langue et le pays/la région de l’assembly.|  
+|`publicKeyToken`|Attribut facultatif.<br /><br /> Valeur hexadécimale qui spécifie le nom fort de l’assembly.|  
+|`processorArchitecture`|Attribut facultatif.<br /><br /> L’une des valeurs «x86», «amd64», «MSIL» ou «ia64», spécifiant l’architecture de processeur pour un assembly qui contient du code spécifique au processeur. Les valeurs ne respectent pas la casse. Si une autre valeur est assignée à l’attribut `<assemblyIdentity>` , la totalité de l’élément est ignorée. Consultez <xref:System.Reflection.ProcessorArchitecture>.|  
   
-## <a name="processorarchitecture-attribute"></a>processorArchitecture attribut  
+## <a name="processorarchitecture-attribute"></a>processorArchitecture (attribut)  
   
-|Value|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
-|`amd64`|AMD 64 x86 uniquement à l’architecture.|  
-|`ia64`|Uniquement à l’architecture Intel Itanium.|  
-|`msil`|Neutre en ce qui concerne le processeur et bits par mot.|  
-|`x86`|Un x86 32 bits processeur, natif ou dans le Windows sur l’environnement Windows (WOW) sur une plateforme 64 bits.|  
+|`amd64`|Architecture AMD x86-64 uniquement.|  
+|`ia64`|Architecture Intel Itanium uniquement.|  
+|`msil`|Neutre en ce qui concerne le processeur et les bits par mot.|  
+|`x86`|Processeur x86 32 bits, natif ou dans l’environnement Windows sur Windows (WOW) sur une plateforme 64 bits.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -64,15 +64,15 @@ culture="assembly culture"/>
 |-------------|-----------------|  
 |`assemblyBinding`|Contient des informations à propos de la redirection des versions d'assemblys et de l'emplacement de ces derniers.|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`dependentAssembly`|Encapsule la stratégie de liaisons et l’emplacement de chaque assembly. Utilisez une `<dependentAssembly>` élément pour chaque assembly.|  
+|`dependentAssembly`|Encapsule la stratégie de liaisons et l’emplacement de chaque assembly. Utilisez un `<dependentAssembly>` seul élément pour chaque assembly.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="remarks"></a>Notes  
- Chaque  **\<dependentAssembly >** élément doit avoir un  **\<assemblyIdentity >** élément enfant.  
+ **Chaque\<élément de > dependentAssembly** doit avoir un  **\<élément enfant AssemblyIdentity >** .  
   
- Si le `processorArchitecture` attribut n’est présent, le `<assemblyIdentity>` élément s’applique uniquement à l’assembly avec l’architecture de processeur correspondant. Si le `processorArchitecture` attribut n’est pas présent, le `<assemblyIdentity>` élément peut s’appliquer à un assembly avec une architecture de processeur.  
+ Si l' `processorArchitecture` attribut est présent, l' `<assemblyIdentity>` élément s’applique uniquement à l’assembly avec l’architecture de processeur correspondante. Si l' `processorArchitecture` attribut n’est pas présent, `<assemblyIdentity>` l’élément peut s’appliquer à un assembly avec toute architecture de processeur.  
   
- L’exemple suivant montre un fichier de configuration pour les deux assemblys portant le même nom qui ciblent deux architectures de processeur de deux différentes, et dont les versions n’ont pas été préservées restent synchronisées. Lorsque l’application s’exécute sur le x86 plate-forme le premier `<assemblyIdentity>` élément s’applique et l’autre est ignorée. Si l’application s’exécute sur une plateforme différente x86 ou ia64, les deux sont ignorés.  
+ L’exemple suivant montre un fichier de configuration pour deux assemblys portant le même nom et ciblant deux architectures à deux processeurs différentes, et dont les versions n’ont pas été conservées dans la synchronisation. Lorsque l’application s’exécute sur la plateforme x86, le `<assemblyIdentity>` premier élément s’applique et l’autre est ignorée. Si l’application s’exécute sur une plateforme autre que x86 ou ia64, les deux sont ignorées.  
   
 ```xml  
 <configuration>  
@@ -99,10 +99,10 @@ culture="assembly culture"/>
 </configuration>  
 ```  
   
- Si un fichier de configuration contient un `<assemblyIdentity>` élément sans `processorArchitecture` d’attribut et ne contient pas d’élément qui correspond à la plateforme, l’élément sans le `processorArchitecture` attribut est utilisé.  
+ Si un fichier de configuration contient `<assemblyIdentity>` un élément `processorArchitecture` sans attribut et qu’il ne contient pas d’élément qui correspond à la plateforme, l’élément `processorArchitecture` sans l’attribut est utilisé.  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre comment fournir des informations relatives à un assembly.  
+## <a name="example"></a>Exemples  
+ L’exemple suivant montre comment fournir des informations sur un assembly.  
   
 ```xml  
 <configuration>  
@@ -121,6 +121,6 @@ culture="assembly culture"/>
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Redirection des versions d'assemblys](../../../../../docs/framework/configure-apps/redirect-assembly-versions.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)
+- [Redirection des versions d'assemblys](../../redirect-assembly-versions.md)

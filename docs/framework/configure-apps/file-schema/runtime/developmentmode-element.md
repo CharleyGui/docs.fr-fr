@@ -11,14 +11,14 @@ helpviewer_keywords:
 ms.assetid: 60e79a8c-415a-497d-be29-b9d0fd9bdee3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fdf840035150f08c894c984213af9a0abe6e95af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d7c7f866cdbcd39194d61a3db821bf973b4e057e
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704763"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663818"
 ---
-# <a name="developmentmode-element"></a>\<developmentMode > élément
+# <a name="developmentmode-element"></a>\<Mode developmentmode >, élément
 Indique si le runtime recherche des assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH.  
   
  \<configuration>  
@@ -40,12 +40,12 @@ Indique si le runtime recherche des assemblys dans les répertoires spécifiés 
 |---------------|-----------------|  
 |**developerInstallation**|Indique si le runtime recherche des assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH.|  
   
-## <a name="developerinstallation-attribute"></a>developerInstallation attribut  
+## <a name="developerinstallation-attribute"></a>Attribut developerInstallation  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |**true**|Recherche les assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH.|  
-|**false**|Ne recherche pas les assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH. Ceci est la valeur par défaut|  
+|**false**|Ne recherche pas les assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH. Il s’agit de la valeur par défaut|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -58,10 +58,10 @@ Indique si le runtime recherche des assemblys dans les répertoires spécifiés 
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="remarks"></a>Notes  
- Utilisez ce paramètre uniquement au moment du développement. Le runtime ne vérifie pas les versions sur les assemblys avec nom fort trouvés dans DEVPATH. Elle utilise simplement le premier assembly qu’il trouve.  
+ Utilisez ce paramètre uniquement au moment du développement. Le runtime ne vérifie pas les versions des assemblys avec nom fort qui se trouvent dans DEVPATH. Il utilise simplement le premier assembly qu’il trouve.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment entraîner le runtime recherche des assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH.  
+ L’exemple suivant montre comment faire en sorte que le runtime recherche les assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH.  
   
 ```xml  
 <configuration>  
@@ -73,6 +73,6 @@ Indique si le runtime recherche des assemblys dans les répertoires spécifiés 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Guide pratique pour Localiser des assemblys à l’aide de DEVPATH](../../../../../docs/framework/configure-apps/how-to-locate-assemblies-by-using-devpath.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)
+- [Guide pratique pour Localiser des assemblys à l’aide de DEVPATH](../../how-to-locate-assemblies-by-using-devpath.md)

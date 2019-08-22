@@ -6,24 +6,19 @@ helpviewer_keywords:
 - interoperability [WDF]
 - styles [Windows Forms], WPF content
 ms.assetid: e574aac7-7ea4-4cdb-8034-bab541f000df
-ms.openlocfilehash: 32ca9658ddf4ab6e8690f29797b7ac7b09df2ca7
-ms.sourcegitcommit: d98fdb087d9c8aba7d2cb93fe4b4ee35a2308cee
+author: gewarren
+ms.author: gewarren
+manager: jillfra
+ms.openlocfilehash: 287ed08db8a4266e5044a81d47a697949257e113
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69012955"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69658480"
 ---
 # <a name="walkthrough-style-wpf-content"></a>Procédure pas à pas : Contenu WPF du style
 
-Cette procédure pas à pas montre comment appliquer des styles à un contrôle WPF (Windows Presentation Foundation) hébergé sur un Windows Form.
-
- Lors de cette procédure pas à pas, vous allez exécuter les tâches suivantes :
-
-- créer le projet ;
-
-- créer le type de contrôle WPF ;
-
-- appliquer un style au contrôle WPF.
+Cet article vous explique comment appliquer un style à un contrôle Windows Presentation Foundation (WPF) hébergé sur un Windows Form.
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -42,9 +37,9 @@ Une fois que vous avez ajouté un type de contrôle WPF au projet, vous pouvez l
 
 1. Ajoutez un nouveau projet <xref:System.Windows.Controls.UserControl> WPF à la solution. Utilisez le nom par défaut pour le type de contrôle, `UserControl1.xaml`. Pour plus d’informations, consultez [Procédure pas à pas : Création d’un contenu WPF sur Windows Forms au moment](walkthrough-creating-new-wpf-content-on-windows-forms-at-design-time.md)de la conception.
 
-2. En mode Design, assurez-vous que `UserControl1` est sélectionné. Pour plus d'informations, voir [Procédure : Sélectionner et déplacer des éléments sur la](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514527(v=vs.100))aire de conception.
+2. En mode Design, assurez-vous que `UserControl1` est sélectionné.
 
-3. Dans la fenêtre **Propriétés** , affectez à <xref:System.Windows.FrameworkElement.Width%2A> `200`la valeur des <xref:System.Windows.FrameworkElement.Height%2A> propriétés et la valeur.
+3. Dans la fenêtre **Propriétés** , affectez à la valeur <xref:System.Windows.FrameworkElement.Width%2A> des <xref:System.Windows.FrameworkElement.Height%2A> propriétés et la valeur **200**.
 
 4. Ajoutez un <xref:System.Windows.Controls.Button?displayProperty=nameWithType> <xref:System.Windows.Controls.UserControl> contrôle au et <xref:System.Windows.Controls.ContentControl.Content%2A> affectez la valeur **Cancel**à la propriété.
 
@@ -60,15 +55,13 @@ Vous pouvez appliquer différents styles à un contrôle WPF pour modifier son a
 
 1. Dans la **boîte à outils**, double `UserControl1` -cliquez sur pour créer `UserControl1` une instance de sur le formulaire.
 
-     Une instance de `UserControl1` est hébergée dans un nouveau contrôle <xref:System.Windows.Forms.Integration.ElementHost> nommé `elementHost1`.
+   Une instance de `UserControl1` est hébergée dans un nouveau contrôle <xref:System.Windows.Forms.Integration.ElementHost> nommé `elementHost1`.
 
 1. Dans le panneau des `elementHost1`balises actives, cliquez sur modifier le **contenu hébergé** dans la liste déroulante.
 
-     `UserControl1` s'ouvre dans le [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].
+   `UserControl1`s’ouvre dans le Concepteur WPF.
 
-1. En mode XAML, insérez le code XAML suivant après la balise d'ouverture `<UserControl>`.
-
-     Ce code XAML crée un dégradé avec une bordure de dégradé contrastée. Quand l'utilisateur clique sur le contrôle, les dégradés sont modifiés pour générer une apparence de bouton enfoncé. Pour plus d’informations, consultez [Application d’un style et création de modèles](../../wpf/controls/styling-and-templating.md).
+1. En mode XAML, insérez le code XAML suivant après la balise d'ouverture `<UserControl>`. Ce code XAML crée un dégradé avec une bordure de dégradé contrastée. Quand l'utilisateur clique sur le contrôle, les dégradés sont modifiés pour générer une apparence de bouton enfoncé. Pour plus d’informations, consultez [Application d’un style et création de modèles](../../wpf/controls/styling-and-templating.md).
 
    ```xaml
    <UserControl.Resources>
@@ -118,7 +111,7 @@ Vous pouvez appliquer différents styles à un contrôle WPF pour modifier son a
    </UserControl.Resources>
    ```
 
-1. Appliquez le style `SimpleButton` défini à l’étape précédente au bouton Annuler en insérant le code XAML suivant dans l’étiquette `<Button>` du bouton Annuler.
+1. Appliquez le `<Button>` style défini à l’étape précédente au bouton Annuler en insérant le code XAML suivant dans la balise du bouton **Annuler.** `SimpleButton`
 
    ```xaml
    Style="{StaticResource SimpleButton}
@@ -139,7 +132,7 @@ Vous pouvez appliquer différents styles à un contrôle WPF pour modifier son a
 
 1. Dans le menu Déboguer, sélectionnez **Démarrer** le débogage pour exécuter l’application.
 
-1. Cliquez sur les boutons OK et Annuler et observez les différences.
+1. Cliquez sur les boutons **OK** et **Annuler** et affichez les différences.
 
 ## <a name="see-also"></a>Voir aussi
 

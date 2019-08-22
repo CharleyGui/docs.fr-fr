@@ -8,12 +8,12 @@ helpviewer_keywords:
 - system.Net element
 - <system.Net> element
 ms.assetid: 52de4d6c-b24d-44aa-ba7d-6b5061f1357e
-ms.openlocfilehash: febea73ddbc45276f97835eb4af7ee0d0d68dda5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 449146612938700f59f5e2ec761526d1dc66a3fc
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674335"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663955"
 ---
 # <a name="systemnet-element-network-settings"></a>\<system.Net>, élément (paramètres réseau)
 Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.  
@@ -38,25 +38,25 @@ Contient des paramètres qui spécifient la manière dont .NET Framework se conn
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[authenticationModules](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Spécifie les modules utilisés pour authentifier les demandes Internet.|  
-|[connectionManagement](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Spécifie le nombre maximal de connexions à un hôte Internet.|  
-|[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|Configure le serveur proxy HTTP (Hypertext Transfer Protocol).|  
-|[mailSettings](../../../../../docs/framework/configure-apps/file-schema/network/mailsettings-element-network-settings.md)|Configure les options d’envoi du courrier SMTP Simple Mail Transport Protocol ().|  
-|[requestCaching](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|Contrôle le mécanisme de mise en cache pour les demandes réseau.|  
-|[settings](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Configure les options réseau de base pour les classes dans le <xref:System.Net> et les espaces de noms enfants.|  
-|[webRequestModules](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|Spécifie les modules à utiliser pour demander des informations à partir d’hôtes Internet.|  
+|[authenticationModules](authenticationmodules-element-network-settings.md)|Spécifie les modules utilisés pour authentifier les requêtes Internet.|  
+|[connectionManagement](connectionmanagement-element-network-settings.md)|Spécifie le nombre maximal de connexions à un hôte Internet.|  
+|[defaultProxy](defaultproxy-element-network-settings.md)|Configure le serveur proxy HTTP (Hypertext Transfer Protocol).|  
+|[mailSettings](mailsettings-element-network-settings.md)|Configure les options d’envoi de courrier SMTP (simple mail transport Protocol).|  
+|[requestCaching](requestcaching-element-network-settings.md)|Contrôle le mécanisme de mise en cache pour les demandes réseau.|  
+|[settings](settings-element-network-settings.md)|Configure les options réseau de base pour les classes <xref:System.Net> dans les espaces de noms enfants associés.|  
+|[webRequestModules](webrequestmodules-element-network-settings.md)|Spécifie les modules à utiliser pour demander des informations à partir d’hôtes Internet.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[configuration](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Contient des paramètres pour tous les espaces de noms.|  
+|[configuration](../configuration-element.md)|Contient les paramètres de tous les espaces de noms.|  
   
 ## <a name="remarks"></a>Notes  
- Le [ \<system.net >](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) élément contient des paramètres pour les classes dans le <xref:System.Net> et les espaces de noms enfants. Les paramètres configurent les modules d’authentification, gestion des connexions, les paramètres de messagerie, le serveur proxy et les modules de demande Internet pour recevoir des informations à partir d’hôtes Internet.  
+ <xref:System.Net> L' [ \<élément System. net >](system-net-element-network-settings.md) contient des paramètres pour les classes dans les espaces de noms enfants associés. Les paramètres configurent les modules d’authentification, la gestion des connexions, les paramètres de messagerie, le serveur proxy et les modules de demande Internet pour la réception d’informations à partir d’hôtes Internet.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre une configuration classique utilisée par <xref:System.Net> classes.  
+ L’exemple suivant montre une configuration classique utilisée par <xref:System.Net> les classes.  
   
 ```xml  
 <configuration>  
@@ -94,4 +94,4 @@ Contient des paramètres qui spécifient la manière dont .NET Framework se conn
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma des paramètres réseau](index.md)

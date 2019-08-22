@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: 09c80fc9-1ba5-4192-89f7-3a79b2e4b024
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9402c9f28c123affb7b90fc189484bb1fd43db46
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2b00a5349e22feb3cce404ff504edd798ff9e304
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704607"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663525"
 ---
-# <a name="probing-element"></a>\<probing > élément
-Spécifie les sous-répertoires de base d’application pour le common language runtime à rechercher lors du chargement d’assemblys.  
+# <a name="probing-element"></a>\<détection de l’élément >
+Spécifie les sous-répertoires de base de l’application pour le common language runtime à rechercher lors du chargement des assemblys.  
   
  \<configuration>  
 \<runtime>  
@@ -39,7 +39,7 @@ Spécifie les sous-répertoires de base d’application pour le common language 
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`privatePath`|Attribut requis.<br /><br /> Spécifie les sous-répertoires du répertoire de base de l’application qui peut contenir des assemblys. Délimiter chaque sous-répertoire par un point-virgule.|  
+|`privatePath`|Attribut requis.<br /><br /> Spécifie les sous-répertoires du répertoire de base de l’application qui peuvent contenir des assemblys. Délimitez chaque sous-répertoire par un point-virgule.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -53,7 +53,7 @@ Spécifie les sous-répertoires de base d’application pour le common language 
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment spécifier les sous-répertoires de base d’application que le runtime doit rechercher les assemblys.  
+ L’exemple suivant montre comment spécifier les sous-répertoires de base de l’application que le runtime doit rechercher pour les assemblys.  
   
 ```xml  
 <configuration>  
@@ -67,7 +67,7 @@ Spécifie les sous-répertoires de base d’application pour le common language 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Spécification de l'emplacement d'un assembly](../../../../../docs/framework/configure-apps/specify-assembly-location.md)
-- [Méthode de localisation des assemblys par le runtime](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)
+- [Spécification de l'emplacement d'un assembly](../../specify-assembly-location.md)
+- [Méthode de localisation des assemblys par le runtime](../../../deployment/how-the-runtime-locates-assemblies.md)

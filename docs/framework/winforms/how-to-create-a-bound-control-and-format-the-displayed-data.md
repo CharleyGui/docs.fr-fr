@@ -6,17 +6,16 @@ helpviewer_keywords:
 - bound controls [Windows Forms], creating
 - bound controls [Windows Forms], formatting data
 ms.assetid: d5a56228-899d-41d9-8af8-87b3f4ec2f94
-ms.openlocfilehash: 052e619acb23fb2e25f42daf7b4eaaacb0688f31
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: b5ad85a9477ca32cd28f246abe4ece3cace43182
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039422"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666771"
 ---
 # <a name="how-to-create-a-bound-control-and-format-the-displayed-data"></a>Procédure : créer un contrôle lié et mettre en forme les données affichées
 
 Avec Windows Forms la liaison de données, vous pouvez mettre en forme les données affichées dans un contrôle lié aux données à l’aide de la boîte de dialogue **mise en forme et liaison avancée** .
-
 
 ### <a name="to-bind-a-control-and-format-the-displayed-data"></a>Pour lier un contrôle et mettre en forme les données affichées
 

@@ -10,18 +10,18 @@ helpviewer_keywords:
 - compiler configuration attributes
 - compiler element
 ms.assetid: 7a151659-b803-4c27-b5ce-1c4aa0d5a823
-ms.openlocfilehash: 34753d538ff37ac4ae621f653d47ac92ac6749a0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 80eea3373e2f4b7e45ebeb31dd6552ea02c109e1
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705374"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659731"
 ---
-# <a name="compiler-element"></a>\<compilateur > élément
+# <a name="compiler-element"></a>\<Élément de > du compilateur
 
 Spécifie les attributs de configuration du compilateur pour un fournisseur de langage.
 
-\<Élément de configuration > \<system.codedom élément > \<compilers, élément > \<compilateur > élément
+\<élément de configuration \<> élément System. CodeDom \<> les compilateurs > \<élément > du compilateur
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -43,41 +43,41 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Attribut|Description|
 |---------------|-----------------|
-|`compilerOptions`|Attribut facultatif.<br /><br /> Spécifie des arguments supplémentaires spécifiques au compilateur pour la compilation. Les valeurs pour le `compilerOptions` attribut sont généralement répertoriées dans une rubrique d’options du compilateur pour le compilateur.|
-|`extension`|Attribut requis.<br /><br /> Fournit une liste délimitée par des points-virgules des extensions de nom de fichier utilisé par les fichiers de code source pour le fournisseur de langages. Par exemple, « .cs ».|
-|`language`|Attribut requis.<br /><br /> Fournit une liste délimitée par des points-virgules de noms de langages pris en charge par le fournisseur de langages. Par exemple, « c# ; cs ; csharp ».|
-|`type`|Attribut requis.<br /><br /> Spécifie le nom de type fournisseur de langages, y compris le nom de l’assembly contenant l’implémentation du fournisseur. Le nom de type doit respecter les exigences définies dans [spécifiant des noms de types qualifiés complets](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|
-|`warningLevel`|Attribut facultatif.<br /><br /> Spécifie le niveau d’avertissement du compilateur par défaut ; Détermine le niveau auquel le fournisseur de langages traite les avertissements de compilation comme des erreurs.|
+|`compilerOptions`|Attribut facultatif.<br /><br /> Spécifie des arguments supplémentaires spécifiques au compilateur pour la compilation. Les valeurs de l' `compilerOptions` attribut sont généralement répertoriées dans une rubrique Options du compilateur pour le compilateur.|
+|`extension`|Attribut requis.<br /><br /> Fournit une liste séparée par des points-virgules des extensions de nom de fichier utilisées par les fichiers sources pour le fournisseur de langages. Par exemple, «. cs».|
+|`language`|Attribut requis.<br /><br /> Fournit une liste séparée par des points-virgules des noms de langage pris en charge par le fournisseur de langages. Par exemple, «c#; CS; CSharp».|
+|`type`|Attribut requis.<br /><br /> Spécifie le nom de type du fournisseur de langages, y compris le nom de l’assembly contenant l’implémentation du fournisseur. Le nom de type doit satisfaire aux spécifications définies dans [spécification de noms de types qualifiés complets](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|
+|`warningLevel`|Attribut facultatif.<br /><br /> Spécifie le niveau d’avertissement du compilateur par défaut; détermine le niveau auquel le fournisseur de langages traite les avertissements de compilation comme des erreurs.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<providerOption > élément](../../../../../docs/framework/configure-apps/file-schema/compiler/provideroption-element.md)|Spécifie les attributs de version du compilateur pour un fournisseur de langage.|
+|[\<providerOption >, élément](provideroption-element.md)|Spécifie les attributs de version du compilateur pour un fournisseur de langage.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<configuration>, élément](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
-|[\<System.CodeDom > élément](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|Spécifie les paramètres de configuration du compilateur pour les fournisseurs de langages disponibles.|
-|[\<compilateurs > élément](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)|Conteneur pour les éléments de configuration de compilateur ; contient zéro ou plusieurs `<compiler>` éléments.|
+|[\<configuration>, élément](../configuration-element.md)|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|
+|[\<System. CodeDom >, élément](system-codedom-element.md)|Spécifie les paramètres de configuration du compilateur pour les fournisseurs de langages disponibles.|
+|[\<compilateurs > élément](compilers-element.md)|Conteneur pour les éléments de configuration du compilateur; contient zéro ou plusieurs `<compiler>` éléments.|
 
 ## <a name="remarks"></a>Notes
 
-Chaque `<compiler>` élément spécifie les attributs de configuration du compilateur pour un fournisseur de langage spécifique. Étend le fournisseur le <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> classe pour une langue spécifique ; la `<compiler>` élément définit le compilateur et les paramètres de générateur de code pour le fournisseur de langages.
+Chaque `<compiler>` élément spécifie les attributs de configuration du compilateur pour un fournisseur de langages spécifique. Le fournisseur étend la <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> classe pour un langage spécifique; l' `<compiler>` élément définit le compilateur et les paramètres du générateur de code pour le fournisseur de langage.
 
 Le .NET Framework définit les paramètres de compilateur initiaux dans le fichier de configuration de l’ordinateur (Machine.config). Les développeurs et les éditeurs de compilateurs peuvent ajouter des paramètres de configuration pour une nouvelle implémentation <xref:System.CodeDom.Compiler.CodeDomProvider>. Utilisez la méthode <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> pour énumérer par programmation les paramètres de configuration du compilateur et du fournisseur de langage sur un ordinateur.
 
-Éléments du compilateur dans l’application ou le fichier de configuration Web peuvent compléter ou remplacer les paramètres dans le fichier de configuration machine. Si plus d’une implémentation de fournisseur est configurée pour le même nom de langage ou la même extension de fichier, la dernière configuration correspondante remplace n’importe quel précédentes fournisseurs configurés pour cette extension de fichier ou le nom de langage.
+Les éléments du compilateur dans le fichier de configuration Web ou d’application peuvent compléter ou substituer les paramètres dans le fichier de configuration de l’ordinateur. Si plusieurs implémentations de fournisseur sont configurées pour le même nom de langue ou la même extension de fichier, la dernière configuration correspondante remplace tous les fournisseurs configurés précédents pour ce nom de langue ou cette extension de fichier.
 
 ## <a name="configuration-file"></a>Fichier de configuration
 
-Cet élément peut être utilisé dans le fichier de configuration machine et le fichier de configuration d’application.
+Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur et dans le fichier de configuration de l’application.
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant illustre un élément de configuration de compilateur classique :
+L’exemple suivant illustre un élément de configuration de compilateur classique:
 
 ```xml
 <configuration>
@@ -101,7 +101,7 @@ L’exemple suivant illustre un élément de configuration de compilateur classi
 
 - <xref:System.CodeDom.Compiler.CompilerInfo>
 - <xref:System.CodeDom.Compiler.CodeDomProvider>
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<compilateurs > élément](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)
-- [Spécification des noms de types complets](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)
-- [compiler, élément de compilers pour compilation (schéma des paramètres ASP.NET)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a15ebt6c(v=vs.100))
+- [Schéma des fichiers de configuration](../index.md)
+- [\<compilateurs > élément](compilers-element.md)
+- [Spécification des noms de types complets](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md)
+- [compiler, élément de compilateurs pour compilation (schéma des paramètres ASP.NET)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a15ebt6c(v=vs.100))

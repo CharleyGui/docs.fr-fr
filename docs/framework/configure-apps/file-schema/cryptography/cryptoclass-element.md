@@ -8,15 +8,15 @@ helpviewer_keywords:
 - cryptoClass element
 - <cryptoClass> element
 ms.assetid: 03db52ef-010e-44ea-b6fd-b9c900ecad50
-ms.openlocfilehash: da78140806ab8dbe7b7cb5e321e82755774ff25d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c8076fba1ebae693aa5e4c80e822b9ae840ff1c5
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705257"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664334"
 ---
-# <a name="cryptoclass-element"></a>\<cryptoClass > élément
-Contient une classe de chiffrement qui a un mappage à un nom convivial dans l’élément [\<nameEntry>](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md).  
+# <a name="cryptoclass-element"></a>\<cryptoClass >, élément
+Contient une classe de chiffrement qui a un mappage à un nom convivial dans l’élément [\<nameEntry>](nameentry-element.md).  
   
  \<configuration>  
 \<mscorlib>  
@@ -38,7 +38,7 @@ Contient une classe de chiffrement qui a un mappage à un nom convivial dans l�
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`customClassName`|Attribut requis.<br /><br /> Contient les informations pour la classe de chiffrement. Utilisez cet attribut pour fournir un nom court pour votre classe. Vous devez spécifier une chaîne conforme aux exigences spécifiées dans [spécifiant des noms de types qualifiés complets](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
+|`customClassName`|Attribut requis.<br /><br /> Contient les informations relatives à la classe de chiffrement. Utilisez cet attribut pour fournir un nom abrégé pour votre classe. Vous devez spécifier une chaîne qui répond aux exigences spécifiées dans [spécification de noms de types qualifiés complets](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -48,13 +48,13 @@ Contient une classe de chiffrement qui a un mappage à un nom convivial dans l�
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`cryptoClasses`|Contient la liste des classes de chiffrement qui ont un mappage à un nom convivial dans l’élément [\<nameEntry>](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md).|  
+|`cryptoClasses`|Contient la liste des classes de chiffrement qui ont un mappage à un nom convivial dans l’élément [\<nameEntry>](nameentry-element.md).|  
 |`cryptographySettings`|Contient des paramètres de chiffrement.|  
 |`cryptoNameMapping`|Contient des mappages de classes à des noms conviviaux.|  
-|`mscorlib`|Contient l’élément [\<cryptographySettings>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptographysettings-element.md).|  
+|`mscorlib`|Contient l’élément [\<cryptographySettings>](cryptographysettings-element.md).|  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser le  **\<cryptoClass >** élément à référencer une classe de chiffrement et configurer le runtime. Vous pouvez ensuite passer la chaîne « RSA » à la <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> méthode et l’utilisation du <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> méthode pour retourner un `MyCryptoRSAClass` objet.  
+ L’exemple suivant montre comment utiliser l'  **\<élément cryptoClass >** pour référencer une classe de chiffrement et configurer le Runtime. Vous pouvez ensuite passer la chaîne «RSA» à la <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> méthode et utiliser la <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> méthode pour retourner un `MyCryptoRSAClass` objet.  
   
 ```xml  
 <configuration>  
@@ -77,7 +77,7 @@ Contient une classe de chiffrement qui a un mappage à un nom convivial dans l�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Schéma des paramètres de chiffrement](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)
+- [Schéma des fichiers de configuration](../index.md)
+- [Schéma des paramètres de chiffrement](index.md)
 - [Cryptographic Services](../../../../../docs/standard/security/cryptographic-services.md)
-- [Configuration des classes de chiffrement](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)
+- [Configuration des classes de chiffrement](../../configure-cryptography-classes.md)

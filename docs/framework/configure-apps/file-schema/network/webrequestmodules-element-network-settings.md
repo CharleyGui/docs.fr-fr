@@ -8,15 +8,15 @@ helpviewer_keywords:
 - webRequestModules element
 - <webRequestModules> element
 ms.assetid: 1263de11-3e0a-4f94-97c9-710b2ae53817
-ms.openlocfilehash: e5d1780a204b2e99593d51179a479845fd49e608
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c30a7a0bcce62c99d7c1ec0ff17389b8c2cd2f17
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704945"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663948"
 ---
 # <a name="webrequestmodules-element-network-settings"></a>\<webRequestModules >, élément (paramètres réseau)
-Spécifie les modules à utiliser pour demander des informations à partir d’hôtes de réseau.  
+Spécifie les modules à utiliser pour demander des informations à des hôtes réseau.  
   
  \<configuration>  
 \<system.net>  
@@ -39,26 +39,26 @@ Spécifie les modules à utiliser pour demander des informations à partir d’h
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[add](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-webrequestmodules-network-settings.md)|Ajoute un module de demande Web personnalisé à l’application.|  
-|[clear](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-webrequestmodules-network-settings.md)|Supprime tous les modules de demande Web inscrits de l’application.|  
-|[remove](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-webrequestmodules-network-settings.md)|Supprime un module de demande Web personnalisé de l’application.|  
+|[add](add-element-for-webrequestmodules-network-settings.md)|Ajoute un module de demande Web personnalisé à l’application.|  
+|[clear](clear-element-for-webrequestmodules-network-settings.md)|Supprime tous les modules de demande Web inscrits de l’application.|  
+|[remove](remove-element-for-webrequestmodules-network-settings.md)|Supprime un module de demande Web personnalisé de l’application.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
+|[system.net](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
 ## <a name="remarks"></a>Notes  
- Le `webRequestModules` élément inscrit les descendants de le <xref:System.Net.WebRequest> classe pour gérer les demandes d’informations sur les hôtes de réseau. Modules de demande Web doivent implémenter le <xref:System.Net.IWebRequestCreate> interface.  
+ L' `webRequestModules` élément inscrit les descendants de la <xref:System.Net.WebRequest> classe pour gérer les demandes d’informations aux hôtes réseau. Les modules de demande Web doivent <xref:System.Net.IWebRequestCreate> implémenter l’interface.  
   
- Le .NET Framework inclut des modules de demande Web pour les URI qui commencent par `http://`, `https://`, et `file://`. Vous pouvez remplacer les modules par défaut qu’en inscrivant un module personnalisé dans le fichier de configuration.  
+ Le .NET Framework comprend des modules de demande Web pour les URI `http://`qui `https://`commencent par `file://`, et. Vous pouvez remplacer les modules par défaut uniquement en inscrivant un module personnalisé dans le fichier de configuration.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant inscrit le module HTTP par défaut. Vous devez remplacer les valeurs de Version et PublicKeyToken par les valeurs correctes pour le module spécifié.  
+ L’exemple suivant enregistre le module HTTP par défaut. Vous devez remplacer les valeurs de version et PublicKeyToken par les valeurs correctes pour le module spécifié.  
   
 ```xml  
 <configuration>  
@@ -77,4 +77,4 @@ Spécifie les modules à utiliser pour demander des informations à partir d’h
 
 - <xref:System.Net.WebRequest>
 - <xref:System.Net.IWebRequestCreate>
-- [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma des paramètres réseau](index.md)

@@ -12,18 +12,18 @@ helpviewer_keywords:
 ms.assetid: bf598873-83b7-48de-8955-00b0504fbad0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6c2ed46e1d26d829fbe832e44efb40844ae7d56f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ba74907e2f6fc2ca14e12a24113fa7654c9b967e
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592711"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663796"
 ---
-# <a name="disablecachingbindingfailures-element"></a>\<disableCachingBindingFailures > élément
-Spécifie s’il faut désactiver la mise en cache des échecs se produisent, car l’assembly est introuvable par la détection de liaison.  
+# <a name="disablecachingbindingfailures-element"></a>\<disableCachingBindingFailures >, élément
+Spécifie s’il faut désactiver la mise en cache des échecs de liaison qui se produisent parce que l’assembly est introuvable par la détection.  
   
- \<configuration > élément  
-\<runtime > élément  
+ \<Élément de > de configuration  
+\<Élément > du Runtime  
 \<disableCachingBindingFailures>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,14 +39,14 @@ Spécifie s’il faut désactiver la mise en cache des échecs se produisent, ca
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|enabled|Attribut requis.<br /><br /> Spécifie s’il faut désactiver la mise en cache des échecs se produisent, car l’assembly est introuvable par la détection de liaison.|  
+|enabled|Attribut requis.<br /><br /> Spécifie s’il faut désactiver la mise en cache des échecs de liaison qui se produisent parce que l’assembly est introuvable par la détection.|  
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Value|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
-|0|Ne désactivez pas la mise en cache des échecs se produisent, car l’assembly est introuvable par la détection de liaison. Il s’agit du comportement de liaison par défaut en commençant par le .NET Framework version 2.0.|  
-|1|Désactiver la mise en cache des échecs se produisent, car l’assembly est introuvable par la détection de liaison. Ce paramètre rétablit le comportement de liaison du .NET Framework version 1.1.|  
+|0|Ne désactivez pas la mise en cache des échecs de liaison qui se produisent parce que l’assembly est introuvable par la détection. Il s’agit du comportement de liaison par défaut à partir de la version 2,0 de .NET Framework.|  
+|1|Désactivez la mise en cache des échecs de liaison qui se produisent parce que l’assembly est introuvable par la détection. Ce paramètre revient au comportement de liaison du .NET Framework version 1,1.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -59,18 +59,18 @@ Spécifie s’il faut désactiver la mise en cache des échecs se produisent, ca
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="remarks"></a>Notes  
- À compter de .NET Framework version 2.0, le comportement par défaut pour le chargement des assemblys est mettre en cache tous les liaison et les échecs de chargement. Autrement dit, si une tentative de chargement d’un assembly échoue, les demandes suivantes pour charger le même assembly échouent immédiatement, sans faire de tentative pour localiser l’assembly. Cet élément désactive ce comportement par défaut pour les échecs de liaison qui se produisent, car l’assembly est introuvable dans le chemin de recherche. Ces défaillances lèvent <xref:System.IO.FileNotFoundException>.  
+ À partir de la version 2,0 de .NET Framework, le comportement par défaut pour le chargement des assemblys consiste à mettre en cache toutes les erreurs de liaison et de chargement. Autrement dit, si une tentative de chargement d’un assembly échoue, les demandes suivantes de chargement du même assembly échouent immédiatement, sans aucune tentative de localisation de l’assembly. Cet élément désactive le comportement par défaut pour les échecs de liaison qui se produisent parce que l’assembly est introuvable dans le chemin d’accès de détection. Ces échecs lèvent <xref:System.IO.FileNotFoundException>.  
   
- Une liaison et les échecs de chargement ne sont pas affectées par cet élément et sont toujours mis en cache. Ces échecs se produisent, car l’assembly a été trouvé, mais ne peut pas être chargé. Elles lèvent <xref:System.BadImageFormatException> ou <xref:System.IO.FileLoadException>. La liste suivante comprend quelques exemples de ces défaillances.  
+ Certains échecs de liaison et de chargement ne sont pas affectés par cet élément et sont toujours mis en cache. Ces échecs se produisent parce que l’assembly a été trouvé mais n’a pas pu être chargé. Elles <xref:System.BadImageFormatException> lèvent <xref:System.IO.FileLoadException>ou. La liste suivante présente quelques exemples de tels échecs.  
   
-- Si vous tentez de charger un fichier n’est pas un assembly valide, les tentatives suivantes pour charger l’assembly échoue même si le fichier incorrect est remplacé par l’assembly approprié.  
+- Si vous essayez de charger un fichier qui n’est pas un assembly valide, les tentatives suivantes de chargement de l’assembly échouent même si le fichier incorrect est remplacé par l’assembly approprié.  
   
-- Si vous essayez de charger un assembly qui est verrouillé par le système de fichiers, les tentatives suivantes pour charger l’assembly échoue même après que l’assembly est libéré par le système de fichiers.  
+- Si vous essayez de charger un assembly qui est verrouillé par le système de fichiers, les tentatives suivantes de chargement de l’assembly échouent même après la libération de l’assembly par le système de fichiers.  
   
-- Si une ou plusieurs versions de l’assembly que vous tentez de charger est dans le chemin de recherche, mais la version spécifique que vous demandez n’est pas entre eux, les tentatives suivantes pour charger cette version échoue même si la version correcte est déplacée dans le chemin de recherche.  
+- Si une ou plusieurs versions de l’assembly que vous tentez de charger se trouvent dans le chemin d’accès de détection, mais que la version spécifique que vous demandez n’est pas parmi celles-ci, les tentatives de chargement ultérieures de cette version échouent même si la version correcte est déplacée dans le chemin d’accès de détection.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment désactiver la mise en cache des échecs de liaison d’assembly qui se produisent, car l’assembly est introuvable par la détection.  
+ L’exemple suivant montre comment désactiver la mise en cache des échecs de liaison d’assembly qui se produisent parce que l’assembly n’a pas été trouvé par la détection.  
   
 ```xml  
 <configuration>  
@@ -82,6 +82,6 @@ Spécifie s’il faut désactiver la mise en cache des échecs se produisent, ca
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Méthode de localisation des assemblys par le runtime](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)
+- [Méthode de localisation des assemblys par le runtime](../../../deployment/how-the-runtime-locates-assemblies.md)

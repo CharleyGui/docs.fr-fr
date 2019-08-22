@@ -2,22 +2,22 @@
 title: <iriParsing>, élément (paramètres d’URI)
 ms.date: 03/30/2017
 ms.assetid: 953d0b53-445e-41f9-b302-77c4030852ce
-ms.openlocfilehash: 7033f4dcda7d2fe73310ae0d36d9b05c090d13d4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2c99edf2f1a03e0e510858c106cad43b0eaa27b4
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674517"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664084"
 ---
-# <a name="iriparsing-element-uri-settings"></a>\<iriParsing >, élément (paramètres d’Uri)
+# <a name="iriparsing-element-uri-settings"></a>\<iriParsing >, élément (paramètres d’URI)
 Spécifie si l’analyse d’identificateur de ressource internationale (IRI) s’applique à un <xref:System.Uri> et si les règles d’analyse IRI doivent s’appliquer.  
   
 ## <a name="schema-hierarchy"></a>Hiérarchie de schéma  
- [\<configuration>, élément](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
+ [\<configuration>, élément](../configuration-element.md)  
   
- [\<URI >, élément (paramètres d’Uri)](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)  
+ [\<URI >, élément (paramètres d’URI)](uri-element-uri-settings.md)  
   
- [\<iriParsing>](../../../../../docs/framework/configure-apps/file-schema/network/iriparsing-element-uri-settings.md)  
+ [\<iriParsing>](iriparsing-element-uri-settings.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,39 +34,39 @@ Spécifie si l’analyse d’identificateur de ressource internationale (IRI) s�
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|`enabled`|Spécifie si l’analyse des IRI est activée. La valeur par défaut est `false`.|  
+|`enabled`|Spécifie si l’analyse IRI est activée. La valeur par défaut est `false`.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[uri](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|Contient des paramètres qui spécifient la façon dont le .NET Framework gère les adresses web exprimées à l’aide d’identificateurs de ressource uniforme (URI).|  
+|[URI](uri-element-uri-settings.md)|Contient des paramètres qui spécifient comment le .NET Framework gère les adresses Web exprimées à l’aide d’URI (Uniform Resource Identifier).|  
   
 ## <a name="remarks"></a>Notes  
- Existant <xref:System.Uri> classe a été étendue dans .NET Framework 3.5. 3.0 SP1 et 2.0 SP1 pour fournir la prise en charge pour les identificateurs IRI (International Resource) et les noms de domaine international (IDN). Les utilisateurs actuels ne verront pas de toute modification du comportement de .NET Framework 2.0, sauf si ils activent spécifiquement les IRI et des IDN prennent en charge. Cela garantit la compatibilité des applications avec les versions antérieures de .NET Framework.  
+ La classe <xref:System.Uri> existante a été étendue dans .NET Framework 3,5. 3,0 SP1 et 2,0 SP1 pour assurer la prise en charge des IRI (International Resource Identifier) et des noms de domaine internationaux (IDN). Les utilisateurs actuels ne voient aucune modification du comportement .NET Framework 2,0, sauf s’ils activent spécifiquement la prise en charge des IRI et des IDN. Cela garantit la compatibilité des applications avec les versions antérieures de .NET Framework.  
   
- Pour activer la prise en charge des IRI, les deux modifications suivantes sont requises :  
+ Pour activer la prise en charge des IRI, les deux modifications suivantes sont requises:  
   
-1. Ajoutez la ligne suivante au fichier machine.config sous le répertoire .NET Framework 2.0  
+1. Ajoutez la ligne suivante au fichier machine. config dans le répertoire .NET Framework 2,0  
   
     ```xml  
     <section name="uri" type="System.Configuration.UriSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
     ```  
   
-2. Spécifiez si les règles d’analyse des IRI doit être appliquée. Cela est spécifié dans le fichier machine.config ou app.config.  
+2. Spécifie si les règles d’analyse IRI doivent être appliquées. Cela est spécifié dans le fichier machine.config ou app.config.  
   
- L’activation de l’analyse des IRI (iriParsing activé = `true`) effectue la normalisation et la vérification des caractères selon le IRI les plus récentes des règles dans la RFC 3987. La valeur par défaut est `false` et permet la normalisation et caractères vérification selon RFC 2396 et RFC 3986 (pour les littéraux IPv6).  
+ L’activation de l’analyse IRI (iriParsing `true`Enabled =) effectue la normalisation et la vérification des caractères selon les dernières règles IRI de la norme RFC 3987. La valeur par défaut `false` est et effectue la normalisation et la vérification des caractères selon les spécifications RFC 2396 et RFC 3986 (pour les littéraux IPv6).  
   
 ### <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
   
 ### <a name="description"></a>Description  
- L’exemple suivant montre une configuration utilisée par la <xref:System.Uri> classe pour prendre en charge l’analyse des IRI et les noms IDN.  
+ L’exemple suivant illustre une configuration utilisée par la <xref:System.Uri> classe pour prendre en charge l’analyse des IRI et les noms IDN.  
   
 ### <a name="code"></a>Code  
   
@@ -83,4 +83,4 @@ Spécifie si l’analyse d’identificateur de ressource internationale (IRI) s�
 
 - <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType>
 - <xref:System.Configuration.UriSection?displayProperty=nameWithType>
-- [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma des paramètres réseau](index.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <connectionManagement> element
 - connectionManagement element
 ms.assetid: bedccaab-12a2-4511-8f67-e961f249aec6
-ms.openlocfilehash: 4412fe30bfb8dcb3d7576df18cb2a472463d935c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: faaba1b9de302ed916ad1a81c7e80b3fb5a67170
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674582"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664169"
 ---
 # <a name="connectionmanagement-element-network-settings"></a>\<connectionManagement >, élément (paramètres réseau)
 Spécifie le nombre maximal de connexions à un hôte réseau.  
@@ -39,24 +39,24 @@ Spécifie le nombre maximal de connexions à un hôte réseau.
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[add](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-connectionmanagement-network-settings.md)|Ajoute une adresse IP ou un nom DNS à la liste de gestion des connexions.|  
-|[clear](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-connectionmanagement-network-settings.md)|Efface la liste de gestion des connexions.|  
-|[remove](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-connectionmanagement-network-settings.md)|Supprime une adresse IP ou le nom DNS de la liste de gestion de connexion.|  
+|[add](add-element-for-connectionmanagement-network-settings.md)|Ajoute une adresse IP ou un nom DNS à la liste de gestion des connexions.|  
+|[clear](clear-element-for-connectionmanagement-network-settings.md)|Efface la liste de gestion des connexions.|  
+|[remove](remove-element-for-connectionmanagement-network-settings.md)|Supprime une adresse IP ou un nom DNS de la liste de gestion des connexions.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
+|[system.net](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
 ## <a name="remarks"></a>Notes  
- Le `connectionManagement` élément définit le nombre maximal de connexions sur un serveur ou un groupe de serveurs.  
+ L' `connectionManagement` élément définit le nombre maximal de connexions à un serveur ou à un groupe de serveurs.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant configure une application d’utiliser quatre connexions au serveur `www.contoso.com` et deux connexions à tous les autres serveurs.  
+ L’exemple suivant configure une application pour qu’elle utilise quatre connexions au serveur `www.contoso.com` et deux connexions à tous les autres serveurs.  
   
 ```xml  
 <configuration>  
@@ -73,4 +73,4 @@ Spécifie le nombre maximal de connexions à un hôte réseau.
 
 - <xref:System.Net.ServicePoint>
 - <xref:System.Net.ServicePointManager>
-- [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma des paramètres réseau](index.md)

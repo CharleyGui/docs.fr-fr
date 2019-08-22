@@ -8,12 +8,12 @@ helpviewer_keywords:
 - servicePointManager element
 - <servicePointManager> element
 ms.assetid: 6e5def51-3646-4ef6-a7bd-c69151321bec
-ms.openlocfilehash: 407ed85de109a671030eccff8ddd92af91628014
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a6a40d97bf16a3125452311e7762617e657ca384
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704984"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659145"
 ---
 # <a name="servicepointmanager-element-network-settings"></a>\<servicePointManager >, élément (paramètres réseau)
 Configure les connexions aux ressources réseau.  
@@ -44,13 +44,13 @@ Configure les connexions aux ressources réseau.
   
 |**Attribut**|**Description**|  
 |-------------------|---------------------|  
-|`checkCertificateName`|Spécifie si le système doit vérifier que le nom du certificat correspond le nom d’hôte de serveur avant d’utiliser le certificat. La valeur par défaut est `true`.|  
+|`checkCertificateName`|Spécifie si le système doit vérifier que le nom du certificat correspond au nom d’hôte du serveur avant d’utiliser le certificat. La valeur par défaut est `true`.|  
 |`checkCertificateRevocationList`|Spécifie si le système doit vérifier si le certificat a été révoqué avant d’utiliser le certificat. La valeur par défaut est `false`.|  
-|`dnsRefreshTimeout`|Spécifie la durée pendant laquelle Service DNS (Domain Name) résolutions sont mis en cache en conjonction avec l’option de tourniquet DNS, en millisecondes. La valeur par défaut est 120 000 millisecondes (deux minutes).|  
-|`enableDnsRoundRobin`|Spécifie si les résolutions DNS d’hôte noms avec plusieurs adresses IP (Internet Protocol) retournés toutes les adresses, ou simplement le premier. La valeur par défaut est `false`.|  
-|`encryptionPolicy`|Spécifie la stratégie de chiffrement appliquée à une session SSL/TLS sur un <xref:System.Net.ServicePointManager> instance. Les valeurs possibles sont équivalentes aux valeurs de la <xref:System.Net.Security.EncryptionPolicy> énumération. L’utilisation de <xref:System.Security.Authentication.CipherAlgorithmType.Null> est requise lorsque la stratégie de chiffrement est définie sur `NoEncryption`. La valeur par défaut est `RequireEncryption`.|  
-|`expect100Continue`|Spécifie si les méthodes POST doivent attendre pour recevoir un `100-continue` réponse du serveur. La valeur par défaut est `true`.|  
-|`useNagleAlgorithm`|Spécifie si les connexions contrôlées par le Gestionnaire de point de service utilisent l’algorithme Nagle. La valeur par défaut est `true`.|  
+|`dnsRefreshTimeout`|Spécifie la durée de mise en cache des résolutions DNS (Domain Name Service) dans le cadre de l’option de tourniquet (Round Robin) DNS, en millisecondes. La valeur par défaut est 120 000 millisecondes (deux minutes).|  
+|`enableDnsRoundRobin`|Spécifie si les résolutions DNS des noms d’hôtes avec plusieurs adresses IP (Internet Protocol) renvoient toutes les adresses ou uniquement la première. La valeur par défaut est `false`.|  
+|`encryptionPolicy`|Spécifie la stratégie de chiffrement appliquée à une session SSL/ <xref:System.Net.ServicePointManager> TLS sur une instance. Les valeurs possibles sont équivalentes aux valeurs de l' <xref:System.Net.Security.EncryptionPolicy> énumération. L’utilisation de <xref:System.Security.Authentication.CipherAlgorithmType.Null> est requise lorsque la stratégie de chiffrement est `NoEncryption`définie sur. La valeur par défaut est `RequireEncryption`.|  
+|`expect100Continue`|Spécifie si les méthodes de publication doivent s' `100-continue` attendre à recevoir une réponse du serveur. La valeur par défaut est `true`.|  
+|`useNagleAlgorithm`|Spécifie si les connexions contrôlées par le gestionnaire de point de service utilisent l’algorithme Nagle. La valeur par défaut est `true`.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -59,7 +59,7 @@ Configure les connexions aux ressources réseau.
   
 |**Élément**|**Description**|  
 |-----------------|---------------------|  
-|[Réglages](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Configure les options réseau de base pour l’espace de noms <xref:System.Net>.|  
+|[Réglages](settings-element-network-settings.md)|Configure les options réseau de base pour l’espace de noms <xref:System.Net>.|  
   
 ## <a name="remarks"></a>Notes  
   
@@ -70,4 +70,4 @@ Configure les connexions aux ressources réseau.
 
 - <xref:System.Net.ServicePointManager>
 - <xref:System.Net.Security.EncryptionPolicy>
-- [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma des paramètres réseau](index.md)

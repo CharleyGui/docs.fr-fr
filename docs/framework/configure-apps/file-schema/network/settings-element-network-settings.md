@@ -8,12 +8,12 @@ helpviewer_keywords:
 - settings element
 - <settings> element
 ms.assetid: 189ce989-c39b-427d-b004-6b82a668b931
-ms.openlocfilehash: a1733803d1f5a5bf64aeb69d0360cef3de3b3a69
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 12797e2f06d03aacd81700eae57d5776c1a6f354
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674413"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663993"
 ---
 # <a name="settings-element-network-settings"></a>\<Paramètres >, élément (paramètres réseau)
 Configure les options réseau de base pour l’espace de noms <xref:System.Net?displayProperty=nameWithType>.  
@@ -46,19 +46,19 @@ Configure les options réseau de base pour l’espace de noms <xref:System.Net?d
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[httpListener](../../../../../docs/framework/configure-apps/file-schema/network/httplistener-element-network-settings.md)|Personnalise les paramètres utilisés par la <xref:System.Net.HttpListener> classe.|  
-|[httpWebRequest](../../../../../docs/framework/configure-apps/file-schema/network/httpwebrequest-element-network-settings.md)|Personnalise les paramètres de la demande Web.|  
-|[ipv6](../../../../../docs/framework/configure-apps/file-schema/network/ipv6-element-network-settings.md)|Permet d’Internet Protocol version 6 (IPv6) prennent en charge.|  
-|[\<performanceCounter >, élément (paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/performancecounter-element-network-settings.md)|Active les compteurs de performances réseau.|  
-|[servicePointManager](../../../../../docs/framework/configure-apps/file-schema/network/servicepointmanager-element-network-settings.md)|Configure les connexions aux ressources réseau.|  
-|[socket](../../../../../docs/framework/configure-apps/file-schema/network/socket-element-network-settings.md)|Spécifie si les opérations de socket utilisent des ports de terminaison.|  
-|[\<webProxyScript >, élément (paramètres réseau)](../../../../../docs/framework/configure-apps/file-schema/network/webproxyscript-element-network-settings.md)|Configure les caractéristiques du script utilisé pour découvrir les proxys Web.|  
+|[httpListener](httplistener-element-network-settings.md)|Personnalise les paramètres utilisés par <xref:System.Net.HttpListener> la classe.|  
+|[httpWebRequest](httpwebrequest-element-network-settings.md)|Personnalise les paramètres de la demande Web.|  
+|[ipv6](ipv6-element-network-settings.md)|Active la prise en charge du protocole IPv6 (Internet Protocol version 6).|  
+|[\<performanceCounter >, élément (paramètres réseau)](performancecounter-element-network-settings.md)|Active les compteurs de performances réseau.|  
+|[servicePointManager](servicepointmanager-element-network-settings.md)|Configure les connexions aux ressources réseau.|  
+|[socket](socket-element-network-settings.md)|Spécifie si les opérations de socket utilisent des ports de terminaison.|  
+|[\<webProxyScript >, élément (paramètres réseau)](webproxyscript-element-network-settings.md)|Configure les caractéristiques du script utilisé pour découvrir les proxys Web.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[system.net](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
+|[system.net](system-net-element-network-settings.md)|Contient des paramètres qui spécifient la manière dont .NET Framework se connecte au réseau.|  
   
 ## <a name="remarks"></a>Notes  
   
@@ -68,4 +68,4 @@ Configure les options réseau de base pour l’espace de noms <xref:System.Net?d
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Net?displayProperty=nameWithType>
-- [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma des paramètres réseau](index.md)

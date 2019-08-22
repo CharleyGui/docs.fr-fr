@@ -7,18 +7,18 @@ helpviewer_keywords:
 ms.assetid: 29dde982-6d8b-4099-8867-ad0d7733f6dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6ba411114bfb853e06c83adb42713d43f1452d9c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f24e9a06137744dbc97d5f34cda7ad6eab873700
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704802"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69663738"
 ---
-# <a name="etwenable-element"></a>\<etwEnable > élément
+# <a name="etwenable-element"></a>\<etwEnable >, élément
 Indique s’il faut activer le Suivi d’événements pour Windows (ETW) pour les événements du common language runtime.  
   
- \<configuration > élément  
-\<runtime > élément  
+ \<Élément de > de configuration  
+\<Élément > du Runtime  
 \<etwEnabled>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,14 +34,14 @@ Indique s’il faut activer le Suivi d’événements pour Windows (ETW) pour le
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|enabled|Attribut requis.<br /><br /> Spécifie si ETW doit être activée.|  
+|enabled|Attribut requis.<br /><br /> Spécifie si ETW doit être activé.|  
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|true|Activer ETW. Il s’agit de la valeur par défaut pour les versions d’à partir de Windows avec les systèmes d’exploitation Windows Vista et Windows Server 2008.|  
-|False|Désactiver ETW. Il s’agit de la valeur par défaut pour les versions antérieures de Windows.|  
+|true|Activez ETW. Il s’agit de la valeur par défaut pour les versions de Windows qui commencent par les systèmes d’exploitation Windows Vista et Windows Server 2008.|  
+|false|Désactivez ETW. Il s’agit de la valeur par défaut pour les versions antérieures de Windows.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -54,10 +54,10 @@ Indique s’il faut activer le Suivi d’événements pour Windows (ETW) pour le
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="remarks"></a>Notes  
- À compter de Windows Vista, ETW est activée par défaut. Utilisez cet élément pour désactiver ETW pour une application. Dans les versions antérieures de Windows, utilisez cet élément pour activer ETW pour une application.  
+ À partir de Windows Vista, ETW est activé par défaut. Utilisez cet élément pour désactiver ETW pour une application. Dans les versions antérieures de Windows, utilisez cet élément pour activer ETW pour une application.  
   
 > [!NOTE]
->  ETW peut être activé ou désactivé globalement sur un serveur à l’aide d’un paramètre de Registre. Consultez [contrôle de l’enregistrement .NET Framework](../../../../../docs/framework/performance/controlling-logging.md).  
+>  ETW peut être activé ou désactivé globalement sur un serveur à l’aide d’un paramètre de registre. Consultez [contrôle](../../../performance/controlling-logging.md)de la journalisation des .NET Framework.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment activer le suivi ETW pour une application.  
@@ -72,6 +72,6 @@ Indique s’il faut activer le Suivi d’événements pour Windows (ETW) pour le
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des paramètres d’exécution](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../../../docs/framework/configure-apps/file-schema/index.md)
-- [Contrôle de l’enregistrement .NET Framework](../../../../../docs/framework/performance/controlling-logging.md)
+- [Schéma des paramètres d’exécution](index.md)
+- [Schéma des fichiers de configuration](../index.md)
+- [Contrôle de l’enregistrement .NET Framework](../../../performance/controlling-logging.md)

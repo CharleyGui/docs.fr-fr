@@ -8,15 +8,15 @@ helpviewer_keywords:
 - defaultHttpCachePolicy element
 - <defaultHttpCachePolicy> element
 ms.assetid: 2c1247d0-39b0-4c12-919a-a925ce075c79
-ms.openlocfilehash: 20d9b92ca2bbffd6b98b8641e5cef5e567cb84cc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1dd31884a072d16ed004c0b49be61e8cee399787
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705127"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69664151"
 ---
 # <a name="defaulthttpcachepolicy-element-network-settings"></a>\<defaultHttpCachePolicy >, élément (paramètres réseau)
-Décrit si la mise en cache HTTP est active et décrit la valeur par défaut, la mise en cache de stratégie.  
+Indique si la mise en cache HTTP est active et décrit la stratégie de mise en cache par défaut.  
   
  \<configuration>  
 \<system.net>  
@@ -41,30 +41,30 @@ Décrit si la mise en cache HTTP est active et décrit la valeur par défaut, la
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`maximumAge`|Spécifie l’intervalle de temps maximal avant un objet mis en cache est marqué comme ayant expiré.|  
-|`maximumStale`|Spécifie la durée maximale après l’heure d’actualisation calculée avant un objet mis en cache est marqué comme ayant expiré.|  
-|`minimumFresh`|Spécifie la durée minimale pour un objet mis en cache soit considéré comme nouveau.|  
-|`policyLevel`|Spécifie si la stratégie de mise en cache est automatique, ou si le cache est ignoré. La valeur par défaut est `BypassCache`.|  
+|`maximumAge`|Spécifie l’intervalle de temps maximal avant qu’un objet mis en cache soit marqué comme ayant expiré.|  
+|`maximumStale`|Spécifie la durée maximale après le temps d’actualisation calculé avant qu’un objet mis en cache soit marqué comme ayant expiré.|  
+|`minimumFresh`|Spécifie la durée minimale pendant laquelle un objet mis en cache est considéré comme actualisé.|  
+|`policyLevel`|Spécifie si la stratégie de mise en cache est automatique ou si le cache est contourné. La valeur par défaut est `BypassCache`.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[requestCaching](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|Contrôle le mécanisme de mise en cache pour les demandes réseau.|  
+|[requestCaching](requestcaching-element-network-settings.md)|Contrôle le mécanisme de mise en cache pour les demandes réseau.|  
   
 ## <a name="remarks"></a>Notes  
- La valeur de la `policyLevel` attribut est soit `BypassCache` ou `Default`.  
+ La valeur de l' `policyLevel` attribut `BypassCache` est ou `Default`.  
   
- Valeurs pour le `maximumAge`, `maximumStale`, et `minimumFresh` les éléments sont soit un intervalle de temps explicite avec un format de *d*. *hh*:*mm*:*ss* (jours, heures, minutes et secondes), ou l’une des constantes `minValue` ou `maxValue`, le cas échéant.  
+ Les `maximumAge`valeurs des éléments `maximumStale`, et `minimumFresh` sont soit un intervalle de temps explicite avec un format *d*. *HH*:*mm*:*SS* (jours, heures, minutes et secondes), `minValue` ou les constantes ou `maxValue`, selon le cas.  
   
 ## <a name="configuration-files"></a>Fichiers de configuration  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment spécifier une durée minimale de frais de six heures, un temps d’âge maximal de deux jours et la durée maximale obsolète de quatre heures.  
+ L’exemple suivant montre comment spécifier une heure de nouvelle actualisation minimale de six heures, une durée d’ancienneté maximale de deux jours et une durée d’obsolescence maximale de quatre heures.  
   
 ```xml  
 <configuration>  
@@ -85,4 +85,4 @@ Décrit si la mise en cache HTTP est active et décrit la valeur par défaut, la
 - <xref:System.Net.Cache>
 - <xref:System.Net.WebRequest>
 - <xref:System.Net.Cache.RequestCacheLevel>
-- [Schéma des paramètres réseau](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma des paramètres réseau](index.md)
