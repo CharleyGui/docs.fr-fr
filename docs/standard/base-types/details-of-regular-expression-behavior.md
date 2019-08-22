@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bd0611cc8a6d257192b389b023c4dcda8f1b7ec3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bb43554d53051ce02a296f225c68c74352add5ed
+ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634422"
+ms.lasthandoff: 08/17/2019
+ms.locfileid: "69567485"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Comportement détaillé des expressions régulières
 Le moteur d’expression régulière du .NET Framework est un analyseur d’expression régulière rétroactive qui incorpore un moteur NFA (Nondeterministic Finite Automaton) tel que celui utilisé par Perl, Python, Emacs et Tcl. Cette particularité le distingue des moteurs d’expression régulière pure DFA (Deterministic Finite Automaton) plus rapides, mais plus limités, comme ceux d’awk, egrep ou lex. Elle le distingue également des moteurs NFA POSIX standardisés, mais plus lents. La section suivante décrit les trois types de moteurs d’expression régulière et explique pourquoi les expressions régulières dans le .NET Framework sont implémentées à l’aide d’un moteur NFA classique.  
@@ -43,7 +43,7 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
      [!code-csharp[Conceptual.RegularExpressions.Design#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lazy1.cs#1)]
      [!code-vb[Conceptual.RegularExpressions.Design#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lazy1.vb#1)]  
   
-     Les versions gourmande et paresseuse de cette expression régulière sont définies comme indiqué dans le tableau suivant.  
+     Les versions gourmande et paresseuse de cette expression régulière sont définies comme indiqué dans le tableau suivant :
   
     |Motif|Description|  
     |-------------|-----------------|  
@@ -129,13 +129,13 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
      [!code-csharp[Conceptual.RegularExpressions.Design#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lookbehind1.cs#5)]
      [!code-vb[Conceptual.RegularExpressions.Design#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lookbehind1.vb#5)]  
   
-     L’expression régulière `^[A-Z0-9]([-!#$%&'.*+/=?^`{}|~\w])*(?<=[A-Z0-9])$` est définie comme indiqué dans le tableau suivant.  
+     L'expression régulière ``^[A-Z0-9]([-!#$%&'.*+/=?^`{}|~\w])*(?<=[A-Z0-9])$`` est définie comme indiqué dans le tableau suivant.  
   
     |Motif|Description|  
     |-------------|-----------------|  
     |`^`|Commencer la correspondance au début de la chaîne.|  
     |`[A-Z0-9]`|Mettre en correspondance n’importe quel caractère numérique ou alphanumérique. (La comparaison respecte la casse.)|  
-    |<code>([-!#$%&'.*+/=?^\`{}&#124;~\w])*<code>|Match zero or more occurrences of any word character, or any of the following characters:  -, !, #, $, %, &, ', ., *, +, /, =, ?, ^, \`, {, }, &#124;, or ~.|  
+    |<code>([-!#$%&'.*+/=?^\`{}&#124;~\w])\*</code>|Mettre en correspondance zéro, une ou plusieurs occurrences de n’importe quel caractère ou de l’un des caractères suivants :  -, !, #, $, %, &, ’, ., \*, +, /, =, ?, ^, \`, {, }, &#124; ou ~.|  
     |`(?<=[A-Z0-9])`|Postanalyser jusqu’au caractère précédent, qui doit être numérique ou alphanumérique. (La comparaison respecte la casse.)|  
     |`$`|Termine la correspondance à la fin de la chaîne.|  
   
