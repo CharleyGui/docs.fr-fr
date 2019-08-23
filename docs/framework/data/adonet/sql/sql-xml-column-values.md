@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d97ce4da-f09c-4d1e-85b7-a0ccedd7246a
-ms.openlocfilehash: 803357f9ae97eee2cbbf5e777dbc1210ded26ab2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 29e9ac5b95b62ef2a4467bf41484c3740d550abd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670129"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964950"
 ---
 # <a name="sql-xml-column-values"></a>Valeurs des colonnes SQL XML
-SQL Server prend en charge la `xml` type de données, et les développeurs peuvent extraire des ensembles de résultats incluant ce type à l’aide d’un comportement standard de la <xref:System.Data.SqlClient.SqlCommand> classe. Une colonne `xml` peut être extraite comme toute colonne (par exemple, dans un <xref:System.Data.SqlClient.SqlDataReader>) mais si vous souhaitez utiliser le contenu de la colonne comme XML, vous devez utiliser un <xref:System.Xml.XmlReader>.  
+SQL Server prend en `xml` charge le type de données, et les développeurs peuvent récupérer des jeux de résultats incluant ce <xref:System.Data.SqlClient.SqlCommand> type à l’aide du comportement standard de la classe. Une colonne `xml` peut être extraite comme toute colonne (par exemple, dans un <xref:System.Data.SqlClient.SqlDataReader>) mais si vous souhaitez utiliser le contenu de la colonne comme XML, vous devez utiliser un <xref:System.Xml.XmlReader>.  
   
-## <a name="example"></a>Exemple  
- L’application console suivante sélectionne deux lignes, chacune contenant un `xml` colonne, à partir de la **Sales.Store** table dans le **AdventureWorks** de base de données à un <xref:System.Data.SqlClient.SqlDataReader> instance. Pour chaque ligne, la valeur de la colonne `xml` est lue à l'aide de la méthode <xref:System.Data.SqlClient.SqlDataReader.GetSqlXml%2A> de <xref:System.Data.SqlClient.SqlDataReader>. La valeur est stockée dans un <xref:System.Xml.XmlReader>. Notez que vous devez utiliser la méthode <xref:System.Data.SqlClient.SqlDataReader.GetSqlXml%2A> plutôt que la méthode <xref:System.Data.IDataRecord.GetValue%2A> si vous souhaitez définir le contenu comme une variable <xref:System.Data.SqlTypes.SqlXml> ; <xref:System.Data.IDataRecord.GetValue%2A> retourne la valeur de la colonne `xml` comme chaîne.  
+## <a name="example"></a>Exemples  
+ L’application console suivante sélectionne deux lignes, chacune contenant une `xml` colonne, à partir de la table **Sales. Store** de la base de <xref:System.Data.SqlClient.SqlDataReader> données **AdventureWorks** vers une instance. Pour chaque ligne, la valeur de la colonne `xml` est lue à l'aide de la méthode <xref:System.Data.SqlClient.SqlDataReader.GetSqlXml%2A> de <xref:System.Data.SqlClient.SqlDataReader>. La valeur est stockée dans un <xref:System.Xml.XmlReader>. Notez que vous devez utiliser la méthode <xref:System.Data.SqlClient.SqlDataReader.GetSqlXml%2A> plutôt que la méthode <xref:System.Data.IDataRecord.GetValue%2A> si vous souhaitez définir le contenu comme une variable <xref:System.Data.SqlTypes.SqlXml> ; <xref:System.Data.IDataRecord.GetValue%2A> retourne la valeur de la colonne `xml` comme chaîne.  
   
 > [!NOTE]
->  Le **AdventureWorks** base de données exemple n’est pas installé par défaut lorsque vous installez SQL Server. Vous pouvez l'installer en exécutant l'Installation de SQL Server.  
+> L’exemple de base de données **AdventureWorks** n’est pas installé par défaut lorsque vous installez SQL Server. Vous pouvez l'installer en exécutant l'Installation de SQL Server.  
   
  [!code-csharp[DataWorks SqlClient.GetXmlDataReader#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.GetXmlDataReader/CS/source.cs#1)]
  [!code-vb[DataWorks SqlClient.GetXmlDataReader#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.GetXmlDataReader/VB/source.vb#1)]  

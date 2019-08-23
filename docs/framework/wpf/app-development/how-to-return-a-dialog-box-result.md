@@ -7,24 +7,24 @@ dev_langs:
 helpviewer_keywords:
 - dialog boxes [WPF], returning results
 ms.assetid: 4c5cf286-746b-4052-934d-d80cbf8acba3
-ms.openlocfilehash: b574a5bbc08d947371837116915c2fc8c13ec81d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5e3670006762bcd09634b29314ecf2d05b1a44da
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62006706"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968229"
 ---
 # <a name="how-to-return-a-dialog-box-result"></a>Procédure : Retourner un résultat de boîte de dialogue
-Cet exemple montre comment récupérer le résultat de la boîte de dialogue pour une fenêtre est ouverte en appelant <xref:System.Windows.Window.ShowDialog%2A>.  
+Cet exemple montre comment récupérer le résultat de la boîte de dialogue pour une fenêtre ouverte en <xref:System.Windows.Window.ShowDialog%2A>appelant.  
   
 ## <a name="example"></a>Exemple  
- Avant qu’une boîte de dialogue se ferme, son <xref:System.Windows.Window.DialogResult%2A> propriété doit être définie avec un <xref:System.Nullable%601> <xref:System.Boolean> qui indique la façon dont l’utilisateur a fermé la boîte de dialogue. Cette valeur est retournée par <xref:System.Windows.Window.ShowDialog%2A> pour permettre au code client déterminer comment la boîte de dialogue a été fermée et, par conséquent, comment traiter le résultat.  
+ Avant la fermeture d’une boîte de <xref:System.Windows.Window.DialogResult%2A> dialogue, sa propriété doit être <xref:System.Nullable%601> définie avec une valeur qui indique la façon dont l’utilisateur a <xref:System.Boolean> fermé la boîte de dialogue. Cette valeur est retournée <xref:System.Windows.Window.ShowDialog%2A> par pour permettre au code client de déterminer comment la boîte de dialogue a été fermée et, par conséquent, comment traiter le résultat.  
   
 > [!NOTE]
->  <xref:System.Windows.Window.DialogResult%2A> peut être défini uniquement si une fenêtre a été ouverte en appelant <xref:System.Windows.Window.ShowDialog%2A>.  
+> <xref:System.Windows.Window.DialogResult%2A>ne peut être défini que si une fenêtre a été ouverte <xref:System.Windows.Window.ShowDialog%2A>en appelant.  
   
  [!code-csharp[HOWTOWindowManagementSnippets#GetDialogResultCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTOWindowManagementSnippets/CSharp/MainWindow.xaml.cs#getdialogresultcode)]
  [!code-vb[HOWTOWindowManagementSnippets#GetDialogResultCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HOWTOWindowManagementSnippets/visualbasic/mainwindow.xaml.vb#getdialogresultcode)]  
   
 ## <a name="net-framework-security"></a>Sécurité .NET Framework  
- Appel <xref:System.Windows.Window.ShowDialog%2A> nécessite l’autorisation d’utiliser toutes les fenêtres et événements d’entrée d’utilisateur sans restriction.
+ L' <xref:System.Windows.Window.ShowDialog%2A> appel de requiert l’autorisation d’utiliser tous les événements d’entrée de Windows et d’utilisateur sans restriction.

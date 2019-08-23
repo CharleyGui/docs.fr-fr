@@ -2,26 +2,26 @@
 title: WS Transport With Message Credential
 ms.date: 03/30/2017
 ms.assetid: 0d092f3a-b309-439b-920b-66d8f46a0e3c
-ms.openlocfilehash: 54bd025db4da8ed1d1484b11666a37c2c14a6023
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a2eade01ff3397d8f7ea790558909111c43b131d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949628"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959791"
 ---
 # <a name="ws-transport-with-message-credential"></a>WS Transport With Message Credential
 Cet exemple montre l'utilisation de la sécurité de transport SSL en association avec les informations d'identification du client contenues dans le message. Cet exemple utilise la liaison `wsHttpBinding`.  
   
- Par défaut, la liaison `wsHttpBinding` assure la communication HTTP. En cas de configuration pour la sécurité du transport, la liaison prend en charge la communication HTTPS. HTTPS assure la protection de la confidentialité et de l'intégrité des messages transmis sur le réseau. Toutefois l'ensemble des mécanismes d'authentification qui peuvent être utilisés pour authentifier le client auprès du service est limité à ceux pris en charge par le protocole HTTPS. Windows Communication Foundation (WCF) offre un `TransportWithMessageCredential` mode de sécurité qui est conçu pour passer outre cette limitation. Lorsque ce mode de sécurité est configuré, la sécurité du transport est utilisée pour assurer la confidentialité et l'intégrité des messages transmis et procéder à l'authentification du service. Toutefois, l’authentification du client est effectuée en plaçant les informations d’identification du client directement dans le message. Cela vous permet d’utiliser n’importe quel type d’informations d’identification qui est pris en charge par le mode de sécurité de message pour l’authentification du client tout en conservant l’amélioration des performances du mode de sécurité de transport.  
+ Par défaut, la liaison `wsHttpBinding` assure la communication HTTP. En cas de configuration pour la sécurité du transport, la liaison prend en charge la communication HTTPS. HTTPS assure la protection de la confidentialité et de l'intégrité des messages transmis sur le réseau. Toutefois l'ensemble des mécanismes d'authentification qui peuvent être utilisés pour authentifier le client auprès du service est limité à ceux pris en charge par le protocole HTTPS. Windows Communication Foundation (WCF) offre un `TransportWithMessageCredential` mode de sécurité conçu pour surmonter cette limitation. Lorsque ce mode de sécurité est configuré, la sécurité du transport est utilisée pour assurer la confidentialité et l'intégrité des messages transmis et procéder à l'authentification du service. Toutefois, l’authentification du client est effectuée en plaçant les informations d’identification du client directement dans le message. Cela vous permet d’utiliser n’importe quel type d’informations d’identification pris en charge par le mode de sécurité de message pour l’authentification du client tout en conservant les avantages du mode de sécurité du transport en matière de performances.  
   
  Dans cet exemple, un type d'information d'identification `UserName` est utilisé pour authentifier le client auprès du service.  
   
- Cet exemple est basé sur le [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente un service de calculatrice. La liaison `wsHttpBinding` est spécifiée et configurée dans les fichiers de configuration de l'application pour le client et le service.  
+ Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente un service de calculatrice. La liaison `wsHttpBinding` est spécifiée et configurée dans les fichiers de configuration de l'application pour le client et le service.  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
+> La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
- Le code de programme dans l’exemple est presque identique à celle de la [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md) service. Il y a une opération supplémentaire fournie par le contrat de service : `GetCallerIdentity`. Cette opération retourne le nom de l'identité de l'appelant à l'appelant.  
+ Le code du programme dans l’exemple est presque identique à celui du service [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) . Il y a une opération supplémentaire fournie par le contrat de service : `GetCallerIdentity`. Cette opération retourne le nom de l'identité de l'appelant à l'appelant.  
 
 ```csharp
 public string GetCallerIdentity()  
@@ -61,7 +61,7 @@ public string GetCallerIdentity()
   
  L'adresse spécifiée utilise le modèle https://. La configuration de la liaison définit le mode de sécurité au mode `TransportWithMessageCredential`. Le même mode de sécurité doit être spécifié dans le fichier Web.config du service.  
   
- Étant donné que le certificat utilisé dans cet exemple est un certificat de test créé avec Makecert.exe, une alerte de sécurité apparaît lorsque vous essayez d’accéder à une adresse https : adresse, par exemple `https://localhost/servicemodelsamples/service.svc`, à partir de votre navigateur. Pour autoriser le client WCF travailler avec un certificat de test en place, du code supplémentaire a été ajouté au client pour supprimer l’alerte de sécurité. Ce code, et la classe qui l'accompagne, n'est pas requis lors de l'utilisation de certificats de production.  
+ Étant donné que le certificat utilisé dans cet exemple est un certificat de test créé avec Makecert. exe, une alerte de sécurité s’affiche lorsque vous essayez d’accéder à une adresse `https://localhost/servicemodelsamples/service.svc`https: par exemple, à partir de votre navigateur. Pour permettre au client WCF de fonctionner avec un certificat de test sur place, du code supplémentaire a été ajouté au client pour supprimer l’alerte de sécurité. Ce code, et la classe qui l'accompagne, n'est pas requis lors de l'utilisation de certificats de production.  
 
 ```csharp
 // WARNING: This code is only needed for test certificates such as those created by makecert. It is   
@@ -89,10 +89,10 @@ Press <ENTER> to terminate client.
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Vérifiez que vous avez effectué la [Instructions d’Installation du certificat serveur Internet Information Services (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).  
+2. Vérifiez que vous avez effectué les [instructions d’installation du certificat de serveur Internet Information Services (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).  
   
 3. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4. Pour exécuter l’exemple dans une configuration unique ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  

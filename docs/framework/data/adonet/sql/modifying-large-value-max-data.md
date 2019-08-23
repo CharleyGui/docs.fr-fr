@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8aca5f00-d80e-4320-81b3-016d0466f7ee
-ms.openlocfilehash: 134759d729d6f291db61e6f64ebd51dfe5a4443b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 19d0c78221f35bd36edce85a60a4a7a2f985bc38
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648721"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947010"
 ---
 # <a name="modifying-large-value-max-data-in-adonet"></a>Modification de données de valeurs élevées (max) dans ADO.NET
 Les types de données LOB sont ceux dont la taille maximale de ligne dépasse 8 kilo-octets (Ko). SQL Server fournit un spécificateur `max` pour les types de données `varchar`, `nvarchar` et `varbinary` pour permettre le stockage de valeurs pouvant atteindre 2^32 octets. Les colonnes de table et les variables Transact-SQL peuvent spécifier des types de données `varchar(max)`, `nvarchar(max)` ou `varbinary(max)`. Dans ADO.NET, les types de données `max` peuvent être extraits par un `DataReader` et spécifiés comme valeurs de paramètre d'entrée ou de sortie sans que cela nécessite une manipulation particulière. Pour les types de données `varchar` volumineux, il est possible d'extraire et de mettre à jour les données de façon incrémentielle.  
@@ -21,7 +21,7 @@ Les types de données LOB sont ceux dont la taille maximale de ligne dépasse 8�
   
  **Documentation en ligne de SQL Server**  
   
-1. [À l’aide des Types de données de valeur élevée](https://go.microsoft.com/fwlink/?LinkId=120498)  
+1. [Utilisation des types de données de valeur élevée](https://go.microsoft.com/fwlink/?LinkId=120498)  
   
 ## <a name="large-value-type-restrictions"></a>Restrictions relatives aux types de valeur élevée  
  Les restrictions suivantes s'appliquent aux types de données `max`, qui n'existent pas pour les types de données moins volumineux :  
@@ -37,9 +37,9 @@ Les types de données LOB sont ceux dont la taille maximale de ligne dépasse 8�
   
  La fonction `OPENROWSET` inclut le fournisseur de jeu de lignes `BULK`, qui permet de lire directement les données d'un fichier sans devoir les charger dans une table cible. Cela vous permet d'utiliser `OPENROWSET` dans une simple instruction INSERT SELECT.  
   
- Le `OPENROWSET BULK` arguments de l’option fournissent un contrôle important sur l’emplacement où commence et se termine la lecture des données, comment gérer les erreurs et l’interprétation des données. Par exemple, vous pouvez spécifier que le fichier de données doit être lu comme une seule ligne, un jeu de lignes en une seule colonne de type `varbinary`, `varchar` ou `nvarchar`. Pour découvrir la syntaxe complète et les options, voir la documentation en ligne de SQL Server.  
+ Les `OPENROWSET BULK` arguments de l’option permettent de contrôler de façon significative l’emplacement et la fin de la lecture des données, la gestion des erreurs et la façon dont les données sont interprétées. Par exemple, vous pouvez spécifier que le fichier de données doit être lu comme une seule ligne, un jeu de lignes en une seule colonne de type `varbinary`, `varchar` ou `nvarchar`. Pour découvrir la syntaxe complète et les options, voir la documentation en ligne de SQL Server.  
   
- L'exemple suivant insère une photo dans la table ProductPhoto de l'exemple de base de données AdventureWorks. Lorsque vous utilisez le `BULK OPENROWSET` fournisseur, vous devez fournir la liste nommée des colonnes même si vous n’insérez pas de valeurs dans chaque colonne. Dans ce cas, la clé primaire est définie comme une colonne identité et peut être omise de la liste des colonnes. Notez que vous devez également fournir un nom de corrélation à la fin de l'instruction `OPENROWSET` ; en l'occurrence, il s'agit de ThumbnailPhoto. Cela établit une corrélation avec la colonne de la table `ProductPhoto` dans laquelle le fichier est chargé.  
+ L'exemple suivant insère une photo dans la table ProductPhoto de l'exemple de base de données AdventureWorks. Lorsque vous utilisez `BULK OPENROWSET` le fournisseur, vous devez fournir la liste nommée des colonnes même si vous n’insérez pas de valeurs dans chaque colonne. Dans ce cas, la clé primaire est définie comme une colonne identité et peut être omise de la liste des colonnes. Notez que vous devez également fournir un nom de corrélation à la fin de l'instruction `OPENROWSET` ; en l'occurrence, il s'agit de ThumbnailPhoto. Cela établit une corrélation avec la colonne de la table `ProductPhoto` dans laquelle le fichier est chargé.  
   
 ```  
 INSERT Production.ProductPhoto (  
@@ -61,19 +61,19 @@ FROM OPENROWSET
   
  SET  
   
- { *column_name* = { .WRITE ( *expression* , @Offset , @Length ) }  
+ { *column_name* = {. WRITE ( *expression* , @Offset , @Length )}  
   
- La méthode WRITE Spécifie qu’une section de la valeur de la *column_name* sera modifiée. L’expression est la valeur qui sera copiée dans le *column_name*, le `@Offset` est le point à partir duquel l’expression sera écrite et le `@Length` argument est la longueur de la section dans la colonne.  
+ La méthode WRITE spécifie qu’une section de la valeur de *column_name* sera modifiée. L’expression est la valeur qui sera copiée dans *column_name*, `@Offset` est le point de départ à partir duquel l’expression sera écrite et l' `@Length` argument est la longueur de la section dans la colonne.  
   
 |If|Then|  
 |--------|----------|  
-|La valeur de l'expression est NULL.|`@Length` est ignoré et la valeur dans *column_name* est tronquée à l’emplacement spécifié `@Offset`.|  
-|`@Offset` a la valeur NULL|L’opération de mise à jour ajoute l’expression à la fin de l’existante *column_name* valeur et `@Length` est ignoré.|  
+|La valeur de l'expression est NULL.|`@Length`est ignoré et la valeur de *column_name* est tronquée au spécifié `@Offset`.|  
+|`@Offset`est NULL|L’opération de mise à jour ajoute l’expression à la fin de la valeur column_name `@Length` existante et est ignorée.|  
 |`@Offset` est supérieur à la longueur de la valeur column_name.|SQL Server retourne une erreur.|  
-|`@Length` a la valeur NULL|L'opération de mise à jour supprime toutes les données à partir de `@Offset` jusqu'à la fin de la valeur `column_name`.|  
+|`@Length`est NULL|L'opération de mise à jour supprime toutes les données à partir de `@Offset` jusqu'à la fin de la valeur `column_name`.|  
   
 > [!NOTE]
->  Ni `@Offset` ni `@Length` ne peuvent avoir pour valeur un nombre négatif.  
+> Ni `@Offset` ni `@Length` ne peuvent avoir pour valeur un nombre négatif.  
   
 ## <a name="example"></a>Exemple  
  Cet exemple Transact-SQL met à jour une valeur partielle dans DocumentSummary, colonne `nvarchar(max)` dans la table Document de la base de données AdventureWorks. Le mot « components » est remplacé par le mot « features » en spécifiant le mot de remplacement, l’emplacement où commence (offset) le mot à remplacer dans les données existantes et le nombre de caractères à remplacer (length). L'exemple inclut des instructions SELECT devant et derrière l'instruction UPDATE afin de comparer les résultats.  
@@ -104,7 +104,7 @@ GO
 ```  
   
 ## <a name="working-with-large-value-types-in-adonet"></a>Utilisation de types de valeur élevée dans ADO.NET  
- Vous pouvez travailler avec les types de valeur volumineux dans ADO.NET en spécifiant les types de valeur volumineux comme <xref:System.Data.SqlClient.SqlParameter> des objets dans un <xref:System.Data.SqlClient.SqlDataReader> pour retourner un résultat défini, ou en utilisant un <xref:System.Data.SqlClient.SqlDataAdapter> pour remplir un `DataSet` / `DataTable`. Il n'y a pas de différence d'utilisation entre un type de valeur élevée et le type de données de valeur moins élevée apparenté.  
+ Vous pouvez utiliser des types de valeur élevée dans ADO.net en spécifiant des types <xref:System.Data.SqlClient.SqlParameter> de valeur élevée <xref:System.Data.SqlClient.SqlDataReader> en tant qu’objets dans une pour retourner un jeu <xref:System.Data.SqlClient.SqlDataAdapter> de résultats, `DataSet`ou en utilisant un pour remplir un / `DataTable`. Il n'y a pas de différence d'utilisation entre un type de valeur élevée et le type de données de valeur moins élevée apparenté.  
   
 ### <a name="using-getsqlbytes-to-retrieve-data"></a>Utilisation de GetSqlBytes pour extraire des données  
  La méthode `GetSqlBytes` du <xref:System.Data.SqlClient.SqlDataReader> permet d'extraire le contenu d'une colonne `varbinary(max)`. Le fragment de code suivant est basé sur l'hypothèse de l'existence d'un objet <xref:System.Data.SqlClient.SqlCommand> nommé `cmd` qui sélectionne des données `varbinary(max)` dans une table et d'un objet <xref:System.Data.SqlClient.SqlDataReader> nommé `reader` qui extrait les données comme <xref:System.Data.SqlTypes.SqlBytes>.  
@@ -222,13 +222,13 @@ while (reader.Read())
 ```  
   
 ### <a name="example"></a>Exemple  
- Le code suivant extrait le nom et l'objet `LargePhoto` de la table `ProductPhoto` dans la base de données `AdventureWorks` et les enregistre dans un fichier. L'assembly doit être compilé avec une référence à l'espace de noms <xref:System.Drawing>.  La méthode <xref:System.Data.SqlClient.SqlDataReader.GetSqlBytes%2A> de l'objet <xref:System.Data.SqlClient.SqlDataReader> retourne un objet <xref:System.Data.SqlTypes.SqlBytes> qui expose une propriété `Stream`. Le code utilise celle-ci pour créer un nouveau `Bitmap` de l’objet, puis l’enregistre dans le fichier Gif `ImageFormat`.  
+ Le code suivant extrait le nom et l'objet `LargePhoto` de la table `ProductPhoto` dans la base de données `AdventureWorks` et les enregistre dans un fichier. L'assembly doit être compilé avec une référence à l'espace de noms <xref:System.Drawing>.  La méthode <xref:System.Data.SqlClient.SqlDataReader.GetSqlBytes%2A> de l'objet <xref:System.Data.SqlClient.SqlDataReader> retourne un objet <xref:System.Data.SqlTypes.SqlBytes> qui expose une propriété `Stream`. Le code l’utilise pour créer un nouvel `Bitmap` objet, puis l’enregistre dans le GIF. `ImageFormat`  
   
  [!code-csharp[DataWorks LargeValueType.Photo#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks LargeValueType.Photo/CS/source.cs#1)]
  [!code-vb[DataWorks LargeValueType.Photo#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks LargeValueType.Photo/VB/source.vb#1)]  
   
 ## <a name="using-large-value-type-parameters"></a>Utilisation de paramètres de types de valeur élevée  
- Vous pouvez utiliser des types de valeur élevée dans des objets <xref:System.Data.SqlClient.SqlParameter> de la même manière que des types de valeur moins élevée dans des objets <xref:System.Data.SqlClient.SqlParameter>. Vous pouvez récupérer des types de valeur volumineux comme <xref:System.Data.SqlClient.SqlParameter> des valeurs, comme indiqué dans l’exemple suivant. Le code est basé sur l'hypothèse que la procédure stockée GetDocumentSummary suivante existe dans l'exemple de base de données AdventureWorks. La procédure stockée accepte un paramètre d’entrée nommé @DocumentID et retourne le contenu de la colonne DocumentSummary dans le @DocumentSummary paramètre de sortie.  
+ Vous pouvez utiliser des types de valeur élevée dans des objets <xref:System.Data.SqlClient.SqlParameter> de la même manière que des types de valeur moins élevée dans des objets <xref:System.Data.SqlClient.SqlParameter>. Vous pouvez récupérer des types de valeur <xref:System.Data.SqlClient.SqlParameter> élevée en tant que valeurs, comme indiqué dans l’exemple suivant. Le code est basé sur l'hypothèse que la procédure stockée GetDocumentSummary suivante existe dans l'exemple de base de données AdventureWorks. La procédure stockée prend un paramètre d' @DocumentID entrée nommé et retourne le contenu de la colonne DocumentSummary @DocumentSummary dans le paramètre de sortie.  
   
 ```  
 CREATE PROCEDURE GetDocumentSummary   
@@ -244,7 +244,7 @@ WHERE   DocumentID=@DocumentID
 ```  
   
 ### <a name="example"></a>Exemple  
- Le code ADO.NET crée les objets <xref:System.Data.SqlClient.SqlConnection> et <xref:System.Data.SqlClient.SqlCommand> pour exécuter la procédure stockée GetDocumentSummary et extraire le résumé du document qui est stocké comme type de valeur élevée. Le code transmet une valeur le @DocumentID paramètre d’entrée et affiche les résultats sont transmis dans le @DocumentSummary paramètre dans la fenêtre de Console de sortie.  
+ Le code ADO.NET crée les objets <xref:System.Data.SqlClient.SqlConnection> et <xref:System.Data.SqlClient.SqlCommand> pour exécuter la procédure stockée GetDocumentSummary et extraire le résumé du document qui est stocké comme type de valeur élevée. Le code passe une valeur pour le @DocumentID paramètre d’entrée et affiche les résultats renvoyés dans le @DocumentSummary paramètre de sortie dans la fenêtre de console.  
   
  [!code-csharp[DataWorks LargeValueType.Param#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks LargeValueType.Param/CS/source.cs#1)]
  [!code-vb[DataWorks LargeValueType.Param#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks LargeValueType.Param/VB/source.vb#1)]  

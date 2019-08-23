@@ -1,5 +1,5 @@
 ---
-title: <remove> Élément pour <listeners> pour <trace>
+title: <remove>, Élément <listeners> de pour<trace>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/trace/listeners/remove
@@ -7,19 +7,19 @@ helpviewer_keywords:
 - remove element
 - <remove> element
 ms.assetid: 9a5cd1b5-be1a-485f-8f0c-2890ad3ef3e0
-ms.openlocfilehash: adf00394bc0bfe808836e74214003cd2078204e4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0c5c9efb8a22d26ea5d4467f9628af5935d6dbad
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673678"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920476"
 ---
-# <a name="remove-element-for-listeners-for-trace"></a>\<Supprimer >, élément pour \<écouteurs > pour \<trace >
-Supprime un écouteur de la **écouteurs** collection.  
+# <a name="remove-element-for-listeners-for-trace"></a>\<supprimer > élément pour \<les écouteurs > pour \<la trace >
+Supprime un écouteur de la collection d' **écouteurs** .  
   
  \<configuration>  
 \<system.diagnostics>  
-\<trace>  
+\<> de trace  
 \<listeners>  
 \<remove>  
   
@@ -36,7 +36,7 @@ Supprime un écouteur de la **écouteurs** collection.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|**name**|Attribut requis.<br /><br /> Le nom de l’écouteur à supprimer de la **écouteurs** collection.|  
+|**name**|Attribut requis.<br /><br /> Nom de l’écouteur à supprimer de la collection d' **écouteurs** .|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -46,17 +46,17 @@ Supprime un écouteur de la **écouteurs** collection.
 |Élément|Description|  
 |-------------|-----------------|  
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
-|`listeners`|Spécifie un écouteur qui collecte, stocke et achemine les messages. Les écouteurs dirigent la sortie de traçage vers une cible appropriée.|  
+|`listeners`|Spécifie un écouteur qui collecte, stocke et achemine des messages. Les écouteurs dirigent la sortie de suivi vers une cible appropriée.|  
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
 |`trace`|Configure le service de trace ASP.NET.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
->  Suppression de la <xref:System.Diagnostics.DefaultTraceListener> à partir de la `Listeners` collection modifie le comportement de la <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType>, et <xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType> méthodes. Appeler un `Assert` ou `Fail` méthode aboutit généralement à l’affichage d’une boîte de message, mais la boîte de message s’affiche pas si le <xref:System.Diagnostics.DefaultTraceListener> n’est pas dans le `Listeners` collection.  
+> La suppression <xref:System.Diagnostics.DefaultTraceListener> du de `Listeners` la <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType>collection altère <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>le <xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType> comportement des méthodes, ,et.<xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType> L’appel `Assert` d' `Fail` une méthode ou entraîne normalement l’affichage d’une boîte de message, mais la boîte de message ne s' <xref:System.Diagnostics.DefaultTraceListener> affiche pas si le `Listeners` n’est pas dans la collection.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment supprimer l’écouteur de trace par défaut de la trace **écouteurs** collection.  
+ L’exemple suivant montre comment supprimer l’écouteur de suivi par défaut de la collection d' **écouteurs** de trace.  
   
 ```xml  
 <configuration>  
@@ -76,4 +76,4 @@ Supprime un écouteur de la **écouteurs** collection.
 - <xref:System.Diagnostics.DefaultTraceListener>
 - <xref:System.Diagnostics.TextWriterTraceListener>
 - <xref:System.Diagnostics.EventLogTraceListener>
-- [Schéma des paramètres de trace et de débogage](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [Schéma des paramètres de trace et de débogage](index.md)

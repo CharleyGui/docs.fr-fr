@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4d5149c7e3430c5e7c59a47c4ab5dc98d878de39
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 10245541718fd5e5f30ef6bba4ab289bcef767fc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766666"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950212"
 ---
 # <a name="iclrappdomainresourcemonitorgetcurrentcputime-method"></a>ICLRAppDomainResourceMonitor::GetCurrentCpuTime, méthode
-Obtient le temps processeur total utilisé par tous les threads lors de l’exécution dans le domaine d’application actuel, dans la mesure où le domaine d’application a été créé.  
+Obtient le temps processeur total utilisé par tous les threads lors de l’exécution dans le domaine d’application actuel, depuis la création du domaine d’application.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,10 +36,10 @@ HRESULT GetCurrentCpuTime([in]  DWORD dwAppDomainId,
   
 ## <a name="parameters"></a>Paramètres  
  `dwAppDomainId`  
- [in] L’ID du domaine d’application demandée.  
+ dans ID du domaine d’application demandé.  
   
  `pMilliseconds`  
- [out] Pointeur vers le temps processeur total utilisé par tous les threads lors de l’exécution dans le domaine d’application actuel dans la mesure où le domaine d’application a été créé. Ce paramètre peut être `null`.  
+ à Pointeur vers le temps processeur total qui a été utilisé par tous les threads lors de l’exécution dans le domaine d’application actuel depuis la création du domaine d’application. Ce paramètre peut être `null`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
@@ -47,17 +47,17 @@ HRESULT GetCurrentCpuTime([in]  DWORD dwAppDomainId,
 |-------------|-----------------|  
 |S_OK|La commande s'est correctement terminée.|  
 |COR_E_APPDOMAINUNLOADED|Le domaine d’application a été déchargé ou n’existe pas.|  
-|E_FAIL|L’analyse de ressource de domaine d’application n’est pas activée.<br /><br /> ou<br /><br /> Tous les autres défaillances.|  
+|E_FAIL|L’analyse des ressources du domaine d’application n’est pas activée.<br /><br /> ou<br /><br /> Tous les autres échecs.|  
   
 ## <a name="remarks"></a>Notes  
- Cette méthode est l’équivalent non managé de managé <xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=nameWithType> propriété.  
+ Cette méthode est l’équivalent non managé de la propriété managée <xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=nameWithType> .  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MetaHost.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
@@ -65,5 +65,5 @@ HRESULT GetCurrentCpuTime([in]  DWORD dwAppDomainId,
 
 - [ICLRAppDomainResourceMonitor, interface](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)
 - [Interfaces d’hébergement](../../../../docs/framework/unmanaged-api/hosting/hosting-interfaces.md)
-- [Analyse de ressource de domaine d'application](../../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md)
+- [Analyse de ressource de domaine d'application](../../../standard/garbage-collection/app-domain-resource-monitoring.md)
 - [Hébergement](../../../../docs/framework/unmanaged-api/hosting/index.md)

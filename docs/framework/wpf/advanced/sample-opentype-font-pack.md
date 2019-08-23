@@ -6,12 +6,12 @@ helpviewer_keywords:
 - fonts [WPF], OpenType font pack
 - typography [WPF], OpenType font pack
 ms.assetid: 56b46fa1-a44e-419b-8f14-25ad51c715c3
-ms.openlocfilehash: e2b3dc3b95cf81a60494f7a02488067717938e97
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: 76438b85a12d75efa0fc106a645fb592b3205fad
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545226"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960969"
 ---
 # <a name="sample-opentype-font-pack"></a>Exemple de pack de polices OpenType
 Cette rubrique fournit une vue d’ensemble des exemples de polices OpenType distribuées avec [!INCLUDE[TLA2#tla_wcsdk](../../../../includes/tla2sharptla-wcsdk-md.md)]. Les exemples de polices prennent en charge les fonctionnalités OpenType étendues [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] qui peuvent être utilisées par les applications.  
@@ -38,11 +38,11 @@ Cette rubrique fournit une vue d’ensemble des exemples de polices OpenType dis
  Les exemples de polices sont fournis sous licence Ascender Corporation. Ascender est un fournisseur de polices avancées. Pour obtenir une licence des versions étendues ou personnalisées des exemples de polices, consultez le [site web d’Ascender Corporation](https://go.microsoft.com/fwlink/?LinkId=182627).  
   
 > [!NOTE]
->  En tant que développeur, vous devez vérifier que vous disposez des droits de licence nécessaires pour toute police incorporée dans une application ou redistribuée.  
+> En tant que développeur, vous devez vérifier que vous disposez des droits de licence nécessaires pour toute police incorporée dans une application ou redistribuée.  
   
 <a name="installing_the_fonts"></a>   
 ## <a name="installing-the-fonts"></a>Installation des polices  
- Vous avez la possibilité d’installer les exemples de polices OpenType dans le [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] répertoire des polices par défaut, **\Windows\Fonts**. Utilisez le panneau de configuration des polices pour installer les polices. Une fois que les polices sont installées sur votre ordinateur, elles sont accessibles à toutes les applications qui référencent les polices [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] par défaut. Pour afficher un jeu de caractères représentatif dans plusieurs tailles de police, double-cliquez sur le fichier de police. La capture d’écran suivante montre le fichier de police Lindsey, Linds.ttf.  
+ Vous avez la possibilité d’installer les exemples de polices OpenType dans le répertoire des polices Windows par défaut, **\Windows\Fonts**. Utilisez le panneau de configuration des polices pour installer les polices. Une fois ces polices sur votre ordinateur, elles sont accessibles à toutes les applications qui référencent les polices Windows par défaut. Pour afficher un jeu de caractères représentatif dans plusieurs tailles de police, double-cliquez sur le fichier de police. La capture d’écran suivante montre le fichier de police Lindsey, Linds.ttf.  
   
  ![Lindsey police &#40;OpenType&#41; ](./media/typographyinwpf-04.png "TypographyInWPF_04")  
 Affichage de la police Lindsey  

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - text [WPF], performance
 - glyphs [WPF]
 ms.assetid: 66b1b9a7-8618-48db-b616-c57ea4327b98
-ms.openlocfilehash: 4835fb42a8976d94be223d8306d1eb16e330f8f5
-ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
+ms.openlocfilehash: 318972c20f6461489226e19b3e517ba0ac069b28
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68434008"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933364"
 ---
 # <a name="optimizing-performance-text"></a>Optimisation des performances: Text
 
@@ -42,13 +42,13 @@ Cette rubrique fournit des recommandations relatives aux performances de rendu d
 
   - [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] comme langage d’imprimante.
 
-  - [!INCLUDE[TLA#tla_mxdw](../../../../includes/tlasharptla-mxdw-md.md)].
+  - Microsoft XPS document Writer.
 
   - Pilotes d’imprimante précédents, sortie d’applications [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] au format fixe.
 
   - Format de spouleur d’impression.
 
-- Représentation sous forme de document de format fixe, notamment des clients pour des versions précédentes de [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] et autres appareils informatiques.
+- Représentation de document de format fixe, y compris les clients des versions antérieures de Windows et d’autres appareils informatiques.
 
 > [!NOTE]
 > <xref:System.Windows.Documents.Glyphs>et <xref:System.Windows.Media.GlyphRun> sont conçus pour des scénarios de présentation et d’impression de documents de format fixe. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]fournit plusieurs éléments pour la mise en [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] page générale et <xref:System.Windows.Controls.Label> les <xref:System.Windows.Controls.TextBlock>scénarios tels que et. Pour plus d’informations sur les scénarios de disposition et d’[!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], consultez [Typographie dans WPF](typography-in-wpf.md).

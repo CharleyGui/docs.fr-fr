@@ -6,21 +6,21 @@ helpviewer_keywords:
 - Custom Places [Windows Forms], Known Folder GUIDs
 - Windows Vista Known Folder GUIDs [Windows Forms], Custom Places
 ms.assetid: d8d8b544-8b4d-4da5-ba3a-b05e93244778
-ms.openlocfilehash: 09c51341a2b81c21804bcca3b244bbebdb7342b6
-ms.sourcegitcommit: 904b98d8d706f0e2d5ceaa00ce17ffbd92adfb88
+ms.openlocfilehash: ae4b89eb45a82299b6f35827eb576968f6cc5bae
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66758778"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962586"
 ---
 # <a name="known-folder-guids-for-file-dialog-custom-places"></a>GUID de dossier connus pour des emplacements personnalisés de boîtes de dialogue Fichier
-Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] dossier connu lorsque vous ajoutez des dossiers à un <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> collection. GUID de dossier connus ne sont pas sensible à la casse et sont définis dans le fichier KnownFolders.h dans le SDK Windows.  
+Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] dossier connu lorsque vous ajoutez des dossiers à <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> un regroupement. Les GUID de dossier connus ne respectent pas la casse et sont définis dans le fichier fichier KnownFolders. h dans le SDK Windows.  
   
 > [!NOTE]
->  Dans certains cas, un dossier connu ajouté à la <xref:System.Windows.Forms.FileDialogCustomPlacesCollection> s’affichera pas dans le **liens favoris** zone. Par exemple, si le dossier connu spécifié n’est pas présent sur l’ordinateur qui exécute l’application, le dossier connu n’est pas affiché.  
+> Dans certains cas, un dossier connu ajouté à l <xref:System.Windows.Forms.FileDialogCustomPlacesCollection> 'n’est pas affiché dans la zone **liens favoris** . Par exemple, si le dossier connu spécifié n’est pas présent sur l’ordinateur qui exécute l’application, le dossier connu n’est pas affiché.  
   
-## <a name="list-of-guids"></a>Liste de GUID  
- Le tableau suivant répertorie [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] dossiers connus et leur sont associées <xref:System.Guid>.  
+## <a name="list-of-guids"></a>Liste des GUID  
+ Le tableau suivant répertorie [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] les dossiers connus et leurs associés. <xref:System.Guid>  
   
  AddNewPrograms  
  DE61D971-5EBC-4F02-A3A9-6C82895E5C04  
@@ -58,13 +58,13 @@ Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../.
  CommonTemplates  
  B94237E7-57AC-4347-9151-B08C6C32D1F7  
   
- Ordinateur  
+ Computer  
  0AC0837C-BBF8-452A-850D-79D08E667CA7  
   
  Conflit  
  4BFEFB45-347D-4006-A5BE-AC0CB0567192  
   
- Connexions  
+ connexions  
  6F0CD92B-2E97-45D1-88FF-B0D186B8DEDD  
   
  Contacts  
@@ -118,7 +118,7 @@ Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../.
  Musique  
  4BD8D571-6D19-48D3-BE97-422220080E43  
   
- NetHood  
+ Nethotte  
  C5ABBF53-E17F-4121-8900-86626FC2C973  
   
  Réseau  
@@ -130,13 +130,13 @@ Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../.
  PhotoAlbums  
  69D2CF90-FC33-4FB7-9A0C-EBB0F0FCB43C  
   
- Images  
+ Elles  
  33E28130-4E1E-4676-835A-98395C3BC3BB  
   
  Sélections  
  DE92C1C7-837F-4F69-A3BB-86E631204A23  
   
- Imprimantes  
+ Imprimante  
  76FC4E2D-D6AD-4519-A663-37BD56068185  
   
  PrintHood  
@@ -247,7 +247,7 @@ Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../.
  SidebarParts  
  A75D362E-50FC-4FB7-AC2C-A8BEAA314493  
   
- StartMenu  
+ Restauré  
  625B53C3-AB48-4EC1-BA1F-A1EF4146FC19  
   
  Démarrage  
@@ -262,7 +262,7 @@ Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../.
  SyncSetup  
  0F214138-B1D3-4A90-BBA9-27CBC0C5389A  
   
- Système  
+ System  
  1AC14E77-02E7-4E5D-B744-2EB1AE5198B7  
   
  SystemX86  
@@ -289,4 +289,4 @@ Vous utilisez un <xref:System.Guid> pour spécifier un [!INCLUDE[wiprlhext](../.
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.FileDialogCustomPlace>
-- [Guide pratique pour Ajouter un emplacement personnalisé à une boîte de dialogue fichier](how-to-add-a-custom-place-to-a-file-dialog-box.md)
+- [Guide pratique pour Ajouter un emplacement personnalisé à une boîte de dialogue de fichier](how-to-add-a-custom-place-to-a-file-dialog-box.md)

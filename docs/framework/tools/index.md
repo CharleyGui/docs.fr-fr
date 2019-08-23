@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: a2ca532d-91f7-426a-9303-417c2ee1247c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 995aeca60d462c96f951411aff9fcb2c772169d1
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 47d6fe1d4c99adaf3313c87e0b3411049e3b2452
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489655"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933637"
 ---
 # <a name="net-framework-tools"></a>Outils du .NET Framework
 Les outils du .NET Framework facilitent la création, le déploiement et la gestion d'applications et de composants qui ciblent le .NET Framework.  
@@ -26,7 +26,7 @@ La plupart des outils .NET Framework décrits dans cette section sont installés
  Le meilleur moyen d'exécuter l'outil en ligne de commande consiste à utiliser l'invite de commandes développeur Visual Studio. Ces utilitaires vous permettent d’exécuter facilement les outils, sans naviguer jusqu’au dossier d’installation. Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
 > [!NOTE]
->  Certains outils sont spécifiques aux ordinateurs 32 bits ou aux ordinateurs 64 bits. Veillez à exécuter la version appropriée de l'outil pour votre ordinateur.  
+> Certains outils sont spécifiques aux ordinateurs 32 bits ou aux ordinateurs 64 bits. Veillez à exécuter la version appropriée de l'outil pour votre ordinateur.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Al.exe (Assembly Linker)](../../../docs/framework/tools/al-exe-assembly-linker.md)  

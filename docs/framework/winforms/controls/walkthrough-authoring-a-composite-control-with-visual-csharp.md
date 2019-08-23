@@ -8,12 +8,12 @@ helpviewer_keywords:
 - user controls [C#]
 - custom controls [Windows Forms], creating
 ms.assetid: f88481a8-c746-4a36-9479-374ce5f2e91f
-ms.openlocfilehash: 12b506e859579a0755c2e9842e792c59968c94a8
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 1de1ff4147ddb8cb3316795aefd38622de205a73
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666752"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950051"
 ---
 # <a name="walkthrough-authoring-a-composite-control-with-visual-c"></a>Procédure pas à pas : Création d’un contrôle composite à l’aide de Visual C\#
 
@@ -187,7 +187,7 @@ La première étape de la création d’un contrôle hérité consiste à le dé
 5. Dans l’Explorateur de solutions, parcourez les projets en cours.
 
     > [!NOTE]
-    >  Un fichier appelé **ctlAlarmClock.cs** a été ajouté au projet actuel.
+    > Un fichier appelé **ctlAlarmClock.cs** a été ajouté au projet actuel.
 
 ### <a name="adding-the-alarm-properties"></a>Ajout de propriétés d’alarme
 

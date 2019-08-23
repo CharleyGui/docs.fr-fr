@@ -2,12 +2,12 @@
 title: Sécuriser l'accès aux données
 ms.date: 03/30/2017
 ms.assetid: 473ebd69-21a3-4627-b95e-4e04d035c56f
-ms.openlocfilehash: 32106f83785759f4e9aaadcf2198afdcdb24363d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7aa68842ab3733943f84e9d6d9157f7a3d65cac7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664218"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963144"
 ---
 # <a name="secure-data-access"></a>Sécuriser l'accès aux données
 Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes de sécurité disponibles dans la base de données ou le magasin de données sous-jacent. Vous devez également prendre en compte les implications relatives à la sécurité des autres fonctionnalités ou composants que votre application peut contenir.  
@@ -55,8 +55,8 @@ Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes d
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[Notions de base de la gestion des exceptions](../../../../docs/standard/exceptions/exception-handling-fundamentals.md)|Décrit les formes de base de la gestion des exceptions structurée autour du bloc try/catch/finally.|  
-|[Meilleures pratiques pour les exceptions](../../../../docs/standard/exceptions/best-practices-for-exceptions.md)|Décrit les meilleures pratiques de gestion des exceptions.|  
+|[Notions de base de la gestion des exceptions](../../../standard/exceptions/exception-handling-fundamentals.md)|Décrit les formes de base de la gestion des exceptions structurée autour du bloc try/catch/finally.|  
+|[Meilleures pratiques pour les exceptions](../../../standard/exceptions/best-practices-for-exceptions.md)|Décrit les meilleures pratiques de gestion des exceptions.|  
   
 ## <a name="protecting-microsoft-access-and-excel-data-sources"></a>Protection des sources de données Microsoft Access et Excel  
  Microsoft Access et Microsoft Excel peuvent faire office de magasin de données pour une application ADO.NET quand les exigences de sécurité sont minimales ou inexistantes. Leurs fonctionnalités de sécurité sont efficaces pour la dissuasion, mais ne comptez pas sur elles pour faire plus que décourager des utilisateurs non informés de s’impliquer. Les fichiers de données physiques pour Access et Excel existent sur le système de fichiers et doivent être accessibles à tous les utilisateurs. Cela les rend vulnérables à des attaques susceptibles d'entraîner un vol ou une perte de données car les fichiers peuvent être aisément copiés ou altérés. Lorsqu'une sécurité fiable est requise, utilisez une base de données SQL Server ou une base de données basée sur un autre serveur dans laquelle les fichiers de données physiques ne sont pas lisibles à partir du système de fichiers.  
@@ -65,9 +65,9 @@ Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes d
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[Considérations sur la sécurité et des conseils pour Access 2007](https://go.microsoft.com/fwlink/?LinkId=98354)|Décrit des techniques de sécurité pour Access 2007, telles que le chiffrement des fichiers, l'administration des mots de passe, la conversion des bases de données vers les nouveaux formats ACCDB et ACCDE, ainsi que l'utilisation d'autres options de sécurité.|  
-|[Présentation du rôle des fichiers d’Information de groupe de travail dans la sécurité Access](https://support.microsoft.com/kb/305542)|Explique le rôle et la relation du fichier d'informations de groupe de travail dans la sécurité Access 2003.|  
-|[Forum aux Questions sur Microsoft sécurité Access pour Microsoft Access versions 2.0 à 2000](https://go.microsoft.com/fwlink/?LinkId=47698)|Version téléchargeable du Forum aux questions sur la sécurité de Microsoft Access.|  
+|[Considérations et conseils de sécurité pour Access 2007](https://go.microsoft.com/fwlink/?LinkId=98354)|Décrit des techniques de sécurité pour Access 2007, telles que le chiffrement des fichiers, l'administration des mots de passe, la conversion des bases de données vers les nouveaux formats ACCDB et ACCDE, ainsi que l'utilisation d'autres options de sécurité.|  
+|[Comprendre le rôle des fichiers d’informations de groupe de travail dans la sécurité d’accès](https://support.microsoft.com/kb/305542)|Explique le rôle et la relation du fichier d'informations de groupe de travail dans la sécurité Access 2003.|  
+|[Forum aux questions sur la sécurité Microsoft Access pour les versions 2,0 à 2000 de Microsoft Access](https://go.microsoft.com/fwlink/?LinkId=47698)|Version téléchargeable du Forum aux questions sur la sécurité de Microsoft Access.|  
 ## <a name="enterprise-services"></a>Enterprise Services  
  COM + contient son propre modèle de sécurité qui s'appuie sur les comptes Windows NT et l'emprunt d'identité de processus/thread. L'espace de noms <xref:System.EnterpriseServices> fournit des wrappers qui permettent aux applications .NET d'intégrer du code managé avec des services de sécurité COM+ à l'aide de la classe <xref:System.EnterpriseServices.ServicedComponent>.  
   

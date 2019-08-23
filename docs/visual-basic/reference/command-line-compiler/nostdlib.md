@@ -6,15 +6,15 @@ helpviewer_keywords:
 - -nostdlib compiler option [Visual Basic]
 - /nostdlib compiler option [Visual Basic]
 ms.assetid: 140381b8-dc96-4ad5-ae11-792c9ed0be4d
-ms.openlocfilehash: 1c3c70b24de5163ca004b41a21017205a19d9730
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 19a70e500f6b75fd003bdb798f242cddb3926935
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583379"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964350"
 ---
 # <a name="-nostdlib-visual-basic"></a>-nostdlib (Visual Basic)
-Indique au compilateur pour ne pas automatiquement de référencer les bibliothèques standards.  
+Fait en sorte que le compilateur ne référence pas automatiquement les bibliothèques standard.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,16 +23,16 @@ Indique au compilateur pour ne pas automatiquement de référencer les biblioth�
 ```  
   
 ## <a name="remarks"></a>Notes  
- Le `-nostdlib` option supprime la référence automatique à l’assembly System.dll et empêche le compilateur de lire le fichier Vbc.rsp. Le fichier Vbc.rsp, qui se trouve dans le même répertoire que le fichier Vbc.exe, référence les assemblys .NET Framework couramment utilisés et importe le `System` et `Microsoft.VisualBasic` espaces de noms.  
+ L' `-nostdlib` option supprime la référence automatique à l’assembly System. dll et empêche le compilateur de lire le fichier Vbc. rsp. Le fichier Vbc. rsp, qui se trouve dans le même répertoire que le fichier Vbc. exe, fait référence aux assemblys .NET Framework couramment utilisés et importe `System` les `Microsoft.VisualBasic` espaces de noms et.  
   
 > [!NOTE]
->  Les assemblys Mscorlib.dll et de Microsoft.VisualBasic.dll sont toujours référencés.  
+> Les assemblys mscorlib. dll et Microsoft. VisualBasic. dll sont toujours référencés.  
   
 > [!NOTE]
->  Le `-nostdlib` option n’est pas disponible dans l’environnement de développement Visual Studio ; il est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+> L' `-nostdlib` option n’est pas disponible dans l’environnement de développement Visual Studio; elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
-## <a name="example"></a>Exemple  
- Le code suivant compile `T2.vb` sans référencer les bibliothèques standards. Vous devez définir le `_MYTYPE` constante de compilation conditionnelle à la chaîne « Vide » si vous souhaitez supprimer le `My` objet.  
+## <a name="example"></a>Exemples  
+ Le code suivant compile `T2.vb` sans référencer les bibliothèques standard. Vous devez définir la `_MYTYPE` constante de compilation conditionnelle sur la chaîne «Empty» pour supprimer l' `My` objet.  
   
 ```console
 vbc -nostdlib -define:_MYTYPE=\"Empty\" T2.vb  

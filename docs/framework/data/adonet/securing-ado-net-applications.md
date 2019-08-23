@@ -2,12 +2,12 @@
 title: Sécurisation des applications ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 005a1d43-6ee5-471e-ad98-1d30a44d49d5
-ms.openlocfilehash: 32d3de15242aaf9cfacd9371289a5a0a675f884b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d4c9c21f4d1f4a08ca6d676ee7b4c9e80709ba19
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61664192"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963121"
 ---
 # <a name="securing-adonet-applications"></a>Sécurisation des applications ADO.NET
 L'écriture d'une application ADO.NET sécurisée ne se limite pas à éviter les pièges de codage courants, tels que la non validation des entrées d'utilisateur. Une application qui accède à des données présente de nombreux points de défaillance possibles qu’un agresseur peut exploiter pour extraire, manipuler ou détruire des données sensibles. Il est donc important de comprendre tous les aspects de la sécurité, depuis le processus de modélisation de menace durant la phase de conception de votre application, jusqu'à son déploiement éventuel et sa maintenance en cours.  
@@ -39,7 +39,7 @@ L'écriture d'une application ADO.NET sécurisée ne se limite pas à éviter le
  [Considérations relatives à la sécurité](../../../../docs/framework/data/adonet/ef/security-considerations.md)  
  Décrit la sécurité des applications reposant sur Entity Framework.  
   
- [Sécurité](../../../../docs/standard/security/index.md)  
+ [Sécurité](../../../standard/security/index.md)  
  Contient des liens vers des rubriques qui décrivent tous les aspects de la sécurité dans .NET.  
   
  [Outils de sécurité](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/7w3fd0wb(v=vs.90))  

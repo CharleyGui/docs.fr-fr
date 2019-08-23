@@ -2,12 +2,12 @@
 title: <udpBinding>
 ms.date: 03/30/2017
 ms.assetid: fa291901-8340-45c6-9c44-5d9281c70bc3
-ms.openlocfilehash: 84a5bc763f898b3d323a6cee468c6e22d27d85a0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 743eaa281fef233ddc2e8af5cee890bd10ce0963
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788204"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69941185"
 ---
 # <a name="udpbinding"></a>\<udpBinding>
 Élément de configuration utilisé pour configurer la liaison <xref:System.ServiceModel.UdpBinding>.  
@@ -58,11 +58,11 @@ ms.locfileid: "61788204"
 |`maxReceivedMessageSize`|Entier positif qui définit la taille maximale du message, en octets, y compris les en-têtes d’un message pouvant être reçu sur un canal configuré avec cette liaison. L'expéditeur reçoit une erreur SOAP si le message est trop grand pour le récepteur. Ce dernier dépose le message et crée une entrée d’événement dans le journal de suivi. La valeur par défaut est 65 536 octets.|  
 |`maxRetransmitCount`|Valeur entière qui spécifie le nombre maximal de retransmissions de messages.|  
 |`multicastInterfaceId`|Valeur entière qui spécifie l'ID d'interface de multidiffusion.|  
-|`name`|Chaîne qui contient le nom de configuration de la liaison. Cette valeur doit être unique car elle permet d'identifier la liaison. Chaque liaison porte un `name` et a un attribut `namespace` qui l’identifient de façon unique dans les métadonnées du service. De plus, ce nom est unique parmi les liaisons du même type. Depuis [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], les liaisons et les comportements ne sont pas obligés d’avoir un nom. Pour plus d’informations sur la configuration par défaut et les liaisons sans nom et les comportements, consultez [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) et [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).|  
+|`name`|Chaîne qui contient le nom de configuration de la liaison. Cette valeur doit être unique car elle permet d'identifier la liaison. Chaque liaison porte un `name` et a un attribut `namespace` qui l’identifient de façon unique dans les métadonnées du service. De plus, ce nom est unique parmi les liaisons du même type. Depuis [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], les liaisons et les comportements ne sont pas obligés d’avoir un nom. Pour plus d’informations sur la configuration par défaut et les liaisons et les comportements sans valeur, consultez [configuration simplifiée](../../../wcf/simplified-configuration.md) et [configuration simplifiée pour les services WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|  
 |`openTimeout`|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération d'ouverture. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|  
 |`receiveTimeout`|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération de réception. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:10:00.|  
 |`sendTimeout`|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération d'envoi. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|  
-|`textEncoding`|Définit l'encodage de jeu de caractères à utiliser pour l'émission de messages sur la liaison. Les valeurs valides sont les suivantes :<br /><br /> -   BigEndianUnicode: Codage Unicode BigEndian.<br />-Unicode : encodage 16 bits.<br />-UTF-8 : codage 8 bits<br /><br /> La valeur par défaut est UTF8. Cet attribut est de type <xref:System.Text.Encoding>.|  
+|`textEncoding`|Définit l'encodage de jeu de caractères à utiliser pour l'émission de messages sur la liaison. Les valeurs valides sont les suivantes :<br /><br /> BigEndianUnicode Encodage BigEndian Unicode.<br />Unicode encodage 16 bits.<br />UTF8 encodage 8 bits<br /><br /> La valeur par défaut est UTF8. Cet attribut est de type <xref:System.Text.Encoding>.|  
 |`timeToLive`|Une valeur de période qui spécifie la durée de vie de la liaison.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -75,13 +75,13 @@ ms.locfileid: "61788204"
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
+|[\<bindings>](bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
   
 ## <a name="remarks"></a>Notes  
- UdpBinding permet aux services WCF de communiquer sur le transport UDP. Il permet des échanges de messages « fire and forget » où un client envoie un message à un service et n’attend pas de réponse.  
+ UdpBinding permet aux services WCF de communiquer sur le transport UDP. Cela permet l’échange de messages «incendie et oubli» où un client envoie un message à un service et n’attend aucune réponse.  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant montre comment configurer le <xref:System.ServiceModel.UdpBinding> à l’aide de la <`udpBinding`> élément.  
+## <a name="example"></a>Exemples  
+ L’exemple suivant montre comment configurer <xref:System.ServiceModel.UdpBinding> à l’aide de l’élément <`udpBinding`>.  
   
 ```xml  
 <udpBinding>
@@ -109,7 +109,7 @@ ms.locfileid: "61788204"
 - <xref:System.ServiceModel.Channels.BindingElement>
 - <xref:System.ServiceModel.BasicHttpBinding>
 - <xref:System.ServiceModel.Configuration.BasicHttpBindingElement>
-- [Liaisons](../../../../../docs/framework/wcf/bindings.md)
-- [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Utilisation de liaisons pour configurer des services et des clients](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding>](../../../../../docs/framework/misc/binding.md)
+- [Liaisons](../../../wcf/bindings.md)
+- [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<binding>](../../../misc/binding.md)

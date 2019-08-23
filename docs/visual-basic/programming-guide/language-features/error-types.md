@@ -10,12 +10,12 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], types of errors
 - syntax errors [Visual Basic], Visual Basic
 ms.assetid: 3048aabf-8c97-4e13-9150-853769cb5f6f
-ms.openlocfilehash: 030986111a50ab59c605a1d683fedc118d10b260
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: ab554b60f7ba44ee0b92b76e1362ffdbb25f2afb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68626612"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965369"
 ---
 # <a name="error-types-visual-basic"></a>Types d'erreurs (Visual Basic)
 Dans Visual Basic, les erreurs appartiennent à l’une des trois catégories suivantes: erreurs de syntaxe, erreurs d’exécution et erreurs logiques.
@@ -24,7 +24,7 @@ Dans Visual Basic, les erreurs appartiennent à l’une des trois catégories su
  Les *Erreurs de syntaxe* sont celles qui apparaissent lorsque vous écrivez du code. Si vous utilisez Visual Studio, Visual Basic vérifie votre code au fur et à mesure que vous le tapez dans la fenêtre de l' **éditeur de code** et vous avertit si vous faites une erreur, telle que l’orthographe d’un mot ou l’utilisation incorrecte d’un élément de langage. Si vous compilez à partir de la ligne de commande, Visual Basic affiche une erreur du compilateur avec des informations sur l’erreur de syntaxe. Les erreurs de syntaxe sont le type le plus courant d’erreurs. Vous pouvez les corriger facilement dans l’environnement de codage dès qu’elles se produisent.
 
 > [!NOTE]
->  L' `Option Explicit` instruction est un moyen d’éviter les erreurs de syntaxe. Elle vous oblige à déclarer, à l’avance, toutes les variables à utiliser dans l’application. Par conséquent, lorsque ces variables sont utilisées dans le code, toutes les erreurs typographiques sont interceptées immédiatement et peuvent être résolues.
+> L' `Option Explicit` instruction est un moyen d’éviter les erreurs de syntaxe. Elle vous oblige à déclarer, à l’avance, toutes les variables à utiliser dans l’application. Par conséquent, lorsque ces variables sont utilisées dans le code, toutes les erreurs typographiques sont interceptées immédiatement et peuvent être résolues.
 
 ## <a name="run-time-errors"></a>Erreurs d’exécution
  Les *Erreurs d’exécution* sont celles qui s’affichent uniquement après la compilation et l’exécution de votre code. Celles-ci impliquent du code qui peut paraître correct dans la mesure où il n’y a pas d’erreurs de syntaxe, mais qui ne s’exécutent pas. Par exemple, vous pouvez écrire correctement une ligne de code pour ouvrir un fichier. Toutefois, si le fichier n’existe pas, l’application ne peut pas ouvrir le fichier et lève une exception. Vous pouvez résoudre la plupart des erreurs d’exécution en réécrivant le code défectueux ou en utilisant la [gestion des exceptions](../../language-reference/statements/try-catch-finally-statement.md), puis en le recompilant et en le réexécutant.

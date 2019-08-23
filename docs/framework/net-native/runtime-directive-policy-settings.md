@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 ms.assetid: cb52b1ef-47fd-4609-b69d-0586c818ac9e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 93352fffbe155183687a9b666d2fe5541428fca9
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fe78e2bd9c31bfb122e90b97977117adfc0235d5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64752013"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967886"
 ---
 # <a name="runtime-directive-policy-settings"></a>Paramètres de stratégie de directive runtime
 
 > [!NOTE]
->  Cette rubrique fait référence à .NET Native Developer Preview, qui correspond à la version préliminaire du logiciel. Vous pouvez télécharger la préversion sur le [site web Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (inscription nécessaire).
+> Cette rubrique fait référence à .NET Native Developer Preview, qui correspond à la version préliminaire du logiciel. Vous pouvez télécharger la préversion sur le [site web Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (inscription nécessaire).
 
 Les paramètres de stratégie des directives runtime pour .NET Native déterminent la disponibilité des métadonnées pour les types et les membres de type au moment de l'exécution. Sans les métadonnées nécessaires, les opérations qui reposent sur la réflexion, la sérialisation, la désérialisation ou le marshaling de types .NET Framework vers COM ou Windows Runtime peuvent échouer et lever une exception. Les exceptions les plus courantes sont [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) et, dans le cas de l’interopérabilité, [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md).
 
@@ -34,7 +34,7 @@ Les fichiers de directives runtime reconnaissent trois catégories de types de s
 
   Le tableau suivant répertorie les types de stratégie de réflexion et les éléments de programme avec lesquels ils peuvent être utilisés.
 
-  |Élément|Activate|Parcourir|dynamique|
+  |Élément|Activate|Parcourir|Dynamique|
   |-------------|--------------|------------|-------------|
   |[\<Application>](../../../docs/framework/net-native/application-element-net-native.md)|✓|✓|✓|
   |[\<Assembly>](../../../docs/framework/net-native/assembly-element-net-native.md)|✓|✓|✓|

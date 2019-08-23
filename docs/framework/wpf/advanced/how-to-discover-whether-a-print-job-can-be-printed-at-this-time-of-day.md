@@ -10,65 +10,65 @@ helpviewer_keywords:
 - printers [WPF], availability
 - print jobs [WPF], timing
 ms.assetid: 7e9c8ec1-abf6-4b3d-b1c6-33b35d3c4063
-ms.openlocfilehash: ee38caedc5d5a29d2221d6e5a6bf6cf74617bf8c
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: 859dc75169e443d07361951692a428507886fa2e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859716"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947808"
 ---
 # <a name="how-to-discover-whether-a-print-job-can-be-printed-at-this-time-of-day"></a>Procédure : Déterminer si un travail d’impression peut être imprimé à cette heure de la journée
-Files d’attente ne concernent pas toujours disponibles 24 heures par jour. Ils ont des propriétés au moment de début et de fin qui peuvent être définies pour les rendre indisponibles à certains moments de la journée. Cette fonctionnalité peut être utilisée, par exemple, pour réserver une imprimante à l’usage exclusif d’un département après 17 h 00. Ce département aurait une autre file d’attente l’imprimante que les autres services à utiliser. La file d’attente pour les autres départements serait défini comme être indisponible après 17 h 00, tandis que la file d’attente pour le département privilégié peut être définie pour être disponible à tout moment.  
+Les files d’attente à l’impression ne sont pas toujours disponibles pendant 24 heures par jour. Ils ont des propriétés d’heure de début et de fin qui peuvent être définies pour les rendre indisponibles à certaines heures de la journée. Cette fonctionnalité peut être utilisée, par exemple, pour réserver une imprimante à l’usage exclusif d’un certain service après 17h00. Ce service dispose d’une file d’attente différente de celle utilisée par les autres services. La file d’attente des autres services est définie pour être indisponible après 17h00, tandis que la file d’attente pour le service favorisé peut être configurée pour être disponible à tout moment.  
   
- En outre, les travaux d’impression eux-mêmes peuvent être définis pour être imprimables uniquement dans un intervalle de temps spécifié.  
+ En outre, les travaux d’impression peuvent être configurés pour être imprimables uniquement dans un intervalle de temps spécifié.  
   
- Le <xref:System.Printing.PrintQueue> et <xref:System.Printing.PrintSystemJobInfo> classes exposées dans l’API de Microsoft .NET Framework fournissent un moyen de vérifier à distance si un travail d’impression donné peut imprimer sur une file d’attente donnée à l’heure actuelle.  
+ Les <xref:System.Printing.PrintQueue> classes <xref:System.Printing.PrintSystemJobInfo> et exposées dans les API de Microsoft .NET Framework fournissent un moyen de vérifier à distance si un travail d’impression donné peut imprimer sur une file d’attente donnée à l’heure actuelle.  
   
 ## <a name="example"></a>Exemple  
  L’exemple ci-dessous est un exemple qui peut diagnostiquer les problèmes liés à un travail d’impression.  
   
- Il existe deux principales étapes de ce type de fonction comme suit.  
+ Il existe deux étapes principales pour ce type de fonction, comme suit.  
   
-1. Lecture la <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> et <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> propriétés de la <xref:System.Printing.PrintQueue> pour déterminer si l’heure actuelle est entre eux.  
+1. Lisez les <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> propriétés <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> et de l' <xref:System.Printing.PrintQueue> objet pour déterminer si l’heure actuelle est comprise entre ces deux éléments.  
   
-2. Lecture la <xref:System.Printing.PrintSystemJobInfo.StartTimeOfDay%2A> et <xref:System.Printing.PrintSystemJobInfo.UntilTimeOfDay%2A> propriétés de la <xref:System.Printing.PrintSystemJobInfo> pour déterminer si l’heure actuelle est entre eux.  
+2. Lisez les <xref:System.Printing.PrintSystemJobInfo.StartTimeOfDay%2A> propriétés <xref:System.Printing.PrintSystemJobInfo.UntilTimeOfDay%2A> et de l' <xref:System.Printing.PrintSystemJobInfo> objet pour déterminer si l’heure actuelle est comprise entre ces deux éléments.  
   
- Mais les complications naissent du fait que ces propriétés ne sont pas <xref:System.DateTime> objets. Au lieu de cela, ils sont <xref:System.Int32> objets qui expriment l’heure du jour en tant que le nombre de minutes depuis minuit. En outre, cela n’est pas minuit dans le fuseau horaire actuel, mais minuit UTC (Coordinated Universal Time).  
+ Mais les complications proviennent du fait que ces propriétés ne sont <xref:System.DateTime> pas des objets. Au lieu de <xref:System.Int32> cela, il s’agit d’objets qui expriment l’heure de la journée comme nombre de minutes depuis minuit. En outre, ce n’est pas minuit dans le fuseau horaire actuel, mais minuit UTC (temps universel coordonné).  
   
- Le premier exemple de code présente la méthode statique **ReportQueueAndJobAvailability**, qui est transmis un <xref:System.Printing.PrintSystemJobInfo> et appelle les méthodes d’assistance pour déterminer si le travail peut être imprimé à l’heure actuelle et, si pas, quand elle peut imprimer. Notez qu’un <xref:System.Printing.PrintQueue> n’est pas passé à la méthode. Il s’agit, car le <xref:System.Printing.PrintSystemJobInfo> inclut une référence à la file d’attente dans son <xref:System.Printing.PrintSystemJobInfo.HostingPrintQueue%2A> propriété.  
+ Le premier exemple de code présente la méthode statique **ReportQueueAndJobAvailability**, qui est passée <xref:System.Printing.PrintSystemJobInfo> à un et appelle les méthodes d’assistance pour déterminer si le travail peut imprimer à l’heure actuelle et, dans le cas contraire, s’il peut imprimer. Notez qu’un <xref:System.Printing.PrintQueue> n’est pas passé à la méthode. Cela est dû au <xref:System.Printing.PrintSystemJobInfo> fait que le comprend une référence à la <xref:System.Printing.PrintSystemJobInfo.HostingPrintQueue%2A> file d’attente dans sa propriété.  
   
- Les méthodes subordonnés sont surchargées **ReportAvailabilityAtThisTime** méthode qui peut prendre l’une un <xref:System.Printing.PrintQueue> ou un <xref:System.Printing.PrintSystemJobInfo> en tant que paramètre. Il existe également un **TimeConverter.ConvertToLocalHumanReadableTime**. Toutes ces méthodes sont décrites ci-dessous.  
+ Les méthodes subordonnées incluent la méthode **ReportAvailabilityAtThisTime** surchargée qui peut accepter <xref:System.Printing.PrintQueue> un ou <xref:System.Printing.PrintSystemJobInfo> un comme paramètre. Il y a également un **TimeConverter. ConvertToLocalHumanReadableTime**. Toutes ces méthodes sont décrites ci-dessous.  
   
- Le **ReportQueueAndJobAvailability** méthode commence par vérifier si la file d’attente ou le travail d’impression n’est pas disponible pour l’instant. Si un d’eux n’est pas disponible, il vérifie ensuite si la file d’attente est indisponible. S’il n’est pas disponible, la méthode signale ce fait et l’heure lorsque la file d’attente redeviennent disponible. Elle vérifie ensuite le travail et si elle n’est pas disponible, il signale au prochain intervalle pendant qu’elle peut imprimer. Enfin, la méthode signale la première heure lorsque le travail peut être imprimé. Il s’agit la plus récente de deux fois de suite.  
+ La méthode **ReportQueueAndJobAvailability** commence par vérifier si la file d’attente ou le travail d’impression n’est pas disponible pour l’instant. Si l’un de ces éléments n’est pas disponible, il vérifie ensuite si la file d’attente n’est pas disponible. S’il n’est pas disponible, la méthode signale ce fait et l’heure à laquelle la file d’attente redevient disponible. Il vérifie ensuite la tâche et, si elle est indisponible, elle signale la prochaine période quand elle peut imprimer. Enfin, la méthode indique l’heure la plus proche à laquelle le travail peut imprimer. Il s’agit de la version la plus récente de deux fois.  
   
-- L’heure auxquelles la file d’attente est ensuite disponible.  
+- Heure à laquelle la file d’attente à l’impression est ensuite disponible.  
   
-- L’heure auxquelles le travail d’impression est ensuite disponible.  
+- Heure à laquelle le travail d’impression est disponible.  
   
- Lors du signalement des heures de la journée, la <xref:System.DateTime.ToShortTimeString%2A> méthode est également appelée car cette méthode supprime les années, les mois et jours de la sortie. Vous ne pouvez pas limiter la disponibilité d’une file d’attente à l’impression ou d’un travail d’impression à des années, mois ou jours.  
+ Lors du signalement des heures de <xref:System.DateTime.ToShortTimeString%2A> la journée, la méthode est également appelée car cette méthode supprime les années, les mois et les jours de la sortie. Vous ne pouvez pas limiter la disponibilité d’une file d’attente à l’impression ou d’un travail d’impression à des années, des mois ou des jours spécifiques.  
   
  [!code-cpp[DiagnoseProblematicPrintJob#ReportQueueAndJobAvailability](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#reportqueueandjobavailability)]
  [!code-csharp[DiagnoseProblematicPrintJob#ReportQueueAndJobAvailability](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#reportqueueandjobavailability)]
  [!code-vb[DiagnoseProblematicPrintJob#ReportQueueAndJobAvailability](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#reportqueueandjobavailability)]  
   
- Les deux surcharges de la **ReportAvailabilityAtThisTime** méthode sont identiques à l’exception du type passé pour eux, afin que seuls les <xref:System.Printing.PrintQueue> version est présentée ci-dessous.  
+ Les deux surcharges de la méthode **ReportAvailabilityAtThisTime** sont identiques, à l’exception du type qui leur est passé, <xref:System.Printing.PrintQueue> c’est pourquoi seule la version est présentée ci-dessous.  
   
 > [!NOTE]
->  Le fait que les méthodes sont identiques à l’exception de type soulève la question de savoir pourquoi l’exemple ne crée pas une méthode générique **ReportAvailabilityAtThisTime\<T >** . La raison est qu’une telle méthode devrait être limité à une classe qui possède le **StartTimeOfDay** et **UntilTimeOfDay** propriétés qui appelle la méthode, mais une méthode générique peut uniquement être limité à un l’unique classe et la seule classe commune aux deux <xref:System.Printing.PrintQueue> et <xref:System.Printing.PrintSystemJobInfo> l’héritage arborescence est <xref:System.Printing.PrintSystemObject> n’ayant pas de propriétés.  
+> Le fait que les méthodes soient identiques à l’exception du type soulève la question de la raison pour laquelle l’exemple ne crée pas de méthode générique **\<ReportAvailabilityAtThisTime T >** . En effet, une telle méthode devrait être restreinte à une classe qui a les propriétés **StartTimeOfDay** et **UntilTimeOfDay** que la méthode appelle, mais une méthode générique ne peut être limitée qu’à une seule classe et la seule classe commune aux deux et, dans l’arborescence d' <xref:System.Printing.PrintSystemObject> héritage, n’a pas de propriétés de ce type. <xref:System.Printing.PrintSystemJobInfo> <xref:System.Printing.PrintQueue>  
   
- Le **ReportAvailabilityAtThisTime** (méthode) (présenté dans l’exemple de code ci-dessous) commence par initialiser un <xref:System.Boolean> variable sentinel à `true`. Elle sera réinitialisée à `false`, si la file d’attente n’est pas disponible.  
+ La méthode **ReportAvailabilityAtThisTime** (présentée dans l’exemple de code ci-dessous) commence par <xref:System.Boolean> initialiser une `true`variable Sentinel à. Elle est réinitialisée `false`à, si la file d’attente n’est pas disponible.  
   
- Ensuite, la méthode vérifie si le début et « until » heures sont identiques. S’ils sont, la file d’attente est toujours disponible, alors la méthode retourne `true`.  
+ Ensuite, la méthode vérifie si les heures de début et de fin sont identiques. Si c’est le cas, la file d’attente est toujours disponible, `true`de sorte que la méthode retourne.  
   
- Si la file d’attente n’est pas disponible tout le temps, la méthode utilise la méthode statique <xref:System.DateTime.UtcNow%2A> propriété à obtenir l’heure actuelle comme un <xref:System.DateTime> objet. (Nous n’avez pas besoin de heure locale, car le <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> et <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> propriétés sont elles-mêmes en heure UTC.)  
+ Si la file d’attente n’est pas disponible tout le temps, la méthode <xref:System.DateTime.UtcNow%2A> utilise la propriété statique pour obtenir l’heure <xref:System.DateTime> actuelle en tant qu’objet. (L’heure locale n’est pas nécessaire, <xref:System.Printing.PrintQueue.StartTimeOfDay%2A> car <xref:System.Printing.PrintQueue.UntilTimeOfDay%2A> les propriétés et sont elles-mêmes en heure UTC.)  
   
- Toutefois, ces deux propriétés ne sont pas <xref:System.DateTime> objets. Ils sont <xref:System.Int32>s exprimant le temps que le nombre de minutes après minuit UTC. Donc nous devons convertir notre <xref:System.DateTime> objet minutes après minuit. Lorsque cette opération effectuée, la méthode vérifie simplement pour voir si « maintenant » est entre le début de la file d’attente et les heures, définit la sentinelle sur false si « maintenant » n’est pas entre les deux heures et retourne la sentinelle « until ».  
+ Toutefois, ces deux propriétés ne sont <xref:System.DateTime> pas des objets. Il s' <xref:System.Int32>agit de s exprimant le temps en tant que nombre de minutes-après l’heure UTC-minuit. Nous devons donc convertir notre <xref:System.DateTime> objet en minutes-après-minuit. Lorsque cela est fait, la méthode vérifie simplement si «Now» se trouve entre les heures de début et de fin de la file d’attente, définit la sentinelle sur false si «Now» n’est pas entre les deux fois, et retourne la sentinelle.  
   
  [!code-cpp[DiagnoseProblematicPrintJob#PrintQueueStartUntil](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#printqueuestartuntil)]
  [!code-csharp[DiagnoseProblematicPrintJob#PrintQueueStartUntil](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#printqueuestartuntil)]
  [!code-vb[DiagnoseProblematicPrintJob#PrintQueueStartUntil](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/visualbasic/program.vb#printqueuestartuntil)]  
   
- Le **TimeConverter.ConvertToLocalHumanReadableTime** (méthode) (présenté dans l’exemple de code ci-dessous) n’utilise pas toutes les méthodes introduites avec Microsoft .NET Framework, que la description est courte. La méthode a une double tâche de conversion : elle doit prendre un entier exprimant des minutes après minuit et le convertir en un temps lisible et il doit le convertir à l’heure locale. Cela, il en créant d’abord un <xref:System.DateTime> objet qui est définie à minuit UTC, puis il utilise le <xref:System.DateTime.AddMinutes%2A> méthode pour ajouter les minutes qui ont été passés à la méthode. Cela retourne un nouvel <xref:System.DateTime> exprimant l’heure d’origine qui a été passé à la méthode. Le <xref:System.DateTime.ToLocalTime%2A> méthode convertit ensuite cette heure locale.  
+ La méthode **TimeConverter. ConvertToLocalHumanReadableTime** (présentée dans l’exemple de code ci-dessous) n’utilise aucune des méthodes introduites avec Microsoft .NET Framework. la discussion est donc brève. La méthode a une tâche de conversion double: elle doit prendre un entier exprimant minutes-après-minuit et la convertir en heure explicite et elle doit être convertie en heure locale. Pour ce faire, il commence par créer <xref:System.DateTime> un objet qui a la valeur UTC minuit, puis il utilise <xref:System.DateTime.AddMinutes%2A> la méthode pour ajouter les minutes passées à la méthode. Cela retourne un nouveau <xref:System.DateTime> exprimant l’heure d’origine passée à la méthode. La <xref:System.DateTime.ToLocalTime%2A> méthode convertit ensuite ce en heure locale.  
   
  [!code-cpp[DiagnoseProblematicPrintJob#TimeConverter](~/samples/snippets/cpp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CPP/Program.cpp#timeconverter)]
  [!code-csharp[DiagnoseProblematicPrintJob#TimeConverter](~/samples/snippets/csharp/VS_Snippets_Wpf/DiagnoseProblematicPrintJob/CSharp/Program.cs#timeconverter)]

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - inheritance [Windows Forms], forms
 - Windows Forms, inheritance
 ms.assetid: cb3e1c0f-3d2a-4cdc-b0d1-c92eae567ffb
-ms.openlocfilehash: 60c238430d44371bbd3859c3864fd2ef73f70098
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: a6d000bc853046cffbc2bddc54d1f5faec689032
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69037913"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968615"
 ---
 # <a name="how-to-inherit-windows-forms"></a>Procédure : hériter de Windows Forms
 
@@ -40,12 +40,12 @@ Pour plus d’informations sur l’héritage de formulaires au moment du design 
     public class Form2 : Namespace1.Form1
     ```
 
- Lors de l'héritage de formulaires, n'oubliez pas que des problèmes peuvent survenir car les gestionnaires d'événements peuvent être appelés deux fois (chaque événement étant géré par la classe de base et par la classe héritée). Pour plus d’informations sur la façon d’éviter ce problème, consultez [Dépannage des gestionnaires d’événements hérités dans Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md).
+ Lors de l'héritage de formulaires, n'oubliez pas que des problèmes peuvent survenir car les gestionnaires d'événements peuvent être appelés deux fois (chaque événement étant géré par la classe de base et par la classe héritée). Pour plus d’informations sur la façon d’éviter ce problème, consultez [Dépannage des gestionnaires d’événements hérités dans Visual Basic](../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Inherits (instruction)](~/docs/visual-basic/language-reference/statements/inherits-statement.md)
-- [Imports (instruction) (espace de noms et type .NET)](~/docs/visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
-- [using](~/docs/csharp/language-reference/keywords/using.md)
+- [Inherits (instruction)](../../../visual-basic/language-reference/statements/inherits-statement.md)
+- [Imports (instruction) (espace de noms et type .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
+- [using](../../../csharp/language-reference/keywords/using.md)
 - [Conséquences de la modification de l’aspect d’un formulaire de base](effects-of-modifying-base-form-appearance.md)
 - [Héritage visuel des Windows Forms](windows-forms-visual-inheritance.md)

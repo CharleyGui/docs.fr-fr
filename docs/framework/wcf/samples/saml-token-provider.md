@@ -2,23 +2,23 @@
 title: SAML Token Provider
 ms.date: 03/30/2017
 ms.assetid: eb16e5e2-4c8d-4f61-a479-9c965fcec80c
-ms.openlocfilehash: 19781b6b162034fb45587103d2a4af6684ab0fe1
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: 0ab33c5f0a24e97332fd84e43e9050fc8f406a27
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487505"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965486"
 ---
 # <a name="saml-token-provider"></a>SAML Token Provider
-Cet exemple montre comment implémenter un fournisseur de jetons SAML client personnalisé. Un fournisseur de jetons dans Windows Communication Foundation (WCF) est utilisé pour fournir des informations d’identification pour l’infrastructure de sécurité. En général, le fournisseur de jetons examine la cible et publie des informations d'identification appropriées afin que l'infrastructure de sécurité puisse sécuriser le message. WCF est fourni avec le fournisseur de jeton de gestionnaire d’informations d’identification par défaut. WCF est également livré avec un fournisseur de jetons de CardSpace. Les fournisseurs de jetons personnalisés sont utiles dans les cas suivants :
+Cet exemple montre comment implémenter un fournisseur de jetons SAML client personnalisé. Un fournisseur de jetons dans Windows Communication Foundation (WCF) est utilisé pour fournir des informations d’identification à l’infrastructure de sécurité. En général, le fournisseur de jetons examine la cible et publie des informations d'identification appropriées afin que l'infrastructure de sécurité puisse sécuriser le message. WCF est fourni avec le fournisseur de jetons du gestionnaire d’informations d’identification par défaut. WCF est également fourni avec un fournisseur de jetons CardSpace. Les fournisseurs de jetons personnalisés sont utiles dans les cas suivants :
 
 - si vous avez un magasin d'informations d'identification avec lequel ces fournisseurs de jetons ne peuvent pas fonctionner ;
 
-- Si vous souhaitez fournir votre propre mécanisme personnalisé permettant de transformer les informations d’identification à partir du point où l’utilisateur fournit les détails lorsque l’infrastructure de client WCF utilise les informations d’identification.
+- Si vous souhaitez fournir votre propre mécanisme personnalisé pour transformer les informations d’identification à partir du moment où l’utilisateur fournit les détails lorsque l’infrastructure cliente WCF utilise les informations d’identification.
 
 - si vous générez un jeton personnalisé.
 
- Cet exemple montre comment créer un fournisseur de jetons personnalisé qui permet à un jeton SAML obtenu en dehors de l’infrastructure de client WCF à utiliser.
+ Cet exemple montre comment générer un fournisseur de jetons personnalisé qui permet l’utilisation d’un jeton SAML obtenu en dehors de l’infrastructure cliente WCF.
 
  En résumé, cet exemple montre :
 
@@ -26,7 +26,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
 
 - la façon dont un jeton SAML peut être transmis aux informations d'identification du client personnalisées ;
 
-- Comment le jeton SAML est fourni à l’infrastructure de client WCF.
+- Comment le jeton SAML est fourni à l’infrastructure du client WCF.
 
 - la façon dont le serveur est authentifié auprès du client à l'aide du certificat X.509 du serveur.
 
@@ -111,7 +111,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
 </system.serviceModel>
 ```
 
- Les étapes suivantes montrent comment développer un fournisseur de jetons SAML personnalisé et l’intégrer à WCF : infrastructure de sécurité :
+ Les étapes suivantes montrent comment développer un fournisseur de jetons SAML personnalisé et l’intégrer à WCF: infrastructure de sécurité:
 
 1. Écrivez un fournisseur de jetons SAML personnalisé.
 
@@ -353,25 +353,25 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
 
 #### <a name="to-set-up-and-build-the-sample"></a>Pour configurer et générer l'exemple
 
-1. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Pour générer la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
 > [!NOTE]
->  Si vous utilisez Svcutil.exe pour régénérer la configuration pour cet exemple, assurez-vous de modifier le nom du point de terminaison dans la configuration client afin qu'il corresponde au code client.
+> Si vous utilisez Svcutil.exe pour régénérer la configuration pour cet exemple, assurez-vous de modifier le nom du point de terminaison dans la configuration client afin qu'il corresponde au code client.
 
 #### <a name="to-run-the-sample-on-the-same-computer"></a>Pour exécuter l'exemple sur le même ordinateur
 
-1. Exécutez Setup.bat à partir du dossier d’installation de l’exemple à l’intérieur d’une invite de commandes de Visual Studio 2012 s’exécuter avec des privilèges d’administrateur. Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.
+1. Exécutez setup. bat à partir du dossier d’installation de l’exemple à l’aide d’une invite de commandes Visual Studio 2012 exécutée avec des privilèges d’administrateur. Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.
 
     > [!NOTE]
-    >  Le fichier de commandes Setup.bat est conçu pour être exécuté à partir d’un Visual Studio 2012 invite de commandes. La variable d’environnement PATH définie dans les points de l’invite de commandes de Visual Studio 2012 sur le répertoire qui contient les exécutables requis par le script Setup.bat.  
+    >  Le fichier de commandes Setup. bat est conçu pour être exécuté à partir d’une invite de commandes de Visual Studio 2012. La variable d’environnement PATH définie dans l’invite de commandes de Visual Studio 2012 pointe vers le répertoire qui contient les exécutables requis par le script Setup. bat.  
   
 2. Lancez Service.exe à partir de service\bin.  
   
 3. Lancez Client.exe à partir de \client\bin. L'activité du client s'affiche sur son application de console.  
   
-4. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour obtenir des exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+4. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-run-the-sample-across-computers"></a>Pour exécuter l'exemple sur plusieurs ordinateurs  
   
@@ -379,7 +379,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
   
 2. Copiez les fichiers programme du service dans le répertoire de service sur l'ordinateur de service. Copiez également les fichiers Setup.bat et Cleanup.bat sur l'ordinateur de service.  
   
-3. Le nom de sujet de votre certificat de serveur doit contenir le nom de domaine complet de l'ordinateur. Le fichier Service.exe.config doit être mis à jour pour refléter ce nouveau nom de certificat. Vous pouvez créer le certificat de serveur en modifiant le fichier de commandes Setup.bat. Notez que le fichier setup.bat doit être exécuté dans une invite de commandes développeur pour la fenêtre de Visual Studio avec des privilèges d’administrateur. Vous devez affecter à la variable `%SERVER_NAME%` le nom d'hôte complet de l'ordinateur utilisé pour héberger le service.  
+3. Le nom de sujet de votre certificat de serveur doit contenir le nom de domaine complet de l'ordinateur. Le fichier Service.exe.config doit être mis à jour pour refléter ce nouveau nom de certificat. Vous pouvez créer le certificat de serveur en modifiant le fichier de commandes Setup.bat. Notez que le fichier Setup. bat doit être exécuté dans une Invite de commandes développeur pour la fenêtre Visual Studio ouverte avec des privilèges d’administrateur. Vous devez affecter à la variable `%SERVER_NAME%` le nom d'hôte complet de l'ordinateur utilisé pour héberger le service.  
   
 4. Copiez le certificat de serveur dans le magasin CurrentUser-TrustedPeople du client. Cette étape n'est pas nécessaire lorsque le certificat de serveur est publié par un émetteur de confiance du client.  
   
@@ -393,7 +393,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons SAML client per
   
 9. Sur l'ordinateur client, lancez `Client.exe` à partir d'une invite de commandes.  
   
-10. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour obtenir des exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+10. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-clean-up-after-the-sample"></a>Pour procéder au nettoyage après exécution de l'exemple  
   

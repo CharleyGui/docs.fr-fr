@@ -10,18 +10,18 @@ helpviewer_keywords:
 - typography [WPF], packaging fonts with applications
 - packaging fonts with applications [WPF]
 ms.assetid: db15ee48-4d24-49f5-8b9d-a64460865286
-ms.openlocfilehash: b5ad2280c832b62e043a1f65f082d5475697c38c
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: dfc1f023e9d1adce73a28f475f3796b4f7231ff8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545356"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960332"
 ---
 # <a name="packaging-fonts-with-applications"></a>Empaquetage de polices avec des applications
 Cette rubrique fournit une vue d’ensemble de l’empaquetage [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] des polices avec votre application.  
   
 > [!NOTE]
->  Comme avec la plupart des types de logiciels, les fichiers de police sont sous licence et ne sont pas vendus. Les licences qui régissent l’utilisation des polices varient d’un fournisseur à l’autre, mais en général, la plupart [!INCLUDE[TLA#tla_ms#initcap](../../../../includes/tlasharptla-mssharpinitcap-md.md)] des licences, y [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]compris celles qui couvrent les polices fournies avec les applications et, ne permettent pas d’incorporer les polices au sein des applications ou redistribué. Par conséquent, en tant que développeur, c’est à vous de vérifier que vous disposez des droits de licence nécessaires pour toute police incorporée dans une application ou redistribuée.  
+> Comme avec la plupart des types de logiciels, les fichiers de police sont sous licence et ne sont pas vendus. Les licences qui régissent l’utilisation des polices varient d’un fournisseur à l’autre, mais en général, la plupart [!INCLUDE[TLA#tla_ms#initcap](../../../../includes/tlasharptla-mssharpinitcap-md.md)] des licences, y compris celles qui couvrent les polices fournies avec les applications et Windows, ne permettent pas d’incorporer les polices dans des applications ou dans d’autres redistribué. Par conséquent, en tant que développeur, c’est à vous de vérifier que vous disposez des droits de licence nécessaires pour toute police incorporée dans une application ou redistribuée.  
 
 <a name="introduction_to_packaging_fonts"></a>   
 ## <a name="introduction-to-packaging-fonts"></a>Présentation de l’empaquetage de polices  
@@ -81,7 +81,7 @@ Cette rubrique fournit une vue d’ensemble de l’empaquetage [!INCLUDE[TLA#tla
 ```  
   
 > [!NOTE]
->  Quand vous ajoutez des polices en tant que ressources à votre application, assurez- `<Resource>` vous que vous définissez l' `<EmbeddedResource>` élément, et non l’élément dans le fichier projet de votre application. L' `<EmbeddedResource>` élément pour l’action de génération n’est pas pris en charge.  
+> Quand vous ajoutez des polices en tant que ressources à votre application, assurez- `<Resource>` vous que vous définissez l' `<EmbeddedResource>` élément, et non l’élément dans le fichier projet de votre application. L' `<EmbeddedResource>` élément pour l’action de génération n’est pas pris en charge.  
   
  L’exemple de balisage suivant indique comment référencer les ressources de police de l’application.  
   
@@ -152,7 +152,7 @@ Cette rubrique fournit une vue d’ensemble de l’empaquetage [!INCLUDE[TLA#tla
  [!code-xaml[OpenTypeFontsSample#OpenTypeFontsSample1](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontsSample/CS/Kootenay.xaml#opentypefontssample1)]  
   
 > [!NOTE]
->  Ce kit de développement logiciel (SDK) contient un ensemble d’exemples de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] polices OpenType que vous pouvez utiliser avec les applications. Les polices sont définies dans une bibliothèque de ressources uniquement. Pour plus d’informations, consultez [Exemple de pack de polices OpenType](sample-opentype-font-pack.md).  
+> Ce kit de développement logiciel (SDK) contient un ensemble d’exemples de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] polices OpenType que vous pouvez utiliser avec les applications. Les polices sont définies dans une bibliothèque de ressources uniquement. Pour plus d’informations, consultez [Exemple de pack de polices OpenType](sample-opentype-font-pack.md).  
   
 <a name="limitations_on_font_usage"></a>   
 ## <a name="limitations-on-font-usage"></a>Limitations de l’utilisation des polices  

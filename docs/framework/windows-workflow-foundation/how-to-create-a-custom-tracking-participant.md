@@ -5,22 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1b612c7e-2381-4a7c-b07a-77030415f2a3
-ms.openlocfilehash: 64320a8f4799e79f54348e5381ed2d8ed49d496b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 280f68c8b762562a56ce96f45f118702fb0e4d76
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945559"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962403"
 ---
 # <a name="how-to-create-a-custom-tracking-participant"></a>Procédure : créer un participant de suivi de personnalisé
-Le suivi de workflow offre une visibilité dans l'état d'exécution de workflow. L'exécution de workflow émet des enregistrements de suivi qui décrivent les événements de cycle de vie du workflow, les événements de cycle de vie de l'activité, la reprise de signet et les erreurs. Ces enregistrements de suivi sont consommés par les participants de suivi. Windows Workflow Foundation (WF) inclut un participant de suivi standard qui écrit des enregistrements de suivi en tant qu’événements de suivi d’événements pour Windows (ETW). Si cela ne répond pas à vos besoins, vous pouvez également écrire un participant de suivi personnalisé. Cette étape du didacticiel décrit comment créer un participant de suivi et un modèle de suivi qui capturent la sortie des activités de `WriteLine` afin qu'elles puissent être affichées à l'utilisateur.  
+Le suivi de workflow offre une visibilité dans l'état d'exécution de workflow. L'exécution de workflow émet des enregistrements de suivi qui décrivent les événements de cycle de vie du workflow, les événements de cycle de vie de l'activité, la reprise de signet et les erreurs. Ces enregistrements de suivi sont consommés par les participants de suivi. Windows Workflow Foundation (WF) comprend un participant de suivi standard qui écrit des enregistrements de suivi en tant qu’événements de Suivi d’v nements pour Windows (ETW). Si cela ne répond pas à vos besoins, vous pouvez également écrire un participant de suivi personnalisé. Cette étape du didacticiel décrit comment créer un participant de suivi et un modèle de suivi qui capturent la sortie des activités de `WriteLine` afin qu'elles puissent être affichées à l'utilisateur.  
   
 > [!NOTE]
->  Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d'abord terminer les rubriques précédentes. Pour télécharger une version complète ou consulter une procédure pas à pas vidéo du didacticiel, consultez [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976).  
+> Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d'abord terminer les rubriques précédentes. Pour télécharger une version complète ou afficher une vidéo pas à pas du didacticiel, consultez [Windows Workflow Foundation (WF45)-prise en main didacticiel](https://go.microsoft.com/fwlink/?LinkID=248976).  
   
 ## <a name="to-create-the-custom-tracking-participant"></a>Pour créer le participant de suivi personnalisé  
   
-1. Avec le bouton droit **NumberGuessWorkflowHost** dans **l’Explorateur de solutions** et choisissez **ajouter**, **classe**. Type `StatusTrackingParticipant` dans le **nom** , puis cliquez sur **ajouter**.  
+1. Cliquez avec le bouton droit sur **NumberGuessWorkflowHost** dans **Explorateur de solutions** , puis choisissez **Ajouter**, **classe**. Tapez `StatusTrackingParticipant` dans la zone **nom** , puis cliquez sur **Ajouter**.  
   
 2. Ajoutez les instructions `using` (ou `Imports`) suivantes au début du fichier avec les autres instructions `using` (ou `Imports`).  
   
@@ -92,11 +92,11 @@ Le suivi de workflow offre une visibilité dans l'état d'exécution de workflow
     }  
     ```  
   
-     Si aucun modèle de suivi n'est spécifié, le modèle de suivi par défaut est utilisé. Lorsque le modèle de suivi par défaut est utilisé, les enregistrements de suivi sont émis pour tous les `ActivityStates`. Étant donné que nous devons uniquement capturer le texte une seule fois pendant le cycle de vie de l'activité `WriteLine`, nous extrayons uniquement le texte de l'état `ActivityStates.Executing`. Dans [pour créer le modèle de suivi et inscrire le participant de suivi](#to-create-the-tracking-profile-and-register-the-tracking-participant), un profil de suivi est créé qui spécifie que seules `WriteLine` `ActivityStates.Executing` enregistrements de suivi sont émis.  
+     Si aucun modèle de suivi n'est spécifié, le modèle de suivi par défaut est utilisé. Lorsque le modèle de suivi par défaut est utilisé, les enregistrements de suivi sont émis pour tous les `ActivityStates`. Étant donné que nous devons uniquement capturer le texte une seule fois pendant le cycle de vie de l'activité `WriteLine`, nous extrayons uniquement le texte de l'état `ActivityStates.Executing`. Dans [pour créer le modèle de suivi et inscrire le participant de suivi](#to-create-the-tracking-profile-and-register-the-tracking-participant), un modèle de suivi est créé, `WriteLine` qui spécifie que seuls `ActivityStates.Executing` les enregistrements de suivi sont émis.  
   
 ## <a name="to-create-the-tracking-profile-and-register-the-tracking-participant"></a>Pour créer le modèle de suivi et inscrire le participant de suivi  
   
-1. Avec le bouton droit **WorkflowHostForm** dans **l’Explorateur de solutions** et choisissez **afficher le Code**.  
+1. Dans **Explorateur de solutions** , cliquez avec le bouton droit sur **WorkflowHostForm** , puis choisissez **afficher le code**.  
   
 2. Ajoutez l'instruction `using` (ou `Imports`) suivante au début du fichier avec les autres instructions `using` (ou `Imports`).  
   
@@ -217,7 +217,7 @@ Le suivi de workflow offre une visibilité dans l'état d'exécution de workflow
   
 ## <a name="to-display-the-tracking-information"></a>Pour afficher les informations de suivi  
   
-1. Avec le bouton droit **WorkflowHostForm** dans **l’Explorateur de solutions** et choisissez **afficher le Code**.  
+1. Dans **Explorateur de solutions** , cliquez avec le bouton droit sur **WorkflowHostForm** , puis choisissez **afficher le code**.  
   
 2. Dans le gestionnaire `InstanceId_SelectedIndexChanged`, ajoutez le code suivant immédiatement après le code qui supprime la fenêtre d'état.  
   
@@ -316,7 +316,7 @@ Le suivi de workflow offre une visibilité dans l'état d'exécution de workflow
   
 2. Appuyez sur Ctrl+F5 pour démarrer l'application.  
   
-3. Sélectionnez une plage pour le jeu d’estimation et le type de flux de travail pour démarrer, cliquez sur **nouveau jeu**. Entrez une proposition dans la **estimation** , puis cliquez sur **accédez** pour soumettre votre proposition. Notez que l'état du workflow est affiché dans la fenêtre d'état. Cette sortie est capturée à partir des activités `WriteLine`. Basculer vers un autre flux de travail en sélectionnant une à partir de la **Id d’Instance de flux de travail** zone de liste déroulante et notez que l’état du flux de travail en cours est supprimé. Revenez au workflow précédent et notez que le mode est restauré, semblable à l'exemple suivant.  
+3. Sélectionnez une plage pour le jeu d’estimation et le type de flux de travail à démarrer, puis cliquez sur **nouveau jeu**. Entrez une estimation dans la zone **deviner** , puis cliquez sur **OK** pour envoyer votre estimation. Notez que l'état du workflow est affiché dans la fenêtre d'état. Cette sortie est capturée à partir des activités `WriteLine`. Basculez vers un autre workflow en le sélectionnant dans la zone de liste déroulante **ID d’instance de workflow** et notez que l’état du flux de travail actuel est supprimé. Revenez au workflow précédent et notez que le mode est restauré, semblable à l'exemple suivant.  
   
     > [!NOTE]
     > Si vous basculez vers un workflow démarré avant activation du suivi, aucun état ne s'affiche. Mais si vous effectuez des propositions supplémentaires, leur état est enregistré, car le suivi est maintenant activé.  
@@ -328,11 +328,11 @@ Le suivi de workflow offre une visibilité dans l'état d'exécution de workflow
     ```
     
     > [!NOTE]
-    > Ces informations sont utiles pour déterminer la plage de nombres aléatoires, mais elles ne contiennent aucune information sur les propositions précédemment effectuées. Ces informations figurent dans l’étape suivante, [Comment : Héberger plusieurs Versions d’un Workflow côte à côte](how-to-host-multiple-versions-of-a-workflow-side-by-side.md).
+    > Ces informations sont utiles pour déterminer la plage de nombres aléatoires, mais elles ne contiennent aucune information sur les propositions précédemment effectuées. Ces informations se trouvent à l’étape suivante [, comment: Héberger plusieurs versions d’un flux de travail côte à](how-to-host-multiple-versions-of-a-workflow-side-by-side.md)côte.
 
     Notez l'ID d'instance de workflow, et exécutez le jeu jusqu'à son achèvement.
   
-4. Ouvrez l’Explorateur Windows et accédez à la **NumberGuessWorkflowHost\bin\debug** dossier (ou **bin\release** selon les paramètres du projet). Notez qu'en plus des fichiers exécutables du projet, il existe des fichiers avec les noms de fichiers GUID. Identifiez celui qui correspond à l'identificateur d'instance du workflow effectué à l'étape précédente et ouvrez-le dans le Bloc-notes. Les informations de suivi contiennent des informations semblables à celles qui suivent.  
+4. Ouvrez l’Explorateur Windows et accédez au dossier **NumberGuessWorkflowHost\bin\debug** (ou **bin\Release** selon les paramètres de votre projet). Notez qu'en plus des fichiers exécutables du projet, il existe des fichiers avec les noms de fichiers GUID. Identifiez celui qui correspond à l'identificateur d'instance du workflow effectué à l'étape précédente et ouvrez-le dans le Bloc-notes. Les informations de suivi contiennent des informations semblables à celles qui suivent.  
   
     ```output
     Please enter a number between 1 and 10
@@ -342,4 +342,4 @@ Le suivi de workflow offre une visibilité dans l'état d'exécution de workflow
     Please enter a number between 1 and 10
     ```
 
-    Outre l'absence de propositions de l'utilisateur, les données de suivi ne contiennent pas d'informations sur la proposition finale du workflow. C'est parce que les informations de suivi contiennent uniquement la sortie `WriteLine` du workflow, et le dernier message qui s'affiche est généré à partir du gestionnaire `Completed` après que le workflow est terminé. Dans l’étape suivante du didacticiel, [Comment : Héberger plusieurs Versions d’un Workflow côte à côte](how-to-host-multiple-versions-of-a-workflow-side-by-side.md), existant `WriteLine` activités sont modifiées pour afficher les propositions de l’utilisateur, ainsi qu’une autre `WriteLine` activité est ajoutée qui affiche les résultats finaux. Une fois ces modifications sont intégrées, [Comment : Héberger plusieurs Versions d’un Workflow côte à côte](how-to-host-multiple-versions-of-a-workflow-side-by-side.md) montre comment héberger plusieurs versions d’un flux de travail en même temps.
+    Outre l'absence de propositions de l'utilisateur, les données de suivi ne contiennent pas d'informations sur la proposition finale du workflow. C'est parce que les informations de suivi contiennent uniquement la sortie `WriteLine` du workflow, et le dernier message qui s'affiche est généré à partir du gestionnaire `Completed` après que le workflow est terminé. Dans l’étape suivante du didacticiel, [Comment: Héberger plusieurs versions d’un flux de travail côte à](how-to-host-multiple-versions-of-a-workflow-side-by-side.md)côte, les `WriteLine` activités existantes sont modifiées pour afficher les hypothèses de l’utilisateur et une activité `WriteLine` supplémentaire qui affiche les résultats finaux est ajoutée. Une fois ces modifications intégrées, [procédez comme suit: Héberger plusieurs versions d’un workflow côte à côte](how-to-host-multiple-versions-of-a-workflow-side-by-side.md) montre comment héberger plusieurs versions d’un flux de travail en même temps.

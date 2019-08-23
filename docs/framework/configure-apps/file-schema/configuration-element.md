@@ -8,14 +8,14 @@ helpviewer_keywords:
 - configuration element
 - container tags, <configuration> element
 ms.assetid: 2ec1c9dc-2e5c-4ef0-9958-81670ab88449
-ms.openlocfilehash: 9a7b25c74763c020c0e19c3f6099db9001acf773
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0e09ec49024b769c516fd97085904781f64b4486
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705413"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921244"
 ---
-# <a name="configuration-element"></a>\<configuration > élément
+# <a name="configuration-element"></a>\<élément de > de configuration
 
 Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.
 
@@ -31,32 +31,32 @@ ms.locfileid: "61705413"
 
 ## <a name="attributes"></a>Attributs
 
-Aucun.
+Aucun
 
 ## <a name="parent-element"></a>Élément parent
 
-Aucun.
+Aucun
 
 ## <a name="child-elements"></a>Éléments enfants
 
 |     | Description |
 | --- | ----------- |
-| [ **\<assemblyBinding>** ](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | Spécifie la stratégie de liaison de l’assembly au niveau de la configuration.|
-| [ **\<démarrage >** schéma des paramètres](~/docs/framework/configure-apps/file-schema/startup/index.md) | Tous les éléments du schéma des paramètres de démarrage. |
-| [ **\<runtime >** schéma des paramètres](~/docs/framework/configure-apps/file-schema/runtime/index.md) | Tous les éléments dans le schéma des paramètres d’exécution. |
-| [ **\<system.runtime.remoting>** Settings Schema](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/z415cf9a(v=vs.100)) | Tous les éléments dans le schéma de paramètres de communication à distance. |
-| [ **\<system.Net >** schéma des paramètres](~/docs/framework/configure-apps/file-schema/network/index.md) | Tous les éléments du schéma des paramètres réseau. |
-| [ **\<cryptographySettings >** schéma des paramètres](~/docs/framework/configure-apps/file-schema/cryptography/index.md) | Tous les éléments du schéma des paramètres de chiffrement. |
-| [ **\<configuration >** schéma des Sections](~/docs/framework/configure-apps/file-schema/configuration-sections-schema.md) | Tous les éléments dans le schéma de paramètres de section de configuration. |
-| [Schéma des paramètres de trace et de débogage](~/docs/framework/configure-apps/file-schema/trace-debug/index.md) | Tous les éléments du schéma des paramètres de trace et debug. |
-| [Schéma de paramètres de Configuration ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100)) | Tous les éléments dans le schéma de configuration ASP.NET, qui inclut des éléments de configuration des applications et sites Web ASP.NET. Utilisé dans *Web.config* fichiers. |
-| [ **\<webServices>** Settings Schema](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100)) | Tous les éléments du schéma des paramètres Web services. |
-| [Schéma des paramètres web](~/docs/framework/configure-apps/file-schema/web/index.md) | Tous les éléments du schéma des paramètres Web, qui inclut des éléments pour la configuration d'ASP.NET en vue d'une utilisation avec une application hôte telle qu'IIS. Utilisé dans *aspnet.config* fichiers. |
+| [ **\<assemblyBinding>** ](assemblybinding-element-for-configuration.md) | Spécifie la stratégie de liaison de l’assembly au niveau de la configuration.|
+| [schéma des paramètres de démarrage >  **\<** ](./startup/index.md) | Tous les éléments du schéma des paramètres de démarrage. |
+| [schéma des paramètres de > du runtime  **\<** ](./runtime/index.md) | Tous les éléments du schéma des paramètres d’exécution. |
+| [schéma des paramètres de **> System. Runtime. Remoting \<** ](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/z415cf9a(v=vs.100)) | Tous les éléments du schéma des paramètres de communication à distance. |
+| [schéma des paramètres **System .net > \<** ](./network/index.md) | Tous les éléments du schéma des paramètres réseau. |
+| [schéma des paramètres de > cryptographySettings  **\<** ](./cryptography/index.md) | Tous les éléments du schéma des paramètres de chiffrement. |
+| [schéma des sections de > de configuration  **\<** ](configuration-sections-schema.md) | Tous les éléments du schéma des paramètres de la section de configuration. |
+| [Schéma des paramètres de trace et de débogage](./trace-debug/index.md) | Tous les éléments du schéma des paramètres de trace et de débogage. |
+| [Schéma des paramètres de configuration de ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100)) | Tous les éléments du schéma de configuration ASP.NET, qui incluent des éléments pour la configuration des applications et des sites Web ASP.NET. Utilisé dans les fichiers *Web. config* . |
+| [schéma des paramètres WebServices >  **\<** ](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100)) | Tous les éléments du schéma des paramètres des services Web. |
+| [Schéma des paramètres web](./web/index.md) | Tous les éléments du schéma des paramètres Web, qui inclut des éléments pour la configuration d'ASP.NET en vue d'une utilisation avec une application hôte telle qu'IIS. Utilisé dans les fichiers *Aspnet. config* . |
 
 ## <a name="remarks"></a>Notes
 
-Chaque fichier de configuration doit contenir exactement un  **\<configuration >** élément.
+Chaque fichier de configuration doit contenir exactement  **\<** un élément de configuration >.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma de fichier de configuration pour le .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma du fichier de configuration pour le .NET Framework](index.md)

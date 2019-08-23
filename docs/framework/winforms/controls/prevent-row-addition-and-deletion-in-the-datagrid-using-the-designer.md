@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - DataGridView control [Windows Forms], preventing row addition or deletion
 ms.assetid: a17722bd-9400-41e6-8dcc-c9c151f0a749
-ms.openlocfilehash: 20f9b85dc48ccd634468d0fed000120723f8ee5c
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: f47eb29bf9ae077555f352d10c667bac4ade9373
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69038191"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968323"
 ---
 # <a name="how-to-prevent-row-addition-and-deletion-in-the-windows-forms-datagridview-control-using-the-designer"></a>Procédure : empêcher l’ajout et la suppression de lignes dans le contrôle DataGridView Windows Forms à l’aide du concepteur
 Vous pouvez vouloir empêcher les utilisateurs d'ajouter de nouvelles lignes de données à votre contrôle <xref:System.Windows.Forms.DataGridView> ou d'en supprimer des lignes existantes. Les nouvelles lignes sont entrées dans la ligne spéciale pour les nouveaux enregistrements en bas du contrôle. Lorsque vous désactivez l’ajout de lignes, la ligne des nouveaux enregistrements n’est pas affichée. Vous pouvez ensuite rendre le contrôle entièrement en lecture seule en désactivant la suppression de ligne et la modification de cellule.
@@ -21,7 +21,7 @@ Vous pouvez vouloir empêcher les utilisateurs d'ajouter de nouvelles lignes de 
 - Cliquez sur le glyphe de balise active (![glyphe de balise active](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) dans le <xref:System.Windows.Forms.DataGridView> coin supérieur droit du contrôle, puis désactivez les cases à cocher Activer l' **Ajout** et **activer la suppression** .
 
     > [!NOTE]
-    >  Pour rendre le contrôle entièrement en lecture seule, désactivez également la case à cocher **activer la modification** .
+    > Pour rendre le contrôle entièrement en lecture seule, désactivez également la case à cocher **activer la modification** .
 
 ## <a name="see-also"></a>Voir aussi
 

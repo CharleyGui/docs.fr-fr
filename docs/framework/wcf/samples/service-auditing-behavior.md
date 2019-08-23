@@ -2,18 +2,18 @@
 title: Service Auditing Behavior
 ms.date: 03/30/2017
 ms.assetid: 59bf0cda-e496-4418-a3a1-2f0f6e85f8ce
-ms.openlocfilehash: 1719db9749336d584627280aba3412557b164356
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6d5f254f4f94adfaeaf5632ddd696891af177e93
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787450"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964545"
 ---
 # <a name="service-auditing-behavior"></a>Service Auditing Behavior
-Cet exemple montre comment utiliser <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> pour activer l'audit des événements de sécurité pendant des opérations de service. Cet exemple est basé sur le [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md). Le service et le client ont été configurés à l’aide de la [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). Le `mode` attribut de la [ \<sécurité >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) a été défini sur `Message` et `clientCredentialType` a été défini sur `Windows`. Dans cet exemple, le client est une application console (.exe) et le service est hébergé par les services IIS (Internet Information Services).  
+Cet exemple montre comment utiliser <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> pour activer l'audit des événements de sécurité pendant des opérations de service. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md). Le service et le client ont été configurés à l’aide de la [ \<> WSHttpBinding](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). L' `mode` attribut de la [ \<> de sécurité](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) a été défini `Message` sur `clientCredentialType` et a été défini `Windows`sur. Dans cet exemple, le client est une application console (.exe) et le service est hébergé par les services IIS (Internet Information Services).  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
+> La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
  Le fichier de configuration de service utilise l'élément `serviceSecurityAudit` pour configurer l'audit.  
   
@@ -34,9 +34,9 @@ Cet exemple montre comment utiliser <xref:System.ServiceModel.Description.Servic
   
  Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console du client. Appuyez sur ENTER dans la fenêtre de console pour arrêter le client.  
   
- Les journaux d'audit résultants peuvent être consultés en exécutant l'Observateur d'événements. Par défaut, les événements d’audit peuvent être consultés sur Windows XP dans le journal d’application, tandis que sur Windows Server 2003 et Windows Vista, ils peuvent être consultés dans le journal de sécurité. Les événements d'audit peuvent être consultés sur Windows Server 2008 et Windows 7 dans les journaux d'application et de services. L’emplacement des événements d’audit peut être spécifié en définissant le `auditLogLocation` l’attribut « Application » ou « Sécurité ». Pour plus d'informations, voir [Procédure : Auditer les événements de sécurité](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md). Si les événements sont écrits dans le journal de sécurité LocalSecurityPolicy -> Qu'enable Object Access doit être définie pour « Success » et « Failure ».  
+ Les journaux d'audit résultants peuvent être consultés en exécutant l'Observateur d'événements. Par défaut, les événements d’audit peuvent être consultés sur Windows XP dans le journal d’application, tandis que sur Windows Server 2003 et Windows Vista, ils peuvent être consultés dans le journal de sécurité. Les événements d'audit peuvent être consultés sur Windows Server 2008 et Windows 7 dans les journaux d'application et de services. L’emplacement des événements d’audit peut être spécifié en affectant à l’attribut la `auditLogLocation` valeur «application» ou «Security». Pour plus d’informations, consultez [Guide pratique pour Auditer les](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)événements de sécurité. Si les événements sont écrits dans le journal de sécurité, LocalSecurityPolicy-> activer l’accès aux objets doit être défini pour «succès» et «échec».  
   
- Lors de la consultation du journal des événements, la source des événements d'audit est « ServiceModel Audit 3.0.0.0 ». Enregistrements d’audit authentification du message portent la catégorie « MessageAuthentication » tandis que les enregistrements d’audit d’autorisation du service portent la catégorie « ServiceAuthorization ».  
+ Lors de la consultation du journal des événements, la source des événements d'audit est « ServiceModel Audit 3.0.0.0 ». Les enregistrements d’audit d’authentification de message ont une catégorie «MessageAuthentication» tandis que les enregistrements d’audit d’autorisation de service ont une catégorie «ServiceAuthorization».  
   
  Les événements de l'audit d'authentification du message permettent de savoir si le message a été falsifié, s'il a expiré et si le client peut s'authentifier auprès du service. Ils fournissent des informations sur la réussite ou l'échec de l'authentification, l'identité du client, le point de terminaison auquel le message a été envoyé et l'action associée au message.  
   
@@ -44,11 +44,11 @@ Cet exemple montre comment utiliser <xref:System.ServiceModel.Description.Servic
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
 2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Pour exécuter l’exemple dans une configuration unique ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -30,12 +30,12 @@ helpviewer_keywords:
 - Is operator [Visual Basic]
 - comparison operators [Visual Basic], Visual Basic
 ms.assetid: d6cb12a8-e52e-46a7-8aaf-f804d634a825
-ms.openlocfilehash: 10558563b528ce0bae3f77f31a97a217018f455f
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: ddb07bdf5f67e281847082ba4487568e9ba3c9f5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666824"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962232"
 ---
 # <a name="comparison-operators-visual-basic"></a>Opérateurs de comparaison (Visual Basic)
 Voici les opérateurs de comparaison définis dans Visual Basic.
@@ -100,7 +100,7 @@ result = string Like pattern
 |`<>`(Différent de)|`expression1` <> `expression2`|`expression1` = `expression2`|
 
 > [!NOTE]
->  L' [opérateur =](../../../visual-basic/language-reference/operators/assignment-operator.md) est également utilisé comme opérateur d’assignation.
+> L' [opérateur =](../../../visual-basic/language-reference/operators/assignment-operator.md) est également utilisé comme opérateur d’assignation.
 
  L' `Is` opérateur, l' `IsNot` opérateur et l' `Like` opérateur ont des fonctionnalités de comparaison spécifiques qui diffèrent des opérateurs dans le tableau précédent.
 
@@ -143,7 +143,7 @@ result = string Like pattern
 
  Notez que l' [opérateur =](../../../visual-basic/language-reference/operators/assignment-operator.md) peut être surchargé uniquement comme un opérateur de comparaison relationnel, et non comme un opérateur d’assignation.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
  L’exemple suivant illustre différentes utilisations des opérateurs de comparaison relationnelles, que vous utilisez pour comparer des expressions. Les opérateurs de comparaison relationnels `Boolean` retournent un résultat qui indique si l’expression indiquée prend `True`la valeur. Lorsque vous appliquez les `>` opérateurs `<` et à des chaînes, la comparaison s’effectue à l’aide de l’ordre de tri alphabétique normal des chaînes. Cet ordre peut dépendre de vos paramètres régionaux. Le fait que le tri respecte la casse ou non dépend du paramètre [option compare](../../../visual-basic/language-reference/statements/option-compare-statement.md) .
 
  [!code-vb[VbVbalrOperators#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#1)]

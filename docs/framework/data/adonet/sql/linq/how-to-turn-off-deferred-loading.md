@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1b84b852-3cad-41a7-8077-149a70d50c8b
-ms.openlocfilehash: f82e347ecdb3c69cee3749855d1e4cb457a460f6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f68db5a5a0092fc4cf37746f2a4dc81e40ee4a9d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033611"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938674"
 ---
 # <a name="how-to-turn-off-deferred-loading"></a>Procédure : Désactiver le chargement différé
-Vous pouvez désactiver le chargement différé en affectant la valeur <xref:System.Data.Linq.DataContext.DeferredLoadingEnabled%2A> à `false`. Pour plus d’informations, consultez [différée / le chargement immédiat](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md).  
+Vous pouvez désactiver le chargement différé en affectant la valeur <xref:System.Data.Linq.DataContext.DeferredLoadingEnabled%2A> à `false`. Pour plus d’informations, consultez [différé et chargement immédiat](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md).  
   
 > [!NOTE]
->  Le chargement différé est désactivé lorsque le suivi d'objet est désactivé. Pour plus d'informations, voir [Procédure : Récupérer des informations en lecture seule](../../../../../../docs/framework/data/adonet/sql/linq/how-to-retrieve-information-as-read-only.md).  
+> Le chargement différé est désactivé lorsque le suivi d'objet est désactivé. Pour plus d’informations, consultez [Guide pratique pour Récupérez les informations en lecture](../../../../../../docs/framework/data/adonet/sql/linq/how-to-retrieve-information-as-read-only.md)seule.  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant montre comment désactiver le chargement différé en affectant la valeur <xref:System.Data.Linq.DataContext.DeferredLoadingEnabled%2A> à `false`.  

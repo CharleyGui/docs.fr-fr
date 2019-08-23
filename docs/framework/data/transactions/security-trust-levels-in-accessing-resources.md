@@ -2,31 +2,31 @@
 title: Niveaux de confiance de sécurité dans l'accès aux ressources
 ms.date: 03/30/2017
 ms.assetid: fb5be924-317d-4d69-b33a-3d18ecfb9d6e
-ms.openlocfilehash: 847467b964e86f6d13be6ba103162512270fa684
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4cd229737d7569afe84d945dce0fbb6867f3ef76
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64596756"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948717"
 ---
 # <a name="security-trust-levels-in-accessing-resources"></a>Niveaux de confiance de sécurité dans l'accès aux ressources
 Cette rubrique présente la restriction de l'accès aux types de ressources exposés par <xref:System.Transactions>.  
   
  Il existe trois niveaux de confiance principaux pour <xref:System.Transactions>. Les niveaux de confiance sont définis d'après les types de ressources que <xref:System.Transactions> expose et le niveau de confiance nécessaire pour accéder à ces ressources. Les ressources auxquelles <xref:System.Transactions> donne accès sont la mémoire système, les ressources partagées au niveau du processus et les ressources système. Ces niveaux sont les suivants :  
   
-- **AllowPartiallyTrustedCallers** (APTCA) pour les applications utilisant des transactions au sein d’un seul domaine d’application.  
+- **AllowPartiallyTrustedCallers** (APTCA) pour les applications utilisant des transactions au sein d’un domaine d’application unique.  
   
-- **DistributedTransactionPermission** (DTP) pour les applications utilisant des transactions distribuées.  
+- **DistributedTransactionPermission** (PAO) pour les applications utilisant des transactions distribuées.  
   
 - Confiance totale pour les ressources durables, les applications de gestion de configuration et les applications d'interopérabilité héritées.  
   
 > [!NOTE]
->  N'appelez pas les interfaces inscrites avec des contextes personnifiés.  
+> N'appelez pas les interfaces inscrites avec des contextes personnifiés.  
   
 ## <a name="trust-levels"></a>Niveaux de confiance  
   
 ### <a name="aptca-partial-trust"></a>APTCA (confiance partielle)  
- Le <xref:System.Transactions> assembly peut être appelé par du code partiellement fiable, car il a été marqué avec la **AllowPartiallyTrustedCallers** attribut (APTCA). Cet attribut supprime essentiellement l’implicite <xref:System.Security.Permissions.SecurityAction.LinkDemand> pour le **FullTrust** jeu d’autorisations qui est habituellement automatiquement placé dans chaque méthode publiquement accessible dans chaque type. Toutefois, certains types et membres requièrent encore des autorisations plus élevées.  
+ L' <xref:System.Transactions> assembly peut être appelé par du code d’un niveau de confiance partiel, car il a été marqué avec l’attribut **AllowPartiallyTrustedCallers** (APTCA). Cet attribut supprime essentiellement le implicite <xref:System.Security.Permissions.SecurityAction.LinkDemand> pour le jeu d’autorisations **FullTrust** qui, sinon, est automatiquement placé sur chaque méthode accessible publiquement dans chaque type. Toutefois, certains types et membres requièrent encore des autorisations plus élevées.  
   
  L'attribut APTCA permet aux applications d'utiliser des transactions en confiance partielle au sein d'un domaine d'application unique. Cela active les transactions non remontées et les inscriptions volatiles qui peuvent être utilisées pour la gestion des erreurs. Une table de hachage traitée et l'application qui l'utilise en sont des exemples. Il est possible d'ajouter ou de supprimer des données de la table de hachage sous une seule transaction. En cas de restauration ultérieure de la transaction, toutes les modifications apportées à la table de hachage sous cette transaction peuvent être annulées.  
   
@@ -38,11 +38,11 @@ Cette rubrique présente la restriction de l'accès aux types de ressources expo
   
  Pour activer la récupération, ce type d'application est capable de consommer de façon permanente des ressources système. Cela est dû au fait que le gestionnaire de transactions récupérables doit mémoriser les transactions qui ont été validées jusqu'à ce qu'il soit en mesure de confirmer que tous les gestionnaires de ressources durables participant à la transaction ont reçu le résultat. Par conséquent, ce type d'application requiert une confiance totale et ne doit pas être exécuté sans que ce niveau de confiance n'ait été accordé.  
   
- Pour plus d’informations sur les inscriptions durables et la récupération, consultez le [l’inscription de ressources comme Participants à une Transaction](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md) et [exécution de la récupération](../../../../docs/framework/data/transactions/performing-recovery.md) rubriques.  
+ Pour plus d’informations sur les inscriptions durables et la récupération, consultez les rubriques [inscription de ressources en tant que participants dans une transaction](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md) et exécution de la [récupération](../../../../docs/framework/data/transactions/performing-recovery.md) .  
   
  Les applications qui effectuent un travail d'interopérabilité héritée avec COM+ sont également requises pour une confiance totale.  
   
- Voici une liste de types et membres qui ne sont pas partiellement pouvant être appelés par le code fiable, car elles sont décorées avec le **FullTrust** attribut de sécurité déclarative :  
+ La liste suivante répertorie les types et les membres qui ne peuvent pas être appelés par du code d’un niveau de confiance partiel, car ils sont décorés avec l’attribut de sécurité déclarative **FullTrust** :  
   
  `PermissionSetAttribute(SecurityAction.LinkDemand, Name := "FullTrust")`  
   
@@ -62,4 +62,4 @@ Cette rubrique présente la restriction de l'accès aux types de ressources expo
   
 - <xref:System.Transactions.TransactionScope.%23ctor%28System.Transactions.TransactionScopeOption%2CSystem.Transactions.TransactionOptions%2CSystem.Transactions.EnterpriseServicesInteropOption%29>  
   
- Seul l’appelant immédiat est nécessaire pour disposer le **FullTrust** jeu d’autorisations à utiliser les types ou les méthodes ci-dessus.
+ Seul l’appelant immédiat est tenu de posséder l’autorisation **FullTrust** définie pour utiliser les types ou les méthodes ci-dessus.

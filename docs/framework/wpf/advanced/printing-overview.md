@@ -15,12 +15,12 @@ helpviewer_keywords:
 - XPSDrv-based printers
 - GDI print path [WPF]
 ms.assetid: 0de8ac41-9aa6-413d-a121-7aa6f41539b1
-ms.openlocfilehash: be82b64581ee178b463950d4b8cdae1f98949161
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: 43b0ddc8f683e7069207bbb1c47af73976bc4a5a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545305"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69958545"
 ---
 # <a name="printing-overview"></a>Vue d'ensemble de l'impression
 Avec Microsoft .NET Framework, les développeurs d’applications qui utilisent Windows Presentation Foundation (WPF) disposent d’un nouvel ensemble riche d’API de gestion de système d’impression et d’impression. Avec [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)], certaines de ces améliorations du système d'impression sont aussi accessibles aux développeurs créant des applications [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] et à ceux utilisant du code non managé. Le nouveau format de fichier [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] et le chemin d'impression [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] sont au cœur de cette nouvelle fonctionnalité.  
@@ -35,11 +35,11 @@ Avec Microsoft .NET Framework, les développeurs d’applications qui utilisent 
   
 <a name="XPS_print_path_intro"></a>   
 ## <a name="xps-print-path"></a>Chemin d'impression XPS  
- Le chemin d’impression XPS (XML Paper Specification) est une [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] nouvelle fonctionnalité qui redéfinit la façon dont l’impression est gérée dans les applications Windows. Comme [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] peut remplacer un langage de présentation de document (tel que RTF), un format de spouleur d’impression (tel que WMF) et un langage de description de page (tel que PCL ou PostScript); le nouveau chemin d’impression conserve le format XPS de la publication d’application vers le traitement final dans le pilote d’impression ou le périphérique.  
+ Le chemin d’impression XPS (XML Paper Specification) est une nouvelle fonctionnalité de Windows qui redéfinit la façon dont l’impression est gérée dans les applications Windows. Comme [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] peut remplacer un langage de présentation de document (tel que RTF), un format de spouleur d’impression (tel que WMF) et un langage de description de page (tel que PCL ou PostScript); le nouveau chemin d’impression conserve le format XPS de la publication d’application vers le traitement final dans le pilote d’impression ou le périphérique.  
   
  Le chemin d’impression XPS repose sur le modèle de pilote d’imprimante XPS (XPSDrv), qui offre plusieurs avantages aux développeurs [!INCLUDE[TLA#tla_wys](../../../../includes/tlasharptla-wys-md.md)] , tels que l’impression, la prise en charge améliorée des couleurs et des performances d’impression nettement améliorées. (Pour plus d’informations sur XPSDrv, consultez la [documentation du kit de pilotes Windows](/windows-hardware/drivers/).)  
   
- Le fonctionnement du spouleur d’impression pour les documents XPS est fondamentalement le même que dans les versions précédentes de Windows. Toutefois, il a été amélioré pour prendre en charge le chemin d’impression XPS en plus du chemin d’impression GDI existant. Le nouveau chemin d’impression utilise en mode natif un fichier de mise en file d’attente XPS. Alors que les pilotes d’imprimante en mode utilisateur écrits pour [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] les versions précédentes de continuent de fonctionner, un pilote d’imprimante XPS (XPSDrv) est nécessaire pour pouvoir utiliser le chemin d’impression XPS.  
+ Le fonctionnement du spouleur d’impression pour les documents XPS est fondamentalement le même que dans les versions précédentes de Windows. Toutefois, il a été amélioré pour prendre en charge le chemin d’impression XPS en plus du chemin d’impression GDI existant. Le nouveau chemin d’impression utilise en mode natif un fichier de mise en file d’attente XPS. Alors que les pilotes d’imprimante en mode utilisateur écrits pour les versions précédentes de Windows continuent de fonctionner, un pilote d’imprimante XPS (XPSDrv) est nécessaire pour pouvoir utiliser le chemin d’impression XPS.  
   
  Les avantages du chemin d’impression XPS sont significatifs et incluent:  
   

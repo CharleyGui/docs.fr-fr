@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 257011562a9ea687ef70b842c6d47219283e158e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5dce4f5859568c1288610e171286a5919dc8b19b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61988025"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962427"
 ---
 # <a name="icordebugmodule-interface"></a>ICorDebugModule, interface
 
@@ -32,18 +32,18 @@ Représente un module common language runtime (CLR), qui est un fichier exécuta
 |Méthode|Description|  
 |------------|-----------------|  
 |[CreateBreakpoint, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-createbreakpoint-method.md)|Non implémenté.|  
-|[EnableClassLoadCallbacks, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-enableclassloadcallbacks-method.md)|Détermine si le [ICorDebugManagedCallback::LoadClass](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) et [ICorDebugManagedCallback::UnloadClass](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadclass-method.md) sont appelés pour ce module.|  
-|[EnableJITDebugging, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-enablejitdebugging-method.md)|Détermine si le compilateur juste-à-temps (JIT) conserve des informations de débogage pour les méthodes de ce module.|  
-|[GetAssembly, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getassembly-method.md)|Obtient l’assembly conteneur de ce module.|  
+|[EnableClassLoadCallbacks, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-enableclassloadcallbacks-method.md)|Détermine si les rappels [ICorDebugManagedCallback:: LoadClass](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) et [ICorDebugManagedCallback:: UnloadClass](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-unloadclass-method.md) sont appelés pour ce module.|  
+|[EnableJITDebugging, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-enablejitdebugging-method.md)|Détermine si le compilateur juste-à-temps (JIT) préserve les informations de débogage pour les méthodes dans ce module.|  
+|[GetAssembly, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getassembly-method.md)|Obtient l’assembly conteneur pour ce module.|  
 |[GetBaseAddress, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getbaseaddress-method.md)|Obtient l’adresse de base du module.|  
 |[GetClassFromToken, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getclassfromtoken-method.md)|Obtient la ICorDebugClass à partir des métadonnées.|  
-|[GetEditAndContinueSnapshot, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-geteditandcontinuesnapshot-method.md)|Obsolète.|  
+|[GetEditAndContinueSnapshot, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-geteditandcontinuesnapshot-method.md)|Action déconseillée.|  
 |[GetFunctionFromRVA, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getfunctionfromrva-method.md)|Non implémenté.|  
-|[GetFunctionFromToken, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getfunctionfromtoken-method.md)|Obtient la fonction qui est spécifiée par le jeton de métadonnées.|  
+|[GetFunctionFromToken, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getfunctionfromtoken-method.md)|Obtient la fonction spécifiée par le jeton de métadonnées.|  
 |[GetGlobalVariableValue, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getglobalvariablevalue-method.md)|Obtient un objet de valeur pour la variable globale spécifiée.|  
-|[GetMetaDataInterface, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getmetadatainterface-method.md)|Obtient un pointeur d’interface de métadonnées qui peut être utilisé pour examiner les métadonnées pour le module.|  
+|[GetMetaDataInterface, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getmetadatainterface-method.md)|Obtient un pointeur d’interface de métadonnées qui peut être utilisé pour examiner les métadonnées du module.|  
 |[GetName, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getname-method.md)|Obtient le nom de fichier du module.|  
-|[GetProcess, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getprocess-method.md)|Obtient le processus contenant de ce module.|  
+|[GetProcess, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getprocess-method.md)|Obtient le processus conteneur pour ce module.|  
 |[GetSize, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getsize-method.md)|Obtient la taille du module en octets.|  
 |[GetToken, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-gettoken-method.md)|Obtient le jeton pour l’entrée de table pour ce module.|  
 |[IsDynamic, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-isdynamic-method.md)|Indique si le module est dynamique.|  
@@ -52,14 +52,14 @@ Représente un module common language runtime (CLR), qui est un fichier exécuta
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
->  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
+> Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

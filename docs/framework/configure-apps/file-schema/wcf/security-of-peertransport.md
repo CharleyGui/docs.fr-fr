@@ -2,14 +2,14 @@
 title: <security> de <peerTransport>
 ms.date: 03/30/2017
 ms.assetid: f73634ed-f896-4968-bf74-5e5ac52d3b6b
-ms.openlocfilehash: 1aff79bf5867a3a1ebe05e3f812475dac4b413e9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bdd3b236c9bae198f8027c4ca0c0fa5b70d30342
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670493"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936640"
 ---
-# <a name="security-of-peertransport"></a>\<sécurité > de \<peerTransport >
+# <a name="security-of-peertransport"></a>\<> de sécurité \<de peerTransport >
 Contient les paramètres de sécurité associés à un canal homologue, y compris le type d'authentification utilisé et la sécurité utilisée pour le transport de messages.  
   
  \<system.serviceModel>  
@@ -17,7 +17,7 @@ Contient les paramètres de sécurité associés à un canal homologue, y compri
 \<customBinding>  
 \<binding>  
 \<peerTransport>  
-\<security>  
+\<> de sécurité  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,7 +38,7 @@ Contient les paramètres de sécurité associés à un canal homologue, y compri
   
 ## <a name="mode-attribute"></a>Attribut Mode  
   
-|Value|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |`None`|La sécurité est désactivée.|  
 |`Transport`|La sécurité est fournie à l'aide de HTTPS.|  
@@ -49,23 +49,23 @@ Contient les paramètres de sécurité associés à un canal homologue, y compri
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<transport>](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-peertransport.md)|Définit un transport d’homologue pour une liaison personnalisée. Cet élément dispose d'un attribut `clientCredentialType` qui spécifie les informations d'identification à utiliser lors de l'interaction avec un service. Cet attribut est de type <xref:System.ServiceModel.PeerTransportCredentialType>.<br /><br /> Cet élément est de type <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement>.|  
+|[\<transport>](transport-of-peertransport.md)|Définit un transport d’homologue pour une liaison personnalisée. Cet élément dispose d'un attribut `clientCredentialType` qui spécifie les informations d'identification à utiliser lors de l'interaction avec un service. Cet attribut est de type <xref:System.ServiceModel.PeerTransportCredentialType>.<br /><br /> Cet élément est de type <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<peerTransport>](../../../../../docs/framework/configure-apps/file-schema/wcf/peertransport.md)|Définit un transport d’homologue pour une liaison personnalisée.|  
+|[\<peerTransport>](peertransport.md)|Définit un transport d’homologue pour une liaison personnalisée.|  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.Configuration.PeerSecurityElement>
 - <xref:System.ServiceModel.PeerSecuritySettings>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Sécurité de transport](../../../../../docs/framework/wcf/feature-details/transport-security.md)
-- [Transports](../../../../../docs/framework/wcf/feature-details/transports.md)
-- [Choix d’un transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
-- [Liaisons](../../../../../docs/framework/wcf/bindings.md)
-- [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Sécurité de transport](../../../wcf/feature-details/transport-security.md)
+- [Transports](../../../wcf/feature-details/transports.md)
+- [Choix d’un transport](../../../wcf/feature-details/choosing-a-transport.md)
+- [Liaisons](../../../wcf/bindings.md)
+- [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
+- [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)

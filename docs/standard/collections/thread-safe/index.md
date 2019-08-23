@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 2e7ca21f-786c-4367-96be-0cf3f3dcc6bd
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0bc333a828a9d18cd5ad98af42a91c1d53c2569b
-ms.sourcegitcommit: 5ae6affa0b171be3bb5f4729fb68ea4fe799f959
+ms.openlocfilehash: 4c7ffa98aec115db2d8c9a40e977f8cb7d33441a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2019
-ms.locfileid: "66816207"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962990"
 ---
 # <a name="thread-safe-collections"></a>Collections thread-safe
 .NET Framework 4 introduit l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType>, qui contient plusieurs classes de collection qui sont à la fois thread-safe et scalables. Plusieurs threads peuvent, sans risque et de façon efficace, ajouter ou supprimer des éléments dans ces collections, sans nécessiter une synchronisation supplémentaire dans le code utilisateur. Quand vous écrivez du code, utilisez des classes de collections simultanées si plusieurs threads écrivent en même temps dans la collection. Si vous lisez seulement dans une collection partagée, vous pouvez utiliser les classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType>. Nous vous recommandons de ne pas utiliser les classes de collections 1.0, à moins que vous ne deviez cibler le runtime .NET Framework 1.1 ou une version antérieure.  
@@ -30,7 +30,7 @@ ms.locfileid: "66816207"
  Les classes <xref:System.Collections.Concurrent.ConcurrentQueue%601> et <xref:System.Collections.Concurrent.ConcurrentStack%601> n’utilisent pas de verrous du tout. Au lieu de cela, elles s’appuient sur des opérations <xref:System.Threading.Interlocked> pour assurer la cohérence des threads.  
   
 > [!NOTE]
->  Étant donné que les classes de collections simultanées prennent en charge <xref:System.Collections.ICollection>, elles fournissent des implémentations pour les propriétés <xref:System.Collections.ICollection.IsSynchronized%2A> et <xref:System.Collections.ICollection.SyncRoot%2A>, bien que ces propriétés ne soient pas pertinentes. `IsSynchronized` retourne toujours `false` et `SyncRoot` a toujours la valeur `null` (`Nothing` dans Visual Basic).  
+> Étant donné que les classes de collections simultanées prennent en charge <xref:System.Collections.ICollection>, elles fournissent des implémentations pour les propriétés <xref:System.Collections.ICollection.IsSynchronized%2A> et <xref:System.Collections.ICollection.SyncRoot%2A>, bien que ces propriétés ne soient pas pertinentes. `IsSynchronized` retourne toujours `false` et `SyncRoot` a toujours la valeur `null` (`Nothing` dans Visual Basic).  
   
  Le tableau suivant répertorie les types de collections dans l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType>.  
   

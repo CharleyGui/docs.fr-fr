@@ -2,22 +2,22 @@
 title: 'Procédure : Partitionnement des données du service'
 ms.date: 03/30/2017
 ms.assetid: 1ccff72e-d76b-4e36-93a2-e51f7b32dc83
-ms.openlocfilehash: 17cb80bf253491eb563d6fd45b5997e452f542e1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 49aefd88d73732a139a79f8c53d5beca44d4d4ba
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62047527"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947871"
 ---
 # <a name="how-to-service-data-partitioning"></a>Procédure : Partitionnement des données du service
-Cette rubrique présente les étapes de base requises pour partitionner des messages entre plusieurs instances du même service de destination. Le partitionnement des données du service est en général utilisé pour faire évoluer un service vers une meilleure qualité ou pour gérer les demandes de différents clients de manière spécifique. Par exemple, les messages à partir de valeur élevée ou les clients « Gold » devront peut-être être traités avec une priorité plus élevée que les messages à partir d’un client standard.  
+Cette rubrique présente les étapes de base requises pour partitionner des messages entre plusieurs instances du même service de destination. Le partitionnement des données du service est en général utilisé pour faire évoluer un service vers une meilleure qualité ou pour gérer les demandes de différents clients de manière spécifique. Par exemple, les messages de clients de valeur élevée ou «Gold» peuvent avoir besoin d’être traités avec une priorité plus élevée que les messages d’un client standard.  
   
  Dans cet exemple, les messages sont routés vers l'une des deux instances du service regularCalc. Les deux instances du service sont identiques ; toutefois, le service représenté par le point de terminaison calculator1 traite les messages provenant de clients importants et le point de terminaison calculator2 traite les messages des autres clients.  
   
  Le message envoyé par le client ne possède aucune donnée unique qui permette d'identifier l'instance du service vers laquelle le message doit être routé. Pour permettre à chaque client de router des données vers un service de destination spécifique, nous allons implémenter deux points de terminaison de service qui serviront à recevoir les messages.  
   
 > [!NOTE]
->  Bien que cet exemple utilise des points de terminaison spécifiques pour partitionner des données, le même résultat pourrait être obtenu en utilisant des informations contenues dans le message lui-même, comme un en-tête ou des données dans le corps.  
+> Bien que cet exemple utilise des points de terminaison spécifiques pour partitionner des données, le même résultat pourrait être obtenu en utilisant des informations contenues dans le message lui-même, comme un en-tête ou des données dans le corps.  
   
 ### <a name="implement-service-data-partitioning"></a>Implémenter le partitionnement des données du service  
   
@@ -85,7 +85,7 @@ Cette rubrique présente les étapes de base requises pour partitionner des mess
     </filterTables>  
     ```  
   
-4. Pour évaluer les messages entrants en fonction des filtres contenus dans la table, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage. L’exemple suivant illustre l’association de « filterTable1 » aux points de terminaison de service :  
+4. Pour évaluer les messages entrants en fonction des filtres contenus dans la table, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage. L’exemple suivant illustre l’Association de «filterTable1» aux points de terminaison de service:  
   
     ```xml  
     <behaviors>  

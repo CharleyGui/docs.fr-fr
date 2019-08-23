@@ -9,12 +9,12 @@ helpviewer_keywords:
 - multicast event delegates
 - Windows Forms controls, events
 ms.assetid: 814a6a43-a312-4791-88d8-f75f9a4f8c4c
-ms.openlocfilehash: fddb51bfe998c360ca418374b119ec12f25b0fad
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 92942066b5f08ada0154781ae54b5d8494944ca1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052290"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963474"
 ---
 # <a name="events-overview-windows-forms"></a>Vue d'ensemble des événements (Windows Forms)
 Un événement est une action à laquelle vous pouvez répondre ou que vous pouvez « gérer » dans le code. Les événements peuvent être déclenchés par une action de l'utilisateur (quand il clique sur un bouton de la souris ou appuie sur une touche), par le code d'un programme ou par le système.
@@ -24,16 +24,16 @@ Un événement est une action à laquelle vous pouvez répondre ou que vous pouv
  Les types d'événements déclenchés par un objet sont divers, mais bon nombre d'entre eux sont communs à la plupart des contrôles. Par exemple, la plupart des objets peuvent gérer un événement <xref:System.Windows.Forms.Control.Click>. Si un utilisateur clique sur un formulaire, le code du gestionnaire de l'événement <xref:System.Windows.Forms.Control.Click> de ce dernier est exécuté.
 
 > [!NOTE]
->  De nombreux événements se produisent conjointement à d'autres événements. Par exemple, les événements <xref:System.Windows.Forms.Control.DoubleClick>, <xref:System.Windows.Forms.Control.MouseDown> et <xref:System.Windows.Forms.Control.MouseUp> se produisent en même temps que l'événement <xref:System.Windows.Forms.Control.Click>.
+> De nombreux événements se produisent conjointement à d'autres événements. Par exemple, les événements <xref:System.Windows.Forms.Control.DoubleClick>, <xref:System.Windows.Forms.Control.MouseDown> et <xref:System.Windows.Forms.Control.MouseUp> se produisent en même temps que l'événement <xref:System.Windows.Forms.Control.Click>.
 
- Pour plus d’informations sur comment déclencher et consommer un événement, consultez [événements](../../standard/events/index.md).
+ Pour plus d’informations sur la façon de déclencher et de consommer un événement, consultez [événements](../../standard/events/index.md).
 
 ## <a name="delegates-and-their-role"></a>Rôle des délégués
- Les délégués sont des classes couramment utilisées dans le .NET Framework pour générer des mécanismes de gestion des événements. Les délégués à peu près équivalents aux pointeurs de fonction, couramment utilisés dans Visual C++ et d’autres langages orientés objet. Toutefois à la différence des pointeurs de fonction, les délégués sont orientés objet, de type sécurisé et sûrs. De plus, alors qu'un pointeur de fonction ne contient qu'une référence à une fonction spécifique, un délégué consiste en une référence à un objet et des références à une ou plusieurs méthodes de cet objet.
+ Les délégués sont des classes couramment utilisées dans le .NET Framework pour créer des mécanismes de gestion des événements. Les délégués sont à peu près équivalents aux pointeurs de fonction C++ , couramment utilisés dans des langages visuels et d’autres langages orientés objet. Toutefois à la différence des pointeurs de fonction, les délégués sont orientés objet, de type sécurisé et sûrs. De plus, alors qu'un pointeur de fonction ne contient qu'une référence à une fonction spécifique, un délégué consiste en une référence à un objet et des références à une ou plusieurs méthodes de cet objet.
 
- Ce modèle d’événement utilise *délégués* pour lier les événements aux méthodes servant à les gérer. Le délégué permet aux autres classes de s'inscrire pour la notification d'événement en spécifiant une méthode de gestionnaire. Quand l'événement se produit, le délégué appelle la méthode liée. Pour plus d’informations sur la façon de définir des délégués, consultez [événements](../../standard/events/index.md).
+ Ce modèle d’événement utilise des *délégués* pour lier des événements aux méthodes utilisées pour les gérer. Le délégué permet aux autres classes de s'inscrire pour la notification d'événement en spécifiant une méthode de gestionnaire. Quand l'événement se produit, le délégué appelle la méthode liée. Pour plus d’informations sur la façon de définir des délégués, consultez [événements](../../standard/events/index.md).
 
- Les délégués peuvent être liés à une ou plusieurs méthodes (ou multidiffusion). Lorsque vous créez un délégué pour un événement, vous (ou le Windows) créez généralement un événement multidiffusion. Il existe cependant une exception à cette règle : quand un événement déclenche une procédure particulière (par exemple, l'affichage d'une boîte de dialogue) qui logiquement ne se répéterait pas plusieurs fois par événement. Pour plus d’informations sur la création d’un délégué multicast, consultez [Comment : Combiner des délégués (délégués Multicast)](~/docs/csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md).
+ Les délégués peuvent être liés à une ou plusieurs méthodes (ou multidiffusion). Lorsque vous créez un délégué pour un événement, vous (ou les fenêtres) créez généralement un événement de multidiffusion. Il existe cependant une exception à cette règle : quand un événement déclenche une procédure particulière (par exemple, l'affichage d'une boîte de dialogue) qui logiquement ne se répéterait pas plusieurs fois par événement. Pour plus d’informations sur la création d’un délégué multicast [, consultez Procédure: Combiner des délégués (délégués multicast](../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)).
 
  Un délégué multidiffusion tient à jour une liste d'appel des méthodes auxquelles il est lié. Celui-ci prend en charge une méthode <xref:System.Delegate.Combine%2A> pour ajouter une méthode à la liste d'appel et une méthode <xref:System.Delegate.Remove%2A> pour la supprimer.
 

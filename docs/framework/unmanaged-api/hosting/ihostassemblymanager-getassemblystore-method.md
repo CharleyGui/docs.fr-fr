@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 194b40b0873cee848124a5afc9a47740d59969c8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 62965fa928522052b6885769e02c0211ca8d3fe0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779454"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937932"
 ---
 # <a name="ihostassemblymanagergetassemblystore-method"></a>IHostAssemblyManager::GetAssemblyStore, méthode
 Obtient un pointeur d’interface vers un [IHostAssemblyStore](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md) qui représente la liste des assemblys chargés par l’hôte.  
@@ -37,32 +37,32 @@ HRESULT GetAssemblyStore (
   
 ## <a name="parameters"></a>Paramètres  
  `ppAssemblyStore`  
- [out] Un pointeur de fonction vers une `IHostAssemblyStore` de l’instance, ou null si l’hôte n’implémente pas `IHostAssemblyStore`.  
+ à Pointeur de fonction vers une `IHostAssemblyStore` instance, ou null, si l’hôte n’implémente `IHostAssemblyStore`pas.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`GetAssemblyStore` retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel a expiré.|  
+|S_OK|`GetAssemblyStore`retourné avec succès.|  
+|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread bloqué ou Fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode retourne E_FAIL, le CLR n’est plus utilisable au sein du processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
-|E_NOINTERFACE|L’hôte ne fournit pas une implémentation de `IHostAssemblyStore`.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|E_NOINTERFACE|L’hôte ne fournit pas d’implémentation de `IHostAssemblyStore`.|  
   
 ## <a name="remarks"></a>Notes  
- `IHostAssemblyStore` Fournit des méthodes qui permettent à un hôte à lier aux assemblys et aux modules indépendamment du CLR. Hôtes fournissent généralement des magasins pour autoriser des assemblys à charger à partir d’autres formats que le système de fichiers.  
+ `IHostAssemblyStore`fournit des méthodes qui permettent à un hôte de se lier à des assemblys et des modules indépendamment du CLR. Les hôtes fournissent généralement des magasins d’assemblys pour permettre le chargement d’assemblys à partir de formats autres que le système de fichiers.  
   
 > [!NOTE]
->  Si l’hôte n’implémente pas `IHostAssemblyStore`, `GetAssemblyStore` doit retourner une valeur HRESULT d’E_NOINTERFACE et doit définir `ppAssemblyStore` avec la valeur null.  
+> Si l’hôte n’implémente `IHostAssemblyStore`pas `GetAssemblyStore` , doit retourner une valeur HRESULT d' `ppAssemblyStore` E_NOINTERFACE et doit avoir la valeur null.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

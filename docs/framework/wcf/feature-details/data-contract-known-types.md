@@ -9,25 +9,25 @@ helpviewer_keywords:
 - KnownTypeAttribute [WCF]
 - KnownTypes [WCF]
 ms.assetid: 1a0baea1-27b7-470d-9136-5bbad86c4337
-ms.openlocfilehash: dc297bd35d7bfdb25fc50135b8e684e1b9452cb2
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 054beab97a77bd466d2c3d8c734e37f8ded7eb62
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592587"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69945269"
 ---
 # <a name="data-contract-known-types"></a>Types connus de contrats de données
 La classe <xref:System.Runtime.Serialization.KnownTypeAttribute> vous permet de spécifier, en avance, les types qui doivent être inclus pour être pris en compte pendant la désérialisation. Pour obtenir un exemple fonctionnel, consultez l’exemple [Known Types](../../../../docs/framework/wcf/samples/known-types.md) .  
   
  Normalement, lors du passage des paramètres et des valeurs de retour entre un client et un service, les deux points de terminaison partagent tous les contrats de données des données à transmettre. Toutefois, ce n'est pas le cas dans les circonstances suivantes :  
   
-- Le contrat de données envoyé est dérivé du contrat de données attendu. Pour plus d’informations, consultez la section sur l’héritage dans [Data Contract Equivalence](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)). Dans ce cas, les données transmises n'ont pas le même contrat de données que celui attendu par le point de terminaison de réception.  
+- Le contrat de données envoyé est dérivé du contrat de données attendu. Pour plus d’informations, consultez la section relative à l’héritage dans [équivalence des contrats de données](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md). Dans ce cas, les données transmises n'ont pas le même contrat de données que celui attendu par le point de terminaison de réception.  
   
 - Le type déclaré pour les informations à transmettre est une interface, par opposition à une classe, une structure ou une énumération. Par conséquent, il n'est pas possible de connaître à l'avance quel type implémentant l'interface est envoyé réellement et, par conséquent, le point de terminaison de réception ne peut pas déterminer, à l'avance, le contrat de données pour les données transmises.  
   
-- Le type déclaré pour les informations à transmettre est <xref:System.Object>. Comme chaque type hérite de <xref:System.Object>, et il n'est pas possible de connaître à l'avance quel type est envoyé réellement, le point de terminaison de réception ne peut pas déterminer à l'avance le contrat de données pour les données transmises. Il s’agit d’un cas spécial du premier élément : Chaque contrat de données dérive de la valeur par défaut, un contrat de données vide qui est généré pour <xref:System.Object>.  
+- Le type déclaré pour les informations à transmettre est <xref:System.Object>. Comme chaque type hérite de <xref:System.Object>, et il n'est pas possible de connaître à l'avance quel type est envoyé réellement, le point de terminaison de réception ne peut pas déterminer à l'avance le contrat de données pour les données transmises. Il s’agit d’un cas spécial du premier élément: Chaque contrat de données dérive de la valeur par défaut, un contrat de données vide <xref:System.Object>généré pour.  
   
-- Certains types, y compris les types .NET Framework, ont des membres qui sont dans un des trois catégories précédentes. Par exemple, <xref:System.Collections.Hashtable> utilise <xref:System.Object> pour stocker les objets réels dans la table de hachage. Lors de la sérialisation de ces types, le côté réception ne peut pas déterminer à l'avance le contrat de données pour ces membres.  
+- Certains types, y compris les types de .NET Framework, ont des membres qui se trouvent dans l’une des trois catégories précédentes. Par exemple, <xref:System.Collections.Hashtable> utilise <xref:System.Object> pour stocker les objets réels dans la table de hachage. Lors de la sérialisation de ces types, le côté réception ne peut pas déterminer à l'avance le contrat de données pour ces membres.  
   
 ## <a name="the-knowntypeattribute-class"></a>Classe KnownTypeAttribute  
  Lorsque les données arrivent à un point de terminaison de réception, le runtime WCF tente de désérialiser les données dans une instance d’un type de common language runtime (CLR). Le type instancié pour la désérialisation est choisi en inspectant d'abord le message entrant pour déterminer le contrat de données auquel le contenu du message se conforme. Le moteur de désérialisation essaie ensuite de rechercher un type CLR qui implémente un contrat de données compatible avec le contenu de message. Le jeu des types de candidat que le moteur de désérialisation autorise pendant ce processus porte le nom du jeu du désérialiseur des « types connus ».  
@@ -38,7 +38,7 @@ La classe <xref:System.Runtime.Serialization.KnownTypeAttribute> vous permet de 
  Les types primitifs, ainsi que certains types traités comme des primitives (par exemple, <xref:System.DateTime> et <xref:System.Xml.XmlElement>) sont toujours « connus » et il n'est jamais nécessaire de les ajouter par le biais de ce mécanisme. Cependant, les tableaux de types primitifs doivent être ajouté explicitement. La plupart des collections sont considérées comme équivalentes aux tableaux. (Les collections non génériques sont considérées comme équivalentes aux tableaux de <xref:System.Object>). Pour un exemple de l'utilisation des primitives, des tableaux de primitives et des collections de primitives, consultez l'exemple 4.  
   
 > [!NOTE]
->  Contrairement à d'autres types de primitive, la structure <xref:System.DateTimeOffset> n'est pas un type connu par défaut, donc elle doit être ajoutée manuellement à la liste de types connus.  
+> Contrairement à d'autres types de primitive, la structure <xref:System.DateTimeOffset> n'est pas un type connu par défaut, donc elle doit être ajoutée manuellement à la liste de types connus.  
   
 ## <a name="examples"></a>Exemples  
  Voici quelques exemples de la classe <xref:System.Runtime.Serialization.KnownTypeAttribute> employée.  
@@ -100,7 +100,7 @@ La classe <xref:System.Runtime.Serialization.KnownTypeAttribute> vous permet de 
 ## <a name="known-types-using-open-generic-methods"></a>Types connus qui utilisent des méthodes génériques ouvertes  
  Il peut être nécessaire d'ajouter un type générique en tant que type connu. Toutefois, un type générique ouvert ne peut pas être passé en tant que paramètre à l'attribut `KnownTypeAttribute` .  
   
- Ce problème peut être résolu à l’aide d’un autre mécanisme : Écrivez une méthode qui retourne une liste de types à ajouter à la collection de types connus. Le nom de la méthode est spécifié comme un argument de chaîne à l'attribut `KnownTypeAttribute` en raison de certaines restrictions.  
+ Ce problème peut être résolu à l’aide d’un autre mécanisme: Écrivez une méthode qui retourne une liste de types à ajouter à la collection de types connus. Le nom de la méthode est spécifié comme un argument de chaîne à l'attribut `KnownTypeAttribute` en raison de certaines restrictions.  
   
  La méthode doit exister sur le type auquel l'attribut `KnownTypeAttribute` est appliqué, il doit être statique, il ne doit pas accepter de paramètres et doit retourner un objet qui peut être assigné à <xref:System.Collections.IEnumerable> de <xref:System.Type>.  
   
@@ -131,7 +131,7 @@ La classe <xref:System.Runtime.Serialization.KnownTypeAttribute> vous permet de 
  [!code-vb[C_KnownTypeAttribute#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#10)]  
   
 ## <a name="additional-ways-to-add-known-types"></a>Méthodes supplémentaires pour ajouter des types connus  
- En outre, les types connus peuvent être ajoutés par le biais d'un fichier de configuration. Cela est utile lorsque vous ne contrôlez pas le type qui requiert des types connus pour une désérialisation correcte, par exemple à l’aide de fournisseurs tiers lorsque type de bibliothèques avec Windows Communication Foundation (WCF).  
+ En outre, les types connus peuvent être ajoutés par le biais d'un fichier de configuration. Cela est utile lorsque vous ne contrôlez pas le type qui requiert des types connus pour une désérialisation appropriée, par exemple lors de l’utilisation de bibliothèques de types tiers avec Windows Communication Foundation (WCF).  
   
  Le fichier de configuration suivant indique comment spécifier un type connu dans un fichier de configuration.  
   

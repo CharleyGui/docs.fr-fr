@@ -9,12 +9,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], freezing columns
 - DataGridView control [Windows Forms], columns always in view
 ms.assetid: 2ef8b1de-782e-4867-af8d-58171ab5c106
-ms.openlocfilehash: 12c73d7344bba3ca36169c2f46134876295dee00
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a83c5078d67be40fda2ae3382b8124594ee78103
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651745"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966658"
 ---
 # <a name="how-to-freeze-columns-in-the-windows-forms-datagridview-control"></a>Procédure : figer des colonnes dans le contrôle DataGridView Windows Forms
 Quand des utilisateurs consultent des données affichées dans un contrôle Windows Forms <xref:System.Windows.Forms.DataGridView>, ils doivent parfois faire fréquemment référence à une même colonne ou un même ensemble de colonnes. Par exemple, lors de l'affichage d'un tableau d'informations sur des clients qui contient de nombreuses colonnes, il est utile d'afficher le nom du client en permanence tout en laissant d'autres colonnes défiler à l'extérieur de la zone visible.  
@@ -22,11 +22,11 @@ Quand des utilisateurs consultent des données affichées dans un contrôle Wind
  Pour obtenir ce comportement, vous pouvez figer des colonnes dans le contrôle. Quand vous figez une colonne, toutes les colonnes à sa gauche (ou à sa droite dans les scripts de droite à gauche) sont aussi figées. Les colonnes figées restent en place, tandis que toutes les autres colonnes peuvent défiler.  
   
 > [!NOTE]
->  Si la réorganisation des colonnes est activée, les colonnes figées sont traitées comme un groupe distinct des colonnes non figées. Les utilisateurs peuvent repositionner des colonnes dans l'un ou l'autre groupe, mais ils ne peuvent pas déplacer une colonne d'un groupe à l'autre.  
+> Si la réorganisation des colonnes est activée, les colonnes figées sont traitées comme un groupe distinct des colonnes non figées. Les utilisateurs peuvent repositionner des colonnes dans l'un ou l'autre groupe, mais ils ne peuvent pas déplacer une colonne d'un groupe à l'autre.  
   
  La propriété <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A> d'une colonne détermine si la colonne est toujours visible dans la grille.  
   
- Cette tâche est prise en charge dans Visual Studio.  Voir également [Guide pratique pour Figer les colonnes dans les Windows Forms DataGridView Control à l’aide du concepteur](freeze-columns-in-the-datagrid-using-the-designer.md).  
+ Cette tâche est prise en charge dans Visual Studio.  Voir également [Guide pratique pour Figer les colonnes dans le contrôle DataGridView Windows Forms à](freeze-columns-in-the-datagrid-using-the-designer.md)l’aide du concepteur.  
   
 ### <a name="to-freeze-a-column-programmatically"></a>Pour figer une colonne par programmation  
   
@@ -47,4 +47,4 @@ Quand des utilisateurs consultent des données affichées dans un contrôle Wind
 - <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.DataGridView>
 - [Fonctionnalités de base liées aux colonnes, lignes et cellules dans le contrôle DataGridView Windows Forms](basic-column-row-and-cell-features-wf-datagridview-control.md)
-- [Guide pratique pour Activer la réorganisation des colonnes dans le contrôle de DataGridView Windows Forms](how-to-enable-column-reordering-in-the-windows-forms-datagridview-control.md)
+- [Guide pratique pour Activer la réorganisation des colonnes dans le contrôle DataGridView Windows Forms](how-to-enable-column-reordering-in-the-windows-forms-datagridview-control.md)

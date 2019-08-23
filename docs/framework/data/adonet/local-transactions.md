@@ -5,33 +5,33 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8ae3712f-ef5e-41a1-9ea9-b3d0399439f1
-ms.openlocfilehash: f686c20a9afd981405e32854fcc594abac78c85c
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: a0cb72913c10712ece188a782095b93f98cdc0b2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882030"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69955772"
 ---
 # <a name="local-transactions"></a>Transactions locales
-Transactions dans ADO.NET sont utilisées lorsque vous souhaitez lier plusieurs tâches afin qu’elles s’exécutent comme une seule unité de travail. Par exemple, imaginez qu'une application effectue deux tâches. Premièrement, elle met à jour une table avec des informations de commande. Deuxièmement, elle met à jour une table qui contient des informations de stock, en débitant les articles commandés. Si des tâches échoue, puis les deux mises à jour sont annulées.  
+Les transactions dans ADO.NET sont utilisées lorsque vous souhaitez lier plusieurs tâches ensemble afin qu’elles s’exécutent comme une seule unité de travail. Par exemple, imaginez qu'une application effectue deux tâches. Premièrement, elle met à jour une table avec des informations de commande. Deuxièmement, elle met à jour une table qui contient des informations de stock, en débitant les articles commandés. Si l’une des tâches échoue, les deux mises à jour sont annulées.  
   
 ## <a name="determining-the-transaction-type"></a>Détermination du type de transaction  
- Une transaction est considérée comme une transaction locale lorsqu’il est une transaction à phase unique et est gérée directement par la base de données. Une transaction est considérée comme une transaction distribuée lorsqu’il est coordonné par un moniteur de transaction et utilise des mécanismes de prévention de défaillance (par exemple, la validation en deux phases) pour la résolution de la transaction.  
+ Une transaction est considérée comme une transaction locale lorsqu’il s’agit d’une transaction en une seule phase et qu’elle est gérée directement par la base de données. Une transaction est considérée comme une transaction distribuée lorsqu’elle est coordonnée par un moniteur de transaction et utilise des mécanismes de prévention de défaillance (tels qu’une validation en deux phases) pour la résolution des transactions.  
   
- Chacun des fournisseurs de données .NET Framework possède son propre `Transaction` objet pour l’exécution des transactions locales. Si vous avez besoin qu’une transaction soit effectuée dans une base de données SQL Server, sélectionnez une transaction <xref:System.Data.SqlClient>. Pour une transaction Oracle, utilisez le fournisseur <xref:System.Data.OracleClient>. En outre, il existe un <xref:System.Data.Common.DbTransaction> classe qui est disponible pour l’écriture de code indépendant du fournisseur qui nécessite des transactions.  
+ Chaque fournisseur de données .NET Framework possède son propre `Transaction` objet pour effectuer des transactions locales. Si vous avez besoin qu’une transaction soit effectuée dans une base de données SQL Server, sélectionnez une transaction <xref:System.Data.SqlClient>. Pour une transaction Oracle, utilisez le fournisseur <xref:System.Data.OracleClient>. En outre, il existe une <xref:System.Data.Common.DbTransaction> classe qui est disponible pour écrire du code indépendant du fournisseur qui requiert des transactions.  
   
 > [!NOTE]
-> Les transactions sont plus efficaces quand elles sont exécutées sur le serveur. Si vous utilisez une base de données SQL Server qui utilise beaucoup des transactions explicites, envisagez de les écrire sous la forme de procédures stockées à l’aide de l’instruction Transact-SQL BEGIN TRANSACTION.
+> Les transactions sont plus efficaces lorsqu’elles sont exécutées sur le serveur. Si vous utilisez une base de données SQL Server qui utilise beaucoup des transactions explicites, envisagez de les écrire sous la forme de procédures stockées à l’aide de l’instruction Transact-SQL BEGIN TRANSACTION.
   
 ## <a name="performing-a-transaction-using-a-single-connection"></a>Exécution d’une transaction à l’aide d’une connexion unique  
- Dans ADO.NET, vous contrôlez les transactions avec le `Connection` objet. Vous pouvez initier une transaction locale avec la méthode `BeginTransaction`. Après avoir commencé une transaction, vous pouvez inscrire une commande dans cette transaction avec la propriété `Transaction` d’un objet `Command`. Vous pouvez ensuite valider ou annuler les modifications apportées à la source de données en fonction de la réussite ou de l’échec des composants de la transaction.  
+ Dans ADO.net, vous contrôlez les transactions avec `Connection` l’objet. Vous pouvez initier une transaction locale avec la méthode `BeginTransaction`. Après avoir commencé une transaction, vous pouvez inscrire une commande dans cette transaction avec la propriété `Transaction` d’un objet `Command`. Vous pouvez ensuite valider ou annuler les modifications apportées à la source de données en fonction de la réussite ou de l’échec des composants de la transaction.  
   
 > [!NOTE]
->  La méthode `EnlistDistributedTransaction` ne doit pas être utilisée pour une transaction locale.  
+> La méthode `EnlistDistributedTransaction` ne doit pas être utilisée pour une transaction locale.  
   
- La portée de la transaction est limitée à la connexion. L’exemple suivant exécute une transaction explicite consistant en deux commandes distinctes dans le bloc `try`. Les commandes exécutent des instructions INSERT sur la table Production.ScrapReason dans la base de données exemple AdventureWorks SQL Server, qui sont validées si aucune exception n’est levée. Le code dans le bloc `catch` annule la transaction si une exception est levée. En cas d'annulation de la transaction ou de fermeture de la connexion avant que la transaction ne soit terminée, celle-ci est automatiquement annulée.  
+ La portée de la transaction est limitée à la connexion. L’exemple suivant exécute une transaction explicite consistant en deux commandes distinctes dans le bloc `try`. Les commandes exécutent des instructions INSERT sur la table production. ScrapReason de l’exemple de base de données AdventureWorks SQL Server, qui sont validées si aucune exception n’est levée. Le code dans le bloc `catch` annule la transaction si une exception est levée. En cas d'annulation de la transaction ou de fermeture de la connexion avant que la transaction ne soit terminée, celle-ci est automatiquement annulée.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Procédez comme suit pour effectuer une transaction.  
   
 1. Appelez la méthode <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> de l’objet <xref:System.Data.SqlClient.SqlConnection> pour marquer le début de la transaction. La méthode <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A> retourne une référence à la transaction. Cette référence est affectée aux objets <xref:System.Data.SqlClient.SqlCommand> inscrits dans la transaction.  
@@ -42,7 +42,7 @@ Transactions dans ADO.NET sont utilisées lorsque vous souhaitez lier plusieurs 
   
 4. Appelez la méthode <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> de l'objet <xref:System.Data.SqlClient.SqlTransaction> pour effectuer la transaction ou la méthode <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> pour y mettre fin. Si la connexion est fermée ou libérée avant que l’une des méthodes <xref:System.Data.SqlClient.SqlTransaction.Commit%2A> ou <xref:System.Data.SqlClient.SqlTransaction.Rollback%2A> ait été exécutée, la transaction est annulée.  
   
- L’exemple de code suivant illustre la logique transactionnelle utilisant ADO.NET avec Microsoft SQL Server.  
+ L’exemple de code suivant illustre la logique transactionnelle à l’aide de ADO.NET avec Microsoft SQL Server.  
   
  [!code-csharp[DataWorks SqlTransaction.Local#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlTransaction.Local/CS/source.cs#1)]
  [!code-vb[DataWorks SqlTransaction.Local#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlTransaction.Local/VB/source.vb#1)]  

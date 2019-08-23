@@ -3,15 +3,15 @@ title: <claimTypeRequired>
 ms.date: 03/30/2017
 ms.assetid: c469d71f-6c77-4a24-97aa-53efa126ceef
 author: BrucePerlerMS
-ms.openlocfilehash: eafaf253e27db632f17acfce4445a07d18b109aa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 85f3954514fa8b532311b1fbfc34f32ebefa4099
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778454"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942824"
 ---
 # <a name="claimtyperequired"></a>\<claimTypeRequired>
-Spécifie le jeu de revendications requises pour les jetons de sécurité entrants.  
+Spécifie l’ensemble des revendications requises pour les jetons de sécurité entrants.  
   
  \<system.identityModel>  
 \<identityConfiguration>  
@@ -32,16 +32,16 @@ Spécifie le jeu de revendications requises pour les jetons de sécurité entran
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun.  
+ Aucun  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<claimType>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtype.md)|Spécifie une seule revendication facultative ou obligatoire pour les jetons de sécurité entrants.|  
+|[\<claimType>](claimtype.md)|Spécifie une revendication unique ou facultative pour les jetons de sécurité entrants.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<identityConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Spécifie les paramètres de l’identité de niveau de service.|
+|[\<identityConfiguration>](identityconfiguration.md)|Spécifie les paramètres d’identité au niveau du service.|

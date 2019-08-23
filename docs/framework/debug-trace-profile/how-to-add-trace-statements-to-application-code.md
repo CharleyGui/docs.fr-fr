@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: f3a93fa7-1717-467d-aaff-393e5c9828b4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b39646655c175497533aa6dc358c6966acc27344
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 626e9823bbf7d379a21ae353a9189485259f3c42
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754533"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948010"
 ---
 # <a name="how-to-add-trace-statements-to-application-code"></a>Procédure : Ajouter des instructions de trace dans le code d’une application
-Les méthodes utilisées le plus souvent pour le suivi sont les méthodes pour écrire la sortie dans des écouteurs : **Écrire**, **WriteIf**, **WriteLine**, **WriteLineIf**, **Assert**, et **échouer**. Ces méthodes peuvent être réparties en deux catégories : **Écrire**, **WriteLine**, et **échouer** émettent toutes la sortie de manière inconditionnelle, tandis que **WriteIf**, **WriteLineIf**et  **Assert** testent une condition booléenne et écrivent ou n’écrivent pas en fonction de la valeur de la condition. **WriteIf** et **WriteLineIf** émettent une sortie si la condition est `true` et **Assert** émet une sortie si la condition est `false`.  
+Les méthodes utilisées le plus souvent pour le suivi sont les méthodes permettant d’écrire la sortie dans des écouteurs: **Write**, **WriteIf**, **WriteLine**, **WriteLineIf**, **Assert**et **Fail**. Ces méthodes peuvent être divisées en deux catégories: Les instructions **Write**, **WriteLine**et **Fail** émettent toutes la sortie sans condition, tandis que **WriteIf**, **WriteLineIf**et Assert testent une condition booléenne, et écrivent ou n’écrivent pas en fonction de la valeur de la condition. **WriteIf** et **WriteLineIf** émettent une sortie si la condition est `true` et **Assert** émet une sortie si la condition est `false`.  
   
  Quand vous concevez votre stratégie de débogage et de traçage, vous devez tenir compte de l'apparence souhaitée de la sortie. Si plusieurs instructions **Write** sont remplies avec des informations sans rapport, le journal créé est difficile à lire. D’un autre côté, si vous utilisez **WriteLine** pour placer des instructions connexes sur des lignes distinctes, il peut être difficile de déterminer les informations associées. En règle générale, utilisez plusieurs instructions **Write** si vous voulez combiner des informations provenant de plusieurs sources pour créer un message informatif unique et utilisez l’instruction **WriteLine** quand vous voulez créer un message unique et complet.  
   
@@ -82,7 +82,7 @@ Les méthodes utilisées le plus souvent pour le suivi sont les méthodes pour �
     ```  
   
     > [!NOTE]
-    >  Vous pouvez utiliser **Assert** à la fois avec le suivi et le débogage. Cet exemple génère la pile des appels dans n’importe quel écouteur de la collection **Listeners**. Pour plus d’informations, consultez [Assertions dans du code managé](/visualstudio/debugger/assertions-in-managed-code) et <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>.  
+    > Vous pouvez utiliser **Assert** à la fois avec le suivi et le débogage. Cet exemple génère la pile des appels dans n’importe quel écouteur de la collection **Listeners**. Pour plus d’informations, consultez [Assertions dans du code managé](/visualstudio/debugger/assertions-in-managed-code) et <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -91,6 +91,6 @@ Les méthodes utilisées le plus souvent pour le suivi sont les méthodes pour �
 - <xref:System.Diagnostics.Trace.WriteIf%2A?displayProperty=nameWithType>
 - <xref:System.Diagnostics.Trace.WriteLineIf%2A?displayProperty=nameWithType>
 - [Suivi et instrumentation d’applications](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
-- [Guide pratique pour Créer, initialiser et configurer des commutateurs de Trace](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)
+- [Guide pratique pour Créer, initialiser et configurer des commutateurs de trace](../../../docs/framework/debug-trace-profile/how-to-create-initialize-and-configure-trace-switches.md)
 - [Commutateurs de suivi](../../../docs/framework/debug-trace-profile/trace-switches.md)
 - [Écouteurs de suivi](../../../docs/framework/debug-trace-profile/trace-listeners.md)

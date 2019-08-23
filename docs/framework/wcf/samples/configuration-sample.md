@@ -2,25 +2,25 @@
 title: Exemple Configuration
 ms.date: 03/30/2017
 ms.assetid: 75515b4a-8d70-44c8-99e0-7423df41380e
-ms.openlocfilehash: 8c96b41877fa56f486bec03a10dcbf47bac9e37a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b91ae890a5664b69661c76ffe86154f90ac5e5f9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651046"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69969056"
 ---
 # <a name="configuration-sample"></a>Exemple Configuration
 Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un service détectable.  
   
 > [!NOTE]
->  Cet exemple implémente la découverte dans la configuration. Pour obtenir un exemple qui implémente la découverte dans le code, consultez [base](../../../../docs/framework/wcf/samples/basic-sample.md).  
+> Cet exemple implémente la découverte dans la configuration. Pour obtenir un exemple qui implémente la découverte dans le code, consultez [Basic](../../../../docs/framework/wcf/samples/basic-sample.md).  
   
 > [!IMPORTANT]
 >  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\Configuration`  
   
@@ -87,7 +87,7 @@ behaviorConfiguration="endpointBehaviorConfiguration"
         </endpointBehaviors>  
 ```  
   
- Pour plus d’informations sur les étendues, consultez [trouver de découverte et FindCriteria](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md).  
+ Pour plus d’informations sur les étendues, consultez [détection de découverte et FindCriteria](../../../../docs/framework/wcf/feature-details/discovery-find-and-findcriteria.md).  
   
  Vous pouvez également contrôler des détails spécifiques du point de terminaison de découverte. Cette opération s'effectue via le <xref:System.ServiceModel.Configuration.StandardEndpointsSection>. Dans cet exemple, la version du protocole utilisée est modifiée et un attribut `maxResponseDelay` est ajouté, comme le montre l'exemple de code suivant.  
   
@@ -261,7 +261,7 @@ behaviorConfiguration="endpointBehaviorConfiguration"
   
 #### <a name="to-use-this-sample"></a>Pour utiliser cet exemple  
   
-1. Cet exemple utilise des points de terminaison HTTP et pour exécuter cet exemple, bon ACL URL doit être ajouté voir [configuration de HTTP et HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353) pour plus d’informations. L'exécution de la commande suivante avec un privilège élevé doit ajouter les ACL appropriées. Vous pouvez substituer vos domaine et nom d’utilisateur aux arguments suivants si la commande ne fonctionne pas telle quelle. `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
+1. Cet exemple utilise des points de terminaison HTTP et pour exécuter cet exemple, des listes de contrôle d’accès d’URL appropriées doivent être ajoutées. pour plus d’informations, consultez [configuration de http et HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353) . L'exécution de la commande suivante avec un privilège élevé doit ajouter les ACL appropriées. Vous pouvez substituer vos domaine et nom d’utilisateur aux arguments suivants si la commande ne fonctionne pas telle quelle. `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
   
 2. Générez la solution.  
   

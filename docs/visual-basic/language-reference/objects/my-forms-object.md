@@ -1,5 +1,5 @@
 ---
-title: My.Forms (objet) (Visual Basic)
+title: My. Forms, objet (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - My.Forms
@@ -7,54 +7,54 @@ f1_keywords:
 helpviewer_keywords:
 - My.Forms object
 ms.assetid: f6bff4e6-6769-4294-956b-037aa6106d2a
-ms.openlocfilehash: 4998097b910a504461a34af3cc159ddb1c74cc62
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9fa5c77dd12c98100e3d17fc473a6802180d1e32
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61949316"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965979"
 ---
 # <a name="myforms-object"></a>My.Forms, objet
-Fournit des propriétés pour accéder à une instance de chaque formulaire Windows déclaré dans le projet actuel.  
+Fournit des propriétés pour accéder à une instance de chaque Windows Form déclaré dans le projet actuel.  
   
 ## <a name="remarks"></a>Notes  
- Le `My.Forms` objet fournit une instance de chaque formulaire dans le projet actuel. Le nom de la propriété est le même que le nom du formulaire qui accède à la propriété.   
+ L' `My.Forms` objet fournit une instance de chaque formulaire dans le projet actuel. Le nom de la propriété est le même que celui du formulaire auquel la propriété accède.   
   
- Vous pouvez accéder à des formulaires fournis par le `My.Forms` objet en utilisant le nom du formulaire, sans qualification. Étant donné que le nom de propriété est identique au nom de type du formulaire, cela vous permet d’accès à un formulaire comme s’il avait une instance par défaut. Par exemple, `My.Forms.Form1.Show` équivaut à `Form1.Show`.  
+ Vous pouvez accéder aux formulaires fournis par l' `My.Forms` objet à l’aide du nom du formulaire, sans qualification. Étant donné que le nom de la propriété est le même que le nom du type du formulaire, cela vous permet d’accéder à un formulaire comme s’il avait une instance par défaut. Par exemple, `My.Forms.Form1.Show` équivaut à `Form1.Show`.  
   
- Le `My.Forms` objet expose uniquement les formulaires associés au projet actuel. Il ne donne pas accès aux formulaires déclarés dans les DLL référencées. Pour accéder à un formulaire qui fournit une DLL, vous devez utiliser le nom qualifié du formulaire, écrit sous la forme *DllName*. *FormName*.  
+ L' `My.Forms` objet expose uniquement les formulaires associés au projet actif. Elle ne fournit pas l’accès aux formulaires déclarés dans les dll référencées. Pour accéder à un formulaire fourni par une DLL, vous devez utiliser le nom qualifié du formulaire, écrit sous la forme *DllName*. *NomFormulaire*.  
   
- Vous pouvez utiliser le <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A> propriété pour obtenir une collection de formulaires ouverts de toute l’application.  
+ Vous pouvez utiliser la <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A> propriété pour obtenir une collection de tous les formulaires ouverts de l’application.  
   
- L’objet et ses propriétés sont disponibles uniquement pour les applications de Windows.  
+ L’objet et ses propriétés sont uniquement disponibles pour les applications Windows.  
   
 ## <a name="properties"></a>Properties  
- Chaque propriété de la `My.Forms` objet fournit l’accès à une instance d’un formulaire dans le projet actuel. Le nom de la propriété est le même que le nom du formulaire qui accède à la propriété et le type de propriété est identique au type du formulaire.  
+ Chaque propriété de l' `My.Forms` objet permet d’accéder à une instance d’un formulaire dans le projet actuel. Le nom de la propriété est le même que celui du formulaire auquel la propriété accède, et le type de propriété est le même que le type du formulaire.  
   
 > [!NOTE]
->  S’il existe un conflit de noms, le nom de propriété pour accéder à un formulaire est *RootNamespace*_*Namespace*\_*FormName*. Par exemple, prenons deux formulaires nommés `Form1.`si une de ces formes est dans l’espace de noms racine `WindowsApplication1` et dans l’espace de noms `Namespace1`, vous accédez à ce formulaire via `My.Forms.WindowsApplication1_Namespace1_Form1`.  
+> En cas de collision de nom, le nom de la propriété permettant d’accéder à un formulaire est *RootNamespace*_*namespace*\_*NomFormulaire*. Par exemple, considérez deux formulaires `Form1.`nommés si l’un de ces formulaires se trouve dans `WindowsApplication1` l’espace de noms `Namespace1`racine et dans l’espace de noms `My.Forms.WindowsApplication1_Namespace1_Form1`, vous accéderiez à ce formulaire via.  
   
- Le `My.Forms` objet fournit l’accès à l’instance du formulaire principal de l’application qui a été créé au démarrage. Pour toutes les autres formes, le `My.Forms` objet crée une nouvelle instance du formulaire lorsqu’il est accessible et qu’il stocke. Les tentatives suivantes pour accéder à cette propriété retournent cette instance du formulaire.  
+ L' `My.Forms` objet fournit l’accès à l’instance du formulaire principal de l’application qui a été créée au démarrage. Pour tous les autres formulaires, `My.Forms` l’objet crée une nouvelle instance du formulaire lors de son accès et le stocke. Les tentatives suivantes d’accès à cette propriété retournent cette instance du formulaire.  
   
- Vous pouvez supprimer un formulaire en assignant `Nothing` à la propriété pour ce formulaire. Les appels de méthode setter de propriété le <xref:System.Windows.Forms.Form.Close%2A> méthode du formulaire, puis assigne `Nothing` à la valeur stockée. Si vous assignez une valeur autre que `Nothing` à la propriété, l’accesseur Set lève une <xref:System.ArgumentException> exception.  
+ Vous pouvez supprimer un formulaire en l’affectant `Nothing` à la propriété de ce formulaire. L’accesseur Set de <xref:System.Windows.Forms.Form.Close%2A> propriété appelle la méthode du formulaire, puis `Nothing` assigne à la valeur stockée. Si vous assignez une valeur `Nothing` autre que à la propriété, la méthode setter <xref:System.ArgumentException> lève une exception.  
   
- Vous pouvez tester si une propriété de la `My.Forms` objet stocke une instance du formulaire à l’aide de la `Is` ou `IsNot` opérateur. Vous pouvez utiliser ces opérateurs pour vérifier si la valeur de la propriété est `Nothing`.  
+ Vous pouvez tester si une propriété de l' `My.Forms` objet stocke une instance du formulaire à l’aide `Is` de `IsNot` l’opérateur or. Vous pouvez utiliser ces opérateurs pour vérifier si la valeur de la propriété est `Nothing`.  
   
 > [!NOTE]
->  En règle générale, le `Is` ou `IsNot` opérateur doit lire la valeur de la propriété pour effectuer la comparaison. Toutefois, si la propriété stocke actuellement `Nothing`, la propriété crée une nouvelle instance de la forme et puis la retourne. Toutefois, le compilateur Visual Basic traite les propriétés de la `My.Forms` différemment de l’objet et permet la `Is` ou `IsNot` opérateur pour vérifier l’état de la propriété sans modifier sa valeur.  
+> En règle générale `Is` , `IsNot` l’opérateur or doit lire la valeur de la propriété pour effectuer la comparaison. Toutefois, si la propriété est actuellement `Nothing`stockée, la propriété crée une nouvelle instance du formulaire, puis retourne cette instance. Toutefois, le compilateur Visual Basic traite différemment les propriétés de `My.Forms` l’objet et permet à `Is` l' `IsNot` opérateur ou de vérifier l’état de la propriété sans modifier sa valeur.  
   
-## <a name="example"></a>Exemple  
- Cet exemple modifie le titre de la valeur par défaut `SidebarMenu` formulaire.  
+## <a name="example"></a>Exemples  
+ Cet exemple modifie le titre du formulaire par `SidebarMenu` défaut.  
   
  [!code-vb[VbVbalrMyForms#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyForms/VB/Class1.vb#2)]  
   
- Pour cet exemple fonctionne, votre projet doit avoir un formulaire nommé `SidebarMenu`.  
+ Pour que cet exemple fonctionne, votre projet doit avoir un formulaire nommé `SidebarMenu`.  
   
- Ce code fonctionne uniquement dans un projet d’Application de Windows.  
+ Ce code ne fonctionne que dans un projet d’application Windows.  
   
 ## <a name="requirements"></a>Configuration requise  
   
-### <a name="availability-by-project-type"></a>Disponibilité par Type de projet  
+### <a name="availability-by-project-type"></a>Disponibilité par type de projet  
   
 |Type de projet|Disponible|  
 |---|---|  

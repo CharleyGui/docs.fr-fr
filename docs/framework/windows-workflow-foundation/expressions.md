@@ -2,12 +2,12 @@
 title: Expressions-WF
 ms.date: 03/30/2017
 ms.assetid: c42341a9-43a1-462c-bffb-c5de004aa428
-ms.openlocfilehash: 092272db2f7979cf12917dfe35e116295db79bf3
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: 93d437ae6d20f5d31d80ef3a40f409c589ae084e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68868895"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962423"
 ---
 # <a name="expressions"></a>Expressions
 Une expression Windows Workflow Foundation (WF) est toute activité qui retourne un résultat. Toutes les activités d'expression dérivent indirectement de <xref:System.Activities.Activity%601>, qui contient une propriété <xref:System.Activities.OutArgument> nommée <xref:System.Activities.Activity%601.Result%2A> comme valeur de retour de l'activité. [!INCLUDE[wf1](../../../includes/wf1-md.md)] est fourni avec une large gamme d'activités d'expressions, simples comme <xref:System.Activities.Expressions.VariableValue%601> et <xref:System.Activities.Expressions.VariableReference%601>, qui permettent d'accéder à une variable de workflow unique via des activités d'opérateur, ou complexes telles que <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> et <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> qui permettent d'accéder à la totalité du langage Visual Basic pour produire le résultat. Des activités d'expressions supplémentaires peuvent être créées en dérivant de <xref:System.Activities.CodeActivity%601> ou <xref:System.Activities.NativeActivity%601>.  
@@ -16,7 +16,7 @@ Une expression Windows Workflow Foundation (WF) est toute activité qui retourne
  Le concepteur de workflow utilise <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> et <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> pour les expressions dans les projets Visual Basic, et <xref:Microsoft.CSharp.Activities.CSharpValue%601> et <xref:Microsoft.CSharp.Activities.CSharpReference%601> pour les expressions dans les projets de workflow C#.  
   
 > [!NOTE]
->  La prise C# en charge des expressions dans les projets de workflow a été introduite dans .NET Framework 4,5. Pour plus d’informations, consultez [ C# expressions](csharp-expressions.md).  
+> La prise C# en charge des expressions dans les projets de workflow a été introduite dans .NET Framework 4,5. Pour plus d’informations, consultez [ C# expressions](csharp-expressions.md).  
   
  Les workflows produits par le concepteur sont enregistrés en XAML, où les expressions s'affichent entre crochets, comme dans l'exemple suivant.  
   

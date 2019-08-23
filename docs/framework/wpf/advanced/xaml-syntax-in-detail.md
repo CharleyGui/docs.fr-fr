@@ -29,12 +29,12 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-ms.openlocfilehash: 2c4e7213ddcffdb026d3d6e6b339bfc91b3c27c6
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 3ac7d79660830601ca69951e56763fc923692b0e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400773"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69958784"
 ---
 # <a name="xaml-syntax-in-detail"></a>Syntaxe XAML en détail
 Cette rubrique définit les termes utilisés pour décrire les éléments de la syntaxe XAML. Ces termes sont fréquemment utilisés dans la suite de cette documentation, à la fois pour la documentation WPF et pour les autres infrastructures qui utilisent XAML ou les concepts XAML de base activés par la prise en charge du langage XAML au niveau de System. Xaml. Cette rubrique développe la terminologie de base présentée dans la rubrique [vue d’ensemble du langage XAML (WPF)](xaml-overview-wpf.md).  
@@ -86,7 +86,7 @@ Cette rubrique définit les termes utilisés pour décrire les éléments de la 
  La syntaxe d’attribut est la syntaxe de balisage XAML qui définit une valeur pour une propriété en déclarant un attribut sur un élément objet existant. Le nom de l’attribut doit correspondre au nom de membre CLR de la propriété de la classe qui stocke l’élément objet approprié. Le nom de l’attribut est suivi d’un opérateur d’assignation (=). La valeur de l’attribut doit être une chaîne entre guillemets.  
   
 > [!NOTE]
->  Vous pouvez utiliser des guillemets de remplacement pour placer un guillemet littéral dans un attribut. Par exemple, vous pouvez utiliser des guillemets simples comme moyen de déclarer une chaîne qui contient un caractère de guillemet double dans celui-ci. Que vous utilisiez des guillemets simples ou doubles, vous devez utiliser une paire correspondante pour ouvrir et fermer la chaîne de valeur d’attribut. Il existe également des séquences d’échappement ou d’autres techniques permettant de contourner les restrictions de caractères imposées par toute syntaxe XAML particulière. Consultez [entités de caractères XML et XAML](../../xaml-services/xml-character-entities-and-xaml.md).  
+> Vous pouvez utiliser des guillemets de remplacement pour placer un guillemet littéral dans un attribut. Par exemple, vous pouvez utiliser des guillemets simples comme moyen de déclarer une chaîne qui contient un caractère de guillemet double dans celui-ci. Que vous utilisiez des guillemets simples ou doubles, vous devez utiliser une paire correspondante pour ouvrir et fermer la chaîne de valeur d’attribut. Il existe également des séquences d’échappement ou d’autres techniques permettant de contourner les restrictions de caractères imposées par toute syntaxe XAML particulière. Consultez [entités de caractères XML et XAML](../../xaml-services/xml-character-entities-and-xaml.md).  
   
  Pour être défini par le biais de la syntaxe d’attribut, une propriété doit être publique et doit être accessible en écriture. La valeur de la propriété dans le système de type de stockage doit être un type valeur ou doit être un type référence qui peut être instancié ou référencé par un processeur XAML lors de l’accès au type de stockage approprié.  
   
@@ -108,7 +108,7 @@ Cette rubrique définit les termes utilisés pour décrire les éléments de la 
 #### <a name="enumeration-attribute-values"></a>Valeurs d’attribut d’énumération  
  Les énumérations en XAML sont traitées intrinsèquement par les analyseurs XAML, et les membres d’une énumération doivent être spécifiés en spécifiant le nom de chaîne de l’une des constantes nommées de l’énumération.  
   
- Pour les valeurs d’énumération sans indicateur, le comportement natif consiste à traiter la chaîne d’une valeur d’attribut et à la résoudre en l’une des valeurs d’énumération. Vous ne spécifiez pas l’énumération dans l’énumération de format. *, Comme*vous le feriez dans le code. Au lieu de cela, vous spécifiez uniquement la *valeur*et l' *énumération* est déduite par le type de la propriété que vous définissez. Si vous spécifiez un attribut dans l’énumération. Format de *valeur* , elle ne sera pas résolue correctement.  
+ Pour les valeurs d’énumération sans indicateur, le comportement natif consiste à traiter la chaîne d’une valeur d’attribut et à la résoudre en l’une des valeurs d’énumération. Vous ne spécifiez pas l’énumération dansl’énumération de format., Comme vous le feriez dans le code. Au lieu de cela, vous spécifiez uniquement la *valeur*et l' *énumération* est déduite par le type de la propriété que vous définissez. Si vous spécifiez un attribut dansl’énumération. Format de *valeur* , elle ne sera pas résolue correctement.  
   
  Pour les énumérations d’indicateurs, le comportement est basé <xref:System.Enum.Parse%2A?displayProperty=nameWithType> sur la méthode. Vous pouvez spécifier plusieurs valeurs pour une énumération d’indicateurs en séparant chaque valeur par une virgule. Toutefois, vous ne pouvez pas combiner des valeurs d’énumération qui n’ont pas d’indicateurs. Par exemple, vous ne pouvez pas utiliser la syntaxe de virgule pour tenter <xref:System.Windows.Trigger> de créer un qui agit sur plusieurs conditions d’une énumération sans indicateur:  
   
@@ -169,7 +169,7 @@ Cette rubrique définit les termes utilisés pour décrire les éléments de la 
  Un élément de collection implicite crée un membre dans la représentation de l’arborescence logique, même s’il n’apparaît pas dans le balisage en tant qu’élément. En général, le constructeur du type parent exécute l’instanciation de la collection qui est l’une de ses propriétés, et la collection initialement vide devient partie intégrante de l’arborescence d’objets.  
   
 > [!NOTE]
->  Les interfaces de liste et de dictionnaire<xref:System.Collections.Generic.IList%601> génériques <xref:System.Collections.Generic.IDictionary%602>(et) ne sont pas prises en charge pour la détection de collection. Toutefois, vous pouvez utiliser la <xref:System.Collections.Generic.List%601> classe comme classe de base, car elle <xref:System.Collections.IList> implémente directement, ou <xref:System.Collections.Generic.Dictionary%602> en tant que classe <xref:System.Collections.IDictionary> de base, car elle implémente directement.  
+> Les interfaces de liste et de dictionnaire<xref:System.Collections.Generic.IList%601> génériques <xref:System.Collections.Generic.IDictionary%602>(et) ne sont pas prises en charge pour la détection de collection. Toutefois, vous pouvez utiliser la <xref:System.Collections.Generic.List%601> classe comme classe de base, car elle <xref:System.Collections.IList> implémente directement, ou <xref:System.Collections.Generic.Dictionary%602> en tant que classe <xref:System.Collections.IDictionary> de base, car elle implémente directement.  
   
  Dans les pages de référence .NET pour les types de collection, cette syntaxe avec l’omission délibérée de l’élément objet pour une collection est parfois notée dans les sections de syntaxe XAML comme syntaxe de collection implicite.  
   

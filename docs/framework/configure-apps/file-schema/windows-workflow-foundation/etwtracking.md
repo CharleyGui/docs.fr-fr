@@ -3,20 +3,20 @@ title: <etwTracking>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: cb45c82e-6ea1-4c4d-924c-118a25ae1f35
-ms.openlocfilehash: e7614f158826e3522ac8e17d60c1ea65fefc8612
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 653693fef92072cb1e6e23234359b765f0f18fc9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790193"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940227"
 ---
 # <a name="etwtracking"></a>\<etwTracking>
-Comportement de service qui permet à un service à utiliser à l’aide du suivi ETW un <xref:System.Activities.Tracking.EtwTrackingParticipant>.  
+Comportement de service qui permet à un service d’utiliser le suivi ETW <xref:System.Activities.Tracking.EtwTrackingParticipant>à l’aide d’un.  
   
 \<system.ServiceModel>  
 \<behaviors>  
 \<serviceBehaviors>  
-\<behavior>  
+\<> de comportement  
 \<etwTracking>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -47,7 +47,7 @@ Comportement de service qui permet à un service à utiliser à l’aide du suiv
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<comportement > de \<serviceBehaviors >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|Spécifie un élément de comportement.|  
+|[\<> de comportement \<de la > serviceBehaviors](behavior-of-servicebehaviors-of-workflow.md)|Spécifie un élément de comportement.|  
   
 ## <a name="remarks"></a>Notes  
  Lorsqu'il est ajouté à la configuration de comportement du service, cet élément de configuration configure un participant au suivi sur un service de flux de travail.  
@@ -57,7 +57,7 @@ Comportement de service qui permet à un service à utiliser à l’aide du suiv
 ## <a name="example"></a>Exemple  
  L'exemple suivant présente la configuration du participant au suivi ETW standard dans le fichier Web.config.  
   
- L’Id de fournisseur qui le Participant de suivi ETW utilise pour écrire les enregistrements de suivi dans ETW est défini dans le  **\<diagnostics >** section. Un profil est associé au participant au suivi pour spécifier les enregistrements de suivi auxquels il est abonné. Cela est défini par le **profileName** attribut de la  **\<Ajouter >** élément. Une fois que ceux-ci sont définis, le participant au suivi est ajouté à la  **\<etwTracking >** comportement de service. Les participants au suivi sélectionnés sont ajoutés aux extensions de l’instance de flux de travail, afin qu’ils commencent à recevoir les enregistrements de suivi.  
+ L’ID de fournisseur que le participant de suivi ETW utilise pour écrire les enregistrements de suivi dans ETW est  **\<** défini dans la section Diagnostics >. Un profil est associé au participant au suivi pour spécifier les enregistrements de suivi auxquels il est abonné. Cela est défini par l' attribut ProfileName de l'  **\<élément Add >** . Une fois ces derniers définis, le participant de suivi est ajouté au comportement du  **\<service etwTracking >** . Les participants au suivi sélectionnés sont ajoutés aux extensions de l’instance de flux de travail, afin qu’ils commencent à recevoir les enregistrements de suivi.  
   
 ```xml  
 <configuration>   
@@ -88,5 +88,5 @@ Comportement de service qui permet à un service à utiliser à l’aide du suiv
 
 - <xref:System.ServiceModel.Activities.Description.EtwTrackingBehavior>
 - <xref:System.ServiceModel.Activities.Configuration.EtwTrackingBehaviorElement>
-- [Suivi et traçage de workflow](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Participants de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-participants.md)
+- [Suivi et traçage de workflow](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Participants de suivi](../../../windows-workflow-foundation/tracking-participants.md)

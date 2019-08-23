@@ -2,12 +2,12 @@
 title: Message Inspectors
 ms.date: 03/30/2017
 ms.assetid: 9bd1f305-ad03-4dd7-971f-fa1014b97c9b
-ms.openlocfilehash: c9d2c47a816e7fd8c5d219009128ed530564b81b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: aa5b68f203164a1c50ae9ef921032bd6e5c7bfb8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61989812"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930712"
 ---
 # <a name="message-inspectors"></a>Message Inspectors
 Cet exemple montre comment implémenter et configurer des inspecteurs de message de service et client.  
@@ -256,10 +256,10 @@ public class SchemaValidationBehavior : IEndpointBehavior
 ```  
   
 > [!NOTE]
->  Ce comportement spécifique ne joue pas le rôle d'attribut et, par conséquent, ne peut pas être ajouté de façon déclarative sur un type de contrat d'un type de service. Cette décision de conception a été prise car la collection de schémas ne peut pas être chargée dans une déclaration attribute, et faire référence à un emplacement de configuration supplémentaire (par exemple aux paramètres d’application) dans cet attribut revient à créer un élément de configuration qui n’est pas cohérent avec le reste de la configuration de modèle de service. Par conséquent, ce comportement peut uniquement être ajouté de façon impérative via le code et une extension de configuration de modèle de service.  
+> Ce comportement spécifique ne joue pas le rôle d'attribut et, par conséquent, ne peut pas être ajouté de façon déclarative sur un type de contrat d'un type de service. Cette décision de conception a été prise car la collection de schémas ne peut pas être chargée dans une déclaration attribute, et faire référence à un emplacement de configuration supplémentaire (par exemple aux paramètres d’application) dans cet attribut revient à créer un élément de configuration qui n’est pas cohérent avec le reste de la configuration de modèle de service. Par conséquent, ce comportement peut uniquement être ajouté de façon impérative via le code et une extension de configuration de modèle de service.  
   
 ## <a name="adding-the-message-inspector-through-configuration"></a>Ajout de l'inspecteur de message via la configuration  
- Pour configurer un comportement personnalisé sur un point de terminaison dans le fichier de configuration d’application, le modèle de service requiert des implémenteurs afin de créer une configuration *élément d’extension* représenté par une classe dérivée de <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>. Cette extension doit être ensuite ajoutée à la section de configuration du modèle de service pour les extensions, tel qu’indiqué pour l’extension suivante traitée dans cette section.  
+ Pour configurer un comportement personnalisé sur un point de terminaison dans le fichier de configuration de l’application, le modèle de service requiert des implémenteurs pour créer un *élément* d’extension <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>de configuration représenté par une classe dérivée de. Cette extension doit être ensuite ajoutée à la section de configuration du modèle de service pour les extensions, tel qu’indiqué pour l’extension suivante traitée dans cette section.  
   
 ```xml  
 <system.serviceModel>  
@@ -398,17 +398,17 @@ catch (Exception e)
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pour générer la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Pour exécuter l’exemple dans une configuration unique ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
 >  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageInspectors`  

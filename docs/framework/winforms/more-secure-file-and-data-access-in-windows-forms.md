@@ -13,12 +13,12 @@ helpviewer_keywords:
 - file access [Windows Forms]
 - security [Windows Forms], data access
 ms.assetid: 3cd3e55b-2f5e-40dd-835d-f50f7ce08967
-ms.openlocfilehash: 3389261fe9ed3d1653b92c90419033380a403387
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 94b165757de636b2570798a21fd7c483264e37c5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567414"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69949950"
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Accès plus sécurisé aux fichiers et aux données dans les Windows Forms
 Le .NET Framework utilise des autorisations pour protéger les ressources et les données. L'emplacement où votre application peut lire ou écrire des données dépend des autorisations qui lui sont accordées. Quand votre application s'exécute dans un environnement de confiance partielle, vous n'avez peut-être pas accès à vos données ou vous devrez peut-être modifier la manière dont vous accédez aux données.  
@@ -26,7 +26,7 @@ Le .NET Framework utilise des autorisations pour protéger les ressources et les
  Quand vous rencontrez une restriction de sécurité, vous avez deux options : déclarer l'autorisation (en supposant qu'elle a été accordée à votre application) ou utiliser une version de la fonctionnalité écrite pour fonctionner en mode de confiance partielle. Les sections suivantes décrivent comment gérer l'accès aux fichiers, aux bases de données et au Registre à partir d'applications qui s'exécutent dans un environnement de confiance partielle.  
   
 > [!NOTE]
->  Par défaut, les outils qui génèrent des déploiements ClickOnce ont par défaut ces déploiements qui demandent une confiance totale à partir des ordinateurs sur lesquels ils s’exécutent. Si vous souhaitez bénéficier des avantages de sécurité supplémentaires liés à l’exécution en mode de confiance partielle, vous devez modifier cette valeur par défaut dans Visual Studio ou dans l’un des outils de SDK Windows (Mage. exe ou MageUI. exe). Pour plus d’informations sur la sécurité Windows Forms et sur la façon de déterminer le niveau de confiance approprié pour votre application, consultez [vue d’ensemble de la sécurité dans Windows Forms](security-in-windows-forms-overview.md).  
+> Par défaut, les outils qui génèrent des déploiements ClickOnce ont par défaut ces déploiements qui demandent une confiance totale à partir des ordinateurs sur lesquels ils s’exécutent. Si vous souhaitez bénéficier des avantages de sécurité supplémentaires liés à l’exécution en mode de confiance partielle, vous devez modifier cette valeur par défaut dans Visual Studio ou dans l’un des outils de SDK Windows (Mage. exe ou MageUI. exe). Pour plus d’informations sur la sécurité Windows Forms et sur la façon de déterminer le niveau de confiance approprié pour votre application, consultez [vue d’ensemble de la sécurité dans Windows Forms](security-in-windows-forms-overview.md).  
   
 ## <a name="file-access"></a>Accès aux fichiers  
  La <xref:System.Security.Permissions.FileIOPermission> classe contrôle l’accès aux fichiers et aux dossiers dans le .NET Framework. Par défaut, le système de sécurité n'accorde pas <xref:System.Security.Permissions.FileIOPermission> aux environnements de confiance partielle tels que les zones Intranet local et Internet. Cependant, une application qui nécessite l'accès aux fichiers peut quand même fonctionner dans ces environnements si vous modifiez la conception de votre application ou si vous utilisez des méthodes différentes pour accéder aux fichiers. Par défaut, la zone Intranet local est autorisée à accéder au même site et au même répertoire, à se reconnecter au site de son origine et à lire à partir de son répertoire d'installation. Par défaut, la zone Internet est autorisée uniquement à se reconnecter au site de son origine.  
@@ -35,7 +35,7 @@ Le .NET Framework utilise des autorisations pour protéger les ressources et les
  L'une des façons de gérer le fait de ne pas avoir l'autorisation d'accès aux fichiers consiste à inviter l'utilisateur à fournir des informations de fichiers spécifiques à l'aide de la classe <xref:System.Windows.Forms.OpenFileDialog> ou <xref:System.Windows.Forms.SaveFileDialog>. Cette interaction utilisateur permet de fournir une garantie que l'application ne peut pas remplacer des fichiers importants ou charger des fichiers privés à des fins malveillantes. Les méthodes <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> et <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> fournissent un accès en lecture et en écriture aux fichiers en ouvrant le flux de fichier pour le fichier spécifié par l'utilisateur. Ces méthodes aident aussi à protéger les fichiers de l’utilisateur en masquant leur chemin d’accès.  
   
 > [!NOTE]
->  Ces autorisations diffèrent selon que votre application est dans la zone Internet ou Intranet. Les applications de la zone Internet peuvent uniquement utiliser <xref:System.Windows.Forms.OpenFileDialog>, alors que les applications de la zone Intranet ont une autorisation Boîte de dialogue Fichier illimitée.  
+> Ces autorisations diffèrent selon que votre application est dans la zone Internet ou Intranet. Les applications de la zone Internet peuvent uniquement utiliser <xref:System.Windows.Forms.OpenFileDialog>, alors que les applications de la zone Intranet ont une autorisation Boîte de dialogue Fichier illimitée.  
   
  La classe <xref:System.Security.Permissions.FileDialogPermission> spécifie le type de boîte de dialogue Fichier que votre application peut utiliser. Le tableau suivant indique la valeur que vous devez avoir pour utiliser chaque classe <xref:System.Windows.Forms.FileDialog>.  
   
@@ -45,14 +45,14 @@ Le .NET Framework utilise des autorisations pour protéger les ressources et les
 |<xref:System.Windows.Forms.SaveFileDialog>|<xref:System.Security.Permissions.FileDialogPermissionAccess.Save>|  
   
 > [!NOTE]
->  L'autorisation spécifique n'est pas demandée tant que la méthode <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> n'est pas appelée.  
+> L'autorisation spécifique n'est pas demandée tant que la méthode <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> n'est pas appelée.  
   
  L'autorisation d'afficher une boîte de dialogue Fichier n'accorde pas à votre application un accès total à tous les membres des classes <xref:System.Windows.Forms.FileDialog>, <xref:System.Windows.Forms.OpenFileDialog> et <xref:System.Windows.Forms.SaveFileDialog>. Pour connaître les autorisations requises pour appeler chaque méthode, consultez la rubrique de référence pour cette méthode dans la documentation de la bibliothèque de classes .NET Framework.  
   
  L'exemple de code suivant utilise la méthode <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> pour ouvrir un fichier spécifié par l'utilisateur dans un contrôle <xref:System.Windows.Forms.RichTextBox>. L'exemple exige <xref:System.Security.Permissions.FileDialogPermission> et la valeur d'énumération <xref:System.Security.Permissions.FileDialogPermissionAttribute.Open%2A> associée. Il illustre comment gérer <xref:System.Security.SecurityException> pour déterminer si la fonctionnalité d’enregistrement doit être désactivée. Cet exemple exige que votre <xref:System.Windows.Forms.Form> ait un contrôle <xref:System.Windows.Forms.Button> nommé `ButtonOpen` et un contrôle <xref:System.Windows.Forms.RichTextBox> nommé `RtfBoxMain`.  
   
 > [!NOTE]
->  La logique de programmation pour la fonctionnalité d’enregistrement n’est pas illustrée dans l’exemple.  
+> La logique de programmation pour la fonctionnalité d’enregistrement n’est pas illustrée dans l’exemple.  
   
 ```vb  
 Private Sub ButtonOpen_Click(ByVal sender As System.Object, _  
@@ -133,7 +133,7 @@ private void ButtonOpen_Click(object sender, System.EventArgs e)
 ```  
   
 > [!NOTE]
->  Dans Visual C#, veillez à ajouter du code pour activer le gestionnaire d’événements. En utilisant le code de l'exemple précédent, le code suivant montre comment activer le gestionnaire d'événements.`this.ButtonOpen.Click += newSystem.Windows.Forms.EventHandler(this.ButtonOpen_Click);`  
+> Dans Visual C#, veillez à ajouter du code pour activer le gestionnaire d’événements. En utilisant le code de l'exemple précédent, le code suivant montre comment activer le gestionnaire d'événements.`this.ButtonOpen.Click += newSystem.Windows.Forms.EventHandler(this.ButtonOpen_Click);`  
   
 ### <a name="other-files"></a>Autres fichiers  
  Vous devrez parfois lire ou écrire dans des fichiers que l'utilisateur ne spécifie pas, par exemple quand vous devrez conserver les paramètres d'application. Dans les zones Intranet local et Internet, votre application ne sera pas autorisée à stocker des données dans un fichier local. Toutefois, elle pourra stocker des données dans un stockage isolé. Le stockage isolé est un compartiment de données abstrait (et non un emplacement de stockage spécifique) composé d'au moins un fichier de stockage isolé, appelé magasin, contenant les emplacements de répertoire réels où sont stockées les données. Les autorisations d'accès aux fichiers telles que <xref:System.Security.Permissions.FileIOPermission> ne sont pas nécessaires. Au lieu de cela, la classe <xref:System.Security.Permissions.IsolatedStoragePermission> contrôle les autorisations pour le stockage isolé. Par défaut, les applications qui s'exécutent dans les zones Intranet local et Internet peuvent stocker des données à l'aide du stockage isolé. Toutefois, des paramètres tels que les quotas de disque peuvent varier. Pour plus d’informations sur le stockage isolé, consultez [stockage isolé](../../standard/io/isolated-storage.md).  

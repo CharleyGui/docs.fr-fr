@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1d0a85607586a8cdf0a319f2e43d9815d24be21b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 98eebd489792f57f7f98d3596d4f25be2e847441
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67772923"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966277"
 ---
 # <a name="iclrerrorreportingmanagerbegincustomdump-method"></a>ICLRErrorReportingManager::BeginCustomDump, méthode
-Spécifie la configuration des dumps de tas personnalisé pour le rapport d’erreurs.  
+Spécifie la configuration des dumps de tas personnalisés pour le rapport d’erreurs.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,40 +40,40 @@ HRESULT BeginCustomDump (
   
 ## <a name="parameters"></a>Paramètres  
  `dwFlavor`  
- [in] Un [ECustomDumpFlavor](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpflavor-enumeration.md) valeur qui indique le genre de dump de tas sur lequel générer le dump de tas personnalisé.  
+ dans Valeur [ECustomDumpFlavor,](../../../../docs/framework/unmanaged-api/hosting/ecustomdumpflavor-enumeration.md) qui indique le type de dump du tas sur lequel générer le dump du tas personnalisé.  
   
  `dwNumItems`  
- [in] La longueur de la `items` tableau. Si `dwFlavor` n’est pas DUMP_FLAVOR_Mini, `dwNumItems` doit être égal à zéro.  
+ dans Longueur du `items` tableau. Si `dwFlavor` n’est pas DUMP_FLAVOR_Mini `dwNumItems` , doit être égal à zéro.  
   
  `items`  
- [in] Un tableau de [CustomDumpItem](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md) instances, en spécifiant les éléments à ajouter au minidump. Si `dwFlavor` n’est pas DUMP_FLAVOR_Mini, `items` doit être null.  
+ dans Tableau d’instances [CustomDumpItem](../../../../docs/framework/unmanaged-api/hosting/customdumpitem-structure.md) , spécifiant les éléments à ajouter au mini-vidage. Si `dwFlavor` n’est pas DUMP_FLAVOR_Mini `items` , doit avoir la valeur null.  
   
  `dwReserved`  
- [in] Réservé pour une utilisation ultérieure.  
+ dans Réservé pour une utilisation ultérieure.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|La méthode a été retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel a expiré.|  
+|S_OK|La méthode a été retournée avec succès.|  
+|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread bloqué ou Fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois une méthode retourne E_FAIL, le CLR n’est plus utilisable au sein du processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Une fois qu’une méthode a retourné E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Notes  
- Le `BeginCustomDump` méthode définit la configuration du dump de tas personnalisé. Le [EndCustomDump](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-endcustomdump-method.md) méthode efface la configuration du dump du tas personnalisé et libère tout état associé. Il doit être appelée après que le vidage de tas personnalisé est terminé.  
+ La `BeginCustomDump` méthode définit une configuration de vidage de tas personnalisée. La méthode [EndCustomDump](../../../../docs/framework/unmanaged-api/hosting/iclrerrorreportingmanager-endcustomdump-method.md) efface la configuration du dump du tas personnalisé et libère tous les États associés. Elle doit être appelée une fois que le dump du tas personnalisé est terminé.  
   
 > [!IMPORTANT]
->  Échec d’appel `EndCustomDump` entraîne une fuite de mémoire.  
+> L’échec de `EndCustomDump` l’appel entraîne une fuite de mémoire.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

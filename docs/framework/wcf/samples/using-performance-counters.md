@@ -2,18 +2,18 @@
 title: Using Performance Counters
 ms.date: 03/30/2017
 ms.assetid: 00a787af-1876-473c-a48d-f52b51e28a3f
-ms.openlocfilehash: 2c5042d497a09984a6f6c398a943b443ee9aafb9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2d714af8802bd290b54d0bf3667220b25b24c3fc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62007602"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966764"
 ---
 # <a name="using-performance-counters"></a>Using Performance Counters
-Cet exemple montre comment accéder aux compteurs de performances de Windows Communication Foundation (WCF) et comment créer des compteurs de performances définis par l’utilisateur. Cet exemple est basé sur le [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
+Cet exemple montre comment accéder aux compteurs de performance Windows Communication Foundation (WCF) et comment créer des compteurs de performances définis par l’utilisateur. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
+> La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
  Dans cet exemple, le client appelle les quatre méthodes du service `ICalculator`. Le client continue jusqu'à ce qu'il soit interrompu par l'utilisateur. Le service reste inchangé.  
   
@@ -27,43 +27,43 @@ Cet exemple montre comment accéder aux compteurs de performances de Windows Com
 </configuration>  
 ```  
   
- Cette tâche peut également être effectuée à l’aide de la [l’outil Éditeur de Configuration (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md).  
+ Cette tâche peut également être effectuée à l’aide de l' [outil Éditeur de configuration (SvcConfigEditor. exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md).  
   
- Lorsque les compteurs de performance sont activés, l’ensemble de compteurs de performance WCF est activée pour le service. Le .NET Framework assure automatiquement la maintenance des données de performance à trois niveaux : `ServiceModelService`, `ServiceModelEndpoint` et `ServiceModelOperation`. Chacun de ces niveaux comporte des compteurs de performance tels que « Appels », « Appels par seconde », et « Appels de sécurité non autorisés ».  
+ Lorsque les compteurs de performance sont activés, la suite entière des compteurs de performance WCF est activée pour le service. Le .NET Framework assure automatiquement la maintenance des données de performance à trois niveaux : `ServiceModelService`, `ServiceModelEndpoint` et `ServiceModelOperation`. Chacun de ces niveaux comporte des compteurs de performance tels que « Appels », « Appels par seconde », et « Appels de sécurité non autorisés ».  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
 2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Pour exécuter l’exemple dans une configuration unique ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ### <a name="to-view-performance-data"></a>Pour afficher les données de performances  
   
-1. Démarrez l’outil Analyseur de performances en cliquant sur **Démarrer**, **exécuter...** , entrez `perfmon` et cliquez sur **OK,** ou à partir du Panneau de configuration, sélectionnez **outils d’administration** et double-cliquez sur **performances**.  
+1. Démarrez l’outil Analyseur de performances en cliquant sur **Démarrer**, **exécuter...** , entrez `perfmon` et cliquez sur **OK,** ou dans le panneau de configuration, sélectionnez **Outils d’administration** et double-cliquez sur **performances**.  
   
     > [!NOTE]
     >  Vous ne pouvez pas ajouter de compteurs tant que l'exemple de code est en cours d'exécution.  
   
 2. Supprimez les compteurs de performance répertoriés en les sélectionnant et en appuyant sur la touche Suppr.  
   
-3. Ajouter des compteurs WCF en double-cliquant sur le volet du graphique et en sélectionnant **ajouter des compteurs**. Dans le **ajouter des compteurs** boîte de dialogue, sélectionnez **ServiceModelOperation 3.0.0.0, ServiceModelEndpoint 3.0.0.0 ou ServiceModelService 3.0.0.0** dans l’objet de Performance liste déroulante. Sélectionnez les compteurs que vous souhaitez afficher dans la liste.  
+3. Pour ajouter des compteurs WCF, cliquez avec le bouton droit sur le volet graphique et sélectionnez **Ajouter des compteurs**. Dans la boîte de dialogue **Ajouter des compteurs** , sélectionnez **ServiceModelOperation 3.0.0.0, ServiceModelEndpoint 3.0.0.0 ou ServiceModelService 3.0.0.0** dans la zone de liste déroulante objet de performance. Sélectionnez les compteurs que vous souhaitez afficher dans la liste.  
   
     > [!NOTE]
-    >  Il n’existe aucun compteur de performances pour un service WCF si aucun service WCF en cours d’exécution sur l’ordinateur.  
+    >  Il n’y a aucun compteur de performance WCF pour un service s’il n’y a aucun service WCF en cours d’exécution sur l’ordinateur.  
   
 ### <a name="to-use-the-configuration-editor-to-enable-counters"></a>Pour utiliser l'Éditeur de configuration afin d'activer des compteurs  
   
 1. Ouvrez une instance de SvcConfigEditor.exe.  
   
-2. Dans le menu fichier, cliquez sur **Open** puis cliquez sur **fichier de configuration...** .  
+2. Dans le menu fichier, cliquez sur **ouvrir** , puis sur **fichier de configuration...** .  
   
 3. Naviguez jusqu'au dossier de service de l'exemple d'application et ouvrez le fichier Web.config.  
   
-4. Cliquez sur **Diagnostics** sur l’arborescence de la Configuration.  
+4. Cliquez sur Diagnostics dans l’arborescence de configuration.  
   
-5. Activer/désactiver **compteur de performances** dans le **Diagnostics** fenêtre pour afficher 'All'.  
+5. Activez/désactivez le **compteur de performances** dans la fenêtre **Diagnostics** pour afficher «tout».  
   
 6. Enregistrez le fichier de configuration et quittez l'éditeur.  
   
@@ -72,10 +72,10 @@ Cet exemple montre comment accéder aux compteurs de performances de Windows Com
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\PerfCounters`  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples d’analyse AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Exemples de surveillance AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)

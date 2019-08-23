@@ -8,23 +8,23 @@ helpviewer_keywords:
 - ParamArray keyword [Visual Basic]
 - ParamArray keyword [Visual Basic], syntax
 ms.assetid: a5f18789-92bd-488f-9c7e-cf3719963635
-ms.openlocfilehash: b9dee0fc876c6e7a02d085db7db4bf1c5dd2c68d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8fc5d1afd9e9723e6b3c58e100b0519ef8fdfab4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62053910"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968362"
 ---
 # <a name="paramarray-visual-basic"></a>ParamArray (Visual Basic)
-Spécifie qu’un paramètre de procédure accepte un tableau facultatif d’éléments du type spécifié. `ParamArray` peut être utilisé uniquement sur le dernier paramètre d’une liste de paramètres.  
+Spécifie qu’un paramètre de procédure accepte un tableau facultatif d’éléments du type spécifié. `ParamArray`peut être utilisé uniquement sur le dernier paramètre d’une liste de paramètres.  
   
 ## <a name="remarks"></a>Notes  
- `ParamArray` permet de passer un nombre arbitraire d’arguments à la procédure. Un `ParamArray` paramètre est toujours déclaré à l’aide de [ByVal](../../../visual-basic/language-reference/modifiers/byval.md).  
+ `ParamArray`vous permet de passer un nombre arbitraire d’arguments à la procédure. Un `ParamArray` paramètre est toujours déclaré à l’aide de [ByVal](../../../visual-basic/language-reference/modifiers/byval.md).  
   
- Vous pouvez fournir un ou plusieurs arguments à un `ParamArray` en passant un tableau des données appropriées de type de paramètre, une liste séparée par des virgules de valeurs, ou rien du tout. Pour plus d’informations, consultez « Appel d’un ParamArray » dans [tableaux de paramètres](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md).  
+ Vous pouvez fournir un ou plusieurs arguments à un `ParamArray` paramètre en passant un tableau du type de données approprié, une liste de valeurs séparées par des virgules, ou rien du tout. Pour plus d’informations, consultez «appel d’un ParamArray» dans les [tableaux de paramètres](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md).  
   
 > [!IMPORTANT]
->  Chaque fois que vous avez affaire à un tableau qui peut s’avérer indéfiniment volumineux, il existe un risque de saturer la capacité interne de votre application. Si vous acceptez un tableau de paramètres à partir du code appelant, vous devez tester sa longueur et prendre les mesures appropriées si elle est trop grande pour votre application.  
+> Chaque fois que vous traitez un tableau qui peut être indéfiniment volumineux, il existe un risque de surexécution de la capacité interne de votre application. Si vous acceptez un tableau de paramètres du code appelant, vous devez tester sa longueur et prendre les mesures appropriées s’il est trop grand pour votre application.  
   
  Le modificateur `ParamArray` peut être utilisé dans les contextes suivants :  
   

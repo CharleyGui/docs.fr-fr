@@ -12,12 +12,12 @@ helpviewer_keywords:
 - controls [Windows Forms], positioning
 - z-order
 ms.assetid: 1acc4281-2976-4715-86f4-bda68134baaf
-ms.openlocfilehash: 80973e16445079876e01c89f20b5ecbdca602eb8
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
-ms.translationtype: MT
+ms.openlocfilehash: 818f36633575b248d92da475c462cc0f211fe969
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039726"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966537"
 ---
 # <a name="how-to-layer-objects-on-windows-forms"></a>Procédure : superposer des objets dans des Windows Forms
 Lorsque vous créez une interface utilisateur complexe ou que vous utilisez un formulaire d’interface multidocument (MDI), vous souhaiterez souvent superposer les contrôles et les formulaires enfants pour créer des interfaces utilisateur plus complexes. Pour déplacer et suivre les contrôles et les fenêtres dans le contexte d’un groupe, vous manipulez leur ordre de plan. L' *ordre de plan* est la superposition visuelle des contrôles sur un formulaire le long de l’axe Z (profondeur) du formulaire. La fenêtre située en haut de l’ordre de plan chevauche toutes les autres fenêtres. Toutes les autres fenêtres chevauchent la fenêtre en bas de l’ordre de plan.
@@ -47,7 +47,7 @@ Lorsque vous créez une interface utilisateur complexe ou que vous utilisez un f
     ```
 
 > [!NOTE]
->  Windows Forms prend en charge la *relation contenant-contenu des contrôles*. La relation contenant-contenu de contrôle implique de placer un certain nombre de contrôles dans un contrôle conteneur <xref:System.Windows.Forms.RadioButton> , tel qu' <xref:System.Windows.Forms.GroupBox> un certain nombre de contrôles dans un contrôle. Vous pouvez ensuite superposer les contrôles dans le contrôle conteneur. Le déplacement de la zone de groupe déplace également les contrôles, car ils sont contenus à l’intérieur de celui-ci.
+> Windows Forms prend en charge la *relation contenant-contenu des contrôles*. La relation contenant-contenu de contrôle implique de placer un certain nombre de contrôles dans un contrôle conteneur <xref:System.Windows.Forms.RadioButton> , tel qu' <xref:System.Windows.Forms.GroupBox> un certain nombre de contrôles dans un contrôle. Vous pouvez ensuite superposer les contrôles dans le contrôle conteneur. Le déplacement de la zone de groupe déplace également les contrôles, car ils sont contenus à l’intérieur de celui-ci.
 
 ## <a name="see-also"></a>Voir aussi
 

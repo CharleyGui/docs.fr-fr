@@ -2,33 +2,33 @@
 title: Vue d'ensemble du flux de messages
 ms.date: 03/30/2017
 ms.assetid: fb0899e1-84cc-4d90-b45b-dc5a50063943
-ms.openlocfilehash: 009dd05ab299b92ee5f5cafd1c2131a2e6eb0132
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cee579f272700ca37228bacecdf387d03637610a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650252"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963057"
 ---
 # <a name="message-flow-overview"></a>Vue d'ensemble du flux de messages
 Dans un système distribué contenant des services interconnectés, il est nécessaire de déterminer les relations de causalité entre les services. Il est important de comprendre les différents composants faisant partie d'un flux de demandes pour prendre en charge des scénarios critiques, tels que le contrôle d'état, la résolution des problèmes et l'analyse de la cause première. Pour activer la corrélation des suivis entre différents services, la prise en prendre en charge des fonctionnalités suivantes a été ajoutée dans .NET Framework 4 :
 
-- Traçage analytique : Une fonctionnalité de suivi de faible niveau de détail à l’aide du suivi d’événements Windows (ETW) et de hautes performances.
+- Traçage analytique: Une fonctionnalité de traçage haute performance et de faible niveau de commentaires à l’aide d’Suivi d’v nements pour Windows (ETW).
 
-- Modèle d’activité de bout en bout pour les services WCF/WF : Cette fonctionnalité prend en charge la corrélation des suivis générés par le <xref:System.ServiceModel> et <xref:System.Workflow.ComponentModel> espaces de noms.
+- Modèle d’activité de bout en bout pour les services WCF/WF: Cette fonctionnalité prend en charge la corrélation des traces <xref:System.ServiceModel> générées par les espaces de noms et <xref:System.Workflow.ComponentModel> .
 
-- Suivi ETW pour WF : Cette fonctionnalité utilise des enregistrements de suivi générés par les services WF pour fournir une visibilité sur l’état actuel et la progression du flux de travail.
+- Suivi ETW pour WF: Cette fonctionnalité utilise les enregistrements de suivi générés par les services WF pour offrir une visibilité de l’état actuel et de la progression du Workflow.
 
- Les erreurs enregistrées dans un enregistrement de suivi peuvent être utilisées pour rechercher les erreurs de code ou les messages qui ne sont pas correctement formés. La propriété ActivityId du nœud Correlation dans l'en-tête de message de l'événement peut être utilisée pour déterminer l'activité générant une erreur. Pour activer le suivi du flux de messages par ID d’activité, consultez [Configuring Message Flow Tracing](../../../../docs/framework/wcf/diagnostics/etw/configuring-message-flow-tracing.md). Cette rubrique montre comment activer le suivi de flux de messages dans le projet créé dans le didacticiel Mise en route.
+ Les erreurs enregistrées dans un enregistrement de suivi peuvent être utilisées pour rechercher les erreurs de code ou les messages qui ne sont pas correctement formés. La propriété ActivityId du nœud Correlation dans l'en-tête de message de l'événement peut être utilisée pour déterminer l'activité générant une erreur. Pour activer le suivi de workflow par ID d’activité, consultez [configuration du suivi du workflow des messages](../../../../docs/framework/wcf/diagnostics/etw/configuring-message-flow-tracing.md). Cette rubrique montre comment activer le suivi de flux de messages dans le projet créé dans le didacticiel Mise en route.
 
 ### <a name="to-enable-message-flow-tracing-in-the-getting-started-tutorial"></a>Pour activer le suivi de flux de messages dans le didacticiel Mise en route
 
-1. Ouvrez l’Observateur d’événements en cliquant sur **Démarrer**, **exécuter**et en entrant `eventvwr.exe`.
+1. Ouvrez observateur d’événements en cliquant sur **Démarrer**, **exécuter**, puis `eventvwr.exe`en entrant.
 
-2. Si vous n’avez pas activé le traçage analytique, développez **journaux des Applications et Services**, **Microsoft**, **Windows**, **serveur d’applications-Applications** . Sélectionnez **vue**, **afficher analytiques et les journaux de débogage**. Avec le bouton droit **analyse** et sélectionnez **activer le journal**. Laissez l'Observateur d'événements ouvert pour visualiser les suivis.
+2. Si vous n’avez pas activé le traçage analytique, développez **journaux des applications et des services**, **Microsoft**, **Windows**, serveur d’applications **-applications**. Sélectionnez **Afficher**, **afficher les journaux d’analyse et de débogage**. Cliquez avec le bouton droit sur **analyse** et sélectionnez **activer le journal**. Laissez l'Observateur d'événements ouvert pour visualiser les suivis.
 
-3. Ouvrez l’exemple créé dans le [Getting Started Tutorial](../../../../docs/framework/wcf/getting-started-tutorial.md) dans Visual Studio 2012. Notez que vous devez exécuter Visual Studio 2012 en tant qu’administrateur afin que le service puisse être créé. Si vous avez les exemples WCF installés, vous pouvez ouvrir le [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md), qui contient le projet terminé créé dans le didacticiel.
+3. Ouvrez l’exemple créé dans le [didacticiel prise en main](../../../../docs/framework/wcf/getting-started-tutorial.md) dans Visual Studio 2012. Notez que vous devez exécuter Visual Studio 2012 en tant qu’administrateur afin de pouvoir créer le service. Si vous avez installé les exemples WCF, vous pouvez ouvrir le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md), qui contient le projet terminé créé dans le didacticiel.
 
-4. Avec le bouton droit le **Service** de projet et sélectionnez **ajouter**, **un nouvel élément**. Sélectionnez **fichier de Configuration d’Application** et cliquez sur **OK**.
+4. Cliquez avec le bouton droit sur le projet de **service** , puis sélectionnez **Ajouter**, **nouvel élément**. Sélectionnez **fichier de configuration** de l’application, puis cliquez sur **OK**.
 
 5. Ajoutez le code suivant au fichier App.Conf créé à l'étape précédente.
 
@@ -40,7 +40,7 @@ Dans un système distribué contenant des services interconnectés, il est néce
     </system.serviceModel>
     ```
 
-6. Exécutez l'application serveur sans déboguer en appuyant sur Ctrl+F5. Exécuter le projet client en double-cliquant sur le **Client** projet et en sélectionnant **déboguer**, **démarrer une nouvelle Instance**.
+6. Exécutez l'application serveur sans déboguer en appuyant sur Ctrl+F5. Exécutez le projet client en cliquant avec le bouton droit sur le projet **client** et en sélectionnant déboguer, **Démarrer une nouvelle instance**.
 
 7. Pour suivre les événements du client vers le serveur, ajoutez le code suivant au fichier de configuration de l'application dans le projet Client.
 
@@ -63,14 +63,14 @@ Dans un système distribué contenant des services interconnectés, il est néce
     Trace.CorrelationManager.ActivityId = guid;
     ```
 
-10. Activez et consultez le **analyse** journal.  Recherchez un événement présentant l'ID 220.  Sélectionnez l’événement, puis cliquez sur le **détails** onglet dans le volet de visualisation. Cet événement contiendra l'ID de corrélation pour l'activité appelante.
+10. Actualisez et examinez le journal d' **analyse** .  Recherchez un événement présentant l'ID 220.  Sélectionnez l’événement, puis cliquez sur l’onglet **Détails** dans le volet de visualisation. Cet événement contiendra l'ID de corrélation pour l'activité appelante.
 
     ```xml
     <Correlation ActivityID="{A066CCF1-8AB3-459B-B62F-F79F957A5036}" />
     ```
 
     > [!NOTE]
-    >  Tous les événements ayant le même GUID dans l'ActivityID sont liés à une seule demande. Il peut être utilisé pour mettre en corrélation les messages d'un client spécifique avec un service spécifique. Si le client a appelé un autre service, ce même client peut être identifié par ActivityID.
+    > Tous les événements ayant le même GUID dans l'ActivityID sont liés à une seule demande. Il peut être utilisé pour mettre en corrélation les messages d'un client spécifique avec un service spécifique. Si le client a appelé un autre service, ce même client peut être identifié par ActivityID.
 
 11. Dans certains cas, l'ActivityID peut varier du GUID d'origine au nouvel ActivityID. Le cas échéant, un événement de transfert est émis. Cet événement porte l'ID 499 et contiendra les données suivantes dans l'en-tête.
 
@@ -87,4 +87,4 @@ Dans un système distribué contenant des services interconnectés, il est néce
     ```
 
     > [!NOTE]
-    >  L'événement de transfère enregistre la modification de l'ActivityID actif du GUID spécifié en tant qu'ActivityID dans le GUID spécifié comme RelatedActivityID. Une fois l'événement de transfert émis, tous les événements contiendront le nouveau GUID en tant qu'ActivityID.
+    > L'événement de transfère enregistre la modification de l'ActivityID actif du GUID spécifié en tant qu'ActivityID dans le GUID spécifié comme RelatedActivityID. Une fois l'événement de transfert émis, tous les événements contiendront le nouveau GUID en tant qu'ActivityID.

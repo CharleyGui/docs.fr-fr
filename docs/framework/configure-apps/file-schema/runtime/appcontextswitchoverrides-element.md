@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3adeb57e853d26415c53b5ac2579f14187e45969
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 5a71277c6e5183f855ef07a6fc3a20e29b06998f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658973"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920921"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides >, élément
 Définit un ou plusieurs commutateurs utilisés par la classe <xref:System.AppContext> pour fournir un mécanisme d’annulation d’abonnement aux nouvelles fonctionnalités.  
@@ -138,7 +138,7 @@ Définit un ou plusieurs commutateurs utilisés par la classe <xref:System.AppCo
 |`System.Xml.`<br /><br /> `IgnoreEmptyKeySequences`|Contrôle si les séquences de touches vides dans les clés composées sont ignorées par la validation de schéma XSD. Pour plus d’informations, consultez [Atténuation : Validation](../../../migration-guide/mitigation-xml-schema-validation.md)de schéma XML.|.NET Framework 4.6|  
   
 > [!NOTE]
->  Au lieu d’ajouter `AppContextSwitchOverrides` un élément à un fichier de configuration d’application, vous pouvez également définir les commutateurs par programmation `static` en appelant C#la méthode `Shared` (dans) ou <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> (en Visual Basic).  
+> Au lieu d’ajouter `AppContextSwitchOverrides` un élément à un fichier de configuration d’application, vous pouvez également définir les commutateurs par programmation `static` en appelant C#la méthode `Shared` (dans) ou <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType> (en Visual Basic).  
   
  Les développeurs de bibliothèques peuvent également définir des commutateurs personnalisés pour permettre aux appelants de refuser les fonctionnalités modifiées introduites dans les versions ultérieures de leurs bibliothèques. Pour plus d'informations, consultez la classe <xref:System.AppContext>.  
   

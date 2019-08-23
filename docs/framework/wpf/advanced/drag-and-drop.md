@@ -8,20 +8,20 @@ helpviewer_keywords:
 - drag and drop [WPF]
 - drag-and-drop [WPF]
 ms.assetid: 77c48920-8c8b-41eb-8fe8-b411962c8623
-ms.openlocfilehash: 4a0e7cac9262908e4683aebeb653559c1513d4d9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a610d41d9db7f205d868713a6e1cd59c311ea916
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62010408"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964821"
 ---
 # <a name="drag-and-drop"></a>Glisser-déposer
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit un hautement flexible et l’infrastructure de dépôt qui prend en charge du glisser -déplacer des données à la fois dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications, ainsi que d’autres [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] applications.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]offre une infrastructure de glisser-déplacer hautement flexible qui prend en charge le glisser-déplacer des données [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans les deux applications, ainsi que dans d’autres applications Windows.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Vue d'ensemble du glisser-déplacer](drag-and-drop-overview.md)  
  [Données et objets de données](data-and-data-objects.md)  
- [Procédure pas à pas : L’activation de glisser-déplacer sur un contrôle utilisateur](walkthrough-enabling-drag-and-drop-on-a-user-control.md)  
+ [Procédure pas à pas : Activation du glisser-déplacer sur un contrôle utilisateur](walkthrough-enabling-drag-and-drop-on-a-user-control.md)  
  [Rubriques de guide pratique](drag-and-drop-how-to-topics.md)  
   
 ## <a name="reference"></a>Référence  

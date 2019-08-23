@@ -6,17 +6,17 @@ helpviewer_keywords:
 - DataGrid control [Windows Forms], master-details lists
 - related tables [Windows Forms], displaying in DataGrid control
 ms.assetid: 19438ba2-f687-4417-a2fb-ab1cd69d4ded
-ms.openlocfilehash: d1e598831954f17bdf3bc03ab880c344ca36aa5a
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 3962b671176ad158b338889140181834e05bbeee
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039942"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929722"
 ---
 # <a name="how-to-create-master-details-lists-with-the-windows-forms-datagrid-control-using-the-designer"></a>Procédure : créer des listes maître/détails avec le contrôle DataGrid Windows Forms à l’aide du concepteur
 
 > [!NOTE]
->  Le contrôle <xref:System.Windows.Forms.DataGridView> remplace le contrôle <xref:System.Windows.Forms.DataGrid> et lui ajoute des fonctionnalités ; toutefois, le contrôle <xref:System.Windows.Forms.DataGrid> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix. Pour plus d’informations, consultez [Différences entre les contrôles DataGridView et DataGrid Windows Forms](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).
+> Le contrôle <xref:System.Windows.Forms.DataGridView> remplace le contrôle <xref:System.Windows.Forms.DataGrid> et lui ajoute des fonctionnalités ; toutefois, le contrôle <xref:System.Windows.Forms.DataGrid> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix. Pour plus d’informations, consultez [Différences entre les contrôles DataGridView et DataGrid Windows Forms](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).
 
  Si votre <xref:System.Data.DataSet> contient une série de tables associées, vous pouvez utiliser deux <xref:System.Windows.Forms.DataGrid> contrôles pour afficher les données dans un format maître/détail. L' <xref:System.Windows.Forms.DataGrid> un est désigné comme grille principale et le second est désigné comme grille de détails. Lorsque vous sélectionnez une entrée dans la liste principale, toutes les entrées enfants associées s’affichent dans la liste des détails. Par exemple, si votre <xref:System.Data.DataSet> contient une table Customers et une table Orders associée, vous devez spécifier la table Customers comme grille principale et la table Orders comme grille de détails. Lorsqu’un client est sélectionné dans la grille principale, toutes les commandes associées à ce client dans la table Orders s’affichent dans la grille de détails.
 
@@ -24,10 +24,10 @@ ms.locfileid: "69039942"
 
 ## <a name="to-create-a-master-details-list-in-the-designer"></a>Pour créer une liste Master-Details dans le concepteur
 
-1. Ajoutez deux <xref:System.Windows.Forms.DataGrid> contrôles au formulaire. Pour plus d'informations, voir [Procédure : Ajoutez des contrôles à](how-to-add-controls-to-windows-forms.md)Windows Forms. Dans Visual Studio 2005, le <xref:System.Windows.Forms.DataGrid> contrôle ne se trouve pas dans la **boîte à outils** par défaut. Pour plus d'informations, voir [Procédure : Ajoutez des éléments à la](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165355(v=vs.100))boîte à outils.
+1. Ajoutez deux <xref:System.Windows.Forms.DataGrid> contrôles au formulaire. Pour plus d’informations, consultez [Guide pratique pour Ajoutez des contrôles à](how-to-add-controls-to-windows-forms.md)Windows Forms. Dans Visual Studio 2005, le <xref:System.Windows.Forms.DataGrid> contrôle ne se trouve pas dans la **boîte à outils** par défaut. Pour plus d’informations, consultez [Guide pratique pour Ajoutez des éléments à la](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165355(v=vs.100))boîte à outils.
 
     > [!NOTE]
-    >  Les étapes suivantes ne s’appliquent pas à Visual Studio 2005, qui utilise la fenêtre **sources de données** pour la liaison de données au moment du Design. Pour plus d’informations, consultez [lier des contrôles à des données dans Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio) et [procédure: Affichez les données associées dans une](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/57tx3hhe(v=vs.120))application Windows Forms.
+    > Les étapes suivantes ne s’appliquent pas à Visual Studio 2005, qui utilise la fenêtre **sources de données** pour la liaison de données au moment du Design. Pour plus d’informations, consultez [lier des contrôles à des données dans Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio) et [procédure: Affichez les données associées dans une](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/57tx3hhe(v=vs.120))application Windows Forms.
 
 2. Faites glisser deux tables ou plus de **Explorateur de serveurs** vers le formulaire.
 

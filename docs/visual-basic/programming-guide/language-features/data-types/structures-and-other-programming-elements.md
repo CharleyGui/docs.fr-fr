@@ -8,20 +8,20 @@ helpviewer_keywords:
 - arrays [Visual Basic], structure elements
 - nested structures [Visual Basic]
 ms.assetid: 0f849313-ccd2-4c9a-acb9-69de6751c088
-ms.openlocfilehash: a943bbdec617ba6c95685df3a4fcdb36b52def22
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ec65c75fcfd907097f1cd1e0d3092a547272a782
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61906449"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933244"
 ---
 # <a name="structures-and-other-programming-elements-visual-basic"></a>Structures et autres éléments de programmation (Visual Basic)
-Vous pouvez utiliser des structures en conjonction avec les tableaux, les objets et les procédures, ainsi qu’entre eux. Les interactions utilisent la même syntaxe que ces éléments individuellement.  
+Vous pouvez utiliser des structures conjointement avec des tableaux, des objets et des procédures, ainsi qu’entre eux. Les interactions utilisent la même syntaxe que celles que ces éléments utilisent individuellement.  
   
 > [!NOTE]
->  Vous ne peut pas initialiser un des éléments de structure dans la déclaration de structure. Vous pouvez assigner des valeurs uniquement aux éléments d’une variable qui a été déclarée comme étant d’un type structure.  
+> Vous ne pouvez pas initialiser l’un des éléments de structure dans la déclaration de structure. Vous pouvez assigner des valeurs uniquement aux éléments d’une variable déclarée comme étant d’un type structure.  
   
-## <a name="structures-and-arrays"></a>Structures et les tableaux  
+## <a name="structures-and-arrays"></a>Structures et tableaux  
  Une structure peut contenir un tableau comme un ou plusieurs de ses éléments. L'exemple suivant illustre ce comportement.  
   
 ```vb  
@@ -33,7 +33,7 @@ Public Structure systemInfo
 End Structure   
 ```  
   
- Vous accéder aux valeurs d’un tableau dans une structure de la même façon que vous accédez à une propriété sur un objet. L'exemple suivant illustre ce comportement.  
+ Vous accédez aux valeurs d’un tableau dans une structure de la même façon que vous accédez à une propriété sur un objet. L'exemple suivant illustre ce comportement.  
   
 ```vb  
 Dim mySystem As systemInfo  
@@ -55,7 +55,7 @@ allSystems(5).CPU = "386SX"
 allSystems(5).diskDrives(2) = "100M SCSI"  
 ```  
   
-## <a name="structures-and-objects"></a>Structures et les objets  
+## <a name="structures-and-objects"></a>Structures et objets  
  Une structure peut contenir un objet comme un ou plusieurs de ses éléments. L'exemple suivant illustre ce comportement.  
   
 ```vb  
@@ -66,10 +66,10 @@ Protected Structure userInput
 End Structure  
 ```  
   
- Vous devez utiliser une classe d’objet spécifique dans une déclaration, plutôt que `Object`.  
+ Vous devez utiliser une classe d’objet spécifique dans une telle déclaration, plutôt `Object`que.  
   
 ## <a name="structures-and-procedures"></a>Structures et procédures  
- Vous pouvez passer une structure comme un argument de procédure. L'exemple suivant illustre ce comportement.  
+ Vous pouvez passer une structure en tant qu’argument de procédure. L'exemple suivant illustre ce comportement.  
   
 ```vb  
 Public currentCPUName As String = "700MHz Pentium compatible"  
@@ -81,9 +81,9 @@ Public Sub fillSystem(ByRef someSystem As systemInfo)
 End Sub  
 ```  
   
- L’exemple précédent passe la structure *par référence*, ce qui permet à la procédure modifier ses éléments afin que les modifications prennent effet dans le code appelant. Si vous souhaitez protéger une structure contre de telles modifications, passez par valeur.  
+ L’exemple précédent passe la structure *par référence*, ce qui permet à la procédure de modifier ses éléments afin que les modifications prennent effet dans le code appelant. Si vous souhaitez protéger une structure contre une telle modification, transmettez-la par valeur.  
   
- Vous pouvez également retourner une structure à partir d’un `Function` procédure. L'exemple suivant illustre ce comportement.  
+ Vous pouvez également retourner une structure à partir `Function` d’une procédure. L'exemple suivant illustre ce comportement.  
   
 ```vb  
 Dim allSystems(100) As systemInfo  
@@ -96,7 +96,7 @@ Function findByDate(ByVal searchDate As Date) As systemInfo
 End Function  
 ```  
   
-## <a name="structures-within-structures"></a>Structures au sein de Structures  
+## <a name="structures-within-structures"></a>Structures dans les structures  
  Les structures peuvent contenir d’autres structures. L'exemple suivant illustre ce comportement.  
   
 ```vb  

@@ -3,17 +3,17 @@ title: <state>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 619414f2-61c2-4427-9977-d05009e343db
-ms.openlocfilehash: 6f1a9474f3f12005df364a6fb84dc63aa1b68e04
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9ffe9f9f69f68b6f47cbc3a75200b2867aae2384
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61796160"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947441"
 ---
 # <a name="state"></a>\<state>
 Représente une collection d’états faisant l’objet d’un abonnement dans l’instance de flux de travail suivie lors de la création des enregistrements de suivi.  
   
- Pour plus d’informations sur les requêtes de modèle de suivi, consultez [modèles de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+ Pour plus d’informations sur le suivi des requêtes de profils, consultez modèles de [suivi](../../../windows-workflow-foundation/tracking-profiles.md)  
   
 \<system.serviceModel>  
 \<tracking>  
@@ -58,7 +58,7 @@ Représente une collection d’états faisant l’objet d’un abonnement dans l
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<states>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md)|Collection d'états faisant l'objet d'un abonnement dans l'instance de flux de travail suivie lors de la création des enregistrements de suivi.|  
+|[\<states>](states.md)|Collection d'états faisant l'objet d'un abonnement dans l'instance de flux de travail suivie lors de la création des enregistrements de suivi.|  
   
 ## <a name="remarks"></a>Notes  
  Les enregistrements retournés sont filtrés par états dans cette collection.  
@@ -77,7 +77,7 @@ Représente une collection d’états faisant l’objet d’un abonnement dans l
 |UnhandledException|L'instance de flux de travail a rencontré une exception non gérée.|  
 |Non chargé|L'instance de flux de travail est déchargée.|  
 |Canceled|L'instance de flux de travail est annulée.|  
-|Suspendu|L'instance de workflow est interrompue.|  
+|Interrompu|L'instance de workflow est interrompue.|  
 |Arrêté|L'instance de flux de travail est arrêtée.|  
 |Unsuspended|L'instance de flux de travail est non interrompue.|  
   
@@ -99,5 +99,5 @@ Représente une collection d’états faisant l’objet d’un abonnement dans l
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.StateElement?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType>
-- [Suivi et traçage de workflow](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Profils de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [Suivi et traçage de workflow](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Profils de suivi](../../../windows-workflow-foundation/tracking-profiles.md)

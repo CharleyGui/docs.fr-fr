@@ -1,15 +1,15 @@
 ---
-title: Création du Document Office Open XML Source (Visual Basic)
+title: Création du document Office Open XML source (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 61ccd6fb-0c47-4075-afdf-5b5021330f21
-ms.openlocfilehash: 83cb7d0a325e11c9669f1331e57bed7bf09f27c6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d01755442a9b64e0577ace4eb05c6818dac9a824
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61923420"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965252"
 ---
-# <a name="creating-the-source-office-open-xml-document-visual-basic"></a>Création du Document Office Open XML Source (Visual Basic)
+# <a name="creating-the-source-office-open-xml-document-visual-basic"></a>Création du document Office Open XML source (Visual Basic)
 Cette rubrique montre comment créer le document WordprocessingML Office Open XML utilisé par les autres exemples de ce didacticiel. Si vous suivez ces instructions, votre sortie correspondra à la sortie fournie dans chaque exemple.  
   
  Toutefois, les exemples présentés dans ce didacticiel fonctionnent avec n'importe quel document WordprocessingML valide.  
@@ -44,15 +44,15 @@ Cette rubrique montre comment créer le document WordprocessingML Office Open XM
   
 3. Mettez en forme la première ligne à l'aide du style « Titre 1 ».  
   
-4. Sélectionnez les lignes qui contiennent le code Visual Basic. La première ligne commence par le mot clé `Imports`. La dernière ligne est « End Class ». Mettez en forme les lignes avec la police Courrier. Mettez-les en forme avec un nouveau style et nommez le nouveau style « Code ».  
+4. Sélectionnez les lignes qui contiennent le code Visual Basic. La première ligne commence par le mot clé `Imports`. La dernière ligne est «End Class». Mettez en forme les lignes avec la police Courrier. Mettez-les en forme avec un nouveau style et nommez le nouveau style « Code ».  
   
 5. Pour finir, sélectionnez la ligne entière qui contient la sortie et mettez-la en forme avec le style `Code`.  
   
 6. Enregistrez le document et nommez-le SampleDoc.docx.  
   
     > [!NOTE]
-    >  Si vous utilisez Microsoft Word 2003, sélectionnez **Document Word 2007** dans la liste déroulante **Type de fichier**.  
+    > Si vous utilisez Microsoft Word 2003, sélectionnez **Document Word 2007** dans la liste déroulante **Type de fichier**.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Tutoriel : Manipulation de contenu dans un Document WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Tutoriel : Manipulation de contenu dans un document WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

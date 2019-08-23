@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 32a4f4f3735c8952cf1458c63655eb56a82fd18f
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 5c9f15a7ff30d5647338bf1954aca441b47281b5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666433"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948742"
 ---
 # <a name="generics-in-net"></a>Génériques en .NET
 
@@ -128,7 +128,7 @@ ms.locfileid: "69666433"
 - Dans Visual Basic, C# et C++, un type imbriqué qui est inclus dans un type générique ne peut pas être instancié, à moins que des types aient été assignés aux paramètres de type de tous les types englobants. En d'autres termes, un type imbriqué défini à l'aide de ces langages comprend les paramètres de type de tous ses types englobants. Ainsi, les paramètres de type des types englobants peuvent être utilisés dans les définitions de membres d'un type imbriqué. Pour plus d'informations, consultez "Types imbriqués" dans <xref:System.Type.MakeGenericType%2A>.  
   
     > [!NOTE]
-    >  Un type imbriqué qui est défini par émission de code dans un assembly dynamique ou avec [Ilasm.exe (IL Assembler)](../../../docs/framework/tools/ilasm-exe-il-assembler.md) n’a pas besoin d’inclure les paramètres de type de ses types englobants. Toutefois, s’il ne les inclut pas, les paramètres de type ne seront pas dans la portée de la classe imbriquée.  
+    > Un type imbriqué qui est défini par émission de code dans un assembly dynamique ou avec [Ilasm.exe (IL Assembler)](../../../docs/framework/tools/ilasm-exe-il-assembler.md) n’a pas besoin d’inclure les paramètres de type de ses types englobants. Toutefois, s’il ne les inclut pas, les paramètres de type ne seront pas dans la portée de la classe imbriquée.  
   
      Pour plus d'informations, consultez "Types imbriqués" dans <xref:System.Type.MakeGenericType%2A>.  
   

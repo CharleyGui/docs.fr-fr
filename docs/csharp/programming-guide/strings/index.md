@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: 1b80082d10ad9ee760a184f496793ad5c69202da
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: d9453f931bba9b1d3b5db3b4f80aa365677c0b76
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588481"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988415"
 ---
 # <a name="strings-c-programming-guide"></a>Chaînes (Guide de programmation C#)
 Une chaîne est un objet de type <xref:System.String> dont la valeur est du texte. En interne, le texte est stocké sous la forme d’une collection séquentielle en lecture seule d’objets <xref:System.Char>. Il n’existe aucun caractère de fin Null à la fin d’une chaîne C# ; par conséquent, une chaîne C# peut contenir n’importe quel nombre de caractères Null incorporés ('\0'). La propriété <xref:System.String.Length%2A> d’une chaîne représente le nombre d’objets `Char` qu’elle contient, et non pas le nombre de caractères Unicode. Pour accéder à des points de code Unicode individuels dans une chaîne, utilisez l’objet <xref:System.Globalization.StringInfo>.  
@@ -68,10 +68,10 @@ Une chaîne est un objet de type <xref:System.String> dont la valeur est du text
 |\x|Séquence d’échappement Unicode similaire à "\u", mais avec une longueur variable|`\xH[H][H][H]` (plage : 0 - FFFF ; exemple : `\x00E7` or `\x0E7` or `\xE7` = "ç")|  
   
 > [!WARNING]
->  Quand vous utilisez la séquence d’échappement `\x` et spécifiez moins de 4 chiffres hexadécimaux, si les caractères qui suivent immédiatement la séquence d’échappement sont des chiffres hexadécimaux valides (par ex. 0-9, A-F et a-f), ils sont interprétés comme faisant partie de la séquence d’échappement. Par exemple, `\xA1` donne "&#161;", qui est le point de code U+00A1. Toutefois, si le caractère suivant est « A » ou « a », la séquence d’échappement est plutôt être interprétée comme étant `\xA1A` et donne "&#x0A1A;", qui est le point de code U+0A1A. Dans ce cas, la spécification des 4 chiffres hexadécimaux (par ex. `\x00A1`) empêche toute mauvaise interprétation possible.  
+> Quand vous utilisez la séquence d’échappement `\x` et spécifiez moins de 4 chiffres hexadécimaux, si les caractères qui suivent immédiatement la séquence d’échappement sont des chiffres hexadécimaux valides (par ex. 0-9, A-F et a-f), ils sont interprétés comme faisant partie de la séquence d’échappement. Par exemple, `\xA1` donne "&#161;", qui est le point de code U+00A1. Toutefois, si le caractère suivant est « A » ou « a », la séquence d’échappement est plutôt être interprétée comme étant `\xA1A` et donne "&#x0A1A;", qui est le point de code U+0A1A. Dans ce cas, la spécification des 4 chiffres hexadécimaux (par ex. `\x00A1`) empêche toute mauvaise interprétation possible.  
   
 > [!NOTE]
->  Au moment de la compilation, les chaînes textuelles sont converties en chaînes normales avec les mêmes séquences d’échappement. Par conséquent, si vous affichez une chaîne textuelle dans la fenêtre Espion du débogueur, vous verrez les caractères d’échappement qui ont été ajoutés par le compilateur et non la version textuelle de votre code source. Par exemple, la chaîne textuelle `@"C:\files.txt"` s’affiche dans la fenêtre Espion en tant que "C:\\\files.txt".  
+> Au moment de la compilation, les chaînes textuelles sont converties en chaînes normales avec les mêmes séquences d’échappement. Par conséquent, si vous affichez une chaîne textuelle dans la fenêtre Espion du débogueur, vous verrez les caractères d’échappement qui ont été ajoutés par le compilateur et non la version textuelle de votre code source. Par exemple, la chaîne textuelle `@"C:\files.txt"` s’affiche dans la fenêtre Espion en tant que "C:\\\files.txt".  
   
 ## <a name="format-strings"></a>Chaînes de format  
  Une chaîne de format est une chaîne dont le contenu est déterminé de façon dynamique lors de l’exécution. Les chaînes de format sont créées en incorporant des *expressions interpolées* ou des espaces réservés à l’intérieur d’accolades dans une chaîne. Tous les éléments à l’intérieur des accolades (`{...}`) seront convertis en une valeur et affichés sous forme d’une chaîne mise en forme lors de l’exécution. Il existe deux méthodes pour créer des chaînes de format : l’interpolation de chaîne et la mise en forme composite.

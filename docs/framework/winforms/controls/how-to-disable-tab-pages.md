@@ -9,30 +9,30 @@ helpviewer_keywords:
 - tab pages [Windows Forms], hiding in forms
 - TabControl control [Windows Forms], disabling pages
 ms.assetid: adcc6618-8a34-4ee1-bbe3-47e732de6a59
-ms.openlocfilehash: 21592fdd74c43d40310e0fcbc96af6565a42e08b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 888228c28dce591b237be16b6a321afee0105208
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013450"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967151"
 ---
 # <a name="how-to-disable-tab-pages"></a>Procédure : désactiver des onglets
-Dans certains cas, vous souhaitez restreindre l’accès aux données qui sont disponibles dans votre application Windows Forms. Un exemple de ce pourrait être lorsque vous avez des données affichées dans les pages d’onglets d’un contrôle onglet. les administrateurs peut avoir plus d’informations sur une page d’onglets que vous souhaitez restreindre l’invité ou des utilisateurs de niveau inférieur.  
+Dans certains cas, vous voudrez restreindre l’accès aux données disponibles dans votre application Windows Forms. C’est le cas, par exemple, lorsque des données sont affichées dans les pages d’onglets d’un contrôle onglet; les administrateurs peuvent avoir des informations sur une page d’onglets que vous souhaiteriez empêcher des utilisateurs invités ou de niveau inférieur.  
   
 ### <a name="to-disable-tab-pages-programmatically"></a>Pour désactiver les pages d’onglets par programmation  
   
-1. Écrire du code pour gérer le contrôle onglet <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> événement. Il s’agit de l’événement est déclenché lorsque l’utilisateur bascule d’un onglet à l’autre.  
+1. Écrivez du code pour gérer l’événement du <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> contrôle onglet. Il s’agit de l’événement qui est déclenché lorsque l’utilisateur passe d’un onglet à l’autre.  
   
-2. Vérifiez les informations d’identification. Selon les informations présentées, vous voudrez vérifier l’utilisateur a ouvert une session avec le nom d’utilisateur ou une autre forme d’informations d’identification avant d’autoriser l’utilisateur d’afficher l’onglet.  
+2. Vérifiez les informations d’identification. Selon les informations présentées, vous pouvez vérifier le nom d’utilisateur avec lequel l’utilisateur s’est connecté ou une autre forme d’informations d’identification avant de permettre à l’utilisateur d’afficher l’onglet.  
   
-3. Si l’utilisateur dispose des informations d’identification appropriées, afficher l’onglet qui a été cliqué. Si l’utilisateur n’a pas d’informations d’identification appropriées, afficher une boîte de message ou certains autres interface utilisateur indiquant qu’ils ne pas avoir accès et revenir à l’onglet initial.  
+3. Si l’utilisateur possède les informations d’identification appropriées, affichez l’onglet sur lequel l’utilisateur a cliqué. Si l’utilisateur ne dispose pas des informations d’identification appropriées, affichez une boîte de message ou une autre interface utilisateur indiquant qu’il n’y a pas d’accès, puis revenez à l’onglet initial.  
   
     > [!NOTE]
-    >  Lorsque vous implémentez cette fonctionnalité dans vos applications de production, vous pouvez effectuer cette vérification des informations d’identification au cours du formulaire <xref:System.Windows.Forms.Form.Load> événement. Cela vous permettra de masquer l’onglet avant l’affichage de n’importe quelle interface utilisateur, ce qui constitue une approche beaucoup plus propre de la programmation. La méthodologie utilisée ci-dessous (vérification des informations d’identification et la désactivation de l’onglet pendant la <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> événement) est à titre d’illustration.  
+    > Lorsque vous implémentez cette fonctionnalité dans vos applications de production, vous pouvez effectuer cette vérification des informations d' <xref:System.Windows.Forms.Form.Load> identification pendant l’événement du formulaire. Cela vous permettra de masquer l’onglet avant l’affichage d’une interface utilisateur, ce qui constitue une approche bien plus propre à la programmation. La méthodologie utilisée ci-dessous (vérification des informations d’identification et désactivation <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> de l’onglet pendant l’événement) est à titre indicatif.  
   
-4. Si vous le souhaitez, si vous avez plus de deux pages d’onglets, afficher une page différente de la version d’origine.  
+4. Si vous avez plus de deux pages d’onglets, affichez éventuellement une page d’onglets différente de celle d’origine.  
   
-     Dans l’exemple ci-dessous, un <xref:System.Windows.Forms.CheckBox> contrôle est utilisé à la place de la vérification les informations d’identification, comme critère pour l’accès à l’onglet varie par application. Lorsque le <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> événement est déclenché si la vérification des informations d’identification a la valeur true (autrement dit, la case à cocher est activée) et l’onglet sélectionné est `TabPage2` (l’onglet avec les informations confidentielles, dans cet exemple), puis `TabPage2` s’affiche. Sinon, `TabPage3` s’affiche et une boîte de message est affichée à l’utilisateur, indiquant qu’ils ne disposait pas des privilèges d’accès appropriés. Le code ci-dessous illustre un formulaire avec un <xref:System.Windows.Forms.CheckBox> contrôle (`CredentialCheck`) et un <xref:System.Windows.Forms.TabControl> contrôle avec trois pages d’onglets.  
+     Dans l’exemple ci-dessous <xref:System.Windows.Forms.CheckBox> , un contrôle est utilisé à la place de la vérification des informations d’identification, car les critères d’accès à l’onglet varient en fonction de l’application. Lorsque l' <xref:System.Windows.Forms.TabControl.SelectedIndexChanged> événement est déclenché, si la vérification des informations d’identification a la valeur true (autrement dit, si la case à cocher `TabPage2` est activée) et si l’onglet sélectionné est (l’onglet avec les `TabPage2` informations confidentielles, dans cet exemple), est affiché. Sinon, `TabPage3` est affiché et une boîte de message s’affiche pour l’utilisateur, indiquant qu’il ne dispose pas des privilèges d’accès appropriés. Le code ci-dessous suppose un formulaire avec <xref:System.Windows.Forms.CheckBox> un contrôle`CredentialCheck`() et <xref:System.Windows.Forms.TabControl> un contrôle avec trois pages d’onglets.  
   
     ```vb  
     Private Sub TabControl1_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles TabControl1.SelectedIndexChanged  
@@ -89,7 +89,7 @@ Dans certains cas, vous souhaitez restreindre l’accès aux données qui sont d
        }  
     ```  
   
-     (Visual C#, Visual C++) Placez le code suivant dans le constructeur du formulaire pour inscrire le Gestionnaire d’événements.  
+     (Visuel C#, visuel C++) Placez le code suivant dans le constructeur du formulaire pour inscrire le gestionnaire d’événements.  
   
     ```csharp  
     this.tabControl1.SelectedIndexChanged +=   
@@ -104,6 +104,6 @@ Dans certains cas, vous souhaitez restreindre l’accès aux données qui sont d
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble du contrôle TabControl](tabcontrol-control-overview-windows-forms.md)
-- [Guide pratique pour Ajouter un contrôle à une Page d’onglets](how-to-add-a-control-to-a-tab-page.md)
-- [Guide pratique pour Ajouter et supprimer des onglets avec le contrôle TabControl de Windows Forms](how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)
-- [Guide pratique pour Modifier l’apparence du contrôle TabControl Windows Forms](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)
+- [Guide pratique pour Ajouter un contrôle à une page d’onglets](how-to-add-a-control-to-a-tab-page.md)
+- [Guide pratique pour Ajouter et supprimer des onglets avec le TabControl Windows Forms](how-to-add-and-remove-tabs-with-the-windows-forms-tabcontrol.md)
+- [Guide pratique pour Modifier l’apparence du Windows Forms TabControl](how-to-change-the-appearance-of-the-windows-forms-tabcontrol.md)

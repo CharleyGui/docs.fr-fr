@@ -5,61 +5,61 @@ helpviewer_keywords:
 - conditional compilation [Visual Basic], about conditional compilation
 - compilation [Visual Basic], conditional
 ms.assetid: 9c35e55e-7eee-44fb-a586-dad1f1884848
-ms.openlocfilehash: 4698435cb2ab15d16d8a8a898a01a9ffbc4f69c2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1bee64568ff92468e29226a395f7e5335387e256
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64639810"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69945582"
 ---
 # <a name="conditional-compilation-in-visual-basic"></a>Compilation conditionnelle en Visual Basic
-Dans *compilation conditionnelle*, blocs de code dans un programme spécifiques compiler de façon sélective tandis que d’autres sont ignorés.  
+Dans la *compilation conditionnelle*, les blocs de code particuliers d’un programme sont compilés de manière sélective, tandis que d’autres sont ignorés.  
   
- Par exemple, vous souhaiterez écrire des instructions de débogage qui comparent la rapidité de différentes approches pour la même tâche de programmation, ou vous peuvent souhaiter localiser une application pour plusieurs langues. Instructions de compilation conditionnelle sont conçues pour s’exécuter pendant la compilation, pas au moment de l’exécution.  
+ Par exemple, vous pouvez écrire des instructions de débogage qui comparent la vitesse des différentes approches de la même tâche de programmation, ou vous pouvez souhaiter localiser une application pour plusieurs langues. Les instructions de compilation conditionnelle sont conçues pour s’exécuter pendant la compilation, et non au moment de l’exécution.  
   
- Vous désignez des blocs de code à compiler de façon conditionnelle avec la `#If...Then...#Else` directive. Par exemple, pour créer le Français et allemand versions de la même application à partir de la même le code source, incorporez des segments de code spécifique à la plateforme dans `#If...Then` instructions à l’aide de l’une des constantes prédéfinies `FrenchVersion` et `GermanVersion`. L’exemple suivant montre comment :  
+ Vous désignez des blocs de code à compiler de façon conditionnelle `#If...Then...#Else` avec la directive. Par exemple, pour créer des versions en français et en allemand de la même application à partir du même code source, vous incorporez des segments de code `#If...Then` spécifiques à la plateforme dans des instructions à `FrenchVersion` l' `GermanVersion`aide des constantes prédéfinies et. L’exemple suivant montre comment:  
   
  [!code-vb[VbVbalrConditionalComp#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConditionalComp/VB/Class1.vb#5)]  
   
- Si vous définissez la valeur de la `FrenchVersion` constante de compilation conditionnelle à `True` au moment de la compilation, le code conditionnel pour la version Français est compilé. Si vous définissez la valeur de la `GermanVersion` constante à `True`, le compilateur utilise la version allemande. Si aucun n’est défini `True`, le code dans la dernière `Else` bloquer s’exécute.  
+ Si vous affectez à `FrenchVersion` `True` la valeur de la constante de compilation conditionnelle la valeur au moment de la compilation, le code conditionnel de la version française est compilé. Si vous affectez à `GermanVersion` `True`la constante la valeur, le compilateur utilise la version allemande. Si aucun n’a la `True`valeur, le code du dernier `Else` bloc s’exécute.  
   
 > [!NOTE]
->  La saisie semi-automatique ne fonctionne pas lorsque vous modifiez du code et à l’aide de directives de compilation conditionnelle Si le code ne fait pas partie de la branche active.  
+> La saisie semi-automatique ne fonctionne pas lors de la modification du code et de l’utilisation de directives de compilation conditionnelle si le code ne fait pas partie de la branche active.  
   
-## <a name="declaring-conditional-compilation-constants"></a>Déclarer des constantes de Compilation conditionnelle  
- Vous pouvez définir des constantes de compilation conditionnelle dans un des trois façons :  
+## <a name="declaring-conditional-compilation-constants"></a>Déclaration des constantes de compilation conditionnelle  
+ Vous pouvez définir des constantes de compilation conditionnelle de l’une des trois façons suivantes:  
   
-- Dans le **du Concepteur de projets**  
+- Dans le **Concepteur de projets**  
   
-- Sur la ligne de commande lorsque vous utilisez le compilateur de ligne de commande  
+- Au niveau de la ligne de commande lors de l’utilisation du compilateur de ligne de commande  
   
 - Dans votre code  
   
- Constantes de compilation conditionnelle ont une portée spéciale et ne sont pas accessibles à partir du code standard. La portée d’une constante de compilation conditionnelle est dépendante de la façon dont elle est définie. Le tableau suivant répertorie la portée des constantes déclarées à l’aide de chacun des trois méthodes mentionnées ci-dessus.  
+ Les constantes de compilation conditionnelle ont une portée spéciale et ne sont pas accessibles à partir du code standard. La portée d’une constante de compilation conditionnelle dépend de la façon dont elle est définie. Le tableau suivant répertorie l’étendue des constantes déclarées à l’aide de chacune des trois méthodes mentionnées ci-dessus.  
   
-|Configuration (constante)|Étendue de constante|  
+|Définition de la constante|Étendue de la constante|  
 |---|---|  
-|**Concepteur de projets**|Public, pour tous les fichiers dans le projet|  
-|Ligne de commande|Public, pour tous les fichiers passés au compilateur de ligne de commande|  
-|`#Const` instruction de code|Privée pour le fichier dans lequel elle est déclarée|  
+|**Concepteur de projets**|Public pour tous les fichiers du projet|  
+|Ligne de commande|Public pour tous les fichiers passés au compilateur de ligne de commande|  
+|`#Const`instruction dans le code|Privé pour le fichier dans lequel il est déclaré|  
   
-|Pour définir des constantes dans le Concepteur de projets|  
+|Pour définir des constantes dans le concepteur de projets|  
 |---|  
-|-Avant de créer votre fichier exécutable, définissez des constantes dans le **Concepteur de projets** en suivant les étapes fournies dans [la gestion des propriétés de projet et Solution](/visualstudio/ide/managing-project-and-solution-properties).|  
+|-Avant de créer votre fichier exécutable, définissez les constantes dans le **Concepteur de projet** en suivant les étapes indiquées dans [gestion des propriétés de projet et de solution](/visualstudio/ide/managing-project-and-solution-properties).|  
   
-|Pour définir des constantes à la ligne de commande|  
+|Pour définir des constantes au niveau de la ligne de commande|  
 |---|  
-|-Utilisez le **/d** commutateur pour entrer des constantes de compilation conditionnelle, comme dans l’exemple suivant :<br />     `vbc MyProj.vb /d:conFrenchVersion=–1:conANSI=0`<br />     Aucun espace n’est nécessaire entre le **/d** commutateur et la première constante. Pour plus d’informations, consultez [/ define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md).<br />     Les déclarations de ligne de commande substituent les déclarations entrées dans le **Concepteur de projet**, mais ne les suppriment pas. Arguments définis **Concepteur de projets** restent en vigueur pour les compilations ultérieures.<br />     Lorsque vous écrivez des constantes dans le code lui-même, ne sont pas des règles strictes quant à leur emplacement, car leur étendue est l’ensemble du module dans lequel ils sont déclarés.|  
+|-Utilisez le commutateur **/d** pour entrer des constantes de compilation conditionnelle, comme dans l’exemple suivant:<br />     `vbc MyProj.vb /d:conFrenchVersion=–1:conANSI=0`<br />     Aucun espace n’est nécessaire entre le commutateur **/d** et la première constante. Pour plus d’informations, consultez [/define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md).<br />     Les déclarations de ligne de commande remplacent les déclarations entrées dans le **Concepteur de projet**, mais ne les efface pas. Les arguments définis dans le **Concepteur de projets** restent en vigueur pour les compilations suivantes.<br />     Lors de l’écriture de constantes dans le code lui-même, il n’existe pas de règles strictes quant à leur position, car leur étendue est le module entier dans lequel elles sont déclarées.|  
   
 |Pour définir des constantes dans votre code|  
 |---|  
-|-Placez les constantes dans le bloc de déclaration du module dans lequel elles sont utilisées. Cela permet de maintenir votre code organisé et plus facile à lire.|  
+|-Placez les constantes dans le bloc de déclaration du module dans lequel elles sont utilisées. Cela permet d’organiser votre code et de le rendre plus facile à lire.|  
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
 |Titre|Description|  
 |---|---|  
-|[Structure de programme et conventions de codage](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)|Fournit des suggestions pour rendre votre code facile à lire et à gérer.|  
+|[Structure de programme et conventions de codage](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)|Fournit des suggestions pour faciliter la lecture et la maintenance de votre code.|  
   
 ## <a name="reference"></a>Référence  
  [#Const (directive)](../../../visual-basic/language-reference/directives/const-directive.md)  

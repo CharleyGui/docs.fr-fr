@@ -1,15 +1,15 @@
 ---
-title: <extensions> Section
+title: <extensions>section
 ms.date: 03/30/2017
 ms.assetid: 53a59fb6-dede-47ec-9384-b3c2e8f0c1fa
-ms.openlocfilehash: 0f77f621bbf9bbef00b206ef43a174f6f69364d5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4c8b5fe6eef1863ee3f02cb761a3aac61406e446
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673002"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918967"
 ---
-# <a name="extensions-section"></a>\<extensions > section
+# <a name="extensions-section"></a>\<section > des extensions
 Cette section de configuration contient une collection d’extensions, qui permettent à l’utilisateur de créer des liaisons, des comportements et d’autres aspects d’extensions définis par l’utilisateur.  
   
 \<system.ServiceModel>  
@@ -41,10 +41,10 @@ Cette section de configuration contient une collection d’extensions, qui perme
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<behaviorExtensions>](../../../../../docs/framework/configure-apps/file-schema/wcf/behaviorextensions.md)|Cette section contient des éléments enfants qui spécifient des extensions de comportement permettant à l'utilisateur de personnaliser les comportements de service ou de point de terminaison.|  
-|[\<bindingElementExtensions>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindingelementextensions.md)|Cette section active l'utilisation d'un élément de liaison personnalisé à partir d'un ordinateur ou d'un fichier de configuration de l'application.|  
-|[\<bindingExtensions>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindingextensions.md)|Cette section contient des éléments enfants qui spécifient des extensions de liaison permettant à l'utilisateur de personnaliser des liaisons.|  
-|[\<endpointExtensions>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpointextensions.md)|Cette section contient des éléments enfants qui inscrivent des points de terminaison standard.|  
+|[\<behaviorExtensions>](behaviorextensions.md)|Cette section contient des éléments enfants qui spécifient des extensions de comportement permettant à l'utilisateur de personnaliser les comportements de service ou de point de terminaison.|  
+|[\<bindingElementExtensions>](bindingelementextensions.md)|Cette section active l'utilisation d'un élément de liaison personnalisé à partir d'un ordinateur ou d'un fichier de configuration de l'application.|  
+|[\<bindingExtensions>](bindingextensions.md)|Cette section contient des éléments enfants qui spécifient des extensions de liaison permettant à l'utilisateur de personnaliser des liaisons.|  
+|[\<endpointExtensions>](endpointextensions.md)|Cette section contient des éléments enfants qui inscrivent des points de terminaison standard.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

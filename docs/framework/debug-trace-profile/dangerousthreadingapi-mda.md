@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 3e5efbc5-92e4-4229-b31f-ce368a1adb96
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 46b0add67fc6bc139ef02e09190670870749d4c7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9d635100c4e8214a7a8659c2d3e4da61825cf243
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61874774"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966304"
 ---
 # <a name="dangerousthreadingapi-mda"></a>Assistant Débogage managé dangerousThreadingAPI
 L’Assistant Débogage managé (MDA, Managed Debugging Assistant) `dangerousThreadingAPI` est activé quand la méthode <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> est appelée sur un thread autre que le thread actif.  
@@ -32,7 +32,7 @@ L’Assistant Débogage managé (MDA, Managed Debugging Assistant) `dangerousThr
   
  Si les primitives de synchronisation sont détenues par le thread cible, elles restent détenues pendant la suspension. Cela peut entraîner des interblocages si un autre thread, par exemple le thread qui exécute <xref:System.Threading.Thread.Suspend%2A>, tente d’acquérir un verrou sur la primitive. Dans ce cas, le problème se manifeste sous le forme d’un interblocage.  
   
-## <a name="resolution"></a>Résolution  
+## <a name="resolution"></a>Résolution :  
  Évitez les conceptions qui nécessitent l’utilisation de <xref:System.Threading.Thread.Suspend%2A> et <xref:System.Threading.Thread.Resume%2A>. Pour la coopération entre les threads, utilisez des primitives de synchronisation telles que <xref:System.Threading.Monitor>, <xref:System.Threading.ReaderWriterLock>, <xref:System.Threading.Mutex> ou l’instruction C# `lock`. Si vous devez utiliser ces méthodes, réduisez la durée et la quantité de code qui s’exécute pendant que le thread est suspendu.  
   
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
@@ -51,7 +51,7 @@ L’Assistant Débogage managé (MDA, Managed Debugging Assistant) `dangerousThr
 </mdaConfig>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple de code suivant illustre un appel à la méthode <xref:System.Threading.Thread.Suspend%2A> qui entraîne l’activation de `dangerousThreadingAPI`.  
   
 ```csharp
@@ -71,4 +71,4 @@ Thread t = new Thread(delegate() { Thread.Sleep(1000); });
 
 - <xref:System.Threading.Thread>
 - [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)
-- [lock, instruction](~/docs/csharp/language-reference/keywords/lock-statement.md)
+- [lock, instruction](../../csharp/language-reference/keywords/lock-statement.md)

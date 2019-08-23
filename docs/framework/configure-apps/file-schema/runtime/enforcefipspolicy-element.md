@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: c35509c4-35cf-43c0-bb47-75e4208aa24e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eb28eddf7e9f13bceaf47de28633073f59f3920d
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: f13243ddef7020f4d7a50e519ae8281702b0d261
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663746"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927416"
 ---
 # <a name="enforcefipspolicy-element"></a>\<enforceFIPSPolicy >, élément
 Indique s’il faut appliquer la condition de configuration d’ordinateur selon laquelle les algorithmes de chiffrement doivent être conformes aux normes FIPS (Federal Information Processing Standard).  
@@ -40,7 +40,7 @@ Indique s’il faut appliquer la condition de configuration d’ordinateur selon
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|`Value`|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |`true`|Si votre ordinateur est configuré pour exiger que les algorithmes de chiffrement soient compatibles FIPS, cette exigence est appliquée. Si une classe implémente un algorithme qui n’est pas compatible avec FIPS, les constructeurs ou `Create` les méthodes de cette classe lèvent des exceptions lorsqu’elles sont exécutées sur cet ordinateur. Il s'agit de la valeur par défaut.|  
 |`false`|Les algorithmes de chiffrement utilisés par l’application ne doivent pas nécessairement être conformes à la norme FIPS, quelle que soit la configuration de l’ordinateur.|  
@@ -60,7 +60,7 @@ Indique s’il faut appliquer la condition de configuration d’ordinateur selon
   
  Si votre application s’exécute sur des ordinateurs dont les configurations nécessitent une compatibilité avec FIPS et que votre application utilise un algorithme qui n’est pas compatible avec FIPS, vous pouvez utiliser cet élément dans votre fichier de configuration pour empêcher le common language runtime (CLR) à partir de application de la conformité FIPS. Cet élément a été introduit dans le .NET Framework 2,0 Service Pack 1.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant montre comment empêcher le CLR d’appliquer la conformité FIPS.  
   
 ```xml  
@@ -75,4 +75,4 @@ Indique s’il faut appliquer la condition de configuration d’ordinateur selon
 
 - [Schéma des paramètres d’exécution](index.md)
 - [Schéma des fichiers de configuration](../index.md)
-- [Modèle de chiffrement](../../../../../docs/standard/security/cryptography-model.md)
+- [Modèle de chiffrement](../../../../standard/security/cryptography-model.md)
