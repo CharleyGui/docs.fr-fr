@@ -16,37 +16,37 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0144539987f14bed83bfc9eab2f5ca26d2a609ae
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1faa78150659b4397cd4174583b607e1f7841b8f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61942387"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69943358"
 ---
-# <a name="icordebugobjectenum-interface"></a><span data-ttu-id="6574e-102">ICorDebugObjectEnum, interface</span><span class="sxs-lookup"><span data-stu-id="6574e-102">ICorDebugObjectEnum Interface</span></span>
+# <a name="icordebugobjectenum-interface"></a><span data-ttu-id="420eb-102">ICorDebugObjectEnum, interface</span><span class="sxs-lookup"><span data-stu-id="420eb-102">ICorDebugObjectEnum Interface</span></span>
 
-<span data-ttu-id="6574e-103">Implémente les méthodes ICorDebugEnum et énumère des tableaux d’objets par leurs adresses virtuelles relatives (RVA).</span><span class="sxs-lookup"><span data-stu-id="6574e-103">Implements ICorDebugEnum methods, and enumerates arrays of objects by their relative virtual addresses (RVAs).</span></span>  
+<span data-ttu-id="420eb-103">Implémente les méthodes ICorDebugEnum et énumère les tableaux d’objets par leurs adresses virtuelles relatives (RVA).</span><span class="sxs-lookup"><span data-stu-id="420eb-103">Implements ICorDebugEnum methods, and enumerates arrays of objects by their relative virtual addresses (RVAs).</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="6574e-104">Méthodes</span><span class="sxs-lookup"><span data-stu-id="6574e-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="420eb-104">Méthodes</span><span class="sxs-lookup"><span data-stu-id="420eb-104">Methods</span></span>  
   
-|<span data-ttu-id="6574e-105">Méthode</span><span class="sxs-lookup"><span data-stu-id="6574e-105">Method</span></span>|<span data-ttu-id="6574e-106">Description</span><span class="sxs-lookup"><span data-stu-id="6574e-106">Description</span></span>|  
+|<span data-ttu-id="420eb-105">Méthode</span><span class="sxs-lookup"><span data-stu-id="420eb-105">Method</span></span>|<span data-ttu-id="420eb-106">Description</span><span class="sxs-lookup"><span data-stu-id="420eb-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="6574e-107">Next, méthode</span><span class="sxs-lookup"><span data-stu-id="6574e-107">Next Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectenum-next-method.md)|<span data-ttu-id="6574e-108">Obtient les adresses virtuelles relatives du nombre spécifié d’objets à partir de l’énumération, en commençant à la position actuelle.</span><span class="sxs-lookup"><span data-stu-id="6574e-108">Gets the RVAs of the specified number of objects from the enumeration, starting at the current position.</span></span>|  
+|[<span data-ttu-id="420eb-107">Next, méthode</span><span class="sxs-lookup"><span data-stu-id="420eb-107">Next Method</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugobjectenum-next-method.md)|<span data-ttu-id="420eb-108">Obtient les adresses RVA du nombre spécifié d’objets à partir de l’énumération, en commençant à la position actuelle.</span><span class="sxs-lookup"><span data-stu-id="420eb-108">Gets the RVAs of the specified number of objects from the enumeration, starting at the current position.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="6574e-109">Notes</span><span class="sxs-lookup"><span data-stu-id="6574e-109">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="420eb-109">Notes</span><span class="sxs-lookup"><span data-stu-id="420eb-109">Remarks</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="6574e-110">Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.</span><span class="sxs-lookup"><span data-stu-id="6574e-110">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
+> <span data-ttu-id="420eb-110">Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.</span><span class="sxs-lookup"><span data-stu-id="420eb-110">This interface does not support being called remotely, either cross-machine or cross-process.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="6574e-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="6574e-111">Requirements</span></span>  
- <span data-ttu-id="6574e-112">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6574e-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="420eb-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="420eb-111">Requirements</span></span>  
+ <span data-ttu-id="420eb-112">**Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="420eb-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6574e-113">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="6574e-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="420eb-113">**En-tête :** CorDebug. idl, CorDebug. h</span><span class="sxs-lookup"><span data-stu-id="420eb-113">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="6574e-114">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="6574e-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="420eb-114">**Bibliothèque** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="420eb-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="6574e-115">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6574e-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="420eb-115">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="420eb-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6574e-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6574e-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="420eb-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="420eb-116">See also</span></span>
 
-- [<span data-ttu-id="6574e-117">Interfaces de débogage</span><span class="sxs-lookup"><span data-stu-id="6574e-117">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="420eb-117">Interfaces de débogage</span><span class="sxs-lookup"><span data-stu-id="420eb-117">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
