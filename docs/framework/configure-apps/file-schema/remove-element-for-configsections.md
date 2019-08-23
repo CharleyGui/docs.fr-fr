@@ -9,52 +9,52 @@ helpviewer_keywords:
 ms.assetid: ae4d82e0-e8fe-468c-81ab-46d63c4d66a8
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: 7c0173879c692588cc2e15f0b14a5687bb0404fb
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 4ff9bb537a31e28dbd4b878c1bc04c96262f85ac
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300673"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927458"
 ---
-# <a name="remove-element-for-configsections"></a><span data-ttu-id="20b1f-102">\<Supprimer >, élément pour \<configSections ></span><span class="sxs-lookup"><span data-stu-id="20b1f-102">\<remove> element for \<configSections></span></span>
+# <a name="remove-element-for-configsections"></a><span data-ttu-id="83419-102">\<supprimer > élément pour \<configSections ></span><span class="sxs-lookup"><span data-stu-id="83419-102">\<remove> element for \<configSections></span></span>
 
-<span data-ttu-id="20b1f-103">Supprime une section prédéfinie ou le groupe de section.</span><span class="sxs-lookup"><span data-stu-id="20b1f-103">Removes a predefined section or section group.</span></span>
+<span data-ttu-id="83419-103">Supprime un groupe de sections ou de sections prédéfini.</span><span class="sxs-lookup"><span data-stu-id="83419-103">Removes a predefined section or section group.</span></span>
 
-<span data-ttu-id="20b1f-104">[ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="20b1f-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span></span>  
-<span data-ttu-id="20b1f-105">&nbsp;&nbsp;[ **\<configSections>** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) </span><span class="sxs-lookup"><span data-stu-id="20b1f-105">&nbsp;&nbsp;[**\<configSections>**](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) </span></span>  
-<span data-ttu-id="20b1f-106">&nbsp;&nbsp;&nbsp;&nbsp; **\<remove>**</span><span class="sxs-lookup"><span data-stu-id="20b1f-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**</span></span>
+<span data-ttu-id="83419-104">[ **\<configuration>** ](configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="83419-104">[**\<configuration>**](configuration-element.md) </span></span>  
+<span data-ttu-id="83419-105">&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md) </span><span class="sxs-lookup"><span data-stu-id="83419-105">&nbsp;&nbsp;[**\<configSections>**](configsections-element-for-configuration.md) </span></span>  
+<span data-ttu-id="83419-106">&nbsp;&nbsp;&nbsp;&nbsp; **\<remove>**</span><span class="sxs-lookup"><span data-stu-id="83419-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="20b1f-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="20b1f-107">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="83419-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="83419-107">Syntax</span></span>
 
 ```xml
 <remove name="section name or section group name" />
 ```
 
-## <a name="attribute"></a><span data-ttu-id="20b1f-108">Attribut</span><span class="sxs-lookup"><span data-stu-id="20b1f-108">Attribute</span></span>
+## <a name="attribute"></a><span data-ttu-id="83419-108">Attribut</span><span class="sxs-lookup"><span data-stu-id="83419-108">Attribute</span></span>
 
-|           | <span data-ttu-id="20b1f-109">Description</span><span class="sxs-lookup"><span data-stu-id="20b1f-109">Description</span></span> |
+|           | <span data-ttu-id="83419-109">Description</span><span class="sxs-lookup"><span data-stu-id="83419-109">Description</span></span> |
 | --------- | ----------- |
-| <span data-ttu-id="20b1f-110">**name**</span><span class="sxs-lookup"><span data-stu-id="20b1f-110">**name**</span></span>  | <span data-ttu-id="20b1f-111">Attribut requis.</span><span class="sxs-lookup"><span data-stu-id="20b1f-111">Required attribute.</span></span><br><br><span data-ttu-id="20b1f-112">Spécifie le nom de la section ou le groupe de section à supprimer.</span><span class="sxs-lookup"><span data-stu-id="20b1f-112">Specifies the name of the section or section group to remove.</span></span> |
+| <span data-ttu-id="83419-110">**name**</span><span class="sxs-lookup"><span data-stu-id="83419-110">**name**</span></span>  | <span data-ttu-id="83419-111">Attribut requis.</span><span class="sxs-lookup"><span data-stu-id="83419-111">Required attribute.</span></span><br><br><span data-ttu-id="83419-112">Spécifie le nom de la section ou du groupe de sections à supprimer.</span><span class="sxs-lookup"><span data-stu-id="83419-112">Specifies the name of the section or section group to remove.</span></span> |
 
-## <a name="parent-element"></a><span data-ttu-id="20b1f-113">Élément parent</span><span class="sxs-lookup"><span data-stu-id="20b1f-113">Parent element</span></span>
+## <a name="parent-element"></a><span data-ttu-id="83419-113">Élément parent</span><span class="sxs-lookup"><span data-stu-id="83419-113">Parent element</span></span>
 
-|     | <span data-ttu-id="20b1f-114">Description</span><span class="sxs-lookup"><span data-stu-id="20b1f-114">Description</span></span> |
+|     | <span data-ttu-id="83419-114">Description</span><span class="sxs-lookup"><span data-stu-id="83419-114">Description</span></span> |
 | --- | ----------- |
-| [<span data-ttu-id="20b1f-115"> *\*\<configSections >** élément</span><span class="sxs-lookup"><span data-stu-id="20b1f-115">**\<configSections>** Element</span></span>](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | <span data-ttu-id="20b1f-116">Contient des déclarations d’espace de noms et de la section de configuration.</span><span class="sxs-lookup"><span data-stu-id="20b1f-116">Contains configuration section and namespace declarations.</span></span> |
+| [<span data-ttu-id="83419-115">élément  **>\<configSections**</span><span class="sxs-lookup"><span data-stu-id="83419-115">**\<configSections>** Element</span></span>](configsections-element-for-configuration.md) | <span data-ttu-id="83419-116">Contient la section de configuration et les déclarations d’espace de noms.</span><span class="sxs-lookup"><span data-stu-id="83419-116">Contains configuration section and namespace declarations.</span></span> |
 
-## <a name="child-elements"></a><span data-ttu-id="20b1f-117">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="20b1f-117">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="83419-117">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="83419-117">Child elements</span></span>
 
-<span data-ttu-id="20b1f-118">None</span><span class="sxs-lookup"><span data-stu-id="20b1f-118">None</span></span>
+<span data-ttu-id="83419-118">Aucun</span><span class="sxs-lookup"><span data-stu-id="83419-118">None</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="20b1f-119">Notes</span><span class="sxs-lookup"><span data-stu-id="20b1f-119">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="83419-119">Notes</span><span class="sxs-lookup"><span data-stu-id="83419-119">Remarks</span></span>
 
-<span data-ttu-id="20b1f-120">Vous pouvez utiliser la  **\<Supprimer >** élément à supprimer des sections et groupes de votre application qui ont été définies à un niveau supérieur dans la hiérarchie de fichiers de configuration.</span><span class="sxs-lookup"><span data-stu-id="20b1f-120">You can use the **\<remove>** element to remove sections and section groups from your application that were defined at a higher level in the configuration file hierarchy.</span></span>
+<span data-ttu-id="83419-120">Vous pouvez utiliser l'  **\<élément remove >** pour supprimer de votre application des sections et des groupes de sections qui ont été définis à un niveau supérieur dans la hiérarchie des fichiers de configuration.</span><span class="sxs-lookup"><span data-stu-id="83419-120">You can use the **\<remove>** element to remove sections and section groups from your application that were defined at a higher level in the configuration file hierarchy.</span></span>
 
-## <a name="example"></a><span data-ttu-id="20b1f-121">Exemple</span><span class="sxs-lookup"><span data-stu-id="20b1f-121">Example</span></span>
+## <a name="example"></a><span data-ttu-id="83419-121">Exemples</span><span class="sxs-lookup"><span data-stu-id="83419-121">Example</span></span>
 
-<span data-ttu-id="20b1f-122">L’exemple suivant montre comment utiliser le  **\<Supprimer >** élément dans un fichier de configuration d’application pour supprimer une section précédemment définie dans le fichier de configuration machine.</span><span class="sxs-lookup"><span data-stu-id="20b1f-122">The following example shows how to use the **\<remove>** element in an application configuration file to remove a section previously defined in the machine configuration file.</span></span>
+<span data-ttu-id="83419-122">L’exemple suivant montre comment utiliser l'  **\<élément remove >** dans un fichier de configuration de l’application pour supprimer une section précédemment définie dans le fichier de configuration de l’ordinateur.</span><span class="sxs-lookup"><span data-stu-id="83419-122">The following example shows how to use the **\<remove>** element in an application configuration file to remove a section previously defined in the machine configuration file.</span></span>
 
-<span data-ttu-id="20b1f-123">Le code du fichier de configuration machine suivant déclare la section  **\<sampleSection >** :</span><span class="sxs-lookup"><span data-stu-id="20b1f-123">The following machine configuration file code declares the section **\<sampleSection>**:</span></span>
+<span data-ttu-id="83419-123">Le code de fichier de configuration d’ordinateur suivant déclare la section  **\<sampleSection >** :</span><span class="sxs-lookup"><span data-stu-id="83419-123">The following machine configuration file code declares the section **\<sampleSection>**:</span></span>
 
 ```xml
 <!-- Machine.config file -->
@@ -69,7 +69,7 @@ ms.locfileid: "66300673"
 </configuration>
 ```
 
-<span data-ttu-id="20b1f-124">Le code suivant du fichier de configuration de l’application supprime le  **\<sampleSection >** section.</span><span class="sxs-lookup"><span data-stu-id="20b1f-124">The following application configuration file code removes the **\<sampleSection>** section.</span></span> <span data-ttu-id="20b1f-125">Après la suppression, l’application ne peut pas récupérer les paramètres dans  **\<sampleSection >** .</span><span class="sxs-lookup"><span data-stu-id="20b1f-125">After removal, the application cannot retrieve the settings in **\<sampleSection>**.</span></span>
+<span data-ttu-id="83419-124">Le code de fichier de configuration d’application suivant supprime la  **\<section > sampleSection** .</span><span class="sxs-lookup"><span data-stu-id="83419-124">The following application configuration file code removes the **\<sampleSection>** section.</span></span> <span data-ttu-id="83419-125">Après la suppression, l’application ne peut pas récupérer les paramètres dans  **\<sampleSection >** .</span><span class="sxs-lookup"><span data-stu-id="83419-125">After removal, the application cannot retrieve the settings in **\<sampleSection>**.</span></span>
 
 ```xml
 <!-- Application configuration file -->
@@ -80,10 +80,10 @@ ms.locfileid: "66300673"
 </configuration>
 ```
 
-## <a name="configuration-file"></a><span data-ttu-id="20b1f-126">fichier de configuration</span><span class="sxs-lookup"><span data-stu-id="20b1f-126">Configuration file</span></span>
+## <a name="configuration-file"></a><span data-ttu-id="83419-126">fichier de configuration</span><span class="sxs-lookup"><span data-stu-id="83419-126">Configuration file</span></span>
 
-<span data-ttu-id="20b1f-127">Cet élément peut être utilisé dans le fichier de configuration d’application, fichier de configuration machine (*Machine.config*), et *Web.config* fichiers qui ne sont pas au niveau du répertoire d’application.</span><span class="sxs-lookup"><span data-stu-id="20b1f-127">This element can be used in the application configuration file, machine configuration file (*Machine.config*), and *Web.config* files that are not at the application directory level.</span></span>
+<span data-ttu-id="83419-127">Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.</span><span class="sxs-lookup"><span data-stu-id="83419-127">This element can be used in the application configuration file, machine configuration file (*Machine.config*), and *Web.config* files that are not at the application directory level.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="20b1f-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="20b1f-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="83419-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="83419-128">See also</span></span>
 
-- [<span data-ttu-id="20b1f-129">Schéma de fichier de configuration pour le .NET Framework</span><span class="sxs-lookup"><span data-stu-id="20b1f-129">Configuration file schema for the .NET Framework</span></span>](~/docs/framework/configure-apps/file-schema/index.md)
+- [<span data-ttu-id="83419-129">Schéma du fichier de configuration pour le .NET Framework</span><span class="sxs-lookup"><span data-stu-id="83419-129">Configuration file schema for the .NET Framework</span></span>](index.md)
