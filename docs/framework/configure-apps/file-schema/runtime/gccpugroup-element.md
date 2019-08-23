@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: c1fc7d6c-7220-475c-a312-5b8b201f66e0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 197ab9dbc1ec85bf8961f60bb26496eab788e63f
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: ee56b23b6d5fca6d0527d509c9b6a6fc6dd82336
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663698"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920783"
 ---
 # <a name="gccpugroup-element"></a>\<GCCpuGroup >, élément
 
@@ -41,7 +41,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="enabled-attribute"></a>Attribut enabled
 
-|Valeur|Description|
+|`Value`|Description|
 |-----------|-----------------|
 |`false`|Le garbage collection ne prend pas en charge plusieurs groupes d’UC. Il s'agit de la valeur par défaut.|
 |`true`|Le garbage collection prend en charge plusieurs groupes de PROCESSEURs, si le serveur garbage collection est activé.|
@@ -64,7 +64,7 @@ Quand un ordinateur a plusieurs groupes d’UC et que la garbage collection du s
 > [!NOTE]
 > Cet élément s’applique uniquement aux threads garbage collections. Pour permettre au runtime de distribuer des threads utilisateur sur tous les groupes de processeurs, vous devez également activer l' [ \<élément Thread_UseAllCpuGroups >](thread-useallcpugroups-element.md) .
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L’exemple suivant montre comment activer garbage collection pour plusieurs groupes d’UC.
 
@@ -82,4 +82,4 @@ L’exemple suivant montre comment activer garbage collection pour plusieurs gro
 - [Schéma des paramètres d’exécution](index.md)
 - [Schéma des fichiers de configuration](../index.md)
 - [Pour désactiver les garbage collection simultanées](gcconcurrent-element.md#to-disable-background-garbage-collection)
-- [Garbage collection de station de travail et de serveur](../../../../../docs/standard/garbage-collection/fundamentals.md#workstation_and_server_garbage_collection)
+- [Garbage collection de station de travail et de serveur](../../../../standard/garbage-collection/fundamentals.md#workstation_and_server_garbage_collection)

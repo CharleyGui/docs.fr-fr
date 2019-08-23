@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6e0cacc1-9b11-4665-adb7-577a62626fd6
-ms.openlocfilehash: 11aa71f82af5a1bd764a4cc9e3514a795d559fc2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 82095f397195fbf333bab8d043da18114e2a5dba
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62000855"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968470"
 ---
 # <a name="how-to-create-a-basic-atom-feed"></a>Procédure : créer un flux Atom de base
 Windows Communication Foundation (WCF) vous permet de créer un service qui expose un flux de syndication. Cette rubrique explique comment créer un service de syndication qui expose un flux de syndication Atom.  
@@ -23,7 +23,7 @@ Windows Communication Foundation (WCF) vous permet de créer un service qui expo
      [!code-vb[htAtomBasic#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#0)]  
   
     > [!NOTE]
-    >  Toutes les opérations du service qui appliquent <xref:System.ServiceModel.Web.WebGetAttribute> sont mappées aux demandes HTTP GET. Pour mapper votre opération à une méthode HTTP différente, utilisez <xref:System.ServiceModel.Web.WebInvokeAttribute> à la place. Pour plus d'informations, voir [Procédure : Créer un Service Web HTTP de WCF de base](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md).  
+    > Toutes les opérations du service qui appliquent <xref:System.ServiceModel.Web.WebGetAttribute> sont mappées aux demandes HTTP GET. Pour mapper votre opération à une méthode HTTP différente, utilisez <xref:System.ServiceModel.Web.WebInvokeAttribute> à la place. Pour plus d’informations, consultez [Guide pratique pour Créez un service](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)http Web WCF de base.  
   
 2. Implémentez le contrat de service.  
   
@@ -64,7 +64,7 @@ Windows Communication Foundation (WCF) vous permet de créer un service qui expo
   
 ### <a name="to-call-getblog-with-an-http-get"></a>Pour appeler GetBlog() avec un HTTP GET  
   
-1. Ouvrez Internet Explorer, tapez l’URL suivante et appuyez sur ENTRÉE : `http://localhost:8000/BlogService/GetBlog`  
+1. Ouvrez Internet Explorer, tapez l’URL suivante, puis appuyez sur entrée:`http://localhost:8000/BlogService/GetBlog`  
   
      L’URL contient l’adresse de base du service (`http://localhost:8000/BlogService`), l’adresse relative du point de terminaison et l’opération de service à appeler.  
   

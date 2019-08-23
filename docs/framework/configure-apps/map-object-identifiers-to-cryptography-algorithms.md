@@ -8,15 +8,15 @@ helpviewer_keywords:
 - mapping object identifiers
 - cryptography, mapping object identifiers
 ms.assetid: c9673f81-bf9e-47fd-bc6f-6bc1c1c4c15e
-ms.openlocfilehash: e035ff04a70a441f7f64bbc230ba6d8036fb2ace
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a5aebac2d392d4540581dfe7c7afff0819968ac0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775776"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912543"
 ---
 # <a name="mapping-object-identifiers-to-cryptography-algorithms"></a>Mappage d'identificateurs d'objet à des algorithmes de chiffrement
-Les signatures numériques garantissent que les données ne sont pas falsifiées lorsqu’elles sont envoyées à partir d’un programme vers un autre. En règle générale, la signature numérique est calculée en appliquant une fonction mathématique au hachage des données à signer. Lors de la mise en forme une valeur de hachage à signer, certains algorithmes de signature numérique d’ajouter un identificateur d’objet ASN.1 (OID) dans le cadre de l’opération de mise en forme. L’OID identifie l’algorithme qui a été utilisé pour calculer le hachage. Vous pouvez mapper des algorithmes à des identificateurs d’objet pour étendre le mécanisme de chiffrement pour utiliser des algorithmes personnalisés. L’exemple suivant montre comment mapper un identificateur d’objet à un nouvel algorithme de hachage.  
+Les signatures numériques garantissent que les données ne sont pas falsifiées lorsqu’elles sont envoyées d’un programme à un autre. En général, la signature numérique est calculée en appliquant une fonction mathématique au hachage des données à signer. Lors de la mise en forme d’une valeur de hachage à signer, certains algorithmes de signature numérique ajoutent un identificateur d’objet (OID) ASN. 1 dans le cadre de l’opération de mise en forme. L’OID identifie l’algorithme utilisé pour calculer le hachage. Vous pouvez mapper des algorithmes à des identificateurs d’objet pour étendre le mécanisme de chiffrement afin d’utiliser des algorithmes personnalisés. L’exemple suivant montre comment mapper un identificateur d’objet à un nouvel algorithme de hachage.  
   
 ```xml  
 <configuration>  
@@ -38,9 +38,9 @@ Les signatures numériques garantissent que les données ne sont pas falsifiées
 </configuration>  
 ```  
   
- Le [ \<oidEntry > élément](../../../docs/framework/configure-apps/file-schema/cryptography/oidentry-element.md) contient deux attributs. Le **OID** attribut est le numéro de l’identificateur d’objet. Le **nom** attribut est la valeur de la **nom** attribut à partir de la [ \<nameEntry > élément](../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md). Il doit être un mappage à partir d’un nom d’algorithme à une classe avant un identificateur d’objet peut être mappé à un nom simple.  
+ [ L'\<élément oidEntry >](./file-schema/cryptography/oidentry-element.md) contient deux attributs. L’attribut **OID** est le numéro de l’identificateur d’objet. L’attribut **Name** est la valeur de l’attribut **Name** de l' [ \<élément élément nameEntry >](./file-schema/cryptography/nameentry-element.md). Il doit y avoir un mappage d’un nom d’algorithme à une classe avant qu’un identificateur d’objet puisse être mappé à un nom simple.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Configuration des classes de chiffrement](../../../docs/framework/configure-apps/configure-cryptography-classes.md)
-- [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)
+- [Configuration des classes de chiffrement](configure-cryptography-classes.md)
+- [Cryptographic Services](../../standard/security/cryptographic-services.md)

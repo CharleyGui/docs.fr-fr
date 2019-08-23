@@ -15,12 +15,12 @@ helpviewer_keywords:
 - characters [WPF], curly brace
 - DynamicResource markup extensions [WPF]
 ms.assetid: 618dc745-8b14-4886-833f-486d2254bb78
-ms.openlocfilehash: 25f6cbbc1df8a4a2b4ad9025b2381d26153e4b66
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: f0eb4a90b09f49ced45fa8453356e1d6fb3b4af1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364445"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965276"
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>Extensions de balisage et XAML WPF
 Cette rubrique introduit le concept d’extensions de balisage pour XAML, notamment leurs règles de syntaxe, leur finalité et le modèle d’objet de classe sous-jacent. Les extensions de balisage sont une fonctionnalité générale du langage XAML et de l’implémentation .NET des services XAML. Cette rubrique détaille spécifiquement des extensions de balisage pour une utilisation dans le langage XAML de WPF.  
@@ -50,7 +50,7 @@ Cette rubrique introduit le concept d’extensions de balisage pour XAML, notamm
 - `x:Array` offre une prise en charge pour la création de tableaux généraux dans la syntaxe XAML, dans les cas où la prise en charge des collections assurée par les éléments de base et les modèles de contrôle WPF n’est délibérément pas utilisée. Pour plus d’informations, consultez [x:Array, extension de balisage](../../xaml-services/x-array-markup-extension.md).  
   
 > [!NOTE]
->  Le préfixe `x:` est utilisé pour le mappage d’espace de noms XAML standard des intrinsèques du langage XAML, dans l’élément racine d’un fichier ou d’une production XAML. Par exemple, les modèles Visual Studio pour les applications WPF initient un fichier XAML `x:` à l’aide de ce mappage. Vous pouvez choisir un autre jeton de préfixe pour votre propre mappage d’espace de noms XAML. Cependant, dans cette documentation, le mappage `x:` par défaut est considéré comme un moyen d’identifier les entités qui représentent une partie définie de l’espace de noms XAML du langage XAML, par opposition à l’espace de noms XAML par défaut ou à d’autres espaces de noms XAML non liés à un framework spécifique.  
+> Le préfixe `x:` est utilisé pour le mappage d’espace de noms XAML standard des intrinsèques du langage XAML, dans l’élément racine d’un fichier ou d’une production XAML. Par exemple, les modèles Visual Studio pour les applications WPF initient un fichier XAML `x:` à l’aide de ce mappage. Vous pouvez choisir un autre jeton de préfixe pour votre propre mappage d’espace de noms XAML. Cependant, dans cette documentation, le mappage `x:` par défaut est considéré comme un moyen d’identifier les entités qui représentent une partie définie de l’espace de noms XAML du langage XAML, par opposition à l’espace de noms XAML par défaut ou à d’autres espaces de noms XAML non liés à un framework spécifique.  
   
 <a name="WPF_Specific_Markup_Extensions"></a>   
 ## <a name="wpf-specific-markup-extensions"></a>Extensions de balisage spécifiques à WPF  
@@ -71,7 +71,7 @@ Cette rubrique introduit le concept d’extensions de balisage pour XAML, notamm
 - `ComponentResourceKey` et `ThemeDictionary` prennent en charge les aspects de la recherche de ressources, en particulier pour les ressources et les thèmes empaquetés avec des contrôles personnalisés. Pour plus d’informations, consultez [ComponentResourceKey, extension de balisage](componentresourcekey-markup-extension.md), [ThemeDictionary, extension de balisage](themedictionary-markup-extension.md) ou [Vue d’ensemble de la création de contrôles](../controls/control-authoring-overview.md).  
   
 <a name="StarExtension"></a>   
-## <a name="extension-classes"></a>*Classes d’extension  
+## <a name="extension-classes"></a>\*Classes d’extension  
  Pour le langage XAML général et les extensions de balisage spécifiques à WPF, le comportement de chaque extension de balisage est identifié sur un `*Extension` processeur XAML par le biais <xref:System.Windows.Markup.MarkupExtension>d’une classe qui dérive de <xref:System.Windows.Markup.StaticExtension.ProvideValue%2A> et fournit une implémentation de l’objet méthode. Cette méthode au niveau de chaque extension fournit l’objet qui est retourné au moment où l’extension de balisage est évaluée. L’objet retourné est généralement évalué en fonction des différents jetons de chaîne passés à l’extension de balisage.  
   
  Par exemple, la <xref:System.Windows.StaticResourceExtension> classe fournit l’implémentation de surface de la recherche de ressources réelle <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A> afin que son implémentation retourne l’objet demandé, avec l’entrée de cette implémentation particulière représentant une chaîne utilisée pour Recherchez la ressource par son `x:Key`. L’essentiel de cette implémentation n’a pas d’importance si vous utilisez une extension de balisage existante.  
@@ -88,7 +88,7 @@ Cette rubrique introduit le concept d’extensions de balisage pour XAML, notamm
 - Si des jetons distincts ne contiennent pas de signes égal, chaque jeton est considéré comme un argument de constructeur. Chaque paramètre de constructeur doit être fourni dans le type et l’ordre correct attendus par cette signature.  
   
     > [!NOTE]
-    >  Un processeur XAML doit appeler le constructeur qui correspond au nombre d’arguments du nombre de paires. Pour cette raison, si vous implémentez une extension de balisage personnalisée, ne fournissez pas plusieurs constructeurs avec le même nombre d’arguments. Bien que le comportement d’un processeur XAML en présence de plusieurs chemins d’accès de constructeur d’extension de balisage ayant le même nombre de paramètres ne soit pas défini, il est probable que le processeur XAML soit autorisé à lever une exception d’utilisation si ce cas se présente dans les définitions de type d’extension de balisage.  
+    > Un processeur XAML doit appeler le constructeur qui correspond au nombre d’arguments du nombre de paires. Pour cette raison, si vous implémentez une extension de balisage personnalisée, ne fournissez pas plusieurs constructeurs avec le même nombre d’arguments. Bien que le comportement d’un processeur XAML en présence de plusieurs chemins d’accès de constructeur d’extension de balisage ayant le même nombre de paramètres ne soit pas défini, il est probable que le processeur XAML soit autorisé à lever une exception d’utilisation si ce cas se présente dans les définitions de type d’extension de balisage.  
   
 - Si les jetons séparés individuels contiennent des signes égal, un processeur XAML appelle d’abord le constructeur sans paramètre pour l’extension de balisage. Ensuite, chaque paire nom=valeur est interprétée comme un nom de propriété existant au niveau de l’extension de balisage et une valeur à assigner à cette propriété.  
   

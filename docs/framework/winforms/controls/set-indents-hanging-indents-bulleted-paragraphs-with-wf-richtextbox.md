@@ -13,15 +13,15 @@ helpviewer_keywords:
 - RichTextBox control [Windows Forms], setting indents and bullets
 - text boxes [Windows Forms], bullets
 ms.assetid: abfb40e6-5642-4691-8ec1-9d9ae91688dc
-ms.openlocfilehash: ef579923ac2b9ea9905a60000d93f6bfc90ed5b8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9d095e3561cd346e6dbd99d1be7468f6ad5725a6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61903017"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960455"
 ---
 # <a name="how-to-set-indents-hanging-indents-and-bulleted-paragraphs-with-the-windows-forms-richtextbox-control"></a>Procédure : définir des retraits, des retraits négatifs et des paragraphes à puces avec le contrôle RichTextBox Windows Forms
-Les formulaires Windows <xref:System.Windows.Forms.RichTextBox> contrôle a de nombreuses options pour mettre en forme le texte affiché. Vous pouvez mettre en forme des paragraphes sélectionnés sous forme de listes à puces en définissant le <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> propriété. Vous pouvez également utiliser le <xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A>, <xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A>, et <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> propriétés à définir la mise en retrait des paragraphes par rapport à gauche et les bords droit du contrôle et le bord gauche des autres lignes de texte.  
+Le contrôle <xref:System.Windows.Forms.RichTextBox> Windows Forms possède de nombreuses options de mise en forme du texte qu’il affiche. Vous pouvez mettre en forme les paragraphes sélectionnés en tant que listes <xref:System.Windows.Forms.RichTextBox.SelectionBullet%2A> à puces en définissant la propriété. Vous pouvez également utiliser les <xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A>propriétés <xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A>, et <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> pour définir la mise en retrait des paragraphes par rapport aux bords gauche et droit du contrôle et le bord gauche des autres lignes de texte.  
   
 ### <a name="to-format-a-paragraph-as-a-bulleted-list"></a>Pour mettre en forme un paragraphe sous forme de liste à puces  
   
@@ -41,11 +41,11 @@ Les formulaires Windows <xref:System.Windows.Forms.RichTextBox> contrôle a de n
   
 ### <a name="to-indent-a-paragraph"></a>Pour mettre en retrait un paragraphe  
   
-1. Définir le <xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A> propriété vers un entier représentant la distance en pixels entre le bord gauche du contrôle et le bord gauche du texte.  
+1. Affectez <xref:System.Windows.Forms.RichTextBox.SelectionIndent%2A> à la propriété un entier représentant la distance en pixels entre le bord gauche du contrôle et le bord gauche du texte.  
   
-2. Définir le <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> propriété vers un entier représentant la distance en pixels entre le bord gauche de la première ligne de texte dans le paragraphe et le bord gauche des lignes suivantes du même paragraphe. La valeur de la <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> propriété s’applique uniquement aux lignes d’un paragraphe qui ont été renvoyées sous la première ligne.  
+2. Affectez <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> à la propriété un entier représentant la distance en pixels entre le bord gauche de la première ligne de texte dans le paragraphe et le bord gauche des lignes suivantes dans le même paragraphe. La valeur de la <xref:System.Windows.Forms.RichTextBox.SelectionHangingIndent%2A> propriété s’applique uniquement aux lignes d’un paragraphe qui sont renvoyées au-dessous de la première ligne.  
   
-3. Définir le <xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A> propriété vers un entier représentant la distance en pixels entre le bord droit du contrôle et le bord droit du texte.  
+3. Affectez <xref:System.Windows.Forms.RichTextBox.SelectionRightIndent%2A> à la propriété un entier représentant la distance en pixels entre le bord droit du contrôle et le bord droit du texte.  
   
     ```vb  
     RichTextBox1.SelectionIndent = 8  
@@ -66,7 +66,7 @@ Les formulaires Windows <xref:System.Windows.Forms.RichTextBox> contrôle a de n
     ```  
   
     > [!NOTE]
-    >  Toutes ces propriétés affectent tous les paragraphes contenant du texte sélectionné et également le texte tapé après le point d’insertion actif. Par exemple, quand un utilisateur sélectionne un mot dans un paragraphe puis ajuste le retrait, les nouveaux paramètres s’appliquent à l’ensemble du paragraphe contenant ce mot et également à tous les paragraphes entrés ultérieurement après le paragraphe sélectionné. Pour plus d’informations sur la sélection de texte par programmation, consultez <xref:System.Windows.Forms.TextBoxBase.Select%2A>.  
+    > Toutes ces propriétés affectent tous les paragraphes contenant du texte sélectionné et également le texte tapé après le point d’insertion actif. Par exemple, quand un utilisateur sélectionne un mot dans un paragraphe puis ajuste le retrait, les nouveaux paramètres s’appliquent à l’ensemble du paragraphe contenant ce mot et également à tous les paragraphes entrés ultérieurement après le paragraphe sélectionné. Pour plus d’informations sur la sélection de texte par <xref:System.Windows.Forms.TextBoxBase.Select%2A>programmation, consultez.  
   
 ## <a name="see-also"></a>Voir aussi
 

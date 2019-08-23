@@ -6,12 +6,12 @@ dev_langs:
 helpviewer_keywords:
 - hosting WPF content in Win32 window [WPF]
 ms.assetid: 38ce284a-4303-46dd-b699-c9365b22a7dc
-ms.openlocfilehash: 9ab046c6f7c070ade9d3e474309b33afbf78370e
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 03a35d26fd1917d926f9a26d25ae8a8e32c476f4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629634"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917630"
 ---
 # <a name="walkthrough-hosting-wpf-content-in-win32"></a>Procédure pas à pas : hébergement de contenu WPF dans Win32
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] propose un environnement de création d'applications élaboré. Cependant, si vous avez écrit une bonne partie du code [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)], il est peut-être plus judicieux d'ajouter la fonctionnalité [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] à votre application plutôt que de réécrire le code d'origine. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]fournit un mécanisme simple pour héberger [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] le contenu dans une [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] fenêtre.  
@@ -25,7 +25,7 @@ ms.locfileid: "68629634"
  Étant donné que l’exemple qui accompagne ce didacticiel est implémenté C++en/CLI, ce didacticiel suppose que vous êtes familiarisé avec l' C++ utilisation de pour programmer l’API Windows, ainsi qu’une compréhension de la programmation de code managé. La connaissance de C++la fonction/CLI est utile, mais pas essentielle.  
   
 > [!NOTE]
->  Ce didacticiel comprend plusieurs exemples de code tirés de l'exemple associé. Cependant, pour une meilleure lecture, il n'inclut pas la totalité de l'exemple de code. Pour obtenir l’exemple de code complet, consultez [Hébergement de contenu WPF dans un exemple de fenêtre Win32](https://go.microsoft.com/fwlink/?LinkID=160004).  
+> Ce didacticiel comprend plusieurs exemples de code tirés de l'exemple associé. Cependant, pour une meilleure lecture, il n'inclut pas la totalité de l'exemple de code. Pour obtenir l’exemple de code complet, consultez [Hébergement de contenu WPF dans un exemple de fenêtre Win32](https://go.microsoft.com/fwlink/?LinkID=160004).  
   
 <a name="basic_procedure"></a>   
 ## <a name="the-basic-procedure"></a>Procédure de base  
@@ -58,7 +58,7 @@ ms.locfileid: "68629634"
 8. Communiquez avec le contenu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] en utilisant la référence que vous avez stockée dans le champ statique pour définir les propriétés, etc.  
   
 > [!NOTE]
->  Vous pouvez également utiliser [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] pour implémenter [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] votre contenu. Toutefois, vous devrez le compiler séparément en tant que bibliothèque de liens dynamiques (dll) et référencer cette dll à partir [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] de votre application. Le reste de la procédure est similaire à celle présentée ci-dessus.
+> Vous pouvez également utiliser [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] pour implémenter [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] votre contenu. Toutefois, vous devrez le compiler séparément en tant que bibliothèque de liens dynamiques (dll) et référencer cette dll à partir [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] de votre application. Le reste de la procédure est similaire à celle présentée ci-dessus.
 
 <a name="implementing_the_application"></a>
 ## <a name="implementing-the-host-application"></a>Implémentation de l'application hôte.
@@ -106,7 +106,7 @@ ms.locfileid: "68629634"
 4. Sélectionnez **prise en charge du Common Language Runtime (/CLR)** dans la zone de liste déroulante.
 
 > [!NOTE]
->  L'indicateur de ce compilateur vous permet d'utiliser du code managé dans votre application, mais la compilation de votre code non managé se fera toujours comme avant.
+> L'indicateur de ce compilateur vous permet d'utiliser du code managé dans votre application, mais la compilation de votre code non managé se fera toujours comme avant.
 
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise le modèle de thread unique cloisonné (STA). Pour fonctionner correctement avec le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] code de contenu, vous devez définir le modèle de thread de l’application sur STA en appliquant un attribut au point d’entrée.
 
@@ -123,7 +123,7 @@ ms.locfileid: "68629634"
  La `GetHwnd` méthode prend les informations de taille et de position, ainsi que le handle de fenêtre parente et [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] retourne le handle de fenêtre du contenu hébergé.
 
 > [!NOTE]
->  Vous ne pouvez pas utiliser de directive `#using` pour l'espace de noms `System::Windows::Interop`. Cela entraîne une collision de noms entre la structure <xref:System.Windows.Interop.MSG> de cet espace de noms et la structure MSG déclarée dans winuser.h. Vous devez à la place utiliser des noms qualifiés complets pour accéder au contenu de cet espace de noms.
+> Vous ne pouvez pas utiliser de directive `#using` pour l'espace de noms `System::Windows::Interop`. Cela entraîne une collision de noms entre la structure <xref:System.Windows.Interop.MSG> de cet espace de noms et la structure MSG déclarée dans winuser.h. Vous devez à la place utiliser des noms qualifiés complets pour accéder au contenu de cet espace de noms.
 
  [!code-cpp[Win32HostingWPFPage#GetHwnd](~/samples/snippets/cpp/VS_Snippets_Wpf/Win32HostingWPFPage/CPP/Win32HostingWPFPage.cpp#gethwnd)]
 

@@ -6,15 +6,15 @@ helpviewer_keywords:
 - -verbose compiler option [Visual Basic]
 - /verbose compiler option [Visual Basic]
 ms.assetid: d1aec0c1-0261-421d-9adc-5b13756100be
-ms.openlocfilehash: f6d896fb0d41a8fa3ed613d29bc3fca2bd14cc5e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5b3899462af7c4aa8e0f77377a8d7485975f9867
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61796089"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937258"
 ---
 # <a name="-verbose"></a>-verbose
-Indique au compilateur de générer des messages d’état et d’erreur détaillés.  
+Fait en sorte que le compilateur génère des messages d’État et d’erreur détaillés.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -24,16 +24,16 @@ Indique au compilateur de générer des messages d’état et d’erreur détail
   
 ## <a name="arguments"></a>Arguments  
  `+` &#124; `-`  
- Optionnel. Spécification `-verbose` est identique à la spécification `-verbose+`, ce qui entraîne le compilateur à émettre des messages détaillés. La valeur par défaut pour cette option est `-verbose-`.  
+ facultatif. La `-verbose` spécification de est identique à `-verbose+`la spécification de, ce qui amène le compilateur à émettre des messages détaillés. La valeur par défaut de cette `-verbose-`option est.  
   
 ## <a name="remarks"></a>Notes  
- Le `-verbose` option affiche des informations sur le nombre total d’erreurs émis par le compilateur, signale les assemblys sont chargés par un module et affiche les fichiers qui sont en cours de compilation.  
+ L' `-verbose` option affiche des informations sur le nombre total d’erreurs émises par le compilateur, signale les assemblys qui sont chargés par un module et affiche les fichiers en cours de compilation.  
   
 > [!NOTE]
->  Le `-verbose` option n’est pas disponible dans l’environnement de développement Visual Studio ; il est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+> L' `-verbose` option n’est pas disponible dans l’environnement de développement Visual Studio; elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile `In.vb` et indique au compilateur d’afficher des informations d’état détaillées.  
+ Le code suivant compile `In.vb` et dirige le compilateur pour afficher les informations d’État détaillées.  
   
 ```console  
 vbc -verbose in.vb  

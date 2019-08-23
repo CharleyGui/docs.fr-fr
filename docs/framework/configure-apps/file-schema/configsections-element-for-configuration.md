@@ -9,46 +9,46 @@ helpviewer_keywords:
 ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: d522d004630dee942e24c39a936feae7dc957bd5
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 31b53837e24029fc7ff0b576d95c0213041a434e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300789"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927672"
 ---
-# <a name="configsections-element-for-configuration"></a>\<configSections >, élément pour \<configuration >
+# <a name="configsections-element-for-configuration"></a>\<élément > configSections pour \<la configuration >
 
-Contient des déclarations d’espace de noms et de la section de configuration.
+Contient la section de configuration et les déclarations d’espace de noms.
 
-[ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+[ **\<configuration>** ](configuration-element.md)   
 &nbsp;&nbsp; **\<configSections>**
 
 ## <a name="attributes"></a>Attributs
 
-None
+Aucun
 
 ## <a name="parent-element"></a>Élément parent
 
 |     | Description |
 | --- | ----------- |
-| [ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md) | Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework. |
+| [ **\<configuration>** ](configuration-element.md) | Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
 |     | Description |
 | --- | ----------- |
-| [ **\<section>** ](~/docs/framework/configure-apps/file-schema/section-element.md) | Contient une déclaration de section de configuration. |
-| [ **\<sectionGroup>** ](~/docs/framework/configure-apps/file-schema/sectiongroup-element-for-configsections.md) | Définit un espace de noms pour les sections de configuration. |
-| [ **\<remove>** ](~/docs/framework/configure-apps/file-schema/remove-element-for-configsections.md) | Supprime une section prédéfinie ou le groupe de section. |
-| [ **\<clear>** ](~/docs/framework/configure-apps/file-schema/clear-element-for-configsections.md) | Efface toutes les sections précédemment définies et les groupes de sections. |
+| [ **\<section>** ](section-element.md) | Contient une déclaration de section de configuration. |
+| [ **\<sectionGroup>** ](sectiongroup-element-for-configsections.md) | Définit un espace de noms pour les sections de configuration. |
+| [ **\<remove>** ](remove-element-for-configsections.md) | Supprime un groupe de sections ou de sections prédéfini. |
+| [ **\<clear>** ](clear-element-for-configsections.md) | Efface toutes les sections et tous les groupes de sections précédemment définis. |
 
 ## <a name="remarks"></a>Notes
 
-Si cet élément est dans un fichier de configuration, il doit être le premier élément enfant de le  **\<configuration >** élément.
+Si cet élément se trouve dans un fichier de configuration, il doit s’agir du premier élément  **\<** enfant de l’élément de configuration >.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
-L’exemple suivant montre comment définir une section de configuration et de définir les paramètres de cette section :
+L’exemple suivant montre comment définir une section de configuration et définir les paramètres de cette section:
 
 ```xml
 <configuration>
@@ -64,8 +64,8 @@ L’exemple suivant montre comment définir une section de configuration et de d
 
 ## <a name="configuration-file"></a>fichier de configuration
 
-Cet élément peut être utilisé dans le fichier de configuration d’application, fichier de configuration machine (*Machine.config*), et *Web.config* fichiers qui ne sont pas au niveau du répertoire d’application.
+Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma de fichier de configuration pour le .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma du fichier de configuration pour le .NET Framework](index.md)

@@ -8,15 +8,15 @@ helpviewer_keywords:
 - typography [WPF], special characters
 - special characters [WPF]
 ms.assetid: a57776d1-f353-4794-afa0-bfa3c712ed1c
-ms.openlocfilehash: 18934e06f45ca4b88f48bce8a310a07b460a5f53
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 61ee38319b2f0aa46690fb063f6ffe6612f993ad
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051081"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918438"
 ---
 # <a name="how-to-use-special-characters-in-xaml"></a>Procédure : Utiliser des caractères spéciaux en XAML
-Les fichiers de balisage qui sont créés dans [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] sont automatiquement enregistrés dans le [!INCLUDE[TLA#tla_unicode](../../../../includes/tlasharptla-unicode-md.md)] format de fichier UTF-8, ce qui signifie que des caractères plus spéciaux, tels que les accents sont encodés correctement. Toutefois, il existe un ensemble de caractères spéciaux couramment utilisés qui sont gérés différemment. Ces caractères spéciaux respectent la [!INCLUDE[TLA#tla_w3c](../../../../includes/tlasharptla-w3c-md.md)] [!INCLUDE[TL A#tla_xml](../../../../includes/tlasharptla-xml-md.md)] standard pour l’encodage.  
+Les fichiers de balisage créés [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)] dans sont enregistrés automatiquement [!INCLUDE[TLA#tla_unicode](../../../../includes/tlasharptla-unicode-md.md)] au format de fichier UTF-8, ce qui signifie que la plupart des caractères spéciaux, tels que les accents, sont encodés correctement. Toutefois, il existe un ensemble de caractères spéciaux couramment utilisés qui sont gérés différemment. Ces caractères spéciaux sont conformes [!INCLUDE[TLA#tla_w3c](../../../../includes/tlasharptla-w3c-md.md)] à la [!INCLUDE[TL A#tla_xml](../../../../includes/tlasharptla-xml-md.md)] norme de codage.  
   
  Le tableau suivant montre la syntaxe pour l’encodage de ce jeu de caractères spéciaux :  
   
@@ -28,7 +28,7 @@ Les fichiers de balisage qui sont créés dans [!INCLUDE[TLA#tla_visualstu](../.
 |"|`&quot;`|Symbole de guillemet double.|  
   
 > [!NOTE]
->  Si vous créez un fichier de balisage à l’aide d’un texte éditeur de, tel que [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] le bloc-notes, vous devez enregistrer le fichier dans le [!INCLUDE[TLA#tla_unicode](../../../../includes/tlasharptla-unicode-md.md)] le format de fichier UTF-8 afin de préserver un caractères spéciaux encodés.  
+> Si vous créez un fichier de balisage à l’aide d’un éditeur de texte, tel que le bloc-notes [!INCLUDE[TLA#tla_unicode](../../../../includes/tlasharptla-unicode-md.md)] Windows, vous devez enregistrer le fichier au format de fichier UTF-8 afin de conserver tous les caractères spéciaux encodés.  
   
  L’exemple suivant montre comment utiliser des caractères spéciaux dans du texte lors de la création du balisage.  
   

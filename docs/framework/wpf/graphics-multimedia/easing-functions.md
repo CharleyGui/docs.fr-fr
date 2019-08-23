@@ -15,41 +15,41 @@ helpviewer_keywords:
 - easing functions [WPF], customizing
 - animations [WPF], applying
 ms.assetid: 075b9c2b-82c4-43fa-b3cd-de0b6236eb38
-ms.openlocfilehash: a74142b8d8ee3a68daa9966e3f20f3b8e3becb72
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 72118711dfd40ad8c665157e09f01c60085db903
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615400"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965733"
 ---
 # <a name="easing-functions"></a>Fonctions d'accélération
 Les fonctions d’accélération permettent d’appliquer des formules mathématiques personnalisées à des animations. Par exemple, vous pouvez faire en sorte qu’un objet rebondisse ou se comporte comme s’il était sur un ressort de façon réaliste. On peut utiliser des animations d’images clés ou même From/To/By pour se rapprocher de ces effets, mais cela demanderait beaucoup de travail et l’animation serait moins précise qu’avec une formule mathématique.  
   
- Outre la création de votre propre fonction d’accélération personnalisée en héritant de <xref:System.Windows.Media.Animation.EasingFunctionBase>, vous pouvez utiliser une des fonctions d’accélération fournies par le runtime pour créer des effets courants.  
+ Outre la création de votre propre fonction d’accélération personnalisée en <xref:System.Windows.Media.Animation.EasingFunctionBase>héritant de, vous pouvez utiliser l’une des nombreuses fonctions d’accélération fournies par le runtime pour créer des effets courants.  
   
-- <xref:System.Windows.Media.Animation.BackEase>: Rétracte légèrement le mouvement d’une animation avant qu’elle ne commence dans le chemin d’accès indiqué.  
+- <xref:System.Windows.Media.Animation.BackEase>: Rétracte légèrement le mouvement d’une animation avant qu’elle ne commence à s’animer dans le chemin indiqué.  
   
-- <xref:System.Windows.Media.Animation.BounceEase>: Crée un effet rebondissant.  
+- <xref:System.Windows.Media.Animation.BounceEase>: Crée un effet de rebond.  
   
-- <xref:System.Windows.Media.Animation.CircleEase>: Crée une animation qui accélère et/ou ralentit en utilisant une fonction circulaire.  
+- <xref:System.Windows.Media.Animation.CircleEase>: Crée une animation qui accélère et/ou ralentit à l’aide d’une fonction circulaire.  
   
 - <xref:System.Windows.Media.Animation.CubicEase>: Crée une animation qui accélère et/ou ralentit à l’aide de la formule *f*(*t*) = *t*<sup>3</sup>.  
   
-- <xref:System.Windows.Media.Animation.ElasticEase>: Crée une animation qui ressemble à un ressort OSCILLANT jusqu'à ce qu’il s’agit de rest.  
+- <xref:System.Windows.Media.Animation.ElasticEase>: Crée une animation qui ressemble à un ressort oscillant d’avant en arrière jusqu’à ce qu’il s’immobilise.  
   
-- <xref:System.Windows.Media.Animation.ExponentialEase>: Crée une animation qui accélère et/ou ralentit en utilisant une formule exponentielle.  
+- <xref:System.Windows.Media.Animation.ExponentialEase>: Crée une animation qui accélère et/ou ralentit à l’aide d’une formule exponentielle.  
   
-- <xref:System.Windows.Media.Animation.PowerEase>: Crée une animation qui accélère et/ou ralentit à l’aide de la formule *f*(*t*) = *t*<sup>p</sup> où p est égal à la <xref:System.Windows.Media.Animation.PowerEase.Power%2A>propriété.  
+- <xref:System.Windows.Media.Animation.PowerEase>: Crée une animation qui accélère et/ou ralentit à l’aide de la formule *f*(*t*) = *t*<sup>p</sup> , où p <xref:System.Windows.Media.Animation.PowerEase.Power%2A> est égal à la propriété.  
   
 - <xref:System.Windows.Media.Animation.QuadraticEase>: Crée une animation qui accélère et/ou ralentit à l’aide de la formule *f*(*t*) = *t*<sup>2</sup>.  
   
 - <xref:System.Windows.Media.Animation.QuarticEase>: Crée une animation qui accélère et/ou ralentit à l’aide de la formule *f*(*t*) = *t*<sup>4</sup>.  
   
-- <xref:System.Windows.Media.Animation.QuinticEase>: Créer une animation qui accélère et/ou ralentit à l’aide de la formule *f*(*t*) = *t*<sup>5</sup>.  
+- <xref:System.Windows.Media.Animation.QuinticEase>: Créez une animation qui accélère et/ou ralentit à l’aide de la formule *f*(*t*) = *t*<sup>5</sup>.  
   
-- <xref:System.Windows.Media.Animation.SineEase>: Crée une animation qui accélère et/ou ralentit en utilisant une formule de sinus.  
+- <xref:System.Windows.Media.Animation.SineEase>: Crée une animation qui accélère et/ou ralentit à l’aide d’une formule de sinus.  
   
- Pour appliquer une fonction d’accélération à une animation, utilisez le `EasingFunction` propriété de l’animation spécifier la fonction d’accélération à appliquer à l’animation. L’exemple suivant applique un <xref:System.Windows.Media.Animation.BounceEase> fonction d’accélération un <xref:System.Windows.Media.Animation.DoubleAnimation> pour créer un effet rebondissant.  
+ Pour appliquer une fonction d’accélération à une animation, utilisez `EasingFunction` la propriété de l’animation spécifier la fonction d’accélération à appliquer à l’animation. L’exemple suivant applique une <xref:System.Windows.Media.Animation.BounceEase> fonction d’accélération à <xref:System.Windows.Media.Animation.DoubleAnimation> un pour créer un effet de rebond.  
   
  [!code-xaml[BounceEase_snippet#BounceEase](~/samples/snippets/csharp/VS_Snippets_Wpf/bounceease_snippet/CS/window1.xaml#bounceease)]  
   
@@ -57,15 +57,15 @@ Les fonctions d’accélération permettent d’appliquer des formules mathémat
   
  [!code-xaml[EasingFunctionDoubleKeyFrame_snippet#EasingFunctionDoubleKeyFrame](~/samples/snippets/csharp/VS_Snippets_Wpf/easingfunctiondoublekeyframe_snippet/CS/window1.xaml#easingfunctiondoublekeyframe)]  
   
- Vous pouvez utiliser le <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A> propriété pour modifier la façon dont la fonction d’accélération se comporte, autrement dit, modifier le mode d’interpolation de l’animation. Il existe trois valeurs possibles, vous pouvez donner de <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>:  
+ Vous pouvez utiliser la <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A> propriété pour modifier le comportement de la fonction d’accélération, c’est-à-dire modifier le mode d’interpolation de l’animation. Vous pouvez fournir trois valeurs possibles pour <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>:  
   
 - <xref:System.Windows.Media.Animation.EasingMode.EaseIn>: L’interpolation suit la formule mathématique associée à la fonction d’accélération.  
   
-- <xref:System.Windows.Media.Animation.EasingMode.EaseOut>: L’interpolation suit 100 % d’interpolation moins la sortie de la formule associée à la fonction d’accélération.  
+- <xref:System.Windows.Media.Animation.EasingMode.EaseOut>: L’interpolation suit l’interpolation 100% moins la sortie de la formule associée à la fonction d’accélération.  
   
-- <xref:System.Windows.Media.Animation.EasingMode.EaseInOut>: L’interpolation utilise <xref:System.Windows.Media.Animation.EasingMode.EaseIn> pour la première moitié de l’animation et <xref:System.Windows.Media.Animation.EasingMode.EaseOut> lors de la seconde.  
+- <xref:System.Windows.Media.Animation.EasingMode.EaseInOut>: L’interpolation utilise <xref:System.Windows.Media.Animation.EasingMode.EaseIn> pour la première moitié de l’animation et <xref:System.Windows.Media.Animation.EasingMode.EaseOut> pour la seconde moitié.  
   
- Les graphiques suivants montrent les différentes valeurs de <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A> où *f*(*x*) représente la progression de l’animation et *t* représente l’heure.  
+ Les graphiques ci-dessous illustrent les différentes <xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A> valeurs de, où *f*(*x*) représente la progression de l’animation et *t* représente l’heure.  
   
  <xref:System.Windows.Media.Animation.BackEase>  
   
@@ -112,9 +112,9 @@ Les fonctions d’accélération permettent d’appliquer des formules mathémat
  ![SineEase pour différentes valeurs EasingMode](./media/sineease-graph.png "SineEase_Graph")  
   
 > [!NOTE]
->  Vous pouvez utiliser <xref:System.Windows.Media.Animation.PowerEase> pour créer le même comportement que <xref:System.Windows.Media.Animation.CubicEase>, <xref:System.Windows.Media.Animation.QuadraticEase>, <xref:System.Windows.Media.Animation.QuarticEase>, et <xref:System.Windows.Media.Animation.QuinticEase> à l’aide de la <xref:System.Windows.Media.Animation.PowerEase.Power%2A> propriété. Par exemple, si vous souhaitez utiliser <xref:System.Windows.Media.Animation.PowerEase> pour remplacer les <xref:System.Windows.Media.Animation.CubicEase>, spécifiez un <xref:System.Windows.Media.Animation.PowerEase.Power%2A> valeur 3.  
+> Vous pouvez utiliser <xref:System.Windows.Media.Animation.PowerEase> pour créer le même comportement que <xref:System.Windows.Media.Animation.CubicEase>, <xref:System.Windows.Media.Animation.QuadraticEase>, <xref:System.Windows.Media.Animation.QuarticEase>et <xref:System.Windows.Media.Animation.QuinticEase> en utilisant la <xref:System.Windows.Media.Animation.PowerEase.Power%2A> propriété. Par exemple, si vous souhaitez utiliser <xref:System.Windows.Media.Animation.PowerEase> pour <xref:System.Windows.Media.Animation.CubicEase>remplacer, spécifiez la <xref:System.Windows.Media.Animation.PowerEase.Power%2A> valeur 3.  
   
- Outre l’utilisation des fonctions d’accélération incluses dans le temps d’exécution, vous pouvez créer vos propres fonctions d’accélération personnalisées en héritant de <xref:System.Windows.Media.Animation.EasingFunctionBase>. L’exemple suivant montre comment créer une fonction d’accélération personnalisée simple. Vous pouvez ajouter votre propre logique mathématique pour le comportement de la fonction d’accélération en remplaçant le <xref:System.Windows.Media.Animation.EasingFunctionBase.EaseInCore%2A> (méthode).   
+ En plus d’utiliser les fonctions d’accélération incluses dans le runtime, vous pouvez créer vos propres fonctions d’accélération personnalisées en héritant <xref:System.Windows.Media.Animation.EasingFunctionBase>de. L’exemple suivant montre comment créer une fonction d’accélération personnalisée simple. Vous pouvez ajouter votre propre logique mathématique pour le comportement de la fonction d’accélération en remplaçant la <xref:System.Windows.Media.Animation.EasingFunctionBase.EaseInCore%2A> méthode.   
   
  [!code-csharp[CustomEasingFunction#CustomEasingFunction](~/samples/snippets/csharp/VS_Snippets_Wpf/customeasingfunction/csharp/customlog10easingfunction.cs#customeasingfunction)]
  [!code-vb[CustomEasingFunction#CustomEasingFunction](~/samples/snippets/visualbasic/VS_Snippets_Wpf/customeasingfunction/visualbasic/customlog10easingfunction.vb#customeasingfunction)]

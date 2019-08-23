@@ -2,18 +2,18 @@
 title: OracleTypes
 ms.date: 03/30/2017
 ms.assetid: 18143304-d5c7-4c95-9995-678088d0c142
-ms.openlocfilehash: eb45bc5b7bc317d04f5275afadbb1879117e3af0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2f3820a0a61241643894533cc431ecc88b58fcef
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586940"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938886"
 ---
 # <a name="oracletypes"></a>OracleTypes
 Le fournisseur de données .NET Framework pour Oracle inclut plusieurs structures que vous pouvez utiliser avec des types de données Oracle. Celles-ci comprennent <xref:System.Data.OracleClient.OracleNumber> et <xref:System.Data.OracleClient.OracleString>.  
   
 > [!NOTE]
->  Pour obtenir une liste complète de ces structures, voir <xref:System.Data.OracleClient>.  
+> Pour obtenir une liste complète de ces structures, voir <xref:System.Data.OracleClient>.  
   
  Les exemples C# suivants :  
   
@@ -52,7 +52,7 @@ public void Setup(string connectionString)
 ```  
   
 ## <a name="retrieving-data-from-the-oracle-table"></a>Extraction de données de la table Oracle  
- Cet exemple utilise un **OracleDataReader** accéder aux données et emploie plusieurs **OracleType** structures pour afficher les données.  
+ Cet exemple utilise un **OracleDataReader** pour accéder aux données et utilise plusieurs structures **OracleType** pour afficher les données.  
   
 ```csharp  
 public void ReadOracleTypesExample(string connectionString)  

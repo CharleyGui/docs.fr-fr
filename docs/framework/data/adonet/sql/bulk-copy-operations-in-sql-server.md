@@ -2,15 +2,15 @@
 title: Opérations de copie en bloc dans SQL Server
 ms.date: 03/30/2017
 ms.assetid: 83a7a0d2-8018-4354-97b9-0b1d99f8342b
-ms.openlocfilehash: e538e48400d955a0013a12dbf2d10f1f96c3ddfe
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: efa13eb1633fce3b59040ef8da79dba0f6ea81d5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649546"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918063"
 ---
 # <a name="bulk-copy-operations-in-sql-server"></a>Opérations de copie en bloc dans SQL Server
-Microsoft SQL Server inclut un utilitaire de ligne de commande connu nommé **bcp** pour rapidement copier en bloc des fichiers volumineux dans des tables ou vues dans les bases de données SQL Server. La classe <xref:System.Data.SqlClient.SqlBulkCopy> vous permet d'écrire des solutions de code managé qui offrent une fonctionnalité similaire. Il existe d'autres manières de charger des données dans une table SQL Server (par exemple, des instructions INSERT) mais <xref:System.Data.SqlClient.SqlBulkCopy> présente un avantage sensible sur le plan des performances.  
+Microsoft SQL Server comprend un utilitaire de ligne de commande populaire nommé **BCP** pour la copie en bloc rapide de fichiers volumineux dans des tables ou des vues dans des bases de données SQL Server. La classe <xref:System.Data.SqlClient.SqlBulkCopy> vous permet d'écrire des solutions de code managé qui offrent une fonctionnalité similaire. Il existe d'autres manières de charger des données dans une table SQL Server (par exemple, des instructions INSERT) mais <xref:System.Data.SqlClient.SqlBulkCopy> présente un avantage sensible sur le plan des performances.  
   
  La classe <xref:System.Data.SqlClient.SqlBulkCopy> permet d'écrire des données uniquement dans des tables SQL Server. Toutefois, la source de données n'est pas limitée à SQL Server ; n'importe quelle source de données peut être utilisée, pour autant que les données puissent être chargées dans une instance de <xref:System.Data.DataTable> ou lues avec une instance de <xref:System.Data.IDataReader>.  
   
@@ -23,7 +23,7 @@ Microsoft SQL Server inclut un utilitaire de ligne de commande connu nommé **bc
 - une opération de copie en bloc à l'intérieur d'une transaction.  
   
 > [!NOTE]
->  Lorsque vous utilisez .NET Framework version 1.1 ou antérieure (qui ne prend pas en charge la <xref:System.Data.SqlClient.SqlBulkCopy> classe), vous pouvez exécuter SQL Server Transact-SQL **BULK INSERT** à l’aide de l’instruction la <xref:System.Data.SqlClient.SqlCommand> objet.  
+> Lorsque vous utilisez .NET Framework version 1,1 ou antérieure (qui ne prend pas <xref:System.Data.SqlClient.SqlBulkCopy> en charge la classe), vous pouvez exécuter l’instruction SQL Server Transact-SQL <xref:System.Data.SqlClient.SqlCommand> **Bulk Insert** à l’aide de l’objet.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Exemple de configuration de copie en bloc](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md)  

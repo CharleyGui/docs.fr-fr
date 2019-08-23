@@ -1,21 +1,21 @@
 ---
-title: 'Exemple : Résolution des problèmes de programmation dynamique'
+title: 'Exemple : Résolution des problèmes de programmation dynamique'
 ms.date: 03/30/2017
 ms.assetid: 42ed860a-a022-4682-8b7f-7c9870784671
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e482303e684813574a092f0a2d5812445ed7fa6e
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: fef5894f7452bd32cc4e43433aa60166db241a12
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052617"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910600"
 ---
-# <a name="example-troubleshooting-dynamic-programming"></a>Exemple : Résolution des problèmes de programmation dynamique
+# <a name="example-troubleshooting-dynamic-programming"></a>Exemple : Résolution des problèmes de programmation dynamique
 > [!NOTE]
->  Cette rubrique fait référence à .NET Native Developer Preview, qui correspond à la version préliminaire du logiciel. Vous pouvez télécharger la préversion sur le [site web Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (inscription nécessaire).  
+> Cette rubrique fait référence à .NET Native Developer Preview, qui correspond à la version préliminaire du logiciel. Vous pouvez télécharger la préversion sur le [site web Microsoft Connect](https://go.microsoft.com/fwlink/?LinkId=394611) (inscription nécessaire).  
   
- Pas tous les échecs de recherche de métadonnées dans les applications développement à l’aide du résultat de chaîne outil .NET Native dans une exception.  Certains peuvent se manifester de manière imprévisible dans une application.  L'exemple suivant montre une violation d'accès provoquée par le référencement d'un objet null :  
+ Les échecs de recherche de métadonnées dans les applications développées à l’aide de la chaîne d’outils .NET Native entraînent une exception.  Certains peuvent se manifester de manière imprévisible dans une application.  L'exemple suivant montre une violation d'accès provoquée par le référencement d'un objet null :  
   
 ```  
 Access violation - code c0000005 (first chance)  
@@ -52,7 +52,7 @@ AppViewModel.Current.LayoutVM.PageMap
   
  Dans ce cas, l'ajout d'une directive runtime pour `App.Core.ViewModels` a résolu le problème. Le problème était dû à un appel d’API en direction de la méthode <xref:System.Type.GetType%28System.String%29?displayProperty=nameWithType> ayant retourné **null**, et l’application a ignoré silencieusement le problème jusqu’à ce qu’un incident se produise.  
   
- Dans la programmation dynamique, une bonne pratique lors de l’utilisation des API sous .NET Native de réflexion consiste à utiliser le <xref:System.Type.GetType%2A?displayProperty=nameWithType> surcharges qui lèvent une exception en cas d’échec.  
+ En programmation dynamique, il est recommandé d’utiliser les <xref:System.Type.GetType%2A?displayProperty=nameWithType> surcharges qui lèvent une exception en cas d’échec lors de l’utilisation des API de réflexion sous .net native.  
   
 ## <a name="is-this-an-isolated-case"></a>S'agit-il d'un cas isolé ?  
  D'autres problèmes peuvent également survenir pendant l'utilisation d'`App.Core.ViewModels`.  Vous devez décider s'il est nécessaire d'identifier et de corriger chaque exception de métadonnées manquantes, ou d'économiser du temps et d'ajouter des directives pour une classe de types plus grande.  En l'occurrence, ajouter des métadonnées `dynamic` pour `App.Core.ViewModels` peut être la meilleure méthode si l'augmentation résultante de la taille du fichier binaire de sortie n'est pas un problème.  
@@ -63,4 +63,4 @@ AppViewModel.Current.LayoutVM.PageMap
 ## <a name="see-also"></a>Voir aussi
 
 - [Prise en main](../../../docs/framework/net-native/getting-started-with-net-native.md)
-- [Exemple : Gestion des Exceptions lors de la liaison de données](../../../docs/framework/net-native/example-handling-exceptions-when-binding-data.md)
+- [Exemple : Gestion des exceptions lors de la liaison de données](../../../docs/framework/net-native/example-handling-exceptions-when-binding-data.md)

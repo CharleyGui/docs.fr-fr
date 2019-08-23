@@ -2,12 +2,12 @@
 title: <bindingElementExtensions>
 ms.date: 03/30/2017
 ms.assetid: bb597fc0-c947-451c-afda-bf23d42f4f4d
-ms.openlocfilehash: 775f93f319c136a29a32ffaa1dfabc12ee081b29
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c323a65ace332d2ecd1e03330dddbe7ca17ff5bd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61700993"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926370"
 ---
 # <a name="bindingelementextensions"></a>\<bindingElementExtensions>
 Cette section active l'utilisation d'un élément de liaison personnalisé à partir d'un ordinateur ou d'un fichier de configuration de l'application. Vous pouvez ajouter un élément de liaison personnalisé à cette collection en utilisant le mot clé `add` et affecter à l’attribut `type` de l’élément une extension d’élément de liaison, ainsi que l’attribut `name` à l’élément de liaison personnalisé.  
@@ -46,4 +46,4 @@ Cette section active l'utilisation d'un élément de liaison personnalisé à pa
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>
-- [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Extension de liaisons](../../../wcf/extending/extending-bindings.md)

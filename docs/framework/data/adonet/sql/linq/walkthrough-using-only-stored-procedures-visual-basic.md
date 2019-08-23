@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 5a736a30-ba66-4adb-b87c-57d19476e862
-ms.openlocfilehash: 270b0f2123a20787a8e75d40f56a675c55824243
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 159b65b4b58b9142a168401ea2a881af2714df5f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742564"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946641"
 ---
 # <a name="walkthrough-using-only-stored-procedures-visual-basic"></a>Procédure pas à pas : Utilisation de procédures stockées uniquement (Visual Basic)
 Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] de base complet pour accéder aux données à l'aide de procédures stockées uniquement. Cette approche est souvent utilisée par les administrateurs de base de données pour limiter les moyens d'accès au magasin de données.  
   
 > [!NOTE]
->  Vous pouvez également utiliser des procédures stockées dans les applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pour substituer le comportement par défaut, plus particulièrement pour les processus `Create`, `Update` et `Delete`. Pour plus d’informations, consultez [personnalisation des opérations d’insertion, mise à jour et supprimer](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md).  
+> Vous pouvez également utiliser des procédures stockées dans les applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pour substituer le comportement par défaut, plus particulièrement pour les processus `Create`, `Update` et `Delete`. Pour plus d’informations, consultez [Personnalisation des opérations d’insertion, de mise à jour et de suppression](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md).  
   
- Dans le cadre de cette procédure pas à pas, vous allez utiliser deux méthodes qui ont été mappés à des procédures stockées dans la base de données Northwind : CustOrdersDetail et CustOrderHist. Le mappage se produit lorsque vous exécutez l’outil de ligne de commande SqlMetal pour générer un fichier Visual Basic. Pour plus d'informations, consultez la section Composants requis par la suite dans cette procédure pas à pas.  
+ Dans le cadre de cette procédure pas à pas, vous allez utiliser deux méthodes qui ont été mappées à des procédures stockées dans l’exemple de base de données Northwind: CustOrdersDetail et CustOrderHist. Le mappage se produit lorsque vous exécutez l’outil en ligne de commande SqlMetal pour générer un fichier Visual Basic. Pour plus d'informations, consultez la section Composants requis par la suite dans cette procédure pas à pas.  
   
- Cette procédure pas à pas ne repose pas sur le concepteur objet/relationnel. Les développeurs à l’aide de Visual Studio peuvent également utiliser le Concepteur O/R pour implémenter des fonctionnalités de procédure stockée. Consultez [outils LINQ to SQL dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
+ Cette procédure pas à pas ne repose pas sur le Concepteur Objet Relationnel. Les développeurs qui utilisent Visual Studio peuvent également utiliser le Concepteur O/R pour implémenter les fonctionnalités de procédure stockée. Consultez [LINQ to SQL Tools dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
  [!INCLUDE[note_settings_general](../../../../../../includes/note-settings-general-md.md)]  
   
@@ -45,7 +45,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
 ## <a name="overview"></a>Présentation  
  Cette procédure pas à pas se compose de six tâches principales :  
   
-- Configurer le [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] solution dans Visual Studio.  
+- Configuration de la [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] solution dans Visual Studio.  
   
 - Ajout de l'assembly System.Data.Linq au projet.  
   
@@ -58,7 +58,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
 - Exécution et test de l'application.  
   
 ## <a name="creating-a-linq-to-sql-solution"></a>Création d'une solution LINQ to SQL  
- Dans cette première tâche, vous créez une solution Visual Studio qui contient les références nécessaires pour générer et exécuter un [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projet.  
+ Dans cette première tâche, vous allez créer une solution Visual Studio qui contient les références nécessaires pour générer et exécuter [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] un projet.  
   
 ### <a name="to-create-a-linq-to-sql-solution"></a>Pour créer une solution LINQ to SQL  
   
@@ -68,7 +68,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 3. Dans le volet **Modèles** , cliquez sur **Application Windows Forms**.  
   
-4. Dans le **nom** , tapez **SprocOnlyApp**.  
+4. Dans la zone **nom** , tapez **SprocOnlyApp**.  
   
 5. Cliquez sur **OK**.  
   
@@ -79,11 +79,11 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 ### <a name="to-add-systemdatalinqdll"></a>Pour ajouter System.Data.Linq.dll  
   
-1. Dans **l’Explorateur de solutions**, cliquez sur **afficher tous les fichiers**.  
+1. Dans **Explorateur de solutions**, cliquez sur **Afficher tous les fichiers**.  
   
-2. Dans **l’Explorateur de solutions**, avec le bouton droit **références**, puis cliquez sur **ajouter une référence**.  
+2. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur **références**, puis cliquez sur **Ajouter une référence**.  
   
-3. Dans le **ajouter une référence** boîte de dialogue, cliquez sur **.NET**et cliquez sur l’assembly System.Data.Linq, puis cliquez sur **OK**.  
+3. Dans la boîte de dialogue **Ajouter une référence** , cliquez sur **.net**, sur l’assembly System. Data. Linq, puis sur **OK**.  
   
      L'assembly est ajouté au projet.  
   
@@ -92,9 +92,9 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 ### <a name="to-add-the-northwind-code-file-to-the-project"></a>Pour ajouter le fichier de code Northwind au projet  
   
-1. Sur le **projet** menu, cliquez sur **ajouter un élément existant**.  
+1. Dans le menu **projet** , cliquez sur **Ajouter un élément existant**.  
   
-2. Dans le **ajouter un élément existant** boîte de dialogue Déplacer vers c:\linqtest3\northwind.vb, puis cliquez sur **ajouter**.  
+2. Dans la boîte de dialogue **Ajouter un élément existant** , accédez à c:\linqtest3\northwind.vb, puis cliquez sur **Ajouter**.  
   
      Le fichier northwind.vb est ajouté au projet.  
   
@@ -103,7 +103,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 ### <a name="to-create-the-database-connection"></a>Pour créer la connexion de base de données  
   
-1. Dans **l’Explorateur de solutions**, avec le bouton droit **Form1.vb**, puis cliquez sur **afficher le Code**.  
+1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur **Form1. vb**, puis cliquez sur **afficher le code**.  
   
      `Class Form1` apparaît dans l'éditeur de code.  
   
@@ -116,40 +116,40 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 ### <a name="to-set-up-the-user-interface"></a>Pour configurer l'interface utilisateur  
   
-1. Revenez à la Windows Forms concepteur (**Form1.vb [Design]** ).  
+1. Revenez au Concepteur Windows Forms (**Form1. vb [Design]** ).  
   
 2. Dans le menu **Affichage** , cliquez sur **Boîte à outils**.  
   
      La boîte à outils s'ouvre.  
   
     > [!NOTE]
-    >  Cliquez sur le **masquage automatique** punaise pour maintenir la boîte à outils ouverte pendant que vous effectuez les autres étapes de cette section.  
+    > Cliquez sur le punaise **Masquer automatiquement** pour maintenir la boîte à outils ouverte pendant que vous effectuez les étapes restantes de cette section.  
   
-3. Faites glisser deux boutons, deux zones de texte et deux étiquettes à partir de la boîte à outils vers **Form1**.  
+3. Faites glisser deux boutons, deux zones de texte et deux étiquettes de la boîte à outils vers **Form1**.  
   
      Disposez les contrôles comme dans l'illustration associée. Développez **Form1** afin que les contrôles s’ajustent facilement.  
   
-4. Avec le bouton droit **Label1**, puis cliquez sur **propriétés**.  
+4. Cliquez avec le bouton droit sur **Label1**, puis cliquez sur **Propriétés**.  
   
-5. Modifier le **texte** propriété à partir de **Label1** à **Enter OrderID :** .  
+5. Modifiez la propriété **Text** de **Label1** en **Enter OrderID:** .  
   
-6. Dans la même façon pour **Label2**, modifiez le **texte** propriété à partir de **Label2** à **Enter CustomerID :** .  
+6. De la même façon pour **Label2**, modifiez la propriété **Text** de **Label2** en **Enter CustomerID:** .  
   
-7. Dans la même façon, modifiez le **texte** propriété pour **Button1** à **Order Details**.  
+7. De la même façon, modifiez la propriété **Text** de **Button1** en **Order Details**.  
   
-8. Modifier le **texte** propriété pour **Button2** à **l’historique des commandes**.  
+8. Modifiez la propriété **Text** de **button2** en **Order History**.  
   
      Élargissez les contrôles boutons afin que tout le texte soit visible.  
   
 ### <a name="to-handle-button-clicks"></a>Pour gérer des clics de bouton  
   
-1. Double-cliquez sur **Order Details** sur **Form1** pour créer le `Button1` Gestionnaire d’événements et ouvrez l’éditeur de code.  
+1. Double-cliquez sur **Order Details** sur **Form1** pour `Button1` créer le gestionnaire d’événements et ouvrir l’éditeur de code.  
   
 2. Tapez le code suivant dans le gestionnaire d'événements `Button1` :  
   
      [!code-vb[DLinqWalk4VB#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqWalk4VB/vb/Form1.vb#2)]  
   
-3. Double-cliquez maintenant sur **Button2** sur Form1 pour créer le `Button2` Gestionnaire d’événements et ouvrez l’éditeur de code.  
+3. Maintenant, double-cliquez sur **button2** sur Form1 pour `Button2` créer le gestionnaire d’événements et ouvrir l’éditeur de code.  
   
 4. Tapez le code suivant dans le gestionnaire d'événements `Button2` :  
   
@@ -164,29 +164,29 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
      Form1 s'affiche.  
   
-2. Dans le **Enter OrderID** , tapez **10249** puis cliquez sur **Order Details**.  
+2. Dans la zone **Enter OrderID** , tapez **10249** , puis cliquez sur **Order Details**.  
   
      Un message répertorie les produits inclus dans la commande 10249.  
   
      Cliquez sur **OK** pour fermer la boîte de message.  
   
-3. Dans le **Enter CustomerID** , tapez `ALFKI`, puis cliquez sur **l’historique des commandes**.  
+3. Dans la zone **entrer CustomerID** , tapez `ALFKI`, puis cliquez sur **historique des commandes**.  
   
      Un message répertorie l'historique des commandes pour le client ALFKI.  
   
      Cliquez sur **OK** pour fermer la boîte de message.  
   
-4. Dans le **Enter OrderID** , tapez `123`, puis cliquez sur **Order Details**.  
+4. Dans la zone **Enter OrderID** , tapez `123`, puis cliquez sur **Order Details**.  
   
      Le message suivant s'affiche : « Aucun résultat ».  
   
      Cliquez sur **OK** pour fermer la boîte de message.  
   
-5. Sur le **déboguer** menu, cliquez sur **arrêter le débogage**.  
+5. Dans le menu Déboguer, cliquez sur **arrêter**le débogage.  
   
      La session de débogage s'arrête.  
   
-6. Si vous avez terminé les tests, vous pouvez cliquer sur **fermer le projet** sur le **fichier** menu et enregistrez votre projet lorsque vous y êtes invité.  
+6. Si vous avez terminé l’expérimentation, vous pouvez cliquer sur **Fermer le projet** dans le menu **fichier** et enregistrer votre projet lorsque vous y êtes invité.  
   
 ## <a name="next-steps"></a>Étapes suivantes  
  Vous pouvez améliorer ce projet en apportant des modifications. Par exemple, vous pouvez répertorier les procédures stockées disponibles dans une zone de liste et demander à l'utilisateur de sélectionner les procédures à exécuter. Vous pouvez également transmettre en continu la sortie des rapports dans un fichier texte.  

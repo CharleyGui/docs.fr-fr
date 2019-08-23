@@ -2,12 +2,12 @@
 title: <add> de <entries>
 ms.date: 03/30/2017
 ms.assetid: 3af4805b-dc72-4f68-b168-da4fba8c6170
-ms.openlocfilehash: 3052a7570d1d93836603454817be921b37d26060
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 690fd07159e07b7e037f7330b31fdcba423e80f9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658835"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920127"
 ---
 # <a name="add-of-entries"></a>\<Ajouter > d' \<entrées >
 Représente une entrée de routage qui mappe un filtre à un point de terminaison client défini précédemment. Les messages correspondant à ce filtre sont envoyés à cette destination.  
@@ -55,7 +55,7 @@ Représente une entrée de routage qui mappe un filtre à un point de terminaiso
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<routing>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Section de configuration qui contient les entrées de mappage de routage.|  
+|[\<routing>](routing.md)|Section de configuration qui contient les entrées de mappage de routage.|  
   
 ## <a name="see-also"></a>Voir aussi
 

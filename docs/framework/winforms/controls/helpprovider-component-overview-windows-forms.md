@@ -10,31 +10,31 @@ helpviewer_keywords:
 - dialog boxes [Windows Forms], context-sensitive Help
 - Windows Forms, context-sensitive Help
 ms.assetid: 6b10c2cc-c577-4cb5-9669-e37b33416af9
-ms.openlocfilehash: 9e8dc2ee2773b26a7bfef1da209399a8b49de9ad
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cefc590bb3011b282392504a78ac5c393c58493e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624123"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965697"
 ---
 # <a name="helpprovider-component-overview-windows-forms"></a>Vue d'ensemble du composant HelpProvider (Windows Forms)
-Les formulaires Windows [HelpProvider](helpprovider-component-windows-forms.md) composant est utilisé pour associer un fichier d’aide HTML Help 1.x (fichier .chm généré par HTML Help Workshop ou fichier .htm) à votre application Windows. Vous pouvez fournir une aide de plusieurs façons :  
+Le composant Windows Forms [HelpProvider](helpprovider-component-windows-forms.md) est utilisé pour associer un fichier d’aide HTML Help 1. x (un fichier. chm, produit avec l’atelier d’aide HTML ou un fichier. htm) à votre application Windows. Vous pouvez fournir de l’aide de différentes manières:  
   
-- Fournir une aide contextuelle pour les contrôles Windows Forms.  
+- Fournir une aide contextuelle pour les contrôles sur Windows Forms.  
   
-- Fournir une aide contextuelle sur une boîte de dialogue particulier ou de contrôles spécifiques sur une boîte de dialogue.  
+- Fournissez une aide contextuelle sur une boîte de dialogue particulière ou des contrôles spécifiques sur une boîte de dialogue.  
   
-- Ouvrez un fichier d’aide à des zones spécifiques, telles que la page principale d’une Table des matières, l’Index ou une fonction de recherche.  
+- Ouvrir un fichier d’aide dans des zones spécifiques, telles que la page principale d’une table des matières, l’index ou une fonction de recherche.  
   
-## <a name="using-the-help-provider"></a>L’utilisation du fournisseur d’aide  
- Ajout d’un <xref:System.Windows.Forms.HelpProvider> composant à votre formulaire Windows permet aux autres contrôles sur le formulaire pour exposer les propriétés de l’aide de la <xref:System.Windows.Forms.HelpProvider> composant. Cela vous permet de fournir une aide pour les contrôles sur votre formulaire Windows. Vous pouvez associer un fichier d’aide avec le <xref:System.Windows.Forms.HelpProvider> à l’aide du composant le <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> propriété. Vous spécifiez le type d’aide fourni en appelant <xref:System.Windows.Forms.HelpProvider.SetHelpNavigator%2A> et en fournissant une valeur comprise entre le <xref:System.Windows.Forms.HelpNavigator> énumération pour le contrôle spécifié. Vous fournissez le mot clé ou une rubrique d’aide en appelant le <xref:System.Windows.Forms.HelpProvider.SetHelpKeyword%2A> (méthode).  
+## <a name="using-the-help-provider"></a>Utilisation du fournisseur d’aide  
+ L’ajout <xref:System.Windows.Forms.HelpProvider> d’un composant à votre Windows Form permet aux autres contrôles du formulaire d’exposer les propriétés <xref:System.Windows.Forms.HelpProvider> d’aide du composant. Cela vous permet de fournir de l’aide pour les contrôles de votre Windows Form. Vous pouvez associer un fichier <xref:System.Windows.Forms.HelpProvider> d’aide au composant à l’aide de la <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> propriété. Vous spécifiez le type d’aide fourni en <xref:System.Windows.Forms.HelpProvider.SetHelpNavigator%2A> appelant et en fournissant une valeur <xref:System.Windows.Forms.HelpNavigator> de l’énumération pour le contrôle spécifié. Vous fournissez le mot clé ou la rubrique pour obtenir <xref:System.Windows.Forms.HelpProvider.SetHelpKeyword%2A> de l’aide en appelant la méthode.  
   
- Si vous le souhaitez, pour associer une chaîne d’aide spécifique à un autre contrôle, utilisez le <xref:System.Windows.Forms.HelpProvider.SetHelpString%2A> (méthode). La chaîne que vous associez à un contrôle à l’aide de cette méthode est affichée dans une fenêtre contextuelle lorsque l’utilisateur appuie sur la touche F1 pendant que le contrôle a le focus.  
+ Si vous le souhaitez, pour associer une chaîne d’aide spécifique à un autre <xref:System.Windows.Forms.HelpProvider.SetHelpString%2A> contrôle, utilisez la méthode. La chaîne que vous associez à un contrôle à l’aide de cette méthode s’affiche dans une fenêtre indépendante quand l’utilisateur appuie sur la touche F1 pendant que le contrôle a le focus.  
   
- Si <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> n’a pas été défini, vous devez utiliser <xref:System.Windows.Forms.HelpProvider.SetHelpString%2A> pour fournir le texte d’aide. Si vous avez défini les deux <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> et la chaîne d’aide, l’aide basée sur <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> est prioritaire.  
+ Si <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> n’a pas été défini, vous devez <xref:System.Windows.Forms.HelpProvider.SetHelpString%2A> utiliser pour fournir le texte d’aide. Si vous avez défini à <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> la fois et la chaîne d’aide, <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> l’aide basée sur est prioritaire.  
   
 > [!NOTE]
->  Vous pouvez rencontrer des problèmes à l’aide du chemin d’accès relatif lorsque vous spécifiez le chemin d’accès au fichier d’aide dans le <xref:System.Windows.Forms.Help.ShowHelp%2A> méthode ou <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> propriété de la <xref:System.Windows.Forms.HelpProvider> contrôle. Par conséquent, veillez à utiliser le chemin d’accès absolu pour spécifier le fichier d’aide.  
+> Vous pouvez rencontrer des problèmes lors de l’utilisation du chemin d’accès relatif lorsque vous spécifiez <xref:System.Windows.Forms.Help.ShowHelp%2A> le chemin <xref:System.Windows.Forms.HelpProvider.HelpNamespace%2A> d’accès au <xref:System.Windows.Forms.HelpProvider> fichier d’aide dans la méthode ou la propriété du contrôle. Par conséquent, veillez à utiliser le chemin d’accès absolu du fichier pour spécifier le fichier d’aide.  
   
 ## <a name="see-also"></a>Voir aussi
 

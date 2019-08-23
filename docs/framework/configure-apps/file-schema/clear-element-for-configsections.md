@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 77f1d761-ff45-4001-8f36-3a3e5c41fa63
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: e79def513637937262d00b0edb1b0f7676fd120b
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: c06fca8b83638fb47bedb21863cb9b200cd211f3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300801"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927727"
 ---
-# <a name="clear-element-for-configsections"></a>\<Désactivez >, élément pour \<configSections >
+# <a name="clear-element-for-configsections"></a>\<Clear > élément pour \<configSections >
 
-Efface toutes les sections précédemment définies et les groupes de sections.
+Efface toutes les sections et tous les groupes de sections précédemment définis.
 
-[ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections>** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)   
+[ **\<configuration>** ](configuration-element.md)   
+&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md)   
 &nbsp;&nbsp;&nbsp;&nbsp; **\<clear>**
 
 ## <a name="syntax"></a>Syntaxe
@@ -34,27 +34,27 @@ Efface toutes les sections précédemment définies et les groupes de sections.
 
 |           | Description |
 | --------- | ----------- |
-| **name**  | Attribut requis.<br><br>Spécifie le nom de la section ou le groupe de section à supprimer. |
+| **name**  | Attribut requis.<br><br>Spécifie le nom de la section ou du groupe de sections à supprimer. |
 
 ## <a name="parent-element"></a>Élément parent
 
 |     | Description |
 | --- | ----------- |
-| [ **\<configSections >** élément](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | Contient des déclarations d’espace de noms et de la section de configuration. |
+| [élément  **>\<configSections**](configsections-element-for-configuration.md) | Contient la section de configuration et les déclarations d’espace de noms. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
-None
+Aucun
 
 ## <a name="remarks"></a>Notes
 
-Le  **\<Effacer >** élément supprime toutes les sections et groupes de votre application qui ont été définis précédemment dans le fichier de configuration actuel ou à un niveau supérieur dans la hiérarchie de fichiers de configuration.
+L’élément clear > supprime tous les sections et groupes de section de votre application qui ont été définis précédemment dans le fichier de configuration actuel ou à un niveau supérieur dans la hiérarchie des fichiers de configuration.  **\<**
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
-Cet exemple définit un fichier de configuration d’ordinateur et un fichier de configuration d’application et montre comment utiliser le  **\<Effacer >** élément dans un fichier de configuration d’application pour effacer les sections définies précédemment dans le fichier de configuration machine.
+Cet exemple définit un fichier de configuration d’ordinateur et un fichier de configuration d’application et montre comment utiliser l'  **\<élément clear >** dans un fichier de configuration d’application pour effacer les sections précédemment définies dans la configuration de l’ordinateur. txt.
 
-Le code du fichier de configuration machine suivant déclare deux sections,  **\<sampleSection >** et  **\<anotherSampleSection >** , qui sont lus avant que l’application fichier de configuration :
+Le code de fichier de configuration d’ordinateur suivant déclare deux sections,  **\<sampleSection >** et  **\<anotherSampleSection >** , qui sont lues avant le fichier de configuration de l’application:
 
 ```xml
 <!-- Machine.config file -->
@@ -71,7 +71,7 @@ Le code du fichier de configuration machine suivant déclare deux sections,  **\
 </configuration>
 ```
 
-Le code suivant du fichier de configuration de l’application efface toutes les sections déclarées précédemment. L’application ne peut pas utiliser ou récupérer des paramètres dans les sections qui ont été déclarées dans le fichier de configuration machine. Toutefois, il peut utiliser les paramètres à partir de  **\<anotherSection >** , car elle vient après le  **\<Effacer >** élément.
+Le code de fichier de configuration d’application suivant efface toutes les sections déclarées précédemment. L’application ne peut pas utiliser ou récupérer les paramètres de l’une des sections qui ont été déclarées dans le fichier de configuration de l’ordinateur. Toutefois, il peut utiliser les paramètres de  **\<anotherSection >** , car il vient après l'  **\<élément clear >** .
 
 ```xml
 <!-- Application configuration file -->
@@ -89,8 +89,8 @@ Le code suivant du fichier de configuration de l’application efface toutes les
 
 ## <a name="configuration-file"></a>fichier de configuration
 
-Cet élément peut être utilisé dans le fichier de configuration d’application, fichier de configuration machine (*Machine.config*), et *Web.config* fichiers qui ne sont pas au niveau du répertoire d’application.
+Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma de fichier de configuration pour le .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma du fichier de configuration pour le .NET Framework](index.md)

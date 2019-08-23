@@ -2,12 +2,12 @@
 title: Personnalisation des autorisations avec l'emprunt d'identité dans SQL Server
 ms.date: 03/30/2017
 ms.assetid: dc733d09-1d6d-4af0-9c4b-8d24504860f1
-ms.openlocfilehash: d44e410727924260640f0f50aea5ea41f264f3af
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 52e11bd983a8c9155d90659834df03dea6449a8e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650343"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961103"
 ---
 # <a name="customizing-permissions-with-impersonation-in-sql-server"></a>Personnalisation des autorisations avec l'emprunt d'identité dans SQL Server
 De nombreuses applications utilisent des procédures stockées pour accéder aux données, en se basant sur le chaînage des propriétés de manière à limiter l'accès aux tables de base. Vous pouvez accorder des autorisations EXECUTE sur les procédures stockées, en révoquant ou refusant des autorisations sur les tables de base. SQL Server ne vérifie pas les autorisations de l'appelant si la procédure stockée et les tables ont le même propriétaire. Toutefois, le chaînage des propriétés ne fonctionne pas si les objets ont des propriétaires différents ou dans le cas d'instructions SQL dynamiques.  
@@ -28,7 +28,7 @@ EXECUTE AS USER = 'userName';
  Vous pouvez utiliser la clause EXECUTE AS dans l'en-tête de définition d'une procédure stockée, d'un déclencheur ou d'une fonction définie par l'utilisateur (sauf pour les fonctions table inline). La procédure est alors exécutée dans le contexte du nom d'utilisateur ou du mot clé spécifié dans la clause EXECUTE AS. Vous pouvez créer dans la base de données un utilisateur proxy qui n'est pas mappé à une connexion, en lui accordant uniquement les autorisations nécessaires sur les objets auxquels la procédure accède. Seul l'utilisateur proxy spécifié dans la clause EXECUTE AS doit posséder des autorisations sur tous les objets auxquels le module accède.  
   
 > [!NOTE]
->  Pour certaines actions, comme TRUNCATE TABLE, aucune autorisation ne peut être accordée. En incorporant l'instruction dans une procédure et en spécifiant un utilisateur proxy possédant des autorisations ALTER TABLE, vous pouvez étendre les autorisations de troncation de la table aux appelants possédant uniquement des autorisations EXECUTE sur la procédure.  
+> Pour certaines actions, comme TRUNCATE TABLE, aucune autorisation ne peut être accordée. En incorporant l'instruction dans une procédure et en spécifiant un utilisateur proxy possédant des autorisations ALTER TABLE, vous pouvez étendre les autorisations de troncation de la table aux appelants possédant uniquement des autorisations EXECUTE sur la procédure.  
   
  Le contexte spécifié dans la clause EXECUTE AS est valide pour la durée de la procédure, y compris les procédures et déclencheurs imbriqués. Le contexte de l'appelant est rétabli une fois l'exécution terminée ou lorsque l'instruction REVERT est émise.  
   
@@ -49,12 +49,12 @@ CREATE PROCEDURE [procName] WITH EXECUTE AS 'proxyUser' AS ...
 ```  
   
 > [!NOTE]
->  Les applications qui nécessitent un audit peuvent s'arrêter car le contexte de sécurité d'origine de l'appelant n'est pas conservé. Les fonctions intégrées qui retournent l'identité de l'utilisateur actif, comme SESSION_USER, USER ou USER_NAME, retournent l'utilisateur associé à la clause EXECUTE AS, et non l'appelant d'origine.  
+> Les applications qui nécessitent un audit peuvent s'arrêter car le contexte de sécurité d'origine de l'appelant n'est pas conservé. Les fonctions intégrées qui retournent l'identité de l'utilisateur actif, comme SESSION_USER, USER ou USER_NAME, retournent l'utilisateur associé à la clause EXECUTE AS, et non l'appelant d'origine.  
   
 ### <a name="using-execute-as-with-revert"></a>Utilisation de la clause EXECUTE AS avec l'instruction REVERT  
  Vous pouvez utiliser l'instruction Transact-SQL REVERT pour rétablir le contexte d'exécution d'origine.  
   
- La clause facultative, WITH NO REVERT COOKIE = @variableName, permet de vous basculez le contexte d’exécution à l’appelant si la @variableName variable contient la valeur correcte. Vous pouvez ainsi rétablir le contexte d'exécution de l'appelant dans les environnements utilisant le regroupement de connexions. Étant donné que la valeur de @variableName est connue uniquement de l’appelant de la clause EXECUTE AS instruction, l’appelant peut garantir que le contexte d’exécution ne peut pas être modifié par l’utilisateur final qui appelle l’application. Une fois fermée, la connexion retourne dans le regroupement de connexions. Pour plus d’informations sur le regroupement dans ADO.NET, consultez [le regroupement de connexions serveur SQL (ADO.NET)](../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).  
+ La clause facultative, with No Revert cookie = @variableName, vous permet de rebasculer le contexte d’exécution vers l' @variableName appelant si la variable contient la valeur correcte. Vous pouvez ainsi rétablir le contexte d'exécution de l'appelant dans les environnements utilisant le regroupement de connexions. Étant donné que la @variableName valeur de est connue uniquement de l’appelant de l’instruction EXECUTE AS, l’appelant peut garantir que le contexte d’exécution ne peut pas être modifié par l’utilisateur final qui appelle l’application. Une fois fermée, la connexion retourne dans le regroupement de connexions. Pour plus d’informations sur le regroupement de connexions dans ADO.NET, consultez [SQL Server le regroupement de connexions (ADO.net)](../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).  
   
 ### <a name="specifying-the-execution-context"></a>Spécification du contexte d'exécution  
  Parallèlement à la spécification d'un utilisateur, vous pouvez utiliser la clause EXECUTE AS avec chacun des mots clés suivants.  

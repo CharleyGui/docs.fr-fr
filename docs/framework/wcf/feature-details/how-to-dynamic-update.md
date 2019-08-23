@@ -2,21 +2,21 @@
 title: 'Procédure : Mise à jour dynamique'
 ms.date: 03/30/2017
 ms.assetid: 9b8f6e0d-edab-4a7e-86e3-8c66bebc64bb
-ms.openlocfilehash: 7e2fbd6c179444ef4c6e1df5e5068dbd1c5d29fa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3c651bc4ff23b2534e81f190fc8b63771c7587d6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61773047"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69911156"
 ---
 # <a name="how-to-dynamic-update"></a>Procédure : Mise à jour dynamique
 Cette rubrique présente les étapes de base nécessaires pour créer et mettre à jour de manière dynamique la configuration de routage. Dans cet exemple, la configuration de routage initiale provient du fichier de configuration et route tous les messages vers le service de calculatrice regularCalc, mais elle est ensuite mise à jour par programme pour modifier le point de terminaison de destination du service roundingCalc.  
   
 > [!NOTE]
->  Dans de nombreuses implémentations, la configuration est entièrement dynamique et ne s'appuie pas sur une configuration par défaut ; mais dans certains scénarios, comme celui de cette rubrique, il est préférable de disposer d'un état de configuration par défaut lorsque le service démarre.  
+> Dans de nombreuses implémentations, la configuration est entièrement dynamique et ne s'appuie pas sur une configuration par défaut ; mais dans certains scénarios, comme celui de cette rubrique, il est préférable de disposer d'un état de configuration par défaut lorsque le service démarre.  
   
 > [!NOTE]
->  Les mises à jour dynamiques se produisent uniquement en mémoire et n'entraînent aucune modification des fichiers de configuration.  
+> Les mises à jour dynamiques se produisent uniquement en mémoire et n'entraînent aucune modification des fichiers de configuration.  
   
  Les deux services regularCalc et roundingCalc prennent en charge les mêmes opérations : addition, soustraction, multiplication et division ; toutefois, roundingCalc arrondit tous les calculs à la valeur entière la plus proche avant de les retourner. Un fichier de configuration sert à configurer le service de manière à router tous les messages vers le service regularCalc. Après le démarrage du service de routage, la méthode <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> est utilisée pour reconfigurer le service de manière à router les messages vers le service roundingCalc.  
   
@@ -64,7 +64,7 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
     </filterTables>  
     ```  
   
-3. Pour évaluer les messages entrants en fonction des filtres contenus dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage. L’exemple suivant illustre l’association de « filterTable1 » avec le point de terminaison de service.  
+3. Pour évaluer les messages entrants en fonction des filtres contenus dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage. L’exemple suivant montre l’Association de «filterTable1» au point de terminaison de service.  
   
     ```xml  
     <behaviors>  
@@ -240,7 +240,7 @@ namespace Microsoft.Samples.AdvancedFilters
 }  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'intégralité du fichier de configuration utilisé dans cet exemple est présentée ci-dessous.  
   
 ```xml  

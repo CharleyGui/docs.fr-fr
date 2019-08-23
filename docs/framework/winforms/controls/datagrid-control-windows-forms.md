@@ -8,18 +8,18 @@ helpviewer_keywords:
 - displaying data [Windows Forms], on forms
 - data [Windows Forms], displaying on Windows Forms
 ms.assetid: 1d9d5683-43d2-42dd-b6c3-e43f4cf0de99
-ms.openlocfilehash: 5a69605901eef7366c7a9ff9930e5f4ec6cece23
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: f50f32ad65dd621dee3847d72b5a186afcc4a86d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878771"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69969157"
 ---
 # <a name="datagrid-control-windows-forms"></a>DataGrid, contrôle (Windows Forms)
 > [!NOTE]
->  Le contrôle <xref:System.Windows.Forms.DataGridView> remplace le contrôle `DataGrid` et lui ajoute des fonctionnalités ; toutefois, le contrôle `DataGrid` est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix. Pour plus d’informations, consultez [Différences entre les contrôles DataGridView et DataGrid Windows Forms](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+> Le contrôle <xref:System.Windows.Forms.DataGridView> remplace le contrôle `DataGrid` et lui ajoute des fonctionnalités ; toutefois, le contrôle `DataGrid` est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix. Pour plus d’informations, consultez [Différences entre les contrôles DataGridView et DataGrid Windows Forms](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- Les formulaires Windows `DataGrid` contrôle fournit une interface utilisateur pour les jeux de données ADO.NET, affichant les données tabulaires et permettant les mises à jour de la source de données.  
+ Le contrôle `DataGrid` Windows Forms fournit une interface utilisateur pour les jeux de données ADO.net, l’affichage des données tabulaires et l’activation des mises à jour de la source de données.  
   
  Quand le contrôle `DataGrid` est défini sur une source de données valide, il est automatiquement rempli, et des colonnes et des lignes sont créées en fonction de la forme des données. Le contrôle `DataGrid` peut être utilisé pour afficher une seule table ou les relations hiérarchiques entre un ensemble de tables.  
   
@@ -27,51 +27,51 @@ ms.locfileid: "65878771"
  [Vue d’ensemble du contrôle DataGrid](datagrid-control-overview-windows-forms.md)  
  Décrit les fonctionnalités de base du contrôle `DataGrid`.  
   
- [Guide pratique pour Ajouter des Tables et des colonnes au contrôle DataGrid Windows Forms à l’aide du Concepteur](add-tables-and-columns-to-wf-datagrid-control-using-the-designer.md)  
+ [Guide pratique pour Ajouter des tables et des colonnes au contrôle DataGrid Windows Forms à l’aide du concepteur](add-tables-and-columns-to-wf-datagrid-control-using-the-designer.md)  
  Décrit comment ajouter des tables et des colonnes au contrôle `DataGrid` à l’aide du concepteur.  
   
- [Guide pratique pour Ajouter des Tables et des colonnes au contrôle DataGrid Windows Forms](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)  
+ [Guide pratique pour Ajouter des tables et des colonnes au contrôle DataGrid Windows Forms](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)  
  Décrit comment ajouter des tables et des colonnes au contrôle `DataGrid` par programmation.  
   
- [Guide pratique pour Lier le contrôle DataGrid Windows Forms à une Source de données à l’aide du Concepteur](bind-wf-datagrid-control-to-a-data-source-using-the-designer.md)  
- Décrit comment lier un dataset ADO.NET à la `DataGrid` contrôler à l’aide du concepteur.  
+ [Guide pratique : Lier le contrôle Windows Forms DataGrid à une source de données à l’aide du concepteur](bind-wf-datagrid-control-to-a-data-source-using-the-designer.md)  
+ Décrit comment lier un DataSet ADO.net au `DataGrid` contrôle à l’aide du concepteur.  
   
- [Guide pratique pour Lier le contrôle DataGrid Windows Forms à une Source de données](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)  
- Décrit comment lier un dataset ADO.NET à la `DataGrid` contrôle.  
+ [Guide pratique pour Lier le contrôle Windows Forms DataGrid à une source de données](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)  
+ Décrit comment lier un DataSet ADO.net au `DataGrid` contrôle.  
   
- [Guide pratique pour Modification des données affichées au moment de l’exécution dans le contrôle DataGrid Windows Forms](change-displayed-data-at-run-time-wf-datagrid-control.md)  
+ [Guide pratique : Modifier les données affichées au moment de l’exécution dans le contrôle DataGrid Windows Forms](change-displayed-data-at-run-time-wf-datagrid-control.md)  
  Décrit comment modifier des données par programmation dans le contrôle `DataGrid`.  
   
- [Guide pratique pour Créer des listes maître / détails avec le contrôle de DataGrid Windows Forms à l’aide du Concepteur](create-master-details-lists-with-wf-datagrid-control-using-the-designer.md)  
+ [Guide pratique pour Créer des listes maître/détails avec le contrôle DataGrid Windows Forms à l’aide du concepteur](create-master-details-lists-with-wf-datagrid-control-using-the-designer.md)  
  Décrit comment afficher deux tables liées par une relation parent/enfant, dans deux contrôles `DataGrid` distincts à l’aide du concepteur.  
   
- Procédure : Créer des listes maître / détails avec le contrôle DataGrid Windows Forms  
+ Procédure : Créer des listes maître/détails avec le contrôle DataGrid Windows Forms  
  Décrit comment afficher deux tables liées par une relation parent/enfant, dans deux contrôles `DataGrid` distincts.  
   
  [Guide pratique pour Supprimer ou masquer des colonnes dans le contrôle DataGrid Windows Forms](how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)  
  Décrit comment supprimer des colonnes dans le contrôle `DataGrid`.  
   
- [Guide pratique pour Mettre en forme le contrôle de DataGrid Windows Forms à l’aide du Concepteur](how-to-format-the-windows-forms-datagrid-control-using-the-designer.md)  
+ [Guide pratique pour Mettre en forme le contrôle DataGrid Windows Forms à l’aide du concepteur](how-to-format-the-windows-forms-datagrid-control-using-the-designer.md)  
  Décrit comment modifier les propriétés relatives à l’apparence du contrôle `DataGrid` à l’aide du concepteur.  
   
- [Guide pratique pour Mettre en forme le contrôle de DataGrid Windows Forms](how-to-format-the-windows-forms-datagrid-control.md)  
+ [Guide pratique pour Mettre en forme le contrôle DataGrid Windows Forms](how-to-format-the-windows-forms-datagrid-control.md)  
  Décrit comment modifier les propriétés relatives à l’apparence du contrôle `DataGrid`.  
   
  [Raccourcis clavier du contrôle DataGrid Windows Forms](keyboard-shortcuts-for-the-windows-forms-datagrid-control.md)  
  Répertorie les raccourcis pour naviguer dans le contrôle `DataGrid`.  
   
- [Guide pratique pour Répondre aux clics dans le contrôle DataGrid Windows Forms](how-to-respond-to-clicks-in-the-windows-forms-datagrid-control.md)  
+ [Guide pratique : Répondre aux clics dans le contrôle DataGrid Windows Forms](how-to-respond-to-clicks-in-the-windows-forms-datagrid-control.md)  
  Décrit comment déterminer sur quelle cellule l’utilisateur a cliqué dans le contrôle `DataGrid`.  
   
- [Guide pratique pour Valider les entrées avec le contrôle DataGrid Windows Forms](how-to-validate-input-with-the-windows-forms-datagrid-control.md)  
+ [Guide pratique pour Valider l’entrée avec le contrôle DataGrid Windows Forms](how-to-validate-input-with-the-windows-forms-datagrid-control.md)  
  Décrit comment valider des entrées dans le dataset lié au contrôle `DataGrid`.  
   
 ## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DataGrid>  
- Fournit une vue d’ensemble de la <xref:System.Windows.Forms.DataGrid> classe.  
+ Fournit une vue d’ensemble <xref:System.Windows.Forms.DataGrid> de la classe.  
   
  <xref:System.Windows.Forms.DataGrid.DataSource%2A>  
- Fournit des détails sur l’utilisation de cette propriété pour lier le <xref:System.Windows.Forms.DataGrid> contrôle aux données.  
+ Fournit des détails sur l’utilisation de cette propriété <xref:System.Windows.Forms.DataGrid> pour lier le contrôle aux données.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Liaison de données Windows Forms](../windows-forms-data-binding.md)  

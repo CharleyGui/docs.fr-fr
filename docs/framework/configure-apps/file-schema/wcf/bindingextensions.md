@@ -2,12 +2,12 @@
 title: <bindingExtensions>
 ms.date: 03/30/2017
 ms.assetid: 8373f94d-d095-486f-8f1e-4ac2f72b58c7
-ms.openlocfilehash: ed55701e45d8580e37cf4776de6b9c5241e0548c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 34ba198de33ae4aa1882d13f74bd2d538999a0c9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673470"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919790"
 ---
 # <a name="bindingextensions"></a>\<bindingExtensions>
 Cette section active l’utilisation d’une liaison définie par l’utilisateur à partir d’un ordinateur ou d’un fichier de configuration de l’application. Vous pouvez ajouter une liaison définie par l'utilisateur à cette collection en utilisant le mot clé `add` et affecter à l'attribut `type` de l'élément une liaison définie par l'utilisateur, aussi bien que l'attribut `name` au nom de la liaison définie par l'utilisateur.  
@@ -43,4 +43,4 @@ Cette section active l’utilisation d’une liaison définie par l’utilisateu
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)
+- [Extension de liaisons](../../../wcf/extending/extending-bindings.md)

@@ -5,33 +5,33 @@ helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 24a5cdff-7ed9-4195-93f3-edf6899019fc
-ms.openlocfilehash: ba4e7e790860696f4489e9ef7b73bddcb8c4e399
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b59689e78f901637674c0a1df28ed74411e8e7c7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705426"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921375"
 ---
 # <a name="assembly-binding-redirection-security-permission"></a>Autorisation de sécurité pour la redirection de liaison d’assembly
-La redirection de liaison d’assembly explicite dans un fichier de configuration de l’application nécessite une autorisation de sécurité. Cela s'applique à la redirection des assemblys .NET Framework et des assemblys tiers. L’autorisation est accordée en définissant le <xref:System.Security.Permissions.SecurityPermissionFlag> indicateur sur le <xref:System.Security.Permissions.SecurityPermission>. Les assemblys managés n’ont aucune autorisation par défaut.  
+La redirection de liaison d’assembly explicite dans un fichier de configuration de l’application nécessite une autorisation de sécurité. Cela s'applique à la redirection des assemblys .NET Framework et des assemblys tiers. L’autorisation est accordée en définissant <xref:System.Security.Permissions.SecurityPermissionFlag> l’indicateur <xref:System.Security.Permissions.SecurityPermission>sur. Les assemblys managés n’ont pas d’autorisations par défaut.  
   
- L’autorisation de sécurité est accordée aux applications exécutées dans la Zone de confiance (ordinateur local) et de la Zone Intranet. Applications qui s’exécutent dans la Zone Internet sont strictement autorisées à effectuer de redirection de liaison d’assembly.  
+ L’autorisation de sécurité est accordée aux applications qui s’exécutent dans la zone de confiance (ordinateur local) et la zone intranet. Les applications qui s’exécutent dans la zone Internet ne sont pas strictement autorisées à effectuer une redirection de liaison d’assembly.  
   
- L’autorisation n’est pas nécessaire si la redirection d’assembly est exécutée dans un fichier de stratégie d’éditeur qui est contrôlé par l’éditeur de composant, ou dans le fichier de configuration d’ordinateur qui est contrôlé par l’administrateur. Toutefois, l’autorisation est nécessaire pour une application ignore explicitement la stratégie de serveur de publication à l’aide du [ \<publisherPolicy appliquer = « no » / >](../../../docs/framework/configure-apps/file-schema/runtime/publisherpolicy-element.md) élément dans le fichier de configuration d’application.  
+ L’autorisation n’est pas requise si la redirection d’assembly est effectuée dans un fichier de stratégie d’éditeur contrôlé par l’éditeur du composant ou dans le fichier de configuration de l’ordinateur contrôlé par l’administrateur. Toutefois, l’autorisation est requise pour qu’une application ignore explicitement la stratégie de l’éditeur à l’aide de l' [ \<élément publisherPolicy Apply = "no"/>](./file-schema/runtime/publisherpolicy-element.md) dans le fichier de configuration de l’application.  
   
- Le tableau suivant présente la valeur par défaut des paramètres de sécurité pour le **BindingRedirects** indicateur.  
+ Le tableau suivant présente les paramètres de sécurité par défaut de l’indicateur **BindingRedirects** .  
   
-|Zone|Paramètre d’indicateur BindingRedirects|  
+|Zone|Paramètre de l’indicateur BindingRedirects|  
 |----------|-----------------------------------|  
-|Zone de confiance (ordinateur local)|**ON**|  
-|Zone intranet|**ON**|  
+|Zone approuvée (ordinateur local)|**SUR**|  
+|Zone Intranet|**SUR**|  
 |Zone Internet|**OFF**|  
-|Zones non fiables|**OFF**|  
+|Zones non approuvées|**OFF**|  
   
- Un administrateur peut modifier ces paramètres de sécurité pour prendre en charge ou restreindre des scénarios spécifiques sur un ordinateur donné. Aucun outil permettant de modifier le **BindingRedirects** le paramètre de la valeur par défaut ; indicateur un administrateur doit modifier manuellement le fichier Security.config sur l’ordinateur d’un utilisateur.  
+ Un administrateur peut modifier ces paramètres de sécurité pour prendre en charge ou restreindre des scénarios spécifiques sur un ordinateur donné. Il n’existe aucun outil permettant de modifier le paramètre d’indicateur **BindingRedirects** à partir de la valeur par défaut; un administrateur doit modifier manuellement le fichier Security. config sur l’ordinateur de l’utilisateur.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fichiers de stratégie de serveur de publication et l’exécution côte à côte](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/06d2bae3(v=vs.100))
-- [Guide pratique pour Activer et désactiver la redirection de liaison automatique](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)
-- [Exécution côte à côte](../../../docs/framework/deployment/side-by-side-execution.md)
+- [Fichiers de stratégie d’éditeur et exécution côte à côte](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/06d2bae3(v=vs.100))
+- [Guide pratique pour Activer et désactiver la redirection de liaison automatique](how-to-enable-and-disable-automatic-binding-redirection.md)
+- [Exécution côte à côte](../deployment/side-by-side-execution.md)

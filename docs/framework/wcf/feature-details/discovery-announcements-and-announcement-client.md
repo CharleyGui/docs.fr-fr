@@ -2,12 +2,12 @@
 title: Annonces de découverte et client d'annonce
 ms.date: 03/30/2017
 ms.assetid: 426c6437-f8d2-4968-b23a-18afd671aa4b
-ms.openlocfilehash: c32aca5e6deab01423d61c516ee924d00bc041ee
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 74362343dc1fd5df6d1b91537f7fed5bc08f8fe0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61856583"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968816"
 ---
 # <a name="discovery-announcements-and-announcement-client"></a>Annonces de découverte et client d'annonce
 La fonctionnalité de découverte WCF permet aux composants d’annoncer leur disponibilité. S'il est configuré pour, un service envoie des annonces de type Hello et Bye. Les clients ou d'autres composants peuvent écouter les messages d'annonce de ce type et agir dessus. Cela offre une autre méthode aux clients pour être informés des services. Les fonctionnalités d'annonce ont plusieurs utilisations, par exemple, si les services entrent dans un réseau et le quittent fréquemment, les annonces peuvent constituer une meilleure solution que de rechercher des services. Avec cette approche, le trafic réseau est réduit et le client peut être informé de la présence ou du départ du service dès la réception des annonces.  
@@ -16,7 +16,7 @@ La fonctionnalité de découverte WCF permet aux composants d’annoncer leur di
  Lorsqu'un service configuré pour les annonces rejoint un réseau et devient détectable, il envoie un message de type Hello qui annonce sa disponibilité aux clients qui écoutent. Le message contient les informations sur le service liées à la découverte, tel que son contrat, l'adresse du point de terminaison et les étendues associées. Vous pouvez spécifier où est envoyé le message d'annonce à l'aide de la classe <xref:System.ServiceModel.Discovery.AnnouncementEndpoint>. Si le point de terminaison d'annonce est un objet <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint>, les messages de types Hello et Bye sont envoyés en mode multidiffusion de manière appropriée, ou si le point de terminaison d'annonce est en mode monodiffusion, les messages sont envoyés directement au point de terminaison spécifié.  
   
 > [!NOTE]
->  Les annonces sont envoyées lors de l'ouverture et de la fermeture de l'hôte de service. Si ces appels ne se terminent pas correctement, le message d'annonce peut ne pas être envoyé. Par exemple si le service est défaillant, le message d'annonce de type Bye n'est pas envoyé.  
+> Les annonces sont envoyées lors de l'ouverture et de la fermeture de l'hôte de service. Si ces appels ne se terminent pas correctement, le message d'annonce peut ne pas être envoyé. Par exemple si le service est défaillant, le message d'annonce de type Bye n'est pas envoyé.  
   
 > [!TIP]
 >  Vous pouvez personnaliser les fonctionnalités d'annonce, ce qui vous permet d'envoyer des annonces quand vous le souhaitez.  

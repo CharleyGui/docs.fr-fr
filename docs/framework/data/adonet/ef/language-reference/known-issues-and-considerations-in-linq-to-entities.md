@@ -5,29 +5,29 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: acd71129-5ff0-4b4e-b266-c72cc0c53601
-ms.openlocfilehash: d7d87a3e95cf66efb91b71f6ff3c7c9bb1fbb311
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 66af3395d7ba7271323ad6461e8e1fb8c823a1c6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662151"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69913901"
 ---
 # <a name="known-issues-and-considerations-in-linq-to-entities"></a>Problèmes connus et éléments à prendre en compte dans LINQ to Entities
-Cette section fournit des informations sur les problèmes connus avec LINQ aux requêtes d’entités.  
+Cette section fournit des informations sur les problèmes connus liés aux requêtes LINQ to Entities.  
   
-- [Requêtes LINQ qui ne peut pas être mis en cache](#LINQQueriesThatAreNotCached)  
+- [Requêtes LINQ qui ne peuvent pas être mises en cache](#LINQQueriesThatAreNotCached)  
   
-- [Perte des informations de classement](#OrderingInfoLost)  
+- [Informations de classement perdues](#OrderingInfoLost)  
   
-- [Entiers non signés non pris en charge.](#UnsignedIntsUnsupported)  
+- [Entiers non signés non pris en charge](#UnsignedIntsUnsupported)  
   
-- [Erreurs de Conversion de type](#TypeConversionErrors)  
+- [Erreurs de conversion de type](#TypeConversionErrors)  
   
-- [Référencement des Variables Non scalaires non pris en charge.](#RefNonScalarClosures)  
+- [Référencement de variables non scalaires non prises en charge](#RefNonScalarClosures)  
   
-- [Requêtes imbriquées peuvent échouer avec SQL Server 2000](#NestedQueriesSQL2000)  
+- [Les requêtes imbriquées peuvent échouer avec SQL Server 2000](#NestedQueriesSQL2000)  
   
-- [Projection dans un Type anonyme](#ProjectToAnonymousType)  
+- [Projection dans un type anonyme](#ProjectToAnonymousType)  
   
 <a name="LINQQueriesThatAreNotCached"></a>   
 ## <a name="linq-queries-that-cannot-be-cached"></a>Requêtes LINQ qui ne peuvent pas être mises en cache  
@@ -35,14 +35,14 @@ Cette section fournit des informations sur les problèmes connus avec LINQ aux r
   
 <a name="OrderingInfoLost"></a>   
 ## <a name="ordering-information-lost"></a>Perte des informations de tri  
- Projection de colonnes dans un type anonyme entraînera des informations de classement perdu de certaines requêtes sont exécutées sur une base de données SQL Server 2005 un niveau de compatibilité de « 80 ».  Cela se produit lorsqu'un nom de colonne figurant dans la liste Order by correspond à un nom de colonne dans le sélecteur, comme l'illustre l'exemple suivant :  
+ La projection de colonnes dans un type anonyme entraîne la perte des informations de classement dans certaines requêtes exécutées sur une base de données SQL Server 2005 définie à un niveau de compatibilité de «80».  Cela se produit lorsqu'un nom de colonne figurant dans la liste Order by correspond à un nom de colonne dans le sélecteur, comme l'illustre l'exemple suivant :  
   
  [!code-csharp[DP L2E Conceptual Examples#SBUDT543840](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#sbudt543840)]
  [!code-vb[DP L2E Conceptual Examples#SBUDT543840](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#sbudt543840)]  
   
 <a name="UnsignedIntsUnsupported"></a>   
 ## <a name="unsigned-integers-not-supported"></a>Entiers non signés non pris en charge  
- Spécification d’un type d’entier non signé dans une requête LINQ to Entities n’est pas pris en charge, car le [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] ne prend pas en charge les entiers non signés. Si vous spécifiez un entier non signé, un <xref:System.ArgumentException> exception est levée pendant la traduction d’expression de requête, comme illustré dans l’exemple suivant. Dans cet exemple, la requête vise à extraire une commande dont le numéro est 48000.  
+ La spécification d’un type d’entier non signé dans une requête LINQ to Entities n’est pas [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] prise en charge, car ne prend pas en charge les entiers non signés. Si vous spécifiez un entier non signé, une <xref:System.ArgumentException> exception est levée pendant la traduction de l’expression de requête, comme illustré dans l’exemple suivant. Dans cet exemple, la requête vise à extraire une commande dont le numéro est 48000.  
   
  [!code-csharp[DP L2E Conceptual Examples#UIntAsQueryParam](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#uintasqueryparam)]
  [!code-vb[DP L2E Conceptual Examples#UIntAsQueryParam](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#uintasqueryparam)]  
@@ -58,7 +58,7 @@ Cette section fournit des informations sur les problèmes connus avec LINQ aux r
  Le référencement d'une variable non scalaire, telle qu'une entité, dans une requête n'est pas pris en charge. Lorsqu'une telle requête s'exécute, une exception <xref:System.NotSupportedException> est levée avec un message indiquant « Impossible de créer une valeur constante de type «`EntityType`. Seuls les types primitifs (« Int32, String et Guid ») sont pris en charge dans ce contexte. »  
   
 > [!NOTE]
->  Le référencement d’une collection de variables scalaires est pris en charge.  
+> Le référencement d’une collection de variables scalaires est pris en charge.  
   
  [!code-csharp[DP L2E Conceptual Examples#SBUDT555877](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#sbudt555877)]
  [!code-vb[DP L2E Conceptual Examples#SBUDT555877](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#sbudt555877)]  

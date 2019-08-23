@@ -11,12 +11,12 @@ helpviewer_keywords:
 - components [Windows Forms], troubleshooting
 - Windows Forms controls, debugging
 ms.assetid: e9c8c099-2271-4737-882f-50f336c7a55e
-ms.openlocfilehash: 6494a154b9b4bd5bf29fc0e2fbd0b4e5e84550ff
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: c05e849705f851b51a362d3a1d1d3f81a9eaf0e4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364165"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923595"
 ---
 # <a name="troubleshooting-control-and-component-authoring"></a>Dépannage de la création de contrôles et de composants
 Cette rubrique répertorie les problèmes courants suivants qui surviennent lors du développement de composants et de contrôles. Pour plus d’informations, consultez l’article [Programmation à l’aide de composants](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/0ffkdtkf(v=vs.120)).  
@@ -67,7 +67,7 @@ Cette rubrique répertorie les problèmes courants suivants qui surviennent lors
          Le contrôle est ajouté à la **boîte à outils**.  
   
 ## <a name="cannot-debug-the-windows-forms-user-control-or-component"></a>Impossible de déboguer le composant ou contrôle utilisateur Windows Forms  
- Si votre contrôle dérive de la <xref:System.Windows.Forms.UserControl> classe, vous pouvez déboguer son comportement au moment de l’exécution avec le conteneur de test. Pour plus d'informations, voir [Procédure : Tester le comportement d’un UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)au moment de l’exécution.  
+ Si votre contrôle dérive de la <xref:System.Windows.Forms.UserControl> classe, vous pouvez déboguer son comportement au moment de l’exécution avec le conteneur de test. Pour plus d’informations, consultez [Guide pratique pour Tester le comportement d’un UserControl](how-to-test-the-run-time-behavior-of-a-usercontrol.md)au moment de l’exécution.  
   
  Les autres composants et contrôles personnalisés ne sont pas des projets autonomes. Ils doivent être hébergés par une application, telle qu’un projet Windows Forms. Pour déboguer un contrôle ou un composant, vous devez l’ajouter à un projet Windows Forms.  
   
@@ -96,7 +96,7 @@ Cette rubrique répertorie les problèmes courants suivants qui surviennent lors
  Pour plus d’informations sur le débogage, consultez débogage [dans Visual Studio](/visualstudio/debugger/debugging-in-visual-studio) et [procédure pas à pas: Débogage des contrôles de Windows Forms personnalisés au moment](walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)du Design.  
   
 ## <a name="event-is-raised-twice-in-inherited-control-or-component"></a>Un événement est généré deux fois dans le composant ou le contrôle hérité  
- Cela est probablement dû à une clause `Handles` dupliquée. Pour plus d’informations, consultez l’article [Dépannage des gestionnaires d’événements hérités dans Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md).  
+ Cela est probablement dû à une clause `Handles` dupliquée. Pour plus d’informations, consultez l’article [Dépannage des gestionnaires d’événements hérités dans Visual Basic](../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md).  
   
 ## <a name="design-time-error-failed-to-create-component-component-name"></a>Erreur au moment de la conception: «Impossible de créer le composant’nom du composant'»  
  Votre composant ou contrôle doit fournir un constructeur sans paramètre sans paramètres. Lorsque l’environnement de design crée une instance de votre composant ou de votre contrôle, il n’essaie pas de fournir des paramètres aux surcharges de constructeur qui prennent des paramètres.  
@@ -105,7 +105,7 @@ Cette rubrique répertorie les problèmes courants suivants qui surviennent lors
  <xref:System.STAThreadAttribute> Informe le Common Language Runtime (CLR) qui Windows Forms utilise le modèle à thread unique cloisonné. Vous pouvez constater un comportement inattendu si vous n’appliquez pas cet attribut à la méthode `Main` de votre application Windows Forms. Par exemple, les images d’arrière-plan peuvent ne <xref:System.Windows.Forms.ListView>pas apparaître pour les contrôles tels que. Certains contrôles peuvent également avoir besoin de cet attribut pour fournir un comportement approprié de saisie semi-automatique et de glisser-déplacer.  
   
 ## <a name="component-icon-does-not-appear-in-toolbox"></a>L’icône du composant n’apparaît pas dans la boîte à outils  
- Lorsque vous utilisez <xref:System.Drawing.ToolboxBitmapAttribute> pour associer une icône à votre composant personnalisé, la bitmap n’apparaît pas dans la boîte à outils pour les composants générés automatiquement. Pour afficher l’image bitmap, rechargez le contrôle par le biais de la boîte de dialogue **Choisir des éléments de boîte à outils**. Pour plus d’informations, consultez [Guide pratique pour Fournissez une image bitmap de boîte](how-to-provide-a-toolbox-bitmap-for-a-control.md)à outils pour un contrôle.  
+ Lorsque vous utilisez <xref:System.Drawing.ToolboxBitmapAttribute> pour associer une icône à votre composant personnalisé, la bitmap n’apparaît pas dans la boîte à outils pour les composants générés automatiquement. Pour afficher l’image bitmap, rechargez le contrôle par le biais de la boîte de dialogue **Choisir des éléments de boîte à outils**. Pour plus d'informations, voir [Procédure : Fournissez une image bitmap de boîte](how-to-provide-a-toolbox-bitmap-for-a-control.md)à outils pour un contrôle.  
   
 ## <a name="see-also"></a>Voir aussi
 

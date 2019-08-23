@@ -10,12 +10,12 @@ helpviewer_keywords:
 - dependency properties [WPF], access
 - security [WPF], dependency properties
 ms.assetid: d10150ec-90c5-4571-8d35-84bafa2429a4
-ms.openlocfilehash: 2f9de32eb8637e58c17aba2309eed33dcfdd42a7
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: d9dd9306980b80f7845c10e8c0ccb59f29821245
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400772"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940836"
 ---
 # <a name="dependency-property-security"></a>Sécurité de propriété de dépendance
 Les propriétés de dépendance doivent généralement être considérées comme des propriétés publiques. La nature du système de propriétés [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] empêche de pouvoir garantir la sécurité d’une valeur de propriété de dépendance.  
@@ -29,7 +29,7 @@ Les propriétés de dépendance doivent généralement être considérées comme
  Pour une propriété de dépendance personnalisée, vous pouvez inscrire votre propriété en tant que propriété de dépendance en lecture seule, ce qui fournit un moyen efficace d’empêcher une propriété qui est définie par quiconque ne contient pas de référence <xref:System.Windows.DependencyPropertyKey> à pour cette propriété. Pour plus d’informations, consultez [Propriétés de dépendance en lecture seule](read-only-dependency-properties.md).  
   
 > [!NOTE]
->  La déclaration d' <xref:System.Windows.DependencyProperty> un champ d’identificateur privé n’est pas interdite et elle peut être utilisée pour réduire l’espace de noms immédiatement exposé d’une classe personnalisée, mais une telle propriété ne doit pas être considérée comme «privée» dans le même sens que le Common Language les définitions de langage du Runtime (CLR) définissent ce niveau d’accès, pour les raisons décrites dans la section suivante.  
+> La déclaration d' <xref:System.Windows.DependencyProperty> un champ d’identificateur privé n’est pas interdite et elle peut être utilisée pour réduire l’espace de noms immédiatement exposé d’une classe personnalisée, mais une telle propriété ne doit pas être considérée comme «privée» dans le même sens que le Common Language les définitions de langage du Runtime (CLR) définissent ce niveau d’accès, pour les raisons décrites dans la section suivante.  
   
 <a name="PropertySystemExposure"></a>   
 ## <a name="property-system-exposure-of-dependency-properties"></a>Exposition des propriétés de dépendance par le système de propriétés  

@@ -9,21 +9,21 @@ helpviewer_keywords:
 - custom controls [Windows Forms], Toolbox bitmaps
 - bitmaps [Windows Forms], custom controls
 ms.assetid: 0ed0840a-616d-41ba-a27d-3573241932ad
-ms.openlocfilehash: 7c26e00acd4278ced53ad29c748ac076e0215a23
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 428af7e4396fde8ac29046d73adda95dbe2182f0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61913209"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910473"
 ---
 # <a name="how-to-provide-a-toolbox-bitmap-for-a-control"></a>Procédure : fournir une image bitmap de boîte à outils pour un contrôle
-Si vous souhaitez avoir une icône spéciale pour votre contrôle s’affichent dans le **boîte à outils**, vous pouvez spécifier une image particulière en utilisant le <xref:System.Drawing.ToolboxBitmapAttribute>. Cette classe est un *attribut*, c’est-à-dire un type spécial de classe que vous pouvez joindre à d’autres classes. Pour plus d’informations sur les attributs, consultez [vue d’ensemble des attributs (Visual Basic)](../../../visual-basic/programming-guide/concepts/attributes/index.md) pour Visual Basic ou [attributs (c#)](../../../csharp/programming-guide/concepts/attributes/index.md) pour c#.  
+Si vous souhaitez qu’une icône spéciale pour votre contrôle apparaisse dans la **boîte à outils**, vous pouvez spécifier une image particulière à <xref:System.Drawing.ToolboxBitmapAttribute>l’aide de. Cette classe est un *attribut*, c’est-à-dire un type spécial de classe que vous pouvez joindre à d’autres classes. Pour plus d’informations sur les attributs, consultez [vue d’ensemble des attributs (Visual Basic)](../../../visual-basic/programming-guide/concepts/attributes/index.md) pour les C#Visual Basic ou les [attributsC#()](../../../csharp/programming-guide/concepts/attributes/index.md) pour.  
   
- À l’aide de la <xref:System.Drawing.ToolboxBitmapAttribute>, vous pouvez spécifier une chaîne qui indique le chemin d’accès et le nom d’un bitmap de 16 par 16 pixels. Cette image bitmap apparaît alors en regard de votre contrôle lorsqu’elle est ajoutée à la **boîte à outils**. Vous pouvez également spécifier un <xref:System.Type>, auquel cas l’image bitmap associée à ce type est chargé. Si vous spécifiez à la fois un <xref:System.Type> et une chaîne, le contrôle recherche une ressource d’image avec le nom spécifié par le paramètre de chaîne dans l’assembly contenant le type spécifié par le <xref:System.Type> paramètre.  
+ À l’aide de ,vouspouvezspécifierunechaînequiindiquelechemind’accèsetlenomdefichierpouruneimagebitmapde16par16pixels.<xref:System.Drawing.ToolboxBitmapAttribute> Cette image bitmap apparaît alors en regard de votre contrôle lorsqu’elle est ajoutée à la **boîte à outils**. Vous pouvez également spécifier un <xref:System.Type>, auquel cas l’image bitmap associée à ce type est chargée. Si vous spécifiez à <xref:System.Type> la fois un et une chaîne, le contrôle recherche une ressource d’image portant le nom spécifié par le paramètre de chaîne dans l’assembly contenant <xref:System.Type> le type spécifié par le paramètre.  
   
 ### <a name="to-specify-a-toolbox-bitmap-for-your-control"></a>Pour spécifier une image de bitmap dans la boîte à outils concernant votre contrôle  
   
-1. Ajouter le <xref:System.Drawing.ToolboxBitmapAttribute> à la déclaration de classe de votre contrôle avant le `Class` mot clé pour visual Basic et au-dessus de la déclaration de classe pour Visual c#.  
+1. Ajoutez à la déclaration de classe de votre contrôle avant le `Class` mot clé pour Visual Basic, et au-dessus de la déclaration de classe pour Visual. C# <xref:System.Drawing.ToolboxBitmapAttribute>  
   
     ```vb  
     ' Specifies the bitmap associated with the Button type.  
@@ -61,7 +61,7 @@ Si vous souhaitez avoir une icône spéciale pour votre contrôle s’affichent 
 2. Regénérez le projet.  
   
     > [!NOTE]
-    >  L’image bitmap n’apparaît pas dans la boîte à outils pour les composants et les contrôles générés automatiquement. Pour afficher l’image bitmap, rechargez le contrôle par le biais de la boîte de dialogue **Choisir des éléments de boîte à outils**. Pour plus d’informations, consultez [Procédure pas à pas : Remplissage automatique de la boîte à outils avec des composants personnalisés](walkthrough-automatically-populating-the-toolbox-with-custom-components.md).  
+    > L’image bitmap n’apparaît pas dans la boîte à outils pour les composants et les contrôles générés automatiquement. Pour afficher l’image bitmap, rechargez le contrôle par le biais de la boîte de dialogue **Choisir des éléments de boîte à outils**. Pour plus d’informations, consultez [Procédure pas à pas : Remplissage automatique de la boîte à outils](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)avec des composants personnalisés.  
   
 ## <a name="see-also"></a>Voir aussi
 

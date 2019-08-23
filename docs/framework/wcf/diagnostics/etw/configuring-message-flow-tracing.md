@@ -2,15 +2,15 @@
 title: Configuration du suivi de flux de messages
 ms.date: 03/30/2017
 ms.assetid: 15571ca2-bee2-47fb-ba10-fcbc09152ad0
-ms.openlocfilehash: 02c43b152cb1aef1684185e56eb7f172036ac46b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b01a06a50fbb5962fe87c3426957b3294b1bf3ab
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61999516"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917928"
 ---
 # <a name="configuring-message-flow-tracing"></a>Configuration du suivi de flux de messages
-Lorsque le suivi des activités Windows Communication Foundation (WCF) est activé, les ID d’activité de bout en bout sont affectés à des activités logiques dans toute la pile WCF. Il existe désormais dans [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)], une version plus performante de cette fonctionnalité qui fonctionne avec ETW (Suivi d'événements Windows), appelée le suivi de flux de messages. Lorsqu'il est activé, les ID d'activité de bout en bout sont extraits des messages entrants (ou leur sont affectés, s'ils sont vides) et sont propagés à tous les événements de suivi émis une fois que le message a été décodé par le canal. Les clients peuvent utiliser cette fonctionnalité pour reconstruire des flux de messages avec les journaux de suivi de différents services après décodage.  
+Lorsque le suivi d’activité Windows Communication Foundation (WCF) est activé, les ID d’activité de bout en bout sont affectés aux activités logiques dans la pile WCF. Il existe désormais dans [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)], une version plus performante de cette fonctionnalité qui fonctionne avec ETW (Suivi d'événements Windows), appelée le suivi de flux de messages. Lorsqu'il est activé, les ID d'activité de bout en bout sont extraits des messages entrants (ou leur sont affectés, s'ils sont vides) et sont propagés à tous les événements de suivi émis une fois que le message a été décodé par le canal. Les clients peuvent utiliser cette fonctionnalité pour reconstruire des flux de messages avec les journaux de suivi de différents services après décodage.  
   
  Le suivi peut être activé lorsqu'un problème a été détecté avec l'application, puis désactivé une fois le problème résolu.  
   
@@ -26,7 +26,7 @@ Lorsque le suivi des activités Windows Communication Foundation (WCF) est activ
 ```  
   
 > [!NOTE]
->  Étant donné que l'élément de configuration `endToEndTracing` réside dans un fichier Web.config, il ne peut pas être configuré dynamiquement de la même manière qu'ETW. Pour que l'élément de configuration `endToEndTracing` entre en vigueur, l'application doit être recyclée.  
+> Étant donné que l'élément de configuration `endToEndTracing` réside dans un fichier Web.config, il ne peut pas être configuré dynamiquement de la même manière qu'ETW. Pour que l'élément de configuration `endToEndTracing` entre en vigueur, l'application doit être recyclée.  
   
  Les activités sont corrélées par l'échange d'un identificateur qu'on appelle l'ID d'activité. Cet identificateur est un GUID généré par la classe System.Diagnostics.CorrelationManager. Si vous modifiez System.Diagnostics.Trace.CorrelationManager.ActivityID, assurez-vous que la valeur d'origine est définie lorsque le contrôle d'exécution retourne le code WCF.  Par ailleurs, si vous utilisez un modèle de programmation WCF asynchrone, assurez-vous que System.Diagnostics.Trace.CorrelationManager.ActivityID est transféré entre les threads.  
   

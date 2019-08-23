@@ -16,18 +16,18 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 37f1f6055ec8fa68fe804780d2893d20c978e6bd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 277b93267f0537c8e499a8d8f3b456c4396a975c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663749"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966339"
 ---
 # <a name="imetadataerror-interface"></a>IMetaDataError, interface
 Fournit un mécanisme de rappel pour signaler les erreurs pendant la fusion des métadonnées.  
   
 > [!NOTE]
->  Le `IMetaDataError` interface doit être implémentée par le client.  
+> L' `IMetaDataError` interface doit être implémentée par le client.  
   
 ## <a name="methods"></a>Méthodes  
   
@@ -36,11 +36,11 @@ Fournit un mécanisme de rappel pour signaler les erreurs pendant la fusion des 
 |[OnError, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-onerror-method.md)|Fournit une notification des erreurs qui se produisent pendant la fusion des métadonnées.|  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

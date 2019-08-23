@@ -6,20 +6,20 @@ helpviewer_keywords:
 - UI Automation, server-side provider implementation
 - provider implementation, UI Automation
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
-ms.openlocfilehash: f888923736d384af2c6d955a126bacacb16113af
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a5fcceb3c39092deaa4a9dca258ba60117019c36
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651147"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961217"
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>Implémentation de fournisseur UI Automation côté serveur
 > [!NOTE]
->  Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour plus d’informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [Windows Automation API : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Cette section explique comment implémenter un fournisseur UI Automation côté serveur pour un contrôle personnalisé.  
   
- L’implémentation pour les éléments Windows Presentation Foundation (WPF) et non-[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] éléments (tels que ceux conçus pour [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]) est fondamentalement différente. Les éléments[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] prennent en charge [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] via une classe dérivée d' <xref:System.Windows.Automation.Peers.AutomationPeer>. Les éléments non-[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] fournissent une prise en charge via l'implémentation d'interfaces de fournisseurs.  
+ L’implémentation des éléments Windows Presentation Foundation (WPF) et des éléments[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] non-(tels que ceux conçus [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]pour) est fondamentalement différente. Les éléments[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] prennent en charge [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] via une classe dérivée d' <xref:System.Windows.Automation.Peers.AutomationPeer>. Les éléments non-[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] fournissent une prise en charge via l'implémentation d'interfaces de fournisseurs.  
   
 <a name="Security_Considerations"></a>   
 ## <a name="security-considerations"></a>Considérations relatives à la sécurité  
@@ -102,7 +102,7 @@ ms.locfileid: "64651147"
 - <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty>  
   
 > [!NOTE]
->  La <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty> d'un simple élément ou d'une racine de fragment hébergé dans une fenêtre est obtenue depuis la fenêtre ; toutefois, les éléments fragments sous la racine (tels que des éléments de liste dans une zone de liste) doivent fournir leurs propres identificateurs. Pour plus d'informations, consultez <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId%2A>.  
+> La <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty> d'un simple élément ou d'une racine de fragment hébergé dans une fenêtre est obtenue depuis la fenêtre ; toutefois, les éléments fragments sous la racine (tels que des éléments de liste dans une zone de liste) doivent fournir leurs propres identificateurs. Pour plus d'informations, consultez <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId%2A>.  
 >   
 >  La <xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty> doit être retournée pour les fournisseurs hébergés dans un contrôle [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] . Dans ce cas, le fournisseur de fenêtre par défaut ne pourra peut-être pas récupérer la bonne valeur.  
 >   
@@ -134,7 +134,7 @@ ms.locfileid: "64651147"
  Les fournisseurs de simples contrôles tels qu'un bouton personnalisé hébergé dans une fenêtre (HWND) n'ont pas besoin de prendre en charge la navigation dans l'arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] . La navigation vers et depuis l'élément est contrôlée par le fournisseur par défaut de la fenêtre hôte, ce qui est spécifié dans l'implémentation de <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>. Quand vous implémentez un fournisseur pour un contrôle personnalisé complexe, vous devez toutefois prendre en charge la navigation entre le nœud racine du fragment et ses descendants, et entre nœuds frères.  
   
 > [!NOTE]
->  Les éléments d'un fragment autre que la racine doivent retourner une référence `null` depuis <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>, car ils ne sont pas hébergés directement dans une fenêtre et aucun fournisseur par défaut ne peut prendre en charge la navigation vers et depuis ces éléments.  
+> Les éléments d'un fragment autre que la racine doivent retourner une référence `null` depuis <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>, car ils ne sont pas hébergés directement dans une fenêtre et aucun fournisseur par défaut ne peut prendre en charge la navigation vers et depuis ces éléments.  
   
  La structure du fragment est déterminée par votre implémentation de <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.Navigate%2A>. Pour chaque direction possible à partir de chaque fragment, cette méthode retourne l'objet fournisseur de l'élément dans cette direction. S'il n'y a aucun élément dans cette direction, la méthode retourne une référence `null` .  
   

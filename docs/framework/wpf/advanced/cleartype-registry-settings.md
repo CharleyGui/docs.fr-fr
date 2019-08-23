@@ -5,12 +5,12 @@ helpviewer_keywords:
 - ClearType [WPF], registry settings
 - typography [WPF], ClearType registry settings
 ms.assetid: 56f314bb-b30b-4f67-8492-8b8a9fa432ae
-ms.openlocfilehash: 8f1c4415a834f7eb7c3048a89ab81de6921b7bf6
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: f4b5a0c3764c173afe03adb67fd3df9d17d9fdcb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629938"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964892"
 ---
 # <a name="cleartype-registry-settings"></a>Paramètres du Registre ClearType
 Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsoft ClearType qui sont utilisés par les applications WPF.  
@@ -36,12 +36,12 @@ Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsof
 |Structure des pixels|Décrit la disposition des pixels d’un écran d’affichage.|  
 |Niveau de contraste du texte|Décrit le niveau de contraste du texte affiché.|  
   
- Ces paramètres sont accessibles par un utilitaire de configuration externe qui sait comment référencer les paramètres [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]du Registre ClearType identifiés. Ces paramètres peuvent également être créés ou modifiés en accédant directement aux valeurs à l’aide de l’Éditeur du Registre [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)].  
+ Ces paramètres sont accessibles par un utilitaire de configuration externe qui sait comment référencer les paramètres [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]du Registre ClearType identifiés. Ces paramètres peuvent également être créés ou modifiés en accédant directement aux valeurs à l’aide de l’éditeur du Registre Windows.  
   
- Si les [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]paramètres du Registre ClearType ne sont pas définis (ce qui correspond à l’état [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] par défaut) [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] , l’application interroge les informations de paramètres système pour les paramètres de lissage des polices.  
+ Si les [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]paramètres du Registre ClearType ne sont pas définis (ce qui correspond à l’état [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] par défaut), l’application interroge les informations de paramètres système Windows pour les paramètres de lissage des polices.  
   
 > [!NOTE]
->  Pour plus d’informations sur l’énumération des noms d' `SystemParametersInfo` appareils d’affichage, consultez la [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] fonction.  
+> Pour plus d’informations sur l’énumération des noms d' `SystemParametersInfo` appareils d’affichage, consultez la [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] fonction.  
   
 <a name="ClearType_level"></a>   
 ## <a name="cleartype-level"></a>Niveau ClearType  
@@ -59,7 +59,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsof
  ![Paramètres ClearType dans l’éditeur du Registre.](./media/cleartype-registry-settings/cleartype-settings-registry-editor.png)  
   
 > [!NOTE]
->  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]les applications restituent le texte dans l’un des deux modes, avec et sans ClearType. Quand le texte est rendu sans ClearType, il est appelé rendu en nuances de gris.  
+> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]les applications restituent le texte dans l’un des deux modes, avec et sans ClearType. Quand le texte est rendu sans ClearType, il est appelé rendu en nuances de gris.  
   
 <a name="gamma_level"></a>   
 ## <a name="gamma-level"></a>Niveau gamma  
@@ -80,7 +80,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsof
 ## <a name="pixel-structure"></a>Structure des pixels  
  La structure des pixels décrit le type des pixels qui composent un écran d’affichage. Cette structure peut être de trois types :  
   
-|Type|`Value`|Description|  
+|Type|Valeur|Description|  
 |----------|-----------|-----------------|  
 |À deux dimensions|0|L’écran d’affichage n’a aucune structure de pixels. Cela signifie que les sources de lumière de chaque couleur sont étalées de manière uniforme sur la zone de pixel – ce rendu est appelé « rendu en échelle de gris ». C’est ainsi que fonctionne un écran d’affichage standard. ClearType n’est jamais appliqué au texte rendu.|  
 |RVB|1|L’écran d’affichage comporte des pixels constitués de trois bandes dans l’ordre suivant : rouge, vert et bleu. ClearType est appliqué au texte rendu.|  
@@ -89,7 +89,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsof
  La structure du pixel correspond à une valeur entière comprise entre 0 et 2. Le niveau par défaut est 0, qui représente une structure de pixel plate.  
   
 > [!NOTE]
->  Pour plus d’informations sur l’énumération des noms d' `EnumDisplayDevices` appareils d’affichage, consultez la [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] fonction.  
+> Pour plus d’informations sur l’énumération des noms d' `EnumDisplayDevices` appareils d’affichage, consultez la [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] fonction.  
   
 ### <a name="registry-setting"></a>Paramètre du Registre  
  Le paramètre du Registre de la structure des pixels se trouve dans un paramètre d’ordinateur local correspondant à un nom d’écran d’affichage spécifique :  

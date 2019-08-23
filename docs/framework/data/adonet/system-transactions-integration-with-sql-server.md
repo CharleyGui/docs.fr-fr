@@ -5,30 +5,30 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b555544e-7abb-4814-859b-ab9cdd7d8716
-ms.openlocfilehash: 09fcf3f1a7e58a4bd8c2c6b0d25c24f32ea5ec5e
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 25b443d8234909a4d8525c2ce2b4e70c3baa337b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65880594"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965230"
 ---
 # <a name="systemtransactions-integration-with-sql-server"></a>Intégration de System.Transactions à SQL Server
-Le .NET Framework version 2.0 a introduit une infrastructure de transaction qui est accessible via la <xref:System.Transactions> espace de noms. Cette infrastructure expose des transactions d’une manière qui est entièrement intégré dans le .NET Framework, notamment ADO.NET.  
+Le .NET Framework version 2,0 a introduit une infrastructure de transaction qui est accessible via <xref:System.Transactions> l’espace de noms. Cette infrastructure expose les transactions d’une manière entièrement intégrée dans le .NET Framework, y compris ADO.NET.  
   
- Outre les améliorations de programmabilité, <xref:System.Transactions> et ADO.NET peuvent collaborer pour coordonner les optimisations lorsque vous travaillez avec des transactions. Une transaction susceptible d'être promue est une transaction légère (locale) qui peut être promue automatiquement en une transaction entièrement distribuée en fonction des besoins.  
+ Outre les améliorations de la programmabilité, <xref:System.Transactions> ADO.net peut travailler ensemble pour coordonner les optimisations lorsque vous utilisez des transactions. Une transaction susceptible d'être promue est une transaction légère (locale) qui peut être promue automatiquement en une transaction entièrement distribuée en fonction des besoins.  
   
- En commençant par ADO.NET 2.0, <xref:System.Data.SqlClient> prend en charge les transactions pouvant être promues lorsque vous travaillez avec SQL Server. Une transaction pouvant être promue n'invoque pas la charge supplémentaire d'une transaction distribuée à moins qu'elle ne soit requise. Transactions pouvant être promues sont automatiques et ne requièrent aucune intervention du développeur.  
+ À compter de ADO.NET 2,0 <xref:System.Data.SqlClient> , prend en charge les transactions pouvant être promues lorsque vous travaillez avec SQL Server. Une transaction pouvant être promue n'invoque pas la charge supplémentaire d'une transaction distribuée à moins qu'elle ne soit requise. Les transactions pouvant être promues sont automatiques et ne nécessitent aucune intervention du développeur.  
   
- Transactions pouvant être promues sont disponibles uniquement lorsque vous utilisez le fournisseur de données .NET Framework pour SQL Server (`SqlClient`) avec SQL Server.  
+ Les transactions pouvant être promues sont disponibles uniquement lorsque vous utilisez le fournisseur de données .NET Framework`SqlClient`pour SQL Server () avec SQL Server.  
   
 ## <a name="creating-promotable-transactions"></a>Création de transactions pouvant être promues  
- Le fournisseur .NET Framework pour SQL Server prend en charge les transactions pouvant être promues, qui sont gérées via les classes dans le .NET Framework <xref:System.Transactions> espace de noms. Les transactions pouvant être promues optimisent les transactions distribuées en différant la création d'une transaction distribuée jusqu'à ce qu'elle soit nécessaire. Si un seul gestionnaire de ressources est requis, aucune transaction distribuée n'a lieu.  
+ Le fournisseur .NET Framework pour SQL Server fournit la prise en charge des transactions pouvant être promues, qui sont gérées <xref:System.Transactions> via les classes de l’espace de noms .NET Framework. Les transactions pouvant être promues optimisent les transactions distribuées en différant la création d'une transaction distribuée jusqu'à ce qu'elle soit nécessaire. Si un seul gestionnaire de ressources est requis, aucune transaction distribuée n'a lieu.  
   
 > [!NOTE]
->  Dans un scénario de niveau de confiance partiel, l'objet <xref:System.Transactions.DistributedTransactionPermission> est requis lorsqu'une transaction est promue en transaction distribuée.  
+> Dans un scénario de niveau de confiance partiel, l'objet <xref:System.Transactions.DistributedTransactionPermission> est requis lorsqu'une transaction est promue en transaction distribuée.  
   
 ## <a name="promotable-transaction-scenarios"></a>Scénarios de transaction pouvant être promue  
- Les transactions distribuées consomment généralement une partie importante des ressources système, car elles sont gérées par Microsoft Distributed Transaction Coordinator (MS DTC), qui intègre tous les gestionnaires de ressources auxquels la transaction accède. Une transaction pouvant être promue est une forme spéciale d’un <xref:System.Transactions> transaction qui délègue efficacement le travail à une simple transaction SQL Server. <xref:System.Transactions>, <xref:System.Data.SqlClient>, et SQL Server coordonner le travail impliqué dans la gestion de la transaction, la promotion à une transaction entièrement distribuée en fonction des besoins.  
+ Les transactions distribuées consomment généralement une partie importante des ressources système, car elles sont gérées par Microsoft Distributed Transaction Coordinator (MS DTC), qui intègre tous les gestionnaires de ressources auxquels la transaction accède. Une transaction pouvant être promue est une forme spéciale <xref:System.Transactions> de transaction qui délègue efficacement le travail à une simple transaction SQL Server. <xref:System.Transactions>, <xref:System.Data.SqlClient>et SQL Server coordonnent le travail impliqué dans la gestion de la transaction, en la promouvant en une transaction distribuée complète en fonction des besoins.  
   
  L'avantage de l'utilisation de transactions pouvant être promues réside dans le fait que, quand une connexion est ouverte à l'aide d'une transaction <xref:System.Transactions.TransactionScope> active alors qu'aucune autre connexion n'est ouverte, la transaction est validée comme transaction légère, au lieu de générer la charge supplémentaire d'une transaction entièrement distribuée.  
   
@@ -52,10 +52,10 @@ Le .NET Framework version 2.0 a introduit une infrastructure de transaction qui 
  Si une exception est levée dans l'objet <xref:System.Transactions.TransactionScope>, la transaction est marquée comme incohérente et est abandonnée. Elle sera annulée lors de la suppression du <xref:System.Transactions.TransactionScope> . Si aucune exception n'est levée, les transactions participantes sont validées.  
   
 > [!NOTE]
->  La classe `TransactionScope` crée une transaction dont la propriété <xref:System.Transactions.Transaction.IsolationLevel%2A> a par défaut la valeur `Serializable` . En fonction de votre application, vous devez envisager d'abaisser le niveau d'isolation afin d'éviter une contention élevée dans votre application.  
+> La classe `TransactionScope` crée une transaction dont la propriété <xref:System.Transactions.Transaction.IsolationLevel%2A> a par défaut la valeur `Serializable` . En fonction de votre application, vous devez envisager d'abaisser le niveau d'isolation afin d'éviter une contention élevée dans votre application.  
   
 > [!NOTE]
->  Il est recommandé de n'effectuer des mises à jour, des insertions et des suppressions que dans des transactions distribuées car ces opérations consomment des ressources de base de données importantes. Les instructions select risquent de verrouiller inutilement les ressources de base de données ; dans certains cas, vous pouvez être amené à utiliser des transactions pour effectuer des sélections. Tout travail autre qu'un travail de base de données doit être réalisé en dehors de la transaction, à moins qu'il n'implique d'autres gestionnaires de ressources. Bien qu'une exception dans la transaction empêche la validation de celle-ci, la classe <xref:System.Transactions.TransactionScope> n'a aucune disposition pour annuler les modifications que votre code a apportées en dehors de la transaction proprement dite. Pour intervenir lors de l'annulation de la transaction, vous devez écrire votre propre implémentation de l'interface <xref:System.Transactions.IEnlistmentNotification> et vous inscrire explicitement dans la transaction.  
+> Il est recommandé de n'effectuer des mises à jour, des insertions et des suppressions que dans des transactions distribuées car ces opérations consomment des ressources de base de données importantes. Les instructions select risquent de verrouiller inutilement les ressources de base de données ; dans certains cas, vous pouvez être amené à utiliser des transactions pour effectuer des sélections. Tout travail autre qu'un travail de base de données doit être réalisé en dehors de la transaction, à moins qu'il n'implique d'autres gestionnaires de ressources. Bien qu'une exception dans la transaction empêche la validation de celle-ci, la classe <xref:System.Transactions.TransactionScope> n'a aucune disposition pour annuler les modifications que votre code a apportées en dehors de la transaction proprement dite. Pour intervenir lors de l'annulation de la transaction, vous devez écrire votre propre implémentation de l'interface <xref:System.Transactions.IEnlistmentNotification> et vous inscrire explicitement dans la transaction.  
   
 ## <a name="example"></a>Exemple  
  L'utilisation de l'espace de noms <xref:System.Transactions> exige que vous disposiez d'une référence à System.Transactions.dll.  

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - formatted text [WPF]
 - drawing [WPF], formatted text
 ms.assetid: b1d851c1-331c-4814-9964-6fe769db6f1f
-ms.openlocfilehash: 3b410bcf609aca2cb201042247b8768f243ac93a
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: eeba54ebd63b26a50c8c01a2478e847b3e660a3f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629744"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937689"
 ---
 # <a name="drawing-formatted-text"></a>Dessin du texte mis en forme
 Cette rubrique fournit une vue d’ensemble des fonctionnalités de <xref:System.Windows.Media.FormattedText> l’objet. Cet objet offre un contrôle de bas niveau pour le dessin de texte dans des applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
@@ -26,7 +26,7 @@ Cette rubrique fournit une vue d’ensemble des fonctionnalités de <xref:System
  ![Texte affiché à l'aide de l'objet FormattedText](./media/typography-in-wpf/text-formatted-linear-gradient.jpg)  
   
 > [!NOTE]
->  Pour les développeurs qui migrent depuis l’API [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)], le tableau présenté dans la section [Migration depuis Win32](#win32_migration) répertorie les indicateurs DrawText de [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] et leur équivalent approximatif dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
+> Pour les développeurs qui migrent depuis l’API [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)], le tableau présenté dans la section [Migration depuis Win32](#win32_migration) répertorie les indicateurs DrawText de [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] et leur équivalent approximatif dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)].  
   
 ### <a name="reasons-for-using-formatted-text"></a>Raisons d’utiliser du texte mis en forme  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] inclut plusieurs contrôles pour dessiner le texte à l’écran. Chaque contrôle cible un scénario différent et dispose de sa propre liste de fonctionnalités et limitations. En général, l' <xref:System.Windows.Controls.TextBlock> élément doit être utilisé quand une prise en charge de texte limitée est nécessaire, par exemple une [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]courte phrase dans un. <xref:System.Windows.Controls.Label>peut être utilisé quand une prise en charge minimale du texte est requise. Pour plus d’informations, consultez [Documents dans WPF](documents-in-wpf.md).  
@@ -121,4 +121,4 @@ Sphère suivant la géométrie de tracé du texte
 - [Documents dans WPF](documents-in-wpf.md)
 - [Typographie dans WPF](typography-in-wpf.md)
 - [Créer du texte avec contour](how-to-create-outlined-text.md)
-- [Guide pratique pour Créer une animation PathGeometry pour du texte](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms743610(v=vs.100))
+- [Guide pratique : Créer une animation PathGeometry pour du texte](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms743610(v=vs.100))

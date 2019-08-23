@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - COM+ [WCF], configuring service settings
 ms.assetid: f42a55a8-3af8-4394-9fdd-bf12a93780eb
-ms.openlocfilehash: dd5625fd3f2c0cc2e1e2a261b091a029cd4226ed
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 58845ab7b9da7377f4fdaa7da13e7c407226d63c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62039414"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912206"
 ---
 # <a name="how-to-configure-com-service-settings"></a>Procédure : configurer des paramètres de service COM+
-Lorsqu'une interface d'application est ajoutée ou supprimée en utilisant l'outil de configuration de service COM+, la configuration de service Web est mise à jour dans le fichier de configuration de l'application. Dans le mode hébergé COM +, le fichier Application.config est placé dans le répertoire racine de l’Application (%PROGRAMFILES%\ComPlus Applications\\{appid} est la valeur par défaut). Dans l'un ou l'autre des modes hébergés sur le Web, le fichier Web.config est placé dans le répertoire vroot spécifié.  
+Lorsqu'une interface d'application est ajoutée ou supprimée en utilisant l'outil de configuration de service COM+, la configuration de service Web est mise à jour dans le fichier de configuration de l'application. Dans le mode hébergé par com+, le fichier application. config est placé dans le répertoire racine de l’application\\(%ProgramFiles%\ComPlus applications {AppID} est la valeur par défaut). Dans l'un ou l'autre des modes hébergés sur le Web, le fichier Web.config est placé dans le répertoire vroot spécifié.  
   
 > [!NOTE]
->  La signature du message doit être utilisée pour éviter la falsification des messages entre un client et un serveur. De plus, le chiffrement de la couche transport ou message doit être utilisé pour se protéger contre la divulgation d'informations de messages entre un client et un serveur. Comme avec les services Windows Communication Foundation (WCF), vous devez utiliser la limitation pour limiter le nombre d’appels simultanés, les connexions, les instances et les opérations en attente. Elle permet d'empêcher la surconsommation de ressources. La fonctionnalité de limitation est spécifiée à l'aide des paramètres de fichier de configuration de service.  
+> La signature du message doit être utilisée pour éviter la falsification des messages entre un client et un serveur. De plus, le chiffrement de la couche transport ou message doit être utilisé pour se protéger contre la divulgation d'informations de messages entre un client et un serveur. Comme pour les services Windows Communication Foundation (WCF), vous devez utiliser la limitation pour limiter le nombre d’appels simultanés, de connexions, d’instances et d’opérations en attente. Elle permet d'empêcher la surconsommation de ressources. La fonctionnalité de limitation est spécifiée à l'aide des paramètres de fichier de configuration de service.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Prenons l'exemple d'un composant qui implémente l'interface suivante :  
   
 ```  
@@ -45,17 +45,17 @@ public interface IFinancesContract : IDisposable
 ```  
   
 > [!NOTE]
->  IID fait partie intégrante de l'espace de noms initial pour le contrat.  
+> IID fait partie intégrante de l'espace de noms initial pour le contrat.  
   
  Les applications clientes qui utilisent ce service doivent se conformer à ce contrat et utiliser une liaison compatible avec celui spécifié dans la configuration de l’application.  
   
- L'exemple de code suivant affiche un fichier de configuration par défaut. En étant un service Web de Windows Communication Foundation (WCF), cela est conforme au schéma de configuration de modèle de service standard et peut être modifiée dans la même façon que les autres fichiers de configuration de services WCF.  
+ L'exemple de code suivant affiche un fichier de configuration par défaut. En tant que service Web Windows Communication Foundation (WCF), il est conforme au schéma de configuration de modèle de service standard et peut être modifié de la même façon que les autres fichiers de configuration des services WCF.  
   
  Les changements standard incluent :  
   
 - Remplacer l'adresse de point de terminaison de la forme par défaut ApplicationName/ComponentName/InterfaceName par une forme plus utilisable.  
   
-- Modification de l’espace de noms du service à partir de la valeur par défaut `http://tempuri.org/InterfaceID` formulaire à une forme plus pertinente.  
+- La modification de l’espace de noms du service du `http://tempuri.org/InterfaceID` formulaire par défaut est plus appropriée.  
   
 - Modifier le point de terminaison pour utiliser une liaison de transport différente.  
   

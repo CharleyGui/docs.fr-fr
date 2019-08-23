@@ -7,12 +7,12 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], about BindingSource component
 - data binding [Windows Forms], BindingSource component
 ms.assetid: be838caf-fcb0-4b68-827f-58b2c04b747f
-ms.openlocfilehash: 9c9c9fb574b9f3e687b2d8d5c4606bfb66ebfa64
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: bd1b38b434f9932a575745d7a1761ff18b009115
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364454"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917809"
 ---
 # <a name="bindingsource-component-overview"></a>Vue d'ensemble du composant BindingSource
 Le composant <xref:System.Windows.Forms.BindingSource> est conçu pour simplifier le processus de liaison de contrôles à une source de données sous-jacente. Le composant <xref:System.Windows.Forms.BindingSource> agit à la fois comme un canal de communication et comme une source de données avec laquelle d'autres contrôles établissent une liaison. Il fournit une abstraction de la connexion de données de votre formulaire tout en transmettant les commandes à la liste de données sous-jacente. De plus, vous pouvez y ajouter des données directement, pour que le composant lui-même fonctionne comme une source de données.  
@@ -25,7 +25,7 @@ Le composant <xref:System.Windows.Forms.BindingSource> est conçu pour simplifie
  ![Source de liaison et architecture de liaison de données](./media/net-bindsrcdatabindarch.gif "NET_BindSrcDataBindArch")  
   
 > [!NOTE]
->  Au moment du design, certaines actions (comme le déplacement d'une table de base de données d'une fenêtre de données vers un nouveau formulaire) créent le composant <xref:System.Windows.Forms.BindingSource>, le lient à la source de données sous-jacente et ajoutent des contrôles de données en une seule opération. Consultez également [Liaison de contrôles Windows Forms à des données dans Visual Studio](/visualstudio/data-tools/bind-windows-forms-controls-to-data-in-visual-studio).  
+> Au moment du design, certaines actions (comme le déplacement d'une table de base de données d'une fenêtre de données vers un nouveau formulaire) créent le composant <xref:System.Windows.Forms.BindingSource>, le lient à la source de données sous-jacente et ajoutent des contrôles de données en une seule opération. Consultez également [Liaison de contrôles Windows Forms à des données dans Visual Studio](/visualstudio/data-tools/bind-windows-forms-controls-to-data-in-visual-studio).  
   
 ## <a name="bindingsource-component-as-a-data-source"></a>Composant BindingSource comme source de données  
  Si vous commencez à ajouter des éléments au composant <xref:System.Windows.Forms.BindingSource> sans spécifier au préalable une liste avec laquelle établir une liaison, il agit comme une source de données de liste et accepte ces éléments ajoutés.  

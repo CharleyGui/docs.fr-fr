@@ -5,22 +5,22 @@ helpviewer_keywords:
 - UI Automation caching in clients
 - caching, UI Automation clients
 ms.assetid: 94c15031-4975-43cc-bcd5-c9439ed21c9c
-ms.openlocfilehash: 405199ff0652303fa5ccae18770307ea10e38b52
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 05738fae72d11e66b28acdc22fa1a8745ca7a083
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647226"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69932704"
 ---
 # <a name="caching-in-ui-automation-clients"></a>Mise en cache dans les clients UI Automation
 > [!NOTE]
->  Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour plus d’informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [Windows Automation API : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Cette rubrique présente la mise en cache des modèles de contrôle et des propriétés [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .  
   
  Dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], la mise en cache correspond à la prérécupération des données. Les données sont ensuite accessibles sans communication interprocessus supplémentaire. La mise en cache est généralement utilisée par les applications clientes UI Automation pour récupérer des propriétés et des modèles de contrôle en bloc. Les informations sont ensuite récupérées à partir du cache selon les besoins. L’application met à jour le cache périodiquement, habituellement en réponse aux événements signifiant que quelque chose a changé dans l’ [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] .  
   
- Les avantages de la mise en cache sont plus perceptibles avec les contrôles Windows Presentation Foundation (WPF) et des contrôles personnalisés qui ont les fournisseurs UI Automation côté serveur. L’accès aux fournisseurs côté client, tels que les fournisseurs par défaut pour les contrôles [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] , présente moins d’avantages.  
+ Les avantages de la mise en cache sont plus perceptibles avec les contrôles Windows Presentation Foundation (WPF) et les contrôles personnalisés qui ont des fournisseurs UI Automation côté serveur. L’accès aux fournisseurs côté client, tels que les fournisseurs par défaut pour les contrôles [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] , présente moins d’avantages.  
   
  La mise en cache se produit lorsque l’application active un <xref:System.Windows.Automation.CacheRequest> puis utilise une méthode ou une propriété qui retourne un <xref:System.Windows.Automation.AutomationElement>. Par exemple, <xref:System.Windows.Automation.AutomationElement.FindFirst%2A>, <xref:System.Windows.Automation.AutomationElement.FindAll%2A>. Les méthodes de la classe <xref:System.Windows.Automation.TreeWalker> font exception à cette règle. La mise en cache s’effectue uniquement si un <xref:System.Windows.Automation.CacheRequest> est spécifié comme paramètre (par exemple, <xref:System.Windows.Automation.TreeWalker.GetFirstChild%28System.Windows.Automation.AutomationElement%2CSystem.Windows.Automation.CacheRequest%29?displayProperty=nameWithType>.  
   
@@ -56,7 +56,7 @@ ms.locfileid: "64647226"
 ## <a name="activating-the-cacherequest"></a>Activation de CacheRequest  
  La mise en cache s’effectue uniquement quand les objets <xref:System.Windows.Automation.AutomationElement> sont récupérés alors qu’un <xref:System.Windows.Automation.CacheRequest> est actif pour le thread en cours. Il existe deux façons d’activer un <xref:System.Windows.Automation.CacheRequest>.  
   
- La plus courante consiste à appeler <xref:System.Windows.Automation.CacheRequest.Activate%2A>. Cette méthode retourne un objet qui implémente <xref:System.IDisposable>. La requête reste active tant que l’objet <xref:System.IDisposable> existe. Pour contrôler la durée de vie de l’objet le plus simple consiste à placer l’appel dans un `using` (c#) ou `Using` (Visual Basic) bloc. Cela garantit l’extraction de la demande de la pile même si une exception est levée.  
+ La plus courante consiste à appeler <xref:System.Windows.Automation.CacheRequest.Activate%2A>. Cette méthode retourne un objet qui implémente <xref:System.IDisposable>. La requête reste active tant que l’objet <xref:System.IDisposable> existe. Le moyen le plus simple de contrôler la durée de vie de l’objet consiste à placer `using` l'C#appel dans `Using` un bloc () ou (Visual Basic). Cela garantit l’extraction de la demande de la pile même si une exception est levée.  
   
  L’autre manière, utile quand vous souhaitez imbriquer des requêtes de cache, consiste à appeler <xref:System.Windows.Automation.CacheRequest.Push%2A>. Cette opération place la requête sur une pile et l’active. La requête reste active jusqu’à ce qu’elle soit supprimée de la pile par <xref:System.Windows.Automation.CacheRequest.Pop%2A>. La requête devient temporairement inactive si une autre requête est envoyée à la pile. Seule la première requête sur la pile est active.  
   
@@ -91,7 +91,7 @@ ms.locfileid: "64647226"
  Si <xref:System.Windows.Automation.TreeScope.Element> a été inclus dans la portée de la requête de cache, l’élément racine de la requête est ensuite disponible à partir de la propriété <xref:System.Windows.Automation.AutomationElement.CachedParent%2A> de chacun des éléments enfants.  
   
 > [!NOTE]
->  Vous ne pouvez pas mettre en cache les parents ou les ancêtres de l’élément racine de la requête.  
+> Vous ne pouvez pas mettre en cache les parents ou les ancêtres de l’élément racine de la requête.  
   
 <a name="Updating_the_Cache"></a>   
 ## <a name="updating-the-cache"></a>Mise à jour du cache  
@@ -105,4 +105,4 @@ ms.locfileid: "64647226"
 
 - [Événements UI Automation pour les clients](../../../docs/framework/ui-automation/ui-automation-events-for-clients.md)
 - [Utiliser la mise en cache dans UI Automation](../../../docs/framework/ui-automation/use-caching-in-ui-automation.md)
-- [Exemple de FetchTimer](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771456(v=vs.90))
+- [Exemple FetchTimer](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771456(v=vs.90))

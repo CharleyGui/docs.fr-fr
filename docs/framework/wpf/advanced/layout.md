@@ -9,12 +9,12 @@ helpviewer_keywords:
 - controls [WPF], layout system
 - layout system [WPF]
 ms.assetid: 3eecdced-3623-403a-a077-7595453a9221
-ms.openlocfilehash: 648adb34664ccb2a475e32aba4d0d76d99cf49d8
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: eb254503f5ce2240a03179da693c66f7ada876be
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666762"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918298"
 ---
 # <a name="layout"></a>Mise en page
 Cette rubrique décrit le système de disposition Windows Presentation Foundation (WPF). Il est essentiel de comprendre comment et quand les calculs de disposition se produisent sont essentiels pour créer des interfaces utilisateur dans WPF.  
@@ -89,7 +89,7 @@ Cette rubrique décrit le système de disposition Windows Presentation Foundatio
  Deuxièmement, les propriétés du Framework <xref:System.Windows.FrameworkElement> définies sur sont traitées, ce qui affecte `constraintSize`la valeur de. Ces propriétés décrivent généralement les caractéristiques de dimensionnement <xref:System.Windows.UIElement>du sous-jacent <xref:System.Windows.FrameworkElement.Height%2A>, <xref:System.Windows.FrameworkElement.Width%2A>telles <xref:System.Windows.FrameworkElement.Margin%2A>que, <xref:System.Windows.FrameworkElement.Style%2A>, et. Chacune de ces propriétés peut changer l’espace nécessaire à l’affichage de l’élément. <xref:System.Windows.FrameworkElement.MeasureOverride%2A>est ensuite appelé avec `constraintSize` comme paramètre.  
   
 > [!NOTE]
->  Il existe une différence entre les propriétés de <xref:System.Windows.FrameworkElement.Height%2A> et <xref:System.Windows.FrameworkElement.Width%2A> de <xref:System.Windows.FrameworkElement.ActualHeight%2A> <xref:System.Windows.FrameworkElement.ActualWidth%2A>et de et. Par exemple, la <xref:System.Windows.FrameworkElement.ActualHeight%2A> propriété est une valeur calculée en fonction d’autres entrées de hauteur et du système de disposition. La valeur est définie par le système de disposition lui-même, en fonction d’une passe de rendu réelle, et peut par conséquent être légèrement en retard par <xref:System.Windows.FrameworkElement.Height%2A>rapport à la valeur définie des propriétés, telles que, qui constituent la base de la modification d’entrée.  
+> Il existe une différence entre les propriétés de <xref:System.Windows.FrameworkElement.Height%2A> et <xref:System.Windows.FrameworkElement.Width%2A> de <xref:System.Windows.FrameworkElement.ActualHeight%2A> <xref:System.Windows.FrameworkElement.ActualWidth%2A>et de et. Par exemple, la <xref:System.Windows.FrameworkElement.ActualHeight%2A> propriété est une valeur calculée en fonction d’autres entrées de hauteur et du système de disposition. La valeur est définie par le système de disposition lui-même, en fonction d’une passe de rendu réelle, et peut par conséquent être légèrement en retard par <xref:System.Windows.FrameworkElement.Height%2A>rapport à la valeur définie des propriétés, telles que, qui constituent la base de la modification d’entrée.  
 >   
 >  Étant <xref:System.Windows.FrameworkElement.ActualHeight%2A> donné que est une valeur calculée, vous devez savoir qu’il peut y avoir des modifications multiples ou incrémentielles signalées à celle-ci suite à différentes opérations par le système de disposition. Celui-ci peut en effet calculer l’espace de mesure requis pour les éléments enfants, les contraintes de l’élément parent, et ainsi de suite.  
   

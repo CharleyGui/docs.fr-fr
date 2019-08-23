@@ -2,20 +2,20 @@
 title: Événements de suivi dans Event Tracing for Windows
 ms.date: 03/30/2017
 ms.assetid: f812659b-0943-45ff-9430-4defa733182b
-ms.openlocfilehash: d3afc04fec996f4e24eb6e5ad771886480cd9cb9
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 48ffbbb8ccac34c5eb605edc4aab17d0e2b3499e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66491041"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922922"
 ---
 # <a name="tracking-events-into-event-tracing-in-windows"></a>Événements de suivi dans Event Tracing for Windows
-Cet exemple montre comment activer le suivi des modifications sur un service de flux de travail Windows Workflow Foundation (WF) et émettre les événements de suivi dans Event Tracing pour Windows (ETW). Pour émettre des enregistrements de suivi de workflow dans ETW, l'exemple utilise le participant de suivi ETW (<xref:System.Activities.Tracking.EtwTrackingParticipant>).
+Cet exemple montre comment activer le suivi Windows Workflow Foundation (WF) sur un service de workflow et émettre les événements de suivi dans Suivi d’v nements pour Windows (ETW). Pour émettre des enregistrements de suivi de workflow dans ETW, l'exemple utilise le participant de suivi ETW (<xref:System.Activities.Tracking.EtwTrackingParticipant>).
 
  Le workflow dans l'exemple reçoit une demande, assigne la réciproque des données d'entrée à la variable d'entrée et retourne la réciproque au client. Lorsque les données d'entrée sont égales à 0, une exception de division par zéro qui n'est pas gérée et provoque l'abandon du workflow se produit. Lorsque le suivi est activé, l'enregistrement de suivi des erreurs est émis dans ETW, ce qui peut aider à corriger l'erreur ultérieurement. Le participant de suivi ETW est configuré avec un modèle de suivi pour s'abonner aux enregistrements de suivi. Le modèle de suivi est défini dans le fichier Web.config et fourni comme paramètre de configuration au participant de suivi ETW. Le participant de suivi ETW est configuré dans le fichier Web.config du service de workflow et appliqué au service comme comportement de service. Dans cet exemple, vous consultez les événements de suivi dans le journal des événements à l'aide de l'observateur d'événements.
 
 ## <a name="workflow-tracking-details"></a>Détails de suivi de workflow
- Windows Workflow Foundation fournit une infrastructure de suivi pour suivre l’exécution d’une instance de workflow. Le runtime de suivi crée une instance de workflow pour émettre des événements associés au cycle de vie de workflow, événements des activités de workflow et événements personnalisés. Le tableau suivant détaille les composants principaux de l'infrastructure de suivi.
+ Windows Workflow Foundation fournit une infrastructure de suivi pour suivre l’exécution d’une instance de Workflow. Le runtime de suivi crée une instance de workflow pour émettre des événements associés au cycle de vie de workflow, événements des activités de workflow et événements personnalisés. Le tableau suivant détaille les composants principaux de l'infrastructure de suivi.
 
 |Composant|Description|
 |---------------|-----------------|
@@ -39,7 +39,7 @@ Cet exemple montre comment activer le suivi des modifications sur un service de 
 
 #### <a name="to-use-this-sample"></a>Pour utiliser cet exemple
 
-1. À l’aide de Visual Studio 2010, ouvrez le fichier solution EtwTrackingParticipantSample.sln.
+1. À l’aide de Visual Studio 2010, ouvrez le fichier solution EtwTrackingParticipantSample. sln.
 
 2. Pour générer la solution, appuyez sur Ctrl+Maj+B.
 
@@ -47,25 +47,25 @@ Cet exemple montre comment activer le suivi des modifications sur un service de 
 
      Par défaut, le service écoute sur le port 53797 (http://localhost:53797/SampleWorkflowService.xamlx).
 
-4. L’Explorateur de fichiers, ouvrez le client test WCF.
+4. À l’aide de l’Explorateur de fichiers, ouvrez le client test WCF.
 
-     Le client de test WCF (WcfTestClient.exe) se trouve dans le \<dossier d’installation de Visual Studio 2010 > \Common7\IDE\ dossier.
+     Le client test WCF (WcfTestClient. exe) se trouve dans le \<dossier d’installation de Visual Studio 2010 > dossier \Common7\IDE\.
 
-     Le dossier d’installation de Visual Studio 2010 par défaut est C:\Program Files\Microsoft Visual Studio 10.0.
+     Le dossier d’installation par défaut de Visual Studio 2010 est C:\Program Files\Microsoft Visual Studio 10,0.
 
-5. Dans le client test WCF, sélectionnez **ajouter un Service** à partir de la **fichier** menu.
+5. Dans le client test WCF, sélectionnez **Ajouter un service** dans le menu **fichier** .
 
-     Ajoutez l'adresse du point de terminaison dans la zone d'entrée. La valeur par défaut est `http://localhost:53797/SampleWorkflowService.xamlx`.
+     Ajoutez l'adresse du point de terminaison dans la zone d'entrée. Par défaut, il s’agit de `http://localhost:53797/SampleWorkflowService.xamlx`.
 
 6. Ouvrez l'application Observateur d'événements.
 
-     Avant d’appeler le service, démarrez l’Observateur d’événements à partir de la **Démarrer** menu, sélectionnez **exécuter** et tapez `eventvwr.exe`. Vérifiez que le journal des événements écoute les événements de suivi émis à partir du service de workflow.
+     Avant d’appeler le service, démarrez observateur d’événements à partir du menu **Démarrer** , sélectionnez **exécuter** `eventvwr.exe`et tapez. Vérifiez que le journal des événements écoute les événements de suivi émis à partir du service de workflow.
 
-7. Dans l’arborescence de l’Observateur d’événements, accédez à **Observateur d’événements**, **journaux des Applications et Services**, et **Microsoft**. Avec le bouton droit **Microsoft** et sélectionnez **vue** , puis **afficher les journaux d’analyse et de débogage** pour activer l’analyse et les journaux de débogage
+7. Dans l’arborescence de la observateur d’événements, accédez à **Observateur d’événements**, **journaux des applications et des services**et **Microsoft**. Cliquez avec le bouton droit sur **Microsoft** et sélectionnez **Afficher** , puis **afficher les journaux d’analyse et** de débogage pour activer les journaux d’analyse et de débogage
 
-     Vérifiez que le **afficher les journaux d’analyse et de débogage** option est activée.
+     Assurez-vous que l’option **afficher les journaux d’analyse et de débogage** est activée.
 
-8. Dans l’arborescence de commandes dans l’Observateur d’événements, accédez à **Observateur d’événements**, **journaux des Applications et Services**, **Microsoft**, **Windows**,  **Serveur d’applications-Applications**. Avec le bouton droit **analyse** et sélectionnez **activer le journal** pour activer la **analyse** journal.
+8. Dans l’arborescence de observateur d’événements, accédez à **Observateur d’événements**, **journaux des applications et des services**, **Microsoft**, **Windows**, serveur d’applications **-applications**. Cliquez avec le bouton droit sur **analyse** et sélectionnez **activer le journal** pour activer le journal d' **analyse** .
 
 9. Testez le service à l'aide du client test WCF en double-cliquant sur `GetData`.
 
@@ -75,7 +75,7 @@ Cet exemple montre comment activer le suivi des modifications sur un service de 
 
 10. Observez les événements émis à partir du workflow.
 
-     Revenez à l’Observateur d’événements et accédez à **Observateur d’événements**, **journaux des Applications et Services**, **Microsoft**, **Windows**,  **Serveur d’applications-Applications**. Avec le bouton droit **analyse** et sélectionnez **Actualiser**.
+     Revenez à observateur d’événements et accédez à **Observateur d’événements** **journaux des applications et des services**, **Microsoft**, **Windows**, serveur d’applications **-applications**. Cliquez avec le bouton droit sur **analyse** , puis sélectionnez **Actualiser**.
 
      Les événements de workflow sont affichés dans l'observateur d'événements. Notez que les événements d'exécution du workflow sont affichés et que l'un d'eux est une exception non gérée qui correspond à l'erreur dans le workflow. Par ailleurs, un événement d'avertissement est émis à partir de l'activité de workflow, qui indique que l'activité génère une erreur.
 
@@ -125,18 +125,18 @@ Cet exemple montre comment activer le suivi des modifications sur un service de 
 
 1. Ouvrez l'observateur d'événements.
 
-2. Accédez à **Observateur d’événements**, **journaux des Applications et Services**, **Microsoft**, **Windows**, **Application Applications de serveur**. Avec le bouton droit **analyse** et sélectionnez **désactiver le journal**.
+2. Accédez à **Observateur d’événements**, **journaux des applications et des services**, **Microsoft**, **Windows**, serveur d’applications **-applications**. Cliquez avec le bouton droit sur **analyse** et sélectionnez **désactiver le journal**.
 
-3. Accédez à **Observateur d’événements**, **journaux des Applications et Services**, **Microsoft**, **Windows**, **Application Applications de serveur**. Avec le bouton droit **analyse** et sélectionnez **effacer le journal**.
+3. Accédez à **Observateur d’événements**, **journaux des applications et des services**, **Microsoft**, **Windows**, serveur d’applications **-applications**. Cliquez avec le bouton droit sur **analyse** et sélectionnez **effacer le journal**.
 
-4. Choisissez le **effacer** option pour effacer les événements.
+4. Choisissez l’option **Effacer** pour effacer les événements.
 
 ## <a name="known-issue"></a>Problème connu
 
 > [!NOTE]
->  Un problème connu de l'observateur d'événements est qu'il lui arrive de ne pas parvenir à décoder des événements ETW. Un message d'erreur semblable au suivant s'affiche éventuellement.
+> Un problème connu de l'observateur d'événements est qu'il lui arrive de ne pas parvenir à décoder des événements ETW. Un message d'erreur semblable au suivant s'affiche éventuellement.
 >
->  La description de l’ID d’événement \<id > à partir de la source Microsoft-Windows-Application Server-Applications est introuvable. Le composant qui a déclenché cet événement n'est pas installé sur l'ordinateur local ou l'installation est endommagée. Vous pouvez installer ou réparer le composant sur l'ordinateur local.
+>  La description de l' \<ID d’événement > de la source Microsoft-Windows-serveur d’applications-applications est introuvable. Le composant qui a déclenché cet événement n'est pas installé sur l'ordinateur local ou l'installation est endommagée. Vous pouvez installer ou réparer le composant sur l'ordinateur local.
 >
 >  Si vous rencontrez cette erreur, cliquez sur Actualiser dans le volet Actions. Le décodage de l'événement doit maintenant s'effectuer correctement.
 
@@ -145,10 +145,10 @@ Cet exemple montre comment activer le suivi des modifications sur un service de 
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\EtwTracking`  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples d’analyse AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Exemples de surveillance AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)

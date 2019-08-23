@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 6e00af10-42f3-4235-8415-1bb2db78394e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4cf997c8ff13e0a6a4664ea3b538ac0def1baacf
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: da01d0dac2e67d6c0131a2b5965472bbd19213fe
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663628"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927329"
 ---
 # <a name="legacyimpersonationpolicy-element"></a>\<legacyImpersonationPolicy >, élément
 Spécifie que l’identité Windows n’est pas transmise entre des points asynchrones, indépendamment des paramètres de flux du contexte d’exécution sur le thread actif.  
@@ -42,7 +42,7 @@ Spécifie que l’identité Windows n’est pas transmise entre des points async
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |`false`|<xref:System.Security.Principal.WindowsIdentity>passe entre des points asynchrones en fonction <xref:System.Threading.ExecutionContext> des paramètres de flux du thread actuel. Il s'agit de la valeur par défaut.|  
 |`true`|<xref:System.Security.Principal.WindowsIdentity>n’est pas transmis entre des points asynchrones, <xref:System.Threading.ExecutionContext> quels que soient les paramètres de flow sur le thread actuel.|  
@@ -63,7 +63,7 @@ Spécifie que l’identité Windows n’est pas transmise entre des points async
  À partir de la .NET Framework 2,0, vous pouvez utiliser `<legacyImpersonationPolicy>` l’élément pour spécifier <xref:System.Security.Principal.WindowsIdentity> que ne passe pas entre des points asynchrones.  
   
 > [!NOTE]
->  Le common language runtime (CLR) tient compte des opérations d’emprunt d’identité effectuées à l’aide du code managé uniquement, et non de l’emprunt d’identité effectué en dehors du code managé, par exemple par le biais de l’appel de code non managé au code non managé ou via des appels directs à des fonctions Win32. Seuls les <xref:System.Security.Principal.WindowsIdentity> objets managés peuvent circuler entre des points `alwaysFlowImpersonationPolicy` asynchrones, sauf si l’élément`<alwaysFlowImpersonationPolicy enabled="true"/>`a la valeur true (). L’affectation `alwaysFlowImpersonationPolicy` de la valeur true à l’élément spécifie que l’identité Windows est toujours transmise entre des points asynchrones, indépendamment du mode d’emprunt d’identité. Pour plus d’informations sur le passage de l’emprunt d’identité non managé entre des points asynchrones, consultez [ \<alwaysFlowImpersonationPolicy > Element](alwaysflowimpersonationpolicy-element.md).  
+> Le common language runtime (CLR) tient compte des opérations d’emprunt d’identité effectuées à l’aide du code managé uniquement, et non de l’emprunt d’identité effectué en dehors du code managé, par exemple par le biais de l’appel de code non managé au code non managé ou via des appels directs à des fonctions Win32. Seuls les <xref:System.Security.Principal.WindowsIdentity> objets managés peuvent circuler entre des points `alwaysFlowImpersonationPolicy` asynchrones, sauf si l’élément`<alwaysFlowImpersonationPolicy enabled="true"/>`a la valeur true (). L’affectation `alwaysFlowImpersonationPolicy` de la valeur true à l’élément spécifie que l’identité Windows est toujours transmise entre des points asynchrones, indépendamment du mode d’emprunt d’identité. Pour plus d’informations sur le passage de l’emprunt d’identité non managé entre des points asynchrones, consultez [ \<alwaysFlowImpersonationPolicy > Element](alwaysflowimpersonationpolicy-element.md).  
   
  Vous pouvez modifier ce comportement par défaut de deux manières:  
   

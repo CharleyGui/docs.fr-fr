@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9ca47eb5508907297a78dba1ab2b0a6d2b8ece0d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 75cc8ea9d88dda42362f50b519864b1a78e1a64b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61750246"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960794"
 ---
 # <a name="icordebugcode-interface"></a>ICorDebugCode, interface
 
@@ -32,27 +32,27 @@ Représente un segment de code MSIL ou de code natif.
 |Méthode|Description|  
 |------------|-----------------|  
 |[CreateBreakpoint, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-createbreakpoint-method.md)|Crée un point d’arrêt à l’offset spécifié.|  
-|[GetAddress, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getaddress-method.md)|Obtient l’adresse virtuelle relative (RVA) du segment de code que cela `ICorDebugCode` représente.|  
-|[GetCode, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md)|Obtient tout le code pour la fonction spécifiée, la mise en forme pour le code machine. Cette méthode a été déconseillée ; Utilisez [ICorDebugCode2::GetCodeChunks](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md) à la place.|  
+|[GetAddress, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getaddress-method.md)|Obtient l’adresse virtuelle relative (RVA) du segment de code que ce `ICorDebugCode` représente.|  
+|[GetCode, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md)|Obtient tout le code pour la fonction spécifiée, mis en forme pour le code machine. Cette méthode a été dépréciée; Utilisez [ICorDebugCode2:: GetCodeChunks,](../../../../docs/framework/unmanaged-api/debugging/icordebugcode2-getcodechunks-method.md) à la place.|  
 |[GetEnCRemapSequencePoints, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getencremapsequencepoints-method.md)|Non implémenté.|  
-|[GetFunction, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getfunction-method.md)|Obtient la « ICorDebugFunction » associée à cet `ICorDebugCode`.|  
-|[GetILToNativeMapping, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getiltonativemapping-method.md)|Obtient un tableau d’instances de « COR_DEBUG_IL_TO_NATIVE_MAP » qui représentent les mappages des offsets MSIL aux offsets natifs.|  
+|[GetFunction, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getfunction-method.md)|Obtient le «ICorDebugFunction» associé à ce `ICorDebugCode`.|  
+|[GetILToNativeMapping, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getiltonativemapping-method.md)|Obtient un tableau d’instances «COR_DEBUG_IL_TO_NATIVE_MAP» qui représentent les mappages des offsets MSIL aux offsets natifs.|  
 |[GetSize, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getsize-method.md)|Obtient la taille, en octets, du code binaire représenté par ce `ICorDebugCode`.|  
 |[GetVersionNumber, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getversionnumber-method.md)|Obtient le nombre de base 1 qui identifie la version du code que ce `ICorDebugCode` représente.|  
-|[IsIL, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-isil-method.md)|Obtient une valeur qui indique si ce `ICorDebugCode` est compilé dans le langage MSIL.|  
+|[IsIL, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-isil-method.md)|Obtient une valeur qui indique si ce `ICorDebugCode` est compilé en MSIL.|  
   
 ## <a name="remarks"></a>Notes  
- `ICorDebugCode` peut représenter le MSIL ou le code natif. Un objet « ICorDebugFunction » qui représente le code MSIL peut avoir zéro ou un `ICorDebugCode` objets associés. Un objet « ICorDebugFunction » qui représente le code natif peut avoir un nombre quelconque de `ICorDebugCode` objets associés.  
+ `ICorDebugCode`peut représenter le code MSIL ou le code natif. Un objet «ICorDebugFunction» qui représente le code MSIL peut avoir zéro ou un `ICorDebugCode` objet associé. Un objet «ICorDebugFunction» qui représente du code natif peut avoir un nombre `ICorDebugCode` quelconque d’objets associés.  
   
 > [!NOTE]
->  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
+> Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -13,19 +13,19 @@ helpviewer_keywords:
 - ListView control [Windows Forms], adding custom information
 - TreeView control [Windows Forms], adding custom information
 ms.assetid: 68be11de-1d5b-430e-901f-cfbe48d14b19
-ms.openlocfilehash: 5f51744878da526147dd742e98117e8e87c94e20
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: f588a00c430eb1ae1f0cdcde6b7dd22f0c8671c5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052237"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956996"
 ---
 # <a name="how-to-add-custom-information-to-a-treeview-or-listview-control-windows-forms"></a>Procédure : ajouter des informations personnalisées à un contrôle TreeView ou ListView (Windows Forms)
-Vous pouvez créer un nœud dérivé dans un formulaire Windows <xref:System.Windows.Forms.TreeView> contrôle ou un élément dérivé dans un <xref:System.Windows.Forms.ListView> contrôle. La dérivation vous permet d’ajouter les champs dont vous avez besoin, ainsi que des méthodes et des constructeurs personnalisés pour traiter les champs. Une utilisation de cette fonctionnalité consiste à attacher un objet Customer à chaque élément de liste ou nœud de l’arborescence. Les exemples fournis ici concernent un <xref:System.Windows.Forms.TreeView> contrôle, mais la même approche peut être utilisé pour un <xref:System.Windows.Forms.ListView> contrôle.  
+Vous pouvez créer un nœud dérivé dans un contrôle <xref:System.Windows.Forms.TreeView> Windows Forms ou un élément dérivé dans un <xref:System.Windows.Forms.ListView> contrôle. La dérivation vous permet d’ajouter les champs dont vous avez besoin, ainsi que des méthodes et des constructeurs personnalisés pour traiter les champs. Une utilisation de cette fonctionnalité consiste à attacher un objet Customer à chaque élément de liste ou nœud de l’arborescence. Les exemples ici sont pour un <xref:System.Windows.Forms.TreeView> contrôle, mais la même approche peut être utilisée pour un <xref:System.Windows.Forms.ListView> contrôle.  
   
 ### <a name="to-derive-a-tree-node"></a>Pour dériver un nœud d’arborescence  
   
-- Créer une nouvelle classe de nœud, dérivée de la <xref:System.Windows.Forms.TreeNode> classe, qui a un champ personnalisé pour enregistrer un chemin d’accès de fichier.  
+- Créez une classe de nœud, dérivée de <xref:System.Windows.Forms.TreeNode> la classe, qui a un champ personnalisé pour enregistrer un chemin d’accès de fichier.  
   
     ```vb  
     Class myTreeNode  
@@ -100,7 +100,7 @@ Vous pouvez créer un nœud dérivé dans un formulaire Windows <xref:System.Win
        "\\TextFile.txt")));  
     ```  
   
-2. Si vous sont transmis au nœud d’arbre et elle est tapée comme une <xref:System.Windows.Forms.TreeNode> classe, puis vous devrez effectuer un cast vers votre classe dérivée. Le cast est une conversion explicite d’un type d’objet vers un autre. Pour plus d’informations sur la conversion, consultez [Conversions implicites et explicites](~/docs/visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) (Visual Basic), [cast et conversions de type](~/docs/csharp/programming-guide/types/casting-and-type-conversions.md) (Visual C#), ou [opérateur de Cast : ()](/cpp/cpp/cast-operator-parens) () Visual C++).  
+2. Si le nœud d’arbre est passé en tant que <xref:System.Windows.Forms.TreeNode> classe, vous devrez effectuer un cast vers votre classe dérivée. Le cast est une conversion explicite d’un type d’objet vers un autre. Pour plus d’informations sur le cast, consultez Conversions [implicites et explicites](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md) (Visual Basic), [Cast et](../../../csharp/programming-guide/types/casting-and-type-conversions.md) conversions de types (Visual C#), ou opérateur de C++ [Cast: ()](/cpp/cpp/cast-operator-parens) (visuel).  
   
     ```vb  
     Public Sub TreeView1_AfterSelect(ByVal sender As Object, ByVal e As System.Windows.Forms.TreeViewEventArgs) Handles TreeView1.AfterSelect  

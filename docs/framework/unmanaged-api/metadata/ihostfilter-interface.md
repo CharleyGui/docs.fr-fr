@@ -16,31 +16,31 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bc22de2d30d0f928653206ab9e356577a84c572c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c437d1856e1aa9526516c0a1d1ca931d8ed25c80
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62044919"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965786"
 ---
 # <a name="ihostfilter-interface"></a>IHostFilter, interface
 Fournit une méthode pour indiquer qu’un jeton spécifié sera traité.  
   
 > [!NOTE]
->  Le `IHostFilter` interface doit être implémentée par le client.  
+> L' `IHostFilter` interface doit être implémentée par le client.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[MarkToken, méthode](../../../../docs/framework/unmanaged-api/metadata/ihostfilter-marktoken-method.md)|Indique que le jeton de métadonnées spécifié est traité.|  
+|[MarkToken, méthode](../../../../docs/framework/unmanaged-api/metadata/ihostfilter-marktoken-method.md)|Indique que le jeton de métadonnées spécifié sera traité.|  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **En-tête :** Cor. h  
   
- **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

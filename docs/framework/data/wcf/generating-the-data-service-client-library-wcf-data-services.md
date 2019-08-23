@@ -6,20 +6,20 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - Add Service Reference dialog box
 ms.assetid: 314077c1-ac10-47e1-bed4-940b5462359d
-ms.openlocfilehash: bf0a74bd010a188f38cf1a2088a449d97405fa0f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 14ea550715c1b224945137f123eed3b53e56cead
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626383"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918651"
 ---
 # <a name="generating-the-data-service-client-library-wcf-data-services"></a>Génération de la bibliothèque client service de données (services de données WCF)
-Un service de données qui implémente le [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] peut retourner un document de métadonnées de service qui décrit le modèle de données exposé par le [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] flux. Pour plus d’informations, consultez [OData : Document de métadonnées de service](https://go.microsoft.com/fwlink/?LinkId=186070). Vous pouvez utiliser la **ajouter une référence de Service** boîte de dialogue dans Visual Studio pour ajouter une référence à un [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]-en fonction de service. Lorsque vous utilisez cet outil pour ajouter une référence aux métadonnées retournées par une [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] de flux dans un projet client, il effectue les actions suivantes :  
+Un service de données qui implémente [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] le peut retourner un document de métadonnées de service qui décrit le modèle [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] de données exposé par le flux. Pour plus d’informations, [consultez OData: Document](https://go.microsoft.com/fwlink/?LinkId=186070)de métadonnées du service. Vous pouvez utiliser la boîte de dialogue **Ajouter une référence de service** dans Visual Studio pour ajouter une référence [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]à un service basé sur. Lorsque vous utilisez cet outil pour ajouter une référence aux métadonnées retournées [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] par un flux dans un projet client, il effectue les actions suivantes:  
   
 - Demande le document de métadonnées du service de données et interprète les métadonnées retournées.  
   
     > [!NOTE]
-    >  Les métadonnées retournées sont stockées dans le projet client sous forme de fichier .edmx. Ce fichier .edmx ne peut pas s’ouvrir à l’aide d’Entity Data Model Designer parce qu’il n’a pas le même format que les fichiers .edmx utilisés par Entity Framework. Vous pouvez consulter ce fichier de métadonnées à l'aide de l'éditeur XML ou d'un éditeur de texte. Pour plus d’informations, consultez le [ \[MC-EDMX\]: Entity Data Model for Data Services Packaging Format](https://go.microsoft.com/fwlink/?LinkID=178833) spécification  
+    > Les métadonnées retournées sont stockées dans le projet client sous forme de fichier .edmx. Ce fichier .edmx ne peut pas s’ouvrir à l’aide d’Entity Data Model Designer parce qu’il n’a pas le même format que les fichiers .edmx utilisés par Entity Framework. Vous pouvez consulter ce fichier de métadonnées à l'aide de l'éditeur XML ou d'un éditeur de texte. Pour plus d’informations, voir [ \[MC-edmx\]: Entity Data Model pour la spécification de](https://go.microsoft.com/fwlink/?LinkID=178833) format d’empaquetage Data Services  
   
 - Génère une représentation du service comme une classe de conteneur d'entités qui hérite de <xref:System.Data.Services.Client.DataServiceContext>. Cette classe de conteneur d'entités générée ressemble au conteneur d'entités que génèrent les outils Entity Data Model. Pour plus d’informations, consultez [Vue d’ensemble d’Object Services (Entity Framework)](https://docs.microsoft.com/previous-versions/bb386871(v=vs.100)).  
   
@@ -27,12 +27,12 @@ Un service de données qui implémente le [!INCLUDE[ssODataFull](../../../../inc
   
 - Ajoute une référence à l'assembly `System.Data.Services.Client` au projet.  
   
- Pour plus d'informations, voir [Procédure : Ajouter une référence de Service de données](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md).  
+ Pour plus d'informations, voir [Procédure : Ajoutez une référence](../../../../docs/framework/data/wcf/how-to-add-a-data-service-reference-wcf-data-services.md)de service de données.  
   
- Les classes de service de données client peuvent également être générées à l’aide de la [DataSvcUtil.exe](../../../../docs/framework/data/wcf/wcf-data-service-client-utility-datasvcutil-exe.md) outil à l’invite de commandes. Pour plus d'informations, voir [Procédure : Générer manuellement les Classes de Service de données Client](../../../../docs/framework/data/wcf/how-to-manually-generate-client-data-service-classes-wcf-data-services.md).  
+ Les classes de service de données client peuvent également être générées à l’aide de l’outil [outil DataSvcUtil. exe](../../../../docs/framework/data/wcf/wcf-data-service-client-utility-datasvcutil-exe.md) à l’invite de commandes. Pour plus d'informations, voir [Procédure : Générez manuellement des classes](../../../../docs/framework/data/wcf/how-to-manually-generate-client-data-service-classes-wcf-data-services.md)de service de données client.  
   
 ## <a name="client-data-type-mapping"></a>Mappage de type de données client  
- Lorsque vous utilisez le **ajouter une référence de Service** boîte de dialogue dans Visual Studio ou le `DataSvcUtil.exe` outil pour générer des classes de données client qui sont basés sur un [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] flux, les types de données .NET Framework sont mappés aux types primitifs à partir de la le modèle de données comme suit :  
+ Quand vous utilisez la boîte de dialogue **Ajouter une référence de service** dans Visual Studio `DataSvcUtil.exe` ou l’outil pour générer des classes de données clientes [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] basées sur un flux, les types de données .NET Framework sont mappés aux types primitifs à partir du modèle de données comme suit:  
   
 |Type de modèle de données|Types de données .NET Framework|  
 |---------------------|------------------------------|  
@@ -50,7 +50,7 @@ Un service de données qui implémente le [!INCLUDE[ssODataFull](../../../../inc
 |`Edm.Single`|<xref:System.Single>|  
 |`Edm.String`|<xref:System.String>|  
   
- Pour plus d’informations, consultez [OData : Types de données primitifs](https://go.microsoft.com/fwlink/?LinkId=186072).  
+ Pour plus d’informations, [consultez OData: Types](https://go.microsoft.com/fwlink/?LinkId=186072)de données primitifs.  
   
 ## <a name="see-also"></a>Voir aussi
 

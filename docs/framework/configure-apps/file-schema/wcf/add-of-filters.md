@@ -2,18 +2,18 @@
 title: <add> de <filters>
 ms.date: 03/30/2017
 ms.assetid: e3bf437c-dd99-49f3-9792-9a8721e6eaad
-ms.openlocfilehash: 399fc4e22a9253469a5494af61dac862e33814a3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e7975bea1435abdb77528628e7b96c65a72cbbc2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704542"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926696"
 ---
 # <a name="add-of-filters"></a>\<Ajouter > de \<filtres >
 Filtre XPath qui spécifie le type de message à enregistrer.  
   
  \<system.ServiceModel>  
-\<diagnostic>  
+\<> de diagnostic  
 \<messageLogging>  
 \<filters>  
 \<add>  
@@ -33,7 +33,7 @@ Filtre XPath qui spécifie le type de message à enregistrer.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|filtre|Chaîne qui spécifie une requête sur un document XML défini par une expression XPath 1.0. Pour plus d'informations, consultez <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>.|  
+|filter|Chaîne qui spécifie une requête sur un document XML défini par une expression XPath 1.0. Pour plus d'informations, consultez <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -42,7 +42,7 @@ Filtre XPath qui spécifie le type de message à enregistrer.
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<filtres>](../../../../../docs/framework/configure-apps/file-schema/wcf/filters.md)|Contient une collection de filtres XPath utilisés pour contrôler le type de message enregistré.|  
+|[\<filtres>](filters.md)|Contient une collection de filtres XPath utilisés pour contrôler le type de message enregistré.|  
   
 ## <a name="remarks"></a>Notes  
  Les filtres sont appliqués uniquement à la couche de transport, spécifiée par `logMessagesAtTransportLevel` (valeur `true`). Le niveau de service et l'enregistrement du message incorrect ne sont pas affectés par les filtres.  
@@ -79,5 +79,5 @@ Filtre XPath qui spécifie le type de message à enregistrer.
 - <xref:System.ServiceModel.Configuration.MessageLoggingElement.Filters%2A>
 - <xref:System.ServiceModel.Configuration.XPathMessageFilterElement>
 - <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>
-- [Configuration de la journalisation des messages](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)
-- [\<messageLogging>](../../../../../docs/framework/configure-apps/file-schema/wcf/messagelogging.md)
+- [Configuration de la journalisation des messages](../../../wcf/diagnostics/configuring-message-logging.md)
+- [\<messageLogging>](messagelogging.md)

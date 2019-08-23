@@ -7,12 +7,12 @@ helpviewer_keywords:
 - metadata [WPF], for dependency properties
 - overriding metadata [WPF]
 ms.assetid: d01ed009-b722-41bf-b82f-fe1a8cdc50dd
-ms.openlocfilehash: 800bf80e5ba3e697c122bcf4b1bc0f302357d087
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 154a2543c62de545e8b2df711d6ad51989d0689d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68401629"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964848"
 ---
 # <a name="dependency-property-metadata"></a>Métadonnées de propriété de dépendance
 Le [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] système de propriétés comprend un système de création de rapports de métadonnées qui va au-delà de ce qui peut être signalé sur une propriété par réflexion ou caractéristiques générales du Common Language Runtime (CLR). Les métadonnées d’une propriété de dépendance peuvent également être affectées de manière unique par la classe qui définit une propriété de dépendance, peuvent être changées quand la propriété de dépendance est ajoutée à une autre classe, et peuvent être substituées de manière spécifique par toutes les classes dérivées qui héritent de la propriété de dépendance de la classe de base de définition.  
@@ -38,7 +38,7 @@ Le [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md
  La <xref:System.Windows.PropertyMetadata> classe est ensuite dérivée de pour fournir des métadonnées plus spécifiques pour les divisions architecturales, telles que les classes de niveau Framework WPF. <xref:System.Windows.UIPropertyMetadata>Ajoute des rapports d’animation <xref:System.Windows.FrameworkPropertyMetadata> et fournit les propriétés au niveau de l’infrastructure WPF mentionnées dans la section précédente. Lorsque les propriétés de dépendance sont inscrites, elles peuvent être <xref:System.Windows.PropertyMetadata> inscrites auprès de ces classes dérivées. Lorsque les métadonnées sont examinées, <xref:System.Windows.PropertyMetadata> le type de base peut potentiellement être casté en classes dérivées afin que vous puissiez examiner les propriétés plus spécifiques.  
   
 > [!NOTE]
->  Les caractéristiques de propriété qui peuvent être spécifiées dans <xref:System.Windows.FrameworkPropertyMetadata> sont parfois appelées «indicateurs» dans cette documentation. Quand vous créez des instances de métadonnées à utiliser dans des inscriptions de propriété de dépendance ou des substitutions de métadonnées, vous spécifiez ces valeurs à l’aide de l’énumération <xref:System.Windows.FrameworkPropertyMetadataOptions> des indicateurs, puis vous fournissez des valeurs éventuellement concaténées de l’énumération à la <xref:System.Windows.FrameworkPropertyMetadata> constructeur. Toutefois, une fois construites, ces caractéristiques d’option sont <xref:System.Windows.FrameworkPropertyMetadata> exposées dans un sous la forme d’une série de propriétés booléennes plutôt que de la valeur d’énumération de construction. Les propriétés booléennes vous permettent de vérifier chaque condition, plutôt que d’avoir à appliquer un masque à une valeur d’énumération d’indicateurs pour obtenir les informations qui vous intéressent. Le constructeur utilise le concaténé <xref:System.Windows.FrameworkPropertyMetadataOptions> pour que la longueur de la signature de constructeur reste raisonnable, alors que les métadonnées construites réelles exposent les propriétés discrètes pour rendre l’interrogation des métadonnées plus intuitive.  
+> Les caractéristiques de propriété qui peuvent être spécifiées dans <xref:System.Windows.FrameworkPropertyMetadata> sont parfois appelées «indicateurs» dans cette documentation. Quand vous créez des instances de métadonnées à utiliser dans des inscriptions de propriété de dépendance ou des substitutions de métadonnées, vous spécifiez ces valeurs à l’aide de l’énumération <xref:System.Windows.FrameworkPropertyMetadataOptions> des indicateurs, puis vous fournissez des valeurs éventuellement concaténées de l’énumération à la <xref:System.Windows.FrameworkPropertyMetadata> constructeur. Toutefois, une fois construites, ces caractéristiques d’option sont <xref:System.Windows.FrameworkPropertyMetadata> exposées dans un sous la forme d’une série de propriétés booléennes plutôt que de la valeur d’énumération de construction. Les propriétés booléennes vous permettent de vérifier chaque condition, plutôt que d’avoir à appliquer un masque à une valeur d’énumération d’indicateurs pour obtenir les informations qui vous intéressent. Le constructeur utilise le concaténé <xref:System.Windows.FrameworkPropertyMetadataOptions> pour que la longueur de la signature de constructeur reste raisonnable, alors que les métadonnées construites réelles exposent les propriétés discrètes pour rendre l’interrogation des métadonnées plus intuitive.  
   
 <a name="override_or_subclass"></a>   
 ## <a name="when-to-override-metadata-when-to-derive-a-class"></a>Quand substituer des métadonnées, quand dériver une classe ?  
@@ -78,7 +78,7 @@ Le [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md
  Dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], les propriétés jointes sont implémentées en tant que propriétés de dépendance. Cela signifie qu’elles ont également des métadonnées de propriété, que les différentes classes peuvent substituer. Les considérations relatives à la portée d’une [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] propriété jointe dans <xref:System.Windows.DependencyObject> sont généralement définies par une propriété jointe. Par conséquent, <xref:System.Windows.DependencyObject> toute classe dérivée peut substituer les métadonnées d’une propriété jointe, car elle peut être définie sur une instance de la classe. Vous pouvez substituer les valeurs par défaut, les rappels ou les propriétés de rapport de caractéristiques de niveau framework WPF. Si la propriété jointe est définie sur une instance de votre classe, ces caractéristiques de métadonnées de propriété de substitution s’appliquent. Par exemple, vous pouvez substituer la valeur par défaut de telle sorte que votre valeur de remplacement soit signalée comme valeur de la propriété jointe sur des instances de votre classe chaque fois que la propriété n’est pas définie autrement.  
   
 > [!NOTE]
->  La <xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A> propriété n’est pas pertinente pour les propriétés jointes.  
+> La <xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A> propriété n’est pas pertinente pour les propriétés jointes.  
   
 <a name="dp_add_owner"></a>   
 ### <a name="adding-a-class-as-an-owner-of-an-existing-dependency-property"></a>Ajout d’une classe en tant que propriétaire d’une propriété de dépendance existante  

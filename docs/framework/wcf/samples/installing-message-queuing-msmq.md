@@ -2,32 +2,32 @@
 title: Installation de Message Queuing (MSMQ)
 ms.date: 03/30/2017
 ms.assetid: 7ddcd497-3e04-427e-bc04-3610ad98b01e
-ms.openlocfilehash: 813de350c3fd32bb4698384d6b770af8a0913739
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 42e66029f8538877ded424f72cb6c829444d1ee0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648343"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935992"
 ---
 # <a name="installing-message-queuing-msmq"></a>Installation de Message Queuing (MSMQ)
 Les procédures suivantes indiquent comment installer Message Queuing 4.0 et Message Queuing 3.0.  
   
 > [!NOTE]
->  Message Queuing 4.0 n'est pas disponible dans [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)].  
+> Message Queuing 4.0 n'est pas disponible dans [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)].  
   
 #### <a name="to-install-message-queuing-40-on-windows-server-2008-or-windows-server-2008-r2"></a>Pour installer Message Queuing 4.0 sur Windows Server 2008 ou Windows Server 2008 R2  
   
-1. Dans le Gestionnaire de serveur, cliquez sur **fonctionnalités**.  
+1. Dans Gestionnaire de serveur, cliquez sur **fonctionnalités**.  
   
-2. Dans le volet de droite sous **résumé des fonctionnalités**, cliquez sur **ajouter des fonctionnalités**.  
+2. Dans le volet de droite, sous **Résumé des fonctionnalités**, cliquez sur **Ajouter des fonctionnalités**.  
   
-3. Dans la fenêtre résultante, développez **Message Queuing**.  
+3. Dans la fenêtre qui s’affiche, développez **Message Queuing**.  
   
-4. Développez **Services de file d’attente de messages**.  
+4. Développez **Services Message Queuing**.  
   
-5. Cliquez sur **intégration de Services d’annuaire** (pour les ordinateurs joints à un domaine), puis cliquez sur **prise en charge HTTP**.  
+5. Cliquez sur **intégration des services d’annuaire** (pour les ordinateurs joints à un domaine), puis cliquez sur **prise en charge http**.  
   
-6. Cliquez sur **suivant**, puis cliquez sur **installer**.  
+6. Cliquez sur **suivant**, puis sur **installer**.  
   
 #### <a name="to-install-message-queuing-40-on-windows-7-or-windows-vista"></a>Pour installer Message Queuing 4.0 sur Windows 7 ou Windows Vista  
   
@@ -49,9 +49,9 @@ Les procédures suivantes indiquent comment installer Message Queuing 4.0 et Me
   
 1. Ouvrez le **Panneau de configuration**.  
   
-2. Cliquez sur **Ajout/Suppression de programmes** puis cliquez sur **ajouter des composants Windows**.  
+2. Cliquez sur **Ajout/suppression de programmes** , puis sur Ajouter des **composants Windows**.  
   
-3. Sélectionnez Message Queuing et cliquez sur **détails**.  
+3. Sélectionnez Message Queuing, puis cliquez sur **Détails**.  
   
     > [!NOTE]
     >  Si vous exécutez [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], sélectionnez Serveur d'applications pour accéder à Message Queuing.  

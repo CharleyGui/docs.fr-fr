@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: fda998a5-f538-4f8b-a18c-ee7f35e16938
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4a62bd3507c14e42798c903ae51edb0187e666c8
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 46cf37ee800c05eb7fe12e8491ad3b2130c3a04d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663762"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920820"
 ---
 # <a name="enableampmparseadjustment-element"></a>\<EnableAmPmParseAdjustment >, élément
 Détermine si les méthodes d’analyse de date et d’heure utilisent un ensemble de règles ajusté pour analyser les chaînes de date qui contiennent un jour, un mois, une heure et un indicateur AM/PM.  
@@ -35,7 +35,7 @@ Détermine si les méthodes d’analyse de date et d’heure utilisent un ensemb
   
 ### <a name="enabled-attribute"></a>Attribut enabled  
   
-|`Value`|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |0|Les méthodes d’analyse de date et d’heure n’utilisent pas de règles ajustées pour analyser les chaînes de date qui contiennent uniquement un jour, un mois, une heure et un indicateur AM/PM.|  
 |1|Les méthodes d’analyse de date et d’heure utilisent des règles ajustées pour analyser les chaînes de date qui contiennent uniquement un jour, un mois, une heure et un indicateur AM/PM.|  
@@ -68,7 +68,7 @@ Détermine si les méthodes d’analyse de date et d’heure utilisent un ensemb
  L' `<EnableAmPmParseAdjustment>` élément n’a aucun effet sur <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType>les <xref:System.DateTime.TryParseExact%2A?displayProperty=nameWithType>méthodes <xref:System.DateTimeOffset.ParseExact%2A?displayProperty=nameWithType>,, <xref:System.DateTimeOffset.TryParseExact%2A?displayProperty=nameWithType> et.  
   
 > [!IMPORTANT]
->  Dans .NET Core et .NET Native, les règles d’analyse AM/PM ajustées sont activées par défaut.  
+> Dans .NET Core et .NET Native, les règles d’analyse AM/PM ajustées sont activées par défaut.  
   
  Si la règle d’ajustement d’analyse n’est pas activée, le premier chiffre de la chaîne est interprété comme l’heure de l’horloge de 12 heures, et le reste de la chaîne, à l’exception de l’indicateur AM/PM, est ignoré. La date et l’heure retournées par la méthode d’analyse se composent de la date actuelle et de l’heure du jour extraite de la chaîne de date.  
   

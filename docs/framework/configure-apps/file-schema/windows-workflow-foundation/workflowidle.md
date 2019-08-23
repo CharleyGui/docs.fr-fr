@@ -3,12 +3,12 @@ title: <workflowIdle>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: b2ef703c-3e01-4213-9d2e-c14c7dba94d2
-ms.openlocfilehash: 1dc186f5899935dab43c0d33894e659c4b19748c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 16a485b6d0ba2584cccd08a36506582fd3930f71
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59201115"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947166"
 ---
 # <a name="workflowidle"></a>\<workflowIdle>
 Comportement de service qui contrôle à quel moment les instances de workflow inactives sont déchargées et rendues persistantes.  
@@ -16,7 +16,7 @@ Comportement de service qui contrôle à quel moment les instances de workflow i
 \<system.ServiceModel>  
 \<behaviors>  
 \<serviceBehaviors>  
-\<behavior>  
+\<> de comportement  
 \<workflowIdle>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,8 +39,8 @@ Comportement de service qui contrôle à quel moment les instances de workflow i
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|timeToPersist|Une valeur Timespan qui spécifie la durée entre le moment où le flux de travail devienne inactif et est rendu persistant. La valeur par défaut est TimeSpan.MaxValue.<br /><br /> La durée commence à s'écouler lorsque l'instance de flux de travail devient inactive. Cet attribut est utile si vous souhaitez conserver une instance de workflow de façon plus agressive tout en conservant l’instance en mémoire aussi longtemps que possible. Cet attribut est valide uniquement si sa valeur est inférieure à la **timeToUnload** attribut. Si elle est supérieure, elle est ignorée. Si cet attribut s’écoule avant la valeur spécifiée par le **timeToUnload** , attribut de persistance doit s’effectuer avant que le workflow est déchargé. Cela implique un éventuel retard de l'opération de déchargement tant que le flux de travail n'a pas été rendu persistant. La couche de persistance est responsable de la gestion de toutes les tentatives pour les erreurs temporaires et lève uniquement des exceptions sur les erreurs non récupérables. Par conséquent, toutes les exceptions levées pendant la persistance sont traitées comme fatales et l'instance de flux de travail est abandonnée.|  
-|timeToUnload|Valeur Timespan qui spécifie la durée entre l'inactivation et le déchargement du flux de travail. La valeur par défaut est égale à 1 minute.<br /><br /> Le déchargement d'un flux de travail implique qu'il soit également rendu persistant. Si cet attribut est défini à zéro l’instance de workflow est rendue persistante et déchargée immédiatement après le workflow devient inactif. Cet attribut TimeSpan.MaxValue efficacement désactive l’opération de déchargement. Les instances de flux de travail inactives ne sont jamais déchargées.|  
+|timeToPersist|Valeur TimeSpan qui spécifie la durée entre le moment où le workflow devient inactif et celui où il est rendu persistant. La valeur par défaut est TimeSpan. MaxValue.<br /><br /> La durée commence à s'écouler lorsque l'instance de flux de travail devient inactive. Cet attribut est utile si vous souhaitez conserver une instance de workflow de manière plus agressive tout en conservant la mémoire de l’instance aussi longtemps que possible. Cet attribut est valide uniquement si sa valeur est inférieure à l’attribut **TimeToUnload** . Si elle est supérieure, elle est ignorée. Si cet attribut s’écoule avant la valeur spécifiée par l’attribut **TimeToUnload** , la persistance doit se terminer avant que le flux de travail ne soit déchargé. Cela implique un éventuel retard de l'opération de déchargement tant que le flux de travail n'a pas été rendu persistant. La couche de persistance est responsable de la gestion de toutes les tentatives pour les erreurs temporaires et lève uniquement des exceptions sur les erreurs non récupérables. Par conséquent, toutes les exceptions levées pendant la persistance sont traitées comme fatales et l'instance de flux de travail est abandonnée.|  
+|timeToUnload|Valeur Timespan qui spécifie la durée entre l'inactivation et le déchargement du flux de travail. La valeur par défaut est égale à 1 minute.<br /><br /> Le déchargement d'un flux de travail implique qu'il soit également rendu persistant. Si cet attribut a la valeur zéro, l’instance de workflow est persistante et déchargée immédiatement après que le flux de travail devient inactif. L’affectation de la valeur TimeSpan. MaxValue à cet attribut désactive efficacement l’opération de déchargement. Les instances de flux de travail inactives ne sont jamais déchargées.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -49,7 +49,7 @@ Comportement de service qui contrôle à quel moment les instances de workflow i
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<comportement > de \<serviceBehaviors >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|Spécifie un élément de comportement.|  
+|[\<> de comportement \<de la > serviceBehaviors](behavior-of-servicebehaviors-of-workflow.md)|Spécifie un élément de comportement.|  
   
 ## <a name="see-also"></a>Voir aussi
 

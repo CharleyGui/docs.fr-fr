@@ -9,28 +9,28 @@ helpviewer_keywords:
 - LocBaml tool [WPF]
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
-ms.openlocfilehash: 4d7271e792c96dd896d73a52a31ad136acc19e26
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: b3ad3d0c3223d5baf937ca22fd48d46a80979aac
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666788"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69913670"
 ---
 # <a name="how-to-localize-an-application"></a>Procédure : Localiser une application
 Ce didacticiel explique comment créer une application localisée à l'aide de l'outil LocBaml.  
   
 > [!NOTE]
->  L'outil LocBaml n'est pas une application prête pour la production. Il est présenté comme un exemple qui fait appel à un certain nombre d'API de localisation et montre comment vous pouvez écrire un outil de localisation.  
+> L'outil LocBaml n'est pas une application prête pour la production. Il est présenté comme un exemple qui fait appel à un certain nombre d'API de localisation et montre comment vous pouvez écrire un outil de localisation.  
   
 <a name="Introduction"></a>   
 ## <a name="overview"></a>Vue d'ensemble  
  Ce document vous propose une approche pas à pas pour localiser une application. Tout d'abord, vous allez préparer votre application de façon à pouvoir extraire le texte qui sera traduit. Une fois le texte traduit, vous le fusionnerez dans une nouvelle copie de l'application d'origine.  
   
 <a name="Requirements"></a>   
-## <a name="requirements"></a>Spécifications  
- Dans le cadre de cette procédure, vous allez utiliser [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)], qui est un compilateur qui s'exécute à partir de la ligne de commande.  
+## <a name="requirements"></a>Configuration requise  
+ Au cours de cette discussion, vous allez utiliser Microsoft Build Engine (MSBuild), qui est un compilateur qui s’exécute à partir de la ligne de commande.  
   
- De même, vous serez invité à utiliser un fichier de projet. Pour obtenir des instructions sur l' [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] utilisation des fichiers de projet et, consultez [générer et déployer](../app-development/building-and-deploying-wpf-applications.md).  
+ De même, vous serez invité à utiliser un fichier de projet. Pour obtenir des instructions sur l’utilisation de MSBuild et des fichiers projet, consultez [génération et déploiement](../app-development/building-and-deploying-wpf-applications.md).  
   
  Tous les exemples fournis dans ce document sont de culture en-US (anglais américain). Vous pouvez ainsi parcourir les différentes étapes des exemples sans avoir à installer une autre langue.  
   
@@ -40,7 +40,7 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
   
 1. Développez votre application jusqu'au point où vous voulez démarrer la localisation.  
   
-2. Spécifiez le langage de développement dans le fichier de projet de sorte que [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] génère un assembly principal et un assembly satellite (fichier doté de l'extension .resources.dll) pour contenir les ressources de langage neutre. Le fichier de projet de l'exemple HelloApp s'intitule HelloApp.csproj. Dans ce fichier, vous trouverez le langage de développement identifié comme suit :  
+2. Spécifiez le langage de développement dans le fichier projet de sorte que MSBuild génère un assembly principal et un assembly satellite (un fichier avec l’extension. resources. dll) pour contenir les ressources de langage neutre. Le fichier de projet de l'exemple HelloApp s'intitule HelloApp.csproj. Dans ce fichier, vous trouverez le langage de développement identifié comme suit :  
   
      `<UICulture>en-US</UICulture>`  
   
@@ -108,7 +108,7 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
     - **verbose** Affiche des informations détaillées sur le mode.  
   
     > [!NOTE]
-    >  Si vous avez besoin d’une liste des options lorsque vous exécutez l’outil, tapez **LocBaml. exe** et appuyez sur entrée.  
+    > Si vous avez besoin d’une liste des options lorsque vous exécutez l’outil, tapez **LocBaml. exe** et appuyez sur entrée.  
   
 <a name="parse_dll"></a>   
 ## <a name="use-locbaml-to-parse-a-file"></a>Utiliser LocBaml pour analyser un fichier  
@@ -121,7 +121,7 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
      **LocBaml.exe /parse HelloApp.resources.dll /out:Hello.csv**  
   
     > [!NOTE]
-    >  Si le fichier d'entrée, HelloApp.resources.dll, n'est pas dans le même répertoire que LocBaml.exe, déplacez l'un des deux fichiers de telle sorte qu'ils se trouvent dans le même répertoire.  
+    > Si le fichier d'entrée, HelloApp.resources.dll, n'est pas dans le même répertoire que LocBaml.exe, déplacez l'un des deux fichiers de telle sorte qu'ils se trouvent dans le même répertoire.  
   
 3. Quand vous exécutez LocBaml pour analyser les fichiers, la sortie se compose de sept champs délimités par des virgules (fichiers .csv) ou des tabulations (fichiers .txt). Voici le fichier .csv analysé pour HelloApp.resources.dll :
 
@@ -172,7 +172,7 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
      **LocBaml.exe /generate HelloApp.resources.dll /trans:Hello.csv /out:c:\ /cul:en-US**  
   
     > [!NOTE]
-    >  Si le fichier d'entrée, Hello.csv, n'est pas dans le même répertoire que l'exécutable, LocBaml.exe, déplacez l'un des deux fichiers de telle sorte qu'ils se trouvent dans le même répertoire.  
+    > Si le fichier d'entrée, Hello.csv, n'est pas dans le même répertoire que l'exécutable, LocBaml.exe, déplacez l'un des deux fichiers de telle sorte qu'ils se trouvent dans le même répertoire.  
   
 2. Remplacez l'ancien fichier HelloApp.resources.dll dans le répertoire C:\HelloApp\Bin\Debug\en-US\HelloApp.resources.dll par le fichier HelloApp.resources.dll que vous venez de créer.  
   

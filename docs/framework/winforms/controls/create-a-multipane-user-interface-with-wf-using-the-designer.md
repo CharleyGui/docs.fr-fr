@@ -6,12 +6,12 @@ helpviewer_keywords:
 - SplitContainer control [Windows Forms], using the designer
 - multipane user interface
 ms.assetid: c3f9294d-a26c-4198-9242-f237f55f7573
-ms.openlocfilehash: f96124f7d97e733b1f0e2559320ce2e09ba5ff21
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 97888a77dfc731be591d5f0284e87f45ef7dc437
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039957"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930169"
 ---
 # <a name="how-to-create-a-multipane-user-interface-with-windows-forms-using-the-designer"></a>Procédure : créer une interface utilisateur à plusieurs volets avec Windows Forms à l’aide du concepteur
 Dans la procédure suivante, vous allez créer une interface utilisateur à plusieurs volets similaire à celle utilisée dans Microsoft Outlook, avec une liste de **dossiers** , un volet **messages** et un volet de **visualisation** . Cette organisation est réalisée principalement via l’ancrage des contrôles au formulaire.
@@ -39,7 +39,7 @@ Dans la procédure suivante, vous allez créer une interface utilisateur à plus
      À ce stade, si vous appuyez sur F5 pour exécuter l’application, le formulaire affiche une interface utilisateur en trois parties, similaire à celle de Microsoft Outlook.
 
     > [!NOTE]
-    >  Lorsque vous placez le pointeur de la souris sur l’un des séparateurs dans <xref:System.Windows.Forms.SplitContainer> les contrôles, vous pouvez redimensionner les dimensions internes.
+    > Lorsque vous placez le pointeur de la souris sur l’un des séparateurs dans <xref:System.Windows.Forms.SplitContainer> les contrôles, vous pouvez redimensionner les dimensions internes.
 
 À ce stade du développement d’applications, vous avez créé une interface utilisateur sophistiquée. L’étape suivante consiste à poursuivre la programmation de l’application elle-même, peut- <xref:System.Windows.Forms.TreeView> être en <xref:System.Windows.Forms.ListView> connectant le contrôle et les contrôles à un type de source de données. Pour plus d’informations sur la connexion des contrôles aux données, consultez [liaison de données et Windows Forms](../data-binding-and-windows-forms.md).
 

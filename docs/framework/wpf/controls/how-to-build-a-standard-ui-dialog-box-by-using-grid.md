@@ -8,26 +8,26 @@ helpviewer_keywords:
 - dialog boxes [WPF], creating
 - Grid control [WPF], creating [WPF], dialog box
 ms.assetid: d6ac3d51-844b-4d29-96d8-81a696a7b960
-ms.openlocfilehash: 0ade908e92e552017acb9ba242ccba2c28c3c995
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 68c9653e616388374aad2ad33ac7dab68446241d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051050"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923422"
 ---
 # <a name="how-to-build-a-standard-ui-dialog-box-by-using-grid"></a>Procédure : Générer une boîte de dialogue d’interface utilisateur standard à l’aide d’une grille
-Cet exemple montre comment créer une norme [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] boîte de dialogue à l’aide de la <xref:System.Windows.Controls.Grid> élément.  
+Cet exemple montre comment créer une boîte de [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] dialogue standard à l’aide <xref:System.Windows.Controls.Grid> de l’élément.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant crée une boîte de dialogue similaire à la **exécuter** boîte de dialogue dans le [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] système d’exploitation.  
+ L’exemple suivant crée une boîte de dialogue telle que la boîte de dialogue **exécuter** dans le système d’exploitation Windows.  
   
- L’exemple crée un <xref:System.Windows.Controls.Grid> et utilise le <xref:System.Windows.Controls.ColumnDefinition> et <xref:System.Windows.Controls.RowDefinition> classes pour définir les cinq colonnes et quatre lignes.  
+ L’exemple crée un <xref:System.Windows.Controls.Grid> et utilise les <xref:System.Windows.Controls.ColumnDefinition> classes <xref:System.Windows.Controls.RowDefinition> et pour définir cinq colonnes et quatre lignes.  
   
- L’exemple ajoute et positionne un <xref:System.Windows.Controls.Image>, `RunIcon.png`, pour représenter l’image qui se trouve dans la boîte de dialogue. L’image est placée dans la première colonne et ligne de la <xref:System.Windows.Controls.Grid> (le coin supérieur droit).  
+ L’exemple ajoute et positionne ensuite un <xref:System.Windows.Controls.Image>, `RunIcon.png`, pour représenter l’image trouvée dans la boîte de dialogue. L’image est placée sur la première colonne et ligne de <xref:System.Windows.Controls.Grid> (l’angle supérieur gauche).  
   
- Ensuite, l’exemple ajoute un <xref:System.Windows.Controls.TextBlock> élément à la première colonne, qui couvre les colonnes restantes de la première ligne. Il ajoute un autre <xref:System.Windows.Controls.TextBlock> élément à la deuxième ligne dans la première colonne, pour représenter le **Open** zone de texte. Un <xref:System.Windows.Controls.TextBlock> suit, ce qui représente la zone de saisie de données.  
+ Ensuite, l’exemple ajoute un <xref:System.Windows.Controls.TextBlock> élément à la première colonne, qui s’étend sur les colonnes restantes de la première ligne. Elle ajoute un <xref:System.Windows.Controls.TextBlock> autre élément à la deuxième ligne de la première colonne, pour représenter la zone de texte **ouverte** . Le <xref:System.Windows.Controls.TextBlock> suivant, qui représente la zone d’entrée de données.  
   
- Enfin, l’exemple ajoute trois <xref:System.Windows.Controls.Button> à la dernière ligne, les éléments qui représentent le **OK**, **Annuler**, et **Parcourir** événements.  
+ Enfin, l’exemple ajoute trois <xref:System.Windows.Controls.Button> éléments à la dernière ligne, qui représentent les événements **OK**, **Annuler**et **Parcourir** .  
   
  [!code-csharp[GridRunDialog#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GridRunDialog/CSharp/window1.xaml.cs#1)]
  [!code-vb[GridRunDialog#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GridRunDialog/VisualBasic/grid_vb.vb#1)]  

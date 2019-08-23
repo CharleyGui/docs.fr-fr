@@ -24,12 +24,12 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-ms.openlocfilehash: 145c4e33bd601fa61750df56b949bda5d43cc372
-ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
+ms.openlocfilehash: 574449f95ee9632d37f277d61806802457494df0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68818003"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964586"
 ---
 # <a name="navigation-overview"></a>Vue d'ensemble de la navigation
 
@@ -106,7 +106,7 @@ Un balisage uniquement <xref:System.Windows.Controls.Page> est utile pour affich
 
 Pour permettre à un fichier de balisage et un fichier code-behind de fonctionner ensemble, la configuration suivante est nécessaire :
 
-- Dans le balisage `Page` , l’élément doit `x:Class` inclure l’attribut. Lorsque l’application est générée, l’existence de `x:Class` dans le fichier de balisage oblige [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] à `partial` créer une classe qui dérive de <xref:System.Windows.Controls.Page> et qui porte le nom spécifié par `x:Class` l’attribut. Cela nécessite l’ajout d’une [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] déclaration d’espace de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] noms pour `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"` le schéma (). La classe `partial` générée `InitializeComponent`implémente, qui est appelé pour inscrire les événements et définir les propriétés implémentées dans le balisage.
+- Dans le balisage `Page` , l’élément doit `x:Class` inclure l’attribut. Lorsque l’application est générée, l’existence de `x:Class` dans le fichier de balisage amène Microsoft Build Engine (MSBuild) à `partial` créer une classe qui dérive de <xref:System.Windows.Controls.Page> et qui porte le nom spécifié par `x:Class` l’attribut. Cela nécessite l’ajout d’une [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] déclaration d’espace de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] noms pour `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"` le schéma (). La classe `partial` générée `InitializeComponent`implémente, qui est appelé pour inscrire les événements et définir les propriétés implémentées dans le balisage.
 
 - Dans le code-behind, la classe doit être `partial` une classe portant le même nom que celui spécifié par `x:Class` l’attribut dans le balisage, et elle <xref:System.Windows.Controls.Page>doit dériver de. Cela permet au fichier code-behind d’être associé à la `partial` classe générée pour le fichier de balisage quand l’application est générée (consultez [génération d’une application WPF](building-a-wpf-application-wpf.md)).
 
@@ -123,7 +123,7 @@ Une fois que vous <xref:System.Windows.Controls.Page>disposez d’un, vous pouve
 
 Les applications [!INCLUDE[TLA2#tla_xbap#plural](../../../../includes/tla2sharptla-xbapsharpplural-md.md)] nécessitent l’hébergement d’une certaine quantité d’infrastructure d’application dans un navigateur. Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], la <xref:System.Windows.Application> classe fait partie d’une définition d’application qui établit l’infrastructure d’application requise (consultez [vue d’ensemble](application-management-overview.md)de la gestion des applications).
 
-Une définition d’application est généralement implémentée à l’aide du balisage et du code-behind, avec [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] le fichier de balisage configuré en tant qu' `ApplicationDefinition` élément. Voici une définition d’application pour un [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)].
+Une définition d’application est généralement implémentée à l’aide du balisage et du code-behind, avec le`ApplicationDefinition` fichier de balisage configuré en tant qu’élément MSBuild. Voici une définition d’application pour un [!INCLUDE[TLA2#tla_xbap](../../../../includes/tla2sharptla-xbap-md.md)].
 
 [!code-xaml[XBAPAppDefSnippets#XBAPApplicationDefinitionMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/XBAPAppDefSnippets/CSharp/App.xaml#xbapapplicationdefinitionmarkup)]
 
@@ -527,7 +527,7 @@ Pour stocker un cookie dans des sessions d’application, vous devez lui ajouter
 
 *NOM* `=` *VALEUR* `; expires=DAY, DD-MMM-YYYY HH:MM:SS GMT`
 
-Un cookie avec une date d’expiration est stocké dans [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] le dossier Temporary Internet Files de l’installation actuelle jusqu’à ce que le cookie expire. Un cookie de ce type est connu sous le nom de *cookie persistant* , car il persiste entre les sessions d’application.
+Un cookie avec une date d’expiration est stocké dans le dossier fichiers Internet temporaires de l’installation Windows actuelle jusqu’à ce que le cookie expire. Un cookie de ce type est connu sous le nom de *cookie persistant* , car il persiste entre les sessions d’application.
 
 Vous récupérez les cookies de session et les cookies <xref:System.Windows.Application.GetCookie%2A> persistants en appelant <xref:System.Uri> la méthode, en passant le de l’emplacement où <xref:System.Windows.Application.SetCookie%2A> le cookie a été défini avec la méthode.
 

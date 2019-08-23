@@ -2,30 +2,30 @@
 title: Sécurisation des messages à l'aide de la sécurité de message
 ms.date: 03/30/2017
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-ms.openlocfilehash: cf014c8aa972c45140a523573b9806996062b40f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9ba8923d23140bb951a4993739ec267ad6f6a4c4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61991027"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69911776"
 ---
 # <a name="securing-messages-using-message-security"></a>Sécurisation des messages à l'aide de la sécurité de message
-Cette section traite de la sécurité de message WCF lors de l’utilisation <xref:System.ServiceModel.NetMsmqBinding>.  
+Cette section traite de la sécurité des messages WCF <xref:System.ServiceModel.NetMsmqBinding>lors de l’utilisation de.  
   
 > [!NOTE]
->  Avant de lire cette rubrique, il est recommandé que vous lire [Concepts de sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md).  
+> Avant de lire cette rubrique, il est recommandé de lire [concepts de sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md).  
   
  L’illustration suivante fournit un modèle conceptuel de communication en file d’attente à l’aide de WCF. Cette illustration et la terminologie permettent d'expliquer  
   
  les concepts de sécurité de transport.  
   
- ![En file d’attente de diagramme d’Application](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "Figure de file d’attente distribuée")  
+ ![Diagramme d’application en file d’attente](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "File d’attente distribuée-figure")  
   
- Lors de l’envoi de file d’attente les messages à l’aide de WCF, le message WCF est attaché en tant que corps du message Message Queuing (MSMQ). Alors que la sécurité de transport sécurise le message MSMQ entier, la sécurité de message (ou SOAP) sécurise uniquement le corps du message MSMQ.  
+ Lors de l’envoi de messages en file d’attente à l’aide de WCF, le message WCF est joint en tant que corps du message de Message Queuing (MSMQ). Alors que la sécurité de transport sécurise le message MSMQ entier, la sécurité de message (ou SOAP) sécurise uniquement le corps du message MSMQ.  
   
- Le concept clé de la sécurité de message est que le client sécurise le message pour l'application réceptrice (service), contrairement à la sécurité de transport où le client sécurise le message pour la file d'attente cible. Par conséquent, MSMQ ne joue aucun lors de la sécurisation du message WCF à l’aide de la sécurité de message.  
+ Le concept clé de la sécurité de message est que le client sécurise le message pour l'application réceptrice (service), contrairement à la sécurité de transport où le client sécurise le message pour la file d'attente cible. Par conséquent, MSMQ ne joue aucun rôle lors de la sécurisation du message WCF à l’aide de la sécurité de message.  
   
- Sécurité des messages WCF ajoute des en-têtes de sécurité pour le message WCF qui s’intègrent avec des infrastructures de sécurité existantes, telles que d’un certificat ou le protocole Kerberos.  
+ La sécurité des messages WCF ajoute des en-têtes de sécurité au message WCF qui s’intègrent avec les infrastructures de sécurité existantes, telles qu’un certificat ou le protocole Kerberos.  
   
 ## <a name="message-credential-type"></a>Type d'informations d'identification de message  
  Grâce à la sécurité de message, le service et le client peuvent présenter des informations d'identification pour s'authentifier mutuellement. Vous pouvez sélectionner la sécurité de message en définissant le mode <xref:System.ServiceModel.NetMsmqBinding.Security%2A> sur `Message` ou sur `Both` (c'est-à-dire en utilisant la sécurité de transport et la sécurité de message).  
@@ -48,11 +48,11 @@ Cette section traite de la sécurité de message WCF lors de l’utilisation <xr
   
  Le protocole Kerberos est un mécanisme de sécurité qui authentifie les utilisateurs sur un domaine et permet aux utilisateurs authentifiés d'établir des contextes sécurisés avec d'autres entités sur un domaine.  
   
- Le problème lié à l'utilisation du protocole Kerberos pour la communication mise en file d'attente est que les tickets qui contiennent l'identité du client que le centre de distribution de clés distribue sont relativement éphémères. Un *durée de vie* est associé avec le ticket Kerberos qui indique la validité du ticket. Ainsi, étant donné la latence élevée, vous ne pouvez pas être sûr que le jeton est encore valide pour le service qui authentifie le client.  
+ Le problème lié à l'utilisation du protocole Kerberos pour la communication mise en file d'attente est que les tickets qui contiennent l'identité du client que le centre de distribution de clés distribue sont relativement éphémères. Une *durée de vie* est associée au ticket Kerberos qui indique la validité du ticket. Ainsi, étant donné la latence élevée, vous ne pouvez pas être sûr que le jeton est encore valide pour le service qui authentifie le client.  
   
  Notez que lors de l'utilisation de ce type d'informations d'identification, le service doit s'exécuter sous le compte SERVICE.  
   
- Le protocole Kerberos est utilisé par défaut lors du choix des informations d'identification d'un message. Pour plus d’informations, consultez [Kerberos exploration, le protocole pour la sécurité distribuée dans Windows 2000](https://go.microsoft.com/fwlink/?LinkId=87790).  
+ Le protocole Kerberos est utilisé par défaut lors du choix des informations d'identification d'un message. Pour plus d’informations, consultez [exploration de Kerberos, protocole pour la sécurité distribuée dans Windows 2000](https://go.microsoft.com/fwlink/?LinkId=87790).  
   
 ### <a name="username-password"></a>Username Password  
  À l'aide de cette propriété, le client peut s'authentifier auprès du serveur en utilisant un mot de passe de nom d'utilisateur dans l'en-tête de sécurité du message.  

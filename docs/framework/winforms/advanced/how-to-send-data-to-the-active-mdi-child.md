@@ -10,25 +10,25 @@ helpviewer_keywords:
 - Clipboard [Windows Forms], pasting
 - Clipboard [Windows Forms], getting data from
 ms.assetid: 1047d2fe-1235-46db-aad9-563aea1d743b
-ms.openlocfilehash: f4399d8548eff76aaa4effae6da7239cd3b0284b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0a7a2475891488d1fdd60f0db4a483c144a73f0d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61966907"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947843"
 ---
 # <a name="how-to-send-data-to-the-active-mdi-child"></a>Procédure : envoyer des données à l’enfant MDI actif
-Souvent, dans le contexte de [Applications d’Interface multidocument (MDI)](multiple-document-interface-mdi-applications.md), vous devez envoyer des données à la fenêtre enfant active, par exemple lorsque l’utilisateur colle des données à partir du Presse-papiers dans une application MDI.  
+Souvent, dans le contexte des [applications d’interface multidocument (MDI, multiple-document interface)](multiple-document-interface-mdi-applications.md), vous devez envoyer des données à la fenêtre enfant active, par exemple lorsque l’utilisateur colle des données du presse-papiers dans une application MDI.  
   
 > [!NOTE]
->  Pour plus d’informations sur la vérification de la fenêtre enfant a le focus et envoyer son contenu dans le Presse-papiers, consultez [déterminer l’enfant MDI actif](how-to-determine-the-active-mdi-child.md).  
+> Pour plus d’informations sur la vérification de la fenêtre enfant qui a le focus et sur l’envoi de son contenu dans le presse-papiers, consultez [détermination de l’enfant MDI actif](how-to-determine-the-active-mdi-child.md).  
   
-### <a name="to-send-data-to-the-active-mdi-child-window-from-the-clipboard"></a>Pour envoyer des données à la fenêtre MDI enfant active à partir du Presse-papiers  
+### <a name="to-send-data-to-the-active-mdi-child-window-from-the-clipboard"></a>Pour envoyer des données à la fenêtre enfant MDI active à partir du presse-papiers  
   
-1. Dans une méthode, copiez le texte du Presse-papiers dans le contrôle actif du formulaire enfant actif.  
+1. Dans une méthode, copiez le texte dans le presse-papiers vers le contrôle actif du formulaire enfant actif.  
   
     > [!NOTE]
-    >  Cet exemple suppose il existe un formulaire MDI parent (`Form1`) qui a une ou plusieurs fenêtres MDI enfants contenant un <xref:System.Windows.Forms.RichTextBox> contrôle. Pour plus d’informations, consultez [création de formulaires MDI parents](how-to-create-mdi-parent-forms.md).  
+    > Cet exemple suppose qu’il existe un formulaire MDI parent (`Form1`) avec une ou plusieurs fenêtres enfants MDI contenant un <xref:System.Windows.Forms.RichTextBox> contrôle. Pour plus d’informations, consultez [création de formulaires MDI parents](how-to-create-mdi-parent-forms.md).  
   
     ```vb  
     Public Sub mniPaste_Click(ByVal sender As Object, _  
@@ -95,6 +95,6 @@ Souvent, dans le contexte de [Applications d’Interface multidocument (MDI)](mu
 
 - [Applications d’interface multidocument (MDI, Multiple Document Interface)](multiple-document-interface-mdi-applications.md)
 - [Guide pratique pour Créer des formulaires MDI parents](how-to-create-mdi-parent-forms.md)
-- [Guide pratique pour Créer des formulaires MDI enfants](how-to-create-mdi-child-forms.md)
+- [Guide pratique : Créer des formulaires MDI enfants](how-to-create-mdi-child-forms.md)
 - [Guide pratique pour Déterminer l’enfant MDI actif](how-to-determine-the-active-mdi-child.md)
-- [Guide pratique pour Réorganiser des formulaires MDI enfants](how-to-arrange-mdi-child-forms.md)
+- [Guide pratique : Réorganiser les formulaires enfants MDI](how-to-arrange-mdi-child-forms.md)

@@ -10,21 +10,21 @@ helpviewer_keywords:
 - reserved words, Visual Basic keywords
 - Visual Basic, keywords
 ms.assetid: b5a65ef0-c408-4836-afb6-e6828c0771ca
-ms.openlocfilehash: e00cb8579ba2692acdfbf3fd349e08bb8647e2d0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 61dc57b2e44e7b98fbce85e81491c76736c7ad78
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61801555"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959962"
 ---
 # <a name="keywords-visual-basic"></a>Mots clés (Visual Basic)
-Les tableaux suivants répertorient tous les mots clés du langage Visual Basic.  
+Les tableaux suivants répertorient tous les mots clés de Visual Basic Language.  
   
 ## <a name="reserved-keywords"></a>Mots clés réservés  
  Les mots clés suivants sont *réservés*, ce qui signifie que vous ne pouvez pas les utiliser comme noms d’éléments de programmation tels que des variables ou des procédures. Vous pouvez contourner cette restriction en plaçant le nom entre crochets (`[]`). Pour plus d’informations, consultez « Noms échappés » dans [Noms d’éléments déclarés](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
 > [!NOTE]
->  Nous vous déconseillons d’utiliser des noms échappés, car cette pratique peut rendre votre code difficile à lire et générer des erreurs subtiles qui peuvent être difficiles à détecter.  
+> Nous vous déconseillons d’utiliser des noms échappés, car cette pratique peut rendre votre code difficile à lire et générer des erreurs subtiles qui peuvent être difficiles à détecter.  
   
 |||||  
 |---|---|---|---|  
@@ -37,7 +37,7 @@ Les tableaux suivants répertorient tous les mots clés du langage Visual Basic.
 |[CObj](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[Const](../../../visual-basic/language-reference/statements/const-statement.md)|[Continue](../../../visual-basic/language-reference/statements/continue-statement.md)|[CSByte](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|  
 |[CShort](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[CSng](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[CStr](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[CType](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|  
 |[CUInt](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[CULng](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[CUShort](../../../visual-basic/language-reference/functions/type-conversion-functions.md)|[Date](../../../visual-basic/language-reference/data-types/date-data-type.md)|  
-|[Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|[Declare](../../../visual-basic/language-reference/statements/declare-statement.md)|[Default](../../../visual-basic/language-reference/modifiers/default.md)|[Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)|  
+|[Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|[Declare](../../../visual-basic/language-reference/statements/declare-statement.md)|[Par défaut](../../../visual-basic/language-reference/modifiers/default.md)|[Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)|  
 |[Dim](../../../visual-basic/language-reference/statements/dim-statement.md)|[DirectCast](../../../visual-basic/language-reference/operators/directcast-operator.md)|[Do](../../../visual-basic/language-reference/statements/do-loop-statement.md)|[Double](../../../visual-basic/language-reference/data-types/double-data-type.md)|  
 |[Each](../../../visual-basic/language-reference/statements/for-each-next-statement.md)|[Else](../../../visual-basic/language-reference/statements/else-statement.md)|[ElseIf](../../../visual-basic/language-reference/statements/if-then-else-statement.md)|[End (instruction)](../../../visual-basic/language-reference/statements/end-statement.md)|  
 |[End \<mot clé>](../../../visual-basic/language-reference/statements/end-keyword-statement.md)|`EndIf`|[Enum](../../../visual-basic/language-reference/statements/enum-statement.md)|[Erase](../../../visual-basic/language-reference/statements/erase-statement.md)|  
@@ -54,10 +54,10 @@ Les tableaux suivants répertorient tous les mots clés du langage Visual Basic.
 |[MyBase](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)|[MyClass](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)|[Espace de noms](../../../visual-basic/language-reference/statements/namespace-statement.md)|[Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)|  
 |[New (contrainte)](../../../visual-basic/language-reference/statements/type-list.md)|[New (opérateur)](../../../visual-basic/language-reference/operators/new-operator.md)|[Next](../../../visual-basic/language-reference/statements/for-next-statement.md)|[Next (dans l’instruction Resume)](../../../visual-basic/language-reference/statements/resume-statement.md)|  
 |[Not](../../../visual-basic/language-reference/operators/not-operator.md)|[Nothing](../../../visual-basic/language-reference/nothing.md)|[NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)|[NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)|  
-|[Object](../../../visual-basic/language-reference/data-types/object-data-type.md)|[Of](../../../visual-basic/language-reference/statements/of-clause.md)|[On](../../../visual-basic/misc/on.md)|[Operator](../../../visual-basic/language-reference/statements/operator-statement.md)|  
-|[Option](../../../visual-basic/language-reference/statements/option-keyword-statement.md)|[Optional](../../../visual-basic/language-reference/modifiers/optional.md)|[Or](../../../visual-basic/language-reference/operators/or-operator.md)|[OrElse](../../../visual-basic/language-reference/operators/orelse-operator.md)|  
+|[Object](../../../visual-basic/language-reference/data-types/object-data-type.md)|[Of](../../../visual-basic/language-reference/statements/of-clause.md)|[On](../../../visual-basic/misc/on.md)|[Opérateur](../../../visual-basic/language-reference/statements/operator-statement.md)|  
+|[Option](../../../visual-basic/language-reference/statements/option-keyword-statement.md)|[Facultatif](../../../visual-basic/language-reference/modifiers/optional.md)|[Or](../../../visual-basic/language-reference/operators/or-operator.md)|[OrElse](../../../visual-basic/language-reference/operators/orelse-operator.md)|  
 |[Out (modificateur générique)](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)|[Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)|[Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)|[Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)|  
-|[ParamArray](../../../visual-basic/language-reference/modifiers/paramarray.md)|[Partial](../../../visual-basic/language-reference/modifiers/partial.md)|[Private](../../../visual-basic/language-reference/modifiers/private.md)|[Property](../../../visual-basic/language-reference/statements/property-statement.md)|  
+|[ParamArray](../../../visual-basic/language-reference/modifiers/paramarray.md)|[Partial](../../../visual-basic/language-reference/modifiers/partial.md)|[Private](../../../visual-basic/language-reference/modifiers/private.md)|[Propriété](../../../visual-basic/language-reference/statements/property-statement.md)|  
 |[Protected](../../../visual-basic/language-reference/modifiers/protected.md)|[Public](../../../visual-basic/language-reference/modifiers/public.md)|[RaiseEvent](../../../visual-basic/language-reference/statements/raiseevent-statement.md)|[ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)|  
 |[ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)|[REM](../../../visual-basic/language-reference/statements/rem-statement.md)|[RemoveHandler](../../../visual-basic/language-reference/statements/removehandler-statement.md)|[Resume](../../../visual-basic/language-reference/statements/resume-statement.md)|  
 |[Return](../../../visual-basic/language-reference/statements/return-statement.md)|[SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|[Select](../../../visual-basic/language-reference/statements/select-case-statement.md)|[Set](../../../visual-basic/language-reference/statements/set-statement.md)|  
@@ -77,7 +77,7 @@ Les tableaux suivants répertorient tous les mots clés du langage Visual Basic.
 |[>> (opérateur)](../../../visual-basic/language-reference/operators/right-shift-operator.md)|[>>= (opérateur)](../../../visual-basic/language-reference/operators/right-shift-assignment-operator.md)|[<<](../../../visual-basic/language-reference/operators/left-shift-operator.md)|[<\<=](../../../visual-basic/language-reference/operators/left-shift-assignment-operator.md)|  
   
 > [!NOTE]
->  `EndIf`, `GoSub`, `Variant`, et `Wend` sont conservés comme mots clés réservés, bien qu’ils ne sont plus utilisés dans Visual Basic. La signification du mot clé `Let` a changé. `Let` est maintenant utilisé dans les requêtes LINQ. Pour plus d’informations, consultez [Let, clause](../../../visual-basic/language-reference/queries/let-clause.md).  
+> `EndIf`, `GoSub`, `Variant` et`Wend` sont conservés comme mots clés réservés, bien qu’ils ne soient plus utilisés dans Visual Basic. La signification du mot clé `Let` a changé. `Let` est maintenant utilisé dans les requêtes LINQ. Pour plus d’informations, consultez [Let, clause](../../../visual-basic/language-reference/queries/let-clause.md).  
   
 ## <a name="unreserved-keywords"></a>Mots clés non réservés  
  Les mots clés suivants ne sont pas réservés, ce qui signifie que vous pouvez les utiliser comme noms pour vos éléments de programmation. Toutefois, cette pratique est déconseillée, car cela peut rendre votre code difficile à lire et générer des erreurs subtiles qui peuvent être difficiles à détecter.  

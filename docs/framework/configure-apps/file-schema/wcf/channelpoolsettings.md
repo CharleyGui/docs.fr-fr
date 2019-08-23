@@ -2,12 +2,12 @@
 title: <channelPoolSettings>
 ms.date: 03/30/2017
 ms.assetid: 4755f3d3-4213-4c68-ae7f-45b67d744459
-ms.openlocfilehash: 70f7452a22ae08d6eccd7d3644bdc8df45087ae0
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: dd81821c74678cae8602458fe796a72bf5d379e4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423188"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919554"
 ---
 # <a name="channelpoolsettings"></a>\<channelPoolSettings>
 Spécifie les paramètres du pool du canal pour une liaison personnalisée.  
@@ -45,7 +45,7 @@ Spécifie les paramètres du pool du canal pour une liaison personnalisée.
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<oneWay>](../../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md)|Active le routage de paquets pour une liaison personnalisée.|  
+|[\<oneWay>](oneway.md)|Active le routage de paquets pour une liaison personnalisée.|  
   
 ## <a name="remarks"></a>Notes  
  Les quotas sont utilisés comme un mécanisme de stratégie pour empêcher une consommation excessive de ressources. Ils empêchent les attaques par déni de service (DOS) qui sont malveillantes ou involontaires. Utilisez cet élément lors de la définition de quotas de canal sur un canal personnalisé.  
@@ -65,8 +65,8 @@ Spécifie les paramètres du pool du canal pour une liaison personnalisée.
 - <xref:System.ServiceModel.Configuration.OneWayElement.ChannelPoolSettings%2A>
 - <xref:System.ServiceModel.Configuration.ChannelPoolSettingsElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [\<oneWay>](../../../../../docs/framework/configure-apps/file-schema/wcf/oneway.md)
-- [Liaisons](../../../../../docs/framework/wcf/bindings.md)
-- [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [\<oneWay>](oneway.md)
+- [Liaisons](../../../wcf/bindings.md)
+- [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
+- [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)

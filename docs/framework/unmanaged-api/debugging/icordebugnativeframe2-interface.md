@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cc664d308d4db3e97597d785eda159e32255fa54
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 638ce7933ededf2ff7b03b1c5aed7f6bdbfebc6c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61987842"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912794"
 ---
 # <a name="icordebugnativeframe2-interface"></a>ICorDebugNativeFrame2, interface
 Fournit des méthodes qui testent les relations entre frames enfant et parent.  
@@ -30,22 +30,22 @@ Fournit des méthodes qui testent les relations entre frames enfant et parent.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[IsChild, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ischild-method.md)|Détermine si le frame actuel est un frame enfant.|  
-|[IsMatchingParentFrame, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ismatchingparentframe-method.md)|Détermine si le frame spécifié est le parent de l’image actuelle.|  
-|[GetStackParameterSize, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-getstackparametersize-method.md)|Retourne la taille cumulée des paramètres sur la pile sur x86 systèmes d’exploitation.|  
+|[IsChild, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ischild-method.md)|Détermine si le frame actuel est un Frame enfant.|  
+|[IsMatchingParentFrame, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-ismatchingparentframe-method.md)|Détermine si le frame spécifié est le parent du frame actuel.|  
+|[GetStackParameterSize, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe2-getstackparametersize-method.md)|Retourne la taille cumulée des paramètres sur la pile sur les systèmes d’exploitation x86.|  
   
 ## <a name="remarks"></a>Notes  
- Cette interface étend logiquement l’interface « ICorDebugNativeFrame ».  
+ Cette interface étend logiquement l’interface «ICorDebugNativeFrame».  
   
 > [!NOTE]
->  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
+> Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

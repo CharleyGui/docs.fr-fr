@@ -11,15 +11,15 @@ helpviewer_keywords:
 - trace listeners, <sharedListeners> element
 - sharedListeners element
 ms.assetid: de200534-19dd-4156-86cf-c50521802c4c
-ms.openlocfilehash: 48cb59dfc0871822bfcff5e16d4283008a411479
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 41cabcbce13409b0842cbbd625028b51d32d59d0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701214"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926981"
 ---
-# <a name="sharedlisteners-element"></a>\<sharedListeners > élément
-Contient des écouteurs auxquels toute source ou tout élément de trace peuvent faire référence.  Ces écouteurs ne reçoivent pas les traces par défaut, et il n’est pas possible de récupérer au moment de l’exécution. Écouteurs identifiés comme des écouteurs partagés peuvent être ajoutés à des sources ou des traces par nom.  
+# <a name="sharedlisteners-element"></a>\<sharedListeners >, élément
+Contient des écouteurs auxquels toute source ou tout élément de trace peuvent faire référence.  Ces écouteurs ne reçoivent pas de suivi par défaut, et il n’est pas possible de récupérer ces écouteurs au moment de l’exécution. Les écouteurs identifiés comme écouteurs partagés peuvent être ajoutés à des sources ou des suivis par nom.  
   
  \<configuration>  
 \<system.diagnostics>  
@@ -43,7 +43,7 @@ Contient des écouteurs auxquels toute source ou tout élément de trace peuvent
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/add-element-for-listeners-for-trace.md)|Ajoute un écouteur à la collection `sharedListeners`.|  
+|[\<add>](add-element-for-listeners-for-trace.md)|Ajoute un écouteur à la collection `sharedListeners`.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -53,12 +53,12 @@ Contient des écouteurs auxquels toute source ou tout élément de trace peuvent
 |`system.diagnostics`|Spécifie l'élément racine de la section de configuration ASP.NET.|  
   
 ## <a name="remarks"></a>Notes  
- Ajout d’un écouteur à la collection d’écouteurs partagés n’en fait pas un écouteur actif. Il doit encore être ajouté à une source de trace ou d’une trace en l’ajoutant à la `Listeners` collection pour cet élément de la trace. Les classes de l’écouteur dans le .NET Framework dérivent la <xref:System.Diagnostics.TraceListener> classe.  
+ L’ajout d’un écouteur à la collection d’écouteurs partagés ne fait pas de l’écouteur actif. Il doit toujours être ajouté à une source de suivi ou à une trace en l’ajoutant `Listeners` à la collection de cet élément trace. Les classes d’écouteur dans le .NET Framework dérivent de la <xref:System.Diagnostics.TraceListener> classe.  
   
- Cet élément peut être utilisé dans le fichier de configuration machine (Machine.config) et le fichier de configuration d’application.  
+ Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser le `<sharedListeners>` élément pour ajouter l’écouteur `console` à la `Listeners` collection à la fois pour le <xref:System.Diagnostics.TraceSource> et <xref:System.Diagnostics.Trace> classes. L’écouteur de suivi de console écrit des informations de traçage dans la console par des appels à <xref:System.Diagnostics.TraceSource> ou <xref:System.Diagnostics.Trace>.  
+ L’exemple suivant montre comment utiliser l' `<sharedListeners>` élément pour ajouter l' `console` écouteur à la `Listeners` collection pour les <xref:System.Diagnostics.TraceSource> classes et <xref:System.Diagnostics.Trace> . L’écouteur de suivi de console écrit les informations de trace dans la console <xref:System.Diagnostics.TraceSource> par <xref:System.Diagnostics.Trace>le biais d’appels à ou.  
   
 ```xml  
 <configuration>  
@@ -91,5 +91,5 @@ Contient des écouteurs auxquels toute source ou tout élément de trace peuvent
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Diagnostics.TraceListener>
-- [Schéma des paramètres de trace et de débogage](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
-- [Écouteurs de suivi](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+- [Schéma des paramètres de trace et de débogage](index.md)
+- [Écouteurs de suivi](../../../debug-trace-profile/trace-listeners.md)

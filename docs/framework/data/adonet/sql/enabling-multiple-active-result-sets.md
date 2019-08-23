@@ -5,23 +5,23 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 576079e4-debe-4ab5-9204-fcbe2ca7a5e2
-ms.openlocfilehash: 71d5bbf7eb2df4065362031f30840635062a9298
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5dd2bfa0884eac6864630bf393e232cf45bd1c99
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583500"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938195"
 ---
 # <a name="enabling-multiple-active-result-sets"></a>Activation de MARS (Multiple Active Result Sets)
 MARS est une fonctionnalité qui opère avec SQL Server pour permettre l’exécution de plusieurs lots sur une seule connexion. Lorsque MARS est activé pour une utilisation avec SQL Server, chaque objet de commande utilisé ajoute une session à la connexion.  
   
 > [!NOTE]
->  Une session MARS unique ouvre une connexion logique qu'utilisera la fonction MARS, puis une connexion logique pour chaque commande active.  
+> Une session MARS unique ouvre une connexion logique qu'utilisera la fonction MARS, puis une connexion logique pour chaque commande active.  
   
 ## <a name="enabling-and-disabling-mars-in-the-connection-string"></a>Activation et désactivation de MARS dans la chaîne de connexion  
   
 > [!NOTE]
->  Les chaînes de connexion suivantes utilisent l’exemple **AdventureWorks** inclus avec SQL Server de base de données. Les chaînes de connexion fournies supposent que la base de données est installée sur un serveur nommé MSSQL1. Si nécessaire, modifiez la chaîne de connexion en fonction de votre environnement.  
+> Les chaînes de connexion suivantes utilisent l’exemple de base de données **AdventureWorks** inclus avec SQL Server. Les chaînes de connexion fournies supposent que la base de données est installée sur un serveur nommé MSSQL1. Si nécessaire, modifiez la chaîne de connexion en fonction de votre environnement.  
   
  La fonctionnalité MARS est désactivée par défaut. Vous pouvez l'activer en ajoutant la paire de mots clés « MultipleActiveResultSets=True » à votre chaîne de connexion. « True » est la seule valeur valide pour l'activation de MARS. L'exemple suivant montre comment se connecter à une instance de SQL Server et comment spécifier que MARS doit être activé.  
   
@@ -62,7 +62,7 @@ string connectionString = "Data Source=MSSQL1;" +
  Une instruction WAITFOR à l’intérieur d’une instruction SELECT ne génère pas la transaction lorsqu’elle est en attente, c’est-à-dire, jusqu’à ce que la première ligne soit produite. Cela implique qu'aucun autre lot ne peut s'exécuter dans le cadre de la même connexion tant qu'une instruction WAITFOR est en attente.  
   
 ### <a name="mars-session-cache"></a>Cache de session MARS  
- Lors de l'ouverture d'une connexion alors que MARS est activé, une session logique est créée, qui ajoute une charge supplémentaire. Pour minimiser la charge et améliorer les performances, **SqlClient** met en cache la session MARS au sein d’une connexion. Le cache contient au maximum 10 sessions MARS. L'utilisateur ne peut pas modifier cette valeur. Si la limite de session est atteinte, une nouvelle session est créée sans qu'aucune erreur ne soit générée. Le cache et les sessions qu'il contient sont valables pour une connexion ; ils ne sont pas partagés entre plusieurs connexions. En cas d'abandon d'une session, cette dernière retourne au pool, à moins que la limite supérieure du pool ne soit atteinte. Si le pool de caches est plein, la session est fermée. Les sessions MARS n'expirent pas. Elles ne sont nettoyées qu'en cas de suppression de l'objet de connexion. Le cache de session MARS n'est pas préchargé. Il est chargé lorsque l'application demande des sessions supplémentaires.  
+ Lors de l'ouverture d'une connexion alors que MARS est activé, une session logique est créée, qui ajoute une charge supplémentaire. Pour réduire la charge et améliorer les performances, **SqlClient** met en cache la session mars au sein d’une connexion. Le cache contient au maximum 10 sessions MARS. L'utilisateur ne peut pas modifier cette valeur. Si la limite de session est atteinte, une nouvelle session est créée sans qu'aucune erreur ne soit générée. Le cache et les sessions qu'il contient sont valables pour une connexion ; ils ne sont pas partagés entre plusieurs connexions. En cas d'abandon d'une session, cette dernière retourne au pool, à moins que la limite supérieure du pool ne soit atteinte. Si le pool de caches est plein, la session est fermée. Les sessions MARS n'expirent pas. Elles ne sont nettoyées qu'en cas de suppression de l'objet de connexion. Le cache de session MARS n'est pas préchargé. Il est chargé lorsque l'application demande des sessions supplémentaires.  
   
 ### <a name="thread-safety"></a>Sécurité des threads  
  Les opérations MARS ne sont pas thread-safe.  
@@ -81,7 +81,7 @@ string connectionString = "Data Source=MSSQL1;" +
   
 - Contexte de base de données (base de données actuelle)  
   
-- Variables de l’état d’exécution (par exemple, @@ERROR, @@ROWCOUNT, @@FETCH_STATUS @@IDENTITY)  
+- Variables d’état d’exécution (par exemple@ERROR, @@ROWCOUNT, @@FETCH_STATUS ,@IDENTITY@ @)  
   
 - Tables temporaires de niveau supérieur  
   
@@ -90,15 +90,15 @@ string connectionString = "Data Source=MSSQL1;" +
 ### <a name="parallel-execution"></a>Exécution en parallèle  
  MARS n’est pas conçu pour supprimer toutes les exigences de connexions multiples dans une application. Si une application a besoin d'une véritable exécution en parallèle de commandes par rapport à un serveur, il convient d'utiliser plusieurs connexions.  
   
- Observez par exemple le scénario suivant. Deux objets de commande sont créés, l'un pour le traitement d'un ensemble de résultats et un autre pour la mise à jour de données ; ils partagent une connexion commune via MARS. Dans ce scénario, le `Transaction`.`Commit` Échec de la mise à jour jusqu'à ce que tous les résultats ont été lus sur le premier objet de commande, en générant l’exception suivante :  
+ Observez par exemple le scénario suivant. Deux objets de commande sont créés, l'un pour le traitement d'un ensemble de résultats et un autre pour la mise à jour de données ; ils partagent une connexion commune via MARS. Dans ce scénario, le `Transaction`.`Commit` échoue sur la mise à jour tant que tous les résultats n’ont pas été lus sur le premier objet de commande, ce qui a généré l’exception suivante:  
   
  Message : Contexte de transaction utilisé par une autre session.  
   
- Source : Fournisseur de données SqlClient .NET  
+ Source: Fournisseur de données SqlClient .NET  
   
  Attendu : (null)  
   
- Reçu : System.Data.SqlClient.SqlException  
+ Lettré System.Data.SqlClient.SqlException  
   
  Il existe trois options pour gérer ce scénario :  
   

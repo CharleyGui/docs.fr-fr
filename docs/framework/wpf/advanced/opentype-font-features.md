@@ -9,12 +9,12 @@ helpviewer_keywords:
 - typography [WPF], OpenType font technology
 - OpenType font technology [WPF]
 ms.assetid: 4061a9d1-fe8b-4921-9e17-18ec7d2e3ea2
-ms.openlocfilehash: 580f9ce81e9b3652a9defec25dfd05f47e296d7a
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: 7d73176a68d8b4b19b6c980ef52e1f47408127fb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545403"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933686"
 ---
 # <a name="opentype-font-features"></a>Fonctionnalités des polices OpenType
 
@@ -37,7 +37,7 @@ Cette rubrique fournit une vue d’ensemble des principales fonctionnalités de 
 - Prise en charge élargie des contrôles typographiques avancés.  
   
 > [!NOTE]
->  Le SDK Windows contient un ensemble d’exemples de polices OpenType que vous pouvez utiliser [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] avec les applications. Ces polices offrent la plupart des fonctionnalités illustrées dans le reste de cette rubrique. Pour plus d’informations, consultez [Exemple de pack de polices OpenType](sample-opentype-font-pack.md).  
+> Le SDK Windows contient un ensemble d’exemples de polices OpenType que vous pouvez utiliser [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] avec les applications. Ces polices offrent la plupart des fonctionnalités illustrées dans le reste de cette rubrique. Pour plus d’informations, consultez [Exemple de pack de polices OpenType](sample-opentype-font-pack.md).  
   
  Pour plus d’informations sur le format de police OpenType, consultez la [spécification OpenType](https://go.microsoft.com/fwlink/?LinkId=96731) .  
   

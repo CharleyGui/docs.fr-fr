@@ -1,5 +1,5 @@
 ---
-title: <remove> élément pour NameValueSectionHandler et DictionarySectionHandler
+title: <remove>, élément de NameValueSectionHandler et DictionarySectionHandler
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/remove
@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 8d8af7f5-26c9-4db9-bbe4-b2a4e6949568
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: 062aa3921d29cffd33db2d96096ef25c2b819030
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: cd338ff2d613be31ab1524f6baed6107f803a688
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300698"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920946"
 ---
-# <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<Supprimer >, élément pour NameValueSectionHandler et DictionarySectionHandler
+# <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<supprimer > élément pour NameValueSectionHandler et DictionarySectionHandler
 
 Supprime un paramètre défini précédemment.
 
-[ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<sectionName>** ](~/docs/framework/configure-apps/file-schema/custom-element-2.md)   
+[ **\<configuration>** ](configuration-element.md)   
+&nbsp;&nbsp;[ **\<sectionName>** ](custom-element-2.md)   
 &nbsp;&nbsp;&nbsp;&nbsp; **\<remove>**
 
 ## <a name="syntax"></a>Syntaxe
@@ -40,21 +40,21 @@ Supprime un paramètre défini précédemment.
 
 | Élément | Description |
 | ------- | ------------|
-| [ **\<sectionName>** Element](~/docs/framework/configure-apps/file-schema/custom-element-2.md) | Définit les paramètres pour les sections de configuration personnalisées qui utilisent le <xref:System.Configuration.NameValueSectionHandler> et <xref:System.Configuration.DictionarySectionHandler> classes. |
+| [élément de >y  **\<** ](custom-element-2.md) | Définit des paramètres pour les sections de configuration personnalisées <xref:System.Configuration.DictionarySectionHandler> qui utilisent les <xref:System.Configuration.NameValueSectionHandler> classes et. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
-None
+Aucun
 
 ## <a name="remarks"></a>Notes
 
-Vous pouvez utiliser la  **\<Supprimer >** élément à supprimer les paramètres de votre application qui ont été définies à un niveau supérieur dans la hiérarchie de fichiers de configuration.
+Vous pouvez utiliser l'  **\<élément remove >** pour supprimer de votre application les paramètres qui ont été définis à un niveau supérieur dans la hiérarchie des fichiers de configuration.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
-L’exemple suivant montre comment utiliser le  **\<Supprimer >** élément dans un fichier de configuration d’application pour supprimer les paramètres définis précédemment dans le fichier de configuration machine.
+L’exemple suivant montre comment utiliser l'  **\<élément remove >** dans un fichier de configuration de l’application pour supprimer des paramètres précédemment définis dans le fichier de configuration de l’ordinateur.
 
-Le code du fichier de configuration machine suivant déclare la section  **\<mySection >** et ajoute deux paramètres, `key1` et `key2`, à celui-ci :
+Le code de fichier de configuration de l’ordinateur suivant déclare la section  **\<mySection >** et y `key1` ajoute `key2`deux paramètres:
 
 ```xml
 <!-- Machine.config file -->
@@ -69,7 +69,7 @@ Le code du fichier de configuration machine suivant déclare la section  **\<myS
 </configuration>
 ```
 
-Le code suivant du fichier de configuration de l’application supprime le `key2` définir à partir de  **\<mySection >** :
+Le code de fichier de configuration de l' `key2` application suivant supprime le paramètre de  **\<mySection >** :
 
 ```xml
 <!--Application configuration file -->
@@ -82,8 +82,8 @@ Le code suivant du fichier de configuration de l’application supprime le `key2
 
 ## <a name="configuration-file"></a>fichier de configuration
 
-Cet élément peut être utilisé dans le fichier de configuration d’application, fichier de configuration machine (*Machine.config*), et *Web.config* fichiers qui ne sont pas au niveau du répertoire d’application.
+Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma de fichier de configuration pour le .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma du fichier de configuration pour le .NET Framework](index.md)

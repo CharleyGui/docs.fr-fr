@@ -4,12 +4,12 @@ ms.date: 04/07/2017
 ms.assetid: 6eb142d5-fc98-40e2-9d90-84733f2a27ba
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bbb2c4157ba702182056c98c959a60569e8c3d1e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e76e11ef8bb39d72cb16655c948354bc326e75bc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786410"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69913083"
 ---
 # <a name="windows-forms-configuration-section"></a>Section de configuration de Windows Forms
 Les paramètres de configuration de Windows Forms permettent à une application Windows Forms de stocker et d’extraire des informations sur les paramètres d’application personnalisés, par exemple la prise en charge de plusieurs écrans, la prise en charge de la haute résolution et d’autres paramètres de configuration prédéfinis.
@@ -38,7 +38,7 @@ Aucun.
 
 Élément  |Description |
 ---------|---------|
-[`<add>`](../../../../../docs/framework/configure-apps/file-schema/winforms/windows-forms-add-configuration-element.md) | Ajoute une clé de paramètre de configuration avec une valeur spécifiée. |
+[`<add>`](windows-forms-add-configuration-element.md) | Ajoute une clé de paramètre de configuration avec une valeur spécifiée. |
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -50,9 +50,9 @@ Aucun.
 
 À compter du .NET Framework 4.7, l’élément `<System.Windows.Forms.ApplicationConfigurationSection>` vous permet de configurer des applications Windows Forms pour tirer parti des fonctionnalités ajoutées dans les dernières versions du .NET Framework. 
 
-L’élément `<System.Windows.Forms.ApplicationConfigurationSection>` peut contenir un ou plusieurs éléments [`<add>`](../../../../../docs/framework/configure-apps/file-schema/winforms/windows-forms-add-configuration-element.md) enfants, dont chacun définit un paramètre de configuration spécifique.
+L’élément `<System.Windows.Forms.ApplicationConfigurationSection>` peut contenir un ou plusieurs éléments [`<add>`](windows-forms-add-configuration-element.md) enfants, dont chacun définit un paramètre de configuration spécifique.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Schéma des fichiers de configuration](../index.md)
-- [Prise en charge de la haute résolution dans Windows Forms](../../../../../docs/framework/winforms/high-dpi-support-in-windows-forms.md)
+- [Prise en charge de la haute résolution dans Windows Forms](../../../winforms/high-dpi-support-in-windows-forms.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c830b7097d12017348d8669071ec6d7c122bfe44
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: ac21e8aa67eabcb3e837cb5eca02d1145b765946
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68364081"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69941731"
 ---
 # <a name="migrating-your-windows-store-app-to-net-native"></a>Migration de votre application du Windows Store vers .NET Native
 
@@ -55,7 +55,7 @@ ms.locfileid: "68364081"
 
 Par exemple, pour la liaison de données, une application doit pouvoir mapper les noms de propriété sur les fonctions. Dans .NET pour les applications du Windows Store, le Common Language Runtime utilise automatiquement la réflexion pour fournir cette fonctionnalité pour les types managés et les types natifs disponibles publiquement. Dans .NET Native, le compilateur comprend automatiquement les métadonnées des types auxquels vous liez des données.
 
-Le compilateur .net Native peut également gérer les types génériques couramment utilisés tels <xref:System.Collections.Generic.List%601> que <xref:System.Collections.Generic.Dictionary%602>et, qui fonctionnent sans nécessiter d’indicateurs ou de directives. Le mot clé [dynamic](~/docs/csharp/language-reference/keywords/dynamic.md) est également pris en charge, dans certaines limites.
+Le compilateur .net Native peut également gérer les types génériques couramment utilisés tels <xref:System.Collections.Generic.List%601> que <xref:System.Collections.Generic.Dictionary%602>et, qui fonctionnent sans nécessiter d’indicateurs ou de directives. Le mot clé [dynamic](../../csharp/language-reference/keywords/dynamic.md) est également pris en charge, dans certaines limites.
 
 > [!NOTE]
 > Vous devez tester minutieusement tous les chemins de code dynamiques quand vous portez votre application sur .NET Native.
@@ -129,7 +129,7 @@ Les sections suivantes répertorient les API et les scénarios non pris en charg
 
 - La création dynamique de tableaux multidimensionnels n'est pas prise en charge. Ces tableaux sont généralement créés en appelant une surcharge de la méthode <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> qui inclut un paramètre `lengths` , ou en appelant la méthode <xref:System.Type.MakeArrayType%28System.Int32%29?displayProperty=nameWithType> .
 
-- Les tableaux multidimensionnels qui ont quatre dimensions ou plus ne sont pas pris en charge ; il s'agit de tableaux dont la propriété <xref:System.Array.Rank%2A?displayProperty=nameWithType> à une valeur supérieure ou égale à quatre. Utilisez des [tableaux en escalier](~/docs/csharp/programming-guide/arrays/jagged-arrays.md) (tableaux de tableaux) à la place. Par exemple, `array[x,y,z]` n'est pas valide, contrairement à `array[x][y][z]` .
+- Les tableaux multidimensionnels qui ont quatre dimensions ou plus ne sont pas pris en charge ; il s'agit de tableaux dont la propriété <xref:System.Array.Rank%2A?displayProperty=nameWithType> à une valeur supérieure ou égale à quatre. Utilisez des [tableaux en escalier](../../csharp/programming-guide/arrays/jagged-arrays.md) (tableaux de tableaux) à la place. Par exemple, `array[x,y,z]` n'est pas valide, contrairement à `array[x][y][z]` .
 
 - L'écart entre les tableaux multidimensionnels n'est pas pris en charge et provoque une exception <xref:System.InvalidCastException> au moment de l'exécution.
 
@@ -668,4 +668,4 @@ L’activation de .NET Native sur une bibliothèque de tests unitaires pour un p
 - [Prise en main](../../../docs/framework/net-native/getting-started-with-net-native.md)
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
 - [Vue d’ensemble de .NET pour les applications du Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29)
-- [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
+- [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
