@@ -2,20 +2,20 @@
 title: <routing> de <serviceBehavior>
 ms.date: 03/30/2017
 ms.assetid: d8f9c844-4629-4a45-9599-856dc8f01794
-ms.openlocfilehash: b7a9be18395ef8878900d754b5aa5afdeee0cff8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 73a610056f94efe144705968eaf97c8314c1ae0d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61783056"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934195"
 ---
-# <a name="routing-of-servicebehavior"></a>\<routage > de \<serviceBehavior >
+# <a name="routing-of-servicebehavior"></a>\<> de routage \<des > ServiceBehavior
 Fournit un accès au service de routage au moment de l'exécution afin d'autoriser une modification dynamique de la configuration de routage.  
   
  \<system.ServiceModel>  
 \<behaviors>  
 \<serviceBehaviors>  
-\<behavior>  
+\<> de comportement  
 \<routing>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,8 +39,8 @@ Fournit un accès au service de routage au moment de l'exécution afin d'autoris
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|filterTable|Chaîne qui spécifie le nom de la table de routage contenant les filtres destinés à être évalués par le service de routage. Cette valeur doit correspondre à la `name` attribut d’un [ \<filterTable >](../../../../../docs/framework/configure-apps/file-schema/wcf/filtertable.md) élément dans le [ \<filterTables >](../../../../../docs/framework/configure-apps/file-schema/wcf/filtertables.md) section.|  
-|routeOnHeaderOnly|Valeur booléenne qui spécifie si le filtre doit examiner à la fois le corps du message et l'en-tête, ou l'en-tête uniquement. La valeur par défaut est `true`.|  
+|filterTable|Chaîne qui spécifie le nom de la table de routage contenant les filtres destinés à être évalués par le service de routage. Cette valeur doit correspondre à `name` l’attribut d’un [ \<élément filterTable >](filtertable.md) dans la [ \<section > filterTables](filtertables.md) .|  
+|routeOnHeaderOnly|Valeur booléenne qui spécifie si le filtre doit examiner à la fois le corps du message et l'en-tête, ou l'en-tête uniquement. Par défaut, il s’agit de `true`.|  
 |soapProcessingEnabled|Valeur booléenne qui spécifie si le traitement SOAP doit avoir lieu.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -50,7 +50,7 @@ Fournit un accès au service de routage au moment de l'exécution afin d'autoris
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Spécifie un élément de comportement.|  
+|[\<behavior>](behavior-of-endpointbehaviors.md)|Spécifie un élément de comportement.|  
   
 ## <a name="remarks"></a>Notes  
  Lorsqu'il est ajouté à la configuration de comportement du service, cet élément de configuration active le routage pour le service. Vous pouvez spécifier la table de routage réelle que le service doit utiliser dans cet élément.  

@@ -2,12 +2,12 @@
 title: Introduction au routage
 ms.date: 03/30/2017
 ms.assetid: bf6ceb38-6622-433b-9ee7-f79bc93497a1
-ms.openlocfilehash: 478c9aa6563cab4ba7769c56d7084c8716c43c58
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
-ms.translationtype: MT
+ms.openlocfilehash: cc9298c96a5d1dc60ae1f9982b21ce7a160aacbd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425368"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933970"
 ---
 # <a name="routing-introduction"></a>Introduction au routage
 Le service de routage fournit un intermédiaire SOAP générique connectable, capable de router des messages en fonction du contenu. Le service de routage vous permet de créer une logique de routage complexe et d'implémenter des scénarios, tels que l'agrégation de service, le contrôle des versions de service, le routage par priorité et en mode multidiffusion. Le service de routage fournit également une gestion des erreurs qui vous permet de définir des listes de points de terminaison de sauvegarde auxquels sont envoyés les messages en cas d'échec de l'envoi au point de terminaison de destination primaire.  
@@ -15,13 +15,13 @@ Le service de routage fournit un intermédiaire SOAP générique connectable, ca
  Cette rubrique est destinée aux nouveaux utilisateurs du service de routage ; elle présente la configuration de base et l'hébergement du service de routage.  
   
 ## <a name="configuration"></a>Configuration  
- Le service de routage est implémenté en tant que service WCF qui expose un ou plusieurs points de terminaison de service ; ceux-ci reçoivent les messages provenant d'applications clientes et les acheminent vers un ou plusieurs points de terminaison de destination. Le service fournit une classe <xref:System.ServiceModel.Routing.RoutingBehavior>, appliquée aux points de terminaison de service exposés par le service. Ce comportement permet de configurer différents aspects du fonctionnement du service. Pour faciliter la configuration lors de l’utilisation d’un fichier de configuration, les paramètres sont spécifiés dans le **RoutingBehavior**. Dans les scénarios basés sur le code, ces paramètres seraient spécifiés comme partie d’un <xref:System.ServiceModel.Routing.RoutingConfiguration> objet, qui peut ensuite être transmis à un **RoutingBehavior**.  
+ Le service de routage est implémenté en tant que service WCF qui expose un ou plusieurs points de terminaison de service ; ceux-ci reçoivent les messages provenant d'applications clientes et les acheminent vers un ou plusieurs points de terminaison de destination. Le service fournit une classe <xref:System.ServiceModel.Routing.RoutingBehavior>, appliquée aux points de terminaison de service exposés par le service. Ce comportement permet de configurer différents aspects du fonctionnement du service. Pour faciliter la configuration lors de l’utilisation d’un fichier de configuration, les paramètres sont spécifiés sur le **RoutingBehavior**. Dans les scénarios basés sur du code, ces paramètres sont spécifiés dans le <xref:System.ServiceModel.Routing.RoutingConfiguration> cadre d’un objet, qui peut ensuite être transmis à un **RoutingBehavior**.  
   
- Au moment du démarrage, ce comportement ajoute aux points de terminaison clients la classe <xref:System.ServiceModel.Routing.SoapProcessingBehavior>, utilisée pour exécuter le traitement SOAP des messages. Cela permet au Service de routage transmettre des messages aux points de terminaison qui requièrent une autre **MessageVersion** que le message a été reçu sur le point de terminaison. Le **RoutingBehavior** enregistre également une extension de service, le <xref:System.ServiceModel.Routing.RoutingExtension>, qui fournit un point d’accès pour modifier la configuration de Service de routage au moment de l’exécution.  
+ Au moment du démarrage, ce comportement ajoute aux points de terminaison clients la classe <xref:System.ServiceModel.Routing.SoapProcessingBehavior>, utilisée pour exécuter le traitement SOAP des messages. Cela permet au service de routage de transmettre des messages aux points de terminaison qui nécessitent une **MessageVersion** différente de celle du point de terminaison sur lequel le message a été reçu. Le **RoutingBehavior** inscrit également une extension de service, <xref:System.ServiceModel.Routing.RoutingExtension>qui fournit un point d’accessibilité pour la modification de la configuration du service de routage au moment de l’exécution.  
   
- Le **RoutingConfiguration** classe fournit une méthode cohérente de la configuration et la mise à jour la configuration du Service de routage.  Il contient des paramètres qui agissent en tant que les paramètres pour le Service de routage et sont utilisés pour configurer le **RoutingBehavior** lorsque le service démarre, ou est passé à la **RoutingExtension** pour modifier le routage configuration en cours d’exécution.  
+ La classe **RoutingConfiguration** fournit un moyen cohérent de configurer et de mettre à jour la configuration du service de routage.  Il contient des paramètres qui jouent le rôle de paramètres pour le service de routage et qui est utilisé pour configurer le **RoutingBehavior** lorsque le service démarre, ou est passé à **RoutingExtension** pour modifier la configuration de routage au moment de l’exécution.  
   
- La logique de routage utilisée pour router les messages en fonction du contenu est définie en regroupant plusieurs objets <xref:System.ServiceModel.Dispatcher.MessageFilter> dans des tables de filtres (objets <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601>). Les messages entrants sont évalués sur les filtres de messages contenus dans la table de filtres et pour chaque **MessageFilter** qui correspond au message, transféré vers un point de terminaison de destination. La table de filtres qui doit être utilisé pour acheminer les messages est spécifiée en utilisant soit le **RoutingBehavior** dans la configuration ou le code à l’aide de la **RoutingConfiguration** objet.  
+ La logique de routage utilisée pour router les messages en fonction du contenu est définie en regroupant plusieurs objets <xref:System.ServiceModel.Dispatcher.MessageFilter> dans des tables de filtres (objets <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601>). Les messages entrants sont évalués par rapport aux filtres de messages contenus dans la table de filtres, et pour chaque **MessageFilter** qui correspond au message, transmis à un point de terminaison de destination. La table de filtres à utiliser pour router les messages est spécifiée à l’aide de **RoutingBehavior** dans la configuration ou par le biais du code à l’aide de l’objet **RoutingConfiguration** .  
   
 ### <a name="defining-endpoints"></a>Définition des points de terminaison  
  La première chose à configurer n'est pas, comme vous pourriez le penser, de définir la logique de routage que vous utiliserez, mais de déterminer la forme des points de terminaison vers lesquels les messages seront routés. Le service de routage utilise des contrats définissant la forme des canaux qui permettent de recevoir et envoyer des messages ; par conséquent, la forme du canal d'entrée doit correspondre à celle du canal de sortie.  Par exemple, si vous effectuez un routage vers des points de terminaison utilisant la forme de canal demande-réponse, vous devez utiliser un contrat compatible sur les points de terminaison entrants, comme l'interface <xref:System.ServiceModel.Routing.IRequestReplyRouter>.  
@@ -31,9 +31,9 @@ Le service de routage fournit un intermédiaire SOAP générique connectable, ca
 > [!NOTE]
 > En cas d’utilisation de contrats spécifiant plusieurs modèles de communication (comme une combinaison d’opérations monodirectionnelles et bidirectionnelles), vous pouvez utiliser un contrat duplex au service de routage tel que l’interface <xref:System.ServiceModel.Routing.IDuplexSessionRouter>. Cependant, cela suppose que la liaison soit capable d’une communication duplex, ce qui n’est pas le cas dans tous les scénarios. Dans les scénarios où cela n'est pas possible, il faudra peut-être développer la communication en plusieurs points de terminaison ou modifier l'application.  
   
- Pour plus d’informations sur les contrats de routage, consultez [contrats de routage](routing-contracts.md).  
+ Pour plus d’informations sur les contrats de routage, consultez [routage des contrats](routing-contracts.md).  
   
- Après avoir défini le point de terminaison de service, vous pouvez utiliser la **RoutingBehavior** pour associer un spécifique **RoutingConfiguration** avec le point de terminaison. Lorsque vous configurez le Service de routage à l’aide d’un fichier de configuration, le **RoutingBehavior** est utilisé pour spécifier la table de filtres qui contient la logique de routage utilisée pour traiter les messages reçus sur ce point de terminaison. Si vous configurez le Service de routage par programme, vous pouvez spécifier la table de filtres à l’aide de la **RoutingConfiguration**.  
+ Une fois le point de terminaison de service défini, vous pouvez utiliser **RoutingBehavior** pour associer un **RoutingConfiguration** spécifique au point de terminaison. Lors de la configuration du service de routage à l’aide d’un fichier de configuration, **RoutingBehavior** est utilisé pour spécifier la table de filtres qui contient la logique de routage utilisée pour traiter les messages reçus sur ce point de terminaison. Si vous configurez le service de routage par programmation, vous pouvez spécifier la table de filtres à l’aide de **RoutingConfiguration**.  
   
  L'exemple suivant définit les points de terminaison clients et de service utilisés par le service de routage à la fois par programme et par un fichier de configuration.  
   
@@ -103,13 +103,13 @@ serviceHost.Description.Behaviors.Add(
 ### <a name="routing-logic"></a>Logique de routage  
  Pour définir la logique de routage utilisée pour router les messages, vous devez déterminer sur quelles données contenues dans les messages entrants il est possible d'agir de manière unique. Par exemple, si tous les points de terminaison de destination de votre routage partagent la même Action SOAP, la valeur de l'Action contenue dans le message ne constitue pas un bon indicateur du point de terminaison spécifique vers lequel le message doit être routé. Si vous devez router des messages uniquement vers un point de terminaison spécifique, vous devez appliquer un filtre sur des données qui identifient de manière unique le point de terminaison de destination vers lequel le message est routé.  
   
- Le Service de routage fournit plusieurs **MessageFilter** implémentations qui inspectent des valeurs spécifiques dans le message, telles que l’adresse, action, nom de point de terminaison ou même une requête XPath. Si aucun de ces implémentations ne répond à vos besoins, vous pouvez créer un personnalisé **MessageFilter** implémentation. Pour plus d’informations sur les filtres de message et une comparaison des implémentations utilisées par le Service de routage, consultez [filtres de Message](message-filters.md) et [choix d’un filtre](choosing-a-filter.md).  
+ Le service de routage fournit plusieurs implémentations de **MessageFilter** qui inspectent des valeurs spécifiques dans le message, telles que l’adresse, l’action, le nom du point de terminaison ou même une requête XPath. Si aucune de ces implémentations ne répond à vos besoins, vous pouvez créer une implémentation personnalisée de **MessageFilter** . Pour plus d’informations sur les filtres de messages et pour obtenir une comparaison des implémentations utilisées par le service de routage, consultez [filtres de message](message-filters.md) et [choix d’un filtre](choosing-a-filter.md).  
   
- Plusieurs filtres de message sont organisés en tables de filtres, qui associent chaque **MessageFilter** avec un point de terminaison de destination. La table de filtres peut également être utilisée pour spécifier une liste de points de terminaison de sauvegarde auxquels, en cas d'échec de transmission, le service de routage tente d'envoyer le message.  
+ Plusieurs filtres de messages sont organisés en tables de filtres, qui associent chaque **MessageFilter** à un point de terminaison de destination. La table de filtres peut également être utilisée pour spécifier une liste de points de terminaison de sauvegarde auxquels, en cas d'échec de transmission, le service de routage tente d'envoyer le message.  
   
- Par défaut, tous les filtres de message d'une table de filtres sont évalués simultanément ; toutefois, vous pouvez spécifier une propriété <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement.Priority%2A> qui fait évaluer les filtres de messages dans un ordre spécifique. Les entrées de priorité plus élevée sont évaluées en premier et les filtres de message de priorité plus faible ne sont pas évalués si un résultat est trouvé à un niveau de priorité supérieur. Pour plus d’informations sur les tables de filtres, consultez [filtres de Message](message-filters.md).  
+ Par défaut, tous les filtres de message d'une table de filtres sont évalués simultanément ; toutefois, vous pouvez spécifier une propriété <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement.Priority%2A> qui fait évaluer les filtres de messages dans un ordre spécifique. Les entrées de priorité plus élevée sont évaluées en premier et les filtres de message de priorité plus faible ne sont pas évalués si un résultat est trouvé à un niveau de priorité supérieur. Pour plus d’informations sur les tables de filtres, consultez [filtres de messages](message-filters.md).  
   
- Les exemples suivants utilisent l'objet <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter>, qui prend tous les messages qui ont la valeur `true`. Cela **MessageFilter** est ajouté à la table de filtres « routingTable1 », qui associe le **MessageFilter** avec le point de terminaison client nommé « CalculatorService ». Le **RoutingBehavior** puis spécifie que cette table doit être utilisé pour router les messages traités par le point de terminaison de service.  
+ Les exemples suivants utilisent l'objet <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter>, qui prend tous les messages qui ont la valeur `true`. Ce **MessageFilter** est ajouté à la table de filtres «routingTable1», qui associe le **MessageFilter** au point de terminaison client nommé «CalculatorService». Le **RoutingBehavior** spécifie ensuite que cette table doit être utilisée pour acheminer les messages traités par le point de terminaison de service.  
   
 ```xml  
 <behaviors>  
@@ -150,9 +150,9 @@ rc.FilterTable.Add(new MatchAllMessageFilter(), endpointList);
 ```  
   
 > [!NOTE]
->  Par défaut, le service de routage évalue uniquement les en-têtes du message. Pour permettre aux filtres d'accéder au corps du message, vous devez attribuer à la propriété <xref:System.ServiceModel.Routing.RoutingConfiguration.RouteOnHeadersOnly%2A> la valeur `false`.  
+> Par défaut, le service de routage évalue uniquement les en-têtes du message. Pour permettre aux filtres d'accéder au corps du message, vous devez attribuer à la propriété <xref:System.ServiceModel.Routing.RoutingConfiguration.RouteOnHeadersOnly%2A> la valeur `false`.  
   
- **Multicast**  
+ **Multidiffusion**  
   
  Alors que de nombreuses configurations de service de routage utilisent une logique de filtre exclusive qui route les messages vers un seul point de terminaison spécifique, vous aurez peut-être besoin de router un message donné vers plusieurs points de terminaison de destination. Pour envoyer un message en mode multidiffusion à des destinations multiples, les conditions suivantes doivent être remplies :  
   
@@ -160,7 +160,7 @@ rc.FilterTable.Add(new MatchAllMessageFilter(), endpointList);
   
 - Plusieurs filtres doivent retourner une valeur `true` lors de l'évaluation du message.  
   
- Si ces conditions sont remplies, le message est routé vers tous les points de terminaison de tous les filtres qui doivent avoir la valeur `true`. L’exemple suivant définit une configuration de routage qui résulte dans les messages acheminés vers les deux points de terminaison si l’adresse de point de terminaison dans le message est `http://localhost:8000/routingservice/router/rounding`.  
+ Si ces conditions sont remplies, le message est routé vers tous les points de terminaison de tous les filtres qui doivent avoir la valeur `true`. L’exemple suivant définit une configuration de routage qui entraîne le routage des messages vers les deux points de terminaison si l’adresse du point de `http://localhost:8000/routingservice/router/rounding`terminaison dans le message est.  
   
 ```xml  
 <!--ROUTING SECTION -->  
@@ -189,19 +189,19 @@ rc.FilterTable.Add(new EndpointAddressMessageFilter(new EndpointAddress(
 ```  
   
 ### <a name="soap-processing"></a>Traitement SOAP  
- Pour prendre en charge le routage des messages entre des protocoles différents, le **RoutingBehavior** par défaut ajoute le <xref:System.ServiceModel.Routing.SoapProcessingBehavior> à tous les points de terminaison client messages sont routés vers. Ce comportement crée automatiquement un **MessageVersion** avant routage du message vers le point de terminaison, ainsi que la création d’un écran compatible **MessageVersion** pour tout document de réponse avant de le renvoyer à l’application cliente demandeuse.  
+ Pour prendre en charge le routage de messages entre des protocoles différents, le **RoutingBehavior** ajoute par <xref:System.ServiceModel.Routing.SoapProcessingBehavior> défaut le à tous les points de terminaison clients vers lesquels les messages sont routés. Ce comportement crée automatiquement un nouveau **MessageVersion** avant de router le message vers le point de terminaison, ainsi que la création d’un **MessageVersion** compatible pour tout document de réponse avant de le retourner à l’application cliente à l’origine de la demande.  
   
- Les étapes effectuées pour créer un nouveau **MessageVersion** pour le message sortant sont les suivantes :  
+ Les étapes nécessaires pour créer un nouveau **MessageVersion** pour le message sortant sont les suivantes:  
   
  **Traitement des demandes**  
   
-- Obtenir le **MessageVersion** de la liaison/canal sortant.  
+- Obtient le **MessageVersion** de la liaison/canal sortant.  
   
 - Obtenez le lecteur de corps du message d'origine.  
   
-- Créer un nouveau message avec la même action, lecteur de corps et un nouveau **MessageVersion**.  
+- Créez un nouveau message avec la même action, le même lecteur de corps et un nouveau **MessageVersion**.  
   
-- Si <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> ! = **Addressing.None**, copiez la ligne à, de, FaultTo et les en-têtes RelatesTo dans le nouveau message.  
+- Si <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> ! = **Addressing. None**, copiez les en-têtes vers, from, FaultTo et latesto dans le nouveau message.  
   
 - Copiez toutes les propriétés du message dans le nouveau message.  
   
@@ -209,26 +209,26 @@ rc.FilterTable.Add(new EndpointAddressMessageFilter(new EndpointAddress(
   
 - Retournez le nouveau message de demande.  
   
- **Traitement de la réponse**  
+ **Traitement des réponses**  
   
-- Obtenir le **MessageVersion** du message de demande d’origine.  
+- Obtient le **MessageVersion** du message de demande d’origine.  
   
 - Obtenez le lecteur de corps du message de réponse reçu.  
   
-- Créer un nouveau message de réponse avec la même action, le lecteur de corps et le **MessageVersion** du message de demande d’origine.  
+- Créez un nouveau message de réponse avec la même action, le même lecteur de corps et le **MessageVersion** du message de demande d’origine.  
   
-- Si <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> ! = **Addressing.None**, copiez la ligne à, de, FaultTo et les en-têtes RelatesTo dans le nouveau message.  
+- Si <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> ! = **Addressing. None**, copiez les en-têtes vers, from, FaultTo et latesto dans le nouveau message.  
   
 - Copiez les propriétés du message dans le nouveau message.  
   
 - Retournez le nouveau message de réponse.  
   
- Par défaut, le **SoapProcessingBehavior** est automatiquement ajouté aux points de terminaison client par le <xref:System.ServiceModel.Routing.RoutingBehavior> lorsque le service démarre ; Toutefois, vous pouvez contrôler si le traitement SOAP est ajouté à tous les points de terminaison de client à l’aide de la <xref:System.ServiceModel.Routing.RoutingConfiguration.SoapProcessingEnabled%2A> propriété. Vous pouvez également ajouter directement le comportement à un point de terminaison spécifique, au niveau duquel vous pouvez l'activer ou le désactiver, si un contrôle plus précis du traitement SOAP est nécessaire.  
+ Par défaut, le **SoapProcessingBehavior** est automatiquement ajouté aux points de terminaison du client par <xref:System.ServiceModel.Routing.RoutingBehavior> le lorsque le service démarre; Toutefois, vous pouvez contrôler si le traitement SOAP est ajouté à tous les points de terminaison <xref:System.ServiceModel.Routing.RoutingConfiguration.SoapProcessingEnabled%2A> clients à l’aide de la propriété. . Vous pouvez également ajouter directement le comportement à un point de terminaison spécifique, au niveau duquel vous pouvez l'activer ou le désactiver, si un contrôle plus précis du traitement SOAP est nécessaire.  
   
 > [!NOTE]
->  Si le traitement SOAP est désactivé pour un point de terminaison qui requiert une version MessageVersion différente de celle du message de demande d'origine, vous devez fournir un mécanisme personnalisé pour effectuer les modifications SOAP nécessaires avant d'envoyer le message au point de terminaison de destination.  
+> Si le traitement SOAP est désactivé pour un point de terminaison qui requiert une version MessageVersion différente de celle du message de demande d'origine, vous devez fournir un mécanisme personnalisé pour effectuer les modifications SOAP nécessaires avant d'envoyer le message au point de terminaison de destination.  
   
- Dans les exemples suivants, le **soapProcessingEnabled** propriété est utilisée pour empêcher le **SoapProcessingBehavior** d’être ajouté automatiquement à tous les points de terminaison client.  
+ Dans les exemples suivants, la propriété **SoapProcessingEnabled** est utilisée pour empêcher l’ajout automatique de **SoapProcessingBehavior** à tous les points de terminaison clients.  
   
 ```xml  
 <behaviors>  
@@ -250,7 +250,7 @@ rc.SoapProcessingEnabled = false;
 ### <a name="dynamic-configuration"></a>Configuration Dynamique  
  Lorsque vous ajoutez des points de terminaison clients supplémentaires, ou que vous devez modifier les filtres utilisés pour router les messages, vous devez pouvoir mettre la configuration à jour dynamiquement au moment de l'exécution afin d'éviter une interruption de service aux points de terminaison qui reçoivent actuellement des messages via le service de routage. Modifier un fichier de configuration ou le code de l'application hôte n'est pas toujours suffisant, car l'une ou l'autre méthode requiert le recyclage de l'application, ce qui signifierait la perte potentielle de tous les messages actuellement en transit et le risque d'un temps mort en attendant le redémarrage du service.  
   
- Vous pouvez uniquement modifier le **RoutingConfiguration** par programmation. Vous pouvez initialement configurer le service à l’aide d’un fichier de configuration, vous pouvez uniquement modifier la configuration au moment de l’exécution en créant un nouveau **RoutingConfiguration** et en lui passant comme paramètre à la <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> (méthode) exposées par le <xref:System.ServiceModel.Routing.RoutingExtension> extension du service. Tous les messages actuellement en transit continuent d’être routés à l’aide de la configuration précédente, alors que les messages reçus après l’appel à **ApplyConfiguration** utilisent la nouvelle configuration. L'exemple suivant montre la création d'une instance du service de routage, suivie d'une modification de la configuration.  
+ Vous pouvez uniquement modifier **RoutingConfiguration** par programme. Bien que vous puissiez initialement configurer le service à l’aide d’un fichier de configuration, vous pouvez uniquement modifier la configuration au moment de l’exécution en construisant un nouveau **RoutingConfiguration** et en <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> le transmettant en tant que paramètre à la méthode exposée par le <xref:System.ServiceModel.Routing.RoutingExtension>extension de service. Tous les messages actuellement en transit continuent à être routés à l’aide de la configuration précédente, tandis que les messages reçus après l’appel à **ApplyConfiguration** utilisent la nouvelle configuration. L'exemple suivant montre la création d'une instance du service de routage, suivie d'une modification de la configuration.  
   
 ```csharp  
 RoutingConfiguration routingConfig = new RoutingConfiguration();  
@@ -274,23 +274,23 @@ routerHost.routerHost.Extensions.Find<RoutingExtension>().ApplyConfiguration(rc2
 ```  
   
 > [!NOTE]
->  Lorsque le service de routage est mis à jour de cette manière, seule la transmission d'une nouvelle configuration est possible. Il est impossible de modifier uniquement une sélection d'éléments de la configuration actuelle ni d'ajouter à celle-ci de nouvelles entrées ; vous devez créer et transmettre une nouvelle configuration qui remplace l'existante.  
+> Lorsque le service de routage est mis à jour de cette manière, seule la transmission d'une nouvelle configuration est possible. Il est impossible de modifier uniquement une sélection d'éléments de la configuration actuelle ni d'ajouter à celle-ci de nouvelles entrées ; vous devez créer et transmettre une nouvelle configuration qui remplace l'existante.  
   
 > [!NOTE]
->  Toutes les sessions ouvertes à l'aide de la configuration précédente continuent à utiliser la configuration précédente. La nouvelle configuration est utilisée uniquement par les nouvelles sessions.  
+> Toutes les sessions ouvertes à l'aide de la configuration précédente continuent à utiliser la configuration précédente. La nouvelle configuration est utilisée uniquement par les nouvelles sessions.  
   
 ## <a name="error-handling"></a>Gestion des erreurs  
- Si un objet <xref:System.ServiceModel.CommunicationException> est rencontré lors de la tentative d'envoi d'un message, une gestion des erreurs intervient. Ces exceptions indiquent en général qu'un problème s'est produit lors de la tentative de communication avec le point de terminaison client défini ; il peut s'agir d'une exception <xref:System.ServiceModel.EndpointNotFoundException>, <xref:System.ServiceModel.ServerTooBusyException> ou <xref:System.ServiceModel.CommunicationObjectFaultedException>. Le code de gestion des erreurs intercepte également et tentez de nouvelle tentative d’envoi quand un <xref:System.TimeoutException> se produit, qui est une autre exception courante non dérivée de **CommunicationException**.  
+ Si un objet <xref:System.ServiceModel.CommunicationException> est rencontré lors de la tentative d'envoi d'un message, une gestion des erreurs intervient. Ces exceptions indiquent en général qu'un problème s'est produit lors de la tentative de communication avec le point de terminaison client défini ; il peut s'agir d'une exception <xref:System.ServiceModel.EndpointNotFoundException>, <xref:System.ServiceModel.ServerTooBusyException> ou <xref:System.ServiceModel.CommunicationObjectFaultedException>. Le code de gestion des erreurs intercepte également et tente de réessayer l' <xref:System.TimeoutException> envoi quand un événement se produit, qui est une autre exception courante qui n’est pas dérivée de **CommunicationException**.  
   
  Lorsque l'une des exceptions précédentes se produit, le service de routage bascule sur une liste de points de terminaison de sauvegarde. Si tous les points de terminaison de sauvegarde échouent avec un échec de communication, ou si un point de terminaison retourne une exception indiquant une défaillance dans le service de destination, le service de routage retourne une erreur à l'application cliente.  
   
 > [!NOTE]
->  Les fonctionnalités de gestion des erreurs capturent et gèrent des exceptions qui se produisent lors des tentatives d'envoi d'un message et de fermeture d'un canal. Le code de gestion des erreurs n’est pas destiné à détecter ni à gérer les exceptions créées par les points de terminaison application qu'il communique avec ; un <xref:System.ServiceModel.FaultException> levée par un service apparaît au niveau du Service de routage comme un **FaultMessage** et est transmise au client.  
+> Les fonctionnalités de gestion des erreurs capturent et gèrent des exceptions qui se produisent lors des tentatives d'envoi d'un message et de fermeture d'un canal. Le code de gestion des erreurs n’est pas destiné à détecter ou gérer les exceptions créées par les points de terminaison d’application avec lesquels il communique. une <xref:System.ServiceModel.FaultException> exception levée par un service s’affiche au niveau du service de routage en tant que **FaultMessage** et est renvoyée au client.  
 >   
 >  Si une erreur se produit lorsque le service de routage tente de relayer un message, vous pouvez obtenir un <xref:System.ServiceModel.FaultException> côté client, au lieu du <xref:System.ServiceModel.EndpointNotFoundException> que vous obtiendriez normalement en l'absence du service de routage. Un service de routage peut par conséquent masquer les exceptions et ne pas fournir une transparence complète, sauf si vous analysez les exceptions imbriquées.  
   
 ### <a name="tracing-exceptions"></a>Suivi d'exceptions  
- Lorsque vous envoyez un message à un point de terminaison dans une liste échoue, le Service de routage effectue le suivi des données d’exception résultantes et joint les détails de l’exception sous la forme d’une propriété de message nommée **Exceptions**. Cela conserve les données d'exception et autorise un accès utilisateur par programme via un inspecteur de message.  Les données d'exception sont stockées par message dans un dictionnaire qui mappe le nom du point de terminaison aux détails de l'exception rencontrée lors de la tentative d'envoi d'un message à ce point.  
+ Lorsque l’envoi d’un message à un point de terminaison dans une liste échoue, le service de routage effectue le suivi des données d’exception résultantes et joint les détails de l’exception sous la forme d’une propriété de message nommée **exceptions**. Cela conserve les données d'exception et autorise un accès utilisateur par programme via un inspecteur de message.  Les données d'exception sont stockées par message dans un dictionnaire qui mappe le nom du point de terminaison aux détails de l'exception rencontrée lors de la tentative d'envoi d'un message à ce point.  
   
 ### <a name="backup-endpoints"></a>Points de terminaison de sauvegarde  
  Chaque entrée de filtre dans la table de filtres peut éventuellement spécifier une liste de points de terminaison de sauvegarde, utilisés en cas de défaillance de la transmission lors de l'envoi au point de terminaison primaire. Si une telle défaillance se produit, le service de routage essaie de transmettre le message à la première entrée de la liste des points de terminaison de sauvegarde. Si cette tentative d'envoi rencontre également un échec de transmission, il essaie avec le point de terminaison de sauvegarde suivant sur la liste. Le service de routage continue à envoyer le message à chaque point de terminaison de la liste jusqu'à ce que le message soit correctement reçu, que tous les points de terminaison aient retourné un échec de transmission, ou qu'un point de terminaison retourne un autre échec que celui de la transmission.  
@@ -392,7 +392,7 @@ using (ServiceHost serviceHost =
 ## <a name="routing-service-and-impersonation"></a>Service de routage et emprunt d'identité  
  Le service de routage WCF peut être utilisé avec l'emprunt d'identité pour l'envoi et la réception de messages. Toutes les contraintes d'emprunt d'identité habituelles de Windows s'appliquent. Si vous devez configurer des autorisations de service ou de compte pour utiliser l'emprunt d'identité lors de l'écriture de votre service, vous devez effectuer ces mêmes étapes pour utiliser l'emprunt d'identité avec le service de routage. Pour plus d’informations, consultez [délégation et emprunt d’identité](delegation-and-impersonation-with-wcf.md).  
   
- L'emprunt d'identité avec le service de routage requiert l'utilisation de l'emprunt d'identité ASP.NET en mode de compatibilité ASP.NET ou l'utilisation d'informations d'identification Windows qui ont été configurées pour permettre l'emprunt d'identité. Pour plus d’informations sur le mode de compatibilité ASP.NET, consultez [Services WCF et ASP.NET](wcf-services-and-aspnet.md).  
+ L'emprunt d'identité avec le service de routage requiert l'utilisation de l'emprunt d'identité ASP.NET en mode de compatibilité ASP.NET ou l'utilisation d'informations d'identification Windows qui ont été configurées pour permettre l'emprunt d'identité. Pour plus d’informations sur le mode de compatibilité ASP.NET, consultez [services WCF et ASP.net](wcf-services-and-aspnet.md).  
   
 > [!WARNING]
 >  Le service de routage WCF ne prend pas en charge l'emprunt d'identité avec l'authentification de base.  

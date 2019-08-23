@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 71b2ebf6-3843-41e2-ad52-ffa5cd083a40
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aac7079d941e6774ca6c00fbece8ff72fbf3f0e1
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 92873277b4b25e4c1c5981628187078ac7cb5704
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663873"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920888"
 ---
 # <a name="bypasstrustedappstrongnames-element"></a>\<bypassTrustedAppStrongNames>, élément
 Spécifie s’il faut ignorer la validation des noms forts sur les assemblys de confiance totale qui sont chargés dans un <xref:System.AppDomain>niveau de confiance totale.  
@@ -41,7 +41,7 @@ Spécifie s’il faut ignorer la validation des noms forts sur les assemblys de 
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|`Value`|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |`true`|Les signatures avec nom fort sur les assemblys de confiance totale ne sont pas validées lorsque les assemblys sont chargés dans <xref:System.AppDomain>un niveau de confiance totale. Il s'agit de la valeur par défaut.|  
 |`false`|Les signatures avec nom fort sur les assemblys de confiance totale sont validées lorsque les assemblys sont chargés dans un <xref:System.AppDomain>niveau de confiance totale. La signature de nom fort est vérifiée uniquement pour l’exactitude de la signature; elle n’est pas comparée à un autre nom fort pour une correspondance.|  
@@ -70,7 +70,7 @@ Spécifie s’il faut ignorer la validation des noms forts sur les assemblys de 
 - Sans signature différée.  
   
 > [!NOTE]
->  Si la fonctionnalité de contournement a été désactivée pour toutes les applications sur l’ordinateur à l’aide d’une clé de Registre, ce paramètre de fichier de configuration n’a aucun effet. Pour plus d’informations, consultez [Guide pratique pour Désactiver la fonctionnalité consistant à ignorer les noms forts](../../../app-domains/how-to-disable-the-strong-name-bypass-feature.md).  
+> Si la fonctionnalité de contournement a été désactivée pour toutes les applications sur l’ordinateur à l’aide d’une clé de Registre, ce paramètre de fichier de configuration n’a aucun effet. Pour plus d’informations, consultez [Guide pratique pour Désactiver la fonctionnalité consistant à ignorer les noms forts](../../../app-domains/how-to-disable-the-strong-name-bypass-feature.md).  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment spécifier le comportement qui valide la signature de nom fort sur les assemblys de confiance totale.  
@@ -87,4 +87,4 @@ Spécifie s’il faut ignorer la validation des noms forts sur les assemblys de 
 
 - [Schéma des paramètres d’exécution](index.md)
 - [Schéma des fichiers de configuration](../index.md)
-- [Guide pratique pour désactiver la fonctionnalité consistant à ignorer les noms forts](../../../app-domains/how-to-disable-the-strong-name-bypass-feature.md)
+- [Guide pratique : désactiver la fonctionnalité consistant à ignorer les noms forts](../../../app-domains/how-to-disable-the-strong-name-bypass-feature.md)

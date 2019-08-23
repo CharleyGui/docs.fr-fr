@@ -2,21 +2,21 @@
 title: <localServiceSettings>, élément
 ms.date: 03/30/2017
 ms.assetid: 0658549c-3f65-46dd-8c5c-9895441ed734
-ms.openlocfilehash: 91e9944de30a78b904d1679512f622bcc2955af4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 36fcc9454a5762a4a375cc7f6eaee1c4cf0580e2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64610193"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931727"
 ---
-# <a name="localservicesettings-element"></a>\<localServiceSettings> element
+# <a name="localservicesettings-element"></a>\<localServiceSettings >, élément
 Spécifie les paramètres de sécurité d’un service local pour cette liaison.  
   
  \<system.serviceModel>  
 \<bindings>  
 \<customBinding>  
 \<binding>  
-\<security>  
+\<> de sécurité  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,7 +46,7 @@ Spécifie les paramètres de sécurité d’un service local pour cette liaison.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`detectReplays`|Valeur booléenne qui spécifie si les attaques par relecture contre le canal sont détectées et traitées automatiquement. La valeur par défaut est `false`.|  
+|`detectReplays`|Valeur booléenne qui spécifie si les attaques par relecture contre le canal sont détectées et traitées automatiquement. Par défaut, il s’agit de `false`.|  
 |`inactivityTimeout`|<xref:System.TimeSpan> positif qui spécifie la durée d'inactivité du canal avant qu'il n'expire. La valeur par défaut est « 01:00:00 ».|  
 |`issuedCookieLifeTime`|<xref:System.TimeSpan> qui spécifie la durée de vie de tous les nouveaux cookies de sécurité. Les cookies qui dépassent leur durée de vie sont recyclés et doivent être renégociés. La valeur par défaut est « 10:00:00 ».|  
 |`maxCachedCookies`|Entier positif qui spécifie le nombre maximal de cookies pouvant être mis en cache. La valeur par défaut est 1000.|  
@@ -68,8 +68,8 @@ Spécifie les paramètres de sécurité d’un service local pour cette liaison.
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Spécifie les options de sécurité d’une liaison personnalisée.|  
-|[\<secureConversationBootstrap>](../../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)|Spécifie les valeurs par défaut utilisées pour initialiser un service de conversation sécurisé.|  
+|[\<> de sécurité](security-of-custombinding.md)|Spécifie les options de sécurité d’une liaison personnalisée.|  
+|[\<secureConversationBootstrap>](secureconversationbootstrap.md)|Spécifie les valeurs par défaut utilisées pour initialiser un service de conversation sécurisé.|  
   
 ## <a name="remarks"></a>Notes  
  Les paramètres sont locaux car ils ne sont pas publiés dans le cadre de la stratégie de sécurité du service et n'affectent pas la liaison du client.  
@@ -93,9 +93,9 @@ Spécifie les paramètres de sécurité d’un service local pour cette liaison.
 - <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A>
 - <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Liaisons](../../../../../docs/framework/wcf/bindings.md)
-- [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
-- [Guide pratique pour Créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
-- [Sécurité de liaison personnalisée](../../../../../docs/framework/wcf/samples/custom-binding-security.md)
+- [Liaisons](../../../wcf/bindings.md)
+- [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
+- [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)
+- [Guide pratique : Créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Sécurité de liaison personnalisée](../../../wcf/samples/custom-binding-security.md)

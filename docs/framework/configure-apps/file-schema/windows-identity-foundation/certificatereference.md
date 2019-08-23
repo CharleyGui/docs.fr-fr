@@ -3,15 +3,15 @@ title: <certificateReference>
 ms.date: 03/30/2017
 ms.assetid: 2ac8bc14-e9f1-48fb-b662-f5991558fbe4
 author: BrucePerlerMS
-ms.openlocfilehash: c7dc9cfff15e70eff0086cfd98a19f3360ab8bb0
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: da8ea128466457409334cd0b4ee3246a923f969a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423027"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69941928"
 ---
 # <a name="certificatereference"></a>\<certificateReference>
-Spécifie les paramètres qui sont utilisés pour rechercher et valider le certificat X.509 dans un magasin de certificats.  
+Spécifie les paramètres utilisés pour rechercher et valider un certificat X. 509 dans un magasin de certificats.  
   
  \<system.identityModel.services>  
 \<federationConfiguration>  
@@ -43,20 +43,20 @@ Spécifie les paramètres qui sont utilisés pour rechercher et valider le certi
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|storeName|Le nom du magasin de certificats X.509. La valeur par défaut est « My ». Facultatif.|  
-|storeLocation|Un <xref:System.Security.Cryptography.X509Certificates.StoreLocation> valeur qui spécifie l’emplacement du magasin de certificats X.509. La valeur par défaut est « LocalMachine ». Facultatif.|  
-|x509FindType|Un <xref:System.Security.Cryptography.X509Certificates.X509FindType> valeur qui spécifie le type de recherche doit être exécuté. La valeur par défaut est « FindBySubjectDistinguishedName ». Facultatif.|  
-|findValue|Valeur à rechercher dans le magasin de certificats X.509. Facultatif.|  
-|isChainIncluded|Spécifie si la validation doit être effectuée à l’aide de la chaîne de certificats. La valeur par défaut est « true » ; la validation est effectuée à l’aide de la chaîne de certificats. Facultatif.|  
+|storeName|Nom du magasin de certificats X. 509. La valeur par défaut est «My». facultatif.|  
+|storeLocation|<xref:System.Security.Cryptography.X509Certificates.StoreLocation> Valeur qui spécifie l’emplacement du magasin de certificats X. 509. La valeur par défaut est «LocalMachine». facultatif.|  
+|x509FindType|<xref:System.Security.Cryptography.X509Certificates.X509FindType> Valeur qui spécifie le type de recherche à exécuter. La valeur par défaut est «FindBySubjectDistinguishedName». facultatif.|  
+|findValue|Valeur à rechercher dans le magasin de certificats X.509. facultatif.|  
+|isChainIncluded|Spécifie si la validation doit être effectuée à l’aide de la chaîne de certificats. La valeur par défaut est «true». la validation est effectuée à l’aide de la chaîne de certificats. facultatif.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- None  
+ Aucun  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<serviceCertificate>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicecertificate.md)|Configure le certificat qui est utilisé pour chiffrer et déchiffrer les jetons.|  
+|[\<serviceCertificate>](servicecertificate.md)|Configure le certificat utilisé pour chiffrer et déchiffrer les jetons.|  
   
 ## <a name="remarks"></a>Notes  
- Le `<certificateReference>` élément spécifie les paramètres qui sont utilisés pour rechercher et valider le certificat X.509 dans un magasin de certificats. Lorsqu’il est spécifié comme élément enfant de le `<serviceCertificate>` élément, elle spécifie les paramètres d’emplacement et la vérification du certificat X.509 qui est utilisée pour chiffrer et déchiffrer les jetons. Le `<certificateReference>` élément est représenté par la <xref:System.ServiceModel.Configuration.CertificateReferenceElement> classe.
+ L' `<certificateReference>` élément spécifie les paramètres utilisés pour rechercher et valider un certificat X. 509 dans un magasin de certificats. Lorsqu’il est spécifié en tant qu’élément enfant de `<serviceCertificate>` l’élément, il spécifie l’emplacement et les paramètres de vérification du certificat X. 509 utilisé pour chiffrer et déchiffrer les jetons. L' `<certificateReference>` élément est représenté par la <xref:System.ServiceModel.Configuration.CertificateReferenceElement> classe.

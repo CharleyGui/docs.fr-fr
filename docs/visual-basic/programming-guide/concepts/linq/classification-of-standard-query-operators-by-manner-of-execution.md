@@ -1,15 +1,15 @@
 ---
-title: Classification des opérateurs de requête Standard en mode d’exécution (Visual Basic)
+title: Classification des opérateurs de requête standard par mode d’exécution (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 7f55b0be-9f6e-44f8-865c-6afbea50cc54
-ms.openlocfilehash: 6331ad0994e121d2d7007c9999f3a684b83efe6d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e89c58707b4980b208395cce67434a6e5efa5d22
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62021763"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939271"
 ---
-# <a name="classification-of-standard-query-operators-by-manner-of-execution-visual-basic"></a>Classification des opérateurs de requête Standard en mode d’exécution (Visual Basic)
+# <a name="classification-of-standard-query-operators-by-manner-of-execution-visual-basic"></a>Classification des opérateurs de requête standard par mode d’exécution (Visual Basic)
 Les implémentations LINQ to Objects des méthodes d’opérateur de requête standard s’exécutent de deux manières principales : immédiate ou différée. En outre, les opérateurs de requête qui utilisent l’exécution différée peuvent être divisés en deux catégories : ceux prenant en charge la diffusion en continu et ceux ne la prenant pas en charge. Le fait de connaître le mode d’exécution des différents opérateurs de requête peut vous aider à comprendre les résultats obtenus à partir d’une requête donnée. Ceci est particulièrement vrai si la source de données change ou si vous générez une requête sur une autre requête. Cette rubrique classe les opérateurs de requête standard selon leur mode d’exécution.  
   
 ## <a name="manners-of-execution"></a>Modes d’exécution  
@@ -32,7 +32,7 @@ Les implémentations LINQ to Objects des méthodes d’opérateur de requête st
  Le tableau suivant classe chaque méthode d’opérateur de requête standard en fonction de son mode d’exécution.  
   
 > [!NOTE]
->  Si un opérateur est présent dans deux colonnes, deux séquences d’entrée sont impliquées dans l’opération et chacune d’elles est évaluée différemment. Dans ces cas, la première séquence dans la liste de paramètres est toujours évaluée de façon différée, avec diffusion en continu.  
+> Si un opérateur est présent dans deux colonnes, deux séquences d’entrée sont impliquées dans l’opération et chacune d’elles est évaluée différemment. Dans ces cas, la première séquence dans la liste de paramètres est toujours évaluée de façon différée, avec diffusion en continu.  
   
 |Opérateur de requête standard|Type de retour|Exécution immédiate|Exécution différée avec diffusion en continu|Exécution différée sans diffusion en continu|  
 |-----------------------------|-----------------|-------------------------|----------------------------------|---------------------------------------|  
@@ -91,5 +91,5 @@ Les implémentations LINQ to Objects des méthodes d’opérateur de requête st
 
 - <xref:System.Linq.Enumerable>
 - [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Syntaxe d’Expression de requête pour les opérateurs de requête Standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)
+- [Syntaxe des expressions de requête pour les opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)
 - [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)

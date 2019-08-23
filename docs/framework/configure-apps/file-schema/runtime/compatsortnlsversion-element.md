@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 782cc82e-83f7-404a-80b7-6d3061a8b6e3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0ebc4bf703bc22b642b0950fd60471342a615a5c
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: e3a348ac8da855e458b6208c51f9c51b48da3134
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663851"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927448"
 ---
 # <a name="compatsortnlsversion-element"></a>\<CompatSortNLSVersion >, élément
 Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'exécution de comparaisons de chaînes.  
@@ -60,7 +60,7 @@ Spécifie que le runtime doit utiliser des ordres de tri hérités lors de l'ex�
  Étant donné que les opérations de comparaison de chaînes, de tri <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> et de respect de la casse effectuées par la classe dans le .NET Framework 4 sont conformes à la norme Unicode <xref:System.String.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType> 5,1 <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> , les résultats des méthodes de comparaison de chaînes telles que et peuvent différer de versions précédentes du .NET Framework. Si votre application dépend d’un comportement hérité, vous pouvez restaurer la comparaison de chaînes et les règles de tri utilisées dans le .NET Framework 3,5 et les `<CompatSortNLSVersion>` versions antérieures en incluant l’élément dans le fichier de configuration de votre application.  
   
 > [!IMPORTANT]
->  La restauration de la comparaison de chaînes héritées et des règles de tri requiert également que la bibliothèque de liens dynamiques sort00001000.dll soit disponible sur le système local.  
+> La restauration de la comparaison de chaînes héritées et des règles de tri requiert également que la bibliothèque de liens dynamiques sort00001000.dll soit disponible sur le système local.  
   
  Vous pouvez également utiliser des règles de tri et de comparaison de chaîne héritées dans un domaine d'application spécifique en passant la chaîne « NetFx40_Legacy20SortingBehavior » à la méthode <xref:System.AppDomainSetup.SetCompatibilitySwitches%2A> lorsque vous créez le domaine d'application.  
   

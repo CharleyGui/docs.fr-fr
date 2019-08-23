@@ -2,12 +2,12 @@
 title: Migration de .NET Remoting vers WCF
 ms.date: 03/30/2017
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-ms.openlocfilehash: 4ca96fe38d766ffe48ab17dc113f4fce8997a0a8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 71e26ddd93605b02031aecba280e382528378ba6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651088"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69943034"
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>Migration de .NET Remoting vers WCF
 Cet article décrit comment migrer une application .NET Remoting vers Windows Communication Foundation (WCF). Il compare d'abord les concepts similaires entre ces deux produits, puis explique comment transposer plusieurs scénarios Remoting courants dans WCF.  
@@ -23,8 +23,8 @@ Cet article décrit comment migrer une application .NET Remoting vers Windows Co
 |Opérations de service|Méthodes publiques sur le type de serveur|Marquer avec l'attribut [OperationContract]|  
 |Sérialisation|ISerializable ou [Serializable]|DataContractSerializer ou XmlSerializer|  
 |Objets passés|Par valeur ou par référence|Par valeur uniquement|  
-|Erreurs/exceptions|Toute exception sérialisable|FaultContract\<TDetail>|  
-|Objets proxy clients|Proxys transparents fortement typés créés automatiquement à partir de MarshalByRefObjects|Proxys fortement typés sont générés à la demande à l’aide de ChannelFactory\<TChannel >|  
+|Erreurs/exceptions|Toute exception sérialisable|>\<TDetail FaultContract|  
+|Objets proxy clients|Proxys transparents fortement typés créés automatiquement à partir de MarshalByRefObjects|Les proxys fortement typés sont générés à la\<demande à l’aide de ChannelFactory TChannel >|  
 |Plateforme requise|Le client et le serveur doivent utiliser un système d'exploitation Microsoft et .NET|Multiplateforme|  
 |Format de message|Private|Normalisé (SOAP, WS-*, etc.)|  
   
@@ -97,11 +97,11 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(WCFServer), baseAddress)
 ```  
   
 > [!NOTE]
->  TCP est utilisé dans les deux exemples pour qu'ils soient les plus semblables possible. Consultez les procédures pas à pas des scénarios figurant plus loin dans cette rubrique pour obtenir des exemples d'utilisation du protocole HTTP.  
+> TCP est utilisé dans les deux exemples pour qu'ils soient les plus semblables possible. Consultez les procédures pas à pas des scénarios figurant plus loin dans cette rubrique pour obtenir des exemples d'utilisation du protocole HTTP.  
   
  Vous pouvez configurer et héberger des services WCF de plusieurs façons. Cet exemple, qui illustre ce que l'on appelle l'auto-hébergement, n'est qu'un exemple parmi d'autres. Pour plus d’informations, consultez les rubriques suivantes :  
   
-- [Guide pratique pour Définir un contrat de Service](how-to-define-a-wcf-service-contract.md)  
+- [Guide pratique pour Définir un contrat de service](how-to-define-a-wcf-service-contract.md)  
   
 - [Configuration des services à l’aide de fichiers de configuration](configuring-services-using-configuration-files.md)  
   
@@ -140,11 +140,11 @@ Customer customer = server.GetCustomer(42);
 Console.WriteLine($"  Customer {customer.FirstName} {customer.LastName} received.");
 ```  
   
- Cet exemple montre la programmation au niveau du canal, car elle présente plus de similitudes avec l'exemple Remoting. Est également disponible le **ajouter une référence de Service** approche dans Visual Studio qui génère du code pour simplifier la programmation côté client. Pour plus d’informations, consultez les rubriques suivantes :  
+ Cet exemple montre la programmation au niveau du canal, car elle présente plus de similitudes avec l'exemple Remoting. L’approche **Ajouter une référence de service** dans Visual Studio, qui génère du code pour simplifier la programmation du client, est également disponible. Pour plus d’informations, consultez les rubriques suivantes :  
   
 - [Programmation du client au niveau du canal](./extending/client-channel-level-programming.md)  
   
-- [Guide pratique pour Ajouter, mettre à jour ou supprimer une référence de Service](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)  
+- [Guide pratique pour Ajouter, mettre à jour ou supprimer une référence de service](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)  
   
 ### <a name="serialization-usage"></a>Utilisation de la sérialisation  
  Bien que .NET Remoting et WCF utilisent tous deux la sérialisation pour envoyer des objets entre le client et le serveur, il existe des différences importantes :  
@@ -158,9 +158,9 @@ Console.WriteLine($"  Customer {customer.FirstName} {customer.LastName} received
 #### <a name="serialization-in-net-remoting"></a>Sérialisation dans .NET Remoting  
  .NET Remoting prend en charge deux méthodes pour sérialiser et désérialiser des objets entre le client et le serveur :  
   
-- *Par valeur* : les valeurs de l’objet sont sérialisées au-delà des limites de niveau et une nouvelle instance de cet objet est créée sur l’autre couche. Tous les appels aux méthodes ou aux propriétés de cette nouvelle instance s'exécutent uniquement au niveau local et n'affectent pas la couche ou l'objet d'origine.  
+- *Par valeur* : les valeurs de l’objet sont sérialisées à travers les limites de niveau, et une nouvelle instance de cet objet est créée sur l’autre couche. Tous les appels aux méthodes ou aux propriétés de cette nouvelle instance s'exécutent uniquement au niveau local et n'affectent pas la couche ou l'objet d'origine.  
   
-- *Par référence* – une « référence d’objet » spéciale est sérialisée au-delà des limites de niveau. Quand une couche interagit avec les méthodes ou les propriétés de cet objet, elle communique avec l'objet d'origine situé sur la couche d'origine. Les objets par référence peuvent circuler dans les deux sens : du serveur au client ou du client au serveur.  
+- *Par référence* : une «référence d’objet» spéciale est sérialisée à travers les limites de niveau. Quand une couche interagit avec les méthodes ou les propriétés de cet objet, elle communique avec l'objet d'origine situé sur la couche d'origine. Les objets par référence peuvent circuler dans les deux sens : du serveur au client ou du client au serveur.  
   
  Les types par valeur dans Remoting sont marqués avec l'attribut [Serializable] ou implémentent ISerializable, comme dans l'exemple suivant :  
   
@@ -278,34 +278,34 @@ catch (FaultException<CustomerServiceFault> fault)
   
 - [Sécurité](./feature-details/security.md)  
   
-- [Conseils de sécurité WCF](./feature-details/security-guidance-and-best-practices.md)  
+- [Guide de sécurité WCF](./feature-details/security-guidance-and-best-practices.md)  
   
 ## <a name="migrating-to-wcf"></a>Migration vers WCF  
   
 ### <a name="why-migrate-from-remoting-to-wcf"></a>Pourquoi effectuer la migration de Remoting vers WCF ?  
   
-- **.NET remoting est un produit hérité.** Comme décrit dans [.NET Remoting](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507%28v=vs.100%29), il est considéré comme un produit hérité et n’est pas recommandé pour un nouveau développement. Il est recommandé d'utiliser WCF ou l'API Web ASP.NET pour les applications nouvelles et existantes.  
+- **.NET Remoting est un produit hérité.** Comme décrit dans [.NET Remoting](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507%28v=vs.100%29), il est considéré comme un produit hérité et n’est pas recommandé pour un nouveau développement. Il est recommandé d'utiliser WCF ou l'API Web ASP.NET pour les applications nouvelles et existantes.  
   
-- **WCF utilise les normes multiplateformes.** Conçu pour mettre en avant l'interopérabilité multiplateforme, WCF prend en charge de nombreuses normes (SOAP, WS-Security, WS-Trust, etc.). Un service WCF peut interagir avec des clients en cours d'exécution sur des systèmes d'exploitation autres que Windows. Remoting est principalement conçu pour les environnements dans lesquels le serveur et les applications clientes exécutent .NET Framework sur un système d'exploitation Windows.  
+- **WCF utilise les normes multiplateforme.** Conçu pour mettre en avant l'interopérabilité multiplateforme, WCF prend en charge de nombreuses normes (SOAP, WS-Security, WS-Trust, etc.). Un service WCF peut interagir avec des clients en cours d'exécution sur des systèmes d'exploitation autres que Windows. Remoting est principalement conçu pour les environnements dans lesquels le serveur et les applications clientes exécutent .NET Framework sur un système d'exploitation Windows.  
   
-- **WCF propose une sécurité intégrée.** Conçu dans un souci de sécurité, WCF offre de nombreuses options en ce qui concerne l'authentification, la sécurité au niveau du transport, la sécurité au niveau des messages, etc. S'il facilite l'interopérabilité des applications, Remoting n'est pas conçu pour assurer la sécurité dans les environnements non approuvés. De par sa conception, WCF fonctionne dans les environnements approuvés et non approuvés.  
+- **WCF offre une sécurité intégrée.** Conçu dans un souci de sécurité, WCF offre de nombreuses options en ce qui concerne l'authentification, la sécurité au niveau du transport, la sécurité au niveau des messages, etc. S'il facilite l'interopérabilité des applications, Remoting n'est pas conçu pour assurer la sécurité dans les environnements non approuvés. De par sa conception, WCF fonctionne dans les environnements approuvés et non approuvés.  
   
 ### <a name="migration-recommendations"></a>Recommandations en matière de migration  
  Voici les étapes recommandées pour effectuer la migration de Remoting vers WCF :  
   
-- **Créer le contrat de service.** Définissez vos types d'interface de service et marquez-les avec l'attribut [ServiceContract]. Marquez toutes les méthodes que les clients peuvent appeler avec [OperationContract].  
+- **Créez le contrat de service.** Définissez vos types d'interface de service et marquez-les avec l'attribut [ServiceContract]. Marquez toutes les méthodes que les clients peuvent appeler avec [OperationContract].  
   
-- **Créer le contrat de données.** Définissez les types de données échangées entre le serveur et le client, puis marquez-les avec l'attribut [DataContract]. Marquez tous les champs et propriétés que le client pourra utiliser avec [DataMember].  
+- **Créez le contrat de données.** Définissez les types de données échangées entre le serveur et le client, puis marquez-les avec l'attribut [DataContract]. Marquez tous les champs et propriétés que le client pourra utiliser avec [DataMember].  
   
-- **Créer le contrat d’erreur (facultatif).** Créez les types échangés entre le client et le serveur en cas d'erreurs. Marquez ces types avec [DataContract] et [DataMember] pour les rendre sérialisables. Concernant les opérations de service marquées avec [OperationContract], marquez-les aussi avec [FaultContract] pour indiquer les erreurs qu'elles peuvent retourner.  
+- **Créez le contrat d’erreur (facultatif).** Créez les types échangés entre le client et le serveur en cas d'erreurs. Marquez ces types avec [DataContract] et [DataMember] pour les rendre sérialisables. Concernant les opérations de service marquées avec [OperationContract], marquez-les aussi avec [FaultContract] pour indiquer les erreurs qu'elles peuvent retourner.  
   
-- **Configurer et héberger le service.** Une fois le contrat de service créé, l’étape suivante consiste à configurer une liaison pour exposer le service à un point de terminaison. Pour plus d’informations, consultez [points de terminaison : Adresses, liaisons et contrats](./feature-details/endpoints-addresses-bindings-and-contracts.md).  
+- **Configurez et hébergez le service.** Une fois le contrat de service créé, l’étape suivante consiste à configurer une liaison pour exposer le service à un point de terminaison. Pour plus d’informations, [consultez points de terminaison: Adresses, liaisons et contrats](./feature-details/endpoints-addresses-bindings-and-contracts.md).  
   
  À l'issue de la migration d'une application Remoting vers WCF, il est toujours important de supprimer les dépendances à .NET Remoting. Cela permet de s'assurer que toutes les vulnérabilités de Remoting sont supprimées de l'application. Notamment :  
   
-- **Cesser d’utiliser MarshalByRefObject.** Le type MarshalByRefObject concerne uniquement Remoting et n’est pas utilisé par WCF. Les types d’applications qui définissent des sous-classes de MarshalByRefObject doivent être supprimés ou modifiés.  
+- **Interrompez l’utilisation de MarshalByRefObject.** Le type MarshalByRefObject concerne uniquement Remoting et n’est pas utilisé par WCF. Les types d’applications qui définissent des sous-classes de MarshalByRefObject doivent être supprimés ou modifiés.  
   
-- **Cesser d’utilisation de [Serializable] et ISerializable.** Conçus à l'origine pour sérialiser les types dans les environnements fiables, l'attribut [Serializable] et l'interface ISerializable sont utilisés par Remoting. La sérialisation WCF s'appuie sur les types marqués avec [DataContract] et [DataMember]. Les types de données utilisés par une application doivent être modifiés afin d'utiliser [DataContract] et non l'interface ISerializable ou [Serializable].  
+- **Cesser d’utiliser [Serializable] et ISerializable.** Conçus à l'origine pour sérialiser les types dans les environnements fiables, l'attribut [Serializable] et l'interface ISerializable sont utilisés par Remoting. La sérialisation WCF s'appuie sur les types marqués avec [DataContract] et [DataMember]. Les types de données utilisés par une application doivent être modifiés afin d'utiliser [DataContract] et non l'interface ISerializable ou [Serializable].  
   
 ### <a name="migration-scenarios"></a>Scénarios de migration  
  Nous allons à présent voir comment transposer des scénarios Remoting courants suivants dans WCF :  
@@ -317,7 +317,7 @@ catch (FaultException<CustomerServiceFault> fault)
 3. Le client envoie un objet par valeur au serveur  
   
 > [!NOTE]
->  L'envoi d'un objet par référence du client vers le serveur n'est pas autorisé dans WCF.  
+> L'envoi d'un objet par référence du client vers le serveur n'est pas autorisé dans WCF.  
   
  Quand vous lisez ces scénarios, tenez compte du fait que nos interfaces de planning de référence pour .NET Remoting ressemblent à l’exemple suivant. L'implémentation de .NET Remoting n'est pas importante ici, car notre objectif est de montrer comment utiliser WCF pour implémenter des fonctionnalités équivalentes.  
   
@@ -335,7 +335,7 @@ public class RemotingServer : MarshalByRefObject
 }  
 ```  
   
-#### <a name="scenario-1-service-returns-an-object-by-value"></a>Scénario 1 : Service retourne un objet par valeur  
+#### <a name="scenario-1-service-returns-an-object-by-value"></a>Scénario 1 : Le service retourne un objet par valeur  
  Ce scénario présente un serveur qui retourne un objet par valeur au client. WCF retourne toujours les objets du serveur par valeur. Les étapes suivantes décrivent donc la création d'un service WCF normal.  
   
 1. Commencez par définir une interface publique pour le service WCF et marquez-la avec l'attribut [ServiceContract]. [OperationContract] nous permet d'identifier les méthodes côté serveur qui seront appelées par notre client.  
@@ -417,9 +417,9 @@ public class RemotingServer : MarshalByRefObject
        customerServiceHost.Open();  
    ```  
   
-     Quand ServiceHost démarre, il utilise le fichier web.config pour établir le contrat, la liaison et le point de terminaison appropriés. Pour plus d’informations sur les fichiers de configuration, consultez [fichiers de configuration des Services à l’aide de la Configuration](./configuring-services-using-configuration-files.md). On parle d'auto-hébergement pour désigner ce type de démarrage du serveur. Pour en savoir plus sur les autres options pour l’hébergement de services WCF, consultez [Services d’hébergement](./hosting-services.md).  
+     Quand ServiceHost démarre, il utilise le fichier web.config pour établir le contrat, la liaison et le point de terminaison appropriés. Pour plus d’informations sur les fichiers de configuration, consultez [Configuration des services à l’aide de fichiers de configuration](./configuring-services-using-configuration-files.md). On parle d'auto-hébergement pour désigner ce type de démarrage du serveur. Pour en savoir plus sur les autres options d’hébergement des services WCF, consultez [services d’hébergement](./hosting-services.md).  
   
-6. Le fichier app.config du projet client doit déclarer les informations de liaison correspondante pour le point de terminaison du service. Pour ce faire dans Visual Studio le plus simple consiste à utiliser **ajouter une référence de Service**, qui met automatiquement à jour le fichier app.config. Vous pouvez également ajouter manuellement ces mêmes modifications.  
+6. Le fichier app.config du projet client doit déclarer les informations de liaison correspondante pour le point de terminaison du service. Pour ce faire, le plus simple est d’utiliser **Ajouter une référence de service**, qui met automatiquement à jour le fichier app. config. Vous pouvez également ajouter manuellement ces mêmes modifications.  
   
     ```xml  
     <configuration>  
@@ -434,7 +434,7 @@ public class RemotingServer : MarshalByRefObject
     </configuration>  
     ```  
   
-     Pour plus d’informations sur l’utilisation de **ajouter une référence de Service**, consultez [Comment : Ajouter, mettre à jour ou supprimer une référence de Service](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference).  
+     Pour plus d’informations surl’utilisation de [ajouter une référence de service, consultez Procédure: Ajouter, mettre à jour ou supprimer une référence](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)de service.  
   
 7. Nous pouvons maintenant appeler le service WCF à partir du client. Pour cela, nous créons une fabrique de canaux pour ce service, nous demandons un canal, puis nous appelons directement la méthode que nous voulons sur ce canal. Si nous pouvons procéder de la sorte, c'est parce que le canal implémente l'interface du service et qu'il gère pour nous la logique sous-jacente des demandes/réponses. La valeur de retour de cet appel de méthode est la copie désérialisée de la réponse du serveur.  
   
@@ -448,7 +448,7 @@ public class RemotingServer : MarshalByRefObject
   
  Les objets retournés par WCF du serveur au client sont toujours par valeur. Les objets sont des copies désérialisées des données envoyées par le serveur. Le client peut appeler des méthodes sur ces copies locales sans aucun risque d'appeler le code serveur via des rappels.  
   
-#### <a name="scenario-2-server-returns-an-object-by-reference"></a>Scénario 2 : Serveur retourne un objet par référence  
+#### <a name="scenario-2-server-returns-an-object-by-reference"></a>Scénario 2 : Le serveur retourne un objet par référence  
  Ce scénario présente un serveur qui fournit un objet au client par référence. Dans .NET Remoting, ceci est géré automatiquement pour n’importe quel type dérivé de MarshalByRefObject, qui est sérialisé par référence. Autoriser plusieurs clients à avoir des objets côté serveur de session indépendants est un exemple de ce scénario. Comme mentionné précédemment, les objets retournés par un service WCF sont toujours des objets par valeur. Il n'y a donc pas d'équivalent direct à un objet par référence, mais vous pouvez obtenir des résultats semblables à la sémantique par référence en utilisant un objet <xref:System.ServiceModel.EndpointAddress10>. Il s'agit d'un objet par valeur sérialisable qui peut être utilisé par le client pour obtenir un objet par référence de session sur le serveur. Cela permet la prise en charge de plusieurs clients avec des objets côté serveur de session indépendants.  
   
 1. Tout d'abord, nous devons définir un contrat de service WCF qui correspond à l'objet de session proprement dit.  
@@ -524,7 +524,7 @@ public class RemotingServer : MarshalByRefObject
   
 4. Pour modifier le fichier de configuration du serveur, nous devons effectuer les deux tâches suivantes, comme le montre l'exemple ci-dessous :  
   
-    1. Déclarez un \<client > section qui décrit le point de terminaison pour l’objet de session. Cette opération est nécessaire, car le serveur joue également le rôle de client dans cette situation.  
+    1. Déclarez \<une section de > client qui décrit le point de terminaison de l’objet de session. Cette opération est nécessaire, car le serveur joue également le rôle de client dans cette situation.  
   
     2. Déclarez les points de terminaison pour la fabrique et l'objet de session. Cette opération est nécessaire afin de permettre au client de communiquer avec les points de terminaison du service pour acquérir l'objet EndpointAddress10 et créer le canal de session.  
   
@@ -631,7 +631,7 @@ public class RemotingServer : MarshalByRefObject
   
  WCF retourne toujours les objets par valeur, mais il est possible de prendre en charge l'équivalent de la sémantique par référence en utilisant l'objet EndpointAddress10. Le client peut ainsi demander une instance de service WCF de session avec laquelle il peut ensuite interagir comme n'importe quel autre service WCF.  
   
-#### <a name="scenario-3-client-sends-server-a-by-value-instance"></a>Scénario 3 : Le client envoie serveur une Instance par valeur  
+#### <a name="scenario-3-client-sends-server-a-by-value-instance"></a>Scénario 3 : Le client envoie une instance par valeur au serveur  
  Ce scénario présente un client qui envoie une instance d'objet non primitif au serveur par valeur. Étant donné que WCF envoie uniquement les objets par valeur, ce scénario illustre une utilisation normale de WCF.  
   
 1. Utilisez le même service WCF que celui du scénario 1.  
@@ -654,9 +654,9 @@ public class RemotingServer : MarshalByRefObject
      L'objet Customer est sérialisé, puis envoyé au service où il est désérialisé en nouvelle copie de cet objet.  
   
     > [!NOTE]
-    >  Ce code illustre également l'envoi d'un type dérivé (PremiumCustomer). L'interface de service attend un objet Customer, mais l'attribut [KnownType] sur la classe Customer indique que PremiumCustomer est également autorisé. Les tentatives de WCF de sérialisation ou de désérialisation de tout autre type via cette interface de service échouent.  
+    > Ce code illustre également l'envoi d'un type dérivé (PremiumCustomer). L'interface de service attend un objet Customer, mais l'attribut [KnownType] sur la classe Customer indique que PremiumCustomer est également autorisé. Les tentatives de WCF de sérialisation ou de désérialisation de tout autre type via cette interface de service échouent.  
   
- Dans WCF, les données sont normalement échangées par valeur. Cela garantit que l'appel de méthodes sur l'un de ces objets de données s'exécute uniquement au niveau local (le code sur l'autre couche n'est pas appelé). Bien qu’il soit possible d’obtenir quelque chose comme objets par référence retournés *de* le serveur, il n’est pas possible pour un client de passer un objet par référence *à* le serveur. Une conversation entre un client et un serveur peut être effectuée dans WCF à l'aide d'un service duplex. Pour plus d’informations, consultez [Services Duplex](./feature-details/duplex-services.md).  
+ Dans WCF, les données sont normalement échangées par valeur. Cela garantit que l'appel de méthodes sur l'un de ces objets de données s'exécute uniquement au niveau local (le code sur l'autre couche n'est pas appelé). Bien qu’il soit possible d’obtenir des objets par référence renvoyés par le serveur, il n’est pas possible pour un client de passer un objet par référence *au* serveur. Une conversation entre un client et un serveur peut être effectuée dans WCF à l'aide d'un service duplex. Pour plus d’informations, consultez [services duplex](./feature-details/duplex-services.md).  
   
 ## <a name="summary"></a>Récapitulatif  
  .NET Remoting est une infrastructure de communication destinée à être utilisée uniquement dans des environnements entièrement fiables. Il s'agit d'un produit hérité qui est uniquement pris en charge à des fins de compatibilité descendante. Il ne doit pas être utilisé pour développer de nouvelles applications. À l'inverse, WCF a été conçu dans une optique de sécurité et est recommandé pour les applications nouvelles et existantes. Microsoft recommande de migrer les applications Remoting existantes vers WCF ou l'API Web ASP.NET.

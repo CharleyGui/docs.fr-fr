@@ -13,15 +13,15 @@ helpviewer_keywords:
 - conditional statements [Visual Basic], GoTo statement
 - GoTo statement [Visual Basic], syntax
 ms.assetid: 313274c2-8ab3-4b9c-9ba3-0fd6798e4f6d
-ms.openlocfilehash: c4dd249620ba1bf445642ce4600498f6beb30461
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3034c84684e94dfe8c334107a16df8cbd227c4d4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61637970"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912447"
 ---
 # <a name="goto-statement"></a>GoTo, instruction
-Crée une branche inconditionnelle vers une ligne spécifiée d’une procédure.  
+Rebranche de manière inconditionnelle vers une ligne spécifiée dans une procédure.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,33 +31,33 @@ GoTo line
   
 ## <a name="part"></a>Élément  
  `line`  
- Obligatoire. Toute étiquette de ligne.  
+ Requis. Toute étiquette de ligne.  
   
 ## <a name="remarks"></a>Notes  
- La `GoTo` instruction peut créer une branche que vers des lignes dans la procédure dans laquelle elle apparaît. La ligne doit avoir une ligne de l’étiquette qui `GoTo` peuvent faire référence à. Pour plus d'informations, voir [Procédure : Étiqueter des instructions](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md).  
+ L' `GoTo` instruction peut créer une branche uniquement vers les lignes de la procédure dans laquelle elle apparaît. La ligne doit avoir une étiquette de ligne `GoTo` qui peut faire référence à. Pour plus d’informations, consultez [Guide pratique pour ](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md)Étiquettes.  
   
 > [!NOTE]
->  `GoTo` instructions peuvent rendre le code difficile à lire et à gérer. Si possible, utilisez une structure de contrôle à la place. Pour plus d’informations, consultez [flux de contrôle](../../../visual-basic/programming-guide/language-features/control-flow/index.md).  
+> `GoTo`les instructions peuvent rendre le code difficile à lire et à gérer. Dans la mesure du possible, utilisez une structure de contrôle à la place. Pour plus d’informations, consultez [Control Flow](../../../visual-basic/programming-guide/language-features/control-flow/index.md).  
   
- Vous ne pouvez pas utiliser un `GoTo` instruction de branchement depuis l’extérieur un `For`... `Next`, `For Each`... `Next`, `SyncLock`... `End SyncLock`, `Try`... `Catch`... `Finally`, `With`... `End With`, ou `Using`... `End Using` vers une étiquette à l’intérieur.  
+ Vous ne pouvez pas `GoTo` utiliser une instruction pour créer une `For`branche à partir de l’extérieur d’un... `Next`, `For Each`... `Next`, `SyncLock`... `End SyncLock`, `Try`... `Catch`... `Finally`, `With`... `End With`, ou`Using`... `End Using` construction d’une étiquette à l’intérieur de.  
   
-## <a name="branching-and-try-constructions"></a>Création de branche et Constructions Try  
- Dans un `Try`... `Catch`... `Finally` construction, les règles suivantes s’appliquent à la création de branche avec la `GoTo` instruction.  
+## <a name="branching-and-try-constructions"></a>Création de branche et d’essai  
+ Au sein `Try`d’un... `Catch`... , les règles suivantes s’appliquent à la création de `GoTo` branches avec l’instruction. `Finally`  
   
-|Bloc ou région|Création de branche à partir d’à l’extérieur|Création de branche à partir d’à l’intérieur|  
+|Bloc ou région|Créer une branche à partir de l’extérieur|Branchement hors de l’intérieur|  
 |---------------------|-------------------------------|-------------------------------|  
-|`Try` Bloc|Uniquement à partir d’un `Catch` bloc de la même construction <sup>1</sup>|Uniquement à en dehors de la construction entière|  
-|`Catch` Bloc|Jamais autorisé|Uniquement à en dehors de la construction entière, ou vers le `Try` bloc de la même construction <sup>1</sup>|  
-|`Finally` Bloc|Jamais autorisé|Jamais autorisé|  
+|`Try`plage|Uniquement à partir `Catch` d’un bloc de la même construction <sup>1</sup>|Uniquement vers l’extérieur de la construction entière|  
+|`Catch`plage|Jamais autorisé|Uniquement à l’extérieur de la construction entière ou au `Try` bloc de la même construction <sup>1</sup>|  
+|`Finally`plage|Jamais autorisé|Jamais autorisé|  
   
- <sup>1</sup> si un `Try`... `Catch`... `Finally` est imbriquée dans une autre, un `Catch` bloc peut créer une branche dans le `Try` bloc son propre niveau d’imbrication, mais pas dans n’importe quel autre `Try` bloc. Imbriquée `Try`... `Catch`... `Finally` construction doit être entièrement contenue dans un `Try` ou `Catch` bloc de la construction dans laquelle elle est imbriquée.  
+ <sup>1</sup> s’il `Try`s’agit d’un... `Catch`... la construction est imbriquée dans une autre `Catch` , un bloc peut créer `Try` une branche dans le bloc à son propre niveau d’imbrication, mais `Try` pas dans un autre bloc. `Finally` Une instruction imbriquée `Try`... `Catch`... la construction doit être entièrement contenue `Try` dans `Catch` un bloc ou de la construction dans laquelle elle est imbriquée. `Finally`  
   
- L’illustration suivante montre une `Try` imbriquée dans une autre. Différentes branches entre les blocs des deux constructions sont indiquées comme valide ou non valide.  
+ L’illustration suivante montre une `Try` construction imbriquée dans une autre. Plusieurs branches parmi les blocs des deux constructions sont indiquées comme valides ou non valides.  
   
  ![Diagramme graphique de branchement dans des constructions Try](./media/goto-statement/try-construction-branching.gif)  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant utilise la `GoTo` instruction pour les étiquettes de ligne dans une procédure.  
+## <a name="example"></a>Exemples  
+ L’exemple suivant utilise l' `GoTo` instruction pour créer une branche vers les étiquettes de ligne dans une procédure.  
   
  [!code-vb[VbVbalrStatements#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#31)]  
   

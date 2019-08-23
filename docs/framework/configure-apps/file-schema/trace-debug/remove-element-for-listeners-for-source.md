@@ -1,5 +1,5 @@
 ---
-title: <remove> Élément pour <listeners> pour <source>
+title: <remove>, Élément <listeners> de pour<source>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/remove
@@ -7,20 +7,20 @@ helpviewer_keywords:
 - remove element for <listeners> for <source>
 - <remove> element for <listeners> for <source>
 ms.assetid: 3ff6b578-273d-407f-b07f-8251f1f9f5d0
-ms.openlocfilehash: 4809c471deb51e0560b438b5a2c8849daad34ca0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: edd27dd262004aead7db4d81db8ecab0e831dac1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701604"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926992"
 ---
-# <a name="remove-element-for-listeners-for-source"></a>\<Supprimer >, élément pour \<écouteurs > pour \<source >
+# <a name="remove-element-for-listeners-for-source"></a>\<supprimer > élément pour \<les écouteurs > pour \<le > source
 Supprime un écouteur de la collection `Listeners` pour une source de trace.  
   
  \<configuration>  
 \<system.diagnostics>  
 \<sources>  
-\<source>  
+\<> source  
 \<listeners>  
 \<remove>  
   
@@ -37,7 +37,7 @@ Supprime un écouteur de la collection `Listeners` pour une source de trace.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`name`|Attribut requis.<br /><br /> Le nom de l’écouteur à supprimer de la `Listeners` collection.|  
+|`name`|Attribut requis.<br /><br /> Nom de l’écouteur à supprimer de la `Listeners` collection.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -50,17 +50,17 @@ Supprime un écouteur de la collection `Listeners` pour une source de trace.
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
 |`sources`|Contient les sources de trace qui lancent des messages de traçage.|  
 |`source`|Spécifie une source de trace qui lance des messages de traçage.|  
-|`listeners`|Spécifie des écouteurs qui collectent, stockent et acheminent les messages.|  
+|`listeners`|Spécifie les écouteurs qui collectent, stockent et acheminent les messages.|  
   
 ## <a name="remarks"></a>Notes  
- Le `<remove>` élément supprime un écouteur spécifié de la `Listeners` collection pour une source de trace.  
+ L' `<remove>` élément supprime un écouteur spécifié de la `Listeners` collection pour une source de trace.  
   
- Vous pouvez supprimer un élément à partir de la `Listeners` collection pour une source de suivi par programme en appelant le <xref:System.Diagnostics.TraceListenerCollection.Remove%2A> méthode sur le <xref:System.Diagnostics.TraceSource.Listeners%2A> propriété de la <xref:System.Diagnostics.TraceSource> instance.  
+ Vous pouvez supprimer un élément de la `Listeners` collection pour une source de suivi par programmation en appelant la <xref:System.Diagnostics.TraceListenerCollection.Remove%2A> méthode sur la <xref:System.Diagnostics.TraceSource.Listeners%2A> propriété de l' <xref:System.Diagnostics.TraceSource> instance.  
   
- Cet élément peut être utilisé dans le fichier de configuration machine (Machine.config) et le fichier de configuration d’application.  
+ Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser le `<remove>` élément avant d’utiliser le `<add>` élément pour ajouter l’écouteur `console` à la `Listeners` collection pour la source de suivi `TraceSourceApp`.  
+ L’exemple suivant `<remove>` montre comment utiliser l’élément avant d’utiliser l' `<add>` élément `console` pour ajouter l’écouteur à la `Listeners` collection pour la source `TraceSourceApp`de trace.  
   
 ```xml  
 <configuration>  
@@ -83,6 +83,6 @@ Supprime un écouteur de la collection `Listeners` pour une source de trace.
 
 - <xref:System.Diagnostics.TraceSource.Listeners%2A>
 - <xref:System.Diagnostics.TraceSource>
-- [Schéma des paramètres de trace et de débogage](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
-- [\<clear>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/clear-element-for-listeners-for-source.md)
-- [Écouteurs de suivi](../../../../../docs/framework/debug-trace-profile/trace-listeners.md)
+- [Schéma des paramètres de trace et de débogage](index.md)
+- [\<clear>](clear-element-for-listeners-for-source.md)
+- [Écouteurs de suivi](../../../debug-trace-profile/trace-listeners.md)

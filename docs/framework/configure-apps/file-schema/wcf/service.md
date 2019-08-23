@@ -2,12 +2,12 @@
 title: <service>
 ms.date: 03/30/2017
 ms.assetid: 13123dd6-c4a9-4a04-a984-df184b851788
-ms.openlocfilehash: 68bddc01b02d9885b3f0fc4c2cbc5c3249de03f4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 69f3c70514fc2bcab1b4ef6a45036de98d1af7b7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670394"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936525"
 ---
 # <a name="service"></a>\<service>
 L'élément `service` contient les paramètres d'un service Windows Communication Foundation (WCF). Il contient également les points de terminaison qui exposent le service.  
@@ -38,14 +38,14 @@ L'élément `service` contient les paramètres d'un service Windows Communicatio
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<endpoint>](../../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md)|Collection d’éléments `endpoint` qui exposent ce service.|  
-|[\<host>](../../../../../docs/framework/configure-apps/file-schema/wcf/host.md)|Spécifie l'hôte de cette instance de service. Cet élément est de type <xref:System.ServiceModel.Configuration.HostElement>.|  
+|[\<endpoint>](endpoint-element.md)|Collection d’éléments `endpoint` qui exposent ce service.|  
+|[\<host>](host.md)|Spécifie l'hôte de cette instance de service. Cet élément est de type <xref:System.ServiceModel.Configuration.HostElement>.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<services>](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md)|Élément racine de tous les éléments de configuration WCF.|  
+|[\<services>](services.md)|Élément racine de tous les éléments de configuration WCF.|  
   
 ## <a name="remarks"></a>Notes  
  Les services sont définis dans la section `services` du fichier de configuration. Un assembly peut contenir n'importe quel nombre de services. Chacun dispose de sa propre section de configuration de `service`. Cette section et son contenu définissent le contrat de service, le comportement et les points de terminaison de ce service en particulier.  
@@ -71,4 +71,4 @@ L'élément `service` contient les paramètres d'un service Windows Communicatio
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.Configuration.ServiceElement>
-- [Configuration des services](../../../../../docs/framework/wcf/configuring-services.md)
+- [Configuration des services](../../../wcf/configuring-services.md)

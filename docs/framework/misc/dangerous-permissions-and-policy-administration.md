@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: 1929e854-23a0-4bb1-94be-e8aa3b609e32
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 17a596d9fc223dc53268ae9c91f7d02357b0a9b8
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: f79fd3e0678fc0bba0d3074904f9ce9460fc6c20
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489978"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910928"
 ---
 # <a name="dangerous-permissions-and-policy-administration"></a>Autorisations dangereuses et administration de stratégie
 Plusieurs des opérations protégées pour lesquelles le .NET Framework fournit des autorisations risquent de permettre le contournement du système de sécurité. Ces autorisations dangereuses doivent être accordées uniquement à du code fiable, et seulement en cas de nécessité. Il n’existe généralement aucune défense contre du code malveillant, si ces autorisations sont accordées.  
   
 > [!NOTE]
->  Dans le .NET Framework 4, ont été les modifications importantes apportées à la terminologie et le modèle de sécurité .NET Framework. Pour plus d’informations sur ces modifications, consultez [modifications de sécurité](../../../docs/framework/security/security-changes.md).  
+> Dans le .NET Framework 4, des modifications importantes ont été apportées à la terminologie et au modèle de sécurité .NET Framework. Pour plus d’informations sur ces modifications, consultez [modifications de sécurité](../../../docs/framework/security/security-changes.md).  
   
  Les autorisations dangereuses sont expliquées dans le tableau suivant.  
   
@@ -40,4 +40,4 @@ Plusieurs des opérations protégées pour lesquelles le .NET Framework fournit 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Instructions de codage sécurisé](../../../docs/standard/security/secure-coding-guidelines.md)
+- [Instructions de codage sécurisé](../../standard/security/secure-coding-guidelines.md)

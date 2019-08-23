@@ -14,25 +14,25 @@ helpviewer_keywords:
 - text boxes [Windows Forms], formatting text
 - formatting [Windows Forms]
 ms.assetid: 2bc23ddb-0529-4489-a1a2-ad253cb43f9a
-ms.openlocfilehash: a6fe5b30c457fae2d53c946092b214f492fe5e9b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4919e94c23b1a67680ea0f360304ee0f75c7f425
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013268"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963221"
 ---
 # <a name="how-to-set-font-attributes-for-the-windows-forms-richtextbox-control"></a>Procédure : définir des attributs de police pour le contrôle RichTextBox Windows Forms
-Les formulaires Windows <xref:System.Windows.Forms.RichTextBox> contrôle a de nombreuses options pour mettre en forme le texte affiché. Vous pouvez afficher les caractères sélectionnés en gras, italique ou en souligné, à l’aide de la <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A> propriété. Vous pouvez également utiliser cette propriété pour changer la taille et la police des caractères sélectionnés. Le <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A> propriété permet de modifier la couleur des caractères sélectionnés.  
+Le contrôle <xref:System.Windows.Forms.RichTextBox> Windows Forms possède de nombreuses options de mise en forme du texte qu’il affiche. Vous pouvez mettre les caractères sélectionnés en gras, soulignés ou en italiques à l' <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A> aide de la propriété. Vous pouvez également utiliser cette propriété pour changer la taille et la police des caractères sélectionnés. La <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A> propriété vous permet de modifier la couleur des caractères sélectionnés.  
   
 ### <a name="to-change-the-appearance-of-characters"></a>Pour changer l’apparence de caractères  
   
-1. Définir le <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A> propriété à une police appropriée.  
+1. Affectez <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A> à la propriété une police appropriée.  
   
-     Pour permettre aux utilisateurs de définir la famille de polices, la taille et le type de caractères dans une application, vous utiliserez généralement le <xref:System.Windows.Forms.FontDialog> composant. Pour une vue d’ensemble, consultez [Vue d’ensemble du composant FontDialog](fontdialog-component-overview-windows-forms.md).  
+     Pour permettre aux utilisateurs de définir la famille de polices, la taille et la police d’une application, vous devez <xref:System.Windows.Forms.FontDialog> généralement utiliser le composant. Pour une vue d’ensemble, consultez [Vue d’ensemble du composant FontDialog](fontdialog-component-overview-windows-forms.md).  
   
-2. Définir le <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A> propriété sur une couleur appropriée.  
+2. Affectez <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A> à la propriété une couleur appropriée.  
   
-     Pour permettre aux utilisateurs de définir la couleur dans une application, vous utiliserez généralement le <xref:System.Windows.Forms.ColorDialog> composant. Pour une vue d’ensemble, consultez [Vue d’ensemble du composant ColorDialog](colordialog-component-overview-windows-forms.md).  
+     Pour permettre aux utilisateurs de définir la couleur dans une application, vous devez généralement utiliser <xref:System.Windows.Forms.ColorDialog> le composant. Pour une vue d’ensemble, consultez [Vue d’ensemble du composant ColorDialog](colordialog-component-overview-windows-forms.md).  
   
     ```vb  
     RichTextBox1.SelectionFont = New Font("Tahoma", 12, FontStyle.Bold)  
@@ -51,7 +51,7 @@ Les formulaires Windows <xref:System.Windows.Forms.RichTextBox> contrôle a de n
     ```  
   
     > [!NOTE]
-    >  Ces propriétés affectent uniquement le texte sélectionné ou, si aucun texte n’est sélectionné, le texte tapé à l’emplacement actif du point d’insertion. Pour plus d’informations sur la sélection de texte par programmation, consultez <xref:System.Windows.Forms.TextBoxBase.Select%2A>.  
+    > Ces propriétés affectent uniquement le texte sélectionné ou, si aucun texte n’est sélectionné, le texte tapé à l’emplacement actif du point d’insertion. Pour plus d’informations sur la sélection de texte par <xref:System.Windows.Forms.TextBoxBase.Select%2A>programmation, consultez.  
   
 ## <a name="see-also"></a>Voir aussi
 

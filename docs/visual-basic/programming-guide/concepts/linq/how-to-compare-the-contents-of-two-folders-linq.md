@@ -2,12 +2,12 @@
 title: 'Procédure : Comparer le contenu de deux dossiers (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 903c7e9a-f48d-4a07-a8a8-5450d2646efa
-ms.openlocfilehash: 75283faf25e7a26055b1122eb45e23c510fc6b39
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 5db73b57cfa21de4f1d14299ed7956a322876898
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593006"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940681"
 ---
 # <a name="how-to-compare-the-contents-of-two-folders-linq-visual-basic"></a>Procédure : Comparer le contenu de deux dossiers (LINQ) (Visual Basic)
 Cet exemple montre trois façons de comparer deux listes de fichiers :  
@@ -19,7 +19,7 @@ Cet exemple montre trois façons de comparer deux listes de fichiers :
 - En recherchant la différence ensembliste pour récupérer les fichiers qui se trouvent dans un dossier, mais pas dans l’autre  
   
     > [!NOTE]
-    >  Les techniques présentées ici peuvent être adaptées pour comparer des séquences d’objets de tout type.  
+    > Les techniques présentées ici peuvent être adaptées pour comparer des séquences d’objets de tout type.  
   
  La classe `FileComparer` présentée ici montre comment utiliser une classe de comparateur personnalisée avec les opérateurs de requête standard. La classe n’est pas destinée à être utilisée dans des scénarios réels. Elle utilise simplement le nom et la longueur en octets de chaque fichier pour déterminer si les dossiers ont un contenu identique. Dans un scénario réel, vous devriez modifier ce comparateur pour effectuer une vérification d’égalité plus rigoureuse.  
   
@@ -114,7 +114,7 @@ End Module
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Créer un projet d’application console VB.NET, avec un `Imports` instruction pour l’espace de noms System.Linq.
+ Créez un projet d’application console VB.net, avec `Imports` une instruction pour l’espace de noms System. Linq.
  
 ## <a name="see-also"></a>Voir aussi
 

@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 09f2e4ee-1d08-4ba8-8936-83394fee319d
-ms.openlocfilehash: 5b3aca6a71f88762084934d0d9c7cea15b5366c8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 56f6e13763b5230e046c0838892393b3672a54be
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034461"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937043"
 ---
 # <a name="applying-an-xslt-transform-to-a-dataset"></a>Application d'une transformation XSLT à un DataSet
-Le **WriteXml** méthode de la <xref:System.Data.DataSet> vous permet d’écrire le contenu d’un **DataSet** en tant que données XML. La tâche qui suit généralement consiste à transformer ce XML en un autre format à l'aide de transformations XSL (XSLT). Toutefois, la synchronisation un **DataSet** avec un <xref:System.Xml.XmlDataDocument> vous permet d’appliquer une feuille de style XSLT au contenu d’un **DataSet** sans devoir d’abord écrire le contenu de la  **Jeu de données** en tant que données XML à l’aide **WriteXml**.  
+La méthode **WriteXml** de <xref:System.Data.DataSet> vous permet d’écrire le contenu d’un **DataSet** sous forme de données XML. La tâche qui suit généralement consiste à transformer ce XML en un autre format à l'aide de transformations XSL (XSLT). Toutefois, la synchronisation d’un DataSet <xref:System.Xml.XmlDataDocument> avec un objet vous permet d’appliquer une feuille de style XSLT au contenu d’un **DataSet** sans avoir à écrire d’abord le contenu du **DataSet** sous forme de données XML à l’aide de **WriteXml**.  
   
- L’exemple suivant remplit un **DataSet** avec des tables et des relations, synchronise le **DataSet** avec un **XmlDataDocument**, puis écrit une partie de la  **Jeu de données** sous la forme d’un élément HTML fichier à l’aide d’une feuille de style XSLT. Le contenu de la feuille de style XSLT vous est présenté ci-après.  
+ L’exemple suivant remplit un **DataSet** avec des tables et des relations, synchronise le **DataSet** avec un **XmlDataDocument**, puis écrit une partie du **DataSet** sous la forme d’un fichier HTML à l’aide d’une feuille de style XSLT. Le contenu de la feuille de style XSLT vous est présenté ci-après.  
   
 ```xml  
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">  
@@ -56,10 +56,10 @@ Le **WriteXml** méthode de la <xref:System.Data.DataSet> vous permet d’écrir
 </xsl:stylesheet>  
 ```  
   
- Le code suivant remplit la **DataSet** et applique la feuille de style XSLT.  
+ Le code suivant remplit le **DataSet** et applique la feuille de style XSLT.  
   
 > [!NOTE]
->  Si vous appliquez une feuille de style XSLT à un **DataSet** qui contient des relations, vous obtiendrez de meilleures performances si vous définissez la **Nested** propriété de la <xref:System.Data.DataRelation> à **true**pour chaque relation imbriquée. Cela vous permet d'utiliser les feuilles de style XSLT qui implémentent un traitement naturel vertical pour naviguer dans la hiérarchie et transformer les données, au lieu de recourir aux axes de localisation XPath exigeants en performances (par exemple, frère précédent et frère suivant dans les expressions de test de nœud de feuille de style) pour y naviguer. Pour plus d’informations sur les relations imbriquées, consultez [d’imbrication de DataRelations](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md).  
+> Si vous appliquez une feuille de style XSLT à un **jeu de données** qui contient des relations, vous obtiendrez de meilleures performances si vous affectez <xref:System.Data.DataRelation> la valeur **true** à la propriété **Nested** de chaque relation imbriquée. Cela vous permet d'utiliser les feuilles de style XSLT qui implémentent un traitement naturel vertical pour naviguer dans la hiérarchie et transformer les données, au lieu de recourir aux axes de localisation XPath exigeants en performances (par exemple, frère précédent et frère suivant dans les expressions de test de nœud de feuille de style) pour y naviguer. Pour plus d’informations sur les relations imbriquées, consultez [imbrication de DataRelations](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md).  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  

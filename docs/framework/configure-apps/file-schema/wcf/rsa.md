@@ -2,12 +2,12 @@
 title: <rsa>
 ms.date: 03/30/2017
 ms.assetid: ae1f2267-e40d-42ff-8abf-06ab7067bdb9
-ms.openlocfilehash: 0e307069bd3a98153cc66147ba7bcf511cf13a8e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dd8e5ab11a7c019a8fe967f1c14b88a922a16c33
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670653"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934734"
 ---
 # <a name="rsa"></a>\<rsa>
 Un client WCF sécurisé qui se connecte à un point de terminaison avec cette identité vérifie que les revendications présentées par le serveur contiennent une revendication intégrant la clé publique RSA utilisée pour construire cette identité.  
@@ -28,23 +28,23 @@ Un client WCF sécurisé qui se connecte à un point de terminaison avec cette i
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|par défaut|Chaîne facultative. Valeur de clé publique RSA à comparer sur le client.|  
+|value|Chaîne facultative. Valeur de clé publique RSA à comparer sur le client.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Spécifie l'identité du service à authentifier par le client.|  
+|[\<identity>](identity.md)|Spécifie l'identité du service à authentifier par le client.|  
   
 ## <a name="remarks"></a>Notes  
  Un contrôle RSA vous permet de limiter l'authentification à un seul certificat basé sur sa clé RSA ou de générer votre propre valeur de clé RSA. Cette opération active une authentification plus stricte d'une clé RSA spécifique aux dépens du service, qui n'utilise plus les clients existants lorsque la valeur de clé RSA est modifiée.  
   
- Pour plus d’informations sur l’utilisation d’identité pour valider un service à un client, consultez [identité de Service et d’authentification](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Pour plus d’informations sur l’utilisation de l’identité pour valider un service auprès d’un client, consultez [identité du service et authentification](../../../wcf/feature-details/service-identity-and-authentication.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Le code de configuration suivant spécifie la valeur de clé publique d'un certificat X.509 utilisé pour authentifier un serveur.  
   
 ```xml  
@@ -59,5 +59,5 @@ Un client WCF sécurisé qui se connecte à un point de terminaison avec cette i
 - <xref:System.ServiceModel.EndpointAddress>
 - <xref:System.ServiceModel.EndpointAddress.Identity%2A>
 - <xref:System.ServiceModel.RsaEndpointIdentity>
-- [Identité du service et authentification](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)
+- [Identité du service et authentification](../../../wcf/feature-details/service-identity-and-authentication.md)
+- [\<identity>](identity.md)

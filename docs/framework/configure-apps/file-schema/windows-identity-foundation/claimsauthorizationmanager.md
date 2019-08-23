@@ -3,15 +3,15 @@ title: <claimsAuthorizationManager>
 ms.date: 03/30/2017
 ms.assetid: 9354eee3-f692-4ad6-8427-3169686b8bcc
 author: BrucePerlerMS
-ms.openlocfilehash: 59d47eda97e97629408ece12a1d1dfbe804feb3e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 74ca031f7017d51adaa7a71593f537b64abbeae6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61667312"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942888"
 ---
 # <a name="claimsauthorizationmanager"></a>\<claimsAuthorizationManager>
-Inscrit un gestionnaire d’autorisation des revendications pour les revendications entrantes.  
+Inscrit un gestionnaire d’autorisations des revendications pour les revendications entrantes.  
   
  \<system.identityModel>  
 \<identityConfiguration>  
@@ -36,27 +36,27 @@ Inscrit un gestionnaire d’autorisation des revendications pour les revendicati
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|type|Un type personnalisé qui dérive de la <xref:System.Security.Claims.ClaimsAuthorizationManager> classe. Pour plus d’informations sur la façon de spécifier le `type` d’attribut, consultez [références de Type personnalisé](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md).|  
+|type|Type personnalisé qui dérive de la <xref:System.Security.Claims.ClaimsAuthorizationManager> classe. Pour plus d’informations sur la spécification de `type` l’attribut, consultez [références de types personnalisés](../windows-workflow-foundation/index.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- S’il existe aucune `type` attribut, ou si le `type` les références d’attribut le <xref:System.Security.Claims.ClaimsAuthenticationManager> (classe), le `<claimsAuthorizationManager>` élément ne prend pas d’éléments enfants ; Toutefois, les classes dérivées de <xref:System.Security.Claims.ClaimsAuthorizationManager> peut définir les éléments de configuration enfants.  
+ S’il n’y `type` a aucun attribut, ou `type` si l’attribut <xref:System.Security.Claims.ClaimsAuthenticationManager> fait référence à `<claimsAuthorizationManager>` la classe, l’élément ne prend pas d’éléments enfants; <xref:System.Security.Claims.ClaimsAuthorizationManager> Toutefois, les classes dérivées de peuvent définir des éléments de configuration enfants.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<identityConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Spécifie les paramètres de l’identité de niveau de service.|  
+|[\<identityConfiguration>](identityconfiguration.md)|Spécifie les paramètres d’identité au niveau du service.|  
   
 ## <a name="remarks"></a>Notes  
- Le comportement par défaut fourni par le biais du <xref:System.Security.Claims.ClaimsAuthorizationManager> classe autorise toujours les revendications entrantes. Si aucun `type` attribut est spécifié ou si le `type` attribut spécifie le <xref:System.Security.Claims.ClaimsAuthorizationManager> (classe), le `<claimsAuthorizationManager>` élément ne prend pas d’éléments enfants. Vous pouvez spécifier le `type` attribut d’inscrire un type dérivé la <xref:System.Security.Claims.ClaimsAuthorizationManager> classe pour implémenter un comportement personnalisé. Les classes dérivées peuvent prendre en charge la configuration via les éléments enfants de la `<claimsAuthorizationManager>` élément en substituant le <xref:System.Security.Claims.ClaimsAuthorizationManager.LoadCustomConfiguration%2A> méthode pour traiter ces éléments. Le schéma défini pour les éléments enfants revient le Concepteur de la classe.  
+ Le comportement par défaut fourni par <xref:System.Security.Claims.ClaimsAuthorizationManager> la classe autorise toujours les revendications entrantes. Si aucun `type` attribut n’est spécifié ou si `type` l’attribut spécifie la <xref:System.Security.Claims.ClaimsAuthorizationManager> classe `<claimsAuthorizationManager>` , l’élément ne prend pas d’éléments enfants. Vous pouvez spécifier l' `type` attribut pour inscrire un type dérivé de la <xref:System.Security.Claims.ClaimsAuthorizationManager> classe afin d’implémenter un comportement personnalisé. Les classes dérivées peuvent prendre en charge la configuration `<claimsAuthorizationManager>` par le biais d’éléments <xref:System.Security.Claims.ClaimsAuthorizationManager.LoadCustomConfiguration%2A> enfants de l’élément en substituant la méthode pour gérer ces éléments. Le schéma défini pour les éléments enfants est jusqu’au concepteur de la classe.  
   
 > [!IMPORTANT]
->  Lorsque vous utilisez le <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> ou le <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> classe pour fournir un contrôle d’accès basé sur les revendications dans votre code, la configuration d’identité qui est référencée par le `<federationConfiguration>` élément configure le Gestionnaire d’autorisation des revendications et la stratégie qui est utilisée pour rendre décisions d’autorisation. Cela est vrai, même dans les scénarios qui ne sont pas les scénarios Web passifs, par exemple les applications Windows Communication Foundation (WCF) ou une application qui n’est pas basée sur le Web. Si l’application n’est pas une application Web passive, le `<claimsAuthorizationManager>` élément (et ses éléments de la stratégie enfant, le cas échéant) de la configuration de l’identité référencée sont les seuls paramètres appliqués. Tous les autres paramètres sont ignorés. Pour plus d’informations, consultez le [ \<federationConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md) élément.  
+> Lors de l' <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> utilisation de <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> la classe ou pour fournir un contrôle d’accès basé sur les revendications dans votre code, la configuration d’identité `<federationConfiguration>` référencée par l’élément configure le gestionnaire d’autorisation des revendications et la stratégie utilisée pour effectuer décisions d’autorisation. Cela est vrai, même dans les scénarios qui ne sont pas des scénarios Web passifs, par exemple des applications Windows Communication Foundation (WCF) ou une application qui n’est pas basée sur le Web. Si l’application n’est pas une application Web passive `<claimsAuthorizationManager>` , l’élément (et ses éléments de stratégie enfants, le cas échéant) de la configuration d’identité référencée sont les seuls paramètres appliqués. Tous les autres paramètres sont ignorés. Pour plus d’informations, consultez l' [ \<élément federationConfiguration >](federationconfiguration.md) .  
   
- Cet élément définit les <xref:System.IdentityModel.Configuration.IdentityConfiguration.ClaimsAuthorizationManager%2A?displayProperty=nameWithType> propriété.  
+ Cet élément définit la <xref:System.IdentityModel.Configuration.IdentityConfiguration.ClaimsAuthorizationManager%2A?displayProperty=nameWithType> propriété.  
   
-## <a name="example"></a>Exemple  
- Le code XML suivant illustre la configuration d’une autorisation de revendications gestionnaire qui implémente la stratégie composée de paires de ressource-action qui spécifient chacune des combinaisons booléennes des revendications comportant un demandeur doit effectuer l’action sur la ressource. Vous trouverez le code qui implémente le Gestionnaire d’autorisation des revendications capable d’utiliser cette stratégie dans le `ClaimsBasedAuthorization` exemple.  
+## <a name="example"></a>Exemples  
+ Le code XML suivant montre la configuration d’un gestionnaire d’autorisations pour les revendications qui implémente une stratégie composée de paires ressource-action chacune spécifiant des combinaisons booléennes des revendications qu’un demandeur doit posséder pour exécuter l’action sur la ressource. Le code qui implémente le gestionnaire d’autorisations des revendications capable d’utiliser cette stratégie est disponible dans `ClaimsBasedAuthorization` l’exemple.  
   
 ```xml  
 <system.identityModel>  

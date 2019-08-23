@@ -1,5 +1,5 @@
 ---
-title: Définition de Classes (Visual Basic)
+title: Définition des classes (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - execution [Visual Basic], ending
@@ -15,69 +15,69 @@ helpviewer_keywords:
 - Terminate event [Visual Basic]
 - execution [Visual Basic], stopping
 ms.assetid: 07018828-2d49-4cf5-a44b-19fb15d9efea
-ms.openlocfilehash: 3129824f6e4047420c422503cc366a1c8d28b7e7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 679f4fd55f142c2c4bb63a556feb95c074960b12
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61865290"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69914731"
 ---
-# <a name="walkthrough-defining-classes-visual-basic"></a>Procédure pas à pas : Définition de Classes (Visual Basic)
+# <a name="walkthrough-defining-classes-visual-basic"></a>Procédure pas à pas : Définition des classes (Visual Basic)
 
-Cette procédure pas à pas montre comment définir des classes que vous pouvez ensuite utiliser pour créer des objets. Il vous montre comment ajouter des propriétés et méthodes à la nouvelle classe et vous montre comment initialiser un objet.  
+Cette procédure pas à pas montre comment définir des classes, que vous pouvez ensuite utiliser pour créer des objets. Elle vous montre également comment ajouter des propriétés et des méthodes à la nouvelle classe, et montre comment initialiser un objet.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ## <a name="to-define-a-class"></a>Pour définir une classe
   
-1. Créez un projet en cliquant sur **nouveau projet** sur le **fichier** menu. La boîte de dialogue **Nouveau projet** s’affiche.  
+1. Créez un projet en cliquant sur **nouveau projet** dans le menu **fichier** . La boîte de dialogue **Nouveau projet** s’affiche.  
   
-2. Sélectionnez les applications Windows à partir de la liste des modèles de projet Visual Basic pour afficher le nouveau projet.  
+2. Sélectionnez application Windows dans la liste des modèles de projet de Visual Basic pour afficher le nouveau projet.  
   
-3. Ajoutez une nouvelle classe au projet en cliquant sur **ajouter une classe** sur le **projet** menu. La boîte de dialogue **Ajouter un nouvel élément** s’affiche.  
+3. Ajoutez une nouvelle classe au projet en cliquant sur **Ajouter une classe** dans le menu **projet** . La boîte de dialogue **Ajouter un nouvel élément** s’affiche.  
   
-4. Sélectionnez le **classe** modèle.  
+4. Sélectionnez le modèle de **classe** .  
   
-5. Nommez la nouvelle classe `UserNameInfo.vb`, puis cliquez sur **ajouter** pour afficher le code pour la nouvelle classe.  
+5. Nommez la nouvelle `UserNameInfo.vb`classe, puis cliquez sur **Ajouter** pour afficher le code de la nouvelle classe.  
   
      [!code-vb[VbVbalrOOP#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#5)]
   
     > [!NOTE]
-    >  Vous pouvez utiliser Visual Basic **éditeur de Code** pour ajouter une classe à votre formulaire de démarrage en tapant le `Class` mot clé suivie du nom de la nouvelle classe. Le **éditeur de Code** fournit un correspondant `End Class` instruction pour vous.  
+    > Vous pouvez utiliser l' **éditeur de code** Visual Basic pour ajouter une classe à votre formulaire de démarrage en `Class` tapant le mot clé suivi du nom de la nouvelle classe. L' **éditeur de code** fournit une `End Class` instruction correspondante.  
   
-6. Définir un champ privé pour la classe en ajoutant le code suivant entre les `Class` et `End Class` instructions :  
+6. Définissez un champ privé pour la classe en ajoutant le code suivant entre les `Class` instructions `End Class` et:  
   
      [!code-vb[VbVbalrOOP#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#7)]
   
-     Déclaration du champ en tant que `Private` signifie qu’il peut être utilisé uniquement dans la classe. Vous pouvez rendre les champs disponibles à partir de l’extérieur d’une classe à l’aide des modificateurs d’accès comme `Public` qui fournissent un accès plus. Pour plus d’informations, consultez [niveaux en Visual Basic d’accès](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+     La déclaration du champ comme `Private` signifie qu’il peut être utilisé uniquement dans la classe. Vous pouvez rendre les champs disponibles à l’extérieur d’une classe en utilisant des modificateurs d’accès tels `Public` que qui fournissent plus d’accès. Pour plus d’informations, consultez [niveaux d’accès dans Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
-7. Définir une propriété pour la classe en ajoutant le code suivant :  
+7. Définissez une propriété pour la classe en ajoutant le code suivant:  
   
      [!code-vb[VbVbalrOOP#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#8)]
   
-8. Définissez une méthode pour la classe en ajoutant le code suivant :  
+8. Définissez une méthode pour la classe en ajoutant le code suivant:  
   
      [!code-vb[VbVbalrOOP#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#9)]
   
-9. Définir un constructeur paramétrable pour la nouvelle classe en ajoutant une procédure nommée `Sub New`:  
+9. Définissez un constructeur paramétrable pour la nouvelle classe en ajoutant une procédure nommée `Sub New`:  
   
      [!code-vb[VbVbalrOOP#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#10)]
   
-     Le `Sub New` est appelé automatiquement lorsqu’un objet basé sur cette classe est créé. Ce constructeur définit la valeur du champ qui contient le nom d’utilisateur.  
+     Le `Sub New` constructeur est appelé automatiquement lorsqu’un objet basé sur cette classe est créé. Ce constructeur définit la valeur du champ qui contient le nom d’utilisateur.  
   
 ## <a name="to-create-a-button-to-test-the-class"></a>Pour créer un bouton pour tester la classe
   
-1. Modifiez le formulaire de démarrage en mode design en cliquant sur son nom dans **l’Explorateur de solutions** , puis en cliquant sur **Concepteur de vues**. Par défaut, le formulaire de démarrage pour les projets d’Application de Windows est nommé Form1.vb. Le formulaire principal s’affiche alors.  
+1. Modifiez le formulaire de démarrage en mode Design en cliquant avec le bouton droit sur son nom dans **Explorateur de solutions** puis en cliquant sur **Concepteur de vues**. Par défaut, le formulaire de démarrage pour les projets d’application Windows est nommé Form1. vb. Le formulaire principal s’affiche alors.  
   
-2. Ajoutez un bouton au formulaire principal et double-cliquez dessus pour afficher le code pour le `Button1_Click` Gestionnaire d’événements. Ajoutez le code suivant pour appeler la procédure de test :  
+2. Ajoutez un bouton au formulaire principal et double-cliquez dessus pour afficher le code du gestionnaire d' `Button1_Click` événements. Ajoutez le code suivant pour appeler la procédure de test:  
   
      [!code-vb[VbVbalrOOP#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#12)]
   
 ## <a name="to-run-your-application"></a>Pour exécuter votre application
   
-1. Exécutez votre application en appuyant sur F5. Cliquez sur le bouton sur le formulaire pour appeler la procédure de test. Il affiche un message indiquant que l’original `UserName` est « MOORE, BOBBY », car la procédure appelée le `Capitalize` méthode de l’objet.  
+1. Exécutez votre application en appuyant sur F5. Cliquez sur le bouton du formulaire pour appeler la procédure de test. Il affiche un message indiquant que l’original `UserName` est «Moore, Bobby», parce que la procédure a `Capitalize` appelé la méthode de l’objet.  
   
-2. Cliquez sur **OK** pour fermer la boîte de message. Le `Button1 Click` procédure modifie la valeur de la `UserName` propriété et affiche un message indiquant que la nouvelle valeur de `UserName` est « Worden, Joe ».  
+2. Cliquez sur **OK** pour fermer la boîte de message. La `Button1 Click` procédure modifie la valeur de la `UserName` propriété et affiche un message indiquant que la nouvelle valeur de `UserName` est «worden, Joe».  
   
 ## <a name="see-also"></a>Voir aussi
 

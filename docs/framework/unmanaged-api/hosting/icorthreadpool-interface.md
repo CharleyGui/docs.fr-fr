@@ -16,18 +16,18 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a30f10e322961d52c1fa726d5fd81e4c710a5835
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8d245afe2d34c06a5bb9ca39b1c0dd4924fadada
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61699628"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69911247"
 ---
 # <a name="icorthreadpool-interface"></a>ICorThreadpool, interface
-Fournit des méthodes pour accéder à la réserve de threads.  
+Fournit des méthodes pour accéder au pool de threads.  
   
 > [!NOTE]
->  Cette interface est réservée à un usage interne uniquement.  
+> Cette interface est réservée à un usage interne uniquement.  
   
 ## <a name="methods"></a>Méthodes  
   
@@ -46,11 +46,11 @@ Fournit des méthodes pour accéder à la réserve de threads.
 |[CorGetAvailableThreads, méthode](../../../../docs/framework/unmanaged-api/hosting/icorthreadpool-corgetavailablethreads-method.md)|Réservé à un usage interne uniquement.|  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

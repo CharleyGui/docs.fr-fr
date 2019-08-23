@@ -1,19 +1,19 @@
 ---
-title: 'Procédure : Configurer un Service Windows Communication Foundation pour utiliser le Port de partage'
+title: 'Procédure : Configurer un service de Windows Communication Foundation pour utiliser le partage de ports'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 6400bc71-a858-4ac2-8d5a-caa72d3b5482
-ms.openlocfilehash: bc0c822659ee57ac8dd87a2adddcd32e934ea4fb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e92ce3468bd43456ac3f838cfc44ea7c6624502b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61699712"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912219"
 ---
-# <a name="how-to-configure-a-windows-communication-foundation-service-to-use-port-sharing"></a>Procédure : Configurer un Service Windows Communication Foundation pour utiliser le Port de partage
-Le moyen le plus simple à utiliser dans votre application Windows Communication Foundation (WCF) de partage de ports net.tcp:// consiste à exposer un service à l’aide de la <xref:System.ServiceModel.NetTcpBinding>.  
+# <a name="how-to-configure-a-windows-communication-foundation-service-to-use-port-sharing"></a>Procédure : Configurer un service de Windows Communication Foundation pour utiliser le partage de ports
+Le moyen le plus simple d’utiliser le <xref:System.ServiceModel.NetTcpBinding>partage de ports net. TCP://dans votre application Windows Communication Foundation (WCF) consiste à exposer un service à l’aide de.  
   
  Cette liaison fournit une propriété <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> qui contrôle si le partage de ports net.tcp:// est activé pour le service configuré avec cette liaison.  
   
@@ -21,7 +21,7 @@ Le moyen le plus simple à utiliser dans votre application Windows Communication
   
 ### <a name="to-enable-nettcp-port-sharing-on-a-nettcpbinding-in-code"></a>Pour activer le partage de ports net.tcp:// sur une liaison NetTcpBinding dans du code  
   
-1. Créez un service pour implémenter un contrat appelé `IMyService` et appelez-le `MyService`,.  
+1. Créez un service pour implémenter un contrat `IMyService` appelé et l' `MyService`appeler,.  
   
      [!code-csharp[c_ConfigurePortSharing#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_configureportsharing/cs/source.cs#1)]
      [!code-vb[c_ConfigurePortSharing#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_configureportsharing/vb/source.vb#1)]  
@@ -37,7 +37,7 @@ Le moyen le plus simple à utiliser dans votre application Windows Communication
      [!code-vb[c_ConfigurePortSharing#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_configureportsharing/vb/source.vb#3)]  
   
     > [!NOTE]
-    >  Cet exemple utilise le port TCP par défaut 808 parce que l'URI de l'adresse du point de terminaison ne spécifie pas de numéro de port différent. Vu que le partage de ports est activé explicitement sur la liaison de transport, ce service peut partager le port 808 avec d’autres services dans d’autres processus. Si le partage de ports n'a pas été autorisé et si une autre application utilise déjà le port 808, ce service lève une <xref:System.ServiceModel.AddressAlreadyInUseException> lorsqu'il est ouvert.  
+    > Cet exemple utilise le port TCP par défaut 808 parce que l'URI de l'adresse du point de terminaison ne spécifie pas de numéro de port différent. Vu que le partage de ports est activé explicitement sur la liaison de transport, ce service peut partager le port 808 avec d’autres services dans d’autres processus. Si le partage de ports n'a pas été autorisé et si une autre application utilise déjà le port 808, ce service lève une <xref:System.ServiceModel.AddressAlreadyInUseException> lorsqu'il est ouvert.  
   
 ### <a name="to-enable-nettcp-port-sharing-on-a-nettcpbinding-in-configuration"></a>Pour activer le partage de ports net.tcp:// sur une liaison NetTcpBinding dans la configuration  
   
@@ -63,4 +63,4 @@ Le moyen le plus simple à utiliser dans votre application Windows Communication
 ## <a name="see-also"></a>Voir aussi
 
 - [Partage de ports Net.TCP](../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)
-- [Guide pratique pour Activer le Service de partage de ports Net.TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md)
+- [Guide pratique pour Activer le service de partage de ports net. TCP](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md)

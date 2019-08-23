@@ -7,12 +7,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], column freezing
 - data [Windows Forms], displaying
 ms.assetid: 87412dd2-478f-4751-af87-dafc591fc215
-ms.openlocfilehash: d38c8d73bc70e7e521b476ca78c8f102d003c538
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 7ebdf7a1598ac3cd61005ae607e5bfbe7cb49059
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040333"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933717"
 ---
 # <a name="how-to-freeze-columns-in-the-windows-forms-datagridview-control-using-the-designer"></a>Procédure : figer des colonnes dans le contrôle DataGridView Windows Forms à l’aide du concepteur
 Quand des utilisateurs consultent des données affichées dans un contrôle Windows Forms <xref:System.Windows.Forms.DataGridView>, ils doivent parfois faire fréquemment référence à une même colonne ou un même ensemble de colonnes. Par exemple, lorsque vous affichez une table d’informations client qui contient de nombreuses colonnes, il est utile d’afficher le nom du client à tout moment, tout en permettant à d’autres colonnes de faire défiler la région visible.
@@ -30,14 +30,14 @@ Quand des utilisateurs consultent des données affichées dans un contrôle Wind
 3. Dans la grille Propriétés de la **colonne** , <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A> affectez `true`à la propriété la valeur.
 
     > [!NOTE]
-    >  Vous pouvez également geler une colonne quand vous l’ajoutez en sélectionnant la zone figée dans la boîte de dialogue **Ajouter une colonne** .
+    > Vous pouvez également geler une colonne quand vous l’ajoutez en sélectionnant la zone figée dans la boîte de dialogue **Ajouter une colonne** .
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridViewColumn.Frozen%2A?displayProperty=nameWithType>
 - [Guide pratique pour Ajouter et supprimer des colonnes dans le contrôle DataGridView Windows Forms à l’aide du concepteur](add-and-remove-columns-in-the-datagrid-using-the-designer.md)
-- [Guide pratique pour Activer la réorganisation des colonnes dans le contrôle DataGridView Windows Forms à l’aide du concepteur](enable-column-reordering-in-the-datagrid-using-the-designer.md)
+- [Guide pratique : Activer la réorganisation des colonnes dans le contrôle DataGridView Windows Forms à l’aide du concepteur](enable-column-reordering-in-the-datagrid-using-the-designer.md)
 - [Guide pratique pour Afficher le texte de droite à gauche dans Windows Forms pour la globalisation](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/7d3337xw(v=vs.100))
-- [Guide pratique : Créer un projet Application Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project)
-- [Guide pratique : Ajouter des contrôles à Windows Forms](how-to-add-controls-to-windows-forms.md)
+- [Guide pratique pour Créer un projet Application Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project)
+- [Guide pratique pour Ajouter des contrôles à Windows Forms](how-to-add-controls-to-windows-forms.md)

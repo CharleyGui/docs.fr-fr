@@ -8,12 +8,12 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 88fb1a17-6ac9-4b57-8028-193aec1f727c
-ms.openlocfilehash: fa7c0c22d070ec12cb67252dee7dca02c5160b9e
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: c9670b00ea4a6b552469b7f33e924b8ab128d9d0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66380085"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948023"
 ---
 # <a name="redirecting-assembly-versions"></a>Redirection des versions d'assemblys
 
@@ -23,7 +23,7 @@ Vous pouvez rediriger des références de liaison de compilation vers des assemb
 ## <a name="assembly-unification-and-default-binding"></a>Unification d’assembly et liaison par défaut
  Les liaisons aux assemblys .NET Framework sont parfois redirigées via un processus appelé *unification d’assembly*. Le .NET Framework est constitué d’une version du Common Language Runtime et d’environ deux douzaines d’assemblys .NET Framework qui composent la bibliothèque de types. Ces assemblys .NET Framework sont traités par le runtime comme une unité individuelle. Par défaut, lors du lancement d’une application, toutes les références à des types dans le code exécuté par le runtime sont dirigées vers les assemblys .NET Framework dont le numéro de version est identique au runtime chargé dans un processus. Les redirections qui se produisent avec ce modèle correspondent au comportement par défaut du runtime.
 
- Par exemple, si vos références de l’application des types dans l’espace de noms System.XML et a été créé à l’aide de .NET Framework 4.5, il contient des références statiques à l’assembly System.XML livré avec le runtime version 4.5. Si vous voulez rediriger la référence de liaison pour pointer vers l’assembly System.XML livré avec .NET Framework 4, vous devez écrire des informations de redirection dans le fichier de configuration de l’application. Une redirection de liaison dans un fichier de configuration pour un assembly .NET Framework unifié annule l’unification pour cet assembly.
+ Par exemple, si votre application référence des types dans l’espace de noms System. XML et a été créée à l’aide de la .NET Framework 4,5, elle contient des références statiques à l’assembly System. XML fourni avec le runtime version 4,5. Si vous voulez rediriger la référence de liaison pour pointer vers l’assembly System.XML livré avec .NET Framework 4, vous devez écrire des informations de redirection dans le fichier de configuration de l’application. Une redirection de liaison dans un fichier de configuration pour un assembly .NET Framework unifié annule l’unification pour cet assembly.
 
  En outre, vous pouvez rediriger manuellement la liaison d’assembly pour les assemblys tiers s’il existe plusieurs versions disponibles.
 
@@ -55,9 +55,9 @@ Vous pouvez rediriger des références de liaison de compilation vers des assemb
 
 ### <a name="relying-on-automatic-binding-redirection"></a>Utilisation de la redirection de liaison automatique
 
-Lorsque vous créez une application de bureau dans Visual Studio qui cible le .NET Framework 4.5.1 ou version ultérieure, l’application utilise la redirection de liaison automatique. Cela signifie que si deux composants référencent des versions différentes d’un même assembly avec nom fort, le runtime ajoute automatiquement une redirection de liaison vers la version la plus récente de l’assembly dans le fichier de configuration d’application de sortie (app.config). Cette redirection remplace l’unification d’assemblys qui pourrait se produire autrement. Le fichier source app.config n'est pas modifié. Par exemple, supposons que votre application référence directement un composant .NET Framework hors plage mais utilise une bibliothèque tierce qui cible une version antérieure du même composant. Lorsque vous compilez l’application, le fichier de configuration de l’application de sortie est modifié pour inclure une redirection de liaison vers la version plus récente du composant. Si vous créez une application web, vous recevez un avertissement de génération concernant le conflit de liaison, qui, à son tour, vous donne la possibilité d’ajouter la redirection de liaison nécessaire au fichier de configuration web source.
+Quand vous créez une application de bureau dans Visual Studio qui cible le .NET Framework 4.5.1 ou une version ultérieure, l’application utilise la redirection de liaison automatique. Cela signifie que si deux composants référencent des versions différentes d’un même assembly avec nom fort, le runtime ajoute automatiquement une redirection de liaison vers la version la plus récente de l’assembly dans le fichier de configuration d’application de sortie (app.config). Cette redirection remplace l’unification d’assemblys qui pourrait se produire autrement. Le fichier source app.config n'est pas modifié. Par exemple, supposons que votre application référence directement un composant .NET Framework hors plage mais utilise une bibliothèque tierce qui cible une version antérieure du même composant. Lorsque vous compilez l’application, le fichier de configuration de l’application de sortie est modifié pour inclure une redirection de liaison vers la version plus récente du composant. Si vous créez une application web, vous recevez un avertissement de génération concernant le conflit de liaison, qui, à son tour, vous donne la possibilité d’ajouter la redirection de liaison nécessaire au fichier de configuration web source.
 
-Si vous ajoutez manuellement des redirections de liaison au fichier app.config source, au moment de la compilation, Visual Studio essaie d’unifier les assemblys basés sur les redirections de liaison que vous avez ajouté. Par exemple, supposons que vous insérez la redirection de liaison suivantes pour un assembly :
+Si vous ajoutez manuellement des redirections de liaison au fichier app. config source, au moment de la compilation, Visual Studio tente d’unifier les assemblys en fonction des redirections de liaison que vous avez ajoutées. Par exemple, supposons que vous insérez la redirection de liaison suivantes pour un assembly :
 
 `<bindingRedirect oldVersion="3.0.0.0" newVersion="2.0.0.0" />`
 
@@ -65,11 +65,11 @@ Si un autre projet dans votre application référence la version 1.0.0.0 du mêm
 
 `<bindingRedirect oldVersion="1.0.0.0" newVersion="2.0.0.0" />`
 
-Vous pouvez activer la redirection de liaison automatique si votre application cible des versions antérieures du .NET Framework. Vous pouvez remplacer ce comportement par défaut en fournissant des informations de redirection de liaison dans le fichier app.config pour n’importe quel assembly, ou en désactivant la fonctionnalité de redirection de liaison. Pour plus d’informations sur la façon d’activer ou désactiver les cette fonctionnalité, consultez [Comment : Activer et désactiver la redirection de liaison automatique](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md).
+Vous pouvez activer la redirection de liaison automatique si votre application cible des versions antérieures du .NET Framework. Vous pouvez substituer ce comportement par défaut en fournissant des informations de redirection de liaison dans le fichier app. config pour n’importe quel assembly, ou en désactivant la fonctionnalité de redirection de liaison. Pour plus d’informations sur la façon d’activer ou de désactiver cette [fonctionnalité, consultez Procédure: Activer et désactiver la redirection de liaison automatique](how-to-enable-and-disable-automatic-binding-redirection.md).
 
 <a name="bypass_PP"></a>
 ### <a name="bypassing-publisher-policy"></a>Contournement de la stratégie d’éditeur
- Vous pouvez remplacer la stratégie d’éditeur dans le fichier de configuration d’application, si nécessaire. Par exemple, les nouvelles versions d’assemblys se déclarant à compatibilité descendante peuvent quand même bloquer une application. Si vous souhaitez ignorer la stratégie d’éditeur, ajoutez un [ \<publisherPolicy >](../../../docs/framework/configure-apps/file-schema/runtime/publisherpolicy-element.md) élément à la [ \<dependentAssembly >](../../../docs/framework/configure-apps/file-schema/runtime/dependentassembly-element.md) élément dans le fichier de configuration d’application et ensemble la **appliquer** attribut **aucun**, qui remplace précédent **Oui** paramètres.
+ Vous pouvez remplacer la stratégie d’éditeur dans le fichier de configuration d’application, si nécessaire. Par exemple, les nouvelles versions d’assemblys se déclarant à compatibilité descendante peuvent quand même bloquer une application. Si vous souhaitez ignorer la stratégie d’éditeur, ajoutez un [ \<élément publisherPolicy >](./file-schema/runtime/publisherpolicy-element.md) à l' [ \<élément > dependentAssembly](./file-schema/runtime/dependentassembly-element.md) dans le fichier de configuration de l’application, puis affectez à l’attribut **apply** la valeur **no**, qui remplace tous les paramètres **Yes** précédents.
 
  `<publisherPolicy apply="no" />`
 
@@ -81,11 +81,11 @@ Vous pouvez activer la redirection de liaison automatique si votre application c
 
 <a name="BKMK_Specifyingassemblybindinginconfigurationfiles"></a>
 ## <a name="specifying-assembly-binding-in-configuration-files"></a>Spécification d’une liaison d’assembly dans les fichiers de configuration
- Le même format XML vous permet de spécifier les redirections de liaison, que ce soit dans le fichier de configuration d’application, dans le fichier de configuration de l’ordinateur ou dans le fichier de stratégie d’éditeur. Pour rediriger une version d’assembly vers une autre, utilisez la [ \<bindingRedirect >](../../../docs/framework/configure-apps/file-schema/runtime/bindingredirect-element.md) élément. L’attribut **oldVersion** permet de spécifier une version d’assembly unique ou une plage de versions. L’attribut `newVersion` doit spécifier une version unique.  Par exemple, `<bindingRedirect oldVersion="1.1.0.0-1.2.0.0" newVersion="2.0.0.0"/>` spécifie que le runtime doit utiliser la version 2.0.0.0 au lieu des versions d’assembly comprises entre 1.1.0.0 et 1.2.0.0.
+ Le même format XML vous permet de spécifier les redirections de liaison, que ce soit dans le fichier de configuration d’application, dans le fichier de configuration de l’ordinateur ou dans le fichier de stratégie d’éditeur. Pour rediriger une version d’assembly vers une autre, utilisez l' [ \<élément bindingRedirect >](./file-schema/runtime/bindingredirect-element.md) . L’attribut **oldVersion** permet de spécifier une version d’assembly unique ou une plage de versions. L’attribut `newVersion` doit spécifier une version unique.  Par exemple, `<bindingRedirect oldVersion="1.1.0.0-1.2.0.0" newVersion="2.0.0.0"/>` spécifie que le runtime doit utiliser la version 2.0.0.0 au lieu des versions d’assembly comprises entre 1.1.0.0 et 1.2.0.0.
 
  L’exemple de code suivant montre divers scénarios de redirection de liaison. Cet exemple spécifie une redirection pour une plage de versions pour `myAssembly`, et une redirection de liaison unique pour `mySecondAssembly`. L’exemple spécifie également que le fichier de stratégie d’éditeur ne doit pas remplacer les redirections de liaison pour `myThirdAssembly`.
 
- Pour lier un assembly, vous devez spécifier la chaîne « urn : schemas-microsoft-asm.v1 » avec le **xmlns** d’attribut dans le [ \<assemblyBinding >](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) balise.
+ Pour lier un assembly, vous devez spécifier la chaîne "urn: schemas-microsoft-com: ASM. v1" avec l’attribut **xmlns** dans la [ \<balise assemblyBinding >](./file-schema/runtime/assemblybinding-element-for-runtime.md) .
 
 ```xml
 <configuration>
@@ -119,7 +119,7 @@ Vous pouvez activer la redirection de liaison automatique si votre application c
 ```
 
 ### <a name="limiting-assembly--bindings-to-a-specific-version"></a>Limitation des liaisons d’assembly à une version spécifique
- Vous pouvez utiliser la **appliesTo** d’attribut sur le [ \<assemblyBinding >](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) élément dans un fichier de configuration d’application pour rediriger les références de liaison d’assembly vers une version spécifique du .NET Framework. Cet attribut facultatif utilise un numéro de version .NET Framework pour indiquer la version à laquelle il s'applique. Si l’attribut **appliesTo** n’est pas spécifié, l’élément [\<assemblyBinding>](../../../docs/framework/configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) s’applique à toutes les versions du .NET Framework.
+ Vous pouvez utiliser l’attribut **appliesTo** sur l' [ \<élément assemblyBinding >](./file-schema/runtime/assemblybinding-element-for-runtime.md) dans un fichier de configuration d’application pour rediriger les références de liaison d’assembly vers une version spécifique du .NET Framework. Cet attribut facultatif utilise un numéro de version .NET Framework pour indiquer la version à laquelle il s'applique. Si l’attribut **appliesTo** n’est pas spécifié, l’élément [\<assemblyBinding>](./file-schema/runtime/assemblybinding-element-for-runtime.md) s’applique à toutes les versions du .NET Framework.
 
  Par exemple, pour rediriger la liaison d’assembly pour un assembly .NET Framework 3.5, vous devez inclure le code XML suivant dans le fichier de configuration d’application.
 
@@ -154,13 +154,13 @@ Vous pouvez activer la redirection de liaison automatique si votre application c
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Activer et désactiver la redirection de liaison automatique](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)
-- [\<bindingRedirect > élément](../../../docs/framework/configure-apps/file-schema/runtime/bindingredirect-element.md)
-- [Autorisation de sécurité pour la redirection de liaison d’assembly](../../../docs/framework/configure-apps/assembly-binding-redirection-security-permission.md)
-- [Assemblys dans le Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
-- [Programmation à l’aide d’assemblys](../../../docs/framework/app-domains/programming-with-assemblies.md)
-- [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)
-- [Configuration d'applications](../../../docs/framework/configure-apps/index.md)
-- [Schéma des paramètres d’exécution](../../../docs/framework/configure-apps/file-schema/runtime/index.md)
-- [Schéma des fichiers de configuration](../../../docs/framework/configure-apps/file-schema/index.md)
-- [Guide pratique pour Créer une stratégie d’éditeur](../../../docs/framework/configure-apps/how-to-create-a-publisher-policy.md)
+- [Guide pratique pour Activer et désactiver la redirection de liaison automatique](how-to-enable-and-disable-automatic-binding-redirection.md)
+- [\<bindingRedirect >, élément](./file-schema/runtime/bindingredirect-element.md)
+- [Autorisation de sécurité pour la redirection de liaison d’assembly](assembly-binding-redirection-security-permission.md)
+- [Assemblys dans le Common Language Runtime](../app-domains/assemblies-in-the-common-language-runtime.md)
+- [Programmation à l’aide d’assemblys](../app-domains/programming-with-assemblies.md)
+- [Méthode de localisation des assemblys par le runtime](../deployment/how-the-runtime-locates-assemblies.md)
+- [Configuration d'applications](index.md)
+- [Schéma des paramètres d’exécution](./file-schema/runtime/index.md)
+- [Schéma des fichiers de configuration](./file-schema/index.md)
+- [Guide pratique pour Créer une stratégie d’éditeur](how-to-create-a-publisher-policy.md)

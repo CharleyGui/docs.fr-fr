@@ -2,14 +2,14 @@
 title: <transport> de <wsHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 21e38acf-450a-4bda-82b6-de305e1f7cd8
-ms.openlocfilehash: ea025751020d6d98292f6bc3ecfe9421af0cb793
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 384267e3d018d714f95356461eb303bc9ec0cb3e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788217"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934637"
 ---
-# <a name="transport-of-wshttpbinding"></a>\<transport > de \<wsHttpBinding >
+# <a name="transport-of-wshttpbinding"></a>\<> de transport \<de wsHttpBinding >
 
 Définit les paramètres d'authentification correspondant au transport HTTP.
 
@@ -17,7 +17,7 @@ Définit les paramètres d'authentification correspondant au transport HTTP.
 \<bindings>\
 \<wsHttpBinding>\
 \<liaison > \
-\<sécurité > \
+\<> de sécurité \
 \<transport>
 
 ## <a name="syntax"></a>Syntaxe
@@ -59,7 +59,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="clientcredentialtype-attribute"></a>Attribut clientCredentialType
 
-|Value|Description|
+|`Value`|Description|
 |-----------|-----------------|
 |`None`|La sécurité est désactivée.|
 |`Basic`|Utilise l'authentification de base.|
@@ -70,7 +70,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="proxycredentialtype-attribute"></a>Attribut proxyCredentialType
 
-|Value|Description|
+|Valeur|Description|
 |-----------|-----------------|
 |`None`|La sécurité est désactivée.|
 |`Basic`|Utilise l'authentification de base.|
@@ -87,7 +87,7 @@ Aucun.
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md)|Représente les fonctionnalités de sécurité de la [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).|
+|[\<> de sécurité](security-of-wshttpbinding.md)|Représente les fonctionnalités de sécurité de l' [ \<> WSHttpBinding](wshttpbinding.md).|
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -95,8 +95,8 @@ Aucun.
 - <xref:System.ServiceModel.WSHttpSecurity.Transport%2A>
 - <xref:System.ServiceModel.Configuration.WSHttpSecurityElement.Transport%2A>
 - <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement>
-- [Sécurisation des services et des clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Liaisons](../../../../../docs/framework/wcf/bindings.md)
-- [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Utilisation de liaisons pour configurer des services et des clients](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding>](../../../../../docs/framework/misc/binding.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Liaisons](../../../wcf/bindings.md)
+- [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<binding>](../../../misc/binding.md)

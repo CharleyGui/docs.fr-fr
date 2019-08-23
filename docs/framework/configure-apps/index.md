@@ -24,18 +24,18 @@ helpviewer_keywords:
 - configuration files [.NET Framework], machine
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
-ms.openlocfilehash: a8f5c6f6aba9ec4ad627fcd4d3b3caaff810ee72
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 28a06139275f63571d9528d075946d97a19c9f3c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66456205"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912881"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Configuration des applications à l'aide de fichiers de configuration
 Le .NET Framework, par le biais de fichiers de configuration, permet aux développeurs et administrateurs de contrôler la façon dont les applications s'exécutent avec la souplesse requise. Les fichiers de configuration sont des fichiers XML qui peuvent être modifiés selon les besoins. Un administrateur peut exercer un contrôle sur les ressources protégées auxquelles une application peut accéder, les versions d'assemblys utilisées par une application et l'endroit où sont situés les applications et objets distants. Les développeurs peuvent stocker des paramètres dans des fichiers de configuration, de façon à ce qu'il ne leur soit pas nécessaire de recompiler une application chaque fois qu'un paramètre change. Cette section décrit les éléments qui peuvent être configurés et explique en quoi la configuration d'une application peut se révéler utile.  
   
 > [!NOTE]
->  Le code managé peut utiliser les classes de l'espace de noms <xref:System.Configuration> pour lire les paramètres des fichiers de configuration, mais non pour écrire les paramètres dans ces fichiers.  
+> Le code managé peut utiliser les classes de l'espace de noms <xref:System.Configuration> pour lire les paramètres des fichiers de configuration, mais non pour écrire les paramètres dans ces fichiers.  
   
  Cette rubrique décrit la syntaxe des fichiers de configuration et fournit des informations sur les trois types de fichiers de configuration : ordinateur, application et sécurité.  
   
@@ -44,7 +44,7 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
   
  Comme avec tous les fichiers XML, la syntaxe des fichiers de configuration respecte la casse.  
   
- Vous spécifiez des paramètres de configuration à l’aide d’attributs prédéfinis qui sont des paires nom/valeur contenus dans l’étiquette de début d’un élément. L’exemple suivant spécifie deux attributs (`version` et `href` pour l’élément `<codeBase>`, qui indiquent là où le runtime peut localiser un assembly (pour plus d’informations, consultez [Spécification de l’emplacement d’un assembly](../../../docs/framework/configure-apps/specify-assembly-location.md)).  
+ Vous spécifiez des paramètres de configuration à l’aide d’attributs prédéfinis qui sont des paires nom/valeur contenus dans l’étiquette de début d’un élément. L’exemple suivant spécifie deux attributs (`version` et `href` pour l’élément `<codeBase>`, qui indiquent là où le runtime peut localiser un assembly (pour plus d’informations, consultez [Spécification de l’emplacement d’un assembly](specify-assembly-location.md)).  
   
 ```xml  
 <codeBase version="2.0.0.0"  
@@ -54,12 +54,12 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
 ## <a name="machine-configuration-files"></a>Fichiers de configuration machine  
  Le fichier de configuration machine, Machine.config, contient des paramètres qui s'appliquent à l'ordinateur tout entier. Ce fichier se trouve dans le répertoire %*chemin d'installation du runtime*%\Config. Machine.config contient les paramètres de configuration d’une liaison d’assembly à l’échelle de l’ordinateur, de [canaux de communication à distance ](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkfd3wha(v=vs.100)) intégrés et d’ASP.NET.  
   
- Le système de configuration recherche d’abord l’élément [ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/index.md) et les autres sections de configuration éventuellement définies par un développeur dans le fichier de configuration machine. Ensuite, il cherche ensuite dans le fichier de configuration de l'application. Pour que le fichier de configuration machine reste gérable, il est préférable de placer ces paramètres dans le fichier de configuration de l'application. Cependant, le fait de placer les paramètres dans le fichier de configuration machine peut rendre votre système plus facile à entretenir. Par exemple, si vous possédez un composant de tiers utilisé à la fois par votre application cliente et serveur, il est plus aisé de placer les paramètres pour ce composant dans un seul emplacement. Dans ce cas, le fichier de configuration machine est l'emplacement le plus approprié pour les paramètres, de manière à éviter d'avoir les mêmes paramètres dans deux fichiers différents.  
+ Le système de configuration recherche d’abord l’élément [ **\<appSettings>** ](./file-schema/appsettings/index.md) et les autres sections de configuration éventuellement définies par un développeur dans le fichier de configuration machine. Ensuite, il cherche ensuite dans le fichier de configuration de l'application. Pour que le fichier de configuration machine reste gérable, il est préférable de placer ces paramètres dans le fichier de configuration de l'application. Cependant, le fait de placer les paramètres dans le fichier de configuration machine peut rendre votre système plus facile à entretenir. Par exemple, si vous possédez un composant de tiers utilisé à la fois par votre application cliente et serveur, il est plus aisé de placer les paramètres pour ce composant dans un seul emplacement. Dans ce cas, le fichier de configuration machine est l'emplacement le plus approprié pour les paramètres, de manière à éviter d'avoir les mêmes paramètres dans deux fichiers différents.  
   
 > [!NOTE]
->  Le déploiement d'une application utilisant XCOPY ne copiera pas les paramètres dans le fichier de configuration machine.  
+> Le déploiement d'une application utilisant XCOPY ne copiera pas les paramètres dans le fichier de configuration machine.  
   
- Pour plus d’informations sur la façon dont le Common Language Runtime utilise le fichier de configuration machine pour la liaison d’assembly, consultez [Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
+ Pour plus d’informations sur la façon dont le Common Language Runtime utilise le fichier de configuration machine pour la liaison d’assembly, consultez [Méthode de localisation des assemblys par le runtime](../deployment/how-the-runtime-locates-assemblies.md).  
   
 ## <a name="application-configuration-files"></a>Fichiers de configuration des applications  
  Un fichier de configuration d'application contient les paramètres spécifiques à une application. Ce fichier comprend des paramètres de configuration que le Common Language Runtime lit (comme la stratégie de liaison d'assembly, les objets de communication à distance, etc.), et des paramètres que l'application peut lire.  
@@ -72,11 +72,11 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
   
      Quand vous êtes en phase de développement dans Visual Studio, placez le fichier de configuration source de votre application dans le répertoire du projet, puis affectez à sa propriété **Copier dans le répertoire de sortie** la valeur **Toujours copier** ou **Copier si plus récent**. Le nom du fichier de configuration est le nom de l'application assorti d'une extension .config. Par exemple, une application nommée myApp.exe doit avoir un fichier de configuration source appelé myApp.exe.config.  
   
-     Visual Studio copie automatiquement le fichier de configuration source dans le répertoire où se trouve l'assembly compilé pour créer le fichier de configuration de sortie, qui est déployé avec l'application. Dans certains cas, Visual Studio peut modifier le fichier de configuration de sortie ; pour plus d'informations, consultez la section [Redirection des versions d’assemblys au niveau de l’application](../../../docs/framework/configure-apps/redirect-assembly-versions.md#BKMK_Redirectingassemblyversionsattheapplevel) dans l’article [Redirection des versions d’assemblys](../../../docs/framework/configure-apps/redirect-assembly-versions.md).  
+     Visual Studio copie automatiquement le fichier de configuration source dans le répertoire où se trouve l'assembly compilé pour créer le fichier de configuration de sortie, qui est déployé avec l'application. Dans certains cas, Visual Studio peut modifier le fichier de configuration de sortie ; pour plus d'informations, consultez la section [Redirection des versions d’assemblys au niveau de l’application](redirect-assembly-versions.md#BKMK_Redirectingassemblyversionsattheapplevel) dans l’article [Redirection des versions d’assemblys](redirect-assembly-versions.md).  
   
 - Application hébergée par ASP.NET.  
   
-     Pour plus d’informations sur les fichiers de configuration ASP.NET, consultez [les paramètres de Configuration ASP.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100)).
+     Pour plus d’informations sur les fichiers de configuration ASP.NET, consultez [paramètres de configuration de ASP.net](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100)).
   
 - Application hébergée par Internet Explorer.  
   
@@ -87,10 +87,10 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
      Dans cette balise, `location` représente une URL vers le fichier de configuration. Ceci définit la base de l'application. Le fichier de configuration doit être situé sur le même site web que l'application.  
   
 ## <a name="security-configuration-files"></a>Fichiers de configuration de sécurité  
- Les fichiers de configuration de sécurité contiennent des informations sur la hiérarchie du groupe de codes et des jeux d'autorisations associée à un niveau de stratégie. Nous vous recommandons vivement d’utiliser l’[outil Stratégie de sécurité d’accès du code (Caspol.exe)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md) pour modifier la stratégie de sécurité et éviter que les modifications de stratégie corrompent les fichiers de configuration de sécurité.  
+ Les fichiers de configuration de sécurité contiennent des informations sur la hiérarchie du groupe de codes et des jeux d'autorisations associée à un niveau de stratégie. Nous vous recommandons vivement d’utiliser l’[outil Stratégie de sécurité d’accès du code (Caspol.exe)](../tools/caspol-exe-code-access-security-policy-tool.md) pour modifier la stratégie de sécurité et éviter que les modifications de stratégie corrompent les fichiers de configuration de sécurité.  
   
 > [!NOTE]
->  À compter de .NET Framework 4, les fichiers de configuration de sécurité sont présents uniquement si la stratégie de sécurité a été modifiée.  
+> À partir du .NET Framework 4, les fichiers de configuration de sécurité sont présents uniquement si la stratégie de sécurité a été modifiée.  
   
  Les fichiers de configuration de sécurité se trouvent dans les emplacements suivants :  
   
@@ -101,30 +101,30 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
 - Fichier de configuration de la stratégie de l’utilisateur : %USERPROFILE%\Application data\Microsoft\CLR security config\v*xx.xx*\Security.config  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Guide pratique pour Localiser des assemblys à l’aide de DEVPATH](../../../docs/framework/configure-apps/how-to-locate-assemblies-by-using-devpath.md)  
+ [Guide pratique pour Localiser des assemblys à l’aide de DEVPATH](how-to-locate-assemblies-by-using-devpath.md)  
  Explique comment demander au runtime d'utiliser la variable d'environnement DEVPATH pour rechercher les assemblys.  
   
- [Redirection des versions d'assemblys](../../../docs/framework/configure-apps/redirect-assembly-versions.md)  
+ [Redirection des versions d'assemblys](redirect-assembly-versions.md)  
  Explique comment spécifier l'emplacement d'un assembly et la version d'un assembly à utiliser.  
   
- [Spécification de l'emplacement d'un assembly](../../../docs/framework/configure-apps/specify-assembly-location.md)  
+ [Spécification de l'emplacement d'un assembly](specify-assembly-location.md)  
  Explique comment spécifier l'endroit où le runtime doit rechercher un assembly.  
   
- [Configuration des classes de chiffrement](../../../docs/framework/configure-apps/configure-cryptography-classes.md)  
+ [Configuration des classes de chiffrement](configure-cryptography-classes.md)  
  Décrit la manière d'associer un nom d'algorithme à une classe de chiffrement et un identificateur d'objet à un algorithme de chiffrement.  
   
- [Guide pratique pour Créer une stratégie d’éditeur](../../../docs/framework/configure-apps/how-to-create-a-publisher-policy.md)  
+ [Guide pratique : Créer une stratégie d’éditeur](how-to-create-a-publisher-policy.md)  
  Explique quand et comment ajouter un fichier de stratégie de l'éditeur pour spécifier la redirection de l'assembly et les paramètres de base du code.  
   
- [Schéma des fichiers de configuration](../../../docs/framework/configure-apps/file-schema/index.md)  
+ [Schéma des fichiers de configuration](./file-schema/index.md)  
  Décrit la hiérarchie du schéma pour les paramètres de démarrage, de runtime et de réseau, ainsi que pour d'autres types de paramètres de configuration.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma des fichiers de configuration](../../../docs/framework/configure-apps/file-schema/index.md)
-- [Spécification de l'emplacement d'un assembly](../../../docs/framework/configure-apps/specify-assembly-location.md)
-- [Redirection des versions d'assemblys](../../../docs/framework/configure-apps/redirect-assembly-versions.md)
+- [Schéma des fichiers de configuration](./file-schema/index.md)
+- [Spécification de l'emplacement d'un assembly](specify-assembly-location.md)
+- [Redirection des versions d'assemblys](redirect-assembly-versions.md)
 - [Administration de site web ASP.NET](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/6hy1xzbw(v=vs.90))
 - [Gestion des stratégies de sécurité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))
-- [Caspol.exe (outil de stratégie de sécurité d’accès du code)](../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)
-- [Assemblys dans le Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
+- [Caspol.exe (outil de stratégie de sécurité d’accès du code)](../tools/caspol-exe-code-access-security-policy-tool.md)
+- [Assemblys dans le Common Language Runtime](../app-domains/assemblies-in-the-common-language-runtime.md)

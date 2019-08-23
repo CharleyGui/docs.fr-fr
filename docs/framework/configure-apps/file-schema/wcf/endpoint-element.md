@@ -2,14 +2,14 @@
 title: <endpoint>, élément
 ms.date: 03/30/2017
 ms.assetid: 2fc8fedc-78d0-4e87-8142-fbfd26c15a4e
-ms.openlocfilehash: 667086cda010daf51cb92116d636b9b526b4b34b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 71ddb3b860870ee8feeeb36c3f64fa7bfebb0f10
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673028"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925825"
 ---
-# <a name="endpoint-element"></a>\<point de terminaison > élément
+# <a name="endpoint-element"></a>\<élément de > de point de terminaison
 Spécifie la liaison, le contrat et les propriétés d’adresse d’un point de terminaison de service, utilisé pour exposer des services.  
   
  \<system.ServiceModel>  
@@ -51,7 +51,7 @@ Spécifie la liaison, le contrat et les propriétés d’adresse d’un point de
 |endpointConfiguration|Chaîne qui spécifie le nom du point de terminaison standard défini par l'attribut `kind`, qui fait référence aux informations de configuration supplémentaires de ce point de terminaison standard. Le même nom doit être défini dans la section `<standardEndpoints>`.|  
 |isSystemEndpoint|Valeur booléenne qui spécifie si un point de terminaison est un point de terminaison d'infrastructure.|  
 |kind|Chaîne qui spécifie le type de point de terminaison standard appliqué. Le type doit être inscrit dans la section `<extensions>` ou dans machine.config. Si rien n'est spécifié, un point de terminaison de service commun est créé.|  
-|listenUriMode|Spécifie la manière dont le transport traite le `ListenUri` fourni sur lequel le service effectue son écoute. Les valeurs valides sont les suivantes :<br /><br /> -   Explicit<br />-   Unique<br /><br /> La valeur par défaut est Explicit.|  
+|listenUriMode|Spécifie la manière dont le transport traite le `ListenUri` fourni sur lequel le service effectue son écoute. Les valeurs valides sont les suivantes :<br /><br /> -Explicit<br />-Unique<br /><br /> La valeur par défaut est Explicit.|  
 |listenUri|Chaîne qui spécifie l'URI au niveau duquel le point de terminaison de service effectue son écoute. La valeur par défaut est une chaîne vide.|  
 |name|Attribut facultatif. Chaîne qui spécifie le nom du point de terminaison du service. La valeur par défaut correspond à la concaténation du nom de la liaison et de celui de la description du contrat. Les services peuvent disposer de plusieurs points de terminaison, l'attribut `name` du point de terminaison est donc différent du nom du service.|  
   
@@ -59,16 +59,16 @@ Spécifie la liaison, le contrat et les propriétés d’adresse d’un point de
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)|Collection d'en-têtes d'adresses.|  
-|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Identité qui permet l'authentification d'un point de terminaison par les autres points de terminaison qui échangent des messages avec lui.|  
+|[\<headers>](headers.md)|Collection d'en-têtes d'adresses.|  
+|[\<identity>](identity.md)|Identité qui permet l'authentification d'un point de terminaison par les autres points de terminaison qui échangent des messages avec lui.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<service>](../../../../../docs/framework/configure-apps/file-schema/wcf/service.md)|Section de configuration qui définit une liste des points de terminaison auxquels un client peut se connecter.|  
+|[\<service>](service.md)|Section de configuration qui définit une liste des points de terminaison auxquels un client peut se connecter.|  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Il s'agit d'un exemple de configuration de point de terminaison de service.  
   
 ```xml  
@@ -89,5 +89,5 @@ Spécifie la liaison, le contrat et les propriétés d’adresse d’un point de
 - <xref:System.ServiceModel.Configuration.ServiceEndpointElement>
 - <xref:System.ServiceModel.EndpointAddress>
 - <xref:System.ServiceModel.Description.ServiceEndpoint>
-- [Points de terminaison : Adresses, liaisons et contrats](../../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
-- [Guide pratique pour Créer un point de terminaison de Service dans la Configuration](../../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)
+- [Terminaison Adresses, liaisons et contrats](../../../wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
+- [Guide pratique : Créer un point de terminaison de service dans la configuration](../../../wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)

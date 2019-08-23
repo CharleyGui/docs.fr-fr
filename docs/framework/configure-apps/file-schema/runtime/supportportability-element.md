@@ -7,20 +7,20 @@ helpviewer_keywords:
 ms.assetid: 6453ef66-19b4-41f3-b712-52d0c2abc9ca
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ab9feaa1c46a45471395fd4c6158490a24882a65
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 1848db96b8f466f617c58f0fdd879ffe3b2022bd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489364"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927257"
 ---
-# <a name="supportportability-element"></a>\<supportPortability > élément
+# <a name="supportportability-element"></a>\<supportPortability >, élément
 Spécifie qu’une application peut référencer le même assembly dans deux implémentations différentes du .NET Framework, en désactivant le comportement par défaut qui traite les assemblys de façon équivalente à des fins de portabilité des applications.  
   
- \<configuration > élément  
-\<runtime > élément  
-\<assemblyBinding > élément  
-\<supportPortability > élément  
+ \<Élément de > de configuration  
+\<Élément > du Runtime  
+\<assemblyBinding >, élément  
+\<supportPortability >, élément  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ Spécifie qu’une application peut référencer le même assembly dans deux imp
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|PKT|Attribut requis.<br /><br /> Spécifie le jeton de clé publique de l’assembly affecté, sous forme de chaîne.|  
-|enabled|Attribut facultatif.<br /><br /> Spécifie si la prise en charge pour la portabilité entre les implémentations de l’assembly .NET Framework spécifié doit être activée.|  
+|PKT|Attribut requis.<br /><br /> Spécifie le jeton de clé publique de l’assembly affecté, sous la forme d’une chaîne.|  
+|enabled|Attribut facultatif.<br /><br /> Spécifie si la prise en charge de la portabilité entre les implémentations de l’assembly de .NET Framework spécifié doit être activée.|  
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Value|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|true|Activer la prise en charge pour la portabilité entre les implémentations de l’assembly .NET Framework spécifié. Il s'agit de la valeur par défaut.|  
-|False|Désactiver la prise en charge pour la portabilité entre les implémentations de l’assembly .NET Framework spécifié. Cela permet à l’application d’avoir des références à plusieurs implémentations de l’assembly spécifié.|  
+|true|Active la prise en charge de la portabilité entre les implémentations de l’assembly de .NET Framework spécifié. Il s'agit de la valeur par défaut.|  
+|false|Désactive la prise en charge de la portabilité entre les implémentations de l’assembly de .NET Framework spécifié. Cela permet à l’application d’avoir des références à plusieurs implémentations de l’assembly spécifié.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -57,15 +57,15 @@ Spécifie qu’une application peut référencer le même assembly dans deux imp
 |`assemblyBinding`|Contient des informations à propos de la redirection des versions d'assemblys et de l'emplacement de ces derniers.|  
   
 ## <a name="remarks"></a>Notes  
- À compter de .NET Framework 4, prise en charge est automatiquement fournie pour les applications qui peuvent utiliser une des deux implémentations du .NET Framework, par exemple l’implémentation de .NET Framework ou .NET Framework pour l’implémentation Silverlight. Les deux implémentations d’un assembly .NET Framework particulier sont considérées comme équivalents par le binder d’assembly. Dans certains scénarios, cette fonctionnalité de portabilité d’application pose des problèmes. Dans ces scénarios, le `<supportPortability>` élément peut être utilisé pour désactiver la fonctionnalité.  
+ À partir de la .NET Framework 4, la prise en charge est automatiquement fournie pour les applications qui peuvent utiliser l’une des deux implémentations du .NET Framework, par exemple l’implémentation .NET Framework ou l’implémentation .NET Framework pour Silverlight. Les deux implémentations d’un assembly .NET Framework particulier sont considérées comme équivalentes par le Binder d’assembly. Dans certains scénarios, cette fonctionnalité de portabilité des applications provoque des problèmes. Dans ces scénarios, l' `<supportPortability>` élément peut être utilisé pour désactiver la fonctionnalité.  
   
- Un tel scénario est un assembly qui doit faire référence à l’implémentation de .NET Framework et le .NET Framework pour l’implémentation Silverlight d’un assembly de référence particulier. Par exemple, un concepteur XAML écrit dans Windows Presentation Foundation (WPF) devrez peut-être faire référence à la fois l’implémentation de bureau WPF pour l’interface utilisateur du concepteur et le sous-ensemble de WPF, qui est inclus dans l’implémentation Silverlight. Par défaut, les références séparées provoquent une erreur du compilateur parce que la liaison d’assembly considère les deux assemblys comme équivalents. Cet élément désactive le comportement par défaut et permet la compilation de réussir.  
+ Un tel scénario est un assembly qui doit référencer à la fois l’implémentation de .NET Framework et la .NET Framework pour l’implémentation Silverlight d’un assembly de référence particulier. Par exemple, un concepteur XAML écrit en Windows Presentation Foundation (WPF) devra peut-être référencer à la fois l’implémentation du Bureau WPF, l’interface utilisateur du concepteur et le sous-ensemble de WPF inclus dans l’implémentation Silverlight. Par défaut, les références séparées provoquent une erreur du compilateur parce que la liaison d’assembly considère les deux assemblys comme équivalents. Cet élément désactive le comportement par défaut et permet à la compilation de se dérouler correctement.  
   
 > [!IMPORTANT]
->  Pour que le compilateur passer les informations à la logique de liaison d’assembly du common language runtime, vous devez utiliser le `/appconfig` option du compilateur pour spécifier l’emplacement du fichier app.config qui contient cet élément.  
+> Pour que le compilateur passe les informations à la logique de liaison d’assembly du Common Language Runtime, vous devez utiliser l' `/appconfig` option du compilateur pour spécifier l’emplacement du fichier app. config qui contient cet élément.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant permet à une application d’avoir des références à l’implémentation de .NET Framework et le .NET Framework pour l’implémentation Silverlight de tout assembly .NET Framework qui existe dans les deux implémentations. Le `/appconfig` option du compilateur doit être utilisée pour spécifier l’emplacement de ce fichier app.config.  
+ L’exemple suivant permet à une application d’avoir des références à l’implémentation de .NET Framework et à la .NET Framework pour l’implémentation Silverlight de tout assembly .NET Framework qui existe dans les deux implémentations. L' `/appconfig` option de compilateur doit être utilisée pour spécifier l’emplacement de ce fichier app. config.  
   
 ```xml  
 <configuration>  
@@ -80,5 +80,5 @@ Spécifie qu’une application peut référencer le même assembly dans deux imp
   
 ## <a name="see-also"></a>Voir aussi
 
-- [/appconfig (Options du compilateur C#)](../../../../../docs/csharp/language-reference/compiler-options/appconfig-compiler-option.md)
-- [Vue d’ensemble du Unification des assemblys .NET framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/db7849ey(v=vs.100))
+- [/appconfig (C# options du compilateur)](../../../../csharp/language-reference/compiler-options/appconfig-compiler-option.md)
+- [Vue d’ensemble de l’unification des assemblys .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/db7849ey(v=vs.100))

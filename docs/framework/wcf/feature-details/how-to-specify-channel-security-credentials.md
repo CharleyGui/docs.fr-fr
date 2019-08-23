@@ -2,20 +2,20 @@
 title: 'Procédure : spécifier des informations d’identification de sécurité de canal'
 ms.date: 03/30/2017
 ms.assetid: f8e03f47-9c4f-4dd5-8f85-429e6d876119
-ms.openlocfilehash: 0bfbb71ade3822b9f504c2f89a41145ce0d435f6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3d6131a7488d9932118a988095791dd06fd46c49
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62038868"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933459"
 ---
 # <a name="how-to-specify-channel-security-credentials"></a>Procédure : spécifier des informations d’identification de sécurité de canal
-Le Moniker de Service Windows Communication Foundation (WCF) permet aux applications COM d’appeler les services WCF. La plupart des services WCF requiert que le client spécifier les informations d’identification pour l’authentification et l’autorisation. Lorsque vous appelez un service WCF à partir d’un client WCF, vous pouvez spécifier ces informations d’identification dans le code managé ou dans un fichier de configuration d’application. Lorsque vous appelez un service WCF à partir d’une application COM, vous pouvez utiliser le <xref:System.ServiceModel.ComIntegration.IChannelCredentials> interface pour spécifier les informations d’identification. Cette rubrique illustre diverses méthodes pour spécifier des informations d'identification à l'aide de l'interface <xref:System.ServiceModel.ComIntegration.IChannelCredentials>.  
+Le moniker de service Windows Communication Foundation (WCF) permet aux applications COM d’appeler des services WCF. La plupart des services WCF requièrent que le client spécifie des informations d’identification pour l’authentification et l’autorisation. Lors de l’appel d’un service WCF à partir d’un client WCF, vous pouvez spécifier ces informations d’identification en code managé ou dans un fichier de configuration de l’application. Lors de l’appel d’un service WCF à partir d’une application com <xref:System.ServiceModel.ComIntegration.IChannelCredentials> , vous pouvez utiliser l’interface pour spécifier les informations d’identification. Cette rubrique illustre diverses méthodes pour spécifier des informations d'identification à l'aide de l'interface <xref:System.ServiceModel.ComIntegration.IChannelCredentials>.  
   
 > [!NOTE]
->  <xref:System.ServiceModel.ComIntegration.IChannelCredentials> est une interface basée sur IDispatch et vous ne rencontrerez pas de fonctionnalités IntelliSense dans l'environnement Visual Studio.  
+> <xref:System.ServiceModel.ComIntegration.IChannelCredentials> est une interface basée sur IDispatch et vous ne rencontrerez pas de fonctionnalités IntelliSense dans l'environnement Visual Studio.  
   
- Cet article utilise le service WCF défini dans le [Message Security, exemple](../../../../docs/framework/wcf/samples/message-security-sample.md).  
+ Cet article utilise le service WCF défini dans l' [exemple de sécurité de message](../../../../docs/framework/wcf/samples/message-security-sample.md).  
   
 ### <a name="to-specify-a-client-certificate"></a>Pour spécifier un certificat client  
   
@@ -23,11 +23,11 @@ Le Moniker de Service Windows Communication Foundation (WCF) permet aux applicat
   
 2. Ouvrez le projet de la sécurité de message.  
   
-3. Ajouter `[ServiceBehavior(Namespace="http://Microsoft.ServiceModel.Samples")]` à la `ICalculator` définition d’interface.  
+3. Ajoutez `[ServiceBehavior(Namespace="http://Microsoft.ServiceModel.Samples")]` à la `ICalculator` définition de l’interface.  
   
-4. Ajouter `bindingNamespace="http://Microsoft.ServiceModel.Samples"` à la balise de point de terminaison dans le fichier App.config pour le service.  
+4. Ajoutez `bindingNamespace="http://Microsoft.ServiceModel.Samples"` à la balise de point de terminaison dans le fichier app. config du service.  
   
-5. Générez l'exemple de la sécurité de message et exécutez Service.exe. Utiliser Internet Explorer et accédez à l’URI du service (http://localhost:8000/ServiceModelSamples/Service) pour vous assurer que le service fonctionne.  
+5. Générez l'exemple de la sécurité de message et exécutez Service.exe. Utilisez Internet Explorer et accédez à l’URI du service (http://localhost:8000/ServiceModelSamples/Service) pour vous assurer que le service fonctionne.  
   
 6. Ouvrez Visual Basic 6.0 et créez un nouveau fichier .exe standard. Ajoutez un bouton au formulaire et double-cliquez dessus pour ajouter le code suivant au gestionnaire Click :  
   
@@ -57,10 +57,10 @@ Le Moniker de Service Windows Communication Foundation (WCF) permet aux applicat
     ```  
   
 > [!NOTE]
->  Pour que fonctionne cet appel, le certificat client doit être approuvé sur l'ordinateur qui exécute le client.  
+> Pour que fonctionne cet appel, le certificat client doit être approuvé sur l'ordinateur qui exécute le client.  
   
 > [!NOTE]
->  Si le moniker est mal formé ou si le service n'est pas disponible, l'appel à `GetObject` retourne une erreur indiquant que la syntaxe n'est pas valide. Si vous recevez cette erreur, assurez-vous que le moniker que vous utilisez est correct et que le service est disponible.  
+> Si le moniker est mal formé ou si le service n'est pas disponible, l'appel à `GetObject` retourne une erreur indiquant que la syntaxe n'est pas valide. Si vous recevez cette erreur, assurez-vous que le moniker que vous utilisez est correct et que le service est disponible.  
   
 ### <a name="to-specify-user-name-and-password"></a>Pour spécifier un nom d'utilisateur et un mot de passe  
   
@@ -87,7 +87,7 @@ Le Moniker de Service Windows Communication Foundation (WCF) permet aux applicat
 4. Exécutez l'application Visual Basic et vérifiez les résultats. L'application Visual Basic affiche un message contenant le résultat de l'appel Add(3, 4).  
   
     > [!NOTE]
-    >  La liaison spécifiée dans le moniker de service dans cet exemple a été remplacée par WSHttpBinding_ICalculator. Notez aussi que vous devez fournir un nom d'utilisateur et un mot de passe valides dans l'appel à <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetUserNameCredential%28System.String%2CSystem.String%29>.  
+    > La liaison spécifiée dans le moniker de service dans cet exemple a été remplacée par WSHttpBinding_ICalculator. Notez aussi que vous devez fournir un nom d'utilisateur et un mot de passe valides dans l'appel à <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetUserNameCredential%28System.String%2CSystem.String%29>.  
   
 ### <a name="to-specify-windows-credentials"></a>Pour spécifier des informations d'identification Windows  
   
@@ -111,11 +111,11 @@ Le Moniker de Service Windows Communication Foundation (WCF) permet aux applicat
 3. Exécutez l'application Visual Basic et vérifiez les résultats. L'application Visual Basic affiche un message contenant le résultat de l'appel Add(3, 4).  
   
     > [!NOTE]
-    >  Vous devez remplacer "domain", "userID" et "password" par des valeurs valides.  
+    > Vous devez remplacer "domain", "userID" et "password" par des valeurs valides.  
   
 ### <a name="to-specify-an-issue-token"></a>Pour spécifier un jeton d'émission  
   
-1. Ces jetons sont utilisés uniquement pour les applications qui utilisent la sécurité fédérée. Pour plus d’informations sur la sécurité fédérée, consultez [fédération et jetons émis](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md) et [Federation, exemple](../../../../docs/framework/wcf/samples/federation-sample.md).  
+1. Ces jetons sont utilisés uniquement pour les applications qui utilisent la sécurité fédérée. Pour plus d’informations sur la sécurité fédérée, consultez l’exemple de [Fédération et de jetons émis](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md) et de [Fédération](../../../../docs/framework/wcf/samples/federation-sample.md).  
   
      L'exemple de code Visual Basic suivant montre comment appeler la méthode <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29> :  
   
@@ -134,7 +134,7 @@ Le Moniker de Service Windows Communication Foundation (WCF) permet aux applicat
 ## <a name="see-also"></a>Voir aussi
 
 - [Fédération](../../../../docs/framework/wcf/feature-details/federation.md)
-- [Guide pratique pour Configurer les informations d’identification sur un Service de fédération](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
-- [Guide pratique pour Créer un Client fédéré](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
+- [Guide pratique : Configurer les informations d’identification sur un service FS (Federation Service)](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
+- [Guide pratique pour Créer un client fédéré](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
 - [Sécurité de message](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)
 - [Liaisons et sécurité](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)

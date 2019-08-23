@@ -7,22 +7,22 @@ dev_langs:
 ms.assetid: eab4bcf8-9f5f-4731-87d8-842748a6062a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 803709c97309f9766b6a441f5521cdcd7504862f
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 3b8d84f8ea9cf8f94cb7a2b155c5d40c6de2979a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052501"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69941698"
 ---
 # <a name="missinginteropdataexception-class-net-native"></a>MissingInteropDataException, classe (.NET Native)
-**.NET pour les applications Windows pour Windows 10, .NET natif uniquement**  
+**.NET pour les applications Windows pour Windows 10, .NET Native uniquement**  
   
  Exception levée quand une méthode de marshaling manuel est appelée, mais que les métadonnées d'un type sont introuvables par analyse statique ou dans un fichier de directives runtime.  
   
  **Espace de noms :** System.Runtime.CompilerServices  
   
 > [!IMPORTANT]
->  Le `MissingInteropDataException` classe est destinée exclusivement à un usage interne par la chaîne d’outils .NET Native. Elle n'est pas destinée à être utilisée dans du code tiers ni à traiter l'exception dans le code de votre application. Au lieu de cela, éliminez l’exception en ajoutant des entrées à votre [fichier de directives runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Pour plus d'informations, consultez la section Remarques.  
+> La `MissingInteropDataException` classe est destinée exclusivement à un usage interne par la chaîne d’outils .net native. Elle n'est pas destinée à être utilisée dans du code tiers ni à traiter l'exception dans le code de votre application. Au lieu de cela, éliminez l’exception en ajoutant des entrées à votre [fichier de directives runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Pour plus d'informations, consultez la section Remarques.  
   
 ## <a name="syntax"></a>Syntaxe  
  [!code-csharp[ProjectN#21](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/missinginteropdataexception_syntax1.cs#21)]
@@ -34,7 +34,7 @@ ms.locfileid: "66052501"
   
 |Constructeur|Description|  
 |-----------------|-----------------|  
-|`public MissingInteropDataException(String resourceId, Type pertinentType)`|Initialise une nouvelle instance de la classe `MissingInteropDataException` en utilisant l'ID d'un message système qui décrit l'erreur et le type dont les données sont manquantes. Ce constructeur est pour une utilisation interne par la chaîne d’outils .NET Native uniquement.|  
+|`public MissingInteropDataException(String resourceId, Type pertinentType)`|Initialise une nouvelle instance de la classe `MissingInteropDataException` en utilisant l'ID d'un message système qui décrit l'erreur et le type dont les données sont manquantes. Ce constructeur est destiné à un usage interne par la chaîne d’outils .NET Native uniquement.|  
   
 ## <a name="properties"></a>Properties  
   
@@ -63,7 +63,7 @@ ms.locfileid: "66052501"
 |`protected Object MemberwiseClone()`|Crée une copie superficielle de l'objet actuel. (Hérité de <xref:System.Object>.)|  
 |`public string ToString()`|Retourne la représentation sous forme de chaîne de l'exception actuelle. (Hérité de <xref:System.Exception?displayProperty=nameWithType>.)|  
   
-## <a name="events"></a>Événements  
+## <a name="events"></a>Events  
   
 |Événement|Description|  
 |-----------|-----------------|  
@@ -72,10 +72,10 @@ ms.locfileid: "66052501"
 ## <a name="usage-details"></a>Détails de l'utilisation  
  L'exception `MissingInteropDataException` est levée quand un appel de méthode à destination d'un composant COM ou Windows Runtime ne peut pas aboutir car les informations de type ne sont pas disponibles.  
   
- Les métadonnées qui sont disponibles pour une application au moment de l'exécution sont définies par le fichier (configuration XML) de directives runtime, *.rd.xml. Pour empêcher votre application de lever cette exception, vous devez modifier ce fichier de manière à définir les métadonnées qui doivent être présentes au moment de l'exécution. Le plus souvent, vous corrigez cette erreur en ajoutant un attribut `MarshalObject`, `MarshalDelegate` ou `MarshalStructure` à un élément de programme approprié dans le fichier de directives runtime. Pour plus d’informations sur le format de ce fichier, consultez [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
+ Les métadonnées disponibles pour une application au moment de l’exécution sont définies par le fichier de directives Runtime (configuration XML \*),. rd. Xml. Pour empêcher votre application de lever cette exception, vous devez modifier ce fichier de manière à définir les métadonnées qui doivent être présentes au moment de l'exécution. Le plus souvent, vous corrigez cette erreur en ajoutant un attribut `MarshalObject`, `MarshalDelegate` ou `MarshalStructure` à un élément de programme approprié dans le fichier de directives runtime. Pour plus d’informations sur le format de ce fichier, consultez [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
   
 > [!IMPORTANT]
->  Comme cette exception indique que les métadonnées nécessaires à votre application ne sont pas disponibles au moment de l’exécution, vous ne devez pas gérer cette exception dans un bloc `try`/`catch`. Au lieu de cela, vous devez diagnostiquer la cause de l'exception et l'éliminer en ajoutant l'entrée appropriée à un fichier de directives runtime.  
+> Comme cette exception indique que les métadonnées nécessaires à votre application ne sont pas disponibles au moment de l’exécution, vous ne devez pas gérer cette exception dans un bloc `try`/`catch`. Au lieu de cela, vous devez diagnostiquer la cause de l'exception et l'éliminer en ajoutant l'entrée appropriée à un fichier de directives runtime.  
   
  La classe `MissingInteropDataException` contient un seul membre, la propriété `MissingType`, qui indique le type dont les métadonnées sont nécessaires à un appel de méthode. Tous les autres membres sont hérités de la classe de base, <xref:System.Exception?displayProperty=nameWithType>.  
   

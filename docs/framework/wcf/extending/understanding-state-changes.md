@@ -2,12 +2,12 @@
 title: Fonctionnement des modifications d'état
 ms.date: 03/30/2017
 ms.assetid: a79ed2aa-e49a-47a8-845a-c9f436ec9987
-ms.openlocfilehash: 549620ee5317e68735b392ce35b73c92f2474eab
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 154f49e7da059d20d0751a73c664aa2a0f89be12
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363947"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963086"
 ---
 # <a name="understanding-state-changes"></a>Fonctionnement des modifications d'état
 Cette rubrique présente les états et transitions des canaux, les types utilisés pour structurer les états des canaux et la manière de les implémenter.  
@@ -58,7 +58,7 @@ Figure 2. Implémentation CommunicationObject de l'ordinateur d'état ICommun
  <xref:System.ServiceModel.Channels.CommunicationObject> fournit des implémentations d'Abort, Close et Open. Il fournit également une méthode Fault qui provoque une transition d'état vers l'état Faulted. La figure 2 illustre l'ordinateur d'état <xref:System.ServiceModel.ICommunicationObject> avec chaque transition étiquetée par la méthode qui la provoque (les transitions sans étiquette se produisent à l'intérieur de l'implémentation de la méthode qui a provoqué la dernière transition étiquetée).  
   
 > [!NOTE]
->  Toutes les implémentations <xref:System.ServiceModel.Channels.CommunicationObject> d'obtentions/définitions d'état de communication sont synchronisées par thread.  
+> Toutes les implémentations <xref:System.ServiceModel.Channels.CommunicationObject> d'obtentions/définitions d'état de communication sont synchronisées par thread.  
   
  Constructeur  
   
@@ -137,9 +137,9 @@ Substituez la méthode OnAbort pour implémenter une logique d'arrêt personnali
   
 |État|La méthode Abort a-t-elle été appelée ?|Exception|  
 |-----------|----------------------------|---------------|  
-|Date de création|N/A|<xref:System.InvalidOperationException?displayProperty=nameWithType>|  
-|Opening|N/A|<xref:System.InvalidOperationException?displayProperty=nameWithType>|  
-|Opened|N/A|<xref:System.InvalidOperationException?displayProperty=nameWithType>|  
+|Date de création|S.O.|<xref:System.InvalidOperationException?displayProperty=nameWithType>|  
+|Opening|S.O.|<xref:System.InvalidOperationException?displayProperty=nameWithType>|  
+|Opened|S.O.|<xref:System.InvalidOperationException?displayProperty=nameWithType>|  
 |Closing|Oui|<xref:System.ServiceModel.CommunicationObjectAbortedException?displayProperty=nameWithType>|  
 |Closing|Non|<xref:System.ObjectDisposedException?displayProperty=nameWithType>|  
 |Closed|Oui|<xref:System.ServiceModel.CommunicationObjectAbortedException?displayProperty=nameWithType> dans le cas où un objet aurait été fermé par un appel précédent et explicite d'Abort. Si vous appelez Close sur l'objet, alors une <xref:System.ObjectDisposedException?displayProperty=nameWithType> est levée.|  

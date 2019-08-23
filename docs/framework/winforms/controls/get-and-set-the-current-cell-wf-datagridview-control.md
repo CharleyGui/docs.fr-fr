@@ -9,31 +9,31 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], setting current cell
 - cells [Windows Forms], getting and setting current
 ms.assetid: b0e41e57-493a-4bd0-9376-a6f76723540c
-ms.openlocfilehash: f60acbfa73ef363d58c57e1c01bdce8cf3337e48
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 670708f342e1cd1ac495c215b7508093349ac2e4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619662"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933698"
 ---
 # <a name="how-to-get-and-set-the-current-cell-in-the-windows-forms-datagridview-control"></a>Procédure : obtenir et définir la cellule active dans le contrôle DataGridView Windows Forms
-Interaction avec le <xref:System.Windows.Forms.DataGridView> nécessite souvent que vous découvriez par programme la cellule qui est actuellement active. Vous serez peut-être amené à modifier la cellule active. Vous pouvez effectuer ces tâches avec la <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> propriété.  
+L' <xref:System.Windows.Forms.DataGridView> interaction avec vous oblige souvent à détecter par programmation la cellule actuellement active. Vous devrez peut-être également modifier la cellule active. Vous pouvez effectuer ces tâches avec la <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> propriété.  
   
 > [!NOTE]
->  Vous ne pouvez pas définir la cellule active dans une ligne ou une colonne qui a son <xref:System.Windows.Forms.DataGridViewBand.Visible%2A> propriété définie sur `false`.  
+> Vous ne pouvez pas définir la cellule active dans une ligne ou une colonne <xref:System.Windows.Forms.DataGridViewBand.Visible%2A> dont la propriété `false`a la valeur.  
   
- Selon la <xref:System.Windows.Forms.DataGridView> mode de sélection du contrôle, la modification de la cellule active peut modifier la sélection. Pour plus d’informations, consultez [Modes de sélection dans le contrôle DataGridView Windows Forms](selection-modes-in-the-windows-forms-datagridview-control.md).  
+ En fonction du <xref:System.Windows.Forms.DataGridView> mode de sélection du contrôle, la modification de la cellule active peut modifier la sélection. Pour plus d’informations, consultez [modes de sélection dans le contrôle DataGridView Windows Forms](selection-modes-in-the-windows-forms-datagridview-control.md).  
   
-### <a name="to-get-the-current-cell-programmatically"></a>Pour obtenir la cellule active par programmation  
+### <a name="to-get-the-current-cell-programmatically"></a>Pour récupérer la cellule active par programmation  
   
-- Utilisez le <xref:System.Windows.Forms.DataGridView> du contrôle <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> propriété.  
+- Utilisez la <xref:System.Windows.Forms.DataGridView> propriété du <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> contrôle.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#080](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#080)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#080](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#080)]  
   
 ### <a name="to-set-the-current-cell-programmatically"></a>Pour définir la cellule active par programmation  
   
-- Définir le <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> propriété de la <xref:System.Windows.Forms.DataGridView> contrôle. Dans l’exemple de code suivant, la cellule active est définie à la ligne 0, colonne 1.  
+- Définissez la <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> propriété <xref:System.Windows.Forms.DataGridView> du contrôle. Dans l’exemple de code suivant, la cellule active est définie sur la ligne 0, colonne 1.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#085](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#085)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#085](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#085)]  
@@ -41,7 +41,7 @@ Interaction avec le <xref:System.Windows.Forms.DataGridView> nécessite souvent 
 ## <a name="compiling-the-code"></a>Compilation du code  
  Cet exemple nécessite :  
   
-- <xref:System.Windows.Forms.Button> contrôles nommés `getCurrentCellButton` et `setCurrentCellButton`. Dans Visual C#, vous devez attacher le <xref:System.Windows.Forms.Control.Click> événements pour chaque bouton au gestionnaire d’événements associé dans l’exemple de code.  
+- <xref:System.Windows.Forms.Button>contrôles nommés `getCurrentCellButton` et `setCurrentCellButton`. En Visual C#, vous devez joindre les <xref:System.Windows.Forms.Control.Click> événements pour chaque bouton au gestionnaire d’événements associé dans l’exemple de code.  
   
 - un contrôle <xref:System.Windows.Forms.DataGridView> nommé `dataGridView1` ;  
   

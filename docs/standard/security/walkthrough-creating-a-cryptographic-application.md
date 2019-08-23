@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 124641ed32dc2ea953202dbc6a73ee066a6c4a4e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5cdd2f5538be0e39b5dd3a378825ccf81f314c03
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64602520"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916283"
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>Procédure pas à pas : création d’une application de chiffrement
 Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. Les exemples de code sont conçus pour une application Windows Forms. Cette application ne montre pas de scénarios du monde réel, tels que l'utilisation de cartes à puce. Elle montre les principes fondamentaux du chiffrement et du déchiffrement.  
@@ -29,7 +29,7 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
 - Utilisez <xref:System.Security.Cryptography.RSACryptoServiceProvider> (algorithme asymétrique) pour chiffrer et déchiffrer la clé des données chiffrées par <xref:System.Security.Cryptography.RijndaelManaged>. Il est préférable d'utiliser les algorithmes asymétriques pour les petites quantités de données, telles qu'une clé.  
   
     > [!NOTE]
-    >  Si vous voulez protéger les données de votre ordinateur au lieu d'échanger du contenu chiffré avec d'autres personnes, envisagez d'utiliser les classes <xref:System.Security.Cryptography.ProtectedData> et <xref:System.Security.Cryptography.ProtectedMemory>.  
+    > Si vous voulez protéger les données de votre ordinateur au lieu d'échanger du contenu chiffré avec d'autres personnes, envisagez d'utiliser les classes <xref:System.Security.Cryptography.ProtectedData> et <xref:System.Security.Cryptography.ProtectedMemory>.  
   
  Le tableau suivant récapitule les tâches de chiffrement de cette rubrique.  
   
@@ -53,7 +53,7 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
 ## <a name="creating-a-windows-forms-application"></a>Création d’une application Windows Forms  
  La plupart des exemples de code de cette procédure pas à pas sont conçus pour être des gestionnaires d'événements pour des contrôles de bouton. Le tableau suivant répertorie les contrôles requis par l'exemple d'application, ainsi que leur nom pour correspondre aux exemples de code.  
   
-|Contrôle|Nom|Propriété Text (si nécessaire)|  
+|Contrôle|Name|Propriété Text (si nécessaire)|  
 |-------------|----------|---------------------------------|  
 |<xref:System.Windows.Forms.Button>|`buttonEncryptFile`|Chiffrer le fichier|  
 |<xref:System.Windows.Forms.Button>|`buttonDecryptFile`|Déchiffrer le fichier|  
@@ -82,7 +82,7 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
  [!code-vb[CryptoWalkThru#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#2)]  
   
 ## <a name="encrypting-a-file"></a>Chiffrement d'un fichier  
- Cette tâche inclut deux méthodes : la méthode de gestionnaire d’événements pour le `Encrypt File` bouton (`buttonEncryptFile_Click`) et le `EncryptFile` (méthode). La première méthode affiche une boîte de dialogue permettant de sélectionner un fichier, puis passe le nom du fichier à la deuxième méthode qui effectue le chiffrement.  
+ Cette tâche implique deux méthodes: la méthode de gestionnaire d’événements `Encrypt File` pour le`buttonEncryptFile_Click`bouton () `EncryptFile` et la méthode. La première méthode affiche une boîte de dialogue permettant de sélectionner un fichier, puis passe le nom du fichier à la deuxième méthode qui effectue le chiffrement.  
   
  Le contenu chiffré, la clé et le vecteur d'initialisation sont enregistrés dans un <xref:System.IO.FileStream>, qui correspond au package de chiffrement.  
   

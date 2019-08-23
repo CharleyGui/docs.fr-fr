@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 29dde982-6d8b-4099-8867-ad0d7733f6dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f24e9a06137744dbc97d5f34cda7ad6eab873700
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 3510cbf0a63a8031669bb7a819a8b3c7321aaea4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663738"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920761"
 ---
 # <a name="etwenable-element"></a>\<etwEnable >, élément
 Indique s’il faut activer le Suivi d’événements pour Windows (ETW) pour les événements du common language runtime.  
@@ -57,7 +57,7 @@ Indique s’il faut activer le Suivi d’événements pour Windows (ETW) pour le
  À partir de Windows Vista, ETW est activé par défaut. Utilisez cet élément pour désactiver ETW pour une application. Dans les versions antérieures de Windows, utilisez cet élément pour activer ETW pour une application.  
   
 > [!NOTE]
->  ETW peut être activé ou désactivé globalement sur un serveur à l’aide d’un paramètre de registre. Consultez [contrôle](../../../performance/controlling-logging.md)de la journalisation des .NET Framework.  
+> ETW peut être activé ou désactivé globalement sur un serveur à l’aide d’un paramètre de registre. Consultez [contrôle](../../../performance/controlling-logging.md)de la journalisation des .NET Framework.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre comment activer le suivi ETW pour une application.  

@@ -1,22 +1,22 @@
 ---
-title: <clear> de <claimTypeRequirements> élément
+title: <clear>d' <claimTypeRequirements> élément
 ms.date: 03/30/2017
 ms.assetid: ef42fde7-f292-4610-9111-9fea382c3b5f
-ms.openlocfilehash: 35d0391951204bd352918d3004f0cc4f9480b0e8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e7e3bebd85decbaa4d216743f9bea9e135b87995
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704269"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926134"
 ---
-# <a name="clear-of-claimtyperequirements-element"></a>\<Désactivez > de \<claimTypeRequirements > élément
+# <a name="clear-of-claimtyperequirements-element"></a>\<Effacer > de \<l’élément de > ClaimTypeRequirements
 Indique que tous les types de revendications doivent être supprimés dans les informations d'identification fédérées. Cela garantit que la collection est vide au démarrage.  
   
  \<system.ServiceModel>  
 \<bindings>  
 \<wsFederatedBinding>  
 \<binding>  
-\<security>  
+\<> de sécurité  
 \<message>  
 \<claimTypeRequirements>  
   
@@ -41,7 +41,7 @@ Indique que tous les types de revendications doivent être supprimés dans les i
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<claimTypeRequirements>](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-for-message.md)|Spécifie une collection de types de revendications requis. Chaque élément est de type <xref:System.ServiceModel.Configuration.ClaimTypeElement>.<br /><br /> Dans un scénario fédéré, les services déclarent les spécifications relatives aux informations d'identification entrantes. Par exemple, ces informations d'identification doivent posséder un jeu de types de revendications défini. Chaque élément de la collection indique les types de revendications requis et facultatifs censés apparaître dans les informations d'identification fédérées.|  
+|[\<claimTypeRequirements>](claimtyperequirements-for-message.md)|Spécifie une collection de types de revendications requis. Chaque élément est de type <xref:System.ServiceModel.Configuration.ClaimTypeElement>.<br /><br /> Dans un scénario fédéré, les services déclarent les spécifications relatives aux informations d'identification entrantes. Par exemple, ces informations d'identification doivent posséder un jeu de types de revendications défini. Chaque élément de la collection indique les types de revendications requis et facultatifs censés apparaître dans les informations d'identification fédérées.|  
   
 ## <a name="see-also"></a>Voir aussi
 

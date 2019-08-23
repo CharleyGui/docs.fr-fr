@@ -6,12 +6,12 @@ helpviewer_keywords:
 - masks [WPF], opacity
 - opacity [WPF], masks
 ms.assetid: 22367fab-5f59-4583-abfd-db2bf86eaef7
-ms.openlocfilehash: 76ec595b1d2cc732e1c8bc2dc2ca6def904bf94c
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: d0fea1aac4efb17811404ce45769615bb2e7234f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545342"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929660"
 ---
 # <a name="opacity-masks-overview"></a>Vue d'ensemble des masques d'opacité
 Les masques d’opacité vous permettent de rendre les parties d’un élément ou d’un visuel totalement ou partiellement transparentes. Pour créer un masque d’opacité, vous appliquez <xref:System.Windows.Media.Brush> un à <xref:System.Windows.UIElement.OpacityMask%2A> la propriété d’un élément <xref:System.Windows.Media.Visual>ou.  Le pinceau est mappé à l’élément ou à l’objet visuel, et la valeur d’opacité de chaque pixel de pinceau est utilisée pour déterminer l’opacité obtenu pour chaque pixel correspondant de l’élément ou de l’objet visuel.  
@@ -25,7 +25,7 @@ Les masques d’opacité vous permettent de rendre les parties d’un élément 
  Un masque d’opacité consiste à mapper son contenu à l’élément ou à l’objet visuel. Le canal alpha de chacun des pixels du pinceau est ensuite utilisé pour déterminer l’opacité obtenue pour les pixels correspondants de l’élément ou de l’objet visuel ; la couleur réelle du pinceau est ignorée. Si une partie donnée du pinceau est transparente, la partie correspondante de l’élément ou de l’objet visuel devient transparente. Si une partie donnée du pinceau est opaque, la partie correspondante de l’élément ou de l’objet visuel reste inchangée. L’opacité spécifiée par le masque d’opacité est associée à tous les paramètres d’opacité présents dans l’élément ou l’objet visuel. Par exemple, si un élément est opaque à 25 % et si le masque d’opacité appliqué passe d’une opacité totale à une transparence totale, l’élément passera d’une opacité à 25 % à une transparence totale.  
   
 > [!NOTE]
->  Bien que les exemples de cette vue d’ensemble montrent l’utilisation de masques d’opacité sur des éléments d’image, un masque d’opacité <xref:System.Windows.Media.Visual>peut être appliqué à tout élément ou, y compris les panneaux et les contrôles.  
+> Bien que les exemples de cette vue d’ensemble montrent l’utilisation de masques d’opacité sur des éléments d’image, un masque d’opacité <xref:System.Windows.Media.Visual>peut être appliqué à tout élément ou, y compris les panneaux et les contrôles.  
   
  Les masques d’opacité sont utilisés pour créer des effets visuels intéressants, par exemple pour créer des images ou des boutons qui s’effacent de la vue, pour ajouter des textures à des éléments, ou pour combiner des dégradés pour produire des surfaces semblables à du verre. L’illustration suivante montre l’utilisation d’un masque d’opacité. Un arrière-plan à carreaux est utilisé pour afficher les parties transparentes du masque.  
   

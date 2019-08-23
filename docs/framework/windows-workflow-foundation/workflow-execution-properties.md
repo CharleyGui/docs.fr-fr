@@ -2,12 +2,12 @@
 title: Propriétés d'exécution de workflow
 ms.date: 03/30/2017
 ms.assetid: a50e088e-3a45-4267-bd51-1a3e6c2d246d
-ms.openlocfilehash: 0f87e58a034cbc11565fc74347e6b4362952093c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 61bf53d9cab3ddefae3709958bd1e445fb4e69dd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669379"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69913608"
 ---
 # <a name="workflow-execution-properties"></a>Propriétés d'exécution de workflow
 Par le biais du stockage local des threads (TLS), le CLR maintient un contexte d’exécution pour chaque thread. Ce contexte d’exécution gouverne des propriétés de thread connues, telles que l’identité de thread, la transaction ambiante et le jeu d’autorisations actuel, en plus des propriétés de thread définies par l’utilisateur (comme les emplacements nommés).  
@@ -157,7 +157,7 @@ End default text.
 ```  
   
 > [!NOTE]
->  Bien que cela ne soit pas visible dans la sortie précédente, chaque ligne de texte contenue dans la fenêtre de console est affichée dans la couleur indiquée.  
+> Bien que cela ne soit pas visible dans la sortie précédente, chaque ligne de texte contenue dans la fenêtre de console est affichée dans la couleur indiquée.  
   
  Les propriétés d'exécution de workflow peuvent être utilisées par les auteurs d'activités personnalisées, tout en fournissant également le mécanisme nécessaire pour gérer les activités telles que les activités <xref:System.ServiceModel.Activities.CorrelationScope> et <xref:System.Activities.Statements.TransactionScope>.  
   

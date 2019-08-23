@@ -2,12 +2,12 @@
 title: Events
 description: Découvrez comment F# les événements vous permettent d’associer des appels de fonction à des actions de l’utilisateur, qui sont importantes dans la programmation de l’interface graphique.
 ms.date: 05/16/2016
-ms.openlocfilehash: eed2caff569638ea5aa972a000dfa71a3b64f60b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 7c3f16204b762609323fc2bcdc05f80e85a298e8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627566"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917275"
 ---
 # <a name="events"></a>Events
 
@@ -175,7 +175,7 @@ Application.Run(appForm)
 ## <a name="see-also"></a>Voir aussi
 
 - [Membres](index.md)
-- [Gestion et déclenchement d’événements](../../../../docs/standard/events/index.md)
+- [Gestion et déclenchement d’événements](../../../standard/events/index.md)
 - [Expressions lambda: le mot clé `fun` ](../functions/lambda-expressions-the-fun-keyword.md)
 - [Module Control. Event](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event-module-%5bfsharp%5d)
 - [Control. Event&#60;'&#62; classe'](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27t%5d-class-%5bfsharp%5d)

@@ -1,21 +1,21 @@
 ---
-title: <clientCertificate> de <clientCredentials> élément
+title: <clientCertificate>d' <clientCredentials> élément
 ms.date: 03/30/2017
 ms.assetid: 3b3fa000-3434-4142-a178-11903bdd2c5d
-ms.openlocfilehash: 5abf0a99beff1b9fb3655cb82d74484f3b88237f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3450df921da8c72a555c2faf424c51e0063cb235
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673314"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926114"
 ---
-# <a name="clientcertificate-of-clientcredentials-element"></a>\<clientCertificate > de \<clientCredentials > élément
+# <a name="clientcertificate-of-clientcredentials-element"></a>\<> ClientCertificate de \<l’élément > ClientCredentials
 Définit un certificat X.509 utilisé pour authentifier un client à un service.  
   
  \<system.ServiceModel>  
 \<behaviors>  
 \<endpointBehaviors>  
-\<behavior>  
+\<> de comportement  
 \<clientCredentials>  
 \<clientCertificate>  
   
@@ -36,8 +36,8 @@ Définit un certificat X.509 utilisé pour authentifier un client à un service.
 |Attribut|Description|  
 |---------------|-----------------|  
 |`findValue`|Chaîne qui contient la valeur à rechercher dans le magasin de certificats X.509. Le type contenu dans cet attribut doit répondre aux spécifications de l'attribut `X509FindType` spécifié. La valeur par défaut est une chaîne vide.|  
-|`storeLocation`|Indique l'emplacement du certificat X.509 utilisé par le client pour s'authentifier auprès du service. Les valeurs valides sont les suivantes :<br /><br /> -LocalMachine : magasin de certificats assigné à l’ordinateur local.<br />-CurrentUser : magasin de certificats assigné à l’utilisateur actuel.<br /><br /> La valeur par défaut est LocalMachine. Cet attribut est de type <xref:System.Security.Cryptography.X509Certificates.StoreLocation>.|  
-|`storeName`|Spécifie le nom du magasin de certificats X.509 dans lequel effectuer la recherche. Les valeurs valides sont les suivantes :<br /><br /> -Carnet d’adresses : Magasin de certificats pour d’autres utilisateurs.<br />-   AuthRoot: Magasin de certificats Autorités de certification (CA).<br />-   CertificateAuthority: Magasin de certificats Autorités de certification intermédiaires (CA).<br />-Interdit : Magasin de certificats pour les certificats révoqués.<br />-Mon : Magasin de certificats pour les certificats personnels.<br />-Racine : Magasin de certificats Autorités de certification racine approuvée (CA).<br />-   TrustedPeople: Magasin de certificats pour les personnes et ressources directement approuvées.<br />-TrustedPublisher : Magasin de certificats pour les éditeurs directement approuvés.<br /><br /> La valeur par défaut est My. Cet attribut est de type <xref:System.Security.Cryptography.X509Certificates.StoreName>.|  
+|`storeLocation`|Indique l'emplacement du certificat X.509 utilisé par le client pour s'authentifier auprès du service. Les valeurs valides sont les suivantes :<br /><br /> -LocalMachine: magasin de certificats attribué à l’ordinateur local.<br />-CurrentUser: magasin de certificats attribué à l’utilisateur actuel.<br /><br /> La valeur par défaut est LocalMachine. Cet attribut est de type <xref:System.Security.Cryptography.X509Certificates.StoreLocation>.|  
+|`storeName`|Spécifie le nom du magasin de certificats X.509 dans lequel effectuer la recherche. Les valeurs valides sont les suivantes :<br /><br /> Carnet Magasin de certificats pour d’autres utilisateurs.<br />-   AuthRoot: Magasin de certificats pour les autorités de certification tierces.<br />CertificateAuthority Magasin de certificats pour les autorités de certification (ca) intermédiaires.<br />Interdits Magasin de certificats pour les certificats révoqués.<br />M' Magasin de certificats pour les certificats personnels.<br />Causes Magasin de certificats pour les autorités de certification racines de confiance (ca).<br />TrustedPeople Magasin de certificats pour les personnes et les ressources directement approuvées.<br />TrustedPublisher Magasin de certificats pour les éditeurs directement approuvés.<br /><br /> La valeur par défaut est My. Cet attribut est de type <xref:System.Security.Cryptography.X509Certificates.StoreName>.|  
 |X509FindType|Définit le type de recherche X.509 à exécuter. Le type contenu dans l'attribut `findValue` doit répondre aux spécifications de cet attribut. Les valeurs valides sont les suivantes :<br /><br /> -   FindByThumbPrint<br />-   FindBySubjectName<br />-   FindBySubjectDistinguishedName<br />-   FindByIssuerName<br />-   FindByIssuerDistinguishedName<br />-   FindBySerialNumber<br />-   FindByTimeValid<br />-   FindByTimeNotYetValid<br />-   FindByTemplateName<br />-   FindByApplicationPolicy<br />-   FindByCertificatePolicy<br />-   FindByExtension<br />-   FindByKeyUsage<br />-   FindBySubjectKeyIdentifier<br /><br /> La valeur par défaut est FindBySubjectDistinguishedName. Cet attribut est de type <xref:System.Security.Cryptography.X509Certificates.X509FindType>.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
@@ -47,10 +47,10 @@ Définit un certificat X.509 utilisé pour authentifier un client à un service.
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Indique les informations d'identification utilisées pour authentifier le client auprès d'un service.|  
+|[\<clientCredentials>](clientcredentials.md)|Indique les informations d'identification utilisées pour authentifier le client auprès d'un service.|  
   
 ## <a name="remarks"></a>Notes  
- Cet élément de configuration spécifie le certificat utilisé pour authentifier le client avec cet élément. Pour plus d'informations, voir [Procédure : Renseignez les informations d’identification Client](../../../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
+ Cet élément de configuration spécifie le certificat utilisé pour authentifier le client avec cet élément. Pour plus d’informations, consultez [Guide pratique pour Spécifiez les valeurs](../../../wcf/how-to-specify-client-credential-values.md)d’informations d’identification du client.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -60,8 +60,8 @@ Définit un certificat X.509 utilisé pour authentifier un client à un service.
 - <xref:System.ServiceModel.Description.ClientCredentials.ClientCertificate%2A>
 - <xref:System.ServiceModel.Configuration.X509InitiatorCertificateServiceElement>
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>
-- [Comportements de sécurité](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
-- [Guide pratique pour Renseignez les informations d’identification Client](../../../../../docs/framework/wcf/how-to-specify-client-credential-values.md)
-- [Sécurisation des clients](../../../../../docs/framework/wcf/securing-clients.md)
-- [Utilisation des certificats](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [Sécurisation des services et des clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Comportements de sécurité](../../../wcf/feature-details/security-behaviors-in-wcf.md)
+- [Guide pratique pour Spécifier les valeurs d’informations d’identification du client](../../../wcf/how-to-specify-client-credential-values.md)
+- [Sécurisation des clients](../../../wcf/securing-clients.md)
+- [Utilisation des certificats](../../../wcf/feature-details/working-with-certificates.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)

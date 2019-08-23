@@ -1,22 +1,22 @@
 ---
-title: <message> élément de <ws2007FederationHttpBinding>
+title: <message>élément de<ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 52cd941d-e230-4c82-8b29-333a7d20eca8
-ms.openlocfilehash: f05bd90bd2e4c7e1fd606518d9e5cb8d4e5ad974
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4340727026cb151f2efe813dfa005c1c5a1908be
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61767570"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931622"
 ---
-# <a name="message-element-of-ws2007federationhttpbinding"></a>\<message > élément de \<ws2007FederationHttpBinding >
-Définit les paramètres pour la sécurité au niveau du message pour le [ \<ws2007FederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) élément.  
+# <a name="message-element-of-ws2007federationhttpbinding"></a>\<message > élément de \<WS2007FederationHttpBinding >
+Définit des paramètres pour la sécurité au niveau du message pour l' [ \<élément WS2007FederationHttpBinding >](ws2007federationhttpbinding.md) .  
   
  \<system.ServiceModel>  
 \<bindings>  
 \<ws2007FederationHttpBinding>  
 \<binding>  
-\<security>  
+\<> de sécurité  
 \<message>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -86,14 +86,14 @@ Définit les paramètres pour la sécurité au niveau du message pour le [ \<ws2
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`algorithmSuite`|Optionnel. Définit les algorithmes de chiffrement de message, de signature et de clé de type WRAP. Les algorithmes et les tailles de clé sont déterminés par la classe <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>. Ces algorithmes se mappent à ceux définis dans la spécification Security Policy Language (WS-SecurityPolicy).<br /><br /> Consultez le tableau suivant pour connaître les valeurs autorisées. La valeur par défaut est Basic256.|  
-|`issuedKeyType`|Spécifie le type de clé à émettre. Les valeurs valides sont les suivantes :<br /><br /> -   SymmetricKey<br />-   PublicKey<br />-   BearerKey<br /><br /> La valeur par défaut est SymmetricKey. Cet attribut est de type <xref:System.IdentityModel.Tokens.SecurityKeyType>.|  
-|`issuedTokenType`|URI qui spécifie le type de jeton à émettre. La valeur par défaut est `null`.|  
+|`algorithmSuite`|facultatif. Définit les algorithmes de chiffrement de message, de signature et de clé de type WRAP. Les algorithmes et les tailles de clé sont déterminés par la classe <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>. Ces algorithmes se mappent à ceux définis dans la spécification Security Policy Language (WS-SecurityPolicy).<br /><br /> Consultez le tableau suivant pour connaître les valeurs autorisées. La valeur par défaut est Basic256.|  
+|`issuedKeyType`|Spécifie le type de clé à émettre. Les valeurs valides sont les suivantes :<br /><br /> -SymmetricKey<br />-PublicKey<br />-   BearerKey<br /><br /> La valeur par défaut est SymmetricKey. Cet attribut est de type <xref:System.IdentityModel.Tokens.SecurityKeyType>.|  
+|`issuedTokenType`|URI qui spécifie le type de jeton à émettre. Par défaut, il s’agit de `null`.|  
 |`negotiateServiceCredential`|Valeur qui spécifie si les informations d'identification du service doivent être échangées dans le cadre de la négociation ou sont disponibles hors bande. La valeur par défaut est `true`, ce qui signifie que les informations d'identification du service sont négociées.|  
   
 ## <a name="algorithmsuite-attribute"></a>Attribut algorithmSuite  
   
-|Value|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |Basic128|Utilisez le chiffrement Aes128, Sha1 pour le résumé du message et Rsa-oaep-mgf1p pour la clé de type WRAP.|  
 |Basic192|Utilisez le chiffrement Aes192, Sha1 pour le résumé du message et Rsa-oaep-mgf1p pour la clé de type WRAP.|  
@@ -116,16 +116,16 @@ Définit les paramètres pour la sécurité au niveau du message pour le [ \<ws2
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<claimTypeRequirements>](../../../../../docs/framework/configure-apps/file-schema/wcf/claimtyperequirements-element.md)|Spécifie une collection de types de revendication pour cette liaison. Chaque élément est de type <xref:System.ServiceModel.Configuration.ClaimTypeElement>.|  
-|[\<issuer>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuer.md)|Spécifie un point de terminaison qui publie un jeton de sécurité. Cet élément est de type <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>.|  
-|[\<issuerMetadata>](../../../../../docs/framework/configure-apps/file-schema/wcf/issuermetadata.md)|Spécifie l'adresse de point de terminaison de l'émetteur.|  
-|[\<tokenRequestParameters>](../../../../../docs/framework/configure-apps/file-schema/wcf/tokenrequestparameters.md)|Collection de paramètres de demande de jeton. Chaque paramètre est un élément XML.|  
+|[\<claimTypeRequirements>](claimtyperequirements-element.md)|Spécifie une collection de types de revendication pour cette liaison. Chaque élément est de type <xref:System.ServiceModel.Configuration.ClaimTypeElement>.|  
+|[\<issuer>](issuer.md)|Spécifie un point de terminaison qui publie un jeton de sécurité. Cet élément est de type <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>.|  
+|[\<issuerMetadata>](issuermetadata.md)|Spécifie l'adresse de point de terminaison de l'émetteur.|  
+|[\<tokenRequestParameters>](tokenrequestparameters.md)|Collection de paramètres de demande de jeton. Chaque paramètre est un élément XML.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md)|Définit les paramètres de sécurité d’une liaison.|  
+|[\<> de sécurité](security-element-of-ws2007federationhttpbinding.md)|Définit les paramètres de sécurité d’une liaison.|  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -133,8 +133,8 @@ Définit les paramètres pour la sécurité au niveau du message pour le [ \<ws2
 - <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement.Message%2A>
 - <xref:System.ServiceModel.WSFederationHttpSecurity.Message%2A>
 - <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>
-- [Sécurisation des services et des clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Liaisons](../../../../../docs/framework/wcf/bindings.md)
-- [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Utilisation de liaisons pour configurer des services et des clients](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding>](../../../../../docs/framework/misc/binding.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Liaisons](../../../wcf/bindings.md)
+- [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<binding>](../../../misc/binding.md)

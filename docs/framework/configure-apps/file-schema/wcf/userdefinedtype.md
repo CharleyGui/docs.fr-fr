@@ -2,12 +2,12 @@
 title: <userDefinedType>
 ms.date: 03/30/2017
 ms.assetid: 0f70ec06-8249-4f0c-9f49-b4df59985fb8
-ms.openlocfilehash: 46beb88cedf051ed1683161b6ed9b37273ed01f1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d1a48fa2ed90999a66f4c1f84b7cfaa9a0e79f6a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769835"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940584"
 ---
 # <a name="userdefinedtype"></a>\<userDefinedType>
 Représente un type défini par l'utilisateur (UDT) à inclure dans le contrat de service.  
@@ -59,7 +59,7 @@ Représente un type défini par l'utilisateur (UDT) à inclure dans le contrat d
   
  Pour contourner ce problème, vous pouvez ajouter les UDT au fichier de configuration afin qu'ils puissent être inclus comme types connus sur le contrat de service approprié. Pour ce faire, vous devez identifier de manière unique l'UDT et le ou les contrats, autrement dit, le ou les interfaces COM d'origine qui les utilisent.  
   
- L’exemple suivant illustre l’ajout de deux UDT spécifiques à la <`userDefinedTypes`> section du fichier de configuration à cet effet.  
+ L’exemple suivant illustre l’ajout de deux UDT spécifiques à`userDefinedTypes`la section < > du fichier de configuration à cet effet.  
   
 ```xml  
 <comContracts>
@@ -95,6 +95,6 @@ Représente un type défini par l'utilisateur (UDT) à inclure dans le contrat d
 - <xref:System.ServiceModel.Configuration.ComContractElement.UserDefinedTypes%2A>
 - <xref:System.ServiceModel.Configuration.ComUdtElementCollection>
 - <xref:System.ServiceModel.Configuration.ComUdtElement>
-- [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)
-- [Intégration à des applications COM+](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)
-- [Guide pratique pour Configurer les paramètres de Service COM +](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)
+- [\<comContracts>](comcontracts.md)
+- [Intégration à des applications COM+](../../../wcf/feature-details/integrating-with-com-plus-applications.md)
+- [Guide pratique : Configurer les paramètres du service COM+](../../../wcf/feature-details/how-to-configure-com-service-settings.md)

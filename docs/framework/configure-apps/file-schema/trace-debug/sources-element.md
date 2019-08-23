@@ -9,15 +9,15 @@ helpviewer_keywords:
 - trace sources
 - <sources> element
 ms.assetid: c727b2e2-423a-4463-a223-013f40ff16a3
-ms.openlocfilehash: 9104a4a302aa9c6094adbc13396074fdd4db4bbc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 73d4eb2741bdbe5a07704ca0f3b2f779706e66dc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701266"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926956"
 ---
-# <a name="sources-element"></a>\<sources > élément
-Spécifie les sources de trace qui initient des messages de suivi.  
+# <a name="sources-element"></a>\<Élément sources >
+Spécifie les sources de suivi qui initialisent les messages de suivi.  
   
  \<configuration>  
 \<system.diagnostics>  
@@ -41,7 +41,7 @@ Spécifie les sources de trace qui initient des messages de suivi.
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<source>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)|Élément requis.<br /><br /> Spécifie une source de trace qui lance des messages de traçage.|  
+|[\<source>](source-element.md)|Élément requis.<br /><br /> Spécifie une source de trace qui lance des messages de traçage.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -51,10 +51,10 @@ Spécifie les sources de trace qui initient des messages de suivi.
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
   
 ## <a name="remarks"></a>Notes  
- Cet élément peut être utilisé dans le fichier de configuration machine (Machine.config) et le fichier de configuration d’application.  
+ Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser le `<sources>` élément à ajouter la source de suivi `mySource` et pour définir le niveau du commutateur source nommé `sourceSwitch`. Un écouteur de suivi de console est ajouté qui écrit les informations de trace dans la console.  
+ L’exemple suivant montre comment utiliser l' `<sources>` élément pour ajouter la source `mySource` de suivi et définir le niveau du commutateur source nommé `sourceSwitch`. Un écouteur de suivi de console est ajouté pour écrire des informations de traçage dans la console.  
   
 ```xml  
 <configuration>  
@@ -87,5 +87,5 @@ Spécifie les sources de trace qui initient des messages de suivi.
 - <xref:System.Diagnostics.ConsoleTraceListener>
 - <xref:System.Diagnostics.EventLogTraceListener>
 - <xref:System.Diagnostics.XmlWriterTraceListener>
-- [Schéma des paramètres de trace et de débogage](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
-- [\<source>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/source-element.md)
+- [Schéma des paramètres de trace et de débogage](index.md)
+- [\<source>](source-element.md)
