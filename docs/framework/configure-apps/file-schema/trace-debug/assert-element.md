@@ -8,58 +8,58 @@ helpviewer_keywords:
 - <assert> element
 - assert element
 ms.assetid: ef4c3229-b151-4d85-8091-e6456af9b935
-ms.openlocfilehash: 2f3823265e358976f970cdfa36772d2251894280
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5ba781598542d271f41476b1a1e9d61faeb6ff74
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61701357"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927181"
 ---
-# <a name="assert-element"></a><span data-ttu-id="25720-102">\<Assert > élément</span><span class="sxs-lookup"><span data-stu-id="25720-102">\<assert> Element</span></span>
-<span data-ttu-id="25720-103">Indique si une boîte de message doit s’afficher quand vous appelez la méthode <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> ; spécifie également le nom du fichier dans lequel écrire les messages.</span><span class="sxs-lookup"><span data-stu-id="25720-103">Specifies whether to display a message box when you call the <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> method; also specifies the name of the file to write messages to.</span></span>  
+# <a name="assert-element"></a><span data-ttu-id="e4b53-102">\<Élément > Assert</span><span class="sxs-lookup"><span data-stu-id="e4b53-102">\<assert> Element</span></span>
+<span data-ttu-id="e4b53-103">Indique si une boîte de message doit s’afficher quand vous appelez la méthode <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> ; spécifie également le nom du fichier dans lequel écrire les messages.</span><span class="sxs-lookup"><span data-stu-id="e4b53-103">Specifies whether to display a message box when you call the <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> method; also specifies the name of the file to write messages to.</span></span>  
   
- <span data-ttu-id="25720-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="25720-104">\<configuration></span></span>  
-<span data-ttu-id="25720-105">\<system.diagnostics></span><span class="sxs-lookup"><span data-stu-id="25720-105">\<system.diagnostics></span></span>  
-<span data-ttu-id="25720-106">\<assert></span><span class="sxs-lookup"><span data-stu-id="25720-106">\<assert></span></span>  
+ <span data-ttu-id="e4b53-104">\<configuration></span><span class="sxs-lookup"><span data-stu-id="e4b53-104">\<configuration></span></span>  
+<span data-ttu-id="e4b53-105">\<system.diagnostics></span><span class="sxs-lookup"><span data-stu-id="e4b53-105">\<system.diagnostics></span></span>  
+<span data-ttu-id="e4b53-106">\<assert></span><span class="sxs-lookup"><span data-stu-id="e4b53-106">\<assert></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="25720-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="25720-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e4b53-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e4b53-107">Syntax</span></span>  
   
 ```xml  
 <assert assertuienabled="true|false" logfilename="file name"/>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="25720-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="25720-108">Attributes and Elements</span></span>  
- <span data-ttu-id="25720-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="25720-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="e4b53-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="e4b53-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="e4b53-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="e4b53-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="25720-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="25720-110">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="e4b53-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="e4b53-110">Attributes</span></span>  
   
-|<span data-ttu-id="25720-111">Attribut</span><span class="sxs-lookup"><span data-stu-id="25720-111">Attribute</span></span>|<span data-ttu-id="25720-112">Description</span><span class="sxs-lookup"><span data-stu-id="25720-112">Description</span></span>|  
+|<span data-ttu-id="e4b53-111">Attribut</span><span class="sxs-lookup"><span data-stu-id="e4b53-111">Attribute</span></span>|<span data-ttu-id="e4b53-112">Description</span><span class="sxs-lookup"><span data-stu-id="e4b53-112">Description</span></span>|  
 |---------------|-----------------|  
-|`assertuienabled`|<span data-ttu-id="25720-113">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="25720-113">Optional attribute.</span></span><br /><br /> <span data-ttu-id="25720-114">Spécifie si pour afficher un boîte de message lorsque le **Debug.Assert** méthode prend la valeur **false**.</span><span class="sxs-lookup"><span data-stu-id="25720-114">Specifies whether to display a message box when the **Debug.Assert** method evaluates to **false**.</span></span>|  
-|`logfilename`|<span data-ttu-id="25720-115">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="25720-115">Optional attribute.</span></span><br /><br /> <span data-ttu-id="25720-116">Spécifie le nom de fichier dans lequel écrire le message à if **Debug.Assert** prend la valeur **false**.</span><span class="sxs-lookup"><span data-stu-id="25720-116">Specifies the name of the file to write the message to if **Debug.Assert** evaluates to **false**.</span></span>|  
+|`assertuienabled`|<span data-ttu-id="e4b53-113">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="e4b53-113">Optional attribute.</span></span><br /><br /> <span data-ttu-id="e4b53-114">Spécifie s’il faut afficher une boîte de message lorsque la méthode **Debug. Assert** prend la **valeur false**.</span><span class="sxs-lookup"><span data-stu-id="e4b53-114">Specifies whether to display a message box when the **Debug.Assert** method evaluates to **false**.</span></span>|  
+|`logfilename`|<span data-ttu-id="e4b53-115">Attribut facultatif.</span><span class="sxs-lookup"><span data-stu-id="e4b53-115">Optional attribute.</span></span><br /><br /> <span data-ttu-id="e4b53-116">Spécifie le nom du fichier dans lequel le message doit être écrit si **Debug. Assert** prend la **valeur false**.</span><span class="sxs-lookup"><span data-stu-id="e4b53-116">Specifies the name of the file to write the message to if **Debug.Assert** evaluates to **false**.</span></span>|  
   
-## <a name="assertuienabled-attribute"></a><span data-ttu-id="25720-117">AssertUiEnabled attribut</span><span class="sxs-lookup"><span data-stu-id="25720-117">assertuienabled Attribute</span></span>  
+## <a name="assertuienabled-attribute"></a><span data-ttu-id="e4b53-117">Attribut AssertUiEnabled</span><span class="sxs-lookup"><span data-stu-id="e4b53-117">assertuienabled Attribute</span></span>  
   
-|<span data-ttu-id="25720-118">Value</span><span class="sxs-lookup"><span data-stu-id="25720-118">Value</span></span>|<span data-ttu-id="25720-119">Description</span><span class="sxs-lookup"><span data-stu-id="25720-119">Description</span></span>|  
+|<span data-ttu-id="e4b53-118">`Value`</span><span class="sxs-lookup"><span data-stu-id="e4b53-118">Value</span></span>|<span data-ttu-id="e4b53-119">Description</span><span class="sxs-lookup"><span data-stu-id="e4b53-119">Description</span></span>|  
 |-----------|-----------------|  
-|`true`|<span data-ttu-id="25720-120">Affiche la boîte de message.</span><span class="sxs-lookup"><span data-stu-id="25720-120">Displays the message box.</span></span> <span data-ttu-id="25720-121">Il s'agit de la valeur par défaut.</span><span class="sxs-lookup"><span data-stu-id="25720-121">This is the default.</span></span>|  
-|`false`|<span data-ttu-id="25720-122">Ne pas afficher la boîte de message.</span><span class="sxs-lookup"><span data-stu-id="25720-122">Does not display the message box.</span></span>|  
+|`true`|<span data-ttu-id="e4b53-120">Affiche la boîte de message.</span><span class="sxs-lookup"><span data-stu-id="e4b53-120">Displays the message box.</span></span> <span data-ttu-id="e4b53-121">Il s'agit de la valeur par défaut.</span><span class="sxs-lookup"><span data-stu-id="e4b53-121">This is the default.</span></span>|  
+|`false`|<span data-ttu-id="e4b53-122">N’affiche pas la boîte de message.</span><span class="sxs-lookup"><span data-stu-id="e4b53-122">Does not display the message box.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="25720-123">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="25720-123">Child Elements</span></span>  
- <span data-ttu-id="25720-124">Aucun.</span><span class="sxs-lookup"><span data-stu-id="25720-124">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="e4b53-123">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="e4b53-123">Child Elements</span></span>  
+ <span data-ttu-id="e4b53-124">Aucun.</span><span class="sxs-lookup"><span data-stu-id="e4b53-124">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="25720-125">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="25720-125">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="e4b53-125">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="e4b53-125">Parent Elements</span></span>  
   
-|<span data-ttu-id="25720-126">Élément</span><span class="sxs-lookup"><span data-stu-id="25720-126">Element</span></span>|<span data-ttu-id="25720-127">Description</span><span class="sxs-lookup"><span data-stu-id="25720-127">Description</span></span>|  
+|<span data-ttu-id="e4b53-126">Élément</span><span class="sxs-lookup"><span data-stu-id="e4b53-126">Element</span></span>|<span data-ttu-id="e4b53-127">Description</span><span class="sxs-lookup"><span data-stu-id="e4b53-127">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|<span data-ttu-id="25720-128">Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="25720-128">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
-|`system.diagnostics`|<span data-ttu-id="25720-129">Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.</span><span class="sxs-lookup"><span data-stu-id="25720-129">Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.</span></span>|  
+|`configuration`|<span data-ttu-id="e4b53-128">Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="e4b53-128">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`system.diagnostics`|<span data-ttu-id="e4b53-129">Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.</span><span class="sxs-lookup"><span data-stu-id="e4b53-129">Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="25720-130">Notes</span><span class="sxs-lookup"><span data-stu-id="25720-130">Remarks</span></span>  
- <span data-ttu-id="25720-131">Les deux attributs dans le  **\<assert >** élément sont facultatifs.</span><span class="sxs-lookup"><span data-stu-id="25720-131">Both attributes in the **\<assert>** element are optional.</span></span> <span data-ttu-id="25720-132">Vous pouvez désactiver les boîtes de message sans spécifier de fichier pour écrire les messages, ou vous pouvez spécifier un fichier pour écrire des messages tout en laissant les messages activés.</span><span class="sxs-lookup"><span data-stu-id="25720-132">You can disable message boxes without specifying a file to write the messages to, or you can specify a file to write messages to while leaving message boxes enabled.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="e4b53-130">Notes</span><span class="sxs-lookup"><span data-stu-id="e4b53-130">Remarks</span></span>  
+ <span data-ttu-id="e4b53-131">Les deux attributs de  **\<** l’élément Assert > sont facultatifs.</span><span class="sxs-lookup"><span data-stu-id="e4b53-131">Both attributes in the **\<assert>** element are optional.</span></span> <span data-ttu-id="e4b53-132">Vous pouvez désactiver les boîtes de message sans spécifier de fichier dans lequel écrire les messages, ou vous pouvez spécifier un fichier dans lequel écrire les messages tout en laissant les boîtes de message activées.</span><span class="sxs-lookup"><span data-stu-id="e4b53-132">You can disable message boxes without specifying a file to write the messages to, or you can specify a file to write messages to while leaving message boxes enabled.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="25720-133">Exemple</span><span class="sxs-lookup"><span data-stu-id="25720-133">Example</span></span>  
- <span data-ttu-id="25720-134">L’exemple suivant montre comment désactiver l’affichage des messages lorsque vous appelez **Debug.Assert** et écrire les messages à `c:\log.txt`.</span><span class="sxs-lookup"><span data-stu-id="25720-134">The following example shows how to disable displaying message boxes when you call **Debug.Assert** and write the messages to `c:\log.txt`.</span></span>  
+## <a name="example"></a><span data-ttu-id="e4b53-133">Exemples</span><span class="sxs-lookup"><span data-stu-id="e4b53-133">Example</span></span>  
+ <span data-ttu-id="e4b53-134">L’exemple suivant montre comment désactiver l’affichage des boîtes de message lorsque vous appelez **Debug. Assert** et écrire `c:\log.txt`les messages dans.</span><span class="sxs-lookup"><span data-stu-id="e4b53-134">The following example shows how to disable displaying message boxes when you call **Debug.Assert** and write the messages to `c:\log.txt`.</span></span>  
   
 ```xml  
 <configuration>  
@@ -69,7 +69,7 @@ ms.locfileid: "61701357"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="25720-135">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="25720-135">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e4b53-135">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e4b53-135">See also</span></span>
 
 - <xref:System.Diagnostics.Debug>
-- [<span data-ttu-id="25720-136">Schéma des paramètres de trace et de débogage</span><span class="sxs-lookup"><span data-stu-id="25720-136">Trace and Debug Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [<span data-ttu-id="e4b53-136">Schéma des paramètres de trace et de débogage</span><span class="sxs-lookup"><span data-stu-id="e4b53-136">Trace and Debug Settings Schema</span></span>](index.md)
