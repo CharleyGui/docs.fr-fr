@@ -1,5 +1,5 @@
 ---
-title: End, instruction (Visual Basic)
+title: Instruction end (Visual Basic)
 ms.date: 07/20/2015
 f1_keywords:
 - vb.End
@@ -14,15 +14,15 @@ helpviewer_keywords:
 - End statement [Visual Basic]
 - execution [Visual Basic], stopping
 ms.assetid: 0e64467c-0f34-4aab-9ddd-43f8b9d55d90
-ms.openlocfilehash: 4fc4fd36fb6b057195e9d8a79eb0a5b3ac9ff95c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9307cf10e6125441bd49baa0e663a5a13f234005
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638140"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69944462"
 ---
 # <a name="end-statement"></a>End, instruction
-Termine l’exécution immédiatement.  
+Termine immédiatement l’exécution.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,32 +31,32 @@ End
 ```  
   
 ## <a name="remarks"></a>Notes  
- Vous pouvez placer le `End` instruction n’importe où dans une procédure pour forcer l’application entière pour interrompre l’exécution. `End` Ferme tous les fichiers ouverts avec un `Open` instruction et efface toutes les variables de l’application. L’application se ferme dès qu’il en existe aucun programme contenant des références à ses objets et son code est en cours d’exécution.  
+ Vous pouvez placer l' `End` instruction n’importe où dans une procédure pour forcer l’arrêt de l’exécution de l’application entière. `End`ferme tous les fichiers ouverts avec `Open` une instruction et efface toutes les variables de l’application. L’application se ferme dès qu’aucun autre programme ne contient des références à ses objets et qu’aucun de son code n’est en cours d’exécution.  
   
 > [!NOTE]
->  Le `End` instruction met immédiatement fin à l’exécution de code et n’appelle pas la `Dispose` ou `Finalize` (méthode), ou tout autre code Visual Basic. Références d’objet détenus par d’autres programmes sont invalidés. Si un `End` est rencontrée dans une `Try` ou `Catch` bloc, le contrôle ne passe pas correspondant `Finally` bloc.  
+> L' `End` instruction arrête l’exécution du code brusquement et n’appelle pas `Dispose` la `Finalize` méthode ou, ni tout autre Visual Basic de code. Les références d’objets détenues par d’autres programmes sont invalidées. Si une `End` instruction est rencontrée dans `Try` un `Catch` bloc ou, le contrôle ne passe pas au `Finally` bloc correspondant.  
   
- Le `Stop` instruction interrompt l’exécution, mais contrairement à `End`, il ne pas fermer tous les fichiers ou effacer toutes les variables, sauf si elle est placée dans un fichier exécutable compilé (.exe).  
+ L' `Stop` instruction interrompt l’exécution, mais `End`contrairement à, elle ne ferme pas les fichiers ou n’efface aucune variable, sauf si elle est rencontrée dans un fichier exécutable (. exe) compilé.  
   
- Étant donné que `End` met fin à votre application sans se préoccuper des ressources qui peuvent être ouvertes, essayez de fermer correctement avant de l’utiliser. Par exemple, si votre application comporte des formulaires ouverts, vous devez les fermer avant de contrôle atteint la `End` instruction.  
+ Étant `End` donné que met fin à votre application sans vous préoccuper des ressources qui peuvent être ouvertes, vous devez essayer de la fermer correctement avant de l’utiliser. Par exemple, si des formulaires sont ouverts sur votre application, vous devez les fermer avant que le `End` contrôle n’atteigne l’instruction.  
   
- Vous devez utiliser `End` avec parcimonie et uniquement lorsque vous devez arrêter immédiatement. Les méthodes normales pour mettre fin à une procédure ([instruction Return](../../../visual-basic/language-reference/statements/return-statement.md) et [Exit Statement](../../../visual-basic/language-reference/statements/exit-statement.md)) permettent de fermer correctement la procédure, mais également le code appelant. Une application console, par exemple, peut simplement `Return` à partir de la `Main` procédure.  
+ Vous devez utiliser `End` avec modération et uniquement lorsque vous devez arrêter immédiatement. Les méthodes normales pour mettre fin à une procédure ([instruction de retour](../../../visual-basic/language-reference/statements/return-statement.md) et [instruction de sortie](../../../visual-basic/language-reference/statements/exit-statement.md)) ferment uniquement la procédure proprement dit, mais elles permettent également au code appelant de fermer correctement. Une application console, par exemple, peut simplement `Return` être à `Main` partir de la procédure.  
   
 > [!IMPORTANT]
->  Le `End` instruction appelle la <xref:System.Environment.Exit%2A> méthode de la <xref:System.Environment> classe dans le <xref:System> espace de noms. <xref:System.Environment.Exit%2A> Vous devez disposer `UnmanagedCode` autorisation. Si vous ne le faites pas, un <xref:System.Security.SecurityException> erreur se produit.  
+> L' `End` instruction appelle la <xref:System.Environment.Exit%2A> méthode de la <xref:System.Environment> classe dans l' <xref:System> espace de noms. <xref:System.Environment.Exit%2A>requiert que vous disposiez `UnmanagedCode` d’une autorisation. Si vous ne le faites pas <xref:System.Security.SecurityException> , une erreur se produit.  
   
- S’il est suivi par un mot clé supplémentaire, [fin \<mot clé > instruction](../../../visual-basic/language-reference/statements/end-keyword-statement.md) délimite la fin de la définition de la procédure appropriée ou du bloc. Par exemple, `End Function` termine la définition d’un `Function` procédure.  
+ Lorsqu’il est suivi d’un mot clé supplémentaire, [End \<Keyword > instruction](../../../visual-basic/language-reference/statements/end-keyword-statement.md) définit la fin de la définition de la procédure ou du bloc approprié. Par exemple, `End Function` termine la définition d’une `Function` procédure.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise la `End` instruction pour mettre fin à l’exécution de code si l’utilisateur le demande.  
+ L’exemple suivant utilise l' `End` instruction pour mettre fin à l’exécution du code si l’utilisateur le demande.  
   
  [!code-vb[VbVersHelp60Controls#64](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVersHelp60Controls/VB/Form1.vb#64)]  
   
-## <a name="smart-device-developer-notes"></a>Remarques sur le développement Smart Device  
- Cette instruction n’est pas pris en charge.  
+## <a name="smart-device-developer-notes"></a>Notes de développement Smart Device  
+ Cette instruction n’est pas prise en charge.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Security.Permissions.SecurityPermissionFlag>
 - [Stop (instruction)](../../../visual-basic/language-reference/statements/stop-statement.md)
-- [Fin \<mot clé > instruction](../../../visual-basic/language-reference/statements/end-keyword-statement.md)
+- [End \<(mot clé > instruction)](../../../visual-basic/language-reference/statements/end-keyword-statement.md)

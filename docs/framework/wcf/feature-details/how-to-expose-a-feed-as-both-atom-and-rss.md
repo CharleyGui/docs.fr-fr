@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fe374932-67f5-487d-9325-f868812b92e4
-ms.openlocfilehash: 824d2a08ddd36317fcdb8caa1690decb2f9c432a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f31f24cfc18f2c56539fe2b4623d54fe77a27797
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62039558"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950599"
 ---
 # <a name="how-to-expose-a-feed-as-both-atom-and-rss"></a>Procédure : exposer un flux en tant que flux Atom et RSS
-Windows Communication Foundation (WCF) vous permet de créer un service qui expose un flux de syndication. Cette rubrique explique comment créer un service de syndication qui expose un flux de syndication à l'aide d'Atom 1.0 et de RSS 2.0. Ce service expose un point de terminaison qui peut retourner l'un ou l'autre format de syndication. Pour simplifier, le service utilisé dans cet exemple est auto-hébergé. Dans un environnement de production, un service de ce type est hébergé sous IIS ou WAS. Pour plus d’informations sur WCF différentes options d’hébergement, consultez [hébergement](../../../../docs/framework/wcf/feature-details/hosting.md).  
+Windows Communication Foundation (WCF) vous permet de créer un service qui expose un flux de syndication. Cette rubrique explique comment créer un service de syndication qui expose un flux de syndication à l'aide d'Atom 1.0 et de RSS 2.0. Ce service expose un point de terminaison qui peut retourner l'un ou l'autre format de syndication. Pour simplifier, le service utilisé dans cet exemple est auto-hébergé. Dans un environnement de production, un service de ce type est hébergé sous IIS ou WAS. Pour plus d’informations sur les différentes options d’hébergement WCF, consultez [hébergement](../../../../docs/framework/wcf/feature-details/hosting.md).  
   
 ### <a name="to-create-a-basic-syndication-service"></a>Pour créer un service de syndication de base  
   
@@ -23,7 +23,7 @@ Windows Communication Foundation (WCF) vous permet de créer un service qui expo
      [!code-vb[htAtomRss#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatomrss/vb/program.vb#0)]  
   
     > [!NOTE]
-    >  Utilisez <xref:System.ServiceModel.ServiceKnownTypeAttribute> pour spécifier les types retournés par les opérations de service dans cette interface.  
+    > Utilisez <xref:System.ServiceModel.ServiceKnownTypeAttribute> pour spécifier les types retournés par les opérations de service dans cette interface.  
   
 2. Implémentez le contrat de service.  
   
@@ -64,7 +64,7 @@ Windows Communication Foundation (WCF) vous permet de créer un service qui expo
   
 ### <a name="to-call-getblog-with-an-http-get"></a>Pour appeler GetBlog avec un HTTP GET  
   
-1. Ouvrez Internet Explorer, tapez l’URL suivante, et appuyez sur ENTRÉE : `http://localhost:8000/BlogService/GetBlog`.
+1. Ouvrez Internet Explorer, tapez l’URL suivante, puis appuyez sur entrée `http://localhost:8000/BlogService/GetBlog`:.
   
      L’URL contient l’adresse de base du service (`http://localhost:8000/BlogService`), l’adresse relative du point de terminaison et l’opération de service à appeler.  
   
@@ -87,7 +87,7 @@ Windows Communication Foundation (WCF) vous permet de créer un service qui expo
      [!code-csharp[htAtomRss#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatomrss/cs/snippets.cs#11)]
      [!code-vb[htAtomRss#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatomrss/vb/snippets.vb#11)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Les éléments suivants représentent l'intégralité du code pour cet exemple.  
   
  [!code-csharp[htAtomRss#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatomrss/cs/program.cs#12)]  

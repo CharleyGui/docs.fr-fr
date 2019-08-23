@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Inheritance Picker dialog box
 - inherited forms [Windows Forms], creating
 ms.assetid: 969b4c04-12aa-4297-93a2-0ae747447823
-ms.openlocfilehash: 9382f1bf890fb5a886cf547d9b1e9b3031c12eb6
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 6fdd1e72e4256db30d9fb6a3b560c3d538435c79
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039993"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931879"
 ---
 # <a name="how-to-inherit-forms-using-the-inheritance-picker"></a>Procédure : Hériter des formulaires à l’aide du sélecteur d’héritage
 
@@ -57,7 +57,7 @@ Le moyen le plus simple d’hériter d’un formulaire ou d’un autre objet con
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Inherits (instruction)](~/docs/visual-basic/language-reference/statements/inherits-statement.md)
-- [using](~/docs/csharp/language-reference/keywords/using.md)
+- [Inherits (instruction)](../../../visual-basic/language-reference/statements/inherits-statement.md)
+- [using](../../../csharp/language-reference/keywords/using.md)
 - [Conséquences de la modification de l’aspect d’un formulaire de base](effects-of-modifying-base-form-appearance.md)
 - [Héritage visuel des Windows Forms](windows-forms-visual-inheritance.md)

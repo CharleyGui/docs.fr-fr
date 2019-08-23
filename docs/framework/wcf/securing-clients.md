@@ -4,24 +4,24 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - clients [WCF], security considerations
 ms.assetid: 44c8578c-9a5b-4acd-8168-1c30a027c4c5
-ms.openlocfilehash: 1200875baf39c5fdff613cfd21d4027cd5d8df1b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7f9a02bc650f54338dfcb1d3f41397e745483430
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64606050"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959535"
 ---
 # <a name="securing-clients"></a>Sécurisation des clients
-Dans Windows Communication Foundation (WCF), le service dicte les exigences de sécurité pour les clients. Autrement dit, le service spécifie quel mode de sécurité utiliser, et si le client doit fournir ou non une information d'identification. Le processus de la sécurisation d'un client, par conséquent, est simple : utilisez les métadonnées obtenues depuis le service (s'il est publié) et générez un client. Les métadonnées spécifient comment configurer le client. Si le service exige que le client fournisse une information d'identification, vous devez obtenir une information d'identification qui correspond à la spécification. Cette rubrique décrit en détail le processus. Pour plus d’informations sur la création d’un service sécurisé, consultez [sécurisation des Services](../../../docs/framework/wcf/securing-services.md).  
+Dans Windows Communication Foundation (WCF), le service dicte les exigences de sécurité pour les clients. Autrement dit, le service spécifie quel mode de sécurité utiliser, et si le client doit fournir ou non une information d'identification. Le processus de la sécurisation d'un client, par conséquent, est simple : utilisez les métadonnées obtenues depuis le service (s'il est publié) et générez un client. Les métadonnées spécifient comment configurer le client. Si le service exige que le client fournisse une information d'identification, vous devez obtenir une information d'identification qui correspond à la spécification. Cette rubrique décrit en détail le processus. Pour plus d’informations sur la création d’un service sécurisé, consultez Sécurisation des [services](../../../docs/framework/wcf/securing-services.md).  
   
 ## <a name="the-service-specifies-security"></a>Le service spécifie la sécurité  
- Par défaut, les liaisons WCF ont des fonctionnalités de sécurité activées. (Exception : <xref:System.ServiceModel.BasicHttpBinding>.) Par conséquent, si le service a été créé à l’aide de WCF, il est plus probable qu’il implémente la sécurité pour garantir l’authentification, la confidentialité et intégrité. Dans ce cas, les métadonnées que le service fournit indiqueront ce qu'il faut pour établir un canal de communication sécurisé. Si les métadonnées du service n’incluent pas d’exigences de sécurité, il n’y a aucun moyen d’imposer une méthode de sécurité, telle que SSL (Secure Sockets Layer) sur HTTP, sur un service. Toutefois, si le service exige que le client fournisse une information d'identification, le développeur, le responsable du déploiement ou l'administrateur client doit fournir l'information d'identification réelle que le client utilisera pour s'identifier auprès du service.  
+ Par défaut, les liaisons WCF ont des fonctionnalités de sécurité activées. (Exception : <xref:System.ServiceModel.BasicHttpBinding>.) Par conséquent, si le service a été créé à l’aide de WCF, il est plus probable qu’il implémente la sécurité pour garantir l’authentification, la confidentialité et l’intégrité. Dans ce cas, les métadonnées que le service fournit indiqueront ce qu'il faut pour établir un canal de communication sécurisé. Si les métadonnées du service n’incluent pas d’exigences de sécurité, il n’y a aucun moyen d’imposer une méthode de sécurité, telle que SSL (Secure Sockets Layer) sur HTTP, sur un service. Toutefois, si le service exige que le client fournisse une information d'identification, le développeur, le responsable du déploiement ou l'administrateur client doit fournir l'information d'identification réelle que le client utilisera pour s'identifier auprès du service.  
   
 ## <a name="obtaining-metadata"></a>Obtention des métadonnées  
- Lors de la création d'un client, la première étape est d'obtenir les métadonnées pour le service avec lequel le client communiquera. Cette opération peut être effectuée de deux façons. Tout d’abord, si le service publie un point de terminaison de métadonnées exchange (MEX) ou rend ses métadonnées disponibles via HTTP ou HTTPS, vous pouvez télécharger les métadonnées à l’aide de la [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md), ce qui génère les deux fichiers de code pour un client, ainsi que d’un fichier de configuration. (Pour plus d’informations sur l’utilisation de l’outil, consultez [Services d’accès à l’aide d’un Client WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md).) Si le service ne publie pas de point de terminaison MEX et ne rend pas ses métadonnées disponibles sur HTTP ou HTTPS, vous devez contacter le créateur du service pour obtenir la documentation qui décrit les exigences de sécurité et les métadonnées.  
+ Lors de la création d'un client, la première étape est d'obtenir les métadonnées pour le service avec lequel le client communiquera. Cette opération peut être effectuée de deux façons. Tout d’abord, si le service publie un point de terminaison MEX (Metadata Exchange) ou rend ses métadonnées disponibles sur HTTP ou HTTPs, vous pouvez télécharger les métadonnées à l’aide de l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md), qui génère les deux fichiers de code pour un client. ainsi qu’un fichier de configuration. (Pour plus d’informations sur l’utilisation de l’outil, consultez [accès aux services à l’aide d’un client WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md).) Si le service ne publie pas de point de terminaison MEX et ne rend pas ses métadonnées disponibles sur HTTP ou HTTPS, vous devez contacter le créateur du service pour obtenir la documentation qui décrit les exigences de sécurité et les métadonnées.  
   
 > [!IMPORTANT]
->  Il est recommandé de vérifier que les métadonnées proviennent d'une source fiable et qu'elles n'ont pas été falsifiées. Les métadonnées récupérées à l'aide du protocole HTTP sont envoyées en texte clair et peuvent être falsifiées. Si le service utilise les propriétés <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> et <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>, utilisez l'URL que le créateur du service vous a fournie pour télécharger les données à l'aide du protocole HTTPS.  
+> Il est recommandé de vérifier que les métadonnées proviennent d'une source fiable et qu'elles n'ont pas été falsifiées. Les métadonnées récupérées à l'aide du protocole HTTP sont envoyées en texte clair et peuvent être falsifiées. Si le service utilise les propriétés <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> et <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>, utilisez l'URL que le créateur du service vous a fournie pour télécharger les données à l'aide du protocole HTTPS.  
   
 ## <a name="validating-security"></a>Validation de la sécurité  
  Les sources de métadonnées peuvent être divisées en deux catégories principales : les sources fiables et les sources non fiables. Si vous faites confiance à une source et avez téléchargé le code client et d'autres métadonnées depuis le point de terminaison MEX sécurisé de cette source, vous pouvez générer le client, lui fournir les informations d'identification correctes et l'exécuter sans inquiétude.  
@@ -33,14 +33,14 @@ Dans Windows Communication Foundation (WCF), le service dicte les exigences de s
 ## <a name="setting-a-client-credential"></a>Définition de l'information d'identification d'un client  
  La définition de l'information d'identification d'un client s'effectue en deux étapes :  
   
-1. Déterminer le *type d’informations d’identification du client* nécessite le service. Pour cela, vous avez le choix entre deux méthodes. En premier lieu, si vous disposez de la documentation du créateur du service, celle-ci doit spécifier le type d'information d'identification du client (le cas échéant) que le service requiert. En second lieu, si vous disposez uniquement d'un fichier de configuration généré par l'outil Svcutil.exe, vous pouvez examiner les liaisons individuelles pour déterminer quel type d'information d'identification est requis.  
+1. Déterminez le *type d’informations d’identification du client* requis par le service. Pour cela, vous avez le choix entre deux méthodes. En premier lieu, si vous disposez de la documentation du créateur du service, celle-ci doit spécifier le type d'information d'identification du client (le cas échéant) que le service requiert. En second lieu, si vous disposez uniquement d'un fichier de configuration généré par l'outil Svcutil.exe, vous pouvez examiner les liaisons individuelles pour déterminer quel type d'information d'identification est requis.  
   
-2. Spécifiez l'information d'identification effective du client. Les informations d’identification effective du client sont appelée un *valeur des informations d’identification de client* pour le distinguer du type. Par exemple, si le type d'information d'identification du client spécifie un certificat, vous devez fournir un certificat X.509 publié par une autorité de certification que le service approuve.  
+2. Spécifiez l'information d'identification effective du client. Les informations d’identification du client réel sont appelées « *valeur d’informations d’identification du client* » pour le distinguer du type. Par exemple, si le type d'information d'identification du client spécifie un certificat, vous devez fournir un certificat X.509 publié par une autorité de certification que le service approuve.  
   
 ### <a name="determining-the-client-credential-type"></a>Détermination du type d'information d'identification du client  
- Si vous disposez de la configuration de l’outil Svcutil.exe a généré de fichier, examinez le [ \<liaisons >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) section afin de déterminer quel type d’informations d’identification de client est requis. Dans la section, des éléments de liaison spécifient les conditions de sécurité. Examinez en particulier le \<sécurité > élément de chaque liaison. Cet élément inclut l'attribut `mode`, auquel vous pouvez affecter l'une de trois valeurs possibles (`Message`, `Transport` ou `TransportWithMessageCredential`). La valeur de l'attribut détermine le mode, et le mode détermine quel élément enfant est significatif.  
+ Si vous avez le fichier de configuration généré par l’outil Svcutil. exe, examinez la [ \<section liaisons >](../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) pour déterminer quel type d’informations d’identification du client est requis. Dans la section, des éléments de liaison spécifient les conditions de sécurité. En particulier, examinez l' \<élément de > de sécurité de chaque liaison. Cet élément inclut l'attribut `mode`, auquel vous pouvez affecter l'une de trois valeurs possibles (`Message`, `Transport` ou `TransportWithMessageCredential`). La valeur de l'attribut détermine le mode, et le mode détermine quel élément enfant est significatif.  
   
- Le `<security>` élément peut contenir soit un `<transport>` ou `<message>` élément, ou les deux. L'élément significatif est celui qui correspond au mode de sécurité. Par exemple, le code suivant spécifie que le mode de sécurité est `"Message"`, et le type d'information d'identification du client pour l'élément `<message>` est `"Certificate"`. Dans ce cas, l'élément `<transport>` peut être ignoré. Toutefois, l'élément `<message>` spécifie qu'un certificat X.509 doit être fourni.  
+ L' `<security>` élément peut contenir un `<transport>` élément ou `<message>` , ou les deux. L'élément significatif est celui qui correspond au mode de sécurité. Par exemple, le code suivant spécifie que le mode de sécurité est `"Message"`, et le type d'information d'identification du client pour l'élément `<message>` est `"Certificate"`. Dans ce cas, l'élément `<transport>` peut être ignoré. Toutefois, l'élément `<message>` spécifie qu'un certificat X.509 doit être fourni.  
 
 ```xml  
 <wsHttpBinding>  
@@ -73,10 +73,10 @@ Dans Windows Communication Foundation (WCF), le service dicte les exigences de s
   
 - En la programmant dans votre code client (à l'aide de la méthode `SetCertificate`).  
   
- En ajoutant un [ \<comportements >](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) section du fichier de configuration pour le client et à l’aide de la `clientCredentials` élément (voir ci-dessous).  
+ En ajoutant un [ \<comportement >](../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) section du fichier de configuration pour le client et en utilisant l' `clientCredentials` élément (illustré ci-dessous).  
   
-#### <a name="setting-a-clientcredentials-value-in-code"></a>Définissant un \<clientCredentials > valeur dans le Code  
- Pour définir un [ \<clientCredentials >](../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) valeur dans le code, vous devez accéder à la <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> propriété de la <xref:System.ServiceModel.ClientBase%601> classe. La propriété retourne un objet <xref:System.ServiceModel.Description.ClientCredentials> qui autorise l'accès à différents types d'informations d'identification, comme le montre le tableau suivant.  
+#### <a name="setting-a-clientcredentials-value-in-code"></a>Définition d' \<une valeur de > ClientCredentials dans le code  
+ Pour définir une <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> <xref:System.ServiceModel.ClientBase%601> [ \<valeur de > ClientCredentials](../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) dans le code, vous devez accéder à la propriété de la classe. La propriété retourne un objet <xref:System.ServiceModel.Description.ClientCredentials> qui autorise l'accès à différents types d'informations d'identification, comme le montre le tableau suivant.  
   
 |Propriété ClientCredential|Description|Notes|  
 |-------------------------------|-----------------|-----------|  
@@ -88,8 +88,8 @@ Dans Windows Communication Foundation (WCF), le service dicte les exigences de s
 |<xref:System.ServiceModel.Description.ClientCredentials.UserName%2A>|Retourne un <xref:System.ServiceModel.Security.UserNamePasswordClientCredential>.|Représente une paire nom d'utilisateur/mot de passe.|  
 |<xref:System.ServiceModel.Description.ClientCredentials.Windows%2A>|Retourne un <xref:System.ServiceModel.Security.WindowsClientCredential>.|Représente une information d'identification du client Windows (une information d'identification Kerberos). Les propriétés de la classe sont en lecture seule.|  
   
-#### <a name="setting-a-clientcredentials-value-in-configuration"></a>Définissant un \<clientCredentials > valeur de Configuration  
- Les valeurs d’informations d’identification sont spécifiés à l’aide d’un comportement de point de terminaison en tant qu’éléments enfants de la [ \<clientCredentials >](../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) élément. L'élément utilisé dépend du type d'information d'identification du client. Par exemple, l’exemple suivant montre la configuration pour définir un certificat X.509 à l’aide du <[\<clientCertificate >](../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md).  
+#### <a name="setting-a-clientcredentials-value-in-configuration"></a>Définition d' \<une valeur de > ClientCredentials dans la configuration  
+ Les valeurs d’informations d’identification sont spécifiées à l’aide d’un comportement de point de terminaison en tant qu’éléments enfants de l' [ \<élément ClientCredentials >](../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md) . L'élément utilisé dépend du type d'information d'identification du client. Par exemple, l’exemple suivant illustre la configuration pour définir un certificat X. 509 à l’aide de la[\<> < ClientCertificate](../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md).  
   
 ```xml  
 <configuration>  
@@ -107,7 +107,7 @@ Dans Windows Communication Foundation (WCF), le service dicte les exigences de s
 </configuration>  
 ```  
   
- Pour définir les informations d’identification de client dans configuration, ajoutez une [ \<endpointBehaviors >](../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) élément au fichier de configuration. En outre, l’élément de comportement ajouté doit être lié au point de terminaison du service à l’aide de la `behaviorConfiguration` attribut de la [ \<point de terminaison > de \<client >](../configure-apps/file-schema/wcf/endpoint-of-client.md) élément, comme indiqué dans l’exemple suivant. La valeur de l'attribut `behaviorConfiguration` doit correspondre à la valeur de l'attribut de comportement `name`.  
+ Pour définir les informations d’identification du client dans la configuration, ajoutez un [ \<élément endpointBehaviors >](../../../docs/framework/configure-apps/file-schema/wcf/endpointbehaviors.md) au fichier de configuration. En outre, l’élément `behaviorConfiguration` [ \<de comportement ajouté doit être lié au point de terminaison du service à l’aide de l’attribut du point de terminaison > de \<l’élément client >](../configure-apps/file-schema/wcf/endpoint-of-client.md) comme indiqué dans l’exemple suivant. La valeur de l'attribut `behaviorConfiguration` doit correspondre à la valeur de l'attribut de comportement `name`.  
 
 ```xml
 <configuration>
@@ -124,12 +124,12 @@ Dans Windows Communication Foundation (WCF), le service dicte les exigences de s
 ```
   
 > [!NOTE]
->  Certaines des valeurs d'information d'identification du client ne peuvent pas être définies à l'aide des fichiers de configuration de l'application, par exemple le nom d'utilisateur et le mot de passe, ou les valeurs d'utilisateur et de mot de passe Windows. Ces valeurs d'information d'identification peuvent être spécifiées dans du code uniquement.  
+> Certaines des valeurs d'information d'identification du client ne peuvent pas être définies à l'aide des fichiers de configuration de l'application, par exemple le nom d'utilisateur et le mot de passe, ou les valeurs d'utilisateur et de mot de passe Windows. Ces valeurs d'information d'identification peuvent être spécifiées dans du code uniquement.  
   
- Pour plus d’informations sur les informations d’identification du client, consultez [Comment : Renseignez les informations d’identification Client](../../../docs/framework/wcf/how-to-specify-client-credential-values.md).  
+ Pour plus d’informations sur la définition des informations d' [identification du client, consultez Procédure: Spécifiez les valeurs](../../../docs/framework/wcf/how-to-specify-client-credential-values.md)d’informations d’identification du client.  
   
 > [!NOTE]
->  `ClientCredentialType` est ignoré lorsque `SecurityMode` a la valeur `"TransportWithMessageCredential",` comme le montre l'exemple de configuration suivant.  
+> `ClientCredentialType` est ignoré lorsque `SecurityMode` a la valeur `"TransportWithMessageCredential",` comme le montre l'exemple de configuration suivant.  
   
 ```xml  
 <wsHttpBinding>  
@@ -155,6 +155,6 @@ Dans Windows Communication Foundation (WCF), le service dicte les exigences de s
 - [Outil Éditeur de configuration (SvcConfigEditor.exe)](../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)
 - [Sécurisation de services](../../../docs/framework/wcf/securing-services.md)
 - [Accès aux services à l’aide d’un client WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md)
-- [Guide pratique pour Renseignez les informations d’identification Client](../../../docs/framework/wcf/how-to-specify-client-credential-values.md)
+- [Guide pratique pour Spécifier les valeurs d’informations d’identification du client](../../../docs/framework/wcf/how-to-specify-client-credential-values.md)
 - [Outil ServiceModel Metadata Utility (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
-- [Guide pratique pour Spécifier le Type d’informations d’identification de Client](../../../docs/framework/wcf/how-to-specify-the-client-credential-type.md)
+- [Guide pratique : Spécifier le type d’informations d’identification du client](../../../docs/framework/wcf/how-to-specify-the-client-credential-type.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR attributes for custom types [XAML Services]
 ms.assetid: 5dfb299a-b6e2-41b8-8694-e6ac987547f1
-ms.openlocfilehash: 2f907d097f52f13e733713d8ad68cc2390b051ed
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: a264ec3fa1232a058a3bfbabbe8b84712cf87322
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364230"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956409"
 ---
 # <a name="xaml-related-clr-attributes-for-custom-types-and-libraries"></a>Attributs CLR XAML pour les bibliothèques et types personnalisés
 Cette rubrique décrit les attributs de common language runtime (CLR) définis par .NET Framework les services XAML. Elle décrit également d’autres attributs CLR définis dans le .NET Framework qui ont un scénario XAML pour l’application vers des assemblys ou des types. L’attribution d’assemblys, de types ou de membres avec ces attributs CLR fournit des informations de système de type XAML relatives à vos types. Des informations sont fournies à tout consommateur XAML qui utilise .NET Framework les services XAML pour traiter le flux de nœud XAML directement ou via les lecteurs et writers XAML dédiés.  
@@ -266,7 +266,7 @@ Cette rubrique décrit les attributs de common language runtime (CLR) définis p
 - Vous définissez la prise en charge du langage XAML dans l' <xref:System.Windows.Markup.XmlnsDefinitionAttribute> assembly et avez un pour. `http://schemas.microsoft.com/winfx/2006/xaml` Dans ce cas, vous devez généralement promouvoir le préfixe `x`.  
   
 > [!NOTE]
->  .NET Framework les services XAML définissent également l’attribut <xref:System.Windows.Markup.RootNamespaceAttribute>XAML. Cet attribut est un attribut de niveau assembly pour la prise en charge du système de projet, et il ne s’applique pas aux types personnalisés XAML.  
+> .NET Framework les services XAML définissent également l’attribut <xref:System.Windows.Markup.RootNamespaceAttribute>XAML. Cet attribut est un attribut de niveau assembly pour la prise en charge du système de projet, et il ne s’applique pas aux types personnalisés XAML.  
   
 ## <a name="see-also"></a>Voir aussi
 

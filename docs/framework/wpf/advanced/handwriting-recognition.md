@@ -8,12 +8,12 @@ helpviewer_keywords:
 - handwriting recognition [WPF]
 - recognition of handwriting [WPF]
 ms.assetid: f4e8576d-e731-4bac-9818-22e2ae636636
-ms.openlocfilehash: 417af272514ac9ce68c8faa72339f2befc2dd7c1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d6c09f063b6bd0eef2cb9f6bb444eac980ad4832
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61923381"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956529"
 ---
 # <a name="handwriting-recognition"></a>Reconnaissance d'écriture manuscrite
 Cette section présente les notions de base de la reconnaissance relative à l’encre numérique dans la plateforme WPF.  
@@ -22,7 +22,7 @@ Cette section présente les notions de base de la reconnaissance relative à l�
  L’exemple suivant montre comment reconnaître de l’encre à l’aide de la classe [Microsoft.Ink.InkCollector](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms583683(v=vs.90)).  
   
 > [!NOTE]
->  Cet exemple nécessite que les modules de reconnaissance d’écriture manuscrite soient installés sur le système.  
+> Cet exemple nécessite que les modules de reconnaissance d’écriture manuscrite soient installés sur le système.  
   
  Créez un projet d’application WPF dans Visual Studio, intitulé **InkRecognition**. Remplacez le contenu du fichier Window1.xaml par le code XAML suivant. Ce code restitue l’interface utilisateur de l’application.  
   

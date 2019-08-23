@@ -13,21 +13,21 @@ helpviewer_keywords:
 - images [Windows Forms], adding with PictureBox control [Windows Forms]
 - PictureBox control [Windows Forms], adding pictures
 ms.assetid: 18ca41d0-68a5-4660-985e-a6c1fbc01d76
-ms.openlocfilehash: 8275961a8f11332a04f89561fac779f4cdf9f8d8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 99d78a275c8ad8f55d9b0832a794545b65da7e20
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64609403"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917525"
 ---
 # <a name="how-to-set-pictures-at-run-time-windows-forms"></a>Procédure : Définir des images au moment de l’exécution (Windows Forms)
-Vous pouvez définir par programmation l’image affichée par un formulaire Windows <xref:System.Windows.Forms.PictureBox> contrôle.  
+Vous pouvez définir par programmation l’image affichée par un contrôle Windows Forms <xref:System.Windows.Forms.PictureBox> .  
   
 ### <a name="to-set-a-picture-programmatically"></a>Pour définir une image par programmation  
   
-- Définir le <xref:System.Windows.Forms.PictureBox.Image%2A> à l’aide de la propriété le <xref:System.Drawing.Image.FromFile%2A> méthode de la <xref:System.Drawing.Image> classe.  
+- Définissez la <xref:System.Windows.Forms.PictureBox.Image%2A> propriété à l' <xref:System.Drawing.Image.FromFile%2A> aide de la <xref:System.Drawing.Image> méthode de la classe.  
   
-     Dans l’exemple ci-dessous, le chemin d’accès défini pour l’emplacement de l’image est le dossier Mes Documents. Pour cela, étant donné que vous pouvez supposer que la plupart des ordinateurs exécutant le système d’exploitation Windows incluent ce répertoire. Cela permet également aux utilisateurs avec des niveaux d’accès minimum au système d’exécuter l’application en toute sécurité. L’exemple suivant suppose un formulaire avec un <xref:System.Windows.Forms.PictureBox> contrôle déjà ajouté.  
+     Dans l’exemple ci-dessous, le chemin d’accès défini pour l’emplacement de l’image est le dossier Mes documents. En effet, vous pouvez supposer que la plupart des ordinateurs exécutant le système d’exploitation Windows incluent ce répertoire. Cela permet également aux utilisateurs avec des niveaux d’accès minimum au système d’exécuter l’application en toute sécurité. L’exemple ci-dessous suppose qu’un formulaire <xref:System.Windows.Forms.PictureBox> avec un contrôle a déjà été ajouté.  
   
     ```vb  
     Private Sub LoadNewPict()  
@@ -67,7 +67,7 @@ Vous pouvez définir par programmation l’image affichée par un formulaire Win
   
 ### <a name="to-clear-a-graphic"></a>Pour effacer un graphique  
   
-- Tout d’abord, libérer la mémoire utilisée par l’image et désactivez le graphique. Le garbage collection libère la mémoire ultérieurement si la gestion de la mémoire devient un problème.  
+- Tout d’abord, libérez la mémoire utilisée par l’image, puis effacez le graphique. Le garbage collection libérera de la mémoire plus tard si la gestion de la mémoire devient un problème.  
   
     ```vb  
     If Not (PictureBox1.Image Is Nothing) Then  
@@ -93,15 +93,15 @@ Vous pouvez définir par programmation l’image affichée par un formulaire Win
     ```  
   
     > [!NOTE]
-    >  Pour plus d’informations sur la raison pour laquelle vous devez utiliser le <xref:System.Drawing.Image.Dispose%2A> méthode de cette façon, consultez [de nettoyage des ressources non managées](../../../standard/garbage-collection/unmanaged.md).  
+    > Pour plus d’informations sur les raisons pour lesquelles <xref:System.Drawing.Image.Dispose%2A> vous devez utiliser la méthode de cette manière, consultez [nettoyage des ressources non managées](../../../standard/garbage-collection/unmanaged.md).  
   
-     Ce code efface l’image même si un graphisme a été chargé dans le contrôle au moment du design.  
+     Ce code efface l’image même si un graphique a été chargé dans le contrôle au moment du Design.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.PictureBox>
 - <xref:System.Drawing.Image.FromFile%2A?displayProperty=nameWithType>
 - [Vue d’ensemble du contrôle PictureBox](picturebox-control-overview-windows-forms.md)
-- [Guide pratique pour Charger une image à l’aide du Concepteur](how-to-load-a-picture-using-the-designer-windows-forms.md)
-- [Guide pratique pour Modifier la taille ou l’emplacement d’une image au moment de l’exécution](how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)
+- [Guide pratique pour Charger une image à l’aide du concepteur](how-to-load-a-picture-using-the-designer-windows-forms.md)
+- [Guide pratique : Modifier la taille ou l’emplacement d’une image au moment de l’exécution](how-to-modify-the-size-or-placement-of-a-picture-at-run-time-windows-forms.md)
 - [PictureBox, contrôle](picturebox-control-windows-forms.md)

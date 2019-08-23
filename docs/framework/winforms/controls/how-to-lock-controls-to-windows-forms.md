@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Forms controls, locking
 - controls [Windows Forms], locking
 ms.assetid: 94efe0d2-c14e-4d14-b903-63ea9b07e290
-ms.openlocfilehash: cbf82f1481ee9779cec5cfbf3fb057b7ea399a1c
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
-ms.translationtype: MT
+ms.openlocfilehash: 9eb762a9691a6127e2419f9ddc25f3010d3383fe
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039904"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966529"
 ---
 # <a name="how-to-lock-controls-to-windows-forms"></a>Procédure : verrouiller des contrôles avec des Windows Forms
 Lorsque vous concevez l’interface utilisateur de votre application Windows, vous pouvez verrouiller les contrôles une fois qu’ils sont positionnés correctement, afin de ne pas les déplacer ou les redimensionner par inadvertance lors de la définition d’autres propriétés.
@@ -24,14 +24,14 @@ Lorsque vous concevez l’interface utilisateur de votre application Windows, vo
      Vous pouvez également cliquer avec le bouton droit sur le contrôle et choisir **verrouiller les contrôles**.
 
     > [!NOTE]
-    >  Le verrouillage des contrôles empêche leur déplacement vers une nouvelle taille ou un nouvel emplacement sur l’aire de conception. Toutefois, vous pouvez toujours modifier la taille ou l’emplacement des contrôles à l’aide de la fenêtre **Propriétés** ou dans le code.
+    > Le verrouillage des contrôles empêche leur déplacement vers une nouvelle taille ou un nouvel emplacement sur l’aire de conception. Toutefois, vous pouvez toujours modifier la taille ou l’emplacement des contrôles à l’aide de la fenêtre **Propriétés** ou dans le code.
 
 ## <a name="to-lock-all-the-controls-on-a-form"></a>Pour verrouiller tous les contrôles d’un formulaire
 
 1. Dans le menu **format** , choisissez **verrouiller les contrôles**.
 
     > [!NOTE]
-    >  Cette commande verrouille également la taille du formulaire, car un formulaire est un contrôle.
+    > Cette commande verrouille également la taille du formulaire, car un formulaire est un contrôle.
 
 ## <a name="to-unlock-all-locked-controls-on-a-form"></a>Pour déverrouiller tous les contrôles verrouillés dans un formulaire
 

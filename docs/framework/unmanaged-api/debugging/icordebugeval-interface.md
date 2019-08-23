@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 745917af176de47999737c87833c23df9c75ea7b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cfd29067f819ba69305f7ae8620729cd443915a0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61995954"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931946"
 ---
 # <a name="icordebugeval-interface"></a>ICorDebugEval, interface
 
@@ -31,35 +31,35 @@ Fournit des méthodes pour permettre au débogueur d'exécuter le code à l'int�
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Abort, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-abort-method.md)|Abandonne le calcul cela `ICorDebugEval` est en train d’objet.|  
-|[CallFunction, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-callfunction-method.md)|Définit un appel à la fonction spécifiée. (Obsolète dans .NET Framework version 2.0 ; utilisez [ICorDebugEval2::CallParameterizedFunction](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md) à la place.)|  
-|[CreateValue, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md)|Obtient un pointeur d’interface vers un objet « ICorDebugValue » du type spécifié, avec une valeur initiale de zéro ou null. (Obsolète dans .NET Framework 2.0 ; utilisez [ICorDebugEval2::CreateValueForType](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-createvaluefortype-method.md) à la place.)|  
-|[GetResult, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-getresult-method.md)|Obtient un pointeur d’interface vers un `ICorDebugValue` qui contient les résultats de l’évaluation.|  
-|[GetThread, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-getthread-method.md)|Obtient un pointeur d’interface vers le « ICorDebugThread » où cette évaluation s’exécute ou s’exécutera.|  
-|[IsActive, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-isactive-method.md)|Obtient une valeur qui indique si ce `ICorDebugEval` objet est en cours d’exécution.|  
-|[NewArray, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newarray-method.md)|Alloue un nouveau tableau du type d’élément spécifié et des dimensions. (Obsolète dans .NET Framework 2.0 ; utilisez [ICorDebugEval2::NewParameterizedArray](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedarray-method.md) à la place.)|  
-|[NewObject, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newobject-method.md)|Alloue une nouvelle instance d’objet et appelle la méthode de constructeur spécifié. (Obsolète dans .NET Framework 2.0 ; utilisez [ICorDebugEval2::NewParameterizedObject](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md) à la place.)|  
-|[NewObjectNoConstructor, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newobjectnoconstructor-method.md)|Alloue une nouvelle instance d’objet du type spécifié, sans tenter d’appeler une méthode de constructeur. (Obsolète dans .NET Framework 2.0 ; utilisez [ICorDebugEval2::NewParameterizedObjectNoConstructor](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobjectnoconstructor-method.md) à la place.)|  
-|[NewString, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newstring-method.md)|Alloue un nouvel objet de chaîne avec le contenu spécifié.|  
+|[Abort, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-abort-method.md)|Abandonne le calcul actuellement effectué `ICorDebugEval` par cet objet.|  
+|[CallFunction, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-callfunction-method.md)|Configure un appel à la fonction spécifiée. (Obsolète dans la .NET Framework version 2,0; utilisez [ICorDebugEval2:: CallParameterizedFunction,](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-callparameterizedfunction-method.md) à la place.)|  
+|[CreateValue, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-createvalue-method.md)|Obtient un pointeur d’interface vers un objet «ICorDebugValue» du type spécifié, avec une valeur initiale de zéro ou null. (Obsolète dans la .NET Framework 2,0; utilisez [ICorDebugEval2:: CreateValueForType,](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-createvaluefortype-method.md) à la place.)|  
+|[GetResult, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-getresult-method.md)|Obtient un pointeur d’interface vers `ICorDebugValue` un qui contient les résultats de l’évaluation.|  
+|[GetThread, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-getthread-method.md)|Obtient un pointeur d’interface vers le «ICorDebugThread» où cette évaluation est en cours d’exécution ou s’exécute.|  
+|[IsActive, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-isactive-method.md)|Obtient une valeur qui indique si cet `ICorDebugEval` objet est en cours d’exécution.|  
+|[NewArray, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newarray-method.md)|Alloue un nouveau tableau du type d’élément et des dimensions spécifiés. (Obsolète dans la .NET Framework 2,0; utilisez [ICorDebugEval2:: NewParameterizedArray,](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedarray-method.md) à la place.)|  
+|[NewObject, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newobject-method.md)|Alloue une nouvelle instance d’objet et appelle la méthode de constructeur spécifiée. (Obsolète dans la .NET Framework 2,0; utilisez [ICorDebugEval2:: NewParameterizedObject,](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobject-method.md) à la place.)|  
+|[NewObjectNoConstructor, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newobjectnoconstructor-method.md)|Alloue une nouvelle instance d’objet du type spécifié, sans tenter d’appeler une méthode de constructeur. (Obsolète dans la .NET Framework 2,0; utilisez [ICorDebugEval2:: NewParameterizedObjectNoConstructor,](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedobjectnoconstructor-method.md) à la place.)|  
+|[NewString, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-newstring-method.md)|Alloue un nouvel objet String avec le contenu spécifié.|  
   
 ## <a name="remarks"></a>Notes  
- Un `ICorDebugEval` objet est créé dans le contexte d’un thread spécifique qui est utilisé pour exécuter les évaluations. Tous les objets et les types utilisés dans une évaluation donnée doivent résider dans le même domaine d’application. Ce domaine d’application ne doive pas être le même que le domaine d’application actuel du thread. Évaluations peuvent être imbriquées.  
+ Un `ICorDebugEval` objet est créé dans le contexte d’un thread spécifique qui est utilisé pour effectuer les évaluations. Tous les objets et types utilisés dans une évaluation donnée doivent se trouver dans le même domaine d’application. Ce domaine d’application n’a pas besoin d’être le même que le domaine d’application actuel du thread. Les évaluations peuvent être imbriquées.  
   
- Opérations de l’évaluation ne se terminent pas jusqu'à ce que le débogueur appelle [ICorDebugController::Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md), puis reçoit un [ICorDebugManagedCallback::EvalComplete](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-evalcomplete-method.md) rappel. Si vous avez besoin d’utiliser la fonctionnalité d’évaluation sans permettre à d’autres threads exécuter, suspendre des threads à l’aide [ICorDebugController::SetAllThreadsDebugState](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-setallthreadsdebugstate-method.md) ou [ICorDebugController::Stop](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md)avant d’appeler [ICorDebugController::Continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md).  
+ Les opérations de l’évaluation ne se terminent pas tant que le débogueur n’a pas appelé [ICorDebugController:: continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md), puis reçoit un rappel [ICorDebugManagedCallback:: EvalComplete,](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-evalcomplete-method.md) . Si vous devez utiliser la fonctionnalité d’évaluation sans autoriser l’exécution d’autres threads, suspendez les threads à l’aide de [ICorDebugController:: SetAllThreadsDebugState](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-setallthreadsdebugstate-method.md) ou [ICorDebugController:: Stop](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-stop-method.md) avant d’appeler [ ICorDebugController:: continue](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-continue-method.md).  
   
- Étant donné que le code utilisateur est en cours d’exécution lorsque l’évaluation est en cours d’exécution, des événements de débogage peuvent se produire, notamment les chargements de classe et des points d’arrêt. Le débogueur reçoit des rappels, comme d’habitude, pour ces événements. L’état de la version d’évaluation est visibles dans le cadre de l’inspection de l’état normal du programme. La chaîne de la pile sera un `CHAIN_FUNC_EVAL` chaîne (consultez l’énumération « CorDebugStepReason » et le [ICorDebugChain::GetReason](../../../../docs/framework/unmanaged-api/debugging/icordebugchain-getreason-method.md) méthode). L’API de débogage complète continuera de fonctionner normalement.  
+ Étant donné que le code utilisateur s’exécute lorsque l’évaluation est en cours, tous les événements de débogage peuvent se produire, y compris les charges de classe et les points d’arrêt. Le débogueur recevra des rappels, comme d’habitude, pour ces événements. L’état de l’évaluation sera visible dans le cadre de l’inspection de l’état normal du programme. La chaîne de pile sera une `CHAIN_FUNC_EVAL` chaîne (consultez l’énumération «CorDebugStepReason,» et la méthode [ICorDebugChain:: GetReason](../../../../docs/framework/unmanaged-api/debugging/icordebugchain-getreason-method.md) ). L’API du débogueur complet continue à fonctionner normalement.  
   
- En cas d’une situation de boucle bloquée ou infinie, le code utilisateur peut ne jamais se terminer. Dans ce cas, vous devez appeler [ICorDebugEval::Abort](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-abort-method.md) avant de reprendre le programme.  
+ Si une situation de boucle incomplète ou infinie se produit, le code utilisateur peut ne jamais se terminer. Dans ce cas, vous devez appeler [ICorDebugEval:: Abort](../../../../docs/framework/unmanaged-api/debugging/icordebugeval-abort-method.md) avant de reprendre le programme.  
   
 > [!NOTE]
->  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
+> Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

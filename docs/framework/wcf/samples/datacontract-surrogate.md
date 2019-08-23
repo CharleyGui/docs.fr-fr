@@ -2,18 +2,18 @@
 title: DataContract Surrogate
 ms.date: 03/30/2017
 ms.assetid: b0188f3c-00a9-4cf0-a887-a2284c8fb014
-ms.openlocfilehash: a56fbcabfacf146142f7b0c0623325cc8e69c29a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 436c5778487e6cd272ba3a873be9d243a427db97
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61990416"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69953485"
 ---
 # <a name="datacontract-surrogate"></a>DataContract Surrogate
-Cet exemple illustre comment personnaliser des processus tels que la sérialisation, la désérialisation, l’exportation et l’importation de schémas à l’aide d’une classe de substitution d’un contrat de données. Cet exemple montre comment utiliser un substitut dans un scénario client et le serveur où les données sont sérialisées et transmises entre un client Windows Communication Foundation (WCF) et le service.  
+Cet exemple illustre comment personnaliser des processus tels que la sérialisation, la désérialisation, l’exportation et l’importation de schémas à l’aide d’une classe de substitution d’un contrat de données. Cet exemple montre comment utiliser un substitut dans un scénario de client et de serveur où les données sont sérialisées et transmises entre un service et un client Windows Communication Foundation (WCF).  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
+> La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
  L'exemple utilise le contrat de service suivant :  
   
@@ -220,7 +220,7 @@ private static void ApplyDataContractSurrogate(OperationDescription description)
   
  D'autres étapes sont nécessaires pour incorporer le substitut et ainsi pouvoir l'utiliser lors de la génération des métadonnées. Pour ce faire, l'une des solutions consiste à fournir une extension `IWsdlExportExtension`, tel qu'illustré dans cet exemple. Une autre solution consiste à modifier directement le `WsdlExporter`.  
   
- Le `AllowNonSerializableTypesAttribute` attribut implémente `IWsdlExportExtension` et `IContractBehavior`. L’extension peut être soit un `IContractBehavior` ou `IEndpointBehavior` dans ce cas. Son implémentation de la méthode `IWsdlExportExtension.ExportContract` active le substitut en l'ajoutant au `XsdDataContractExporter` utilisé lors de la génération des schémas du DataContract. L'extrait de code suivant montre comment procéder.  
+ L' `AllowNonSerializableTypesAttribute` attribut `IContractBehavior`implémente et. `IWsdlExportExtension` L’extension peut être `IContractBehavior` ou `IEndpointBehavior` , dans ce cas. Son implémentation de la méthode `IWsdlExportExtension.ExportContract` active le substitut en l'ajoutant au `XsdDataContractExporter` utilisé lors de la génération des schémas du DataContract. L'extrait de code suivant montre comment procéder.  
   
 ```  
 public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)  
@@ -247,24 +247,24 @@ public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext 
 }  
 ```  
   
- Lorsque vous exécutez l'exemple, le client appelle la méthode AddEmployee, puis la méthode GetEmployee afin de s'assurer que le premier appel a réussi. Le résultat de la demande d'opération GetEmployee est affiché dans la fenêtre de console du client. L’opération GetEmployee doit réussir à trouver l’employé et imprimer « trouvé ».  
+ Lorsque vous exécutez l'exemple, le client appelle la méthode AddEmployee, puis la méthode GetEmployee afin de s'assurer que le premier appel a réussi. Le résultat de la demande d'opération GetEmployee est affiché dans la fenêtre de console du client. L’opération GetEmployee doit parvenir à trouver l’employé et à imprimer «trouvé».  
   
 > [!NOTE]
->  Cet exemple illustre comment incorporer un substitut à des fins de sérialisation, désérialisation et génération de métadonnées. Il ne montre pas en revanche comment incorporer un substitut pour permettre la génération de code à partir des métadonnées. Pour voir un exemple de comment un substitut peut être utilisé dans la génération de code client, consultez le [personnalisé WSDL Publication](../../../../docs/framework/wcf/samples/custom-wsdl-publication.md) exemple.  
+> Cet exemple illustre comment incorporer un substitut à des fins de sérialisation, désérialisation et génération de métadonnées. Il ne montre pas en revanche comment incorporer un substitut pour permettre la génération de code à partir des métadonnées. Pour voir un exemple de la façon dont un substitut peut être utilisé pour se connecter à la génération de code client, consultez l’exemple [publication WSDL personnalisée](../../../../docs/framework/wcf/samples/custom-wsdl-publication.md) .  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pour générer l’édition c# de la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pour générer l' C# édition de la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Pour exécuter l’exemple dans une configuration unique ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
 >  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\DataContract`  

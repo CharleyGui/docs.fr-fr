@@ -5,12 +5,12 @@ helpviewer_keywords:
 - typography [WPF], ClearType technology
 - ClearType [WPF], technology
 ms.assetid: 7e2392e0-75dc-463d-a716-908772782431
-ms.openlocfilehash: 405d06a8da8ec5c428c1565bcd08236de0f1fa88
-ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
+ms.openlocfilehash: 11019d564e7e658b745aec4254ad9a0c582b8416
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68672059"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964925"
 ---
 # <a name="cleartype-overview"></a>Vue d'ensemble de ClearType
 Cette rubrique fournit une vue d’ensemble de la technologie Microsoft ClearType disponible [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]dans le.  
@@ -55,7 +55,7 @@ Texte avec anticrénelage ClearType dans la direction y
 ## <a name="hardware-acceleration"></a>Accélération matérielle  
  ClearType dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] peut tirer parti de l’accélération matérielle pour améliorer les performances et réduire la charge du processeur et les besoins en mémoire système. En utilisant les nuanceurs de pixels et la mémoire vidéo d’une carte graphique, ClearType permet un rendu plus rapide du texte, en particulier lorsque l’animation est utilisée.  
   
- ClearType dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ne modifie pas les paramètres ClearType à l’ensemble du système. La désactivation de [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] ClearType [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] dans définit l’anticrénelage en mode nuances de gris. En outre, ClearType dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ne modifie pas les paramètres du [PowerToy de tuner ClearType](https://www.microsoft.com/typography/ClearTypePowerToy.mspx).  
+ ClearType dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ne modifie pas les paramètres ClearType à l’ensemble du système. La désactivation de ClearType dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Windows définit l’anticrénelage en mode nuances de gris. En outre, ClearType dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ne modifie pas les paramètres du [PowerToy de tuner ClearType](https://www.microsoft.com/typography/ClearTypePowerToy.mspx).  
   
  En ce qui concerne la conception architecturale de [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)], il a notamment été décidé d’améliorer la prise en charge par la disposition indépendante de la résolution des moniteurs DPI de résolution supérieure, qui sont de plus en plus répandus. De ce fait, [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] ne prend pas en charge le rendu de texte crénelé ni les bitmaps de certaines polices d’Extrême-Orient, qui sont tous deux dépendants de la résolution.  
   

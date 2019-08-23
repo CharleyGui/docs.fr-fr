@@ -13,15 +13,15 @@ helpviewer_keywords:
 - Visual Basic code, comments
 - "' comment marker character [Visual Basic]"
 ms.assetid: 34126d7f-e0f9-476d-91e6-b31b398615dc
-ms.openlocfilehash: 3c63c5613b40cb2014c77a0a996e3acb2cc304d4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 16149ce42e3476cf07a62298f83734fee9ec7253
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61783931"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957762"
 ---
 # <a name="rem-statement-visual-basic"></a>REM, instruction (Visual Basic)
-Permet d’inclure des notes explicatives dans le code source d’un programme.  
+Utilisé pour inclure des remarques explicatives dans le code source d’un programme.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,18 +32,18 @@ REM comment
   
 ## <a name="parts"></a>Composants  
  `comment`  
- Optionnel. Le texte des commentaires que vous souhaitez inclure. Un espace est nécessaire entre le `REM` mot clé et `comment`.  
+ facultatif. Texte de tous les commentaires que vous souhaitez inclure. Un espace est requis entre le `REM` mot clé `comment`et.  
   
 ## <a name="remarks"></a>Notes  
- Vous pouvez placer un `REM` instruction seule sur une ligne, ou vous pouvez le placer sur une ligne qui suit une autre instruction. La `REM` instruction doit être la dernière instruction sur la ligne. Si elle suit une autre instruction, le `REM` doivent être séparés de cette instruction par un espace.  
+ Vous pouvez placer une `REM` instruction seule sur une ligne, ou vous pouvez la placer sur une ligne après une autre instruction. L' `REM` instruction doit être la dernière instruction de la ligne. S’il suit une autre instruction, `REM` le doit être séparé de cette instruction par un espace.  
   
- Vous pouvez utiliser un guillemet unique (`'`) au lieu de `REM`. Cela est vrai si votre commentaire suit une autre instruction sur la même ligne ou se trouve uniquement sur une ligne.  
+ Vous pouvez utiliser un guillemet simple (`'`) à la place de. `REM` Cela est vrai si votre commentaire suit une autre instruction sur la même ligne ou s’il se trouve seul sur une ligne.  
   
 > [!NOTE]
->  Vous ne pouvez pas continuer une `REM` instruction à l’aide d’une séquence de continuation de ligne (`_`). Une fois un commentaire démarré, le compilateur n’examine pas les caractères pour une signification spéciale. Un commentaire de plusieurs lignes, utilisez un autre `REM` instruction ou un symbole de commentaire (`'`) sur chaque ligne.  
+> Vous ne pouvez pas `REM` continuer une instruction à l’aide d’une séquence`_`de continuation de ligne (). Une fois qu’un commentaire commence, le compilateur n’examine pas les caractères pour une signification particulière. Pour un commentaire de plusieurs lignes, utilisez une `REM` autre instruction ou un symbole de`'`commentaire () sur chaque ligne.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant illustre la `REM` instruction, qui est utilisée pour inclure des notes explicatives dans un programme. Il montre également d’utiliser le caractère guillemet simple (`'`) au lieu de `REM`.  
+ L’exemple suivant illustre l' `REM` instruction, qui est utilisée pour inclure des remarques explicatives dans un programme. Elle illustre également l’utilisation du caractère guillemet simple (`'`) au lieu de. `REM`  
   
  [!code-vb[VbVbalrStatements#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#6)]  
   

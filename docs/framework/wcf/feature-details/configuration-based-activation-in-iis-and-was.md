@@ -2,23 +2,23 @@
 title: Activation basée sur la configuration dans les services IIS et WAS
 ms.date: 03/30/2017
 ms.assetid: 6a927e1f-b905-4ee5-ad0f-78265da38238
-ms.openlocfilehash: 99f6c7d41620a7bafea0981cbeaa5cdcbad5ef12
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: f4de4aff2fbe6b8e82dc3d6523f492d06494c79e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636126"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69909768"
 ---
 # <a name="configuration-based-activation-in-iis-and-was"></a>Activation basée sur la configuration dans les services IIS et WAS
 
-Normalement lorsque vous hébergez un service Windows Communication Foundation (WCF) sous Internet Information Services (IIS) ou le Service d’Activation des processus Windows (WAS), vous devez fournir un fichier .svc. Le fichier .svc contient le nom du service et une fabrique hôte de service personnalisée facultative. Ce fichier supplémentaire facilite encore la gestion. Grâce à la fonctionnalité d’activation basée sur la configuration, le fichier .svc et, par conséquent, les surcharges associées ne sont plus indispensables.
+Normalement, lors de l’hébergement d’un service Windows Communication Foundation (WCF) sous Internet Information Services (IIS) ou WAS (Windows Process Activation Service), vous devez fournir un fichier. svc. Le fichier .svc contient le nom du service et une fabrique hôte de service personnalisée facultative. Ce fichier supplémentaire facilite encore la gestion. Grâce à la fonctionnalité d’activation basée sur la configuration, le fichier .svc et, par conséquent, les surcharges associées ne sont plus indispensables.
 
 ## <a name="configuration-based-activation"></a>Activation basée sur la configuration
 
-L'activation basée sur la configuration prend les métadonnées qui étaient placées dans le fichier .svc et les met dans le fichier Web.config. Dans le <`serviceHostingEnvironment`> élément est un <`serviceActivations`> élément. Dans le <`serviceActivations`> élément sont un ou plusieurs <`add`> éléments, un pour chaque service hébergé. Le <`add`> élément contient des attributs qui vous permettent de définir l’adresse relative pour le service et le type de service ou une fabrique d’hôte de service. L'exemple de code de configuration suivant montre comment cette section est utilisée.
+L'activation basée sur la configuration prend les métadonnées qui étaient placées dans le fichier .svc et les met dans le fichier Web.config. Dans l’élément`serviceHostingEnvironment`< > il existe un élément`serviceActivations`< >. Dans le <`serviceActivations`> élément est un ou plusieurs éléments`add`< >, un pour chaque service hébergé. L’élément`add`< > contient des attributs qui vous permettent de définir l’adresse relative du service et le type de service ou une fabrique d’hôte de service. L'exemple de code de configuration suivant montre comment cette section est utilisée.
 
 > [!NOTE]
->  Chaque <`add`> élément doit spécifier un service ou un attribut de fabrique. Il est possible de spécifier les deux.
+> Chaque <`add`élément > doit spécifier un service ou un attribut Factory. Il est possible de spécifier les deux.
 
 ```xml
 <serviceHostingEnvironment>
@@ -32,7 +32,7 @@ L'activation basée sur la configuration prend les métadonnées qui étaient pl
 
 > [!NOTE]
 > - Lors d'une activation basée sur la configuration, le code inline dans les fichiers .svc n'est pas pris en charge.
-> - Le `relativeAddress` attribut doit être défini à une adresse relative telle que «\<sous-répertoire > / service.svc » ou « ~ /\<sub/service.svc ».
+> - L' `relativeAddress` attribut doit être défini sur une adresse relative telle que «\<sous-répertoire >/service.svc» ou «~/\<Sub-Directory/Service. svc».
 > - Une exception de configuration est levée si vous inscrivez une adresse relative sans extension connue, associée à WCF.
 > - L'adresse relative spécifiée est relative à la racine de l'application virtuelle.
 > - En raison du modèle hiérarchique de configuration, les adresses relatives enregistrées au niveau de l'ordinateur et du site sont héritées par les applications virtuelles.

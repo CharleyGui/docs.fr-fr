@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 885037f7-1c2b-4d7a-90d9-06b89be172f2
-ms.openlocfilehash: 911c13b2a24c1906fe3da787460209f12296c993
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d3224b1d732fb82ffe68e8ce0bd410850004cb95
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61928579"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967152"
 ---
 # <a name="how-to-specify-a-service-binding-in-configuration"></a>Procédure : spécifier une liaison de service dans la configuration
-Dans cet exemple, un contrat `ICalculator` est défini pour un service de calculatrice de base, le service est implémenté dans la classe `CalculatorService`, puis son point de terminaison est configuré dans le fichier Web.config, où il est spécifié que le service utilise <xref:System.ServiceModel.BasicHttpBinding>. Pour obtenir une description de la configuration de ce service à l’aide de code au lieu d’une configuration, consultez [Comment : Spécifier une liaison de Service dans le Code](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-code.md).  
+Dans cet exemple, un contrat `ICalculator` est défini pour un service de calculatrice de base, le service est implémenté dans la classe `CalculatorService`, puis son point de terminaison est configuré dans le fichier Web.config, où il est spécifié que le service utilise <xref:System.ServiceModel.BasicHttpBinding>. Pour obtenir une description de la façon de configurer ce service à l’aide de code au [lieu d’une configuration, consultez Procédure: Spécifiez une liaison de service](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-code.md)dans le code.  
   
  Il est généralement conseillé de spécifier de façon déclarative les informations de liaison et d'adresse dans la configuration plutôt que de manière impérative dans le code. La définition de points de terminaison dans le code est généralement peu pratique car les liaisons et les adresses pour un service déployé sont en général différentes de celles utilisées au cours du développement du service. Plus généralement, le fait de laisser les informations de liaison et d’adresse hors du code leur permet de changer sans nécessiter de recompilation ou de redéploiement de l’application.  
   
- Toutes les étapes de configuration suivantes peuvent être entreprises à l’aide de la [l’outil Éditeur de Configuration (SvcConfigEditor.exe)](../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md).  
+ Toutes les étapes de configuration suivantes peuvent être effectuées à l’aide de l' [outil Éditeur de configuration (SvcConfigEditor. exe)](../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md).  
   
- Pour la copie de la source de cet exemple, consultez [BasicBinding](../../../docs/framework/wcf/samples/basicbinding.md).  
+ Pour obtenir la copie source de cet exemple, consultez [BasicBinding](../../../docs/framework/wcf/samples/basicbinding.md).  
   
 ### <a name="to-specify-the-basichttpbinding-to-use-to-configure-the-service"></a>Pour spécifier le BasicHttpBinding à utiliser pour configurer le service  
   
@@ -34,7 +34,7 @@ Dans cet exemple, un contrat `ICalculator` est défini pour un service de calcul
      [!code-vb[C_HowTo_ConfigureServiceBinding#2](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_configureservicebinding/vb/source.vb#2)]  
   
     > [!NOTE]
-    >  Les informations de liaison ou d'adresse ne sont pas spécifiées dans l'implémentation du service. De plus, il n'est pas nécessaire d'écrire du code pour extraire ces informations du fichier de configuration.  
+    > Les informations de liaison ou d'adresse ne sont pas spécifiées dans l'implémentation du service. De plus, il n'est pas nécessaire d'écrire du code pour extraire ces informations du fichier de configuration.  
   
 3. Créez un fichier Web.config pour configurer un point de terminaison pour le `CalculatorService` qui utilise le <xref:System.ServiceModel.WSHttpBinding>.  
   
@@ -81,7 +81,7 @@ Dans cet exemple, un contrat `ICalculator` est défini pour un service de calcul
   
 ### <a name="to-modify-the-default-values-of-the-binding-properties"></a>Pour modifier les valeurs par défaut des propriétés de liaison  
   
-1. Pour modifier l’une des valeurs de propriété par défaut de la <xref:System.ServiceModel.WSHttpBinding>, créer un nouveau nom de configuration de liaison - `<binding name="Binding1">` - dans le [ \<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) élément et définissez les nouvelles valeurs pour les attributs de la Dans cet élément de liaison de liaison. Par exemple, pour modifier les valeurs par défaut de délai d'attente d'ouverture et de fermeture de 1 minute à 2 minutes, ajoutez le code suivant au fichier de configuration.  
+1. Pour modifier l’une des valeurs de propriété par défaut <xref:System.ServiceModel.WSHttpBinding>de, créez un `<binding name="Binding1">` nom de configuration de liaison, dans l' [ \<élément WSHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) et définissez les nouvelles valeurs des attributs de la liaison dans cette liaison. appartient. Par exemple, pour modifier les valeurs par défaut de délai d'attente d'ouverture et de fermeture de 1 minute à 2 minutes, ajoutez le code suivant au fichier de configuration.  
   
     ```xml  
     <wsHttpBinding>  

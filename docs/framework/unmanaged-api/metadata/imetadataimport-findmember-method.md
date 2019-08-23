@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: caec760cea52cb14d3fdb5d4cf0b59adcae5633b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4eefb7ec1e7d0d130ec64531a59d1d5bbce04963
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782519"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968921"
 ---
 # <a name="imetadataimportfindmember-method"></a>IMetaDataImport::FindMember, méthode
-Obtient un pointeur vers le MemberDef jeton pour le champ ou une méthode qui est placée entre la <xref:System.Type> et qui a la signature de nom et de métadonnées spécifiée.  
+Obtient un pointeur vers le jeton MemberDef pour le champ ou la méthode qui est inclus dans <xref:System.Type> le spécifié et qui a le nom et la signature de métadonnées spécifiés.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,36 +41,36 @@ HRESULT FindMember (
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- [in] Le jeton TypeDef pour la classe ou interface qui encadre le membre à rechercher. Si cette valeur est `mdTokenNil`, la recherche est effectuée pour une variable globale ou une fonction globale.  
+ dans Jeton TypeDef pour la classe ou l’interface qui englobe le membre à rechercher. Si cette valeur est `mdTokenNil`, la recherche est effectuée pour une variable globale ou une fonction globale.  
   
  `szName`  
- [in] Le nom du membre à rechercher.  
+ dans Nom du membre à rechercher.  
   
  `pvSigBlob`  
- [in] Pointeur vers la signature de métadonnées binaires du membre.  
+ dans Pointeur vers la signature de métadonnées binaires du membre.  
   
  `cbSigBlob`  
- [in] La taille en octets de `pvSigBlob`.  
+ dans Taille en octets de `pvSigBlob`.  
   
  `pmb`  
- [out] Pointeur vers le jeton MemberDef correspondant.  
+ à Pointeur vers le jeton MemberDef correspondant.  
   
 ## <a name="remarks"></a>Notes  
- Vous spécifiez le membre à l’aide de son interface ou la classe englobante (`td`), son nom (`szName`) et éventuellement sa signature (`pvSigBlob`). Il existe peut-être plusieurs membres portant le même nom dans une classe ou interface. Dans ce cas, passez la signature du membre pour rechercher la correspondance unique.  
+ Vous spécifiez le membre à l’aide de sa classe englobante ou de son interface`szName`(`td`), son nom () et`pvSigBlob`éventuellement sa signature (). Il peut y avoir plusieurs membres portant le même nom dans une classe ou une interface. Dans ce cas, transmettez la signature du membre pour trouver la correspondance unique.  
   
- La signature est passé à `FindMember` doit avoir été générée dans la portée actuelle, car les signatures sont liées à une étendue spécifique. Une signature peut incorporer un jeton qui identifie le type de valeur ou de la classe englobant. Le jeton est un index dans la table TypeDef local. Vous ne pouvez pas générer une signature d’exécution en dehors du contexte de la portée actuelle et utiliser cette signature comme entrée `FindMember`.  
+ La signature transmise `FindMember` à doit avoir été générée dans l’étendue actuelle, car les signatures sont liées à une portée particulière. Une signature peut incorporer un jeton qui identifie la classe englobante ou le type valeur. Le jeton est un index dans la table TypeDef locale. Vous ne pouvez pas générer de signature au moment de l’exécution en dehors du contexte de la portée actuelle et utiliser cette signature `FindMember`comme entrée pour l’entrée dans.  
   
- `FindMember` recherche uniquement les membres qui ont été définis directement dans la classe ou interface ; Il ne trouve pas les membres hérités.  
+ `FindMember`recherche uniquement les membres qui ont été définis directement dans la classe ou l’interface; il ne trouve pas les membres hérités.  
   
 > [!NOTE]
->  `FindMember` est une méthode d’assistance. Il appelle [IMetaDataImport::FindMethod](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findmethod-method.md); si cet appel ne trouve pas de correspondance, `FindMember` appelle ensuite [IMetaDataImport::FindField](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findfield-method.md).  
+> `FindMember`est une méthode d’assistance. Il appelle [IMetaDataImport:: FindMethod,](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findmethod-method.md); Si cet appel ne trouve pas de correspondance, `FindMember` appelle [IMetaDataImport:: FindField,](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findfield-method.md).  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** Cor.h  
+ **En-tête :** Cor. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

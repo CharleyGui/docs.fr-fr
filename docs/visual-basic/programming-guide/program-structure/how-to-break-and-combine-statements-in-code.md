@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Diviser et combiner des instructions dans le Code (Visual Basic)'
+title: 'Procédure : Fractionner et combiner des instructions dans le code (Visual Basic)'
 ms.date: 07/20/2015
 f1_keywords:
 - vb._
@@ -21,40 +21,40 @@ helpviewer_keywords:
 - Visual Basic code, line continuation in
 - statements [Visual Basic], line breaks in
 ms.assetid: dea01dad-a8ac-484a-bb3a-8c45a1b1eccc
-ms.openlocfilehash: d3656b924ebaca67c90dc602701c4cef9ce088b4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 745974523bd747dd23f3cfaf7cb70bb6cd4513f0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648778"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946211"
 ---
-# <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a>Procédure : Diviser et combiner des instructions dans le Code (Visual Basic)
-Lorsque vous écrivez votre code, vous pouvez parfois créer de longues instructions qui imposent un défilement horizontal dans l’éditeur de Code. Bien que cela n’affecte pas la façon votre code s’exécute, elle rend difficile pour vous ou quelqu'un d’autre lire le code tel qu’il apparaît sur le moniteur. Dans ce cas, vous devez envisager de diviser l’instruction long unique en plusieurs lignes.  
+# <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a>Procédure : Fractionner et combiner des instructions dans le code (Visual Basic)
+Lors de l’écriture de votre code, vous pouvez parfois créer des instructions longues qui nécessitent un défilement horizontal dans l’éditeur de code. Bien que cela n’affecte pas la manière dont votre code s’exécute, cela complique la lecture du code tel qu’il apparaît sur le moniteur. Dans ce cas, vous devez envisager de fractionner une seule instruction longue en plusieurs lignes.  
   
-### <a name="to-break-a-single-statement-into-multiple-lines"></a>Pour diviser une instruction unique en plusieurs lignes  
+### <a name="to-break-a-single-statement-into-multiple-lines"></a>Pour scinder une seule instruction en plusieurs lignes  
   
-- Utiliser le caractère de continuation de ligne, qui est un trait de soulignement (`_`), au point auquel vous souhaitez que la saut de ligne. Le trait de soulignement doit être immédiatement précédé d’un espace et immédiatement suivi d’un terminateur de ligne (retour chariot).  
+- Utilisez le caractère de continuation de ligne, qui est un trait`_`de soulignement (), à l’endroit où vous souhaitez que la ligne s’arrête. Le trait de soulignement doit être immédiatement précédé d’un espace et immédiatement suivi d’un terminateur de ligne (retour chariot).  
   
     > [!NOTE]
-    >  Dans certains cas, si vous omettez le caractère de continuation de ligne, le compilateur Visual Basic implicitement continue l’instruction sur la ligne de code suivante. Pour obtenir la liste d’éléments de syntaxe pour laquelle vous pouvez omettre le caractère de continuation de ligne, consultez « Continuation de ligne implicite » dans [instructions](../../../visual-basic/programming-guide/language-features/statements.md).  
+    > Dans certains cas, si vous omettez le caractère de continuation de ligne, le compilateur Visual Basic continue implicitement l’instruction sur la ligne de code suivante. Pour obtenir la liste des éléments syntaxiques pour lesquels vous pouvez omettre le caractère de continuation de ligne, consultez «continuation de ligne implicite» dans les [instructions](../../../visual-basic/programming-guide/language-features/statements.md).  
   
-     Dans l’exemple suivant, l’instruction est divisée en quatre lignes avec des caractères de continuation de ligne terminant toutes les mais la dernière ligne.  
+     Dans l’exemple suivant, l’instruction est divisée en quatre lignes avec des caractères de continuation de ligne qui terminent tous sauf la dernière ligne.  
   
      [!code-vb[VbVbcnConventions#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#20)]  
   
-     À l’aide de cette séquence rend votre code plus facile à lire, à la fois en ligne et quand imprimé.  
+     L’utilisation de cette séquence rend votre code plus facile à lire, en ligne et à l’impression.  
   
-     Le caractère de continuation de ligne doit être le dernier caractère d’une ligne. Vous ne pouvez pas faire suivre avec un autre élément sur la même ligne.  
+     Le caractère de continuation de ligne doit être le dernier caractère d’une ligne. Vous ne pouvez pas le suivre avec d’autres éléments sur la même ligne.  
   
-     Il existe des restrictions quant à l’endroit où vous pouvez utiliser le caractère de continuation de ligne ; par exemple, vous ne pouvez pas l’utiliser au milieu d’un nom d’argument. Vous pouvez interrompre une liste d’arguments avec le caractère de continuation de ligne, mais les noms des arguments individuels doivent rester intactes.  
+     Il existe certaines limitations quant à l’emplacement où vous pouvez utiliser le caractère de continuation de ligne. par exemple, vous ne pouvez pas l’utiliser au milieu d’un nom d’argument. Vous pouvez arrêter une liste d’arguments avec le caractère de continuation de ligne, mais les noms individuels des arguments doivent rester intacts.  
   
-     Vous ne pouvez pas continuer un commentaire à l’aide d’un caractère de continuation de ligne. Le compilateur n’examine les caractères dans un commentaire pour une signification spéciale. Pour un commentaire de plusieurs lignes, répétez le symbole de commentaire (`'`) sur chaque ligne.  
+     Vous ne pouvez pas continuer un commentaire en utilisant un caractère de continuation de ligne. Le compilateur n’examine pas les caractères d’un commentaire pour une signification particulière. Pour un commentaire de plusieurs lignes, répétez le symbole de`'`commentaire () sur chaque ligne.  
   
  Bien que la méthode recommandée consiste à placer chaque instruction sur une ligne distincte, Visual Basic vous permet également de placer plusieurs instructions sur la même ligne.  
   
-### <a name="to-place-multiple-statements-on-the-same-line"></a>Placer plusieurs instructions sur la même ligne  
+### <a name="to-place-multiple-statements-on-the-same-line"></a>Pour placer plusieurs instructions sur la même ligne  
   
-- Séparez les instructions par un signe deux-points (`:`), comme dans l’exemple suivant.  
+- Séparez les instructions par un signe`:`deux-points (), comme dans l’exemple suivant.  
   
      [!code-vb[VbVbcnConventions#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#10)]  
   
