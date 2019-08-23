@@ -1,5 +1,5 @@
 ---
-title: Code Transparent de sécurité, niveau 1
+title: Code transparent de sécurité, niveau 1
 ms.date: 03/30/2017
 helpviewer_keywords:
 - transparent
@@ -11,28 +11,28 @@ helpviewer_keywords:
 ms.assetid: 5fd8f46d-3961-46a7-84af-2eb1f48e75cf
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1fd594ef1fea4c8723965ad483a5a124892bcf00
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 4ca30448c24efc48be3d68c6b3fa03c949b72d1a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487872"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910707"
 ---
-# <a name="security-transparent-code-level-1"></a>Code Transparent de sécurité, niveau 1
+# <a name="security-transparent-code-level-1"></a>Code transparent de sécurité, niveau 1
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
- La transparence permet aux développeurs d'écrire des bibliothèques .NET Framework plus sûres qui exposent les fonctionnalités à du code de niveau de confiance partielle. La transparence de niveau 1 a été introduite dans le .NET Framework version 2.0 et a été essentiellement utilisée en interne chez Microsoft. À compter de .NET Framework 4, vous pouvez utiliser [la transparence de niveau 2](../../../docs/framework/misc/security-transparent-code-level-2.md). Toutefois, la transparence de niveau 1 a été conservée afin que vous pouvez identifier le code hérité qui doit s’exécuter sur les règles de sécurité antérieures.  
+ La transparence permet aux développeurs d'écrire des bibliothèques .NET Framework plus sûres qui exposent les fonctionnalités à du code de niveau de confiance partielle. La transparence de niveau 1 a été introduite dans le .NET Framework version 2.0 et a été essentiellement utilisée en interne chez Microsoft. À partir du .NET Framework 4, vous pouvez utiliser la [transparence de niveau 2](../../../docs/framework/misc/security-transparent-code-level-2.md). Toutefois, la transparence de niveau 1 a été conservée afin que vous puissiez identifier le code hérité qui doit s’exécuter avec les règles de sécurité antérieures.  
   
 > [!IMPORTANT]
->  Vous ne devez spécifier la transparence de niveau 1 qu'à des fins de compatibilité. Autrement dit, ne spécifiez le niveau 1 que pour du code développé avec le .NET Framework version 3.5 ou antérieure qui utilise <xref:System.Security.AllowPartiallyTrustedCallersAttribute> ou qui n'utilise pas le modèle de transparence. Par exemple, utilisez la transparence de niveau 1 pour les assemblys du .NET Framework 2.0 qui autorisent les appels des appelants ayant un niveau de confiance partielle (APTCA). Pour le code développé pour le .NET Framework 4, utilisez toujours la transparence de niveau 2.  
+> Vous ne devez spécifier la transparence de niveau 1 qu'à des fins de compatibilité. Autrement dit, ne spécifiez le niveau 1 que pour du code développé avec le .NET Framework version 3.5 ou antérieure qui utilise <xref:System.Security.AllowPartiallyTrustedCallersAttribute> ou qui n'utilise pas le modèle de transparence. Par exemple, utilisez la transparence de niveau 1 pour les assemblys du .NET Framework 2.0 qui autorisent les appels des appelants ayant un niveau de confiance partielle (APTCA). Pour le code développé pour le .NET Framework 4, utilisez toujours la transparence de niveau 2.  
   
  Cette rubrique contient les sections suivantes :  
   
-- [Le modèle de transparence de niveau 1](#the_level_1_transparency_model)  
+- [Modèle de transparence de niveau 1](#the_level_1_transparency_model)  
   
 - [Attributs de transparence](#transparency_attributes)  
   
-- [Exemples de transparence de sécurité](#security_transparency_examples)  
+- [Exemples de transparence de la sécurité](#security_transparency_examples)  
   
 <a name="the_level_1_transparency_model"></a>   
 ## <a name="the-level-1-transparency-model"></a>Modèle de transparence de niveau 1  
@@ -53,7 +53,7 @@ ms.locfileid: "66487872"
  Vous devez appliquer la transparence explicitement. La majeure partie de votre code qui gère la manipulation des données et la logique peut être marquée comme étant transparente de sécurité, tandis que le code subsidiaire qui opère des élévations de privilèges est marqué comme étant critique de sécurité ou critique sécurisé.  
   
 > [!IMPORTANT]
->  La transparence de niveau 1 se limite à la portée de l'assembly ; il ne s'applique pas entre les assemblys. La transparence de niveau 1 a été principalement utilisée en interne par Microsoft à des fins d'audit de sécurité. Les types et membres critiques de sécurité au sein d'un assembly de niveau 1 sont accessibles au code transparent de sécurité des autres assemblys. Il est important d'effectuer des demandes de liaison pour bénéficier d'une confiance totale dans tous vos types et membres critiques de sécurité de niveau 1. Les types et membres critiques sécurisés doivent aussi vérifier que les appelants disposent des autorisations sur les ressources protégées auxquelles les types ou membres accèdent.  
+> La transparence de niveau 1 se limite à la portée de l'assembly ; il ne s'applique pas entre les assemblys. La transparence de niveau 1 a été principalement utilisée en interne par Microsoft à des fins d'audit de sécurité. Les types et membres critiques de sécurité au sein d'un assembly de niveau 1 sont accessibles au code transparent de sécurité des autres assemblys. Il est important d'effectuer des demandes de liaison pour bénéficier d'une confiance totale dans tous vos types et membres critiques de sécurité de niveau 1. Les types et membres critiques sécurisés doivent aussi vérifier que les appelants disposent des autorisations sur les ressources protégées auxquelles les types ou membres accèdent.  
   
  Pour assurer une compatibilité avec les versions antérieures du .NET Framework, tous les membres qui ne sont pas annotés avec des attributs de transparence sont considérés comme étant critiques sécurisés. Tous les types qui ne sont pas annotés sont considérés comme étant transparents. Il n'existe aucune règle d'analyse statique pour valider la transparence. Par conséquent, vous serez peut-être amené à déboguer les erreurs de transparence au moment de l'exécution.  
   
@@ -132,5 +132,5 @@ public class B
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Code Transparent de sécurité, niveau 2](../../../docs/framework/misc/security-transparent-code-level-2.md)
+- [Code transparent de sécurité, niveau 2](../../../docs/framework/misc/security-transparent-code-level-2.md)
 - [Modifications de sécurité](../../../docs/framework/security/security-changes.md)

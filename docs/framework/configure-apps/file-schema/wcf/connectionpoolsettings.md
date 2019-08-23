@@ -2,12 +2,12 @@
 title: <connectionPoolSettings>
 ms.date: 03/30/2017
 ms.assetid: 6fa7fa65-2c6e-4eab-b8cf-7690112c0be5
-ms.openlocfilehash: 0e56bb5c9e485559d712281a51e79f54c9661b5a
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 3c8d905a04f8f6d7ecff9b0ef9e7d3c8afa727e3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423136"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925974"
 ---
 # <a name="connectionpoolsettings"></a>\<connectionPoolSettings>
 Spécifie des paramètres de pool de connexions supplémentaires pour une liaison de canal nommé.  
@@ -45,7 +45,7 @@ Spécifie des paramètres de pool de connexions supplémentaires pour une liaiso
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<namedPipeTransport>](../../../../../docs/framework/configure-apps/file-schema/wcf/namedpipetransport.md)|Définit un transport qui entraîne un canal à transférer des messages à l'aide de canaux nommés.|  
+|[\<namedPipeTransport>](namedpipetransport.md)|Définit un transport qui entraîne un canal à transférer des messages à l'aide de canaux nommés.|  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -54,9 +54,9 @@ Spécifie des paramètres de pool de connexions supplémentaires pour une liaiso
 - <xref:System.ServiceModel.Channels.NamedPipeConnectionPoolSettings>
 - <xref:System.ServiceModel.Channels.TransportBindingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Transports](../../../../../docs/framework/wcf/feature-details/transports.md)
-- [Choix d’un transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
-- [Liaisons](../../../../../docs/framework/wcf/bindings.md)
-- [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Transports](../../../wcf/feature-details/transports.md)
+- [Choix d’un transport](../../../wcf/feature-details/choosing-a-transport.md)
+- [Liaisons](../../../wcf/bindings.md)
+- [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
+- [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)

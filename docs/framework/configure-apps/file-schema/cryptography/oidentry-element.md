@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <oidEntry> element
 - oidEntry element
 ms.assetid: 22fb88b0-bf27-489c-9ca0-e65950ac136c
-ms.openlocfilehash: 013994e36c4c63410a753967cbac92c38783ae62
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: cbdf6150010ca2dace3f0610d9caa90c2bf52746
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659587"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921055"
 ---
 # <a name="oidentry-element"></a>\<oidEntry >, élément
 Mappe un identificateur d’objet (OID) ASN.1 à un nom convivial.  
@@ -82,6 +82,6 @@ Mappe un identificateur d’objet (OID) ASN.1 à un nom convivial.
 
 - [Schéma des fichiers de configuration](../index.md)
 - [Schéma des paramètres de chiffrement](index.md)
-- [Cryptographic Services](../../../../../docs/standard/security/cryptographic-services.md)
+- [Cryptographic Services](../../../../standard/security/cryptographic-services.md)
 - [Configuration des classes de chiffrement](../../configure-cryptography-classes.md)
 - [Mappage d'identificateurs d'objet à des algorithmes de chiffrement](../../map-object-identifiers-to-cryptography-algorithms.md)

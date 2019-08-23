@@ -5,16 +5,16 @@ helpviewer_keywords:
 - best practices for accessibility
 - accessibility, best practices for
 ms.assetid: e6d5cd98-21a3-4b01-999c-fb953556d0e6
-ms.openlocfilehash: a29c31e93523e0843728d2fd7fa555946b139c55
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: f4096d6441c64499dae8003a63100b59037897ba
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629603"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69932775"
 ---
 # <a name="accessibility-best-practices"></a>Meilleures pratiques d'accessibilité
 > [!NOTE]
->  Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  L’implémentation des meilleures pratiques suivantes dans les contrôles ou les applications améliore leur accessibilité pour les personnes qui utilisent des appareils de technologie d’assistance. Une grande partie de ces meilleures pratiques se concentrent sur une bonne conception de l' [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] . Chaque meilleure pratique inclut des informations d'implémentation des contrôles ou applications [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] . Dans de nombreux cas, le travail nécessaire pour appliquer ces meilleures pratiques est déjà inclus dans les contrôles [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] .  
   

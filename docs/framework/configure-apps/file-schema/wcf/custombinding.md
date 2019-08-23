@@ -2,12 +2,12 @@
 title: <customBinding>
 ms.date: 03/30/2017
 ms.assetid: 9da4f960-f64e-4d8a-894d-2b09eba5ce4b
-ms.openlocfilehash: 60ce3cdfd7c78d152c71cdd652532cc96a6be296
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0b6f26c7b9e9d02b3ff20b53f42b09d671699ea5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673184"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919389"
 ---
 # <a name="custombinding"></a>\<customBinding>
 
@@ -181,7 +181,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 |Attribut|Description|
 |---------------|-----------------|
 |closeTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération de fermeture. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|
-|name|Chaîne qui contient le nom de configuration de la liaison. Cette valeur est une chaîne définie par l'utilisateur qui sert de chaîne d'identification à la liaison personnalisée. Depuis [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], les liaisons et les comportements ne sont pas obligés d’avoir un nom. Pour plus d’informations sur la configuration par défaut et les liaisons sans nom et les comportements, consultez [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) et [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).|
+|name|Chaîne qui contient le nom de configuration de la liaison. Cette valeur est une chaîne définie par l'utilisateur qui sert de chaîne d'identification à la liaison personnalisée. Depuis [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], les liaisons et les comportements ne sont pas obligés d’avoir un nom. Pour plus d’informations sur la configuration par défaut et les liaisons et les comportements sans valeur, consultez [configuration simplifiée](../../../wcf/simplified-configuration.md) et [configuration simplifiée pour les services WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|
 |openTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération d'ouverture. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|
 |receiveTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération de réception. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|
 |sendTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération d'envoi. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|
@@ -190,13 +190,13 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<compositeDuplex>](../../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md)|Spécifie la messagerie bidirectionnelle pour la liaison personnalisée. Il est utilisé avec les transports qui n'autorisent pas nativement les communications duplex, comme HTTP. En revanche, TCP autorise nativement les communications duplex et ne requiert pas l'utilisation de cet élément de liaison pour permettre au service de renvoyer des messages à un client.<br /><br /> Le client doit exposer une adresse pour que le service puisse entrer en contact avec lui et établir une connexion. Cette adresse cliente est fournie par l'attribut `ClientBaseAddress`.<br /><br /> Cet élément est de type <xref:System.ServiceModel.Configuration.CompositeDuplexElement>.|
-|[\<pnrpPeerResolver>](../../../../../docs/framework/configure-apps/file-schema/wcf/pnrppeerresolver.md)|Spécifie un programme de résolution de nom d’homologue PNRP (Peer Name Resolution Protocol). Cet élément est de type <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement>.|
-|[\<reliableSession>](../../../../../docs/framework/configure-apps/file-schema/wcf/reliablesession.md)|Spécifie le paramètre de WS-Reliable Messaging. Lorsque cet élément est ajouté à une liaison personnalisée, le canal résultant peut prendre en charge des assurances de remise EOD (Exactly-Once-Delivery). Cet élément est de type <xref:System.ServiceModel.Configuration.ReliableSessionElement>.|
-|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Spécifie les options de sécurité de la liaison personnalisée. Cet élément est de type <xref:System.ServiceModel.Configuration.SecurityElement>.|
-|[\<sslStreamSecurity>](../../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)|Spécifie les paramètres de sécurité pour une liaison de flux de données SSL. Cet élément est de type <xref:System.ServiceModel.Configuration.SslStreamSecurityElement>.|
-|[\<transactionFlow>](../../../../../docs/framework/configure-apps/file-schema/wcf/transactionflow.md)|Spécifie que le flux de la transaction des prises en charge de la liaison, ainsi que le protocole à utiliser par l’attribut `transactionProtocol`. Cet élément est de type <xref:System.ServiceModel.Configuration.TransactionFlowElement>.|
-|[\<windowsStreamSecurity>](../../../../../docs/framework/configure-apps/file-schema/wcf/windowsstreamsecurity.md)|Spécifie les options permettant de transmettre en continu la sécurité de la liaison personnalisée. Cet élément est de type <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>.|
+|[\<compositeDuplex>](compositeduplex.md)|Spécifie la messagerie bidirectionnelle pour la liaison personnalisée. Il est utilisé avec les transports qui n'autorisent pas nativement les communications duplex, comme HTTP. En revanche, TCP autorise nativement les communications duplex et ne requiert pas l'utilisation de cet élément de liaison pour permettre au service de renvoyer des messages à un client.<br /><br /> Le client doit exposer une adresse pour que le service puisse entrer en contact avec lui et établir une connexion. Cette adresse cliente est fournie par l'attribut `ClientBaseAddress`.<br /><br /> Cet élément est de type <xref:System.ServiceModel.Configuration.CompositeDuplexElement>.|
+|[\<pnrpPeerResolver>](pnrppeerresolver.md)|Spécifie un programme de résolution de nom d’homologue PNRP (Peer Name Resolution Protocol). Cet élément est de type <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement>.|
+|[\<reliableSession>](reliablesession.md)|Spécifie le paramètre de WS-Reliable Messaging. Lorsque cet élément est ajouté à une liaison personnalisée, le canal résultant peut prendre en charge des assurances de remise EOD (Exactly-Once-Delivery). Cet élément est de type <xref:System.ServiceModel.Configuration.ReliableSessionElement>.|
+|[\<> de sécurité](security-of-custombinding.md)|Spécifie les options de sécurité de la liaison personnalisée. Cet élément est de type <xref:System.ServiceModel.Configuration.SecurityElement>.|
+|[\<sslStreamSecurity>](sslstreamsecurity.md)|Spécifie les paramètres de sécurité pour une liaison de flux de données SSL. Cet élément est de type <xref:System.ServiceModel.Configuration.SslStreamSecurityElement>.|
+|[\<transactionFlow>](transactionflow.md)|Spécifie que le flux de la transaction des prises en charge de la liaison, ainsi que le protocole à utiliser par l’attribut `transactionProtocol`. Cet élément est de type <xref:System.ServiceModel.Configuration.TransactionFlowElement>.|
+|[\<windowsStreamSecurity>](windowsstreamsecurity.md)|Spécifie les options permettant de transmettre en continu la sécurité de la liaison personnalisée. Cet élément est de type <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -230,7 +230,7 @@ Une liaison personnalisée est construite à l'aide d'une collection <xref:Syste
 
 - Puis figure un <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> facultatif qui fournit une session et un mécanisme de classement tel que défini dans la spécification WS-ReliableMessaging. Cette notion de session peut traverser les intermédiaires SOAP et de transport.
 
-- Puis figure un élément de liaison facultatif qui fournit des fonctionnalités de sécurité telles que l'autorisation, l'authentification, la protection et la confidentialité. Les éléments de liaison de sécurité suivants sont fournis par Windows Communication Foundation (WCF) :
+- Puis figure un élément de liaison facultatif qui fournit des fonctionnalités de sécurité telles que l'autorisation, l'authentification, la protection et la confidentialité. Les éléments de liaison de sécurité suivants sont fournis par Windows Communication Foundation (WCF):
 
   - <xref:System.ServiceModel.Channels.SecurityBindingElement>
 
@@ -260,7 +260,7 @@ Une liaison personnalisée est construite à l'aide d'une collection <xref:Syste
 
   - <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>
 
-- Au bas de la pile se trouve un élément de transport obligatoire. Vous pouvez utiliser votre propre transport ou utiliser un des éléments fournis par Windows Communication Foundation (WCF) de liaison de transport :
+- Au bas de la pile se trouve un élément de transport obligatoire. Vous pouvez utiliser votre propre transport ou utiliser l’un des éléments de liaison de transport fournis par Windows Communication Foundation (WCF):
 
   - <xref:System.ServiceModel.Channels.TcpTransportBindingElement>
 
@@ -290,7 +290,7 @@ Le tableau suivant récapitule les options de chaque couche.
 
 De plus, vous pouvez définir vos propres éléments de liaison et les insérer entre chacune des couches définies précédentes.
 
-Pour une discussion sur l’utilisation d’une liaison personnalisée afin de modifier une liaison fournie par le système, consultez [Comment : Personnaliser une liaison fournie par le système](../../../../../docs/framework/wcf/extending/how-to-customize-a-system-provided-binding.md).
+Pour plus d’informations sur l’utilisation d’une liaison personnalisée pour modifier une liaison fournie par le système [, consultez Procédure: Personnaliser une liaison](../../../wcf/extending/how-to-customize-a-system-provided-binding.md)fournie par le système.
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -298,11 +298,11 @@ Pour une discussion sur l’utilisation d’une liaison personnalisée afin de m
 - <xref:System.ServiceModel.Channels.BindingElement>
 - <xref:System.ServiceModel.Configuration.BindingsSection>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [\<binding>](../../../../../docs/framework/misc/binding.md)
-- [Liaisons](../../../../../docs/framework/wcf/bindings.md)
-- [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [CustomBinding (élément)](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
-- [Liaisons](../../../../../docs/framework/wcf/bindings.md)
-- [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Utilisation de liaisons pour configurer des services et des clients](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<binding>](../../../misc/binding.md)
+- [Liaisons](../../../wcf/bindings.md)
+- [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
+- [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
+- [customBinding, élément](custombinding.md)
+- [Liaisons](../../../wcf/bindings.md)
+- [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)

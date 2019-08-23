@@ -2,20 +2,20 @@
 title: <issuedTokenAuthentication> de <serviceCredentials>
 ms.date: 03/30/2017
 ms.assetid: 5c2e288f-f603-4d13-839a-0fd6d1981bec
-ms.openlocfilehash: d093b45269b230b4ff074d07a66290ab09592f60
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 280aa49019f68a0906307e24842a585a92c6600a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61756713"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925368"
 ---
-# <a name="issuedtokenauthentication-of-servicecredentials"></a>\<issuedTokenAuthentication> of \<serviceCredentials>
+# <a name="issuedtokenauthentication-of-servicecredentials"></a>\<IssuedTokenAuthentication > de \<ServiceCredentials >
 Indique un jeton personnalisé émis en tant qu'informations d'identification du service.  
   
  \<system.ServiceModel>  
 \<behaviors>  
 \<serviceBehaviors>  
-\<behavior>  
+\<> de comportement  
 \<serviceCredentials>  
 \<issuedTokenAuthentication>  
   
@@ -51,7 +51,7 @@ Indique un jeton personnalisé émis en tant qu'informations d'identification du
 |`allowedAudienceUris`|Obtient le jeu d'URI cibles pour lesquels le jeton de sécurité <xref:System.IdentityModel.Tokens.SamlSecurityToken> peut être visé pour être considéré comme valide par une instance de <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator>. Pour plus d'informations sur l'utilisation de cet attribut, consultez <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AllowedAudienceUris%2A>.|  
 |`allowUntrustedRsaIssuers`|Valeur booléenne indiquant si les émetteurs de certificats RSA non fiables sont autorisés.<br /><br /> Les certificats sont signés par des autorités de certification (CA) pour en assurer l'authenticité. Un émetteur non fiable est une autorité de certification qui n'est pas spécifiée comme étant approuvée pour signer des certificats.|  
 |`audienceUriMode`|Obtient une valeur indiquant si le <xref:System.IdentityModel.Tokens.SamlSecurityToken> du jeton de sécurité <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> doit être validé. Cette valeur est de type <xref:System.IdentityModel.Selectors.AudienceUriMode>. Pour plus d'informations sur l'utilisation de cet attribut, consultez <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AudienceUriMode%2A>.|  
-|`certificateValidationMode`|Définit le mode de validation du certificat. L'une des valeurs valides du <xref:System.ServiceModel.Security.X509CertificateValidationMode>. S'il est défini à `Custom`, un `customCertificateValidator` doit également être fourni. La valeur par défaut est `ChainTrust`.|  
+|`certificateValidationMode`|Définit le mode de validation du certificat. L'une des valeurs valides du <xref:System.ServiceModel.Security.X509CertificateValidationMode>. S'il est défini à `Custom`, un `customCertificateValidator` doit également être fourni. Par défaut, il s’agit de `ChainTrust`.|  
 |`customCertificateValidatorType`|Chaîne facultative. Type et assembly utilisés pour valider un type personnalisé. Cet attribut doit être défini lorsque `certificateValidationMode` a la valeur `Custom`.|  
 |`revocationMode`|Définit le mode de révocation qui spécifie si un contrôle de révocation a lieu et s'il est effectué en ligne ou hors connexion. Cet attribut est de type <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode>.|  
 |`samlSerializer`|Attribut de chaîne facultatif indiquant le type de SamlSerializer utilisé pour les informations d'identification du service. La valeur par défaut est une chaîne vide.|  
@@ -67,12 +67,12 @@ Indique un jeton personnalisé émis en tant qu'informations d'identification du
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<serviceCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|Spécifie les informations d’identification à utiliser pour authentifier le service, ainsi que les paramètres liés à la validation des informations d’identification du client.|  
+|[\<serviceCredentials>](servicecredentials.md)|Spécifie les informations d’identification à utiliser pour authentifier le service, ainsi que les paramètres liés à la validation des informations d’identification du client.|  
   
 ## <a name="remarks"></a>Notes  
- Le scénario de jeton émis comporte trois étapes. Dans la première phase, un client tente d’accéder à un service est appelé un *secure token service*. Le service d'émission de jeton sécurisé authentifie ensuite le client et émet par la suite un jeton au client, généralement un jeton SAML (Security Assertions Markup Language). Le client retourne ensuite au service avec le jeton. Le service recherche dans le jeton les données lui permettant de l'authentifier, et par conséquent d'authentifier le client. Pour authentifier le jeton, le service doit connaître le certificat utilisé par le service d'émission de jeton sécurisé.  
+ Le scénario de jeton émis comporte trois étapes. Lors de la première phase, un client qui tente d’accéder à un service est appelé *service de jeton sécurisé*. Le service d'émission de jeton sécurisé authentifie ensuite le client et émet par la suite un jeton au client, généralement un jeton SAML (Security Assertions Markup Language). Le client retourne ensuite au service avec le jeton. Le service recherche dans le jeton les données lui permettant de l'authentifier, et par conséquent d'authentifier le client. Pour authentifier le jeton, le service doit connaître le certificat utilisé par le service d'émission de jeton sécurisé.  
   
- Cet élément est le référentiel pour les certificats de service d'émission de jeton sécurisé de ce type. Pour ajouter des certificats, utilisez le [ \<knownCertificates >](../../../../../docs/framework/configure-apps/file-schema/wcf/knowncertificates.md). Insérer un [ \<Ajouter >](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-knowncertificates.md) pour chaque certificat, comme illustré dans l’exemple suivant.  
+ Cet élément est le référentiel pour les certificats de service d'émission de jeton sécurisé de ce type. Pour ajouter des certificats, utilisez la [ \<> knownCertificates](knowncertificates.md). Insérez un [ \<> d’ajout](add-of-knowncertificates.md) pour chaque certificat, comme indiqué dans l’exemple suivant.  
   
 ```xml  
 <issuedTokenAuthentication>
@@ -87,7 +87,7 @@ Indique un jeton personnalisé émis en tant qu'informations d'identification du
   
  Par défaut, les certificats doivent être obtenus auprès d'un service d'émission de jeton sécurisé. Ces certificats « connus » garantissent que seuls les clients légitimes peuvent accéder à un service.  
   
- Pour plus d’informations sur l’utilisation de cet élément de configuration, consultez [Comment : Configurer les informations d’identification sur un Service de fédération](../../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md).  
+ Pour plus d’informations sur l’utilisation de cet élément [de configuration, consultez Procédure: Configurez les informations d'](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)identification sur un service FS (Federation Service).  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -98,5 +98,5 @@ Indique un jeton personnalisé émis en tant qu'informations d'identification du
 - <xref:System.ServiceModel.Configuration.IssuedTokenServiceElement>
 - <xref:System.ServiceModel.Description.ServiceCredentials.IssuedTokenAuthentication%2A>
 - <xref:System.ServiceModel.Security.IssuedTokenServiceCredential>
-- [Sécurisation des services et des clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Guide pratique pour Configurer les informations d’identification sur un Service de fédération](../../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Guide pratique : Configurer les informations d’identification sur un service FS (Federation Service)](../../../wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - printing [Windows Forms], with print preview
 - print preview
 ms.assetid: 4a16f7e2-ae10-4485-b0ae-3d558334d0fe
-ms.openlocfilehash: d803c9bec180f45c80e362af49c8eaa12bb9d985
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 07137d03dd9a20d8eab564757618e48e25b45353
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592957"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931764"
 ---
 # <a name="how-to-print-in-windows-forms-using-print-preview"></a>Procédure : imprimer dans Windows Forms à l’aide de l’aperçu avant impression
 Il est très courant, dans la programmation Windows Forms, d'offrir un aperçu avant impression en plus des services d'impression. L'un des moyens les plus simples pour ajouter des services d'aperçu avant impression à votre application consiste à utiliser un contrôle <xref:System.Windows.Forms.PrintPreviewDialog> avec la logique de gestion d'événements <xref:System.Drawing.Printing.PrintDocument.PrintPage> pour l'impression d'un fichier.  
@@ -34,7 +34,7 @@ Il est très courant, dans la programmation Windows Forms, d'offrir un aperçu a
 3. Comme vous le feriez pour imprimer le document, dans le gestionnaire d'événements <xref:System.Drawing.Printing.PrintDocument.PrintPage> , utilisez la propriété <xref:System.Drawing.Printing.PrintPageEventArgs.Graphics%2A> de la classe <xref:System.Drawing.Printing.PrintPageEventArgs> et le contenu du fichier pour calculer les lignes par page et restituer le contenu du document. Après chaque dessin de page, vérifiez s'il s'agit de la dernière page et définissez la propriété <xref:System.Drawing.Printing.PrintPageEventArgs.HasMorePages%2A> de <xref:System.Drawing.Printing.PrintPageEventArgs> en conséquence. L'événement <xref:System.Drawing.Printing.PrintDocument.PrintPage> est déclenché jusqu'à ce que <xref:System.Drawing.Printing.PrintPageEventArgs.HasMorePages%2A> soit `false`. Une fois le rendu du document terminé, réinitialisez la chaîne à restituer. Assurez-vous aussi que l'événement <xref:System.Drawing.Printing.PrintDocument.PrintPage> est associé à sa méthode de gestion d'événements.  
   
     > [!NOTE]
-    >  Vous avez peut-être déjà effectué les étapes 2 et 3 si vous avez implémenté l'impression dans votre application.  
+    > Vous avez peut-être déjà effectué les étapes 2 et 3 si vous avez implémenté l'impression dans votre application.  
   
      Dans l'exemple de code suivant, le gestionnaire d'événements est utilisé pour imprimer le fichier « testPage.txt » avec la même police que celle utilisée sur le formulaire.  
   
@@ -64,6 +64,6 @@ Il est très courant, dans la programmation Windows Forms, d'offrir un aperçu a
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Imprimer un fichier texte de plusieurs pages dans les Windows Forms](how-to-print-a-multi-page-text-file-in-windows-forms.md)
+- [Guide pratique pour Imprimer un fichier texte contenant plusieurs pages dans Windows Forms](how-to-print-a-multi-page-text-file-in-windows-forms.md)
 - [Prise en charge de l’impression dans les Windows Forms](windows-forms-print-support.md)
 - [Impression plus sécurisée dans les Windows Forms](../more-secure-printing-in-windows-forms.md)

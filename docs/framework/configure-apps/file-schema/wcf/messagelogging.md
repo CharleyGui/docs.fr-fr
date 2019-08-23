@@ -2,18 +2,18 @@
 title: <messageLogging>
 ms.date: 03/30/2017
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
-ms.openlocfilehash: 70fb2df1d37af23d9ec19932806989ce3329bf3c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f54028489ec5aa34ae38115d7a582b01b9da92f9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61768912"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931412"
 ---
 # <a name="messagelogging"></a>\<messageLogging>
 Cet élément définit les paramètres pour les fonctions d'enregistrement des messages de Windows Communication Foundation (WCF).  
   
  \<system.ServiceModel>  
-\<diagnostic>  
+\<> de diagnostic  
 \<messageLogging>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -43,9 +43,9 @@ Cet élément définit les paramètres pour les fonctions d'enregistrement des m
 |Attribut|Description|  
 |---------------|-----------------|  
 |`logEntireMessage`|Valeur booléenne qui spécifie si le message entier (en-tête et corps du message) est enregistré. La valeur par défaut est `false` ce qui signifie que seul l'en-tête de message est enregistré. Ce paramètre affecte tous les niveaux d'enregistrement de message (messages de service, de transport et malformés).|  
-|`logMalformedMessages`|Valeur booléenne qui spécifie si les messages incorrects sont enregistrés. Les messages incorrects ne comptent pas pour le `maxMessagesToLog`. La valeur par défaut est `false`.|  
-|`logMessagesAtServiceLevel`|Valeur booléenne qui spécifie si les messages sont suivis au niveau du service (avant les transformations associées au chiffrement et au transport). La valeur par défaut est `false`.|  
-|`logMessagesAtTransportLevel`|Valeur booléenne qui spécifie si les messages sont suivis au niveau du transport. Tous les filtres spécifiés dans le fichier de configuration sont appliqués et seuls les messages qui correspondent aux filtres sont suivis. La valeur par défaut est `false`.|  
+|`logMalformedMessages`|Valeur booléenne qui spécifie si les messages incorrects sont enregistrés. Les messages incorrects ne comptent pas pour le `maxMessagesToLog`. Par défaut, il s’agit de `false`.|  
+|`logMessagesAtServiceLevel`|Valeur booléenne qui spécifie si les messages sont suivis au niveau du service (avant les transformations associées au chiffrement et au transport). Par défaut, il s’agit de `false`.|  
+|`logMessagesAtTransportLevel`|Valeur booléenne qui spécifie si les messages sont suivis au niveau du transport. Tous les filtres spécifiés dans le fichier de configuration sont appliqués et seuls les messages qui correspondent aux filtres sont suivis. Par défaut, il s’agit de `false`.|  
 |`maxMessagesToLog`|Entier positif qui spécifie le nombre maximal de messages à enregistrer. La valeur par défaut est 1000.|  
 |`maxSizeOfMessageToLog`|Entier positif qui spécifie la taille maximale, en octets, d'un message à enregistrer. Les messages plus grands que la limite ne seront pas enregistrés. Ce paramètre affecte tous les niveaux de suivi. La valeur par défaut est 262144(0x4000).|  
   
@@ -127,4 +127,4 @@ Cet élément définit les paramètres pour les fonctions d'enregistrement des m
 - <xref:System.ServiceModel.Diagnostics>
 - <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>
 - <xref:System.ServiceModel.Configuration.MessageLoggingElement>
-- [Configuration de la journalisation des messages](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md)
+- [Configuration de la journalisation des messages](../../../wcf/diagnostics/configuring-message-logging.md)

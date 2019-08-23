@@ -7,18 +7,18 @@ helpviewer_keywords:
 - assemblyBinding Element
 - <assemblyBinding> Element
 ms.assetid: 6cc55983-b894-449b-8e26-b258e53939cd
-ms.openlocfilehash: f5992a6085c32d37f56319cf8b2c361542c441e7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e0b83c4b3573ab6819654e72cac1bf3e4a0ba637
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61674829"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921271"
 ---
-# <a name="assemblybinding-element-for-configuration"></a>\<assemblyBinding >, élément pour \<configuration >
+# <a name="assemblybinding-element-for-configuration"></a>\<élément assemblyBinding > pour \<la configuration >
 
 Spécifie la stratégie de liaison de l’assembly au niveau de la configuration.
 
-[ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
+[ **\<configuration>** ](configuration-element.md)   
 &nbsp;&nbsp; **\<assemblyBinding>**
 
 ## <a name="syntax"></a>Syntaxe
@@ -39,24 +39,24 @@ Spécifie la stratégie de liaison de l’assembly au niveau de la configuration
 
 |     | Description |
 | --- | ----------- |
-| [ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md) | Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework. |
+| [ **\<configuration>** ](configuration-element.md) | Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework. |
 
 ## <a name="child-element"></a>Élément enfant
 
 |     | Description |
 | --- | ----------- |
-| [ **\<linkedConfiguration>** ](~/docs/framework/configure-apps/file-schema/linkedconfiguration-element.md) | Spécifie un fichier de configuration à inclure. |
+| [ **\<linkedConfiguration>** ](linkedconfiguration-element.md) | Spécifie un fichier de configuration à inclure. |
 
 ## <a name="remarks"></a>Notes
 
-Le [  **\<linkedConfiguration >** ](~/docs/framework/configure-apps/file-schema/linkedconfiguration-element.md) élément simplifie la gestion des assemblys de composant en permettant aux fichiers de configuration d’application pour inclure l’assembly dans les fichiers de configuration emplacements bien connus, plutôt que les paramètres de configuration assembly duplication.
+L’élément linkedConfiguration > simplifie la gestion des assemblys de composants en permettant aux fichiers de configuration de l’application d’inclure des fichiers de configuration d’assembly dans des emplacements bien connus, plutôt que de dupliquer l’assembly [ **\<** ](linkedconfiguration-element.md) paramètres de configuration.
 
 > [!NOTE]
-> Le  **\<linkedConfiguration >** élément n’est pas pris en charge pour les applications avec des manifestes côte à côte de Windows.
+> L’élément linkedConfiguration > n’est pas pris en charge pour les applications avec des manifestes côte à côte Windows.  **\<**
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment inclure un fichier de configuration sur le disque dur local :
+L’exemple suivant montre comment inclure un fichier de configuration sur le disque dur local:
 
 ```xml
 <configuration>
@@ -68,4 +68,4 @@ L’exemple suivant montre comment inclure un fichier de configuration sur le di
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma de fichier de configuration pour le .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma du fichier de configuration pour le .NET Framework](index.md)

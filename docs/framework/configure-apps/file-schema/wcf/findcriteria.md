@@ -2,15 +2,15 @@
 title: <findCriteria>
 ms.date: 03/30/2017
 ms.assetid: 5454cd19-6bf5-4ba8-94d1-f58d10dc1917
-ms.openlocfilehash: eaa3998d3d0b1642c0c92380ec1228eea69d4da8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eb8ff3905f7696f4c71a79e31db1b8f82c9f0d3b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61700889"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925583"
 ---
 # <a name="findcriteria"></a>\<findCriteria>
-Élément de configuration qui fournit un jeu de critères utilisé par une application cliente pour rechercher un service de découverte. Critères peuvent être regroupées en critères de recherche (spécifiant les services que vous recherchez) et recherchez les critères d’arrêt (la durée pendant laquelle la recherche doit durer).  
+Élément de configuration qui fournit un jeu de critères utilisé par une application cliente pour rechercher un service de découverte. Vous pouvez regrouper les critères dans des critères de recherche (en spécifiant les services que vous recherchez) et rechercher les critères de fin (la durée de la recherche en dernier).  
   
  \<system.ServiceModel>  
 \<standardEndpoints>  
@@ -57,15 +57,15 @@ ms.locfileid: "61700889"
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<contractTypeNames>](../../../../../docs/framework/configure-apps/file-schema/wcf/contracttypenames.md)|Une collection d’éléments de configuration qui contiennent les noms de types de contrat de service de workflow.|  
-|\<extensions > de \<findCriteria >|Collection d'objets d'élément XML qui fournissent des extensions.|  
-|[\<scopes>](../../../../../docs/framework/configure-apps/file-schema/wcf/scopes.md)|Collection d’objets qui contiennent des URI absolus utilisés pendant une opération de recherche afin de localiser des services ou un service particulier.<br /><br /> Si le service particulier est trouvé, une correspondance réussie est établie entre l'URI de service et l'URI de portée, parfois à l'aide de règles de portée qui gèrent les problèmes de correspondance.|  
+|[\<contractTypeNames>](contracttypenames.md)|Collection d’éléments de configuration qui contiennent les noms des types de contrat de service de flux de travail.|  
+|\<> des extensions \<de findCriteria >|Collection d'objets d'élément XML qui fournissent des extensions.|  
+|[\<scopes>](scopes.md)|Collection d’objets qui contiennent des URI absolus utilisés pendant une opération de recherche afin de localiser des services ou un service particulier.<br /><br /> Si le service particulier est trouvé, une correspondance réussie est établie entre l'URI de service et l'URI de portée, parfois à l'aide de règles de portée qui gèrent les problèmes de correspondance.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<standardEndpoints>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Contient les paramètres requis par une application pour participer au processus de découverte de service en tant que client.|  
+|[\<standardEndpoints>](standardendpoints.md)|Contient les paramètres requis par une application pour participer au processus de découverte de service en tant que client.|  
   
 ## <a name="see-also"></a>Voir aussi
 

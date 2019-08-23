@@ -12,18 +12,18 @@ helpviewer_keywords:
 - run time [Windows Forms], adding controls
 - controls [Windows Forms], removing using collections
 ms.assetid: 771bf895-3d5f-469b-a324-3528f343657e
-ms.openlocfilehash: a868632d6868e6a82c4fa135444279b8ef4dc7af
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 87ad4c957ac5b99438684d398a0c5ad7d126c406
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301413"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925042"
 ---
 # <a name="how-to-add-to-or-remove-from-a-collection-of-controls-at-run-time"></a>Procédure : ajouter des contrôles ou en supprimer dans une collection de contrôles au moment de l’exécution
-Tâches courantes dans le développement d’applications sont l’ajout et la suppression de contrôles à partir de n’importe quel contrôle conteneur sur vos formulaires (comme le <xref:System.Windows.Forms.Panel> ou <xref:System.Windows.Forms.GroupBox> contrôle, ou même le formulaire lui-même). Au moment de la conception, vous pouvez faire glisser les contrôles directement vers un panneau ou une zone de groupe. Au moment de l’exécution, ces contrôles gèrent une collection `Controls`, qui assure le suivi des contrôles qui y sont placés.  
+Les tâches courantes dans le développement d’applications sont l’ajout et la suppression de contrôles dans n’importe quel contrôle conteneur de <xref:System.Windows.Forms.Panel> vos <xref:System.Windows.Forms.GroupBox> formulaires (tels que le contrôle ou, ou même le formulaire lui-même). Au moment de la conception, vous pouvez faire glisser les contrôles directement vers un panneau ou une zone de groupe. Au moment de l’exécution, ces contrôles gèrent une collection `Controls`, qui assure le suivi des contrôles qui y sont placés.  
   
 > [!NOTE]
->  L’exemple de code suivant s’applique à n’importe quel contrôle qui gère une collection de contrôles qu’il contient.  
+> L’exemple de code suivant s’applique à n’importe quel contrôle qui gère une collection de contrôles qu’il contient.  
   
 ### <a name="to-add-a-control-to-a-collection-programmatically"></a>Pour ajouter un contrôle à une collection par programme  
   
@@ -33,7 +33,7 @@ Tâches courantes dans le développement d’applications sont l’ajout et la s
   
 3. Ajoutez le contrôle à la collection `Controls` du contrôle parent.  
   
-     L’exemple de code suivant montre comment créer une instance de la <xref:System.Windows.Forms.Button> contrôle. Il nécessite un formulaire avec un <xref:System.Windows.Forms.Panel> contrôle et que la méthode de gestion d’événements pour le bouton en cours de création, `NewPanelButton_Click`, existe déjà.  
+     L’exemple de code suivant montre comment créer une instance du <xref:System.Windows.Forms.Button> contrôle. Elle requiert un formulaire avec un <xref:System.Windows.Forms.Panel> contrôle et que la méthode de gestion des événements pour le bouton en cours `NewPanelButton_Click`de création,, existe déjà.  
   
     ```vb  
     Public NewPanelButton As New Button()  
@@ -66,11 +66,11 @@ Tâches courantes dans le développement d’applications sont l’ajout et la s
   
 ### <a name="to-remove-controls-from-a-collection-programmatically"></a>Pour supprimer des contrôles d’une collection par programme  
   
-1. Supprimez le gestionnaire d’événements de l’événement. Dans Visual Basic, utilisez la [RemoveHandler, instruction](~/docs/visual-basic/language-reference/statements/removehandler-statement.md) mot clé ; dans C#, utilisez le [opérateur-=](~/docs/csharp/language-reference/operators/subtraction-operator.md).  
+1. Supprimez le gestionnaire d’événements de l’événement. Dans Visual Basic, utilisez le mot clé [RemoveHandler Statement](../../../visual-basic/language-reference/statements/removehandler-statement.md) . dans C#, utilisez l' [opérateur-=](../../../csharp/language-reference/operators/subtraction-operator.md).  
   
 2. Utilisez la méthode `Remove` pour supprimer le contrôle souhaité dans la collection `Controls` du panneau.  
   
-3. Appelez le <xref:System.Windows.Forms.Control.Dispose%2A> méthode pour libérer toutes les ressources utilisées par le contrôle.  
+3. Appelez la <xref:System.Windows.Forms.Control.Dispose%2A> méthode pour libérer toutes les ressources utilisées par le contrôle.  
   
     ```vb  
     Public Sub RemoveControl()  

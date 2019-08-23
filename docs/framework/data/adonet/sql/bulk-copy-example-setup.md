@@ -2,22 +2,22 @@
 title: Exemple de configuration de copie en bloc
 ms.date: 03/30/2017
 ms.assetid: d4dde6ac-b8b6-4593-965a-635c8fb2dadb
-ms.openlocfilehash: 6244afff348edbde46fdfda7481910aca2b25939
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2a7c0ddef42ff56306a42288c6960987ce7f714a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61878655"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918090"
 ---
 # <a name="bulk-copy-example-setup"></a>Exemple de configuration de copie en bloc
-La classe <xref:System.Data.SqlClient.SqlBulkCopy> permet d'écrire des données uniquement dans des tables SQL Server. Les exemples de code présentés dans cette rubrique utilisent la base de données SQL Server, **AdventureWorks**. Pour éviter de modifier les exemples de code des tables existantes, créez des tables et écrivez des données dans celles-ci.  
+La classe <xref:System.Data.SqlClient.SqlBulkCopy> permet d'écrire des données uniquement dans des tables SQL Server. Les exemples de code présentés dans cette rubrique utilisent l’exemple de base de données SQL Server, **AdventureWorks**. Pour éviter de modifier les exemples de code des tables existantes, créez des tables et écrivez des données dans celles-ci.  
   
- Le **BulkCopyDemoMatchingColumns** et **BulkCopyDemoDifferentColumns** sont basées sur le **AdventureWorks** **Production.Products**  table. Dans les exemples de code qui utilisent ces tables, les données sont ajoutées à partir de la **Production.Products** table à un de ces exemples de tables. Le **BulkCopyDemoDifferentColumns** table est utilisée lorsque l’exemple illustre comment mapper des colonnes de la source de données à la table de destination. **BulkCopyDemoMatchingColumns** est utilisé pour la plupart des autres exemples.  
+ Les tables **BulkCopyDemoMatchingColumns** et **BulkCopyDemoDifferentColumns** sont toutes deux basées sur la table **AdventureWorks** **production. Products** . Dans les exemples de code qui utilisent ces tables, les données sont ajoutées à partir de la table **production. Products** à l’un de ces exemples de tables. La table **BulkCopyDemoDifferentColumns** est utilisée lorsque l’exemple montre comment mapper les colonnes des données sources à la table de destination; **BulkCopyDemoMatchingColumns** est utilisé pour la plupart des autres exemples.  
   
- Quelques exemples de code montrent comment utiliser une classe <xref:System.Data.SqlClient.SqlBulkCopy> pour écrire plusieurs tables. Pour ces exemples, le **BulkCopyDemoOrderHeader** et **BulkCopyDemoOrderDetail** tables sont utilisées comme tables de destination. Ces tables sont basées sur le **Sales.SalesOrderHeader** et **Sales.SalesOrderDetail** dans des tables **AdventureWorks**.  
+ Quelques exemples de code montrent comment utiliser une classe <xref:System.Data.SqlClient.SqlBulkCopy> pour écrire plusieurs tables. Pour ces exemples, les tables **tables BulkCopyDemoOrderHeader** et **BulkCopyDemoOrderDetail** sont utilisées comme tables de destination. Ces tables sont basées sur les tables **Sales. SalesOrderHeader** et **Sales. SalesOrderDetail** dans **AdventureWorks**.  
   
 > [!NOTE]
->  Le **SqlBulkCopy** exemples de code sont fournis pour illustrer la syntaxe d’utilisation **SqlBulkCopy** uniquement. Si les tables sources et de destination se trouvent dans la même instance SQL Server, il est plus facile et plus rapide d'utiliser une instruction Transact-SQL `INSERT … SELECT` pour copier les données.  
+> Les exemples de code **SqlBulkCopy** sont fournis pour illustrer la syntaxe de l’utilisation de **SqlBulkCopy** uniquement. Si les tables sources et de destination se trouvent dans la même instance SQL Server, il est plus facile et plus rapide d'utiliser une instruction Transact-SQL `INSERT … SELECT` pour copier les données.  
   
 ## <a name="table-setup"></a>Configuration de table  
  Pour créer les tables nécessaires pour que les exemples de code s'exécutent correctement, vous devez exécuter les instructions Transact-SQL suivantes dans une base de données SQL Server.  

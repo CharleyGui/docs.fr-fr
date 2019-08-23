@@ -2,12 +2,12 @@
 title: <baseAddresses>
 ms.date: 03/30/2017
 ms.assetid: 78918102-2898-46e0-9ea8-6b8afe65603e
-ms.openlocfilehash: 7d0afd638e9a311b69ff47b6789d5fde093945ba
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 059ea4e637ab906d1fde9807a73ac8341f81c574
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673522"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926425"
 ---
 # <a name="baseaddresses"></a>\<baseAddresses>
 Représente une collection d’éléments `baseAddress`, qui sont les adresses de base d’un hôte de service dans un environnement auto-hébergé. Si une adresse de base est présente, les points de terminaison peuvent être configurés avec des adresses relatives à l'adresse de base.  
@@ -39,17 +39,17 @@ Représente une collection d’éléments `baseAddress`, qui sont les adresses d
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/wcf/add-of-baseaddresses.md)|Élément de configuration qui spécifie les adresses de base utilisées par l'hôte de service.|  
+|[\<add>](add-of-baseaddresses.md)|Élément de configuration qui spécifie les adresses de base utilisées par l'hôte de service.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<host>](../../../../../docs/framework/configure-apps/file-schema/wcf/host.md)|Élément de configuration qui spécifie des paramètres pour un hôte de service.|  
+|[\<host>](host.md)|Élément de configuration qui spécifie des paramètres pour un hôte de service.|  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.Configuration.HostElement>
 - <xref:System.ServiceModel.ServiceHost>
 - <xref:System.ServiceModel.ServiceHostBase.BaseAddresses%2A>
-- [Hébergement](../../../../../docs/framework/wcf/feature-details/hosting.md)
+- [Hébergement](../../../wcf/feature-details/hosting.md)

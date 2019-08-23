@@ -1,18 +1,18 @@
 ---
-title: <cancelRequestedQueries> de WCF
+title: <cancelRequestedQueries>de WCF
 ms.date: 03/30/2017
 ms.assetid: a7cc7125-9ea3-4d3f-99c0-878cdeb1258a
-ms.openlocfilehash: a9364fc53c7eb62a240206f6c81bd434b25c3f40
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0f04fc928358c96ca3112422f1a6ccd039269e47
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704373"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926248"
 ---
-# <a name="cancelrequestedqueries-of-wcf"></a>\<cancelRequestedQueries > de WCF
+# <a name="cancelrequestedqueries-of-wcf"></a>\<> cancelRequestedQueries de WCF
 Représente une collection de requêtes qui permettent d’effectuer le suivi des demandes d’annulation d’une activité enfant par l’activité parent. La requête est nécessaire pour qu'un participant au suivi puisse s'abonner à des objets d'enregistrement de demande d'annulation.  
   
-Pour plus d’informations sur les requêtes de modèle de suivi, consultez [modèles de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+Pour plus d’informations sur le suivi des requêtes de profils, consultez modèles de [suivi](../../../windows-workflow-foundation/tracking-profiles.md)  
   
 \<system.serviceModel>  
 \<tracking>  
@@ -55,10 +55,10 @@ Aucun.
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<workflow>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|Élément de configuration qui contient toutes les requêtes d'un flux de travail spécifique identifié par la propriété <xref:System.ServiceModel.Activities.Tracking.Configuration.ProfileWorkflowElement.ActivityDefinitionId>.|  
+|[\<workflow>](../windows-workflow-foundation/workflow.md)|Élément de configuration qui contient toutes les requêtes d'un flux de travail spécifique identifié par la propriété <xref:System.ServiceModel.Activities.Tracking.Configuration.ProfileWorkflowElement.ActivityDefinitionId>.|  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Activities.Tracking.CancelRequestedQuery>
-- [Suivi et traçage de workflow](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Profils de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [Suivi et traçage de workflow](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Profils de suivi](../../../windows-workflow-foundation/tracking-profiles.md)

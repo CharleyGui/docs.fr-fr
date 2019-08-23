@@ -2,12 +2,12 @@
 title: <persistableType>
 ms.date: 03/30/2017
 ms.assetid: e5425fe6-523a-4076-aab4-2c2515b1d830
-ms.openlocfilehash: 939a29e90ee21e94ccb78842d6f7224e9a6288d0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fcfd338e289b5151688724f0e84b6878707d32be
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61783316"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933833"
 ---
 # <a name="persistabletype"></a>\<persistableType>
 Spécifie tous les types persistants.  
@@ -40,22 +40,22 @@ Spécifie tous les types persistants.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|ID|Attribut requis qui contient une chaîne spécifiant un identificateur unique pour un type persistant.|  
+|id|Attribut requis qui contient une chaîne spécifiant un identificateur unique pour un type persistant.|  
 |name|Attribut facultatif qui contient une chaîne spécifiant le nom du type persistant.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<persistableTypes>](../../../../../docs/framework/configure-apps/file-schema/wcf/persistabletypes.md)|Collection d'éléments `persistableType`.|  
+|[\<persistableTypes>](persistabletypes.md)|Collection d'éléments `persistableType`.|  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.Configuration.ComPersistableTypeElementCollection>
 - <xref:System.ServiceModel.Configuration.ComPersistableTypeElement>
-- [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)
-- [Intégration à des applications COM+](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)
-- [Guide pratique pour Configurer les paramètres de Service COM +](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)
+- [\<comContracts>](comcontracts.md)
+- [Intégration à des applications COM+](../../../wcf/feature-details/integrating-with-com-plus-applications.md)
+- [Guide pratique pour Configurer les paramètres du service COM+](../../../wcf/feature-details/how-to-configure-com-service-settings.md)

@@ -6,22 +6,22 @@ helpviewer_keywords:
 - control patterns, Scroll
 - Scroll control pattern
 ms.assetid: 73d64242-6cbb-424c-92dd-dc69530b7899
-ms.openlocfilehash: dadce167de31ad033e5e062c57f1d735af75648d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 22bb78040b023a59fd46f0a2be45659d6d7220b8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626016"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69914511"
 ---
 # <a name="implementing-the-ui-automation-scroll-control-pattern"></a>Implémentation du modèle de contrôle Scroll d’UI Automation
 > [!NOTE]
->  Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour plus d’informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [Windows Automation API : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Cette rubrique présente les conventions et recommandations à respecter pour implémenter <xref:System.Windows.Automation.Provider.IScrollProvider>, notamment des informations sur les événements et les propriétés. Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.  
   
  Le modèle de contrôle <xref:System.Windows.Automation.ScrollPattern> permet de prendre en charge un contrôle qui agit comme un conteneur à défilement pour une collection d’objets enfants. Le contrôle n’est pas tenu d’utiliser les barres de défilement pour prendre en charge les fonctionnalités de défilement, bien que ce soit généralement le cas.  
   
- ![Contrôle du défilement sans barres de défilement. ](../../../docs/framework/ui-automation/media/uia-scrollpattern-without-scrollbars.PNG "UIA_ScrollPattern_Without_Scrollbars")  
+ ![Contrôle Scroll sans barres de défilement.](../../../docs/framework/ui-automation/media/uia-scrollpattern-without-scrollbars.PNG "UIA_ScrollPattern_Without_Scrollbars")  
 Exemple d’un contrôle de défilement qui n’utilise pas les barres de défilement  
   
  Pour obtenir des exemples de contrôles implémentant ce contrôle, consultez [Control Pattern Mapping for UI Automation Clients](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
@@ -48,13 +48,13 @@ Exemple d’un contrôle de défilement qui n’utilise pas les barres de défil
   
 |Membre obligatoire|Type de membre|Notes|  
 |---------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A>|Propriété|None|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalScrollPercent%2A>|Propriété|None|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalViewSize%2A>|Propriété|None|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalViewSize%2A>|Propriété|None|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontallyScrollable%2A>|Propriété|None|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticallyScrollable%2A>|Propriété|None|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A>|Méthode|None|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalScrollPercent%2A>|Propriété|Aucun|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalScrollPercent%2A>|Propriété|Aucun|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontalViewSize%2A>|Propriété|Aucun|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticalViewSize%2A>|Propriété|Aucun|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.HorizontallyScrollable%2A>|Propriété|Aucun|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.VerticallyScrollable%2A>|Propriété|Aucun|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider.Scroll%2A>|Méthode|Aucun|  
 |<xref:System.Windows.Automation.Provider.IScrollProvider.SetScrollPercent%2A>|Méthode|Aucune|  
   
  Ce modèle de contrôle n’est associé aucun événement.  

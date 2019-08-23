@@ -13,15 +13,15 @@ helpviewer_keywords:
 - operators [Visual Basic], conjunction
 - bitwise comparison [Visual Basic]
 ms.assetid: 2ea711f3-439a-4c7c-9e3a-1ffe3b0d6046
-ms.openlocfilehash: 7e25f25677fa684427bdaf00cea73916ffbad655
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a1802d3a7018b1b6190ff5601eba055e16e62371
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608357"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69913167"
 ---
 # <a name="and-operator-visual-basic"></a>And, opérateur (Visual Basic)
-Effectue une conjonction logique sur deux `Boolean` expressions ou une conjonction au niveau du bit sur deux expressions numériques.  
+Effectue une conjonction logique sur `Boolean` deux expressions ou une conjonction au niveau du bit sur deux expressions numériques.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,16 +31,16 @@ result = expression1 And expression2
   
 ## <a name="parts"></a>Composants  
  `result`  
- Obligatoire. N’importe quel `Boolean` ou expression numérique. Pour une comparaison booléenne, `result` est la conjonction logique de deux `Boolean` valeurs. Pour les opérations au niveau du bit, `result` est une valeur numérique représentant la conjonction au niveau du bit de deux modèles binaires numériques.  
+ Requis. Toute `Boolean` expression ou numérique. Pour la comparaison booléenne `result` , est la conjonction logique `Boolean` de deux valeurs. Pour les opérations au `result` niveau du bit, est une valeur numérique représentant la conjonction au niveau du bit de deux modèles binaires numériques.  
   
  `expression1`  
- Obligatoire. N’importe quel `Boolean` ou expression numérique.  
+ Requis. Toute `Boolean` expression ou numérique.  
   
  `expression2`  
- Obligatoire. N’importe quel `Boolean` ou expression numérique.  
+ Requis. Toute `Boolean` expression ou numérique.  
   
 ## <a name="remarks"></a>Notes  
- Pour une comparaison booléenne, `result` est `True` si et seulement si `expression1` et `expression2` évaluer à `True`. Le tableau suivant illustre comment `result` est déterminée.  
+ Pour la comparaison booléenne `result` , `True` est `expression1` si et seulement `True`si et `expression2` ont la valeur. Le tableau suivant illustre la façon `result` dont est déterminé.  
   
 |Si `expression1` est|Et `expression2` est|La valeur de `result` est|  
 |-------------------------|--------------------------|------------------------------|  
@@ -50,11 +50,11 @@ result = expression1 And expression2
 |`False`|`False`|`False`|  
   
 > [!NOTE]
->  Dans une comparaison booléenne, le `And` opérateur évalue toujours les deux expressions, ce qui peut inclure des appels de procédure. Le [opérateur AndAlso](../../../visual-basic/language-reference/operators/andalso-operator.md) effectue *court-circuit*, ce qui signifie que si `expression1` est `False`, puis `expression2` n’est pas évaluée.  
+> Dans une comparaison booléenne, l' `And` opérateur évalue toujours les deux expressions, ce qui peut inclure des appels de procédure. L' [opérateur AndAlso](../../../visual-basic/language-reference/operators/andalso-operator.md) effectue *un court-circuit*, ce qui signifie que `expression1` si `False`est, `expression2` n’est pas évalué.  
   
- Lorsqu’il est appliqué aux valeurs numériques, la `And` opérateur effectue une comparaison au niveau du bit de position identique dans deux expressions numériques et définit le bit dans correspondant `result` conformément au tableau suivant.  
+ Lorsqu’il est appliqué à des valeurs `And` numériques, l’opérateur effectue une comparaison au niveau du bit des bits positionnés de manière identique dans deux `result` expressions numériques et définit le bit correspondant dans selon le tableau suivant.  
   
-|Si de transmission en `expression1` est|Et que le bit dans `expression2` est|Le bit `result` est|  
+|Si le bit `expression1` dans est|Et le bit `expression2` dans est|Le bit dans `result` est|  
 |--------------------------------|---------------------------------|----------------------------|  
 |1|1|1|  
 |1|0|0|  
@@ -62,29 +62,29 @@ result = expression1 And expression2
 |0|0|0|  
   
 > [!NOTE]
->  Étant donné que les opérateurs logiques et au niveau du bit ont une priorité inférieure à celle des opérateurs arithmétiques et relationnels, toutes les opérations au niveau du bit doivent être placée entre parenthèses afin de garantir des résultats précis.  
+> Étant donné que les opérateurs logiques et au niveau du bit ont une priorité inférieure à celle des autres opérateurs arithmétiques et relationnels, toutes les opérations au niveau du bit doivent être mises entre parenthèses pour garantir des résultats précis.  
   
 ## <a name="data-types"></a>Types de données  
- Si les opérandes se composent d’une `Boolean` expression et une expression numérique, Visual Basic convertit le `Boolean` expression à une valeur numérique (-1 pour `True` et 0 pour `False`) et effectue une opération au niveau du bit.  
+ Si `Boolean` les opérandes se composent d’une expression et d’une expression numérique, Visual Basic convertit l’expression en une valeur numérique (– 1 pour `True` et 0 pour `False`) et effectue une opération au niveau du `Boolean` bit.  
   
- Pour obtenir une comparaison booléenne, le type de données du résultat est `Boolean`. Pour obtenir une comparaison au niveau du bit, le type de données de résultat est un type numérique approprié pour les types de données de `expression1` et `expression2`. Consultez le tableau « Relationnelles et au niveau du bit des comparaisons » dans [Types de données de résultats de l’opérateur](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).  
+ Pour une comparaison booléenne, le type de données du résultat est `Boolean`. Pour une comparaison au niveau du bit, le type de données de résultat est un type numérique approprié `expression1` pour `expression2`les types de données de et. Consultez la table «comparaisons et comparaisons au niveau du bit» dans [types de données des résultats d’opérateur](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).  
   
 > [!NOTE]
->  Le `And` opérateur peut être *surchargé*, ce qui signifie qu’une classe ou structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou structure. Si votre code utilise cet opérateur sur une telle classe ou structure, veillez à ce que vous comprenez son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+> L' `And` opérateur peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou de cette structure. Si votre code utilise cet opérateur sur une classe ou une structure de ce type, veillez à bien comprendre son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise le `And` opérateur effectue une conjonction logique sur deux expressions. Le résultat est un `Boolean` valeur qui indique si les deux expressions sont `True`.  
+ L’exemple suivant utilise l' `And` opérateur pour effectuer une conjonction logique sur deux expressions. Le résultat est une `Boolean` valeur qui indique si les deux expressions sont. `True`  
   
  [!code-vb[VbVbalrOperators#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#22)]  
   
- L’exemple précédent produit des résultats de `True` et `False`, respectivement.  
+ L’exemple précédent produit les résultats `True` de `False`et, respectivement.  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant utilise le `And` opérateur effectue la conjonction logique sur les bits individuels de deux expressions numériques. Le bit du modèle de résultat est défini si les bits correspondants dans les opérandes sont tous deux définis sur 1.  
+## <a name="example"></a>Exemples  
+ L’exemple suivant utilise l' `And` opérateur pour effectuer une conjonction logique sur les bits individuels de deux expressions numériques. Le bit dans le modèle de résultat est défini si les bits correspondants dans les opérandes ont tous les deux la valeur 1.  
   
  [!code-vb[VbVbalrOperators#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#23)]  
   
- L’exemple précédent produit les résultats de 8, 2 et 0, respectivement.  
+ L’exemple précédent produit respectivement les résultats 8, 2 et 0.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -92,4 +92,4 @@ result = expression1 And expression2
 - [Priorité des opérateurs en Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Opérateurs répertoriés par fonctionnalité](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [AndAlso (opérateur)](../../../visual-basic/language-reference/operators/andalso-operator.md)
-- [Opérateurs logiques et au niveau du bit en Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Opérateurs logiques et au niveau du bit dans Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

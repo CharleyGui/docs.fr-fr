@@ -1,19 +1,19 @@
 ---
-title: <workflowInstanceQuery> de WCF
+title: <workflowInstanceQuery>de WCF
 ms.date: 03/30/2017
 ms.assetid: 35c73f9d-474e-42eb-874d-ddc04b1987f3
-ms.openlocfilehash: 726d4db3bad9f57663790e2bb4e081faba28f1ef
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7e15d7654aeafa5fa7b87922283d6520d5493242
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61672963"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915221"
 ---
-# <a name="workflowinstancequery-of-wcf"></a>\<workflowInstanceQuery > de WCF
+# <a name="workflowinstancequery-of-wcf"></a>\<> workflowInstanceQuery de WCF
 
 Représente une requête qui effectue le suivi des changements dans le cycle de vie d'une instance de flux de travail, tels que le début et la fin d'un événement.  
   
-Pour plus d’informations sur les requêtes de modèle de suivi, consultez [modèles de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+Pour plus d’informations sur le suivi des requêtes de profils, consultez modèles de [suivi](../../../windows-workflow-foundation/tracking-profiles.md)  
   
 \<system.serviceModel>  
 \<tracking>  
@@ -77,7 +77,7 @@ L'objet <xref:System.Activities.Tracking.WorkflowInstanceQuery> sert à s'abonne
   
 - <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
 
 La configuration suivante permet de s'abonner aux enregistrements de suivi au niveau de l'instance de flux de travail pour l'état de l'instance `Started` à l'aide de cette requête.  
   
@@ -95,5 +95,5 @@ La configuration suivante permet de s'abonner aux enregistrements de suivi au ni
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType>
-- [Suivi et traçage de workflow](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Profils de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [Suivi et traçage de workflow](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Profils de suivi](../../../windows-workflow-foundation/tracking-profiles.md)

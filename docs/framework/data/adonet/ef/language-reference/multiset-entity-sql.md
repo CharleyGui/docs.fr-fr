@@ -2,12 +2,12 @@
 title: MULTISET (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: eb90a377-e47a-43a5-b308-e993b6d611e6
-ms.openlocfilehash: 44e411b8ae2f43bf3a729ac091ffd1eb4c462c63
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eb676feeb168e1fb184f3869a18e138bff34211b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760491"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929341"
 ---
 # <a name="multiset-entity-sql"></a>MULTISET (Entity SQL)
 Crée une instance d'un multiensemble à partir d'une liste de valeurs. Toutes les valeurs du constructeur MULTISET doivent être d'un type `T`compatible. Les constructeurs de multiensemble vides ne sont pas autorisés.  
@@ -25,10 +25,10 @@ or
  Toute liste de valeurs valide.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Une collection de type MULTISET\<T >.  
+ Collection de type\<multiensemble T >.  
   
 ## <a name="remarks"></a>Notes  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] propose trois types de constructeurs : constructeurs de ligne, constructeurs d'objets et constructeurs de multiensemble (ou de collection). Pour plus d’informations, consultez [Types construction](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md).  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] propose trois types de constructeurs : constructeurs de ligne, constructeurs d'objets et constructeurs de multiensemble (ou de collection). Pour plus d’informations, consultez [construction de types](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md).  
   
  Le constructeur de multiensemble crée une instance d'un multiensemble à partir d'une liste de valeurs. Toutes les valeurs du constructeur doivent être d'un type compatible.  
   
@@ -39,12 +39,12 @@ or
  `{1, 2, 3}`  
   
 > [!NOTE]
->  Littéraux de multiensemble imbriqués sont uniquement pris en charge lorsqu’un multiensemble d’encapsulation a un seul élément de multiensemble ; par exemple, `{{1, 2, 3}}`. Lorsqu'un multiensemble d'encapsulation a plusieurs éléments de multiensemble (par exemple, `{{1, 2}, {3, 4}}`), ils ne sont pas pris en charge.  
+> Les littéraux de multiensemble imbriqués sont pris en charge uniquement lorsqu’un multiensemble d’encapsulation a un seul élément de multiensemble; par exemple, `{{1, 2, 3}}`. Lorsqu'un multiensemble d'encapsulation a plusieurs éléments de multiensemble (par exemple, `{{1, 2}, {3, 4}}`), ils ne sont pas pris en charge.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  La requête Entity SQL suivante utilise l'opérateur MULTISET pour créer une instance d'un multiensemble à partir d'une liste de valeurs. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite dans [Comment : Exécuter une requête qui retourne des résultats StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Suivez la procédure décrite [dans la rubrique Procédure: Exécutez une requête qui retourne les résultats](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md)de StructuralType.  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   

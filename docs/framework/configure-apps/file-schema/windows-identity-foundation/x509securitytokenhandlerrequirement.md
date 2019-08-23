@@ -3,15 +3,15 @@ title: <x509SecurityTokenHandlerRequirement>
 ms.date: 03/30/2017
 ms.assetid: aca22c2c-5ae7-42af-9bbd-15c2524692ce
 author: BrucePerlerMS
-ms.openlocfilehash: 6e8267f170dbb26381564be7b66df5f617156885
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2851820460a34d62175929b48ad57914df557059
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790440"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69945180"
 ---
 # <a name="x509securitytokenhandlerrequirement"></a>\<x509SecurityTokenHandlerRequirement>
-Fournit une configuration facultative pour le <xref:System.IdentityModel.Tokens.X509SecurityTokenHandler> classe ou les classes dérivées.  
+Fournit une configuration facultative pour <xref:System.IdentityModel.Tokens.X509SecurityTokenHandler> la classe ou les classes dérivées.  
   
  \<system.identityModel>  
 \<identityConfiguration>  
@@ -46,20 +46,20 @@ Fournit une configuration facultative pour le <xref:System.IdentityModel.Tokens.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|certificateValidationMode|Un <xref:System.ServiceModel.Security.X509CertificateValidationMode> valeur qui spécifie le mode de validation à utiliser pour le certificat X.509. La valeur par défaut est « PeerOrChainTrust ».|  
-|mapToWindows|Spécifie si le Gestionnaire de jetons doit mapper le jeton de validation à un compte Windows à l’aide de la revendication UPN entrante. La valeur par défaut est « false ».|  
-|revocationMode|Un <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> valeur qui spécifie le mode de révocation à utiliser pour le certificat X.509. La valeur par défaut est « En ligne ».|  
-|trustedStoreLocation|Un <xref:System.Security.Cryptography.X509Certificates.StoreLocation> valeur qui spécifie le magasin de certificats X.509. La valeur par défaut est « LocalMachine ».|  
-|certificateValidator|Un type personnalisé qui dérive de <xref:System.IdentityModel.Selectors.X509CertificateValidator>. Si le `certificateValidationMode` attribut est « Custom », une instance de ce type est utilisée pour valider le certificat émetteur.|  
+|certificateValidationMode|<xref:System.ServiceModel.Security.X509CertificateValidationMode> Valeur qui spécifie le mode de validation à utiliser pour le certificat X. 509. La valeur par défaut est «PeerOrChainTrust».|  
+|mapToWindows|Spécifie si le gestionnaire de jetons doit mapper le jeton de validation à un compte Windows à l’aide de la revendication UPN entrante. La valeur par défaut est «false».|  
+|revocationMode|<xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> Valeur qui spécifie le mode de révocation à utiliser pour le certificat X. 509. La valeur par défaut est «online».|  
+|trustedStoreLocation|<xref:System.Security.Cryptography.X509Certificates.StoreLocation> Valeur qui spécifie le magasin de certificats X. 509. La valeur par défaut est «LocalMachine».|  
+|certificateValidator|Type personnalisé qui dérive de <xref:System.IdentityModel.Selectors.X509CertificateValidator>. Si l' `certificateValidationMode` attribut est «Custom», une instance de ce type est utilisée pour la validation du certificat de l’émetteur.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)|Ajoute le Gestionnaire de jetons de sécurité spécifié à la collection de gestionnaires de jetons.|  
+|[\<add>](add.md)|Ajoute le gestionnaire de jetons de sécurité spécifié à la collection de gestionnaires de jetons.|  
   
 ## <a name="example"></a>Exemple  
   

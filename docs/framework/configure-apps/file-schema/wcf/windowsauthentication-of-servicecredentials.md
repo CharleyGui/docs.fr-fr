@@ -2,20 +2,20 @@
 title: <windowsAuthentication> de <serviceCredentials>
 ms.date: 03/30/2017
 ms.assetid: e0709473-0997-4de3-8f49-783527309a48
-ms.openlocfilehash: ffddbae7effabcdafdc2638d588bbbf3e42d2c2a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 81793b0d58a95166bc23f98d46ce94a5f1e1d018
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769692"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940288"
 ---
-# <a name="windowsauthentication-of-servicecredentials"></a>\<windowsAuthentication > de \<serviceCredentials >
+# <a name="windowsauthentication-of-servicecredentials"></a>\<> WindowsAuthentication du \<> ServiceCredentials
 Spécifie les paramètres d'une information d'identification de service Windows.  
   
  \<system.ServiceModel>  
 \<behaviors>  
 \<serviceBehaviors>  
-\<behavior>  
+\<> de comportement  
 \<serviceCredentials>  
 \<windowsAuthentication>  
   
@@ -33,8 +33,8 @@ Spécifie les paramètres d'une information d'identification de service Windows.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`includeWindowsGroups`|Attribut à valeur booléenne facultatif qui spécifie si le système inclut des groupes Windows dans le contexte de sécurité. La valeur par défaut est `true`.<br /><br /> L'affectation de la valeur `true` à cet attribut a un impact sur les performances du fait qu'elle provoque une expansion complète du groupe. Affectez la valeur `false` à cet attribut s'il n'est pas nécessaire d'établir la liste des groupes auxquels appartient un utilisateur.|  
-|`allowAnonymousLogons`|Attribut à valeur booléenne facultatif qui spécifie si les appelants anonymes et non authentifiés sont autorisés. La valeur par défaut est `false`.<br /><br /> Lorsque l’attribut `clientCredentialType` d’une liaison a la valeur `Windows`, le système n’autorise pas d’appelants anonymes. Cela signifie que seuls les appelants authentifiés du domaine ou du groupe de travail sont autorisés à accéder au système. Vous pouvez substituer ce comportement en utilisant cet attribut.<br /><br /> N'utilisez ce paramètre qu'avec beaucoup de précaution.|  
+|`includeWindowsGroups`|Attribut à valeur booléenne facultatif qui spécifie si le système inclut des groupes Windows dans le contexte de sécurité. Par défaut, il s’agit de `true`.<br /><br /> L'affectation de la valeur `true` à cet attribut a un impact sur les performances du fait qu'elle provoque une expansion complète du groupe. Affectez la valeur `false` à cet attribut s'il n'est pas nécessaire d'établir la liste des groupes auxquels appartient un utilisateur.|  
+|`allowAnonymousLogons`|Attribut à valeur booléenne facultatif qui spécifie si les appelants anonymes et non authentifiés sont autorisés. Par défaut, il s’agit de `false`.<br /><br /> Lorsque l’attribut `clientCredentialType` d’une liaison a la valeur `Windows`, le système n’autorise pas d’appelants anonymes. Cela signifie que seuls les appelants authentifiés du domaine ou du groupe de travail sont autorisés à accéder au système. Vous pouvez substituer ce comportement en utilisant cet attribut.<br /><br /> N'utilisez ce paramètre qu'avec beaucoup de précaution.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -43,7 +43,7 @@ Spécifie les paramètres d'une information d'identification de service Windows.
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<serviceCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|Spécifie les informations d’identification à utiliser pour authentifier le service, ainsi que les paramètres liés à la validation des informations d’identification du client.|  
+|[\<serviceCredentials>](servicecredentials.md)|Spécifie les informations d’identification à utiliser pour authentifier le service, ainsi que les paramètres liés à la validation des informations d’identification du client.|  
   
 ## <a name="remarks"></a>Notes  
  Utilisez cet élément pour autoriser l'accès d'utilisateurs Windows anonymes en définissant l'attribut `allowAnonymousLogons`. Vous pouvez également indiquer s'il faut inclure des informations sur les groupes auxquels les utilisateurs appartiennent dans AuthorizationContext en définissant l'attribut `includeWindowsGroups`. Si ce dernier a la valeur `true` (paramètre par défaut), le service peut déterminer les groupes Windows auxquels le client appartient.  

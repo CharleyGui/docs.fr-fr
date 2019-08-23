@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c788f2f9-65cc-4455-9907-e8388a268e00
-ms.openlocfilehash: 0f1b6cf27101c2a7f55757b72b56b2291198404d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dff5642b2490cd3935dba3b3d04cd62082249c32
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61767536"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915725"
 ---
 # <a name="object-identity"></a>Identité d'un objet
 Les identités des objets du runtime sont uniques. Deux variables qui font référence au même objet font en réalité référence à la même instance de l'objet. Par conséquent, les modifications que vous apportez avec un chemin d'accès via une variable sont immédiatement visibles via l'autre variable.  
@@ -21,12 +21,12 @@ Les identités des objets du runtime sont uniques. Deux variables qui font réf�
   
  Vous souhaitez obtenir quelque chose de très différent avec les objets. Si vous demandez à plusieurs reprises les mêmes informations au <xref:System.Data.Linq.DataContext>, vous vous attendez à ce que celui-ci vous donne la même instance d'objet. Ce comportement est attendu, étant donné que les objets ont une signification particulière pour votre application, et vous vous attendez à ce qu'ils se comportent comme des objets. Vous les avez conçus comme des hiérarchies ou des graphiques. Vous comptez les récupérer comme tels et ne pas recevoir de nombreuses instances répliquées uniquement parce que vous avez effectué la même demande plusieurs fois.  
   
- Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], le <xref:System.Data.Linq.DataContext> gère l'identité de l'objet. À chaque fois que vous récupérez une nouvelle ligne de la base de données, elle est entrée dans une table d'identités par sa clé primaire et un objet est créé. À chaque fois que vous récupérez cette ligne, l'instance d'objet d'origine est remise à l'application. De cette façon, le <xref:System.Data.Linq.DataContext> traduit le concept d'identité tel que la base de données l'a vu (autrement dit, des clés primaire) en concept d'identité vu par le langage (autrement dit, des instances). L'application voit uniquement l'objet dans l'état dans lequel il a été récupéré la première fois. Si les nouvelles données sont différentes, elles sont ignorées. Pour plus d’informations, consultez [récupération d’objets du Cache d’identité](../../../../../../docs/framework/data/adonet/sql/linq/retrieving-objects-from-the-identity-cache.md).  
+ Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], le <xref:System.Data.Linq.DataContext> gère l'identité de l'objet. À chaque fois que vous récupérez une nouvelle ligne de la base de données, elle est entrée dans une table d'identités par sa clé primaire et un objet est créé. À chaque fois que vous récupérez cette ligne, l'instance d'objet d'origine est remise à l'application. De cette façon, le <xref:System.Data.Linq.DataContext> traduit le concept d'identité tel que la base de données l'a vu (autrement dit, des clés primaire) en concept d'identité vu par le langage (autrement dit, des instances). L'application voit uniquement l'objet dans l'état dans lequel il a été récupéré la première fois. Si les nouvelles données sont différentes, elles sont ignorées. Pour plus d’informations, consultez [récupération d’objets à partir du cache d’identité](../../../../../../docs/framework/data/adonet/sql/linq/retrieving-objects-from-the-identity-cache.md).  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] utilise cette approche pour gérer l’intégrité des objets locaux pour prendre en charge les mises à jour optimistes. Étant donné que les seules modifications qui se produisent une fois que l'objet a été créé sont celles effectuées par l'application, le rôle de l'application est correctement défini. Si un tiers extérieur a effectué des modifications dans l'intervalle, elles sont identifiées au moment où `SubmitChanges()` est appelé.  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]utilise cette approche pour gérer l’intégrité des objets locaux afin de prendre en charge les mises à jour optimistes. Étant donné que les seules modifications qui se produisent une fois que l'objet a été créé sont celles effectuées par l'application, le rôle de l'application est correctement défini. Si un tiers extérieur a effectué des modifications dans l'intervalle, elles sont identifiées au moment où `SubmitChanges()` est appelé.  
   
 > [!NOTE]
->  Si l'objet demandé par la requête est facilement identifiable comme un objet déjà récupéré, aucune requête n'est exécutée. La table d'identités agit en tant que cache de tous les objets récupérés précédemment.  
+> Si l'objet demandé par la requête est facilement identifiable comme un objet déjà récupéré, aucune requête n'est exécutée. La table d'identités agit en tant que cache de tous les objets récupérés précédemment.  
   
 ## <a name="examples"></a>Exemples  
   

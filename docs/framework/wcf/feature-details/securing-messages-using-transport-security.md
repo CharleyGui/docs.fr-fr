@@ -2,18 +2,18 @@
 title: Sécurisation des messages à l'aide de la sécurité de transport
 ms.date: 03/30/2017
 ms.assetid: 9029771a-097e-448a-a13a-55d2878330b8
-ms.openlocfilehash: a8a7e9422679927636ae2dc9b6a2ab34202ee74c
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: b0507590914e2e8cda7e5e599914a9e3d7b0acd0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331518"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69911707"
 ---
 # <a name="securing-messages-using-transport-security"></a>Sécurisation des messages à l'aide de la sécurité de transport
 Cette section traite de la sécurité de transport Message Queuing (MSMQ) que vous pouvez utiliser pour sécuriser des messages envoyés vers une file d'attente.  
   
 > [!NOTE]
->  Avant de lire cette rubrique, il est recommandé de lire [concepts de sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md).  
+> Avant de lire cette rubrique, il est recommandé de lire [concepts de sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md).  
   
  L’illustration suivante fournit un modèle conceptuel de communication en file d’attente à l’aide de Windows Communication Foundation (WCF). Cette illustration et la terminologie sont utilisées pour expliquer les concepts de sécurité de transport.  
   
@@ -53,7 +53,7 @@ Cette section traite de la sécurité de transport Message Queuing (MSMQ) que vo
  L'utilisation de la sécurité Windows requiert l'intégration Active Directory. Le mode de sécurité du transport par défaut utilisé est <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain>. Lorsque cette valeur est définie, le canal WCF joint le SID Windows au message MSMQ et utilise son certificat interne obtenu à partir de Active Directory. MSMQ utilise ce certificat interne pour sécuriser le message. Le gestionnaire de files d'attente de réception utilise Active Directory pour rechercher un certificat correspondant afin d'authentifier le client et vérifie que le SID correspond également à celui du client. Cette étape d'authentification est exécutée si un certificat, généré en interne en mode d'authentification `WindowsDomain` ou généré de manière externe en mode d'authentification `Certificate`, est joint au message même si la file d'attente cible n'est pas marquée comme nécessitant l'authentification.  
   
 > [!NOTE]
->  Lorsque vous créez une file d'attente, vous pouvez marquer la file d'attente comme file d'attente authentifiée pour indiquer que la file d'attente nécessite l'authentification des clients envoyant des messages à la file d'attente. Cela garantit qu'aucun message non authentifié n'est accepté dans la file d'attente.  
+> Lorsque vous créez une file d'attente, vous pouvez marquer la file d'attente comme file d'attente authentifiée pour indiquer que la file d'attente nécessite l'authentification des clients envoyant des messages à la file d'attente. Cela garantit qu'aucun message non authentifié n'est accepté dans la file d'attente.  
   
  Le système vérifie également si le SID joint au message figure dans la liste ACL de la file d'attente cible afin de s'assurer que le client est autorisé à envoyer des messages à la file d'attente.  
   
@@ -76,13 +76,13 @@ Cette section traite de la sécurité de transport Message Queuing (MSMQ) que vo
  Outre la signature du message, le message MSMQ est chiffré à l'aide de la clé publique du certificat obtenue à partir d'Active Directory qui appartient au gestionnaire de files d'attente de réception qui héberge la file d'attente cible. Le gestionnaire de files d'attente d'émission garantit que le message MSMQ est chiffré en transit. Le gestionnaire de files d'attente de réception déchiffre le message MSMQ à l'aide de la clé privée de son certificat interne et stocke le message dans la file d'attente (s'il est authentifié et autorisé) en texte clair.  
   
 > [!NOTE]
->  Pour chiffrer le message, l'accès Active Directory est requis (la propriété`UseActiveDirectory` de <xref:System.ServiceModel.NetMsmqBinding> doit avoir la valeur `true`) et peut être utilisé avec <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> et <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain>.  
+> Pour chiffrer le message, l'accès Active Directory est requis (la propriété`UseActiveDirectory` de <xref:System.ServiceModel.NetMsmqBinding> doit avoir la valeur `true`) et peut être utilisé avec <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> et <xref:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain>.  
   
 #### <a name="none-protection-level"></a>Niveau de protection « Aucun »  
  Ce niveau est utilisé lorsque <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> a la valeur <xref:System.Net.Security.ProtectionLevel.None>. Cela ne peut pas être une valeur valide pour d'autres modes d'authentification.  
   
 > [!NOTE]
->  Si le message MSMQ est signé, MSMQ vérifie si le message est signé avec le certificat joint (interne ou externe) quel que soit l'état de la file d'attente, autrement dit file d'attente authentifiée ou non.  
+> Si le message MSMQ est signé, MSMQ vérifie si le message est signé avec le certificat joint (interne ou externe) quel que soit l'état de la file d'attente, autrement dit file d'attente authentifiée ou non.  
   
 ### <a name="msmq-encryption-algorithm"></a>Algorithme de chiffrement MSMQ  
  L'algorithme de chiffrement spécifie l'algorithme à utiliser pour chiffrer le message MSMQ sur le câble. Cette propriété est utilisée uniquement si <xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A> a la valeur <xref:System.Net.Security.ProtectionLevel.EncryptAndSign>.  

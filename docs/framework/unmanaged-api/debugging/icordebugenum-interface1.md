@@ -16,16 +16,16 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: eb3aca0713b8b11bdfaa23bf33c8e1a0b302e272
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b25c47e101ad0fb8e8cbdbb2718a41c9be6c0c22
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64606536"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931986"
 ---
 # <a name="icordebugenum-interface"></a>ICorDebugEnum, interface
 
-Sert de l’interface de base abstraite pour les énumérateurs qui sont utilisés par une application de débogage.  
+Sert d’interface de base abstraite pour les énumérateurs utilisés par une application de débogage.  
   
 ## <a name="methods"></a>Méthodes  
   
@@ -34,10 +34,10 @@ Sert de l’interface de base abstraite pour les énumérateurs qui sont utilis�
 |[Clone, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-clone-method.md)|Crée une copie de cet `ICorDebugEnum` objet.|  
 |[GetCount, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-getcount-method.md)|Obtient le nombre d’éléments dans l’énumération.|  
 |[Reset, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-reset-method.md)|Déplace le curseur au début de l’énumération.|  
-|[Skip, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-skip-method.md)|Déplace le curseur vers l’avant dans l’énumération par le nombre spécifié d’éléments.|  
+|[Skip, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugenum-skip-method.md)|Déplace le curseur vers l’avant dans l’énumération d’après le nombre d’éléments spécifié.|  
   
 ## <a name="remarks"></a>Notes  
- Les énumérateurs suivants dérivent `ICorDebugEnum`:  
+ Les énumérateurs suivants dérivent de `ICorDebugEnum`:  
   
 - "ICorDebugAppDomainEnum"  
   
@@ -51,7 +51,7 @@ Sert de l’interface de base abstraite pour les énumérateurs qui sont utilis�
   
 - "ICorDebugCodeEnum"  
   
-- "ICorDebugErrorInfoEnum"  
+- ICorDebugErrorInfoEnum  
   
 - [ICorDebugExceptionObjectCallStackEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-interface.md)  
   
@@ -82,14 +82,14 @@ Sert de l’interface de base abstraite pour les énumérateurs qui sont utilis�
 - [ICorDebugVariableHomeEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehomeenum-interface.md)  
   
 > [!NOTE]
->  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
+> Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

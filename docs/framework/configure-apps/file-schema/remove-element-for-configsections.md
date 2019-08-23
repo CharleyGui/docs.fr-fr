@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: ae4d82e0-e8fe-468c-81ab-46d63c4d66a8
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: 7c0173879c692588cc2e15f0b14a5687bb0404fb
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 4ff9bb537a31e28dbd4b878c1bc04c96262f85ac
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300673"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927458"
 ---
-# <a name="remove-element-for-configsections"></a>\<Supprimer >, élément pour \<configSections >
+# <a name="remove-element-for-configsections"></a>\<supprimer > élément pour \<configSections >
 
-Supprime une section prédéfinie ou le groupe de section.
+Supprime un groupe de sections ou de sections prédéfini.
 
-[ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<configSections>** ](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md)   
+[ **\<configuration>** ](configuration-element.md)   
+&nbsp;&nbsp;[ **\<configSections>** ](configsections-element-for-configuration.md)   
 &nbsp;&nbsp;&nbsp;&nbsp; **\<remove>**
 
 ## <a name="syntax"></a>Syntaxe
@@ -34,27 +34,27 @@ Supprime une section prédéfinie ou le groupe de section.
 
 |           | Description |
 | --------- | ----------- |
-| **name**  | Attribut requis.<br><br>Spécifie le nom de la section ou le groupe de section à supprimer. |
+| **name**  | Attribut requis.<br><br>Spécifie le nom de la section ou du groupe de sections à supprimer. |
 
 ## <a name="parent-element"></a>Élément parent
 
 |     | Description |
 | --- | ----------- |
-| [ **\<configSections >** élément](~/docs/framework/configure-apps/file-schema/configsections-element-for-configuration.md) | Contient des déclarations d’espace de noms et de la section de configuration. |
+| [élément  **>\<configSections**](configsections-element-for-configuration.md) | Contient la section de configuration et les déclarations d’espace de noms. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
-None
+Aucun
 
 ## <a name="remarks"></a>Notes
 
-Vous pouvez utiliser la  **\<Supprimer >** élément à supprimer des sections et groupes de votre application qui ont été définies à un niveau supérieur dans la hiérarchie de fichiers de configuration.
+Vous pouvez utiliser l'  **\<élément remove >** pour supprimer de votre application des sections et des groupes de sections qui ont été définis à un niveau supérieur dans la hiérarchie des fichiers de configuration.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
-L’exemple suivant montre comment utiliser le  **\<Supprimer >** élément dans un fichier de configuration d’application pour supprimer une section précédemment définie dans le fichier de configuration machine.
+L’exemple suivant montre comment utiliser l'  **\<élément remove >** dans un fichier de configuration de l’application pour supprimer une section précédemment définie dans le fichier de configuration de l’ordinateur.
 
-Le code du fichier de configuration machine suivant déclare la section  **\<sampleSection >** :
+Le code de fichier de configuration d’ordinateur suivant déclare la section  **\<sampleSection >** :
 
 ```xml
 <!-- Machine.config file -->
@@ -69,7 +69,7 @@ Le code du fichier de configuration machine suivant déclare la section  **\<sam
 </configuration>
 ```
 
-Le code suivant du fichier de configuration de l’application supprime le  **\<sampleSection >** section. Après la suppression, l’application ne peut pas récupérer les paramètres dans  **\<sampleSection >** .
+Le code de fichier de configuration d’application suivant supprime la  **\<section > sampleSection** . Après la suppression, l’application ne peut pas récupérer les paramètres dans  **\<sampleSection >** .
 
 ```xml
 <!-- Application configuration file -->
@@ -82,8 +82,8 @@ Le code suivant du fichier de configuration de l’application supprime le  **\<
 
 ## <a name="configuration-file"></a>fichier de configuration
 
-Cet élément peut être utilisé dans le fichier de configuration d’application, fichier de configuration machine (*Machine.config*), et *Web.config* fichiers qui ne sont pas au niveau du répertoire d’application.
+Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma de fichier de configuration pour le .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma du fichier de configuration pour le .NET Framework](index.md)

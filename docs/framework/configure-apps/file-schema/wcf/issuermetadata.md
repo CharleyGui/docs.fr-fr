@@ -2,19 +2,19 @@
 title: <issuerMetadata>
 ms.date: 03/30/2017
 ms.assetid: e7eae2c0-cc17-4281-af59-e4eb8d54f92a
-ms.openlocfilehash: 0dffad6a17720dd0506acbcd60efe4aafe24ed28
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bf512c427637ca65a7271ec8300a373a38632108
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61761674"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69913519"
 ---
 # <a name="issuermetadata"></a>\<issuerMetadata>
 \<system.serviceModel>  
 \<bindings>  
 \<wsFederationHttpBinding>  
 \<binding>  
-\<security>  
+\<> de sécurité  
 \<message>  
 \<issuerMetadata>  
   
@@ -54,20 +54,20 @@ ms.locfileid: "61761674"
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Collection d'en-têtes d'adresses.|  
-|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Identité qui permet l'authentification d'un point de terminaison par les autres points de terminaison qui échangent des messages avec lui.|  
+|[\<headers>](headers-element.md)|Collection d'en-têtes d'adresses.|  
+|[\<identity>](identity.md)|Identité qui permet l'authentification d'un point de terminaison par les autres points de terminaison qui échangent des messages avec lui.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<message>](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-wsfederationhttpbinding.md)|Définit les paramètres de la sécurité au niveau du message pour le [ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) élément.|  
+|[\<message>](message-element-of-wsfederationhttpbinding.md)|Définit les paramètres pour la sécurité au niveau du message pour l' [ \<élément WSFederationHttpBinding >](wsfederationhttpbinding.md) .|  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.IssuerMetadataAddress%2A>
 - <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.IssuerMetadata%2A>
-- [Identité du service et authentification](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [Fédération et jetons émis](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
-- [Fonctionnalités de sécurité avec des liaisons personnalisées](../../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)
-- [Fédération et jetons émis](../../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
+- [Identité du service et authentification](../../../wcf/feature-details/service-identity-and-authentication.md)
+- [Fédération et jetons émis](../../../wcf/feature-details/federation-and-issued-tokens.md)
+- [Fonctionnalités de sécurité avec des liaisons personnalisées](../../../wcf/feature-details/security-capabilities-with-custom-bindings.md)
+- [Fédération et jetons émis](../../../wcf/feature-details/federation-and-issued-tokens.md)

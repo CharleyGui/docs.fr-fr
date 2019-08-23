@@ -17,18 +17,18 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c9104550438a2a066cdf052b8d6592e86b831194
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 87ba947b9564f82f8daf8cd2ba0acac5cc3587ca
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67749988"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69928673"
 ---
 # <a name="igchostsetgcstartuplimits-method"></a>IGCHost::SetGCStartupLimits, méthode
-Définit la taille du segment et la taille maximale pour la génération 0.  
+Définit la taille du segment et la taille maximale de la génération 0.  
   
 > [!IMPORTANT]
->  À compter de .NET Framework 4.5, vous pouvez définir des tailles de segment et maximal de générations 0 aux valeurs supérieur `DWORD` à l’aide de la [IGCHost2::SetGCStartupLimitsEx](../../../../docs/framework/unmanaged-api/hosting/igchost2-setgcstartuplimitsex-method.md) (méthode).  
+> À partir de la .NET Framework 4,5, vous pouvez définir la taille du segment et la taille maximale de la `DWORD` génération 0 sur des valeurs supérieures à à l’aide de la méthode [IGCHost2:: setgcstartuplimitsex,](../../../../docs/framework/unmanaged-api/hosting/igchost2-setgcstartuplimitsex-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,20 +41,20 @@ HRESULT SetGCStartupLimits (
   
 ## <a name="parameters"></a>Paramètres  
  `SegmentSize`  
- [in] La taille du segment utilisé par le système de garbage collection.  
+ dans Taille du segment utilisé par le système de garbage collection.  
   
  `MaxGen0Size`  
- [in] La taille maximale pour la génération 0.  
+ dans Taille maximale de la génération 0.  
   
 ## <a name="remarks"></a>Notes  
- Le `SetGCStartupLimits` méthode peut être appelée qu’une seule fois. Ces valeurs ne peuvent pas être modifiées ultérieurement.  
+ La `SetGCStartupLimits` méthode ne peut être appelée qu’une seule fois. Ces valeurs ne peuvent pas être modifiées ultérieurement.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** GCHost.idl, GCHost.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

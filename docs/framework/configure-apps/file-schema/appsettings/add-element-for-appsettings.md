@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 8734efdc-00f6-4a65-bba6-084c5bc65246
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: f8b426dc0e1e180afbfccce50d3b45774991a572
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 594ba4f289012e775e93acba98056b60bdd94cbd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301350"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927749"
 ---
 # <a name="add-element-for-appsettings"></a>\<Ajouter > élément pour \<appSettings >
 
 Ajoute un paramètre d’application personnalisé.
 
-[ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md)   
+[ **\<configuration>** ](../configuration-element.md)   
+&nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)   
 &nbsp;&nbsp;&nbsp;&nbsp; **\<add>**
 
 ## <a name="syntax"></a>Syntaxe
@@ -43,15 +43,15 @@ Ajoute un paramètre d’application personnalisé.
 
 |     | Description |
 | --- | ----------- |
-| [ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) | Contient des paramètres d’application personnalisés, tels que des chemins d’accès, des URL de service web XML ou d’autres informations de configuration personnalisée pour une application. |
+| [ **\<appSettings>** ](appsettings-element-for-configuration.md) | Contient des paramètres d’application personnalisés, tels que des chemins d’accès, des URL de service web XML ou d’autres informations de configuration personnalisée pour une application. |
 
 ## <a name="child-elements"></a>Éléments enfants
 
-None
+Aucun
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment ajouter un paramètre de configuration personnalisée pour le nom de l’application :
+L’exemple suivant montre comment ajouter un paramètre de configuration personnalisé pour le nom de l’application:
 
 ```xml
 <appSettings>
@@ -59,7 +59,7 @@ L’exemple suivant montre comment ajouter un paramètre de configuration person
 </appSettings>
 ```
 
-L’exemple suivant utilise le `<add>` élément pour définir les deux paramètres de compatibilité dans une application ASP.NET :
+L’exemple suivant utilise l' `<add>` élément pour définir deux paramètres de compatibilité dans une application ASP.net:
 
 ```xml
 <appSettings>
@@ -70,4 +70,4 @@ L’exemple suivant utilise le `<add>` élément pour définir les deux paramèt
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Schéma de fichier de configuration pour le .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)
+- [Schéma du fichier de configuration pour le .NET Framework](../index.md)

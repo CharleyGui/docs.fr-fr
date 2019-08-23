@@ -7,12 +7,12 @@ helpviewer_keywords:
 - DataContractSerializer
 - KnownTypes
 ms.assetid: f41fb4d5-24e7-4059-8010-286a30bfea93
-ms.openlocfilehash: b635f03d1e4a6628a76d678f7366482717276376
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7e440810fee1dddb7025d1385b1edb4838d98a39
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704139"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925908"
 ---
 # <a name="datacontractserializer"></a>\<dataContractSerializer>
 Contient les données de configuration correspondant au <xref:System.Runtime.Serialization.DataContractSerializer>. Cet élément se produit dans deux hiérarchies différentes : l'une est répertoriée dans la section Hiérarchie de schéma suivante et l'autre dans la section Notes.  
@@ -20,7 +20,7 @@ Contient les données de configuration correspondant au <xref:System.Runtime.Ser
  \<system.ServiceModel>  
 \<behaviors>  
 \<serviceBehaviors>  
-\<behavior>  
+\<> de comportement  
 \<dataContractSerializer>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -47,15 +47,15 @@ Contient les données de configuration correspondant au <xref:System.Runtime.Ser
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)|Collection de paramètres correspondant au comportement d’un service.|  
-|[\<system.runtime.serialization>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-runtime-serialization.md)|Représente l'élément racine correspondant à la section d'espace de noms <xref:System.Runtime.Serialization> et contient des éléments permettant de définir les options du <xref:System.Runtime.Serialization.DataContractSerializer>.|  
+|[\<behavior>](behavior-of-servicebehaviors.md)|Collection de paramètres correspondant au comportement d’un service.|  
+|[\<system.runtime.serialization>](system-runtime-serialization.md)|Représente l'élément racine correspondant à la section d'espace de noms <xref:System.Runtime.Serialization> et contient des éléments permettant de définir les options du <xref:System.Runtime.Serialization.DataContractSerializer>.|  
   
 ## <a name="remarks"></a>Notes  
- Comme indiqué dans l’Introduction de cette rubrique, il s’agit de la deuxième hiérarchie dans laquelle le \<X509Extension > élément se produit.  
+ Comme indiqué dans l’introduction de cette rubrique, il s’agit de la deuxième hiérarchie dans \<laquelle l’élément X509Extension > se produit.  
   
- [\<system.runtime.serialization>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-runtime-serialization.md)  
+ [\<system.runtime.serialization>](system-runtime-serialization.md)  
   
- [\<dataContractSerializer>](../../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)  
+ [\<dataContractSerializer>](datacontractserializer-element.md)  
   
  Pour plus d'informations sur les types connus, consultez <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
@@ -64,5 +64,5 @@ Contient les données de configuration correspondant au <xref:System.Runtime.Ser
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>
 - <xref:System.ServiceModel.Configuration.DataContractSerializerElement>
-- [Types connus de contrats de données](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
-- [Transfert de données et sérialisation](../../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)
+- [Types connus de contrats de données](../../../wcf/feature-details/data-contract-known-types.md)
+- [Transfert de données et sérialisation](../../../wcf/feature-details/data-transfer-and-serialization.md)

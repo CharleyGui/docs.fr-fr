@@ -7,18 +7,18 @@ helpviewer_keywords:
 ms.assetid: 006d1280-2ac3-4db6-a984-a3d4e275046a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a8e8663bf9d119007eb7d3771d16d55b1aa54856
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 2268d07fb643621c944ef9bf561156b5332aaafc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663604"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920719"
 ---
 # <a name="loadfromremotesources-element"></a>\<loadFromRemoteSources >, élément
 Spécifie si les assemblys chargés à partir de sources distantes doivent bénéficier d’une confiance totale dans .NET Framework 4 et versions ultérieures.
   
 > [!NOTE]
->  Si vous êtes redirigé vers cet article en raison d’un message d’erreur dans la liste d’erreurs d’un projet Visual Studio [ou d’une erreur de génération, consultez Procédure: Utilisez un assembly à partir du Web dans](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ee890038(v=vs.100))Visual Studio.  
+> Si vous êtes redirigé vers cet article en raison d’un message d’erreur dans la liste d’erreurs d’un projet Visual Studio [ou d’une erreur de génération, consultez Procédure: Utilisez un assembly à partir du Web dans](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ee890038(v=vs.100))Visual Studio.  
   
  \<configuration>  
 \<runtime>  

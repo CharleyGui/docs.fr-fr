@@ -2,21 +2,21 @@
 title: <transport> de <netNamedPipeBinding>
 ms.date: 03/30/2017
 ms.assetid: d9eff52d-4bde-4586-b56a-b0ec24611f8d
-ms.openlocfilehash: a6d3dd2c24e90bdcdc6520e62dcc1dbe7ce797f9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1e76d0962ea7b4714ef6ca1f9d4c4c3e23df5b6f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788347"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934673"
 ---
-# <a name="transport-of-netnamedpipebinding"></a>\<transport > de \<netNamedPipeBinding >
+# <a name="transport-of-netnamedpipebinding"></a>\<> de transport \<de NetNamedPipeBinding >
 Définit les paramètres de sécurité de transport pour un canal nommé.  
   
  \<system.ServiceModel>  
 \<bindings>  
 \<netNamedPipeBinding>  
 \<binding>  
-\<security>  
+\<> de sécurité  
 \<transport>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,16 +38,16 @@ Définit les paramètres de sécurité de transport pour un canal nommé.
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|protectionLevel|Définit le niveau de protection du canal nommé. La signature des messages atténue le risque de modification par un tiers pendant le transfert. Le chiffrement garantit la confidentialité des données pendant le transport. Les valeurs valides sont les suivantes :<br /><br /> -None : Aucune protection.<br />-Signe : Les messages sont signés.<br />-   EncryptAndSign: Les messages sont chiffrés et signés.<br /><br /> La valeur par défaut est EncryptAndSign.|  
+|protectionLevel|Définit le niveau de protection du canal nommé. La signature des messages atténue le risque de modification par un tiers pendant le transfert. Le chiffrement garantit la confidentialité des données pendant le transport. Les valeurs valides sont les suivantes :<br /><br /> None Aucune protection.<br />Expéditeur Les messages sont signés.<br />EncryptAndSign Les messages sont chiffrés et signés.<br /><br /> La valeur par défaut est EncryptAndSign.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-netnamedpipebinding.md)|Définit les paramètres de sécurité d’une liaison.|  
+|[\<> de sécurité](security-of-netnamedpipebinding.md)|Définit les paramètres de sécurité d’une liaison.|  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -55,8 +55,8 @@ Définit les paramètres de sécurité de transport pour un canal nommé.
 - <xref:System.ServiceModel.Configuration.NetNamedPipeSecurityElement.Transport%2A>
 - <xref:System.ServiceModel.NetNamedPipeSecurity.Transport%2A>
 - <xref:System.ServiceModel.Configuration.NamedPipeTransportSecurityElement>
-- [Sécurisation des services et des clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [Liaisons](../../../../../docs/framework/wcf/bindings.md)
-- [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Utilisation de liaisons pour configurer des services et des clients](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding>](../../../../../docs/framework/misc/binding.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
+- [Liaisons](../../../wcf/bindings.md)
+- [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<binding>](../../../misc/binding.md)

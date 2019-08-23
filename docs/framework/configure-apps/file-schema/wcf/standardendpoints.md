@@ -2,12 +2,12 @@
 title: <standardEndpoints>
 ms.date: 03/30/2017
 ms.assetid: d62153d7-a6e6-462a-a784-cca61e9c2ba1
-ms.openlocfilehash: 66b86647689ea2ca39ae2f569d275aff1f48cba5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f40353d36464c2e759bf2058b244cb854b19806c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61757974"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930788"
 ---
 # <a name="standardendpoints"></a>\<standardEndpoints>
 Cette section de configuration vous permet de définir une collection de points de terminaison standard, qui sont des points de terminaison préconfigurés et réutilisables. Un point de terminaison standard possède un ou plusieurs attributs d’adresse, de liaison et de contrat ayant une valeur fixe. Par exemple, dans le point de terminaison de découverte, le contrat est fixe. Vous pouvez également utiliser des points de terminaison standard pour étendre le point de terminaison de service avec de nouvelles propriétés, ce qui revient à définir des liaisons personnalisées.  
@@ -33,14 +33,14 @@ Cette section de configuration vous permet de définir une collection de points 
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<announcementEndpoint>](announcementendpoint.md)|Définit un point de terminaison standard avec un contrat d'annonce fixe. Un service peut éventuellement annoncer sa disponibilité en envoyant un message d'annonce en ligne ou hors connexion selon qu'il est respectivement ouvert ou fermé. Un service Windows Communication Foundation (WCF) spécifie les points de terminaison d’annonce dans le [ \<serviceDiscovery >](servicediscovery.md) élément et utilise AnnouncementClient pour effectuer les annonces. Un client souhaite écouter pour l’annonce provenant d’un autre service joue en fait un service WCF ; Par conséquent, vous devez configurer les points de terminaison d’annonce pour ce client dans le [ \<services >](services.md) section.|  
+|[\<announcementEndpoint>](announcementendpoint.md)|Définit un point de terminaison standard avec un contrat d'annonce fixe. Un service peut éventuellement annoncer sa disponibilité en envoyant un message d'annonce en ligne ou hors connexion selon qu'il est respectivement ouvert ou fermé. Un service Windows Communication Foundation (WCF) spécifie les points de terminaison d’annonce dans l' [ \<élément serviceDiscovery >](servicediscovery.md) et utilise AnnouncementClient pour effectuer les annonces. Un client qui souhaite écouter l’annonce d’un autre service joue en fait le rôle de service WCF. vous devez donc configurer les points de terminaison d’annonce pour ce client dans la [ \<section services >](services.md) .|  
 |[\<discoveryEndpoint>](discoveryendpoint.md)|Définit un point de terminaison standard avec un contrat de découverte fixe. Lorsqu'il est ajouté à la configuration du service, il spécifie où écouter les messages de découverte. Lorsqu'il est ajouté à la configuration client, il spécifie où envoyer les requêtes de découverte.|  
 |[\<dynamicEndpoint>](dynamicendpoint.md)|Cet élément de configuration définit un point de terminaison standard qui contient des informations pour permettre à une application de fonctionner en tant que programme client qui peut rechercher l'adresse du point de terminaison de manière dynamique au moment de l'exécution.|  
 |[\<mexEndpoint>](mexendpoint.md)|Définit un point de terminaison standard avec un contrat IMetadataExchange fixe. Puisque tous les points de terminaison d'échange de métadonnées ont comme contrat IMetadataExchange, vous pouvez utiliser ce point standard au lieu d'en définir un à votre intention.|  
 |[\<udpAnnouncementEndpoint>](udpannouncementendpoint.md)|Définit un point de terminaison standard qui permet aux services d’envoyer des messages d’annonce via une liaison UDP. Il a un contrat fixe et prend en charge deux versions de découverte. De plus, il possède une liaison UDP fixe et une valeur d'adresse par défaut indiquée dans les spécifications WS-Discovery (WS-Discovery Avril 2005 ou WS-Discovery version 1.1). Vous pouvez spécifier l'adresse de multidiffusion à utiliser pour l'envoi et la réception de messages d'annonce.|  
 |[\<udpDiscoveryEndpoint>](udpdiscoveryendpoint.md)|Définit un point de terminaison standard, préconfiguré pour les opérations de découverte sur une liaison de multidiffusion UDP. Ce point de terminaison a un contrat fixe et prend en charge deux versions de protocole WS-Discovery. De plus, il a une liaison UDP fixe et une valeur d’adresse par défaut indiquée dans les spécifications WS-Discovery (WS-Discovery Avril 2005 ou WS-Discovery V1.1).|  
-|[\<webHttpEndpoint>](webhttpendpoint.md)|Définit un point de terminaison standard avec fixe [ \<webHttpBinding >](webhttpbinding.md) automatiquement une liaison qui ajoute le [ \<webHttp >](webhttp.md) comportement. Utilisez ce point de terminaison lors de l'écriture d'un service REST.|  
-|[\<webScriptEndpoint>](webscriptendpoint.md)|Définit un point de terminaison standard avec fixe [ \<webHttpBinding >](webhttpbinding.md) automatiquement une liaison qui ajoute le [ \<enableWebScript >](enablewebscript.md) comportement. Utilisez ce point de terminaison lorsque vous écrivez un service appelé à partir d'une application ASP.NET AJAX.|  
+|[\<webHttpEndpoint>](webhttpendpoint.md)|Définit un point de terminaison standard avec une liaison [ \<WebHttpBinding >](webhttpbinding.md) fixe qui ajoute automatiquement le comportement de [ \<> Webhttp](webhttp.md) . Utilisez ce point de terminaison lors de l'écriture d'un service REST.|  
+|[\<webScriptEndpoint>](webscriptendpoint.md)|Définit un point de terminaison standard avec une liaison [ \<WebHttpBinding >](webhttpbinding.md) fixe qui ajoute automatiquement le comportement de [ \<> enableWebScript](enablewebscript.md) . Utilisez ce point de terminaison lorsque vous écrivez un service appelé à partir d'une application ASP.NET AJAX.|  
 |[\<workflowControlEndpoint>](workflowcontrolendpoint.md)|Définit un point de terminaison standard permettant de contrôler l'exécution d'instances de flux de travail (créer, exécuter, interrompre, arrêter, etc.).|  
   
 ### <a name="parent-elements"></a>Éléments parents  
@@ -51,4 +51,4 @@ Cette section de configuration vous permet de définir une collection de points 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Points de terminaison standard](../../../../../docs/framework/wcf/feature-details/standard-endpoints.md)
+- [Points de terminaison standard](../../../wcf/feature-details/standard-endpoints.md)

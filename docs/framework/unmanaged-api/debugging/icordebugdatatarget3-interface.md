@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: f477af85-994f-4df0-ae78-404ed252bf49
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c3b0d67d390931cc92c0b6a1320f66545517cde3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ee94e25201dee4999fd5acb2be44a80454e9efbf
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61965202"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69911414"
 ---
 # <a name="icordebugdatatarget3-interface"></a>ICorDebugDataTarget3 (interface)
-Étend logiquement le [ICorDebugDataTarget](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) interface pour fournir des informations sur les modules chargés.  
+Étend logiquement l’interface [ICorDebugDataTarget](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) pour fournir des informations sur les modules chargés.  
   
 ## <a name="method"></a>Méthode  
   
@@ -23,14 +23,14 @@ ms.locfileid: "61965202"
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
->  Cette interface est uniquement disponible avec .NET Native. Si vous implémentez cette interface pour des scénarios ICorDebug en dehors de .NET Native, le Common Language Runtime ignore cette interface.  
+> Cette interface est uniquement disponible avec .NET Native. Si vous implémentez cette interface pour des scénarios ICorDebug en dehors de .NET Native, le Common Language Runtime ignore cette interface.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

@@ -4,21 +4,21 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - binding configuration [WCF]
 ms.assetid: 99a85fd8-f7eb-4a84-a93e-7721b37d415c
-ms.openlocfilehash: 009011100af86e315aa41beb822b1448e2f21b25
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bfcdcd172d96660c3351926a9c42d298ac3fa654
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608740"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69928568"
 ---
 # <a name="configuring-bindings-for-windows-communication-foundation-services"></a>Configuration de liaisons pour les services Windows Communication Foundation
 Lorsque vous créez une application, vous souhaitez souvent confier des décisions à l'administrateur après le déploiement de l'application. Par exemple, il n'existe souvent aucune façon de savoir à l'avance ce que sera une adresse de service ou un URI (Uniform Resource Identifier). Au lieu de d'encoder de manière irréversible une adresse, il est préférable de permettre à un administrateur de le faire après avoir créé un service. Cette souplesse est obtenue par le biais de la configuration.  
   
 > [!NOTE]
->  Utilisez le [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) avec la `/config` commutateur à créer rapidement des fichiers de configuration.  
+> Utilisez l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) avec le `/config` commutateur pour créer rapidement des fichiers de configuration.  
   
 ## <a name="major-sections"></a>Sections principales  
- Le schéma de configuration de Windows Communication Foundation (WCF) inclut les trois sections principales suivantes (`serviceModel`, `bindings`, et `services`) :  
+ Le schéma de configuration Windows Communication Foundation (WCF) comprend les trois sections principales suivantes`serviceModel`( `bindings`, et `services`):  
   
 ```xml  
 <configuration>  
@@ -34,15 +34,15 @@ Lorsque vous créez une application, vous souhaitez souvent confier des décisio
 ```  
   
 ### <a name="servicemodel-elements"></a>Éléments ServiceModel  
- Vous pouvez utiliser la section délimitée par le `system.ServiceModel` élément pour configurer un type de service avec un ou plusieurs points de terminaison, ainsi que les paramètres pour un service. Ensuite, chaque point de terminaison peut être configuré avec une adresse, un contrat et une liaison. Pour plus d’informations sur les points de terminaison, consultez [vue d’ensemble de la création de point de terminaison](../../../docs/framework/wcf/endpoint-creation-overview.md). Si aucun point de terminaison n'est spécifié, le runtime ajoute des points de terminaison par défaut. Pour plus d’informations sur les points de terminaison, les liaisons et les comportements par défaut, consultez [Configuration simplifiée](../../../docs/framework/wcf/simplified-configuration.md) et [Configuration simplifiée pour les services WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+ Vous pouvez utiliser la section délimitée par l' `system.ServiceModel` élément pour configurer un type de service avec un ou plusieurs points de terminaison, ainsi que des paramètres pour un service. Ensuite, chaque point de terminaison peut être configuré avec une adresse, un contrat et une liaison. Pour plus d’informations sur les points de terminaison, consultez [vue d’ensemble](../../../docs/framework/wcf/endpoint-creation-overview.md)de la création de points de terminaison. Si aucun point de terminaison n'est spécifié, le runtime ajoute des points de terminaison par défaut. Pour plus d’informations sur les points de terminaison, les liaisons et les comportements par défaut, consultez [Configuration simplifiée](../../../docs/framework/wcf/simplified-configuration.md) et [Configuration simplifiée pour les services WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
  Une liaison spécifie des transports (HTTP, TCP, canaux, Message Queuing ) et des protocoles (sécurité, fiabilité, flux de transaction) et se compose d’éléments de liaison, dont chacun spécifie un aspect de la manière dont un point de terminaison communique avec le monde.  
   
- Par exemple, en spécifiant le [ \<basicHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) élément indique l’utilisation de HTTP comme transport pour un point de terminaison. Cela permet de rattacher le point de terminaison au moment de l'exécution lorsque le service qui utilise ce point de terminaison est ouvert.  
+ Par exemple, si vous spécifiez l' [ \<élément basicHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) , vous pouvez utiliser le protocole http comme transport pour un point de terminaison. Cela permet de rattacher le point de terminaison au moment de l'exécution lorsque le service qui utilise ce point de terminaison est ouvert.  
   
- Il existe deux types de liaisons : les liaisons prédéfinies et les liaisons personnalisées. Les liaisons prédéfinies contiennent des combinaisons utiles d’éléments utilisés dans des scénarios courants. Pour obtenir la liste des types de liaisons prédéfinies fournies par WCF, consultez [System-Provided Bindings](../../../docs/framework/wcf/system-provided-bindings.md). Si aucune collection de liaison prédéfinie n’a la combinaison correcte de fonctionnalités dont une application de service a besoin, vous pouvez construire des liaisons personnalisées pour satisfaire les exigences de l’application. Pour plus d’informations sur les liaisons personnalisées, consultez [ \<customBinding >](../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+ Il existe deux types de liaisons : les liaisons prédéfinies et les liaisons personnalisées. Les liaisons prédéfinies contiennent des combinaisons utiles d’éléments utilisés dans des scénarios courants. Pour obtenir la liste des types de liaison prédéfinis fournis par WCF, consultez [liaisons fournies par le système](../../../docs/framework/wcf/system-provided-bindings.md). Si aucune collection de liaison prédéfinie n’a la combinaison correcte de fonctionnalités dont une application de service a besoin, vous pouvez construire des liaisons personnalisées pour satisfaire les exigences de l’application. Pour plus d’informations sur les liaisons personnalisées, consultez [ \<CustomBinding >](../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
   
- Les quatre exemples ci-dessous illustrent des configurations de liaison les plus courantes utilisées pour la configuration d’un service WCF.  
+ Les quatre exemples suivants illustrent les configurations de liaison les plus courantes utilisées pour configurer un service WCF.  
   
 #### <a name="specifying-an-endpoint-to-use-a-binding-type"></a>Spécification d’un point de terminaison pour utiliser un type de liaison  
  Le premier exemple montre comment spécifier un point de terminaison configuré avec une adresse, un contrat et une liaison.  
@@ -58,7 +58,7 @@ Lorsque vous créez une application, vous souhaitez souvent confier des décisio
 </service>  
 ```  
   
- Dans cet exemple, l'attribut `name` indique à quel type de service la configuration est destinée. Lorsque vous créez un service dans votre code avec le contrat `HelloWorld`, il est initialisé avec tous les points de terminaison définis dans l'exemple de configuration. Si l’assembly qui implémente un seul contrat de service, le `name` attribut peut être omis, car le service utilise le seul type disponible. L'attribut utilise une chaîne, qui doit être dans le format `Namespace.Class, AssemblyName, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null`  
+ Dans cet exemple, l'attribut `name` indique à quel type de service la configuration est destinée. Lorsque vous créez un service dans votre code avec le contrat `HelloWorld`, il est initialisé avec tous les points de terminaison définis dans l'exemple de configuration. Si l’assembly implémente un seul contrat de service `name` , l’attribut peut être omis, car le service utilise le seul type disponible. L'attribut utilise une chaîne, qui doit être dans le format `Namespace.Class, AssemblyName, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null`  
   
  L'attribut `address` spécifie l'URI que d'autres points de terminaison utilisent pour communiquer avec le service. L’URI peut être un chemin d’accès absolu ou relatif. Si une adresse relative est fournie, l’hôte est censé fournir une adresse de base appropriée au schéma de transport utilisé dans la liaison. Si une adresse n'est pas configurée, l'adresse de base est l'adresse pour ce point de terminaison.  
   
@@ -72,7 +72,7 @@ Lorsque vous créez une application, vous souhaitez souvent confier des décisio
  Cette liaison modifiée se trouve dans la section consacrée aux liaisons. Cette liaison modifiée peut maintenant être utilisée lors de la création de tout point de terminaison en définissant l'attribut `binding` dans l'élément `endpoint`.  
   
 > [!NOTE]
->  Si vous donnez un nom particulier à la liaison, le `bindingConfiguration` spécifié dans le point de terminaison du service doit lui correspondre.  
+> Si vous donnez un nom particulier à la liaison, le `bindingConfiguration` spécifié dans le point de terminaison du service doit lui correspondre.  
   
 ```xml  
 <service name="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">  
@@ -89,10 +89,10 @@ Lorsque vous créez une application, vous souhaitez souvent confier des décisio
 ```  
   
 ## <a name="configuring-a-behavior-to-apply-to-a-service"></a>Configuration d'un comportement à appliquer à un service  
- Dans l'exemple ci-dessous, un comportement spécifique est configuré pour le type de service. Le `ServiceMetadataBehavior` élément est utilisé pour activer la [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pour interroger le service et générer des documents de Web Services Description Language (WSDL) à partir des métadonnées.  
+ Dans l'exemple ci-dessous, un comportement spécifique est configuré pour le type de service. L' `ServiceMetadataBehavior` élément est utilisé pour permettre à l' [outil ServiceModel Metadata Utility (Svcutil. exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) d’interroger le service et de générer des documents Web Services Description Language (WSDL) à partir des métadonnées.  
   
 > [!NOTE]
->  Si vous donnez un nom particulier au comportement, le `behaviorConfiguration` spécifié dans la section du point de terminaison ou du service doit lui correspondre.  
+> Si vous donnez un nom particulier au comportement, le `behaviorConfiguration` spécifié dans la section du point de terminaison ou du service doit lui correspondre.  
   
 ```xml  
 <behaviors>  
@@ -116,7 +116,7 @@ Lorsque vous créez une application, vous souhaitez souvent confier des décisio
  `svcutil /config:Client.exe.config http://computer:8080/Hello?wsdl`  
   
 ## <a name="specifying-a-service-with-two-endpoints-using-different-binding-values"></a>Spécification d’un service avec deux points de terminaison qui utilisent des valeurs de liaison différentes  
- Dans ce dernier exemple, deux points de terminaison sont configurés pour le type de service `HelloWorld`. Chaque point de terminaison utilise une autre personnalisé `bindingConfiguration` attribut du même type de liaison (chacun modifie le `basicHttpBinding`).  
+ Dans ce dernier exemple, deux points de terminaison sont configurés pour le type de service `HelloWorld`. Chaque point de terminaison utilise un `bindingConfiguration` attribut personnalisé différent du même type de liaison (chacun modifie `basicHttpBinding`le).  
   
 ```xml  
 <service name="HelloWorld, IndigoConfig, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null">  

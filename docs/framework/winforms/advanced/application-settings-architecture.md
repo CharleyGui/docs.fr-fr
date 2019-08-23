@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - application settings [Windows Forms], architecture
 ms.assetid: c8eb2ad0-fac6-4ea2-9140-675a4a44d562
-ms.openlocfilehash: b5d5a4456bef925cd8093fe9c696145aff83660e
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: c3858cfab59b63761f43f6b3eaad9bf8ca4c1dbc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039418"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916692"
 ---
 # <a name="application-settings-architecture"></a>Architecture des paramètres d'application
 Cette rubrique décrit le fonctionnement de l’architecture Paramètres d’application et explore des fonctionnalités avancées de l’architecture telles que les paramètres groupés et les clés de paramètres.
@@ -142,7 +142,7 @@ Cette rubrique décrit le fonctionnement de l’architecture Paramètres d’app
  Un fournisseur peut être appelé à partir de plusieurs threads simultanément, mais il écrira toujours au même emplacement de stockage. Par conséquent, l’architecture de paramètres d’application n’instanciera jamais qu’une seule instance de votre classe de fournisseur.
 
 > [!IMPORTANT]
->  Vous devez vous assurer que votre fournisseur est thread-safe et autorise un seul thread à la fois à écrire dans les fichiers de configuration.
+> Vous devez vous assurer que votre fournisseur est thread-safe et autorise un seul thread à la fois à écrire dans les fichiers de configuration.
 
  Votre fournisseur n’a pas besoin de prendre en charge tous les attributs de paramètres <xref:System.Configuration?displayProperty=nameWithType> définis dans l’espace de noms, même s' <xref:System.Configuration.ApplicationScopedSettingAttribute> il <xref:System.Configuration.UserScopedSettingAttribute>doit prendre en charge au <xref:System.Configuration.DefaultSettingValueAttribute>minimum et, et doit également prendre en charge. Pour les attributs qu’il ne prend pas en charge, votre fournisseur doit simplement échouer sans notification. Il ne doit pas lever une exception. Toutefois, si la classe de paramètres utilise une combinaison non valide d’attributs (comme <xref:System.Configuration.ApplicationScopedSettingAttribute> l' <xref:System.Configuration.UserScopedSettingAttribute> application de et au même paramètre), votre fournisseur doit lever une exception et cesser l’opération.
 

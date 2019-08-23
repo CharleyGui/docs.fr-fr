@@ -2,17 +2,17 @@
 title: <servicePrincipalName>
 ms.date: 03/30/2017
 ms.assetid: 3f3b85d3-20f2-4cd8-8a6a-ee18befbd165
-ms.openlocfilehash: 75e95bcbaee229f19bdfdd119b548ed612f4ddaa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 28ae27481ea9cb86c31b5be1f12b5491f8ca143e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758182"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936151"
 ---
 # <a name="serviceprincipalname"></a>\<servicePrincipalName>
 Spécifie l'identité d'un service par son nom de principal du service (SPN).  
   
- Pour plus d’informations sur la définition du nom SPN, consultez [identité de Service et d’authentification](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Pour plus d’informations sur la définition du SPN, consultez [identité du service et authentification](../../../wcf/feature-details/service-identity-and-authentication.md).  
   
  \<identity>  
 \<servicePrincipalName>  
@@ -30,7 +30,7 @@ Spécifie l'identité d'un service par son nom de principal du service (SPN).
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|par défaut|Nom SPN par lequel un client identifie de manière unique l'instance d'un service. Si vous installez plusieurs instances d'un service sur les ordinateurs d'une forêt, chaque instance doit posséder son propre SPN. Une instance de service donnée peut posséder plusieurs noms SPN si les clients peuvent utiliser plusieurs noms pour l'authentification.|  
+|value|Nom par lequel un client identifie de manière unique une instance d'un service. Si vous installez plusieurs instances d'un service sur les ordinateurs d'une forêt, chaque instance doit posséder son propre SPN. Une instance de service donnée peut posséder plusieurs noms SPN si les clients peuvent utiliser plusieurs noms pour l'authentification.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -39,10 +39,10 @@ Spécifie l'identité d'un service par son nom de principal du service (SPN).
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Spécifie l'identité du service à authentifier par le client.|  
+|[\<identity>](identity.md)|Spécifie l'identité du service à authentifier par le client.|  
   
 ## <a name="remarks"></a>Notes  
- Un client Windows Communication Foundation (WCF) sécurisé qui se connecte à un point de terminaison avec cette identité utilise le SPN lors de l’authentification SSPI avec le point de terminaison.  
+ Un client Windows Communication Foundation sécurisé (WCF) qui se connecte à un point de terminaison avec cette identité utilise le SPN lors de l’exécution de l’authentification SSPI avec le point de terminaison.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -50,5 +50,5 @@ Spécifie l'identité d'un service par son nom de principal du service (SPN).
 - <xref:System.ServiceModel.EndpointAddress>
 - <xref:System.ServiceModel.EndpointAddress.Identity%2A>
 - <xref:System.ServiceModel.SpnEndpointIdentity>
-- [Identité du service et authentification](../../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)
+- [Identité du service et authentification](../../../wcf/feature-details/service-identity-and-authentication.md)
+- [\<identity>](identity.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e35c7f9e-648b-4fcc-9361-d365c3e42c9a
-ms.openlocfilehash: 3038e35947cd8f97266d374a367a77380df440dd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ec4f0527b73a506b3c98675f77f8f49a1eeb1e1f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772175"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934452"
 ---
 # <a name="modifying-data-with-a-dbdataadapter"></a>Modification des données avec un DbDataAdapter
 La méthode <xref:System.Data.Common.DbProviderFactory.CreateDataAdapter%2A> d'un objet <xref:System.Data.Common.DbProviderFactory> produit un objet <xref:System.Data.Common.DbDataAdapter> fortement typé pour le fournisseur de données sous-jacent spécifié lors de la création de la fabrique. Vous pouvez ensuite utiliser un objet <xref:System.Data.Common.DbCommandBuilder> pour créer des commandes permettant d'insérer, de mettre à jour et de supprimer des données d'un <xref:System.Data.DataSet> dans une source de données.  
@@ -40,7 +40,7 @@ La méthode <xref:System.Data.Common.DbProviderFactory.CreateDataAdapter%2A> d'u
  Le modèle Factory n'est pas utile pour créer des objets `DbCommand` et `DbDataAdapter` paramétrés. Vous devrez créer une branche dans votre code pour créer des paramètres qui sont adaptés à votre fournisseur de données.  
   
 > [!IMPORTANT]
->  Le fait d'éviter tous les paramètres spécifiques au fournisseur en utilisant la concaténation de chaînes pour construire des instructions SQL directes n'est pas recommandé pour des raisons de sécurité. L'utilisation de la concaténation de chaînes au lieu de paramètres rend votre application vulnérable aux attaques par injection de code SQL.  
+> Le fait d'éviter tous les paramètres spécifiques au fournisseur en utilisant la concaténation de chaînes pour construire des instructions SQL directes n'est pas recommandé pour des raisons de sécurité. L'utilisation de la concaténation de chaînes au lieu de paramètres rend votre application vulnérable aux attaques par injection de code SQL.  
   
 ## <a name="see-also"></a>Voir aussi
 

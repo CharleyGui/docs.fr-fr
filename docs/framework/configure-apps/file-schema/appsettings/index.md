@@ -9,29 +9,29 @@ helpviewer_keywords:
 ms.assetid: 99347d62-3ea5-40b6-bfec-c31431011422
 author: rpetrusha
 ms.author: mairaw
-ms.openlocfilehash: cd836f9ebd4d22ad6542c1fadc204b1ea67d1c26
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: d02f9f952c0ca7651d27571111a2d29f3d1130fe
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300781"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921303"
 ---
 # <a name="app-settings-schema"></a>Schéma des paramètres d’application
 
 Contient des paramètres d’application personnalisés, tels que des chemins d’accès, des URL de service web XML ou d’autres informations de configuration personnalisée pour une application.
 
-[ **\<configuration>** ](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
-&nbsp;&nbsp;[ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<add>** ](~/docs/framework/configure-apps/file-schema/appsettings/add-element-for-appsettings.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<clear>** ](~/docs/framework/configure-apps/file-schema/appsettings/clear-element-for-appsettings.md)   
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<remove>** ](~/docs/framework/configure-apps/file-schema/appsettings/remove-element-for-appsettings.md)
+[ **\<configuration>** ](../configuration-element.md)   
+&nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)   
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<add>** ](add-element-for-appsettings.md)   
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<clear>** ](clear-element-for-appsettings.md)   
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<remove>** ](remove-element-for-appsettings.md)
 
 | Élément | Description |
 | ------- | ----------- |
-| [ **\<appSettings>** ](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) | Contient des balises **\<add>** , **\<clear>** et **\<remove>** pour contrôler les paramètres d’application. A un attribut **file** facultatif. |
-| [ **\<add>** ](~/docs/framework/configure-apps/file-schema/appsettings/add-element-for-appsettings.md) | Définit un paramètre. Enfant de **\<appSettings>** . Requiert des attributs **key** et **value**. |
-| [ **\<clear>** ](~/docs/framework/configure-apps/file-schema/appsettings/clear-element-for-appsettings.md) | Efface tous les paramètres. Enfant de **\<appSettings>** . N’a pas d’attributs. |
-| [ **\<remove>** ](~/docs/framework/configure-apps/file-schema/appsettings/remove-element-for-appsettings.md) | Supprime un paramètre. Enfant de **\<appSettings>** . Exige un attribut **key**. |
+| [ **\<appSettings>** ](appsettings-element-for-configuration.md) | Contient des balises **\<add>** , **\<clear>** et **\<remove>** pour contrôler les paramètres d’application. A un attribut **file** facultatif. |
+| [ **\<add>** ](add-element-for-appsettings.md) | Définit un paramètre. Enfant de **\<appSettings>** . Requiert des attributs **key** et **value**. |
+| [ **\<clear>** ](clear-element-for-appsettings.md) | Efface tous les paramètres. Enfant de **\<appSettings>** . N’a pas d’attributs. |
+| [ **\<remove>** ](remove-element-for-appsettings.md) | Supprime un paramètre. Enfant de **\<appSettings>** . Exige un attribut **key**. |
 
 ## <a name="appsettings-element"></a>\<appSettings>, élément
 
@@ -49,7 +49,7 @@ Supprime toutes les références aux paramètres d’application personnalisés 
 
 Supprime une référence à un paramètre d’application personnalisé hérité de la collection de paramètres d’application. Il définit un attribut pour **key**.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L’exemple suivant montre un fichier de paramètres d’application externe (*custom.config*) qui définit un paramètre d’application personnalisé :
 
@@ -72,5 +72,5 @@ L’exemple suivant montre un fichier de configuration d’application qui conso
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d'ensemble des paramètres d'application](~/docs/framework/winforms/advanced/application-settings-overview.md)
-- [Architecture des paramètres d'application](~/docs/framework/winforms/advanced/application-settings-architecture.md)
+- [Vue d'ensemble des paramètres d'application](../../../winforms/advanced/application-settings-overview.md)
+- [Architecture des paramètres d'application](../../../winforms/advanced/application-settings-architecture.md)

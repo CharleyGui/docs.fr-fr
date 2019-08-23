@@ -1,5 +1,5 @@
 ---
-title: <filter> Élément pour <add> pour <listeners> pour <source>
+title: <filter>, Élément <add> de <listeners> pour pour<source>
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#filter
@@ -9,20 +9,20 @@ helpviewer_keywords:
 - <filter> element for <add> for <listeners> for <source>
 - filter element for <add> for <listeners> for <source>
 ms.assetid: 15808b80-4579-4c25-b385-178cfdf154ba
-ms.openlocfilehash: 3abfd0bdd40f98a9e4774677fc2cd5068c14333f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0d25d0b955a94986147922914068c8a1cf2d96c4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673769"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920522"
 ---
-# <a name="filter-element-for-add-for-listeners-for-source"></a>\<Filtre >, élément pour \<Ajouter > pour \<écouteurs > pour \<source >
+# <a name="filter-element-for-add-for-listeners-for-source"></a>\<élément de > de \<filtre pour l' \<ajout de > pour \<les écouteurs > pour le > source
 Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source de trace.  
   
  \<configuration>  
 \<system.diagnostics>  
 \<sources>  
-\<source>  
+\<> source  
 \<listeners>  
 \<add>  
 \<filter>  
@@ -42,8 +42,8 @@ Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source 
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`type`|Attribut requis.<br /><br /> Spécifie le type du filtre, qui doit hériter la <xref:System.Diagnostics.TraceFilter> classe. Vous pouvez utiliser le nom qualifié d’espace de noms du type, qui correspond à du type <xref:System.Type.FullName%2A> propriété, ou vous pouvez utiliser le nom de type qualifié complet, y compris les informations d’assembly, qui correspondant à la <xref:System.Type.AssemblyQualifiedName%2A> propriété. Pour plus d’informations sur les noms de types qualifiés complets, consultez [spécifiant des noms de types qualifiés complets](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
-|`initializeData`|Attribut facultatif.<br /><br /> La chaîne passée au constructeur pour la classe de filtre spécifié.|  
+|`type`|Attribut requis.<br /><br /> Spécifie le type du filtre, qui doit hériter de <xref:System.Diagnostics.TraceFilter> la classe. Vous pouvez utiliser le nom qualifié par un espace de noms du type, qui correspond à la <xref:System.Type.FullName%2A> propriété du type, ou vous pouvez utiliser le nom de type qualifié complet, y compris les informations de <xref:System.Type.AssemblyQualifiedName%2A> l’assembly, qui correspond à la propriété. Pour plus d’informations sur les noms de types qualifiés complets, consultez [spécification de noms de types qualifiés complets](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
+|`initializeData`|Attribut facultatif.<br /><br /> Chaîne passée au constructeur pour la classe de filtre spécifiée.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -56,16 +56,16 @@ Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source 
 |`system.diagnostics`|Spécifie les écouteurs de trace qui collectent, stockent et acheminent les messages, ainsi que le niveau auquel un commutateur de trace est défini.|  
 |`sources`|Contient les sources de trace qui lancent des messages de traçage.|  
 |`source`|Spécifie une source de trace qui lance des messages de traçage.|  
-|`listeners`|Contient des écouteurs qui collectent, stockent et acheminent les messages. Les écouteurs dirigent la sortie de traçage vers une cible appropriée.|  
+|`listeners`|Contient des écouteurs qui collectent, stockent et acheminent des messages. Les écouteurs dirigent la sortie de suivi vers une cible appropriée.|  
 |`add`|Ajoute un écouteur à la collection `Listeners` pour une source de trace.|  
   
 ## <a name="remarks"></a>Notes  
- Le `<filter>` élément doit être contenu dans un `<add>` élément pour un écouteur de source de trace qui spécifie le type de l’écouteur, pas seulement le nom d’un écouteur défini dans un [ \<sharedListeners >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element.md). Si l’écouteur est défini dans un [ \<sharedListeners >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/sharedlisteners-element.md), le filtre de cet écouteur doit être défini dans cet élément.  
+ L' `<filter>` élément doit être contenu dans un `<add>` élément pour un écouteur de source de suivi qui spécifie le type de l’écouteur, pas seulement le nom d’un écouteur défini dans un [ \<> sharedListeners](sharedlisteners-element.md). Si l’écouteur est défini dans un [ \<> sharedListeners](sharedlisteners-element.md), le filtre de cet écouteur doit être défini dans cet élément.  
   
- Cet élément peut être utilisé dans le fichier de configuration machine (Machine.config) et le fichier de configuration d’application.  
+ Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur (machine. config) et dans le fichier de configuration de l’application.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant montre comment utiliser le `<filter>` élément pour ajouter un filtre à l’écouteur `console` dans le `Listeners` collection pour la source de suivi `myTraceSource`, en spécifiant le niveau d’événement de filtre en tant que `Error`.  
+ L’exemple suivant montre comment utiliser l' `<filter>` élément pour ajouter un filtre à l' `console` écouteur dans la `Listeners` collection pour la source `myTraceSource`de suivi, en spécifiant le niveau d' `Error`événement de filtre en tant que.  
   
 ```xml  
 <configuration>  
@@ -96,4 +96,4 @@ Ajoute un filtre à un écouteur dans la collection `Listeners` pour une source 
 - <xref:System.Diagnostics.TraceListener>
 - <xref:System.Diagnostics.TraceListener.Filter%2A?displayProperty=nameWithType>
 - <xref:System.Diagnostics.TraceFilter>
-- [Schéma des paramètres de trace et de débogage](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+- [Schéma des paramètres de trace et de débogage](index.md)

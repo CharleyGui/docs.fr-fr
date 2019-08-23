@@ -1,19 +1,19 @@
 ---
-title: <workflowInstanceQueries> de WCF
+title: <workflowInstanceQueries>de WCF
 ms.date: 03/30/2017
 ms.assetid: b0852f77-16e4-4d55-8eb7-a19feb0e8fc4
-ms.openlocfilehash: 89e122b87743a81a80ce63b382ae235c1c4863bc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: feae65a75f9f0b2b1b398f3f9e80ac4c8d971dcc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790518"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915303"
 ---
-# <a name="workflowinstancequeries-of-wcf"></a>\<workflowInstanceQueries > de WCF
+# <a name="workflowinstancequeries-of-wcf"></a>\<> workflowInstanceQueries de WCF
 
 Représente une collection d'éléments de configuration qui effectuent le suivi des changements dans le cycle de vie d'une instance de flux de travail, tels que le début ou la fin d'un événement.  
   
-Pour plus d’informations sur les requêtes de modèle de suivi, consultez [modèles de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+Pour plus d’informations sur le suivi des requêtes de profils, consultez modèles de [suivi](../../../windows-workflow-foundation/tracking-profiles.md)  
   
 \<system.serviceModel>  
 \<tracking>  
@@ -60,7 +60,7 @@ Aucun.
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<workflow>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|Un élément de configuration qui contient toutes les requêtes pour un flux de travail spécifique identifié par le [activityDefinitionId](xref:System.ServiceModel.Activities.Tracking.Configuration.ProfileWorkflowElement.ActivityDefinitionId) propriété.|  
+|[\<workflow>](../windows-workflow-foundation/workflow.md)|Élément de configuration qui contient toutes les requêtes pour un flux de travail spécifique identifié par la propriété [ActivityDefinitionId](xref:System.ServiceModel.Activities.Tracking.Configuration.ProfileWorkflowElement.ActivityDefinitionId) .|  
   
 ## <a name="remarks"></a>Notes
 
@@ -94,5 +94,5 @@ La configuration suivante permet de s'abonner aux enregistrements de suivi au ni
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElementCollection?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType>
-- [Suivi et traçage de workflow](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Profils de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [Suivi et traçage de workflow](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Profils de suivi](../../../windows-workflow-foundation/tracking-profiles.md)

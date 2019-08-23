@@ -14,26 +14,26 @@ helpviewer_keywords:
 - bound controls [Windows Forms]
 - data-bound controls [Windows Forms], DataGrid
 ms.assetid: 128cdb07-dfd3-4d60-9d6a-902847667c36
-ms.openlocfilehash: 920a93894cc126f85bc6b618efbe6e9cedea4881
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bac24c2dd622ea780408e902d08708ac09561044
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61666428"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922723"
 ---
 # <a name="how-to-bind-the-windows-forms-datagrid-control-to-a-data-source"></a>Procédure : lier le contrôle DataGrid Windows Forms à une source de données
 > [!NOTE]
->  Le contrôle <xref:System.Windows.Forms.DataGridView> remplace le contrôle <xref:System.Windows.Forms.DataGrid> et lui ajoute des fonctionnalités ; toutefois, le contrôle <xref:System.Windows.Forms.DataGrid> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix. Pour plus d’informations, consultez [Différences entre les contrôles DataGridView et DataGrid Windows Forms](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+> Le contrôle <xref:System.Windows.Forms.DataGridView> remplace le contrôle <xref:System.Windows.Forms.DataGrid> et lui ajoute des fonctionnalités ; toutefois, le contrôle <xref:System.Windows.Forms.DataGrid> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix. Pour plus d’informations, consultez [Différences entre les contrôles DataGridView et DataGrid Windows Forms](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- Les formulaires Windows <xref:System.Windows.Forms.DataGrid> contrôle est spécifiquement conçu pour afficher des informations à partir d’une source de données. Vous liez le contrôle au moment de l’exécution en appelant le <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> (méthode). Bien que vous pouvez afficher des données à partir de diverses sources de données, les sources les plus courantes sont les vues de données et des jeux de données.  
+ Le contrôle <xref:System.Windows.Forms.DataGrid> Windows Forms est spécifiquement conçu pour afficher des informations à partir d’une source de données. Vous liez le contrôle au moment de l’exécution en <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> appelant la méthode. Bien que vous puissiez afficher des données provenant de diverses sources de données, les sources les plus courantes sont les jeux de données et les vues de données.  
   
-### <a name="to-data-bind-the-datagrid-control-programmatically"></a>Lier aux données du contrôle DataGrid par programme  
+### <a name="to-data-bind-the-datagrid-control-programmatically"></a>Pour lier des données au contrôle DataGrid par programmation  
   
-1. Écrire du code pour remplir le dataset.  
+1. Écrivez du code pour remplir le DataSet.  
   
-     Si la source de données est un jeu de données ou une vue de données basée sur une table de dataset, ajoutez le code au formulaire pour remplir le dataset.  
+     Si la source de données est un DataSet ou une vue de données basée sur une table de DataSet, ajoutez du code au formulaire pour remplir le DataSet.  
   
-     Le code exact que vous utilisez dépend où le jeu de données est l’obtention de données. Si le jeu de données est rempli directement à partir d’une base de données, vous appelez généralement la `Fill` méthode d’un adaptateur de données, comme dans l’exemple suivant, qui remplit un dataset nommé `DsCategories1`:  
+     Le code exact que vous utilisez dépend de l’emplacement où le jeu de données obtient des données. Si le DataSet est rempli directement à partir d’une base de données, vous `Fill` appelez généralement la méthode d’un adaptateur de données, comme dans l’exemple suivant, qui remplit `DsCategories1`un DataSet appelé:  
   
     ```vb  
     sqlDataAdapter1.Fill(DsCategories1)  
@@ -47,7 +47,7 @@ ms.locfileid: "61666428"
     sqlDataAdapter1->Fill(dsCategories1);  
     ```  
   
-     Si le jeu de données est remplie à partir d’un service Web XML, vous en général, créez une instance du service dans votre code, puis appelez une de ses méthodes pour retourner un jeu de données. Vous permet ensuite de fusionner le jeu de données à partir du service Web XML dans votre jeu de données local. L’exemple suivant montre comment vous pouvez créer une instance d’un service Web XML appelé `CategoriesService`, appelez sa `GetCategories` (méthode) et fusion, le jeu de données résultant dans un jeu de données local appelé `DsCategories1`:  
+     Si le jeu de données est rempli à partir d’un service Web XML, vous créez généralement une instance du service dans votre code, puis vous appelez l’une de ses méthodes pour retourner un jeu de données. Vous fusionnez ensuite le jeu de données du service Web XML dans votre jeu de données local. L’exemple suivant montre comment vous pouvez créer une instance d’un service Web XML appelé `CategoriesService`, appeler sa `GetCategories` méthode et fusionner le jeu de données résultant dans un jeu `DsCategories1`de données local appelé:  
   
     ```vb  
     Dim ws As New MyProject.localhost.CategoriesService()  
@@ -68,12 +68,12 @@ ms.locfileid: "61666428"
     dsCategories1->Merge(ws->GetCategories());  
     ```  
   
-2. Appelez le <xref:System.Windows.Forms.DataGrid> du contrôle <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> méthode, en lui passant la source de données et un membre de données. Si vous n’avez pas besoin de transmettre explicitement un membre de données, passez une chaîne vide.  
+2. Appelez la <xref:System.Windows.Forms.DataGrid> méthode du <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> contrôle, en lui transmettant la source de données et un membre de données. Si vous n’avez pas besoin de passer explicitement un membre de données, transmettez une chaîne vide.  
   
     > [!NOTE]
-    >  Si vous liez la grille pour la première fois, vous pouvez définir le contrôle <xref:System.Windows.Forms.DataGrid.DataSource%2A> et <xref:System.Windows.Forms.DataGrid.DataMember%2A> propriétés. Toutefois, vous ne pouvez pas réinitialiser ces propriétés une fois qu’elles ont été définies. Par conséquent, il est recommandé de toujours utiliser le <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> (méthode).  
+    > Si vous liez la grille pour la première fois, vous pouvez définir les propriétés et <xref:System.Windows.Forms.DataGrid.DataSource%2A> <xref:System.Windows.Forms.DataGrid.DataMember%2A> du contrôle. Toutefois, vous ne pouvez pas réinitialiser ces propriétés une fois qu’elles ont été définies. Par conséquent, il est recommandé de toujours utiliser la <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> méthode.  
   
-     L’exemple suivant montre comment vous pouvez lier par programmation à la table Customers dans un dataset nommé `DsCustomers1`:  
+     L’exemple suivant montre comment vous pouvez lier par programmation à la table Customers dans un DataSet appelé `DsCustomers1`:  
   
     ```vb  
     DataGrid1.SetDataBinding(DsCustomers1, "Customers")  
@@ -87,7 +87,7 @@ ms.locfileid: "61666428"
     dataGrid1->SetDataBinding(dsCustomers1, "Customers");  
     ```  
   
-     Si la table Customers est la seule table dans le jeu de données, vous pourriez également lier à la grille de cette façon :  
+     Si la table Customers est la seule table dans le jeu de données, vous pouvez également lier la grille de cette façon:  
   
     ```vb  
     DataGrid1.SetDataBinding(DsCustomers1, "")  
@@ -101,11 +101,11 @@ ms.locfileid: "61666428"
     dataGrid1->SetDataBinding(dsCustomers1, "");  
     ```  
   
-3. (Facultatif) Ajouter les styles de table approprié et les styles de colonne à la grille. S’il n’y a aucun style de tableau, vous verrez la table, mais avec la mise en forme minimale et toutes les colonnes visibles.  
+3. Facultatif Ajoutez les styles de table et de colonne appropriés à la grille. S’il n’existe aucun style de table, vous verrez la table, mais avec une mise en forme minimale et une fois toutes les colonnes visibles.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble du contrôle DataGrid](datagrid-control-overview-windows-forms.md)
-- [Guide pratique pour Ajouter des Tables et des colonnes au contrôle DataGrid Windows Forms](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
+- [Guide pratique pour Ajouter des tables et des colonnes au contrôle DataGrid Windows Forms](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
 - [DataGrid, contrôle](datagrid-control-windows-forms.md)
 - [Liaison de données Windows Forms](../windows-forms-data-binding.md)

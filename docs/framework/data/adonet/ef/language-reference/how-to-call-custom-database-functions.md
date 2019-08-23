@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4354e5eb-dd45-469d-97fb-1c495705ee59
-ms.openlocfilehash: cc2e25183649f6a95e7862520ccc5719f201277a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6ddd6ebc6215ec17fa416fb0de8f81cf631365db
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774645"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936045"
 ---
 # <a name="how-to-call-custom-database-functions"></a>Procédure : Appeler des fonctions de base de données personnalisées
 Cette rubrique décrit comment appeler des fonctions personnalisées définies dans la base de données dans des requêtes LINQ to Entities.  
@@ -27,19 +27,19 @@ Cette rubrique décrit comment appeler des fonctions personnalisées définies d
   
 2. Déclarez une fonction dans la partie SSDL (Store Schema Definition Language) de votre fichier .edmx. Le nom de la fonction doit être le même que le nom de la fonction déclarée dans la base de données.  
   
-     Pour plus d’informations, consultez [élément (fonction) (SSDL)](/ef/ef6/modeling/designer/advanced/edmx/ssdl-spec#function-element-ssdl).  
+     Pour plus d’informations, consultez [Function, élément (SSDL)](/ef/ef6/modeling/designer/advanced/edmx/ssdl-spec#function-element-ssdl).  
   
 3. Ajoutez une méthode correspondante à une classe dans votre code d'application et appliquez un attribut <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> à la méthode. Notez que les paramètres <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> et <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> de l'attribut sont respectivement le nom de l'espace de noms du modèle conceptuel et le nom de la fonction dans le modèle conceptuel. La résolution des noms de fonctions pour LINQ respecte la casse.  
   
 4. Appelez la méthode dans une requête LINQ to Entities.  
   
-## <a name="example"></a>Exemple  
- L'exemple suivant montre comment appeler une fonction de base de données personnalisée dans une requête LINQ to Entities. L'exemple utilise le modèle School. Pour plus d’informations sur le modèle School, consultez [création de la base de données School](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)) et [générant le fichier de School .edmx](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399739(v=vs.100)).  
+## <a name="example"></a>Exemples  
+ L'exemple suivant montre comment appeler une fonction de base de données personnalisée dans une requête LINQ to Entities. L'exemple utilise le modèle School. Pour plus d’informations sur le modèle School, consultez [création de l’exemple de base de données School](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)) et [génération du fichier School. edmx](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399739(v=vs.100)).  
   
  Le code suivant ajoute la fonction `AvgStudentGrade` à l'exemple de base de données School.  
   
 > [!NOTE]
->  La procédure d'appel d'une fonction de base de données personnalisée est la même indépendamment du serveur de base de données. Toutefois, le code ci-dessous est spécifique à la création d'une fonction dans une base de données SQL Server. Le code pour la création d'une fonction personnalisée sur d'autres serveurs de bases de données peut différer.  
+> La procédure d'appel d'une fonction de base de données personnalisée est la même indépendamment du serveur de base de données. Toutefois, le code ci-dessous est spécifique à la création d'une fonction dans une base de données SQL Server. Le code pour la création d'une fonction personnalisée sur d'autres serveurs de bases de données peut différer.  
   
  [!code-sql[DP L2E MapToDBFunction#1](../../../../../../samples/snippets/tsql/VS_Snippets_Data/dp l2e maptodbfunction/tsql/create_avgstudentgrade.sql#1)]  
   
@@ -62,5 +62,5 @@ Cette rubrique décrit comment appeler des fonctions personnalisées définies d
   
 ## <a name="see-also"></a>Voir aussi
 
-- [vue d’ensemble du fichier .edmx](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
+- [Vue d’ensemble du fichier. edmx](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
 - [Requêtes dans LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)

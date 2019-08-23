@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Multiple EndPoints
 ms.assetid: 8f0c2e1f-9aee-41c2-8301-c72b7f664412
-ms.openlocfilehash: 90b8c3cb49ff7b246b6bf7799d6b76f8549b23e5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7fe38e685b662a0dbfe6f818a597776802eada42
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61755959"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930351"
 ---
 # <a name="multiple-endpoints"></a>Multiple Endpoints
-Cet exemple montre comment configurer plusieurs points de terminaison sur un service et comment communiquer avec chacun d'entre eux à partir d'un client. Cet exemple est basé sur le [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md). La configuration de service a été modifiée pour définir deux points de terminaison qui prennent en charge le contrat `ICalculator`, mais chacun à une adresse différente à l’aide d’une liaison distincte. Le code et la configuration client ont été modifiés pour communiquer avec les deux points de terminaison de service.  
+Cet exemple montre comment configurer plusieurs points de terminaison sur un service et comment communiquer avec chacun d'entre eux à partir d'un client. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md). La configuration de service a été modifiée pour définir deux points de terminaison qui prennent en charge le contrat `ICalculator`, mais chacun à une adresse différente à l’aide d’une liaison distincte. Le code et la configuration client ont été modifiés pour communiquer avec les deux points de terminaison de service.  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
+> La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
  Le service fichier Web.config a été modifié pour définir deux points de terminaison, chacun prenant en charge le même contrat `ICalculator` contracte, mais à des adresses différentes à l’aide de liaisons distinctes. Le premier point de terminaison est défini à l’adresse de base à l’aide d’une liaison `basicHttpBinding`, qui n’a pas sécurité activée. Le deuxième point de terminaison est défini à {baseaddress}/secure à l'aide d'une liaison `wsHttpBinding`, qui est sécurisée par défaut à l'aide de WS-Security avec l'authentification Windows.  
   
@@ -104,17 +104,17 @@ Press <ENTER> to terminate client.
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
 2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Pour exécuter l’exemple dans une configuration unique ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
 >  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\MultipleEndpoints`  

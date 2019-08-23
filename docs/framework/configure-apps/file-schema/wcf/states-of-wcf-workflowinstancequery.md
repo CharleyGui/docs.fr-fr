@@ -1,19 +1,19 @@
 ---
-title: <states> de WCF, <workflowInstanceQuery>
+title: <states>de WCF,<workflowInstanceQuery>
 ms.date: 03/30/2017
 ms.assetid: d17f7525-8035-4e9e-85a0-4cddae59f85d
-ms.openlocfilehash: fad6f9c8871f79e4a1e26c893eed86ba168f6d01
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ef4ce4b6fa6e60ead10b196b10a7c1489e15ac25
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61757948"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938980"
 ---
-# <a name="states-of-wcf-workflowinstancequery"></a>\<states> of WCF, \<workflowInstanceQuery>
+# <a name="states-of-wcf-workflowinstancequery"></a>\<États > de WCF, \<workflowInstanceQuery >
 
 Représente une collection d’états faisant l’objet d’un abonnement dans l’instance de flux de travail suivie lors de la création des enregistrements de suivi.  
   
-Pour plus d’informations sur les requêtes de modèle de suivi, consultez [modèles de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+Pour plus d’informations sur le suivi des requêtes de profils, consultez modèles de [suivi](../../../windows-workflow-foundation/tracking-profiles.md)  
   
 \<system.serviceModel> \<tracking>  
 \<profiles>  
@@ -61,7 +61,7 @@ Aucun.
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<workflowInstanceQuery>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowinstancequery.md)|Requête qui effectue le suivi des changements dans le cycle de vie d'une instance de flux de travail, tels que le début ou la fin d'un événement.|  
+|[\<workflowInstanceQuery>](../windows-workflow-foundation/workflowinstancequery.md)|Requête qui effectue le suivi des changements dans le cycle de vie d'une instance de flux de travail, tels que le début ou la fin d'un événement.|  
   
 ## <a name="remarks"></a>Notes
 
@@ -81,7 +81,7 @@ Les valeurs d'état possibles sont décrites dans le tableau suivant.
 |UnhandledException|L'instance de flux de travail a rencontré une exception non gérée.|  
 |Non chargé|L'instance de flux de travail est déchargée.|  
 |Canceled|L'instance de flux de travail est annulée.|  
-|Suspendu|L'instance de workflow est interrompue.|  
+|Interrompu|L'instance de workflow est interrompue.|  
 |Arrêté|L'instance de flux de travail est arrêtée.|  
 |Unsuspended|L'instance de flux de travail est non interrompue.|  
   
@@ -104,5 +104,5 @@ La configuration suivante permet de s'abonner aux enregistrements de suivi au ni
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.StateElementCollection?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType>
-- [Suivi et traçage de workflow](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Profils de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [Suivi et traçage de workflow](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Profils de suivi](../../../windows-workflow-foundation/tracking-profiles.md)

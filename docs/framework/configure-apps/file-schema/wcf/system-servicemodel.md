@@ -8,15 +8,15 @@ helpviewer_keywords:
 - <system.serviceModel> element
 - system.serviceModel element
 ms.assetid: 78519531-ad7a-40d3-b3e7-42f1103d8854
-ms.openlocfilehash: c176f7f470cc65bb135e5f92935102e09c7e8485
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4fa6916437bb569029efe270ba8296703d89c539
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758442"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938916"
 ---
 # <a name="systemservicemodel"></a>\<system.serviceModel>
-Cette section de configuration contient tous les éléments de configuration ServiceModel de Windows Communication Foundation (WCF).  
+Cette section de configuration contient tous les éléments de configuration de l’Windows Communication Foundation (WCF) ServiceModel.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -55,25 +55,25 @@ Cette section de configuration contient tous les éléments de configuration Ser
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun.  
+ Aucun  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<behaviors>](../../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)|Cette section définit deux collections enfants nommées `endpointBehaviors` et `serviceBehaviors`.  Chaque collection définit des éléments de comportement consommés respectivement par les points de terminaison et les services. Chaque élément de comportement est identifié par son attribut `name` unique.|  
-|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Cette section contient une collection de liaisons standard et personnalisées. Chaque entrée est identifiée par son `name` unique. Les services utilisent les liaisons en les liant à l’aide de `name`.|  
-|[\<client>](../../../../../docs/framework/configure-apps/file-schema/wcf/client.md)|Cette section contient la liste des points de terminaison utilisés par un client pour se connecter à un service.|  
-|[\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)|Cette section définit des contrats COM activés pour interagir avec WCF et COM.|  
-|[\<commonBehaviors>](../../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md)|Cette section peut uniquement être définie dans le fichier machine.config. Elle définit deux collections enfants nommées `endpointBehaviors` et `serviceBehaviors`.  Chaque collection définit des éléments de comportement consommés respectivement par tous les points de terminaison WCF et les services sur l’ordinateur.  Si un comportement est défini dans les deux `<commonBehaviors>` et `<behaviors>` sections, le comportement dans le \<comportements > section est prioritaire.|  
-|[\<diagnostics>](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md)|Cette section contient les paramètres des fonctionnalités de diagnostic de WCF. L'utilisateur peut activer/désactiver le suivi, les compteurs de performance et le fournisseur WMI et ajouter des filtres de messages personnalisés.|  
-|[\<extensions>](../../../../../docs/framework/configure-apps/file-schema/wcf/extensions-section.md)|Cette section contient une collection d’extensions qui permettent à l’utilisateur de créer des liaisons, des comportements et d’autres aspects d’extensions définis par l’utilisateur.|  
-|[\<protocolMapping>](../../../../../docs/framework/configure-apps/file-schema/wcf/protocolmapping.md)|Cette section définit un ensemble de mappage de protocole par défaut entre les schémas de protocole de transport (par exemple, http, net.tcp, net.pipe, etc.) et des liaisons WCF.|  
-|[\<routing>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Cette section définit un ensemble de filtres de routage, déterminant le type de Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> à utiliser lors de l’évaluation des messages entrants, ainsi que le routage des tables qui définissent les points de terminaison cible pour envoyer des messages lorsqu’un filtre correspond.|  
-|[\<serviceHostingEnvironment>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md)|Cette section définit le type instancié par l'environnement d'hébergement de service pour un transport particulier. Si cette section est vide, le type par défaut est utilisé.|  
-|[\<services>](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md)|Cette section contient une collection de services. Pour chaque service défini dans l'assembly, cet élément contient un élément `service` indiquant les paramètres du service.|  
-|[\<standardEndpoints>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Cette section définit une collection de points de terminaison standard, qui sont des points de terminaison préconfigurés réutilisables. Un point de terminaison standard possède un ou plusieurs attributs d’adresse, de liaison et de contrat ayant une valeur fixe. Par exemple, dans le point de terminaison de découverte, le contrat est fixe. Vous pouvez également utiliser des points de terminaison standard pour étendre le point de terminaison de service avec de nouvelles propriétés, ce qui revient à définir des liaisons personnalisées.|
-|[\<tracking>](../../../../../docs/framework/configure-apps/file-schema/wcf/tracking-of-wcf.md)|Cette section définit les paramètres de suivi pour un service de workflow.|
+|[\<behaviors>](behaviors.md)|Cette section définit deux collections enfants nommées `endpointBehaviors` et `serviceBehaviors`.  Chaque collection définit des éléments de comportement consommés respectivement par les points de terminaison et les services. Chaque élément de comportement est identifié par son attribut `name` unique.|  
+|[\<bindings>](bindings.md)|Cette section contient une collection de liaisons standard et personnalisées. Chaque entrée est identifiée par son `name` unique. Les services utilisent les liaisons en les liant à l’aide de `name`.|  
+|[\<client>](client.md)|Cette section contient la liste des points de terminaison utilisés par un client pour se connecter à un service.|  
+|[\<comContracts>](comcontracts.md)|Cette section définit des contrats COM activés pour interagir avec WCF et COM.|  
+|[\<commonBehaviors>](commonbehaviors.md)|Cette section peut uniquement être définie dans le fichier machine.config. Elle définit deux collections enfants nommées `endpointBehaviors` et `serviceBehaviors`.  Chaque collection définit des éléments de comportement consommés respectivement par tous les services et points de terminaison WCF sur l’ordinateur.  Si un comportement est défini dans `<commonBehaviors>` les sections et `<behaviors>` , le comportement de la \<section > des comportements est préféré.|  
+|[\<diagnostics>](diagnostics.md)|Cette section contient les paramètres des fonctionnalités de diagnostic de WCF. L'utilisateur peut activer/désactiver le suivi, les compteurs de performance et le fournisseur WMI et ajouter des filtres de messages personnalisés.|  
+|[\<extensions>](extensions-section.md)|Cette section contient une collection d’extensions qui permettent à l’utilisateur de créer des liaisons, des comportements et d’autres aspects d’extensions définis par l’utilisateur.|  
+|[\<protocolMapping>](protocolmapping.md)|Cette section définit un ensemble de mappages de protocole par défaut entre des schémas de protocole de transport (par exemple, http, net. TCP, net. pipe, etc.) et des liaisons WCF.|  
+|[\<routing>](routing.md)|Cette section définit un ensemble de filtres de routage qui déterminent le type de Windows Communication Foundation (WCF<xref:System.ServiceModel.Dispatcher.MessageFilter> ) à utiliser lors de l’évaluation des messages entrants, ainsi que les tables de routage qui définissent les points de terminaison cibles auxquels envoyer des messages lorsqu’un filtrer les correspondances.|  
+|[\<serviceHostingEnvironment>](servicehostingenvironment.md)|Cette section définit le type instancié par l'environnement d'hébergement de service pour un transport particulier. Si cette section est vide, le type par défaut est utilisé.|  
+|[\<services>](services.md)|Cette section contient une collection de services. Pour chaque service défini dans l'assembly, cet élément contient un élément `service` indiquant les paramètres du service.|  
+|[\<standardEndpoints>](standardendpoints.md)|Cette section définit une collection de points de terminaison standard, qui sont des points de terminaison préconfigurés réutilisables. Un point de terminaison standard possède un ou plusieurs attributs d’adresse, de liaison et de contrat ayant une valeur fixe. Par exemple, dans le point de terminaison de découverte, le contrat est fixe. Vous pouvez également utiliser des points de terminaison standard pour étendre le point de terminaison de service avec de nouvelles propriétés, ce qui revient à définir des liaisons personnalisées.|
+|[\<tracking>](tracking-of-wcf.md)|Cette section définit les paramètres de suivi d’un service de Workflow.|
 
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -84,7 +84,7 @@ Cette section de configuration contient tous les éléments de configuration Ser
 ## <a name="remarks"></a>Notes  
  WCF n’ajoute pas d’éléments aux sections de configuration d’autres produits.  
   
- Les services WCF sont définis dans la `services` section du fichier de configuration. Un assembly peut contenir n'importe quel nombre de services. Chacun dispose de sa propre section de configuration de `service`. Cette section et son contenu définissent le contrat, le comportement et les points de terminaison du service en question.  
+ Les services WCF sont définis dans `services` la section du fichier de configuration. Un assembly peut contenir n'importe quel nombre de services. Chacun dispose de sa propre section de configuration de `service`. Cette section et son contenu définissent le contrat, le comportement et les points de terminaison du service en question.  
   
  Seul l'attribut `name` d'un service est requis.  Par défaut, le nom d'un service décrit le type CLR sous-jacent utilisé pour implémenter un service ; toutefois, vous pouvez modifier la propriété ConfigurationName d'un <xref:System.ServiceModel.ServiceContractAttribute> pour remplacer la spécification de type CLR.  
   
@@ -94,7 +94,7 @@ Cette section de configuration contient tous les éléments de configuration Ser
   
  Les liaisons sont liées aux points de terminaison grâce à la combinaison des attributs `name` et `bindingConfiguration`. L’attribut `binding` définit la section dans laquelle la liaison est définie. L'attribut `bindingConfiguration` définit parmi les liaisons configurées figurant dans la section de liaison celle qui est utilisée. Une section de liaison peut définir plusieurs liaisons configurées.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Voici un exemple de fichier de configuration WCF.  
   
 ```xml  

@@ -40,12 +40,12 @@ helpviewer_keywords:
 ms.assetid: cf624c1f-c160-46a1-bb2b-213587688da7
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9b46404ee791855301611c1d883f26514b9b9d2f
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 2e24cd05bb1c1ed9425c9be8bc02cb92dc488005
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833798"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935731"
 ---
 # <a name="reliability-best-practices"></a>Meilleures pratiques pour la fiabilité
 
@@ -117,7 +117,7 @@ Utilisez <xref:System.Runtime.InteropServices.SafeHandle> pour nettoyer des ress
 
 Le CLR doit pouvoir identifier du code placé dans un verrou afin de détruire <xref:System.AppDomain> au lien d’interrompre simplement le thread.  L’abandon du thread peut être dangereux dans la mesure où les données manipulées par le thread peuvent être laissées dans un état incohérent. Ainsi, <xref:System.AppDomain> doit être recyclé dans son intégralité.  L’impossibilité d’identifier un verrou peut se traduire par des interblocages ou des résultats incorrects. Utilisez les méthodes <xref:System.Threading.Thread.BeginCriticalRegion%2A> et <xref:System.Threading.Thread.EndCriticalRegion%2A> pour identifier des régions de verrouillage.  Il s’agit de méthodes statiques sur la classe <xref:System.Threading.Thread> qui s’appliquent uniquement au thread actif, permettant d’éviter qu’un thread modifie le nombre de verrous d’un autre thread.
 
-La notification CLR étant intégrée à <xref:System.Threading.Monitor.Enter%2A> et <xref:System.Threading.Monitor.Exit%2A> leur utilisation est recommandée de même que celle de l’[instruction lock](~/docs/csharp/language-reference/keywords/lock-statement.md), qui utilise ces méthodes.
+La notification CLR étant intégrée à <xref:System.Threading.Monitor.Enter%2A> et <xref:System.Threading.Monitor.Exit%2A> leur utilisation est recommandée de même que celle de l’[instruction lock](../../csharp/language-reference/keywords/lock-statement.md), qui utilise ces méthodes.
 
 D’autres mécanismes de verrouillage tels que les verrouillages spinlock et <xref:System.Threading.AutoResetEvent> doivent appeler ces méthodes pour notifier le CLR de l’entrée dans une section critique.  Ces méthodes ne prennent pas de verrous ; elles informent le CLR que le code s’exécute dans une section critique et que l’abandon du thread peut provoquer un état partagé incohérent.  Si vous avez défini votre propre type de verrou, tel qu’une classe <xref:System.Threading.ReaderWriterLock> personnalisée, utilisez ces méthodes de décompte de verrous.
 
@@ -143,7 +143,7 @@ Si le code utilise un objet COM, évitez de partager cet objet COM entre des dom
 
 ### <a name="locks-do-not-work-process-wide-or-between-application-domains"></a>Les verrous ne fonctionnent pas au niveau du processus ou entre domaines d’application.
 
-Auparavant, on utilisait <xref:System.Threading.Monitor.Enter%2A> et l’[instruction lock](~/docs/csharp/language-reference/keywords/lock-statement.md) pour créer des verrous de processus globaux.  Cela se produit, par exemple, au moment d’un verrouillage sur des classes agiles <xref:System.AppDomain>, telles que des instances de <xref:System.Type> provenant d’assemblys non partagés, des objets <xref:System.Threading.Thread>, des chaînes internées et certaines chaînes partagées entre des domaines d’application à l’aide de la communication à distance.  Ces verrous ne sont plus placés au niveau du processus.  Pour identifier la présence d’un verrou de niveau processus entre domaines d’application, déterminez si le code du verrou utilise une ressource persistante externe, telle qu’un fichier sur le disque ou éventuellement une base de données.
+Auparavant, on utilisait <xref:System.Threading.Monitor.Enter%2A> et l’[instruction lock](../../csharp/language-reference/keywords/lock-statement.md) pour créer des verrous de processus globaux.  Cela se produit, par exemple, au moment d’un verrouillage sur des classes agiles <xref:System.AppDomain>, telles que des instances de <xref:System.Type> provenant d’assemblys non partagés, des objets <xref:System.Threading.Thread>, des chaînes internées et certaines chaînes partagées entre des domaines d’application à l’aide de la communication à distance.  Ces verrous ne sont plus placés au niveau du processus.  Pour identifier la présence d’un verrou de niveau processus entre domaines d’application, déterminez si le code du verrou utilise une ressource persistante externe, telle qu’un fichier sur le disque ou éventuellement une base de données.
 
 Notez que l’acquisition d’un verrou dans un <xref:System.AppDomain> peut provoquer des problèmes si le code protégé utilise une ressource externe dans la mesure où ce code peut s’exécuter simultanément dans plusieurs domaines d’application.  Cela peut poser un problème au moment de l’écriture dans un fichier journal ou d’une liaison à un socket pour tout le processus.  Ces modifications montrent qu’il n’y a aucun moyen facile, à l’aide du code managé, d’obtenir un verrou au niveau du processus global, autre que celui consistant à utiliser une instance de <xref:System.Threading.Mutex> ou <xref:System.Threading.Semaphore> nommée.  Créez du code qui ne s’exécute pas simultanément dans deux domaines d’application ou utilisez les classes <xref:System.Threading.Mutex> ou <xref:System.Threading.Semaphore>.  Si le code existant ne peut pas être changé, n’utilisez pas un mutex Win32 nommé pour accomplir cette synchronisation. En effet, durant une exécution en mode fibre, vous ne pouvez pas garantir que le même thread de système d’exploitation acquerra et libérera un mutex.  Vous devez utiliser la classe <xref:System.Threading.Mutex> managée, un <xref:System.Threading.ManualResetEvent> nommé, <xref:System.Threading.AutoResetEvent> ou un <xref:System.Threading.Semaphore> pour synchroniser le verrou de code d’une façon reconnue par le CLR au lieu de synchroniser le verrou à l’aide de code non managé.
 
@@ -241,7 +241,7 @@ Pour SQL Server, toutes les méthodes utilisées pour introduire la synchronisat
 
 ### <a name="do-not-block-indefinitely-in-unmanaged-code"></a>Évitez des blocages indéfinis dans du code non managé
 
-Le blocage d’un thread dans du code non managé au lieu du code managé peut provoquer une attaque par déni de service, car le CLR n’est pas en mesure d’interrompre le thread.  Un thread bloqué empêche le CLR de décharger le <xref:System.AppDomain>, ou alors en exécutant des opérations très peu sécurisées.  Blocage à l’aide d’un Windows primitive de synchronisation est un exemple clair d’action que non autorisée.  Blocage dans un appel à `ReadFile` sur un socket doit être évitée si possible, dans l’idéal, l’API Windows doit fournir un mécanisme pour une opération de ce délai d’attente.
+Le blocage d’un thread dans du code non managé au lieu du code managé peut provoquer une attaque par déni de service, car le CLR n’est pas en mesure d’interrompre le thread.  Un thread bloqué empêche le CLR de décharger le <xref:System.AppDomain>, ou alors en exécutant des opérations très peu sécurisées.  Le blocage de l’utilisation d’une primitive de synchronisation Windows est un exemple clair d’un point que nous ne pouvons pas autoriser.  Le blocage dans un appel `ReadFile` à sur un socket doit être évité si possible. dans l’idéal, l’API Windows doit fournir un mécanisme pour qu’une opération comme celle-ci expire.
 
 Toute méthode qui effectue des appels dans du code natif doit de préférence utiliser un appel Win32 avec un délai d’attente raisonnable et limité.  Si l’utilisateur est autorisé à spécifier le délai d’attente, il ne doit pas être autorisé à spécifier un délai d’attente infini sans une autorisation de sécurité spécifique.  À titre indicatif, si une méthode se bloque pendant plus de 10 secondes, vous devez utiliser une version qui prend en charge des délais d’attente ou vous avez besoin d’une assistance CLR supplémentaire.
 
@@ -265,7 +265,7 @@ Les finaliseurs ne doivent pas avoir de problèmes de synchronisation. N’utili
 
 ### <a name="avoid-unmanaged-memory-if-possible"></a>Évitez si possible la mémoire non managée
 
-Il peut y avoir des fuites de mémoire non managée, comme pour un handle de système d’exploitation. Si possible, essayez d’utiliser la mémoire sur la pile à l’aide de [stackalloc](~/docs/csharp/language-reference/operators/stackalloc.md) ou d’un objet managé épinglé (par exemple, avec l’[instruction fixed](~/docs/csharp/language-reference/keywords/fixed-statement.md)) ou un <xref:System.Runtime.InteropServices.GCHandle> utilisant un tableau d’octets (byte[]). <xref:System.GC> finit par nettoyer ceux-ci. Toutefois, si vous devez allouer de la mémoire non managée, envisagez d’utiliser une classe qui dérive de <xref:System.Runtime.InteropServices.SafeHandle> pour inclure l’allocation de mémoire dans un wrapper.
+Il peut y avoir des fuites de mémoire non managée, comme pour un handle de système d’exploitation. Si possible, essayez d’utiliser la mémoire sur la pile à l’aide de [stackalloc](../../csharp/language-reference/operators/stackalloc.md) ou d’un objet managé épinglé (par exemple, avec l’[instruction fixed](../../csharp/language-reference/keywords/fixed-statement.md)) ou un <xref:System.Runtime.InteropServices.GCHandle> utilisant un tableau d’octets (byte[]). <xref:System.GC> finit par nettoyer ceux-ci. Toutefois, si vous devez allouer de la mémoire non managée, envisagez d’utiliser une classe qui dérive de <xref:System.Runtime.InteropServices.SafeHandle> pour inclure l’allocation de mémoire dans un wrapper.
 
 Notez que <xref:System.Runtime.InteropServices.SafeHandle> ne convient pas dans un cas au moins.  Pour les appels de méthode COM qui allouent ou libèrent de la mémoire, il est fréquent qu’une DLL alloue de la mémoire via `CoTaskMemAlloc`, puis qu’une autre DLL libère cette mémoire avec `CoTaskMemFree`.  Utiliser <xref:System.Runtime.InteropServices.SafeHandle> dans ces emplacements n’est pas adapté puisqu’il tente alors d’attacher la durée de vie de la mémoire non managée à la durée de vie de <xref:System.Runtime.InteropServices.SafeHandle> au lieu de laisser l’autre DLL contrôler la durée de vie de la mémoire.
 
@@ -277,7 +277,7 @@ Envisagez de changer tous les emplacements qui interceptent toutes les exception
 
 #### <a name="code-analysis-rule"></a>Règle d’analyse du code
 
-Examinez tous les blocs catch dans le code managé qui interceptent tous les objets ou toutes les exceptions.  Dans C#, cela revient à marquer `catch` {} et `catch(Exception)` {}.  Envisagez de définir un type d’exception très spécifique ou effectuez une revue du code pour garantir qu’il ne se comporte pas de façon incorrecte s’il intercepte un type d’exception inattendu.
+Examinez tous les blocs catch dans le code managé qui interceptent tous les objets ou toutes les exceptions.  Dans C#, cela signifie marquer à `catch` la `catch(Exception)` fois {} et {}.  Envisagez de définir un type d’exception très spécifique ou effectuez une revue du code pour garantir qu’il ne se comporte pas de façon incorrecte s’il intercepte un type d’exception inattendu.
 
 ### <a name="do-not-assume-a-managed-thread-is-a-win32-thread--it-is-a-fiber"></a>Ne supposez pas qu’un thread managé est un thread Win32 alors qu’il s’agit d’une fibre
 

@@ -2,18 +2,18 @@
 title: Exemples de documents XML (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: a734cc4e-d95d-4631-91a2-81618c8ad894
-ms.openlocfilehash: d8567d8129dd7ba32e847b8c1e28ffc992d10b1f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c50abcc6ef4c23bcd78c5ab0e5e5deb4a369b164
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787138"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916542"
 ---
 # <a name="sample-xml-documents-linq-to-xml"></a>Exemples de documents XML (LINQ to XML)
 Les exemples de fichiers suivants sont utilisés dans les exemples de code et les extraits de code figurant dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
 > [!NOTE]
->  Les noms de sociétés, d'organisations, de produits, de domaines, d'adresses de messagerie, de logos, de personnes, de lieux et d'événements mentionnés dans les exemples sont fictifs. Toute ressemblance avec des noms ou des événements réels est purement fortuite et involontaire.  
+> Les noms de sociétés, d'organisations, de produits, de domaines, d'adresses de messagerie, de logos, de personnes, de lieux et d'événements mentionnés dans les exemples sont fictifs. Toute ressemblance avec des noms ou des événements réels est purement fortuite et involontaire.  
   
 ## <a name="in-this-section"></a>Dans cette section  
   

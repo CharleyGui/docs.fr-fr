@@ -2,14 +2,14 @@
 title: <endpoint> de <client>
 ms.date: 03/30/2017
 ms.assetid: de6238ae-bbf8-48e9-a1b5-e24c0bea8afa
-ms.openlocfilehash: 3af41ad5b5681b08aac44d984372ab5ac66caf5e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2bf59972ff2f75995e94a3c1934e88944d65fcc7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673223"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919096"
 ---
-# <a name="endpoint-of-client"></a>\<point de terminaison > de \<client >
+# <a name="endpoint-of-client"></a>\<> de point \<de terminaison du > client
 Spécifie les propriétés du contrat, de la liaison et de l’adresse du point de terminaison du canal employées par les clients pour se connecter aux points de terminaison de service sur le serveur.  
   
  \<system.ServiceModel>  
@@ -40,7 +40,7 @@ Spécifie les propriétés du contrat, de la liaison et de l’adresse du point 
 |adresse|Attribut de chaîne requis.<br /><br /> Spécifie l'adresse du point de terminaison. La valeur par défaut est une chaîne vide. L'adresse doit être un URI absolu.|  
 |behaviorConfiguration|Chaîne qui contient le nom de comportement du comportement à utiliser pour instancier le point de terminaison. Le nom du comportement doit être dans la portée, au niveau où le service est défini. La valeur par défaut est une chaîne vide.|  
 |liaison|Attribut de chaîne requis.<br /><br /> Chaîne qui indique le type de liaison à utiliser. Ce type doit posséder une section de configuration inscrite pour pouvoir être référencé. Il est inscrit en fonction du nom de la section et non en fonction du nom du type de la liaison.|  
-|bindingConfiguration|Optionnel. Chaîne qui contient le nom de la configuration de liaison à utiliser lorsque le point de terminaison est instancié. La configuration de la liaison doit être dans la portée, au niveau où le point de terminaison est défini. La valeur par défaut est une chaîne vide.<br /><br /> Cet attribut est utilisé conjointement à `binding` pour référencer une configuration de liaison spécifique dans le fichier de configuration. Définissez cet attribut si vous essayez d’utiliser une liaison personnalisée. Sinon, une exception peut être levée.|  
+|bindingConfiguration|facultatif. Chaîne qui contient le nom de la configuration de liaison à utiliser lorsque le point de terminaison est instancié. La configuration de la liaison doit être dans la portée, au niveau où le point de terminaison est défini. La valeur par défaut est une chaîne vide.<br /><br /> Cet attribut est utilisé conjointement à `binding` pour référencer une configuration de liaison spécifique dans le fichier de configuration. Définissez cet attribut si vous essayez d’utiliser une liaison personnalisée. Sinon, une exception peut être levée.|  
 |contrat|Attribut de chaîne requis.<br /><br /> Chaîne qui indique le contrat exposé par ce point de terminaison. L'assembly doit implémenter le type de contrat.|  
 |endpointConfiguration|Chaîne qui spécifie le nom du point de terminaison standard défini par l'attribut `kind`, qui fait référence aux informations de configuration supplémentaires de ce point de terminaison standard. Le même nom doit être défini dans la section `<standardEndpoints>`.|  
 |kind|Chaîne qui spécifie le type de point de terminaison standard appliqué. Le type doit être inscrit dans la section `<extensions>` ou dans machine.config. Si rien n'est spécifié, un point de terminaison de canal commun est créé.|  
@@ -50,16 +50,16 @@ Spécifie les propriétés du contrat, de la liaison et de l’adresse du point 
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)|Collection d'en-têtes d'adresses.|  
-|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Identité qui permet l'authentification d'un point de terminaison par les autres points de terminaison qui échangent des messages avec lui.|  
+|[\<headers>](headers.md)|Collection d'en-têtes d'adresses.|  
+|[\<identity>](identity.md)|Identité qui permet l'authentification d'un point de terminaison par les autres points de terminaison qui échangent des messages avec lui.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<client>](../../../../../docs/framework/configure-apps/file-schema/wcf/client.md)|Section de configuration qui définit une liste des points de terminaison auxquels un client peut se connecter.|  
+|[\<client>](client.md)|Section de configuration qui définit une liste des points de terminaison auxquels un client peut se connecter.|  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Il s'agit d'un exemple de configuration de point de terminaison de canal.  
   
 ```xml  
@@ -78,5 +78,5 @@ Spécifie les propriétés du contrat, de la liaison et de l’adresse du point 
 - <xref:System.ServiceModel.Configuration.ChannelEndpointElementCollection>
 - <xref:System.ServiceModel.Configuration.ClientSection.Endpoints%2A>
 - <xref:System.ServiceModel.Configuration.ChannelEndpointElement>
-- [Configuration du client WCF](../../../../../docs/framework/wcf/feature-details/client-configuration.md)
-- [Clients](../../../../../docs/framework/wcf/feature-details/clients.md)
+- [Configuration du client WCF](../../../wcf/feature-details/client-configuration.md)
+- [Clients](../../../wcf/feature-details/clients.md)

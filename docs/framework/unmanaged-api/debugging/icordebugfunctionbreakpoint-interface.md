@@ -16,35 +16,35 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0f15b9f5961699f905e765426576bdf6f3416793
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ed09b4f9be71c7f85714b9ee26d45018410fda42
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61651647"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917076"
 ---
 # <a name="icordebugfunctionbreakpoint-interface"></a>ICorDebugFunctionBreakpoint, interface
 
-Étend l’interface ICorDebugBreakpoint pour prendre en charge des points d’arrêt dans les fonctions.  
+Étend l’interface ICorDebugBreakpoint pour prendre en charge les points d’arrêt dans les fonctions.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetFunction, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugfunctionbreakpoint-getfunction-method.md)|Obtient un pointeur d’interface ICorDebugFunction qui référence la fonction dans laquelle le point d’arrêt est défini.|  
+|[GetFunction, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugfunctionbreakpoint-getfunction-method.md)|Obtient un pointeur d’interface vers un ICorDebugFunction qui fait référence à la fonction dans laquelle le point d’arrêt est défini.|  
 |[GetOffset, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugfunctionbreakpoint-getoffset-method.md)|Obtient l’offset du point d’arrêt dans la fonction.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
->  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
+> Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

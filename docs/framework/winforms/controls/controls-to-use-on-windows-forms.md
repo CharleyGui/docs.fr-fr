@@ -5,18 +5,18 @@ helpviewer_keywords:
 - controls [Windows Forms]
 - Windows Forms controls, list of
 ms.assetid: dec51976-eae0-4398-a537-20bca7974722
-ms.openlocfilehash: 114b9a6db7b41c5aac24bcd1badcf5f5b4b2fb08
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: bedfaef9a3d0cc81641006d254926f7bf9861c10
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796267"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930202"
 ---
 # <a name="controls-to-use-on-windows-forms"></a>Contrôles à utiliser dans les Windows Forms
 Voici une liste alphabétique des contrôles et composants qui peuvent être utilisés dans les Windows Forms. Outre les contrôles Windows Forms abordés dans cette section, vous pouvez ajouter des contrôles ActiveX et des contrôles personnalisés à Windows Forms. Si vous ne trouvez pas ici le contrôle donc vous avez besoin, vous pouvez également créer votre propre contrôle. Pour plus d’informations, consultez [Développement de contrôles Windows Forms au moment du design](developing-windows-forms-controls-at-design-time.md). Pour plus d’informations sur le choix du contrôle dont vous avez besoin, consultez [Classement par fonction des contrôles Windows Forms](windows-forms-controls-by-function.md).  
   
 > [!NOTE]
->  Les contrôles Visual Basic sont basés sur les classes fournies par le .NET Framework.  
+> Les contrôles Visual Basic sont basés sur les classes fournies par le .NET Framework.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Classement par fonction des contrôles Windows Forms](windows-forms-controls-by-function.md)  

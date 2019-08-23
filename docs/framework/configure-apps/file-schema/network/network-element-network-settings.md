@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <network> element
 - network element
 ms.assetid: 2c2c6ad4-ed11-48ab-b28e-2bc0ba9b42c7
-ms.openlocfilehash: 40d89f7bd7a1f4a38a1c4030a86405e09c497899
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: ee60b990bc749dbb9c5d0e7426c57e9392ddf9d4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659312"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920974"
 ---
 # <a name="network-element-network-settings"></a>\<Network >, élément (paramètres réseau)
 Configure les options réseau pour un serveur SMTP (simple mail transport Protocol) externe.  
@@ -70,7 +70,7 @@ Configure les options réseau pour un serveur SMTP (simple mail transport Protoc
  Vous pouvez également utiliser l’authentification de base (un nom d’utilisateur et un mot de passe) pour vous authentifier auprès du serveur SMTP. Pour utiliser cette option, vous devez spécifier un nom d’utilisateur et un mot de passe valides pour le serveur SMTP spécifié.  
   
 > [!NOTE]
->  L’authentification de base `userName` envoie `password` les valeurs et au serveur non chiffré. Toute personne surveillant le trafic réseau peut afficher vos informations d’identification et les utiliser pour se connecter au serveur. Vous devez envisager d’utiliser un mécanisme d’authentification plus sécurisé, tel que Kerberos ou NT LAN Manager (NTLM). Si `defaultCredentials` est`true`, Kerberos ou NTLM sera utilisé si le serveur prend en charge ces protocoles.  
+> L’authentification de base `userName` envoie `password` les valeurs et au serveur non chiffré. Toute personne surveillant le trafic réseau peut afficher vos informations d’identification et les utiliser pour se connecter au serveur. Vous devez envisager d’utiliser un mécanisme d’authentification plus sécurisé, tel que Kerberos ou NT LAN Manager (NTLM). Si `defaultCredentials` est`true`, Kerberos ou NTLM sera utilisé si le serveur prend en charge ces protocoles.  
   
  Les options authentification de base et informations d’identification réseau par défaut s’excluent mutuellement; Si vous affectez `true` à la valeur `defaultCredentials` et spécifiez un nom d’utilisateur et un mot de passe, les informations d’identification réseau par défaut sont utilisées et les données d’authentification de base sont ignorées.  
   

@@ -2,16 +2,16 @@
 title: <ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9af4ec79-cdef-457e-9dca-09d5eb821594
-ms.openlocfilehash: e6215465acbf9bb94298d282d15f8735a0e20c8c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fe952dfe9ce51e23d1ba46975026799dfe8b5b39
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673080"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915260"
 ---
 # <a name="ws2007federationhttpbinding"></a>\<ws2007FederationHttpBinding>
 
-Une liaison sécurisée et interopérable qui dérive de [ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md) et prend en charge de la sécurité fédérée.
+Une liaison sécurisée et interopérable qui dérive de [ \<WSFederationHttpBinding >](wsfederationhttpbinding.md) et prend en charge la sécurité fédérée.
 
 ```xml
 <system.ServiceModel>
@@ -66,28 +66,28 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Attribut|Description|
 |---------------|-----------------|
-|`bypassProxyOnLocal`|Valeur indiquant s'il faut ignorer le serveur proxy pour les adresses locales. La valeur par défaut est `false`.|
+|`bypassProxyOnLocal`|Valeur indiquant s'il faut ignorer le serveur proxy pour les adresses locales. Par défaut, il s’agit de `false`.|
 |`closeTimeout`|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération de fermeture. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|
 |`hostNameComparisonMode`|Spécifie le mode de comparaison du nom d'hôte HTTP utilisé pour analyser des URI. Cet attribut est de type <xref:System.ServiceModel.HostNameComparisonMode>, ce qui indique si le nom d'hôte est utilisé pour atteindre le service en cas de correspondance sur l'URI. La valeur par défaut est <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>, qui ignore le nom d'hôte dans la correspondance.|
 |`maxBufferPoolSize`|Taille maximale du pool de mémoires tampons pour cette liaison. La valeur par défaut est 524 288 octets (512 x 1024). De nombreuses parties de Windows Communication Foundation (WCF) utilisent des mémoires tampons. La création et la destruction des mémoires tampons à chaque utilisation sont chères, tout comme leur nettoyage. Avec les pools de mémoires tampons, vous pouvez prendre une mémoire tampon du pool, l'utiliser et la retourner au pool une fois que vous avez terminé. Ainsi, la surcharge de la création et de la destruction des mémoires tampons est évitée.|
 |`maxReceivedMessageSize`|Taille maximale du message (en octets), en-têtes compris, pouvant être reçu sur un canal configuré avec cette liaison. L'expéditeur d'un message qui dépasse cette limite se verra notifier une erreur SOAP. Ce dernier dépose le message et crée une entrée d’événement dans le journal de suivi. La valeur par défaut est 65536.|
-|`messageEncoding`|Définit l'encodeur utilisé pour encoder le message. Les valeurs valides sont les suivantes :<br /><br /> -Texte : Utiliser un encodeur de message texte.<br />-   Mtom: Utiliser un encodeur Message Transmission Organization Mechanism 1.0 (MTOM).<br /><br /> La valeur par défaut est Text.<br /><br /> Cet attribut est de type <xref:System.ServiceModel.WSMessageEncoding>.|
-|`name`|Nom de configuration de la liaison. Cette valeur doit être unique car elle permet d'identifier la liaison. Depuis [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], les liaisons et les comportements ne sont pas obligés d’avoir un nom. Pour plus d’informations sur la configuration par défaut et les liaisons sans nom et les comportements, consultez [Simplified Configuration](../../../../../docs/framework/wcf/simplified-configuration.md) et [Simplified Configuration for WCF Services](../../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).|
+|`messageEncoding`|Définit l'encodeur utilisé pour encoder le message. Les valeurs valides sont les suivantes :<br /><br /> Financière Utilisez un encodeur de message texte.<br />MTOM Utilisez un encodeur de transmission de message (MTOM) message transmission Organization 1,0.<br /><br /> La valeur par défaut est Text.<br /><br /> Cet attribut est de type <xref:System.ServiceModel.WSMessageEncoding>.|
+|`name`|Nom de configuration de la liaison. Cette valeur doit être unique car elle permet d'identifier la liaison. Depuis [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)], les liaisons et les comportements ne sont pas obligés d’avoir un nom. Pour plus d’informations sur la configuration par défaut et les liaisons et les comportements sans valeur, consultez [configuration simplifiée](../../../wcf/simplified-configuration.md) et [configuration simplifiée pour les services WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|
 |`openTimeout`|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération d'ouverture. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|
 |`privacyNoticeAt`|URI d'emplacement de l'avis de confidentialité.|
 |`privacyNoticeVersion`|Numéro de version de l'avis de confidentialité.|
-|`proxyAddress`|URI qui spécifie l'adresse du proxy HTTP. Si `useDefaultWebProxy` est `true`, ce paramètre doit avoir la valeur `null`. La valeur par défaut est `null`.|
+|`proxyAddress`|URI qui spécifie l'adresse du proxy HTTP. Si `useDefaultWebProxy` est `true`, ce paramètre doit avoir la valeur `null`. Par défaut, il s’agit de `null`.|
 |`receiveTimeout`|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération de réception. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:10:00.|
 |`sendTimeout`|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération d'envoi. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|
-|`textEncoding`|Définit l'encodage de jeu de caractères à utiliser pour l'émission de messages sur la liaison. Les valeurs valides sont les suivantes :<br /><br /> -   BigEndianUnicode: Encodage Unicode Big Endian.<br />-Unicode : encodage 16 bits.<br />-UTF-8 : encodage 8 bits.<br /><br /> La valeur par défaut est UTF8. Cet attribut est de type <xref:System.Text.Encoding>.|
-|`transactionFlow`|Valeur indiquant si la liaison prend en charge le flux WS-Transactions. La valeur par défaut est `false`.|
-|`useDefaultWebProxy`|Valeur indiquant si le proxy HTTP du système configuré automatiquement est utilisé. L'adresse proxy doit être `null` (autrement dit, pas de jeu) si cet attribut est `true`. La valeur par défaut est `true`.|
+|`textEncoding`|Définit l'encodage de jeu de caractères à utiliser pour l'émission de messages sur la liaison. Les valeurs valides sont les suivantes :<br /><br /> BigEndianUnicode Encodage Unicode Big endian.<br />Unicode encodage 16 bits.<br />UTF8 encodage 8 bits.<br /><br /> La valeur par défaut est UTF8. Cet attribut est de type <xref:System.Text.Encoding>.|
+|`transactionFlow`|Valeur indiquant si la liaison prend en charge le flux WS-Transactions. Par défaut, il s’agit de `false`.|
+|`useDefaultWebProxy`|Valeur indiquant si le proxy HTTP du système configuré automatiquement est utilisé. L'adresse proxy doit être `null` (autrement dit, pas de jeu) si cet attribut est `true`. Par défaut, il s’agit de `true`.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wsfederationhttpbinding.md)|Définit les paramètres de sécurité pour le message. Cet élément est de type <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>.|
+|[\<> de sécurité](security-of-wsfederationhttpbinding.md)|Définit les paramètres de sécurité pour le message. Cet élément est de type <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>.|
 |[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|Définit les contraintes sur la complexité des messages SOAP pouvant être traités par les points de terminaison configurés avec cette liaison. Cet élément est de type <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|
 |[\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))|Indique si des sessions fiables sont établies entre les points de terminaison de canal.|
 
@@ -95,11 +95,11 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<bindings>](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|
+|[\<bindings>](bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|
 
 ## <a name="remarks"></a>Notes
 
-La fédération est la capacité à partager des identités entre plusieurs entreprises ou domaines approuvés à des fins d'authentification et d'autorisation. Elle utilise le protocole WS-Trust pour mapper la représentation d'identité entre domaines approuvés. Une liaison HTTP fédérée prend en charge la sécurité SOAP ainsi que la sécurité en mode mixte, mais pas la sécurité de transport. Les services configurés avec cette liaison doivent utiliser le transport HTTP. Pour plus d’informations, consultez [ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).
+La fédération est la capacité à partager des identités entre plusieurs entreprises ou domaines approuvés à des fins d'authentification et d'autorisation. Elle utilise le protocole WS-Trust pour mapper la représentation d'identité entre domaines approuvés. Une liaison HTTP fédérée prend en charge la sécurité SOAP ainsi que la sécurité en mode mixte, mais pas la sécurité de transport. Les services configurés avec cette liaison doivent utiliser le transport HTTP. Pour plus d’informations, consultez [ \<WSFederationHttpBinding >](wsfederationhttpbinding.md).
 
 ## <a name="example"></a>Exemple
 
@@ -138,8 +138,8 @@ La fédération est la capacité à partager des identités entre plusieurs entr
 
 - <xref:System.ServiceModel.WS2007FederationHttpBinding>
 - <xref:System.ServiceModel.Configuration.WS2007FederationHttpBindingElement>
-- [\<wsFederationHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)
-- [Liaisons](../../../../../docs/framework/wcf/bindings.md)
-- [Configuration des liaisons fournies par le système](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [Utilisation de liaisons pour configurer des services et des clients](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding>](../../../../../docs/framework/misc/binding.md)
+- [\<wsFederationHttpBinding>](wsfederationhttpbinding.md)
+- [Liaisons](../../../wcf/bindings.md)
+- [Configuration des liaisons fournies par le système](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [Utilisation de liaisons pour configurer des services et des clients](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<binding>](../../../misc/binding.md)

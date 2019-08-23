@@ -5,19 +5,19 @@ helpviewer_keywords:
 - COM [WCF], configure service monikers
 - COM [WCF], register service monikers
 ms.assetid: e5e16c80-8a8e-4eef-af53-564933b651ef
-ms.openlocfilehash: f1f2b462ef0412b0f11a9ba5074f7546e6ee84f2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d14facf435d575b9db5129b732938658c921f97f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64643763"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934321"
 ---
 # <a name="how-to-register-and-configure-a-service-moniker"></a>Procédure : inscrire et configurer un moniker de service
-Avant d’utiliser le moniker de service Windows Communication Foundation (WCF) dans une application COM avec un contrat typé, vous devez inscrire les types attribués requis avec COM et configurer l’application COM et le moniker avec la liaison requise configuration.  
+Avant d’utiliser le moniker de service Windows Communication Foundation (WCF) dans une application COM avec un contrat typé, vous devez inscrire les types avec attributs requis avec COM et configurer l’application COM et le moniker avec la liaison requise. configuré.  
   
 ### <a name="to-register-the-required-attributed-types-with-com"></a>Pour inscrire les types avec attributs requis avec COM  
   
-1. Utilisez le [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) outil pour récupérer le contrat de métadonnées à partir du service WCF. Cela génère le code source pour un assembly de client WCF et un fichier de configuration d’application cliente.  
+1. Utilisez l’outil [ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pour récupérer le contrat de métadonnées du service WCF. Cela génère le code source pour un assembly client WCF et un fichier de configuration d’application cliente.  
   
 2. Vérifiez que les types dans l'assembly sont marqués comme `ComVisible`. Pour cela, ajoutez l'attribut suivant au fichier AssemblyInfo.cs dans votre projet Visual Studio.  
   
@@ -25,18 +25,18 @@ Avant d’utiliser le moniker de service Windows Communication Foundation (WCF) 
     [assembly: ComVisible(true)]  
     ```  
   
-3. Compilez le client WCF géré comme un assembly avec nom fort. Cette procédure requiert une signature à l'aide d'une paire de clés de chiffrement. Pour plus d’informations, consultez [signature d’un Assembly avec un nom fort](https://go.microsoft.com/fwlink/?LinkId=94874) dans le Guide du développeur de .NET.  
+3. Compilez le client WCF managé comme un assembly avec nom fort. Cette procédure requiert une signature à l'aide d'une paire de clés de chiffrement. Pour plus d’informations, consultez [signature d’un assembly avec un nom fort](https://go.microsoft.com/fwlink/?LinkId=94874) dans le Guide du développeur .net.  
   
 4. Utilisez l'outil Assembly Registration Tool (Regasm.exe) avec l'option `/tlb` pour inscrire les types dans l'assembly avec COM.  
   
 5. Utilisez l'outil Global Assembly Cache Tool (Gacutil.exe) pour ajouter l'assembly au Global Assembly Cache.  
   
     > [!NOTE]
-    >  La signature de l'assembly et son ajout au Global Assembly Cache sont deux étapes facultatives, mais elles peuvent simplifier le processus de chargement de l'assembly à partir de l'emplacement approprié au moment de l'exécution.  
+    > La signature de l'assembly et son ajout au Global Assembly Cache sont deux étapes facultatives, mais elles peuvent simplifier le processus de chargement de l'assembly à partir de l'emplacement approprié au moment de l'exécution.  
   
 ### <a name="to-configure-the-com-application-and-the-moniker-with-the-required-binding-configuration"></a>Pour configurer l’application COM et le moniker à l’aide des paramètres de liaison requis  
   
-- Placez les définitions de liaison (générées par le [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) dans le fichier de configuration d’application client généré) dans le fichier de configuration de l’application cliente. Par exemple, pour un fichier exécutable Visual Basic 6.0 nommé CallCenterClient.exe, la configuration doit être placée dans un fichier nommé CallCenterConfig.exe.config, dans le même répertoire que le fichier exécutable. L'application cliente peut maintenant utiliser le moniker. Notez que la configuration de liaison n’est pas requise si l’un des types fournis par WCF de liaison standard.  
+- Placez les définitions de liaison (générées par l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) dans le fichier de configuration de l’application cliente générée) dans le fichier de configuration de l’application cliente. Par exemple, pour un fichier exécutable Visual Basic 6.0 nommé CallCenterClient.exe, la configuration doit être placée dans un fichier nommé CallCenterConfig.exe.config, dans le même répertoire que le fichier exécutable. L'application cliente peut maintenant utiliser le moniker. Notez que la configuration de liaison n’est pas requise si vous utilisez l’un des types de liaison standard fournis par WCF.  
   
      Le type suivant est inscrit.  
   
@@ -84,10 +84,10 @@ Avant d’utiliser le moniker de service Windows Communication Foundation (WCF) 
      Dans cet exemple, la définition de la configuration de liaison `Binding1` est stockée dans un fichier de configuration judicieusement nommé pour l’application cliente, par exemple vb6nomapp.exe.config.  
   
     > [!NOTE]
-    >  Vous pouvez utiliser un code semblable dans une application C#, C++ ou d'un autre langage .NET.  
+    > Vous pouvez utiliser un code semblable dans une application C#, C++ ou d'un autre langage .NET.  
   
     > [!NOTE]
-    >  : Si le moniker est incorrect ou si le service est indisponible, l’appel à `GetObject` renvoie une erreur de « Syntaxe non valide ». Si vous recevez cette erreur, assurez-vous que le moniker que vous utilisez est correct et que le service est disponible.  
+    > : Si le moniker est incorrect ou si le service n’est pas disponible, l' `GetObject` appel à retourne une erreur de syntaxe non valide. Si vous recevez cette erreur, assurez-vous que le moniker que vous utilisez est correct et que le service est disponible.  
   
      Bien que cette rubrique porte sur l'utilisation du moniker de service à partir du code VB 6.0, vous pouvez utiliser un moniker de service à partir d'autres langages. Lors de l'utilisation d'un moniker à partir du code C++, l'assembly généré par Svcutil.exe doit être importé avec le paramètre « no_namespace named_guids raw_interfaces_only », tel qu'indiqué dans le code suivant.  
   

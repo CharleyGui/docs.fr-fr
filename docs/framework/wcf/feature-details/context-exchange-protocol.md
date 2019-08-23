@@ -2,21 +2,21 @@
 title: Protocole d'échange de contexte
 ms.date: 03/30/2017
 ms.assetid: 3dfd38e0-ae52-491c-94f4-7a862b9843d4
-ms.openlocfilehash: cb6e52b5622316cfaa9c56b26c3aac6764c71cca
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 19780cccc74f8c3615dc844e47be7613ca5f8bc1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651106"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69911208"
 ---
 # <a name="context-exchange-protocol"></a>Protocole d'échange de contexte
-Cette section décrit le protocole d’échange de contexte introduit dans Windows Communication Foundation (WCF) version .NET Framework version 3.5. Ce protocole permet au canal client d'accepter un contexte fourni par un service et de l'appliquer à toutes les demandes ultérieures à ce service envoyées sur la même instance de canal client. L’implémentation de protocole d’échange de contexte peut utiliser une des deux mécanismes suivants pour propager le contexte entre le serveur et le client : Les cookies HTTP ou un en-tête SOAP.  
+Cette section décrit le protocole d’échange de contexte introduit dans Windows Communication Foundation (WCF) version .NET Framework version 3,5. Ce protocole permet au canal client d'accepter un contexte fourni par un service et de l'appliquer à toutes les demandes ultérieures à ce service envoyées sur la même instance de canal client. L’implémentation du protocole d’échange de contexte peut utiliser l’un des deux mécanismes suivants pour propager le contexte entre le serveur et le client: Cookies HTTP ou un en-tête SOAP.  
   
  Le protocole d'échange de contexte est implémenté dans une couche de canal personnalisée. Le canal communique le contexte depuis et vers la couche d'application à l'aide d'une propriété <xref:System.ServiceModel.Channels.ContextMessageProperty>. Pour la transmission entre des points de terminaison, la valeur du contexte est soit sérialisée comme un en-tête SOAP à la couche du canal, soit convertie depuis ou vers des propriétés de message qui représentent une réponse et une demande HTTP. Dans le dernier cas, l'une des couches du canal sous-jacents convertie les propriétés de message de réponse et de demande HTTP vers et depuis des cookies HTTP, respectivement. Le choix du mécanisme utilisé pour échanger le contexte s'effectue à l'aide de la propriété <xref:System.ServiceModel.Channels.ContextExchangeMechanism> sur le <xref:System.ServiceModel.Channels.ContextBindingElement>. Les valeurs valides sont `HttpCookie` ou `SoapHeader`.  
   
  Sur le client, une instance d'un canal peut fonctionner selon deux modes basés sur les paramètres de la propriété de canal, <xref:System.ServiceModel.Channels.IContextManager.Enabled%2A>.  
   
-## <a name="mode-1-channel-context-management"></a>Mode 1 : Gestion de contexte de canal  
+## <a name="mode-1-channel-context-management"></a>Mode 1: Gestion du contexte de canal  
  Il s'agit du mode par défaut lorsque <xref:System.ServiceModel.Channels.IContextManager.Enabled%2A> a la valeur `true`. Dans ce mode, le canal de contexte gère le contexte et met en cache celui-ci pendant sa durée de vie. Le contexte peut être récupéré à partir du canal par le biais de la propriété de canal `IContextManager` en appelant la méthode `GetContext`. Le canal peut également être pré-initialisé avec un contexte spécifique avant d'être ouvert en appelant la méthode `SetContext` sur la propriété de canal. Une fois le canal initialisé avec le contexte, celui-ci ne peut pas être réinitialisé.  
   
  Les éléments suivants sont une liste d'invariants dans ce mode :  
@@ -28,11 +28,11 @@ Cette section décrit le protocole d’échange de contexte introduit dans Windo
 - Si un message est reçu du serveur avec un contexte spécifique, lorsque le canal a déjà été initialisé avec un contexte spécifique, cela lève une <xref:System.ServiceModel.ProtocolException>.  
   
     > [!NOTE]
-    >  Il est recommandé de recevoir du serveur un contexte initial uniquement si le canal est ouvert sans qu'un contexte soit défini explicitement.  
+    > Il est recommandé de recevoir du serveur un contexte initial uniquement si le canal est ouvert sans qu'un contexte soit défini explicitement.  
   
 - Le <xref:System.ServiceModel.Channels.ContextMessageProperty> sur le message entrant est toujours null.  
   
-## <a name="mode-2-application-context-management"></a>Mode 2 : Gestion de contexte d’application  
+## <a name="mode-2-application-context-management"></a>Mode 2: Gestion du contexte de l’application  
  Il s'agit du mode dans lequel <xref:System.ServiceModel.Channels.IContextManager.Enabled%2A> a la valeur `false`. Dans ce mode, le canal de contexte ne gère pas de contexte. C'est la responsabilité de l'application de récupérer, de gérer et d'appliquer le contexte à l'aide de <xref:System.ServiceModel.Channels.ContextMessageProperty>. Toute tentative d'appel de `GetContext` ou de `SetContext` lève une <xref:System.InvalidOperationException>.  
   
  Quel que soit le mode choisi, la fabrication de canal du client prend en charge les modèles d'échange de messages <xref:System.ServiceModel.Channels.IRequestChannel>, <xref:System.ServiceModel.Channels.IRequestSessionChannel> et <xref:System.ServiceModel.Channels.IDuplexSessionChannel>.  

@@ -1,19 +1,19 @@
 ---
-title: <cancelRequestedQuery> de WCF
+title: <cancelRequestedQuery>de WCF
 ms.date: 03/30/2017
 ms.assetid: b690d870-02eb-4c56-8bc3-e5ca99d7097b
-ms.openlocfilehash: bd6157e63761efa954744ab08ea6c66535def514
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7952520edbf799e5fab6864e50962c6ec2860928
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673349"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919645"
 ---
-# <a name="cancelrequestedquery-of-wcf"></a>\<cancelRequestedQuery > de WCF
+# <a name="cancelrequestedquery-of-wcf"></a>\<> cancelRequestedQuery de WCF
 
 Représente une requête qui permet d'effectuer le suivi des demande d'annulation d'une activité enfant par l'activité parent. La requête est nécessaire pour qu'un participant au suivi puisse s'abonner à des objets d'enregistrement de demande d'annulation.  
   
-Pour plus d’informations sur les requêtes de modèle de suivi, consultez [modèles de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md).
+Pour plus d’informations sur le suivi des requêtes de profils, consultez [suivi des profils](../../../windows-workflow-foundation/tracking-profiles.md).
   
 \<system.serviceModel>  
 \<tracking>  
@@ -65,5 +65,5 @@ Aucun.
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.CancelRequestedQueryElement?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.CancelRequestedQuery?displayProperty=nameWithType>
-- [Suivi et traçage de workflow](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Profils de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [Suivi et traçage de workflow](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Profils de suivi](../../../windows-workflow-foundation/tracking-profiles.md)

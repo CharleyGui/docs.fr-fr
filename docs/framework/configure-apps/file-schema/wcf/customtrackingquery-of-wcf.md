@@ -1,19 +1,19 @@
 ---
-title: <customTrackingQuery> de WCF
+title: <customTrackingQuery>de WCF
 ms.date: 03/30/2017
 ms.assetid: 164446ae-8440-4b67-b217-6786cfae1e01
-ms.openlocfilehash: 0a5e7c034ce1ef12a8d7d5b1753e2e441e48e293
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b034727dc89b58794ec2834cb0ff39cd7e5f1dca
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673171"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919358"
 ---
-# <a name="customtrackingquery-of-wcf"></a>\<customTrackingQuery> of WCF
+# <a name="customtrackingquery-of-wcf"></a>\<> customTrackingQuery de WCF
 
-Représente une requête qui est utilisée pour effectuer le suivi des événements que vous définissez dans vos activités de code. La requête est nécessaire pour qu'un participant au suivi puisse s'abonner à des enregistrements de suivi personnalisés.
+Représente une requête utilisée pour suivre les événements que vous définissez dans vos activités de code. La requête est nécessaire pour qu'un participant au suivi puisse s'abonner à des enregistrements de suivi personnalisés.
 
-Pour plus d’informations sur les requêtes de modèle de suivi, consultez [modèles de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+Pour plus d’informations sur le suivi des requêtes de profils, consultez modèles de [suivi](../../../windows-workflow-foundation/tracking-profiles.md)  
   
 \<system.serviceModel>  
 \<tracking>  
@@ -65,5 +65,5 @@ Aucun.
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.CustomTrackingQueryElementCollection?displayProperty=nameWithType>
 - <xref:System.Activities.Tracking.CustomTrackingQuery?displayProperty=nameWithType>
-- [Suivi et traçage de workflow](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Profils de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [Suivi et traçage de workflow](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Profils de suivi](../../../windows-workflow-foundation/tracking-profiles.md)

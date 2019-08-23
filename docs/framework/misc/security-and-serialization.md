@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: b921bc94-bd3a-4c91-9ede-2c8d4f78ea9a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c275e7179daf0dfdf2dda8bf364a4682565f28a6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e0b1f8979929dbb6872bbd53e1840b2d0520a31d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64596732"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910671"
 ---
 # <a name="security-and-serialization"></a>Sécurité et sérialisation
 Étant donné que la sérialisation peut permettre à tout autre code d’afficher ou de modifier les données d’instance d’objet qui seraient autrement inaccessibles, une autorisation spéciale est nécessaire pour que le code effectue la sérialisation : <xref:System.Security.Permissions.SecurityPermission> avec l’indicateur <xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter> spécifié. Dans le cadre de la stratégie par défaut, cette autorisation n'est pas accordée à du code téléchargé depuis Internet ou un intranet ; seul le code sur l'ordinateur local reçoit cette autorisation.  
@@ -28,7 +28,7 @@ ms.locfileid: "64596732"
   
  L’interface <xref:System.Runtime.Serialization.ISerializable> est conçue pour être utilisée uniquement par l’infrastructure de sérialisation. Toutefois, si elle est non protégée, elle risque de révéler des informations sensibles. Si vous fournissez une sérialisation personnalisée en implémentant **ISerializable**, veillez à prendre les précautions suivantes :  
   
-- La méthode <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> doit être sécurisée de manière explicite en demandant l’autorisation **SecurityPermission** avec **SerializationFormatter** spécifié, ou en faisant en sorte qu’aucune information sensible ne soit divulguée avec la sortie de la méthode. Exemple :  
+- La méthode <xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A> doit être sécurisée de manière explicite en demandant l’autorisation **SecurityPermission** avec **SerializationFormatter** spécifié, ou en faisant en sorte qu’aucune information sensible ne soit divulguée avec la sortie de la méthode. Par exemple :  
   
     ```vb  
     Public Overrides<SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter := True)>  _  
@@ -49,4 +49,4 @@ ms.locfileid: "64596732"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Instructions de codage sécurisé](../../../docs/standard/security/secure-coding-guidelines.md)
+- [Instructions de codage sécurisé](../../standard/security/secure-coding-guidelines.md)

@@ -7,18 +7,18 @@ helpviewer_keywords:
 - UI Automation, clients for managed code
 - managed code, UI Automation clients
 ms.assetid: 665b01b5-25f5-47a1-ab11-cffe8ebbf2a7
-ms.openlocfilehash: 158c116aa54602a4311dfa8165dba7546369c53c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8c3107ce2ee20b3369a2ba462775ec7c8a1d3f6c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61982759"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935113"
 ---
 # <a name="ui-automation-clients-for-managed-code-how-to-topics"></a>Rubriques "Comment" relatives aux clients UI Automation pour le code managé
 > [!NOTE]
->  Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour plus d’informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [Windows Automation API : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Cette section fournit des informations détaillées sur l’implémentation des fonctionnalités de [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] dans une application cliente.  
+ Cette section fournit des informations détaillées sur l’implémentation [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] des fonctionnalités de dans une application cliente.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Rechercher un élément UI Automation basé sur une condition de propriété](../../../docs/framework/ui-automation/find-a-ui-automation-element-based-on-a-property-condition.md)  

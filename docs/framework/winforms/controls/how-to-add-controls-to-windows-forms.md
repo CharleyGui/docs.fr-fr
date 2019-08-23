@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Windows Forms controls, adding to form
 - controls [Windows Forms], adding
 ms.assetid: 2af86001-9d62-4154-87fb-66db2c3cd9fd
-ms.openlocfilehash: 5c57d86b2f08733dc4a729bf6091eab23c6035f2
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
-ms.translationtype: MT
+ms.openlocfilehash: 7ee603fa5350ef81c6d32d2f22119bbe526295df
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039706"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912625"
 ---
 # <a name="how-to-add-controls-to-windows-forms"></a>Procédure : ajouter des contrôles à des Windows Forms
 La plupart des formulaires sont conçus en ajoutant des contrôles à la surface du formulaire pour définir une interface utilisateur. Un *contrôle* est un composant d’un formulaire utilisé pour afficher des informations ou accepter une entrée d’utilisateur. Pour plus d’informations sur les contrôles, consultez [Windows Forms des contrôles](index.md).
@@ -30,7 +30,7 @@ La plupart des formulaires sont conçus en ajoutant des contrôles à la surface
      Le contrôle est ajouté au formulaire avec l’emplacement et la taille spécifiés.
 
     > [!NOTE]
-    >  Une taille par défaut est définie pour chaque contrôle. Vous pouvez ajouter un contrôle à votre formulaire à la taille par défaut du contrôle en le faisant glisser de la **boîte à outils** vers le formulaire.
+    > Une taille par défaut est définie pour chaque contrôle. Vous pouvez ajouter un contrôle à votre formulaire à la taille par défaut du contrôle en le faisant glisser de la **boîte à outils** vers le formulaire.
 
 ## <a name="to-drag-a-control-to-a-form"></a>Pour faire glisser un contrôle vers un formulaire
 
@@ -41,12 +41,12 @@ La plupart des formulaires sont conçus en ajoutant des contrôles à la surface
      Le contrôle est ajouté au formulaire à l’emplacement spécifié dans sa taille par défaut.
 
     > [!NOTE]
-    >  Vous pouvez double-cliquer sur un contrôle dans la **boîte à outils** pour l’ajouter dans le coin supérieur gauche du formulaire dans sa taille par défaut.
+    > Vous pouvez double-cliquer sur un contrôle dans la **boîte à outils** pour l’ajouter dans le coin supérieur gauche du formulaire dans sa taille par défaut.
 
      Vous pouvez également ajouter dynamiquement des contrôles à un formulaire au moment de l’exécution. Dans l’exemple de code suivant, <xref:System.Windows.Forms.TextBox> un contrôle est ajouté au formulaire quand l’utilisateur <xref:System.Windows.Forms.Button> clique sur un contrôle.
 
     > [!NOTE]
-    >  La procédure suivante nécessite l’existence d’un formulaire avec un contrôle **Button** , `Button1`, déjà placé sur celui-ci.
+    > La procédure suivante nécessite l’existence d’un formulaire avec un contrôle **Button** , `Button1`, déjà placé sur celui-ci.
 
 ## <a name="to-add-a-control-to-a-form-programmatically"></a>Pour ajouter par programmation un contrôle à un formulaire
 
@@ -81,7 +81,7 @@ La plupart des formulaires sont conçus en ajoutant des contrôles à la surface
     ```
 
     > [!NOTE]
-    >  Vous pouvez également ajouter du code pour initialiser d’autres propriétés du contrôle.
+    > Vous pouvez également ajouter du code pour initialiser d’autres propriétés du contrôle.
 
     > [!IMPORTANT]
     >  Vous pouvez exposer votre ordinateur local à un risque de sécurité sur le réseau en référençant `UserControl`un malveillant. Cela ne serait qu’une préoccupation dans le cas d’une personne malveillante qui crée un contrôle personnalisé nuisible, puis de l’ajouter par erreur à votre projet.
@@ -90,6 +90,6 @@ La plupart des formulaires sont conçus en ajoutant des contrôles à la surface
 
 - [Contrôles Windows Forms](index.md)
 - [Disposition des contrôles dans les Windows Forms](arranging-controls-on-windows-forms.md)
-- [Guide pratique pour Redimensionner les contrôles sur Windows Forms](how-to-resize-controls-on-windows-forms.md)
-- [Guide pratique : Définir le texte affiché par un contrôle Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
+- [Guide pratique : Redimensionner les contrôles sur Windows Forms](how-to-resize-controls-on-windows-forms.md)
+- [Guide pratique pour Définir le texte affiché par un contrôle Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
 - [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)

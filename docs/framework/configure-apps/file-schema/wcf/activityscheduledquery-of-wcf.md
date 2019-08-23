@@ -1,19 +1,19 @@
 ---
-title: <activityScheduledQuery> de WCF
+title: <activityScheduledQuery>de WCF
 ms.date: 03/30/2017
 ms.assetid: 25f6eee1-3d98-4c39-b517-c0813f03f106
-ms.openlocfilehash: 5087d56092296f8c68b719ec0945993adeb3de0a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7787ada68210ff832ff3fd1ec93c9d346e4d2eaa
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704712"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926924"
 ---
-# <a name="activityscheduledquery-of-wcf"></a>\<activityScheduledQuery > de WCF
+# <a name="activityscheduledquery-of-wcf"></a>\<> activityScheduledQuery de WCF
 
 Représente une collection de requêtes qui permettent d'effectuer le suivi d'une activité dont l'exécution par une activité parent est planifiée. La requête est nécessaire pour qu'un participant au suivi puisse s'abonner aux enregistrements d'une activité planifiée.  
   
-Pour plus d’informations sur les requêtes de modèle de suivi, consultez [modèles de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+Pour plus d’informations sur le suivi des requêtes de profils, consultez modèles de [suivi](../../../windows-workflow-foundation/tracking-profiles.md)  
   
 \<system.serviceModel>  
 \<tracking>  
@@ -59,11 +59,11 @@ Aucun.
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<activityScheduledQueries>](activityscheduledqueries-of-wcf.md)|Une collection de requêtes qui sont utilisés pour suivre une activité planifiée pour l’exécution d’une activité parente.|  
+|[\<activityScheduledQueries>](activityscheduledqueries-of-wcf.md)|Collection de requêtes qui permettent d’effectuer le suivi d’une activité planifiée pour être exécutée par une activité parente.|  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.ActivityScheduledQueryElement>
 - <xref:System.Activities.Tracking.ActivityScheduledQuery>
-- [Suivi et traçage de workflow](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Profils de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [Suivi et traçage de workflow](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Profils de suivi](../../../windows-workflow-foundation/tracking-profiles.md)

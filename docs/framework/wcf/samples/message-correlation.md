@@ -2,12 +2,12 @@
 title: Message Correlation
 ms.date: 03/30/2017
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-ms.openlocfilehash: 630afb728726fb81bbefa2f2cd34b9481b788f6f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1f476e94ec3229ee7f5433d54d286165d108e5e4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663413"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930751"
 ---
 # <a name="message-correlation"></a>Message Correlation
 Cet exemple montre comment une application Message Queuing (MSMQ) peut envoyer un message MSMQ à un service Windows Communication Foundation (WCF) et comment les messages peuvent être corrélés entre les applications de l’expéditeur et du récepteur dans un scénario de demande/réponse. Cet exemple utilise la liaison msmqIntegrationBinding. Dans le cas présent, le service est une application console auto-hébergée qui vous permet d'observer le service qui reçoit les messages mis en file d'attente. k  
@@ -65,9 +65,9 @@ public class OrderProcessorService : IOrderProcessor
 }
 ```
 
- Le service utilise un client `OrderResponseClient` personnalisé pour envoyer le message MSMQ à la file d'attente. Étant donné que l’application qui reçoit et traite le message est une application MSMQ et non une application WCF, il n’existe aucun contrat de service implicite entre les deux applications. Par conséquent, nous ne pouvons pas créer de proxy à l'aide de l'outil Svcutil.exe dans ce scénario.
+ Le service utilise un client `OrderResponseClient` personnalisé pour envoyer le message MSMQ à la file d'attente. Étant donné que l’application qui reçoit et traite le message est une application MSMQ et non une application WCF, il n’existe pas de contrat de service implicite entre les deux applications. Par conséquent, nous ne pouvons pas créer de proxy à l'aide de l'outil Svcutil.exe dans ce scénario.
 
- Le proxy personnalisé est essentiellement la même pour toutes les applications WCF qui utilisent le `msmqIntegrationBinding` liaison pour envoyer des messages. Contrairement aux autres proxys, il n'inclut pas de plage d'opérations de service. Il s'agit uniquement d'une opération d'envoi de message.
+ Le proxy personnalisé est fondamentalement le même pour toutes les applications WCF qui utilisent `msmqIntegrationBinding` la liaison pour envoyer des messages. Contrairement aux autres proxys, il n'inclut pas de plage d'opérations de service. Il s'agit uniquement d'une opération d'envoi de message.
 
 ```csharp
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]
@@ -213,7 +213,7 @@ static void PlaceOrder()
  La file d'attente MSMQ à partir de laquelle les réponses à la commande sont reçues est spécifiée dans une section appSettings du fichier de configuration, comme le montre l'exemple de configuration suivant.
 
 > [!NOTE]
->  Le nom de la file d'attente utilise un point (.) pour l'ordinateur local et des barres obliques inverses comme séparateur dans son chemin d'accès. L’adresse de point de terminaison WCF spécifie un schéma msmq.formatname et utilise « localhost » pour l’ordinateur local. Un nom de format correct suit msmq.formatname dans l'URI d'après les règles d'adressage MSMQ.
+> Le nom de la file d'attente utilise un point (.) pour l'ordinateur local et des barres obliques inverses comme séparateur dans son chemin d'accès. L’adresse de point de terminaison WCF spécifie un schéma msmq. formatname et utilise «localhost» pour l’ordinateur local. Un nom de format correct suit msmq.formatname dans l'URI d'après les règles d'adressage MSMQ.
 
 ```xml
 <appSettings>
@@ -267,27 +267,27 @@ static void DisplayOrderStatus()
  Lorsque vous exécutez l'exemple, les activités du client et du service s'affichent dans leurs fenêtres de console respectives. Vous pouvez voir le service recevoir des messages du client et renvoyer une réponse au client. Le client affiche la réponse reçue du service. Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.
 
 > [!NOTE]
->  Cet exemple requiert l'installation de MSMQ (Message Queuing). Consultez les instructions d'installation de MSMQ dans la section « Voir aussi ».
+> Cet exemple requiert l'installation de MSMQ (Message Queuing). Consultez les instructions d'installation de MSMQ dans la section « Voir aussi ».
 
 ### <a name="to-setup-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple
 
-1. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
 2. Si le service est exécuté en premier, il vérifie que la file d'attente existe. Si la file d'attente n'existe pas, le service en crée une. Vous pouvez exécuter le service en premier pour créer la file d'attente, ou en créer une à l'aide du Gestionnaire de files d'attente MSMQ. Procédez comme suit pour créer une file d'attente dans Windows 2008 :
 
-    1. Ouvrez le Gestionnaire de serveur dans Visual Studio 2012.
+    1. Ouvrez Gestionnaire de serveur dans Visual Studio 2012.
 
-    2. Développez le **fonctionnalités** onglet.
+    2. Développez l’onglet **fonctionnalités** .
 
-    3. Avec le bouton droit **files d’attente de messages privées**, puis sélectionnez **New**, **file d’attente privée**.
+    3. Cliquez avec le bouton droit sur **files d’attente de messages privées**, puis sélectionnez **nouveau**, **file d’attente privée**.
 
-    4. Vérifier le **transactionnel** boîte.
+    4. Activez la case à cocher **transactionnelle** .
 
     5. Entrez `ServiceModelSamplesTransacted` comme nom de la nouvelle file d’attente.
 
 3. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-4. Pour exécuter l’exemple dans une configuration d’ordinateur unique, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+4. Pour exécuter l’exemple dans une configuration à un seul ordinateur, suivez les instructions de la procédure d' [exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
 ### <a name="to-run-the-sample-across-computers"></a>Pour exécuter l'exemple sur plusieurs ordinateurs
 
@@ -308,7 +308,7 @@ static void DisplayOrderStatus()
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MessageCorrelation`  
   

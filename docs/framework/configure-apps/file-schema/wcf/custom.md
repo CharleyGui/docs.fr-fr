@@ -2,12 +2,12 @@
 title: <custom>
 ms.date: 03/30/2017
 ms.assetid: a6f65a00-bd1a-4d4a-955a-fe009ec02ab8
-ms.openlocfilehash: 18359e871feed17a11006d0b2998907faf25c158
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b5cc522604fa7aca8ca6eae787520265b36fef6f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704191"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925952"
 ---
 # <a name="custom"></a>\<custom>
 Spécifie les paramètres pour un service de programme de résolution d'homologue personnalisé.  
@@ -43,17 +43,17 @@ Spécifie les paramètres pour un service de programme de résolution d'homologu
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<identity>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Indique l'identité des programmes de résolution d'homologue personnalisés configurés avec cet élément. Cet élément est de type <xref:System.ServiceModel.Configuration.IdentityElement>.|  
-|[\<headers>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Collection d’en-têtes d’adresse utilisée pour les messages SOAP gérés par le programme de résolution d’homologue personnalisé.|  
+|[\<identity>](identity.md)|Indique l'identité des programmes de résolution d'homologue personnalisés configurés avec cet élément. Cet élément est de type <xref:System.ServiceModel.Configuration.IdentityElement>.|  
+|[\<headers>](headers-element.md)|Collection d’en-têtes d’adresse utilisée pour les messages SOAP gérés par le programme de résolution d’homologue personnalisé.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<resolver>](../../../../../docs/framework/configure-apps/file-schema/wcf/resolver.md)|Un programme de résolution d'homologue est utilisé pour résoudre un ID de maille d'homologues en un jeu d'adresses de nœuds homologues représentant plusieurs nœuds faisant partie de la maille.|  
+|[\<resolver>](resolver.md)|Un programme de résolution d'homologue est utilisé pour résoudre un ID de maille d'homologues en un jeu d'adresses de nœuds homologues représentant plusieurs nœuds faisant partie de la maille.|  
   
 ## <a name="remarks"></a>Notes  
- Cet élément définit les paramètres de base pour un service de programme de résolution d'homologue personnalisé, y compris l'adresse de point de terminaison de l'homologue qui héberge le service et tous les paramètres de liaison spécifiques. Pour plus d’informations sur la création d’un programme de résolution personnalisé, consultez [Ajout d’un programme de résolution personnalisé à une Application PeerChannel](https://docs.microsoft.com/previous-versions/ms730105(v=vs.90)).  
+ Cet élément définit les paramètres de base pour un service de programme de résolution d'homologue personnalisé, y compris l'adresse de point de terminaison de l'homologue qui héberge le service et tous les paramètres de liaison spécifiques. Pour plus d’informations sur la création d’un programme de résolution personnalisé, consultez [Ajout d’un programme de résolution personnalisé à une application PeerChannel](https://docs.microsoft.com/previous-versions/ms730105(v=vs.90)).  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -61,5 +61,5 @@ Spécifie les paramètres pour un service de programme de résolution d'homologu
 - <xref:System.ServiceModel.PeerResolvers.PeerCustomResolverSettings>
 - <xref:System.ServiceModel.Configuration.PeerResolverElement.Custom%2A>
 - <xref:System.ServiceModel.Configuration.PeerCustomResolverElement>
-- [Programmes de résolution d’homologue](../../../../../docs/framework/wcf/feature-details/peer-resolvers.md)
-- [Ajout d’un programme de résolution personnalisé à une Application PeerChannel](https://docs.microsoft.com/previous-versions/ms730105(v=vs.90))
+- [Programmes de résolution d’homologue](../../../wcf/feature-details/peer-resolvers.md)
+- [Ajout d’un programme de résolution personnalisé à une application PeerChannel](https://docs.microsoft.com/previous-versions/ms730105(v=vs.90))

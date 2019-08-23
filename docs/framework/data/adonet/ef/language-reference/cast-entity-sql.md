@@ -2,12 +2,12 @@
 title: CAST (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 07b6d750-dfd4-48a9-b86c-3badcbba6f70
-ms.openlocfilehash: 743c90cd9bc77a89051c59a217befa4275b28572
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 253dcf092deadd1049d0556af4ea0630602110d0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489948"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935816"
 ---
 # <a name="cast-entity-sql"></a>CAST (Entity SQL)
 Convertit une expression d'un type de données à un autre.  
@@ -48,12 +48,12 @@ CAST( e as T )
  L'utilisation d'une expression de cast est considérée comme une conversion explicite. Les conversions explicites peuvent tronquer des données ou entraîner une perte de précision.  
   
 > [!NOTE]
->  CAST n'est pris en charge que sur les types primitifs et les types de membres d'énumération.  
+> CAST n'est pris en charge que sur les types primitifs et les types de membres d'énumération.  
   
 ## <a name="example"></a>Exemple  
  La requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ci-dessous utilise l'opérateur CAST pour convertir une expression d'un type de données à une autre. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite dans [Comment : Exécuter une requête qui retourne les résultats PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1. Suivez la procédure décrite [dans la rubrique Procédure: Exécutez une requête qui retourne les résultats](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md)de PrimitiveType.  
   
 2. Transmettez à la méthode `ExecutePrimitiveTypeQuery` la requête suivante en tant qu'argument :  
   

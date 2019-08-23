@@ -2,15 +2,15 @@
 title: <filterTable>
 ms.date: 03/30/2017
 ms.assetid: e9f05441-3ad1-49b9-a267-71724aa094b4
-ms.openlocfilehash: 4e5c7d56e35afe3001f4c70064adbfef7702c720
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f9e64e667befb70d617574b2a03c3e6bebb2a143
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673210"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925604"
 ---
 # <a name="filtertable"></a>\<filterTable>
-Représente une table de routage qui contient une liste de filtres pour évaluer des messages et router les messages vers le point de terminaison client si le filtre a la valeur true.  
+Représente une table de routage qui contient une liste de filtres par rapport auxquels évaluer les messages et le point de terminaison client vers lequel acheminer les messages si le filtre prend la valeur true.  
   
  \<system.serviceModel>  
 \<routing>  
@@ -47,13 +47,13 @@ Représente une table de routage qui contient une liste de filtres pour évaluer
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<filtres>](../../../../../docs/framework/configure-apps/file-schema/wcf/filters-of-routing.md)|Mappages entre les filtres de routage et les points de terminaison cibles auxquels envoyer des messages lorsque le filtre correspond.|  
+|[\<filtres>](filters-of-routing.md)|Mappages entre les filtres de routage et les points de terminaison cibles auxquels envoyer des messages lorsque le filtre correspond.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<routing>](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Section de configuration qui contient des tables de routage.|  
+|[\<routing>](routing.md)|Section de configuration qui contient des tables de routage.|  
   
 ## <a name="see-also"></a>Voir aussi
 

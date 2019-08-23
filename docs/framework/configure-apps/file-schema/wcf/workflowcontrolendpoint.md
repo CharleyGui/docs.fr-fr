@@ -2,12 +2,12 @@
 title: <workflowControlEndpoint>
 ms.date: 03/30/2017
 ms.assetid: 6c89e76c-643b-4b6a-9b25-628f753d7027
-ms.openlocfilehash: a9c16d1036a8177120cd152d4ac211ad084d588e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2c9774217b835acdb9ebf7374b964d838497fc9f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769640"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915335"
 ---
 # <a name="workflowcontrolendpoint"></a>\<workflowControlEndpoint>
 Cet élément de configuration définit un point de terminaison standard permettant de contrôler l'exécution d'instances de flux de travail (créer, exécuter, interrompre, arrêter, etc.).  
@@ -43,7 +43,7 @@ Cet élément de configuration définit un point de terminaison standard permett
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<standardEndpoints>](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Collection de points de terminaison standard qui sont des points de terminaison prédéfinis dont une ou plusieurs propriétés (adresse, liaison, contrat) sont fixes.|  
+|[\<standardEndpoints>](standardendpoints.md)|Collection de points de terminaison standard qui sont des points de terminaison prédéfinis dont une ou plusieurs propriétés (adresse, liaison, contrat) sont fixes.|  
   
 ## <a name="see-also"></a>Voir aussi
 

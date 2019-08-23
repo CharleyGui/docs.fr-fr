@@ -2,12 +2,12 @@
 title: <endpointDiscovery>
 ms.date: 03/30/2017
 ms.assetid: 70812717-888a-4748-9640-0df6715ff029
-ms.openlocfilehash: 125baba917a49135aaa426df2cfa1a4dbe8ac1e8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5cb64c54067ba695f67d86c0026db77ebbe7d5ee
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61700908"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919049"
 ---
 # <a name="endpointdiscovery"></a>\<endpointDiscovery>
 Spécifie les différents paramètres de découverte d’un point de terminaison, tels que la fonctionnalité de découverte, les portées et toutes les extensions personnalisées de ses métadonnées.  
@@ -15,7 +15,7 @@ Spécifie les différents paramètres de découverte d’un point de terminaison
 \<system.ServiceModel>  
 \<behaviors>  
 \<endpointBehaviors>  
-\<behavior>  
+\<> de comportement  
 \<endpointDiscovery>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -42,27 +42,27 @@ Spécifie les différents paramètres de découverte d’un point de terminaison
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|enabled|Une valeur booléenne qui spécifie si la fonctionnalité de découverte est activée sur ce point de terminaison. La valeur par défaut est `false`.|  
+|enabled|Valeur booléenne qui spécifie si la détectabilité est activée sur ce point de terminaison. Par défaut, il s’agit de `false`.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<scopes>](../../../../../docs/framework/configure-apps/file-schema/wcf/scopes.md)|Collection d'URI de portée pour le point de terminaison. Plusieurs URI de portée peuvent être associés au même point de terminaison.|  
-|[\<extensions>](../../../../../docs/framework/configure-apps/file-schema/wcf/extensions.md) [of \<endpointDiscovery>]|Collection d'éléments XML qui vous permet de spécifier des métadonnées personnalisées à publier pour un point de terminaison.|  
+|[\<scopes>](scopes.md)|Collection d'URI de portée pour le point de terminaison. Plusieurs URI de portée peuvent être associés au même point de terminaison.|  
+|[\<extensions>](extensions.md) [of \<endpointDiscovery>]|Collection d'éléments XML qui vous permet de spécifier des métadonnées personnalisées à publier pour un point de terminaison.|  
 |\<types>|Collection d'interfaces à rechercher.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Spécifie un élément de comportement.|  
+|[\<behavior>](behavior-of-endpointbehaviors.md)|Spécifie un élément de comportement.|  
 |||  
   
 ## <a name="remarks"></a>Notes  
- Lorsqu'il est ajouté à la configuration de comportement du point de terminaison et si le jeu d'attributs `enabled` a la valeur `true`, cet élément de configuration devient détectable. En outre, vous pouvez utiliser la [ \<étendues >](../../../../../docs/framework/configure-apps/file-schema/wcf/scopes.md)élément enfant à la spécification URI qui peut être utilisé pour filtrer des points de terminaison de service pendant la requête, de portée personnalisés, ainsi que les [ \<extensions >](../../../../../docs/framework/configure-apps/file-schema/wcf/extensions.md) élément enfant à spécifier des métadonnées personnalisées qui doivent être publiées avec les métadonnées détectables standard (EPR, ContractTypeName, BindingName, étendue et ListenURI).  
+ Lorsqu'il est ajouté à la configuration de comportement du point de terminaison et si le jeu d'attributs `enabled` a la valeur `true`, cet élément de configuration devient détectable. En outre, vous pouvez utiliser les [ \<étendues >](scopes.md)élément enfant pour spécifier des URI de portée personnalisée qui peuvent être utilisés pour filtrer les points de terminaison de service pendant la requête, ainsi que les [ \<extensions >](extensions.md) élément enfant pour spécifier personnalisé les métadonnées qui doivent être publiées avec les métadonnées détectables standard (EPR, ContractTypeName, BindingName, Scope et ListenURI).  
   
- Cet élément de configuration dépend de la [ \<serviceDiscovery >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicediscovery.md) élément qui fournit le contrôle au niveau du service de découverte. Cela signifie que les paramètres de cet élément sont ignorés si [ \<serviceDiscovery >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicediscovery.md) n’est pas présent dans la configuration.  
+ Cet élément de configuration dépend de l' [ \<élément serviceDiscovery >](servicediscovery.md) qui fournit le contrôle du niveau de service de la détectabilité. Cela signifie que les paramètres de cet élément sont ignorés si [ \<serviceDiscovery >](servicediscovery.md) n’est pas présent dans la configuration.  
   
 ## <a name="example"></a>Exemple  
  L'exemple de configuration suivant spécifie des portées de filtrage et des métadonnées d'extension à publier pour un point de terminaison.  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - inheritance [Windows Forms], walkthroughs
 - custom controls [Windows Forms], inheritance
 ms.assetid: 09476da0-8d4c-4a4c-b969-649519dfb438
-ms.openlocfilehash: df88f9ae0b32ecd3b79686f3271e09b92ad7d4fd
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: c06639ef2f2ced8bd128adea636efe8be1715764
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040189"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931026"
 ---
 # <a name="walkthrough-inheriting-from-a-windows-forms-control-with-visual-c"></a>Procédure pas à pas : Héritage d’un contrôle Windows Forms à l’aide de Visual C\#
 Avec Visual C#, vous pouvez créer des contrôles personnalisés puissants par le biais de *l’héritage*. L’héritage vous permet de créer des contrôles qui conservent toutes les fonctionnalités inhérentes des contrôles Windows Forms standard, tout en intégrant des fonctionnalités personnalisées. Dans cette procédure pas à pas, vous allez créer un contrôle hérité simple appelé `ValueButton`. Ce bouton hérite des fonctionnalités du contrôle de <xref:System.Windows.Forms.Button> Windows Forms standard et expose une propriété personnalisée appelée `ButtonValue`.
@@ -42,7 +42,7 @@ Avec Visual C#, vous pouvez créer des contrôles personnalisés puissants par l
 8. Dans le menu **Fichier**, sélectionnez **Enregistrer tout** pour enregistrer le projet.
 
     > [!NOTE]
-    >  Plus aucun concepteur visuel n’est disponible. Étant donné <xref:System.Windows.Forms.Button> que le contrôle effectue sa propre peinture, vous ne pouvez pas modifier son apparence dans le concepteur. Sa représentation visuelle sera exactement la même que celle de la classe dont elle hérite (autrement dit, <xref:System.Windows.Forms.Button>), sauf si elle est modifiée dans le code. Vous pouvez toujours ajouter sur l’aide de conception des composants n’ayant aucun élément d’interface utilisateur.
+    > Plus aucun concepteur visuel n’est disponible. Étant donné <xref:System.Windows.Forms.Button> que le contrôle effectue sa propre peinture, vous ne pouvez pas modifier son apparence dans le concepteur. Sa représentation visuelle sera exactement la même que celle de la classe dont elle hérite (autrement dit, <xref:System.Windows.Forms.Button>), sauf si elle est modifiée dans le code. Vous pouvez toujours ajouter sur l’aide de conception des composants n’ayant aucun élément d’interface utilisateur.
 
 ## <a name="adding-a-property-to-your-inherited-control"></a>Ajout d’une propriété à votre contrôle hérité
  Les contrôles Windows Forms hérités permettent notamment de créer des contrôles ayant le même aspect que les contrôles Windows Forms standard, mais qui exposent des propriétés personnalisées. Dans cette section, vous allez ajouter une propriété appelée `ButtonValue` à votre contrôle.

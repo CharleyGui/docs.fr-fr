@@ -10,25 +10,25 @@ helpviewer_keywords:
 - tables [Windows Forms], adding to DataGrid control
 - DataGrid control [Windows Forms], adding tables and columns
 ms.assetid: 2fe661b9-aa06-49b9-a314-a0d3cbfdcb4d
-ms.openlocfilehash: cc364f3609f8041378b0b03b8e1bc8f312fade18
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 55e30744f57364fb37c9fde5b6bade6bab60fa26
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59319909"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69925091"
 ---
 # <a name="how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control"></a>Procédure : ajouter des tables et des colonnes au contrôle DataGrid Windows Forms
 > [!NOTE]
->  Le contrôle <xref:System.Windows.Forms.DataGridView> remplace le contrôle <xref:System.Windows.Forms.DataGrid> et lui ajoute des fonctionnalités ; toutefois, le contrôle <xref:System.Windows.Forms.DataGrid> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix. Pour plus d’informations, consultez [Différences entre les contrôles DataGridView et DataGrid Windows Forms](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+> Le contrôle <xref:System.Windows.Forms.DataGridView> remplace le contrôle <xref:System.Windows.Forms.DataGrid> et lui ajoute des fonctionnalités ; toutefois, le contrôle <xref:System.Windows.Forms.DataGrid> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix. Pour plus d’informations, consultez [Différences entre les contrôles DataGridView et DataGrid Windows Forms](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- Vous pouvez afficher des données dans les formulaires Windows <xref:System.Windows.Forms.DataGrid> contrôle dans les tables et colonnes en créant **DataGridTableStyle** objets et en les ajoutant à la **GridTableStylesCollection** objet, qui est accessible via la <xref:System.Windows.Forms.DataGrid> du contrôle **TableStyles** propriété. Chaque style de table affiche le contenu de toute table de données spécifiée dans le **DataGridTableStyle** l’objet **MappingName** propriété. Par défaut, un style de table sans style de colonne spécifié affiche toutes les colonnes des table de données. Vous pouvez limiter les colonnes de la table s’affichent en ajoutant **DataGridColumnStyle** des objets sur le **GridColumnStylesCollection** objet, qui est accessible via la  **GridColumnStyles** propriété de chaque **DataGridTableStyle** objet.  
+ Vous pouvez afficher des données dans le <xref:System.Windows.Forms.DataGrid> contrôle Windows Forms dans les tables et les colonnes en créant des objets **DataGridTableStyle** et en les ajoutant à l’objet **GridTableStylesCollection** , <xref:System.Windows.Forms.DataGrid> accessible par le biais du contrôle **TableStyles** , propriété. Chaque style de table affiche le contenu de la table de données spécifiée dans la propriété **MappingName** de l’objet **DataGridTableStyle** . Par défaut, un style de table sans style de colonne spécifié affiche toutes les colonnes de cette table de données. Vous pouvez limiter les colonnes de la table qui s’affichent en ajoutant des objets **DataGridColumnStyle** à l’objet **GridColumnStylesCollection** , accessible via la propriété **GridColumnStyles** de chaque **DataGridTableStyle** . dessin.  
   
-### <a name="to-add-a-table-and-column-to-a-datagrid-programmatically"></a>Pour ajouter par programmation une table et une colonne à un contrôle DataGrid  
+### <a name="to-add-a-table-and-column-to-a-datagrid-programmatically"></a>Pour ajouter une table et une colonne à un DataGrid par programmation  
   
-1. Pour afficher des données dans la table, vous devez d’abord lier le <xref:System.Windows.Forms.DataGrid> contrôle à un jeu de données. Pour plus d'informations, voir [Procédure : Lier le contrôle DataGrid Windows Forms à une Source de données](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md).  
+1. Pour afficher des données dans la table, vous devez d’abord lier le <xref:System.Windows.Forms.DataGrid> contrôle à un DataSet. Pour plus d'informations, voir [Procédure : Liez le contrôle Windows Forms DataGrid à une source](how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)de données.  
   
     > [!CAUTION]
-    >  Lorsque vous spécifiez par programme des styles de colonne, vous devez toujours créer **DataGridColumnStyle** objets et les ajouter à la **GridColumnStylesCollection** objet avant d’ajouter  **DataGridTableStyle** des objets sur le **GridTableStylesCollection** objet. Lorsque vous ajoutez un vide **DataGridTableStyle** objet à la collection, **DataGridColumnStyle** objets sont générés automatiquement pour vous. Par conséquent, une exception sera levée si vous essayez d’ajouter de nouveaux **DataGridColumnStyle** objets en double **MappingName** valeurs à la **GridColumnStylesCollection**objet.  
+    >  Lorsque vous spécifiez des styles de colonne par programmation, créez toujours des objets **DataGridColumnStyle** et ajoutez-les à l’objet **GridColumnStylesCollection** avant d’ajouter des objets **DataGridTableStyle** au  **Objet GridTableStylesCollection** . Lorsque vous ajoutez un objet **DataGridTableStyle** vide à la collection, les objets **DataGridColumnStyle** sont automatiquement générés pour vous. Par conséquent, une exception est levée si vous essayez d’ajouter de nouveaux objets **DataGridColumnStyle** avec des valeurs **MappingName** dupliquées à l’objet **GridColumnStylesCollection** .  
   
 2. Déclarez un nouveau style de table et définissez son nom de mappage.  
   
@@ -47,7 +47,7 @@ ms.locfileid: "59319909"
     ts1->MappingName = S"Customers";  
     ```  
   
-3. Déclarez un nouveau style de colonne et définir son nom de mappage et d’autres propriétés.  
+3. Déclarez un nouveau style de colonne et définissez son nom de mappage et d’autres propriétés.  
   
     ```vb  
     Dim myDataCol As New DataGridBoolColumn()  
@@ -67,7 +67,7 @@ ms.locfileid: "59319909"
     myDataCol->MappingName = "Current";  
     ```  
   
-4. Appelez le **ajouter** méthode de la **GridColumnStylesCollection** objet à ajouter la colonne au style de table  
+4. Appelez la méthode **Add** de l’objet **GridColumnStylesCollection** pour ajouter la colonne au style de table  
   
     ```vb  
     ts1.GridColumnStyles.Add(myDataCol)  
@@ -81,7 +81,7 @@ ms.locfileid: "59319909"
     ts1->GridColumnStyles->Add(myDataCol);  
     ```  
   
-5. Appelez le **ajouter** méthode de la **GridTableStylesCollection** objet à ajouter le style de table à la grille de données.  
+5. Appelez la méthode **Add** de l’objet **GridTableStylesCollection** pour ajouter le style de table à la grille de données.  
   
     ```vb  
     DataGrid1.TableStyles.Add(ts1)  

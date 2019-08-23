@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e380edac-da67-4276-80a5-b64decae4947
-ms.openlocfilehash: f2fc69867ae1659a342161b00dfd91852441fa5b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 37641056f2f3110685c24266d2612845ffbf0b3d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772006"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929239"
 ---
 # <a name="optimistic-concurrency"></a>Accès concurrentiel optimiste
 Dans un environnement multi-utilisateur, il existe deux modèles pour la mise à jour de données dans une base de données : l'accès simultané optimiste et l'accès simultané pessimiste. L'objet <xref:System.Data.DataSet> est conçu pour privilégier l'utilisation de l'accès simultané optimiste pour les activités longues, comme lors de la communication à distance de données ou de l'interaction avec ces dernières.  
@@ -20,7 +20,7 @@ Dans un environnement multi-utilisateur, il existe deux modèles pour la mise à
  Par conséquent, dans un modèle d'accès simultané pessimiste, un utilisateur qui met à jour une ligne crée un verrou. Jusqu'à ce que cet utilisateur ait terminé sa mise à jour et libéré le verrou, personne d'autre ne peut modifier cette ligne. C'est pourquoi il est préférable d'implémenter l'accès simultané pessimiste lorsque les temps de verrouillage sont courts, comme c'est le cas pour le traitement d'enregistrements par programme. L'accès simultané pessimiste ne constitue pas la solution la plus adaptée lorsque des utilisateurs interagissent avec les données, ce qui entraîne le verrouillage d'enregistrements pendant des laps de temps relativement longs.  
   
 > [!NOTE]
->  Si vous devez mettre à jour plusieurs lignes en une même opération, la création d’une transaction constitue une option plus adaptée que l’utilisation du verrouillage pessimiste.  
+> Si vous devez mettre à jour plusieurs lignes en une même opération, la création d’une transaction constitue une option plus adaptée que l’utilisation du verrouillage pessimiste.  
   
  Au contraire, les utilisateurs qui ont recours à un accès simultané optimiste ne verrouillent pas une ligne lorsqu'ils la lisent. Lorsqu'un utilisateur souhaite mettre à jour une ligne, l'application doit déterminer si un autre utilisateur a modifié cette ligne depuis sa dernière lecture. L'accès simultané optimiste est généralement utilisé dans les environnements où les conflits relatifs aux données sont rares. L'accès simultané optimiste améliore les performances, dans la mesure où aucun verrouillage des enregistrements n'est requis et où le verrouillage d'enregistrements nécessite des ressources serveur supplémentaires. Il faut également savoir que la gestion des verrous d'enregistrements requiert une connexion permanente au serveur de base de données. Parce que ce n'est pas le cas dans un modèle d'accès simultané optimiste, les connexions au serveur sont disponibles pour traiter plus rapidement un nombre important de clients.  
   
@@ -32,7 +32,7 @@ Dans un environnement multi-utilisateur, il existe deux modèles pour la mise à
   
  **CustID LastName FirstName**  
   
- 101 Bob Smith  
+ 101 Smith Bob  
   
 |Nom de la colonne|Valeur d'origine|Valeur actuelle|Valeur dans la base de données|  
 |-----------------|--------------------|-------------------|-----------------------|  
@@ -42,7 +42,7 @@ Dans un environnement multi-utilisateur, il existe deux modèles pour la mise à
   
  À 13h01, l'utilisateur 2 lit la même ligne.  
   
- À 13 h 03, l’utilisateur 2 modifie **FirstName** de « Bob » par « Robert » et met à jour de la base de données.  
+ À 1:03 h 00, utilisateur2 remplace **FirstName** de «Bob» par «Robert» et met à jour la base de données.  
   
 |Nom de la colonne|Valeur d'origine|Valeur actuelle|Valeur dans la base de données|  
 |-----------------|--------------------|-------------------|-----------------------|  
@@ -71,7 +71,7 @@ Dans un environnement multi-utilisateur, il existe deux modèles pour la mise à
 SELECT Col1, Col2, Col3 FROM Table1  
 ```  
   
- Pour tester une violation d’accès concurrentiel optimiste lors de la mise à jour une ligne dans **Table1**, émettez l’instruction UPDATE suivante :  
+ Pour tester une violation de l’accès concurrentiel optimiste lors de la mise à jour d’une ligne dans **table1**, vous devez émettre l’instruction UPDATE suivante:  
   
 ```  
 UPDATE Table1 Set Col1 = @NewCol1Value,  
@@ -96,14 +96,14 @@ UPDATE Table1 Set Col1 = @NewVal1
  Vous pouvez aussi choisir d'appliquer des critères moins restrictifs lorsque vous utilisez un modèle d'accès simultané optimiste. Par exemple, utiliser uniquement les colonnes de clé primaire dans la clause WHERE aboutit au remplacement des données, que les autres colonnes aient ou non subi une mise à jour depuis la dernière requête. Vous pouvez aussi appliquer une clause WHERE à certaines colonnes uniquement, ce qui aura pour effet de remplacer les données, sauf si des champs spécifiques ont été mis à jour depuis la dernière requête les concernant.  
   
 ### <a name="the-dataadapterrowupdated-event"></a>Événement DataAdapter.RowUpdated  
- Le **RowUpdated** événements de la <xref:System.Data.Common.DataAdapter> objet peut être utilisé conjointement avec les techniques précédemment décrites, afin de fournir une notification à votre application de violations d’accès concurrentiel optimiste. **RowUpdated** intervient après chaque tentative pour mettre à jour un **Modified** ligne à partir d’un **DataSet**. Cela vous permet d'ajouter un code de gestion spécial, qui traitera les exceptions le cas échéant, ajoutera des informations d'erreur personnalisées, ajoutera une logique pour les nouvelles tentatives, etc. Le <xref:System.Data.Common.RowUpdatedEventArgs> objet retourne un **RecordsAffected** propriété contenant le nombre de lignes affectées par une commande de mise à jour particulière pour une ligne modifiée dans une table. En définissant la commande de mise à jour pour tester l’accès concurrentiel optimiste, la **RecordsAffected** propriété, par conséquent, renvoie la valeur 0 lorsqu’une violation d’accès concurrentiel optimiste s’est produite, car aucun enregistrement ont été mis à jour. Dans ce cas, une exception est levée. Le **RowUpdated** événement vous permet de gérer cet événement et d’éviter l’exception en définissant une **RowUpdatedEventArgs.Status** valeur, telle que  **UpdateStatus.SkipCurrentRow**. Pour plus d’informations sur la **RowUpdated** événement, consultez [gestion des événements DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
+ L’événement **RowUpdated** de l' <xref:System.Data.Common.DataAdapter> objet peut être utilisé conjointement avec les techniques décrites précédemment, afin de fournir une notification à votre application en cas de violations de l’accès concurrentiel optimiste. **RowUpdated** se produit après chaque tentative de mise à jour d’une ligne **modifiée** à partir d’un **DataSet**. Cela vous permet d'ajouter un code de gestion spécial, qui traitera les exceptions le cas échéant, ajoutera des informations d'erreur personnalisées, ajoutera une logique pour les nouvelles tentatives, etc. L' <xref:System.Data.Common.RowUpdatedEventArgs> objet retourne une propriété **RecordsAffected** contenant le nombre de lignes affectées par une commande de mise à jour particulière pour une ligne modifiée dans une table. En définissant la commande de mise à jour pour tester l’accès concurrentiel optimiste, la propriété **RecordsAffected** retourne la valeur 0 lorsqu’une violation d’accès concurrentiel optimiste s’est produite, car aucun enregistrement n’a été mis à jour. Dans ce cas, une exception est levée. L’événement **RowUpdated** vous permet de gérer cette occurrence et d’éviter l’exception en définissant une valeur **RowUpdatedEventArgs. Status** appropriée, telle que **UpdateStatus. SkipCurrentRow**. Pour plus d’informations sur l’événement **RowUpdated** , consultez [gestion des événements DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
   
- Si vous le souhaitez, vous pouvez définir **DataAdapter.ContinueUpdateOnError** à **true**, avant d’appeler **mise à jour**et répondre aux informations d’erreur stockées dans le **RowError** ligne de propriété d’un particulier lorsque le **mise à jour** est terminée. Pour plus d’informations, consultez [informations d’erreur de ligne](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md).  
+ Si vous le souhaitez, vous pouvez affecter à **DataAdapter. ContinueUpdateOnError** la **valeur true**, avant d’appeler **Update**, et répondre aux informations d’erreur stockées dans la propriété **RowError** d’une ligne particulière lorsque la **mise à jour** est terminée. Pour plus d’informations, consultez [informations sur les erreurs de ligne](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md).  
   
 ## <a name="optimistic-concurrency-example"></a>Exemple d'accès simultané optimiste  
- Voici un exemple simple qui définit les **UpdateCommand** d’un **DataAdapter** pour tester l’accès concurrentiel optimiste et utilise ensuite le **RowUpdated** événement à tester pour violations d’accès concurrentiel optimiste. Une violation d’accès concurrentiel optimiste, l’application définit le **RowError** de la ligne de la mise à jour a été émis pour afin de refléter une violation d’accès concurrentiel optimiste.  
+ Voici un exemple simple qui définit le **UpdateCommand** d’un **DataAdapter** pour tester l’accès concurrentiel optimiste, puis utilise l’événement **RowUpdated** pour tester les violations de l’accès concurrentiel optimiste. En cas de violation de l’accès concurrentiel optimiste, l’application définit le **RowError** de la ligne pour laquelle la mise à jour a été émise afin de refléter une violation d’accès concurrentiel optimiste.  
   
- Notez que les valeurs de paramètre passées à la clause WHERE de la commande de mise à jour sont mappées à la **d’origine** valeurs de leurs colonnes respectives.  
+ Notez que les valeurs de paramètre transmises à la clause WHERE de la commande UPDATE sont mappées aux valeurs **d’origine** de leurs colonnes respectives.  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  

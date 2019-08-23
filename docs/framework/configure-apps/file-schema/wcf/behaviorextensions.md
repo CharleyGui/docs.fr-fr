@@ -2,12 +2,12 @@
 title: <behaviorExtensions>
 ms.date: 03/30/2017
 ms.assetid: 59f2791a-c78f-40d7-aa80-0d9cd10135d9
-ms.openlocfilehash: 81ce9bb0e55fe4570f8a21187d9df80ea22393fe
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bcf1f1dcdba50c3e7fba8eb170132d0cf47c4271
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673457"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919817"
 ---
 # <a name="behaviorextensions"></a>\<behaviorExtensions>
 Les extensions de comportement permettent la création d'éléments de comportement définis par l'utilisateur. Ces éléments peuvent être utilisés avec les éléments de comportement standard Windows Communication Foundation (WCF). La section `behaviorExtensions` définit l'élément tel qu'il peut être utilisé dans la configuration. Voici un exemple d'une extension de comportement typique.  
@@ -47,11 +47,11 @@ Les extensions de comportement permettent la création d'éléments de comportem
   
  Si l'assembly du type est connu, le chargeur recherche les emplacements de redirection du fichier de configuration, GAC, l'assembly actuel à l'aide d'informations de configuration, et du répertoire de base de l'application. Si l'assembly est inconnu, le chargeur recherche l'assembly actuel, mscorlib, et l'emplacement retourné par le gestionnaire d'événements `TypeResolve`. Cet ordre de recherche du CLR peut être modifié avec les raccordements tels que le mécanisme de transfert de type et l'événement AppDomain.TypeResolve.  
   
- Un intrus peut exploiter l'ordre de recherche du CLR et exécuter le code non autorisé. L'utilisation de noms (forts) qualifiés complets identifie uniquement un type et augmente considérablement la sécurité de votre système.  
+ Un intrus peut exploiter l'ordre de recherche du CLR et exécuter le code non autorisé. L’utilisation de noms complets (forts) identifie de manière unique un type et renforce considérablement la sécurité de votre système.  
   
- Pour plus d’informations, consultez [méthode de localisation des assemblys par le Runtime](https://go.microsoft.com/fwlink/?LinkId=95336) et <xref:System.AppDomain.TypeResolve>.  
+ Pour plus d’informations, consultez [Comment le runtime localise les assemblys](https://go.microsoft.com/fwlink/?LinkId=95336) et <xref:System.AppDomain.TypeResolve>.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.Configuration.BehaviorExtensionElement>
-- [Configuration et extension de l’exécution à l’aide de comportements](../../../../../docs/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)
+- [Configuration et extension de l’exécution à l’aide de comportements](../../../wcf/extending/configuring-and-extending-the-runtime-with-behaviors.md)

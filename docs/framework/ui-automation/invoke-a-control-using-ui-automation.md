@@ -9,16 +9,16 @@ helpviewer_keywords:
 - UI Automation, invoking controls
 - controls, invoking
 ms.assetid: 5ee2de3f-256c-43ec-b64c-62ace91f9983
-ms.openlocfilehash: 19087cfaa22d166017bcf4e3ce5e6caf73ae5fe5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f17f3ad25f137bbf8d7cf88b43cc52dfdeeb3fd4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624550"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923728"
 ---
 # <a name="invoke-a-control-using-ui-automation"></a>Appeler un contrôle à l'aide d'UI Automation
 > [!NOTE]
->  Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour plus d’informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [Windows Automation API : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Cette rubrique montre comment effectuer les tâches suivantes :  
   
@@ -40,4 +40,4 @@ ms.locfileid: "64624550"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemple de TogglePattern InvokePattern et ExpandCollapsePattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InvokePattern)
+- [Exemple InvokePattern, ExpandCollapsePattern et TogglePattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InvokePattern)

@@ -2,12 +2,12 @@
 title: Opérateurs de comparaison et opérateurs numériques
 ms.date: 03/30/2017
 ms.assetid: 25b4a26a-06f2-4f80-87a9-76705ed46197
-ms.openlocfilehash: b29f78a13d6d0313e0ad29754f6d13ac08be1092
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ff54856a66ad5e9c0362c013f8df5f1147055cd0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61783134"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915713"
 ---
 # <a name="numeric-and-comparison-operators"></a>Opérateurs de comparaison et opérateurs numériques
 
@@ -62,5 +62,5 @@ Les opérateurs arithmétiques et de comparaison fonctionnent conformément aux 
 ## <a name="see-also"></a>Voir aussi
 
 - [Fonctions et types de données](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
-- [Opérateurs C#](../../../../../../docs/csharp/language-reference/operators/index.md)
+- [Opérateurs C#](../../../../../csharp/language-reference/operators/index.md)
 - [Opérateurs](../../../../../visual-basic/language-reference/operators/index.md)

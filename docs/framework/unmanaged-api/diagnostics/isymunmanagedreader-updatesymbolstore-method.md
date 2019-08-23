@@ -17,18 +17,18 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: cfc4507557102e19d95f1b746b3a76a231882d7b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d84d4fccb2cb4e500f07f6bfbfb93b8c7b81f5d6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736740"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939004"
 ---
 # <a name="isymunmanagedreaderupdatesymbolstore-method"></a>ISymUnmanagedReader::UpdateSymbolStore, méthode
-Met à jour le magasin de symboles existant avec un magasin de symboles delta. Cette méthode est utilisée dans les scénarios modifier et continuer pour mettre à jour le magasin de symboles pour correspondre aux deltas avec le fichier exécutable portable d’origine (PE).  
+Met à jour le magasin de symboles existant avec un magasin de symboles delta. Cette méthode est utilisée dans les scénarios de modification et de continuation pour mettre à jour le magasin de symboles afin qu’il corresponde aux deltas du fichier exécutable portable (PE) d’origine.  
   
 > [!NOTE]
->  Vous devez spécifier un seul de le `filename` ou `pIStream` paramètres, pas les deux. Si `filename` est spécifié, le magasin de symboles sera actualisée avec les symboles dans ce fichier. Si `pIStream` est spécifié, le magasin sera actualisé avec les données à partir de la <xref:System.Runtime.InteropServices.ComTypes.IStream>.  
+> Vous devez spécifier un seul des `filename` paramètres ou `pIStream` , mais pas les deux. Si `filename` est spécifié, le magasin de symboles est mis à jour avec les symboles dans ce fichier. Si `pIStream` est spécifié, le magasin est mis à jour avec les données <xref:System.Runtime.InteropServices.ComTypes.IStream>de.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +40,16 @@ HRESULT UpdateSymbolStore (
   
 ## <a name="parameters"></a>Paramètres  
  `filename`  
- [in] Le nom du fichier qui contient le magasin de symboles.  
+ dans Nom du fichier qui contient le magasin de symboles.  
   
  `pIStream`  
- [in] Le flux de fichier, utilisé comme alternative à le `filename` paramètre.  
+ dans Le flux de fichier, utilisé comme alternative au `filename` paramètre.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK si la méthode est réussie; Sinon, E_FAIL ou un autre code d’erreur.  
   
 ## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

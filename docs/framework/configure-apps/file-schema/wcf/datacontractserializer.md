@@ -2,12 +2,12 @@
 title: dataContractSerializer
 ms.date: 03/30/2017
 ms.assetid: a47513a4-a96c-4350-8586-daacb05dee71
-ms.openlocfilehash: 8ba16d9cc30b07d3e6b0924e6013ec01443867d4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8814a48df8933cf08db78e397c24d42f2da26026
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61704126"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69919233"
 ---
 # <a name="datacontractserializer"></a>dataContractSerializer
 Contient les données de configuration correspondant au <xref:System.Runtime.Serialization.DataContractSerializer>.  
@@ -15,7 +15,7 @@ Contient les données de configuration correspondant au <xref:System.Runtime.Ser
  \<system.ServiceModel>  
 \<behaviors>  
 \<endpointBehaviors>  
-\<behavior>  
+\<> de comportement  
 \<dataContractSerializer>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -42,7 +42,7 @@ Contient les données de configuration correspondant au <xref:System.Runtime.Ser
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Spécifie un comportement de point de terminaison.|  
+|[\<behavior>](behavior-of-endpointbehaviors.md)|Spécifie un comportement de point de terminaison.|  
   
 ## <a name="remarks"></a>Notes  
  Pour plus d'informations les types connus, consultez la documentation <xref:System.Runtime.Serialization.DataContractSerializer>.  
@@ -55,5 +55,5 @@ Contient les données de configuration correspondant au <xref:System.Runtime.Ser
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior>
 - <xref:System.ServiceModel.Configuration.DataContractSerializerElement>
-- [Types connus de contrats de données](../../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
-- [Transfert de données et sérialisation](../../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)
+- [Types connus de contrats de données](../../../wcf/feature-details/data-contract-known-types.md)
+- [Transfert de données et sérialisation](../../../wcf/feature-details/data-transfer-and-serialization.md)

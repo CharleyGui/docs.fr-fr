@@ -2,12 +2,12 @@
 title: <textMessageEncoding>
 ms.date: 03/30/2017
 ms.assetid: e6d834d0-356e-45eb-b530-bbefbb9ec3f0
-ms.openlocfilehash: e6e6d1907d89a09a72594a836f2192e9ad9c4290
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e2fec2c2e5979b08ed0d832f636b3d0847b9a5dc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61758286"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915660"
 ---
 # <a name="textmessageencoding"></a>\<textMessageEncoding>
 Spécifie l'encodage de caractères et le suivi des versions de message utilisés pour les messages XML textuels.  
@@ -36,8 +36,8 @@ Spécifie l'encodage de caractères et le suivi des versions de message utilisé
 |---------------|-----------------|  
 |maxReadPoolSize|Entier qui spécifie combien de messages peuvent être lus de manière simultanée sans allouer de nouveaux lecteurs. Des pools plus volumineux permettent au système d'être plus tolérant aux pics d'activité au prix d'une plage de travail plus volumineuse. La valeur par défaut est 64.|  
 |maxWritePoolSize|Entier qui spécifie combien de messages peuvent être envoyés simultanément sans allouer de nouveaux enregistreurs. Des pools plus volumineux permettent au système d'être plus tolérant aux pics d'activité au prix d'une plage de travail plus volumineuse. La valeur par défaut est 16.|  
-|messageVersion|Spécifie la version SOAP des messages envoyés à l'aide de la liaison. Les valeurs valides sont les suivantes :<br /><br /> -   Soap11Addressing10<br />-Soap12Addressing10<br />-   Soap11<br />-Soap12<br /><br />La valeur par défaut est Soap12Addressing10. Cet attribut est de type <xref:System.ServiceModel.Channels.MessageVersion>.|  
-|writeEncoding|Spécifie l'encodage de jeu de caractères à utiliser pour l'émission de messages sur la liaison. Les valeurs valides sont les suivantes :<br /><br /> -   UnicodeFffeTextEncoding: Codage Unicode BigEndian<br />-   Utf16TextEncoding: Encodage Unicode<br />-   Utf8TextEncoding: codage 8 bits<br /><br /> La valeur par défaut est Utf8TextEncoding. Cet attribut est de type <xref:System.Text.Encoding>.|  
+|messageVersion|Spécifie la version SOAP des messages envoyés à l'aide de la liaison. Les valeurs valides sont les suivantes :<br /><br /> - Soap11Addressing10<br />- Soap12Addressing10<br />- Soap11<br />-Soap12<br /><br />La valeur par défaut est Soap12Addressing10. Cet attribut est de type <xref:System.ServiceModel.Channels.MessageVersion>.|  
+|writeEncoding|Spécifie l'encodage de jeu de caractères à utiliser pour l'émission de messages sur la liaison. Les valeurs valides sont les suivantes :<br /><br /> UnicodeFffeTextEncoding Encodage BigEndian Unicode<br />Utf16TextEncoding Encodage Unicode<br />Utf8TextEncoding encodage 8 bits<br /><br /> La valeur par défaut est Utf8TextEncoding. Cet attribut est de type <xref:System.Text.Encoding>.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -49,14 +49,14 @@ Spécifie l'encodage de caractères et le suivi des versions de message utilisé
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<binding>](../../../../../docs/framework/misc/binding.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
+|[\<binding>](../../../misc/binding.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
 ## <a name="remarks"></a>Notes  
- L'encodage est le processus de transformation d'un message en une séquence d'octets. Le décodage est le processus inverse. Windows Communication Foundation (WCF) inclut trois types d’encodage des messages SOAP : Texte, binaire et Message Transmission Optimization Mechanism (MTOM).  
+ L'encodage est le processus de transformation d'un message en une séquence d'octets. Le décodage est le processus inverse. Windows Communication Foundation (WCF) comprend trois types d’encodage pour les messages SOAP: Texte, binaire et MTOM (Message Transmission Optimization Mechanism).  
   
  L'encodage de texte représenté par l'élément `textMessageEncoding` est l'encodeur le plus interopérable, mais le moins efficace pour les messages XML.  L'encodeur de texte crée des messages textuels sur le câble. Les messages produits par cet encodeur sont adaptés à l'interopérabilité basée sur WS-*. Les services Web ou les clients de ces services comprennent généralement le XML textuel. Toutefois, la transmission de grands blocs de données binaires sous forme de texte est la méthode d'encodage de messages XML la moins efficace.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
   
 ```xml  
 <textMessageEncoding maxReadPoolSize="211"
@@ -71,9 +71,9 @@ Spécifie l'encodage de caractères et le suivi des versions de message utilisé
 - <xref:System.ServiceModel.Channels.CustomBinding>
 - <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>
 - <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>
-- [Sélection d’un encodeur de message](../../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)
-- [Encodage de message](../../../../../docs/framework/configure-apps/file-schema/wcf/message-encoding.md)
-- [Liaisons](../../../../../docs/framework/wcf/bindings.md)
-- [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Sélection d’un encodeur de message](../../../wcf/feature-details/choosing-a-message-encoder.md)
+- [Encodage de message](message-encoding.md)
+- [Liaisons](../../../wcf/bindings.md)
+- [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
+- [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)

@@ -1,18 +1,18 @@
 ---
-title: <add> de WCF
+title: <add>de WCF
 ms.date: 03/30/2017
 ms.assetid: c196f6d7-77f6-4266-973c-305b2b4dd8a2
-ms.openlocfilehash: e9ece03ec9376e6a428ac6a82a3f26020f64d744
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fa94f15a296aa03640bf0a262eb45ea1664944cd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61673840"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926614"
 ---
 # <a name="add-of-wcf"></a>\<Ajouter > de WCF
 Configurez un participant au suivi qui écoute les enregistrements de suivi émis directement du runtime et les traite en fonction de sa configuration. Cela inclut l'écriture dans une sortie spécifique (par exemple, un fichier, une console ou le suivi d'événements pour Windows [ETW]), le traitement/regroupement des enregistrements ou toute autre combinaison requise.  
   
- Pour plus d’informations de suivi de flux de travail et les participants de suivi, consultez [suivi et traçage de Workflow](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md) et [les participants au suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-participants.md).  
+ Pour plus d’informations sur le suivi des workflows et les participants au suivi, consultez [suivi des workflows et](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) suivi et [suivi des participants](../../../windows-workflow-foundation/tracking-participants.md).  
   
  \<system.serviceModel>  
 \<tracking>  
@@ -49,7 +49,7 @@ Configurez un participant au suivi qui écoute les enregistrements de suivi émi
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<participants>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/participants.md)|Liste de participants au suivi|  
+|[\<participants>](../windows-workflow-foundation/participants.md)|Liste de participants au suivi|  
   
 ## <a name="remarks"></a>Notes  
  Les participants au suivi permettent d'obtenir les données de suivi émises du flux de travail et de les stocker dans différents médias. De la même manière, tout post-traitement effectué sur les enregistrements de suivi peut également être réalisé dans le participant au suivi.  
@@ -93,5 +93,5 @@ Configurez un participant au suivi qui écoute les enregistrements de suivi émi
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.TrackingSection>
 - <xref:System.ServiceModel.Activities.Description.EtwTrackingBehavior>
 - <xref:System.ServiceModel.Activities.Configuration.EtwTrackingBehaviorElement>
-- [Suivi et traçage de workflow](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
-- [Participants de suivi](../../../../../docs/framework/windows-workflow-foundation/tracking-participants.md)
+- [Suivi et traçage de workflow](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Participants de suivi](../../../windows-workflow-foundation/tracking-participants.md)

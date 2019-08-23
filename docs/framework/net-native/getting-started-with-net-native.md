@@ -4,16 +4,16 @@ ms.date: 03/30/2017
 ms.assetid: fc9e04e8-2d05-4870-8cd6-5bd276814afc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 39d0066185703ebac7609d506c834b7718693d33
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: ce43ef1a24a0b9bcf0248647245cc35838700295
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052623"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910500"
 ---
 # <a name="getting-started-with-net-native"></a>Prise en main de .NET Native
 
-Que vous écriviez une nouvelle application Windows pour Windows 10 ou que vous migriez une application du Windows Store existante, vous pouvez suivre le même ensemble de procédures. Pour créer une application Native .NET, procédez comme suit :
+Que vous écriviez une nouvelle application Windows pour Windows 10 ou que vous migriez une application du Windows Store existante, vous pouvez suivre le même ensemble de procédures. Pour créer une application .NET Native, procédez comme suit:
 
 1. [Développez une application de la plateforme Windows universelle (UWP) qui cible Windows 10](#Step1), puis testez les versions Debug de votre application pour vous assurer qu’elle fonctionne correctement.
 
@@ -24,11 +24,11 @@ Que vous écriviez une nouvelle application Windows pour Windows 10 ou que vous 
 4. [Résolvez manuellement les métadonnées manquantes](#Step4) et répétez l’[étape 3](#Step3) jusqu’à ce que tous les problèmes soient résolus.
 
 > [!NOTE]
-> Si vous migrez une application Windows Store existante vers .NET Native, veillez à consulter [migrer votre application Windows Store vers .NET Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md).
+> Si vous migrez une application du Windows Store existante vers .NET Native, veillez à passer en revue [la rubrique migration de votre application du Windows Store vers .net Native](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md).
 
 <a name="Step1"></a>
 
-## <a name="step-1-develop-and-test-debug-builds-of-your-uwp-app"></a>Étape 1 : Développer et tester les versions debug de votre application UWP
+## <a name="step-1-develop-and-test-debug-builds-of-your-uwp-app"></a>Étape 1 : Développer et tester les versions Debug de votre application UWP
 
 Que vous développiez une nouvelle application ou que vous migriez une application existante, vous devez suivre la même procédure que pour n'importe quelle application Windows.
 
@@ -36,16 +36,16 @@ Que vous développiez une nouvelle application ou que vous migriez une applicati
 
 2. Notez qu’il existe certains problèmes de compatibilité connus entre la compilation des projets d’application UWP avec la chaîne de l’outil .NET Native et sans elle. Pour plus d'informations, consultez le [guide de migration](../../../docs/framework/net-native/migrating-your-windows-store-app-to-net-native.md) .
 
-Vous pouvez maintenant écrire C# code ou Visual Basic par rapport à la zone de surface d’exposition .NET Native qui s’exécute sur le système local (ou dans le simulateur).
+Vous pouvez maintenant écrire C# ou Visual Basic code dans la surface d’exposition .net native qui s’exécute sur le système local (ou dans le simulateur).
 
 > [!IMPORTANT]
 > Quand vous développez votre application, notez toute utilisation de la sérialisation ou de la réflexion dans votre code.
 
-Par défaut, les versions debug sont compilé par JIT pour permettre un déploiement F5 rapide, tandis que les versions release sont compilées à l’aide de la technologie de précompilation .NET Native. Cela signifie que vous devez générer et tester les versions Debug de votre application pour vous assurer qu’elles fonctionnent normalement avant de les compiler avec la chaîne de l’outil .NET Native.
+Par défaut, les builds de débogage sont compilées juste-à-temps pour permettre un déploiement F5 rapide, tandis que les versions release sont compilées à l’aide de la technologie de précompilation .NET Native. Cela signifie que vous devez générer et tester les versions Debug de votre application pour vous assurer qu’elles fonctionnent normalement avant de les compiler avec la chaîne de l’outil .NET Native.
 
 <a name="Step2"></a>
 
-## <a name="step-2-handle-additional-reflection-and-serialization-usage"></a>Étape 2 : Gérez l’utilisation de réflexion et de sérialisation supplémentaire
+## <a name="step-2-handle-additional-reflection-and-serialization-usage"></a>Étape 2 : Gérer une réflexion et une utilisation de sérialisation supplémentaires
 
 Un fichier de directives runtime, Default.rd.xml, est automatiquement ajouté à votre projet au moment de sa création. Si vous développez en C#, il se trouve dans le dossier **Propriétés** de votre projet. Si vous développez en Visual Basic, il se trouve dans le dossier **Mon projet** de votre projet.
 
@@ -60,15 +60,15 @@ Il existe deux catégories de sérialiseurs, et les deux peuvent nécessiter des
 
 - Sérialiseurs non basés sur la réflexion. Les sérialiseurs qui se trouvent dans la bibliothèque de classes .NET Framework, tels que les classes <xref:System.Runtime.Serialization.DataContractSerializer>, <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>, and <xref:System.Xml.Serialization.XmlSerializer> , ne reposent pas sur la réflexion. Toutefois, ils nécessitent que du code soit généré en fonction de l'objet à sérialiser ou à désérialiser.  Pour plus d’informations, consultez la section « Sérialiseurs Microsoft » dans [Serialization and Metadata](../../../docs/framework/net-native/serialization-and-metadata.md).
 
-- Sérialiseurs tiers. Les bibliothèques de sérialisation tierces, dont la plus courante est le sérialiseur JSON Newtonsoft, sont généralement basées sur la réflexion et nécessitent des entrées dans le fichier *.rd.xml pour prendre en charge la sérialisation et la désérialisation des objets. Pour plus d’informations, consultez la section « Sérialiseurs tiers » dans [Serialization and Metadata](../../../docs/framework/net-native/serialization-and-metadata.md).
+- Sérialiseurs tiers. Les bibliothèques de sérialisation tierces, dont la plus courante est le sérialiseur JSON Newtonsoft, sont généralement basées sur la réflexion et nécessitent des entrées dans \*le fichier. rd. xml pour prendre en charge la sérialisation et la désérialisation d’objets. Pour plus d’informations, consultez la section « Sérialiseurs tiers » dans [Serialization and Metadata](../../../docs/framework/net-native/serialization-and-metadata.md).
 
 **Méthodes basées sur la réflexion**
 
 Dans certains cas, l'utilisation de la réflexion dans le code n'est pas évidente. Certains modèles de programmation ou API courants ne sont pas considérés comme faisant partie de l'API de réflexion, mais s'appuient sur la réflexion pour s'exécuter correctement. Cela comprend les méthodes d'instanciation de type et de construction de méthode suivantes :
 
-- Méthode <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> 
+- Méthode <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType>
 
-- Méthodes <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> et <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType> 
+- Méthodes <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> et <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType>
 
 - Méthode <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType>
 
@@ -79,19 +79,19 @@ Pour plus d'informations, consultez [APIs That Rely on Reflection](../../../docs
 
 <a name="Step3"></a>
 
-## <a name="step-3-deploy-and-test-the-release-builds-of-your-app"></a>Étape 3 : Déployer et tester les versions release de votre application
+## <a name="step-3-deploy-and-test-the-release-builds-of-your-app"></a>Étape 3 : Déployer et tester les versions release de votre application
 
 Une fois que vous avez mis à jour le fichier de directives runtime, vous pouvez régénérer et déployer les versions de mise en production de votre application. Les fichiers binaires .NET Native sont placés dans le sous-répertoire ILC.out du répertoire spécifié dans la zone de texte **Chemin de sortie de la génération** de la boîte de dialogue **Propriétés** du projet, sous l'onglet **Compiler** . Les fichiers binaires qui ne figurent pas dans ce dossier n'ont pas été compilés avec .NET Native. Testez votre application minutieusement et testez tous les scénarios, y compris les scénarios d’erreur, sur chacune de ses plateformes cibles.
 
-Si votre application ne fonctionne pas correctement (en particulier dans les cas où elle lève une exception [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) ou [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) exceptions au moment de l’exécution), suivez les instructions dans le prochain section, [étape 4 : Résoudre manuellement les métadonnées manquantes](#Step4). L'activation des exceptions de première chance peut vous aider à trouver ces bogues.
+Si votre application ne fonctionne pas correctement (en particulier dans les cas où elle lève des exceptions [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) ou [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) au moment de l’exécution), suivez les instructions [de la section suivante, étape 4: Résolvez manuellement les](#Step4)métadonnées manquantes. L'activation des exceptions de première chance peut vous aider à trouver ces bogues.
 
-Lorsque vous avez testé et débogué le débogage des versions de votre application et vous pensez que vous avez éliminé le [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) et [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) exceptions, vous devez tester votre application comme une application .NET Native optimisée. Pour ce faire, dans la configuration du projet actif, remplacez **Débogage** par **Version finale**.
+Une fois que vous avez testé et débogué les versions Debug de votre application et que vous êtes certain d’avoir éliminé les exceptions [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) et [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) , vous devez tester votre application en tant qu’application .net Native optimisée. Pour ce faire, dans la configuration du projet actif, remplacez **Débogage** par **Version finale**.
 
 <a name="Step4"></a>
 
-## <a name="step-4-manually-resolve-missing-metadata"></a>Étape 4 : Résoudre manuellement les métadonnées manquantes
+## <a name="step-4-manually-resolve-missing-metadata"></a>Étape 4 : Résoudre manuellement les métadonnées manquantes
 
-L’échec courant que vous rencontrerez avec .NET Native ne se produit pas sur le bureau est un runtime [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), ou [ MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) exception. Dans certains cas, l'absence de métadonnées peut se manifester par un comportement imprévisible ou même se traduire par des erreurs d'application. Cette section explique comment vous pouvez déboguer et résoudre ces exceptions en ajoutant des directives au fichier de directives runtime. Pour plus d’informations sur le format des directives runtime, consultez le [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Après avoir ajouté les directives runtime, vous devez [déployer et tester votre application](#Step3) de nouveau et résoudre toute nouvelle exception [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) et [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) jusqu’à ce qu’aucune exception ne soit levée.
+La défaillance la plus courante que vous rencontrerez avec .NET Native que vous ne rencontrez pas sur le bureau est une exception Runtime [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)ou [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) . Dans certains cas, l'absence de métadonnées peut se manifester par un comportement imprévisible ou même se traduire par des erreurs d'application. Cette section explique comment vous pouvez déboguer et résoudre ces exceptions en ajoutant des directives au fichier de directives runtime. Pour plus d’informations sur le format des directives runtime, consultez le [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Après avoir ajouté les directives runtime, vous devez [déployer et tester votre application](#Step3) de nouveau et résoudre toute nouvelle exception [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) et [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) jusqu’à ce qu’aucune exception ne soit levée.
 
 > [!TIP]
 > Spécifiez les directives runtime à un niveau élevé pour que votre application tolère les modifications de code.  Nous vous recommandons d'ajouter les directives runtime aux niveaux de l'espace de noms et du type, plutôt qu'au niveau du membre. Notez qu'un compromis peut s'avérer nécessaire entre la résilience et les fichiers binaires volumineux dont la compilation prend plus de temps.
@@ -113,11 +113,11 @@ Quand vous traitez une exception liée à des métadonnées manquantes, prenez e
   - Le code appelle-t-il une méthode basée sur la réflexion quand une meilleure solution est disponible ?
 
 > [!NOTE]
-> Pour plus d’informations sur la gestion des problèmes liés aux différences de réflexion et la disponibilité des métadonnées dans les applications de bureau et .NET Native, consultez [APIs That Rely on Reflection](../../../docs/framework/net-native/apis-that-rely-on-reflection.md).
+> Pour plus d’informations sur la gestion des problèmes qui résultent des différences de réflexion et de la disponibilité des métadonnées dans les applications de bureau et les .NET Native, consultez [API qui reposent sur la réflexion](../../../docs/framework/net-native/apis-that-rely-on-reflection.md).
 
 Pour obtenir des exemples spécifiques de gestion des exceptions et d'autres problèmes qui se produisent quand vous testez votre application, consultez :
 
-- [Exemple : Gestion des Exceptions lors de la liaison de données](../../../docs/framework/net-native/example-handling-exceptions-when-binding-data.md)
+- [Exemple : Gestion des exceptions lors de la liaison de données](../../../docs/framework/net-native/example-handling-exceptions-when-binding-data.md)
 
 - [Exemple : Résolution des problèmes de programmation dynamique](../../../docs/framework/net-native/example-troubleshooting-dynamic-programming.md)
 
@@ -126,7 +126,7 @@ Pour obtenir des exemples spécifiques de gestion des exceptions et d'autres pro
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de référence du fichier de configuration des directives runtime (rd.xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md)
-- [Configuration et installation de .NET native](https://docs.microsoft.com/previous-versions/dn600164(v=vs.110))
+- [Installation et configuration de .NET Native](https://docs.microsoft.com/previous-versions/dn600164(v=vs.110))
 - [.NET Native et compilation](../../../docs/framework/net-native/net-native-and-compilation.md)
 - [Réflexion et .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)
 - [API qui s’appuient sur la réflexion](../../../docs/framework/net-native/apis-that-rely-on-reflection.md)

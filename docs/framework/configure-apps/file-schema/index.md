@@ -21,55 +21,55 @@ helpviewer_keywords:
 - configuration settings [.NET Framework], applications
 - configuration file reference [.NET Framework]
 ms.assetid: 69003d39-dc8a-460c-a6be-e6d93e690b38
-ms.openlocfilehash: 6ebb6487136bff567c57143e3000a20270c1f87e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c3b5518b4b86c2e6f47825d552f49579c5ac0a6d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61705283"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921025"
 ---
 # <a name="configuration-file-schema-for-the-net-framework"></a>Schéma des fichiers de configuration pour le .NET Framework
 
 Les fichiers de configuration sont des fichiers XML standard que vous pouvez utiliser pour modifier les paramètres et définir des stratégies pour vos applications. Le schéma de configuration .NET Framework se compose d'éléments que vous pouvez utiliser dans les fichiers de configuration pour contrôler le comportement de vos applications. La table des matières de cette section reflète la hiérarchie du schéma pour les paramètres de démarrage, de runtime et de réseau, ainsi que pour d'autres types de paramètres de configuration.
 
-Pour plus d’informations sur les types, le format et l’emplacement des fichiers de configuration, consultez l’article [Configuration d’applications](~/docs/framework/configure-apps/index.md). Familiarisez-vous avec le langage XML si vous souhaitez modifier directement les fichiers de configuration.
+Pour plus d’informations sur les types, le format et l’emplacement des fichiers de configuration, consultez l’article [Configuration d’applications](../index.md). Familiarisez-vous avec le langage XML si vous souhaitez modifier directement les fichiers de configuration.
 
 > [!IMPORTANT]
 > Les étiquettes et attributs XML des fichiers de configuration respectent la casse.
 
 ## <a name="in-this-section"></a>Dans cette section
 
-[**\<configuration>**, élément](~/docs/framework/configure-apps/file-schema/configuration-element.md) Décrit l’élément `<configuration>`, qui constitue l’élément de niveau supérieur de tous les fichiers de configuration.
+[ **\<configuration>** , élément](configuration-element.md) Décrit l’élément `<configuration>`, qui constitue l’élément de niveau supérieur de tous les fichiers de configuration.
 
-[**\<assemblyBinding>**, élément](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) Spécifie la stratégie de liaison de l’assembly au niveau de la configuration.
+[ **\<assemblyBinding>** , élément](assemblybinding-element-for-configuration.md) Spécifie la stratégie de liaison de l’assembly au niveau de la configuration.
 
-[**\<linkedConfiguration>**, élément](~/docs/framework/configure-apps/file-schema/linkedconfiguration-element.md) Spécifie un fichier de configuration à inclure.
+[ **\<linkedConfiguration>** , élément](linkedconfiguration-element.md) Spécifie un fichier de configuration à inclure.
 
-[Schéma des paramètres de démarrage](~/docs/framework/configure-apps/file-schema/startup/index.md) Décrit les éléments qui spécifient la version du common language runtime à utiliser.
+[Schéma des paramètres de démarrage](./startup/index.md) Décrit les éléments qui spécifient la version du common language runtime à utiliser.
 
-[Schéma des paramètres d’exécution](~/docs/framework/configure-apps/file-schema/runtime/index.md) Décrit les éléments qui configurent les liaisons d’assembly et le comportement au moment de l’exécution.
+[Schéma des paramètres d’exécution](./runtime/index.md) Décrit les éléments qui configurent les liaisons d’assembly et le comportement au moment de l’exécution.
 
-[Schéma des paramètres réseau](~/docs/framework/configure-apps/file-schema/network/index.md) Décrit les éléments qui spécifient la manière dont le .NET Framework se connecte à Internet.
+[Schéma des paramètres réseau](./network/index.md) Décrit les éléments qui spécifient la manière dont le .NET Framework se connecte à Internet.
 
-[Schéma des paramètres de chiffrement](~/docs/framework/configure-apps/file-schema/cryptography/index.md) Décrit des éléments qui mappent des noms d’algorithmes conviviaux à des classes implémentant des algorithmes de chiffrement.
+[Schéma des paramètres de chiffrement](./cryptography/index.md) Décrit des éléments qui mappent des noms d’algorithmes conviviaux à des classes implémentant des algorithmes de chiffrement.
 
-[Schéma des sections de configuration](~/docs/framework/configure-apps/file-schema/configuration-sections-schema.md) Décrit les éléments qui servent à créer et à utiliser les sections de configuration pour les paramètres personnalisés.
+[Schéma des sections de configuration](configuration-sections-schema.md) Décrit les éléments qui servent à créer et à utiliser les sections de configuration pour les paramètres personnalisés.
 
-[Schéma des paramètres de traçage et de débogage](~/docs/framework/configure-apps/file-schema/trace-debug/index.md) Décrit les éléments qui spécifient les commutateurs et les écouteurs de traçage.
+[Schéma des paramètres de traçage et de débogage](./trace-debug/index.md) Décrit les éléments qui spécifient les commutateurs et les écouteurs de traçage.
 
-[Schéma des paramètres du fournisseur de langage et du compilateur](~/docs/framework/configure-apps/file-schema/compiler/index.md) Décrit les éléments qui spécifient la configuration de compilateur pour les fournisseurs de langages disponibles.
+[Schéma des paramètres du fournisseur de langage et du compilateur](./compiler/index.md) Décrit les éléments qui spécifient la configuration de compilateur pour les fournisseurs de langages disponibles.
 
-[Schéma des paramètres d’application](~/docs/framework/configure-apps/file-schema/application-settings-schema.md) Décrit les éléments qui permettent à une application Windows Forms ou ASP.NET de stocker et d’extraire des paramètres de portée application et de portée utilisateur.
+[Schéma des paramètres d’application](application-settings-schema.md) Décrit les éléments qui permettent à une application Windows Forms ou ASP.NET de stocker et d’extraire des paramètres de portée application et de portée utilisateur.
 
-[Schéma des paramètres d’application](~/docs/framework/configure-apps/file-schema/appsettings/index.md) Contient des paramètres d’application personnalisés, tels que des chemins de fichier, des URL de service web XML ou d’autres informations de configuration personnalisée pour une application.
+[Schéma des paramètres d’application](./appsettings/index.md) Contient des paramètres d’application personnalisés, tels que des chemins de fichier, des URL de service web XML ou d’autres informations de configuration personnalisée pour une application.
 
-[Schéma des paramètres web](~/docs/framework/configure-apps/file-schema/web/index.md) Tous les éléments du schéma des paramètres web, qui inclut des éléments pour la configuration d’ASP.NET en vue d’une utilisation avec une application hôte telle qu’IIS. Utilisé dans les fichiers *Aspnet.config*.
+[Schéma des paramètres web](./web/index.md) Tous les éléments du schéma des paramètres web, qui inclut des éléments pour la configuration d’ASP.NET en vue d’une utilisation avec une application hôte telle qu’IIS. Utilisé dans les fichiers *Aspnet.config*.
 
 [Schéma de configuration Windows Forms](winforms/index.md) Tous les éléments de la section de configuration d’application Windows Forms, qui inclut les personnalisations telles que de la prise en charge de plusieurs moniteurs et de la haute résolution.
 
-[Schéma de configuration WCF](~/docs/framework/configure-apps/file-schema/wcf/index.md) Tous les éléments qui vous permettent de configurer les applications clientes et le service WCF.
+[Schéma de configuration WCF](./wcf/index.md) Tous les éléments qui vous permettent de configurer les applications clientes et le service WCF.
 
-[Syntaxe de directive WCF](~/docs/framework/configure-apps/file-schema/wcf-directive/index.md) Décrit la directive `@ServiceHost`, qui définit des attributs spécifiques de la page utilisés par le compilateur .svc.
+[Syntaxe de directive WCF](./wcf-directive/index.md) Décrit la directive `@ServiceHost`, qui définit des attributs spécifiques de la page utilisés par le compilateur .svc.
 
 [Schéma de configuration WIF](windows-identity-foundation/index.md) Tous les éléments du schéma de configuration Windows Identity Foundation (WIF).
 

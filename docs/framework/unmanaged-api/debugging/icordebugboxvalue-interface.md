@@ -16,34 +16,34 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1a9a647a9c77a3c1f82ae3691e2a5e5b2f544cad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c21e5bb70815fa54d1b458894ca33becde204758
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61645407"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912922"
 ---
 # <a name="icordebugboxvalue-interface"></a>ICorDebugBoxValue, interface
 
-Une sous-classe de « ICorDebugHeapValue » qui représente un objet de classe de valeur boxed.  
+Sous-classe de «ICorDebugHeapValue» qui représente un objet de classe de valeur boxed.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetObject, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugboxvalue-getobject-method.md)|Obtient un pointeur d’interface vers l’instance boxed « ICorDebugObjectValue ».|  
+|[GetObject, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugboxvalue-getobject-method.md)|Obtient un pointeur d’interface vers l’instance «ICorDebugObjectValue» boxed.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
->  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
+> Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

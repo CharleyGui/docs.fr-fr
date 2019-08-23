@@ -21,12 +21,12 @@ helpviewer_keywords:
 - decoding image formats [WPF]
 - rotating images [WPF]
 ms.assetid: 72aad87a-e6f3-4937-94cd-a18b7766e990
-ms.openlocfilehash: 6d3dce5c8a34257f8509f239ece4bae3efa02b84
-ms.sourcegitcommit: 43761fcee10aeefcf851ea81cea3f3c691420856
+ms.openlocfilehash: 13d5ea2735a799332edd8e552198de0f2b970dad
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69545367"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69914105"
 ---
 # <a name="imaging-overview"></a>Vue d'ensemble de la création d'images
 Cette rubrique fournit une introduction au [!INCLUDE[TLA#tla_wic](../../../../includes/tlasharptla-wic-md.md)]. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] permet aux développeurs d’afficher, de transformer et de mettre en forme des images.  
@@ -99,7 +99,7 @@ Cette rubrique fournit une introduction au [!INCLUDE[TLA#tla_wic](../../../../in
  L’exemple suivant montre comment afficher une image de 200 pixels de large à l’aide de code.  
   
 > [!NOTE]
->  <xref:System.Windows.Media.Imaging.BitmapImage>implémente l' <xref:System.ComponentModel.ISupportInitialize> interface pour optimiser l’initialisation sur plusieurs propriétés. Les modifications de propriété ne peuvent se produire que lors de l’initialisation de l’objet. Appelez <xref:System.Windows.Media.Imaging.BitmapImage.BeginInit%2A> pour signaler que l’initialisation a démarré et <xref:System.Windows.Media.Imaging.BitmapImage.EndInit%2A> pour signaler que l’initialisation est terminée. Une fois initialisées, les modifications de propriété sont ignorées.  
+> <xref:System.Windows.Media.Imaging.BitmapImage>implémente l' <xref:System.ComponentModel.ISupportInitialize> interface pour optimiser l’initialisation sur plusieurs propriétés. Les modifications de propriété ne peuvent se produire que lors de l’initialisation de l’objet. Appelez <xref:System.Windows.Media.Imaging.BitmapImage.BeginInit%2A> pour signaler que l’initialisation a démarré et <xref:System.Windows.Media.Imaging.BitmapImage.EndInit%2A> pour signaler que l’initialisation est terminée. Une fois initialisées, les modifications de propriété sont ignorées.  
   
  [!code-csharp[ImageElementExample_snip#ImageSimpleExampleInlineCode1](~/samples/snippets/csharp/VS_Snippets_Wpf/ImageElementExample_snip/CSharp/ImageSimpleExample.xaml.cs#imagesimpleexampleinlinecode1)]
  [!code-vb[ImageElementExample_snip#ImageSimpleExampleInlineCode1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ImageElementExample_snip/VB/ImageSimpleExample.xaml.vb#imagesimpleexampleinlinecode1)]  
@@ -185,7 +185,7 @@ Les pinceaux d’image peuvent remplir des formes, des contrôles, du texte, etc
  Pour obtenir un exemple de l’API d’extensibilité, consultez l' [exemple de codec Win32](https://go.microsoft.com/fwlink/?LinkID=160052). Cet exemple montre comment créer un décodeur et un encodeur pour un format d’image personnalisé.  
   
 > [!NOTE]
->  Le codec doit être signé numériquement pour pouvoir être reconnu par le système.  
+> Le codec doit être signé numériquement pour pouvoir être reconnu par le système.  
   
 ## <a name="see-also"></a>Voir aussi
 

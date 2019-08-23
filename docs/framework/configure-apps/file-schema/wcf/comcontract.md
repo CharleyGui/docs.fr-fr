@@ -2,12 +2,12 @@
 title: <comContract>
 ms.date: 03/30/2017
 ms.assetid: 3f8e1c0c-cfdf-4c79-ac65-c64e9323a51c
-ms.openlocfilehash: 5d6bfb1e4aa1651cd8c3a869f681d71cfb15725c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ef980c86efad4fda86cf62148e50688fd22afe49
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64751873"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69926090"
 ---
 # <a name="comcontract"></a>\<comContract>
 Spécifie un contrat de service d'intégration COM+.  
@@ -69,7 +69,7 @@ Spécifie un contrat de service d'intégration COM+.
 |comContracts|Contient une collection d’éléments `comContract`.|  
   
 ## <a name="remarks"></a>Notes  
- Contrats de service d’intégration COM + sont actuellement restreints à le `http://tempuri.org` espace de noms et nom de contrat est dérivé de l’interface COM de prise en charge. Toutefois, vous pouvez spécifier des alternatives à l'aide de la section `comContracts`, ainsi que l'élément `comContract` dans le fichier de configuration. Par exemple, vous pouvez utiliser la configuration suivante pour spécifier l'espace de noms, le nom de contrat et les types définis par l'utilisateur à inclure, ainsi que d'autres paramètres pour un contrat de service.  
+ Les contrats de service d’intégration com+ sont actuellement `http://tempuri.org` restreints à l’espace de noms et le nom de contrat est dérivé de l’interface com de prise en charge. Toutefois, vous pouvez spécifier des alternatives à l'aide de la section `comContracts`, ainsi que l'élément `comContract` dans le fichier de configuration. Par exemple, vous pouvez utiliser la configuration suivante pour spécifier l'espace de noms, le nom de contrat et les types définis par l'utilisateur à inclure, ainsi que d'autres paramètres pour un contrat de service.  
   
 ```xml  
 <comContracts>
@@ -92,6 +92,6 @@ Spécifie un contrat de service d'intégration COM+.
 
 - <xref:System.ServiceModel.Configuration.ComContractElementCollection>
 - <xref:System.ServiceModel.Configuration.ComContractElement>
-- [\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)
-- [Intégration à des applications COM+](../../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)
-- [Guide pratique pour Configurer les paramètres de Service COM +](../../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)
+- [\<comContracts>](comcontracts.md)
+- [Intégration à des applications COM+](../../../wcf/feature-details/integrating-with-com-plus-applications.md)
+- [Guide pratique pour Configurer les paramètres du service COM+](../../../wcf/feature-details/how-to-configure-com-service-settings.md)
