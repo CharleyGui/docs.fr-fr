@@ -39,3 +39,5 @@
       href: resolve-ambiguous-times.md
     - name: "Procédure\_: permettre aux utilisateurs de résoudre des heures ambiguës"
       href: let-users-resolve-ambiguous-times.md
+    - name: Prise en charge de DateTime et DateTimeOffset dans System.Text.Json
+      href: system-text-json-support.md

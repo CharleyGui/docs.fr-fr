@@ -1,37 +1,44 @@
 ---
 title: Opérateur C# - Référence C#
-ms.date: 04/30/2019
+ms.date: 08/20/2019
 f1_keywords:
 - cs.operators
 helpviewer_keywords:
-- boolean operators [C#]
-- expressions [C#], operators
-- logical operators [C#]
 - operators [C#]
-- Visual C#, operators
-- indirection operators [C#]
-- assignment operators [C#]
-- shift operators [C#]
-- relational operators [C#]
-- bitwise operators [C#]
-- address operators [C#]
-- keywords [C#], operators
-- arithmetic operators [C#]
+- operator precedence [C#]
+- operator associativity [C#]
+- expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 7db61e530ba5c3e0b5ae0ee0002621e369e1833b
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 75697a7a52fbfb04e1b44ecf591e271217a69bf4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566843"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924651"
 ---
 # <a name="c-operators-c-reference"></a>Opérateur C# (Référence C#)
 
-C# fournit plusieurs opérateurs prédéfinis pris en charge par les types intégrés. Par exemple, les [opérateurs arithmétiques](arithmetic-operators.md) effectuent des opérations arithmétiques avec des opérandes de types numériques intégrés et les [opérateurs logiques booléens](boolean-logical-operators.md) effectuent des opérations logiques avec les opérandes [bool](../keywords/bool.md).
+C# fournit plusieurs opérateurs pris en charge par les types intégrés. Par exemple, les [opérateurs arithmétiques](arithmetic-operators.md) effectuent des opérations arithmétiques avec des opérandes numériques et les [opérateurs logiques booléens](boolean-logical-operators.md) effectuent des opérations logiques avec les opérandes [bool](../keywords/bool.md). Certains opérateurs peuvent être [surchargés](operator-overloading.md). Avec la surcharge d’opérateur, vous pouvez spécifier le comportement de l’opérateur pour les opérandes d’un type défini par l’utilisateur.
 
-Un type défini par l’utilisateur peut surcharger certains opérateurs pour définir le comportement correspondant des opérandes de ce type. Pour plus d’informations, consultez [Surcharge d’opérateur](operator-overloading.md).
+Dans une [expression](../../programming-guide/statements-expressions-operators/expressions.md), la priorité et l’associativité des opérateurs déterminent l’ordre dans lequel les opérations sont exécutées. Vous pouvez utiliser des parenthèses pour changer l’ordre d’évaluation imposé par la priorité et l’associativité de l’opérateur.
 
-La table suivante répertorie les opérateurs C# de la priorité la plus élevée à la plus basse. Les opérateurs inclus dans chaque ligne partagent le même niveau de priorité.
+## <a name="operator-precedence"></a>Précédence des opérateurs
+
+Dans une expression avec plusieurs opérateurs, les opérateurs avec une priorité plus élevée sont évalués avant les opérateurs avec une priorité moins élevée. Dans l’exemple suivant, la multiplication est effectuée en premier, car elle a une priorité plus élevée que l’addition :
+
+```csharp-interactive
+var a = 2 + 2 * 2;
+Console.WriteLine(a); //  output: 6
+```
+
+Utilisez des parenthèses pour changer l’ordre d’évaluation imposé par la précédence des opérateurs :
+
+```csharp-interactive
+var a = (2 + 2) * 2;
+Console.WriteLine(a); //  output: 8
+```
+
+La table suivante répertorie les opérateurs C# de la priorité la plus élevée à la plus basse. Les opérateurs dans chaque ligne sont de priorité égale.
 
 | Opérateurs | Catégorie ou nom |
 | --------- | ---------------- |
@@ -51,7 +58,39 @@ La table suivante répertorie les opérateurs C# de la priorité la plus élevé
 | [c ? t : f](conditional-operator.md) | Opérateur conditionnel |
 | [x = y](assignment-operator.md), [x += y](arithmetic-operators.md#compound-assignment), [x -= y](arithmetic-operators.md#compound-assignment), [x *= y](arithmetic-operators.md#compound-assignment), [x /= y](arithmetic-operators.md#compound-assignment), [x %= y](arithmetic-operators.md#compound-assignment), [x &= y](boolean-logical-operators.md#compound-assignment), [x &#124;= y](boolean-logical-operators.md#compound-assignment), [x ^= y](boolean-logical-operators.md#compound-assignment), [x <<= y](bitwise-and-shift-operators.md#compound-assignment), [x >>= y](bitwise-and-shift-operators.md#compound-assignment), [=>](lambda-operator.md) | Affectation et déclaration lambda |
 
+## <a name="operator-associativity"></a>Associativité des opérateurs
+
+Quand les opérateurs sont de même priorité, l’associativité des opérateurs détermine l’ordre dans lequel les opérations sont effectuées :
+
+- Les opérateurs *associatifs sur leur gauche* sont évalués dans l’ordre, de gauche à droite. À l’exception des [opérateurs d’assignation](assignment-operator.md) et de l’[opérateur de fusion null`??`](null-coalescing-operator.md), tous les opérateurs binaires sont associatifs sur leur gauche. Par exemple, `a + b - c` est évalué comme étant `(a + b) - c`.
+- Les opérateurs *associatifs sur leur droite* sont évalués dans l’ordre, de droite à gauche. Les opérateurs d’assignation, l’opérateur de fusion null `??` et l’[opérateur conditionnel`?:`](conditional-operator.md) sont associatifs sur leur droite. Par exemple, `x = y = z` est évalué comme étant `x = (y = z)`.
+
+Utilisez des parenthèses pour changer l’ordre d’évaluation imposé par l’associativité des opérateurs :
+
+```csharp-interactive
+int a = 13 / 5 / 2;
+int b = 13 / (5 / 2);
+Console.WriteLine($"a = {a}, b = {b}");  // output: a = 1, b = 6
+```
+
+## <a name="operand-evaluation"></a>Évaluation des opérandes
+
+Sans rapport avec la priorité et l’associativité des opérateurs, les opérandes dans une expression sont évalués de gauche à droite. Les exemples suivants illustrent l’ordre dans lequel les opérateurs et les opérandes sont évalués :
+
+| Expression | Ordre d'évaluation |
+| ---------- | ------------------- |
+|`a + b`|a, b, +|
+|`a + b * c`|a, b, c, *, +|
+|`a / b + c * d`|a, b, /, c, d, *, +|
+|`a / (b + c) * d`|a, b, c, +, /, d, *|
+
+En règle générale, tous les opérandes d’opérateur sont évalués. Certains opérateurs évaluent les opérandes de manière conditionnelle. Autrement dit, la valeur du premier opérande d’un opérateur définit si d’autres (ou quels autres) opérandes doivent être évalués. Ces opérateurs sont les opérateurs conditionnels logiques [AND (`&&`)](boolean-logical-operators.md#conditional-logical-and-operator-) et [OR (`||`)](boolean-logical-operators.md#conditional-logical-or-operator-), l’[opérateur de fusion null`??`](null-coalescing-operator.md), les [opérateurs conditionnels nuls `?.` et `?[]`](member-access-operators.md#null-conditional-operators--and-), et l’[opérateur conditionnel `?:`](conditional-operator.md). Reportez-vous à la description de chaque opérateur pour plus de détails.
+
+## <a name="c-language-specification"></a>spécification du langage C#
+
+Pour plus d’informations, consultez la section [Opérateurs](~/_csharplang/spec/expressions.md#operators) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur C#](../index.md)
-- [Opérateurs](../../programming-guide/statements-expressions-operators/operators.md)
+- [Expressions](../../programming-guide/statements-expressions-operators/expressions.md)
