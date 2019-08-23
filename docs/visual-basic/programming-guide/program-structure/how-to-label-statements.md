@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Instructions de l’étiquette (Visual Basic)'
+title: 'Procédure : Instructions d’étiquette (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - colons (:)
@@ -7,30 +7,30 @@ helpviewer_keywords:
 - ': separator character'
 - Visual Basic code, labeling statements
 ms.assetid: 38f1ff43-2054-42cb-963b-1998e60c6ed4
-ms.openlocfilehash: cbb80d94dc8280aa67859c89daad1520ce4e9669
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6b442b5a0ad731cfc490a7387c78ac9279dddaf0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648748"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961320"
 ---
-# <a name="how-to-label-statements-visual-basic"></a>Procédure : Instructions de l’étiquette (Visual Basic)
-Blocs d’instructions sont constituées de lignes de code délimités par le signe deux-points. Lignes de code, précédé d’une chaîne ou entier identifiant sont dites *intitulée*. Les étiquettes d’instruction sont utilisées pour marquer une ligne de code pour identifier pour une utilisation avec des instructions telles que `On Error Goto`.  
+# <a name="how-to-label-statements-visual-basic"></a>Procédure : Instructions d’étiquette (Visual Basic)
+Les blocs d’instructions sont constitués de lignes de code séparées par des signes deux-points. Les lignes de code précédées d’une chaîne ou d’un entier d'identification sont dites étiquetées. Les étiquettes d’instructions sont utilisées pour marquer une ligne de code afin de l’identifier pour une utilisation `On Error Goto`avec des instructions telles que.  
   
- Les étiquettes peuvent être soit des identificateurs Visual Basic valides, telles que celles qui identifient les éléments de programmation, ou les littéraux d’entier. Une étiquette doit apparaître au début d’une ligne de code source et doit être suivie par un signe deux-points, indépendamment de si elle est suivie par une instruction sur la même ligne.  
+ Les étiquettes peuvent être des identificateurs de Visual Basic valides, tels que ceux qui identifient des éléments de programmation, ou des littéraux entiers. Une étiquette doit apparaître au début d’une ligne de code source et doit être suivie d’un signe deux-points, qu’elle soit suivie ou non d’une instruction sur la même ligne.  
   
- Le compilateur identifie les étiquettes en vérifiant si le début de la ligne correspond à n’importe quel identificateur déjà défini. Si elle n’est pas le cas, le compilateur suppose que c’est une étiquette.  
+ Le compilateur identifie les étiquettes en vérifiant si le début de la ligne correspond à un identificateur déjà défini. Si ce n’est pas le cas, le compilateur suppose qu’il s’agit d’une étiquette.  
   
- Les étiquettes ont leur propre espace de déclaration et n’interfèrent pas avec d’autres identificateurs. Portée d’une étiquette est le corps de la méthode. Déclaration d’étiquette est prioritaire dans une situation ambiguë.  
+ Les étiquettes ont leur propre espace de déclaration et n’interfèrent pas avec d’autres identificateurs. La portée d’une étiquette est le corps de la méthode. La déclaration d’étiquette est prioritaire dans toute situation ambiguë.  
   
 > [!NOTE]
->  Étiquettes peuvent être utilisées uniquement sur des instructions exécutables à l’intérieur de méthodes.  
+> Les étiquettes peuvent être utilisées uniquement sur des instructions exécutables à l’intérieur de méthodes.  
   
 ### <a name="to-label-a-line-of-code"></a>Pour étiqueter une ligne de code  
   
 - Placez un identificateur, suivi d’un signe deux-points, au début de la ligne de code source.  
   
-     Par exemple, les lignes de code suivantes sont étiquetés avec `Jump` et `120`, respectivement :  
+     Par exemple, les lignes de code suivantes sont étiquetées `Jump` avec `120`et, respectivement:  
   
      [!code-vb[VbVbalrStatements#708](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#708)]  
   

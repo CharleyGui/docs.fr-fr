@@ -9,18 +9,18 @@ helpviewer_keywords:
 - impersonation
 - WCF, security
 ms.assetid: 431db851-a75b-4009-9fe2-247243d810d3
-ms.openlocfilehash: 3dd40efe27687b048984c4592db0d3787d061eeb
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 918cbba30cbb997a1f029a250adbdc4ed6310299
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402324"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69951055"
 ---
 # <a name="how-to-impersonate-a-client-on-a-service"></a>Procédure : emprunter l’identité d’un client sur un service
-Emprunter l’identité d’un client sur un service Windows Communication Foundation (WCF) permet au service pour effectuer des actions au nom du client. Pour les actions soumises à la vérification de la liste de contrôle d'accès (ACL), telles que l'accès aux répertoires et aux fichiers sur un ordinateur ou l'accès à une base de données SQL Server, la vérification de la liste ACL est effectuée en fonction du compte d'utilisateur client. Cette rubrique décrit les étapes de base requises pour permettre à un client dans un domaine Windows de définir un niveau d'emprunt de l'identité du client. Pour obtenir un exemple fonctionnel, consultez [Impersonating the Client](../../../docs/framework/wcf/samples/impersonating-the-client.md). Pour plus d’informations sur l’emprunt d’identité du client, consultez [délégation et emprunt d’identité](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+L’emprunt d’identité d’un client sur un service Windows Communication Foundation (WCF) permet au service d’effectuer des actions pour le compte du client. Pour les actions soumises à la vérification de la liste de contrôle d'accès (ACL), telles que l'accès aux répertoires et aux fichiers sur un ordinateur ou l'accès à une base de données SQL Server, la vérification de la liste ACL est effectuée en fonction du compte d'utilisateur client. Cette rubrique décrit les étapes de base requises pour permettre à un client dans un domaine Windows de définir un niveau d'emprunt de l'identité du client. Pour obtenir un exemple fonctionnel, consultez [Impersonating the Client](../../../docs/framework/wcf/samples/impersonating-the-client.md). Pour plus d’informations sur l’emprunt d’identité du client, consultez [délégation et emprunt d’identité](../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
 > [!NOTE]
->  Lorsque le client et le service s'exécutent sur le même ordinateur et que le client s'exécute sous un compte système (c'est-à-dire `Local System` ou `Network Service`), il n'est pas possible d'emprunter l'identité du client lorsqu'une session sécurisée est établie avec les jetons de contexte de sécurité avec état. Une application WinForms ou console s'exécute en général sous le compte actuellement connecté, afin que le l'emprunt d'identité du compte puisse être effectué par défaut. Toutefois, lorsque le client est une page ASP.NET et cette page est hébergée dans IIS 6.0 ou IIS 7.0, puis le client s’exécute sous le `Network Service` compte par défaut. Toutes les liaisons fournies par le système qui prennent en charge des sessions sécurisées utilisent par défaut un jeton de contexte de sécurité sans état. Toutefois, si le client est une page ASP.NET et des sessions sécurisées avec jetons de contexte de sécurité avec état sont utilisées, le client ne peut pas être représenté. Pour plus d’informations sur l’utilisation de jetons de contexte de sécurité avec état dans une session sécurisée, consultez [Comment : Créer un contexte de sécurité jeton pour une Session sécurisée](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+> Lorsque le client et le service s'exécutent sur le même ordinateur et que le client s'exécute sous un compte système (c'est-à-dire `Local System` ou `Network Service`), il n'est pas possible d'emprunter l'identité du client lorsqu'une session sécurisée est établie avec les jetons de contexte de sécurité avec état. Une application WinForms ou console s'exécute en général sous le compte actuellement connecté, afin que le l'emprunt d'identité du compte puisse être effectué par défaut. Toutefois, lorsque le client est une page ASP.net et que la page est hébergée dans IIS 6,0 ou IIS 7,0, le client s’exécute sous `Network Service` le compte par défaut. Toutes les liaisons fournies par le système qui prennent en charge des sessions sécurisées utilisent par défaut un jeton de contexte de sécurité sans état. Toutefois, si le client est une page ASP.NET et que des sessions sécurisées avec des jetons de contexte de sécurité avec état sont utilisées, le client ne peut pas faire l’emprunt d’identité. Pour plus d’informations sur l’utilisation des jetons de contexte de sécurité avec état dans une [session sécurisée, consultez Procédure: Créez un jeton de contexte de sécurité pour une](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)session sécurisée.  
   
 ### <a name="to-enable-impersonation-of-a-client-from-a-cached-windows-token-on-a-service"></a>Pour activer l'emprunt de l'identité d'un client depuis un jeton Windows mis en cache sur un service  
   
@@ -35,12 +35,12 @@ Emprunter l’identité d’un client sur un service Windows Communication Found
   
 ### <a name="to-set-the-allowed-impersonation-level-on-the-client"></a>Pour définir le niveau d'emprunt d'identité autorisé sur le client  
   
-1. Créez le code client du service à l’aide de [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Pour plus d’informations, consultez [Services d’accès à l’aide d’un Client WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md).  
+1. Créez le code client du service à l’aide de [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Pour plus d’informations, consultez [accès aux services à l’aide d’un client WCF](../../../docs/framework/wcf/accessing-services-using-a-wcf-client.md).  
   
-2. Après avoir créé le client WCF, définissez le <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> propriété de la <xref:System.ServiceModel.Security.WindowsClientCredential> classe à un de la <xref:System.Security.Principal.TokenImpersonationLevel> valeurs d’énumération.  
+2. Après avoir créé le client WCF, affectez à <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> la <xref:System.ServiceModel.Security.WindowsClientCredential> propriété de la <xref:System.Security.Principal.TokenImpersonationLevel> classe l’une des valeurs d’énumération.  
   
     > [!NOTE]
-    >  Pour utiliser <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>, l'authentification Kerberos négociée (parfois appelée Kerberos *multi-leg* ou *multi-step* ) doit être utilisée. Pour obtenir une description de cette implémentation, consultez [meilleures pratiques pour la sécurité](../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md).  
+    > Pour utiliser <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>, l'authentification Kerberos négociée (parfois appelée Kerberos *multi-leg* ou *multi-step* ) doit être utilisée. Pour obtenir une description de la manière d’implémenter cela, consultez [meilleures pratiques pour la sécurité](../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md).  
   
      [!code-csharp[c_SimpleImpersonation#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_simpleimpersonation/cs/source.cs#1)]
      [!code-vb[c_SimpleImpersonation#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_simpleimpersonation/vb/source.vb#1)]  

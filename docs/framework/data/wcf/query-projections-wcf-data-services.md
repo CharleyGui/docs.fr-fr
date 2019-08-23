@@ -10,25 +10,25 @@ helpviewer_keywords:
 - query projection [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: a09f4985-9f0d-48c8-b183-83d67a3dfe5f
-ms.openlocfilehash: 2e4c40d6c71a254d5f40ea42788608e10c5872a7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 44e99db2d75fcd8e84f91f0afc8da54ff6c3f707
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774619"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931166"
 ---
 # <a name="query-projections-wcf-data-services"></a>Projections de requête (services de données WCF)
 
-Projection fournit un mécanisme dans le [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] afin de réduire la quantité de données dans le flux retourné par une requête en spécifiant que seules certaines propriétés d’une entité sont retournées dans la réponse. Pour plus d’informations, consultez [OData : Sélectionnez System Query Option ($select)](https://go.microsoft.com/fwlink/?LinkId=186076).
+La [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] projection fournit un mécanisme dans pour réduire la quantité de données dans le flux retourné par une requête en spécifiant que seules certaines propriétés d’une entité sont retournées dans la réponse. Pour plus d’informations, [consultez OData: Sélectionnez l’option de requête système (](https://go.microsoft.com/fwlink/?LinkId=186076)$Select).
 
 Cette rubrique décrit comment définir une projection de requête, quelles sont les exigences pour les types d’entité et de non-entité, la mise à jour des résultats projetés, la création des types projetés et répertorie des considérations relatives à la projection.
 
 ## <a name="defining-a-query-projection"></a>Définition d'une projection de requête
 
-Vous pouvez ajouter une clause de projection à une requête à l’aide de la `$select` option dans un URI ou à l’aide de requête le [sélectionnez](~/docs/csharp/language-reference/keywords/select-clause.md) clause ([sélectionnez](~/docs/visual-basic/language-reference/queries/select-clause.md) en Visual Basic) dans une requête LINQ. Les données d'entité retournées peuvent être projetées dans des types d'entités ou de non-entités sur le client. Les exemples de cette rubrique montrent comment utiliser la clause `select` dans une requête LINQ.
+Vous pouvez ajouter une clause de projection à une requête soit à l' `$select` aide de l’option de requête dans un URI, soit à l’aide de la clause [Select](../../../csharp/language-reference/keywords/select-clause.md) ([Select](../../../visual-basic/language-reference/queries/select-clause.md) in Visual Basic) dans une requête LINQ. Les données d'entité retournées peuvent être projetées dans des types d'entités ou de non-entités sur le client. Les exemples de cette rubrique montrent comment utiliser la clause `select` dans une requête LINQ.
 
 > [!IMPORTANT]
-> Une perte de données peut survenir dans le service de données lorsque vous enregistrez des mises à jour apportées aux types projetés. Pour plus d’informations, consultez [considérations sur la Projection](#considerations).
+> Une perte de données peut survenir dans le service de données lorsque vous enregistrez des mises à jour apportées aux types projetés. Pour plus d’informations, consultez [Considérations sur la projection](#considerations).
 
 ## <a name="requirements-for-entity-and-non-entity-types"></a>Conditions requises pour les types d'entité et de non-entité
 
@@ -46,7 +46,7 @@ Par défaut, lorsque vous projetez des résultats de requête dans un type défi
 
 Lorsque vous projetez des résultats de requête dans des types d'entité sur le client, <xref:System.Data.Services.Client.DataServiceContext> peut suivre ces objets avec les mises à jour à renvoyer au service de données lorsque la méthode <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> est appelée. Toutefois, les mises à jour apportées aux données projetées dans des types de non-entité sur le client ne peuvent pas être renvoyées au service de données. La cause est que sans une clé pour identifier l'instance d'entité, le service de données ne peut pas mettre à jour l'entité correcte dans la source de données. Les types de non-entité ne sont pas joints à <xref:System.Data.Services.Client.DataServiceContext>.
 
-Lorsqu'une ou plusieurs propriétés d'un type d'entité défini dans le service de données ne se produit pas dans le type de client dans lequel l'entité est projetée, les insertions de nouvelles entités ne contiennent pas ces propriétés manquantes. Dans ce cas, les mises à jour apportées aux entités existantes seront **également** n’inclut pas ces propriétés manquantes. Lorsqu'une valeur existe pour une telle propriété, la mise à jour rétablit la valeur par défaut de la propriété, comme défini dans la source de données.
+Lorsqu'une ou plusieurs propriétés d'un type d'entité défini dans le service de données ne se produit pas dans le type de client dans lequel l'entité est projetée, les insertions de nouvelles entités ne contiennent pas ces propriétés manquantes. Dans ce cas, les mises à jour apportées aux entités existantes n’incluent pas non **plus** ces propriétés manquantes. Lorsqu'une valeur existe pour une telle propriété, la mise à jour rétablit la valeur par défaut de la propriété, comme défini dans la source de données.
 
 ### <a name="creating-projected-types"></a>Création de types projetés
 
@@ -61,40 +61,40 @@ De même, les données de type `Customer` sont projetées dans une instance du t
 
 Les paramètres de <xref:System.Data.Services.Client.MergeOption> de <xref:System.Data.Services.Client.DataServiceContext> sont utilisés pour la résolution de l’identité pendant la projection de la requête. Cela signifie que si une instance de type `Customer` existe déjà dans <xref:System.Data.Services.Client.DataServiceContext>, une instance `CustomerAddress` avec la même identité suit les règles de résolution de l'identité définies par <xref:System.Data.Services.Client.MergeOption>
 
-La section suivante décrit les comportements lors de la projection des résultats dans des types d’entité et non à une entité :
+Les éléments suivants décrivent les comportements lors de la projection de résultats dans des types d’entité et non d’entité:
 
 **Création d’une nouvelle instance projetée à l’aide d’initialiseurs**
 
-- Exemple :
+- Exemple :
 
    [!code-csharp[Astoria Northwind Client#ProjectWithInitializer](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#projectwithinitializer)]
    [!code-vb[Astoria Northwind Client#ProjectWithInitializer](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#projectwithinitializer)]
 
-- Type d’entité : Prise en charge
+- Type d’entité: Pris en charge
 
-- Type d’entité : Prise en charge
+- Type de non-entité: Pris en charge
 
 **Création d’une nouvelle instance projetée à l’aide de constructeurs**
 
-- Exemple :
+- Exemple :
 
    [!code-csharp[Astoria Northwind Client#ProjectWithConstructor](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#projectwithconstructor)]
    [!code-vb[Astoria Northwind Client#ProjectWithConstructor](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#projectwithconstructor)]
 
-- Type d’entité : <xref:System.NotSupportedException> est levée.
+- Type d’entité: <xref:System.NotSupportedException> est levée.
 
-- Type d’entité : Prise en charge
+- Type de non-entité: Pris en charge
 
-**À l’aide de la projection pour transformer une valeur de propriété**
+**Utilisation de la projection pour transformer une valeur de propriété**
 
-- Exemple :
+- Exemple :
 
    [!code-csharp[Astoria Northwind Client#ProjectWithTransform](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#projectwithtransform)]
    [!code-vb[Astoria Northwind Client#ProjectWithTransform](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#projectwithtransform)]
 
-- Type d’entité : Cette transformation n'est pas prise en charge pour les types d'entité car cela peut engendrer une confusion et remplacer les données de la source de données qui appartient à une autre entité. <xref:System.NotSupportedException> est levée.
+- Type d’entité: Cette transformation n'est pas prise en charge pour les types d'entité car cela peut engendrer une confusion et remplacer les données de la source de données qui appartient à une autre entité. <xref:System.NotSupportedException> est levée.
 
-- Type d’entité : Prise en charge
+- Type de non-entité: Pris en charge
 
 <a name="considerations"></a>
 
@@ -102,7 +102,7 @@ La section suivante décrit les comportements lors de la projection des résulta
 
 Les considérations supplémentaires suivantes s'appliquent à la définition d'une projection de requête.
 
-- Lorsque vous définissez des flux personnalisés au format Atom, vous devez vérifier que toutes les propriétés de l'entité qui ont des mappages personnalisés définis sont incluses dans la projection. Lorsqu'une propriété d'entité mappée n'est pas incluse dans la projection, une perte de données peut se produire. Pour plus d’informations, consultez [personnalisation de flux](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md).
+- Lorsque vous définissez des flux personnalisés au format Atom, vous devez vérifier que toutes les propriétés de l'entité qui ont des mappages personnalisés définis sont incluses dans la projection. Lorsqu'une propriété d'entité mappée n'est pas incluse dans la projection, une perte de données peut se produire. Pour plus d’informations, consultez [Personnalisation des flux](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md).
 
 - Lorsque des insertions sont apportées à un type projeté qui ne contient pas toutes les propriétés de l'entité du modèle de données du service de données, les propriétés non incluses dans la projection sur le client sont définies sur les valeurs par défaut.
 
@@ -112,9 +112,9 @@ Les considérations supplémentaires suivantes s'appliquent à la définition d'
 
 - Lorsqu'une projection inclut une propriété de navigation, les objets connexes sont chargés implicitement sans devoir appeler la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A>. La méthode <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> n'est pas prise en charge pour une utilisation dans une requête projetée.
 
-- Les requêtes de projections de requête sur le client sont traduites pour utiliser l'option de requête `$select` dans l'URI de requête. Lorsqu'une requête avec projection est exécutée sur une version précédente d'[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] qui ne prend pas en charge l'option de requête `$select`, une erreur est retournée. Cela peut également arriver lorsque <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> de <xref:System.Data.Services.DataServiceBehavior> pour le service de données est défini sur une valeur <xref:System.Data.Services.Common.DataServiceProtocolVersion.V1>. Pour plus d’informations, consultez [gestion des versions du Service de données](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).
+- Les requêtes de projections de requête sur le client sont traduites pour utiliser l'option de requête `$select` dans l'URI de requête. Lorsqu'une requête avec projection est exécutée sur une version précédente d'[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] qui ne prend pas en charge l'option de requête `$select`, une erreur est retournée. Cela peut également arriver lorsque <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> de <xref:System.Data.Services.DataServiceBehavior> pour le service de données est défini sur une valeur <xref:System.Data.Services.Common.DataServiceProtocolVersion.V1>. Pour plus d’informations, consultez contrôle de [version des services de données](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).
 
-Pour plus d'informations, voir [Procédure : Projeter des résultats de requête](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md).
+Pour plus d’informations, consultez [Guide pratique pour Résultats](../../../../docs/framework/data/wcf/how-to-project-query-results-wcf-data-services.md)de la requête de projet.
 
 ## <a name="see-also"></a>Voir aussi
 

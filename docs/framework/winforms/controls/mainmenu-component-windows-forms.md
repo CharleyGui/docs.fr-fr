@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - MainMenu control [Windows Forms]
 ms.assetid: 7cd22f29-828b-42e8-9c88-f08aa4533850
-ms.openlocfilehash: 9e692f17dea3af1f7d5f5ccc3ae844b47c64f80a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f177ee397b0641645d55de9e805543a68fa75672
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012775"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69952126"
 ---
 # <a name="mainmenu-component-windows-forms"></a>MainMenu, composant (Windows Forms)
 > [!NOTE]
->  Bien que `MenuStrip` et `ContextMenuStrip` remplacent et ajoutent des fonctionnalités à la `MainMenu` et <xref:System.Windows.Forms.ContextMenu> contrôles des versions antérieures, `MainMenu` et <xref:System.Windows.Forms.ContextMenu> sont conservés pour la compatibilité descendante et l’utilisation future si vous choisissez.  
+> Bien `MenuStrip` que `ContextMenuStrip` et remplacent et ajoutent des <xref:System.Windows.Forms.ContextMenu> fonctionnalités aux contrôles et des `MainMenu` versions <xref:System.Windows.Forms.ContextMenu> antérieures, et sont conservés pour la `MainMenu` compatibilité descendante et l’utilisation future si tel est votre choix.  
   
- Les formulaires Windows `MainMenu` composant affiche un menu en cours d’exécution.  
+ Le composant `MainMenu` Windows Forms affiche un menu au moment de l’exécution.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Vue d’ensemble du composant MainMenu](mainmenu-component-overview-windows-forms.md)  
- Explique ce que ce composant est et ses principales fonctionnalités et propriétés.  
+ Explique ce qu’est ce composant et ses principales fonctionnalités et propriétés.  
   
 ## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.MainMenu>  

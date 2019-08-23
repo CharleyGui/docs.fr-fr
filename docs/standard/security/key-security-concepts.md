@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 3cfced4f-ea02-4e66-ae98-d69286363e98
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 82a739d3823ff93bf2f797eabf3a8a326b10741c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fe4c2e1775313039e8612ae7efbd3d22af710bab
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64602535"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917258"
 ---
 # <a name="key-security-concepts"></a>Concepts fondamentaux sur la sécurité
 Le Microsoft .NET Framework offre la sécurité basée sur les rôles pour aider à résoudre les problèmes de sécurité relatifs au code mobile et pour permettre aux composants de déterminer ce que les utilisateurs sont autorisés à faire.  
@@ -43,16 +43,16 @@ Le Microsoft .NET Framework offre la sécurité basée sur les rôles pour aider
   
  Pour plus d’informations, consultez [Objets Principal et Identity](../../../docs/standard/security/principal-and-identity-objects.md).  
   
-## <a name="authentication"></a>Authentification  
+## <a name="authentication"></a>Authentication  
  Le processus d'authentification consiste à établir et à vérifier l'identité d'un principal en examinant les informations d'identification de l'utilisateur et en les validant auprès de l'autorité appropriée. Votre code peut utiliser directement les informations obtenues au cours de l'authentification. Vous pouvez également utiliser la sécurité basée sur les rôles du .NET Framework pour authentifier l'utilisateur actuel et déterminer s'il faut ou non autoriser ce principal à accéder à votre code. Consultez les surcharges de la méthode <xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A?displayProperty=nameWithType> pour obtenir des exemples d'authentification du principal pour des rôles spécifiques. Par exemple, vous pouvez utiliser la surcharge <xref:System.Security.Principal.WindowsPrincipal.IsInRole%28System.String%29?displayProperty=nameWithType> pour déterminer si l'utilisateur actuel est membre du groupe Administrateurs.  
   
  De nombreux mécanismes d'authentification sont utilisés de nos jours et la majorité d'entre eux peuvent être utilisés avec la sécurité basée sur les rôles de .NET Framework. Parmi les mécanismes les plus courants figurent notamment Basic, Digest, Passport, les mécanismes liés aux systèmes d'exploitation (tels que NTLM ou Kerberos) ou encore ceux définis par les applications.  
   
-### <a name="example"></a>Exemple  
+### <a name="example"></a>Exemples  
  L'exemple suivant nécessite que le principal actif soit un administrateur. Le paramètre `name` est `null`, qui autorise tout utilisateur ayant la qualité d'administrateur à passer la demande.  
   
 > [!NOTE]
->  Dans Windows Vista, le contrôle de compte d'utilisateur détermine les privilèges d'un utilisateur. Si vous êtes membre du groupe Administrateurs intégrés, deux jetons d'accès au moment de l'exécution vous sont assignés : un jeton d'accès utilisateur standard et un jeton d'accès administrateur. Par défaut, vous êtes dans le rôle d'utilisateur standard. Pour exécuter le code nécessitant que vous soyez administrateur, vous devez d'abord élever vos privilèges d'utilisateur standard à administrateur. Vous pouvez effectuer cela au démarrage d'une application en cliquant avec le bouton droit sur l'icône de l'application et en indiquant que vous voulez l'exécuter en tant qu'administrateur.  
+> Dans Windows Vista, le contrôle de compte d'utilisateur détermine les privilèges d'un utilisateur. Si vous êtes membre du groupe Administrateurs intégrés, deux jetons d'accès au moment de l'exécution vous sont assignés : un jeton d'accès utilisateur standard et un jeton d'accès administrateur. Par défaut, vous êtes dans le rôle d'utilisateur standard. Pour exécuter le code nécessitant que vous soyez administrateur, vous devez d'abord élever vos privilèges d'utilisateur standard à administrateur. Vous pouvez effectuer cela au démarrage d'une application en cliquant avec le bouton droit sur l'icône de l'application et en indiquant que vous voulez l'exécuter en tant qu'administrateur.  
   
  [!code-cpp[Classic PrincipalPermission Example#1](../../../samples/snippets/cpp/VS_Snippets_CLR_Classic/classic PrincipalPermission Example/CPP/source.cpp#1)]
  [!code-csharp[Classic PrincipalPermission Example#1](../../../samples/snippets/csharp/VS_Snippets_CLR_Classic/classic PrincipalPermission Example/CS/source.cs#1)]
@@ -64,5 +64,5 @@ Le Microsoft .NET Framework offre la sécurité basée sur les rôles pour aider
  [!code-csharp[System.Security.Principal.WindowsBuiltInRole Example#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/CS/source.cs#1)]
  [!code-vb[System.Security.Principal.WindowsBuiltInRole Example#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Principal.WindowsBuiltInRole Example/VB/source.vb#1)]  
   
-## <a name="authorization"></a>Autorisation  
+## <a name="authorization"></a>Authorization  
  L'autorisation est le processus qui consiste à déterminer si un principal est autorisé à exécuter l'opération demandée. L'autorisation a lieu après l'authentification, et utilise les informations se rapportant à l'identité et aux rôles du principal pour déterminer les ressources auxquelles il peut avoir accès. Vous pouvez utiliser la sécurité basée sur les rôles de .NET Framework pour l'implémentation de l'autorisation.

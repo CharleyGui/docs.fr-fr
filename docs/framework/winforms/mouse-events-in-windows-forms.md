@@ -15,16 +15,16 @@ helpviewer_keywords:
 - mouse [Windows Forms], events
 - MouseUp event
 ms.assetid: 8cf0070d-793b-4876-b09e-d20d28280fab
-ms.openlocfilehash: 818364ceddb03df51ed656c8ff7b69fd433ac86a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 181d01f6e688b94876f77155bf598aba129e9fbf
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64750893"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69949912"
 ---
 # <a name="mouse-events-in-windows-forms"></a>Événements liés à la souris dans les Windows Forms
 
-Quand vous gérez l'entrée de souris, vous souhaitez habituellement connaître l'emplacement du pointeur de la souris et l'état de ses boutons. Cette rubrique fournit des détails sur la façon d'obtenir des informations à partir des événements de souris et explique l'ordre dans lequel les événements de clic de souris sont déclenchés dans les contrôles Windows Forms. Pour une liste et une description de tous les événements de souris, consultez [souris entrée fonctionnement dans les Windows Forms](how-mouse-input-works-in-windows-forms.md).  Consultez également [vue d’ensemble des gestionnaires d’événements (Windows Forms)](event-handlers-overview-windows-forms.md) et [vue d’ensemble des événements (Windows Forms)](events-overview-windows-forms.md).
+Quand vous gérez l'entrée de souris, vous souhaitez habituellement connaître l'emplacement du pointeur de la souris et l'état de ses boutons. Cette rubrique fournit des détails sur la façon d'obtenir des informations à partir des événements de souris et explique l'ordre dans lequel les événements de clic de souris sont déclenchés dans les contrôles Windows Forms. Pour obtenir la liste et la description de tous les événements de la souris, consultez [fonctionnement de l’entrée de la souris dans Windows Forms](how-mouse-input-works-in-windows-forms.md).  Consultez également [vue d’ensemble des gestionnaires d’événements (Windows Forms)](event-handlers-overview-windows-forms.md) et [vue d’ensemble des événements (Windows Forms)](events-overview-windows-forms.md).
 
 ## <a name="mouse-information"></a>Informations sur la souris
 
@@ -66,7 +66,7 @@ Voici l'ordre des événements déclenchés pour un double clic sur un bouton de
 
 8. Événement<xref:System.Windows.Forms.Control.MouseUp> .
 
-Pour obtenir un exemple de code qui illustre l’ordre de la souris, cliquez sur les événements, consultez [Comment : Utilisateur de handle d’entrée d’événements dans les Windows Forms contrôles](how-to-handle-user-input-events-in-windows-forms-controls.md).
+Pour obtenir un exemple de code illustrant l’ordre des événements de clic de [souris, consultez Procédure: Gérer les événements d’entrée d’utilisateur](how-to-handle-user-input-events-in-windows-forms-controls.md)dans les contrôles Windows Forms.
 
 ### <a name="individual-controls"></a>Contrôles spécifiques
 
@@ -79,11 +79,11 @@ Les contrôles suivants n'ont pas le comportement d'événement de clic de souri
 
   - Clic gauche : <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>
 
-  - Avec le bouton droit cliquez sur : Aucun événement de clic déclenché
+  - Clic droit: Aucun événement Click n’est déclenché
 
   - Double-clic gauche : <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick> ; <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>
 
-  - Double-clic droit : Aucun événement de clic déclenché
+  - Double-clic droit: Aucun événement Click n’est déclenché
 
 - Contrôles <xref:System.Windows.Forms.TextBox>, <xref:System.Windows.Forms.RichTextBox>, <xref:System.Windows.Forms.ListBox>, <xref:System.Windows.Forms.MaskedTextBox> et <xref:System.Windows.Forms.CheckedListBox>
 
@@ -92,11 +92,11 @@ Les contrôles suivants n'ont pas le comportement d'événement de clic de souri
 
   - Clic gauche : <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>
 
-  - Avec le bouton droit cliquez sur : Aucun événement de clic déclenché
+  - Clic droit: Aucun événement Click n’est déclenché
 
   - Double-clic gauche : <xref:System.Windows.Forms.Control.Click>, <xref:System.Windows.Forms.Control.MouseClick>, <xref:System.Windows.Forms.Control.DoubleClick>, <xref:System.Windows.Forms.Control.MouseDoubleClick>
 
-  - Double-clic droit : Aucun événement de clic déclenché
+  - Double-clic droit: Aucun événement Click n’est déclenché
 
 - Contrôle <xref:System.Windows.Forms.ListView>
 
@@ -145,7 +145,7 @@ Les contrôles de basculement, tels que ceux dérivant de la classe <xref:System
 8. L'événement <xref:System.Windows.Forms.Control.MouseUp> est déclenché.
 
     > [!NOTE]
-    >  Si l'utilisateur déplace le pointeur hors du contrôle de basculement alors que le bouton de la souris est enfoncé (par exemple en cas de déplacement de la souris hors du contrôle <xref:System.Windows.Forms.Button> pendant qu'il est enfoncé), le contrôle de basculement est peint à l'état déclenché et seul l'événement <xref:System.Windows.Forms.Control.MouseUp> se produit. L'événement <xref:System.Windows.Forms.Control.Click> ou <xref:System.Windows.Forms.Control.MouseClick> ne se produira pas dans cette situation.
+    > Si l'utilisateur déplace le pointeur hors du contrôle de basculement alors que le bouton de la souris est enfoncé (par exemple en cas de déplacement de la souris hors du contrôle <xref:System.Windows.Forms.Button> pendant qu'il est enfoncé), le contrôle de basculement est peint à l'état déclenché et seul l'événement <xref:System.Windows.Forms.Control.MouseUp> se produit. L'événement <xref:System.Windows.Forms.Control.Click> ou <xref:System.Windows.Forms.Control.MouseClick> ne se produira pas dans cette situation.
 
 ## <a name="see-also"></a>Voir aussi
 

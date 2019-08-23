@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 ms.assetid: e38ae4f3-3e3d-42c3-a4b8-db1aa9d84f85
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 711b4c79b32aa3db4d3681d29e08dbd3d2ddbd02
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1cb53818d0e12d625b0609a80b4d8473713525d0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64660271"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69941642"
 ---
 # <a name="net-native-and-compilation"></a>Compilation et .NET natif
 Les applications Windows 8.1 et les applications de bureau Windows qui ciblent le .NET Framework sont écrites dans un langage de programmation particulier et compilées dans un langage intermédiaire. Lors de l'exécution, un compilateur juste-à-temps (JIT) est chargé de compiler du langage intermédiaire en code natif pour l'ordinateur local, juste avant qu'une méthode ne soit exécutée pour la première fois. À l'inverse, la chaîne d'outils .NET Native convertit le code source en code natif au moment de la compilation. Cette rubrique compare .NET Native avec d'autres technologies de compilation disponibles pour les applications .NET Framework. Elle explique également de façon pratique comment .NET Native génère le code natif qui peut vous aider à comprendre pourquoi les exceptions qui se produisent dans le code compilé avec .NET Native ne se produisent pas dans le code compilé par le compilateur JIT.  
   
-## <a name="net-native-generating-native-binaries"></a>.NET native : Générer des binaires natifs  
+## <a name="net-native-generating-native-binaries"></a>.NET Native: Génération de fichiers binaires natifs  
  Une application qui cible .NET Framework et qui n'est pas compilée à l'aide de la chaîne d'outils .NET Native se compose de votre assembly d'application, qui comprend les éléments suivants :  
   
-- Des [métadonnées](../../../docs/standard/metadata-and-self-describing-components.md) qui décrivent l’assembly, ses dépendances, les types qu’il contient et leurs membres. Les métadonnées sont utilisées pour la réflexion et l'accès à liaison tardive et dans certains cas, par le compilateur et les outils de génération.  
+- Des [métadonnées](../../standard/metadata-and-self-describing-components.md) qui décrivent l’assembly, ses dépendances, les types qu’il contient et leurs membres. Les métadonnées sont utilisées pour la réflexion et l'accès à liaison tardive et dans certains cas, par le compilateur et les outils de génération.  
   
 - Du code d'implémentation. Il s’agit des opcodes de langage intermédiaire. Lors de l'exécution, le compilateur juste-à-temps (JIT) le traduit en code natif pour la plateforme cible.  
   
@@ -50,16 +50,16 @@ Les applications Windows 8.1 et les applications de bureau Windows qui ciblent 
 - Elle remplace le CLR complet par un runtime refactorisé contenant principalement le garbage collector. Le runtime refactorisé se trouve dans une bibliothèque nommée mrt100_app.dll qui est locale pour l'application et dont la taille ne dépasse pas quelques centaines de kilo-octets. Ceci est possible parce que la liaison statique rend inutiles la plupart des services fournis par le common language runtime.  
   
     > [!NOTE]
-    >  .NET Native utilise le même garbage collector en tant que common language runtime standard. Dans le garbage collector .NET Native, le garbage collection d'arrière-plan est activé par défaut. Pour plus d’informations sur le garbage collection, consultez [Notions de base du garbage collection](../../../docs/standard/garbage-collection/fundamentals.md).  
+    > .NET Native utilise le même garbage collector en tant que common language runtime standard. Dans le garbage collector .NET Native, le garbage collection d'arrière-plan est activé par défaut. Pour plus d’informations sur le garbage collection, consultez [Notions de base du garbage collection](../../standard/garbage-collection/fundamentals.md).  
   
 > [!IMPORTANT]
->  .NET Native compile une application entière en une application native. Il ne vous permet pas de compiler en code natif un assembly unique contenant une bibliothèque de classes pour que celui-ci puisse être appelé de manière autonome depuis le code managé.  
+> .NET Native compile une application entière en une application native. Il ne vous permet pas de compiler en code natif un assembly unique contenant une bibliothèque de classes pour que celui-ci puisse être appelé de manière autonome depuis le code managé.  
   
  L’application résultante produite par la chaîne d’outils .NET Native est écrite dans un répertoire nommé ilc.out, lui-même situé dans le répertoire Debug ou Release de votre répertoire de projet. Elle se compose des fichiers suivants :  
   
-- *\<nom_application>*.exe, un exécutable stub qui cède le contrôle à une exportation `Main` spéciale dans *\<nom_application>*.dll.  
+- *\<nom_application>* .exe, un exécutable stub qui cède le contrôle à une exportation `Main` spéciale dans *\<nom_application>* .dll.  
   
-- *\<nom_application>*.dll, une bibliothèque de liens dynamiques Windows qui contient le code de votre application, ainsi que du code provenant de la bibliothèque de classes .NET Framework et de toute bibliothèque tierce avec laquelle il existe une dépendance.  Elle contient également le code de prise en charge, tel que le code nécessaire pour interagir avec Windows et sérialiser les objets de votre application.  
+- *\<nom_application>* .dll, une bibliothèque de liens dynamiques Windows qui contient le code de votre application, ainsi que du code provenant de la bibliothèque de classes .NET Framework et de toute bibliothèque tierce avec laquelle il existe une dépendance.  Elle contient également le code de prise en charge, tel que le code nécessaire pour interagir avec Windows et sérialiser les objets de votre application.  
   
 - mrt100_app.dll, un runtime refactorisé qui fournit des services d’exécution tels que le garbage collection.  
   
@@ -102,7 +102,7 @@ Les applications Windows 8.1 et les applications de bureau Windows qui ciblent 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Métadonnées et composants autodescriptifs](../../../docs/standard/metadata-and-self-describing-components.md)
-- [Inside .NET Native (vidéo Channel 9)](https://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)
+- [Métadonnées et composants autodescriptifs](../../standard/metadata-and-self-describing-components.md)
+- [À l’intérieur de .NET Native (vidéo Channel 9)](https://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)
 - [Réflexion et .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)
 - [Résolution des problèmes généraux liés à .NET Native](../../../docs/framework/net-native/net-native-general-troubleshooting.md)

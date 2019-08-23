@@ -12,15 +12,15 @@ helpviewer_keywords:
 - processes, interrupting
 - execution [Visual Basic], stopping
 ms.assetid: c9a9fde0-d649-4662-9bef-bd0146ebc2a7
-ms.openlocfilehash: 80d6734945324f3f517b256051486273f6b687ec
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a617038ec51d98c62b6cf7e3c124c8af01305bac
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61783849"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957618"
 ---
 # <a name="stop-statement-visual-basic"></a>Stop, instruction (Visual Basic)
-Suspend l’exécution.  
+Interrompt l’exécution.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,15 +29,15 @@ Stop
 ```  
   
 ## <a name="remarks"></a>Notes  
- Vous pouvez placer `Stop` instructions n’importe où dans les procédures pour suspendre l’exécution. À l’aide de la `Stop` instruction est similaire à la définition d’un point d’arrêt dans le code.  
+ Vous pouvez placer `Stop` des instructions n’importe où dans les procédures pour interrompre l’exécution. L’utilisation `Stop` de l’instruction revient à définir un point d’arrêt dans le code.  
   
- Le `Stop` instruction interrompt l’exécution, mais contrairement à `End`, il ne pas fermer tous les fichiers ou effacer toutes les variables, sauf si elle est placée dans un fichier exécutable compilé (.exe).  
+ L' `Stop` instruction interrompt l’exécution, mais `End`contrairement à, elle ne ferme pas les fichiers ou n’efface aucune variable, sauf si elle est rencontrée dans un fichier exécutable (. exe) compilé.  
   
 > [!NOTE]
->  Si le `Stop` est rencontrée dans le code qui s’exécute en dehors de l’environnement de développement intégré (IDE), le débogueur est appelé. Cela est vrai quel que soit que le code a été compilé en mode débogage ou de la vente au détail.  
+> Si l' `Stop` instruction est rencontrée dans le code qui s’exécute en dehors de l’environnement de développement intégré (IDE), le débogueur est appelé. Cela est vrai que le code ait été compilé en mode de débogage ou de vente au détail.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le `Stop` instruction pour interrompre l’exécution à chaque itération du `For...Next` boucle.  
+ L’exemple suivant utilise `Stop` l’instruction pour suspendre l’exécution de chaque itération `For...Next` à travers la boucle.  
   
  [!code-vb[VbVbalrStatements#56](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#56)]  
   

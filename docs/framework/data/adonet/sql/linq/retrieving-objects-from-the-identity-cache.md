@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 96c13903-ccb6-4a0e-ab6a-8ca955ca314d
-ms.openlocfilehash: a8e4fc9b83e11aef4347ab4765f6a2e75c526387
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: ef771d924d9b508c29061f75a45808b5f81abb53
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64910756"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963834"
 ---
 # <a name="retrieving-objects-from-the-identity-cache"></a>Récupération d'objets du cache d'identité
 Cette rubrique décrit les types des requêtes LINQ to SQL qui retournent un objet à partir du cache d'identité qui est géré par le <xref:System.Data.Linq.DataContext>.  
@@ -20,7 +20,7 @@ Cette rubrique décrit les types des requêtes LINQ to SQL qui retournent un obj
  Généralement, pour qu'une requête LINQ to SQL retourne un objet à partir du cache d'identité, la requête doit être basée sur la clé primaire d'un objet et doit retourner un objet unique. En particulier, la requête doit se présenter sous l'une des formes générales suivantes.  
   
 > [!NOTE]
->  Les requêtes précompilées ne retournent pas d'objets à partir du cache d'identité. Pour plus d’informations sur les requêtes précompilées, consultez <xref:System.Data.Linq.CompiledQuery> et [Comment : Store et réutiliser des requêtes](../../../../../../docs/framework/data/adonet/sql/linq/how-to-store-and-reuse-queries.md).  
+> Les requêtes précompilées ne retournent pas d'objets à partir du cache d'identité. Pour plus d’informations sur les requêtes précompilées <xref:System.Data.Linq.CompiledQuery> , [consultez et procédure: Stocker et réutiliser](../../../../../../docs/framework/data/adonet/sql/linq/how-to-store-and-reuse-queries.md)des requêtes.  
   
  Une requête doit se présenter sous l'une des formes générales suivantes pour pouvoir récupérer un objet à partir du cache d'identité :  
   

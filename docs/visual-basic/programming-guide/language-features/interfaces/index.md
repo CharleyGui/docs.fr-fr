@@ -7,12 +7,12 @@ helpviewer_keywords:
 - interfaces
 - interfaces [Visual Basic]
 ms.assetid: 61b06674-12c9-430b-be68-cc67ecee1f5b
-ms.openlocfilehash: ee53e6e5fc360c5155e1682f829a45be922caf22
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 968e5d9bb08f168e3c77b40ea42b16dc66e93e64
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665421"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956300"
 ---
 # <a name="interfaces-visual-basic"></a>Interfaces (Visual Basic)
 Les *interfaces* définissent les propriétés, méthodes et événements qui peuvent être implémentés par les classes. Les interfaces vous permettent de définir des fonctionnalités sous forme de petits groupes de propriétés, méthodes et événements étroitement liés. Les risques d’incompatibilité sont ainsi limités, car vous pouvez développer des implémentations avancées pour vos interfaces sans mettre en danger le code existant. Vous pouvez ajouter de nouvelles fonctionnalités à tout moment en développant des interfaces et implémentations supplémentaires.  
@@ -33,20 +33,20 @@ Les *interfaces* définissent les propriétés, méthodes et événements qui pe
  Dans un espace de noms, les instructions d'interface sont `Friend` par défaut, mais elles peuvent également être déclarées explicitement comme `Public` ou `Friend`. Les interfaces définies dans des classes, des modules, des interfaces et des structures sont `Public` par défaut, mais elles peuvent également être déclarées explicitement comme `Public`, `Friend`, `Protected` ou `Private`.  
   
 > [!NOTE]
->  Le mot clé `Shadows` peut être appliqué à tous les membres d'interface. Le mot clé `Overloads` peut être appliqué aux instructions `Sub`, `Function` et `Property` déclarées dans une définition d'interface. En outre, les instructions `Property` peuvent posséder les modificateurs `Default`, `ReadOnly` ou `WriteOnly`. Aucun autre modificateur (`Public`, `Private`, `Friend`, `Protected`, `Shared`, `Overrides`, `MustOverride` ni `Overridable`) n'est autorisé. Pour plus d’informations, consultez [Contextes de déclaration et niveaux d’accès par défaut](../../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
+> Le mot clé `Shadows` peut être appliqué à tous les membres d'interface. Le mot clé `Overloads` peut être appliqué aux instructions `Sub`, `Function` et `Property` déclarées dans une définition d'interface. En outre, les instructions `Property` peuvent posséder les modificateurs `Default`, `ReadOnly` ou `WriteOnly`. Aucun autre modificateur (`Public`, `Private`, `Friend`, `Protected`, `Shared`, `Overrides`, `MustOverride` ni `Overridable`) n'est autorisé. Pour plus d’informations, consultez [Contextes de déclaration et niveaux d’accès par défaut](../../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
   
  Par exemple, le code suivant définit une interface avec une fonction, une propriété et un événement.  
   
  [!code-vb[VbVbalrOOP#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#17)]  
   
 ## <a name="implementing-interfaces"></a>Implémentation des interfaces  
- Mot réservé de Visual Basic `Implements` est utilisé de deux manières. L'instruction `Implements` signifie qu'une classe ou une structure implémente une interface. Le mot clé `Implements` signifie qu'un membre de classe ou un membre de structure implémente un membre d'interface spécifique.  
+ Le mot `Implements` réservé Visual Basic est utilisé de deux manières. L'instruction `Implements` signifie qu'une classe ou une structure implémente une interface. Le mot clé `Implements` signifie qu'un membre de classe ou un membre de structure implémente un membre d'interface spécifique.  
   
 ### <a name="implements-statement"></a>Implements, instruction  
  Si une classe ou une structure implémente une ou plusieurs interfaces, elle doit inclure l'instruction `Implements` immédiatement après l'instruction `Class` ou `Structure`. L'instruction `Implements` requiert une liste séparée par des virgules des interfaces qui doivent être implémentées par une classe. La classe ou la structure doit implémenter tous les membres d'interface à l'aide du mot clé `Implements`.  
   
 ### <a name="implements-keyword"></a>Implements, mot clé  
- Le mot clé `Implements` requiert une liste séparée par des virgules des membres d'interface qui doivent être implémentés. En règle générale, un seul membre d'interface est spécifié, mais vous pouvez spécifier plusieurs membres. La spécification d'un membre d'interface se compose du nom de l'interface (qui doit être spécifié dans une instruction implements dans la classe), d'un point et du nom de la fonction membre, de la propriété ou de l'événement à implémenter. Le nom d’un membre qui implémente un membre d’interface peut utiliser n’importe quel identificateur légal, et il n’est pas limité à la `InterfaceName_MethodName` convention utilisée dans les versions antérieures de Visual Basic.  
+ Le mot clé `Implements` requiert une liste séparée par des virgules des membres d'interface qui doivent être implémentés. En règle générale, un seul membre d'interface est spécifié, mais vous pouvez spécifier plusieurs membres. La spécification d'un membre d'interface se compose du nom de l'interface (qui doit être spécifié dans une instruction implements dans la classe), d'un point et du nom de la fonction membre, de la propriété ou de l'événement à implémenter. Le nom d’un membre qui implémente un membre d’interface peut utiliser n’importe quel identificateur légal, et il n’est pas `InterfaceName_MethodName` limité à la Convention utilisée dans les versions antérieures de Visual Basic.  
   
  Par exemple, le code suivant montre comment déclarer une sous-routine nommée `Sub1` qui implémente une méthode d'une interface :  
   

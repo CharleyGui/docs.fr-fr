@@ -3,15 +3,15 @@ title: <remove>
 ms.date: 03/30/2017
 ms.assetid: 4058e2f1-7db4-4d1a-84dd-1b52836f2ae6
 author: BrucePerlerMS
-ms.openlocfilehash: 17c4d4289cf90b66d52986c054d4807ecff2b3d8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 11aeed0277fc13cbd9a65232311bd575a4a81ff7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793885"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942584"
 ---
 # <a name="remove"></a>\<remove>
-Supprime le Gestionnaire de jetons de sécurité spécifié de la collection de gestionnaires de jetons.  
+Supprime le gestionnaire de jetons de sécurité spécifié de la collection de gestionnaires de jetons.  
   
  \<system.identityModel>  
 \<identityConfiguration>  
@@ -38,19 +38,19 @@ Supprime le Gestionnaire de jetons de sécurité spécifié de la collection de 
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|type|Le nom de type CLR de gestionnaire de jetons à supprimer. Pour plus d’informations sur la façon de spécifier le `type` d’attribut, consultez [références de Type personnalisé](https://docs.microsoft.com/previous-versions/windows-identity-foundation/gg638728(v=msdn.10)#custom-type-references). Obligatoire.|  
+|type|Nom de type CLR du gestionnaire de jetons à supprimer. Pour plus d’informations sur la spécification de `type` l’attribut, consultez [références de types personnalisés](https://docs.microsoft.com/previous-versions/windows-identity-foundation/gg638728(v=msdn.10)#custom-type-references). Requis.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<securityTokenHandlers>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|Spécifie une collection de gestionnaires de jetons de sécurité qui sont inscrits avec le point de terminaison.|  
+|[\<securityTokenHandlers>](securitytokenhandlers.md)|Spécifie une collection de gestionnaires de jetons de sécurité inscrits auprès du point de terminaison.|  
   
 ## <a name="example"></a>Exemple  
- Le code XML suivant illustre l’utilisation de la `<add>` et `<remove>` éléments pour remplacer le Gestionnaire de jetons de session par défaut par un gestionnaire de jetons de session personnalisée. Le code XML provient de la `ClaimsAwareWebFarm` exemple.  
+ Le code XML suivant montre l’utilisation des `<add>` éléments `<remove>` et pour remplacer le gestionnaire de jetons de session par défaut par un gestionnaire de jetons de session personnalisé. Le code XML est extrait de `ClaimsAwareWebFarm` l’exemple.  
   
 ```xml  
 <securityTokenHandlers>  

@@ -2,38 +2,38 @@
 title: Data Binding in a Windows Forms Client
 ms.date: 03/30/2017
 ms.assetid: a2a30b37-d6e2-4552-820e-e60b2bbe8829
-ms.openlocfilehash: 6ad71555148ed4f907483b677097e1f673373d87
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5a21721536542d2c338dfdad444e128087a18f57
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61990637"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69953559"
 ---
 # <a name="data-binding-in-a-windows-forms-client"></a>Data Binding in a Windows Forms Client
-Cet exemple montre comment lier aux données retournées par un service Windows Communication Foundation (WCF) dans une application Windows Forms.  
+Cet exemple montre comment effectuer une liaison à des données retournées par un service Windows Communication Foundation (WCF) dans une application Windows Forms.  
   
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent en fin de rubrique.  
+> La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent en fin de rubrique.  
   
- Cet exemple contient un service qui implémente un contrat définissant un modèle de communication demande-réponse. L’exemple se compose d’un application Windows Forms (.exe) du client et un service WCF hébergé par Internet Information Services (IIS).  
+ Cet exemple contient un service qui implémente un contrat définissant un modèle de communication demande-réponse. L’exemple se compose d’une application cliente Windows Forms (. exe) et d’un service WCF hébergé par Internet Information Services (IIS).  
   
  Le contrat est défini par l'interface `IWeatherService`, laquelle expose une opération nommée `GetWeatherData`. Cette opération accepte un tableau de villes et retourne un tableau d'objets `WeatherData` qui représente les prévisions de températures maximales et minimales d'une ville.  
   
- La liaison de données est générée sur le client, dans l’application Windows Forms. L'affichage `DataGridView`, qui correspond à une représentation graphique des données, est défini dans le concepteur Windows Forms. Un intermédiaire nommé `BindingSource` est également créé. La source de données de `BindingSource` a pour valeur le tableau de données retourné par le service. L'objectif de `BindingSource` est de fournir une couche d'indirection entre les données et leur affichage. Tous les processus concernant les données, telles que la navigation, le tri, le filtrage et la mise à jour, sont effectués en appelant le composant `BindingSource`. Pour lier les données à `DataGridView`, l'objet `datasource` est affecté à la source `DataGridView` de l'affichage `BindingSource`. Toutes les données retournées par le service WCF est ensuite affiché sous forme graphique à l’utilisateur.  Chaque fois que l'utilisateur clique sur le bouton, les données retournées sont automatiquement mises à jour dans l'affichage `DataGridView` lié aux données.  
+ La liaison de données est générée sur le client, dans l’application Windows Forms. L'affichage `DataGridView`, qui correspond à une représentation graphique des données, est défini dans le concepteur Windows Forms. Un intermédiaire nommé `BindingSource` est également créé. La source de données de `BindingSource` a pour valeur le tableau de données retourné par le service. L'objectif de `BindingSource` est de fournir une couche d'indirection entre les données et leur affichage. Tous les processus concernant les données, telles que la navigation, le tri, le filtrage et la mise à jour, sont effectués en appelant le composant `BindingSource`. Pour lier les données à `DataGridView`, l'objet `datasource` est affecté à la source `DataGridView` de l'affichage `BindingSource`. Toutes les données retournées par le service WCF sont ensuite affichées sous forme de graphique pour l’utilisateur.  Chaque fois que l'utilisateur clique sur le bouton, les données retournées sont automatiquement mises à jour dans l'affichage `DataGridView` lié aux données.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
 2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Pour exécuter l’exemple dans une configuration unique ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
 >  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.  
+>  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DataBinding\WindowsForms`  

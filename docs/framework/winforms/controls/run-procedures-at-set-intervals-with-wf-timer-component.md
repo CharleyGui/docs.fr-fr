@@ -13,12 +13,12 @@ helpviewer_keywords:
 - Timer component [Windows Forms], initializing
 - procedures [Windows Forms], specific time intervals
 ms.assetid: 8025247a-2de4-4d86-b8ab-a8cb8aeab2ea
-ms.openlocfilehash: ac2f89619c3e87ebfe5e568bbf27274834b0866d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9900b96bf04668805b841c842f7c625b86e76d39
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012449"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960547"
 ---
 # <a name="how-to-run-procedures-at-set-intervals-with-the-windows-forms-timer-component"></a>Procédure : exécuter des procédures à des intervalles définis avec le composant Timer Windows Forms
 Il peut arriver que vous souhaitiez créer une procédure qui s'exécute à intervalles réguliers jusqu'à ce qu'une boucle soit terminée ou qu'un intervalle de temps spécifique soit écoulé. Vous pouvez pour cela utiliser le composant <xref:System.Windows.Forms.Timer>.  
@@ -26,25 +26,25 @@ Il peut arriver que vous souhaitiez créer une procédure qui s'exécute à inte
  Ce composant est conçu pour un environnement Windows Forms. Si vous avez besoin d’un minuteur adapté à un environnement de serveur, consultez l’article [Introduction aux minuteurs serveur](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/tb9yt5e6(v=vs.90)).  
   
 > [!NOTE]
->  Il existe certaines limitations quand vous utilisez le composant <xref:System.Windows.Forms.Timer>. Pour plus d’informations, consultez [Limitations de la propriété Interval du composant de minuteur de formulaires Windows](limitations-of-the-timer-component-interval-property.md).  
+> Il existe certaines limitations quand vous utilisez le composant <xref:System.Windows.Forms.Timer>. Pour plus d’informations, consultez [limitations de la propriété Interval du composant Timer Windows Forms](limitations-of-the-timer-component-interval-property.md).  
   
 ## <a name="to-run-a-procedure-at-set-intervals-with-the-timer-component"></a>Pour exécuter une procédure à intervalles spécifiques avec le composant Timer  
   
-1. Ajoutez un <xref:System.Windows.Forms.Timer> à votre formulaire. Pour savoir comment effectuer cette tâche par programmation, consultez la section suivante. Visual Studio prend également en charge l’ajout de composants à un formulaire. Voir également [Guide pratique pour Ajouter des contrôles sans Interface utilisateur à des Windows Forms](how-to-add-controls-without-a-user-interface-to-windows-forms.md).  
+1. Ajoutez un <xref:System.Windows.Forms.Timer> à votre formulaire. Pour savoir comment effectuer cette tâche par programmation, consultez la section suivante. Visual Studio prend également en charge l’ajout de composants à un formulaire. Voir également [Guide pratique pour Ajoutez des contrôles sans interface utilisateur pour Windows Forms](how-to-add-controls-without-a-user-interface-to-windows-forms.md).  
   
 2. Définissez la propriété <xref:System.Windows.Forms.Timer.Interval%2A> (en millisecondes) du minuteur. Cette propriété détermine combien de temps s'écoulera avant la réexécution de la procédure.  
   
     > [!NOTE]
-    >  Plus un événement de minuteur se produit souvent, plus il faut de temps processeur pour y répondre. Cela peut ralentir les performances globales. Ne définissez pas un intervalle plus petit que ce qui est nécessaire.  
+    > Plus un événement de minuteur se produit souvent, plus il faut de temps processeur pour y répondre. Cela peut ralentir les performances globales. Ne définissez pas un intervalle plus petit que ce qui est nécessaire.  
   
 3. Écrivez le code approprié dans le gestionnaire d'événements <xref:System.Windows.Forms.Timer.Tick>. Le code que vous écrivez dans cet événement s'exécutera à l'intervalle spécifié dans la propriété <xref:System.Windows.Forms.Timer.Interval%2A>.  
   
 4. Affectez la valeur <xref:System.Windows.Forms.Timer.Enabled%2A> à la propriété `true` pour démarrer le minuteur. L'événement <xref:System.Windows.Forms.Timer.Tick> commencera à se produire et à exécuter votre procédure à l'intervalle indiqué.  
   
-5. Au moment opportun, affectez la valeur `false` à la propriété <xref:System.Windows.Forms.Timer.Enabled%2A> pour empêcher que la procédure soit réexécutée. Définissant l’intervalle sur `0` n’entraîne pas l’arrêt du minuteur.  
+5. Au moment opportun, affectez la valeur `false` à la propriété <xref:System.Windows.Forms.Timer.Enabled%2A> pour empêcher que la procédure soit réexécutée. La définition de l' `0` intervalle sur n’entraîne pas l’arrêt de la minuterie.  
   
 ## <a name="example"></a>Exemple  
- Ce premier exemple de code effectue le suivi de l'heure par incréments d'une seconde. Il utilise un <xref:System.Windows.Forms.Button>, un <xref:System.Windows.Forms.Label> et un composant <xref:System.Windows.Forms.Timer> sur un formulaire. La propriété <xref:System.Windows.Forms.Timer.Interval%2A> prend la valeur 1 000 (égal à une seconde). Dans l'événement <xref:System.Windows.Forms.Timer.Tick>, la légende de l'étiquette prend comme valeur l'heure actuelle. En cas de clic sur le bouton, la propriété <xref:System.Windows.Forms.Timer.Enabled%2A> prend la valeur `false` et le minuteur cesse de mettre à jour la légende de l'étiquette. L’exemple de code suivant requiert que vous ayez un formulaire comprenant un <xref:System.Windows.Forms.Button> contrôle nommé `Button1`, un <xref:System.Windows.Forms.Timer> contrôle nommé `Timer1`et un <xref:System.Windows.Forms.Label> contrôle nommé `Label1`.  
+ Ce premier exemple de code effectue le suivi de l'heure par incréments d'une seconde. Il utilise un <xref:System.Windows.Forms.Button>, un <xref:System.Windows.Forms.Label> et un composant <xref:System.Windows.Forms.Timer> sur un formulaire. La propriété <xref:System.Windows.Forms.Timer.Interval%2A> prend la valeur 1 000 (égal à une seconde). Dans l'événement <xref:System.Windows.Forms.Timer.Tick>, la légende de l'étiquette prend comme valeur l'heure actuelle. En cas de clic sur le bouton, la propriété <xref:System.Windows.Forms.Timer.Enabled%2A> prend la valeur `false` et le minuteur cesse de mettre à jour la légende de l'étiquette. L’exemple de code suivant nécessite que vous disposiez d’un <xref:System.Windows.Forms.Button> formulaire avec `Button1`un contrôle <xref:System.Windows.Forms.Timer> nommé, `Timer1`d’un contrôle <xref:System.Windows.Forms.Label> nommé et `Label1`d’un contrôle nommé.  
   
 ```vb  
 Private Sub InitializeTimer()  
@@ -149,7 +149,7 @@ private:
 ```  
   
 ## <a name="example"></a>Exemple  
- Ce deuxième exemple de code exécute une procédure toutes les 600 millisecondes jusqu'à ce qu'une boucle soit terminée. L’exemple de code suivant requiert que vous ayez un formulaire comprenant un <xref:System.Windows.Forms.Button> contrôle nommé `Button1`, un <xref:System.Windows.Forms.Timer> contrôle nommé `Timer1`et un <xref:System.Windows.Forms.Label> contrôle nommé `Label1`.  
+ Ce deuxième exemple de code exécute une procédure toutes les 600 millisecondes jusqu'à ce qu'une boucle soit terminée. L’exemple de code suivant nécessite que vous disposiez d’un <xref:System.Windows.Forms.Button> formulaire avec `Button1`un contrôle <xref:System.Windows.Forms.Timer> nommé, `Timer1`d’un contrôle <xref:System.Windows.Forms.Label> nommé et `Label1`d’un contrôle nommé.  
   
 ```vb  
 ' This variable will be the loop counter.  

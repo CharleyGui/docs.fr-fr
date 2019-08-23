@@ -17,31 +17,31 @@ helpviewer_keywords:
 - application development [WPF], files
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
-ms.openlocfilehash: 2c48788507eed40e8240491dbd5064ad6c293c9f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 57eae5067a72777db2c19331029b6df679a9fdce
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651932"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956194"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Fichiers de ressources, de contenu et de données d'une application WPF
-[!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)] applications dépendent souvent de fichiers qui contiennent des données non exécutables, tels que [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], images, vidéo et audio. Windows Presentation Foundation (WPF) offre une prise en charge spéciale pour la configuration, l’identification et l’utilisation de ces types de fichiers de données, appelés fichiers de données d’application. Cette prise en charge repose sur un ensemble spécifique de types de fichier de données d’application, notamment :  
+[!INCLUDE[TLA#tla_win](../../../../includes/tlasharptla-win-md.md)]les applications dépendent souvent de fichiers qui contiennent des données non exécutables, telles [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]que des images, des vidéos et de l’audio. Windows Presentation Foundation (WPF) offre une prise en charge spéciale pour la configuration, l’identification et l’utilisation de ces types de fichiers de données, appelés fichiers de données d’application. Cette prise en charge repose sur un ensemble spécifique de types de fichier de données d’application, notamment :  
   
-- **Fichiers de ressources**: Les fichiers de données qui sont compilés dans un fichier exécutable ou une bibliothèque [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] assembly.  
+- **Fichiers de ressources**: Fichiers de données compilés dans un fichier exécutable ou un assembly de bibliothèque [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] .  
   
-- **Fichiers de contenu**: Les fichiers de données autonomes ayant une association explicite avec un fichier exécutable [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] assembly.  
+- **Fichiers de contenu**: Fichiers de données autonomes qui ont une association explicite avec un [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] assembly exécutable.  
   
-- **Fichiers d’origine du site de**: Les fichiers de données autonomes qui disposent d’aucune association avec un fichier exécutable [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] assembly.  
+- **Fichiers du site d’origine**: Fichiers de données autonomes qui n’ont aucune association avec [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] un assembly exécutable.  
   
- Il existe une distinction importante entre ces trois types de fichier : les fichiers de ressources et les fichiers de contenu sont connus au moment de la génération. En effet, un assembly les connaît explicitement. Pour les fichiers du site d’origine, toutefois, un assembly ne peut avoir aucune connaissance du tout, ou une connaissance implicite via un pack [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] référence ; le cas de ce dernier, il n’existe aucune garantie que le site référencé de fichier d’origine existe réellement.  
+ Il existe une distinction importante entre ces trois types de fichier : les fichiers de ressources et les fichiers de contenu sont connus au moment de la génération. En effet, un assembly les connaît explicitement. Toutefois, pour les fichiers de site d’origine, un assembly ne peut pas en avoir connaissance du tout, ou des connaissances [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] implicites à l’aide d’une référence à en-tête pack; le cas de ce dernier, il n’y a aucune garantie que le fichier de site d’origine référencé existe réellement.  
   
- Pour référencer les fichiers de données d’application, Windows Presentation Foundation (WPF) utilise le Pack [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] schéma, qui est décrite en détail dans [URI à en-tête Pack dans WPF](pack-uris-in-wpf.md)).  
+ Pour référencer des fichiers de données d’application, Windows Presentation Foundation (WPF [!INCLUDE[TLA#tla_uri](../../../../includes/tlasharptla-uri-md.md)] ) utilise le schéma de Pack, qui est décrit en détail dans URI à en- [tête pack dans WPF](pack-uris-in-wpf.md)).  
   
  Cette rubrique décrit comment configurer et utiliser des fichiers de données d’application.  
 
 <a name="Resource_Files"></a>   
 ## <a name="resource-files"></a>Fichiers de ressources  
- Si un fichier de données d’application doit toujours être disponible pour une application, le seul moyen de garantir cette disponibilité est de le compiler en un assembly exécutable principal d’une application ou en l’un de ses assemblys référencés. Ce type de fichier de données d’application est connu comme un *fichier de ressources*.  
+ Si un fichier de données d’application doit toujours être disponible pour une application, le seul moyen de garantir cette disponibilité est de le compiler en un assembly exécutable principal d’une application ou en l’un de ses assemblys référencés. Ce type de fichier de données d’application est connu sous le nom de *fichier de ressources*.  
   
  Vous devez utiliser des fichiers de ressources dans les situations suivantes :  
   
@@ -49,13 +49,13 @@ ms.locfileid: "64651932"
   
 - Vous souhaitez simplifier la complexité de distribution d’une application en réduisant le nombre des dépendances de fichiers.  
   
-- Votre fichier de données d’application doit être localisable (consultez [WPF Globalization and Localization Overview](../advanced/wpf-globalization-and-localization-overview.md)).  
+- Votre fichier de données d’application doit être localisable (consultez [vue d’ensemble de la globalisation et de la localisation WPF](../advanced/wpf-globalization-and-localization-overview.md)).  
   
 > [!NOTE]
->  Les fichiers de ressources décrits dans cette section sont différents que les fichiers de ressources décrits dans [XAML ressources](../advanced/xaml-resources.md) ainsi que les ressources incorporées ou liées décrites dans [ressources d’Application gérer (.NET) ](/visualstudio/ide/managing-application-resources-dotnet).  
+> Les fichiers de ressources décrits dans cette section sont différents des fichiers de ressources décrits dans les [ressources XAML](../advanced/xaml-resources.md) et différents des ressources incorporées ou liées décrites dans [gérer les ressources d’application (.net)](/visualstudio/ide/managing-application-resources-dotnet).  
   
 ### <a name="configuring-resource-files"></a>Configuration des fichiers de ressources  
- Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], un fichier de ressources est un fichier qui est inclus dans un [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] de projet comme un `Resource` élément.  
+ Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], un fichier de ressources est un fichier inclus dans un projet Microsoft Build Engine (MSBuild) `Resource` en tant qu’élément.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
@@ -68,21 +68,21 @@ ms.locfileid: "64651932"
 ```  
   
 > [!NOTE]
->  Dans [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], vous créez un fichier de ressources en ajoutant un fichier à un projet et en définissant son `Build Action` à `Resource`.  
+> Dans [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], vous créez un fichier de ressources en ajoutant un fichier à un projet et en `Build Action` affectant à `Resource`la valeur.  
   
- Lorsque le projet est généré, [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] compile la ressource dans l’assembly.  
+ Lorsque le projet est généré, MSBuild compile la ressource dans l’assembly.  
   
 ### <a name="using-resource-files"></a>Utilisation des fichiers de ressources  
- Pour charger un fichier de ressources, vous pouvez appeler la <xref:System.Windows.Application.GetResourceStream%2A> méthode de la <xref:System.Windows.Application> classe, en passant un pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] qui identifie le fichier de ressources souhaité. <xref:System.Windows.Application.GetResourceStream%2A> Retourne un <xref:System.Windows.Resources.StreamResourceInfo> objet, qui expose le fichier de ressources comme un <xref:System.IO.Stream> et décrit son type de contenu.  
+ Pour charger un fichier de ressources, vous pouvez appeler <xref:System.Windows.Application.GetResourceStream%2A> la méthode de <xref:System.Windows.Application> la classe, en passant [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] un à en-tête pack qui identifie le fichier de ressources souhaité. <xref:System.Windows.Application.GetResourceStream%2A>retourne un <xref:System.Windows.Resources.StreamResourceInfo> objet qui expose le fichier de ressources <xref:System.IO.Stream> en tant que et décrit son type de contenu.  
   
- Par exemple, le code suivant montre comment utiliser <xref:System.Windows.Application.GetResourceStream%2A> pour charger un <xref:System.Windows.Controls.Page> ressources de fichiers et définissez-le comme le contenu d’un <xref:System.Windows.Controls.Frame> (`pageFrame`) :  
+ Par exemple, le code <xref:System.Windows.Application.GetResourceStream%2A> suivant montre comment utiliser pour charger un <xref:System.Windows.Controls.Page> fichier de ressources et le définir en tant que contenu d’un <xref:System.Windows.Controls.Frame> (`pageFrame`):  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadAPageResourceFileManuallyCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.cs#loadapageresourcefilemanuallycode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadAPageResourceFileManuallyCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.vb#loadapageresourcefilemanuallycode)]  
   
- Lors de l’appel <xref:System.Windows.Application.GetResourceStream%2A> vous donne accès à la <xref:System.IO.Stream>, vous devez effectuer le travail supplémentaire de conversion vers le type de la propriété que vous le définirez. Au lieu de cela, vous pouvez laisser [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] prendre en charge de l’ouvrir et de convertir le <xref:System.IO.Stream> en chargeant un fichier de ressources directement dans la propriété d’un type à l’aide de code.  
+ Lorsque vous <xref:System.Windows.Application.GetResourceStream%2A> appelez vous donne accès <xref:System.IO.Stream>au, vous devez effectuer le travail supplémentaire de la conversion en type de la propriété avec laquelle vous allez le définir. Au lieu de cela, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vous pouvez vous permettre d’ouvrir et <xref:System.IO.Stream> de convertir en chargeant un fichier de ressources directement dans la propriété d’un type à l’aide du code.  
   
- L’exemple suivant montre comment charger un <xref:System.Windows.Controls.Page> directement dans un <xref:System.Windows.Controls.Frame> (`pageFrame`) à l’aide de code.  
+ L’exemple suivant montre comment charger un <xref:System.Windows.Controls.Page> directement dans un <xref:System.Windows.Controls.Frame> (`pageFrame`) à l’aide du code.  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadPageResourceFileFromCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.cs#loadpageresourcefilefromcode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadPageResourceFileFromCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.vb#loadpageresourcefilefromcode)]  
@@ -92,11 +92,11 @@ ms.locfileid: "64651932"
  [!code-xaml[WPFAssemblyResourcesSnippets#LoadPageResourceFileFromXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml#loadpageresourcefilefromxaml)]  
   
 ### <a name="application-code-files-as-resource-files"></a>Fichiers de code d’application en tant que fichiers de ressources  
- Un ensemble spécial de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fichiers de code d’application peuvent être référencés à l’aide du pack [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)], y compris windows, les pages, les documents de flux et les dictionnaires de ressources. Par exemple, vous pouvez définir le <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType> propriété avec un pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] qui fait référence à la fenêtre ou la page que vous souhaitez charger au démarrage d’une application.  
+ Un ensemble spécial de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fichiers de code d’application peut être référencé à [!INCLUDE[TLA2#tla_uri#plural](../../../../includes/tla2sharptla-urisharpplural-md.md)]l’aide de Pack, y compris les fenêtres, les pages, les documents de Flow et les dictionnaires de ressources. Par exemple, vous pouvez définir la <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType> propriété avec un à [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] en-tête pack qui référence la fenêtre ou la page que vous souhaitez charger au démarrage d’une application.  
   
  [!code-xaml[WPFAssemblyResourcesSnippets#SetApplicationStartupURI](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/App.xaml#setapplicationstartupuri)]  
   
- Vous pouvez le faire quand un [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] fichier est inclus dans un [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] de projet comme un `Page` élément.  
+ Vous pouvez le faire lorsqu’un fichier XAML est inclus dans un projet MSBuild en tant `Page` qu’élément.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
@@ -109,21 +109,21 @@ ms.locfileid: "64651932"
 ```  
   
 > [!NOTE]
->  Dans [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], vous ajoutez un nouveau <xref:System.Windows.Window>, <xref:System.Windows.Navigation.NavigationWindow>, <xref:System.Windows.Controls.Page>, <xref:System.Windows.Documents.FlowDocument>, ou <xref:System.Windows.ResourceDictionary> à un projet, le `Build Action` pour le balisage fichier par défaut sera `Page`.  
+> Dans [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], vous ajoutez un nouveau <xref:System.Windows.Window>, <xref:System.Windows.Navigation.NavigationWindow> <xref:System.Windows.Controls.Page> `Page` `Build Action` ,,, ou <xref:System.Windows.ResourceDictionary> à un projet; par défaut, pour le fichier de balisage. <xref:System.Windows.Documents.FlowDocument>  
   
- Quand un projet avec `Page` éléments est compilé, le [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] éléments sont convertis au format binaire et compilés dans l’assembly associé. Ainsi, ces fichiers peuvent être utilisés de la même façon que des fichiers de ressources classiques.  
+ Lorsqu’un projet avec `Page` des éléments est compilé, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] les éléments sont convertis au format binaire et compilés dans l’assembly associé. Ainsi, ces fichiers peuvent être utilisés de la même façon que des fichiers de ressources classiques.  
   
 > [!NOTE]
->  Si un [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] fichier est configuré comme un `Resource` d’élément et n’a pas d’un fichier code-behind, brut [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] est compilé dans un assembly plutôt qu’une version binaire du brut [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
+> Si un [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] fichier est configuré `Resource` en tant qu’élément et n’a pas de fichier code-behind, le brut [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] est compilé dans un assembly plutôt que dans une version binaire du [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]brut.  
   
 <a name="Content_Files"></a>   
 ## <a name="content-files"></a>Fichiers de contenu  
- Un *fichier de contenu* est distribué comme un fichier libre aux côtés d’un assembly exécutable. Bien qu’ils ne soient pas compilés en un assembly, les assemblys sont compilés à l’aide de métadonnées qui établissent une association avec chaque fichier de contenu.  
+ Un *fichier de contenu* est distribué en tant que fichier libre avec un assembly exécutable. Bien qu’ils ne soient pas compilés en un assembly, les assemblys sont compilés à l’aide de métadonnées qui établissent une association avec chaque fichier de contenu.  
   
  Vous devez utiliser des fichiers de contenu quand votre application nécessite un ensemble spécifique de fichiers de données d’application, que vous souhaitez pouvoir mettre à jour sans recompiler l’assembly qui les consomme.  
   
 ### <a name="configuring-content-files"></a>Configuration des fichiers de contenu  
- Pour ajouter un fichier de contenu à un projet, un fichier de données d’application doit être inclus en tant qu’un `Content` élément. En outre, comme un fichier de contenu n’est pas compilé directement dans l’assembly, vous devez définir le [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `CopyToOutputDirectory` élément de métadonnées pour spécifier que le fichier de contenu est copié vers un emplacement qui est relatif à l’assembly généré. Si vous souhaitez que la ressource à copier dans le dossier de sortie de génération chaque fois qu’un projet est généré, vous définissez le `CopyToOutputDirectory` élément de métadonnées avec le `Always` valeur. Sinon, vous pouvez vous assurer que seule la version la plus récente de la ressource est copiée dans le dossier de sortie de génération à l’aide de la `PreserveNewest` valeur.  
+ Pour ajouter un fichier de contenu à un projet, un fichier de données d’application doit être `Content` inclus en tant qu’élément. En outre, étant donné qu’un fichier de contenu n’est pas compilé directement dans l’assembly, `CopyToOutputDirectory` vous devez définir l’élément de métadonnées MSBuild pour spécifier que le fichier de contenu est copié vers un emplacement relatif à l’assembly généré. Si vous souhaitez que la ressource soit copiée dans le dossier de sortie de génération chaque fois qu’un projet est généré `CopyToOutputDirectory` , vous définissez l' `Always` élément de métadonnées avec la valeur. Dans le cas contraire, vous pouvez vous assurer que seule la version la plus récente de la ressource est copiée dans `PreserveNewest` le dossier de sortie de la génération à l’aide de la valeur.  
   
  L’exemple ci-dessous illustre un fichier configuré en tant que fichier de contenu copié dans le dossier de sortie de build uniquement quand une nouvelle version de la ressource est ajoutée au projet.  
   
@@ -140,29 +140,29 @@ ms.locfileid: "64651932"
 ```  
   
 > [!NOTE]
->  Dans [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], vous créez un fichier de contenu en ajoutant un fichier à un projet et le paramètre son `Build Action` à `Content`et définissez son `Copy to Output Directory` à `Copy always` (même en tant que `Always`) et `Copy if newer` (même en tant que `PreserveNewest`).  
+> Dans [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], vous créez un fichier de contenu en ajoutant un fichier à un projet et en `Build Action` affectant à `Content`la valeur `Copy to Output Directory` `Always`, `Copy always` et en définissant sa `Copy if newer` valeur sur ( `PreserveNewest`identique à) et (identique à).  
   
  Lorsque le projet est généré, un <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> attribut est compilé dans les métadonnées de l’assembly pour chaque fichier de contenu.  
   
  `[assembly: AssemblyAssociatedContentFile("ContentFile.xaml")]`  
   
- La valeur de la <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> implique le chemin d’accès au fichier de contenu par rapport à sa position dans le projet. Par exemple, si un fichier de contenu était situé dans un sous-dossier de projet, les informations de chemin d’accès supplémentaire seraient être incorporées dans le <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> valeur.  
+ La valeur de <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> implique le chemin d’accès au fichier de contenu par rapport à sa position dans le projet. Par exemple, si un fichier de contenu se trouve dans un sous-dossier de projet, les informations supplémentaires relatives au chemin <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> d’accès sont incorporées dans la valeur.  
   
  `[assembly: AssemblyAssociatedContentFile("Resources/ContentFile.xaml")]`  
   
- Le <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> valeur est également la valeur du chemin vers le fichier de contenu dans le dossier de sortie de génération.  
+ La <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> valeur est également la valeur du chemin d’accès au fichier de contenu dans le dossier de sortie de la génération.  
   
 ### <a name="using-content-files"></a>Utilisation des fichiers de contenu  
- Pour charger un fichier de contenu, vous pouvez appeler la <xref:System.Windows.Application.GetContentStream%2A> méthode de la <xref:System.Windows.Application> classe, en passant un pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] qui identifie le fichier de contenu souhaité. <xref:System.Windows.Application.GetContentStream%2A> Retourne un <xref:System.Windows.Resources.StreamResourceInfo> objet, qui expose le fichier de contenu comme un <xref:System.IO.Stream> et décrit son type de contenu.  
+ Pour charger un fichier de contenu, vous pouvez appeler <xref:System.Windows.Application.GetContentStream%2A> la méthode de <xref:System.Windows.Application> la classe, en passant [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] un à en-tête pack qui identifie le fichier de contenu souhaité. <xref:System.Windows.Application.GetContentStream%2A>retourne un <xref:System.Windows.Resources.StreamResourceInfo> objet qui expose le fichier de contenu <xref:System.IO.Stream> en tant que et décrit son type de contenu.  
   
- Par exemple, le code suivant montre comment utiliser <xref:System.Windows.Application.GetContentStream%2A> pour charger un <xref:System.Windows.Controls.Page> fichier de contenu et le définir comme contenu d’un <xref:System.Windows.Controls.Frame> (`pageFrame`).  
+ Par exemple, le code <xref:System.Windows.Application.GetContentStream%2A> suivant montre comment utiliser pour charger un <xref:System.Windows.Controls.Page> fichier de contenu et le définir en tant que contenu d’un <xref:System.Windows.Controls.Frame> (`pageFrame`).  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadAPageContentFileManuallyCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.cs#loadapagecontentfilemanuallycode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadAPageContentFileManuallyCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.vb#loadapagecontentfilemanuallycode)]  
   
- Lors de l’appel <xref:System.Windows.Application.GetContentStream%2A> vous donne accès à la <xref:System.IO.Stream>, vous devez effectuer le travail supplémentaire de conversion vers le type de la propriété que vous le définirez. Au lieu de cela, vous pouvez laisser [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] prendre en charge de l’ouvrir et de convertir le <xref:System.IO.Stream> en chargeant un fichier de ressources directement dans la propriété d’un type à l’aide de code.  
+ Lorsque vous <xref:System.Windows.Application.GetContentStream%2A> appelez vous donne accès <xref:System.IO.Stream>au, vous devez effectuer le travail supplémentaire de la conversion en type de la propriété avec laquelle vous allez le définir. Au lieu de cela, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vous pouvez vous permettre d’ouvrir et <xref:System.IO.Stream> de convertir en chargeant un fichier de ressources directement dans la propriété d’un type à l’aide du code.  
   
- L’exemple suivant montre comment charger un <xref:System.Windows.Controls.Page> directement dans un <xref:System.Windows.Controls.Frame> (`pageFrame`) à l’aide de code.  
+ L’exemple suivant montre comment charger un <xref:System.Windows.Controls.Page> directement dans un <xref:System.Windows.Controls.Frame> (`pageFrame`) à l’aide du code.  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadPageContentFileFromCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.cs#loadpagecontentfilefromcode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadPageContentFileFromCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.vb#loadpagecontentfilefromcode)]  
@@ -173,7 +173,7 @@ ms.locfileid: "64651932"
   
 <a name="Site_of_Origin_Files"></a>   
 ## <a name="site-of-origin-files"></a>Fichiers du site d’origine  
- Fichiers de ressources ont une relation explicite avec les assemblys qu’ils sont distribués, comme défini par le <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute>. Toutefois, vous pouvez être amené à établir une relation implicite ou inexistante entre un assembly et un fichier de données d’application, notamment dans les situations suivantes :  
+ Les fichiers de ressources ont une relation explicite avec les assemblys avec lesquels ils sont distribués, comme défini <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute>par le. Toutefois, vous pouvez être amené à établir une relation implicite ou inexistante entre un assembly et un fichier de données d’application, notamment dans les situations suivantes :  
   
 - Un fichier n’existe pas au moment de la compilation.  
   
@@ -183,21 +183,21 @@ ms.locfileid: "64651932"
   
 - Votre application utilise des fichiers de données volumineux, par exemple des fichiers audio et vidéo, et vous souhaitez que les utilisateurs aient le choix de les télécharger ou non.  
   
- Il est possible de charger ces types de fichiers à l’aide de traditionnels [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] schémas, tels que les schémas file:/// et http://.  
+ Il est possible de charger ces types de fichiers à l’aide [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] de schémas traditionnels, tels que les schémas file:///et http://.  
   
  [!code-xaml[WPFAssemblyResourcesSnippets#AbsolutePackUriFileHttpReferenceXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/AbsolutePackUriPage.xaml#absolutepackurifilehttpreferencexaml)]  
   
- Toutefois, pour les schémas file:/// et http:// votre application doit bénéficier d’une confiance totale. Si votre application est un [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] qui a été lancé à partir d’Internet ou intranet, et il demande uniquement le jeu d’autorisations qui sont autorisés pour les applications lancées à partir de ces emplacements, les fichiers libres ne peuvent être chargés à partir du site de l’application d’origine ( emplacement de lancement). Ces fichiers sont appelés *site d’origine* fichiers.  
+ Toutefois, pour les schémas file:/// et http:// votre application doit bénéficier d’une confiance totale. Si votre application est un [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] qui a été lancé à partir d’Internet ou de l’intranet et qu’elle demande uniquement le jeu d’autorisations autorisé pour les applications lancées à partir de ces emplacements, les fichiers libres peuvent uniquement être chargés à partir du site d’origine de l’application ( emplacement de lancement). Ces fichiers sont appelés fichiers *de site d’origine* .  
   
  Les fichiers du site d’origine sont la seule option pour les applications partiellement fiables. Toutefois, ils ne se limitent pas à ces applications. Les applications entièrement fiables peuvent tout de même avoir besoin de charger des fichiers de données d’application dont ils n’ont pas connaissance au moment de la génération. Bien que les applications entièrement fiables puissent utiliser file:///, les fichiers de données d’application sont probablement installés dans le même dossier ou sous-dossier que l’assembly d’application. Dans ce cas, l’utilisation du référencement du site d’origine est plus facile que l’utilisation de file:///, car avec file:/// vous devez résoudre le chemin complet du fichier.  
   
 > [!NOTE]
->  Site d’origine de fichiers ne sont pas mis en cache avec un [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] sur un ordinateur client, tandis que les fichiers de contenu. Ils sont donc téléchargés à la demande. Si un [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] contient des fichiers multimédias volumineux, les configurer comme site de fichiers d’origine signifie que le lancement de l’application initiale est beaucoup plus rapide, et les fichiers sont téléchargés uniquement à la demande.  
+> Les fichiers de site d’origine ne sont pas mis [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] en cache avec un sur un ordinateur client, alors que les fichiers de contenu sont. Ils sont donc téléchargés à la demande. Si une [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)] application possède des fichiers multimédias volumineux, leur configuration en tant que fichiers de site d’origine signifie que le lancement de l’application initiale est beaucoup plus rapide et que les fichiers sont téléchargés uniquement à la demande.  
   
 ### <a name="configuring-site-of-origin-files"></a>Configuration des fichiers du site d’origine  
- Si vos fichiers du site d’origine est inexistants ou inconnus au moment de la compilation, vous devez utiliser le déploiement traditionnel mécanismes pour garantir que les fichiers requis sont disponibles au moment de l’exécution, notamment en utilisant soit le `XCopy` programme de ligne de commande ou le [!INCLUDE[TLA#tla_wininstall](../../../../includes/tlasharptla-wininstall-md.md)].  
+ Si vos fichiers de site d’origine sont inexistants ou inconnus au moment de la compilation, vous devez utiliser des mécanismes de déploiement traditionnels pour vous assurer que les fichiers requis sont disponibles `XCopy` au moment de l’exécution, y compris en utilisant le programme de ligne de commande ou le [!INCLUDE[TLA#tla_wininstall](../../../../includes/tlasharptla-wininstall-md.md)].  
   
- Si vous connaissez au moment de la compilation, les fichiers que vous aimeriez voir situés sur le site d’origine, mais toujours vouloir éviter une dépendance explicite, vous pouvez ajouter ces fichiers à un [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] de projet comme `None` élément. Comme avec les fichiers de contenu, vous devez définir le [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `CopyToOutputDirectory` attribut pour spécifier que le fichier du site d’origine est copié vers un emplacement qui est relatif à l’assembly généré, en spécifiant soit le `Always` valeur ou la `PreserveNewest` valeur.  
+ Si vous savez au moment de la compilation les fichiers que vous souhaitez placer sur le site d’origine, mais que vous souhaitez toujours éviter une dépendance explicite, vous pouvez ajouter ces fichiers à un projet MSBuild en tant `None` qu’élément. Comme pour les fichiers de contenu, vous devez définir l' `CopyToOutputDirectory` attribut MSBuild pour spécifier que le fichier du site d’origine est copié vers un emplacement relatif à l’assembly généré, en spécifiant `Always` la valeur ou `PreserveNewest` la valeur.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
@@ -210,21 +210,21 @@ ms.locfileid: "64651932"
 ```  
   
 > [!NOTE]
->  Dans [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], vous créez un fichier du site d’origine en ajoutant un fichier à un projet et en définissant son `Build Action` à `None`.  
+> Dans [!INCLUDE[TLA2#tla_visualstu](../../../../includes/tla2sharptla-visualstu-md.md)], vous créez un fichier de site d’origine en ajoutant un fichier à un projet et en `Build Action` affectant à `None`la valeur.  
   
- Lorsque le projet est généré, [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] copie les fichiers spécifiés dans le dossier de sortie.  
+ Lorsque le projet est généré, MSBuild copie les fichiers spécifiés dans le dossier de sortie de la génération.  
   
 ### <a name="using-site-of-origin-files"></a>Utilisation des fichiers du site d’origine  
- Pour charger un fichier du site d’origine, vous pouvez appeler la <xref:System.Windows.Application.GetRemoteStream%2A> méthode de la <xref:System.Windows.Application> classe, en passant un pack [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] qui identifie le site souhaité du fichier d’origine. <xref:System.Windows.Application.GetRemoteStream%2A> Retourne un <xref:System.Windows.Resources.StreamResourceInfo> objet, qui expose le fichier du site d’origine comme un <xref:System.IO.Stream> et décrit son type de contenu.  
+ Pour charger un fichier de site d’origine, vous pouvez appeler <xref:System.Windows.Application.GetRemoteStream%2A> la méthode de <xref:System.Windows.Application> la classe, en passant [!INCLUDE[TLA2#tla_uri](../../../../includes/tla2sharptla-uri-md.md)] un à en-tête pack qui identifie le fichier de site d’origine souhaité. <xref:System.Windows.Application.GetRemoteStream%2A>retourne un <xref:System.Windows.Resources.StreamResourceInfo> objet qui expose le fichier de site d’origine <xref:System.IO.Stream> en tant que et décrit son type de contenu.  
   
- Par exemple, le code suivant montre comment utiliser <xref:System.Windows.Application.GetRemoteStream%2A> pour charger un <xref:System.Windows.Controls.Page> site d’origine de fichiers et définissez-le comme le contenu d’un <xref:System.Windows.Controls.Frame> (`pageFrame`).  
+ Par exemple, le code <xref:System.Windows.Application.GetRemoteStream%2A> suivant montre comment utiliser pour charger un <xref:System.Windows.Controls.Page> fichier de site d’origine et le définir en tant que contenu d’un <xref:System.Windows.Controls.Frame> (`pageFrame`).  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadAPageSOOFileManuallyCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/SOOPage.xaml.cs#loadapagesoofilemanuallycode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadAPageSOOFileManuallyCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/SOOPage.xaml.vb#loadapagesoofilemanuallycode)]  
   
- Lors de l’appel <xref:System.Windows.Application.GetRemoteStream%2A> vous donne accès à la <xref:System.IO.Stream>, vous devez effectuer le travail supplémentaire de conversion vers le type de la propriété que vous le définirez. Au lieu de cela, vous pouvez laisser [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] prendre en charge de l’ouvrir et de convertir le <xref:System.IO.Stream> en chargeant un fichier de ressources directement dans la propriété d’un type à l’aide de code.  
+ Lorsque vous <xref:System.Windows.Application.GetRemoteStream%2A> appelez vous donne accès <xref:System.IO.Stream>au, vous devez effectuer le travail supplémentaire de la conversion en type de la propriété avec laquelle vous allez le définir. Au lieu de cela, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vous pouvez vous permettre d’ouvrir et <xref:System.IO.Stream> de convertir en chargeant un fichier de ressources directement dans la propriété d’un type à l’aide du code.  
   
- L’exemple suivant montre comment charger un <xref:System.Windows.Controls.Page> directement dans un <xref:System.Windows.Controls.Frame> (`pageFrame`) à l’aide de code.  
+ L’exemple suivant montre comment charger un <xref:System.Windows.Controls.Page> directement dans un <xref:System.Windows.Controls.Frame> (`pageFrame`) à l’aide du code.  
   
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadPageSOOFileFromCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/SOOPage.xaml.cs#loadpagesoofilefromcode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadPageSOOFileFromCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/SOOPage.xaml.vb#loadpagesoofilefromcode)]  

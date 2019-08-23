@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b17b36f66a9b8b78b16057ec37d3ee5f484f7ae2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: dd5d2e820bd1d733bb4ab968a89174124bc91357
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779764"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962938"
 ---
 # <a name="iclrmetahostgetversionfromfile-method"></a>ICLRMetaHost::GetVersionFromFile, méthode
-Obtient d’origine compilation version du .NET Framework d’un assembly (stockée dans les métadonnées), son chemin d’accès donnée. Cette méthode remplace la [GetFileVersion](../../../../docs/framework/unmanaged-api/hosting/getfileversion-function.md) (fonction).  
+Obtient la version de compilation .NET Framework d’origine d’un assembly (stockée dans les métadonnées), en fonction de son chemin d’accès au fichier. Cette méthode remplace la fonction [GetFileVersion,](../../../../docs/framework/unmanaged-api/hosting/getfileversion-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,18 +39,18 @@ HRESULT GetVersionFromFile (
   
 ## <a name="parameters"></a>Paramètres  
  `pwzFilePath`  
- [in] Le chemin d’accès de fichier d’assembly complet.  
+ dans Chemin d’accès complet au fichier d’assembly.  
   
  `pwzbuffer`  
- [out] La version de compilation .NET Framework stockée dans les métadonnées, au format « v*A*. *B*[. *X*] ». *Un*, *B*, et *X* sont des nombres décimaux qui correspondent à la version principale, la version secondaire et le numéro de build. La longueur de cette chaîne est limitée à MAX_PATH.  
+ à Version de compilation .NET Framework stockée dans les métadonnées, au format «v*A*. *B* [. *X*]». *A*, *B*et *X* sont des nombres décimaux qui correspondent à la version principale, à la version mineure et au numéro de Build. La longueur de cette chaîne est limitée à MAX_PATH.  
   
 > [!NOTE]
->  Cette sortie correspond au nom de répertoire pour la version de .NET Framework, tel qu’il apparaît sous C:\Windows\Microsoft.NET\Framework.  
+> Cette sortie correspond au nom du répertoire de la version .NET Framework, tel qu’il apparaît sous C:\Windows\Microsoft.NET\Framework.  
   
- Exemples de valeurs : « v1.0.3705 », « v1.1.4322 », « v2.0.50727 » et « v4.0. *X*», où *X* varie selon le numéro de build installé. Notez que le préfixe « v » est obligatoire.  
+ Les exemples de valeurs sont «v 1.0.3705», «v 1.1.4322», «v 2.0.50727» et «v 4.0». *X*», où *x* dépend du numéro de Build installé. Notez que le préfixe «v» est obligatoire.  
   
  `pcchBuffer`  
- [in, out] La taille de `pwzbuffer` pour éviter les dépassements de mémoire tampon.  
+ [in, out] Taille de pour `pwzbuffer` éviter les dépassements de mémoire tampon.  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
@@ -59,14 +59,14 @@ HRESULT GetVersionFromFile (
 |-------------|-----------------|  
 |S_OK|La commande s'est correctement terminée.|  
 |E_POINTER|`pwzbuffer` ou `pcchBuffer` est null.|  
-|HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)|La mémoire tampon est trop petite.|  
+|HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)|La mémoire tampon est insuffisante.|  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MetaHost.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

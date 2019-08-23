@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 429c9d09-92ac-46ec-829a-fbff0a9575a2
-ms.openlocfilehash: de05a8783fa957c459006e3ec27d9e8668e7226c
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: e13c4df87909629a45830e3b7950551434ed5ab1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67422643"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946585"
 ---
 # <a name="provider-statistics-for-sql-server"></a>Fournisseur de statistiques pour SQL Server
 À partir du .NET Framework version 2.0, le fournisseur de données .NET Framework pour SQL Server prend en charge des statistiques d'exécution. Vous devez activer les statistiques en attribuant à la propriété <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> de l'objet <xref:System.Data.SqlClient.SqlConnection> la valeur `True` après la création d'un objet de connexion valide. Une fois les statistiques activées, vous pouvez les consulter comme « instantané dans le temps » en extrayant une référence <xref:System.Collections.IDictionary> via la méthode <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> de l'objet <xref:System.Data.SqlClient.SqlConnection>. Vous détaillez la liste comme un ensemble d'entrées de dictionnaire de paires nom-valeur. Ces paires nom-valeur ne sont triées. À tout moment, vous pouvez appeler la méthode <xref:System.Data.SqlClient.SqlConnection.ResetStatistics%2A> de l'objet <xref:System.Data.SqlClient.SqlConnection> pour réinitialiser les compteurs. Si la collecte de statistiques n'est pas activée, aucune exception n'est générée. En outre, si <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> est appelé sans que <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> ait été appelé précédemment, les valeurs extraites sont les valeurs initiales de chaque entrée. Si vous activez les statistiques, exécutez votre application pendant un moment, puis désactivez les statistiques, les valeurs extraites reflètent celles collectées jusqu'au point où les statistiques étaient désactivées. Toutes les valeurs statistiques sont collectées par connexion.  
   
 ## <a name="statistical-values-available"></a>Valeurs statistiques disponibles  
- Il y a actuellement 18 éléments différents disponibles auprès du fournisseur Microsoft SQL Server. Le nombre d’éléments disponibles est accessible via la **nombre** propriété de la <xref:System.Collections.IDictionary> référence retournée par l’interface <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A>. Tous les compteurs des statistiques de fournisseur utilisent le common language runtime <xref:System.Int64> type (**long** en c# et Visual Basic), qui est la largeur de 64 bits. La valeur maximale de la **int64** type de données, tel que défini par le **int64. MaxValue** champ, est ((2^63)-1)). Lorsque les valeurs des compteurs atteignent cette valeur maximale, elles ne doivent plus être considérées comme précises. Cela signifie que **int64. MaxValue**-1((2^63)-2) est effectivement la plus grande valeur valide pour toute statistique.  
+ Il y a actuellement 18 éléments différents disponibles auprès du fournisseur Microsoft SQL Server. Le nombre d’éléments disponibles est accessible via la propriété **Count** de la <xref:System.Collections.IDictionary> référence d’interface retournée <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A>par. Tous les compteurs pour les statistiques du fournisseur utilisent le type <xref:System.Int64> de Common Language Runtime (long C# dans et Visual Basic), qui est de 64 bits en largeur. Valeur maximale du type de données **Int64** , telle que définie par **Int64.** Le champ MaxValue, est ((2 ^ 63)-1)). Lorsque les valeurs des compteurs atteignent cette valeur maximale, elles ne doivent plus être considérées comme précises. Cela signifie que **Int64. MaxValue**-1 ((2 ^ 63)-2) est effectivement la plus grande valeur valide pour toutes les statistiques.  
   
 > [!NOTE]
->  Un dictionnaire est utilisé pour retourner des statistiques de fournisseur du fait que le nombre, les noms et l'ordre des statistiques retournées peuvent changer dans le futur. Les applications ne doivent pas dépendre d'une valeur spécifique trouvée dans le dictionnaire, mais contrôler si la valeur existe et créer une branche en conséquence.  
+> Un dictionnaire est utilisé pour retourner des statistiques de fournisseur du fait que le nombre, les noms et l'ordre des statistiques retournées peuvent changer dans le futur. Les applications ne doivent pas dépendre d'une valeur spécifique trouvée dans le dictionnaire, mais contrôler si la valeur existe et créer une branche en conséquence.  
   
  Le tableau suivant décrit les valeurs statistiques actuelles disponibles. Notez que les noms clés pour les valeurs individuelles ne sont pas localisés dans les versions régionales de Microsoft .NET Framework.  
   
@@ -48,7 +48,7 @@ ms.locfileid: "67422643"
  L'application console suivante montre comment activer les statistiques sur une connexion, extraire quatre valeurs statistiques individuelles et les afficher dans la fenêtre de console.  
   
 > [!NOTE]
->  L’exemple suivant utilise l’exemple **AdventureWorks** inclus avec SQL Server de base de données. La chaîne de connexion fournie dans l'exemple de code suppose que la base de données est installée et disponible sur l'ordinateur local. Si nécessaire, modifiez la chaîne de connexion en fonction de votre environnement.  
+> L’exemple suivant utilise l’exemple de base de données **AdventureWorks** inclus avec SQL Server. La chaîne de connexion fournie dans l'exemple de code suppose que la base de données est installée et disponible sur l'ordinateur local. Si nécessaire, modifiez la chaîne de connexion en fonction de votre environnement.  
   
 ```vb  
 Option Strict On  
@@ -204,7 +204,7 @@ namespace CS_Stats_Console_GetValue
  L'application console suivante montre comment activer les statistiques sur une connexion, extraire toutes les valeurs statistiques disponibles à l'aide de l'énumérateur et les afficher dans la fenêtre de console.  
   
 > [!NOTE]
->  L’exemple suivant utilise l’exemple **AdventureWorks** inclus avec SQL Server de base de données. La chaîne de connexion fournie dans l'exemple de code suppose que la base de données est installée et disponible sur l'ordinateur local. Si nécessaire, modifiez la chaîne de connexion en fonction de votre environnement.  
+> L’exemple suivant utilise l’exemple de base de données **AdventureWorks** inclus avec SQL Server. La chaîne de connexion fournie dans l'exemple de code suppose que la base de données est installée et disponible sur l'ordinateur local. Si nécessaire, modifiez la chaîne de connexion en fonction de votre environnement.  
   
 ```vb  
 Option Strict On  

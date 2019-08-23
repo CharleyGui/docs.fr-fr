@@ -3,12 +3,12 @@ title: 'Procédure : Générer une application Web Forms ASP.NET prenant en cha
 ms.date: 03/30/2017
 ms.assetid: efb264dd-f47b-49a9-85ee-9f45d4425765
 author: BrucePerlerMS
-ms.openlocfilehash: 0d334faabb342ea351c2418c79a86443cb0ce98d
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 82b0649a7324987581cc3c97570a0fc42ffdf6d6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64910589"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69941295"
 ---
 # <a name="how-to-build-claims-aware-aspnet-web-forms-application-using-wif"></a>Procédure : Générer une application Web Forms ASP.NET prenant en charge les revendications à l’aide de WIF
 ## <a name="applies-to"></a>S'applique à  
@@ -103,7 +103,7 @@ ms.locfileid: "64910589"
     </system.webServer>  
     ```  
   
-5. Ajoutez les entrées de configuration liées à Windows Identity Foundation suivantes et vérifiez que l’URL et le numéro de port de votre application ASP.NET correspondent aux valeurs dans l’entrée **\<audienceUris>**, l’attribut **realm** de l’élément **\<wsFederation>** et l’attribut **reply** de l’élément **\<wsFederation>**. Vérifiez également que la valeur **issuer** correspond à l’URL de votre service d’émission de jeton de sécurité (STS).  
+5. Ajoutez les entrées de configuration liées à Windows Identity Foundation suivantes et vérifiez que l’URL et le numéro de port de votre application ASP.NET correspondent aux valeurs dans l’entrée **\<audienceUris>** , l’attribut **realm** de l’élément **\<wsFederation>** et l’attribut **reply** de l’élément **\<wsFederation>** . Vérifiez également que la valeur **issuer** correspond à l’URL de votre service d’émission de jeton de sécurité (STS).  
   
     ```xml  
     <system.identityModel>  
@@ -161,7 +161,7 @@ ms.locfileid: "64910589"
 2. Enregistrez **Default.aspx**, puis ouvrez son fichier code-behind nommé **Default.aspx.cs**.  
   
     > [!NOTE]
-    >  **Default.aspx.cs** peut être masqué sous **Default.aspx** dans l’Explorateur de solutions. Si **Default.aspx.cs** n’est pas visible, développez **Default.aspx** en cliquant sur le triangle en regard de celui-ci.  
+    > **Default.aspx.cs** peut être masqué sous **Default.aspx** dans l’Explorateur de solutions. Si **Default.aspx.cs** n’est pas visible, développez **Default.aspx** en cliquant sur le triangle en regard de celui-ci.  
   
 3. Remplacez le code existant dans la méthode **Page_Load** de **Default.aspx.cs** par le code suivant :  
   

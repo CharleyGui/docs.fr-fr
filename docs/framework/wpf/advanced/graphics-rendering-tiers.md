@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics rendering tiers [WPF]
 - graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
-ms.openlocfilehash: fa59621aaf73922af957961af5401170c2872aa9
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 9da519f8d258673498f45a425c13863437cac597
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972343"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937517"
 ---
 # <a name="graphics-rendering-tiers"></a>Couches de rendu graphiques
 Une couche de rendu définit un niveau des capacités et des performances du matériel graphique pour un appareil qui exécute une application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -48,7 +48,7 @@ Une couche de rendu définit un niveau des capacités et des performances du mat
 ### <a name="rendering-tier-1-and-rendering-tier-2"></a>Couche de rendu 1 et couche de rendu 2  
   
 > [!NOTE]
->  À partir du .NET Framework 4, la couche de rendu 1 a été redéfinie pour inclure uniquement le matériel graphique qui prend en charge DirectX 9,0 ou une version ultérieure. Le matériel graphique prenant en charge DirectX 7 ou 8 est maintenant défini comme niveau de rendu 0.  
+> À partir du .NET Framework 4, la couche de rendu 1 a été redéfinie pour inclure uniquement le matériel graphique qui prend en charge DirectX 9,0 ou une version ultérieure. Le matériel graphique prenant en charge DirectX 7 ou 8 est maintenant défini comme niveau de rendu 0.  
   
  La valeur de couche de rendu 1 ou 2 signifie que la plupart des fonctionnalités graphiques de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utiliseront l’accélération matérielle si les ressources système nécessaires sont disponibles et n’ont pas été épuisées. Cela correspond à une version de DirectX qui est supérieure ou égale à 9,0.  
   
@@ -105,7 +105,7 @@ Une couche de rendu définit un niveau des capacités et des performances du mat
 |**Paramètre Date de pilote vidéo requise**|Spécifie si le système désactive l’accélération matérielle pour les pilotes commercialisés avant novembre 2004.|  
 |**Option Utiliser le rastériseur de référence**|Spécifie si [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] doit utiliser le rastériseur de référence.|  
   
- Ces paramètres sont accessibles à tout utilitaire de configuration externe capable de référencer les paramètres du Registre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Ces paramètres peuvent également être créés ou modifiés en accédant directement aux valeurs à l’aide de l’Éditeur du Registre [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]. Pour plus d’informations, consultez [Paramètres du Registre pour le rendu des graphiques](../graphics-multimedia/graphics-rendering-registry-settings.md).  
+ Ces paramètres sont accessibles à tout utilitaire de configuration externe capable de référencer les paramètres du Registre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Ces paramètres peuvent également être créés ou modifiés en accédant directement aux valeurs à l’aide de l’éditeur du Registre Windows. Pour plus d’informations, consultez [Paramètres du Registre pour le rendu des graphiques](../graphics-multimedia/graphics-rendering-registry-settings.md).  
   
 ### <a name="wpf-performance-profiling-tools"></a>Outils de profilage des performances WPF  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit une suite d’outils de profilage des performances qui vous permettent d’analyser le comportement au moment de l’exécution de votre application et de déterminer les types d’optimisations des performances que vous pouvez appliquer. Le tableau suivant répertorie les outils de profilage des performances inclus dans l’outil SDK Windows, WPF Performance suite:  

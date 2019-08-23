@@ -3,12 +3,12 @@ title: <sessionSecurityTokenCache>
 ms.date: 03/30/2017
 ms.assetid: d43e676c-0153-485c-ab31-0257a2db7507
 author: BrucePerlerMS
-ms.openlocfilehash: 5c68fe618f965f364a3716c3bc65de5e165b12ec
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9be3bf980c3756678d26d8652271113d4daaba43
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793794"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69943709"
 ---
 # <a name="sessionsecuritytokencache"></a>\<sessionSecurityTokenCache>
 Inscrit un cache pour les jetons de session avec un service ou une collection de gestionnaires de jetons de sécurité.  
@@ -38,19 +38,19 @@ Inscrit un cache pour les jetons de session avec un service ou une collection de
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|type|Un type qui dérive de la <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> classe.|  
+|type|Type qui dérive de la <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> classe.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<caches>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|Inscrit le met en cache utilisé par un service ou une collection de gestionnaires de jetons de sécurité.|  
+|[\<caches>](caches.md)|Inscrit les caches utilisés par un service ou une collection de gestionnaires de jetons de sécurité.|  
   
 ## <a name="example"></a>Exemple  
- Le code XML suivant illustre la configuration d’un cache personnalisé pour contenir les jetons de sécurité de session (<xref:System.IdentityModel.Tokens.SessionSecurityToken>). La configuration est extraite la `ClaimsAwareWebFarm` exemple. Pour plus d’informations sur cet exemple, consultez [Index exemple de Code WIF](../../../../../docs/framework/security/wif-code-sample-index.md).  
+ Le code XML suivant montre la configuration d’un cache personnalisé pour la conservation des jetons de<xref:System.IdentityModel.Tokens.SessionSecurityToken>sécurité de session (). La configuration est extraite de `ClaimsAwareWebFarm` l’exemple. Pour plus d’informations sur cet exemple, consultez [exemple d’index de code WIF](../../../security/wif-code-sample-index.md).  
   
 ```xml  
 <caches>  

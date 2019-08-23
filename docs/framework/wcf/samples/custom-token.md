@@ -2,18 +2,18 @@
 title: Custom Token
 ms.date: 03/30/2017
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-ms.openlocfilehash: 11b89f6d4f2800f079ba6576801b39c85324f6e0
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 7203b55b01f51851fa94fedc4950a05343b792bd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425073"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69953575"
 ---
 # <a name="custom-token"></a>Custom Token
-Cet exemple montre comment ajouter une implémentation de jeton personnalisé dans une application Windows Communication Foundation (WCF). Cet exemple utilise un `CreditCardToken` pour transmettre de manière sécurisée les informations de carte de crédit du client au service. Le jeton est transmis dans l’en-tête de message WS-Security. Il est signé et chiffré à l’aide de l’élément de liaison de sécurité symétrique en même temps que le corps du message et que les autres en-têtes de message. Cette particularité est utile lorsque les jetons intégrés ne sont pas suffisants. Cet exemple illustre comment fournir un jeton de sécurité personnalisé à un service au lieu d'utiliser l'un des jetons intégrés. Le service implémente un contrat qui définit un modèle de communication demande-réponse.
+Cet exemple montre comment ajouter une implémentation de jeton personnalisée dans une application Windows Communication Foundation (WCF). Cet exemple utilise un `CreditCardToken` pour transmettre de manière sécurisée les informations de carte de crédit du client au service. Le jeton est transmis dans l’en-tête de message WS-Security. Il est signé et chiffré à l’aide de l’élément de liaison de sécurité symétrique en même temps que le corps du message et que les autres en-têtes de message. Cette particularité est utile lorsque les jetons intégrés ne sont pas suffisants. Cet exemple illustre comment fournir un jeton de sécurité personnalisé à un service au lieu d'utiliser l'un des jetons intégrés. Le service implémente un contrat qui définit un modèle de communication demande-réponse.
 
 > [!NOTE]
->  La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.
+> La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.
 
  En résumé, cet exemple montre :
 
@@ -21,7 +21,7 @@ Cet exemple montre comment ajouter une implémentation de jeton personnalisé da
 
 - Comment le service peut consommer et valider un jeton de sécurité personnalisé.
 
-- Comment le code de service WCF peut obtenir les informations sur les jetons de sécurité reçu, y compris le jeton de sécurité personnalisé.
+- Comment le code de service WCF peut obtenir les informations sur les jetons de sécurité reçus, y compris le jeton de sécurité personnalisé.
 
 - Comment le certificat X.509 du serveur permet de protéger la clé symétrique utilisée pour la signature et le chiffrement des messages.
 
@@ -115,7 +115,7 @@ channelFactory.Close();
 ## <a name="custom-security-token-implementation"></a>Implémentation du jeton de sécurité personnalisé
  Pour activer un jeton de sécurité personnalisé dans WCF, créez une représentation d’objet du jeton de sécurité personnalisé. Dans l'exemple, cette représentation figure dans la classe `CreditCardToken`. La représentation d'objet est chargée de conserver toutes les informations de jeton de sécurité pertinentes et de fournir la liste des clés de sécurité contenues dans le jeton de sécurité. Dans ce cas de figure, le jeton de sécurité de carte de crédit ne contient pas de clé de sécurité.
 
- La section suivante décrit ce qui doit être fait pour activer un jeton personnalisé d’être transmises sur le câble et consommé par un point de terminaison WCF.
+ La section suivante décrit ce qui doit être fait pour permettre à un jeton personnalisé d’être transmis sur le réseau et consommé par un point de terminaison WCF.
 
 ```csharp
 class CreditCardToken : SecurityToken
@@ -153,7 +153,7 @@ class CreditCardToken : SecurityToken
 ```
 
 ## <a name="getting-the-custom-credit-card-token-to-and-from-the-message"></a>Obtention du jeton de carte de crédit personnalisé au niveau du message
- Sérialiseurs de jeton de sécurité dans WCF sont responsables de la création d’une représentation d’objet de jetons de sécurité à partir du XML dans le message et la création d’un formulaire XML des jetons de sécurité. D'autres tâches telles que la lecture et l'écriture des identificateurs de clé renvoyant aux jetons de sécurité leur incombent également, mais dans cet exemple, seule la fonctionnalité concernant les jetons de sécurité est utilisée. Pour activer un jeton personnalisé, vous devez implémenter votre propre sérialiseur de jeton de sécurité. Cette exemple utilise la classe `CreditCardSecurityTokenSerializer` à cette fin.
+ Dans WCF, les sérialiseurs de jeton de sécurité sont responsables de la création d’une représentation d’objet de jetons de sécurité à partir du code XML du message et de la création d’un formulaire XML des jetons de sécurité. D'autres tâches telles que la lecture et l'écriture des identificateurs de clé renvoyant aux jetons de sécurité leur incombent également, mais dans cet exemple, seule la fonctionnalité concernant les jetons de sécurité est utilisée. Pour activer un jeton personnalisé, vous devez implémenter votre propre sérialiseur de jeton de sécurité. Cette exemple utilise la classe `CreditCardSecurityTokenSerializer` à cette fin.
 
  Côté service, le sérialiseur personnalisé lit le formulaire XML du jeton personnalisé et crée sa représentation d'objet à partir de ce dernier.
 
@@ -584,24 +584,24 @@ string GetCallerCreditCardNumber()
     ```
 
 > [!NOTE]
->  Le fichier de commandes Setup.bat est conçu pour être exécuté à partir d’un Visual Studio 2012 invite de commandes. La variable d’environnement PATH définie dans les points de l’invite de commandes de Visual Studio 2012 sur le répertoire qui contient les exécutables requis par le script Setup.bat.
+> Le fichier de commandes Setup. bat est conçu pour être exécuté à partir d’une invite de commandes de Visual Studio 2012. La variable d’environnement PATH définie dans l’invite de commandes de Visual Studio 2012 pointe vers le répertoire qui contient les exécutables requis par le script Setup. bat.
 
 #### <a name="to-set-up-and-build-the-sample"></a>Pour configurer et générer l'exemple
 
-1. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Pour générer la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
 #### <a name="to-run-the-sample-on-the-same-computer"></a>Pour exécuter l'exemple sur le même ordinateur
 
-1. Ouvrez une fenêtre d’invite de commandes de Visual Studio 2012 avec des privilèges d’administrateur et exécutez Setup.bat à partir du dossier d’installation de l’exemple. Tous les certificats requis pour l'exécution de l'exemple sont ainsi installés. Assurez-vous que le chemin d'accès inclut le dossier dans lequel Makecert.exe se trouve.
+1. Ouvrez une fenêtre d’invite de commandes Visual Studio 2012 avec des privilèges d’administrateur et exécutez Setup. bat à partir du dossier d’installation de l’exemple. Tous les certificats requis pour l'exécution de l'exemple sont ainsi installés. Assurez-vous que le chemin d'accès inclut le dossier dans lequel Makecert.exe se trouve.
 
 > [!NOTE]
->  Assurez-vous de supprimer les certificats en exécutant Cleanup.bat une fois l'exemple terminé. D'autres exemples de sécurité utilisent ces mêmes certificats.  
+> Assurez-vous de supprimer les certificats en exécutant Cleanup.bat une fois l'exemple terminé. D'autres exemples de sécurité utilisent ces mêmes certificats.  
   
 1. Lancez Client.exe à partir du répertoire \client\bin. L'activité du client s'affiche sur son application de console.  
   
-2. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour obtenir des exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+2. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-run-the-sample-across-computer"></a>Pour exécuter l'exemple sur plusieurs ordinateurs  
   
@@ -609,7 +609,7 @@ string GetCallerCreditCardNumber()
   
 2. Copiez les fichiers programme du service dans le répertoire de service sur l'ordinateur de service. N'oubliez pas de copier le fichier CreditCardFile.txt, sinon l'authentificateur de carte de crédit ne pourra pas valider les informations de carte de crédit envoyées depuis le client. Copiez également les fichiers Setup.bat et Cleanup.bat sur l'ordinateur de service.  
   
-3. Le nom de sujet de votre certificat de serveur doit contenir le nom de domaine complet de l'ordinateur. Pour en créer un à l'aide de Setup.bat, il vous suffit de remplacer la variable `%SERVER_NAME%` par le nom complet de l'ordinateur où le service est hébergé. Notez que le fichier Setup.bat doit être exécuté dans une invite de commandes développeur pour Visual Studio ouverte avec des privilèges d’administrateur.  
+3. Le nom de sujet de votre certificat de serveur doit contenir le nom de domaine complet de l'ordinateur. Pour en créer un à l'aide de Setup.bat, il vous suffit de remplacer la variable `%SERVER_NAME%` par le nom complet de l'ordinateur où le service est hébergé. Notez que le fichier Setup. bat doit être exécuté dans un Invite de commandes développeur pour que Visual Studio s’ouvre avec des privilèges d’administrateur.  
   
 4. Copiez le certificat du serveur dans le magasin CurrentUser-TrustedPeople du client. Cette tâche est requise uniquement si le certificat du serveur n'est pas publié par un émetteur approuvé.  
   
@@ -623,7 +623,7 @@ string GetCallerCreditCardNumber()
   
 9. Sur l'ordinateur client, lancez Client.exe à partir d'une fenêtre d'invite de commandes.  
   
-10. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour obtenir des exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
+10. Si le client et le service ne sont pas en mesure de communiquer, consultez [conseils de dépannage pour les exemples WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
 #### <a name="to-clean-up-after-the-sample"></a>Pour procéder au nettoyage après exécution de l'exemple  
   

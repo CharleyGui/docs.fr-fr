@@ -6,12 +6,12 @@ helpviewer_keywords:
 - SplitContainer control [Windows Forms], Explorer-style interface
 - forms [Windows Forms], Windows Explorer type
 ms.assetid: 9a3d5f4f-5dda-4350-9ad5-57ce5976dc47
-ms.openlocfilehash: db2c5431dfb0156c1508a18ef13d2af80eb4981b
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 34a5cd735c350688d9e83003806668e213932c85
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039535"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960624"
 ---
 # <a name="how-to-create-a-windows-explorerstyle-interface-on-a-windows-form"></a>Procédure : créer une interface de style Explorateur Windows dans un formulaire Windows
 L’Explorateur Windows est un choix d’interface utilisateur courant pour les applications en raison de sa familiarité.
@@ -35,7 +35,7 @@ L’Explorateur Windows est un choix d’interface utilisateur courant pour les 
 3. Sélectionnez les trois contrôles en appuyant sur la touche CTRL et en cliquant successivement sur eux. Lorsque vous sélectionnez le <xref:System.Windows.Forms.SplitContainer> contrôle, cliquez sur la barre de fractionnement, plutôt que sur les panneaux.
 
     > [!NOTE]
-    >  N’utilisez pas la commande **Sélectionner tout** du menu **Edition** . Dans ce cas, la propriété nécessaire à l’étape suivante n’apparaîtra pas dans la fenêtre **Propriétés** .
+    > N’utilisez pas la commande **Sélectionner tout** du menu **Edition** . Dans ce cas, la propriété nécessaire à l’étape suivante n’apparaîtra pas dans la fenêtre **Propriétés** .
 
 4. Dans la fenêtre **Propriétés** , définissez la propriété <xref:System.Windows.Forms.SplitContainer.Dock%2A> sur <xref:System.Windows.Forms.DockStyle.Fill>.
 
@@ -44,12 +44,12 @@ L’Explorateur Windows est un choix d’interface utilisateur courant pour les 
      Le formulaire affiche une interface utilisateur en deux parties, similaire à celle de l’Explorateur Windows.
 
     > [!NOTE]
-    >  Lorsque vous faites glisser le séparateur, les panneaux sont redimensionnés eux-mêmes.
+    > Lorsque vous faites glisser le séparateur, les panneaux sont redimensionnés eux-mêmes.
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.SplitContainer>
 - [Guide pratique : Créer une interface utilisateur à volets avec Windows Forms](how-to-create-a-multipane-user-interface-with-windows-forms.md)
 - [Guide pratique pour Définir le comportement de redimensionnement et de positionnement dans une fenêtre fractionnée](how-to-define-resize-and-positioning-behavior-in-a-split-window.md)
-- [Guide pratique : Fractionner une fenêtre horizontalement](how-to-split-a-window-horizontally.md)
+- [Guide pratique pour Fractionner une fenêtre horizontalement](how-to-split-a-window-horizontally.md)
 - [SplitContainer, contrôle](splitcontainer-control-windows-forms.md)

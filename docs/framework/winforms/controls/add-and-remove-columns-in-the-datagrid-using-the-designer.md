@@ -7,12 +7,12 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], adding columns
 - DataGridView control [Windows Forms], removing columns
 ms.assetid: 9e709f35-0a8c-4e7e-b4c4-bacb7a834077
-ms.openlocfilehash: d88d658b31c87e7ae89bfb4a11fe794bfbb0e848
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 7a3029192ab0da4a954dfd7d3d258a00b154924e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040093"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957111"
 ---
 # <a name="how-to-add-and-remove-columns-in-the-windows-forms-datagridview-control-using-the-designer"></a>Procédure : ajouter et supprimer des colonnes dans le contrôle DataGridView Windows Forms à l’aide du concepteur
 Le contrôle <xref:System.Windows.Forms.DataGridView> Windows Forms doit contenir des colonnes afin d’afficher les données. Si vous envisagez de remplir le contrôle manuellement, vous devez ajouter les colonnes vous-même. Vous pouvez également lier le contrôle à une source de données, qui génère et remplit automatiquement les colonnes. Si la source de données contient plus de colonnes que vous ne souhaitez afficher, vous pouvez supprimer les colonnes indésirables.
@@ -28,7 +28,7 @@ Le contrôle <xref:System.Windows.Forms.DataGridView> Windows Forms doit conteni
 3. Cliquez sur le bouton **Ajouter** pour ajouter la colonne, provoquant son affichage dans le concepteur si les colonnes existantes ne remplissent pas encore la zone d’affichage du contrôle.
 
     > [!NOTE]
-    >  Vous pouvez modifier les propriétés des colonnes dans la boîte de dialogue **modifier les colonnes** , à laquelle vous pouvez accéder à partir de la balise active du contrôle.
+    > Vous pouvez modifier les propriétés des colonnes dans la boîte de dialogue **modifier les colonnes** , à laquelle vous pouvez accéder à partir de la balise active du contrôle.
 
 ## <a name="to-remove-a-column-using-the-designer"></a>Pour supprimer une colonne à l’aide du concepteur
 
@@ -41,5 +41,5 @@ Le contrôle <xref:System.Windows.Forms.DataGridView> Windows Forms doit conteni
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.DataGridView>
-- [Guide pratique : Créer un projet Application Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project)
-- [Guide pratique : Ajouter des contrôles à Windows Forms](how-to-add-controls-to-windows-forms.md)
+- [Guide pratique pour Créer un projet Application Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project)
+- [Guide pratique pour Ajouter des contrôles à Windows Forms](how-to-add-controls-to-windows-forms.md)

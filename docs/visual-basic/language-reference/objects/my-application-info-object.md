@@ -1,32 +1,32 @@
 ---
-title: My.Application.Info (objet) (Visual Basic)
+title: Objet My.Application.Info (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Application.Info object
 - My.Application.AssemblyInfo object
 ms.assetid: 2f4782ed-3da2-4d88-b341-0c6f480fb7bb
-ms.openlocfilehash: 560541d6f662988c56c973cc63788da4eefd74da
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 59819eea7e98970a0800ca246bbc253874ed2281
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051830"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963745"
 ---
 # <a name="myapplicationinfo-object"></a>My.Application.Info, objet
-Fournit des propriétés pour obtenir des informations sur l’application, telles que le numéro de version, description, les assemblys chargés et ainsi de suite.  
+Fournit des propriétés pour obtenir des informations sur l’application, telles que le numéro de version, la description, les assemblys chargés, etc.  
   
 ## <a name="remarks"></a>Notes  
  Pour plus d’informations sur les méthodes et les propriétés de l’objet `My.Application.Info` , consultez <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo>.  
   
 > [!NOTE]
->  Vous pouvez utiliser les propriétés de la <xref:System.Diagnostics.FileVersionInfo?displayProperty=nameWithType> classe pour obtenir des informations relatives à un fichier sur disque.  
+> Vous pouvez utiliser les propriétés de <xref:System.Diagnostics.FileVersionInfo?displayProperty=nameWithType> la classe pour obtenir des informations sur un fichier sur le disque.  
   
 ## <a name="requirements"></a>Configuration requise  
  **Espace de noms :** <xref:Microsoft.VisualBasic.ApplicationServices>  
   
  **Classe :** <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo>  
   
- **Assembly :** bibliothèque Visual Basic Runtime (dans Microsoft.VisualBasic.dll)  
+ **Chargeur** bibliothèque Visual Basic Runtime (dans Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Voir aussi
 

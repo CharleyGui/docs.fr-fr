@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 55d47757-2648-4a52-987f-b767953f168c
-ms.openlocfilehash: 8c866502300c50e00f1393b9e3fb64099f027c43
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 418dc77ce7638698d4850b06dafcea57787e1015
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61931428"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959704"
 ---
 # <a name="how-to-specify-the-binding-source"></a>Procédure : Spécifier la source de liaison
 Dans la liaison de données, l’objet de source de liaison fait référence à l’objet à partir duquel vous obtenez vos données. Cette rubrique décrit les différentes façons de spécifier la source de liaison.  
@@ -33,15 +33,15 @@ Dans la liaison de données, l’objet de source de liaison fait référence à 
  [!code-vb[DirectionalBinding#DataObject](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DirectionalBinding/VisualBasic/NetIncome.vb#dataobject)]  
   
 > [!NOTE]
->  L’exemple ci-dessus instancie l’objet dans le balisage et l’utilise en tant que ressource. Si vous souhaitez effectuer une liaison à un objet qui a déjà été instancié dans le code, vous devez définir la propriété `DataContext` par programmation. Pour obtenir un exemple, consultez la page [Rendre des données disponibles pour la liaison en XAML](how-to-make-data-available-for-binding-in-xaml.md).  
+> L’exemple ci-dessus instancie l’objet dans le balisage et l’utilise en tant que ressource. Si vous souhaitez effectuer une liaison à un objet qui a déjà été instancié dans le code, vous devez définir la propriété `DataContext` par programmation. Pour obtenir un exemple, consultez la page [Rendre des données disponibles pour la liaison en XAML](how-to-make-data-available-for-binding-in-xaml.md).  
   
  Sinon, si vous souhaitez spécifier explicitement la source sur vos liaisons individuelles, vous disposez des options suivantes. Celles-ci ont priorité sur le contexte de données hérité.  
   
 |Propriété|Description|  
 |--------------|-----------------|  
-|<xref:System.Windows.Data.Binding.Source%2A>|Cette propriété vous permet de définir la source à une instance d’un objet. Si vous ne devez pas les fonctionnalités de l’établissement d’une portée dans laquelle plusieurs propriétés héritent du même contexte de données, vous pouvez utiliser la <xref:System.Windows.Data.Binding.Source%2A> propriété au lieu du `DataContext` propriété. Pour plus d'informations, consultez <xref:System.Windows.Data.Binding.Source%2A>.|  
+|<xref:System.Windows.Data.Binding.Source%2A>|Cette propriété vous permet de définir la source à une instance d’un objet. Si vous n’avez pas besoin de la fonctionnalité d’établissement d’une étendue dans laquelle plusieurs propriétés héritent du même contexte de données <xref:System.Windows.Data.Binding.Source%2A> , vous pouvez utiliser `DataContext` la propriété à la place de la propriété. Pour plus d'informations, consultez <xref:System.Windows.Data.Binding.Source%2A>.|  
 |<xref:System.Windows.Data.Binding.RelativeSource%2A>|Cela est utile lorsque vous souhaitez spécifier la source par rapport à l’emplacement de votre cible de liaison. Vous pouvez utiliser cette propriété lorsque vous souhaitez lier une propriété de votre élément à une autre propriété du même élément ou si vous définissez une liaison dans un style ou un modèle. Pour plus d'informations, consultez <xref:System.Windows.Data.Binding.RelativeSource%2A>.|  
-|<xref:System.Windows.Data.Binding.ElementName%2A>|Vous spécifiez une chaîne qui représente l’élément que vous voulez lier. Cela est utile lorsque vous souhaitez effectuer une liaison à la propriété d’un autre élément sur votre application. Par exemple, si vous souhaitez utiliser un <xref:System.Windows.Controls.Slider> pour contrôler la hauteur d’un autre contrôle dans votre application, ou si vous souhaitez lier le <xref:System.Windows.Controls.ContentControl.Content%2A> de votre contrôle à la <xref:System.Windows.Controls.Primitives.Selector.SelectedValue%2A> propriété de votre <xref:System.Windows.Controls.ListBox> contrôle. Pour plus d'informations, consultez <xref:System.Windows.Data.Binding.ElementName%2A>.|  
+|<xref:System.Windows.Data.Binding.ElementName%2A>|Vous spécifiez une chaîne qui représente l’élément que vous voulez lier. Cela est utile lorsque vous souhaitez effectuer une liaison à la propriété d’un autre élément sur votre application. Par exemple, si <xref:System.Windows.Controls.Slider> vous souhaitez utiliser un pour contrôler la hauteur d’un autre contrôle dans votre application, ou si vous souhaitez lier le <xref:System.Windows.Controls.ContentControl.Content%2A> de votre contrôle à la <xref:System.Windows.Controls.Primitives.Selector.SelectedValue%2A> propriété de votre <xref:System.Windows.Controls.ListBox> contrôle. Pour plus d'informations, consultez <xref:System.Windows.Data.Binding.ElementName%2A>.|  
   
 ## <a name="see-also"></a>Voir aussi
 

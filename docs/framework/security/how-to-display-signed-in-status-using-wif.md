@@ -3,12 +3,12 @@ title: 'Procédure : Afficher l’état Connecté à l’aide de WIF'
 ms.date: 03/30/2017
 ms.assetid: 4d1174e4-5397-4962-9a5f-3b1ad7b3fc14
 author: BrucePerlerMS
-ms.openlocfilehash: 6d81bd2023886799f939fc9851db516a00aa92df
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e44dc80260e46b81ac723ada32085390a18a153a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742455"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69945699"
 ---
 # <a name="how-to-display-signed-in-status-using-wif"></a>Procédure : Afficher l’état Connecté à l’aide de WIF
 ## <a name="applies-to"></a>S'applique à  
@@ -117,7 +117,7 @@ ms.locfileid: "67742455"
 3. Enregistrez **Default.aspx**, puis ouvrez son fichier code-behind nommé **Default.aspx.cs**.  
   
     > [!NOTE]
-    >  **Default.aspx.cs** peut être masqué sous **Default.aspx** dans l’Explorateur de solutions. Si **Default.aspx.cs** n’est pas visible, développez **Default.aspx** en cliquant sur le triangle en regard de celui-ci.  
+    > **Default.aspx.cs** peut être masqué sous **Default.aspx** dans l’Explorateur de solutions. Si **Default.aspx.cs** n’est pas visible, développez **Default.aspx** en cliquant sur le triangle en regard de celui-ci.  
   
 4. Remplacez le code existant dans **Default.aspx.cs** par le code suivant :  
   
@@ -153,4 +153,4 @@ ms.locfileid: "67742455"
   
 1. Dans Visual Studio, appuyez sur **F5** pour démarrer le débogage de l’application. Si aucune erreur n’est trouvée, une nouvelle fenêtre de navigateur s’ouvre.  
   
-2. Vous pouvez remarquer que le navigateur redirige en mode silencieux votre demande vers le service STS, puis ouvre la page Default.aspx. Si WIF est correctement configuré, vous devriez voir le site pour afficher le texte suivant : **« Vous êtes connecté »** .
+2. Vous pouvez remarquer que le navigateur redirige en mode silencieux votre demande vers le service STS, puis ouvre la page Default.aspx. Si WIF est correctement configuré, le site doit afficher le texte suivant: **«Vous êtes connecté»** .

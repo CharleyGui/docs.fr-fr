@@ -2,12 +2,12 @@
 title: Autorisation et permissions dans SQL Server
 ms.date: 03/30/2017
 ms.assetid: d340405c-91f4-4837-a3cc-a238ee89888a
-ms.openlocfilehash: 35aa26ed1afb0006802b703fa0fa3a6076f03ddf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 66bf347543641808cc463d8035223fcf59b08231
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649564"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918099"
 ---
 # <a name="authorization-and-permissions-in-sql-server"></a>Autorisation et permissions dans SQL Server
 Lorsque vous créez des objets de base de données, vous devez accorder explicitement des autorisations de manière à les rendre accessibles aux utilisateurs. Chaque objet sécurisable possède des autorisations qui peuvent être accordées à une principal de sécurité à l'aide d'instructions d'autorisation.  
@@ -18,7 +18,7 @@ Lorsque vous créez des objets de base de données, vous devez accorder explicit
  Suivez toujours le principe des privilèges minimum lorsque vous accordez des autorisations aux utilisateurs de base de données. Accordez les autorisations minimales nécessaires à un utilisateur ou à un rôle pour accomplir une tâche donnée.  
   
 > [!IMPORTANT]
->  Le développement et le test d'une application selon l'approche LUA compliquent quelque peu le processus. Il est plus simple de créer des objets et d'écrire du code tout en étant connecté en tant qu'administrateur système ou propriétaire de base de données qu'en utilisant un compte LUA. Cependant, le fait de développer des applications en utilisant un compte disposant de privilèges élevés peut masquer l'impact de fonctionnalités réduites lorsque des utilisateurs disposant de privilèges minimum essaient d'exécuter une application qui requiert des autorisations élevées pour fonctionner correctement. Par ailleurs, le fait d'accorder des autorisations excessives aux utilisateurs afin qu'ils puissent réacquérir une fonctionnalité perdue peut rendre votre application vulnérable aux attaques. La conception, le développement et le test de votre application alors que vous êtes connecté avec un compte LUA appliquent une approche disciplinée qui évite toute mauvaise surprise et empêche de céder à la facilité en accordant des privilèges élevés. Vous pouvez utiliser une connexion SQL Server pour le test même si votre application doit être déployée à l'aide de l'authentification Windows.  
+> Le développement et le test d'une application selon l'approche LUA compliquent quelque peu le processus. Il est plus simple de créer des objets et d'écrire du code tout en étant connecté en tant qu'administrateur système ou propriétaire de base de données qu'en utilisant un compte LUA. Cependant, le fait de développer des applications en utilisant un compte disposant de privilèges élevés peut masquer l'impact de fonctionnalités réduites lorsque des utilisateurs disposant de privilèges minimum essaient d'exécuter une application qui requiert des autorisations élevées pour fonctionner correctement. Par ailleurs, le fait d'accorder des autorisations excessives aux utilisateurs afin qu'ils puissent réacquérir une fonctionnalité perdue peut rendre votre application vulnérable aux attaques. La conception, le développement et le test de votre application alors que vous êtes connecté avec un compte LUA appliquent une approche disciplinée qui évite toute mauvaise surprise et empêche de céder à la facilité en accordant des privilèges élevés. Vous pouvez utiliser une connexion SQL Server pour le test même si votre application doit être déployée à l'aide de l'authentification Windows.  
   
 ## <a name="role-based-permissions"></a>Autorisations basées sur les rôles  
  L'octroi d'autorisations aux rôles plutôt qu'aux utilisateurs simplifie l'administration de la sécurité. Les jeux d'autorisations qui sont assignés aux rôles sont hérités par tous les membres du rôle. Il est plus facile d'ajouter des utilisateurs à un rôle ou d'en supprimer que de recréer des jeux d'autorisations distincts individuellement pour chaque utilisateur. Les rôles peuvent être imbriqués ; toutefois, des niveaux d'imbrication trop nombreux peuvent dégrader les performances. Vous pouvez également ajouter des utilisateurs aux rôles de base de données fixes pour simplifier l'assignation d'autorisations.  
@@ -40,7 +40,7 @@ Lorsque vous créez des objets de base de données, vous devez accorder explicit
 - L'instruction GRANT peut assigner des autorisations à un groupe ou un rôle qui peuvent être héritées par les utilisateurs de base de données. Toutefois, l'instruction DENY a priorité sur toutes les autres instructions d'autorisation. Par conséquent, un utilisateur à qui une autorisation a été refusée ne peut pas en hériter d'un autre rôle.  
   
 > [!NOTE]
->  Les membres du rôle serveur fixe `sysadmin` et des propriétaires d'objets ne peuvent pas se voir refuser des autorisations.  
+> Les membres du rôle serveur fixe `sysadmin` et des propriétaires d'objets ne peuvent pas se voir refuser des autorisations.  
   
 ## <a name="ownership-chains"></a>Chaînes de propriétés  
  SQL Server garantit que seules les entités de sécurité qui en ont reçu l'autorisation peuvent accéder aux objets. Lorsque plusieurs objets de base de données accèdent les uns aux autres, la séquence est qualifiée de chaîne. Lorsque SQL Server traverse les liens de la chaîne, il évalue les autorisations différemment que s'il accédait séparément à chaque élément. Lors de l'accès à un objet par le biais d'une chaîne, SQL Server commence par comparer le propriétaire de l'objet au propriétaire de l'objet appelant (le lien précédent de la chaîne). Si les deux objets ont le même propriétaire, les autorisations de l'objet référencé ne sont pas vérifiées. Si les propriétaires sont différents, la chaîne de propriétés est rompue et SQL Server doit vérifier le contexte de sécurité de l'appelant.  
@@ -49,14 +49,14 @@ Lorsque vous créez des objets de base de données, vous devez accorder explicit
  Supposons qu'un utilisateur bénéficie des autorisations d'exécution sur une procédure stockée qui sélectionne des données dans une table. Si la procédure stockée et la table ont le même propriétaire, il n'est pas nécessaire que l'utilisateur bénéficie d'autorisations quelles qu'elles soient ; il peut même s'en voir refuser. Cependant, si la procédure stockée et la table ont des propriétaires différents, SQL Server doit vérifier les autorisations de l'utilisateur sur la table avant d'autoriser l'accès aux données.  
   
 > [!NOTE]
->  Le chaînage des propriétés ne s'applique pas aux instructions SQL dynamiques. Pour appeler une procédure qui exécute une instruction SQL, l'appelant doit bénéficier d'autorisations sur les tables sous-jacentes, ce qui rend votre application vulnérable aux attaques par injection de code SQL. SQL Server fournit de nouveaux mécanismes, comme l'emprunt d'identité et la signature de modules à l'aide de certificats, qui ne requièrent pas l'octroi d'autorisations sur les tables sous-jacentes. Ils peuvent également être utilisés avec les procédures stockées CLR.  
+> Le chaînage des propriétés ne s'applique pas aux instructions SQL dynamiques. Pour appeler une procédure qui exécute une instruction SQL, l'appelant doit bénéficier d'autorisations sur les tables sous-jacentes, ce qui rend votre application vulnérable aux attaques par injection de code SQL. SQL Server fournit de nouveaux mécanismes, comme l'emprunt d'identité et la signature de modules à l'aide de certificats, qui ne requièrent pas l'octroi d'autorisations sur les tables sous-jacentes. Ils peuvent également être utilisés avec les procédures stockées CLR.  
   
 ## <a name="external-resources"></a>Ressources externes  
  Pour plus d'informations, voir les ressources ci-dessous.  
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[Autorisations](/sql/relational-databases/security/permissions-database-engine)|Contient des rubriques qui décrivent la hiérarchie des autorisations, les affichages catalogue et les autorisations des rôles serveur et de base de données fixes.|
+|[autorisations](/sql/relational-databases/security/permissions-database-engine)|Contient des rubriques qui décrivent la hiérarchie des autorisations, les affichages catalogue et les autorisations des rôles serveur et de base de données fixes.|
   
 ## <a name="see-also"></a>Voir aussi
 

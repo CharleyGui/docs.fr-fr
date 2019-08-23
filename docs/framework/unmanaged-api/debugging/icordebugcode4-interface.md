@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d23f588b46eb452b7670085249938f7d10cea1ba
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8ec40de7fe9e12315987e65e48f1727f5d5b80ef
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61752254"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960727"
 ---
 # <a name="icordebugcode4-interface"></a>ICorDebugCode4, interface
-Fournit une méthode qui permet à un débogueur énumérer les variables locales et les arguments dans une fonction.  
+Fournit une méthode qui permet à un débogueur d’énumérer les variables et les arguments locaux dans une fonction.  
   
 ## <a name="methods"></a>Méthodes  
   
@@ -35,14 +35,14 @@ Fournit une méthode qui permet à un débogueur énumérer les variables locale
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
->  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
+> Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v462plus](../../../../includes/net-current-v462plus-md.md)]  
   

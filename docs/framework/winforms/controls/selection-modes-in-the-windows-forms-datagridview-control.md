@@ -5,44 +5,44 @@ helpviewer_keywords:
 - selection [Windows Forms], modes in DataGridView control
 - DataGridView control [Windows Forms], selection mode
 ms.assetid: a3ebfd3d-0525-479d-9d96-d9e017289b36
-ms.openlocfilehash: 79e13e65938252015e43b59a962d40f20963a5df
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dfe26e4749e6bff2d0ccdff47c6ea0b301880772
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61902666"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960473"
 ---
 # <a name="selection-modes-in-the-windows-forms-datagridview-control"></a>Modes de sélection dans le contrôle DataGridView Windows Forms
-Parfois vous souhaitez que votre application pour effectuer des actions en fonction des sélections d’utilisateur dans un <xref:System.Windows.Forms.DataGridView> contrôle. Selon les actions, vous voudrez limiter les types de sélection qui ne sont possibles. Par exemple, supposons que votre application peut imprimer un rapport pour l’enregistrement actuellement sélectionné. Dans ce cas, vous souhaitez configurer le <xref:System.Windows.Forms.DataGridView> contrôle afin que toujours de cliquer n’importe où dans une ligne sélectionne la ligne entière, et par conséquent, ce qu’une seule ligne à la fois peut être sélectionnée.  
+Parfois, vous souhaitez que votre application effectue des actions en fonction des sélections de l’utilisateur dans un <xref:System.Windows.Forms.DataGridView> contrôle. Selon les actions, vous souhaiterez peut-être limiter les types de sélection possibles. Supposons, par exemple, que votre application peut imprimer un rapport pour l’enregistrement actuellement sélectionné. Dans ce cas, vous pouvez configurer le <xref:System.Windows.Forms.DataGridView> contrôle afin que le fait de cliquer n’importe où dans une ligne sélectionne toujours la ligne entière, et de sorte qu’une seule ligne à la fois peut être sélectionnée.  
   
- Vous pouvez spécifier les sélections autorisées en définissant le <xref:System.Windows.Forms.DataGridView.SelectionMode%2A?displayProperty=nameWithType> propriété à une des opérations suivantes <xref:System.Windows.Forms.DataGridViewSelectionMode> valeurs d’énumération.  
+ Vous pouvez spécifier les sélections autorisées en affectant à la <xref:System.Windows.Forms.DataGridView.SelectionMode%2A?displayProperty=nameWithType> propriété l’une des valeurs d’énumération suivantes. <xref:System.Windows.Forms.DataGridViewSelectionMode>  
   
-|DataGridViewSelectionMode value|Description|  
+|Valeur DataGridViewSelectionMode|Description|  
 |-------------------------------------|-----------------|  
-|<xref:System.Windows.Forms.DataGridViewSelectionMode.CellSelect>|En cliquant sur une cellule sélectionne. En-têtes de ligne et de colonne ne peut pas être utilisés pour la sélection.|  
-|<xref:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect>|En cliquant sur une cellule sélectionne. En cliquant sur un en-tête de colonne sélectionne la colonne entière. En-têtes de colonne ne peut pas être utilisés pour le tri.|  
-|<xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>|En cliquant sur une cellule ou un en-tête de colonne sélectionne la colonne entière. En-têtes de colonne ne peut pas être utilisés pour le tri.|  
-|<xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect>|En cliquant sur une cellule ou un en-tête de ligne sélectionne la ligne entière.|  
-|<xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect>|Mode de sélection par défaut. En cliquant sur une cellule sélectionne. En cliquant sur un en-tête de ligne sélectionne la ligne entière.|  
+|<xref:System.Windows.Forms.DataGridViewSelectionMode.CellSelect>|Cliquez sur une cellule pour la sélectionner. Les en-têtes de ligne et de colonne ne peuvent pas être utilisés pour la sélection.|  
+|<xref:System.Windows.Forms.DataGridViewSelectionMode.ColumnHeaderSelect>|Cliquez sur une cellule pour la sélectionner. Cliquez sur un en-tête de colonne pour sélectionner la colonne entière. Les en-têtes de colonne ne peuvent pas être utilisés pour le tri.|  
+|<xref:System.Windows.Forms.DataGridViewSelectionMode.FullColumnSelect>|Cliquer sur une cellule ou un en-tête de colonne sélectionne la colonne entière. Les en-têtes de colonne ne peuvent pas être utilisés pour le tri.|  
+|<xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect>|Cliquer sur une cellule ou un en-tête de ligne sélectionne la ligne entière.|  
+|<xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect>|Mode de sélection par défaut. Cliquez sur une cellule pour la sélectionner. Cliquer sur un en-tête de ligne sélectionne la ligne entière.|  
   
 > [!NOTE]
->  Modifier le mode de sélection en cours d’exécution automatiquement efface la sélection actuelle.  
+> La modification du mode de sélection au moment de l’exécution efface automatiquement la sélection actuelle.  
   
- Par défaut, les utilisateurs peuvent sélectionner plusieurs lignes, colonnes ou cellules en faisant glisser avec la souris, en appuyant sur CTRL ou MAJ ENFONCÉE tout en sélectionnant pour étendre ou modifier une sélection, ou en cliquant sur la cellule d’en-tête de l’angle supérieur gauche pour sélectionner toutes les cellules dans le contrôle. Pour empêcher ce comportement, affectez la <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> propriété `false`.  
+ Par défaut, les utilisateurs peuvent sélectionner plusieurs lignes, colonnes ou cellules en les faisant glisser avec la souris, en appuyant sur CTRL ou Maj tout en sélectionnant pour étendre ou modifier une sélection, ou en cliquant sur la cellule d’en-tête en haut à gauche pour sélectionner toutes les cellules du contrôle. Pour éviter ce comportement, affectez <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> à `false`la propriété la valeur.  
   
- Le <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect> et <xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect> modes permettent aux utilisateurs de supprimer des lignes en les sélectionnant et en appuyant sur la touche SUPPR. Les utilisateurs peuvent supprimer des lignes uniquement lorsque la cellule active n’est pas en mode édition, le <xref:System.Windows.Forms.DataGridView.AllowUserToDeleteRows%2A> propriété est définie sur `true`, et la source de données sous-jacente prend en charge la suppression de ligne pilotée par l’utilisateur. Notez que ces paramètres n’empêchent pas la suppression de ligne par programmation.  
+ Les <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect> modes <xref:System.Windows.Forms.DataGridViewSelectionMode.RowHeaderSelect> et permettent aux utilisateurs de supprimer des lignes en les sélectionnant et en appuyant sur la touche Suppr. Les utilisateurs peuvent supprimer des lignes uniquement lorsque la cellule active n’est pas en mode <xref:System.Windows.Forms.DataGridView.AllowUserToDeleteRows%2A> édition, que la `true`propriété a la valeur et que la source de données sous-jacente prend en charge la suppression de lignes pilotées par l’utilisateur. Notez que ces paramètres n’empêchent pas la suppression de lignes par programmation.  
   
 ## <a name="programmatic-selection"></a>Sélection par programmation  
- Le mode de sélection actuel restreint le comportement de sélection par programmation ainsi que la sélection de l’utilisateur. Vous pouvez modifier la sélection actuelle par programme en définissant le `Selected` propriété des cellules, lignes ou colonnes présentes dans le <xref:System.Windows.Forms.DataGridView> contrôle. Vous pouvez également sélectionner toutes les cellules dans le contrôle via le <xref:System.Windows.Forms.DataGridView.SelectAll%2A> (méthode), selon le mode de sélection. Pour effacer la sélection, utilisez le <xref:System.Windows.Forms.DataGridView.ClearSelection%2A> (méthode).  
+ Le mode de sélection actuel limite le comportement de sélection par programmation, ainsi que la sélection de l’utilisateur. Vous pouvez modifier la sélection actuelle par programme en définissant la `Selected` propriété des cellules, des lignes ou des colonnes présentes dans le <xref:System.Windows.Forms.DataGridView> contrôle. Vous pouvez également sélectionner toutes les cellules du contrôle à l' <xref:System.Windows.Forms.DataGridView.SelectAll%2A> aide de la méthode, en fonction du mode de sélection. Pour effacer la sélection, utilisez la <xref:System.Windows.Forms.DataGridView.ClearSelection%2A> méthode.  
   
- Si le <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> propriété est définie sur `true`, vous pouvez ajouter <xref:System.Windows.Forms.DataGridView> éléments à ou supprimez-les de la sélection en modifiant le `Selected` propriété de l’élément. Sinon, la définition de la `Selected` propriété `true` pour un élément supprime automatiquement les autres éléments de la sélection.  
+ Si la <xref:System.Windows.Forms.DataGridView.MultiSelect%2A> propriété a la `true`valeur, vous pouvez ajouter <xref:System.Windows.Forms.DataGridView> ou supprimer des éléments de la sélection en modifiant la `Selected` propriété de l’élément. Sinon, si vous `Selected` affectez `true` à la propriété la valeur pour un élément, vous supprimez automatiquement les autres éléments de la sélection.  
   
- Notez que si vous modifiez la valeur de la <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> propriété ne modifie pas la sélection actuelle.  
+ Notez que la modification de la valeur <xref:System.Windows.Forms.DataGridView.CurrentCell%2A> de la propriété ne modifie pas la sélection actuelle.  
   
- Vous pouvez récupérer une collection de cellules sélectionnées actuellement, de lignes ou de colonnes à travers le <xref:System.Windows.Forms.DataGridView.SelectedCells%2A>, <xref:System.Windows.Forms.DataGridView.SelectedRows%2A>, et <xref:System.Windows.Forms.DataGridView.SelectedColumns%2A> propriétés de la <xref:System.Windows.Forms.DataGridView> contrôle. L’accès à ces propriétés est inefficace lorsque chaque cellule dans le contrôle est sélectionné. Pour éviter une altération des performances dans ce cas, utilisez le <xref:System.Windows.Forms.DataGridView.AreAllCellsSelected%2A> méthode première. En outre, l’accès à ces collections pour déterminer le nombre de cellules sélectionnées, lignes ou colonnes peuvent être inefficace. Au lieu de cela, vous devez utiliser le <xref:System.Windows.Forms.DataGridView.GetCellCount%2A>, <xref:System.Windows.Forms.DataGridViewRowCollection.GetRowCount%2A>, ou <xref:System.Windows.Forms.DataGridViewColumnCollection.GetColumnCount%2A> méthode, en passant le <xref:System.Windows.Forms.DataGridViewElementStates.Selected> valeur.  
+ Vous pouvez récupérer une collection des cellules, lignes ou colonnes <xref:System.Windows.Forms.DataGridView.SelectedCells%2A>sélectionnées à l’aide des propriétés, <xref:System.Windows.Forms.DataGridView.SelectedRows%2A>et <xref:System.Windows.Forms.DataGridView.SelectedColumns%2A> du <xref:System.Windows.Forms.DataGridView> contrôle. L’accès à ces propriétés est inefficace lorsque chaque cellule du contrôle est sélectionnée. Pour éviter une altération des performances dans ce cas, utilisez <xref:System.Windows.Forms.DataGridView.AreAllCellsSelected%2A> d’abord la méthode. En outre, l’accès à ces collections pour déterminer le nombre de cellules, de lignes ou de colonnes sélectionnées peut être inefficace. Au lieu de cela, vous <xref:System.Windows.Forms.DataGridView.GetCellCount%2A>devez <xref:System.Windows.Forms.DataGridViewRowCollection.GetRowCount%2A>utiliser la <xref:System.Windows.Forms.DataGridViewColumnCollection.GetColumnCount%2A> méthode, ou, en <xref:System.Windows.Forms.DataGridViewElementStates.Selected> passant la valeur.  
   
 > [!TIP]
->  Vous trouverez des exemples de code qui illustre l’utilisation par programmation des cellules sélectionnées dans le <xref:System.Windows.Forms.DataGridView> vue d’ensemble de la classe.  
+>  Vous trouverez un exemple de code illustrant l’utilisation par programmation des cellules sélectionnées <xref:System.Windows.Forms.DataGridView> dans la vue d’ensemble de la classe.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -51,4 +51,4 @@ Parfois vous souhaitez que votre application pour effectuer des actions en fonct
 - <xref:System.Windows.Forms.DataGridView.SelectionMode%2A>
 - <xref:System.Windows.Forms.DataGridViewSelectionMode>
 - [Sélection et utilisation du Presse-papiers avec le contrôle DataGridView Windows Forms](selection-and-clipboard-use-with-the-windows-forms-datagridview-control.md)
-- [Guide pratique pour Définir le Mode de sélection du contrôle DataGridView Windows Forms](how-to-set-the-selection-mode-of-the-windows-forms-datagridview-control.md)
+- [Guide pratique pour Définir le mode de sélection du contrôle DataGridView Windows Forms](how-to-set-the-selection-mode-of-the-windows-forms-datagridview-control.md)

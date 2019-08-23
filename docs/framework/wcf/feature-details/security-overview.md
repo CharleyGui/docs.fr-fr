@@ -5,18 +5,18 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - WCF, security
 ms.assetid: f478c80d-792d-4e7a-96bd-a2ff0b6f65f9
-ms.openlocfilehash: f1c0fba82761d42324eb53655b36ef7a3570d5b3
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: ae03684449e902c0d05744a19671169f2e0b8be2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68868914"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69949354"
 ---
 # <a name="windows-communication-foundation-security-overview"></a>Vue d’ensemble de la sécurité Windows Communication Foundation
 Windows Communication Foundation (WCF) est une plateforme de programmation distribuée basée sur les messages SOAP, et la sécurisation des messages entre les clients et les services est essentielle pour la protection des données. WCF fournit une plateforme polyvalente et interopérable pour échanger des messages sécurisés en fonction de l’infrastructure de sécurité existante et des normes de sécurité reconnues pour les messages SOAP.  
   
 > [!NOTE]
->  Pour obtenir un guide complet de la sécurité WCF, consultez le Guide de [sécurité WCF](https://go.microsoft.com/fwlink/?LinkID=158912).  
+> Pour obtenir un guide complet de la sécurité WCF, consultez le Guide de [sécurité WCF](https://go.microsoft.com/fwlink/?LinkID=158912).  
   
  WCF utilise des concepts qui sont familiers si vous avez créé des applications distribuées sécurisées avec des technologies existantes telles que HTTPs, la sécurité intégrée de Windows ou des noms d’utilisateur et des mots de passe pour authentifier les utilisateurs. WCF s’intègre non seulement aux infrastructures de sécurité existantes, mais étend également la sécurité distribuée au-delà des domaines Windows uniquement à l’aide de messages SOAP sécurisés. Considérez WCF comme une implémentation des mécanismes de sécurité existants présentant l’avantage principal de l’utilisation de SOAP comme protocole en plus des protocoles existants. Par exemple, les informations d'identification qui identifient un client ou un service, telles que le nom d'utilisateur et le mot de passe ou les certificats X.509, ont des profils SOAP basés sur du XML interopérable. À l'aide de ces profils, les messages sont échangés en toute sécurité et tirent parti des spécifications ouvertes telles que les signatures numériques XML et le chiffrement XML. Pour obtenir la liste des spécifications, consultez [protocoles de services Web pris en charge par les liaisons d’interopérabilité fournies par le système](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md).  
   

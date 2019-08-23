@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9d27799e427efd3659dc2864e7d1e8e2061c5c19
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ac7014962b99ac167e8192c13b2bae5ca92470f0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780776"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948523"
 ---
 # <a name="ihostiocompletionmanagerinitializehostoverlapped-method"></a>IHostIoCompletionManager::InitializeHostOverlapped, méthode
-Fournit à l’hôte avec la possibilité d’initialiser toutes les données personnalisées à ajouter à un Win32 `OVERLAPPED` structure qui est utilisé pour les demandes d’e/s asynchrones.  
+Fournit à l’hôte la possibilité d’initialiser toutes les données personnalisées à ajouter à `OVERLAPPED` une structure Win32 utilisée pour les demandes d’e/s asynchrones.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,34 +37,34 @@ HRESULT InitializeHostOverlapped (
   
 ## <a name="parameters"></a>Paramètres  
  `pvOverlapped`  
- [in] Un pointeur vers Win32 `OVERLAPPED` structure pour être inclus dans la demande d’e/s.  
+ dans Pointeur vers la structure Win32 `OVERLAPPED` à inclure dans la requête d’e/s.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`InitializeHostOverlapped` retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel a expiré.|  
+|S_OK|`InitializeHostOverlapped`retourné avec succès.|  
+|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread bloqué ou Fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode retourne E_FAIL, le CLR n’est plus utilisable au sein du processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
-|E_OUTOFMEMORY|Mémoire était insuffisante pour allouer la ressource demandée.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|E_OUTOFMEMORY|Mémoire disponible insuffisante pour allouer la ressource demandée.|  
   
 ## <a name="remarks"></a>Notes  
- La plateforme Windows fonctions utilisent la `OVERLAPPED` structure pour stocker l’état des demandes d’e/s asynchrones. Le CLR appelle le `InitializeHostOverlapped` méthode pour permettre à l’hôte pour ajouter des données personnalisées à un `OVERLAPPED` instance.  
+ Les fonctions de la plate- `OVERLAPPED` forme Windows utilisent la structure pour stocker l’état des demandes d’e/s asynchrones. Le CLR appelle la `InitializeHostOverlapped` méthode pour permettre à l’hôte d’ajouter des données personnalisées à `OVERLAPPED` une instance.  
   
 > [!IMPORTANT]
->  Pour atteindre le début de leur bloc de données personnalisées, les hôtes doivent définir le décalage à la taille de la `OVERLAPPED` structure (`sizeof(OVERLAPPED)`).  
+> Pour atteindre le début de leur bloc de données personnalisé, les hôtes doivent définir le décalage sur la taille de `OVERLAPPED` la structure`sizeof(OVERLAPPED)`().  
   
- Une valeur de retour E_OUTOFMEMORY indique que l’hôte n’a pas pu initialiser ses données personnalisées. Dans ce cas, le CLR signale une erreur et fait échouer l’appel.  
+ Une valeur de retour E_OUTOFMEMORY indique que l’hôte n’a pas réussi à initialiser ses données personnalisées. Dans ce cas, le CLR signale une erreur et fait échouer l’appel.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

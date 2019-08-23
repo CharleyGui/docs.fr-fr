@@ -2,18 +2,18 @@
 title: Création de rôles d'applications dans SQL Server
 ms.date: 03/30/2017
 ms.assetid: 27442435-dfb2-4062-8c59-e2960833a638
-ms.openlocfilehash: 7934c58f837cd5a4b01f823701025190be3dfe6d
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: e7060e1b171ee1791b9986250fe6f2050ec77acd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64910710"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961163"
 ---
 # <a name="creating-application-roles-in-sql-server"></a>Création de rôles d'applications dans SQL Server
 Les rôles d'application constituent un moyen d'affecter des autorisations à une application plutôt qu'à un rôle ou à un utilisateur de base de données. Les utilisateurs peuvent se connecter à la base de données, activer le rôle d'application et assumer les autorisations accordées à l'application. Les autorisations accordées au rôle d'application sont en vigueur pour la durée de la connexion.  
   
 > [!IMPORTANT]
->  Les rôles d'application sont activés lorsqu'une application cliente fournit un nom de rôle d'application et un mot de passe dans la chaîne de connexion. Ils présentent une vulnérabilité concernant la sécurité dans une application à deux niveaux, car le mot de passe doit être stocké sur l'ordinateur client. Dans une application à trois niveaux, vous pouvez stocker le mot de passe afin qu'il soit inaccessible aux utilisateurs de l'application.  
+> Les rôles d'application sont activés lorsqu'une application cliente fournit un nom de rôle d'application et un mot de passe dans la chaîne de connexion. Ils présentent une vulnérabilité concernant la sécurité dans une application à deux niveaux, car le mot de passe doit être stocké sur l'ordinateur client. Dans une application à trois niveaux, vous pouvez stocker le mot de passe afin qu'il soit inaccessible aux utilisateurs de l'application.  
   
 ## <a name="application-role-features"></a>Fonctionnalités de rôle d'application  
  Les rôles d’application possèdent les fonctionnalités suivantes :  
@@ -47,7 +47,7 @@ Les rôles d'application constituent un moyen d'affecter des autorisations à un
   
  Vous pouvez prendre en compte les alternatives suivantes.  
   
-- Utilisez le changement de contexte avec l'instruction AS EXECUTE et ses clauses NO REVERT et WITH COOKIE. Vous pouvez créer un compte d'utilisateur dans une base de données qui n'est pas mappée à une connexion. Vous pouvez ensuite affecter des autorisations à ce compte. L'utilisation d'EXECUTE AS avec un utilisateur sans connexion est plus sûre, car elle est basée sur les autorisations, pas sur le mot de passe. Pour plus d’informations, consultez [personnalisation des autorisations avec l’emprunt d’identité dans SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md).  
+- Utilisez le changement de contexte avec l'instruction AS EXECUTE et ses clauses NO REVERT et WITH COOKIE. Vous pouvez créer un compte d'utilisateur dans une base de données qui n'est pas mappée à une connexion. Vous pouvez ensuite affecter des autorisations à ce compte. L'utilisation d'EXECUTE AS avec un utilisateur sans connexion est plus sûre, car elle est basée sur les autorisations, pas sur le mot de passe. Pour plus d’informations, consultez [Personnalisation des autorisations avec l’emprunt d’identité dans SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md).  
   
 - Signez des procédures stockées à l'aide de certificats, en accordant uniquement l'autorisation d'exécuter les procédures. Pour plus d’informations, consultez [signature de procédures stockées dans SQL Server](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md).  
   

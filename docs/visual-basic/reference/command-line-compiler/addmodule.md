@@ -6,12 +6,12 @@ helpviewer_keywords:
 - addmodule compiler option [Visual Basic]
 - -addmodule compiler option [Visual Basic]
 ms.assetid: fb4b89d4-4926-4f20-868d-427fa28497b2
-ms.openlocfilehash: 2de5fe82f1969a2fdb305d45951d7d698252c0c8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0e0915a2534f950cec074632a59750c3f96b679d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61839214"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962458"
 ---
 # <a name="-addmodule"></a>-addmodule
 Entraîne la mise à disposition par le compilateur de toutes les informations de type à partir du ou des fichiers spécifiés, pour le projet en cours de compilation.  
@@ -24,19 +24,19 @@ Entraîne la mise à disposition par le compilateur de toutes les informations d
   
 ## <a name="arguments"></a>Arguments  
  `fileList`  
- Obligatoire. Liste délimitée par des virgules des fichiers qui contiennent des métadonnées, mais ne contiennent pas de manifestes d’assembly. Les noms de fichiers contenant des espaces doivent être entourés de guillemets ( » «).  
+ Requis. Liste de fichiers délimités par des virgules qui contiennent des métadonnées, mais qui ne contiennent pas de manifestes d’assembly. Les noms de fichiers contenant des espaces doivent être placés entre guillemets ("").  
   
 ## <a name="remarks"></a>Notes  
- Les fichiers répertoriés par le `fileList` paramètre doit être créé avec le `-target:module` option, ou avec l’équivalent d’un autre compilateur `-target:module`.  
+ Les fichiers listés par `fileList` le paramètre doivent être créés avec `-target:module` l’option, ou avec un autre compilateur équivalent `-target:module`à.  
   
- Tous les modules ajoutés par `-addmodule` doit être dans le même répertoire que le fichier de sortie au moment de l’exécution. Autrement dit, vous pouvez spécifier un module dans n’importe quel répertoire au moment de la compilation, mais le module doit être dans le répertoire de l’application en cours d’exécution. Si elle n’est pas le cas, vous obtenez un <xref:System.TypeLoadException> erreur.  
+ Tous les modules ajoutés `-addmodule` avec doivent se trouver dans le même répertoire que le fichier de sortie au moment de l’exécution. Autrement dit, vous pouvez spécifier un module dans n’importe quel répertoire au moment de la compilation, mais le module doit se trouver dans le répertoire de l’application au moment de l’exécution. Si ce n’est pas le cas, <xref:System.TypeLoadException> vous recevez une erreur.  
   
- Si vous spécifiez (implicitement ou explicitement) n’importe quel[-cible (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md) option autre que `-target:module` avec `-addmodule`, les fichiers que vous transmettez à `-addmodule` deviennent partie intégrante de l’assembly du projet. Un assembly est requis pour exécuter un fichier de sortie qui contient un ou plusieurs fichiers ajoutés avec `-addmodule`.  
+ Si vous spécifiez (implicitement ou explicitement) une option[-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md) autre `-target:module` que `-addmodule`avec, les fichiers que vous `-addmodule` transmettez pour faire partie de l’assembly du projet. Un assembly est requis pour exécuter un fichier de sortie qui a un ou plusieurs fichiers `-addmodule`ajoutés avec.  
   
- Utilisez [/reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md) pour importer les métadonnées à partir d’un fichier qui contient un assembly.  
+ Utilisez [/Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md) pour importer les métadonnées d’un fichier qui contient un assembly.  
   
 > [!NOTE]
->  Le `-addmodule` option n’est pas disponible dans l’environnement de développement Visual Studio ; il est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+> L' `-addmodule` option n’est pas disponible dans l’environnement de développement Visual Studio; elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
 ## <a name="example"></a>Exemple  
  Le code suivant crée un module.  
@@ -47,11 +47,11 @@ Entraîne la mise à disposition par le compilateur de toutes les informations d
   
  [!code-vb[VbVbalrCompiler#48](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/OptionStrictOff.vb#48)]  
   
- Lorsque vous exécutez `t1`, elle génère `802`.  
+ Lorsque vous exécutez `t1`, il génère `802`.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
-- [-référence (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
+- [-cible (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
+- [-Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
 - [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

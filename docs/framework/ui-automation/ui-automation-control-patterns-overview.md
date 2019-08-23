@@ -5,23 +5,23 @@ helpviewer_keywords:
 - control patterns
 - UI Automation, control patterns
 ms.assetid: cc229b33-234b-469b-ad60-f0254f32d45d
-ms.openlocfilehash: 259594858e96897cb377cde4104e17b748f902c4
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 30e8619e70da46cb510fbe28ab2e8bcf27621e19
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68971807"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963297"
 ---
 # <a name="ui-automation-control-patterns-overview"></a>Vue d'ensemble des modèles de contrôle UI Automation
 > [!NOTE]
->  Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Cette vue d’ensemble présente les modèles de contrôle [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] . Les modèles de contrôle permettent de catégoriser et d'exposer les fonctionnalités d'un contrôle, indépendamment du type de contrôle ou de l'apparence du contrôle.  
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] utilise des modèles de contrôle pour représenter les comportements de contrôle courants. Par exemple, vous utilisez le modèle de contrôle Invoke pour les contrôles qui peuvent être appelés (tels que les boutons) et le modèle de contrôle Scroll pour les contrôles qui disposent de barres de défilement (tels que les zones de liste, les affichages de liste ou les zones de liste modifiables). Étant donné que chaque modèle de contrôle représente une fonctionnalité distincte, il est possible de les combiner pour décrire l’ensemble complet de fonctionnalités prises en charge par un contrôle particulier.  
   
 > [!NOTE]
->  Les contrôles d’agrégat (générés avec des contrôles enfants qui fournissent l’ [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] pour les fonctionnalités exposées par le parent) doivent implémenter tous les modèles de contrôle normalement associés à chaque contrôle enfant. Il n’est pas nécessaire que ces mêmes modèles de contrôle soient, à leur tour, implémentés par les contrôles enfants.  
+> Les contrôles d’agrégat (générés avec des contrôles enfants qui fournissent l’ [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] pour les fonctionnalités exposées par le parent) doivent implémenter tous les modèles de contrôle normalement associés à chaque contrôle enfant. Il n’est pas nécessaire que ces mêmes modèles de contrôle soient, à leur tour, implémentés par les contrôles enfants.  
   
 <a name="uiautomation_control_pattern_includes"></a>   
 ## <a name="ui-automation-control-pattern-components"></a>Composants des modèles de contrôle UI Automation  

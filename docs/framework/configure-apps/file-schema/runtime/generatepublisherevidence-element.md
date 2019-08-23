@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 7d208f50-e8d5-4a42-bc1a-1cf3590706a8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: caec297f8d0f6febad5cf46adb0a2658960c6bb1
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: a5314fe5927abf2d3855acb45c763507ab6cb3c8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663670"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69920746"
 ---
 # <a name="generatepublisherevidence-element"></a>\<generatePublisherEvidence >, élément
 Spécifie si le runtime <xref:System.Security.Policy.Publisher> crée une preuve pour la sécurité d’accès du code (cas).  
@@ -57,12 +57,12 @@ Spécifie si le runtime <xref:System.Security.Policy.Publisher> crée une preuve
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
->  Dans le .NET Framework 4 et versions ultérieures, cet élément n’a aucun effet sur les temps de chargement des assemblys. Pour plus d’informations, consultez la section «simplification de la stratégie de sécurité» dans [modifications de sécurité](../../../security/security-changes.md).  
+> Dans le .NET Framework 4 et versions ultérieures, cet élément n’a aucun effet sur les temps de chargement des assemblys. Pour plus d’informations, consultez la section «simplification de la stratégie de sécurité» dans [modifications de sécurité](../../../security/security-changes.md).  
   
  Le Common Language Runtime (CLR) tente de vérifier la signature Authenticode au moment du chargement pour <xref:System.Security.Policy.Publisher> créer la preuve de l’assembly. Toutefois, par défaut, la plupart des applications n' <xref:System.Security.Policy.Publisher> ont pas besoin de preuve. La <xref:System.Security.Policy.PublisherMembershipCondition>stratégie cas standard ne repose pas sur. Vous devez éviter les coûts de démarrage inutiles associés à la vérification de la signature de l’éditeur, sauf si votre application s’exécute sur un ordinateur doté d’une stratégie cas, ou s' <xref:System.Security.Permissions.PublisherIdentityPermission> il a l’intention de satisfaire les demandes de dans un environnement de confiance partielle. (Les demandes d’autorisations d’identité fonctionnent toujours dans un environnement de confiance totale.)  
   
 > [!NOTE]
->  Nous recommandons que les services utilisent `<generatePublisherEvidence>` l’élément pour améliorer les performances de démarrage.  L’utilisation de cet élément peut également aider à éviter des retards qui peuvent entraîner un délai d’attente et l’annulation du démarrage du service.  
+> Nous recommandons que les services utilisent `<generatePublisherEvidence>` l’élément pour améliorer les performances de démarrage.  L’utilisation de cet élément peut également aider à éviter des retards qui peuvent entraîner un délai d’attente et l’annulation du démarrage du service.  
   
 ## <a name="configuration-file"></a>Fichier de configuration  
  Cet élément peut être utilisé uniquement dans le fichier de configuration de l’application.  

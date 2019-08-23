@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Main method [Visual Basic]
 - main function
 ms.assetid: f0db283e-f283-4464-b521-b90858cc1b44
-ms.openlocfilehash: b6c8ec4052d834d410df7fef12e59434f5fdfb44
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 19c6fcb04a373d782db3deafc732f69bf20e7f0e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039983"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962772"
 ---
 # <a name="main-procedure-in-visual-basic"></a>Procédure Main dans Visual Basic
 Chaque Visual Basic application doit contenir une procédure appelée `Main`. Cette procédure sert de point de départ et de contrôle global pour votre application. Le .NET Framework appelle votre `Main` procédure lorsqu’il a chargé votre application et qu’il est prêt à lui transmettre le contrôle. À moins que vous ne soyez en train de créer une application `Main` Windows Forms, vous devez écrire la procédure pour les applications qui s’exécutent de manière autonome.
@@ -33,7 +33,7 @@ Chaque Visual Basic application doit contenir une procédure appelée `Main`. Ce
  Il existe quatre façons de déclarer la `Main` procédure. Elle peut accepter ou non des arguments, et elle peut retourner une valeur ou non.
 
 > [!NOTE]
->  Si vous déclarez `Main` dans une classe, vous devez utiliser `Shared` le mot clé. Dans un module, `Main` n’a pas besoin d' `Shared`être.
+> Si vous déclarez `Main` dans une classe, vous devez utiliser `Shared` le mot clé. Dans un module, `Main` n’a pas besoin d' `Shared`être.
 
 - La méthode la plus simple consiste à déclarer `Sub` une procédure qui ne prend pas d’arguments ou ne retourne pas de valeur.
 

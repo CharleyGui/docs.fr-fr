@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 061d98b2-baa7-4336-8ad2-c14de8134d91
-ms.openlocfilehash: efb7b86c3add99e596e6798c8267c09689899d56
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 21ed620ab5b7a78fc4f396cc474e7c62b70f1ddd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61923927"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946619"
 ---
 # <a name="what-you-can-do-with-linq-to-sql"></a>Que faire avec LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prend en charge toutes les fonctions clés que recherchent les développeurs SQL. Vous pouvez demander des informations et insérer, mettre à jour et supprimer des informations dans des tables.  
@@ -43,7 +43,7 @@ ms.locfileid: "61923927"
  Pour `Delete` un élément, supprimez-le de la collection à laquelle il appartient, puis appelez <xref:System.Data.Linq.DataContext.SubmitChanges%2A> sur le <xref:System.Data.Linq.DataContext> pour valider la modification.  
   
 > [!NOTE]
->  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne reconnaît les opérations de suppression en cascade. Si vous souhaitez supprimer une ligne dans une table qui a des contraintes sur cette, consultez [Comment : Supprimer des lignes de la base de données](../../../../../../docs/framework/data/adonet/sql/linq/how-to-delete-rows-from-the-database.md).  
+> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne reconnaît les opérations de suppression en cascade. Si vous souhaitez supprimer une ligne d’une table qui contient des contraintes, consultez [procédure: Supprimer des lignes de la](../../../../../../docs/framework/data/adonet/sql/linq/how-to-delete-rows-from-the-database.md)base de données.  
   
  Dans l'exemple suivant, le client dont le `CustomerID` est `98128` est extrait de la base de données. Ensuite, après confirmation de la récupération de la ligne client, <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A> est appelé pour supprimer cet objet de la collection. Enfin, <xref:System.Data.Linq.DataContext.SubmitChanges%2A> est appelé pour envoyer la suppression à la base de données.  
   

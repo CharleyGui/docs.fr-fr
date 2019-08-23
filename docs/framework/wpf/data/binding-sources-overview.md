@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 2df2cd11-6aac-4bdf-ab7b-ea5f464cd5ca
-ms.openlocfilehash: 9bb77146a55bae4aed17bdd3ef48eca7890d4807
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: eee10cbf3bbfc6f66ec9e0c3f35b27fdc485764b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68401440"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69944679"
 ---
 # <a name="binding-sources-overview"></a>Vue d'ensemble des sources de liaison
 Dans la liaison de données, l’objet de source de liaison fait référence à l’objet à partir duquel vous obtenez des données. Cette rubrique décrit les types d’objets que vous pouvez utiliser comme source de liaison.  
@@ -88,7 +88,7 @@ Dans la liaison de données, l’objet de source de liaison fait référence à 
   
  L’exigence d’autorisation pour la liaison [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] est similaire. Dans un bac à sable (sandbox <xref:System.Windows.Data.XmlDataProvider> ) de confiance partielle, échoue lorsqu’il ne dispose pas des autorisations nécessaires pour accéder aux données spécifiées.  
   
- Les objets avec un type anonyme sont internes. Vous pouvez lier des propriétés de types anonymes uniquement lors de l’exécution en confiance totale. Pour plus d’informations sur les types anonymes, consultez [Types anonymes (Guide de programmation C#)](~/docs/csharp/programming-guide/classes-and-structs/anonymous-types.md) ou [Types anonymes (Visual Basic)](~/docs/visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md) (pour Visual Basic).  
+ Les objets avec un type anonyme sont internes. Vous pouvez lier des propriétés de types anonymes uniquement lors de l’exécution en confiance totale. Pour plus d’informations sur les types anonymes, consultez [Types anonymes (Guide de programmation C#)](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md) ou [Types anonymes (Visual Basic)](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md) (pour Visual Basic).  
   
  Pour plus d’informations sur la sécurité de confiance partielle, consultez [Sécurité de confiance partielle de WPF](../wpf-partial-trust-security.md).  
   

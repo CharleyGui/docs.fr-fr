@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: e7733bd3-68da-47f9-82ef-477db5f2e32d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 15269646e967d3b260b305db5999a7b5e63be33b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8bd06dd3f58a1f74fbdb5ec61c4896f5c1696856
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736433"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69931056"
 ---
 # <a name="icordebugprocess6enablevirtualmodulesplitting-method"></a>ICorDebugProcess6::EnableVirtualModuleSplitting, méthode
 Active ou désactive le fractionnement de module virtuel.  
@@ -27,12 +27,12 @@ HRESULT EnableVirtualModuleSplitting(
  `true` pour activer le fractionnement de module virtuel ; `false` pour le désactiver.  
   
 ## <a name="remarks"></a>Notes  
- Les causes de fractionnement de module virtuel [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) pour reconnaître des modules qui ont été fusionnés lors de la génération, traitement et les présentent en tant que groupe de modules distincts plutôt qu’un seul module de grande taille. Cette opération modifie le comportement de divers [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) méthodes décrites ci-dessous.  
+ Le fractionnement de modules virtuels fait que [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) reconnaît les modules qui ont été fusionnés au cours du processus de génération et les présente sous la forme d’un groupe de modules distincts plutôt qu’un seul module de grande taille. Cela modifie le comportement de diverses méthodes [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) décrites ci-dessous.  
   
 > [!NOTE]
->  Cette méthode est uniquement disponible avec .NET Native.  
+> Cette méthode est uniquement disponible avec .NET Native.  
   
- Cette méthode peut être appelée et la valeur de `enableSplitting` peut être modifiée à tout moment. Cela n’entraîne pas de modifications fonctionnelles avec état dans un [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) objet, autre que la modification du comportement des méthodes répertoriées dans le [fractionnement de module virtuel et les API de débogage non managés](#APIs) section à la fois qu’elles sont appelées. L'utilisation de modules virtuels entraîne une baisse des performances lors de l'appel de ces méthodes. En outre, significative en mémoire de mise en cache de métadonnées virtualisées être amené à implémenter correctement le [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) API et ces caches peuvent être conservées, même après le fractionnement de module virtuel a été désactivé.  
+ Cette méthode peut être appelée et la valeur de `enableSplitting` peut être modifiée à tout moment. Elle n’entraîne pas de modifications fonctionnelles avec état dans un objet [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) , à l’exception de la modification du comportement des méthodes répertoriées dans la section fractionnement de [module virtuel et API de débogage non managé](#APIs) au moment où elles sont appelées. L'utilisation de modules virtuels entraîne une baisse des performances lors de l'appel de ces méthodes. En outre, une mise en cache significative des métadonnées virtualisées peut être nécessaire pour implémenter correctement les API [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) , et ces caches peuvent être conservés même après la désactivation du fractionnement de module virtuel.  
   
 ## <a name="terminology"></a>Terminologie  
  Les termes suivants sont employés dans le cadre du fractionnement de module virtuel :  
@@ -46,10 +46,10 @@ HRESULT EnableVirtualModuleSplitting(
  modules standards  
  Modules non fusionnés au moment de la génération. Ce ne sont ni des modules conteneurs ni des sous-modules.  
   
- Les modules conteneurs et les sous-modules sont représentés par les objets d’interface ICorDebugModule. Toutefois, le comportement de l’interface est légèrement différent dans chaque cas, comme le \<x-ref à la section > décrit la section.  
+ Les modules de conteneur et les sous-modules sont représentés par les objets d’interface ICorDebugModule. Toutefois, le comportement de l’interface est légèrement différent dans chaque cas, comme décrit \<dans la section x-Ref to section >.  
   
 ## <a name="modules-and-assemblies"></a>Modules et assemblys  
- Les assemblys composés de plusieurs modules ne sont pas pris en charge dans le cadre de la fusion d'assemblys, où il existe une relation un-à-un entre un module et un assembly. Chaque objet ICorDebugModule, qu’elle représente un module conteneur ou un sous-module, a un objet ICorDebugAssembly correspondant. Le [ICorDebugModule::GetAssembly](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getassembly-method.md) méthode convertit à partir du module à l’assembly. Pour mapper dans l’autre sens, le [ICorDebugAssembly::EnumerateModules](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly-enumeratemodules-method.md) méthode énumère uniquement 1 module. Comme l'assembly et le module forment ici une paire fortement couplée, les termes assembly et module sont largement interchangeables.  
+ Les assemblys composés de plusieurs modules ne sont pas pris en charge dans le cadre de la fusion d'assemblys, où il existe une relation un-à-un entre un module et un assembly. Chaque objet ICorDebugModule, qu’il représente un module de conteneur ou un sous-module, possède un objet ICorDebugAssembly correspondant. La méthode [ICorDebugModule:: GetAssembly](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getassembly-method.md) convertit le module en assembly. Pour mapper dans l’autre sens, la méthode [ICorDebugAssembly:: EnumerateModules,](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly-enumeratemodules-method.md) énumère uniquement 1 module. Comme l'assembly et le module forment ici une paire fortement couplée, les termes assembly et module sont largement interchangeables.  
   
 ## <a name="behavioral-differences"></a>Différences comportementales  
  Les modules conteneurs présentent les comportements et caractéristiques suivants :  
@@ -58,9 +58,9 @@ HRESULT EnableVirtualModuleSplitting(
   
 - Leurs noms de type peuvent être altérés.  
   
-- Le [ICorDebugModule::GetName](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getname-method.md) méthode retourne le chemin d’accès à un module sur le disque.  
+- La méthode [ICorDebugModule:: GetName](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getname-method.md) retourne le chemin d’accès à un module sur disque.  
   
-- Le [ICorDebugModule::GetSize](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getsize-method.md) méthode retourne la taille de cette image.  
+- La méthode [ICorDebugModule::](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getsize-method.md) Desize retourne la taille de cette image.  
   
 - La méthode ICorDebugAssembly3.EnumerateContainedAssemblies répertorie les sous-modules.  
   
@@ -74,9 +74,9 @@ HRESULT EnableVirtualModuleSplitting(
   
 - Les jetons de métadonnées ne correspondent généralement pas aux jetons présents dans l’assembly d’origine avant sa fusion au moment de la génération.  
   
-- Le [ICorDebugModule::GetName](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getname-method.md) méthode retourne le nom de l’assembly, pas un chemin d’accès de fichier.  
+- La méthode [ICorDebugModule:: GetName](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getname-method.md) retourne le nom de l’assembly, et non un chemin d’accès au fichier.  
   
-- Le [ICorDebugModule::GetSize](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getsize-method.md) méthode retourne la taille d’image non fusionnée d’origine.  
+- La méthode [ICorDebugModule::](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getsize-method.md) Desize retourne la taille d’image non fusionnée d’origine.  
   
 - La méthode ICorDebugModule3.EnumerateContainedAssemblies retourne `S_FALSE`.  
   
@@ -85,11 +85,11 @@ HRESULT EnableVirtualModuleSplitting(
 ## <a name="interfaces-retrieved-from-modules"></a>Interfaces récupérées des modules  
  Diverses interfaces peuvent être créées ou récupérées à partir des modules. entres autres :  
   
-- Un objet ICorDebugClass, qui est retourné par la [ICorDebugModule::GetClassFromToken](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getclassfromtoken-method.md) (méthode).  
+- Objet ICorDebugClass, qui est retourné par la méthode [ICorDebugModule:: GetClassFromToken,](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getclassfromtoken-method.md) .  
   
-- Un objet ICorDebugAssembly, qui est retourné par la [ICorDebugModule::GetAssembly](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getassembly-method.md) (méthode).  
+- Objet ICorDebugAssembly, qui est retourné par la méthode [ICorDebugModule:: GetAssembly](../../../../docs/framework/unmanaged-api/debugging/icordebugmodule-getassembly-method.md) .  
   
- Ces objets sont toujours mis en cache par [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md), et ont la même identité de pointeur qu’ils ont été créés ou interrogées à partir du module conteneur ou un sous-module. Le sous-module présente une vue filtrée de ces objets mis en cache, pas un cache distinct avec ses propres copies.  
+ Ces objets sont toujours mis en cache par [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)et ils auront la même identité de pointeur, qu’ils aient été créés ou interrogés à partir du module de conteneur ou d’un sous-module. Le sous-module présente une vue filtrée de ces objets mis en cache, pas un cache distinct avec ses propres copies.  
   
 <a name="APIs"></a>   
 ## <a name="virtual-module-splitting-and-the-unmanaged-debugging-apis"></a>Fractionnement de module virtuel et API de débogage non managées  
@@ -101,14 +101,14 @@ HRESULT EnableVirtualModuleSplitting(
 |[ICorDebugClass::GetModule](../../../../docs/framework/unmanaged-api/debugging/icordebugclass-getmodule-method.md)|Retourne le sous-module dans lequel cette classe a été initialement définie.|Retourne le module conteneur dans lequel cette classe a été fusionnée.|  
 |ICorDebugModuleDebugEvent::GetModule|Retourne le module conteneur qui a été chargé. Les sous-modules ne reçoivent pas d'événements de chargement, indépendamment de la valeur de ce paramètre.|Retourne le module conteneur qui a été chargé.|  
 |[ICorDebugAppDomain::EnumerateAssemblies](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain-enumerateassemblies-method.md)|Retourne une liste des sous-assemblys et des assemblys standards. La liste n'inclut pas les assemblys conteneurs. **Remarque :**  Si un assembly conteneur ne contient pas tous les symboles nécessaires, aucun de ses sous-assemblys ne sera énuméré. S'il manque des symboles dans un assembly standard, celui-ci pourra ou non être énuméré, en fonction des cas.|Retourne une liste des assemblys conteneurs et des assemblys standards. La liste n'inclut pas les sous-assemblys. **Remarque :**  S'il manque des symboles dans un assembly standard, celui-ci pourra ou non être énuméré, en fonction des cas.|  
-|[ICorDebugCode::GetCode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md) (lors de la référence au code IL uniquement)|Retourne le code IL qui serait valide dans une image d’assembly avant la fusion. En particulier, les jetons de métadonnées inline doivent être des jetons TypeRef ou MemberRef quand les types référencés ne sont pas définis dans le module virtuel qui contient le code IL. Ces jetons TypeRef ou MemberRef peuvent être recherchés le [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) objet pour l’objet ICorDebugModule virtuel correspondant.|Retourne le code IL dans l’image d’assembly après la fusion.|  
+|[ICorDebugCode:: GetCode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getcode-method.md) (en cas de référence au code IL uniquement)|Retourne le code IL qui serait valide dans une image d’assembly avant la fusion. En particulier, les jetons de métadonnées inline doivent être des jetons TypeRef ou MemberRef quand les types référencés ne sont pas définis dans le module virtuel qui contient le code IL. Ces jetons TypeRef ou MemberRef peuvent être recherchés dans l’objet [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) pour l’objet virtuel ICorDebugModule correspondant.|Retourne le code IL dans l’image d’assembly après la fusion.|  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

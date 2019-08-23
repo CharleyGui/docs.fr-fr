@@ -6,50 +6,50 @@ helpviewer_keywords:
 - LINQ queries [Visual Basic]
 - LINQ [Visual Basic], writing queries
 ms.assetid: 4affb732-3e9b-4479-aa31-1f9bd8183cbe
-ms.openlocfilehash: 6f6968713fdb1c0ec0ee9f9da3b199a649938de5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5c83d888f65ce5c216327e94c5d4d1267fb93c29
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61907476"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69952008"
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a>Écriture de votre première requête LINQ (Visual Basic)
-Une *requête* est une expression qui récupère des données d’une source de données. Les requêtes sont exprimées dans un langage de requête dédié. Au fil du temps, différents langages ont été développées pour différents types de sources de données, par exemple, SQL pour les bases de données relationnelles et XQuery pour XML. Cela rend nécessaire pour le développeur d’applications à apprendre un nouveau langage de requête pour chaque type de source de données ou format de données qui est pris en charge.  
+Une *requête* est une expression qui récupère des données d’une source de données. Les requêtes sont exprimées dans un langage de requête dédié. Au fil du temps, des langages différents ont été développés pour différents types de sources de données, par exemple, SQL pour les bases de données relationnelles et XQuery pour XML. Cela oblige le développeur d’applications à apprendre un nouveau langage de requête pour chaque type de source de données ou format de données pris en charge.  
   
- [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] simplifie la situation en proposant un modèle cohérent pour l’utilisation des données entre les différents types de sources de données et formats. Dans une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], vous travaillez toujours avec des objets. Vous utilisez les mêmes modèles de codage de base pour interroger et transformer des données dans des documents XML, bases de données SQL, les jeux de données ADO.NET et entités, collections .NET Framework et n’importe quel autre source ou le format pour lequel un [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] fournisseur n’est disponible. Ce document décrit les trois phases de la création et l’utilisation de basic [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] requêtes.  
+ [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]simplifie la situation en offrant un modèle cohérent pour l’utilisation des données dans différents types de sources et de formats de données. Dans une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], vous travaillez toujours avec des objets. Vous utilisez les mêmes modèles de codage de base pour interroger et transformer des données dans des documents XML, des bases de données SQL, des jeux de données ADO.net et des entités, des collections [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] .NET Framework et toute autre source ou format pour laquelle un fournisseur est disponible. Ce document décrit les trois phases de création et d’utilisation des requêtes [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] de base.  
   
-## <a name="three-stages-of-a-query-operation"></a>Trois phases d’une opération de requête  
- [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] opérations de requête se composent de trois actions :  
+## <a name="three-stages-of-a-query-operation"></a>Trois étapes d’une opération de requête  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]les opérations de requête se composent de trois actions:  
   
-1. Obtenir la source de données ou des sources.  
+1. Obtenez la ou les sources de données.  
   
 2. Création de la requête  
   
 3. Exécution de la requête  
   
- Dans [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], l’exécution d’une requête est distincte de la création de la requête. Vous ne récupérez pas toutes les données simplement en créant une requête. Ce point est abordé en détail plus loin dans cette rubrique.  
+ Dans [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], l’exécution d’une requête est distincte de la création de la requête. Vous ne récupérez pas de données simplement en créant une requête. Ce point est abordé en détail plus loin dans cette rubrique.  
   
- L’exemple suivant illustre les trois parties d’une opération de requête. L’exemple utilise un tableau d’entiers comme source de données à des fins de démonstration. Toutefois, les mêmes concepts s’appliquent également à d’autres sources de données.  
+ L’exemple suivant illustre les trois parties d’une opération de requête. L’exemple utilise un tableau d’entiers comme source de données pratique à des fins de démonstration. Toutefois, les mêmes concepts s’appliquent également à d’autres sources de données.  
   
 > [!NOTE]
->  Sur le [Page Compiler, Concepteur de projets (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic), vérifiez que **Option infer** a la valeur **sur**.  
+> Sur la [page compiler, Project Designer (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic), vérifiez que **Option Infer** a la valeur **on**.  
   
  [!code-vb[VbLINQFirstQuery#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#1)]  
   
- Sortie :  
+ Sortie :  
   
  `0 2 4 6`  
   
 ## <a name="the-data-source"></a>Source de données  
- Étant donné que la source de données dans l’exemple précédent est un tableau, il prend en charge implicitement générique <xref:System.Collections.Generic.IEnumerable%601> interface. Il est fait qui vous permet d’utiliser un tableau comme source de données pour un [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] requête. Les types qui prennent en charge <xref:System.Collections.Generic.IEnumerable%601> ou une interface dérivée, comme l’interface générique <xref:System.Linq.IQueryable%601>, sont appelés des *types requêtables*.  
+ Étant donné que la source de données dans l’exemple précédent est un tableau, elle prend en <xref:System.Collections.Generic.IEnumerable%601> charge implicitement l’interface générique. C’est ce fait qui vous permet d’utiliser un tableau comme source de données pour une [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] requête. Les types qui prennent en charge <xref:System.Collections.Generic.IEnumerable%601> ou une interface dérivée, comme l’interface générique <xref:System.Linq.IQueryable%601>, sont appelés des *types requêtables*.  
   
- Comme un type implicitement requêtable, le tableau ne nécessite aucune modification ni traitement spécial pour servir une [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] source de données. Vaut également pour n’importe quel type de collection qui prend en charge <xref:System.Collections.Generic.IEnumerable%601>, y compris le générique <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.Dictionary%602>et d’autres classes dans la bibliothèque de classes .NET Framework.  
+ En tant que type implicitement interrogeable, le tableau ne nécessite aucune modification ni traitement spécial pour servir [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] de source de données. Il en va de même pour tout type de collection <xref:System.Collections.Generic.IEnumerable%601>qui prend en charge <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.Dictionary%602>y compris les classes génériques,, et autres dans la bibliothèque de classes .NET Framework.  
   
- Si la source de données n’implémente pas déjà <xref:System.Collections.Generic.IEnumerable%601>, un [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] fournisseur est nécessaire pour implémenter les fonctionnalités de la *opérateurs de requête standard* pour cette source de données. Par exemple, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] gère les tâches de chargement d’un document XML dans un requêtable <xref:System.Xml.Linq.XElement> type, comme illustré dans l’exemple suivant. Pour plus d’informations sur les opérateurs de requête standard, consultez [présentation des opérateurs de requête Standard (Visual Basic)](standard-query-operators-overview.md).  
+ Si les données sources ne sont pas encore <xref:System.Collections.Generic.IEnumerable%601>implémentées [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] , un fournisseur est nécessaire pour implémenter les fonctionnalités des *opérateurs de requête standard* pour cette source de données. Par exemple, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] gère le travail de chargement d’un document XML dans un <xref:System.Xml.Linq.XElement> type interrogeable, comme indiqué dans l’exemple suivant. Pour plus d’informations sur les opérateurs de requête standard, consultez [vue d’ensemble des opérateurs de requête standard (Visual Basic)](standard-query-operators-overview.md).  
   
  [!code-vb[VbLINQFirstQuery#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#2)]  
   
- Avec [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], vous créez tout d’abord un mappage objet / relationnel au moment du design, manuellement ou en utilisant le [outils LINQ to SQL dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2) dans Visual Studio. Vous écrivez vos requêtes pour des objets. Ensuite, au moment de l’exécution, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] gère la communication avec la base de données. Dans l’exemple suivant, `customers` représente une table spécifique dans la base de données, et <xref:System.Data.Linq.Table%601> prend en charge générique <xref:System.Linq.IQueryable%601>.  
+ Avec [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], vous créez tout d’abord un mappage objet/relationnel au moment du design, soit manuellement, soit à l’aide des [outils de LINQ to SQL dans](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2) Visual Studio dans Visual Studio. Vous écrivez vos requêtes pour des objets. Ensuite, au moment de l’exécution, [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] gère la communication avec la base de données. Dans l’exemple suivant, `customers` représente une table spécifique dans la base de données <xref:System.Data.Linq.Table%601> et prend <xref:System.Linq.IQueryable%601>en charge le générique.  
   
 ```vb  
 ' Create a data source from a SQL table.  
@@ -57,37 +57,37 @@ Dim db As New DataContext("C:\Northwind\Northwnd.mdf")
 Dim customers As Table(Of Customer) = db.GetTable(Of Customer)  
 ```  
   
- Pour plus d’informations sur la création de types de sources de données spécifiques, consultez la documentation relative aux différents fournisseurs [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. (Pour obtenir la liste de ces fournisseurs, consultez [LINQ (Language-Integrated Query)](../../../../visual-basic/programming-guide/concepts/linq/index.md).) La règle de base est simple : un [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] source de données est n’importe quel objet qui prend en charge le modèle générique <xref:System.Collections.Generic.IEnumerable%601> interface ou une interface qui hérite de celle-ci.  
+ Pour plus d’informations sur la création de types de sources de données spécifiques, consultez la documentation relative aux différents fournisseurs [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. (Pour obtenir la liste de ces fournisseurs, consultez [LINQ (Language-Integrated Query)](../../../../visual-basic/programming-guide/concepts/linq/index.md).) La règle de base est simple: [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] une source de données est un objet qui prend <xref:System.Collections.Generic.IEnumerable%601> en charge l’interface générique ou une interface qui hérite de celui-ci.  
   
 > [!NOTE]
->  Types tels que <xref:System.Collections.ArrayList> qui prennent en charge le non générique <xref:System.Collections.IEnumerable> interface peut également être utilisée en tant que [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] des sources de données. Pour obtenir un exemple qui utilise un <xref:System.Collections.ArrayList>, consultez [Comment : Interroger un ArrayList avec LINQ (Visual Basic)](how-to-query-an-arraylist-with-linq.md).  
+> Les types tels <xref:System.Collections.ArrayList> que qui prennent en charge l' <xref:System.Collections.IEnumerable> interface non générique peuvent également être [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] utilisés comme sources de données. Pour obtenir un exemple qui utilise <xref:System.Collections.ArrayList>un, [consultez Procédure: Interrogez une ArrayList avec LINQ (Visual Basic](how-to-query-an-arraylist-with-linq.md)).  
   
 ## <a name="the-query"></a>La requête  
- Dans la requête, vous spécifiez les informations que vous souhaitez récupérer à partir de la source de données ou des sources. Vous avez également la possibilité de spécifier comment ces informations doivent être triées, regroupées ou structurées avant d’être retournée. Pour activer la création de requête, Visual Basic a incorporé nouvelle syntaxe de requête dans le langage.  
+ Dans la requête, vous spécifiez les informations que vous souhaitez récupérer à partir de la ou des sources de données. Vous avez également la possibilité de spécifier la façon dont ces informations doivent être triées, regroupées ou structurées avant d’être retournées. Pour permettre la création de requêtes, Visual Basic a incorporé une nouvelle syntaxe de requête dans le langage.  
   
- Lorsqu’elle est exécutée, la requête dans l’exemple suivant retourne tous les nombres pairs à partir d’un tableau d’entiers, `numbers`.  
+ Lorsqu’elle est exécutée, la requête de l’exemple suivant retourne tous les nombres pairs d’un tableau d' `numbers`entiers,.  
   
  [!code-vb[VbLINQFirstQuery#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#1)]  
   
- L’expression de requête contient trois clauses : `From`, `Where`, et `Select`. La fonction spécifique et l’objectif de chaque clause d’expression de requête est abordée dans [opérations de requête de base (Visual Basic)](basic-query-operations.md). Pour plus d’informations, consultez [requêtes](../../../../visual-basic/language-reference/queries/index.md). Notez que dans [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], une définition de requête est souvent stockée dans une variable et exécutée ultérieurement. La requête variable, comme `evensQuery` dans l’exemple précédent, doit être un type requêtable. Le type de `evensQuery` est `IEnumerable(Of Integer)`, attribué par le compilateur à l’aide de l’inférence de type local.  
+ L’expression de requête contient trois clauses `From`: `Where`, et `Select`. La fonction et l’objectif spécifiques de chaque clause d’expression de requête sont décrits dans [opérations de requête de base (Visual Basic)](basic-query-operations.md). Pour plus d’informations, consultez [requêtes](../../../../visual-basic/language-reference/queries/index.md). Notez que dans [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], une définition de requête est souvent stockée dans une variable et exécutée ultérieurement. La variable de requête, telle `evensQuery` que dans l’exemple précédent, doit être un type interrogeable. Le type de `evensQuery` est `IEnumerable(Of Integer)`, assigné par le compilateur à l’aide de l’inférence de type local.  
   
- Il est important de se rappeler que la variable de requête n’effectue aucune action et ne retourne aucune donnée. Il stocke uniquement la définition de requête. Dans l’exemple précédent, il est le `For Each` boucle qui exécute la requête.  
+ Il est important de se souvenir que la variable de requête elle-même n’effectue aucune action et ne retourne aucune donnée. Il stocke uniquement la définition de la requête. Dans l’exemple précédent, il s’agit `For Each` de la boucle qui exécute la requête.  
   
 ## <a name="query-execution"></a>Exécution de la requête  
- Exécution de la requête est distincte de la création de requête. Création de requête définit la requête, mais l’exécution est déclenchée par un mécanisme différent. Une requête peut être exécutée dès qu’il est défini (*l’exécution immédiate*), ou la définition peut être stockée et la requête peut être exécutée ultérieurement (*exécution différée*).  
+ L’exécution de la requête est distincte de la création de la requête. La création de requête définit la requête, mais l’exécution est déclenchée par un mécanisme différent. Une requête peut être exécutée dès qu’elle est définie (*exécution immédiate*), ou la définition peut être stockée et la requête peut être exécutée ultérieurement (*exécution différée*).  
   
 ### <a name="deferred-execution"></a>Exécution différée  
- Classique [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] requête ressemble à celui de l’exemple précédent, dans lequel `evensQuery` est défini. Il crée la requête, mais sans l’exécuter immédiatement. Au lieu de cela, la définition de la requête est stockée dans la variable de requête `evensQuery`. Vous exécutez la requête ultérieurement, généralement en utilisant un `For Each` boucle, ce qui retourne une séquence de valeurs, ou en appliquant un opérateur de requête standard, tels que `Count` ou `Max`. Ce processus est appelé *exécution différée*.  
+ Une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] classique ressemble à celle de l’exemple précédent, dans laquelle `evensQuery` est défini. Elle crée la requête, mais ne l’exécute pas immédiatement. Au lieu de cela, la définition de la requête est `evensQuery`stockée dans la variable de requête. Vous exécutez la requête ultérieurement, en général à l' `For Each` aide d’une boucle, qui retourne une séquence de valeurs, ou en appliquant un opérateur de `Count` requête `Max`standard, tel que ou. Ce processus est appelé « *exécution différée*».  
   
  [!code-vb[VbLINQFirstQuery#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#7)]  
   
- Pour une séquence de valeurs, vous accédez aux données récupérées à l’aide de la variable d’itération dans le `For Each` boucle (`number` dans l’exemple précédent). Étant donné que la variable de requête, `evensQuery`, conserve la définition de requête plutôt que les résultats de requête, vous pouvez exécuter une requête aussi souvent que vous le souhaitez à l’aide de la variable de requête plusieurs fois. Par exemple, vous pouvez avoir une base de données dans votre application en cours de mise à jour en permanence par une application distincte. Une fois que vous avez créé une requête qui Récupère des données à partir de cette base de données, vous pouvez utiliser un `For Each` boucle pour exécuter la requête à plusieurs reprises, la récupération des données les plus récentes chaque fois.  
+ Pour une séquence de valeurs, vous accédez aux données récupérées à l’aide de la variable `For Each` d’itération`number` dans la boucle (dans l’exemple précédent). Étant donné que la variable `evensQuery`de requête,, contient la définition de la requête plutôt que les résultats de la requête, vous pouvez exécuter une requête aussi souvent que vous le souhaitez en utilisant plusieurs fois la variable de requête. Par exemple, vous pouvez avoir une base de données dans votre application en cours de mise à jour en continu par une application distincte. Une fois que vous avez créé une requête qui extrait les données de cette base de données, `For Each` vous pouvez utiliser une boucle pour exécuter la requête à plusieurs reprises, en extrayant les données les plus récentes à chaque fois.  
   
- L’exemple suivant montre comment l’exécution fonctionne. Après avoir `evensQuery2` est définie et exécutée avec un `For Each` boucle, comme dans les exemples précédents, certains éléments dans la source de données `numbers` sont modifiés. Ensuite, une deuxième `For Each` s’exécute en boucle `evensQuery2` à nouveau. Les résultats sont différents la deuxième fois, étant donné que le `For Each` boucle s’exécute la requête à nouveau, en utilisant les nouvelles valeurs dans `numbers`.  
+ L’exemple suivant montre comment fonctionne l’exécution différée. Une `evensQuery2` fois que est défini et exécuté `For Each` avec une boucle, comme dans les exemples précédents, certains éléments de la `numbers` source de données sont modifiés. Ensuite, une `For Each` deuxième boucle `evensQuery2` s’exécute à nouveau. Les résultats sont différents la deuxième fois, car la `For Each` boucle exécute à nouveau la requête, en utilisant les nouvelles valeurs `numbers`de.  
   
  [!code-vb[VbLINQFirstQuery#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#3)]  
   
- Sortie :  
+ Sortie :  
   
  `Evens in original array:`  
   
@@ -98,25 +98,25 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
  `0  10  2  22  8`  
   
 ### <a name="immediate-execution"></a>Exécution immédiate  
- Dans l’exécution différée des requêtes, la définition de la requête est stockée dans une variable de requête pour une exécution ultérieure. Dans l’exécution immédiate, la requête est exécutée au moment de sa définition. L’exécution est déclenchée lorsque vous appliquez une méthode qui requiert l’accès aux éléments individuels du résultat de requête. Fréquence à laquelle l’exécution immédiate est forcée à l’aide d’un des opérateurs de requête standard qui retournent des valeurs uniques. Sont des exemples `Count`, `Max`, `Average`, et `First`. Ces opérateurs de requête standard exécutent la requête dès qu’ils sont appliqués pour calculer et retourner un résultat singleton. Pour plus d’informations sur les opérateurs de requête standard qui retournent des valeurs uniques, consultez [opérations d’agrégation](aggregation-operations.md), [opérations d’élément](element-operations.md), et [opérations de quantificateur](quantifier-operations.md).  
+ Dans l’exécution différée des requêtes, la définition de la requête est stockée dans une variable de requête pour une exécution ultérieure. En cours d’exécution, la requête est exécutée au moment de sa définition. L’exécution est déclenchée lorsque vous appliquez une méthode qui requiert l’accès à des éléments individuels du résultat de la requête. L’exécution immédiate est souvent forcée à l’aide de l’un des opérateurs de requête standard qui retournent des valeurs uniques. Les exemples `Count`sont `Max` ,`Average`, et `First`. Ces opérateurs de requête standard exécutent la requête dès qu’ils sont appliqués pour calculer et retourner un résultat Singleton. Pour plus d’informations sur les opérateurs de requête standard qui retournent des valeurs uniques, consultez opérations d' [agrégation](aggregation-operations.md), [opérations d’élément](element-operations.md)et [opérations de quantificateur](quantifier-operations.md).  
   
- La requête suivante retourne un nombre de chiffres pairs dans un tableau d’entiers. La définition de requête n’est pas enregistrée, et `numEvens` est un simple `Integer`.  
+ La requête suivante retourne le nombre de nombres pairs dans un tableau d’entiers. La définition de la requête n’est pas `numEvens` enregistrée et est `Integer`un simple.  
   
  [!code-vb[VbLINQFirstQuery#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#4)]  
   
- Vous pouvez obtenir le même résultat à l’aide de la `Aggregate` (méthode).  
+ Vous pouvez obtenir le même résultat à l’aide `Aggregate` de la méthode.  
   
  [!code-vb[VbLINQFirstQuery#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#5)]  
   
- Vous pouvez également forcer l’exécution d’une requête en appelant le `ToList` ou `ToArray` méthode sur une requête (immédiat) ou d’une variable de requête (différé), comme indiqué dans le code suivant.  
+ Vous pouvez également forcer l’exécution d’une requête en appelant `ToList` la `ToArray` méthode ou sur une requête (immédiate) ou une variable de requête (différée), comme indiqué dans le code suivant.  
   
  [!code-vb[VbLINQFirstQuery#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#6)]  
   
- Dans les exemples précédents, `evensQuery3` est une requête, mais `evensList` est une liste et `evensArray` est un tableau.  
+ Dans les exemples précédents, `evensQuery3` est une variable de requête, `evensList` mais est une liste `evensArray` et est un tableau.  
   
- À l’aide de `ToList` ou `ToArray` pour forcer immédiatement l’exécution est particulièrement utile dans les scénarios dans lesquels vous souhaitez exécuter immédiatement la requête et mettre en cache les résultats dans un objet de collection unique. Pour plus d’informations sur ces méthodes, consultez [conversion des Types de données](converting-data-types.md).  
+ L' `ToList` utilisation `ToArray` de ou pour forcer l’exécution immédiate est particulièrement utile dans les scénarios où vous souhaitez exécuter immédiatement la requête et mettre en cache les résultats dans un objet de collection unique. Pour plus d’informations sur ces méthodes, consultez [conversion des types de données](converting-data-types.md).  
   
- Vous pouvez également provoquer une requête doit être exécutée à l’aide un `IEnumerable` méthode telle que la <xref:Microsoft.VisualBasic.Collection.System%23Collections%23IEnumerable%23GetEnumerator%2A> (méthode).  
+ Vous pouvez également faire en sorte qu’une requête soit exécutée `IEnumerable` à l’aide d' <xref:Microsoft.VisualBasic.Collection.System%23Collections%23IEnumerable%23GetEnumerator%2A> une méthode telle que la méthode.  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <cryptoNameMapping> element
 - cryptoNameMapping element
 ms.assetid: c59c9494-149b-4ce6-b38d-371f896ae85c
-ms.openlocfilehash: c2652ac73c1d55f09a1f8511603003dc6d7291f9
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 87b24595f5013ad3b981256fd97bc758863c600b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659643"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921098"
 ---
 # <a name="cryptonamemapping-element"></a>\<cryptoNameMapping >, élément
 Contient des mappages de classes à des noms conviviaux.  
@@ -52,7 +52,7 @@ Contient des mappages de classes à des noms conviviaux.
 |`cryptoNameMapping`|Contient des mappages de classes à des noms conviviaux.|  
 |`mscorlib`|Contient l' \<élément cryptographySettings >.|  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre comment utiliser l'  **\<élément cryptoNameMapping >** pour référencer une classe de chiffrement et configurer le Runtime. Vous pouvez ensuite passer la chaîne «RSA» à la <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> méthode et utiliser la <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> méthode pour retourner un `MyCryptoRSAClass` objet.  
   
 ```xml  
@@ -78,5 +78,5 @@ Contient des mappages de classes à des noms conviviaux.
 
 - [Schéma des fichiers de configuration](../index.md)
 - [Schéma des paramètres de chiffrement](index.md)
-- [Cryptographic Services](../../../../../docs/standard/security/cryptographic-services.md)
+- [Cryptographic Services](../../../../standard/security/cryptographic-services.md)
 - [Configuration des classes de chiffrement](../../configure-cryptography-classes.md)

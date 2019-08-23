@@ -1,33 +1,33 @@
 ---
-title: 'Procédure : Réduire et masquer des Sections de Code (Visual Basic)'
+title: 'Procédure : Réduire et masquer des sections de code (Visual Basic)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic, code collapsing
 - Visual Basic, code hiding
 - Visual Basic code, collapsing and hiding
 ms.assetid: b770e8f5-e07d-491a-ab4b-a977980f9ba2
-ms.openlocfilehash: 367527fd638f6855077caf8ff5911edb333dfcbf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: db396adf24c12542f720d3b235068aea2329288d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648764"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69949728"
 ---
-# <a name="how-to-collapse-and-hide-sections-of-code-visual-basic"></a>Procédure : Réduire et masquer des Sections de Code (Visual Basic)
-Le `#Region` directive vous permet de réduire et masquer des sections de code dans des fichiers Visual Basic. Le `#Region` directive vous permet de spécifier un bloc de code que vous pouvez développer ou réduire lors de l’utilisation de l’éditeur de code Visual Studio. La possibilité de masquer le code de manière sélective rend vos fichiers plus gérable et plus facile à lire. Pour plus d’informations, voir [Mode Plan](/visualstudio/ide/outlining).  
+# <a name="how-to-collapse-and-hide-sections-of-code-visual-basic"></a>Procédure : Réduire et masquer des sections de code (Visual Basic)
+La `#Region` directive vous permet de réduire et de masquer des sections de code dans des fichiers de Visual Basic. La `#Region` directive vous permet de spécifier un bloc de code que vous pouvez développer ou réduire lors de l’utilisation de l’éditeur de code Visual Studio. La possibilité de masquer le code de manière sélective rend vos fichiers plus gérables et plus faciles à lire. Pour plus d’informations, voir [Mode Plan](/visualstudio/ide/outlining).  
   
- `#Region` directives prennent en charge les sémantiques de bloc de code comme `#If...#End If`. Cela signifie qu’ils ne peuvent pas commencer dans un bloc et se terminer par une autre ; le début et fin doivent être dans le même bloc. `#Region` directives ne sont pas prises en charge dans les fonctions.  
+ `#Region`les directives prennent en charge la sémantique de `#If...#End If`bloc de code telle que. Cela signifie qu’ils ne peuvent pas commencer dans un bloc et se terminer dans un autre; le début et la fin doivent se trouver dans le même bloc. `#Region`les directives ne sont pas prises en charge dans les fonctions.  
   
 ### <a name="to-collapse-and-hide-a-section-of-code"></a>Pour réduire et masquer une section de code  
   
-- Placez la section de code entre la `#Region` et `#End Region` instructions, comme dans l’exemple suivant :  
+- Placez la section de code entre les `#Region` instructions `#End Region` et, comme dans l’exemple suivant:  
   
      [!code-vb[VbVbalrConditionalComp#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConditionalComp/VB/Class1.vb#6)]  
   
-     Le `#Region` bloc peut être utilisé plusieurs fois dans un fichier de code ; par conséquent, les utilisateurs peuvent définir leurs propres blocs de procédures et des classes qui peuvent, à son tour, être réduits. `#Region` blocs peuvent également être imbriqués dans d’autres `#Region` blocs.  
+     Le `#Region` bloc peut être utilisé plusieurs fois dans un fichier de code. ainsi, les utilisateurs peuvent définir leurs propres blocs de procédures et de classes qui peuvent, à leur tour, être réduits. `#Region`les blocs peuvent également être imbriqués dans `#Region` d’autres blocs.  
   
     > [!NOTE]
-    >  Masquage du code n’empêche pas sa en cours de compilation et n’affecte pas `#If...#End If` instructions.  
+    > Le masquage du code ne l’empêche pas de le compiler et `#If...#End If` n’affecte pas les instructions.  
   
 ## <a name="see-also"></a>Voir aussi
 

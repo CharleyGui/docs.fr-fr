@@ -12,12 +12,12 @@ helpviewer_keywords:
 - mouse clicks [Windows Forms], simulating
 - mouse [Windows Forms], event simulation
 ms.assetid: 6abcb67e-3766-4af2-9590-bf5dabd17e41
-ms.openlocfilehash: 1d2e837ec13e6a0b507d004cd75c2f77ae0008dc
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 13ed0e5268f8bcfe2a504040803f3f96909657eb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583402"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964264"
 ---
 # <a name="how-to-simulate-mouse-and-keyboard-events-in-code"></a>Procédure : simuler des événements de souris et de clavier dans le code
 Windows Forms fournit plusieurs options pour simuler par programmation l'entrée de souris et de clavier. Cette rubrique offre une vue d'ensemble de ces options.  
@@ -42,7 +42,7 @@ Windows Forms fournit plusieurs options pour simuler par programmation l'entrée
 >  Si votre application est prévue pour une utilisation internationale avec différents claviers, l'utilisation de <xref:System.Windows.Forms.SendKeys.Send%2A?displayProperty=nameWithType> peut produire des résultats imprévisibles et doit être évitée.  
   
 > [!NOTE]
->  La classe <xref:System.Windows.Forms.SendKeys> a été mise à jour pour .NET Framework 3.0 pour pouvoir être utilisée dans les applications qui s'exécutent sur Windows Vista. La sécurité renforcée de Windows Vista (également appelée Contrôle de compte d'utilisateur) empêche le fonctionnement correcte de l'implémentation précédente.  
+> La classe <xref:System.Windows.Forms.SendKeys> a été mise à jour pour .NET Framework 3.0 pour pouvoir être utilisée dans les applications qui s'exécutent sur Windows Vista. La sécurité renforcée de Windows Vista (également appelée Contrôle de compte d'utilisateur) empêche le fonctionnement correcte de l'implémentation précédente.  
 >   
 >  La classe <xref:System.Windows.Forms.SendKeys> est vulnérable aux problèmes de synchronisation, que certains développeurs ont dû contourner. L'implémentation mise à jour est toujours vulnérable aux problèmes de synchronisation, mais est légèrement plus rapide et peut nécessiter certaines modifications des solutions de contournement. La classe <xref:System.Windows.Forms.SendKeys> tente d'abord d'utiliser l'implémentation précédente et, en cas d'échec, utilise la nouvelle implémentation. Ainsi, la classe <xref:System.Windows.Forms.SendKeys> peut se comporter différemment sur différents systèmes d'exploitation. En outre, quand la classe <xref:System.Windows.Forms.SendKeys> utilise la nouvelle implémentation, la méthode <xref:System.Windows.Forms.SendKeys.SendWait%2A> n'attend pas que les messages soient traités quand ils sont envoyés à un autre processus.  
 >   
@@ -69,7 +69,7 @@ Windows Forms fournit plusieurs options pour simuler par programmation l'entrée
 1. Activez la fenêtre d'application qui recevra les séquences de touches, puis appelez la méthode <xref:System.Windows.Forms.SendKeys.Send%2A> ou <xref:System.Windows.Forms.SendKeys.SendWait%2A> . Comme il n'existe aucune méthode managée permettant d'activer une autre application, vous devez utiliser des méthodes Windows natives pour forcer le focus sur d'autres applications. L'exemple de code suivant utilise l'appel de code non managé pour appeler les méthodes `FindWindow` et `SetForegroundWindow` pour activer la fenêtre de l'application Calculatrice, puis appelle <xref:System.Windows.Forms.SendKeys.SendWait%2A> pour émettre une série de calculs vers l'application Calculatrice.  
   
     > [!NOTE]
-    >  Les paramètres corrects de l'appel `FindWindow` qui recherche l'application Calculatrice varient en fonction de votre version de Windows.  Le code suivant recherche l'application Calculatrice sur [!INCLUDE[win7](../../../includes/win7-md.md)]. Sur [!INCLUDE[windowsver](../../../includes/windowsver-md.md)], remplacez le premier paramètre par « SciCalc ». Vous pouvez utiliser l'outil Spy++, fourni avec Visual Studio, pour déterminer les paramètres corrects.  
+    > Les paramètres corrects de l'appel `FindWindow` qui recherche l'application Calculatrice varient en fonction de votre version de Windows.  Le code suivant recherche l'application Calculatrice sur [!INCLUDE[win7](../../../includes/win7-md.md)]. Sur [!INCLUDE[windowsver](../../../includes/windowsver-md.md)], remplacez le premier paramètre par « SciCalc ». Vous pouvez utiliser l'outil Spy++, fourni avec Visual Studio, pour déterminer les paramètres corrects.  
   
      [!code-cpp[System.Windows.Forms.SimulateKeyPress#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/cpp/form1.cpp#5)]
      [!code-csharp[System.Windows.Forms.SimulateKeyPress#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/CS/form1.cs#5)]

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 90abece1-392e-4ade-94a1-30c75b0f7074
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ed88c8ff78006c14bdee51ba6f95aaaedd66cf41
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 6b72b9dbeff6aa06a132dc7ec3ddd9477553c4c2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67774829"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967997"
 ---
 # <a name="icordebugvariablesymbolgetvalue-method"></a>Méthode ICorDebugVariableSymbol::GetValue
 Obtient la valeur d'une variable sous forme d'un tableau d'octets.  
@@ -49,14 +49,14 @@ HRESULT GetValue(
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
->  Cette méthode est uniquement disponible avec .NET Native.  
+> Cette méthode est uniquement disponible avec .NET Native.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

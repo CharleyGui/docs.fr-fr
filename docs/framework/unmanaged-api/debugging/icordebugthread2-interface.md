@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 82648714c375998e9daa1bb59cd9ebd9802b5794
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4d21c221bba3ac668924003f96580bb660229ad7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61993939"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963004"
 ---
 # <a name="icordebugthread2-interface"></a>ICorDebugThread2, interface
 Sert d’extension logique à l’interface ICorDebugThread.  
@@ -30,23 +30,23 @@ Sert d’extension logique à l’interface ICorDebugThread.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetActiveFunctions, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getactivefunctions-method.md)|Obtient un tableau d’instances COR_ACTIVE_FUNCTION qui contiennent des données concernant les fonctions actives dans les frames d’un thread.|  
+|[GetActiveFunctions, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getactivefunctions-method.md)|Obtient un tableau d’instances COR_ACTIVE_FUNCTION qui contiennent les données relatives aux fonctions actives dans les frames d’un thread.|  
 |[GetConnectionID, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getconnectionid-method.md)|Obtient un identificateur de connexion pour ce `ICorDebugThread2`.|  
 |[GetTaskID, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-gettaskid-method.md)|Obtient un identificateur de tâche pour ce `ICorDebugThread2`.|  
-|[GetVolatileOSThreadID, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getvolatileosthreadid-method.md)|Obtient l’identificateur de thread de système d’exploitation pour ce `ICorDebugThread2`.|  
+|[GetVolatileOSThreadID, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-getvolatileosthreadid-method.md)|Obtient l’identificateur de thread de système d’exploitation `ICorDebugThread2`pour ce.|  
 |[InterceptCurrentException, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugthread2-interceptcurrentexception-method.md)|Permet à un débogueur d’intercepter l’exception actuelle sur un thread.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
->  Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
+> Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

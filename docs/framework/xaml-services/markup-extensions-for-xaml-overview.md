@@ -5,12 +5,12 @@ helpviewer_keywords:
 - markup extensions [XAML Services], custom
 - XAML [XAML Services], markup extensions
 ms.assetid: 261b2b11-2dc0-462f-8c66-55b8c9c6e436
-ms.openlocfilehash: 29cf4e03c1e4f91cd4390b84dd62c07268fe0189
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 5c29899846e7210c02b6bcc2b677b05581a5c6b1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364321"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939711"
 ---
 # <a name="markup-extensions-for-xaml-overview"></a>Vue d'ensemble des extensions de balisage pour XAML
 Les extensions de balisage constituent une technique XAML permettant d'obtenir une valeur qui n'est ni une primitive ni un type XAML spécifique. Pour l'utilisation d'attributs, les extensions de balisage utilisent la séquence de caractères connue d'une accolade ouvrante `{` pour entrer la portée d'extension de balisage et d'une accolade fermante `}` pour quitter. Lors de l'utilisation des services XAML .NET Framework, vous pouvez utiliser certaines des extensions de balisage prédéfinies du langage XAML à partir de l'assembly System.Xaml. Vous pouvez également créer une sous-classe à partir de la classe <xref:System.Windows.Markup.MarkupExtension> , définie dans System.Xaml, et définir vos propres extensions de balisage. Vous pouvez également utiliser des extensions de balisage définies par une infrastructure particulière, si vous référencez déjà cette infrastructure.  
@@ -22,7 +22,7 @@ Les extensions de balisage constituent une technique XAML permettant d'obtenir u
  Plusieurs extensions de balisage sont implémentées par les services XAML .NET Framework pour la prise en charge du langage XAML. Ces extensions de balisage font partie de la spécification de XAML en tant que langage. Elles sont généralement identifiables par le préfixe `x:` dans la syntaxe, comme observé dans l'utilisation courante. Les implémentations des services XAML .NET Framework pour ces éléments de langage XAML dérivent toutes de la classe de base  <xref:System.Windows.Markup.MarkupExtension> .  
   
 > [!NOTE]
->  Le préfixe `x:` est utilisé pour le mappage d'espace de noms XAML standard de l'espace de noms du langage XAML, dans l'élément racine d'une production XAML. Par exemple, les modèles de projet et de page Visual Studio pour différents frameworks spécifiques lancent un fichier `x:` XAML à l’aide de ce mappage. Vous pouvez choisir un autre jeton de préfixe pour votre propre mappage d'espace de noms XAML. Toutefois, dans cette documentation, le mappage `x:` par défaut est considéré comme un moyen d'identification des entités qui représentent une partie définie de l'espace de noms XAML du langage XAML, par opposition à l'espace de noms XAML par défaut d'une infrastructure spécifique ou à d'autres espaces de noms CLR ou XML arbitraires.  
+> Le préfixe `x:` est utilisé pour le mappage d'espace de noms XAML standard de l'espace de noms du langage XAML, dans l'élément racine d'une production XAML. Par exemple, les modèles de projet et de page Visual Studio pour différents frameworks spécifiques lancent un fichier `x:` XAML à l’aide de ce mappage. Vous pouvez choisir un autre jeton de préfixe pour votre propre mappage d'espace de noms XAML. Toutefois, dans cette documentation, le mappage `x:` par défaut est considéré comme un moyen d'identification des entités qui représentent une partie définie de l'espace de noms XAML du langage XAML, par opposition à l'espace de noms XAML par défaut d'une infrastructure spécifique ou à d'autres espaces de noms CLR ou XML arbitraires.  
   
 ### <a name="xtype"></a>x:Type  
  `x:Type` fournit l'objet <xref:System.Type> pour le type nommé. Cette fonctionnalité est le plus souvent utilisée dans des mécanismes de différé qui utilisent le type CLR sous-jacent et la dérivation de type comme identificateur ou moniker de regroupement. Les styles et modèles WPF, ainsi que leur utilisation des propriétés `TargetType` , en sont un exemple spécifique. Pour plus d'informations, consultez [x:Type Markup Extension](x-type-markup-extension.md).  

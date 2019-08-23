@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8fd82418da26ab0cd32b007b4613d588dfa695eb
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1e94e4da0eea06ce9cc0110002b1def9e4dd4989
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745292"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939141"
 ---
 # <a name="icordebugblockingobjectenumnext-method"></a>ICorDebugBlockingObjectEnum::Next, méthode
-Obtient le nombre spécifié de [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) objets à partir de l’énumération, en commençant à la position actuelle.  
+Obtient le nombre spécifié d’objets [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) à partir de l’énumération, en commençant à la position actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,13 +38,13 @@ HRESULT Next([in] ULONG  celt,
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- [in] Le nombre d’objets à récupérer.  
+ dans Nombre d’objets à récupérer.  
   
  `values`  
- [out] Un tableau de pointeurs vers [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) objets.  
+ à Tableau de pointeurs vers des objets [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) .  
   
  `pceltFetched`  
- [out] Pointeur vers le nombre d’objets qui ont été récupérées.  
+ à Pointeur vers le nombre d’objets qui ont été récupérés.  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne les HRESULT spécifiques suivants.  
@@ -57,17 +57,17 @@ HRESULT Next([in] ULONG  celt,
 ## <a name="remarks"></a>Notes  
  Cette méthode fonctionne comme un énumérateur COM classique.  
   
- Les valeurs du tableau d’entrée doivent être au moins de taille `celt`. Le tableau est rempli avec une l’autre `celt` valeurs dans l’énumération ou avec toutes les valeurs restantes si moins de `celt` restent. Lorsque cette méthode est retournée, `pceltFetched` sera remplie avec le nombre de valeurs qui ont été récupérées. Si `values` contient des pointeurs non valides ou pointe vers une mémoire tampon qui est inférieure à `celt`, ou si `pceltFetched` est un pointeur non valide, le résultat est indéfini.  
+ Les valeurs du tableau d’entrée doivent être au moins `celt`de la taille. Le tableau sera rempli avec les valeurs suivantes `celt` dans l’énumération ou avec toutes les valeurs restantes si elles sont inférieures à. `celt` Lorsque cette méthode est retournée, `pceltFetched` est rempli avec le nombre de valeurs qui ont été récupérées. Si `values` contient des pointeurs non valides ou pointe vers une mémoire tampon `celt`inférieure à, `pceltFetched` ou si est un pointeur non valide, le résultat n’est pas défini.  
   
 > [!NOTE]
->  Bien que le [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) structure n’a pas besoin être libéré, l’interface « ICorDebugValue » qu’elle n’a besoin d’être publié.  
+> Bien que la structure [CorDebugBlockingObject](../../../../docs/framework/unmanaged-api/debugging/cordebugblockingobject-structure.md) n’ait pas besoin d’être libérée, l’interface «ICorDebugValue» à l’intérieur de celle-ci doit être libérée.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

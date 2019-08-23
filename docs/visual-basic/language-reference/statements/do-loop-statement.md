@@ -20,15 +20,15 @@ helpviewer_keywords:
 - loops, exiting
 - Loop keyword [Visual Basic], Do...Loop statement
 ms.assetid: 892f9096-b3e2-4aee-834d-83bc4e2c379d
-ms.openlocfilehash: 3ff3d67f38f510b798da3e470de066cff1e98f29
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 75a2129a9f332024831d97021e381f1b3d4fa048
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638773"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942995"
 ---
 # <a name="doloop-statement-visual-basic"></a>Do...Loop, instruction (Visual Basic)
-Répète un bloc d’instructions tant qu’un `Boolean` condition est `True` ou jusqu'à ce que la condition devient `True`.  
+Répète un bloc d’instructions tant qu’une `Boolean` condition est `True` ou jusqu’à ce que `True`la condition devienne.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,55 +54,55 @@ Loop { While | Until } condition
   
 |Terme|Définition|  
 |---|---|  
-|`Do`|Obligatoire. Démarre la définition de la `Do` boucle.|  
-|`While`|Requis, sauf si l'option `Until` est utilisée. Répétez la boucle jusqu'à ce que `condition` est `False`.|  
-|`Until`|Requis, sauf si l'option `While` est utilisée. Répétez la boucle jusqu'à ce que `condition` est `True`.|  
-|`condition`|Optionnel. `Boolean` expression. Si `condition` est `Nothing`, Visual Basic traite en tant que `False`.|  
-|`statements`|Facultatif. Une ou plusieurs instructions sont répétées lors ou jusqu'à ce que, `condition` est `True`.|  
-|`Continue Do`|Facultatif. Transfère le contrôle à l’itération suivante de la `Do` boucle.|  
-|`Exit Do`|Optionnel. Transfère le contrôle de la `Do` boucle.|  
-|`Loop`|Obligatoire. Termine la définition de la `Do` boucle.|  
+|`Do`|Requis. Démarre la définition de la `Do` boucle.|  
+|`While`|Requis, sauf si l'option `Until` est utilisée. Répétez la boucle `condition` jusqu' `False`à ce que soit.|  
+|`Until`|Requis, sauf si l'option `While` est utilisée. Répétez la boucle `condition` jusqu' `True`à ce que soit.|  
+|`condition`|facultatif. `Boolean`formule. Si `condition` `False`est `Nothing`, Visual Basic le traite comme.|  
+|`statements`|facultatif. Une ou plusieurs instructions qui sont répétées quand, ou jusqu' `condition` à `True`, est.|  
+|`Continue Do`|facultatif. Transfère le contrôle à l’itération suivante de `Do` la boucle.|  
+|`Exit Do`|facultatif. Transfère le contrôle hors de `Do` la boucle.|  
+|`Loop`|Requis. Termine la définition de la `Do` boucle.|  
   
 ## <a name="remarks"></a>Notes  
- Utilisez un `Do...Loop` structure lorsque vous souhaitez répéter un ensemble d’instructions un nombre indéfini de fois, jusqu'à ce qu’une condition est satisfaite. Si vous souhaitez répéter les instructions un nombre défini de fois, le [pour... L’instruction suivante](../../../visual-basic/language-reference/statements/for-next-statement.md) constitue généralement un meilleur choix.  
+ Utilisez une `Do...Loop` structure lorsque vous souhaitez répéter un ensemble d’instructions un nombre indéfini de fois, jusqu’à ce qu’une condition soit satisfaite. Si vous souhaitez répéter les instructions un nombre défini de fois, le [... L’instruction suivante](../../../visual-basic/language-reference/statements/for-next-statement.md) est généralement un meilleur choix.  
   
  Vous pouvez utiliser `While` ou `Until` pour spécifier `condition`, mais pas les deux.  
   
- Vous pouvez tester `condition` qu’une seule fois, au début ou la fin de la boucle. Si vous testez `condition` au début de la boucle (dans le `Do` instruction), la boucle ne peut pas s’exécuter même une seule fois. Si vous testez à la fin de la boucle (dans le `Loop` instruction), la boucle s’exécute toujours au moins une fois.  
+ Vous ne pouvez `condition` tester qu’une seule fois, au début ou à la fin de la boucle. Si vous effectuez `condition` un test au début de la boucle (dans `Do` l’instruction), la boucle peut ne pas s’exécuter même une fois. Si vous testez à la fin de la boucle (dans `Loop` l’instruction), la boucle s’exécute toujours au moins une fois.  
   
- La condition généralement le résultat d’une comparaison de deux valeurs, mais il peut être toute expression qui prend la valeur d’un [Type de données booléen](../../../visual-basic/language-reference/data-types/boolean-data-type.md) valeur (`True` ou `False`). Cela inclut les valeurs d’autres types de données, telles que des types numériques, qui ont été convertis en `Boolean`.  
+ La condition résulte généralement d’une comparaison de deux valeurs, mais il peut s’agir d’une expression qui prend la valeur d’une valeur de`True` type `False`de [données booléenne](../../../visual-basic/language-reference/data-types/boolean-data-type.md) (ou). Cela comprend les valeurs d’autres types de données, tels que les types numériques, qui ont `Boolean`été converties en.  
   
- Vous pouvez imbriquer `Do` boucles en plaçant une boucle à l’intérieur d’une autre. Vous pouvez également imbriquer des différents types de structures de contrôle dans d’autres. Pour plus d’informations, consultez [Structures de contrôle imbriquées](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).  
+ Vous pouvez imbriquer `Do` des boucles en plaçant une boucle dans une autre. Vous pouvez également imbriquer différents genres de structures de contrôle dans les deux. Pour plus d’informations, consultez [structures de contrôle imbriquées](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).  
   
 > [!NOTE]
->  Le `Do...Loop` structure vous donne plus de souplesse que le [tandis que... Tandis que l’instruction End](../../../visual-basic/language-reference/statements/while-end-while-statement.md) , car elle vous permet de décider s’il faut mettre fin à la boucle lorsque `condition` cesse d’être `True` ou quand il devient `True`. Il vous permet également de tester `condition` au début ou la fin de la boucle.  
+> La `Do...Loop` structure offre plus de souplesse que le [tout... End While](../../../visual-basic/language-reference/statements/while-end-while-statement.md) , car elle vous permet de décider s’il faut mettre fin `condition` à la `True` boucle lorsque cesse d’être `True`ou lorsqu’elle se transforme pour la première fois. Elle vous permet également de tester `condition` au début ou à la fin de la boucle.  
   
-## <a name="exit-do"></a>Exit Do  
- Le [Exit Do](../../../visual-basic/language-reference/statements/exit-statement.md) instruction peut fournir une autre façon de quitter un `Do…Loop`. `Exit Do` transfère le contrôle immédiatement à l’instruction qui suit la `Loop` instruction.  
+## <a name="exit-do"></a>Quitter  
+ L’instruction [Exit Do](../../../visual-basic/language-reference/statements/exit-statement.md) peut fournir une autre façon de quitter un `Do…Loop`. `Exit Do`transfère immédiatement le contrôle à l’instruction qui suit `Loop` l’instruction.  
   
- `Exit Do` est souvent utilisé après l’évaluation de certaines conditions, par exemple dans un `If...Then...Else` structure. Vous souhaiterez peut-être quitter une boucle si vous détectez une condition qui rend inutile ou impossible pour poursuivre l’itération, comme une valeur erronée ou une demande d’arrêt. Une des utilisations de `Exit Do` pour tester une condition qui peut entraîner un *boucle sans fin*, qui est une boucle qui pourrait s’exécuter de volumineux ou même infini de fois. Vous pouvez utiliser `Exit Do` pour abandonner la boucle.  
+ `Exit Do`est souvent utilisé après l’évaluation d’une condition, par exemple dans `If...Then...Else` une structure. Vous pouvez quitter une boucle si vous détectez une condition qui le rend inutile ou impossible de poursuivre l’itération, telle qu’une valeur erronée ou une demande d’arrêt. L’une des `Exit Do` utilisations de consiste à tester une condition susceptible de provoquer une *boucle*infinie, qui est une boucle qui peut exécuter un nombre de fois trop long, voire infini. Vous pouvez utiliser `Exit Do` pour échapper à la boucle.  
   
- Vous pouvez inclure un nombre quelconque de `Exit Do` instructions n’importe où dans un `Do…Loop`.  
+ Vous pouvez inclure n’importe quel `Exit Do` nombre d’instructions n' `Do…Loop`importe où dans un.  
   
- Lorsqu’il est utilisé dans imbriqués `Do` boucles, `Exit Do` transfère le contrôle en dehors de la boucle la plus profonde et dans le niveau d’imbrication supérieur suivant.  
+ Lorsqu’il est utilisé dans `Do` les boucles `Exit Do` imbriquées, transfère le contrôle hors de la boucle la plus profonde et passe au niveau d’imbrication supérieur suivant.  
   
 ## <a name="example"></a>Exemple  
- Dans l’exemple suivant, les instructions dans la boucle continuent à s’exécuter jusqu'à ce que le `index` variable est supérieure à 10. Le `Until` clause est à la fin de la boucle.  
+ Dans l’exemple suivant, les instructions de la boucle continuent à s’exécuter jusqu' `index` à ce que la variable soit supérieure à 10. La `Until` clause se trouve à la fin de la boucle.  
   
  [!code-vb[VbVbalrStatements#131](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#131)]  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise un `While` clause au lieu d’un `Until` clause, et `condition` est testée au début de la boucle et non à la fin.  
+ L’exemple suivant utilise une `While` clause au lieu d' `Until` une clause, `condition` et est testé au début de la boucle plutôt qu’à la fin.  
   
  [!code-vb[VbVbalrStatements#132](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#132)]  
   
-## <a name="example"></a>Exemple  
- Dans l’exemple suivant, `condition` arrête la boucle lorsque la `index` variable est supérieure à 100. Le `If` instruction dans la boucle, cependant, entraîne la `Exit Do` instruction pour arrêter la boucle lorsque la variable d’index est supérieure à 10.  
+## <a name="example"></a>Exemples  
+ Dans l’exemple suivant, `condition` arrête la boucle lorsque la `index` variable est supérieure à 100. Toutefois `If` , l’instruction dans la boucle provoque l’arrêt `Exit Do` de la boucle par l’instruction quand la variable d’index est supérieure à 10.  
   
  [!code-vb[VbVbalrStatements#133](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#133)]  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant lit toutes les lignes dans un fichier texte. Le <xref:System.IO.File.OpenText%2A> méthode ouvre le fichier et retourne un <xref:System.IO.StreamReader> qui lit les caractères. Dans le `Do...Loop` condition, le <xref:System.IO.StreamReader.Peek%2A> méthode de la `StreamReader` détermine s’il existe des caractères supplémentaires.  
+ L’exemple suivant lit toutes les lignes d’un fichier texte. La <xref:System.IO.File.OpenText%2A> méthode ouvre le fichier et retourne un <xref:System.IO.StreamReader> qui lit les caractères. Dans la `Do...Loop` condition, la <xref:System.IO.StreamReader.Peek%2A> méthode de `StreamReader` détermine s’il existe des caractères supplémentaires.  
   
  [!code-vb[VbVbalrStatements#134](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#134)]  
   

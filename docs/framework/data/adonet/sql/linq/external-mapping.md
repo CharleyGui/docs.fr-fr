@@ -2,28 +2,28 @@
 title: Mappage externe
 ms.date: 03/30/2017
 ms.assetid: 076606b8-d889-4ba0-b5da-ae577b146f23
-ms.openlocfilehash: 0b6ced31f5534bd040917ecc5d241d54d9bee95f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 70372473eb2de5d3c4751e237e7beb66315b690e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619711"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950333"
 ---
 # <a name="external-mapping"></a>Mappage externe
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prend en charge *mappage externe*, un processus par lequel vous utilisez un fichier XML distinct pour spécifier le mappage entre le modèle de données de la base de données et votre modèle objet. Les avantages de l'utilisation d'un fichier de mappage externe sont notamment les suivants :  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]prend en charge le *mappage externe*, un processus par lequel vous utilisez un fichier XML distinct pour spécifier le mappage entre le modèle de données de la base de données et votre modèle objet. Les avantages de l'utilisation d'un fichier de mappage externe sont notamment les suivants :  
   
 - Vous pouvez conserver votre code de mappage en dehors de votre code d'application. Cette méthode permet de réduire l'encombrement dans votre code d'application.  
   
 - Vous pouvez traiter un fichier de mappage externe un peu comme un fichier de configuration. Par exemple, vous pouvez modifier la manière dont votre application se comporte après l'envoi des binaires par la simple permutation du fichier binaire externe.  
   
 ## <a name="requirements"></a>Configuration requise  
- Le fichier de mappage doit être un fichier XML, et le fichier doit valider un [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fichier schema definition (.xsd).  
+ Le fichier de mappage doit être un fichier XML et le fichier doit être validé par [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] rapport à un fichier de définition de schéma (. xsd).  
   
  Les règles suivantes s'appliquent :  
   
 - Le fichier de mappage doit être un fichier XML.  
   
-- Le fichier de mappage XML doit être valide par rapport au fichier de définition de schéma XML. Pour plus d'informations, voir [Procédure : Valider les fichiers de mappage externes et DBML](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).  
+- Le fichier de mappage XML doit être valide par rapport au fichier de définition de schéma XML. Pour plus d’informations, consultez [Guide pratique pour Validez les fichiers](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)de mappage dbml et externe.  
   
 - Le mappage externe substitue le mappage basé sur les attributs. En d'autres termes, lorsque vous utilisez une source de mappage externe pour créer un <xref:System.Data.Linq.DataContext>, le <xref:System.Data.Linq.DataContext> ignore tous les attributs de mappage que vous avez créés sur les classes. Ce comportement est vrai si la classe est incluse dans le fichier de mappage externe.  
   
@@ -32,10 +32,10 @@ ms.locfileid: "64619711"
 ## <a name="xml-schema-definition-file"></a>Fichier de définition de schéma XML  
  Le mappage externe dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] doit être valide par rapport à la définition de schéma XML suivante.  
   
- Ce fichier de définition de schéma est différent du fichier de définition de schéma utilisé pour valider un fichier DBML. Pour plus d’informations, consultez [génération de Code dans LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)).  
+ Ce fichier de définition de schéma est différent du fichier de définition de schéma utilisé pour valider un fichier DBML. Pour plus d’informations, consultez [génération de code dans LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)).  
   
 > [!NOTE]
->  Utilisateurs de Visual Studio trouveront également ce fichier XSD dans la boîte de dialogue schémas XML en tant que nom « LinqToSqlMapping.xsd ». Pour utiliser ce fichier correctement pour valider un fichier de mappage externe, consultez [Comment : Valider les fichiers de mappage externes et DBML](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md).  
+> Les utilisateurs de Visual Studio trouveront également ce fichier XSD dans la boîte de dialogue schémas XML en tant que «LinqToSqlMapping. xsd». Pour utiliser correctement ce fichier pour valider un fichier de mappage externe, consultez [procédure: Validez les fichiers](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)de mappage dbml et externe.  
   
 ```  
 ?<?xml version="1.0" encoding="utf-16"?>  
@@ -145,4 +145,4 @@ elementFormDefault="qualified" >
 
 - [Génération de code dans LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)
 - [Référence](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
-- [Guide pratique pour Générer le modèle objet comme un fichier externe](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)
+- [Guide pratique : Générer le modèle objet en tant que fichier externe](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-as-an-external-file.md)

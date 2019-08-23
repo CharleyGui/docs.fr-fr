@@ -2,12 +2,12 @@
 title: 'Procédure pas à pas : Manipulation de données (C#)'
 ms.date: 03/30/2017
 ms.assetid: 24adfbe0-0ad6-449f-997d-8808e0770d2e
-ms.openlocfilehash: 2d45861569bc4a8b57427b01e107f87809203e11
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 7921f0aa7582e70967f7fec633f37ef0dbc766de
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742736"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946975"
 ---
 # <a name="walkthrough-manipulating-data-c"></a>Procédure pas à pas : Manipulation de données (C#)
 Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] complet essentiel pour l'ajout, la modification et la suppression de données dans une base de données. Vous utiliserez une copie de l'exemple de base de données Northwind pour ajouter un client, modifier le nom d'un client et supprimer une commande.  
@@ -27,7 +27,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 - Fichier de code C# généré à partir de la base de données Northwind.  
   
-     Vous pouvez générer ce fichier à l’aide du concepteur objet/relationnel ou l’outil SQLMetal. Cette procédure pas à pas a été écrite à l'aide de l'outil SQLMetal, avec la ligne de commande suivante :  
+     Vous pouvez générer ce fichier à l’aide de l’Concepteur Objet Relationnel ou de l’outil SQLMetal. Cette procédure pas à pas a été écrite à l'aide de l'outil SQLMetal, avec la ligne de commande suivante :  
   
      **sqlmetal /code:"c:\linqtest6\northwind.cs" /language:csharp "C:\linqtest6\northwnd.mdf" /pluralize**  
   
@@ -36,7 +36,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
 ## <a name="overview"></a>Présentation  
  Cette procédure pas à pas se compose de six tâches principales :  
   
-- Création de la [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] solution dans Visual Studio.  
+- Création de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] la solution dans Visual Studio.  
   
 - Ajout du fichier de code de base de données au projet.  
   
@@ -49,19 +49,19 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
 - Soumission de ces modifications à la base de données Northwind.  
   
 ## <a name="creating-a-linq-to-sql-solution"></a>Création d'une solution LINQ to SQL  
- Dans cette première tâche, vous créez une solution Visual Studio qui contient les références nécessaires pour générer et exécuter un [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] projet.  
+ Dans cette première tâche, vous allez créer une solution Visual Studio qui contient les références nécessaires pour générer et exécuter [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] un projet.  
   
 #### <a name="to-create-a-linq-to-sql-solution"></a>Pour créer une solution LINQ to SQL  
   
-1. Dans Visual Studio **fichier** menu, pointez sur **New**, puis cliquez sur **projet**.  
+1. Dans le menu **fichier** de Visual Studio, pointez sur **nouveau**, puis cliquez sur **projet**.  
   
-2. Dans le **types de projets** volet dans le **nouveau projet** boîte de dialogue, cliquez sur **Visual C#** .  
+2. Dans le volet **types de projets** de la boîte de dialogue **nouveau projet** , cliquez sur **visuel C#** .  
   
 3. Dans le volet **Modèles**, cliquez sur **Application console**.  
   
-4. Dans le **nom** , tapez **LinqDataManipulationApp**.  
+4. Dans la zone **nom** , tapez **LinqDataManipulationApp**.  
   
-5. Dans le **emplacement** , vérifiez où vous souhaitez stocker vos fichiers projet.  
+5. Dans la zone **emplacement** , vérifiez l’emplacement où vous souhaitez stocker vos fichiers projet.  
   
 6. Cliquez sur **OK**.  
   
@@ -70,9 +70,9 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 #### <a name="to-add-systemdatalinq"></a>Pour ajouter System.Data.Linq  
   
-1. Dans **l’Explorateur de solutions**, avec le bouton droit **références**, puis cliquez sur **ajouter une référence**.  
+1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur **références**, puis cliquez sur **Ajouter une référence**.  
   
-2. Dans le **ajouter une référence** boîte de dialogue, cliquez sur **.NET**et cliquez sur l’assembly System.Data.Linq, puis cliquez sur **OK**.  
+2. Dans la boîte de dialogue **Ajouter une référence** , cliquez sur **.net**, sur l’assembly System. Data. Linq, puis sur **OK**.  
   
      L'assembly est ajouté au projet.  
   
@@ -85,9 +85,9 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 #### <a name="to-add-the-northwind-code-file-to-the-project"></a>Pour ajouter le fichier de code Northwind au projet  
   
-1. Sur le **projet** menu, cliquez sur **ajouter un élément existant**.  
+1. Dans le menu **projet** , cliquez sur **Ajouter un élément existant**.  
   
-2. Dans le **ajouter un élément existant** boîte de dialogue, accédez à c:\linqtest6\northwind.cs, puis cliquez sur **ajouter**.  
+2. Dans la boîte de dialogue **Ajouter un élément existant** , accédez à c:\linqtest6\northwind.cs, puis cliquez sur **Ajouter**.  
   
      Le fichier northwind.cs est ajouté au projet.  
   
@@ -102,9 +102,9 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 2. Appuyez sur F5 pour tester l'application à ce stade.  
   
-     Un **Console** fenêtre s’ouvre.  
+     Une fenêtre de **console** s’ouvre.  
   
-     Vous pouvez fermer l’application en appuyant sur entrée dans le **Console** fenêtre, ou en cliquant sur **arrêter le débogage** sur Visual Studio **déboguer** menu.  
+     Vous pouvez fermer l’application en appuyant sur entrée dans la fenêtre de **console** , ou en cliquant sur **arrêter** le débogage dans le menu Déboguer de Visual Studio.  
   
 ## <a name="creating-a-new-entity"></a>Création d'une entité  
  La création d'une entité est une opération simple. Vous pouvez créer des objets (`Customer`, par exemple) à l'aide du mot clé `new`.  
@@ -119,7 +119,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 2. Appuyez sur F5 pour déboguer la solution.  
   
-3. Appuyez sur entrée dans le **Console** fenêtre pour arrêter le débogage et poursuivre la procédure pas à pas.  
+3. Appuyez sur entrée dans la fenêtre de **console** pour arrêter le débogage et poursuivez la procédure pas à pas.  
   
 ## <a name="updating-an-entity"></a>Mise à jour d'une entité  
  Au cours des étapes suivantes, vous allez récupérer un objet `Customer` et modifier l'une de ses propriétés.  
@@ -156,10 +156,10 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 3. Appuyez sur F5 pour déboguer la solution.  
   
-4. Appuyez sur entrée dans le **Console** fenêtre pour fermer l’application.  
+4. Appuyez sur entrée dans la fenêtre de **console** pour fermer l’application.  
   
 > [!NOTE]
->  Une fois que vous avez soumis les modifications (ajouté le nouveau client), vous ne pouvez plus exécuter cette solution telle quelle. Pour l'exécuter à nouveau, modifiez le nom du client et l'ID client à ajouter.  
+> Une fois que vous avez soumis les modifications (ajouté le nouveau client), vous ne pouvez plus exécuter cette solution telle quelle. Pour l'exécuter à nouveau, modifiez le nom du client et l'ID client à ajouter.  
   
 ## <a name="see-also"></a>Voir aussi
 

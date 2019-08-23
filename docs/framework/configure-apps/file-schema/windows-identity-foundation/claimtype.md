@@ -3,15 +3,15 @@ title: <claimType>
 ms.date: 03/30/2017
 ms.assetid: d17b5831-9a2c-45c4-b0d1-68f48e72e861
 author: BrucePerlerMS
-ms.openlocfilehash: 6bc185572528d4229ee53f1421eaa5bf27b053e6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4253aec961b812b6893ee201861d2ab38048032a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61667221"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942878"
 ---
 # <a name="claimtype"></a>\<claimType>
-Spécifie une seule revendication facultative ou obligatoire pour les jetons de sécurité entrants.  
+Spécifie une revendication unique ou facultative pour les jetons de sécurité entrants.  
   
  \<system.identityModel>  
 \<identityConfiguration>  
@@ -38,14 +38,14 @@ Spécifie une seule revendication facultative ou obligatoire pour les jetons de 
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|type|Type de revendication. En général, un URI. Obligatoire.|  
-|facultatifs|Une valeur booléenne qui spécifie si le type de revendication est facultatif. Optionnel.|  
+|type|Type de revendication. Généralement un URI. Requis.|  
+|facultatif|Valeur booléenne qui spécifie si le type de revendication est facultatif. facultatif.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<claimTypeRequired>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtyperequired.md)|Spécifie le jeu de revendications requises pour les jetons de sécurité entrants.|
+|[\<claimTypeRequired>](claimtyperequired.md)|Spécifie l’ensemble des revendications requises pour les jetons de sécurité entrants.|

@@ -7,31 +7,31 @@ helpviewer_keywords:
 - name conflicts [Visual Basic]
 - element names [Visual Basic], in code
 ms.assetid: 2e4e8e02-23f7-49b9-a1c8-2b0402b6b525
-ms.openlocfilehash: c247ada67f6554362f287cf252dd49856c4995da
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2e3613bd4a74da51cf7dbb63e52eddca811ca8e1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61955582"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947660"
 ---
 # <a name="keywords-as-element-names-in-code-visual-basic"></a>Utilisation des mots clés comme noms d'éléments dans le code (Visual Basic)
-Un élément de programme, tel qu’une variable, une classe ou un membre — peut avoir le même nom qu’un mot clé restreint. Par exemple, vous pouvez créer une variable nommée `Loop`. Toutefois, pour faire référence à votre version de celui-ci, qui a le même nom que restreint `Loop` mot clé, vous devez le faire précéder d’une chaîne de qualification complète ou le placer entre crochets (`[ ]`), comme illustré dans l’exemple suivant.  
+Tout élément de programme (par exemple, une variable, une classe ou un membre) peut avoir le même nom qu’un mot clé restreint. Par exemple, vous pouvez créer une variable nommée `Loop`. Toutefois, pour faire référence à votre version de, qui porte le même nom que le mot `Loop` clé Restricted, vous devez le faire précéder d’une chaîne de qualification complète ou la placer entre`[ ]`crochets (), comme le montre l’exemple suivant.  
   
  [!code-vb[VbVbcnConventions#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#8)]  
   
- Si vous ne le faites pas une de ces, Visual Basic suppose l’utilisation de la fonction intrinsèque `Loop` mot clé et génère une erreur, comme dans l’exemple suivant :  
+ Si vous n’effectuez pas l’une de ces opérations, Visual Basic suppose l’utilisation du mot `Loop` clé Intrinsic et génère une erreur, comme dans l’exemple suivant:  
   
  `' The following statement causes a compiler error.`  
   
  `Loop.Visible = True`  
   
- Vous pouvez utiliser des crochets lorsque vous faites référence aux formulaires et contrôles et lors de la déclaration d’une variable ou la définition d’une procédure portant le même nom qu’un mot clé restreint. Il peut être facile d’oublier de qualifier des noms ou inclure des crochets, par conséquent introduire des erreurs dans votre code et rendre plus difficile à lire. Pour cette raison, nous vous recommandons de pas utiliser de mots clés restreints comme noms d’éléments de programme. Toutefois, si une version ultérieure de Visual Basic définit un nouveau mot clé qui entre en conflit avec un nom de contrôle ou un formulaire existant, puis vous pouvez utiliser cette technique lorsque la mise à jour votre code pour travailler avec la nouvelle version.  
+ Vous pouvez utiliser des crochets lorsque vous faites référence à des formulaires et des contrôles, et lorsque vous déclarez une variable ou que vous définissez une procédure portant le même nom qu’un mot clé restreint. Il peut être facile d’oublier de qualifier des noms ou d’inclure des crochets, et donc d’introduire des erreurs dans votre code et de le rendre plus difficile à lire. Pour cette raison, nous vous recommandons de ne pas utiliser de mots clés restreints comme noms d’éléments de programme. Toutefois, si une version ultérieure de Visual Basic définit un nouveau mot clé qui est en conflit avec un nom de formulaire ou de contrôle existant, vous pouvez utiliser cette technique lors de la mise à jour de votre code pour utiliser la nouvelle version.  
   
 > [!NOTE]
->  Votre programme peut également inclure des noms d’éléments fournis par d’autres assemblys référencés. Si ces noms sont en conflit avec les mots clés restreints, puis placer des crochets autour d’elles entraîne Visual Basic pour les interpréter comme vos éléments définis.  
+> Votre programme peut également inclure des noms d’éléments fournis par d’autres assemblys référencés. Si ces noms sont en conflit avec des mots clés restreints, si vous placez des crochets autour, les Visual Basic les interprètent comme des éléments définis.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Conventions d’affectation de noms de Visual Basic](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)
+- [Conventions d’affectation de noms Visual Basic](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)
 - [Structure de programme et conventions de codage](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
 - [Mots clés](../../../visual-basic/language-reference/keywords/index.md)
