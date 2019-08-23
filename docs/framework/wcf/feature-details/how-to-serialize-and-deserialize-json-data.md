@@ -2,26 +2,26 @@
 title: 'Procédure : sérialiser et désérialiser des données JSON'
 ms.date: 03/25/2019
 ms.assetid: 88abc1fb-8196-4ee3-a23b-c6934144d1dd
-ms.openlocfilehash: 0c56b298737dc9b9902f13c586edffb3d05257f8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0bebdbb3d74d58db093c4ec1e0e88138c7080335
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67783014"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947896"
 ---
 # <a name="how-to-serialize-and-deserialize-json-data"></a>Procédure : Sérialiser et désérialiser des données JSON
 JSON (JavaScript Object Notation) est un format d'encodage de données efficace qui permet l'échange rapide de petites quantités de données entre les navigateurs clients et les services Web compatibles AJAX.  
   
- Cet article montre comment sérialiser des objets de type .NET dans des données encodées en JSON et ensuite désérialiser les données au format JSON en instances des types .NET. Cet exemple utilise un contrat de données pour illustrer la sérialisation et désérialisation de défini par l’utilisateur `Person` type et utilise <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
+ Cet article montre comment sérialiser des objets de type .NET dans des données encodées en JSON, puis comment désérialiser des données au format JSON en instances de types .NET. Cet exemple utilise un contrat de données pour illustrer la sérialisation et la désérialisation d’un type `Person` défini par l' <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>utilisateur et utilise.  
   
- En règle générale, la désérialisation et la sérialisation JSON sont gérées automatiquement par Windows Communication Foundation (WCF) lorsque vous utilisez des types de contrat de données dans des opérations de service exposées sur des points de terminaison compatibles AJAX. Toutefois, dans certains cas, vous devrez peut-être travailler avec des données JSON directement.   
+ Normalement, la sérialisation et la désérialisation JSON sont gérées automatiquement par Windows Communication Foundation (WCF) quand vous utilisez des types de contrat de données dans des opérations de service exposées sur des points de terminaison compatibles AJAX. Toutefois, dans certains cas, vous devrez peut-être utiliser des données JSON directement.   
   
 > [!NOTE]
->  Si une erreur se produit pendant la sérialisation d’une réponse sortante sur le serveur ou pour une raison quelconque, elle ne peut pas obtenir retournée au client sous forme d’erreur.  
+> Si une erreur se produit pendant la sérialisation d’une réponse sortante sur le serveur ou pour une autre raison, il se peut qu’elle ne soit pas retournée au client en tant qu’erreur.  
   
- Cet article est basé sur le [sérialisation JSON](../samples/json-serialization.md) exemple.  
+ Cet article est basé sur l’exemple de [sérialisation JSON](../samples/json-serialization.md) .  
   
-## <a name="to-define-the-data-contract-for-a-person-type"></a>Pour définir le contrat de données pour un type de personne 
+## <a name="to-define-the-data-contract-for-a-person-type"></a>Pour définir le contrat de données pour un type Person 
   
 1. Définissez le contrat de données pour `Person` en joignant <xref:System.Runtime.Serialization.DataContractAttribute> à la classe et l'attribut <xref:System.Runtime.Serialization.DataMemberAttribute> aux membres que vous souhaitez sérialiser. Pour plus d’informations sur les contrats de données, consultez [conception de contrats de service](../designing-service-contracts.md).  
   
@@ -47,7 +47,7 @@ JSON (JavaScript Object Notation) est un format d'encodage de données efficace 
     p.age = 42;  
     ```  
   
-2. Sérialiser le `Person` objet dans un flux de mémoire à l’aide de la <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>.  
+2. Sérialisez l' `Person` objet dans un flux de mémoire à <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>l’aide de.  
   
     ```csharp  
     var stream1 = new MemoryStream();  
@@ -117,7 +117,7 @@ public static User ReadToObject(string json)
 ```  
   
 > [!NOTE]
->  Le sérialiseur JSON lève une exception de sérialisation pour les contrats de données dont plusieurs membres portent le même nom, comme illustré dans l'exemple de code suivant.  
+> Le sérialiseur JSON lève une exception de sérialisation pour les contrats de données dont plusieurs membres portent le même nom, comme illustré dans l'exemple de code suivant.  
   
 ```csharp  
 [DataContract]  
@@ -138,4 +138,4 @@ public class TestDuplicateDataDerived : TestDuplicateDataBase
 ## <a name="see-also"></a>Voir aussi
 
 - [Sérialisation JSON autonome](stand-alone-json-serialization.md)
-- [Prise en charge de JSON et d’autres données de formats de transfert](support-for-json-and-other-data-transfer-formats.md)
+- [Prise en charge de JSON et d’autres formats de transfert de données](support-for-json-and-other-data-transfer-formats.md)

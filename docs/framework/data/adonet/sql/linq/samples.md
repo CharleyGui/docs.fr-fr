@@ -2,30 +2,30 @@
 title: Exemples
 ms.date: 03/30/2017
 ms.assetid: 3fcc0c4a-b952-4cfe-9e09-0c0cf874ba2c
-ms.openlocfilehash: a4f51c59791b0d65e99987e0e14a6fbedf1ee0a0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ac5298fd781d617b8a9c8cd637232b344a04f530
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616207"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69945161"
 ---
 # <a name="samples"></a>Exemples
-Cette rubrique fournit des liens vers les solutions de Visual Basic et c# qui contiennent [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] exemple de code.  
+Cette rubrique fournit des liens vers les Visual Basic C# et les solutions [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] qui contiennent des exemples de code.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- Version de Visual Basic de la solution SampleQueries  
- [Exemples de requêtes (Visual Basic)](~/docs/visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ Visual Basic version de la solution SampleQueries  
+ [Exemples de requêtes (Visual Basic)](../../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
   
  Version C# de la solution SampleQueries  
  [Exemples de requêtes](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bb397972(v=vs.90))  
   
  Suivez ces étapes pour rechercher des exemples supplémentaires de code et d'applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] :  
   
-- Rechercher des problèmes spécifiques sur Microsoft Docs.  
+- Recherchez des problèmes spécifiques sur Microsoft Docs.  
   
-- Participer à la [Forum LINQ](https://go.microsoft.com/fwlink/?LinkId=76488), où vous pourrez aborder des sujets plus complexes avec des experts.  
+- Participez au [Forum LINQ](https://go.microsoft.com/fwlink/?LinkId=76488), où vous pouvez aborder des sujets plus complexes avec des experts.  
   
-- Étudiez le livre blanc qui détaille [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie, obtenir des exemples de code Visual Basic et c#. Pour plus d’informations, consultez [LINQ to SQL : Language-Integrated Query pour les données relationnelles](https://go.microsoft.com/fwlink/?LinkId=93205).  
+- Étudiez le livre blanc qui [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] détaille la technologie, avec C# Visual Basic et des exemples de code. Pour plus d’informations, consultez [LINQ to SQL: requête intégrée au langage .net pour les données relationnelles](https://go.microsoft.com/fwlink/?LinkId=93205).  
   
 ## <a name="see-also"></a>Voir aussi
 

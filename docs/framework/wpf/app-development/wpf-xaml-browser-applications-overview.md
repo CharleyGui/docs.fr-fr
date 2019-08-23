@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: 8017895450c989683b7fb246c9c1fb7c23fa9e5e
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: a83b3e68365cccc96cfe7eaa4baaabf8c991c98f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69611473"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956050"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Vue d'ensemble des applications de navigateur XAML
 <a name="introduction"></a>
@@ -35,12 +35,12 @@ ms.locfileid: "69611473"
   
 <a name="creating_a_new_xaml_browser_application_xbap"></a>   
 ## <a name="creating-a-new-xaml-browser-application-xbap"></a>Création d’une nouvelle application de navigateur XAML (XBAP)  
- La façon la plus simple de créer un nouveau projet XBAP est de Microsoft Visual Studio. Lorsque vous créez un nouveau projet, sélectionnez **Application de navigateur WPF** dans la liste des modèles. Pour plus d’informations, consultez [Guide pratique pour Créez un projet](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100))d’application de navigateur WPF.  
+ La façon la plus simple de créer un nouveau projet XBAP est de Microsoft Visual Studio. Lorsque vous créez un nouveau projet, sélectionnez **Application de navigateur WPF** dans la liste des modèles. Pour plus d'informations, voir [Procédure : Créez un projet](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100))d’application de navigateur WPF.  
   
  Lorsque vous exécutez le projet XBAP, celui-ci s’ouvre dans une fenêtre de navigateur et non dans une fenêtre indépendante. Quand vous déboguez l’application XBAP à partir de Visual Studio, l’application s’exécute avec l’autorisation de zone Internet et lèvera donc des exceptions de sécurité si ces autorisations sont dépassées. Pour plus d’informations, voir [Sécurité](../security-wpf.md) et [Sécurité de confiance partielle de WPF](../wpf-partial-trust-security.md).  
   
 > [!NOTE]
->  Si vous ne développez pas avec Visual Studio ou souhaitez en savoir plus sur les fichiers projet, consultez [génération d’une application WPF](building-a-wpf-application-wpf.md).  
+> Si vous ne développez pas avec Visual Studio ou souhaitez en savoir plus sur les fichiers projet, consultez [génération d’une application WPF](building-a-wpf-application-wpf.md).  
   
 <a name="deploying_a_xbap"></a>   
 ## <a name="deploying-an-xbap"></a>Déploiement d’une application XBAP  
@@ -174,7 +174,7 @@ ms.locfileid: "69611473"
 |Internet|Échec avec "Confiance non accordée"|Signez l’application XBAP avec un certificat.|  
   
 > [!NOTE]
->  Le comportement décrit dans le tableau précédent concerne les applications XBAP de confiance totale qui ne suivent pas le modèle de déploiement approuvé ClickOnce.  
+> Le comportement décrit dans le tableau précédent concerne les applications XBAP de confiance totale qui ne suivent pas le modèle de déploiement approuvé ClickOnce.  
   
  Il est recommandé d’utiliser le modèle de déploiement approuvé ClickOnce pour déployer une application XBAP de confiance totale. Ce modèle permet d’accorder automatiquement une confiance totale à votre application XBAP, quelle que soit la zone de sécurité, afin que l’utilisateur ne reçoive aucune invite. Dans le cadre de ce modèle, vous devez signer votre application avec un certificat d’un éditeur approuvé. Pour plus d’informations, consultez les articles [Vue d’ensemble du déploiement d’applications approuvées](/visualstudio/deployment/trusted-application-deployment-overview) et [Présentation de la signature de code](https://go.microsoft.com/fwlink/?LinkId=166327).  
   

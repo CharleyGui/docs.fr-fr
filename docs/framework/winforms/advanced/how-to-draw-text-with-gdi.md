@@ -10,31 +10,31 @@ helpviewer_keywords:
 - drawing [Windows Forms], text
 - Windows Forms, drawing text with GDI
 ms.assetid: 2a19fe5d-2ace-451c-94db-01cb1118ef7b
-ms.openlocfilehash: 3d5b79e82185c044314ff8807b86835ef6a87c45
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: 3ed2b5c94e4a38a5873a34e61287c4038cab5cbb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67505908"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956540"
 ---
 # <a name="how-to-draw-text-with-gdi"></a>Procédure : dessiner du texte avec GDI
-Avec le <xref:System.Windows.Forms.TextRenderer.DrawText%2A> méthode dans le <xref:System.Windows.Forms.TextRenderer> (classe), vous pouvez accéder à des fonctionnalités GDI pour dessiner du texte sur un formulaire ou contrôle. Rendu de texte GDI offre généralement de meilleures performances et plus précis mesure de texte que GDI +.  
+Avec la <xref:System.Windows.Forms.TextRenderer.DrawText%2A> méthode de la <xref:System.Windows.Forms.TextRenderer> classe, vous pouvez accéder à la fonctionnalité GDI pour dessiner du texte sur un formulaire ou un contrôle. Le rendu de texte GDI offre généralement de meilleures performances et une mesure de texte plus précise que GDI+.  
   
 > [!NOTE]
->  Le <xref:System.Windows.Forms.TextRenderer.DrawText%2A> méthodes de la <xref:System.Windows.Forms.TextRenderer> classe ne sont pas pris en charge pour l’impression. Lors de l’impression, utilisez toujours le <xref:System.Drawing.Graphics.DrawString%2A> méthodes de la <xref:System.Drawing.Graphics> classe.  
+> Les <xref:System.Windows.Forms.TextRenderer.DrawText%2A> méthodes de la <xref:System.Windows.Forms.TextRenderer> classe ne sont pas prises en charge pour l’impression. Lors de l’impression, utilisez <xref:System.Drawing.Graphics.DrawString%2A> toujours les méthodes <xref:System.Drawing.Graphics> de la classe.  
   
 ## <a name="example"></a>Exemple  
- L’exemple de code suivant montre comment dessiner du texte sur plusieurs lignes dans un rectangle à l’aide de la <xref:System.Windows.Forms.TextRenderer.DrawText%2A> (méthode).  
+ L’exemple de code suivant montre comment dessiner du texte sur plusieurs lignes au sein d’un <xref:System.Windows.Forms.TextRenderer.DrawText%2A> rectangle à l’aide de la méthode.  
   
  [!code-csharp[System.Windows.Forms.TextRendererExamples#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#7)]
  [!code-vb[System.Windows.Forms.TextRendererExamples#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#7)]  
   
- Pour afficher le texte avec le <xref:System.Windows.Forms.TextRenderer> (classe), vous devez un <xref:System.Drawing.IDeviceContext>, comme un <xref:System.Drawing.Graphics> et un <xref:System.Drawing.Font>, un emplacement pour dessiner le texte et la couleur dans laquelle il doit être dessiné. Si vous le souhaitez, vous pouvez spécifier le texte à l’aide de la mise en forme le <xref:System.Windows.Forms.TextFormatFlags> énumération.  
+ Pour restituer le texte <xref:System.Windows.Forms.TextRenderer> avec la classe, vous <xref:System.Drawing.IDeviceContext>avez besoin d’un <xref:System.Drawing.Graphics> , <xref:System.Drawing.Font>tel que et un, d’un emplacement pour dessiner le texte et de la couleur dans laquelle il doit être dessiné. Si vous le souhaitez, vous pouvez spécifier la mise en forme du <xref:System.Windows.Forms.TextFormatFlags> texte à l’aide de l’énumération.  
   
- Pour plus d’informations sur l’obtention d’un <xref:System.Drawing.Graphics>, consultez [Comment : Créer des objets graphiques pour le dessin](how-to-create-graphics-objects-for-drawing.md). Pour plus d’informations sur la construction d’un <xref:System.Drawing.Font>, consultez [Comment : Construire des familles de polices et des polices](how-to-construct-font-families-and-fonts.md).  
+ Pour plus d’informations sur l' <xref:System.Drawing.Graphics>obtention d' [un, consultez Procédure: Créez des objets graphiques pour](how-to-create-graphics-objects-for-drawing.md)le dessin. Pour plus d’informations sur la construction <xref:System.Drawing.Font>d’un [, consultez Procédure: Construisez des familles de](how-to-construct-font-families-and-fonts.md)polices et des polices.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- L’exemple de code précédent est conçu pour une utilisation avec Windows Forms et nécessite le <xref:System.Windows.Forms.PaintEventArgs> `e`, qui est un paramètre de <xref:System.Windows.Forms.PaintEventHandler>.  
+ L’exemple de code précédent est conçu pour être utilisé avec Windows Forms, et il <xref:System.Windows.Forms.PaintEventArgs> requiert `e`, qui est un paramètre <xref:System.Windows.Forms.PaintEventHandler>de.  
   
 ## <a name="see-also"></a>Voir aussi
 

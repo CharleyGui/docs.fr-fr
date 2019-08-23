@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 5a0e41bf-f99c-4692-8799-f89617f5bcf9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5c947dcd3fa3a71d5bbfdf742b106bf56d8444fc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9b1575d484c58afa3558d9f5b446473b4c89bc51
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64596748"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947997"
 ---
 # <a name="how-to-create-initialize-and-configure-trace-switches"></a>Procédure : Créer, initialiser et configurer les commutateurs de trace
 Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie de traçage, et de la filtrer.  
@@ -65,7 +65,7 @@ Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie 
  En plus de spécifier le nom du commutateur que vous configurez, vous devez lui attribuer une valeur. Cette valeur est un nombre entier. Pour <xref:System.Diagnostics.BooleanSwitch>, la valeur zéro (0) correspond à **Off** (Désactivé), et toute autre valeur correspond à **On** (Activé). Pour <xref:System.Diagnostics.TraceSwitch>, les valeurs 0, 1, 2, 3 et 4 correspondent respectivement à **Off** (Désactivé), **Error** (Erreur), **Warning** (Avertissement), **Info** (Information) et **Verbose** (Commentaires). Toute valeur supérieure à 4 est traitée comme **Verbose**, et toute valeur inférieure à 0 est traitée comme **Off**.  
   
 > [!NOTE]
->  Dans .NET Framework 2.0, vous pouvez spécifier la valeur d'un commutateur avec du texte. Par exemple, `true` pour un commutateur <xref:System.Diagnostics.BooleanSwitch> ou le texte représentant une valeur d'énumération comme `Error` pour un commutateur <xref:System.Diagnostics.TraceSwitch>. La ligne `<add name="myTraceSwitch" value="Error" />` équivaut à `<add name="myTraceSwitch" value="1" />`.  
+> Dans .NET Framework 2.0, vous pouvez spécifier la valeur d'un commutateur avec du texte. Par exemple, `true` pour un commutateur <xref:System.Diagnostics.BooleanSwitch> ou le texte représentant une valeur d'énumération comme `Error` pour un commutateur <xref:System.Diagnostics.TraceSwitch>. La ligne `<add name="myTraceSwitch" value="Error" />` équivaut à `<add name="myTraceSwitch" value="1" />`.  
   
  Pour que les utilisateurs finals puissent configurer les commutateurs de trace d'une application, vous devez fournir des informations détaillées sur les commutateurs dans votre application. Décrivez en détail ce que les commutateurs contrôlent et comment ils peuvent être activés ou désactivés. Transmettez également aux utilisateurs finals un fichier .config contenant l'aide nécessaire dans les commentaires.  
   
@@ -75,11 +75,11 @@ Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie 
   
 2. Si votre projet ne contient pas de fichier de configuration (app.config ou Web.config), dans le menu **Projet**, sélectionnez **Ajouter un nouvel élément**.  
   
-    - **Visual Basic :** Dans le **ajouter un nouvel élément** boîte de dialogue, sélectionnez **fichier de Configuration d’Application**.  
+    - **Visual Basic :** Dans la boîte de dialogue **Ajouter un nouvel élément** , choisissez **fichier de configuration**de l’application.  
   
          Le fichier de configuration de l'application est créé, puis ouvert. Il s'agit d'un document XML dont l'élément racine est `<configuration>.`  
   
-    - **Visual C#:** Dans le **ajouter un nouvel élément** boîte de dialogue, sélectionnez **fichier XML**. Nommez ce fichier **app.config**. Dans l'éditeur XML, après la déclaration XML, ajoutez les balises suivantes :  
+    - **Visuel C#:** Dans la boîte de dialogue **Ajouter un nouvel élément** , choisissez **fichier XML**. Nommez ce fichier **app.config**. Dans l'éditeur XML, après la déclaration XML, ajoutez les balises suivantes :  
   
         ```xml  
         <configuration>  
@@ -128,6 +128,6 @@ Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie 
 ## <a name="see-also"></a>Voir aussi
 
 - [Suivi et instrumentation d’applications](../../../docs/framework/debug-trace-profile/tracing-and-instrumenting-applications.md)
-- [Guide pratique pour Ajouter des instructions de traçage au Code d’Application](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
+- [Guide pratique pour Ajouter des instructions de suivi au code d’application](../../../docs/framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
 - [Commutateurs de suivi](../../../docs/framework/debug-trace-profile/trace-switches.md)
 - [Schéma des paramètres de trace et de débogage](../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

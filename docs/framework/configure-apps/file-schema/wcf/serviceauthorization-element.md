@@ -2,20 +2,20 @@
 title: <serviceAuthorization>, élément
 ms.date: 03/30/2017
 ms.assetid: 18cddad5-ddcb-4839-a0ac-1d6f6ab783ca
-ms.openlocfilehash: 7099c5eca9cf28624153a705e4e16136628214a2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b73e2049afb460bf9be8b76ee272ba0547b61453
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670350"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69936395"
 ---
-# <a name="serviceauthorization-element"></a>\<serviceAuthorization > élément
+# <a name="serviceauthorization-element"></a>\<serviceAuthorization >, élément
 Spécifie les paramètres qui autorisent l'accès pour l'entretien des opérations  
   
  \<system.ServiceModel>  
 \<behaviors>  
 \<serviceBehaviors>  
-\<behavior>  
+\<> de comportement  
 \<serviceAuthorization>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -38,8 +38,8 @@ Spécifie les paramètres qui autorisent l'accès pour l'entretien des opératio
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|impersonateCallerForAllOperations|Valeur booléenne qui spécifie si toutes les opérations du service personnifient l'appelant. La valeur par défaut est `false`.<br /><br /> Lorsqu'une opération de service spécifique personnifie l'appelant, le contexte du thread est basculé sur le contexte de l'appelant avant d'exécuter le service spécifié.|  
-|principalPermissionMode|Définit la principal de sécurité utilisée pour effectuer les opérations sur le serveur. Les valeurs sont notamment les suivantes :<br /><br /> -None<br />-   UseWindowsGroups<br />-   UseAspNetRoles<br />-Custom<br /><br /> La valeur par défaut est UseWindowsGroups. La valeur est de type <xref:System.ServiceModel.Description.PrincipalPermissionMode>. Pour plus d’informations sur l’utilisation de cet attribut, consultez [Comment : Restreindre l’accès à la classe PrincipalPermissionAttribute](../../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md).|  
+|impersonateCallerForAllOperations|Valeur booléenne qui spécifie si toutes les opérations du service personnifient l'appelant. Par défaut, il s’agit de `false`.<br /><br /> Lorsqu'une opération de service spécifique personnifie l'appelant, le contexte du thread est basculé sur le contexte de l'appelant avant d'exécuter le service spécifié.|  
+|principalPermissionMode|Définit la principal de sécurité utilisée pour effectuer les opérations sur le serveur. Les valeurs sont notamment les suivantes :<br /><br /> -Aucun<br />-   UseWindowsGroups<br />-   UseAspNetRoles<br />-Personnalisé<br /><br /> La valeur par défaut est UseWindowsGroups. La valeur est de type <xref:System.ServiceModel.Description.PrincipalPermissionMode>. Pour plus d’informations sur l’utilisation de cet [attribut, consultez Procédure: Limitez l’accès à l'](../../../wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)aide de la classe PrincipalPermissionAttribute.|  
 |roleProviderName|Chaîne qui spécifie le nom du fournisseur de rôles, qui fournit des informations de rôle pour une application de Windows Communication Foundation (WCF). La valeur par défaut est une chaîne vide.|  
 |ServiceAuthorizationManagerType|Chaîne qui contient le type du gestionnaire d'autorisations de service. Pour plus d'informations, consultez <xref:System.ServiceModel.ServiceAuthorizationManager>.|  
   
@@ -53,12 +53,12 @@ Spécifie les paramètres qui autorisent l'accès pour l'entretien des opératio
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<behavior>](../../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)|Contient une collection de paramètres pour le comportement d’un service.|  
+|[\<behavior>](behavior-of-endpointbehaviors.md)|Contient une collection de paramètres pour le comportement d’un service.|  
   
 ## <a name="remarks"></a>Notes  
  Cette section contient des éléments qui affectent l'autorisation, les fournisseurs de rôles personnalisés et l'emprunt d'identité.  
   
- L'attribut `principalPermissionMode` spécifie les groupes d'utilisateurs à utiliser lors de l'autorisation d'utilisation d'une méthode protégée. La valeur par défaut (`UseWindowsGroups`) spécifie qu'une identité essayant d'accéder à une ressource est recherchée dans les groupes Windows, comme Administrateurs ou Utilisateurs. Vous pouvez également spécifier `UseAspNetRoles` à utiliser un fournisseur de rôles personnalisé configuré sous la \<system.web > élément, comme indiqué dans le code suivant.  
+ L'attribut `principalPermissionMode` spécifie les groupes d'utilisateurs à utiliser lors de l'autorisation d'utilisation d'une méthode protégée. La valeur par défaut (`UseWindowsGroups`) spécifie qu'une identité essayant d'accéder à une ressource est recherchée dans les groupes Windows, comme Administrateurs ou Utilisateurs. Vous pouvez également spécifier `UseAspNetRoles` l’utilisation d’un fournisseur de rôles personnalisé configuré sous l' \<élément System. Web >, comme indiqué dans le code suivant.  
   
 ```xml  
 <system.web>
@@ -93,14 +93,14 @@ Spécifie les paramètres qui autorisent l'accès pour l'entretien des opératio
 </behaviors>
 ```  
   
- Pour obtenir un exemple détaillé de l’utilisation de cet élément de configuration, consultez [autoriser l’accès aux opérations de Service](../../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md) et [stratégie d’autorisation](../../../../../docs/framework/wcf/samples/authorization-policy.md).  
+ Pour obtenir un exemple détaillé de l’utilisation de cet élément de configuration, consultez autorisation de l' [accès aux opérations de service et à](../../../wcf/samples/authorizing-access-to-service-operations.md) la [stratégie d’autorisation](../../../wcf/samples/authorization-policy.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.Configuration.ServiceAuthorizationElement>
 - <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>
-- [Comportements de sécurité](../../../../../docs/framework/wcf/feature-details/security-behaviors-in-wcf.md)
-- [Autorisation de l’accès aux opérations de service](../../../../../docs/framework/wcf/samples/authorizing-access-to-service-operations.md)
-- [Guide pratique pour Créer un gestionnaire d’autorisation personnalisé pour un Service](../../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
-- [Guide pratique pour Restreindre l’accès à la classe PrincipalPermissionAttribute](../../../../../docs/framework/wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)
-- [Stratégie d’autorisation](../../../../../docs/framework/wcf/samples/authorization-policy.md)
+- [Comportements de sécurité](../../../wcf/feature-details/security-behaviors-in-wcf.md)
+- [Autorisation de l’accès aux opérations de service](../../../wcf/samples/authorizing-access-to-service-operations.md)
+- [Guide pratique pour Créer un gestionnaire d’autorisations personnalisé pour un service](../../../wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
+- [Guide pratique pour Restreindre l’accès à l’aide de la classe PrincipalPermissionAttribute](../../../wcf/how-to-restrict-access-with-the-principalpermissionattribute-class.md)
+- [Stratégie d’autorisation](../../../wcf/samples/authorization-policy.md)

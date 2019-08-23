@@ -6,29 +6,29 @@ helpviewer_keywords:
 - Matrix properties [WPF], animating with key frames
 - key frames [WPF], animating Matrix properties with
 ms.assetid: b851a4c7-ecb1-420e-9203-83e7afd037fd
-ms.openlocfilehash: ff5320fa5b4441ae3e0f414b274ab9118b77ec50
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6aa3e27cdfda7597c9b6acbf2980a2774f2b667b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62020242"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963026"
 ---
 # <a name="how-to-animate-a-matrix-by-using-key-frames"></a>Procédure : Animer une matrice à l’aide d’images clés
 Cet exemple montre comment animer la <xref:System.Windows.Media.MatrixTransform.Matrix%2A> propriété d’un <xref:System.Windows.Media.MatrixTransform> à l’aide d’images clés.  
   
-## <a name="example"></a>Exemple  
- L’exemple suivant utilise le <xref:System.Windows.Media.Animation.MatrixAnimationUsingKeyFrames> classe pour animer la <xref:System.Windows.Media.MatrixTransform.Matrix%2A> propriété d’un <xref:System.Windows.Media.MatrixTransform>. L’exemple utilise le <xref:System.Windows.Media.MatrixTransform> objet à transformer l’apparence et la position d’un <xref:System.Windows.Controls.Button>.  
+## <a name="example"></a>Exemples  
+ L’exemple suivant utilise la <xref:System.Windows.Media.Animation.MatrixAnimationUsingKeyFrames> classe pour animer <xref:System.Windows.Media.MatrixTransform.Matrix%2A> la propriété d' <xref:System.Windows.Media.MatrixTransform>un. L’exemple utilise l' <xref:System.Windows.Media.MatrixTransform> objet pour transformer l’apparence et la position d' <xref:System.Windows.Controls.Button>un.  
   
- Cette animation utilise la <xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> classe pour créer deux images clés et effectue les opérations suivantes avec eux :  
+ Cette animation utilise la <xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> classe pour créer deux images clés et effectue les opérations suivantes:  
   
-1. Anime la première <xref:System.Windows.Media.Matrix> pendant les premières secondes de 0,2. L’exemple modifie la <xref:System.Windows.Media.Matrix.M11%2A> et <xref:System.Windows.Media.Matrix.M12%2A> propriétés de la <xref:System.Windows.Media.Matrix>. Cette modification entraîne le bouton pour étirer et être faussées. L’exemple modifie également le <xref:System.Windows.Media.Matrix.OffsetX%2A> et <xref:System.Windows.Media.Matrix.OffsetY%2A> propriétés afin que le bouton change de position.  
+1. Anime le premier <xref:System.Windows.Media.Matrix> pendant les 0,2 premières secondes. L’exemple modifie les <xref:System.Windows.Media.Matrix.M11%2A> propriétés <xref:System.Windows.Media.Matrix.M12%2A> et de <xref:System.Windows.Media.Matrix>. Cette modification entraîne l’étirement et l’inclinaison du bouton. L’exemple modifie également les <xref:System.Windows.Media.Matrix.OffsetX%2A> propriétés <xref:System.Windows.Media.Matrix.OffsetY%2A> et afin que le bouton change de position.  
   
-2. Anime la deuxième <xref:System.Windows.Media.Matrix> à 1 seconde. Le bouton se déplace vers un autre alors que le bouton n’est plus incliné ni étiré.  
+2. Anime la seconde <xref:System.Windows.Media.Matrix> à 1,0 secondes. Le bouton se déplace vers une autre position lorsque le bouton n’est plus incliné ou étiré.  
   
 3. Répète l’animation indéfiniment.  
   
 > [!NOTE]
->  Images clés qui dérivent de la <xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> objet créent des changements soudains entre les valeurs, autrement dit, le déplacement de l’animation est saccadé.  
+> Les images clés qui dérivent de l' <xref:System.Windows.Media.Animation.DiscreteMatrixKeyFrame> objet créent des sauts soudains entre les valeurs, autrement dit, le mouvement de l’animation est saccadé.  
   
  [!code-xaml[keyframes_snip#MatrixAnimationUsingKeyFramesWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/MatrixAnimationUsingKeyFramesExample.xaml#matrixanimationusingkeyframeswholepage)]  
   

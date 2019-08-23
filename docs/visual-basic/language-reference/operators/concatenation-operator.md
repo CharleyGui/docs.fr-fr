@@ -1,5 +1,5 @@
 ---
-title: '&amp; Opérateur (Visual Basic)'
+title: '&amp;(Visual Basic), opérateur'
 ms.date: 07/20/2015
 f1_keywords:
 - vb.&
@@ -10,15 +10,15 @@ helpviewer_keywords:
 - concatenation operators [Visual Basic], syntax
 - strings [Visual Basic], concatenating
 ms.assetid: fefc3d00-cbf1-475c-8c5e-6fb213b3f85a
-ms.openlocfilehash: dd85363447e9b405241d608550d9484b4760a739
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d387b2dfdbb3fefe357364f7b2a3dde155cbd489
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778584"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968357"
 ---
-# <a name="amp-operator-visual-basic"></a>&amp; Opérateur (Visual Basic)
-Génère une concaténation de chaînes de deux expressions.  
+# <a name="amp-operator-visual-basic"></a>&amp;(Visual Basic), opérateur
+Génère une concaténation de chaîne de deux expressions.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,27 +28,27 @@ result = expression1 & expression2
   
 ## <a name="parts"></a>Composants  
  `result`  
- Obligatoire. N’importe quel `String` ou `Object` variable.  
+ Requis. N' `String` importe `Object` quelle variable ou.  
   
  `expression1`  
- Obligatoire. Toute expression avec un type de données qui s’étend à `String`.  
+ Requis. Toute expression avec un type de données qui s’étend `String`à.  
   
  `expression2`  
- Obligatoire. Toute expression avec un type de données qui s’étend à `String`.  
+ Requis. Toute expression avec un type de données qui s’étend `String`à.  
   
 ## <a name="remarks"></a>Notes  
- Si le type de données de `expression1` ou `expression2` n’est pas `String` mais s’étend à `String`, il est converti en `String`. Si un des types de données ne s’étend pas à `String`, le compilateur génère une erreur.  
+ Si le type de données `expression1` de `expression2` ou n' `String` est pas mais s' `String`élargit à, il `String`est converti en. Si l’un des types de données ne s’étend `String`pas à, le compilateur génère une erreur.  
   
- Le type de données de `result` est `String`. Si une ou les deux expressions ont la valeur [rien](../../../visual-basic/language-reference/nothing.md) ou avoir la valeur <xref:System.DBNull.Value?displayProperty=nameWithType>, elles sont traitées comme une chaîne avec la valeur « ».  
-  
-> [!NOTE]
->  Le `&` opérateur peut être *surchargé*, ce qui signifie qu’une classe ou structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou structure. Si votre code utilise cet opérateur sur une telle classe ou structure, veillez à ce que vous comprenez son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ Le type de données `result` de `String`est. Si une ou les deux expressions ont la valeur [Nothing](../../../visual-basic/language-reference/nothing.md) ou ont la <xref:System.DBNull.Value?displayProperty=nameWithType>valeur, elles sont traitées comme une chaîne avec la valeur «».  
   
 > [!NOTE]
->  Le caractère esperluette (&) peuvent également servir à identifier des variables en tant que type `Long`. Pour plus d’informations, consultez [caractères de Type](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md).  
+> L' `&` opérateur peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou de cette structure. Si votre code utilise cet opérateur sur une classe ou une structure de ce type, veillez à bien comprendre son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
-## <a name="example"></a>Exemple  
- Cet exemple utilise le `&` opérateur pour forcer la concaténation de chaînes. Le résultat est une valeur de chaîne représentant la concaténation de deux opérandes de chaîne.  
+> [!NOTE]
+> Le caractère perluète (&) peut également être utilisé pour identifier des variables en `Long`tant que type. Pour plus d’informations, consultez [caractères de type](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md).  
+  
+## <a name="example"></a>Exemples  
+ Cet exemple utilise l' `&` opérateur pour forcer la concaténation de chaînes. Le résultat est une valeur de chaîne représentant la concaténation des deux opérandes de chaîne.  
   
  [!code-vb[VbVbalrOperators#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#2)]  
   

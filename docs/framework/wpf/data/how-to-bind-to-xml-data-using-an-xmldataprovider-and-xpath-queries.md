@@ -6,23 +6,23 @@ helpviewer_keywords:
 - data binding [WPF], binding to XML data using XmlDataProvider queries
 - binding [WPF], to XML data using XmlDataProvider queries
 ms.assetid: 7dcd018f-16aa-4870-8e47-c1b4ea31e574
-ms.openlocfilehash: dc4fb2d5f0c48c077d2ff7ca5e5269ce5cba71e5
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 4833e024fcd352094a2163f11df8572aa4c241f8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400488"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69944648"
 ---
 # <a name="how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries"></a>Procédure : Effectuer une liaison à des données XML à l’aide d’un XMLDataProvider et de requêtes XPath
 Cet exemple montre comment effectuer une liaison [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] à des données <xref:System.Windows.Data.XmlDataProvider>à l’aide d’un.  
   
  Avec un <xref:System.Windows.Data.XmlDataProvider>, les données sous-jacentes accessibles via la liaison de données dans votre application peuvent correspondre à n' [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] importe quelle arborescence de nœuds. En d’autres termes, <xref:System.Windows.Data.XmlDataProvider> un offre un moyen pratique d’utiliser n’importe [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)] quelle arborescence de nœuds comme source de liaison.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Dans l’exemple suivant, les données sont incorporées directement en [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] tant qu' *îlot* de <xref:System.Windows.FrameworkElement.Resources%2A> données dans la section. Un îlot de données [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] doit être encapsulé dans des balises `<x:XData>` et toujours avoir un nœud racine unique (*Inventory* dans cet exemple).  
   
 > [!NOTE]
->  Le nœud racine des données [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] est un attribut **xmlns** qui définit l’espace de noms [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] sur une chaîne vide. Il s’agit d’une condition requise pour appliquer des requêtes XPath à un îlot de données inline dans la page [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Dans ce cas Inline, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], et par conséquent l’îlot de données, hérite de l’espace de <xref:System.Windows> noms. Pour cette raison, vous devez définir l’espace de noms comme vide pour empêcher les requêtes XPath d’être <xref:System.Windows> qualifiées par l’espace de noms, ce qui entraînerait une inversion des requêtes.  
+> Le nœud racine des données [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] est un attribut **xmlns** qui définit l’espace de noms [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] sur une chaîne vide. Il s’agit d’une condition requise pour appliquer des requêtes XPath à un îlot de données inline dans la page [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Dans ce cas Inline, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], et par conséquent l’îlot de données, hérite de l’espace de <xref:System.Windows> noms. Pour cette raison, vous devez définir l’espace de noms comme vide pour empêcher les requêtes XPath d’être <xref:System.Windows> qualifiées par l’espace de noms, ce qui entraînerait une inversion des requêtes.  
   
  [!code-xaml[XMLDataSource#1](~/samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSource/CS/Window1.xaml#1)]  
   

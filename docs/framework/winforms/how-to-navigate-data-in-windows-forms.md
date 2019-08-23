@@ -11,41 +11,41 @@ helpviewer_keywords:
 - CurrencyManager class [Windows Forms], navigating Windows Forms data
 - data [Windows Forms], navigating
 ms.assetid: 97360f7b-b181-4084-966a-4c62518f735b
-ms.openlocfilehash: 452aacab4580a3b07168daa6b7c03740dc98620b
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: eb973497f51592b5d34c22e62da77612aec23c35
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583734"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69964276"
 ---
 # <a name="how-to-navigate-data-in-windows-forms"></a>Procédure : parcourir les données dans Windows Forms
-Dans une application Windows, pour parcourir les enregistrements dans une source de données le plus simple consiste à lier un <xref:System.Windows.Forms.BindingSource> composant à la source de données, puis lier les contrôles à le <xref:System.Windows.Forms.BindingSource>. Vous pouvez ensuite utiliser la méthode de navigation intégrée sur le <xref:System.Windows.Forms.BindingSource> tel un <xref:System.Windows.Forms.BindingSource.MoveNext%2A>, <xref:System.Windows.Forms.BindingSource.MoveLast%2A>, <xref:System.Windows.Forms.BindingSource.MovePrevious%2A> et <xref:System.Windows.Forms.BindingSource.MoveFirst%2A>. À l’aide de ces méthodes ajustera la <xref:System.Windows.Forms.BindingSource.Position%2A> et <xref:System.Windows.Forms.BindingSource.Current%2A> propriétés de la <xref:System.Windows.Forms.BindingSource> en conséquence. Vous pouvez également rechercher un élément et définissez-le comme l’élément actuel en définissant le <xref:System.Windows.Forms.BindingSource.Position%2A> propriété.  
+Dans une application Windows, le moyen le plus simple de parcourir les enregistrements d’une source de données consiste <xref:System.Windows.Forms.BindingSource> à lier un composant à la source de données, puis <xref:System.Windows.Forms.BindingSource>à lier les contrôles à. Vous pouvez ensuite utiliser la méthode de navigation intégrée <xref:System.Windows.Forms.BindingSource> sur les <xref:System.Windows.Forms.BindingSource.MoveNext%2A>, <xref:System.Windows.Forms.BindingSource.MoveLast%2A> <xref:System.Windows.Forms.BindingSource.MovePrevious%2A> et <xref:System.Windows.Forms.BindingSource.MoveFirst%2A>. L’utilisation de ces méthodes ajuste <xref:System.Windows.Forms.BindingSource.Current%2A> les <xref:System.Windows.Forms.BindingSource.Position%2A> propriétés et <xref:System.Windows.Forms.BindingSource> de de manière appropriée. Vous pouvez également rechercher un élément et le définir en tant qu’élément actuel en définissant la <xref:System.Windows.Forms.BindingSource.Position%2A> propriété.  
   
 ### <a name="to-increment-the-position-in-a-data-source"></a>Pour incrémenter la position dans une source de données  
   
-1. Définir le <xref:System.Windows.Forms.BindingSource.Position%2A> propriété de la <xref:System.Windows.Forms.BindingSource> de vos données liées à la position de l’enregistrement à atteindre. L’exemple suivant illustre l’utilisation de la <xref:System.Windows.Forms.BindingSource.MoveNext%2A> méthode de la <xref:System.Windows.Forms.BindingSource> pour incrémenter le <xref:System.Windows.Forms.BindingSource.Position%2A> propriété lorsque la `nextButton` un clic sur. Le <xref:System.Windows.Forms.BindingSource> est associé le `Customers` table d’un dataset `Northwind`.  
+1. Définissez la <xref:System.Windows.Forms.BindingSource.Position%2A> propriété <xref:System.Windows.Forms.BindingSource> du pour vos données liées à la position d’enregistrement à atteindre. L’exemple <xref:System.Windows.Forms.BindingSource.MoveNext%2A> suivant illustre l’utilisation <xref:System.Windows.Forms.BindingSource> de la méthode de pour incrémenter <xref:System.Windows.Forms.BindingSource.Position%2A> la propriété lorsque `nextButton` l’utilisateur clique sur. Le <xref:System.Windows.Forms.BindingSource> est associé à la `Customers` table d’un DataSet `Northwind`.  
   
     > [!NOTE]
-    >  Définition de la <xref:System.Windows.Forms.BindingSource.Position%2A> propriété avec une valeur au-delà du premier ou dernier enregistrement n’entraîne pas une erreur, comme le .NET Framework ne vous autorise pas à définir la position sur une valeur en dehors des limites de la liste. S’il est important dans votre application pour savoir si vous avez dépassé le premier ou dernier enregistrement, inclure une logique pour déterminer si vous dépassez le nombre d’éléments de données.  
+    > Si vous <xref:System.Windows.Forms.BindingSource.Position%2A> affectez à la propriété une valeur au-delà du premier ou du dernier enregistrement, aucune erreur n’est générée, car l' .NET Framework ne vous autorise pas à définir la position sur une valeur en dehors des limites de la liste. Si, dans votre application, il est important de savoir si vous avez dépassé le premier ou le dernier enregistrement, incluez la logique permettant de tester si vous dépassez le nombre d’éléments de données.  
   
      [!code-csharp[System.Windows.Forms.NavigatingData#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#4)]
      [!code-vb[System.Windows.Forms.NavigatingData#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#4)]  
   
-### <a name="to-check-whether-you-have-passed-the-end-or-beginning"></a>Pour vérifier si vous avez dépassé la fin ou au début  
+### <a name="to-check-whether-you-have-passed-the-end-or-beginning"></a>Pour vérifier si vous avez dépassé la fin ou le début  
   
-1. Créez un gestionnaire d'événements pour l'événement <xref:System.Windows.Forms.BindingSource.PositionChanged>. Dans le gestionnaire, vous pouvez tester si la valeur de position proposée a dépassé le nombre d’éléments de données réelles.  
+1. Créez un gestionnaire d'événements pour l'événement <xref:System.Windows.Forms.BindingSource.PositionChanged>. Dans le gestionnaire, vous pouvez vérifier si la valeur de position proposée a dépassé le nombre réel d’éléments de données.  
   
-     L’exemple suivant illustre comment vous pouvez tester si vous avez atteint le dernier élément de données. Dans l’exemple, si vous êtes sur le dernier élément, le **suivant** bouton sur le formulaire est désactivé.  
+     L’exemple suivant montre comment vous pouvez vérifier si vous avez atteint le dernier élément de données. Dans l’exemple, si vous êtes au dernier élément, le bouton **suivant** du formulaire est désactivé.  
   
     > [!NOTE]
-    >  N’oubliez pas que, vous modifiez la liste que vous naviguez dans le code, vous devrez réactiver la **suivant** bouton, afin que les utilisateurs puissent parcourir toute la durée de la nouvelle liste. En outre, n’oubliez pas que la méthode ci-dessus <xref:System.Windows.Forms.BindingSource.PositionChanged> événement spécifique <xref:System.Windows.Forms.BindingSource> vous travaillez doit être associé à sa méthode de gestion des événements. Voici un exemple d’une méthode pour la gestion de la <xref:System.Windows.Forms.BindingSource.PositionChanged> événement :  
+    > Sachez que, si vous modifiez la liste que vous naviguez dans le code, vous devez réactiver le bouton **suivant** afin que les utilisateurs puissent parcourir la totalité de la nouvelle liste. En outre, sachez que l’événement <xref:System.Windows.Forms.BindingSource.PositionChanged> ci-dessus pour <xref:System.Windows.Forms.BindingSource> le service spécifique que vous utilisez doit être associé à sa méthode de gestion d’événements. Voici un exemple de méthode pour gérer l' <xref:System.Windows.Forms.BindingSource.PositionChanged> événement:  
   
      [!code-csharp[System.Windows.Forms.NavigatingData#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.NavigatingData#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#3)]  
   
 ### <a name="to-find-an-item-and-set-it-as-the-current-item"></a>Pour rechercher un élément et le définir comme élément actuel  
   
-1. Recherchez l’enregistrement que vous souhaitez définir comme élément actuel. Vous pouvez le faire à l’aide de la <xref:System.Windows.Forms.BindingSource.Find%2A> méthode de la <xref:System.Windows.Forms.BindingSource>, si votre source de données implémente <xref:System.ComponentModel.IBindingList>. Quelques exemples de données sources qui implémentent <xref:System.ComponentModel.IBindingList> sont <xref:System.ComponentModel.BindingList%601> et <xref:System.Data.DataView>.  
+1. Recherchez l’enregistrement que vous souhaitez définir en tant qu’élément actuel. Vous pouvez le faire à l' <xref:System.Windows.Forms.BindingSource.Find%2A> aide <xref:System.Windows.Forms.BindingSource>de la méthode du, si <xref:System.ComponentModel.IBindingList>votre source de données implémente. Voici quelques exemples de sources de données <xref:System.ComponentModel.IBindingList> qui <xref:System.ComponentModel.BindingList%601> implémentent <xref:System.Data.DataView>.  
   
      [!code-csharp[System.Windows.Forms.NavigatingData#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/CS/Form1.cs#2)]
      [!code-vb[System.Windows.Forms.NavigatingData#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.NavigatingData/VB/Form1.vb#2)]  

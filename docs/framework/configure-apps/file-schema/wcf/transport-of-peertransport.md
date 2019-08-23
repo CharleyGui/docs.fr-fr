@@ -2,14 +2,14 @@
 title: <transport> de <peerTransport>
 ms.date: 03/30/2017
 ms.assetid: d7116240-845c-4b6f-b203-262de6b597ef
-ms.openlocfilehash: 9b6f548515afbba5068659bd5c6f7f2b33f80cda
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5dbc55db25c0c49d72ec2cd8dd1041a3f8705d8e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788282"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940643"
 ---
-# <a name="transport-of-peertransport"></a>\<transport > de \<peerTransport >
+# <a name="transport-of-peertransport"></a>\<> de transport \<de peerTransport >
 Indique le type de transport correspondant aux messages sécurisés envoyés par des homologues configurés avec cette liaison.  
   
  \<system.serviceModel>  
@@ -17,7 +17,7 @@ Indique le type de transport correspondant aux messages sécurisés envoyés par
 \<customBinding>  
 \<binding>  
 \<peerTransport>  
-\<security>  
+\<> de sécurité  
 \<transport>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,26 +35,26 @@ Indique le type de transport correspondant aux messages sécurisés envoyés par
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|credentialType|Optionnel. Spécifie le type d'informations d'identification utilisé pour vérifier les messages envoyés avec le transport d'homologues. Cet attribut est de type <xref:System.ServiceModel.PeerTransportCredentialType>.|  
+|credentialType|facultatif. Spécifie le type d'informations d'identification utilisé pour vérifier les messages envoyés avec le transport d'homologues. Cet attribut est de type <xref:System.ServiceModel.PeerTransportCredentialType>.|  
   
 ## <a name="credentialtype-attribute"></a>Attribut credentialType  
   
-|Value|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |Certificat|L'authentification du transport de canal homologue requiert un certificat X509.|  
 |Mot de passe|L'authentification du transport de canal homologue requiert un mot de passe correct.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+ Aucun  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<security>](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-peertransport.md)|Définit les paramètres de sécurité pour un transport d'homologue.|  
+|[\<> de sécurité](security-of-peertransport.md)|Définit les paramètres de sécurité pour un transport d'homologue.|  
   
 ## <a name="remarks"></a>Notes  
- Cet élément est défini uniquement si l’attribut de mode de [ \<sécurité >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-peertransport.md) a la valeur `Transport` ou `TransportWithMessageCredential`.  
+ Cet élément est défini uniquement si l’attribut mode de la [ \<> de sécurité](security-of-peertransport.md) a la valeur `Transport` ou `TransportWithMessageCredential`.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -62,10 +62,10 @@ Indique le type de transport correspondant aux messages sécurisés envoyés par
 - <xref:System.ServiceModel.PeerSecuritySettings.Transport%2A>
 - <xref:System.ServiceModel.PeerTransportSecuritySettings>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Sécurité de transport](../../../../../docs/framework/wcf/feature-details/transport-security.md)
-- [Transports](../../../../../docs/framework/wcf/feature-details/transports.md)
-- [Choix d’un transport](../../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
-- [Liaisons](../../../../../docs/framework/wcf/bindings.md)
-- [Extension de liaisons](../../../../../docs/framework/wcf/extending/extending-bindings.md)
-- [Liaisons personnalisées](../../../../../docs/framework/wcf/extending/custom-bindings.md)
-- [\<customBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+- [Sécurité de transport](../../../wcf/feature-details/transport-security.md)
+- [Transports](../../../wcf/feature-details/transports.md)
+- [Choix d’un transport](../../../wcf/feature-details/choosing-a-transport.md)
+- [Liaisons](../../../wcf/bindings.md)
+- [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
+- [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)

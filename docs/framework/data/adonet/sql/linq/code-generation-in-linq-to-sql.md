@@ -2,12 +2,12 @@
 title: Génération de code dans LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
-ms.openlocfilehash: 63ac0f50b34a5e5d8739adbeb70f2412960227c3
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 12470a8c14e0a41eb6e06fc5d4ba63c12924330b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666125"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939174"
 ---
 # <a name="code-generation-in-linq-to-sql"></a>Génération de code dans LINQ to SQL
 Vous pouvez générer du code pour représenter une base de données à l’aide de l’Concepteur Objet Relationnel ou de l’outil en ligne de commande SQLMetal. Dans l'un et l'autre cas, la génération du code de bout en bout s'effectue en trois étapes :  
@@ -32,7 +32,7 @@ Vous pouvez générer du code pour représenter une base de données à l’aide
  Distinguez ce fichier de définition de schéma du fichier de définition de schéma utilisé pour valider un fichier de mappage externe. Pour plus d’informations, consultez [mappage externe](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)).  
   
 > [!NOTE]
->  Les utilisateurs de Visual Studio trouveront également ce fichier XSD dans la boîte de dialogue schémas XML en tant que «DbmlSchema. xsd». Pour utiliser correctement le fichier XSD pour valider un fichier DBML, consultez [procédure: Validez les fichiers](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)de mappage dbml et externe.  
+> Les utilisateurs de Visual Studio trouveront également ce fichier XSD dans la boîte de dialogue schémas XML en tant que «DbmlSchema. xsd». Pour utiliser correctement le fichier XSD pour valider un fichier DBML, consultez [procédure: Validez les fichiers](../../../../../../docs/framework/data/adonet/sql/linq/how-to-validate-dbml-and-external-mapping-files.md)de mappage dbml et externe.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-16"?>  

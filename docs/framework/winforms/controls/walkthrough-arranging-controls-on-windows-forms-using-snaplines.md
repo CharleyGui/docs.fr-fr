@@ -7,12 +7,12 @@ helpviewer_keywords:
 - SnapLine class [Windows Forms], walkthroughs
 - Windows Forms controls, arranging
 ms.assetid: d5c9edc7-cf30-4a97-8ebe-201d569340f8
-ms.openlocfilehash: 3ce6c250fadbb56b341d5e8dec3a9cb9d28940fe
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
-ms.translationtype: MT
+ms.openlocfilehash: 8ac1ba6b8121aabea3c992ca5b943f231fc19ce2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040254"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950073"
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-snaplines"></a>Procédure pas à pas : organisation des contrôles dans des Windows Forms à l’aide de lignes d’alignement
 Le positionnement précis des contrôles sur votre formulaire constitue une haute priorité pour de nombreuses applications. Le Concepteur Windows Forms vous donne de nombreux outils de disposition pour y parvenir. L’une des plus importantes est la <xref:System.Windows.Forms.Design.Behavior.SnapLine> fonctionnalité.
@@ -87,7 +87,7 @@ Le positionnement précis des contrôles sur votre formulaire constitue une haut
 1. Sélectionnez l’un des <xref:System.Windows.Forms.Button> contrôles et déplacez-le à proximité de la bordure droite du formulaire jusqu’à ce qu’une ligne d’alignement s’affiche. La distance de la ligne d’alignement (SnapLine) par rapport à la bordure <xref:System.Windows.Forms.Control.Margin%2A> droite est la somme de <xref:System.Windows.Forms.Control.Padding%2A> la propriété du contrôle et des valeurs de propriété du formulaire.
 
 > [!NOTE]
->  Si la propriété du <xref:System.Windows.Forms.Control.Padding%2A> formulaire est définie sur 0, 0, 0, 0, le Concepteur Windows Forms donne à la forme une <xref:System.Windows.Forms.Control.Padding%2A> valeur ombrée de 9, 9, 9. Pour remplacer ce comportement, assignez une valeur différente de 0, 0, 0, 0.
+> Si la propriété du <xref:System.Windows.Forms.Control.Padding%2A> formulaire est définie sur 0, 0, 0, 0, le Concepteur Windows Forms donne à la forme une <xref:System.Windows.Forms.Control.Padding%2A> valeur ombrée de 9, 9, 9. Pour remplacer ce comportement, assignez une valeur différente de 0, 0, 0, 0.
 
 1. Modifiez la valeur de la <xref:System.Windows.Forms.Button> propriété du <xref:System.Windows.Forms.Control.Margin%2A> contrôle en développant <xref:System.Windows.Forms.Control.Margin%2A> l’entrée dans la fenêtre **Propriétés** et en <xref:System.Windows.Forms.Padding.All%2A> affectant à la propriété la valeur 0. Pour plus d’informations [, consultez Procédure pas à pas: Disposition des contrôles Windows Forms avec le remplissage, les marges et la propriété](windows-forms-controls-padding-autosize.md)AutoSize.
 

@@ -11,16 +11,16 @@ helpviewer_keywords:
 ms.assetid: 238d8284-6042-4a38-a7f6-1ee8efd719da
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b7380556e13e17e26ffb2f8c5fbbc7136a1fb5e9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e7da023c5ab9247cde0ccd1126d4d639c6f355e7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61771857"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910968"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Déploiement d'applications et du .NET Framework
 
-Cet article est conçu pour vous aider à prendre en main le processus de déploiement du .NET Framework avec votre application. Les informations fournies sont principalement destinées aux développeurs, aux OEM et aux administrateurs d'entreprise. Les utilisateurs qui souhaitent installer le .NET Framework sur leurs ordinateurs sont invités à lire la page [Installer le .NET Framework](~/docs/framework/install/index.md).
+Cet article est conçu pour vous aider à prendre en main le processus de déploiement du .NET Framework avec votre application. Les informations fournies sont principalement destinées aux développeurs, aux OEM et aux administrateurs d'entreprise. Les utilisateurs qui souhaitent installer le .NET Framework sur leurs ordinateurs sont invités à lire la page [Installer le .NET Framework](../install/index.md).
 
 ## <a name="key-deployment-resources"></a>Ressources principales de déploiement
 
@@ -32,9 +32,9 @@ Utilisez les liens suivants vers d'autres articles MSDN pour obtenir des informa
 
   - Options du programme d'installation :
 
-    - [Programme d’installation web](~/docs/framework/install/guide-for-developers.md#to-install-or-download-the-net-framework-redistributable)
+    - [Programme d’installation web](../install/guide-for-developers.md#to-install-or-download-the-net-framework-redistributable)
 
-    - [Programme d’installation hors connexion](~/docs/framework/install/guide-for-developers.md#to-install-or-download-the-net-framework-redistributable)
+    - [Programme d’installation hors connexion](../install/guide-for-developers.md#to-install-or-download-the-net-framework-redistributable)
 
   - Modes d'installation :
 
@@ -44,7 +44,7 @@ Utilisez les liens suivants vers d'autres articles MSDN pour obtenir des informa
 
   - [Réduction des redémarrages système lors des installations du .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)
 
-  - [Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](~/docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
+  - [Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](../install/troubleshoot-blocked-installations-and-uninstallations.md)
 
 - Déploiement du .NET Framework avec une application cliente (pour les développeurs) :
 

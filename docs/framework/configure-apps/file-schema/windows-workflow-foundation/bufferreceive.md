@@ -3,12 +3,12 @@ title: <bufferReceive>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: b23c3a54-10d4-4f13-ab6d-98b26b76f22a
-ms.openlocfilehash: 360d26fda964fa33640e833ad22dab7e06e153f6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1d4611d6fee9dad057985f7d8f5ef961d384efcd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790258"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69945971"
 ---
 # <a name="bufferreceive"></a>\<bufferReceive>
 Comportement de service qui permet à un service d'utiliser le traitement de la réception mise en mémoire tampon, ce qui permet à un service de flux de travail de traiter les messages dans le désordre.  
@@ -16,7 +16,7 @@ Comportement de service qui permet à un service d'utiliser le traitement de la 
 \<system.ServiceModel>  
 \<behaviors>  
 \<serviceBehaviors>  
-\<behavior>  
+\<> de comportement  
 \<bufferReceive>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -47,7 +47,7 @@ Comportement de service qui permet à un service d'utiliser le traitement de la 
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<comportement > de \<serviceBehaviors >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/behavior-of-servicebehaviors-of-workflow.md)|Spécifie un élément de comportement.|  
+|[\<> de comportement \<de la > serviceBehaviors](behavior-of-servicebehaviors-of-workflow.md)|Spécifie un élément de comportement.|  
   
 ## <a name="see-also"></a>Voir aussi
 

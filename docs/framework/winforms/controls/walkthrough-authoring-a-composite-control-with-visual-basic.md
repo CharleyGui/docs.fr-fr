@@ -13,12 +13,12 @@ helpviewer_keywords:
 - composite controls [Windows Forms], creating
 - custom controls [Windows Forms], creating
 ms.assetid: f50e270e-4db2-409a-8319-6db6ca5c7daf
-ms.openlocfilehash: abfb91c61ef72bfc1626b4cc4dcea42b75e2ab35
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: cb54ef372e6da551b95f1edf61e3844b9dcba4c7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040244"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950038"
 ---
 # <a name="walkthrough-authoring-a-composite-control-with-visual-basic"></a>Procédure pas à pas : création d’un contrôle composite avec Visual Basic
 Les contrôles composites permettent de créer et de réutiliser des interfaces graphiques personnalisées. Un contrôle composite est avant tout un composant doté d’une représentation visuelle. Par conséquent, il peut comporter un ou plusieurs blocs de code, composants ou contrôles Windows Forms qui peuvent en étendre les fonctionnalités en validant les entrées d’utilisateur, en modifiant les propriétés d’affichage ou en effectuant d’autres tâches requises par l’auteur. Les contrôles composites peuvent être insérés dans les Windows Forms de la même manière que les autres contrôles. Dans la première partie de cette procédure pas à pas, vous allez créer un contrôle composite simple appelé `ctlClock`. Dans la seconde partie de la procédure pas à pas, vous allez étendre les fonctionnalités de `ctlClock` via l’héritage.
@@ -37,7 +37,7 @@ Les contrôles composites permettent de créer et de réutiliser des interfaces 
 3. Dans l’Explorateur de solutions, cliquez avec le bouton droit sur **UserControl1.vb**, puis cliquez sur **Renommer**. Remplacez le nom de fichier par `ctlClock.vb`. Cliquez sur le bouton **Oui** lorsque l’on vous demande si vous souhaitez renommer toutes les références à l’élément de code « UserControl1 ».
 
     > [!NOTE]
-    >  Par défaut, un contrôle composite hérite de <xref:System.Windows.Forms.UserControl> la classe fournie par le système. La <xref:System.Windows.Forms.UserControl> classe fournit les fonctionnalités requises par tous les contrôles composites et implémente les méthodes et les propriétés standard.
+    > Par défaut, un contrôle composite hérite de <xref:System.Windows.Forms.UserControl> la classe fournie par le système. La <xref:System.Windows.Forms.UserControl> classe fournit les fonctionnalités requises par tous les contrôles composites et implémente les méthodes et les propriétés standard.
 
 4. Dans le menu **Fichier**, cliquez sur **Enregistrer tout** pour enregistrer le projet.
 
@@ -184,7 +184,7 @@ Les contrôles composites permettent de créer et de réutiliser des interfaces 
 5. Dans l’Explorateur de solutions, parcourez les projets en cours.
 
     > [!NOTE]
-    >  Un fichier appelé **ctlAlarmClock.vb** a été ajouté au projet actuel.
+    > Un fichier appelé **ctlAlarmClock.vb** a été ajouté au projet actuel.
 
 ### <a name="adding-the-alarm-properties"></a>Ajout de propriétés d’alarme
  Les propriétés sont ajoutées à un contrôle hérité de la même façon qu’elles sont ajoutées à un contrôle composite. Vous allez maintenant utiliser la syntaxe de déclaration de propriété pour ajouter deux propriétés à votre contrôle : `AlarmTime`, qui stocke la date et l’heure de désactivation de l’alarme, et `AlarmSet`, qui indique si oui ou non l’alarme est définie.
@@ -230,10 +230,10 @@ Les contrôles composites permettent de créer et de réutiliser des interfaces 
 2. Cliquez sur `lblDisplay` (la partie visible du contrôle) et affichez la fenêtre Propriétés.
 
     > [!NOTE]
-    >  Toutes les propriétés qui s’affichent sont grisées. Cela indique que ces propriétés sont propres à `lblDisplay` et ne peuvent pas être modifiées ou sélectionnées dans la fenêtre Propriétés. Par défaut, les contrôles contenus dans un contrôle composite sont à l’état `Private`, et leurs propriétés ne sont accessibles d’aucune façon.
+    > Toutes les propriétés qui s’affichent sont grisées. Cela indique que ces propriétés sont propres à `lblDisplay` et ne peuvent pas être modifiées ou sélectionnées dans la fenêtre Propriétés. Par défaut, les contrôles contenus dans un contrôle composite sont à l’état `Private`, et leurs propriétés ne sont accessibles d’aucune façon.
 
     > [!NOTE]
-    >  Si vous souhaitez que d’autres utilisateurs de votre contrôle composite puissent accéder à ses contrôles internes, définissez leur état sur `Public` ou `Protected`. Cela vous permettra de définir et de modifier les propriétés des contrôles contenus dans votre contrôle composite à l’aide du code approprié.
+    > Si vous souhaitez que d’autres utilisateurs de votre contrôle composite puissent accéder à ses contrôles internes, définissez leur état sur `Public` ou `Protected`. Cela vous permettra de définir et de modifier les propriétés des contrôles contenus dans votre contrôle composite à l’aide du code approprié.
 
 3. Ajoutez un <xref:System.Windows.Forms.Label> contrôle à votre contrôle composite.
 
@@ -298,7 +298,7 @@ Les contrôles composites permettent de créer et de réutiliser des interfaces 
      L’ajout de ce code permet d’effectuer plusieurs tâches. L’instruction `Overrides` ordonne au contrôle d’utiliser cette méthode à la place de la méthode héritée du contrôle de base. Lorsque cette méthode est appelée, elle appelle la méthode qu’elle remplace en appelant l’instruction `MyBase.Timer1_Tick`, ce qui permet de s’assurer que toutes les fonctionnalités intégrées au contrôle d’origine sont également intégrées à ce contrôle. Du code supplémentaire est ensuite exécuté pour intégrer la fonctionnalité d’alarme. Lorsque l’alarme se déclenche, un contrôle Étiquette clignotant apparaît et un signal sonore retentit.
 
     > [!NOTE]
-    >  Comme vous remplacez un gestionnaire d’événements hérité, il n’est pas nécessaire de spécifier l’événement avec le mot clé `Handles`. L’événement est déjà rattaché. Tout ce que vous remplacez est l’implémentation du gestionnaire.
+    > Comme vous remplacez un gestionnaire d’événements hérité, il n’est pas nécessaire de spécifier l’événement avec le mot clé `Handles`. L’événement est déjà rattaché. Tout ce que vous remplacez est l’implémentation du gestionnaire.
 
      Votre contrôle d’alarme est presque terminé. La seule chose qui reste à faire est de mettre en place un moyen de le désactiver. Pour ce faire, vous allez ajouter du code à la méthode `lblAlarm_Click`.
 

@@ -13,22 +13,22 @@ helpviewer_keywords:
 - flicker
 - bit-block transfer
 ms.assetid: 33b76910-13a3-4521-be98-5c097341ae3b
-ms.openlocfilehash: e3d1c2b681e98dc7c45467683924dd4022eb377e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5a18539153c64a5059d8079f6e245115b026bb91
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61937746"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950145"
 ---
 # <a name="how-to-copy-pixels-for-reducing-flicker-in-windows-forms"></a>Procédure : copier des pixels pour réduire le scintillement dans Windows Forms
-Lorsque vous animez un graphique simple, les utilisateurs peuvent rencontrer parfois le scintillement ou autres effets visuels indésirables. Une pour limiter ce problème consiste à utiliser un processus « bitblt » sur le graphique. BitBlt est le « transfert de bloc bits » des données de couleur à partir d’un rectangle d’origine de pixels à un rectangle de destination de pixels.  
+Lorsque vous animez un graphique simple, les utilisateurs peuvent parfois rencontrer des effets de scintillement ou d’autres effets visuels indésirables. Pour limiter ce problème, il est possible d’utiliser un processus «BitBlt» sur le graphique. BitBlt est le «transfert de bloc de bits» des données de couleur d’un rectangle d’origine de pixels vers un rectangle de destination de pixels.  
   
- Avec Windows Forms, le processus bitblt s’effectue à l’aide de la <xref:System.Drawing.Graphics.CopyFromScreen%2A> méthode de la <xref:System.Drawing.Graphics> classe. Dans les paramètres de la méthode, vous spécifiez la source et destination (en tant que points), la taille de la zone doit être copié et l’objet graphics utilisé pour dessiner la nouvelle forme.  
+ Avec Windows Forms, BitBlt s’effectue à l' <xref:System.Drawing.Graphics.CopyFromScreen%2A> aide de la <xref:System.Drawing.Graphics> méthode de la classe. Dans les paramètres de la méthode, vous spécifiez la source et la destination (en tant que points), la taille de la zone à copier et l’objet Graphics utilisé pour dessiner la nouvelle forme.  
   
- Dans l’exemple ci-dessous, une forme est dessinée sur le formulaire dans son <xref:System.Windows.Forms.Control.Paint> Gestionnaire d’événements. Ensuite, le <xref:System.Drawing.Graphics.CopyFromScreen%2A> méthode est utilisée pour dupliquer la forme.  
+ Dans l’exemple ci-dessous, une forme est dessinée sur le <xref:System.Windows.Forms.Control.Paint> formulaire dans son gestionnaire d’événements. Ensuite, la <xref:System.Drawing.Graphics.CopyFromScreen%2A> méthode est utilisée pour dupliquer la forme.  
   
 > [!NOTE]
->  Définition du formulaire <xref:System.Windows.Forms.Control.DoubleBuffered%2A> propriété `true` rendra le code de graphiques dans le <xref:System.Windows.Forms.Control.Paint> événement être mis en mémoire tampon double. Bien que cela n’aura pas les gains de performances apparent lorsque vous utilisez le code ci-dessous, il est quelque chose à prendre en compte lorsque vous travaillez avec le code de manipulation de graphiques plus complexe.  
+> Si vous affectez <xref:System.Windows.Forms.Control.DoubleBuffered%2A> la valeur `true` à la propriété du formulaire, le code <xref:System.Windows.Forms.Control.Paint> graphique de l’événement sera doublement mis en mémoire tampon. Bien qu’il ne soit pas possible d’obtenir des gains de performances perceptibles lorsque vous utilisez le code ci-dessous, il est à garder à l’esprit quand vous utilisez un code de manipulation graphique plus complexe.  
   
 ## <a name="example"></a>Exemple  
   
@@ -60,7 +60,7 @@ private void Form1_Paint(System.Object sender,
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Le code ci-dessus est exécuté dans le formulaire <xref:System.Windows.Forms.Control.Paint> Gestionnaire d’événements afin que les graphiques persistent si le formulaire est redessiné. Par conséquent, n’appelez pas de méthodes graphiques dans le <xref:System.Windows.Forms.Form.Load> Gestionnaire d’événements, étant donné que le contenu dessiné ne sera pas redessiné si le formulaire est redimensionné ou masqué par un autre formulaire.  
+ Le code ci-dessus est exécuté dans le <xref:System.Windows.Forms.Control.Paint> gestionnaire d’événements du formulaire afin que les graphiques persistent lorsque le formulaire est redessiné. Par conséquent, n’appelez pas les méthodes graphiques dans le <xref:System.Windows.Forms.Form.Load> gestionnaire d’événements, car le contenu dessiné ne sera pas redessiné si le formulaire est redimensionné ou masqué par un autre formulaire.  
   
 ## <a name="see-also"></a>Voir aussi
 

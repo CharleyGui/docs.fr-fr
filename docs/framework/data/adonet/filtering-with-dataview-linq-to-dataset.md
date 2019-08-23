@@ -5,29 +5,29 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5632d74a-ff53-4ea7-9fe7-4a148eeb1c68
-ms.openlocfilehash: 1af8863dd22b5ebb3a2c87009b9c51d5ec25bb89
-ms.sourcegitcommit: b1cfd260928d464d91e20121f9bdba7611c94d71
+ms.openlocfilehash: aaa9ac0514f3e79f101bbcd9cbab60929f91d4fd
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67504847"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959128"
 ---
 # <a name="filtering-with-dataview-linq-to-dataset"></a>Filtrage avec DataView (LINQ to DataSet)
-La possibilité de filtrer des données en utilisant des critères spécifiques, puis de les présenter à un client à travers un contrôle d’interface utilisateur, est un important aspect de la liaison de données. <xref:System.Data.DataView> propose plusieurs manières de filtrer les données et de retourner des sous-ensembles de lignes de données correspondant à des critères de filtre spécifiques. En plus de basé sur la chaîne des fonctionnalités de filtrage <xref:System.Data.DataView> offre également la possibilité d’utiliser [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] expressions pour les critères de filtrage. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] les expressions permettent des opérations de filtrage bien plus complexes et puissantes que le filtrage basé sur chaîne.  
+La possibilité de filtrer des données en utilisant des critères spécifiques, puis de les présenter à un client à travers un contrôle d’interface utilisateur, est un important aspect de la liaison de données. <xref:System.Data.DataView> propose plusieurs manières de filtrer les données et de retourner des sous-ensembles de lignes de données correspondant à des critères de filtre spécifiques. Outre les capacités <xref:System.Data.DataView> de filtrage basé sur chaîne, offre également la possibilité d’utiliser [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] des expressions pour les critères de filtrage. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]les expressions permettent des opérations de filtrage bien plus complexes et puissantes que le filtrage basé sur chaîne.  
   
  Il existe deux façons de filtrer des données à l'aide d'un <xref:System.Data.DataView> :  
   
-- Créer un <xref:System.Data.DataView> à partir d’une requête LINQ to DataSet avec Where clause.  
+- Créez un <xref:System.Data.DataView> à partir d’une requête de LINQ to DataSet avec une clause WHERE.  
   
 - Utiliser les fonctionnalités de filtrage basé sur chaîne existantes de <xref:System.Data.DataView>.  
   
 ## <a name="creating-dataview-from-a-query-with-filtering-information"></a>Création d'un DataView à partir d'une requête avec informations de filtrage  
- Un <xref:System.Data.DataView> objet peut être créé à partir d’un LINQ à la requête de DataSet. Si cette requête contient une clause `Where`, le <xref:System.Data.DataView> est créé avec les informations de filtrage de la requête. L'expression dans la clause `Where` sert à déterminer quelles lignes de données seront incluses dans le <xref:System.Data.DataView>, et est la base du filtre.  
+ Un <xref:System.Data.DataView> objet peut être créé à partir d’une requête de LINQ to DataSet. Si cette requête contient une clause `Where`, le <xref:System.Data.DataView> est créé avec les informations de filtrage de la requête. L'expression dans la clause `Where` sert à déterminer quelles lignes de données seront incluses dans le <xref:System.Data.DataView>, et est la base du filtre.  
   
  Les filtres basés sur une expression offrent une filtrage plus puissant et plus complexe que les filtres basés sur chaîne. Les filtres basés sur chaîne et sur une expression s'excluent mutuellement. Lorsque le <xref:System.Data.DataView.RowFilter%2A> basé sur chaîne est défini après la création d'un <xref:System.Data.DataView> à partir d'une requête, le filtre basé sur une expression déduit de la requête est supprimé.  
   
 > [!NOTE]
->  Dans la plupart des cas, les expressions utilisées pour le filtrage ne doivent pas avoir d'effets secondaires et doivent être déterministes. De plus, les expressions ne doivent pas contenir de logique dépendant d'un nombre défini d'exécutions, parce que les opérations de filtrage doivent pouvoir être exécutées de façon illimitée.  
+> Dans la plupart des cas, les expressions utilisées pour le filtrage ne doivent pas avoir d'effets secondaires et doivent être déterministes. De plus, les expressions ne doivent pas contenir de logique dépendant d'un nombre défini d'exécutions, parce que les opérations de filtrage doivent pouvoir être exécutées de façon illimitée.  
   
 ### <a name="example"></a>Exemple  
  L'exemple suivant interroge la table SalesOrderDetail pour extraire les commandes de quantité supérieure à 2 et inférieure à 6 ; crée un <xref:System.Data.DataView> à partir de cette requête, et lie le <xref:System.Data.DataView> à une <xref:System.Windows.Forms.BindingSource> :  
@@ -41,7 +41,7 @@ La possibilité de filtrer des données en utilisant des critères spécifiques,
  [!code-csharp[DP DataView Samples#LDVFromQueryWhere3](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvfromquerywhere3)]
  [!code-vb[DP DataView Samples#LDVFromQueryWhere3](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#ldvfromquerywhere3)]  
   
-### <a name="example"></a>Exemple  
+### <a name="example"></a>Exemples  
  Le filtrage peut également être combiné avec le tri. L'exemple suivant crée un <xref:System.Data.DataView> à partir d'une requête pour les contacts dont le nom commence par la lettre « S » et trié par nom, puis par prénom :  
   
  [!code-csharp[DP DataView Samples#LDVFromQueryWhereOrderByThenBy](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvfromquerywhereorderbythenby)]
@@ -59,19 +59,19 @@ La possibilité de filtrer des données en utilisant des critères spécifiques,
  [!code-vb[DP DataView Samples#SoundEx](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#soundex)]  
   
 ## <a name="using-the-rowfilter-property"></a>Utilisation de la propriété RowFilter  
- La fonctionnalité de filtrage basé sur chaîne existante de <xref:System.Data.DataView> fonctionne toujours dans le LINQ au contexte du jeu de données. Pour plus d’informations sur basé sur chaîne <xref:System.Data.DataView.RowFilter%2A> filtrage, consultez [de tri et filtrage des données](../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md).  
+ La fonctionnalité de filtrage basé sur chaîne existante <xref:System.Data.DataView> de fonctionne toujours dans le contexte de LINQ to DataSet. Pour plus d’informations sur le filtrage <xref:System.Data.DataView.RowFilter%2A> basé sur chaîne, consultez [Tri et filtrage des données](../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md).  
   
  L'exemple suivant crée une table <xref:System.Data.DataView> à partir de la table Contact, puis définit la propriété <xref:System.Data.DataView.RowFilter%2A> pour retourner les lignes où le nom du contact est « Zhu » :  
   
  [!code-csharp[DP DataView Samples#LDVRowFilter](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvrowfilter)]
  [!code-vb[DP DataView Samples#LDVRowFilter](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#ldvrowfilter)]  
   
- Après un <xref:System.Data.DataView> a été créé à partir d’un <xref:System.Data.DataTable> ou requête LINQ to DataSet, vous pouvez utiliser le <xref:System.Data.DataView.RowFilter%2A> propriété pour spécifier des sous-ensembles de lignes en fonction de leurs valeurs de colonne. Les filtres basés sur chaîne et sur une expression s'excluent mutuellement. Définition de la <xref:System.Data.DataView.RowFilter%2A> propriété efface l’expression de filtre déduite à partir de LINQ à la requête de DataSet, et l’expression de filtre ne peut pas être réinitialisée.  
+ Une fois <xref:System.Data.DataView> qu’un a été créé <xref:System.Data.DataTable> à partir d’une requête ou LINQ to DataSet, <xref:System.Data.DataView.RowFilter%2A> vous pouvez utiliser la propriété pour spécifier des sous-ensembles de lignes en fonction de leurs valeurs de colonne. Les filtres basés sur chaîne et sur une expression s'excluent mutuellement. La définition <xref:System.Data.DataView.RowFilter%2A> de la propriété efface l’expression de filtre déduite de la requête LINQ to DataSet, et l’expression de filtre ne peut pas être réinitialisée.  
   
  [!code-csharp[DP DataView Samples#LDVFromQueryWhereSetRowFilter](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvfromquerywheresetrowfilter)]
  [!code-vb[DP DataView Samples#LDVFromQueryWhereSetRowFilter](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#ldvfromquerywheresetrowfilter)]  
   
- Si vous souhaitez retourner les résultats d'une requête particulière exécutée sur les données, vous pouvez, au lieu de fournir une vue dynamique d'un sous-ensemble des données, utiliser l'une des méthodes <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A> du <xref:System.Data.DataView>, plutôt que de définir la propriété <xref:System.Data.DataView.RowFilter%2A>. L'utilisation de la propriété <xref:System.Data.DataView.RowFilter%2A> est optimale dans une application de liaison de données où un contrôle lié affiche des résultats filtrés. Le paramétrage de la propriété <xref:System.Data.DataView.RowFilter%2A> entraîne une nouvelle génération de l'index des données, ce qui accroît la charge sur votre application et, par voie de conséquence, fait baisser les performances. Les méthodes <xref:System.Data.DataView.Find%2A> et <xref:System.Data.DataView.FindRows%2A> utilisent l'index en cours sans qu'il soit nécessaire de le reconstruire. Si vous ne souhaitez appeler <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A> qu'une seule fois, il est préférable d'utiliser le <xref:System.Data.DataView> existant. Si vous souhaitez appeler <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A> plusieurs fois, vous devez créer un nouveau <xref:System.Data.DataView> pour reconstruire l'index sur la colonne où vous voulez effectuer la recherche, pour appeler la méthode <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A>. Pour plus d’informations sur la <xref:System.Data.DataView.Find%2A> et <xref:System.Data.DataView.FindRows%2A> Voir méthodes [recherche les lignes](../../../../docs/framework/data/adonet/dataset-datatable-dataview/finding-rows.md) et [DataView performances](../../../../docs/framework/data/adonet/dataview-performance.md).  
+ Si vous souhaitez retourner les résultats d'une requête particulière exécutée sur les données, vous pouvez, au lieu de fournir une vue dynamique d'un sous-ensemble des données, utiliser l'une des méthodes <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A> du <xref:System.Data.DataView>, plutôt que de définir la propriété <xref:System.Data.DataView.RowFilter%2A>. L'utilisation de la propriété <xref:System.Data.DataView.RowFilter%2A> est optimale dans une application de liaison de données où un contrôle lié affiche des résultats filtrés. Le paramétrage de la propriété <xref:System.Data.DataView.RowFilter%2A> entraîne une nouvelle génération de l'index des données, ce qui accroît la charge sur votre application et, par voie de conséquence, fait baisser les performances. Les méthodes <xref:System.Data.DataView.Find%2A> et <xref:System.Data.DataView.FindRows%2A> utilisent l'index en cours sans qu'il soit nécessaire de le reconstruire. Si vous ne souhaitez appeler <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A> qu'une seule fois, il est préférable d'utiliser le <xref:System.Data.DataView> existant. Si vous souhaitez appeler <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A> plusieurs fois, vous devez créer un nouveau <xref:System.Data.DataView> pour reconstruire l'index sur la colonne où vous voulez effectuer la recherche, pour appeler la méthode <xref:System.Data.DataView.Find%2A> ou <xref:System.Data.DataView.FindRows%2A>. Pour plus d’informations sur <xref:System.Data.DataView.Find%2A> les <xref:System.Data.DataView.FindRows%2A> méthodes et, consultez [recherche de lignes](../../../../docs/framework/data/adonet/dataset-datatable-dataview/finding-rows.md) et [performances de DataView](../../../../docs/framework/data/adonet/dataview-performance.md).  
   
 ## <a name="clearing-the-filter"></a>Suppression du filtre  
  Le filtre d'un <xref:System.Data.DataView> peut être supprimé une fois le filtrage défini à l'aide de la propriété <xref:System.Data.DataView.RowFilter%2A>. Le filtre sur un <xref:System.Data.DataView> peut être supprimé de deux manières différentes :  
@@ -80,13 +80,13 @@ La possibilité de filtrer des données en utilisant des critères spécifiques,
   
 - Définissez la propriété <xref:System.Data.DataView.RowFilter%2A> en tant que chaîne vide.  
   
-### <a name="example"></a>Exemple  
+### <a name="example"></a>Exemples  
  L'exemple suivant crée un <xref:System.Data.DataView> à partir d'une requête, puis supprime le filtre en définissant la propriété <xref:System.Data.DataView.RowFilter%2A> sur `null` :  
   
  [!code-csharp[DP DataView Samples#LDVClearRowFilter2](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvclearrowfilter2)]
  [!code-vb[DP DataView Samples#LDVClearRowFilter2](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#ldvclearrowfilter2)]  
   
-### <a name="example"></a>Exemple  
+### <a name="example"></a>Exemples  
  L'exemple suivant crée un <xref:System.Data.DataView> à partir d'une table, définit la propriété <xref:System.Data.DataView.RowFilter%2A>, puis supprime le filtre en définissant la propriété <xref:System.Data.DataView.RowFilter%2A> en tant que chaîne vide :  
   
  [!code-csharp[DP DataView Samples#LDVClearRowFilter](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvclearrowfilter)]

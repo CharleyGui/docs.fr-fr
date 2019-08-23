@@ -16,20 +16,20 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d6fb0b11c26ff65f74681d1e3bf7324bfb0e559d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 44241d02051c9bd54f93a19fa6044e4973fdef9e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67766613"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950260"
 ---
 # <a name="iceefilegen-class"></a>ICeeFileGen, classe
-Fournit des fonctionnalités pour créer un fichier exécutable portable natif (PE). L’interface sera généralement être utilisée par les compilateurs pour générer leur sortie compilée exécutable.  
+Fournit des fonctionnalités pour la création d’un fichier exécutable portable (PE) natif. L’interface est généralement utilisée par les compilateurs pour générer leur exécutable de sortie compilé.  
   
 > [!NOTE]
->  `ICeeFileGen` prend en charge l’infrastructure .NET Framework et n’est pas destinée à être utilisée directement depuis votre code.  
+> `ICeeFileGen`prend en charge l’infrastructure .NET Framework et n’est pas destiné à être utilisé directement à partir de votre code.  
   
- Cette interface a été déconseillée et sera supprimée dans une version ultérieure.  
+ Cette interface a été dépréciée et sera supprimée dans une version ultérieure.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -237,11 +237,11 @@ public:
 ```  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** ICeeFileGen.h  
   
- **Version du .NET framework :** 1.0  
+ **Version de .NET Framework:** 1.0  
   
 ## <a name="see-also"></a>Voir aussi
 

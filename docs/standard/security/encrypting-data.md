@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 7ecce51f-db5f-4bd4-9321-cceb6fcb2a77
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: eeb92845d9b4eb40eef496ffaf5b35e38ed91423
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: fd74da9be6d6b02817c8969befdc292f6e814628
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301168"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968705"
 ---
 # <a name="encrypting-data"></a>Chiffrement de données
 Le chiffrement symétrique et le chiffrement asymétrique utilisent des processus différents. Le chiffrement symétrique est effectué sur des flux. Il est donc utile pour le chiffrement de grandes quantités de données. Le chiffrement asymétrique s'effectue sur un petit nombre d'octets. Il n'est donc utile que pour les petites quantités de données.  
@@ -43,7 +43,7 @@ CryptoStream cryptStream = new CryptoStream(myStream, rmCrypto.CreateEncryptor()
  L'exemple suivant montre l'intégralité des processus de création de flux, de chiffrement de flux, d'écriture au sein de flux et de fermeture de flux. Cet exemple crée un flux de réseau qui est chiffré à l'aide de la classe **CryptoStream** et de la classe **RijndaelManaged** . Un message est écrit dans le flux chiffré avec la classe <xref:System.IO.StreamWriter> .  
   
 > [!NOTE]
->  Vous pouvez également utiliser cet exemple pour écrire dans un fichier. Pour cela, supprimez la référence <xref:System.Net.Sockets.TcpClient> et remplacez <xref:System.Net.Sockets.NetworkStream> par un <xref:System.IO.FileStream>.  
+> Vous pouvez également utiliser cet exemple pour écrire dans un fichier. Pour cela, supprimez la référence <xref:System.Net.Sockets.TcpClient> et remplacez <xref:System.Net.Sockets.NetworkStream> par un <xref:System.IO.FileStream>.  
   
 ```vb  
 Imports System  

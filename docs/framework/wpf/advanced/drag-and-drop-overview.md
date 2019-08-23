@@ -12,12 +12,12 @@ helpviewer_keywords:
 - drag-and-drop [WPF], events
 - drop targets [WPF], drag-and-drop
 ms.assetid: 1a5b27b0-0ac5-4cdf-86c0-86ac0271fa64
-ms.openlocfilehash: 0a2fae2acd2b190e6133c1f02010a7e3d35bba67
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e8e8b294e05579a91a4557b23be6c65f4d619167
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663353"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940877"
 ---
 # <a name="drag-and-drop-overview"></a>Vue d'ensemble du glisser-déplacer
 Cette rubrique offre une vue d'ensemble de la prise en charge du glisser-déplacer dans les applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Le glisser-déplacer fait généralement référence à une méthode de transfert de données qui implique l'utilisation d'une souris (ou d'un autre dispositif de pointage) pour sélectionner un ou plusieurs objets, les faire glisser vers une cible de déplacement souhaitée dans l'[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] et les y déplacer.  
@@ -30,12 +30,12 @@ Cette rubrique offre une vue d'ensemble de la prise en charge du glisser-déplac
   
  Les actions particulières exécutées pendant une opération de glisser-déplacer varient en fonction de l'application et sont souvent déterminées par le contexte.  Par exemple, le glissement d'une sélection de fichiers d'un dossier vers un autre sur un même dispositif de stockage déplace les fichiers par défaut, alors que le glissement de fichiers d'un partage [!INCLUDE[TLA#tla_unc](../../../../includes/tlasharptla-unc-md.md)] vers un dossier local copie les fichiers par défaut.  
   
- Les fonctionnalités de glisser-déplacer fournies par [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ont été conçues pour être très souples et personnalisables et ainsi prendre en charge un large éventail de scénarios de glisser-déplacer.  Le glisser-déplacer prend en charge la manipulation d'objets au sein d'une même application ou entre différentes applications. Glisser-déposer entre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications et autres applications de Windows est également entièrement pris en charge.  
+ Les fonctionnalités de glisser-déplacer fournies par [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ont été conçues pour être très souples et personnalisables et ainsi prendre en charge un large éventail de scénarios de glisser-déplacer.  Le glisser-déplacer prend en charge la manipulation d'objets au sein d'une même application ou entre différentes applications. La fonction de glisser-déposer entre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] des applications et d’autres applications Windows est également entièrement prise en charge.  
   
  Dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], tout <xref:System.Windows.UIElement> ou <xref:System.Windows.ContentElement> peut participer à l'opération de glisser-déplacer. Les événements et méthodes nécessaires aux opérations de glisser-déplacer sont définis dans la classe <xref:System.Windows.DragDrop>. Les classes <xref:System.Windows.UIElement> et <xref:System.Windows.ContentElement> contiennent des alias pour les événements attachés <xref:System.Windows.DragDrop>, si bien que les événements apparaissent dans la liste des membres de classe quand un <xref:System.Windows.UIElement> ou un <xref:System.Windows.ContentElement> est hérité en tant qu'élément de base. Les gestionnaires d'événements attachés à ces événements sont attachés à l'événement attaché <xref:System.Windows.DragDrop> sous-jacent et reçoivent la même instance de données d'événement. Pour plus d'informations, consultez l'événement <xref:System.Windows.UIElement.Drop?displayProperty=nameWithType>.  
   
 > [!IMPORTANT]
->  Le glisser-déplacer OLE ne fonctionne pas dans la zone Internet.  
+> Le glisser-déplacer OLE ne fonctionne pas dans la zone Internet.  
   
 <a name="Data_Transfer"></a>   
 ## <a name="data-transfer"></a>Transfert de données  
@@ -122,7 +122,7 @@ Cette rubrique offre une vue d'ensemble de la prise en charge du glisser-déplac
   
 <a name="Drag_And_Drop_Example"></a>   
 ## <a name="drag-and-drop-example"></a>Exemple de glisser-déplacer  
- Cette section explique comment implémenter le glisser-déplacer pour un élément <xref:System.Windows.Shapes.Ellipse>. <xref:System.Windows.Shapes.Ellipse> est à la fois une source de glissement et une cible de déplacement. Les données transférées sont la représentation sous forme de chaîne de la propriété <xref:System.Windows.Shapes.Shape.Fill%2A> de l'ellipse. Le code XAML suivant illustre l'élément <xref:System.Windows.Shapes.Ellipse> et les événements de glisser-déplacer associés qu'il gère. Pour obtenir des instructions complètes sur la façon d’implémenter le glisser-déplacer, consultez [procédure pas à pas : L’activation de glisser-déplacer sur un contrôle utilisateur](walkthrough-enabling-drag-and-drop-on-a-user-control.md).  
+ Cette section explique comment implémenter le glisser-déplacer pour un élément <xref:System.Windows.Shapes.Ellipse>. <xref:System.Windows.Shapes.Ellipse> est à la fois une source de glissement et une cible de déplacement. Les données transférées sont la représentation sous forme de chaîne de la propriété <xref:System.Windows.Shapes.Shape.Fill%2A> de l'ellipse. Le code XAML suivant illustre l'élément <xref:System.Windows.Shapes.Ellipse> et les événements de glisser-déplacer associés qu'il gère. Pour connaître les étapes à suivre pour implémenter le glisser-déplacer, [consultez Procédure pas à pas: Activation du glisser-déplacer sur un contrôle](walkthrough-enabling-drag-and-drop-on-a-user-control.md)utilisateur.  
   
  [!code-xaml[DragDropSnippets#EllipseXaml](~/samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml#ellipsexaml)]  
   
@@ -157,7 +157,7 @@ Cette rubrique offre une vue d'ensemble de la prise en charge du glisser-déplac
  Le paramètre `allowedEffects` est utilisé pour spécifier ce que la source du glissement autorise la cible du glissement à faire des données transférées. Les valeurs courantes pour une source de glissement sont <xref:System.Windows.DragDropEffects.Copy>, <xref:System.Windows.DragDropEffects.Move> et <xref:System.Windows.DragDropEffects.All>.  
   
 > [!NOTE]
->  La cible du déplacement peut aussi spécifier les effets prévus en réponse aux données déplacées. Par exemple, si la cible de déplacement ne reconnaît pas le type de données à déplacer, elle peut refuser les données en attribuant à ses effets autorisés la valeur <xref:System.Windows.DragDropEffects.None>. C'est généralement le cas de son gestionnaire d'événements <xref:System.Windows.DragDrop.DragOver>.  
+> La cible du déplacement peut aussi spécifier les effets prévus en réponse aux données déplacées. Par exemple, si la cible de déplacement ne reconnaît pas le type de données à déplacer, elle peut refuser les données en attribuant à ses effets autorisés la valeur <xref:System.Windows.DragDropEffects.None>. C'est généralement le cas de son gestionnaire d'événements <xref:System.Windows.DragDrop.DragOver>.  
   
  Une source de glissement peut éventuellement gérer les événements <xref:System.Windows.DragDrop.GiveFeedback> et <xref:System.Windows.DragDrop.QueryContinueDrag>. Ces événements possèdent des gestionnaires par défaut qui sont utilisés, à moins que vous marquiez les événements comme gérés. En général, vous pouvez ignorer ces événements, sauf si vous avez besoin de modifier leur comportement par défaut.  
   
@@ -218,6 +218,6 @@ Cette rubrique offre une vue d'ensemble de la prise en charge du glisser-déplac
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Clipboard>
-- [Procédure pas à pas : L’activation de glisser-déplacer sur un contrôle utilisateur](walkthrough-enabling-drag-and-drop-on-a-user-control.md)
+- [Procédure pas à pas : Activation du glisser-déplacer sur un contrôle utilisateur](walkthrough-enabling-drag-and-drop-on-a-user-control.md)
 - [Rubriques de guide pratique](drag-and-drop-how-to-topics.md)
 - [Glisser-déposer](drag-and-drop.md)

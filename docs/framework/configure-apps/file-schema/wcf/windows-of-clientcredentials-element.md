@@ -1,21 +1,21 @@
 ---
-title: <windows> de <clientCredentials> élément
+title: <windows>d' <clientCredentials> élément
 ms.date: 03/30/2017
 ms.assetid: 793e41c2-31ea-4159-abbc-2123bf097233
-ms.openlocfilehash: b5e92745b9e39534d2a0bc35504c2dbc8346d2ca
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e9f0ed9879cc42ea25b83e6b626139a40a593112
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769718"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69940310"
 ---
-# <a name="windows-of-clientcredentials-element"></a>\<Windows > de \<clientCredentials > élément
+# <a name="windows-of-clientcredentials-element"></a>\<> Windows de \<l’élément ClientCredentials >
 Spécifie les paramètres pour des informations d'identification Windows à utiliser pour représenter le client.  
   
  \<system.ServiceModel>  
 \<behaviors>  
 \<endpointBehaviors>  
-\<behavior>  
+\<> de comportement  
 \<clientCredentials>  
 \<windows>  
   
@@ -33,8 +33,8 @@ Spécifie les paramètres pour des informations d'identification Windows à util
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|`allowedImpersonationLevel`|Définit la préférence d'emprunt d'identité que le client communique au serveur. Le mode d'emprunt d'identité que le client sélectionne n'est pas appliqué sur le serveur. Les valeurs valides sont les suivantes :<br /><br /> -   Identification: Le serveur peut obtenir l’identité et les privilèges du client, mais ne peut pas représenter le client.<br />-L’emprunt d’identité : Le serveur peut emprunter l’identité de contexte de sécurité du client sur le système local.<br />-Délégation : Le serveur peut emprunter l’identité de contexte de sécurité du client sur des systèmes distants.<br />-Anonyme : Le serveur ne peut pas emprunter l’identité ou identifier le client.<br />-None : Un niveau d’emprunt d’identité n’est pas affecté.<br /><br /> La valeur par défaut est Identification. Cet attribut est de type <xref:System.Security.Principal.TokenImpersonationLevel>.|  
-|`allowNtlm`|L'affectation de la valeur `true` à cette propriété permet de rétrograder l'authentification à NTLM si Kerberos n'est pas disponible.<br /><br /> Si cette propriété `false` provoque Windows Communication Foundation (WCF) pour rendre un meilleur effort pour lever une exception si NTLM est utilisé. Notez que l'affectation de la valeur `false` à cette propriété peut ne pas empêcher la transmission des informations d'identification NTLM.|  
+|`allowedImpersonationLevel`|Définit la préférence d'emprunt d'identité que le client communique au serveur. Le mode d'emprunt d'identité que le client sélectionne n'est pas appliqué sur le serveur. Les valeurs valides sont les suivantes :<br /><br /> Détermination Le serveur peut accéder à l’identité et aux privilèges du client, mais ne peut pas emprunter l’identité du client.<br />Emprunt d’identité Le serveur peut emprunter l’identité du contexte de sécurité du client sur le système local.<br />Délégation Le serveur peut emprunter l’identité du contexte de sécurité du client sur les systèmes distants.<br />Façon Le serveur ne peut pas emprunter l’identité ou identifier le client.<br />None Un niveau d’emprunt d’identité n’est pas assigné.<br /><br /> La valeur par défaut est Identification. Cet attribut est de type <xref:System.Security.Principal.TokenImpersonationLevel>.|  
+|`allowNtlm`|L'affectation de la valeur `true` à cette propriété permet de rétrograder l'authentification à NTLM si Kerberos n'est pas disponible.<br /><br /> Si vous affectez `false` la valeur à cette propriété, Windows Communication Foundation (WCF) est le meilleur effort pour lever une exception si NTLM est utilisé. Notez que l'affectation de la valeur `false` à cette propriété peut ne pas empêcher la transmission des informations d'identification NTLM.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -43,7 +43,7 @@ Spécifie les paramètres pour des informations d'identification Windows à util
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<clientCredentials>](../../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)|Spécifie les informations d'identification utilisées pour authentifier le client auprès du service.|  
+|[\<clientCredentials>](clientcredentials.md)|Spécifie les informations d'identification utilisées pour authentifier le client auprès du service.|  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -54,6 +54,6 @@ Spécifie les paramètres pour des informations d'identification Windows à util
 - <xref:System.ServiceModel.Description.ClientCredentials>
 - <xref:System.ServiceModel.Description.ClientCredentials.Windows%2A>
 - <xref:System.ServiceModel.Security.WindowsClientCredential>
-- [Sécurisation des clients](../../../../../docs/framework/wcf/securing-clients.md)
-- [Utilisation des certificats](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [Sécurisation des services et des clients](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des clients](../../../wcf/securing-clients.md)
+- [Utilisation des certificats](../../../wcf/feature-details/working-with-certificates.md)
+- [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)

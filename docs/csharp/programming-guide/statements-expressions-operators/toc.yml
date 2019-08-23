@@ -7,8 +7,6 @@
       href: expressions.md
     - name: Membres expression-bodied
       href: expression-bodied-members.md
-    - name: Opérateurs
-      href: operators.md
     - name: Fonctions anonymes
       items:
         - name: Vue d'ensemble

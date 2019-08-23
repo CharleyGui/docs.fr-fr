@@ -8,20 +8,20 @@ helpviewer_keywords:
 - controlling clocks interactively [WPF]
 - clocks [WPF], controlling interactively
 ms.assetid: d0b520e0-2f18-4cef-977f-2909e709548a
-ms.openlocfilehash: 05989b6a03e03fb5723a70c9c36d5e32f9117049
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2d18f395974750a6b85458f636a27f6101e7978f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947236"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69951347"
 ---
 # <a name="how-to-interactively-control-a-clock"></a>Procédure : Contrôler une horloge de façon interactive
-Un <xref:System.Windows.Media.Animation.Clock> l’objet <xref:System.Windows.Media.Animation.ClockController> propriété vous permet de manière interactive Démarrer, suspendre, reprendre, rechercher, avancer l’horloge à sa période de remplissage et arrêter l’horloge. Que l’horloge racine d’arborescence de minutage peut être contrôlée de manière interactive.  
+La <xref:System.Windows.Media.Animation.Clock> propriété d' <xref:System.Windows.Media.Animation.ClockController> un objet vous permet de démarrer, d’interrompre, de reprendre et de rechercher de manière interactive, d’avancer l’horloge à sa période de remplissage et d’arrêter l’horloge. Seule l’horloge racine d’une arborescence de minutage peut être contrôlée de manière interactive.  
   
 > [!NOTE]
->  Il existe d’autres façons de manière interactive des animations de contrôle qui ne nécessitent pas de travailler directement avec les horloges : vous pouvez également utiliser des tables de montage séquentiel. Les storyboards sont pris en charge dans le balisage et code. Pour obtenir un exemple, consultez [animer une propriété à l’aide d’un Storyboard](how-to-animate-a-property-by-using-a-storyboard.md) ou [vue d’ensemble de l’Animation](animation-overview.md).  
+> Il existe d’autres façons de contrôler de manière interactive les animations qui ne nécessitent pas de travailler directement avec les horloges: vous pouvez également utiliser des storyboards. Les storyboards sont pris en charge dans le balisage et le code. Pour obtenir un exemple, consultez [animer une propriété à l’aide d’un Storyboard](how-to-animate-a-property-by-using-a-storyboard.md) ou [vue d’ensemble](animation-overview.md)de l’animation.  
   
- Dans l’exemple suivant, plusieurs boutons sont utilisés pour contrôler une horloge d’animation de manière interactive.  
+ Dans l’exemple suivant, plusieurs boutons sont utilisés pour contrôler de manière interactive une horloge d’animation.  
   
 ## <a name="example"></a>Exemple  
  [!code-csharp[timingbehaviors_procedural_snip#GraphicsMMClockControllerExample](~/samples/snippets/csharp/VS_Snippets_Wpf/timingbehaviors_procedural_snip/CSharp/ClockControllerExample.cs#graphicsmmclockcontrollerexample)]

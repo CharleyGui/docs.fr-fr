@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 684d5e41e1d7cee2775aa0988d33a974315eac4e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 16d146766786f129d6da38bde1126ce8afe5e70f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67772735"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963688"
 ---
 # <a name="ihostmemorymanagervirtualquery-method"></a>IHostMemoryManager::VirtualQuery, méthode
 Sert de wrapper logique pour la fonction Win32 correspondante. L’implémentation Win32 de `VirtualQuery` récupère des informations sur une plage de pages dans l’espace d’adressage virtuel du processus appelant.  
@@ -40,40 +40,40 @@ HRESULT VirtualQuery (
   
 ## <a name="parameters"></a>Paramètres  
  `lpAddress`  
- [in] Pointeur vers l’adresse dans la mémoire virtuelle à interroger.  
+ dans Pointeur vers l’adresse de la mémoire virtuelle à interroger.  
   
  `lpBuffer`  
- [out] Un pointeur vers une structure qui contient des informations sur la région de mémoire spécifié.  
+ à Pointeur vers une structure qui contient des informations sur la région de mémoire spécifiée.  
   
  `dwLength`  
- [in] La taille, en octets, de la mémoire tampon qui `lpBuffer` pointe vers.  
+ dans Taille, en octets, de la mémoire tampon vers `lpBuffer` laquelle pointe.  
   
  `pResult`  
- [out] Pointeur vers le nombre d’octets retournés par la mémoire tampon d’informations.  
+ à Pointeur vers le nombre d’octets retournés par la mémoire tampon d’informations.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|`VirtualQuery` retourné avec succès.|  
-|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus ou le CLR est dans un état dans lequel il ne peut pas exécuter le code managé ou traiter l’appel avec succès.|  
-|HOST_E_TIMEOUT|L’appel a expiré.|  
+|S_OK|`VirtualQuery`retourné avec succès.|  
+|HOST_E_CLRNOTAVAILABLE|Le common language runtime (CLR) n’a pas été chargé dans un processus, ou le CLR est dans un État dans lequel il ne peut pas exécuter de code managé ou traiter correctement l’appel.|  
+|HOST_E_TIMEOUT|Le délai d’attente de l’appel a expiré.|  
 |HOST_E_NOT_OWNER|L’appelant ne possède pas le verrou.|  
-|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread bloqué ou Fibre l’attendait.|  
-|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Lorsqu’une méthode retourne E_FAIL, le CLR n’est plus utilisable au sein du processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
+|HOST_E_ABANDONED|Un événement a été annulé alors qu’un thread ou une fibre bloqué était en attente.|  
+|E_FAIL|Une défaillance catastrophique inconnue s’est produite. Quand une méthode retourne E_FAIL, le CLR n’est plus utilisable dans le processus. Les appels suivants aux méthodes d’hébergement retournent HOST_E_CLRNOTAVAILABLE.|  
   
 ## <a name="remarks"></a>Notes  
- `VirtualQuery` Fournit des informations sur une plage de pages dans l’espace d’adressage virtuel du processus appelant. Cette implémentation définit la valeur de la `pResult` paramètre pour le nombre d’octets retournés dans la mémoire tampon d’informations et retourne une valeur HRESULT. Dans Win32 `VirtualQuery` (fonction), la valeur de retour est la taille du tampon. Pour plus d’informations, consultez la documentation de la plateforme de Windows.  
+ `VirtualQuery`fournit des informations sur une plage de pages dans l’espace d’adressage virtuel du processus appelant. Cette implémentation définit la valeur du `pResult` paramètre sur le nombre d’octets retournés dans la mémoire tampon d’informations et retourne une valeur HRESULT. Dans la fonction `VirtualQuery` Win32, la valeur de retour est la taille de la mémoire tampon. Pour plus d’informations, consultez la documentation de la plateforme Windows.  
   
 > [!IMPORTANT]
->  Implémentation du système d’exploitation de `VirtualQuery` n’entraîne pas d’interblocage et peut s’exécuter intégralement avec des threads aléatoires interrompus dans le code utilisateur. Procédez avec précaution lors de l’implémentation d’une version hébergée de cette méthode.  
+> L’implémentation de du système d' `VirtualQuery` exploitation de n’entraîne pas de blocage et peut s’exécuter jusqu’à la fin avec les threads aléatoires suspendus dans le code utilisateur. Soyez très prudent lors de l’implémentation d’une version hébergée de cette méthode.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** MSCorEE.h  
+ **En-tête :** MSCorEE. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MSCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

@@ -10,16 +10,16 @@ helpviewer_keywords:
 - UI (user interface), automation
 - UI Automation
 ms.assetid: 4380cad7-e509-448f-b9a5-6de042605fd4
-ms.openlocfilehash: a59223bfbe9506aa0028933d55b74e24d5595c32
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 9f6c82144031cb2bf4824985b8211453bb7f51ea
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629553"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959170"
 ---
 # <a name="ui-automation-and-screen-scaling"></a>Mise à l'échelle de l'écran et UI Automation
 > [!NOTE]
->  Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)]permet aux utilisateurs de modifier le paramètre points par pouce (dpi) afin que [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] la plupart des éléments à l’écran soient plus grands. Cette fonctionnalité est disponible depuis longtemps dans [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)], mais la mise à l’échelle devait être implémentée par les applications dans les versions précédentes. Dans [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)], le Gestionnaire de fenêtrage effectue une mise à l’échelle par défaut pour toutes les applications qui ne gèrent pas leur propre mise à l’échelle. Les applications clientes UI Automation doivent prendre en compte cette fonctionnalité.  
   
@@ -32,7 +32,7 @@ ms.locfileid: "68629553"
  En effet, lorsque l’utilisateur définit le facteur d’échelle sur 120 ppp, un pouce vertical ou horizontal sur l’écran augmente de 25%. Toutes les dimensions sont ajustées en conséquence. Le décalage d’une fenêtre d’application par rapport aux bords supérieur et gauche de l’écran augmente de 25 %. Si la mise à l’échelle de l’application est activée et que l’application n’a pas de prise en charge dpi, la taille de la fenêtre augmente dans la même proportion, [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] avec les décalages et les tailles de tous les éléments qu’elle contient.  
   
 > [!NOTE]
->  Par défaut, le DWM n’effectue pas de mise à l’échelle pour les applications qui ne prennent pas en charge DPI lorsque l’utilisateur définit la valeur PPP sur 120, mais l’exécute lorsque la valeur PPP est définie sur une valeur personnalisée 144 ou supérieure. Toutefois, l’utilisateur peut remplacer le comportement par défaut.  
+> Par défaut, le DWM n’effectue pas de mise à l’échelle pour les applications qui ne prennent pas en charge DPI lorsque l’utilisateur définit la valeur PPP sur 120, mais l’exécute lorsque la valeur PPP est définie sur une valeur personnalisée 144 ou supérieure. Toutefois, l’utilisateur peut remplacer le comportement par défaut.  
   
  La mise à l’échelle de l’écran pose de nouveaux défis pour les applications qui sont concernées d’une manière ou d’une autre par les coordonnées d’écran. L’écran contient maintenant deux systèmes de coordonnées : l’un physique et l’autre logique. Les coordonnées physiques d’un point correspondent au décalage réel en pixels par rapport au point d’origine en haut à gauche. Les coordonnées logiques correspondent aux décalages tels qu’ils seraient si les pixels eux-mêmes étaient mis à l’échelle.  
   

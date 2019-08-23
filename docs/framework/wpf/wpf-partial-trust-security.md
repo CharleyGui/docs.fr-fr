@@ -15,12 +15,12 @@ helpviewer_keywords:
 - feature security requirements [WPF]
 - managing permissions [WPF]
 ms.assetid: ef2c0810-1dbf-4511-babd-1fab95b523b5
-ms.openlocfilehash: b68148b08cf6b5f980bc09e497e845558ae882fb
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: c3ec6ca6feba975517a9f982bb58e4b061516a61
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567533"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962801"
 ---
 # <a name="wpf-partial-trust-security"></a>Sécurité de confiance partielle de WPF
 <a name="introduction"></a> En général, les applications Internet doivent disposer d’un accès direct limité aux ressources système critiques, afin d’éviter des dommages dus à des actes de malveillance. Par défaut, les langages de script HTML et côté client ne sont pas en mesure d’accéder aux ressources système critiques. Étant donné que les applications hébergées par un navigateur Windows Presentation Foundation (WPF) peuvent être lancées à partir du navigateur, elles doivent être conformes à un ensemble similaire de restrictions. Pour appliquer ces restrictions, [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] s’appuie sur la sécurité d’accès du code (cas) et ClickOnce (consultez [stratégie de sécurité de WPF-sécurité](wpf-security-strategy-platform-security.md)de la plateforme). Par défaut, les applications hébergées par un navigateur demandent le jeu d’autorisations de la zone Internet, qu’elles soient lancées à partir d’Internet, de l’intranet local ou de l’ordinateur local. Les applications qui sont exécutées sans jeu d’autorisations complet sont exécutées avec une confiance dite partielle.  
@@ -87,7 +87,7 @@ ms.locfileid: "69567533"
 |Internet|Échec avec "Confiance non accordée"|Signez l’application XBAP avec un certificat.|  
   
 > [!NOTE]
->  Le comportement décrit dans le tableau précédent concerne les applications XBAP de confiance totale qui ne suivent pas le modèle de déploiement approuvé ClickOnce.  
+> Le comportement décrit dans le tableau précédent concerne les applications XBAP de confiance totale qui ne suivent pas le modèle de déploiement approuvé ClickOnce.  
   
  En général, le code qui outrepasse les permissions autorisées est susceptible d’être du code commun qui est partagé entre des applications hébergées par le navigateur et des applications autonomes. Les autorités [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] de certification et offrent plusieurs techniques pour la gestion de ce scénario.  
   
@@ -120,7 +120,7 @@ ms.locfileid: "69567533"
  L’utilisation des autorités de certification pour vérifier les autorisations est une technique appropriée lorsque vous devez vérifier par autorisation. Cette technique dépend toutefois de l’interception des exceptions dans le cadre d’un traitement normal, ce qui n’est généralement pas recommandé et peut entraîner des problèmes de performances. Au lieu de cela [!INCLUDE[TLA#tla_xbap](../../../includes/tlasharptla-xbap-md.md)] , si votre s’exécute uniquement dans le bac à sable ( <xref:System.Windows.Interop.BrowserInteropHelper.IsBrowserHosted%2A?displayProperty=nameWithType> sandbox) de la zone Internet [!INCLUDE[TLA#tla_xbap#plural](../../../includes/tlasharptla-xbapsharpplural-md.md)], vous pouvez utiliser la propriété, qui retourne la valeur true pour.  
   
 > [!NOTE]
->  <xref:System.Windows.Interop.BrowserInteropHelper.IsBrowserHosted%2A>fait uniquement la distinction si une application s’exécute dans un navigateur, et non le jeu d’autorisations avec lequel une application s’exécute.  
+> <xref:System.Windows.Interop.BrowserInteropHelper.IsBrowserHosted%2A>fait uniquement la distinction si une application s’exécute dans un navigateur, et non le jeu d’autorisations avec lequel une application s’exécute.  
   
 <a name="Managing_Permissions"></a>   
 ## <a name="managing-permissions"></a>Gestion des autorisations  
@@ -149,7 +149,7 @@ ms.locfileid: "69567533"
 |Navigateur web|Navigation de frame sécurisée vers HTML|Oui|Oui|  
   
 > [!NOTE]
->  Le couper-coller est autorisé uniquement en mode confiance partielle quand il est à l’initiative de l’utilisateur.  
+> Le couper-coller est autorisé uniquement en mode confiance partielle quand il est à l’initiative de l’utilisateur.  
   
  Si vous devez augmenter le niveau d’autorisation, vous devez changer les paramètres du projet et le manifeste de l’application ClickOnce. Pour plus d’informations, consultez [Vue d’ensemble des applications de navigateur XAML](./app-development/wpf-xaml-browser-applications-overview.md). Les documents suivants peuvent également être utiles.  
   

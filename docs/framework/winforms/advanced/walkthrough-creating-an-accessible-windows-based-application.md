@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Windows applications [Windows Forms], accessibility
 - applications [Windows Forms], accessibility
 ms.assetid: 654c7f2f-1586-480b-9f12-9d9b8f5cc32b
-ms.openlocfilehash: 7dec86c724479fde78fcb2e2881dce40b1bf747a
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 5768177401504f4776a34e499d07b7600597175a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877103"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957196"
 ---
 # <a name="walkthrough-creating-an-accessible-windows-based-application"></a>Procédure pas à pas : création d’une application Windows accessible
 
@@ -43,7 +43,7 @@ L'objectif principal de cette procédure pas à pas n'est pas d'illustrer le cod
 
 #### <a name="to-begin-making-the-application"></a>Pour commencer à créer l'application
 
-- Créez une Application Windows en Visual Basic ou Visual C#. Nommez le projet **PizzaOrder**. (Pour plus d’informations, consultez [Création de projets et de solutions](/visualstudio/ide/creating-solutions-and-projects).)
+- Créez une nouvelle application Windows dans Visual Basic ou Visual C#. Nommez le projet **PizzaOrder**. (Pour plus d’informations, consultez [Création de projets et de solutions](/visualstudio/ide/creating-solutions-and-projects).)
 
 ## <a name="adding-the-controls-to-the-form"></a>Ajout des contrôles au formulaire
 
@@ -58,9 +58,9 @@ Lors de l'ajout des contrôles à un formulaire, veillez à respecter les consig
 
 - Assurez-vous que tous les contrôles Label qui décrivent un contrôle TextBox précèdent immédiatement le contrôle TextBox dans l'ordre de tabulation.
 
-- Ajouter une clé d’accès, à l’aide du caractère « & », à la <xref:System.Windows.Forms.Control.Text%2A> propriété de n’importe quel contrôle de l’utilisateur doit pouvoir accéder à.
+- Ajoutez une touche d’accès, en utilisant le caractère «&», <xref:System.Windows.Forms.Control.Text%2A> à la propriété de n’importe quel contrôle auquel l’utilisateur peut accéder.
 
-- Ajouter une clé d’accès, à l’aide du caractère « & », à la <xref:System.Windows.Forms.Control.Text%2A> propriété de l’étiquette qui précède un contrôle auquel l’utilisateur doit pouvoir accéder à. Affectez la valeur `true` à la propriété <xref:System.Windows.Forms.Label.UseMnemonic%2A> des étiquettes pour que le focus soit défini sur le contrôle suivant dans l'ordre de tabulation quand l'utilisateur appuie sur la touche d'accès.
+- Ajoutez une touche d’accès, en utilisant le caractère «&», <xref:System.Windows.Forms.Control.Text%2A> à la propriété de l’étiquette qui précède un contrôle auquel l’utilisateur peut accéder. Affectez la valeur `true` à la propriété <xref:System.Windows.Forms.Label.UseMnemonic%2A> des étiquettes pour que le focus soit défini sur le contrôle suivant dans l'ordre de tabulation quand l'utilisateur appuie sur la touche d'accès.
 
 - Ajoutez des touches d'accès rapide à tous les éléments de menu.
 
@@ -68,18 +68,18 @@ Lors de l'ajout des contrôles à un formulaire, veillez à respecter les consig
 
 - Ajoutez les contrôles au formulaire et définissez les propriétés comme décrit ci-dessous. Pour obtenir un modèle décrivant comment organiser les contrôles sur le formulaire, consultez l'image à la fin du tableau.
 
-   |Object|Propriété|Value|
+   |Object|Propriété|`Value`|
    |------------|--------------|-----------|
    |Form1|AccessibleDescription|Formulaire de commande|
    ||AccessibleName|Formulaire de commande|
    ||Taille de police|10|
-   ||Texte|Formulaire de commande de pizza|
+   ||Text|Formulaire de commande de pizza|
    |PictureBox|Nom|logo|
    ||AccessibleDescription|Une tranche de pizza|
    ||AccessibleName|Logo de la société|
    ||Image|Une icône ou bitmap quelconque|
    |Etiquette|Nom|companyLabel|
-   ||Texte|Bonne Pizza|
+   ||Text|Bonne Pizza|
    ||TabIndex|1|
    ||AccessibleDescription|Nom de la société|
    ||AccessibleName|Nom de la société|
@@ -87,66 +87,66 @@ Lors de l'ajout des contrôles à un formulaire, veillez à respecter les consig
    ||ForeColor|Jaune|
    ||Taille de police|18|
    |Label|Nom|customerLabel|
-   ||Texte|&Nom|
+   ||Text|&Nom|
    ||TabIndex|2|
    ||AccessibleDescription|Étiquette du nom de client|
    ||AccessibleName|Étiquette du nom de client|
    ||UseMnemonic|True|
    |TextBox|Nom|CustomerName|
-   ||Texte|(aucune)|
+   ||Text|(aucune)|
    ||TabIndex|3|
    ||AccessibleDescription|Nom du client|
    ||AccessibleName|Nom du client|
-   |GroupBox|Nom|sizeOptions|
+   |GroupBox|Name|sizeOptions|
    ||AccessibleDescription|Options de taille de pizza|
    ||AccessibleName|Options de taille de pizza|
-   ||Texte|Taille de la pizza|
+   ||Text|Taille de la pizza|
    ||TabIndex|4|
    |RadioButton|Nom|smallPizza|
-   ||Texte|&Petite €6,00|
+   ||Text|&Petite €6,00|
    ||Activé|True|
    ||TabIndex|0|
    ||AccessibleDescription|Petite pizza|
    ||AccessibleName|Petite pizza|
-   |RadioButton|Nom|largePizza|
-   ||Texte|&Grande €10,00|
+   |RadioButton|Name|largePizza|
+   ||Text|&Grande €10,00|
    ||TabIndex|1|
    ||AccessibleDescription|Grande pizza|
    ||AccessibleName|Grande pizza|
-   |Etiquette|Nom|toppingsLabel|
-   ||Texte|&Garniture (€0,75 chacune)|
-   ||TabIndex|5|
+   |Etiquette|Name|toppingsLabel|
+   ||Text|&Garniture (€0,75 chacune)|
+   ||TabIndex|5\.|
    ||AccessibleDescription|Étiquette de garniture|
    ||AccessibleName|Étiquette de garniture|
    ||UseMnemonic|True|
    |CheckedListBox|Nom|Garniture|
-   ||TabIndex|6|
+   ||TabIndex|6\.|
    ||AccessibleDescription|Garniture disponible|
    ||AccessibleName|Garniture disponible|
    ||Éléments|Pepperoni, Saucisson, Champignons|
    |Button|Nom|order|
-   ||Texte|&Commande|
+   ||Text|&Commande|
    ||TabIndex|7|
    ||AccessibleDescription|Total de la commande|
    ||AccessibleName|Total de la commande|
-   |Bouton|Nom|cancel|
-   ||Texte|Annu&ler|
+   |Bouton|Name|cancel|
+   ||Text|Annu&ler|
    ||TabIndex|8|
    ||AccessibleDescription|Annuler la commande|
    ||AccessibleName|Annuler la commande|
    |MainMenu|Nom|theMainMenu|
    |MenuItem|Nom|fileCommands|
-   ||Texte|&Fichier|
-   |MenuItem|Nom|exitApp|
-   ||Texte|&Quitter|
+   ||Text|&Fichier|
+   |MenuItem|Name|exitApp|
+   ||Text|&Quitter|
 
-   Votre écran ressemblera à l’image suivante :
+   Votre formulaire doit ressembler à l’image suivante:
 
-   ![Le formulaire de commande de pizza avec une sélection de zone de texte, taille et garniture de nom.](./media/walkthrough-creating-an-accessible-windows-based-application/visual-basic-pizza-order-form.gif)
+   ![Le formulaire de commande de pizza avec une zone de texte nom, et la sélection de la taille et des pings.](./media/walkthrough-creating-an-accessible-windows-based-application/visual-basic-pizza-order-form.gif)
 
 ## <a name="supporting-high-contrast-mode"></a>Prise en charge du mode de contraste élevé
 
-Le mode de contraste élevé est un paramètre système Windows qui améliore la lisibilité en utilisant des couleurs contrastées et des tailles de polices adaptées aux personnes malvoyantes. Le <xref:System.Windows.Forms.SystemInformation.HighContrast%2A> propriété est fournie pour déterminer si le mode de contraste élevé est activé.
+Le mode de contraste élevé est un paramètre système Windows qui améliore la lisibilité en utilisant des couleurs contrastées et des tailles de polices adaptées aux personnes malvoyantes. La <xref:System.Windows.Forms.SystemInformation.HighContrast%2A> propriété est fournie pour déterminer si le mode de contraste élevé est défini.
 
 Si SystemInformation.HighContrast a la valeur `true`, l'application doit :
 
@@ -158,7 +158,7 @@ Si SystemInformation.HighContrast a la valeur `true`, l'application doit :
 
 L'application doit vérifier le paramètre de <xref:System.Windows.Forms.SystemInformation.HighContrast%2A> quand elle démarre et répond à l'événement système <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged>. L'événement <xref:Microsoft.Win32.SystemEvents.UserPreferenceChanged> est déclenché chaque fois que la valeur de <xref:System.Windows.Forms.SystemInformation.HighContrast%2A> change.
 
-Dans notre application, le seul élément qui n’utilise pas les paramètres système pour la couleur est `lblCompanyName`. Le <xref:System.Drawing.SystemColors> classe est utilisée pour modifier les paramètres de couleur de l’étiquette pour les couleurs système sélectionnées par l’utilisateur.
+Dans notre application, le seul élément qui n’utilise pas les paramètres système pour la couleur est `lblCompanyName`. La <xref:System.Drawing.SystemColors> classe est utilisée pour modifier les paramètres de couleur de l’étiquette sur les couleurs système sélectionnées par l’utilisateur.
 
 #### <a name="to-enable-high-contrast-mode-in-an-effective-way"></a>Pour activer le mode de contraste élevé de manière efficace
 
@@ -303,7 +303,7 @@ Dans cette application, aucune information n'est communiquée que par du son. Si
 
 #### <a name="to-supply-information-by-some-other-means-than-sound"></a>Pour fournir des informations par d'autres moyens que le son
 
-1. Faites clignoter la barre de titre à l'aide de la fonction d'API Windows FlashWindow. Pour obtenir un exemple montrant comment appeler des fonctions API de Windows, consultez [procédure pas à pas : Appel d’API de Windows](~/docs/visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md).
+1. Faites clignoter la barre de titre à l'aide de la fonction d'API Windows FlashWindow. Pour obtenir un exemple d’appel de fonctions API Windows, consultez [procédure pas à pas: Appel des API](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)Windows.
 
     > [!NOTE]
     > L'utilisateur a peut-être activé le service SoundSentry Windows, qui provoque aussi le clignotement de la fenêtre quand des sons système sont lus par le haut-parleur intégré de l'ordinateur.

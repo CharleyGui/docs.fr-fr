@@ -2,12 +2,12 @@
 title: Serveur et rôles de base de données dans SQL Server
 ms.date: 03/30/2017
 ms.assetid: 5482dfdb-e498-4614-8652-b174829eed13
-ms.openlocfilehash: e2d0de08f23bc3767e11de31c4ded4a326d060a9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 97ad04b1d081e5635104bdadb2d1a54402ffcca2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61645966"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69961100"
 ---
 # <a name="server-and-database-roles-in-sql-server"></a>Serveur et rôles de base de données dans SQL Server
 Toutes les versions de SQL Server utilisent la sécurité basée sur les rôles, qui vous permet d'attribuer des autorisations à un rôle ou à un groupe d'utilisateurs au lieu de les attribuer à des utilisateurs individuels. Les rôles serveur fixes et de base de données fixes possèdent un ensemble fixe d'autorisations qui leur sont attribuées.  
@@ -16,9 +16,9 @@ Toutes les versions de SQL Server utilisent la sécurité basée sur les rôles,
  Les rôles serveur fixes disposent d'un ensemble fixe d'autorisations et d'une portée à l'échelle du serveur. Ils sont destinés à être utilisés pour administrer SQL Server et les autorisations qui leur sont attribuées ne peuvent pas être modifiées. Des connexions peuvent être attribuées aux rôles serveur fixes sans qu'un compte d'utilisateur figure dans une base de données.  
   
 > [!IMPORTANT]
->  Le rôle serveur fixe `sysadmin` englobe tous les autres rôles et a une portée illimitée. N'ajoutez pas de principaux à ce rôle à moins qu'ils soient dotés d'une confiance très élevée. Les membres du rôle `sysadmin` possèdent des privilèges d'administrateur irrévocables sur toutes les bases de données et ressources de serveur.  
+> Le rôle serveur fixe `sysadmin` englobe tous les autres rôles et a une portée illimitée. N'ajoutez pas de principaux à ce rôle à moins qu'ils soient dotés d'une confiance très élevée. Les membres du rôle `sysadmin` possèdent des privilèges d'administrateur irrévocables sur toutes les bases de données et ressources de serveur.  
   
- Soyez sélectif lors de l'ajout d'utilisateurs à des rôles serveur fixes. Par exemple, le rôle `bulkadmin` permet aux utilisateurs d'insérer le contenu d'un fichier local quelconque dans une table, ce qui peut mettre en danger l'intégrité des données. Pour obtenir la liste complète des rôles serveur fixes et des autorisations, consultez la documentation en ligne de SQL Server.  
+ Soyez sélectif lors de l'ajout d'utilisateurs à des rôles serveur fixes. Par exemple, le rôle `bulkadmin` permet aux utilisateurs d'insérer le contenu d'un fichier local quelconque dans une table, ce qui peut mettre en danger l'intégrité des données. Consultez Documentation en ligne de SQL Server pour obtenir la liste complète des rôles serveur fixes et des autorisations.  
   
 ## <a name="fixed-database-roles"></a>Rôles de base de données fixes  
  Les rôles de base de données fixes possèdent un ensemble prédéfini d'autorisations conçues pour vous permettre de gérer aisément des groupes d'autorisations. Les membres du rôle `db_owner` peuvent effectuer toutes les activités de configuration et de maintenance sur la base de données.  
@@ -27,7 +27,7 @@ Toutes les versions de SQL Server utilisent la sécurité basée sur les rôles,
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[Rôles au niveau du serveur](/sql/relational-databases/security/authentication-access/server-level-roles)|Décrit les rôles serveur fixes et les autorisations qui s’y rapportent dans SQL Server.|  
+|[Rôles au niveau du serveur](/sql/relational-databases/security/authentication-access/server-level-roles)|Décrit les rôles serveur fixes et les autorisations qui leur sont associées dans SQL Server.|  
 |[Rôles au niveau de la base de données](/sql/relational-databases/security/authentication-access/database-level-roles)|Décrit les rôles de base de données fixes et les autorisations qui leur sont attribuées|  
   
 ## <a name="database-roles-and-users"></a>Rôles de base de données et utilisateurs  
@@ -42,7 +42,7 @@ Toutes les versions de SQL Server utilisent la sécurité basée sur les rôles,
  Le compte `dbo`, ou propriétaire de base de données, est un compte d'utilisateur qui possède des autorisations implicites pour effectuer toutes les activités dans la base de données. Les membres du rôle serveur fixe `sysadmin` sont automatiquement mappés sur `dbo`.  
   
 > [!NOTE]
->  `dbo` est également le nom d’un schéma, comme indiqué dans [propriété et séparation utilisateur-schéma dans SQL Server](../../../../../docs/framework/data/adonet/sql/ownership-and-user-schema-separation-in-sql-server.md).  
+> `dbo`est également le nom d’un schéma, comme indiqué dans [propriété et séparation des schémas utilisateur dans SQL Server](../../../../../docs/framework/data/adonet/sql/ownership-and-user-schema-separation-in-sql-server.md).  
   
  Le compte d'utilisateur `dbo` est fréquemment confondu avec le rôle de base de données fixe `db_owner`. La portée de `db_owner` est une base de données, tandis que la portée de `sysadmin` est le serveur dans son intégralité. L'appartenance au rôle `db_owner` ne confère pas les privilèges d'utilisateur `dbo`.  
   
@@ -52,13 +52,13 @@ Toutes les versions de SQL Server utilisent la sécurité basée sur les rôles,
  Le compte `guest` est un compte intégré dans toutes les versions de SQL Server. Il est désactivé par défaut dans les nouvelles bases de données. S'il est activé, vous pouvez le désactiver en révoquant son autorisation CONNECT, en exécutant l'instruction Transact-SQL REVOKE CONNECT FROM GUEST.  
   
 > [!IMPORTANT]
->  Évitez d'utiliser le compte `guest` ; toutes les connexions sans autorisations de base de données propres obtiennent les autorisations de base de données accordées à ce compte. Si vous devez utiliser le compte `guest`, accordez-lui des autorisations minimales.  
+> Évitez d'utiliser le compte `guest` ; toutes les connexions sans autorisations de base de données propres obtiennent les autorisations de base de données accordées à ce compte. Si vous devez utiliser le compte `guest`, accordez-lui des autorisations minimales.  
   
  Pour plus d'informations sur les connexions, les utilisateurs et les rôles SQL Server, consultez les ressources répertoriées ci-dessous.  
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[Mise en route avec les autorisations du moteur de base de données](/sql/relational-databases/security/authentication-access/getting-started-with-database-engine-permissions)|Contient des liens vers des rubriques qui décrivent les entités de sécurité, les rôles, les informations d'identification, les éléments sécurisables et les autorisations.|  
+|[Prise en main avec des autorisations Moteur de base de données](/sql/relational-databases/security/authentication-access/getting-started-with-database-engine-permissions)|Contient des liens vers des rubriques qui décrivent les entités de sécurité, les rôles, les informations d'identification, les éléments sécurisables et les autorisations.|  
 |[Principaux](/sql/relational-databases/security/authentication-access/principals-database-engine)|Décrit les entités de sécurité et contient des liens vers des rubriques qui décrivent les rôles serveur et de base de données.|  
   
 ## <a name="see-also"></a>Voir aussi

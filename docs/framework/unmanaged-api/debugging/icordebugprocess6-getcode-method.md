@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: faa538c2-60c9-4064-b996-1b4c24ebd751
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 810590f0d1f7f74b778d73d98a9f7f9b1988b75f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5d896cc4316c2de6fa1cb0bacc9ff8b1f3713129
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736443"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967557"
 ---
 # <a name="icordebugprocess6getcode-method"></a>ICorDebugProcess6::GetCode, méthode
 Obtient des informations sur le code managé à une adresse de code particulière.  
@@ -24,22 +24,22 @@ HRESULT GetCode(
   
 ## <a name="parameters"></a>Paramètres  
  `codeAddress`  
- [in] Un [CORDB_ADDRESS](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md) valeur qui spécifie l’adresse de départ du segment de code managé.  
+ dans Valeur [CORDB_ADDRESS](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md) qui spécifie l’adresse de départ du segment de code managé.  
   
  `ppCode`  
- [out] Pointeur vers l’adresse d’un objet « ICorDebugCode » qui représente un segment de code managé.  
+ à Pointeur vers l’adresse d’un objet «ICorDebugCode» qui représente un segment de code managé.  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
->  Cette méthode est uniquement disponible avec .NET Native.  
+> Cette méthode est uniquement disponible avec .NET Native.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

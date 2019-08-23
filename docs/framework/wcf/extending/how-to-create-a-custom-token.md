@@ -10,23 +10,23 @@ helpviewer_keywords:
 - WSSecurityTokenSerializer class
 - SecurityToken class
 ms.assetid: 6d892973-1558-4115-a9e1-696777776125
-ms.openlocfilehash: 9fae195247dea4cbd049f7157f04e87bb97d6f4d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 917278ef990842f2ce821474ffd1c6cd619ed289
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61767141"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69951781"
 ---
 # <a name="how-to-create-a-custom-token"></a>Procédure : créer un jeton personnalisé
-Cette rubrique contient des instructions permettant de créer un jeton de sécurité personnalisé à l'aide de la classe <xref:System.IdentityModel.Tokens.SecurityToken> et de l'intégrer à un fournisseur et authentificateur de jetons de sécurité personnalisés. Pour obtenir un exemple de code complet, consultez la [jeton personnalisé](../../../../docs/framework/wcf/samples/custom-token.md) exemple.  
+Cette rubrique contient des instructions permettant de créer un jeton de sécurité personnalisé à l'aide de la classe <xref:System.IdentityModel.Tokens.SecurityToken> et de l'intégrer à un fournisseur et authentificateur de jetons de sécurité personnalisés. Pour obtenir un exemple de code complet, consultez l’exemple de [jeton personnalisé](../../../../docs/framework/wcf/samples/custom-token.md) .  
   
- Un *jeton de sécurité* est essentiellement un élément XML qui est utilisé par l’infrastructure de sécurité de Windows Communication Foundation (WCF) pour représenter les revendications d’un expéditeur à l’intérieur du message SOAP. Sécurité WCF propose divers jetons pour les modes d’authentification fournies par le système. Les exemples comprennent un jeton de sécurité de certificat X.509 représenté par la classe <xref:System.IdentityModel.Tokens.X509SecurityToken> ou un jeton de sécurité de nom d'utilisateur représenté par la classe <xref:System.IdentityModel.Tokens.UserNameSecurityToken>.  
+ Un *jeton de sécurité* est essentiellement un élément XML utilisé par l’infrastructure de sécurité Windows Communication Foundation (WCF) pour représenter les revendications relatives à un expéditeur à l’intérieur du message SOAP. La sécurité WCF fournit différents jetons pour les modes d’authentification fournis par le système. Les exemples comprennent un jeton de sécurité de certificat X.509 représenté par la classe <xref:System.IdentityModel.Tokens.X509SecurityToken> ou un jeton de sécurité de nom d'utilisateur représenté par la classe <xref:System.IdentityModel.Tokens.UserNameSecurityToken>.  
   
  Il peut arriver qu'un mode d'authentification ou que des informations d'identification ne soient pas prises en charge par les types fournis. Dans un tel cas, il est nécessaire de créer un jeton de sécurité personnalisé permettant de fournir une représentation XML des informations d'identification personnalisées dans les messages SOAP.  
   
- Les procédures suivantes montrent comment créer un jeton de sécurité personnalisé et comment l’intégrer avec l’infrastructure de sécurité WCF. Cette rubrique contient des instructions permettant de créer un jeton de carte de crédit utilisé pour passer des informations relatives à la carte de crédit du client au serveur.  
+ Les procédures suivantes montrent comment créer un jeton de sécurité personnalisé et comment l’intégrer à l’infrastructure de sécurité WCF. Cette rubrique contient des instructions permettant de créer un jeton de carte de crédit utilisé pour passer des informations relatives à la carte de crédit du client au serveur.  
   
- Pour plus d’informations sur les informations d’identification personnalisées et le Gestionnaire de jetons de sécurité, consultez [procédure pas à pas : Création du Client personnalisés et les informations d’identification du Service](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
+ Pour plus d’informations sur les informations d’identification personnalisées et le [gestionnaire de jetons de sécurité, consultez Procédure pas à pas: Création d’informations d’identification](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)de client et de service personnalisées.  
   
  Consultez l'espace de noms <xref:System.IdentityModel.Tokens> pour obtenir davantage de classes représentant des jetons de sécurité.  
   
@@ -42,7 +42,7 @@ Cette rubrique contient des instructions permettant de créer un jeton de sécur
      [!code-csharp[c_CustomToken#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#4)]
      [!code-vb[c_CustomToken#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#4)]  
   
- Vous devez ensuite créer une classe qui représente le jeton de sécurité personnalisé. Cette classe est utilisée par le fournisseur de jetons de sécurité, l’authentificateur et classes de sérialiseur pour transmettre des informations sur le jeton de sécurité vers et à partir de l’infrastructure de sécurité WCF.  
+ Vous devez ensuite créer une classe qui représente le jeton de sécurité personnalisé. Cette classe est utilisée par le fournisseur de jetons de sécurité, l’authentificateur et les classes de sérialiseur pour transmettre des informations sur le jeton de sécurité depuis et vers l’infrastructure de sécurité WCF.  
   
 #### <a name="to-create-a-custom-security-token-class"></a>Pour créer une classe de jeton de sécurité personnalisé  
   
@@ -52,12 +52,12 @@ Cette rubrique contient des instructions permettant de créer un jeton de sécur
   
 3. Implémentez la propriété <xref:System.IdentityModel.Tokens.SecurityToken.SecurityKeys%2A>. Cette propriété retourne une collection de clés de sécurité représentée par l'instance de jeton de sécurité. Ces clés peuvent être utilisées par WCF pour signer ou chiffrer des parties du message SOAP. Dans cet exemple, le jeton de sécurité de carte de crédit ne peut pas contenir n'importe quelle clé de sécurité, c'est pourquoi l'implémentation retourne toujours une collection vide.  
   
-4. Remplacez les propriétés <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A> et <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A>. Ces propriétés sont utilisées par WCF pour déterminer la validité de l’instance de jeton de sécurité. Dans cet exemple, seule une date d'expiration est définie pour le jeton de carte de crédit, par conséquent la propriété `ValidFrom` retourne la valeur <xref:System.DateTime>, laquelle représente l'heure et la date de création de l'instance.  
+4. Remplacez les propriétés <xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A> et <xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A>. Ces propriétés sont utilisées par WCF pour déterminer la validité de l’instance du jeton de sécurité. Dans cet exemple, seule une date d'expiration est définie pour le jeton de carte de crédit, par conséquent la propriété `ValidFrom` retourne la valeur <xref:System.DateTime>, laquelle représente l'heure et la date de création de l'instance.  
   
      [!code-csharp[c_CustomToken#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#1)]
      [!code-vb[c_CustomToken#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#1)]  
   
- Lorsqu'un nouveau jeton de sécurité est créé, la classe <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters> doit à nouveau être implémentée. L’implémentation est utilisée dans la configuration de l’élément de liaison de sécurité afin de représenter un nouveau type de jeton. La classe des paramètres de jeton de sécurité sert de modèle, lequel permet de mettre en correspondance la véritable instance de jeton de sécurité lorsqu'un message est traité. Ce modèle contient des propriétés supplémentaires qu'une application peut utiliser afin de spécifier les critères que le jeton de sécurité doit respecter pour pouvoir être utilisé ou authentifié. L’exemple suivant n’ajoute pas de toutes les propriétés supplémentaires, donc uniquement la sécurité de type de jeton est mis en correspondance lorsque l’infrastructure WCF recherche une instance de jeton de sécurité à utiliser ou valider.  
+ Lorsqu'un nouveau jeton de sécurité est créé, la classe <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters> doit à nouveau être implémentée. L’implémentation est utilisée dans la configuration de l’élément de liaison de sécurité afin de représenter un nouveau type de jeton. La classe des paramètres de jeton de sécurité sert de modèle, lequel permet de mettre en correspondance la véritable instance de jeton de sécurité lorsqu'un message est traité. Ce modèle contient des propriétés supplémentaires qu'une application peut utiliser afin de spécifier les critères que le jeton de sécurité doit respecter pour pouvoir être utilisé ou authentifié. L’exemple suivant n’ajoute pas de propriétés supplémentaires. par conséquent, seul le type de jeton de sécurité est mis en correspondance lorsque l’infrastructure WCF recherche une instance de jeton de sécurité à utiliser ou à valider.  
   
 #### <a name="to-create-a-custom-security-token-parameters-class"></a>Pour créer une classe de paramètres de jeton de sécurité personnalisé  
   
@@ -71,9 +71,9 @@ Cette rubrique contient des instructions permettant de créer un jeton de sécur
   
 5. Implémentez la propriété en lecture seule <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.SupportsClientWindowsIdentity%2A>. Cette propriété retourne `true` si le type de jeton de sécurité représenté par cette classe peut être mappé à un compte Windows. Si c'est le cas, le résultat de l'authentification est représenté par une instance de la classe <xref:System.Security.Principal.WindowsIdentity>. Dans cet exemple, le jeton ne peut pas être mappé à un compte Windows.  
   
-6. Implémentez la méthode <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.CreateKeyIdentifierClause%28System.IdentityModel.Tokens.SecurityToken%2CSystem.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle%29>. Cette méthode est appelée par l’infrastructure de sécurité WCF lorsque cela nécessite une référence à l’instance de jeton de sécurité représenté par cette classe de paramètres de jeton de sécurité. La véritable instance de jeton de sécurité et le type <xref:System.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle> qui spécifie le type de la référence demandée sont tous les deux passés à cette méthode sous forme d’arguments. Dans cet exemple, seules les références internes sont prises en charge par le jeton de sécurité de carte de crédit. La classe <xref:System.IdentityModel.Tokens.SecurityToken> dispose d'une fonctionnalité permettant de créer des références internes ; l'implémentation ne nécessite donc pas de code supplémentaire.  
+6. Implémentez la méthode <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.CreateKeyIdentifierClause%28System.IdentityModel.Tokens.SecurityToken%2CSystem.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle%29>. Cette méthode est appelée par l’infrastructure de sécurité WCF lorsqu’elle requiert une référence à l’instance de jeton de sécurité représentée par cette classe de paramètres de jeton de sécurité. La véritable instance de jeton de sécurité et le type <xref:System.ServiceModel.Security.Tokens.SecurityTokenReferenceStyle> qui spécifie le type de la référence demandée sont tous les deux passés à cette méthode sous forme d’arguments. Dans cet exemple, seules les références internes sont prises en charge par le jeton de sécurité de carte de crédit. La classe <xref:System.IdentityModel.Tokens.SecurityToken> dispose d'une fonctionnalité permettant de créer des références internes ; l'implémentation ne nécessite donc pas de code supplémentaire.  
   
-7. Implémentez la méthode <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.InitializeSecurityTokenRequirement%28System.IdentityModel.Selectors.SecurityTokenRequirement%29>. Cette méthode est appelée par WCF pour convertir l’instance de classe de paramètres de jeton de sécurité dans une instance de la <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> classe. Le résultat est utilisé par les fournisseurs de jeton de sécurité pour créer l'instance de jeton de sécurité adéquate.  
+7. Implémentez la méthode <xref:System.ServiceModel.Security.Tokens.SecurityTokenParameters.InitializeSecurityTokenRequirement%28System.IdentityModel.Selectors.SecurityTokenRequirement%29>. Cette méthode est appelée par WCF pour convertir l’instance de la classe de paramètres de jeton de sécurité <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> en une instance de la classe. Le résultat est utilisé par les fournisseurs de jeton de sécurité pour créer l'instance de jeton de sécurité adéquate.  
   
      [!code-csharp[c_CustomToken#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#2)]
      [!code-vb[c_CustomToken#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#2)]  
@@ -81,7 +81,7 @@ Cette rubrique contient des instructions permettant de créer un jeton de sécur
  Les jetons de sécurité sont transmis dans les messages SOAP. Cette opération nécessite un mécanisme de traduction entre la représentation de jeton de sécurité en mémoire et la représentation en transmission. WCF utilise un sérialiseur de jeton de sécurité pour accomplir cette tâche. Chaque jeton personnalisé doit être accompagné par un sérialiseur de jeton de sécurité personnalisé pouvant le sérialiser et le désérialiser à partir des messages SOAP.  
   
 > [!NOTE]
->  Les clés dérivées sont activées par défaut. Si vous créez un jeton de sécurité personnalisé et l’utiliser comme jeton principal, WCF dérive une clé à partir de celui-ci. Ce faisant, il appelle le sérialiseur de jeton de sécurité personnalisé afin d'écrire <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> pour le jeton de sécurité personnalisé pendant la sérialisation du `DerivedKeyToken` sur le câble. À l'extrémité de réception, lors de la désérialisation du jeton du câble, le sérialiseur `DerivedKeyToken` attend un élément `SecurityTokenReference` en tant qu'enfant de niveau supérieur au-dessous de lui. Si le sérialiseur de jeton de sécurité personnalisé n'a pas ajouté d'élément `SecurityTokenReference` pendant la sérialisation de son type de clause, une exception est levée.  
+> Les clés dérivées sont activées par défaut. Si vous créez un jeton de sécurité personnalisé et que vous l’utilisez comme jeton principal, WCF en déduit une clé. Ce faisant, il appelle le sérialiseur de jeton de sécurité personnalisé afin d'écrire <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> pour le jeton de sécurité personnalisé pendant la sérialisation du `DerivedKeyToken` sur le câble. À l'extrémité de réception, lors de la désérialisation du jeton du câble, le sérialiseur `DerivedKeyToken` attend un élément `SecurityTokenReference` en tant qu'enfant de niveau supérieur au-dessous de lui. Si le sérialiseur de jeton de sécurité personnalisé n'a pas ajouté d'élément `SecurityTokenReference` pendant la sérialisation de son type de clause, une exception est levée.  
   
 #### <a name="to-create-a-custom-security-token-serializer"></a>Pour créer un sérialiseur de jeton de sécurité personnalisé  
   
@@ -102,14 +102,14 @@ Cette rubrique contient des instructions permettant de créer un jeton de sécur
   
 #### <a name="to-integrate-the-custom-security-token-with-a-security-token-provider"></a>Pour intégrer le jeton de sécurité personnalisé à un fournisseur de jetons de sécurité  
   
-1. Le fournisseur de jeton de sécurité crée, modifie (si nécessaire) et retourne une instance du jeton. Pour créer un fournisseur de jetons de sécurité pour le jeton de sécurité personnalisé, créez une classe qui hérite de la classe <xref:System.IdentityModel.Selectors.SecurityTokenProvider>. L'exemple suivant remplace la méthode <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%2A> pour retourner une instance de `CreditCardToken`. Pour plus d’informations sur les fournisseurs de jetons de sécurité personnalisé, consultez [Comment : Créer un fournisseur de jetons de sécurité personnalisé](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md).  
+1. Le fournisseur de jeton de sécurité crée, modifie (si nécessaire) et retourne une instance du jeton. Pour créer un fournisseur de jetons de sécurité pour le jeton de sécurité personnalisé, créez une classe qui hérite de la classe <xref:System.IdentityModel.Selectors.SecurityTokenProvider>. L'exemple suivant remplace la méthode <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%2A> pour retourner une instance de `CreditCardToken`. Pour plus d’informations sur les fournisseurs de jetons de [sécurité personnalisés, consultez Procédure: Créer un fournisseur](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)de jetons de sécurité personnalisé.  
   
      [!code-csharp[c_CustomToken#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#6)]
      [!code-vb[c_CustomToken#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#6)]  
   
 #### <a name="to-integrate-the-custom-security-token-with-a-security-token-authenticator"></a>Pour intégrer le jeton de sécurité personnalisé à un authentificateur de jetons de sécurité  
   
-1. L'authentificateur de jetons de sécurité valide le contenu du jeton de sécurité lorsque ce dernier est extrait du message. Pour créer un authentificateur personnalisé pour le jeton de sécurité personnalisé, créez une classe qui hérite de la classe <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator>. L'exemple suivant substitue la méthode <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator.ValidateTokenCore%2A>. Pour plus d’informations sur les authentificateurs de jeton de sécurité personnalisés, consultez [Comment : Créer un authentificateur de jeton de sécurité personnalisé](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md).  
+1. L'authentificateur de jetons de sécurité valide le contenu du jeton de sécurité lorsque ce dernier est extrait du message. Pour créer un authentificateur personnalisé pour le jeton de sécurité personnalisé, créez une classe qui hérite de la classe <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator>. L'exemple suivant substitue la méthode <xref:System.IdentityModel.Selectors.SecurityTokenAuthenticator.ValidateTokenCore%2A>. Pour plus d’informations sur les authentificateurs de jetons de [sécurité personnalisés, consultez Procédure: Créez un authentificateur](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)de jetons de sécurité personnalisé.  
   
      [!code-csharp[c_CustomToken#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#7)]
      [!code-vb[c_CustomToken#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#7)]  
@@ -119,7 +119,7 @@ Cette rubrique contient des instructions permettant de créer un jeton de sécur
   
 #### <a name="to-integrate-the-custom-security-token-with-a-security-token-manager"></a>Pour intégrer le jeton de sécurité personnalisé à un gestionnaire de jetons de sécurité  
   
-1. Le gestionnaire de jetons de sécurité crée les instances de fournisseur, d'authentificateur et de sérialiseur de jetons de sécurité appropriées. Pour créer un gestionnaire de jetons de sécurité personnalisé, créez une classe qui hérite de la classe <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>. Les principales méthodes de la classe utilisent une spécification <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> pour créer le fournisseur approprié ainsi que les informations d'identification client ou service requises. Pour plus d’informations sur les gestionnaires de jetons de sécurité personnalisé, consultez [procédure pas à pas : Création du Client personnalisés et les informations d’identification du Service](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
+1. Le gestionnaire de jetons de sécurité crée les instances de fournisseur, d'authentificateur et de sérialiseur de jetons de sécurité appropriées. Pour créer un gestionnaire de jetons de sécurité personnalisé, créez une classe qui hérite de la classe <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>. Les principales méthodes de la classe utilisent une spécification <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> pour créer le fournisseur approprié ainsi que les informations d'identification client ou service requises. Pour plus d’informations sur les gestionnaires de jetons de [sécurité personnalisés, consultez Procédure pas à pas: Création d’informations d’identification](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)de client et de service personnalisées.  
   
      [!code-csharp[c_CustomToken#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#8)]
      [!code-vb[c_CustomToken#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#8)]  
@@ -129,7 +129,7 @@ Cette rubrique contient des instructions permettant de créer un jeton de sécur
   
 #### <a name="to-integrate-the-custom-security-token-with-custom-client-and-service-credentials"></a>Pour intégrer le jeton de sécurité personnalisé aux informations d'identification client et service personnalisées  
   
-1. Les informations d'identification client et service doivent être ajoutées afin de générer une API pour l'application. Cette API permet de spécifier les informations du jeton de sécurité personnalisé qui seront utilisées par l'infrastructure de ce dernier créée précédemment afin de générer son contenu et de l'authentifier. Les exemples suivants montrent comment procéder. Pour plus d’informations sur le client personnalisé et les informations d’identification de service, consultez [procédure pas à pas : Création du Client personnalisés et les informations d’identification du Service](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).  
+1. Les informations d'identification client et service doivent être ajoutées afin de générer une API pour l'application. Cette API permet de spécifier les informations du jeton de sécurité personnalisé qui seront utilisées par l'infrastructure de ce dernier créée précédemment afin de générer son contenu et de l'authentifier. Les exemples suivants montrent comment procéder. Pour plus d’informations sur les informations d’identification du client et [du service personnalisées, consultez Procédure pas à pas: Création d’informations d’identification](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)de client et de service personnalisées.  
   
      [!code-csharp[c_CustomToken#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#10)]
      [!code-vb[c_CustomToken#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#10)]  
@@ -137,7 +137,7 @@ Cette rubrique contient des instructions permettant de créer un jeton de sécur
      [!code-csharp[c_customToken#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#11)]
      [!code-vb[c_customToken#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#11)]  
   
- La classe de paramètres de jeton de sécurité personnalisé créée précédemment est utilisée pour indiquer à l’infrastructure de sécurité WCF qu’un jeton de sécurité personnalisé doit être utilisé lors de la communication avec un service. La procédure suivante indique comment effectuer cette opération.  
+ La classe de paramètres de jeton de sécurité personnalisée créée précédemment est utilisée pour indiquer à l’infrastructure de sécurité WCF qu’un jeton de sécurité personnalisé doit être utilisé lors de la communication avec un service. La procédure suivante indique comment effectuer cette opération.  
   
 #### <a name="to-integrate-the-custom-security-token-with-the-binding"></a>Pour intégrer le jeton de sécurité personnalisé à la liaison  
   
@@ -146,7 +146,7 @@ Cette rubrique contient des instructions permettant de créer un jeton de sécur
      [!code-csharp[c_CustomToken#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customtoken/cs/source.cs#13)]
      [!code-vb[c_CustomToken#13](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customtoken/vb/source.vb#13)]  
   
- Cette rubrique décrit les différents éléments de code nécessaires à l'implémentation et l'utilisation d'un jeton personnalisé. Pour voir un exemple complet de tous ces éléments de code s’imbriquent, consultez [jeton personnalisé](../../../../docs/framework/wcf/samples/custom-token.md).  
+ Cette rubrique décrit les différents éléments de code nécessaires à l'implémentation et l'utilisation d'un jeton personnalisé. Pour voir un exemple complet de la façon dont tous ces éléments de code s’ajustent ensemble, consultez [jeton personnalisé](../../../../docs/framework/wcf/samples/custom-token.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -161,6 +161,6 @@ Cette rubrique contient des instructions permettant de créer un jeton de sécur
 - <xref:System.ServiceModel.Description.ClientCredentials>
 - <xref:System.ServiceModel.Description.ServiceCredentials>
 - <xref:System.ServiceModel.Channels.SecurityBindingElement>
-- [Procédure pas à pas : Création du Client personnalisés et les informations d’identification de Service](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)
-- [Guide pratique pour Créer un authentificateur de jeton de sécurité personnalisé](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)
+- [Procédure pas à pas : Création d’informations d’identification de client et de service personnalisées](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)
+- [Guide pratique : Créer un authentificateur de jetons de sécurité personnalisé](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-authenticator.md)
 - [Guide pratique pour Créer un fournisseur de jetons de sécurité personnalisé](../../../../docs/framework/wcf/extending/how-to-create-a-custom-security-token-provider.md)

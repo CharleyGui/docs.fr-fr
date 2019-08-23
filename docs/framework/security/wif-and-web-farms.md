@@ -3,12 +3,12 @@ title: WIF et batteries de serveurs web
 ms.date: 03/30/2017
 ms.assetid: fc3cd7fa-2b45-4614-a44f-8fa9b9d15284
 author: BrucePerlerMS
-ms.openlocfilehash: 656e7b116b9da68dbb38a5a2fc3d1ed90fda576a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e6806971bd2260785d66bfdb54a3e2938043c746
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592279"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967186"
 ---
 # <a name="wif-and-web-farms"></a>WIF et batteries de serveurs web
 Si vous utilisez WIF (Windows Identity Foundation) pour sécuriser les ressources d’une application par partie de confiance déployée dans une batterie de serveurs web, vous devez définir des paramètres spécifiques pour vous assurer que WIF peut traiter les jetons provenant d’instances de l’application par partie de confiance qui sont exécutées sur les différents ordinateurs de la batterie de serveurs. Ces paramètres incluent la validation des signatures de jetons de session, le chiffrement et le déchiffrement des jetons de session, la mise en cache des jetons de session et la détection des jetons de sécurité relus.  
@@ -55,10 +55,10 @@ Si vous utilisez WIF (Windows Identity Foundation) pour sécuriser les ressource
 - Si votre application détecte la présence de jetons relus, vous devez appliquer une stratégie de mise en cache distribuée similaire pour le cache de relecture de jetons. Pour cela, le cache doit être dérivé de <xref:System.IdentityModel.Tokens.TokenReplayCache> et pointer vers votre service caching de relecture de jetons dans l’élément de configuration [\<tokenReplayCache>](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaycache.md).  
   
 > [!IMPORTANT]
->  De l’exemple XML, le code de cette rubrique est tirés du [ClaimsAwareWebFarm](https://go.microsoft.com/fwlink/?LinkID=248408) exemple.  
+> Tous les exemples de code XML et de code figurant dans cette rubrique proviennent de l’exemple [ClaimsAwareWebFarm](https://go.microsoft.com/fwlink/?LinkID=248408) .  
   
 > [!IMPORTANT]
->  Les exemples de cette rubrique sont fournis en l’état et ne sont pas destinés à être utilisés tels quels dans du code de production.  
+> Les exemples de cette rubrique sont fournis en l’état et ne sont pas destinés à être utilisés tels quels dans du code de production.  
   
 <a name="BKMK_TheWCFCachingService"></a>   
 ## <a name="the-wcf-caching-service"></a>Service caching WCF  

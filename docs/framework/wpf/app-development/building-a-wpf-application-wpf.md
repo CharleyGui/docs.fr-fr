@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-ms.openlocfilehash: 02a86ea8d8d6b481044d6ca25d29df7edd2c73ee
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: a5254de07029e53dd6b72bd2c096c38525a661b6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68401691"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69958711"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Génération d'une application WPF (WPF)
 
@@ -24,7 +24,7 @@ Les applications Windows Presentation Foundation (WPF) peuvent être générées
 
 Une application WPF peut être compilée des façons suivantes :
 
-- Ligne de commande. L’application doit contenir uniquement du code (aucun XAML) et un fichier de définition d’application. Pour plus d’informations, consultez [Génération à partir de la ligne de commande avec csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) ou [Génération à partir de la ligne de commande (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md).
+- Ligne de commande. L’application doit contenir uniquement du code (aucun XAML) et un fichier de définition d’application. Pour plus d’informations, consultez [Génération à partir de la ligne de commande avec csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) ou [Génération à partir de la ligne de commande (Visual Basic)](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md).
 
 - Microsoft Build Engine (MSBuild). Outre le code et les fichiers XAML, l’application doit contenir un fichier projet MSBuild. Pour plus d’informations, consultez « MSBuild ».
 
@@ -42,7 +42,7 @@ Quand un projet [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md
 
 ### <a name="pre-build-initializations"></a>Initialisations avant génération
 
-Avant la génération, [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] détermine l’emplacement des bibliothèques et des outils importants, dont les éléments suivants :
+Avant de générer, MSBuild détermine l’emplacement des outils et bibliothèques importants, y compris les éléments suivants:
 
 - .NET Framework.
 
@@ -52,7 +52,7 @@ Avant la génération, [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2shar
 
 - Propriété pour les chemins de recherche des assemblys.
 
-Le premier emplacement où [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] recherche les assemblys est le répertoire de l’assembly de référence (%ProgramFiles%\Reference Assemblies\Microsoft\Framework\v3.0\\). Pendant cette étape, le processus de génération initialise également les diverses propriétés et groupes d’éléments, et exécute tout travail de nettoyage nécessaire.
+Le premier emplacement où MSBuild recherche les assemblys est le répertoire de l’assembly de\\référence (%ProgramFiles%\Reference Assemblies\Microsoft\Framework\v3.0). Pendant cette étape, le processus de génération initialise également les diverses propriétés et groupes d’éléments, et exécute tout travail de nettoyage nécessaire.
 
 <a name="Resolving_references"></a>
 
@@ -108,7 +108,7 @@ Public Sub InitializeComponent() _
 End Sub
 ```
 
-Par défaut, la compilation du balisage s' <xref:System.AppDomain> exécute dans [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] le même que le moteur. Cela assure des gains de performances significatifs. Ce comportement peut être basculé avec la propriété `AlwaysCompileMarkupFilesInSeparateDomain`. Cela présente l’avantage de décharger tous les assemblys de référence en déchargeant <xref:System.AppDomain>le séparé.
+Par défaut, la compilation du balisage s' <xref:System.AppDomain> exécute dans le même que le moteur MSBuild. Cela assure des gains de performances significatifs. Ce comportement peut être basculé avec la propriété `AlwaysCompileMarkupFilesInSeparateDomain`. Cela présente l’avantage de décharger tous les assemblys de référence en déchargeant <xref:System.AppDomain>le séparé.
 
 <a name="Pass_2_of_Markup_Compilation"></a>
 

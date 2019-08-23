@@ -9,12 +9,12 @@ helpviewer_keywords:
 - RemoveHandler keyword [Visual Basic]
 - RemoveHandler statement [Visual Basic]
 ms.assetid: 647cd825-e877-4910-b4f1-8d168beebe6a
-ms.openlocfilehash: 8a9dc5874629c1687318496bd7c4016eb318c25a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3a839a7d05d05066f6c0f774a683c8fc83c19643
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61783932"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957727"
 ---
 # <a name="removehandler-statement"></a>RemoveHandler, instruction
 Supprime l’association entre un événement et un gestionnaire d’événements.  
@@ -29,14 +29,14 @@ RemoveHandler event, AddressOf eventhandler
   
 |Terme|Définition|  
 |---|---|  
-|`event`|Le nom de l’événement géré.|  
-|`eventhandler`|Le nom de la procédure actuellement gérant l’événement.|  
+|`event`|Nom de l’événement géré.|  
+|`eventhandler`|Nom de la procédure qui gère actuellement l’événement.|  
   
 ## <a name="remarks"></a>Notes  
- Le `AddHandler` et `RemoveHandler` vous permettent de démarrer et arrêter la gestion des événements pour un événement spécifique à tout moment pendant l’exécution du programme.  
+ Les `AddHandler` instructions `RemoveHandler` et vous permettent de démarrer et d’arrêter la gestion des événements pour un événement spécifique à tout moment pendant l’exécution du programme.  
   
 > [!NOTE]
->  Pour les événements personnalisés, le `RemoveHandler` instruction appelle de l’événement `RemoveHandler` accesseur. Pour plus d’informations sur les événements personnalisés, consultez [Event, instruction](../../../visual-basic/language-reference/statements/event-statement.md).  
+> Pour les événements personnalisés, `RemoveHandler` l’instruction appelle l’accesseur `RemoveHandler` de l’événement. Pour plus d’informations sur les événements personnalisés, consultez [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md).  
   
 ## <a name="example"></a>Exemple  
  [!code-vb[VbVbalrEvents#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#17)]  

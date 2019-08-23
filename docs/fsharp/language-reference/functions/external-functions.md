@@ -1,17 +1,17 @@
 ---
 title: Fonctions externes
-description: En savoir plus sur les F# prise en charge linguistique pour appeler des fonctions en code natif.
+description: En savoir plus F# sur la prise en charge linguistique pour l’appel de fonctions en code natif.
 ms.date: 05/16/2016
-ms.openlocfilehash: 73e38d8942bfc8ddb3c51d126d7678e84903326b
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 3c8edaba25e07b6ca2c44a58c4b55dc98a13b4fc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65642038"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968735"
 ---
 # <a name="external-functions"></a>Fonctions externes
 
-Cette rubrique décrit F# prise en charge linguistique pour appeler des fonctions en code natif.
+Cette rubrique décrit F# la prise en charge linguistique pour l’appel de fonctions en code natif.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -22,9 +22,9 @@ extern declaration
 
 ## <a name="remarks"></a>Notes
 
-Dans la syntaxe précédente, *arguments* représente les arguments fournis à la `System.Runtime.InteropServices.DllImportAttribute` attribut. Le premier argument est une chaîne qui représente le nom de la DLL qui contient cette fonction, sans l’extension .dll. Arguments supplémentaires peuvent être fournis pour une des propriétés publiques de la `System.Runtime.InteropServices.DllImportAttribute` classe, tels que la convention d’appel.
+Dans la syntaxe précédente, les *arguments* représentent les arguments fournis à l' `System.Runtime.InteropServices.DllImportAttribute` attribut. Le premier argument est une chaîne qui représente le nom de la DLL qui contient cette fonction, sans l’extension. dll. Des arguments supplémentaires peuvent être fournis pour toutes les propriétés publiques de la `System.Runtime.InteropServices.DllImportAttribute` classe, telles que la Convention d’appel.
 
-Vous possédez une DLL C++ qui contient la fonction exportée suivante natif.
+Supposons que vous avez C++ une DLL native qui contient la fonction exportée suivante.
 
 ```cpp
 #include <stdio.h>
@@ -34,7 +34,7 @@ extern "C" void __declspec(dllexport) HelloWorld()
 }
 ```
 
-Vous pouvez appeler cette fonction à partir de F# en utilisant le code suivant.
+Vous pouvez appeler cette fonction à F# partir de à l’aide du code suivant.
 
 ```fsharp
 open System.Runtime.InteropServices
@@ -46,7 +46,7 @@ module InteropWithNative =
 InteropWithNative.HelloWorld()
 ```
 
-Interopérabilité avec du code natif est appelée *non managé* et est une fonctionnalité du CLR. Pour plus d’informations, consultez [Interopération avec du code non managé](../../../../docs/framework/interop/index.md). Les informations contenues dans cette section sont applique aux F#.
+L’interopérabilité avec le code natif est appelée *appel* de code non managé et est une fonctionnalité du CLR. Pour plus d’informations, consultez [Interopération avec du code non managé](../../../framework/interop/index.md). Les informations contenues dans cette section s' F#appliquent à.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -3,16 +3,16 @@ title: <identityConfiguration>
 ms.date: 03/30/2017
 ms.assetid: 1db76253-07da-447b-9e7a-3705c7228cf4
 author: BrucePerlerMS
-ms.openlocfilehash: 91d64ce0d6a5cdbf32fec4a476fb111afe9a7952
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9f5e0c5ded3d750a1102492c7a506e6d5643b2d4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61791701"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942748"
 ---
 # <a name="identityconfiguration"></a>\<identityConfiguration>
 
-Spécifie les paramètres de l’identité de niveau de service.
+Spécifie les paramètres d’identité au niveau du service.
 
  \<system.identityModel>\
 \<identityConfiguration>
@@ -37,59 +37,59 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Attribut|Description|
 |---------------|-----------------|
-|name|Le nom de la section de configuration d’identité. Vous pouvez utiliser ce nom pour faire référence à une section de configuration spécifique. Si aucun `name` attribut est spécifié, la section définit la configuration par défaut. La configuration par défaut est toujours utilisée pour les scénarios de fédération passive. Pour plus d’informations, consultez le [ \<federationConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md) élément.|
-|saveBootstrapContext|Spécifie si les jetons de démarrage doivent être inclus dans le jeton de session. La valeur peut également être définie sur une collection de gestionnaires de jetons en définissant le `saveBootstrapContext` d’attribut sur le [ \<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md) élément. Une valeur définie sur la collection de gestionnaires de jetons substitue à la valeur définie sur le service.|
-|maximumClockSkew|Un <xref:System.TimeSpan> qui spécifie le décalage d’horloge maximale autorisée. Contrôle le décalage d’horloge maximale autorisée lorsque vous effectuez des opérations de contrainte de temps, telles que la validation de l’heure d’expiration d’une session de connexion. La valeur par défaut est 5 minutes, « 00 : 05:00 ». Pour plus d’informations sur la spécification <xref:System.TimeSpan> valeurs, consultez [valeurs Timespan](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/index.md). Le décalage d’horloge maximale peut également être défini sur une collection de gestionnaires de jetons en définissant le `maximumClockSkew` d’attribut sur le [ \<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md) élément. Une valeur définie sur la collection de gestionnaires de jetons substitue à la valeur définie sur le service.|
+|name|Nom de la section de configuration de l’identité. Vous pouvez utiliser ce nom pour faire référence à une section de configuration spécifique. Si aucun `name` attribut n’est spécifié, la section définit la configuration par défaut. La configuration par défaut est toujours utilisée pour les scénarios de fédération passive. Pour plus d’informations, consultez l' [ \<élément federationConfiguration >](federationconfiguration.md) .|
+|saveBootstrapContext|Spécifie si les jetons de démarrage doivent être inclus dans le jeton de session. La valeur peut également être définie sur une collection de gestionnaires de jetons en `saveBootstrapContext` définissant l’attribut sur l' [ \<élément securityTokenHandlerConfiguration >](securitytokenhandlerconfiguration.md) . Une valeur définie sur la collection de gestionnaires de jetons remplace la valeur définie sur le service.|
+|maximumClockSkew|Qui <xref:System.TimeSpan> spécifie la variation d’horloge maximale autorisée. Contrôle la variation d’horloge maximale autorisée lors de l’exécution d’opérations sensibles au temps, telles que la validation du délai d’expiration d’une session de connexion. La valeur par défaut est 5 minutes, «00:05:00». Pour plus d’informations sur la spécification <xref:System.TimeSpan> des valeurs, consultez [TimeSpan values](../windows-workflow-foundation/index.md). La décalage d’horloge maximal peut également être défini sur une collection de gestionnaires de jetons `maximumClockSkew` en définissant l’attribut sur l' [ \<élément securityTokenHandlerConfiguration >](securitytokenhandlerconfiguration.md) . Une valeur définie sur la collection de gestionnaires de jetons remplace la valeur définie sur le service.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<caches>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/caches.md)|Inscrit les caches utilisés pour la détection de relecture de jetons et de jetons de session. Peut être spécifié au niveau du service ou sur une collection de gestionnaires de jetons de sécurité. Facultatif.|
-|[\<certificateValidation>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatevalidation.md)|Contrôle les paramètres qui utilisent des gestionnaires de jetons pour valider les certificats. Peut être spécifié au niveau du service ou sur une collection de gestionnaires de jetons de sécurité. Optionnel.|
-|[\<claimsAuthenticationManager>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthenticationmanager.md)|Inscrit un gestionnaire d’authentification des revendications pour les revendications entrantes. Optionnel.|
-|[\<claimsAuthorizationManager>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)|Inscrit un gestionnaire d’autorisation des revendications pour les revendications entrantes. Optionnel.|
-|[\<claimTypeRequired>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtyperequired.md)|Spécifie le jeu de revendications requises pour les jetons de sécurité entrants. Optionnel.|
-|[\<securityTokenHandlers>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|Spécifie une collection de gestionnaires de jetons de sécurité. Zéro ou plusieurs collections de gestionnaires de jetons de sécurité peuvent être spécifiées. Optionnel.|
-|[\<tokenReplayDetection>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaydetection.md)|Active la détection de relecture de jetons et spécifie le délai d’expiration pour les jetons. Peut être spécifié au niveau du service ou sur une collection de gestionnaires de jetons de sécurité. Optionnel.|
+|[\<caches>](caches.md)|Inscrit les caches utilisés pour les jetons de session et la détection de relecture de jetons. Peut être spécifié au niveau du service ou sur une collection de gestionnaires de jetons de sécurité. facultatif.|
+|[\<certificateValidation>](certificatevalidation.md)|Contrôle les paramètres que les gestionnaires de jetons utilisent pour valider les certificats. Peut être spécifié au niveau du service ou sur une collection de gestionnaires de jetons de sécurité. facultatif.|
+|[\<claimsAuthenticationManager>](claimsauthenticationmanager.md)|Inscrit un gestionnaire d’authentification des revendications pour les revendications entrantes. facultatif.|
+|[\<claimsAuthorizationManager>](claimsauthorizationmanager.md)|Inscrit un gestionnaire d’autorisations des revendications pour les revendications entrantes. facultatif.|
+|[\<claimTypeRequired>](claimtyperequired.md)|Spécifie l’ensemble des revendications requises pour les jetons de sécurité entrants. facultatif.|
+|[\<securityTokenHandlers>](securitytokenhandlers.md)|Spécifie une collection de gestionnaires de jetons de sécurité. Zéro, une ou plusieurs collections de gestionnaires de jetons de sécurité peuvent être spécifiées. facultatif.|
+|[\<tokenReplayDetection>](tokenreplaydetection.md)|Active la détection de relecture de jetons et spécifie l’heure d’expiration des jetons. Peut être spécifié au niveau du service ou sur une collection de gestionnaires de jetons de sécurité. facultatif.|
 
 ### <a name="parent-elements"></a>Éléments parents
 
 |Élément|Description|
 |-------------|-----------------|
-|[\<system.identityModel>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/system-identitymodel.md)|Fournit la configuration permettant d’activer les options de Windows Identity Foundation (WIF) dans les applications.|
+|[\<system.identityModel>](system-identitymodel.md)|Fournit la configuration permettant d’activer les options de Windows Identity Foundation (WIF) dans les applications.|
 
 ## <a name="remarks"></a>Notes
 
-Plusieurs identités configurations peuvent être définies, chacun avec un nom unique. Le comportement est comme suit :
+Plusieurs configurations d’identité peuvent être définies, chacune avec un nom unique. Le comportement est le suivant:
 
-1. Si aucun `<identityConfiguration>` élément est spécifié. Une configuration d’identité par défaut est créée lors de l’exécution et remplie avec les valeurs par défaut.
+1. Si aucun `<identityConfiguration>` élément n’est spécifié. Une configuration d’identité par défaut est créée au moment de l’exécution et remplie avec les valeurs par défaut.
 
-2. Si un seul `<identityConfiguration>` élément est spécifié. Il s’agit de la configuration d’identité par défaut. S’il est nommé ou sans nom n’a pas d’importance.
+2. Si un seul `<identityConfiguration>` élément est spécifié. Il s’agit de la configuration d’identité par défaut. Peu importe s’il est nommé ou sans nom.
 
-3. Si plusieurs `<identityConfiguration>` éléments sont spécifiés. L’élément sans nom spécifie la configuration d’identité par défaut. Il est recommandé que lorsque vous spécifiez plusieurs `<identityConfiguration>` éléments, un d’eux doit avoir un nom.
+3. Si plusieurs `<identityConfiguration>` éléments sont spécifiés. L’élément sans nom spécifie la configuration d’identité par défaut. Lorsque vous spécifiez plusieurs `<identityConfiguration>` éléments, il est recommandé de ne pas nommer l’un d’eux.
 
 > [!WARNING]
-> Si vous spécifiez plusieurs `<identityConfiguration>` éléments, un d’eux doit avoir un nom. L’élément sans nom sera la configuration d’identité par défaut.
+> Si vous spécifiez `<identityConfiguration>` plusieurs éléments, l’un d’eux doit être sans nom. L’élément sans nom est la configuration d’identité par défaut.
 
- Certains des paramètres spécifiés dans le `<identityConfiguration>` élément peut être substitué par les paramètres sur une collection de gestionnaires de jetons de sécurité ou par les paramètres de gestionnaires de jetons de sécurité individuels.
-
-> [!IMPORTANT]
-> Lorsque vous utilisez le <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> ou le <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> classe pour fournir un contrôle d’accès basé sur les revendications dans votre code, la configuration d’identité qui est référencée par le `<federationConfiguration>` élément configure le Gestionnaire d’autorisation des revendications et la stratégie qui est utilisée pour rendre décisions d’autorisation. Cela est vrai, même dans les scénarios qui ne sont pas les scénarios Web passifs, par exemple les applications Windows Communication Foundation (WCF) ou une application qui n’est pas basée sur le Web. Si l’application n’est pas une application Web passive, le [ \<claimsAuthorizationManager >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md) élément (et ses éléments de la stratégie enfant, le cas échéant) de la configuration de l’identité référencée sont les seuls paramètres appliqués. Tous les autres paramètres sont ignorés. Pour plus d’informations, consultez le [ \<federationConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md) élément.
-
-Le `<identityConfiguration>` élément est représenté par la <xref:System.IdentityModel.Configuration.IdentityConfigurationElement> classe. Une section de configuration d’identité est représentée par la <xref:System.IdentityModel.Configuration.IdentityConfiguration> classe.
+ Certains des paramètres spécifiés dans l' `<identityConfiguration>` élément peuvent être remplacés par des paramètres sur une collection de gestionnaires de jetons de sécurité ou par des paramètres sur des gestionnaires de jetons de sécurité individuels.
 
 > [!IMPORTANT]
-> En spécifiant les éléments suivants en tant qu’éléments enfants de le `<identityConfiguration>` élément a été déconseillé, même si le comportement est toujours pris en charge pour la compatibilité descendante. Ces éléments doivent, au lieu de cela, être spécifiés sous la [ \<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md) élément.
+> Lors de l' <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> utilisation de <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> la classe ou pour fournir un contrôle d’accès basé sur les revendications dans votre code, la configuration d’identité `<federationConfiguration>` référencée par l’élément configure le gestionnaire d’autorisation des revendications et la stratégie utilisée pour effectuer décisions d’autorisation. Cela est vrai, même dans les scénarios qui ne sont pas des scénarios Web passifs, par exemple des applications Windows Communication Foundation (WCF) ou une application qui n’est pas basée sur le Web. Si l’application n’est pas une application Web passive, l' [ \<élément claimsAuthorizationManager >](claimsauthorizationmanager.md) (et ses éléments de stratégie enfants, le cas échéant) de la configuration d’identité référencée sont les seuls paramètres appliqués. Tous les autres paramètres sont ignorés. Pour plus d’informations, consultez l' [ \<élément federationConfiguration >](federationconfiguration.md) .
+
+L' `<identityConfiguration>` élément est représenté par la <xref:System.IdentityModel.Configuration.IdentityConfigurationElement> classe. Une section de configuration d’identité est représentée <xref:System.IdentityModel.Configuration.IdentityConfiguration> par la classe.
+
+> [!IMPORTANT]
+> La spécification des éléments suivants en tant qu’éléments `<identityConfiguration>` enfants de l’élément a été dépréciée, bien que le comportement soit toujours pris en charge pour la compatibilité descendante. Ces éléments doivent plutôt être spécifiés sous l' [ \<élément securityTokenHandlerConfiguration >](securitytokenhandlerconfiguration.md) .
 >
-> - [\<audienceUris>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/audienceuris.md)
-> - [\<issuerNameRegistry>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry.md)
-> - [\<issuerTokenResolver>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/issuertokenresolver.md)
-> - [\<serviceTokenResolver>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/servicetokenresolver.md)
+> - [\<audienceUris>](audienceuris.md)
+> - [\<issuerNameRegistry>](issuernameregistry.md)
+> - [\<issuerTokenResolver>](issuertokenresolver.md)
+> - [\<serviceTokenResolver>](servicetokenresolver.md)
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant crée une configuration d’identité nommée « alternateConfiguration ». La configuration d’identité spécifie les paramètres par défaut.
+L’exemple suivant crée une configuration d’identité nommée «alternateConfiguration». La configuration d’identité spécifie les paramètres par défaut.
 
 ```xml
 <system.identityModel>

@@ -3,15 +3,15 @@ title: <issuerNameRegistry>
 ms.date: 03/30/2017
 ms.assetid: 58b39d12-c953-40c4-88af-d7eb3343ca28
 author: BrucePerlerMS
-ms.openlocfilehash: ae263a4590cc523c64306ff5d53e54b5190ca510
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d0a1f8dd0c29aaee56c2ca1162cc70cc1e5ed106
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61791644"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942666"
 ---
 # <a name="issuernameregistry"></a>\<issuerNameRegistry>
-Configure le Registre de nom de l’émetteur qui est utilisé par les gestionnaires dans la collection de gestionnaires de jetons.  
+Configure le registre des noms d’émetteurs qui est utilisé par les gestionnaires dans la collection de gestionnaires de jetons.  
   
  \<system.identityModel>  
 \<identityConfiguration>  
@@ -42,32 +42,32 @@ Configure le Registre de nom de l’émetteur qui est utilisé par les gestionna
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|type|Un type qui dérive de la <xref:System.IdentityModel.Tokens.IssuerNameRegistry> classe. Pour plus d’informations sur la façon de spécifier une personnalisée `type`, consultez [références de Type personnalisé].|  
+|type|Type qui dérive de la <xref:System.IdentityModel.Tokens.IssuerNameRegistry> classe. Pour plus d’informations sur la façon de spécifier `type`un personnalisé, consultez [références de types personnalisés].|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<trustedIssuers>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md)|Lorsque le `type` attribut spécifie le Registre des noms d’émetteurs basé sur la configuration (le <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> classe), la [ \<trustedIssuers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md) élément doit être spécifié. Le [ \<trustedIssuers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers.md) élément peut prendre `<add>`, `<clear>`, ou `<remove>` éléments comme des éléments enfants.|  
+|[\<trustedIssuers>](trustedissuers.md)|Lorsque l' `type` attribut spécifie le registre des noms d’émetteurs basés sur la <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> configuration (la classe), l' [ \<élément trustedIssuers >](trustedissuers.md) doit être spécifié. L' `<add>` `<clear>` [ \<élément trustedIssuers >](trustedissuers.md) peut prendre des éléments, `<remove>` ou en tant qu’éléments enfants.|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<securityTokenHandlerConfiguration>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Fournit une configuration pour une collection de sécurité gestionnaires de jetons.|  
+|[\<securityTokenHandlerConfiguration>](securitytokenhandlerconfiguration.md)|Fournit la configuration pour une collection de gestionnaires de jetons de sécurité.|  
   
 ## <a name="remarks"></a>Notes  
- Tous les jetons d’émetteur sont validés à l’aide d’un registre des noms d’émetteur. Il s’agit d’un objet qui dérive de la <xref:System.IdentityModel.Tokens.IssuerNameRegistry> classe. Le Registre des noms d’émetteur est utilisé pour associer un nom mnémonique avec le matériel de chiffrement qui est nécessaire pour vérifier les signatures des jetons produits par l’émetteur correspondant. Le Registre des noms d’émetteur gère une liste d’émetteurs approuvés par l’application de confiance (RP). Le type du Registre de nom de l’émetteur est spécifié à l’aide de la `type` attribut. Le `<issuerNameRegistry>` élément peut avoir un ou plusieurs éléments enfants qui fournissent la configuration pour le type spécifié. Vous fournissez la logique qui traite ces éléments enfants en substituant le <xref:System.IdentityModel.Tokens.IssuerNameRegistry.LoadCustomConfiguration%2A> (méthode).  
+ Tous les jetons d’émetteur sont validés à l’aide d’un registre de noms d’émetteurs. Il s’agit d’un objet qui dérive <xref:System.IdentityModel.Tokens.IssuerNameRegistry> de la classe. Le registre des noms d’émetteurs est utilisé pour associer un nom mnémonique aux documents de chiffrement nécessaires à la vérification des signatures des jetons produits par l’émetteur correspondant. Le registre des noms d’émetteurs gère une liste des émetteurs qui sont approuvés par l’application de partie de confiance (RP). Le type du registre des noms d’émetteurs est spécifié à l' `type` aide de l’attribut. L' `<issuerNameRegistry>` élément peut avoir un ou plusieurs éléments enfants qui fournissent la configuration pour le type spécifié. Vous fournissez la logique qui traite ces éléments enfants en substituant <xref:System.IdentityModel.Tokens.IssuerNameRegistry.LoadCustomConfiguration%2A> la méthode.  
   
- WIF fournit un émetteur unique type de Registre de nom dès le départ, le <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> classe. Cette classe utilise un ensemble de certificats d’émetteurs approuvés qui sont spécifiés dans la configuration. Il requiert un élément de configuration enfant, `<trustedIssuers>`, sous lequel la collection de certificats d’émetteurs approuvés est configurée. Approuvé de certificats sont spécifiés à l’aide de l’ASN.1 forme codée de l’empreinte de certificat et est ajouté ou supprimé de la collection à l’aide de `<add>`, `<clear>`, ou `<remove>` éléments.  
+ WIF fournit un type de registre de nom d’émetteur unique, la <xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> classe. Cette classe utilise un ensemble de certificats d’émetteurs approuvés spécifiés dans la configuration. Il nécessite un élément de configuration enfant `<trustedIssuers>`,, sous lequel la collection de certificats d’émetteurs approuvés est configurée. Les certificats approuvés sont spécifiés à l’aide de la forme encodée ASN. 1 de l’empreinte numérique du certificat et sont ajoutés `<add>`ou `<clear>`supprimés de `<remove>` la collection à l’aide des éléments, ou.  
   
- Le `<issuerNameRegistry>` élément est représenté par la <xref:System.IdentityModel.Configuration.IssuerNameRegistryElement> classe.  
+ L' `<issuerNameRegistry>` élément est représenté par la <xref:System.IdentityModel.Configuration.IssuerNameRegistryElement> classe.  
   
 > [!NOTE]
->  En spécifiant le `<issuerNameRegistry>` en tant qu’un élément enfant de le [ \<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) élément a été déconseillé, mais est toujours pris en charge pour la compatibilité descendante. Paramètres sur le `<securityTokenHandlerConfiguration>` élément remplacent ceux de la `<identityConfiguration>` élément.  
+> La spécification `<issuerNameRegistry>` de l’élément en tant qu’élément enfant de l' [ \<élément identityConfiguration >](identityconfiguration.md) a été dépréciée, mais est toujours prise en charge pour la compatibilité descendante. Les paramètres de `<securityTokenHandlerConfiguration>` l’élément remplacent ceux de `<identityConfiguration>` l’élément.  
   
 ## <a name="example"></a>Exemple  
- Le code XML suivant montre comment spécifier l’émetteur de la configuration en fonction du Registre des noms.  
+ Le code XML suivant montre comment spécifier le registre des noms d’émetteurs basés sur la configuration.  
   
 ```xml  
 <issuerNameRegistry type="System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">  

@@ -28,18 +28,18 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: 6ab547951b00cc4a479034129254e4060486348d
-ms.sourcegitcommit: 10736f243dd2296212e677e207102c463e5f143e
+ms.openlocfilehash: 16f4155cefea20868185febb3d2a566dc1524cc4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817944"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956282"
 ---
 # <a name="wpf-windows-overview"></a>Vue d'ensemble des fenêtres WPF
 Les utilisateurs interagissent avec les applications autonomes de Windows Presentation Foundation (WPF) par le biais de Windows. L’objectif principal d’une fenêtre est d’héberger du contenu qui permet aux utilisateurs de visualiser les données et d’interagir avec celles-ci. Les [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] applications autonomes fournissent leur propre Windows en <xref:System.Windows.Window> utilisant la classe. Cette rubrique présente <xref:System.Windows.Window> les principes fondamentaux de la création et de la gestion de fenêtres dans des applications autonomes.  
   
 > [!NOTE]
->  Les applications hébergées [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] par un navigateur, [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] y compris [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] et les pages libres, ne fournissent pas leurs propres fenêtres. Au lieu de cela, ils sont hébergés dans Windows fourni par Windows Internet Explorer. Consultez [vue d’ensemble des applications de navigateur XAML WPF](wpf-xaml-browser-applications-overview.md).  
+> Les applications hébergées [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] par un navigateur, [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] y compris [!INCLUDE[TLA#tla_xbap#plural](../../../../includes/tlasharptla-xbapsharpplural-md.md)] et les pages libres, ne fournissent pas leurs propres fenêtres. Au lieu de cela, ils sont hébergés dans Windows fourni par Windows Internet Explorer. Consultez [vue d’ensemble des applications de navigateur XAML WPF](wpf-xaml-browser-applications-overview.md).  
 
 <a name="TheWindowClass"></a>   
 ## <a name="the-window-class"></a>Window, classe  
@@ -88,14 +88,14 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
   
  Pour permettre à [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] un fichier de balisage et à un fichier code-behind de fonctionner ensemble, les conditions suivantes sont requises:  
   
-- Dans le balisage `Window` , l’élément doit `x:Class` inclure l’attribut. Lorsque l’application est générée, l’existence de `x:Class` dans le fichier de balisage oblige [!INCLUDE[TLA#tla_msbuild](../../../../includes/tlasharptla-msbuild-md.md)] à `partial` créer une classe qui dérive de <xref:System.Windows.Window> et qui porte le nom spécifié par `x:Class` l’attribut. Cela nécessite l’ajout d’une [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] déclaration d’espace de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] noms pour `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"` le schéma (). La classe `partial` générée implémente la `InitializeComponent` méthode, qui est appelée pour inscrire les événements et définir les propriétés implémentées dans le balisage.  
+- Dans le balisage `Window` , l’élément doit `x:Class` inclure l’attribut. Lorsque l’application est générée, l’existence de `x:Class` dans le fichier de balisage amène Microsoft Build Engine (MSBuild) à `partial` créer une classe qui dérive de <xref:System.Windows.Window> et qui porte le nom spécifié par `x:Class` l’attribut. Cela nécessite l’ajout d’une [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] déclaration d’espace de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] noms pour `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"` le schéma (). La classe `partial` générée implémente la `InitializeComponent` méthode, qui est appelée pour inscrire les événements et définir les propriétés implémentées dans le balisage.  
   
 - Dans le code-behind, la classe doit être `partial` une classe portant le même nom que celui spécifié par `x:Class` l’attribut dans le balisage, et elle <xref:System.Windows.Window>doit dériver de. Cela permet au fichier code-behind d’être associé à la `partial` classe générée pour le fichier de balisage quand l’application est générée (consultez [génération d’une application WPF](building-a-wpf-application-wpf.md)).  
   
 - Dans le code-behind, <xref:System.Windows.Window> la classe doit implémenter un constructeur qui `InitializeComponent` appelle la méthode. `InitializeComponent`est implémenté par la classe générée `partial` du fichier de balisage pour inscrire les événements et définir les propriétés définies dans le balisage.  
   
 > [!NOTE]
->  Lorsque vous ajoutez un nouveau <xref:System.Windows.Window> à votre projet à l' [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)]aide de <xref:System.Windows.Window> , le est implémenté à l’aide du balisage et du code-behind, et comprend la configuration nécessaire pour créer l’association entre les fichiers de balisage et de code-behind comme décrit ici.  
+> Lorsque vous ajoutez un nouveau <xref:System.Windows.Window> à votre projet à l' [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)]aide de <xref:System.Windows.Window> , le est implémenté à l’aide du balisage et du code-behind, et comprend la configuration nécessaire pour créer l’association entre les fichiers de balisage et de code-behind comme décrit ici.  
   
  Une fois cette configuration en place, vous pouvez vous concentrer sur la définition de l’apparence [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] de la fenêtre dans le balisage et l’implémentation de son comportement dans du code-behind. L’exemple suivant montre une fenêtre avec un bouton, implémentée [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] dans le balisage, et un gestionnaire d’événements <xref:System.Windows.Controls.Primitives.ButtonBase.Click> pour l’événement du bouton, implémenté dans le code-behind.  
   
@@ -106,13 +106,13 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
   
 <a name="ConfiguringWindowForMSBuild"></a>   
 ## <a name="configuring-a-window-definition-for-msbuild"></a>Configuration d’une définition de fenêtre pour MSBuild  
- La façon dont vous implémentez votre fenêtre détermine la façon [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)]dont elle est configurée pour. Pour une fenêtre définie à l’aide [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] du balisage et du code-behind:  
+ La façon dont vous implémentez votre fenêtre détermine son mode de configuration pour MSBuild. Pour une fenêtre définie à l’aide [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] du balisage et du code-behind:  
   
-- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]les fichiers de balisage [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] sont configurés en tant qu' `Page` éléments.  
+- Les fichiers de balisage XAML sont `Page` configurés en tant qu’éléments MSBuild.  
   
-- Les fichiers code-behind sont configurés en tant qu' [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] `Compile` éléments.  
+- Les fichiers code-behind sont configurés `Compile` en tant qu’éléments MSBuild.  
   
- Cela est illustré dans le fichier [!INCLUDE[TLA2#tla_msbuild](../../../../includes/tla2sharptla-msbuild-md.md)] projet suivant.  
+ Cela est illustré dans le fichier projet MSBuild suivant.  
   
 ```xml  
 <Project ...  
@@ -149,7 +149,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
  Une fenêtre ouverte en appelant <xref:System.Windows.Window.Show%2A> est une fenêtre non modale, ce qui signifie que l’application fonctionne dans un mode qui permet aux utilisateurs d’activer d’autres fenêtres dans la même application.  
   
 > [!NOTE]
->  <xref:System.Windows.Window.ShowDialog%2A>est appelé pour ouvrir des fenêtres, telles que des boîtes de dialogue modales. Pour plus d’informations, consultez [vue d’ensemble des boîtes de dialogue](dialog-boxes-overview.md) .  
+> <xref:System.Windows.Window.ShowDialog%2A>est appelé pour ouvrir des fenêtres, telles que des boîtes de dialogue modales. Pour plus d’informations, consultez [vue d’ensemble des boîtes de dialogue](dialog-boxes-overview.md) .  
   
  Lorsque <xref:System.Windows.Window.Show%2A> est appelé, une fenêtre effectue un travail d’initialisation avant de l’afficher pour établir l’infrastructure qui lui permet de recevoir une entrée d’utilisateur. Lorsque la fenêtre est initialisée, l' <xref:System.Windows.Window.SourceInitialized> événement est déclenché et la fenêtre est affichée.  
   
@@ -205,7 +205,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
  Quand une fenêtre est ouverte pour <xref:System.Windows.Window.ShowActivated%2A> `false`la première fois, elle devient la fenêtre active (sauf si elle est affichée avec la valeur). La *fenêtre active* est la fenêtre qui capture actuellement les entrées d’utilisateur, telles que les frappes de touche et les clics de souris. Quand une fenêtre devient active, elle déclenche l' <xref:System.Windows.Window.Activated> événement.  
   
 > [!NOTE]
->  Quand une fenêtre est ouverte pour la première <xref:System.Windows.FrameworkElement.Loaded> fois <xref:System.Windows.Window.ContentRendered> , les événements et sont déclenchés uniquement après le déclenchement de l' <xref:System.Windows.Window.Activated> événement. En tenant compte de cela, une fenêtre peut être considérée comme ouverte <xref:System.Windows.Window.ContentRendered> lorsque est déclenché.  
+> Quand une fenêtre est ouverte pour la première <xref:System.Windows.FrameworkElement.Loaded> fois <xref:System.Windows.Window.ContentRendered> , les événements et sont déclenchés uniquement après le déclenchement de l' <xref:System.Windows.Window.Activated> événement. En tenant compte de cela, une fenêtre peut être considérée comme ouverte <xref:System.Windows.Window.ContentRendered> lorsque est déclenché.  
   
  Une fois qu’une fenêtre est active, un utilisateur peut activer une autre fenêtre de la même application ou activer une autre application. Lorsque cela se produit, la fenêtre actuellement active est désactivée et déclenche <xref:System.Windows.Window.Deactivated> l’événement. De même, lorsque l’utilisateur sélectionne une fenêtre actuellement désactivée, la fenêtre redevient active et <xref:System.Windows.Window.Activated> est déclenchée.  
   
@@ -221,7 +221,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
  Si une tâche en arrière-plan se termine, une fenêtre peut souhaiter notifier l’utilisateur de <xref:System.Windows.Window.Activate%2A> façon plus urgente en appelant la méthode. Si l’utilisateur interagit avec une autre application activée lorsque <xref:System.Windows.Window.Activate%2A> est appelé, le bouton de la barre des tâches de la fenêtre clignote. Si un utilisateur interagit avec l’application actuelle, l’appel <xref:System.Windows.Window.Activate%2A> à place la fenêtre au premier plan.  
   
 > [!NOTE]
->  Vous pouvez gérer l’activation de l’étendue de <xref:System.Windows.Application.Activated?displayProperty=nameWithType> l' <xref:System.Windows.Application.Deactivated?displayProperty=nameWithType> application à l’aide des événements et.  
+> Vous pouvez gérer l’activation de l’étendue de <xref:System.Windows.Application.Activated?displayProperty=nameWithType> l' <xref:System.Windows.Application.Deactivated?displayProperty=nameWithType> application à l’aide des événements et.  
   
 <a name="Closing_a_Window"></a>   
 ### <a name="closing-a-window"></a>Fermeture d’une fenêtre  
@@ -262,9 +262,9 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
  Si <xref:System.Windows.Window.Closing> n’est pas géré ou s’il est géré mais pas annulé, la fenêtre se ferme. Juste avant la fermeture de la fenêtre <xref:System.Windows.Window.Closed> , est déclenché. À ce stade, il est impossible d’empêcher une fenêtre de se fermer.  
   
 > [!NOTE]
->  Une application peut être configurée pour s’arrêter automatiquement à la fermeture de la fenêtre principale de <xref:System.Windows.Application.MainWindow%2A>l’application (voir) ou la dernière fenêtre se ferme. Pour plus d'informations, consultez <xref:System.Windows.Application.ShutdownMode%2A>.  
+> Une application peut être configurée pour s’arrêter automatiquement à la fermeture de la fenêtre principale de <xref:System.Windows.Application.MainWindow%2A>l’application (voir) ou la dernière fenêtre se ferme. Pour plus d'informations, consultez <xref:System.Windows.Application.ShutdownMode%2A>.  
   
- Lorsqu’une fenêtre peut être fermée explicitement via des mécanismes fournis dans les zones non client et client, une fenêtre peut également être fermée implicitement à la suite d’un comportement dans d’autres parties de l' [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)]application ou, y compris les éléments suivants:  
+ Bien qu’une fenêtre puisse être fermée explicitement par le biais de mécanismes fournis dans les zones non client et client, une fenêtre peut également être fermée implicitement en raison d’un comportement dans d’autres parties de l’application ou de Windows, y compris les éléments suivants:  
   
 - Un utilisateur se déconnecte ou arrête Windows.  
   
@@ -275,7 +275,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
 - La méthode <xref:System.Windows.Application.Shutdown%2A> est appelée.  
   
 > [!NOTE]
->  Une fenêtre ne peut pas être rouverte après sa fermeture.  
+> Une fenêtre ne peut pas être rouverte après sa fermeture.  
   
 <a name="Window_Lifetime_Events"></a>   
 ### <a name="window-lifetime-events"></a>Événements de la durée de vie d’une fenêtre  
@@ -377,7 +377,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
  Une fenêtre avec un état *agrandi* s’agrandit jusqu’à la taille maximale que vous pouvez avoir, ce qui n’est pas aussi <xref:System.Windows.FrameworkElement.MaxWidth%2A>important que les <xref:System.Windows.Window.SizeToContent%2A> propriétés, <xref:System.Windows.FrameworkElement.MaxHeight%2A>et. Comme pour une fenêtre réduite, vous ne pouvez pas redimensionner une fenêtre agrandie à l’aide d’une poignée de redimensionnement ou en faisant glisser sa bordure.  
   
 > [!NOTE]
->  <xref:System.Windows.Window.Top%2A>Les valeurs des <xref:System.Windows.FrameworkElement.Height%2A> propriétés, <xref:System.Windows.Window.Left%2A>, et d’une fenêtre représentent toujours les valeurs pour l’état normal, même lorsque la fenêtre est actuellement agrandie ou réduite. <xref:System.Windows.FrameworkElement.Width%2A>  
+> <xref:System.Windows.Window.Top%2A>Les valeurs des <xref:System.Windows.FrameworkElement.Height%2A> propriétés, <xref:System.Windows.Window.Left%2A>, et d’une fenêtre représentent toujours les valeurs pour l’état normal, même lorsque la fenêtre est actuellement agrandie ou réduite. <xref:System.Windows.FrameworkElement.Width%2A>  
   
  L’état d’une fenêtre peut être configuré en définissant <xref:System.Windows.Window.WindowState%2A> sa propriété, qui peut avoir l’une des <xref:System.Windows.WindowState> valeurs d’énumération suivantes:  
   

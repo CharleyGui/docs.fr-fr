@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 714e252f-c053-4bbb-b1f3-924111cd4d97
-ms.openlocfilehash: ffb24468c81cb4ec9f41645f8888c2c4ba021609
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0d757e3c37f347014eb2ef90b4e61ddd205dd012
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033577"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938665"
 ---
 # <a name="how-to-use-scalar-valued-user-defined-functions"></a>Procédure : Utiliser des fonctions scalaires définies par l’utilisateur
 Vous pouvez mapper une méthode cliente définie sur une classe à une fonction définie par l'utilisateur à l'aide de l'attribut <xref:System.Data.Linq.Mapping.FunctionAttribute>. Notez que le corps de la méthode construit une expression qui capture l'intention de l'appel de méthode et passe cette expression au <xref:System.Data.Linq.DataContext> pour la traduire et l'exécuter.  
   
 > [!NOTE]
->  L'exécution directe se produit uniquement si la fonction est appelée à l'extérieur d'une requête. Pour plus d'informations, voir [Procédure : Appeler des fonctions définies par l’utilisateur Inline](../../../../../../docs/framework/data/adonet/sql/linq/how-to-call-user-defined-functions-inline.md).  
+> L'exécution directe se produit uniquement si la fonction est appelée à l'extérieur d'une requête. Pour plus d'informations, voir [Procédure : Appelez les fonctions définies par l’utilisateur](../../../../../../docs/framework/data/adonet/sql/linq/how-to-call-user-defined-functions-inline.md)Inline.  
   
 ## <a name="example"></a>Exemple  
  Le code SQL suivant présente une fonction scalaire `ReverseCustName()` définie par l'utilisateur.  
