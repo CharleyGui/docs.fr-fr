@@ -3,12 +3,12 @@ title: <cookieHandler>
 ms.date: 03/30/2017
 ms.assetid: bfdc127f-8d94-4566-8bef-f583c6ae7398
 author: BrucePerlerMS
-ms.openlocfilehash: 6c62100b2445ae10a83ebd9e7d154a6e2aa14e0b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 1c044f7346fabc77d7744f42c5bfd3d86d72402e
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69942802"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988343"
 ---
 # <a name="cookiehandler"></a>\<cookieHandler>
 Configure le <xref:System.IdentityModel.Services.CookieHandler> que le <xref:System.IdentityModel.Services.SessionAuthenticationModule> (Sam) utilise pour lire et écrire des cookies.  
@@ -77,7 +77,7 @@ Configure le <xref:System.IdentityModel.Services.CookieHandler> que le <xref:Sys
  Le code XML suivant montre `<cookieHandler>` un élément. Dans cet exemple, étant donné `mode` que l’attribut n’est pas spécifié, le gestionnaire de cookies par défaut sera utilisé par le Sam. Il s’agit d’une instance <xref:System.IdentityModel.Services.ChunkedCookieHandler> de la classe. Étant donné `<chunkedCookieHandler>` que l’élément enfant n’est pas spécifié, la taille de segment par défaut sera utilisée. Https n’est pas nécessaire, car `requireSsl` l’attribut est `false`défini.  
   
 > [!WARNING]
->  Dans cet exemple, le protocole HTTPs n’est pas requis pour écrire des cookies de session. Cela est dû au `requireSsl` fait que l' `<cookieHandler>` attribut sur l’élément `false`a la valeur. Ce paramètre n’est pas recommandé pour la plupart des environnements de production, car il peut présenter un risque pour la sécurité.  
+> Dans cet exemple, le protocole HTTPs n’est pas requis pour écrire des cookies de session. Cela est dû au `requireSsl` fait que l' `<cookieHandler>` attribut sur l’élément `false`a la valeur. Ce paramètre n’est pas recommandé pour la plupart des environnements de production, car il peut présenter un risque pour la sécurité.  
   
 ```xml  
 <cookieHandler requireSsl="false" />  

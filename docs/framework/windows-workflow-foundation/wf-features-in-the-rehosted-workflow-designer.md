@@ -2,12 +2,12 @@
 title: Prise en charge de nouvelles fonctionnalités Workflow Foundation 4.5 dans le concepteur de workflow réhébergé
 ms.date: 03/30/2017
 ms.assetid: 1a4a4038-d8e6-41dd-99ea-93bd76286772
-ms.openlocfilehash: 69c3577c82c7a0899fb94461255721f4b2ab3ecd
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 20623c8d2f6bf66d2668fd07b0acae67865a3235
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913705"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69987230"
 ---
 # <a name="support-for-new-workflow-foundation-45-features-in-the-rehosted-workflow-designer"></a>Prise en charge de nouvelles fonctionnalités Workflow Foundation 4.5 dans le concepteur de workflow réhébergé
 Windows Workflow Foundation (WF) dans .NET Framework 4,5 a introduit de nombreuses nouvelles fonctionnalités, y compris plusieurs améliorations apportées à l’expérience du concepteur de flux de travail. Cette rubrique détaille lesquelles de ces fonctionnalités sont prises en charge dans le concepteur réhébergé, et celles qui ne sont pas actuellement prises en charge.
@@ -22,7 +22,7 @@ Windows Workflow Foundation (WF) dans .NET Framework 4,5 a introduit de nombreus
  Avant .NET Framework 4,5, toutes les expressions dans les workflows pouvaient uniquement être écrites en Visual Basic. Dans .NET Framework 4,5, les expressions Visual Basic sont utilisées uniquement pour les projets créés à l’aide de Visual Basic. Les projets Visual C# utilisent C# pour les expressions. Lors de la création de flux de travail dans Visual Studio 2012, C# un éditeur d’expressions entièrement fonctionnel est fourni avec les fonctionnalités telles que la mise en surbrillance de la grammaire et IntelliSense. Les projets de workflow C# créés dans les versions antérieures qui utilisent des expressions Visual Basic continueront à fonctionner.
 
 > [!WARNING]
->  Les expressions C# ne sont pas prises en charge dans le concepteur réhébergé.
+> Les expressions C# ne sont pas prises en charge dans le concepteur réhébergé.
 
 ## <a name="new-designer-capabilities"></a>Nouvelles fonctions du concepteur
 
@@ -30,7 +30,7 @@ Windows Workflow Foundation (WF) dans .NET Framework 4,5 a introduit de nombreus
  Les fonctionnalités [recherche rapide](whats-new-in-wf-in-dotnet.md#BKMK_QuickFind) et [Rechercher dans les fichiers](whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles) introduites avec .NET Framework 4,5 ne sont pas prises en charge dans le concepteur réhébergé. La recherche `Toolbox` est prise en charge dans le concepteur réhébergé. Pour plus d’informations sur ces fonctionnalités, consultez recherche dans le [Concepteur](whats-new-in-wf-in-dotnet.md#BKMK_DesignerSearch).
 
 > [!WARNING]
->  La [recherche](whats-new-in-wf-in-dotnet.md#BKMK_QuickFind) et la recherche rapides [dans les fichiers](whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles) ne sont pas prises en charge dans le concepteur réhébergé.
+> La [recherche](whats-new-in-wf-in-dotnet.md#BKMK_QuickFind) et la recherche rapides [dans les fichiers](whats-new-in-wf-in-dotnet.md#BKMK_FindInFiles) ne sont pas prises en charge dans le concepteur réhébergé.
 
 ### <a name="delete-context-menu-item-in-variable-and-argument-designer"></a>Supprimer l’élément de menu contextuel dans le concepteur de variable et d’argument
  Dans le [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], les variables et les arguments ne pouvaient être supprimés dans le concepteur qu'en utilisant le clavier. À compter de .NET Framework 4,5, les variables et les arguments peuvent être supprimés à l’aide du menu contextuel. Cette fonctionnalité est prise en charge dans le concepteur réhébergé.
@@ -103,7 +103,7 @@ Windows Workflow Foundation (WF) dans .NET Framework 4,5 a introduit de nombreus
  Dans le [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], les erreurs de validation de workflow n'étaient pas été comptées comme des erreurs de build pendant la génération d'un projet de workflow. Cela signifiait que la génération d'un projet de workflow pouvait réussir même lorsqu'il existait des erreurs de validation de workflow. Dans .NET Framework 4,5, les erreurs de validation de workflow provoquent l’échec de la génération.
 
 > [!WARNING]
->  La validation au moment de la génération n'est pas prise en charge dans le concepteur réhébergé.  
+> La validation au moment de la génération n'est pas prise en charge dans le concepteur réhébergé.  
   
 ### <a name="design-time-background-validation"></a>Validation d'arrière-plan au moment du design  
  Dans [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], les flux de travail ont été validés en tant que processus de premier plan, ce qui pourrait potentiellement bloquer l’interface utilisateur pendant les processus de validation complexes ou longs. La validation de workflow a lieu à présent sur un thread d'arrière-plan, afin que l'interface utilisateur ne soit pas bloquée.  
@@ -142,4 +142,4 @@ Windows Workflow Foundation (WF) dans .NET Framework 4,5 a introduit de nombreus
  L’outil de développement de workflow contrat en premier permet au développeur de concevoir un contrat dans le code en premier, puis, en quelques clics dans Visual Studio, de générer automatiquement un modèle d’activité dans la boîte à outils représentant chaque opération. Ces activités sont ensuite utilisées pour créer un workflow qui implémente les opérations définies par le contrat. Le concepteur de workflow validera le service de workflow pour garantir que ces opérations sont implémentées et que la signature du workflow correspond à la signature du contrat. Le développeur peut également associer un service de workflow à une collection de contrats implémentés. Pour plus d’informations sur le développement d’un service de workflow [contrat en premier, consultez Procédure: Créez un service de workflow qui utilise un contrat](how-to-create-a-workflow-service-that-consumes-an-existing-service-contract.md)de service existant.  
   
 > [!WARNING]
->  Le développement de workflow « contrat en premier » n'est pas pris en charge dans Workflow Designer.
+> Le développement de workflow « contrat en premier » n'est pas pris en charge dans Workflow Designer.

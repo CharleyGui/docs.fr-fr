@@ -19,12 +19,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 03ee275336d3ae71f63d82add694fe1308efbe8b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5aa53d1c9d101544f532c51f43a8b47143117813
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61750060"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988277"
 ---
 # <a name="icordebugcode3getreturnvalueliveoffset-method"></a>ICorDebugCode3::GetReturnValueLiveOffset, méthode
 Pour un offset IL spécifié, obtient les offsets natifs où un point d’arrêt doit être placé afin que le débogueur puisse obtenir la valeur de retour d’une fonction.  
@@ -42,39 +42,39 @@ HRESULT GetReturnValueLiveOffset(
   
 ## <a name="parameters"></a>Paramètres  
  `ILoffset`  
- Offset IL. Il doit être un site d’appel de fonction ou l’appel de fonction échoue.  
+ Offset IL. Il doit s’agir d’un site d’appel de fonction, sinon l’appel de fonction échoue.  
   
  `bufferSize`  
- Le nombre d’octets pour stocker `pOffsets`.  
+ Nombre d’octets disponibles pour le stockage `pOffsets`.  
   
  `pFetched`  
- Pointeur vers le nombre de décalages réellement retournés. En règle générale, sa valeur est 1, mais une seule instruction IL peut mapper à plusieurs `CALL` instructions assembleur.  
+ Pointeur vers le nombre d’offsets réellement retournés. En règle générale, sa valeur est 1, mais une instruction il unique peut être `CALL` mappée à plusieurs instructions d’assembly.  
   
  `pOffsets`  
- Tableau d’offsets natifs. En règle générale, `pOffsets` contient un offset unique, bien qu’une seule instruction IL peut mapper à plusieurs cartes à plusieurs `CALL` instructions assembleur.  
+ Tableau d’offsets natifs. En général `pOffsets` , contient un offset unique, bien qu’une seule instruction il puisse être mappée à `CALL` plusieurs instructions d’assembly.  
   
 ## <a name="remarks"></a>Notes  
- Cette méthode est utilisée avec la [ICorDebugILFrame3::GetReturnValueForILOffset](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md) méthode pour obtenir la valeur de retour d’une méthode qui retourne un type référence. En passant un offset IL à un site d’appel de fonction à cette méthode retourne un ou plusieurs offsets natifs. Le débogueur peut ensuite définir des points d’arrêt sur ces offsets natifs dans la fonction. Lorsque le débogueur atteint un des points d’arrêt, vous pouvez ensuite passer le même offset IL que vous avez passé à cette méthode pour le [ICorDebugILFrame3::GetReturnValueForILOffset](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md) méthode pour obtenir la valeur de retour. Le débogueur doit ensuite effacer tous les points d’arrêt qu’il a définis.  
+ Cette méthode est utilisée avec la méthode [ICorDebugILFrame3:: GetReturnValueForILOffset](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md) pour obtenir la valeur de retour d’une méthode qui retourne un type référence. Le passage d’un offset IL à un site d’appel de fonction à cette méthode retourne un ou plusieurs offsets natifs. Le débogueur peut ensuite définir des points d’arrêt sur ces offsets natifs dans la fonction. Quand le débogueur atteint l’un des points d’arrêt, vous pouvez ensuite passer le même offset IL que celui que vous avez passé à cette méthode à la méthode [ICorDebugILFrame3:: GetReturnValueForILOffset](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md) pour obtenir la valeur de retour. Le débogueur doit ensuite effacer tous les points d’arrêt qu’il définit.  
   
 > [!WARNING]
->  Le `ICorDebugCode3::GetReturnValueLiveOffset` et [ICorDebugILFrame3::GetReturnValueForILOffset](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md) méthodes permettent d’obtenir des informations de valeur de retour pour les types de référence uniquement. Récupération des informations de valeur de retour dans les types valeur (autrement dit, tous les types qui dérivent <xref:System.ValueType>) n’est pas pris en charge.  
+> Les `ICorDebugCode3::GetReturnValueLiveOffset` méthodes et [ICorDebugILFrame3:: GetReturnValueForILOffset](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe3-getreturnvalueforiloffset-method.md) vous permettent d’obtenir des informations de valeur de retour pour les types référence uniquement. La récupération des informations de valeur de retour à partir des types valeur (autrement dit, <xref:System.ValueType>tous les types qui dérivent de) n’est pas prise en charge.  
   
- La fonction retourne le `HRESULT` valeurs indiquées dans le tableau suivant.  
+ La fonction retourne les `HRESULT` valeurs indiquées dans le tableau suivant.  
   
-|Valeur`HRESULT` |Description|  
+|Valeur`HRESULT`|Description|  
 |---------------------|-----------------|  
 |`S_OK`|Opération réussie.|  
-|`CORDBG_E_INVALID_OPCODE`|Le site offset IL donné n’est pas une instruction d’appel, ou la fonction retourne `void`.|  
-|`CORDBG_E_UNSUPPORTED`|L’offset IL donné est un appel approprié, mais le type de retour non pris en charge pour l’obtention d’une valeur de retour.|  
+|`CORDBG_E_INVALID_OPCODE`|Le site de décalage IL donné n’est pas une instruction d’appel, ou `void`la fonction retourne.|  
+|`CORDBG_E_UNSUPPORTED`|L’offset IL donné est un appel approprié, mais le type de retour n’est pas pris en charge pour l’obtention d’une valeur de retour.|  
   
- Le `ICorDebugCode3::GetReturnValueLiveOffset` méthode n’est disponible uniquement sur x86 et les systèmes AMD64.  
+ La `ICorDebugCode3::GetReturnValueLiveOffset` méthode est disponible uniquement sur les systèmes x86 et amd64.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v451plus](../../../../includes/net-current-v451plus-md.md)]  
   

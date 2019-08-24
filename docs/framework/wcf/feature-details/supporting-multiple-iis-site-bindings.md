@@ -2,12 +2,12 @@
 title: Prise en charge de plusieurs liaisons de site IIS
 ms.date: 03/30/2017
 ms.assetid: 40440495-254d-45c8-a8c6-b29f364892ba
-ms.openlocfilehash: 3a4c9a55a8479980bd12333278d8a1e28f2ca775
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: a1fc2de3a10641dfc1c6181c7258bd4160f900e2
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943050"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988638"
 ---
 # <a name="supporting-multiple-iis-site-bindings"></a>Prise en charge de plusieurs liaisons de site IIS
 Lorsque vous hébergez un service Windows Communication Foundation (WCF) sous Internet Information Services (IIS) 7,0, vous souhaiterez peut-être fournir plusieurs adresses de base qui utilisent le même protocole sur le même site. Cela permet au même service de répondre à plusieurs URI différents. Cela est utile lorsque vous souhaitez héberger un service qui écoute sur `http://www.contoso.com` et `http://contoso.com`. Il est également utile de créer un service qui a une adresse de base pour les utilisateurs internes et une autre adresse de base pour les utilisateurs externes. Par exemple: `http://internal.contoso.com` et `http://www.contoso.com`.  
@@ -27,4 +27,4 @@ Lorsque vous hébergez un service Windows Communication Foundation (WCF) sous In
  La spécification de plusieurs adresses de base pour le même site affecte le contenu de la page d’aide WCF, l’importation du schéma et les informations WSDL/MEX générées par le service. La page d’aide de WCF affiche la ligne de commande à utiliser pour générer un client WCF qui peut communiquer avec le service. Cette ligne de commande contient uniquement la première adresse spécifiée dans la liaison IIS pour le site web. De même, lors de l’importation du schéma, seule la première adresse de base spécifiée dans la liaison IIS est utilisée. Les données WSDL et MEX contiennent toutes les adresses de base spécifiées dans les liaisons IIS.  
   
 > [!WARNING]
->  Cela signifie que si un service possède deux adresses de base, une pour les utilisateurs internes et l'autre pour les utilisateurs externes, les deux sont spécifiées dans les informations WSDL/MEX générées par le service.
+> Cela signifie que si un service possède deux adresses de base, une pour les utilisateurs internes et l'autre pour les utilisateurs externes, les deux sont spécifiées dans les informations WSDL/MEX générées par le service.

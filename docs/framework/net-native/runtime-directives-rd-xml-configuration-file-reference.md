@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 8241523f-d8e1-4fb6-bf6a-b29bfe07b38a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3c6f1a2d23d5f33ba7e4f0d51f795e75d7cf785e
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 7545e1d7079664fd8706bdddac2ff3c8ebc27c7f
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052450"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988294"
 ---
 # <a name="runtime-directives-rdxml-configuration-file-reference"></a>Guide de référence du fichier de configuration des directives runtime (rd.xml)
 
@@ -17,19 +17,19 @@ Un fichier de directives runtime (.rd.xml) est un fichier de configuration XML q
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
-<Application>
-  <Namespace Name="Contoso.Cloud.AppServices" Serialize="Required Public" />
-  <Namespace Name="ContosoClient.ViewModels" Serialize="Required Public" />
-  <Namespace Name="ContosoClient.DataModel" Serialize="Required Public" />
-  <Namespace Name="Contoso.Reader.UtilityLib" Serialize="Required Public" />
+  <Application>
+    <Namespace Name="Contoso.Cloud.AppServices" Serialize="Required Public" />
+    <Namespace Name="ContosoClient.ViewModels" Serialize="Required Public" />
+    <Namespace Name="ContosoClient.DataModel" Serialize="Required Public" />
+    <Namespace Name="Contoso.Reader.UtilityLib" Serialize="Required Public" />
 
-  <Namespace Name="System.Collections.ObjectModel" >
-    <TypeInstantiation Name="ObservableCollection"
-          Arguments="ContosoClient.DataModel.ProductItem" Serialize="Public" />
-    <TypeInstantiation Name="ReadOnlyObservableCollection"
-          Arguments="ContosoClient.DataModel.ProductGroup" Serialize="Public" />
-  </Namespace>
-</Application>
+    <Namespace Name="System.Collections.ObjectModel" >
+      <TypeInstantiation Name="ObservableCollection"
+            Arguments="ContosoClient.DataModel.ProductItem" Serialize="Public" />
+      <TypeInstantiation Name="ReadOnlyObservableCollection"
+            Arguments="ContosoClient.DataModel.ProductGroup" Serialize="Public" />
+    </Namespace>
+  </Application>
 </Directives>
 ```
 
@@ -41,27 +41,27 @@ L’élément racine est l’élément [Directives](../../../docs/framework/net-
 
 Pour obtenir des informations de référence, choisissez les éléments dans la structure suivante ou consultez [Éléments de directive runtime](../../../docs/framework/net-native/runtime-directive-elements.md). Dans la hiérarchie suivante, les points de suspension marquent une structure récursive. Les informations entre crochets indiquent si l'élément concerné est facultatif ou obligatoire, et, s'il est utilisé, le nombre d'instances autorisées (une ou plusieurs).
 
-[Directives](../../../docs/framework/net-native/directives-element-net-native.md) [1:1] [Application](../../../docs/framework/net-native/application-element-net-native.md) [0:1] [Assembly](../../../docs/framework/net-native/assembly-element-net-native.md) [0 : m] [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0 : m]. . .
-[Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M] . . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0 : m]. . .
-[Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M] [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M] . . .
-[Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M] . . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0 : m]. . .
-[Type](../../../docs/framework/net-native/type-element-net-native.md) [0 : m] [sous-types](../../../docs/framework/net-native/subtypes-element-net-native.md) (sous-classes du type conteneur) [o : 1] [Type](../../../docs/framework/net-native/type-element-net-native.md) [0 : m]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0 : m]. . .
-[AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md) (type conteneur est d’un attribut) [o : 1] [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0 : m] [méthode](../../../docs/framework/net-native/method-element-net-native.md) [0 : m] [paramètre](../../../docs/framework/net-native/parameter-element-net-native.md) [0 : m] [ TypeParameter](../../../docs/framework/net-native/typeparameter-element-net-native.md) [0 : m] [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0 : m] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (méthode générique construite) [0 : m] [propriété](../../../docs/framework/net-native/property-element-net-native.md) [0 : m] [Champ](../../../docs/framework/net-native/field-element-net-native.md) [0 : m] [événement](../../../docs/framework/net-native/event-element-net-native.md) [0 : m] [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0 : m] [Type](../../../docs/framework/net-native/type-element-net-native.md) [0 : m]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0 : m]. . .
-[Méthode](../../../docs/framework/net-native/method-element-net-native.md) [0 : m] [paramètre](../../../docs/framework/net-native/parameter-element-net-native.md) [0 : m] [TypeParameter](../../../docs/framework/net-native/typeparameter-element-net-native.md) [0 : m] [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0 : m] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) () méthode générique construite) [0 : m] [propriété](../../../docs/framework/net-native/property-element-net-native.md) [0 : m] [champ](../../../docs/framework/net-native/field-element-net-native.md) [0 : m] [événement](../../../docs/framework/net-native/event-element-net-native.md) [0 : m] [bibliothèque](../../../docs/framework/net-native/library-element-net-native.md) [0 : m] [Assembly](../../../docs/framework/net-native/assembly-element-net-native.md) [0 : m] [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0 : m]. . .
-[Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M] . . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0 : m]. . .
-[Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M] [Namespace](../../../docs/framework/net-native/namespace-element-net-native.md) [0:M] . . .
-[Type](../../../docs/framework/net-native/type-element-net-native.md) [0:M] . . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0 : m]. . .
-[Type](../../../docs/framework/net-native/type-element-net-native.md) [0 : m] [sous-types](../../../docs/framework/net-native/subtypes-element-net-native.md) (sous-classes du type conteneur) [o : 1] [Type](../../../docs/framework/net-native/type-element-net-native.md) [0 : m]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0 : m]. . .
-[AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md) (type conteneur est d’un attribut) [o : 1] [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0 : m] [méthode](../../../docs/framework/net-native/method-element-net-native.md) [0 : m] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (générique construit méthode) [0 : m] [propriété](../../../docs/framework/net-native/property-element-net-native.md) [0 : m] [champ](../../../docs/framework/net-native/field-element-net-native.md) [0 : m] [événement](../../../docs/framework/net-native/event-element-net-native.md) [0 : m] [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0 : M] [Type](../../../docs/framework/net-native/type-element-net-native.md) [0 : m]. . .
-[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0 : m]. . .
-[Méthode](../../../docs/framework/net-native/method-element-net-native.md) [0 : m] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (méthode générique construite) [0 : m] [propriété](../../../docs/framework/net-native/property-element-net-native.md) [0 : m] [champ](../../../docs/framework/net-native/field-element-net-native.md) [0 : m] [événement](../../../docs/framework/net-native/event-element-net-native.md)[0 : m]
+[Directives](../../../docs/framework/net-native/directives-element-net-native.md) [1:1] [application](../../../docs/framework/net-native/application-element-net-native.md) [0:1] [assembly](../../../docs/framework/net-native/assembly-element-net-native.md) [0: m] [espace de noms](../../../docs/framework/net-native/namespace-element-net-native.md) [0: m]. . .
+[Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
+[Espace de noms](../../../docs/framework/net-native/namespace-element-net-native.md) [0: M] [Espace de noms](../../../docs/framework/net-native/namespace-element-net-native.md) [0: M]. . .
+[Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
+[Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M] [Sous-types](../../../docs/framework/net-native/subtypes-element-net-native.md) (sous-classes du type conteneur) O:1 [Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
+[AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md) (le type conteneur est un attribut) O:1 [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0: M] [Méthode](../../../docs/framework/net-native/method-element-net-native.md) [0: M] [Paramètre](../../../docs/framework/net-native/parameter-element-net-native.md) [0: M] [TypeParameter](../../../docs/framework/net-native/typeparameter-element-net-native.md) [0: M] [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0: M] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (méthode générique construite) [0: M] [Propriété](../../../docs/framework/net-native/property-element-net-native.md) [0: M] [Champ](../../../docs/framework/net-native/field-element-net-native.md) [0: M] [Événement](../../../docs/framework/net-native/event-element-net-native.md) [0: M] [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M] [Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
+[Méthode](../../../docs/framework/net-native/method-element-net-native.md) [0: M] [Paramètre](../../../docs/framework/net-native/parameter-element-net-native.md) [0: M] [TypeParameter](../../../docs/framework/net-native/typeparameter-element-net-native.md) [0: M] [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0: M] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (méthode générique construite) [0: M] [Propriété](../../../docs/framework/net-native/property-element-net-native.md) [0: M] [Champ](../../../docs/framework/net-native/field-element-net-native.md) [0: M] [Événement](../../../docs/framework/net-native/event-element-net-native.md) [0: M] [Bibliothèque](../../../docs/framework/net-native/library-element-net-native.md) [0: M] [Assembly](../../../docs/framework/net-native/assembly-element-net-native.md) [0: M] [Espace de noms](../../../docs/framework/net-native/namespace-element-net-native.md) [0: M]. . .
+[Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
+[Espace de noms](../../../docs/framework/net-native/namespace-element-net-native.md) [0: M] [Espace de noms](../../../docs/framework/net-native/namespace-element-net-native.md) [0: M]. . .
+[Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
+[Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M] [Sous-types](../../../docs/framework/net-native/subtypes-element-net-native.md) (sous-classes du type conteneur) O:1 [Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
+[AttributeImplies](../../../docs/framework/net-native/attributeimplies-element-net-native.md) (le type conteneur est un attribut) O:1 [GenericParameter](../../../docs/framework/net-native/genericparameter-element-net-native.md) [0: M] [Méthode](../../../docs/framework/net-native/method-element-net-native.md) [0: M] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (méthode générique construite) [0: M] [Propriété](../../../docs/framework/net-native/property-element-net-native.md) [0: M] [Champ](../../../docs/framework/net-native/field-element-net-native.md) [0: M] [Événement](../../../docs/framework/net-native/event-element-net-native.md) [0: M] [TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M] [Type](../../../docs/framework/net-native/type-element-net-native.md) [0: M]. . .
+[TypeInstantiation](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) (type générique construit) [0: M]. . .
+[Méthode](../../../docs/framework/net-native/method-element-net-native.md) [0: M] [MethodInstantiation](../../../docs/framework/net-native/methodinstantiation-element-net-native.md) (méthode générique construite) [0: M] [Propriété](../../../docs/framework/net-native/property-element-net-native.md) [0: M] [Champ](../../../docs/framework/net-native/field-element-net-native.md) [0: M] [Événement](../../../docs/framework/net-native/event-element-net-native.md) [0: M]
 
 L’élément [Application](../../../docs/framework/net-native/application-element-net-native.md) peut n’avoir aucun attribut, ou peut avoir les attributs de stratégie présentés dans la section [Stratégie et directives runtime](#Directives).
 
@@ -403,9 +403,9 @@ L'application de la stratégie `Serialize` à un champ implique les modification
 
 - Le type du champ est marqué avec la stratégie `Serialize`.
 
-#### <a name="the-effect-of-xmlserializer-datacontractserializer-and-datacontractjsonserializer-policies"></a>L’effet des stratégies XmlSerializer, DataContractSerializer et DataContractJsonSerializer
+#### <a name="the-effect-of-xmlserializer-datacontractserializer-and-datacontractjsonserializer-policies"></a>Effet des stratégies XmlSerializer, DataContractSerializer et DataContractJsonSerializer
 
-Contrairement à la `Serialize` stratégie, qui est conçu pour les sérialiseurs basés sur la réflexion, le <xref:System.Xml.Serialization.XmlSerializer>, <xref:System.Runtime.Serialization.DataContractSerializer>, et <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> stratégies sont utilisées pour activer un jeu de sérialiseurs connus pour la chaîne d’outils .NET Native. Ces sérialiseurs ne sont pas implémentés à l'aide de la réflexion, mais le jeu de types qui peuvent être sérialisés au moment de l'exécution est déterminé de la même manière que les types pouvant faire l'objet d'une réflexion.
+Contrairement à `Serialize` la stratégie, qui est destinée aux sérialiseurs basés sur la réflexion <xref:System.Xml.Serialization.XmlSerializer>, <xref:System.Runtime.Serialization.DataContractSerializer>les stratégies <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> , et sont utilisées pour activer un ensemble de sérialiseurs qui sont connus de la chaîne d’outils .net native. Ces sérialiseurs ne sont pas implémentés à l'aide de la réflexion, mais le jeu de types qui peuvent être sérialisés au moment de l'exécution est déterminé de la même manière que les types pouvant faire l'objet d'une réflexion.
 
 Appliquer une de ces stratégies à un type permet de sérialiser celui-ci avec le sérialiseur correspondant. En outre, tous les types que le moteur de sérialisation peut déterminer de manière statique comme nécessitant une sérialisation sont également sérialisables.
 

@@ -2,18 +2,18 @@
 title: Flux de transactions vers et depuis des services de workflow
 ms.date: 03/30/2017
 ms.assetid: 03ced70e-b540-4dd9-86c8-87f7bd61f609
-ms.openlocfilehash: 7926c5a8ce1ca1ba3e24c4d1681ae12c18039924
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: ae99c53bbb859f3ade075d4d60ad2ae7e5e7272b
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963338"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988815"
 ---
 # <a name="flowing-transactions-into-and-out-of-workflow-services"></a>Flux de transactions vers et depuis des services de workflow
 Les services et clients de workflow peuvent participer aux transactions.  Pour qu'une opération de service fasse partie d'une transaction ambiante, placez une activité <xref:System.ServiceModel.Activities.Receive> dans une activité <xref:System.ServiceModel.Activities.TransactedReceiveScope>. Tous les appels effectués par une activité <xref:System.ServiceModel.Activities.Send> ou <xref:System.ServiceModel.Activities.SendReply> au sein de l’activité <xref:System.ServiceModel.Activities.TransactedReceiveScope> seront également effectués dans la transaction ambiante. Une application cliente de workflow peut créer une transaction ambiante en utilisant l’activité <xref:System.Activities.Statements.TransactionScope> et appeler des opérations de service à l’aide de la transaction ambiante. Cette rubrique vous guide dans la création d’un service de workflow et d’un client de workflow qui participent à des transactions.  
   
 > [!WARNING]
->  Si une instance de service de workflow est chargée dans une transaction et que le <xref:System.Activities.Statements.Persist> Workflow contient une activité, l’instance de workflow est bloquée jusqu’à ce que la transaction expire.  
+> Si une instance de service de workflow est chargée dans une transaction et que le <xref:System.Activities.Statements.Persist> Workflow contient une activité, l’instance de workflow est bloquée jusqu’à ce que la transaction expire.  
   
 > [!IMPORTANT]
 > Lorsque vous utilisez une activité <xref:System.ServiceModel.Activities.TransactedReceiveScope>, il est recommandé de placer toutes les réceptions dans le workflow dans les activités <xref:System.ServiceModel.Activities.TransactedReceiveScope>.  
@@ -99,7 +99,7 @@ Les services et clients de workflow peuvent participer aux transactions.  Pour q
   
 6. Faites glisser et déposez une <xref:System.ServiceModel.Activities.Receive> activité dans la section <xref:System.ServiceModel.Activities.TransactedReceiveScope> **requête** de l’activité. Définissez les propriétés suivantes :  
   
-    |Propriété|Valeur|  
+    |Propriété|`Value`|  
     |--------------|-----------|  
     |CanCreateInstance|True (activez la case à cocher)|  
     |OperationName|StartSample|  
@@ -133,7 +133,7 @@ Les services et clients de workflow peuvent participer aux transactions.  Pour q
     |Propriété|Valeur|  
     |--------------|-----------|  
     |À|replyMessage|  
-    |`Value`|Services Envoi de la réponse».|  
+    |Valeur|Services Envoi de la réponse».|  
   
 11. Faites glisser et déposez une <xref:System.Activities.Statements.WriteLine> activité après l’activité <xref:System.Activities.Statements.WriteLine.Text%2A> et affectez à sa propriété la <xref:System.Activities.Statements.Assign> valeur «service: BEGIN reply».  
   
@@ -179,7 +179,7 @@ Les services et clients de workflow peuvent participer aux transactions.  Pour q
   
 8. Faites glisser une activité <xref:System.ServiceModel.Activities.Send> après l'activité <xref:System.Activities.Statements.Assign> et définissez les propriétés suivantes :  
   
-    |Propriété|Valeur|  
+    |Propriété|`Value`|  
     |--------------|-----------|  
     |EndpointConfigurationName|workflowServiceEndpoint|  
     |OperationName|StartSample|  

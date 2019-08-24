@@ -1,17 +1,17 @@
 ---
-title: Icordebugmemorybuffer::getstartaddress, méthode
+title: 'ICorDebugMemoryBuffer:: Getstartaddress,, méthode'
 ms.date: 03/30/2017
 ms.assetid: f804d9ab-8c88-44f0-b278-5fcca7f87726
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9208d07b697c3bb8a99e13582eda70dcb8dd826b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1394624051baa9e7dd21e29788d5fab28332081b
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67752775"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69987545"
 ---
-# <a name="icordebugmemorybuffergetstartaddress-method"></a>Icordebugmemorybuffer::getstartaddress, méthode
+# <a name="icordebugmemorybuffergetstartaddress-method"></a>ICorDebugMemoryBuffer:: Getstartaddress,, méthode
 Obtient l'adresse de départ de la mémoire tampon.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,14 +29,14 @@ HRESULT GetStartAddress(
 ## <a name="remarks"></a>Notes  
   
 > [!WARNING]
->  Cette méthode est uniquement disponible avec .NET Native.  
+> Cette méthode est uniquement disponible avec .NET Native.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_46_native](../../../../includes/net-46-native-md.md)]  
   

@@ -2,22 +2,22 @@
 title: 'Procédure : héberger un service WCF dans WAS'
 ms.date: 03/30/2017
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
-ms.openlocfilehash: 1ebce4f0182b68e0e3c10d3d04e07560130c0245
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cdab0876b65c190cd5d46f82218eb9fbb8234298
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64635289"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988202"
 ---
 # <a name="how-to-host-a-wcf-service-in-was"></a>Procédure : héberger un service WCF dans WAS
-Cette rubrique explique les étapes de base requises pour créer un ordinateur Windows Process Activation Services (également appelé WAS) hébergé le service Windows Communication Foundation (WCF). WAS est le nouveau service d’activation de processus généralisant les fonctionnalités des services IIS (Internet Information Services) qui fonctionnent avec des protocoles de transport non-HTTP. WCF utilise l’interface d’adaptateur d’écouteur pour communiquer les demandes d’activation qui sont reçus sur les protocoles non-HTTP pris en charge par WCF, tels que TCP, canaux nommés et Message Queuing.  
+Cette rubrique décrit les étapes de base requises pour créer un service de Windows Communication Foundation hébergé (WCF) des services d’activation de processus Windows (également appelé WAS). WAS est le nouveau service d’activation de processus généralisant les fonctionnalités des services IIS (Internet Information Services) qui fonctionnent avec des protocoles de transport non-HTTP. WCF utilise l’interface d’adaptateur d’écouteur pour communiquer les demandes d’activation reçues sur les protocoles non-HTTP pris en charge par WCF, tels que TCP, les canaux nommés et les Message Queuing.  
   
- Cette option d'hébergement requiert que les composants d'activation WAS soient installés et configurés correctement, mais ne requiert pas l'écriture du code d'hébergement dans le cadre de l'application. Pour plus d’informations sur l’installation et configuration du service WAS, consultez [Comment : Installer et configurer les composants d’Activation WCF](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md).  
+ Cette option d'hébergement requiert que les composants d'activation WAS soient installés et configurés correctement, mais ne requiert pas l'écriture du code d'hébergement dans le cadre de l'application. Pour plus d’informations sur l’installation et la configuration de [was, consultez Procédure: Installez et configurez les](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)composants d’activation WCF.  
   
 > [!WARNING]
->  L’activation de WAS n’est pas prise en charge si le pipeline de traitement de demande du serveur web est en mode classique. Le pipeline de traitement de demande du serveur Web doit être en mode intégré si l'activation de WAS doit être utilisée.  
+> L’activation de WAS n’est pas prise en charge si le pipeline de traitement de demande du serveur web est en mode classique. Le pipeline de traitement de demande du serveur Web doit être en mode intégré si l'activation de WAS doit être utilisée.  
   
- Lorsqu’un service WCF est hébergé dans WAS, les liaisons standards sont utilisées à l’accoutumée. Toutefois, lors de l'utilisation de <xref:System.ServiceModel.NetTcpBinding> et de <xref:System.ServiceModel.NetNamedPipeBinding> pour configurer un service hébergé WAS, une contrainte doit être satisfaite. Lorsque des points de terminaison différents utilisent le même transport, les paramètres de liaison doivent correspondre dans les sept propriétés suivantes :  
+ Lorsqu’un service WCF est hébergé dans WAS, les liaisons standard sont utilisées de la façon habituelle. Toutefois, lors de l'utilisation de <xref:System.ServiceModel.NetTcpBinding> et de <xref:System.ServiceModel.NetNamedPipeBinding> pour configurer un service hébergé WAS, une contrainte doit être satisfaite. Lorsque des points de terminaison différents utilisent le même transport, les paramètres de liaison doivent correspondre dans les sept propriétés suivantes :  
   
 - ConnectionBufferSize  
   
@@ -35,7 +35,7 @@ Cette rubrique explique les étapes de base requises pour créer un ordinateur W
   
  Sinon, le point de terminaison initialisé en premier détermine toujours les valeurs de ces propriétés et les points de terminaison ajoutés ultérieurement lèvent un <xref:System.ServiceModel.ServiceActivationException> s'ils ne correspondent pas à ces paramètres.  
   
- Pour la copie de la source de cet exemple, consultez [l’Activation TCP](../../../../docs/framework/wcf/samples/tcp-activation.md).  
+ Pour obtenir la copie source de cet exemple, consultez [activation TCP](../../../../docs/framework/wcf/samples/tcp-activation.md).  
   
 ### <a name="to-create-a-basic-service-hosted-by-was"></a>Pour créer un service de base hébergé par WAS  
   
@@ -74,7 +74,7 @@ Cette rubrique explique les étapes de base requises pour créer un ordinateur W
   
 ### <a name="to-create-a-client-to-use-the-service"></a>Pour créer un client qui utilise le service  
   
-1. Utilisez [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) à partir de la ligne de commande pour générer le code à partir des métadonnées de service.  
+1. Utilisez l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) à partir de la ligne de commande pour générer le code à partir des métadonnées de service.  
   
     ```  
     Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>   

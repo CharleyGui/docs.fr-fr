@@ -11,12 +11,12 @@ ms.assetid: 2e92d8e8-f0e4-4df7-9f07-2acf35cd798c
 author: gewarren
 ms.author: gewarren
 manager: jillfra
-ms.openlocfilehash: e3fb6e42270cc0a530646b656470ec99fcfc7f1f
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 5e5112aa0b025648ce68a93f0f3da026ec99fe89
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666249"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69987139"
 ---
 # <a name="walkthrough-create-new-wpf-content-on-windows-forms-at-design-time"></a>Procédure pas à pas : Créer un contenu WPF sur Windows Forms au moment de la conception
 
@@ -28,7 +28,7 @@ Cette procédure pas à pas nécessite Visual Studio.
 
 ## <a name="create-the-project"></a>Créer le projet
 
-La première étape consiste à créer le projet Windows Forms. Ouvrez Visual Studio et créez un projet d' **application de Windows Forms (.NET Framework)** dans Visual Basic ou C# un `HostingWpf`visuel nommé.
+Ouvrez Visual Studio et créez un projet d' **application de Windows Forms (.NET Framework)** dans Visual Basic ou C# un `HostingWpf`visuel nommé.
 
 > [!NOTE]
 > Lors de l'hébergement de contenu WPF, seuls les projets Visual Basic et C# sont pris en charge.

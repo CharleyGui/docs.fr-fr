@@ -2,12 +2,12 @@
 title: Introduction au routage
 ms.date: 03/30/2017
 ms.assetid: bf6ceb38-6622-433b-9ee7-f79bc93497a1
-ms.openlocfilehash: cc9298c96a5d1dc60ae1f9982b21ce7a160aacbd
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: eaf09c0d724521c3c69fde0e90ecd7cd5aadb253
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933970"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988668"
 ---
 # <a name="routing-introduction"></a>Introduction au routage
 Le service de routage fournit un intermédiaire SOAP générique connectable, capable de router des messages en fonction du contenu. Le service de routage vous permet de créer une logique de routage complexe et d'implémenter des scénarios, tels que l'agrégation de service, le contrôle des versions de service, le routage par priorité et en mode multidiffusion. Le service de routage fournit également une gestion des erreurs qui vous permet de définir des listes de points de terminaison de sauvegarde auxquels sont envoyés les messages en cas d'échec de l'envoi au point de terminaison de destination primaire.  
@@ -395,7 +395,7 @@ using (ServiceHost serviceHost =
  L'emprunt d'identité avec le service de routage requiert l'utilisation de l'emprunt d'identité ASP.NET en mode de compatibilité ASP.NET ou l'utilisation d'informations d'identification Windows qui ont été configurées pour permettre l'emprunt d'identité. Pour plus d’informations sur le mode de compatibilité ASP.NET, consultez [services WCF et ASP.net](wcf-services-and-aspnet.md).  
   
 > [!WARNING]
->  Le service de routage WCF ne prend pas en charge l'emprunt d'identité avec l'authentification de base.  
+> Le service de routage WCF ne prend pas en charge l'emprunt d'identité avec l'authentification de base.  
   
  Pour utiliser l'emprunt d'identité ASP.NET avec le service de routage, activez le mode de compatibilité ASP.NET sur l'environnement d'hébergement de service. Le service de routage a déjà été marqué comme autorisant le mode de compatibilité ASP.NET et l'emprunt d'identité est automatiquement activé. L'emprunt d'identité est la seule utilisation prise en charge de l'intégration d'ASP.NET au service de routage.  
   

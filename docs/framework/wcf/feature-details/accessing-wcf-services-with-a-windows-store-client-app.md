@@ -2,12 +2,12 @@
 title: Accès aux services WCF avec une application cliente Windows Store
 ms.date: 03/30/2017
 ms.assetid: e2002ef4-5dee-4a54-9d87-03b33d35fc52
-ms.openlocfilehash: a2f1ef37914c932801699bb2f9c2323dd0408e7f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 9316a46f809eec21f73e8eeadb49baf1748c6ca0
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964964"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988252"
 ---
 # <a name="accessing-wcf-services-with-a-windows-store-client-app"></a>Accès aux services WCF avec une application cliente Windows Store
 Windows 8 introduit un nouveau type d'application appelé applications du Windows Store. Ces applications sont conçues autour d'une interface d'écran tactile. .NET Framework 4.5 permet aux applications du Windows Store d'appeler des services WCF.  
@@ -19,7 +19,7 @@ Windows 8 introduit un nouveau type d'application appelé applications du Window
 > Utilisez les API de syndication WinRT au lieu de celles exposées par WCF. Pour plus d’informations, consultez [API de syndication WinRT](https://go.microsoft.com/fwlink/?LinkId=236265)  
   
 > [!WARNING]
->  L'utilisation de la fonctionnalité Ajouter une référence de service pour ajouter une référence de service Web à un composant d'exécution Windows n'est pas pris en charge.  
+> L'utilisation de la fonctionnalité Ajouter une référence de service pour ajouter une référence de service Web à un composant d'exécution Windows n'est pas pris en charge.  
   
 ### <a name="supported-bindings"></a>Liaisons prises en charge  
  Les liaisons WCF suivantes sont prises en charge dans les applications du Windows Store :  
@@ -104,7 +104,7 @@ public partial class Service1Client : System.ServiceModel.ClientBase<MetroWcfCli
 3. XmlSerializer  
   
 > [!WARNING]
->  XmlDictionaryWriter.Write(DateTime) écrit maintenant l'objet DateTime en tant que chaîne.  
+> XmlDictionaryWriter.Write(DateTime) écrit maintenant l'objet DateTime en tant que chaîne.  
   
 ### <a name="security"></a>Sécurité  
 
@@ -154,7 +154,7 @@ Les types d’informations d’identification du client suivants sont pris en ch
  Nous vous recommandons de définir les opérations de service asynchrones uniquement à l'aide du modèle asynchrone basé sur des tâches. Cela garantit que les applications du Windows Store restent réactives lors de l'appel d'une opération de service.  
   
 > [!WARNING]
->  Même si aucune exception n'est levée si vous définissez une opération synchrone, il est vivement recommandé de définir uniquement des opérations asynchrones.  
+> Même si aucune exception n'est levée si vous définissez une opération synchrone, il est vivement recommandé de définir uniquement des opérations asynchrones.  
   
 ### <a name="calling-wcf-services-from-windows-store-applications"></a>Appels de services WCF des applications du Windows Store  
  Comme mentionné précédemment, toute la configuration doit être effectuée dans le code de la méthode GetBindingForEndpoint de la classe proxy générée. L'appel d'une opération de service est identique à l'appel d'une méthode asynchrone basée sur des tâches comme indiqué dans l'extrait de code suivant.  

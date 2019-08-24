@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - XmlSerializer [WCF], using
 ms.assetid: c680602d-39d3-44f1-bf22-8e6654ad5069
-ms.openlocfilehash: 966c3c17c3c42e20ad55681e1c17b13d3f466fa3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 665ede5b5a46c4093382bed5ed28a0d2bba979be
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967817"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988604"
 ---
 # <a name="using-the-xmlserializer-class"></a>Utilisation de la classe XmlSerializer
 Windows Communication Foundation (WCF) peut utiliser deux technologies de sérialisation différentes pour transformer les données de votre application en XML transmises entre les clients et les services, un processus appelé sérialisation.  
@@ -97,7 +97,7 @@ Windows Communication Foundation (WCF) peut utiliser deux technologies de séria
  Les types qui implémentent l'interface `IXmlSerializable` sont pleinement pris en charge par le `DataContractSerializer`. L'attribut <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> doit toujours être appliqué à ces types pour contrôler leur schéma.  
   
 > [!WARNING]
->  Si vous sérialisez des types polymorphes, vous devez appliquer le <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> au type pour vous assurer que le type correct est sérialisé.  
+> Si vous sérialisez des types polymorphes, vous devez appliquer le <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> au type pour vous assurer que le type correct est sérialisé.  
   
  Trois variétés de types implémentent `IXmlSerializable` : les types représentant le contenu arbitraire, les types représentant un élément unique et les types <xref:System.Data.DataSet> hérités.  
   
@@ -213,4 +213,4 @@ Windows Communication Foundation (WCF) peut utiliser deux technologies de séria
 - <xref:System.ServiceModel.MessageHeaderArrayAttribute>
 - [Spécification du transfert de données dans des contrats de service](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)
 - [Utilisation de contrats de données](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
-- [Guide pratique pour Améliorer le temps de démarrage des applications clientes WCF à l’aide de XmlSerializer](../../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)
+- [Guide pratique : Améliorer le temps de démarrage des applications clientes WCF à l’aide de XmlSerializer](../../../../docs/framework/wcf/feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md)

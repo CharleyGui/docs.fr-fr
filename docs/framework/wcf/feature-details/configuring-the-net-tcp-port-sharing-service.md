@@ -2,12 +2,12 @@
 title: Configuration du service de partage de ports Net.TCP
 ms.date: 03/30/2017
 ms.assetid: b6dd81fa-68b7-4e1b-868e-88e5901b7ea0
-ms.openlocfilehash: c5dc80391ec5f655fadd31c59eef76015b9965d8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 70ebaeb8b41b0191e0352b5ef6a4b1913994100c
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949614"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988228"
 ---
 # <a name="configuring-the-nettcp-port-sharing-service"></a>Configuration du service de partage de ports Net.TCP
 Les services auto-hébergés qui utilisent le transport Net.TCP peuvent contrôler plusieurs paramètres avancés, tels que `ListenBacklog` et `MaxPendingAccepts`, qui gouvernent le comportement du socket TCP sous-jacent utilisé pour la communication réseau. Toutefois, pour chaque socket, ces paramètres ne s’appliquent qu’au niveau de la liaison si la liaison de transport a désactivé le partage de port, activé par défaut.  
@@ -59,7 +59,7 @@ Les services auto-hébergés qui utilisent le transport Net.TCP peuvent contrôl
 > Sous les systèmes [!INCLUDE[wv](../../../../includes/wv-md.md)] avec contrôle de compte utilisateur (UAC) activé, les utilisateurs locaux requièrent des autorisations élevées même si leur compte est un membre du groupe Administrateurs. Pour permettre à ces utilisateurs d’utiliser le service de partage de ports sans élévation, le SID de l’utilisateur (ou le SID d’un groupe dont l’utilisateur est membre) doit être ajouté explicitement à la \<section allowAccounts > de SMSvcHost. exe. config.  
   
 > [!WARNING]
->  Le fichier SMSvcHost.exe.config par défaut spécifie un `etwProviderId` personnalisé pour empêcher le traçage SMSvcHost.exe d'interférer avec les traces de service.  
+> Le fichier SMSvcHost.exe.config par défaut spécifie un `etwProviderId` personnalisé pour empêcher le traçage SMSvcHost.exe d'interférer avec les traces de service.  
   
 ## <a name="see-also"></a>Voir aussi
 

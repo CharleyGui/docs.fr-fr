@@ -3,12 +3,12 @@ title: <federationConfiguration>
 ms.date: 03/30/2017
 ms.assetid: 8b14054c-6d07-46ab-ab58-03f14beac0f2
 author: BrucePerlerMS
-ms.openlocfilehash: 53d6bdb34ded52e49fcc8c5de98fcd45ddabadaa
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: c4dbb31bb7961f0d33df9d1faee8fe36ecb520a3
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69942777"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988335"
 ---
 # <a name="federationconfiguration"></a>\<federationConfiguration>
 Configure le <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) et le <xref:System.IdentityModel.Services.SessionAuthenticationModule> (Sam) lors de l’utilisation de l’authentification fédérée via le protocole WS-Federation. Configure <xref:System.Security.Claims.ClaimsAuthorizationManager> lors de l’utilisation de <xref:System.IdentityModel.Services.ClaimsPrincipalPermission> la <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute> classe ou pour fournir un contrôle d’accès basé sur les revendications.  
@@ -74,7 +74,7 @@ Configure le <xref:System.IdentityModel.Services.WSFederationAuthenticationModul
  Le code XML suivant montre `<federationConfiguration>` un élément qui spécifie des paramètres pour le WSFAM et spécifie que le gestionnaire de cookies par <xref:System.IdentityModel.Services.ChunkedCookieHandler> défaut (une instance de la classe) doit être utilisé par le Sam.  
   
 > [!WARNING]
->  Dans cet exemple, ni le gestionnaire de cookies ni WSFAM ne sont requis pour utiliser le protocole HTTPs. Cela est dû au `requireHttps` fait que l' `<wsFederation>` attribut sur l' `requireSsl` élément et l' `<cookieHandlerElement>` attribut `false`sur le sont. Ces paramètres ne sont pas recommandés pour la plupart des environnements de production, car ils peuvent présenter un risque pour la sécurité.  
+> Dans cet exemple, ni le gestionnaire de cookies ni WSFAM ne sont requis pour utiliser le protocole HTTPs. Cela est dû au `requireHttps` fait que l' `<wsFederation>` attribut sur l' `requireSsl` élément et l' `<cookieHandlerElement>` attribut `false`sur le sont. Ces paramètres ne sont pas recommandés pour la plupart des environnements de production, car ils peuvent présenter un risque pour la sécurité.  
   
 ```xml  
 <system.identityModel.services>  
