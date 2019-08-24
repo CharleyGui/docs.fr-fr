@@ -5,22 +5,22 @@ helpviewer_keywords:
 - data binding [Windows Forms], simple data binding
 - Windows Forms controls, data binding
 ms.assetid: 3bcaded8-0f1a-4cc0-8830-f59be253bf4e
-ms.openlocfilehash: ed1d0e423a3cdf77a242ec3214720f1466f65897
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: df87f00e6e03de67c3fb1adc28472c96f4a47ef4
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039507"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015632"
 ---
-# <a name="how-to-create-a-simple-bound-control-on-a-windows-form"></a>Procédure : créer un contrôle à liaison simple dans un formulaire Windows
+# <a name="how-to-create-a-simple-bound-control-on-a-windows-form"></a>Procédure : Créer un contrôle à liaison simple dans un Windows Form
 
 Avec une *liaison simple*, vous pouvez afficher un élément de données unique, tel qu’une valeur de colonne à partir d’une table de DataSet, dans un contrôle. Vous pouvez facilement lier n’importe quelle propriété d’un contrôle à une valeur de données.
 
-### <a name="to-simple-bind-a-control"></a>Pour lier un contrôle de façon simple
+## <a name="to-simple-bind-a-control"></a>Pour lier un contrôle de façon simple
 
 1. Connectez-vous à une source de données. Pour plus d’informations, consultez [connexion à une source de données](../data/adonet/connecting-to-a-data-source.md).
 
-2. Dans le formulaire, sélectionnez le contrôle et affichez la fenêtre **Propriétés** .
+2. Dans Visual Studio, sélectionnez le contrôle dans le formulaire et affichez la fenêtre **Propriétés** .
 
 3. Développez la propriété **(DataBindings)** .
 

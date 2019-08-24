@@ -8,19 +8,23 @@ helpviewer_keywords:
 - inheritance [Windows Forms], Windows Forms custom controls
 - custom controls [Windows Forms], inheritance
 ms.assetid: 1e1fc8ea-c615-4cf0-a356-16d6df7444ab
-ms.openlocfilehash: 9ac18fae126425126712dafeb80f05663dfc2ebc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+author: gewarren
+ms.author: gewarren
+manager: jillfra
+ms.openlocfilehash: 0571bd6b169b94b1626bffb0d0793bbb22a93ba0
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966585"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015873"
 ---
 # <a name="how-to-inherit-from-existing-windows-forms-controls"></a>Procédure : hériter de contrôles Windows Forms existants
+
 Si vous souhaitez étendre les fonctionnalités d’un contrôle existant, vous pouvez créer un contrôle dérivé d’un contrôle existant par héritage. Lorsque vous héritez d’un contrôle existant, vous héritez de toutes les fonctionnalités et propriétés visuelles de ce contrôle. Par exemple, si vous créez un contrôle hérité de <xref:System.Windows.Forms.Button>, votre nouveau contrôle s’affiche et agit exactement comme un contrôle standard. <xref:System.Windows.Forms.Button> Vous pourrez ensuite étendre ou modifier les fonctionnalités de votre nouveau contrôle en implémentant des méthodes et des propriétés personnalisées. Dans certains contrôles, vous pouvez également modifier l’apparence visuelle de votre contrôle hérité en substituant sa <xref:System.Windows.Forms.Control.OnPaint%2A> méthode.
 
 ## <a name="to-create-an-inherited-control"></a>Pour créer un contrôle hérité
 
-1. Créez un projet d’**application Windows Forms**.
+1. Dans Visual Studio, créez un projet d' **application de Windows Forms** .
 
 2. Dans le menu **Projet**, sélectionnez **Ajouter un nouvel élément**.
 
@@ -30,9 +34,10 @@ Si vous souhaitez étendre les fonctionnalités d’un contrôle existant, vous 
 
      Un contrôle personnalisé est ajouté à votre projet.
 
-4. Si vous utilisez Visual Basic, en haut de l’**Explorateur de solutions**, cliquez sur **Afficher tous les fichiers**. Développez CustomControl1.vb, puis ouvrez CustomControl1.Designer.vb dans l’éditeur de code.
+4. Si vous utilisez:
 
-5. Si vous utilisez C#, ouvrez CustomControl1.cs dans l’éditeur de code.
+   - Visual Basic, en haut de **Explorateur de solutions**, cliquez sur **Afficher tous les fichiers**. Développez CustomControl1.vb, puis ouvrez CustomControl1.Designer.vb dans l’éditeur de code.
+   - C#, ouvrez CustomControl1.cs dans l’éditeur de code.
 
 6. Recherchez la déclaration de classe, qui hérite <xref:System.Windows.Forms.Control>de.
 
@@ -84,8 +89,7 @@ Si vous souhaitez étendre les fonctionnalités d’un contrôle existant, vous 
 
 - [Variétés de contrôles personnalisés](varieties-of-custom-controls.md)
 - [Guide pratique pour Hériter de la classe de contrôle](how-to-inherit-from-the-control-class.md)
-- [Guide pratique : Hériter de la classe UserControl](how-to-inherit-from-the-usercontrol-class.md)
+- [Guide pratique pour Hériter de la classe UserControl](how-to-inherit-from-the-usercontrol-class.md)
 - [Guide pratique pour Créer des contrôles pour Windows Forms](how-to-author-controls-for-windows-forms.md)
-- [Dépannage des gestionnaires d’événements hérités en Visual Basic](../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)
-- [Procédure pas à pas : Héritage d’un contrôle Windows Forms avec Visual Basic](walkthrough-inheriting-from-a-windows-forms-control-with-visual-basic.md)
-- [Procédure pas à pas : Héritage à partir d’un contrôle Windows Forms avec VisualC#](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)
+- [Dépannage des gestionnaires d’événements hérités en Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)
+- [Procédure pas à pas : Héritage à partir d’un contrôle Windows Forms](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)

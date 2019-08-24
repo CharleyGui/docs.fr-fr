@@ -10,18 +10,18 @@ helpviewer_keywords:
 - typography [WPF], packaging fonts with applications
 - packaging fonts with applications [WPF]
 ms.assetid: db15ee48-4d24-49f5-8b9d-a64460865286
-ms.openlocfilehash: dfc1f023e9d1adce73a28f475f3796b4f7231ff8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f7d69f299b0b7638d6f8052e6aa0e77fac39c8e4
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69960332"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70016101"
 ---
 # <a name="packaging-fonts-with-applications"></a>Empaquetage de polices avec des applications
 Cette rubrique fournit une vue d’ensemble de l’empaquetage [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] des polices avec votre application.  
   
 > [!NOTE]
-> Comme avec la plupart des types de logiciels, les fichiers de police sont sous licence et ne sont pas vendus. Les licences qui régissent l’utilisation des polices varient d’un fournisseur à l’autre, mais en général, la plupart [!INCLUDE[TLA#tla_ms#initcap](../../../../includes/tlasharptla-mssharpinitcap-md.md)] des licences, y compris celles qui couvrent les polices fournies avec les applications et Windows, ne permettent pas d’incorporer les polices dans des applications ou dans d’autres redistribué. Par conséquent, en tant que développeur, c’est à vous de vérifier que vous disposez des droits de licence nécessaires pour toute police incorporée dans une application ou redistribuée.  
+> Comme avec la plupart des types de logiciels, les fichiers de police sont sous licence et ne sont pas vendus. Les licences qui régissent l’utilisation des polices varient d’un fournisseur à l’autre, mais en général, la plupart des licences, y compris celles qui couvrent les polices fournies par Microsoft avec les applications et Windows, ne permettent pas d’incorporer les polices dans des applications ou de les redistribuer autrement. Par conséquent, en tant que développeur, c’est à vous de vérifier que vous disposez des droits de licence nécessaires pour toute police incorporée dans une application ou redistribuée.  
 
 <a name="introduction_to_packaging_fonts"></a>   
 ## <a name="introduction-to-packaging-fonts"></a>Présentation de l’empaquetage de polices  

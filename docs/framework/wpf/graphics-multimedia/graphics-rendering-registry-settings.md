@@ -8,12 +8,12 @@ helpviewer_keywords:
 - troubleshooting graphics rendering [WPF]
 - graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-ms.openlocfilehash: de523a42f1274784a92243735a8c239a6b5bcff1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f2af32315f8f955495c51f2928c2b8eed5350759
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69960231"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70016081"
 ---
 # <a name="graphics-rendering-registry-settings"></a>Paramètres du Registre pour le rendu des graphiques
 Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le rendu des graphiques [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] qui affectent les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -70,7 +70,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\RequiredVideoDriverDate`|String|  
   
- En novembre 2004, [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] a publié une nouvelle version des instructions de test de pilote. Les pilotes créés après cette date offrent une meilleure stabilité. Par défaut, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise le pipeline d’accélération matérielle pour ces pilotes et revient au rendu logiciel pour les pilotes XPDM publiés avant cette date.  
+ En novembre 2004, Microsoft a publié une nouvelle version des instructions de test des pilotes. les pilotes écrits après cette date offrent une meilleure stabilité. Par défaut, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise le pipeline d’accélération matérielle pour ces pilotes et revient au rendu logiciel pour les pilotes XPDM publiés avant cette date.  
   
  Le **paramètre Date de pilote vidéo requise** vous permet de spécifier une autre date minimale pour les pilotes XPDM. Vous ne devez spécifier une date antérieure à novembre 2004 que si vous êtes sûr que votre pilote vidéo est assez stable pour prendre en charge [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   

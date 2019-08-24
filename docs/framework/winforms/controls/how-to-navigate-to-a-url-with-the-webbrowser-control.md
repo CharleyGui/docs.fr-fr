@@ -12,35 +12,35 @@ helpviewer_keywords:
 - WebBrowser control [Windows Forms], navigating to URLs
 - examples [Windows Forms], WebBrowser control
 ms.assetid: b3ec38cb-f509-4d0b-bd79-9f3611259c62
-ms.openlocfilehash: bee16a388d823f74bc9c88bc34b510d2a5907393
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: b6c1255fa17d91daaa73001fea04f26e73dba0ae
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649224"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015827"
 ---
 # <a name="how-to-navigate-to-a-url-with-the-webbrowser-control"></a>Procédure : accéder à une URL avec le contrôle WebBrowser
-L’exemple de code suivant montre comment naviguer dans le <xref:System.Windows.Forms.WebBrowser> contrôle à une URL spécifique.  
-  
- Pour déterminer quand le nouveau document est entièrement chargé, gérez le <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> événement. Pour une démonstration de cet événement, consultez [Comment : Impression avec un contrôle WebBrowser](how-to-print-with-a-webbrowser-control.md).  
-  
-## <a name="example"></a>Exemple  
-  
-```vb  
-Me.webBrowser1.Navigate("http://www.microsoft.com")  
-```  
-  
-```csharp  
-this.webBrowser1.Navigate("http://www.microsoft.com");  
-```  
-  
-## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
-  
-- un contrôle <xref:System.Windows.Forms.WebBrowser> nommé `webBrowser1` ;  
-  
-- des références aux assemblys `System` et `System.Windows.Forms`.  
-  
+L’exemple de code suivant montre comment naviguer dans <xref:System.Windows.Forms.WebBrowser> le contrôle jusqu’à une URL spécifique.
+
+ Pour déterminer à quel moment le nouveau document est entièrement chargé, <xref:System.Windows.Forms.WebBrowser.DocumentCompleted> Gérez l’événement. Pour une démonstration de cet événement, consultez [procédure: Imprimer avec un contrôle](how-to-print-with-a-webbrowser-control.md)WebBrowser.
+
+## <a name="example"></a>Exemple
+
+```vb
+Me.webBrowser1.Navigate("http://www.microsoft.com")
+```
+
+```csharp
+this.webBrowser1.Navigate("http://www.microsoft.com");
+```
+
+## <a name="compiling-the-code"></a>Compilation du code
+ Cet exemple nécessite :
+
+- un contrôle <xref:System.Windows.Forms.WebBrowser> nommé `webBrowser1` ;
+
+- des références aux assemblys `System` et `System.Windows.Forms`.
+
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.WebBrowser>

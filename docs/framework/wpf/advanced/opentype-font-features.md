@@ -9,12 +9,12 @@ helpviewer_keywords:
 - typography [WPF], OpenType font technology
 - OpenType font technology [WPF]
 ms.assetid: 4061a9d1-fe8b-4921-9e17-18ec7d2e3ea2
-ms.openlocfilehash: 7d73176a68d8b4b19b6c980ef52e1f47408127fb
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3f1f0698afce6e64711e37ac60d0662d65bbee6b
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933686"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70016137"
 ---
 # <a name="opentype-font-features"></a>Fonctionnalités des polices OpenType
 
@@ -22,7 +22,7 @@ Cette rubrique fournit une vue d’ensemble des principales fonctionnalités de 
   
 <a name="overview"></a>   
 ## <a name="opentype-font-format"></a>Format des polices OpenType  
- Le format de police OpenType est une extension du [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] format de police, qui ajoute la prise en charge des données de police PostScript. Le format de police OpenType a été développé [!INCLUDE[TLA#tla_ms](../../../../includes/tlasharptla-ms-md.md)] conjointement par et Adobe Corporation. Les polices OpenType et les services de système d’exploitation qui prennent en charge les polices OpenType fournissent aux utilisateurs un moyen simple d’installer et d' [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] utiliser des polices, que les polices contiennent des contours ou des contours de ligne (PostScript).  
+ Le format de police OpenType est une extension du [!INCLUDE[TLA#tla_truetype](../../../../includes/tlasharptla-truetype-md.md)] format de police, qui ajoute la prise en charge des données de police PostScript. Le format de police OpenType a été développé conjointement par Microsoft et Adobe Corporation. Les polices OpenType et les services de système d’exploitation qui prennent en charge les polices OpenType fournissent aux utilisateurs un moyen simple d’installer et d' [!INCLUDE[TLA2#tla_truetype](../../../../includes/tla2sharptla-truetype-md.md)] utiliser des polices, que les polices contiennent des contours ou des contours de ligne (PostScript).  
   
  Le format de police OpenType répond aux défis de développement suivants:  
   

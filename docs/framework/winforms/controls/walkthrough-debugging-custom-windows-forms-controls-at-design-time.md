@@ -15,62 +15,49 @@ helpviewer_keywords:
 - walkthroughs [Windows Forms], debugging
 - design-time debugging
 ms.assetid: 1fd83ccd-3798-42fc-85a3-6cba99467387
-ms.openlocfilehash: 39adcbd6d915f8b086df7e425efbe08ae8680a45
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+author: gewarren
+ms.author: gewarren
+manager: jillfra
+ms.openlocfilehash: 824d8a7de8e9e37899cb84d6cee9621f84a5bc65
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882461"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015696"
 ---
-# <a name="walkthrough-debugging-custom-windows-forms-controls-at-design-time"></a>Procédure pas à pas : débogage des contrôles Windows Forms personnalisés au moment du design
+# <a name="walkthrough-debug-custom-windows-forms-controls-at-design-time"></a>Procédure pas à pas : Déboguer des contrôles de Windows Forms personnalisés au moment du design
 
-Lorsque vous créez un contrôle personnalisé, vous trouverez souvent il nécessaires pour déboguer son comportement au moment du design. Cela est particulièrement vrai si vous créez un concepteur personnalisé pour votre contrôle personnalisé. Pour plus d’informations, consultez [procédure pas à pas : Création d’un Windows Forms de contrôle qui tire parti des fonctionnalités au moment du Design de Visual Studio](creating-a-wf-control-design-time-features.md).
+Lorsque vous créez un contrôle personnalisé, il est souvent nécessaire de déboguer son comportement au moment du Design. Cela est particulièrement vrai si vous créez un concepteur personnalisé pour votre contrôle personnalisé. Pour plus d’informations [, consultez Procédure pas à pas: Création d’un contrôle de Windows Forms qui tire parti des fonctionnalités](creating-a-wf-control-design-time-features.md)au moment de la conception de Visual Studio.
 
-Vous pouvez déboguer vos contrôles personnalisés à l’aide de Visual Studio, simplement comme pour toutes les autres classes .NET Framework. La différence est que vous devez déboguer une instance distincte de Visual Studio qui exécute le code de votre contrôle personnalisé
-
-Cette procédure pas à pas décrit notamment les tâches suivantes :
-
-- Création d’un projet Windows Forms pour héberger votre contrôle personnalisé
-
-- Création d’un projet de bibliothèque de contrôle
-
-- Ajout d’une propriété à votre contrôle personnalisé
-
-- Ajout de votre contrôle personnalisé au formulaire hôte
-
-- Configuration du projet pour le débogage au moment du design
-
-- Débogage de votre contrôle personnalisé au moment du design
-
-Lorsque vous avez terminé, vous devez comprendre les tâches nécessaires pour déboguer le comportement au moment du design d’un contrôle personnalisé.
+Vous pouvez déboguer vos contrôles personnalisés à l’aide de Visual Studio, tout comme vous le feriez pour tout autre .NET Framework classes. La différence réside dans le fait que vous allez déboguer une instance distincte de Visual Studio qui exécute le code de votre contrôle personnalisé.
 
 ## <a name="create-the-project"></a>Créer le projet
 
-La première étape consiste à créer le projet d’application. Vous utiliserez ce projet pour générer l’application qui héberge le contrôle personnalisé.
+La première étape consiste à créer le projet d’application. Vous allez utiliser ce projet pour générer l’application qui héberge le contrôle personnalisé.
 
-Dans Visual Studio, créez un projet d’Application de Windows appelé « DebuggingExample » (**fichier** > **New** > **projet**  >  **Visual C#**  ou **Visual Basic** > **bureau classique** > **Windows Forms Application**).
+Dans Visual Studio, créez un projet d’application Windows et nommez-le **DebuggingExample**.
 
 ## <a name="create-the-control-library-project"></a>Créer le projet de bibliothèque de contrôles
 
-1. Ajouter un **bibliothèque de contrôles Windows** projet à la solution.
+1. Ajoutez un projet de **bibliothèque de contrôles Windows** à la solution.
 
-2. Ajouter un nouveau **UserControl** élément au projet DebugControlLibrary. Pour plus d’informations, consultez [Guide pratique pour Ajouter de nouveaux éléments de projet](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w0572c5b(v=vs.100)). Nommez le nouveau fichier source une base « DebugControl ».
+2. Ajoutez un nouvel élément **UserControl** au projet DebugControlLibrary. Nommez-le **DebugControl**.
 
-3. À l’aide de la **l’Explorateur de solutions**, supprimer le contrôle du projet par défaut en supprimant le fichier de code avec un nom de base «`UserControl1`». Pour plus d’informations, consultez [Guide pratique pour Supprimer, suppression et exclure des éléments](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/0ebzhwsk(v=vs.100)).
+3. Dans **Explorateur de solutions**, supprimez le contrôle par défaut du projet en supprimant le fichier de code portant le nom de base UserControl1.
 
 4. Générez la solution.
 
 ## <a name="checkpoint"></a>Point de contrôle
 
-À ce stade, vous serez en mesure de voir votre contrôle personnalisé dans le **boîte à outils**.
+À ce stade, vous serez en mesure de voir votre contrôle personnalisé dans la **boîte à outils**.
 
-Pour vérifier votre progression, rechercher le nouvel onglet appelé **Composants DebugControlLibrary** et cliquez sur pour le sélectionner. Quand il s’ouvre, vous verrez votre contrôle répertorié comme **DebugControl** avec l’icône par défaut en regard de celle-ci.
+Pour vérifier votre progression, recherchez le nouvel onglet appelé le **composant DebugControlLibrary** , puis cliquez dessus pour le sélectionner. Lorsqu’il s’ouvre, votre contrôle est affiché en tant que **DebugControl** avec l’icône par défaut en regard.
 
 ## <a name="add-a-property-to-your-custom-control"></a>Ajouter une propriété à votre contrôle personnalisé
 
-Pour montrer que le code de votre contrôle personnalisé s’exécute au moment du design, vous ajoutez une propriété et définissez un point d’arrêt dans le code qui implémente la propriété.
+Pour montrer que le code de votre contrôle personnalisé est en cours d’exécution au moment de la conception, vous allez ajouter une propriété et définir un point d’arrêt dans le code qui implémente la propriété.
 
-1. Ouvrez **DebugControl** dans le **éditeur de Code**. Ajoutez le code suivant à la définition de classe :
+1. Ouvrez **DebugControl** dans l' **éditeur de code**. Ajoutez le code suivant à la définition de classe:
 
     ```vb
     Private demoStringValue As String = Nothing
@@ -110,60 +97,58 @@ Pour montrer que le code de votre contrôle personnalisé s’exécute au moment
 
 Pour déboguer le comportement au moment du design de votre contrôle personnalisé, vous devez placer une instance de la classe de contrôle personnalisé sur un formulaire hôte.
 
-1. Dans le projet « DebuggingExample », ouvrez Form1 dans le **Windows Forms Designer**.
+1. Dans le projet «DebuggingExample», ouvrez Formulaire1 dans le **Concepteur Windows Forms**.
 
-2. Dans le **boîte à outils**, ouvrez le **Composants DebugControlLibrary** onglet et faites glisser un **DebugControl** instance vers le formulaire.
+2. Dans la **boîte à outils**, ouvrez l’onglet **Composants DebugControlLibrary** et faites glisser une instance **DebugControl** sur le formulaire.
 
-3. Rechercher la `DemoString` propriété personnalisée dans le **propriétés** fenêtre. Notez que vous pouvez modifier sa valeur comme vous le feriez pour toute autre propriété. Notez également que lorsque la `DemoString` propriété est sélectionnée, la chaîne de la propriété description s’affiche en bas de la **propriétés** fenêtre.
+3. Recherchez la `DemoString` propriété personnalisée dans la fenêtre **Propriétés** . Notez que vous pouvez modifier sa valeur comme n’importe quelle autre propriété. Notez également que lorsque la `DemoString` propriété est sélectionnée, la chaîne de description de la propriété apparaît en bas de la fenêtre **Propriétés** .
 
 ## <a name="set-up-the-project-for-design-time-debugging"></a>Configurer le projet pour le débogage au moment du design
 
 Pour déboguer le comportement au moment du design de votre contrôle personnalisé, vous allez déboguer une instance distincte de Visual Studio qui exécute le code de votre contrôle personnalisé.
 
-1. Avec le bouton droit sur le **DebugControlLibrary** de projet dans le **l’Explorateur de solutions** et sélectionnez **propriétés**.
+1. Cliquez avec le bouton droit sur le projet **DebugControlLibrary** dans le **Explorateur de solutions** , puis sélectionnez **Propriétés**.
 
-2. Dans le **DebugControlLibrary** feuille de propriétés, sélectionnez le **déboguer** onglet.
+2. Dans la feuille de propriétés **DebugControlLibrary** , sélectionnez l’onglet Déboguer.
 
-     Dans le **Action de démarrage** section, sélectionnez **démarrer le programme externe**. Vous serez le débogage d’une instance distincte de Visual Studio, cliquez sur le bouton de sélection (![bouton les points de suspension (...) dans la fenêtre Propriétés de Visual Studio.](./media/visual-studio-ellipsis-button.png)) pour le rechercher l’IDE Visual Studio. Le nom du fichier exécutable est **devenv.exe**, et si vous avez installé à l’emplacement par défaut, son chemin d’accès est %programfiles%\Microsoft Visual Studio 9.0\Common7\IDE\devenv.exe.
+     Dans la section **action de démarrage** , sélectionnez Démarrer le **programme externe**. Vous allez déboguer une instance distincte de Visual Studio. par conséquent, cliquez sur le![bouton de sélection (...) dans le bouton fenêtre Propriétés de Visual](./media/visual-studio-ellipsis-button.png)Studio) pour Rechercher l’IDE de Visual Studio. Le nom du fichier exécutable est **devenv. exe**, et si vous avez installé à l’emplacement par défaut, son chemin d’accès est *% ProgramFiles (x86)% \ Microsoft\\Visual Studio\2019\<Edition > \Common7\IDE*.
 
-3. Cliquez sur **OK** pour fermer la boîte de dialogue.
+3. Sélectionnez **OK** pour fermer la boîte de dialogue.
 
-4. Avec le bouton droit le **DebugControlLibrary** de projet et sélectionnez **définir comme projet de démarrage** pour activer cette configuration de débogage.
+4. Cliquez avec le bouton droit sur le projet **DebugControlLibrary** et sélectionnez **définir comme projet de démarrage** pour activer cette configuration de débogage.
 
 ## <a name="debug-your-custom-control-at-design-time"></a>Déboguer votre contrôle personnalisé au moment du design
 
-Vous êtes maintenant prêt à déboguer votre contrôle personnalisé en cours d’exécution en mode Création. Lorsque vous démarrez la session de débogage, une nouvelle instance de Visual Studio sera créée, et vous allez l’utiliser pour charger la solution « DebuggingExample ». Lorsque vous ouvrez Form1 dans le **Concepteur Forms**, une instance de votre contrôle personnalisé est créée et commence à s’exécuter.
+Vous êtes maintenant prêt à déboguer votre contrôle personnalisé lorsqu’il s’exécute en mode création. Quand vous démarrez la session de débogage, une nouvelle instance de Visual Studio est créée. vous l’utiliserez pour charger la solution «DebuggingExample». Quand vous ouvrez Form1 dans le **Concepteur de formulaires**, une instance de votre contrôle personnalisé est créée et commence à s’exécuter.
 
-1. Ouvrir le **DebugControl** fichier source dans le **éditeur de Code** et placer un point d’arrêt sur la `Set` l’accesseur de la `DemoString` propriété.
+1. Ouvrez le fichier source **DebugControl** dans l' **éditeur de code** et placez un point d' `Set` arrêt sur l' `DemoString` accesseur de la propriété.
 
-2. Appuyez sur F5 pour démarrer la session de débogage. Notez qu’une nouvelle instance de Visual Studio est créée. Vous pouvez faire la distinction entre les instances de deux manières :
+2. Appuyez sur **F5** pour démarrer la session de débogage. Une nouvelle instance de Visual Studio est créée. Vous pouvez faire la distinction entre les instances de deux manières:
 
-    - L’instance de débogage a le mot **en cours d’exécution** dans sa barre de titre
+    - Le mot est en **cours d’exécution** dans la barre de titre de l’instance de débogage
 
-    - L’instance de débogage a le **Démarrer** bouton sur son **déboguer** barre d’outils désactivé
+    - Le bouton **Démarrer** de la barre d’outils de débogage de l’instance de débogage est désactivé
 
-     Votre point d’arrêt est défini dans l’instance de débogage.
+   Votre point d’arrêt est défini dans l’instance de débogage.
 
-3. Dans la nouvelle instance de Visual Studio, ouvrez la solution « DebuggingExample ». Vous pouvez facilement trouver la solution en sélectionnant **projets récents** à partir de la **fichier** menu. Le fichier de solution « DebuggingExample.sln » apparaît comme étant le dernier fichier utilisé.
+3. Dans la nouvelle instance de Visual Studio, ouvrez la solution «DebuggingExample». Vous pouvez facilement trouver la solution en sélectionnant **projets récents** dans le menu **fichier** . Le fichier solution «DebuggingExample. sln» est listé comme le fichier le plus récemment utilisé.
 
-4. Ouvrez Form1 dans le **Concepteur Forms** et sélectionnez le **DebugControl** contrôle.
+4. Ouvrez Form1 dans le **Concepteur de formulaires** et sélectionnez le contrôle **DebugControl** .
 
-5. Modifiez la valeur de la propriété `DemoString` . Notez que lorsque vous validez la modification, l’instance de débogage de Visual Studio acquiert le focus et l’exécution s’arrête au point d’arrêt. Vous pouvez pas dans l’accesseur de propriété comme votre serait tout autre code.
+5. Modifiez la valeur de la propriété `DemoString` . Lorsque vous validez la modification, l’instance de débogage de Visual Studio acquiert le focus et l’exécution s’arrête à votre point d’arrêt. Vous pouvez effectuer un pas à pas détaillé dans l’accesseur de propriété comme pour tout autre code.
 
-6. Lorsque vous avez terminé de votre session de débogage, vous pouvez quitter en fermant l’instance hébergée de Visual Studio ou en cliquant sur le **arrêter le débogage** bouton dans l’instance de débogage.
+6. Pour arrêter le débogage, quittez l’instance hébergée de Visual Studio ou sélectionnez le bouton **arrêter** le débogage dans l’instance de débogage.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Maintenant que vous pouvez déboguer vos contrôles personnalisés au moment du design, il existe de nombreuses possibilités pour le développement d’interaction de votre contrôle avec l’IDE Visual Studio.
+Maintenant que vous pouvez déboguer vos contrôles personnalisés au moment de la conception, il existe de nombreuses possibilités pour étendre l’interaction de votre contrôle avec l’IDE de Visual Studio.
 
-- Vous pouvez utiliser la <xref:System.ComponentModel.Component.DesignMode%2A> propriété de la <xref:System.ComponentModel.Component> classe pour écrire du code qui s’exécutera seulement au moment du design. Pour plus d'informations, consultez <xref:System.ComponentModel.Component.DesignMode%2A>.
+- Vous pouvez utiliser la <xref:System.ComponentModel.Component.DesignMode%2A> propriété de la <xref:System.ComponentModel.Component> classe pour écrire du code qui s’exécutera uniquement au moment du Design. Pour plus d'informations, consultez <xref:System.ComponentModel.Component.DesignMode%2A>.
 
-- Il existe plusieurs attributs que vous pouvez appliquer aux propriétés de votre contrôle pour manipuler l’interaction de votre contrôle personnalisé avec le concepteur. Vous pouvez trouver ces attributs dans le <xref:System.ComponentModel?displayProperty=nameWithType> espace de noms.
+- Il existe plusieurs attributs que vous pouvez appliquer aux propriétés de votre contrôle pour manipuler l’interaction de votre contrôle personnalisé avec le concepteur. Vous pouvez trouver ces attributs dans l' <xref:System.ComponentModel?displayProperty=nameWithType> espace de noms.
 
-- Vous pouvez écrire un concepteur personnalisé pour votre contrôle personnalisé. Cela vous donne un contrôle complet sur l’expérience de conception à l’aide de l’infrastructure du concepteur extensible exposée par Visual Studio. Pour plus d’informations, consultez [procédure pas à pas : Création d’un Windows Forms de contrôle qui tire parti des fonctionnalités au moment du Design de Visual Studio](creating-a-wf-control-design-time-features.md).
+- Vous pouvez écrire un concepteur personnalisé pour votre contrôle personnalisé. Vous bénéficiez ainsi d’un contrôle total sur l’expérience de conception à l’aide de l’infrastructure de concepteur extensible exposée par Visual Studio. Pour plus d’informations [, consultez Procédure pas à pas: Création d’un contrôle de Windows Forms qui tire parti des fonctionnalités](creating-a-wf-control-design-time-features.md)au moment de la conception de Visual Studio.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Procédure pas à pas : Création d’un contrôle de formulaire Windows qui tire parti des fonctionnalités au moment du Design de Visual Studio](creating-a-wf-control-design-time-features.md)
-- [Guide pratique pour Services d’accès au moment du Design](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171822(v=vs.120))
-- [Guide pratique pour Prise en charge d’accès au moment du Design dans les Windows Forms](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ms171827(v=vs.120))
+- [Procédure pas à pas : Création d’un contrôle de Windows Forms qui tire parti des fonctionnalités au moment du design de Visual Studio](creating-a-wf-control-design-time-features.md)

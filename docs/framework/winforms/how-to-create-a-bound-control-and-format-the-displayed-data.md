@@ -6,28 +6,26 @@ helpviewer_keywords:
 - bound controls [Windows Forms], creating
 - bound controls [Windows Forms], formatting data
 ms.assetid: d5a56228-899d-41d9-8af8-87b3f4ec2f94
-ms.openlocfilehash: b5ad85a9477ca32cd28f246abe4ece3cace43182
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 543775894994c518d6069f697b145cedaa7af5b0
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666771"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015660"
 ---
 # <a name="how-to-create-a-bound-control-and-format-the-displayed-data"></a>Procédure : créer un contrôle lié et mettre en forme les données affichées
 
 Avec Windows Forms la liaison de données, vous pouvez mettre en forme les données affichées dans un contrôle lié aux données à l’aide de la boîte de dialogue **mise en forme et liaison avancée** .
 
-### <a name="to-bind-a-control-and-format-the-displayed-data"></a>Pour lier un contrôle et mettre en forme les données affichées
+## <a name="to-bind-a-control-and-format-the-displayed-data"></a>Pour lier un contrôle et mettre en forme les données affichées
 
-1. Connectez-vous à une source de données.
+1. Connectez-vous à une source de données. Pour plus d’informations, consultez [connexion à une source de données](../data/adonet/connecting-to-a-data-source.md).
 
-     Pour plus d’informations, consultez [connexion à une source de données](../data/adonet/connecting-to-a-data-source.md).
+2. Dans Visual Studio, sélectionnez le contrôle sur le formulaire, puis ouvrez la fenêtre **Propriétés** .
 
-2. Dans le formulaire, sélectionnez le contrôle, puis ouvrez la fenêtre Propriétés.
+3. Développez la propriété **(DataBindings)** , puis dans la zone **(avancé)** , cliquez sur le bouton de![sélection (le bouton de sélection (...) dans le fenêtre Propriétés](./media/how-to-create-a-bound-control-and-format-the-displayed-data/visual-studio-ellipsis-button.png)de Visual Studio) pour afficher les **options de mise en forme et avancé** La boîte de dialogue liaison, qui contient la liste complète des propriétés de ce contrôle.
 
-3. Développez la propriété **(DataBindings)** , puis dans la zone **(avancé)** , cliquez sur le bouton de![sélection (le bouton de sélection (...) dans le fenêtre Propriétés de](./media/how-to-create-a-bound-control-and-format-the-displayed-data/visual-studio-ellipsis-button.png)Visual Studio.) pour afficher les **options de mise en forme et avancé** La boîte de dialogue liaison, qui contient la liste complète des propriétés de ce contrôle.
-
-4. Sélectionnez la propriété que vous souhaitez lier, puis cliquez sur la flèche **liaison** .
+4. Sélectionnez la propriété que vous souhaitez lier, puis sélectionnez la flèche **liaison** .
 
      Une liste des sources de données disponibles s'affiche.
 
@@ -35,9 +33,9 @@ Avec Windows Forms la liaison de données, vous pouvez mettre en forme les donn�
 
      Par exemple, si vous établissez une liaison à une valeur de colonne dans une table de dataset, développez le nom du dataset, puis développez le nom de la table pour afficher les noms des colonnes.
 
-6. Cliquez sur le nom d'un élément avec lequel établir une liaison.
+6. Sélectionnez le nom d’un élément à lier.
 
-7. Dans la zone **type de format** , cliquez sur le format que vous souhaitez appliquer aux données affichées dans le contrôle.
+7. Dans la zone **type de format** , sélectionnez le format que vous souhaitez appliquer aux données affichées dans le contrôle.
 
      Dans tous les cas, vous pouvez spécifier la valeur affichée dans le contrôle si la source de données contient <xref:System.DBNull>. Sinon, les options varient légèrement en fonction du type de format que vous choisissez. Le tableau suivant présente les options et les types de format.
 
@@ -50,10 +48,10 @@ Avec Windows Forms la liaison de données, vous pouvez mettre en forme les donn�
     |Scientifique|Spécifiez le nombre de décimales à l’aide du contrôle de nombre de décimales.|
     |Personnalisé|Spécifiez une chaîne de format personnalisée.<br /><br /> Pour plus d’informations, consultez [Mise en forme des types](../../standard/base-types/formatting-types.md). **Remarque :**  Il n'est pas garanti que les chaînes de format personnalisées puissent effectuer un aller-retour entre la source de données et le contrôle dépendant. Gérez plutôt l'événement <xref:System.Windows.Forms.Binding.Parse> ou <xref:System.Windows.Forms.Binding.Format> pour la liaison et appliquez la mise en forme personnalisée dans le code de gestion d'événements.|
 
-8. Cliquez sur **OK** pour fermer la boîte de dialogue **mise en forme et liaison avancée** et revenir au fenêtre Propriétés.
+8. Sélectionnez **OK** pour fermer la boîte de dialogue **mise en forme et liaison avancée** et revenir au fenêtre Propriétés.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique : Créer un contrôle à liaison simple dans un Windows Form](how-to-create-a-simple-bound-control-on-a-windows-form.md)
+- [Guide pratique pour Créer un contrôle à liaison simple dans un Windows Form](how-to-create-a-simple-bound-control-on-a-windows-form.md)
 - [Validation des entrées d’utilisateur dans les Windows Forms](user-input-validation-in-windows-forms.md)
 - [Liaison de données Windows Forms](windows-forms-data-binding.md)

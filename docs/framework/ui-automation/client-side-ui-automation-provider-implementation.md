@@ -6,18 +6,18 @@ helpviewer_keywords:
 - client-side UI Automation provider, implementation
 - provider implementation, UI Automation
 ms.assetid: 3584c0a1-9cd0-4968-8b63-b06390890ef6
-ms.openlocfilehash: dd5f744a67481b03802887ff2baa0571b30e4b5d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9079dfa03ab81bfa6875e43bfa8a6e5351e0a35d
+ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965237"
+ms.lasthandoff: 08/24/2019
+ms.locfileid: "70015116"
 ---
 # <a name="client-side-ui-automation-provider-implementation"></a>Implémentation de fournisseur UI Automation côté client
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Plusieurs infrastructures d’ [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] différentes sont utilisées dans les systèmes d’exploitation [!INCLUDE[TLA#tla_ms](../../../includes/tlasharptla-ms-md.md)] , notamment [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]et [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]. [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] expose aux clients des informations sur les éléments d’interface utilisateur. Toutefois, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] n’a pas connaissance des différents types de contrôle qui existent dans ces infrastructures, ni des techniques nécessaires pour en extraire les informations. En revanche, cette tâche est affectée aux objets appelés fournisseurs. Un fournisseur extrait des informations d’un contrôle spécifique, et les transmet à [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], qui les présente ensuite au client de façon cohérente.  
+ Plusieurs infrastructures [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] différentes sont utilisées dans les systèmes d’exploitation Microsoft, notamment [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]et [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]. [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] expose aux clients des informations sur les éléments d’interface utilisateur. Toutefois, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] n’a pas connaissance des différents types de contrôle qui existent dans ces infrastructures, ni des techniques nécessaires pour en extraire les informations. En revanche, cette tâche est affectée aux objets appelés fournisseurs. Un fournisseur extrait des informations d’un contrôle spécifique, et les transmet à [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], qui les présente ensuite au client de façon cohérente.  
   
  Les fournisseurs peuvent exister côté serveur ou côté client. Un fournisseur côté serveur est implémenté par le contrôle lui-même. Les éléments[!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] implémentent des fournisseurs, comme tout contrôle tiers écrit avec [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] à l’esprit.  
   
