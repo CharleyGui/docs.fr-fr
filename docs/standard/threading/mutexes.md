@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 9dd06e25-12c0-4a9e-855a-452dc83803e2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dededed9bcd4558296323532c0ecbfb60bf5b311
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 8b2edf1f06873796bd63fceaca9a4bb99e509589
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54567917"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910344"
 ---
 # <a name="mutexes"></a>Mutex
 Vous pouvez utiliser un objet <xref:System.Threading.Mutex> pour octroyer un droit d’accès exclusif à une ressource. La classe <xref:System.Threading.Mutex> utilise davantage de ressources système que la classe <xref:System.Threading.Monitor>. Cependant, elle peut être marshalée au-delà des limites du domaine d’application et utilisée avec plusieurs attentes, ainsi que pour synchroniser des threads dans différents processus. Pour consulter une comparaison des mécanismes de synchronisation gérés, consultez [Vue d’ensemble des primitives de synchronisation](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  
@@ -35,7 +35,7 @@ Vous pouvez utiliser un objet <xref:System.Threading.Mutex> pour octroyer un dro
  Si un thread se termine sans libérer un <xref:System.Threading.Mutex>, le mutex est considéré comme abandonné. Cela indique souvent une grave erreur de programmation, car la ressource que le mutex protège peut être laissée dans un état incohérent. Dans la version 2.0 de .NET Framework, une <xref:System.Threading.AbandonedMutexException> est levée dans le thread suivant qui acquiert le mutex.  
   
 > [!NOTE]
->  Dans les versions 1.0 et 1.1 de .NET Framework, un <xref:System.Threading.Mutex>abandonné est signalé et le thread en attente suivant en obtient la propriété. Si aucun thread n’est en attente, le <xref:System.Threading.Mutex> reste signalé. Aucune exception n'est levée.  
+> Dans les versions 1.0 et 1.1 de .NET Framework, un <xref:System.Threading.Mutex>abandonné est signalé et le thread en attente suivant en obtient la propriété. Si aucun thread n’est en attente, le <xref:System.Threading.Mutex> reste signalé. Aucune exception n'est levée.  
   
  Si le mutex est développé au niveau système, et qu’il est abandonné, cela peut indiquer qu’une application a été arrêtée soudainement (par exemple, à l’aide du Gestionnaire des tâches de Windows).  
   

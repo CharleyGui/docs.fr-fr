@@ -16,12 +16,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
-ms.openlocfilehash: dfc8e1cfa6050a6e45373ad023ee8f358e388735
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 7dba7afe9ab0348082ec9538b268a387b64ad050
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423868"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950697"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>Vue d’ensemble du modèle asynchrone basé sur des événements
 Les applications qui effectuent de nombreuses tâches simultanément tout en réagissant aux interventions de l’utilisateur nécessitent souvent une conception utilisant plusieurs threads. L’espace de noms <xref:System.Threading> fournit tous les outils nécessaires à la création d’applications multithread de hautes performances, mais l’utilisation de ces outils suppose une connaissance approfondie du génie logiciel multithread. Pour les applications multithread relativement simples, le composant <xref:System.ComponentModel.BackgroundWorker> fournit une solution simple. Pour les applications asynchrones plus sophistiquées, envisagez l’implémentation d’une classe obéissant au modèle asynchrone basé sur les événements.  
@@ -115,7 +115,7 @@ public class AsyncExample
  Si vous utilisez les surcharges d’appels multiples, votre code doit conserver une trace des objets `userState` (ID de tâche) pour les tâches en attente. Pour chaque appel à `Method1Async(string param, object userState)`, on génère en général un nouvel objet `userState` unique et on l’ajoute à une collection. Quand la tâche correspondant à cet objet `userState` déclenche l’événement d’achèvement, l’implémentation de votre méthode d’achèvement examine <xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A?displayProperty=nameWithType> et le supprime de votre collection. Utilisé de cette manière, le paramètre `userState` joue le rôle d'un ID de tâche.  
   
 > [!NOTE]
->  Vous devez fournir une valeur unique pour `userState` dans vos appels aux surcharges d'appels multiples. Les ID de tâche non uniques conduisent la classe asynchrone à lever une <xref:System.ArgumentException>.  
+> Vous devez fournir une valeur unique pour `userState` dans vos appels aux surcharges d'appels multiples. Les ID de tâche non uniques conduisent la classe asynchrone à lever une <xref:System.ArgumentException>.  
   
 ### <a name="canceling-pending-operations"></a>Annulation des opérations en attente  
  Il est important de pouvoir annuler des opérations asynchrones à tout moment avant leur achèvement. Les classes qui implémentent le modèle asynchrone basé sur les événements comportent une méthode `CancelAsync` (s’il n’existe qu’une seule méthode asynchrone) ou une méthode _MethodName_**AsyncCancel** (s’il en existe plusieurs).  

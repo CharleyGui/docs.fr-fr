@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: c9b3501e-6bc6-40f9-8efd-4b6d9e39ccf0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 16e500a645df2b58fb2d2fd402120556922d1800
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3c03a6dadae98d75b06b96bb3cde67db4747b8c7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64628935"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950870"
 ---
 # <a name="asynchronous-programming-model-apm"></a>Modèle de programmation asynchrone
 Une opération asynchrone qui utilise le modèle de conception <xref:System.IAsyncResult> est implémentée sous la forme de deux méthodes nommées `BeginOperationName` et `EndOperationName` qui commencent et terminent respectivement l’opération asynchrone *OperationName*. Par exemple, la classe <xref:System.IO.FileStream> fournit les méthodes <xref:System.IO.FileStream.BeginRead%2A> et <xref:System.IO.FileStream.EndRead%2A> pour lire les octets d’un fichier de façon asynchrone. Ces méthodes implémentent la version asynchrone de la méthode <xref:System.IO.FileStream.Read%2A> .  
   
 > [!NOTE]
->  À compter du .NET Framework 4, la bibliothèque parallèle de tâches propose un nouveau modèle pour la programmation asynchrone et parallèle. Pour plus d’informations, consultez [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md) et [Task-based Asynchronous Pattern (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md).  
+> À compter du .NET Framework 4, la bibliothèque parallèle de tâches propose un nouveau modèle pour la programmation asynchrone et parallèle. Pour plus d’informations, consultez [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md) et [Task-based Asynchronous Pattern (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md).  
   
  Après avoir appelé la méthode `BeginOperationName`, une application peut continuer à exécuter les instructions sur le thread appelant pendant que l’opération asynchrone s’exécute sur un autre thread. Pour chaque appel de la méthode `BeginOperationName`, l’application doit également appeler la méthode `EndOperationName` afin d’obtenir les résultats de l’opération.  
   
@@ -48,10 +48,10 @@ Une opération asynchrone qui utilise le modèle de conception <xref:System.IAsy
  Si l’opération asynchrone représentée par l’objet <xref:System.IAsyncResult> n’est pas terminée quand la méthode `EndOperationName` est appelée, la méthode `EndOperationName` bloque le thread appelant jusqu’à la fin de l’opération asynchrone. Les exceptions levées par l’opération asynchrone sont levées à partir de la méthode `EndOperationName`. Les conséquences de plusieurs appels à la méthode `EndOperationName` avec le même <xref:System.IAsyncResult> ne sont pas définies. De même, l’appel de la méthode `EndOperationName` avec un <xref:System.IAsyncResult> qui n’a pas été retourné par la méthode Begin associée n’est pas non plus défini.  
   
 > [!NOTE]
->  Pour l’un ou l’autre des scénarios indéfinis, les implémenteurs doivent envisager de lever <xref:System.InvalidOperationException>.  
+> Pour l’un ou l’autre des scénarios indéfinis, les implémenteurs doivent envisager de lever <xref:System.InvalidOperationException>.  
   
 > [!NOTE]
->  Les implémenteurs de ce modèle de conception doivent informer l’appelant que l’opération asynchrone s’est terminée en attribuant à <xref:System.IAsyncResult.IsCompleted%2A> la valeur true, en appelant la méthode de rappel asynchrone (s’il en été spécifiée une) et en signalant <xref:System.IAsyncResult.AsyncWaitHandle%2A>.  
+> Les implémenteurs de ce modèle de conception doivent informer l’appelant que l’opération asynchrone s’est terminée en attribuant à <xref:System.IAsyncResult.IsCompleted%2A> la valeur true, en appelant la méthode de rappel asynchrone (s’il en été spécifiée une) et en signalant <xref:System.IAsyncResult.AsyncWaitHandle%2A>.  
   
  Plusieurs options de conception s’offrent aux développeurs d’applications pour ce qui est de l’accès aux résultats de l’opération asynchrone. L’option appropriée varie selon que l’application peut exécuter ou non des instructions pendant que l’opération se termine. Si une application ne peut pas effectuer de tâches supplémentaires tant qu’elle n’a pas reçu les résultats de l’opération asynchrone, l’application doit être bloquée en attendant que les résultats soient disponibles. Pour la bloquer en attendant la fin de l’opération asynchrone, vous pouvez utiliser l’une des approches suivantes :  
   

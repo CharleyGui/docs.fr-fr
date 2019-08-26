@@ -9,12 +9,12 @@ dev_langs:
 ms.assetid: cce69574-5861-4a30-b730-2e18d915d8ee
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f444dd512dc27f1b7cda017e2c2848ac41eb56de
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 5fd81a7eaf299217a17cd8051d77cd7a3695441e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59305037"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939461"
 ---
 # <a name="traversing-xml-schemas"></a>Traversée de schémas XML
 Traverser un schéma XML à l'aide de l'API SOM (Schema Object Model) permet d'accéder aux éléments, attributs et types stockés dans le SOM. Traverser un schéma XML chargé dans le SOM est également la première étape de l'édition d'un schéma XML avec l'API SOM.  
@@ -35,7 +35,7 @@ Traverser un schéma XML à l'aide de l'API SOM (Schema Object Model) permet d'a
 |<xref:System.Xml.Schema.XmlSchema.UnhandledAttributes%2A>|Objet <xref:System.Xml.XmlAttribute> (fournit un accès aux attributs qui n'appartiennent pas à l'espace de noms du schéma)|  
   
 > [!NOTE]
->  Toutes les propriétés répertoriées dans le tableau ci-dessus, à l'exception de la propriété <xref:System.Xml.Schema.XmlSchema.Items%2A>, sont des propriétés PSCI (Post-Schema-Compilation-Infoset) qui ne sont pas disponibles tant que le schéma n'a pas été compilé. La propriété <xref:System.Xml.Schema.XmlSchema.Items%2A> est une propriété de pré-compilation de schéma qui peut être utilisée avant que le schéma ait été compilé afin d'accéder à et d'éditer tous les éléments, attributs et types de niveau global.  
+> Toutes les propriétés répertoriées dans le tableau ci-dessus, à l'exception de la propriété <xref:System.Xml.Schema.XmlSchema.Items%2A>, sont des propriétés PSCI (Post-Schema-Compilation-Infoset) qui ne sont pas disponibles tant que le schéma n'a pas été compilé. La propriété <xref:System.Xml.Schema.XmlSchema.Items%2A> est une propriété de pré-compilation de schéma qui peut être utilisée avant que le schéma ait été compilé afin d'accéder à et d'éditer tous les éléments, attributs et types de niveau global.  
 >   
 >  La propriété <xref:System.Xml.Schema.XmlSchema.UnhandledAttributes%2A> permet d'accéder à tous les attributs qui n'appartiennent pas à l'espace de noms du schéma. Ces attributs ne sont pas traités par le processeur de schéma.  
   

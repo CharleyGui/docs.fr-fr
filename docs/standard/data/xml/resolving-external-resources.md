@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: ad3fa320-4b8f-4e5c-b549-01157591007a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ef31d101769dca00f5cff545c72b3afbd59bc638
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: b4ba0cbb25e2c83a33ffba99ccbb29d5b414b3c1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45664486"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69918204"
 ---
 # <a name="resolving-external-resources"></a>Résolution des ressources externes
 La propriété **XmlResolver** de **XmlDocument** est utilisée par la classe **XmlDocument** pour localiser des ressources qui ne sont pas incluses dans les données XML, comme des définitions de type de document (DTD), des entités et des schémas externes. Ces éléments peuvent être localisés sur un réseau ou un lecteur local et sont identifiables par un URI (Uniform Resource Identifier). **XmlDocument** peut ainsi résoudre les nœuds **EntityReference** présents dans le document et valider le document en fonction de la DTD ou du schéma externe.  
@@ -36,7 +36,7 @@ La propriété **XmlResolver** de **XmlDocument** est utilisée par la classe **
 |XmlResolver, propriété|Fonction|Notes|  
 |--------------------------|--------------|-----------|  
 |Dans le scénario d'un niveau de confiance partiel, la propriété **XmlResolver** ne peut pas être définie d'une autre manière que null.|Un **XmlUrlResolver** avec des informations d'identification **null** sera instancié et utilisé par **XmlDocument** lors de la résolution de noms de fichiers, la localisation des DTD, des entités et des schémas externes ; des informations d'identification **null** sont également utilisées lors de l'édition des nœuds.|Ce comportement est identique au comportement où la propriété **XmlResolver** n'est pas définie, mais laissée dans son état par défaut.<br /><br /> **XmlDocument** utilise des autorisations anonymes pour toutes les actions.|  
-|La propriété a la valeur **null** (**Nothing** dans Microsoft Visual Basic .NET).|Aucune fonctionnalité qui nécessite une ressource externe n’est prise en charge comme la localisation d’un schéma ou DTD externe. Les entités externes ne seront pas non plus résolues et les fonctions de modification, comme l’insertion de nœuds d’entité qui demandent une résolution, ne sont pas prises en charge.|Lorsque la propriété est **null**, le comportement est le même, que **XmlDocument** soit d'un niveau de confiance parfait ou suffisant.|  
+|La propriété a la valeur **null** (**Nothing** dans Microsoft Visual Basic .NET).|Aucune fonctionnalité qui nécessite une ressource externe n'est prise en charge comme la localisation d'un schéma ou DTD externe. Les entités externes ne seront pas non plus résolues et les fonctions de modification, comme l’insertion de nœuds d’entité qui demandent une résolution, ne sont pas prises en charge.|Lorsque la propriété est **null**, le comportement est le même, que **XmlDocument** soit d'un niveau de confiance parfait ou suffisant.|  
 |La propriété n'est pas définie, elle reste dans son état par défaut.|Un **XmlUrlResolver** avec des informations d'identification **null** sera instancié et utilisé par **XmlDocument** lors de la résolution de noms de fichiers, la localisation des DTD, des entités et des schémas externes ; des informations d'identification **null** sont également utilisées lors de l'édition des nœuds.|**XmlDocument** utilise des autorisations anonymes pour toutes les actions.|  
   
  Ce tableau s'applique à la méthode **XmlDocument.Load** lorsque l'entrée de **Load** est **XmlReader** et que **XmlDocument** est d'un niveau de confiance partiel.  
@@ -48,7 +48,7 @@ La propriété **XmlResolver** de **XmlDocument** est utilisée par la classe **
  Le paramétrage de XmlResolver pour contenir les informations d'identification correctes permet d'accéder à des ressources externes.  
   
 > [!NOTE]
->  Il n'existe aucun moyen de récupérer la propriété **XmlResolver**. Cela permet d'éviter qu'un utilisateur ne réutilise un **XmlResolver** sur lequel des informations d'identification ont été définies. De plus, si un **XmlTextReader** ou un objet de validation <xref:System.Xml.XmlReader> est utilisé pour charger **XmlDocument** et si un programme de résolution a été défini sur le **XmlDocument**, les programmes de résolution de ces lecteurs ne sont pas mis en cache par **XmlDocument** après la phase **Load**, dans la mesure où cela présente également un risque pour la sécurité.  
+> Il n'existe aucun moyen de récupérer la propriété **XmlResolver**. Cela permet d'éviter qu'un utilisateur ne réutilise un **XmlResolver** sur lequel des informations d'identification ont été définies. De plus, si un **XmlTextReader** ou un objet de validation <xref:System.Xml.XmlReader> est utilisé pour charger **XmlDocument** et si un programme de résolution a été défini sur le **XmlDocument**, les programmes de résolution de ces lecteurs ne sont pas mis en cache par **XmlDocument** après la phase **Load**, dans la mesure où cela présente également un risque pour la sécurité.  
   
  Pour plus d'informations, consultez la section Notes de la page de référence <xref:System.Xml.XmlResolver>.  
   

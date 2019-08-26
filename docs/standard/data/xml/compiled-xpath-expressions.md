@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: e25dd95f-b64c-4d8b-a3a4-379e1aa0ad55
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a75534bdfb1eef5902d3cd5071b4f5b4bfba8caa
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fb6e3677d79f3131432c3daebeee4d166b5450b2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647955"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916659"
 ---
 # <a name="compiled-xpath-expressions"></a>Expressions XPath compilées
 Un objet <xref:System.Xml.XPath.XPathExpression> représente une requête XPath compilée retournée depuis la méthode statique <xref:System.Xml.XPath.XPathExpression.Compile%2A> de la classe <xref:System.Xml.XPath.XPathExpression> ou depuis la méthode <xref:System.Xml.XPath.XPathNavigator.Compile%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>.  
@@ -45,7 +45,7 @@ Un objet <xref:System.Xml.XPath.XPathExpression> représente une requête XPath 
 |`String`|<xref:System.String>|Séquence de caractères UCS.|<xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>|  
   
 > [!NOTE]
->  La méthode <xref:System.Xml.XPath.XPathNavigator.Matches%2A> accepte une expression XPath comme paramètre. La méthode <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A> retourne un objet <xref:System.Xml.XPath.XPathNavigator>, pas un des types de retours XPath W3C.  
+> La méthode <xref:System.Xml.XPath.XPathNavigator.Matches%2A> accepte une expression XPath comme paramètre. La méthode <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A> retourne un objet <xref:System.Xml.XPath.XPathNavigator>, pas un des types de retours XPath W3C.  
   
 ### <a name="the-returntype-property"></a>La propriété ReturnType  
  Une fois qu'une requête XPath a été compilée dans un objet <xref:System.Xml.XPath.XPathExpression>, vous pouvez utiliser la propriété <xref:System.Xml.XPath.XPathExpression.ReturnType%2A> de l'objet <xref:System.Xml.XPath.XPathExpression> pour déterminer ce que retourne la requête XPath.  

@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: fde6f43f-c594-486f-abcb-2211197fae20
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 32c76ae4556467759dad111b47e3ad8f6cf6df92
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1488fb6b7671acd86286bcac6fbfce8bee9429ad
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64589975"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939591"
 ---
 # <a name="script-blocks-using-msxslscript"></a>Blocs de scripts utilisant msxsl:script
 La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts incorporés en utilisant l'élément `msxsl:script`. Lorsque la feuille de style est chargée, toute fonction définie est compilée en langage MSIL (Microsoft Intermediate Language) par le CodeDOM (Code Document Object Model) et exécutée au cours de l’exécution. L' assembly généré à partir du bloc de script incorporé est distinct de l'assembly généré pour la feuille de style.  
@@ -22,7 +22,7 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
  La prise en charge des scripts incorporés est un réglage XSLT facultatif de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. La prise en charge des scripts est désactivée par défaut. Pour l'activer, créez un objet <xref:System.Xml.Xsl.XsltSettings> avec la propriété <xref:System.Xml.Xsl.XsltSettings.EnableScript%2A> définie sur `true` et transmettez l'objet à la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>.  
   
 > [!NOTE]
->  Le script XSLT ne doit être activé que si la prise en charge des scripts est nécessaire et si vous travaillez dans un environnement totalement fiable.  
+> Le script XSLT ne doit être activé que si la prise en charge des scripts est nécessaire et si vous travaillez dans un environnement totalement fiable.  
   
 ## <a name="msxslscript-element-definition"></a>Définition de l'élément msxsl:script  
  L’élément `msxsl:script` est une extension Microsoft de la recommandation XSLT 1.0. Il se définit comme suit :  
@@ -38,7 +38,7 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
  L'attribut `implements-prefix` est obligatoire. Cet attribut est utilisé pour déclarer un espace de noms et l'associer au bloc de script. La valeur de cet attribut est le préfixe qui représente l'espace de noms. Ce préfixe peut être défini à un endroit d'une feuille de style.  
   
 > [!NOTE]
->  Lors de l'utilisation de l'élément `msxsl:script`, il est vivement recommandé de placer le script (quel que soit son langage) dans une section CDATA. Étant donné que le script peut contenir des opérateurs, identificateurs ou délimiteurs pour un langage donné, s'il n'est pas contenu dans une section CDATA, il risque d'être interprété à tort comme du XML. Le XML suivant illustre un modèle de la section CDATA où peut être placé le code.  
+> Lors de l'utilisation de l'élément `msxsl:script`, il est vivement recommandé de placer le script (quel que soit son langage) dans une section CDATA. Étant donné que le script peut contenir des opérateurs, identificateurs ou délimiteurs pour un langage donné, s'il n'est pas contenu dans une section CDATA, il risque d'être interprété à tort comme du XML. Le XML suivant illustre un modèle de la section CDATA où peut être placé le code.  
   
 ```xml  
 <msxsl:script implements-prefix='your-prefix' language='CSharp'>  
@@ -121,7 +121,7 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
 </msxsl:script>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple suivant utilise un script incorporé pour calculer la circonférence d'un cercle en fonction de son rayon.  
   
  [!code-csharp[XSLT_Script#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XSLT_Script/CS/xslt_script.cs#1)]

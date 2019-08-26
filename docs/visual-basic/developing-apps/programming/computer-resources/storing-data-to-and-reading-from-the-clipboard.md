@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data [Visual Basic], Clipboard
 - reading data, from Clipboard
 ms.assetid: f690119a-4378-4f7d-b20e-d9377ef49496
-ms.openlocfilehash: 19d0fcafb76c40a00939de59968dfaf2e6bd683c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: d7693f6b5dc74e17686cd7d2667f32adbde9df80
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58816878"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916518"
 ---
 # <a name="storing-data-to-and-reading-from-the-clipboard-visual-basic"></a>Stockage de données dans le Presse-papiers et lecture du Presse-papiers (Visual Basic)
 Le Presse-papiers peut être utilisé pour stocker des données, telles que du texte et des images. Comme le Presse-papiers est partagé par tous les processus actifs, il peut être utilisé pour transférer des données entre ces processus. L’objet `My.Computer.Clipboard` permet d’accéder facilement au Presse-papiers et de lire et écrire dedans.  
@@ -66,7 +66,7 @@ Le Presse-papiers peut être utilisé pour stocker des données, telles que du t
  [!code-vb[VbResourceTasks#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#5)]  
   
 > [!IMPORTANT]
->  Étant donné que le Presse-papiers est accessible par d’autres utilisateurs, ne l’utilisez pas pour stocker des informations sensibles, telles que des mots de passe ou des données confidentielles.  
+> Étant donné que le Presse-papiers est accessible par d’autres utilisateurs, ne l’utilisez pas pour stocker des informations sensibles, telles que des mots de passe ou des données confidentielles.  
   
 ## <a name="see-also"></a>Voir aussi
 

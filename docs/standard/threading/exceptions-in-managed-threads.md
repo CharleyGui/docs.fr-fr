@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: 11294769-2e89-43cb-890e-ad4ad79cfbee
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ca7f3a8d9ee840fc8c1c8a8efdadf8da033241f1
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: 689ee44980a4a41b6d46ed9b68306c1b08c49586
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377469"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960062"
 ---
 # <a name="exceptions-in-managed-threads"></a>Exceptions dans les threads managés
 À partir du .NET Framework version 2.0, le common language runtime permet à la plupart des exceptions non prises en charge dans les threads de poursuivre naturellement. Dans la plupart des cas, cela signifie que l’exception non prise en charge provoque l’arrêt de l’application.  
   
 > [!NOTE]
->  Il s’agit d’un changement important par rapport au .NET Framework versions 1.0 et 1.1, qui assurent une protection pour nombreuses exceptions non prises en charge, par exemple les exceptions non prises en charge dans les threads des pools de threads. Consultez la section [Changements par rapport aux versions précédentes](#ChangeFromPreviousVersions) plus loin dans cette rubrique.  
+> Il s’agit d’un changement important par rapport au .NET Framework versions 1.0 et 1.1, qui assurent une protection pour nombreuses exceptions non prises en charge, par exemple les exceptions non prises en charge dans les threads des pools de threads. Consultez la section [Changements par rapport aux versions précédentes](#ChangeFromPreviousVersions) plus loin dans cette rubrique.  
   
  Le common language runtime représente une protection pour certaines exceptions non prises en charge qui sont utilisées pour contrôler le flux du programme :  
   
@@ -36,7 +36,7 @@ ms.locfileid: "66377469"
  Si ces exceptions ne sont pas prises en charge dans le thread principal ou dans les threads qui sont entrés dans le runtime à partir de code non managé, elles se poursuivent normalement, ce qui entraîne l’arrêt de l’application.  
   
 > [!NOTE]
->  Il est possible que le runtime lève une exception non prise en charge avant que du code managé ait pu installer un gestionnaire d’exceptions. Bien que le code managé n’ait pas eu la possibilité de traiter cette exception, elle est autorisée à poursuivre naturellement.  
+> Il est possible que le runtime lève une exception non prise en charge avant que du code managé ait pu installer un gestionnaire d’exceptions. Bien que le code managé n’ait pas eu la possibilité de traiter cette exception, elle est autorisée à poursuivre naturellement.  
   
 ## <a name="exposing-threading-problems-during-development"></a>Mettre en lumière des problèmes de threads au cours du développement  
  Lorsque les threads sont autorisés à s’interrompre de façon silencieuse, sans arrêter l’application, de graves problèmes de programmation risquent de passer inaperçus. Il s’agit d’un problème particulier pour les services et autres applications qui s’exécutent sur de longues périodes. Au fur et à mesure des échecs de threads, le programme s’endommage progressivement. L’application risque de voir ses performances se dégrader ou de ne plus répondre.  

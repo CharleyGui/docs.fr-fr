@@ -12,12 +12,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 4acd2094-4f46-4eff-9190-92d0d9ff47db
-ms.openlocfilehash: 26e1fd4231964be5448229a6b3c7d90c0ba64499
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 561d0759af4f7557bae39540cbb00f8038726ddc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882518"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950810"
 ---
 # <a name="best-practices-for-implementing-the-event-based-asynchronous-pattern"></a>Meilleures pratiques pour implémenter le modèle asynchrone basé sur des événements
 Le modèle asynchrone basé sur les événements vous permet d’exposer efficacement un comportement asynchrone dans les classes, en utilisant une sémantique d’événement et de délégué familière. Pour implémenter le modèle asynchrone basé sur les événements, vous devez respecter certaines contraintes liées au comportement. Les sections ci-après décrivent les exigences et les recommandations que vous devez prendre en compte quand vous implémentez une classe qui suit le modèle asynchrone basé sur les événements.  
@@ -125,7 +125,7 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
  Pour indiquer la progression, les résultats incrémentiels et l'achèvement au client, appelez les méthodes <xref:System.ComponentModel.AsyncOperation.Post%2A> et <xref:System.ComponentModel.AsyncOperation.OperationCompleted%2A> sur la classe <xref:System.ComponentModel.AsyncOperation>. <xref:System.ComponentModel.AsyncOperation> prend en charge le marshaling des appels des gestionnaires d'événements du client en thread ou contexte adéquat.  
   
 > [!NOTE]
->  Vous pouvez contourner ces règles si vous souhaitez explicitement aller à l'encontre de la stratégie du modèle d'application, tout en tirant parti des autres avantages de l'utilisation du modèle asynchrone basé sur les événements. Par exemple, vous pouvez souhaiter qu'une classe fonctionnant dans Windows Forms soit libre de threads. Vous pouvez créer une classe libre de threads, sous réserve que les développeurs comprennent les restrictions que cela implique. Les applications console ne synchronisent pas l'exécution des appels <xref:System.ComponentModel.AsyncOperation.Post%2A>. Cela peut entraîner le déclenchement d'événements `ProgressChanged` dans le désordre. Si vous souhaitez que l'exécution des appels <xref:System.ComponentModel.AsyncOperation.Post%2A> soit sérialisée, implémentez et installez une classe <xref:System.Threading.SynchronizationContext?displayProperty=nameWithType>.  
+> Vous pouvez contourner ces règles si vous souhaitez explicitement aller à l'encontre de la stratégie du modèle d'application, tout en tirant parti des autres avantages de l'utilisation du modèle asynchrone basé sur les événements. Par exemple, vous pouvez souhaiter qu'une classe fonctionnant dans Windows Forms soit libre de threads. Vous pouvez créer une classe libre de threads, sous réserve que les développeurs comprennent les restrictions que cela implique. Les applications console ne synchronisent pas l'exécution des appels <xref:System.ComponentModel.AsyncOperation.Post%2A>. Cela peut entraîner le déclenchement d'événements `ProgressChanged` dans le désordre. Si vous souhaitez que l'exécution des appels <xref:System.ComponentModel.AsyncOperation.Post%2A> soit sérialisée, implémentez et installez une classe <xref:System.Threading.SynchronizationContext?displayProperty=nameWithType>.  
   
  Pour plus d’informations sur l’utilisation de <xref:System.ComponentModel.AsyncOperation> et <xref:System.ComponentModel.AsyncOperationManager> pour activer vos opérations asynchrones, consultez [Guide pratique pour implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
   

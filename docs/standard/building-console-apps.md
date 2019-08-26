@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: c21fb997-9f0e-40a5-8741-f73bba376bd8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 135decebcd071c611cf6e72835fee33d49088070
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 5c1658f27b66d9447d191d23801eba2d659ce9c2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54493909"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933898"
 ---
 # <a name="building-console-applications-in-the-net-framework"></a>Génération d'applications de console dans le .NET Framework
 Les applications dans le .NET Framework peuvent utiliser la classe <xref:System.Console?displayProperty=nameWithType> pour lire et écrire des caractères en provenance ou à destination de la console. Les données provenant de la console sont lues dans le flux d'entrée standard, les données à destination de la console sont écrites dans le flux de sortie standard et les données d'erreur à destination de la console sont écrites dans le flux de sortie standard des erreurs. Ces flux de données, associés automatiquement à la console au démarrage de l'application, sont présentés respectivement en tant que propriétés <xref:System.Console.In%2A>, <xref:System.Console.Out%2A> et <xref:System.Console.Error%2A>.  
@@ -22,7 +22,7 @@ Les applications dans le .NET Framework peuvent utiliser la classe <xref:System.
  La valeur de la propriété <xref:System.Console.In%2A?displayProperty=nameWithType> est un objet <xref:System.IO.TextReader?displayProperty=nameWithType>, alors que les valeurs des propriétés <xref:System.Console.Out%2A?displayProperty=nameWithType> et <xref:System.Console.Error%2A?displayProperty=nameWithType> sont des objets <xref:System.IO.TextWriter?displayProperty=nameWithType>. Vous pouvez associer ces propriétés à des flux qui ne représentent pas la console, ce qui vous permet de désigner un autre emplacement pour les entrées ou les sorties. Par exemple, vous pouvez rediriger la sortie vers un fichier en définissant la propriété <xref:System.Console.Out%2A?displayProperty=nameWithType> sur un objet <xref:System.IO.StreamWriter?displayProperty=nameWithType>, qui encapsule un <xref:System.IO.FileStream?displayProperty=nameWithType> au moyen de la méthode <xref:System.Console.SetOut%2A?displayProperty=nameWithType>. Il n'est pas nécessaire que les propriétés <xref:System.Console.In%2A?displayProperty=nameWithType> et <xref:System.Console.Out%2A?displayProperty=nameWithType> fassent référence au même flux.  
   
 > [!NOTE]
->  Pour plus d'informations sur la génération d'applications de console, notamment des exemples dans C#, Visual Basic et C++, consultez la documentation relative à la classe <xref:System.Console>.  
+> Pour plus d'informations sur la génération d'applications de console, notamment des exemples dans C#, Visual Basic et C++, consultez la documentation relative à la classe <xref:System.Console>.  
   
  Si la console n'existe pas, comme c'est le cas dans une application Windows, la sortie écrite dans le flux de sortie standard ne sera pas visible, puisqu'il n'existe pas de console sur laquelle écrire les informations. L'écriture d'informations sur une console inaccessible ne déclenche pas d'exception.  
   

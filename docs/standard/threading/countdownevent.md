@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: eec3812a-e20f-4ecd-bfef-6921d508b708
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b996b60a08a55b1d8e86878974be4887ea2684f8
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: ac1f2283ad30499748511e6fed6d5ce98da7fd14
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490820"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960107"
 ---
 # <a name="countdownevent"></a>CountdownEvent
 <xref:System.Threading.CountdownEvent?displayProperty=nameWithType> est une primitive de synchronisation qui débloque ses threads en attente après avoir été signalée un certain nombre de fois. <xref:System.Threading.CountdownEvent> est conçu pour les scénarios dans lesquels vous devriez sinon utiliser un <xref:System.Threading.ManualResetEvent> ou <xref:System.Threading.ManualResetEventSlim> et décrémenter manuellement une variable avant de signaler l’événement. Par exemple, dans un scénario de duplication/jointure, vous pouvez simplement créer un <xref:System.Threading.CountdownEvent> avec 5 signaux, puis démarrer cinq éléments de travail sur le pool de threads, chaque élément de travail appellant <xref:System.Threading.CountdownEvent.Signal%2A> lorsqu’il est terminé. Chaque appel à <xref:System.Threading.CountdownEvent.Signal%2A> décrémente le nombre de signaux de 1. Sur le thread principal, l’appel à <xref:System.Threading.CountdownEvent.Wait%2A> sera bloqué jusqu’à ce que le nombre de signaux soit de zéro.  
   
 > [!NOTE]
->  Pour le code qui ne doit pas d’interagir avec les API de synchronisation .NET Framework héritées, envisagez d’utiliser des objets <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> ou la méthode <xref:System.Threading.Tasks.Parallel.Invoke%2A> pour une approche plus facile de l’expression du parallélisme duplication-jointure.  
+> Pour le code qui ne doit pas d’interagir avec les API de synchronisation .NET Framework héritées, envisagez d’utiliser des objets <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> ou la méthode <xref:System.Threading.Tasks.Parallel.Invoke%2A> pour une approche plus facile de l’expression du parallélisme duplication-jointure.  
   
  <xref:System.Threading.CountdownEvent> a ces fonctionnalités supplémentaires :  
   

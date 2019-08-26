@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 46865e398c3868e21b743cf45f42e8b9063a0cbe
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 5b5cf6f0ae66141957d545134a2f8ff8eb799097
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59298907"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946452"
 ---
 # <a name="plinq-data-sample"></a>Données PLINQ, exemple
 Cet exemple contient des exemples de données au format .csv ainsi que des méthodes qui les transforment en collections en mémoires de clients, de produits, de commandes et de détails des commandes. Pour expérimenter davantage avec PLINQ, vous pouvez coller des exemples de code d’autres rubriques dans le code de cette rubrique et l’appeler à partir de la méthode `Main`. Vous pouvez également utiliser ces données avec vos propres requêtes PLINQ.  
@@ -23,7 +23,7 @@ Cet exemple contient des exemples de données au format .csv ainsi que des méth
  Les données représentent un sous-ensemble de la base de données Northwind. Cinquante (50) enregistrements de clients sont inclus, mais pas tous les champs. Un sous-ensemble de lignes dans les commandes et les données Order_Detail correspondantes pour chaque client sont inclus. Tous les produits sont inclus.  
   
 > [!NOTE]
->  Le jeu de données n’est pas assez volumineux pour faire la démonstration que PLINQ est plus rapide que LINQ to Objects pour les requêtes qui contiennent uniquement des clauses `where` et `select` de base. Afin d’observer l’augmentation de vitesse pour les petits jeux de données comme celui-là, utilisez des requêtes qui contiennent des opérations onéreuses en calcul sur chaque élément du jeu de données.  
+> Le jeu de données n’est pas assez volumineux pour faire la démonstration que PLINQ est plus rapide que LINQ to Objects pour les requêtes qui contiennent uniquement des clauses `where` et `select` de base. Afin d’observer l’augmentation de vitesse pour les petits jeux de données comme celui-là, utilisez des requêtes qui contiennent des opérations onéreuses en calcul sur chaque élément du jeu de données.  
   
 ### <a name="to-set-up-this-sample"></a>Pour installer cet exemple  
   

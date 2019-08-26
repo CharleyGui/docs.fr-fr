@@ -1,5 +1,5 @@
 ---
-title: Sélection de nœuds à l’aide de la navigation XPath
+title: Sélection de nœuds à l'aide de la navigation XPath
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,14 +8,14 @@ dev_langs:
 ms.assetid: 8e4450dc-56b3-472b-b467-32f5694f83ad
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9e02dd304893e4d9354144c5b412dfd145161c6e
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: b2fc0846b3f3801d64ee3bf1f1dc4b347034ad38
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45596947"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939568"
 ---
-# <a name="select-nodes-using-xpath-navigation"></a>Sélection de nœuds à l’aide de la navigation XPath
+# <a name="select-nodes-using-xpath-navigation"></a>Sélection de nœuds à l'aide de la navigation XPath
 Le DOM (Document Object Model) XML contient des méthodes permettant d’utiliser la navigation du langage XPath (XML Path) pour demander des informations dans le DOM. Vous pouvez utiliser XPath pour rechercher un nœud simple spécifique ou tous les nœuds qui correspondent à certains critères.  
   
 ## <a name="xpath-select-methods"></a>Méthodes de sélection XPath  
@@ -121,13 +121,13 @@ this doc.DocumentElement.FirstChild.SelectNodes(. . .);
  Tous les objets <xref:System.Xml.XmlNodeList> sont synchronisés avec le document sous-jacent. Par conséquent, si vous itérez via la liste de nœuds et modifiez la valeur d'un nœud, celui-ci est également mis à jour dans le document dont il provient. Notez que, dans l'exemple précédent, lorsqu'un nœud est modifié dans la classe <xref:System.Xml.XmlNodeList> sélectionnée, le document sous-jacent est également modifié.  
   
 > [!NOTE]
->  En cas de modification du document sous-jacent, il est recommandé de réexécuter la sélection. Si le nœud modifié fait partie de ceux qui peuvent entraîner l'ajout du nœud à la liste dans laquelle il ne figure pas encore ou sa suppression de la liste, il n'est pas garanti que la liste de nœuds est à jour.  
+> En cas de modification du document sous-jacent, il est recommandé de réexécuter la sélection. Si le nœud modifié fait partie de ceux qui peuvent entraîner l'ajout du nœud à la liste dans laquelle il ne figure pas encore ou sa suppression de la liste, il n'est pas garanti que la liste de nœuds est à jour.  
   
 ## <a name="namespaces-in-xpath-expressions"></a>Espaces de noms dans les expressions XPath  
  Les expressions XPath peuvent inclure des espaces de noms. La résolution d'espace de noms n'est pas prise en charge par l'objet <xref:System.Xml.XmlNamespaceManager>. Si l'expression XPath comprend un préfixe, celui-ci et l'URI d'espace de noms doivent être ajoutés à l'objet <xref:System.Xml.XmlNamespaceManager> et l'objet <xref:System.Xml.XmlNamespaceManager> est transmis à la méthode <xref:System.Xml.XmlNode.SelectNodes%28System.String%2CSystem.Xml.XmlNamespaceManager%29> ou <xref:System.Xml.XmlNode.SelectSingleNode%28System.String%2CSystem.Xml.XmlNamespaceManager%29>. Remarquez que les exemples de code ci-dessus utilisent le <xref:System.Xml.XmlNamespaceManager> pour trouver l'espace de noms du document bookstore.xml.  
   
 > [!NOTE]
->  Si l'expression XPath n'inclut pas de préfixe, l'URI (Uniform Resource Identifier) d'espace de noms est réputé être l'espace de noms vide. Si votre code XML inclut un espace de noms par défaut, vous devez toujours ajouter un préfixe et un URI d'espace de noms à l'objet <xref:System.Xml.XmlNamespaceManager> ; sinon, aucun nœud n'est sélectionné.  
+> Si l’expression XPath n’inclut pas de préfixe, l’URI (Uniform Resource Identifier) d’espace de noms est réputé être l’espace de noms vide. Si votre code XML inclut un espace de noms par défaut, vous devez toujours ajouter un préfixe et un URI d'espace de noms à l'objet <xref:System.Xml.XmlNamespaceManager> ; sinon, aucun nœud n'est sélectionné.  
   
 #### <a name="input-file"></a>Fichier d'entrée  
  Le fichier bookstore.xml suivant est utilisé comme fichier d'entrée dans les exemples de cette rubrique :  

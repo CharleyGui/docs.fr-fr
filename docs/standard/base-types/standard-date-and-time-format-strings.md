@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: bb79761a-ca08-44ee-b142-b06b3e2fc22b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ddf4b84d44abb353cb9a5e025291690fb14b9461
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: efa3abdcb7aa9db6dee4f772c1c1564947151c96
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67267915"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69949602"
 ---
 # <a name="standard-date-and-time-format-strings"></a>Chaînes de format de date et d'heure standard
 Une chaîne de format de date et d'heure standard utilise un spécificateur de format unique pour définir la représentation textuelle d'une valeur de date et d'heure. Toute chaîne de format de date et d’heure contenant plusieurs caractères, y compris un espace, est interprétée comme une chaîne de format de date et d’heure personnalisée. Pour plus d’informations, consultez [Chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md). Une chaîne de format standard ou personnalisée peut être utilisée de deux façons :  
@@ -79,7 +79,7 @@ Les chaînes de format de date et d'heure standard peuvent être utilisées avec
      [!code-vb[System.DateTime.Conceptual.Formatting#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTime.Conceptual.Formatting/vb/StandardFormats1.vb#3)]  
   
 > [!NOTE]
->  Pour plus d'informations sur la personnalisation des chaînes ou des modèles utilisés dans la mise en forme des valeurs numériques, consultez la rubrique de la classe <xref:System.Globalization.NumberFormatInfo>.  
+> Pour plus d'informations sur la personnalisation des chaînes ou des modèles utilisés dans la mise en forme des valeurs numériques, consultez la rubrique de la classe <xref:System.Globalization.NumberFormatInfo>.  
   
  Dans certains cas, il est pratique d'utiliser la chaîne de format standard comme abréviation pour les chaînes de format personnalisées plus longues et indifférentes. Quatre chaînes de format standard appartiennent à cette catégorie : "O" (ou "o"), "R" (ou "r"), "s" et "u". Ces chaînes correspondent aux chaînes de format personnalisées définies par la culture dite indifférente. Elles produisent des représentations sous forme de chaîne de valeurs de date et d'heure destinées à être identiques dans toutes les cultures. Le tableau suivant fournit des informations sur ces quatre chaînes de format de date et d'heure standard.  
   

@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3e67861a32d5863e4c1b4d9b147c507c1bb54c39
-ms.sourcegitcommit: 46c68557bf6395f0ab9915f7558f2faae0097695
+ms.openlocfilehash: bc2ca7a94ffb19f62f354bdfc3040490b57e2689
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "66491095"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968551"
 ---
 # <a name="standard-timespan-format-strings"></a>Chaînes de format TimeSpan standard.
 <a name="Top"></a> Une chaîne de format <xref:System.TimeSpan> standard utilise un spécificateur de format pour définir la représentation textuelle d'une valeur <xref:System.TimeSpan> qui résulte d'une opération de mise en forme. Toute chaîne de format contenant plusieurs caractères alphabétiques, y compris un espace blanc, est interprétée comme une chaîne de format <xref:System.TimeSpan> personnalisée. Pour plus d’informations, consultez [Chaînes de format TimeSpan personnalisées](../../../docs/standard/base-types/custom-timespan-format-strings.md).  
@@ -67,7 +67,7 @@ ms.locfileid: "66491095"
  Contrairement aux spécificateurs de format "g" et "G", le spécificateur de format "c" ne dépend pas de la culture. Il produit la représentation sous forme de chaîne d’une valeur <xref:System.TimeSpan> qui est invariante et commune à toutes les versions du .NET Framework antérieures à .NET Framework 4. "c" est la chaîne de format <xref:System.TimeSpan> par défaut. La méthode <xref:System.TimeSpan.ToString?displayProperty=nameWithType> met en forme une valeur d'intervalle de temps à l'aide de la chaîne de format "c".  
   
 > [!NOTE]
->  <xref:System.TimeSpan> prend également en charge les chaînes de format standard "t" et "T", dont le comportement est identique à celui de la chaîne de format standard "c".  
+> <xref:System.TimeSpan> prend également en charge les chaînes de format standard "t" et "T", dont le comportement est identique à celui de la chaîne de format standard "c".  
   
  L'exemple suivant instancie deux objets <xref:System.TimeSpan>, les utilise pour effectuer des opérations arithmétiques, puis affiche le résultat. Dans chaque cas, il utilise la mise en forme composite pour afficher la valeur <xref:System.TimeSpan> à l'aide du spécificateur de format "c".  
   

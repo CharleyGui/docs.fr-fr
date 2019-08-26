@@ -9,12 +9,12 @@ dev_langs:
 ms.assetid: fa09c8e5-c2b9-49d2-bb0d-40330cd13e4d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 119c4c13c90aeca8c14d2725d927c38be32212a6
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 3d0d67c82e753b044f759b4d1139c5f6b4837b31
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59308716"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948487"
 ---
 # <a name="editing-xml-schemas"></a>Modification de schémas XML
 La modification d’un schéma XML est l’une des fonctionnalités les plus importantes du SOM (Schema Object Model). Toutes les propriétés de pré-compilation de schéma du SOM peuvent être utilisées pour changer les valeurs existantes d'un schéma XML. Le schéma XML peut ensuite être recompilé pour que les changements prennent effet.  
@@ -93,7 +93,7 @@ La modification d’un schéma XML est l’une des fonctionnalités les plus imp
 8. Il effectue une itération sur chaque objet <xref:System.Xml.Schema.XmlSchemaObject> contenu dans la collection <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> de pré-compilation de schéma.  
   
 > [!NOTE]
->  Puisque l'élément `FirstName` n'est pas un élément global dans le schéma, il n'est pas disponible dans les collections <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> ou <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType>. L'exemple de code localise l'élément `FirstName` en localisant d'abord l'élément `Customer`.  
+> Puisque l'élément `FirstName` n'est pas un élément global dans le schéma, il n'est pas disponible dans les collections <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> ou <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType>. L'exemple de code localise l'élément `FirstName` en localisant d'abord l'élément `Customer`.  
 >   
 >  Le premier exemple de code traversait le schéma en utilisant la collection <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType> de post-compilation de schéma. Dans ce deuxième exemple, c’est la collection <xref:System.Xml.Schema.XmlSchema.Items%2A?displayProperty=nameWithType> de pré-compilation de schéma qui est utilisée pour traverser le schéma. Les deux collections offrent un accès aux éléments globaux du schéma, mais une itération via la collection <xref:System.Xml.Schema.XmlSchema.Items%2A> prend plus de temps car vous devez effectuer l’itération sur tous les éléments globaux du schéma et cette collection n’a pas de propriétés PSCI. Les collections PSCI (propriétés <xref:System.Xml.Schema.XmlSchema.Elements%2A?displayProperty=nameWithType>, <xref:System.Xml.Schema.XmlSchema.Attributes%2A?displayProperty=nameWithType>, <xref:System.Xml.Schema.XmlSchema.SchemaTypes%2A?displayProperty=nameWithType>, etc.) offrent un accès direct à leurs éléments, attributs et types globaux ainsi qu’à leurs propriétés PSCI.  
   

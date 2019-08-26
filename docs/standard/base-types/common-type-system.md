@@ -19,12 +19,12 @@ ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: e916d7d335bcdeff64393a25ab697748209d147c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 050b2c2b8b55bc79cf388ce7a8c197b14f3437d7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782634"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934763"
 ---
 # <a name="common-type-system"></a>Système de type commun
 Le système de type commun (CTS, Common Type System) définit la façon dont les types sont déclarés, utilisés et managés dans le Common Language Runtime ; il constitue également une partie importante de la prise en charge, par le runtime, de l'intégration interlangage. Le système de type commun met en œuvre les fonctions suivantes :  
@@ -82,7 +82,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
 |exported ou not exported|Indique si une classe est visible à l'extérieur de l'assembly dans lequel elle est définie. Cette caractéristique s'applique uniquement aux classes de niveau supérieur, et pas aux classes imbriquées.|  
   
 > [!NOTE]
->  Une classe peut également être imbriquée dans une structure ou une classe parente. Les classes imbriquées ont également des caractéristiques de membre. Pour plus d’informations, consultez [Types imbriqués](#NestedTypes).  
+> Une classe peut également être imbriquée dans une structure ou une classe parente. Les classes imbriquées ont également des caractéristiques de membre. Pour plus d’informations, consultez [Types imbriqués](#NestedTypes).  
   
  Les membres de classe sans implémentation sont des membres abstraits. Une classe qui possède un ou plusieurs membres abstraits est elle-même abstraite ; il n'est pas possible d'en créer de nouvelles instances. Certains langages qui ciblent le runtime vous permettent de marquer une classe comme abstraite même si aucun de ses membres n'est abstrait. Vous pouvez utiliser une classe abstraite lorsque vous voulez encapsuler un ensemble de fonctionnalités de base dont des classes dérivées peuvent hériter ou qu'elles peuvent substituer lorsque cela est approprié. Les classes qui ne sont pas abstraites sont qualifiées de classes concrètes.  
   
@@ -115,7 +115,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
 - Elles ne peuvent pas être génériques, à moins qu'elles le soient uniquement parce qu'elles sont imbriquées dans un type générique. Par conséquent, une énumération ne peut pas avoir de paramètres de type propres.  
   
     > [!NOTE]
-    >  Les types imbriqués (y compris les énumérations) créés avec Visual Basic, C# et C++ incluent les paramètres de type de tous les types génériques englobants, et sont donc génériques, même s’ils n’ont pas de paramètres de type propres. Pour plus d'informations, consultez « Types imbriqués » de la rubrique de référence relative à <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType>.  
+    > Les types imbriqués (y compris les énumérations) créés avec Visual Basic, C# et C++ incluent les paramètres de type de tous les types génériques englobants, et sont donc génériques, même s’ils n’ont pas de paramètres de type propres. Pour plus d'informations, consultez « Types imbriqués » de la rubrique de référence relative à <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType>.  
   
  L'attribut <xref:System.FlagsAttribute> désigne un genre particulier d'énumération appelé « champ de bits ». Le runtime lui-même ne fait pas de distinction entre les énumérations traditionnelles et les champs de bits, mais votre langage pourrait le faire. Lorsque cette distinction est effectuée, les opérateurs binaires peuvent être utilisés sur les champs de bits, mais pas sur les énumérations, pour générer des valeurs sans nom. Les énumérations sont généralement utilisées pour des listes d'éléments uniques, tels que les jours de la semaine, des noms de pays ou de région, etc. Les champs de bits sont généralement utilisés pour des listes de qualités ou de quantités pouvant être utilisées en combinaison, telle que `Red And Big And Fast`.  
   
@@ -157,14 +157,14 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
  Étant donné que les délégués héritent de <xref:System.MulticastDelegate>, un délégué dispose d'une liste d'appel, liste des méthodes représentées par le délégué et exécutées lorsque celui-ci est appelé. Toutes les méthodes de la liste reçoivent les arguments fournis lorsque le délégué est appelé.  
   
 > [!NOTE]
->  La valeur de retour n'est pas définie pour un délégué dont la liste d'appel comprend plusieurs méthodes, même si le délégué dispose d'un type de retour.  
+> La valeur de retour n'est pas définie pour un délégué dont la liste d'appel comprend plusieurs méthodes, même si le délégué dispose d'un type de retour.  
   
  Dans la plupart des cas, comme avec les méthodes de rappel, un délégué représente une seule méthode, et les mesures que vous devez prendre se limitent à la création et l'appel du délégué.  
   
  Pour les délégués qui représentent plusieurs méthodes, .NET fournit les méthodes des classes déléguées <xref:System.Delegate> et <xref:System.MulticastDelegate> pour prendre en charge des opérations telles que l'ajout d'une méthode à la liste d'appel d'un délégué (méthode <xref:System.Delegate.Combine%2A?displayProperty=nameWithType>), la suppression d'une méthode (méthode <xref:System.Delegate.Remove%2A?displayProperty=nameWithType>) et l'obtention de la liste d'appel (méthode <xref:System.Delegate.GetInvocationList%2A?displayProperty=nameWithType>).  
   
 > [!NOTE]
->  Il n'est pas nécessaire d'utiliser ces méthodes pour les délégués de gestionnaires d'événements en C#, C++ et Visual Basic, car ces langages fournissent une syntaxe pour l'ajout et la suppression des gestionnaires d'événements.  
+> Il n'est pas nécessaire d'utiliser ces méthodes pour les délégués de gestionnaires d'événements en C#, C++ et Visual Basic, car ces langages fournissent une syntaxe pour l'ajout et la suppression des gestionnaires d'événements.  
 
 <a name="type_definitions"></a>   
 ## <a name="type-definitions"></a>Définitions de types  
@@ -307,7 +307,7 @@ Le système de type commun (CTS, Common Type System) définit la façon dont les
  Chaque membre de type a une signature unique. Les signatures de méthode sont composées du nom de la méthode, d'une liste de paramètres (l'ordre et les types des arguments de la méthode). Plusieurs méthodes du même nom peuvent être définies dans un type à condition que leurs signatures diffèrent. Lorsque plusieurs méthodes du même nom sont définies, la méthode est dite surchargée. Par exemple, dans <xref:System.Char?displayProperty=nameWithType>, la méthode <xref:System.Char.IsDigit%2A> est surchargée. Une méthode prend un <xref:System.Char>. L'autre méthode prend un <xref:System.String> et un <xref:System.Int32>.  
   
 > [!NOTE]
->  Le type de retour n’est pas considéré comme une partie de la signature d’une méthode. En d'autres termes, les méthodes ne peuvent pas être surchargées si seul le type de retour les différencie.  
+> Le type de retour n’est pas considéré comme une partie de la signature d’une méthode. En d'autres termes, les méthodes ne peuvent pas être surchargées si seul le type de retour les différencie.  
   
 ### <a name="inheriting-overriding-and-hiding-members"></a>Héritage, substitution et masquage de membres  
  Un type dérivé hérite de tous les membres de son type de base ; c'est-à-dire que ces membres sont définis sur le type dérivé et disponibles pour celui-ci. Le comportement ou les qualités de membres hérités peuvent être modifiés de deux manières :  

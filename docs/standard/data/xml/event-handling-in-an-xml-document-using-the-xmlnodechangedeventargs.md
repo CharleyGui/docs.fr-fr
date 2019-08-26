@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 0fe844e3-5b6f-4fe7-ad15-22459501738b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0c382b22825512000a906af8a865b6b7c5f4c73c
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 9d26872fb97551e5392eb3f6a1a0825728046553
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44204888"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965892"
 ---
 # <a name="event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs"></a>Gestion d'événements dans un document XML à l'aide de XmlNodeChangedEventArgs
 **XmlNodeChangedEventArgs** encapsule les arguments passés aux gestionnaires d’événements inscrits dans l’objet **XmlDocument** pour la gestion d’événements. Le tableau suivant répertorie ces événements et fournit une description des circonstances dans lesquelles ils sont déclenchés :  
@@ -28,7 +28,7 @@ ms.locfileid: "44204888"
 |<xref:System.Xml.XmlDocument.NodeChanged>|Quand la valeur d'un nœud a été modifiée.|  
   
 > [!NOTE]
->  Si l'utilisation de la mémoire **XmlDataDocument** est pleinement optimisée pour utiliser le stockage **DataSet**, il est possible que **XmlDataDocument** ne déclenche aucun des événements répertoriés ci-avant quand des modifications sont apportées au **DataSet** sous-jacent. Si vous avez besoin de ces événements, vous devez traverser l'intégralité de **XmlDocument** une fois pour rendre partielle l'utilisation de la mémoire.  
+> Si l'utilisation de la mémoire **XmlDataDocument** est pleinement optimisée pour utiliser le stockage **DataSet**, il est possible que **XmlDataDocument** ne déclenche aucun des événements répertoriés ci-avant quand des modifications sont apportées au **DataSet** sous-jacent. Si vous avez besoin de ces événements, vous devez traverser l'intégralité de **XmlDocument** une fois pour rendre partielle l'utilisation de la mémoire.  
   
  L'exemple de code suivant illustre la définition d'un gestionnaire d'événements et l'ajout de celui-ci à un événement :  
   

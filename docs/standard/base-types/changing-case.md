@@ -17,12 +17,12 @@ ms.assetid: 6805f81b-e9ad-4387-9f4c-b9bdb21b87c0
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: ce495ce01c970fb46cc7e7e374994fd34a7730a7
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 68bce927c6426fc32cd2fe26dcc488432199612d
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54648970"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69987211"
 ---
 # <a name="changing-case-in-net"></a>Changement de casse dans .NET
 Si vous écrivez une application qui accepte l'entrée d'un utilisateur, vous ne pouvez jamais être sûr de la casse qu'il utilisera pour entrer les données. Souvent, vous voulez que les chaînes aient une casse cohérente, en particulier si vous les affichez dans l'interface utilisateur. Le tableau suivant décrit trois méthodes de changement de la casse : Les deux premières méthodes fournissent une surcharge qui accepte une culture.  
@@ -34,11 +34,11 @@ Si vous écrivez une application qui accepte l'entrée d'un utilisateur, vous ne
 |<xref:System.Globalization.TextInfo.ToTitleCase%2A?displayProperty=nameWithType>|Convertit une chaîne en une casse avec la première lettre des mots en majuscule.|  
   
 > [!WARNING]
->  Notez que les méthodes <xref:System.String.ToUpper%2A?displayProperty=nameWithType> et <xref:System.String.ToLower%2A?displayProperty=nameWithType> ne doivent pas être utilisées pour convertir des chaînes pour les comparer ou pour tester leur égalité. Pour plus d'informations, consultez la section [Comparaison de chaînes de casse mixte](#Comparing).  
+> Notez que les méthodes <xref:System.String.ToUpper%2A?displayProperty=nameWithType> et <xref:System.String.ToLower%2A?displayProperty=nameWithType> ne doivent pas être utilisées pour convertir des chaînes pour les comparer ou pour tester leur égalité. Pour plus d'informations, consultez la section [Comparaison de chaînes de casse mixte](#Comparing).  
   
 <a name="Comparing"></a>   
 ## <a name="comparing-strings-of-mixed-case"></a>Comparaison de chaînes de casse mixte  
- Pour comparer des chaînes de casse mixte et déterminer leur classement, appelez une des surcharges de la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> avec un paramètre `comparisonType` et spécifiez une valeur <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType>, <xref:System.StringComparison.InvariantCultureIgnoreCase?displayProperty=nameWithType> ou <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> pour l'argument `comparisonType`. Pour une comparaison en utilisant une culture spécifique autre que la culture actuelle, appelez une surcharge de la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> avec les paramètres `culture` et `options`, et spécifiez une valeur <xref:System.Globalization.CompareOptions.IgnoreCase?displayProperty=nameWithType> pour l'argument `options`.  
+ Pour comparer des chaînes de casse mixte et déterminer leur classement, appelez une des surcharges de la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> avec un paramètre `comparisonType` et spécifiez une valeur <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType>, <xref:System.StringComparison.InvariantCultureIgnoreCase?displayProperty=nameWithType> ou <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> pour l’argument `comparisonType`. Pour une comparaison en utilisant une culture spécifique autre que la culture actuelle, appelez une surcharge de la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> avec les paramètres `culture` et `options`, et spécifiez une valeur <xref:System.Globalization.CompareOptions.IgnoreCase?displayProperty=nameWithType> pour l'argument `options`.  
   
  Pour comparer des chaînes de casse mixte et déterminer si elles sont égales, appelez une des surcharges de la méthode <xref:System.String.Equals%2A?displayProperty=nameWithType> avec un paramètre `comparisonType` et spécifiez une valeur <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType>, <xref:System.StringComparison.InvariantCultureIgnoreCase?displayProperty=nameWithType> ou <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> pour l’argument `comparisonType`.  
   

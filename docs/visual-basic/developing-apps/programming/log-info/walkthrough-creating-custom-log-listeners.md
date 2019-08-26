@@ -5,12 +5,12 @@ helpviewer_keywords:
 - custom log listeners
 - My.Application.Log object, custom log listeners
 ms.assetid: 0e019115-4b25-4820-afb1-af8c6e391698
-ms.openlocfilehash: 50eb1bc1588602bf562efc31b0f4dd01bc29cad0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 90135074a4d34ea73743faffb2531305fcb326fb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593327"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965259"
 ---
 # <a name="walkthrough-creating-custom-log-listeners-visual-basic"></a>Procédure pas à pas : Création d’écouteurs de journalisation personnalisés (Visual Basic)
 Cette procédure pas à pas illustre comment créer un écouteur de journalisation personnalisé et le configurer pour écouter la sortie de l’objet `My.Application.Log`.  
@@ -29,7 +29,7 @@ Cette procédure pas à pas illustre comment créer un écouteur de journalisati
      L’attribut <xref:System.Security.Permissions.HostProtectionAttribute> est appliqué aux méthodes <xref:System.Diagnostics.TraceListener.Write%2A> et <xref:System.Diagnostics.TraceListener.WriteLine%2A> afin que leurs attributs correspondent aux méthodes de classe de base. L’attribut <xref:System.Security.Permissions.HostProtectionAttribute> permet à l’hôte qui exécute le code de déterminer que ce dernier expose la synchronisation de la protection de l’hôte.  
   
     > [!NOTE]
-    >  L’attribut <xref:System.Security.Permissions.HostProtectionAttribute> n’est effectif que sur les applications non managées, telles que SQL Server, qui hébergent le Common Language Runtime et implémentent la protection de l’hôte.  
+    > L’attribut <xref:System.Security.Permissions.HostProtectionAttribute> n’est effectif que sur les applications non managées, telles que SQL Server, qui hébergent le Common Language Runtime et implémentent la protection de l’hôte.  
   
  Pour vérifier que `My.Application.Log` utilise votre écouteur de journalisation, vous devez attribuer un nom fort à l’assembly qui le contient.  
   
@@ -76,7 +76,7 @@ Cette procédure pas à pas illustre comment créer un écouteur de journalisati
   
 1. Cliquez avec le bouton droit sur app.config dans l’**Explorateur de solutions** et sélectionnez **Ouvrir**.  
   
-     - ou -  
+     -ou-  
   
      S’il existe un fichier app.config :  
   

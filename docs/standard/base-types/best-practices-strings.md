@@ -21,12 +21,12 @@ ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 68bcc9321d5a97620d0e8d24befbd24f4f350f94
-ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
+ms.openlocfilehash: 50127f24bfee0c2fe49da8f285e5052d2f753696
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66250820"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934936"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Bonnes pratiques pour l’utilisation de chaînes dans .NET
 <a name="top"></a> .NET offre une prise en charge complète du développement d’applications localisées et globalisées, et facilite l’application des conventions de la culture actuelle ou d’une culture spécifique durant l’exécution d’opérations courantes telles que le tri et l’affichage de chaînes. Toutefois, le tri ou la comparaison de chaînes n'est pas toujours une opération dépendante de la culture. Par exemple, les chaînes utilisées en interne par une application doivent généralement être gérées de la même manière dans toutes les cultures. Quand des données de type chaîne culturellement indépendantes, telles que des balises XML, des balises HTML, des noms d'utilisateurs, des chemins d'accès aux fichiers et des noms d'objets système, sont interprétées comme si elles étaient dépendantes de la culture, le code d'application peut faire l'objet de bogues subtils, de performances médiocres et, dans certains cas, de problèmes de sécurité.  
@@ -185,7 +185,7 @@ En outre, les comparaisons de chaînes à l’aide de différentes versions de .
  Les chaînes dans .NET peuvent contenir des caractères Null incorporés. L'une des différences les plus évidentes entre la comparaison ordinale et la comparaison dépendante de la culture (y compris les comparaisons qui utilisent la culture dite indifférente) concerne la gestion des caractères Null incorporés dans une chaîne. Ces caractères sont ignorés quand vous utilisez les méthodes <xref:System.String.Compare%2A?displayProperty=nameWithType> et <xref:System.String.Equals%2A?displayProperty=nameWithType> pour effectuer des comparaisons dépendantes de la culture (notamment des comparaisons qui utilisent la culture dite indifférente). Par conséquent, dans les comparaisons dépendantes de la culture, les chaînes qui contiennent des caractères Null incorporés peuvent être considérées comme égales à des chaînes qui n'en contiennent pas.  
   
 > [!IMPORTANT]
->  Les méthodes de comparaison de chaînes ignorent les caractères Null incorporés, contrairement aux méthodes de recherche de chaînes telles que <xref:System.String.Contains%2A?displayProperty=nameWithType>, <xref:System.String.EndsWith%2A?displayProperty=nameWithType>, <xref:System.String.IndexOf%2A?displayProperty=nameWithType>, <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType>et <xref:System.String.StartsWith%2A?displayProperty=nameWithType> .  
+> Les méthodes de comparaison de chaînes ignorent les caractères Null incorporés, contrairement aux méthodes de recherche de chaînes telles que <xref:System.String.Contains%2A?displayProperty=nameWithType>, <xref:System.String.EndsWith%2A?displayProperty=nameWithType>, <xref:System.String.IndexOf%2A?displayProperty=nameWithType>, <xref:System.String.LastIndexOf%2A?displayProperty=nameWithType>et <xref:System.String.StartsWith%2A?displayProperty=nameWithType> .  
   
  L'exemple suivant effectue une comparaison dépendante de la culture de la chaîne "Aa" avec une chaîne semblable qui contient plusieurs caractères Null incorporés entre "A" et "a", et montre comment les deux chaînes sont considérées comme égales.  
   
@@ -210,7 +210,7 @@ En outre, les comparaisons de chaînes à l’aide de différentes versions de .
  Ces comparaisons restent très rapides.  
   
 > [!NOTE]
->  <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType>constitue la meilleure représentation du comportement de chaîne du système de fichiers, des clés de Registre et des valeurs, ainsi que des variables d'environnement.  
+> <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType>constitue la meilleure représentation du comportement de chaîne du système de fichiers, des clés de Registre et des valeurs, ainsi que des variables d'environnement.  
   
  <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> et <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> utilisent tous les deux directement les valeurs binaires et sont les plus adaptés à la mise en correspondance. Quand vous n'êtes pas sûr de vos paramètres de comparaison, utilisez l'une de ces deux valeurs. Toutefois, étant donné qu'elles effectuent une comparaison octet par octet, elles n'effectuent pas le tri selon un ordre de tri linguistique (comme un dictionnaire français), mais selon un ordre de tri binaire. Les résultats peuvent sembler étranges dans la plupart des contextes s'ils sont affichés aux utilisateurs.  
   
@@ -244,8 +244,8 @@ En outre, les comparaisons de chaînes à l’aide de différentes versions de .
 |----------|--------------|-----------------------------------------------------|  
 |Identificateurs internes respectant la casse.<br /><br /> Identificateurs respectant la casse dans des normes telles que XML et HTTP.<br /><br /> Paramètres liés à la sécurité respectant la casse.|Identificateur non linguistique, où les octets correspondent exactement.|<xref:System.StringComparison.Ordinal>|  
 |Identificateurs internes ne respectant pas la casse.<br /><br /> Identificateurs ne respectant pas la casse dans des normes telles que XML et HTTP.<br /><br /> Chemins d'accès aux fichiers.<br /><br /> Clés et valeurs de Registre.<br /><br /> Variables d'environnement.<br /><br /> Identificateurs de ressource (par exemple, noms de handles).<br /><br /> Paramètres liés à la sécurité ne respectant pas la casse.|Identificateur non linguistique, où la casse n'est pas pertinente ; en particulier, les données stockées dans la plupart des services système Windows.|<xref:System.StringComparison.OrdinalIgnoreCase>|  
-|Certaines données rendues persistantes et linguistiquement pertinentes.<br /><br /> Affichage de données linguistiques qui nécessitent un ordre de tri fixe.|Données dont la culture n'est pas spécifiée qui sont toutefois linguistiquement pertinentes.|<xref:System.StringComparison.InvariantCulture><br /><br /> - ou -<br /><br /> <xref:System.StringComparison.InvariantCultureIgnoreCase>|  
-|Données affichées à l'utilisateur.<br /><br /> La plupart des entrées d'utilisateur.|Données qui nécessitent des usages linguistiques locaux.|<xref:System.StringComparison.CurrentCulture><br /><br /> - ou -<br /><br /> <xref:System.StringComparison.CurrentCultureIgnoreCase>|  
+|Certaines données rendues persistantes et linguistiquement pertinentes.<br /><br /> Affichage de données linguistiques qui nécessitent un ordre de tri fixe.|Données dont la culture n'est pas spécifiée qui sont toutefois linguistiquement pertinentes.|<xref:System.StringComparison.InvariantCulture><br /><br /> -ou-<br /><br /> <xref:System.StringComparison.InvariantCultureIgnoreCase>|  
+|Données affichées à l'utilisateur.<br /><br /> La plupart des entrées d'utilisateur.|Données qui nécessitent des usages linguistiques locaux.|<xref:System.StringComparison.CurrentCulture><br /><br /> -ou-<br /><br /> <xref:System.StringComparison.CurrentCultureIgnoreCase>|  
   
  [Retour au début](#top)  
   

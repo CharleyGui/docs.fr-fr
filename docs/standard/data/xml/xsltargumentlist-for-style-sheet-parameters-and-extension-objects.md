@@ -8,18 +8,18 @@ dev_langs:
 ms.assetid: de2f0dce-6b98-4908-bba7-ed150cc50355
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2c9a3b43f81f00a7b6a3a0b3a8e1c102aafe0c0e
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 9d08399933f37c4110639bf1f4a81f222dd597b4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170945"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910318"
 ---
 # <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a>XsltArgumentList pour les paramètres de feuille de style et les objets d'extension
 La classe <xref:System.Xml.Xsl.XsltArgumentList> contient des paramètres XSLT (Extensible Stylesheet Language for Transformations) et des objets d'extension XSLT. Lorsqu’ils sont transmis à la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A>, ces paramètres et ces objets d’extension peuvent être appelés à partir des feuilles de style.  
   
 > [!NOTE]
->  Les classes <xref:System.Xml.Xsl.XslTransform> et <xref:System.Xml.Xsl.XsltArgumentList> sont obsolètes dans .NET Framework 2.0. Vous pouvez effectuer des transformations XSLT à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Pour plus d'informations, consultez [Utilisation de la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) et [Migration depuis la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md).  
+> Les classes <xref:System.Xml.Xsl.XslTransform> et <xref:System.Xml.Xsl.XsltArgumentList> sont obsolètes dans .NET Framework 2.0. Vous pouvez effectuer des transformations XSLT à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Pour plus d'informations, consultez [Utilisation de la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) et [Migration depuis la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md).  
   
  La classe <xref:System.Xml.Xsl.XsltArgumentList> contient des paramètres XSLT et des objets d’extension XSLT. Lorsqu’ils sont transmis à la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A>, ces paramètres et ces objets d’extension peuvent être appelés à partir des feuilles de style.  
   

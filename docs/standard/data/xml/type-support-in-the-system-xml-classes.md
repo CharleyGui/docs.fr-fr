@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 63570538-06e3-4401-ad4d-ac50be90c7bf
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 979975e993a84dfe5c5527291f8cfe650be80ee6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 954ff12ae1ac8b4d601c35fcd76ea35b2bb3acbf
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647833"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939450"
 ---
 # <a name="type-support-in-the-systemxml-classes"></a>Prise en charge du type dans les classes System.Xml
 Dans .NET Framework version 2.0, les classes XML noyau ont été améliorées pour inclure des fonctions de prise en charge du type. Les classes <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter> et <xref:System.Xml.XPath.XPathNavigator> comprennent des fonctionnalités de prise en charge du type, notamment la possibilité de conversion entre des types de schémas XML et des types CLR (Common Language Runtime).  
@@ -26,7 +26,7 @@ Dans .NET Framework version 2.0, les classes XML noyau ont été améliorées p
 - Les propriétés **ValueAs** et <xref:System.Xml.XPath.XPathNavigator.TypedValue%2A> de la classe <xref:System.Xml.XPath.XPathNavigator> retournent une valeur de nœud et la convertissent en valeur CLR en un seul appel de méthode.  
   
 > [!NOTE]
->  Dans .NET Framework version 1.0, la classe <xref:System.Xml.XmlConvert> était nécessaire pour la conversion entre les types CLR et de schéma XML.  
+> Dans .NET Framework version 1.0, la classe <xref:System.Xml.XmlConvert> était nécessaire pour la conversion entre les types CLR et de schéma XML.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Mappage entre types de données XML et types CLR](../../../../docs/standard/data/xml/mapping-xml-data-types-to-clr-types.md)  

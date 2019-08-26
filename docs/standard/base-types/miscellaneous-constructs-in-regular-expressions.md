@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 7d10d11f-680f-4721-b047-fb136316b4cd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8956726915ebe1c0b1c7654e62e2e28620274b4a
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 7b7783d3360bfb042880f5d1e74bfac77e729299
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836282"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959478"
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a>Constructions diverses dans les expressions régulières
 Les expressions régulières dans .NET incluent trois constructions de langage diverses. L’une d’elles vous permet d’activer ou de désactiver des options de mise en correspondance particulières au milieu d’un modèle d’expression régulière. Grâce aux deux autres, vous pouvez inclure des commentaires dans une expression régulière.  
@@ -42,7 +42,7 @@ Les expressions régulières dans .NET incluent trois constructions de langage d
  Toute modification des options d’expression régulière définies par la construction `(?imnsx-imnsx)` reste en vigueur jusqu’à la fin du groupe englobant.  
   
 > [!NOTE]
->  La construction de regroupement `(?imnsx-imnsx:`*sous-expression*`)` fournit une fonctionnalité identique pour une sous-expression. Pour plus d'informations, consultez [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
+> La construction de regroupement `(?imnsx-imnsx:`*sous-expression*`)` fournit une fonctionnalité identique pour une sous-expression. Pour plus d’informations, consultez [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
   
  L’exemple suivant utilise les options `i`, `n` et `x` pour activer le non-respect de la casse et les captures explicites, et pour ignorer l’espace blanc dans le modèle d’expression régulière au milieu d’une expression régulière.  
   

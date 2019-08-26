@@ -10,20 +10,20 @@ helpviewer_keywords:
 ms.assetid: 5a70dd49-ab2a-4798-b551-196ee7042b1a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 03bbb9b7cf33eda1cc479759740e6c5325f635fe
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 09e128c98b61ecc4ac673d8c9911f4bac476d521
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54580666"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988436"
 ---
 # <a name="how-to-write-a-custom-plinq-aggregate-function"></a>Procédure : écrire une fonction d’agrégation PLINQ personnalisée
 Cet exemple montre comment utiliser la méthode <xref:System.Linq.ParallelEnumerable.Aggregate%2A> pour appliquer une fonction d’agrégation personnalisée à une séquence source.  
   
 > [!WARNING]
->  Cet exemple, destiné à illustrer l'utilisation, peut ne pas s'exécuter plus rapidement que la requête LINQ to Objects séquentielle équivalente. Pour plus d’informations sur l’accélération, consultez [Fonctionnement de l’accélération dans PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
+> Cet exemple, destiné à illustrer l'utilisation, peut ne pas s'exécuter plus rapidement que la requête LINQ to Objects séquentielle équivalente. Pour plus d’informations sur l’accélération, consultez [Fonctionnement de l’accélération dans PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant calcule l’écart type d’une séquence d’entiers.  
   
  [!code-csharp[PLINQ#31](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#31)]

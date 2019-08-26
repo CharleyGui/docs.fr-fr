@@ -5,12 +5,12 @@ helpviewer_keywords:
 - security [Visual Basic], registry
 - registry [Visual Basic], security issues
 ms.assetid: 9980aff7-2f69-492b-8f66-29a9a76d3df5
-ms.openlocfilehash: dc0071d1fddf99bd712ebe8aea5c61bbc3522f93
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 2fdb8003365841a4eef298eb853765dd3bc4587d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58839352"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69916530"
 ---
 # <a name="security-and-the-registry-visual-basic"></a>Sécurité et Registre (Visual Basic)
 Cette page décrit les implications en matière de sécurité du stockage des données dans le Registre.  
@@ -36,7 +36,7 @@ Cette page décrit les implications en matière de sécurité du stockage des do
  Quand vous créez une valeur de Registre, vous devez déterminer ce qu’il faut faire si cette valeur existe déjà. Il est possible qu’un autre processus, éventuellement malveillant, ait déjà créé la valeur et y ait accès. Quand vous placez des données dans la valeur de Registre, ces données sont accessibles à l’autre processus. Pour l’éviter, utilisez la méthode `GetValue`. Elle retourne `Nothing` si la clé n’existe pas encore.  
   
 > [!IMPORTANT]
->  Lors de la lecture du Registre à partir d’une application web, l’identité de l’utilisateur actuel dépend de l’authentification et de l’emprunt d’identité implémentés dans l’application web.  
+> Lors de la lecture du Registre à partir d’une application web, l’identité de l’utilisateur actuel dépend de l’authentification et de l’emprunt d’identité implémentés dans l’application web.  
   
 ## <a name="see-also"></a>Voir aussi
 

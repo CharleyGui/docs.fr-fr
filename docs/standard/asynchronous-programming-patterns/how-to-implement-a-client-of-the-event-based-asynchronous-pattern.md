@@ -18,12 +18,12 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 21a858c1-3c99-4904-86ee-0d17b49804fa
-ms.openlocfilehash: 8d2825ff738ffc50ba9a438024db27aff5686a0d
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 50aa36d2caf774638ad20323813f0de3703aab2f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54661384"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950715"
 ---
 # <a name="how-to-implement-a-client-of-the-event-based-asynchronous-pattern"></a>Procédure : implémenter un client du modèle asynchrone basé sur des événements
 L’exemple de code suivant montre comment utiliser un composant conforme à la [vue d'ensemble du modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md). Le formulaire de cet exemple utilise le composant `PrimeNumberCalculator` décrit dans la rubrique [Guide pratique : implémenter un composant qui prend en charge le modèle asynchrone basé sur des événements](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
@@ -33,9 +33,9 @@ L’exemple de code suivant montre comment utiliser un composant conforme à la 
  Toute opération en attente peut être annulée à l’aide du bouton **Annuler**. Il est possible d’effectuer des sélections multiples.  
   
 > [!NOTE]
->  La plupart des nombres ne seront pas des nombres premiers. Si aucun nombre premier n’a été trouvé après plusieurs opérations, démarrez simplement davantage de tâches jusqu’à trouver des nombres premiers.  
+> La plupart des nombres ne seront pas des nombres premiers. Si aucun nombre premier n’a été trouvé après plusieurs opérations, démarrez simplement davantage de tâches jusqu’à trouver des nombres premiers.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  [!code-csharp[System.ComponentModel.AsyncOperationManager#10](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#10)]
  [!code-vb[System.ComponentModel.AsyncOperationManager#10](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#10)]  
   

@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 376dd9df4666193f8e5a6be83f3fcaf5dc32f1a6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 31f277d11cba8191c326d56f017b8acc6503c6b7
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54544599"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968711"
 ---
 # <a name="converting-strings-to-net-framework-data-types"></a>Conversion de chaînes en types de données .NET Framework
 Si vous souhaitez convertir une chaîne en un type de données .NET Framework, utilisez la méthode **XmlConvert** conforme aux exigences de l’application. Pour une liste de toutes les méthodes de conversion disponibles dans la classe **XmlConvert**, consultez <xref:System.Xml.XmlConvert>.  
@@ -33,7 +33,7 @@ Si vous souhaitez convertir une chaîne en un type de données .NET Framework, u
 |TimeSpan|Le format est PnYnMnTnHnMnS, c'est-à-dire que `P2Y10M15DT10H30M20S` indique une durée de 2 années, 10 mois, 15 jours, 10 heures, 30 minutes et 20 secondes.|  
   
 > [!NOTE]
->  Durant la conversion de l'un des types .NET Framework répertoriés dans ce tableau vers une chaîne à l'aide de la méthode **ToString**, la chaîne retournée n'est pas le type de base, mais le type de chaîne XSD (XML Schema Definition).  
+> Durant la conversion de l'un des types .NET Framework répertoriés dans ce tableau vers une chaîne à l'aide de la méthode **ToString**, la chaîne retournée n'est pas le type de base, mais le type de chaîne XSD (XML Schema Definition).  
   
  Le type des valeurs **DateTime** et **Timespan** diffère en ce sens que **DateTime** représente un moment donné dans le temps, alors que **TimeSpan** représente un intervalle de temps. Les formats **DateTime** et **Timespan** sont spécifiés dans la spécification des types de données XSD (XML Schema Definition). Par exemple :  
   

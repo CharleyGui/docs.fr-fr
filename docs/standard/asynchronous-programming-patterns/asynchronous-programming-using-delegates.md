@@ -14,18 +14,18 @@ helpviewer_keywords:
 ms.assetid: 38a345ca-6963-4436-9608-5c9defef9c64
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 41c9793900c3e7accd5463a19de10d1cb81afd59
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ce77e57eb049c031ed506e8812fff59ba97a978e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54503831"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69950861"
 ---
 # <a name="asynchronous-programming-using-delegates"></a>Programmation asynchrone à l'aide de délégués
 Les délégués permettent d’appeler une méthode synchrone de manière asynchrone. Lorsque vous appelez un délégué de manière synchrone, la méthode `Invoke` appelle la méthode cible directement sur le thread actuel. Si la méthode `BeginInvoke` est appelée, le common language runtime (CLR) met en file d’attente la demande et retourne immédiatement à l’appelant. La méthode cible est appelée de façon asynchrone sur un thread du pool de threads. Le thread d’origine, qui a envoyé la demande, est libre de continuer à s’exécuter en parallèle avec la méthode cible. Si une méthode de rappel a été spécifiée dans l’appel à la méthode `BeginInvoke`, la méthode de rappel est appelée lorsque la méthode cible se termine. Dans la méthode de rappel, la méthode `EndInvoke` obtient la valeur de retour et d’éventuels paramètres d’entrée/sortie ou de sortie uniquement. Si aucune méthode de rappel n’est spécifiée lors de l’appel à `BeginInvoke`, `EndInvoke` peut être appelé depuis le thread qui a appelé `BeginInvoke`.  
   
 > [!IMPORTANT]
->  Les compilateurs doivent émettre des classes déléguées avec les méthodes `Invoke`, `BeginInvoke` et `EndInvoke` à l’aide de la signature de délégué spécifiée par l’utilisateur. Les méthodes `BeginInvoke` et `EndInvoke` doivent être décorées comme étant natives. Étant donné que ces méthodes sont marquées comme étant natives, le CLR fournit automatiquement l’implémentation au moment du chargement de la classe. Le chargeur garantit qu’elles ne sont pas remplacées.  
+> Les compilateurs doivent émettre des classes déléguées avec les méthodes `Invoke`, `BeginInvoke` et `EndInvoke` à l’aide de la signature de délégué spécifiée par l’utilisateur. Les méthodes `BeginInvoke` et `EndInvoke` doivent être décorées comme étant natives. Étant donné que ces méthodes sont marquées comme étant natives, le CLR fournit automatiquement l’implémentation au moment du chargement de la classe. Le chargeur garantit qu’elles ne sont pas remplacées.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Appel de méthodes synchrones de façon asynchrone](../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  

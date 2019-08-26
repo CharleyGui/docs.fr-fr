@@ -18,12 +18,12 @@ ms.assetid: 071e22e9-fbb0-4ecf-add1-8d2424f9f2d1
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 61f1b93d2f54923f0dfc4832a79fe35dc319d0f6
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 560597770d667cf8c7668bf2338ac4bac3eb192f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331755"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968574"
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a>Constructions d'alternative dans les expressions régulières
 <a name="top"></a> Les constructions d'alternative modifient une expression régulière pour permettre la correspondance de type inclusif/exclusif ou conditionnelle. .NET prend en charge trois constructions d’alternative :  
@@ -80,7 +80,7 @@ ms.locfileid: "68331755"
  où `(?=`*expression*`)` est une construction d'assertion de largeur nulle. (Pour plus d'informations, consultez [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).) Étant donné que le moteur des expressions régulières interprète *l’expression* comme une ancre (assertion de largeur nulle), *l’expression* doit être soit une assertion de largeur nulle (pour plus d’informations, consultez [Ancres](../../../docs/standard/base-types/anchors-in-regular-expressions.md)), soit une sous-expression qui est également contenue dans *oui*. Sinon, aucune correspondance ne peut être établie avec le modèle *oui*.  
   
 > [!NOTE]
->  Si l’ *expression*est un groupe de capture nommé ou numéroté, la construction alternative est interprétée comme un test de capture. Pour plus d’informations, consultez la section suivante, [Correspondance conditionnelle selon un groupe capturé valide](#Conditional_Group). En d'autres termes, le moteur des expressions régulières ne tente pas de mettre en correspondance la sous-chaîne capturée, mais à la place teste la présence ou l'absence du groupe.  
+> Si l’ *expression*est un groupe de capture nommé ou numéroté, la construction alternative est interprétée comme un test de capture. Pour plus d’informations, consultez la section suivante, [Correspondance conditionnelle selon un groupe capturé valide](#Conditional_Group). En d'autres termes, le moteur des expressions régulières ne tente pas de mettre en correspondance la sous-chaîne capturée, mais à la place teste la présence ou l'absence du groupe.  
   
  L’exemple suivant est une variante de celui donné dans la section [Critères spéciaux de type inclusif/exclusif avec &#124;](#Either_Or). Il utilise la mise en correspondance conditionnelle pour déterminer si les trois premiers caractères après une limite de mot se composent de deux chiffres suivis d'un trait d'union. Si c'est le cas, il tente de mettre en correspondance un numéro d'identification de l'employeur (EIN) américain. Si ce n'est pas le cas, il tente de mettre en correspondance un numéro de sécurité sociale (SSN) américain.  
   

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 4fb6452f-c071-420d-9e71-da16dee7a1eb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 04ef2ea6bf9d10baabea39133b2e0a9a72a6ce4f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: da32d514b19424487cebc1d113388cfa9a2dbdf0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54674844"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69913226"
 ---
 # <a name="managed-and-unmanaged-threading-in-windows"></a>Threading managé et non managé dans Windows
 
@@ -27,7 +27,7 @@ La gestion de tous les threads s'effectue par le biais de la classe <xref:System
  Dans le modèle de thread managé, <xref:System.Threading.Thread.GetHashCode%2A?displayProperty=nameWithType> identifie les threads managés de manière stable. Durant toute la durée de vie de votre thread, cette identification n'entre en conflit avec la valeur d'aucun autre thread, quel que soit le domaine d'application à partir duquel vous obtenez cette valeur.  
   
 > [!NOTE]
->  Un **ID de thread** de système d'exploitation n'est pas lié de manière fixe à un thread managé, car un hôte non managé peut contrôler la relation entre les threads managés et les threads non managés. En particulier, un hôte élaboré peut utiliser l'API Fiber pour planifier de nombreux threads managés par rapport au même thread de système d'exploitation, ou pour déplacer un thread managé parmi différents threads de système d'exploitation.  
+> Un **ID de thread** de système d'exploitation n'est pas lié de manière fixe à un thread managé, car un hôte non managé peut contrôler la relation entre les threads managés et les threads non managés. En particulier, un hôte élaboré peut utiliser l'API Fiber pour planifier de nombreux threads managés par rapport au même thread de système d'exploitation, ou pour déplacer un thread managé parmi différents threads de système d'exploitation.  
   
 ## <a name="mapping-from-win32-threading-to-managed-threading"></a>Correspondance entre les éléments de thread Win32 et les éléments de thread managés
 
@@ -57,7 +57,7 @@ Un thread managé peut être marqué pour indiquer qu’il hébergera un [thread
  Si l'état de cloisonnement n'est pas défini avant que le thread n'ait démarré, celui-ci est initialisé en tant que cloisonnement multithread (MTA). Le thread finaliseur et tous les threads contrôlés par <xref:System.Threading.ThreadPool> sont des threads MTA.  
   
 > [!IMPORTANT]
->  Pour le code de démarrage d'application, la seule façon de contrôler l'état de cloisonnement consiste à appliquer les attributs <xref:System.MTAThreadAttribute> ou <xref:System.STAThreadAttribute> à la procédure de point d'entrée. Dans .NET Framework 1.0 et 1.1, la propriété <xref:System.Threading.Thread.ApartmentState%2A> peut être définie en tant que première ligne de code. Cette opération n'est pas autorisée dans .NET Framework 2.0.  
+> Pour le code de démarrage d'application, la seule façon de contrôler l'état de cloisonnement consiste à appliquer les attributs <xref:System.MTAThreadAttribute> ou <xref:System.STAThreadAttribute> à la procédure de point d'entrée. Dans .NET Framework 1.0 et 1.1, la propriété <xref:System.Threading.Thread.ApartmentState%2A> peut être définie en tant que première ligne de code. Cette opération n'est pas autorisée dans .NET Framework 2.0.  
   
  Les objets managés exposés à COM se comportent comme s'ils avaient agrégé le marshaleur libre de threads. En d'autres termes, ils peuvent être appelés depuis n'importe quel cloisonnement COM d'une manière libre de threads. Les seuls objets managés qui ne présentent pas ce comportement libre de threads sont les objets qui dérivent de <xref:System.EnterpriseServices.ServicedComponent> ou <xref:System.Runtime.InteropServices.StandardOleMarshalObject>.  
   

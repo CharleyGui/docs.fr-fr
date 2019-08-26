@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1e357177-e699-4b8f-9e49-56d3513ed128
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f6cf6120af21c6b8fcaf09203fcb3b77e4dcdfac
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4ee939096ef4e24397d03aa8a64405d66c740580
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64620998"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946334"
 ---
 # <a name="potential-pitfalls-in-data-and-task-parallelism"></a>Pièges potentiels dans le parallélisme des données et des tâches
 Dans de nombreux cas, <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> et <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> permettent une amélioration significative des performances par rapport à des boucles séquentielles ordinaires. Toutefois, le travail de la parallélisation de la boucle présente une certaine complexité pouvant entraîner des problèmes qui, dans du code séquentiel, ne sont pas si courants ou ne surviennent pas du tout. Cette rubrique répertorie les pratiques à éviter lorsque vous écrivez des boucles parallèles.  
@@ -49,7 +49,7 @@ Dans de nombreux cas, <xref:System.Threading.Tasks.Parallel.For%2A?displayProper
  La plupart des méthodes statiques du .NET Framework sont thread-safe et peuvent être appelées à partir de plusieurs threads simultanément. Toutefois, même dans ces cas, la synchronisation impliquée peut entraîner un ralentissement significatif de la requête.  
   
 > [!NOTE]
->  Vous pouvez le tester vous-même en insérant des appels à <xref:System.Console.WriteLine%2A> dans vos requêtes. Bien que cette méthode soit utilisée dans les exemples de documentation destinés à la démonstration, ne l’utilisez pas dans les boucles parallèles, sauf si nécessaire.  
+> Vous pouvez le tester vous-même en insérant des appels à <xref:System.Console.WriteLine%2A> dans vos requêtes. Bien que cette méthode soit utilisée dans les exemples de documentation destinés à la démonstration, ne l’utilisez pas dans les boucles parallèles, sauf si nécessaire.  
   
 ## <a name="be-aware-of-thread-affinity-issues"></a>Tenir compte des problèmes d’affinité de thread  
  Certaines technologies, par exemple, les composants STA (Single-Threaded Apartment), Windows Forms et Windows Presentation Foundation (WPF) imposent des restrictions d’affinité de thread qui requièrent l’exécution de code sur un thread spécifique. Par exemple, dans Windows Forms et WPF, un contrôle est uniquement accessible sur le thread sur lequel il a été créé. Cela signifie, par exemple, que vous ne pouvez pas mettre à jour un contrôle de liste à partir d’une boucle parallèle, sauf si vous configurez le planificateur de threads de sorte qu’il planifie le travail uniquement sur le thread d’interface utilisateur. Pour plus d’informations, consultez [Spécification d’un contexte de synchronisation](xref:System.Threading.Tasks.TaskScheduler#specifying-a-synchronization-context).  

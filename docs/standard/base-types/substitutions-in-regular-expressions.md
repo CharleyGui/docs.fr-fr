@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5c06a20e3d6cf3030da1cc63435423e087408aa6
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: 4b079809fa76097cd575d96c70d17d1c6c85e3a1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66301502"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968537"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Substitutions dans les expressions régulières
 <a name="Top"></a> Les substitutions sont des éléments de langage reconnus uniquement dans des modèles de remplacement. Elles utilisent un modèle d'expression régulière pour définir tout ou partie du texte qui doit remplacer le texte correspondant dans la chaîne d'entrée. Le modèle de remplacement peut se composer d'une ou plusieurs substitutions avec des caractères littéraux. Les modèles de remplacement sont fournis aux surcharges de la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> qui a un paramètre `replacement` et à la méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> . Les méthodes remplacent le modèle correspondant par le modèle défini par le paramètre `replacement` .  
@@ -44,7 +44,7 @@ ms.locfileid: "66301502"
  Le seul caractère qui peut apparaître dans un modèle d'expression régulière ou dans une substitution est le caractère `$` , bien qu'il ait une signification différente dans chaque contexte. Dans un modèle d'expression régulière, `$` est une ancre qui correspond à la fin de la chaîne. Dans un modèle de remplacement, `$` indique le début d'une substitution.  
   
 > [!NOTE]
->  Pour les fonctionnalités semblables à un modèle de remplacement dans une expression régulière, utilisez une référence arrière. Pour plus d'informations sur les références arrières, consultez [Constructions de références arrières](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).  
+> Pour les fonctionnalités semblables à un modèle de remplacement dans une expression régulière, utilisez une référence arrière. Pour plus d'informations sur les références arrières, consultez [Constructions de références arrières](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).  
   
 <a name="Numbered"></a>   
 ## <a name="substituting-a-numbered-group"></a>Substitution d'un groupe numéroté  

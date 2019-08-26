@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bdf8d41a99328a8c8fd31eca974e52082abb7e79
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 3e39ee597f5142f2b3ccbd4ded49e59d6700ec8a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490788"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960144"
 ---
 # <a name="cancellation-in-managed-threads"></a>Annulation dans les threads managés
 À compter de .NET Framework 4, le .NET Framework utilise un modèle unifié pour l’annulation coopérative des opérations asynchrones ou des opérations synchrones de longue durée. Ce modèle est basé sur un objet léger appelé jeton d'annulation. L'objet qui appelle une ou plusieurs opérations annulables, par exemple en créant de nouveaux threads ou de nouvelles tâches, passe le jeton à chaque opération. Chaque opération peut, à son tour, passer des copies du jeton à d'autres opérations. Ultérieurement, l'objet qui a créé le jeton peut l'utiliser pour demander que les opérations arrêtent leur action. Seul l'objet demandeur peut émettre la demande d'annulation. Chaque écouteur est chargé d'accepter la demande et d'y répondre de manière appropriée et en temps voulu.  
@@ -31,7 +31,7 @@ ms.locfileid: "66490788"
 - Appelez la méthode <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> pour fournir une notification d'annulation.  
   
 > [!IMPORTANT]
->  La classe <xref:System.Threading.CancellationTokenSource> implémente l'interface <xref:System.IDisposable>. Quand vous aurez terminé d'utiliser la source du jeton d'annulation, vous devrez appeler la méthode <xref:System.Threading.CancellationTokenSource.Dispose%2A?displayProperty=nameWithType> pour libérer les ressources non managées qu'elle contient.  
+> La classe <xref:System.Threading.CancellationTokenSource> implémente l'interface <xref:System.IDisposable>. Quand vous aurez terminé d'utiliser la source du jeton d'annulation, vous devrez appeler la méthode <xref:System.Threading.CancellationTokenSource.Dispose%2A?displayProperty=nameWithType> pour libérer les ressources non managées qu'elle contient.  
   
  L'illustration suivante montre la relation entre une source de jeton et toutes les copies de ce jeton.  
   
@@ -66,7 +66,7 @@ ms.locfileid: "66490788"
  Dans l'exemple suivant, l'objet demandeur crée un objet <xref:System.Threading.CancellationTokenSource>, puis passe sa propriété <xref:System.Threading.CancellationTokenSource.Token%2A> à l'opération annulable. L'opération qui reçoit la demande surveille la valeur de la propriété <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> du jeton par le biais d'une interrogation. Quand la valeur devient `true`, l'écouteur peut s'arrêter de quelque manière appropriée que ce soit. Dans cet exemple, la méthode s'arrête, ce qui suffit dans de nombreux cas.  
   
 > [!NOTE]
->  L'exemple utilise la méthode <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> pour montrer que la nouvelle infrastructure d'annulation est compatible avec les API héritées. Pour obtenir un exemple qui utilise le nouveau type <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> standard, consultez [Comment : annuler une tâche et ses enfants](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).  
+> L'exemple utilise la méthode <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A> pour montrer que la nouvelle infrastructure d'annulation est compatible avec les API héritées. Pour obtenir un exemple qui utilise le nouveau type <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> standard, consultez [Comment : annuler une tâche et ses enfants](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).  
   
  [!code-csharp[Cancellation#1](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex1.cs#1)]
  [!code-vb[Cancellation#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex1.vb#1)]  

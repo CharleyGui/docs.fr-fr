@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 7722a333-b974-47a2-a7c0-f09097fb644e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f20ae0b712a5db5cdfb6d5f6a3786af151820294
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 25121ea2b089df49efa77dcf363e2a0e400b3bff
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54550485"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968436"
 ---
 # <a name="semaphore-and-semaphoreslim"></a>Semaphore et SemaphoreSlim
 La classe <xref:System.Threading.Semaphore?displayProperty=nameWithType> représente un sémaphore local ou nommé (visible à l'échelle du système). Il s'agit d'un wrapper mince entourant l'objet sémaphore Win32. Les sémaphores Win32 sont des sémaphores de comptage qui peuvent être utilisés pour contrôler l'accès à un pool de ressources.  
@@ -32,7 +32,7 @@ La classe <xref:System.Threading.Semaphore?displayProperty=nameWithType> représ
 ### <a name="semaphores-and-thread-identity"></a>Sémaphores et identité de thread  
  Les deux types de sémaphores n'appliquent pas l'identité de thread sur les appels aux méthodes <xref:System.Threading.WaitHandle.WaitOne%2A>, <xref:System.Threading.SemaphoreSlim.Wait%2A>, <xref:System.Threading.Semaphore.Release%2A> et <xref:System.Threading.SemaphoreSlim.Release%2A?displayProperty=nameWithType>. Par exemple, un scénario classique d'utilisation des sémaphores implique un thread producteur et un thread consommateur, avec un thread incrémentant le nombre du sémaphore et l'autre le décrémentant.  
   
- Il est de la responsabilité du programmeur de garantir qu'un thread ne libère pas le sémaphore trop souvent. Supposons, par exemple, qu'un sémaphore ait un nombre maximal égal à deux et que le thread A et le thread B entrent dans le sémaphore. Si une erreur de programmation dans le thread B le conduit à appeler `Release` deux fois, les deux appels aboutiront. Le nombre maximal du sémaphore sera alors atteint, et quand le thread A appellera `Release`, une exception <xref:System.Threading.SemaphoreFullException> sera levée.  
+ Il est de la responsabilité du programmeur de garantir qu’un thread ne libère pas le sémaphore trop souvent. Supposons, par exemple, qu'un sémaphore ait un nombre maximal égal à deux et que le thread A et le thread B entrent dans le sémaphore. Si une erreur de programmation dans le thread B le conduit à appeler `Release` deux fois, les deux appels aboutiront. Le nombre maximal du sémaphore sera alors atteint, et quand le thread A appellera `Release`, une exception <xref:System.Threading.SemaphoreFullException> sera levée.  
   
 ## <a name="named-semaphores"></a>Sémaphores nommés  
  Le système d'exploitation Windows permet d'attribuer un nom aux sémaphores. Un sémaphore nommé est disponible à l'échelle du système. C'est-à-dire qu'une fois créé, le sémaphore nommé est visible par tous les threads de tous les processus. Par conséquent, un sémaphore nommé peut être utilisé pour synchroniser aussi bien des activités de processus que des threads.  
@@ -40,7 +40,7 @@ La classe <xref:System.Threading.Semaphore?displayProperty=nameWithType> représ
  Vous pouvez créer un objet <xref:System.Threading.Semaphore> qui représente un sémaphore système nommé en utilisant l'un des constructeurs qui spécifient un nom.  
   
 > [!NOTE]
->  Étant donné que les sémaphores nommés sont disponibles à l'échelle du système, il est possible que plusieurs objets <xref:System.Threading.Semaphore> représentent le même sémaphore nommé. Chaque fois que vous appelez un constructeur ou la méthode <xref:System.Threading.Semaphore.OpenExisting%2A?displayProperty=nameWithType>, un nouvel objet <xref:System.Threading.Semaphore> est créé. Le fait de spécifier un même nom plusieurs fois crée plusieurs objets qui représentent le même sémaphore nommé.  
+> Étant donné que les sémaphores nommés sont disponibles à l'échelle du système, il est possible que plusieurs objets <xref:System.Threading.Semaphore> représentent le même sémaphore nommé. Chaque fois que vous appelez un constructeur ou la méthode <xref:System.Threading.Semaphore.OpenExisting%2A?displayProperty=nameWithType>, un nouvel objet <xref:System.Threading.Semaphore> est créé. Le fait de spécifier un même nom plusieurs fois crée plusieurs objets qui représentent le même sémaphore nommé.  
   
  Soyez prudent lorsque vous utilisez des sémaphores nommés. Étant donné qu'ils sont disponibles à l'échelle du système, un autre processus portant le même nom peut entrer dans votre sémaphore sans que vous vous y attendiez. Du code malveillant exécuté sur le même ordinateur pourrait s'en servir pour une attaque par déni de service.  
   

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 416be383-cc61-4102-9b1b-88b51adb963e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2752ecd05caec207955b2366ed19b3713f571f91
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f37f55f5af70a232952bdb94f0c111a27fcbab1d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54613907"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69948781"
 ---
 # <a name="generic-delegates-for-manipulating-arrays-and-lists"></a>Délégués génériques pour la manipulation de tableaux et de listes
 Cette rubrique donne une vue d’ensemble des délégués génériques pour les conversions, des prédicats de recherche et des actions à effectuer sur les éléments d’un tableau ou d’une collection.  
@@ -28,7 +28,7 @@ Cette rubrique donne une vue d’ensemble des délégués génériques pour les 
  La classe générique <xref:System.Collections.Generic.List%601> fournit également une méthode <xref:System.Collections.Generic.List%601.ForEach%2A> qui utilise le délégué <xref:System.Action%601>. Cette méthode n'est pas générique.  
   
 > [!NOTE]
->  Ceci constitue un point intéressant concernant les types et les méthodes génériques. La méthode <xref:System.Array.ForEach%2A?displayProperty=nameWithType> doit être statique (`Shared` en Visual Basic) et générique, car <xref:System.Array> n'est pas un type générique. La seule raison pour laquelle vous pouvez spécifier un type pour que <xref:System.Array.ForEach%2A?displayProperty=nameWithType> fonctionne est que la méthode a sa propre liste de paramètres de type. En revanche, la méthode <xref:System.Collections.Generic.List%601.ForEach%2A?displayProperty=nameWithType> non générique appartient à la classe générique <xref:System.Collections.Generic.List%601>, de sorte qu'elle utilise simplement le paramètre de type de sa classe. La classe est fortement typée :la méthode peut donc être une méthode d'instance.  
+> Ceci constitue un point intéressant concernant les types et les méthodes génériques. La méthode <xref:System.Array.ForEach%2A?displayProperty=nameWithType> doit être statique (`Shared` en Visual Basic) et générique, car <xref:System.Array> n’est pas un type générique. La seule raison pour laquelle vous pouvez spécifier un type pour que <xref:System.Array.ForEach%2A?displayProperty=nameWithType> fonctionne est que la méthode a sa propre liste de paramètres de type. En revanche, la méthode <xref:System.Collections.Generic.List%601.ForEach%2A?displayProperty=nameWithType> non générique appartient à la classe générique <xref:System.Collections.Generic.List%601>, de sorte qu’elle utilise simplement le paramètre de type de sa classe. La classe est fortement typée :la méthode peut donc être une méthode d'instance.  
   
  Le délégué générique <xref:System.Predicate%601> représente une méthode qui détermine si un élément particulier répond aux critères que vous définissez. Vous pouvez l'utiliser avec les méthodes génériques statiques suivantes de <xref:System.Array> pour rechercher un élément ou un ensemble d'éléments : <xref:System.Array.Exists%2A>, <xref:System.Array.Find%2A>, <xref:System.Array.FindAll%2A>, <xref:System.Array.FindIndex%2A>, <xref:System.Array.FindLast%2A>, <xref:System.Array.FindLastIndex%2A> et <xref:System.Array.TrueForAll%2A>.  
   

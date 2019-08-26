@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 9fce4859-a19d-4506-b082-7dd0792688ca
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b39f91c5fabcfb5d7929a645b438b5db77f70956
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f3dcee9c45cdbf029ccba90a963c9cea0a9c7ad4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64644916"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963575"
 ---
 # <a name="pausing-and-interrupting-threads"></a>Suspension et interruption de threads
 
@@ -41,7 +41,7 @@ Les méthodes les plus courantes permettant de synchroniser les activités de th
  Vous pouvez interrompre un thread en attente en appelant la méthode <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> sur le thread bloqué pour lever une <xref:System.Threading.ThreadInterruptedException>, ce qui retirera le thread de l'appel bloquant. Le thread doit intercepter la <xref:System.Threading.ThreadInterruptedException> et faire tout le nécessaire pour continuer à fonctionner. Si le thread ignore l'exception, le runtime intercepte l'exception et arrête le thread.  
   
 > [!NOTE]
->  Si le thread cible n'est pas bloqué quand <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> est appelé, le thread ne sera pas interrompu avant d'être bloqué. Si le thread n'est jamais bloqué, il peut se terminer sans jamais être interrompu.  
+> Si le thread cible n'est pas bloqué quand <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> est appelé, le thread ne sera pas interrompu avant d'être bloqué. Si le thread n'est jamais bloqué, il peut se terminer sans jamais être interrompu.  
   
  En cas d'attente managée, <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> et <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> réveillent le thread immédiatement. En cas d'attente non managée (par exemple, dans le cas d'un appel de code non managé à la fonction Win32 [WaitForSingleObject ](/windows/desktop/api/synchapi/nf-synchapi-waitforsingleobject)), ni <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> ni <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> ne pourront prendre le contrôle du thread tant qu'il ne sera pas retourné dans du code managé ou tant qu'il n'effectuera pas d'appel depuis du code managé. Dans du code managé, le comportement est le suivant :  
   

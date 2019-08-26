@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: 37dfe4e3-7da0-48b6-a3d9-398981524e1c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6939c215633be10e487f9cd5bd25856c0c611921
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 298ac8eae0a8b125ddf5f1ff35658f426f6b10aa
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623672"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968580"
 ---
 # <a name="retrieving-information-stored-in-attributes"></a>Récupération des informations stockées dans les attributs
 La récupération d’un attribut personnalisé est un processus simple. Tout d’abord, déclarez une instance de l’attribut que vous souhaitez récupérer. Ensuite, utilisez la méthode <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> pour initialiser le nouvel attribut à la valeur de l’attribut que vous souhaitez récupérer. Une fois le nouvel attribut initialisé, vous utilisez simplement ses propriétés pour obtenir les valeurs.  
   
 > [!IMPORTANT]
->  Cette rubrique explique comment récupérer des attributs pour le code chargé dans le contexte d'exécution. Pour récupérer les attributs du code chargé dans le contexte de réflexion uniquement, vous devez utiliser la classe <xref:System.Reflection.CustomAttributeData>, comme indiqué dans [Guide pratique pour charger des assemblys dans le contexte de réflexion uniquement](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
+> Cette rubrique explique comment récupérer des attributs pour le code chargé dans le contexte d'exécution. Pour récupérer les attributs du code chargé dans le contexte de réflexion uniquement, vous devez utiliser la classe <xref:System.Reflection.CustomAttributeData>, comme indiqué dans [Guide pratique pour charger des assemblys dans le contexte de réflexion uniquement](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
   
  Cette section décrit les méthodes suivantes pour récupérer des attributs :  
   

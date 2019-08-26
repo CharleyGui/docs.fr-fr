@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: 11ee0b38-d663-4617-b793-35eb6c64e9fc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dc2ed1a450921452dee894caeb52c477d501b573
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
+ms.openlocfilehash: d9c90a3bd272b54d2884d013e62123dd67d836e3
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55758623"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69960051"
 ---
 # <a name="eventwaithandle"></a>EventWaitHandle
 La classe <xref:System.Threading.EventWaitHandle> permet aux threads de communiquer entre eux en signalant et en attendant des signaux. Les handles d’attente d’événement (également appelés simplement des événements) sont des handles d’attente qui peuvent être signalés pour libérer un ou plusieurs threads en attente. Une fois signalé, un handle d’attente d’événement est réinitialisé manuellement ou automatiquement. La classe <xref:System.Threading.EventWaitHandle> peut représenter un handle d’attente d’événement local (événement local) ou un handle d’attente d’événement système nommé (événement nommé ou événement système, visible par tous les processus).  
   
 > [!NOTE]
->  Les handles d’attente d’événement ne sont pas des [événements](../events/index.md) .NET. Aucun délégué ni gestionnaire d’événements n’est impliqué. Le terme « événement » est utilisé pour les décrire, car ils sont généralement connus sous le nom d’événements du système d’exploitation, et le fait de signaler le handle d’attente indique aux threads en attente qu’un événement s’est produit.  
+> Les handles d’attente d’événement ne sont pas des [événements](../events/index.md) .NET. Aucun délégué ni gestionnaire d’événements n’est impliqué. Le terme « événement » est utilisé pour les décrire, car ils sont généralement connus sous le nom d’événements du système d’exploitation, et le fait de signaler le handle d’attente indique aux threads en attente qu’un événement s’est produit.  
   
  Les handles d’attente d’événement locaux et nommés utilisent des objets de synchronisation du système, qui sont protégés par des wrappers <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> pour garantir la libération des ressources. Vous pouvez utiliser la méthode <xref:System.Threading.WaitHandle.Dispose%2A> pour libérer les ressources immédiatement après avoir terminé d’utiliser l’objet.  
   
@@ -31,7 +31,7 @@ La classe <xref:System.Threading.EventWaitHandle> permet aux threads de communiq
  Les événements à réinitialisation automatique servent généralement à fournir un accès exclusif à une ressource pour un thread à la fois. Un thread demande la ressource en appelant la méthode <xref:System.Threading.WaitHandle.WaitOne%2A>. Si aucun autre thread ne détient le handle d’attente, la méthode retourne `true`, et le thread appelant contrôle la ressource.  
   
 > [!IMPORTANT]
->  Comme avec tous les mécanismes de synchronisation, vous devez veiller à ce que tous les chemins de code attendent le handle d’attente approprié avant d’accéder à une ressource protégée. La synchronisation des threads est coopérative.  
+> Comme avec tous les mécanismes de synchronisation, vous devez veiller à ce que tous les chemins de code attendent le handle d’attente approprié avant d’accéder à une ressource protégée. La synchronisation des threads est coopérative.  
   
  Si un événement à réinitialisation automatique est signalé alors qu’aucun thread n’attend, il reste signalé jusqu'à ce qu’un thread tente de l’attendre. L’événement libère le thread et est immédiatement réinitialisé, ce qui bloque les threads suivants.  
   
@@ -53,14 +53,14 @@ La classe <xref:System.Threading.EventWaitHandle> permet aux threads de communiq
  Vous pouvez créer un objet <xref:System.Threading.EventWaitHandle> qui représente un événement système nommé en utilisant l'un des constructeurs qui spécifient un nom.  
   
 > [!NOTE]
->  Étant donné que les événements nommés sont disponibles à l'échelle du système, il est possible que plusieurs objets <xref:System.Threading.EventWaitHandle> représentent le même événement nommé. Chaque fois que vous appelez un constructeur ou la méthode <xref:System.Threading.EventWaitHandle.OpenExisting%2A>, un nouvel objet <xref:System.Threading.EventWaitHandle> est créé. Le fait de spécifier un même nom plusieurs fois crée plusieurs objets qui représentent le même événement nommé.  
+> Étant donné que les événements nommés sont disponibles à l'échelle du système, il est possible que plusieurs objets <xref:System.Threading.EventWaitHandle> représentent le même événement nommé. Chaque fois que vous appelez un constructeur ou la méthode <xref:System.Threading.EventWaitHandle.OpenExisting%2A>, un nouvel objet <xref:System.Threading.EventWaitHandle> est créé. Le fait de spécifier un même nom plusieurs fois crée plusieurs objets qui représentent le même événement nommé.  
   
  Notez que les événements nommés doivent être utilisés avec prudence. En effet, étant donné qu'ils sont disponibles à l'échelle du système, un autre processus portant le même nom peut bloquer vos threads de manière inattendue. Du code malveillant exécuté sur le même ordinateur pourrait s'en servir pour une attaque par déni de service.  
   
  Utilisez la sécurité de contrôle d'accès pour protéger un objet <xref:System.Threading.EventWaitHandle> qui représente un événement nommé, de préférence à l’aide d’un constructeur qui spécifie un objet <xref:System.Security.AccessControl.EventWaitHandleSecurity>. Vous pouvez également appliquer la sécurité de contrôle d'accès à l'aide de la méthode <xref:System.Threading.EventWaitHandle.SetAccessControl%2A>. Sachez toutefois que cela crée une vulnérabilité entre le moment où le handle d'attente d'événement est créé et celui où il est protégé. La protection des événements à l’aide de la sécurité de contrôle d'accès empêche les attaques malveillantes, mais ne résout pas le problème des conflits de noms involontaires.  
   
 > [!NOTE]
->  Contrairement à la classe <xref:System.Threading.EventWaitHandle>, les classes dérivées <xref:System.Threading.AutoResetEvent> et <xref:System.Threading.ManualResetEvent> peuvent uniquement représenter des handles d'attente locaux. Elles ne peuvent pas représenter des événements système nommés.  
+> Contrairement à la classe <xref:System.Threading.EventWaitHandle>, les classes dérivées <xref:System.Threading.AutoResetEvent> et <xref:System.Threading.ManualResetEvent> peuvent uniquement représenter des handles d'attente locaux. Elles ne peuvent pas représenter des événements système nommés.  
   
 ## <a name="see-also"></a>Voir aussi
 

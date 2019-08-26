@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: e39324ee-72e5-42d4-a80d-bf3ee7fc6c59
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 73440f2ed689bdad56bb1f05025f826da9c409e2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8903d0443594885b3b0e8cca716eda8177c60cca
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64633321"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988801"
 ---
 # <a name="parsing-numeric-strings-in-net"></a>Analyse de chaînes numériques dans .NET
 Tous les types numériques disposent de deux méthodes d’analyse statiques, `Parse` et `TryParse`, que vous pouvez utiliser pour convertir la représentation sous forme de chaîne d’un nombre en type numérique. Ces méthodes vous permettent d’analyser les chaînes qui ont été générées à l’aide de chaînes de format documentées dans [Chaînes de format numériques standard](../../../docs/standard/base-types/standard-numeric-format-strings.md) et [Chaînes de format numériques personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md). Par défaut, les méthodes `Parse` et `TryParse` peuvent convertir correctement les chaînes qui contiennent uniquement des chiffres décimaux intégraux en valeurs entières. Ils peuvent convertir correctement les chaînes qui contiennent des chiffres décimaux intégraux et fractionnaires, des séparateurs de groupe et un séparateur décimal en valeurs à virgule flottante. La méthode `Parse` lève une exception si l’opération échoue, tandis que la méthode `TryParse` retourne `false`.  
@@ -46,7 +46,7 @@ Tous les types numériques disposent de deux méthodes d’analyse statiques, `P
  [!code-vb[Parsing.Numbers#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/parsing.numbers/vb/styles1.vb#2)]  
   
 > [!WARNING]
->  L’opération d’analyse utilise toujours les conventions de mise en forme d’une culture particulière. Si vous ne spécifiez pas de culture en passant un objet <xref:System.Globalization.CultureInfo> ou <xref:System.Globalization.NumberFormatInfo>, la culture associée au thread actuel est utilisée.  
+> L’opération d’analyse utilise toujours les conventions de mise en forme d’une culture particulière. Si vous ne spécifiez pas de culture en passant un objet <xref:System.Globalization.CultureInfo> ou <xref:System.Globalization.NumberFormatInfo>, la culture associée au thread actuel est utilisée.  
   
  Le tableau suivant répertorie les membres de l’énumération <xref:System.Globalization.NumberStyles> et décrit l’effet qu’ils ont sur l’opération d’analyse.  
   

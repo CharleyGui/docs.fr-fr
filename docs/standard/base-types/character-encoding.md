@@ -14,12 +14,12 @@ ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: ac4de843b3a134b840fc37e3c1d8327fe0010d79
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: 82b936b753dff4230be6162583a50524e8c5254b
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65960320"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69987179"
 ---
 # <a name="character-encoding-in-net"></a>Encodage de caractères dans .NET
 Les caractères sont des entités abstraites qui peuvent être représentées de nombreuses façons différentes. Un encodage de caractères est un système qui associe chaque caractère d'un jeu de caractères pris en charge à une valeur qui représente ce caractère. Par exemple, le code Morse est un encodage de caractères qui associe chaque caractère de l'alphabet latin à une séquence de points et de tirets qui conviennent pour la transmission sur des lignes télégraphiques. Un encodage de caractères pour les ordinateurs associe chaque caractère d'un jeu de caractères à une valeur numérique qui représente ce caractère. Un encodage de caractères a deux composants distincts :  
@@ -31,7 +31,7 @@ Les caractères sont des entités abstraites qui peuvent être représentées de
  L'encodage de caractères décrit les règles selon lesquelles un encodeur et un décodeur fonctionnent. Par exemple, la classe <xref:System.Text.UTF8Encoding> décrit les règles d'encodage et de décodage d'UTF-8, qui utilise de un à quatre octets pour représenter un caractère Unicode. L'encodage et le décodage peuvent également inclure une validation. Par exemple, la classe <xref:System.Text.UnicodeEncoding> vérifie tous les substituts afin de vérifier qu'ils constituent des paires de substitution valide. (Une paire de substitution se compose d'un caractère avec un point de code allant de U+D800 à U+DBFF, suivi d'un caractère avec un point de code allant de U+DC00 à U+DFFF.)  Une stratégie de secours détermine comment un encodeur traite les caractères non valides ou comment un décodeur gère les octets non valides.  
   
 > [!WARNING]
->  Les classes d’encodage .NET permettent de stocker et de convertir les données caractères. Elles ne doivent pas utilisées pour stocker des données binaires sous forme de chaîne. En fonction de l'encodage utilisé, la conversion de données binaires en un format chaîne avec les classes d'encodage peut entraîner un comportement inattendu et produire des données incorrectes ou endommagées. Pour convertir des données binaires en chaîne, utilisez la méthode <xref:System.Convert.ToBase64String%2A?displayProperty=nameWithType> .  
+> Les classes d’encodage .NET permettent de stocker et de convertir les données caractères. Elles ne doivent pas utilisées pour stocker des données binaires sous forme de chaîne. En fonction de l'encodage utilisé, la conversion de données binaires en un format chaîne avec les classes d'encodage peut entraîner un comportement inattendu et produire des données incorrectes ou endommagées. Pour convertir des données binaires en chaîne, utilisez la méthode <xref:System.Convert.ToBase64String%2A?displayProperty=nameWithType> .  
   
  .NET utilise l’encodage UTF-16 (représenté par la classe <xref:System.Text.UnicodeEncoding>) pour représenter des caractères et des chaînes. Les applications qui ciblent le common language runtime utilisent des encodeurs pour mapper les représentations de caractères Unicode prises en charge par le common language runtime à d'autres schémas de codage. Elles utilisent des décodeurs pour mapper les caractères des encodages non-Unicode à Unicode.  
   
@@ -60,7 +60,7 @@ Les caractères sont des entités abstraites qui peuvent être représentées de
 - Appelez la méthode <xref:System.Text.Encoding.GetEncoding%2A?displayProperty=nameWithType>, qui retourne les encodages standard, de page de codes ou DBCS disponibles dans .NET. Les surcharges vous permettent de spécifier un objet de secours pour l'encodeur et pour le décodeur.  
   
 > [!NOTE]
->  La norme Unicode affecte un point de code (un nombre) et un nom à chaque caractère de chaque jeu de caractères pris en charge. Par exemple, le caractère "A" est représenté par le point de code U+0041 et par le nom "LETTRE MAJUSCULE LATINE A". Les encodages UTF (Unicode Transformation Format) définissent des moyens d'encoder ce point de code en une séquence d'un ou plusieurs octets. Un schéma d'encodage Unicode simplifie le développement d'applications mondialisées, car il permet la représentation avec un encodage unique des caractères provenant de n'importe quel jeu de caractères. Les développeurs d'applications ne doivent plus faire le suivi du schéma d'encodage qui a été utilisé pour produire des caractères pour une langue ou un système d'écriture spécifique, et les données peuvent être partagées entre des systèmes à une échelle internationale sans risque d'endommagement.  
+> La norme Unicode affecte un point de code (un nombre) et un nom à chaque caractère de chaque jeu de caractères pris en charge. Par exemple, le caractère "A" est représenté par le point de code U+0041 et par le nom "LETTRE MAJUSCULE LATINE A". Les encodages UTF (Unicode Transformation Format) définissent des moyens d'encoder ce point de code en une séquence d'un ou plusieurs octets. Un schéma d'encodage Unicode simplifie le développement d'applications mondialisées, car il permet la représentation avec un encodage unique des caractères provenant de n'importe quel jeu de caractères. Les développeurs d'applications ne doivent plus faire le suivi du schéma d'encodage qui a été utilisé pour produire des caractères pour une langue ou un système d'écriture spécifique, et les données peuvent être partagées entre des systèmes à une échelle internationale sans risque d'endommagement.  
 >   
 >  .NET prend en charge trois encodages définis par la norme Unicode : UTF-8, UTF-16 et UTF-32. Pour plus d’informations, consultez la norme Unicode dans la [page d’accueil Unicode](https://www.unicode.org/).  
   
@@ -137,19 +137,19 @@ Les caractères sont des entités abstraites qui peuvent être représentées de
 - Exception Fallback  
   
 > [!IMPORTANT]
->  Les problèmes les plus courants des opérations d'encodage se produisent quand un caractère Unicode ne peut pas être mappé à un encodage de page de codes particulier. Les problèmes les plus courants des opérations de décodage se produisent quand des séquences d'octets non valides ne peut pas être traduites en caractères Unicode valides. Pour ces raisons, vous devez savoir quelle stratégie de secours est utilisée par un objet de codage particulier. Chaque fois que c'est possible, vous devez spécifier la stratégie de secours utilisée par un objet d'encodage quand vous instanciez l'objet.  
+> Les problèmes les plus courants des opérations d'encodage se produisent quand un caractère Unicode ne peut pas être mappé à un encodage de page de codes particulier. Les problèmes les plus courants des opérations de décodage se produisent quand des séquences d'octets non valides ne peut pas être traduites en caractères Unicode valides. Pour ces raisons, vous devez savoir quelle stratégie de secours est utilisée par un objet de codage particulier. Chaque fois que c'est possible, vous devez spécifier la stratégie de secours utilisée par un objet d'encodage quand vous instanciez l'objet.  
   
 <a name="BestFit"></a>   
 ### <a name="best-fit-fallback"></a>Best-Fit Fallback  
  Quand un caractère n'a pas de correspondance exacte dans l'encodage cible, l'encodeur peut essayer de le mapper à un caractère similaire. (La stratégie de secours la mieux adaptée est principalement un codage plutôt qu'un problème de décodage. Il existe très peu de pages de codes contenant des caractères qui ne peuvent pas être mappés à Unicode.) La stratégie de secours la mieux adaptée est la stratégie par défaut des encodages de pages de codes et de jeux de caractères codés sur deux octets qui sont récupérés par les surcharges de <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> et de <xref:System.Text.Encoding.GetEncoding%28System.String%29?displayProperty=nameWithType>.  
   
 > [!NOTE]
->  En théorie, les classes d'encodage Unicode fournies dans .NET (<xref:System.Text.UTF8Encoding>, <xref:System.Text.UnicodeEncoding> et <xref:System.Text.UTF32Encoding>) prennent en charge tous les caractères de tous les jeux de caractères : elles peuvent donc être utilisées pour éliminer les problèmes de la stratégie de secours la mieux adaptée.  
+> En théorie, les classes d'encodage Unicode fournies dans .NET (<xref:System.Text.UTF8Encoding>, <xref:System.Text.UnicodeEncoding> et <xref:System.Text.UTF32Encoding>) prennent en charge tous les caractères de tous les jeux de caractères : elles peuvent donc être utilisées pour éliminer les problèmes de la stratégie de secours la mieux adaptée.  
   
  Les stratégies de secours les mieux adaptées varient pour les différentes pages de codes. Par exemple, pour certaines pages de codes, les caractères latins à pleine chasse sont mappés aux caractères latins à demi-chasse plus courants. Pour d'autres pages de codes, ce mappage n'est pas effectué. Même avec une stratégie la plus adaptée appliquée de façon agressive, il n'existe pas d'ajustement possible pour certains caractères dans certains encodages. Par exemple, un idéogramme chinois n'a pas de mappage acceptable avec la page de codes 1252. Dans ce cas, une chaîne de remplacement est utilisée. Par défaut, cette chaîne est simplement un POINT D'INTERROGATION (U+003F).  
   
 > [!NOTE]
->  Les stratégies de secours les mieux adaptées ne sont pas documentées en détail. Toutefois, plusieurs pages de codes sont documentées sur le site Web du [consortium Unicode](https://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WindowsBestFit/). Consultez le fichier **readme.txt** de ce dossier pour obtenir une description sur la manière d’interpréter les fichiers de mappage.
+> Les stratégies de secours les mieux adaptées ne sont pas documentées en détail. Toutefois, plusieurs pages de codes sont documentées sur le site Web du [consortium Unicode](https://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WindowsBestFit/). Consultez le fichier **readme.txt** de ce dossier pour obtenir une description sur la manière d’interpréter les fichiers de mappage.
   
  L'exemple suivant utilise la page de codes 1252 (la page de codes Windows pour les langues d'Europe occidentale) pour illustrer le mappage le mieux adapté et ses inconvénients. La méthode <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> est utilisée pour récupérer un objet d'encodage pour la page de codes 1252. Par défaut, elle utilise un mappage le mieux adapté pour les caractères Unicode qu'elle ne prend pas en charge. L'exemple instancie une chaîne contenant trois caractères non-ASCII, LETTRE MAJUSCULE LATINE S CERCLÉE (U+24C8), EXPOSANT CINQ (U+2075) et INFINI (U+221E), séparés par des espaces. Comme le montre la sortie de l'exemple, quand la chaîne est encodée, les trois caractères d'origine autres qu'un espace sont remplacés par POINT D'INTERROGATION (U+003F), CHIFFRE CINQ (U+0035) et CHIFFRE HUIT (U+0038). CHIFFRE HUIT est un substitut particulièrement médiocre pour le caractère INFINI non pris en charge, et POINT D'INTERROGATION indique qu'aucun mappage n'est disponible pour le caractère d'origine.  
   
@@ -159,7 +159,7 @@ Les caractères sont des entités abstraites qui peuvent être représentées de
  Le mappage le mieux adapté est le comportement par défaut pour un objet <xref:System.Text.Encoding> qui encode des données Unicode en données de page de codes, et il existe des applications héritées qui s'appuient sur ce comportement. Cependant, la plupart des nouvelles applications doivent éviter ce comportement le mieux adapté pour des raisons de sécurité. Par exemple, les applications ne doivent pas établir un nom de domaine via un encodage le mieux adapté.  
   
 > [!NOTE]
->  Vous pouvez également implémenter un mappage de stratégie de secours la mieux adaptée personnalisé pour un encodage. Pour plus d’informations, consultez la section [Implementing a Custom Fallback Strategy](../../../docs/standard/base-types/character-encoding.md#Custom) .  
+> Vous pouvez également implémenter un mappage de stratégie de secours la mieux adaptée personnalisé pour un encodage. Pour plus d’informations, consultez la section [Implementing a Custom Fallback Strategy](../../../docs/standard/base-types/character-encoding.md#Custom) .  
   
  Si la stratégie de secours la mieux adaptée est la stratégie par défaut pour un objet d'encodage, vous pouvez choisir une autre stratégie de secours quand vous récupérez un objet <xref:System.Text.Encoding> , en appelant la surcharge <xref:System.Text.Encoding.GetEncoding%28System.Int32%2CSystem.Text.EncoderFallback%2CSystem.Text.DecoderFallback%29?displayProperty=nameWithType> ou <xref:System.Text.Encoding.GetEncoding%28System.String%2CSystem.Text.EncoderFallback%2CSystem.Text.DecoderFallback%29?displayProperty=nameWithType> . La section suivante contient un exemple qui remplace chaque caractère qui ne peut pas être mappé à la page de codes 1252 par un astérisque (*).  
   
@@ -179,7 +179,7 @@ Les caractères sont des entités abstraites qui peuvent être représentées de
  [!code-vb[Conceptual.Encoding#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.encoding/vb/bestfit1a.vb#3)]  
   
 > [!NOTE]
->  Vous pouvez également implémenter une classe de remplacement pour un encodage. Pour plus d’informations, consultez la section [Implementing a Custom Fallback Strategy](../../../docs/standard/base-types/character-encoding.md#Custom) .  
+> Vous pouvez également implémenter une classe de remplacement pour un encodage. Pour plus d’informations, consultez la section [Implementing a Custom Fallback Strategy](../../../docs/standard/base-types/character-encoding.md#Custom) .  
   
  En plus du POINT D'INTERROGATION (U+003F), le CARACTÈRE DE REMPLACEMENT Unicode (U+FFFD) est couramment utilisé comme chaîne de remplacement, en particulier lors du décodage de séquences d'octets qui ne peuvent pas être converties en caractères Unicode. Vous êtes cependant libre de choisir n'importe quelle chaîne de remplacement, qui peut contenir plusieurs caractères.  
   
@@ -191,7 +191,7 @@ Les caractères sont des entités abstraites qui peuvent être représentées de
  [!code-vb[Conceptual.Encoding#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.encoding/vb/exceptionascii.vb#4)]  
   
 > [!NOTE]
->  Vous pouvez également implémenter un gestionnaire d'exceptions personnalisé pour une opération d'encodage. Pour plus d’informations, consultez la section [Implementing a Custom Fallback Strategy](../../../docs/standard/base-types/character-encoding.md#Custom) .  
+> Vous pouvez également implémenter un gestionnaire d'exceptions personnalisé pour une opération d'encodage. Pour plus d’informations, consultez la section [Implementing a Custom Fallback Strategy](../../../docs/standard/base-types/character-encoding.md#Custom) .  
   
  Les objets <xref:System.Text.EncoderFallbackException> et <xref:System.Text.DecoderFallbackException> fournissent les informations suivantes sur la condition qui a provoqué l'exception :  
   

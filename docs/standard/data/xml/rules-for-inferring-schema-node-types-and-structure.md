@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: d74ce896-717d-4871-8fd9-b070e2f53cb0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1c2f28490203bcc4853bc6736ce7089f308bc275
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 6c68cd98b496143e6b964383f8fa0c3af5d2c87d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59338707"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69939639"
 ---
 # <a name="rules-for-inferring-schema-node-types-and-structure"></a>Règles pour l'inférence de types et de structure de nœud de schéma
 Cette rubrique décrit comment le processus d'inférence de schéma convertit les types de nœuds d'un document XML en une structure en langage XSD (XML Schema Definition).  
@@ -35,7 +35,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
 8. élément avec une séquence de choix d'éléments enfants et d'attributs.  
   
 > [!NOTE]
->  Toutes les déclarations `complexType` sont déduites comme des types anonymes. Le seul élément global déduit est l'élément racine ; tous les autres éléments sont locaux.  
+> Toutes les déclarations `complexType` sont déduites comme des types anonymes. Le seul élément global déduit est l'élément racine ; tous les autres éléments sont locaux.  
   
  Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   
@@ -79,7 +79,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
  Le tableau suivant présente l'entrée XML dans la méthode <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> et le schéma XML généré. Les éléments en gras montrent le schéma déduit pour un élément avec une séquence d'éléments enfants.  
   
 > [!NOTE]
->  Même si un élément n'a qu'un seul élément enfant, il est traité comme une séquence.  
+> Même si un élément n'a qu'un seul élément enfant, il est traité comme une séquence.  
   
  Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   
@@ -91,7 +91,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
  Le tableau suivant présente l'entrée XML dans la méthode <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> et le schéma XML généré. Les éléments en gras montrent le schéma déduit pour un élément avec une séquence d'éléments enfants et d'attributs.  
   
 > [!NOTE]
->  Même si un élément n'a qu'un seul élément enfant, il est traité comme une séquence.  
+> Même si un élément n'a qu'un seul élément enfant, il est traité comme une séquence.  
   
  Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   
@@ -103,7 +103,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
  Le tableau suivant présente l'entrée XML dans la méthode <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> et le schéma XML généré. Les éléments en gras montrent le schéma déduit pour un élément avec une séquence et un choix d'éléments enfants.  
   
 > [!NOTE]
->  L'attribut `maxOccurs` de l'élément `xs:choice` a la valeur `"unbounded"` dans le schéma déduit.  
+> L'attribut `maxOccurs` de l'élément `xs:choice` a la valeur `"unbounded"` dans le schéma déduit.  
   
  Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   
@@ -115,7 +115,7 @@ Cette rubrique décrit comment le processus d'inférence de schéma convertit le
  Le tableau suivant présente l'entrée XML dans la méthode <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> et le schéma XML généré. Les éléments en gras montrent le schéma déduit pour un élément avec une séquence et un choix d'éléments enfants et d'attributs.  
   
 > [!NOTE]
->  L'attribut `maxOccurs` de l'élément `xs:choice` a la valeur `"unbounded"` dans le schéma déduit.  
+> L'attribut `maxOccurs` de l'élément `xs:choice` a la valeur `"unbounded"` dans le schéma déduit.  
   
  Pour plus d'informations sur le processus d'inférence de schéma, consultez [Inférence de schémas à partir de documents XML](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md).  
   

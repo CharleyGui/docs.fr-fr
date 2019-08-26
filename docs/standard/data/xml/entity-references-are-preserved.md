@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 000a6cae-5972-40d6-bd6c-a9b7d9649b3c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b1c48e42e55025aff0ce1a24a3ef45ddf8005eab
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: e512f2077c2e6b9feba5024c4eabc2568357ecab
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44204315"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69965913"
 ---
 # <a name="entity-references-are-preserved"></a>Conservation des références d'entité
 Si une référence d’entité n’est pas développée, mais préservée, le DOM (Document Object Model) XML crée un nœud **XmlEntityReference** quand il rencontre une référence d’entité.  
@@ -30,7 +30,7 @@ Structure d’arborescence avec références d’entité préservées
  Les nœuds enfants de **XmlEntityReference** sont des copies de tous les nœuds enfants créés à partir du nœud **XmlEntity** quand la déclaration d'entité a été rencontrée.  
   
 > [!NOTE]
->  Les nœuds copiés à partir de **XmlEntity** ne constituent pas toujours des copies exactes une fois placés sous le nœud de référence d'entité. Il peut y avoir des espaces de noms qui sont dans la portée au niveau du nœud de référence d'entité et qui ont une incidence sur la configuration finale des nœuds enfants.  
+> Les nœuds copiés à partir de **XmlEntity** ne constituent pas toujours des copies exactes une fois placés sous le nœud de référence d'entité. Il peut y avoir des espaces de noms qui sont dans la portée au niveau du nœud de référence d'entité et qui ont une incidence sur la configuration finale des nœuds enfants.  
   
  Par défaut, des entités générales telles que `&abc;` sont préservées et les nœuds **XmlEntityReference** sont toujours créés.  
   

@@ -10,20 +10,20 @@ helpviewer_keywords:
 ms.assetid: e52ff26c-c5d3-4fab-9fec-c937fb387963
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c67b23da6742af3cb65da6da49dbab982a0248bb
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 705b6bc364e2ecf00c3629814228157c90017a8b
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54694618"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988442"
 ---
 # <a name="how-to-specify-the-execution-mode-in-plinq"></a>Procédure : spécifier le mode d’exécution avec PLINQ
 Cet exemple montre comment forcer PLINQ à contourner ses paramètres heuristiques et à paralléliser une requête quelle que soit sa forme.  
   
 > [!WARNING]
->  Cet exemple, destiné à illustrer l'utilisation, peut ne pas s'exécuter plus rapidement que la requête LINQ to Objects séquentielle équivalente. Pour plus d’informations sur l’accélération, consultez [Fonctionnement de l’accélération dans PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
+> Cet exemple, destiné à illustrer l'utilisation, peut ne pas s'exécuter plus rapidement que la requête LINQ to Objects séquentielle équivalente. Pour plus d’informations sur l’accélération, consultez [Fonctionnement de l’accélération dans PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  [!code-csharp[PLINQ#22](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#22)]
  [!code-vb[PLINQ#22](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinqsnippets1.vb#22)]  
   

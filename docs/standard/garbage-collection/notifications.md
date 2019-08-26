@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: e12d8e74-31e3-4035-a87d-f3e66f0a9b89
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cc4850ff87d9ea827e86a16ee6b3a6953c1e3552
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: edf519621c2113843b89d96948243e9c095d2a57
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64622709"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988861"
 ---
 # <a name="garbage-collection-notifications"></a>Notifications de garbage collection
 Il existe des cas où une opération garbage collection complète (c’est-à-dire, une opération garbage collection de génération 2) par le CLR peut avoir des effets néfastes sur les performances. Cela peut être particulièrement problématique avec les serveurs qui traitent de gros volumes de requêtes. Dans ce cas, un garbage collection long peut entraîner une expiration de la requête. Pour empêcher une collection complète durant une période critique, vous pouvez être informé qu’un garbage collection complet est sur le point de se produire et agir en conséquence pour rediriger la charge de travail vers une autre instance de serveur. Vous pouvez également déclencher vous-même une collection, sous réserve que l’instance de serveur actuelle n’a pas besoin de traiter de requêtes.  
@@ -24,7 +24,7 @@ Il existe des cas où une opération garbage collection complète (c’est-à-di
  La méthode <xref:System.GC.RegisterForFullGCNotification%2A> permet de déclencher une notification lorsque le runtime détecte qu’un garbage collection complet est sur le point de se produire. Cette notification est divisée en deux parties : lorsqu’un garbage collection complet est imminent et lorsque le garbage collection complet est terminé.  
   
 > [!WARNING]
->  Seul le blocage des garbage collections génère des notifications. Lorsque l’élément de configuration [\<gcConcurrent>](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) est activé, les garbage collections en arrière-plan ne génèrent pas de notifications.  
+> Seul le blocage des garbage collections génère des notifications. Lorsque l’élément de configuration [\<gcConcurrent>](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) est activé, les garbage collections en arrière-plan ne génèrent pas de notifications.  
   
  Pour déterminer quand une notification a été levée, utilisez les méthodes <xref:System.GC.WaitForFullGCApproach%2A> et <xref:System.GC.WaitForFullGCComplete%2A>. En général, vous utilisez ces méthodes dans une boucle `while` pour obtenir en permanence une énumération <xref:System.GCNotificationStatus> qui indique l’état de la notification. Si cette valeur est égale à <xref:System.GCNotificationStatus.Succeeded>, vous pouvez procéder comme suit :  
   
@@ -63,7 +63,7 @@ Il existe des cas où une opération garbage collection complète (c’est-à-di
   
  Si vous spécifiez une valeur trop faible, le runtime peut déclencher la collection avant que vous n’ayez eu le temps d’être averti.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
   
 ### <a name="description"></a>Description  
  Dans l’exemple suivant, un groupe de serveurs traitent des requêtes web entrantes. Pour simuler la charge de travail de traitement des requêtes, des tableaux d’octets sont ajoutés à une collection <xref:System.Collections.Generic.List%601>. Chaque serveur s’inscrit pour une notification de garbage collection, puis démarre un thread sur la méthode utilisateur `WaitForFullGCProc` afin de surveiller en permanence l’énumération <xref:System.GCNotificationStatus> retournée par les méthodes <xref:System.GC.WaitForFullGCApproach%2A> et <xref:System.GC.WaitForFullGCComplete%2A>.  
