@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - access modifiers [C#]
 ms.assetid: 61c3fa51-c00f-48cb-9b49-c805dedd62d7
-ms.openlocfilehash: 587f1b03292db643d721e599ea93c39ba188117d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5568d79c4a13b7b0db5a46bb4ebb2168ea66a2c9
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593008"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606095"
 ---
 # <a name="access-modifiers-c-reference"></a>Modificateurs d’accès (référence C#)
 Les modificateurs d’accès sont des mots clés utilisés pour spécifier l’accessibilité déclarée d’un membre ou d’un type. Cette section présente les quatre modificateurs d’accès :  
@@ -36,17 +36,17 @@ Les modificateurs d’accès sont des mots clés utilisés pour spécifier l’
   
  Cette section introduit également les éléments suivants :  
   
-- [Niveaux d’accessibilité](../../../csharp/language-reference/keywords/accessibility-levels.md) : utilisation des quatre modificateurs d’accès pour déclarer six niveaux d’accessibilité.  
+- [Niveaux d’accessibilité](./accessibility-levels.md) : utilisation des quatre modificateurs d’accès pour déclarer six niveaux d’accessibilité.  
   
-- [Domaine d’accessibilité](../../../csharp/language-reference/keywords/accessibility-domain.md) : spécifie où, dans les sections du programme, un membre peut être référencé.  
+- [Domaine d’accessibilité](./accessibility-domain.md) : spécifie où, dans les sections du programme, un membre peut être référencé.  
   
-- [Limitations sur l’utilisation des niveaux d’accessibilité](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md) : résumé des restrictions sur l’utilisation des niveaux d’accessibilité déclarés.  
+- [Limitations sur l’utilisation des niveaux d’accessibilité](./restrictions-on-using-accessibility-levels.md) : résumé des restrictions sur l’utilisation des niveaux d’accessibilité déclarés.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../../csharp/language-reference/index.md)
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
-- [Modificateurs d’accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)
-- [Mots clés d’accès](../../../csharp/language-reference/keywords/access-keywords.md)
-- [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Mots clés C#](./index.md)
+- [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md)
+- [Mots clés d’accès](./access-keywords.md)
+- [Modificateurs](./modifiers.md)

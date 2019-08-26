@@ -6,12 +6,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: bceb6283e202dfa699115edd6e0a1a040095783d
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.openlocfilehash: 7319d424b84d5edd41fc255e3aea763da55961a9
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58028703"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606729"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>Options du compilateur C# par catégorie
 
@@ -102,7 +102,7 @@ Les options du compilateur suivantes sont triées par catégorie. Pour en obteni
 |[-nologo](nologo-compiler-option.md)|Supprime les informations de bannière du compilateur.|
 |[-recurse](recurse-compiler-option.md)|Recherche des fichiers sources à compiler dans les sous-répertoires.|
 |[-subsystemversion](subsystemversion-compiler-option.md)|Spécifie la version minimale du sous-système utilisable par le fichier exécutable.|
-|[unsafe](unsafe-compiler-option.md)|Active la compilation du code qui utilise le mot clé [unsafe](../../../csharp/language-reference/keywords/unsafe.md).|
+|[unsafe](unsafe-compiler-option.md)|Active la compilation du code qui utilise le mot clé [unsafe](../keywords/unsafe.md).|
 |[-utf8output](utf8output-compiler-option.md)|Affiche les résultats de la compilation au format d'encodage UTF-8.|
 |-parallel[+&#124;-]|Indique s'il faut utiliser la build simultanée (+).|
 |-checksumalgorithm:\<alg>|Spécifiez l'algorithme de calcul de la somme de contrôle du fichier source stockée dans le fichier PDB.  Les valeurs prises en charge sont : SHA1 (par défaut) ou SHA256.<br>En raison de problèmes de collision avec SHA-1, Microsoft recommande SHA-256.|

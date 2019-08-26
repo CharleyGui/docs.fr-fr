@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: b81202b8-d91d-4b23-9c53-4a112f74a44a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a4b0f66d692a60590e4f301f1d31ff379078e2c4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4b947ea2bfabe1c3fa9afb43cb5ecc41ab92be89
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647248"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69929904"
 ---
 # <a name="storeadmexe-isolated-storage-tool"></a>Storeadm.exe (outil Isolated Storage)
 L'outil Isolated Storage (Stockage isolé) répertorie ou supprime tous les magasins existants de l'utilisateur en cours.  
@@ -56,12 +56,12 @@ storeadm [/list][/machine][/remove][/roaming][/quiet]
 - Le magasin de l'ordinateur est commun à tous les utilisateurs sur un ordinateur et est stocké sous un répertoire commun de cet ordinateur.  
   
     > [!NOTE]
-    >  Le magasin d'ordinateur est une nouveauté du .NET Framework version 2.0.  
+    > Le magasin d'ordinateur est une nouveauté du .NET Framework version 2.0.  
   
  Que l'itinérance soit ou non réellement activée pour l'utilisateur n'affecte pas l'administration de Storeadm.exe. L'exécution de l'outil sans option applique toutes les actions au magasin local. L’exécution de l’outil avec l’option **/roaming** affecte toutes les actions au magasin qui est capable d’effectuer l’itinérance. L’exécution de l’outil avec l’option **/machine** affecte toutes les actions au magasin de l’ordinateur.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Outils](../../../docs/framework/tools/index.md)
-- [Stockage isolé](../../../docs/standard/io/isolated-storage.md)
+- [Stockage isolé](../../standard/io/isolated-storage.md)
 - [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

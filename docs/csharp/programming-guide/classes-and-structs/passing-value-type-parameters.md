@@ -6,15 +6,15 @@ helpviewer_keywords:
 - method parameters [C#], value types
 - parameters [C#], value
 ms.assetid: 193ab86f-5f9b-4359-ac29-7cdf8afad3a6
-ms.openlocfilehash: ba693948bce91fa80f0c6cd73f2d5fc537e5f900
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: dfd2c39eff44b431ec10d85f855fb015a2391f29
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423751"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596240"
 ---
 # <a name="passing-value-type-parameters-c-programming-guide"></a>Passage de paramètres de type valeur (Guide de programmation C#)
-Une variable de [type valeur](../../../csharp/language-reference/keywords/value-types.md) contient ses données directement, par opposition à une variable de [type référence](../../../csharp/language-reference/keywords/reference-types.md), qui contient une référence à ses données. Passer une variable de type valeur à une méthode par valeur signifie passer une copie de la variable à la méthode. Les modifications du paramètre qui interviennent à l’intérieur de la méthode n’ont aucune incidence sur les données d’origine stockées dans la variable d’argument. Si vous souhaitez que la méthode appelée change la valeur de l’argument, vous devez la passer par référence, à l’aide du mot clé [ref](../../../csharp/language-reference/keywords/ref.md) ou [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md). Vous pouvez également utiliser le mot clé [in](../../../csharp/language-reference/keywords/in-parameter-modifier.md) pour passer un paramètre de valeur par référence et éviter la copie tout en garantissant que la valeur n’est pas changée. Pour des raisons de simplicité, les exemples suivants utilisent `ref`.  
+Une variable de [type valeur](../../language-reference/keywords/value-types.md) contient ses données directement, par opposition à une variable de [type référence](../../language-reference/keywords/reference-types.md), qui contient une référence à ses données. Passer une variable de type valeur à une méthode par valeur signifie passer une copie de la variable à la méthode. Les modifications du paramètre qui interviennent à l’intérieur de la méthode n’ont aucune incidence sur les données d’origine stockées dans la variable d’argument. Si vous souhaitez que la méthode appelée change la valeur de l’argument, vous devez la passer par référence, à l’aide du mot clé [ref](../../language-reference/keywords/ref.md) ou [out](../../language-reference/keywords/out-parameter-modifier.md). Vous pouvez également utiliser le mot clé [in](../../language-reference/keywords/in-parameter-modifier.md) pour passer un paramètre de valeur par référence et éviter la copie tout en garantissant que la valeur n’est pas changée. Pour des raisons de simplicité, les exemples suivants utilisent `ref`.  
   
 ## <a name="passing-value-types-by-value"></a>Passage de types valeur par valeur  
  L’exemple suivant illustre le passage de paramètres de type valeur par valeur. La variable `n` est passée par valeur à la méthode `SquareIt`. Les modifications qui interviennent à l’intérieur de la méthode n’ont aucune incidence sur la valeur d’origine de la variable.  
@@ -28,7 +28,7 @@ Une variable de [type valeur](../../../csharp/language-reference/keywords/value-
   
  [!code-csharp[csProgGuideParameters#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideParameters/CS/Parameters.cs#4)]  
   
- Dans cet exemple, ce n’est pas la valeur de `n` qui est passée, mais plutôt une référence à `n`. Le paramètre `x` n’est pas un [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md) ; il s’agit d’une référence à un `int`, dans le cas présent une référence à `n`. Ainsi, quand `x` est mis au carré à l’intérieur de la méthode, ce qui est réellement mis au carré est ce à quoi `x` fait référence, c’est-à-dire `n`.  
+ Dans cet exemple, ce n’est pas la valeur de `n` qui est passée, mais plutôt une référence à `n`. Le paramètre `x` n’est pas un [int](../../language-reference/builtin-types/integral-numeric-types.md) ; il s’agit d’une référence à un `int`, dans le cas présent une référence à `n`. Ainsi, quand `x` est mis au carré à l’intérieur de la méthode, ce qui est réellement mis au carré est ce à quoi `x` fait référence, c’est-à-dire `n`.  
   
 ## <a name="swapping-value-types"></a>Permutation de types valeur  
  L’un des exemples courants de changement de valeurs d’arguments est une méthode de permutation, où vous passez deux variables à la méthode et celle-ci permute leur contenu. Vous devez passer les arguments à la méthode de permutation par référence. Sinon, vous permutez des copies locales des paramètres à l’intérieur de la méthode, et aucune modification n’intervient dans la méthode d’appel. L’exemple suivant permute des valeurs d’entier.  
@@ -41,6 +41,6 @@ Une variable de [type valeur](../../../csharp/language-reference/keywords/value-
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Passage de paramètres](../../../csharp/programming-guide/classes-and-structs/passing-parameters.md)
-- [Passage de paramètres de type référence](../../../csharp/programming-guide/classes-and-structs/passing-reference-type-parameters.md)
+- [Guide de programmation C#](../index.md)
+- [Passage de paramètres](./passing-parameters.md)
+- [Passage de paramètres de type référence](./passing-reference-type-parameters.md)

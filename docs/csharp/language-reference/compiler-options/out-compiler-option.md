@@ -8,12 +8,12 @@ helpviewer_keywords:
 - out compiler option [C#]
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
-ms.openlocfilehash: 0cb0b78396731a9b8e127430cd06a9e71812d4fd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 51c66d6bc2064d8051415de2ac083da478355a99
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593034"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602595"
 ---
 # <a name="-out-c-compiler-options"></a>-out (Options du compilateur C#)
 L’option **-out** spécifie le nom du fichier de sortie.  
@@ -57,7 +57,7 @@ L’option **-out** spécifie le nom du fichier de sortie.
   
      Pour définir cette option de compilateur par programmation : <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> est une propriété en lecture seule, qui est déterminée par une combinaison du type de projet (exe, bibliothèque, etc.) et le nom de l’assembly. Il est nécessaire de modifier l’une de ces propriétés (ou les deux) pour définir le nom du fichier de sortie.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Compilez `t.cs` et créez le fichier de sortie `t.exe`, puis générez `t2.cs` et créez le fichier de sortie de module `mymodule.netmodule` :  
   
 ```console  
@@ -66,6 +66,6 @@ csc t.cs -out:mymodule.netmodule -target:module t2.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Options du compilateur C#](./index.md)
 - [Assemblys friend](../../../standard/assembly/friend-assemblies.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

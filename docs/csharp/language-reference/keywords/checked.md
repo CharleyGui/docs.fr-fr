@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - checked keyword [C#]
 ms.assetid: 718a1194-988d-48a3-b089-d6ee8bd1608d
-ms.openlocfilehash: 5ce9291fd047dfa9c69048887ccbd878819f2de8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 69bd8cc95012533a6be279b04dc883a56f6f78ea
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54533129"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69605911"
 ---
 # <a name="checked-c-reference"></a>checked (référence C#)
 
@@ -29,9 +29,9 @@ Le contrôle de dépassement de capacité peut être activé par les options du 
 
 [!code-csharp[csrefKeywordsChecked#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsChecked/CS/csrefKeywordsChecked.cs#4)]
 
-Vous pouvez utiliser le mot clé [unchecked](../../../csharp/language-reference/keywords/unchecked.md) pour empêcher la vérification du dépassement de capacité.
+Vous pouvez utiliser le mot clé [unchecked](./unchecked.md) pour empêcher la vérification du dépassement de capacité.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Cet exemple montre comment utiliser `checked` pour activer la vérification du dépassement de capacité au moment de l’exécution.
 
@@ -43,8 +43,8 @@ Cet exemple montre comment utiliser `checked` pour activer la vérification du d
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../../csharp/language-reference/index.md)
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
-- [Checked et unchecked](../../../csharp/language-reference/keywords/checked-and-unchecked.md)
-- [unchecked](../../../csharp/language-reference/keywords/unchecked.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Mots clés C#](./index.md)
+- [Checked et unchecked](./checked-and-unchecked.md)
+- [unchecked](./unchecked.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - access modifiers [C#], accessibility levels
 - accessibility levels
 ms.assetid: dc083921-0073-413e-8936-a613e8bb7df4
-ms.openlocfilehash: da49c6f0b44ab0eefbd338963a744a11502f75da
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 2d6605a305e5003e19f4fe1dd260746302691215
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59130466"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602389"
 ---
 # <a name="accessibility-levels-c-reference"></a>Niveaux d’accessibilité (référence C#)
 
@@ -43,21 +43,21 @@ Utilisez les modificateurs d’accès `public`, `protected`, `internal` ou `priv
 |`interface`|`public`|Aucun.|  
 |`struct`|`private`|`public`<br /><br /> `internal`<br /><br /> `private`|  
   
- L’accessibilité d’un type imbriqué dépend de son [domaine d’accessibilité](../../../csharp/language-reference/keywords/accessibility-domain.md), qui est déterminé à la fois par l’accessibilité déclarée du membre et par le domaine d’accessibilité du type conteneur immédiat. Toutefois, le domaine d'accessibilité d'un type imbriqué ne peut pas dépasser celui du type conteneur.  
+ L’accessibilité d’un type imbriqué dépend de son [domaine d’accessibilité](./accessibility-domain.md), qui est déterminé à la fois par l’accessibilité déclarée du membre et par le domaine d’accessibilité du type conteneur immédiat. Toutefois, le domaine d'accessibilité d'un type imbriqué ne peut pas dépasser celui du type conteneur.  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../../csharp/language-reference/index.md)
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
-- [Modificateurs d’accès](../../../csharp/language-reference/keywords/access-modifiers.md)
-- [Domaine d’accessibilité](../../../csharp/language-reference/keywords/accessibility-domain.md)
-- [Limitations sur l’utilisation des niveaux d’accessibilité](../../../csharp/language-reference/keywords/restrictions-on-using-accessibility-levels.md)
-- [Modificateurs d’accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)
-- [public](../../../csharp/language-reference/keywords/public.md)
-- [private](../../../csharp/language-reference/keywords/private.md)
-- [protected](../../../csharp/language-reference/keywords/protected.md)
-- [internal](../../../csharp/language-reference/keywords/internal.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Mots clés C#](./index.md)
+- [Modificateurs d’accès](./access-modifiers.md)
+- [Domaine d’accessibilité](./accessibility-domain.md)
+- [Limitations sur l’utilisation des niveaux d’accessibilité](./restrictions-on-using-accessibility-levels.md)
+- [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md)
+- [public](./public.md)
+- [private](./private.md)
+- [protected](./protected.md)
+- [internal](./internal.md)

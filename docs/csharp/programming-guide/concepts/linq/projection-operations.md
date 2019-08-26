@@ -2,12 +2,12 @@
 title: Opérations de projection (C#)
 ms.date: 07/20/2015
 ms.assetid: 98df573a-aad9-4b8c-9a71-844be2c4fb41
-ms.openlocfilehash: 74792c1a58aa17c65f3a153216d50c672e0b6cf6
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 4b34f3e578e746d75bdad7baaf731d743830713c
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58411211"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69591561"
 ---
 # <a name="projection-operations-c"></a>Opérations de projection (C#)
 La projection désigne l’opération de transformation d’un objet en une nouvelle forme qui se compose souvent uniquement des propriétés à utiliser ensuite. À l'aide de la projection, vous pouvez créer un nouveau type qui est généré à partir de chaque objet. Vous pouvez projeter une propriété et effectuer une fonction mathématique sur celle-ci. Vous pouvez également projeter l’objet d’origine sans le modifier.  
@@ -162,7 +162,7 @@ static void SelectVsSelectMany()
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq>
-- [Vue d’ensemble des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [select, clause](../../../../csharp/language-reference/keywords/select-clause.md)
-- [Guide pratique pour remplir des collections d’objets issues de plusieurs sources (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md)
-- [Guide pratique pour fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)
+- [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
+- [select, clause](../../../language-reference/keywords/select-clause.md)
+- [Guide pratique pour remplir des collections d’objets issues de plusieurs sources (LINQ) (C#)](./how-to-populate-object-collections-from-multiple-sources-linq.md)
+- [Guide pratique pour fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQ) (C#)](./how-to-split-a-file-into-many-files-by-using-groups-linq.md)

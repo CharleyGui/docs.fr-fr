@@ -2,23 +2,23 @@
 title: 'Procédure : Effectuer le streaming de fragments XML avec accès aux informations d’en-tête (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7f242770-b0c7-418d-894b-643215e1f8aa
-ms.openlocfilehash: 4ecf20134c0d5897418c7667908f80511a962871
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: d40fa5b7ae60836c0fd947d36f88765eafc60334
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484839"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592337"
 ---
 # <a name="how-to-stream-xml-fragments-with-access-to-header-information-c"></a>Procédure : Effectuer le streaming de fragments XML avec accès aux informations d’en-tête (C#)
 Vous devez parfois lire des fichiers XML arbitrairement volumineux et écrire votre application de sorte que son encombrement mémoire soit prévisible. Si vous tentez de remplir une arborescence XML avec un grand fichier XML, l'utilisation de la mémoire sera proportionnelle à la taille du fichier (c'est-à-dire excessive). Par conséquent, vous devez utiliser une technique de diffusion en continu à la place.  
   
- L'une des options consiste à écrire votre application à l'aide de <xref:System.Xml.XmlReader>. Toutefois, vous souhaiterez peut-être utiliser [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour interroger l’arborescence XML. Si tel est le cas, vous pouvez écrire votre propre méthode d'axe personnalisée. Pour plus d'informations, voir [Procédure : Écrire une méthode d’axe LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md).  
+ L'une des options consiste à écrire votre application à l'aide de <xref:System.Xml.XmlReader>. Toutefois, vous souhaiterez peut-être utiliser [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour interroger l’arborescence XML. Si tel est le cas, vous pouvez écrire votre propre méthode d'axe personnalisée. Pour plus d'informations, voir [Procédure : Écrire une méthode d’axe LINQ to XML (C#)](./how-to-write-a-linq-to-xml-axis-method.md).  
   
  Pour écrire votre propre méthode d'axe personnalisée, vous écrivez une petite méthode qui utilise l'objet <xref:System.Xml.XmlReader> pour lire les nœuds jusqu'à atteindre l'un des nœuds qui vous intéressent. La méthode appelle ensuite <xref:System.Xml.Linq.XNode.ReadFrom%2A>, qui lit à partir de l'objet <xref:System.Xml.XmlReader> et instancie un fragment XML. Elle produit ensuite chaque fragment via `yield return` à la méthode qui énumère votre méthode d'axe personnalisée. Vous pouvez ensuite écrire des requêtes LINQ sur votre méthode d'axe personnalisée.  
   
  Il est préférable d'appliquer des techniques de diffusion en continu dans les situations où vous devez traiter le document source une seule fois et où vous pouvez traiter les éléments dans l'ordre du document. Certains opérateurs de requête standard, tels que <xref:System.Linq.Enumerable.OrderBy%2A>, itèrent au sein de leur source, recueillent toutes les données, les trient, puis produisent le premier élément de la séquence. Notez que si vous utilisez un opérateur de requête qui matérialise sa source avant de produire le premier élément, vous ne conserverez pas un faible encombrement mémoire.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Le problème peut parfois être un peu plus épineux. Dans le document XML suivant, le consommateur de votre méthode d'axe personnalisée doit également connaître le nom du client auquel appartient chaque élément.  
   
 ```xml  

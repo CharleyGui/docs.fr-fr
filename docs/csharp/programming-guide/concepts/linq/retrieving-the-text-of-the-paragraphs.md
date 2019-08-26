@@ -2,15 +2,15 @@
 title: Récupération du texte des paragraphes (C#)
 ms.date: 07/20/2015
 ms.assetid: 127d635e-e559-408f-90c8-2bb621ca50ac
-ms.openlocfilehash: d1f526374c56a5195438be72748ba15d0ab6741c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 88a7e82a7d27048ce3f901e6e9d50b8737797adb
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64595711"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69591075"
 ---
 # <a name="retrieving-the-text-of-the-paragraphs-c"></a>Récupération du texte des paragraphes (C#)
-Cet exemple s’appuie sur l’exemple précédent, [Récupération des paragraphes et de leurs styles (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md). Ce nouvel exemple récupère le texte de chaque paragraphe en tant que chaîne.  
+Cet exemple s’appuie sur l’exemple précédent, [Récupération des paragraphes et de leurs styles (C#)](./retrieving-the-paragraphs-and-their-styles.md). Ce nouvel exemple récupère le texte de chaque paragraphe en tant que chaîne.  
   
  Pour récupérer le texte, cet exemple ajoute une requête supplémentaire qui itère au sein de la collection de types anonymes et projette une nouvelle collection d'un type anonyme avec l'ajout d'un nouveau membre, `Text`. Il utilise l'opérateur de requête standard <xref:System.Linq.Enumerable.Aggregate%2A> pour concaténer plusieurs chaînes dans une chaîne.  
   
@@ -18,12 +18,12 @@ Cet exemple s’appuie sur l’exemple précédent, [Récupération des paragrap
   
  Bien entendu, il serait possible d'écrire une requête unique contenant la fonctionnalité de récupération des paragraphes, du style de chaque paragraphe et du texte de chaque paragraphe. Toutefois, il est souvent utile de découper une requête compliquée en plusieurs requêtes car le code obtenu sera plus modulable et plus facile à maintenir. En outre, si vous avez besoin de réutiliser une partie de la requête, il est plus facile de refactoriser si les requêtes sont écrites de cette manière.  
   
- Ces requêtes, qui sont chaînées, utilisent le modèle de traitement détaillé dans la rubrique [Tutoriel : Chaînage de requêtes (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md).  
+ Ces requêtes, qui sont chaînées, utilisent le modèle de traitement détaillé dans la rubrique [Tutoriel : Chaînage de requêtes (C#)](./tutorial-chaining-queries-together.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Cet exemple traite un document WordprocessingML et détermine le nœud d'élément, le nom de style et le texte de chaque paragraphe. Cet exemple se base sur les exemples précédents de ce didacticiel. Dans le code ci-dessous, la nouvelle requête figure dans des commentaires.  
   
- Afin d’obtenir des instructions pour créer le document source utilisé dans cet exemple, consultez [Création du document Office Open XML source (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Afin d’obtenir des instructions pour créer le document source utilisé dans cet exemple, consultez [Création du document Office Open XML source (C#)](./creating-the-source-office-open-xml-document.md).  
   
  Cet exemple utilise des classes de l'assembly WindowsBase. Il utilise des types dans l'espace de noms <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
@@ -117,7 +117,7 @@ foreach (var p in paraWithText)
     Console.WriteLine("StyleName:{0} >{1}<", p.StyleName, p.Text);  
 ```  
   
- Quand il est appliqué au document décrit dans [Création du document Office Open XML source (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), cet exemple produit la sortie suivante.  
+ Quand il est appliqué au document décrit dans [Création du document Office Open XML source (C#)](./creating-the-source-office-open-xml-document.md), cet exemple produit la sortie suivante.  
   
 ```  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -140,9 +140,9 @@ StyleName:Code >Hello World<
 ## <a name="next-steps"></a>Étapes suivantes  
  L'exemple suivant montre comment utiliser une méthode d'extension, au lieu de <xref:System.Linq.Enumerable.Aggregate%2A>, pour concaténer plusieurs chaînes en une seule chaîne.  
   
-- [Refactorisation à l’aide d’une méthode d’extension (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)  
+- [Refactorisation à l’aide d’une méthode d’extension (C#)](./refactoring-using-an-extension-method.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Tutoriel : manipulation de contenu dans un document WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
-- [Exécution et évaluation différées dans LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+- [Tutoriel : manipulation de contenu dans un document WordprocessingML (C#)](./tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Exécution et évaluation différées dans LINQ to XML (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

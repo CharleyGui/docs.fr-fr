@@ -7,12 +7,12 @@ helpviewer_keywords:
 - response files, specifying for compilation [C#]
 - '@ compiler option'
 ms.assetid: dda4fa9f-a02c-400f-8b6a-d58834e13d7f
-ms.openlocfilehash: 32a06c596c44cdf28e5c1bb3422b9cf8262f2c08
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 1884230f1779f9d425ef6e54cda6967c8e51d985
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54738090"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602478"
 ---
 # <a name="-c-compiler-options"></a>@ (Options du compilateur C#)
 L’option @ vous permet de spécifier un fichier qui contient les options du compilateur et les fichiers de code source à compiler.  
@@ -27,7 +27,7 @@ L’option @ vous permet de spécifier un fichier qui contient les options du co
  `response_file`  
  Fichier qui répertorie des options du compilateur ou des fichiers de code source à compiler.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Les options du compilateur et les fichiers de code source seront traités par le compilateur exactement comme s’ils avaient été spécifiés sur la ligne de commande.  
   
  Pour spécifier plusieurs fichiers réponse dans une compilation, spécifiez plusieurs options de fichier réponse. Par exemple :  
@@ -38,15 +38,15 @@ L’option @ vous permet de spécifier un fichier qui contient les options du co
   
  Dans un fichier réponse, plusieurs options du compilateur et fichiers de code source peuvent apparaître sur une même ligne. En revanche, si vous spécifiez une seule option du compilateur, celle-ci doit obligatoirement figurer sur une seule et même ligne. Les fichiers réponse peuvent contenir des commentaires, précédés du symbole #.  
   
- La spécification d’options du compilateur à partir d’un fichier réponse est identique à la spécification de ces commandes sur la ligne de commande. Pour plus d’informations, consultez [Génération à partir de la ligne de commande](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md).  
+ La spécification d’options du compilateur à partir d’un fichier réponse est identique à la spécification de ces commandes sur la ligne de commande. Pour plus d’informations, consultez [Génération à partir de la ligne de commande](./how-to-set-environment-variables-for-the-visual-studio-command-line.md).  
   
  Le compilateur traite les options de commande au fur et à mesure qu’il les rencontre. Par conséquent, des arguments de ligne de commande peuvent substituer des options précédemment affichées dans des fichiers réponse. Inversement, les options d’un fichier réponse substituent les options affichées précédemment dans la ligne de commande ou dans d’autres fichiers réponse.  
   
- C# fournit le fichier csc.rsp, qui se trouve dans le même répertoire que le fichier csc.exe. Pour plus d’informations sur csc.rsp, consultez [-noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md).  
+ C# fournit le fichier csc.rsp, qui se trouve dans le même répertoire que le fichier csc.exe. Pour plus d’informations sur csc.rsp, consultez [-noconfig](./noconfig-compiler-option.md).  
   
  Cette option du compilateur ne peut pas être définie dans l’environnement de développement Visual Studio, ni être modifiée par programmation.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Voici quelques lignes extraites d’un exemple de fichier réponse :  
   
 ```console  
@@ -56,4 +56,4 @@ L’option @ vous permet de spécifier un fichier qui contient les options du co
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Options du compilateur C#](./index.md)

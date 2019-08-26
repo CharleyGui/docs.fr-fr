@@ -2,12 +2,12 @@
 title: 'Procédure : Rechercher un élément avec un élément enfant spécifique (C#)'
 ms.date: 07/20/2015
 ms.assetid: 00cf5555-374e-4369-bf93-7bd2e7f21db3
-ms.openlocfilehash: a2ff30ebfc8936d351358f77c0655eb584e6d390
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 80539c7ccd21bc38967479d7b724e6f3361d24ac
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710084"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69593550"
 ---
 # <a name="how-to-find-an-element-with-a-specific-child-element-c"></a>Procédure : Rechercher un élément avec un élément enfant spécifique (C#)
 Cette rubrique montre comment rechercher un élément particulier qui a un élément enfant avec une valeur spécifique.  
@@ -15,7 +15,7 @@ Cette rubrique montre comment rechercher un élément particulier qui a un élé
 ## <a name="example"></a>Exemples  
  L'exemple recherche l'élément `Test` qui a un élément enfant `CommandLine` avec la valeur « Examp2.EXE ».  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Configuration de test (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-test-configuration-linq-to-xml.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Configuration de test (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md).  
   
 ```csharp  
 XElement root = XElement.Load("TestConfig.xml");  
@@ -37,7 +37,7 @@ foreach (XElement el in tests)
 ## <a name="example"></a>Exemples  
  L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [Vue d’ensemble des espaces de noms (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Configuration de test dans un espace de noms](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-test-configuration-in-a-namespace1.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Configuration de test dans un espace de noms](./sample-xml-file-test-configuration-in-a-namespace1.md).  
   
 ```csharp  
 XElement root = XElement.Load("TestConfigInNamespace.xml");  
@@ -61,5 +61,5 @@ foreach (XElement el in tests)
 
 - <xref:System.Xml.Linq.XElement.Attribute%2A>
 - <xref:System.Xml.Linq.XContainer.Elements%2A>
-- [Vue d’ensemble des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Opérations de projection (C#)](../../../../csharp/programming-guide/concepts/linq/projection-operations.md)
+- [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
+- [Opérations de projection (C#)](./projection-operations.md)

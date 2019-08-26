@@ -8,15 +8,15 @@ helpviewer_keywords:
 - exceptions [C#], creating
 - exceptions [C#], throwing
 ms.assetid: 6bbba495-a115-4c6d-90cc-1f4d7b5f39e2
-ms.openlocfilehash: e569742943e121faeae340512544956b674da083
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 605a28f8f804c11a9a6636c7a17ec5782cc5a429
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64595356"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69590319"
 ---
 # <a name="creating-and-throwing-exceptions-c-programming-guide"></a>Création et levée d'exceptions (Guide de programmation C#)
-Les exceptions sont utilisées pour indiquer qu’une erreur s’est produite pendant l’exécution du programme. Les objets d’exception qui décrivent une erreur sont créés, puis *levés* avec le mot clé [throw](../../../csharp/language-reference/keywords/throw.md). Le runtime recherche ensuite le gestionnaire d’exceptions le plus compatible.  
+Les exceptions sont utilisées pour indiquer qu’une erreur s’est produite pendant l’exécution du programme. Les objets d’exception qui décrivent une erreur sont créés, puis *levés* avec le mot clé [throw](../../language-reference/keywords/throw.md). Le runtime recherche ensuite le gestionnaire d’exceptions le plus compatible.  
   
  Les programmeurs doivent lever des exceptions quand une ou plusieurs des conditions suivantes sont vérifiées :  
   
@@ -68,7 +68,7 @@ Pour plus d’informations, consultez [Exceptions](~/_csharplang/spec/exceptions
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Exceptions et gestion des exceptions](../../../csharp/programming-guide/exceptions/index.md)
+- [Guide de programmation C#](../index.md)
+- [Exceptions et gestion des exceptions](./index.md)
 - [Hiérarchie des exceptions](../../../standard/exceptions/index.md)
-- [Gestion des exceptions](../../../csharp/programming-guide/exceptions/exception-handling.md)
+- [Gestion des exceptions](./exception-handling.md)

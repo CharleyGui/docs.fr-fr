@@ -2,12 +2,12 @@
 title: Utilisation d’async pour l’accès aux fichiers (C#)
 ms.date: 07/20/2015
 ms.assetid: bb018fea-5313-4c80-ab3f-7c24b2145bd9
-ms.openlocfilehash: 6ca47157575ef4569a43f334dae4f99a1986a7ce
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: e6b0370049d9b9315de6a72d0e84c080aac12481
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68330940"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595537"
 ---
 # <a name="using-async-for-file-access-c"></a>Utilisation d’async pour l’accès aux fichiers (C#)
 Vous pouvez utiliser la fonctionnalité Async pour accéder à des fichiers. La fonctionnalité async vous permet d’appeler des méthodes asynchrones sans utiliser de rappels ni fractionner votre code entre plusieurs méthodes ou expressions lambda. Pour rendre le code synchrone asynchrone, il vous suffit d’appeler une méthode asynchrone au lieu d’une méthode synchrone, puis d’ajouter quelques mots clés au code.  
@@ -75,10 +75,10 @@ Task theTask = sourceStream.WriteAsync(encodedText, 0, encodedText.Length);
 await theTask;  
 ```  
   
- La première instruction retourne une tâche et provoque le début du traitement du fichier. La deuxième instruction avec await provoque la fin immédiate de la méthode et retourne une tâche différente. Quand le traitement du fichier se termine plus loin, l’exécution retourne à l’instruction qui suit l’attente. Pour plus d’informations, consultez [Flux de contrôle dans les programmes Async (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md).  
+ La première instruction retourne une tâche et provoque le début du traitement du fichier. La deuxième instruction avec await provoque la fin immédiate de la méthode et retourne une tâche différente. Quand le traitement du fichier se termine plus loin, l’exécution retourne à l’instruction qui suit l’attente. Pour plus d’informations, consultez [Flux de contrôle dans les programmes Async (C#)](./control-flow-in-async-programs.md).  
   
 ## <a name="reading-text"></a>Lecture de texte  
- L'exemple suivant lit du texte dans un fichier. Le texte est mis en mémoire tampon et, dans cet exemple, est placé dans un <xref:System.Text.StringBuilder>. Contrairement à l’exemple précédent, l’évaluation de l’instruction await génère une valeur. La méthode <xref:System.IO.Stream.ReadAsync%2A> retourne un <xref:System.Threading.Tasks.Task>\<<xref:System.Int32>>, de sorte que l’évaluation de l’expression await génère une valeur `Int32` (`numRead`) une fois l’opération effectuée. Pour plus d’informations, consultez [Types de retour Async (C#)](../../../../csharp/programming-guide/concepts/async/async-return-types.md).  
+ L'exemple suivant lit du texte dans un fichier. Le texte est mis en mémoire tampon et, dans cet exemple, est placé dans un <xref:System.Text.StringBuilder>. Contrairement à l’exemple précédent, l’évaluation de l’instruction await génère une valeur. La méthode <xref:System.IO.Stream.ReadAsync%2A> retourne un <xref:System.Threading.Tasks.Task>\<<xref:System.Int32>>, de sorte que l’évaluation de l’expression await génère une valeur `Int32` (`numRead`) une fois l’opération effectuée. Pour plus d’informations, consultez [Types de retour Async (C#)](./async-return-types.md).  
   
 ```csharp  
 public async Task ProcessReadAsync()  
@@ -172,10 +172,10 @@ public async Task ProcessWriteMultAsync()
 }  
 ```  
   
- Quand vous utilisez les méthodes <xref:System.IO.Stream.WriteAsync%2A> et <xref:System.IO.Stream.ReadAsync%2A>, vous pouvez spécifier un <xref:System.Threading.CancellationToken>, qui vous permet d’annuler l’opération en cours de route. Pour plus d’informations, consultez [Réglage de votre application Async (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md) et [Annulation dans les threads managés](../../../../standard/threading/cancellation-in-managed-threads.md).  
+ Quand vous utilisez les méthodes <xref:System.IO.Stream.WriteAsync%2A> et <xref:System.IO.Stream.ReadAsync%2A>, vous pouvez spécifier un <xref:System.Threading.CancellationToken>, qui vous permet d’annuler l’opération en cours de route. Pour plus d’informations, consultez [Réglage de votre application Async (C#)](./fine-tuning-your-async-application.md) et [Annulation dans les threads managés](../../../../standard/threading/cancellation-in-managed-threads.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Programmation asynchrone avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)
-- [Types de retour async (C#)](../../../../csharp/programming-guide/concepts/async/async-return-types.md)
-- [Flux de contrôle dans les programmes Async (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md)
+- [Programmation asynchrone avec Async et Await (C#)](./index.md)
+- [Types de retour async (C#)](./async-return-types.md)
+- [Flux de contrôle dans les programmes Async (C#)](./control-flow-in-async-programs.md)

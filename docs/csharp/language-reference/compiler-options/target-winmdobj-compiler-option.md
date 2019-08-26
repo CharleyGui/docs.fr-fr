@@ -2,12 +2,12 @@
 title: -target:winmdobj (Options du compilateur C#)
 ms.date: 07/20/2015
 ms.assetid: 1819a045-659d-498a-9457-c466e902986f
-ms.openlocfilehash: 9cc85bf582d737114bc0e621a9568bbb9acb791b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: fe1332f9ed6de9c50c2509e29f22ed7c0e57ade9
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59319298"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606358"
 ---
 # <a name="-targetwinmdobj-c-compiler-options"></a>-target:winmdobj (Options du compilateur C#)
 Si vous utilisez l’option du compilateur **-target:winmdobj**, le compilateur crée un fichier .winmdobj intermédiaire que vous pouvez convertir en fichier binaire (.winmd) Windows Runtime. Le fichier .winmd peut ensuite être consommé par des programmes JavaScript et C++, en plus des programmes en langage managé.  
@@ -23,9 +23,9 @@ Si vous utilisez l’option du compilateur **-target:winmdobj**, le compilateur 
   
  La sortie d’un fichier qui est compilé à l’aide de l’option du compilateur **-target:winmdobj** est conçue pour être utilisée uniquement comme entrée pour l’outil d’exportation WimMDExp ; le fichier .winmdobj proprement dit n’est pas référencé directement.  
   
- À moins que vous n’utilisiez l’option [-out](../../../csharp/language-reference/compiler-options/out-compiler-option.md), le fichier de sortie adopte le nom du premier fichier d’entrée. Une méthode [Main](../../../csharp/programming-guide/main-and-command-args/index.md) n’est pas nécessaire.  
+ À moins que vous n’utilisiez l’option [-out](./out-compiler-option.md), le fichier de sortie adopte le nom du premier fichier d’entrée. Une méthode [Main](../../programming-guide/main-and-command-args/index.md) n’est pas nécessaire.  
   
- Si vous spécifiez l’option -target:winmdobj à une invite de commandes, tous les fichiers jusqu’à l’option **-out** ou [-target:module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md) suivante sont utilisés pour créer le programme Windows.  
+ Si vous spécifiez l’option -target:winmdobj à une invite de commandes, tous les fichiers jusqu’à l’option **-out** ou [-target:module](./target-module-compiler-option.md) suivante sont utilisés pour créer le programme Windows.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-ide-for-a-windows-store-app"></a>Pour définir cette option du compilateur dans l'IDE de Visual Studio pour une application Windows Store  
   
@@ -39,7 +39,7 @@ Si vous utilisez l’option du compilateur **-target:winmdobj**, le compilateur 
   
  Pour plus d'informations sur la façon de définir cette option du compilateur par programme, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  La commande suivante compile `filename.cs` dans un fichier .winmdobj intermédiaire.  
   
 ```console  
@@ -48,5 +48,5 @@ csc -target:winmdobj filename.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [-target (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/target-compiler-option.md)
-- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
+- [-target (Options du compilateur C#)](./target-compiler-option.md)
+- [Options du compilateur C#](./index.md)

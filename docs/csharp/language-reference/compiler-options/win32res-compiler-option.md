@@ -9,12 +9,12 @@ helpviewer_keywords:
 - -win32res compiler option [C#]
 - win32res compiler option [C#]
 ms.assetid: 3c33f750-6948-4c7e-a27e-bef98f77255b
-ms.openlocfilehash: 4026fcbd7dc2ef29c1e7ee01a0f37b3ff471b187
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 39f02c4c2e060c4be40002a2f48b0da31004a9ae
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59322372"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606197"
 ---
 # <a name="-win32res-c-compiler-options"></a>-win32res (Options du compilateur C#)
 L’option **-win32res** insère une ressource Win32 dans le fichier de sortie.  
@@ -34,7 +34,7 @@ L’option **-win32res** insère une ressource Win32 dans le fichier de sortie.
   
  Une ressource Win32 peut contenir des informations sur la version ou le fichier bitmap (icône) qui permettent d’identifier votre application dans l’Explorateur de fichiers. Si vous ne spécifiez pas l’option **-win32res**, le compilateur génère des informations de version en fonction de la version de l’assembly.  
   
- Consultez [-linkresource](../../../csharp/language-reference/compiler-options/linkresource-compiler-option.md) pour référencer ou [-resource](../../../csharp/language-reference/compiler-options/resource-compiler-option.md) pour attacher un fichier de ressources .NET Framework.  
+ Consultez [-linkresource](./linkresource-compiler-option.md) pour référencer ou [-resource](./resource-compiler-option.md) pour attacher un fichier de ressources .NET Framework.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
   
@@ -44,7 +44,7 @@ L’option **-win32res** insère une ressource Win32 dans le fichier de sortie.
   
 3. Cliquez sur le bouton **Fichier de ressources** et choisissez un fichier à l’aide de la zone de liste modifiable.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Compilez `in.cs` et attachez un fichier de ressources Win32 `rf.res` afin de générer le fichier `in.exe` :  
   
 ```console  
@@ -53,5 +53,5 @@ csc -win32res:rf.res in.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

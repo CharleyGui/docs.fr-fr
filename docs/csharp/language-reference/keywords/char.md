@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: b58730d945582ded7b76fcd5c4c65bc1dd9324da
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 754c04bfc3b4090906420d55d55e51606b72f187
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661453"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69605950"
 ---
 # <a name="char-c-reference"></a>char (référence C#)
 
@@ -44,12 +44,12 @@ Pour plus d’informations, consultez [Types intégraux](~/_csharplang/spec/type
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Char>
-- [Référence C#](../../../csharp/language-reference/index.md)
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
-- [Types intégraux](../../../csharp/language-reference/builtin-types/integral-numeric-types.md)
-- [Tableau des types intégrés](../../../csharp/language-reference/keywords/built-in-types-table.md)
-- [Tableau des conversions numériques implicites](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)
-- [Tableau des conversions numériques explicites](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)
-- [Types Nullable](../../../csharp/programming-guide/nullable-types/index.md)
-- [Chaînes](../../../csharp/programming-guide/strings/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Mots clés C#](./index.md)
+- [Types intégraux](../builtin-types/integral-numeric-types.md)
+- [Tableau des types intégrés](./built-in-types-table.md)
+- [Tableau des conversions numériques implicites](./implicit-numeric-conversions-table.md)
+- [Tableau des conversions numériques explicites](./explicit-numeric-conversions-table.md)
+- [Types Nullable](../../programming-guide/nullable-types/index.md)
+- [Chaînes](../../programming-guide/strings/index.md)

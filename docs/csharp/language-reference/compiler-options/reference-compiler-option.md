@@ -13,15 +13,15 @@ helpviewer_keywords:
 - public type information [C#]
 - -reference compiler option [C#]
 ms.assetid: 8d13e5b0-abf6-4c46-bf71-2daf2cd0a6c4
-ms.openlocfilehash: fbf93a87cede753ebd41c148f4fb4bb761846954
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 247fb222eaacdb5ee60df2dded3a857f0395eb34
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593081"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606570"
 ---
 # <a name="-reference-c-compiler-options"></a>-reference (Options du compilateur C#)
-L’option **-reference** indique au compilateur d’importer des informations de type [public](../../../csharp/language-reference/keywords/public.md) dans le fichier spécifié du projet actuel, ce qui vous permet de référencer les métadonnées des fichiers d’assembly spécifiés.  
+L’option **-reference** indique au compilateur d’importer des informations de type [public](../keywords/public.md) dans le fichier spécifié du projet actuel, ce qui vous permet de référencer les métadonnées des fichiers d’assembly spécifiés.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,11 +40,11 @@ L’option **-reference** indique au compilateur d’importer des informations d
 ## <a name="remarks"></a>Remarques  
  Pour importer à partir de plusieurs fichiers, incluez une option **-reference** pour chaque fichier.  
   
- Les fichiers que vous importez doivent contenir un manifeste ; le fichier de sortie doit être compilé avec une option [-target](../../../csharp/language-reference/compiler-options/target-compiler-option.md) autre que [-target:module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md).  
+ Les fichiers que vous importez doivent contenir un manifeste ; le fichier de sortie doit être compilé avec une option [-target](./target-compiler-option.md) autre que [-target:module](./target-module-compiler-option.md).  
   
  **-r** est la forme abrégée de **-reference**.  
   
- Utilisez [-addmodule](../../../csharp/language-reference/compiler-options/addmodule-compiler-option.md) pour importer les métadonnées d’un fichier de sortie qui ne contient pas de manifeste d’assembly.  
+ Utilisez [-addmodule](./addmodule-compiler-option.md) pour importer les métadonnées d’un fichier de sortie qui ne contient pas de manifeste d’assembly.  
   
  Si vous référencez un assembly (Assembly A) qui référence un autre assembly (Assembly B), vous devez référencer l’Assembly B si :  
   
@@ -52,19 +52,19 @@ L’option **-reference** indique au compilateur d’importer des informations d
   
 - Vous appelez un champ, une propriété, un événement ou une méthode qui a un type de retour ou un type de paramètre de l’Assembly B.  
   
- Utilisez [-lib](../../../csharp/language-reference/compiler-options/lib-compiler-option.md) pour spécifier le répertoire dans lequel se trouvent une ou plusieurs références d’assembly. La rubrique **-lib** décrit également les répertoires dans lesquels le compilateur recherche les assemblys.  
+ Utilisez [-lib](./lib-compiler-option.md) pour spécifier le répertoire dans lequel se trouvent une ou plusieurs références d’assembly. La rubrique **-lib** décrit également les répertoires dans lesquels le compilateur recherche les assemblys.  
   
  Pour que le compilateur reconnaisse un type dans un assembly, et non dans un module, il doit être forcé à résoudre le type, ce que vous pouvez faire en définissant une instance du type. Il existe d’autres moyens de résoudre les noms de types dans un assembly pour le compilateur : par exemple, si vous héritez d’un type dans un assembly, le nom du type est ensuite reconnu par le compilateur.  
   
  Il est parfois nécessaire de référencer deux versions différentes du même composant dans un assembly. Pour ce faire, utilisez la sous-option d’alias du commutateur **-reference** pour chaque fichier afin de faire la différence entre les deux fichiers. Cet alias est utilisé comme qualificateur pour le nom du composant et se traduit par le composant dans l’un des fichiers.  
   
- Le fichier de réponse csc (.rsp), qui référence les assemblys .NET Framework couramment utilisés, est utilisé par défaut. Utilisez [-noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) si vous ne voulez pas que le compilateur utilise csc.rsp.  
+ Le fichier de réponse csc (.rsp), qui référence les assemblys .NET Framework couramment utilisés, est utilisé par défaut. Utilisez [-noconfig](./noconfig-compiler-option.md) si vous ne voulez pas que le compilateur utilise csc.rsp.  
   
 > [!NOTE]
 > Dans Visual Studio, utilisez la boîte de dialogue **Ajouter une référence**. Pour plus d'informations, voir [Procédure : Ajouter ou supprimer des références à l’aide du gestionnaire de références](/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager). Pour garantir un comportement équivalent selon que vous ajoutez des références à l’aide de `-reference` ou à l’aide de la boîte de dialogue **Ajouter une référence**, définissez la propriété **Incorporer les types interop** sur **False** pour l’assembly que vous ajoutez. La valeur par défaut de la propriété est **True**.  
   
-## <a name="example"></a>Exemple  
- Cet exemple montre comment utiliser la fonctionnalité de l’[alias extern](../../../csharp/language-reference/keywords/extern-alias.md).  
+## <a name="example"></a>Exemples  
+ Cet exemple montre comment utiliser la fonctionnalité de l’[alias extern](../keywords/extern-alias.md).  
   
  Vous compilez le fichier source et importez les métadonnées à partir de `grid.dll` et `grid20.dll`, qui ont été compilés au préalable. Les deux DLL contiennent des versions séparées du même composant et vous devez utiliser deux **-reference** avec des options d’alias pour compiler le fichier source. Les options ressemblent à ce qui suit :  
 
@@ -94,5 +94,5 @@ GridV2::Grid
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

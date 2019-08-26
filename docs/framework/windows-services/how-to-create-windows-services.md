@@ -6,18 +6,18 @@ helpviewer_keywords:
 - templates, Windows Service
 ms.assetid: 0f5e2cbb-d95d-477c-b2b5-4b990e6b86ff
 author: ghogen
-ms.openlocfilehash: 124e8a0dff18f02c178b56167cd12faa1fc97992
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 960d30f4e484238e9e7c23741578650a8c3005c8
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649411"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69987153"
 ---
 # <a name="how-to-create-windows-services"></a>Procédure : créer des services Windows
 Quand vous créez un service, vous pouvez utiliser un modèle de projet Visual Studio appelé **Service Windows**. Ce modèle accomplit automatiquement pour vous une grande part du travail : il référence les classes et les espaces de noms appropriés, définit l'héritage à partir de la classe de base des services et substitue les méthodes que vous êtes le plus susceptible de vouloir substituer.  
   
 > [!WARNING]
->  Le modèle de projet Services Windows n'est pas disponible dans l'édition Express de Visual Studio.  
+> Le modèle de projet Services Windows n'est pas disponible dans l'édition Express de Visual Studio.  
   
  Pour créer un service fonctionnel, vous devez, au minimum :  
   
@@ -32,14 +32,14 @@ Quand vous créez un service, vous pouvez utiliser un modèle de projet Visual S
 1. Créez un projet **Service Windows**.  
   
     > [!NOTE]
-    >  Pour savoir comment créer un service sans avoir recours au modèle, consultez [Guide pratique pour écrire les services par programmation](../../../docs/framework/windows-services/how-to-write-services-programmatically.md).  
+    > Pour savoir comment créer un service sans avoir recours au modèle, consultez [Guide pratique pour écrire les services par programmation](../../../docs/framework/windows-services/how-to-write-services-programmatically.md).  
   
 2. Dans la fenêtre **Propriétés**, définissez la propriété <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> pour votre service.  
   
      ![Définissez la propriété ServiceName.](../../../docs/framework/windows-services/media/windowsservice-servicename.PNG "WindowsService_ServiceName")  
   
     > [!NOTE]
-    >  La valeur de la propriété <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> doit toujours correspondre au nom enregistré dans les classes Installer. Si vous modifiez cette propriété, vous devez également mettre à jour la propriété <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> des classes Installer.  
+    > La valeur de la propriété <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> doit toujours correspondre au nom enregistré dans les classes Installer. Si vous modifiez cette propriété, vous devez également mettre à jour la propriété <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> des classes Installer.  
   
 3. Définissez le fonctionnement de votre service à l'aide des propriétés suivantes.  
   
@@ -52,7 +52,7 @@ Quand vous créez un service, vous pouvez utiliser un modèle de projet Visual S
     |<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>|`True` pour écrire des entrées à caractère informatif dans le journal des événements de l'application lorsque votre service effectue une action ; `false` pour désactiver cette fonctionnalité. Pour plus d'informations, voir [Procédure : enregistrer des informations relatives aux services](../../../docs/framework/windows-services/how-to-log-information-about-services.md). **Remarque :**  Par défaut, <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> a la valeur `true`.|  
   
     > [!NOTE]
-    >  Quand <xref:System.ServiceProcess.ServiceBase.CanStop%2A> ou <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> a la valeur `false`, le **Gestionnaire de contrôle des services** désactive les options de menu correspondantes pour arrêter, suspendre ou poursuivre le service.  
+    > Quand <xref:System.ServiceProcess.ServiceBase.CanStop%2A> ou <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> a la valeur `false`, le **Gestionnaire de contrôle des services** désactive les options de menu correspondantes pour arrêter, suspendre ou poursuivre le service.  
   
 4. Accédez à l'éditeur de code et indiquez le traitement souhaité pour les procédures <xref:System.ServiceProcess.ServiceBase.OnStart%2A> et <xref:System.ServiceProcess.ServiceBase.OnStop%2A>.  
   
@@ -63,7 +63,7 @@ Quand vous créez un service, vous pouvez utiliser un modèle de projet Visual S
 7. Générez votre projet en sélectionnant **Générer la solution** dans le menu **Générer**.  
   
     > [!NOTE]
-    >  N'appuyez pas sur la touche F5 pour exécuter votre projet : vous ne pouvez pas exécuter un projet de service de cette manière.  
+    > N'appuyez pas sur la touche F5 pour exécuter votre projet : vous ne pouvez pas exécuter un projet de service de cette manière.  
   
 8. Installez le service. Pour plus d'informations, voir [Procédure : Installer et désinstaller des services](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
   

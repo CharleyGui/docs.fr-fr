@@ -9,12 +9,12 @@ helpviewer_keywords:
 - /deterministic compiler option [C#]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7c6d0c7128becb154955664cfdcf96d020de9369
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 3950578e9e5d1acb517e7d96c76454b198ba3e1c
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59480662"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606927"
 ---
 # <a name="-deterministic"></a>-deterministic
 
@@ -56,5 +56,5 @@ Quand les sources sont accessibles à tous, la compilation déterministe peut se
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - optional arguments [C#], Office programming
 - named arguments [C#], Office programming
 ms.assetid: 65b8a222-bcd8-454c-845f-84adff5a356f
-ms.openlocfilehash: a8b09061157c45b865613c31ae1425e5820687f4
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 708ed7582c353160ce15c5b5429951e12a0a3fed
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170400"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596658"
 ---
 # <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>Procédure : Utiliser des arguments nommés et facultatifs en programmation Office (Guide de programmation C#)
 Les arguments nommés et les arguments facultatifs, qui ont été introduits avec C#4, rendent la programmation en C# plus pratique, plus souple et plus lisible. De plus, ces fonctionnalités facilitent considérablement l’accès aux interfaces COM, telles que les API Microsoft Office Automation.  
@@ -108,4 +108,4 @@ Les arguments nommés et les arguments facultatifs, qui ont été introduits ave
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Arguments nommés et facultatifs](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)
+- [Arguments nommés et facultatifs](./named-and-optional-arguments.md)

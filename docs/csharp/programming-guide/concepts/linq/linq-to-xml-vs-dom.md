@@ -2,12 +2,12 @@
 title: LINQ to XML, différences par rapport à DOM (C#)
 ms.date: 07/20/2015
 ms.assetid: 51c0e3d2-c047-4e6a-a423-d61a882400b7
-ms.openlocfilehash: 65dff4dc1c2faa1cd17e640d0c1a0e1d2a514fbe
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 68d380873e71d767ddd60f8f9d0f4b82846d1371
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710020"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69591766"
 ---
 # <a name="linq-to-xml-vs-dom-c"></a>LINQ to XML, différences par rapport à DOM (C#)
 Cette section décrit certaines des principales différences entre [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] et l’API de programmation XML actuellement prédominante, le modèle DOM (Document Object Model) W3C.  
@@ -75,7 +75,7 @@ XElement contacts =
   
  Notez que la mise en retrait du code pour construire l’arborescence XML affiche la structure des données XML sous-jacentes.  
   
- Pour plus d’informations, consultez [Création d’arborescences XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md).  
+ Pour plus d’informations, consultez [Création d’arborescences XML (C#)](./linq-to-xml-overview.md).  
   
 ## <a name="working-directly-with-xml-elements"></a>Utilisation directe des éléments XML  
  Lorsque vous programmez avec des données XML, vous travaillez en général principalement avec les éléments XML et éventuellement les attributs. Dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], vous pouvez utiliser directement les éléments et les attributs XML. Vous pouvez par exemple effectuer les opérations suivantes :  
@@ -105,7 +105,7 @@ doc.AppendChild(name);
  L'un des autres problèmes associés au modèle DOM est qu'il ne vous permet pas de modifier le nom d'un nœud. Au lieu de cela, vous devez créer un nouveau nœud et y copier tous les nœuds enfants, perdant ainsi l'identité de nœud d'origine. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] évite ce problème en vous permettant de définir la propriété <xref:System.Xml.Linq.XName> sur un nœud.  
   
 ## <a name="static-method-support-for-loading-xml"></a>Prise en charge des méthodes statiques pour le chargement de données XML  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vous permet de charger du code XML en utilisant des méthodes statiques au lieu de méthodes d’instance. Cela simplifie le chargement et l'analyse. Pour plus d'informations, voir [Procédure : Charger du code XML à partir d’un fichier (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-load-xml-from-a-file.md).  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vous permet de charger du code XML en utilisant des méthodes statiques au lieu de méthodes d’instance. Cela simplifie le chargement et l'analyse. Pour plus d'informations, voir [Procédure : Charger du code XML à partir d’un fichier (C#)](./how-to-load-xml-from-a-file.md).  
   
 ## <a name="removal-of-support-for-dtd-constructs"></a>Suppression de la prise en charge des constructions de DTD  
  [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] simplifie la programmation XML en supprimant la prise en charge des entités et des références d'entités. La gestion des entités est complexe et rarement utilisée. La suppression de leur prise en charge augmente les performances et simplifie l'interface de programmation. Quand une arborescence [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est remplie, toutes les entités DTD sont développées.  
@@ -126,11 +126,11 @@ doc.AppendChild(name);
  [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] stocke les espaces en tant que nœud <xref:System.Xml.Linq.XText> au lieu de faire appel à un type de nœud <xref:System.Xml.XmlNodeType.Whitespace> spécialisé, comme le fait DOM.  
   
 ## <a name="support-for-annotations"></a>Prise en charge des annotations  
- Les éléments [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] prennent en charge un ensemble extensible d'annotations. Cela est utile pour assurer le suivi de diverses informations relatives à un élément, telles que des informations de schéma, le fait que l'élément soit lié à une interface utilisateur ou tout autre type d'informations spécifiques aux applications. Pour plus d’informations, consultez [Annotations LINQ to XML](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-annotations.md).  
+ Les éléments [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] prennent en charge un ensemble extensible d'annotations. Cela est utile pour assurer le suivi de diverses informations relatives à un élément, telles que des informations de schéma, le fait que l'élément soit lié à une interface utilisateur ou tout autre type d'informations spécifiques aux applications. Pour plus d’informations, consultez [Annotations LINQ to XML](./linq-to-xml-annotations.md).  
   
 ## <a name="support-for-schema-information"></a>Prise en charge des informations de schéma  
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] fournit une prise en charge de la validation XSD via les méthodes d’extension de l’espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType>. Vous pouvez valider la conformité d’une arborescence XML à un schéma XSD. Vous pouvez remplir l’arborescence XML avec le PSVI (Post-Schema-Validation Infoset). Pour plus d'informations, voir [Procédure : Valider à l’aide de XSD](../../../../csharp/programming-guide/concepts/linq/how-to-validate-using-xsd-linq-to-xml.md) et <xref:System.Xml.Schema.Extensions>.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] fournit une prise en charge de la validation XSD via les méthodes d’extension de l’espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType>. Vous pouvez valider la conformité d’une arborescence XML à un schéma XSD. Vous pouvez remplir l’arborescence XML avec le PSVI (Post-Schema-Validation Infoset). Pour plus d'informations, voir [Procédure : Valider à l’aide de XSD](./how-to-validate-using-xsd-linq-to-xml.md) et <xref:System.Xml.Schema.Extensions>.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Bien démarrer (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md)
+- [Bien démarrer (LINQ to XML)](./linq-to-xml-overview.md)

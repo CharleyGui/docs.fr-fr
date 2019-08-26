@@ -2,12 +2,12 @@
 title: 'Procédure : Calculer des valeurs de colonnes dans un fichier texte CSV (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4747f37a-a198-4df2-8efe-5b0731e0ea27
-ms.openlocfilehash: 0bc212ab40bccf5612ef6dea85608c439d2105f4
-ms.sourcegitcommit: d98fdb087d9c8aba7d2cb93fe4b4ee35a2308cee
+ms.openlocfilehash: 08b4f936532b3ba3744ec31dc691b166e7ba7109
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69012942"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594033"
 ---
 # <a name="how-to-compute-column-values-in-a-csv-text-file-linq-c"></a>Procédure : Calculer des valeurs de colonnes dans un fichier texte CSV (LINQ) (C#)
 Cet exemple montre comment effectuer des calculs d’agrégation tels que Sum, Average, Min et Max, avec les colonnes d’un fichier .csv. Les exemples de principes montrés ici sont applicables à d’autres types de texte structuré.  
@@ -163,5 +163,5 @@ class SumColumns
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ et chaînes (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ et répertoires de fichiers (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ et chaînes (C#)](./linq-and-strings.md)
+- [LINQ et répertoires de fichiers (C#)](./linq-and-file-directories.md)

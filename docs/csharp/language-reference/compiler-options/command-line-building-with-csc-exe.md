@@ -5,19 +5,19 @@ helpviewer_keywords:
 - builds [C#]
 - command line [C#]
 ms.assetid: 66e70056-dd20-453c-a9b3-507e0478b015
-ms.openlocfilehash: 0ebc4fa3029e16c5ee89da7d9af8b89924b2c4dc
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 54306c79bc2856996925756ee4261fbe67692aea
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66833358"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606977"
 ---
 # <a name="command-line-build-with-cscexe"></a>Génération à partir de la ligne de commande avec csc.exe
 Vous pouvez appeler le compilateur C# en tapant le nom de son fichier exécutable (*csc.exe*) dans une invite de commandes.
 
 Si vous utilisez la fenêtre **Invite de commandes développeur pour Visual Studio**, toutes les variables d’environnement nécessaires sont définies automatiquement. Pour plus d’informations sur la façon d’accéder à cet outil, consultez la rubrique [Invite de commandes développeur pour Visual Studio](../../../framework/tools/developer-command-prompt-for-vs.md). 
 
-Si vous utilisez une fenêtre d’invite de commandes standard, vous devez ajuster votre chemin avant de pouvoir appeler *csc.exe* à partir de n’importe quel sous-répertoire de votre ordinateur. Vous devez également exécuter *vsvars32.bat* pour définir les variables d’environnement appropriées pour prendre en charge les générations à partir de la ligne de commande. Pour plus d’informations sur *vsvars32.bat*, notamment les instructions pour le rechercher et l’exécuter, consultez [Guide pratique pour définir des variables d’environnement pour la ligne de commande Visual Studio](../../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md).
+Si vous utilisez une fenêtre d’invite de commandes standard, vous devez ajuster votre chemin avant de pouvoir appeler *csc.exe* à partir de n’importe quel sous-répertoire de votre ordinateur. Vous devez également exécuter *vsvars32.bat* pour définir les variables d’environnement appropriées pour prendre en charge les générations à partir de la ligne de commande. Pour plus d’informations sur *vsvars32.bat*, notamment les instructions pour le rechercher et l’exécuter, consultez [Guide pratique pour définir des variables d’environnement pour la ligne de commande Visual Studio](./how-to-set-environment-variables-for-the-visual-studio-command-line.md).
 
 Si vous utilisez un ordinateur disposant uniquement du Kit de développement logiciel (SDK) Windows, vous pouvez utiliser le compilateur C# dans l’**invite de commandes du kit SDK**, disponible à partir de l’option de menu **Microsoft .NET Framework SDK**.
 
@@ -97,10 +97,10 @@ Aucun fichier objet ( *.obj*) n’est créé par l’appel du compilateur C#. L
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
-- [Options du compilateur C# par ordre alphabétique](../../../csharp/language-reference/compiler-options/listed-alphabetically.md)
-- [Options du compilateur C# par catégorie](../../../csharp/language-reference/compiler-options/listed-by-category.md)
-- [Main() et arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/index.md)
-- [Arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/command-line-arguments.md)
-- [Guide pratique pour afficher les arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)
-- [Valeurs de retour Main()](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)
+- [Options du compilateur C#](./index.md)
+- [Options du compilateur C# par ordre alphabétique](./listed-alphabetically.md)
+- [Options du compilateur C# par catégorie](./listed-by-category.md)
+- [Main() et arguments de ligne de commande](../../programming-guide/main-and-command-args/index.md)
+- [Arguments de ligne de commande](../../programming-guide/main-and-command-args/command-line-arguments.md)
+- [Guide pratique pour afficher les arguments de ligne de commande](../../programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)
+- [Valeurs de retour Main()](../../programming-guide/main-and-command-args/main-return-values.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 30047cba-e2fd-41c6-b9ca-2ad7a49003db
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4c0dea7950f86da3d812783abd00d69e5bc38198
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: 758ddc603766462fc48885406c4e4ca1162bbbaf
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796881"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666487"
 ---
 # <a name="how-to-handle-multiple-events-using-event-properties"></a>Procédure : gérer plusieurs événements à l’aide de propriétés d’événements
 Pour utiliser des propriétés d'événements, définissez les propriétés d'événements dans la classe qui déclenche les événements, puis affectez les délégués pour les propriétés d'événements dans les classes qui gèrent les événements. Pour implémenter plusieurs propriétés d'événements dans une classe, la classe doit stocker et maintenir le délégué défini pour chaque événement en interne. Une approche courante consiste à implémenter une collection de délégués indexée par une clé d’événement.  
@@ -52,4 +52,4 @@ Pour utiliser des propriétés d'événements, définissez les propriétés d'é
 - <xref:System.ComponentModel.EventHandlerList?displayProperty=nameWithType>
 - [Événements](../../../docs/standard/events/index.md)
 - <xref:System.Web.UI.Control.Events%2A?displayProperty=nameWithType>
-- [Guide pratique pour déclarer des événements personnalisés pour économiser la mémoire](~/docs/visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)
+- [Guide pratique pour déclarer des événements personnalisés pour économiser la mémoire](../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)

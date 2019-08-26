@@ -7,12 +7,12 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: f09f93f27aa4f50cfb7e09b9d6d4f98f22e1ac9a
-ms.sourcegitcommit: 1e7ac70be1b4d89708c0d9552897515f2cbf52c4
+ms.openlocfilehash: 4f0277ef5883a238cf2579d2d9ea956bc06061e2
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68433555"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589874"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Contraintes sur les paramètres de type (Guide de programmation C#)
 
@@ -113,7 +113,7 @@ Vous pouvez l’utiliser comme montré dans l’exemple suivant pour créer un e
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Collections.Generic>
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Introduction aux génériques](../../../csharp/programming-guide/generics/index.md)
-- [Classes génériques](../../../csharp/programming-guide/generics/generic-classes.md)
-- [new, contrainte](../../../csharp/language-reference/keywords/new-constraint.md)
+- [Guide de programmation C#](../index.md)
+- [Introduction aux génériques](./index.md)
+- [Classes génériques](./generic-classes.md)
+- [new, contrainte](../../language-reference/keywords/new-constraint.md)

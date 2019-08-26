@@ -10,28 +10,28 @@ helpviewer_keywords:
 - reading data, text files
 - text files, reading
 ms.assetid: 92246c5b-e819-4eea-9370-1a9460e12de3
-ms.openlocfilehash: 236e730eaae0bc73c715e9b1c2c71d6c870d78e3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2b98f24da7f13ae752f248eb8f26c75c1d47a824
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64608533"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923949"
 ---
 # <a name="how-to-read-from-a-text-file-c-programming-guide"></a>Procédure : Lire un fichier texte (Guide de programmation C#)
 Cet exemple lit le contenu d’un fichier texte à l’aide des méthodes statiques <xref:System.IO.File.ReadAllText%2A> et <xref:System.IO.File.ReadAllLines%2A> de la classe <xref:System.IO.File?displayProperty=nameWithType>.  
   
- Pour obtenir un exemple utilisant <xref:System.IO.StreamReader>, consultez [Guide pratique pour lire un fichier texte ligne par ligne](../../../csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time.md).  
+ Pour obtenir un exemple utilisant <xref:System.IO.StreamReader>, consultez [Guide pratique pour lire un fichier texte ligne par ligne](./how-to-read-a-text-file-one-line-at-a-time.md).  
   
 > [!NOTE]
->  Les fichiers qui sont utilisés dans cet exemple sont créés dans la rubrique [Guide pratique pour écrire dans un fichier texte](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md).  
+> Les fichiers qui sont utilisés dans cet exemple sont créés dans la rubrique [Guide pratique pour écrire dans un fichier texte](./how-to-write-to-a-text-file.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  [!code-csharp[csFilesandFolders#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#4)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
  Copiez le code et collez-le dans une application console C#.  
   
- Si vous n’utilisez pas les fichiers texte à partir de [Guide pratique pour écrire dans un fichier texte](../../../csharp/programming-guide/file-system/how-to-write-to-a-text-file.md), remplacez l’argument par `ReadAllText` et `ReadAllLines`, en fournissant le chemin et le nom correspondants sur votre ordinateur.  
+ Si vous n’utilisez pas les fichiers texte à partir de [Guide pratique pour écrire dans un fichier texte](./how-to-write-to-a-text-file.md), remplacez l’argument par `ReadAllText` et `ReadAllLines`, en fournissant le chemin et le nom correspondants sur votre ordinateur.  
   
 ## <a name="robust-programming"></a>Programmation fiable  
  Les conditions ci-dessous peuvent générer une exception.  
@@ -44,5 +44,5 @@ Cet exemple lit le contenu d’un fichier texte à l’aide des méthodes statiq
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.IO?displayProperty=nameWithType>
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Système de fichiers et Registre (Guide de programmation C#)](../../../csharp/programming-guide/file-system/index.md)
+- [Guide de programmation C#](../index.md)
+- [Système de fichiers et Registre (Guide de programmation C#)](./index.md)

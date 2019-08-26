@@ -5,12 +5,12 @@ ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: ea6f93e52ade91e61bdfcbc35aeb56de9101e80f
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 1be04f98a4dec1317c485c7e482568cfe48ea9bf
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878930"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69588883"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Valeurs de retour de Main() (Guide de programmation C#)
 
@@ -24,7 +24,7 @@ Elle peut également retourner un `int` :
 
 Si la valeur de retour de `Main` n’est pas utilisée, retourner `void` permet d’avoir un code un peu plus simple. Cependant, retourner un entier permet au programme de communiquer des informations d’état à d’autres programmes ou scripts qui appellent le fichier exécutable. La valeur de retour de `Main` est traitée comme le code de sortie du processus. Si `void` est retourné à partir de `Main`, le code de sortie est implicitement `0`. L’exemple suivant montre comment accéder à la valeur de retour de `Main`.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Cet exemple utilise les outils de ligne de commande [.NET Core](../../../core/index.md). Si vous ne connaissez pas les outils de ligne de commande .NET Core, vous pouvez les découvrir dans cette [rubrique Bien démarrer](../../../core/tutorials/using-with-xplat-cli.md).
 
@@ -95,7 +95,7 @@ Quand le point d’entrée de l’application retourne `Task` ou `Task<int>`, le
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Guide de programmation C#](../index.md)
 - [Référence C#](../index.md)
 - [Main() et arguments de ligne de commande](index.md)
-- [Guide pratique pour afficher les arguments de ligne de commande](../../programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)
+- [Guide pratique pour afficher les arguments de ligne de commande](./how-to-display-command-line-arguments.md)

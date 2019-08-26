@@ -10,15 +10,15 @@ helpviewer_keywords:
 - unboxing [C#]
 - boxing [C#]
 ms.assetid: 8da9bbf4-bce9-4b08-b2e5-f64c11c56514
-ms.openlocfilehash: 811123ac195bbc92d9e690dcd828535daa246460
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 849983bb9cce6c9e0f41247a898747300fd29435
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878939"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69588535"
 ---
 # <a name="boxing-and-unboxing-c-programming-guide"></a>Boxing et unboxing (Guide de programmation C#)
-Le boxing est la conversion d’un [type valeur](../../../csharp/language-reference/keywords/value-types.md) en type `object` ou en un type interface implémenté par ce type valeur. Quand le CLR exécute un boxing d’un type valeur, il wrappe la valeur dans une instance <xref:System.Object?displayProperty=nameWithType> et la stocke sur le tas managé. L'unboxing extrait le type valeur de l'objet. La conversion boxing est implicite ; la conversion unboxing est explicite. Le concept de boxing et de unboxing repose sur la vue unifiée par C# du système de type, dans lequel une valeur de n'importe quel type peut être traitée en tant qu'objet.  
+Le boxing est la conversion d’un [type valeur](../../language-reference/keywords/value-types.md) en type `object` ou en un type interface implémenté par ce type valeur. Quand le CLR exécute un boxing d’un type valeur, il wrappe la valeur dans une instance <xref:System.Object?displayProperty=nameWithType> et la stocke sur le tas managé. L'unboxing extrait le type valeur de l'objet. La conversion boxing est implicite ; la conversion unboxing est explicite. Le concept de boxing et de unboxing repose sur la vue unifiée par C# du système de type, dans lequel une valeur de n'importe quel type peut être traitée en tant qu'objet.  
   
  Dans l’exemple suivant, la variable de type entier `i` est convertie (*boxed*) et assignée à l’objet `o`.  
   
@@ -33,10 +33,10 @@ Le boxing est la conversion d’un [type valeur](../../../csharp/language-refere
  [!code-csharp[csProgGuideTypes#47](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#47)]  
   
 ## <a name="performance"></a>Performances  
- Par rapport aux assignations simples, le boxing et l'unboxing sont des processus qui coûtent cher en calcul. Lorsqu'un type valeur est boxed, un nouvel objet doit être alloué et construit. À un degré moindre, le cast requis pour l'unboxing coûte également cher en calcul. Pour plus d’informations, consultez [Performances](../../../../docs/framework/performance/performance-tips.md).  
+ Par rapport aux assignations simples, le boxing et l'unboxing sont des processus qui coûtent cher en calcul. Lorsqu'un type valeur est boxed, un nouvel objet doit être alloué et construit. À un degré moindre, le cast requis pour l'unboxing coûte également cher en calcul. Pour plus d’informations, consultez [Performances](../../../framework/performance/performance-tips.md).  
   
 ## <a name="boxing"></a>Boxing  
- Le boxing est utilisé pour stocker des types valeur dans le tas rassemblé par garbage collection. Le boxing est une conversion implicite d’un [type valeur](../../../csharp/language-reference/keywords/value-types.md) en type `object` ou en un type interface implémenté par ce type valeur. Le boxing d'un type valeur alloue une instance d'objet sur le tas et copie la valeur dans le nouvel objet.  
+ Le boxing est utilisé pour stocker des types valeur dans le tas rassemblé par garbage collection. Le boxing est une conversion implicite d’un [type valeur](../../language-reference/keywords/value-types.md) en type `object` ou en un type interface implémenté par ce type valeur. Le boxing d'un type valeur alloue une instance d'objet sur le tas et copie la valeur dans le nouvel objet.  
   
  Dans l'exemple suivant, une variable de type valeur est déclarée :  
   
@@ -57,11 +57,11 @@ Le boxing est la conversion d’un [type valeur](../../../csharp/language-refere
 ## <a name="description"></a>Description  
  Cet exemple utilise le boxing pour convertir une variable `i` (entier) en un objet `o`. Ensuite, la valeur `i` stockée dans la variable `123` est remplacée par la valeur `456`. L'exemple montre que le type valeur d'origine et que l'objet boxed utilisent des emplacements de mémoire distincts et peuvent, par conséquent, stocker des valeurs différentes.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  [!code-csharp[csProgGuideTypes#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#16)]  
   
 ## <a name="unboxing"></a>Unboxing  
- L’unboxing est une conversion explicite du type `object` en un [type valeur](../../../csharp/language-reference/keywords/value-types.md), ou d’un type interface en un type valeur qui implémente l’interface. Une opération d'unboxing comprend les étapes suivantes :  
+ L’unboxing est une conversion explicite du type `object` en un [type valeur](../../language-reference/keywords/value-types.md), ou d’un type interface en un type valeur qui implémente l’interface. Une opération d'unboxing comprend les étapes suivantes :  
   
 - Vérification de l'instance de l'objet pour s'assurer qu'il s'agit bien d'une valeur boxed du type valeur spécifié.  
   
@@ -77,7 +77,7 @@ Le boxing est la conversion d’un [type valeur](../../../csharp/language-refere
   
  Pour que l'unboxing de types valeur réussisse au moment de l'exécution, l'élément qui est unboxed doit être une référence à un objet précédemment créé par boxing d'une instance de ce type valeur. La tentative d'extraction de `null` provoque un <xref:System.NullReferenceException>. La tentative d'extraction d'une référence vers un type de valeur incompatible provoque un <xref:System.InvalidCastException>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple suivant montre un cas d'unboxing non valide et l'`InvalidCastException` qui en résulte. Avec `try` et `catch`, un message d'erreur est affiché lorsque l'erreur se produit.  
   
  [!code-csharp[csProgGuideTypes#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#20)]  
@@ -108,10 +108,10 @@ int j = (int) o;
 ## <a name="related-sections"></a>Rubriques connexes  
  Pour plus d'informations :  
   
-- [Types référence](../../../csharp/language-reference/keywords/reference-types.md)  
+- [Types référence](../../language-reference/keywords/reference-types.md)  
   
-- [Types valeur](../../../csharp/language-reference/keywords/value-types.md)  
+- [Types valeur](../../language-reference/keywords/value-types.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
+- [Guide de programmation C#](../index.md)

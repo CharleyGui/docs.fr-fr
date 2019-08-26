@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: f5cfa6ba-cc25-4017-82cd-ba7391859113
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2b3fda2af84ff74e129c36dc966bad247bdf9e20
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 4f0f254b7794ce1cd4c765bee70c78e3c60a14aa
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59427134"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946496"
 ---
 # <a name="how-to-add-references-to-type-libraries"></a>Procédure : ajouter des références aux bibliothèques de types
 Quand vous ajoutez une référence à une bibliothèque de types, Visual Studio génère un assembly d'interopérabilité contenant des métadonnées. Si un assembly PIA (Primary Interop Assembly) est disponible, Visual Studio utilise l'assembly existant avant de générer un nouvel assembly d'interopérabilité.  
@@ -36,7 +36,7 @@ Quand vous ajoutez une référence à une bibliothèque de types, Visual Studio 
 7. Dans la fenêtre **Propriétés**, vérifiez que la propriété **Incorporer les types interop** a la valeur **True**. Visual Studio incorpore alors les informations de type pour les types COM dans vos fichiers exécutables, en éliminant le besoin de déployer des assemblys PIA (Primary Interop Assembly) avec votre application.  
   
 > [!NOTE]
->  Les options de menu et de boîte de dialogue peuvent varier en fonction de la version de Visual Studio utilisée.  
+> Les options de menu et de boîte de dialogue peuvent varier en fonction de la version de Visual Studio utilisée.  
   
 ### <a name="to-add-a-reference-to-a-type-library-for-command-line-compilation"></a>Pour ajouter une référence à une bibliothèque de types pour la compilation en ligne de commande  
   

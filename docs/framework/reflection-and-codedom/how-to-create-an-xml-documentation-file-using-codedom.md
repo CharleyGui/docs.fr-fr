@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: e3b80484-36b9-41dd-9d21-a2f9a36381dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d984257958354eb2c6be6aa57d8b68ca39039edc
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 283fc91762bc4065bd9bd09efaa2bc0061451ef9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65632804"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962724"
 ---
 # <a name="how-to-create-an-xml-documentation-file-using-codedom"></a>Procédure : créer un fichier de documentation XML à l’aide de CodeDOM
 Vous pouvez utiliser CodeDOM pour créer du code qui génère de la documentation XML. Le processus implique la création du graphique CodeDOM qui contient les commentaires de documentation XML, la génération du code et la compilation du code généré avec l’option du compilateur qui crée la sortie de documentation XML.  
@@ -44,7 +44,7 @@ Vous pouvez utiliser CodeDOM pour créer du code qui génère de la documentatio
      [!code-csharp[CodeDomHelloWorldSample#6](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#6)]
      [!code-vb[CodeDomHelloWorldSample#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomHelloWorldSample/vb/program.vb#6)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple de code suivant crée un graphique CodeDOM avec des commentaires de documentation, génère un fichier de code à partir du graphique, compile le fichier et crée un fichier de documentation XML associé.  
   
  [!code-csharp[CodeDomHelloWorldSample#1](../../../samples/snippets/csharp/VS_Snippets_CLR/CodeDomHelloWorldSample/cs/program.cs#1)]
@@ -81,6 +81,6 @@ Vous pouvez utiliser CodeDOM pour créer du code qui génère de la documentatio
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Documentation de votre code avec le langage XML](~/docs/visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)
-- [Commentaires sur la documentation XML](~/docs/csharp/programming-guide/xmldoc/index.md)
+- [Documentation de votre code avec le langage XML](../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)
+- [Commentaires sur la documentation XML](../../csharp/programming-guide/xmldoc/index.md)
 - [Documentation XML](/cpp/ide/xml-documentation-visual-cpp)
