@@ -4,12 +4,12 @@ description: Découvrez comment héberger le runtime .NET Core à partir du code
 author: mjrousos
 ms.date: 12/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: d3bdaacd4be776e0e9fff01698cca360ea4c9c6d
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 8eebc04390514bca288b67952ec7748366a45d6e
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402020"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69660520"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Écrire un hôte .NET Core personnalisé pour contrôler le runtime .NET à partir de votre code natif
 
@@ -23,7 +23,7 @@ Cet article donne une vue d’ensemble des étapes nécessaires pour démarrer l
 
 Comme les hôtes sont des applications natives, ce didacticiel aborde la construction d’une application C++ pour héberger .NET Core. Vous avez besoin d’un environnement de développement C++ (comme celui fourni par [Visual Studio](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)).
 
-Vous avez également besoin d’une application .NET Core simple pour tester l’hôte, vous devez donc installer le [SDK .NET Core](https://www.microsoft.com/net/core) et [créer une petite application de test .NET Core](../../core/tutorials/with-visual-studio.md) (par exemple, une application « Hello World »). L’application « Hello World » créée par le nouveau modèle de projet de console .NET Core est suffisante.
+Vous avez également besoin d’une application .NET Core simple pour tester l’hôte, vous devez donc installer le [SDK .NET Core](https://www.microsoft.com/net/core) et [créer une petite application de test .NET Core](with-visual-studio.md) (par exemple, une application « Hello World »). L’application « Hello World » créée par le nouveau modèle de projet de console .NET Core est suffisante.
 
 ## <a name="hosting-apis"></a>API d’hébergement
 Vous pouvez utiliser trois API différentes pour héberger .NET Core. Ce document et ses [exemples](https://github.com/dotnet/samples/tree/master/core/hosting) associés présentent toutes les options.

@@ -4,12 +4,12 @@ description: Découvrez comment porter des projets de bibliothèque de .NET Fram
 author: cartermp
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 8709c4942bcd1b0fc7f0e75ee41e5c9a01df83ee
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
+ms.openlocfilehash: c7a770ba2da8c245ba9140852fc7c2a33a55f7a2
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56745558"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69660710"
 ---
 # <a name="port-net-framework-libraries-to-net-core"></a>Porter des bibliothèques .NET Framework vers .NET Core
 
@@ -29,16 +29,16 @@ Vous devez également vous familiariser avec le contenu des rubriques suivantes�
 [.NET Standard](../../standard/net-standard.md)\
 Cette rubrique décrit la spécification formelle des API .NET qui sont destinées à être mises à disposition sur toutes les implémentations .NET.
 
-[Packages, métapackages et frameworks](~/docs/core/packages.md)   
+[Packages, métapackages et frameworks](../packages.md)   
 Cet article explique comment .NET Core définit et utilise les packages et comment ceux-ci prennent en charge le code qui s’exécute sur plusieurs implémentations .NET.
 
-[Développer des bibliothèques avec des outils multiplateformes](~/docs/core/tutorials/libraries.md)   
+[Développer des bibliothèques avec des outils multiplateformes](../tutorials/libraries.md)   
 Cette rubrique explique comment écrire des bibliothèques pour .NET à l’aide d’outils CLI multiplateformes.
 
-[Ajouts au format *csproj* pour .NET Core](~/docs/core/tools/csproj.md)   
+[Ajouts au format *csproj* pour .NET Core](../tools/csproj.md)   
 Cet article décrit les modifications qui ont été apportées au fichier projet dans le cadre du passage à *csproj* et à MSBuild.
 
-[Porter du code vers .NET Core - Analyser les dépendances tierces](~/docs/core/porting/third-party-deps.md)   
+[Porter du code vers .NET Core - Analyser les dépendances tierces](third-party-deps.md)   
 Cette rubrique décrit la portabilité des dépendances tierces et explique quoi faire quand une dépendance de package NuGet ne s’exécute pas sur .NET Core.
 
 ## <a name="retargeting-your-net-framework-code-to-net-framework-472"></a>Recibler du code .NET Framework vers .NET Framework 4.7.2

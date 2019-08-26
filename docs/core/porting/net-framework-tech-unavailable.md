@@ -4,12 +4,12 @@ description: Découvrir les technologies .NET Framework non disponibles sur .NET
 author: cartermp
 ms.author: mairaw
 ms.date: 04/30/2019
-ms.openlocfilehash: bfeea58f4d80b789a7174a77e0784f2326906416
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 87c3dd337ad44fd21b255afa7c03b528cd8a42ad
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737088"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69660595"
 ---
 # <a name="net-framework-technologies-unavailable-on-net-core"></a>Technologies .NET Framework non disponibles sur .NET Core
 
@@ -33,13 +33,13 @@ Pour la communication entre ordinateurs, utilisez plutôt une solution réseau. 
 
 ## <a name="code-access-security-cas"></a>sécurité d'accès du code (CAS, Code Access Security)
 
-Le sandboxing, qui s’appuie sur le runtime ou le framework pour limiter les ressources utilisées ou exécutées par une application gérée ou une bibliothèque, [n’est pas pris en charge sur .NET Framework](~/docs/framework/misc/code-access-security.md) ni, par conséquent, sur .NET Core. Les cas sont trop nombreux dans .NET Framework et le runtime où une élévation des privilèges se produit pour continuer à considérer la sécurité d’accès du code comme une limite de sécurité. En outre, la sécurité du code complique l’implémentation et a souvent a des implications en matière de performances d’exactitude pour les applications qui ne prévoient pas de l’utiliser.
+Le sandboxing, qui s’appuie sur le runtime ou le framework pour limiter les ressources utilisées ou exécutées par une application gérée ou une bibliothèque, [n’est pas pris en charge sur .NET Framework](../../framework/misc/code-access-security.md) ni, par conséquent, sur .NET Core. Les cas sont trop nombreux dans .NET Framework et le runtime où une élévation des privilèges se produit pour continuer à considérer la sécurité d’accès du code comme une limite de sécurité. En outre, la sécurité du code complique l’implémentation et a souvent a des implications en matière de performances d’exactitude pour les applications qui ne prévoient pas de l’utiliser.
 
 Servez-vous des limites de sécurité fournies par le système d’exploitation, comme la virtualisation, les conteneurs ou les comptes d’utilisateurs, pour exécuter des processus avec l’ensemble de privilèges minimal.
 
 ## <a name="security-transparency"></a>Transparence de la sécurité
 
-Tout comme la sécurité d’accès du code, la transparence de la sécurité sépare le code sandbox du code critique de sécurité d’une manière déclarative, mais [n’est plus prise en charge en tant que limite de sécurité](~/docs/framework/misc/security-transparent-code.md). Cette fonctionnalité est très utilisée par Silverlight. 
+Tout comme la sécurité d’accès du code, la transparence de la sécurité sépare le code sandbox du code critique de sécurité d’une manière déclarative, mais [n’est plus prise en charge en tant que limite de sécurité](../../framework/misc/security-transparent-code.md). Cette fonctionnalité est très utilisée par Silverlight. 
 
 Utilisez les limites de sécurité fournies par le système d’exploitation, comme la virtualisation, les conteneurs ou des comptes d’utilisateurs, pour exécuter des processus avec l’ensemble de privilèges le plus petit possible.
 

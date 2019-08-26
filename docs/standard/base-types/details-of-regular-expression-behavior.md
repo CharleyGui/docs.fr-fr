@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bb43554d53051ce02a296f225c68c74352add5ed
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 7ceee0c228000982be83c79fed2f7af43712b3ae
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567485"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963393"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Comportement détaillé des expressions régulières
 Le moteur d’expression régulière du .NET Framework est un analyseur d’expression régulière rétroactive qui incorpore un moteur NFA (Nondeterministic Finite Automaton) tel que celui utilisé par Perl, Python, Emacs et Tcl. Cette particularité le distingue des moteurs d’expression régulière pure DFA (Deterministic Finite Automaton) plus rapides, mais plus limités, comme ceux d’awk, egrep ou lex. Elle le distingue également des moteurs NFA POSIX standardisés, mais plus lents. La section suivante décrit les trois types de moteurs d’expression régulière et explique pourquoi les expressions régulières dans le .NET Framework sont implémentées à l’aide d’un moteur NFA classique.  
@@ -31,7 +31,7 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
  Les moteurs NFA classiques ont la préférence des programmeurs, car ils offrent un meilleur contrôle sur la mise en correspondance de chaînes que les moteurs DFA ou NFA POSIX. Même si, dans le pire des cas, ils peuvent s’exécuter lentement, vous pouvez les amener à trouver des correspondances sur des durées linéaires ou polynomiales à l’aide de modèles qui réduisent les ambiguïtés et limitent la rétroaction. En d’autres termes, même si les moteurs NFA privilégient la puissance et la flexibilité au détriment des performances, ils offrent souvent des performances bonnes à acceptables si une expression régulière est bien écrite et évite les cas dans lesquels la rétroaction dégrade exponentiellement les performances.  
   
 > [!NOTE]
->  Pour plus d’informations sur la baisse des performances due à la rétroaction excessive et sur les moyens de créer une expression régulière pour y remédier, consultez [Rétroaction](../../../docs/standard/base-types/backtracking-in-regular-expressions.md).  
+> Pour plus d’informations sur la baisse des performances due à la rétroaction excessive et sur les moyens de créer une expression régulière pour y remédier, consultez [Rétroaction](../../../docs/standard/base-types/backtracking-in-regular-expressions.md).  
   
 ## <a name="net-framework-engine-capabilities"></a>Fonctionnalités du moteur .NET Framework  
  Pour tirer parti des avantages d’un moteur NFA classique, le moteur d’expression régulière du .NET Framework inclut un ensemble complet de constructions pour permettre aux programmeurs de diriger le moteur de rétroaction. Ces constructions peuvent être utilisées pour rechercher des correspondances plus rapidement ou pour favoriser des expansions spécifiques par rapport à d’autres.  

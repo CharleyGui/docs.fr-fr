@@ -5,12 +5,12 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 10/05/2017
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 0322d44ca37ab8e7faa3188887069c2e04ec755b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: f8c37f47cc8dfb999f2371773a50c2dd91e074a5
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59110264"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69660476"
 ---
 # <a name="publish-your-net-core-hello-world-application-with-visual-studio-2017"></a>Publier votre application .NET Core Hello World avec Visual Studio 2017
 
@@ -52,4 +52,4 @@ Pour publier et exécuter votre application :
 
 Le processus de publication crée un déploiement dépendant du framework ; qui est un type de déploiement où l’application publiée s’exécute sur toutes les plateformes prises en charge par .NET Core, avec .NET Core installé sur le système. Les utilisateurs peuvent exécuter votre application en émettant la commande `dotnet HelloWorld.dll` à partir d’une fenêtre de console.
 
-Pour plus d’informations sur la publication et le déploiement d’applications .NET Core, consultez [Déploiement d’applications .NET](../../core/deploying/index.md).
+Pour plus d’informations sur la publication et le déploiement d’applications .NET Core, consultez [Déploiement d’applications .NET](../deploying/index.md).

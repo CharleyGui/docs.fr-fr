@@ -3,12 +3,12 @@ title: Modèles personnalisés pour dotnet new
 description: Découvrez les modèles personnalisés pour tout type de projet ou de fichier .NET.
 author: thraka
 ms.date: 06/14/2019
-ms.openlocfilehash: 738c6b07f77bdbf6fd946253f95c8691e4172f31
-ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
+ms.openlocfilehash: d513965a60416392fb8acd15c9f89c8af0ec7876
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67410348"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69660590"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Modèles personnalisés pour dotnet new
 
@@ -18,7 +18,7 @@ Vous pouvez installer des modèles personnalisés à partir d’un package NuGet
 
 Le moteur de modèle est open source et le dépôt de code en ligne se trouve à l’adresse [dotnet/templating](https://github.com/dotnet/templating/) sur GitHub. Visitez le dépôt [dotnet/dotnet-template-samples](https://github.com/dotnet/dotnet-template-samples) pour obtenir des exemples de modèles. Vous trouverez d’autres modèles, y compris des modèles tiers, à partir de la page [Available templates for dotnet new](https://github.com/dotnet/templating/wiki/Available-templates-for-dotnet-new) (modèles disponibles pour dotnet new) sur GitHub. Pour plus d’informations sur la création et l’utilisation de modèles personnalisés, consultez [Guide pratique pour créer vos propres modèles pour dotnet new](https://devblogs.microsoft.com/dotnet/how-to-create-your-own-templates-for-dotnet-new/) et le [Wiki du dépôt GitHub dotnet/templating GitHub](https://github.com/dotnet/templating/wiki).
 
-Pour suivre une procédure pas à pas et créer un modèle, consultez le didacticiel [Créer un modèle personnalisé pour dotnet new](~/docs/core/tutorials/create-custom-template.md).
+Pour suivre une procédure pas à pas et créer un modèle, consultez le didacticiel [Créer un modèle personnalisé pour dotnet new](../tutorials/create-custom-template.md).
 
 ### <a name="net-default-templates"></a>Modèles par défaut .NET
 
