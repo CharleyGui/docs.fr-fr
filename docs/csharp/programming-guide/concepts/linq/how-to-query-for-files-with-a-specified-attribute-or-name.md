@@ -2,17 +2,17 @@
 title: 'Procédure : Rechercher des fichiers ayant un attribut ou un nom donné (C#)'
 ms.date: 07/20/2015
 ms.assetid: 560e3879-b0b3-4549-ad02-0a53aff2f83c
-ms.openlocfilehash: 94642ff500cb065ffcb28d6099c3f9f50d43d124
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: c1ecaad7e4fb4538331ba8f8076c9795acc52877
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584330"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592901"
 ---
-# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a><span data-ttu-id="de8e3-102">Procédure : Rechercher des fichiers ayant un attribut ou un nom donné (C#)</span><span class="sxs-lookup"><span data-stu-id="de8e3-102">How to: Query for Files with a Specified Attribute or Name (C#)</span></span>
-<span data-ttu-id="de8e3-103">Cet exemple montre comment rechercher tous les fichiers ayant une extension de nom de fichier spécifiée (par exemple « .txt ») dans une arborescence de répertoires spécifiée.</span><span class="sxs-lookup"><span data-stu-id="de8e3-103">This example shows how to find all files that have a specified file name extension (for example ".txt") in a specified directory tree.</span></span> <span data-ttu-id="de8e3-104">Il montre également comment retourner le fichier le plus récent ou le plus ancien dans l’arborescence en fonction de l’heure de création.</span><span class="sxs-lookup"><span data-stu-id="de8e3-104">It also shows how to return either the newest or oldest file in the tree based on the creation time.</span></span>  
+# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a><span data-ttu-id="21ce6-102">Procédure : Rechercher des fichiers ayant un attribut ou un nom donné (C#)</span><span class="sxs-lookup"><span data-stu-id="21ce6-102">How to: Query for Files with a Specified Attribute or Name (C#)</span></span>
+<span data-ttu-id="21ce6-103">Cet exemple montre comment rechercher tous les fichiers ayant une extension de nom de fichier spécifiée (par exemple « .txt ») dans une arborescence de répertoires spécifiée.</span><span class="sxs-lookup"><span data-stu-id="21ce6-103">This example shows how to find all files that have a specified file name extension (for example ".txt") in a specified directory tree.</span></span> <span data-ttu-id="21ce6-104">Il montre également comment retourner le fichier le plus récent ou le plus ancien dans l’arborescence en fonction de l’heure de création.</span><span class="sxs-lookup"><span data-stu-id="21ce6-104">It also shows how to return either the newest or oldest file in the tree based on the creation time.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="de8e3-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="de8e3-105">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="21ce6-105">Exemples</span><span class="sxs-lookup"><span data-stu-id="21ce6-105">Example</span></span>  
   
 ```csharp  
 class FindFileByExtension  
@@ -63,10 +63,10 @@ class FindFileByExtension
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="de8e3-106">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="de8e3-106">Compiling the Code</span></span>  
-  <span data-ttu-id="de8e3-107">Créez un projet d’application console C#, avec des directives `using` pour les espaces de noms System.Linq et System.IO.</span><span class="sxs-lookup"><span data-stu-id="de8e3-107">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>
+## <a name="compiling-the-code"></a><span data-ttu-id="21ce6-106">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="21ce6-106">Compiling the Code</span></span>  
+  <span data-ttu-id="21ce6-107">Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.</span><span class="sxs-lookup"><span data-stu-id="21ce6-107">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>
   
-## <a name="see-also"></a><span data-ttu-id="de8e3-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="de8e3-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="21ce6-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="21ce6-108">See also</span></span>
 
-- [<span data-ttu-id="de8e3-109">LINQ to Objects (C#)</span><span class="sxs-lookup"><span data-stu-id="de8e3-109">LINQ to Objects (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
-- [<span data-ttu-id="de8e3-110">LINQ et répertoires de fichiers (C#)</span><span class="sxs-lookup"><span data-stu-id="de8e3-110">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [<span data-ttu-id="21ce6-109">LINQ to Objects (C#)</span><span class="sxs-lookup"><span data-stu-id="21ce6-109">LINQ to Objects (C#)</span></span>](./linq-to-objects.md)
+- [<span data-ttu-id="21ce6-110">LINQ et répertoires de fichiers (C#)</span><span class="sxs-lookup"><span data-stu-id="21ce6-110">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)

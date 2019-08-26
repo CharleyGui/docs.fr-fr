@@ -7,26 +7,26 @@ f1_keywords:
 helpviewer_keywords:
 - '#error directive [C#]'
 ms.assetid: f2a7f3af-4cf9-4111-b369-70204d24b26b
-ms.openlocfilehash: 3aa31ce7e189684bd60c238905df3bcbd1818ed6
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f18dbd007e80397b815256231a1d56e5ca50010e
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54559334"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69608560"
 ---
-# <a name="error-c-reference"></a><span data-ttu-id="0b235-102">#error (référence C#)</span><span class="sxs-lookup"><span data-stu-id="0b235-102">#error (C# Reference)</span></span>
-<span data-ttu-id="0b235-103">`#error` vous permet de générer une erreur définie par l’utilisateur [CS1029](../compiler-messages/cs1029.md) à partir d’un emplacement spécifique dans votre code.</span><span class="sxs-lookup"><span data-stu-id="0b235-103">`#error` lets you generate a [CS1029](../compiler-messages/cs1029.md) user-defined error from a specific location in your code.</span></span> <span data-ttu-id="0b235-104">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="0b235-104">For example:</span></span>  
+# <a name="error-c-reference"></a><span data-ttu-id="cb9bc-102">#error (référence C#)</span><span class="sxs-lookup"><span data-stu-id="cb9bc-102">#error (C# Reference)</span></span>
+<span data-ttu-id="cb9bc-103">`#error` vous permet de générer une erreur définie par l’utilisateur [CS1029](../compiler-messages/cs1029.md) à partir d’un emplacement spécifique dans votre code.</span><span class="sxs-lookup"><span data-stu-id="cb9bc-103">`#error` lets you generate a [CS1029](../compiler-messages/cs1029.md) user-defined error from a specific location in your code.</span></span> <span data-ttu-id="cb9bc-104">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="cb9bc-104">For example:</span></span>  
   
 ```csharp
 #error Deprecated code in this method.  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="0b235-105">Notes</span><span class="sxs-lookup"><span data-stu-id="0b235-105">Remarks</span></span>  
- <span data-ttu-id="0b235-106">`#error` est souvent utilisé dans une directive conditionnelle.</span><span class="sxs-lookup"><span data-stu-id="0b235-106">A common use of `#error` is in a conditional directive.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="cb9bc-105">Remarques</span><span class="sxs-lookup"><span data-stu-id="cb9bc-105">Remarks</span></span>  
+ <span data-ttu-id="cb9bc-106">`#error` est souvent utilisé dans une directive conditionnelle.</span><span class="sxs-lookup"><span data-stu-id="cb9bc-106">A common use of `#error` is in a conditional directive.</span></span>  
   
- <span data-ttu-id="0b235-107">Il est possible aussi de générer un avertissement défini par l’utilisateur avec [#warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-warning.md).</span><span class="sxs-lookup"><span data-stu-id="0b235-107">It is also possible to generate a user-defined warning with [#warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-warning.md).</span></span>  
+ <span data-ttu-id="cb9bc-107">Il est possible aussi de générer un avertissement défini par l’utilisateur avec [#warning](./preprocessor-warning.md).</span><span class="sxs-lookup"><span data-stu-id="cb9bc-107">It is also possible to generate a user-defined warning with [#warning](./preprocessor-warning.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="0b235-108">Exemple</span><span class="sxs-lookup"><span data-stu-id="0b235-108">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="cb9bc-108">Exemples</span><span class="sxs-lookup"><span data-stu-id="cb9bc-108">Example</span></span>  
   
 ```csharp
 // preprocessor_error.cs  
@@ -43,8 +43,8 @@ class MainClass
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="0b235-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0b235-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cb9bc-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cb9bc-109">See also</span></span>
 
-- [<span data-ttu-id="0b235-110">Référence C#</span><span class="sxs-lookup"><span data-stu-id="0b235-110">C# Reference</span></span>](../../../csharp/language-reference/index.md)
-- [<span data-ttu-id="0b235-111">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="0b235-111">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
-- [<span data-ttu-id="0b235-112">Directives de préprocesseur C#</span><span class="sxs-lookup"><span data-stu-id="0b235-112">C# Preprocessor Directives</span></span>](../../../csharp/language-reference/preprocessor-directives/index.md)
+- [<span data-ttu-id="cb9bc-110">Référence C#</span><span class="sxs-lookup"><span data-stu-id="cb9bc-110">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="cb9bc-111">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="cb9bc-111">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="cb9bc-112">Directives de préprocesseur C#</span><span class="sxs-lookup"><span data-stu-id="cb9bc-112">C# Preprocessor Directives</span></span>](./index.md)

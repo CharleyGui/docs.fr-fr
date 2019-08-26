@@ -2,21 +2,21 @@
 title: 'Procédure : Créer des assemblys friend non signés (C#)'
 ms.date: 07/20/2015
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
-ms.openlocfilehash: 6bc2d807b3d1cf6c82a9ba6303139b9758581f35
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 5dadd725234048c4b6a4f9a0fa9b38dbf92671aa
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59318232"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595911"
 ---
-# <a name="how-to-create-unsigned-friend-assemblies-c"></a><span data-ttu-id="bad49-102">Procédure : Créer des assemblys friend non signés (C#)</span><span class="sxs-lookup"><span data-stu-id="bad49-102">How to: Create Unsigned Friend Assemblies (C#)</span></span>
-<span data-ttu-id="bad49-103">Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui ne sont pas signés.</span><span class="sxs-lookup"><span data-stu-id="bad49-103">This example shows how to use friend assemblies with assemblies that are unsigned.</span></span>  
+# <a name="how-to-create-unsigned-friend-assemblies-c"></a><span data-ttu-id="2711e-102">Procédure : Créer des assemblys friend non signés (C#)</span><span class="sxs-lookup"><span data-stu-id="2711e-102">How to: Create Unsigned Friend Assemblies (C#)</span></span>
+<span data-ttu-id="2711e-103">Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui ne sont pas signés.</span><span class="sxs-lookup"><span data-stu-id="2711e-103">This example shows how to use friend assemblies with assemblies that are unsigned.</span></span>  
   
-### <a name="to-create-an-assembly-and-a-friend-assembly"></a><span data-ttu-id="bad49-104">Pour créer un assembly et un assembly friend</span><span class="sxs-lookup"><span data-stu-id="bad49-104">To create an assembly and a friend assembly</span></span>  
+### <a name="to-create-an-assembly-and-a-friend-assembly"></a><span data-ttu-id="2711e-104">Pour créer un assembly et un assembly friend</span><span class="sxs-lookup"><span data-stu-id="2711e-104">To create an assembly and a friend assembly</span></span>  
   
-1. <span data-ttu-id="bad49-105">Ouvrez une invite de commandes.</span><span class="sxs-lookup"><span data-stu-id="bad49-105">Open a command prompt.</span></span>  
+1. <span data-ttu-id="2711e-105">Ouvrez une invite de commandes.</span><span class="sxs-lookup"><span data-stu-id="2711e-105">Open a command prompt.</span></span>  
   
-2. <span data-ttu-id="bad49-106">Créez un fichier C# nommé `friend_unsigned_A.` qui contient le code suivant.</span><span class="sxs-lookup"><span data-stu-id="bad49-106">Create a C# file named `friend_unsigned_A.` that contains the following code.</span></span> <span data-ttu-id="bad49-107">Le code utilise l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> pour déclarer friend_unsigned_B comme assembly friend.</span><span class="sxs-lookup"><span data-stu-id="bad49-107">The code uses the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute to declare friend_unsigned_B as a friend assembly.</span></span>  
+2. <span data-ttu-id="2711e-106">Créez un fichier C# nommé `friend_unsigned_A.` qui contient le code suivant.</span><span class="sxs-lookup"><span data-stu-id="2711e-106">Create a C# file named `friend_unsigned_A.` that contains the following code.</span></span> <span data-ttu-id="2711e-107">Le code utilise l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> pour déclarer friend_unsigned_B comme assembly friend.</span><span class="sxs-lookup"><span data-stu-id="2711e-107">The code uses the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute to declare friend_unsigned_B as a friend assembly.</span></span>  
   
     ```csharp  
     // friend_unsigned_A.cs  
@@ -46,13 +46,13 @@ ms.locfileid: "59318232"
     }  
     ```  
   
-3. <span data-ttu-id="bad49-108">Compilez et signez friend_unsigned_A à l’aide de la commande suivante.</span><span class="sxs-lookup"><span data-stu-id="bad49-108">Compile and sign friend_unsigned_A by using the following command.</span></span>  
+3. <span data-ttu-id="2711e-108">Compilez et signez friend_unsigned_A à l’aide de la commande suivante.</span><span class="sxs-lookup"><span data-stu-id="2711e-108">Compile and sign friend_unsigned_A by using the following command.</span></span>  
   
     ```csharp  
     csc /target:library friend_unsigned_A.cs  
     ```  
   
-4. <span data-ttu-id="bad49-109">Créez un fichier C# nommé `friend_unsigned_B` qui contient le code suivant.</span><span class="sxs-lookup"><span data-stu-id="bad49-109">Create a C# file named `friend_unsigned_B` that contains the following code.</span></span> <span data-ttu-id="bad49-110">Étant donné que friend_unsigned_A spécifie friend_unsigned_B comme assembly friend, le code de friend_unsigned_B peut accéder aux membres et aux types `internal` de friend_unsigned_A.</span><span class="sxs-lookup"><span data-stu-id="bad49-110">Because friend_unsigned_A specifies friend_unsigned_B as a friend assembly, the code in friend_unsigned_B can access `internal` types and members from friend_unsigned_A.</span></span>  
+4. <span data-ttu-id="2711e-109">Créez un fichier C# nommé `friend_unsigned_B` qui contient le code suivant.</span><span class="sxs-lookup"><span data-stu-id="2711e-109">Create a C# file named `friend_unsigned_B` that contains the following code.</span></span> <span data-ttu-id="2711e-110">Étant donné que friend_unsigned_A spécifie friend_unsigned_B comme assembly friend, le code de friend_unsigned_B peut accéder aux membres et aux types `internal` de friend_unsigned_A.</span><span class="sxs-lookup"><span data-stu-id="2711e-110">Because friend_unsigned_A specifies friend_unsigned_B as a friend assembly, the code in friend_unsigned_B can access `internal` types and members from friend_unsigned_A.</span></span>  
   
     ```csharp  
     // friend_unsigned_B.cs  
@@ -75,25 +75,25 @@ ms.locfileid: "59318232"
     }  
     ```  
   
-5. <span data-ttu-id="bad49-111">Compilez friend_unsigned_B à l’aide de la commande suivante.</span><span class="sxs-lookup"><span data-stu-id="bad49-111">Compile friend_unsigned_B by using the following command.</span></span>  
+5. <span data-ttu-id="2711e-111">Compilez friend_unsigned_B à l’aide de la commande suivante.</span><span class="sxs-lookup"><span data-stu-id="2711e-111">Compile friend_unsigned_B by using the following command.</span></span>  
   
     ```csharp  
     csc /r:friend_unsigned_A.dll /out:friend_unsigned_B.exe friend_unsigned_B.cs  
     ```  
   
-     <span data-ttu-id="bad49-112">Le nom de l’assembly qui est généré par le compilateur doit correspondre au nom de l’assembly friend qui est passé à l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>.</span><span class="sxs-lookup"><span data-stu-id="bad49-112">The name of the assembly that is generated by the compiler must match the friend assembly name that is passed to the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute.</span></span> <span data-ttu-id="bad49-113">Vous devez spécifier explicitement le nom de l’assembly de sortie (.exe ou .dll) à l’aide de l’option du compilateur `/out`.</span><span class="sxs-lookup"><span data-stu-id="bad49-113">You must explicitly specify the name of the output assembly (.exe or .dll) by using the `/out` compiler option.</span></span> <span data-ttu-id="bad49-114">Pour plus d’informations, consultez l’article [/out (C# Compiler Options) (/out [Options du compilateur C#])](../../../../csharp/language-reference/compiler-options/out-compiler-option.md).</span><span class="sxs-lookup"><span data-stu-id="bad49-114">For more information, see [/out (C# Compiler Options)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md).</span></span>  
+     <span data-ttu-id="2711e-112">Le nom de l’assembly qui est généré par le compilateur doit correspondre au nom de l’assembly friend qui est passé à l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>.</span><span class="sxs-lookup"><span data-stu-id="2711e-112">The name of the assembly that is generated by the compiler must match the friend assembly name that is passed to the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute.</span></span> <span data-ttu-id="2711e-113">Vous devez spécifier explicitement le nom de l’assembly de sortie (.exe ou .dll) à l’aide de l’option du compilateur `/out`.</span><span class="sxs-lookup"><span data-stu-id="2711e-113">You must explicitly specify the name of the output assembly (.exe or .dll) by using the `/out` compiler option.</span></span> <span data-ttu-id="2711e-114">Pour plus d’informations, consultez l’article [/out (C# Compiler Options) (/out [Options du compilateur C#])](../../../language-reference/compiler-options/out-compiler-option.md).</span><span class="sxs-lookup"><span data-stu-id="2711e-114">For more information, see [/out (C# Compiler Options)](../../../language-reference/compiler-options/out-compiler-option.md).</span></span>  
   
-6. <span data-ttu-id="bad49-115">Exécutez le fichier friend_unsigned_B.exe.</span><span class="sxs-lookup"><span data-stu-id="bad49-115">Run the friend_unsigned_B.exe file.</span></span>  
+6. <span data-ttu-id="2711e-115">Exécutez le fichier friend_unsigned_B.exe.</span><span class="sxs-lookup"><span data-stu-id="2711e-115">Run the friend_unsigned_B.exe file.</span></span>  
   
-     <span data-ttu-id="bad49-116">Le programme imprime deux chaînes : « Class1.Test » et « Class2.Test ».</span><span class="sxs-lookup"><span data-stu-id="bad49-116">The program prints two strings: "Class1.Test" and "Class2.Test".</span></span>  
+     <span data-ttu-id="2711e-116">Le programme imprime deux chaînes : « Class1.Test » et « Class2.Test ».</span><span class="sxs-lookup"><span data-stu-id="2711e-116">The program prints two strings: "Class1.Test" and "Class2.Test".</span></span>  
   
-## <a name="net-framework-security"></a><span data-ttu-id="bad49-117">Sécurité .NET Framework</span><span class="sxs-lookup"><span data-stu-id="bad49-117">.NET Framework Security</span></span>  
- <span data-ttu-id="bad49-118">Il existe des similitudes entre l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> et la classe <xref:System.Security.Permissions.StrongNameIdentityPermission>.</span><span class="sxs-lookup"><span data-stu-id="bad49-118">There are similarities between the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute and the <xref:System.Security.Permissions.StrongNameIdentityPermission> class.</span></span> <span data-ttu-id="bad49-119">La principale différence est que <xref:System.Security.Permissions.StrongNameIdentityPermission> peut demander des autorisations de sécurité pour exécuter une section de code particulière, tandis que l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> contrôle la visibilité des membres et types `internal`.</span><span class="sxs-lookup"><span data-stu-id="bad49-119">The main difference is that <xref:System.Security.Permissions.StrongNameIdentityPermission> can demand security permissions to run a particular section of code, whereas the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute controls the visibility of `internal` types and members.</span></span>  
+## <a name="net-framework-security"></a><span data-ttu-id="2711e-117">Sécurité .NET Framework</span><span class="sxs-lookup"><span data-stu-id="2711e-117">.NET Framework Security</span></span>  
+ <span data-ttu-id="2711e-118">Il existe des similitudes entre l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> et la classe <xref:System.Security.Permissions.StrongNameIdentityPermission>.</span><span class="sxs-lookup"><span data-stu-id="2711e-118">There are similarities between the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute and the <xref:System.Security.Permissions.StrongNameIdentityPermission> class.</span></span> <span data-ttu-id="2711e-119">La principale différence est que <xref:System.Security.Permissions.StrongNameIdentityPermission> peut demander des autorisations de sécurité pour exécuter une section de code particulière, tandis que l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> contrôle la visibilité des membres et types `internal`.</span><span class="sxs-lookup"><span data-stu-id="2711e-119">The main difference is that <xref:System.Security.Permissions.StrongNameIdentityPermission> can demand security permissions to run a particular section of code, whereas the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute controls the visibility of `internal` types and members.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="bad49-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="bad49-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2711e-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2711e-120">See also</span></span>
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
-- [<span data-ttu-id="bad49-121">Assemblys dans .NET</span><span class="sxs-lookup"><span data-stu-id="bad49-121">Assemblies in .NET</span></span>](../../../../standard/assembly/index.md)
-- [<span data-ttu-id="bad49-122">Assemblys friend</span><span class="sxs-lookup"><span data-stu-id="bad49-122">Friend Assemblies</span></span>](../../../../standard/assembly/friend-assemblies.md)
-- [<span data-ttu-id="bad49-123">Guide pratique pour créer des assemblys friend signés (C#)</span><span class="sxs-lookup"><span data-stu-id="bad49-123">How to: Create Signed Friend Assemblies (C#)</span></span>](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)
-- [<span data-ttu-id="bad49-124">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="bad49-124">C# Programming Guide</span></span>](../../../../csharp/programming-guide/index.md)
+- [<span data-ttu-id="2711e-121">Assemblys dans .NET</span><span class="sxs-lookup"><span data-stu-id="2711e-121">Assemblies in .NET</span></span>](../../../../standard/assembly/index.md)
+- [<span data-ttu-id="2711e-122">Assemblys friend</span><span class="sxs-lookup"><span data-stu-id="2711e-122">Friend Assemblies</span></span>](../../../../standard/assembly/friend-assemblies.md)
+- [<span data-ttu-id="2711e-123">Guide pratique pour créer des assemblys friend signés (C#)</span><span class="sxs-lookup"><span data-stu-id="2711e-123">How to: Create Signed Friend Assemblies (C#)</span></span>](./how-to-create-signed-friend-assemblies.md)
+- [<span data-ttu-id="2711e-124">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="2711e-124">C# Programming Guide</span></span>](../../index.md)

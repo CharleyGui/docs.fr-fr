@@ -7,71 +7,71 @@ f1_keywords:
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: 1277b35723777760deebb6606ddc90bd21e654ec
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f30b48fc6bd1e896658a7234a58409ea9a0f5e6f
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744118"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69601942"
 ---
-# <a name="-operator-c-reference"></a><span data-ttu-id="554db-102">Opérateur >= (référence C#)</span><span class="sxs-lookup"><span data-stu-id="554db-102">= operator (C# reference)</span></span>
+# <a name="-operator-c-reference"></a><span data-ttu-id="67f7e-102">Opérateur >= (référence C#)</span><span class="sxs-lookup"><span data-stu-id="67f7e-102">= operator (C# reference)</span></span>
 
-<span data-ttu-id="554db-103">L’opérateur d’assignation `=` assigne la valeur de son opérande de droite à une variable, une [propriété](../../programming-guide/classes-and-structs/properties.md) ou un élément [d’indexeur](../../../csharp/programming-guide/indexers/index.md) donné par son opérande de gauche.</span><span class="sxs-lookup"><span data-stu-id="554db-103">The assignment operator `=` assigns the value of its right-hand operand to a variable, a [property](../../programming-guide/classes-and-structs/properties.md), or an [indexer](../../../csharp/programming-guide/indexers/index.md) element given by its left-hand operand.</span></span> <span data-ttu-id="554db-104">Le résultat d’une expression d’assignation est la valeur assignée à l’opérande de gauche.</span><span class="sxs-lookup"><span data-stu-id="554db-104">The result of an assignment expression is the value assigned to the left-hand operand.</span></span> <span data-ttu-id="554db-105">L’opérande de droite doit être du même type que l’opérande de gauche, ou implicitement convertible vers le type de l’opérande de gauche.</span><span class="sxs-lookup"><span data-stu-id="554db-105">The type of the right-hand operand must be the same as the type of the left-hand operand or implicitly convertible to it.</span></span>
+<span data-ttu-id="67f7e-103">L’opérateur d’assignation `=` assigne la valeur de son opérande de droite à une variable, une [propriété](../../programming-guide/classes-and-structs/properties.md) ou un élément [d’indexeur](../../programming-guide/indexers/index.md) donné par son opérande de gauche.</span><span class="sxs-lookup"><span data-stu-id="67f7e-103">The assignment operator `=` assigns the value of its right-hand operand to a variable, a [property](../../programming-guide/classes-and-structs/properties.md), or an [indexer](../../programming-guide/indexers/index.md) element given by its left-hand operand.</span></span> <span data-ttu-id="67f7e-104">Le résultat d’une expression d’assignation est la valeur assignée à l’opérande de gauche.</span><span class="sxs-lookup"><span data-stu-id="67f7e-104">The result of an assignment expression is the value assigned to the left-hand operand.</span></span> <span data-ttu-id="67f7e-105">L’opérande de droite doit être du même type que l’opérande de gauche, ou implicitement convertible vers le type de l’opérande de gauche.</span><span class="sxs-lookup"><span data-stu-id="67f7e-105">The type of the right-hand operand must be the same as the type of the left-hand operand or implicitly convertible to it.</span></span>
 
-<span data-ttu-id="554db-106">L’opérateur d’assignation est associatif à droite ; autrement dit, une expression de la forme :</span><span class="sxs-lookup"><span data-stu-id="554db-106">The assignment operator is right-associative, that is, an expression of the form</span></span>
+<span data-ttu-id="67f7e-106">L’opérateur d’assignation est associatif à droite ; autrement dit, une expression de la forme :</span><span class="sxs-lookup"><span data-stu-id="67f7e-106">The assignment operator is right-associative, that is, an expression of the form</span></span>
 
 ```csharp
 a = b = c
 ```
 
-<span data-ttu-id="554db-107">est évaluée comme étant</span><span class="sxs-lookup"><span data-stu-id="554db-107">is evaluated as</span></span>
+<span data-ttu-id="67f7e-107">est évaluée comme étant</span><span class="sxs-lookup"><span data-stu-id="67f7e-107">is evaluated as</span></span>
 
 ```csharp
 a = (b = c)
 ```
 
-<span data-ttu-id="554db-108">L’exemple suivant illustre l’utilisation de l’opérateur d’assignation avec une variable locale, une propriété et un élément d’indexeur comme opérande de gauche :</span><span class="sxs-lookup"><span data-stu-id="554db-108">The following example demonstrates the usage of the assignment operator with a local variable, a property, and an indexer element as its left-hand operand:</span></span>
+<span data-ttu-id="67f7e-108">L’exemple suivant illustre l’utilisation de l’opérateur d’assignation avec une variable locale, une propriété et un élément d’indexeur comme opérande de gauche :</span><span class="sxs-lookup"><span data-stu-id="67f7e-108">The following example demonstrates the usage of the assignment operator with a local variable, a property, and an indexer element as its left-hand operand:</span></span>
 
 [!code-csharp-interactive[simple assignment](~/samples/csharp/language-reference/operators/AssignmentOperator.cs#Simple)]
 
-## <a name="ref-assignment-operator"></a><span data-ttu-id="554db-109">Opérateur d'assignation ref</span><span class="sxs-lookup"><span data-stu-id="554db-109">ref assignment operator</span></span>
+## <a name="ref-assignment-operator"></a><span data-ttu-id="67f7e-109">Opérateur d'assignation ref</span><span class="sxs-lookup"><span data-stu-id="67f7e-109">ref assignment operator</span></span>
 
-<span data-ttu-id="554db-110">À partir de C# 7.3, vous pouvez utiliser l’opérateur d’assignation ref `= ref` pour réaffecter une variable [locale ref](../keywords/ref.md#ref-locals) ou une variable [locale ref readonly](../keywords/ref.md#ref-readonly-locals).</span><span class="sxs-lookup"><span data-stu-id="554db-110">Beginning with C# 7.3, you can use the ref assignment operator `= ref` to reassign a [ref local](../keywords/ref.md#ref-locals) or [ref readonly local](../keywords/ref.md#ref-readonly-locals) variable.</span></span> <span data-ttu-id="554db-111">L’exemple suivant illustre l’utilisation de l’opérateur d’assignation ref :</span><span class="sxs-lookup"><span data-stu-id="554db-111">The following example demonstrates the usage of the ref assignment operator:</span></span>
+<span data-ttu-id="67f7e-110">À partir de C# 7.3, vous pouvez utiliser l’opérateur d’assignation ref `= ref` pour réaffecter une variable [locale ref](../keywords/ref.md#ref-locals) ou une variable [locale ref readonly](../keywords/ref.md#ref-readonly-locals).</span><span class="sxs-lookup"><span data-stu-id="67f7e-110">Beginning with C# 7.3, you can use the ref assignment operator `= ref` to reassign a [ref local](../keywords/ref.md#ref-locals) or [ref readonly local](../keywords/ref.md#ref-readonly-locals) variable.</span></span> <span data-ttu-id="67f7e-111">L’exemple suivant illustre l’utilisation de l’opérateur d’assignation ref :</span><span class="sxs-lookup"><span data-stu-id="67f7e-111">The following example demonstrates the usage of the ref assignment operator:</span></span>
 
 [!code-csharp[ref assignment operator](~/samples/csharp/language-reference/operators/AssignmentOperator.cs#RefAssignment)]
 
-<span data-ttu-id="554db-112">Dans le cas de l’opérateur d’assignation ref, les deux opérandes doivent être du même type.</span><span class="sxs-lookup"><span data-stu-id="554db-112">In the case of the ref assignment operator, the type of both its operands must be the same.</span></span>
+<span data-ttu-id="67f7e-112">Dans le cas de l’opérateur d’assignation ref, les deux opérandes doivent être du même type.</span><span class="sxs-lookup"><span data-stu-id="67f7e-112">In the case of the ref assignment operator, the type of both its operands must be the same.</span></span>
 
-<span data-ttu-id="554db-113">Pour plus d’informations, voir la [proposition de fonctionnalité](~/_csharplang/proposals/csharp-7.3/ref-local-reassignment.md).</span><span class="sxs-lookup"><span data-stu-id="554db-113">For more information, see the [feature proposal note](~/_csharplang/proposals/csharp-7.3/ref-local-reassignment.md).</span></span>
+<span data-ttu-id="67f7e-113">Pour plus d’informations, voir la [proposition de fonctionnalité](~/_csharplang/proposals/csharp-7.3/ref-local-reassignment.md).</span><span class="sxs-lookup"><span data-stu-id="67f7e-113">For more information, see the [feature proposal note](~/_csharplang/proposals/csharp-7.3/ref-local-reassignment.md).</span></span>
 
-## <a name="compound-assignment"></a><span data-ttu-id="554db-114">Assignation composée</span><span class="sxs-lookup"><span data-stu-id="554db-114">Compound assignment</span></span>
+## <a name="compound-assignment"></a><span data-ttu-id="67f7e-114">Assignation composée</span><span class="sxs-lookup"><span data-stu-id="67f7e-114">Compound assignment</span></span>
 
-<span data-ttu-id="554db-115">Pour un opérateur binaire `op`, une expression d’assignation composée du formulaire</span><span class="sxs-lookup"><span data-stu-id="554db-115">For a binary operator `op`, a compound assignment expression of the form</span></span>
+<span data-ttu-id="67f7e-115">Pour un opérateur binaire `op`, une expression d’assignation composée du formulaire</span><span class="sxs-lookup"><span data-stu-id="67f7e-115">For a binary operator `op`, a compound assignment expression of the form</span></span>
 
 ```csharp
 x op= y
 ```
 
-<span data-ttu-id="554db-116">est équivalent à</span><span class="sxs-lookup"><span data-stu-id="554db-116">is equivalent to</span></span>
+<span data-ttu-id="67f7e-116">est équivalent à</span><span class="sxs-lookup"><span data-stu-id="67f7e-116">is equivalent to</span></span>
 
 ```csharp
 x = x op y
 ```
 
-<span data-ttu-id="554db-117">sauf que `x` n’est évalué qu’une seule fois.</span><span class="sxs-lookup"><span data-stu-id="554db-117">except that `x` is only evaluated once.</span></span>
+<span data-ttu-id="67f7e-117">sauf que `x` n’est évalué qu’une seule fois.</span><span class="sxs-lookup"><span data-stu-id="67f7e-117">except that `x` is only evaluated once.</span></span>
 
-<span data-ttu-id="554db-118">L’assignation composée est prise en charge par les opérateurs [arithmétiques](arithmetic-operators.md#compound-assignment), [logiques booléens](boolean-logical-operators.md#compound-assignment) et [logiques au niveau du bit et du décalage](bitwise-and-shift-operators.md#compound-assignment).</span><span class="sxs-lookup"><span data-stu-id="554db-118">Compound assignment is supported by [arithmetic](arithmetic-operators.md#compound-assignment), [Boolean logical](boolean-logical-operators.md#compound-assignment), and [bitwise logical and shift](bitwise-and-shift-operators.md#compound-assignment) operators.</span></span>
+<span data-ttu-id="67f7e-118">L’assignation composée est prise en charge par les opérateurs [arithmétiques](arithmetic-operators.md#compound-assignment), [logiques booléens](boolean-logical-operators.md#compound-assignment) et [logiques au niveau du bit et du décalage](bitwise-and-shift-operators.md#compound-assignment).</span><span class="sxs-lookup"><span data-stu-id="67f7e-118">Compound assignment is supported by [arithmetic](arithmetic-operators.md#compound-assignment), [Boolean logical](boolean-logical-operators.md#compound-assignment), and [bitwise logical and shift](bitwise-and-shift-operators.md#compound-assignment) operators.</span></span>
 
-## <a name="operator-overloadability"></a><span data-ttu-id="554db-119">Capacité de surcharge de l’opérateur</span><span class="sxs-lookup"><span data-stu-id="554db-119">Operator overloadability</span></span>
+## <a name="operator-overloadability"></a><span data-ttu-id="67f7e-119">Capacité de surcharge de l’opérateur</span><span class="sxs-lookup"><span data-stu-id="67f7e-119">Operator overloadability</span></span>
 
-<span data-ttu-id="554db-120">Un type défini par l’utilisateur ne peut pas surcharger l’opérateur d’assignation.</span><span class="sxs-lookup"><span data-stu-id="554db-120">A user-defined type cannot overload the assignment operator.</span></span> <span data-ttu-id="554db-121">Toutefois, il peut définir une conversion implicite vers un autre type.</span><span class="sxs-lookup"><span data-stu-id="554db-121">However, a user-defined type can define an implicit conversion to another type.</span></span> <span data-ttu-id="554db-122">Ainsi, la valeur d’un type défini par l’utilisateur peut être assignée à une variable, une propriété ou un élément d’indexeur d’un autre type.</span><span class="sxs-lookup"><span data-stu-id="554db-122">That way, the value of a user-defined type can be assigned to a variable, a property, or an indexer element of another type.</span></span> <span data-ttu-id="554db-123">Pour plus d’informations, consultez [Opérateurs de conversion définie par l’utilisateur](user-defined-conversion-operators.md).</span><span class="sxs-lookup"><span data-stu-id="554db-123">For more information, see [User-defined conversion operators](user-defined-conversion-operators.md).</span></span>
+<span data-ttu-id="67f7e-120">Un type défini par l’utilisateur ne peut pas surcharger l’opérateur d’assignation.</span><span class="sxs-lookup"><span data-stu-id="67f7e-120">A user-defined type cannot overload the assignment operator.</span></span> <span data-ttu-id="67f7e-121">Toutefois, il peut définir une conversion implicite vers un autre type.</span><span class="sxs-lookup"><span data-stu-id="67f7e-121">However, a user-defined type can define an implicit conversion to another type.</span></span> <span data-ttu-id="67f7e-122">Ainsi, la valeur d’un type défini par l’utilisateur peut être assignée à une variable, une propriété ou un élément d’indexeur d’un autre type.</span><span class="sxs-lookup"><span data-stu-id="67f7e-122">That way, the value of a user-defined type can be assigned to a variable, a property, or an indexer element of another type.</span></span> <span data-ttu-id="67f7e-123">Pour plus d’informations, consultez [Opérateurs de conversion définie par l’utilisateur](user-defined-conversion-operators.md).</span><span class="sxs-lookup"><span data-stu-id="67f7e-123">For more information, see [User-defined conversion operators](user-defined-conversion-operators.md).</span></span>
 
-## <a name="c-language-specification"></a><span data-ttu-id="554db-124">spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="554db-124">C# language specification</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="67f7e-124">spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="67f7e-124">C# language specification</span></span>
 
-<span data-ttu-id="554db-125">Pour plus d’informations, voir la section [Opérateurs d’assignation](~/_csharplang/spec/expressions.md#assignment-operators) de la [spécification du langage C#](../language-specification/index.md).</span><span class="sxs-lookup"><span data-stu-id="554db-125">For more information, see the [Assignment operators](~/_csharplang/spec/expressions.md#assignment-operators) section of the [C# language specification](../language-specification/index.md).</span></span>
+<span data-ttu-id="67f7e-125">Pour plus d’informations, voir la section [Opérateurs d’assignation](~/_csharplang/spec/expressions.md#assignment-operators) de la [spécification du langage C#](../language-specification/index.md).</span><span class="sxs-lookup"><span data-stu-id="67f7e-125">For more information, see the [Assignment operators](~/_csharplang/spec/expressions.md#assignment-operators) section of the [C# language specification](../language-specification/index.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="554db-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="554db-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="67f7e-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="67f7e-126">See also</span></span>
 
-- [<span data-ttu-id="554db-127">Informations de référence sur C#</span><span class="sxs-lookup"><span data-stu-id="554db-127">C# reference</span></span>](../index.md)
-- [<span data-ttu-id="554db-128">Opérateurs C#</span><span class="sxs-lookup"><span data-stu-id="554db-128">C# operators</span></span>](index.md)
-- [<span data-ttu-id="554db-129">ref, mot clé</span><span class="sxs-lookup"><span data-stu-id="554db-129">ref keyword</span></span>](../keywords/ref.md)
+- [<span data-ttu-id="67f7e-127">Informations de référence sur C#</span><span class="sxs-lookup"><span data-stu-id="67f7e-127">C# reference</span></span>](../index.md)
+- [<span data-ttu-id="67f7e-128">Opérateurs C#</span><span class="sxs-lookup"><span data-stu-id="67f7e-128">C# operators</span></span>](index.md)
+- [<span data-ttu-id="67f7e-129">ref, mot clé</span><span class="sxs-lookup"><span data-stu-id="67f7e-129">ref keyword</span></span>](../keywords/ref.md)
