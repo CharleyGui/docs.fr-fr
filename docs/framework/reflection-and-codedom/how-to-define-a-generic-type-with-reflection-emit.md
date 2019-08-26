@@ -12,18 +12,18 @@ helpviewer_keywords:
 ms.assetid: 07d5f01a-7b5b-40ea-9b15-f21561098fe4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8527f5f4a52c02744b02fea7ffaf833c223fa3f1
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 544d04236a8f1b824a15c6ee7912020346841076
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586209"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912533"
 ---
 # <a name="how-to-define-a-generic-type-with-reflection-emit"></a>Procédure : définir un type générique avec l’émission de réflexion
 Cette rubrique montre comment créer un type générique simple avec deux paramètres de type, comment appliquer des contraintes de classe, des contraintes d’interface et des contraintes spéciales aux paramètres de type, et comment créer des membres qui utilisent les paramètres de type de la classe comme types de paramètres et types de retour.  
   
 > [!IMPORTANT]
->  Une méthode n’est pas générique simplement car elle appartient à un type générique et utilise les paramètres de type de ce type. Une méthode est générique uniquement si elle a sa propre liste de paramètres de type. La plupart des méthodes sur les types génériques ne sont pas génériques, comme dans cet exemple. Pour obtenir un exemple d’émission de méthode générique, consultez [Guide pratique pour définir une méthode générique avec l’émission de réflexion](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-method-with-reflection-emit.md).  
+> Une méthode n’est pas générique simplement car elle appartient à un type générique et utilise les paramètres de type de ce type. Une méthode est générique uniquement si elle a sa propre liste de paramètres de type. La plupart des méthodes sur les types génériques ne sont pas génériques, comme dans cet exemple. Pour obtenir un exemple d’émission de méthode générique, consultez [Guide pratique pour définir une méthode générique avec l’émission de réflexion](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-method-with-reflection-emit.md).  
   
 ### <a name="to-define-a-generic-type"></a>Pour définir un type générique  
   
@@ -84,7 +84,7 @@ Cette rubrique montre comment créer un type générique simple avec deux param�
      Le constructeur utilisé pour cet exemple de code prend un `IEnumerable<T>`. Notez cependant qu’il ne s’agit pas de la définition de type générique de l’interface générique <xref:System.Collections.Generic.IEnumerable%601>. Au lieu de cela, le paramètre de type `T` de `List<T>` doit remplacer le paramètre de type `T` de `IEnumerable<T>`. (Cela peut paraître déroutant uniquement car les deux types ont des paramètres de type nommés `T`. C’est pourquoi cet exemple de code utilise les noms `TFirst` et `TSecond`.) Pour obtenir le type de l’argument du constructeur, commencez avec la définition de type générique `IEnumerable<T>` et appelez <xref:System.Type.MakeGenericType%2A> avec le premier paramètre de type générique de `List<T>`. La liste d’arguments de constructeur doit être passée en tant que tableau, avec un seul argument dans ce cas.  
   
     > [!NOTE]
-    >  La définition de type générique est exprimée en tant que `IEnumerable<>` quand vous utilisez l’opérateur `typeof` en C#, ou `IEnumerable(Of )` quand vous utilisez l’opérateur `GetType` en Visual Basic.  
+    > La définition de type générique est exprimée en tant que `IEnumerable<>` quand vous utilisez l’opérateur `typeof` en C#, ou `IEnumerable(Of )` quand vous utilisez l’opérateur `GetType` en Visual Basic.  
   
      Il est désormais possible d’obtenir le constructeur de `List<T>` en appelant <xref:System.Type.GetConstructor%2A> sur la définition de type générique. Pour convertir ce constructeur en constructeur correspondant de `List<TFirst>`, transmettez `List<TFirst>` et le constructeur de `List<T>` à la méthode statique <xref:System.Reflection.Emit.TypeBuilder.GetConstructor%28System.Type%2CSystem.Reflection.ConstructorInfo%29?displayProperty=nameWithType>.  
   
@@ -110,7 +110,7 @@ Cette rubrique montre comment créer un type générique simple avec deux param�
      [!code-csharp[EmitGenericType#10](../../../samples/snippets/csharp/VS_Snippets_CLR/EmitGenericType/CS/source.cs#10)]
      [!code-vb[EmitGenericType#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/EmitGenericType/VB/source.vb#10)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple de code suivant définit une classe nommée `Sample`, ainsi qu’une classe de base et deux interfaces. Le programme définit deux paramètres de type générique pour `Sample`, ce qui en fait un type générique. Les paramètres de type sont la seule chose qui rend un type générique. Le programme l’indique en affichant un message de test avant et après la définition des paramètres de type.  
   
  Le paramètre de type `TSecond` sert à illustrer les contraintes de classe et d’interface, à l’aide des interfaces et de la classe de base, et le paramètre de type `TFirst` sert à illustrer des contraintes spéciales.  

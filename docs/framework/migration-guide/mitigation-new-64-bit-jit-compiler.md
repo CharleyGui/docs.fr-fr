@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 0332dabc-72c5-4bdc-8975-20d717802b17
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 22c98e41624abc931bd03e4ddea09ed55d0d3f39
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6df750872e90572b00cdf427461b4a9782c47d63
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648479"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69968520"
 ---
 # <a name="mitigation-new-64-bit-jit-compiler"></a>Atténuation : nouveau compilateur JIT 64 bits
 À compter du .NET Framework 4.6, le runtime comprend un nouveau compilateur JIT 64 bits pour la compilation juste-à-temps. Ce changement n’affecte pas la compilation avec le compilateur JIT 32 bits.  
@@ -22,7 +22,7 @@ ms.locfileid: "64648479"
  Dans certains cas, la compilation avec le nouveau compilateur JIT 64 bits entraîne une exception de runtime ou le non-respect du comportement lors de l’exécution de code compilé par l’ancien compilateur JIT 64 bits. Voici quelques-unes des différences connues :  
   
 > [!IMPORTANT]
->  Tous ces problèmes connus ont été résolus dans le nouveau compilateur 64 bits fourni avec le SDK .NET Framework 4.6.2. La plupart ont également été résolus dans les versions de maintenance du .NET Framework 4.6 et 4.6.1, qui sont disponibles via Windows Update. Vous pouvez éviter ces problèmes en vous assurant que votre version de Windows est à jour, ou en mettant à niveau vers .NET Framework 4.6.2.  
+> Tous ces problèmes connus ont été résolus dans le nouveau compilateur 64 bits fourni avec le SDK .NET Framework 4.6.2. La plupart ont également été résolus dans les versions de maintenance du .NET Framework 4.6 et 4.6.1, qui sont disponibles via Windows Update. Vous pouvez éviter ces problèmes en vous assurant que votre version de Windows est à jour, ou en mettant à niveau vers .NET Framework 4.6.2.  
   
 - Dans certaines conditions, une opération d’unboxing peut lever une <xref:System.NullReferenceException> dans les versions Release avec l’optimisation activée.  
   

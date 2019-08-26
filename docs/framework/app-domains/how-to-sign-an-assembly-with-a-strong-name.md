@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 2c30799a-a826-46b4-a25d-c584027a6c67
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 458b18ad34cfff6ab136408ab8e8b2e7953b35cb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0b109ec82d139e3b3eb321c90d5f41dd1eae216f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593562"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927930"
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Procédure : signer un assembly avec un nom fort
 Il existe plusieurs façons de signer un assembly avec un nom fort :  
@@ -41,16 +41,16 @@ Il existe plusieurs façons de signer un assembly avec un nom fort :
   
 3. Sélectionnez la zone **Signer l'assembly** .  
   
-4. Dans la zone **Choisir un fichier de clé de nom fort**, choisissez **\<<Parcourir...>**, puis recherchez le fichier de clé. Pour créer un fichier de clé, choisissez **\<<Nouveau...>** et entrez son nom dans la boîte de dialogue **Créer une clé de nom fort**.  
+4. Dans la zone **Choisir un fichier de clé de nom fort**, choisissez **\<<Parcourir...>** , puis recherchez le fichier de clé. Pour créer un fichier de clé, choisissez **\<<Nouveau...>** et entrez son nom dans la boîte de dialogue **Créer une clé de nom fort**.  
   
 > [!NOTE]
->  Pour [différer la signature d’un assembly](../../../docs/framework/app-domains/delay-sign-assembly.md), choisissez un fichier de clé publique.  
+> Pour [différer la signature d’un assembly](../../../docs/framework/app-domains/delay-sign-assembly.md), choisissez un fichier de clé publique.  
   
 ### <a name="to-create-and-sign-an-assembly-with-a-strong-name-by-using-the-assembly-linker"></a>Pour créer et signer un assembly avec un nom fort à l'aide de l'utilitaire Assembly Linker  
   
 - À l’[Invite de commandes développeur pour Visual Studio](../../../docs/framework/tools/developer-command-prompt-for-vs.md), tapez la commande suivante :  
   
-     **al** **/out:**\<*assemblyName*> *\<moduleName>* **/keyfile:**\<*keyfileName*>  
+     **al** **/out:** \<*assemblyName*>  *\<moduleName>* **/keyfile:** \<*keyfileName*>  
   
      où :  
   
@@ -78,7 +78,7 @@ al /out:MyAssembly.dll MyModule.netmodule /keyfile:sgKey.snk
 2. Compilez le fichier de code source normalement.  
   
 > [!NOTE]
->  Les compilateurs C# et Visual Basic génèrent des avertissements (CS1699 et BC41008, respectivement) lorsqu'ils rencontrent l'attribut <xref:System.Reflection.AssemblyKeyFileAttribute> ou <xref:System.Reflection.AssemblyKeyNameAttribute> dans le code source. Vous pouvez ignorer les avertissements.  
+> Les compilateurs C# et Visual Basic génèrent des avertissements (CS1699 et BC41008, respectivement) lorsqu'ils rencontrent l'attribut <xref:System.Reflection.AssemblyKeyFileAttribute> ou <xref:System.Reflection.AssemblyKeyNameAttribute> dans le code source. Vous pouvez ignorer les avertissements.  
   
  L'exemple de code suivant utilise l'attribut <xref:System.Reflection.AssemblyKeyFileAttribute> avec un fichier de clé nommé `keyfile.snk`, situé dans le répertoire où l'assembly est compilé.  
   

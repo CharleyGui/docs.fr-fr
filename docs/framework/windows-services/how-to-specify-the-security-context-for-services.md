@@ -11,12 +11,12 @@ helpviewer_keywords:
 - ServiceInstaller class, security context
 ms.assetid: 02187c7b-dbf2-45f2-96c2-e11010225a22
 author: ghogen
-ms.openlocfilehash: 633d378b2336b3ee166375a923252e0477e75127
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 88dc9c40a2b8ff0ac9bba26c991ba2a4ac2dcb43
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591670"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69952435"
 ---
 # <a name="how-to-specify-the-security-context-for-services"></a>Procédure : spécifier le contexte de sécurité des services
 Par défaut, les services s’exécutent dans un contexte de sécurité différent de celui de l’utilisateur connecté. Les services s’exécutent dans le contexte du compte système par défaut, appelé `LocalSystem`, ce qui leur confère des privilèges d’accès aux ressources système différents de ceux de l’utilisateur. Vous pouvez changer ce comportement si vous souhaitez que votre service s’exécute sous un autre compte d’utilisateur.  
@@ -40,7 +40,7 @@ Par défaut, les services s’exécutent dans un contexte de sécurité différe
 2. Dans le concepteur, accédez à la classe `ProjectInstaller`, puis cliquez sur le programme d’installation du processus de service pour le service que vous utilisez.  
   
     > [!NOTE]
-    >  La classe `ProjectInstaller` comprend au moins deux composants d’installation pour chaque application de service : un qui installe les processus pour tous les services dans le projet, et un programme d’installation pour chaque service contenu dans l’application. Dans le cas présent, sélectionnez <xref:System.ServiceProcess.ServiceProcessInstaller>.  
+    > La classe `ProjectInstaller` comprend au moins deux composants d’installation pour chaque application de service : un qui installe les processus pour tous les services dans le projet, et un programme d’installation pour chaque service contenu dans l’application. Dans le cas présent, sélectionnez <xref:System.ServiceProcess.ServiceProcessInstaller>.  
   
 3. Dans la fenêtre **Propriétés**, définissez <xref:System.ServiceProcess.ServiceProcessInstaller.Account%2A> avec la valeur appropriée.  
   

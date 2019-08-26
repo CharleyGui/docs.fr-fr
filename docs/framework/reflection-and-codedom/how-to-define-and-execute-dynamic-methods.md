@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 07d08a99-62c5-4254-bce2-2a75e55a18ab
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 19f1cc3708d2d552da3d94bc6b490ebaa2ece657
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: b5c6de2bde111ae459dbcfa1c0a7363d406f5f80
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586167"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69928259"
 ---
 # <a name="how-to-define-and-execute-dynamic-methods"></a>Procédure : définir et exécuter des méthodes dynamiques
 Les procédures suivantes montrent comment définir et exécuter une méthode dynamique simple et une méthode dynamique liée à une instance d’une classe. Pour plus d’informations sur les méthodes dynamiques, consultez la classe <xref:System.Reflection.Emit.DynamicMethod> et [Scénarios de méthodes dynamiques avec Émission de réflexion](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sfk2s47t(v=vs.100)).  
@@ -38,7 +38,7 @@ Les procédures suivantes montrent comment définir et exécuter une méthode dy
 3. Créer un <xref:System.Reflection.Emit.DynamicMethod>. Dans cet exemple, la méthode se nomme `SquareIt`.  
   
     > [!NOTE]
-    >  Il n’est pas nécessaire de nommer les méthodes dynamiques. Elles ne peuvent pas être appelées par nom. Plusieurs méthodes dynamiques peuvent avoir le même nom. Toutefois, le nom apparaît dans les piles des appels et peut être utile pour le débogage.  
+    > Il n’est pas nécessaire de nommer les méthodes dynamiques. Elles ne peuvent pas être appelées par nom. Plusieurs méthodes dynamiques peuvent avoir le même nom. Toutefois, le nom apparaît dans les piles des appels et peut être utile pour le débogage.  
   
      Le type de la valeur de retour est spécifié comme `long`. La méthode est associée au module qui contient la classe `Example`, qui contient l’exemple de code. Vous pourriez spécifier n’importe quel module chargé. La méthode dynamique agit comme une méthode `static` au niveau du module (`Shared` en Visual Basic).  
   
@@ -91,7 +91,7 @@ Les procédures suivantes montrent comment définir et exécuter une méthode dy
 5. Créez une instance du délégué (déclaré à l’étape 1) qui représente la méthode dynamique en appelant la surcharge de méthode <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%28System.Type%2CSystem.Object%29>. La création du délégué achève la méthode, et toute tentative supplémentaire de changement de la méthode (par exemple l’ajout de code MSIL) est ignorée.  
   
     > [!NOTE]
-    >  Vous pouvez appeler la méthode <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A> plusieurs fois afin de créer des délégués liés à d’autres instances du type cible.  
+    > Vous pouvez appeler la méthode <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A> plusieurs fois afin de créer des délégués liés à d’autres instances du type cible.  
   
      Le code suivant lie la méthode à une nouvelle instance de la classe `Example` dont le champ de test privé a la valeur 42. Autrement dit, chaque fois que le délégué est appelé, l’instance de `Example` est passée au premier paramètre de la méthode.  
   
@@ -101,7 +101,7 @@ Les procédures suivantes montrent comment définir et exécuter une méthode dy
      [!code-csharp[DynamicMethodHowTo#16](../../../samples/snippets/csharp/VS_Snippets_CLR/DynamicMethodHowTo/cs/source.cs#16)]
      [!code-vb[DynamicMethodHowTo#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/DynamicMethodHowTo/vb/source.vb#16)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple de code suivant montre une méthode dynamique simple et une méthode dynamique liée à une instance d’une classe.  
   
  La méthode dynamique simple prend un argument, un entier 32 bits, et retourne le carré 64 bits de cet entier. Un délégué générique est utilisé pour appeler la méthode.  

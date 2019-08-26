@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 93892fa4-90b3-4ec4-b147-4bec9880de2b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2bf8610a1e2ad11d12acd55c69fbb98d078f7cc9
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: a16f51408de5ed7b2a0a7d45af81113fe8c7b386
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586146"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69928290"
 ---
 # <a name="how-to-define-a-generic-method-with-reflection-emit"></a>Procédure : définir une méthode générique avec l’émission de réflexion
 La première procédure montre comment créer une méthode générique simple avec deux paramètres de type et comment appliquer des contraintes de classe, des contraintes d’interface et des contraintes spéciales aux paramètres de type.  
@@ -26,7 +26,7 @@ La première procédure montre comment créer une méthode générique simple av
  La troisième procédure montre comment appeler la méthode générique.  
   
 > [!IMPORTANT]
->  Une méthode n’est pas générique simplement car elle appartient à un type générique et utilise les paramètres de type de ce type. Une méthode est générique uniquement si elle a sa propre liste de paramètres de type. Une méthode générique peut apparaître sur un type non générique, comme dans cet exemple. Pour obtenir un exemple de méthode non générique sur un type générique, consultez [Guide pratique pour définir un type générique avec l’émission de réflexion](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md).  
+> Une méthode n’est pas générique simplement car elle appartient à un type générique et utilise les paramètres de type de ce type. Une méthode est générique uniquement si elle a sa propre liste de paramètres de type. Une méthode générique peut apparaître sur un type non générique, comme dans cet exemple. Pour obtenir un exemple de méthode non générique sur un type générique, consultez [Guide pratique pour définir un type générique avec l’émission de réflexion](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md).  
   
 ### <a name="to-define-a-generic-method"></a>Pour définir une méthode générique  
   
@@ -147,7 +147,7 @@ La première procédure montre comment créer une méthode générique simple av
   
 4. La méthode émise peut également être appelée à partir d’un programme qui fait référence à l’assembly enregistré.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple de code suivant crée un type non générique, `DemoType`, avec une méthode générique, `Factory`. Cette méthode a deux paramètres de type générique, `TInput` pour spécifier un type d’entrée et `TOutput` pour spécifier un type de sortie. Pour implémenter `ICollection<TInput>` (`ICollection(Of TInput)` en Visual Basic), le paramètre de type `TOutput` a deux contraintes : être un type référence et avoir un constructeur sans paramètre.  
   
  La méthode a un paramètre formel, qui est un tableau de `TInput`. La méthode retourne une instance de `TOutput` qui contient tous les éléments du tableau d’entrée. `TOutput` peut être n’importe quel type de collection générique qui implémente l’interface générique <xref:System.Collections.Generic.ICollection%601>.  
@@ -155,7 +155,7 @@ La première procédure montre comment créer une méthode générique simple av
  Quand le code est exécuté, l’assembly dynamique est enregistré en tant que DemoGenericMethod1.dll, et peut être examiné à l’aide de [Ildasm.exe (désassembleur IL)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md).  
   
 > [!NOTE]
->  Pour apprendre comment émettre du code, une méthode efficace consiste à écrire un programme Visual Basic, C# ou Visual C++ qui effectue la tâche que vous tentez d’émettre, et à utiliser le désassembleur pour examiner le code MSIL produit par le compilateur.  
+> Pour apprendre comment émettre du code, une méthode efficace consiste à écrire un programme Visual Basic, C# ou Visual C++ qui effectue la tâche que vous tentez d’émettre, et à utiliser le désassembleur pour examiner le code MSIL produit par le compilateur.  
   
  L’exemple de code inclut du code source équivalent à la méthode émise. La méthode émise est appelée avec liaison tardive, et également à l’aide d’un délégué générique déclaré dans l’exemple de code.  
   

@@ -3,12 +3,12 @@ title: Types tuple - Guide C#
 description: En savoir plus sur les types tuple nommés et sans nom en C#
 ms.date: 05/15/2018
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: 4000228507bf7925083147ddd49dd10914ef2449
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: dc02fceb2901fb9cb7bf71869213d8b178520900
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882059"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988406"
 ---
 # <a name="c-tuple-types"></a>Types tuple C#
 
@@ -53,7 +53,7 @@ Vous créez un tuple nommé en spécifiant le nom de chaque élément. Une méth
 
 Ces synonymes sont gérés par le compilateur et le langage pour vous permettre d’utiliser efficacement les tuples nommés. Les IDE et les éditeurs peuvent lire ces noms sémantiques à l’aide des API Roslyn. Vous pouvez référencer les éléments d’un tuple nommé par ces noms sémantiques n’importe où dans le même assembly. Le compilateur remplace les noms que vous avez définis par les équivalents `Item*` lors de la génération de la sortie compilée. Le langage MSIL (Microsoft Intermediate Language) compilé n’inclut pas les noms que vous avez donnés à ces éléments.
 
-À partir de C# 7.1, les noms de champ d’un tuple peuvent être fournis à partir de variables utilisées pour initialiser le tuple. Ils sont appelés  **[initialiseurs de projection de tuple](#tuple-projection-initializers)**. Le code suivant crée un tuple nommé `accumulation` avec les éléments `count` (un entier) et `sum` (un double).
+À partir de C# 7.1, les noms de champ d’un tuple peuvent être fournis à partir de variables utilisées pour initialiser le tuple. Ils sont appelés  **[initialiseurs de projection de tuple](#tuple-projection-initializers)** . Le code suivant crée un tuple nommé `accumulation` avec les éléments `count` (un entier) et `sum` (un double).
 
 [!code-csharp[ProjectedTuple](../../samples/snippets/csharp/tuples/tuples/program.cs#ProjectedTupleNames "Named tuple")]
 
@@ -245,7 +245,7 @@ public class Point
 ```
 
 > [!WARNING]
->  Vous ne pouvez pas mélanger des déclarations existantes avec des déclarations à l’intérieur des parenthèses. Par exemple, ce qui suit n’est pas autorisé : `(var x, y) = MyMethod();`. L’erreur CS8184 est générée, car *x* est déclaré à l’intérieur des parenthèses et *y* a été précédemment déclaré ailleurs.
+> Vous ne pouvez pas mélanger des déclarations existantes avec des déclarations à l’intérieur des parenthèses. Par exemple, ce qui suit n’est pas autorisé : `(var x, y) = MyMethod();`. L’erreur CS8184 est générée, car *x* est déclaré à l’intérieur des parenthèses et *y* a été précédemment déclaré ailleurs.
 
 ### <a name="deconstructing-user-defined-types"></a>Déconstruction de types définis par l’utilisateur
 

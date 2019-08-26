@@ -9,15 +9,15 @@ dev_langs:
 ms.assetid: 8a5ea56c-0140-4b51-8997-875ae6a8e0cb
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 451893cf09b0d1ebdfb33d0020376aa35240b6d4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: e8c8e1b0d9a79ff22f3194e86cd580f3a7e199b2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54650991"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69962029"
 ---
 # <a name="building-xml-schemas"></a>Création de schémas XML
-Les classes de l’espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType> correspondent aux structures définies dans la recommandation du W3C (World Wide Web Consortium) sur les schémas XML et peuvent permettre de créer des schémas XML en mémoire.  
+Les classes de l'espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType> correspondent aux structures définies dans la recommandation du W3C (World Wide Web Consortium) sur les schémas XML et peuvent permettre de créer des schémas XML en mémoire.  
   
 ## <a name="building-an-xml-schema"></a>Création d'un schéma XML  
  Dans les exemples de code suivants, l'API du SOM permet de créer un schéma XML client en mémoire.  
@@ -35,14 +35,14 @@ Les classes de l’espace de noms <xref:System.Xml.Schema?displayProperty=nameWi
  Le contenu des éléments et des attributs est défini par leurs types. Pour créer des éléments et des attributs dont les types sont l'un des types de schéma intégrés, la propriété <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> des classes <xref:System.Xml.Schema.XmlSchemaElement> ou <xref:System.Xml.Schema.XmlSchemaAttribute> sont définies sur le nom qualifié correspondant du type intégré à l'aide de la classe <xref:System.Xml.XmlQualifiedName>. Pour créer un type défini par l'utilisateur pour les éléments et les attributs, un nouveau type simple ou complexe est créé à l'aide de la classe <xref:System.Xml.Schema.XmlSchemaSimpleType> ou <xref:System.Xml.Schema.XmlSchemaComplexType>.  
   
 > [!NOTE]
->  Pour créer des types simples ou complexes sans nom qui sont des enfants anonymes d'un élément ou d'un attribut (seuls les types simples s'appliquent aux attributs), définissez la propriété <xref:System.Xml.Schema.XmlSchemaElement.SchemaType%2A> des classes <xref:System.Xml.Schema.XmlSchemaElement> ou <xref:System.Xml.Schema.XmlSchemaAttribute> sur le type simple ou complexe sans nom au lieu de la propriété <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> des classes <xref:System.Xml.Schema.XmlSchemaElement> ou <xref:System.Xml.Schema.XmlSchemaAttribute>.  
+> Pour créer des types simples ou complexes sans nom qui sont des enfants anonymes d'un élément ou d'un attribut (seuls les types simples s'appliquent aux attributs), définissez la propriété <xref:System.Xml.Schema.XmlSchemaElement.SchemaType%2A> des classes <xref:System.Xml.Schema.XmlSchemaElement> ou <xref:System.Xml.Schema.XmlSchemaAttribute> sur le type simple ou complexe sans nom au lieu de la propriété <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> des classes <xref:System.Xml.Schema.XmlSchemaElement> ou <xref:System.Xml.Schema.XmlSchemaAttribute>.  
   
- Les schémas XML autorisent les types simples nommés et sans nom à être dérivés par restriction à partir d'autres types simples (intégrés ou définis par l'utilisateur) ou construits comme une liste ou l'union d'autres types simples. La classe <xref:System.Xml.Schema.XmlSchemaSimpleTypeRestriction> permet de créer un type simple par restriction du type `xs:string` intégré. Vous pouvez également utiliser les classes <xref:System.Xml.Schema.XmlSchemaSimpleTypeList> ou <xref:System.Xml.Schema.XmlSchemaSimpleTypeUnion> pour créer une liste ou l'union de types. La propriété <xref:System.Xml.Schema.XmlSchemaSimpleType.Content%2A?displayProperty=nameWithType> indique s'il s'agit d'une union, d'une liste ou d'une restriction de types simples.  
+ Les schémas XML autorisent les types simples nommés et sans nom à être dérivés par restriction à partir d'autres types simples (intégrés ou définis par l'utilisateur) ou construits comme une liste ou l'union d'autres types simples. La classe <xref:System.Xml.Schema.XmlSchemaSimpleTypeRestriction> permet de créer un type simple par restriction du type `xs:string` intégré. Vous pouvez également utiliser les classes <xref:System.Xml.Schema.XmlSchemaSimpleTypeList> ou <xref:System.Xml.Schema.XmlSchemaSimpleTypeUnion> pour créer des types liste ou union. La propriété <xref:System.Xml.Schema.XmlSchemaSimpleType.Content%2A?displayProperty=nameWithType> indique s'il s'agit d'une union, d'une liste ou d'une restriction de types simples.  
   
  Dans l'exemple de code suivant, le type de l'élément `FirstName` est le type `xs:string` intégré, le type de l'élément `LastName` est un type simple nommé qui est une restriction du type `xs:string`, avec une valeur de facette `MaxLength` de 20 et le type de l'attribut `CustomerId` est le type `xs:positiveInteger` intégré. L'élément `Customer` est un type complexe anonyme dont la particule est la séquence des éléments `FirstName` et `LastName` et dont les attributs contiennent l'attribut `CustomerId`.  
   
 > [!NOTE]
->  Vous pouvez également utiliser les classes <xref:System.Xml.Schema.XmlSchemaChoice> ou <xref:System.Xml.Schema.XmlSchemaAll> comme particule du type complexe pour répliquer les sémantiques `<xs:choice />` ou `<xs:all />`.  
+> Vous pouvez également utiliser les classes <xref:System.Xml.Schema.XmlSchemaChoice> ou <xref:System.Xml.Schema.XmlSchemaAll> comme particule du type complexe pour répliquer les sémantiques `<xs:choice />` ou `<xs:all />`.  
   
  [!code-cpp[XmlSchemaCreateExample#3](../../../../samples/snippets/cpp/VS_Snippets_Data/XmlSchemaCreateExample/CPP/XmlSchemaCreateExample.cpp#3)]
  [!code-csharp[XmlSchemaCreateExample#3](../../../../samples/snippets/csharp/VS_Snippets_Data/XmlSchemaCreateExample/CS/XmlSchemaCreateExample.cs#3)]
@@ -58,7 +58,7 @@ Les classes de l’espace de noms <xref:System.Xml.Schema?displayProperty=nameWi
  La méthode <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A?displayProperty=nameWithType> valide le schéma client par rapport aux règles d'un schéma XML et rend les propriétés de post-compilation de schéma disponibles.  
   
 > [!NOTE]
->  Toutes les propriétés de post-compilation de schéma de l'API du SOM diffèrent de celles du jeu d'informations de post-validation de schéma.  
+> Toutes les propriétés de post-compilation de schéma de l’API du SOM diffèrent de celles du jeu d’informations de post-validation de schéma.  
   
  L'objet <xref:System.Xml.Schema.ValidationEventHandler> ajouté à <xref:System.Xml.Schema.XmlSchemaSet> est un délégué qui appelle la méthode de rappel `ValidationCallback` pour gérer les erreurs et les avertissements de validation de schéma.  
   

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LINQ to SQL, DBML files
 - LINQ to SQL, SQLMetal
 ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
-ms.openlocfilehash: 56fed00ec049fd2746d5b07b9926b8abda998260
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f435c93f68feb564aaca0f52842e567aa688ac64
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742443"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938005"
 ---
 # <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (outil de génération de code)
 L’outil en ligne de commande SqlMetal génère le code et le mappage du composant [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] du .NET Framework. En appliquant les options qui apparaissent ultérieurement dans cette rubrique, vous pouvez ordonner à SqlMetal d'exécuter plusieurs actions différentes, dont les suivantes :  
@@ -28,7 +28,7 @@ L’outil en ligne de commande SqlMetal génère le code et le mappage du compos
  Cet outil est installé automatiquement avec Visual Studio. Par défaut, ce fichier se trouve à l'emplacement suivant : `drive`:\Program Files\Microsoft SDKs\Windows\v`n.nn`\bin. Si vous n’installez pas Visual Studio, vous pouvez également obtenir le fichier SQLMetal en téléchargeant le [SDK Windows](https://go.microsoft.com/fwlink/?LinkId=142225).  
   
 > [!NOTE]
->  Les développeurs qui utilisent Visual Studio peuvent également utiliser le Concepteur Objet Relationnel pour générer des classes d'entité. L'approche de ligne de commande est bien adaptée aux bases de données volumineuses. Puisque SqlMetal est un outil de ligne de commande, vous pouvez l'utiliser dans un processus de génération.  
+> Les développeurs qui utilisent Visual Studio peuvent également utiliser le Concepteur Objet Relationnel pour générer des classes d'entité. L'approche de ligne de commande est bien adaptée aux bases de données volumineuses. Puisque SqlMetal est un outil de ligne de commande, vous pouvez l'utiliser dans un processus de génération.  
   
  Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d’informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md). À l’invite de commandes, tapez ce qui suit :  
   
@@ -130,7 +130,7 @@ sqlmetal [options] [<input file>]
  **sqlmetal /server:myserver /database:northwind /namespace:nwind /code:nwind.cs /language:csharp**  
   
 > [!NOTE]
->  Quand vous utilisez l’option **/pluralize** avec l’exemple de base de données Northwind, notez le comportement suivant. Lorsque SqlMetal génère des noms de types de lignes pour des tables, les noms de table sont au singulier. Lorsqu'il génère des propriétés <xref:System.Data.Linq.DataContext> pour des tables, les noms de table sont au pluriel. Par coïncidence, les tables de l'exemple de base de données Northwind sont déjà au pluriel. Par conséquent, vous ne pourrez pas voir cette partie active. Bien qu’il soit courant de nommer des tables de base de données au pluriel, il est également courant dans .NET de nommer des collections au pluriel.  
+> Quand vous utilisez l’option **/pluralize** avec l’exemple de base de données Northwind, notez le comportement suivant. Lorsque SqlMetal génère des noms de types de lignes pour des tables, les noms de table sont au singulier. Lorsqu'il génère des propriétés <xref:System.Data.Linq.DataContext> pour des tables, les noms de table sont au pluriel. Par coïncidence, les tables de l'exemple de base de données Northwind sont déjà au pluriel. Par conséquent, vous ne pourrez pas voir cette partie active. Bien qu’il soit courant de nommer des tables de base de données au pluriel, il est également courant dans .NET de nommer des collections au pluriel.  
   
 ## <a name="see-also"></a>Voir aussi
 

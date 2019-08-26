@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: c48a7f93-83bb-4a06-aea0-d8e7bd1502ad
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6851ac334d439f2e5c0f6056f5226e3faa1503d5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6b47abc2adb7b515e4d1d76da58c150703a8693d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33392575"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957439"
 ---
 # <a name="composition-analysis-tool-mefx"></a>Outil d'analyse de la composition (Mefx)
 L'outil d'analyse de composition (Mefx) est une application en ligne de commande qui analyse les fichiers de bibliothèque (.dll) et d'application (.exe) contenant des éléments de Managed Extensibility Framework (MEF). L'objectif principal de Mefx est d'offrir aux développeurs un moyen de diagnostiquer les échecs de composition dans leurs applications MEF sans avoir à ajouter du code de traçage encombrant à l'application elle-même. Il peut également permettre de comprendre les éléments d'une bibliothèque fournie par un tiers. Cette rubrique explique comment utiliser Mefx et fournit une référence pour sa syntaxe.  
@@ -37,7 +37,7 @@ mefx /file:MyAddIn.dll /directory:Program\AddIns [action...]
 ```  
   
 > [!NOTE]
->  Chaque .dll ou .exe ne doit être chargé qu'une seule fois. Si un fichier est chargé plusieurs fois, l'outil peut retourner des informations incorrectes.  
+> Chaque .dll ou .exe ne doit être chargé qu'une seule fois. Si un fichier est chargé plusieurs fois, l'outil peut retourner des informations incorrectes.  
   
  Une fois dressée la liste des fichiers et des répertoires, vous devez spécifier une commande ainsi que toutes les options de cette commande.  
   
@@ -114,7 +114,7 @@ from: ClassLibrary1.ChainOne from: AssemblyCatalog (Assembly="ClassLibrary1, Ver
  L'utilisation de l'action `/causes` sur l'exemple précédent indique uniquement les informations relatives à `ChainOne`, dont l'importation vide est la cause première du rejet de `AddIn`. L'action `/causes` peut être utilisée dans les options normales et `/verbose` .  
   
 > [!NOTE]
->  Dans la plupart des cas, Mefx peut diagnostiquer la cause première d'un échec en cascade. Toutefois, dans les cas où des éléments sont ajoutés par programmation à un conteneur, les cas impliquant des conteneurs hiérarchiques ou des implémentations `ExportProvider` personnalisées, Mefx ne peut pas diagnostiquer la cause. En général, les cas décrits précédemment doivent être évités autant que possible, car les échecs sont généralement difficiles à diagnostiquer.  
+> Dans la plupart des cas, Mefx peut diagnostiquer la cause première d'un échec en cascade. Toutefois, dans les cas où des éléments sont ajoutés par programmation à un conteneur, les cas impliquant des conteneurs hiérarchiques ou des implémentations `ExportProvider` personnalisées, Mefx ne peut pas diagnostiquer la cause. En général, les cas décrits précédemment doivent être évités autant que possible, car les échecs sont généralement difficiles à diagnostiquer.  
   
 <a name="white_lists"></a>   
 ## <a name="white-lists"></a>Listes vertes  

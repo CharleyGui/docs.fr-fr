@@ -11,19 +11,19 @@ helpviewer_keywords:
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0d5798b8067bde8b711982bfe4f78d66fe1521c6
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 723f07fb3fb4eda1c0071eec2b1d012948a10f77
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66490835"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666556"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Utilisation du modèle asynchrone basé sur les tâches
 
 Lorsque vous utilisez le modèle asynchrone basé sur les tâches (TAP) pour travailler avec des opérations asynchrones, vous pouvez utiliser des rappels pour terminer l’attente sans blocage.  Pour les tâches, vous pouvez faire de même à l’aide de méthodes telles que <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>. La prise en charge asynchrone basée sur le langage masque les rappels en permettant aux opérations asynchrones d’être attendues dans le flux de contrôle normal, et le code généré par le compilateur fournit cette même prise en charge au niveau de l’API.
 
 ## <a name="suspending-execution-with-await"></a>Suspension de l’exécution avec Await
- À partir de .NET Framework 4.5, vous pouvez utiliser le mot clé [await](~/docs/csharp/language-reference/keywords/await.md) en C# et l’[opérateur Await](~/docs/visual-basic/language-reference/operators/await-operator.md) en Visual Basic pour attendre de manière asynchrone les objets <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>. Quand vous attendez une <xref:System.Threading.Tasks.Task>, l’expression `await` est de type `void`. Quand vous attendez une <xref:System.Threading.Tasks.Task%601>, l’expression `await` est de type `TResult`. Une expression `await` doit se produire dans le corps d’une méthode asynchrone. Pour plus d’informations sur la prise en charge des langages C# et Visual Basic dans .NET Framework 4.5, consultez les spécifications des langages C# et Visual Basic.
+ À partir de .NET Framework 4.5, vous pouvez utiliser le mot clé [await](../../csharp/language-reference/keywords/await.md) en C# et l’[opérateur Await](../../visual-basic/language-reference/operators/await-operator.md) en Visual Basic pour attendre de manière asynchrone les objets <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>. Quand vous attendez une <xref:System.Threading.Tasks.Task>, l’expression `await` est de type `void`. Quand vous attendez une <xref:System.Threading.Tasks.Task%601>, l’expression `await` est de type `TResult`. Une expression `await` doit se produire dans le corps d’une méthode asynchrone. Pour plus d’informations sur la prise en charge des langages C# et Visual Basic dans .NET Framework 4.5, consultez les spécifications des langages C# et Visual Basic.
 
  En arrière-plan, la fonctionnalité await installe un rappel sur la tâche à l’aide d’une continuation.  Ce rappel reprend la méthode asynchrone au point d’interruption. Quand la méthode asynchrone est reprise, si l’opération attendue s’est terminée correctement et est une <xref:System.Threading.Tasks.Task%601>, son `TResult` est retourné.  Si la <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601> attendue s’est terminée dans l’état <xref:System.Threading.Tasks.TaskStatus.Canceled>, une exception <xref:System.OperationCanceledException> est levée.  Si la <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601> attendue s’est terminée dans l’état <xref:System.Threading.Tasks.TaskStatus.Faulted>, l’exception qui a entraîné l’erreur est levée. Une `Task` peut échouer à cause de plusieurs exceptions, mais seule une de ces exceptions est propagée. Toutefois, la propriété <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> retourne une exception <xref:System.AggregateException> qui contient toutes les erreurs.
 

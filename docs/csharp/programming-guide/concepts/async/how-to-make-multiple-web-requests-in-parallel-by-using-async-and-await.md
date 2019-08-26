@@ -2,15 +2,15 @@
 title: 'Procédure : Effectuer plusieurs requêtes web en parallèle en utilisant async et await (C#)'
 ms.date: 07/20/2015
 ms.assetid: 19745899-f97a-4499-a7c7-e813d1447580
-ms.openlocfilehash: 57c40626fcaf0c52d09fa3a2c8b74ba8b7816677
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: edba5ed5026c16ca1f1b09e8504ecfdf408ae5ef
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64600243"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922004"
 ---
 # <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-c"></a>Procédure : Effectuer plusieurs requêtes web en parallèle en utilisant async et await (C#)
-Dans une méthode asynchrone, les tâches sont démarrées quand elles sont créées. L’opérateur [await](../../../../csharp/language-reference/keywords/await.md) est appliqué à la tâche au point dans la méthode où le traitement ne peut pas se poursuivre tant que la tâche n’est pas terminée. Souvent, une tâche est attendue dès sa création, comme le montre l’exemple suivant.  
+Dans une méthode asynchrone, les tâches sont démarrées quand elles sont créées. L’opérateur [await](../../../language-reference/keywords/await.md) est appliqué à la tâche au point dans la méthode où le traitement ne peut pas se poursuivre tant que la tâche n’est pas terminée. Souvent, une tâche est attendue dès sa création, comme le montre l’exemple suivant.  
   
 ```csharp  
 var result = await someWebAccessMethodAsync(url);  
@@ -35,15 +35,15 @@ var result = await myTask;
  Le programme suivant démarre trois téléchargements web asynchrones, puis les attend dans l’ordre dans lequel ils sont appelés. Notez que quand vous exécutez le programme, les tâches ne se terminent pas toujours dans l’ordre dans lequel elles sont créées et attendues. Elles commencent à s’exécuter quand elles sont créées, et une ou plusieurs d’entre elles peuvent se terminer avant que la méthode n’atteigne les expressions await.  
   
 > [!NOTE]
->  Pour mener à bien ce projet, Visual Studio 2012 ou version ultérieure et le .NET Framework 4.5 ou version ultérieure doivent être installés sur votre ordinateur.  
+> Pour mener à bien ce projet, Visual Studio 2012 ou version ultérieure et le .NET Framework 4.5 ou version ultérieure doivent être installés sur votre ordinateur.  
   
- Pour obtenir un autre exemple qui démarre plusieurs tâches en même temps, consultez [Guide pratique pour étendre la procédure pas à pas async à l’aide de Task.WhenAll (C#)](../../../../csharp/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).  
+ Pour obtenir un autre exemple qui démarre plusieurs tâches en même temps, consultez [Guide pratique pour étendre la procédure pas à pas async à l’aide de Task.WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md).  
   
  Vous pouvez télécharger le code de cet exemple à partir des [exemples de code pour développeur](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e).  
   
 ### <a name="to-set-up-the-project"></a>Pour configurer le projet  
   
-1. Pour configurer une application WPF, effectuez les étapes suivantes. Vous trouverez des instructions détaillées pour ces étapes dans [Procédure pas à pas : Accès au web avec async et await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
+1. Pour configurer une application WPF, effectuez les étapes suivantes. Vous trouverez des instructions détaillées pour ces étapes dans [Procédure pas à pas : Accès au web avec async et await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md).  
   
     - Créez une application WPF qui contient une zone de texte et un bouton. Nommez le bouton `startButton` et la zone de texte `resultsTextBox`.  
   
@@ -226,6 +226,6 @@ namespace AsyncExample_MultipleTasks
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Procédure pas à pas : Accès au web avec async et await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [Programmation asynchrone avec Async et Await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)
-- [Guide pratique pour étendre la procédure pas à pas async à l’aide de Task.WhenAll (C#)](../../../../csharp/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
+- [Procédure pas à pas : Accès au web avec async et await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Programmation asynchrone avec Async et Await (C#)](./index.md)
+- [Guide pratique pour étendre la procédure pas à pas async à l’aide de Task.WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)

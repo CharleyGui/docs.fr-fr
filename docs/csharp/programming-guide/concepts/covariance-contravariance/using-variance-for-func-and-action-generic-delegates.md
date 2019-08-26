@@ -2,17 +2,17 @@
 title: Utilisation de la variance pour les délégués génériques Func et Action (C#)
 ms.date: 07/20/2015
 ms.assetid: 1826774f-2b7a-470f-b110-17cfdd6abdae
-ms.openlocfilehash: f517eea07588bb01ef903c8311126eab872bd735
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: bbfc41fb8ab3e7d800f1eb03098e02056e694872
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54540596"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69659907"
 ---
 # <a name="using-variance-for-func-and-action-generic-delegates-c"></a>Utilisation de la variance pour les délégués génériques Func et Action (C#)
 Ces exemples montrent comment utiliser la covariance et la contravariance dans les délégués génériques `Func` et `Action` pour permettre de réutiliser des méthodes et fournir davantage de flexibilité dans votre code.  
   
- Pour plus d’informations sur la covariance et la contravariance, consultez [Variance dans les délégués (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md).  
+ Pour plus d’informations sur la covariance et la contravariance, consultez [Variance dans les délégués (C#)](./variance-in-delegates.md).  
   
 ## <a name="using-delegates-with-covariant-type-parameters"></a>Utilisation des délégués avec les paramètres de type covariant  
  L’exemple suivant illustre les avantages de la prise en charge de la covariance dans les délégués génériques `Func`. La méthode `FindByTitle` prend un paramètre de type `String` et retourne un objet de type `Employee`. Toutefois, vous pouvez assigner cette méthode au délégué `Func<String, Person>`, car `Employee` hérite de `Person`.  
@@ -83,5 +83,5 @@ class Program
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Covariance et contravariance (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/index.md)
-- [Génériques](~/docs/standard/generics/index.md)
+- [Covariance et contravariance (C#)](./index.md)
+- [Génériques](../../../../standard/generics/index.md)

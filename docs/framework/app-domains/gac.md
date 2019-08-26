@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: cf5eacd0-d3ec-4879-b6da-5fd5e4372202
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 37c6e87ea50f3978bb896c7896a41b2faa9798bc
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: e5b99597a857f4c7926f783a6531f44fdb1fb7bc
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566968"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921584"
 ---
 # <a name="global-assembly-cache"></a>Global Assembly Cache
 Sur chaque ordinateur où le Common Language Runtime est installé, il y a un cache de code machine appelé Global Assembly Cache. Le Global Assembly Cache stocke des assemblys spécialement destinés à être partagés entre plusieurs applications sur l’ordinateur.  
@@ -25,7 +25,7 @@ Sur chaque ordinateur où le Common Language Runtime est installé, il y a un ca
  Partagez des assemblys en les installant dans le Global Assembly Cache uniquement si cela est nécessaire. En règle générale, vous devez maintenir les dépendances d’assembly privées et rechercher les assemblys dans le répertoire de l’application, sauf si le partage d’un assembly est explicitement requis. De plus, il n’est pas nécessaire d’installer des assemblys dans le Global Assembly Cache pour les rendre accessibles à COM Interop ou au code non managé.  
   
 > [!NOTE]
->  Dans certains scénarios, vous ne devez pas installer d’assembly dans le Global Assembly Cache. Si vous placez l’un des assemblys composant une application dans le Global Assembly Cache, vous ne pouvez plus répliquer ni installer l’application en utilisant la commande **xcopy** pour copier le répertoire de l’application. Vous devez également déplacer l’assembly dans le Global Assembly Cache.  
+> Dans certains scénarios, vous ne devez pas installer d’assembly dans le Global Assembly Cache. Si vous placez l’un des assemblys composant une application dans le Global Assembly Cache, vous ne pouvez plus répliquer ni installer l’application en utilisant la commande **xcopy** pour copier le répertoire de l’application. Vous devez également déplacer l’assembly dans le Global Assembly Cache.  
   
  Il existe deux manières de déployer un assembly dans le Global Assembly Cache :  
   
@@ -34,7 +34,7 @@ Sur chaque ordinateur où le Common Language Runtime est installé, il y a un ca
 - Utiliser un outil de développement appelé [Outil Global Assembly Cache (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) fourni par le SDK Windows.  
   
     > [!NOTE]
-    >  Dans les scénarios de déploiement, utilisez Windows Installer pour installer des assemblys dans le Global Assembly Cache. Utilisez l’outil Global Assembly Cache uniquement dans les scénarios de développement, car il ne propose pas de fonctionnalités de décompte des références d’assembly et d’autres fonctionnalités disponibles lors de l’utilisation de Windows Installer.  
+    > Dans les scénarios de déploiement, utilisez Windows Installer pour installer des assemblys dans le Global Assembly Cache. Utilisez l’outil Global Assembly Cache uniquement dans les scénarios de développement, car il ne propose pas de fonctionnalités de décompte des références d’assembly et d’autres fonctionnalités disponibles lors de l’utilisation de Windows Installer.  
   
  À compter du .NET Framework 4, l’emplacement par défaut du Global Assembly Cache est **%windir%\Microsoft.NET\assembly**. Dans les versions antérieures du .NET Framework, l’emplacement par défaut est **%windir%\assembly**.  
   

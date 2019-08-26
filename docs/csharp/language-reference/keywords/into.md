@@ -8,18 +8,18 @@ f1_keywords:
 helpviewer_keywords:
 - into keyword [C#]
 ms.assetid: 81ec62c1-f0b1-4755-8a31-959876e77f65
-ms.openlocfilehash: b209062a2a3e563ea8e70cb7883d9bbfa3662231
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: dc1e2ee004c21bb3d05155eec3e42ea80bf641a1
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54631514"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69608638"
 ---
 # <a name="into-c-reference"></a>into (Référence C#)
 
 Le mot clé contextuel `into` permet de créer un identificateur temporaire pour stocker les résultats d’une clause [group](group-clause.md), [join](join-clause.md) ou [select](select-clause.md) dans un nouvel identificateur. Cet identificateur peut lui-même être un générateur pour d’autres commandes de requête. Quand il est utilisé dans une clause `group` ou `select`, le nouvel identificateur est parfois appelé *continuation*.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L’exemple suivant illustre l’utilisation du mot clé `into` pour activer un identificateur temporaire `fruitGroup` dont le type déduit est `IGrouping`. En utilisant l’identificateur, vous pouvez appeler la méthode <xref:System.Linq.Enumerable.Count%2A> dans chaque groupe et sélectionner uniquement les groupes qui contiennent deux mots ou plus.
 
@@ -32,5 +32,5 @@ Pour obtenir un exemple d’utilisation de `into` dans une clause `join`, consul
 ## <a name="see-also"></a>Voir aussi
 
 - [Mots clés de requête (LINQ)](query-keywords.md)
-- [Expressions de requête LINQ](../../../csharp/programming-guide/linq-query-expressions/index.md)
+- [Expressions de requête LINQ](../../programming-guide/linq-query-expressions/index.md)
 - [group, clause](group-clause.md)

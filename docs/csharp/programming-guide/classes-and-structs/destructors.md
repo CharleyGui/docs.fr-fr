@@ -7,12 +7,12 @@ helpviewer_keywords:
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: 87755eadeaebb72c5a8ce147ba2e6faf109e6c12
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9936d56582afd160bf3464d18efd3acf47c7af60
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64584384"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924495"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finaliseurs (Guide de programmation C#)
 Les finaliseurs (également appelés **destructeurs**) servent à effectuer les derniers nettoyages nécessaires lorsqu’une instance de classe est collectée par le récupérateur de mémoire.  
@@ -56,7 +56,7 @@ protected override void Finalize()
  Cela signifie que la méthode `Finalize` est appelée de manière récursive pour toutes les instances de la chaîne d’héritage, de la plus dérivée à la moins dérivée.  
   
 > [!NOTE]
->  Les finaliseurs vides ne doivent pas être utilisés. Quand une classe contient un finaliseur, une entrée est créée dans la file d’attente `Finalize`. Quand le finaliseur est appelé, le récupérateur de mémoire est appelé pour traiter la file d’attente. Un finaliseur vide entraîne une perte de performances inutile.  
+> Les finaliseurs vides ne doivent pas être utilisés. Quand une classe contient un finaliseur, une entrée est créée dans la file d’attente `Finalize`. Quand le finaliseur est appelé, le récupérateur de mémoire est appelé pour traiter la file d’attente. Un finaliseur vide entraîne une perte de performances inutile.  
   
  Le programmeur n’a aucun contrôle sur le moment où le finaliseur est appelé, car celui-ci est déterminé par le récupérateur de mémoire. Le récupérateur de mémoire recherche les objets qui ne sont plus utilisés par l’application. S’il considère qu’un objet peut être finalisé, il appelle le finaliseur (s’il y en a un) et libère la mémoire utilisée pour stocker l’objet. 
  
@@ -76,9 +76,9 @@ protected override void Finalize()
   
 - [Implémentation d’une méthode dispose](../../../standard/garbage-collection/implementing-dispose.md)  
   
-- [using, instruction](../../../csharp/language-reference/keywords/using-statement.md)  
+- [using, instruction](../../language-reference/keywords/using-statement.md)  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant crée trois classes qui forment une chaîne d’héritage. La classe `First` est la classe de base, `Second` est dérivée de `First`, et `Third` est dérivée de `Second`. Toutes trois ont des finaliseurs. Dans `Main`, une instance de la classe la plus dérivée est créée. Quand le programme s’exécute, notez que les finaliseurs des trois classes sont appelés automatiquement, et dans l’ordre, de la plus dérivée à la moins dérivée.  
   
  [!code-csharp[csProgGuideObjects#85](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#85)]  
@@ -90,6 +90,6 @@ Pour plus d’informations, voir la section [Destructeurs](~/_csharplang/spec/cl
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.IDisposable>
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Constructeurs](../../../csharp/programming-guide/classes-and-structs/constructors.md)
+- [Guide de programmation C#](../index.md)
+- [Constructeurs](./constructors.md)
 - [Nettoyage de la mémoire](../../../standard/garbage-collection/index.md)

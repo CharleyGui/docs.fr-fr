@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: cb8bc835-9221-4888-af53-1a4f5fad6c48
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1c9a14c2ea2d7d817aacca1fa25b04ac643f16bf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 775a8b63a0ba7cd021c9e5072ef98c20f6ab2e81
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59296652"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937923"
 ---
 # <a name="winresexe-windows-resource-localization-editor"></a>Winres.exe (Windows Resource Localization Editor)
 
@@ -110,7 +110,7 @@ Vous devez utiliser la version de Winres.exe publiée avec le .NET Framework que
 
 2. Pour ouvrir les ressources par défaut d’un formulaire à localiser, cliquez sur la commande **Ouvrir** dans le menu **Fichier** et accédez au fichier pour l’ouvrir.
 
-     - ou -
+     -ou-
 
      Spécifiez le fichier à ouvrir dans la ligne de commande lorsque vous démarrez Winres.exe.
 
@@ -146,4 +146,4 @@ Vous devez utiliser la version de Winres.exe publiée avec le .NET Framework que
 - <xref:System.Resources.ResourceWriter>
 - [Outils](../../../docs/framework/tools/index.md)
 - [Ressources dans des applications de bureau](../../../docs/framework/resources/index.md)
-- [Globalisation et localisation](../../../docs/standard/globalization-localization/index.md)
+- [Globalisation et localisation](../../standard/globalization-localization/index.md)

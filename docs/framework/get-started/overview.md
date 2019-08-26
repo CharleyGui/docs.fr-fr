@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 29848c96-fc36-462d-8072-ba223a40b697
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f50a469327a06eabdb6a80821203f2222dcd2921
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 46dd9c0c1f9f5759bc9160aadeb0538b5403fb52
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878034"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69917974"
 ---
 # <a name="overview-of-the-net-framework"></a>Vue d’ensemble du .NET Framework
 
@@ -75,7 +75,7 @@ Par exemple, les classes de collection du .NET Framework implémentent un jeu d�
 
 Comme pour toute bibliothèque de classes orientée objet, les types .NET Framework vous permettent d'accomplir un éventail de tâches courantes de programmation y compris des tâches comme la gestion de chaînes, la collection de données, la connectivité de bases de données, et l'accès aux fichiers. En plus de ces tâches courantes, la bibliothèque de classes comprend des types qui prennent en charge une variété de scénarios de développement spécialisé. Utilisez le .NET Framework pour développer les types d’applications et de services suivants :
 
-- Applications de console. Consultez [Génération d'applications console](../../../docs/standard/building-console-apps.md).
+- Applications de console. Consultez [Génération d'applications console](../../standard/building-console-apps.md).
 
 - Applications GUI Windows (Windows Forms). Consultez [Windows Forms](../../../docs/framework/winforms/index.md).
 

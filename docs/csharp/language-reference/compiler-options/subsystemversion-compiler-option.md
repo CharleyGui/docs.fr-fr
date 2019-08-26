@@ -2,19 +2,19 @@
 title: -subsystemversion (Options du compilateur C#)
 ms.date: 07/20/2015
 ms.assetid: a99fce81-9d92-4813-9874-bee777041445
-ms.openlocfilehash: cf1fb74f5d13817448bec2bcdc37510ff82f024d
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: f70389f87bf49ffccded4aef775c27ed0d034e1f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66377908"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922461"
 ---
 # <a name="-subsystemversion-c-compiler-options"></a>-subsystemversion (Options du compilateur C#)
 
 Spécifie la version minimale du sous-système sur lequel le fichier exécutable généré peut s’exécuter, déterminant ainsi les versions de Windows sur lesquelles le fichier exécutable peut s’exécuter. En règle générale, cette option garantit que le fichier exécutable peut tirer parti de fonctionnalités de sécurité particulières qui ne sont pas disponibles avec des versions antérieures de Windows.
 
 > [!NOTE]
->  Pour spécifier le sous-système lui-même, utilisez l’option du compilateur [-target](../../../csharp/language-reference/compiler-options/target-compiler-option.md).
+> Pour spécifier le sous-système lui-même, utilisez l’option du compilateur [-target](./target-compiler-option.md).
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -50,11 +50,11 @@ La valeur par défaut de l’option du compilateur **-subsystemversion** dépend
 
 - La valeur par défaut est 6.02 si l’une quelconque des options du compilateur de la liste suivante est définie :
 
-  - [/target:appcontainerexe](../../../csharp/language-reference/compiler-options/target-appcontainerexe-compiler-option.md)
+  - [/target:appcontainerexe](./target-appcontainerexe-compiler-option.md)
 
-  - [/target:winmdobj](../../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md)
+  - [/target:winmdobj](./target-winmdobj-compiler-option.md)
 
-  - [-platform:arm](../../../csharp/language-reference/compiler-options/platform-compiler-option.md)
+  - [-platform:arm](./platform-compiler-option.md)
 
 - La valeur par défaut est 6.00 si vous utilisez MSBuild, si vous ciblez .NET Framework 4.5 et si vous n’avez défini aucune des options du compilateur spécifiées plus haut dans cette liste.
 
@@ -66,4 +66,4 @@ Pour définir l’option du compilateur **-subsystemversion** dans Visual Studio
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Options du compilateur C#](./index.md)

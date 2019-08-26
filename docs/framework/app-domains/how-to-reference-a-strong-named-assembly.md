@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 4c6a406a-b5eb-44fa-b4ed-4e95bb95a813
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 281cfa6507d293658e436a95a5ded0174154a13c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 080d05a27b9e0b6ad4ff52d67ef8d9209dc1c697
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59301020"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927960"
 ---
 # <a name="how-to-reference-a-strong-named-assembly"></a>Procédure : référencer un assembly avec un nom fort
 Le référencement de types ou de ressources dans un assembly avec nom fort est généralement un processus transparent. Vous pouvez effectuer la référence au moment de la compilation (liaison anticipée) ou au moment de l’exécution.  
@@ -26,13 +26,13 @@ Le référencement de types ou de ressources dans un assembly avec nom fort est 
  Une référence au moment de la compilation se produit quand vous indiquez au compilateur que votre assembly référence explicitement un autre assembly. Quand vous utilisez le référencement au moment de la compilation, le compilateur obtient automatiquement la clé publique de l’assembly avec nom fort ciblé et la place dans la référence d’assembly de l’assembly compilé.  
   
 > [!NOTE]
->  Un assembly avec nom fort peut uniquement utiliser les types d'autres assemblys avec nom fort. Si ce n'était pas le cas, la sécurité de l'assembly avec nom fort serait compromise.  
+> Un assembly avec nom fort peut uniquement utiliser les types d'autres assemblys avec nom fort. Si ce n'était pas le cas, la sécurité de l'assembly avec nom fort serait compromise.  
   
 ### <a name="to-make-a-compile-time-reference-to-a-strong-named-assembly"></a>Pour effectuer une référence au moment de la compilation à un assembly avec nom fort  
   
 1. À l'invite de commandes, tapez la commande suivante :  
   
-     \<*commande_compilateur*> **/reference:**\<*nom_assembly*>  
+     \<*commande_compilateur*>  **/reference:** \<*nom_assembly*>  
   
      Dans cette commande, *commande_compilateur* est la commande du compilateur pour le langage que vous utilisez, et *nom_assembly* est le nom de l’assembly avec nom fort référencé. Vous pouvez également utiliser d’autres options du compilateur, telles que **/t:library**, qui permet de créer un assembly de bibliothèque.  
   
@@ -46,7 +46,7 @@ csc /t:library myAssembly.cs /reference:myLibAssembly.dll
   
 1. Quand vous effectuez une référence d’assembly avec nom fort au moment de l’exécution (par exemple, en utilisant la méthode <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> ou <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType>), vous devez utiliser le nom complet de l’assembly avec nom fort référencé. La syntaxe d’un nom complet est la suivante :  
   
-     \<*nom_assembly*>**,** \<*numéro_version*>**,** \<*culture*>**,** \<*jeton_clé_publique*>  
+     \<*nom_assembly*> **,** \<*numéro_version*> **,** \<*culture*> **,** \<*jeton_clé_publique*>  
   
      Par exemple :  
   

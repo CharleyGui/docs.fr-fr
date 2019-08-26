@@ -2,16 +2,15 @@
 title: 'Tutoriel : Classer des iris : clustering k-means'
 description: Découvrez comment utiliser ML.NET dans un scénario de clustering
 author: pkulikov
-ms.author: johalex
 ms.date: 05/16/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18, title-hack-0516
-ms.openlocfilehash: 965408a180245712ceda2c3c17bdf42755af1c2c
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 772558be14d207475d20083f5a6b729f03766471
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402453"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666645"
 ---
 # <a name="tutorial-categorize-iris-flowers-using-k-means-clustering-with-mlnet"></a>Tutoriel : Classer les fleurs d’iris à l’aide du clustering k-means avec ML.NET
 

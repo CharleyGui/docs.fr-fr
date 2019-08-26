@@ -16,18 +16,18 @@ helpviewer_keywords:
 ms.assetid: c45be261-2a9d-4c4e-9bd6-27f0931b7d25
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f13a07be13294cc408cd381bef6eec1f9095365f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5aca9d3eae3f566e02e7bf3dae4ac971b8fae5c0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742462"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956635"
 ---
 # <a name="walkthrough-emitting-code-in-partial-trust-scenarios"></a>Procédure pas à pas : émission de code dans des scénarios de confiance partielle
 L’émission de réflexion utilise le même ensemble d’API en confiance totale ou partielle, mais certaines fonctionnalités nécessitent des autorisations spéciales dans le code avec confiance partielle. En outre, l’émission de réflexion a une fonctionnalité, des méthodes dynamiques hébergées anonymement, qui est conçue pour être utilisée avec une confiance partielle et par les assemblys transparents de sécurité.  
   
 > [!NOTE]
->  Avant .NET Framework 3.5, l’émission de code nécessitait <xref:System.Security.Permissions.ReflectionPermission> avec l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType>. Par défaut, cette autorisation est comprise dans les jeux d’autorisations nommés `FullTrust` et `Intranet`, mais pas dans le jeu d’autorisations `Internet`. Par conséquent, une bibliothèque pourrait être utilisée avec une confiance partielle seulement si elle avait l’attribut <xref:System.Security.SecurityCriticalAttribute> et exécutait aussi une méthode <xref:System.Security.PermissionSet.Assert%2A> pour <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>. Ces bibliothèques nécessitent une revue minutieuse de la sécurité, car les erreurs de codage peuvent entraîner des failles de sécurité. .NET Framework 3.5 permet au code d’être émis dans des scénarios de confiance partielle sans émettre de demandes de sécurité, car la génération de code n’est pas fondamentalement une opération nécessitant des privilèges. Autrement dit, le code généré n'a pas plus d'autorisations que l'assembly qui l'émet. Ainsi, les bibliothèques qui émettent du code sont transparentes de sécurité et il devient inutile de déclarer <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit> puisque l’écriture d’une bibliothèque sécurisée ne nécessite pas une révision aussi approfondie de la sécurité.  
+> Avant .NET Framework 3.5, l’émission de code nécessitait <xref:System.Security.Permissions.ReflectionPermission> avec l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType>. Par défaut, cette autorisation est comprise dans les jeux d’autorisations nommés `FullTrust` et `Intranet`, mais pas dans le jeu d’autorisations `Internet`. Par conséquent, une bibliothèque pourrait être utilisée avec une confiance partielle seulement si elle avait l’attribut <xref:System.Security.SecurityCriticalAttribute> et exécutait aussi une méthode <xref:System.Security.PermissionSet.Assert%2A> pour <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>. Ces bibliothèques nécessitent une revue minutieuse de la sécurité, car les erreurs de codage peuvent entraîner des failles de sécurité. .NET Framework 3.5 permet au code d’être émis dans des scénarios de confiance partielle sans émettre de demandes de sécurité, car la génération de code n’est pas fondamentalement une opération nécessitant des privilèges. Autrement dit, le code généré n'a pas plus d'autorisations que l'assembly qui l'émet. Ainsi, les bibliothèques qui émettent du code sont transparentes de sécurité et il devient inutile de déclarer <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit> puisque l’écriture d’une bibliothèque sécurisée ne nécessite pas une révision aussi approfondie de la sécurité.  
   
  Cette procédure pas à pas décrit les tâches suivantes :  
   
@@ -85,7 +85,7 @@ L’émission de réflexion utilise le même ensemble d’API en confiance total
  Par exemple, un hôte peut accorder des autorisations Internet plus RMA à des applications Internet, pour qu’une application Internet puisse émettre du code qui accède aux données privées dans ses propres assemblys. Étant donné que l’accès est limité aux assemblys de confiance inférieure ou égale, une application Internet ne peut pas accéder aux membres des assemblys entièrement fiables, comme les assemblys .NET Framework.  
   
 > [!NOTE]
->  Pour empêcher une élévation de privilèges, les informations de pile de l’assembly émetteur sont incluses lors de la construction des méthodes dynamiques hébergées anonymement. Quand la méthode est appelée, les informations de pile sont vérifiées. Par conséquent, une méthode dynamique hébergée anonymement qui est appelée à partir d’un code totalement fiable est toujours limitée au niveau de confiance de l’assembly émetteur.  
+> Pour empêcher une élévation de privilèges, les informations de pile de l’assembly émetteur sont incluses lors de la construction des méthodes dynamiques hébergées anonymement. Quand la méthode est appelée, les informations de pile sont vérifiées. Par conséquent, une méthode dynamique hébergée anonymement qui est appelée à partir d’un code totalement fiable est toujours limitée au niveau de confiance de l’assembly émetteur.  
   
 #### <a name="to-create-an-application-domain-with-partial-trust-plus-rma"></a>Pour créer un domaine d’application avec une confiance partielle plus RMA  
   
@@ -97,7 +97,7 @@ L’émission de réflexion utilise le même ensemble d’API en confiance total
      La méthode <xref:System.Security.PermissionSet.AddPermission%2A> ajoute l’autorisation au jeu d’autorisations si elle n’y est pas déjà. Si l’autorisation est déjà dans le jeu d’autorisations, les indicateurs spécifiés sont ajoutés à l’autorisation existante.  
   
     > [!NOTE]
-    >  RMA est une fonctionnalité des méthodes dynamiques hébergées anonymement. Quand des méthodes dynamiques ordinaires ignorent les contrôles de visibilité JIT, le code émis nécessite une confiance totale.  
+    > RMA est une fonctionnalité des méthodes dynamiques hébergées anonymement. Quand des méthodes dynamiques ordinaires ignorent les contrôles de visibilité JIT, le code émis nécessite une confiance totale.  
   
 2. Créez le domaine d’application en spécifiant les informations de configuration du domaine d’application et le jeu d’autorisations.  
   
@@ -135,7 +135,7 @@ L’émission de réflexion utilise le même ensemble d’API en confiance total
      La méthode <xref:System.AppDomain.CreateInstanceAndUnwrap%2A> crée l’objet dans le domaine d’application cible et retourne un proxy qui peut être utilisé pour appeler les propriétés et les méthodes de l’objet.  
   
     > [!NOTE]
-    >  Si vous utilisez ce code dans Visual Studio, vous devez changer le nom de la classe pour y inclure l’espace de noms. Par défaut, l’espace de noms est le nom du projet. Par exemple, si le projet est « PartialTrust », le nom de la classe doit être « PartialTrust.Worker ».  
+    > Si vous utilisez ce code dans Visual Studio, vous devez changer le nom de la classe pour y inclure l’espace de noms. Par défaut, l’espace de noms est le nom du projet. Par exemple, si le projet est « PartialTrust », le nom de la classe doit être « PartialTrust.Worker ».  
   
 6. Ajoutez le code pour appeler la méthode `SimpleEmitDemo`. L’appel est marshalé à travers la limite du domaine d’application et le code est exécuté dans le domaine d’application sandbox.  
   
@@ -147,7 +147,7 @@ L’émission de réflexion utilise le même ensemble d’API en confiance total
  Les méthodes dynamiques hébergées anonymement sont associées à un assembly transparent fourni par le système. Par conséquent, le code qu’elles contiennent est transparent. Les méthodes dynamiques ordinaires doivent quant à elles être associées à un module existant (qu’il soit spécifié directement ou inféré depuis un type associé) et prendre leur niveau de sécurité de ce module.  
   
 > [!NOTE]
->  La seule façon d’associer une méthode dynamique à l’assembly qui fournit l’hébergement anonyme est d’utiliser les constructeurs qui sont décrits dans la procédure suivante. Vous ne pouvez pas spécifier explicitement un module dans l’assembly hébergeur anonyme.  
+> La seule façon d’associer une méthode dynamique à l’assembly qui fournit l’hébergement anonyme est d’utiliser les constructeurs qui sont décrits dans la procédure suivante. Vous ne pouvez pas spécifier explicitement un module dans l’assembly hébergeur anonyme.  
   
  Les méthodes dynamiques ordinaires ont accès aux membres internes du module auquel elles sont associées ou aux membres privés du type auquel elles sont associées. Comme les méthodes dynamiques hébergées anonymement sont isolées du reste du code, elles n’ont pas accès aux données privées. Toutefois, elles ont une possibilité limitée d’ignorer les contrôles de visibilité JIT pour accéder aux données privées. Cette possibilité est limitée aux assemblys qui ont des niveaux de confiance inférieurs ou égaux au niveau de confiance de l’assembly qui émet le code.  
   
@@ -174,12 +174,12 @@ L’émission de réflexion utilise le même ensemble d’API en confiance total
      Les méthodes dynamiques hébergées anonymement peuvent utiliser cette possibilité limitée d’ignorer les contrôles de visibilité JIT seulement si l’application hôte accorde <xref:System.Security.Permissions.ReflectionPermission> avec l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType>. La demande de cette autorisation est effectuée quand la méthode est appelée.  
   
     > [!NOTE]
-    >  Les informations de la pile des appels de l’assembly émetteur sont incluses lors de la construction de la méthode dynamique. Par conséquent, la demande porte sur les autorisations de l’assembly émetteur au lieu de l’assembly qui appelle la méthode. Ceci empêche l’exécution du code émis avec des autorisations élevées.  
+    > Les informations de la pile des appels de l’assembly émetteur sont incluses lors de la construction de la méthode dynamique. Par conséquent, la demande porte sur les autorisations de l’assembly émetteur au lieu de l’assembly qui appelle la méthode. Ceci empêche l’exécution du code émis avec des autorisations élevées.  
   
      L’[exemple de code complet](#Example) à la fin de cette procédure pas à pas montre l’utilisation et les limitations de l’accès restreint aux membres. Sa classe `Worker` comprend une méthode qui peut créer des méthodes dynamiques hébergées anonymement avec ou sans la possibilité limitée d’ignorer les contrôles de visibilité. L’exemple montre le résultat de l’exécution de cette méthode dans des domaines d’application qui ont des niveaux de confiance différents.  
   
     > [!NOTE]
-    >  La possibilité limitée d’ignorer les contrôles de visibilité est une fonctionnalité des méthodes dynamiques hébergées anonymement. Quand des méthodes dynamiques ordinaires ignorent les contrôles de visibilité JIT, une confiance totale leur est accordée.  
+    > La possibilité limitée d’ignorer les contrôles de visibilité est une fonctionnalité des méthodes dynamiques hébergées anonymement. Quand des méthodes dynamiques ordinaires ignorent les contrôles de visibilité JIT, une confiance totale leur est accordée.  
   
 <a name="Example"></a>   
 ## <a name="example"></a>Exemples  

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 88bf5b04-d371-4edb-ba38-01ec7cabaacf
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9570578e8ae4397f060805b891f86d7d4f273cd4
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 09e9a51fe9c1fd25a6791cf924180329718138c8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487044"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915890"
 ---
 # <a name="generic-interfaces"></a>Interfaces génériques
 Cette rubrique donne une vue d'ensemble des interfaces génériques qui fournissent des fonctionnalités communes à plusieurs familles de types génériques.  
@@ -24,7 +24,7 @@ Cette rubrique donne une vue d'ensemble des interfaces génériques qui fourniss
  Les interfaces génériques fournissent des contreparties de type sécurisé aux interfaces non génériques pour les comparaisons de classement et d’égalité, et pour les fonctionnalités partagées par les types de collections génériques.  
   
 > [!NOTE]
->  À compter de .NET Framework 4, les paramètres de type de plusieurs interfaces génériques sont marqués comme étant covariants ou contravariants, fournissant ainsi une plus grande flexibilité pour l’affectation et l’utilisation des types qui implémentent ces interfaces. Consultez [Covariance et contravariance](../../../docs/standard/generics/covariance-and-contravariance.md).  
+> À compter de .NET Framework 4, les paramètres de type de plusieurs interfaces génériques sont marqués comme étant covariants ou contravariants, fournissant ainsi une plus grande flexibilité pour l’affectation et l’utilisation des types qui implémentent ces interfaces. Consultez [Covariance et contravariance](../../../docs/standard/generics/covariance-and-contravariance.md).  
   
 ### <a name="equality-and-ordering-comparisons"></a>Comparaisons d'égalité et de classement  
  Dans l'espace de noms <xref:System>, les interfaces génériques <xref:System.IComparable%601?displayProperty=nameWithType> et <xref:System.IEquatable%601?displayProperty=nameWithType>, comme leurs contreparties non génériques, définissent respectivement des méthodes pour les comparaisons de classement et les comparaisons d'égalité. Les types implémentent ces interfaces pour offrir la capacité à réaliser de telles comparaisons.  

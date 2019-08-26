@@ -25,18 +25,18 @@ helpviewer_keywords:
 ms.assetid: 8d5c6044-2919-41d2-8321-274706b295ac
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 843b61257229bb3bf8c3852554f19c34dccc7496
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 77dff7af6a5d869c6635d5fe0caaf70bc31c3ff8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592348"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69949405"
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>Création d'assemblys satellites pour les applications bureautiques
 Les fichiers de ressources jouent un rôle central dans les applications localisées. Ils permettent à une application d’afficher des chaînes, des images et d’autres données dans la langue et la culture de l’utilisateur, et de fournir des données de remplacement si les ressources relatives à la langue et la culture de l’utilisateur ne sont pas disponibles. Le .NET Framework utilise un modèle Hub and Spoke pour localiser et récupérer les ressources localisées. Le hub est l’assembly principal qui contient le code exécutable non localisable et les ressources pour une culture unique, appelée culture neutre ou par défaut. La culture par défaut est la culture de secours de l’application ; elle est utilisée quand aucune ressource localisée n’est disponible. Vous utilisez l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute> pour désigner la culture de la culture par défaut de l’application. Chaque spoke se connecte à un assembly satellite qui contient les ressources d’une culture localisée unique, mais ne contient pas de code. Dans la mesure où les assemblys satellites ne font pas partie de l’assembly principal, vous pouvez facilement remplacer ou mettre à jour les ressources correspondant à une culture spécifique sans remplacer l’assembly principal de l’application.  
   
 > [!NOTE]
->  Les ressources de la culture par défaut d’une application peuvent aussi être stockées dans un assembly satellite. Pour cela, vous affectez à l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute> la valeur <xref:System.Resources.UltimateResourceFallbackLocation.Satellite?displayProperty=nameWithType>.  
+> Les ressources de la culture par défaut d’une application peuvent aussi être stockées dans un assembly satellite. Pour cela, vous affectez à l’attribut <xref:System.Resources.NeutralResourcesLanguageAttribute> la valeur <xref:System.Resources.UltimateResourceFallbackLocation.Satellite?displayProperty=nameWithType>.  
   
 ## <a name="satellite-assembly-name-and-location"></a>Nom et emplacement de l’assembly satellite  
  Le modèle Hub and Spoke nécessite que vous placiez les ressources à des emplacements spécifiques afin qu’elles soient facilement trouvées et utilisées. Si vous ne compilez pas et ne nommez pas les ressources comme prévu ou si vous ne les placez pas aux endroits corrects, le Common Language Runtime ne sera pas en mesure de les trouver et utilisera les ressources de la culture par défaut à la place. Le gestionnaire des ressources du .NET Framework, représenté par un objet <xref:System.Resources.ResourceManager>, permet d’accéder automatiquement aux ressources localisées. Le gestionnaire des ressources nécessite les éléments suivants :  
@@ -46,7 +46,7 @@ Les fichiers de ressources jouent un rôle central dans les applications localis
 - Il doit exister un sous-répertoire distinct dans le répertoire de l’application pour chaque culture localisée qui stocke les ressources de cette culture. Le nom du sous-répertoire doit être identique au nom de la culture. Vous pouvez aussi stocker vos assemblys satellites dans le Global Assembly Cache. Dans ce cas, le composant des informations de culture du nom fort de l’assembly doit indiquer sa culture. (Consultez la section [Installation d’assemblys satellites dans le Global Assembly Cache](#SN) plus loin dans cette rubrique.)  
   
     > [!NOTE]
-    >  Si votre application comporte des ressources pour les sous-cultures, placez chaque sous-culture dans un sous-répertoire distinct sous le répertoire de l’application. Ne placez pas les sous-cultures dans des sous-répertoires sous le répertoire de leur culture principale.  
+    > Si votre application comporte des ressources pour les sous-cultures, placez chaque sous-culture dans un sous-répertoire distinct sous le répertoire de l’application. Ne placez pas les sous-cultures dans des sous-répertoires sous le répertoire de leur culture principale.  
   
 - L’assembly satellite doit avoir le même nom que l’application et doit utiliser l’extension de nom de fichier « . resources.dll ». Par exemple, si une application est nommée Example.exe, le nom de chaque assembly satellite doit être Example.resources.dll. Notez que le nom de l’assembly satellite n’indique pas la culture de ses fichiers de ressources. Toutefois, l’assembly satellite apparaît dans un répertoire qui spécifie la culture.  
   

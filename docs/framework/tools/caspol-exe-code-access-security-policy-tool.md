@@ -17,21 +17,21 @@ helpviewer_keywords:
 ms.assetid: d2bf6123-7b0c-4e60-87ad-a39a1c3eb2e0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ccb1d78f939d2faf90013392fc60d5597bc3922e
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: f70682150905c411be5618ab368a87e71d0e8e13
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489677"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69959068"
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (outil Stratégie de sécurité d'accès du code)
 L'outil Stratégie de sécurité d'accès du code (CAS) (Caspol.exe) permet aux utilisateurs et aux administrateurs de modifier la stratégie de sécurité au niveau de l'ordinateur, de l'utilisateur et de l'entreprise.  
   
 > [!IMPORTANT]
->  À compter de .NET Framework 4, Caspol.exe n’affecte pas la stratégie CAS, sauf si l’[élément \<legacyCasPolicy>](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) a la valeur `true`. Tous les paramètres affichés ou modifiés par CasPol.exe affectent uniquement les applications qui choisissent d'utiliser la stratégie CAS. Pour plus d’informations, consultez [Changements en matière de sécurité](../../../docs/framework/security/security-changes.md).  
+> À compter de .NET Framework 4, Caspol.exe n’affecte pas la stratégie CAS, sauf si l’[élément \<legacyCasPolicy>](../../../docs/framework/configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) a la valeur `true`. Tous les paramètres affichés ou modifiés par CasPol.exe affectent uniquement les applications qui choisissent d'utiliser la stratégie CAS. Pour plus d’informations, consultez [Changements en matière de sécurité](../../../docs/framework/security/security-changes.md).  
   
 > [!NOTE]
->  Les ordinateurs 64 bits comprennent des versions 64 bits et 32 bits de stratégie de sécurité. Pour garantir que vos modifications de stratégie s'appliquent aux applications 32 bits et 64 bits, exécutez les versions 32 bits et 64 bits de Caspol.exe.  
+> Les ordinateurs 64 bits comprennent des versions 64 bits et 32 bits de stratégie de sécurité. Pour garantir que vos modifications de stratégie s'appliquent aux applications 32 bits et 64 bits, exécutez les versions 32 bits et 64 bits de Caspol.exe.  
   
  Cet outil est automatiquement installé avec le .NET Framework et Visual Studio. Vous trouverez Caspol.exe dans le répertoire %windir%\Microsoft.NET\Framework\\*version* sur les systèmes 32 bits ou %windir%\Microsoft.NET\Framework64\\*version* sur les systèmes 64 bits. (Par exemple, l'emplacement est %windir%\Microsoft.NET\Framework64\v4.030319\caspol.exe pour .NET Framework 4 sur un système 64 bits.) Si l'ordinateur exécute plusieurs versions du .NET Framework côte-à-côte, plusieurs versions de l'outil peuvent être installées. Vous pouvez exécuter l'outil depuis le répertoire d'installation. Toutefois, nous vous recommandons d'utiliser les [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md), qui vous évitent de devoir accéder au dossier d’installation.  
   
@@ -86,7 +86,7 @@ caspol [options]
 |**-allcode**|Spécifie l'ensemble du code. Pour plus d’informations sur cette condition d’appartenance, consultez <xref:System.Security.Policy.AllMembershipCondition?displayProperty=nameWithType>.|  
 |**-appdir**|Spécifie le répertoire de l'application. Si vous spécifiez **–appdir** comme condition d'appartenance, la preuve fournie par l'URL du code est comparée à la preuve fournie par le répertoire d'application du même code. Si les deux preuves sont identiques, la condition d'appartenance est satisfaite. Pour plus d’informations sur cette condition d’appartenance, consultez <xref:System.Security.Policy.ApplicationDirectoryMembershipCondition?displayProperty=nameWithType>.|  
 |**-custom**  *xmlfile*|Ajoute une condition d'appartenance personnalisée. L’argument obligatoire *xmlfile* spécifie le fichier .xml qui contient la sérialisation XML de la condition d’appartenance personnalisée.|  
-|**-hash** *hashAlg* {**-hex** *hashValue* &#124; **-file** *assembly_file* }|Spécifie un code qui contient la valeur de hachage de l'assembly donné. Pour utiliser une valeur de hachage comme condition d'appartenance à un groupe de codes, vous devez spécifier la valeur de hachage ou le fichier d'assembly. Pour plus d’informations sur cette condition d’appartenance, consultez <xref:System.Security.Policy.HashMembershipCondition?displayProperty=nameWithType>.|  
+|**-hash** *hashAlg* { **-hex** *hashValue* &#124; **-file** *assembly_file* }|Spécifie un code qui contient la valeur de hachage de l'assembly donné. Pour utiliser une valeur de hachage comme condition d'appartenance à un groupe de codes, vous devez spécifier la valeur de hachage ou le fichier d'assembly. Pour plus d’informations sur cette condition d’appartenance, consultez <xref:System.Security.Policy.HashMembershipCondition?displayProperty=nameWithType>.|  
 |**-pub** { **-cert** *cert_file_name* &#124;<br /><br /> **-file** *signed_file_name* &#124; **-hex**  *hex_string* }|Spécifie un code qui présente l'éditeur de logiciel indiqué par un fichier de certificat, une signature sur un fichier ou la représentation hexadécimale d'un certificat X509. Pour plus d’informations sur cette condition d’appartenance, consultez <xref:System.Security.Policy.PublisherMembershipCondition?displayProperty=nameWithType>.|  
 |**-site** *website*|Spécifie un code qui présente le site d'origine donné. Par exemple :<br /><br /> `-site** www.proseware.com`<br /><br /> Pour plus d’informations sur cette condition d’appartenance, consultez <xref:System.Security.Policy.SiteMembershipCondition?displayProperty=nameWithType>.|  
 |**-strong -file** *file_name* {*name* &#124; **-noname**} {*version* &#124; **-noversion**}|Spécifie un code avec un nom fort spécifique désigné par son nom de fichier, le nom de l'assembly (chaîne) et la version de l'assembly au format *major*.*minor*.*build*.*revision*. Par exemple :<br /><br /> **-strong -file** myAssembly.exe myAssembly 1.2.3.4<br /><br /> Pour plus d’informations sur cette condition d’appartenance, consultez <xref:System.Security.Policy.StrongNameMembershipCondition?displayProperty=nameWithType>.|  

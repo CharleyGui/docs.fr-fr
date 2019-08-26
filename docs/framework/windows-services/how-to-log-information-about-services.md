@@ -13,12 +13,12 @@ helpviewer_keywords:
 - logs, service applications
 ms.assetid: c0d8140f-c055-4d8e-a2e0-37358a550116
 author: ghogen
-ms.openlocfilehash: c8a744337803a7a26397c999a6d9c6d10f69a1c5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1ffc698910fe722fe761c62b87b059068d5f243f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591650"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935519"
 ---
 # <a name="how-to-log-information-about-services"></a>Procédure : enregistrer des informations relatives aux services
 Par défaut, tous les projets de service Windows ont la possibilité d’interagir avec le journal d’événements des applications et d’y écrire des informations et des exceptions. Vous utilisez la propriété <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> pour indiquer si vous souhaitez cette fonctionnalité dans votre application. Par défaut, la journalisation est activée pour tout service que vous créez avec le modèle de projet de service Windows. Vous pouvez utiliser un formulaire statique de la classe <xref:System.Diagnostics.EventLog> pour écrire des informations de service dans un journal sans avoir à créer une instance d’un composant <xref:System.Diagnostics.EventLog> ou inscrire manuellement une source.  
@@ -28,14 +28,14 @@ Par défaut, tous les projets de service Windows ont la possibilité d’interag
  Si vous souhaitez écrire dans un journal d’événements autre que le journal des applications, vous devez définir la propriété <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> sur `false`, créer votre propre journal d’événements personnalisé dans le code de vos services et inscrire votre service en tant que source valide d’entrées de ce journal. Vous devez ensuite écrire le code nécessaire pour enregistrer des entrées dans le journal chaque fois qu’une action qui vous intéresse se produit.  
   
 > [!NOTE]
->  Si vous utilisez un journal d’événements personnalisé et configurez votre application de service pour qu’elle écrive dans ce journal, vous ne devez pas tenter d’accéder au journal d’événements avant de définir la propriété <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> du service dans votre code. Le journal des événements a besoin de la valeur de cette propriété pour inscrire votre service en tant que source d’événements valide.  
+> Si vous utilisez un journal d’événements personnalisé et configurez votre application de service pour qu’elle écrive dans ce journal, vous ne devez pas tenter d’accéder au journal d’événements avant de définir la propriété <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> du service dans votre code. Le journal des événements a besoin de la valeur de cette propriété pour inscrire votre service en tant que source d’événements valide.  
   
 ### <a name="to-enable-default-event-logging-for-your-service"></a>Pour activer la journalisation des événements par défaut pour votre service  
   
 - Définissez la propriété <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> pour votre composant sur `true`.  
   
     > [!NOTE]
-    >  Par défaut, cette propriété est définie sur `true`. Vous n’avez pas besoin de la définir explicitement, sauf si vous générez un traitement plus complexe, comme l’évaluation d’une condition, puis que vous définissez la propriété <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> en fonction du résultat de cette condition.  
+    > Par défaut, cette propriété est définie sur `true`. Vous n’avez pas besoin de la définir explicitement, sauf si vous générez un traitement plus complexe, comme l’évaluation d’une condition, puis que vous définissez la propriété <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> en fonction du résultat de cette condition.  
   
 ### <a name="to-disable-event-logging-for-your-service"></a>Pour désactiver la journalisation des événements pour votre service  
   
@@ -49,7 +49,7 @@ Par défaut, tous les projets de service Windows ont la possibilité d’interag
 1. Affectez à la propriété <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> la valeur `false`.  
   
     > [!NOTE]
-    >  Vous devez définir <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> sur false pour utiliser un journal personnalisé.  
+    > Vous devez définir <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> sur false pour utiliser un journal personnalisé.  
   
 2. Configurez une instance d’un composant <xref:System.Diagnostics.EventLog> dans votre application de service Windows.  
   
@@ -62,7 +62,7 @@ Par défaut, tous les projets de service Windows ont la possibilité d’interag
      Le code suivant montre comment configurer l’enregistrement dans un journal personnalisé.  
   
     > [!NOTE]
-    >  Dans cet exemple de code, une instance d’un composant <xref:System.Diagnostics.EventLog> est appelée `eventLog1` (`EventLog1` en Visual Basic). Si vous avez créé une instance avec un autre nom à l’étape 2, modifiez le code en conséquence.  
+    > Dans cet exemple de code, une instance d’un composant <xref:System.Diagnostics.EventLog> est appelée `eventLog1` (`EventLog1` en Visual Basic). Si vous avez créé une instance avec un autre nom à l’étape 2, modifiez le code en conséquence.  
   
      [!code-csharp[VbRadconService#14](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#14)]
      [!code-vb[VbRadconService#14](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#14)]  

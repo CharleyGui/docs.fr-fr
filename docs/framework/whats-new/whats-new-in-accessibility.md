@@ -9,12 +9,12 @@ helpviewer_keywords:
 - what's new [.NET Framework]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: da73df97524b9e394fac795daf14a3f0fb1f4e3d
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 410f95b373e079fe959068a6540642a6ad043e95
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661386"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69952826"
 ---
 # <a name="whats-new-in-accessibility-in-the-net-framework"></a>Nouveautés du .NET Framework dans le domaine de l’accessibilité
 
@@ -22,7 +22,7 @@ Le .NET Framework vise à rendre les applications plus accessibles pour vos util
 
 ## <a name="accessibility-switches"></a>Commutateurs d’accessibilité
 
-Si votre application cible .NET Framework 4.7 ou une version antérieure, mais est exécutée sur .NET Framework 4.7.1 ou une version ultérieure, vous pouvez la configurer pour qu’elle active les fonctionnalités d’accessibilité. Si elle cible .NET Framework 4.7.1 ou une version ultérieure, vous pouvez également la configurer afin qu’elle utilise les fonctionnalités héritées (et ainsi, qu’elle n’active pas les fonctionnalités d’accessibilité). Chaque version du .NET Framework qui inclut des fonctionnalités d’accessibilité a son propre commutateur d’accessibilité, que vous ajoutez à l’élément [`<AppContextSwitchOverrides>`](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) dans la section [`<runtime>`](~/docs/framework/configure-apps/file-schema/runtime/index.md) du fichier de configuration de l’application. Les commutateurs pris en charge sont les suivants :
+Si votre application cible .NET Framework 4.7 ou une version antérieure, mais est exécutée sur .NET Framework 4.7.1 ou une version ultérieure, vous pouvez la configurer pour qu’elle active les fonctionnalités d’accessibilité. Si elle cible .NET Framework 4.7.1 ou une version ultérieure, vous pouvez également la configurer afin qu’elle utilise les fonctionnalités héritées (et ainsi, qu’elle n’active pas les fonctionnalités d’accessibilité). Chaque version du .NET Framework qui inclut des fonctionnalités d’accessibilité a son propre commutateur d’accessibilité, que vous ajoutez à l’élément [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) dans la section [`<runtime>`](../configure-apps/file-schema/runtime/index.md) du fichier de configuration de l’application. Les commutateurs pris en charge sont les suivants :
 
 |Version|Basculer|
 |---|---|
@@ -32,7 +32,7 @@ Si votre application cible .NET Framework 4.7 ou une version antérieure, mais 
 
 ### <a name="taking-advantage-of-accessibility-enhancements"></a>Activation des nouvelles fonctionnalités d’accessibilité
 
-Les nouvelles fonctionnalités d’accessibilité sont activées par défaut pour les applications qui ciblent .NET Framework 4.7.1 ou version ultérieure. De plus, pour les applications qui ciblent une version antérieure de .NET Framework mais qui sont exécutées sur .NET Framework 4.7.1 ou une version ultérieure, vous pouvez désactiver les comportements d’accessibilité hérités (et ainsi, utiliser les nouvelles fonctionnalités d’accessibilité) en ajoutant des commutateurs à l’élément [`<AppContextSwitchOverrides>`](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) dans la section [`<runtime>`](~/docs/framework/configure-apps/file-schema/runtime/index.md) du fichier de configuration de l’application et en les définissant sur la valeur `false`. Le code ci-dessous montre comment activer les nouvelles fonctionnalités d’accessibilité de .NET Framework 4.7.1 :
+Les nouvelles fonctionnalités d’accessibilité sont activées par défaut pour les applications qui ciblent .NET Framework 4.7.1 ou version ultérieure. De plus, pour les applications qui ciblent une version antérieure de .NET Framework mais qui sont exécutées sur .NET Framework 4.7.1 ou une version ultérieure, vous pouvez désactiver les comportements d’accessibilité hérités (et ainsi, utiliser les nouvelles fonctionnalités d’accessibilité) en ajoutant des commutateurs à l’élément [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) dans la section [`<runtime>`](../configure-apps/file-schema/runtime/index.md) du fichier de configuration de l’application et en les définissant sur la valeur `false`. Le code ci-dessous montre comment activer les nouvelles fonctionnalités d’accessibilité de .NET Framework 4.7.1 :
 
 ```xml
 <runtime>
@@ -41,7 +41,7 @@ Les nouvelles fonctionnalités d’accessibilité sont activées par défaut pou
 </runtime>
 ```
 
-Si vous choisissez d’activer les fonctionnalités d’accessibilité d’une version ultérieure du .NET Framework, vous devez aussi activer explicitement les fonctionnalités des versions antérieures du .NET Framework. Pour configurer votre application afin qu’elle utilise les nouvelles fonctionnalités d’accessibilité des deux versions de .NET Framework (4.7.1 et 4.7.2), vous devez ajouter l’élément [`<AppContextSwitchOverrides>`](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) suivant :
+Si vous choisissez d’activer les fonctionnalités d’accessibilité d’une version ultérieure du .NET Framework, vous devez aussi activer explicitement les fonctionnalités des versions antérieures du .NET Framework. Pour configurer votre application afin qu’elle utilise les nouvelles fonctionnalités d’accessibilité des deux versions de .NET Framework (4.7.1 et 4.7.2), vous devez ajouter l’élément [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) suivant :
 
 ```xml
 <runtime>
@@ -50,7 +50,7 @@ Si vous choisissez d’activer les fonctionnalités d’accessibilité d’une v
 </runtime>
 ```
 
-Pour configurer votre application afin qu’elle utilise les nouvelles fonctionnalités d’accessibilité des versions 4.7.1, 4.7.2 et 4.8 de .NET Framework, vous devez ajouter l’élément [`<AppContextSwitchOverrides>`](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) suivant :
+Pour configurer votre application afin qu’elle utilise les nouvelles fonctionnalités d’accessibilité des versions 4.7.1, 4.7.2 et 4.8 de .NET Framework, vous devez ajouter l’élément [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) suivant :
 
 ```xml
 <runtime>
@@ -61,7 +61,7 @@ Pour configurer votre application afin qu’elle utilise les nouvelles fonctionn
 
 ### <a name="restoring-legacy-behavior"></a>Restauration du comportement hérité
 
-Pour les applications ciblant la version 4.7.1 ou des versions ultérieures du .NET Framework, vous pouvez désactiver les fonctionnalités d’accessibilité en ajoutant des commutateurs à l’élément [`<AppContextSwitchOverrides>`](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) dans la section [`<runtime>`](~/docs/framework/configure-apps/file-schema/runtime/index.md) du fichier de configuration de l’application et en les définissant à la valeur `true`. Par exemple, la configuration suivante active les nouvelles fonctionnalités d’accessibilité de .NET Framework 4.7.2 :
+Pour les applications ciblant la version 4.7.1 ou des versions ultérieures du .NET Framework, vous pouvez désactiver les fonctionnalités d’accessibilité en ajoutant des commutateurs à l’élément [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) dans la section [`<runtime>`](../configure-apps/file-schema/runtime/index.md) du fichier de configuration de l’application et en les définissant à la valeur `true`. Par exemple, la configuration suivante active les nouvelles fonctionnalités d’accessibilité de .NET Framework 4.7.2 :
 
 ```xml
 <runtime>

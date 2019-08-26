@@ -12,12 +12,12 @@ helpviewer_keywords:
 - -doc compiler option [C#]
 - /doc compiler option [C#]
 ms.assetid: 849eea59-c936-4311-bad8-d07404480f2a
-ms.openlocfilehash: 7c8fc11c8799912ea6340940ccd254ae82519591
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 21605b30867d7be0b906b431253c183e655bea82
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591690"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922482"
 ---
 # <a name="-doc-c-compiler-options"></a>-doc (Options du compilateur C#)
 L’option **-doc** vous permet de placer des commentaires de documentation dans un fichier XML.  
@@ -35,20 +35,20 @@ L’option **-doc** vous permet de placer des commentaires de documentation dans
 ## <a name="remarks"></a>Remarques  
  Dans les fichiers de code source, les commentaires de documentation qui précèdent les éléments suivants peuvent être traités et ajoutés au fichier XML :  
   
-- Types définis par l’utilisateur, tels qu’une [classe](../../../csharp/language-reference/keywords/class.md), un [délégué](../../../csharp/language-reference/keywords/delegate.md) ou une [interface](../../../csharp/language-reference/keywords/interface.md)  
+- Types définis par l’utilisateur, tels qu’une [classe](../keywords/class.md), un [délégué](../keywords/delegate.md) ou une [interface](../keywords/interface.md)  
   
-- Membres tels qu’un champ, un [événement](../../../csharp/language-reference/keywords/event.md), une [propriété](../../../csharp/programming-guide/classes-and-structs/using-properties.md) ou une méthode  
+- Membres tels qu’un champ, un [événement](../keywords/event.md), une [propriété](../../programming-guide/classes-and-structs/using-properties.md) ou une méthode  
   
  Le fichier de code source qui contient Main est sorti en premier dans le document XML.  
   
  Pour utiliser le fichier .xml généré avec la fonctionnalité [IntelliSense](/visualstudio/ide/using-intellisense), faites en sorte que le nom du fichier .xml soit identique à l’assembly que vous souhaitez prendre en charge, puis vérifiez que le fichier .xml est dans le même répertoire que l’assembly. Ainsi, quand l’assembly est référencé dans le projet Visual Studio, le fichier .xml est également trouvé. Pour plus d’informations, consultez [Insertion de commentaires dans le code XML](/visualstudio/ide/supplying-xml-code-comments).  
   
- Sauf si vous compilez avec [-target:module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md), `file` contiendra des balises \<assembly>\<-assembly> spécifiant le nom du fichier qui contient le manifeste d’assembly pour le fichier de sortie de la compilation.  
+ Sauf si vous compilez avec [-target:module](./target-module-compiler-option.md), `file` contiendra des balises \<assembly>\<-assembly> spécifiant le nom du fichier qui contient le manifeste d’assembly pour le fichier de sortie de la compilation.  
   
 > [!NOTE]
->  L’option -doc s’applique à tous les fichiers d’entrée ou, si elle est définie dans les paramètres de projet, à tous les fichiers du projet. Pour désactiver les avertissements relatifs aux commentaires de documentation pour un fichier ou une section de code spécifique, utilisez [#pragma warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md).  
+> L’option -doc s’applique à tous les fichiers d’entrée ou, si elle est définie dans les paramètres de projet, à tous les fichiers du projet. Pour désactiver les avertissements relatifs aux commentaires de documentation pour un fichier ou une section de code spécifique, utilisez [#pragma warning](../preprocessor-directives/preprocessor-pragma-warning.md).  
   
- Pour découvrir comment générer de la documentation à partir de commentaires dans votre code, consultez [Balises recommandées pour les commentaires de documentation](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md).  
+ Pour découvrir comment générer de la documentation à partir de commentaires dans votre code, consultez [Balises recommandées pour les commentaires de documentation](../../programming-guide/xmldoc/recommended-tags-for-documentation-comments.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
   
@@ -62,5 +62,5 @@ L’option **-doc** vous permet de placer des commentaires de documentation dans
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

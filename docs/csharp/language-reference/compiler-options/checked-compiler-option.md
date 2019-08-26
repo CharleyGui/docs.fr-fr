@@ -8,15 +8,15 @@ helpviewer_keywords:
 - -checked compiler option [C#]
 - /checked compiler option [C#]
 ms.assetid: fb7475d3-e6a6-4e6d-b86c-69e7a74c854b
-ms.openlocfilehash: 814e8f3aa7130c6a64e7e27951854bed7b7cbe6c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 4e07698e7abdad00983b61412fa2a57e651d4d46
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59333936"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606986"
 ---
 # <a name="-checked-c-compiler-options"></a>-checked (Options du compilateur C#)
-L’option **-checked** spécifie si une instruction arithmétique entière qui produit une valeur en dehors de la plage du type de données, et qui n’est pas dans la portée d’un mot clé [checked](../../../csharp/language-reference/keywords/checked.md) ou [unchecked](../../../csharp/language-reference/keywords/unchecked.md), doit provoquer une exception au moment de l’exécution.  
+L’option **-checked** spécifie si une instruction arithmétique entière qui produit une valeur en dehors de la plage du type de données, et qui n’est pas dans la portée d’un mot clé [checked](../keywords/checked.md) ou [unchecked](../keywords/unchecked.md), doit provoquer une exception au moment de l’exécution.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,7 +29,7 @@ L’option **-checked** spécifie si une instruction arithmétique entière qui 
   
  Si une instruction arithmétique entière qui n’est pas dans la portée d’un mot clé `checked` ou `unchecked` produit une valeur en dehors de la plage du type de données, et que **-checked+** (ou **-checked**) est utilisé dans la compilation, cette instruction provoque une exception au moment de l’exécution. Si **-checked-** est utilisé dans la compilation, cette instruction ne provoque pas d’exception au moment de l’exécution.  
   
- La valeur par défaut de cette option est **-checked-**. La vérification du dépassement de capacité est désactivée.
+ La valeur par défaut de cette option est **-checked-** . La vérification du dépassement de capacité est désactivée.
  
  Certains outils automatisés qui sont utilisés pour générer des applications volumineuses définissent l’option -checked sur +. Un scénario d’usage de l’option -checked- est de substituer l’option globale par défaut de l’outil en spécifiant -checked-.
  
@@ -45,7 +45,7 @@ L’option **-checked** spécifie si une instruction arithmétique entière qui 
   
  Pour accéder à cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.CheckForOverflowUnderflow%2A>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  La commande suivante compile `t2.cs`. L’utilisation de `-checked` dans la commande spécifie que toute instruction arithmétique entière dans le fichier qui n’est pas dans la portée d’un mot clé `checked` ou `unchecked`, et qui produit une valeur en dehors de la plage du type de données, provoque une exception au moment de l’exécution.  
   
 ```console  
@@ -54,5 +54,5 @@ csc t2.cs -checked
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

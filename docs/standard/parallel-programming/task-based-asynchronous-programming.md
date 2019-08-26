@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ad13a5771adbfbd389feeccd3e8c833c4c2f778a
-ms.sourcegitcommit: 621a5f6df00152006160987395b93b5b55f7ffcd
+ms.openlocfilehash: ab754da005dcc16fc71c3a59728e4ff6848fbbb1
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66300634"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666306"
 ---
 # <a name="task-based-asynchronous-programming"></a>Programmation asynchrone basée sur les tâches
 
@@ -256,11 +256,11 @@ La classe <xref:System.Threading.Tasks.TaskFactory> fournit des méthodes statiq
 
 ## <a name="tasks-without-delegates"></a>Tâches sans délégués
 
-Dans certains cas, vous pouvez utiliser un <xref:System.Threading.Tasks.Task> pour encapsuler une opération asynchrone exécutée par un composant externe au lieu de votre propre délégué utilisateur. Si l’opération est basée sur le modèle de programmation asynchrone Begin/End, vous pouvez utiliser les méthodes <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A>. Si ce n’est pas le cas, vous pouvez utiliser l’objet <xref:System.Threading.Tasks.TaskCompletionSource%601> pour encapsuler l’opération dans une tâche et, de cette façon, bénéficier de certains des avantages de programmabilité <xref:System.Threading.Tasks.Task>, comme par exemple, la prise en charge de la propagation et des continuations d’exceptions. Pour plus d'informations, consultez <xref:System.Threading.Tasks.TaskCompletionSource%601>.
+Dans certains cas, vous pouvez utiliser un <xref:System.Threading.Tasks.Task> pour encapsuler une opération asynchrone exécutée par un composant externe au lieu de votre propre délégué utilisateur. Si l’opération est basée sur le modèle de programmation asynchrone Begin/End, vous pouvez utiliser les méthodes <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A>. Si ce n’est pas le cas, vous pouvez utiliser l’objet <xref:System.Threading.Tasks.TaskCompletionSource%601> pour encapsuler l’opération dans une tâche et, de cette façon, bénéficier de certains des avantages de programmabilité <xref:System.Threading.Tasks.Task>, comme par exemple, la prise en charge de la propagation et des continuations d’exceptions. Pour plus d’informations, consultez <xref:System.Threading.Tasks.TaskCompletionSource%601>.
 
 ## <a name="custom-schedulers"></a>Planificateurs personnalisés
 
-La plupart des développeurs d'applications ou de bibliothèques ne se soucient pas du processeur sur lequel s'exécute la tâche, ni de la manière dont il synchronise son travail avec d'autres tâches ou de la façon dont il est planifié sur le <xref:System.Threading.ThreadPool?displayProperty=nameWithType>. Ils demandent simplement à ce qu'il s'exécute aussi efficacement que possible sur l'ordinateur hôte. Si vous avez besoin d’un contrôle plus affiné sur les détails de la planification, la bibliothèque parallèle de tâches vous permet de configurer des paramètres dans le planificateur de tâches par défaut et vous permet même de fournir un planificateur personnalisé. Pour plus d'informations, consultez <xref:System.Threading.Tasks.TaskScheduler>.
+La plupart des développeurs d'applications ou de bibliothèques ne se soucient pas du processeur sur lequel s'exécute la tâche, ni de la manière dont il synchronise son travail avec d'autres tâches ou de la façon dont il est planifié sur le <xref:System.Threading.ThreadPool?displayProperty=nameWithType>. Ils demandent simplement à ce qu'il s'exécute aussi efficacement que possible sur l'ordinateur hôte. Si vous avez besoin d’un contrôle plus affiné sur les détails de la planification, la bibliothèque parallèle de tâches vous permet de configurer des paramètres dans le planificateur de tâches par défaut et vous permet même de fournir un planificateur personnalisé. Pour plus d’informations, consultez <xref:System.Threading.Tasks.TaskScheduler>.
 
 ## <a name="related-data-structures"></a>Structures de données associées
 
@@ -268,7 +268,7 @@ La bibliothèque parallèle de tâches possède plusieurs nouveaux types publics
 
 ## <a name="custom-task-types"></a>Types de tâches personnalisés
 
-Nous vous recommandons de ne pas hériter de <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> ou <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>. Nous vous recommandons d'utiliser plutôt la propriété <xref:System.Threading.Tasks.Task.AsyncState%2A> pour associer d'autres données ou états à un objet <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601>. Vous pouvez également utiliser des méthodes d'extension pour étendre les fonctionnalités des classes <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>. Pour plus d’informations sur les méthodes d’extension, consultez [Méthodes d’extension](~/docs/csharp/programming-guide/classes-and-structs/extension-methods.md) et [Méthodes d’extension](~/docs/visual-basic/programming-guide/language-features/procedures/extension-methods.md).
+Nous vous recommandons de ne pas hériter de <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> ou <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>. Nous vous recommandons d'utiliser plutôt la propriété <xref:System.Threading.Tasks.Task.AsyncState%2A> pour associer d'autres données ou états à un objet <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601>. Vous pouvez également utiliser des méthodes d'extension pour étendre les fonctionnalités des classes <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>. Pour plus d’informations sur les méthodes d’extension, consultez [Méthodes d’extension](../../csharp/programming-guide/classes-and-structs/extension-methods.md) et [Méthodes d’extension](../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).
 
 Si vous devez hériter de <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601>, vous ne pouvez pas utiliser les classes <xref:System.Threading.Tasks.Task.Run%2A>, <xref:System.Threading.Tasks.Task.Run%2A> ou les classes <xref:System.Threading.Tasks.TaskFactory?displayProperty=nameWithType>, <xref:System.Threading.Tasks.TaskFactory%601?displayProperty=nameWithType> ou <xref:System.Threading.Tasks.TaskCompletionSource%601?displayProperty=nameWithType> pour créer des instances de votre tâche personnalisée parce que ces mécanismes créent uniquement des objets <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>. En outre, vous ne pouvez pas utiliser les mécanismes de continuation des tâches fournis par <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601><xref:System.Threading.Tasks.TaskFactory> et <xref:System.Threading.Tasks.TaskFactory%601> pour créer des instances de votre type de tâche personnalisé parce que ces mécanismes créent également uniquement des objets <xref:System.Threading.Tasks.Task> et <xref:System.Threading.Tasks.Task%601>.
 

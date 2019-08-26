@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - abstract keyword [C#]
 ms.assetid: b0797770-c1f3-4b4d-9441-b9122602a6bb
-ms.openlocfilehash: 3a4d29ae4814ccceb7b405d9c1749150059a24a0
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: 547ecd9ff823f61bf3995c02959235b65a4a3979
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859591"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606147"
 ---
 # <a name="abstract-c-reference"></a>abstract (référence C#)
 Le modificateur `abstract` indique que l’élément en cours de modification a une implémentation manquante ou incomplète. Le modificateur abstract peut être utilisé avec des classes, des méthodes, des propriétés, des indexeurs et des événements. Dans une déclaration de classe, utilisez le modificateur `abstract` pour indiquer qu’une classe doit uniquement servir de classe de base pour d’autres classes, et ne pas être instanciée toute seule. Les membres définis comme abstraits doivent être implémentés par des classes non abstraites dérivées de la classe abstraite.
@@ -29,7 +29,7 @@ Le modificateur `abstract` indique que l’élément en cours de modification a 
   
 - Une classe abstraite peut contenir des méthodes et accesseurs abstraits.  
   
-- Il n’est pas possible de modifier une classe abstraite avec le modificateur [sealed](../../../csharp/language-reference/keywords/sealed.md), car les deux modificateurs ont des significations opposées. Le modificateur `sealed` empêche qu’une classe soit héritée et le modificateur `abstract` exige qu’une classe soit héritée.  
+- Il n’est pas possible de modifier une classe abstraite avec le modificateur [sealed](./sealed.md), car les deux modificateurs ont des significations opposées. Le modificateur `sealed` empêche qu’une classe soit héritée et le modificateur `abstract` exige qu’une classe soit héritée.  
   
 - Une classe non abstraite dérivée d’une classe abstraite doit inclure des implémentations réelles de tous les accesseurs et méthodes abstraits hérités.  
   
@@ -47,17 +47,17 @@ Le modificateur `abstract` indique que l’élément en cours de modification a 
     public abstract void MyMethod();  
     ```  
   
-     L’implémentation est fournie par une méthode [override](../../../csharp/language-reference/keywords/override.md), qui est membre d’une classe non abstraite.  
+     L’implémentation est fournie par une méthode [override](./override.md), qui est membre d’une classe non abstraite.  
   
-- L’utilisation des modificateurs [static](../../../csharp/language-reference/keywords/static.md) ou [virtual](../../../csharp/language-reference/keywords/virtual.md) dans une déclaration de méthode abstraite serait une erreur.  
+- L’utilisation des modificateurs [static](./static.md) ou [virtual](./virtual.md) dans une déclaration de méthode abstraite serait une erreur.  
   
  Les propriétés abstraites se comportent comme les méthodes abstraites, à l’exception des différences dans la syntaxe de déclaration et d’appel.  
   
 - L’utilisation du modificateur `abstract` sur une propriété statique serait une erreur.  
   
-- Une propriété abstraite héritée peut être substituée dans une classe dérivée en incluant une déclaration de propriété qui utilise le modificateur [override](../../../csharp/language-reference/keywords/override.md).  
+- Une propriété abstraite héritée peut être substituée dans une classe dérivée en incluant une déclaration de propriété qui utilise le modificateur [override](./override.md).  
   
- Pour plus d’informations sur les classes abstraites, consultez [Classes abstract et sealed et membres de classe](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
+ Pour plus d’informations sur les classes abstraites, consultez [Classes abstract et sealed et membres de classe](../../programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
   
  Une classe abstraite doit fournir une implémentation pour tous les membres d’interface.  
   
@@ -83,9 +83,9 @@ Vous obtenez une erreur indiquant que le compilateur ne peut pas créer une inst
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../../csharp/language-reference/index.md)
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Modificateurs](../../../csharp/language-reference/keywords/modifiers.md)
-- [virtual](../../../csharp/language-reference/keywords/virtual.md)
-- [override](../../../csharp/language-reference/keywords/override.md)
-- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Modificateurs](./modifiers.md)
+- [virtual](./virtual.md)
+- [override](./override.md)
+- [Mots clés C#](./index.md)

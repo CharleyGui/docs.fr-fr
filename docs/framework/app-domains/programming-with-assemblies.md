@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 25918b15-701d-42c7-95fc-c290d08648d6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f6a20a2e678c10157fed7da6f5de9f3ffee0c9ad
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: f427e2260fb26be7db0a29c47f38a3cb32dd34e9
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32751868"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921434"
 ---
 # <a name="programming-with-assemblies"></a>Programmation à l'aide d'assemblys
 Les assemblys sont les éléments de base du .NET Framework. Ils forment l’unité fondamentale de déploiement, de gestion de version, de réutilisation, de portée d’activation et des autorisations de sécurité. Un assembly fournit au Common Language Runtime les informations dont il a besoin pour connaître les implémentations de type. Il s’agit d’une collection de types et de ressources conçus pour opérer ensemble et former une unité logique de fonctionnalité. Pour le runtime, un type n'existe pas en dehors du contexte d'un assembly.  
@@ -20,7 +20,7 @@ Les assemblys sont les éléments de base du .NET Framework. Ils forment l’uni
  Cette section explique comment créer des modules, comment créer des assemblys à partir de modules, comment créer une paire de clés et signer un assembly avec un nom fort, et comment installer un assembly dans le Global Assembly Cache. Elle décrit également comment utiliser le [désassembleur MSIL (Ildasm.exe)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) pour afficher les informations de manifeste d’assembly.  
   
 > [!NOTE]
->  À compter du .NET Framework version 2.0, le runtime ne charge pas un assembly qui a été compilé avec une version du .NET Framework dont le numéro de version est supérieur au runtime actuellement chargé. Cela s’applique à la combinaison des composants majeurs et mineurs du numéro de version.  
+> À compter du .NET Framework version 2.0, le runtime ne charge pas un assembly qui a été compilé avec une version du .NET Framework dont le numéro de version est supérieur au runtime actuellement chargé. Cela s’applique à la combinaison des composants majeurs et mineurs du numéro de version.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Création d’assemblys](../../../docs/framework/app-domains/create-assemblies.md)  
@@ -29,7 +29,7 @@ Les assemblys sont les éléments de base du .NET Framework. Ils forment l’uni
  [Noms d’assemblys](../../../docs/framework/app-domains/assembly-names.md)  
  Fournit une vue d’ensemble de l’affectation de noms à des assemblys.  
   
- [Guide pratique pour déterminer le nom qualifié complet d'un assembly](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)  
+ [Guide pratique pour déterminer le nom qualifié complet d’un assembly](../../../docs/framework/app-domains/how-to-determine-assembly-fully-qualified-name.md)  
  Décrit comment déterminer le nom complet d’un assembly.  
   
  [Exécution d'applications intranet de confiance totale](../../../docs/framework/app-domains/running-intranet-applications-in-full-trust.md)  
@@ -70,7 +70,7 @@ Les assemblys sont les éléments de base du .NET Framework. Ils forment l’uni
  Classe .NET Framework qui représente un assembly.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Guide pratique pour obtenir des informations relatives au type et aux membres à partir d'un assembly](../../../docs/framework/app-domains/how-to-obtain-type-and-member-information-from-an-assembly.md)  
+ [Guide pratique pour obtenir des informations relatives au type et aux membres à partir d’un assembly](../../../docs/framework/app-domains/how-to-obtain-type-and-member-information-from-an-assembly.md)  
  Décrit comment obtenir par programmation des informations relatives au type et à d’autres éléments à partir d’un assembly.  
   
  [Assemblys dans le Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  

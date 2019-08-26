@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: ed324eff-4aff-4a76-b6c0-04e6c0d8f5a9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ea8b47e7d5c794ea1b33eaaae52a3f8250f80a82
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: cdd500d8eda81708d67254cbc5dc8da701ae4e09
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65588823"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963355"
 ---
 # <a name="how-to-display-dates-in-non-gregorian-calendars"></a>Procédure : afficher des dates dans des calendriers non grégoriens
 Les types <xref:System.DateTime> et <xref:System.DateTimeOffset> utilisent le calendrier grégorien comme calendrier par défaut. Cela signifie que l’appel de la méthode `ToString` d’une valeur de date et d’heure affiche la représentation sous forme de chaîne de la date et de l’heure dans le calendrier grégorien, même si ces date et heure ont été créées à l’aide d’un autre calendrier. Cela est illustré dans l’exemple suivant, qui utilise deux méthodes différentes pour créer une valeur de date et d’heure avec le calendrier persan, mais affiche toujours ces valeurs de date et d’heure dans le calendrier grégorien quand il appelle la méthode <xref:System.DateTime.ToString%2A>. Cet exemple reflète deux techniques couramment utilisées, mais incorrectes, pour l’affichage de la date dans un calendrier particulier.  
@@ -39,7 +39,7 @@ Les types <xref:System.DateTime> et <xref:System.DateTimeOffset> utilisent le ca
 4. Attribuez l’objet de calendrier à la propriété <xref:System.Globalization.DateTimeFormatInfo.Calendar%2A> de l'objet <xref:System.Globalization.DateTimeFormatInfo> retourné par la propriété <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType>.  
   
     > [!NOTE]
-    >  La classe <xref:System.Globalization.CultureInfo> a également une propriété <xref:System.Globalization.CultureInfo.Calendar%2A>. Toutefois, elle est en lecture seule et constante. Elle ne change pas pour refléter le nouveau calendrier par défaut attribué à la propriété <xref:System.Globalization.DateTimeFormatInfo.Calendar%2A?displayProperty=nameWithType>.  
+    > La classe <xref:System.Globalization.CultureInfo> a également une propriété <xref:System.Globalization.CultureInfo.Calendar%2A>. Toutefois, elle est en lecture seule et constante. Elle ne change pas pour refléter le nouveau calendrier par défaut attribué à la propriété <xref:System.Globalization.DateTimeFormatInfo.Calendar%2A?displayProperty=nameWithType>.  
   
 5. Appelez la méthode <xref:System.DateTime.ToString%2A> ou <xref:System.DateTime.ToString%2A> et passez-la à l’objet <xref:System.Globalization.CultureInfo> dont le calendrier par défaut a été modifié à l’étape précédente.  
   
@@ -65,7 +65,7 @@ Les types <xref:System.DateTime> et <xref:System.DateTimeOffset> utilisent le ca
   
     - <xref:System.Globalization.Calendar.GetMilliseconds%2A>, pour afficher les millisecondes de la seconde dans le calendrier approprié.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple affiche une date à l’aide de deux calendriers différents. Il affiche la date après avoir défini le calendrier hégirien comme calendrier par défaut pour la culture ar-JO et affiche la date à l’aide du calendrier persan, qui n’est pas pris en charge comme calendrier facultatif par la culture fa-IR.  
   
  [!code-csharp[Formatting.HowTo.Calendar#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.Calendar/cs/Calendar1.cs#2)]

@@ -6,24 +6,24 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: b97ce10cfb2e35beecf2c96acbac9c4ac8462c1d
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 6e7a1dfc739278eecfa8582bb0a9f8938c561acf
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57201161"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924457"
 ---
 # <a name="methods-c-programming-guide"></a>Méthodes (Guide de programmation C#)
 Une méthode est un bloc de code qui contient une série d'instructions. Un programme provoque l'exécution des instructions en appelant la méthode et en spécifiant les éventuels arguments de méthode requis. En C#, chaque instruction exécutée est effectuée dans le contexte d'une méthode. La méthode Main est le point d'entrée de chaque application C# et elle est appelée par le Common Language Runtime (CLR) au démarrage du programme.  
   
 > [!NOTE]
->  Cette rubrique décrit les méthodes nommées. Pour plus d’informations sur les fonctions anonymes, consultez [Fonctions anonymes](../../../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md).  
+> Cette rubrique décrit les méthodes nommées. Pour plus d’informations sur les fonctions anonymes, consultez [Fonctions anonymes](../statements-expressions-operators/anonymous-functions.md).  
   
 ## <a name="method-signatures"></a>Signatures de méthode  
- Les méthodes sont déclarées dans une [classe](../../../csharp/language-reference/keywords/class.md) ou un [struct](../../../csharp/language-reference/keywords/struct.md) en spécifiant le niveau d'accès comme `public` ou `private`, les modificateurs facultatifs comme `abstract` ou `sealed`, la valeur de retour, le nom de la méthode et les éventuels paramètres de méthode. Ces parties forment ensemble la signature de la méthode.  
+ Les méthodes sont déclarées dans une [classe](../../language-reference/keywords/class.md) ou un [struct](../../language-reference/keywords/struct.md) en spécifiant le niveau d'accès comme `public` ou `private`, les modificateurs facultatifs comme `abstract` ou `sealed`, la valeur de retour, le nom de la méthode et les éventuels paramètres de méthode. Ces parties forment ensemble la signature de la méthode.  
   
 > [!NOTE]
->  Un type de retour d'une méthode ne fait pas partie de la signature de la méthode à des fins de surcharge de méthode. Toutefois, il fait partie de la signature de la méthode lors de la détermination de la compatibilité entre un délégué et la méthode vers laquelle il pointe.  
+> Un type de retour d'une méthode ne fait pas partie de la signature de la méthode à des fins de surcharge de méthode. Toutefois, il fait partie de la signature de la méthode lors de la détermination de la compatibilité entre un délégué et la méthode vers laquelle il pointe.  
   
  Les paramètres de méthode sont placés entre parenthèses et séparés par des virgules. Des parenthèses vides indiquent que la méthode ne requiert aucun paramètre. Cette classe contient quatre méthodes :  
   
@@ -40,7 +40,7 @@ Une méthode est un bloc de code qui contient une série d'instructions. Un prog
  [!code-csharp[csProgGuideObjects#74](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#74)]  
   
 ## <a name="passing-by-reference-vs-passing-by-value"></a>Passer par référence et passer par valeur  
- Par défaut, quand un type valeur est passé à une méthode, une copie est passée au lieu de l'objet lui-même. Ainsi, les modifications apportées à l'argument n'ont aucun effet sur la copie d'origine dans la méthode d'appel. Vous pouvez passer un type valeur par référence en utilisant le mot clé ref. Pour plus d’informations, consultez [Passage de paramètres de type valeur ](../../../csharp/programming-guide/classes-and-structs/passing-value-type-parameters.md). Pour obtenir la liste des types valeur prédéfinis, consultez [Tableau des types valeur](../../../csharp/language-reference/keywords/value-types-table.md).  
+ Par défaut, quand un type valeur est passé à une méthode, une copie est passée au lieu de l'objet lui-même. Ainsi, les modifications apportées à l'argument n'ont aucun effet sur la copie d'origine dans la méthode d'appel. Vous pouvez passer un type valeur par référence en utilisant le mot clé ref. Pour plus d’informations, consultez [Passage de paramètres de type valeur ](./passing-value-type-parameters.md). Pour obtenir la liste des types valeur prédéfinis, consultez [Tableau des types valeur](../../language-reference/keywords/value-types-table.md).  
   
  Quand un objet d'un type référence est passé à une méthode, une référence à l'objet est passée. Autrement dit, la méthode ne reçoit pas l'objet lui-même mais un argument qui indique l'emplacement de l'objet. Si vous modifiez un membre de l'objet à l'aide de cette référence, la modification est répercutée dans l'argument de la méthode d'appel, même si vous passez l'objet par valeur.  
   
@@ -54,7 +54,7 @@ Une méthode est un bloc de code qui contient une série d'instructions. Un prog
   
  L'exemple produit essentiellement la même chose que l'exemple précédent, dans la mesure où il passe un argument par valeur à une méthode. Mais, puisqu'un type référence est utilisé, le résultat est différent. La modification apportée dans `ModifyObject` au champ `value` du paramètre, `obj`, modifie également le champ `value` de l'argument, `rt`, dans la méthode `TestRefType` . La méthode `TestRefType` affiche 33 en tant que sortie.  
   
- Pour plus d’informations sur le passage de types référence par référence et par valeur, consultez [Passage de paramètres de type référence ](../../../csharp/programming-guide/classes-and-structs/passing-reference-type-parameters.md) et [Types référence](../../../csharp/language-reference/keywords/reference-types.md).  
+ Pour plus d’informations sur le passage de types référence par référence et par valeur, consultez [Passage de paramètres de type référence ](./passing-reference-type-parameters.md) et [Types référence](../../language-reference/keywords/reference-types.md).  
   
 ## <a name="return-values"></a>Valeurs de retour  
 Les méthodes peuvent retourner une valeur à l'appelant. Si le type de retour, le type répertorié avant le nom de la méthode, n'est pas `void`, la méthode peut retourner la valeur à l'aide du mot clé `return` . Une instruction avec le mot clé `return` suivi d'une valeur qui correspond au type de retour retourne cette valeur à l'appelant de la méthode. 
@@ -108,15 +108,15 @@ public static void FillMatrix(int[,] matrix)
 }
 ```  
   
- Pour plus d'informations, consultez [return](../../../csharp/language-reference/keywords/return.md).  
+ Pour plus d'informations, consultez [return](../../language-reference/keywords/return.md).  
   
 ## <a name="async-methods"></a>Méthodes async  
  La fonctionnalité async vous permet d'appeler des méthodes asynchrones sans utiliser de rappels explicites ni fractionner manuellement votre code entre plusieurs méthodes ou expressions lambda. 
   
- Si vous marquez une méthode avec le modificateur [async](../../../csharp/language-reference/keywords/async.md) , vous pouvez utiliser l'opérateur [await](../../../csharp/language-reference/keywords/await.md) dans la méthode. Quand le contrôle atteint une expression await dans la méthode async, il retourne à l'appelant, et la progression dans la méthode est interrompue jusqu'à ce que la tâche attendue se termine. Quand la tâche est terminée, l'exécution peut reprendre dans la méthode.  
+ Si vous marquez une méthode avec le modificateur [async](../../language-reference/keywords/async.md) , vous pouvez utiliser l'opérateur [await](../../language-reference/keywords/await.md) dans la méthode. Quand le contrôle atteint une expression await dans la méthode async, il retourne à l'appelant, et la progression dans la méthode est interrompue jusqu'à ce que la tâche attendue se termine. Quand la tâche est terminée, l'exécution peut reprendre dans la méthode.  
   
 > [!NOTE]
->  Une méthode async retourne à l'appelant quand elle rencontre le premier objet await qui n'est pas encore terminé ou quand elle atteint la fin de la méthode async, selon la première éventualité.  
+> Une méthode async retourne à l'appelant quand elle rencontre le premier objet await qui n'est pas encore terminé ou quand elle atteint la fin de la méthode async, selon la première éventualité.  
   
  Une méthode async peut avoir un type de retour <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.Task>ou void. Le type de retour void est principalement utilisé pour définir les gestionnaires d'événements, où un type de retour void est requis. Une méthode async qui retourne void ne peut pas être attendue, et l'appelant d'une méthode retournant void ne peut intercepter aucune exception levée par la méthode.  
   
@@ -126,9 +126,9 @@ public static void FillMatrix(int[,] matrix)
   
  [!code-csharp[csAsyncMethod#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csasyncmethod/cs/mainwindow.xaml.cs#2)]  
   
- Une méthode async ne peut pas déclarer de paramètres [ref](../../../csharp/language-reference/keywords/ref.md) ou [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) , mais elle peut appeler des méthodes qui comportent ces paramètres.  
+ Une méthode async ne peut pas déclarer de paramètres [ref](../../language-reference/keywords/ref.md) ou [out](../../language-reference/keywords/out-parameter-modifier.md) , mais elle peut appeler des méthodes qui comportent ces paramètres.  
   
- Pour plus d’informations sur les méthodes async, consultez [Programmation asynchrone avec async et await](../../../csharp/programming-guide/concepts/async/index.md), [Flux de contrôle dans les programmes Async](../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md) et [Types de retour Async](../../../csharp/programming-guide/concepts/async/async-return-types.md).  
+ Pour plus d’informations sur les méthodes async, consultez [Programmation asynchrone avec async et await](../concepts/async/index.md), [Flux de contrôle dans les programmes Async](../concepts/async/control-flow-in-async-programs.md) et [Types de retour Async](../concepts/async/async-return-types.md).  
   
 ## <a name="expression-body-definitions"></a>Définitions de corps d'expression  
  Il est courant d'avoir des définitions de méthode qui retournent tout simplement le résultat d'une expression immédiatement, ou qui ont une seule instruction en tant que corps de la méthode.  Il existe un raccourci de syntaxe pour définir de telles méthodes en utilisant `=>`:  
@@ -145,27 +145,27 @@ public Customer this[long id] => store.LookupCustomer(id);
  Si la méthode retourne `void` ou est une méthode async, alors le corps de la méthode doit être une expression d'instruction (même chose avec les expressions lambda).  En ce qui concerne les propriétés et indexeurs, ils doivent être en lecture seule et vous n'utilisez pas le mot clé d'accesseur `get`.  
   
 ## <a name="iterators"></a>Iterators  
- Un itérateur exécute une itération personnalisée sur une collection, comme une liste ou un tableau. Un itérateur utilise l'instruction [yield return](../../../csharp/language-reference/keywords/yield.md) pour retourner chaque élément un par un. Quand une instruction [yield return](../../../csharp/language-reference/keywords/yield.md) est atteinte, l'emplacement actuel dans le code est mémorisé. L'exécution redémarre à partir de cet emplacement au prochain appel de l'itérateur.  
+ Un itérateur exécute une itération personnalisée sur une collection, comme une liste ou un tableau. Un itérateur utilise l'instruction [yield return](../../language-reference/keywords/yield.md) pour retourner chaque élément un par un. Quand une instruction [yield return](../../language-reference/keywords/yield.md) est atteinte, l'emplacement actuel dans le code est mémorisé. L'exécution redémarre à partir de cet emplacement au prochain appel de l'itérateur.  
   
- Vous appelez un itérateur depuis le code client en utilisant une instruction [foreach](../../../csharp/language-reference/keywords/foreach-in.md) .  
+ Vous appelez un itérateur depuis le code client en utilisant une instruction [foreach](../../language-reference/keywords/foreach-in.md) .  
   
  Le type de retour d'un itérateur peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>ou <xref:System.Collections.Generic.IEnumerator%601>.  
   
- Pour plus d'informations, consultez [Itérateurs](../../../csharp/programming-guide/concepts/iterators.md).  
+ Pour plus d'informations, consultez [Itérateurs](../concepts/iterators.md).  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
+- [Guide de programmation C#](../index.md)
 - [Classes et structs](index.md)
 - [Modificateurs d’accès](access-modifiers.md)
 - [Classes statiques et membres de classe statique](static-classes-and-static-class-members.md)
 - [Héritage](inheritance.md)
 - [Classes abstract et sealed et membres de classe](abstract-and-sealed-classes-and-class-members.md)
-- [params](../../../csharp/language-reference/keywords/params.md)
-- [return](../../../csharp/language-reference/keywords/return.md)
-- [out](../../../csharp/language-reference/keywords/out.md)
-- [ref](../../../csharp/language-reference/keywords/ref.md)
+- [params](../../language-reference/keywords/params.md)
+- [return](../../language-reference/keywords/return.md)
+- [out](../../language-reference/keywords/out.md)
+- [ref](../../language-reference/keywords/ref.md)
 - [Passage de paramètres](passing-parameters.md)

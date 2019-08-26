@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 42aa63c20e1643bc3f5377fa0ad66b63c1d4433a
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: e8d51149c01b4c8018609ca9313cc4eea2afbb5a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67422604"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946571"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>Création de prototypes dans du code managé
 Cette rubrique décrit comment accéder aux fonctions non managées et présente plusieurs champs d’attribut qui permettent d’annoter les définitions de méthode dans du code managé. Pour afficher des exemples montrant comment construire des déclarations .NET à utiliser avec l’appel de code non managé, consultez [Marshaling de données à l’aide de l’appel de code non managé](marshaling-data-with-platform-invoke.md).  
@@ -32,7 +32,7 @@ Cette rubrique décrit comment accéder aux fonctions non managées et présente
  Avant de pouvoir accéder à une fonction DLL non managée depuis du code managé, vous devez connaître le nom de la fonction et le nom de la DLL qui l'exporte. Avec ces informations, vous pouvez commencer à écrire la définition managée d'une fonction non managée implémentée dans une DLL. En outre, vous pouvez ajuster la façon dont l'appel de code non managé crée la fonction et marshale les données vers et depuis la fonction.  
   
 > [!NOTE]
->  Les fonctions de l’API Windows qui allouent une chaîne vous permettent de libérer la chaîne à l’aide d’une méthode telle que `LocalFree`. L'appel de code non managé gère ces paramètres différemment. Pour les appels de code non managé, affectez au paramètre un type `IntPtr` au lieu d'un type `String`. Utilisez les méthodes fournies par la classe <xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> pour convertir manuellement le type en chaîne et le libérer manuellement.  
+> Les fonctions de l’API Windows qui allouent une chaîne vous permettent de libérer la chaîne à l’aide d’une méthode telle que `LocalFree`. L'appel de code non managé gère ces paramètres différemment. Pour les appels de code non managé, affectez au paramètre un type `IntPtr` au lieu d'un type `String`. Utilisez les méthodes fournies par la classe <xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType> pour convertir manuellement le type en chaîne et le libérer manuellement.  
   
 ## <a name="declaration-basics"></a>Principes de base des déclarations  
  Les définitions managées des fonctions non managées dépendent du langage, comme nous allons le voir dans les exemples suivants. Pour obtenir des exemples de code plus complets, consultez [Exemples d’appel de code non managé](platform-invoke-examples.md).  

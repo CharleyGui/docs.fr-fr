@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4e55ae32fc83d7879de9d1ecb743d17598bc175d
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: 9f05d91dd53d9dee534e5dd429bf6399fd677258
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268216"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963402"
 ---
 # <a name="custom-numeric-format-strings"></a>Chaînes de format numériques personnalisées
 
@@ -175,7 +175,7 @@ Vous pouvez créer une chaîne de format numérique personnalisée, qui est comp
  Pour inclure une barre oblique inverse dans une chaîne de résultat, vous devez la placer dans une séquence d'échappement avec une autre barre oblique inverse (`\\`).  
   
 > [!NOTE]
->  Certains compilateurs, tels que les compilateurs C++ et C#, peuvent également interpréter une barre oblique inverse unique comme un caractère d'échappement. Pour garantir l'interprétation correcte d'une chaîne lors de la mise en forme, vous pouvez utiliser le caractère littéral de chaîne textuel(le caractère @) avant la chaîne en C#, ou ajouter une autre barre oblique inverse avant chaque barre oblique inverse en C# et C++. L'exemple C# suivant illustre ces deux approches.  
+> Certains compilateurs, tels que les compilateurs C++ et C#, peuvent également interpréter une barre oblique inverse unique comme un caractère d'échappement. Pour garantir l'interprétation correcte d'une chaîne lors de la mise en forme, vous pouvez utiliser le caractère littéral de chaîne textuel(le caractère @) avant la chaîne en C#, ou ajouter une autre barre oblique inverse avant chaque barre oblique inverse en C# et C++. L'exemple C# suivant illustre ces deux approches.  
   
  L’exemple suivant utilise le caractère d’échappement pour empêcher l’opération de mise en forme d’interpréter les caractères « # », « 0 » et « \\ » comme des caractères d’échappement ou des spécificateurs de format. L'exemple C# utilise une barre oblique inverse supplémentaire pour garantir qu'une barre oblique inverse est interprétée comme un caractère littéral.  
   

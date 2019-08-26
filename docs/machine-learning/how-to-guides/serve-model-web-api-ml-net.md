@@ -1,16 +1,16 @@
 ---
 title: Déployer un modèle dans une API web ASP.NET Core
 description: Alimentez un modèle Machine Learning d’analyse des sentiments ML.NET sur Internet avec l’API web ASP.NET Core.
-ms.date: 05/03/2019
+ms.date: 08/20/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: f8b8f74f752aeb243d4a2987929bd28ddc5f7d5a
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: e1dcc719738a2beb3e63463245d4721c5298cf85
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641085"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666660"
 ---
 # <a name="deploy-a-model-in-an-aspnet-core-web-api"></a>Déployer un modèle dans une API web ASP.NET Core
 
@@ -27,7 +27,7 @@ Découvrez comment alimenter un modèle Machine Learning ML.NET préentraîné s
 
 ## <a name="create-aspnet-core-web-api-project"></a>Créer un projet d’API web ASP.NET Core
 
-1. Ouvrez Visual Studio 2017. Sélectionnez **Fichier > Nouveau > Projet** dans la barre de menus. Dans la boîte de dialogue Nouveau projet, sélectionnez le nœud **Visual C#**, suivi du nœud **Web**. Ensuite, sélectionnez le modèle de projet **Application web ASP.NET Core**. Dans la zone de texte **Nom**, tapez « SentimentAnalysisWebAPI », puis sélectionnez le bouton **OK**.
+1. Ouvrez Visual Studio 2017. Sélectionnez **Fichier > Nouveau > Projet** dans la barre de menus. Dans la boîte de dialogue Nouveau projet, sélectionnez le nœud **Visual C#** , suivi du nœud **Web**. Ensuite, sélectionnez le modèle de projet **Application web ASP.NET Core**. Dans la zone de texte **Nom**, tapez « SentimentAnalysisWebAPI », puis sélectionnez le bouton **OK**.
 
 1. Dans la fenêtre qui affiche les différents types de projets ASP.NET Core, sélectionnez **API**, puis le bouton **OK**.
 
@@ -189,7 +189,7 @@ Maintenant que tout est configuré, il est temps de tester l’application.
 1. Ouvrez PowerShell et entrez le code suivant, où PORT est le port d’écoute de votre application.
 
     ```powershell
-    Invoke-RestMethod "https://localhost:<PORT>/api/predict" -Method Post -Body (@{Text="This was a very bad steak"} | ConvertTo-Json) -ContentType "application/json"
+    Invoke-RestMethod "https://localhost:<PORT>/api/predict" -Method Post -Body (@{SentimentText="This was a very bad steak"} | ConvertTo-Json) -ContentType "application/json"
     ```
 
     En cas de réussite, la sortie devrait se présenter ainsi :

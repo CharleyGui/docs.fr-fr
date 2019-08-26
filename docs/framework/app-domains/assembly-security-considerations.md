@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 1b5439c1-f3d5-4529-bd69-01814703d067
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6b78b770417b9599719ea219041a9fd6adaf5a84
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 53b33bdc70f00d5c824d502043a69f4ee05acc71
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423410"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927964"
 ---
 # <a name="assembly-security-considerations"></a>Aspects de la sécurité des assemblys
 <a name="top"></a>Lorsque vous générez un assembly, vous pouvez spécifier un jeu d’autorisations que l’assembly doit exécuter. L'octroi ou non de certaines autorisations à un assembly repose sur la preuve.  
@@ -40,7 +40,7 @@ ms.locfileid: "67423410"
 - ne pas utiliser de demande d'autorisation pour obtenir les autorisations dont votre code peut avoir besoin, mais être préparé à gérer les exceptions de sécurité lorsque les autorisations ne sont pas accordées.  
   
     > [!NOTE]
-    >  La sécurité est un domaine complexe et vous pouvez effectuer votre choix parmi de nombreuses options. Pour plus d’informations, consultez [Concepts fondamentaux sur la sécurité](../../../docs/standard/security/key-security-concepts.md).  
+    > La sécurité est un domaine complexe et vous pouvez effectuer votre choix parmi de nombreuses options. Pour plus d’informations, consultez [Concepts fondamentaux sur la sécurité](../../standard/security/key-security-concepts.md).  
   
  Au moment du chargement, la preuve de l'assembly est utilisée comme entrée vers la stratégie de sécurité. La stratégie de sécurité est établie par l'entreprise et l'administrateur de l'ordinateur, ainsi que par les paramètres de stratégie de l'utilisateur, et détermine le jeu d'autorisations qui est accordé à l'ensemble du code managé lors de son exécution. La stratégie de sécurité peut être établie pour l'éditeur de l'assembly (s'il possède une signature générée par un outil de signature), pour le site Web et la zone (selon les termes d'Internet Explorer) à partir desquels l'assembly a été téléchargé ou pour le nom fort de l'assembly. Par exemple, l'administrateur d'un ordinateur peut établir une stratégie de sécurité qui autorise l'ensemble d'un code téléchargé à partir d'un site Web et signé par un éditeur de logiciel donné d'accéder à une base de données sur un ordinateur, mais qui n'accorde pas d'accès en écriture sur le disque de l'ordinateur.  
   
@@ -56,7 +56,7 @@ ms.locfileid: "67423410"
  Vous pouvez attribuer à un assembly un nom fort et une signature numérique créés à l’aide de [SignTool.exe (outil de signature) ](../../../docs/framework/tools/signtool-exe.md), ou utiliser l’un ou l’autre indépendamment. Les deux outils de signature ne peuvent signer qu'un fichier à la fois ; pour un assembly multifichier, vous signez le fichier qui contient le manifeste d'assembly. Un nom fort est stocké dans un fichier qui contient le manifeste d’assembly, tandis qu’une signature créée à l’aide de l’outil de signature [SignTool.exe](../../../docs/framework/tools/signtool-exe.md) est stockée dans un emplacement réservé à cet effet, dans un fichier exécutable portable qui contient le manifeste d’assembly. La signature d’un assembly à l’aide de l’[outil de signature SignTool.exe](../../../docs/framework/tools/signtool-exe.md) peut être utilisée (avec ou sans nom fort) lorsque vous avez déjà une hiérarchie d’approbations qui s’appuie sur les signatures générées par cet [outil de signature SignTool.exe](../../../docs/framework/tools/signtool-exe.md), ou lorsque votre stratégie n’utilise que la partie propre à la clé et ne contrôle pas de chaîne de confiance.  
   
 > [!NOTE]
->  Lorsque vous utilisez à la fois un nom fort et une signature générée par un outil avec un assembly, le nom fort doit être assigné en premier.  
+> Lorsque vous utilisez à la fois un nom fort et une signature générée par un outil avec un assembly, le nom fort doit être assigné en premier.  
   
  Le Common Language Runtime effectue également une vérification du hachage ; le manifeste d'assembly contient la liste de tous les fichiers qui composent l'assembly, y compris un hachage de chaque fichier tel qu'il existait lors de la génération du manifeste. À mesure que chaque fichier est chargé, son contenu est haché et comparé à la valeur de hachage stockée dans le manifeste. Si les deux hachages ne correspondent pas, l'assembly échoue.  
   

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 66f002b8-a97d-4a6e-a503-2cec01689113
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 862a224c696ebafb23b30add7c8e8d66e1846b4c
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: a17fae64f8cad58b09908212bae4cf62a156ed95
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584469"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921520"
 ---
 # <a name="how-to-receive-first-chance-exception-notifications"></a>Procédure : recevoir des notifications des exceptions de première chance
 L’événement <xref:System.AppDomain.FirstChanceException> de la classe <xref:System.AppDomain> vous permet de recevoir la notification qu’une exception a été levée, avant que le Common Language Runtime n’ait commencé à rechercher des gestionnaires d’exceptions.
@@ -85,13 +85,13 @@ L’événement <xref:System.AppDomain.FirstChanceException> de la classe <xref:
      [!code-csharp[System.AppDomain.FirstChanceException_howto#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/cs/example.cs#5)]
      [!code-vb[System.AppDomain.FirstChanceException_howto#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.firstchanceexception_howto/vb/example.vb#5)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
  L’exemple suivant crée un domaine d’application nommé `AD1` et ajoute un gestionnaire d’événements à l’événement <xref:System.AppDomain.FirstChanceException> du domaine d’application. L’exemple crée une instance de la classe `Worker` dans le domaine d’application et appelle une méthode nommée `Thrower` qui lève une <xref:System.ArgumentException>. En fonction de la valeur de son argument, la méthode intercepte l’exception ou ne parvient pas à la gérer.
 
  Chaque fois que la méthode `Thrower` lève une exception dans `AD1`, l’événement <xref:System.AppDomain.FirstChanceException> est déclenché dans `AD1`, et le gestionnaire d’événements affiche un message. Le runtime recherche ensuite un gestionnaire d’exceptions. Dans le premier cas, le gestionnaire d’exceptions est trouvé dans `AD1`. Dans le deuxième cas, l’exception n’est pas gérée dans `AD1` ; elle est interceptée dans le domaine d’application par défaut.
 
 > [!NOTE]
->  Le nom du domaine d’application par défaut est identique au nom de l’exécutable.
+> Le nom du domaine d’application par défaut est identique au nom de l’exécutable.
 
  Si vous ajoutez un gestionnaire pour l’événement <xref:System.AppDomain.FirstChanceException> au domaine d’application par défaut, l’événement est déclenché et géré avant que le domaine d’application par défaut ne gère l’exception. Pour afficher cela, ajoutez le code C# `AppDomain.CurrentDomain.FirstChanceException += FirstChanceException;` (en Visual Basic, `AddHandler AppDomain.CurrentDomain.FirstChanceException, FirstChanceException`) au début de `Main()`.
 

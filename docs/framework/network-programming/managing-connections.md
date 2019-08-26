@@ -17,12 +17,12 @@ helpviewer_keywords:
 - downloading Internet resources, connections
 - ServicePointManager class, about ServicePointManager class
 ms.assetid: 9b3d3de7-189f-4f7d-81ae-9c29c441aaaa
-ms.openlocfilehash: 9c434ce0f5934509489a7deeced9e9e579d9cf7a
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 2b7b54ab569a3f03363b2f30bf595c2087b9fe70
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59152904"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963952"
 ---
 # <a name="managing-connections"></a>Gestion des connexions
 Les applications qui utilisent HTTP pour se connecter aux ressources de données peuvent utiliser les classes <xref:System.Net.ServicePoint> et <xref:System.Net.ServicePointManager> du .NET Framework pour gérer les connexions à Internet et les aider à atteindre des performances et une évolutivité optimales.  
@@ -36,7 +36,7 @@ Les applications qui utilisent HTTP pour se connecter aux ressources de données
  Le nombre de connexions entre un client et un serveur peut avoir un impact considérable sur le débit de l’application. Par défaut, une application qui utilise la classe <xref:System.Net.HttpWebRequest> utilise au maximum deux connexions persistantes à un serveur donné. Toutefois, vous pouvez définir le nombre maximal de connexions sur chaque application.  
   
 > [!NOTE]
->  La spécification HTTP/1.1 limite le nombre de connexions d’une application à deux connexions par serveur.  
+> La spécification HTTP/1.1 limite le nombre de connexions d’une application à deux connexions par serveur.  
   
  Le nombre optimal de connexions dépend des conditions réelles dans lesquelles l’application s’exécute. L’augmentation du nombre de connexions disponibles pour l’application n’affecte pas nécessairement les performances de l’application. Pour déterminer l’impact d’un plus grand nombre de connexions, exécutez des tests de performances avec différents nombres de connexions. Vous pouvez modifier le nombre de connexions qu’utilise une application en modifiant la propriété statique <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A> dans la classe **ServicePointManager** lors de l’initialisation de l’application, comme indiqué dans l’exemple de code suivant.  
   

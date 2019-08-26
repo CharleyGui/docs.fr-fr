@@ -1,5 +1,5 @@
 ---
-title: Activation raccorder un délégué à l’aide de la réflexion
+title: 'Procédure : raccorder un délégué à l’aide de la réflexion'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,18 +12,18 @@ helpviewer_keywords:
 ms.assetid: 076ee62d-a964-449e-a447-c31b33518b81
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8b07c3eb9d96bb6f675a6a2ca742cc9bdf3c3826
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: c3fa2238976df9f570fad9eb6947790565a4b0c5
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364067"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935709"
 ---
-# <a name="how-to-hook-up-a-delegate-using-reflection"></a>Activation raccorder un délégué à l’aide de la réflexion
-Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous ne pouvez pas utiliser des fonctionnalités de langage telles que l’opérateur C# `+=` ou l’[instruction Visual Basic AddHandler](~/docs/visual-basic/language-reference/statements/addhandler-statement.md) pour raccorder des événements. Les procédures suivantes montrent comment raccorder une méthode existante à un événement en obtenant tous les types nécessaires par réflexion, et comment créer une méthode dynamique à l’aide de l’émission de réflexion et la raccorder à un événement.  
+# <a name="how-to-hook-up-a-delegate-using-reflection"></a>Procédure : raccorder un délégué à l’aide de la réflexion
+Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous ne pouvez pas utiliser des fonctionnalités de langage telles que l’opérateur C# `+=` ou l’[instruction Visual Basic AddHandler](../../visual-basic/language-reference/statements/addhandler-statement.md) pour raccorder des événements. Les procédures suivantes montrent comment raccorder une méthode existante à un événement en obtenant tous les types nécessaires par réflexion, et comment créer une méthode dynamique à l’aide de l’émission de réflexion et la raccorder à un événement.  
   
 > [!NOTE]
->  Pour découvrir une autre manière de raccorder un délégué de gestion des événements, consultez l’exemple de code relatif à la méthode <xref:System.Reflection.EventInfo.AddEventHandler%2A> de la classe <xref:System.Reflection.EventInfo>.  
+> Pour découvrir une autre manière de raccorder un délégué de gestion des événements, consultez l’exemple de code relatif à la méthode <xref:System.Reflection.EventInfo.AddEventHandler%2A> de la classe <xref:System.Reflection.EventInfo>.  
   
 ### <a name="to-hook-up-a-delegate-using-reflection"></a>Pour raccorder un délégué à l’aide de la réflexion  
   
@@ -57,7 +57,7 @@ Quand vous utilisez la réflexion pour charger et exécuter des assemblys, vous 
      [!code-csharp[HookUpDelegate#7](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#7)]
      [!code-vb[HookUpDelegate#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HookUpDelegate/vb/source.vb#7)]  
   
-6. Obtenez la méthode d’accesseur `add` et appelez-la pour raccorder l’événement. Tous les événements ont un accesseur `add` et un accesseur `remove`, qui sont masqués par la syntaxe des langages de haut niveau. Par exemple, C# utilise l’opérateur `+=` pour raccorder des événements, et Visual Basic utilise l’[instruction AddHandler](~/docs/visual-basic/language-reference/statements/addhandler-statement.md). Le code suivant obtient l’accesseur `add` de l’événement <xref:System.Windows.Forms.Control.Click> et l’appelle avec liaison tardive, en passant l’instance de délégué. Les arguments doivent être passés sous forme de tableau.  
+6. Obtenez la méthode d’accesseur `add` et appelez-la pour raccorder l’événement. Tous les événements ont un accesseur `add` et un accesseur `remove`, qui sont masqués par la syntaxe des langages de haut niveau. Par exemple, C# utilise l’opérateur `+=` pour raccorder des événements, et Visual Basic utilise l’[instruction AddHandler](../../visual-basic/language-reference/statements/addhandler-statement.md). Le code suivant obtient l’accesseur `add` de l’événement <xref:System.Windows.Forms.Control.Click> et l’appelle avec liaison tardive, en passant l’instance de délégué. Les arguments doivent être passés sous forme de tableau.  
   
      [!code-cpp[HookUpDelegate#8](../../../samples/snippets/cpp/VS_Snippets_CLR/HookUpDelegate/cpp/source.cpp#8)]
      [!code-csharp[HookUpDelegate#8](../../../samples/snippets/csharp/VS_Snippets_CLR/HookUpDelegate/cs/source.cs#8)]

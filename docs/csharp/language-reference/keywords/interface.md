@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - interface keyword [C#]
 ms.assetid: 7da38e81-4f99-4bc5-b07d-c986b687eeba
-ms.openlocfilehash: ce3cb95617c87d1bf66879f4a2432b4de4ac40f2
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 058d6b96e96a3237ebac2ca079807fd154715d68
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54586460"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69608653"
 ---
 # <a name="interface-c-reference"></a>interface (référence C#)
 
@@ -20,7 +20,7 @@ Une interface contient uniquement des signatures de [méthodes](../../programmin
 
 Pour plus d’informations et d’exemples, consultez [Interfaces](../../programming-guide/interfaces/index.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 [!code-csharp[csrefKeywordsTypes#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#14)]
 
@@ -42,7 +42,7 @@ Une classe qui implémente une interface peut implémenter explicitement les mem
 
 Pour plus d’informations et plus d’exemples sur l’implémentation explicite des interfaces, consultez [Implémentation d’interface explicite](../../programming-guide/interfaces/explicit-interface-implementation.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L’exemple suivant montre une implémentation d’interface. Dans cet exemple, l’interface contient la déclaration de propriété, et la classe contient l’implémentation. Toutes les instances d’une classe qui implémentent `IPoint` ont les propriétés entières `x` et `y`.
 
@@ -54,7 +54,7 @@ L’exemple suivant montre une implémentation d’interface. Dans cet exemple, 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../../csharp/language-reference/index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Types référence](reference-types.md)

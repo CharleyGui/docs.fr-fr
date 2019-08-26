@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 115f7a2f-d422-4605-ab36-13a8dd28142a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3d6ddc2978078fd307ad79cffe14d53619d8be9e
-ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
+ms.openlocfilehash: 20766f4f7971d8aa304c7c3eead94f089f059d64
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469716"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946719"
 ---
 # <a name="interop-marshaling"></a>Marshaling d’interopérabilité
 <a name="top"></a> Le marshaling d’interopérabilité détermine la façon dont les données sont transmises dans les arguments de méthode et les valeurs de retour entre la mémoire managée et non managée lors des appels. Le marshaling d'interopérabilité est une activité d'exécution effectuée par le service de marshaling du common language runtime.  
@@ -91,7 +91,7 @@ ms.locfileid: "65469716"
 - Modifiez le thread principal en définissant le thread client sur STA ou MTA. Par exemple, si votre client C# appelle plusieurs composants COM STA, vous pouvez éviter le marshaling intercloisonnements en définissant le thread principal sur STA.  
   
     > [!NOTE]
-    >  Une fois le thread d’un client C# défini sur STA, les appels aux composants COM MTA nécessiteront un marshaling intercloisonnements.  
+    > Une fois le thread d’un client C# défini sur STA, les appels aux composants COM MTA nécessiteront un marshaling intercloisonnements.  
   
  Pour obtenir des instructions sur la sélection explicite d’un modèle de cloisonnement, consultez [Threading managé et non managé](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5s8ee185(v=vs.100)).  
   
@@ -121,7 +121,7 @@ ms.locfileid: "65469716"
 - Un client managé obtient une référence à un objet managé provenant d'un objet COM qui reçoit cette référence d'un hôte distant. Le mécanisme de communication à distance est DCOM.  
   
     > [!NOTE]
-    >  La bibliothèque de types exportée du serveur managée doit être inscrite.  
+    > La bibliothèque de types exportée du serveur managée doit être inscrite.  
   
  Le nombre de limites de processus entre l'appelant et l'appelé est sans importance. Le même référencement direct se produit pour les appels de type in-process et out-of-process.  
   

@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: 8216e144dfcaeaf9b480d681ae91ce59832ae9e3
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 345840ad45add21c6088abd0fb45e2e591b7df21
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877539"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69923885"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Arguments de ligne de commande (Guide de programmation C#)
 Vous pouvez envoyer des arguments à la méthode `Main` en définissant la méthode de l’une des manières suivantes :  
@@ -20,7 +20,7 @@ Vous pouvez envoyer des arguments à la méthode `Main` en définissant la méth
  [!code-csharp[csProgGuideMain#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#3)]  
   
 > [!NOTE]
->  Pour activer des arguments de ligne de commande dans la méthode `Main` dans une application Windows Forms, vous devez modifier manuellement la signature de `Main` dans program.cs. Le code généré par le Concepteur Windows Forms crée un `Main` sans paramètre d’entrée. Vous pouvez également utiliser <xref:System.Environment.CommandLine%2A?displayProperty=nameWithType> ou <xref:System.Environment.GetCommandLineArgs%2A?displayProperty=nameWithType> pour accéder aux arguments de ligne de commande à partir de n’importe quel emplacement d’une application console ou Windows.  
+> Pour activer des arguments de ligne de commande dans la méthode `Main` dans une application Windows Forms, vous devez modifier manuellement la signature de `Main` dans program.cs. Le code généré par le Concepteur Windows Forms crée un `Main` sans paramètre d’entrée. Vous pouvez également utiliser <xref:System.Environment.CommandLine%2A?displayProperty=nameWithType> ou <xref:System.Environment.GetCommandLineArgs%2A?displayProperty=nameWithType> pour accéder aux arguments de ligne de commande à partir de n’importe quel emplacement d’une application console ou Windows.  
   
  Le paramètre de la méthode `Main` est un tableau <xref:System.String> qui représente les arguments de ligne de commande. En général, vous déterminez s’il existe des arguments en testant la propriété `Length`, par exemple :  
   
@@ -46,7 +46,7 @@ long num = Convert.ToInt64(s);
   
  Pour plus d’informations, consultez <xref:System.Int64.Parse%2A> et <xref:System.Convert>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant montre comment utiliser des arguments de ligne de commande dans une application console. L’application prend un argument au moment de l’exécution, le convertit en entier, puis calcule la factorielle du nombre. Si aucun argument n’est fourni, l’application affiche un message pour expliquer comment le programme doit être utilisé.  
   
  Pour compiler et exécuter l’application à partir d’une invite de commandes, procédez comme suit :  
@@ -70,15 +70,15 @@ long num = Convert.ToInt64(s);
 5. Cette commande génère la sortie suivante : `The factorial of 3 is 6.`  
   
 > [!NOTE]
->  Quand vous exécutez une application dans Visual Studio, vous pouvez spécifier des arguments de ligne de commande dans la [page Déboguer du Concepteur de projet](/visualstudio/ide/reference/debug-page-project-designer).  
+> Quand vous exécutez une application dans Visual Studio, vous pouvez spécifier des arguments de ligne de commande dans la [page Déboguer du Concepteur de projet](/visualstudio/ide/reference/debug-page-project-designer).  
   
- Pour plus d’exemples sur l’utilisation des arguments de ligne de commande, consultez [Guide pratique : Créer et utiliser des assemblys à l’aide de la ligne de commande](../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md).  
+ Pour plus d’exemples sur l’utilisation des arguments de ligne de commande, consultez [Guide pratique : Créer et utiliser des assemblys à l’aide de la ligne de commande](../concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Environment?displayProperty=nameWithType>
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Main() et arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/index.md)
-- [Guide pratique pour Afficher les arguments de ligne de commande](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)
-- [Valeurs de retour Main()](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)
-- [Classes](../../../csharp/programming-guide/classes-and-structs/classes.md)
+- [Guide de programmation C#](../index.md)
+- [Main() et arguments de ligne de commande](./index.md)
+- [Guide pratique pour Afficher les arguments de ligne de commande](./how-to-display-command-line-arguments.md)
+- [Valeurs de retour Main()](./main-return-values.md)
+- [Classes](../classes-and-structs/classes.md)

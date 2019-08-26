@@ -9,18 +9,18 @@ helpviewer_keywords:
 - aliases [C#], extern keyword
 - aliases, extern keyword
 ms.assetid: f487bf4f-c943-4fca-851b-e540c83d9027
-ms.openlocfilehash: cfb662203216aa6ca208ceec20d55164c65163dc
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: a701ae02adebfa2dda8fb65053dbf2ebbe83328b
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68626647"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924697"
 ---
 # <a name="extern-alias-c-reference"></a>extern alias (référence C#)
 Il se peut que vous deviez référencer deux versions d’assemblys qui ont le même nom de type qualifié complet. Par exemple, vous pourriez avoir à utiliser plusieurs versions d’un assembly dans la même application. En utilisant un alias d’assembly externe, vous pouvez encapsuler les espaces de noms de chaque assembly dans des espaces de noms racines nommés par l’alias, ce qui permet de les utiliser dans le même fichier.  
   
 > [!NOTE]
->  Le mot clé [extern](../../../csharp/language-reference/keywords/extern.md) est également utilisé comme modificateur de méthode, déclarant une méthode écrite en code non managé.  
+> Le mot clé [extern](./extern.md) est également utilisé comme modificateur de méthode, déclarant une méthode écrite en code non managé.  
   
  Pour référencer deux assemblys portant le même nom de type qualifié complet, vous devez spécifier un alias à l’invite de commandes, comme suit :  
   
@@ -43,8 +43,8 @@ Il se peut que vous deviez référencer deux versions d’assemblys qui ont le m
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../../csharp/language-reference/index.md)
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
-- [:: Opérateur](../../../csharp/language-reference/operators/namespace-alias-qualifier.md)
-- [/reference (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Mots clés C#](./index.md)
+- [:: Opérateur](../operators/namespace-alias-qualifier.md)
+- [/reference (Options du compilateur C#)](../compiler-options/reference-compiler-option.md)

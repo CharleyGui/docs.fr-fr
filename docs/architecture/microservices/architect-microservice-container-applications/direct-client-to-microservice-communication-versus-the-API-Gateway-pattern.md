@@ -2,12 +2,12 @@
 title: Modèle de passerelle API et communication directe de client à microservice
 description: Découvrez les différences et les utilisations du modèle de passerelle API et de la communication directe de client à microservice.
 ms.date: 01/07/2019
-ms.openlocfilehash: 9ebd544bdc137a68f03d1ab38cf23bf0d02c420c
-ms.sourcegitcommit: 46c68557bf6395f0ab9915f7558f2faae0097695
+ms.openlocfilehash: c54287ea3e99ff7fe9faf02898b8c322b756e26f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68892234"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69914672"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Modèle de passerelle API et communication directe de client à microservice
 
@@ -170,7 +170,7 @@ Après les sections consacrées à l’architecture initiale et à la présentat
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Charles Richardson. Modèle : Passerelle API / Backend for Frontend (BFF)**  \
+- **Chris Richardson. Modèle : Passerelle API / Backend for Frontend (BFF)**  \
   <https://microservices.io/patterns/apigateway.html>
 
 - **Modèle de passerelle API** \

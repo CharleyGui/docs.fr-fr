@@ -2,12 +2,12 @@
 title: 'Procédure : Comparer le contenu de deux dossiers (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: c7c4870e-c500-4de3-afa4-2c8e07f510e6
-ms.openlocfilehash: 5d944025d8d442bb80c492d1898487dff88c5bc1
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: df71712ca1b59c706ede66488af8b1580677e299
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65585914"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924222"
 ---
 # <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Procédure : Comparer le contenu de deux dossiers (LINQ) (C#)
 Cet exemple montre trois façons de comparer deux listes de fichiers :  
@@ -19,7 +19,7 @@ Cet exemple montre trois façons de comparer deux listes de fichiers :
 - En recherchant la différence ensembliste pour récupérer les fichiers qui se trouvent dans un dossier, mais pas dans l’autre  
   
     > [!NOTE]
-    >  Les techniques présentées ici peuvent être adaptées pour comparer des séquences d’objets de tout type.  
+    > Les techniques présentées ici peuvent être adaptées pour comparer des séquences d’objets de tout type.  
   
  La classe `FileComparer` présentée ici montre comment utiliser une classe de comparateur personnalisée avec les opérateurs de requête standard. La classe n’est pas destinée à être utilisée dans des scénarios réels. Elle utilise simplement le nom et la longueur en octets de chaque fichier pour déterminer si les dossiers ont un contenu identique. Dans un scénario réel, vous devriez modifier ce comparateur pour effectuer une vérification d’égalité plus rigoureuse.  
   
@@ -126,9 +126,9 @@ namespace QueryCompareTwoDirs
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Créez un projet d’application console C#, avec des directives `using` pour les espaces de noms System.Linq et System.IO.  
+ Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
-- [LINQ et répertoires de fichiers (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ to Objects (C#)](./linq-to-objects.md)
+- [LINQ et répertoires de fichiers (C#)](./linq-and-file-directories.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fe56c0ec3b8a5a150a999e7de98f283436a0ba9d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 571b049300a7c7de963bd762e0266f66060479fe
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607909"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927992"
 ---
 # <a name="application-domains"></a>Domaines d'application
 
@@ -46,9 +46,9 @@ Les systèmes d'exploitation et les environnements d'exécution assurent génér
 - Des applications individuelles peuvent être arrêtées sans que le processus entier soit arrêté. L'utilisation des domaines d'application vous permet de décharger le code en cours d'exécution dans une seule application.  
   
     > [!NOTE]
-    >  Vous ne pouvez pas décharger des assemblys ou des types individuels. Seul un domaine complet peut être déchargé.  
+    > Vous ne pouvez pas décharger des assemblys ou des types individuels. Seul un domaine complet peut être déchargé.  
   
-- Le code en cours d'exécution dans une application ne peut pas directement accéder au code ou aux ressources d'une autre application. Le Common Language Runtime applique cette isolation en empêchant les appels directs entre les objets dans les différents domaines d'application. Les objets qui passent d'un domaine à un autre sont soit copiés, soit accédés par un proxy. Si l'objet est copié, l'appel à cet objet est alors local. Dans ce cas, l'appelant et l'objet référencé figurent dans le même domaine d'application. Si l'objet est accédé par un proxy, l'appel à cet objet est alors distant. Dans ce cas, l'appelant et l'objet référencé figurent dans des domaines d'application différents. Les appels interdomaines utilisent la même infrastructure d'appel distant que les appels entre deux processus ou deux ordinateurs. Les métadonnées de l'objet référencé doivent par conséquent être disponibles pour les deux domaines d'application pour que l'appel de méthode puisse faire l'objet d'une compilation JIT correcte. Si le domaine appelant n’a pas accès aux métadonnées pour l’objet qui est appelé, la compilation peut échouer avec une exception de type <xref:System.IO.FileNotFoundException>. Pour plus d'informations, consultez [Remote Objects](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)). Le mécanisme permettant de déterminer le mode d'accès des objets sur les domaines est défini par l'objet. Pour plus d'informations, consultez <xref:System.MarshalByRefObject?displayProperty=nameWithType>.  
+- Le code en cours d'exécution dans une application ne peut pas directement accéder au code ou aux ressources d'une autre application. Le Common Language Runtime applique cette isolation en empêchant les appels directs entre les objets dans les différents domaines d'application. Les objets qui passent d'un domaine à un autre sont soit copiés, soit accédés par un proxy. Si l'objet est copié, l'appel à cet objet est alors local. Dans ce cas, l'appelant et l'objet référencé figurent dans le même domaine d'application. Si l'objet est accédé par un proxy, l'appel à cet objet est alors distant. Dans ce cas, l'appelant et l'objet référencé figurent dans des domaines d'application différents. Les appels interdomaines utilisent la même infrastructure d'appel distant que les appels entre deux processus ou deux ordinateurs. Les métadonnées de l'objet référencé doivent par conséquent être disponibles pour les deux domaines d'application pour que l'appel de méthode puisse faire l'objet d'une compilation JIT correcte. Si le domaine appelant n’a pas accès aux métadonnées pour l’objet qui est appelé, la compilation peut échouer avec une exception de type <xref:System.IO.FileNotFoundException>. Pour plus d'informations, consultez [Remote Objects](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100)). Le mécanisme permettant de déterminer le mode d'accès des objets sur les domaines est défini par l'objet. Pour plus d’informations, consultez <xref:System.MarshalByRefObject?displayProperty=nameWithType>.  
   
 - La portée du comportement de code est définie par l'application dans laquelle il s'exécute. En d'autres termes, le domaine d'application fournit des paramètres de configuration tels que les stratégies de version d'application, l'emplacement des assemblys distants auxquels il accède et des informations sur l'emplacement où se trouvent les assemblys qui sont chargés dans le domaine.  
   
@@ -118,11 +118,11 @@ Les systèmes d'exploitation et les environnements d'exécution assurent génér
 |<xref:System.AppDomain.Unload%2A>|Effectue un arrêt approprié du domaine. Le domaine d'application n'est pas déchargé tant que tous les threads en cours d'exécution dans le domaine ne sont pas arrêtés ou ne figurent plus dans le domaine.|  
   
 > [!NOTE]
->  Le Common Language Runtime ne prend pas en charge la sérialisation de méthodes globales ; les délégués ne peuvent donc pas être utilisés pour exécuter des méthodes globales dans d'autres domaines d'application.  
+> Le Common Language Runtime ne prend pas en charge la sérialisation de méthodes globales ; les délégués ne peuvent donc pas être utilisés pour exécuter des méthodes globales dans d'autres domaines d'application.  
   
  Les interfaces non managées décrites dans la spécification sur les interfaces d'hébergement du Common Language Runtime permettent également d'accéder aux domaines d'application. Les hôtes de runtime peuvent utiliser des interfaces à partir d'un code non managé pour créer des domaines d'application dans un processus et y accéder.  
   
-## <a name="the-complusloaderoptimization-environment-variable"></a>La variable d'environnement COMPLUS_LoaderOptimization
+## <a name="the-complus_loaderoptimization-environment-variable"></a>La variable d'environnement COMPLUS_LoaderOptimization
 
  Variable d'environnement qui définit la stratégie d'optimisation de chargeur par défaut d'une application exécutable.  
   

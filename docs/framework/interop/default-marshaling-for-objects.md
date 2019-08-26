@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: c2ef0284-b061-4e12-b6d3-6a502b9cc558
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c694a9d0ba0d6c7d41a9ce3b932b88519fcddfeb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9bc165c6f1a7cdc6b8a03db0b7648583d75cd7a0
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626330"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946662"
 ---
 # <a name="default-marshaling-for-objects"></a>Marshaling par défaut pour les objets
 Les paramètres et les champs de type <xref:System.Object?displayProperty=nameWithType> peuvent être exposés à un code non managé sous la forme de l’un des types suivants :  
@@ -87,7 +87,7 @@ interface MarshalObject {
 ```  
   
 > [!NOTE]
->  Le marshaleur d’interopérabilité libère automatiquement tout objet alloué à l’intérieur du variant après l’appel.  
+> Le marshaleur d’interopérabilité libère automatiquement tout objet alloué à l’intérieur du variant après l’appel.  
   
  L’exemple suivant illustre un type valeur mis en forme.  
   
@@ -266,7 +266,7 @@ mo.SetVariant(new CurrencyWrapper(new Decimal(5.25)));
 |**VT_BSTR**|<xref:System.String?displayProperty=nameWithType>|  
 |**VT_INT**|<xref:System.Int32?displayProperty=nameWithType>|  
 |**VT_UINT**|<xref:System.UInt32?displayProperty=nameWithType>|  
-|**VT_ARRAY** &#124; **VT_**\*|<xref:System.Array?displayProperty=nameWithType>|  
+|**VT_ARRAY** &#124; **VT_** \*|<xref:System.Array?displayProperty=nameWithType>|  
 |**VT_CY**|<xref:System.Decimal?displayProperty=nameWithType>|  
 |**VT_RECORD**|Type valeur boxed correspondant.|  
 |**VT_VARIANT**|Non pris en charge.|  
@@ -287,7 +287,7 @@ Variants passés par valeur et par référence
   
  **Comportement par défaut pour le marshaling d’objets et de variants par référence**  
   
- Pour retourner des changements à l’appelant, les paramètres doivent être passés par référence. Par exemple, vous pouvez utiliser le mot clé **ref** en C# (ou **ByRef** en code managé Visual Basic) pour passer des paramètres par référence. Dans COM, les paramètres de référence sont passés à l’aide d’un pointeur tel que **variant \***.  
+ Pour retourner des changements à l’appelant, les paramètres doivent être passés par référence. Par exemple, vous pouvez utiliser le mot clé **ref** en C# (ou **ByRef** en code managé Visual Basic) pour passer des paramètres par référence. Dans COM, les paramètres de référence sont passés à l’aide d’un pointeur tel que **variant \*** .  
   
 - Lors du passage d’un objet à COM par référence, le marshaleur crée un variant et copie le contenu de la référence d’objet dans le variant avant que l’appel ne soit effectué. Le variant est passé à la fonction non managée où l’utilisateur est libre de changer le contenu du variant. Au retour de l’appel, tout changement apporté au variant côté non managé est retourné vers l’objet d’origine. Si le type de variant est différent du type du variant passé à l’appel, les changements sont retournés à un objet d’un type différent. Cela signifie que le type de l’objet passé dans l’appel peut être différent du type de l’objet retourné à partir de l’appel.  
   

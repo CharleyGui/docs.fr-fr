@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: d2ce0683-343d-403e-bb8d-209186f7a19d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 01cdcbb93fde0d2d2f1c800613d9709da0d695f6
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 7e6f9f553af4899d502584cbde5341f7061f169d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67026006"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937950"
 ---
 # <a name="winmdexpexe-windows-runtime-metadata-export-tool"></a>Winmdexp.exe (outil d'exportation de métadonnées Windows Runtime)
 L'outil Metadata Export Windows Runtime (Winmdexp.exe) transforme un module .NET Framework en un fichier qui contient des métadonnées Windows Runtime. Bien que les assemblys .NET Framework et les fichiers de métadonnées Windows Runtime utilisent le même format physique, il y a des différences dans le contenu des tables de métadonnées. Autrement dit, les assemblys .NET Framework ne sont pas utilisables automatiquement comme composants Windows Runtime. Le processus qui transforme un module .NET Framework en composant Windows Runtime s’appelle *exportation*. Dans .NET Framework 4.5 et .NET Framework 4.5.1, le fichier de métadonnées Windows (.winmd) résultant contient à la fois les métadonnées et l’implémentation.  
@@ -33,7 +33,7 @@ winmdexp [options] winmdmodule
   
 |Argument ou option|Description|  
 |------------------------|-----------------|  
-|`winmdmodule`|Spécifie le module (.winmdobj) à exporter. Un seul module est autorisé. Pour créer ce module, utilisez l'option de compilateur `/target` avec la cible `winmdobj`. Consultez [/target:winmdobj (Options du compilateur C#)](~/docs/csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md) ou [/target (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/target.md).|  
+|`winmdmodule`|Spécifie le module (.winmdobj) à exporter. Un seul module est autorisé. Pour créer ce module, utilisez l'option de compilateur `/target` avec la cible `winmdobj`. Consultez [/target:winmdobj (Options du compilateur C#)](../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md) ou [/target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md).|  
 |`/docfile:` `docfile`<br /><br /> `/d:` `docfile`|Spécifie le fichier de documentation XML de sortie que Winmdexp.exe produira. Dans .NET Framework 4.5, le fichier de sortie est essentiellement identique au fichier de documentation XML d’entrée.|  
 |`/moduledoc:` `docfile`<br /><br /> `/md:` `docfile`|Spécifie le nom du fichier de documentation XML que le compilateur a produit avec `winmdmodule`.|  
 |`/modulepdb:` `symbolfile`<br /><br /> `/mp:` `symbolfile`|Indique le nom du fichier de la base de données du programme (PDB) qui contient les symboles pour `winmdmodule`.|  
@@ -48,11 +48,11 @@ winmdexp [options] winmdmodule
 ## <a name="remarks"></a>Remarques  
  Winmdexp.exe n'est pas conçu pour convertir un assembly. NET Framework arbitraire en un fichier .winmd. Il requiert un module compilé avec l'option `/target:winmdobj`, et des restrictions supplémentaires s'appliquent. La plus importante de ces restrictions est que tous les types qui sont exposés dans la surface API de l'assembly doivent être de type Windows Runtime. Pour plus d'informations, consultez la section « Déclaration de types dans les composants Windows Runtime » de l'article [Création de composants Windows Runtime en C# et Visual Basic](https://go.microsoft.com/fwlink/p/?LinkID=238313) dans le Centre de développement Windows.  
   
- Lorsque vous écrivez une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] ou un composant Windows Runtime avec C# ou Visual Basic, .NET Framework fournit le support pour effectuer la programmation avec Windows Runtime de manière plus naturelle. Ce sujet est abordé dans l’article [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md). Dans le processus, certains types de Windows Runtime utilisés couramment sont mappés en types .NET Framework. Winmdexp.exe inverse ce processus et produit une surface API qui utilise les types Windows Runtime correspondants. Par exemple, les types qui sont construits à partir de l’interface <xref:System.Collections.Generic.IList%601> sont mappés à des types qui sont construits à partir de l’interface Windows Runtime[IVector\<T>](https://go.microsoft.com/fwlink/p/?LinkId=251132).  
+ Lorsque vous écrivez une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] ou un composant Windows Runtime avec C# ou Visual Basic, .NET Framework fournit le support pour effectuer la programmation avec Windows Runtime de manière plus naturelle. Ce sujet est abordé dans l’article [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md). Dans le processus, certains types de Windows Runtime utilisés couramment sont mappés en types .NET Framework. Winmdexp.exe inverse ce processus et produit une surface API qui utilise les types Windows Runtime correspondants. Par exemple, les types qui sont construits à partir de l’interface <xref:System.Collections.Generic.IList%601> sont mappés à des types qui sont construits à partir de l’interface Windows Runtime[IVector\<T>](https://go.microsoft.com/fwlink/p/?LinkId=251132).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
+- [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
 - [Création de composants Windows Runtime en C# et Visual Basic](https://go.microsoft.com/fwlink/p/?LinkID=238313)
 - [Messages d’erreur Winmdexp.exe](../../../docs/framework/tools/winmdexp-exe-error-messages.md)
 - [Outils de génération, de déploiement et de configuration (.NET Framework)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd233108(v=vs.100))

@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 910beb2f-cfb3-4e8e-9936-f7e0c5f4064a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 67cf4636a8b947bc6ad0ce0475c53bc25cd0f678
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7022a0f55cd7994141148bc6b2faefb10bfea416
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647925"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966978"
 ---
 # <a name="how-to-migrate-your-xsltransform-code"></a>Procédure : migrer votre code XslTransform
 Les nouvelles classes XSLT ont été conçues pour être très semblables aux classes existantes. La classe <xref:System.Xml.Xsl.XslCompiledTransform> remplace la classe <xref:System.Xml.Xsl.XslTransform>. Les feuilles de style sont compilées à l'aide de la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>. Les transformations sont exécutées à l'aide de la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>. Les procédures suivantes illustrent des tâches XSLT communes et comparent le code des classes <xref:System.Xml.Xsl.XslTransform> et <xref:System.Xml.Xsl.XslCompiledTransform>.  
@@ -76,7 +76,7 @@ Les nouvelles classes XSLT ont été conçues pour être très semblables aux cl
 - Code utilisant la classe <xref:System.Xml.Xsl.XslCompiledTransform>.  
   
     > [!NOTE]
-    >  La classe <xref:System.Xml.Xsl.XslCompiledTransform> n'a pas de méthode permettant de retourner les résultats de la transformation XSLT sous la forme d'un objet <xref:System.Xml.XmlReader>. Cependant, vous pouvez envoyer la sortie vers un fichier XML et charger le fichier XML dans un autre objet.  
+    > La classe <xref:System.Xml.Xsl.XslCompiledTransform> n'a pas de méthode permettant de retourner les résultats de la transformation XSLT sous la forme d'un objet <xref:System.Xml.XmlReader>. Cependant, vous pouvez envoyer la sortie vers un fichier XML et charger le fichier XML dans un autre objet.  
   
      [!code-csharp[XML_Migration#20](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#20)]
      [!code-vb[XML_Migration#20](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#20)]  

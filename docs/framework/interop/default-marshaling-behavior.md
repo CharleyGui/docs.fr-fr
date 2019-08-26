@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 13f1b2c3e3e651cb6c25b966d778cb436967509e
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: c6de6091b8970fde4a958148acf32dcefe1a6726
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629419"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946558"
 ---
 # <a name="default-marshaling-behavior"></a>comportement de marshaling par défaut
 Le marshaling d'interopérabilité agit sur les règles qui définissent le comportement des données associées aux paramètres de méthode quand elles sont passées de la mémoire managée à la mémoire non managée. Ces règles intégrées contrôlent les activités de marshaling telles que les transformations de types de données, le fait qu’un appelant puisse modifier les données transmises et renvoyer ces modifications à l’appelant, ainsi que les circonstances dans lesquelles le marshaleur fournit des optimisations de performances.  
@@ -24,7 +24,7 @@ Le marshaling d'interopérabilité agit sur les règles qui définissent le comp
  Cette section aborde les caractéristiques de comportement par défaut du service de marshaling d'interopérabilité. Elle présente des informations détaillées sur le marshaling des tableaux, des types booléens, des types char, des délégués, des classes, des objets, des chaînes et des structures.  
   
 > [!NOTE]
->  Le marshaling des types génériques n'est pas pris en charge. Pour plus d’informations, consultez [Interopérabilité à l’aide de types génériques](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100)).  
+> Le marshaling des types génériques n'est pas pris en charge. Pour plus d’informations, consultez [Interopérabilité à l’aide de types génériques](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100)).  
   
 ## <a name="memory-management-with-the-interop-marshaler"></a>Gestion de la mémoire avec le marshaleur d'interopérabilité  
  Le marshaleur d'interopérabilité tente toujours de libérer de la mémoire allouée par du code non managé. Ce comportement est conforme aux règles de gestion de mémoire COM, mais pas à celles qui régissent le code C++ natif.  
@@ -117,7 +117,7 @@ interface DelegateTest : IDispatch {
 Dans cet exemple, quand les deux délégués sont marshalés sous la forme <xref:System.Runtime.InteropServices.UnmanagedType.FunctionPtr?displayProperty=nameWithType>, le résultat est un `int` et un pointeur vers un `int`. Comme les types délégués sont marshalés, `int` représente ici un pointeur vers une valeur void (`void*`), qui est l’adresse du délégué en mémoire. En d’autres termes, ce résultat est spécifique des systèmes Windows 32 bits, car `int` représente ici la taille du pointeur de fonction.
 
 > [!NOTE]
->  Une référence au pointeur fonction d’un délégué managé compris dans du code non managé n’empêche pas le common language runtime d’effectuer le garbage collection sur l’objet managé.  
+> Une référence au pointeur fonction d’un délégué managé compris dans du code non managé n’empêche pas le common language runtime d’effectuer le garbage collection sur l’objet managé.  
   
  Par exemple, le code suivant est incorrect, car la référence à l'objet `cb` passé à la méthode `SetChangeHandler` ne permet pas à `cb` de rester actif au-delà de la durée de vie de la méthode `Test`. Une fois l'objet `cb` collecté, le pointeur fonction passé à `SetChangeHandler` n'est plus valide.  
   
@@ -246,12 +246,12 @@ internal static class NativeMethods
  Le type valeur `Rect` doit être passé par référence, car l'API non managée s'attend à ce qu'un pointeur vers un `RECT` soit passé à la fonction. Le type valeur `Point` est passé par valeur, car l'API non managée s'attend à ce que le `POINT` soit passé à la pile. Cette différence subtile est très importante. Les références sont passées au code non managé comme des pointeurs. Les valeurs sont passées au code non managé sur la pile.  
   
 > [!NOTE]
->  Quand un type mis en forme est marshalé en tant que structure, seuls les champs du type sont accessibles. Si le type possède des méthodes, des propriétés ou des événements, ceux-ci sont inaccessibles depuis le code non managé.  
+> Quand un type mis en forme est marshalé en tant que structure, seuls les champs du type sont accessibles. Si le type possède des méthodes, des propriétés ou des événements, ceux-ci sont inaccessibles depuis le code non managé.  
   
  Les classes peuvent également être marshalées vers du code non managé en tant que structures de style C, du moment que la disposition des membres est fixe. Les informations de disposition des membres des classes sont également fournies avec l'attribut <xref:System.Runtime.InteropServices.StructLayoutAttribute>. La principale différence entre les types valeur à disposition fixe et les classes à disposition fixe est la manière dont ils sont marshalés vers le code non managé. Les types valeur sont passés par valeur (dans la pile). Toutes les modifications apportées par l'appelé aux membres du type ne sont donc pas vues par l'appelant. Les types référence sont passés par référence (une référence au type est passée sur la pile). Toutes les modifications apportées par l'appelé aux membres d'un type blittable sont donc vues par l'appelant.  
   
 > [!NOTE]
->  Si un type référence possède des membres de type non blittable, la conversion est requise deux fois : la première fois quand un argument est passé du côté non managé, la seconde fois lors du retour de l'appel. En raison de cette charge mémoire supplémentaire, les paramètres In/Out doivent être explicitement appliqués à un argument si l'appelant veut voir les modifications apportées par l'appelé.  
+> Si un type référence possède des membres de type non blittable, la conversion est requise deux fois : la première fois quand un argument est passé du côté non managé, la seconde fois lors du retour de l'appel. En raison de cette charge mémoire supplémentaire, les paramètres In/Out doivent être explicitement appliqués à un argument si l'appelant veut voir les modifications apportées par l'appelé.  
   
  Dans l’exemple suivant, la classe `SystemTime` a une disposition séquentielle des membres et peut être passée à la fonction **GetSystemTime** de l’API Windows.  
   
@@ -351,7 +351,7 @@ interface _Graphics {
  Les règles utilisées pour marshaler des valeurs et des références aux appels de code non managé sont également utilisées lors du marshaling via les interfaces COM. Par exemple, quand une instance du type valeur `Point` est passée de .NET Framework à COM, le `Point` est passé par valeur. Si le type valeur `Point` est passé par référence, un pointeur vers un `Point` est passé sur la pile. Le marshaleur d’interopérabilité ne prend pas en charge les niveaux élevés d’indirection (**Point** \*\*) dans les deux directions.  
   
 > [!NOTE]
->  Les structures dont la valeur d’énumération <xref:System.Runtime.InteropServices.LayoutKind> est définie sur **Explicit** ne peuvent pas être utilisées dans COM Interop, car la bibliothèque de types exportée ne peut pas exprimer une disposition explicite.  
+> Les structures dont la valeur d’énumération <xref:System.Runtime.InteropServices.LayoutKind> est définie sur **Explicit** ne peuvent pas être utilisées dans COM Interop, car la bibliothèque de types exportée ne peut pas exprimer une disposition explicite.  
   
 ### <a name="system-value-types"></a>Types de valeur système  
  L'espace de noms <xref:System> possède plusieurs types valeur qui représentent la forme boxed de types primitifs de runtime. Par exemple, la structure de type valeur <xref:System.Int32?displayProperty=nameWithType> représente la forme boxed d’**ELEMENT_TYPE_I4**. Au lieu de marshaler ces types en tant que structures, comme le sont les autres types mis en forme, vous les marshalez de la même façon que les types primitifs boxed. **System.Int32** est donc marshalé en tant qu’**ELEMENT_TYPE_I4** et non en tant que structure contenant un seul membre de type **long**. Le tableau suivant répertorie les types valeur de l’espace de noms **System** qui sont des représentations boxed de types primitifs.  

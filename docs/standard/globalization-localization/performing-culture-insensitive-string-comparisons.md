@@ -15,18 +15,18 @@ helpviewer_keywords:
 ms.assetid: abae50ef-32f7-4a50-a540-fd256fd1aed0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c7726164e998ea917c8f539b5768aa7e3f1ae12c
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 7b68d079413168b042412a67e8732e8afed66ffa
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053196"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915877"
 ---
 # <a name="performing-culture-insensitive-string-comparisons"></a>Exécution de comparaisons de chaînes indépendantes de la culture
 Par défaut, la méthode <xref:System.String.Compare%2A?displayProperty=nameWithType> effectue des comparaisons dépendantes de la culture et qui respectent la casse. Cette méthode inclut également plusieurs surcharges qui fournissent un paramètre `culture` qui vous permet de spécifier la culture à utiliser et un paramètre `comparisonType` qui vous sert à spécifier les règles de comparaison à utiliser. L'appel de ces méthodes au lieu de la surcharge par défaut supprime toute ambiguïté à propos des règles utilisées dans un appel de méthode particulier et indique si une comparaison donnée est dépendante ou indépendante de la culture.  
   
 > [!NOTE]
->  Les surcharges de la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> effectuent des comparaisons dépendantes de la culture et sensibles à la casse ; vous ne pouvez pas utiliser cette méthode pour effectuer des comparaisons indépendantes de la culture. Pour des raisons de clarté du code, nous recommandons d'utiliser la méthode <xref:System.String.Compare%2A?displayProperty=nameWithType> à la place.  
+> Les surcharges de la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> effectuent des comparaisons dépendantes de la culture et sensibles à la casse ; vous ne pouvez pas utiliser cette méthode pour effectuer des comparaisons indépendantes de la culture. Pour des raisons de clarté du code, nous recommandons d'utiliser la méthode <xref:System.String.Compare%2A?displayProperty=nameWithType> à la place.  
   
  Pour les opérations dépendantes de la culture, spécifiez la valeur d'énumération <xref:System.StringComparison.CurrentCulture?displayProperty=nameWithType> ou <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType> comme paramètre `comparisonType`. Si vous souhaitez effectuer une comparaison dépendante de la culture à l'aide d'une culture désignée autre que la culture actuelle, spécifiez l'objet <xref:System.Globalization.CultureInfo> qui représente cette culture comme paramètre `culture`.  
   

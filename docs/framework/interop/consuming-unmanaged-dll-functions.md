@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: eca7606e-ebfb-4f47-b8d9-289903fdc045
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f2b2d5a935c2608b2315633538fc93dd62595558
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 9e9308d6bf0eefaa60af17a721cd1c26827469eb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59340033"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69946843"
 ---
 # <a name="consuming-unmanaged-dll-functions"></a>Consommation de fonctions DLL non managées
 L’appel de code non managé est un service qui permet au code managé d’appeler des fonctions non managées implémentées dans des bibliothèques de liens dynamiques (DLL), telles que celles de l’API Windows. Il localise et appelle une fonction exportée, puis marshale ses arguments (entiers, chaînes, tableaux, structures, etc) au-delà des limites d’interopérabilité, selon les besoins.  
@@ -43,7 +43,7 @@ L’appel de code non managé est un service qui permet au code managé d’appe
   
      [C#] Utilisez **DllImportAttribute** pour identifier la DLL et la fonction. Marquez la méthode avec les modificateurs **static** et **extern**.  
   
-     [C++] Utilisez **DllImportAttribute** pour identifier la DLL et la fonction. Marquez la méthode ou la fonction wrapper avec **extern "C"**.  
+     [C++] Utilisez **DllImportAttribute** pour identifier la DLL et la fonction. Marquez la méthode ou la fonction wrapper avec **extern "C"** .  
   
 4. [Appelez une fonction DLL](../../../docs/framework/interop/calling-a-dll-function.md).  
   
@@ -65,7 +65,7 @@ L’appel de code non managé est un service qui permet au code managé d’appe
 3. Il localise l'adresse de la fonction dans la mémoire et transmet ses arguments sur la pile, en marshalant les données selon les besoins.  
   
     > [!NOTE]
-    >  La localisation et le chargement de la DLL, et la localisation de l'adresse de la fonction dans la mémoire, se produisent uniquement lors du premier appel à la fonction.  
+    > La localisation et le chargement de la DLL, et la localisation de l'adresse de la fonction dans la mémoire, se produisent uniquement lors du premier appel à la fonction.  
   
 4. Il cède le contrôle à la fonction non managée.  
   

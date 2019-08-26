@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ec0a8d63-11b3-4acd-b398-da1e37e97382
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4f9741944dcf8a5fcc05c169a1c3c3f679902474
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: f9c34b237655eb49b6a44c366586b3cabb5a684f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859679"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69937979"
 ---
 # <a name="tlbimpexe-type-library-importer"></a>Tlbimp.exe (Type Library Importer)
 L''importateur de bibliothèques de types convertit les définitions de types présentes dans une bibliothèque de types COM en définitions équivalentes dans un assembly de Common Language Runtime. Le résultat de Tlbimp.exe est un fichier binaire (un assembly) qui contient les métadonnées de runtime pour les types définis dans la bibliothèque de types d'origines. Vous pouvez examiner ce fichier à l’aide d’outils comme [Ildasm.exe](ildasm-exe-il-disassembler.md).  
@@ -71,7 +71,7 @@ tlbimp tlbFile [options]
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
 > [!NOTE]
->  Les options de ligne de commande de Tlbimp.exe ne font pas l'objet d'une distinction minuscules/majuscules et peuvent être fournies dans n'importe quel ordre. Il vous suffit de spécifier les éléments de l'option nécessaires à son identification de manière unique. Par conséquent, **/n** équivaut à **/nologo** et **/ou:** *outfile.dll* équivaut à **/out:** *outfile.dll*.  
+> Les options de ligne de commande de Tlbimp.exe ne font pas l'objet d'une distinction minuscules/majuscules et peuvent être fournies dans n'importe quel ordre. Il vous suffit de spécifier les éléments de l'option nécessaires à son identification de manière unique. Par conséquent, **/n** équivaut à **/nologo** et **/ou:** *outfile.dll* équivaut à **/out:** *outfile.dll*.  
   
 ## <a name="remarks"></a>Remarques  
  Tlbimp.exe effectue d'un seul tenant les conversions sur la totalité d'une bibliothèque de types. Vous ne pouvez pas utiliser cet outil dans le but de générer des informations de type pour un sous-ensemble de types définis dans une bibliothèque de types unique.  

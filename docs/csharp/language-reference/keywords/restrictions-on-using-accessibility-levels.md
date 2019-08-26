@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - access modifiers [C#], accessibility level restrictions
 ms.assetid: 987e2f22-46bf-4fea-80ee-270b9cd01045
-ms.openlocfilehash: 3a5915d23fea02a031cedd9063018fffbdc34180
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 13adfbb96cea2c192b84931b529bf92fd2b50116
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633774"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922327"
 ---
 # <a name="restrictions-on-using-accessibility-levels-c-reference"></a>Limitations sur l’utilisation des niveaux d’accessibilité (informations de référence sur C#)
 
@@ -34,10 +34,10 @@ Le tableau suivant résume les limitations sur les niveaux d’accessibilité d�
 |[Propriétés](../../programming-guide/classes-and-structs/properties.md)|Le type d’une propriété doit être au moins aussi accessible que la propriété elle-même.|
 |[Événements](../../programming-guide/events/index.md)|Le type d’un événement doit être au moins aussi accessible que l’événement lui-même.|
 |[Indexeurs](../../programming-guide/indexers/index.md)|Le type et les types de paramètres d’un indexeur doivent être au moins aussi accessibles que l’indexeur lui-même.|
-|[Opérateurs](../../programming-guide/statements-expressions-operators/operators.md)|Le type de retour et les types de paramètres d’un opérateur doivent être au moins aussi accessibles que l’opérateur lui-même.|
+|[Opérateurs](../operators/index.md)|Le type de retour et les types de paramètres d’un opérateur doivent être au moins aussi accessibles que l’opérateur lui-même.|
 |[Constructeurs](../../programming-guide/classes-and-structs/constructors.md)|Les types de paramètres d’un constructeur doivent être au moins aussi accessibles que le constructeur lui-même.|
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L’exemple suivant contient des déclarations erronées de différents types. Le commentaire qui suit chaque déclaration indique l’erreur du compilateur à attendre.
 
