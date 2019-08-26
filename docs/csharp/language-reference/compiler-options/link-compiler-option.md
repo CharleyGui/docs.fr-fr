@@ -11,12 +11,12 @@ helpviewer_keywords:
 - -link compiler option [C#]
 - link compiler option [C#]
 ms.assetid: 00da70c6-9ea1-43c2-86f2-aa7f26c03475
-ms.openlocfilehash: 049d1ce7a27a812b58fb09802e1ce520e96ed925
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 724a848d4c31b2c4f6fc3427d70fc84f4fd944c6
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586022"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924763"
 ---
 # <a name="-link-c-compiler-options"></a>-link (Options du compilateur C#)
 Fait que le compilateur rend disponible pour le projet en cours de compilation les informations de type COM des assemblys spécifiés.  
@@ -41,7 +41,7 @@ Fait que le compilateur rend disponible pour le projet en cours de compilation l
  L’option `-link` incorpore seulement les interfaces, les structures et les délégués. L’incorporation de classes COM n’est pas prise en charge.  
   
 > [!NOTE]
->  Quand vous créez une instance d’un type COM incorporé dans votre code, vous devez créer l’instance à l’aide de l’interface appropriée. Une tentative de création d’une instance d’un type COM incorporé à l’aide de la coclasse provoque une erreur.  
+> Quand vous créez une instance d’un type COM incorporé dans votre code, vous devez créer l’instance à l’aide de l’interface appropriée. Une tentative de création d’une instance d’un type COM incorporé à l’aide de la coclasse provoque une erreur.  
   
  Pour définir l’option `-link` dans Visual Studio, ajoutez une référence d’assembly et définissez la propriété `Embed Interop Types` sur **true**. La valeur par défaut pour la propriété `Embed Interop Types` est **false**.  
   
@@ -51,7 +51,7 @@ Fait que le compilateur rend disponible pour le projet en cours de compilation l
   
 - Un champ, une propriété, un événement ou une méthode qui a un type de retour ou un type de paramètre de l’Assembly B est appelé.  
   
- Comme l’option [-reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) du compilateur, l’option `-link` utilise le fichier réponse Csc.rsp, qui référence les assemblys .NET Framework fréquemment utilisés. Utilisez l’option [-noconfig](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md) du compilateur si vous ne voulez pas que le compilateur utilise le fichier Csc.rsp.  
+ Comme l’option [-reference](./reference-compiler-option.md) du compilateur, l’option `-link` utilise le fichier réponse Csc.rsp, qui référence les assemblys .NET Framework fréquemment utilisés. Utilisez l’option [-noconfig](./noconfig-compiler-option.md) du compilateur si vous ne voulez pas que le compilateur utilise le fichier Csc.rsp.  
   
  La forme abrégée de `-link` est `-l`.  
   
@@ -74,7 +74,7 @@ Fait que le compilateur rend disponible pour le projet en cours de compilation l
   
  [!code-csharp[VbLinkCompilerCS#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/vblinkcompilercs/cs/program.cs#5)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Le code suivant compile le fichier source `OfficeApp.cs` et des assemblys de référence à partir de `COMData1.dll` et de `COMData2.dll` pour produire `OfficeApp.exe`.  
   
 ```csharp  
@@ -83,9 +83,9 @@ csc -link:COMData1.dll,COMData2.dll -out:OfficeApp.exe OfficeApp.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Options du compilateur C#](./index.md)
 - [Procédure pas à pas : incorporation de types provenant d’assemblys managés](../../programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)
-- [-reference (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/reference-compiler-option.md)
-- [-noconfig (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/noconfig-compiler-option.md)
-- [Génération à partir de la ligne de commande avec csc.exe](../../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)
-- [Vue d’ensemble de l’interopérabilité](../../../csharp/programming-guide/interop/interoperability-overview.md)
+- [-reference (Options du compilateur C#)](./reference-compiler-option.md)
+- [-noconfig (Options du compilateur C#)](./noconfig-compiler-option.md)
+- [Génération à partir de la ligne de commande avec csc.exe](./command-line-building-with-csc-exe.md)
+- [Vue d’ensemble de l’interopérabilité](../../programming-guide/interop/interoperability-overview.md)

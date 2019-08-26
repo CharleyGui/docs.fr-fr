@@ -2,12 +2,12 @@
 title: Performance des requêtes chaînées (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: b2f1d715-8946-4dc0-8d56-fb3d1bba54a6
-ms.openlocfilehash: 1ccb7dfec57a4aeea8329456084ca99f5ca3124d
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: dfd7698d0bdd24a75458a581dfd42c3d21325e6f
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689996"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69591569"
 ---
 # <a name="performance-of-chained-queries-linq-to-xml-c"></a>Performance des requêtes chaînées (LINQ to XML) (C#)
 
@@ -53,6 +53,6 @@ Cette requête chaînée offre le même profil de performance que l'itération s
 
 L'itération sur `query2` est donc directement proportionnelle au nombre d'éléments de la source de la première requête, en d'autres termes, elle suit un algorithme linéaire. Un exemple Visual Basic correspondant aurait le même profil de performance.
 
-Pour plus d’informations sur les itérateurs, consultez [yield](../../../../csharp/language-reference/keywords/yield.md).
+Pour plus d’informations sur les itérateurs, consultez [yield](../../../language-reference/keywords/yield.md).
 
-Pour obtenir un tutoriel plus détaillé sur le chaînage de requêtes, consultez [Tutoriel : Chaînage de requêtes](../../../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
+Pour obtenir un tutoriel plus détaillé sur le chaînage de requêtes, consultez [Tutoriel : Chaînage de requêtes](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).

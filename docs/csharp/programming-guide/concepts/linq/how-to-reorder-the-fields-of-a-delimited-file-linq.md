@@ -2,12 +2,12 @@
 title: 'Procédure : Réorganiser les champs d’un fichier délimité (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4e62d82c-61b7-4f18-b9a1-86723746d7d2
-ms.openlocfilehash: 260f3dff25eb1e9c47a8102822da709bdede9b72
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 1507d0f743070f15b8e64d5dcfb1b9499470b123
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584428"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592691"
 ---
 # <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-c"></a>Procédure : Réorganiser les champs d’un fichier délimité (LINQ) (C#)
 Un fichier de valeurs séparées par des virgules (CSV) est un fichier texte qui est souvent utilisé pour stocker des données de feuille de calcul ou autres données tabulaires qui sont représentées sous forme de lignes et de colonnes. En utilisant la méthode <xref:System.String.Split%2A> pour séparer les champs, il est très facile d’interroger et de manipuler des fichiers CSV à l’aide de LINQ. En fait, la même technique peut servir à réorganiser les sections de n’importe quelle ligne de texte structurée et ne se limite donc pas aux fichiers CSV.  
@@ -33,7 +33,7 @@ Un fichier de valeurs séparées par des virgules (CSV) est un fichier texte qui
     Zabokritski,Eugene,121  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
   
 ```csharp  
 class CSVFiles  
@@ -76,10 +76,10 @@ class CSVFiles
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
-Créez un projet d’application console C#, avec des directives `using` pour les espaces de noms System.Linq et System.IO.
+Créez un projet d’application console C# avec des directives `using` pour les espaces de noms System.Linq et System.IO.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ et chaînes (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ et répertoires de fichiers (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
-- [Guide pratique pour générer du code XML à partir de fichiers CSV (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-generate-xml-from-csv-files.md)
+- [LINQ et chaînes (C#)](./linq-and-strings.md)
+- [LINQ et répertoires de fichiers (C#)](./linq-and-file-directories.md)
+- [Guide pratique pour générer du code XML à partir de fichiers CSV (C#)](./how-to-generate-xml-from-csv-files.md)

@@ -1,23 +1,22 @@
 ---
-title: 'Didacticiel : Générer un système de suggestion de films : factorisation de matrice'
+title: 'Tutoriel : Générer un système de suggestion de films : factorisation de matrice'
 description: Ce tutoriel explique comment créer un système de suggestion de films à l’aide de ML.NET dans une application console .NET. Les étapes de ce tutoriel utilisent le langage C# et Visual Studio 2019.
 author: briacht
-ms.author: johalex
 ms.date: 07/09/2019
 ms.custom: mvc, title-hack-0516
 ms.topic: tutorial
-ms.openlocfilehash: b58afca0671468d3e981c7615e0af1c0f8ae632f
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 82da512d437ed2c5c28601c34687494b8be4d046
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331660"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666686"
 ---
-# <a name="tutorial-build-a-movie-recommender-using-matrix-factorizaton-with-mlnet"></a>Didacticiel : Générer un système de suggestion de films à l’aide de la factorisation de matrice avec ML.NET
+# <a name="tutorial-build-a-movie-recommender-using-matrix-factorizaton-with-mlnet"></a>Tutoriel : Générer un système de suggestion de films à l’aide de la factorisation de matrice avec ML.NET
 
 Ce tutoriel explique comment créer un système de suggestion de films à l’aide de ML.NET dans une application console .NET. Les étapes de ce tutoriel utilisent le langage C# et Visual Studio 2019.
 
-Ce tutoriel vous montre comment effectuer les opérations suivantes :
+Dans ce didacticiel, vous apprendrez à :
 > [!div class="checklist"]
 > * Sélectionner un algorithme de machine learning.
 > * Préparer et charger vos données.
@@ -44,11 +43,11 @@ Vous effectuerez les étapes suivantes pour accomplir votre tâche, ainsi que to
 
 Il existe plusieurs façons d’aborder les problèmes de suggestion, par exemple la suggestion d’une liste de films ou d’une liste de produits associés. Dans le cas présent, vous allez prédire l’évaluation (1-5) qu’un utilisateur attribuera à un film spécifique et suggérer ce film si la note est supérieure à un seuil défini (plus l’évaluation est élevée, plus il est probable qu’un utilisateur apprécie un film).
 
-## <a name="create-a-console-application"></a>Création d’une application console
+## <a name="create-a-console-application"></a>Créer une application console
 
-### <a name="create-a-project"></a>Création d’un projet
+### <a name="create-a-project"></a>Créer un projet
 
-1. Ouvrez Visual Studio 2017. Sélectionnez **Fichier** > **Nouveau** > **Projet** dans la barre de menus. Dans la boîte de dialogue **Nouveau projet**, sélectionnez le nœud **Visual C#** suivi du nœud **.NET Core**. Ensuite, sélectionnez le modèle de projet **Application console (.NET Core)** . Dans la zone de texte **Nom**, tapez « MovieRecommender », puis sélectionnez le bouton **OK**.
+1. Ouvrez Visual Studio 2017. Sélectionnez **Fichier** > **Nouveau** > **Projet** dans la barre de menus. Dans la boîte de dialogue **Nouveau projet**, sélectionnez le nœud **Visual C#** suivi du nœud **.NET Core**. Ensuite, sélectionnez le modèle de projet **Application console (.NET Core)** . Dans la zone de texte **Nom**, tapez « MovieRecommender », puis sélectionnez le bouton **OK**.
 
 2. Créez un répertoire nommé *Données* dans votre projet pour enregistrer le jeu de données :
 
@@ -96,7 +95,7 @@ En machine learning, les colonnes qui servent à élaborer une prédiction sont 
 
 Puisque vous souhaitez prédire des évaluations de films, c’est la colonne d’évaluation qui est la `Label`. Les trois autres colonnes, `userId`, `movieId` et `timestamp`, sont toutes des `Features` utilisées pour prédire la `Label`.
 
-| Caractéristiques      | Étiquette         |
+| Fonctionnalités      | Etiquette         |
 | ------------- |:-------------:|
 | `userId`        |    `rating`     |
 | `movieId`      |               |
@@ -106,7 +105,7 @@ C’est à vous de décider quelles `Features` sont utilisées pour prévoir la 
 
 Dans ce cas, vous devez retirer la colonne `timestamp` comme `Feature`, car l’horodatage n’affecte pas vraiment comment un utilisateur évalue un film donné et ne contribue donc pas à la précision de la prédiction :
 
-| Caractéristiques      | Étiquette         |
+| Fonctionnalités      | Etiquette         |
 | ------------- |:-------------:|
 | `userId`        |    `rating`     |
 | `movieId`      |               |
@@ -199,7 +198,7 @@ Définissez les transformations de données en ajoutant le code suivant à `Buil
 
 Étant donné que `userId` et `movieId` représentent des utilisateurs et des titres de films, et non des valeurs réelles, vous utilisez la méthode [MapValueToKey()](xref:Microsoft.ML.ConversionsExtensionsCatalog.MapValueToKey%2A) pour transformer chaque `userId` et chaque `movieId` en colonne `Feature` de type de clé numérique (un format accepté par les algorithmes de suggestion) et vous les ajoutez en tant que nouvelles colonnes de jeu de données :
 
-| userId | movieId | Étiquette | userIdEncoded | movieIdEncoded |
+| userId | movieId | Etiquette | userIdEncoded | movieIdEncoded |
 | ------------- |:-------------:| -----:|-----:|-----:|
 | 1 | 1 | 4 | userKey1 | movieKey1 |
 | 1 | 3 | 4 | userKey1 | movieKey2 |
@@ -419,7 +418,7 @@ L’ajout de données d’entraînement comportant suffisamment d’échantillon
 
 La [validation croisée](../how-to-guides/train-cross-validation-ml-net.md) est une technique d’évaluation des modèles qui fractionne aléatoirement les données en sous-ensembles (au lieu d’extraire des données de test à partir du jeu de données comme vous l’avez fait dans ce tutoriel) et prend certains groupes comme données d’entraînement et certains autres comme données de test. En termes de qualité du modèle, cette méthode est supérieure à un fractionnement entraînement-test.
 
-### <a name="features"></a>Caractéristiques
+### <a name="features"></a>Fonctionnalités
 
 Dans ce tutoriel, vous utilisez uniquement les trois `Features` (`user id`, `movie id` et `rating`) qui sont fournies par le jeu de données.
 
@@ -465,7 +464,7 @@ Les données utilisées dans ce tutoriel sont dérivées du [Jeu de données Mov
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce tutoriel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 
 > [!div class="checklist"]
 > * Sélectionner un algorithme de machine learning.

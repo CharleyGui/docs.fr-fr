@@ -2,12 +2,12 @@
 title: 'Procédure : Effectuer le streaming de fragments XML à partir d’un XmlReader (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4a8f0e45-768a-42e2-bc5f-68bdf0e0a726
-ms.openlocfilehash: 6937a7160c83def3238c8d2fe3e2b83c996396fd
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: c27c2165af95b8b781564e14efc0668f596e3057
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484909"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592412"
 ---
 # <a name="how-to-stream-xml-fragments-from-an-xmlreader-c"></a>Procédure : Effectuer le streaming de fragments XML à partir d’un XmlReader (C#)
 Lorsque vous devez traiter de grands fichiers XML, il peut être impossible de charger l’intégralité de l’arborescence XML en mémoire. Cette rubrique montre comment diffuser des fragments en continu à l'aide d'un objet <xref:System.Xml.XmlReader>.  
@@ -18,11 +18,11 @@ Lorsque vous devez traiter de grands fichiers XML, il peut être impossible de c
   
  Si vous souhaitez créer une arborescence partielle, vous pouvez instancier un objet <xref:System.Xml.XmlReader>, positionner le lecteur sur le nœud que vous souhaitez convertir en une arborescence <xref:System.Xml.Linq.XElement>, puis créer l'objet <xref:System.Xml.Linq.XElement>.  
   
- La rubrique [Guide pratique pour effectuer le streaming de fragments XML avec accès aux informations d’en-tête (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md) contient des informations et un exemple sur le streaming d’un document plus complexe.  
+ La rubrique [Guide pratique pour effectuer le streaming de fragments XML avec accès aux informations d’en-tête (C#)](./how-to-stream-xml-fragments-with-access-to-header-information.md) contient des informations et un exemple sur le streaming d’un document plus complexe.  
   
- La rubrique [Guide pratique pour effectuer une transformation de streaming de documents XML volumineux (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md) contient un exemple d’utilisation de LINQ to XML pour transformer des documents XML extrêmement volumineux tout en maintenant une faible empreinte mémoire.  
+ La rubrique [Guide pratique pour effectuer une transformation de streaming de documents XML volumineux (C#)](./how-to-perform-streaming-transform-of-large-xml-documents.md) contient un exemple d’utilisation de LINQ to XML pour transformer des documents XML extrêmement volumineux tout en maintenant une faible empreinte mémoire.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Cet exemple crée une méthode d'axe personnalisée. Vous pouvez l'interroger à l'aide d'une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. La méthode d'axe personnalisée, `StreamRootChildDoc`, est une méthode conçue spécifiquement pour lire un document qui possède un élément `Child` à répétition.  
   
 ```csharp  

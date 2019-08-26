@@ -15,12 +15,12 @@ helpviewer_keywords:
 - Windows Service applications, states
 ms.assetid: 83230026-d068-4174-97ff-e264c896eb2f
 author: ghogen
-ms.openlocfilehash: df969a634c84a7bccb048542cb768c920203e423
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d5dc690cfe460be79251d60850319e5232379f3c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64599282"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69935441"
 ---
 # <a name="service-application-programming-architecture"></a>Architecture de programmation d'une application de service
 Les applications de service Windows sont basées sur une classe qui hérite de la classe <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType>. Substituez les méthodes de cette classe et définissez des fonctionnalités pour qu’elles déterminent le comportement de votre service.  
@@ -47,7 +47,7 @@ Les applications de service Windows sont basées sur une classe qui hérite de l
 |<xref:System.ServiceProcess.ServiceBase.OnPowerEvent%2A>|Indiquer comment le service doit répondre à la suite d’un événement de gestion de l’alimentation (batterie faible, opération suspendue, etc.).|  
   
 > [!NOTE]
->  Ces méthodes représentent les états par lesquels passe le service au cours de sa vie (le service passe d’un état à l’autre). Par exemple, le service ne répond jamais à une commande <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> avant un appel à <xref:System.ServiceProcess.ServiceBase.OnStart%2A>.  
+> Ces méthodes représentent les états par lesquels passe le service au cours de sa vie (le service passe d’un état à l’autre). Par exemple, le service ne répond jamais à une commande <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> avant un appel à <xref:System.ServiceProcess.ServiceBase.OnStart%2A>.  
   
  D’autres propriétés et méthodes présentent un intérêt. Elles incluent notamment :  
   
@@ -57,12 +57,12 @@ Les applications de service Windows sont basées sur une classe qui hérite de l
      [!code-vb[VbRadconService#6](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#6)]  
   
     > [!NOTE]
-    >  Ces exemples utilisent un tableau de type <xref:System.ServiceProcess.ServiceBase>, dans lequel chaque service contenu dans votre application peut être ajouté. Tous les services peuvent ensuite être exécutés ensemble. Toutefois, si vous ne créez qu’un seul service, vous pouvez choisir de ne pas utiliser le tableau. Dans ce cas, déclarez simplement un nouvel objet héritant de <xref:System.ServiceProcess.ServiceBase> et exécutez-le. Pour voir un exemple, consultez [Comment : écrire les services par programmation](../../../docs/framework/windows-services/how-to-write-services-programmatically.md).  
+    > Ces exemples utilisent un tableau de type <xref:System.ServiceProcess.ServiceBase>, dans lequel chaque service contenu dans votre application peut être ajouté. Tous les services peuvent ensuite être exécutés ensemble. Toutefois, si vous ne créez qu’un seul service, vous pouvez choisir de ne pas utiliser le tableau. Dans ce cas, déclarez simplement un nouvel objet héritant de <xref:System.ServiceProcess.ServiceBase> et exécutez-le. Pour voir un exemple, consultez [Comment : écrire les services par programmation](../../../docs/framework/windows-services/how-to-write-services-programmatically.md).  
   
 - Une série de propriétés sur la classe <xref:System.ServiceProcess.ServiceBase>. Celles-ci déterminent les méthodes qui peuvent être appelées sur votre service. Par exemple, quand la propriété <xref:System.ServiceProcess.ServiceBase.CanStop%2A> a la valeur `true`, la méthode <xref:System.ServiceProcess.ServiceBase.OnStop%2A> sur votre service peut être appelée. Quand la propriété <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> a la valeur `true`, les méthodes <xref:System.ServiceProcess.ServiceBase.OnPause%2A> et <xref:System.ServiceProcess.ServiceBase.OnContinue%2A> peuvent être appelées. Si vous définissez l’une de ces propriétés avec la valeur `true`, vous devez ensuite remplacer et définir le traitement des méthodes associées.  
   
     > [!NOTE]
-    >  Pour être utile, votre service doit substituer au moins <xref:System.ServiceProcess.ServiceBase.OnStart%2A> et <xref:System.ServiceProcess.ServiceBase.OnStop%2A>.  
+    > Pour être utile, votre service doit substituer au moins <xref:System.ServiceProcess.ServiceBase.OnStart%2A> et <xref:System.ServiceProcess.ServiceBase.OnStop%2A>.  
   
  Vous pouvez également utiliser un composant appelé <xref:System.ServiceProcess.ServiceController> pour communiquer avec un service existant et contrôler son comportement.  
   

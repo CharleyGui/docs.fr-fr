@@ -7,16 +7,16 @@ helpviewer_keywords:
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: 0a0cf7c3b6024f75196abed5fdb7d18a058c58db
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 53c3ac6e4fa6313488c47d851e0897bd512521b7
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398380"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596275"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Classes et méthodes partielles (Guide de programmation C#)
 
-Il est possible de fractionner la définition d’une [classe](../../../csharp/language-reference/keywords/class.md), d’un [struct](../../../csharp/language-reference/keywords/struct.md), d’une [interface](../../../csharp/language-reference/keywords/interface.md) ou d’une méthode entre plusieurs fichiers sources. Chaque fichier source contient une section de la définition de méthode ou de type, et toutes les parties sont combinées au moment où l’application est compilée.
+Il est possible de fractionner la définition d’une [classe](../../language-reference/keywords/class.md), d’un [struct](../../language-reference/keywords/struct.md), d’une [interface](../../language-reference/keywords/interface.md) ou d’une méthode entre plusieurs fichiers sources. Chaque fichier source contient une section de la définition de méthode ou de type, et toutes les parties sont combinées au moment où l’application est compilée.
 
 ## <a name="partial-classes"></a>Classes partielles
 
@@ -26,7 +26,7 @@ Il peut être utile de fractionner une définition de classe dans les situations
 
 - Quand vous utilisez une source générée automatiquement, vous pouvez ajouter du code à la classe sans avoir à recréer le fichier source. Visual Studio suit cette approche pour créer des formulaires Windows Forms, du code wrapper de service web, etc. Vous pouvez écrire du code qui utilise ces classes sans avoir à modifier le fichier créé par Visual Studio.
 
-- Pour fractionner une définition de classe, utilisez le modificateur de mot clé [partial](../../../csharp/language-reference/keywords/partial-type.md), comme ci-dessous :
+- Pour fractionner une définition de classe, utilisez le modificateur de mot clé [partial](../../language-reference/keywords/partial-type.md), comme ci-dessous :
 
   [!code-csharp[csProgGuideObjects#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#26)]
 
@@ -91,25 +91,25 @@ Il y a plusieurs règles à respecter quand vous utilisez des définitions de cl
 
 - Les mots clés suivants sont facultatifs dans une définition de type partiel. S’ils sont utilisés dans une définition de type partiel, ils ne doivent pas être en conflit avec les mots clés spécifiés dans une autre définition partielle pour le même type :
 
-  - [public](../../../csharp/language-reference/keywords/public.md)
+  - [public](../../language-reference/keywords/public.md)
 
-  - [private](../../../csharp/language-reference/keywords/private.md)
+  - [private](../../language-reference/keywords/private.md)
 
-  - [protected](../../../csharp/language-reference/keywords/protected.md)
+  - [protected](../../language-reference/keywords/protected.md)
 
-  - [internal](../../../csharp/language-reference/keywords/internal.md)
+  - [internal](../../language-reference/keywords/internal.md)
 
-  - [abstract](../../../csharp/language-reference/keywords/abstract.md)
+  - [abstract](../../language-reference/keywords/abstract.md)
 
-  - [sealed](../../../csharp/language-reference/keywords/sealed.md)
+  - [sealed](../../language-reference/keywords/sealed.md)
 
   - classe de base
 
-  - modificateur [new](../../../csharp/language-reference/keywords/new-modifier.md) (parties imbriquées)
+  - modificateur [new](../../language-reference/keywords/new-modifier.md) (parties imbriquées)
 
   - contraintes génériques
 
-Pour plus d’informations, consultez [Contraintes sur les paramètres de type](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md).
+Pour plus d’informations, consultez [Contraintes sur les paramètres de type](../generics/constraints-on-type-parameters.md).
 
 ## <a name="example-1"></a>Exemple 1
 
@@ -152,19 +152,19 @@ partial void onNameChanged()
 }
 ```
 
-- Une déclaration de méthode partielle doit commencer par le mot clé contextuel [partial](../../../csharp/language-reference/keywords/partial-type.md), et la méthode doit retourner [void](../../../csharp/language-reference/keywords/void.md).
+- Une déclaration de méthode partielle doit commencer par le mot clé contextuel [partial](../../language-reference/keywords/partial-type.md), et la méthode doit retourner [void](../../language-reference/keywords/void.md).
 
-- Les méthodes partielles peuvent avoir des paramètres [in](../../../csharp/language-reference/keywords/in-parameter-modifier.md) ou [ref](../../../csharp/language-reference/keywords/ref.md), mais pas [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md).
+- Les méthodes partielles peuvent avoir des paramètres [in](../../language-reference/keywords/in-parameter-modifier.md) ou [ref](../../language-reference/keywords/ref.md), mais pas [out](../../language-reference/keywords/out-parameter-modifier.md).
 
-- Les méthodes partielles sont implicitement [private](../../../csharp/language-reference/keywords/private.md) et, par conséquent, elles ne peuvent pas être [virtual](../../../csharp/language-reference/keywords/virtual.md).
+- Les méthodes partielles sont implicitement [private](../../language-reference/keywords/private.md) et, par conséquent, elles ne peuvent pas être [virtual](../../language-reference/keywords/virtual.md).
 
-- Les méthodes partielles ne peuvent pas être [extern](../../../csharp/language-reference/keywords/extern.md), car la présence du corps détermine si elles sont utilisées pour la définition ou pour l’implémentation.
+- Les méthodes partielles ne peuvent pas être [extern](../../language-reference/keywords/extern.md), car la présence du corps détermine si elles sont utilisées pour la définition ou pour l’implémentation.
 
-- Les méthodes partielles peuvent avoir des modificateurs [static](../../../csharp/language-reference/keywords/static.md) et [unsafe](../../../csharp/language-reference/keywords/unsafe.md).
+- Les méthodes partielles peuvent avoir des modificateurs [static](../../language-reference/keywords/static.md) et [unsafe](../../language-reference/keywords/unsafe.md).
 
 - Les méthodes partielles peuvent être génériques. Les contraintes sont placées sur la déclaration de méthode partielle de définition et peuvent être répétées facultativement sur la déclaration d’implémentation. Les noms de paramètre et de paramètre de type ne doivent pas obligatoirement être identiques dans la déclaration d’implémentation et la déclaration de définition.
 
-- Vous pouvez créer un [délégué](../../../csharp/language-reference/keywords/delegate.md) pour une méthode partielle qui a été définie et implémentée, mais pas pour une méthode partielle qui a uniquement été définie.
+- Vous pouvez créer un [délégué](../../language-reference/keywords/delegate.md) pour une méthode partielle qui a été définie et implémentée, mais pas pour une méthode partielle qui a uniquement été définie.
 
 ## <a name="c-language-specification"></a>Spécification du langage C#
 
@@ -172,8 +172,8 @@ Pour plus d’informations, consultez [Types partiels](~/_csharplang/spec/classe
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Classes](../../../csharp/programming-guide/classes-and-structs/classes.md)
-- [Structs](../../../csharp/programming-guide/classes-and-structs/structs.md)
-- [Interfaces](../../../csharp/programming-guide/interfaces/index.md)
-- [partial (type)](../../../csharp/language-reference/keywords/partial-type.md)
+- [Guide de programmation C#](../index.md)
+- [Classes](./classes.md)
+- [Structs](./structs.md)
+- [Interfaces](../interfaces/index.md)
+- [partial (type)](../../language-reference/keywords/partial-type.md)

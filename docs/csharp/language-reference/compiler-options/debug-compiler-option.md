@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -debug compiler option [C#]
 - /debug compiler option [C#]
 ms.assetid: e2b48c07-01bc-45cc-a52c-92e9085eb969
-ms.openlocfilehash: 4828e1cdd8b830f10b134b613bc96e69490091fe
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 8bb2b411dc867b6a43e52058dccf2ac980cf0b1e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59338486"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922509"
 ---
 # <a name="-debug-c-compiler-options"></a>-debug (Options du compilateur C#)
 L’option **-debug** fait en sorte que le compilateur génère des informations de débogage et les place dans les fichiers de sortie.  
@@ -38,11 +38,11 @@ L’option **-debug** fait en sorte que le compilateur génère des informations
  Si vous utilisez **-debug:full**, sachez qu’il y a un impact sur la vitesse et la taille du code optimisé JIT, ainsi qu’un faible impact sur la qualité du code avec **-debug:full**. Nous vous recommandons d’utiliser **-debug:pdbonly** ou aucun PDB pour la génération du code de version finale.  
   
 > [!NOTE]
->  L’une des différences entre **-debug:pdbonly** et **-debug:full** est qu’avec **-debug:full**, le compilateur émet un <xref:System.Diagnostics.DebuggableAttribute>, qui est utilisé pour signaler au compilateur JIT que des informations de débogage sont disponibles. Ainsi, une erreur se produit si votre code contient un <xref:System.Diagnostics.DebuggableAttribute> avec la valeur false si vous utilisez **-debug:full**.  
+> L’une des différences entre **-debug:pdbonly** et **-debug:full** est qu’avec **-debug:full**, le compilateur émet un <xref:System.Diagnostics.DebuggableAttribute>, qui est utilisé pour signaler au compilateur JIT que des informations de débogage sont disponibles. Ainsi, une erreur se produit si votre code contient un <xref:System.Diagnostics.DebuggableAttribute> avec la valeur false si vous utilisez **-debug:full**.  
   
  Pour plus d’informations sur la façon de configurer les performances de débogage d’une application, consultez [Simplification du débogage d’une image](../../../framework/debug-trace-profile/making-an-image-easier-to-debug.md).  
   
- Pour changer l’emplacement du fichier .pdb, consultez [-pdb (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/pdb-compiler-option.md).  
+ Pour changer l’emplacement du fichier .pdb, consultez [-pdb (Options du compilateur C#)](./pdb-compiler-option.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
   
@@ -56,7 +56,7 @@ L’option **-debug** fait en sorte que le compilateur génère des informations
   
  Pour plus d’informations sur la définition de cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DebugSymbols%2A>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Placez les informations de débogage dans le fichier de sortie `app.pdb` :  
   
 ```console  
@@ -65,5 +65,5 @@ csc -debug -pdb:app.pdb test.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

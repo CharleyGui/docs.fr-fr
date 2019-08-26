@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 72771ee494b6be7142ce3f9bec43dcb8aa8a8401
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 2bbbac098096b46c659c4efde2d1c998c8e2d9ae
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363087"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69608385"
 ---
 # <a name="value-types-c-reference"></a>Types valeur (référence C#)
 
@@ -32,7 +32,7 @@ Tous les types valeur sont implicitement dérivés de <xref:System.ValueType?dis
 
 Contrairement aux types référence, vous ne pouvez pas faire dériver un nouveau type d’un type valeur. En revanche, comme les types référence, les structs peuvent implémenter des interfaces.
 
-Les variables de type valeur ne peut pas être `null` par défaut. Toutefois, les variables des [types Nullable](../../../csharp/programming-guide/nullable-types/index.md) correspondants peuvent être `null`.
+Les variables de type valeur ne peut pas être `null` par défaut. Toutefois, les variables des [types Nullable](../../programming-guide/nullable-types/index.md) correspondants peuvent être `null`.
 
 Chaque type valeur a un constructeur implicite sans paramètre qui initialise la valeur par défaut de ce type. Pour plus d’informations sur les valeurs par défaut des types valeur, voir [Tableau des valeurs par défaut](default-values-table.md).
 

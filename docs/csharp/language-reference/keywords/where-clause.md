@@ -8,30 +8,30 @@ helpviewer_keywords:
 - where keyword [C#]
 - where clause [C#]
 ms.assetid: 7f9bf952-7744-4f91-b676-cddb55d107c3
-ms.openlocfilehash: fc259f0e0a83d2f55bf2d50fa336c9201b8b5bef
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: aceda6cfd33a53388a5afb046359c4dcfddfd1f8
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633220"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602024"
 ---
 # <a name="where-clause-c-reference"></a>where, clause (Référence C#)
 
 La clause `where` est utilisée dans une expression de requête pour spécifier les éléments de la source de données qui seront retournés dans l’expression de requête. Elle applique une condition booléenne (un *prédicat*) à chaque élément source (référencé par la variable de portée) et retourne ceux pour lesquels la condition spécifiée est remplie. Une expression de requête unique peut contenir plusieurs clauses `where` et une clause unique peut contenir plusieurs sous-expressions de prédicat.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Dans l’exemple suivant, la clause `where` élimine par filtrage tous les nombres excepté ceux inférieurs à cinq. Si vous supprimez la clause `where`, tous les nombres de la source de données seront retournés. L’expression `num < 5` est le prédicat qui est appliqué à chaque élément.
 
 [!code-csharp[cscsrefQueryKeywords#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Where.cs#5)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Dans une clause `where` unique, vous pouvez spécifier autant de prédicats que nécessaire à l’aide des opérateurs [&&](../operators/boolean-logical-operators.md#conditional-logical-and-operator-) et [&#124;&#124;](../operators/boolean-logical-operators.md#conditional-logical-or-operator-). Dans l’exemple suivant, la requête spécifie deux prédicats pour sélectionner uniquement les nombres pairs inférieurs à cinq.
 
 [!code-csharp[cscsrefQueryKeywords#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Where.cs#6)]  
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Une clause `where` peut contenir une ou plusieurs méthodes qui retournent des valeurs booléennes. Dans l’exemple suivant, la clause `where` utilise une méthode pour déterminer si la valeur actuelle de la variable de portée est paire ou impaire.
 
@@ -51,5 +51,5 @@ Au moment de la compilation, le mot clé `where` est converti en appel à la mé
 - [from, clause](from-clause.md)
 - [select, clause](select-clause.md)
 - [Filtrage des données](../../programming-guide/concepts/linq/filtering-data.md)
-- [Expressions de requête LINQ](../../../csharp/programming-guide/linq-query-expressions/index.md)
+- [Expressions de requête LINQ](../../programming-guide/linq-query-expressions/index.md)
 - [Bien démarrer avec LINQ en C#](../../programming-guide/concepts/linq/getting-started-with-linq.md)

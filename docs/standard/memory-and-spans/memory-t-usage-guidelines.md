@@ -6,12 +6,12 @@ helpviewer_keywords:
 - using Memory&lt;T&gt; and Span&lt;T&gt;
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5aa778477abf3b91e32d9cb8ffdf50baaca5f001
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 171f6fd5a8b55d2e96a90a90d011a8166be6759d
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68362909"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666411"
 ---
 # <a name="memoryt-and-spant-usage-guidelines"></a>Instructions d’utilisation de Memory\<T> et de Span\<T>
 
@@ -78,7 +78,7 @@ Vous utilisez l’interface <xref:System.Buffers.IMemoryOwner%601?displayPropert
 
 [!code-csharp[ownership](~/samples/snippets/standard/buffers/memory-t/owner/owner.cs)]
 
-Nous pouvons également écrire cet exemple avec [`using`](~/docs/csharp/language-reference/keywords/using-statement.md) :
+Nous pouvons également écrire cet exemple avec [`using`](../../csharp/language-reference/keywords/using-statement.md) :
 
 [!code-csharp[ownership-using](~/samples/snippets/standard/buffers/memory-t/owner-using/owner-using.cs)]
 
@@ -138,7 +138,7 @@ En fait, si nous combinons cette règle et la règle 1, nous pouvons faire encor
 void DisplayBufferToConsole(ReadOnlySpan<char> buffer);
 ```
 
-La méthode `DisplayBufferToConsole` fonctionne désormais avec pratiquement chaque type de mémoire tampon imaginable : `T[]`, stockage alloué avec [stackalloc](~/docs/csharp/language-reference/operators/stackalloc.md), et ainsi de suite. Vous pouvez même y passer directement une chaîne <xref:System.String> !
+La méthode `DisplayBufferToConsole` fonctionne désormais avec pratiquement chaque type de mémoire tampon imaginable : `T[]`, stockage alloué avec [stackalloc](../../csharp/language-reference/operators/stackalloc.md), et ainsi de suite. Vous pouvez même y passer directement une chaîne <xref:System.String> !
 
 **Règle 3 : si votre méthode accepte Memory\<T> et retourne `void`, vous ne devez pas utiliser l’instance Memory\<T> après le retour de votre méthode.**
 
@@ -246,7 +246,7 @@ Tout composant qui transfère la propriété de l’instance <xref:System.Buffer
 
 **Règle 9 : si vous incluez une méthode p/invoke synchrone dans un wrapper, votre API doit accepter Span\<T> comme paramètre.**
 
-Conformément à la règle 1, <xref:System.Span%601> est généralement le type correct à utiliser pour les API synchrones. Vous pouvez épingler des instances <xref:System.Span%601> avec le mot clé [`fixed`](~/docs/csharp/language-reference/keywords/fixed-statement.md) mot clé, comme dans l’exemple suivant.
+Conformément à la règle 1, <xref:System.Span%601> est généralement le type correct à utiliser pour les API synchrones. Vous pouvez épingler des instances <xref:System.Span%601> avec le mot clé [`fixed`](../../csharp/language-reference/keywords/fixed-statement.md) mot clé, comme dans l’exemple suivant.
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -286,7 +286,7 @@ public unsafe int ManagedWrapper(Span<byte> data)
 
 **Règle 10 : si vous incluez une méthode p/invoke asynchrone dans un wrapper, votre API doit accepter Memory\<T> comme paramètre.**
 
-Étant donné que vous ne pouvez pas utiliser le mot clé [`fixed`](~/docs/csharp/language-reference/keywords/fixed-statement.md) lors d’opérations asynchrones, vous utilisez la méthode <xref:System.Memory%601.Pin%2A?displayProperty=nameWithType> pour épingler les instances <xref:System.Memory%601>, quel que soit le type de mémoire contiguë représenté par l’instance. L’exemple suivant montre comment utiliser cette API pour effectuer un appel p/invoke asynchrone.
+Étant donné que vous ne pouvez pas utiliser le mot clé [`fixed`](../../csharp/language-reference/keywords/fixed-statement.md) lors d’opérations asynchrones, vous utilisez la méthode <xref:System.Memory%601.Pin%2A?displayProperty=nameWithType> pour épingler les instances <xref:System.Memory%601>, quel que soit le type de mémoire contiguë représenté par l’instance. L’exemple suivant montre comment utiliser cette API pour effectuer un appel p/invoke asynchrone.
 
 ```csharp
 using System.Runtime.InteropServices;

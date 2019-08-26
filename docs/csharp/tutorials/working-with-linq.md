@@ -3,12 +3,12 @@ title: Utilisation de LINQ
 description: Ce didacticiel vous apprend à générer des séquences avec LINQ, à écrire des méthodes pour les requêtes LINQ et à faire la distinction entre l’évaluation stricte et l’évaluation paresseuse.
 ms.date: 10/29/2018
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: e37c013add02f651875db7b908ae2b49711d996d
-ms.sourcegitcommit: eaa6d5cd0f4e7189dbe0bd756e9f53508b01989e
+ms.openlocfilehash: 3cbafbb6aeed3abdd6d83ead613b29de738d5604
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67609309"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69587179"
 ---
 # <a name="working-with-linq"></a>Utilisation de LINQ
 
@@ -142,7 +142,7 @@ public static void Main(string[] args)
 
 Cependant, il n’y a pas de méthode de battage dans la bibliothèque standard ; vous devez donc écrire la vôtre. Comme elle illustrera plusieurs techniques des programmes LINQ, nous allons expliquer les différentes parties du processus étape par étape.
 
-Pour ajouter des fonctionnalités aux interactions possibles avec les <xref:System.Collections.Generic.IEnumerable%601> obtenus à partir des requêtes LINQ, vous allez écrire des méthodes d’un genre particulier, nommées [méthodes d’extension](../../csharp/programming-guide/classes-and-structs/extension-methods.md). En bref, une méthode d’extension est une *méthode statique* spéciale qui ajoute de nouvelles fonctionnalités à un type existant sans qu’il soit nécessaire de modifier le type d’origine.
+Pour ajouter des fonctionnalités aux interactions possibles avec les <xref:System.Collections.Generic.IEnumerable%601> obtenus à partir des requêtes LINQ, vous allez écrire des méthodes d’un genre particulier, nommées [méthodes d’extension](../programming-guide/classes-and-structs/extension-methods.md). En bref, une méthode d’extension est une *méthode statique* spéciale qui ajoute de nouvelles fonctionnalités à un type existant sans qu’il soit nécessaire de modifier le type d’origine.
 
 Pour accueillir vos méthodes d’extension, ajoutez à votre programme un nouveau fichier de classe *statique*, nommé `Extensions.cs`, puis créez la première méthode d’extension :
 

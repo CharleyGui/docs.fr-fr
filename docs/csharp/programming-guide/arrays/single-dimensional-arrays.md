@@ -6,12 +6,12 @@ helpviewer_keywords:
 - single-dimensional arrays [C#]
 - arrays [C#], single-dimensional
 ms.assetid: 2cec1196-1de0-49d2-baf2-c607c33310e8
-ms.openlocfilehash: d221cb9071a2c58f9d7068d5a43dd3a750ba716b
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 17c384ec327d4a80ed614dce6254baa5bfb2e960
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398557"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69597312"
 ---
 # <a name="single-dimensional-arrays-c-programming-guide"></a>Tableaux unidimensionnels (Guide de programmation C#)
 
@@ -19,7 +19,7 @@ Vous pouvez déclarer un tableau unidimensionnel de cinq entiers comme indiqué 
   
  [!code-csharp[csProgGuideArrays#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#4)]  
   
- Ce tableau contient les éléments de `array[0]` à `array[4]`. L’opérateur [new](../../../csharp/language-reference/operators/new-operator.md) est utilisé pour créer le tableau et initialiser ses éléments à leurs valeurs par défaut. Dans cet exemple, tous les éléments du tableau sont initialisés à zéro.  
+ Ce tableau contient les éléments de `array[0]` à `array[4]`. L’opérateur [new](../../language-reference/operators/new-operator.md) est utilisé pour créer le tableau et initialiser ses éléments à leurs valeurs par défaut. Dans cet exemple, tous les éléments du tableau sont initialisés à zéro.  
   
  Un tableau qui stocke des éléments de type chaîne peut être déclaré de la même façon. Par exemple :  
   
@@ -45,7 +45,7 @@ Vous pouvez déclarer un tableau unidimensionnel de cinq entiers comme indiqué 
   
  [!code-csharp[csProgGuideArrays#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#9)]  
   
- C# 3.0 introduit les tableaux implicitement typés. Pour plus d’informations, consultez [Tableaux implicitement typés](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).  
+ C# 3.0 introduit les tableaux implicitement typés. Pour plus d’informations, consultez [Tableaux implicitement typés](./implicitly-typed-arrays.md).  
   
 ## <a name="value-type-and-reference-type-arrays"></a>Tableaux de types valeur et de types référence
 
@@ -55,12 +55,12 @@ Vous pouvez déclarer un tableau unidimensionnel de cinq entiers comme indiqué 
   
  Le résultat de cette instruction varie selon que `SomeType` est un type valeur ou un type référence. S’il s’agit d’un type de valeur, l’instruction crée un tableau de 10 éléments, chacun ayant le type `SomeType`. Si `SomeType` est un type référence, l’instruction crée un tableau de 10 éléments dont chacun est initialisé avec une référence null.  
   
- Pour plus d’informations sur les types valeur et les types références, consultez [Types](../../../csharp/language-reference/keywords/types.md).  
+ Pour plus d’informations sur les types valeur et les types références, consultez [Types](../../language-reference/keywords/types.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Array>
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Tableaux](../../../csharp/programming-guide/arrays/index.md)
-- [Tableaux multidimensionnels](../../../csharp/programming-guide/arrays/multidimensional-arrays.md)
-- [Tableaux en escalier](../../../csharp/programming-guide/arrays/jagged-arrays.md)
+- [Guide de programmation C#](../index.md)
+- [Tableaux](./index.md)
+- [Tableaux multidimensionnels](./multidimensional-arrays.md)
+- [Tableaux en escalier](./jagged-arrays.md)

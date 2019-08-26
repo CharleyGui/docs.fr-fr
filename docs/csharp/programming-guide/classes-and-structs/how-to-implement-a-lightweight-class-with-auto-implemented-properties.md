@@ -6,22 +6,22 @@ helpviewer_keywords:
 - auto-implemented properties [C#]
 - properties [C#], auto-implemented
 ms.assetid: 1dc5a8ad-a4f7-4f32-8506-3fc6d8c8bfed
-ms.openlocfilehash: f9884f353e58ff6119e3bc3b95aa55f0f60d0ad5
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 4cbed8145487325d8b06882bbab843321a49d0d3
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398499"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596903"
 ---
 # <a name="how-to-implement-a-lightweight-class-with-auto-implemented-properties-c-programming-guide"></a>Procédure : Implémenter une classe Lightweight avec des propriétés implémentées automatiquement (Guide de programmation C#)
 
 Cet exemple montre comment créer une classe légère immuable qui sert uniquement à encapsuler un jeu de propriétés implémentées automatiquement. Utilisez ce type de construction à la place d'un struct quand vous devez utiliser une sémantique de type de référence.
 
 Vous pouvez rendre une propriété immuable de deux manières :
-- Vous pouvez déclarer l’accesseur [set](../../../csharp/language-reference/keywords/set.md) comme étant [private](../../../csharp/language-reference/keywords/private.md).  La propriété peut uniquement être définie dans le type, mais elle est immuable pour les consommateurs.
+- Vous pouvez déclarer l’accesseur [set](../../language-reference/keywords/set.md) comme étant [private](../../language-reference/keywords/private.md).  La propriété peut uniquement être définie dans le type, mais elle est immuable pour les consommateurs.
 
   Quand vous déclarez un accesseur `set` privé, vous ne pouvez pas utiliser un initialiseur d'objet pour initialiser la propriété. Vous devez utiliser un constructeur ou une méthode de fabrique.
-- Vous pouvez déclarer uniquement l’accesseur [get](../../../csharp/language-reference/keywords/get.md), ce qui rend la propriété immuable partout, sauf dans le constructeur du type.
+- Vous pouvez déclarer uniquement l’accesseur [get](../../language-reference/keywords/get.md), ce qui rend la propriété immuable partout, sauf dans le constructeur du type.
 
 ## <a name="example"></a>Exemples
 
@@ -120,6 +120,6 @@ Le compilateur crée des champs de stockage pour chaque propriété implémenté
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Propriétés](../../../csharp/programming-guide/classes-and-structs/properties.md)
-- [struct](../../../csharp/language-reference/keywords/struct.md)
-- [Initialiseurs d’objets et de collections](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)
+- [Propriétés](./properties.md)
+- [struct](../../language-reference/keywords/struct.md)
+- [Initialiseurs d’objets et de collections](./object-and-collection-initializers.md)

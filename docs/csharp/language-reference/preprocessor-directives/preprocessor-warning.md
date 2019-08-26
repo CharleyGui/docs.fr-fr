@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - '#warning directive [C#]'
 ms.assetid: e6fb496d-bb8b-4018-baf6-5b60a0c8902b
-ms.openlocfilehash: 55768a354b2841021607ed40b4ef87b9767edcad
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 3d09cd95ef4d53e3f11d9feb9675ebba22d6f857
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54620316"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69608527"
 ---
 # <a name="warning-c-reference"></a>#warning (référence C#)
 `#warning` vous permet de générer un avertissement du compilateur de premier niveau [CS1030](../../misc/cs1030.md) à partir d’un emplacement spécifique dans votre code. Par exemple :  
@@ -21,10 +21,10 @@ ms.locfileid: "54620316"
 #warning Deprecated code in this method.  
 ```  
   
-## <a name="remarks"></a>Notes
- `#warning` est souvent utilisé dans une directive conditionnelle. Il est aussi possible de générer une erreur définie par l’utilisateur avec [#error](../../../csharp/language-reference/preprocessor-directives/preprocessor-error.md).  
+## <a name="remarks"></a>Remarques
+ `#warning` est souvent utilisé dans une directive conditionnelle. Il est aussi possible de générer une erreur définie par l’utilisateur avec [#error](./preprocessor-error.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
 
 ```csharp
 // preprocessor_warning.cs  
@@ -43,6 +43,6 @@ class MainClass
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../../csharp/language-reference/index.md)
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Directives de préprocesseur C#](../../../csharp/language-reference/preprocessor-directives/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Directives de préprocesseur C#](./index.md)

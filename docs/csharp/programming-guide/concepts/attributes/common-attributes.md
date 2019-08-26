@@ -2,12 +2,12 @@
 title: Attributs courants (C#)
 ms.date: 07/20/2015
 ms.assetid: 785a0526-6c0e-4599-8c61-ccdc88dd9965
-ms.openlocfilehash: bb06fc72fc336df257c6b674d3eaa4fa47801da0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7988dad410c6e51869ec9d7e40d94e874443a5f8
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64603339"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595463"
 ---
 # <a name="common-attributes-c"></a>Attributs courants (C#)
 Cette rubrique décrit les attributs le plus couramment utilisés dans les programmes C#.  
@@ -225,15 +225,15 @@ class SampleClass
 |---|---|---|  
 |<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Chemin d’accès complet du fichier source qui contient l’appelant. C’est le chemin au moment de la compilation.|`String`|  
 |<xref:System.Runtime.CompilerServices.CallerLineNumberAttribute>|Numéro de ligne dans le fichier source à partir duquel la méthode est appelée.|`Integer`|  
-|<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Nom de la méthode ou nom de la propriété de l’appelant. Pour plus d’informations, consultez [Informations relatives à l’appelant (C#)](../../../../csharp/programming-guide/concepts/caller-information.md).|`String`|  
+|<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Nom de la méthode ou nom de la propriété de l’appelant. Pour plus d’informations, consultez [Informations relatives à l’appelant (C#)](../caller-information.md).|`String`|  
   
- Pour plus d’informations sur les attributs d’informations de l’appelant, consultez [Informations relatives à l’appelant (C#)](../../../../csharp/programming-guide/concepts/caller-information.md).  
+ Pour plus d’informations sur les attributs d’informations de l’appelant, consultez [Informations relatives à l’appelant (C#)](../caller-information.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Guide de programmation C#](../../../../csharp/programming-guide/index.md)
-- [Attributs](../../../../../docs/standard/attributes/index.md)
-- [Réflexion (C#)](../../../../csharp/programming-guide/concepts/reflection.md)
-- [Accès à des attributs à l’aide de la réflexion (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+- [Guide de programmation C#](../../index.md)
+- [Attributs](../../../../standard/attributes/index.md)
+- [Réflexion (C#)](../reflection.md)
+- [Accès à des attributs à l’aide de la réflexion (C#)](./accessing-attributes-by-using-reflection.md)

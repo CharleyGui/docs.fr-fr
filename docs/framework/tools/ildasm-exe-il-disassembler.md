@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e476e92ba4a9366a8a380c53d7dcd0d4dddb16e4
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 38a6b27ea0ba8b9d9e2af883db1fc3350d60494a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567306"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69912489"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (Désassembleur IL)
 
@@ -53,7 +53,7 @@ Les options suivantes sont également disponibles pour les fichiers *.exe*, *.dl
 |**/linenum**|Inclut des références dans les lignes sources d'origine.|
 |**/nobar**|Supprime la fenêtre pop-up de l'indicateur de progression du code machine.|
 |**/noca**|Supprime la sortie d'attributs personnalisés.|
-|**/project**|Affiche les métadonnées telles qu'elles apparaissent dans le code managé, plutôt que telles qu'elles apparaissent dans le Windows Runtime natif. Si `PEfilename` n'est pas un fichier de métadonnées Windows ( *.winmd*), cette option n'a aucun effet. Consultez [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../../docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
+|**/project**|Affiche les métadonnées telles qu'elles apparaissent dans le code managé, plutôt que telles qu'elles apparaissent dans le Windows Runtime natif. Si `PEfilename` n'est pas un fichier de métadonnées Windows ( *.winmd*), cette option n'a aucun effet. Consultez [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md).|
 |**/pubonly**|Désassemble uniquement les membres et les types publics. Équivaut à **/visibility:PUB**.|
 |**/quoteallnames**|Entoure tous les noms de guillemets simples.|
 |**/raweh**|Affiche les clauses de gestion des exceptions sous une forme brute.|
@@ -188,5 +188,5 @@ Un type imbriqué doit être précédé de la classe le contenant, délimitée p
 
 - [Outils](../../../docs/framework/tools/index.md)
 - [Ilasm.exe (assembleur IL)](../../../docs/framework/tools/ilasm-exe-il-assembler.md)
-- [Processus d'exécution managée](../../../docs/standard/managed-execution-process.md)
+- [Processus d'exécution managée](../../standard/managed-execution-process.md)
 - [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

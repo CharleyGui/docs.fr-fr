@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: be98c0ab-7ef8-409f-8a0d-cb6e5b75ff20
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7831e383a3048523909b79ac5a4706f3c1c48371
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: affdbb357cac14f258822591c3817c93ce6077f8
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48033478"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915899"
 ---
 # <a name="optimization-for-shared-web-hosting"></a>Optimisation de l'hébergement Web partagé
 Si vous êtes l’administrateur d’un serveur qui est partagé via l’hébergement de plusieurs petits sites web, vous pouvez optimiser les performances et augmenter la capacité du site en ajoutant le paramètre `gcTrimCommitOnLowMemory` suivant au nœud `runtime` dans le fichier Aspnet.config dans le répertoire .NET :  
@@ -22,7 +22,7 @@ Si vous êtes l’administrateur d’un serveur qui est partagé via l’héberg
  `<gcTrimCommitOnLowMemory enabled="true|false"/>`  
   
 > [!NOTE]
->  Ce paramètre n’est recommandé que dans les scénarios d’hébergement web partagé.  
+> Ce paramètre n’est recommandé que dans les scénarios d’hébergement web partagé.  
   
  Étant donné que le récupérateur de mémoire conserve de la mémoire pour les répartitions futures, l’espace alloué peut être supérieur à ce qui est strictement nécessaire. Vous pouvez réduire cet espace en cas de charge importante sur la mémoire système. La réduction de cet espace alloué améliore les performances et développe la capacité à héberger plusieurs sites.  
   
@@ -30,7 +30,7 @@ Si vous êtes l’administrateur d’un serveur qui est partagé via l’héberg
   
  Lorsque les conditions le permettent, le récupérateur de mémoire peut décider que le paramètre `gcTrimCommitOnLowMemory` n’aidera pas l’application actuelle et l’ignorer.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Le fragment XML suivant montre comment activer le paramètre `gcTrimCommitOnLowMemory`. Les points de suspension indiquent d’autres paramètres dans le nœud `runtime`.  
   
 ```xml  

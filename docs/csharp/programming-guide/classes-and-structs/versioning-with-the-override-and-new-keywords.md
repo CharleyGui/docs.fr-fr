@@ -6,21 +6,21 @@ helpviewer_keywords:
 - C# language, versioning
 - C# language, override and new
 ms.assetid: 88247d07-bd0d-49e9-a619-45ccbbfdf0c5
-ms.openlocfilehash: 6b5097df8ee559f11bc29c12570e938965e6a9a5
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 58023498c499569eebb9a0506bea434d2669de45
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398083"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596011"
 ---
 # <a name="versioning-with-the-override-and-new-keywords-c-programming-guide"></a>Versioning avec les mots clés override et new (Guide de programmation C#)
-Le langage C# est conçu de telle sorte que la gestion de version entre les classes de [base](../../../csharp/language-reference/keywords/base.md) et les classes dérivées dans différentes bibliothèques puisse évoluer et préserver une compatibilité descendante. Cela signifie, par exemple, que l’introduction dans une [classe](../../../csharp/language-reference/keywords/class.md) de base d’un nouveau membre portant le même nom qu’un membre dans une classe dérivée est totalement prise en charge par C# et n’engendre pas de comportement imprévisible. Cela signifie également qu'une classe doit indiquer de façon explicite si une méthode est conçue pour se substituer à une méthode héritée ou s'il s'agit d'une nouvelle méthode qui masque une méthode héritée portant un nom similaire.  
+Le langage C# est conçu de telle sorte que la gestion de version entre les classes de [base](../../language-reference/keywords/base.md) et les classes dérivées dans différentes bibliothèques puisse évoluer et préserver une compatibilité descendante. Cela signifie, par exemple, que l’introduction dans une [classe](../../language-reference/keywords/class.md) de base d’un nouveau membre portant le même nom qu’un membre dans une classe dérivée est totalement prise en charge par C# et n’engendre pas de comportement imprévisible. Cela signifie également qu'une classe doit indiquer de façon explicite si une méthode est conçue pour se substituer à une méthode héritée ou s'il s'agit d'une nouvelle méthode qui masque une méthode héritée portant un nom similaire.  
   
  Dans C#, les classes dérivées peuvent contenir des méthodes portant le même nom que des méthodes de classe de base.  
   
-- La méthode de classe de base doit être définie comme [virtuelle](../../../csharp/language-reference/keywords/virtual.md).  
+- La méthode de classe de base doit être définie comme [virtuelle](../../language-reference/keywords/virtual.md).  
   
-- Si la méthode dans la classe dérivée n’est pas précédée des mots clés [new](../../../csharp/language-reference/keywords/new-modifier.md) ou [override](../../../csharp/language-reference/keywords/override.md), le compilateur émet un avertissement et la méthode se comporte comme si le mot clé `new` était présent.  
+- Si la méthode dans la classe dérivée n’est pas précédée des mots clés [new](../../language-reference/keywords/new-modifier.md) ou [override](../../language-reference/keywords/override.md), le compilateur émet un avertissement et la méthode se comporte comme si le mot clé `new` était présent.  
   
 - Si la méthode dans la classe dérivée est précédée du mot clé `new`, la méthode est définie comme étant indépendante de la méthode dans la classe de base.  
   
@@ -77,11 +77,11 @@ Le langage C# est conçu de telle sorte que la gestion de version entre les cla
   
  [!code-csharp[csProgGuideInheritance#34](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#34)]  
   
- Pour obtenir d’autres exemples des mots clés `new` et `override`, consultez [Savoir quand utiliser les mots clés override et new](../../../csharp/programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).  
+ Pour obtenir d’autres exemples des mots clés `new` et `override`, consultez [Savoir quand utiliser les mots clés override et new](./knowing-when-to-use-override-and-new-keywords.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Classes et structs](../../../csharp/programming-guide/classes-and-structs/index.md)
-- [Méthodes](../../../csharp/programming-guide/classes-and-structs/methods.md)
-- [Héritage](../../../csharp/programming-guide/classes-and-structs/inheritance.md)
+- [Guide de programmation C#](../index.md)
+- [Classes et structs](./index.md)
+- [Méthodes](./methods.md)
+- [Héritage](./inheritance.md)

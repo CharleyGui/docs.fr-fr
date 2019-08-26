@@ -2,12 +2,12 @@
 title: 'Procédure : Créer des assemblys friend non signés (C#)'
 ms.date: 07/20/2015
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
-ms.openlocfilehash: 6bc2d807b3d1cf6c82a9ba6303139b9758581f35
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 5dadd725234048c4b6a4f9a0fa9b38dbf92671aa
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59318232"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595911"
 ---
 # <a name="how-to-create-unsigned-friend-assemblies-c"></a>Procédure : Créer des assemblys friend non signés (C#)
 Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui ne sont pas signés.  
@@ -81,7 +81,7 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui 
     csc /r:friend_unsigned_A.dll /out:friend_unsigned_B.exe friend_unsigned_B.cs  
     ```  
   
-     Le nom de l’assembly qui est généré par le compilateur doit correspondre au nom de l’assembly friend qui est passé à l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>. Vous devez spécifier explicitement le nom de l’assembly de sortie (.exe ou .dll) à l’aide de l’option du compilateur `/out`. Pour plus d’informations, consultez l’article [/out (C# Compiler Options) (/out [Options du compilateur C#])](../../../../csharp/language-reference/compiler-options/out-compiler-option.md).  
+     Le nom de l’assembly qui est généré par le compilateur doit correspondre au nom de l’assembly friend qui est passé à l’attribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>. Vous devez spécifier explicitement le nom de l’assembly de sortie (.exe ou .dll) à l’aide de l’option du compilateur `/out`. Pour plus d’informations, consultez l’article [/out (C# Compiler Options) (/out [Options du compilateur C#])](../../../language-reference/compiler-options/out-compiler-option.md).  
   
 6. Exécutez le fichier friend_unsigned_B.exe.  
   
@@ -95,5 +95,5 @@ Cet exemple montre comment utiliser des assemblys friend avec des assemblys qui 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
 - [Assemblys dans .NET](../../../../standard/assembly/index.md)
 - [Assemblys friend](../../../../standard/assembly/friend-assemblies.md)
-- [Guide pratique pour créer des assemblys friend signés (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)
-- [Guide de programmation C#](../../../../csharp/programming-guide/index.md)
+- [Guide pratique pour créer des assemblys friend signés (C#)](./how-to-create-signed-friend-assemblies.md)
+- [Guide de programmation C#](../../index.md)

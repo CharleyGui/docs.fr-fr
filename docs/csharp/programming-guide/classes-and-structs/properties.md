@@ -8,12 +8,12 @@ helpviewer_keywords:
 - properties [C#]
 - C# language, properties
 ms.assetid: e295a8a2-b357-4ee7-a12e-385a44146fa8
-ms.openlocfilehash: c7374b77526a31c2c508516d5a3cb7cc3e29339a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: dec4d4239fd1a953da6e64a1e1aff9593e2863e2
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64583061"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69596156"
 ---
 # <a name="properties-c-programming-guide"></a>Propriétés (Guide de programmation C#)
 
@@ -23,12 +23,12 @@ Une propriété est un membre qui fournit un mécanisme flexible pour la lecture
   
 - Les propriétés permettent à une classe d'exposer un moyen public d'obtenir et de définir des valeurs, tout en masquant le code d'implémentation ou de vérification.  
   
-- Un accesseur de propriété [get](../../../csharp/language-reference/keywords/get.md) est utilisé pour retourner la valeur de la propriété et un accesseur de propriété [set](../../../csharp/language-reference/keywords/set.md) est utilisé pour affecter une nouvelle valeur. Ces accesseurs peuvent avoir différents niveaux d’accès. Pour plus d’informations, consultez [Restriction d’accessibilité de l’accesseur](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md).  
+- Un accesseur de propriété [get](../../language-reference/keywords/get.md) est utilisé pour retourner la valeur de la propriété et un accesseur de propriété [set](../../language-reference/keywords/set.md) est utilisé pour affecter une nouvelle valeur. Ces accesseurs peuvent avoir différents niveaux d’accès. Pour plus d’informations, consultez [Restriction d’accessibilité de l’accesseur](./restricting-accessor-accessibility.md).  
   
-- Le mot clé [value](../../../csharp/language-reference/keywords/value.md) est utilisé pour définir la valeur assignée par l’accesseur `set`.  
+- Le mot clé [value](../../language-reference/keywords/value.md) est utilisé pour définir la valeur assignée par l’accesseur `set`.  
 - Les propriétés peuvent être *en lecture-écriture* (elles ont un accesseur `get` et un accesseur `set`), *en lecture seule* (elles ont un accesseur `get`, mais pas d’accesseur `set`) ou *en écriture seule* (elles ont un accesseur `set`, mais pas d’accesseur `get`). Les propriétés en écriture seule sont rares et sont généralement utilisées pour restreindre l’accès aux données sensibles.
 
-- Les propriétés simples qui ne nécessitent pas de code d’accesseur personnalisé peuvent être implémentées en tant que définitions de corps d’expression ou en tant que [propriétés implémentées automatiquement](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md).
+- Les propriétés simples qui ne nécessitent pas de code d’accesseur personnalisé peuvent être implémentées en tant que définitions de corps d’expression ou en tant que [propriétés implémentées automatiquement](./auto-implemented-properties.md).
  
 ## <a name="properties-with-backing-fields"></a>Propriétés avec des champs de stockage
 
@@ -60,15 +60,15 @@ Si une propriété a les accesseurs `get` et `set`, tous deux doivent être impl
 
 ## <a name="related-sections"></a>Rubriques connexes  
   
-- [Utilisation de propriétés](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
+- [Utilisation de propriétés](./using-properties.md)  
   
-- [Propriétés de l’interface](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)  
+- [Propriétés de l’interface](./interface-properties.md)  
   
-- [Comparaison entre propriétés et indexeurs](../../../csharp/programming-guide/indexers/comparison-between-properties-and-indexers.md)  
+- [Comparaison entre propriétés et indexeurs](../indexers/comparison-between-properties-and-indexers.md)  
   
-- [Restriction d’accessibilité de l’accesseur](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md)  
+- [Restriction d’accessibilité de l’accesseur](./restricting-accessor-accessibility.md)  
   
-- [Propriétés implémentées automatiquement](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)  
+- [Propriétés implémentées automatiquement](./auto-implemented-properties.md)  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
 
@@ -76,8 +76,8 @@ Pour plus d’informations, consultez [Propriétés](~/_csharplang/spec/classes.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Utilisation de propriétés](../../../csharp/programming-guide/classes-and-structs/using-properties.md)
-- [Indexeurs](../../../csharp/programming-guide/indexers/index.md)
-- [get, mot clé](../../../csharp/language-reference/keywords/get.md)
-- [set, mot clé](../../../csharp/language-reference/keywords/set.md)
+- [Guide de programmation C#](../index.md)
+- [Utilisation de propriétés](./using-properties.md)
+- [Indexeurs](../indexers/index.md)
+- [get, mot clé](../../language-reference/keywords/get.md)
+- [set, mot clé](../../language-reference/keywords/set.md)

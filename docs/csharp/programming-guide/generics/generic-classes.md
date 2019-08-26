@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, generic classes
 - generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
-ms.openlocfilehash: cc2beb78cc6594a3de594b50c1c45d23b30966f6
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 6eb4df4489f4b377c68c5d49d1bf0bb01b835e85
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66423487"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589766"
 ---
 # <a name="generic-classes-c-programming-guide"></a>Classes génériques (guide de programmation C#)
 Les classes génériques encapsulent des opérations qui ne sont pas spécifiques à un type de données particulier. Les classes génériques sont le plus souvent utilisées avec les collections telles que les listes liées, les tables de hachage, les piles, les files d’attente, les arborescences, etc. Les opérations telles que l’ajout et la suppression d’éléments dans la collection sont exécutées fondamentalement de la même manière quel que soit le type des données stockées.  
@@ -24,7 +24,7 @@ Les classes génériques encapsulent des opérations qui ne sont pas spécifique
   
      En règle générale, plus le nombre de types que vous pouvez paramétrer est important, plus votre code est souple et réutilisable. Toutefois, une généralisation excessive peut produire un code qui est difficile à lire ou à comprendre par d’autres développeurs.  
   
-- Quelles contraintes, le cas échéant, appliquer aux paramètres de type (consultez [Contraintes sur les paramètres de type](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)).  
+- Quelles contraintes, le cas échéant, appliquer aux paramètres de type (consultez [Contraintes sur les paramètres de type](./constraints-on-type-parameters.md)).  
   
      Il est pertinent d’appliquer le maximum de contraintes possible vous permettant néanmoins de gérer les types que vous devez gérer. Par exemple, si vous savez que votre classe générique est destinée uniquement à être utilisée avec les types référence, appliquez la contrainte de classe. Cela empêchera l’utilisation involontaire de votre classe avec les types valeur et vous permettra d’utiliser l’opérateur `as` sur `T` et de rechercher les valeurs nulles.  
   
@@ -36,7 +36,7 @@ Les classes génériques encapsulent des opérations qui ne sont pas spécifique
   
      Par exemple, si vous concevez une classe qui sera utilisée pour créer des éléments dans une collection basée sur les génériques, vous pouvez avoir besoin d’implémenter une interface comme <xref:System.IComparable%601>, où `T` est le type de votre classe.  
   
- Pour obtenir un exemple d’une classe générique simple, consultez [Introduction aux génériques](../../../csharp/programming-guide/generics/index.md).  
+ Pour obtenir un exemple d’une classe générique simple, consultez [Introduction aux génériques](./index.md).  
   
  Les règles pour les paramètres de type et les contraintes ont plusieurs conséquences sur le comportement de classe générique, surtout en ce qui concerne l’héritage et l’accessibilité des membres. Avant de continuer, vous devez comprendre quelques termes. Pour une classe générique `Node<T>,`, le code client peut référencer la classe soit en spécifiant un argument de type, pour créer un type construit fermé (`Node<int>`), soit en laissant le paramètre de type non spécifié, par exemple quand vous spécifiez une classe de base générique, pour créer un type construit ouvert (`Node<T>`). Les classes génériques peuvent hériter de classes de base concrètes, construites fermées ou construites ouvertes :  
   
@@ -69,7 +69,7 @@ Les classes génériques encapsulent des opérations qui ne sont pas spécifique
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Collections.Generic>
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Génériques](../../../csharp/programming-guide/generics/index.md)
+- [Guide de programmation C#](../index.md)
+- [Génériques](./index.md)
 - [Enregistrement de l’état des énumérateurs](https://blogs.msdn.microsoft.com/wesdyer/2006/01/13/saving-the-state-of-enumerators/)
 - [An Inheritance Puzzle, Part One](https://blogs.msdn.microsoft.com/ericlippert/2007/07/27/an-inheritance-puzzle-part-one/)

@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4579e00bdaf89b4cf5d0da24a343fb5070609863
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: f7b1f6798f1aaa778eaf95de996584848c672351
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347313"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956682"
 ---
 # <a name="security-issues-in-reflection-emit"></a>Problèmes de sécurité dans l'émission de réflexion
 Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Intermediate Language), chacune avec ses propres problèmes de sécurité :  
@@ -32,19 +32,19 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
  Quelle que soit la façon dont vous générez le code dynamique, l'exécution du code généré nécessite toutes les autorisations requises par les types et par les méthodes utilisées par le code généré.  
   
 > [!NOTE]
->  Les autorisations nécessaires pour la réflexion sur le code et pour l’émission de code ont changé avec les versions successives du .NET Framework. Consultez [Informations sur la version](#Version_Information) plus loin dans cette rubrique.  
+> Les autorisations nécessaires pour la réflexion sur le code et pour l’émission de code ont changé avec les versions successives du .NET Framework. Consultez [Informations sur la version](#Version_Information) plus loin dans cette rubrique.  
   
 <a name="Dynamic_Assemblies"></a>   
 ## <a name="dynamic-assemblies"></a>Assemblys dynamiques  
  Les assemblys dynamiques sont créés à l'aide de surcharges de la méthode <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType>. La plupart des surcharges de cette méthode sont dépréciées dans .NET Framework 4, en raison de la suppression de la stratégie de sécurité à l’échelle de l’ordinateur. (Consultez [Changements en matière de sécurité](../../../docs/framework/security/security-changes.md).) Les surcharges restantes peuvent être exécutées par n'importe quel code, quel que soit le niveau de confiance. Ces surcharges sont réparties en deux groupes : celles qui spécifient une liste d'attributs à appliquer à l'assembly dynamique lors de sa création, et celles qui ne les spécifient pas. Si vous ne spécifiez pas le modèle de transparence pour l’assembly, en appliquant l’attribut <xref:System.Security.SecurityRulesAttribute> au moment de sa création, le modèle de transparence est hérité de l’assembly émetteur.  
   
 > [!NOTE]
->  Les attributs que vous appliquez à l'assembly dynamique après sa création, en utilisant la méthode <xref:System.Reflection.Emit.AssemblyBuilder.SetCustomAttribute%2A>, ne prennent pas effet tant que l'assembly n'a pas été enregistré sur le disque et rechargé en mémoire.  
+> Les attributs que vous appliquez à l'assembly dynamique après sa création, en utilisant la méthode <xref:System.Reflection.Emit.AssemblyBuilder.SetCustomAttribute%2A>, ne prennent pas effet tant que l'assembly n'a pas été enregistré sur le disque et rechargé en mémoire.  
   
  Le code d'un assembly dynamique peut accéder aux types et aux membres visibles d'autres assemblys.  
   
 > [!NOTE]
->  Les assemblys dynamiques n'utilisent pas les indicateurs <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> et <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType>, qui permettent aux méthodes dynamiques d'accéder aux types et aux membres non publics.  
+> Les assemblys dynamiques n'utilisent pas les indicateurs <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> et <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType>, qui permettent aux méthodes dynamiques d'accéder aux types et aux membres non publics.  
   
  Les assemblys dynamiques transitoires sont créés en mémoire et ne sont jamais enregistrés sur disque : ils ne nécessitent donc pas d'autorisations d'accès à des fichiers. L'enregistrement d'un assembly dynamique sur disque requiert <xref:System.Security.Permissions.FileIOPermission> avec les indicateurs appropriés.  
   
@@ -66,7 +66,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
  Au lieu de cela, quand une méthode dynamique hébergée anonymement est créée, la pile des appels est capturée. Quand la méthode est construite, les demandes en matière de sécurité sont effectuées sur la pile des appels capturée.  
   
 > [!NOTE]
->  Conceptuellement, les demandes sont effectuées pendant la construction de la méthode. Autrement dit, les demandes peuvent être faites à l'émission de chaque instruction MSIL. Dans l'implémentation actuelle, toutes les demandes sont faites quand la méthode <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A?displayProperty=nameWithType> est appelée ou quand le compilateur juste-à-temps (JIT) est appelé, si la méthode est appelée sans appel de <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A>.  
+> Conceptuellement, les demandes sont effectuées pendant la construction de la méthode. Autrement dit, les demandes peuvent être faites à l'émission de chaque instruction MSIL. Dans l'implémentation actuelle, toutes les demandes sont faites quand la méthode <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A?displayProperty=nameWithType> est appelée ou quand le compilateur juste-à-temps (JIT) est appelé, si la méthode est appelée sans appel de <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A>.  
   
  Si le domaine d’application le permet, les méthodes dynamiques hébergées anonymement peuvent ignorer les contrôles de visibilité JIT, avec la restriction suivante : les types et les membres non publics auxquels accède une méthode dynamique hébergée anonymement doivent être dans des assemblys dont les jeux d’autorisations doivent être équivalents à ou être des sous-ensembles du jeu d’autorisations de la pile des appels émettrice. Cette possibilité restreinte d'ignorer les contrôles de visibilité JIT est activée si le domaine d'application accorde l'autorisation <xref:System.Security.Permissions.ReflectionPermission> avec l'indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType>.  
   
@@ -90,7 +90,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
 - Les autorisations requises par tous les types et les membres utilisés par la méthode dynamique sont incluses dans le jeu d'autorisations de l'assembly partiellement approuvé.  
   
 > [!NOTE]
->  Les méthodes dynamiques ne prennent pas en charge les symboles de débogage.  
+> Les méthodes dynamiques ne prennent pas en charge les symboles de débogage.  
   
 <a name="Dynamic_Methods_Associated_with_Existing_Assemblies"></a>   
 ## <a name="dynamic-methods-associated-with-existing-assemblies"></a>Méthodes dynamiques associées à des assemblys existants  
@@ -113,7 +113,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
 - Si vous associez la méthode dynamique à un type ou un module d'un autre assembly, le constructeur demande deux éléments : <xref:System.Security.Permissions.ReflectionPermission> avec l'indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> et le jeu d'autorisations de l'assembly qui contient l'autre module. Autrement dit, votre pile des appels doit inclure toutes les autorisations du jeu d'autorisations du module cible, plus <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType>.  
   
     > [!NOTE]
-    >  Pour la compatibilité descendante, si la demande pour le jeu d'autorisations cible plus <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> échoue, le constructeur demande <xref:System.Security.Permissions.SecurityPermission> avec l'indicateur <xref:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence?displayProperty=nameWithType>.  
+    > Pour la compatibilité descendante, si la demande pour le jeu d'autorisations cible plus <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> échoue, le constructeur demande <xref:System.Security.Permissions.SecurityPermission> avec l'indicateur <xref:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence?displayProperty=nameWithType>.  
   
  Bien que les éléments de cette liste soient décrits en les termes du jeu d'autorisations de l'assembly émetteur, n'oubliez pas que les demandes sont faites sur la pile des appels complète, y compris la limite du domaine de l'application.  
   
@@ -122,7 +122,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
 ### <a name="generating-dynamic-methods-from-partially-trusted-code"></a>Génération de méthodes dynamiques à partir de code d'un niveau de confiance partiel  
   
 > [!NOTE]
->  La méthode recommandée pour générer des méthodes dynamiques à partir de code d’un niveau de confiance partiel consiste à utiliser des [méthodes dynamiques hébergées anonymement](#Anonymously_Hosted_Dynamic_Methods).  
+> La méthode recommandée pour générer des méthodes dynamiques à partir de code d’un niveau de confiance partiel consiste à utiliser des [méthodes dynamiques hébergées anonymement](#Anonymously_Hosted_Dynamic_Methods).  
   
  Considérez les conditions dans lesquelles un assembly disposant d'autorisations Internet peut générer une méthode dynamique et l'exécuter :  
   
@@ -135,7 +135,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
 - La méthode dynamique n'ignore pas les contrôles de visibilité JIT.  
   
 > [!NOTE]
->  Les méthodes dynamiques ne prennent pas en charge les symboles de débogage.  
+> Les méthodes dynamiques ne prennent pas en charge les symboles de débogage.  
   
 <a name="Version_Information"></a>   
 ## <a name="version-information"></a>Informations sur la version  
@@ -144,7 +144,7 @@ Le .NET Framework offre trois façons d’émettre du code MSIL (Microsoft Inter
  À compter de .NET Framework 2.0 Service Pack 1, <xref:System.Security.Permissions.ReflectionPermission> avec l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> n’est plus nécessaire lors de l’émission d’assemblys et de méthodes dynamiques. Cet indicateur est nécessaire dans toutes les versions antérieures du .NET Framework.  
   
 > [!NOTE]
->  <xref:System.Security.Permissions.ReflectionPermission> avec l'indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> est inclus par défaut dans les jeux d'autorisations nommés `FullTrust` et `LocalIntranet`, mais pas dans le jeu d'autorisations `Internet`. Par conséquent, dans les versions antérieures du .NET Framework, une bibliothèque peut être utilisée avec des autorisations Internet uniquement si elle exécute une méthode <xref:System.Security.PermissionSet.Assert%2A> pour <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>. Ces bibliothèques nécessitent une revue minutieuse de la sécurité, car les erreurs de codage peuvent entraîner des failles de sécurité. .NET Framework 2.0 SP1 permet au code d’être émis dans des scénarios de confiance partielle sans émettre de demandes de sécurité, car la génération de code n’est pas fondamentalement une opération nécessitant des privilèges. Autrement dit, le code généré n'a pas plus d'autorisations que l'assembly qui l'émet. Ceci permet aux bibliothèques qui émettent du code d'être transparentes de sécurité et supprime la nécessité de déclarer <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>, ce qui simplifie l'écriture d'une bibliothèque sécurisée.  
+> <xref:System.Security.Permissions.ReflectionPermission> avec l'indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> est inclus par défaut dans les jeux d'autorisations nommés `FullTrust` et `LocalIntranet`, mais pas dans le jeu d'autorisations `Internet`. Par conséquent, dans les versions antérieures du .NET Framework, une bibliothèque peut être utilisée avec des autorisations Internet uniquement si elle exécute une méthode <xref:System.Security.PermissionSet.Assert%2A> pour <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>. Ces bibliothèques nécessitent une revue minutieuse de la sécurité, car les erreurs de codage peuvent entraîner des failles de sécurité. .NET Framework 2.0 SP1 permet au code d’être émis dans des scénarios de confiance partielle sans émettre de demandes de sécurité, car la génération de code n’est pas fondamentalement une opération nécessitant des privilèges. Autrement dit, le code généré n'a pas plus d'autorisations que l'assembly qui l'émet. Ceci permet aux bibliothèques qui émettent du code d'être transparentes de sécurité et supprime la nécessité de déclarer <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>, ce qui simplifie l'écriture d'une bibliothèque sécurisée.  
   
  En outre, .NET Framework 2.0 SP1 introduit l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess?displayProperty=nameWithType> pour accéder aux types et aux membres non publics à partir de méthodes dynamiques partiellement approuvées. Les versions antérieures du .NET Framework exigent l’indicateur <xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess?displayProperty=nameWithType> pour les méthodes dynamiques qui accèdent à des types et des membres non publics. Il s’agit d’une autorisation qui ne doit jamais être accordée à du code partiellement fiable.  
   

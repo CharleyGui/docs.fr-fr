@@ -8,12 +8,12 @@ helpviewer_keywords:
 - recurse compiler option [C#]
 - -recurse compiler option [C#]
 ms.assetid: 4e8212e5-04e3-45b1-8a42-41bc50e683b0
-ms.openlocfilehash: a4a55090cf465d0eac05303392ba7500dd96ee90
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: c82e3019e1a1e3ba45a7000312b54b9d7f64a2db
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54679368"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606745"
 ---
 # <a name="-recurse-c-compiler-options"></a>-recurse (Options du compilateur C#)
 L’option -recurse permet de compiler des fichiers de code source dans tous les répertoires enfants du répertoire spécifié (dir) ou du répertoire du projet.  
@@ -31,14 +31,14 @@ L’option -recurse permet de compiler des fichiers de code source dans tous les
  `file`  
  Le ou les fichiers à rechercher. Les caractères génériques sont autorisés.  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  L’option **-recurse** permet de compiler des fichiers de code source dans tous les répertoires enfants du répertoire spécifié (`dir`) ou du répertoire du projet.  
   
  Vous pouvez utiliser des caractères génériques dans un nom de fichier pour compiler tous les fichiers correspondants dans le répertoire du projet sans utiliser **-recurse**.  
   
  Cette option de compilateur n’est pas disponible dans Visual Studio et ne peut pas être changée par programmation.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Compile tous les fichiers C# qui se trouvent dans le répertoire actif :  
   
 ```console  
@@ -53,5 +53,5 @@ csc -target:library -out:dir2.dll -recurse:dir1\dir2\*.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

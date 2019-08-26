@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - '#pragma checksum [C#]'
 ms.assetid: 3673e4ca-6098-4ec1-890f-8fceb2a794a2
-ms.openlocfilehash: 36e5602f0a0b872a4aa6cdac64b49b1d1c708795
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 4103b6262fc5085c1204f423a36c9c5c2053b497
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65877527"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69605647"
 ---
 # <a name="pragma-checksum-c-reference"></a>#pragma checksum (Référence C#)
 Génère des sommes de contrôle pour les fichiers sources afin de faciliter le débogage des pages ASP.NET.  
@@ -42,7 +42,7 @@ Génère des sommes de contrôle pour les fichiers sources afin de faciliter le 
   
  Si le compilateur ne rencontre aucune directive `#pragma checksum` dans le fichier, il calcule la somme de contrôle et écrit la valeur dans le fichier PDB.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
   
 ```csharp
 class TestClass  
@@ -56,6 +56,6 @@ class TestClass
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../../csharp/language-reference/index.md)
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Directives de préprocesseur C#](../../../csharp/language-reference/preprocessor-directives/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Directives de préprocesseur C#](./index.md)

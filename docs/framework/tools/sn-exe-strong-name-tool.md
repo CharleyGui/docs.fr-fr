@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: c1d2b532-1b8e-4c7a-8ac5-53b801135ec6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 24a8c7ce090b286db9d86e0fc6c54ae33e7e2d5e
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 35e89584f3916d748809960d33a31eb4e8fb9c6a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59191885"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69938020"
 ---
 # <a name="snexe-strong-name-tool"></a>Sn.exe (outil Strong Name Tool)
 L’outil Strong Name (Sn.exe) permet de signer des assemblys avec des [noms forts](../../../docs/framework/app-domains/strong-named-assemblies.md). Sn.exe fournit des options de gestion des clés, de génération des signatures et de vérification des signatures.  
@@ -30,7 +30,7 @@ L’outil Strong Name (Sn.exe) permet de signer des assemblys avec des [noms for
  Cet outil est installé automatiquement avec Visual Studio. Pour démarrer l'outil, utilisez l'invite de commandes développeur (ou l'invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
 
 > [!NOTE]
->  Sur les ordinateurs 64 bits, exécutez la version 32 bits de Sn.exe à l’aide de l’invite de commandes développeur pour Visual Studio et la version 64 bits à l’aide de l’invite de commandes Visual Studio x64 Win64. 
+> Sur les ordinateurs 64 bits, exécutez la version 32 bits de Sn.exe à l’aide de l’invite de commandes développeur pour Visual Studio et la version 64 bits à l’aide de l’invite de commandes Visual Studio x64 Win64. 
   
  À l'invite de commandes, tapez le texte suivant :  
   
@@ -77,13 +77,13 @@ sn [-quiet][option [parameter(s)]]
 |**-?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
 > [!NOTE]
->  Toutes les options de Sn.exe respectent la casse et doivent être tapées exactement comme indiqué pour pouvoir être reconnues par l'outil.  
+> Toutes les options de Sn.exe respectent la casse et doivent être tapées exactement comme indiqué pour pouvoir être reconnues par l'outil.  
   
 ## <a name="remarks"></a>Remarques  
  Les options **-R** et **-Rc** sont utiles avec les assemblys dont la signature a été différée. Dans ce cas, seule la clé publique est définie au moment de la compilation et la signature a lieu par la suite, lorsque la clé privée est connue.  
   
 > [!NOTE]
->  Pour les paramètres (par exemple, **-Vr**) qui écrivent dans les ressources protégées, telles que le Registre, exécutez SN.exe comme administrateur.  
+> Pour les paramètres (par exemple, **-Vr**) qui écrivent dans les ressources protégées, telles que le Registre, exécutez SN.exe comme administrateur.  
   
 L’outil Strong Name suppose que les paires de clés publiques/privées sont générées avec l’identificateur d’algorithme `AT_SIGNATURE`. Les paires de clés publiques/privées générées avec l’algorithme `AT_KEYEXCHANGE` génèrent une erreur. 
 

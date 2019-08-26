@@ -2,18 +2,18 @@
 title: 'Procédure : Trier des éléments (C#)'
 ms.date: 07/20/2015
 ms.assetid: aee6fbbc-81fd-4b3e-b40f-6ed7b3bd3fee
-ms.openlocfilehash: ac79690ce45f6875900418b39e0f5e86596dceff
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 074428413fa57d8f0e5ae94970c2aeeeb9e4cc7c
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710058"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592456"
 ---
 # <a name="how-to-sort-elements-c"></a>Procédure : Trier des éléments (C#)
 Cet exemple montre comment écrire une requête qui trie ses résultats.  
   
 ## <a name="example"></a>Exemples  
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Données numériques (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Données numériques (LINQ to XML)](./sample-xml-file-numerical-data-linq-to-xml.md).  
   
 ```csharp  
 XElement root = XElement.Load("Data.xml");  
@@ -41,7 +41,7 @@ foreach (decimal el in prices)
 ## <a name="example"></a>Exemples  
  L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [Vue d’ensemble des espaces de noms (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Données numériques dans un espace de noms](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Données numériques dans un espace de noms](./sample-xml-file-numerical-data-in-a-namespace.md).  
   
 ```csharp  
 XElement root = XElement.Load("DataInNamespace.xml");  
@@ -69,4 +69,4 @@ foreach (decimal el in prices)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Tri des données (C#)](../../../../csharp/programming-guide/concepts/linq/sorting-data.md)
+- [Tri des données (C#)](./sorting-data.md)

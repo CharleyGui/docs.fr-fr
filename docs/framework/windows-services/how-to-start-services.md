@@ -6,12 +6,12 @@ helpviewer_keywords:
 - services, starting
 ms.assetid: 9ea77955-2d96-4c3d-913c-14db7604cdad
 author: ghogen
-ms.openlocfilehash: 8ad61eaa292ec4cce17ba029186caf1536afacdb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3544f7d846ecf68ed5ed01812b9c69b295c63c69
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591461"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69952423"
 ---
 # <a name="how-to-start-services"></a>Procédure : démarrer des services
 Une fois qu’un service est installé, il doit être démarré. Le démarrage appelle la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A> sur la classe de service. En règle générale, la méthode <xref:System.ServiceProcess.ServiceBase.OnStart%2A> définit le travail utile effectué par le service. Une fois un service démarré, il reste actif jusqu’à ce qu’il soit suspendu ou arrêté.  
@@ -19,7 +19,7 @@ Une fois qu’un service est installé, il doit être démarré. Le démarrage a
  Vous pouvez configurer un service pour qu’il démarre automatiquement ou manuellement. Un service à démarrage automatique démarre quand l’ordinateur sur lequel il est installé est mis en marche pour la première fois ou redémarré. Un service à démarrage manuel doit être démarré par un utilisateur.  
   
 > [!NOTE]
->  Par défaut, les services créés avec Visual Studio sont définis pour démarrer manuellement.  
+> Par défaut, les services créés avec Visual Studio sont définis pour démarrer manuellement.  
   
  Vous pouvez démarrer manuellement un service de plusieurs façons : à partir de **l’Explorateur de serveurs**, à partir du **Gestionnaire de contrôle des services** ou à partir du code à l’aide d’un composant appelé <xref:System.ServiceProcess.ServiceController>.  
   
@@ -42,7 +42,7 @@ Une fois qu’un service est installé, il doit être démarré. Le démarrage a
     >  Pour que votre service ne démarre pas, définissez la propriété <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> avec la valeur **Disabled**. Procédez de la sorte si vous prévoyez de redémarrer un serveur plusieurs fois. Le fait de ne pas démarrer les services habituels vous fera gagner du temps.  
   
     > [!NOTE]
-    >  Ces propriétés, ainsi que d’autres, peuvent être modifiées après l’installation du service.  
+    > Ces propriétés, ainsi que d’autres, peuvent être modifiées après l’installation du service.  
   
      Vous pouvez démarrer un service dont le processus <xref:System.ServiceProcess.ServiceInstaller.StartType%2A>a la valeur **Manual** de plusieurs façons : à partir de **l’Explorateur de serveurs**, à partir du **Gestionnaire de contrôle des services Windows** ou à partir du code. Il est important de noter que ces méthodes ne démarrent pas toutes le service dans le contexte du **Gestionnaire de contrôle des services**. En effet, **l’Explorateur de serveurs** et les méthodes de démarrage du service par programmation manipulent le contrôleur.  
   

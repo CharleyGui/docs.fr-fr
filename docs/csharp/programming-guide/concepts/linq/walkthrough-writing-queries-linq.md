@@ -7,12 +7,12 @@ helpviewer_keywords:
 - queries [LINQ in C#], writing
 - writing LINQ queries
 ms.assetid: 2962a610-419a-4276-9ec8-4b7f2af0c081
-ms.openlocfilehash: 083c1e4b6ab8c25956ffcf2288ac32d940f23bc2
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 9b6592405d3047c8663b48137aa5b1f0eb14bdb4
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66483223"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924107"
 ---
 # <a name="walkthrough-writing-queries-in-c-linq"></a>Procédure pas à pas : Écrire des requêtes en C# (LINQ)
 Cette procédure pas à pas présente les fonctionnalités du langage C# utilisées pour écrire des expressions de requête LINQ.  
@@ -20,7 +20,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
 ## <a name="create-a-c-project"></a>Créer un projet C#  
   
 > [!NOTE]
->  Les instructions suivantes s’appliquent à Visual Studio. Si vous utilisez un environnement de développement différent, créez un projet console avec une référence à System.Core.dll et une directive `using` pour l’espace de noms <xref:System.Linq?displayProperty=nameWithType>.  
+> Les instructions suivantes s’appliquent à Visual Studio. Si vous utilisez un environnement de développement différent, créez un projet console avec une référence à System.Core.dll et une directive `using` pour l’espace de noms <xref:System.Linq?displayProperty=nameWithType>.  
   
 #### <a name="to-create-a-project-in-visual-studio"></a>Pour créer un projet dans Visual Studio  
   
@@ -47,7 +47,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
   
 - La liste elle-même est initialisée avec un initialiseur de collection.  
   
- La totalité de cette structure de données est initialisée et instanciée sans appels explicites à un constructeur quelconque ni accès au membre explicite. Pour plus d’informations sur ces nouvelles fonctionnalités, consultez [Propriétés implémentées automatiquement](../../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md) et [Initialiseurs d’objets et de collection](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md).  
+ La totalité de cette structure de données est initialisée et instanciée sans appels explicites à un constructeur quelconque ni accès au membre explicite. Pour plus d’informations sur ces nouvelles fonctionnalités, consultez [Propriétés implémentées automatiquement](../../classes-and-structs/auto-implemented-properties.md) et [Initialiseurs d’objets et de collection](../../classes-and-structs/object-and-collection-initializers.md).  
   
 #### <a name="to-add-the-data-source"></a>Pour ajouter la source de données  
   
@@ -63,7 +63,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
   
 #### <a name="to-create-a-simple-query"></a>Pour créer une requête simple  
   
-- Dans la méthode `Main` de l’application, créez une requête simple qui, quand elle est exécutée, produit une liste de tous les étudiants dont la note pour le premier test est supérieure à 90. Notez que, puisque l’objet `Student` entier est sélectionné, le type de la requête est `IEnumerable<Student>`. Bien que le code puisse également utiliser un type implicite à l’aide du mot clé [var](../../../../csharp/language-reference/keywords/var.md), les types explicites sont utilisés pour illustrer clairement les résultats. (Pour plus d’informations sur `var`, consultez [Variables locales implicitement typées](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).)  
+- Dans la méthode `Main` de l’application, créez une requête simple qui, quand elle est exécutée, produit une liste de tous les étudiants dont la note pour le premier test est supérieure à 90. Notez que, puisque l’objet `Student` entier est sélectionné, le type de la requête est `IEnumerable<Student>`. Bien que le code puisse également utiliser un type implicite à l’aide du mot clé [var](../../../language-reference/keywords/var.md), les types explicites sont utilisés pour illustrer clairement les résultats. (Pour plus d’informations sur `var`, consultez [Variables locales implicitement typées](../../classes-and-structs/implicitly-typed-local-variables.md).)  
   
      Notez également que la variable de portée de la requête, `student`, sert de référence à chaque `Student` dans la source, en fournissant l’accès au membre pour chaque objet.  
   
@@ -91,7 +91,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
     where student.Scores[0] > 90 && student.Scores[3] < 80  
     ```  
   
-     Pour plus d’informations, consultez [where, clause](../../../../csharp/language-reference/keywords/where-clause.md).  
+     Pour plus d’informations, consultez [where, clause](../../../language-reference/keywords/where-clause.md).  
   
 ## <a name="modify-the-query"></a>Modifier la requête  
   
@@ -115,7 +115,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
     Console.WriteLine("{0}, {1} {2}", student.Last, student.First, student.Scores[0]);  
     ```  
   
-     Pour plus d’informations, consultez [orderby, clause](../../../../csharp/language-reference/keywords/orderby-clause.md).  
+     Pour plus d’informations, consultez [orderby, clause](../../../language-reference/keywords/orderby-clause.md).  
   
 #### <a name="to-group-the-results"></a>Pour regrouper les résultats  
   
@@ -129,7 +129,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
   
 3. Exécutez l’application et affichez les résultats dans la fenêtre de **console**.  
   
-     Pour plus d’informations, consultez [group, clause](../../../../csharp/language-reference/keywords/group-clause.md).  
+     Pour plus d’informations, consultez [group, clause](../../../language-reference/keywords/group-clause.md).  
   
 #### <a name="to-make-the-variables-implicitly-typed"></a>Pour rendre les variables implicitement typées  
   
@@ -137,7 +137,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
   
      [!code-csharp[CsLINQGettingStarted#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#16)]  
   
-     Pour plus d’informations sur [var](../../../../csharp/language-reference/keywords/var.md), consultez [Variables locales implicitement typées](../../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md).  
+     Pour plus d’informations sur [var](../../../language-reference/keywords/var.md), consultez [Variables locales implicitement typées](../../classes-and-structs/implicitly-typed-local-variables.md).  
   
 #### <a name="to-order-the-groups-by-their-key-value"></a>Pour classer les groupes selon leur valeur de clé  
   
@@ -153,11 +153,11 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
   
      [!code-csharp[csLINQGettingStarted#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#18)]  
   
-     Pour plus d’informations, consultez [let, clause](../../../../csharp/language-reference/keywords/let-clause.md).  
+     Pour plus d’informations, consultez [let, clause](../../../language-reference/keywords/let-clause.md).  
   
 #### <a name="to-use-method-syntax-in-a-query-expression"></a>Pour utiliser la syntaxe de méthode dans une expression de requête  
   
-1. Comme décrit dans [Syntaxe de requête et syntaxe de méthode dans LINQ](../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md), certaines opérations de requête peuvent être exprimées uniquement à l’aide de la syntaxe de méthode. Le code suivant calcule la note totale de chaque `Student` dans la séquence source, puis appelle la méthode `Average()` sur les résultats de cette requête pour calculer la note moyenne de la classe.
+1. Comme décrit dans [Syntaxe de requête et syntaxe de méthode dans LINQ](./query-syntax-and-method-syntax-in-linq.md), certaines opérations de requête peuvent être exprimées uniquement à l’aide de la syntaxe de méthode. Le code suivant calcule la note totale de chaque `Student` dans la séquence source, puis appelle la méthode `Average()` sur les résultats de cette requête pour calculer la note moyenne de la classe.
   
      [!code-csharp[csLINQGettingStarted#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#19)]  
   
@@ -174,15 +174,15 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
 ## <a name="next-steps"></a>Étapes suivantes  
  Une fois que vous êtes familiarisé avec les aspects de base de l’utilisation de requêtes en C#, vous êtes prêt à lire la documentation et les exemples pour le type spécifique de fournisseur LINQ qui vous intéresse :  
   
- [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
+ [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
   
  [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
   
- [LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md)  
+ [LINQ to XML (C#)](./linq-to-xml-overview.md)  
   
- [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
+ [LINQ to Objects (C#)](./linq-to-objects.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ (Language-Integrated Query) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)
-- [Expressions de requête LINQ](../../../../csharp/programming-guide/linq-query-expressions/index.md)
+- [LINQ (Language-Integrated Query) (C#)](./index.md)
+- [Expressions de requête LINQ](../../linq-query-expressions/index.md)

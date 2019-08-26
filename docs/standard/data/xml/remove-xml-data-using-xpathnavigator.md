@@ -1,5 +1,5 @@
 ---
-title: Suppression de données XML à l’aide de XPathNavigator
+title: Suppression de données XML à l'aide de XPathNavigator
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,14 +8,14 @@ dev_langs:
 ms.assetid: 9f436bca-1b96-494b-a6d2-e102c7551752
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b9a94e0db3598cb5e2d00298144fa4826035a8e9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 27c19c82270b9d67b6cd308386aa93c6112d59ee
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54674139"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69909680"
 ---
-# <a name="remove-xml-data-using-xpathnavigator"></a>Suppression de données XML à l’aide de XPathNavigator
+# <a name="remove-xml-data-using-xpathnavigator"></a>Suppression de données XML à l'aide de XPathNavigator
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthodes permettant de supprimer des nœuds et des valeurs d'un document XML. Pour pouvoir utiliser ces méthodes, vous devez pouvoir modifier l'objet <xref:System.Xml.XPath.XPathNavigator>, ce qui signifie que sa propriété <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> doit être `true`.  
   
  Les objets <xref:System.Xml.XPath.XPathNavigator> qui permettent d'éditer un document XML sont créés par la méthode <xref:System.Xml.XmlDocument.CreateNavigator%2A> de la classe <xref:System.Xml.XmlDocument>. Les objets <xref:System.Xml.XPath.XPathNavigator> créés par la classe <xref:System.Xml.XPath.XPathDocument> sont en lecture seule et toute tentative d'utilisation des méthodes de modification d'un objet <xref:System.Xml.XPath.XPathNavigator> créé par un objet <xref:System.Xml.XPath.XPathDocument> se traduit par un objet <xref:System.NotSupportedException>.  
@@ -33,7 +33,7 @@ La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthode
  Une suppression n'affecte en rien la position des objets <xref:System.Xml.XPath.XPathNavigator> positionnés sur le nœud supprimé. Ces objets <xref:System.Xml.XPath.XPathNavigator> sont valides dans le sens où ils peuvent se déplacer dans la sous-arborescence supprimée, mais ils ne peuvent pas être déplacés vers le nœud principal avec les méthodes ordinaires de navigation dans les collections de nœuds de la classe <xref:System.Xml.XPath.XPathNavigator>.  
   
 > [!NOTE]
->  La méthode <xref:System.Xml.XPath.XPathNavigator.MoveTo%2A> de la classe <xref:System.Xml.XPath.XPathNavigator> peut être utilisée pour redéplacer ces objets <xref:System.Xml.XPath.XPathNavigator> vers l'arborescence de nœuds principale ou depuis l'arborescence de nœuds principale vers la sous-arborescence supprimée.  
+> La méthode <xref:System.Xml.XPath.XPathNavigator.MoveTo%2A> de la classe <xref:System.Xml.XPath.XPathNavigator> peut être utilisée pour redéplacer ces objets <xref:System.Xml.XPath.XPathNavigator> vers l’arborescence de nœuds principale ou depuis l’arborescence de nœuds principale vers la sous-arborescence supprimée.  
   
  Dans l'exemple suivant, l'élément `price` du premier élément `book` du fichier `contosoBooks.xml` est supprimé à l'aide de la méthode <xref:System.Xml.XPath.XPathNavigator.DeleteSelf%2A>. Après la suppression de l'élément <xref:System.Xml.XPath.XPathNavigator>, l'objet `price` est positionné sur l'élément `book` parent.  
   

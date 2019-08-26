@@ -6,15 +6,15 @@ helpviewer_keywords:
 - indexers [C#], in interfaces
 - accessors [C#], indexers
 ms.assetid: e16b54bd-4a83-4f52-bd75-65819fca79e8
-ms.openlocfilehash: f277758a10b045a6365adfe931ce95d64eb8e445
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cea8d157e89597ddf4633cf7f7d3df7044db9ec7
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64608574"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589443"
 ---
 # <a name="indexers-in-interfaces-c-programming-guide"></a>Indexeurs dans les interfaces (Guide de programmation C#)
-Des indexeurs peuvent être déclarés dans une [interface](../../../csharp/language-reference/keywords/interface.md). Les accesseurs d’indexeurs d’interface se distinguent sur plusieurs plans des accesseurs d’indexeurs de [classe](../../../csharp/language-reference/keywords/class.md), à savoir :  
+Des indexeurs peuvent être déclarés dans une [interface](../../language-reference/keywords/interface.md). Les accesseurs d’indexeurs d’interface se distinguent sur plusieurs plans des accesseurs d’indexeurs de [classe](../../language-reference/keywords/class.md), à savoir :  
   
 - Les accesseurs d’interface n’utilisent pas de modificateurs.  
   
@@ -28,7 +28,7 @@ Des indexeurs peuvent être déclarés dans une [interface](../../../csharp/lang
   
  La signature d’un indexeur doit se distinguer de tous les autres indexeurs déclarés dans la même interface.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant montre comment implémenter des indexeurs d’interface.  
   
  [!code-csharp[csProgGuideIndexers#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideIndexers/CS/Indexers.cs#4)]  
@@ -61,7 +61,7 @@ string ICitizen.this[int index]
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Indexeurs](../../../csharp/programming-guide/indexers/index.md)
-- [Propriétés](../../../csharp/programming-guide/classes-and-structs/properties.md)
-- [Interfaces](../../../csharp/programming-guide/interfaces/index.md)
+- [Guide de programmation C#](../index.md)
+- [Indexeurs](./index.md)
+- [Propriétés](../classes-and-structs/properties.md)
+- [Interfaces](../interfaces/index.md)

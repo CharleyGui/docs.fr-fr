@@ -2,19 +2,19 @@
 title: Refactorisation dans des fonctions pures (C#)
 ms.date: 07/20/2015
 ms.assetid: 2944a0d4-fd33-4e2e-badd-abb0f9be2fcc
-ms.openlocfilehash: 0ddf3eb937f0ff9ee6b0ce289d73be7640499ba4
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 453b128ecaea62fd58c54bfb383091f65a082370
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66483992"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69924197"
 ---
 # <a name="refactoring-into-pure-functions-c"></a>Refactorisation dans des fonctions pures (C#)
 
 L'un des aspects importants des transformations fonctionnelles pures consiste à apprendre à refactoriser le code à l'aide de fonctions pures.  
   
 > [!NOTE]
->  La nomenclature courante dans la programmation fonctionnelle consiste à refactoriser les programmes à l'aide de fonctions pures. En Visual Basic et C++, cela correspond à l'utilisation des fonctions dans les langages respectifs. Toutefois, en C#, les fonctions portent le nom de méthodes. Pour les besoins de cette discussion, une fonction pure est implémentée en tant que méthode en C#.  
+> La nomenclature courante dans la programmation fonctionnelle consiste à refactoriser les programmes à l'aide de fonctions pures. En Visual Basic et C++, cela correspond à l'utilisation des fonctions dans les langages respectifs. Toutefois, en C#, les fonctions portent le nom de méthodes. Pour les besoins de cette discussion, une fonction pure est implémentée en tant que méthode en C#.  
   
  Comme mentionné précédemment dans cette section, une fonction pure présente deux caractéristiques utiles :  
   
@@ -24,7 +24,7 @@ L'un des aspects importants des transformations fonctionnelles pures consiste à
   
  L'une des manières de basculer vers la programmation fonctionnelle consiste à refactoriser le code existant afin d'éliminer les effets secondaires indésirables et les dépendances externes. De cette manière, vous pouvez créer des versions avec fonctions pures du code existant.  
   
- Cette rubrique explique ce qu'est et ce que n'est pas une fonction pure. Le [Tutoriel : Manipulation de contenu dans un document WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/shape-of-wordprocessingml-documents.md) montre comment manipuler un document WordprocessingML et inclut deux exemples illustrant comment refactoriser à l’aide d’une fonction pure.  
+ Cette rubrique explique ce qu'est et ce que n'est pas une fonction pure. Le [Tutoriel : Manipulation de contenu dans un document WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md) montre comment manipuler un document WordprocessingML et inclut deux exemples illustrant comment refactoriser à l’aide d’une fonction pure.  
   
 ## <a name="eliminating-side-effects-and-external-dependencies"></a>Suppression des effets secondaires et des dépendances externes  
  Les exemples suivants comparent deux fonctions non pures et une fonction pure.  
@@ -81,7 +81,7 @@ public class Program
  Cette version du programme génère la même sortie que la première version, car la fonction `HyphenatedConcat` a modifié la valeur (l'état) de son premier paramètre en appelant la fonction membre <xref:System.Text.StringBuilder.Append%2A>. Notez que cette altération a lieu en dépit du fait que `HyphenatedConcat` utilise le passage de paramètre avec appel par valeur.  
   
 > [!IMPORTANT]
->  Pour les types de référence, si vous passez un paramètre par valeur, une copie de la référence à un objet est passée. Cette copie est toujours associée aux mêmes données d'instance que la référence d'origine (jusqu'à ce que la variable de référence soit assignée à un nouvel objet). L'appel par référence n'est pas forcément nécessaire pour qu'une fonction modifie un paramètre.  
+> Pour les types de référence, si vous passez un paramètre par valeur, une copie de la référence à un objet est passée. Cette copie est toujours associée aux mêmes données d'instance que la référence d'origine (jusqu'à ce que la variable de référence soit assignée à un nouvel objet). L'appel par référence n'est pas forcément nécessaire pour qu'une fonction modifie un paramètre.  
   
 ### <a name="pure-function"></a>Fonction pure  
 Cette autre version du programme montre comment implémenter la fonction `HyphenatedConcat` en tant que fonction pure.  
@@ -110,9 +110,9 @@ class Program
 ## <a name="standard-query-operators"></a>Opérateurs de requête standard  
  L'une des caractéristiques importantes des opérateurs de requête standard est qu'ils sont implémentés en tant que fonctions pures.  
   
- Pour plus d’informations, consultez [Présentation des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md).  
+ Pour plus d’informations, consultez [Présentation des opérateurs de requête standard (C#)](./standard-query-operators-overview.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Introduction aux transformations fonctionnelles pures (C#)](../../../../csharp/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
-- [Comparaison de la programmation fonctionnelle et de la programmation impérative (C#)](../../../../csharp/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)
+- [Introduction aux transformations fonctionnelles pures (C#)](./introduction-to-pure-functional-transformations.md)
+- [Comparaison de la programmation fonctionnelle et de la programmation impérative (C#)](./functional-programming-vs-imperative-programming.md)

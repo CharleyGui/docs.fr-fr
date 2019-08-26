@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 42d9dc2a-8fcc-4ff3-b002-4ff260ef3dc5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 26a581cc17859f7f4e0215017bfc405eae3cc15e
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 791c6c8b0396ec958ff0c8378038051b23d486d1
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660891"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69956712"
 ---
 # <a name="security-considerations-for-reflection"></a>Considérations sur la sécurité de la réflexion
 
@@ -98,7 +98,7 @@ Par exemple, supposons que vous accordez des autorisations Internet à un domain
 
 ## <a name="serialization"></a>Sérialisation
 
-Pour la sérialisation, l'autorisation <xref:System.Security.Permissions.SecurityPermission> avec l'indicateur <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A?displayProperty=nameWithType> permet d'obtenir et de définir des membres des types sérialisables, indépendamment de l'accessibilité. Cette autorisation permet au code de découvrir et de changer l'état privé d'une instance. (En plus de disposer des autorisations appropriées, le type doit être [marqué](../../../docs/standard/attributes/applying-attributes.md) comme étant sérialisable dans les métadonnées.)
+Pour la sérialisation, l'autorisation <xref:System.Security.Permissions.SecurityPermission> avec l'indicateur <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A?displayProperty=nameWithType> permet d'obtenir et de définir des membres des types sérialisables, indépendamment de l'accessibilité. Cette autorisation permet au code de découvrir et de changer l'état privé d'une instance. (En plus de disposer des autorisations appropriées, le type doit être [marqué](../../standard/attributes/applying-attributes.md) comme étant sérialisable dans les métadonnées.)
 
 ## <a name="parameters-of-type-methodinfo"></a>Paramètres de type MethodInfo
 
@@ -121,5 +121,5 @@ Pour la sérialisation, l'autorisation <xref:System.Security.Permissions.Securit
 - [Sécurité d’accès du code](../../../docs/framework/misc/code-access-security.md)
 - [Problèmes de sécurité dans l’émission de réflexion](../../../docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)
 - [Affichage des informations de type](../../../docs/framework/reflection-and-codedom/viewing-type-information.md)
-- [Application des attributs](../../../docs/standard/attributes/applying-attributes.md)
+- [Application des attributs](../../standard/attributes/applying-attributes.md)
 - [Accès aux attributs personnalisés](../../../docs/framework/reflection-and-codedom/accessing-custom-attributes.md)

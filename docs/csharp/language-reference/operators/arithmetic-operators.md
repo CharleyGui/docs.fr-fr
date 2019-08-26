@@ -27,12 +27,12 @@ helpviewer_keywords:
 - + operator [C#]
 - subtraction operator [C#]
 - '- operator [C#]'
-ms.openlocfilehash: 02b27270c93550278308900382ae05091edb2543
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: ac04ba72ed0c25aa576bf10150fc80410890eda0
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67661530"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69608366"
 ---
 # <a name="arithmetic-operators-c-reference"></a>Opérateurs arithmétiques (référence C#)
 
@@ -45,7 +45,7 @@ Ces opérateurs prennent en charge tous les types numériques [intégraux](../bu
 
 ## <a name="increment-operator-"></a>Opérateur d’incrémentation ++
 
-L’opérateur d’incrémentation unaire `++` incrémente son opérande de 1. L’opérande doit être une variable, un accès [propriété](../../programming-guide/classes-and-structs/properties.md) ou un accès [indexeur](../../../csharp/programming-guide/indexers/index.md).
+L’opérateur d’incrémentation unaire `++` incrémente son opérande de 1. L’opérande doit être une variable, un accès [propriété](../../programming-guide/classes-and-structs/properties.md) ou un accès [indexeur](../../programming-guide/indexers/index.md).
 
 L’opérateur d’incrémentation est pris en charge sous deux formes : l’opérateur d’incrémentation suffixé, `x++`, et l’opérateur d’incrémentation préfixé, `++x`.
 
@@ -63,7 +63,7 @@ Le résultat de `++x` est la valeur de `x` *après* l’opération, comme le mon
 
 ## <a name="decrement-operator---"></a>Opérateur de décrémentation --
 
-L’opérateur de décrémentation unaire `--` décrémente son opérande de 1. L’opérande doit être une variable, un accès [propriété](../../programming-guide/classes-and-structs/properties.md) ou un accès [indexeur](../../../csharp/programming-guide/indexers/index.md).
+L’opérateur de décrémentation unaire `--` décrémente son opérande de 1. L’opérande doit être une variable, un accès [propriété](../../programming-guide/classes-and-structs/properties.md) ou un accès [indexeur](../../programming-guide/indexers/index.md).
 
 L’opérateur de décrémentation est pris en charge sous deux formes : l’opérateur de décrémentation suffixé, `x--`, et l’opérateur de décrémentation préfixé, `--x`.
 

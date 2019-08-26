@@ -6,12 +6,12 @@ helpviewer_keywords:
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-ms.openlocfilehash: 77ecab9738afd7ff5cfd4f8ef0cd0e49a302eb27
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 0c666d62c21d3e4f7b1041c1d5360ac43d2cf03f
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025414"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69587061"
 ---
 # <a name="c-walkthroughs"></a>procédures pas à pas C#
 Les procédures pas à pas fournissent des instructions détaillées pour les scénarios courants, ce qui en fait un bon point de départ pour apprendre à utiliser le produit ou une fonctionnalité particulière.  
@@ -21,33 +21,33 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
 ## <a name="in-this-section"></a>Dans cette section  
 
  [Accès au web avec Async et Await](./programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
- Explique comment créer une solution asynchrone avec [async](../csharp/language-reference/keywords/async.md) et [await](../csharp/language-reference/keywords/await.md).  
+ Explique comment créer une solution asynchrone avec [async](./language-reference/keywords/async.md) et [await](./language-reference/keywords/await.md).  
   
  [Création d’un composant Windows Runtime en C# ou Visual Basic et appel du composant depuis JavaScript](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript)  
  Montre comment créer un type Windows Runtime, l'empaqueter dans un composant Windows Runtime et l'appeler à partir d'une application [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] conçue pour Windows en JavaScript.  
   
- [Programmation Office (C# et Visual Basic)](../csharp/programming-guide/interop/walkthrough-office-programming.md)  
+ [Programmation Office (C# et Visual Basic)](./programming-guide/interop/walkthrough-office-programming.md)  
  Montre comment créer un classeur Excel et un document Word à l'aide de C# et de Visual Basic.  
   
- [Création et utilisation d’objets dynamiques (C# et Visual Basic)](../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)  
+ [Création et utilisation d’objets dynamiques (C# et Visual Basic)](./programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)  
  Montre comment créer un objet personnalisé qui expose dynamiquement le contenu d'un fichier texte et comment créer un projet qui utilise la bibliothèque `IronPython`.  
    
- [Création d’un contrôle composite à l’aide de Visual C#](../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)  
+ [Création d’un contrôle composite à l’aide de Visual C#](../framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)  
  Montre comment créer un contrôle composite simple et étendre ses fonctionnalités en se servant de l'héritage.  
   
- [Création d’un contrôle Windows Forms qui tire parti des fonctionnalités au moment du design de Visual Studio](../../docs/framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
+ [Création d’un contrôle Windows Forms qui tire parti des fonctionnalités au moment du design de Visual Studio](../framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
  Montre comment créer un concepteur personnalisé pour un contrôle personnalisé.  
   
- [Héritage d’un contrôle Windows Forms à l’aide de Visual C#](../../docs/framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)  
+ [Héritage d’un contrôle Windows Forms à l’aide de Visual C#](../framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)  
  Montre comment créer un contrôle bouton hérité simple. Ce bouton hérite des fonctionnalités du bouton Windows Forms standard et expose un membre personnalisé.  
   
- [Débogage des contrôles Windows Forms personnalisés au moment du design](../../docs/framework/winforms/controls/walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)  
+ [Débogage des contrôles Windows Forms personnalisés au moment du design](../framework/winforms/controls/walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)  
  Décrit comment déboguer le comportement au moment du design de votre contrôle personnalisé.
 
- [Exécution de tâches courantes à l’aide de balises actives dans les contrôles Windows Forms](../../docs/framework/winforms/controls/performing-common-tasks-using-smart-tags-on-wf-controls.md)  
+ [Exécution de tâches courantes à l’aide de balises actives dans les contrôles Windows Forms](../framework/winforms/controls/performing-common-tasks-using-smart-tags-on-wf-controls.md)  
  Présente quelques tâches couramment exécutées, notamment l'ajout ou la suppression d'un onglet sur un `TabControl`, l'ancrage d'un contrôle à son parent et la modification de l'orientation d'un contrôle `SplitContainer`.  
   
- [Écriture de requêtes en C# (LINQ)](../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
+ [Écriture de requêtes en C# (LINQ)](./programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
  Illustre les fonctionnalités du langage C# utilisées pour écrire les expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)].  
   
  [Manipulation de données (C#) (LINQ to SQL)](../framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)  
@@ -71,5 +71,5 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../csharp/programming-guide/index.md)
+- [Guide de programmation C#](./programming-guide/index.md)
 - [Exemples Visual Studio](/visualstudio/ide/visual-studio-samples)

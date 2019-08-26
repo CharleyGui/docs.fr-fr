@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: eca16922-1c46-4f68-aefe-e7a12283641f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 64df7a4dc859c5d4035dd640a011a813348a0334
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 33bc0ecb4b7d20f0df96486c046e06fc4cf0e7ed
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650502"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69941459"
 ---
 # <a name="retrieving-resources-in-desktop-apps"></a>Récupération de ressources dans des applications de bureau
 Quand vous utilisez des ressources localisées dans des applications de bureau du .NET Framework, vous devez, dans l’idéal, empaqueter les ressources pour la culture neutre ou par défaut avec l’assembly principal et créer un assembly satellite séparé pour chaque langue ou culture prise en charge par votre application. Vous pouvez ensuite utiliser la classe <xref:System.Resources.ResourceManager> pour accéder aux ressources nommées, comme indiqué dans la section suivante. Si vous choisissez de ne pas incorporer les ressources dans l’assembly principal et les assemblys satellites, vous pouvez également accéder directement aux fichiers .resources binaires, comme cela est expliqué dans la section [Récupération de ressources de fichiers .resources](#from_file) , plus loin dans cet article.  Pour récupérer des ressources dans des applications du [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] , consultez [Création et récupération de ressources dans les applications du Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=241674) dans le Centre de développement Windows.  
@@ -159,7 +159,7 @@ GetObject.exe
  Une fois que vous avez créé vos ressources et les avez placées dans le répertoire approprié, créez un objet <xref:System.Resources.ResourceManager> qui utilise ces ressources en appelant la méthode <xref:System.Resources.ResourceManager.CreateFileBasedResourceManager%28System.String%2CSystem.String%2CSystem.Type%29> . Le premier paramètre spécifie le nom racine du fichier .resources par défaut de l’application (« strings » dans l’exemple de la section précédente). Le deuxième paramètre spécifie l’emplacement des ressources (« Resources » dans l’exemple précédent). Le troisième paramètre spécifie l’implémentation de <xref:System.Resources.ResourceSet> à utiliser. Si ce paramètre est `null`, le runtime par défaut <xref:System.Resources.ResourceSet> est utilisé.  
   
 > [!NOTE]
->  Ne déployez pas d’applications ASP.NET à l’aide de fichiers .resources autonomes, car cela peut entraîner des problèmes de verrouillage et l’arrêt du déploiement XCOPY. Nous vous recommandons de déployer les ressources ASP.NET dans des assemblys satellites. Pour plus d'informations, consultez [ASP.NET Web Page Resources Overview](https://docs.microsoft.com/previous-versions/aspnet/ms227427(v=vs.100)).  
+> Ne déployez pas d’applications ASP.NET à l’aide de fichiers .resources autonomes, car cela peut entraîner des problèmes de verrouillage et l’arrêt du déploiement XCOPY. Nous vous recommandons de déployer les ressources ASP.NET dans des assemblys satellites. Pour plus d'informations, consultez [ASP.NET Web Page Resources Overview](https://docs.microsoft.com/previous-versions/aspnet/ms227427(v=vs.100)).  
   
  Après avoir instancié l’objet <xref:System.Resources.ResourceManager> , utilisez les méthodes <xref:System.Resources.ResourceManager.GetString%2A>, <xref:System.Resources.ResourceManager.GetObject%2A>et <xref:System.Resources.ResourceManager.GetStream%2A> pour récupérer les ressources, comme indiqué plus haut. Toutefois, la récupération de ressources directement à partir des fichiers .resources s’effectue différemment de la récupération des ressources incorporées à partir d’assemblys. Quand vous récupérez des ressources de fichiers .resources, les méthodes <xref:System.Resources.ResourceManager.GetString%28System.String%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%29>et <xref:System.Resources.ResourceManager.GetStream%28System.String%29> récupèrent toujours les ressources de la culture par défaut, quelle que soit la culture actuelle. Pour récupérer les ressources de la culture actuelle de l’application ou d’une autre culture, vous devez appeler la méthode <xref:System.Resources.ResourceManager.GetString%28System.String%2CSystem.Globalization.CultureInfo%29>, <xref:System.Resources.ResourceManager.GetObject%28System.String%2CSystem.Globalization.CultureInfo%29>ou <xref:System.Resources.ResourceManager.GetStream%28System.String%2CSystem.Globalization.CultureInfo%29> et spécifier la culture pour laquelle les ressources doivent être récupérées. Pour récupérer les ressources de la culture actuelle, spécifiez la valeur de la propriété <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> comme argument `culture` . Si le Gestionnaire des ressources ne peut pas récupérer les ressources de `culture`, il récupère les ressources appropriées à l’aide des règles de secours standard pour les ressources.  
   

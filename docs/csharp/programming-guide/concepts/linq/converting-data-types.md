@@ -2,12 +2,12 @@
 title: Conversion des types de données (C#)
 ms.date: 07/20/2015
 ms.assetid: 46e5682f-77a1-4302-8f93-a2b53c408808
-ms.openlocfilehash: 918a9fbfc523e62c7b4a5d915c28c00ea781d3e4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9e8b7726b94871a17a4be50a9b24d8b73abcf79c
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64597725"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69594613"
 ---
 # <a name="converting-data-types-c"></a>Conversion des types de données (C#)
 Les méthodes de conversion changent le type d’objets en entrée.  
@@ -77,7 +77,7 @@ static void Cast()
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq>
-- [Vue d’ensemble des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [from, clause](../../../../csharp/language-reference/keywords/from-clause.md)
-- [Expressions de requête LINQ](../../../../csharp/programming-guide/linq-query-expressions/index.md)
-- [Guide pratique pour interroger un ArrayList avec LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)
+- [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
+- [from, clause](../../../language-reference/keywords/from-clause.md)
+- [Expressions de requête LINQ](../../linq-query-expressions/index.md)
+- [Guide pratique pour interroger un ArrayList avec LINQ (C#)](./how-to-query-an-arraylist-with-linq.md)

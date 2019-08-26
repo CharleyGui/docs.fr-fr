@@ -9,12 +9,12 @@ dev_langs:
 ms.assetid: 03a7c5a1-b296-4af4-b209-043c958dc0a5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 72cbcf1294f3d13f406d8db177f66fdc367c0758
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: ba6393d19909d8be762ee38b4c925987528d6304
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54724445"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69967352"
 ---
 # <a name="modify-xml-data-using-xpathnavigator"></a>Modification de données XML à l’aide de XPathNavigator
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthodes permettant de modifier les nœuds et les valeurs d'un document XML. Pour pouvoir utiliser ces méthodes, vous devez pouvoir modifier l'objet <xref:System.Xml.XPath.XPathNavigator>, ce qui signifie que sa propriété <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> doit être `true`.  
@@ -39,7 +39,7 @@ La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthode
 |<xref:System.Xml.XPath.XPathNodeType.Namespace>|Non pris en charge.|  
   
 > [!NOTE]
->  La modification des nœuds <xref:System.Xml.XPath.XPathNodeType.Namespace> ou <xref:System.Xml.XPath.XPathNodeType.Root> n'est pas prise en charge.  
+> La modification des nœuds <xref:System.Xml.XPath.XPathNodeType.Namespace> ou <xref:System.Xml.XPath.XPathNodeType.Root> n'est pas prise en charge.  
   
  La classe <xref:System.Xml.XPath.XPathNavigator> fournit également un ensemble de méthodes permettant d'insérer et de supprimer des nœuds. Pour plus d’informations sur l’insertion et la suppression de nœuds d’un document XML, consultez les rubriques [Insertion de données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/insert-xml-data-using-xpathnavigator.md) et [Suppression de données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/remove-xml-data-using-xpathnavigator.md).  
   
@@ -109,7 +109,7 @@ navigator.SetTypedValue(DateTime.Now);
  La classe <xref:System.Xml.XPath.XPathNavigator> se base sur le schéma XML du W3C pour décrire des données XML fortement typées. Les éléments et les attributs ne peuvent pas être annotés avec les informations sur le type en fonction de la validation par rapport au document du W3C sur les schémas XML. Les éléments pouvant contenir d'autres éléments ou attributs sont appelés types complexes, tandis que ceux qui ne peuvent avoir que du contenu textuel sont appelés types simples.  
   
 > [!NOTE]
->  Les attributs ne peuvent avoir que des types simples.  
+> Les attributs ne peuvent avoir que des types simples.  
   
  Un élément ou attribut peut être considéré comme valide pour le schéma s'il est conforme à toutes les règles spécifiques à sa définition de type. Un élément ayant le type simple `xs:int` doit contenir une valeur numérique comprise entre -2147483648 et 2147483647 pour être valide pour le schéma. Pour les types complexes, la validité de l'élément pour le schéma dépend de la validité pour le schéma de ses attributs et éléments enfants. Donc, si un élément est valide par rapport à sa définition de type complexe, tous ses attributs et éléments enfants sont valides par rapport à leur définition de type. De même, si un seul attribut ou élément enfant d'un élément n'est pas valide par rapport à sa définition de type ou dispose d'une validité inconnue, l'élément est également non valide ou de validité inconnue.  
   
@@ -243,7 +243,7 @@ Console.WriteLine(navigator.OuterXml);
  Si un objet <xref:System.Xml.XPath.XPathNavigator> permet d'ajouter du contenu à un élément valide avec un attribut `xsi:nil` ayant la valeur `true`, la valeur de son attribut `xsi:nil` est définie sur `false`.  
   
 > [!NOTE]
->  Si le contenu d'un élément possédant un attribut `xsi:nil` défini sur `false` est supprimé, la valeur de l'attribut n'est pas modifiée en `true`.  
+> Si le contenu d'un élément possédant un attribut `xsi:nil` défini sur `false` est supprimé, la valeur de l'attribut n'est pas modifiée en `true`.  
   
 ## <a name="saving-an-xml-document"></a>Enregistrement d'un document XML  
  L'enregistrement des modifications apportées à un objet <xref:System.Xml.XmlDocument> suite aux méthodes de modification décrites dans cette rubrique s'effectue à l'aide des méthodes de la classe <xref:System.Xml.XmlDocument>. Pour plus d'informations sur l'enregistrement des modifications apportées à un objet <xref:System.Xml.XmlDocument>, consultez [Enregistrement et écriture d'un document](../../../../docs/standard/data/xml/saving-and-writing-a-document.md).  

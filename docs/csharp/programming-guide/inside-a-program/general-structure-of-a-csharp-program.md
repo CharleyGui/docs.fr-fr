@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, program structure
 ms.assetid: 5ae964a5-0ef0-40fe-88fb-6d1793371d0d
-ms.openlocfilehash: 80f9fd4e86abbdcc316ff22090cc980bbb8245d1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1cb6af4b43e04b231feca2f996eca0f8dc60da6c
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64595444"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589370"
 ---
 # <a name="general-structure-of-a-c-program-c-programming-guide"></a>Structure générale d'un programme C# (guide de programmation C#)
 Les programmes C# se composent d’un ou plusieurs fichiers. Chaque fichier peut contenir zéro ou plusieurs espaces de noms. Un espace de noms peut contenir des types tels que des classes, des structs, des interfaces, des énumérations et des délégués, en plus d’autres espaces de noms. Voici la structure d’un programme C# qui contient tous ces éléments.  
@@ -20,15 +20,15 @@ Les programmes C# se composent d’un ou plusieurs fichiers. Chaque fichier peu
 ## <a name="related-sections"></a>Rubriques connexes  
  Pour plus d'informations :  
   
-- [Classes](../../../csharp/programming-guide/classes-and-structs/classes.md)  
+- [Classes](../classes-and-structs/classes.md)  
   
-- [Structs](../../../csharp/programming-guide/classes-and-structs/structs.md)  
+- [Structs](../classes-and-structs/structs.md)  
   
-- [Espaces de noms](../../../csharp/programming-guide/namespaces/index.md)  
+- [Espaces de noms](../namespaces/index.md)  
   
-- [Interfaces](../../../csharp/programming-guide/interfaces/index.md)  
+- [Interfaces](../interfaces/index.md)  
   
-- [Délégués](../../../csharp/programming-guide/delegates/index.md)  
+- [Délégués](../delegates/index.md)  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
 
@@ -36,6 +36,6 @@ Pour plus d’informations, consultez [Concepts de base](~/_csharplang/spec/basi
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [À l’intérieur d’un programme C#](../../../csharp/programming-guide/inside-a-program/index.md)
-- [Référence C#](../../../csharp/language-reference/index.md)
+- [Guide de programmation C#](../index.md)
+- [À l’intérieur d’un programme C#](./index.md)
+- [Référence C#](../../language-reference/index.md)

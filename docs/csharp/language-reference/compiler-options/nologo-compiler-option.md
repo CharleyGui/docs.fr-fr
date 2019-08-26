@@ -9,12 +9,12 @@ helpviewer_keywords:
 - banners, suppressing startup
 - /nologo compiler option [C#]
 ms.assetid: 426afb36-a8fb-469d-9c45-a35d9512557c
-ms.openlocfilehash: 537091bc3865183d193e3728d8d07649e33c6ada
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 84fc7f7448309a0800ea05f03f0c5039a6b4f807
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54663990"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606658"
 ---
 # <a name="-nologo-c-compiler-options"></a>-nologo (Options du compilateur C#)
 L’option **-nologo** supprime l’affichage de la bannière de démarrage pendant le démarrage du compilateur et l’affichage des messages d’informations pendant la compilation.  
@@ -25,12 +25,12 @@ L’option **-nologo** supprime l’affichage de la bannière de démarrage pend
 -nologo  
 ```  
   
-## <a name="remarks"></a>Notes  
+## <a name="remarks"></a>Remarques  
  Cette option n’est pas disponible dans l’environnement de développement ; elle l’est uniquement au moment de compiler à partir de la ligne de commande.  
   
  Cette option de compilateur n’est pas disponible dans Visual Studio et ne peut pas être changée par programmation.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

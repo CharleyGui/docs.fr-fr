@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 07/15/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: b4a08a9866bbc8816b57c95bdb22766bd1b07fdc
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 4471e4feffb23b7f256ada2116444aaa7899e209
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331698"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69611443"
 ---
 # <a name="predict-prices-using-regression-with-model-builder"></a>Prédire des prix en utilisant la régression avec Model Builder
 
@@ -19,12 +19,12 @@ Découvrez comment utiliser Model Builder ML.NET pour générer un modèle de r�
 
 Le modèle de prédiction des prix de Model Builder peut être utilisé pour tout scénario nécessitant une valeur de prédiction numérique. Voici quelques exemples de scénarios : prédiction des prix de l’immobilier, prédiction de la demande et prévisions des ventes.
 
-Ce tutoriel vous montre comment effectuer les opérations suivantes :
+Dans ce didacticiel, vous apprendrez à :
 > [!div class="checklist"]
 > * Préparer et comprendre les données
 > * Choisir un scénario
-> * Chargement des données
-> * Formation du modèle
+> * Charger les données
+> * Effectuer l’apprentissage du modèle
 > * Évaluer le modèle
 > * Utiliser le modèle pour les prévisions
 
@@ -35,7 +35,7 @@ Ce tutoriel vous montre comment effectuer les opérations suivantes :
 
 Pour obtenir la liste des prérequis et les instructions d’installation, consultez le [Guide d’installation de Model Builder](../how-to-guides/install-model-builder.md).
 
-## <a name="create-a-console-application"></a>Création d’une application console
+## <a name="create-a-console-application"></a>Créer une application console
 
 1. Créez une **application console .NET Core** appelée « TaxiFarePrediction ».
 
@@ -76,7 +76,7 @@ Pour entraîner votre modèle, vous devez sélectionner dans la liste des scéna
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet *TaxiFarePrediction*, puis sélectionnez **Ajouter** > **Machine Learning**.
 1. Dans l’étape de scénario de l’outil Model Builder, sélectionnez le scénario *Prédiction de prix*.
 
-## <a name="load-the-data"></a>Chargement des données
+## <a name="load-the-data"></a>Charger les données
 
 Model Builder accepte des données de deux sources : une base de données SQL Server, ou un fichier csv ou tsv local.
 
@@ -84,7 +84,7 @@ Model Builder accepte des données de deux sources : une base de données SQL S
 1. Sélectionnez le bouton en regard de la zone de texte *Sélectionner un fichier* et utilisez l’Explorateur de fichiers pour parcourir et sélectionner *taxi-fare-test.csv* dans le répertoire *Data*.
 1. Choisissez *fare_amount* dans la liste déroulante *Étiquette ou colonne à prédire*, puis accédez à l’étape d’entraînement de l’outil Model Builder.
 
-## <a name="train-the-model"></a>Formation du modèle
+## <a name="train-the-model"></a>Effectuer l’apprentissage du modèle
 
 La tâche Machine Learning utilisée pour entraîner le modèle de prédiction des prix de ce tutoriel est la régression. Pendant le processus d’entraînement du modèle, Model Builder entraîne des modèles distincts en utilisant différents algorithmes et paramètres de régression pour trouver le modèle le plus performant pour votre jeu de données.
 
@@ -188,12 +188,12 @@ Si vous devez référencer ultérieurement les projets générés à l’intéri
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce tutoriel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
 > * Préparer et comprendre les données
 > * Choisir un scénario
-> * Chargement des données
-> * Formation du modèle
+> * Charger les données
+> * Effectuer l’apprentissage du modèle
 > * Évaluer le modèle
 > * Utiliser le modèle pour les prévisions
 
@@ -202,7 +202,6 @@ Dans ce tutoriel, vous avez appris à :
 Pour en savoir plus sur les rubriques mentionnées dans ce tutoriel, consultez les ressources suivantes :
 
 - [Scénarios du Générateur de modèles](../automate-training-with-model-builder.md#scenarios)
-- [Formats de données du Générateur de modèles](../automate-training-with-model-builder.md#data-formats)
 - [Régression](../resources/glossary.md#regression)
 - [Métriques du modèle de régression](../resources/metrics.md#metrics-for-regression)
 - [Jeu de données NYC TLC Taxi Trip](http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml)

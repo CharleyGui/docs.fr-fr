@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: 1e7b19999ab8536e9a1b05c1ad5d548c8da2cbd6
-ms.sourcegitcommit: 16aefeb2d265e69c0d80967580365fabf0c5d39a
+ms.openlocfilehash: 37eedc6d41867a6d5e6a49b8df5040c657bb2689
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58037702"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69602753"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Options du compilateur C# par ordre alphabétique
 
@@ -77,7 +77,7 @@ Les options du compilateur suivantes sont triées par ordre alphabétique. Pour 
 |-ruleset:\<file>|Spécifiez un fichier ruleset qui désactive des diagnostics spécifiques.|
 |[-subsystemversion](subsystemversion-compiler-option.md)|Spécifie la version minimale du sous-système utilisable par le fichier exécutable.|
 |[-target](target-compiler-option.md)|Spécifie le format du fichier de sortie en utilisant l’une des quatre options suivantes :[-target:appcontainerexe](target-appcontainerexe-compiler-option.md), [-target:exe](target-exe-compiler-option.md), [-target:library](target-library-compiler-option.md), [-target:module](target-module-compiler-option.md), [-target:winexe](target-winexe-compiler-option.md), [-target:winmdobj](target-winmdobj-compiler-option.md).|
-|[unsafe](unsafe-compiler-option.md)|Autorise le code [unsafe](../../../csharp/language-reference/keywords/unsafe.md).|
+|[unsafe](unsafe-compiler-option.md)|Autorise le code [unsafe](../keywords/unsafe.md).|
 |[-utf8output](utf8output-compiler-option.md)|Génère des messages du compilateur encodés en UTF-8.|
 |-version|Afficher le numéro de version du compilateur et quitter.|
 |[/warn](warn-compiler-option.md)|Définit le niveau d'avertissement (entre 0 et 4).|

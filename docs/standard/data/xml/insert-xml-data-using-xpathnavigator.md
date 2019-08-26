@@ -9,12 +9,12 @@ dev_langs:
 ms.assetid: 2ed8c28b-b88d-4be7-9c87-92df01f0821f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a941c99e1d22a71dc6d94e73f5402716f41e3a81
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4ff9232272124c8706e64162d096eced8640c806
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647911"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966953"
 ---
 # <a name="insert-xml-data-using-xpathnavigator"></a>Insertion de données XML à l’aide de XPathNavigator
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthodes permettant d'insérer des nœuds frères, enfants et d'attribut dans un document XML. Pour pouvoir utiliser ces méthodes, vous devez pouvoir modifier l'objet <xref:System.Xml.XPath.XPathNavigator>, ce qui signifie que sa propriété <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> doit être `true`.  
@@ -236,7 +236,7 @@ navigator.SetTypedValue(DateTime.Now);
 - Si le préfixe et l'URI d'espace de noms sont identiques dans le contexte des objets <xref:System.Xml.XmlReader> et <xref:System.Xml.XPath.XPathNavigator>, aucune déclaration d'espace de noms n'est ajoutée au nœud qui vient d'être inséré.  
   
 > [!NOTE]
->  La description ci-dessus s'applique également aux déclarations d'espaces de noms ayant pour préfixe la `string` vide (par exemple, la déclaration d'espace de noms par défaut).  
+> La description ci-dessus s'applique également aux déclarations d'espaces de noms ayant pour préfixe la `string` vide (par exemple, la déclaration d'espace de noms par défaut).  
   
  Les conflits `xml:lang` possibles sont les suivants.  
   

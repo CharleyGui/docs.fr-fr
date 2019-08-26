@@ -14,12 +14,12 @@ helpviewer_keywords:
 - network
 - WPAD (Web Proxy Auto-Discovery)
 ms.assetid: fcd9c3bd-93de-4c92-8ff3-837327ad18de
-ms.openlocfilehash: 656a21a7b8801a2c3b72b25531705576fcf047cd
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: d7d0dae2ffbec5e334057715cd1d8d44e52cec9d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59295755"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69910462"
 ---
 # <a name="automatic-proxy-detection"></a>Détection automatique de proxy
 La détection automatique de proxy est un processus par lequel un serveur proxy web est identifié par le système et utilisé pour envoyer des demandes pour le compte du client. Cette fonctionnalité est également connue sous le nom de Découverte automatique de proxy Web (WPAD, Web Proxy Auto-Discovery). Quand la détection automatique de proxy est activée, le système tente de localiser un script de configuration de proxy qui est chargé de retourner l’ensemble des proxys pouvant être utilisés pour la requête. Si le script de configuration de proxy est trouvé, il est téléchargé, compilé et exécuté sur l’ordinateur local quand les informations de proxy, le flux de requête ou la réponse sont obtenus pour une requête qui utilise une instance de <xref:System.Net.WebProxy>.  
@@ -27,7 +27,7 @@ La détection automatique de proxy est un processus par lequel un serveur proxy 
  La détection automatique de proxy est effectuée par la classe <xref:System.Net.WebProxy> et peut utiliser des paramètres au niveau de la requête, des paramètres dans des fichiers de configuration et des paramètres spécifiés à l’aide de la boîte de dialogue **Réseau local** d’Internet Explorer.  
   
 > [!NOTE]
->  Vous pouvez afficher la boîte de dialogue **Réseau local** d’Internet Explorer en sélectionnant **Outils** dans le menu principal d’Internet Explorer, puis **Options Internet**. Ensuite, sélectionnez l’onglet **Connexions** et cliquez sur **Paramètres du réseau local**.  
+> Vous pouvez afficher la boîte de dialogue **Réseau local** d’Internet Explorer en sélectionnant **Outils** dans le menu principal d’Internet Explorer, puis **Options Internet**. Ensuite, sélectionnez l’onglet **Connexions** et cliquez sur **Paramètres du réseau local**.  
   
  Quand la détection automatique de proxy est activée, la classe <xref:System.Net.WebProxy> tente de localiser le script de configuration de proxy comme suit :  
   
@@ -40,7 +40,7 @@ La détection automatique de proxy est un processus par lequel un serveur proxy 
 4. Si l’hôte n’est pas identifié et que l’emplacement d’un script de configuration de proxy est spécifié par les paramètres de réseau local d’Internet Explorer ou un fichier de configuration, cet emplacement est utilisé.  
   
 > [!NOTE]
->  Les applications qui s’exécutent en tant que service NT ou dans le cadre d’ASP.NET utilisent les paramètres de serveur proxy d’Internet Explorer (s’ils sont disponibles) de l’utilisateur appelant. Ces paramètres peuvent ne pas être disponibles pour toutes les applications de service.  
+> Les applications qui s’exécutent en tant que service NT ou dans le cadre d’ASP.NET utilisent les paramètres de serveur proxy d’Internet Explorer (s’ils sont disponibles) de l’utilisateur appelant. Ces paramètres peuvent ne pas être disponibles pour toutes les applications de service.  
   
  Les proxys sont configurés sur la base de chaque connectoid. Un connectoid est un élément dans la boîte de dialogue de connexion réseau. Il peut s’agir d’un appareil réseau physique (un modem ou une carte Ethernet) ou d’une interface virtuelle (par exemple, une connexion VPN qui s’exécute sur un appareil réseau). Quand un connectoid change (par exemple quand une connexion sans fil change un point d’accès, ou qu’un réseau VPN est activé), l’algorithme de détection de proxy est réexécuté.  
   

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - jagged arrays [C#]
 - arrays [C#], jagged
 ms.assetid: 537c65a6-0e0a-4a00-a2b8-086f38519c70
-ms.openlocfilehash: 9fc05c8bdebf9c1c6b613db0b6a121e06765ac00
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 8d1be351e3aabea44138323d04c922dd1cccb78a
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57200674"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69597331"
 ---
 # <a name="jagged-arrays-c-programming-guide"></a>Tableaux en escalier (Guide de programmation C#)
 
@@ -45,7 +45,7 @@ Un tableau en escalier est un tableau dont les éléments sont des tableaux. Les
   
  [!code-csharp[csProgGuideArrays#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#24)]  
   
- Il est possible de combiner des tableaux en escalier et des tableaux multidimensionnels. Vous trouverez ci-dessous une déclaration et une initialisation d’un tableau en escalier unidimensionnel composé de trois éléments de tableau à deux dimensions de tailles différentes. Pour plus d’informations sur les tableaux à deux dimensions, consultez [Tableaux multidimensionnels](../../../csharp/programming-guide/arrays/multidimensional-arrays.md).  
+ Il est possible de combiner des tableaux en escalier et des tableaux multidimensionnels. Vous trouverez ci-dessous une déclaration et une initialisation d’un tableau en escalier unidimensionnel composé de trois éléments de tableau à deux dimensions de tailles différentes. Pour plus d’informations sur les tableaux à deux dimensions, consultez [Tableaux multidimensionnels](./multidimensional-arrays.md).  
   
  [!code-csharp[csProgGuideArrays#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#25)]  
   
@@ -59,7 +59,7 @@ Un tableau en escalier est un tableau dont les éléments sont des tableaux. Les
   
  retourne la valeur 3.  
   
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
  Cet exemple génère un tableau dont les éléments sont eux-mêmes des tableaux. Chacun des éléments de tableau ont une taille différente.  
   
@@ -68,7 +68,7 @@ Un tableau en escalier est un tableau dont les éléments sont des tableaux. Les
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Array>
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Tableaux](../../../csharp/programming-guide/arrays/index.md)
-- [Tableaux unidimensionnels](../../../csharp/programming-guide/arrays/single-dimensional-arrays.md)
-- [Tableaux multidimensionnels](../../../csharp/programming-guide/arrays/multidimensional-arrays.md)
+- [Guide de programmation C#](../index.md)
+- [Tableaux](./index.md)
+- [Tableaux unidimensionnels](./single-dimensional-arrays.md)
+- [Tableaux multidimensionnels](./multidimensional-arrays.md)

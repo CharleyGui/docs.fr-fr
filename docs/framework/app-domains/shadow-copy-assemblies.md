@@ -8,25 +8,25 @@ helpviewer_keywords:
 ms.assetid: de8b8759-fca7-4260-896b-5a4973157672
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 30e013d39d403bef5fe060fd1c64dc435de5be06
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 531e8f576dcbe0fc272c61a57a689d993fb03445
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347393"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69927897"
 ---
 # <a name="shadow-copying-assemblies"></a>Clichés instantanés d'assemblys
 Les clichés instantanés permettent aux assemblys qui sont utilisés dans un domaine d'application d'être mis à jour sans décharger le domaine d'application. Ceci est particulièrement utile pour les applications qui doivent être disponibles en permanence, comme des sites ASP.NET.  
   
 > [!IMPORTANT]
->  Les clichés instantanés ne sont pas pris en charge dans les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] .  
+> Les clichés instantanés ne sont pas pris en charge dans les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] .  
   
  Le common language runtime verrouille un fichier d'assembly quand l'assembly est chargé, de sorte que le fichier ne peut pas être mis à jour jusqu'à ce que l'assembly soit déchargé. La seule façon de décharger un assembly d'un domaine d'application est de décharger le domaine d'application. Donc, dans des circonstances normales, un assembly ne peut pas être mis à jour sur le disque tant que tous les domaines d'application qui l'utilisent n'ont pas été déchargés.  
   
  Quand un domaine d'application est configuré pour effectuer un cliché instantané des fichiers, les assemblys du chemin d'accès de l'application sont copiés vers un autre emplacement et chargés à partir de cet emplacement. La copie est verrouillée, mais le fichier d'assembly d'origine est déverrouillé et peut être mis à jour.  
   
 > [!IMPORTANT]
->  Les seuls assemblys qui peuvent faire l'objet de clichés instantanés sont ceux qui sont stockés dans le répertoire de l'application ou dans ses sous-répertoires, spécifiés par les propriétés <xref:System.AppDomainSetup.ApplicationBase%2A> et <xref:System.AppDomainSetup.PrivateBinPath%2A> quand le domaine d'application est configuré. Les assemblys stockés dans le Global Assembly Cache ne sont pas l'objet de clichés instantanés.  
+> Les seuls assemblys qui peuvent faire l'objet de clichés instantanés sont ceux qui sont stockés dans le répertoire de l'application ou dans ses sous-répertoires, spécifiés par les propriétés <xref:System.AppDomainSetup.ApplicationBase%2A> et <xref:System.AppDomainSetup.PrivateBinPath%2A> quand le domaine d'application est configuré. Les assemblys stockés dans le Global Assembly Cache ne sont pas l'objet de clichés instantanés.  
   
  Cet article contient les sections suivantes :  
   
@@ -49,7 +49,7 @@ Les clichés instantanés permettent aux assemblys qui sont utilisés dans un do
      Le chemin d'accès de base de l'emplacement est formé en concaténant la propriété <xref:System.AppDomainSetup.ApplicationName%2A> et la propriété <xref:System.AppDomainSetup.CachePath%2A> comme sous-répertoire. Les clichés instantanés des assemblys sont copiés vers des sous-répertoires de ce chemin d'accès, et non pas dans le chemin d'accès de base lui-même.  
   
     > [!NOTE]
-    >  Si la propriété <xref:System.AppDomainSetup.ApplicationName%2A> n'est pas définie, la propriété <xref:System.AppDomainSetup.CachePath%2A> est ignorée et le cache de téléchargement est utilisé. Aucune exception n'est levée.  
+    > Si la propriété <xref:System.AppDomainSetup.ApplicationName%2A> n'est pas définie, la propriété <xref:System.AppDomainSetup.CachePath%2A> est ignorée et le cache de téléchargement est utilisé. Aucune exception n'est levée.  
   
      Si vous spécifiez un emplacement personnalisé, vous devez vous charger de nettoyer les répertoires et les fichiers copiés quand ils ne sont plus nécessaires. Ils ne sont pas supprimés automatiquement.  
   
@@ -60,7 +60,7 @@ Les clichés instantanés permettent aux assemblys qui sont utilisés dans un do
      Quand vous activez les clichés instantanés pour un domaine d'application, le comportement par défaut est de copier tous les assemblys dans le chemin d'accès de l'application, c'est-à-dire dans les répertoires spécifiés par les propriétés <xref:System.AppDomainSetup.ApplicationBase%2A> et <xref:System.AppDomainSetup.PrivateBinPath%2A>. Vous pouvez limiter la copie vers les répertoires sélectionnés en créant une chaîne qui contient seulement les répertoires pour lesquels vous voulez effectuer des clichés instantanés, et en l'affectant à la propriété <xref:System.AppDomainSetup.ShadowCopyDirectories%2A>. Séparez les répertoires par des points-virgules. Les seuls assemblys qui font l'objet de clichés instantanés sont alors ceux des répertoires sélectionnés.  
   
     > [!NOTE]
-    >  Si vous n'affectez pas une chaîne à la propriété <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> ou si vous définissez cette propriété à `null`, tous les assemblys dans les répertoires spécifiés par les propriétés <xref:System.AppDomainSetup.ApplicationBase%2A> et <xref:System.AppDomainSetup.PrivateBinPath%2A> font l'objet d'un cliché instantané.  
+    > Si vous n'affectez pas une chaîne à la propriété <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> ou si vous définissez cette propriété à `null`, tous les assemblys dans les répertoires spécifiés par les propriétés <xref:System.AppDomainSetup.ApplicationBase%2A> et <xref:System.AppDomainSetup.PrivateBinPath%2A> font l'objet d'un cliché instantané.  
   
     > [!IMPORTANT]
     >  Les chemins d'accès des répertoires ne doivent pas contenir de points-virgules, car le point-virgule est le caractère délimiteur. Il n'existe pas de caractère d'échappement pour les points-virgules.  

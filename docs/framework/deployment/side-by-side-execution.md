@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: 649f1342-766b-49e6-a90d-5b019a751e11
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7c500b9343bdfa3481e8e5d9b938ebec8a323bdb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 47f211256b4820e3fb25339de2fe4db962171056
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64641034"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69911010"
 ---
 # <a name="side-by-side-execution-in-the-net-framework"></a>Exécution côte à côte dans .NET Framework
 L'exécution côte à côte désigne la possibilité d'exécuter plusieurs versions d'une application ou d'un composant sur le même ordinateur. Vous pouvez avoir plusieurs versions du Common Language Runtime et plusieurs versions d'applications et de composants qui utilisent une version du runtime sur le même ordinateur simultanément.  
@@ -75,17 +75,17 @@ L'exécution côte à côte désigne la possibilité d'exécuter plusieurs versi
   
  S'il existe un fichier de configuration de l'application, le runtime détermine la version appropriée du runtime à charger à partir des résultats du processus suivant :  
   
-1. Le runtime examine l’élément [\<supportedRuntime>](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) dans le fichier de configuration de l’application. Si une ou plusieurs des versions du runtime prises en charge spécifiées dans l’élément **\<supportedRuntime>** sont disponibles, le runtime charge la version du runtime indiquée par le premier élément **\<supportedRuntime>**. Si cette version n’est pas disponible, le runtime examine l’élément **\<supportedRuntime>** suivant et tente de charger la version du runtime spécifiée. Si cette version du runtime n’est pas disponible non plus, tous les éléments **\<supportedRuntime>** suivants sont examinés. Si aucune des versions du runtime prises en charge n'est disponible, le runtime ne peut pas charger de version du runtime et affiche un message à l'utilisateur (voir l'étape 3).  
+1. Le runtime examine l’élément [\<supportedRuntime>](../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md) dans le fichier de configuration de l’application. Si une ou plusieurs des versions du runtime prises en charge spécifiées dans l’élément **\<supportedRuntime>** sont disponibles, le runtime charge la version du runtime indiquée par le premier élément **\<supportedRuntime>** . Si cette version n’est pas disponible, le runtime examine l’élément **\<supportedRuntime>** suivant et tente de charger la version du runtime spécifiée. Si cette version du runtime n’est pas disponible non plus, tous les éléments **\<supportedRuntime>** suivants sont examinés. Si aucune des versions du runtime prises en charge n'est disponible, le runtime ne peut pas charger de version du runtime et affiche un message à l'utilisateur (voir l'étape 3).  
   
 2. Le runtime lit l'en-tête du fichier PE du fichier exécutable de l'application. Si la version du runtime spécifiée par l'en-tête du fichier PE est disponible, le runtime la charge. Sinon, le runtime recherche une version du runtime que Microsoft a déterminé comme compatible avec la version du runtime spécifiée dans l'en-tête du fichier PE. Si cette version est introuvable, le processus continue jusqu'à l'étape 3.  
   
 3. Le runtime affiche un message indiquant que la version du runtime prise en charge par l'application n'est pas disponible. Le runtime n'est pas chargé.  
   
     > [!NOTE]
-    >  Vous pouvez désactiver l’affichage de ce message en définissant la valeur NoGuiFromShim sous la clé de Registre HKLM\Software\Microsoft\\.NETFramework ou en utilisant la variable d’environnement COMPLUS_NoGuiFromShim. Par exemple, vous pouvez désactiver le message pour des applications qui n'interagissent généralement pas avec l'utilisateur, telles que des installations sans assistance ou des services Windows. Si l'affichage de ce message est désactivé, le runtime écrit un message dans le journal des événements.  Définissez la valeur de Registre NoGuiFromShim à 1 si vous voulez désactiver ce message pour toutes les applications d'un ordinateur. Vous pouvez aussi définir la variable d'environnement COMPLUS_NoGuiFromShim à la valeur 1 pour désactiver le message pour des applications s'exécutant dans un contexte utilisateur particulier.  
+    > Vous pouvez désactiver l’affichage de ce message en définissant la valeur NoGuiFromShim sous la clé de Registre HKLM\Software\Microsoft\\.NETFramework ou en utilisant la variable d’environnement COMPLUS_NoGuiFromShim. Par exemple, vous pouvez désactiver le message pour des applications qui n'interagissent généralement pas avec l'utilisateur, telles que des installations sans assistance ou des services Windows. Si l'affichage de ce message est désactivé, le runtime écrit un message dans le journal des événements.  Définissez la valeur de Registre NoGuiFromShim à 1 si vous voulez désactiver ce message pour toutes les applications d'un ordinateur. Vous pouvez aussi définir la variable d'environnement COMPLUS_NoGuiFromShim à la valeur 1 pour désactiver le message pour des applications s'exécutant dans un contexte utilisateur particulier.  
   
 > [!NOTE]
->  Après le chargement d'une version du runtime, les redirections de liaison d'assembly peuvent spécifier qu'une version différente d'un assembly .NET Framework donné soit chargée. Ces redirections de liaison s'appliquent uniquement à l'assembly spécifique qui fait l'objet de la redirection.  
+> Après le chargement d'une version du runtime, les redirections de liaison d'assembly peuvent spécifier qu'une version différente d'un assembly .NET Framework donné soit chargée. Ces redirections de liaison s'appliquent uniquement à l'assembly spécifique qui fait l'objet de la redirection.  
   
 ## <a name="partially-qualified-assembly-names-and-side-by-side-execution"></a>Exécution côte à côte et noms d'assembly partiellement qualifiés  
  Du fait qu'elles représentent une source potentielle de problèmes pour l'exécution côte à côte, les références d'assembly partiellement qualifiées ne peuvent s'utiliser que pour les liaisons à des assemblys au sein du répertoire d'une application. Dans la mesure du possible, n'utilisez pas de références d'assembly partiellement qualifiées dans votre code.  
@@ -107,7 +107,7 @@ publicKeyToken=...,
  Chaque fois qu'une instruction de chargement d'un assembly fait référence à `myAssembly`, les paramètres du fichier de configuration entraînent la conversion automatique par le runtime de la référence partiellement qualifiée `myAssembly` en une référence qualifiée complète. Par exemple, Assembly.Load("myAssembly") devient Assembly.Load("myAssembly, version=1.0.0.0, publicKeyToken=..., culture=neutral").  
   
 > [!NOTE]
->  Vous pouvez utiliser la méthode **LoadWithPartialName** pour ignorer la restriction du common language runtime qui n’autorise pas le chargement des assemblys partiellement référencés à partir du Global Assembly Cache. Cette méthode est réservée aux scénarios de communication à distance, car elle génère souvent des problèmes dans l'exécution côte à côte.  
+> Vous pouvez utiliser la méthode **LoadWithPartialName** pour ignorer la restriction du common language runtime qui n’autorise pas le chargement des assemblys partiellement référencés à partir du Global Assembly Cache. Cette méthode est réservée aux scénarios de communication à distance, car elle génère souvent des problèmes dans l'exécution côte à côte.  
   
 ## <a name="related-topics"></a>Rubriques connexes  
   

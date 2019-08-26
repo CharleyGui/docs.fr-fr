@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: 775ad4fb-914f-453c-98ef-ce1089b6f903
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 920787c00a12a56de2766ec9ea104241a5722852
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1d295f394a9ce7f038e2c64d42193e2d18040a98
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593652"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921664"
 ---
 # <a name="assembly-versioning"></a>Versioning des assemblys
 Tout le versioning des assemblys qui utilisent le Common Language Runtime est effectué au niveau de l'assembly. La version spécifique d'un assembly et les versions des assemblys dépendants sont enregistrées dans le manifeste d'assembly. La stratégie de version par défaut du runtime est la suivante : les applications s'exécutent uniquement avec les versions dans lesquelles elles ont été générées et testées, sauf en cas de substitution par une stratégie de version explicite dans des fichiers de configuration (le fichier de configuration de l'application, le fichier de stratégie de l'éditeur et le fichier de configuration de l'administrateur de l'ordinateur).  
   
 > [!NOTE]
->  Le versioning est uniquement effectué sur les assemblys avec des noms forts.  
+> Le versioning est uniquement effectué sur les assemblys avec des noms forts.  
   
  Le runtime procède en plusieurs étapes pour résoudre une demande de liaison d'assembly :  
   
@@ -65,7 +65,7 @@ Tout le versioning des assemblys qui utilisent le Common Language Runtime est ef
  La version d'informations correspond à une chaîne qui attache des informations supplémentaires sur la version à un assembly à des fins d'information uniquement ; ces informations ne sont pas utilisées au moment de l'exécution. La version d'informations en mode texte correspond à la documentation marketing, au coffret et au nom de produit du produit et n'est pas utilisée par le runtime. Par exemple, une version d'informations pourrait être "Version 1.0 du Common Language Runtime » ou « Contrôle NET SP 2". Sous Microsoft Windows, ces informations apparaissent dans l'élément "Product Version" de l'onglet Version de la boîte de dialogue des propriétés du fichier.  
   
 > [!NOTE]
->  Même si tout type de texte peut être spécifié, un message d'avertissement apparaît à la compilation si le format de la chaîne n'est pas celui qui est utilisé par le numéro de version de l'assembly ou si le format est correct mais contient des caractères génériques. Cet avertissement est sans incidence.  
+> Même si tout type de texte peut être spécifié, un message d'avertissement apparaît à la compilation si le format de la chaîne n'est pas celui qui est utilisé par le numéro de version de l'assembly ou si le format est correct mais contient des caractères génériques. Cet avertissement est sans incidence.  
   
  La version d'informations est représentée à l'aide de l'attribut personnalisé <xref:System.Reflection.AssemblyInformationalVersionAttribute?displayProperty=nameWithType>. Pour plus d’informations sur les informations de l’attribut de version, consultez [Définition des attributs d’assembly](../../../docs/framework/app-domains/set-assembly-attributes.md).  
   

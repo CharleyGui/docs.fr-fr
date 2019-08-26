@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: 029685be9d44ad947d4291912d7da1d8ce73d52a
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 403b1759164d588cb5af49c6cb05e001b030235f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053643"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69963600"
 ---
 # <a name="auto-generate-a-binary-classifier-using-the-cli"></a>Générer automatiquement un classifieur binaire à l’aide de la CLI
 
@@ -47,7 +47,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 1. Téléchargez le [fichier zip du jeu de données UCI Sentiment Labeled Sentences (voir les citations dans la remarque ci-dessous)](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) et décompressez-le dans un dossier de votre choix.
 
     > [!NOTE]
-    > Les jeux de données utilisés dans ce tutoriel incluent un jeu de données provenant de « From Group to Individual Labels using Deep Features » (Kotzias et al,. KDD 2015), hébergé dans le référentiel UCI Machine Learning (Dua, D. et Karra Taniskidou, E., 2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml]. Irvine (Californie) : Université de Californie, School of Information and Computer Science.
+    > Les jeux de données utilisés dans ce tutoriel incluent un jeu de données provenant de « From Group to Individual Labels using Deep Features » (Kotzias et al,. KDD 2015), hébergé dans le référentiel UCI Machine Learning (Dua, D. et Karra Taniskidou, E., 2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml ]. Irvine (Californie) : Université de Californie, School of Information and Computer Science.
 
 2. Copiez le fichier `yelp_labelled.txt` dans un dossier que vous avez créé précédemment (par exemple, `/cli-test`).
 
@@ -75,7 +75,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
     Maintenant, vous êtes prêt à commencer à utiliser la CLI pour ce scénario « Analyse des sentiments ».
 
     > [!NOTE]
-    > Quand vous aurez terminé ce tutoriel, vous pourrez également essayer avec vos propres jeux de données, si ceux-ci ont été préparés en vue d’être utilisés pour les tâches ML prises en charge dans la préversion de la CLI ML.NET, à savoir les tâches *« Classification binaire », « Classification multiclasse » et « Régression »*).
+    > Quand vous aurez terminé ce tutoriel, vous pourrez également essayer avec vos propres jeux de données, si ceux-ci ont été préparés en vue d’être utilisés pour les tâches ML prises en charge dans la préversion de la CLI ML.NET, à savoir les tâches *« Classification binaire », « Classification multiclasse » et « Régression »* ).
 
 ## <a name="run-the-mlnet-auto-train-command"></a>Exécuter la commande « mlnet auto-train »
 
@@ -88,7 +88,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
     Cette commande exécute la **commande `mlnet auto-train`**  :
     - pour une **tâche ML** de type **`binary-classification`**
     - en utilisant le **fichier de jeu de données `yelp_labelled.txt`** comme jeu de données d’entraînement et de test (en interne, la CLI utilise la validation croisée ou divise le jeu de données initial en deux jeux de données distincts pour l’entraînement et le test)
-    - où la **colonne objectif/cible** que vous voulez prédire (généralement appelée **« étiquette »**) est la **colonne d’index 1** (soit la deuxième colonne puisqu’il s’agit ici d’un index de base zéro)
+    - où la **colonne objectif/cible** que vous voulez prédire (généralement appelée **« étiquette »** ) est la **colonne d’index 1** (soit la deuxième colonne puisqu’il s’agit ici d’un index de base zéro)
     - qui **n’utilise pas d’en-tête de fichier** avec les noms de colonnes étant donné que ce fichier de jeu de données particulier n’a pas d’en-tête
     - où la **durée d’exploration ciblée** pour l’essai est de **10 secondes**
 
@@ -116,7 +116,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
     Pour connaître les autres métriques et avoir **plus d’informations détaillées sur les métriques** telles que la précision (Accuracy), l’aire sous la courbe (AUC), l’aire sous la courbe précision/rappel (AUCPR), le score F1 utilisées pour évaluer les différents modèles, consultez [Présentation des métriques ML.NET](../resources/metrics.md)
 
     > [!NOTE]
-    >  Vous pouvez essayer ce jeu de données très semblable et définir une durée de quelques minutes pour `--max-exploration-time` (par exemple, spécifiez 180 secondes pour une durée de trois minutes). Cela permet de vous trouver un modèle encore « meilleur », avec une configuration de pipeline d’entraînement différente pour ce jeu de données (qui est très petit, avec 1 000 lignes). 
+    > Vous pouvez essayer ce jeu de données très semblable et définir une durée de quelques minutes pour `--max-exploration-time` (par exemple, spécifiez 180 secondes pour une durée de trois minutes). Cela permet de vous trouver un modèle encore « meilleur », avec une configuration de pipeline d’entraînement différente pour ce jeu de données (qui est très petit, avec 1 000 lignes). 
         
     Si vous souhaitez trouver un modèle de « meilleure/bonne qualité » qui soit un « modèle prêt pour la production » et ciblant des jeux de données plus volumineux, vous devez faire des essais avec la CLI, généralement en spécifiant une durée d’exploration beaucoup plus longue selon la taille du jeu de données. En fait, dans de nombreux cas, vous aurez besoin de spécifier une durée d’exploration de plusieurs heures, d’autant plus si le jeu de données contient beaucoup de lignes et de colonnes. 
 

@@ -2,17 +2,17 @@
 title: Matérialisation intermédiaire (C#)
 ms.date: 07/20/2015
 ms.assetid: 7922d38f-5044-41cf-8e17-7173d6553a5e
-ms.openlocfilehash: d83bbc5e3de992e9ad4d86d0f684e2dfc3a29411
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 273cd68b9714287f259e763c9b7c534aac1931e6
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484531"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592132"
 ---
 # <a name="intermediate-materialization-c"></a>Matérialisation intermédiaire (C#)
 Si vous n’y prenez pas garde, dans certaines situations vous risquez de modifier de manière significative le profil de mémoire et de performances de votre application en provoquant la matérialisation prématurée de collections dans vos requêtes. Certains opérateurs de requête standard provoquent la matérialisation de leur collection source avant de générer un seul élément. Par exemple, <xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=nameWithType> itère au sein de l'ensemble de sa collection source, trie tous les éléments, puis génère le premier élément. Cela signifie qu'il est coûteux d'obtenir le premier élément d'une collection ordonnée ; chaque élément ultérieur a un faible coût. Tout cela est logique : il serait impossible pour cet opérateur de requête de faire autrement.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Cet exemple modifie l’exemple précédent. La méthode `AppendString` appelle <xref:System.Linq.Enumerable.ToList%2A> avant d'itérer la source. Cela provoque la matérialisation.  
   
 ```csharp  
@@ -84,8 +84,8 @@ Main: str >GHI!!!<
   
  Les opérateurs de requête standard peuvent également être chaînés ensemble. La dernière rubrique de ce didacticiel illustre cela.  
   
-- [Chaînage d’opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/chaining-standard-query-operators-together.md)  
+- [Chaînage d’opérateurs de requête standard (C#)](./chaining-standard-query-operators-together.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Tutoriel : Chaînage de requêtes (C#)](../../../../csharp/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+- [Tutoriel : Chaînage de requêtes (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

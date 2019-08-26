@@ -2,12 +2,12 @@
 title: 'Procédure : Récupérer un seul attribut (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 1b6b07b9-933f-47e9-874e-e790cab49dc5
-ms.openlocfilehash: 53a715954144ab1795aee18744d69a51f90699e4
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 4a1be51c7f0e89a8f211ae523eb102282bd9747b
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710093"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592650"
 ---
 # <a name="how-to-retrieve-a-single-attribute-linq-to-xml-c"></a>Procédure : Récupérer un seul attribut (LINQ to XML) (C#)
 Cette rubrique explique comment récupérer un seul attribut d'un élément, étant donné le nom de l'attribut. Ceci est utile pour écrire des expressions de requête où vous souhaitez rechercher un élément qui possède un attribut particulier.  
@@ -99,4 +99,4 @@ work
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Axes LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes-overview.md)
+- [Axes LINQ to XML (C#)](./linq-to-xml-axes-overview.md)

@@ -6,18 +6,18 @@ helpviewer_keywords:
 - XML documentation [C#]
 - C# language, XML documentation features
 ms.assetid: 8f33917b-9577-4c9a-818a-640dbbb0b399
-ms.openlocfilehash: 047207e495f542108d6f41247b25009d9c9bb909
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 259f0d5e7e1a67a273bccc7847c38a4d694c69ba
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634782"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69588106"
 ---
 # <a name="how-to-use-the-xml-documentation-features"></a>Procédure : Utiliser les fonctionnalités de la documentation XML
 
 L’exemple suivant montre un type qui a été documenté.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 [!code-csharp[csProgGuideDocComments#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#15)]
 
@@ -134,6 +134,6 @@ Le début de la documentation XML est symbolisé par trois barres obliques (//
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [/doc (Options du compilateur C#)](../../../csharp/language-reference/compiler-options/doc-compiler-option.md)
-- [Commentaires sur la documentation XML](../../../csharp/programming-guide/xmldoc/index.md)
+- [Guide de programmation C#](../index.md)
+- [/doc (Options du compilateur C#)](../../language-reference/compiler-options/doc-compiler-option.md)
+- [Commentaires sur la documentation XML](./index.md)

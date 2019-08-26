@@ -7,17 +7,17 @@ helpviewer_keywords:
 - classes [C#]
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
-ms.openlocfilehash: ad19099242a3bedbb7283219dfd7733db13231ec
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 193446ff98edce3b7c078c6eeba07cf9acdadaf0
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398588"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69597175"
 ---
 # <a name="classes-c-programming-guide"></a>Classes (Guide de programmation C#)
 
 ## <a name="reference-types"></a>Types référence  
-Un type défini comme [class](../../../csharp/language-reference/keywords/class.md) est un *type référence*. Au moment de l’exécution, quand vous déclarez une variable de type référence, celle-ci contient la valeur [Null](../../../csharp/language-reference/keywords/null.md) tant que vous n’avez pas explicitement créé une instance de la classe à l’aide de l’opérateur [new](../../../csharp/language-reference/operators/new-operator.md), ou que vous ne lui avez pas assigné un objet existant d’un type compatible, comme indiqué dans l’exemple suivant :
+Un type défini comme [class](../../language-reference/keywords/class.md) est un *type référence*. Au moment de l’exécution, quand vous déclarez une variable de type référence, celle-ci contient la valeur [Null](../../language-reference/keywords/null.md) tant que vous n’avez pas explicitement créé une instance de la classe à l’aide de l’opérateur [new](../../language-reference/operators/new-operator.md), ou que vous ne lui avez pas assigné un objet existant d’un type compatible, comme indiqué dans l’exemple suivant :
 
 ```csharp
 //Declaring an object of type MyClass.
@@ -31,7 +31,7 @@ Quand l’objet est créé, une quantité de mémoire suffisante est allouée su
   
 ## <a name="declaring-classes"></a>Déclaration de classes
 
- Les classes sont déclarées à l’aide du mot clé [class](../../../csharp/language-reference/keywords/class.md) suivi d’un identificateur unique, comme l’illustre l’exemple suivant :
+ Les classes sont déclarées à l’aide du mot clé [class](../../language-reference/keywords/class.md) suivi d’un identificateur unique, comme l’illustre l’exemple suivant :
 
  ```csharp
 //[access modifier] - [class] - [identifier]
@@ -70,7 +70,7 @@ Bien qu’ils soient parfois employés indifféremment, une classe et un objet s
   
 ## <a name="class-inheritance"></a>Héritage de classe  
 
-Les classes prennent entièrement en charge l’*héritage*, caractéristique fondamentale de la programmation orientée objet. Quand vous créez une classe, vous pouvez hériter de toute autre interface ou classe qui n’est pas définie comme [sealed](../../../csharp/language-reference/keywords/sealed.md), et d’autres classes peuvent hériter de votre classe et substituer des méthodes virtuelles de la classe.
+Les classes prennent entièrement en charge l’*héritage*, caractéristique fondamentale de la programmation orientée objet. Quand vous créez une classe, vous pouvez hériter de toute autre interface ou classe qui n’est pas définie comme [sealed](../../language-reference/keywords/sealed.md), et d’autres classes peuvent hériter de votre classe et substituer des méthodes virtuelles de la classe.
 
 L’héritage se fait par le biais d’une *dérivation*, ce qui signifie qu’une classe est déclarée à l’aide d’une *classe de base* dont elle hérite les données et le comportement. Pour spécifier une classe de base, ajoutez deux-points et le nom de la classe de base après le nom de la classe dérivée, comme suit :  
 

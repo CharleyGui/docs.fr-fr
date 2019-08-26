@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - protected keyword [C#]
 ms.assetid: 05ce3794-6675-4025-bddb-eaaa0ec22892
-ms.openlocfilehash: 55fbcf6fbc5148143e2d559ab8192e3ea10ab43c
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: a0420dd10d81c4ae893ab0447244a611091ed7b0
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633303"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69601974"
 ---
 # <a name="protected-c-reference"></a>protected (référence C#)
 
@@ -25,7 +25,7 @@ Un membre protégé est accessible dans sa classe et par les instances de la cla
 
 Pour obtenir une comparaison de `protected` et des autres modificateurs d’accès, consultez [Niveaux d’accessibilité](accessibility-levels.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Un membre protégé d’une classe de base est accessible dans une classe dérivée uniquement si l’accès s’effectue par le biais du type de la classe dérivée. Prenons l’exemple de l’extrait de code suivant :
 
@@ -35,7 +35,7 @@ L’instruction `a.x = 10` génère une erreur, car elle est appelée dans la m�
 
 Les membres de struct ne peuvent pas être protégés, car le struct ne peut pas être hérité.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Dans cet exemple, la classe `DerivedPoint` est dérivée de `Point`. Vous pouvez donc accéder aux membres protégés de la classe de base directement à partir de la classe dérivée.
 
@@ -53,8 +53,8 @@ Pour plus d’informations, consultez [Accessibilité déclarée](~/_csharplang/
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../../csharp/language-reference/index.md)
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs d’accès](access-modifiers.md)
 - [Niveaux d’accessibilité](accessibility-levels.md)

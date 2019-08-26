@@ -6,12 +6,12 @@ helpviewer_keywords:
 - object identity [C#]
 - reference equality [C#]
 ms.assetid: 91307fda-267b-4fd2-a338-2aada39ee791
-ms.openlocfilehash: 057532cae42d7a0b6d11750ae0e33e43108cfda9
-ms.sourcegitcommit: 41c0637e894fbcd0713d46d6ef1866f08dc321a2
+ms.openlocfilehash: 2b4b7b7bdd03077a78aa2a6375764fa86a885ef5
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57203585"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69588639"
 ---
 # <a name="how-to-test-for-reference-equality-identity-c-programming-guide"></a>Procédure : Tester l'égalité des références (Identité) (Guide de programmation C#)
 Il n’est pas utile d’implémenter une logique personnalisée pour prendre en charge les comparaisons d’égalité de références dans vos types. Cette fonctionnalité est fournie pour tous les types par la méthode <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> statique.  
@@ -29,4 +29,4 @@ Il n’est pas utile d’implémenter une logique personnalisée pour prendre en
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Comparaisons d’égalité](../../../csharp/programming-guide/statements-expressions-operators/equality-comparisons.md)
+- [Comparaisons d’égalité](./equality-comparisons.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 28116714-da77-45f7-826d-fa035d121948
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dd41051bd770d3579137aa158e70cef41aed49f8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d1334f8c8e1b5898e93697461f609429d4aae764
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64607830"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921702"
 ---
 # <a name="assembly-contents"></a>Contenu d'un assembly
 En général, un assembly statique peut comporter les quatre éléments suivants :  
@@ -40,7 +40,7 @@ En général, un assembly statique peut comporter les quatre éléments suivants
  ![Diagramme qui montre un assembly multifichier.](./media/assembly-contents/multifile-assembly-diagram.gif) 
   
 > [!NOTE]
->  Les fichiers qui composent un assembly multifichier ne sont pas physiquement reliés par le système de fichiers. Ils sont à la place reliés par le manifeste d'assembly et le Common Language Runtime les manage en tant qu'unité.  
+> Les fichiers qui composent un assembly multifichier ne sont pas physiquement reliés par le système de fichiers. Ils sont à la place reliés par le manifeste d'assembly et le Common Language Runtime les manage en tant qu'unité.  
   
  Dans cette illustration, les trois fichiers appartiennent à un assembly, comme décrit dans le manifeste de l'assembly contenu dans MyAssembly.dll. Pour le système de fichiers, il s'agit de trois fichiers distincts. Notez que le fichier Util.netmodule a été compilé comme un module car il ne contient pas d'information sur l'assembly. Lorsque l'assembly a été créé, le manifeste de l'assembly a été ajouté à MyAssembly.dll, en indiquant sa relation avec Util.netmodule et Graphic.bmp.  
   

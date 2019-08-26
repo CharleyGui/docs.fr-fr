@@ -2,12 +2,12 @@
 title: Opérations de jointure (C#)
 ms.date: 07/20/2015
 ms.assetid: 5105e0da-1267-4c00-837a-f0e9602279b8
-ms.openlocfilehash: db42874becaf9760b7060d7f306cc20f950f143a
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: 95661e2d0d7f4f0e75c1fa1b10e1f322923189b1
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58411458"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69592082"
 ---
 # <a name="join-operations-c"></a>Opérations de jointure (C#)
 Une *jointure* de deux sources de données est l’association des objets d’une source de données aux objets qui partagent un attribut commun dans une autre source de données.  
@@ -30,15 +30,15 @@ Une *jointure* de deux sources de données est l’association des objets d’un
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq>
-- [Vue d’ensemble des opérateurs de requête standard (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Types anonymes](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
+- [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
+- [Types anonymes](../../classes-and-structs/anonymous-types.md)
 - [Formuler des jointures et des requêtes de produit croisé](../../../../framework/data/adonet/sql/linq/formulate-joins-and-cross-product-queries.md)
-- [join, clause](../../../../csharp/language-reference/keywords/join-clause.md)
-- [Guide pratique pour effectuer des jointures à l’aide de clés composites](../../../../csharp/programming-guide/linq-query-expressions/how-to-join-by-using-composite-keys.md)
-- [Guide pratique pour joindre du contenu issu de fichiers non similaires (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md)
-- [Guide pratique pour classer les résultats d’une clause join](../../../../csharp/programming-guide/linq-query-expressions/how-to-order-the-results-of-a-join-clause.md)
-- [Guide pratique pour effectuer des opérations de jointure personnalisées](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-custom-join-operations.md)
-- [Guide pratique pour effectuer des jointures groupées](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-grouped-joins.md)
-- [Guide pratique pour effectuer des jointures internes](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-inner-joins.md)
-- [Guide pratique pour effectuer des jointures externes gauches](../../../../csharp/programming-guide/linq-query-expressions/how-to-perform-left-outer-joins.md)
-- [Guide pratique pour remplir des collections d’objets issues de plusieurs sources (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md)
+- [join, clause](../../../language-reference/keywords/join-clause.md)
+- [Guide pratique pour effectuer des jointures à l’aide de clés composites](../../linq-query-expressions/how-to-join-by-using-composite-keys.md)
+- [Guide pratique pour joindre du contenu issu de fichiers non similaires (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md)
+- [Guide pratique pour classer les résultats d’une clause join](../../linq-query-expressions/how-to-order-the-results-of-a-join-clause.md)
+- [Guide pratique pour effectuer des opérations de jointure personnalisées](../../linq-query-expressions/how-to-perform-custom-join-operations.md)
+- [Guide pratique pour effectuer des jointures groupées](../../linq-query-expressions/how-to-perform-grouped-joins.md)
+- [Guide pratique pour effectuer des jointures internes](../../linq-query-expressions/how-to-perform-inner-joins.md)
+- [Guide pratique pour effectuer des jointures externes gauches](../../linq-query-expressions/how-to-perform-left-outer-joins.md)
+- [Guide pratique pour remplir des collections d’objets issues de plusieurs sources (LINQ) (C#)](./how-to-populate-object-collections-from-multiple-sources-linq.md)

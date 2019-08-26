@@ -2,12 +2,12 @@
 title: 'Procédure : Créer et utiliser des assemblys à l’aide de la ligne de commande (C#)'
 ms.date: 07/20/2015
 ms.assetid: 408ddce3-89e3-4e12-8353-34a49beeb72b
-ms.openlocfilehash: 12d23816b740816bd357c3c2ac57583f31bf3cb3
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 0a8db22a05d834d15f6e6b7f049f59f86bc1fe1d
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586036"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595967"
 ---
 # <a name="how-to-create-and-use-assemblies-using-the-command-line-c"></a>Procédure : Créer et utiliser des assemblys à l’aide de la ligne de commande (C#)
 Un assembly, ou une bibliothèque de lien dynamique (DLL), est lié à votre programme au moment de l’exécution. Pour illustrer la génération et l’utilisation d’une DLL, considérez le scénario suivant :  
@@ -20,7 +20,7 @@ Un assembly, ou une bibliothèque de lien dynamique (DLL), est lié à votre pro
   
 - `TestCode`: fichier qui contient la méthode `Main`. Il utilise les méthodes dans le fichier DLL pour calculer la somme et le produit des arguments d’exécution.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
   
 ```csharp  
 // File: Add.cs   
@@ -105,6 +105,6 @@ UtilityMethods.MultiplyClass.Multiply(num1, num2);
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../../../csharp/programming-guide/index.md)
+- [Guide de programmation C#](../../index.md)
 - [Assemblys dans .NET](../../../../standard/assembly/index.md)
 - [Création d’une classe pour contenir des fonctions DLL](../../../../framework/interop/creating-a-class-to-hold-dll-functions.md)

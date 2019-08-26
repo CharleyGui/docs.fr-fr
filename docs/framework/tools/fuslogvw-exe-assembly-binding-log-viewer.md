@@ -11,18 +11,18 @@ helpviewer_keywords:
 ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 80a07e389f84c56f6fa3f718b8ba7e0504201ba7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8a04c56391b70ddc887b0ff2f7bcd6a169887d2f
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64591525"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69933676"
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (Visionneuse du journal de liaison d’assembly)
 La Visionneuse du journal de liaison d’assembly affiche des détails sur les liaisons d’assemblys. Ces informations vous permettent d'identifier les raisons pour lesquelles le .NET Framework ne parvient pas à trouver un assembly au moment de l'exécution. Ces échecs résultent généralement d'un assembly déployé au mauvais emplacement, d'une image native qui n'est plus valide ou d'une incompatibilité entre les numéros de version ou les cultures. L'échec de la localisation d'un assembly par le Common Language Runtime s'affiche d'ordinaire sous la forme de <xref:System.TypeLoadException> dans votre application.  
   
 > [!IMPORTANT]
->  Vous devez exécuter fuslogvw.exe avec les droits d'administrateur.  
+> Vous devez exécuter fuslogvw.exe avec les droits d'administrateur.  
   
  Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7) avec des informations d’identification d’administrateur. Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
   
@@ -41,7 +41,7 @@ fuslogvw
 2. Sélectionnez la case d’option **Personnalisé** pour afficher les échecs de liaison dans un répertoire personnalisé que vous spécifiez. Vous devez spécifier l’emplacement personnalisé dans lequel vous souhaitez que l’exécution stocke les journaux en affectant un nom de répertoire valide comme emplacement du journal personnalisé dans la boîte de dialogue **Paramètres du journal**. Ce répertoire doit être propre et contenir uniquement les fichiers générés par le runtime. S'il contient un exécutable qui génère un échec devant être enregistré dans le journal, ce dernier ne sera pas enregistré, car l'outil tente de créer un répertoire portant le même nom que l'exécutable. En outre, toute tentative d'exécution d'un exécutable à partir de l'emplacement du journal échouera.  
   
     > [!NOTE]
-    >  L'emplacement des liaisons par défaut est préférable à l'emplacement des liaisons personnalisé. Le runtime stocke l'emplacement des liaisons par défaut dans le cache WinInet et le vide par conséquent automatiquement. Si vous spécifiez un emplacement des liaisons personnalisé, vous devez vous-même le vider.  
+    > L'emplacement des liaisons par défaut est préférable à l'emplacement des liaisons personnalisé. Le runtime stocke l'emplacement des liaisons par défaut dans le cache WinInet et le vide par conséquent automatiquement. Si vous spécifiez un emplacement des liaisons personnalisé, vous devez vous-même le vider.  
   
 ### <a name="to-view-details-about-a-specific-failure"></a>Pour afficher des détails sur un échec spécifique  
   
@@ -206,7 +206,7 @@ Discarding native image.
      Consultez la Remarque importante relative aux assemblys chargés comme étant indépendants du domaine.  
   
 > [!IMPORTANT]
->  Lorsqu'un assembly est chargé comme étant indépendant du domaine, par exemple en définissant la propriété <xref:System.AppDomainSetup.LoaderOptimization%2A> à <xref:System.LoaderOptimization.MultiDomain?displayProperty=nameWithType> ou <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=nameWithType>, l'activation de l'enregistrement peut entraîner une fuite de mémoire dans certains cas. Cela peut arriver si une entrée de journal est faite lorsqu'un module indépendant du domaine est chargé dans un domaine d'application, et qu'ultérieurement le domaine d'application est déchargé. L'entrée de journal ne peut pas être diffusée avant la fin du processus. Certains débogueurs activent automatiquement l'enregistrement.  
+> Lorsqu'un assembly est chargé comme étant indépendant du domaine, par exemple en définissant la propriété <xref:System.AppDomainSetup.LoaderOptimization%2A> à <xref:System.LoaderOptimization.MultiDomain?displayProperty=nameWithType> ou <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=nameWithType>, l'activation de l'enregistrement peut entraîner une fuite de mémoire dans certains cas. Cela peut arriver si une entrée de journal est faite lorsqu'un module indépendant du domaine est chargé dans un domaine d'application, et qu'ultérieurement le domaine d'application est déchargé. L'entrée de journal ne peut pas être diffusée avant la fin du processus. Certains débogueurs activent automatiquement l'enregistrement.  
   
 #### <a name="to-enable-a-custom-log-path"></a>Pour activer un chemin de journal personnalisé  
   
@@ -215,7 +215,7 @@ Discarding native image.
 2. Entrez le chemin dans la zone de texte **Chemin du journal personnalisé**.  
   
 > [!NOTE]
->  La [visionneuse du journal de liaison d’assembly (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) utilise le cache Internet Explorer (IE) pour stocker son journal de liaison. En raison de la perte d’intégrité occasionnelle du cache IE, la [visionneuse du journal de liaison d’assembly (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) peut parfois cesser d’afficher les nouveaux journaux de liaison dans la fenêtre d’affichage. Suite à cette perte d’intégrité, l’infrastructure de liaison .NET (fusion) ne peut pas écrire ou lire dans le journal de liaison. (Ce problème ne se pose pas si vous utilisez un chemin d'accès de journal personnalisé.)  Pour résoudre le problème de perte d'intégrité et permettre à la fusion d'afficher à nouveau les journaux de liaison, videz le cache IE en supprimant les fichiers Internet temporaires à partir de la boîte de dialogue Options Internet d'Internet Explorer.  
+> La [visionneuse du journal de liaison d’assembly (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) utilise le cache Internet Explorer (IE) pour stocker son journal de liaison. En raison de la perte d’intégrité occasionnelle du cache IE, la [visionneuse du journal de liaison d’assembly (Fuslogvw.exe)](../../../docs/framework/tools/fuslogvw-exe-assembly-binding-log-viewer.md) peut parfois cesser d’afficher les nouveaux journaux de liaison dans la fenêtre d’affichage. Suite à cette perte d’intégrité, l’infrastructure de liaison .NET (fusion) ne peut pas écrire ou lire dans le journal de liaison. (Ce problème ne se pose pas si vous utilisez un chemin d'accès de journal personnalisé.)  Pour résoudre le problème de perte d'intégrité et permettre à la fusion d'afficher à nouveau les journaux de liaison, videz le cache IE en supprimant les fichiers Internet temporaires à partir de la boîte de dialogue Options Internet d'Internet Explorer.  
 >   
 >  Si votre application non managée héberge le Common Language Runtime en implémentant les interfaces `IHostAssemblyManager` et `IHostAssemblyStore`, les entrées de journal ne peuvent pas être stockées dans le cache de WinInet.  Pour consulter les entrées de journal correspondant aux hôtes personnalisés qui implémentent ces interfaces, vous devez spécifier un autre chemin d'accès au journal.  
   
@@ -226,7 +226,7 @@ Discarding native image.
 2. Cochez la case **Activer la journalisation immersive**.  
   
     > [!NOTE]
-    >  Cette zone est activée uniquement sur Windows 8 ou version ultérieure.  
+    > Cette zone est activée uniquement sur Windows 8 ou version ultérieure.  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: d4a80263-f3e0-4d81-9b61-f0cbeae3797b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3f87fb330fbea1344cc8532519d358fe8580a9fd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f283aad7c6727aff111aaaf78beb1e8da4b45898
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592705"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988367"
 ---
 # <a name="strong-named-assemblies"></a>Assemblys avec nom fort
 Attribuer un nom fort à un assembly permet de lui créer une identité unique pour prévenir d'éventuels conflits entre les assemblys.  
@@ -25,7 +25,7 @@ Attribuer un nom fort à un assembly permet de lui créer une identité unique p
  Quand vous créez un assembly avec nom fort, il contient son nom de texte simple, son numéro de version, d'éventuelles informations sur sa culture, une signature numérique et la clé publique qui correspond à la clé privée utilisée pour la signature.  
   
 > [!WARNING]
->  Ne comptez pas sur les noms forts pour la sécurité. Ils fournissent seulement une identité unique.  
+> Ne comptez pas sur les noms forts pour la sécurité. Ils fournissent seulement une identité unique.  
   
 ## <a name="why-strong-name-your-assemblies"></a>Pourquoi attribuer un nom fort à vos assemblys ?  
  Lorsque vous référencez un assembly avec nom fort, vous pouvez en attendre certains avantages, tels que la protection du contrôle de version et de l'affectation de nom. Dans certains scénarios, les assemblys avec nom fort doivent impérativement être installés dans le Global Assembly Cache.  

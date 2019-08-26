@@ -2,12 +2,12 @@
 title: Vue d’ensemble de LINQ to XML (C#)
 ms.date: 10/30/2018
 ms.assetid: 716b94d3-0091-4de1-8e05-41bc069fa9dd
-ms.openlocfilehash: 6a7d681b52bbc6ce515e2202f3f448ce4ba79ced
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: 46a2c0282da01000f3f524614a7a4cf851b7f4e1
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67267957"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69591895"
 ---
 # <a name="linq-to-xml-overview-c"></a>Vue d’ensemble de LINQ to XML (C#)
 
@@ -116,11 +116,11 @@ new XElement("Contacts",
 );
 ```
 
-Pour plus d’informations, consultez [Création d’arborescences XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees-linq-to-xml-2.md).
+Pour plus d’informations, consultez [Création d’arborescences XML (C#)](./creating-xml-trees-linq-to-xml-2.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/reference-linq-to-xml.md)
-- [LINQ to XML, différences par rapport à DOM (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-vs-dom.md)
-- [LINQ to XML, différences par rapport à d’autres technologies XML](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md)
+- [Référence (LINQ to XML)](./reference-linq-to-xml.md)
+- [LINQ to XML, différences par rapport à DOM (C#)](./linq-to-xml-vs-dom.md)
+- [LINQ to XML, différences par rapport à d’autres technologies XML](./linq-to-xml-vs-other-xml-technologies.md)
 - <xref:System.Xml.Linq>

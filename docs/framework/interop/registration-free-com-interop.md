@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 90f308b9-82dc-414a-bce1-77e0155e56bd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ed8525cad7dd56fe026070786b0f0cf51c0fec2d
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 3134477198f0cd4c821bea456450e98cc73c6ad2
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363977"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957468"
 ---
 # <a name="registration-free-com-interop"></a>COM Interop sans inscription
 COM Interop sans inscription active un composant sans utiliser le Registre Windows pour stocker les informations d'assembly. Au lieu d’inscrire un composant sur un ordinateur pendant le déploiement, vous créez des fichiers manifeste de type Win32 au moment du design qui contiennent des informations sur la liaison et l’activation. Ces fichiers manifeste, plutôt que les clés de Registre, dirigent l'activation d'un objet.  
@@ -34,9 +34,9 @@ COM Interop sans inscription active un composant sans utiliser le Registre Windo
   
 1. La prise en charge de COM Interop sans inscription varie légèrement selon le type d'assembly de bibliothèque, plus précisément, si l'assembly est non managé (côte à côte COM) ou managé ( basé sur .NET). Le tableau suivant présente les conditions requises concernant le système d'exploitation et la version de .NET Framework pour chaque type d'assembly.  
   
-    |Type d'assembly|Système d’exploitation|Version du .NET Framework|  
+    |Type d'assembly|Système d'exploitation|Version du .NET Framework|  
     |-------------------|----------------------|----------------------------|  
-    |Côte à côte COM|Microsoft Windows XP|Non requis.|  
+    |Côte à côte COM|Microsoft Windows XP|Non requis|  
     |Basé sur .NET|Windows XP SP2|.NET Framework version 1.1 ou ultérieure|  
   
      La famille Windows Server 2003 prend également en charge COM Interop sans inscription pour les assemblys .NET.  
@@ -52,7 +52,7 @@ COM Interop sans inscription active un composant sans utiliser le Registre Windo
      L'activation sans inscription est facultative pour les composants COM installés sur Windows XP. Pour obtenir des instructions détaillées sur l’ajout d’un assembly côte à côte à une application, consultez [Utilisation d’assemblys côte à côte](/windows/desktop/SbsCs/using-side-by-side-assemblies).  
   
     > [!NOTE]
-    >  L'exécution côte à côte est une fonctionnalité de .NET Framework qui permet à plusieurs versions du runtime et à plusieurs versions d'applications et de composants qui utilisent une version du runtime, de s'exécuter sur le même ordinateur en même temps. L'exécution côte à côte et les assemblys côte à côte sont deux mécanismes différents de la fonctionnalité de côte à côte.  
+    > L'exécution côte à côte est une fonctionnalité de .NET Framework qui permet à plusieurs versions du runtime et à plusieurs versions d'applications et de composants qui utilisent une version du runtime, de s'exécuter sur le même ordinateur en même temps. L'exécution côte à côte et les assemblys côte à côte sont deux mécanismes différents de la fonctionnalité de côte à côte.  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -2,12 +2,12 @@
 title: Propriétés
 description: En savoir plus sur les propriétés C#, notamment les fonctionnalités liées à la validation, les valeurs calculées, l’évaluation différée et les notifications de modification de propriété.
 ms.date: 04/25/2018
-ms.openlocfilehash: e8b6955da1f36673962339785b0bfb012343acf8
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 6638ae74516d7546882c8a380eed9b03ff3d18e9
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65878278"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69587407"
 ---
 # <a name="properties"></a>Propriétés
 
@@ -104,7 +104,7 @@ Une propriété peut faire plus que simplement retourner la valeur d’un champ 
 
 [!code-csharp[A computed property](../../samples/snippets/csharp/properties/Person.cs#10)]
 
-L’exemple ci-dessus utilise la fonctionnalité d’[interpolation de chaîne](../csharp/language-reference/tokens/interpolated.md) pour créer la chaîne mise en forme du nom complet.
+L’exemple ci-dessus utilise la fonctionnalité d’[interpolation de chaîne](./language-reference/tokens/interpolated.md) pour créer la chaîne mise en forme du nom complet.
 
 Vous pouvez également utiliser un *membre expression-bodied*, qui constitue un moyen plus succinct de créer la propriété `FullName` calculée :
 

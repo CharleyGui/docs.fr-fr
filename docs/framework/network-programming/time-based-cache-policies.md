@@ -17,12 +17,12 @@ helpviewer_keywords:
 - minimum freshness policy
 - age of cached resources
 ms.assetid: 74f0bcaf-5c95-40c1-9967-f3bbf1d2360a
-ms.openlocfilehash: 4dc57ae05822a602b4647839da259ca8f469fb82
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1b3e39deca8b483413d2a2c42dbacbf821b3e42e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613835"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69942373"
 ---
 # <a name="time-based-cache-policies"></a>stratégies de cache basées sur la durée
 Une stratégie de cache basée sur la durée définit l’actualisation des entrées en cache en fonction de l’heure de récupération de la ressource, des en-têtes retournés avec la ressource et de l’heure actuelle. Quand vous définissez une stratégie de cache basée sur la durée, vous pouvez utiliser la stratégie basée sur la durée <xref:System.Net.Cache.HttpRequestCacheLevel.Default> ou créer une stratégie basée sur la durée personnalisée. Si vous utilisez la stratégie basée sur la durée par défaut pour les ressources obtenues à l’aide du protocole HTTP (Hypertext Transfer Protocol), le comportement du cache est précisé par les en-têtes inclus dans la réponse en cache et par les comportements spécifiés dans les sections 13 et 14 de la norme RFC 2616, disponible sur le site web [Internet Engineering Task Force (IETF)](https://www.ietf.org/). Pour obtenir un exemple de code qui montre comment définir la stratégie basée sur la durée par défaut pour les ressources HTTP, consultez [Guide pratique pour définir la stratégie de cache basée sur la durée par défaut pour une application](../../../docs/framework/network-programming/how-to-set-the-default-time-based-cache-policy-for-an-application.md). Pour obtenir des exemples de code qui montrent comment créer et utiliser des stratégies de cache, consultez [Configuration de la mise en cache dans les applications réseau](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md).  
@@ -39,7 +39,7 @@ Une stratégie de cache basée sur la durée définit l’actualisation des entr
 - Date de synchronisation du cache  
   
 > [!NOTE]
->  Utiliser la stratégie de cache basée sur la durée par défaut n’équivaut pas à définir une stratégie de cache par défaut pour votre application. La stratégie basée sur la durée par défaut est une stratégie spécifique qui peut être utilisée au niveau de la requête ou de l’application. La stratégie de cache par défaut pour votre application est une stratégie (basée sur l’emplacement ou sur la durée) qui est appliquée quand aucune stratégie n’est définie au niveau d’une requête. Pour plus d’informations sur la définition d’une stratégie de cache par défaut pour votre application, consultez <xref:System.Net.WebRequest.DefaultCachePolicy%2A>.  
+> Utiliser la stratégie de cache basée sur la durée par défaut n’équivaut pas à définir une stratégie de cache par défaut pour votre application. La stratégie basée sur la durée par défaut est une stratégie spécifique qui peut être utilisée au niveau de la requête ou de l’application. La stratégie de cache par défaut pour votre application est une stratégie (basée sur l’emplacement ou sur la durée) qui est appliquée quand aucune stratégie n’est définie au niveau d’une requête. Pour plus d’informations sur la définition d’une stratégie de cache par défaut pour votre application, consultez <xref:System.Net.WebRequest.DefaultCachePolicy%2A>.  
   
 ### <a name="maximum-age"></a>Ancienneté maximale  
  Le critère de stratégie d’ancienneté maximale spécifie la durée pendant laquelle une copie en cache d’une ressource peut être utilisée. Si la copie en cache de la ressource est plus ancienne que la durée spécifiée, la ressource doit être revalidée en la vérifiant par rapport au contenu sur le serveur. Si l’ancienneté maximale permet l’utilisation de la ressource après son expiration, ce critère n’est pas appliqué, sauf si une valeur d’obsolescence maximale est également spécifiée.  

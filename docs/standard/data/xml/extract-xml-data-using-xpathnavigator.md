@@ -8,21 +8,21 @@ dev_langs:
 ms.assetid: 095b0987-ee4b-4595-a160-da1c956ad576
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f25fa9706d43dd69da233e474127543dfdf83fb1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: f789317defe3f4b44b37e6d94d37b974d003bcae
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54595628"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69966994"
 ---
 # <a name="extract-xml-data-using-xpathnavigator"></a>Extraction de données XML à l’aide de XPathNavigator
 Il existe différentes manières de représenter un document XML dans Microsoft .NET Framework. Ce peut être à l'aide d'une chaîne (<xref:System.String>) ou des classes <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter>, <xref:System.Xml.XmlDocument> ou <xref:System.Xml.XPath.XPathDocument>. Pour faciliter les déplacements entre ces différentes représentations d'un document XML, la classe <xref:System.Xml.XPath.XPathNavigator> offre diverses méthodes et propriétés d'extraction du XML en tant qu'objet <xref:System.String>, <xref:System.Xml.XmlReader> ou <xref:System.Xml.XmlWriter>.  
   
-## <a name="convert-an-xpathnavigator-to-a-string"></a>Conversion d'un objet XPathNavigator en une chaîne  
+## <a name="convert-an-xpathnavigator-to-a-string"></a>Conversion d’un objet XPathNavigator en une chaîne  
  La propriété <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> de la classe <xref:System.Xml.XPath.XPathNavigator> permet d'obtenir le balisage de l'entièreté du document XML ou d'un seul nœud et de ses nœuds enfants.  
   
 > [!NOTE]
->  La propriété <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> n'obtient le balisage que des nœuds enfants d'un nœud.  
+> La propriété <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> n'obtient le balisage que des nœuds enfants d'un nœud.  
   
  L'exemple de code suivant montre comment enregistrer en tant qu'objet <xref:System.Xml.XPath.XPathNavigator> l'entièreté d'un document XML contenu dans un objet <xref:System.String>, de même qu'un nœud unique et ses nœuds enfants.  
   

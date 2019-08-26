@@ -8,29 +8,29 @@ dev_langs:
 ms.assetid: 76f28770-7126-428f-9ed5-7b5ae8bad5ee
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3d47fa4d4ef7a55182dd27aa6f64542fec1fa99c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 40d7ef11dde882d99c21fe541c2689c52a634edf
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54704314"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69915947"
 ---
 # <a name="xmlschemacollection-schema-compilation"></a>Compilation de schéma XmlSchemaCollection
 La classe **XmlSchemaCollection** est un cache ou une bibliothèque où des schémas XDR (XML-Data Reduced) et des schémas de langage XSD (XML Schema Definition) peuvent être stockés et validés. **XmlSchemaCollection** améliore les performances en mettant les schémas en cache au lieu d'y accéder à partir d'un fichier ou d'une URL.  
   
 > [!NOTE]
->  Bien que la classe **XmlSchemaCollection** contienne à la fois des schémas XDR et des schémas XML, toute méthode ou propriété qui prend ou retourne un objet **XmlSchema** ne prend en charge que les schémas XML.  
+> Bien que la classe **XmlSchemaCollection** contienne à la fois des schémas XDR et des schémas XML, toute méthode ou propriété qui prend ou retourne un objet **XmlSchema** ne prend en charge que les schémas XML.  
   
 > [!IMPORTANT]
->  La classe <xref:System.Xml.Schema.XmlSchemaCollection> est désormais obsolète et a été remplacée par la classe <xref:System.Xml.Schema.XmlSchemaSet>. Pour plus d’informations sur la classe <xref:System.Xml.Schema.XmlSchemaSet>, consultez [XmlSchemaSet pour la compilation de schémas](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
+> La classe <xref:System.Xml.Schema.XmlSchemaCollection> est désormais obsolète et a été remplacée par la classe <xref:System.Xml.Schema.XmlSchemaSet>. Pour plus d’informations sur la classe <xref:System.Xml.Schema.XmlSchemaSet>, consultez [XmlSchemaSet pour la compilation de schémas](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).  
   
 ## <a name="add-schemas-to-the-collection"></a>Ajout de schémas à la collection  
  Les schémas sont chargés dans la collection à l’aide de la méthode **Add** de la collection **XmlSchemaCollection**. C’est à ce moment-là que le schéma est associé à un URI d’espace de noms. Pour les schémas XML, l'URI d'espace de noms correspond généralement à l'espace de noms cible du schéma. Pour les schémas XDR, l'URI d'espace de noms correspond à l'espace de noms spécifié lors de l'ajout du schéma à la collection.  
   
-## <a name="check-for-a-schema-in-the-collection"></a>Recherche d’un schéma dans la collection  
+## <a name="check-for-a-schema-in-the-collection"></a>Recherche d'un schéma dans la collection  
  Vous pouvez vérifier si un schéma se trouve dans la collection à l’aide de la méthode **Contains**. La méthode **Contains** prend soit un objet **XmlSchema** (schémas XML uniquement), soit une chaîne qui représente l'URI d'espace de noms associé au schéma (schémas XDR et schémas XML).  
   
-## <a name="retrieve-a-schema-from-the-collection"></a>Extraction d’un schéma à partir de la collection  
+## <a name="retrieve-a-schema-from-the-collection"></a>Extraction d'un schéma à partir de la collection  
  Vous pouvez extraire un schéma à partir de la collection à l’aide de la propriété **Item**. La propriété **Item** prend une chaîne qui représente l'URI d'espace de noms associé au schéma, généralement son espace de noms cible, et retourne un objet **XmlSchema**. La propriété **Item** s'applique uniquement aux schémas XML. La valeur de retour est toujours une référence null pour les schémas XDR car ils n'ont pas de modèle objet disponible.  
   
 ## <a name="validate-xml-documents-using-xmlschemacollection"></a>Validation des documents XML à l'aide de XmlSchemaCollection  

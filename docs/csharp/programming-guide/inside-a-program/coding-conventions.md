@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual C#, coding conventions
 - C# language, coding conventions
 ms.assetid: f4f60de9-d49b-4fb6-bab1-20e19ea24710
-ms.openlocfilehash: a37109ab2712ea824baab95ca0b175cfa82aab3a
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: 27001d1697def083580ecdc742b4b8db924545aa
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67267907"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69589413"
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>Conventions de codage C# (Guide de programmation C#)
  Les conventions de codage répondent aux objectifs suivants :  
@@ -29,7 +29,7 @@ ms.locfileid: "67267907"
   
 ## <a name="naming-conventions"></a>Conventions d'affectation de noms  
   
-- Dans les exemples courts qui ne comprennent pas de [directives](../../../csharp/language-reference/keywords/using-directive.md), utilisez les qualifications d’espace de noms. Si vous savez qu'un espace de noms est importé par défaut dans un projet, vous n'êtes pas obligé de qualifier entièrement les noms à partir de cet espace de noms. Les noms qualifiés peuvent être interrompus après un point (.) s'ils sont trop longs pour contenir sur une ligne unique, comme indiqué dans l'exemple suivant.  
+- Dans les exemples courts qui ne comprennent pas de [directives](../../language-reference/keywords/using-directive.md), utilisez les qualifications d’espace de noms. Si vous savez qu'un espace de noms est importé par défaut dans un projet, vous n'êtes pas obligé de qualifier entièrement les noms à partir de cet espace de noms. Les noms qualifiés peuvent être interrompus après un point (.) s'ils sont trop longs pour contenir sur une ligne unique, comme indiqué dans l'exemple suivant.  
   
      [!code-csharp[csProgGuideCodingConventions#1](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#1)]  
   
@@ -81,11 +81,11 @@ ms.locfileid: "67267907"
   
 ### <a name="implicitly-typed-local-variables"></a>Variables locales implicitement typées  
   
-- Utilisez le [typage implicite](../../../csharp/programming-guide/classes-and-structs/implicitly-typed-local-variables.md) pour les variables locales quand le type de la variable est évident à droite de l’assignation ou quand le type précis n’importe pas.  
+- Utilisez le [typage implicite](../classes-and-structs/implicitly-typed-local-variables.md) pour les variables locales quand le type de la variable est évident à droite de l’assignation ou quand le type précis n’importe pas.  
   
      [!code-csharp[csProgGuideCodingConventions#8](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#8)]  
   
-- N’utilisez pas [var](../../../csharp/language-reference/keywords/var.md) quand le type n’est pas apparent à droite de l’assignation.  
+- N’utilisez pas [var](../../language-reference/keywords/var.md) quand le type n’est pas apparent à droite de l’assignation.  
   
      [!code-csharp[csProgGuideCodingConventions#9](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#9)]  
   
@@ -93,9 +93,9 @@ ms.locfileid: "67267907"
   
      [!code-csharp[csProgGuideCodingConventions#10](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#10)]  
   
-- Évitez d’utiliser `var` à la place de [dynamic](../../../csharp/language-reference/keywords/dynamic.md).  
+- Évitez d’utiliser `var` à la place de [dynamic](../../language-reference/keywords/dynamic.md).  
   
-- Utilisez le typage implicite pour déterminer le type de la variable de boucle dans les boucles [for](../../../csharp/language-reference/keywords/for.md) et [foreach](../../../csharp/language-reference/keywords/foreach-in.md).  
+- Utilisez le typage implicite pour déterminer le type de la variable de boucle dans les boucles [for](../../language-reference/keywords/for.md) et [foreach](../../language-reference/keywords/foreach-in.md).  
   
      L'exemple suivant utilise un typage implicite dans une instruction `for`.  
   
@@ -125,11 +125,11 @@ ms.locfileid: "67267907"
   
 ### <a name="try-catch-and-using-statements-in-exception-handling"></a>Instructions try-catch et using dans la gestion des exceptions  
   
-- Utilisez une instruction [try-catch](../../../csharp/language-reference/keywords/try-catch.md) pour la plus grande part de la gestion des exceptions.  
+- Utilisez une instruction [try-catch](../../language-reference/keywords/try-catch.md) pour la plus grande part de la gestion des exceptions.  
   
      [!code-csharp[csProgGuideCodingConventions#16](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#16)]  
   
-- Simplifiez votre code à l’aide de l’instruction [using](../../../csharp/language-reference/keywords/using-statement.md) C#. Si vous avez une instruction [try-finally](../../../csharp/language-reference/keywords/try-finally.md) dans laquelle le seul code du bloc `finally` est un appel à la méthode <xref:System.IDisposable.Dispose%2A>, utilisez à la place une instruction `using`.  
+- Simplifiez votre code à l’aide de l’instruction [using](../../language-reference/keywords/using-statement.md) C#. Si vous avez une instruction [try-finally](../../language-reference/keywords/try-finally.md) dans laquelle le seul code du bloc `finally` est un appel à la méthode <xref:System.IDisposable.Dispose%2A>, utilisez à la place une instruction `using`.  
   
      [!code-csharp[csProgGuideCodingConventions#17](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#17)]  
   
@@ -163,7 +163,7 @@ ms.locfileid: "67267907"
   
 ### <a name="static-members"></a>Membres static  
   
-- Appelez les membres [static](../../../csharp/language-reference/keywords/static.md) en utilisant le nom de la classe : *ClassName.StaticMember*. Cette pratique rend le code plus lisible en clarifiant l'accès aux membres static.  Ne qualifiez pas un membre static défini dans une classe de base avec le nom d'une classe dérivée.  Lorsque ce code est compilé, la lisibilité du code est trompeuse et le code peut s'interrompre à l'avenir si vous ajoutez à la classe dérivée un membre static de même nom.  
+- Appelez les membres [static](../../language-reference/keywords/static.md) en utilisant le nom de la classe : *ClassName.StaticMember*. Cette pratique rend le code plus lisible en clarifiant l'accès aux membres static.  Ne qualifiez pas un membre static défini dans une classe de base avec le nom d'une classe dérivée.  Lorsque ce code est compilé, la lisibilité du code est trompeuse et le code peut s'interrompre à l'avenir si vous ajoutez à la classe dérivée un membre static de même nom.  
   
 ### <a name="linq-queries"></a>Requêtes LINQ  
   
@@ -183,13 +183,13 @@ ms.locfileid: "67267907"
   
      [!code-csharp[csProgGuideCodingConventions#25](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#25)]  
   
-- Alignez les clauses de requête sous la clause [from](../../../csharp/language-reference/keywords/from-clause.md), comme illustré dans les exemples précédents.  
+- Alignez les clauses de requête sous la clause [from](../../language-reference/keywords/from-clause.md), comme illustré dans les exemples précédents.  
   
-- Utilisez les clauses [where](../../../csharp/language-reference/keywords/where-clause.md) avant les autres clauses de requête pour garantir que les clauses de requête ultérieures opèrent sur l’ensemble de données réduit et filtré.  
+- Utilisez les clauses [where](../../language-reference/keywords/where-clause.md) avant les autres clauses de requête pour garantir que les clauses de requête ultérieures opèrent sur l’ensemble de données réduit et filtré.  
   
      [!code-csharp[csProgGuideCodingConventions#29](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#29)]  
   
-- Utilisez plusieurs clauses `from` au lieu d’une clause [join](../../../csharp/language-reference/keywords/join-clause.md) pour accéder aux collections internes. Par exemple, une collection d'objets `Student` peut contenir chacune une collection de scores de test. Lorsque la requête suivante est exécutée, elle retourne chaque score supérieur à 90, avec le nom de l'étudiant correspondant.  
+- Utilisez plusieurs clauses `from` au lieu d’une clause [join](../../language-reference/keywords/join-clause.md) pour accéder aux collections internes. Par exemple, une collection d'objets `Student` peut contenir chacune une collection de scores de test. Lorsque la requête suivante est exécutée, elle retourne chaque score supérieur à 90, avec le nom de l'étudiant correspondant.  
   
      [!code-csharp[csProgGuideCodingConventions#30](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#30)]  
   

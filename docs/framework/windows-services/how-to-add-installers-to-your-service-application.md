@@ -11,25 +11,25 @@ helpviewer_keywords:
 - ServiceProcessInstaller class, adding installers to services
 ms.assetid: 8b698e9a-b88e-4f44-ae45-e0c5ea0ae5a8
 author: ghogen
-ms.openlocfilehash: af56e01c1c8c1e23bb80413ce6f52a5f6d467b4b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 335bff660e401d8fbaf531f1c1f3ccc166d1c70a
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59307252"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69952505"
 ---
 # <a name="how-to-add-installers-to-your-service-application"></a>Procédure : ajouter des programmes d’installation à votre application de service
 Visual Studio est fourni avec des composants d’installation qui peuvent installer des ressources associées à vos applications de service. Les composants d’installation inscrivent un service auprès du système sur lequel il est installé et informent le Gestionnaire de contrôle des services de l’existence du service. Quand vous travaillez avec une application de service, vous pouvez sélectionner un lien dans la fenêtre Propriétés pour ajouter automatiquement les programmes d’installation appropriés à votre projet.  
   
 > [!NOTE]
->  Les valeurs des propriétés de votre service sont copiées de la classe de service dans la classe du programme d’installation. Si vous modifiez les valeurs des propriétés sur la classe de service, vos modifications ne sont pas automatiquement répercutées dans le programme d’installation.  
+> Les valeurs des propriétés de votre service sont copiées de la classe de service dans la classe du programme d’installation. Si vous modifiez les valeurs des propriétés sur la classe de service, vos modifications ne sont pas automatiquement répercutées dans le programme d’installation.  
   
  Quand vous ajoutez un programme d’installation à votre projet, une nouvelle classe (nommée par défaut `ProjectInstaller`) est créée dans le projet, et des instances des composants d’installation appropriés sont créées dans celui-ci. Cette classe sert de point central à tous les composants d’installation dont votre projet a besoin. Par exemple, le fait d’ajouter un deuxième service à votre application et de cliquer sur le lien Ajouter le programme d’installation n’entraîne pas l’ajout d’une deuxième classe dans le programme d’installation. Au lieu de cela, le composant d’installation nécessaire pour le deuxième service est ajouté à la classe existante.  
   
  Les programmes d’installation ne nécessitent aucun codage spécial pour que vos services s’installent correctement. Toutefois, vous devrez parfois modifier le contenu des programmes d’installation pour ajouter des fonctionnalités spéciales au processus d’installation.  
   
 > [!NOTE]
->  Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnaliser l’IDE Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
+> Les boîtes de dialogue et les commandes de menu qui s'affichent peuvent être différentes de celles qui sont décrites dans l'aide, en fonction de vos paramètres actifs ou de l'édition utilisée. Pour modifier vos paramètres, choisissez **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnaliser l’IDE Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
 ### <a name="to-add-installers-to-your-service-application"></a>Pour ajouter des programmes d’installation à votre application de service  
   
@@ -58,7 +58,7 @@ Visual Studio est fourni avec des composants d’installation qui peuvent instal
 8. Effectuez les étapes 1 à 7 pour chaque service supplémentaire dans votre projet.  
   
     > [!NOTE]
-    >  Pour chaque service supplémentaire dans votre projet, ajoutez un composant <xref:System.ServiceProcess.ServiceInstaller> à la classe `ProjectInstaller` du projet. Le composant <xref:System.ServiceProcess.ServiceProcessInstaller> ajouté à la troisième étape fonctionne avec tous les programmes d’installation de service dans le projet.  
+    > Pour chaque service supplémentaire dans votre projet, ajoutez un composant <xref:System.ServiceProcess.ServiceInstaller> à la classe `ProjectInstaller` du projet. Le composant <xref:System.ServiceProcess.ServiceProcessInstaller> ajouté à la troisième étape fonctionne avec tous les programmes d’installation de service dans le projet.  
   
 ## <a name="see-also"></a>Voir aussi
 

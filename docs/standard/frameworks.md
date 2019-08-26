@@ -6,18 +6,18 @@ ms.author: mairaw
 ms.date: 04/02/2019
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: a7005cfe01d168febd97af5f8b41cfff26b2cfc7
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 20b13bb590a63a807c1894bf08051053f90c0fc4
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65641470"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666518"
 ---
 # <a name="target-frameworks"></a>Versions cibles de .NET Framework
 
 Quand vous ciblez un framework dans une application ou une bibliothèque, vous spécifiez l’ensemble d’API que vous souhaitez rendre accessibles à l’application ou à la bibliothèque. Vous spécifiez le framework cible dans votre fichier projet à l’aide des monikers du framework cible (TFM).
 
-Une application ou une bibliothèque peut cibler une version de [.NET Standard](~/docs/standard/net-standard.md). Les versions .NET Standard représentent des ensembles d’API standard sur toutes les implémentations de .NET. Par exemple, une bibliothèque peut cibler .NET Standard 1.6 et accéder aux API qui fonctionnent sur .NET Core et .NET Framework en utilisant la même base de code.
+Une application ou une bibliothèque peut cibler une version de [.NET Standard](net-standard.md). Les versions .NET Standard représentent des ensembles d’API standard sur toutes les implémentations de .NET. Par exemple, une bibliothèque peut cibler .NET Standard 1.6 et accéder aux API qui fonctionnent sur .NET Core et .NET Framework en utilisant la même base de code.
 
 Une application ou une bibliothèque peut également cibler une implémentation spécifique de .NET pour accéder aux API spécifiques à l’implémentation. Ainsi, une application qui cible Xamarin.iOS (par exemple, `Xamarin.iOS10`) accède à des wrappers d’API iOS fournis par Xamarin pour iOS 10, ou une application qui cible la plateforme Windows universelle (UWP, `uap10.0`) a accès aux API de compilation pour les appareils qui exécutent Windows 10.
 
@@ -27,7 +27,7 @@ Pour les frameworks cibles basés sur le package (par exemple, .NET Standard et 
 
 ## <a name="latest-target-framework-versions"></a>Versions les plus récentes des frameworks cibles
 
-Le tableau ci-dessous définit les frameworks cibles les plus courants, la façon dont ils sont référencés et la version de [.NET Standard](~/docs/standard/net-standard.md) qu’ils implémentent. Ces versions de framework cible sont les dernières versions stables. Les préversions ne sont pas mentionnées. Un moniker du framework cible est un format de jeton standardisé pour la spécification du framework cible d’une bibliothèque ou d’une application .NET.
+Le tableau ci-dessous définit les frameworks cibles les plus courants, la façon dont ils sont référencés et la version de [.NET Standard](net-standard.md) qu’ils implémentent. Ces versions de framework cible sont les dernières versions stables. Les préversions ne sont pas mentionnées. Un moniker du framework cible est un format de jeton standardisé pour la spécification du framework cible d’une bibliothèque ou d’une application .NET.
 
 | Framework cible      | Dernière <br/> Version stable | Moniker du Framework cible | Implémenté <br/> Version .NET Standard |
 | :-------------------: | :-------------------------: | :----------------------------: | :-------------------------------------: |

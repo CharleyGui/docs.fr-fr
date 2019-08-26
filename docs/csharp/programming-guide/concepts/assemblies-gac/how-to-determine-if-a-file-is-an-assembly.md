@@ -2,15 +2,15 @@
 title: 'Procédure : Déterminer si un fichier est un assembly (C#)'
 ms.date: 07/20/2015
 ms.assetid: ea5186bb-5bff-4dcb-bde9-d6ba4e2edd00
-ms.openlocfilehash: e8026ab5fa44b7601e54b5e76ebf9eb434596a07
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 803159eed25a7785b1a2b4433e6950fa65e0a734
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59340137"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595862"
 ---
 # <a name="how-to-determine-if-a-file-is-an-assembly-c"></a>Procédure : Déterminer si un fichier est un assembly (C#)
-Un fichier est un assembly si et seulement s’il est managé et s’il contient une entrée d’assembly dans ses métadonnées. Pour plus d’informations sur les assemblys et les métadonnées, consultez la rubrique [Manifeste d’assembly](../../../../../docs/framework/app-domains/assembly-manifest.md).  
+Un fichier est un assembly si et seulement s’il est managé et s’il contient une entrée d’assembly dans ses métadonnées. Pour plus d’informations sur les assemblys et les métadonnées, consultez la rubrique [Manifeste d’assembly](../../../../framework/app-domains/assembly-manifest.md).  
   
 ### <a name="how-to-manually-determine-if-a-file-is-an-assembly"></a>Comment déterminer manuellement si un fichier est un assembly  
   
@@ -69,5 +69,5 @@ class TestAssembly
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Reflection.AssemblyName>
-- [Guide de programmation C#](../../../../csharp/programming-guide/index.md)
+- [Guide de programmation C#](../../index.md)
 - [Assemblys dans .NET](../../../../standard/assembly/index.md)

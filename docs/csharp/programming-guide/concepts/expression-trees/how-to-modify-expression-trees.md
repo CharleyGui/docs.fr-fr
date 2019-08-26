@@ -2,12 +2,12 @@
 title: 'Procédure : Modifier des arborescences d’expressions (C#)'
 ms.date: 07/20/2015
 ms.assetid: 9b0cd8c2-457e-4833-9e36-31e79545f442
-ms.openlocfilehash: 26c00f3acc7ab44e74a81e346ab1c017d95d53b5
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 7875cf1ccca8866cc87ebec80701ad77ad2bea2d
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59308638"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595057"
 ---
 # <a name="how-to-modify-expression-trees-c"></a>Procédure : Modifier des arborescences d’expressions (C#)
 Cette rubrique montre comment modifier une arborescence d’expressions. Les arborescences d’expressions sont immuables, ce qui signifie qu’elles ne peuvent pas être modifiées directement. Pour changer une arborescence d’expressions, vous devez créer une copie d’une arborescence d’expressions existante et, quand vous créez la copie, apporter les modifications nécessaires. Vous pouvez utiliser la classe <xref:System.Linq.Expressions.ExpressionVisitor> pour parcourir une arborescence d’expressions existante et copier chaque nœud visité.  
@@ -72,5 +72,5 @@ Cette rubrique montre comment modifier une arborescence d’expressions. Les arb
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour exécuter des arborescences d’expressions (C#)](../../../../csharp/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
-- [Arborescences d’expressions (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)
+- [Guide pratique pour exécuter des arborescences d’expressions (C#)](./how-to-execute-expression-trees.md)
+- [Arborescences d’expressions (C#)](./index.md)

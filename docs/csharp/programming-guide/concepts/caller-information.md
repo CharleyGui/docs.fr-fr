@@ -2,12 +2,12 @@
 title: Informations relatives à l’appelant (C#)
 ms.date: 07/20/2015
 ms.assetid: ffad3d24-2fb7-4641-9124-53b5bc91d339
-ms.openlocfilehash: 4a0e4d6ecad1863832a33ba91485d0c12675cd57
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.openlocfilehash: 4b2c34945b47db01b0e655f68f92e4dae7445c2c
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2018
-ms.locfileid: "50185272"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69595339"
 ---
 # <a name="caller-information-c"></a>Informations relatives à l’appelant (C#)
 
@@ -21,7 +21,7 @@ Pour obtenir ces informations, vous utilisez les attributs qui sont appliqués a
 |<xref:System.Runtime.CompilerServices.CallerLineNumberAttribute>|Numéro de ligne dans le fichier source dans lequel la méthode est appelée.|`Integer`|
 |<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Méthode ou nom de la propriété de l'appelant. Consultez [Noms de membres](#member-names), plus loin dans cette rubrique.|`String`|
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L'exemple suivant indique comment utiliser des attributs d'informations de l'appelant. À chaque appel à la méthode `TraceMessage`, les informations d'appel sont remplacées par des arguments pour les paramètres optionnels.
 
@@ -49,7 +49,7 @@ public void TraceMessage(string message,
 //  source line number: 31
 ```
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Vous devez spécifier une valeur par défaut explicite pour chaque paramètre optionnel. Vous ne pouvez pas appliquer des attributs d'informations de l'appelant aux paramètres qui ne sont pas spécifiés comme facultatifs.
 
@@ -81,7 +81,7 @@ Le graphique suivant affiche les noms des membres qui sont retournés lorsque vo
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Attributs (C#)](../../../csharp/programming-guide/concepts/attributes/index.md)
-- [Attributs courants (C#)](../../../csharp/programming-guide/concepts/attributes/common-attributes.md)
-- [Arguments nommés et facultatifs](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md)
-- [Concepts de programmation (C#)](../../../csharp/programming-guide/concepts/index.md)
+- [Attributs (C#)](./attributes/index.md)
+- [Attributs courants (C#)](./attributes/common-attributes.md)
+- [Arguments nommés et facultatifs](../classes-and-structs/named-and-optional-arguments.md)
+- [Concepts de programmation (C#)](./index.md)

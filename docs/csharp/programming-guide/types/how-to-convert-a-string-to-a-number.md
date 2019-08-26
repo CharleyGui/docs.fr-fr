@@ -8,20 +8,20 @@ helpviewer_keywords:
 - converting strings to int [C#]
 - strings [C#], converting to int
 ms.assetid: 467b9979-86ee-4afd-b734-30299cda91e3
-ms.openlocfilehash: ef219f2b98e37b8a62d3ee7b88dbc5374d87fca5
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 8b2e6fdc6248ca65213ea83942d792f983bd3b3b
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67423535"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69588390"
 ---
 # <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Procédure : Convertir une chaîne en nombre (Guide de programmation C#)
 
-Vous pouvez convertir une [chaîne](../../../csharp/language-reference/keywords/string.md) en nombre en appelant la méthode `Parse` ou `TryParse` des différents types numériques (`int`, `long`, `double`, etc.), ou bien en utilisant des méthodes dans la classe <xref:System.Convert?displayProperty=nameWithType>.  
+Vous pouvez convertir une [chaîne](../../language-reference/keywords/string.md) en nombre en appelant la méthode `Parse` ou `TryParse` des différents types numériques (`int`, `long`, `double`, etc.), ou bien en utilisant des méthodes dans la classe <xref:System.Convert?displayProperty=nameWithType>.  
   
  Si vous avez une chaîne, il est légèrement plus efficace et direct d’appeler une méthode `TryParse` (par exemple [`int.TryParse("11", out number)`](xref:System.Int32.TryParse%2A)) ou une méthode `Parse` (par exemple, [`var number = int.Parse("11")`](xref:System.Int32.Parse%2A)).  L'utilisation d'une méthode <xref:System.Convert> s'avère plus utile pour les objets généraux qui implémentent <xref:System.IConvertible>.  
   
- Vous pouvez utiliser les méthodes `Parse` ou `TryParse` sur le type numérique que doit contenir la chaîne, notamment le type <xref:System.Int32?displayProperty=nameWithType>.  La méthode <xref:System.Convert.ToInt32%2A?displayProperty=nameWithType> utilise <xref:System.Int32.Parse%2A> en interne.  La méthode `Parse` retourne le nombre converti ; la méthode `TryParse` retourne une valeur <xref:System.Boolean> qui indique si la conversion a réussi et retourne le nombre converti dans un [`out`paramètre](../../../csharp/language-reference/keywords/out.md). Si le format de la chaîne n’est pas valide, `Parse` lève une exception, tandis que `TryParse` retourne [false](../../../csharp/language-reference/keywords/false-literal.md). Lorsque vous appelez une méthode `Parse`, vous devez toujours utiliser la gestion des exceptions pour intercepter une <xref:System.FormatException> si l’opération d’analyse échoue.  
+ Vous pouvez utiliser les méthodes `Parse` ou `TryParse` sur le type numérique que doit contenir la chaîne, notamment le type <xref:System.Int32?displayProperty=nameWithType>.  La méthode <xref:System.Convert.ToInt32%2A?displayProperty=nameWithType> utilise <xref:System.Int32.Parse%2A> en interne.  La méthode `Parse` retourne le nombre converti ; la méthode `TryParse` retourne une valeur <xref:System.Boolean> qui indique si la conversion a réussi et retourne le nombre converti dans un [`out`paramètre](../../language-reference/keywords/out.md). Si le format de la chaîne n’est pas valide, `Parse` lève une exception, tandis que `TryParse` retourne [false](../../language-reference/keywords/false-literal.md). Lorsque vous appelez une méthode `Parse`, vous devez toujours utiliser la gestion des exceptions pour intercepter une <xref:System.FormatException> si l’opération d’analyse échoue.  
   
 ## <a name="calling-the-parse-and-tryparse-methods"></a>Appel des méthodes Parse et TryParse
 
@@ -51,12 +51,12 @@ Le tableau suivant répertorie quelques unes des méthodes de la classe <xref:Sy
 |`uint`|<xref:System.Convert.ToUInt32%28System.String%29>|  
 |`ulong`|<xref:System.Convert.ToUInt64%28System.String%29>|  
   
- L’exemple suivant appelle la méthode <xref:System.Convert.ToInt32%28System.String%29?displayProperty=nameWithType> pour convertir une entrée de type chaîne en [int](../../../csharp/language-reference/builtin-types/integral-numeric-types.md). L’exemple intercepte les deux exceptions les plus communes qui peuvent être levées par cette méthode, <xref:System.FormatException> et <xref:System.OverflowException>. Si le nombre obtenu peut être incrémenté sans dépasser <xref:System.Int32.MaxValue?displayProperty=nameWithType>, l’exemple ajoute 1 au résultat et affiche la sortie.  
+ L’exemple suivant appelle la méthode <xref:System.Convert.ToInt32%28System.String%29?displayProperty=nameWithType> pour convertir une entrée de type chaîne en [int](../../language-reference/builtin-types/integral-numeric-types.md). L’exemple intercepte les deux exceptions les plus communes qui peuvent être levées par cette méthode, <xref:System.FormatException> et <xref:System.OverflowException>. Si le nombre obtenu peut être incrémenté sans dépasser <xref:System.Int32.MaxValue?displayProperty=nameWithType>, l’exemple ajoute 1 au résultat et affiche la sortie.  
   
 [!code-csharp[Parsing with Convert methods](~/samples/snippets/csharp/programming-guide/string-to-number/convert/program.cs)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Types](../../../csharp/programming-guide/types/index.md)
-- [Guide pratique pour déterminer si une chaîne représente une valeur numérique](../../../csharp/programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)
+- [Types](./index.md)
+- [Guide pratique pour déterminer si une chaîne représente une valeur numérique](../strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)
 - [Utilitaire de mise en forme .NET Framework 4](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)
