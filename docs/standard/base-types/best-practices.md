@@ -13,12 +13,12 @@ ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
 author: rpetrusha
 ms.author: ronpet
 ms.custom: serodec18
-ms.openlocfilehash: c782ab0ce5886a95c8c914930d80d66b4839b9b8
-ms.sourcegitcommit: 46c68557bf6395f0ab9915f7558f2faae0097695
+ms.openlocfilehash: 8d887bb32d1bdd398353d00aba16c2cc8adfcacb
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "64634714"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988827"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Bonnes pratiques pour les expressions régulières dans .NET
 <a name="top"></a> Le moteur d’expressions régulières de .NET est un outil puissant et complet. Il traite le texte en fonction de correspondances de modèles plutôt qu’en comparant et en confrontant le texte littéral. Dans la plupart des cas, il exécute les critères spéciaux de façon rapide et efficace. Toutefois, dans certains cas, le moteur des expressions régulières peut sembler très lent. Dans des cas extrêmes, il semble même cesser de répondre. Il traite en effet peu d'entrées sur une période de plusieurs heures ou même de plusieurs jours.  
@@ -54,7 +54,7 @@ ms.locfileid: "64634714"
  Le dernier type de texte est problématique pour une expression régulière écrite pour gérer les entrées avec contrainte. Si cette expression régulière repose également sur une [rétroaction](../../../docs/standard/base-types/backtracking-in-regular-expressions.md) complète, le traitement d’un texte apparemment anodin par le moteur d’expression régulière risque d’être extrêmement long (dans certains cas, un grand nombre d’heures ou de jours).  
   
 > [!WARNING]
->  L'exemple suivant utilise une expression régulière sujette à des rétroactions excessives et susceptible de rejeter des adresses e-mail valides. Vous ne devez pas l’utiliser dans une routine de validation d’e-mails. Si vous souhaitez une expression régulière qui valide des adresses e-mail, consultez [Guide pratique : Vérifier que des chaînes sont dans un format d’adresse e-mail valide](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md).  
+> L'exemple suivant utilise une expression régulière sujette à des rétroactions excessives et susceptible de rejeter des adresses e-mail valides. Vous ne devez pas l’utiliser dans une routine de validation d’e-mails. Si vous souhaitez une expression régulière qui valide des adresses e-mail, consultez [Guide pratique : Vérifier que des chaînes sont dans un format d’adresse e-mail valide](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md).  
   
  Prenons l'exemple d'une expression régulière très fréquemment utilisée, mais extrêmement problématique, pour la validation de l'alias d'une adresse e-mail. L'expression régulière `^[0-9A-Z]([-.\w]*[0-9A-Z])*$` est écrite pour traiter ce qui est considéré comme une adresse e-mail valide. Cette dernière se compose d'un caractère alphanumérique suivi de zéro, ou de plusieurs caractères (caractères alphanumériques, points ou traits d'union). L'expression régulière doit se terminer par un caractère alphanumérique. Toutefois, comme illustré dans l'exemple suivant, bien que cette expression régulière gère facilement une entrée valide, elle s'avère particulièrement inefficace lorsqu'il s'agit de traiter une entrée presque valide.  
   
@@ -78,7 +78,7 @@ ms.locfileid: "64634714"
  La classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> est au cœur du modèle d'objet d'expression régulière de .NET. Elle représente le moteur d’expressions régulières. Souvent, la façon dont le moteur <xref:System.Text.RegularExpressions.Regex> est utilisé est le facteur principal ayant un impact sur les performances des expressions régulières. La définition d’une expression régulière implique une association étroite entre le moteur des expressions régulières et un modèle d’expression régulière. Ce processus est forcément onéreux, qu’il implique l’instanciation d’un objet <xref:System.Text.RegularExpressions.Regex> en passant à son constructeur un modèle d’expression régulière ou l’appel d’une méthode statique en lui passant le modèle d’expression régulière avec la chaîne à analyser.  
   
 > [!NOTE]
->  Pour obtenir une présentation plus détaillée des répercussions sur les performances des expressions régulières interprétées et compilées, consultez l’article [Optimiser les performances des expressions régulières, deuxième partie : prendre en charge le retour arrière](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) du blog de l’équipe BCL.  
+> Pour obtenir une présentation plus détaillée des répercussions sur les performances des expressions régulières interprétées et compilées, consultez l’article [Optimiser les performances des expressions régulières, deuxième partie : prendre en charge le retour arrière](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) du blog de l’équipe BCL.  
   
  Vous pouvez associer le moteur des expressions régulières à un modèle d’expression régulière spécifique, puis utiliser le moteur pour faire correspondre du texte de plusieurs façons :  
   
@@ -93,7 +93,7 @@ ms.locfileid: "64634714"
  La façon dont vous appelez les méthodes de correspondance d'expression régulière peut avoir un impact significatif sur votre application. Les sections suivantes expliquent quand utiliser les appels de méthode statique, les expressions régulières interprétées et les expressions régulières compilées afin d'améliorer les performances de votre application.  
   
 > [!IMPORTANT]
->  La forme de l'appel de méthode (statique, interprétée, compilée) affecte les performances si une même expression régulière est utilisée à plusieurs reprises dans les appels de méthode, ou si une application entraîne l'utilisation intensive d'objets d'expression régulière.  
+> La forme de l'appel de méthode (statique, interprétée, compilée) affecte les performances si une même expression régulière est utilisée à plusieurs reprises dans les appels de méthode, ou si une application entraîne l'utilisation intensive d'objets d'expression régulière.  
   
 ### <a name="static-regular-expressions"></a>Expressions régulières statiques  
  Les méthodes d'expression régulière statiques sont recommandées pour éviter d'instancier à plusieurs reprises un objet d'expression régulière avec la même expression régulière. À la différence des modèles d’expressions régulières utilisés par les objets d’expression régulière, les codes d’opération ou le langage compilé MSIL (Microsoft intermediate langage) des modèles utilisés dans les appels de méthode d’instance sont mis en cache en interne par le moteur des expressions régulières.  
@@ -177,7 +177,7 @@ ms.locfileid: "64634714"
  Normalement, le moteur des expressions régulières utilise une progression linéaire pour se déplacer dans une chaîne d’entrée et pour la comparer à un modèle d’expression régulière. Toutefois, lorsque les quantificateurs indéterminés, `*`, `+` et `?`, par exemple, sont utilisés dans un modèle d’expression régulière, le moteur des expressions régulières peut abandonner une partie des correspondances partielles trouvées et revenir à un état précédemment enregistré pour trouver une correspondance pour le modèle entier. Ce processus est appelé « rétroaction ».  
   
 > [!NOTE]
->  Pour plus d'informations sur le retour arrière, consultez les pages [Informations sur le comportement des expressions régulières](../../../docs/standard/base-types/details-of-regular-expression-behavior.md) et [Retour arrière](../../../docs/standard/base-types/backtracking-in-regular-expressions.md). Vous trouverez une présentation détaillée du retour arrière dans l’article [Optimiser les performances des expressions régulières, deuxième partie : prendre en charge le retour arrière](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) du blog de l’équipe BCL.  
+> Pour plus d'informations sur le retour arrière, consultez les pages [Informations sur le comportement des expressions régulières](../../../docs/standard/base-types/details-of-regular-expression-behavior.md) et [Retour arrière](../../../docs/standard/base-types/backtracking-in-regular-expressions.md). Vous trouverez une présentation détaillée du retour arrière dans l’article [Optimiser les performances des expressions régulières, deuxième partie : prendre en charge le retour arrière](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) du blog de l’équipe BCL.  
   
  La prise en charge de la rétroaction confère aux expressions régulières leur puissance et leur flexibilité. La responsabilité de contrôle du fonctionnement du moteur des expressions régulières est alors confiée aux développeurs d'expressions régulières. Souvent, les développeurs ne sont pas conscients de cette responsabilité. Leur utilisation incorrecte de la rétroaction ou leur dépendance vis-à-vis d'une rétroaction excessive a souvent un impact négatif très important sur les performances des expressions régulières. Dans le pire des scénarios, la durée d'exécution peut doubler pour chaque caractère supplémentaire de la chaîne d'entrée. En réalité, lorsque la rétroaction est utilisée de manière excessive, il est facile de créer l'équivalent de programmation d'une boucle sans fin si l'entrée correspond presque au modèle d'expression régulière. Le moteur des expressions régulières peut alors traiter une chaîne d'entrée relativement courte en plusieurs heures, voire en plusieurs jours.  
   
@@ -200,7 +200,7 @@ ms.locfileid: "64634714"
  Dans de nombreux cas, la rétroaction est essentielle pour faire correspondre un modèle d’expression régulière à un texte d’entrée. Toutefois, une rétroaction excessive risque d'altérer considérablement les performances et de donner l'impression qu'une application a cessé de répondre. Cela se produit notamment lorsque les quantificateurs sont imbriqués et que le texte correspondant à la sous-expression externe est un sous-ensemble du texte correspondant à la sous-expression interne.  
   
 > [!WARNING]
->  En plus d’éviter une rétroaction excessive, vous devez utiliser la fonctionnalité de délai d’attente pour garantir qu’une rétroaction excessive n’altère pas considérablement les performances des expressions régulières. Pour plus d’informations, consultez la section [Utiliser des valeurs de délai d’attente](#Timeouts).  
+> En plus d’éviter une rétroaction excessive, vous devez utiliser la fonctionnalité de délai d’attente pour garantir qu’une rétroaction excessive n’altère pas considérablement les performances des expressions régulières. Pour plus d’informations, consultez la section [Utiliser des valeurs de délai d’attente](#Timeouts).  
   
  Par exemple, le modèle d'expression régulière `^[0-9A-Z]([-.\w]*[0-9A-Z])*\$$` est conçu pour mettre en correspondance un numéro de référence composé d'au moins un caractère alphanumérique. Tous les caractères supplémentaires peuvent être composés d'un caractère alphanumérique, d'un trait d'union, d'un trait de soulignement ou d'un point. Toutefois, le dernier caractère doit impérativement être alphanumérique. Un signe dollar termine le numéro de référence. Dans certains cas, ce modèle d'expression régulière peut présenter des performances médiocres, si les quantificateurs sont imbriqués et que la sous-expression `[0-9A-Z]` est un sous-ensemble de la sous-expression `[-.\w]*`.  
   
