@@ -2,12 +2,12 @@
 title: Membership and Role Provider
 ms.date: 03/30/2017
 ms.assetid: 0d11a31c-e75f-4fcf-9cf4-b7f26e056bcd
-ms.openlocfilehash: 894fcef0cbb25f85043aa6f5c55c45bae5161546
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 139d85a1ec36509690f35f24c7ddf04716a7e909
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948545"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70039432"
 ---
 # <a name="membership-and-role-provider"></a>Membership and Role Provider
 L’exemple de fournisseur d’appartenances et de rôles montre comment un service peut utiliser les fournisseurs d’appartenances et de rôles ASP.NET pour authentifier et autoriser des clients.  
@@ -123,10 +123,10 @@ L’exemple de fournisseur d’appartenances et de rôles montre comment un serv
 2. Vérifiez que vous avez configuré la [base de données ASP.NET services d’application](https://go.microsoft.com/fwlink/?LinkId=94997).  
   
     > [!NOTE]
-    >  Si vous exécutez SQL Server Express Edition, le nom de votre serveur est .\SQLEXPRESS. Ce serveur doit être utilisé lors de la configuration de la base de données ASP.NET Services d’application ainsi que dans la chaîne de connexion Web. config.  
+    > Si vous exécutez SQL Server Express Edition, le nom de votre serveur est .\SQLEXPRESS. Ce serveur doit être utilisé lors de la configuration de la base de données ASP.NET Services d’application ainsi que dans la chaîne de connexion Web. config.  
   
     > [!NOTE]
-    >  Le compte de processus de travail ASP.NET doit avoir des autorisations sur la base de données créée dans cette étape. Utilisez l'utilitaire sqlcmd ou SQL Server Management Studio pour ce faire.  
+    > Le compte de processus de travail ASP.NET doit avoir des autorisations sur la base de données créée dans cette étape. Utilisez l'utilitaire sqlcmd ou SQL Server Management Studio pour ce faire.  
   
 3. Pour exécuter l'exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions ci-dessous.  
   

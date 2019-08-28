@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 185d7aea-68a6-4bd8-adde-45050f33170a
-ms.openlocfilehash: 6d67629503d5acfeff7e14e1889a047444a8d399
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3afac76fc977f992e780d2ebe302c1ed94568835
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962396"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044403"
 ---
 # <a name="how-to-create-a-flowchart-workflow"></a>Procédure : créer un workflow d’organigramme
 Les workflows peuvent être construits aussi bien à partir d'activités intégrées que d'activités personnalisées. Cette rubrique explique comment créer un workflow qui utilise à la fois des activités intégrées telles que <xref:System.Activities.Statements.Flowchart> l’activité, et les activités personnalisées de [la procédure précédente Comment: Créer une rubrique](how-to-create-an-activity.md) d’activité. Le workflow modélise un jeu d'estimation de nombre.  
@@ -52,7 +52,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
 9. Cliquez sur **créer une variable**.  
   
     > [!TIP]
-    >  Si aucune zone **créer une variable** n’est affichée, <xref:System.Activities.Statements.Flowchart> cliquez sur l’activité sur l’aire du concepteur de flux de travail pour la sélectionner.  
+    > Si aucune zone **créer une variable** n’est affichée, <xref:System.Activities.Statements.Flowchart> cliquez sur l’activité sur l’aire du concepteur de flux de travail pour la sélectionner.  
   
 10. Tapez `Guess` dans la zone **nom** , sélectionnez **Int32** dans la liste déroulante **type de variable** , puis appuyez sur entrée pour enregistrer la variable.  
   
@@ -80,7 +80,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
     ```  
   
     > [!TIP]
-    >  Si la fenêtre **boîte à outils** n’est pas affichée, sélectionnez **boîte à outils** dans le menu **affichage** .  
+    > Si la fenêtre **boîte à outils** n’est pas affichée, sélectionnez **boîte à outils** dans le menu **affichage** .  
   
 3. Faites glisser une activité **prompt** de la section **NumberGuessWorkflowActivities** de la **boîte à outils**, déposez-la en dessous de l’activité **Assign** de l’étape précédente, puis connectez l’activité **prompt** à l’activité **Assign** . Il existe trois façons de connecter les deux activités. La première consiste à les connecter lorsque vous déposez l’activité **prompt** sur le Workflow. Lorsque vous faites glisser l’activité **prompt** vers le workflow, placez-la sur l’activité **Assign** et déposez-la sur l’un des quatre triangles qui s’affiche lorsque l’activité **prompt** est positionnée sur l’activité **Assign** . La seconde consiste à déposer l’activité **prompt** sur le workflow à l’emplacement souhaité. Ensuite, placez le pointeur de la souris sur l’activité **Assign** et faites glisser l’un des rectangles qui s’affichent vers le bas de l’activité **prompt** . Faites glisser la souris de sorte que la ligne de connexion de l’activité **Assign** se connecte à l’un des rectangles de l’activité **prompt** , puis relâchez le bouton de la souris. La troisième méthode est très similaire à la première, mais au lieu de faire glisser l’activité **prompt** à partir de la **boîte à outils**, vous la faites glisser à partir de son emplacement sur l’aire de conception de workflow, vous la Positionnez sur l’activité **Assign** et la déposez sur l’une des triangles qui s’affichent.  
   
@@ -95,7 +95,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
     ```  
   
     > [!TIP]
-    >  Si la **fenêtre Propriétés** n’est pas affichée, sélectionnez **fenêtre Propriétés** dans le menu **affichage** .  
+    > Si la **fenêtre Propriétés** n’est pas affichée, sélectionnez **fenêtre Propriétés** dans le menu **affichage** .  
   
 5. Faites glisser une activité **Assign** de la section primitives de la **boîte à outils** et connectez-la à l’aide de l’une des méthodes décrites à l’étape précédente afin qu’elle soit en dessous de l’activité **prompt** .  
   
@@ -114,7 +114,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
 8. Faites glisser une autre activité **FlowDecision** de la **boîte à outils** et déposez-la en dessous de la première. Connectez les deux activités en faisant glisser le rectangle qui est étiqueté **false** sur l’activité **FlowDecision** supérieure vers le rectangle situé en haut de la deuxième activité **FlowDecision** .  
   
     > [!TIP]
-    >  Si vous ne voyez pas les étiquettes **true** et **false** sur le **FlowDecision**, pointez la souris sur **FlowDecision**.  
+    > Si vous ne voyez pas les étiquettes **true** et **false** sur le **FlowDecision**, pointez la souris sur **FlowDecision**.  
   
 9. Cliquez sur la deuxième activité **FlowDecision** pour la sélectionner. Dans la **fenêtre Propriétés**, tapez l’expression suivante dans la zone valeur de la propriété **condition** .  
   

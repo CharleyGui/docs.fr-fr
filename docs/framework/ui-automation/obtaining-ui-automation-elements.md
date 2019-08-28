@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation, obtaining elements
 - elements, UI Automation, obtaining
 ms.assetid: c2caaf45-e59c-42a1-bc9b-77a6de520171
-ms.openlocfilehash: 8c222cb2cf70502024a5934c4c527334c9f24165
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9adf8078f52653940fe9ba5caa4a256a08cc489c
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966382"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044148"
 ---
 # <a name="obtaining-ui-automation-elements"></a>Obtention d'éléments UI Automation
 > [!NOTE]
@@ -19,7 +19,7 @@ ms.locfileid: "69966382"
  Cette rubrique décrit les différentes façons d’obtenir des objets <xref:System.Windows.Automation.AutomationElement> pour les éléments d’ [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] .  
   
 > [!CAUTION]
->  Si votre application cliente peut tenter de rechercher des éléments dans sa propre interface utilisateur, vous devez effectuer tous les appels [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] sur un thread distinct. Pour plus d'informations, consultez [UI Automation Threading Issues](../../../docs/framework/ui-automation/ui-automation-threading-issues.md).  
+> Si votre application cliente peut tenter de rechercher des éléments dans sa propre interface utilisateur, vous devez effectuer tous les appels [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] sur un thread distinct. Pour plus d'informations, consultez [UI Automation Threading Issues](../../../docs/framework/ui-automation/ui-automation-threading-issues.md).  
   
 <a name="The_Root_Element"></a>   
 ## <a name="root-element"></a>Élément racine  
@@ -28,7 +28,7 @@ ms.locfileid: "69966382"
  L’élément racine pour le bureau, duquel tous les éléments proviennent, est obtenu à partir de la propriété <xref:System.Windows.Automation.AutomationElement.RootElement%2A?displayProperty=nameWithType> statique.  
   
 > [!CAUTION]
->  En général, vous devez essayer d’obtenir uniquement les enfants directs de <xref:System.Windows.Automation.AutomationElement.RootElement%2A>. Une recherche des descendants peut itérer au sein de centaines ou de milliers d’éléments, ce qui peut provoquer un dépassement de capacité de la pile. Si vous tentez d’obtenir un élément spécifique de niveau inférieur, vous devez commencer votre recherche à partir de la fenêtre d’application ou d’un conteneur de niveau inférieur.  
+> En général, vous devez essayer d’obtenir uniquement les enfants directs de <xref:System.Windows.Automation.AutomationElement.RootElement%2A>. Une recherche des descendants peut itérer au sein de centaines ou de milliers d’éléments, ce qui peut provoquer un dépassement de capacité de la pile. Si vous tentez d’obtenir un élément spécifique de niveau inférieur, vous devez commencer votre recherche à partir de la fenêtre d’application ou d’un conteneur de niveau inférieur.  
   
 <a name="Using_Conditions"></a>   
 ## <a name="conditions"></a>Conditions  

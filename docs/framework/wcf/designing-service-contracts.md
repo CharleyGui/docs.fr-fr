@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF]
 ms.assetid: 8e89cbb9-ac84-4f0d-85ef-0eb6be0022fd
-ms.openlocfilehash: ddaa49e65a164c7bf074a541c9a4df8f3dace1d4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a764b18cc3016610b8a149631b4de89923a7a5b4
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965613"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70040615"
 ---
 # <a name="designing-service-contracts"></a>Conception de contrats de service
 Cette rubrique explique ce que sont les contrats de service, comment ils sont définis, quelles opérations sont disponibles (et les implications des échanges de messages sous-jacents), quels types de données sont utilisés et d'autres aspects qui vous aident à concevoir des opérations qui répondent aux spécifications de votre scénario.  
@@ -146,7 +146,7 @@ Sub Hello (ByVal greeting As String)
  Pour obtenir un exemple de création d’un service et d’un client qui accède à ce service [, consultez Procédure: Créer un contrat](../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md) duplex et [Comment: Accédez aux services avec un contrat](../../../docs/framework/wcf/feature-details/how-to-access-services-with-a-duplex-contract.md)duplex. Pour obtenir un exemple fonctionnel, consultez [duplex](../../../docs/framework/wcf/samples/duplex.md). Pour plus d’informations sur les problèmes liés à l’utilisation de contrats duplex, consultez [services duplex](../../../docs/framework/wcf/feature-details/duplex-services.md).  
   
 > [!CAUTION]
->  Lorsqu'un service reçoit un message duplex, il consultez l'élément `ReplyTo` dans ce message entrant afin de déterminer où envoyer la réponse. Si le canal utilisé pour recevoir le message n'est pas sécurisé, un client non fiable peut envoyer un message malveillant avec l'élément `ReplyTo` d'un ordinateur cible, ce qui peut provoquer un déni de service de cet ordinateur cible.  
+> Lorsqu'un service reçoit un message duplex, il consultez l'élément `ReplyTo` dans ce message entrant afin de déterminer où envoyer la réponse. Si le canal utilisé pour recevoir le message n'est pas sécurisé, un client non fiable peut envoyer un message malveillant avec l'élément `ReplyTo` d'un ordinateur cible, ce qui peut provoquer un déni de service de cet ordinateur cible.  
   
 ##### <a name="out-and-ref-parameters"></a>Paramètres Out et Ref  
  Dans la plupart des cas, vous `in` pouvez utiliser`ByVal` des paramètres (dans `out` Visual Basic `ref` ) et`ByRef` des paramètres (dans Visual Basic). Les paramètres `out` et `ref` indiquant tous deux que les données sont retournées à partir d'une opération, une signature d'opération telle que la suivante spécifie qu'une opération demande/réponse est requise bien que la signature d'opération retourne `void`.  
@@ -271,9 +271,9 @@ End Interface
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Créer un contrat de demande-réponse](../../../docs/framework/wcf/feature-details/how-to-create-a-request-reply-contract.md)
-- [Guide pratique : Créer un contrat unidirectionnel](../../../docs/framework/wcf/feature-details/how-to-create-a-one-way-contract.md)
-- [Guide pratique pour Créer un contrat duplex](../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)
+- [Guide pratique : Créer un contrat de demande-réponse](../../../docs/framework/wcf/feature-details/how-to-create-a-request-reply-contract.md)
+- [Guide pratique pour Créer un contrat unidirectionnel](../../../docs/framework/wcf/feature-details/how-to-create-a-one-way-contract.md)
+- [Guide pratique : Créer un contrat duplex](../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)
 - [Spécification du transfert de données dans des contrats de service](../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)
 - [Spécification et gestion des erreurs dans les contrats et les services](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)
 - [Utilisation de sessions](../../../docs/framework/wcf/using-sessions.md)

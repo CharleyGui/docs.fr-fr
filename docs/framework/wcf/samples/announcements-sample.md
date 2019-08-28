@@ -2,87 +2,90 @@
 title: Exemple Announcements
 ms.date: 03/30/2017
 ms.assetid: 954a75e4-9a97-41d6-94fc-43765d4205a9
-ms.openlocfilehash: 895043976fd39ac0057c8dbc1c7daf0394393984
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1acf51ebe36872424be1e0fdda65a7d18aa737f2
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62002753"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70045793"
 ---
 # <a name="announcements-sample"></a>Exemple Announcements
-Cet exemple montre comment utiliser les fonctionnalités d’annonce de la découverte. Les annonces permettent aux services d'envoyer des messages d'annonce qui contiennent des métadonnées relatives au service. Par défaut, une annonce de type Hello est envoyée lorsque le service démarre et une annonce de type Bye est envoyée lorsque le service s'arrête. Ces annonces peuvent être envoyées en mode multidiffusion ou de point à point. Cet exemple se compose de deux projets : service et client.  
-  
-## <a name="service"></a>Service  
- Ce projet contient un service de calculatrice auto-hébergé. Dans la méthode `Main`, un hôte de service est créé et un point de terminaison de service lui est ajouté. Ensuite, un <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> est créé. Pour activer les annonces, un point de terminaison d'annonce doit être ajouté au <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>. Dans ce cas, un point de terminaison standard utilisant la multidiffusion UDP est ajouté comme point de terminaison d'annonce. Celui-ci diffuse les annonces sur une adresse UDP bien connue.  
-  
+
+Cet exemple montre comment utiliser les fonctionnalités d’annonce de la découverte. Les annonces permettent aux services d'envoyer des messages d'annonce qui contiennent des métadonnées relatives au service. Par défaut, une annonce de type Hello est envoyée lorsque le service démarre et une annonce de type Bye est envoyée lorsque le service s'arrête. Ces annonces peuvent être envoyées en mode multidiffusion ou de point à point. Cet exemple se compose de deux projets : service et client.
+
+## <a name="service"></a>de diffusion en continu
+
+Ce projet contient un service de calculatrice auto-hébergé. Dans la méthode `Main`, un hôte de service est créé et un point de terminaison de service lui est ajouté. Ensuite, un <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> est créé. Pour activer les annonces, un point de terminaison d'annonce doit être ajouté au <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>. Dans ce cas, un point de terminaison standard utilisant la multidiffusion UDP est ajouté comme point de terminaison d'annonce. Celui-ci diffuse les annonces sur une adresse UDP bien connue.
+
 ```csharp
-Uri baseAddress = new Uri("http://localhost:8000/" + Guid.NewGuid().ToString());  
-  
-// Create a ServiceHost for the CalculatorService type.  
-using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), baseAddress))  
-{  
-     serviceHost.AddServiceEndpoint(typeof(ICalculatorService), new WSHttpBinding(), String.Empty);  
-  
-     ServiceDiscoveryBehavior serviceDiscoveryBehavior = new ServiceDiscoveryBehavior();  
-  
-     // Announce the availability of the service over UDP multicast  
-    serviceDiscoveryBehavior.AnnouncementEndpoints.Add(new UdpAnnouncementEndpoint());  
-  
-    // Make the service discoverable over UDP multicast.  
-    serviceHost.Description.Behaviors.Add(serviceDiscoveryBehavior);                  
-    serviceHost.AddServiceEndpoint(new UdpDiscoveryEndpoint());  
-    serviceHost.Open();  
-    // ...  
-}  
-```  
-  
-## <a name="client"></a>Client  
- Dans ce projet, notez que le client héberge un <xref:System.ServiceModel.Discovery.AnnouncementService>. En outre, deux délégués sont inscrits avec les événements. Ces événements déterminent les actions du client lors de la réception d'annonces en ligne et hors connexion.  
-  
+Uri baseAddress = new Uri("http://localhost:8000/" + Guid.NewGuid().ToString());
+
+// Create a ServiceHost for the CalculatorService type.
+using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), baseAddress))
+{
+     serviceHost.AddServiceEndpoint(typeof(ICalculatorService), new WSHttpBinding(), String.Empty);
+
+     ServiceDiscoveryBehavior serviceDiscoveryBehavior = new ServiceDiscoveryBehavior();
+
+     // Announce the availability of the service over UDP multicast
+    serviceDiscoveryBehavior.AnnouncementEndpoints.Add(new UdpAnnouncementEndpoint());
+
+    // Make the service discoverable over UDP multicast.
+    serviceHost.Description.Behaviors.Add(serviceDiscoveryBehavior);
+    serviceHost.AddServiceEndpoint(new UdpDiscoveryEndpoint());
+    serviceHost.Open();
+    // ...
+}
+```
+
+## <a name="client"></a>Client
+
+Dans ce projet, notez que le client héberge un <xref:System.ServiceModel.Discovery.AnnouncementService>. En outre, deux délégués sont inscrits avec les événements. Ces événements déterminent les actions du client lors de la réception d'annonces en ligne et hors connexion.
+
 ```csharp
-// Create an AnnouncementService instance  
-AnnouncementService announcementService = new AnnouncementService();  
-  
-// Subscribe the announcement events  
-announcementService.OnlineAnnouncementReceived += OnOnlineEvent;  
-announcementService.OfflineAnnouncementReceived += OnOfflineEvent;  
-```  
-  
- Les méthodes `OnOnlineEvent` et `OnOfflineEvent` gèrent respectivement les messages d'annonce de type Hello et Bye.  
-  
+// Create an AnnouncementService instance
+AnnouncementService announcementService = new AnnouncementService();
+
+// Subscribe the announcement events
+announcementService.OnlineAnnouncementReceived += OnOnlineEvent;
+announcementService.OfflineAnnouncementReceived += OnOfflineEvent;
+```
+
+Les méthodes `OnOnlineEvent` et `OnOfflineEvent` gèrent respectivement les messages d'annonce de type Hello et Bye.
+
 ```csharp
-static void OnOnlineEvent(object sender, AnnouncementEventArgs e)  
-{  
-    Console.WriteLine();              
-    Console.WriteLine("Received an online announcement from {0}:", e.AnnouncementMessage.EndpointDiscoveryMetadata.Address);  
-PrintEndpointDiscoveryMetadata(e.AnnouncementMessage.EndpointDiscoveryMetadata);  
-}  
-  
-static void OnOfflineEvent(object sender, AnnouncementEventArgs e)  
-{  
-    Console.WriteLine();  
-    Console.WriteLine("Received an offline announcement from {0}:", e.AnnouncementMessage.EndpointDiscoveryMetadata.Address);  
-            PrintEndpointDiscoveryMetadata(e.AnnouncementMessage.EndpointDiscoveryMetadata);  
-}  
-```  
-  
-#### <a name="to-use-this-sample"></a>Pour utiliser cet exemple  
-  
-1. Cet exemple utilise des points de terminaison HTTP et pour exécuter cet exemple, bon ACL URL doit être ajouté voir [configuration de HTTP et HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353) pour plus d’informations. L'exécution de la commande suivante avec un privilège élevé doit ajouter les ACL appropriées. Vous pouvez substituer vos domaine et nom d’utilisateur aux arguments suivants si la commande ne fonctionne pas telle quelle. `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
-  
-2. Générez la solution.  
-  
-3. Exécutez l'application client.exe.  
-  
-4. Exécutez l'application service.exe. Notez que le client reçoit une annonce en ligne.  
-  
-5. Fermez l'application service.exe. Notez que le client reçoit une annonce hors connexion.  
-  
+static void OnOnlineEvent(object sender, AnnouncementEventArgs e)
+{
+    Console.WriteLine();
+    Console.WriteLine("Received an online announcement from {0}:", e.AnnouncementMessage.EndpointDiscoveryMetadata.Address);
+PrintEndpointDiscoveryMetadata(e.AnnouncementMessage.EndpointDiscoveryMetadata);
+}
+
+static void OnOfflineEvent(object sender, AnnouncementEventArgs e)
+{
+    Console.WriteLine();
+    Console.WriteLine("Received an offline announcement from {0}:", e.AnnouncementMessage.EndpointDiscoveryMetadata.Address);
+            PrintEndpointDiscoveryMetadata(e.AnnouncementMessage.EndpointDiscoveryMetadata);
+}
+```
+
+#### <a name="to-use-this-sample"></a>Pour utiliser cet exemple
+
+1. Cet exemple utilise des points de terminaison HTTP et pour exécuter cet exemple, des listes de contrôle d’accès d’URL appropriées doivent être ajoutées. pour plus d’informations, consultez [configuration de http et HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353) . L'exécution de la commande suivante avec un privilège élevé doit ajouter les ACL appropriées. Vous pouvez substituer vos domaine et nom d’utilisateur aux arguments suivants si la commande ne fonctionne pas telle quelle. `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`
+
+2. Générez la solution.
+
+3. Exécutez l'application client.exe.
+
+4. Exécutez l'application service.exe. Notez que le client reçoit une annonce en ligne.
+
+5. Fermez l'application service.exe. Notez que le client reçoit une annonce hors connexion.
+
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
->   
->  `<InstallDrive>:\WF_WCF_Samples`  
->   
->  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.  
->   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\Announcements`  
+> Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.
+>
+> `<InstallDrive>:\WF_WCF_Samples`
+>
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
+>
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\Announcements`

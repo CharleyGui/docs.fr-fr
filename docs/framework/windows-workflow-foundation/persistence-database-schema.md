@@ -2,12 +2,12 @@
 title: Schéma de la base de données de persistance
 ms.date: 03/30/2017
 ms.assetid: 34f69f4c-df81-4da7-b281-a525a9397a5c
-ms.openlocfilehash: 384a9aceaf0b5619bbc4eca5929b6e6d7855e3d3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 65d8b2f7a6283d65823e1a186239d398ee4a530a
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962879"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70038337"
 ---
 # <a name="persistence-database-schema"></a>Schéma de la base de données de persistance
 Cette rubrique décrit les vues publiques prises en charge par le magasin d'instances de workflow SQL.  
@@ -44,7 +44,7 @@ Cette rubrique décrit les vues publiques prises en charge par le magasin d'inst
 |Revision|BigInt|Numéro de révision de la version du workflow.|  
   
 > [!CAUTION]
->  La vue **instances** contient également un déclencheur Delete. Les utilisateurs disposant des autorisations appropriées peuvent exécuter, sur cette vue, des instructions de suppression qui supprimeront de force des instances de workflow de la base de données. Il est recommandé de n'effectuer une suppression directe dans la vue qu'en dernier recours, car la suppression d'une instance sous le runtime de workflow peut avoir des conséquences inattendues. Utilisez plutôt le point de terminaison de gestion de l'instance de workflow pour que le runtime de workflow arrête l'instance. Si vous voulez supprimer un grand nombre d'instances de la vue, assurez-vous qu'il n'y aucun runtime actif susceptible d'être en train d'utiliser ces instances.  
+> La vue **instances** contient également un déclencheur Delete. Les utilisateurs disposant des autorisations appropriées peuvent exécuter, sur cette vue, des instructions de suppression qui supprimeront de force des instances de workflow de la base de données. Il est recommandé de n'effectuer une suppression directe dans la vue qu'en dernier recours, car la suppression d'une instance sous le runtime de workflow peut avoir des conséquences inattendues. Utilisez plutôt le point de terminaison de gestion de l'instance de workflow pour que le runtime de workflow arrête l'instance. Si vous voulez supprimer un grand nombre d'instances de la vue, assurez-vous qu'il n'y aucun runtime actif susceptible d'être en train d'utiliser ces instances.  
   
 ## <a name="servicedeployments-view"></a>Vue ServiceDeployments  
  La vue **ServiceDeployments** contient des informations de déploiement pour tous les services de workflow hébergés sur le Web (IIS/was). Chaque instance de workflow hébergée sur le Web contiendra un **ServiceDeploymentId** qui fait référence à une ligne dans cette vue.  

@@ -2,25 +2,25 @@
 title: traçage analytique [WCF]
 ms.date: 03/30/2017
 ms.assetid: 6029c7c7-3515-4d36-9d43-13e8f4971790
-ms.openlocfilehash: 95a4335ef41240e8cc85c06b7997c12d98800b1d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ba4f1778059f7b960eebd42822048fa031e6961e
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624235"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044543"
 ---
 # <a name="wcf-analytic-tracing"></a>traçage analytique [WCF]
-Cet exemple montre comment ajouter vos propres événements de traçage dans le flux de traces analytiques que Windows Communication Foundation (WCF) écrit dans ETW dans [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]. Les traces analytiques permettent d'obtenir facilement une visibilité de vos services sans que cela se traduise par une lourde pénalité en termes de performances. Cet exemple montre comment utiliser le <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> API pour écrire des événements qui s’intègrent avec les services WCF.  
+Cet exemple montre comment ajouter vos propres événements de suivi dans le flux de suivis analytiques que Windows Communication Foundation (WCF) écrit dans [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]ETW dans. Les traces analytiques permettent d'obtenir facilement une visibilité de vos services sans que cela se traduise par une lourde pénalité en termes de performances. Cet exemple montre comment utiliser les <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> API pour écrire des événements qui s’intègrent aux services WCF.  
   
- Pour plus d’informations sur la <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> API, consultez <xref:System.Diagnostics.Eventing?displayProperty=nameWithType>.  
+ Pour plus d’informations sur <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> les API, <xref:System.Diagnostics.Eventing?displayProperty=nameWithType>consultez.  
   
- Pour en savoir plus sur le suivi d’événements dans Windows, consultez [Améliorez le débogage et l’optimisation des performances avec ETW](https://go.microsoft.com/fwlink/?LinkId=166488).  
+ Pour en savoir plus sur le suivi d’événements dans Windows, consultez [améliorer le débogage et le réglage des performances avec ETW](https://go.microsoft.com/fwlink/?LinkId=166488).  
   
 ## <a name="disposing-eventprovider"></a>Suppression d'EventProvider  
- Cet exemple utilise la classe <xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType>, qui implémente <xref:System.IDisposable?displayProperty=nameWithType>. Lorsque vous implémentez le suivi pour un service WCF, il est probable que vous pouvez utiliser le <xref:System.Diagnostics.Eventing.EventProvider>de ressources pour la durée de vie du service. Pour cette raison, et à des fins de lisibilité, cet exemple ne supprime jamais l'<xref:System.Diagnostics.Eventing.EventProvider> inclus dans un wrapper. Si pour une raison ou une autre, les exigences de votre service diffèrent en matière de suivi et que vous devez supprimer cette ressource, modifiez cet exemple conformément aux meilleures pratiques de suppression de ressources non managées. Pour plus d’informations sur la suppression des ressources non managées, consultez [implémentation d’une méthode Dispose](https://go.microsoft.com/fwlink/?LinkId=166436).  
+ Cet exemple utilise la classe <xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType>, qui implémente <xref:System.IDisposable?displayProperty=nameWithType>. Lors de l’implémentation du suivi pour un service WCF, il est probable que vous <xref:System.Diagnostics.Eventing.EventProvider>pouvez utiliser les ressources de la durée de vie du service. Pour cette raison, et à des fins de lisibilité, cet exemple ne supprime jamais l'<xref:System.Diagnostics.Eventing.EventProvider> inclus dans un wrapper. Si pour une raison ou une autre, les exigences de votre service diffèrent en matière de suivi et que vous devez supprimer cette ressource, modifiez cet exemple conformément aux meilleures pratiques de suppression de ressources non managées. Pour plus d’informations sur la suppression des ressources non managées, consultez [implémentation d’une méthode dispose](https://go.microsoft.com/fwlink/?LinkId=166436).  
   
 ## <a name="self-hosting-vs-web-hosting"></a>Auto-hébergement et Hébergement Web  
- Pour les services hébergés sur le Web, les traces analytiques de WCF fournissent un champ nommé « HostReference », qui est utilisé pour identifier le service qui émet les traces. Les traces utilisateur extensibles peuvent participer à ce modèle et cet exemple en illustre les meilleures pratiques. Le format d’un hôte Web de référence lorsque le canal '&#124;' caractère apparaît réellement dans le résultat chaîne peut prendre l’une des opérations suivantes :  
+ Pour les services hébergés sur le Web, les traces analytiques de WCF fournissent un champ, appelé «HostReference», qui est utilisé pour identifier le service qui émet les traces. Les traces utilisateur extensibles peuvent participer à ce modèle et cet exemple en illustre les meilleures pratiques. Le format d’une référence d’hôte Web lorsque le caractère&#124;«» s’affiche réellement dans la chaîne obtenue peut être l’un des éléments suivants:  
   
 - Si l'application ne se situe pas à la racine.  
   
@@ -30,10 +30,10 @@ Cet exemple montre comment ajouter vos propres événements de traçage dans le 
   
      \<SiteName>&#124;\<ServiceVirtualPath>&#124;\<ServiceName>  
   
- Pour les services auto-hébergés, les traces analytiques de WCF ne remplissent pas le champ « HostReference ». La classe `WCFUserEventProvider` de cet exemple se comporte de manière cohérente lorsqu'elle est utilisée par un service auto-hébergé.  
+ Pour les services auto-hébergés, les traces analytiques de WCF ne remplissent pas le champ «HostReference». La classe `WCFUserEventProvider` de cet exemple se comporte de manière cohérente lorsqu'elle est utilisée par un service auto-hébergé.  
   
 ## <a name="custom-event-details"></a>Informations sur l'événement personnalisé  
- Manifeste du fournisseur d’événements ETW de WCF définit trois événements sont conçus pour être émis par les auteurs de service WCF à partir de code du service. Le tableau suivant détaille ces trois événements.  
+ Le manifeste du fournisseur d’événements ETW de WCF définit trois événements qui sont conçus pour être émis par les auteurs de service WCF à partir du code de service. Le tableau suivant détaille ces trois événements.  
   
 |Événement|Description|ID d'événement|  
 |-----------|-----------------|--------------|  
@@ -43,80 +43,80 @@ Cet exemple montre comment ajouter vos propres événements de traçage dans le 
   
 #### <a name="to-use-this-sample"></a>Pour utiliser cet exemple  
   
-1. À l’aide de Visual Studio 2012, ouvrez le fichier solution WCFAnalyticTracingExtensibility.sln.  
+1. À l’aide de Visual Studio 2012, ouvrez le fichier solution WCFAnalyticTracingExtensibility. sln.  
   
 2. Pour générer la solution, appuyez sur Ctrl+Maj+B.  
   
 3. Pour exécuter la solution, appuyez sur Ctrl+F5.  
   
-     Dans le navigateur Web, cliquez sur **Calculator.svc**. L'URI du document WSDL du service doit s'afficher dans le navigateur. Copiez cet URI.  
+     Dans le navigateur Web, cliquez sur **Calculator. svc**. L'URI du document WSDL du service doit s'afficher dans le navigateur. Copiez cet URI.  
   
-4. Exécutez le client de test WCF (WcfTestClient.exe).  
+4. Exécutez le client test WCF (WcfTestClient. exe).  
   
-     Le client de test WCF (WcfTestClient.exe) se trouve dans `\<Visual Studio 2012 Install Dir>\Common7\IDE\WcfTestClient.exe`. Le répertoire d’installation de Visual Studio 2012 par défaut est `C:\Program Files\Microsoft Visual Studio 10.0`.  
+     Le client test WCF (WcfTestClient. exe) se trouve à `\<Visual Studio 2012 Install Dir>\Common7\IDE\WcfTestClient.exe`l’emplacement. Le répertoire d’installation par défaut de Visual `C:\Program Files\Microsoft Visual Studio 10.0`Studio 2012 est.  
   
-5. Dans le client test WCF, ajoutez le service en sélectionnant **fichier**, puis **ajouter un Service**.  
+5. Dans le client test WCF, ajoutez le service en sélectionnant **fichier**, puis **Ajouter un service**.  
   
      Ajoutez l'adresse du point de terminaison dans la zone d'entrée.  
   
 6. Cliquez sur **OK** pour fermer la boîte de dialogue.  
   
-     Le service ICalculator est ajouté dans le volet gauche sous **Mes projets de Service**.  
+     Le service ICalculator est ajouté dans le volet gauche sous **mes projets de service**.  
   
 7. Ouvrez l'application Observateur d'événements.  
   
-     Avant d’appeler le service, démarrez l’Observateur d’événements et vérifiez que le journal des événements écoute les événements de suivi émis à partir du service WCF.  
+     Avant d’appeler le service, démarrez observateur d’événements et assurez-vous que le journal des événements écoute les événements de suivi émis à partir du service WCF.  
   
-8. À partir de la **Démarrer** menu, sélectionnez **outils d’administration**, puis **Observateur d’événements**. Activer la **analyse** et **déboguer** journaux.  
+8. Dans le menu **Démarrer** , sélectionnez **Outils d’administration**, puis **Observateur d’événements**. Activez les journaux d' **analyse** et de débogage.  
   
-9. Dans l’arborescence de commandes dans l’Observateur d’événements, accédez à **Observateur d’événements**, **journaux des Applications et Services**, **Microsoft**, **Windows**, puis **Serveur d’applications-Applications**. Avec le bouton droit **serveur d’applications-Applications**, sélectionnez **vue**, puis **afficher les journaux d’analyse et de débogage**.  
+9. Dans l’arborescence de observateur d’événements, accédez à **Observateur d’événements**, **journaux des applications et des services**, **Microsoft**, **Windows**, puis serveur d’applications **-applications**. Cliquez avec le bouton droit sur **serveur d’applications-applications**, sélectionnez **affichage**, puis affichez les **journaux d’analyse et de débogage**.  
   
-     Vérifiez que le **afficher les journaux d’analyse et de débogage** option est activée. Activer la **analyse** journal.  
+     Assurez-vous que l’option **afficher les journaux d’analyse et de débogage** est activée. Activez le journal d' **analyse** .  
   
-     Dans l’arborescence de commandes dans l’Observateur d’événements, accédez à **Observateur d’événements**, **journaux des Applications et Services**, **Microsoft**, **Windows**,  **Serveur d’applications-Applications**, puis **analytiques**. Avec le bouton droit **analyse** et sélectionnez **activer le journal**.  
+     Dans l’arborescence de observateur d’événements, accédez à **Observateur d’événements**, **journaux des applications et des services**, **Microsoft**, **Windows**, **serveur d’applications-applications**,puis analysez. Cliquez avec le bouton droit sur **analyse** et sélectionnez **activer le journal**.  
   
 10. Testez le service à l'aide du client test WCF.  
   
-    1. Dans le Client Test WCF, double-cliquez sur **Add()** sous le nœud du service ICalculator.  
+    1. Dans le client test WCF, double-cliquez sur **Add ()** sous le nœud de service ICalculator.  
   
-         Le **Add()** méthode s’affiche dans le volet droit avec deux paramètres.  
+         La méthode **Add ()** s’affiche dans le volet droit avec deux paramètres.  
   
     2. Tapez 2 pour le premier paramètre et 3 pour le deuxième.  
   
-    3. Cliquez sur **Invoke** pour appeler la méthode.  
+    3. Cliquez sur **appeler** pour appeler la méthode.  
   
-11. Accédez à la **Observateur d’événements** fenêtre que vous avez déjà ouverte. Accédez à **Observateur d’événements**, **journaux des Applications et Services**, **Microsoft**, **Windows**, **Application Applications de serveur**.  
+11. Accédez à la fenêtre de **Observateur d’événements** que vous avez déjà ouverte. Accédez à **Observateur d’événements**, **journaux des applications et des services**, **Microsoft**, **Windows**, serveur d’applications **-applications**.  
   
-12. Cliquez sur le **analyse** nœud et sélectionnez **Actualiser**.  
+12. Cliquez avec le bouton droit sur le nœud **analyse** et sélectionnez **Actualiser**.  
   
      Les événements s'affichent dans le volet droit.  
   
 13. Trouvez l'événement avec l'ID 303 et double-cliquez dessus pour l'ouvrir et en inspecter le contenu.  
   
-     Cet événement a été émis par le `Add()` méthode du service ICalculator et a une charge utile égale à « 2 + 3 = 5 ».  
+     Cet événement a été émis par la `Add()` méthode du service ICalculator et a une charge utile égale à «2 + 3 = 5».  
   
 #### <a name="to-clean-up-optional"></a>Pour nettoyer (facultatif)  
   
-1. Ouvrez **Observateur d’événements**.  
+1. Ouvrez l’ **Observateur d’événements**.  
   
-2. Accédez à **Observateur d’événements**, **journaux des Applications et Services**, **Microsoft**, **Windows**, puis  **Serveur d’applications-Applications**. Avec le bouton droit **analyse** et sélectionnez **désactiver le journal**.  
+2. Accédez à **Observateur d’événements**, **journaux des applications et des services**, **Microsoft**, **Windows**, puis **application-serveur-applications**. Cliquez avec le bouton droit sur **analyse** et sélectionnez **désactiver le journal**.  
   
-3. Accédez à **Observateur d’événements**, **journaux des Applications et Services**, **Microsoft**, **Windows**,  **Serveur d’applications-Applications**, puis **analytiques**. Avec le bouton droit **analyse** et sélectionnez **effacer le journal**.  
+3. Accédez à **Observateur d’événements**, **journaux des applications et des services**, **Microsoft**, **Windows**, **Application-Server-applications**, puis **analyse**. Cliquez avec le bouton droit sur **analyse** et sélectionnez **effacer le journal**.  
   
-4. Cliquez sur **effacer** pour effacer les événements.  
+4. Cliquez sur **Effacer** pour effacer les événements.  
   
 ## <a name="known-issue"></a>Problème connu  
- Il existe un problème connu dans le **Observateur d’événements** où il risque d’échouer à décoder des événements ETW. Vous pouvez voir un message d’erreur indiquant que : « La description de l’ID d’événement \<id > à partir de la source Microsoft-Windows-Application Server-Applications est introuvable. Le composant qui a déclenché cet événement n'est pas installé sur l'ordinateur local ou l'installation est endommagée. Vous pouvez installer ou réparer le composant sur l’ordinateur local. » Si vous rencontrez cette erreur, sélectionnez **Actualiser** à partir de la **Actions** menu. Le décodage de l'événement doit ensuite s'effectuer correctement.  
+ Il existe un problème connu dans le **Observateur d’événements** où il peut ne pas être en mesure de décoder les événements ETW. Vous pouvez voir un message d’erreur qui indique: «La description de l' \<ID d’événement > de la source Microsoft-Windows-serveur d’applications-applications est introuvable. Le composant qui a déclenché cet événement n'est pas installé sur l'ordinateur local ou l'installation est endommagée. Vous pouvez installer ou réparer le composant sur l’ordinateur local.» Si vous rencontrez cette erreur, sélectionnez **Actualiser** dans le menu **actions** . Le décodage de l'événement doit ensuite s'effectuer correctement.  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
+> Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTrace`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTrace`  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples d’analyse AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Exemples de surveillance AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)

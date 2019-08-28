@@ -2,12 +2,12 @@
 title: PII Security Lockdown
 ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
-ms.openlocfilehash: 16e7c564373eaf241b500c0e3de40ee8fb38f05a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f82d3f19a3bf6fc6a5ac038034880dafc03fcce1
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964604"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044797"
 ---
 # <a name="pii-security-lockdown"></a>PII Security Lockdown
 Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la sécurité d’un service Windows Communication Foundation (WCF) en:  
@@ -19,13 +19,13 @@ Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la s�
 - Contrôle de l'enregistrement des informations d'identification personnelle (PII, Personally Identifiable Information) dans les journaux de suivi et de message.  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
+> Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\SecurityLockdown`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\SecurityLockdown`  
   
 ## <a name="discussion"></a>Discussion  
  Chacune de ces fonctionnalités peut être utilisée séparément ou simultanément afin de contrôler les divers aspects relatifs à la sécurité des services. Il ne s’agit pas d’un guide définitif pour la sécurisation d’un service WCF.  
@@ -120,7 +120,7 @@ Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la s�
 > System.Diagnostics ignore tous les attributs de toutes les sources, sauf le premier attribut répertorié dans le fichier de configuration. L'ajout de l'attribut `logKnownPii` à la seconde source du fichier de configuration est sans effet.  
   
 > [!IMPORTANT]
->  L'exécution de cet exemple implique de modifier manuellement le fichier Machine.config. Vous devez faire très attention lorsque vous modifiez le fichier Machine.config, toutes valeurs ou syntaxes incorrectes étant susceptibles d'empêcher l'exécution des applications .NET Framework.  
+> L'exécution de cet exemple implique de modifier manuellement le fichier Machine.config. Vous devez faire très attention lorsque vous modifiez le fichier Machine.config, toutes valeurs ou syntaxes incorrectes étant susceptibles d'empêcher l'exécution des applications .NET Framework.  
   
  Les éléments de fichier de configuration peuvent également être chiffrés à l'aide de DPAPI et RSA. Pour plus d'informations, consultez les liens suivants :  
   

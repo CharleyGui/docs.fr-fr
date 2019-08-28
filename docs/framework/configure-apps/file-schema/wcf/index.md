@@ -2,12 +2,12 @@
 title: Schéma de configuration WCF
 ms.date: 03/30/2017
 ms.assetid: c282aeb5-91f0-4522-8e2f-704c1ef3651f
-ms.openlocfilehash: 8d7b4cbad1876888e7a22a92bdb28a17b880e159
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 37330b571553bb5e8f17ffad85faafbcaf19d217
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69925391"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70041285"
 ---
 # <a name="wcf-configuration-schema"></a>Schéma de configuration WCF
 Les éléments de configuration Windows Communication Foundation (WCF) vous permettent de configurer des applications clientes et de service WCF. Vous pouvez utiliser l’[outil Éditeur de configuration (SvcConfigEditor.exe)](../../../wcf/configuration-editor-tool-svcconfigeditor-exe.md) pour créer et modifier des fichiers de configuration pour les clients et les services. Les fichiers de configuration étant au format XML, il est nécessaire de maîtriser ce format pour pouvoir modifier ces fichiers à l'aide d'un éditeur de texte, sans quoi vous risquez de rencontrer des problèmes tels qu'une balise ou un attribut d'élément XML manquant. Ce problème a lieu car les étiquettes et les attributs d’éléments XML respectent la casse.  
@@ -23,7 +23,7 @@ Les éléments de configuration Windows Communication Foundation (WCF) vous perm
  ![Diagramme qui montre le schéma de configuration WCF.](./media/index/windows-communication-foundation-configuration-schema.gif)  
   
 > [!CAUTION]
->  Vous devez protéger les sections de configuration WCF dans vos fichiers de configuration d’application (App. config) avec des listes de Access Control appropriées afin d’éviter toute menace potentielle pour la sécurité.  Par exemple, vous devez vous assurer que seules les personnes appropriées peuvent accéder ou modifier les paramètres de sécurité relatifs aux liaisons d’application ou la section relative au modèle de service figurant dans le fichier de configuration d’un service.  
+> Vous devez protéger les sections de configuration WCF dans vos fichiers de configuration d’application (App. config) avec des listes de Access Control appropriées afin d’éviter toute menace potentielle pour la sécurité.  Par exemple, vous devez vous assurer que seules les personnes appropriées peuvent accéder ou modifier les paramètres de sécurité relatifs aux liaisons d’application ou la section relative au modèle de service figurant dans le fichier de configuration d’un service.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [\<system.serviceModel>](system-servicemodel.md)  

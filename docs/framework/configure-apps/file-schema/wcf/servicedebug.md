@@ -2,12 +2,12 @@
 title: <serviceDebug>
 ms.date: 03/30/2017
 ms.assetid: 6d7ea986-f232-49fe-842c-f934d9966889
-ms.openlocfilehash: cbeb0d254bf6716296f34020ea8796885e0f368a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5ca1d4e7f9107c798213d760d9780dbeded9eae0
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936264"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70041264"
 ---
 # <a name="servicedebug"></a>\<serviceDebug>
 Spécifie les fonctionnalités de débogage et d’informations d’aide pour un service Windows Communication Foundation (WCF).  
@@ -62,7 +62,7 @@ Spécifie les fonctionnalités de débogage et d’informations d’aide pour un
  L' `includeExceptionDetailInFaults` affectation `true` de la valeur à permet au service de retourner toute exception levée par le code d’application même si l’exception n’est <xref:System.ServiceModel.FaultContractAttribute>pas déclarée à l’aide de. Ce paramètre est utile lors du débogage de cas où le serveur lève une exception inattendue. Avec cet attribut, un formulaire sérialisé de l'exception inconnue est retourné et vous pouvez consulter plus de détails de l'exception.  
   
 > [!CAUTION]
->  Le retour d'informations sur les exceptions managées aux clients peut constituer un problème de sécurité, car les détails d'exception exposent des informations relatives à l'implémentation de service interne que des clients non autorisés pourraient utiliser. En raison des risques de sécurité encourus, il est fortement recommandé de n'utiliser cette méthode que dans le cadre de scénarios de débogage contrôlés. Vous devez affecter la valeur `includeExceptionDetailInFaults` à `false` lors du déploiement de l'application.  
+> Le retour d'informations sur les exceptions managées aux clients peut constituer un problème de sécurité, car les détails d'exception exposent des informations relatives à l'implémentation de service interne que des clients non autorisés pourraient utiliser. En raison des risques de sécurité encourus, il est fortement recommandé de n'utiliser cette méthode que dans le cadre de scénarios de débogage contrôlés. Vous devez affecter la valeur `includeExceptionDetailInFaults` à `false` lors du déploiement de l'application.  
   
  Pour plus d’informations sur les problèmes de sécurité liés à l’exception managée, consultez [spécification et gestion des erreurs dans les contrats et les services](../../../wcf/specifying-and-handling-faults-in-contracts-and-services.md). Pour obtenir un exemple de code, consultez comportement de débogage de [service](../../../wcf/samples/service-debug-behavior.md).  
   

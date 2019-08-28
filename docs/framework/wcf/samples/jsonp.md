@@ -2,15 +2,15 @@
 title: JSONP
 ms.date: 03/30/2017
 ms.assetid: c13b4d7b-dac7-4ffd-9f84-765c903511e1
-ms.openlocfilehash: 37da57a000376f972cd6da9e04be46ddec1b7144
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9f24ccb5ba14e0b43f0e3f911a1672db5821d228
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61989883"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70039555"
 ---
 # <a name="jsonp"></a>JSONP
-Cet exemple montre comment prendre en charge JSON with Padding (JSONP) dans les services WCF REST. JSONP est une convention servant à appeler des scripts entre domaines en générant des balises de script dans le document actif. Le résultat est retourné dans une fonction de rappel spécifiée. JSONP repose sur l’idée que les balises telles que `<script src="http://..." >` peuvent évaluer des scripts à partir de n’importe quel domaine et le script récupéré par ces balises est évalué dans une étendue dans laquelle d’autres fonctions peuvent déjà être définies.
+Cet exemple montre comment prendre en charge JSON with Padding (JSONP) dans les services WCF REST. JSONP est une convention servant à appeler des scripts entre domaines en générant des balises de script dans le document actif. Le résultat est retourné dans une fonction de rappel spécifiée. JSONP repose sur l’idée que des balises telles `<script src="http://..." >` que peuvent évaluer des scripts de n’importe quel domaine et que le script récupéré par ces balises est évalué dans une étendue dans laquelle d’autres fonctions peuvent déjà être définies.
 
 ## <a name="demonstrates"></a>Démonstrations
  Script entre domaines avec JSONP.
@@ -24,7 +24,7 @@ proxy.set_enableJsonp(true);
 proxy.GetCustomer(onSuccess, onFail, null);
 ```
 
- La page web peut appeler le service WCF REST, car le service utilise le <xref:System.ServiceModel.Description.WebScriptEndpoint> avec `crossDomainScriptAccessEnabled` ayant la valeur `true`. Deux de ces configurations s’effectuent dans le fichier Web.config sous la \<system.serviceModel > élément.
+ La page web peut appeler le service WCF REST, car le service utilise le <xref:System.ServiceModel.Description.WebScriptEndpoint> avec `crossDomainScriptAccessEnabled` ayant la valeur `true`. Ces deux configurations s’effectuent dans le fichier Web. config sous l' \<élément System. ServiceModel >.
 
 ```xml
 <system.serviceModel>
@@ -37,7 +37,7 @@ proxy.GetCustomer(onSuccess, onFail, null);
 </system.serviceModel>
 ```
 
- ScriptManager gère l'interaction avec le service et cache la complexité de l'implémentation manuelle de l'accès JSONP. Lorsque `crossDomainScriptAccessEnabled` a la valeur `true` et le format de réponse pour une opération est JSON, l’infrastructure WCF inspecte l’URI de la demande pour un paramètre de chaîne de requête de rappel et encapsule la réponse JSON avec la valeur de la chaîne de requête de rappel paramètre. Dans l'exemple, la page Web appelle le service WCF REST avec l'URI suivant.
+ ScriptManager gère l'interaction avec le service et cache la complexité de l'implémentation manuelle de l'accès JSONP. Lorsque `crossDomainScriptAccessEnabled` a la `true` valeur et que le format de la réponse d’une opération est JSON, l’infrastructure WCF inspecte l’URI de la demande pour un paramètre de chaîne de requête de rappel et encapsule la réponse JSON avec la valeur de la chaîne de requête de rappel. paramètre. Dans l'exemple, la page Web appelle le service WCF REST avec l'URI suivant.
 
 ```
 http://localhost:33695/CustomerService/GetCustomer?callback=Sys._json0
@@ -51,21 +51,21 @@ Sys._json0({"__type":"Customer:#Microsoft.Samples.Jsonp","Address":"1 Example Wa
 
  Cette réponse JSONP inclut les données client mises au format JSON et encapsulées avec le nom de la fonction de rappel que la page web a demandée. ScriptManager exécute ce rappel à l'aide d'une balise de script pour effectuer la demande entre domaines, puis passe le résultat au gestionnaire onSuccess qui a été passé à l'opération GetCustomer du proxy ASP.NET AJAX.
 
- L’exemple se compose de deux applications web ASP.NET : un contient seulement un service WCF, et une autre la page Web .aspx, qui appelle le service. Lorsque vous exécutez la solution, Visual Studio 2012 hébergera les deux sites Web sur des ports différents, ce qui crée un environnement où le service et le client résident dans des domaines différents.
+ L’exemple se compose de deux applications Web ASP.NET: l’une contient uniquement un service WCF, tandis que l’autre contient la page Web. aspx, qui appelle le service. Lors de l’exécution de la solution, Visual Studio 2012 héberge les deux sites Web sur des ports différents, ce qui crée un environnement dans lequel le service et le client se trouvent sur des domaines différents.
 
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
+> Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\AJAX\JSONP`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\AJAX\JSONP`  
   
 #### <a name="to-run-the-sample"></a>Pour exécuter l'exemple  
   
 1. Ouvrez la solution de l'exemple JSONP.  
   
-2. Appuyez sur F5 pour lancer `http://localhost:26648/JSONPClientPage.aspx` dans le navigateur.  
+2. Appuyez sur F5 pour `http://localhost:26648/JSONPClientPage.aspx` lancer dans le navigateur.  
   
-3. Notez qu’une fois la page chargée, les entrées de texte pour « Name » et « Address » sont remplies par les valeurs.  Ces valeurs ont été fournies à partir d’un appel au service WCF une fois que le navigateur a terminé le rendu de la page.
+3. Notez qu’après le chargement de la page, les entrées de texte pour «name» et «Address» sont renseignées par des valeurs.  Ces valeurs ont été fournies par un appel au service WCF une fois que le navigateur a terminé le rendu de la page.

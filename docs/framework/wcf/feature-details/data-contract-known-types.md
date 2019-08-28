@@ -9,12 +9,12 @@ helpviewer_keywords:
 - KnownTypeAttribute [WCF]
 - KnownTypes [WCF]
 ms.assetid: 1a0baea1-27b7-470d-9136-5bbad86c4337
-ms.openlocfilehash: 054beab97a77bd466d2c3d8c734e37f8ded7eb62
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2ab0a41e87a9b14d1beac9fb0c39586f0ea16a4a
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69945269"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70040197"
 ---
 # <a name="data-contract-known-types"></a>Types connus de contrats de données
 La classe <xref:System.Runtime.Serialization.KnownTypeAttribute> vous permet de spécifier, en avance, les types qui doivent être inclus pour être pris en compte pendant la désérialisation. Pour obtenir un exemple fonctionnel, consultez l’exemple [Known Types](../../../../docs/framework/wcf/samples/known-types.md) .  
@@ -77,7 +77,7 @@ La classe <xref:System.Runtime.Serialization.KnownTypeAttribute> vous permet de 
  Dans l'exemple suivant, un contrat de données stocke un nombre et une opération à effectuer sur le nombre. Le membre de données `Numbers` peut être un entier, un tableau d'entiers ou un objet <xref:System.Collections.Generic.List%601> qui contient des entiers.  
   
 > [!CAUTION]
->  Cela ne fonctionnera que du côté client si SVCUTIL.EXE est utilisé pour générer un proxy WCF. SVCUTIL.EXE récupère des métadonnées du service, notamment tous les types connus. Sans ces informations, un client ne sera pas en mesure de désérialiser les types.  
+> Cela ne fonctionnera que du côté client si SVCUTIL.EXE est utilisé pour générer un proxy WCF. SVCUTIL.EXE récupère des métadonnées du service, notamment tous les types connus. Sans ces informations, un client ne sera pas en mesure de désérialiser les types.  
   
  [!code-csharp[C_KnownTypeAttribute#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_knowntypeattribute/cs/source.cs#6)]
  [!code-vb[C_KnownTypeAttribute#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#6)]  

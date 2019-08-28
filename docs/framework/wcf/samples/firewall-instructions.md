@@ -2,12 +2,12 @@
 title: Instructions sur les pare-feu
 ms.date: 03/30/2017
 ms.assetid: a7dc429f-65ac-4faf-974a-77d5fb977fe1
-ms.openlocfilehash: 5e557963c415cf39c4f25b4854c9863652201146
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2c07d17ebb6bbefa78d12bb128e354112311891a
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69961409"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044949"
 ---
 # <a name="firewall-instructions"></a>Instructions sur les pare-feu
 Vous devez activer plusieurs ports ou programmes dans le pare-feu pour que les exemples Windows Communication Foundation (WCF) puissent fonctionner. Un grand nombre d'exemples communique en utilisant des ports contenus dans la plage 8000-8003, ainsi que le port 9000. Le pare-feu est activé par défaut et empêche l'accès à ces ports. Pour activer le pare-feu pour les exemples, exécutez l’une des procédures suivantes, selon vos besoins et votre environnement de sécurité :  
@@ -21,7 +21,7 @@ Vous devez activer plusieurs ports ou programmes dans le pare-feu pour que les e
  Si vous ne savez pas quelle procédure utiliser, choisissez la première option. Si vous utilisez le pare-feu d'un autre fournisseur, vous devrez peut-être apporter des modifications semblables.  
   
 > [!IMPORTANT]
->  La modification de votre configuration de pare-feu affecte votre sécurité. Il est recommandé d'enregistrer les modifications apportées et de les supprimer lorsque vous n'utilisez plus les exemples.  
+> La modification de votre configuration de pare-feu affecte votre sécurité. Il est recommandé d'enregistrer les modifications apportées et de les supprimer lorsque vous n'utilisez plus les exemples.  
   
 ### <a name="to-enable-samples-programs-in-advance"></a>Pour activer à l'avance les programmes d'exemples  
   
@@ -30,7 +30,7 @@ Vous devez activer plusieurs ports ou programmes dans le pare-feu pour que les e
 2. Cliquez sur **Démarrer**, sur **exécuter**, puis `firewall.cpl`tapez. L’applet du **panneau de configuration du pare-feu Windows** s’ouvre.  
   
     > [!NOTE]
-    >  Pour exécuter des exemples qui requièrent la capacité de communiquer via le Pare-feu Windows, vous devez disposer des autorisations nécessaires pour modifier les paramètres du Pare-feu Windows. Si certains paramètres du pare-feu ne sont pas disponibles et que votre ordinateur est connecté à un domaine, il est possible que votre administrateur système contrôle ces paramètres au moyen d'une stratégie de groupe.  
+    > Pour exécuter des exemples qui requièrent la capacité de communiquer via le Pare-feu Windows, vous devez disposer des autorisations nécessaires pour modifier les paramètres du Pare-feu Windows. Si certains paramètres du pare-feu ne sont pas disponibles et que votre ordinateur est connecté à un domaine, il est possible que votre administrateur système contrôle ces paramètres au moyen d'une stratégie de groupe.  
   
 3. Effectuez l'une des étapes suivantes, selon votre système d'exploitation, pour autoriser un programme via le Pare-feu Windows :  
   

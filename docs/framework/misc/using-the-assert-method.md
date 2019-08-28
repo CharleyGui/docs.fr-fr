@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 1e40f4d3-fb7d-4f19-b334-b6076d469ea9
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5b5a13b362f565cfae9247908bcf3cf35c899ae4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e2a86fbcd78c6768a91cc0d12e45053f8da6cdec
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910716"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70041151"
 ---
 # <a name="using-the-assert-method"></a>Utilisation de la méthode Assert
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -31,7 +31,7 @@ ms.locfileid: "69910716"
  <xref:System.Security.CodeAccessPermission.Assert%2A> est une méthode qui peut être appelée sur les classes d'autorisation d'accès au code et sur la classe <xref:System.Security.PermissionSet>. Vous pouvez utiliser **Assert** pour permettre à votre code (et aux appelants en aval) d’effectuer des actions que votre code est autorisé à effectuer, mais que ses appelants ne sont pas autorisés à effectuer cette opération. Une assertion de sécurité modifie le processus normal de vérification de sécurité effectué par le runtime. Lors de l'assertion d'une autorisation, le système de sécurité reçoit l'ordre de ne pas vérifier que les appelants de votre code disposent de l'autorisation ayant fait l'objet d'une assertion.  
   
 > [!CAUTION]
->  Utilisez les assertions avec précaution, car elles peuvent ouvrir des failles de sécurité et perturber le mécanisme d'application des restrictions de sécurité du runtime.  
+> Utilisez les assertions avec précaution, car elles peuvent ouvrir des failles de sécurité et perturber le mécanisme d'application des restrictions de sécurité du runtime.  
   
  Les assertions sont utiles quand une bibliothèque appelle du code non managé ou effectue un appel qui nécessite une autorisation qui n'est pas liée de manière évidente à l'utilisation prévue de la bibliothèque. Par exemple, tout le code managé qui appelle du code non managé doit avoir **SecurityPermission** avec l’indicateur **UnmanagedCode** spécifié. Par défaut, le code qui ne provient pas de l'ordinateur local, comme le code téléchargé à partir de l'intranet local, ne recevra pas cette autorisation. Par conséquent, pour que le code téléchargé à partir de l'intranet local puisse appeler une bibliothèque qui utilise du code non managé, il doit disposer de l'autorisation ayant fait l'objet d'une assertion effectuée par la bibliothèque. En outre, certaines bibliothèques peuvent effectuer des appels invisibles aux appelants et nécessitent donc des autorisations spéciales.  
   
@@ -66,7 +66,7 @@ ms.locfileid: "69910716"
  Supposons, par exemple, que votre classe de bibliothèque hautement approuvée possède une méthode qui supprime les fichiers. Elle accède au fichier en appelant une fonction Win32 non managée. Un appelant appelle la méthode **Delete** de votre code, en passant le nom du fichier à supprimer, C:\test.txt. Dans la méthode **Delete** , votre code crée un <xref:System.Security.Permissions.FileIOPermission> objet représentant l’accès en écriture à C:\test.txt. (l'accès en écriture est nécessaire pour supprimer un fichier). Votre code appelle ensuite une vérification de sécurité impérative en appelant la méthode **Demand** de l’objet **FileIOPermission** . Si l'un des appelants de la pile des appels n'a pas cette autorisation, une <xref:System.Security.SecurityException> est levée. Si aucune exception n'est levée, vous savez que tous les appelants ont le droit d'accéder à C:\Test.txt. Comme vous pensez que la plupart de vos appelants ne sont pas autorisés à accéder à du code non managé, votre code crée <xref:System.Security.Permissions.SecurityPermission> ensuite un objet qui représente le droit d’appeler du code non managé et appelle la méthode Assert de l’objet. Enfin, il appelle la fonction non managée Win32 pour supprimer C:\Text.txt, puis retourne le contrôle à l'appelant.  
   
 > [!CAUTION]
->  Vous devez être sûr que votre code n'utilise pas d'assertions s'il peut être utilisé par un autre code pour accéder à une ressource protégée par l'autorisation faisant l'objet de l'assertion. Par exemple, dans le code qui écrit dans un fichier dont le nom est spécifié par l’appelant en tant que paramètre, vous ne devez pas déclarer l' **autorisation FileIOPermission** pour écrire dans les fichiers, car votre code est ouvert à une utilisation incorrecte par un tiers.  
+> Vous devez être sûr que votre code n'utilise pas d'assertions s'il peut être utilisé par un autre code pour accéder à une ressource protégée par l'autorisation faisant l'objet de l'assertion. Par exemple, dans le code qui écrit dans un fichier dont le nom est spécifié par l’appelant en tant que paramètre, vous ne devez pas déclarer l' **autorisation FileIOPermission** pour écrire dans les fichiers, car votre code est ouvert à une utilisation incorrecte par un tiers.  
   
  Lorsque vous utilisez la syntaxe de sécurité impérative, l' appel de la méthode Assert sur plusieurs autorisations dans la même méthode entraîne la levée d’une exception de sécurité. Au lieu de cela, vous devez créer un objet PermissionSet, lui passer les autorisations individuelles que vous souhaitez appeler, puis appeler la méthode Assert sur l’objet PermissionSet. Vous pouvez appeler la méthode Assert plusieurs fois lorsque vous utilisez la syntaxe de sécurité déclarative.  
   

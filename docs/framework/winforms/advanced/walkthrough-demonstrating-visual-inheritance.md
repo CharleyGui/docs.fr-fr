@@ -11,12 +11,12 @@ helpviewer_keywords:
 - walkthroughs [Windows Forms], visual inheritance
 - Windows Forms, inheritance
 ms.assetid: 01966086-3142-450e-8210-3fd4cb33f591
-ms.openlocfilehash: 6fd504269ae9afbfd02b58276582a644674e1e0f
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 32df98852b28963ffb748895156f7d9977c74b92
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040320"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70046148"
 ---
 # <a name="walkthrough-demonstrating-visual-inheritance"></a>Procédure pas à pas : démonstration de l’héritage visuel
 
@@ -35,19 +35,19 @@ Pour finir, cette procédure pas à pas vous montrera la différence entre les c
 > [!CAUTION]
 > Les contrôles ne prennent pas tous en charge l'héritage visuel à partir d'un formulaire de base. Les contrôles suivants ne prennent pas en charge le scénario décrit dans cette procédure pas à pas :
 >
->  <xref:System.Windows.Forms.WebBrowser>
+> - <xref:System.Windows.Forms.WebBrowser>
 >
->  <xref:System.Windows.Forms.ToolStrip>
+> - <xref:System.Windows.Forms.ToolStrip>
 >
->  <xref:System.Windows.Forms.ToolStripPanel>
+> - <xref:System.Windows.Forms.ToolStripPanel>
 >
->  <xref:System.Windows.Forms.TableLayoutPanel>
+> - <xref:System.Windows.Forms.TableLayoutPanel>
 >
->  <xref:System.Windows.Forms.FlowLayoutPanel>
+> - <xref:System.Windows.Forms.FlowLayoutPanel>
 >
->  <xref:System.Windows.Forms.DataGridView>
+> - <xref:System.Windows.Forms.DataGridView>
 >
->  Ces contrôles dans le formulaire hérité sont toujours en lecture seule, quels que soient les modificateurs que vous utilisez (`private`, `protected` ou `public`).
+> Ces contrôles dans le formulaire hérité sont toujours en lecture seule, quels que soient les modificateurs que vous utilisez (`private`, `protected` ou `public`).
 
 ## <a name="create-a-class-library-project-containing-a-base-form"></a>Créer un projet de bibliothèque de classes contenant un formulaire de base
 
@@ -61,7 +61,7 @@ Pour finir, cette procédure pas à pas vous montrera la différence entre les c
 
 5. Dans le menu **fichier** , choisissez **enregistrer tout** pour enregistrer le projet et les fichiers à l’emplacement par défaut.
 
- Les deux procédures suivantes ajoutent des boutons au formulaire de base. Pour illustrer l'héritage visuel, donnez aux boutons différents niveaux d'accès en définissant leurs propriétés `Modifiers`.
+Les deux procédures suivantes ajoutent des boutons au formulaire de base. Pour illustrer l'héritage visuel, donnez aux boutons différents niveaux d'accès en définissant leurs propriétés `Modifiers`.
 
 ## <a name="add-a-button-that-inheritors-of-the-base-form-can-modify"></a>Ajouter un bouton qui peut être modifié par les héritiers du formulaire de base
 
@@ -135,7 +135,7 @@ Pour finir, cette procédure pas à pas vous montrera la différence entre les c
 
 5. Ouvrez le formulaire hérité (**Form2**) dans le concepteur en double-cliquant dessus, s’il n’est pas déjà ouvert.
 
-     Dans le concepteur, les boutons hérités ont un symbole (![Capture d’écran du symbole d’héritage de Visual Basic.](./media/walkthrough-demonstrating-visual-inheritance/visual-basic-inheritance-glyph.gif)) dans leur coin supérieur, indiquant qu’ils sont hérités.
+    Dans le concepteur, les boutons hérités ont un symbole (![Capture d’écran du symbole d’héritage de Visual Basic.](./media/walkthrough-demonstrating-visual-inheritance/visual-basic-inheritance-glyph.gif)) dans leur coin supérieur, indiquant qu’ils sont hérités.
 
 6. Sélectionnez le bouton **Say Hello** et observez les poignées de redimensionnement. Ce bouton étant protégé, les héritiers peuvent le déplacer, le redimensionner, changer sa légende et apporter d'autres modifications.
 

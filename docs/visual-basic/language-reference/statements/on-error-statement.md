@@ -22,12 +22,12 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], handling
 - On Error statement [Visual Basic]
 ms.assetid: ff947930-fb84-40cf-bd66-1ea219561d5c
-ms.openlocfilehash: df2bd232a870e17eeb5106cf0b60a9e77641969d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4474b217147aca74f2c6e5376c8f55318a05bf4a
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963529"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70046515"
 ---
 # <a name="on-error-statement-visual-basic"></a>On Error, instruction (Visual Basic)
 Active une routine de gestion des erreurs et spécifie l’emplacement de la routine dans une procédure. peut également être utilisé pour désactiver une routine de gestion des erreurs. L' `On Error` instruction est utilisée dans la gestion non structurée des erreurs et peut être utilisée à la place de la gestion structurée des exceptions. La [gestion structurée des exceptions](../../../standard/exceptions/index.md) étant intégrée à .net, est généralement plus efficace, et est donc recommandée lors de la gestion des erreurs d’exécution dans votre application.
@@ -104,7 +104,7 @@ On Error { GoTo [ line | 0 | -1 ] | Resume Next }
  [!code-vb[VbVbalrErrorHandling#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrErrorHandling/VB/Class1.vb#19)]
 
 > [!CAUTION]
->  Les erreurs système au cours des appels aux bibliothèques de liens dynamiques (dll) Windows ne déclenchent pas d’exceptions et ne peuvent pas être interceptées avec Visual Basic l’interception des erreurs. Lors de l’appel de fonctions dll, vous devez vérifier la réussite ou l’échec de chaque valeur de retour (en fonction des spécifications de l’API) et, en cas de défaillance `Err` , vérifier `LastDLLError` la valeur dans la propriété de l’objet.
+> Les erreurs système au cours des appels aux bibliothèques de liens dynamiques (dll) Windows ne déclenchent pas d’exceptions et ne peuvent pas être interceptées avec Visual Basic l’interception des erreurs. Lors de l’appel de fonctions dll, vous devez vérifier la réussite ou l’échec de chaque valeur de retour (en fonction des spécifications de l’API) et, en cas de défaillance `Err` , vérifier `LastDLLError` la valeur dans la propriété de l’objet.
 
 ## <a name="example"></a>Exemple
  Cet exemple utilise d’abord `On Error GoTo` l’instruction pour spécifier l’emplacement d’une routine de gestion des erreurs au sein d’une procédure. Dans l’exemple, une tentative de division par zéro génère le numéro d’erreur 6. L’erreur est gérée dans la routine de gestion des erreurs et le contrôle est ensuite renvoyé à l’instruction qui a provoqué l’erreur. L' `On Error GoTo 0` instruction désactive l’interception des erreurs. L' `On Error Resume Next` instruction est ensuite utilisée pour différer l’interception des erreurs de façon à ce que le contexte de l’erreur générée par l’instruction suivante puisse être déterminé. Notez que `Err.Clear` est utilisé pour effacer les `Err` propriétés de l’objet une fois que l’erreur est gérée.

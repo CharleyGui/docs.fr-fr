@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3ec60e8f-fad4-493e-a426-e7962d7aee8c
-ms.openlocfilehash: 3f1c1beda7519a113ea15c5fed84bcb017afae12
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 451f9581ae997ad86fee968fa978713db2049455
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962347"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044386"
 ---
 # <a name="how-to-create-a-state-machine-workflow"></a>Procédure : Créer un workflow d'ordinateur d'état
 Les workflows peuvent être construits aussi bien à partir d'activités intégrées que d'activités personnalisées. Cette rubrique explique comment créer un workflow qui utilise à la fois des activités intégrées telles que <xref:System.Activities.Statements.StateMachine> l’activité, et les activités personnalisées de [la procédure précédente Comment: Créer une rubrique](how-to-create-an-activity.md) d’activité. Le workflow modélise un jeu d'estimation de nombre.  
@@ -52,7 +52,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
 9. Cliquez sur **créer une variable**.  
   
     > [!TIP]
-    >  Si aucune zone **créer une variable** n’est affichée, <xref:System.Activities.Statements.StateMachine> cliquez sur l’activité sur l’aire du concepteur de flux de travail pour la sélectionner.  
+    > Si aucune zone **créer une variable** n’est affichée, <xref:System.Activities.Statements.StateMachine> cliquez sur l’activité sur l’aire du concepteur de flux de travail pour la sélectionner.  
   
 10. Tapez `Guess` dans la zone **nom** , sélectionnez **Int32** dans la liste déroulante **type de variable** , puis appuyez sur entrée pour enregistrer la variable.  
   
@@ -67,7 +67,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
 1. Cliquez sur **State1** pour le sélectionner. Dans la **fenêtre Propriétés**, remplacez **DisplayName** par `Initialize Target`.  
   
     > [!TIP]
-    >  Si la **fenêtre Propriétés** n’est pas affichée, sélectionnez **fenêtre Propriétés** dans le menu **affichage** .  
+    > Si la **fenêtre Propriétés** n’est pas affichée, sélectionnez **fenêtre Propriétés** dans le menu **affichage** .  
   
 2. Double-cliquez sur l’État initialiser l’initialisation de la **cible** dans le concepteur de workflow pour la développer.  
   
@@ -82,7 +82,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
     ```  
   
     > [!TIP]
-    >  Si la fenêtre **boîte à outils** n’est pas affichée, sélectionnez **boîte à outils** dans le menu **affichage** .  
+    > Si la fenêtre **boîte à outils** n’est pas affichée, sélectionnez **boîte à outils** dans le menu **affichage** .  
   
 4. Revenez à la vue globale de l’ordinateur d’État dans le concepteur de flux de travail en cliquant sur **StateMachine** dans l’affichage de navigation en haut du concepteur de Workflow.  
   

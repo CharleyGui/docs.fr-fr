@@ -2,12 +2,12 @@
 title: Utilisation de l'activité Pick
 ms.date: 03/30/2017
 ms.assetid: b89be812-a247-4025-b0e3-ffb20db027a6
-ms.openlocfilehash: 50946571c1ca3b3fb66d7da11e402f61739c9962
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 03b9ff7f552ad0cdcfbe9c46121a2f46f35de52a
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637779"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70037880"
 ---
 # <a name="using-the-pick-activity"></a>Utilisation de l'activité Pick
 Cet exemple montre comment utiliser l'activité <xref:System.Activities.Statements.Pick>.
@@ -22,33 +22,33 @@ Cet exemple montre comment utiliser l'activité <xref:System.Activities.Statemen
 ## <a name="discussion"></a>Discussion
  L'exemple inclut un workflow de concepteur et un workflow encodé.
 
- Concepteur version le Concepteur de flux de travail de l’exemple montre comment créer un flux de travail dans le concepteur. Les fichiers suivants sont inclus :
+ Flux de travail du concepteur la version du concepteur de l’exemple montre comment créer un flux de travail dans le concepteur. Les fichiers suivants sont inclus :
 
-- Program.cs : Inclut le `Main` fonction qui exécute l’exemple de workflow.
+- Program.cs: Comprend la `Main` fonction qui exécute l’exemple de flux de travail.
 
-- ReadString.cs: Une activité personnalisée qui lit une entrée de la console.
+- ReadString.cs: Activité personnalisée qui lit une entrée de la console.
 
-- Sequence1.XAML : Un flux de travail créé à l’aide du concepteur qui utilise Pick.
+- Sequence1. xaml: Flux de travail créé à l’aide du concepteur qui utilise Pick.
 
- Workflow encodé la version encodée de l’exemple montre comment créer un flux de travail dans le concepteur. Les fichiers suivants sont inclus :
+ Flux de travail codé la version codée de l’exemple montre comment créer un flux de travail dans le concepteur. Les fichiers suivants sont inclus :
 
-- Program.cs : Inclut le `Main` fonction qui exécute l’exemple de workflow.
+- Program.cs: Comprend la `Main` fonction qui exécute l’exemple de flux de travail.
 
-- ReadString.cs: Une activité personnalisée qui lit une entrée de la console.
+- ReadString.cs: Activité personnalisée qui lit une entrée de la console.
 
 #### <a name="to-use-this-sample"></a>Pour utiliser cet exemple
 
-1. À l’aide de Visual Studio 2010, ouvrez le fichier solution Pick.sln.
+1. À l’aide de Visual Studio 2010, ouvrez le fichier solution Pick. sln.
 
 2. Pour générer la solution, appuyez sur Ctrl+Maj+B.
 
 3. Pour exécuter la solution, appuyez sur F5.
 
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
+> Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\Pick`
+> `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\Pick`

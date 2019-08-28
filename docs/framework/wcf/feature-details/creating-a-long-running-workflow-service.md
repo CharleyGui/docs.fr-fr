@@ -2,18 +2,20 @@
 title: Création d'un service de workflow de longue durée
 ms.date: 03/30/2017
 ms.assetid: 4c39bd04-5b8a-4562-a343-2c63c2821345
-ms.openlocfilehash: dae33cfcd5a2ef7b5269ebb040cf53b4c0e0b039
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e6206babdb728b6ce38c94441f775e1fdffe7d79
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69945593"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70040413"
 ---
 # <a name="creating-a-long-running-workflow-service"></a>Création d'un service de workflow de longue durée
+
 Cette rubrique décrit comment créer un service de workflow de longue durée. Les services de workflow de longue durée peuvent s'exécuter sur de longues périodes. À un certain stade, le workflow peut devenir inactif en attendant des informations supplémentaires. Lorsque cela se produit, le workflow est rendu persistant dans une base de données SQL et supprimé de la mémoire. Une fois que les informations supplémentaires sont disponibles, l'instance de workflow est à nouveau chargée dans la mémoire et continue de s'exécuter.  Dans ce scénario, vous implémentez un système de commande très simplifié.  Le client envoie un message initial au service de workflow pour commencer la commande. Un ID de commande est retourné au client. À ce stade, le service de workflow attend un autre message du client, passe à l'état inactif et est rendu persistant dans une base de données SQL Server.  Lorsque le client envoie le message suivant pour commander un article, le service de workflow est à nouveau chargé dans la mémoire et termine le traitement de la commande. Dans l'exemple de code, il retourne une chaîne indiquant que l'article a été ajouté à la commande. L'exemple de code n'est pas censé refléter une application réelle de la technologie mais plutôt un exemple simple illustrant des services de workflow de longue durée. Cette rubrique suppose que vous savez comment créer des projets et des solutions Visual Studio 2012.
 
 ## <a name="prerequisites"></a>Prérequis
- Les logiciels suivants doivent être installés pour suivre cette procédure pas à pas :
+
+Les logiciels suivants doivent être installés pour suivre cette procédure pas à pas :
 
 1. Microsoft SQL Server 2008
 
@@ -45,16 +47,16 @@ Cette rubrique décrit comment créer un service de workflow de longue durée. L
 
     1. Sous **action de démarrage** , sélectionnez une **page spécifique** et spécifiez `Service1.xamlx`.
 
-         ![Propriétés Web du projet de service de workflow](./media/creating-a-long-running-workflow-service/start-action-specific-page-option.png "Créer l’option de page spécifique au service de flux de travail hébergé sur le Web")
+        ![Propriétés Web du projet de service de workflow](./media/creating-a-long-running-workflow-service/start-action-specific-page-option.png "Créer l’option de page spécifique au service de flux de travail hébergé sur le Web")
 
     2. Sous **serveurs** , sélectionnez **utiliser le serveur Web IIS local**.
 
-         ![Paramètres du serveur Web local](./media/creating-a-long-running-workflow-service/use-local-web-server.png "Créer le service de flux de travail hébergé sur le Web-utiliser l’option de serveur Web IIS local")
+        ![Paramètres du serveur Web local](./media/creating-a-long-running-workflow-service/use-local-web-server.png "Créer le service de flux de travail hébergé sur le Web-utiliser l’option de serveur Web IIS local")
 
         > [!WARNING]
-        >  Vous devez exécuter Visual Studio 2012 en mode administrateur pour définir ce paramètre.
+        > Vous devez exécuter Visual Studio 2012 en mode administrateur pour définir ce paramètre.
 
-         Ces deux étapes configurent le projet du service de workflow pour qu'il soit hébergé par IIS.
+        Ces deux étapes configurent le projet du service de workflow pour qu'il soit hébergé par IIS.
 
 4. Ouvrez `Service1.xamlx` s’il n’est pas déjà ouvert et supprimez les activités **ReceiveRequest** et **SendResponse** existantes.
 
@@ -63,60 +65,60 @@ Cette rubrique décrit comment créer un service de workflow de longue durée. L
     > [!NOTE]
     > Si CorrelationHandle n’est pas dans la liste déroulante type de variable, sélectionnez **Parcourir les types** dans la liste déroulante. Tapez CorrelationHandle dans la zone **nom de type** , sélectionnez CorrelationHandle dans la zone de liste, puis cliquez sur **OK**.
 
-     ![Ajouter des variables](./media/creating-a-long-running-workflow-service/add-variables-sequential-service-activity.gif "Ajoutez des variables à l’activité de service séquentielle.")
+    ![Ajouter des variables](./media/creating-a-long-running-workflow-service/add-variables-sequential-service-activity.gif "Ajoutez des variables à l’activité de service séquentielle.")
 
 6. Faites glisser et déposez un modèle d’activité **ReceiveAndSendReply** dans l’activité de **service séquentielle** . Cet ensemble d'activités recevra un message d'un client et enverra une réponse en retour.
 
     1. Sélectionnez l’activité **Receive** et définissez les propriétés mises en surbrillance dans l’illustration suivante.
 
-         ![Définir les propriétés d’une activité Receive](./media/creating-a-long-running-workflow-service/set-receive-activity-properties.png "Définissez les propriétés de l’activité Receive.")
+        ![Définir les propriétés d’une activité Receive](./media/creating-a-long-running-workflow-service/set-receive-activity-properties.png "Définissez les propriétés de l’activité Receive.")
 
-         La propriété DisplayName définit le nom affiché pour l'activité Receive dans le concepteur. Les propriétés ServiceContractName et OperationName spécifient le nom du contrat de service et de l'opération implémentés par l'activité Receive. Pour plus d’informations sur l’utilisation des contrats dans les services de workflow, consultez [utilisation de contrats dans le workflow](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md).
+        La propriété DisplayName définit le nom affiché pour l'activité Receive dans le concepteur. Les propriétés ServiceContractName et OperationName spécifient le nom du contrat de service et de l'opération implémentés par l'activité Receive. Pour plus d’informations sur l’utilisation des contrats dans les services de workflow, consultez [utilisation de contrats dans le workflow](../../../../docs/framework/wcf/feature-details/using-contracts-in-workflow.md).
 
     2. Cliquez sur le lien **définir...** dans l’activité **ReceiveStartOrder** et définissez les propriétés affichées dans l’illustration suivante.  Notez que la case d’option **paramètres** est sélectionnée. un paramètre `p_customerName` nommé est lié à `customerName` la variable. Cela configure l’activité **Receive** pour recevoir des données et les lier à des variables locales.
 
-         ![Définition des données reçues par l’activité Receive](./media/creating-a-long-running-workflow-service/set-properties-for-receive-content.png "Définissez les propriétés des données reçues par l’activité Receive.")
+        ![Définition des données reçues par l’activité Receive](./media/creating-a-long-running-workflow-service/set-properties-for-receive-content.png "Définissez les propriétés des données reçues par l’activité Receive.")
 
     3. Sélectionnez l’activité **SendReplyToReceive** et définissez la propriété mise en surbrillance indiquée dans l’illustration suivante.
 
-         ![Définition des propriétés de l’activité SendReply](./media/creating-a-long-running-workflow-service/set-properties-for-reply-activities.png "SetReplyProperties")
+        ![Définition des propriétés de l’activité SendReply](./media/creating-a-long-running-workflow-service/set-properties-for-reply-activities.png "SetReplyProperties")
 
     4. Cliquez sur le lien **définir...** dans l’activité **SendReplyToStartOrder** et définissez les propriétés affichées dans l’illustration suivante. Notez que la case d’option **paramètres** est sélectionnée. un paramètre nommé `p_orderId` est lié à la `orderId` variable. Ce paramètre spécifie que l'activité SendReplyToStartOrder retournera une valeur de type String à l'appelant.
 
-         ![Configuration des données de contenu de l’activité SendReply] Configurez le (./media/creating-a-long-running-workflow-service/setreplycontent-for-sendreplytostartorder-activity.png "paramètre de l’activité SetReplyToStartOrder.")
+        ![Configuration des données de contenu de l’activité SendReply] Configurez le (./media/creating-a-long-running-workflow-service/setreplycontent-for-sendreplytostartorder-activity.png "paramètre de l’activité SetReplyToStartOrder.")
 
     5. Faites glisser et déposez une activité Assign entre les activités **Receive** et **SendReply** et définissez les propriétés comme indiqué dans l’illustration suivante:
 
-         ![Ajout d’une activité Assign](./media/creating-a-long-running-workflow-service/add-an-assign-activity.png "Ajoutez une activité Assign.")
+        ![Ajout d’une activité Assign](./media/creating-a-long-running-workflow-service/add-an-assign-activity.png "Ajoutez une activité Assign.")
 
-         Cette action permet de créer un nouvel ID de commande et de placer la valeur dans la variable orderId.
+        Cette action permet de créer un nouvel ID de commande et de placer la valeur dans la variable orderId.
 
     6. Sélectionnez l’activité **ReplyToStartOrder** . Dans la fenêtre Propriétés, cliquez sur le bouton de sélection pour **CorrelationInitializers**. Sélectionnez le lien **Ajouter** un initialiseur, `orderIdHandle` entrez dans la zone de texte initialiseur, sélectionnez l’initialiseur de corrélation de requête pour le type de corrélation et sélectionnez p_orderId sous la zone de liste déroulante requêtes XPath. Ces paramètres sont indiqués dans l'illustration suivante. Cliquez sur **OK**.  Cette action permet d'initialiser une corrélation entre le client et cette instance du service de workflow. Lorsqu'un message contenant cet ID de commande est reçu, il est routé vers cette instance du service de workflow.
 
-         ![Ajout d’un initialiseur de corrélation](./media/creating-a-long-running-workflow-service/add-correlationinitializers.png "Ajoutez un initialiseur de corrélation.")
+        ![Ajout d’un initialiseur de corrélation](./media/creating-a-long-running-workflow-service/add-correlationinitializers.png "Ajoutez un initialiseur de corrélation.")
 
 7. Faites glisser et déposez une autre activité **ReceiveAndSendReply** à la fin du workflow (en dehors de la **séquence** contenant les premières activités **Receive** et **SendReply** ). Le second message envoyé par le client sera alors reçu et une réponse sera renvoyée.
 
     1. Sélectionnez la **séquence** qui contient les activités **Receive** et **SendReply** nouvellement ajoutées, puis cliquez sur le bouton **variables** . Ajoutez la variable mise en surbrillance dans l'illustration suivante :
 
-         ![Ajout de nouvelles variables](./media/creating-a-long-running-workflow-service/add-the-itemid-variable.png "Ajoutez la variable ItemId.")
-         
-         Ajoutez `orderResult` également As **String** dans l' `Sequence` étendue.
+        ![Ajout de nouvelles variables](./media/creating-a-long-running-workflow-service/add-the-itemid-variable.png "Ajoutez la variable ItemId.")
+
+        Ajoutez `orderResult` également As **String** dans l' `Sequence` étendue.
 
     2. Sélectionnez l’activité **Receive** et définissez les propriétés affichées dans l’illustration suivante:
 
-         ![Définir les propriétés de l’activité Receive](./media/creating-a-long-running-workflow-service/set-receive-activities-properties.png "Définissez les propriétés de l’activité Receive.")
-         
-         > [!NOTE]
-         >  N’oubliez pas de modifier le champ `../IAddItem`ServiceContractName avec.
+        ![Définir les propriétés de l’activité Receive](./media/creating-a-long-running-workflow-service/set-receive-activities-properties.png "Définissez les propriétés de l’activité Receive.")
+
+        > [!NOTE]
+        > N’oubliez pas de modifier le champ `../IAddItem`ServiceContractName avec.
 
     3. Cliquez sur le lien **définir...** dans l’activité **ReceiveAddItem** et ajoutez les paramètres indiqués dans l’illustration suivante: Cela configure l’activité Receive pour accepter deux paramètres, l’ID de commande et l’ID de l’élément en cours de tri.
 
-         ![Spécification des paramètres pour la seconde réception](./media/creating-a-long-running-workflow-service/add-receive-two-parameters.png "Configurez l’activité Receive pour recevoir deux paramètres.")
+        ![Spécification des paramètres pour la seconde réception](./media/creating-a-long-running-workflow-service/add-receive-two-parameters.png "Configurez l’activité Receive pour recevoir deux paramètres.")
 
     4. Cliquez sur le bouton de sélection CorrelateOn `orderIdHandle`et entrez. Sous **requêtes XPath**, cliquez sur la flèche déroulante `p_orderId`et sélectionnez. Cela permet de configurer la corrélation sur la deuxième activité Receive. Pour plus d’informations sur la corrélation, consultez [corrélation](../../../../docs/framework/wcf/feature-details/correlation.md).
 
-         ![Définition de la propriété CorrelatesOn](./media/creating-a-long-running-workflow-service/correlateson-setting.png "Définissez la propriété CorrelatesOn.")
+        ![Définition de la propriété CorrelatesOn](./media/creating-a-long-running-workflow-service/correlateson-setting.png "Définissez la propriété CorrelatesOn.")
 
     5. Faites glisser et déposez une activité **If** immédiatement après l’activité **ReceiveAddItem** . Cette activité agit de la même façon qu'une instruction if.
 
@@ -124,17 +126,17 @@ Cette rubrique décrit comment créer un service de workflow de longue durée. L
 
         2. Faites glisser une activité **Assign** dans la section **Then** et une autre dans la section **else** , puis définissez les propriétés des activités **Assign** comme indiqué dans l’illustration suivante.
 
-             ![Assignation du résultat de l’appel de service](./media/creating-a-long-running-workflow-service/assign-result-of-service-call.png "Assignez le résultat de l’appel de service.")
+            ![Assignation du résultat de l’appel de service](./media/creating-a-long-running-workflow-service/assign-result-of-service-call.png "Assignez le résultat de l’appel de service.")
 
-             Si la condition est `true` , la section **Then** est exécutée. Si la condition est `false` , la section **else** est exécutée.
+            Si la condition est `true` , la section **Then** est exécutée. Si la condition est `false` , la section **else** est exécutée.
 
         3. Sélectionnez l’activité **SendReplyToReceive** et définissez la propriété **DisplayName** indiquée dans l’illustration suivante.
 
-             ![Définition des propriétés de l’activité SendReply](./media/creating-a-long-running-workflow-service/send-reply-activity-property.png "Définissez la propriété de l’activité SendReply.")
+            ![Définition des propriétés de l’activité SendReply](./media/creating-a-long-running-workflow-service/send-reply-activity-property.png "Définissez la propriété de l’activité SendReply.")
 
         4. Cliquez sur le lien **définir...** dans l’activité **SetReplyToAddItem** et configurez-le comme indiqué dans l’illustration suivante. Cela configure l’activité **SendReplyToAddItem** pour retourner la valeur dans la `orderResult` variable.
 
-             ![Définition de la liaison de données pour l’activité SendReply](./media/creating-a-long-running-workflow-service/set-property-for-sendreplytoadditem.gif "Définissez la propriété pour l’activité SendReplyToAddItem.")
+            ![Définition de la liaison de données pour l’activité SendReply](./media/creating-a-long-running-workflow-service/set-property-for-sendreplytoadditem.gif "Définissez la propriété pour l’activité SendReplyToAddItem.")
 
 8. Ouvrez le fichier Web. config et ajoutez les éléments suivants dans la \<section comportement > pour activer la persistance du flux de travail.
 
@@ -144,7 +146,7 @@ Cette rubrique décrit comment créer un service de workflow de longue durée. L
     ```
 
     > [!WARNING]
-    >  Assurez-vous de remplacer le nom de l'hôte et de l'instance SQL Server dans l'extrait de code précédent.
+    > Assurez-vous de remplacer le nom de l'hôte et de l'instance SQL Server dans l'extrait de code précédent.
 
 9. Générez la solution.
 
@@ -162,7 +164,7 @@ Cette rubrique décrit comment créer un service de workflow de longue durée. L
 
 4. Dans la méthode `Main()` du projet client, ajoutez le code suivant :
 
-    ```
+    ```csharp
     static void Main(string[] args)
     {
        // Send initial message to start the workflow service

@@ -2,12 +2,12 @@
 title: Vue d'ensemble du modèle de programmation Web HTTP WCF
 ms.date: 03/30/2017
 ms.assetid: 381fdc3a-6e6c-4890-87fe-91cca6f4b476
-ms.openlocfilehash: e63a6c4a68da2b7e51dc1fc24353922912262806
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 8c13ad943bf4ef272c28266e12e175a0a21d5d40
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988582"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70045233"
 ---
 # <a name="wcf-web-http-programming-model-overview"></a>Vue d'ensemble du modèle de programmation Web HTTP WCF
 Le modèle de programmation HTTP WEB Windows Communication Foundation (WCF) fournit les éléments de base nécessaires à la création de services WEB HTTP avec WCF. Les services HTTP WEB WCF sont conçus pour être accessibles par la plus large gamme de clients possibles, y compris les navigateurs Web, et présentent les exigences uniques suivantes:  
@@ -23,7 +23,7 @@ Le modèle de programmation HTTP WEB Windows Communication Foundation (WCF) four
  Il n'existe aucune restriction supplémentaire sur les types de données qui peuvent être retournées à partir d'un service Web HTTP. Tout type sérialisable peut être retourné à partir d'une opération de service WEB HTTP. Parce que les opérations de service WEB HTTP peuvent être appelées par un navigateur Web, il existe une restriction sur les types de données pouvant être spécifiées dans une URL. Pour plus d’informations sur les types pris en charge par défaut, consultez la section **paramètres de chaîne de requête UriTemplate et URL** ci-dessous. Le comportement par défaut peut être modifié en fournissant votre propre implémentation T:System.ServiceModel.Dispatcher.QueryStringConverter, qui indique comment convertir les paramètres spécifiés dans une URL en type de paramètre réel. Pour plus d'informations, consultez <xref:System.ServiceModel.Dispatcher.QueryStringConverter>  
   
 > [!CAUTION]
->  Les services écrits avec le modèle de programmation HTTP WEB WCF n’utilisent pas de messages SOAP. Le protocole SOAP n’étant pas utilisé, les fonctionnalités de sécurité fournies par WCF ne peuvent pas être utilisées. Toutefois, vous pouvez utiliser la sécurité basée sur le transport en hébergeant votre service avec HTTPS. Pour plus d’informations sur la sécurité WCF, consultez [vue d’ensemble](../../../../docs/framework/wcf/feature-details/security-overview.md) de la sécurité  
+> Les services écrits avec le modèle de programmation HTTP WEB WCF n’utilisent pas de messages SOAP. Le protocole SOAP n’étant pas utilisé, les fonctionnalités de sécurité fournies par WCF ne peuvent pas être utilisées. Toutefois, vous pouvez utiliser la sécurité basée sur le transport en hébergeant votre service avec HTTPS. Pour plus d’informations sur la sécurité WCF, consultez [vue d’ensemble](../../../../docs/framework/wcf/feature-details/security-overview.md) de la sécurité  
   
 > [!WARNING]
 > L’installation d’une extension WebDAV pour IIS peut entraîner les services HTTP Web à retourner une erreur HTTP 405 lorsque l’extension WebDav essaie de gérer toutes les demandes PUT. Pour contourner ce problème, vous pouvez désinstaller l’extension WebDav ou désactiver l’extension WebDav pour votre site web. Pour plus d’informations, consultez [IIS et WebDAV](https://learn.iis.net/page.aspx/357/webdav-for-iis-70/) .  

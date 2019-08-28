@@ -12,12 +12,12 @@ helpviewer_keywords:
 - drag-and-drop [WPF], events
 - drop targets [WPF], drag-and-drop
 ms.assetid: 1a5b27b0-0ac5-4cdf-86c0-86ac0271fa64
-ms.openlocfilehash: e8e8b294e05579a91a4557b23be6c65f4d619167
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bb5766a3efc38750458ef0d354e8a2e3ab204000
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940877"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70046403"
 ---
 # <a name="drag-and-drop-overview"></a>Vue d'ensemble du glisser-déplacer
 Cette rubrique offre une vue d'ensemble de la prise en charge du glisser-déplacer dans les applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Le glisser-déplacer fait généralement référence à une méthode de transfert de données qui implique l'utilisation d'une souris (ou d'un autre dispositif de pointage) pour sélectionner un ou plusieurs objets, les faire glisser vers une cible de déplacement souhaitée dans l'[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] et les y déplacer.  
@@ -166,7 +166,7 @@ Cette rubrique offre une vue d'ensemble de la prise en charge du glisser-déplac
  L'événement <xref:System.Windows.DragDrop.QueryContinueDrag> est déclenché en continu pendant l'opération de glissement de la source. Vous pouvez gérer cet événement pour déterminer l’action qui doit terminer l’opération de glisser-déplacer, en fonction de l’état des touches Échap, Maj, Ctrl et Alt, ainsi que de l’état des boutons de la souris. Le gestionnaire par défaut de cet événement annule l'opération de glisser-déplacer si la touche Échap est enfoncée et déplace les données si le bouton de la souris est relâché.  
   
 > [!CAUTION]
->  Ces événements sont déclenchés en continu pendant l'opération de glisser-déplacer. Par conséquent, vous devez éviter les tâches nécessitant de nombreuses ressources dans les gestionnaires d'événements.  Utilisez, par exemple, un curseur mis en cache au lieu de créer un nouveau curseur chaque fois qu'un événement <xref:System.Windows.DragDrop.GiveFeedback> est déclenché.  
+> Ces événements sont déclenchés en continu pendant l'opération de glisser-déplacer. Par conséquent, vous devez éviter les tâches nécessitant de nombreuses ressources dans les gestionnaires d'événements.  Utilisez, par exemple, un curseur mis en cache au lieu de créer un nouveau curseur chaque fois qu'un événement <xref:System.Windows.DragDrop.GiveFeedback> est déclenché.  
   
 ### <a name="enabling-an-element-to-be-a-drop-target"></a>Autoriser un élément à être une cible de déplacement  
  Un objet qui devient cible de déplacement est chargé des opérations suivantes :  

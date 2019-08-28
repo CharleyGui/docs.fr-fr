@@ -2,12 +2,12 @@
 title: Transactions distribuées
 ms.date: 03/30/2017
 ms.assetid: 718b257c-bcb2-408e-b004-a7b0adb1c176
-ms.openlocfilehash: f5ed99928534dc31832ac0baf1bb1bfa7e83ded2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 60a455d51d7ae80f5434f9564ca7416c70bef9f5
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69956764"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70041245"
 ---
 # <a name="distributed-transactions"></a>Transactions distribuées
 Une transaction est un ensemble de tâches liées entre elles qui échouent (abort) ou réussissent (commit) globalement, entre autres choses. Une *transaction distribuée* est une transaction qui affecte plusieurs ressources. Pour qu’une transaction distribuée soit validée, l’ensemble des participants doivent garantir que tout changement apporté aux données sera permanent. Ces modifications doivent persister même en cas de panne du système ou de tout autre événement imprévu. Il suffit qu’un seul des participants n’apporte pas cette garantie pour que l’ensemble de la transaction échoue et toutes les modifications apportées aux données dans le cadre de la transaction sont annulées.  
@@ -39,7 +39,7 @@ Une transaction est un ensemble de tâches liées entre elles qui échouent (abo
 > Une fois qu’une connexion est explicitement inscrite sur une transaction, il n’est plus possible de la désinscrire ou de l’inscrire dans une autre transaction tant que la première transaction n’est pas terminée.  
   
 > [!CAUTION]
->  `EnlistTransaction` lève une exception si la connexion a déjà entamé une transaction à l'aide de la méthode <xref:System.Data.Common.DbConnection.BeginTransaction%2A> de la connexion. Toutefois, si la transaction est une transaction locale démarrée dans la source de données (par exemple, l'exécution explicite de l'instruction BEGIN TRANSACTION à l'aide d'un <xref:System.Data.SqlClient.SqlCommand>), `EnlistTransaction` annule la transaction locale et s'inscrit dans la transaction distribuée existante comme requis. Vous ne recevrez pas de notification indiquant que la transaction locale a été annulée et que vous devez gérer les transactions locales non lancées à l’aide de <xref:System.Data.Common.DbConnection.BeginTransaction%2A>. Si vous utilisez le fournisseur de données .NET Framework pour SQL Server (`SqlClient`) avec SQL Server, toute tentative d'inscription lève une exception. Les autres cas ne sont pas détectés.  
+> `EnlistTransaction` lève une exception si la connexion a déjà entamé une transaction à l'aide de la méthode <xref:System.Data.Common.DbConnection.BeginTransaction%2A> de la connexion. Toutefois, si la transaction est une transaction locale démarrée dans la source de données (par exemple, l'exécution explicite de l'instruction BEGIN TRANSACTION à l'aide d'un <xref:System.Data.SqlClient.SqlCommand>), `EnlistTransaction` annule la transaction locale et s'inscrit dans la transaction distribuée existante comme requis. Vous ne recevrez pas de notification indiquant que la transaction locale a été annulée et que vous devez gérer les transactions locales non lancées à l’aide de <xref:System.Data.Common.DbConnection.BeginTransaction%2A>. Si vous utilisez le fournisseur de données .NET Framework pour SQL Server (`SqlClient`) avec SQL Server, toute tentative d'inscription lève une exception. Les autres cas ne sont pas détectés.  
   
 ## <a name="promotable-transactions-in-sql-server"></a>Transactions pouvant être promues dans SQL Server  
  SQL Server prend en charge les transactions pouvant être promues dans lesquelles une transaction légère locale peut être automatiquement promue en transaction distribuée uniquement si c’est requis. Une transaction pouvant être promue n'invoque pas la charge supplémentaire d'une transaction distribuée à moins qu'elle ne soit requise. Pour plus d’informations et pour obtenir un exemple de code, consultez [intégration de System. transactions avec SQL Server](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md).  

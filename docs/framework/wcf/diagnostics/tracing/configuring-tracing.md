@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - tracing [WCF]
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
-ms.openlocfilehash: b433263cc4d72b6418cf75c278316444c83ada8c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bc23aff2f049f205d02e2fb1b5f8798c7f6a9931
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933505"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044233"
 ---
 # <a name="configuring-tracing"></a>Configuration du traçage
 Cette rubrique décrit comment activer le suivi, configurer des sources de suivi pour émettre des suivis et définir des niveaux de suivi, définir le suivi et la propagation d'activité afin de prendre en charge la corrélation de suivi de bout en bout, et définir des écouteurs de suivi pour accéder aux suivis.  
@@ -145,14 +145,14 @@ Cette rubrique décrit comment activer le suivi, configurer des sources de suivi
  Vous pouvez également configurer un écouteur de suivi par programmation. Pour plus d’informations, consultez [Guide pratique pour Créer et initialiser](https://go.microsoft.com/fwlink/?LinkId=94648) des écouteurs de suivi et [créer un TraceListener personnalisé](https://go.microsoft.com/fwlink/?LinkId=96239).  
   
 > [!CAUTION]
->  `System.Diagnostics.XmlWriterTraceListener` n'étant pas thread-safe, la source de suivi peut verrouiller des ressources exclusivement lors de la sortie de suivis. Lorsque de nombreux threads sortent des suivis vers une source de suivi configurée pour utiliser cet écouteur, un conflit de ressource peut se produire, provoquant une dégradation significative des performances. Pour résoudre ce problème, vous devez implémenter un écouteur personnalisé thread-safe.  
+> `System.Diagnostics.XmlWriterTraceListener` n'étant pas thread-safe, la source de suivi peut verrouiller des ressources exclusivement lors de la sortie de suivis. Lorsque de nombreux threads sortent des suivis vers une source de suivi configurée pour utiliser cet écouteur, un conflit de ressource peut se produire, provoquant une dégradation significative des performances. Pour résoudre ce problème, vous devez implémenter un écouteur personnalisé thread-safe.  
   
 ## <a name="trace-level"></a>Niveau de suivi  
  Le niveau de suivi est contrôlé par le paramètre `switchValue` de la source de suivi. Les niveaux de suivi disponibles sont décrits dans le tableau suivant.  
   
 |Niveau de suivi|Nature des événements suivis|Contenu des événements suivis|Événements suivis|Cible utilisateur|  
 |-----------------|----------------------------------|-----------------------------------|--------------------|-----------------|  
-|Désactivé|S.O.|N/A|Aucun suivi n'est émis.|N/A|  
+|Désactivé|N/A|S.O.|Aucun suivi n'est émis.|S.O.|  
 |Critique|Événements «négatifs»: événements qui indiquent un traitement inattendu ou une condition d’erreur.||Les exceptions non prises en charge, notamment les suivantes, sont enregistrées :<br /><br /> -   OutOfMemoryException<br />-ThreadAbortException (le CLR appelle tout ThreadAbortExceptionHandler)<br />-StackOverflowException (ne peut pas être intercepté)<br />-   ConfigurationErrorsException<br />-   SEHException<br />-Erreurs de démarrage de l’application<br />-Événements FailFast<br />-Blocage du système<br />-Messages incohérents: suivis des messages qui provoquent l’échec de l’application.|Administrateurs<br /><br /> Développeurs d'applications|  
 |Error|Événements «négatifs»: événements qui indiquent un traitement inattendu ou une condition d’erreur.|Un traitement inattendu s'est produit. L’application n’a pas pu effectuer une tâche comme prévu. Toutefois, l'application s'exécute encore.|Toutes les exceptions sont enregistrées.|Administrateurs<br /><br /> Développeurs d'applications|  
 |Warning|Événements «négatifs»: événements qui indiquent un traitement inattendu ou une condition d’erreur.|Un problème possible s'est produit ou peut se produire, mais l'application fonctionne encore correctement. Toutefois, elle risque de ne plus fonctionner correctement.|-L’application reçoit davantage de demandes que ses paramètres de limitation autorisent.<br />-La file d’attente de réception est proche de sa capacité maximale configurée.<br />-Dépassement du délai d’attente.<br />-Les informations d’identification sont rejetées.|Administrateurs<br /><br /> Développeurs d'applications|  
@@ -164,7 +164,7 @@ Cette rubrique décrit comment activer le suivi, configurer des sources de suivi
  Les niveaux compris entre Verbose et Critique sont empilés les uns sur les autres, autrement dit chaque niveau de suivi inclut tous les niveaux supérieurs hormis le niveau Désactivé. Par exemple, un écouteur qui écoute au niveau Avertissement reçoit les suivis des niveaux Critique, Erreur et Avertissement. Le niveau Tout inclut les événements du niveau Verbose au niveau Critique et les événements ActivityTracing.  
   
 > [!CAUTION]
->  Les niveaux Informations, Commentaires et ActivityTracing génèrent de nombreux suivis, ce qui peut avoir un impact négatif sur le débit des messages si vous avez utilisé toutes les ressources disponibles sur l'ordinateur.  
+> Les niveaux Informations, Commentaires et ActivityTracing génèrent de nombreux suivis, ce qui peut avoir un impact négatif sur le débit des messages si vous avez utilisé toutes les ressources disponibles sur l'ordinateur.  
   
 ## <a name="configuring-activity-tracing-and-propagation-for-correlation"></a>Configuration du suivi d'activité et de la propagation pour la corrélation  
  La valeur `activityTracing` spécifiée pour l'attribut `switchValue` est utilisée pour activer le suivi d'activité, qui émet des suivis pour les transferts et limites d'activité dans les points de terminaison.  
@@ -184,5 +184,5 @@ Cette rubrique décrit comment activer le suivi, configurer des sources de suivi
 
 - [Suivi](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
 - [Administration et diagnostics](../../../../../docs/framework/wcf/diagnostics/index.md)
-- [Guide pratique pour Créer et initialiser des écouteurs de suivi](https://go.microsoft.com/fwlink/?LinkId=94648)
+- [Guide pratique : Créer et initialiser des écouteurs de suivi](https://go.microsoft.com/fwlink/?LinkId=94648)
 - [Création d’un TraceListener personnalisé](https://go.microsoft.com/fwlink/?LinkId=96239)

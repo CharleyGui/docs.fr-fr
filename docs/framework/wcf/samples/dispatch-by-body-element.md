@@ -2,12 +2,12 @@
 title: Dispatch by Body Element
 ms.date: 03/30/2017
 ms.assetid: f64a3c04-62b4-47b2-91d9-747a3af1659f
-ms.openlocfilehash: ff82ab027ff66b1c4c7433ea77efa6c34ccae088
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f1ff6d099ad0aee0c17b011000fe78f961293a82
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61990286"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70039758"
 ---
 # <a name="dispatch-by-body-element"></a>Dispatch by Body Element
 Cet exemple montre comment implémenter un autre algorithme pour l'assignation des messages entrants aux opérations.  
@@ -70,9 +70,9 @@ private Message CreateMessageCopy(Message message,
 ```  
   
 ## <a name="adding-an-operation-selector-to-a-service"></a>Ajout d'un sélecteur d'opération à un service  
- Sélecteurs d’opération de répartition de service sont des extensions pour le répartiteur de Windows Communication Foundation (WCF). Pour la sélection des méthodes sur le canal de rappel de contrats duplex, il existe également des sélecteurs d'opération clients qui fonctionnent de manière semblable aux sélecteurs d'opération de distribution décrits ici, mais ne sont pas traités de manière explicite dans cet exemple.  
+ Les sélecteurs d’opération de distribution de service sont des extensions du répartiteur Windows Communication Foundation (WCF). Pour la sélection des méthodes sur le canal de rappel de contrats duplex, il existe également des sélecteurs d'opération clients qui fonctionnent de manière semblable aux sélecteurs d'opération de distribution décrits ici, mais ne sont pas traités de manière explicite dans cet exemple.  
   
- Comme la plupart des extensions de modèle de service, les sélecteurs d’opération de distribution sont ajoutés au répartiteur à l’aide de comportements. Un *comportement* est un objet de configuration, ce qui ajoute une ou plusieurs extensions à l’exécution du répartiteur (ou à l’exécution du client) ou bien modifie ses paramètres.  
+ Comme la plupart des extensions de modèle de service, les sélecteurs d’opération de distribution sont ajoutés au répartiteur à l’aide de comportements. Un *comportement* est un objet de configuration qui ajoute une ou plusieurs extensions au runtime de dispatch (ou à l’exécution du client) ou modifie ses paramètres.  
   
  Parce que les sélecteurs d'opération disposent d'une étendue de contrat, <xref:System.ServiceModel.Description.IContractBehavior> est le comportement approprié à implémenter ici. Étant donné que l'interface est implémentée sur une classe dérivée <xref:System.Attribute> comme indiqué dans le code suivant, le comportement peut être ajouté de façon déclarative à tout contrat de service. Chaque fois qu’une classe <xref:System.ServiceModel.ServiceHost> est ouverte et que l’exécution du répartiteur est générée, tous les comportements recherchés, soit en tant qu’attributs sur les contrats, opérations et implémentations de service, soit en tant qu’élément dans la configuration du service, sont automatiquement ajoutés et doivent ensuite fournir des extensions ou modifier la configuration par défaut.  
   
@@ -120,9 +120,9 @@ public void ApplyDispatchBehavior(ContractDescription contractDescription, Servi
 ## <a name="implementing-the-service"></a>Implémentation du service  
  Le comportement implémenté dans cet exemple affecte directement la façon dont les messages provenant du câble sont interprétés et distribués, ce qui constitue une fonction du contrat de service. Par conséquent, le comportement doit être déclaré sur le niveau de contrat de service dans toute implémentation de service qui choisit de l'utiliser.  
   
- L’exemple de service de projet s’applique le `DispatchByBodyElementBehaviorAttribute` de contrat de comportement à la `IDispatchedByBody` contrat et les étiquettes des deux opérations de service `OperationForBodyA()` et `OperationForBodyB()` avec un `DispatchBodyElementAttribute` comportement d’opération. Lorsqu'un hôte est ouvert pour un service qui implémente ce contrat, ces métadonnées sont choisies par le générateur de répartiteurs comme décrit précédemment.  
+ L’exemple `DispatchByBodyElementBehaviorAttribute` de service `IDispatchedByBody` de projet applique le comportement de contrat au contrat de service et étiquette chacune des `OperationForBodyA()` deux `OperationForBodyB()` opérations et `DispatchBodyElementAttribute` avec un comportement d’opération. Lorsqu'un hôte est ouvert pour un service qui implémente ce contrat, ces métadonnées sont choisies par le générateur de répartiteurs comme décrit précédemment.  
   
- Étant donné que le sélecteur d'opération effectue la distribution uniquement en fonction l'élément de corps du message et ignore l'en-tête Action, il doit indiquer au runtime de ne pas vérifier cet en-tête sur les réponses retournées en assignant le caractère générique « * » à la propriété `ReplyAction` de la classe <xref:System.ServiceModel.OperationContractAttribute>. En outre, il est nécessaire pour disposer d’une opération par défaut qui a la propriété de « Action » définie par le caractère générique «\*». L'opération par défaut reçoit tous les messages qui ne peuvent pas être distribués et n'ont pas de `DispatchBodyElementAttribute` :  
+ Étant donné que le sélecteur d'opération effectue la distribution uniquement en fonction l'élément de corps du message et ignore l'en-tête Action, il doit indiquer au runtime de ne pas vérifier cet en-tête sur les réponses retournées en assignant le caractère générique « * » à la propriété `ReplyAction` de la classe <xref:System.ServiceModel.OperationContractAttribute>. En outre, il doit avoir une opération par défaut dont la propriété «action» est définie sur le caractère générique\*«». L'opération par défaut reçoit tous les messages qui ne peuvent pas être distribués et n'ont pas de `DispatchBodyElementAttribute` :  
   
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples"),  
@@ -164,17 +164,17 @@ public interface IDispatchedByBody
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
-1. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pour générer la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3. Pour exécuter l’exemple dans une configuration unique ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
+> Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Interop\AdvancedDispatchByBody`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Interop\AdvancedDispatchByBody`  

@@ -2,12 +2,12 @@
 title: Problèmes de sécurité relatifs à la journalisation des messages
 ms.date: 03/30/2017
 ms.assetid: 21f513f2-815b-47f3-85a6-03c008510038
-ms.openlocfilehash: c5db9fbf0dfb91ecb903660ebfb42c33f55b27bc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b635591b7a3b07385ed48c6b1ea556139c6d77c5
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933611"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044258"
 ---
 # <a name="security-concerns-for-message-logging"></a>Problèmes de sécurité relatifs à la journalisation des messages
 Cette rubrique contient des instructions permettant de protéger des données sensibles afin d'éviter qu'elles ne soient visibles dans les journaux des messages et de protéger les événements générés par l'enregistrement des messages.  
@@ -91,7 +91,7 @@ Cette rubrique contient des instructions permettant de protéger des données se
  L'administrateur d'ordinateur et le responsable du déploiement d'applications doivent observer la plus grande prudence lorsqu'ils utilisent ces deux commutateurs. Si la journalisation PII est activée, les clés de sécurité et les informations personnelles sont enregistrées. Si elle est désactivée, les données sensibles et spécifiques aux applications sont toujours enregistrées dans les corps et en-têtes des messages. Pour une discussion plus approfondie sur la confidentialité et la protection des informations d’identification personnelle, consultez [confidentialité des utilisateurs](https://go.microsoft.com/fwlink/?LinkID=94647).  
   
 > [!CAUTION]
->  Les informations personnelles ne sont pas masquées dans les messages malformés. Les messages de ce type sont consignés en l'état sans aucune modification. Les attributs précédemment mentionnés n'ont aucun effet sur cela.  
+> Les informations personnelles ne sont pas masquées dans les messages malformés. Les messages de ce type sont consignés en l'état sans aucune modification. Les attributs précédemment mentionnés n'ont aucun effet sur cela.  
   
 ### <a name="custom-trace-listener"></a>Écouteur de suivi personnalisé  
  L'ajout d'un écouteur de suivi personnalisé sur la source de suivi de journalisation des messages est un privilège qui doit être réservé à l'administrateur. En effet, des écouteurs personnalisés malveillants peuvent être configurés pour envoyer des messages à distance, ce qui se traduit par la divulgation d'informations sensibles. De plus, si vous configurez un écouteur personnalisé pour envoyer des messages sur le câble, par exemple vers une base de données distante, vous devez appliquer le contrôle d'accès approprié sur les journaux de messages de l'ordinateur distant.  

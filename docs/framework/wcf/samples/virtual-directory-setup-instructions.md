@@ -2,12 +2,12 @@
 title: Instructions d'installation du répertoire virtuel
 ms.date: 03/30/2017
 ms.assetid: 3c62cab5-81a4-48b6-ac8c-9ce33a85a157
-ms.openlocfilehash: f755fadf6bef2bdd58fd31f3460a143b8f52eddf
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6dccc5174e3fb9ab67023310d8c060d598a707c9
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966742"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70038645"
 ---
 # <a name="virtual-directory-setup-instructions"></a>Instructions d'installation du répertoire virtuel
 Les exemples de Windows Communication Foundation (WCF) sont destinés à partager un répertoire virtuel commun nommé servicemodelsamples mappé au dossier%SystemDrive%\inetpub\wwwroot\servicemodelsamples.  
@@ -36,10 +36,10 @@ Les exemples de Windows Communication Foundation (WCF) sont destinés à partage
 7. Cliquez sur **OK**. L'application Web est créée pour les exemples WCF.  
   
     > [!NOTE]
-    >  Cette tâche ne doit être effectuée qu’une seule fois, car tous les exemples WCF utilisent la même application Web servicemodelsamples.  
+    > Cette tâche ne doit être effectuée qu’une seule fois, car tous les exemples WCF utilisent la même application Web servicemodelsamples.  
   
     > [!NOTE]
-    >  Dans cette documentation, le terme `virtual directory` est synonyme du terme `Web application`.  
+    > Dans cette documentation, le terme `virtual directory` est synonyme du terme `Web application`.  
   
      En plus de créer le répertoire virtuel, vous devez également définir ses propriétés pour permettre l’exécution des services WCF. Pour plus d'informations, consultez ce qui suit.  
   
@@ -66,7 +66,7 @@ Les exemples de Windows Communication Foundation (WCF) sont destinés à partage
 8. Cliquez sur **suivant**, puis sur **Terminer** pour terminer l’Assistant.  
   
     > [!NOTE]
-    >  Cette tâche ne doit être effectuée qu’une seule fois, car tous les exemples WCF utilisent le même répertoire virtuel servicemodelsamples.  
+    > Cette tâche ne doit être effectuée qu’une seule fois, car tous les exemples WCF utilisent le même répertoire virtuel servicemodelsamples.  
   
 #### <a name="to-set-additional-virtual-directory-properties-in-iis-70-or-75"></a>Pour définir des propriétés de répertoire virtuel supplémentaires dans IIS 7,0 ou 7,5  
   

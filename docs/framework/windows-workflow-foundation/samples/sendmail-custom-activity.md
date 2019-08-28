@@ -2,36 +2,36 @@
 title: Activité personnalisée SendMail
 ms.date: 03/30/2017
 ms.assetid: 947a9ae6-379c-43a3-9cd5-87f573a5739f
-ms.openlocfilehash: d760f95b8e98bae52341296b90008e72d5c47d1f
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 9325817a24fee3ba04c2c305ebfdfbc6ff6da1bd
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637663"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70038111"
 ---
 # <a name="sendmail-custom-activity"></a>Activité personnalisée SendMail
-Cet exemple montre comment créer une activité personnalisée dérivée de <xref:System.Activities.AsyncCodeActivity> pour envoyer du courrier à l'aide de SMTP afin de l'utiliser dans une application de workflow. L’activité personnalisée utilise les fonctionnalités de <xref:System.Net.Mail.SmtpClient> pour envoyer un e-mail de façon asynchrone et d’envoyer des messages avec l’authentification. Elle fournit aussi certaines fonctionnalités d'utilisateur final telles que le mode Test, le remplacement des jetons, les modèles de fichier et le chemin d'accès de dépôt de test.  
+Cet exemple montre comment créer une activité personnalisée dérivée de <xref:System.Activities.AsyncCodeActivity> pour envoyer du courrier à l'aide de SMTP afin de l'utiliser dans une application de workflow. L’activité personnalisée utilise les fonctionnalités de <xref:System.Net.Mail.SmtpClient> pour envoyer des courriers électroniques de manière asynchrone et pour envoyer du courrier électronique avec l’authentification. Elle fournit aussi certaines fonctionnalités d'utilisateur final telles que le mode Test, le remplacement des jetons, les modèles de fichier et le chemin d'accès de dépôt de test.  
   
  Le tableau suivant décrit en détail les arguments pour l’activité `SendMail`.  
   
-|Nom|Type|Description|  
+|Nom|type|Description|  
 |-|-|-|  
-|Hôte|Chaîne|Adresse du serveur hôte SMTP.|  
-|Port|Chaîne|Port du service SMTP dans l'hôte.|  
+|Hôte|String|Adresse du serveur hôte SMTP.|  
+|Port|String|Port du service SMTP dans l'hôte.|  
 |EnableSsl|bool|Indique si <xref:System.Net.Mail.SmtpClient> utilise le protocole SSL (Secure Sockets Layer) pour chiffrer la connexion.|  
-|UserName|Chaîne|Nom d'utilisateur pour définir les informations d'identification utilisées pour authentifier la propriété <xref:System.Net.Mail.SmtpClient.Credentials%2A> de l'expéditeur.|  
-|Mot de passe|Chaîne|Mot de passe pour définir les informations d'identification utilisées pour authentifier la propriété <xref:System.Net.Mail.SmtpClient.Credentials%2A> de l'expéditeur.|  
-|Objet|<xref:System.Activities.InArgument%601>\<string>|Sujet du message.|  
+|UserName|String|Nom d'utilisateur pour définir les informations d'identification utilisées pour authentifier la propriété <xref:System.Net.Mail.SmtpClient.Credentials%2A> de l'expéditeur.|  
+|Mot de passe|String|Mot de passe pour définir les informations d'identification utilisées pour authentifier la propriété <xref:System.Net.Mail.SmtpClient.Credentials%2A> de l'expéditeur.|  
+|Subject|<xref:System.Activities.InArgument%601>\<string>|Sujet du message.|  
 |Corps|<xref:System.Activities.InArgument%601>\<string>|Corps du message.|  
-|Pièces jointes|<xref:System.Activities.InArgument%601>\<string>|Collection de pièces jointes utilisée pour stocker des données jointes à ce message électronique.|  
-|From|<xref:System.Net.Mail.MailAddress>|Adresse d’origine de ce message électronique.|  
+|Pièces jointes|<xref:System.Activities.InArgument%601>\<string>|Collection de pièces jointes utilisée pour stocker les données jointes à ce message électronique.|  
+|From|<xref:System.Net.Mail.MailAddress>|Adresse de l’adresse de ce message électronique.|  
 |À|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Collection d’adresses qui contient les destinataires de ce message électronique.|  
 |CC|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Collection d’adresses qui contient les destinataires de copie carbone (CC) pour ce message électronique.|  
-|BCC|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Collection d’adresses qui contient les destinataires de copie carbone invisible (Cci) pour ce message électronique.|  
+|BCC|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Collection d’adresses qui contient les destinataires de copie carbone invisible (CCI) pour ce message électronique.|  
 |jetons|<xref:System.Activities.InArgument%601><IDictionary\<string, string>>|Jetons à remplacer dans le corps. Cette fonctionnalité permet aux utilisateurs de spécifier certaines valeurs dans le corps qui peuvent être remplacées ultérieurement par les jetons fournis à l’aide de cette propriété.|  
-|BodyTemplateFilePath|Chaîne|Chemin d'accès à un modèle de corps. L'activité `SendMail` copie le contenu de ce fichier dans sa propriété de corps.<br /><br /> Ce modèle peut contenir des jetons qui sont remplacés par le contenu de la propriété des jetons.|  
-|TestMailTo|<xref:System.Net.Mail.MailAddress>|Lorsque cette propriété est définie, tous les messages électroniques sont envoyés à l’adresse spécifiée.<br /><br /> Cette propriété n'est pas conçue pour une utilisation lors du test des workflows. Par exemple, lorsque vous souhaitez vous assurer que tous les messages électroniques sont envoyés sans les envoyer aux destinataires réels.|  
-|TestDropPath|Chaîne|Lorsque cette propriété est définie, tous les messages électroniques sont également enregistrés dans le fichier spécifié.<br /><br /> Cette propriété est destinée à être utilisée lors de tests ou de débogage de workflows, pour vous assurer que le format et le contenu des messages électroniques sortants est appropriée.|  
+|BodyTemplateFilePath|String|Chemin d'accès à un modèle de corps. L'activité `SendMail` copie le contenu de ce fichier dans sa propriété de corps.<br /><br /> Ce modèle peut contenir des jetons qui sont remplacés par le contenu de la propriété des jetons.|  
+|TestMailTo|<xref:System.Net.Mail.MailAddress>|Lorsque cette propriété est définie, tous les messages électroniques sont envoyés à l’adresse spécifiée dans celle-ci.<br /><br /> Cette propriété n'est pas conçue pour une utilisation lors du test des workflows. Par exemple, lorsque vous souhaitez vous assurer que tous les courriers électroniques sont envoyés sans les envoyer aux destinataires réels.|  
+|TestDropPath|String|Lorsque cette propriété est définie, tous les courriers électroniques sont également enregistrés dans le fichier spécifié.<br /><br /> Cette propriété est destinée à être utilisée lorsque vous testez ou déboguez des flux de travail pour vous assurer que le format et le contenu des messages sortants sont appropriés.|  
   
 ## <a name="solution-contents"></a>Contenu de la solution  
  La solution contient deux projets.  
@@ -84,7 +84,7 @@ new SendMail
 ```  
   
 ### <a name="sending-mails-in-testing-mode"></a>Envoi de messages électronique en mode Test  
- Cet extrait de code montre comment définir les deux propriétés de tests : en définissant `TestMailTo` à tous les messages seront envoyés à `john.doe@contoso.con` (sans tenir compte des valeurs de, Cc, Cci). En définissant TestDropPath, tous les messages électroniques sortants seront aussi enregistrés dans le chemin d'accès fourni. Ces propriétés peuvent être définies indépendamment (elles ne sont pas liées).  
+ Cet extrait de code montre comment définir les deux propriétés de test: en `TestMailTo` définissant sur tous les messages seront `john.doe@contoso.con` envoyés à (sans tenir compte des valeurs de à, CC, CCI). En définissant TestDropPath, tous les messages électroniques sortants seront aussi enregistrés dans le chemin d'accès fourni. Ces propriétés peuvent être définies indépendamment (elles ne sont pas liées).  
   
 ```  
 new SendMail  
@@ -107,35 +107,35 @@ new SendMail
   
  Pour plus d’informations sur la configuration d’un serveur SMTP, consultez les liens suivants.  
   
-- [Microsoft Technet](https://go.microsoft.com/fwlink/?LinkId=166060)  
+- [Microsoft TechNet](https://go.microsoft.com/fwlink/?LinkId=166060)  
   
-- [Configuration du Service SMTP (IIS 6.0)](https://go.microsoft.com/fwlink/?LinkId=150456)  
+- [Configuration du service SMTP (IIS 6,0)](https://go.microsoft.com/fwlink/?LinkId=150456)  
   
-- [IIS 7.0 : Configurer la messagerie électronique SMTP](https://go.microsoft.com/fwlink/?LinkId=150457)  
+- [IIS 7,0: Configurer la messagerie SMTP](https://go.microsoft.com/fwlink/?LinkId=150457)  
   
-- [Comment installer le Service SMTP](https://go.microsoft.com/fwlink/?LinkId=150458)  
+- [Comment installer le service SMTP](https://go.microsoft.com/fwlink/?LinkId=150458)  
   
  Les émulateurs SMTP fournis par des tiers ne sont pas disponibles pour le téléchargement.  
   
 ##### <a name="to-run-this-sample"></a>Pour exécuter cet exemple  
   
-1. À l’aide de Visual Studio 2010, ouvrez le fichier solution SendMail.sln.  
+1. À l’aide de Visual Studio 2010, ouvrez le fichier solution SendMail. sln.  
   
 2. Vérifiez que vous avez accès à un serveur SMTP valide. Consultez les instructions d'installation.  
   
-3. Configurez le programme avec l’adresse de votre serveur et à partir d’et vers les adresses de messagerie.  
+3. Configurez le programme avec l’adresse de votre serveur et les adresses de messagerie de et à.  
   
-     Pour exécuter correctement cet exemple, vous devrez peut-être configurer la valeur de depuis et vers les adresses de messagerie et l’adresse du serveur SMTP dans le fichier Program.cs et Sequence.xaml. Vous devrez modifier l'adresse à ces deux emplacements car le programme envoie les messages de différentes façons.  
+     Pour exécuter correctement cet exemple, vous devrez peut-être configurer la valeur de et vers les adresses de messagerie et l’adresse du serveur SMTP dans Program.cs et dans Sequence. Xaml. Vous devrez modifier l'adresse à ces deux emplacements car le programme envoie les messages de différentes façons.  
   
 4. Pour générer la solution, appuyez sur Ctrl+Maj+B.  
   
 5. Pour exécuter la solution, appuyez sur Ctrl+F5.  
   
 > [!IMPORTANT]
->  Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
+> Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples`  
+> `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\SendMail`
+> `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\SendMail`

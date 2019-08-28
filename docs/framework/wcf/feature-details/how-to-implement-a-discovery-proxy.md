@@ -2,15 +2,16 @@
 title: 'Procédure : implémenter un proxy de détection'
 ms.date: 03/30/2017
 ms.assetid: 78d70e0a-f6c3-4cfb-a7ca-f66ebddadde0
-ms.openlocfilehash: 0928db476c759ac76a117485586d43c2414e2945
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 350baa6047d11a2d262e4a6c1d54cc874939ed9d
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64635273"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70045930"
 ---
 # <a name="how-to-implement-a-discovery-proxy"></a>Procédure : implémenter un proxy de détection
-Cette rubrique explique comment implémenter un proxy de découverte. Pour plus d’informations sur la fonctionnalité de découverte dans Windows Communication Foundation (WCF), consultez [présentation de la découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md). Un proxy de découverte peut être implémenté en créant une classe qui étend la classe abstraite <xref:System.ServiceModel.Discovery.DiscoveryProxy>. Un certain nombre d'autres classes de prise en charge sont définies et utilisées dans cet exemple. `OnResolveAsyncResult`, `OnFindAsyncResult` et `AsyncResult`. Ces classes implémentent l'interface <xref:System.IAsyncResult>. Pour plus d’informations sur <xref:System.IAsyncResult> consultez [System.IAsyncResult interface](xref:System.IAsyncResult).
+
+Cette rubrique explique comment implémenter un proxy de découverte. Pour plus d’informations sur la fonctionnalité de découverte dans Windows Communication Foundation (WCF), consultez [vue d’ensemble de la découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md). Un proxy de découverte peut être implémenté en créant une classe qui étend la classe abstraite <xref:System.ServiceModel.Discovery.DiscoveryProxy>. Un certain nombre d'autres classes de prise en charge sont définies et utilisées dans cet exemple. `OnResolveAsyncResult`, `OnFindAsyncResult` et `AsyncResult`. Ces classes implémentent l'interface <xref:System.IAsyncResult>. Pour plus d’informations <xref:System.IAsyncResult> sur, consultez [interface System. IAsyncResult](xref:System.IAsyncResult).
 
  L'implémentation d'un proxy de découverte est divisée en trois parties principales dans cette rubrique :
 
@@ -33,7 +34,7 @@ Cette rubrique explique comment implémenter un proxy de découverte. Pour plus 
     2. System.Servicemodel.Discovery.dll
 
     > [!CAUTION]
-    >  Vérifiez que vous référencez la version 4.0 ou supérieure de ces assemblys.
+    > Vérifiez que vous référencez la version 4.0 ou supérieure de ces assemblys.
 
 ### <a name="to-implement-the-proxydiscoveryservice-class"></a>Pour implémenter la classe ProxyDiscoveryService
 
@@ -41,7 +42,7 @@ Cette rubrique explique comment implémenter un proxy de découverte. Pour plus 
 
 2. Ajoutez les instructions `using` suivantes à DiscoveryProxy.cs.
 
-    ```
+    ```csharp
     using System;
     using System.Collections.Generic;
     using System.ServiceModel;
@@ -51,7 +52,7 @@ Cette rubrique explique comment implémenter un proxy de découverte. Pour plus 
 
 3. Dérivez `DiscoveryProxyService` de <xref:System.ServiceModel.Discovery.DiscoveryProxy>. Appliquez l'attribut `ServiceBehavior` à la classe, comme indiqué dans l'exemple suivant.
 
-    ```
+    ```csharp
     // Implement DiscoveryProxy by extending the DiscoveryProxy class and overriding the abstract methods
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Multiple)]
     public class DiscoveryProxyService : DiscoveryProxy
@@ -61,14 +62,14 @@ Cette rubrique explique comment implémenter un proxy de découverte. Pour plus 
 
 4. Dans la classe `DiscoveryProxy`, définissez un dictionnaire qui contiendra les services inscrits.
 
-    ```
+    ```csharp
     // Repository to store EndpointDiscoveryMetadata.
     Dictionary<EndpointAddress, EndpointDiscoveryMetadata> onlineServices;
     ```
 
 5. Définissez un constructeur qui initialise le dictionnaire.
 
-    ```
+    ```csharp
     public DiscoveryProxyService()
             {
                 this.onlineServices = new Dictionary<EndpointAddress, EndpointDiscoveryMetadata>();
@@ -79,201 +80,201 @@ Cette rubrique explique comment implémenter un proxy de découverte. Pour plus 
 
 1. Implémentez la méthode `AddOnlineservice` pour ajouter des services au cache. Cette méthode est appelée à chaque fois que le proxy reçoit un message d'annonce.
 
-    ```
+    ```csharp
     void AddOnlineService(EndpointDiscoveryMetadata endpointDiscoveryMetadata)
-            {
-                lock (this.onlineServices)
-                {
-                    this.onlineServices[endpointDiscoveryMetadata.Address] = endpointDiscoveryMetadata;
-                }
+    {
+        lock (this.onlineServices)
+        {
+            this.onlineServices[endpointDiscoveryMetadata.Address] = endpointDiscoveryMetadata;
+        }
 
-                PrintDiscoveryMetadata(endpointDiscoveryMetadata, "Adding");
-            }
+        PrintDiscoveryMetadata(endpointDiscoveryMetadata, "Adding");
+    }
     ```
 
 2. Implémentez la méthode `RemoveOnlineService` utilisée pour supprimer des services du cache.
 
-    ```
+    ```csharp
     void RemoveOnlineService(EndpointDiscoveryMetadata endpointDiscoveryMetadata)
+    {
+        if (endpointDiscoveryMetadata != null)
+        {
+            lock (this.onlineServices)
             {
-                if (endpointDiscoveryMetadata != null)
-                {
-                    lock (this.onlineServices)
-                    {
-                        this.onlineServices.Remove(endpointDiscoveryMetadata.Address);
-                    }
-
-                    PrintDiscoveryMetadata(endpointDiscoveryMetadata, "Removing");
-                }
+                this.onlineServices.Remove(endpointDiscoveryMetadata.Address);
             }
+
+            PrintDiscoveryMetadata(endpointDiscoveryMetadata, "Removing");
+        }
+    }
     ```
 
 3. Implémentez les méthodes `MatchFromOnlineService` qui tentent de faire correspondre un service à un service du dictionnaire.
 
-    ```
+    ```csharp
     void MatchFromOnlineService(FindRequestContext findRequestContext)
+    {
+        lock (this.onlineServices)
+        {
+            foreach (EndpointDiscoveryMetadata endpointDiscoveryMetadata in this.onlineServices.Values)
             {
-                lock (this.onlineServices)
+                if (findRequestContext.Criteria.IsMatch(endpointDiscoveryMetadata))
                 {
-                    foreach (EndpointDiscoveryMetadata endpointDiscoveryMetadata in this.onlineServices.Values)
-                    {
-                        if (findRequestContext.Criteria.IsMatch(endpointDiscoveryMetadata))
-                        {
-                            findRequestContext.AddMatchingEndpoint(endpointDiscoveryMetadata);
-                        }
-                    }
+                    findRequestContext.AddMatchingEndpoint(endpointDiscoveryMetadata);
                 }
             }
+        }
+    }
     ```
 
-    ```
+    ```csharp
     EndpointDiscoveryMetadata MatchFromOnlineService(ResolveCriteria criteria)
+    {
+        EndpointDiscoveryMetadata matchingEndpoint = null;
+        lock (this.onlineServices)
+        {
+            foreach (EndpointDiscoveryMetadata endpointDiscoveryMetadata in this.onlineServices.Values)
             {
-                EndpointDiscoveryMetadata matchingEndpoint = null;
-                lock (this.onlineServices)
+                if (criteria.Address == endpointDiscoveryMetadata.Address)
                 {
-                    foreach (EndpointDiscoveryMetadata endpointDiscoveryMetadata in this.onlineServices.Values)
-                    {
-                        if (criteria.Address == endpointDiscoveryMetadata.Address)
-                        {
-                            matchingEndpoint = endpointDiscoveryMetadata;
-                        }
-                    }
+                    matchingEndpoint = endpointDiscoveryMetadata;
                 }
-                return matchingEndpoint;
             }
+        }
+        return matchingEndpoint;
+    }
     ```
 
 4. Implémentez la méthode `PrintDiscoveryMetadata` qui fournit à l'utilisateur une sortie de texte de console sur ce que le proxy de découverte est en train d'effectuer.
 
-    ```
+    ```csharp
     void PrintDiscoveryMetadata(EndpointDiscoveryMetadata endpointDiscoveryMetadata, string verb)
-            {
-                Console.WriteLine("\n**** " + verb + " service of the following type from cache. ");
-                foreach (XmlQualifiedName contractName in endpointDiscoveryMetadata.ContractTypeNames)
-                {
-                    Console.WriteLine("** " + contractName.ToString());
-                    break;
-                }
-                Console.WriteLine("**** Operation Completed");
-            }
+    {
+        Console.WriteLine("\n**** " + verb + " service of the following type from cache. ");
+        foreach (XmlQualifiedName contractName in endpointDiscoveryMetadata.ContractTypeNames)
+        {
+            Console.WriteLine("** " + contractName.ToString());
+            break;
+        }
+        Console.WriteLine("**** Operation Completed");
+    }
     ```
 
 5. Ajoutez les classes AsyncResult suivantes à DiscoveryProxyService. Ces classes permettent de faire la distinction entre les différents résultats des opérations asynchrones.
 
-    ```
+    ```csharp
     sealed class OnOnlineAnnouncementAsyncResult : AsyncResult
-            {
-                public OnOnlineAnnouncementAsyncResult(AsyncCallback callback, object state)
-                    : base(callback, state)
-                {
-                    this.Complete(true);
-                }
+    {
+        public OnOnlineAnnouncementAsyncResult(AsyncCallback callback, object state)
+            : base(callback, state)
+        {
+            this.Complete(true);
+        }
 
-                public static void End(IAsyncResult result)
-                {
-                    AsyncResult.End<OnOnlineAnnouncementAsyncResult>(result);
-                }
-            }
+        public static void End(IAsyncResult result)
+        {
+            AsyncResult.End<OnOnlineAnnouncementAsyncResult>(result);
+        }
+    }
 
-            sealed class OnOfflineAnnouncementAsyncResult : AsyncResult
-            {
-                public OnOfflineAnnouncementAsyncResult(AsyncCallback callback, object state)
-                    : base(callback, state)
-                {
-                    this.Complete(true);
-                }
+    sealed class OnOfflineAnnouncementAsyncResult : AsyncResult
+    {
+        public OnOfflineAnnouncementAsyncResult(AsyncCallback callback, object state)
+            : base(callback, state)
+        {
+            this.Complete(true);
+        }
 
-                public static void End(IAsyncResult result)
-                {
-                    AsyncResult.End<OnOfflineAnnouncementAsyncResult>(result);
-                }
-            }
+        public static void End(IAsyncResult result)
+        {
+            AsyncResult.End<OnOfflineAnnouncementAsyncResult>(result);
+        }
+    }
 
-            sealed class OnFindAsyncResult : AsyncResult
-            {
-                public OnFindAsyncResult(AsyncCallback callback, object state)
-                    : base(callback, state)
-                {
-                    this.Complete(true);
-                }
+    sealed class OnFindAsyncResult : AsyncResult
+    {
+        public OnFindAsyncResult(AsyncCallback callback, object state)
+            : base(callback, state)
+        {
+            this.Complete(true);
+        }
 
-                public static void End(IAsyncResult result)
-                {
-                    AsyncResult.End<OnFindAsyncResult>(result);
-                }
-            }
+        public static void End(IAsyncResult result)
+        {
+            AsyncResult.End<OnFindAsyncResult>(result);
+        }
+    }
 
-            sealed class OnResolveAsyncResult : AsyncResult
-            {
-                EndpointDiscoveryMetadata matchingEndpoint;
+    sealed class OnResolveAsyncResult : AsyncResult
+    {
+        EndpointDiscoveryMetadata matchingEndpoint;
 
-                public OnResolveAsyncResult(EndpointDiscoveryMetadata matchingEndpoint, AsyncCallback callback, object state)
-                    : base(callback, state)
-                {
-                    this.matchingEndpoint = matchingEndpoint;
-                    this.Complete(true);
-                }
+        public OnResolveAsyncResult(EndpointDiscoveryMetadata matchingEndpoint, AsyncCallback callback, object state)
+            : base(callback, state)
+        {
+            this.matchingEndpoint = matchingEndpoint;
+            this.Complete(true);
+        }
 
-                public static EndpointDiscoveryMetadata End(IAsyncResult result)
-                {
-                    OnResolveAsyncResult thisPtr = AsyncResult.End<OnResolveAsyncResult>(result);
-                    return thisPtr.matchingEndpoint;
-                }
-            }
+        public static EndpointDiscoveryMetadata End(IAsyncResult result)
+        {
+            OnResolveAsyncResult thisPtr = AsyncResult.End<OnResolveAsyncResult>(result);
+            return thisPtr.matchingEndpoint;
+        }
+    }
     ```
 
 ### <a name="to-define-the-methods-that-implement-the-discovery-proxy-functionality"></a>Pour définir les méthodes qui implémentent les fonctionnalités du proxy de découverte
 
 1. Remplacez la méthode <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginOnlineAnnouncement%2A?displayProperty=nameWithType> . Cette méthode est appelée lorsque le proxy de découverte reçoit un message d'annonce en ligne.
 
-    ```
+    ```csharp
     // OnBeginOnlineAnnouncement method is called when a Hello message is received by the Proxy
-            protected override IAsyncResult OnBeginOnlineAnnouncement(DiscoveryMessageSequence messageSequence, EndpointDiscoveryMetadata endpointDiscoveryMetadata, AsyncCallback callback, object state)
-            {
-                this.AddOnlineService(endpointDiscoveryMetadata);
-                return new OnOnlineAnnouncementAsyncResult(callback, state);
-            }
+    protected override IAsyncResult OnBeginOnlineAnnouncement(DiscoveryMessageSequence messageSequence, EndpointDiscoveryMetadata endpointDiscoveryMetadata, AsyncCallback callback, object state)
+    {
+        this.AddOnlineService(endpointDiscoveryMetadata);
+        return new OnOnlineAnnouncementAsyncResult(callback, state);
+    }
     ```
 
 2. Remplacez la méthode <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndOnlineAnnouncement%2A?displayProperty=nameWithType> . Cette méthode est appelée lorsque le proxy de découverte finit un traitement de message d'annonce.
 
-    ```
+    ```csharp
     protected override void OnEndOnlineAnnouncement(IAsyncResult result)
-            {
-                OnOnlineAnnouncementAsyncResult.End(result);
-            }
+    {
+        OnOnlineAnnouncementAsyncResult.End(result);
+    }
     ```
 
 3. Remplacez la méthode <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginOfflineAnnouncement%2A?displayProperty=nameWithType> . Cette méthode est appelée lorsque le proxy de découverte reçoit un message d'annonce hors connexion.
 
-    ```
+    ```csharp
     // OnBeginOfflineAnnouncement method is called when a Bye message is received by the Proxy
-            protected override IAsyncResult OnBeginOfflineAnnouncement(DiscoveryMessageSequence messageSequence, EndpointDiscoveryMetadata endpointDiscoveryMetadata, AsyncCallback callback, object state)
-            {
-                this.RemoveOnlineService(endpointDiscoveryMetadata);
-                return new OnOfflineAnnouncementAsyncResult(callback, state);
-            }
+    protected override IAsyncResult OnBeginOfflineAnnouncement(DiscoveryMessageSequence messageSequence, EndpointDiscoveryMetadata endpointDiscoveryMetadata, AsyncCallback callback, object state)
+    {
+        this.RemoveOnlineService(endpointDiscoveryMetadata);
+        return new OnOfflineAnnouncementAsyncResult(callback, state);
+    }
     ```
 
 4. Remplacez la méthode <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndOfflineAnnouncement%2A?displayProperty=nameWithType> . Cette méthode est appelée lorsque le proxy de découverte finit un traitement de message d'annonce hors connexion.
 
-    ```
+    ```csharp
     protected override void OnEndOfflineAnnouncement(IAsyncResult result)
-            {
-                OnOfflineAnnouncementAsyncResult.End(result);
-            }
+    {
+        OnOfflineAnnouncementAsyncResult.End(result);
+    }
     ```
 
 5. Remplacez la méthode <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginFind%2A?displayProperty=nameWithType> . Cette méthode est appelée lorsque le proxy de découverte reçoit une demande de recherche.
 
-    ```
+    ```csharp
     // OnBeginFind method is called when a Probe request message is received by the Proxy
-            protected override IAsyncResult OnBeginFind(FindRequestContext findRequestContext, AsyncCallback callback, object state)
-            {
-                this.MatchFromOnlineService(findRequestContext);
-                return new OnFindAsyncResult(callback, state);
-            }
+    protected override IAsyncResult OnBeginFind(FindRequestContext findRequestContext, AsyncCallback callback, object state)
+    {
+        this.MatchFromOnlineService(findRequestContext);
+        return new OnFindAsyncResult(callback, state);
+    }
     protected override IAsyncResult OnBeginFind(FindRequest findRequest, AsyncCallback callback, object state)
     {
         Collection<EndpointDiscoveryMetadata> matchingEndpoints = MatchFromCache(findRequest.Criteria);
@@ -286,21 +287,21 @@ Cette rubrique explique comment implémenter un proxy de découverte. Pour plus 
 
 6. Remplacez la méthode <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndFind%2A?displayProperty=nameWithType> . Cette méthode est appelée lorsque le proxy de découverte finit un traitement de demande de recherche.
 
-    ```
+    ```csharp
     protected override void OnEndFind(IAsyncResult result)
-            {
-                OnFindAsyncResult.End(result);
-            }
+    {
+        OnFindAsyncResult.End(result);
+    }
     ```
 
 7. Remplacez la méthode <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginResolve%2A?displayProperty=nameWithType> . Cette méthode est appelée lorsque le proxy de découverte reçoit un message de résolution.
 
-    ```
+    ```csharp
     // OnBeginFind method is called when a Resolve request message is received by the Proxy
-            protected override IAsyncResult OnBeginResolve(ResolveCriteria resolveCriteria, AsyncCallback callback, object state)
-            {
-                return new OnResolveAsyncResult(this.MatchFromOnlineService(resolveCriteria), callback, state);
-            }
+    protected override IAsyncResult OnBeginResolve(ResolveCriteria resolveCriteria, AsyncCallback callback, object state)
+    {
+        return new OnResolveAsyncResult(this.MatchFromOnlineService(resolveCriteria), callback, state);
+    }
     protected override IAsyncResult OnBeginResolve(ResolveRequest resolveRequest, AsyncCallback callback, object state)
     {
         return new OnResolveAsyncResult(
@@ -312,14 +313,14 @@ Cette rubrique explique comment implémenter un proxy de découverte. Pour plus 
 
 8. Remplacez la méthode <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndResolve%2A?displayProperty=nameWithType> . Cette méthode est appelée lorsque le proxy de découverte finit un traitement de message de résolution.
 
-    ```
+    ```csharp
     protected override EndpointDiscoveryMetadata OnEndResolve(IAsyncResult result)
     {
         return OnResolveAsyncResult.End(result);
     }
     ```
 
- Les méthodes OnBegin. / OnEnd. les méthodes fournissent la logique pour les opérations de découverte ultérieures. Par exemple, les méthodes <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginFind%2A> et <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndFind%2A> implémentent la logique de recherche pour le proxy de découverte. Lorsque le proxy de découverte reçoit un message Probe, ces méthodes sont exécutées pour renvoyer une réponse au client. Vous pouvez modifier la logique de recherche à votre gré, par exemple, vous pouvez incorporer dans le cadre de votre opération de recherche une étendue personnalisée de correspondance par algorithmes ou une analyse des métadonnées XML spécifiques à une application.
+Les méthodes OnBegin. / OnEnd. les méthodes fournissent la logique pour les opérations de découverte ultérieures. Par exemple, les méthodes <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnBeginFind%2A> et <xref:System.ServiceModel.Discovery.DiscoveryProxy.OnEndFind%2A> implémentent la logique de recherche pour le proxy de découverte. Lorsque le proxy de découverte reçoit un message Probe, ces méthodes sont exécutées pour renvoyer une réponse au client. Vous pouvez modifier la logique de recherche à votre gré, par exemple, vous pouvez incorporer dans le cadre de votre opération de recherche une étendue personnalisée de correspondance par algorithmes ou une analyse des métadonnées XML spécifiques à une application.
 
 ### <a name="to-implement-the-asyncresult-class"></a>Pour implémenter la classe AsyncResult
 
@@ -329,160 +330,160 @@ Cette rubrique explique comment implémenter un proxy de découverte. Pour plus 
 
 3. Ajoutez les instructions `using` suivantes à AsyncResult.cs.
 
-    ```
+    ```csharp
     using System;
     using System.Threading;
     ```
 
 4. Ajoutez la classe AsyncResult suivante.
 
-    ```
+    ```csharp
     abstract class AsyncResult : IAsyncResult
+    {
+        AsyncCallback callback;
+        bool completedSynchronously;
+        bool endCalled;
+        Exception exception;
+        bool isCompleted;
+        ManualResetEvent manualResetEvent;
+        object state;
+        object thisLock;
+
+        protected AsyncResult(AsyncCallback callback, object state)
         {
-            AsyncCallback callback;
-            bool completedSynchronously;
-            bool endCalled;
-            Exception exception;
-            bool isCompleted;
-            ManualResetEvent manualResetEvent;
-            object state;
-            object thisLock;
+            this.callback = callback;
+            this.state = state;
+            this.thisLock = new object();
+        }
 
-            protected AsyncResult(AsyncCallback callback, object state)
+        public object AsyncState
+        {
+            get
             {
-                this.callback = callback;
-                this.state = state;
-                this.thisLock = new object();
-            }
-
-            public object AsyncState
-            {
-                get
-                {
-                    return state;
-                }
-            }
-
-            public WaitHandle AsyncWaitHandle
-            {
-                get
-                {
-                    if (manualResetEvent != null)
-                    {
-                        return manualResetEvent;
-                    }
-                    lock (ThisLock)
-                    {
-                        if (manualResetEvent == null)
-                        {
-                            manualResetEvent = new ManualResetEvent(isCompleted);
-                        }
-                    }
-                    return manualResetEvent;
-                }
-            }
-
-            public bool CompletedSynchronously
-            {
-                get
-                {
-                    return completedSynchronously;
-                }
-            }
-
-            public bool IsCompleted
-            {
-                get
-                {
-                    return isCompleted;
-                }
-            }
-
-            object ThisLock
-            {
-                get
-                {
-                    return this.thisLock;
-                }
-            }
-
-            protected static TAsyncResult End<TAsyncResult>(IAsyncResult result)
-                where TAsyncResult : AsyncResult
-            {
-                if (result == null)
-                {
-                    throw new ArgumentNullException("result");
-                }
-
-                TAsyncResult asyncResult = result as TAsyncResult;
-
-                if (asyncResult == null)
-                {
-                    throw new ArgumentException("Invalid async result.", "result");
-                }
-
-                if (asyncResult.endCalled)
-                {
-                    throw new InvalidOperationException("Async object already ended.");
-                }
-
-                asyncResult.endCalled = true;
-
-                if (!asyncResult.isCompleted)
-                {
-                    asyncResult.AsyncWaitHandle.WaitOne();
-                }
-
-                if (asyncResult.manualResetEvent != null)
-                {
-                    asyncResult.manualResetEvent.Close();
-                }
-
-                if (asyncResult.exception != null)
-                {
-                    throw asyncResult.exception;
-                }
-
-                return asyncResult;
-            }
-
-            protected void Complete(bool completedSynchronously)
-            {
-                if (isCompleted)
-                {
-                    throw new InvalidOperationException("This async result is already completed.");
-                }
-
-                this.completedSynchronously = completedSynchronously;
-
-                if (completedSynchronously)
-                {
-                    this.isCompleted = true;
-                }
-                else
-                {
-                    lock (ThisLock)
-                    {
-                        this.isCompleted = true;
-                        if (this.manualResetEvent != null)
-                        {
-                            this.manualResetEvent.Set();
-                        }
-                    }
-                }
-
-                if (callback != null)
-                {
-                    callback(this);
-                }
-            }
-
-            protected void Complete(bool completedSynchronously, Exception exception)
-            {
-                this.exception = exception;
-                Complete(completedSynchronously);
+                return state;
             }
         }
+
+        public WaitHandle AsyncWaitHandle
+        {
+            get
+            {
+                if (manualResetEvent != null)
+                {
+                    return manualResetEvent;
+                }
+                lock (ThisLock)
+                {
+                    if (manualResetEvent == null)
+                    {
+                        manualResetEvent = new ManualResetEvent(isCompleted);
+                    }
+                }
+                return manualResetEvent;
+            }
+        }
+
+        public bool CompletedSynchronously
+        {
+            get
+            {
+                return completedSynchronously;
+            }
+        }
+
+        public bool IsCompleted
+        {
+            get
+            {
+                return isCompleted;
+            }
+        }
+
+        object ThisLock
+        {
+            get
+            {
+                return this.thisLock;
+            }
+        }
+
+        protected static TAsyncResult End<TAsyncResult>(IAsyncResult result)
+            where TAsyncResult : AsyncResult
+        {
+            if (result == null)
+            {
+                throw new ArgumentNullException("result");
+            }
+
+            TAsyncResult asyncResult = result as TAsyncResult;
+
+            if (asyncResult == null)
+            {
+                throw new ArgumentException("Invalid async result.", "result");
+            }
+
+            if (asyncResult.endCalled)
+            {
+                throw new InvalidOperationException("Async object already ended.");
+            }
+
+            asyncResult.endCalled = true;
+
+            if (!asyncResult.isCompleted)
+            {
+                asyncResult.AsyncWaitHandle.WaitOne();
+            }
+
+            if (asyncResult.manualResetEvent != null)
+            {
+                asyncResult.manualResetEvent.Close();
+            }
+
+            if (asyncResult.exception != null)
+            {
+                throw asyncResult.exception;
+            }
+
+            return asyncResult;
+        }
+
+        protected void Complete(bool completedSynchronously)
+        {
+            if (isCompleted)
+            {
+                throw new InvalidOperationException("This async result is already completed.");
+            }
+
+            this.completedSynchronously = completedSynchronously;
+
+            if (completedSynchronously)
+            {
+                this.isCompleted = true;
+            }
+            else
+            {
+                lock (ThisLock)
+                {
+                    this.isCompleted = true;
+                    if (this.manualResetEvent != null)
+                    {
+                        this.manualResetEvent.Set();
+                    }
+                }
+            }
+
+            if (callback != null)
+            {
+                callback(this);
+            }
+        }
+
+        protected void Complete(bool completedSynchronously, Exception exception)
+        {
+            this.exception = exception;
+            Complete(completedSynchronously);
+        }
+    }
     ```
 
 ### <a name="to-host-the-discoveryproxy"></a>Pour héberger le DiscoveryProxy
@@ -491,7 +492,7 @@ Cette rubrique explique comment implémenter un proxy de découverte. Pour plus 
 
 2. Ajoutez les instructions `using` suivantes.
 
-    ```
+    ```csharp
     using System;
     using System.ServiceModel;
     using System.ServiceModel.Discovery;
@@ -499,61 +500,62 @@ Cette rubrique explique comment implémenter un proxy de découverte. Pour plus 
 
 3. Ajoutez le code suivant dans la méthode `Main()`. Ce code crée une instance de la classe `DiscoveryProxy`.
 
-    ```
+    ```csharp
     Uri probeEndpointAddress = new Uri("net.tcp://localhost:8001/Probe");
-                Uri announcementEndpointAddress = new Uri("net.tcp://localhost:9021/Announcement");
+    Uri announcementEndpointAddress = new Uri("net.tcp://localhost:9021/Announcement");
 
-                // Host the DiscoveryProxy service
-                ServiceHost proxyServiceHost = new ServiceHost(new DiscoveryProxyService());
+    // Host the DiscoveryProxy service
+    ServiceHost proxyServiceHost = new ServiceHost(new DiscoveryProxyService());
     ```
 
 4. Ensuite, ajoutez le code suivant afin d'ajouter un point de terminaison de découverte et un point de terminaison d'annonce.
 
-    ```
+    ```csharp
     try
-              {
-                  // Add DiscoveryEndpoint to receive Probe and Resolve messages
-                  DiscoveryEndpoint discoveryEndpoint = new DiscoveryEndpoint(new NetTcpBinding(), new EndpointAddress(probeEndpointAddress));
-                  discoveryEndpoint.IsSystemEndpoint = false;
+    {
+        // Add DiscoveryEndpoint to receive Probe and Resolve messages
+        DiscoveryEndpoint discoveryEndpoint = new DiscoveryEndpoint(new NetTcpBinding(), new EndpointAddress(probeEndpointAddress));
+        discoveryEndpoint.IsSystemEndpoint = false;
 
-                  // Add AnnouncementEndpoint to receive Hello and Bye announcement messages
-                  AnnouncementEndpoint announcementEndpoint = new AnnouncementEndpoint(new NetTcpBinding(), new EndpointAddress(announcementEndpointAddress));
+        // Add AnnouncementEndpoint to receive Hello and Bye announcement messages
+        AnnouncementEndpoint announcementEndpoint = new AnnouncementEndpoint(new NetTcpBinding(), new EndpointAddress(announcementEndpointAddress));
 
-                  proxyServiceHost.AddServiceEndpoint(discoveryEndpoint);
-                  proxyServiceHost.AddServiceEndpoint(announcementEndpoint);
+        proxyServiceHost.AddServiceEndpoint(discoveryEndpoint);
+        proxyServiceHost.AddServiceEndpoint(announcementEndpoint);
 
-                  proxyServiceHost.Open();
+        proxyServiceHost.Open();
 
-                  Console.WriteLine("Proxy Service started.");
-                  Console.WriteLine();
-                  Console.WriteLine("Press <ENTER> to terminate the service.");
-                  Console.WriteLine();
-                  Console.ReadLine();
+        Console.WriteLine("Proxy Service started.");
+        Console.WriteLine();
+        Console.WriteLine("Press <ENTER> to terminate the service.");
+        Console.WriteLine();
+        Console.ReadLine();
 
-                  proxyServiceHost.Close();
-              }
-              catch (CommunicationException e)
-              {
-                  Console.WriteLine(e.Message);
-              }
-              catch (TimeoutException e)
-              {
-                  Console.WriteLine(e.Message);
-              }
+        proxyServiceHost.Close();
+    }
+    catch (CommunicationException e)
+    {
+        Console.WriteLine(e.Message);
+    }
+    catch (TimeoutException e)
+    {
+        Console.WriteLine(e.Message);
+    }
 
-              if (proxyServiceHost.State != CommunicationState.Closed)
-              {
-                  Console.WriteLine("Aborting the service...");
-                  proxyServiceHost.Abort();
-              }
+    if (proxyServiceHost.State != CommunicationState.Closed)
+    {
+        Console.WriteLine("Aborting the service...");
+        proxyServiceHost.Abort();
+    }
     ```
 
- Vous avez terminé l'implémentation du proxy de découverte. Passez à [Comment : Implémenter un Service détectable qui s’enregistre avec le Proxy de découverte](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md).
+Vous avez terminé l'implémentation du proxy de découverte. Passez à [la procédure: Implémentez un service détectable qui s’inscrit auprès du proxy](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)de découverte.
 
 ## <a name="example"></a>Exemple
- Les éléments suivants représentent l'intégralité du code utilisé dans cette rubrique.
 
-```
+Les éléments suivants représentent l'intégralité du code utilisé dans cette rubrique.
+
+```csharp
 // DiscoveryProxy.cs
 //----------------------------------------------------------------
 // Copyright (c) Microsoft Corporation.  All rights reserved.
@@ -754,7 +756,7 @@ namespace Microsoft.Samples.Discovery
 }
 ```
 
-```
+```csharp
 // AsyncResult.cs
 //----------------------------------------------------------------
 // Copyright (c) Microsoft Corporation.  All rights reserved.
@@ -914,7 +916,7 @@ namespace Microsoft.Samples.Discovery
 }
 ```
 
-```
+```csharp
 // program.cs
 //----------------------------------------------------------------
 // Copyright (c) Microsoft Corporation.  All rights reserved.
@@ -980,6 +982,6 @@ namespace Microsoft.Samples.Discovery
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble de la découverte WCF](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)
-- [Guide pratique pour Implémenter un Service détectable qui s’enregistre avec le Proxy de découverte](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)
-- [Guide pratique pour Implémenter une Application cliente qui utilise le Proxy de découverte pour rechercher un Service](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)
-- [Guide pratique pour Tester le Proxy de découverte](../../../../docs/framework/wcf/feature-details/how-to-test-the-discovery-proxy.md)
+- [Guide pratique : Implémenter un service détectable qui s’inscrit auprès du proxy de découverte](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)
+- [Guide pratique : Implémenter une application cliente qui utilise le proxy de découverte pour rechercher un service](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)
+- [Guide pratique : Tester le proxy de découverte](../../../../docs/framework/wcf/feature-details/how-to-test-the-discovery-proxy.md)
