@@ -8,116 +8,118 @@ helpviewer_keywords:
 - Windows Communication Foundation, extending
 - OperationRequirement class
 ms.assetid: 6214afde-44c1-4bf5-ba07-5ad6493620ea
-ms.openlocfilehash: e3d0143cd68bc94c6ff07e65ca5a3c8971b45f23
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ffdfe41db05eb5f2dd55a233f8ed646401777d0f
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61858011"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70040296"
 ---
-# <a name="how-to-create-a-custom-authorization-manager-for-a-service"></a><span data-ttu-id="e7bc7-102">Procédure : créer un gestionnaire d’autorisations personnalisé pour un service</span><span class="sxs-lookup"><span data-stu-id="e7bc7-102">How to: Create a Custom Authorization Manager for a Service</span></span>
-<span data-ttu-id="e7bc7-103">L’infrastructure de modèle d’identité dans Windows Communication Foundation (WCF) prend en charge un modèle extensible d’autorisation basée sur les revendications.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-103">The Identity Model infrastructure in Windows Communication Foundation (WCF) supports an extensible claims-based authorization model.</span></span> <span data-ttu-id="e7bc7-104">Les revendications sont extraites de jetons et sont éventuellement traitées par les stratégies d'autorisation personnalisées puis placées dans un <xref:System.IdentityModel.Policy.AuthorizationContext>.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-104">Claims are extracted from tokens and optionally processed by custom authorization policies and then placed into an <xref:System.IdentityModel.Policy.AuthorizationContext>.</span></span> <span data-ttu-id="e7bc7-105">Un gestionnaire d'autorisations examine les revendications dans le <xref:System.IdentityModel.Policy.AuthorizationContext> pour prendre des décisions concernant les autorisations.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-105">An authorization manager examines the claims in the <xref:System.IdentityModel.Policy.AuthorizationContext> to make authorization decisions.</span></span>  
-  
- <span data-ttu-id="e7bc7-106">Par défaut, les décisions relatives aux autorisations sont prises par la classe <xref:System.ServiceModel.ServiceAuthorizationManager> ; cependant, ces décisions peuvent être substituées en créant un gestionnaire d'autorisations personnalisé.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-106">By default, authorization decisions are made by the <xref:System.ServiceModel.ServiceAuthorizationManager> class; however these decisions can be overridden by creating a custom authorization manager.</span></span> <span data-ttu-id="e7bc7-107">Pour créer un gestionnaire d'autorisations personnalisé, créez une classe qui dérive de <xref:System.ServiceModel.ServiceAuthorizationManager> et implémente la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A>.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-107">To create a custom authorization manager, create a class that derives from <xref:System.ServiceModel.ServiceAuthorizationManager> and implement <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> method.</span></span> <span data-ttu-id="e7bc7-108">Les décisions relatives aux autorisations sont prises dans la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A>, qui retourne la valeur `true` lorsque l'accès est accordé et `false` lorsque l'accès est refusé.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-108">Authorization decisions are made in the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> method, which returns `true` when access is granted and `false` when access is denied.</span></span>  
-  
- <span data-ttu-id="e7bc7-109">Si la décision d'autorisation dépend du contenu du corps de message, utilisez la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A>.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-109">If the authorization decision depends on the contents of the message body, use the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> method.</span></span>  
-  
- <span data-ttu-id="e7bc7-110">En raison des problèmes de performances, essayez de reconcevoir si possible votre application afin que la décision d'autorisation ne nécessite pas l'accès au corps du message.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-110">Because of performance issues, if possible you should redesign your application so that the authorization decision does not require access to the message body.</span></span>  
-  
- <span data-ttu-id="e7bc7-111">L'enregistrement du gestionnaire d'autorisations personnalisé pour un service peut être réalisé dans du code ou dans la configuration.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-111">Registration of the custom authorization manager for a service can be done in code or configuration.</span></span>  
-  
-### <a name="to-create-a-custom-authorization-manager"></a><span data-ttu-id="e7bc7-112">Pour créer un gestionnaire d'autorisations personnalisé</span><span class="sxs-lookup"><span data-stu-id="e7bc7-112">To create a custom authorization manager</span></span>  
-  
-1. <span data-ttu-id="e7bc7-113">Dérivez une classe d'une classe de la classe <xref:System.ServiceModel.ServiceAuthorizationManager>.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-113">Derive a class from the <xref:System.ServiceModel.ServiceAuthorizationManager> class.</span></span>  
-  
-     [!code-csharp[c_CustomAuthMgr#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customauthmgr/cs/c_customauthmgr.cs#5)]
-     [!code-vb[c_CustomAuthMgr#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthmgr/vb/c_customauthmgr.vb#5)]  
-  
-2. <span data-ttu-id="e7bc7-114">Remplacez la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%28System.ServiceModel.OperationContext%29> .</span><span class="sxs-lookup"><span data-stu-id="e7bc7-114">Override the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%28System.ServiceModel.OperationContext%29> method.</span></span>  
-  
-     <span data-ttu-id="e7bc7-115">Utilisez le <xref:System.ServiceModel.OperationContext> passé à la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%28System.ServiceModel.OperationContext%29> pour prendre des décisions concernant les autorisations.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-115">Use the <xref:System.ServiceModel.OperationContext> that is passed to the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%28System.ServiceModel.OperationContext%29> method to make authorization decisions.</span></span>  
-  
-     <span data-ttu-id="e7bc7-116">L'exemple de code suivant utilise la méthode <xref:System.IdentityModel.Claims.ClaimSet.FindClaims%28System.String%2CSystem.String%29> pour rechercher la revendication personnalisée `http://www.contoso.com/claims/allowedoperation` afin de prendre une décision relative à une autorisation.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-116">The following code example uses the <xref:System.IdentityModel.Claims.ClaimSet.FindClaims%28System.String%2CSystem.String%29> method to find the custom claim `http://www.contoso.com/claims/allowedoperation` to make an authorization decision.</span></span>  
-  
-     [!code-csharp[c_CustomAuthMgr#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customauthmgr/cs/c_customauthmgr.cs#6)]
-     [!code-vb[c_CustomAuthMgr#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthmgr/vb/c_customauthmgr.vb#6)]  
-  
-### <a name="to-register-a-custom-authorization-manager-using-code"></a><span data-ttu-id="e7bc7-117">Pour enregistrer un gestionnaire d'autorisations personnalisé à l'aide de code</span><span class="sxs-lookup"><span data-stu-id="e7bc7-117">To register a custom authorization manager using code</span></span>  
-  
-1. <span data-ttu-id="e7bc7-118">Créez une instance du gestionnaire d'autorisations personnalisé et assignez-la à la propriété <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ServiceAuthorizationManager%2A>.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-118">Create an instance of the custom authorization manager and assign it to the <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ServiceAuthorizationManager%2A> property.</span></span>  
-  
-     <span data-ttu-id="e7bc7-119"><xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> est accessible à l'aide de la propriété <xref:System.ServiceModel.ServiceHostBase.Authorization%2A>.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-119">The <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> can be accessed using <xref:System.ServiceModel.ServiceHostBase.Authorization%2A> property.</span></span>  
-  
-     <span data-ttu-id="e7bc7-120">L'exemple de code suivant enregistre le gestionnaire d'autorisations personnalisé `MyServiceAuthorizationManager`.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-120">The following code example registers the `MyServiceAuthorizationManager` custom authorization manager.</span></span>  
-  
-     [!code-csharp[c_CustomAuthMgr#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customauthmgr/cs/c_customauthmgr.cs#4)]
-     [!code-vb[c_CustomAuthMgr#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthmgr/vb/c_customauthmgr.vb#4)]  
-  
-### <a name="to-register-a-custom-authorization-manager-using-configuration"></a><span data-ttu-id="e7bc7-121">Pour enregistrer un gestionnaire d'autorisations personnalisé à l'aide d'une configuration</span><span class="sxs-lookup"><span data-stu-id="e7bc7-121">To register a custom authorization manager using configuration</span></span>  
-  
-1. <span data-ttu-id="e7bc7-122">Ouvrez le fichier de configuration pour le service.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-122">Open the configuration file for the service.</span></span>  
-  
-2. <span data-ttu-id="e7bc7-123">Ajouter un [ \<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md) à la [ \<comportements >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md).</span><span class="sxs-lookup"><span data-stu-id="e7bc7-123">Add a [\<serviceAuthorization>](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md) to the [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md).</span></span>  
-  
-     <span data-ttu-id="e7bc7-124">Pour le [ \<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md), ajouter un `serviceAuthorizationManagerType` d’attribut et définissez sa valeur sur le type qui représente le Gestionnaire d’autorisations personnalisé.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-124">To the [\<serviceAuthorization>](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md), add a `serviceAuthorizationManagerType` attribute and set its value to the type that represents the custom authorization manager.</span></span>  
-  
-3. <span data-ttu-id="e7bc7-125">Ajoutez une liaison qui sécurise la communication entre le client et le service.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-125">Add a binding that secures the communication between the client and service.</span></span>  
-  
-     <span data-ttu-id="e7bc7-126">La liaison choisie pour cette communication détermine les revendications ajoutées au <xref:System.IdentityModel.Policy.AuthorizationContext>, que le gestionnaire d'autorisations personnalisé utilise pour prendre des décisions concernant les autorisations.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-126">The binding that is chosen for this communication determines the claims that are added to the <xref:System.IdentityModel.Policy.AuthorizationContext>, which the custom authorization manager uses to make authorization decisions.</span></span> <span data-ttu-id="e7bc7-127">Pour plus d’informations sur les liaisons fournies par le système, consultez [System-Provided Bindings](../../../../docs/framework/wcf/system-provided-bindings.md).</span><span class="sxs-lookup"><span data-stu-id="e7bc7-127">For more details about the system-provided bindings, see [System-Provided Bindings](../../../../docs/framework/wcf/system-provided-bindings.md).</span></span>  
-  
-4. <span data-ttu-id="e7bc7-128">Associez le comportement à un point de terminaison de service, en ajoutant un [ \<service >](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) élément et définissez la valeur de la `behaviorConfiguration` avec la valeur de l’attribut de nom pour le [ \<comportement >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) élément.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-128">Associate the behavior to a service endpoint, by adding a [\<service>](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) element and set the value of the `behaviorConfiguration` attribute to the value of the name attribute for the [\<behavior>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) element.</span></span>  
-  
-     <span data-ttu-id="e7bc7-129">Pour plus d’informations sur la configuration d’un point de terminaison de service, consultez [Comment : Créer un point de terminaison de Service dans la Configuration](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md).</span><span class="sxs-lookup"><span data-stu-id="e7bc7-129">For more information about configuring a service endpoint, see [How to: Create a Service Endpoint in Configuration](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md).</span></span>  
-  
-     <span data-ttu-id="e7bc7-130">L'exemple de code suivant enregistre le gestionnaire d'autorisations personnalisé `Samples.MyServiceAuthorizationManager`.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-130">The following code example registers the custom authorization manager `Samples.MyServiceAuthorizationManager`.</span></span>  
-  
-    ```xml  
-    <configuration>  
-      <system.serviceModel>  
-        <services>  
-          <service   
-              name="Microsoft.ServiceModel.Samples.CalculatorService"  
-              behaviorConfiguration="CalculatorServiceBehavior">  
-            <host>  
-              <baseAddresses>  
-                <add baseAddress="http://localhost:8000/ServiceModelSamples/service"/>  
-              </baseAddresses>  
-            </host>  
-            <endpoint address=""  
-                      binding="wsHttpBinding_Calculator"  
-                      contract="Microsoft.ServiceModel.Samples.ICalculator" />  
-          </service>  
-        </services>  
-        <bindings>  
-          <WSHttpBinding>  
-           <binding name = "wsHttpBinding_Calculator">  
-             <security mode="Message">  
-               <message clientCredentialType="Windows"/>  
-             </security>  
-            </binding>  
-          </WSHttpBinding>  
-    </bindings>  
-        <behaviors>  
-          <serviceBehaviors>  
-            <behavior name="CalculatorServiceBehavior">  
-              <serviceAuthorization serviceAuthorizationManagerType="Samples.MyServiceAuthorizationManager,MyAssembly" />  
-             </behavior>  
-         </serviceBehaviors>  
-       </behaviors>  
-      </system.serviceModel>  
-    </configuration>  
-    ```  
-  
+# <a name="how-to-create-a-custom-authorization-manager-for-a-service"></a><span data-ttu-id="aec9a-102">Procédure : créer un gestionnaire d’autorisations personnalisé pour un service</span><span class="sxs-lookup"><span data-stu-id="aec9a-102">How to: Create a Custom Authorization Manager for a Service</span></span>
+
+<span data-ttu-id="aec9a-103">L’infrastructure de modèle d’identité dans Windows Communication Foundation (WCF) prend en charge un modèle d’autorisation extensible basé sur les revendications.</span><span class="sxs-lookup"><span data-stu-id="aec9a-103">The Identity Model infrastructure in Windows Communication Foundation (WCF) supports an extensible claims-based authorization model.</span></span> <span data-ttu-id="aec9a-104">Les revendications sont extraites de jetons et sont éventuellement traitées par les stratégies d'autorisation personnalisées puis placées dans un <xref:System.IdentityModel.Policy.AuthorizationContext>.</span><span class="sxs-lookup"><span data-stu-id="aec9a-104">Claims are extracted from tokens and optionally processed by custom authorization policies and then placed into an <xref:System.IdentityModel.Policy.AuthorizationContext>.</span></span> <span data-ttu-id="aec9a-105">Un gestionnaire d'autorisations examine les revendications dans le <xref:System.IdentityModel.Policy.AuthorizationContext> pour prendre des décisions concernant les autorisations.</span><span class="sxs-lookup"><span data-stu-id="aec9a-105">An authorization manager examines the claims in the <xref:System.IdentityModel.Policy.AuthorizationContext> to make authorization decisions.</span></span>
+
+<span data-ttu-id="aec9a-106">Par défaut, les décisions relatives aux autorisations sont prises par la classe <xref:System.ServiceModel.ServiceAuthorizationManager> ; cependant, ces décisions peuvent être substituées en créant un gestionnaire d'autorisations personnalisé.</span><span class="sxs-lookup"><span data-stu-id="aec9a-106">By default, authorization decisions are made by the <xref:System.ServiceModel.ServiceAuthorizationManager> class; however these decisions can be overridden by creating a custom authorization manager.</span></span> <span data-ttu-id="aec9a-107">Pour créer un gestionnaire d'autorisations personnalisé, créez une classe qui dérive de <xref:System.ServiceModel.ServiceAuthorizationManager> et implémente la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A>.</span><span class="sxs-lookup"><span data-stu-id="aec9a-107">To create a custom authorization manager, create a class that derives from <xref:System.ServiceModel.ServiceAuthorizationManager> and implement <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> method.</span></span> <span data-ttu-id="aec9a-108">Les décisions relatives aux autorisations sont prises dans la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A>, qui retourne la valeur `true` lorsque l'accès est accordé et `false` lorsque l'accès est refusé.</span><span class="sxs-lookup"><span data-stu-id="aec9a-108">Authorization decisions are made in the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> method, which returns `true` when access is granted and `false` when access is denied.</span></span>
+
+<span data-ttu-id="aec9a-109">Si la décision d'autorisation dépend du contenu du corps de message, utilisez la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A>.</span><span class="sxs-lookup"><span data-stu-id="aec9a-109">If the authorization decision depends on the contents of the message body, use the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> method.</span></span>
+
+<span data-ttu-id="aec9a-110">En raison des problèmes de performances, essayez de reconcevoir si possible votre application afin que la décision d'autorisation ne nécessite pas l'accès au corps du message.</span><span class="sxs-lookup"><span data-stu-id="aec9a-110">Because of performance issues, if possible you should redesign your application so that the authorization decision does not require access to the message body.</span></span>
+
+<span data-ttu-id="aec9a-111">L'enregistrement du gestionnaire d'autorisations personnalisé pour un service peut être réalisé dans du code ou dans la configuration.</span><span class="sxs-lookup"><span data-stu-id="aec9a-111">Registration of the custom authorization manager for a service can be done in code or configuration.</span></span>
+
+### <a name="to-create-a-custom-authorization-manager"></a><span data-ttu-id="aec9a-112">Pour créer un gestionnaire d'autorisations personnalisé</span><span class="sxs-lookup"><span data-stu-id="aec9a-112">To create a custom authorization manager</span></span>
+
+1. <span data-ttu-id="aec9a-113">Dérivez une classe d'une classe de la classe <xref:System.ServiceModel.ServiceAuthorizationManager>.</span><span class="sxs-lookup"><span data-stu-id="aec9a-113">Derive a class from the <xref:System.ServiceModel.ServiceAuthorizationManager> class.</span></span>
+
+    [!code-csharp[c_CustomAuthMgr#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customauthmgr/cs/c_customauthmgr.cs#5)]
+    [!code-vb[c_CustomAuthMgr#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthmgr/vb/c_customauthmgr.vb#5)]
+
+2. <span data-ttu-id="aec9a-114">Remplacez la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%28System.ServiceModel.OperationContext%29> .</span><span class="sxs-lookup"><span data-stu-id="aec9a-114">Override the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%28System.ServiceModel.OperationContext%29> method.</span></span>
+
+    <span data-ttu-id="aec9a-115">Utilisez le <xref:System.ServiceModel.OperationContext> passé à la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%28System.ServiceModel.OperationContext%29> pour prendre des décisions concernant les autorisations.</span><span class="sxs-lookup"><span data-stu-id="aec9a-115">Use the <xref:System.ServiceModel.OperationContext> that is passed to the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%28System.ServiceModel.OperationContext%29> method to make authorization decisions.</span></span>
+
+    <span data-ttu-id="aec9a-116">L'exemple de code suivant utilise la méthode <xref:System.IdentityModel.Claims.ClaimSet.FindClaims%28System.String%2CSystem.String%29> pour rechercher la revendication personnalisée `http://www.contoso.com/claims/allowedoperation` afin de prendre une décision relative à une autorisation.</span><span class="sxs-lookup"><span data-stu-id="aec9a-116">The following code example uses the <xref:System.IdentityModel.Claims.ClaimSet.FindClaims%28System.String%2CSystem.String%29> method to find the custom claim `http://www.contoso.com/claims/allowedoperation` to make an authorization decision.</span></span>
+
+    [!code-csharp[c_CustomAuthMgr#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customauthmgr/cs/c_customauthmgr.cs#6)]
+    [!code-vb[c_CustomAuthMgr#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthmgr/vb/c_customauthmgr.vb#6)]
+
+### <a name="to-register-a-custom-authorization-manager-using-code"></a><span data-ttu-id="aec9a-117">Pour enregistrer un gestionnaire d'autorisations personnalisé à l'aide de code</span><span class="sxs-lookup"><span data-stu-id="aec9a-117">To register a custom authorization manager using code</span></span>
+
+1. <span data-ttu-id="aec9a-118">Créez une instance du gestionnaire d'autorisations personnalisé et assignez-la à la propriété <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ServiceAuthorizationManager%2A>.</span><span class="sxs-lookup"><span data-stu-id="aec9a-118">Create an instance of the custom authorization manager and assign it to the <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ServiceAuthorizationManager%2A> property.</span></span>
+
+    <span data-ttu-id="aec9a-119"><xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> est accessible à l'aide de la propriété <xref:System.ServiceModel.ServiceHostBase.Authorization%2A>.</span><span class="sxs-lookup"><span data-stu-id="aec9a-119">The <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> can be accessed using <xref:System.ServiceModel.ServiceHostBase.Authorization%2A> property.</span></span>
+
+    <span data-ttu-id="aec9a-120">L'exemple de code suivant enregistre le gestionnaire d'autorisations personnalisé `MyServiceAuthorizationManager`.</span><span class="sxs-lookup"><span data-stu-id="aec9a-120">The following code example registers the `MyServiceAuthorizationManager` custom authorization manager.</span></span>
+
+    [!code-csharp[c_CustomAuthMgr#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customauthmgr/cs/c_customauthmgr.cs#4)]
+    [!code-vb[c_CustomAuthMgr#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthmgr/vb/c_customauthmgr.vb#4)]
+
+### <a name="to-register-a-custom-authorization-manager-using-configuration"></a><span data-ttu-id="aec9a-121">Pour enregistrer un gestionnaire d'autorisations personnalisé à l'aide d'une configuration</span><span class="sxs-lookup"><span data-stu-id="aec9a-121">To register a custom authorization manager using configuration</span></span>
+
+1. <span data-ttu-id="aec9a-122">Ouvrez le fichier de configuration pour le service.</span><span class="sxs-lookup"><span data-stu-id="aec9a-122">Open the configuration file for the service.</span></span>
+
+2. <span data-ttu-id="aec9a-123">Ajoutez un [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md) [ >ServiceAuthorizationau>decomportements.\<](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)</span><span class="sxs-lookup"><span data-stu-id="aec9a-123">Add a [\<serviceAuthorization>](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md) to the [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md).</span></span>
+
+    <span data-ttu-id="aec9a-124">Pour le [ \<> ServiceAuthorization](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md), ajoutez un `serviceAuthorizationManagerType` attribut et définissez sa valeur sur le type qui représente le gestionnaire d’autorisations personnalisé.</span><span class="sxs-lookup"><span data-stu-id="aec9a-124">To the [\<serviceAuthorization>](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md), add a `serviceAuthorizationManagerType` attribute and set its value to the type that represents the custom authorization manager.</span></span>
+
+3. <span data-ttu-id="aec9a-125">Ajoutez une liaison qui sécurise la communication entre le client et le service.</span><span class="sxs-lookup"><span data-stu-id="aec9a-125">Add a binding that secures the communication between the client and service.</span></span>
+
+    <span data-ttu-id="aec9a-126">La liaison choisie pour cette communication détermine les revendications ajoutées au <xref:System.IdentityModel.Policy.AuthorizationContext>, que le gestionnaire d'autorisations personnalisé utilise pour prendre des décisions concernant les autorisations.</span><span class="sxs-lookup"><span data-stu-id="aec9a-126">The binding that is chosen for this communication determines the claims that are added to the <xref:System.IdentityModel.Policy.AuthorizationContext>, which the custom authorization manager uses to make authorization decisions.</span></span> <span data-ttu-id="aec9a-127">Pour plus d’informations sur les liaisons fournies par le système, consultez [liaisons fournies par le système](../../../../docs/framework/wcf/system-provided-bindings.md).</span><span class="sxs-lookup"><span data-stu-id="aec9a-127">For more details about the system-provided bindings, see [System-Provided Bindings](../../../../docs/framework/wcf/system-provided-bindings.md).</span></span>
+
+4. <span data-ttu-id="aec9a-128">Associez le comportement à un point de terminaison de service [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) , en ajoutant un élément de > de service `behaviorConfiguration` et en définissant la valeur de l’attribut sur la valeur de l’attribut Name pour l' [ \<élément Behavior >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) .</span><span class="sxs-lookup"><span data-stu-id="aec9a-128">Associate the behavior to a service endpoint, by adding a [\<service>](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) element and set the value of the `behaviorConfiguration` attribute to the value of the name attribute for the [\<behavior>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) element.</span></span>
+
+    <span data-ttu-id="aec9a-129">Pour plus d’informations sur la configuration d’un point de [terminaison de service, consultez Procédure: Créez un point de terminaison de](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md)service dans la configuration.</span><span class="sxs-lookup"><span data-stu-id="aec9a-129">For more information about configuring a service endpoint, see [How to: Create a Service Endpoint in Configuration](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-endpoint-in-configuration.md).</span></span>
+
+    <span data-ttu-id="aec9a-130">L'exemple de code suivant enregistre le gestionnaire d'autorisations personnalisé `Samples.MyServiceAuthorizationManager`.</span><span class="sxs-lookup"><span data-stu-id="aec9a-130">The following code example registers the custom authorization manager `Samples.MyServiceAuthorizationManager`.</span></span>
+
+    ```xml
+    <configuration>
+      <system.serviceModel>
+        <services>
+          <service
+              name="Microsoft.ServiceModel.Samples.CalculatorService"
+              behaviorConfiguration="CalculatorServiceBehavior">
+            <host>
+              <baseAddresses>
+                <add baseAddress="http://localhost:8000/ServiceModelSamples/service"/>
+              </baseAddresses>
+            </host>
+            <endpoint address=""
+                      binding="wsHttpBinding_Calculator"
+                      contract="Microsoft.ServiceModel.Samples.ICalculator" />
+          </service>
+        </services>
+        <bindings>
+          <WSHttpBinding>
+           <binding name = "wsHttpBinding_Calculator">
+             <security mode="Message">
+               <message clientCredentialType="Windows"/>
+             </security>
+            </binding>
+          </WSHttpBinding>
+        </bindings>
+        <behaviors>
+          <serviceBehaviors>
+            <behavior name="CalculatorServiceBehavior">
+              <serviceAuthorization serviceAuthorizationManagerType="Samples.MyServiceAuthorizationManager,MyAssembly" />
+             </behavior>
+         </serviceBehaviors>
+       </behaviors>
+      </system.serviceModel>
+    </configuration>
+    ```
+
     > [!WARNING]
-    >  <span data-ttu-id="e7bc7-131">Notez que lorsque vous spécifiez serviceAuthorizationManagerType, la chaîne doit contenir le nom de type qualifié complet.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-131">Note that when you specify the serviceAuthorizationManagerType, the string must contain the fully qualified type name.</span></span> <span data-ttu-id="e7bc7-132">une virgule, et le nom de l'assembly dans lequel le type est défini.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-132">a comma, and the name of the assembly in which the type is defined.</span></span> <span data-ttu-id="e7bc7-133">Si vous omettez le nom de l'assembly, WCF tentera de charger le type à partir de System.ServiceModel.dll.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-133">If you leave out the assembly name, WCF will attempt to load the type from System.ServiceModel.dll.</span></span>  
-  
-## <a name="example"></a><span data-ttu-id="e7bc7-134">Exemple</span><span class="sxs-lookup"><span data-stu-id="e7bc7-134">Example</span></span>  
- <span data-ttu-id="e7bc7-135">L'exemple de code suivant illustre une implémentation de base d'une classe <xref:System.ServiceModel.ServiceAuthorizationManager> qui inclut la substitution de la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A>.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-135">The following code example demonstrates a basic implementation of a <xref:System.ServiceModel.ServiceAuthorizationManager> class that includes overriding the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> method.</span></span> <span data-ttu-id="e7bc7-136">L'exemple de code recherche une revendication personnalisée dans le <xref:System.IdentityModel.Policy.AuthorizationContext> et retourne la valeur `true` lorsque la ressource pour cette revendication personnalisée correspond à la valeur d'action du <xref:System.ServiceModel.OperationContext>.</span><span class="sxs-lookup"><span data-stu-id="e7bc7-136">The example code examines the <xref:System.IdentityModel.Policy.AuthorizationContext> for a custom claim and returns `true` when the resource for that custom claim matches the action value from the <xref:System.ServiceModel.OperationContext>.</span></span> <span data-ttu-id="e7bc7-137">Pour une implémentation plus complète d’un <xref:System.ServiceModel.ServiceAuthorizationManager> de classe, consultez [stratégie d’autorisation](../../../../docs/framework/wcf/samples/authorization-policy.md).</span><span class="sxs-lookup"><span data-stu-id="e7bc7-137">For a more complete implementation of a <xref:System.ServiceModel.ServiceAuthorizationManager> class, see [Authorization Policy](../../../../docs/framework/wcf/samples/authorization-policy.md).</span></span>  
-  
- [!code-csharp[c_CustomAuthMgr#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customauthmgr/cs/c_customauthmgr.cs#2)]
- [!code-vb[c_CustomAuthMgr#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthmgr/vb/c_customauthmgr.vb#2)]  
-  
-## <a name="see-also"></a><span data-ttu-id="e7bc7-138">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e7bc7-138">See also</span></span>
+    > <span data-ttu-id="aec9a-131">Notez que lorsque vous spécifiez serviceAuthorizationManagerType, la chaîne doit contenir le nom de type qualifié complet.</span><span class="sxs-lookup"><span data-stu-id="aec9a-131">Note that when you specify the serviceAuthorizationManagerType, the string must contain the fully qualified type name.</span></span> <span data-ttu-id="aec9a-132">une virgule, et le nom de l'assembly dans lequel le type est défini.</span><span class="sxs-lookup"><span data-stu-id="aec9a-132">a comma, and the name of the assembly in which the type is defined.</span></span> <span data-ttu-id="aec9a-133">Si vous omettez le nom de l'assembly, WCF tentera de charger le type à partir de System.ServiceModel.dll.</span><span class="sxs-lookup"><span data-stu-id="aec9a-133">If you leave out the assembly name, WCF will attempt to load the type from System.ServiceModel.dll.</span></span>
+
+## <a name="example"></a><span data-ttu-id="aec9a-134">Exemples</span><span class="sxs-lookup"><span data-stu-id="aec9a-134">Example</span></span>
+
+<span data-ttu-id="aec9a-135">L'exemple de code suivant illustre une implémentation de base d'une classe <xref:System.ServiceModel.ServiceAuthorizationManager> qui inclut la substitution de la méthode <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A>.</span><span class="sxs-lookup"><span data-stu-id="aec9a-135">The following code example demonstrates a basic implementation of a <xref:System.ServiceModel.ServiceAuthorizationManager> class that includes overriding the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> method.</span></span> <span data-ttu-id="aec9a-136">L'exemple de code recherche une revendication personnalisée dans le <xref:System.IdentityModel.Policy.AuthorizationContext> et retourne la valeur `true` lorsque la ressource pour cette revendication personnalisée correspond à la valeur d'action du <xref:System.ServiceModel.OperationContext>.</span><span class="sxs-lookup"><span data-stu-id="aec9a-136">The example code examines the <xref:System.IdentityModel.Policy.AuthorizationContext> for a custom claim and returns `true` when the resource for that custom claim matches the action value from the <xref:System.ServiceModel.OperationContext>.</span></span> <span data-ttu-id="aec9a-137">Pour une implémentation plus complète d’une <xref:System.ServiceModel.ServiceAuthorizationManager> classe, consultez [stratégie d’autorisation](../../../../docs/framework/wcf/samples/authorization-policy.md).</span><span class="sxs-lookup"><span data-stu-id="aec9a-137">For a more complete implementation of a <xref:System.ServiceModel.ServiceAuthorizationManager> class, see [Authorization Policy](../../../../docs/framework/wcf/samples/authorization-policy.md).</span></span>
+
+[!code-csharp[c_CustomAuthMgr#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customauthmgr/cs/c_customauthmgr.cs#2)]
+[!code-vb[c_CustomAuthMgr#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthmgr/vb/c_customauthmgr.vb#2)]
+
+## <a name="see-also"></a><span data-ttu-id="aec9a-138">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="aec9a-138">See also</span></span>
 
 - <xref:System.ServiceModel.ServiceAuthorizationManager>
-- [<span data-ttu-id="e7bc7-139">Stratégie d’autorisation</span><span class="sxs-lookup"><span data-stu-id="e7bc7-139">Authorization Policy</span></span>](../../../../docs/framework/wcf/samples/authorization-policy.md)
+- [<span data-ttu-id="aec9a-139">Stratégie d’autorisation</span><span class="sxs-lookup"><span data-stu-id="aec9a-139">Authorization Policy</span></span>](../../../../docs/framework/wcf/samples/authorization-policy.md)
