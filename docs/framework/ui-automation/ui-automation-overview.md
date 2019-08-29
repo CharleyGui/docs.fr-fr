@@ -6,12 +6,12 @@ helpviewer_keywords:
 - user interface, see UI
 - accessibility, UI automation
 ms.assetid: 65847654-9994-4a9e-b36d-2dd5d998770b
-ms.openlocfilehash: af4abf060e9a8606f69a94f27ecd76487a2ff51c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 968660f2fa043ee4028cb144f368d9380729ffef
+ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914591"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70133800"
 ---
 # <a name="ui-automation-overview"></a>Vue d'ensemble d'UI Automation
 > [!NOTE]
@@ -26,9 +26,9 @@ ms.locfileid: "69914591"
   
  Les applications clientes UI Automation peuvent être écrites avec l’assurance qu’elles fonctionneront sur plusieurs infrastructures. Le noyau [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] masque toute les différences des infrastructures sous-jacentes à plusieurs parties de l’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Par exemple, la propriété `Content` d’un bouton [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] , la propriété `Caption` d’un bouton [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] et la propriété `ALT` d’une image HTML sont toutes mappées à une seule propriété, <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name%2A>, dans la vue [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] fournit des fonctionnalités complètes dans [!INCLUDE[TLA#tla_longhorn](../../../includes/tlasharptla-longhorn-md.md)], [!INCLUDE[TLA#tla_winxp](../../../includes/tlasharptla-winxp-md.md)]et [!INCLUDE[TLA2#tla_winnetsvrfam](../../../includes/tla2sharptla-winnetsvrfam-md.md)].  
+UI Automation offre des fonctionnalités complètes sur les systèmes d’exploitation Windows pris en charge qui exécutent le .NET Framework (consultez [.NET Framework Configuration système requise](../get-started/system-requirements.md) ou versions de .net core à partir de .net Core 3,0.  
   
- Les fournisseurs UI Automation offrent une prise en charge pour les applications clientes Microsoft Active Accessibility, par le biais d’un service de pontage intégré.  
+ Les fournisseurs UI Automation offrent une prise en charge pour les applications clientes Microsoft Active Accessibility via un service de pontage intégré.  
   
 <a name="Providers_and_Clients"></a>   
 ## <a name="providers-and-clients"></a>Fournisseurs et clients  

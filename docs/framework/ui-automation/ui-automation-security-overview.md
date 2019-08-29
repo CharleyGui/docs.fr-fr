@@ -5,17 +5,17 @@ helpviewer_keywords:
 - UI Automation, security model
 - security model, UI Automation
 ms.assetid: 1d853695-973c-48ae-b382-4132ae702805
-ms.openlocfilehash: c74f770f917fc3b2a7d3a18c08270745dac68b12
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 8b798aef528cccdedb1fcaa53c1782632037600d
+ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67422432"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70133787"
 ---
 # <a name="ui-automation-security-overview"></a>Vue d'ensemble de la sécurité UI Automation
 
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour plus d’informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [Windows Automation API : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les informations les [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]plus récentes [sur, consultez API Windows Automation: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).
 
 Cette vue d'ensemble décrit le modèle de sécurité pour [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] dans [!INCLUDE[TLA#tla_winvista](../../../includes/tlasharptla-winvista-md.md)].
 
@@ -41,7 +41,7 @@ Pour avoir l'autorisation de communiquer avec des applications exécutées à un
 
 ## <a name="manifest-files"></a>Fichiers manifeste
 
-Pour accéder à l’interface utilisateur du système protégé, les applications doivent être générées avec un fichier manifest qui inclut le `uiAccess` d’attribut dans le `requestedExecutionLevel` de balise, comme suit :
+Pour accéder à l’interface utilisateur du système protégé, les applications doivent être générées avec un fichier manifeste `uiAccess` qui comprend l' `requestedExecutionLevel` attribut dans la balise, comme suit:
 
 ```xml
 <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
@@ -57,6 +57,4 @@ Pour accéder à l’interface utilisateur du système protégé, les applicatio
 
 Dans ce code, la valeur de l'attribut `level` n'est qu'un exemple.
 
-`uiAccess` est « false » par défaut ; Autrement dit, si l’attribut est omis ou s’il n’existe aucun manifeste pour l’assembly, l’application ne sera pas en mesure d’accéder à l’interface utilisateur protégé.
-
-Pour plus d’informations sur [!INCLUDE[TLA#tla_longhorn2](../../../includes/tlasharptla-longhorn2-md.md)] de sécurité, la signature des applications et la création de manifestes d’assembly, consultez [pratiques recommandées et directives pour des Applications dans un environnement de privilège minimum](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480150(v=msdn.10)).
+`uiAccess`est «false» par défaut; autrement dit, si l’attribut est omis ou s’il n’existe aucun manifeste pour l’assembly, l’application ne sera pas en mesure d’accéder à l’interface utilisateur protégée.
