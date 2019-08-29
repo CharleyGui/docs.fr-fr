@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 788229053f5702b44c6ac351b59ad1c464e4e133
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: eddf605ab085aa39494bef0818ef51403cb032ef
+ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64633636"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69988790"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>quantificateurs dans les expressions régulières
 Les quantificateurs spécifient le nombre d’instances d’un caractère, groupe ou classe de caractères devant être présentes dans l’entrée pour qu’une correspondance soit trouvée.  Le tableau suivant répertorie les quantificateurs pris en charge par .NET.  
@@ -38,13 +38,13 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
  Les quantités `n` et `m` sont des constantes entières. Habituellement, les quantificateurs sont gourmands ; ils obligent le moteur d’expression régulière à faire correspondre autant d’occurrences de modèles particuliers que possible. L’ajout du caractère `?` à un quantificateur le rend paresseux ; le moteur d’expression régulière fait alors correspondre aussi peu d’occurrences que possible. Pour une description complète de la différence entre quantificateurs gourmands et paresseux, consultez la section [Quantificateurs gourmands et paresseux](#Greedy) plus loin dans cette rubrique.  
   
 > [!IMPORTANT]
->  L’imbrication des quantificateurs (par exemple, comme le fait le modèle d’expression régulière `(a*)*`) peut augmenter le nombre de comparaisons que le moteur d’expression régulière doit exécuter, comme une fonction exponentielle du nombre de caractères dans la chaîne d’entrée. Pour plus d’informations sur ce comportement et ses solutions de contournement, consultez [Rétroaction](../../../docs/standard/base-types/backtracking-in-regular-expressions.md).  
+> L’imbrication des quantificateurs (par exemple, comme le fait le modèle d’expression régulière `(a*)*`) peut augmenter le nombre de comparaisons que le moteur d’expression régulière doit exécuter, comme une fonction exponentielle du nombre de caractères dans la chaîne d’entrée. Pour plus d’informations sur ce comportement et ses solutions de contournement, consultez [Rétroaction](../../../docs/standard/base-types/backtracking-in-regular-expressions.md).  
   
 ## <a name="regular-expression-quantifiers"></a>Quantificateurs d’expression régulière  
  Les sections suivantes présentent les quantificateurs pris en charge par les expressions régulières .NET.  
   
 > [!NOTE]
->  Si les caractères *, +, ?, { et } sont rencontrés dans un modèle d’expressions régulières, le moteur d’expression régulière les interprète comme des quantificateurs ou partie de constructions de quantificateur à moins qu’ils ne soient inclus dans une [classe de caractères](../../../docs/standard/base-types/character-classes-in-regular-expressions.md). Pour les interpréter comme des caractères littéraux en dehors d’une classe de caractères, vous devez les placer dans une séquence d’échappement en les faisant précéder d’une barre oblique inverse. Par exemple, la chaîne `\*` dans un modèle d’expression régulière est interprétée comme un caractère astérisque (« \* ») littéral.  
+> Si les caractères *, +, ?, { et } sont rencontrés dans un modèle d’expressions régulières, le moteur d’expression régulière les interprète comme des quantificateurs ou partie de constructions de quantificateur à moins qu’ils ne soient inclus dans une [classe de caractères](../../../docs/standard/base-types/character-classes-in-regular-expressions.md). Pour les interpréter comme des caractères littéraux en dehors d’une classe de caractères, vous devez les placer dans une séquence d’échappement en les faisant précéder d’une barre oblique inverse. Par exemple, la chaîne `\*` dans un modèle d’expression régulière est interprétée comme un caractère astérisque (« \* ») littéral.  
   
 ### <a name="match-zero-or-more-times-"></a>Mettre en correspondance zéro occurrence ou plus : *  
  Le quantificateur `*` correspond zéro fois, ou plus, à l’élément qui précède. Il équivaut au quantificateur `{0,}`. `*` est un quantificateur gourmand dont l’équivalent paresseux est `*?`.  
@@ -185,7 +185,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
 |`\(??`|Mettre en correspondance zéro occurrence, ou plus, de la parenthèse ouvrante.|  
   
 ### <a name="match-exactly-n-times-lazy-match-n"></a>Mettre en correspondance exactement n occurrences (correspondance paresseuse) : {n}?  
- Le quantificateur `{`*n*`}?` met en correspondance exactement `n` occurrences de l’élément qui précède, où *n* est un entier. Il s’agit de l’équivalent paresseux du quantificateur gourmand `{`*n*`}+`.  
+ Le quantificateur `{`*n*`}?` met en correspondance exactement `n` occurrences de l’élément qui précède, où *n* est un entier. Il s’agit de l’équivalent paresseux du quantificateur gourmand `{`*n*`}`.  
   
  Dans l’exemple suivant, l’expression régulière `\b(\w{3,}?\.){2}?\w{3,}?\b` est utilisée pour identifier une adresse de site web. Notez qu’elle établit une correspondance avec « www.microsoft.com » et « msdn.microsoft.com », mais pas avec « mywebsite » ou « mycompany.com ».  
   
@@ -209,7 +209,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
 ### <a name="match-between-n-and-m-times-lazy-match-nm"></a>Mettre en correspondance entre n et m fois (correspondance paresseuse) : {n,m}?  
  Le quantificateur `{`*n*`,`*m*`}?` met en correspondance entre `n` et `m` occurrences de l’élément qui précède, où *n* et *m* sont des entiers, mais le moins d’occurrences possible. Il s’agit de l’équivalent paresseux du quantificateur gourmand `{`*n*`,`*m*`}`.  
   
- Dans l’exemple suivant, l’expression régulière `\b[A-Z](\w*\s+){1,10}?[.!?]` correspond aux phrases qui contiennent entre un et dix mots. Elle établit une correspondance avec toutes les phrases de la chaîne d’entrée à l’exception d’une phrase qui contient 18 mots.  
+ Dans l’exemple suivant, l’expression régulière `\b[A-Z](\w*?\s*?){1,10}[.!?]` correspond aux phrases qui contiennent entre un et dix mots. Elle établit une correspondance avec toutes les phrases de la chaîne d’entrée à l’exception d’une phrase qui contient 18 mots.  
   
  [!code-csharp[RegularExpressions.Quantifiers#12](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers/cs/Quantifiers1.cs#12)]
  [!code-vb[RegularExpressions.Quantifiers#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#12)]  
@@ -220,8 +220,8 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`[A-Z]`|Mettre en correspondance une majuscule de A à Z.|  
-|`(\w*\s+)`|Mettre en correspondance zéro, un ou plusieurs caractères alphabétiques, suivis d’un ou plusieurs espaces blancs. Il s’agit du premier groupe de capture.|  
-|`{1,10}?`|Mettre en correspondance le modèle précédent entre 1 et 10 fois, mais le moins de fois possible.|  
+|`(\w*?\s*?)`|Mettre en correspondance zéro, un ou plusieurs caractères alphabétiques, suivis d’un ou plusieurs espaces, mais le moins de fois possible. Il s’agit du premier groupe de capture.|  
+|`{1,10}`|Mettre en correspondance le modèle précédent entre 1 et 10 fois.|  
 |`[.!?]`|Mettre en correspondance un signe de ponctuation « . », « ! » ou « ? ».|  
   
 <a name="Greedy"></a>   

@@ -3,12 +3,12 @@ title: Utilisation des collections - Présentation du tutoriel C#
 description: Découvrez C# en explorant la collection de listes de ce guide de démarrage rapide.
 ms.date: 10/13/2017
 ms.custom: mvc
-ms.openlocfilehash: 064b01a30410b147e89b0f87180d5af9269a3a87
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 160e34ddb529a8515a08d6aab838ba107936c616
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634516"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69587256"
 ---
 # <a name="learn-to-manage-data-collections-using-the-generic-list-type"></a>Apprenez à gérer les collections de données en utilisant le type de liste générique
 
@@ -93,7 +93,8 @@ var index = names.IndexOf("Felipe");
 if (index == -1)
 {
     Console.WriteLine($"When an item is not found, IndexOf returns {index}");
-} else
+}
+else
 {
     Console.WriteLine($"The name {names[index]} is at index {index}");
 }
@@ -102,7 +103,8 @@ index = names.IndexOf("Not Found");
 if (index == -1)
 {
     Console.WriteLine($"When an item is not found, IndexOf returns {index}");
-} else
+}
+else
 {
     Console.WriteLine($"The name {names[index]} is at index {index}");
 
@@ -192,7 +194,7 @@ var previous2 = fibonacciNumbers[fibonacciNumbers.Count - 2];
 
 fibonacciNumbers.Add(previous + previous2);
 
-foreach(var item in fibonacciNumbers)
+foreach (var item in fibonacciNumbers)
     Console.WriteLine(item);
 ```
 
@@ -207,7 +209,7 @@ Vérifiez si vous pouvez mettre en pratique certains des concepts appris ici et 
 
 ## <a name="complete-challenge"></a>Terminer le test
 
-Vous pouvez afficher un exemple de solution en [consultant l’exemple de code terminé sur GitHub](https://github.com/dotnet/samples/tree/master/csharp/list-quickstart/Program.cs#L13-L23).
+Vous pouvez voir un exemple de solution en [consultant l’exemple de code terminé sur GitHub](https://github.com/dotnet/samples/tree/master/csharp/list-quickstart/Program.cs#L13-L23).
 
 À chaque itération de la boucle, vous sélectionnez les deux derniers entiers de la liste, les additionner et ajoutez la valeur obtenue à la liste. La boucle se répète jusqu'à ce que vous ayez ajouté 20 éléments à la liste.
 

@@ -4,12 +4,12 @@ description: Cet article vous explique comment les .NET Core versions du SDK et 
 author: bleroy
 ms.date: 07/26/2018
 ms.custom: seodec18
-ms.openlocfilehash: e060eac3a63ff869a2fe51fae0166b75329fcb49
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dcf74f6fa892446555541f13a33130a93787cf70
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61646863"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104958"
 ---
 # <a name="overview-of-how-net-core-is-versioned"></a>Vue d’ensemble de la gestion des versions .NET Core
 
@@ -36,8 +36,8 @@ La troisième position du numéro de la version du SDK indique le numéro mineur
 
 REMARQUES :
 
-* Si le SDK a 10 mises à jour de fonctionnalités avant une mise à jour de fonctionnalité de runtime, les numéros de version passent à la série 1000 avec des numéros tels que 2.2.1000 comme version de fonctionnalité suivant 2.2.900. Cette situation n’est pas censée se produire.
-* Il ne se produira pas 99 publications de correctifs sans une publication de fonctionnalité. Si une publication est proche de ce numéro, cela force une publication de fonctionnalité.
+- Si le SDK a 10 mises à jour de fonctionnalités avant une mise à jour de fonctionnalité de runtime, les numéros de version passent à la série 1000 avec des numéros tels que 2.2.1000 comme version de fonctionnalité suivant 2.2.900. Cette situation n’est pas censée se produire.
+- Il ne se produira pas 99 publications de correctifs sans une publication de fonctionnalité. Si une publication est proche de ce numéro, cela force une publication de fonctionnalité.
 
 Vous trouverez plus de détails dans la proposition initiale dans le dépôt [dotnet/designs](https://github.com/dotnet/designs/pull/29).
 
@@ -55,24 +55,24 @@ Les pièces facultatives `PRERELEASE` et `BUILDNUMBER` ne feront jamais partie d
 
 `MAJOR` est incrémenté quand :
 
-* Des modifications importantes sont apportées au produit, ou en cas de nouvelle direction du produit.
-* Des changements cassants ont été apportés. La barre est haute pour accepter les changements cassants.
-* Une version ancienne n’est plus prise en charge.
-* Une version `MAJOR` plus récente d’une dépendance existante est adoptée.
+- Des modifications importantes sont apportées au produit, ou en cas de nouvelle direction du produit.
+- Des changements cassants ont été apportés. La barre est haute pour accepter les changements cassants.
+- Une version ancienne n’est plus prise en charge.
+- Une version `MAJOR` plus récente d’une dépendance existante est adoptée.
 
 `MINOR` est incrémenté quand :
 
-* Une surface d’exposition d’API publique est ajoutée.
-* Un nouveau comportement est ajouté.
-* Une version `MINOR` plus récente d’une dépendance existante est adoptée.
-* Une nouvelle dépendance est introduite.
+- Une surface d’exposition d’API publique est ajoutée.
+- Un nouveau comportement est ajouté.
+- Une version `MINOR` plus récente d’une dépendance existante est adoptée.
+- Une nouvelle dépendance est introduite.
 
 `PATCH` est incrémenté quand :
 
-* Des correctifs de bogues sont effectués.
-* La prise en charge d’une plateforme plus récente est ajoutée.
-* Une version `PATCH` plus récente d’une dépendance existante est adoptée.
-* Toute autre modification ne relevant pas d’un des cas précédents.
+- Des correctifs de bogues sont effectués.
+- La prise en charge d’une plateforme plus récente est ajoutée.
+- Une version `PATCH` plus récente d’une dépendance existante est adoptée.
+- Toute autre modification ne relevant pas d’un des cas précédents.
 
 Quand il existe plusieurs modifications, l’élément le plus élevé affecté par des modifications individuelles est incrémenté et les suivants sont remis à zéro. Par exemple, quand `MAJOR` est incrémenté, `MINOR` et `PATCH` sont remis à zéro. Quand `MINOR` est incrémenté, `PATCH` est remis à zéro, tandis que `MAJOR` est laissé tel quel.
 

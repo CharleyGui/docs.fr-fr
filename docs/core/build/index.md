@@ -4,12 +4,12 @@ description: Découvrez comment générer .NET Core et le .NET Core CLI à parti
 author: bleroy
 ms.date: 06/28/2017
 ms.custom: seodec18
-ms.openlocfilehash: 523b537ba07afd1b6c56192c5e2589082fe5820f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dcd7c909325eec5a79db74098d7ac880000eafa1
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650880"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105385"
 ---
 # <a name="build-net-core-from-source"></a>Générer .NET Core à partir de la source
 
@@ -22,28 +22,28 @@ Vous trouverez le code source de .NET CoreCLR dans le référentiel [dotnet/core
 
 La génération dépend actuellement des prérequis suivants :
 
-* [Git](https://git-scm.com/)
-* [CMake](https://cmake.org/)
-* [Python](https://www.python.org/)
-* Un compilateur C++.
+- [Git](https://git-scm.com/)
+- [CMake](https://cmake.org/)
+- [Python](https://www.python.org/)
+- Un compilateur C++.
 
 Une fois ces composants requis installés, vous pouvez générer le CLR en appelant le script de génération (`build.cmd` sur Windows ou `build.sh` sur Linux et macOS) à la base du dépôt [dotnet/coreclr](https://github.com/dotnet/coreclr/).
 
 L’installation des composants diffère selon le système d’exploitation. Consultez les instructions de génération pour votre système d’exploitation spécifique :
 
-* [Fenêtres](https://github.com/dotnet/coreclr/blob/master/Documentation/building/windows-instructions.md)
-* [Linux](https://github.com/dotnet/coreclr/blob/master/Documentation/building/linux-instructions.md)
-* [macOS](https://github.com/dotnet/coreclr/blob/master/Documentation/building/osx-instructions.md)
-* [FreeBSD](https://github.com/dotnet/coreclr/blob/master/Documentation/building/freebsd-instructions.md)
-* [NetBSD](https://github.com/dotnet/coreclr/blob/master/Documentation/building/netbsd-instructions.md)
+- [Fenêtres](https://github.com/dotnet/coreclr/blob/master/Documentation/building/windows-instructions.md)
+- [Linux](https://github.com/dotnet/coreclr/blob/master/Documentation/building/linux-instructions.md)
+- [macOS](https://github.com/dotnet/coreclr/blob/master/Documentation/building/osx-instructions.md)
+- [FreeBSD](https://github.com/dotnet/coreclr/blob/master/Documentation/building/freebsd-instructions.md)
+- [NetBSD](https://github.com/dotnet/coreclr/blob/master/Documentation/building/netbsd-instructions.md)
 
 La génération croisée entre systèmes d’exploitation n’est pas possible (sauf pour ARM, qui est basé sur X64).  
 Vous devez être sur la plateforme spécifique pour générer cette plateforme.  
 
 La build a deux `buildTypes` principaux :
 
-* Debug (par défaut) : compile le runtime avec des optimisations minimales et des vérifications (assertions) supplémentaires à l’exécution. Cette réduction du niveau d’optimisation et les vérifications supplémentaires ralentissent l’exécution du runtime, mais sont utiles pour le débogage. Il s’agit du paramètre recommandé pour les environnements de développement et de test.
-* Release : compile le runtime avec des optimisations complètes et sans les vérifications supplémentaires à l’exécution. Vous obtenez des performances d’exécution plus rapides, mais la génération peut prendre plus de temps et être difficile à déboguer. Passez `release` au script de compilation pour sélectionner ce type de build.
+- Debug (par défaut) : compile le runtime avec des optimisations minimales et des vérifications (assertions) supplémentaires à l’exécution. Cette réduction du niveau d’optimisation et les vérifications supplémentaires ralentissent l’exécution du runtime, mais sont utiles pour le débogage. Il s’agit du paramètre recommandé pour les environnements de développement et de test.
+- Release : compile le runtime avec des optimisations complètes et sans les vérifications supplémentaires à l’exécution. Vous obtenez des performances d’exécution plus rapides, mais la génération peut prendre plus de temps et être difficile à déboguer. Passez `release` au script de compilation pour sélectionner ce type de build.
 
 Par défaut, la génération crée non seulement les exécutables du runtime, mais elle produit également tous les tests.
 Il existe un bon nombre de tests qui prennent un temps considérable alors qu’ils ne sont pas nécessaires si vous voulez faire des essais avec des modifications.
@@ -65,7 +65,7 @@ Vous trouverez plus d’options de génération de la build en utilisant le qual
 
 La build place tous les fichiers générés sous le répertoire `bin` à la base du dépôt.
 Il existe un répertoire *bin\Log* qui contient les fichiers journaux générés pendant la génération (utiles principalement en cas d’échec de la build).
-Le résultat est placé dans un répertoire *bin\Product\[plateforme].[Architecture d’UC].[type de build]*, comme *bin\Product\Windows_NT.x64.Release*.
+Le résultat est placé dans un répertoire *bin\Product\[plateforme].[Architecture d’UC].[type de build]* , comme *bin\Product\Windows_NT.x64.Release*.
 
 Si la sortie « brute » de la build est parfois utile, vous n’êtes normalement intéressé que par les packages NuGet, qui sont placés dans le sous-répertoire `.nuget\pkg` du répertoire de sortie précédent.
 
@@ -86,12 +86,12 @@ Vous trouverez le code source de l’interface CLI .NET Core dans le référenti
 
 Pour générer l’interface CLI de .NET Core, les éléments suivants doivent être installés sur votre ordinateur.
 
-* Windows et Linux :
-  * git sur la variable PATH
-* macOS :
-  * git sur la variable PATH
-  * Xcode
-  * Openssl
+- Windows et Linux :
+  - git sur la variable PATH
+- macOS :
+  - git sur la variable PATH
+  - Xcode
+  - Openssl
 
 Pour générer, exécutez `build.cmd` sur Windows, ou `build.sh` sur Linux et macOS à partir de la racine. Si vous ne voulez pas exécuter les tests, exécutez `build.cmd -t:Compile` ou `./build.sh -t:Compile`. Pour générer l’interface CLI dans macOS Sierra, vous devez définir la variable d’environnement DOTNET_RUNTIME_ID en exécutant `export DOTNET_RUNTIME_ID=osx.10.11-x64`.
 

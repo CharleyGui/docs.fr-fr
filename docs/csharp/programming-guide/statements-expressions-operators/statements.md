@@ -6,12 +6,12 @@ helpviewer_keywords:
 - statements [C#], about statements
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
-ms.openlocfilehash: 78d40aa2069e56357f55f39c3b7479ee46d0342c
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 0ec741d085ca52d52999d2e10cf5f687cc885219
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422820"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69921789"
 ---
 # <a name="statements-c-programming-guide"></a>Instructions (Guide de programmation C#)
 Les actions qu’un programme effectue sont exprimées dans les instructions. Les actions courantes incluent la déclaration de variables, l’assignation de valeurs, l’appel de méthodes, l’exécution de boucles dans les collections et la création de branches sur des blocs de code, selon une condition donnée. L’ordre dans lequel les instructions sont exécutées dans un programme est appelé le flux de contrôle ou le flux d’exécution. Le flux de contrôle peut varier chaque fois qu’un programme est exécuté, selon la manière dont le programme réagit à l’entrée qu’il reçoit au moment de l’exécution.  
@@ -27,16 +27,16 @@ Les actions qu’un programme effectue sont exprimées dans les instructions. Le
 |--------------|---------------------------|  
 |[Instructions de déclaration](#declaration-statements)|Une instruction de déclaration introduit une nouvelle variable ou constante. Une déclaration de variable peut éventuellement assigner une valeur à la variable. Dans une déclaration de constante, l’assignation est obligatoire.|  
 |[Instructions d’expression](expressions.md)|Les instructions d’expression qui calculent une valeur doivent stocker la valeur dans une variable. Pour plus d’informations, consultez [Instructions d’expression](#expression-statements).|  
-|Instructions de sélection|Les instructions de sélection permettent de créer des branches vers différentes sections de code, selon une ou plusieurs conditions spécifiées. Pour plus d’informations, consultez les rubriques suivantes :<br /><br /> [if](../../../csharp/language-reference/keywords/if-else.md), [else](../../../csharp/language-reference/keywords/if-else.md), [switch](../../../csharp/language-reference/keywords/switch.md), [case](../../../csharp/language-reference/keywords/switch.md)|  
-|Instructions d’itération|Les instructions d’itération permettent d’exécuter une boucle dans des collections telles que des tableaux, ou d’effectuer à plusieurs reprises le même jeu d’instructions jusqu’à ce qu’une condition spécifiée soit remplie. Pour plus d’informations, consultez les rubriques suivantes :<br /><br /> [do](../../../csharp/language-reference/keywords/do.md), [for](../../../csharp/language-reference/keywords/for.md), [foreach](../../../csharp/language-reference/keywords/foreach-in.md), [in](../../../csharp/language-reference/keywords/foreach-in.md), [while](../../../csharp/language-reference/keywords/while.md)|  
-|Instructions de saut|Les instructions de saut transfèrent le contrôle vers une autre section de code. Pour plus d’informations, consultez les rubriques suivantes :<br /><br /> [break](../../../csharp/language-reference/keywords/break.md), [continue](../../../csharp/language-reference/keywords/continue.md), [default](../../../csharp/language-reference/keywords/switch.md), [goto](../../../csharp/language-reference/keywords/goto.md), [return](../../../csharp/language-reference/keywords/return.md), [yield](../../../csharp/language-reference/keywords/yield.md)|  
-|Instructions de gestion des exceptions|Les instructions de gestion des exceptions permettent de récupérer normalement en cas de conditions exceptionnelles au moment de l’exécution. Pour plus d’informations, consultez les rubriques suivantes :<br /><br /> [throw](../../../csharp/language-reference/keywords/throw.md), [try-catch](../../../csharp/language-reference/keywords/try-catch.md), [try-finally](../../../csharp/language-reference/keywords/try-finally.md), [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)|  
-|[Checked et unchecked](../../../csharp/language-reference/keywords/checked-and-unchecked.md)|Les instructions checked et unchecked vous permettent de spécifier si les opérations numériques sont autorisées à provoquer un dépassement de capacité lorsque le résultat est stocké dans une variable trop petite pour contenir la valeur résultante. Pour plus d’informations, consultez [checked](../../../csharp/language-reference/keywords/checked.md) et [unchecked](../../../csharp/language-reference/keywords/unchecked.md).|  
-|Instruction `await`|Si vous marquez une méthode avec le modificateur [async](../../../csharp/language-reference/keywords/async.md) , vous pouvez utiliser l'opérateur [await](../../../csharp/language-reference/keywords/await.md) dans la méthode. Quand le contrôle atteint une expression `await` dans la méthode async, il retourne à l’appelant, et la progression dans la méthode est interrompue jusqu’à ce que la tâche attendue soit terminée. Quand la tâche est terminée, l'exécution peut reprendre dans la méthode.<br /><br /> Pour obtenir un exemple simple, consultez la section « Méthodes async » de [Méthodes](../../../csharp/programming-guide/classes-and-structs/methods.md). Pour plus d’informations, consultez [Programmation asynchrone avec async et await](../../../csharp/programming-guide/concepts/async/index.md).|  
-|Instruction `yield return`|Un itérateur exécute une itération personnalisée sur une collection, comme une liste ou un tableau. Un itérateur utilise l’instruction [yield return](../../../csharp/language-reference/keywords/yield.md) pour retourner chaque élément un par un. Quand une instruction `yield return` est atteinte, l’emplacement actuel dans le code est mémorisé. L'exécution redémarre à partir de cet emplacement au prochain appel de l'itérateur.<br /><br /> Pour plus d'informations, consultez [Itérateurs](../../../csharp/programming-guide/concepts/iterators.md).|  
-|Instruction `fixed`|L’instruction fixed empêche le récupérateur de mémoire de déplacer une variable mobile. Pour plus d’informations, consultez [fixed](../../../csharp/language-reference/keywords/fixed-statement.md).|  
-|Instruction `lock`|L’instruction lock permet de limiter l’accès aux blocs de code à un seul thread à la fois. Pour plus d’informations, consultez [lock](../../../csharp/language-reference/keywords/lock-statement.md).|  
-|Instructions étiquetées|Vous pouvez donner une étiquette à une instruction, puis utiliser le mot clé [goto](../../../csharp/language-reference/keywords/goto.md) pour sauter jusqu’à l’instruction étiquetée. (Examinez l’exemple de la ligne suivante.)|  
+|Instructions de sélection|Les instructions de sélection permettent de créer des branches vers différentes sections de code, selon une ou plusieurs conditions spécifiées. Pour plus d’informations, consultez les rubriques suivantes :<br /><br /> [if](../../language-reference/keywords/if-else.md), [else](../../language-reference/keywords/if-else.md), [switch](../../language-reference/keywords/switch.md), [case](../../language-reference/keywords/switch.md)|  
+|Instructions d’itération|Les instructions d’itération permettent d’exécuter une boucle dans des collections telles que des tableaux, ou d’effectuer à plusieurs reprises le même jeu d’instructions jusqu’à ce qu’une condition spécifiée soit remplie. Pour plus d’informations, consultez les rubriques suivantes :<br /><br /> [do](../../language-reference/keywords/do.md), [for](../../language-reference/keywords/for.md), [foreach](../../language-reference/keywords/foreach-in.md), [in](../../language-reference/keywords/foreach-in.md), [while](../../language-reference/keywords/while.md)|  
+|Instructions de saut|Les instructions de saut transfèrent le contrôle vers une autre section de code. Pour plus d’informations, consultez les rubriques suivantes :<br /><br /> [break](../../language-reference/keywords/break.md), [continue](../../language-reference/keywords/continue.md), [default](../../language-reference/keywords/switch.md), [goto](../../language-reference/keywords/goto.md), [return](../../language-reference/keywords/return.md), [yield](../../language-reference/keywords/yield.md)|  
+|Instructions de gestion des exceptions|Les instructions de gestion des exceptions permettent de récupérer normalement en cas de conditions exceptionnelles au moment de l’exécution. Pour plus d’informations, consultez les rubriques suivantes :<br /><br /> [throw](../../language-reference/keywords/throw.md), [try-catch](../../language-reference/keywords/try-catch.md), [try-finally](../../language-reference/keywords/try-finally.md), [try-catch-finally](../../language-reference/keywords/try-catch-finally.md)|  
+|[Checked et unchecked](../../language-reference/keywords/checked-and-unchecked.md)|Les instructions checked et unchecked vous permettent de spécifier si les opérations numériques sont autorisées à provoquer un dépassement de capacité lorsque le résultat est stocké dans une variable trop petite pour contenir la valeur résultante. Pour plus d’informations, consultez [checked](../../language-reference/keywords/checked.md) et [unchecked](../../language-reference/keywords/unchecked.md).|  
+|Instruction `await`|Si vous marquez une méthode avec le modificateur [async](../../language-reference/keywords/async.md) , vous pouvez utiliser l'opérateur [await](../../language-reference/keywords/await.md) dans la méthode. Quand le contrôle atteint une expression `await` dans la méthode async, il retourne à l’appelant, et la progression dans la méthode est interrompue jusqu’à ce que la tâche attendue soit terminée. Quand la tâche est terminée, l'exécution peut reprendre dans la méthode.<br /><br /> Pour obtenir un exemple simple, consultez la section « Méthodes async » de [Méthodes](../classes-and-structs/methods.md). Pour plus d’informations, consultez [Programmation asynchrone avec async et await](../concepts/async/index.md).|  
+|Instruction `yield return`|Un itérateur exécute une itération personnalisée sur une collection, comme une liste ou un tableau. Un itérateur utilise l’instruction [yield return](../../language-reference/keywords/yield.md) pour retourner chaque élément un par un. Quand une instruction `yield return` est atteinte, l’emplacement actuel dans le code est mémorisé. L'exécution redémarre à partir de cet emplacement au prochain appel de l'itérateur.<br /><br /> Pour plus d'informations, consultez [Itérateurs](../concepts/iterators.md).|  
+|Instruction `fixed`|L’instruction fixed empêche le récupérateur de mémoire de déplacer une variable mobile. Pour plus d’informations, consultez [fixed](../../language-reference/keywords/fixed-statement.md).|  
+|Instruction `lock`|L’instruction lock permet de limiter l’accès aux blocs de code à un seul thread à la fois. Pour plus d’informations, consultez [lock](../../language-reference/keywords/lock-statement.md).|  
+|Instructions étiquetées|Vous pouvez donner une étiquette à une instruction, puis utiliser le mot clé [goto](../../language-reference/keywords/goto.md) pour sauter jusqu’à l’instruction étiquetée. (Examinez l’exemple de la ligne suivante.)|  
 |[Instruction vide](#the-empty-statement)|L’instruction vide se compose seulement d’un point-virgule. Elle ne fait rien et peut être utilisée à un emplacement où une instruction est requise alors qu’aucune action ne doit être effectuée.|  
   
 ## <a name="declaration-statements"></a>Instructions de déclaration
@@ -59,7 +59,7 @@ Les exemples suivants illustrent deux utilisations d’une instruction vide :
 
 ## <a name="embedded-statements"></a>Instructions incorporées
 
- Certaines instructions, y compris [do](../../../csharp/language-reference/keywords/do.md), [while](../../../csharp/language-reference/keywords/while.md), [for](../../../csharp/language-reference/keywords/for.md) et [foreach](../../../csharp/language-reference/keywords/foreach-in.md), sont toujours suivies d’une instruction incorporée. Cette instruction incorporée peut être une seule instruction ou plusieurs instructions placées entre des accolades ({}) dans un bloc d’instructions. Même les instructions incorporées d’une seule ligne peuvent être placées entre des accolades ({}), comme illustré dans l’exemple suivant :  
+ Certaines instructions, y compris [do](../../language-reference/keywords/do.md), [while](../../language-reference/keywords/while.md), [for](../../language-reference/keywords/for.md) et [foreach](../../language-reference/keywords/foreach-in.md), sont toujours suivies d’une instruction incorporée. Cette instruction incorporée peut être une seule instruction ou plusieurs instructions placées entre des accolades ({}) dans un bloc d’instructions. Même les instructions incorporées d’une seule ligne peuvent être placées entre des accolades ({}), comme illustré dans l’exemple suivant :  
   
  [!code-csharp[csProgGuideStatements#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#26)]  
   
@@ -81,17 +81,12 @@ Les exemples suivants illustrent deux utilisations d’une instruction vide :
   
  [!code-csharp[csProgGuideStatements#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#22)]  
   
-## <a name="related-sections"></a>Rubriques connexes  
-  
-- [Mots clés d’instructions](../../../csharp/language-reference/keywords/statement-keywords.md)  
-  
-- [Expressions](../../../csharp/programming-guide/statements-expressions-operators/expressions.md)  
-  
-- [Opérateurs](../../../csharp/programming-guide/statements-expressions-operators/operators.md)  
-  
-## <a name="c-language-specification"></a>Spécification du langage C#  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
+## <a name="c-language-specification"></a>spécification du langage C#
+
+Pour plus d’informations, consultez la section [Instructions](~/_csharplang/spec/statements.md) de la [Spécification du langage C#](~/_csharplang/spec/introduction.md).
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
+- [Guide de programmation C#](../index.md)
+- [Mots clés des instructions](../../language-reference/keywords/statement-keywords.md)  
+- [Expressions](expressions.md)  

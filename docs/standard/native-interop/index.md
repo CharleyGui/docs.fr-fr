@@ -4,12 +4,12 @@ description: Découvrez comment interagir avec les composants natifs dans .NET.
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: b01ea9c17db6da32755309d9c1c2359cecaa1155
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 3ca213bc7228d2e4337607df2d47b334c5bea14f
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65062712"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106804"
 ---
 # <a name="native-interoperability"></a>Interopérabilité native
 
@@ -17,9 +17,9 @@ Les articles suivants montrent les différentes façons d’utiliser l’« int
 
 Voici quelques raisons qui peuvent vous inciter à appeler du code natif :
 
-* Les systèmes d’exploitation sont fournis avec un volume important d’API qui ne sont pas présentes dans les bibliothèques de classes managées. Un bon exemple pour ce scénario est l’accès à des fonctions de gestion de matériel ou de gestion de système d’exploitation.
-* La communication avec d’autres composants qui ont ou peuvent produire des ABI de style C (ABI natifs), comme du code Java qui est exposé via l’[interface JNI (Java Native Interface)](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/) ou tout autre langage managé qui peut produire un composant natif.
-* Sur Windows, la plupart des logiciels qui sont installés, comme la suite Microsoft Office, inscrivent des composants COM qui représentent leurs programmes et permettent aux développeurs de les automatiser ou de les utiliser. Cela nécessite également l’interopérabilité native.
+- Les systèmes d’exploitation sont fournis avec un volume important d’API qui ne sont pas présentes dans les bibliothèques de classes managées. Un bon exemple pour ce scénario est l’accès à des fonctions de gestion de matériel ou de gestion de système d’exploitation.
+- La communication avec d’autres composants qui ont ou peuvent produire des ABI de style C (ABI natifs), comme du code Java qui est exposé via l’[interface JNI (Java Native Interface)](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/) ou tout autre langage managé qui peut produire un composant natif.
+- Sur Windows, la plupart des logiciels qui sont installés, comme la suite Microsoft Office, inscrivent des composants COM qui représentent leurs programmes et permettent aux développeurs de les automatiser ou de les utiliser. Cela nécessite également l’interopérabilité native.
 
 La liste précédente n’englobe pas toutes les situations et scénarios potentiels dans lesquels le développeur voudrait/aimerait/devrait interagir avec des composants natifs. La bibliothèque de classes .NET, par exemple, utilise la prise en charge de l’interopérabilité native pour implémenter un certain nombre de ses API, comme la prise en charge et la manipulation de la console, l’accès au système de fichiers, etc. Toutefois, il est important de noter qu’il existe une option si nécessaire.
 

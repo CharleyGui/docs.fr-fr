@@ -10,19 +10,19 @@ helpviewer_keywords:
 ms.assetid: b782bcb8-da6a-4c6a-805f-2eb46d504309
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 24df4140e515483adb94fa542a7063bd2ae2120b
-ms.sourcegitcommit: dcc8feeff4718664087747529638ec9b47e65234
+ms.openlocfilehash: 31d5df6521b7c420943a7d3d0efcf6e4bee2d3a2
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55479779"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666279"
 ---
 # <a name="overview-of-synchronization-primitives"></a>Vue d’ensemble des primitives de synchronisation
 
 .NET fournit un éventail de types que vous pouvez utiliser pour synchroniser l’accès à une ressource partagée ou coordonner l’interaction des threads.
 
 > [!IMPORTANT]
-> Utilisez la même instance de primitives de synchronisation pour protéger chaque accès à une ressource partagée. Plusieurs threads peuvent accéder simultanément à une ressource si vous utilisez différentes instances de primitives de synchronisation pour protéger l’accès à une ressource, ou si certaines parties de code accèdent directement à une ressource.
+> Utilisez la même instance de primitives de synchronisation pour protéger l’accès à une ressource partagée. Si vous utilisez différentes instances de primitives de synchronisation pour protéger la même ressource, vous contournerez la protection fournie par une primitive de synchronisation.
 
 ## <a name="waithandle-class-and-lightweight-synchronization-types"></a>Classe WaitHandle et types de synchronisation légers
 

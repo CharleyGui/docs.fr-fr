@@ -9,28 +9,28 @@ helpviewer_keywords:
 ms.assetid: e9fd53f2-ed56-4b09-b2ea-e9bc9d65e6d6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ee4d884a0efbeb6e57ed727396bf3bcb39979774
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.openlocfilehash: dc62fffe3ca51acf0f2098d2975665b91b052992
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2018
-ms.locfileid: "34172501"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69930897"
 ---
 # <a name="regular-expression-examples"></a>Exemples d'expressions régulières
 Cette section contient des exemples de code qui illustrent l’utilisation des expressions régulières dans des applications courantes.  
   
 > [!NOTE]
->  L’espace de noms <xref:System.Web.RegularExpressions> contient un nombre d’objets d’expression régulière qui implémentent des modèles d’expression régulière prédéfinis pour l’analyse de chaînes provenant de documents HTML, XML et ASP.NET. Par exemple, la classe <xref:System.Web.RegularExpressions.TagRegex> identifie les balises de début d’une chaîne, tandis que la classe <xref:System.Web.RegularExpressions.CommentRegex> identifie les commentaires ASP.NET d’une chaîne.  
+> L’espace de noms <xref:System.Web.RegularExpressions> contient un nombre d’objets d’expression régulière qui implémentent des modèles d’expression régulière prédéfinis pour l’analyse de chaînes provenant de documents HTML, XML et ASP.NET. Par exemple, la classe <xref:System.Web.RegularExpressions.TagRegex> identifie les balises de début d’une chaîne, tandis que la classe <xref:System.Web.RegularExpressions.CommentRegex> identifie les commentaires ASP.NET d’une chaîne.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Exemple : recherche de valeurs HREF](../../../docs/standard/base-types/regular-expression-example-scanning-for-hrefs.md)  
+ [Exemple : Recherche de valeurs HREF](../../../docs/standard/base-types/regular-expression-example-scanning-for-hrefs.md)  
  Fournit un exemple qui recherche une chaîne d’entrée et imprime toutes les valeurs href="…" et leurs emplacements dans la chaîne.  
   
- [Exemple : modification des formats de date](../../../docs/standard/base-types/regular-expression-example-changing-date-formats.md)  
+ [Exemple : Modification des formats de date](../../../docs/standard/base-types/regular-expression-example-changing-date-formats.md)  
  Fournit un exemple qui remplace les dates au format mm/jj/aa par des dates au format jj-mm-aa.  
   
  [Guide pratique pour extraire un protocole et un numéro de port d’une URL](../../../docs/standard/base-types/how-to-extract-a-protocol-and-port-number-from-a-url.md)  
- Fournit un exemple qui extrait un protocole et un numéro de port d’une chaîne qui contient une URL. Par exemple, « http://www.contoso.com:8080/letters/readme.html » retourne « http:8080 ».  
+ Fournit un exemple qui extrait un protocole et un numéro de port d’une chaîne qui contient une URL. Par exemple, « http://www.contoso.com:8080/letters/readme.html  » retourne « http:8080 ».  
   
  [Guide pratique pour supprimer des caractères non valides d’une chaîne](../../../docs/standard/base-types/how-to-strip-invalid-characters-from-a-string.md)  
  Fournit un exemple qui supprime les caractères non alphanumériques et non valides d’une chaîne.  

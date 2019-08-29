@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
-ms.openlocfilehash: 83e7d278b38e17dac668b32687a368211399d437
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 0c4fc9645e43f23e340804b46bbe8a5faa19525d
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54652070"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922389"
 ---
 # <a name="class-c-reference"></a>class (référence C#)
 
@@ -27,56 +27,56 @@ class TestClass
 }
 ```
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Le langage C# ne permet qu'un seul héritage. Cela signifie qu’une classe peut uniquement hériter de l’implémentation d’une seule classe de base. Toutefois, une classe peut implémenter plusieurs interfaces. Le tableau suivant répertorie des exemples d’héritage de classe et d’implémentation d’interface :
 
-|Héritage|Exemple|
+|Héritage|Exemples|
 |-----------------|-------------|
 |Aucun.|`class ClassA { }`|
 |Single|`class DerivedClass: BaseClass { }`|
 |Aucun, implémente deux interfaces|`class ImplClass: IFace1, IFace2 { }`|
 |Unique, implémente une seule interface|`class ImplDerivedClass: BaseClass, IFace1 { }`|
 
-Les classes que vous déclarez directement dans un espace de noms, non imbriquées dans d’autres classes, peuvent être [public](../../../csharp/language-reference/keywords/public.md) ou [internal](../../../csharp/language-reference/keywords/internal.md). Par défaut, les classes sont `internal`.
+Les classes que vous déclarez directement dans un espace de noms, non imbriquées dans d’autres classes, peuvent être [public](./public.md) ou [internal](./internal.md). Par défaut, les classes sont `internal`.
 
 Les membres de classe, notamment les classes imbriquées, peuvent être [public](public.md), [protected internal](protected-internal.md), [protected](protected.md), [internal](internal.md), [private](private.md) ou [private protected](private-protected.md). Par défaut, ils sont `private`.
 
-Pour plus d’informations, consultez la page [Modificateurs d’accès](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).
+Pour plus d’informations, consultez la page [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md).
 
-Vous pouvez déclarer des classes génériques qui ont des paramètres de type. Pour plus d’informations, consultez [Classes génériques](../../../csharp/programming-guide/generics/generic-classes.md).
+Vous pouvez déclarer des classes génériques qui ont des paramètres de type. Pour plus d’informations, consultez [Classes génériques](../../programming-guide/generics/generic-classes.md).
 
 Une classe peut contenir les déclarations des membres suivants :
 
-- [Constructeurs](../../../csharp/programming-guide/classes-and-structs/constructors.md)
+- [Constructeurs](../../programming-guide/classes-and-structs/constructors.md)
 
-- [Constantes](../../../csharp/programming-guide/classes-and-structs/constants.md)
+- [Constantes](../../programming-guide/classes-and-structs/constants.md)
 
-- [Champs](../../../csharp/programming-guide/classes-and-structs/fields.md)
+- [Champs](../../programming-guide/classes-and-structs/fields.md)
 
-- [Finaliseurs](../../../csharp/programming-guide/classes-and-structs/destructors.md)
+- [Finaliseurs](../../programming-guide/classes-and-structs/destructors.md)
 
-- [Méthodes](../../../csharp/programming-guide/classes-and-structs/methods.md)
+- [Méthodes](../../programming-guide/classes-and-structs/methods.md)
 
-- [Propriétés](../../../csharp/programming-guide/classes-and-structs/properties.md)
+- [Propriétés](../../programming-guide/classes-and-structs/properties.md)
 
-- [Indexeurs](../../../csharp/programming-guide/indexers/index.md)
+- [Indexeurs](../../programming-guide/indexers/index.md)
 
-- [Opérateurs](../../../csharp/programming-guide/statements-expressions-operators/operators.md)
+- [Opérateurs](../operators/index.md)
 
-- [Événements](../../../csharp/programming-guide/events/index.md)
+- [Événements](../../programming-guide/events/index.md)
 
-- [Délégués](../../../csharp/programming-guide/delegates/index.md)
+- [Délégués](../../programming-guide/delegates/index.md)
 
-- [Classes](../../../csharp/programming-guide/classes-and-structs/classes.md)
+- [Classes](../../programming-guide/classes-and-structs/classes.md)
 
-- [Interfaces](../../../csharp/programming-guide/interfaces/index.md)
+- [Interfaces](../../programming-guide/interfaces/index.md)
 
-- [Structs](../../../csharp/programming-guide/classes-and-structs/structs.md)
+- [Structs](../../programming-guide/classes-and-structs/structs.md)
 
-- [Énumérations](../../../csharp/programming-guide/enumeration-types.md)
+- [Énumérations](../../programming-guide/enumeration-types.md)
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L’exemple suivant explique comment déclarer des champs, des constructeurs et des méthodes de classe. Il illustre également l’instanciation d’un objet et l’impression des données d’une instance. Dans cet exemple, deux classes sont déclarées. La première, `Child`, contient deux champs privés (`name` et `age`), deux constructeurs publics et une méthode publique. La deuxième, `StringTest`, contient `Main`.
 
@@ -94,7 +94,7 @@ L’accès aux membres privés de `Child` à partir de `Main` est uniquement pos
 
 Du fait que les types déclarés dans une classe sans modificateur d’accès sont par défaut `private`, les données membres dans cet exemple sont toujours `private` si le mot clé est supprimé.
 
-Notez enfin que pour l’objet créé à l’aide du constructeur par défaut (`child3`), le champ `age` est initialisé par défaut à la valeur zéro.
+Notez enfin que pour l’objet créé à l’aide du constructeur sans paramètre (`child3`), le champ `age` est initialisé par défaut à la valeur zéro.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -102,7 +102,7 @@ Notez enfin que pour l’objet créé à l’aide du constructeur par défaut (`
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../../csharp/language-reference/index.md)
-- [Guide de programmation C#](../../../csharp/programming-guide/index.md)
-- [Mots clés C#](../../../csharp/language-reference/keywords/index.md)
-- [Types référence](../../../csharp/language-reference/keywords/reference-types.md)
+- [Référence C#](../index.md)
+- [Guide de programmation C#](../../programming-guide/index.md)
+- [Mots clés C#](./index.md)
+- [Types référence](./reference-types.md)

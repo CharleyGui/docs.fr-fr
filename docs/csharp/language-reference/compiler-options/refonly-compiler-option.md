@@ -7,16 +7,16 @@ helpviewer_keywords:
 - /refonly compiler option [C#]
 - -refonly compiler option [C#]
 - refonly compiler option [C#]
-ms.openlocfilehash: 24f5cba5650777f4844923844708d287798c445c
-ms.sourcegitcommit: 3630c2515809e6f4b7dbb697a3354efec105a5cd
+ms.openlocfilehash: eb62f98c5d548fe3583d3422eb7b6020a82c296a
+ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58409261"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69606488"
 ---
 # <a name="-refonly-c-compiler-options"></a>-refonly (Options du compilateur C#)
 
-L’option **-refonly** indique qu’un assembly de référence doit être généré à la place d’un assembly d’implémentation, en tant que sortie principale. Le paramètre `-refonly` désactive sans assistance la génération de fichiers PDB, car les assemblys de référence ne peuvent pas être exécutés.
+L’option **-refonly** indique qu’un assembly de référence doit être généré à la place d’un assembly d’implémentation, en tant que sortie principale. Le paramètre `-refonly` désactive sans assistance la génération de fichiers PDB, car les assemblys de référence ne peuvent pas être exécutés. Cette option correspond à la propriété de projet [ProduceOnlyReferenceAssembly](/visualstudio/msbuild/common-msbuild-project-properties) de MSBuild.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -42,5 +42,5 @@ Les options `-refonly` et [`-refout`](refout-compiler-option.md) s’excluent mu
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](../../../csharp/language-reference/compiler-options/index.md)
+- [Options du compilateur C#](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

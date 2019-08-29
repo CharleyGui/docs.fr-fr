@@ -8,12 +8,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 04/05/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: ba5d2a9fb74b877c9b847343a9012ccb9624335e
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 7927cd65de31ba6e835aabdbbd89e410d10d2822
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69604220"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104785"
 ---
 # <a name="get-started-with-c"></a>Bien démarrer avec C\#
 
@@ -21,21 +21,21 @@ Cette section fournit des didacticiels courts et simples qui permettent de crée
 
 Les rubriques suivantes sont disponibles :
 
-* [Introduction au langage C# et au .NET Framework](introduction-to-the-csharp-language-and-the-net-framework.md)
+- [Introduction au langage C# et au .NET Framework](introduction-to-the-csharp-language-and-the-net-framework.md)
 
      Fournit une vue d’ensemble du langage C# et de .NET.
 
-* [Générer une application C# Hello World avec .NET Core dans Visual Studio 2017](../../core/tutorials/with-visual-studio.md)
+- [Générer une application C# Hello World avec .NET Core dans Visual Studio 2017](../../core/tutorials/with-visual-studio.md)
 
    Visual Studio 2017, la dernière version de Visual Studio, permet de coder, compiler, exécuter, déboguer, profiler et publier des applications à partir d’un environnement de développement intégré pour Windows.
 
    La rubrique vous permet de créer et d’exécuter une application Hello World simple, puis de la modifier pour exécuter une application Hello World légèrement plus interactive. Une fois que vous aurez terminé la création et l’exécution de votre application, vous pourrez également apprendre à [la déboguer](../../core/tutorials/debugging-with-visual-studio.md) et [la publier](../../core/tutorials/publishing-with-visual-studio.md) afin qu’elle puisse s’exécuter sur n’importe quelle plateforme prise en charge par .NET Core.
 
-* [Génération d’une bibliothèque de classes avec C# et .NET Core dans Visual Studio 2017](../../core/tutorials/library-with-visual-studio.md)
+- [Génération d’une bibliothèque de classes avec C# et .NET Core dans Visual Studio 2017](../../core/tutorials/library-with-visual-studio.md)
 
    Une bibliothèque de classes permet de définir les types et membres de types qui peuvent être appelés à partir d’une autre application. Cette rubrique vous permet de créer une bibliothèque de classes avec une méthode unique qui détermine si une chaîne commence par une majuscule. Une fois que vous aurez terminé de créer la bibliothèque, vous pourrez développer un [test unitaire](../../core/tutorials/testing-library-with-visual-studio.md) pour vous assurer qu’elle fonctionne comme prévu, puis la rendre accessible aux [applications qui souhaitent l’utiliser](../../core/tutorials/consuming-library-with-visual-studio.md).
 
-* [Prise en main de C# et Visual Studio Code](../../core/tutorials/with-visual-studio-code.md)
+- [Prise en main de C# et Visual Studio Code](../../core/tutorials/with-visual-studio-code.md)
 
    Visual Studio Code est un éditeur de code gratuit optimisé pour la création et le débogage d’applications cloud et web modernes. Il prend en charge IntelliSense et est disponible pour Linux, macOS et Windows.
 
@@ -43,18 +43,18 @@ Les rubriques suivantes sont disponibles :
 
 ## <a name="related-sections"></a>Rubriques connexes
 
-* [Guide de programmation C#](../programming-guide/index.md)
+- [Guide de programmation C#](../programming-guide/index.md)
 
     Fournit des informations sur les concepts de la programmation C# et explique comment effectuer différentes tâches en C#.
 
-* [Référence C#](../language-reference/index.md)
+- [Référence C#](../language-reference/index.md)
 
     Fournit des informations de référence détaillées sur les mots clés C#, les opérateurs, les directives de préprocesseur, les options du compilateur, et les erreurs et avertissements du compilateur.
 
-* [Procédures pas à pas](../walkthroughs.md)
+- [Procédures pas à pas](../walkthroughs.md)
 
     Fournit des liens vers des procédures pas-à-pas de programmation qui utilisent C# et une brève description de chaque procédure pas-à-pas.
 
 ## <a name="see-also"></a>Voir aussi
 
-- * [Développement C# avec Visual Studio](/visualstudio/get-started/csharp/)
+- [Développement C# avec Visual Studio](/visualstudio/get-started/csharp/)

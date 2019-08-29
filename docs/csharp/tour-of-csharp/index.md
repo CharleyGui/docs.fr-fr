@@ -3,12 +3,12 @@ title: Visite guidée du langage C# - Guide du langage C#
 description: Novice en matière de langage C# ? Découvrez les principes de base du langage.
 ms.date: 04/05/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: c3a117d660c02702e900b827c2eed9c6b56b5606
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: eaaa5a259f0776a2749ed899d0406aee041a8442
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706531"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105648"
 ---
 # <a name="a-tour-of-the-c-language"></a>Présentation rapide du langage C#
 
@@ -51,28 +51,28 @@ La sortie du programme est générée par la méthode `WriteLine` de la classe `
 
 Il y a beaucoup d’autres choses à apprendre sur C#.  Les rubriques suivantes fournissent une vue d’ensemble des éléments du langage C#. Ces vues d’ensemble fournissent des informations de base sur l’ensemble des éléments du langage et vous donnent les informations nécessaires pour explorer plus en détails les éléments du langage C# :
 
-* [Structure du programme](program-structure.md)
+- [Structure du programme](program-structure.md)
   - Découvrez les concepts clés d’organisation du langage C# : ***programmes***, ***espaces de noms***, ***types***, ***membres*** et ***assemblys***.
-* [Types et variables](types-and-variables.md)
+- [Types et variables](types-and-variables.md)
   - Découvrez les ***types valeur***, les ***types référence*** et les ***variables*** en langage C#.
-* [Expressions](expressions.md)
+- [Expressions](expressions.md)
   - Les ***expressions*** sont construites à partir de ***d’opérandes*** et ***d’opérateurs***. Les expressions produisent une valeur.
-* [Instructions](statements.md)
+- [Instructions](statements.md)
   - On utilise des ***instructions*** pour exprimer les actions d’un programme.
-* [Classes et objets](classes-and-objects.md)
+- [Classes et objets](classes-and-objects.md)
   - Les ***classes*** représentent le type le plus fondamental de C#. Les ***objets*** sont des instances d’une classe. Les classes sont générées à l’aide de ***membres***, qui sont également traités dans cette rubrique.
-* [Structs](structs.md)
+- [Structs](structs.md)
   - Les ***structures*** sont des structures de données qui, contrairement aux classes, sont des types valeur.
-* [Tableaux](arrays.md)
+- [Tableaux](arrays.md)
   - Un ***tableau*** est une structure de données contenant un certain nombre de variables accessibles par le biais d’indices calculés.
-* [Interfaces](interfaces.md)
+- [Interfaces](interfaces.md)
   - Une ***interface*** définit un contrat qui peut être implémenté par des classes et des structs. Une interface peut contenir des méthodes, des propriétés, des événements et des indexeurs. Une interface ne fournit pas d’implémentations des membres qu’elle définit ; elle spécifie simplement les membres qui doivent être fournis par les classes ou les structs qui implémentent l’interface.
-* [Énumérations](enums.md)
+- [Énumérations](enums.md)
   - Un ***type enum*** est un type valeur distinct avec un ensemble de constantes nommées.
-* [Délégués](delegates.md)
+- [Délégués](delegates.md)
   - Un ***type délégué*** représente des références à des méthodes avec une liste de paramètres et un type de retour particuliers. Les délégués permettent de traiter les méthodes en tant qu’entités qui peuvent être affectées à des variables et passées comme paramètres. Les délégués sont similaires au concept de pointeurs de fonction dans d’autres langages, mais, contrairement aux pointeurs de fonction, les délégués sont orientés objet et de type sécurisé.
-* [Attributs](attributes.md)
-  * Les ***attributs*** permettent aux programmes de spécifier des informations déclaratives supplémentaires sur les types, les membres et d’autres entités.
+- [Attributs](attributes.md)
+  - Les ***attributs*** permettent aux programmes de spécifier des informations déclaratives supplémentaires sur les types, les membres et d’autres entités.
 
 > [!div class="step-by-step"]
 > [Next](program-structure.md)

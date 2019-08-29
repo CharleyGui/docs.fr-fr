@@ -18,12 +18,12 @@ ms.assetid: f49cc9cc-db7d-4058-8b8a-422bc08b29b0
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: 71da71d1331e9eab818a7492daa230f758840762
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 248d434f7aad56d84d952fa27cf49f3d370f4a1c
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64634664"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69934830"
 ---
 # <a name="character-escapes-in-regular-expressions"></a>Caractères d'échappement dans les expressions régulières
 La barre oblique inverse (\\) dans une expression régulière indique une des possibilités suivantes :  
@@ -33,7 +33,7 @@ La barre oblique inverse (\\) dans une expression régulière indique une des po
 - Un caractère qui doit être interprété littéralement, et qui sans cela serait interprété comme une construction du langage sans séquence d'échappement. Par exemple, une accolade (`{`) commence la définition d'un quantificateur, mais une barre oblique inverse suivie d'une accolade (`\{`) indique que le moteur d'expressions régulières doit rechercher une correspondance avec l'accolade. De la même façon, une seule barre oblique inverse marque le début d'une construction du langage avec échappement, mais deux barres obliques inverses (`\\`) indiquent que le moteur d'expressions régulières doit chercher une correspondance avec la barre oblique inverse.  
   
 > [!NOTE]
->  Les séquences d'échappement des caractères sont reconnues dans les modèles d'expressions régulières, mais pas dans les modèles de remplacement.  
+> Les séquences d'échappement des caractères sont reconnues dans les modèles d'expressions régulières, mais pas dans les modèles de remplacement.  
   
 ## <a name="character-escapes-in-net"></a>Caractères d’échappement dans .NET  
  Le tableau suivant répertorie les séquences d’échappement des caractères prises en charge par les expressions régulières dans .NET.  
@@ -52,8 +52,8 @@ La barre oblique inverse (\\) dans une expression régulière indique une des po
 |`\` *nnn*|Correspond à un caractère ASCII, où *nnn* est constitué de deux ou trois chiffres qui représentent le code octal du caractère. Par exemple, `\040` représente un espace. Cette construction est interprétée comme une référence arrière si elle a un seul chiffre (par exemple `\2`) ou si elle correspond au nombre d'un groupe de capture. (Voir [Constructions de référence arrière](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).)|  
 |`\x` *nn*|Correspond à un caractère ASCII, où *nn* est un code hexadécimal à deux chiffres d’un caractère.|  
 |`\c` *X*|Correspond à un caractère de contrôle ASCII, où X est la lettre du caractère de contrôle. Par exemple, `\cC` est Ctrl-C.|  
-|`\u` *nnnn*|Correspond à une unité de code UTF-16 dont la valeur est *nnnn* en hexadécimal. **Remarque :**  La séquence d’échappement des caractères de Perl 5 utilisée pour spécifier Unicode n’est pas prise en charge par .NET. La séquence d'échappement des caractères de Perl 5 a la forme `\x{`*####*`…}`, où *####*`…` est une série de chiffres hexadécimaux. Utilisez à la place `\u`*nnnn*.|  
-|`\`|Quand ce caractère d'échappement est suivi d'un caractère non reconnu comme caractère d'échappement, correspond au caractère lui-même. Par exemple, `\*` correspond à un astérisque (*) et est identique à `\x2A`.|  
+|`\u` *nnnn*|Correspond à une unité de code UTF-16 dont la valeur est *nnnn* en hexadécimal. **Remarque :**  La séquence d’échappement des caractères de Perl 5 utilisée pour spécifier Unicode n’est pas prise en charge par .NET. La séquence d'échappement des caractères de Perl 5 a la forme `\x{` *####* `…}`, où *####* `…` est une série de chiffres hexadécimaux. Utilisez à la place `\u`*nnnn*.|  
+|`\`|Quand ce caractère d’échappement est suivi d’un caractère non reconnu comme caractère d’échappement, correspond à ce caractère. Par exemple, `\*` correspond à un astérisque (*) et est identique à `\x2A`.|  
   
 ## <a name="an-example"></a>Exemple  
  L'exemple suivant montre l'utilisation de caractères d'échappement dans une expression régulière. Il analyse une chaîne qui contient les noms des plus grandes villes du monde et leur population en 2009. Chaque nom de ville est séparé de sa population par une tabulation (`\t`) ou par une barre verticale (&#124; ou `\u007c`). Les villes individuelles et leur population sont séparées les unes des autres par un retour chariot et un saut de ligne.  

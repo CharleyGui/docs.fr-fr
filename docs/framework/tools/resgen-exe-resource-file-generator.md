@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: 8ef159de-b660-4bec-9213-c3fbc4d1c6f4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c6b908cadc02e0d1739d8b36b6904bb47c5ea090
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
+ms.openlocfilehash: b018672fbc9e669f6010871a150dd9b060babd88
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66378462"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69957995"
 ---
 # <a name="resgenexe-resource-file-generator"></a>Resgen.exe (Resource File Generator)
 Le Générateur de fichiers de ressources (Resgen.exe) convertit les fichiers texte (.txt ou .restext) et les fichiers de format de ressource XML (.resx) en fichiers binaires Common Language Runtime (.resources) pouvant être incorporés dans un exécutable binaire runtime ou un assembly satellite. (Consultez [Création de fichiers de ressources](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).)  
@@ -90,7 +90,7 @@ resgen filename.extension [outputDirectory]
  Les fichiers texte (.txt ou .restext) ne peuvent contenir que des ressources de chaîne. Les ressources de chaîne s'avèrent utiles lorsque vous écrivez une application dont les chaînes doivent être traduites dans plusieurs langues. Vous pouvez, par exemple, régionaliser les chaînes de menus à l'aide de la ressource de chaîne appropriée. Resgen.exe lit les fichiers texte comportant les paires nom/valeur, où le nom est une chaîne décrivant la ressource et la valeur est la chaîne de ressource elle-même.  
   
 > [!NOTE]
->  Pour plus d’informations sur les fichiers aux formats .txt et .restext, consultez la section « Ressources dans les fichiers texte » de [Création de fichiers de ressources](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).  
+> Pour plus d’informations sur les fichiers aux formats .txt et .restext, consultez la section « Ressources dans les fichiers texte » de [Création de fichiers de ressources](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md).  
   
  Un fichier texte contenant des ressources doit être enregistré avec un encodage UTF-8 ou Unicode (UTF-16) à moins qu'il ne contienne uniquement des caractères de latin de base (U+007F). Resgen.exe supprime les caractères ANSI étendus lorsqu'il traite un fichier texte qui est enregistré avec l'encodage ANSI.  
   
@@ -220,7 +220,7 @@ resgen /compile StringResources.txt TableResources.resx ImageResources.resx
  Si vous développez une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], il est possible d'utiliser des ressources d'une application de bureau existante. Toutefois, les deux genres d'applications prennent en charge différents formats de fichier. Dans les applications de bureau, les ressources en texte (.txt ou .restext) ou les fichiers .resx sont compilés en fichiers binaires .resources. Dans les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], les fichiers .resw sont compilés en fichiers binaires PRI (Package Resource Index). Il est possible d'utiliser Resgen.exe pour combler ces différences en extrayant les ressources d'un fichier exécutable ou un assembly satellite, puis en les écrivant dans un ou plusieurs fichiers .resw qui peuvent être utilisés lors du développement d'une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)].  
   
 > [!IMPORTANT]
->  Visual Studio exécute automatiquement toutes les conversions nécessaires pour incorporer les ressources à une bibliothèque portable dans une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]. L'utilisation directe de Resgen.exe pour convertir les ressources contenues dans un assembly en un fichier au format .resw format est intéressante uniquement pour les développeurs qui souhaitent développer une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] en dehors de Visual Studio.  
+> Visual Studio exécute automatiquement toutes les conversions nécessaires pour incorporer les ressources à une bibliothèque portable dans une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]. L'utilisation directe de Resgen.exe pour convertir les ressources contenues dans un assembly en un fichier au format .resw format est intéressante uniquement pour les développeurs qui souhaitent développer une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] en dehors de Visual Studio.  
   
  La syntaxe pour générer des fichiers .resw depuis un assembly est :  
   
@@ -302,7 +302,7 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
  *classname*  
  Nom de la classe de ressource fortement typée. Cela doit correspondre au nom racine du fichier .resources. Par exemple, si Resgen.exe génère un fichier .resources nommé MyCompany.Libraries.Strings.resources, le nom de la classe de ressource fortement typée est Strings. Si *classname* est omis, la classe générée est dérivée du nom racine de `outputFilename`. Si `outputFilename` est omis, la classe générée est dérivée du nom racine de `inputFilename`.  
   
- *classname* ne peut pas contenir de caractères non valides, notamment des espaces incorporés. Si *classname* contient des espaces incorporés, ou si *classname* est généré par défaut à partir de *inputFilename* et que *inputFilename* contient des espaces incorporés, Resgen.exe remplace tous les caractères non valides par un trait de soulignement (_).  
+ *classname* ne peut pas contenir de caractères non valides, notamment des espaces incorporés. Si *classname* contient des espaces incorporés, ou si *classname* est généré par défaut à partir de *inputFilename* et que *inputFilename* contient des espaces incorporés, Resgen.exe remplace tous les caractères non valides par un trait de soulignement (\_).  
   
  *filename*  
  Nom du fichier de classe.  
@@ -311,7 +311,7 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
  Rend public la classe de ressources fortement typée plutôt que `internal` (en C#) ou `Friend` (en Visual Basic). Cela permet d'accéder aux ressources depuis l'extérieur de l'assembly dans lequel elles sont incorporées.  
   
 > [!IMPORTANT]
->  Lorsque vous créez une classe de ressource fortement typé, le nom de votre fichier .resources doit correspondre à l'espace de noms et au nom de la classe du code généré. Toutefois, Resgen.exe vous permet de spécifier des options qui produisent un fichier .resources qui a un nom incompatible. Pour contourner ce comportement, renommez le fichier de sortie après qu'il ait été généré.  
+> Lorsque vous créez une classe de ressource fortement typé, le nom de votre fichier .resources doit correspondre à l'espace de noms et au nom de la classe du code généré. Toutefois, Resgen.exe vous permet de spécifier des options qui produisent un fichier .resources qui a un nom incompatible. Pour contourner ce comportement, renommez le fichier de sortie après qu'il ait été généré.  
   
  La classe de ressource fortement typée possède les entités suivantes :  
   

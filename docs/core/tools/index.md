@@ -3,12 +3,12 @@ title: Outils de l’interface de ligne de commande (CLI) de .NET Core
 description: Présentation des outils et fonctionnalités de l’interface de ligne de commande (CLI) de .NET Core.
 ms.date: 08/14/2017
 ms.custom: seodec18
-ms.openlocfilehash: ff96023dd0b161271e146f7a7e69924c9db9e769
-ms.sourcegitcommit: 4a3c95e91289d16c38979575a245a4f76b0da147
+ms.openlocfilehash: 20a083f3e7496521243bebd6585a48c8a562c548
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67569518"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105045"
 ---
 # <a name="net-core-command-line-interface-cli-tools"></a>Outils de l’interface de ligne de commande (CLI) de .NET Core
 
@@ -18,8 +18,8 @@ L’interface de ligne de commande (CLI) de .NET Core est une nouvelle chaîne d
 
 Utilisez les programmes d’installation natifs ou les scripts shell d’installation :
 
-* Les programmes d’installation natifs sont principalement utilisés sur les ordinateurs des développeurs et s’appuient sur le mécanisme d’installation natif de chaque plateforme prise en charge, par exemple des packages DEB sur Ubuntu ou des ensembles MSI sur Windows. Ces programmes d’installation installent et configurent l’environnement pour une utilisation immédiate par le développeur, mais requièrent des privilèges d’administrateur sur l’ordinateur. Vous pouvez consulter les instructions d’installation dans le [guide d’installation de .NET Core](https://aka.ms/dotnetcoregs).
-* Les scripts de shell servent principalement à configurer les serveurs de builds et permettent d’installer les outils sans privilèges d’administration. Les scripts d’installation n’installent pas les composants requis sur l’ordinateur, qui doivent être installés manuellement. Pour plus d’informations, consultez la [rubrique de référence sur les scripts d’installation](dotnet-install-script.md). Pour plus d’informations sur la configuration de l’interface CLI sur votre serveur de builds avec intégration continue (CI), consultez [Utilisation du SDK et des outils .NET Core avec l’intégration continue](using-ci-with-cli.md).
+- Les programmes d’installation natifs sont principalement utilisés sur les ordinateurs des développeurs et s’appuient sur le mécanisme d’installation natif de chaque plateforme prise en charge, par exemple des packages DEB sur Ubuntu ou des ensembles MSI sur Windows. Ces programmes d’installation installent et configurent l’environnement pour une utilisation immédiate par le développeur, mais requièrent des privilèges d’administrateur sur l’ordinateur. Vous pouvez consulter les instructions d’installation dans le [guide d’installation de .NET Core](https://aka.ms/dotnetcoregs).
+- Les scripts de shell servent principalement à configurer les serveurs de builds et permettent d’installer les outils sans privilèges d’administration. Les scripts d’installation n’installent pas les composants requis sur l’ordinateur, qui doivent être installés manuellement. Pour plus d’informations, consultez la [rubrique de référence sur les scripts d’installation](dotnet-install-script.md). Pour plus d’informations sur la configuration de l’interface CLI sur votre serveur de builds avec intégration continue (CI), consultez [Utilisation du SDK et des outils .NET Core avec l’intégration continue](using-ci-with-cli.md).
 
 Par défaut, l’interface CLI s’installe en parallèle (SxS) et plusieurs versions des outils CLI peuvent donc coexister sur un même ordinateur. La méthode permettant d’identifier la version utilisée sur un ordinateur sur lequel plusieurs versions sont installées est expliquée plus en détail dans la section [Pilote](#driver).
 
@@ -31,67 +31,67 @@ Les commandes suivantes sont installées par défaut :
 
 **Commandes de base**
 
-* [new](dotnet-new.md)
-* [restore](dotnet-restore.md)
-* [build](dotnet-build.md)
-* [publish](dotnet-publish.md)
-* [run](dotnet-run.md)
-* [test](dotnet-test.md)
-* [vstest](dotnet-vstest.md)
-* [pack](dotnet-pack.md)
-* [migrate](dotnet-migrate.md)
-* [clean](dotnet-clean.md)
-* [sln](dotnet-sln.md)
-* [help](dotnet-help.md)
-* [store](dotnet-store.md)
+- [new](dotnet-new.md)
+- [restore](dotnet-restore.md)
+- [build](dotnet-build.md)
+- [publish](dotnet-publish.md)
+- [run](dotnet-run.md)
+- [test](dotnet-test.md)
+- [vstest](dotnet-vstest.md)
+- [pack](dotnet-pack.md)
+- [migrate](dotnet-migrate.md)
+- [clean](dotnet-clean.md)
+- [sln](dotnet-sln.md)
+- [help](dotnet-help.md)
+- [store](dotnet-store.md)
 
 **Commandes de modification de projets**
 
-* [add package](dotnet-add-package.md)
-* [add reference](dotnet-add-reference.md)
-* [remove package](dotnet-remove-package.md)
-* [remove reference](dotnet-remove-reference.md)
-* [list reference](dotnet-list-reference.md)
+- [add package](dotnet-add-package.md)
+- [add reference](dotnet-add-reference.md)
+- [remove package](dotnet-remove-package.md)
+- [remove reference](dotnet-remove-reference.md)
+- [list reference](dotnet-list-reference.md)
 
 **Commandes avancées**
 
-* [nuget delete](dotnet-nuget-delete.md)
-* [nuget locals](dotnet-nuget-locals.md)
-* [nuget push](dotnet-nuget-push.md)
-* [msbuild](dotnet-msbuild.md)
-* [dotnet install script](dotnet-install-script.md)
+- [nuget delete](dotnet-nuget-delete.md)
+- [nuget locals](dotnet-nuget-locals.md)
+- [nuget push](dotnet-nuget-push.md)
+- [msbuild](dotnet-msbuild.md)
+- [dotnet install script](dotnet-install-script.md)
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 **Commandes de base**
 
-* [new](dotnet-new.md)
-* [restore](dotnet-restore.md)
-* [build](dotnet-build.md)
-* [publish](dotnet-publish.md)
-* [run](dotnet-run.md)
-* [test](dotnet-test.md)
-* [vstest](dotnet-vstest.md)
-* [pack](dotnet-pack.md)
-* [migrate](dotnet-migrate.md)
-* [clean](dotnet-clean.md)
-* [sln](dotnet-sln.md)
+- [new](dotnet-new.md)
+- [restore](dotnet-restore.md)
+- [build](dotnet-build.md)
+- [publish](dotnet-publish.md)
+- [run](dotnet-run.md)
+- [test](dotnet-test.md)
+- [vstest](dotnet-vstest.md)
+- [pack](dotnet-pack.md)
+- [migrate](dotnet-migrate.md)
+- [clean](dotnet-clean.md)
+- [sln](dotnet-sln.md)
 
 **Commandes de modification de projets**
 
-* [add package](dotnet-add-package.md)
-* [add reference](dotnet-add-reference.md)
-* [remove package](dotnet-remove-package.md)
-* [remove reference](dotnet-remove-reference.md)
-* [list reference](dotnet-list-reference.md)
+- [add package](dotnet-add-package.md)
+- [add reference](dotnet-add-reference.md)
+- [remove package](dotnet-remove-package.md)
+- [remove reference](dotnet-remove-reference.md)
+- [list reference](dotnet-list-reference.md)
 
 **Commandes avancées**
 
-* [nuget delete](dotnet-nuget-delete.md)
-* [nuget locals](dotnet-nuget-locals.md)
-* [nuget push](dotnet-nuget-push.md)
-* [msbuild](dotnet-msbuild.md)
-* [dotnet install script](dotnet-install-script.md)
+- [nuget delete](dotnet-nuget-delete.md)
+- [nuget locals](dotnet-nuget-locals.md)
+- [nuget push](dotnet-nuget-push.md)
+- [msbuild](dotnet-msbuild.md)
+- [dotnet install script](dotnet-install-script.md)
 
 ---
 

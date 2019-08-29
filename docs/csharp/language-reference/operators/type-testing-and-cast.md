@@ -18,12 +18,12 @@ helpviewer_keywords:
 - cast expression [C#]
 - () operator [C#]
 - typeof operator [C#]
-ms.openlocfilehash: 6966d0b7a4f8a96bddb17ce2017fd53fc07ae922
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 62186409fdc1abb2275af535be3ae939a1e63323
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69572313"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922280"
 ---
 # <a name="type-testing-and-cast-operators-c-reference"></a>Opérateurs de test et de cast de type (Référence C#)
 
@@ -115,7 +115,7 @@ Pour plus d’informations sur les conversions explicites prises en charge, cons
 
 Vous pouvez aussi utiliser des parenthèses pour [appeler une méthode ou un délégué](member-access-operators.md#invocation-operator-).
 
-Une autre utilisation des parenthèses est pour spécifier l’ordre dans lequel évaluer les opérations dans une expression. Pour plus d’informations, consultez la section [Ajout de parenthèses](../../programming-guide/statements-expressions-operators/operators.md#adding-parentheses) de l’article [Opérateurs](../../programming-guide/statements-expressions-operators/operators.md). Pour obtenir la liste des opérateurs classés par niveau de priorité, consultez [Opérateurs C#](index.md).
+Une autre utilisation des parenthèses est d’ajuster l’ordre dans lequel évaluer les opérations dans une expression. Pour plus d’informations, consultez [Opérateurs C#](index.md).
 
 ## <a name="typeof-operator"></a>Opérateur typeof
 

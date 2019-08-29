@@ -6,12 +6,12 @@ ms.author: mairaw
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 6520323e-ff28-4c8a-ba80-e64a413199e6
-ms.openlocfilehash: 0bde31a004b1952be488569f89cfd3b129c82771
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5ef5d459195bea752ec5380f2853d8011cb189aa
+ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "68671224"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69666639"
 ---
 # <a name="net-assembly-file-format"></a>Format de fichier d’assembly .NET
 
@@ -35,4 +35,4 @@ En-têtes d’assembly d’après ECMA 335 II.25.1, Structure of the runtime f
 
 ## <a name="processing-the-assemblies"></a>Traitement des assemblys
 
-Vous pouvez écrire des outils ou des API pour traiter les assemblys. Les informations d’assembly permettent de prendre des décisions de programmation au moment de l’exécution, de réécrire des assemblys, de fournir l’IntelliSense des API dans un éditeur et de générer de la documentation. <xref:System.Reflection?displayProperty=nameWithType> et [Mono.Cecil](https://www.mono-project.com/docs/tools+libraries/libraries/Mono.Cecil/) sont de bons exemples d’outils fréquemment utilisés à cet effet.
+Vous pouvez écrire des outils ou des API pour traiter les assemblys. Les informations d’assembly permettent de prendre des décisions de programmation au moment de l’exécution, de réécrire des assemblys, de fournir l’IntelliSense des API dans un éditeur et de générer de la documentation. <xref:System.Reflection?displayProperty=nameWithType>, <xref:System.Reflection.MetadataLoadContext?displayProperty=nameWithType> et [Mono.Cecil](https://www.mono-project.com/docs/tools+libraries/libraries/Mono.Cecil/) sont de bons exemples d’outils fréquemment utilisés à cet effet.

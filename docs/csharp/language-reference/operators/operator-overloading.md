@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - operator keyword [C#]
 - operator overloading [C#]
-ms.openlocfilehash: 93e4845cab6735e74c711d720beeb06c8883a44b
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 5fcf9c774592c0fbcdcca951ef99c1a2efa6f05e
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566883"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69922295"
 ---
 # <a name="operator-overloading-c-reference"></a>Surcharge d’opérateur (référence C#)
 
-Un type défini par l’utilisateur peut surcharger un opérateur C# prédéfini. Autrement dit, un type peut fournir l’implémentation personnalisée d’une opération quand l’un des opérandes (ou les deux) sont de ce type. La section [Opérateurs surchargeables](#overloadable-operators) indique les opérateurs C# qui peuvent être surchargés.
+Un type défini par l’utilisateur peut surcharger un opérateur C# prédéfini. Autrement dit, un type peut fournir l’implémentation personnalisée d’une opération quand un des opérandes, ou les deux, sont de ce type. La section [Opérateurs surchargeables](#overloadable-operators) indique les opérateurs C# qui peuvent être surchargés.
 
 Utilisez le mot clé `operator` pour déclarer un opérateur. Une déclaration d’opérateur doit respecter les règles suivantes :
 
