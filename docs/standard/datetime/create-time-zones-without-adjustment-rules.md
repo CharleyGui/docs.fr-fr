@@ -12,58 +12,58 @@ helpviewer_keywords:
 ms.assetid: a6af8647-7893-4f29-95a9-d94c65a6e8dd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ff4cfe2b492b676c061043f018390844f1807440
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 510112c8b19ec002d1dcf918eb983b55dee68fd0
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586400"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106670"
 ---
 # <a name="how-to-create-time-zones-without-adjustment-rules"></a>Procédure : créer des fuseaux horaires sans règles d’ajustement
 
-Les informations de fuseau horaire précises qui sont requis par une application ne peuvent pas être présentes sur un système particulier pour plusieurs raisons :
+Les informations de fuseau horaire précises requises par une application peuvent ne pas être présentes sur un système particulier pour plusieurs raisons:
 
-* Le fuseau horaire n’a jamais été défini dans le Registre du système local.
+- Le fuseau horaire n’a jamais été défini dans le Registre du système local.
 
-* Données sur le fuseau horaire a été modifiées ou supprimées à partir du Registre.
+- Les données relatives au fuseau horaire ont été modifiées ou supprimées du Registre.
 
-* Le fuseau horaire existe mais n’a pas d’informations précises sur les ajustements de fuseau horaire pour une période donnée.
+- Le fuseau horaire existe mais il ne contient pas d’informations exactes sur les ajustements de fuseau horaire pour une période historique particulière.
 
-Dans ce cas, vous pouvez appeler la <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> méthode pour définir le fuseau horaire requis par votre application. Vous pouvez utiliser les surcharges de cette méthode pour créer un fuseau horaire avec ou sans règles d’ajustement. Si le fuseau horaire prend en charge l’heure d’été, vous pouvez définir des ajustements avec des règles d’ajustement fixe ou flottante. (Pour les définitions de ces termes, consultez la section « Terminologie de fuseau horaire » dans [vue d’ensemble du fuseau horaire](../../../docs/standard/datetime/time-zone-overview.md).)
+Dans ce cas, vous pouvez appeler la <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> méthode pour définir le fuseau horaire requis par votre application. Vous pouvez utiliser les surcharges de cette méthode pour créer un fuseau horaire avec ou sans règles d’ajustement. Si le fuseau horaire prend en charge l’heure d’été, vous pouvez définir des ajustements à l’aide de règles d’ajustement fixes ou flottantes. (Pour obtenir les définitions de ces termes, consultez la section «Terminologie relative aux fuseaux horaires» dans [vue d’ensemble des fuseaux horaires](../../../docs/standard/datetime/time-zone-overview.md).)
 
 > [!IMPORTANT]
-> Les fuseaux horaires personnalisés créés en appelant le <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> méthode ne sont pas ajoutés au Registre. Au lieu de cela, ils sont accessibles uniquement par le biais de la référence d’objet retournée par la <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> appel de méthode.
+> Les fuseaux horaires personnalisés créés en <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> appelant la méthode ne sont pas ajoutés au registre. Au lieu de cela, ils sont accessibles uniquement par le biais de la <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> référence d’objet retournée par l’appel de méthode.
 
-Cette rubrique montre comment créer un fuseau horaire sans règles d’ajustement. Pour créer un fuseau horaire qui prend en charge des règles d’ajustement de l’heure d’été, consultez [Comment : Créer des fuseaux horaires avec des règles d’ajustement](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md).
+Cette rubrique montre comment créer un fuseau horaire sans règle d’ajustement. Pour créer un fuseau horaire qui prend en charge les règles d’ajustement à [l’heure d’été, consultez Procédure: Créer des fuseaux horaires avec](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md)des règles d’ajustement.
 
 ### <a name="to-create-a-time-zone-without-adjustment-rules"></a>Pour créer un fuseau horaire sans règles d’ajustement
 
-1. Définir le nom d’affichage du fuseau horaire.
+1. Définissez le nom d’affichage du fuseau horaire.
 
-   Le nom d’affichage suit un format relativement standard dans lequel l’offset du fuseau horaire par rapport au temps universel coordonné (UTC) est placée entre parenthèses et est suivie d’une chaîne qui identifie le fuseau horaire, une ou plusieurs des villes dans le fuseau horaire, ou l’un ou plusieurs du cou gra ou des régions dans le fuseau horaire.
+   Le nom d’affichage suit un format relativement standard dans lequel le décalage du fuseau horaire par rapport au temps universel coordonné (UTC, Universal Time Coordinated) est placé entre parenthèses et est suivi d’une chaîne qui identifie le fuseau horaire, une ou plusieurs des villes du fuseau horaire, ou un ou plusieurs cou les critures ou les régions dans le fuseau horaire.
 
-2. Définir le nom de l’heure d’hiver du fuseau horaire. En règle générale, cette chaîne est également utilisée comme identificateur de fuseau horaire.
+2. Définissez le nom de l’heure d’hiver du fuseau horaire. En règle générale, cette chaîne est également utilisée comme identificateur du fuseau horaire.
 
-3. Si vous souhaitez utiliser un identificateur autre que le nom standard du fuseau horaire, définissez l’identificateur de fuseau horaire.
+3. Si vous souhaitez utiliser un identificateur différent du nom standard du fuseau horaire, définissez l’identificateur de fuseau horaire.
 
-4. Instancier un <xref:System.TimeSpan> objet qui définit le décalage du fuseau horaire à l’heure UTC. Fuseaux horaires avec des heures sont ultérieures à l’heure UTC ont un décalage positif. Fuseaux horaires avec des temps d’antérieures à UTC ont un offset négatif.
+4. Instanciez <xref:System.TimeSpan> un objet qui définit le décalage du fuseau horaire par rapport à l’heure UTC. Les fuseaux horaires dont les heures sont postérieures à l’heure UTC ont un décalage positif. Les fuseaux horaires dont les heures sont antérieures à l’heure UTC ont un décalage négatif.
 
-5. Appelez le <xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%29?displayProperty=nameWithType> méthode pour instancier le nouveau fuseau horaire.
+5. Appelez la <xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%29?displayProperty=nameWithType> méthode pour instancier le nouveau fuseau horaire.
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant définit un fuseau horaire personnalisé pour Mawson, en Antarctique sans règles d’ajustement.
+L’exemple suivant définit un fuseau horaire personnalisé pour Mawson, Antarctique, qui n’a aucune règle d’ajustement.
 
 [!code-csharp[System.TimeZone2.CreateTimeZone#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/cs/System.TimeZone2.CreateTimeZone.cs#1)]
 [!code-vb[System.TimeZone2.CreateTimeZone#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/vb/System.TimeZone2.CreateTimeZone.vb#1)]
 
-La chaîne assignée à la <xref:System.TimeZoneInfo.DisplayName%2A> propriété suit un format standard dans lequel décalage du fuseau horaire à l’heure UTC est suivie d’une description conviviale du fuseau horaire.
+La chaîne assignée <xref:System.TimeZoneInfo.DisplayName%2A> à la propriété suit un format standard dans lequel le décalage du fuseau horaire par rapport à l’heure UTC est suivi d’une description conviviale du fuseau horaire.
 
 ## <a name="compiling-the-code"></a>Compilation du code
 
 Cet exemple nécessite :
 
-* Que les espaces de noms suivants soient importés :
+- Que les espaces de noms suivants soient importés:
 
   [!code-csharp[System.TimeZone2.CreateTimeZone#6](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/cs/System.TimeZone2.CreateTimeZone.cs#6)]
   [!code-vb[System.TimeZone2.CreateTimeZone#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/vb/System.TimeZone2.CreateTimeZone.vb#6)]
@@ -72,4 +72,4 @@ Cet exemple nécessite :
 
 - [Dates, heures et fuseaux horaires](../../../docs/standard/datetime/index.md)
 - [Vue d’ensemble des fuseaux horaires](../../../docs/standard/datetime/time-zone-overview.md)
-- [Guide pratique pour Créer des fuseaux horaires avec des règles d’ajustement](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md)
+- [Guide pratique : Créer des fuseaux horaires avec des règles d’ajustement](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md)

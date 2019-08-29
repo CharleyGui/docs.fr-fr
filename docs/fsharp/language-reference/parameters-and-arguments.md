@@ -2,12 +2,12 @@
 title: Paramètres et arguments
 description: En savoir F# plus sur la prise en charge linguistique pour définir des paramètres et passer des arguments à des fonctions, des méthodes et des propriétés.
 ms.date: 05/16/2016
-ms.openlocfilehash: 561cefb1d437b2f38f6ee4ca37cd955235ca06fa
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 67e82d031c4b22bc30a6f278d9698298ccff2e21
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627313"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106602"
 ---
 # <a name="parameters-and-arguments"></a>Paramètres et arguments
 
@@ -163,9 +163,9 @@ Dans ce cas, le compilateur génère un avertissement et ignore les deux attribu
 
 Le passage F# d’une valeur par référence implique [types ByRef](byrefs.md), qui sont des types pointeur managés. Les instructions pour le type à utiliser sont les suivantes:
 
-* Utilisez `inref<'T>` si vous devez uniquement lire le pointeur.
-* Utilisez `outref<'T>` si vous devez uniquement écrire dans le pointeur.
-* Utilisez `byref<'T>` si vous avez besoin de lire et d’écrire dans le pointeur.
+- Utilisez `inref<'T>` si vous devez uniquement lire le pointeur.
+- Utilisez `outref<'T>` si vous devez uniquement écrire dans le pointeur.
+- Utilisez `byref<'T>` si vous avez besoin de lire et d’écrire dans le pointeur.
 
 ```fsharp
 let example1 (x: inref<int>) = printfn "It's %d" x

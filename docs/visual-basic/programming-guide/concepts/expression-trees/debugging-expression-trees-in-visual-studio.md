@@ -1,16 +1,16 @@
 ---
-title: Débogage d’arborescences d’Expression dans Visual Studio (Visual Basic)
+title: Débogage d’arborescences d’expressions dans Visual Studio (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 492cc28f-b7a2-4c47-b582-b3c437b8a5d5
-ms.openlocfilehash: 9aead09e0e9469f13e2d6befbad444d3c7fecabd
-ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
+ms.openlocfilehash: 3334828475ef5d933ea660ea33ae264d4ccce172
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66196028"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106868"
 ---
-# <a name="debugging-expression-trees-in-visual-studio-visual-basic"></a>Débogage d’arborescences d’Expression dans Visual Studio (Visual Basic)
-Vous pouvez analyser la structure et le contenu d’arborescences d’expression quand vous déboguez vos applications. Pour obtenir un aperçu rapide de l’arborescence d’expression, vous pouvez utiliser la `DebugView` propriété, qui représente des arborescences d’expression [à l’aide d’une syntaxe spéciale](debugview-syntax.md). (Notez que `DebugView` est disponible uniquement en mode débogage.)  
+# <a name="debugging-expression-trees-in-visual-studio-visual-basic"></a>Débogage d’arborescences d’expressions dans Visual Studio (Visual Basic)
+Vous pouvez analyser la structure et le contenu d’arborescences d’expression quand vous déboguez vos applications. Pour obtenir un rapide aperçu de l’arborescence d’expression, vous pouvez utiliser la propriété `DebugView`, qui représente des arborescences d’expression [en utilisant une syntaxe spéciale](debugview-syntax.md). (Notez que `DebugView` est disponible uniquement en mode débogage.)  
 
 ![DebugView d’une arborescence d’expression dans le débogueur Visual Studio](media/debugging-expression-trees-in-visual-studio/debugview_vb.png)
 
@@ -18,13 +18,13 @@ Vous pouvez analyser la structure et le contenu d’arborescences d’expression
 
  ![Visualiseur de texte appliqué aux résultats de « DebugView »](media/debugging-expression-trees-in-visual-studio/string_visualizer_vb.png)
 
-Ou bien, vous pouvez installer et utiliser [un visualiseur personnalisé](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data) pour les arborescences d’expressions, telles que :
+Vous pouvez également installer et utiliser [un visualiseur personnalisé](https://docs.microsoft.com/visualstudio/debugger/create-custom-visualizers-of-data) pour les arborescences d’expression, notamment :
 
-* [Readable Expressions](https://github.com/agileobjects/ReadableExpressions) ([licence MIT](https://github.com/agileobjects/ReadableExpressions/blob/master/LICENSE.md), disponible sur [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=vs-publisher-1232914.ReadableExpressionsVisualizers)), restitue l’arborescence d’expression sous forme de code C# :
+- [Readable Expressions](https://github.com/agileobjects/ReadableExpressions) ([licence MIT](https://github.com/agileobjects/ReadableExpressions/blob/master/LICENSE.md), disponible sur [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=vs-publisher-1232914.ReadableExpressionsVisualizers)), restitue l’arborescence d’expression sous forme de code C# :
 
   ![Visualiseur Readable Expressions](media/debugging-expression-trees-in-visual-studio/readable_expressions_visualizer.png)
 
-* [Visualiseur de l’arborescence expression](https://github.com/zspitz/ExpressionToString#visual-studio-debugger-visualizer-for-expression-trees) ([licence MIT](https://github.com/zspitz/ExpressionToString/blob/master/LICENSE)), fournit une vue graphique de l’arborescence d’expression, ses propriétés et les objets connexes ; et peut rendre l’arborescence d’expression à l’aide de code Visual Basic :
+- [Visualiseur](https://github.com/zspitz/ExpressionToString#visual-studio-debugger-visualizer-for-expression-trees) de l’arborescence de l’expression ([Licence MIT](https://github.com/zspitz/ExpressionToString/blob/master/LICENSE)) fournit une vue graphique de l’arborescence de l’expression, de ses propriétés et des objets associés. et peuvent restituer l’arborescence de l’expression à l’aide du code Visual Basic:
 
   ![Visualiseur ExpressionToString](media/debugging-expression-trees-in-visual-studio/expression_to_string_visualizer_vb.png)
 
@@ -43,4 +43,4 @@ Ou bien, vous pouvez installer et utiliser [un visualiseur personnalisé](https:
 - [Arborescences d’expressions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
 - [Débogage dans Visual Studio](/visualstudio/debugger/debugging-in-visual-studio)
 - [Créer des visualiseurs personnalisés](/visualstudio/debugger/create-custom-visualizers-of-data)
-- [`DebugView` Syntaxe](debugview-syntax.md)
+- [`DebugView` syntaxe](debugview-syntax.md)

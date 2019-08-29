@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0c1534e5-979b-4c8a-a588-1c24301aefb3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 28e1979b6ceb1b343764900cc7d49a576a7a4030
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: e92d5564308d31609b9fb024f3d3368a19b76b1d
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630548"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106701"
 ---
 # <a name="working-with-calendars"></a>Utilisation des calendriers
 
@@ -30,39 +30,39 @@ Bien qu'une valeur de date et d'heure représente un moment donné, sa représen
 
 Tous les calendriers dans .net dérivent de la <xref:System.Globalization.Calendar?displayProperty=nameWithType> classe, qui fournit l’implémentation de base du calendrier. Une des classes qui héritent de la classe <xref:System.Globalization.Calendar> est <xref:System.Globalization.EastAsianLunisolarCalendar>, qui constitue la base de tous les calendriers lunisolaires. .NET comprend les implémentations de calendrier suivantes:
 
-* <xref:System.Globalization.ChineseLunisolarCalendar>, qui représente le calendrier lunisolaire chinois.
+- <xref:System.Globalization.ChineseLunisolarCalendar>, qui représente le calendrier lunisolaire chinois.
 
-* <xref:System.Globalization.GregorianCalendar>, qui représente le calendrier grégorien. Ce calendrier est encore divisé en sous-types (tels que l'arabe et le français du Moyen-Orient) qui sont définis par l'énumération <xref:System.Globalization.GregorianCalendarTypes?displayProperty=nameWithType>. La propriété <xref:System.Globalization.GregorianCalendar.CalendarType%2A?displayProperty=nameWithType> spécifie le sous-type du calendrier grégorien.
+- <xref:System.Globalization.GregorianCalendar>, qui représente le calendrier grégorien. Ce calendrier est encore divisé en sous-types (tels que l'arabe et le français du Moyen-Orient) qui sont définis par l'énumération <xref:System.Globalization.GregorianCalendarTypes?displayProperty=nameWithType>. La propriété <xref:System.Globalization.GregorianCalendar.CalendarType%2A?displayProperty=nameWithType> spécifie le sous-type du calendrier grégorien.
 
-* <xref:System.Globalization.HebrewCalendar>, qui représente le calendrier hébreu.
+- <xref:System.Globalization.HebrewCalendar>, qui représente le calendrier hébreu.
 
-* <xref:System.Globalization.HijriCalendar>, qui représente le calendrier Hijri.
+- <xref:System.Globalization.HijriCalendar>, qui représente le calendrier Hijri.
 
-* <xref:System.Globalization.JapaneseCalendar>, qui représente le calendrier japonais.
+- <xref:System.Globalization.JapaneseCalendar>, qui représente le calendrier japonais.
 
-* <xref:System.Globalization.JapaneseLunisolarCalendar>, qui représente le calendrier lunisolaire japonais.
+- <xref:System.Globalization.JapaneseLunisolarCalendar>, qui représente le calendrier lunisolaire japonais.
 
-* <xref:System.Globalization.JulianCalendar>, qui représente le calendrier julien.
+- <xref:System.Globalization.JulianCalendar>, qui représente le calendrier julien.
 
-* <xref:System.Globalization.KoreanCalendar>, qui représente le calendrier coréen.
+- <xref:System.Globalization.KoreanCalendar>, qui représente le calendrier coréen.
 
-* <xref:System.Globalization.KoreanLunisolarCalendar>, qui représente le calendrier lunisolaire coréen.
+- <xref:System.Globalization.KoreanLunisolarCalendar>, qui représente le calendrier lunisolaire coréen.
 
-* <xref:System.Globalization.PersianCalendar>, qui représente le calendrier persan.
+- <xref:System.Globalization.PersianCalendar>, qui représente le calendrier persan.
 
-* <xref:System.Globalization.TaiwanCalendar>, qui représente le calendrier taïwanais.
+- <xref:System.Globalization.TaiwanCalendar>, qui représente le calendrier taïwanais.
 
-* <xref:System.Globalization.TaiwanLunisolarCalendar>, qui représente le calendrier lunisolaire taïwanais.
+- <xref:System.Globalization.TaiwanLunisolarCalendar>, qui représente le calendrier lunisolaire taïwanais.
 
-* <xref:System.Globalization.ThaiBuddhistCalendar>, qui représente le calendrier thaï bouddhiste.
+- <xref:System.Globalization.ThaiBuddhistCalendar>, qui représente le calendrier thaï bouddhiste.
 
-* <xref:System.Globalization.UmAlQuraCalendar>, qui représente le calendrier Um Al Qura.
+- <xref:System.Globalization.UmAlQuraCalendar>, qui représente le calendrier Um Al Qura.
 
 Un calendrier peut être utilisé de deux manières différentes :
 
-* En tant que calendrier utilisé par une culture spécifique. Chaque objet <xref:System.Globalization.CultureInfo> possède un calendrier actuel, qui est celui que l'objet utilise actuellement. Les représentations sous forme de chaîne de toutes les valeurs de date et d'heure reflètent automatiquement la culture actuelle et le calendrier en cours. En général, le calendrier actuel est le calendrier par défaut de la culture. <xref:System.Globalization.CultureInfo>les objets ont également des calendriers facultatifs, qui incluent des calendriers supplémentaires que la culture peut utiliser.
+- En tant que calendrier utilisé par une culture spécifique. Chaque objet <xref:System.Globalization.CultureInfo> possède un calendrier actuel, qui est celui que l'objet utilise actuellement. Les représentations sous forme de chaîne de toutes les valeurs de date et d'heure reflètent automatiquement la culture actuelle et le calendrier en cours. En général, le calendrier actuel est le calendrier par défaut de la culture. <xref:System.Globalization.CultureInfo>les objets ont également des calendriers facultatifs, qui incluent des calendriers supplémentaires que la culture peut utiliser.
 
-* En tant que calendrier autonome, indépendant d'une culture spécifique. Dans ce cas, les méthodes <xref:System.Globalization.Calendar> sont utilisées pour exprimer des dates sous forme de valeurs qui reflètent le calendrier.
+- En tant que calendrier autonome, indépendant d'une culture spécifique. Dans ce cas, les méthodes <xref:System.Globalization.Calendar> sont utilisées pour exprimer des dates sous forme de valeurs qui reflètent le calendrier.
 
 Notez que six classes de calendrier – <xref:System.Globalization.ChineseLunisolarCalendar>, <xref:System.Globalization.JapaneseLunisolarCalendar>, <xref:System.Globalization.JulianCalendar>, <xref:System.Globalization.KoreanLunisolarCalendar>, <xref:System.Globalization.PersianCalendar> et <xref:System.Globalization.TaiwanLunisolarCalendar> - peuvent être utilisées uniquement en tant que calendriers autonomes. Elles ne sont utilisées par aucune culture comme le calendrier par défaut ou comme calendrier facultatif.
 
@@ -138,7 +138,7 @@ Toutefois, il existe une exception importante. La valeur par défaut (non initia
 Les calendriers divisent en général les dates en ères. Toutefois, les <xref:System.Globalization.Calendar> classes dans .net ne prennent pas en charge chaque ère définie par un calendrier, et la <xref:System.Globalization.Calendar> plupart des classes ne prennent en charge qu’une seule ère. Seules les classes <xref:System.Globalization.JapaneseCalendar> et <xref:System.Globalization.JapaneseLunisolarCalendar> prennent en charge plusieurs ères.
 
 > [!IMPORTANT]
-> L’ère Reiwa, une nouvelle ère dans <xref:System.Globalization.JapaneseCalendar> et <xref:System.Globalization.JapaneseLunisolarCalendar>, commence le 1er mai 2019. Ce changement affecte toutes les applications qui utilisent ces calendriers. Pour plus d’informations, consultez les articles suivants:
+> L’ère Reiwa, une nouvelle ère dans <xref:System.Globalization.JapaneseCalendar> et <xref:System.Globalization.JapaneseLunisolarCalendar>, commence le 1er mai 2019. Ce changement affecte toutes les applications qui utilisent ces calendriers. Pour plus d’informations, consultez les articles suivants :
 > - [Gestion d’une nouvelle ère dans le calendrier japonais dans .net](https://devblogs.microsoft.com/dotnet/handling-a-new-era-in-the-japanese-calendar-in-net/), qui documente les fonctionnalités ajoutées à .net pour prendre en charge les calendriers avec plusieurs ères et présente les meilleures pratiques à utiliser lors de la gestion des calendriers à plusieurs ère.
 > - [Préparez votre application pour la modification de l’ère japonaise](/windows/uwp/design/globalizing/japanese-era-change), qui fournit des informations sur le test de vos applications sur Windows pour garantir leur disponibilité pour la modification de l’ère.
 > - [Résumé des nouvelles mises à jour de l’ère japonaise pour .NET Framework](https://support.microsoft.com/help/4477957/new-japanese-era-updates-for-net-framework), qui répertorie les mises à jour .NET Framework pour les différentes versions de Windows qui sont liées à la nouvelle ère du calendrier japonais, note les nouvelles fonctionnalités de .NET Framework pour la prise en charge de plusieurs environnements, et comprend les éléments suivants: Recherchez dans test de vos applications.
@@ -245,7 +245,7 @@ Si les contrôles de plage souple ne sont pas souhaitables, vous pouvez restaure
    |Clé | HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\AppContext |
    |Nom | Switch.System.Globalization.EnforceJapaneseEraYearRanges |
    |Type | REG_SZ |
-   |Valeur | true |
+   |`Value` | true |
 
 Si les vérifications de plage strictes sont activées, l' <xref:System.ArgumentOutOfRangeException> exemple précédent lève une et affiche la sortie suivante:
 
@@ -320,7 +320,7 @@ Si ce comportement n’est pas souhaitable dans les opérations de mise en forme
    |Clé | HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\AppContext |
    |Nom | Switch.System.Globalization.FormatJapaneseFirstYearAsANumber |
    |Type | REG_SZ |
-   |Valeur | true |
+   |`Value` | true |
 
 Avec la prise en charge de gannen dans les opérations de mise en forme désactivées, l’exemple précédent affiche la sortie suivante:
 
@@ -358,7 +358,7 @@ Japanese calendar date: 平成1年8月18日 (Gregorian: Friday, August 18, 1989)
    |Clé | HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\AppContext |
    |Nom | Switch.System.Globalization.EnforceLegacyJapaneseDateParsing |
    |Type | REG_SZ |
-   |Valeur | true | 
+   |`Value` | true | 
 
 ## <a name="see-also"></a>Voir aussi
 

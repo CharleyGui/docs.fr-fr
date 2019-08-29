@@ -2,20 +2,20 @@
 title: Extensions de type
 description: Découvrez comment F# les extensions de type vous permettent d’ajouter de nouveaux membres à un type d’objet précédemment défini.
 ms.date: 02/08/2019
-ms.openlocfilehash: 502b8636052139b39c800447870c6076a8cd2643
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 5d31d87095d3381e66dc32da4b6d7bb746886406
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630204"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106840"
 ---
 # <a name="type-extensions"></a>Extensions de type
 
 Les extensions de type (également appelées «augmentations») sont une famille de fonctionnalités qui vous permettent d’ajouter de nouveaux membres à un type d’objet précédemment défini. Les trois fonctionnalités sont les suivantes:
 
-* Extensions de type intrinsèques
-* Extensions de type facultatives
-* Méthodes d’extension
+- Extensions de type intrinsèques
+- Extensions de type facultatives
+- Méthodes d’extension
 
 Chaque peut être utilisé dans différents scénarios et présente des compromis différents.
 
@@ -66,9 +66,9 @@ type Variant with
 
 L’utilisation d’une extension de type vous permet de séparer chacun des éléments suivants:
 
-* Déclaration d’un `Variant` type
-* Fonctionnalité pour imprimer la `Variant` classe en fonction de sa «forme»
-* Un moyen d’accéder à la fonctionnalité d’impression avec la `.`notation de style objet
+- Déclaration d’un `Variant` type
+- Fonctionnalité pour imprimer la `Variant` classe en fonction de sa «forme»
+- Un moyen d’accéder à la fonctionnalité d’impression avec la `.`notation de style objet
 
 Il s’agit d’une alternative à la définition de tout `Variant`en tant que membre sur. Bien qu’il ne s’agisse pas d’une approche fondamentalement meilleure, il peut s’agir d’une représentation plus claire des fonctionnalités dans certaines situations.
 
@@ -121,9 +121,9 @@ type IEnumerable<'T> with
 
 Il n’existe aucun moyen de faire en sorte que ce code fonctionne avec une extension de type facultative:
 
-* Comme c’est le `Sum` cas, le membre a une `'T` contrainte différente `static member (+)`sur (`static member get_Zero` et) que celle définie par l’extension de type.
-* La modification de l’extension de type pour avoir la même `Sum` contrainte que ne correspondra plus à la `IEnumerable<'T>`contrainte définie sur.
-* La `member this.Sum` modification `member inline this.Sum` de en génère une erreur indiquant que les contraintes de type ne correspondent pas.
+- Comme c’est le `Sum` cas, le membre a une `'T` contrainte différente `static member (+)`sur (`static member get_Zero` et) que celle définie par l’extension de type.
+- La modification de l’extension de type pour avoir la même `Sum` contrainte que ne correspondra plus à la `IEnumerable<'T>`contrainte définie sur.
+- La `member this.Sum` modification `member inline this.Sum` de en génère une erreur indiquant que les contraintes de type ne correspondent pas.
 
 Les méthodes statiques qui sont souhaitées sont des méthodes statiques qui «flottent dans l’espace» et peuvent être présentées comme si elles étendaient un type. C’est là que les méthodes d’extension deviennent nécessaires.
 
@@ -150,22 +150,22 @@ Lorsqu’il est utilisé, ce code s’affiche comme si `Sum` est défini sur <xr
 
 Les extensions de type ont également les attributs suivants:
 
-* Tout type accessible peut être étendu.
-* Les extensions de type intrinsèques et facultatives peuvent définir _n’importe quel type de_ membre, pas seulement des méthodes. Ainsi, les propriétés d’extension sont également possibles, par exemple.
-* Le `self-identifier` jeton dans la [syntaxe](type-extensions.md#syntax) représente l’instance du type appelé, tout comme les membres ordinaires.
-* Les membres étendus peuvent être des membres statiques ou d’instance.
-* Les variables de type sur une extension de type doivent correspondre aux contraintes du type déclaré.
+- Tout type accessible peut être étendu.
+- Les extensions de type intrinsèques et facultatives peuvent définir _n’importe quel type de_ membre, pas seulement des méthodes. Ainsi, les propriétés d’extension sont également possibles, par exemple.
+- Le `self-identifier` jeton dans la [syntaxe](type-extensions.md#syntax) représente l’instance du type appelé, tout comme les membres ordinaires.
+- Les membres étendus peuvent être des membres statiques ou d’instance.
+- Les variables de type sur une extension de type doivent correspondre aux contraintes du type déclaré.
 
 Les limitations suivantes existent également pour les extensions de type:
 
-* Les extensions de type ne prennent pas en charge les méthodes virtuelles ou abstraites.
-* Les extensions de type ne prennent pas en charge les méthodes override comme augmentations.
-* Les extensions de type ne prennent pas en charge les [paramètres de type résolus statiquement](./generics/statically-resolved-type-parameters.md).
-* Les extensions de type facultatives ne prennent pas en charge les constructeurs comme augmentations.
-* Les extensions de type ne peuvent pas être définies sur les abréviations de [type](type-abbreviations.md).
-* Les extensions de type ne sont `byref<'T>` pas valides pour (bien qu’elles puissent être déclarées).
-* Les extensions de type ne sont pas valides pour les attributs (bien qu’elles puissent être déclarées).
-* Vous pouvez définir des extensions qui surchargent d’autres méthodes du même nom F# , mais le compilateur donne la préférence aux méthodes non d’extension en cas d’appel ambigu.
+- Les extensions de type ne prennent pas en charge les méthodes virtuelles ou abstraites.
+- Les extensions de type ne prennent pas en charge les méthodes override comme augmentations.
+- Les extensions de type ne prennent pas en charge les [paramètres de type résolus statiquement](./generics/statically-resolved-type-parameters.md).
+- Les extensions de type facultatives ne prennent pas en charge les constructeurs comme augmentations.
+- Les extensions de type ne peuvent pas être définies sur les abréviations de [type](type-abbreviations.md).
+- Les extensions de type ne sont `byref<'T>` pas valides pour (bien qu’elles puissent être déclarées).
+- Les extensions de type ne sont pas valides pour les attributs (bien qu’elles puissent être déclarées).
+- Vous pouvez définir des extensions qui surchargent d’autres méthodes du même nom F# , mais le compilateur donne la préférence aux méthodes non d’extension en cas d’appel ambigu.
 
 Enfin, s’il existe plusieurs extensions de type intrinsèques pour un type, tous les membres doivent être uniques. Pour les extensions de type facultatives, les membres de différentes extensions de type du même type peuvent avoir le même nom. Les erreurs d’ambiguïté se produisent uniquement si le code client ouvre deux portées différentes qui définissent les mêmes noms de membres.
 

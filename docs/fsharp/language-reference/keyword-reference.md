@@ -2,12 +2,12 @@
 title: Référence des mots clés
 description: Recherchez des liens vers des informations sur tous F# les mots clés du langage.
 ms.date: 05/16/2016
-ms.openlocfilehash: 680b270a99eff7aa98652579d2fd31b4b05080ca
-ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
+ms.openlocfilehash: 8c2df9d081caae48489e3e316ca158f3b9106efb
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68733480"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107037"
 ---
 # <a name="keyword-reference"></a>Référence des mots clés
 
@@ -92,44 +92,44 @@ Le tableau suivant répertorie F# tous les mots clés dans l’ordre alphabétiq
 
 Les jetons suivants sont réservés dans F# , car il s’agit de mots clés dans le langage ocaml:
 
-* `asr`
-* `land`
-* `lor`
-* `lsl`
-* `lsr`
-* `lxor`
-* `mod`
-* `sig`
+- `asr`
+- `land`
+- `lor`
+- `lsl`
+- `lsr`
+- `lxor`
+- `mod`
+- `sig`
 
 Si vous utilisez l' `--mlcompatibility` option du compilateur, les mots clés ci-dessus peuvent être utilisés comme identificateurs.
 
 Les jetons suivants sont réservés en tant que Mots clés pour une expansion F# future du langage:
 
-* `atomic`
-* `break`
-* `checked`
-* `component`
-* `const`
-* `constraint`
-* `constructor`
-* `continue`
-* `eager`
-* `event`
-* `external`
-* `functor`
-* `include`
-* `method`
-* `mixin`
-* `object`
-* `parallel`
-* `process`
-* `protected`
-* `pure`
-* `sealed`
-* `tailcall`
-* `trait`
-* `virtual`
-* `volatile`
+- `atomic`
+- `break`
+- `checked`
+- `component`
+- `const`
+- `constraint`
+- `constructor`
+- `continue`
+- `eager`
+- `event`
+- `external`
+- `functor`
+- `include`
+- `method`
+- `mixin`
+- `object`
+- `parallel`
+- `process`
+- `protected`
+- `pure`
+- `sealed`
+- `tailcall`
+- `trait`
+- `virtual`
+- `volatile`
 
 ## <a name="see-also"></a>Voir aussi
 

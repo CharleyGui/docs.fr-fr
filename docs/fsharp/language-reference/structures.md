@@ -2,12 +2,12 @@
 title: Structures
 description: En savoir plus F# sur la structure, un type d’objet compact est souvent plus efficace qu’une classe pour les types avec une petite quantité de données et un comportement simple.
 ms.date: 05/16/2016
-ms.openlocfilehash: e638b450fe43e0993c9980cade246c3f26d25e2d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 1e9652cc4776e4d1d52eb20e41b6dd87a6c5ba05
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630776"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106826"
 ---
 # <a name="structures"></a>Structures
 
@@ -66,10 +66,10 @@ type S(count1: Span<int>, count2: Span<int>) =
 
 Un struct`byref`«-like» dans F# est un type valeur lié à la pile. Elle n’est jamais allouée sur le tas managé. Un `byref`struct de type like est utile pour la programmation hautes performances, car il est appliqué avec un ensemble de vérifications fortes sur la durée de vie et la non-capture. Les règles sont les suivantes:
 
-* Elles peuvent être utilisées en tant que paramètres de fonction, paramètres de méthode, variables locales, retours de méthode.
-* Ils ne peuvent pas être des membres statiques ou d’instance d’une classe ou d’un struct normal.
-* Ils ne peuvent pas être capturés par une`async` construction de fermeture (méthodes ou expressions lambda).
-* Ils ne peuvent pas être utilisés comme paramètre générique.
+- Elles peuvent être utilisées en tant que paramètres de fonction, paramètres de méthode, variables locales, retours de méthode.
+- Ils ne peuvent pas être des membres statiques ou d’instance d’une classe ou d’un struct normal.
+- Ils ne peuvent pas être capturés par une`async` construction de fermeture (méthodes ou expressions lambda).
+- Ils ne peuvent pas être utilisés comme paramètre générique.
 
 Bien que ces règles restreignent fortement l’utilisation, elles le font pour garantir la promesse de l’informatique hautes performances de manière sûre.
 

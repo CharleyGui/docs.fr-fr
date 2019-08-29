@@ -3,12 +3,12 @@ title: Bien démarrer avec le stockage Blob Azure en F#
 description: Stockez des données non structurées dans le Cloud avec le stockage d’objets BLOB Azure.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: c8b42339ff1d76f262e956b5e34cc598e0fc855d
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: c765f38cba7642e813a5966d3b7754c5ce45abbd
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630507"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107120"
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>Prise en main du stockage d’objets BLOB Azure à l’aide de F\#
 
@@ -186,9 +186,9 @@ Pour plus d’informations sur les différences entre les trois types d’objets
 
 Pour prendre en charge l’accès simultané à un objet blob à partir de plusieurs clients ou d' instances de processus, vous pouvez utiliser des ETags ou des **baux**.
 
-* **ETag** -fournit un moyen de détecter que l’objet BLOB ou le conteneur a été modifié par un autre processus
+- **ETag** -fournit un moyen de détecter que l’objet BLOB ou le conteneur a été modifié par un autre processus
 
-* **Bail** -fournit un moyen d’obtenir un accès exclusif, renouvelable, en écriture ou en suppression sur un objet BLOB pendant une période donnée.
+- **Bail** -fournit un moyen d’obtenir un accès exclusif, renouvelable, en écriture ou en suppression sur un objet BLOB pendant une période donnée.
 
 Pour plus d’informations, consultez [gestion de l’accès concurrentiel dans stockage Microsoft Azure](https://azure.microsoft.com/blog/managing-concurrency-in-microsoft-azure-storage-2/).
 

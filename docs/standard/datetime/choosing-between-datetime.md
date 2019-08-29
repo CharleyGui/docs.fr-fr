@@ -15,30 +15,30 @@ helpviewer_keywords:
 ms.assetid: 07f17aad-3571-4014-9ef3-b695a86f3800
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9d2ae7430c10254274eed6fb8a602aa8bc11bffb
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 1c4eb8c174e70b6761784a5defe12dc8a8a1e42b
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988501"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107080"
 ---
 # <a name="choosing-between-datetime-datetimeoffset-timespan-and-timezoneinfo"></a>Choisir entre DateTime, DateTimeOffset, TimeSpan et TimeZoneInfo
 
 Les applications .NET qui utilisent des informations de date et d’heure sont très diverses et peuvent utiliser ces informations de plusieurs façons. Les utilisations les plus courantes des informations de date et d'heure sont une ou plusieurs parmi les suivantes :
 
-* Pour refléter seulement une date, les informations d'heure n'étant pas importantes.
+- Pour refléter seulement une date, les informations d'heure n'étant pas importantes.
 
-* Pour refléter seulement une heure, les informations de date n'étant pas importantes.
+- Pour refléter seulement une heure, les informations de date n'étant pas importantes.
 
-* Pour refléter une date et une heure abstraites, qui ne sont pas liées à un moment et un endroit spécifiques (par exemple, la plupart des magasins d'une chaîne internationale ouvrent en semaine à 9h00).
+- Pour refléter une date et une heure abstraites, qui ne sont pas liées à un moment et un endroit spécifiques (par exemple, la plupart des magasins d'une chaîne internationale ouvrent en semaine à 9h00).
 
-* Pour récupérer des informations de date et d’heure à partir de sources en dehors de .NET, en général, où les informations de date et d’heure sont stockées dans un type de données simple.
+- Pour récupérer des informations de date et d’heure à partir de sources en dehors de .NET, en général, où les informations de date et d’heure sont stockées dans un type de données simple.
 
-* Pour identifier de façon univoque et non ambiguë un point unique dans le temps. Certaines applications requièrent qu'une date/heure soit ambiguë seulement sur le système hôte. D'autres requièrent qu'elle soit non ambiguë entre les systèmes (autrement dit, une date sérialisée sur un système peut être désérialisée de manière significative et utilisée sur un autre système n'importe où dans le monde).
+- Pour identifier de façon univoque et non ambiguë un point unique dans le temps. Certaines applications requièrent qu'une date/heure soit ambiguë seulement sur le système hôte. D'autres requièrent qu'elle soit non ambiguë entre les systèmes (autrement dit, une date sérialisée sur un système peut être désérialisée de manière significative et utilisée sur un autre système n'importe où dans le monde).
 
-* Pour conserver plusieurs dates/heures ayant un lien les unes avec les autres (comme la date/heure locale du demandeur et la date/heure de réception par le serveur d'une demande web).
+- Pour conserver plusieurs dates/heures ayant un lien les unes avec les autres (comme la date/heure locale du demandeur et la date/heure de réception par le serveur d'une demande web).
 
-* Pour effectuer des calculs de date et d'heure, éventuellement avec un résultat qui identifie de façon univoque et non ambiguë un point unique dans le temps.
+- Pour effectuer des calculs de date et d'heure, éventuellement avec un résultat qui identifie de façon univoque et non ambiguë un point unique dans le temps.
 
 .Net comprend les <xref:System.DateTime>types <xref:System.DateTimeOffset>, <xref:System.TimeSpan>, et <xref:System.TimeZoneInfo> , qui peuvent tous être utilisés pour créer des applications qui fonctionnent avec des dates et des heures.
 
@@ -51,19 +51,19 @@ Une valeur <xref:System.DateTime> définit une date/heure spécifique. Il inclut
 
 La structure <xref:System.DateTime> convient pour les applications qui :
 
-* Utilisent seulement des dates.
+- Utilisent seulement des dates.
 
-* Utilisent seulement des heures.
+- Utilisent seulement des heures.
 
-* Utilisent des dates et des heures abstraites.
+- Utilisent des dates et des heures abstraites.
 
-* Utilisent des dates et des heures pour lesquelles les informations de fuseau horaire sont manquantes.
+- Utilisent des dates et des heures pour lesquelles les informations de fuseau horaire sont manquantes.
 
-* Utilisent seulement des dates et des heures UTC.
+- Utilisent seulement des dates et des heures UTC.
 
-* Récupérez des informations de date et d’heure à partir de sources en dehors de .NET, telles que des bases de données SQL. En règle générale, ces sources stockent les informations de date et d'heure dans un format simple qui est compatible avec la structure <xref:System.DateTime> .
+- Récupérez des informations de date et d’heure à partir de sources en dehors de .NET, telles que des bases de données SQL. En règle générale, ces sources stockent les informations de date et d'heure dans un format simple qui est compatible avec la structure <xref:System.DateTime> .
 
-* Effectuent des calculs de dates et d'heures, mais sont surtout concernées par des résultats d'ordre général. Par exemple, dans une opération d'addition qui ajoute six mois à une date/heure, il n'est souvent pas important que le résultat soit ajusté pour l'heure d'été.
+- Effectuent des calculs de dates et d'heures, mais sont surtout concernées par des résultats d'ordre général. Par exemple, dans une opération d'addition qui ajoute six mois à une date/heure, il n'est souvent pas important que le résultat soit ajusté pour l'heure d'été.
 
 Sauf si une valeur <xref:System.DateTime> particulière représente le temps UTC, cette valeur de date/heure est souvent ambiguë ou limitée en termes de portabilité. Par exemple, si une valeur <xref:System.DateTime> représente l'heure locale, elle est portable dans ce fuseau horaire local (c'est-à-dire que si la valeur est désérialisée sur un autre système dans le même fuseau horaire, cette valeur continue d'identifier de façon non ambiguë un point unique dans le temps). En dehors du fuseau horaire local, cette valeur <xref:System.DateTime> peut être interprétée de plusieurs façons. Si la propriété <xref:System.DateTime.Kind%2A> de la valeur est <xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>, elle est encore moins portable : elle est maintenant ambiguë dans le même fuseau horaire, voire même sur le système où elle a été sérialisée pour la première fois. Seulement dans le cas où une valeur <xref:System.DateTime> représente le temps UTC, celle-ci identifie de façon non ambiguë un point unique dans le temps, indépendamment du système ou du fuseau horaire où la valeur est utilisée.
 
@@ -76,11 +76,11 @@ La structure <xref:System.DateTimeOffset> représente une valeur de date et d'he
 
 Le type <xref:System.DateTimeOffset> comprend toutes les fonctionnalités du type <xref:System.DateTime> , ainsi que la gestion des fuseaux horaires. Cela convient aux applications qui effectuent les opérations suivantes:
 
-* Identifient de façon univoque et non ambiguë un point unique dans le temps. Le type <xref:System.DateTimeOffset> peut être utilisé pour définir de façon non ambiguë la signification de "maintenant", pour consigner les dates/heures des transactions, pour consigner les dates/heures des événements système ou des événements d'une application, et pour enregistrer les dates/heures de création et de modification des fichiers.
+- Identifient de façon univoque et non ambiguë un point unique dans le temps. Le type <xref:System.DateTimeOffset> peut être utilisé pour définir de façon non ambiguë la signification de "maintenant", pour consigner les dates/heures des transactions, pour consigner les dates/heures des événements système ou des événements d'une application, et pour enregistrer les dates/heures de création et de modification des fichiers.
 
-* Effectuent des calculs de date et d'heure.
+- Effectuent des calculs de date et d'heure.
 
-* Conservent plusieurs dates/heures ayant un lien entre elles, comme les dates/heures qui sont stockées sous la forme de deux valeurs distinctes ou de deux membres d'une structure.
+- Conservent plusieurs dates/heures ayant un lien entre elles, comme les dates/heures qui sont stockées sous la forme de deux valeurs distinctes ou de deux membres d'une structure.
 
 > [!NOTE]
 > Ces utilisations pour des valeurs <xref:System.DateTimeOffset> sont beaucoup plus courantes que celles pour les valeurs <xref:System.DateTime> . Par conséquent, <xref:System.DateTimeOffset> doit être considéré comme le type de date et d'heure par défaut pour le développement d'applications.
@@ -96,9 +96,9 @@ La sortie montre que chaque valeur de date et d'heure de cet exemple peut appart
 
 La structure <xref:System.TimeSpan> représente un intervalle de temps. Ses deux utilisations courantes sont :
 
-* Refléter un intervalle de temps entre deux valeurs de date/heure. Par exemple, la soustraction d'une valeur <xref:System.DateTime> d'une autre retourne une valeur <xref:System.TimeSpan> .
+- Refléter un intervalle de temps entre deux valeurs de date/heure. Par exemple, la soustraction d'une valeur <xref:System.DateTime> d'une autre retourne une valeur <xref:System.TimeSpan> .
 
-* Mesurer un temps écoulé. Par exemple, la <xref:System.Diagnostics.Stopwatch.Elapsed%2A?displayProperty=nameWithType> propriété retourne une <xref:System.TimeSpan> valeur qui reflète l’intervalle de temps qui s’est écoulé depuis l' <xref:System.Diagnostics.Stopwatch> appel à l’une des méthodes qui commence à mesurer le temps écoulé.
+- Mesurer un temps écoulé. Par exemple, la <xref:System.Diagnostics.Stopwatch.Elapsed%2A?displayProperty=nameWithType> propriété retourne une <xref:System.TimeSpan> valeur qui reflète l’intervalle de temps qui s’est écoulé depuis l' <xref:System.Diagnostics.Stopwatch> appel à l’une des méthodes qui commence à mesurer le temps écoulé.
 
 Une <xref:System.TimeSpan> valeur peut également être utilisée en remplacement d’une <xref:System.DateTime> valeur quand cette valeur reflète une heure sans référence à un jour particulier. Cette utilisation est similaire aux <xref:System.DateTime.TimeOfDay%2A?displayProperty=nameWithType> propriétés et <xref:System.DateTimeOffset.TimeOfDay%2A?displayProperty=nameWithType> , qui retournent une <xref:System.TimeSpan> valeur qui représente l’heure sans référence à une date. Par exemple, la structure <xref:System.TimeSpan> peut être utilisée pour refléter les heures d'ouverture ou de fermeture quotidiennes d'un magasin, ou elle peut être utilisée pour représenter l'heure où se produit un événement régulier.
 
