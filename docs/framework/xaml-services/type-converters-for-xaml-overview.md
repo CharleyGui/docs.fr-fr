@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XAML [XAML Services], TypeConverter
 - type conversion for XAML [XAML Services]
 ms.assetid: 51a65860-efcb-4fe0-95a0-1c679cde66b7
-ms.openlocfilehash: a94f1f358a2d0fbfd489ac3d34375b6f883dd4fa
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e401b40e1c11504e3c27d5b3601d71ef8f5821e1
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965443"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169002"
 ---
 # <a name="type-converters-for-xaml-overview"></a>Vue d'ensemble des convertisseurs de types pour XAML
 Les convertisseurs de type fournissent la logique nécessaire à un writer d'objet qui convertit une chaîne de balisage XAML en objets particuliers d'un graphique d'objets. Dans les services XAML .NET Framework, le convertisseur de type doit être une classe dérivée de <xref:System.ComponentModel.TypeConverter>. Certains convertisseurs prennent également en charge le chemin d'enregistrement XAML et peuvent être utilisés pour sérialiser un objet sous forme de chaîne dans le balisage de sérialisation. Cette rubrique décrit comment et quand les convertisseurs de type en XAML sont appelés, et fournit des conseils d'implémentation pour les substitutions de méthode de <xref:System.ComponentModel.TypeConverter>.  
@@ -93,9 +93,9 @@ Les convertisseurs de type fournissent la logique nécessaire à un writer d'obj
   
 <a name="Applying_the_TypeConverterAttribute"></a>   
 ## <a name="applying-the-typeconverterattribute"></a>Application de TypeConverterAttribute  
- Pour que le convertisseur de type personnalisé soit utilisé comme convertisseur de type actif pour une classe personnalisée par les services XAML .NET Framework, vous devez appliquer [!INCLUDE[TLA#tla_netframewkattr](../../../includes/tlasharptla-netframewkattr-md.md)] <xref:System.ComponentModel.TypeConverterAttribute> à votre définition de classe. La propriété <xref:System.ComponentModel.TypeConverterAttribute.ConverterTypeName%2A> que vous spécifiez via l'attribut doit être le nom de type du convertisseur de type personnalisé. Si vous appliquez cet attribut, lorsqu'un processeur XAML gère des valeurs où le type de propriété utilise votre type de classe personnalisée, il peut entrer des chaînes et retourner des instances d'objet.  
+ Pour que votre convertisseur de type personnalisé soit utilisé comme convertisseur de type agissant pour une classe personnalisée en .NET Framework les <xref:System.ComponentModel.TypeConverterAttribute> services XAML, vous devez appliquer à votre définition de classe. La propriété <xref:System.ComponentModel.TypeConverterAttribute.ConverterTypeName%2A> que vous spécifiez via l'attribut doit être le nom de type du convertisseur de type personnalisé. Si vous appliquez cet attribut, lorsqu'un processeur XAML gère des valeurs où le type de propriété utilise votre type de classe personnalisée, il peut entrer des chaînes et retourner des instances d'objet.  
   
- Vous pouvez également fournir un convertisseur de type en fonction de la propriété. Au lieu d'appliquer un [!INCLUDE[TLA#tla_netframewkattr](../../../includes/tlasharptla-netframewkattr-md.md)] <xref:System.ComponentModel.TypeConverterAttribute> à la définition de classe, appliquez-le à une définition de propriété (c'est-à-dire à la définition principale, et non pas aux implémentations de `get`/`set` qu'elle contient). Le type de la propriété doit correspondre au type traité par votre convertisseur de type personnalisé. Avec cet attribut appliqué, lorsqu'un processeur XAML gère des valeurs de cette propriété, il peut traiter des chaînes d'entrée et retourner des instances d'objet. La technique de conversion de type par propriété est particulièrement utile si vous choisissez d’utiliser un type de propriété à partir de Microsoft .NET Framework ou d’une autre bibliothèque où vous ne pouvez pas contrôler la <xref:System.ComponentModel.TypeConverterAttribute> définition de classe et ne pouvez pas l’appliquer.  
+ Vous pouvez également fournir un convertisseur de type en fonction de la propriété. Au lieu d’appliquer <xref:System.ComponentModel.TypeConverterAttribute> un à la définition de classe, appliquez-le à une définition de propriété (la définition `get` principale, et non les / `set` implémentations qu’il contient). Le type de la propriété doit correspondre au type traité par votre convertisseur de type personnalisé. Avec cet attribut appliqué, lorsqu'un processeur XAML gère des valeurs de cette propriété, il peut traiter des chaînes d'entrée et retourner des instances d'objet. La technique de conversion de type par propriété est particulièrement utile si vous choisissez d’utiliser un type de propriété à partir de Microsoft .NET Framework ou d’une autre bibliothèque où vous ne pouvez pas contrôler la <xref:System.ComponentModel.TypeConverterAttribute> définition de classe et ne pouvez pas l’appliquer.  
   
  Pour fournir un comportement de conversion de type pour un membre attaché personnalisé, appliquez <xref:System.ComponentModel.TypeConverterAttribute> à la méthode `Get` d'accesseur du modèle d'implémentation du membre attaché.  
   

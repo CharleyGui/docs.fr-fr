@@ -8,21 +8,21 @@ helpviewer_keywords:
 - providerOptions
 - provideroption element
 ms.assetid: 014f2e0b-c0b5-4fc4-92d3-73f02978b2a1
-ms.openlocfilehash: 37f4d8c5eeacd82f8fc37179c478d026ca25f459
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 8d90364e34aa15bbd38e82ec70ec44616d7360f8
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69664301"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167667"
 ---
 # <a name="provideroption-element"></a>\<providerOption >, élément
 Spécifie les attributs de version du compilateur pour un fournisseur de langages.  
   
- \<> de l’élément de configuration  
-\<System. CodeDom, élément >  
-\<compilateurs, élément >  
-\<Élément de > du compilateur  
-\<providerOption >, élément  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp;&nbsp;[ **\<System. CodeDom >** ](system-codedom-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<compilateurs >** ](compilers-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> du compilateur**](compiler-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<providerOption >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

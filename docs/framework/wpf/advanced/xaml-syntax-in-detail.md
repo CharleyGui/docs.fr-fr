@@ -29,12 +29,12 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-ms.openlocfilehash: 3ac7d79660830601ca69951e56763fc923692b0e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 09f0a1b34e88be995fb9a386161a930457e4bb56
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69958784"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168988"
 ---
 # <a name="xaml-syntax-in-detail"></a>Syntaxe XAML en détail
 Cette rubrique définit les termes utilisés pour décrire les éléments de la syntaxe XAML. Ces termes sont fréquemment utilisés dans la suite de cette documentation, à la fois pour la documentation WPF et pour les autres infrastructures qui utilisent XAML ou les concepts XAML de base activés par la prise en charge du langage XAML au niveau de System. Xaml. Cette rubrique développe la terminologie de base présentée dans la rubrique [vue d’ensemble du langage XAML (WPF)](xaml-overview-wpf.md).  
@@ -62,7 +62,7 @@ Cette rubrique définit les termes utilisés pour décrire les éléments de la 
   
 - La balise d’ouverture doit être terminée par un chevron droit (>). D’autres éléments objets, éléments de propriété ou texte interne peuvent suivre la balise d’ouverture. Exactement le contenu qui peut être contenu ici est généralement limité par le modèle objet de l’élément. La balise de fermeture équivalente pour l’élément Object doit également exister, dans une imbrication et un équilibre appropriés avec d’autres paires de balises d’ouverture et de fermeture.  
   
- XAML implémenté par .NET dispose d’un ensemble de règles qui mappent des éléments objet dans des types, des attributs dans des propriétés ou des événements, et des espaces de noms XAML à des espaces de noms CLR plus assembly. Pour WPF et le .NET Framework, les éléments objet XAML sont [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] mappés aux types comme défini dans les assemblys référencés, et les attributs sont mappés aux membres de ces types. Quand vous référencez un type CLR en XAML, vous avez également accès aux membres hérités de ce type.  
+ XAML implémenté par .NET dispose d’un ensemble de règles qui mappent des éléments objet dans des types, des attributs dans des propriétés ou des événements, et des espaces de noms XAML à des espaces de noms CLR plus assembly. Pour WPF et .NET, les éléments objets XAML sont mappés aux types .NET tels qu’ils sont définis dans les assemblys référencés, et les attributs sont mappés aux membres de ces types. Quand vous référencez un type CLR en XAML, vous avez également accès aux membres hérités de ce type.  
   
  Par exemple, l’exemple suivant est une syntaxe d’élément objet qui instancie une nouvelle instance <xref:System.Windows.Controls.Button> de la classe et spécifie <xref:System.Windows.FrameworkElement.Name%2A> également un attribut et une valeur pour cet attribut:  
   

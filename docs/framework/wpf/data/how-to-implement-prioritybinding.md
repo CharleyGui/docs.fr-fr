@@ -7,17 +7,17 @@ dev_langs:
 helpviewer_keywords:
 - data binding [WPF], PriorityBinding class
 ms.assetid: d63b65ab-b3e9-4322-9aa8-1450f8d89532
-ms.openlocfilehash: ad19db9d686469e3ade1ff188553fceb8d525674
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4be1ce434eb1e169e8a19b56c92ca1efb48773d2
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937442"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169084"
 ---
 # <a name="how-to-implement-prioritybinding"></a>Procédure : Implémenter PriorityBinding
 <xref:System.Windows.Data.PriorityBinding>dans [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fonctionne en spécifiant une liste de liaisons. La liste des liaisons est classée de la priorité la plus élevée à la priorité la plus basse. Si la liaison de priorité la plus élevée retourne une valeur correctement lorsqu’elle est traitée, il n’est jamais nécessaire de traiter les autres liaisons de la liste. Cela peut être le cas où la liaison de priorité la plus élevée prend beaucoup de temps pour être évaluée, la priorité la plus élevée qui retourne une valeur avec succès sera utilisée jusqu’à ce qu’une liaison d’une priorité plus élevée retourne une valeur avec succès.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Pour illustrer <xref:System.Windows.Data.PriorityBinding> le fonctionnement de `AsyncDataSource` , l’objet a été créé avec les trois propriétés `FastDP`suivantes `SlowerDP`:, `SlowestDP`et.  
   
  L’accesseur get `FastDP` de retourne la valeur `_fastDP` du membre de données.  
@@ -27,7 +27,7 @@ ms.locfileid: "69937442"
  L’accesseur get `SlowestDP` de attend cinq secondes avant de retourner la valeur `_slowestDP` du membre de données.  
   
 > [!NOTE]
-> L’exemple est uniquement fourni à des fins de démonstration. Les [!INCLUDE[TLA#tla_net](../../../../includes/tlasharptla-net-md.md)] instructions recommandent de définir des propriétés dont l’ordre de grandeur est plus lent qu’un jeu de champs. Pour plus d’informations, consultez [choix entre les propriétés et les méthodes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229054(v=vs.100)).  
+> L’exemple est uniquement fourni à des fins de démonstration. Les instructions .NET recommandent de définir des propriétés dont l’ordre est plus lent qu’un jeu de champs. Pour plus d’informations, consultez [choix entre les propriétés et les méthodes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229054(v=vs.100)).  
   
  [!code-csharp[PriorityBinding#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PriorityBinding/CSharp/Window1.xaml.cs#1)]
  [!code-vb[PriorityBinding#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PriorityBinding/VisualBasic/AsyncDataSource.vb#1)]  

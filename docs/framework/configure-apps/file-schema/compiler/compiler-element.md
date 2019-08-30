@@ -10,18 +10,21 @@ helpviewer_keywords:
 - compiler configuration attributes
 - compiler element
 ms.assetid: 7a151659-b803-4c27-b5ce-1c4aa0d5a823
-ms.openlocfilehash: 80eea3373e2f4b7e45ebeb31dd6552ea02c109e1
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: a19cf8182cdb338fd8596ef38311916de0daae37
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69659731"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168940"
 ---
 # <a name="compiler-element"></a>\<Élément de > du compilateur
 
 Spécifie les attributs de configuration du compilateur pour un fournisseur de langage.
 
-\<élément de configuration \<> élément System. CodeDom \<> les compilateurs > \<élément > du compilateur
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp;&nbsp;[ **\<System. CodeDom >** ](system-codedom-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<compilateurs >** ](compilers-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> du compilateur**  
 
 ## <a name="syntax"></a>Syntaxe
 

@@ -9,18 +9,18 @@ helpviewer_keywords:
 - system.codedom element
 - <system.codedom> element
 ms.assetid: 672a68f7-e69f-4479-ac30-e980085ec4fe
-ms.openlocfilehash: 43bc3c40bfc0b0ce4c0b18683092faf8b67e1c04
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 19f37095bd01b76fda8b1e29423c413dbdb06a65
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927691"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168916"
 ---
 # <a name="systemcodedom-element"></a>\<System. CodeDom >, élément
 Spécifie les paramètres de configuration du compilateur pour les fournisseurs de langages disponibles.  
   
- \<Élément de > de configuration  
-\<System. CodeDom >, élément  
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp;&nbsp; **\<System. CodeDom >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -66,7 +66,7 @@ Spécifie les paramètres de configuration du compilateur pour les fournisseurs 
 ## <a name="configuration-file"></a>Fichier de configuration  
  Cet élément peut être utilisé dans le fichier de configuration de l’ordinateur et dans le fichier de configuration de l’application.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant illustre une configuration de compilateur classique.  
   
 ```xml  
