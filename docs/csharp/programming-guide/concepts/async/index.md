@@ -2,14 +2,14 @@
 title: Programmation asynchrone en C#
 description: Vue d’ensemble de la prise en charge du langage C# pour la programmation asynchrone avec Async, Await, Task et Task<T>
 ms.date: 03/18/2019
-ms.openlocfilehash: a306ff75357f9f61ec9b086485472d99de5ad083
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 4ed48a2e74dde5ae0f24ebd680ace133e05e15d4
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307123"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167888"
 ---
-# <a name="the-task-asynchronous-programming-model-in-c"></a>Modèle de programmation asynchrone des tâches en C\#
+# <a name="asynchronous-programming-with-async-and-await"></a>Programmation asynchrone avec Async et Await
 
 Le modèle de programmation asynchrone des tâches fournit une abstraction pour le code asynchrone. Pour cela, vous écrivez votre code comme d’habitude, sous la forme d’une suite d’instructions. Vous pouvez lire ce code comme si chaque instruction se terminait avant que la suivante ne commence. Le compilateur effectue un certain nombre de transformations, car certaines de ces instructions peuvent commencer le travail et retourner un <xref:System.Threading.Tasks.Task> qui représente le travail en cours.
 
