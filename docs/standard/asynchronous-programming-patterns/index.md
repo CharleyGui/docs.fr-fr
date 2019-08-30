@@ -8,18 +8,18 @@ helpviewer_keywords:
 ms.assetid: 4ece5c0b-f8fe-4114-9862-ac02cfe5a5d7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e3535e2979d2430fcb434a578f94d8d5b3925631
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 36798fabcd42cf7e04b0a6f288736503eecad88b
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666570"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169125"
 ---
 # <a name="asynchronous-programming-patterns"></a>Modèles de programmation asynchrone
 
 .NET propose trois modèles d’exécution d’opérations asynchrones :  
 
-- Le **modèle asynchrone basé sur les tâches (TAP)** , qui utilise une méthode unique pour représenter le lancement et l’achèvement d’une opération asynchrone. TAP a été introduit avec le .NET Framework 4. **Il est recommandé pour la programmation asynchrone dans .NET.** Les mots clés [async](../../csharp/language-reference/keywords/async.md) et [await](../../csharp/language-reference/keywords/await.md) en C#, ainsi que les opérateurs [Async](../../visual-basic/language-reference/modifiers/async.md) et [Await](../../visual-basic/language-reference/operators/await-operator.md) en Visual Basic, ajoutent au modèle TAP la prise en charge des langages. Pour plus d’informations, consultez [Modèle asynchrone basé sur des tâches (TAP)](task-based-asynchronous-pattern-tap.md).  
+- Le **modèle asynchrone basé sur les tâches (TAP)** , qui utilise une méthode unique pour représenter le lancement et l’achèvement d’une opération asynchrone. TAP a été introduit avec le .NET Framework 4. **Il est recommandé pour la programmation asynchrone dans .NET.** Les mots clés [async](../../csharp/language-reference/keywords/async.md) et [await](../../csharp/language-reference/operators/await.md) en C#, ainsi que les opérateurs [Async](../../visual-basic/language-reference/modifiers/async.md) et [Await](../../visual-basic/language-reference/operators/await-operator.md) en Visual Basic, ajoutent au modèle TAP la prise en charge des langages. Pour plus d’informations, consultez [Modèle asynchrone basé sur des tâches (TAP)](task-based-asynchronous-pattern-tap.md).  
 
 - Le **modèle asynchrone basé sur les événements (EAP)** , qui est le modèle hérité basé sur les événements pour fournir un comportement asynchrone. Il nécessite une méthode avec le suffixe `Async`, ainsi qu’un ou plusieurs événements, des types de délégués de gestionnaire d’événements et des types dérivés de `EventArg`. Ce modèle a été introduit avec le .NET Framework 2.0. Il n’est plus recommandé pour les nouveaux développements. Pour plus d'informations, consultez [Modèle asynchrone basé sur des événements (EAP)](event-based-asynchronous-pattern-eap.md).  
 

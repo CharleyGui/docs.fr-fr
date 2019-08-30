@@ -2,12 +2,12 @@
 title: Concepts de programmation (C#)
 ms.date: 07/20/2015
 ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
-ms.openlocfilehash: 7668ca6bba0b938e569886cfa9f1985eaa48c5d0
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 3fcb1ca76c49919b00b74d955b7aadaa2e882f2a
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594995"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168341"
 ---
 # <a name="programming-concepts-c"></a>Concepts de programmation (C#)
 Cette section explique les concepts de programmation du langage C#.  
@@ -17,7 +17,7 @@ Cette section explique les concepts de programmation du langage C#.
 |Titre|Description|  
 |-----------|-----------------|  
 |[Assemblys dans .NET](../../../standard/assembly/index.md)|Explique comment créer et utiliser des assemblys.|  
-|[Programmation asynchrone avec Async et Await (C#)](./async/index.md)|Explique comment écrire des solutions asynchrones à l’aide des mots clés [async](../../language-reference/keywords/async.md) et [await](../../language-reference/keywords/await.md) en C#. Comprend une procédure pas à pas.|  
+|[Programmation asynchrone avec Async et Await (C#)](./async/index.md)|Explique comment écrire des solutions asynchrones à l’aide des mots clés [async](../../language-reference/keywords/async.md) et [await](../../language-reference/operators/await.md) en C#. Comprend une procédure pas à pas.|  
 |[Attributs (C#)](./attributes/index.md)|Explique comment fournir des informations supplémentaires sur des éléments de programmation tels que les types, les champs, les méthodes et les propriétés à l’aide d’attributs.|  
 |[Informations relatives à l’appelant (C#)](./caller-information.md)|Explique comment obtenir des informations sur l’appelant d’une méthode. Parmi ces informations figurent le chemin d’accès du fichier, le numéro de ligne dans le code source et le nom de membre de l’appelant.|  
 |[Collections (C#)](./collections.md)|Décrit quelques-uns des types de collections fournis par .NET Framework. Montre comment utiliser des collections simples et des collections de paires clé/valeur.|  
