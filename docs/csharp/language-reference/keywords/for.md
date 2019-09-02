@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - for keyword [C#]
 ms.assetid: 34041a40-2c87-467a-9ffb-a0417d8f67a8
-ms.openlocfilehash: a0252493ffd251b8d760927345c71e2f5ef55aaa
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 61315a04ca8d5a619a3dcaf43b15a309919d3c42
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67401522"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167869"
 ---
 # <a name="for-c-reference"></a>for (référence C#)
 
@@ -53,7 +53,7 @@ Les instructions figurant dans la section *initialiseur* sont exécutées une se
 
   - Création d’un objet à l’aide de l’opérateur [new](../operators/new-operator.md)
 
-  - Expression [await](await.md)
+  - Expression [await](../operators/await.md)
 
 La section *initialiseur* dans l’exemple ci-dessus déclare et initialise la variable de boucle locale `i` :
 
@@ -85,7 +85,7 @@ La section *itérateur* définit ce qui se produit après chaque itération du c
 
 - Création d’un objet à l’aide de l’opérateur [new](../operators/new-operator.md)
 
-- Expression [await](await.md)
+- Expression [await](../operators/await.md)
 
 La section *itérateur* dans l’exemple ci-dessus incrémente la variable de boucle locale :
 

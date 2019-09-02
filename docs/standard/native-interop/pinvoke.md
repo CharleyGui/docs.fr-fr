@@ -4,12 +4,12 @@ description: Découvrez comment appeler des fonctions natives via P/Invoke dans 
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: c6dcfdb9543abceb688fee2d73c242f1742ab27d
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: cda738a173cbe61cf49f79ceef78c533a5a879d9
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65582555"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106797"
 ---
 # <a name="platform-invoke-pinvoke"></a>Appel de code non managé (P/Invoke)
 
@@ -21,9 +21,9 @@ Commençons par l’exemple le plus courant, c’est-à-dire appeler des fonctio
 
 L’exemple précédent est simple, mais il ne montre pas ce dont vous avez besoin pour appeler des fonctions non managées à partir de code managé. Examinons l’exemple :
 
-* La ligne 1 montre l’instruction d’utilisation de l’espace de noms `System.Runtime.InteropServices`, qui contient tous les éléments dont nous avons besoin.
-* La ligne 7 introduit l’attribut `DllImport`. Cet attribut est crucial, car il indique au runtime qu’il doit charger la DLL non managée. La chaîne passée est la DLL où se trouve notre fonction cible. En outre, il définit le [jeu de caractères](./charset.md) à utiliser pour marshaler les chaînes. Il spécifie enfin que cette fonction appelle [SetLastError](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-setlasterror) et que le runtime doit capturer ce code d’erreur pour que l’utilisateur puisse le récupérer avec <xref:System.Runtime.InteropServices.Marshal.GetLastWin32Error?displayProperty=nameWithType>.
-* La ligne 8 est l’essentiel du travail de P/Invoke. Elle définit une méthode managée qui a **exactement la même signature** que la méthode non managée. Notez que la déclaration a un nouveau mot clé, `extern`, qui indique au runtime qu’il s’agit d’une méthode externe et que, quand vous l’appelez, le runtime doit la trouver dans la DLL spécifiée dans l’attribut `DllImport`.
+- La ligne 1 montre l’instruction d’utilisation de l’espace de noms `System.Runtime.InteropServices`, qui contient tous les éléments dont nous avons besoin.
+- La ligne 7 introduit l’attribut `DllImport`. Cet attribut est crucial, car il indique au runtime qu’il doit charger la DLL non managée. La chaîne passée est la DLL où se trouve notre fonction cible. En outre, il définit le [jeu de caractères](./charset.md) à utiliser pour marshaler les chaînes. Il spécifie enfin que cette fonction appelle [SetLastError](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-setlasterror) et que le runtime doit capturer ce code d’erreur pour que l’utilisateur puisse le récupérer avec <xref:System.Runtime.InteropServices.Marshal.GetLastWin32Error?displayProperty=nameWithType>.
+- La ligne 8 est l’essentiel du travail de P/Invoke. Elle définit une méthode managée qui a **exactement la même signature** que la méthode non managée. Notez que la déclaration a un nouveau mot clé, `extern`, qui indique au runtime qu’il s’agit d’une méthode externe et que, quand vous l’appelez, le runtime doit la trouver dans la DLL spécifiée dans l’attribut `DllImport`.
 
 Le reste de l’exemple appelle simplement la méthode comme toute autre méthode managée.
 
@@ -49,10 +49,10 @@ Le premier paramètre est un rappel. Ce rappel a la signature suivante : `BOOL 
 
 Examinons maintenant l’exemple en détail :
 
-* la ligne 9 dans l’exemple définit un délégué qui correspond à la signature du rappel dans le code non managé. Notez la façon dont les types LPARAM et HWND sont représentés à l’aide de `IntPtr` dans le code managé.
-* Les lignes 13 et 14 introduisent la fonction `EnumWindows` de la bibliothèque user32.dll.
-* Les lignes 17 à 20 implémentent le délégué. Dans cet exemple simple, nous voulons simplement générer le handle dans la console.
-* Enfin, dans la ligne 24, la méthode externe est appelée et transmise au délégué.
+- la ligne 9 dans l’exemple définit un délégué qui correspond à la signature du rappel dans le code non managé. Notez la façon dont les types LPARAM et HWND sont représentés à l’aide de `IntPtr` dans le code managé.
+- Les lignes 13 et 14 introduisent la fonction `EnumWindows` de la bibliothèque user32.dll.
+- Les lignes 17 à 20 implémentent le délégué. Dans cet exemple simple, nous voulons simplement générer le handle dans la console.
+- Enfin, dans la ligne 24, la méthode externe est appelée et transmise au délégué.
 
 Les exemples de Linux et Mac OS sont présentés ci-dessous. Dans ces exemples, nous utilisons la fonction `ftw` qui se trouve dans `libc`, la bibliothèque C. Cette fonction est utilisée pour parcourir des hiérarchies de répertoires et accepte un pointeur vers une fonction comme l’un de ses paramètres. Cette fonction a la signature suivante : `int (*fn) (const char *fpath, const struct stat *sb, int typeflag)`.
 

@@ -3,12 +3,12 @@ title: Variables et types C# - Visite guidée du langage C#
 description: En savoir plus sur la définition des types et la déclaration de variables en C#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: f06894d986973e4394b0586906d67ef41a9d9152
-ms.sourcegitcommit: 46c68557bf6395f0ab9915f7558f2faae0097695
+ms.openlocfilehash: 22a91b101d5361091b09217d4562703851c86940
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "67661069"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105587"
 ---
 # <a name="types-and-variables"></a>Types et variables
 
@@ -18,31 +18,31 @@ Les types de valeur de C# sont divisés entre *types simples*, *types enum*, *ty
 
 Ce qui suit offre une vue d'ensemble du système de types de C#.
 
-* [Types valeur][ValueTypes]
+- [Types valeur][ValueTypes]
   - [Types simples][SimpleTypes]
-    * Entier signé : `sbyte`, `short`, `int`, `long`
-    * Entier non signé : `byte`, `ushort`, `uint`, `ulong`
-    * Caractères Unicode : `char`
-    * Virgule flottante pour valeur binaire IEEE : `float`, `double`
-    * Virgule flottante pour valeur décimale haute précision : `decimal`
-    * Booléen : `bool`
+    - Entier signé : `sbyte`, `short`, `int`, `long`
+    - Entier non signé : `byte`, `ushort`, `uint`, `ulong`
+    - Caractères Unicode : `char`
+    - Virgule flottante pour valeur binaire IEEE : `float`, `double`
+    - Virgule flottante pour valeur décimale haute précision : `decimal`
+    - Booléen : `bool`
   - [Types enum][EnumTypes]
-    * Types définis par l'utilisateur de la forme `enum E {...}`
+    - Types définis par l'utilisateur de la forme `enum E {...}`
   - [Types struct][StructTypes]
-    * Types définis par l'utilisateur de la forme `struct S {...}`
+    - Types définis par l'utilisateur de la forme `struct S {...}`
   - [Types valeur Nullable][NullableTypes]
-    * Extensions de tous les autres types de valeurs avec une valeur `null`
-* [Types référence][ReferenceTypes]
+    - Extensions de tous les autres types de valeurs avec une valeur `null`
+- [Types référence][ReferenceTypes]
   - [Types classe][ClassTypes]
-    * Classe de base fondamentale de tous les autres types : `object`
-    * Chaînes Unicode : `string`
-    * Types définis par l'utilisateur de la forme `class C {...}`
+    - Classe de base fondamentale de tous les autres types : `object`
+    - Chaînes Unicode : `string`
+    - Types définis par l'utilisateur de la forme `class C {...}`
   - [Types interface][InterfaceTypes]
-    * Types définis par l'utilisateur de la forme `interface I {...}`
+    - Types définis par l'utilisateur de la forme `interface I {...}`
   - [Types de tableaux][ArrayTypes]
-    * Uni et multidimensionnels, par exemple `int[]` et `int[,]`
+    - Uni et multidimensionnels, par exemple `int[]` et `int[,]`
   - [Types délégués][DelegateTypes]
-    * Types définis par l'utilisateur de la forme `delegate int D(...)`
+    - Types définis par l'utilisateur de la forme `delegate int D(...)`
 
 [ValueTypes]: ../language-reference/keywords/value-types-table.md
 [SimpleTypes]: ../language-reference/keywords/value-types.md#simple-types
@@ -89,19 +89,19 @@ Le système des types unifié de C# signifie que les types valeur peuvent deveni
 
 Il existe plusieurs types de *variables* en C#, y compris les champs, les éléments de tableau, les variables locales et les paramètres. Les variables représentent des emplacements de stockage, et chaque variable possède un type qui détermine les valeurs pouvant être stockées dans la variable, comme indiqué ci-dessous.
 
-* Type de valeur n’acceptant pas Null
+- Type de valeur n’acceptant pas Null
   - Une valeur de ce type exact
-* Types valeur Nullable
+- Types valeur Nullable
   - Une valeur `null` ou une valeur de ce type exact
-* object
+- object
   - Une référence `null`, une référence à un objet de tout type référence ou une référence à une valeur boxed de n’importe quel type valeur
-* Type de classe
+- Type de classe
   - Une référence `null`, une référence à une instance de ce type de classe ou une référence à une instance d’une classe dérivée de ce type de classe
-* Type d'interface
+- Type d'interface
   - Une référence `null`, une référence à une instance d’un type de classe qui implémente ce type d’interface ou une référence à une valeur boxed d’un type valeur qui implémente ce type d’interface
-* Type tableau
+- Type tableau
   - Une référence `null`, une référence à une instance de ce type de tableau ou une instance d’un type de tableau compatible
-* Type délégué
+- Type délégué
   - Une référence `null` ou une référence à une instance d’un type délégué compatible
 
 > [!div class="step-by-step"]

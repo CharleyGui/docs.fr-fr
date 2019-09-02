@@ -3,12 +3,12 @@ title: Générer et consommer des flux asynchrones
 description: Ce tutoriel avancé illustre des scénarios où la génération et la consommation de flux asynchrones permet de travailler plus naturellement avec des séquences de données pouvant être générées de façon asynchrone.
 ms.date: 02/10/2019
 ms.custom: mvc
-ms.openlocfilehash: 0fa7c778ca9ce0f0124fcc520dd4de65f2f92ea8
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: cd1159c139f2c885eacf55b8577bea9e79bf0d7a
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59308547"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105864"
 ---
 # <a name="tutorial-generate-and-consume-async-streams-using-c-80-and-net-core-30"></a>Tutoriel : Générer et consommer des flux asynchrones à l’aide de C# 8.0 et de .NET Core 3.0
 
@@ -17,9 +17,9 @@ C# 8.0 introduit des **flux asynchrones**, ce qui permet de modéliser une sourc
 Dans ce tutoriel, vous allez apprendre à :
 
 > [!div class="checklist"]
-> * créer une source de données qui génère une séquence d’éléments de données de façon asynchrone ;
-> * consommer cette source de données de façon asynchrone ;
-> * reconnaître quand l’interface et la source de données nouvelles sont préférables aux séquences de données synchrones précédentes.
+> - créer une source de données qui génère une séquence d’éléments de données de façon asynchrone ;
+> - consommer cette source de données de façon asynchrone ;
+> - reconnaître quand l’interface et la source de données nouvelles sont préférables aux séquences de données synchrones précédentes.
 
 ## <a name="prerequisites"></a>Prérequis
 

@@ -2,15 +2,15 @@
 title: Déduction de tables
 ms.date: 03/30/2017
 ms.assetid: 74a288d4-b8e9-4f1a-b2cd-10df92c1ed1f
-ms.openlocfilehash: 174d305688c7090c163df60a11e233aea24b8f79
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 84cee828f2d3c918a12e449da5b01a3d72d86333
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587362"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203518"
 ---
 # <a name="inferring-tables"></a>Déduction de tables
-Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir d'un document XML, ADO.NET identifie d'abord les éléments XML qui représentent des tables. Les structures XML suivantes donneront une table pour le **DataSet** schéma :  
+Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir d'un document XML, ADO.NET identifie d'abord les éléments XML qui représentent des tables. Les structures XML suivantes aboutissent à une table pour le schéma du **DataSet** :  
   
 - éléments avec attributs ;  
   
@@ -30,9 +30,9 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
   
  Le processus d'inférence produit une table nommée « Element1 ».  
   
- **Jeu de données :** DocumentElement  
+ **Ensemble** DocumentElement  
   
- **Table :** Element1  
+ **Table :** Element1  
   
 |attr1|Element1_Text|  
 |-----------|--------------------|  
@@ -52,15 +52,15 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
   
  Le processus d'inférence produit une table nommée « Element1 ».  
   
- **Jeu de données :** DocumentElement  
+ **Ensemble** DocumentElement  
   
- **Table :** Element1  
+ **Table :** Element1  
   
 |ChildElement1|  
 |-------------------|  
 |Text1|  
   
- L'élément document, ou racine, donne une table déduite s'il comporte des attributs ou des éléments enfants qui sont inférés en tant que colonnes. Si l’élément document ne comporte pas d’attributs et pas d’éléments enfants qui seraient déduits en tant que colonnes, il est déduit en tant qu’un **DataSet**. Examinons, par exemple, le code XML suivant :  
+ L'élément document, ou racine, donne une table déduite s'il comporte des attributs ou des éléments enfants qui sont inférés en tant que colonnes. Si l’élément de document n’a pas d’attributs ni d’éléments enfants qui seraient déduits en tant que colonnes, l’élément est déduit en tant que **DataSet**. Examinons, par exemple, le code XML suivant :  
   
 ```xml  
 <DocumentElement>  
@@ -71,9 +71,9 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
   
  Le processus d'inférence produit une table nommée « DocumentElement ».  
   
- **Jeu de données :** NewDataSet  
+ **Ensemble** NewDataSet  
   
- **Table :** DocumentElement  
+ **Table :** DocumentElement  
   
 |Element1|Element2|  
 |--------------|--------------|  
@@ -87,11 +87,11 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
 </DocumentElement>  
 ```  
   
- Le processus d’inférence produit un **DataSet** nommée « DocumentElement » contenant une table nommée « Element1 ».  
+ Le processus d’inférence produit un **DataSet** nommé «DocumentElement» qui contient une table nommée «Element1».  
   
- **Jeu de données :** DocumentElement  
+ **Ensemble** DocumentElement  
   
- **Table :** Element1  
+ **Table :** Element1  
   
 |attr1|attr2|  
 |-----------|-----------|  
@@ -109,9 +109,9 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
   
  Le processus d'inférence produit une table nommée « Element1 ».  
   
- **Jeu de données :** DocumentElement  
+ **Ensemble** DocumentElement  
   
- **Table :** Element1  
+ **Table :** Element1  
   
 |Element1_Text|  
 |--------------------|  
@@ -120,9 +120,9 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Inférence de la structure relationnelle d’un DataSet à partir de XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)
-- [Chargement d’un DataSet à partir de XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
-- [Chargement des informations de schéma de DataSet à partir de XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)
-- [Utilisation de XML dans un DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
-- [DataSets, DataTables et DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [Inférence de la structure relationnelle d’un DataSet à partir de XML](inferring-dataset-relational-structure-from-xml.md)
+- [Chargement d’un DataSet à partir de XML](loading-a-dataset-from-xml.md)
+- [Chargement des informations de schéma de DataSet à partir de XML](loading-dataset-schema-information-from-xml.md)
+- [Utilisation de XML dans un DataSet](using-xml-in-a-dataset.md)
+- [DataSets, DataTables et DataViews](index.md)
 - [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)

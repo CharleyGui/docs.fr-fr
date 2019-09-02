@@ -2,12 +2,12 @@
 title: Traitement transactionnel
 ms.date: 03/30/2017
 ms.assetid: effdc8e6-accf-41eb-98a5-431603ba218b
-ms.openlocfilehash: dc032746b265a3e781898beb823be0d1bcf1abea
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: de88247e5916ab6e080c4de361efecee0b193e18
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793664"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205907"
 ---
 # <a name="transaction-processing"></a>Traitement transactionnel
 Lorsque vous achetez un livre à une librairie en ligne, vous échangez de l'argent (sous forme de crédit) contre ce livre. Si votre crédit est correct, une série d'opérations connexes garantit la réception de votre livre et le versement de l'argent à la librairie. Cependant, si l'une des opérations de la série échoue lors de l'échange, c'est l'échange dans son intégralité qui échoue. Vous ne recevez pas le livre et la librairie ne perçoit pas votre argent.  
@@ -19,10 +19,10 @@ Lorsque vous achetez un livre à une librairie en ligne, vous échangez de l'arg
  Cette section fournit des informations générales sur le traitement transactionnel et des informations spécifiques sur l'écriture d'applications transactionnelles et de gestionnaires de ressources à l'aide de Microsoft .NET Framework.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Notions de base des transactions](../../../../docs/framework/data/transactions/transaction-fundamentals.md)  
+ [Notions de base des transactions](transaction-fundamentals.md)  
  Présente les concepts et termes de base du traitement transactionnel.  
   
- [Fonctionnalités fournies par System.Transactions](../../../../docs/framework/data/transactions/features-provided-by-system-transactions.md)  
+ [Fonctionnalités fournies par System.Transactions](features-provided-by-system-transactions.md)  
  Explique comment utiliser les fonctionnalités de System.Transactions pour écrire votre propre application transactionnelle.  
   
 ## <a name="reference"></a>Référence  

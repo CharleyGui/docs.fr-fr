@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0b67fab5-1722-4d2b-bfc1-247a75f0f1ee
-ms.openlocfilehash: df03c68193a1068b4bdf0b6ed0923b3bbb8a046a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c6dcc206775866fd9136e4f6f5f038d021d11433
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785409"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204684"
 ---
 # <a name="managing-dataviews"></a>Gestion des DataViews
-Vous pouvez utiliser un objet <xref:System.Data.DataViewManager> pour gérer les paramètres de vue pour toutes les tables d'un objet <xref:System.Data.DataView>. Si vous avez un contrôle que vous souhaitez lier à plusieurs tables, tel qu’une grille qui parcourt des relations, un **DataViewManager** est idéale.  
+Vous pouvez utiliser un objet <xref:System.Data.DataViewManager> pour gérer les paramètres de vue pour toutes les tables d'un objet <xref:System.Data.DataView>. Si vous avez un contrôle que vous souhaitez lier à plusieurs tables, par exemple une grille qui navigue entre les relations, un **DataViewManager** est idéal.  
   
- Le **DataViewManager** contient une collection de <xref:System.Data.DataViewSetting> les objets qui sont utilisées pour définir le paramètre d’affichage des tables dans le <xref:System.Data.DataSet>. Le <xref:System.Data.DataViewSettingCollection> contient un <xref:System.Data.DataViewSetting> objet pour chaque table dans un **DataSet**. Vous pouvez définir la valeur par défaut **ApplyDefaultSort**, **tri**, **RowFilter**, et **RowStateFilter** propriétés de la table référencée par à l’aide de son **DataViewSetting**. Vous pouvez référencer le **DataViewSetting** pour une table particulière par nom ou référence ordinale, ou en passant une référence à cet objet de table spécifique. Vous pouvez accéder à la collection de **DataViewSetting** des objets dans un **DataViewManager** à l’aide de la **DataViewSettings** propriété.  
+ Le **DataViewManager** contient une collection d' <xref:System.Data.DataViewSetting> objets utilisés pour définir le paramètre d’affichage des tables dans le. <xref:System.Data.DataSet> Contient un <xref:System.Data.DataViewSetting> objet pour chaque table d’un **DataSet.** <xref:System.Data.DataViewSettingCollection> Vous pouvez définir les propriétés par défaut **ApplyDefaultSort**, **sort**, **RowFilter**et **RowStateFilter** de la table référencée à l’aide de son **DataViewSetting**. Vous pouvez référencer le **DataViewSetting** pour une table particulière par nom ou référence ordinale, ou en passant une référence à cet objet de table spécifique. Vous pouvez accéder à la collection d’objets **DataViewSetting** dans un **DataViewManager** à l’aide de la propriété **DataViewSettings** .  
   
- Le code suivant exemple remplit un **DataSet** avec SQL Server **Northwind** tables de base de données **clients**, **commandes**et  **Détails des commandes**, crée les relations entre les tables, utilise un **DataViewManager** pour définir la valeur par défaut **DataView** les paramètres et les lie un **DataGrid**  à la **DataViewManager**. L’exemple définit la valeur par défaut **DataView** paramètres pour toutes les tables dans le **DataSet** pour trier par la clé primaire de la table (**ApplyDefaultSort**  =  **true**), puis modifie l’ordre de tri de la **clients** table à trier par **CompanyName**.  
+ L’exemple de code suivant remplit un **DataSet** avec la SQL Server tables de base de données **Northwind** , les **clients, les** **commandes**et les **Détails**des commandes, crée les relations entre les tables, utilise un **DataViewManager** pour Définissez les paramètres de **DataView** par défaut et lie un **DataGrid** au **DataViewManager**. L’exemple définit les paramètres de **DataView** par défaut pour toutes les tables du **jeu de données** afin de les trier en utilisant la clé primaire de la table (**ApplyDefaultSort** = **true**), puis modifie l’ordre de tri de la table **Customers** en Triez par **CompanyName**.  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection to Northwind.  
@@ -125,5 +125,5 @@ grid.SetDataBinding(viewManager, "Customers");
 - <xref:System.Data.DataViewManager>
 - <xref:System.Data.DataViewSetting>
 - <xref:System.Data.DataViewSettingCollection>
-- [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)
+- [DataViews](dataviews.md)
 - [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)

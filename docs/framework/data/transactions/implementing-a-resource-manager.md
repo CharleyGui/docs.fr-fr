@@ -2,19 +2,19 @@
 title: Implémentation d'un gestionnaire des ressources
 ms.date: 03/30/2017
 ms.assetid: d5c153f6-4419-49e3-a5f1-a50ae4c81bf3
-ms.openlocfilehash: f3e29dae095fbe56181cf7b67787c1044efa07ae
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f64a729f49d546dd16c25a2be1f9bd64a2ca8f63
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793703"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205951"
 ---
 # <a name="implementing-a-resource-manager"></a>Implémentation d'un gestionnaire des ressources
 Les ressources utilisées dans une transaction sont managées par un gestionnaire de ressources, dont les actions sont coordonnées par un gestionnaire de transactions. Les gestionnaires de ressources travaillent en coopération avec le gestionnaire de transactions pour fournir à l'application la garantie de l'atomicité et de l'isolation. Microsoft SQL Server, les files d'attente de messages durables et les tables de hachage en mémoire sont des gestionnaires de ressources.  
   
  Les gestionnaires de ressources gèrent des données durables ou volatiles. La durabilité (ou à l'inverse la volatilité) d'un gestionnaire de ressources indique s'il prend en charge la récupération après défaillance. Si un gestionnaire de ressources prend en charge la récupération après défaillance, il conserve les données par stockage durable lors de la Phase1 (préparation). Ainsi, s'il connaît une défaillance, il peut à nouveau s'inscrire à la transaction après récupération et procéder aux actions indiquées par les notifications envoyées par le gestionnaire de transactions. En général, les gestionnaires de ressources volatiles gèrent les ressources volatiles, comme une structure de données en mémoire (par exemple, une table de hachage traitée en mémoire), et les gestionnaires de ressources durables gèrent les ressources qui disposent d'un magasin de stockage plus persistant (par exemple, une base de données ayant un disque comme magasin de stockage).  
   
- Pour qu'une ressource participe à une transaction, elle doit être inscrite à cette transaction. Le <xref:System.Transactions.Transaction> classe définit un ensemble de méthodes dont les noms commencent par **Enlist** qui fournit cette fonctionnalité. Les différentes **Enlist** méthodes correspondent aux différents types d’inscription dont un gestionnaire de ressources peut avoir. En particulier, utilisez les méthodes <xref:System.Transactions.Transaction.EnlistVolatile%2A> pour les ressources volatiles et la méthode <xref:System.Transactions.Transaction.EnlistDurable%2A> pour les ressources durables. Pour une question de simplicité, après avoir décidé d'utiliser la méthode <xref:System.Transactions.Transaction.EnlistDurable%2A> ou la méthode <xref:System.Transactions.Transaction.EnlistVolatile%2A>, selon la prise en charge de la durabilité de la ressource, inscrivez votre ressource pour participer à la validation en deux phases (2PC) en implémentant l'interface <xref:System.Transactions.IEnlistmentNotification> de votre gestionnaire de ressources. Pour plus d’informations sur le protocole 2PC, consultez [validation d’une Transaction dans une phase unique et en plusieurs phases](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md).  
+ Pour qu'une ressource participe à une transaction, elle doit être inscrite à cette transaction. La <xref:System.Transactions.Transaction> classe définit un ensemble de méthodes dont les noms commencent par Enlist qui fournissent cette fonctionnalité. Les différentes méthodes d’enrôle correspondent aux différents types d' **inscription** qu’un gestionnaire de ressources peut avoir. En particulier, utilisez les méthodes <xref:System.Transactions.Transaction.EnlistVolatile%2A> pour les ressources volatiles et la méthode <xref:System.Transactions.Transaction.EnlistDurable%2A> pour les ressources durables. Pour une question de simplicité, après avoir décidé d'utiliser la méthode <xref:System.Transactions.Transaction.EnlistDurable%2A> ou la méthode <xref:System.Transactions.Transaction.EnlistVolatile%2A>, selon la prise en charge de la durabilité de la ressource, inscrivez votre ressource pour participer à la validation en deux phases (2PC) en implémentant l'interface <xref:System.Transactions.IEnlistmentNotification> de votre gestionnaire de ressources. Pour plus d’informations sur 2PC, consultez [validation d’une transaction en une phase unique et en plusieurs phases](committing-a-transaction-in-single-phase-and-multi-phase.md).  
   
  En s'inscrivant, le gestionnaire de ressources s'assure de la réception des rappels du gestionnaire de transactions lors de la validation ou de l'abandon de la transaction. On compte une instance de <xref:System.Transactions.IEnlistmentNotification> par inscription. En général, on trouve une inscription par transaction, mais un gestionnaire de ressources peut choisir de s'inscrire plusieurs fois à la même transaction.  
   
@@ -30,27 +30,27 @@ Les ressources utilisées dans une transaction sont managées par un gestionnair
   
  En résumé, le protocole de validation en deux phases et les gestionnaires de ressources s'associent pour assurer l'atomicité et la durabilité des transactions.  
   
- La classe <xref:System.Transactions.Transaction> fournit également la méthode <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> permettant de s'inscrire à une PSPE (Promotable Single Phase Enlistment). Cela permet à un gestionnaire de ressources durables d'héberger et de « posséder » une transaction qui peut, si nécessaire, être ensuite remontée pour être managée par le MSDTC. Pour plus d’informations, consultez [optimisation à l’aide de la validation à Phase unique et la Notification de Phase unique pouvant être promue](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md).  
+ La classe <xref:System.Transactions.Transaction> fournit également la méthode <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> permettant de s'inscrire à une PSPE (Promotable Single Phase Enlistment). Cela permet à un gestionnaire de ressources durables d'héberger et de « posséder » une transaction qui peut, si nécessaire, être ensuite remontée pour être managée par le MSDTC. Pour plus d’informations, consultez [optimisation à l’aide de la validation à phase unique et de la notification à phase unique pouvant](optimization-spc-and-promotable-spn.md)être promue.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  Les étapes généralement suivies par un gestionnaire de ressources sont détaillées dans les rubriques suivantes.  
   
- [Inscription de ressources comme participants à une transaction](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)  
+ [Inscription de ressources comme participants à une transaction](enlisting-resources-as-participants-in-a-transaction.md)  
   
  Décrit comment inscrire une ressource durable ou volatile à une transaction.  
   
- [Validation d’une transaction en une phase unique et en plusieurs phases](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)  
+ [Validation d’une transaction en une phase unique et en plusieurs phases](committing-a-transaction-in-single-phase-and-multi-phase.md)  
   
  Décrit la façon dont un gestionnaire de ressources répond à la notification de validation et prépare la validation.  
   
- [Exécution de la récupération](../../../../docs/framework/data/transactions/performing-recovery.md)  
+ [Exécution de la récupération](performing-recovery.md)  
   
  Décrit comment un gestionnaire de ressources durables récupère après la défaillance.  
   
- [Niveaux de confiance de sécurité dans l’accès aux ressources](../../../../docs/framework/data/transactions/security-trust-levels-in-accessing-resources.md)  
+ [Niveaux de confiance de sécurité dans l’accès aux ressources](security-trust-levels-in-accessing-resources.md)  
   
  Décrit comment les trois niveaux de confiance de System.Transactions permettent de restreindre l'accès aux types de ressources que <xref:System.Transactions> expose.  
   
- [Optimisation à l’aide de la validation à phase unique et de la notification de phase unique pouvant être promue](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)  
+ [Optimisation à l’aide de la validation à phase unique et de la notification de phase unique pouvant être promue](optimization-spc-and-promotable-spn.md)  
   
  Décrit les pratiques d'optimisation disponibles pour l'implémentations des gestionnaires de ressources.

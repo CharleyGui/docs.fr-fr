@@ -1,12 +1,12 @@
 ---
 title: 'Procédure pas à pas : Rendre un objet persistant avec C#'
 ms.date: 04/26/2018
-ms.openlocfilehash: 85b58e93d667d39800538bb2c29d4ba69146e7f3
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
+ms.openlocfilehash: 88fb589ca2f9a24f861b528bfd601f837e9aac5f
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56975821"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105922"
 ---
 # <a name="walkthrough-persisting-an-object-using-c"></a>Procédure pas à pas : Rendre un objet persistant avec C\#
 
@@ -22,14 +22,14 @@ Dans cette procédure pas à pas, vous créez un objet `Loan` de base et vous st
 
 ## <a name="prerequisites"></a>Prérequis
 
-* Pour générer et exécuter, installez le [SDK .NET Core](https://www.microsoft.com/net/core).
+- Pour générer et exécuter, installez le [SDK .NET Core](https://www.microsoft.com/net/core).
 
-* Installez votre éditeur de code favori, si ce n’est pas déjà fait.
+- Installez votre éditeur de code favori, si ce n’est pas déjà fait.
 
 > [!TIP]
 > Vous avez besoin d’installer un éditeur de code ? Essayez [Visual Studio](https://visualstudio.com/downloads) !
 
-* L’exemple exige C# 7.3. Voir [Sélectionner la version du langage C#](../../../language-reference/configure-language-version.md). 
+- L’exemple exige C# 7.3. Voir [Sélectionner la version du langage C#](../../../language-reference/configure-language-version.md). 
 
 Vous pouvez examiner l’exemple de code en ligne [sur le référentiel GitHub des exemples .NET](https://github.com/dotnet/samples/tree/master/csharp/serialization).
 

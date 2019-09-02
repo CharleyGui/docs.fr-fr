@@ -4,12 +4,12 @@ description: Décrit comment créer un Outil global. Un Outil global est une app
 author: Thraka
 ms.author: adegeo
 ms.date: 08/22/2018
-ms.openlocfilehash: 3d0a64d0473f51d73892cd40633e2982c1130469
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.openlocfilehash: f60e26d14e89b6b7c34b32bf9a114fe4ad691981
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59612665"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70202766"
 ---
 # <a name="create-a-net-core-global-tool-using-the-net-core-cli"></a>Créer un Outil global .NET Core avec la CLI .NET Core
 
@@ -174,7 +174,7 @@ Le paramètre `--add-source` indique à la CLI .NET Core d’utiliser temporaire
 
 Si l’installation réussit, un message s’affiche indiquant la commande utilisée pour appeler l’outil et la version installée, comme dans l’exemple suivant :
 
-```
+```output
 You can invoke the tool using the following command: botsay
 Tool 'botsay' (version '1.0.0') was successfully installed.
 ```

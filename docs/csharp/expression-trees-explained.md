@@ -3,12 +3,12 @@ title: Explication des arborescences d’expressions
 description: En savoir plus sur les arborescences d’expressions et leur utilité dans la conversion d’algorithmes pour une exécution externe et une inspection du code avant son exécution.
 ms.date: 06/20/2016
 ms.assetid: bbcdd339-86eb-4ae5-9911-4c214a39a92d
-ms.openlocfilehash: 3bad826bb58ff361688d3e13497343661e7edbd3
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
+ms.openlocfilehash: c5d4b2ad54fab547567d430f11a31542a11d03f3
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59613419"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104805"
 ---
 # <a name="expression-trees-explained"></a>Explication des arborescences d’expressions
 
@@ -33,11 +33,11 @@ L’expression est `1 + 2`. Il s’agit d’une expression binaire. Plus spécif
 Visuellement, l’instruction dans son ensemble est une arborescence : on peut partir du nœud racine et accéder à chacun des nœuds pour voir le code qui compose l’instruction :
 
 - Instruction de déclaration de variable avec attribution (`var sum = 1 + 2;`)
-  * Déclaration de type de variable implicite (`var sum`)
+  - Déclaration de type de variable implicite (`var sum`)
     - Mot clé var implicite (`var`)
     - Déclaration de nom de variable (`sum`)
-  * Opérateur d’assignation (`=`)
-  * Expression d’addition binaire (`1 + 2`)
+  - Opérateur d’assignation (`=`)
+  - Expression d’addition binaire (`1 + 2`)
     - Opérande gauche (`1`)
     - Opérateur d’addition (`+`)
     - Opérande droit (`2`)

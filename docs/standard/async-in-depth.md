@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 1e38f9d9-8f84-46ee-a15f-199aec4f2e34
-ms.openlocfilehash: 6f1900eaabafe2931d88959bf79bf4ca1f5bc98b
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 91fd37ce329c03b43b5472e4579be7f5ef961738
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666579"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169107"
 ---
 # <a name="async-in-depth"></a>Async en détail
 
@@ -21,8 +21,8 @@ L’écriture de code asynchrone utilisant des E/S et le processeur est simple a
 
 Les tâches sont des constructions utilisées pour implémenter ce que l’on appelle le [modèle de promesses de concurrence](https://en.wikipedia.org/wiki/Futures_and_promises).  En bref, elles vous offrent la « promesse » que le travail sera terminé à un moment ultérieur, ce qui vous permet de coordonner la promesse et une nouvelle API.
 
-* `Task` représente une opération unique qui ne retourne pas de valeur.
-* `Task<T>` représente une opération unique qui retourne une valeur de type `T`.
+- `Task` représente une opération unique qui ne retourne pas de valeur.
+- `Task<T>` représente une opération unique qui retourne une valeur de type `T`.
 
 Il est important de considérer les tâches comme des abstractions de travail effectuées de manière asynchrone et *pas* comme une abstraction sur le modèle de thread. Par défaut, les tâches s’exécutent sur le thread actuel et délèguent le travail au système d’exploitation, comme il convient. Éventuellement, l’API `Task.Run` peut servir à demander explicitement aux tâches de s’exécuter sur un thread distinct.
 
@@ -90,9 +90,9 @@ Bien que les étapes ci-dessus puissent donner l’impression d’un grand nombr
 
 0-1————————————————————————————————————————————————–2-3
 
-* La durée entre les points `0` et `1` représente tout ce qui se passe avant qu’une méthode async cède le contrôle à son appelant.
-* La durée entre les points `1` et `2` représente le temps consacré aux E/S, sans coût de processeur.
-* Enfin, la durée entre les points `2` et `3` représente le temps consacré à rendre le contrôle (et éventuellement une valeur) à la méthode async, moment à partir duquel elle s’exécute à nouveau.
+- La durée entre les points `0` et `1` représente tout ce qui se passe avant qu’une méthode async cède le contrôle à son appelant.
+- La durée entre les points `1` et `2` représente le temps consacré aux E/S, sans coût de processeur.
+- Enfin, la durée entre les points `2` et `3` représente le temps consacré à rendre le contrôle (et éventuellement une valeur) à la méthode async, moment à partir duquel elle s’exécute à nouveau.
 
 ### <a name="what-does-this-mean-for-a-server-scenario"></a>Qu’est-ce que cela signifie dans un scénario de serveur ?
 

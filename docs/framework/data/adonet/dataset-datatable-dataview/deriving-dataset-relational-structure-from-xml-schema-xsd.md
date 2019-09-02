@@ -2,17 +2,17 @@
 title: Dérivation de la structure relationnelle des DataSet à partir du schéma XML (XSD)
 ms.date: 03/30/2017
 ms.assetid: 8f6cd04d-6197-4bc4-9096-8c51c7e4acae
-ms.openlocfilehash: 98c43b6af2913b9737085d2d983b37c6da4c1724
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 29b905c42f15cad4eb8521c4d702b56093982445
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934462"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203779"
 ---
 # <a name="deriving-dataset-relational-structure-from-xml-schema-xsd"></a>Dérivation de la structure relationnelle des DataSet à partir du schéma XML (XSD)
 Cette section propose une vue d'ensemble de la façon dont le schéma relationnel d'un objet `DataSet` est construit à partir d'un document de schéma en langage XSD (XML Schema Definition). En général, pour chaque `complexType` élément enfant d’un élément de schéma, une table est générée dans `DataSet`le. La structure de cette table est déterminée par la définition du type complexe. Les tables sont créées dans `DataSet` le pour les éléments de niveau supérieur dans le schéma. Toutefois, une table est créée uniquement pour un élément de niveau `complexType` supérieur lorsque l' `complexType` élément est imbriqué à l’intérieur `complexType` d’un autre `complexType` élément, auquel cas l’élément imbriqué est mappé à un `DataTable` dans le `DataSet`.  
   
- Pour plus d’informations sur le langage XSD, consultez le World Wide Web Consortium ( [W3C) XML Schema Part 0: Première recommandation](https://www.w3.org/TR/xmlschema-0/), le [schéma XML, partie 1: Structures Recommendation](https://www.w3.org/TR/xmlschema-1/)et le [schéma XML, partie 2: Recommandation](https://www.w3.org/TR/xmlschema-2/)de type de données.  
+ Pour plus d’informations sur le langage XSD, consultez le World Wide Web Consortium ( [W3C) XML Schema Part 0: Première recommandation](https://www.w3.org/TR/xmlschema-0/), le [schéma XML, partie 1: Structures Recommendation](https://www.w3.org/TR/xmlschema-1/)et le [schéma XML, partie 2: Datatypes Recommendation](https://www.w3.org/TR/xmlschema-2/).  
   
  L’exemple suivant illustre un schéma XML où `customers` est l’élément enfant de l' `MyDataSet` élément, qui est un élément de **DataSet** .  
   
@@ -83,17 +83,17 @@ OutOfStateCustomers (CustomerID , CompanyName, Phone)
 ```  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Mappage des contraintes de schéma XML (XSD) aux contraintes de DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
+ [Mappage des contraintes de schéma XML (XSD) aux contraintes de DataSet](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
  Décrit les éléments de schéma XML utilisés pour créer des contraintes de clé étrangère et `DataSet`uniques dans un.  
   
- [Génération de relations de DataSet à partir du schéma XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
+ [Génération de relations de DataSet à partir du schéma XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)  
  Décrit les éléments de schéma XML utilisés pour créer des relations entre des colonnes `DataSet`de table dans un.  
   
- [Contraintes et relations du schéma XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/xml-schema-constraints-and-relationships.md)  
+ [Contraintes et relations du schéma XML](xml-schema-constraints-and-relationships.md)  
  Décrit comment les relations sont créées implicitement lors de l’utilisation d’éléments de schéma XML `DataSet`pour créer des contraintes dans un.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Utilisation de XML dans un DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)  
+ [Utilisation de XML dans un DataSet](using-xml-in-a-dataset.md)  
  Décrit comment charger et conserver la structure et les données relationnelles dans une `DataSet` sous forme de données XML.  
   
 ## <a name="see-also"></a>Voir aussi

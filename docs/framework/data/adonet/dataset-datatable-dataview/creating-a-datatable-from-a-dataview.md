@@ -5,22 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2d45cf41-d8ae-4409-af3e-a96a7e476d85
-ms.openlocfilehash: c70dd0401ea518613a2b51f047de13f6c7270152
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 36839574ae8a8acd1cb56fa82ebcfa6bddb0c97e
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64621185"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203867"
 ---
 # <a name="creating-a-datatable-from-a-dataview"></a>Création d'un DataTable à partir d'un DataView
-Après avoir extrait des données d'une source de données et rempli un objet <xref:System.Data.DataTable> avec les données, vous pouvez trier, filtrer ou limiter d'une autre manière les données retournées sans devoir les extraire de nouveau. La classe <xref:System.Data.DataView> le permet. En outre, si vous avez besoin créer un nouveau <xref:System.Data.DataTable> à partir de la <xref:System.Data.DataView>, vous pouvez utiliser la <xref:System.Data.DataView.ToTable%2A> méthode pour copier toutes les lignes et colonnes ou un sous-ensemble des données dans un nouveau <xref:System.Data.DataTable>. La méthode <xref:System.Data.DataView.ToTable%2A> fournit des surcharges pour :  
+Après avoir extrait des données d'une source de données et rempli un objet <xref:System.Data.DataTable> avec les données, vous pouvez trier, filtrer ou limiter d'une autre manière les données retournées sans devoir les extraire de nouveau. La classe <xref:System.Data.DataView> le permet. En outre, si vous devez créer un <xref:System.Data.DataTable> nouveau à partir de la <xref:System.Data.DataView>, vous pouvez utiliser <xref:System.Data.DataView.ToTable%2A> la méthode pour copier toutes les lignes et les colonnes, ou un sous-ensemble des données <xref:System.Data.DataTable>dans un nouveau. La méthode <xref:System.Data.DataView.ToTable%2A> fournit des surcharges pour :  
   
 - créer un objet <xref:System.Data.DataTable> contenant des colonnes qui sont un sous-ensemble des colonnes de l'objet <xref:System.Data.DataView> ;  
   
-- Créer un <xref:System.Data.DataTable> qui inclut uniquement des lignes distinctes de la <xref:System.Data.DataView>, de façon similaire pour le mot clé DISTINCT dans Transact-SQL.  
+- Créez un <xref:System.Data.DataTable> qui n’inclue que des lignes <xref:System.Data.DataView>distinctes de, de la même façon que le mot clé distinct dans Transact-SQL.  
   
-## <a name="example"></a>Exemple  
- L’exemple d’application console suivant crée un <xref:System.Data.DataTable> qui contient les données à partir de la **Person.Contact** table dans le **AdventureWorks** base de données exemple. Ensuite, l’exemple crée un objet trié et filtré <xref:System.Data.DataView> selon le <xref:System.Data.DataTable>. Après avoir affiché le contenu de la <xref:System.Data.DataTable> et le <xref:System.Data.DataView>, l’exemple crée un nouveau <xref:System.Data.DataTable> à partir de la <xref:System.Data.DataView> en appelant le <xref:System.Data.DataView.ToTable%2A> méthode, en sélectionnant uniquement un sous-ensemble des colonnes disponibles. Pour terminer, l'exemple affiche le contenu du nouvel objet <xref:System.Data.DataTable>.  
+## <a name="example"></a>Exemples  
+ L’exemple d’application console suivant crée <xref:System.Data.DataTable> un qui contient les données de la table **Person. contact** dans l’exemple de base de données **AdventureWorks** . Ensuite, l’exemple crée un trié et filtré <xref:System.Data.DataView> en fonction du. <xref:System.Data.DataTable> Après avoir affiché le contenu du <xref:System.Data.DataTable> <xref:System.Data.DataView>et du, l’exemple crée un nouveau <xref:System.Data.DataTable> à partir <xref:System.Data.DataView> du en appelant <xref:System.Data.DataView.ToTable%2A> la méthode, en sélectionnant uniquement un sous-ensemble des colonnes disponibles. Pour terminer, l'exemple affiche le contenu du nouvel objet <xref:System.Data.DataTable>.  
   
 ```vb  
 Private Sub DemonstrateDataView()  
@@ -208,5 +208,5 @@ Console.WriteLine();
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Data.DataView.ToTable%2A>
-- [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)
+- [DataViews](dataviews.md)
 - [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)

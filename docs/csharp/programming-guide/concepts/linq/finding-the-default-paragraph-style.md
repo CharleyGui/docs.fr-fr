@@ -2,12 +2,12 @@
 title: Recherche du style de paragraphe par défaut (C#)
 ms.date: 07/20/2015
 ms.assetid: be102177-8ab0-444a-b671-7023e555ffdb
-ms.openlocfilehash: 702d3906f51b996f59dcd15067702b6de07c60a5
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 45a3e293a88fc0d7fc6aa70d21d1d3a6a8bb9b13
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594363"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204104"
 ---
 # <a name="finding-the-default-paragraph-style-c"></a>Recherche du style de paragraphe par défaut (C#)
 La première tâche du didacticiel Manipulation d’informations dans un document WordprocessingML consiste à rechercher le style par défaut des paragraphes dans le document.  
@@ -79,7 +79,7 @@ Console.WriteLine("The default style is: {0}", defaultStyle);
 ### <a name="comments"></a>Commentaires  
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 The default style is: Normal  
 ```  
   
@@ -87,4 +87,3 @@ The default style is: Normal
  Dans l'exemple suivant, nous allons créer une requête similaire qui recherche tous les paragraphes d'un document et leurs styles :  
   
 - [Récupération des paragraphes et de leurs styles (C#)](./retrieving-the-paragraphs-and-their-styles.md)  
-  

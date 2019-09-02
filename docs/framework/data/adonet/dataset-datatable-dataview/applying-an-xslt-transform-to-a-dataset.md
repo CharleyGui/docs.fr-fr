@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 09f2e4ee-1d08-4ba8-8936-83394fee319d
-ms.openlocfilehash: 56f6e13763b5230e046c0838892393b3672a54be
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8bff92fe40ec668dfa634c3b97f2f1df238f159b
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937043"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203962"
 ---
 # <a name="applying-an-xslt-transform-to-a-dataset"></a>Application d'une transformation XSLT à un DataSet
 La méthode **WriteXml** de <xref:System.Data.DataSet> vous permet d’écrire le contenu d’un **DataSet** sous forme de données XML. La tâche qui suit généralement consiste à transformer ce XML en un autre format à l'aide de transformations XSL (XSLT). Toutefois, la synchronisation d’un DataSet <xref:System.Xml.XmlDataDocument> avec un objet vous permet d’appliquer une feuille de style XSLT au contenu d’un **DataSet** sans avoir à écrire d’abord le contenu du **DataSet** sous forme de données XML à l’aide de **WriteXml**.  
@@ -59,7 +59,7 @@ La méthode **WriteXml** de <xref:System.Data.DataSet> vous permet d’écrire l
  Le code suivant remplit le **DataSet** et applique la feuille de style XSLT.  
   
 > [!NOTE]
-> Si vous appliquez une feuille de style XSLT à un **jeu de données** qui contient des relations, vous obtiendrez de meilleures performances si vous affectez <xref:System.Data.DataRelation> la valeur **true** à la propriété **Nested** de chaque relation imbriquée. Cela vous permet d'utiliser les feuilles de style XSLT qui implémentent un traitement naturel vertical pour naviguer dans la hiérarchie et transformer les données, au lieu de recourir aux axes de localisation XPath exigeants en performances (par exemple, frère précédent et frère suivant dans les expressions de test de nœud de feuille de style) pour y naviguer. Pour plus d’informations sur les relations imbriquées, consultez [imbrication de DataRelations](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/nesting-datarelations.md).  
+> Si vous appliquez une feuille de style XSLT à un **jeu de données** qui contient des relations, vous obtiendrez de meilleures performances si vous affectez <xref:System.Data.DataRelation> la valeur **true** à la propriété **Nested** de chaque relation imbriquée. Cela vous permet d'utiliser les feuilles de style XSLT qui implémentent un traitement naturel vertical pour naviguer dans la hiérarchie et transformer les données, au lieu de recourir aux axes de localisation XPath exigeants en performances (par exemple, frère précédent et frère suivant dans les expressions de test de nœud de feuille de style) pour y naviguer. Pour plus d’informations sur les relations imbriquées, consultez [imbrication de DataRelations](nesting-datarelations.md).  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -125,5 +125,5 @@ writer.Close();
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Synchronisation DataSet et XmlDataDocument](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)
+- [Synchronisation DataSet et XmlDataDocument](dataset-and-xmldatadocument-synchronization.md)
 - [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)

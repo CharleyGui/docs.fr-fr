@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: fd804176a7579fe7c5e226bf5b4feb457cb2df14
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 9f8c9c47757379d641b821f312b89666456343d4
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68971204"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105463"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Développer des applications ASP.NET Core MVC
 
@@ -43,7 +43,7 @@ Si vous choisissez de générer votre application web à l’aide des pages Razo
 Les applications ASP.NET Core MVC peuvent utiliser des routes conventionnelles, des routes par attributs ou les deux. Les routes conventionnelles sont définies dans le code. Elles spécifient des _conventions_ de routage à l’aide d’une syntaxe semblable à celle de l’exemple ci-dessous :
 
 ```csharp
-app.UseMvc(routes =>;
+app.UseMvc(routes =>
 {
     routes.MapRoute("default","{controller=Home}/{action=Index}/{id?}");
 });
@@ -208,7 +208,7 @@ Outre la prise en charge intégrée d’Areas, vous pouvez utiliser votre propre
 ASP.NET Core utilise des types de convention intégrés pour contrôler son comportement. Vous pouvez modifier ou remplacer ces conventions. Par exemple, vous pouvez créer une convention qui obtient automatiquement le nom de la fonctionnalité pour un contrôleur donné en fonction de son espace de noms (qui correspond généralement au dossier dans lequel se trouve le contrôleur) :
 
 ```csharp
-FeatureConvention : IControllerModelConvention
+public class FeatureConvention : IControllerModelConvention
 {
     public void Apply(ControllerModel controller)
     {
@@ -474,7 +474,7 @@ public class Program
     public static void Main(string[] args)
     {
         StartConnectionAsync();
-        _connection.On("receiveMessage", (arguments) =>;
+        _connection.On("receiveMessage", (arguments) =>
         {
             Console.WriteLine($"{arguments[0]} said: {arguments[1]}");
         });

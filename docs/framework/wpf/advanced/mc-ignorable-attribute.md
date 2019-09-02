@@ -9,12 +9,12 @@ helpviewer_keywords:
 - mc:ProcessContent attribute
 - XAML [WPF], mc:ProcessContent attribute
 ms.assetid: acd9a6ef-b7ca-4146-abb6-60f3b366e9ec
-ms.openlocfilehash: e99ca09d51f3ba6c01b9e400bfba00749faf62b3
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: b68909d94ad8cc5bba75b2c520db82c5ccf1b922
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567440"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206187"
 ---
 # <a name="mcignorable-attribute"></a>mc:Ignorable, attribut
 Spécifie [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] les préfixes d’espaces de noms rencontrés dans un fichier de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] balisage qui peuvent être ignorés par un processeur. L' `mc:Ignorable` attribut prend en charge la compatibilité du balisage pour le [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] mappage d’espace de noms personnalisé et pour le contrôle de version.  
@@ -51,7 +51,7 @@ Spécifie [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] 
 |*ThisElementCanBeIgnored*|Élément qui peut être ignoré par [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] les implémentations de processeur, si le type sous-jacent ne peut pas être résolu.|  
   
 ## <a name="remarks"></a>Notes  
- Le `mc` [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] [!INCLUDE[TLA#tla_mcxmlnsv1](../../../../includes/tlasharptla-mcxmlnsv1-md.md)]préfixe d’espace de noms est la Convention de préfixe recommandée à utiliser lors du mappage de l’espace de noms de compatibilité. [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]  
+ Le `mc` [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] `http://schemas.openxmlformats.org/markup-compatibility/2006`préfixe d’espace de noms est la Convention de préfixe recommandée à utiliser lors du mappage de l’espace de noms de compatibilité. [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)]  
   
  Les éléments ou les attributs où la partie préfixe du nom d’élément `mc:Ignorable` est identifiée comme ne déclenchent pas [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] d’erreurs lorsqu’elles sont traitées par un processeur. Si cet attribut n’a pas pu être résolu en un type sous-jacent ou une construction de programmation, cet élément est ignoré. Notez cependant que les éléments ignorés peuvent toujours générer des erreurs d’analyse supplémentaires pour des spécifications d’éléments supplémentaires qui sont des effets secondaires de cet élément qui ne sont pas traités. Par exemple, un modèle de contenu d’élément particulier peut nécessiter exactement un élément enfant, mais si l’élément enfant spécifié `mc:Ignorable` se trouvait dans un préfixe et que l’élément enfant spécifié n’a pas pu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] être résolu en un type, le processeur peut génère une erreur.  
   
@@ -63,7 +63,7 @@ Spécifie [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] 
   
  Plusieurs préfixes peuvent être spécifiés dans l’attribut, à l’aide d’un ou de plusieurs espaces blancs comme séparateur, `mc:Ignorable="ignore1 ignore2"`par exemple:.  
 
- L' [!INCLUDE[TLA#tla_mcxmlnsv1](../../../../includes/tlasharptla-mcxmlnsv1-md.md)] espace de noms définit d’autres éléments et attributs qui ne sont pas documentés dans cette zone du kit de développement logiciel (SDK). Pour plus d’informations, consultez [spécification de compatibilité du balisage XML](/office/open-xml/introduction-to-markup-compatibility#markup-compatibility-in-the-open-xml-file-formats-specification).  
+ L' `http://schemas.openxmlformats.org/markup-compatibility/2006` espace de noms définit d’autres éléments et attributs qui ne sont pas documentés dans cette zone du kit de développement logiciel (SDK). Pour plus d’informations, consultez [spécification de compatibilité du balisage XML](/office/open-xml/introduction-to-markup-compatibility#markup-compatibility-in-the-open-xml-file-formats-specification).  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -3,12 +3,12 @@ title: Classes et objets dans C# - Visite guidée du langage C#
 description: Novice en matière de langage C# ? Lisez cette présentation des classes, des objets et de l’héritage
 ms.date: 08/10/2016
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
-ms.openlocfilehash: ff83a3198c6c9fb4c4a438d2486614a211c913ec
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: be8e760b19b7ca5305918ecfdbf9ad797d7e76b2
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68971455"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105632"
 ---
 # <a name="classes-and-objects"></a>Classes et objets
 
@@ -32,42 +32,42 @@ Les membres d’une classe sont des membres statiques ou membres d’instance. L
 
 Vous trouverez ci-dessous une vue d’ensemble des types de membres qu'une classe peut contenir.
 
-* Constantes
+- Constantes
   - Valeurs constantes associées à la classe
-* Champs
+- Champs
   - Variables de la classe
-* Méthodes
+- Méthodes
   - Calculs et les actions qui peuvent être effectués par la classe
-* Propriétés
+- Propriétés
   - Actions associées à la lecture et l’écriture des propriétés nommées de la classe
-* Indexeurs
+- Indexeurs
   - Actions liées à l’indexation des instances de la classe comme un tableau
-* Événements
+- Événements
   - Les notifications qui peuvent être générées par la classe
-* Opérateurs
+- Opérateurs
   - Les opérateurs de conversion et d’expression pris en charge par la classe
-* Constructeurs
+- Constructeurs
   - Les actions requises pour initialiser les instances de la classe ou la classe elle-même
-* Finaliseurs
+- Finaliseurs
   - Actions à effectuer avant que les instances de la classe soient abandonnées de façon définitive
-* Types
+- Types
   - Types imbriqués déclarés par la classe
 
 ## <a name="accessibility"></a>Accessibilité
 
 Chaque membre d’une classe a une accessibilité associée, qui contrôle les régions du texte du programme qui sont en mesure d’accéder au membre. Il existe six formes possibles d’accessibilité. Ils sont résumés ci-dessous.
 
-* `public`
+- `public`
   - Accès non limité
-* `protected`
+- `protected`
   - Accès limité à cette classe ou aux classes dérivées de cette classe
-* `internal`
+- `internal`
   - Accès limité à l’assembly actuel (.exe, .dll, etc.)
-* `protected internal`
+- `protected internal`
   - Accès limité à la classe conteneur, aux classes dérivées de la classe conteneur ou aux classes dans le même assembly
-* `private`
+- `private`
   - Accès limité à cette classe
-* `private protected`
+- `private protected`
   - Accès limité à la classe conteneur ou aux classes dérivées du type conteneur dans le même assembly
 
 ## <a name="type-parameters"></a>Paramètres de type

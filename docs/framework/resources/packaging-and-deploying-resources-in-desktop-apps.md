@@ -28,12 +28,12 @@ helpviewer_keywords:
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2d636496599d4419518ce53c956c83f6ae175aa8
-ms.sourcegitcommit: ced0cccf15adfd492f8196cb739f01dde52c9252
+ms.openlocfilehash: 4092d8694bdb896db1332bd73afae3f62bba36cf
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67135658"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105910"
 ---
 # <a name="packaging-and-deploying-resources-in-net-apps"></a>Packager et déployer des ressources dans des applications .NET
 
@@ -141,7 +141,7 @@ La recherche optimisée des assemblys satellites est une fonctionnalité d’abo
 Le processus de secours pour les ressources .NET Core comprend les étapes suivantes :
 
 1. Le runtime tente de charger un assembly satellite pour la culture demandée.
-     * Il recherche un sous-répertoire correspondant à la culture demandée dans le répertoire de l’assembly en cours d’exécution. S’il le trouve, il y recherche un assembly satellite valide pour la culture demandée et le charge.
+     - Il recherche un sous-répertoire correspondant à la culture demandée dans le répertoire de l’assembly en cours d’exécution. S’il le trouve, il y recherche un assembly satellite valide pour la culture demandée et le charge.
 
        > [!NOTE]
        > Sur les systèmes d’exploitation dont le système de fichiers respecte la casse (autrement dit, Linux et macOS), la recherche d’un sous-répertoire du nom de la culture est sensible à la casse. La casse du nom du sous-répertoire doit être identique à celle de <xref:System.Globalization.CultureInfo.Name?displayProperty=nameWithType> (par exemple, `es` ou `es-MX`).
@@ -149,8 +149,8 @@ Le processus de secours pour les ressources .NET Core comprend les étapes suiva
        > [!NOTE]
        > Si le programmeur a dérivé un contexte de chargement d’assembly personnalisé à partir de <xref:System.Runtime.Loader.AssemblyLoadContext>, la situation est complexe. Si l’assembly en cours d’exécution a été chargé dans le contexte personnalisé, le runtime charge l’assembly satellite dans le contexte personnalisé. Ce document ne couvre pas ce processus en détail. Consultez <xref:System.Runtime.Loader.AssemblyLoadContext>.
 
-     * S’il n’a pas trouvé l’assembly satellite, <xref:System.Runtime.Loader.AssemblyLoadContext> déclenche l’événement <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving?displayProperty=nameWithType> pour le signaler. Si vous choisissez de gérer l’événement, votre gestionnaire d’événements peut charger et retourner une référence à l’assembly satellite.
-     * Si l’assembly satellite reste introuvable, AssemblyLoadContext conduit AppDomain à déclencher un événement <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> pour le signaler. Si vous choisissez de gérer l’événement, votre gestionnaire d’événements peut charger et retourner une référence à l’assembly satellite.
+     - S’il n’a pas trouvé l’assembly satellite, <xref:System.Runtime.Loader.AssemblyLoadContext> déclenche l’événement <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving?displayProperty=nameWithType> pour le signaler. Si vous choisissez de gérer l’événement, votre gestionnaire d’événements peut charger et retourner une référence à l’assembly satellite.
+     - Si l’assembly satellite reste introuvable, AssemblyLoadContext conduit AppDomain à déclencher un événement <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> pour le signaler. Si vous choisissez de gérer l’événement, votre gestionnaire d’événements peut charger et retourner une référence à l’assembly satellite.
 
 2. Dès qu’il trouve un assembly satellite, le runtime y recherche la ressource demandée. S’il trouve la ressource dans l’assembly, il l’utilise. S’il ne trouve pas la ressource, il continue la recherche.
 

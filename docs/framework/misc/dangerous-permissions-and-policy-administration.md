@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: 1929e854-23a0-4bb1-94be-e8aa3b609e32
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f79fd3e0678fc0bba0d3074904f9ce9460fc6c20
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ffe4f3e000c80610d5a105dddef90f9cfd51f0dc
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910928"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205590"
 ---
 # <a name="dangerous-permissions-and-policy-administration"></a>Autorisations dangereuses et administration de stratégie
 Plusieurs des opérations protégées pour lesquelles le .NET Framework fournit des autorisations risquent de permettre le contournement du système de sécurité. Ces autorisations dangereuses doivent être accordées uniquement à du code fiable, et seulement en cas de nécessité. Il n’existe généralement aucune défense contre du code malveillant, si ces autorisations sont accordées.  
   
 > [!NOTE]
-> Dans le .NET Framework 4, des modifications importantes ont été apportées à la terminologie et au modèle de sécurité .NET Framework. Pour plus d’informations sur ces modifications, consultez [modifications de sécurité](../../../docs/framework/security/security-changes.md).  
+> Dans le .NET Framework 4, des modifications importantes ont été apportées à la terminologie et au modèle de sécurité .NET Framework. Pour plus d’informations sur ces modifications, consultez [modifications de sécurité](../security/security-changes.md).  
   
  Les autorisations dangereuses sont expliquées dans le tableau suivant.  
   
@@ -32,7 +32,7 @@ Plusieurs des opérations protégées pour lesquelles le .NET Framework fournit 
 |<xref:System.Security.Permissions.SecurityPermissionFlag.SkipVerification>|En l’absence de vérification, le code peut tout faire.|  
 |<xref:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence>|Les preuves invalidées peuvent tromper la stratégie de sécurité.|  
 |<xref:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy>|La modification de la stratégie de sécurité peut permettre de désactiver la sécurité.|  
-|<xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter>|L’utilisation de la sérialisation peut constituer un moyen de contourner les mécanismes d’accessibilité. Pour plus d’informations, consultez [Sécurité et sérialisation](../../../docs/framework/misc/security-and-serialization.md).|  
+|<xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter>|L’utilisation de la sérialisation peut constituer un moyen de contourner les mécanismes d’accessibilité. Pour plus d’informations, consultez [Sécurité et sérialisation](security-and-serialization.md).|  
 |<xref:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal>|La capacité à définir le principal actuel peut permettre de tromper la sécurité basée sur les rôles.|  
 |<xref:System.Security.Permissions.SecurityPermissionFlag.ControlThread>|La manipulation des threads est dangereuse en raison de l’état de sécurité associé aux threads.|  
 |<xref:System.Security.Permissions.ReflectionPermission>||  

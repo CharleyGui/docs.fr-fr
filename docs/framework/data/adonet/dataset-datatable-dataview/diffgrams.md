@@ -2,17 +2,17 @@
 title: DiffGrams
 ms.date: 03/30/2017
 ms.assetid: 037f3991-7bbc-424b-b52e-8b03585d3e34
-ms.openlocfilehash: 2bf736445a041ec678ab30474da51fddfba1773b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b9e6fb4ce1c2c7ee7d081a1cb2106d30960853c7
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934479"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204879"
 ---
 # <a name="diffgrams"></a>DiffGrams
 Un DiffGram est un format XML qui identifie la version actuelle et la version d'origine d'éléments de données. L'objet <xref:System.Data.DataSet> utilise le format DiffGram pour charger son contenu et le rendre persistent, ainsi que pour le sérialiser en vue de son transport via une connexion réseau. Lorsqu’un <xref:System.Data.DataSet> est écrit sous la forme d’un DiffGram, il remplit le DiffGram avec toutes les informations nécessaires pour recréer avec précision le contenu, mais pas le schéma, <xref:System.Data.DataSet>du, y compris les valeurs de colonne de l' **original** et **du** Versions de ligne actuelles, informations sur les erreurs de ligne et ordre des lignes.  
   
- Lors de l'envoi et de l'extraction d'un objet <xref:System.Data.DataSet> à partir d'un service Web XML, le format DiffGram est implicitement utilisé. En outre, lors du chargement du contenu d' <xref:System.Data.DataSet> un à partir d’un fichier XML à l’aide de la méthode **ReadXml** , ou lors de l’écriture du contenu d’un <xref:System.Data.DataSet> fichier dans XML à l’aide de la méthode **WriteXml** , vous pouvez spécifier que le contenu doit être lu ou écrit en tant que DiffGram. Pour plus d’informations, consultez [chargement d’un DataSet à partir de XML et écriture du contenu d’un](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) [DataSet en tant que données XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md).  
+ Lors de l'envoi et de l'extraction d'un objet <xref:System.Data.DataSet> à partir d'un service Web XML, le format DiffGram est implicitement utilisé. En outre, lors du chargement du contenu d' <xref:System.Data.DataSet> un à partir d’un fichier XML à l’aide de la méthode **ReadXml** , ou lors de l’écriture du contenu d’un <xref:System.Data.DataSet> fichier dans XML à l’aide de la méthode **WriteXml** , vous pouvez spécifier que le contenu doit être lu ou écrit en tant que DiffGram. Pour plus d’informations, consultez [chargement d’un DataSet à partir de XML et écriture du contenu d’un](loading-a-dataset-from-xml.md) [DataSet en tant que données XML](writing-dataset-contents-as-xml-data.md).  
   
  Si le format DiffGram est principalement utilisé par le .NET Framework en tant que format de sérialisation pour le contenu d'un objet <xref:System.Data.DataSet>, vous pouvez aussi l'utiliser pour modifier des données dans les tables d'une base de données Microsoft SQL Server.  
   
@@ -133,8 +133,8 @@ Un DiffGram est un format XML qui identifie la version actuelle et la version d'
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation de XML dans un DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
-- [Chargement d’un DataSet à partir de XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
-- [Écriture du contenu d’un DataSet comme données XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)
-- [DataSets, DataTables et DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [Utilisation de XML dans un DataSet](using-xml-in-a-dataset.md)
+- [Chargement d’un DataSet à partir de XML](loading-a-dataset-from-xml.md)
+- [Écriture du contenu d’un DataSet comme données XML](writing-dataset-contents-as-xml-data.md)
+- [DataSets, DataTables et DataViews](index.md)
 - [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)

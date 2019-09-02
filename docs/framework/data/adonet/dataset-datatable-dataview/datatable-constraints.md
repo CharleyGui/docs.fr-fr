@@ -5,35 +5,35 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 27c9f2fd-f64d-4b4e-bbf6-1d24f47067cb
-ms.openlocfilehash: 254f486fa19d8af30759d9a9fd6642a1a40e82a2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 68b99e834428261d59c5fb27277b24eb0f6e77e4
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034357"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205057"
 ---
 # <a name="datatable-constraints"></a>Contraintes de DataTable
-Vous pouvez utiliser des contraintes pour appliquer des restrictions sur les données dans un objet <xref:System.Data.DataTable> afin de conserver l'intégrité des données. Une contrainte est une règle automatique, appliquée à une ou plusieurs colonnes en relation, qui détermine l'action à réaliser lorsque la valeur d'une ligne est modifiée. Les contraintes sont appliquées lorsque le `System.Data.DataSet.EnforceConstraints` propriété de la <xref:System.Data.DataSet> est **true**. Pour obtenir un exemple de code montrant comment définir la propriété `EnforceConstraints`, consultez la rubrique de référence <xref:System.Data.DataSet.EnforceConstraints%2A>.  
+Vous pouvez utiliser des contraintes pour appliquer des restrictions sur les données dans un objet <xref:System.Data.DataTable> afin de conserver l'intégrité des données. Une contrainte est une règle automatique, appliquée à une ou plusieurs colonnes en relation, qui détermine l'action à réaliser lorsque la valeur d'une ligne est modifiée. Les contraintes sont appliquées lorsque la `System.Data.DataSet.EnforceConstraints` propriété <xref:System.Data.DataSet> de a la **valeur true**. Pour obtenir un exemple de code montrant comment définir la propriété `EnforceConstraints`, consultez la rubrique de référence <xref:System.Data.DataSet.EnforceConstraints%2A>.  
   
- Il y a deux types de contraintes dans ADO.NET : la <xref:System.Data.ForeignKeyConstraint> et la <xref:System.Data.UniqueConstraint>. Par défaut, les deux contraintes sont créées automatiquement lorsque vous créez une relation entre deux ou plusieurs tables en ajoutant un <xref:System.Data.DataRelation> à la **DataSet**. Toutefois, vous pouvez désactiver ce comportement en spécifiant **createConstraints** = **false** lors de la création de la relation.  
+ Il y a deux types de contraintes dans ADO.NET : la <xref:System.Data.ForeignKeyConstraint> et la <xref:System.Data.UniqueConstraint>. Par défaut, les deux contraintes sont créées automatiquement lorsque vous créez une relation entre deux tables ou plus en ajoutant <xref:System.Data.DataRelation> un au **DataSet**. Toutefois, vous pouvez désactiver ce comportement en spécifiant **createConstraints** = **false** lors de la création de la relation.  
   
 ## <a name="foreignkeyconstraint"></a>ForeignKeyConstraint  
- Un **ForeignKeyConstraint** applique des règles sur le mode de propagation des mises à jour et suppressions vers les tables associées. Par exemple, si une valeur dans une ligne d’une table est mise à jour ou supprimée et cette même valeur est également utilisée dans une ou plusieurs tables connexes, un **ForeignKeyConstraint** détermine ce qui se passe dans les tables associées.  
+ Un **ForeignKeyConstraint** applique des règles sur la façon dont les mises à jour et les suppressions des tables associées sont propagées. Par exemple, si une valeur dans une ligne d’une table est mise à jour ou supprimée et que cette même valeur est également utilisée dans une ou plusieurs tables associées, un **ForeignKeyConstraint** détermine ce qui se passe dans les tables associées.  
   
- Le <xref:System.Data.ForeignKeyConstraint.DeleteRule%2A> et <xref:System.Data.ForeignKeyConstraint.UpdateRule%2A> propriétés de la **ForeignKeyConstraint** définissent l’action à entreprendre lorsque l’utilisateur tente de supprimer ou mettre à jour une ligne dans une table associée. Le tableau suivant décrit les différents paramètres disponibles pour le **DeleteRule** et **UpdateRule** propriétés de la **ForeignKeyConstraint**.  
+ Les <xref:System.Data.ForeignKeyConstraint.DeleteRule%2A> propriétés <xref:System.Data.ForeignKeyConstraint.UpdateRule%2A> et du **ForeignKeyConstraint** définissent l’action à entreprendre lorsque l’utilisateur tente de supprimer ou de mettre à jour une ligne dans une table associée. Le tableau suivant décrit les différents paramètres disponibles pour les propriétés **DeleteRule** et **UpdateRule** de **ForeignKeyConstraint**.  
   
 |Paramètre de règle|Description|  
 |------------------|-----------------|  
 |**Cascade**|Supprime ou met à jour les lignes connexes.|  
-|**SetNull**|Définissez les valeurs des lignes connexes **DBNull**.|  
+|**SetNull**|Définissez les valeurs des lignes connexes sur **DBNull**.|  
 |**SetDefault**|Définit les valeurs des lignes connexes sur la valeur par défaut.|  
 |**Aucun**|N'effectue aucune action sur les lignes connexes. Il s'agit de la valeur par défaut.|  
   
- Un **ForeignKeyConstraint** peuvent limiter, ainsi que les propager, modifications apportées à des colonnes connexes. En fonction des propriétés définies pour le **ForeignKeyConstraint** d’une colonne, si le **EnforceConstraints** propriété de la **DataSet** est **true**, certaines opérations réalisées dans la ligne parente entraîne une exception. Par exemple, si le **DeleteRule** propriété de la **ForeignKeyConstraint** est **aucun**, une ligne parente ne peut pas être supprimée s’il a des lignes enfants.  
+ Un **ForeignKeyConstraint** peut restreindre, ainsi que propager, les modifications apportées aux colonnes associées. En fonction des propriétés définies pour le **ForeignKeyConstraint** d’une colonne, si la propriété **EnforceConstraints** du jeu de **données** a la **valeur true**, l’exécution de certaines opérations sur la ligne parente entraîne une exception. Par exemple, si la propriété **DeleteRule** de **ForeignKeyConstraint** a la valeur **None**, une ligne parente ne peut pas être supprimée si elle contient des lignes enfants.  
   
- Vous pouvez créer une contrainte de clé étrangère entre des colonnes uniques ou entre un tableau de colonnes à l’aide de la **ForeignKeyConstraint** constructeur. Passer résultant **ForeignKeyConstraint** de l’objet à la **ajouter** (méthode) de la table **contraintes** propriété, qui est un **ConstraintCollection**. Vous pouvez également passer des arguments de constructeur à plusieurs surcharges de la **ajouter** méthode d’un **ConstraintCollection** pour créer un **ForeignKeyConstraint**.  
+ Vous pouvez créer une contrainte de clé étrangère entre des colonnes uniques ou entre un tableau de colonnes à l’aide du constructeur **ForeignKeyConstraint** . Transmettez l’objet **ForeignKeyConstraint** résultant à la méthode **Add** de la propriété Constraints de la table, qui est un **ConstraintCollection**. Vous pouvez également passer des arguments de constructeur à plusieurs surcharges de la méthode **Add** d’un **ConstraintCollection** pour créer un **ForeignKeyConstraint**.  
   
- Lorsque vous créez un **ForeignKeyConstraint**, vous pouvez passer le **DeleteRule** et **UpdateRule** valeurs au constructeur en tant qu’arguments, ou vous peuvent les définir en tant que propriétés en tant que dans le exemple (où le **DeleteRule** a la valeur **aucun**).  
+ Lors de la création d’un **ForeignKeyConstraint**, vous pouvez passer les valeurs de **DeleteRule** et **UpdateRule** comme arguments au constructeur, ou vous pouvez les définir comme des propriétés comme dans l’exemple suivant (où la valeur **DeleteRule** est définie sur  **Aucun**).  
   
 ```vb  
 Dim custOrderFK As ForeignKeyConstraint = New ForeignKeyConstraint("CustOrderFK", _  
@@ -54,9 +54,9 @@ custDS.Tables["OrdersTable"].Constraints.Add(custOrderFK);
 ```  
   
 ### <a name="acceptrejectrule"></a>AcceptRejectRule  
- Modifications apportées aux lignes peuvent être acceptées à l’aide de la **AcceptChanges** méthode ou annulées à l’aide la **RejectChanges** méthode de la **DataSet**, **DataTable**, ou **DataRow**. Quand un **DataSet** contient **ForeignKeyConstraints**, l’appel la **AcceptChanges** ou **RejectChanges** méthodes applique le  **AcceptRejectRule**. Le **AcceptRejectRule** propriété de la **ForeignKeyConstraint** détermine l’action qui sera effectuée sur les enfants des lignes lorsque **AcceptChanges** ou  **RejectChanges** est appelée sur la ligne parente.  
+ Les modifications apportées aux lignes peuvent être acceptées à l’aide de la méthode **AcceptChanges** ou annulées à l’aide de la méthode **RejectChanges** du **DataSet**, du **DataTable**ou de **DataRow**. Lorsqu’un **jeu de données** contient des **ForeignKeyConstraints**, l’appel des méthodes **AcceptChanges** ou **RejectChanges** applique la méthode **AcceptRejectRule**. La propriété **AcceptRejectRule** de **ForeignKeyConstraint** détermine l’action qui sera entreprise sur les lignes enfants lorsque **AcceptChanges** ou **RejectChanges** est appelé sur la ligne parente.  
   
- Le tableau suivant répertorie les paramètres disponibles pour le **AcceptRejectRule**.  
+ Le tableau suivant répertorie les paramètres disponibles pour **AcceptRejectRule**.  
   
 |Paramètre de règle|Description|  
 |------------------|-----------------|  
@@ -70,9 +70,9 @@ custDS.Tables["OrdersTable"].Constraints.Add(custOrderFK);
  [!code-vb[DataWorks Data.AcceptRejectRule#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks Data.AcceptRejectRule/VB/source.vb#1)]  
   
 ## <a name="uniqueconstraint"></a>UniqueConstraint  
- Le **UniqueConstraint** objet, qui peut être assigné à une seule colonne ou à un tableau de colonnes dans un **DataTable**, garantit que toutes les données dans l’ou les colonnes spécifiées sont uniques pour chaque ligne. Vous pouvez créer une contrainte unique pour une colonne ou un tableau de colonnes à l’aide de la **UniqueConstraint** constructeur. Passer résultant **UniqueConstraint** de l’objet à la **ajouter** (méthode) de la table **contraintes** propriété, qui est un **ConstraintCollection**. Vous pouvez également passer des arguments de constructeur à plusieurs surcharges de la **ajouter** méthode d’un **ConstraintCollection** pour créer un **UniqueConstraint**. Lorsque vous créez un **UniqueConstraint** pour une ou plusieurs colonnes, vous pouvez spécifier si l’ou les colonnes sont une clé primaire.  
+ L’objet **UniqueConstraint** , qui peut être assigné à une colonne unique ou à un tableau de colonnes dans un **DataTable**, garantit que toutes les données de la colonne ou des colonnes spécifiées sont uniques par ligne. Vous pouvez créer une contrainte unique pour une colonne ou un tableau de colonnes à l’aide du constructeur **UniqueConstraint** . Transmettez l’objet **UniqueConstraint** résultant à la méthode **Add** de la propriété Constraints de la table, qui est un **ConstraintCollection**. Vous pouvez également passer des arguments de constructeur à plusieurs surcharges de la méthode **Add** d’un **ConstraintCollection** pour créer un **UniqueConstraint**. Lorsque vous créez un **UniqueConstraint** pour une ou plusieurs colonnes, vous pouvez éventuellement spécifier si la ou les colonnes sont une clé primaire.  
   
- Vous pouvez également créer une contrainte unique pour une colonne en définissant le **Unique** propriété de la colonne à **true**. Vous pouvez également définir le **Unique** propriété d’une seule colonne à **false** supprime toute contrainte qui peut-être exister. Lorsque vous définissez une ou plusieurs colonnes comme clé primaire d'une table, une contrainte unique est automatiquement créée pour les colonnes spécifiées. Si vous supprimez une colonne à partir de la **PrimaryKey** propriété d’un **DataTable**, le **UniqueConstraint** est supprimé.  
+ Vous pouvez également créer une contrainte unique pour une colonne en attribuant la **valeur true**à la propriété **unique** de la colonne. Sinon, l’affectation de la **valeur false** à la propriété **unique** d’une seule colonne supprime toute contrainte unique qui peut exister. Lorsque vous définissez une ou plusieurs colonnes comme clé primaire d'une table, une contrainte unique est automatiquement créée pour les colonnes spécifiées. Si vous supprimez une colonne de la propriété **PrimaryKey** d’un **DataTable**, **UniqueConstraint** est supprimé.  
   
  L’exemple suivant crée un **UniqueConstraint** pour deux colonnes d’un **DataTable**.  
   
@@ -98,6 +98,6 @@ custDS.Tables["Customers"].Constraints.Add(custUnique);
 - <xref:System.Data.DataTable>
 - <xref:System.Data.ForeignKeyConstraint>
 - <xref:System.Data.UniqueConstraint>
-- [Définition de schéma de DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-schema-definition.md)
-- [DataSets, DataTables et DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [Définition de schéma de DataTable](datatable-schema-definition.md)
+- [DataSets, DataTables et DataViews](index.md)
 - [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)

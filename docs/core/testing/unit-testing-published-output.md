@@ -5,28 +5,28 @@ author: kendrahavens
 ms.author: kehavens
 ms.date: 10/18/2017
 ms.custom: seodec18
-ms.openlocfilehash: 660b966c6d02353b855e5728094083042a561558
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 9ac03053bc762d0176e087545871ca8a145cd41e
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59126085"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168295"
 ---
 # <a name="test-published-output-with-dotnet-vstest"></a>Tester la sortie publiée avec dotnet vstest
 
 Vous pouvez exécuter des tests sur la sortie déjà publiée à l’aide de la commande `dotnet vstest`. Cela s’applique aux tests sur xUnit, MSTest et NUnit. Recherchez simplement le fichier DLL qui faisait partie de votre sortie publiée et exécutez :
 
-```
+```console
 dotnet vstest <MyPublishedTests>.dll
 ```
 
 où `<MyPublishedTests>` est le nom de votre projet de test publié.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Les commandes ci-dessous montrent des tests en cours d’exécution sur une DLL publiée.
 
-```
+```console
 dotnet new mstest -o MyProject.Tests
 cd MyProject.Tests
 dotnet publish -o out

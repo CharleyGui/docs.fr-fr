@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2881ef5b4cbc5850fde64fc68640021ebf42df43
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 964c788c5fc1ac791ed3ddd20c9c5c972d07b2c1
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666464"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106886"
 ---
 # <a name="implementing-a-dispose-method"></a>Implémentation d’une méthode Dispose
 
@@ -26,12 +26,12 @@ Le modèle pour supprimer un objet, dénommé [modèle de suppression](../../../
   
 Le modèle de suppression comporte deux variantes :  
   
-* Vous encapsulez chaque ressource non managée utilisée par un type dans un handle sécurisé (autrement dit, dans une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>). Dans ce cas, vous implémentez l'interface <xref:System.IDisposable> et une méthode `Dispose(Boolean)` supplémentaire. Il s'agit de la variante recommandée. Elle ne requiert pas le remplacement de la méthode <xref:System.Object.Finalize%2A?displayProperty=nameWithType>.  
+- Vous encapsulez chaque ressource non managée utilisée par un type dans un handle sécurisé (autrement dit, dans une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>). Dans ce cas, vous implémentez l'interface <xref:System.IDisposable> et une méthode `Dispose(Boolean)` supplémentaire. Il s'agit de la variante recommandée. Elle ne requiert pas le remplacement de la méthode <xref:System.Object.Finalize%2A?displayProperty=nameWithType>.  
   
   > [!NOTE]
   > L'espace de noms <xref:Microsoft.Win32.SafeHandles?displayProperty=nameWithType> fournit un ensemble de classes dérivées de <xref:System.Runtime.InteropServices.SafeHandle>, qui sont répertoriées dans la section [Utilisation des handles sécurisés](#SafeHandles). Si vous ne parvenez pas à trouver une classe qui convient pour libérer votre ressource non managée, vous pouvez implémenter votre propre sous-classe de <xref:System.Runtime.InteropServices.SafeHandle>.  
   
-* Vous implémentez l'interface <xref:System.IDisposable> et une méthode `Dispose(Boolean)` supplémentaire, puis vous remplacez la méthode <xref:System.Object.Finalize%2A?displayProperty=nameWithType>. Vous devez remplacer <xref:System.Object.Finalize%2A> pour vous assurer que les ressources non managées sont supprimées si votre implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> n'est pas appelée par un consommateur de votre type. Si vous utilisez la technique recommandée présentée dans le point précédent, la classe <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> effectue cette opération pour vous.  
+- Vous implémentez l'interface <xref:System.IDisposable> et une méthode `Dispose(Boolean)` supplémentaire, puis vous remplacez la méthode <xref:System.Object.Finalize%2A?displayProperty=nameWithType>. Vous devez remplacer <xref:System.Object.Finalize%2A> pour vous assurer que les ressources non managées sont supprimées si votre implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> n'est pas appelée par un consommateur de votre type. Si vous utilisez la technique recommandée présentée dans le point précédent, la classe <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> effectue cette opération pour vous.  
   
 Pour que les ressources soient toujours assurées d'être correctement nettoyées, une méthode <xref:System.IDisposable.Dispose%2A> doit pouvoir être appelée à plusieurs reprises sans lever d'exception.  
   
@@ -42,9 +42,9 @@ L'exemple de code indiqué pour la méthode <xref:System.GC.KeepAlive%2A?display
 
 L'interface <xref:System.IDisposable> requiert l'implémentation d'une méthode unique sans paramètre, <xref:System.IDisposable.Dispose%2A>. Toutefois, le modèle de suppression requiert deux méthodes `Dispose` à implémenter :  
   
-* Implémentation non virtuelle publique de (`NonInheritable` en Visual Basic) <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> qui n'a aucun paramètre.  
+- Implémentation non virtuelle publique de (`NonInheritable` en Visual Basic) <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> qui n'a aucun paramètre.  
   
-* Méthode virtuelle (`Overridable` en Visual Basic) `Dispose` dont la signature est :  
+- Méthode virtuelle (`Overridable` en Visual Basic) `Dispose` dont la signature est :  
   
   [!code-csharp[Conceptual.Disposable#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/dispose1.cs#8)]
   [!code-vb[Conceptual.Disposable#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/dispose1.vb#8)]  
@@ -64,9 +64,9 @@ Dans la seconde surcharge, le paramètre *disposing* est un <xref:System.Boolean
   
 Le corps de la méthode se compose de deux blocs de code :  
   
-* Un bloc qui libère les ressources non managées. Ce bloc s'exécute indépendamment de la valeur du paramètre `disposing`.  
+- Un bloc qui libère les ressources non managées. Ce bloc s'exécute indépendamment de la valeur du paramètre `disposing`.  
   
-* Un bloc conditionnel qui libère les ressources managées. Ce bloc s'exécute si la valeur de `disposing` est `true`. Les ressources managées qu'il libère peuvent inclure :  
+- Un bloc conditionnel qui libère les ressources managées. Ce bloc s'exécute si la valeur de `disposing` est `true`. Les ressources managées qu'il libère peuvent inclure :  
   
   **Objets managés qui implémentent <xref:System.IDisposable>.** Le bloc conditionnel peut être utilisé pour appeler leur implémentation de <xref:System.IDisposable.Dispose%2A>. Si vous avez utilisé un handle sécurisé pour encapsuler votre ressource non managée, vous devez appeler l'implémentation de <xref:System.Runtime.InteropServices.SafeHandle.Dispose%28System.Boolean%29?displayProperty=nameWithType> ici.  
   
@@ -81,11 +81,11 @@ Si vous implémentez le modèle de suppression d’une classe de base, vous deve
 > [!IMPORTANT]
 > Vous devez implémenter ce modèle pour toutes les classes de base qui implémentent <xref:System.IDisposable.Dispose> et qui ne sont pas `sealed` (`NotInheritable` en Visual Basic).  
   
-* Une implémentation de <xref:System.IDisposable.Dispose%2A> qui appelle la méthode `Dispose(Boolean)`.  
+- Une implémentation de <xref:System.IDisposable.Dispose%2A> qui appelle la méthode `Dispose(Boolean)`.  
   
-* Une méthode `Dispose(Boolean)` qui effectue le travail réel de libération des ressources.  
+- Une méthode `Dispose(Boolean)` qui effectue le travail réel de libération des ressources.  
   
-* Une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> qui encapsule votre ressource managée (recommandée) ou une substitution de la méthode <xref:System.Object.Finalize%2A?displayProperty=nameWithType>. La classe <xref:System.Runtime.InteropServices.SafeHandle> fournit un finaliseur qui vous permet de ne pas avoir à en coder un.  
+- Une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> qui encapsule votre ressource managée (recommandée) ou une substitution de la méthode <xref:System.Object.Finalize%2A?displayProperty=nameWithType>. La classe <xref:System.Runtime.InteropServices.SafeHandle> fournit un finaliseur qui vous permet de ne pas avoir à en coder un.  
   
 Voici le modèle général d’implémentation du modèle de suppression d’une classe de base qui utilise un handle sécurisé.  
   
@@ -107,9 +107,9 @@ Voici le modèle général d’implémentation du modèle de suppression d’une
 
 Une classe dérivée d'une classe qui implémente l'interface <xref:System.IDisposable> ne doit pas implémenter <xref:System.IDisposable>, car l'implémentation de la classe de base de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> est héritée par les classes dérivées. À la place, pour implémenter le modèle de suppression d’une classe dérivée, vous fournissez ce qui suit :  
   
-* Une méthode `protected Dispose(Boolean)` qui substitue la méthode de la classe de base et effectue le travail réel de libération des ressources de la classe dérivée. Cette méthode doit également appeler la méthode `Dispose(Boolean)` de la classe de base et lui passer son état disposing pour l’argument.  
+- Une méthode `protected Dispose(Boolean)` qui substitue la méthode de la classe de base et effectue le travail réel de libération des ressources de la classe dérivée. Cette méthode doit également appeler la méthode `Dispose(Boolean)` de la classe de base et lui passer son état disposing pour l’argument.  
   
-* Une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> qui encapsule votre ressource managée (recommandée) ou une substitution de la méthode <xref:System.Object.Finalize%2A?displayProperty=nameWithType>. La classe <xref:System.Runtime.InteropServices.SafeHandle> fournit un finaliseur qui vous permet de ne pas avoir à en coder un. Si vous fournissez un finaliseur, il doit appeler la surcharge `Dispose(Boolean)` avec un argument *disposing* égal à `false`.  
+- Une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> qui encapsule votre ressource managée (recommandée) ou une substitution de la méthode <xref:System.Object.Finalize%2A?displayProperty=nameWithType>. La classe <xref:System.Runtime.InteropServices.SafeHandle> fournit un finaliseur qui vous permet de ne pas avoir à en coder un. Si vous fournissez un finaliseur, il doit appeler la surcharge `Dispose(Boolean)` avec un argument *disposing* égal à `false`.  
   
 Voici le modèle général d’implémentation du modèle de suppression d’une classe dérivée qui utilise un handle sécurisé :  
   
@@ -134,15 +134,15 @@ L’écriture de code pour le finaliseur d’un objet est une tâche complexe qu
   
 Les classes dérivées de la classe <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> simplifient les problèmes de durée de vie des objets en assignant et en libérant des handles sans interruption. Elles contiennent un finaliseur critique dont le fonctionnement pendant le déchargement d'un domaine d'application est garanti. Pour plus d'informations sur les avantages de l'utilisation d'un handle sécurisé, consultez <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>. Les classes dérivées suivantes de l'espace de noms <xref:Microsoft.Win32.SafeHandles> fournissent des handles sécurisés :  
   
-* La classe <xref:Microsoft.Win32.SafeHandles.SafeFileHandle>, <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedFileHandle> et <xref:Microsoft.Win32.SafeHandles.SafePipeHandle>, pour les fichiers, les fichiers mappés en mémoire et les canaux.  
+- La classe <xref:Microsoft.Win32.SafeHandles.SafeFileHandle>, <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedFileHandle> et <xref:Microsoft.Win32.SafeHandles.SafePipeHandle>, pour les fichiers, les fichiers mappés en mémoire et les canaux.  
   
-* La classe <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle>, pour les vues de la mémoire.  
+- La classe <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle>, pour les vues de la mémoire.  
   
-* Les classes <xref:Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle>, <xref:Microsoft.Win32.SafeHandles.SafeNCryptProviderHandle> et <xref:Microsoft.Win32.SafeHandles.SafeNCryptSecretHandle> pour les constructions de chiffrement.  
+- Les classes <xref:Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle>, <xref:Microsoft.Win32.SafeHandles.SafeNCryptProviderHandle> et <xref:Microsoft.Win32.SafeHandles.SafeNCryptSecretHandle> pour les constructions de chiffrement.  
   
-* La classe <xref:Microsoft.Win32.SafeHandles.SafeRegistryHandle> pour les clés de Registre.  
+- La classe <xref:Microsoft.Win32.SafeHandles.SafeRegistryHandle> pour les clés de Registre.  
   
-* La classe <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle>, pour les handles d'attente.  
+- La classe <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle>, pour les handles d'attente.  
   
 <a name="base"></a>   
 ## <a name="using-a-safe-handle-to-implement-the-dispose-pattern-for-a-base-class"></a>Utilisation d’un handle sécurisé pour implémenter le modèle de suppression d’une classe de base

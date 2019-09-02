@@ -2,12 +2,12 @@
 title: Optimisation à l'aide de la validation à phase unique et de la notification de phase unique pouvant être promue
 ms.date: 03/30/2017
 ms.assetid: 57beaf1a-fb4d-441a-ab1d-bc0c14ce7899
-ms.openlocfilehash: 73340f5f65de1d743e046cf669258ab5f6c66298
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f486315b8a8c90e6616ca95fb6be4b2ae3719b7e
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61793625"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205897"
 ---
 # <a name="optimization-using-single-phase-commit-and-promotable-single-phase-notification"></a>Optimisation à l'aide de la validation à phase unique et de la notification de phase unique pouvant être promue
 
@@ -32,9 +32,9 @@ Si la transaction <xref:System.Transactions> ne nécessite jamais de remontée, 
 Si la transaction <xref:System.Transactions> nécessite d'être remontée (pour prendre en charge plusieurs gestionnaires de ressources par exemple), <xref:System.Transactions> en informe le gestionnaire de ressources en appelant la méthode <xref:System.Transactions.ITransactionPromoter.Promote%2A> via l'interface <xref:System.Transactions.ITransactionPromoter>, à partir de laquelle l'interface <xref:System.Transactions.IPromotableSinglePhaseNotification> est dérivée. Le gestionnaire de ressources convertit ensuite la transaction en interne, à partir d'une transaction locale (ne nécessitant aucune connexion) en un objet de transaction pouvant participer à une transaction DTC, et l'associe au travail déjà effectué. Lors de la demande de validation de la transaction, le gestionnaire de transactions continue d'envoyer la notification <xref:System.Transactions.IPromotableSinglePhaseNotification.SinglePhaseCommit%2A> au gestionnaire de ressources, qui valide la transaction distribuée créée lors de la remontée.
 
 > [!NOTE]
-> Le **TransactionCommitted** traces (qui sont générées lorsqu’une validation est appelée sur la transaction remontée) contiennent l’ID d’activité de la transaction DTC.
+> Les traces **TransactionCommitted** (générées lorsqu’une validation est appelée sur la transaction remontée) contiennent l’ID d’activité de la transaction DTC.
 
-Pour plus d’informations sur la remontée de la gestion, consultez [Transaction Management Escalation](../../../../docs/framework/data/transactions/transaction-management-escalation.md).
+Pour plus d’informations sur la remontée de la gestion, consultez remontée de la [gestion des transactions](transaction-management-escalation.md).
 
 ## <a name="transaction-management-escalation-scenario"></a>Scénario de remontée de la gestion des transactions
 
@@ -50,7 +50,7 @@ Dans ce scénario,
 
 4. CN1 remonte alors la transaction grâce à un mécanisme spécifique à SQL 2005 et <xref:System.Data>.
 
-5. La valeur de retour de la méthode <xref:System.Transactions.ITransactionPromoter.Promote%2A> est un tableau d'octets qui contient un jeton de propagation de la transaction. <xref:System.Transactions> utilise ce jeton de propagation pour créer une transaction DTC peut être incorporée dans la transaction locale.
+5. La valeur de retour de la méthode <xref:System.Transactions.ITransactionPromoter.Promote%2A> est un tableau d'octets qui contient un jeton de propagation de la transaction. <xref:System.Transactions>utilise ce jeton de propagation pour créer une transaction DTC qu’il peut incorporer dans la transaction locale.
 
 6. CN2 peut alors utiliser les données reçues par appel à l'une des méthodes par <xref:System.Transactions.TransactionInterop> pour passer la transaction à SQL.
 
@@ -58,13 +58,13 @@ Dans ce scénario,
 
 ## <a name="single-phase-commit-optimization"></a>Optimisation de la validation en une phase
 
-Le protocole de validation en une phase est plus efficace lors de l'exécution car toutes les mises à jour sont effectuées sans coordination explicite. Pour tirer partie de cette optimisation, implémentez un gestionnaire de ressources via l'interface <xref:System.Transactions.ISinglePhaseNotification> pour la ressource et inscrivez-vous à une transaction à l'aide de la méthode <xref:System.Transactions.Transaction.EnlistDurable%2A> ou <xref:System.Transactions.Transaction.EnlistVolatile%2A>. Plus précisément, le *EnlistmentOptions* paramètre doit être égal à <xref:System.Transactions.EnlistmentOptions.None> pour vous assurer qu’une validation à phase unique est exécutée.
+Le protocole de validation en une phase est plus efficace lors de l'exécution car toutes les mises à jour sont effectuées sans coordination explicite. Pour tirer partie de cette optimisation, implémentez un gestionnaire de ressources via l'interface <xref:System.Transactions.ISinglePhaseNotification> pour la ressource et inscrivez-vous à une transaction à l'aide de la méthode <xref:System.Transactions.Transaction.EnlistDurable%2A> ou <xref:System.Transactions.Transaction.EnlistVolatile%2A>. Plus précisément, le paramètre *EnlistmentOptions* doit être <xref:System.Transactions.EnlistmentOptions.None> égal à pour garantir qu’une validation à phase unique serait effectuée.
 
 L'interface <xref:System.Transactions.ISinglePhaseNotification> étant dérivée de l'interface <xref:System.Transactions.IEnlistmentNotification>, si votre gestionnaire de ressources ne peut pas prétendre à la validation en une phase, il peut tout de même recevoir les notifications relatives à la validation en deux phases. Si votre gestionnaire de ressources reçoit une notification <xref:System.Transactions.ISinglePhaseNotification.SinglePhaseCommit%2A> du gestionnaire de transactions, il doit tenter d'effectuer le nécessaire pour la validation et informer le gestionnaire de transactions de la validation ou de la restauration de la transaction en appelant la méthode <xref:System.Transactions.SinglePhaseEnlistment.Committed%2A>, <xref:System.Transactions.SinglePhaseEnlistment.Aborted%2A> ou <xref:System.Transactions.SinglePhaseEnlistment.InDoubt%2A> pour le paramètre <xref:System.Transactions.SinglePhaseEnlistment>. À ce stade, une réponse de la <xref:System.Transactions.Enlistment.Done%2A> pour l'inscription implique la sémantique ReadOnly. Par conséquent, ne répondez pas à la <xref:System.Transactions.Enlistment.Done%2A> en plus des autres méthodes.
 
-S'il n'y a qu'une inscription volatile et aucune inscription durable, l'inscription volatile reçoit la notification SPC. S’il existe plusieurs inscriptions volatiles et qu’une seule inscription durable, les inscriptions volatiles reçoivent 2PC. Une fois terminée, l'inscription durable reçoit la notification SPC.
+S'il n'y a qu'une inscription volatile et aucune inscription durable, l'inscription volatile reçoit la notification SPC. S’il existe des enlistions volatiles et une seule inscription durable, les enlistions volatiles reçoivent 2PC. Une fois terminée, l'inscription durable reçoit la notification SPC.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Inscription de ressources comme participants à une transaction](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)
-- [Validation d’une transaction en une phase unique et en plusieurs phases](../../../../docs/framework/data/transactions/committing-a-transaction-in-single-phase-and-multi-phase.md)
+- [Inscription de ressources comme participants à une transaction](enlisting-resources-as-participants-in-a-transaction.md)
+- [Validation d’une transaction en une phase unique et en plusieurs phases](committing-a-transaction-in-single-phase-and-multi-phase.md)

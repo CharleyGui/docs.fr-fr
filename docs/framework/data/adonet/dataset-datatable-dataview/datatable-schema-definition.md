@@ -2,12 +2,12 @@
 title: Définition de schéma de DataTable
 ms.date: 03/30/2017
 ms.assetid: efbcdda4-f5a9-421d-8be2-4c194c74552f
-ms.openlocfilehash: 20fee4316ad95c0f8716a0f374410009ea129222
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0d2609801da3bc336c54d32068246027cfd6d3aa
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952356"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204992"
 ---
 # <a name="datatable-schema-definition"></a>Définition de schéma de DataTable
 Le schéma, ou structure, d'une table est représenté par des colonnes et des contraintes. Vous définissez le schéma d'un objet <xref:System.Data.DataTable> à l'aide d'objets <xref:System.Data.DataColumn> ainsi que d'objets <xref:System.Data.ForeignKeyConstraint> et <xref:System.Data.UniqueConstraint>. Les colonnes d'une table peuvent mapper aux colonnes d'une source de données. Elles contiennent des valeurs calculées à partir d'expressions, incrémentent automatiquement leurs valeurs ou contiennent des valeurs de clé primaire.  
@@ -20,22 +20,22 @@ Le schéma, ou structure, d'une table est représenté par des colonnes et des c
 > La <xref:System.Data.DataTable.CaseSensitive%2A> propriété du **DataTable** n’affecte pas ce comportement. La propriété **CaseSensitive** s’applique aux données d’une table et affecte les contraintes de tri, de recherche, de filtrage, d’application, etc., mais pas les références aux colonnes, relations et contraintes.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Ajout de colonnes à un DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-columns-to-a-datatable.md)  
+ [Ajout de colonnes à un DataTable](adding-columns-to-a-datatable.md)  
  Décrit comment définir les colonnes d’une table à l’aide d’objets **DataColumn** .  
   
- [Création de colonnes d’expressions](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-expression-columns.md)  
+ [Création de colonnes d’expressions](creating-expression-columns.md)  
  Explique comment la propriété **expression** d’une colonne peut être utilisée pour calculer des valeurs en fonction des valeurs d’autres colonnes de la ligne.  
   
- [Création de colonnes AutoIncrement](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/creating-autoincrement-columns.md)  
+ [Création de colonnes AutoIncrement](creating-autoincrement-columns.md)  
  Décrit comment définir une colonne afin qu'elle incrémente automatiquement des valeurs numériques de façon à garantir le caractère unique des valeurs de colonne d'une ligne.  
   
- [Définition des clés primaires](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/defining-primary-keys.md)  
+ [Définition des clés primaires](defining-primary-keys.md)  
  Décrit comment spécifier la clé primaire d’une table à partir d’un ou de plusieurs objets **DataColumn** .  
   
- [Contraintes de DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md)  
+ [Contraintes de DataTable](datatable-constraints.md)  
  Décrit comment définir des contraintes uniques et de clé étrangère pour les colonnes d'une table.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [DataTables](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)
+- [DataTables](datatables.md)
 - [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)

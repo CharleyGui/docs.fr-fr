@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 4f3dd841-82f7-4659-aab0-6d2db2166c65
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 44003cbd0f13d2665c5b753454689c10546325b7
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 4e4e472185b3b2ba39393c029bca3966fb5ec4b3
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487850"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206054"
 ---
 # <a name="security-transparent-code"></a>Code transparent de sécurité (security-transparent)
 
@@ -23,15 +23,15 @@ ms.locfileid: "66487850"
 La sécurité fait intervenir trois éléments interactifs : le sandboxing, les autorisations et la mise en application. Le sandboxing renvoie à la pratique qui consiste à créer des domaines isolés où une partie du code est considérée comme de niveau de confiance totale et l'autre partie du code se limite au jeu d'autorisations accordées au bac à sable (sandbox). Le code d'application qui s'exécute dans le jeu d'autorisations du bac à sable est considéré comme étant transparent. Autrement dit, il ne peut effectuer aucune opération qui puisse nuire à la sécurité. Le jeu d'autorisations octroyé au bac à sable est déterminé par la preuve (classe <xref:System.Security.Policy.Evidence>). La preuve identifie les autorisations spécifiques dont ont besoin les bacs à sable et les types de bac à sable qui peuvent être créés. La mise en application consiste à autoriser le code transparent à s'exécuter uniquement dans le cadre de son jeu d'autorisations.
 
 > [!IMPORTANT]
-> La stratégie de sécurité était un élément clé dans les versions précédentes du .NET Framework. À compter de .NET Framework 4, stratégie de sécurité est obsolète. L'élimination de la stratégie de sécurité est indépendante de la transparence de la sécurité. Pour plus d’informations sur les effets de cette modification, consultez [Code Access Security Policy Compatibility et Migration](../../../docs/framework/misc/code-access-security-policy-compatibility-and-migration.md).
+> La stratégie de sécurité était un élément clé dans les versions précédentes du .NET Framework. À partir du .NET Framework 4, la stratégie de sécurité est obsolète. L'élimination de la stratégie de sécurité est indépendante de la transparence de la sécurité. Pour plus d’informations sur les effets de cette modification, consultez [compatibilité et migration de la stratégie de sécurité d’accès du code](code-access-security-policy-compatibility-and-migration.md).
 
 Cette rubrique décrit plus en détail le modèle de transparence. Elle contient les sections suivantes :
 
 - [Objectif du modèle de transparence](#purpose)
 
-- [En spécifiant le niveau de transparence](#level)
+- [Spécification du niveau de transparence](#level)
 
-- [Mise en œuvre de la transparence](#enforcement)
+- [Mise en application de la transparence](#enforcement)
 
 <a name="purpose"></a>
 
@@ -49,7 +49,7 @@ La transparence a été introduite dans le .NET Framework version 2.0 pour simp
 > [!NOTE]
 > Quand vous développez une application de niveau de confiance partielle, vous devez connaître les exigences d'autorisation pour vos hôtes cibles. Vous pouvez développer une application qui fasse appel à des ressources non autorisées par certains hôtes. Cette application se compilera sans erreur, mais son chargement dans l'environnement hébergé échouera. Si vous avez développé votre application l'aide de Visual Studio, vous pouvez activer le débogage en mode confiance partielle ou dans un jeu d'autorisations restreint à partir de l'environnement de développement. Pour plus d'informations, voir [Procédure : Déboguer une application ClickOnce avec des autorisations restreintes](/visualstudio/deployment/how-to-debug-a-clickonce-application-with-restricted-permissions). La fonctionnalité de calcul des autorisations fournie pour les applications ClickOnce est aussi accessible à n'importe quelle application de niveau de confiance partielle.
 
-[Retour au début](#top)
+[Revenir en haut](#top)
 
 <a name="level"></a>
 
@@ -59,7 +59,7 @@ L'attribut <xref:System.Security.SecurityRulesAttribute> au niveau niveau de l'a
 
 Voici les différents niveaux :
 
-- Niveau 2 (<xref:System.Security.SecurityRuleSet.Level2>) – les règles de transparence du .NET Framework 4.
+- Niveau 2 (<xref:System.Security.SecurityRuleSet.Level2>): règles de transparence du .NET Framework 4.
 
 - niveau 1 (<xref:System.Security.SecurityRuleSet.Level1>) : règles de transparence du .NET Framework 2.0.
 
@@ -70,7 +70,7 @@ La principale différence entre les deux niveaux de transparence est que le nive
 
 ### <a name="level-2-transparency"></a>Transparence de niveau 2
 
-Transparence de niveau 2 a été introduite dans le .NET Framework 4. Les trois principes de ce modèle sont le code transparent, le code critique sécurisé et le code critique de sécurité.
+La transparence de niveau 2 a été introduite dans le .NET Framework 4. Les trois principes de ce modèle sont le code transparent, le code critique sécurisé et le code critique de sécurité.
 
 - Le code transparent, quelles que soient les autorisations qui lui sont octroyées (y compris le niveau de confiance totale), ne peut appeler qu'un autre code transparent ou du code critique sécurisé. Si le code bénéficie d'un niveau de confiance partielle, il ne peut effectuer que les actions autorisées par le jeu d'autorisations du domaine. Voici ce que le code transparent ne peut pas faire :
 
@@ -108,15 +108,15 @@ Le modèle de transparence de niveau 1 présente les limitations suivantes :
 
 - Le potentiel de nuisance du code transparent est bien réel quand il est exécuté en mode confiance totale.
 
-[Retour au début](#top)
+[Revenir en haut](#top)
 
 <a name="enforcement"></a>
 
 ## <a name="transparency-enforcement"></a>Mise en application de la transparence
 
-Les règles de transparence ne sont pas appliquées tant que la transparence n'est pas calculée. Dès lors, une exception <xref:System.InvalidOperationException> est levée en cas de violation d'une règle de transparence. Le moment où la transparence est calculée dépend de plusieurs facteurs et ne peut pas être prédite. Elle est calculée le plus tard possible. Dans le .NET Framework 4, calcul de la transparence de niveau assembly se produit plus rapidement que dans le .NET Framework 2.0. La seule garantie est que le calcul de la transparence se produit dès que cela est nécessaire. Cela est comparable à la façon dont le compilateur juste-à-temps (JIT) peut modifier le point au moment où une méthode est compilée et que des erreurs sont détectées dans cette méthode. Le calcul de la transparence n'est pas perceptible si votre code ne présente aucune erreur de transparence.
+Les règles de transparence ne sont pas appliquées tant que la transparence n'est pas calculée. Dès lors, une exception <xref:System.InvalidOperationException> est levée en cas de violation d'une règle de transparence. Le moment où la transparence est calculée dépend de plusieurs facteurs et ne peut pas être prédite. Elle est calculée le plus tard possible. Dans le .NET Framework 4, le calcul de la transparence au niveau de l’assembly se produit plus tôt que dans le .NET Framework 2,0. La seule garantie est que le calcul de la transparence se produit dès que cela est nécessaire. Cela est comparable à la façon dont le compilateur juste-à-temps (JIT) peut modifier le point au moment où une méthode est compilée et que des erreurs sont détectées dans cette méthode. Le calcul de la transparence n'est pas perceptible si votre code ne présente aucune erreur de transparence.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Code Transparent de sécurité, niveau 1](../../../docs/framework/misc/security-transparent-code-level-1.md)
-- [Code Transparent de sécurité, niveau 2](../../../docs/framework/misc/security-transparent-code-level-2.md)
+- [Code transparent de sécurité, niveau 1](security-transparent-code-level-1.md)
+- [Code transparent de sécurité, niveau 2](security-transparent-code-level-2.md)

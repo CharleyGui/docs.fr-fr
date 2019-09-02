@@ -14,12 +14,12 @@ ms.prod:
 - PRODUCT VALUE
 helpviewer_keywords:
 - OFFLINE BOOK INDEX ENTRIES
-ms.openlocfilehash: 0e8548745768bc9137e8fc76f86fc9fc7982b8de
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: e6c912f5ff9590f3b8cbb0f7e3f88e08fa9dd556
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "68616349"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106912"
 ---
 # <a name="metadata-and-markdown-template"></a>Métadonnées et modèle Markdown
 
@@ -61,12 +61,12 @@ Markdown utilise des caractères spéciaux tels que \*, \` et \# pour la mise en
 
 Les noms des fichiers utilisent les règles suivantes :
 
-* Ils contiennent uniquement des lettres minuscules, des chiffres et des traits d’union.
-* Aucun espace ni caractère de ponctuation. Utilisez les traits d’union pour séparer les mots et les nombres dans le nom de fichier.
-* Utilisez des verbes d’actions spécifiques, tels que développer, acheter, générer, dépanner. Pas de substantif.
-* Pas de mot trop court ; évitez un, et, le, en, ou, etc.
-* Le nom doit être au format Markdown et utiliser l’extension de fichier .md.
-* Privilégiez des noms de fichiers courts. Ils font partie de l’URL pour vos articles.
+- Ils contiennent uniquement des lettres minuscules, des chiffres et des traits d’union.
+- Aucun espace ni caractère de ponctuation. Utilisez les traits d’union pour séparer les mots et les nombres dans le nom de fichier.
+- Utilisez des verbes d’actions spécifiques, tels que développer, acheter, générer, dépanner. Pas de substantif.
+- Pas de mot trop court ; évitez un, et, le, en, ou, etc.
+- Le nom doit être au format Markdown et utiliser l’extension de fichier .md.
+- Privilégiez des noms de fichiers courts. Ils font partie de l’URL pour vos articles.
 
 ## <a name="headings"></a>Titres
 
@@ -244,22 +244,22 @@ Vous pouvez inclure le code avec la syntaxe suivante :
 [!code-<language>[<name>](<pathToFile><queryoption><queryoptionvalue>)]
 ```
 
-* `-<language>` (*facultatif* mais *recommandé*)
-  * Langage de l’extrait de code référencé. Pour obtenir la liste des valeurs prises en charge, consultez [Langages pris en charge](#supported-languages).
+- `-<language>` (*facultatif* mais *recommandé*)
+  - Langage de l’extrait de code référencé. Pour obtenir la liste des valeurs prises en charge, consultez [Langages pris en charge](#supported-languages).
 
-* `<name>` (*facultatif*)
-  * Nom pour l’extrait de code. Il n’a aucun impact sur le code HTML de sortie, mais vous pouvez l’utiliser pour améliorer la lisibilité de votre source Markdown.
+- `<name>` (*facultatif*)
+  - Nom pour l’extrait de code. Il n’a aucun impact sur le code HTML de sortie, mais vous pouvez l’utiliser pour améliorer la lisibilité de votre source Markdown.
 
-* `<pathToFile>` (*obligatoire*)
-  * Chemin relatif dans le système de fichiers qui indique le fichier de l’extrait de code à référencer.
+- `<pathToFile>` (*obligatoire*)
+  - Chemin relatif dans le système de fichiers qui indique le fichier de l’extrait de code à référencer.
 
-* `<queryoption>` et `<queryoptionvalue>` (*facultatif*)
-  * Utilisés ensemble pour spécifier la façon dont le code doit être récupéré à partir du fichier :
-    * `#` :  `#L{startlinenumber}-L{endlinenumber}` (plage de lignes) *ou* `#{tagname}` (nom de l’étiquette).
+- `<queryoption>` et `<queryoptionvalue>` (*facultatif*)
+  - Utilisés ensemble pour spécifier la façon dont le code doit être récupéré à partir du fichier :
+    - `#` :  `#L{startlinenumber}-L{endlinenumber}` (plage de lignes) *ou* `#{tagname}` (nom de l’étiquette).
     Nous déconseillons d’utiliser les numéros de ligne, car ceux-ci sont très instables. Le nom d’étiquette est le meilleur moyen de référencer des extraits de code.
-    * `range`: `?range=1,3-5` Une plage de lignes. Cet exemple inclut les lignes 1, 3, 4 et 5.
-    * `dedent`: `?dedent=8` Désindente les lignes d’un certain nombre d’espaces ; dans ce cas, de 8 espaces. Ceci peut être combiné avec `range` et d’autres options de requête qui sélectionnent un sous-ensemble des lignes d’un fichier.
-    * `outdent`: `?outdent=8` Inverse l’indentation des lignes d’un certain nombre d’espaces ; dans ce cas, de 8 espaces. Ceci peut être combiné avec `range` et d’autres options de requête qui sélectionnent un sous-ensemble des lignes d’un fichier.
+    - `range`: `?range=1,3-5` Une plage de lignes. Cet exemple inclut les lignes 1, 3, 4 et 5.
+    - `dedent`: `?dedent=8` Désindente les lignes d’un certain nombre d’espaces ; dans ce cas, de 8 espaces. Ceci peut être combiné avec `range` et d’autres options de requête qui sélectionnent un sous-ensemble des lignes d’un fichier.
+    - `outdent`: `?outdent=8` Inverse l’indentation des lignes d’un certain nombre d’espaces ; dans ce cas, de 8 espaces. Ceci peut être combiné avec `range` et d’autres options de requête qui sélectionnent un sous-ensemble des lignes d’un fichier.
 
 Nous vous recommandons d’utiliser l’option du nom d’étiquette dans la mesure du possible. Le nom d’étiquette est le nom d’une région ou d’un commentaire du code au format `Snippettagname` présent dans le code source. L’exemple suivant montre comment référencer le nom d’étiquette `1` :
 
@@ -275,7 +275,7 @@ L’ajout d’extraits de programmes complets garantit que tout le code s’exé
 
 Utilisez trois accents graves (\`\`\`) + un ID de langage pour appliquer un codage en couleurs spécifique au langage à un bloc de code. Voici la liste des langages pris en charge montrant l’étiquette Markdown pour chaque ID de langage.
 
-#### <a name="supported-languages"></a>Langages pris en charge
+#### <a name="supported-languages"></a>Langues prises en charge
 
 |Name|Étiquette Markdown|
 |-----|-------|
@@ -448,11 +448,11 @@ Vous pouvez incorporer le Markdown d’un fichier dans un autre en utilisant une
 Un style personnalisé est disponible pour les listes. Vous pouvez restituer des listes avec des coches vertes.
 
 > [!div class="checklist"]
-> * Créer une application .NET Core
-> * Ajouter une référence au package Microsoft.XmlSerializer.Generator
-> * Modifier votre fichier MyApp.csproj pour ajouter des dépendances
-> * Ajouter une classe et un XmlSerializer
-> * Générer et exécuter l’application
+> - Créer une application .NET Core
+> - Ajouter une référence au package Microsoft.XmlSerializer.Generator
+> - Modifier votre fichier MyApp.csproj pour ajouter des dépendances
+> - Ajouter une classe et un XmlSerializer
+> - Générer et exécuter l’application
 
 Vous pouvez voir un exemple de listes cochées dans action dans les [documents .NET Core](https://docs.microsoft.com/dotnet/core/additional-tools/xml-serializer-generator).
 

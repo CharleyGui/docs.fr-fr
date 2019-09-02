@@ -3,12 +3,12 @@ title: Interprétation des expressions
 description: Découvrez comment écrire du code pour analyser la structure d’une arborescence d’expressions.
 ms.date: 06/20/2016
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.openlocfilehash: 952a1c553e2392ffc717dc344dfe77a11f025cc4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: fcc16e7a0cef7b3ac24d99ccbddd93bed100a5bb
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59211242"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70202972"
 ---
 # <a name="interpreting-expressions"></a>Interprétation des expressions
 
@@ -34,7 +34,7 @@ Console.WriteLine($"The value of the constant value is {constant.Value}");
 
 La sortie suivante est générée :
 
-```
+```output
 This is an Constant expression type
 The type of the constant value is System.Int32
 The value of the constant value is 24
@@ -80,7 +80,7 @@ Console.WriteLine($"\tParameter Type: {right.Type.ToString()}, Name: {right.Name
 
 Cet exemple génère la sortie suivante :
 
-```
+```output
 This expression is a/an Lambda expression type
 The name of the lambda is <null>
 The return type is System.Int32
@@ -218,7 +218,7 @@ Cet algorithme est la base d’un algorithme qui peut visiter toute `LambdaExpre
 
 Quand nous exécutons ce visiteur sur l’expression d’addition ci-dessus, nous obtenons la sortie suivante :
 
-```
+```output
 This expression is a/an Lambda expression type
 The name of the lambda is <null>
 The return type is System.Int32
@@ -271,7 +271,7 @@ Expression<Func<int, int>> sum = (a) => 1 + a + 3 + 4;
 
 Créez un visiteur pour cette somme et exécutez-le. Vous obtiendrez cette sortie :
 
-```
+```output
 This expression is a/an Lambda expression type
 The name of the lambda is <null>
 The return type is System.Int32
@@ -309,7 +309,7 @@ Expression<Func<int, int, int>> sum3 = (a, b) => (1 + a) + (3 + b);
 
 Voici la sortie du visiteur :
 
-```
+```output
 This expression is a/an Lambda expression type
 The name of the lambda is <null>
 The return type is System.Int32
@@ -451,7 +451,7 @@ public class MethodCallVisitor : Visitor
 
 Et la sortie de l’arborescence d’expressions sera :
 
-```
+```output
 This expression is a/an Lambda expression type
 The name of the lambda is <null>
 The return type is System.Int32

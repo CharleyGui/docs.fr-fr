@@ -3,12 +3,12 @@ title: Concevoir avec des types référence Nullable
 description: Ce tutoriel avancé présente les types référence Nullable. Il explique comment exprimer une intention de conception lorsque les valeurs de référence peuvent être Null et comment, dans le cas contraire, indiquer au compilateur qu’elles ne peuvent pas être Null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: cd73a73554514c2b7c70c78ba24038ee8d543266
-ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
+ms.openlocfilehash: 570d071172c4048adfddfd55a5e38556e7fd7c69
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66195833"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105840"
 ---
 # <a name="tutorial-express-your-design-intent-more-clearly-with-nullable-and-non-nullable-reference-types"></a>Tutoriel : Exprimer plus clairement une intention de conception avec les types référence Nullable et non Nullable
 
@@ -17,10 +17,10 @@ C# 8 introduit les **types référence Nullable**, qui viennent compléter les t
 Dans ce tutoriel, vous allez apprendre à :
 
 > [!div class="checklist"]
-> * incorporer des types référence Nullable et non Nullable dans vos conceptions ;
-> * activer les contrôles de type référence Nullable dans l’ensemble de votre code ;
-> * écrire du code permettant au compilateur d’appliquer ces décisions de conception ;
-> * utiliser la fonctionnalité de référence Nullable dans vos propres conceptions.
+> - incorporer des types référence Nullable et non Nullable dans vos conceptions ;
+> - activer les contrôles de type référence Nullable dans l’ensemble de votre code ;
+> - écrire du code permettant au compilateur d’appliquer ces décisions de conception ;
+> - utiliser la fonctionnalité de référence Nullable dans vos propres conceptions.
 
 ## <a name="prerequisites"></a>Prérequis
 

@@ -3,12 +3,12 @@ title: Explorer les plages de données à l’aide d’index et de plages
 description: Ce tutoriel avancé vous apprend à explorer les données à l’aide d’index et de plages pour examiner les tranches d’un jeu de données séquentiel.
 ms.date: 04/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 118d3c9ccad98ec02195c2b5e26a2ca203990adf
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
+ms.openlocfilehash: d53f32bcb310d4859cea67a742ac0e2c4be5d942
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557186"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105787"
 ---
 # <a name="indices-and-ranges"></a>Index et plages
 
@@ -17,9 +17,9 @@ Les plages et les index fournissent une syntaxe concise pour accéder à des él
 Dans ce tutoriel, vous allez apprendre à :
 
 > [!div class="checklist"]
-> * Utiliser la syntaxe pour les plages dans une séquence.
-> * Comprendre les décisions de conception pour le début et la fin de chaque séquence.
-> * Découvrir des scénarios pour les types <xref:System.Index> et <xref:System.Range>.
+> - Utiliser la syntaxe pour les plages dans une séquence.
+> - Comprendre les décisions de conception pour le début et la fin de chaque séquence.
+> - Découvrir des scénarios pour les types <xref:System.Index> et <xref:System.Range>.
 
 ## <a name="language-support-for-indices-and-ranges"></a>Prise en charge linguistique pour les index et les plages
 

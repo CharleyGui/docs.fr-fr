@@ -4,12 +4,12 @@ description: Découvrez comment porter des projets de bibliothèque de .NET Fram
 author: cartermp
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: c7a770ba2da8c245ba9140852fc7c2a33a55f7a2
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 3e3c613f6be50ae5ff2b07052c7c1bced2047855
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660710"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105286"
 ---
 # <a name="port-net-framework-libraries-to-net-core"></a>Porter des bibliothèques .NET Framework vers .NET Core
 
@@ -113,11 +113,11 @@ Il est probable que vous allez combiner les approches ci-dessus de façon diffé
 La meilleure façon de vérifier que tout fonctionne quand vous avez porté votre code est de tester votre code quand vous l’avez porté sur .NET Core. Pour cela, vous devez utiliser une infrastructure de test qui génère et exécute des tests pour .NET Core. Vous avez actuellement trois options :
 
 - [xUnit](https://xunit.github.io/)
-  * [Prise en main](https://xunit.github.io/docs/getting-started-dotnet-core.html)
-  * [Outil pour convertir un projet MSTest en xUnit](https://github.com/dotnet/codeformatter/tree/master/src/XUnitConverter)
+  - [Prise en main](https://xunit.github.io/docs/getting-started-dotnet-core.html)
+  - [Outil pour convertir un projet MSTest en xUnit](https://github.com/dotnet/codeformatter/tree/master/src/XUnitConverter)
 - [NUnit](https://nunit.org/)
-  * [Prise en main](https://github.com/nunit/docs/wiki/Installation)
-  * [Billet de blog sur la migration de MSTest vers NUnit](https://www.florian-rappl.de/News/Page/275/convert-mstest-to-nunit)
+  - [Prise en main](https://github.com/nunit/docs/wiki/Installation)
+  - [Billet de blog sur la migration de MSTest vers NUnit](https://www.florian-rappl.de/News/Page/275/convert-mstest-to-nunit)
 - [MSTest](https://docs.microsoft.com/visualstudio/test/unit-test-basics)
 
 ## <a name="recommended-approach-to-porting"></a>Approche recommandée du portage

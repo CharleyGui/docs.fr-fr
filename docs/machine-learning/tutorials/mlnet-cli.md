@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: 403b1759164d588cb5af49c6cb05e001b030235f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c0e188286821f0e3822fde4af74a1561edfbb868
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963600"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107272"
 ---
 # <a name="auto-generate-a-binary-classifier-using-the-cli"></a>Générer automatiquement un classifieur binaire à l’aide de la CLI
 
@@ -19,11 +19,11 @@ Découvrez comment utiliser la CLI ML.NET pour générer automatiquement un mod�
 
 Dans ce tutoriel, vous allez effectuer les étapes suivantes :
 > [!div class="checklist"]
-> * Préparer vos données pour la tâche de machine learning sélectionnée
-> * Exécuter la commande « mlnet auto-train » à partir de la CLI
-> * Examiner les résultats des métriques de la qualité
-> * Comprendre le code C# généré nécessaire pour utiliser le modèle dans votre application
-> * Explorer le code C# généré ayant servi à entraîner le modèle
+> - Préparer vos données pour la tâche de machine learning sélectionnée
+> - Exécuter la commande « mlnet auto-train » à partir de la CLI
+> - Examiner les résultats des métriques de la qualité
+> - Comprendre le code C# généré nécessaire pour utiliser le modèle dans votre application
+> - Explorer le code C# généré ayant servi à entraîner le modèle
 
 > [!NOTE]
 > Cette rubrique fait référence à l’outil CLI ML.NET, actuellement en préversion. Les ressources sont donc susceptibles d’être modifiées. Pour plus d’informations, consultez [l’introduction à ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
@@ -259,11 +259,11 @@ Il est intéressant de comparer la configuration d’algorithme et de pipeline c
 
 Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
-> * Préparer vos données pour la tâche ML sélectionnée (problème à résoudre)
-> * Exécuter la commande « mlnet auto-train » dans l’outil CLI
-> * Examiner les résultats des métriques de la qualité
-> * Comprendre le code C# généré nécessaire pour exécuter le modèle (code à utiliser dans votre application utilisateur)
-> * Explorer le code C# généré ayant servi à entraîner le modèle de « meilleure qualité » (à des fins d’apprentissage)
+> - Préparer vos données pour la tâche ML sélectionnée (problème à résoudre)
+> - Exécuter la commande « mlnet auto-train » dans l’outil CLI
+> - Examiner les résultats des métriques de la qualité
+> - Comprendre le code C# généré nécessaire pour exécuter le modèle (code à utiliser dans votre application utilisateur)
+> - Explorer le code C# généré ayant servi à entraîner le modèle de « meilleure qualité » (à des fins d’apprentissage)
 
 > [!div class="nextstepaction"]
 > [Automatiser l’entraînement du modèle avec la CLI ML.NET](../automate-training-with-cli.md)

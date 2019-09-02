@@ -4,12 +4,12 @@ description: Recommandations relatives aux bonnes pratiques pour parcourir les c
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: a5cfd2dfb544b2e47a87bd0939990ae73e5eda9b
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 6881b8737d9dd3fa7fa71f099fa1dc97b747033d
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54564222"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104657"
 ---
 # <a name="breaking-changes"></a>Modifications avec rupture
 
@@ -19,11 +19,11 @@ Il est important pour une bibliothèque .NET de trouver un équilibre entre la s
 
 La façon dont une bibliothèque est utilisée par la communauté .NET modifie l’effet des changements cassants sur les développeurs utilisateurs finaux.
 
-* Les **bibliothèques de bas niveau et de niveau intermédiaire** comme les sérialiseurs, les analyseurs HTML, les outils de mappage objet-relationnel de base de données ou les frameworks web, sont les plus affectées par les changements cassants.
+- Les **bibliothèques de bas niveau et de niveau intermédiaire** comme les sérialiseurs, les analyseurs HTML, les outils de mappage objet-relationnel de base de données ou les frameworks web, sont les plus affectées par les changements cassants.
 
   Les packages de modules sont utilisés par les développeurs utilisateurs finaux pour générer des applications et par d’autres bibliothèques comme dépendances NuGet. Par exemple, vous créez une application et utilisez un client open source pour appeler un service web. Une mise à jour cassante apportée à une dépendance qu’utilise le client n’est pas quelque chose que vous pouvez résoudre. C’est le client open source qui doit être changé, mais vous n’avez aucun contrôle là-dessus. Vous devez rechercher des versions compatibles des bibliothèques ou envoyer un correctif à la bibliothèque cliente et attendre une nouvelle version. Le pire des cas se présente si vous voulez utiliser deux bibliothèques qui dépendent de versions mutuellement incompatibles d’une troisième bibliothèque.
 
-* Les **bibliothèques de haut niveau** comme les suites de contrôles d’interface utilisateur sont moins sensibles aux changements cassants.
+- Les **bibliothèques de haut niveau** comme les suites de contrôles d’interface utilisateur sont moins sensibles aux changements cassants.
 
   Les bibliothèques de haut niveau sont directement référencées dans une application pour l’utilisateur final. En cas de changements cassants, le développeur peut choisir de procéder à la mise à jour vers la dernière version ou modifier son application pour les utiliser.
 

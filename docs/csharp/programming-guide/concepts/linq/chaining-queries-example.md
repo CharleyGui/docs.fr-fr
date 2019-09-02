@@ -2,12 +2,12 @@
 title: Exemple de chaînage de requêtes (C#)
 ms.date: 07/20/2015
 ms.assetid: abbca162-d95e-43af-b92c-e46e6aa2540e
-ms.openlocfilehash: 90c2ba1c9125114f9e26f4afeb3ff6373ff01d9c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 45e3a4f341ca8eb06ff0f553e0f933956e6c6546
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594820"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205415"
 ---
 # <a name="chaining-queries-example-c"></a>Exemple de chaînage de requêtes (C#)
 Cet exemple est basé sur l’exemple précédent et illustre ce qui se produit quand vous chaînez deux requêtes qui utilisent toutes deux l’exécution et l’évaluation différées.  
@@ -64,7 +64,7 @@ class Program
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 ToUpper: source >abc<  
 AppendString: source >ABC<  
 Main: str >ABC!!!<  

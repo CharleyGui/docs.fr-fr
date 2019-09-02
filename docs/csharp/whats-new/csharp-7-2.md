@@ -2,12 +2,12 @@
 title: Nouveautés de C# 7.2
 description: Vue d’ensemble des nouvelles fonctionnalités de C# 7.2.
 ms.date: 08/16/2017
-ms.openlocfilehash: 79402c9b569cb6848aaf240d83ba71338d525b35
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: a2010b2bda769a625deb545964a2cc127aaf2e06
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347410"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105743"
 ---
 # <a name="whats-new-in-c-72"></a>Nouveautés de C# 7.2
 
@@ -20,22 +20,22 @@ C# 7.2 utilise l’élément de configuration de [sélection de la version du la
 
 Les nouvelles fonctionnalités de langage de cette version sont :
 
-* [Techniques d’écriture de code safe et efficace](#safe-efficient-code-enhancements)
+- [Techniques d’écriture de code safe et efficace](#safe-efficient-code-enhancements)
   - Une combinaison des améliorations de la syntaxe qui permettent d’utiliser les types valeur avec la sémantique de référence.
-* [Arguments nommés non placés en position de fin](#non-trailing-named-arguments)
+- [Arguments nommés non placés en position de fin](#non-trailing-named-arguments)
   - Les arguments nommés peuvent être suivis par des arguments de position.
-* [Traits de soulignement de début dans les littéraux numériques](#leading-underscores-in-numeric-literals)
+- [Traits de soulignement de début dans les littéraux numériques](#leading-underscores-in-numeric-literals)
   - Les littéraux numériques peuvent maintenant comporter des traits de soulignement de début avant tout chiffre affiché.
-* [Modificateur d’accès `private protected`](#private-protected-access-modifier)
+- [Modificateur d’accès `private protected`](#private-protected-access-modifier)
   - Le modificateur d’accès `private protected` active l’accès pour les classes dérivées dans le même assembly.
-* [Expressions `ref` conditionnelles](#conditional-ref-expressions)
+- [Expressions `ref` conditionnelles](#conditional-ref-expressions)
   - Le résultat d’une expression conditionnelle (`?:`) peut maintenant être une référence.
 
 Le reste de cet article présente une vue d’ensemble de chaque fonctionnalité. Vous découvrirez la logique de chacune d’elles. Vous allez apprendre leur syntaxe. Vous pouvez explorer ces fonctionnalités dans votre environnement à l’aide de l’outil global `dotnet try` :
 
 1. Installez l’outil global [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup).
-1. Clonez le dépôt [dotnet/try-samples](https://github.com/dotnet/try-samples).
-1. Définissez le répertoire actuel sur le sous-répertoire *csharp7* pour le dépôt *try-samples*.
+1. Clonez le référentiel [dotnet/try-samples](https://github.com/dotnet/try-samples).
+1. Définissez le répertoire actuel sur le sous-répertoire *csharp7* pour le référentiel *try-samples*.
 1. Exécutez `dotnet try`.
 
 ## <a name="safe-efficient-code-enhancements"></a>Amélioration du code safe et efficace
@@ -63,7 +63,7 @@ Par exemple :
 int binaryValue = 0b_0101_0101;
 ```
 
-## <a name="private-protected-access-modifier"></a>_private protected_ (modificateur d’accès)
+## <a name="_private-protected_-access-modifier"></a>_private protected_ (modificateur d’accès)
 
 Enfin, un nouveau modificateur d’accès composé, `private protected`, indique qu’un membre est accessible à la classe globale ou aux classes dérivées déclarées dans le même assembly. Alors que `protected internal` autorise l’accès par des classes dérivées ou qui se trouvent dans le même assembly, `private protected` limite l’accès aux types dérivés déclarés dans le même assembly.
 

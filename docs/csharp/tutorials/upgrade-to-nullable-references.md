@@ -3,12 +3,12 @@ title: Concevoir avec des types référence Nullable
 description: Ce tutoriel avancé présente les types référence Nullable. Il explique comment exprimer une intention de conception lorsque les valeurs de référence peuvent être Null et comment, dans le cas contraire, indiquer au compilateur qu’elles ne peuvent pas être Null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 289b864aaa0380a31e93ef223fb5b5780e35892a
-ms.sourcegitcommit: 96543603ae29bc05cecccb8667974d058af63b4a
+ms.openlocfilehash: 357ebd13ca4c610f1c65009621ee628a90c70b15
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66195847"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105773"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Tutoriel : Migrer du code existant avec des types de référence nullable
 
@@ -17,10 +17,10 @@ C# 8 introduit les **types référence Nullable**, qui viennent compléter les t
 Dans ce tutoriel, vous allez apprendre à :
 
 > [!div class="checklist"]
-> * Activer les vérifications de référence null lorsque vous travaillez avec du code.
-> * Diagnostiquer et corriger les différents avertissements liés aux valeurs null.
-> * Gérer l’interface entre les contextes compatibles avec nullable et non compatibles avec nullable.
-> * Contrôler les contextes d’annotation nullable.
+> - Activer les vérifications de référence null lorsque vous travaillez avec du code.
+> - Diagnostiquer et corriger les différents avertissements liés aux valeurs null.
+> - Gérer l’interface entre les contextes compatibles avec nullable et non compatibles avec nullable.
+> - Contrôler les contextes d’annotation nullable.
 
 ## <a name="prerequisites"></a>Prérequis
 

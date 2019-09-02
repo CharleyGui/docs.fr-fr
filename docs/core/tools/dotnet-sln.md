@@ -2,12 +2,12 @@
 title: Commande dotnet sln
 description: La commande dotnet-sln offre une option pratique pour ajouter, supprimer et lister des projets dans un fichier solution.
 ms.date: 06/13/2018
-ms.openlocfilehash: a88e22c68f639f2a42e59f9a271e431f04e24a2b
-ms.sourcegitcommit: e6ad58812807937b03f5c581a219dcd7d1726b1d
+ms.openlocfilehash: 3f18d6a2851d955d07cecc0cbc4c161cf0ec3e08
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53169142"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70202791"
 ---
 # <a name="dotnet-sln"></a>dotnet sln
 
@@ -19,7 +19,7 @@ ms.locfileid: "53169142"
 
 ## <a name="synopsis"></a>Résumé
 
-```
+```console
 dotnet sln [<SOLUTION_NAME>] add <PROJECT> <PROJECT> ...
 dotnet sln [<SOLUTION_NAME>] add <GLOBBING_PATTERN>
 dotnet sln [<SOLUTION_NAME>] remove <PROJECT> <PROJECT> ...
@@ -34,7 +34,7 @@ La commande `dotnet sln` offre un moyen pratique d’ajouter, de supprimer et de
 
 Pour que la commande `dotnet sln` puisse être utilisée, le fichier solution doit déjà exister. Si vous devez en créer un, utilisez la commande [dotnet new](dotnet-new.md), comme dans l’exemple suivant :
 
-```
+```console
 dotnet new sln
 ```
 

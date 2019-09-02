@@ -4,12 +4,12 @@ description: Découvrez comment créer et déboguer votre première application 
 author: kendrahavens
 ms.date: 12/05/2018
 ms.custom: seodec18
-ms.openlocfilehash: 1268a943d7cbf1033531a6c51f42c6fd672eaed3
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 910545a99f9d014ae572fbe95c93cdb44a69db99
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67401836"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105102"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Prise en main de C# et Visual Studio Code
 
@@ -27,22 +27,22 @@ Commençons par un programme « Hello World » simple sur .NET Core :
 
 1. Ouvrez un projet :
 
-    * Ouvrez Visual Studio Code.
-    * Cliquez sur l’icône Explorer dans le menu de gauche, puis sur **Ouvrir le dossier**.
-    * Sélectionnez **Fichier** > **Ouvrir le dossier** dans le menu principal pour ouvrir le dossier dans lequel vous souhaitez que votre projet C# se trouve et cliquez sur **Sélectionner le dossier**. Dans notre exemple, nous créons un dossier pour notre projet nommé *HelloWorld*.
+    - Ouvrez Visual Studio Code.
+    - Cliquez sur l’icône Explorer dans le menu de gauche, puis sur **Ouvrir le dossier**.
+    - Sélectionnez **Fichier** > **Ouvrir le dossier** dans le menu principal pour ouvrir le dossier dans lequel vous souhaitez que votre projet C# se trouve et cliquez sur **Sélectionner le dossier**. Dans notre exemple, nous créons un dossier pour notre projet nommé *HelloWorld*.
 
       ![Ouvrir un dossier Visual Studio Code](media/with-visual-studio-code/vs-code-open-folder.png)
 
 2. Initialiser un projet C# :
-    * Ouvrez le terminal intégré à partir de Visual Studio Code en sélectionnant **Vue** > **Terminal intégré** dans le menu principal.
-    * Dans la fenêtre de Terminal, tapez `dotnet new console`.
-    * Cette commande crée un fichier `Program.cs` dans votre dossier avec un simple programme « Hello World » déjà écrit, ainsi qu’un fichier projet C# nommé `HelloWorld.csproj`.
+    - Ouvrez le terminal intégré à partir de Visual Studio Code en sélectionnant **Vue** > **Terminal intégré** dans le menu principal.
+    - Dans la fenêtre de Terminal, tapez `dotnet new console`.
+    - Cette commande crée un fichier `Program.cs` dans votre dossier avec un simple programme « Hello World » déjà écrit, ainsi qu’un fichier projet C# nommé `HelloWorld.csproj`.
 
       ![La nouvelle commande dotnet](media/with-visual-studio-code/dotnet-new-command.png)
 
 3. Résolution des ressources de génération :
 
-    * Pour **.NET Core 1.x**, tapez `dotnet restore`. Exécuter `dotnet restore` vous donne accès aux packages .NET Core qui sont nécessaires pour générer votre projet.
+    - Pour **.NET Core 1.x**, tapez `dotnet restore`. Exécuter `dotnet restore` vous donne accès aux packages .NET Core qui sont nécessaires pour générer votre projet.
 
       ![La commande dotnet restore](media/with-visual-studio-code/dotnet-restore-command.png)
 
@@ -50,7 +50,7 @@ Commençons par un programme « Hello World » simple sur .NET Core :
 
 4. Exécutez le programme Hello World :
 
-    * Tapez `dotnet run`.
+    - Tapez `dotnet run`.
 
       ![La commande dotnet run](media/with-visual-studio-code/dotnet-run-command.png)
 
@@ -79,7 +79,7 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
     ![Définition d'un point d'arrêt](media/with-visual-studio-code/set-breakpoint-vs-code.png)
 
 6. Pour démarrer le débogage, sélectionnez <kbd>F5</kbd> ou la flèche verte. Le débogueur arrête l’exécution de votre programme lorsqu’il atteint le point d’arrêt que vous avez défini à l’étape précédente.
-    * Pendant le débogage, vous pouvez afficher vos variables locales dans le volet supérieur gauche ou utiliser la console de débogage.
+    - Pendant le débogage, vous pouvez afficher vos variables locales dans le volet supérieur gauche ou utiliser la console de débogage.
 
 7. Sélectionnez la flèche bleue en haut pour continuer le débogage, ou le carré rouge en haut pour l’arrêter.
 

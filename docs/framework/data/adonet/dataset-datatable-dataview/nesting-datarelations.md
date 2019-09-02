@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9530f9c9-dd98-4b93-8cdb-40d7f1e8d0ab
-ms.openlocfilehash: 7975e17bd957a822bf3d60d487eb928cee84bd28
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 08149de9222c34928078c0ca9d88096f7a4a88d1
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607321"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203273"
 ---
 # <a name="nesting-datarelations"></a>Imbrication de DataRelations
-Dans une représentation relationnelle des données, chaque table contient des lignes reliées aux lignes d'autres tables par une colonne ou un ensemble de colonnes. Dans l'objet <xref:System.Data.DataSet> ADO.NET, la relation entre les tables est implémentée à l'aide d'un objet <xref:System.Data.DataRelation>. Lorsque vous créez un **DataRelation**, les relations parent-enfant des colonnes sont managées uniquement via la relation. Les tables et les colonnes constituent des entités distinctes. Dans la représentation hiérarchique des données proposée par XML, les relations parent-enfant sont représentés sous forme d'éléments parents contenant des éléments enfants imbriqués.  
+Dans une représentation relationnelle des données, chaque table contient des lignes reliées aux lignes d'autres tables par une colonne ou un ensemble de colonnes. Dans l'objet <xref:System.Data.DataSet> ADO.NET, la relation entre les tables est implémentée à l'aide d'un objet <xref:System.Data.DataRelation>. Lorsque vous créez un **DataRelation**, les relations parent-enfant des colonnes sont gérées uniquement par le biais de la relation. Les tables et les colonnes constituent des entités distinctes. Dans la représentation hiérarchique des données proposée par XML, les relations parent-enfant sont représentés sous forme d'éléments parents contenant des éléments enfants imbriqués.  
   
- Pour faciliter l’imbrication des objets enfants lorsqu’un **DataSet** est synchronisé avec un <xref:System.Xml.XmlDataDocument> ou écrit sous forme de données XML à l’aide **WriteXml**, le **DataRelation** expose un **Nested** propriété. Définissant le **Nested** propriété d’un **DataRelation** à **true** provoque des lignes de la relation d’imbrication dans la colonne parente lorsque écrit en tant que données XML de l’enfant ou synchronisé avec un **XmlDataDocument**. Le **Nested** propriété de la **DataRelation** est **false**, par défaut.  
+ Pour faciliter l’imbrication des objets enfants lorsqu’un **DataSet** est synchronisé <xref:System.Xml.XmlDataDocument> avec un objet ou écrit sous forme de données XML à l’aide de **WriteXml**, le **DataRelation** expose une propriété **imbriquée** . L’affectation de la **valeur true** à la propriété **Nested** d’un **DataRelation** entraîne l’imbrication des lignes enfants de la relation dans la colonne parente lors de l’écriture sous forme de données XML ou de la synchronisation avec un **XmlDataDocument**. La propriété Nested du **DataRelation** a la **valeur false**par défaut.  
   
- Par exemple, considérez les éléments suivants **DataSet**.  
+ Par exemple, considérez le **jeu de données**suivant.  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -59,9 +59,9 @@ DataRelation customerOrders = dataSet.Relations.Add(
   dataSet.Tables["Orders"].Columns["CustomerID"]);  
 ```  
   
- Étant donné que le **Nested** propriété de la **DataRelation** objet n’est pas défini sur **true** pour ce **DataSet**, les objets enfants ne sont pas imbriqués dans les éléments parents lorsque ce **DataSet** est représenté en tant que données XML. Transformer la représentation XML d’un **DataSet** qui contient connexes **DataSet**s avec des relations de données non imbriquées peut entraîner le ralentissement des performances. Il est recommandé d'imbriquer les relations de données. Pour ce faire, définissez la **Nested** propriété **true**. Puis, écrivez le code dans la feuille de style XSLT qui utilise des expressions de requête XPath hiérarchisées de haut en bas pour rechercher et transformer les données.  
+ Étant donné que la propriété Nested de l’objet **DataRelation** n’a pas la valeur **true** pour ce **DataSet**, les objets enfants ne sont pas imbriqués dans les éléments parents lorsque ce **DataSet** est représenté sous forme de données XML. La transformation de la représentation XML d’un **DataSet** qui contient des **DataSets**associés avec des relations de données non imbriquées peut entraîner un ralentissement des performances. Il est recommandé d'imbriquer les relations de données. Pour ce faire, affectez à la propriété Nested la **valeur true**. Puis, écrivez le code dans la feuille de style XSLT qui utilise des expressions de requête XPath hiérarchisées de haut en bas pour rechercher et transformer les données.  
   
- L’exemple de code suivant montre le résultat de l’appel **WriteXml** sur le **DataSet**.  
+ L’exemple de code suivant montre le résultat de l’appel de **WriteXml** sur le **DataSet**.  
   
 ```xml  
 <CustomerOrders>  
@@ -91,7 +91,7 @@ DataRelation customerOrders = dataSet.Relations.Add(
 </CustomerOrders>  
 ```  
   
- Notez que le **clients** élément et le **commandes** éléments sont affichés en tant qu’éléments frères. Si vous souhaitiez le **commandes** éléments s’affichent en tant qu’enfants de leurs éléments parents respectifs, le **Nested** propriété de la **DataRelation** devra être définie à **true** et vous devez ajouter les éléments suivants :  
+ Notez que l' élément Customers et les éléments **Orders** sont affichés en tant qu’éléments frères. Si vous souhaitez que les éléments Orders s’affichent en tant qu’enfants de leurs éléments parents respectifs, la propriété **Nested** du **DataRelation** doit avoir la valeur **true** et vous devez ajouter ce qui suit:  
   
 ```vb  
 customerOrders.Nested = True  
@@ -101,7 +101,7 @@ customerOrders.Nested = True
 customerOrders.Nested = true;  
 ```  
   
- Le code suivant montre à quoi la sortie résultante ressemblerait, avec le **commandes** les éléments imbriqués dans leurs éléments parents respectifs.  
+ Le code suivant montre à quoi ressemblerait la sortie obtenue, avec les éléments Orders imbriqués dans leurs éléments parents respectifs.  
   
 ```xml  
 <CustomerOrders>  
@@ -133,7 +133,7 @@ customerOrders.Nested = true;
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation de XML dans un DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
-- [Ajout de DataRelations](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-datarelations.md)
-- [DataSets, DataTables et DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [Utilisation de XML dans un DataSet](using-xml-in-a-dataset.md)
+- [Ajout de DataRelations](adding-datarelations.md)
+- [DataSets, DataTables et DataViews](index.md)
 - [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)

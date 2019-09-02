@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e5675663-fc91-4e0d-87a9-481b25b64c0f
-ms.openlocfilehash: 6c2e554b7e6bde3e82190f70723f272b0d39a18a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b3a1077bff9bf457b4aef0b05357d4a9260f8973
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61880033"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204820"
 ---
 # <a name="handling-dataview-events"></a>Gestion des événements de DataView
-Vous pouvez utiliser l'événement <xref:System.Data.DataView.ListChanged> du <xref:System.Data.DataView> pour déterminer si une vue a été mise à jour. Les mises à jour qui déclenchent l'événement incluent l'ajout, la suppression ou la modification d'une ligne dans la table sous-jacente, l'ajout ou la suppression d'une colonne dans le schéma de la table sous-jacente et une modification d'une relation parente ou enfant. Le **ListChanged** événement vous avertit aussi si la liste des lignes que vous affichez a changé de manière significative en raison de l’application d’un nouvel ordre de tri ou un filtre.  
+Vous pouvez utiliser l'événement <xref:System.Data.DataView.ListChanged> du <xref:System.Data.DataView> pour déterminer si une vue a été mise à jour. Les mises à jour qui déclenchent l'événement incluent l'ajout, la suppression ou la modification d'une ligne dans la table sous-jacente, l'ajout ou la suppression d'une colonne dans le schéma de la table sous-jacente et une modification d'une relation parente ou enfant. L’événement **ListChanged** vous avertit également si la liste des lignes que vous affichez a changé de manière significative en raison de l’application d’un nouvel ordre de tri ou d’un filtre.  
   
- Le **ListChanged** événement implémente le **ListChangedEventHandler** délégué de la <xref:System.ComponentModel> espace de noms et accepte comme entrée un <xref:System.ComponentModel.ListChangedEventArgs> objet. Vous pouvez déterminer quel type de modification s’est produite à l’aide de la <xref:System.ComponentModel.ListChangedType> valeur d’énumération dans le **ListChangedType** propriété de la **ListChangedEventArgs** objet. Pour les modifications qui impliquent l’ajout, suppression ou déplacement de lignes, le nouvel index de la ligne ajoutée ou déplacée et l’index précédent de la ligne supprimée sont accessibles à l’aide de la **NewIndex** propriété de la **ListChangedEventArgs** objet. Dans le cas d’une ligne déplacée, l’index précédent de la ligne déplacée est accessible à l’aide de la **OldIndex** propriété de la **ListChangedEventArgs** objet.  
+ L’événement **ListChanged** implémente le délégué **ListChangedEventHandler** de l' <xref:System.ComponentModel> espace de noms et prend comme <xref:System.ComponentModel.ListChangedEventArgs> entrée un objet. Vous pouvez déterminer le type de modification qui s’est produit <xref:System.ComponentModel.ListChangedType> à l’aide de la valeur d’énumération dans la propriété **ListChangedType** de l’objet **ListChangedEventArgs** . Pour les modifications qui impliquent l’ajout, la suppression ou le déplacement de lignes, il est possible d’accéder au nouvel index de la ligne ajoutée ou déplacée et à l’index précédent de la ligne supprimée à l’aide de la propriété **NewIndex** de l’objet **ListChangedEventArgs** . Dans le cas d’une ligne déplacée, l’index précédent de la ligne déplacée est accessible à l’aide de la propriété **OldIndex** de l’objet **ListChangedEventArgs** .  
   
- Le **DataViewManager** expose également une **ListChanged** événement pour vous avertir lorsqu’une table a été ajoutée ou supprimée, ou si une modification a été apportée à la **Relations** collection de la sous-jacent **DataSet**.  
+ Le **DataViewManager** expose également un événement **ListChanged** pour vous avertir si une table a été ajoutée ou supprimée, ou si une modification a été apportée à la collection **relations** du **DataSet**sous-jacent.  
   
- L’exemple de code suivant montre comment ajouter un **ListChanged** Gestionnaire d’événements.  
+ L’exemple de code suivant montre comment ajouter un gestionnaire d’événements **ListChanged** .  
   
 ```vb  
 AddHandler custView.ListChanged, _  
@@ -55,5 +55,5 @@ protected static void OnListChanged(object sender,
 
 - <xref:System.Data.DataView>
 - <xref:System.ComponentModel.ListChangedEventHandler>
-- [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)
+- [DataViews](dataviews.md)
 - [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)

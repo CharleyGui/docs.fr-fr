@@ -3,12 +3,12 @@ title: Commande dotnet nuget push
 description: La commande dotnet nuget push exécute un envoi (push) d’un package sur le serveur et le publie.
 author: karann-msft
 ms.date: 06/26/2019
-ms.openlocfilehash: 4d5efa94c6a4494158aea447be98256d2a307cd6
-ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
+ms.openlocfilehash: 87557f606dead921961349fec4575394e6d359fd
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67539131"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70202547"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
@@ -24,7 +24,7 @@ ms.locfileid: "67539131"
 
 ## <a name="synopsis"></a>Résumé
 
-```
+```console
 dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [--interactive] [-k|--api-key] [-n|--no-symbols]
     [--no-service-endpoint] [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
 dotnet nuget push [-h|--help]

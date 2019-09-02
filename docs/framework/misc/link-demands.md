@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: a33fd5f9-2de9-4653-a4f0-d9df25082c4d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e3bde5b18437cc9890f660f018e81582a4d708d2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f040e1e1706e1f84ced8b253ff3fb15dbcbd6e1e
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910917"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206010"
 ---
 # <a name="link-demands"></a>Demandes de liaison
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -32,7 +32,7 @@ ms.locfileid: "69910917"
   
  Les modificateurs de parcours de pile <xref:System.Security.CodeAccessPermission.Assert%2A>, <xref:System.Security.CodeAccessPermission.Deny%2A> et <xref:System.Security.CodeAccessPermission.PermitOnly%2A> n'affectent pas l'évaluation des demandes de liaison.  Étant donné que les demandes de liaison n'effectuent pas de parcours de pile, les modificateurs de parcours de pile n'ont aucun effet sur les demandes de liaison.  
   
- Si une méthode protégée par une demande de liaison est accessible par [réflexion](../../../docs/framework/reflection-and-codedom/reflection.md), une demande de liaison vérifie l’appelant immédiat du code accessible via la réflexion. Cela est vrai à la fois pour les détections de méthodes et les appels de méthodes effectués à l'aide de la réflexion. Par exemple, supposons que le code utilise la <xref:System.Reflection.MethodInfo> réflexion pour retourner un objet représentant une méthode protégée par une demande de liaison, puis passe cet objet **MethodInfo** à un autre code qui utilise l’objet pour appeler la méthode d’origine. Dans ce cas, la vérification de la demande de liaison se produit deux fois: une fois pour le code qui retourne l’objet **MethodInfo** et une fois pour le code qui l’appelle.  
+ Si une méthode protégée par une demande de liaison est accessible par [réflexion](../reflection-and-codedom/reflection.md), une demande de liaison vérifie l’appelant immédiat du code accessible via la réflexion. Cela est vrai à la fois pour les détections de méthodes et les appels de méthodes effectués à l'aide de la réflexion. Par exemple, supposons que le code utilise la <xref:System.Reflection.MethodInfo> réflexion pour retourner un objet représentant une méthode protégée par une demande de liaison, puis passe cet objet **MethodInfo** à un autre code qui utilise l’objet pour appeler la méthode d’origine. Dans ce cas, la vérification de la demande de liaison se produit deux fois: une fois pour le code qui retourne l’objet **MethodInfo** et une fois pour le code qui l’appelle.  
   
 > [!NOTE]
 > Une demande de liaison exécutée sur un constructeur de classe statique ne protège pas le constructeur, car les constructeurs statiques sont appelés par le système, en dehors du chemin d’exécution du code de l’application. Par conséquent, quand une demande de liaison est appliquée à une classe entière, elle ne peut pas protéger l'accès à un constructeur statique, même si elle protège le reste de la classe.  
@@ -57,4 +57,4 @@ public static string ReadData()
 ## <a name="see-also"></a>Voir aussi
 
 - [Attributs](../../standard/attributes/index.md)
-- [Sécurité d’accès du code](../../../docs/framework/misc/code-access-security.md)
+- [Sécurité d’accès du code](code-access-security.md)

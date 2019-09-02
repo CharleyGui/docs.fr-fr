@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 08/07/2019
 ms.technology: dotnet-cli
 ms.custom: seodec18
-ms.openlocfilehash: 88e9501a776a026a311c5002674c15acf2324f2b
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: a680a4b58927d915e887eea43a72983a5b349682
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68868591"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105058"
 ---
 # <a name="get-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Bien démarrer avec .NET Core sur Windows/Linux/macOS en ligne de commande
 
@@ -47,8 +47,8 @@ Suivons une procédure pas à pas rapide :
 
    Le fichier projet spécifie tout ce qui est nécessaire pour restaurer les dépendances et générer le programme.
 
-   * La balise `OutputType` spécifie que nous générons un fichier exécutable, autrement dit une application console.
-   * La balise `TargetFramework` spécifie l’implémentation .NET que nous ciblons. Dans un scénario avancé, vous pouvez spécifier plusieurs frameworks cibles et y effectuer une génération globale en une seule opération. Dans ce tutoriel, nous nous en tiendrons à une génération limitée à .NET Core 2.1.
+   - La balise `OutputType` spécifie que nous générons un fichier exécutable, autrement dit une application console.
+   - La balise `TargetFramework` spécifie l’implémentation .NET que nous ciblons. Dans un scénario avancé, vous pouvez spécifier plusieurs frameworks cibles et y effectuer une génération globale en une seule opération. Dans ce tutoriel, nous nous en tiendrons à une génération limitée à .NET Core 2.1.
 
    `Program.cs`:
 

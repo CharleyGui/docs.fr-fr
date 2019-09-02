@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 694ea153-e4db-41ae-96ac-9ac66dcb69a9
-ms.openlocfilehash: cbe00fb792ab5f2a7586a958ddbe5bdf004656dc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2abb9c13e9b0cb394546252e0e51e53c8ff9eefb
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61875964"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206001"
 ---
 # <a name="committing-a-transaction-in-single-phase-and-multi-phase"></a>Validation d'une transaction en une phase unique et en plusieurs phases
-Les ressources utilisées dans une transaction sont managées par un gestionnaire de ressources, dont les actions sont coordonnées par un gestionnaire de transactions. Le [l’inscription de ressources comme Participants à une Transaction](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md) rubrique explique comment une ressource (ou plusieurs ressources) peuvent être inscrit dans une transaction. Elle traite de la coordination de la validation d'une transaction entre les ressources inscrites.  
+Les ressources utilisées dans une transaction sont managées par un gestionnaire de ressources, dont les actions sont coordonnées par un gestionnaire de transactions. La rubrique [inscription de ressources en tant que participants dans une transaction](enlisting-resources-as-participants-in-a-transaction.md) explique comment une ressource (ou plusieurs ressources) peut être inscrite dans une transaction. Elle traite de la coordination de la validation d'une transaction entre les ressources inscrites.  
   
  À la fin de la transaction, l'application requiert la validation ou la restauration de la transaction. Le gestionnaire de transactions doit éliminer tous les risques, par exemple des gestionnaires de ressources votant pour la validation de la transaction et d'autres votant pour sa restauration.  
   
- Si votre transaction implique plusieurs ressources, vous devez effectuer une validation en deux phases (2PC). Le protocole de validation en deux phases (une phase de préparation et une phase de validation) garantit, à la fin de la transaction, l'entière validation ou restauration de l'ensemble des modifications apportées aux ressources. Tous les participants sont ensuite informés du résultat final. Pour obtenir une présentation détaillée du protocole de validation en deux phases, consultez le livre "*traitement des transactions : Concepts et ISBN : 1558601902 Techniques (série Morgan Kaufmann des systèmes de gestion de données)*" par Jim Gray.  
+ Si votre transaction implique plusieurs ressources, vous devez effectuer une validation en deux phases (2PC). Le protocole de validation en deux phases (une phase de préparation et une phase de validation) garantit, à la fin de la transaction, l'entière validation ou restauration de l'ensemble des modifications apportées aux ressources. Tous les participants sont ensuite informés du résultat final. Pour obtenir une présentation détaillée du protocole de validation en deux phases, consultez le livre "*traitement des transactions : Concepts et ISBN : 1558601902 Techniques (série Morgan Kaufmann des systèmes de gestion de données)* " par Jim Gray.  
   
- Vous pouvez également optimiser les performances de votre transaction en suivant le protocole de validation en une phase. Pour plus d’informations, consultez [optimisation à l’aide de la validation à Phase unique et la Notification de Phase unique pouvant être promue](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md).  
+ Vous pouvez également optimiser les performances de votre transaction en suivant le protocole de validation en une phase. Pour plus d’informations, consultez [optimisation à l’aide de la validation à phase unique et de la notification à phase unique pouvant](optimization-spc-and-promotable-spn.md)être promue.  
   
  Pour être informé du résultat d'une transaction sans participer au vote, inscrivez-vous à l'événement <xref:System.Transactions.Transaction.TransactionCompleted>.  
   
@@ -66,7 +66,7 @@ public void Prepare(PreparingEnlistment preparingEnlistment)
   
  Une fois que le gestionnaire de ressources a terminé son travail de préparation, il doit voter pour la validation ou la restauration en appelant la méthode <xref:System.Transactions.PreparingEnlistment.Prepared%2A> ou <xref:System.Transactions.PreparingEnlistment.ForceRollback%2A>. Notez que la classe <xref:System.Transactions.PreparingEnlistment> hérite d'une méthode <xref:System.Transactions.Enlistment.Done%2A> de la classe <xref:System.Transactions.Enlistment>. L'appel à cette méthode sur le rappel <xref:System.Transactions.PreparingEnlistment> au cours de la phase de préparation indique au gestionnaire de transactions qu'il s'agit d'une inscription en lecture seule (des gestionnaires de ressources qui peuvent être lus mais qui ne peuvent pas mettre à jour les données protégées par la transaction) et le gestionnaire de ressources ne reçoit plus de notification du gestionnaire de transaction jusqu'au résultat de la transaction en phase 2.  
   
- L'application est informée de la validation réussie de la transaction après le vote <xref:System.Transactions.PreparingEnlistment.Prepared%2A> de tous les gestionnaires de ressources   
+ L'application est informée de la validation réussie de la transaction après le vote <xref:System.Transactions.PreparingEnlistment.Prepared%2A> de tous les gestionnaires de ressources  
   
 ### <a name="commit-phase-phase-2"></a>Phase de validation (Phase 2)  
  Lors de la seconde phase de la transaction, si le gestionnaire de transactions a reçu les préparations réussies de tous les gestionnaires de ressources (c'est-à-dire, si tous les gestionnaires de ressources ont appelé <xref:System.Transactions.PreparingEnlistment.Prepared%2A> à la fin de la phase 1), il appelle la méthode <xref:System.Transactions.IEnlistmentNotification.Commit%2A> pour chaque gestionnaire de ressources. Les gestionnaires de ressources peuvent ensuite confirmer les modifications et terminer la validation.  
@@ -107,9 +107,9 @@ public void InDoubt (Enlistment enlistment)
 ```  
   
 ## <a name="single-phase-commit-optimization"></a>Optimisation de la validation en une phase  
- Le protocole de validation en une phase est plus efficace lors de l'exécution car toutes les mises à jour sont effectuées sans coordination explicite. Pour plus d’informations sur ce protocole, consultez [optimisation à l’aide de la validation à Phase unique et la Notification de Phase unique pouvant être promue](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md).  
+ Le protocole de validation en une phase est plus efficace lors de l'exécution car toutes les mises à jour sont effectuées sans coordination explicite. Pour plus d’informations sur ce protocole, consultez [optimisation à l’aide de la validation à phase unique et de la notification à phase unique pouvant](optimization-spc-and-promotable-spn.md)être promue.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Optimisation à l’aide de la validation à phase unique et de la notification de phase unique pouvant être promue](../../../../docs/framework/data/transactions/optimization-spc-and-promotable-spn.md)
-- [Inscription de ressources comme participants à une transaction](../../../../docs/framework/data/transactions/enlisting-resources-as-participants-in-a-transaction.md)
+- [Optimisation à l’aide de la validation à phase unique et de la notification de phase unique pouvant être promue](optimization-spc-and-promotable-spn.md)
+- [Inscription de ressources comme participants à une transaction](enlisting-resources-as-participants-in-a-transaction.md)

@@ -5,12 +5,12 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 11/29/2017
 ms.custom: seodec18
-ms.openlocfilehash: 5319e33c314187ccce3e9832c4b01d93ba86c3ce
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 1013e14690bb3cfc17e339bfd5045e6d10bc3d3e
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68626417"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168149"
 ---
 # <a name="unit-testing-c-in-net-core-using-dotnet-test-and-xunit"></a>Effectuer des tests unitaires de C# dans .NET Core à l’aide de dotnet test et de xUnit
 
@@ -22,7 +22,7 @@ Ouvrez une fenêtre d’interpréteur de commandes. Créez un répertoire appel�
 Dans ce nouveau répertoire, exécutez [`dotnet new sln`](../tools/dotnet-new.md) pour créer une solution. Le fait d’avoir une solution simplifie la gestion de la bibliothèque de classes et du projet de test unitaire.
 Dans le répertoire de la solution, créez un répertoire *PrimeService*. La structure du répertoire et des fichiers jusqu’ici doit être la suivante :
 
-```
+```console
 /unit-testing-using-dotnet-test
     unit-testing-using-dotnet-test.sln
     /PrimeService
@@ -49,7 +49,7 @@ Accédez de nouveau au répertoire *unit-testing-using-dotnet-test*.
 
 Exécutez la commande [dotnet sln](../tools/dotnet-sln.md) pour ajouter le projet de la bibliothèque de classes à la solution :
 
-```
+```console
 dotnet sln add ./PrimeService/PrimeService.csproj
 ```
 
@@ -57,7 +57,7 @@ dotnet sln add ./PrimeService/PrimeService.csproj
 
 Ensuite, créez le répertoire *PrimeService.Tests*. La structure du répertoire est illustrée ci-dessous :
 
-```
+```console
 /unit-testing-using-dotnet-test
     unit-testing-using-dotnet-test.sln
     /PrimeService
@@ -78,7 +78,7 @@ Accédez au répertoire *PrimeService.Tests* et créez un projet à l’aide de 
 
 Le projet de test a besoin d’autres packages pour créer et exécuter des tests unitaires. `dotnet new` a ajouté xUnit et le Test Runner xUnit à l’étape précédente. Maintenant, ajoutez la bibliothèque de classes `PrimeService` en tant qu’une autre dépendance au projet. Utilisez la commande [`dotnet add reference`](../tools/dotnet-add-reference.md) :
 
-```
+```console
 dotnet add reference ../PrimeService/PrimeService.csproj
 ```
 
@@ -86,7 +86,7 @@ Vous pouvez consulter le fichier dans son intégralité dans le [dépôt d’exe
 
 La solution finale se présente comme suit :
 
-```
+```console
 /unit-testing-using-dotnet-test
     unit-testing-using-dotnet-test.sln
     /PrimeService
@@ -99,7 +99,7 @@ La solution finale se présente comme suit :
 
 Pour ajouter le projet de test à la solution, exécutez la commande [dotnet sln](../tools/dotnet-sln.md) dans le répertoire *unit-testing-using-dotnet-test* :
 
-```
+```console
 dotnet sln add ./PrimeService.Tests/PrimeService.Tests.csproj
 ```
 

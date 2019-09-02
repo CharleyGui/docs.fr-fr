@@ -2,12 +2,12 @@
 title: Unions discriminées
 description: Découvrez comment utiliser F# des unions discriminées.
 ms.date: 05/16/2016
-ms.openlocfilehash: fa4f011a8d5fd6725a44e030b423e79244a18734
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 3ed05fdb144d7266adc1718cdf015ab64680f3d8
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106767"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206159"
 ---
 # <a name="discriminated-unions"></a>Unions discriminées
 
@@ -87,7 +87,7 @@ Normalement, les identificateurs de cas peuvent être utilisés sans les qualifi
 Dans F# , les unions discriminées sont souvent utilisées dans la modélisation de domaine pour l’encapsulation d’un type unique. Il est également facile d’extraire la valeur sous-jacente via la mise en correspondance des modèles. Vous n’avez pas besoin d’utiliser une expression de correspondance pour un cas unique:
 
 ```fsharp
-let ([UnionCaseName] [values]) = [UnionValue]
+let ([UnionCaseIdentifier] [values]) = [UnionValue]
 ```
 
 Cela est illustré par l'exemple suivant :

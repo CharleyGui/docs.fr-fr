@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fbc96fa9-b5d1-4f97-b099-c89b0e14ce2c
-ms.openlocfilehash: b4682d60e213ad57308143b2c7ea06d123daf61d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f788e1732f083c01542fcdacdfc042553741350b
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607492"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204420"
 ---
 # <a name="synchronizing-a-dataset-with-an-xmldatadocument"></a>Synchronisation d'un DataSet et d'un XmlDataDocument
-Cette section décrit l’une des étapes du traitement d’un bon de commande à l’aide d’un objet <xref:System.Data.DataSet> fortement typé, synchronisé avec un objet <xref:System.Xml.XmlDataDocument>. Les exemples suivants créent un **DataSet** avec un schéma minimal correspondant uniquement une partie du document XML source. Les exemples utilisent un **XmlDataDocument** pour préserver la fidélité du document XML source, l’activation de la **DataSet** à être utilisé pour exposer un sous-ensemble du document XML.  
+Cette section décrit l’une des étapes du traitement d’un bon de commande à l’aide d’un objet <xref:System.Data.DataSet> fortement typé, synchronisé avec un objet <xref:System.Xml.XmlDataDocument>. Les exemples qui suivent créent un **jeu de données** avec un schéma réduit qui correspond uniquement à une partie du document XML source. Les exemples utilisent un **XmlDataDocument** pour préserver la fidélité du document XML source, ce qui permet d’utiliser le **DataSet** pour exposer un sous-ensemble du document XML.  
   
  Le document XML suivant contient toutes les informations relatives à un bon de commande : les informations client, les articles commandés, les informations de livraison, etc.  
   
@@ -109,9 +109,9 @@ Cette section décrit l’une des étapes du traitement d’un bon de commande �
 </PurchaseOrder>  
 ```  
   
- L'une des étapes du traitement des informations du bon de commande contenues dans le document XML précédent consiste à satisfaire la commande en allant chercher les articles dans le stock actuel de la société. L'employé chargé de cette tâche n'a pas besoin pour ce faire de voir l'intégralité du contenu du bon de commande ; il lui suffit de connaître les références des produits commandés. Pour exposer uniquement les informations de produit à partir du document XML, créez un fortement typée **DataSet** avec un schéma, écrit en tant que schéma XML Schema definition language (XSD), qui corresponde aux produits et quantités commandés. Pour plus d’informations sur fortement typées **DataSet** , consultez [typés](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md).  
+ L'une des étapes du traitement des informations du bon de commande contenues dans le document XML précédent consiste à satisfaire la commande en allant chercher les articles dans le stock actuel de la société. L'employé chargé de cette tâche n'a pas besoin pour ce faire de voir l'intégralité du contenu du bon de commande ; il lui suffit de connaître les références des produits commandés. Pour exposer uniquement les informations sur les produits à partir du document XML, créez un **DataSet** fortement typé avec un schéma, écrit sous la forme d’un schéma en langage XSD (XML Schema Definition), qui mappe aux produits et aux quantités commandées. Pour plus d’informations sur les objets **DataSet** fortement typés, consultez [DataSets typés](typed-datasets.md).  
   
- Le code suivant montre le schéma à partir de laquelle fortement typée **DataSet** est généré pour cet exemple.  
+ Le code suivant montre le schéma à partir duquel le **DataSet** fortement typé est généré pour cet exemple.  
   
 ```xml  
 <?xml version="1.0" standalone="yes"?>  
@@ -157,11 +157,11 @@ Cette section décrit l’une des étapes du traitement d’un bon de commande �
 </xs:schema>  
 ```  
   
- Notez que seules les informations à partir de la **OrderDetails** et **produits** éléments du document XML d’origine sont inclus dans le schéma pour le **DataSet**. Synchronisation de la **DataSet** avec un **XmlDataDocument** garantit que les éléments non inclus dans le **DataSet** seront conservés avec le document XML.  
+ Notez que seules les informations des éléments **OrderDetails** et **Products** du document XML d’origine sont incluses dans le schéma du **DataSet**. La synchronisation du **DataSet** avec un **XmlDataDocument** permet de s’assurer que les éléments qui ne sont pas inclus dans le **DataSet** seront conservés avec le document XML.  
   
- Avec fortement typée **DataSet** généré à partir du schéma XML (avec un espace de noms **Northwind.FillOrder**), une partie du document XML d’origine peut être exposée en synchronisant le  **Jeu de données** avec la **XmlDataDocument** chargé à partir du document XML source. Notez que le **DataSet** généré à partir le schéma contient une structure mais aucune donnée. Les données sont fournies lorsque vous chargez le XML dans le **XmlDataDocument**. Si vous tentez de charger un **XmlDataDocument** qui a été synchronisé avec un **DataSet** qui contient déjà des données, une exception sera levée.  
+ Avec le **DataSet** fortement typé généré à partir du schéma XML (avec l’espace de noms **Northwind. FillOrder**), une partie du document XML d’origine peut être exposée via la synchronisation du **DataSet** avec le **XmlDataDocument** chargé à partir du document XML source. Notez que le **jeu** de données généré à partir du schéma contient une structure mais aucune donnée. Les données sont renseignées lorsque vous chargez le XML dans le **XmlDataDocument**. Si vous tentez de charger un **XmlDataDocument** qui a été synchronisé avec un **DataSet** qui contient déjà des données, une exception est levée.  
   
- Après le **DataSet** (et le **XmlDataDocument**) a été mis à jour, le **XmlDataDocument** peut écrire le document XML modifié avec les éléments ignorés par le **DataSet** toujours intacte, comme indiqué ci-dessous. Dans le scénario du bon de commande, une fois que les articles commandés ont été sortis du magasin, le document XML modifié peut passer à l'étape suivante du traitement de la commande, peut-être au service livraison de la société.  
+ Après la mise à jour du **DataSet** (et du **XmlDataDocument**), le **XmlDataDocument** peut ensuite écrire le document XML modifié avec les éléments ignorés par le **jeu de données** , comme indiqué ci-dessous. Dans le scénario du bon de commande, une fois que les articles commandés ont été sortis du magasin, le document XML modifié peut passer à l'étape suivante du traitement de la commande, peut-être au service livraison de la société.  
   
 ```vb  
 Imports System  
@@ -233,5 +233,5 @@ public class Sample
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Synchronisation DataSet et XmlDataDocument](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)
+- [Synchronisation DataSet et XmlDataDocument](dataset-and-xmldatadocument-synchronization.md)
 - [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -4,19 +4,19 @@ description: Découvrez comment empaqueter, nommer et versionner .NET Core pour 
 author: tmds
 ms.date: 03/02/2018
 ms.custom: seodec18
-ms.openlocfilehash: b961d84053dc41e75e002c8c12419fdef99ded4b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5d23147c8a38fbeea9e88c0a18e1f220e854fec1
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64585253"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105416"
 ---
 # <a name="net-core-distribution-packaging"></a>Empaquetage de la distribution de .NET Core
 
 .NET Core est disponible sur de plus en plus de plateformes ; il est donc utile de savoir comment l’empaqueter, le nommer et le versionner. De cette manière, les chargés de maintenance des packages pourront garantir une expérience cohérente quelle que soit la plateforme choisie par les utilisateurs pour exécuter .NET. Cet article est utile pour les utilisateurs qui :
 
-* Essaient de générer .NET Core à partir de la source.
-* Souhaitent apporter des modifications à l’interface CLI .NET Core susceptibles d’impacter la disposition résultante ou les packages générés.
+- Essaient de générer .NET Core à partir de la source.
+- Souhaitent apporter des modifications à l’interface CLI .NET Core susceptibles d’impacter la disposition résultante ou les packages générés.
 
 ## <a name="disk-layout"></a>Disposition du disque
 
@@ -78,7 +78,7 @@ Le reste de la version n’est pas inclus dans le nom de version. Ceci permet au
 
 Le tableau suivant indique les packages recommandés :
 
-| Name                                    | Exemple                | Cas d'usage : Installer...           | Contient           | Dépendances                                   | Version            |
+| Name                                    | Exemples                | Cas d'usage : Installer...           | Contient           | Dépendances                                   | Version            |
 |-----------------------------------------|------------------------|---------------------------------|--------------------|------------------------------------------------|--------------------|
 | dotnet-sdk-[major]                      | dotnet-sdk-2           | Dernier SDK pour la version majeure du runtime    |                    | dotnet-sdk-[major].[latestminor]               | \<version sdk>     |
 | dotnet-sdk-[major].[minor]              | dotnet-sdk-2.1         | Dernier SDK pour un runtime spécifique |                    | dotnet-sdk-[major].[minor].[latest sdk feat]xx | \<version sdk>     |

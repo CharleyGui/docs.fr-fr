@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 02/16/2019
-ms.openlocfilehash: 74ff7196ce17807b98a975687a524041f15a7f5b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 93a0fd5c484e27853ec9a6919aa573f68471ceaa
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68675576"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105482"
 ---
 # <a name="architectural-principles"></a>Principes de l’architecture
 
@@ -101,8 +101,8 @@ Au minimum, les applications web individuelles doivent s’efforcer d’être le
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Modèles de conception JAVA : principes](https://java-design-patterns.com/principles/)
-* [Contexte délimité](https://martinfowler.com/bliki/BoundedContext.html)
+- [Modèles de conception JAVA : principes](https://java-design-patterns.com/principles/)
+- [Contexte délimité](https://martinfowler.com/bliki/BoundedContext.html)
 
 >[!div class="step-by-step"]
 >[Précédent](choose-between-traditional-web-and-single-page-apps.md)

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - interpolated string [C#]
 author: pkulikov
 ms.author: ronpet
-ms.openlocfilehash: bc27eedcf1957a109a9bcb80cf9a49e9606921fd
-ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
+ms.openlocfilehash: 1f0d63a549daa9fecd0cce3a7e5a6496929c37d2
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66251001"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70202959"
 ---
 # <a name="---string-interpolation-c-reference"></a>$ - interpolation de chaîne (Référence C#)
 
@@ -34,7 +34,7 @@ Pour identifier un littéral de chaîne comme chaîne interpolée, préfixez-la 
 
 La structure d’un élément avec une expression d’interpolation se présente comme suit :
 
-```
+```csharp
 {<interpolationExpression>[,<alignment>][:<formatString>]}
 ```
 

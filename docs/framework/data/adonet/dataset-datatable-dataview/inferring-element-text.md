@@ -2,15 +2,15 @@
 title: Déduction du texte d'un élément
 ms.date: 03/30/2017
 ms.assetid: 789799e5-716f-459f-a168-76c5cf22178b
-ms.openlocfilehash: 6ffe8f2fbf01fbe8dfa9d78f3dfb9e39b6e80b16
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d8d64c0cbb0aecf736a54fa6816e286ab7efa191
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879630"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203531"
 ---
 # <a name="inferring-element-text"></a>Déduction du texte d'un élément
-Si un élément contient du texte et ne contient aucun élément enfant à déduire en tant que tables telles que (éléments avec attributs) ou des éléments répétés, une nouvelle colonne portant le nom **TableName_Text** sera ajouté à la table qui est déduite pour l’élément. Le texte contenu dans l'élément sera ajouté à une ligne de la table et stocké dans la nouvelle colonne. Le **ColumnMapping** propriété de la nouvelle colonne est définie **MappingType.SimpleContent**.  
+Si un élément contient du texte et qu’il n’a aucun élément enfant à déduire en tant que tables (comme des éléments avec des attributs ou des éléments répétés), une nouvelle colonne portant le nom **TableName_Text** sera ajoutée à la table déduite pour l’élément. Le texte contenu dans l'élément sera ajouté à une ligne de la table et stocké dans la nouvelle colonne. La propriété **ColumnMapping** de la nouvelle colonne sera définie sur **MappingType. SimpleContent**.  
   
  Examinons, par exemple, le code XML suivant.  
   
@@ -20,11 +20,11 @@ Si un élément contient du texte et ne contient aucun élément enfant à dédu
 </DocumentElement>  
 ```  
   
- Le processus d’inférence produira une table nommée **Element1** avec deux colonnes : **attr1** et **Element1_Text**. Le **ColumnMapping** propriété de la **attr1** jeu de colonnes **MappingType.Attribute**. Le **ColumnMapping** propriété de la **Element1_Text** jeu de colonnes **MappingType.SimpleContent**.  
+ Le processus d’inférence produira une table nommée **element1** avec deux colonnes: **attr1** et **Element1_Text**. La propriété **ColumnMapping** de la colonne **attr1** aura pour valeur **MappingType. Attribute**. La propriété **ColumnMapping** de la colonne **Element1_Text** aura pour valeur **MappingType. SimpleContent**.  
   
- **Jeu de données :** DocumentElement  
+ **Ensemble** DocumentElement  
   
- **Table :** Element1  
+ **Table :** Element1  
   
 |attr1|Element1_Text|  
 |-----------|--------------------|  
@@ -40,11 +40,11 @@ Si un élément contient du texte et ne contient aucun élément enfant à dédu
 </Element1>  
 ```  
   
- Le processus d’inférence produira une table nommée **Element1** avec une colonne nommée **ChildElement1**. Le texte pour le **ChildElement1** élément figureront dans une ligne dans la table. L'autre texte sera ignoré. Le **ColumnMapping** propriété de la **ChildElement1** jeu de colonnes **MappingType.Element**.  
+ Le processus d’inférence produira une table nommée **element1** avec une colonne nommée **ChildElement1**. Le texte de l’élément **ChildElement1** sera inclus dans une ligne de la table. L'autre texte sera ignoré. La propriété **ColumnMapping** de la colonne **ChildElement1** sera définie sur **MappingType. Element**.  
   
- **Jeu de données :** DocumentElement  
+ **Ensemble** DocumentElement  
   
- **Table :** Element1  
+ **Table :** Element1  
   
 |ChildElement1|  
 |-------------------|  
@@ -52,9 +52,9 @@ Si un élément contient du texte et ne contient aucun élément enfant à dédu
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Inférence de la structure relationnelle d’un DataSet à partir de XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)
-- [Chargement d’un DataSet à partir de XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md)
-- [Chargement des informations de schéma de DataSet à partir de XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)
-- [Utilisation de XML dans un DataSet](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
-- [DataSets, DataTables et DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [Inférence de la structure relationnelle d’un DataSet à partir de XML](inferring-dataset-relational-structure-from-xml.md)
+- [Chargement d’un DataSet à partir de XML](loading-a-dataset-from-xml.md)
+- [Chargement des informations de schéma de DataSet à partir de XML](loading-dataset-schema-information-from-xml.md)
+- [Utilisation de XML dans un DataSet](using-xml-in-a-dataset.md)
+- [DataSets, DataTables et DataViews](index.md)
 - [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)

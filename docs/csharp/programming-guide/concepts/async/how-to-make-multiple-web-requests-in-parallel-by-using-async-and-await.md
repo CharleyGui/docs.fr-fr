@@ -2,15 +2,15 @@
 title: 'Procédure : Effectuer plusieurs requêtes web en parallèle en utilisant async et await (C#)'
 ms.date: 07/20/2015
 ms.assetid: 19745899-f97a-4499-a7c7-e813d1447580
-ms.openlocfilehash: edba5ed5026c16ca1f1b09e8504ecfdf408ae5ef
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 06b70f5f3b2e1f3e7e423b16463f0b6b613f62c2
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69922004"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168384"
 ---
 # <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-c"></a>Procédure : Effectuer plusieurs requêtes web en parallèle en utilisant async et await (C#)
-Dans une méthode asynchrone, les tâches sont démarrées quand elles sont créées. L’opérateur [await](../../../language-reference/keywords/await.md) est appliqué à la tâche au point dans la méthode où le traitement ne peut pas se poursuivre tant que la tâche n’est pas terminée. Souvent, une tâche est attendue dès sa création, comme le montre l’exemple suivant.  
+Dans une méthode asynchrone, les tâches sont démarrées quand elles sont créées. L’opérateur [await](../../../language-reference/operators/await.md) est appliqué à la tâche au point dans la méthode où le traitement ne peut pas se poursuivre tant que la tâche n’est pas terminée. Souvent, une tâche est attendue dès sa création, comme le montre l’exemple suivant.  
   
 ```csharp  
 var result = await someWebAccessMethodAsync(url);  

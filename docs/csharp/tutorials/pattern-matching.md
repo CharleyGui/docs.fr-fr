@@ -3,12 +3,12 @@ title: Utiliser les fonctionnalités de critères spéciaux pour étendre les ty
 description: Ce tutoriel avancé montre comment utiliser des techniques de critères spéciaux pour créer des fonctionnalités à l’aide de données et d’algorithmes créés séparément.
 ms.date: 03/13/2019
 ms.custom: mvc
-ms.openlocfilehash: c42a917deee763e7c3e4e24949ec5c896d55016f
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: b142bad9a4058a884d9e511424bc50856152b67e
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397834"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105565"
 ---
 # <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Tutoriel : Utiliser les fonctionnalités de critères spéciaux pour étendre les types de données
 
@@ -17,9 +17,9 @@ C# 7 a introduit des fonctionnalités de critères spéciaux de base. Elles ont 
 Dans ce tutoriel, vous allez apprendre à :
 
 > [!div class="checklist"]
-> * Reconnaître les situations dans lesquelles les critères spéciaux sont nécessaires.
-> * Utiliser des expressions de critères spéciaux pour implémenter des comportements en fonction des types et des valeurs de propriété.
-> * Combiner des critères spéciaux avec d’autres techniques pour créer des algorithmes complets.
+> - Reconnaître les situations dans lesquelles les critères spéciaux sont nécessaires.
+> - Utiliser des expressions de critères spéciaux pour implémenter des comportements en fonction des types et des valeurs de propriété.
+> - Combiner des critères spéciaux avec d’autres techniques pour créer des algorithmes complets.
 
 ## <a name="prerequisites"></a>Prérequis
 

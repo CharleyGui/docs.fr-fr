@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 154640499e99767f73a148c6980e6a2a4cfbce2f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 56f0ebccc1bd46a26b5247ac2668e963cbeac828
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623786"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106484"
 ---
 # <a name="application-compatibility-in-the-net-framework"></a>Compatibilité des applications dans le .NET Framework
 
@@ -22,9 +22,9 @@ La compatibilité est un objectif très important de chaque version de .NET. La 
 
 Chaque application cible une version spécifique du .NET Framework, qui peut être indiquée par :
 
-* La définition d’une version cible de .NET Framework dans Visual Studio.
-* La spécification de la version cible de .NET Framework dans un fichier projet.
-* L’application d’un <xref:System.Runtime.Versioning.TargetFrameworkAttribute> au code source.
+- La définition d’une version cible de .NET Framework dans Visual Studio.
+- La spécification de la version cible de .NET Framework dans un fichier projet.
+- L’application d’un <xref:System.Runtime.Versioning.TargetFrameworkAttribute> au code source.
 
 Lors de l’exécution sur une version plus récente que celle qui était ciblée, le .NET Framework utilise un subterfuge afin de simuler l’ancienne version ciblée. En d’autres termes, l’application s’exécute sur la version la plus récente du .NET Framework, mais agit comme si elle était exécutée sur la version antérieure. La plupart des problèmes de compatibilité entre les versions du .NET Framework sont atténués via ce modèle de subterfuge. La version du .NET Framework que cible une application est déterminée par la version cible de l’assembly d’entrée pour le domaine d’application dans lequel le code s’exécute. Tous les autres assemblys chargés dans ce domaine d’application ciblent cette version du .NET Framework. Par exemple, dans le cas d’un exécutable, le framework que cible l’exécutable correspond au mode de compatibilité sous lequel tous les assemblys inclus dans ce domaine d’application s’exécutent.
 
@@ -71,8 +71,8 @@ Chaque problème comprend les informations suivantes :
 ## <a name="usage"></a>Utilisation
 Pour commencer, sélectionnez le type de modification de la compatibilité ci-dessous :
 
-* [Modifications de reciblage](./retargeting/index.md)
-* [Modifications du runtime](./runtime/index.md)
+- [Modifications de reciblage](./retargeting/index.md)
+- [Modifications du runtime](./runtime/index.md)
 
 ## <a name="see-also"></a>Voir aussi
 

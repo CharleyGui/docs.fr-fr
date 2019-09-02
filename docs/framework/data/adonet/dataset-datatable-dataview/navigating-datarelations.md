@@ -5,28 +5,28 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e5e673f4-9b44-45ae-aaea-c504d1cc5d3e
-ms.openlocfilehash: f4dfccad23bf5d15f5cbd0a33e76a136417e13ea
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b7b1717317bb119538497f60bae48ec1da2286c8
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607257"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203324"
 ---
 # <a name="navigating-datarelations"></a>Parcours des DataRelations
-L'une des principales fonctions d'un objet <xref:System.Data.DataRelation> est de permettre de passer d'un objet <xref:System.Data.DataTable> à un autre à l'intérieur d'un objet <xref:System.Data.DataSet>. Cela vous permet de récupérer tous les connexe <xref:System.Data.DataRow> les objets **DataTable** lorsqu’un **DataRow** à partir d’un connexes **DataTable**. Par exemple, après avoir établi un **DataRelation** entre une table de clients et une table de commandes, vous pouvez récupérer toutes les lignes de commande pour une ligne de client spécifique à l’aide **GetChildRows**.  
+L'une des principales fonctions d'un objet <xref:System.Data.DataRelation> est de permettre de passer d'un objet <xref:System.Data.DataTable> à un autre à l'intérieur d'un objet <xref:System.Data.DataSet>. Cela vous permet de récupérer tous les objets <xref:System.Data.DataRow> connexes dans un **DataTable** lorsqu’un **DataRow** unique est donné à partir d’un **DataTable**associé. Par exemple, après avoir établi un **DataRelation** entre une table de clients et une table de commandes, vous pouvez récupérer toutes les lignes de commande pour une ligne de client particulière à l’aide de **GetChildRows**.  
   
- L’exemple de code suivant crée un **DataRelation** entre le **clients** table et le **commandes** table d’un **DataSet** et retourne toutes les commandes pour chaque client.  
+ L’exemple de code suivant crée un **DataRelation** entre la table Customers et la table **Orders** d’un **DataSet** et retourne toutes les commandes pour chaque client.  
   
  [!code-csharp[DataWorks Data.DataTableRelation#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks Data.DataTableRelation/CS/source.cs#1)]
  [!code-vb[DataWorks Data.DataTableRelation#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks Data.DataTableRelation/VB/source.vb#1)]  
   
- L'exemple suivant s'appuie sur le précédent, en créant des relations entre quatre tables et en explorant ces relations. Comme dans l’exemple précédent, **CustomerID** se rapporte la **clients** de la table vers le **commandes** table. Pour chaque client dans le **clients** table, toutes les lignes enfants de la **commandes** table sont déterminées, afin de retourner le nombre de commandes passées par un client et leurs **OrderID** valeurs.  
+ L'exemple suivant s'appuie sur le précédent, en créant des relations entre quatre tables et en explorant ces relations. Comme dans l’exemple précédent, **CustomerID** lie la table Customers à la table **Orders** . Pour chaque client de la table Customers, toutes les lignes enfants de la table **Orders** sont déterminées, afin de retourner le nombre de commandes d’un client particulier et leurs valeurs **OrderID** .  
   
- L’exemple développé retourne également les valeurs à partir de la **OrderDetails** et **produits** tables. Le **commandes** table est associée à la **OrderDetails** à l’aide de la table **OrderID** pour déterminer, pour chaque commande client, de quels produits et quantités commandées. Étant donné que le **OrderDetails** table contient uniquement le **ProductID** d’un produit commandé, **OrderDetails** est liée à **produits** à l’aide de **ProductID** afin de retourner le **ProductName**. Dans cette relation, le **produits** est la table parente et la **Order Details** table est l’enfant. Par conséquent, lors de l’itération via la **OrderDetails** table, **GetParentRow** est appelée pour extraire la **ProductName** valeur.  
+ L’exemple développé retourne également les valeurs des tables **OrderDetails** et **Products** . La table Orders est associée à la table **OrderDetails** avec **OrderID** pour déterminer, pour chaque commande client, les produits et quantités commandés. Étant donné que la table **OrderDetails** contient uniquement le **ProductID** d’un produit commandé, **OrderDetails** est lié à **Products** à l’aide de **ProductID** afin de retourner le **ProductName**. Dans cette relation, la table **Products** est le parent et la table **Order Details** est l’enfant. Par conséquent, lors de l’itération au sein de la table **OrderDetails** , **GetParentRow** est appelé pour extraire la valeur **ProductName** associée.  
   
- Notez que lorsque le **DataRelation** est créé pour le **clients** et **commandes** tables, aucune valeur n’est spécifiée pour le **createConstraints**indicateur (la valeur par défaut est **true**). Cela suppose que toutes les les lignes dans le **commandes** table ont une **CustomerID** valeur qui existe dans le parent **clients** table. Si un **CustomerID** existe dans le **commandes** table qui n’existe pas dans le **clients** table, un <xref:System.Data.ForeignKeyConstraint> provoque une exception levée.  
+ Notez que lorsque le **DataRelation** est créé pour les tables Customers et **Orders** , aucune valeur n’est spécifiée pour l’indicateur **createConstraints** (la valeur par défaut est **true**). Cela suppose que toutes les lignes de la table **Orders** ont une valeur **CustomerID** qui existe dans la table **Customers** parent. Si un **CustomerID** existe dans la table Orders et qu’il n’existe pas dans la table <xref:System.Data.ForeignKeyConstraint> **Customers** , une exception est levée.  
   
- Lorsque la colonne enfant peut contenir des valeurs de la colonne parent ne contient-elle pas, définissez le **createConstraints** indicateur **false** lors de l’ajout du **DataRelation**. Dans l’exemple, le **createConstraints** indicateur a la valeur **false** pour le **DataRelation** entre le **commandes** table et le  **OrderDetails** table. Cela permet à l’application retourner tous les enregistrements à partir de la **OrderDetails** table et uniquement un sous-ensemble d’enregistrements à partir de la **commandes** table sans générer une exception au moment de l’exécution. La sortie de l’exemple développé se présente comme suit.  
+ Lorsque la colonne enfant peut contenir des valeurs qui ne sont pas contenues dans la colonne parente, affectez la valeur false à l’indicateur **createConstraints** lors de l’ajout du **DataRelation**. Dans l’exemple, l’indicateur **createConstraints** est défini sur **false** pour le **DataRelation** entre la table **Orders** et la table **OrderDetails** . Cela permet à l’application de retourner tous les enregistrements de la table **OrderDetails** et uniquement un sous-ensemble d’enregistrements de la table **Orders** sans générer d’exception Runtime. La sortie de l’exemple développé se présente comme suit.  
   
 ```  
 Customer ID: NORTS  
@@ -44,12 +44,12 @@ Customer ID: NORTS
           Quantity: 3  
 ```  
   
- L’exemple de code suivant est un exemple développé où les valeurs à partir de la **OrderDetails** et **produits** les tables sont retournées, avec uniquement un sous-ensemble des enregistrements dans la **commandes**table qui est retournée.  
+ L’exemple de code suivant est un exemple développé où les valeurs des tables **OrderDetails** et **Products** sont retournées, avec seulement un sous-ensemble des enregistrements de la table **Orders** en cours de retour.  
   
  [!code-csharp[DataWorks Data.DataTableNavigation#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks Data.DataTableNavigation/CS/source.cs#1)]
  [!code-vb[DataWorks Data.DataTableNavigation#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks Data.DataTableNavigation/VB/source.vb#1)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [DataSets, DataTables et DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
+- [DataSets, DataTables et DataViews](index.md)
 - [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)

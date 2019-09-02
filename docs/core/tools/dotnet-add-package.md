@@ -2,12 +2,12 @@
 title: Commande dotnet add package
 description: La commande « dotnet add package » est une option pratique pour ajouter une référence de package NuGet à un projet.
 ms.date: 06/26/2019
-ms.openlocfilehash: 50a352be66f2b4bd4498d79f61dc01f56d4b00c5
-ms.sourcegitcommit: 4a3c95e91289d16c38979575a245a4f76b0da147
+ms.openlocfilehash: 124e42b1d5897802bb1698c8e22b7e76031391a2
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67569511"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105163"
 ---
 # <a name="dotnet-add-package"></a>dotnet add package
 
@@ -54,59 +54,59 @@ Le fichier *ToDo.csproj* contient à présent un élément [`<PackageReference>`
 
 ## <a name="arguments"></a>Arguments
 
-* **`PROJECT`**
+- **`PROJECT`**
 
   Spécifie le nom du fichier projet. Si aucun fichier n’est spécifié, la commande en recherche un dans le répertoire actuel.
 
-* **`PACKAGE_NAME`**
+- **`PACKAGE_NAME`**
 
   Référence de package à ajouter.
 
 ## <a name="options"></a>Options
 
-* **`-f|--framework <FRAMEWORK>`**
+- **`-f|--framework <FRAMEWORK>`**
 
   Ajoute une référence de package uniquement quand vous ciblez un [framework](../../standard/frameworks.md) spécifique.
 
-* **`-h|--help`**
+- **`-h|--help`**
 
   Affiche une aide brève pour la commande.
 
-* **`--interactive`**
+- **`--interactive`**
 
   Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (son authentification, par exemple). Disponible à partir du kit SDK .NET Core 2.1, version 2.1.400 (ou version ultérieure).
 
-* **`-n|--no-restore`**
+- **`-n|--no-restore`**
 
   Ajoute une référence de package sans effectuer d’aperçu de restauration ni de contrôle de compatibilité.
 
-* **`--package-directory <PACKAGE_DIRECTORY>`**
+- **`--package-directory <PACKAGE_DIRECTORY>`**
 
   Répertoire où restaurer les packages. L’emplacement de restauration de package par défaut est `%userprofile%\.nuget\packages` sur Windows, et `~/.nuget/packages` sur macOS et Linux. Pour plus d’informations, consultez [Gérer les dossiers de packages globaux, les dossiers de cache et les dossiers temporaires dans NuGet](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders).
 
-* **`-s|--source <SOURCE>`**
+- **`-s|--source <SOURCE>`**
 
   Source de package NuGet à utiliser pendant l’opération de restauration.
 
-* **`-v|--version <VERSION>`**
+- **`-v|--version <VERSION>`**
 
   Version du package. Consultez [Contrôle de version du package NuGet](https://docs.microsoft.com/nuget/reference/package-versioning).
 
 ## <a name="examples"></a>Exemples
 
-* Ajouter un package NuGet `Newtonsoft.Json` à un projet :
+- Ajouter un package NuGet `Newtonsoft.Json` à un projet :
 
   ```console
   dotnet add package Newtonsoft.Json
   ```
 
-* Ajouter une version spécifique d’un package à un projet :
+- Ajouter une version spécifique d’un package à un projet :
 
   ```console
   dotnet add ToDo.csproj package Microsoft.Azure.DocumentDB.Core -v 1.0.0
   ```
 
-* Ajouter un package à l’aide d’une source NuGet spécifique :
+- Ajouter un package à l’aide d’une source NuGet spécifique :
 
   ```console
   dotnet add package Microsoft.AspNetCore.StaticFiles -s https://dotnet.myget.org/F/dotnet-core/api/v3/index.json

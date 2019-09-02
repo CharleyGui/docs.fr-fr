@@ -3,12 +3,12 @@ title: Guide pratique pour installer l’outil CLI ML.NET
 description: Vue d’ensemble et installation de l’outil CLI ML.NET
 ms.date: 04/16/2019
 ms.custom: ''
-ms.openlocfilehash: 4888acd10570318ef53dc4b1a5a4ff5d8dc0c99b
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: 8b6de466a6cf72b44a16c80fc024671bc4e975e8
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66832934"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106898"
 ---
 # <a name="how-to-install-the-mlnet-command-line-interface-cli-tool"></a>Guide pratique pour installer l’outil CLI ML.NET
 
@@ -106,9 +106,9 @@ Sur la machine où vous souhaitez activer la complétion, vous devez faire deux 
 
 2. Ajoutez le script shim approprié au profil de votre interpréteur de commandes. Vous devrez peut-être créer un fichier de profil d’interpréteur de commandes. Le script shim transfère les demandes de complétion depuis votre interpréteur de commandes vers l’outil `dotnet-suggest`, qui délègue à l’application basée sur `System.CommandLine` appropriée.
 
-    * Pour bash, ajoutez le contenu de [dotnet-suggest-shim.bash](https://github.com/dotnet/System.CommandLine/blob/master/src/System.CommandLine.Suggest/dotnet-suggest-shim.bash) à `~/.bash_profile`.
+    - Pour bash, ajoutez le contenu de [dotnet-suggest-shim.bash](https://github.com/dotnet/System.CommandLine/blob/master/src/System.CommandLine.Suggest/dotnet-suggest-shim.bash) à `~/.bash_profile`.
 
-    * Pour PowerShell, ajoutez le contenu de [dotnet-suggest-shim.ps1](https://github.com/dotnet/System.CommandLine/blob/master/src/System.CommandLine.Suggest/dotnet-suggest-shim.ps1) à votre profil PowerShell. Vous pouvez trouver le chemin attendu de votre profil PowerShell en exécutant la commande suivante dans votre console :
+    - Pour PowerShell, ajoutez le contenu de [dotnet-suggest-shim.ps1](https://github.com/dotnet/System.CommandLine/blob/master/src/System.CommandLine.Suggest/dotnet-suggest-shim.ps1) à votre profil PowerShell. Vous pouvez trouver le chemin attendu de votre profil PowerShell en exécutant la commande suivante dans votre console :
 
     ```console
     echo $profile

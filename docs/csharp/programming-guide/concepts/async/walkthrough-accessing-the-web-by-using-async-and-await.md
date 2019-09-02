@@ -2,12 +2,12 @@
 title: 'Procédure pas à pas : Accéder au web avec async et await (C#)'
 ms.date: 07/20/2015
 ms.assetid: c95d8d71-5a98-4bf0-aaf4-45fed2ebbacd
-ms.openlocfilehash: 986f3985783c6ae941d437fe557998f67557f5af
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 0c80bb079e66a56d6bbc30ba43269aee7ac4ab5b
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595513"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168358"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>Procédure pas à pas : Accéder au web avec async et await (C#)
 
@@ -237,7 +237,7 @@ Notez que quelques secondes suffisent pour afficher les nombres. Pendant ce temp
 
 2. `GetResponseAsync` retourne un <xref:System.Threading.Tasks.Task%601>. Dans ce cas, la *variable de retour de tâche*, `TResult`, est de type <xref:System.Net.WebResponse>. La tâche est une promesse de produire un objet `WebResponse` réel une fois que les données demandées ont été téléchargées et que la tâche s'est exécutée entièrement.
 
-     Pour récupérer la valeur `WebResponse` de la tâche, appliquez un opérateur [await](../../../language-reference/keywords/await.md) à l’appel à `GetResponseAsync`, comme le montre le code suivant.
+     Pour récupérer la valeur `WebResponse` de la tâche, appliquez un opérateur [await](../../../language-reference/operators/await.md) à l’appel à `GetResponseAsync`, comme le montre le code suivant.
 
     ```csharp
     using (WebResponse response = await webReq.GetResponseAsync())
@@ -692,7 +692,7 @@ namespace AsyncExampleWPF
 
 - [Exemple Async : Accessing the Web Walkthrough (C# and Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)
 - [async](../../../language-reference/keywords/async.md)
-- [await](../../../language-reference/keywords/await.md)
+- [await](../../../language-reference/operators/await.md)
 - [Programmation asynchrone avec Async et Await (C#)](./index.md)
 - [Types de retour async (C#)](./async-return-types.md)
 - [Programmation asynchrone basée sur les tâches](https://www.microsoft.com/download/details.aspx?id=19957)

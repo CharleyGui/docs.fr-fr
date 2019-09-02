@@ -4,27 +4,27 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: e22e5812-89c6-41f0-9302-bb899a46dbff
-ms.openlocfilehash: 82f840ab7dd26a4888ebf024d696f2c70701eb18
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b704deeffcd06bca09b6c26d60a66218b46fc55c
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607230"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203168"
 ---
 # <a name="the-load-method"></a>Méthode Load
-Vous pouvez utiliser la méthode <xref:System.Data.DataTable.Load%2A> pour charger un objet <xref:System.Data.DataTable> de lignes d'une source de données. Il s’agit d’une méthode surchargée qui, dans sa forme la plus simple, accepte un seul paramètre, un **DataReader**. Dans cet écran, elle charge simplement la **DataTable** avec des lignes. Si vous le souhaitez, vous pouvez spécifier le **LoadOption** paramètre pour contrôler la façon dont les données sont ajoutées à la **DataTable**.  
+Vous pouvez utiliser la méthode <xref:System.Data.DataTable.Load%2A> pour charger un objet <xref:System.Data.DataTable> de lignes d'une source de données. Il s’agit d’une méthode surchargée qui, dans sa forme la plus simple, accepte un seul paramètre, **DataReader**. Dans cette forme, il charge simplement le **DataTable** avec des lignes. Si vous le souhaitez, vous pouvez spécifier le paramètre **LoadOption** pour contrôler la façon dont les données sont ajoutées au **DataTable**.  
   
- Le **LoadOption** paramètre est particulièrement utile dans les cas où le **DataTable** déjà contient des lignes de données, car il décrit les données entrantes à partir de la source de données seront combinées avec les données dans la table. Par exemple, **PreserveCurrentValues** (la valeur par défaut) Spécifie que dans les cas où une ligne est marquée en tant que **Added** dans le **DataTable**, le **Original** valeur ou chaque colonne est définie pour le contenu de la ligne correspondante à partir de la source de données. Le **actuel** valeur conserve les valeurs affectées lors de la ligne a été ajoutée et le **RowState** de la ligne aura la valeur **Changed**.  
+ Le paramètre **LoadOption** est particulièrement utile dans les cas où le **DataTable** contient déjà des lignes de données, car il décrit la façon dont les données entrantes de la source de données sont combinées avec les données déjà présentes dans la table. Par exemple, **PreserveCurrentValues** (valeur par défaut) spécifie que dans les cas où une ligne est marquée comme **ajoutée** dans le **DataTable**, la valeur **d’origine** ou chaque colonne est définie sur le contenu de la ligne correspondante de la source de données. La valeur **actuelle** conservera les valeurs assignées lors de l’ajout de la ligne et le **RowState** de la ligne aura la valeur **Changed**.  
   
  Le tableau suivant donne une brève description des valeurs d'énumération <xref:System.Data.LoadOption>.  
   
 |Valeur LoadOption|Description|  
 |----------------------|-----------------|  
-|**OverwriteRow**|Si des lignes entrantes ont la même **PrimaryKey** valeur sous la forme d’une ligne figurant déjà dans le **DataTable**, le **d’origine** et **actuel** les valeurs de chacun d’eux colonne sont remplacées par les valeurs dans la ligne entrante et la **RowState** propriété est définie sur **Unchanged**.<br /><br /> Lignes de la source de données qui n’existent pas déjà dans le **DataTable** sont ajoutés avec un **RowState** valeur **Unchanged**.<br /><br /> Cette option actualise le contenu de la **DataTable** afin qu’il correspond au contenu de la source de données.|  
-|**PreserveCurrentValues (par défaut)**|Si des lignes entrantes ont la même **PrimaryKey** valeur sous la forme d’une ligne figurant déjà dans le **DataTable**, le **d’origine** a la valeur pour le contenu de la ligne entrante et la **Actuel** valeur n’est pas modifiée.<br /><br /> Si le **RowState** est **Added** ou **Modified**, il est défini sur **Modified**.<br /><br /> Si le **RowState** a été **Deleted**, il reste **Deleted**.<br /><br /> Lignes de la source de données qui n’existent pas déjà dans le **DataTable** sont ajoutés et le **RowState** a la valeur **Unchanged**.|  
-|**UpdateCurrentValues**|Si des lignes entrantes ont la même **PrimaryKey** valeur en tant que ligne figurant déjà dans le **DataTable**, le **actuel** valeur est copiée dans le **Original**valeur et le **actuel** valeur est ensuite définie sur le contenu de la ligne entrante.<br /><br /> Si le **RowState** dans le **DataTable** a été **Added**, le **RowState** reste **Added**. Pour les lignes marquées comme **Modified** ou **Deleted**, le **RowState** est **Modified**.<br /><br /> Lignes de la source de données qui n’existent pas déjà dans le **DataTable** sont ajoutés et le **RowState** a la valeur **Added**.|  
+|**OverwriteRow**|Si les lignes entrantes ont la même valeur **PrimaryKey** qu’une ligne figurant déjà dans le **DataTable**, les valeurs **d’origine** et **actuelles** de chaque colonne sont remplacées par les valeurs de la ligne entrante et la propriété **RowState** a la valeur **Inchangé**.<br /><br /> Les lignes de la source de données qui n’existent pas encore dans le **DataTable** sont ajoutées avec une valeur **RowState** inchangée.<br /><br /> Cette option permet d’actualiser le contenu du **DataTable** afin qu’il corresponde au contenu de la source de données.|  
+|**PreserveCurrentValues (par défaut)**|Si les lignes entrantes ont la même valeur **PrimaryKey** qu’une ligne figurant déjà dans le **DataTable**, la valeur **d’origine** est définie sur le contenu de la ligne entrante et la valeur **actuelle** n’est pas modifiée.<br /><br /> Si le **RowState** est **ajouté** ou **modifié**, il est défini sur **modifié**.<br /><br /> Si le **RowState** a été **supprimé**, il reste **supprimé**.<br /><br /> Les lignes de la source de données qui n’existent pas encore dans le **DataTable** sont ajoutées, et **RowState** a lavaleur Unchanged.|  
+|**UpdateCurrentValues**|Si les lignes entrantes ont la même valeur **PrimaryKey** que la ligne qui se trouve déjà dans le **DataTable**, la valeur **actuelle** est copiée à la valeur **d’origine** , et la valeur **actuelle** est ensuite définie sur le contenu de la ligne entrante.<br /><br /> Si le **RowState** dans le **DataTable** a été **ajouté**, le **RowState** reste **ajouté**. Pour les lignes marquées commeétant **modifiées** ou supprimées, le **RowState** est **modifié**.<br /><br /> Les lignes de la source de données qui n’existent pas encore dans le **DataTable** sont ajoutées, et **RowState** a la valeur **added**.|  
   
- L’exemple suivant utilise le **charge** méthode pour afficher une liste d’anniversaires des employés dans la **Northwind** base de données.  
+ L’exemple suivant utilise la méthode **Load** pour afficher une liste d’anniversaires pour les employés de la base de données **Northwind** .  
   
 ```vb  
 Private Sub LoadBirthdays(ByVal connectionString As String)  
@@ -70,5 +70,5 @@ End Sub
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Manipulation des données dans un DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
+- [Manipulation des données dans un DataTable](manipulating-data-in-a-datatable.md)
 - [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)

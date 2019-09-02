@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 21266130bd44d45d03f85cdeee9480b7a9944b55
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: 303d6790f1e4a42b021de3a214e3e7b44e1a4320
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65876932"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104630"
 ---
 # <a name="contributing"></a>Contribuer
 
@@ -15,10 +15,10 @@ Nous vous remercions de l’intérêt que vous portez à la documentation .NET �
 
 Le document aborde le processus de contribution aux articles et exemples de code qui sont hébergés sur le [site de la documentation .NET](https://docs.microsoft.com/dotnet). Les contributions peuvent aller de la simple correction de fautes de frappe à la rédaction complexe de nouveaux articles.
 
-* [Processus de contribution](#process-for-contributing)
-* [L’expérience interactive C#](#the-c-interactive-experience)
-* [À faire et à ne pas faire](#dos-and-donts)
-* [Contrat de licence de contribution (CLA)](#contributor-license-agreement)
+- [Processus de contribution](#process-for-contributing)
+- [L’expérience interactive C#](#the-c-interactive-experience)
+- [À faire et à ne pas faire](#dos-and-donts)
+- [Contrat de licence de contribution (CLA)](#contributor-license-agreement)
 
 Ce référentiel contient la documentation conceptuelle de .NET. Le site de la documentation de .NET repose sur plusieurs référentiels en plus de celui-ci :
 
@@ -35,7 +35,7 @@ Vous devez avoir une connaissance élémentaire de [Git et GitHub.com](https://g
 **Étape 1 :** Ignorez cette étape pour les petites modifications (par exemple si vous corrigez une faute de frappe ou si vous ouvrez immédiatement une demande de tirage pour résoudre un problème que vous trouvez dans les documents). Si vous souhaitez écrire un nouveau contenu ou examiner en détail un contenu existant, ouvrez un [problème](https://github.com/dotnet/docs/issues) en décrivant ce que vous voulez faire.
 Le contenu situé dans le dossier **docs** est organisé en sections que l’on retrouve dans la table des matières. Définissez l’emplacement de la rubrique dans la table des matières. Obtenez des commentaires sur votre proposition.
 
-- ou -
+-ou-
 
 Vous pouvez également choisir des problèmes existants pour lesquels les contributions de la communauté sont les bienvenus. [Projets pour les contributeurs de la communauté .NET](https://github.com/dotnet/docs/projects/35) répertorie la plupart des éléments de travail disponibles aux contributeurs de la communauté. Selon vos centres d’intérêt et votre niveau de participation, vous pouvez choisir des problèmes dans les catégories suivantes :
 
@@ -103,7 +103,7 @@ Nous faisons la distinction suivante pour le code existant dans notre référent
 Tout le code réside dans le référentiel [dotnet/samples](https://github.com/dotnet/samples). Nous élaborons actuellement un modèle dans lequel notre structure de dossier samples correspond à notre structure de dossier docs. Voici les normes que nous appliquons :
 
 - Le dossier *snippets* de niveau supérieur contient les extraits de code de petits échantillons ciblés.
-- Les échantillons de référence d’API situés dans un dossier suivent ce modèle : *snippets/\<language>/api/\<namespace>/\<apiname>*.
+- Les échantillons de référence d’API situés dans un dossier suivent ce modèle : *snippets/\<language>/api/\<namespace>/\<apiname>* .
 - Les autres dossiers de niveau supérieur correspondent aux dossiers de niveau supérieur du référentiel *docs*. Par exemple, le référentiel docs contient un dossier *machine-learning/tutorials*, et les échantillons pour les tutoriels Machine Learning se trouvent dans le dossier *samples/machine-learning/tutorials*.
 
 En outre, tous les échantillons dans les dossiers *core* et *standard* doivent pouvoir être créés et exécutés sur toutes les plateformes prises en charge par .NET Core. Notre système d’intégration continue appliquera cette stratégie. Le dossier *framework* de niveau supérieur contient des échantillons uniquement créés et validés sous Windows.

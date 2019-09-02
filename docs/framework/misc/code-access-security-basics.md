@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 4eaa6535-d9fe-41a1-91d8-b437cfc16921
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bbf97b3bc72a12f8920e3a3cace3f7c31ed1e71a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d77683dde24eeec5de7f1e541a6cc86f3b0c6617
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910986"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205641"
 ---
 # <a name="code-access-security-basics"></a>Notions fondamentales de la sécurité d'accès du code
 
@@ -32,13 +32,13 @@ Vous devez connaître les concepts de sécurité d'accès du code suivants pour 
 
 - **Bibliothèques de classes sécurisées**: Une bibliothèque de classes sécurisée utilise des demandes de sécurité pour s’assurer que les appelants de la bibliothèque ont l’autorisation d’accéder aux ressources exposées par la bibliothèque. Par exemple, une bibliothèque de classes sécurisée peut avoir une méthode de création de fichiers qui exige que ses appelants possèdent des autorisations pour créer des fichiers. Le .NET Framework se compose de bibliothèques de classes sécurisées. Vous devez connaître les autorisations nécessaires pour accéder aux bibliothèques utilisées par votre code. Pour plus d’informations, consultez la section [utilisation des bibliothèques de classes sécurisées](#secure_library) , plus loin dans cette rubrique.
 
-- **Code transparent**: À partir du .NET Framework 4, en plus d’identifier des autorisations spécifiques, vous devez également déterminer si votre code doit s’exécuter en tant que transparent de sécurité. Le code transparent de sécurité ne peut pas appeler de types ni de membres critiques de sécurité. Cette règle s'applique aux applications de confiance totale et aux applications partiellement fiables. Pour plus d’informations, consultez [code transparent de sécurité](../../../docs/framework/misc/security-transparent-code.md).
+- **Code transparent**: À partir du .NET Framework 4, en plus d’identifier des autorisations spécifiques, vous devez également déterminer si votre code doit s’exécuter en tant que transparent de sécurité. Le code transparent de sécurité ne peut pas appeler de types ni de membres critiques de sécurité. Cette règle s'applique aux applications de confiance totale et aux applications partiellement fiables. Pour plus d’informations, consultez [code transparent de sécurité](security-transparent-code.md).
 
 <a name="typesafe_code"></a>
 
 ## <a name="writing-verifiably-type-safe-code"></a>Écriture de code de type sécurisé vérifié
 
-La compilation juste-à-temps (JIT, Just-In-Time) exécute un processus de vérification qui examine le code et tente de déterminer s'il est de type sécurisé. Le code qui est prouvé pendant la vérification pour être de type sécurisé est appelé *Code de type sécurisé vérifié*. Le code peut être de type sécurisé, mais non de type sécurisé vérifié, en raison des limites du processus de vérification ou du compilateur. Tous les langages ne sont pas de type sécurisé, et certains compilateurs de langage, tels que Microsoft Visual C++, ne peuvent pas générer de code managé de type sécurisé vérifié. Pour déterminer si le compilateur de langage que vous utilisez génère du code de type sécurisé vérifié, consultez la documentation du compilateur. Si vous utilisez un compilateur de langage qui génère du code de type sécurisé vérifié uniquement lorsque vous évitez certaines constructions de langage, vous souhaiterez peut-être utiliser l' [outil PEVerify](../../../docs/framework/tools/peverify-exe-peverify-tool.md) pour déterminer si votre code est de type sécurisé vérifié.
+La compilation juste-à-temps (JIT, Just-In-Time) exécute un processus de vérification qui examine le code et tente de déterminer s'il est de type sécurisé. Le code qui est prouvé pendant la vérification pour être de type sécurisé est appelé *Code de type sécurisé vérifié*. Le code peut être de type sécurisé, mais non de type sécurisé vérifié, en raison des limites du processus de vérification ou du compilateur. Tous les langages ne sont pas de type sécurisé, et certains compilateurs de langage, tels que Microsoft Visual C++, ne peuvent pas générer de code managé de type sécurisé vérifié. Pour déterminer si le compilateur de langage que vous utilisez génère du code de type sécurisé vérifié, consultez la documentation du compilateur. Si vous utilisez un compilateur de langage qui génère du code de type sécurisé vérifié uniquement lorsque vous évitez certaines constructions de langage, vous souhaiterez peut-être utiliser l' [outil PEVerify](../tools/peverify-exe-peverify-tool.md) pour déterminer si votre code est de type sécurisé vérifié.
 
 Le code qui n'est pas de type sécurisé vérifié peut tenter de s'exécuter si la stratégie de sécurité permet au code de contourner la vérification. Cependant, étant donné que la sécurité de type est une partie essentielle du mécanisme du runtime pour isoler les assemblys, la sécurité ne peut pas être appliquée de manière fiable si du code enfreint les règles de la sécurité de type. Par défaut, du code qui n'est pas de type sécurisé n'est autorisé à s'exécuter que s'il provient de l'ordinateur local. Du code mobile doit donc être de type sécurisé.
 
@@ -55,7 +55,7 @@ La sécurité d'accès du code n'élimine pas la possibilité d'une erreur humai
 La syntaxe de sécurité déclarative utilise des [attributs](../../standard/attributes/index.md) pour placer des informations de sécurité dans les [métadonnées](../../standard/metadata-and-self-describing-components.md) de votre code. Les attributs peuvent être placés au niveau de l'assembly, de la classe ou du membre pour indiquer le type de demande, d'exigence ou de substitution que vous souhaitez utiliser. Les demandes sont utilisées dans les applications qui ciblent le Common Language Runtime pour informer le système de sécurité du runtime des autorisations dont votre application a besoin ou qu'elle refuse. Les exigences et les substitutions sont utilisées dans les bibliothèques pour protéger les ressources des appelants ou substituer le comportement de sécurité par défaut.
 
 > [!NOTE]
-> Dans le .NET Framework 4, des modifications importantes ont été apportées à la terminologie et au modèle de sécurité .NET Framework. Pour plus d’informations sur ces modifications, consultez [modifications de sécurité](../../../docs/framework/security/security-changes.md).
+> Dans le .NET Framework 4, des modifications importantes ont été apportées à la terminologie et au modèle de sécurité .NET Framework. Pour plus d’informations sur ces modifications, consultez [modifications de sécurité](../security/security-changes.md).
 
 Pour utiliser des appels de sécurité déclarative, vous devez initialiser les données d'état de l'objet d'autorisation afin qu'elles représentent la forme particulière de l'autorisation dont vous avez besoin. Chaque autorisation intégrée a un attribut auquel une énumération <xref:System.Security.Permissions.SecurityAction> est passée pour décrire le type d'opération de sécurité que vous souhaitez effectuer. Les autorisations acceptent toutefois aussi leurs propres paramètres qui leur sont exclusifs.
 
@@ -105,7 +105,7 @@ La syntaxe de sécurité impérative émet un appel de sécurité en créant une
 
 Avant de procéder à l'appel de sécurité, vous devez initialiser les données d'état de l'objet d'autorisation afin qu'elles représentent la forme particulière de l'autorisation dont vous avez besoin. Par exemple, lors de la <xref:System.Security.Permissions.FileIOPermission> création d’un objet, vous pouvez utiliser le constructeur pour initialiser l’objet **FileIOPermission** afin qu’il représente un accès non restreint à tous les fichiers ou aucun accès aux fichiers. Vous pouvez également utiliser un autre objet **FileIOPermission** , en passant des paramètres qui indiquent le type d’accès que vous souhaitez que l’objet représente (c’est-à-dire, en lecture, en écriture ou en écriture) et les fichiers que vous voulez que l’objet protège.
 
-Outre utiliser la syntaxe de sécurité impérative pour appeler un objet de sécurité unique, vous pouvez y recourir pour initialiser un groupe d'autorisations dans un jeu d'autorisations. Par exemple, cette technique est la seule façon d’effectuer de manière fiable des appels d' [assertion](../../../docs/framework/misc/using-the-assert-method.md) sur plusieurs autorisations dans une même méthode. Utilisez les classes <xref:System.Security.PermissionSet> et <xref:System.Security.NamedPermissionSet> pour créer un groupe d'autorisations, puis appelez la méthode appropriée pour appeler l'appel de sécurité souhaité.
+Outre utiliser la syntaxe de sécurité impérative pour appeler un objet de sécurité unique, vous pouvez y recourir pour initialiser un groupe d'autorisations dans un jeu d'autorisations. Par exemple, cette technique est la seule façon d’effectuer de manière fiable des appels d' [assertion](using-the-assert-method.md) sur plusieurs autorisations dans une même méthode. Utilisez les classes <xref:System.Security.PermissionSet> et <xref:System.Security.NamedPermissionSet> pour créer un groupe d'autorisations, puis appelez la méthode appropriée pour appeler l'appel de sécurité souhaité.
 
 Vous pouvez utiliser la syntaxe impérative pour effectuer des exigences et des substitutions, mais pas des demandes. Vous pouvez éventuellement utiliser la syntaxe impérative à la place de la syntaxe déclarative pour les exigences et les substitutions quand les informations dont vous avez besoin pour initialiser l'état d'autorisation ne sont connues qu'au moment de l'exécution. Par exemple, si vous souhaitez vous assurer que les appelants ont l'autorisation de lire un certain fichier, mais que vous ne connaissez pas le nom du fichier avant l'exécution, utilisez une exigence impérative. Vous pouvez aussi éventuellement choisir d'utiliser des vérifications impératives au lieu de vérifications déclaratives quand vous avez besoin de déterminer si une condition est valable ou non au moment de l'exécution et, en fonction du résultat du test, de procéder (ou non) à une demande de sécurité.
 
@@ -164,8 +164,8 @@ Si vous souhaitez que votre application effectue une opération qui nécessite l
 - <xref:System.Security.Permissions.FileIOPermission>
 - <xref:System.Security.NamedPermissionSet>
 - <xref:System.Security.Permissions.SecurityAction>
-- [Assert](../../../docs/framework/misc/using-the-assert-method.md)
-- [Sécurité d’accès du code](../../../docs/framework/misc/code-access-security.md)
-- [Notions fondamentales de la sécurité d’accès du code](../../../docs/framework/misc/code-access-security-basics.md)
+- [Assert](using-the-assert-method.md)
+- [Sécurité d’accès du code](code-access-security.md)
+- [Notions fondamentales de la sécurité d’accès du code](code-access-security-basics.md)
 - [Attributs](../../standard/attributes/index.md)
 - [Métadonnées et composants autodescriptifs](../../standard/metadata-and-self-describing-components.md)

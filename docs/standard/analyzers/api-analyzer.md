@@ -5,12 +5,12 @@ author: oliag
 ms.author: mairaw
 ms.date: 04/26/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 892fb5cc9fba3434b0884c88b97f784d58093303
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
+ms.openlocfilehash: 2d97921a3e98d85ac1e58c7686eadef3e979211f
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063344"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107370"
 ---
 # <a name="net-api-analyzer"></a>Analyseur d’API .NET
 
@@ -23,7 +23,7 @@ L’analyseur d’API est fourni sous la forme d’un package NuGet [Microsoft.D
 
 ## <a name="prerequisites"></a>Prérequis
 
-* Visual Studio 2017 et versions ultérieures, ou Visual Studio pour Mac (toutes les versions).
+- Visual Studio 2017 et versions ultérieures, ou Visual Studio pour Mac (toutes les versions).
 
 ## <a name="discovering-deprecated-apis"></a>Découverte des API déconseillées
 
@@ -48,18 +48,18 @@ La fenêtre **Liste d’erreurs** contient des avertissements avec un ID unique 
 
 En cliquant sur l’ID, vous accédez à une page web présentant des informations détaillées sur la raison pour laquelle l’API a été déconseillée, ainsi que des suggestions d’autres API utilisables.
 
-Pour supprimer des avertissements, cliquez sur le membre en surbrillance et sélectionnez **Supprimer \<ID de diagnostic >**. Il existe deux moyens de supprimer les avertissements : 
+Pour supprimer des avertissements, cliquez sur le membre en surbrillance et sélectionnez **Supprimer \<ID de diagnostic >** . Il existe deux moyens de supprimer les avertissements : 
 
-* [localement (dans la source)](#suppressing-warnings-locally) ;
-* [globalement (dans un fichier de suppression)](#suppressing-warnings-globally) – recommandé.
+- [localement (dans la source)](#suppressing-warnings-locally) ;
+- [globalement (dans un fichier de suppression)](#suppressing-warnings-globally) – recommandé.
 
 ### <a name="suppressing-warnings-locally"></a>Supprimer les avertissements localement
 
-Pour supprimer des avertissements localement, cliquez sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **Actions rapides et refactorisations** > **Supprimer *ID de diagnostic* \<ID de diagnostic >** > **dans la source**. La directive du préprocesseur d’avertissement [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) est ajoutée à votre code source dans l’étendue définie : ![« Capture d’écran du code encadré par #pragma warning disable »](media/api-analyzer/suppress-in-source.jpg)
+Pour supprimer des avertissements localement, cliquez sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **Actions rapides et refactorisations** > **Supprimer *ID de diagnostic* \<ID de diagnostic >**  > **dans la source**. La directive du préprocesseur d’avertissement [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) est ajoutée à votre code source dans l’étendue définie : ![« Capture d’écran du code encadré par #pragma warning disable »](media/api-analyzer/suppress-in-source.jpg)
 
 ### <a name="suppressing-warnings-globally"></a>Supprimer les avertissements globalement
 
-Pour supprimer des avertissements globalement, cliquez sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **Actions rapides et refactorisations** > **Supprimer *ID de diagnostic* \<ID de diagnostic >** > **dans le fichier de suppression**.
+Pour supprimer des avertissements globalement, cliquez sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **Actions rapides et refactorisations** > **Supprimer *ID de diagnostic* \<ID de diagnostic >**  > **dans le fichier de suppression**.
 
 ![« Capture d’écran de l’API WebClient avec une ligne verte ondulée et une ampoule à gauche »](media/api-analyzer/suppress-in-sup-file.jpg)
 
@@ -95,11 +95,11 @@ Vous pouvez également effectuer une compilation conditionnelle par système d�
 
 Actuellement, l’analyseur gère les cas suivants :
 
-* utilisation d’une API .NET Standard qui lève <xref:System.PlatformNotSupportedException> (PC001) ;
-* utilisation d’une API .NET Standard non disponible sur .NET Framework 4.6.1 (PC002) ;
-* utilisation d’une API native qui n’existe pas dans UWP (PC003) ;
-* Utilisation des API Delegate.BeginInvoke et EndInvoke (PC004).
-* utilisation d’une API marquée comme déconseillée (DEXXXX).
+- utilisation d’une API .NET Standard qui lève <xref:System.PlatformNotSupportedException> (PC001) ;
+- utilisation d’une API .NET Standard non disponible sur .NET Framework 4.6.1 (PC002) ;
+- utilisation d’une API native qui n’existe pas dans UWP (PC003) ;
+- Utilisation des API Delegate.BeginInvoke et EndInvoke (PC004).
+- utilisation d’une API marquée comme déconseillée (DEXXXX).
 
 ## <a name="ci-machine"></a>Machine de CI
 

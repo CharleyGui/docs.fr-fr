@@ -2,12 +2,12 @@
 title: Nouveautés de C# 7.1
 description: Vue d’ensemble des nouvelles fonctionnalités de C# 7.1.
 ms.date: 04/09/2019
-ms.openlocfilehash: 18306da709ea30f03f6c42b4a917e9b39695eb16
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: ee68cbf129d02fc58155a603d6a3f63cfb182cd0
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796596"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105551"
 ---
 # <a name="whats-new-in-c-71"></a>Nouveautés de C# 7.1
 
@@ -17,13 +17,13 @@ C# 7.1 ajoute l’élément de configuration de [sélection de la version du lan
 
 Les nouvelles fonctionnalités de langage de cette version sont :
 
-* [Méthode `async` `Main`](#async-main)
+- [Méthode `async` `Main`](#async-main)
   - Le point d’entrée pour une application peut avoir le modificateur `async`.
-* [Expressions littérales `default`](#default-literal-expressions)
+- [Expressions littérales `default`](#default-literal-expressions)
   - Vous pouvez utiliser des expressions littérales default dans les expressions de valeur par défaut quand le type cible peut être inféré.
-* [Noms des éléments de tuple inférés](#inferred-tuple-element-names)
+- [Noms des éléments de tuple inférés](#inferred-tuple-element-names)
   - Les noms des éléments de tuple peuvent être inférés dans de nombreux cas à partir de l’initialisation du tuple.
-* [Critères spéciaux sur les paramètres de type générique](#pattern-matching-on-generic-type-parameters)
+- [Critères spéciaux sur les paramètres de type générique](#pattern-matching-on-generic-type-parameters)
   - Il est possible d’utiliser des expressions de critères spéciaux sur les variables dont le type est un paramètre de type générique.
 
 Enfin, le compilateur a deux options, `-refout` et `-refonly`, qui contrôlent la [génération d’assemblys de références](#reference-assembly-generation).

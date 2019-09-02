@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e5e9309a-3ebb-4a9c-9d78-21c4e2bafc5b
-ms.openlocfilehash: 153c96860005046e4cc16d5a965bd569e3519b52
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e5a8040a803fbc9b098fc1b56e0f5d837c4cdb94
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607928"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70203363"
 ---
 # <a name="merging-dataset-contents"></a>Fusion de contenu de DataSet
 
@@ -35,7 +35,7 @@ Une valeur de propriété <xref:System.Data.DataTable> peut être assignée à u
 
 ## <a name="preservechanges"></a>PreserveChanges
 
-Lorsque vous passez un tableau `DataSet`, `DataTable` ou `DataRow` à la méthode `Merge`, vous pouvez inclure des paramètres facultatifs pour indiquer s'il convient ou non de conserver les modifications dans le `DataSet` existant et comment gérer les nouveaux éléments de schéma situés dans les données entrantes. Le premier de ces paramètres après les données entrantes est un indicateur booléen, <xref:System.Data.LoadOption.PreserveChanges>, qui indique si les modifications seront ou non conservées dans le `DataSet` existant. Si l'indicateur `PreserveChanges` a la valeur `true`, les valeurs entrantes ne remplacent pas les valeurs existantes dans la version `Current` de la ligne existante. Si l'indicateur `PreserveChanges` a la valeur `false`, les valeurs entrantes remplacent les valeurs existantes dans la version `Current` de la ligne existante. Si l'indicateur `PreserveChanges` n'est pas spécifié, il a par défaut la valeur `false`. Pour plus d’informations sur les versions de ligne, consultez [États des lignes et des Versions de ligne](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md).
+Lorsque vous passez un tableau `DataSet`, `DataTable` ou `DataRow` à la méthode `Merge`, vous pouvez inclure des paramètres facultatifs pour indiquer s'il convient ou non de conserver les modifications dans le `DataSet` existant et comment gérer les nouveaux éléments de schéma situés dans les données entrantes. Le premier de ces paramètres après les données entrantes est un indicateur booléen, <xref:System.Data.LoadOption.PreserveChanges>, qui indique si les modifications seront ou non conservées dans le `DataSet` existant. Si l'indicateur `PreserveChanges` a la valeur `true`, les valeurs entrantes ne remplacent pas les valeurs existantes dans la version `Current` de la ligne existante. Si l'indicateur `PreserveChanges` a la valeur `false`, les valeurs entrantes remplacent les valeurs existantes dans la version `Current` de la ligne existante. Si l'indicateur `PreserveChanges` n'est pas spécifié, il a par défaut la valeur `false`. Pour plus d’informations sur les versions de ligne, consultez [États de ligne et versions de ligne](row-states-and-row-versions.md).
 
 Lorsque `PreserveChanges` a la valeur `true`, les données de la ligne existante sont conservées dans la version <xref:System.Data.DataRowVersion.Current> de la ligne existante, alors que les données de la version <xref:System.Data.DataRowVersion.Original> de la ligne existante sont remplacées par les données de la version `Original` de la ligne entrante. La propriété <xref:System.Data.DataRow.RowState%2A> de la ligne existante prend la valeur <xref:System.Data.DataRowState.Modified>. Il existe toutefois certaines exceptions :
 
@@ -69,9 +69,9 @@ Avec la méthode`Merge`, la vérification des contraintes ne s'effectue qu'une f
 Prenons l'exemple d'une ligne `DataSet` existante d'un `Unchanged` dont la valeur de clé primaire est 1. Au cours d'une opération de fusion avec une ligne `Modified` entrante dont la valeur de clé primaire `Original` est 2 et la valeur de clé primaire `Current` est 1, la ligne existante et la ligne entrante ne sont pas mises en correspondance car les valeurs de clé primaire `Original` diffèrent. Cependant, lorsque la fusion est terminée et la vérification des contraintes effectuée, une exception est levée car les valeurs de clé primaire `Current` enfreignent la contrainte unique définie pour la colonne de clé primaire.
 
 > [!NOTE]
-> Lorsque des lignes sont insérées dans une table de base de données contenant une colonne à incrémentation automatique comme une colonne d’identité, la valeur de colonne d’identité retournée par l’insertion peut ne pas correspondre à la valeur du `DataSet`, ce qui conduit à l’ajout des lignes retournées et non à leur fusion. Pour plus d’informations, consultez [récupération des valeurs d’identité ou NuméroAuto](../../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md).
+> Lorsque des lignes sont insérées dans une table de base de données contenant une colonne à incrémentation automatique comme une colonne d’identité, la valeur de colonne d’identité retournée par l’insertion peut ne pas correspondre à la valeur du `DataSet`, ce qui conduit à l’ajout des lignes retournées et non à leur fusion. Pour plus d’informations, consultez récupération d’une [identité ou de valeurs NuméroAuto](../retrieving-identity-or-autonumber-values.md).
 
-L’exemple de code suivant fusionne deux `DataSet` objets avec des schémas différents en un seul `DataSet` avec les schémas combinées des deux entrant `DataSet` objets.
+L’exemple de code suivant fusionne `DataSet` deux objets avec des schémas différents en `DataSet` un seul avec les schémas combinés des deux objets `DataSet` entrants.
 
 [!code-csharp[DataWorks DataSet.Merge#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataSet.Merge/CS/source.cs#1)]
 [!code-vb[DataWorks DataSet.Merge#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DataSet.Merge/VB/source.vb#1)]
@@ -86,9 +86,9 @@ L'exemple de code suivant prend un `DataSet` existant avec des mises à jour et 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [DataSets, DataTables et DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [États des lignes et versions des lignes](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)
-- [DataAdapters et DataReaders](../../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [Extraction et modification de données dans ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [Récupération de valeurs d’identité ou de numérotation automatique](../../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)
+- [DataSets, DataTables et DataViews](index.md)
+- [États des lignes et versions des lignes](row-states-and-row-versions.md)
+- [DataAdapters et DataReaders](../dataadapters-and-datareaders.md)
+- [Extraction et modification de données dans ADO.NET](../retrieving-and-modifying-data.md)
+- [Récupération de valeurs d’identité ou de numérotation automatique](../retrieving-identity-or-autonumber-values.md)
 - [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 07/15/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 4471e4feffb23b7f256ada2116444aaa7899e209
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 1bdbe31e16408da2d7dfe17941c90a022f3d8c32
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69611443"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70107140"
 ---
 # <a name="predict-prices-using-regression-with-model-builder"></a>Prédire des prix en utilisant la régression avec Model Builder
 
@@ -21,12 +21,12 @@ Le modèle de prédiction des prix de Model Builder peut être utilisé pour tou
 
 Dans ce didacticiel, vous apprendrez à :
 > [!div class="checklist"]
-> * Préparer et comprendre les données
-> * Choisir un scénario
-> * Charger les données
-> * Effectuer l’apprentissage du modèle
-> * Évaluer le modèle
-> * Utiliser le modèle pour les prévisions
+> - Préparer et comprendre les données
+> - Choisir un scénario
+> - Charger les données
+> - Effectuer l’apprentissage du modèle
+> - Évaluer le modèle
+> - Utiliser le modèle pour les prévisions
 
 > [!NOTE]
 > Model Builder est actuellement en préversion.
@@ -59,13 +59,13 @@ Chaque ligne du jeu de données `taxi-fare-train.csv` contient les détails de c
 
     Le jeu de données fourni contient les colonnes suivantes :
 
-    * **vendor_id :** l’ID du taxi est une fonctionnalité.
-    * **rate_code :** le type de tarif de la course de taxi est une fonctionnalité.
-    * **passenger_count :** le nombre de passagers embarqués est une fonctionnalité.
-    * **trip_time_in_secs :** durée totale de la course.
-    * **trip_distance :** la distance de la course est une fonctionnalité.
-    * **payment_type :** le mode de paiement (espèces ou carte de crédit) est une fonctionnalité.
-    * **fare_amount :** le prix total payé pour la course est l’étiquette.
+    - **vendor_id :** l’ID du taxi est une fonctionnalité.
+    - **rate_code :** le type de tarif de la course de taxi est une fonctionnalité.
+    - **passenger_count :** le nombre de passagers embarqués est une fonctionnalité.
+    - **trip_time_in_secs :** durée totale de la course.
+    - **trip_distance :** la distance de la course est une fonctionnalité.
+    - **payment_type :** le mode de paiement (espèces ou carte de crédit) est une fonctionnalité.
+    - **fare_amount :** le prix total payé pour la course est l’étiquette.
 
 `label` est la colonne à prédire. Quand vous effectuez une tâche de régression, l’objectif est de prédire une valeur numérique. Dans ce scénario de prédiction des prix, c’est le coût d’une course de taxi qui est prédit. Par conséquent, **fare_amount** est l’étiquette. Les `features` identifiées sont les entrées que vous fournissez au modèle pour prédire `label`. Dans ce cas, le reste des colonnes sont utilisées comme caractéristiques ou comme entrées pour prédire le prix de la course.
 
@@ -190,12 +190,12 @@ Si vous devez référencer ultérieurement les projets générés à l’intéri
 
 Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
-> * Préparer et comprendre les données
-> * Choisir un scénario
-> * Charger les données
-> * Effectuer l’apprentissage du modèle
-> * Évaluer le modèle
-> * Utiliser le modèle pour les prévisions
+> - Préparer et comprendre les données
+> - Choisir un scénario
+> - Charger les données
+> - Effectuer l’apprentissage du modèle
+> - Évaluer le modèle
+> - Utiliser le modèle pour les prévisions
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 

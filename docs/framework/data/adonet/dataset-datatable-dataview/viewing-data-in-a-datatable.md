@@ -5,36 +5,36 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1d26e0fb-f6e0-4afa-9a9c-b8d55b8f20dc
-ms.openlocfilehash: fa8749550e10256ee0623714cc95e03a838655c8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ea92b8a5e46bdaa8e94756cd28a3fbcb2789d7b3
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61607016"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70204391"
 ---
 # <a name="viewing-data-in-a-datatable"></a>Affichage des données dans un DataTable
 
-Vous pouvez accéder au contenu d’un <xref:System.Data.DataTable> à l’aide de la **lignes** et **colonnes** collections de la **DataTable**. Vous pouvez également utiliser le <xref:System.Data.DataTable.Select%2A> méthode pour retourner des sous-ensembles des données dans un **DataTable** en fonction des critères, y compris les critères de recherche, l’ordre de tri et l’état de la ligne. En outre, vous pouvez utiliser la <xref:System.Data.DataRowCollection.Find%2A> méthode de la **DataRowCollection** lors de la recherche pour une ligne particulière à l’aide d’une valeur de clé primaire.
+Vous pouvez accéder au contenu d’un <xref:System.Data.DataTable> objet à l’aide des collections **Rows** et **Columns** du **DataTable**. Vous pouvez également utiliser la <xref:System.Data.DataTable.Select%2A> méthode pour retourner des sous-ensembles de données dans un **DataTable** en fonction de critères, notamment des critères de recherche, un ordre de tri et un état de ligne. En outre, vous pouvez utiliser la <xref:System.Data.DataRowCollection.Find%2A> méthode du **DataRowCollection** lors de la recherche d’une ligne particulière à l’aide d’une valeur de clé primaire.
 
-Le **sélectionnez** méthode de la **DataTable** objet retourne un jeu de <xref:System.Data.DataRow> objets qui correspondent aux critères spécifiés. **Sélectionnez** prend des arguments facultatifs d’une expression de filtre, l’expression de tri, et **DataViewRowState**. L’expression de filtre identifie la ligne à retourner en fonction **DataColumn** valeurs, telles que `LastName = 'Smith'`. L'expression de tri respecte les conventions SQL standard de tri des colonnes, comme `LastName ASC, FirstName ASC`. Pour plus d’informations sur l’écriture d’expressions, consultez la <xref:System.Data.DataColumn.Expression%2A> propriété de la **DataColumn** classe.
+La méthode **Select** de l’objet **DataTable** retourne un ensemble d' <xref:System.Data.DataRow> objets qui correspondent aux critères spécifiés. **Select** accepte des arguments facultatifs d’une expression de filtre, d’une expression de tri et d’un **DataViewRowState**. L’expression de filtre identifie les lignes à retourner en fonction des valeurs **DataColumn** , `LastName = 'Smith'`telles que. L'expression de tri respecte les conventions SQL standard de tri des colonnes, comme `LastName ASC, FirstName ASC`. Pour plus d’informations sur les règles d' <xref:System.Data.DataColumn.Expression%2A> écriture d’expressions, consultez la propriété de la classe **DataColumn** .
 
 > [!TIP]
-> Si vous effectuez un nombre d’appels à la **sélectionnez** méthode d’un **DataTable**, vous pouvez augmenter les performances en créant tout d’abord un <xref:System.Data.DataView> pour le **DataTable**. Création de la **DataView** indexe les lignes de la table. Le **sélectionnez** méthode utilise ensuite cet index, ce qui réduit considérablement le temps de générer le résultat de la requête. Pour plus d’informations sur la création d’un **DataView** pour un **DataTable**, consultez [DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md).
+> Si vous effectuez un certain nombre d’appels à la méthode **Select** d’un **DataTable**, vous pouvez augmenter les performances en créant d' <xref:System.Data.DataView> abord un pour le **DataTable**. La création du **DataView** indexe les lignes de la table. La méthode **Select** utilise ensuite cet index, ce qui réduit considérablement le temps nécessaire pour générer le résultat de la requête. Pour plus d’informations sur la création d’un **DataView** pour un **DataTable**, consultez [DataView](dataviews.md).
 
-Le **sélectionnez** méthode détermine quelle version des lignes à afficher ou manipuler selon un <xref:System.Data.DataViewRowState>. Le tableau suivant décrit les possibles **DataViewRowState** valeurs d’énumération.
+La méthode **Select** détermine la version des lignes à afficher ou à manipuler en fonction d' <xref:System.Data.DataViewRowState>un. Le tableau suivant décrit les valeurs possibles de l’énumération **DataViewRowState** .
 
 |Valeur DataViewRowState|Description|
 |----------------------------|-----------------|
 |**CurrentRows**|Les lignes en cours comprennent les lignes non modifiées, les lignes ajoutées et les lignes modifiées.|
-|**Deleted**|Ligne supprimée.|
-|**ModifiedCurrent**|Une version actuelle, qui est une version modifiée des données d'origine. (Consultez **ModifiedOriginal**.)|
-|**ModifiedOriginal**|La version d'origine de toutes les lignes modifiées. La version actuelle est disponible à l’aide **ModifiedCurrent**.|
-|**Added**|Nouvelle ligne.|
-|**Aucun**|Aucun.|
+|**Supprimé**|Ligne supprimée.|
+|**ModifiedCurrent**|Une version actuelle, qui est une version modifiée des données d'origine. (Voir **ModifiedOriginal**.)|
+|**ModifiedOriginal**|La version d'origine de toutes les lignes modifiées. La version actuelle est disponible à l’aide de **ModifiedCurrent**.|
+|**Ajoute**|Nouvelle ligne.|
+|**Aucun**|Aucune.|
 |**OriginalRows**|Les lignes d'origine, notamment les lignes non modifiées et les lignes supprimées.|
-|**inchangé**|Ligne non modifiée.|
+|**Inchangé**|Ligne non modifiée.|
 
-Dans l’exemple suivant, le **DataSet** objet est filtré afin que vous travaillez uniquement avec les lignes dont la propriété **DataViewRowState** a la valeur **CurrentRows**.
+Dans l’exemple suivant, l’objet **DataSet** est filtré afin que vous n’utilisiez que des lignes dont **DataViewRowState** a la valeur **CurrentRows**.
 
 ```vb
 Dim column As DataColumn
@@ -87,7 +87,7 @@ else
 }
 ```
 
-Le **sélectionnez** méthode peut être utilisée pour retourner les lignes avec des différentes **RowState** valeurs ou des valeurs de champ. L’exemple suivant retourne un **DataRow** tableau qui référence toutes les lignes qui ont été supprimés, ainsient qu’un autre **DataRow** tableau qui référence toutes les lignes, classées par **CustLName**, où le **CustID** colonne est supérieure à 5. Pour plus d’informations sur la façon d’afficher les informations contenues dans le **Deleted** de ligne, consultez [États des lignes et des Versions de ligne](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md).
+La méthode **Select** peut être utilisée pour retourner des lignes avec des valeurs **RowState** ou Field différentes. L’exemple suivant retourne un tableau **DataRow** qui référence toutes les lignes qui ont été supprimées, et retourne un autre tableau **DataRow** qui référence toutes les lignes, classées par **CustLName**, où la colonne **CustID** est supérieure à 5. Pour plus d’informations sur l’affichage des informations dans la ligne supprimée, consultez [États des lignes et versions de ligne](row-states-and-row-versions.md).
 
 ```vb
 ' Retrieve all deleted rows.
@@ -113,6 +113,6 @@ DataRow[] custRows = workTable.Select("CustID > 5", "CustLName ASC");
 - <xref:System.Data.DataSet>
 - <xref:System.Data.DataTable>
 - <xref:System.Data.DataViewRowState>
-- [Manipulation des données dans un DataTable](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)
-- [États des lignes et versions des lignes](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)
+- [Manipulation des données dans un DataTable](manipulating-data-in-a-datatable.md)
+- [États des lignes et versions des lignes](row-states-and-row-versions.md)
 - [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)

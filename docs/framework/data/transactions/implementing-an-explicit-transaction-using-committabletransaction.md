@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 29efe5e5-897b-46c2-a35f-e599a273acc8
-ms.openlocfilehash: 18d8a22e20626a30585f556f97b54c65f1ab46a2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 19b62c24d00903d1494a755dbeabb460935cdacd
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645774"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70205944"
 ---
 # <a name="implementing-an-explicit-transaction-using-committabletransaction"></a>Implémentation d'une transaction explicite à l'aide de CommittableTransaction
 La classe <xref:System.Transactions.CommittableTransaction> permet aux applications d’utiliser une transaction de façon explicite au lieu d’utiliser la classe <xref:System.Transactions.TransactionScope> de façon implicite. Cela se révèle utile pour les applications qui souhaitent utiliser une même transaction pour plusieurs appels de fonction ou plusieurs appels de thread. Contrairement à la classe <xref:System.Transactions.TransactionScope>, le writer d’application doit absolument appeler les méthodes <xref:System.Transactions.CommittableTransaction.Commit%2A> et <xref:System.Transactions.Transaction.Rollback%2A> pour valider ou abandonner la transaction.  
@@ -43,7 +43,7 @@ La classe <xref:System.Transactions.CommittableTransaction> permet aux applicati
   
  Vous pouvez appeler <xref:System.Transactions.CommittableTransaction.BeginCommit%2A> pour transmettre la suspension de la validation à un thread du pool de threads. Vous pouvez également appeler <xref:System.Transactions.CommittableTransaction.EndCommit%2A> pour contrôler si la transaction a bien été validée. Si la transaction n'a pas été validée, pour quelque raison que ce soit, <xref:System.Transactions.CommittableTransaction.EndCommit%2A> lève une exception de transaction. Si la transaction n'a toujours pas été validée lors de l'appel à <xref:System.Transactions.CommittableTransaction.EndCommit%2A>, l'appelant reste bloqué jusqu'à ce que la transaction soit validée ou abandonnée.  
   
- La méthode la plus simple pour réaliser une validation asynchrone consiste à fournir une méthode de rappel à appeler une fois la validation terminée. Vous devez toutefois appeler la méthode <xref:System.Transactions.CommittableTransaction.EndCommit%2A> sur l'objet <xref:System.Transactions.CommittableTransaction> d'origine utilisé pour l'appel. Pour obtenir cet objet, vous pouvez effectuer un downcast le *IAsyncResult* paramètre de la méthode de rappel, dans la mesure où le <xref:System.Transactions.CommittableTransaction> la classe implémente <xref:System.IAsyncResult> classe.  
+ La méthode la plus simple pour réaliser une validation asynchrone consiste à fournir une méthode de rappel à appeler une fois la validation terminée. Vous devez toutefois appeler la méthode <xref:System.Transactions.CommittableTransaction.EndCommit%2A> sur l'objet <xref:System.Transactions.CommittableTransaction> d'origine utilisé pour l'appel. Pour obtenir cet objet, vous pouvez effectuer un cast aval du paramètre *IAsyncResult* de la méthode de <xref:System.Transactions.CommittableTransaction> rappel, étant <xref:System.IAsyncResult> donné que la classe implémente la classe.  
   
  L'exemple suivant illustre la réalisation d'une validation asynchrone.  
   
@@ -87,5 +87,5 @@ void OnCommitted(IAsyncResult asyncResult)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Implémentation d’une transaction implicite à l’aide de l’étendue de transaction](../../../../docs/framework/data/transactions/implementing-an-implicit-transaction-using-transaction-scope.md)
-- [Traitement transactionnel](../../../../docs/framework/data/transactions/index.md)
+- [Implémentation d’une transaction implicite à l’aide de l’étendue de transaction](implementing-an-implicit-transaction-using-transaction-scope.md)
+- [Traitement transactionnel](index.md)

@@ -3,35 +3,35 @@ title: Nouveautés de C# 7.0 | Guide C#
 description: Découvrez les nouvelles fonctionnalités disponibles dans la version 7.0 du langage C#.
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 58d43167341b69e7e9ac67024e9993cf51c26c0b
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: 148ecdf7a3a99ac73132593272ecff3a5bb4195e
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67347460"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105716"
 ---
 # <a name="whats-new-in-c-70"></a>Nouveautés de C# 7.0
 
 C# 7.0 ajoute un certain nombre de nouvelles fonctionnalités au langage C# :
-* [Variables `out`](#out-variables)
+- [Variables `out`](#out-variables)
   - Vous pouvez déclarer des valeurs `out` inline comme arguments de la méthode dans laquelle elles sont utilisées.
-* [Tuples](#tuples)
+- [Tuples](#tuples)
   - Vous pouvez créer des types légers et sans nom qui contiennent plusieurs champs publics. Les compilateurs et les outils de l’IDE comprennent la sémantique de ces types.
-* [Éléments ignorés](#discards)
+- [Éléments ignorés](#discards)
   - Les éléments ignorés sont les variables temporaires en écriture seule utilisées dans les attributions quand vous ne vous souciez pas de la valeur assignée. Ils s’avèrent utiles lors de la déconstruction de tuples et de types définis par l’utilisateur, ainsi que lors de l’appel de méthodes avec des paramètres `out`.
-* [Critères spéciaux](#pattern-matching)
+- [Critères spéciaux](#pattern-matching)
   - Vous pouvez créer une logique de branchement basée sur des types arbitraires et les valeurs des membres de ces types.
-* [Variables locales et retours `ref`](#ref-locals-and-returns)
+- [Variables locales et retours `ref`](#ref-locals-and-returns)
   - Les valeurs de retour et les variables locales de méthode peuvent être des références à un autre stockage.
-* [Fonctions locales](#local-functions)
+- [Fonctions locales](#local-functions)
   - Vous pouvez imbriquer des fonctions dans d’autres fonctions afin de limiter leur portée et leur visibilité.
-* [Autres membres expression-bodied](#more-expression-bodied-members)
+- [Autres membres expression-bodied](#more-expression-bodied-members)
   - La liste des membres pouvant être créés à l’aide d’expressions s’est allongée.
-* [Expressions `throw`](#throw-expressions)
+- [Expressions `throw`](#throw-expressions)
   - Vous pouvez lever des exceptions dans les constructions de code qui n’étaient pas autorisées auparavant, car `throw` était une instruction.
-* [Types de retour async généralisés](#generalized-async-return-types)
+- [Types de retour async généralisés](#generalized-async-return-types)
   - Les méthodes déclarées avec le modificateur `async` peuvent retourner d’autres types en plus de `Task` et de `Task<T>`.
-* [Améliorations de la syntaxe littérale numérique](#numeric-literal-syntax-improvements)
+- [Améliorations de la syntaxe littérale numérique](#numeric-literal-syntax-improvements)
   - De nouveaux jetons améliorent la lisibilité des constantes numériques.
 
 Le reste de cet article présente une vue d’ensemble de chaque fonctionnalité. Vous découvrirez la logique de chacune d’elles. Vous allez apprendre leur syntaxe. Vous pouvez explorer ces fonctionnalités dans votre environnement à l’aide de l’outil global `dotnet try` :
@@ -51,9 +51,9 @@ Par souci de clarté, vous voulez peut-être spécifier le type de la variable `
 
 [!code-csharp[OutVarVariableDeclarations](~/samples/snippets/csharp/new-in-7/program.cs#OutVarVariableDeclarations "Implicitly typed Out variable")]
 
-* Le code est plus facile à lire.
+- Le code est plus facile à lire.
   - Vous déclarez la variable out à l’endroit où vous l’utilisez, et non pas sur une autre ligne au-dessus.
-* Il n’est pas nécessaire d’assigner une valeur initiale.
+- Il n’est pas nécessaire d’assigner une valeur initiale.
   - En déclarant la variable `out` à l’endroit où elle est utilisée dans un appel de méthode, vous ne pouvez pas l’utiliser accidentellement avant qu’elle soit assignée.
 
 ## <a name="tuples"></a>Tuples
@@ -95,10 +95,10 @@ Souvent, lors de la déconstruction d’un tuple ou de l’appel d’une méthod
 
 Les éléments ignorés sont pris en charge dans les scénarios suivants :
 
-* Lors de la déconstruction de tuples ou de types définis par l’utilisateur.
-* Lors d’appels à des méthodes avec des paramètres [out](../language-reference/keywords/out-parameter-modifier.md).
-* Dans une opération de critères spéciaux avec les instructions [is](../language-reference/keywords/is.md) et [switch](../language-reference/keywords/switch.md).
-* Comme un identificateur autonome quand vous voulez explicitement identifier la valeur d’une assignation comme un élément ignoré.
+- Lors de la déconstruction de tuples ou de types définis par l’utilisateur.
+- Lors d’appels à des méthodes avec des paramètres [out](../language-reference/keywords/out-parameter-modifier.md).
+- Dans une opération de critères spéciaux avec les instructions [is](../language-reference/keywords/is.md) et [switch](../language-reference/keywords/switch.md).
+- Comme un identificateur autonome quand vous voulez explicitement identifier la valeur d’une assignation comme un élément ignoré.
 
 L’exemple suivant définit une méthode `QueryCityDataForYears` qui retourne un tuple à 6 composants qui contient des données pour une ville au cours de deux années différentes. L’appel de méthode dans l’exemple s’intéresse uniquement à deux valeurs de population retournées par la méthode et traite par conséquent les valeurs restantes dans le tuple comme des éléments ignorés lors de la déconstruction du tuple.
 
@@ -180,15 +180,15 @@ Vous pouvez déclarer la valeur de retour en tant que `ref` et modifier cette va
 
 Le langage C# a plusieurs règles qui vous protègent contre une mauvaise utilisation des variables locales et des retours `ref` :
 
-* Vous devez ajouter le mot clé `ref` à la signature de méthode et à toutes les instructions `return` dans une méthode.
+- Vous devez ajouter le mot clé `ref` à la signature de méthode et à toutes les instructions `return` dans une méthode.
   - Cela permet de clarifier le retour par référence tout au long de la méthode.
-* Un `ref return` peut être assigné à une variable de la valeur ou à une variable `ref`.
+- Un `ref return` peut être assigné à une variable de la valeur ou à une variable `ref`.
   - L’appelant contrôle si la valeur de retour est copiée ou non. L’omission du modificateur `ref` lors de l’assignation de la valeur de retour indique que l’appelant souhaite une copie de la valeur, pas une référence au stockage.
-* Vous ne pouvez pas affecter une valeur de retour de méthode standard à une variable locale `ref`.
+- Vous ne pouvez pas affecter une valeur de retour de méthode standard à une variable locale `ref`.
   - Cela rejette les instructions telles que `ref int i = sequence.Count();`.
-* Vous ne pouvez pas retourner un `ref` à une variable dont la durée de vie ne s’étend pas au-delà de l’exécution de la méthode.
+- Vous ne pouvez pas retourner un `ref` à une variable dont la durée de vie ne s’étend pas au-delà de l’exécution de la méthode.
   - Cela signifie que vous ne pouvez pas retourner une référence à une variable locale ni une variable avec une étendue similaire.
-* Les variables locales et les retours `ref` ne peuvent pas être utilisés avec les méthodes Async.
+- Les variables locales et les retours `ref` ne peuvent pas être utilisés avec les méthodes Async.
   - Le compilateur ne peut pas savoir si la variable référencée a été définie à sa valeur finale quand la méthode Async est retournée.
 
 L’ajout de variables locales ref et de retours ref permet d’utiliser des algorithmes qui sont plus efficaces en évitant la copie de valeurs, ou d’effectuer plusieurs fois des opérations de déréférencement.

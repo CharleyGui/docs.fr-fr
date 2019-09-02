@@ -3,12 +3,12 @@ title: Documentation de votre code avec des commentaires XML
 description: Découvrez comment documenter votre code avec des commentaires de documentation XML et générer un fichier de documentation XML au moment de la compilation.
 ms.date: 02/14/2017
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: 17a6beabf7e8a917c461dae4d92f1cfbb0d9de71
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: b6744921f4703f53a16b6bdadcfbf375c2fb3332
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633735"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104769"
 ---
 # <a name="documenting-your-code-with-xml-comments"></a>Documentation de votre code avec des commentaires XML
 
@@ -212,12 +212,12 @@ Des outils de génération de documentation personnalisés ou internes peuvent �
 
 La documentation du code est recommandée pour de nombreuses raisons. Voici quelques bonnes pratiques, des scénarios de cas d’usage généraux et des éléments que vous devez connaître quand vous utilisez des balises de documentation XML dans votre code C#.
 
-* Par souci de cohérence, tous les types visibles publiquement et leurs membres doivent être documentés. Si vous devez le faire, faites-le complètement.
-* Les membres privés peuvent également être documentés à l’aide de commentaires XML. Toutefois, cela expose le fonctionnement interne (potentiellement confidentiel) de votre bibliothèque.
-* Au minimum, les types et leurs membres doivent avoir une balise `<summary>`, car son contenu est nécessaire pour IntelliSense.
-* Le texte de la documentation doit être écrit à l’aide de phrases complètes se terminant par un point.
-* Les classes partielles sont entièrement prises en charge, et les informations de documentation seront concaténées dans une seule entrée pour ce type.
-* Le compilateur vérifie la syntaxe des balises `<exception>`, `<include>`, `<param>`, `<see>`, `<seealso>` et `<typeparam>`.
+- Par souci de cohérence, tous les types visibles publiquement et leurs membres doivent être documentés. Si vous devez le faire, faites-le complètement.
+- Les membres privés peuvent également être documentés à l’aide de commentaires XML. Toutefois, cela expose le fonctionnement interne (potentiellement confidentiel) de votre bibliothèque.
+- Au minimum, les types et leurs membres doivent avoir une balise `<summary>`, car son contenu est nécessaire pour IntelliSense.
+- Le texte de la documentation doit être écrit à l’aide de phrases complètes se terminant par un point.
+- Les classes partielles sont entièrement prises en charge, et les informations de documentation seront concaténées dans une seule entrée pour ce type.
+- Le compilateur vérifie la syntaxe des balises `<exception>`, `<include>`, `<param>`, `<see>`, `<seealso>` et `<typeparam>`.
 - Le compilateur valide les paramètres qui contiennent des chemins de fichiers et des références à d’autres parties du code.
 
 ## <a name="see-also"></a>Voir aussi

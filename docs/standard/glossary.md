@@ -3,12 +3,12 @@ title: Glossaire .NET
 description: Découvrez la signification de certains termes utilisés dans la documentation .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 2d19ec0b79abdcce9797767d1280d055a9c77a87
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
+ms.openlocfilehash: caff1ee4c8e3ad133016b774fdb235bd1ef59637
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674508"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70106921"
 ---
 # <a name="net-glossary"></a>Glossaire .NET
 
@@ -38,7 +38,7 @@ Voir [Documentation ASP.NET Core](/aspnet/#pivot=core).
 
 ## <a name="assembly"></a>assembly
 
-Fichier *.dll*/*.exe* qui contient une collection d’API pouvant être appelées par les applications ou d’autres assemblys.
+Fichier *.dll*/ *.exe* qui contient une collection d’API pouvant être appelées par les applications ou d’autres assemblys.
 
 Un assembly peut inclure des types comme des interfaces, des classes, des structures, des énumérations et des délégués. Les assemblys qui se trouvent dans le dossier *bin* d’un projet sont parfois appelés *binaires*. Voir aussi [bibliothèque](#library).
 
@@ -85,9 +85,9 @@ Le terme « écosystème .NET » diffère des termes tels que « pile .NET �
 En général, ensemble complet d’API qui facilite le développement et le déploiement d’applications basées sur une technologie particulière. Selon ce sens général, ASP.NET Core et Windows Forms sont des exemples de frameworks d’application. Voir aussi [bibliothèque](#library).
 
 Le mot « framework » a une signification technique plus spécifique dans les termes suivants :
-* [.NET Framework](#net-framework)
-* [framework cible](#target-framework)
-* [TFM (moniker de la version cible de .Net Framework)](#tfm)
+- [.NET Framework](#net-framework)
+- [framework cible](#target-framework)
+- [TFM (moniker de la version cible de .Net Framework)](#tfm)
 
 Dans la documentation existante, « framework » fait parfois référence à une [implémentation de .NET](#implementation-of-net). Par exemple, un article peut appeler .NET Core un framework. Nous envisageons d’éliminer de la documentation cet usage qui prête à confusion.
 

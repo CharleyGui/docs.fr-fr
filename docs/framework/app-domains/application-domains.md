@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 571b049300a7c7de963bd762e0266f66060479fe
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c9ab95124264b2b59be77695755ab1d1f1c3b1aa
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927992"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70040731"
 ---
 # <a name="application-domains"></a>Domaines d'application
 
@@ -145,7 +145,7 @@ COMPLUS_LoaderOptimization = 1
  Lorsqu'il est défini avec la valeur 1, l'indicateur d'environnement COMPLUS_LoaderOptimization force l'hôte du runtime à charger tous les assemblys d'une manière dépendante du domaine, connue sous le nom de SingleDomain. SingleDomain ne charge aucun assembly comme indépendant du domaine, sauf Mscorlib, qui est toujours chargé comme indépendant du domaine. Ce paramètre est désigné par « domaine unique », car il est fréquemment utilisé lorsque l'hôte n'exécute qu'une seule application dans le processus.  
   
 > [!CAUTION]
->  L'indicateur d'environnement COMPLUS_LoaderOptimization a été conçu pour être utilisé dans les scénarios de diagnostic et de test. L'activation de l'indicateur peut provoquer un net ralentissement et accroître l'utilisation de la mémoire.  
+> L'indicateur d'environnement COMPLUS_LoaderOptimization a été conçu pour être utilisé dans les scénarios de diagnostic et de test. L'activation de l'indicateur peut provoquer un net ralentissement et accroître l'utilisation de la mémoire.  
   
 ### <a name="code-example"></a>Exemple de code
 
