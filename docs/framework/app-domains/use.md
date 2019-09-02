@@ -9,11 +9,11 @@ ms.assetid: c6d99815-e022-4d2c-9420-1d7ab5b9d504
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5ebd1de46eb2757098a369b58dd9a6c0009e5b95
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32742469"
+ms.lasthandoff: 09/02/2019
+ms.locfileid: "61674886"
 ---
 # <a name="using-application-domains"></a>Utilisation des domaines d'application
 Les domaines d’application fournissent une unité d’isolation pour le common language runtime. Ils sont créés et exécutés dans un processus. Les domaines d’application sont généralement créés par un hôte de runtime, qui est une application responsable du chargement du runtime dans un processus et de l’exécution du code utilisateur dans un domaine d’application. L’hôte de runtime crée un processus et un domaine d’application par défaut et exécute le code managé dans ce domaine d’application. Les hôtes de runtime comprennent ASP.NET, Microsoft Internet Explorer et le shell Windows.  
@@ -36,7 +36,7 @@ Les domaines d’application fournissent une unité d’isolation pour le common
  [Guide pratique pour charger des assemblys dans un domaine d’application](../../../docs/framework/app-domains/how-to-load-assemblies-into-an-application-domain.md)  
  Décrit comment charger un assembly dans un domaine d’application.  
   
- [Guide pratique pour obtenir des informations relatives au type et aux membres à partir d'un assembly](../../../docs/framework/app-domains/how-to-obtain-type-and-member-information-from-an-assembly.md)  
+ [Guide pratique pour obtenir des informations relatives au type et aux membres à partir d’un assembly](../../../docs/framework/app-domains/how-to-obtain-type-and-member-information-from-an-assembly.md)  
  Décrit comment récupérer des informations sur un assembly.  
   
  [Clichés instantanés d'assemblys](../../../docs/framework/app-domains/shadow-copy-assemblies.md)  
