@@ -328,7 +328,7 @@ Si l’indicateur de redistribution est défini, le récepteur doit en tenir com
 - **Event Driven Messaging** \
     [http://soapatterns.org/design\_patterns/event\_driven\_messaging](http://soapatterns.org/design_patterns/event_driven_messaging)
 
-- **Jimmy Bogard. Refactoring Towards Resilience: Evaluating Coupling** \ (Refactorisation vers la résilience : évaluation du couplage)
+- **Jimmy Bogard. Refactorisation vers la résilience : évaluation du couplage** \
     <https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/>
 
 - **Publish-Subscribe channel** \

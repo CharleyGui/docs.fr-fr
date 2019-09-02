@@ -101,7 +101,7 @@ Si vous envisagez d’utiliser la communication asynchrone, veillez également �
 - **Cohérence à terme** \
   <https://en.wikipedia.org/wiki/Eventual_consistency>
 
-- **Jimmy Bogard. Refactoring Towards Resilience: Evaluating Coupling** \ (Refactorisation vers la résilience : évaluation du couplage)
+- **Jimmy Bogard. Refactorisation vers la résilience: évaluation du couplage** \
   <https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/>
 
 > [!div class="step-by-step"]
