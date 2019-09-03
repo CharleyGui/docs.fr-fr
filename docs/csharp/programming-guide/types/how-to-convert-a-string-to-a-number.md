@@ -8,12 +8,12 @@ helpviewer_keywords:
 - converting strings to int [C#]
 - strings [C#], converting to int
 ms.assetid: 467b9979-86ee-4afd-b734-30299cda91e3
-ms.openlocfilehash: 8b2e6fdc6248ca65213ea83942d792f983bd3b3b
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 377074bf09cf1e24ec022cee506588a9dcb8cb80
+ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588390"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70133702"
 ---
 # <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Procédure : Convertir une chaîne en nombre (Guide de programmation C#)
 
@@ -59,4 +59,4 @@ Le tableau suivant répertorie quelques unes des méthodes de la classe <xref:Sy
 
 - [Types](./index.md)
 - [Guide pratique pour déterminer si une chaîne représente une valeur numérique](../strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)
-- [Utilitaire de mise en forme .NET Framework 4](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)
+- [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)

@@ -1,16 +1,16 @@
 ---
 title: Entraîner un modèle Machine Learning avec la validation croisée
 description: Découvrez comment utiliser la validation croisée pour générer des modèles Machine Learning plus robustes dans ML.NET. La validation croisée est une technique d’entraînement et d’évaluation de modèle qui fractionne les données en plusieurs partitions sur lesquelles elle entraîne plusieurs algorithmes.
-ms.date: 06/25/2019
+ms.date: 08/29/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to,title-hack-0625
-ms.openlocfilehash: c68c2b61054f59f03b4743ec30a694e94086ebab
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: f29103d0cf59cdec10a641b05ce359bf95c01ccd
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397656"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70169059"
 ---
 # <a name="train-a-machine-learning-model-using-cross-validation"></a>Entraîner un modèle Machine Learning avec la validation croisée
 
@@ -30,7 +30,7 @@ Size (Sq. ft.), HistoricalPrice1 ($), HistoricalPrice2 ($), HistoricalPrice3 ($)
 1120.00, 47504.98, 45129.73, 43775.84, 46792.41
 ```
 
-Les données peuvent être modélisées par une classe telle que `HousingData` :
+Les données peuvent être modélisées par une classe comme `HousingData` et chargées dans un [`IDataView`](xref:Microsoft.ML.IDataView).
 
 ```csharp
 public class HousingData
@@ -47,8 +47,6 @@ public class HousingData
     public float CurrentPrice { get; set; }
 }
 ```
-
-Chargez les données dans un [`IDataView`](xref:Microsoft.ML.IDataView).
 
 ## <a name="prepare-the-data"></a>Préparer les données
 

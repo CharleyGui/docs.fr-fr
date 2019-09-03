@@ -1,8 +1,8 @@
 ---
-title: Réflexion dans le .NET Framework
+title: Réflexion dans .NET
 ms.date: 03/30/2017
 helpviewer_keywords:
-- assemblies [.NET Framework], reflection
+- assemblies [.NET], reflection
 - EventInfo class, reflection
 - common language runtime, reflection
 - FieldInfo class, reflection
@@ -23,14 +23,14 @@ helpviewer_keywords:
 ms.assetid: d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c8d34c5386d0ede578fec097279e9de135f4b6cc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 56c3b536954118b80db2ae7f2f0d0ffdc74bac68
+ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940032"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70133746"
 ---
-# <a name="reflection-in-the-net-framework"></a>Réflexion dans le .NET Framework
+# <a name="reflection-in-net"></a>Réflexion dans .NET
 Les classes de l’espace de noms <xref:System.Reflection> avec <xref:System.Type?displayProperty=nameWithType> vous permettent d’obtenir des informations sur les [assemblys](../app-domains/assemblies-in-the-common-language-runtime.md) chargés et sur les types définis dans ceux-ci, comme les types des [classes](../../standard/base-types/common-type-system.md#classes), des[interfaces](../../standard/base-types/common-type-system.md#interfaces) et des [valeurs](../../csharp/language-reference/keywords/value-types.md). Vous pouvez également utiliser la réflexion pour créer des instances de types au moment de l'exécution, et pour les appeler et y accéder. Pour obtenir des informations sur des aspects spécifiques de la réflexion, consultez [Rubriques connexes](#related_topics) à la fin de cette vue d’ensemble.
   
  Le chargeur du [common language runtime](../../standard/clr.md) gère les [domaines d’application](../../../docs/framework/app-domains/application-domains.md). Ceux-ci constituent des limites définies autour des objets qui ont la même portée d’application. Cette gestion comprend le chargement de chaque assembly dans le domaine d'application approprié et le contrôle de la disposition en mémoire de la hiérarchie des types dans chaque assembly.  
@@ -64,7 +64,7 @@ Les classes de l’espace de noms <xref:System.Reflection> avec <xref:System.Typ
 ## <a name="runtime-types-in-reflection"></a>Types au moment de l'exécution dans la réflexion  
  La réflexion fournit des classes, comme <xref:System.Type> et <xref:System.Reflection.MethodInfo>, pour représenter des types, des membres, des paramètres et d'autres entités de code. Cependant, quand vous utilisez la réflexion, vous ne travaillez pas directement avec ces classes, dont la plupart sont abstraites (`MustInherit` en Visual Basic). Au lieu de cela, vous utilisez des types fournis par le common language runtime (CLR).  
   
- Par exemple, quand vous utilisez l'opérateur C# `typeof` (`GetType` en Visual Basic) pour obtenir un objet <xref:System.Type>, l'objet est réellement d'un type `RuntimeType`. `RuntimeType` dérive de <xref:System.Type>, et fournit des implémentations de toutes les méthodes abstraites.  
+ Par exemple, quand vous utilisez l'opérateur C# `typeof` (`GetType` en Visual Basic) pour obtenir un objet <xref:System.Type>, l'objet est réellement d'un type `RuntimeType`. `RuntimeType` dérive de <xref:System.Type> et fournit des implémentation de toutes les méthodes abstraites.  
   
  Ces classes d'exécution sont `internal` (`Friend` en Visual Basic). Elles ne sont pas documentées distinctement de leurs classes de base, car leur comportement est décrit par la documentation de la classe de base.  
   

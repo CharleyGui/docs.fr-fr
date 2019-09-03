@@ -2,12 +2,12 @@
 title: Commande dotnet
 description: Découvrez la commande dotnet (le pilote générique des outils .NET Core CLI) et comment l’utiliser.
 ms.date: 06/04/2018
-ms.openlocfilehash: e1571bea1594b492427bdf5b3a7959733459c54e
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: 61542a3fff8bba6e2c3e55a4db5a746620d79ca1
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331022"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70202513"
 ---
 # <a name="dotnet-command"></a>Commande dotnet
 
@@ -21,23 +21,24 @@ ms.locfileid: "68331022"
 
 # <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
-```
-dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics] [--fx-version]
-    [-h|--help] [--info] [--list-runtimes] [--list-sdks] [--roll-forward-on-no-candidate-fx] [-v|--verbosity] [--version]
+```console
+dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [--depsfile]
+    [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [--list-runtimes] [--list-sdks] [--roll-forward-on-no-candidate-fx] [--runtimeconfig] [-v|--verbosity] [--version]
 ```
 
 # <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 
-```
-dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [-d|--diagnostics]
-    [--fx-version] [-h|--help] [--info] [--roll-forward-on-no-candidate-fx] [-v|--verbosity] [--version]
+```console
+dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [--depsfile]
+    [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [--roll-forward-on-no-candidate-fx]
+    [--runtimeconfig] [-v|--verbosity] [--version]
 ```
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-```
-dotnet [command] [arguments] [--additionalprobingpath] [-d|--diagnostics] [--fx-version]
-    [-h|--help] [--info] [-v|--verbosity] [--version]
+```console
+dotnet [command] [arguments] [--additionalprobingpath] [--depsfile] [-d|--diagnostics]
+    [--fx-version] [-h|--help] [--info] [--runtimeconfig] [-v|--verbosity] [--version]
 ```
 
 ---
@@ -54,11 +55,17 @@ Vous pouvez utiliser `dotnet` pour exécuter des applications en spécifiant une
 
 `--additional-deps <PATH>`
 
-Chemin du fichier *.deps.json* supplémentaire.
+Chemin d’un fichier *.deps.json* supplémentaire.
 
 `--additionalprobingpath <PATH>`
 
 Chemin d’accès contenant la stratégie de sondage et les assemblys à sonder.
+
+`--depsfile`
+
+Chemin d’un fichier *deps.json*.
+
+Un fichier *deps.json* contient une liste de dépendances, des dépendances de compilation et des informations de version utilisées pour tenter de résoudre les conflits d’assemblys. Pour plus d’informations sur ce fichier, consultez [Runtime Configuration Files](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) sur GitHub.
 
 `-d|--diagnostics`
 
@@ -93,6 +100,12 @@ Définit le comportement quand le framework partagé requis n’est pas disponib
 
  Pour plus d'informations, consultez [Restauration par progression](../whats-new/dotnet-core-2-1.md#roll-forward).
 
+`--runtimeconfig`
+
+Chemin d’un fichier *runtimeconfig.json*.
+
+Un fichier *runtimeconfig.json* est un fichier de configuration contenant des paramètres de configuration de runtime. Pour plus d’informations, consultez [Runtime Configuration Files](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) sur GitHub.
+
 `-v|--verbosity <LEVEL>`
 
 Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. Non pris en charge dans toutes les commandes ; consultez la page de commande spécifique pour déterminer si cette option est disponible.
@@ -105,11 +118,17 @@ Affiche la version du SDK .NET Core en cours d’utilisation.
 
 `--additional-deps <PATH>`
 
-Chemin du fichier *.deps.json* supplémentaire.
+Chemin d’un fichier *.deps.json* supplémentaire.
 
 `--additionalprobingpath <PATH>`
 
 Chemin d’accès contenant la stratégie de sondage et les assemblys à sonder.
+
+`--depsfile`
+
+Chemin d’un fichier *deps.json*.
+
+Un fichier *deps.json* contient une liste de dépendances, des dépendances de compilation et des informations de version utilisées pour tenter de résoudre les conflits d’assemblys. Pour plus d’informations sur ce fichier, consultez [Runtime Configuration Files sur GitHub](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
 
 `-d|--diagnostics`
 
@@ -131,6 +150,12 @@ Affiche des informations détaillées sur une installation .NET Core et l’envi
 
  Désactive la restauration par progression d’une version mineure, si la valeur est `0`. Pour plus d'informations, consultez [Restauration par progression](../whats-new/dotnet-core-2-1.md#roll-forward).
 
+`--runtimeconfig`
+
+Chemin d’un fichier *runtimeconfig.json*.
+
+Un fichier *runtimeconfig.json* est un fichier de configuration contenant des paramètres de configuration de runtime. Pour plus d’informations, consultez [Runtime Configuration Files sur GitHub](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
+
 `-v|--verbosity <LEVEL>`
 
 Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. Non pris en charge dans toutes les commandes ; consultez la page de commande spécifique pour déterminer si cette option est disponible.
@@ -144,6 +169,12 @@ Affiche la version du SDK .NET Core en cours d’utilisation.
 `--additionalprobingpath <PATH>`
 
 Chemin d’accès contenant la stratégie de sondage et les assemblys à sonder.
+
+`--depsfile`
+
+Chemin d’un fichier *deps.json*.
+
+Un fichier *deps.json* contient une liste de dépendances, des dépendances de compilation et des informations de version utilisées pour tenter de résoudre les conflits d’assemblys. Pour plus d’informations sur ce fichier, consultez [Runtime Configuration Files sur GitHub](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
 
 `-d|--diagnostics`
 
@@ -160,6 +191,12 @@ Affiche la documentation relative à une commande donnée, par exemple `dotnet b
 `--info`
 
 Affiche des informations détaillées sur une installation .NET Core et l’environnement de la machine, par exemple le système d’exploitation actuel, ainsi que le SHA de validation de la version du .NET Core.
+
+`--runtimeconfig`
+
+Chemin d’un fichier *runtimeconfig.json*.
+
+Un fichier *runtimeconfig.json* est un fichier de configuration contenant des paramètres de configuration de runtime. Pour plus d’informations, consultez [Runtime Configuration Files sur GitHub](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
 
 `-v|--verbosity <LEVEL>`
 
@@ -355,3 +392,7 @@ Spécifie l’emplacement de l’index de service que doit utiliser l’hôte pa
 Spécifie si les données concernant l’utilisation des outils .NET Core doivent être collectées et envoyées à Microsoft. Définie sur `true` pour ne pas adhérer à la fonctionnalité de télémétrie (valeurs acceptées : `true`, `1` ou `yes`). Sinon, définie sur `false` pour adhérer aux fonctionnalités de télémétrie (valeurs acceptées : `false`, `0` ou `no`). Si elle n’est pas définie, la valeur par défaut est `false`, et la fonctionnalité de télémétrie est active.
 
 ---
+
+## <a name="see-also"></a>Voir aussi
+
+- [Runtime Configuration Files](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md)

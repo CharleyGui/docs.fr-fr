@@ -1,16 +1,16 @@
 ---
 title: Expliquer les prédictions de modèle à l’aide de la technique PFI (Permutation Feature Importance)
 description: Comprendre l’importance des caractéristiques des modèles avec l’option Permutation Feature Importance dans ML.NET
-ms.date: 05/02/2019
+ms.date: 08/29/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: 1037a1f1c21ef2c9b9a87a070a7d2003c1e76eb4
-ms.sourcegitcommit: a970268118ea61ce14207e0916e17243546a491f
+ms.openlocfilehash: 9617582c79b2278e3a68e7acf84568247b81eca1
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67307367"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70167659"
 ---
 # <a name="explain-model-predictions-using-permutation-feature-importance"></a>Expliquer les prédictions de modèle à l’aide de la technique PFI (Permutation Feature Importance)
 
@@ -50,7 +50,7 @@ Vous trouverez ci-dessous un échantillon du jeu de données :
 2,98,16,1,0.25,10,5,1,8,689,13,36,12
 ```
 
-Les données de cet échantillon peuvent être modélisées par une classe telle que `HousingPriceData` :
+Les données de cet exemple peuvent être modélisées par une classe comme `HousingPriceData` et chargées dans un [`IDataView`](xref:Microsoft.ML.IDataView).
 
 ```csharp
 class HousingPriceData
@@ -96,8 +96,6 @@ class HousingPriceData
     public float Price { get; set; }
 }
 ```
-
-Chargez les données dans un [`IDataView`](xref:Microsoft.ML.IDataView).
 
 ## <a name="train-the-model"></a>Effectuer l’apprentissage du modèle
 

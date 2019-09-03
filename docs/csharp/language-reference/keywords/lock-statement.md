@@ -9,12 +9,12 @@ f1_keywords:
 helpviewer_keywords:
 - lock keyword [C#]
 ms.assetid: 656da1a4-707e-4ef6-9c6e-6d13b646af42
-ms.openlocfilehash: 7ae19e48467bf5feca115c993c2299c1ecbaadc7
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
+ms.openlocfilehash: 70fcd8041946f2b1db3b37de79318b87771ee676
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566332"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168774"
 ---
 # <a name="lock-statement-c-reference"></a>instruction lock (référence C#)
 
@@ -47,9 +47,9 @@ finally
 
 Dans la mesure où le code utilise un bloc [try...finally](try-finally.md), le verrou est libéré même si une exception est levée dans le corps d’une instruction `lock`.
 
-Vous ne pouvez pas utiliser le mot clé [await](await.md) dans le corps d’une instruction `lock`.
+Vous ne pouvez pas utiliser l’[opérateur await](../operators/await.md) dans le corps d’une instruction `lock`.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Remarques
 
 Quand vous synchronisez l’accès des threads à une ressource partagée, verrouillez une instance d’objet dédiée (par exemple `private readonly object balanceLock = new object();`) ou toute autre instance peu susceptible d’être utilisée comme objet de verrouillage par des parties du code non associées. Évitez d’utiliser la même instance d’objet de verrouillage pour différentes ressources partagées, car cela peut entraîner une contention d’interblocage ou de verrouillage. En particulier, évitez d’utiliser les éléments suivants en tant qu’objets de verrouillage :
 

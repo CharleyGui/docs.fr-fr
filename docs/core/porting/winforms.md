@@ -5,12 +5,12 @@ author: Thraka
 ms.author: adegeo
 ms.date: 03/01/2019
 ms.custom: ''
-ms.openlocfilehash: aebfaa85338e014ca47256b85a1bd6529ad803bb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 7ef36be47648ae338b5fe70b75431006c99be31f
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59327163"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70105212"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Procédure : Porter une application de bureau Windows Forms sur .NET Core
 
@@ -300,7 +300,7 @@ Dès que Visual Studio 2019 prendra en charge le Concepteur Windows Forms, vous 
  
 ## <a name="next-steps"></a>Étapes suivantes
 
-* En savoir plus sur le [Pack de compatibilité Windows][compat-pack].
-* Regardez une [vidéo sur le portage](https://www.youtube.com/watch?v=upVQEUc_KwU) de projets Windows Forms .NET Framework vers .NET Core.
+- Découvrez-en plus sur le [Pack de compatibilité Windows][compat-pack].
+- Regardez une [vidéo sur le portage](https://www.youtube.com/watch?v=upVQEUc_KwU) de projets Windows Forms .NET Framework vers .NET Core.
 
 [compat-pack]: windows-compat-pack.md

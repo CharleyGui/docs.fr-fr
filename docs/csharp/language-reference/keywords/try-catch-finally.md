@@ -9,12 +9,12 @@ helpviewer_keywords:
 - finally blocks [C#]
 - try-catch statement [C#]
 ms.assetid: a1b443b0-ff7a-43ab-b835-0cc9bfbd15ca
-ms.openlocfilehash: 787005ec09a2c5c4f0e5033c83fd6a7ab7875b7e
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 9f2c82fb140e18454491660d17b570db0a8a2aef
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422155"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168587"
 ---
 # <a name="try-catch-finally-c-reference"></a>try-catch-finally (référence C#)
 
@@ -28,7 +28,7 @@ ms.locfileid: "66422155"
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Pour plus d’informations, consultez la section [Instruction try](~/_csharplang/spec/statements.md#the-try-statement) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Voir aussi
 

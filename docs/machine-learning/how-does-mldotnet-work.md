@@ -1,17 +1,17 @@
 ---
 title: Présentation de ML.NET et de son fonctionnement
 description: ML.NET vous donne la possibilité d’ajouter le Machine Learning aux applications .NET, dans des scénarios en ligne ou hors connexion. Avec cette fonctionnalité, vous pouvez ensuite effectuer des prédictions automatiques à partir des données disponibles dans votre application sans devoir être connecté à un réseau pour utiliser ML.NET. Cet article explique les principes de base du machine learning dans ML.NET.
-ms.date: 07/17/2019
+ms.date: 08/26/2019
 ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: 23e71e86b75854042068b6a68f90cf995749ee58
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
+ms.openlocfilehash: af91819c66a2376f446d0f18537d2f6e718b446e
+ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331581"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104895"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Présentation de ML.NET et de son fonctionnement
 
@@ -98,7 +98,7 @@ Revoyons maintenant tous ces concepts un peu plus en détail.
 
 Un modèle ML.NET est un objet qui contient des transformations à effectuer sur vos données d’entrée pour produire la sortie prédite.
 
-### <a name="basic"></a>De base
+### <a name="basic"></a>Basic
 
 Le modèle de base, le plus simple, est la régression linéaire à deux dimensions, où une quantité continue est proportionnelle à une autre, comme dans l’exemple des prix de maisons ci-dessus. 
 
@@ -169,11 +169,11 @@ Au démarrage de toute application ML.NET, il y a un objet <xref:Microsoft.ML.ML
 |Préparation des données||<xref:Microsoft.ML.TransformsCatalog>||
 |Algorithmes d’entraînement|Classification binaire|<xref:Microsoft.ML.BinaryClassificationCatalog>||
 ||Classification multiclasse|<xref:Microsoft.ML.MulticlassClassificationCatalog>||
-||Détection des anomalies|<xref:Microsoft.ML.AnomalyDetectionCatalog>||
+||Détection d’anomalie|<xref:Microsoft.ML.AnomalyDetectionCatalog>||
 ||Clustering|<xref:Microsoft.ML.ClusteringCatalog>||
 ||Prévisions|<xref:Microsoft.ML.ForecastingCatalog>||
 ||Classement|<xref:Microsoft.ML.RankingCatalog>||
-||régression ;|<xref:Microsoft.ML.RegressionCatalog>||
+||Régression|<xref:Microsoft.ML.RegressionCatalog>||
 ||Recommandation|<xref:Microsoft.ML.RecommendationCatalog>|Ajouter le package NuGet `Microsoft.ML.Recommender`|
 ||TimeSeries|<xref:Microsoft.ML.TimeSeriesCatalog>|Ajouter le package NuGet `Microsoft.ML.TimeSeries`|
 |Utilisation du modèle ||<xref:Microsoft.ML.ModelOperationsCatalog>||
@@ -195,7 +195,7 @@ Dans l’extrait de code, `Concatenate` et `Sdca` sont deux méthodes figurant d
 
 À ce stade, les objets sont seulement créés. Ils ne sont pas exécutés.
 
-### <a name="train-the-model"></a>Formation du modèle
+### <a name="train-the-model"></a>Effectuer l’apprentissage du modèle
 
 Une fois que les objets dans le pipeline ont été créés, les données peuvent être utilisées pour entraîner le modèle.
 
@@ -229,7 +229,7 @@ La méthode `CreatePredictionEngine()` a une classe d’entrée et une classe de
 
 Les objets [DataView](xref:Microsoft.ML.IDataView) sont au cœur du pipeline de machine learning de ML.NET.
 
-Chaque transformation dans le pipeline a deux schémas : un schéma d’entrée (noms de données, types et tailles que la transformation s’attend à voir dans son entrée) et un schéma de sortie (noms de données, types et tailles générés suite à l’exécution de la transformation). 
+Chaque transformation dans le pipeline a deux schémas : un schéma d’entrée (noms de données, types et tailles que la transformation s’attend à voir dans son entrée) et un schéma de sortie (noms de données, types et tailles générés suite à l’exécution de la transformation). Le document suivant explique de façon détaillée l’[interface IDataView et son système de type](https://xadupre.github.io/machinelearningext/mlnetdocs/idataviewtypesystem.html).
 
 Si le schéma de sortie d’une transformation dans le pipeline ne correspond pas au schéma d’entrée de la transformation suivante, ML.NET lève une exception.
 

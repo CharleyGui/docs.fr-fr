@@ -11,18 +11,16 @@ helpviewer_keywords:
 - catch keyword [C#]
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
-ms.openlocfilehash: 28bf939cb7da760400486c52bb07649826628c1c
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 8f901bd8ab5dcdcf4f5674e3f235267c9f535725
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422590"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168718"
 ---
 # <a name="try-catch-c-reference"></a>try-catch (référence C#)
 
 L'instruction try-catch consiste en un bloc `try` suivi d'une ou plusieurs clauses `catch` qui spécifient des gestionnaires pour différentes exceptions.
-
-## <a name="remarks"></a>Notes
 
 Quand une exception est levée, le Common Language Runtime (CLR) recherche l'instruction `catch` qui gère cette exception. Si la méthode en cours d'exécution ne contient pas un tel bloc `catch`, le CLR examine la méthode qui a appelé la méthode actuelle, puis remonte la pile des appels. Si aucun bloc `catch` n'est trouvé, alors le CLR affiche un message d'exception non gérée à l'utilisateur et arrête l'exécution du programme.
 
@@ -131,23 +129,24 @@ static void Main()
 Pour plus d’informations sur l’interception, consultez [try-catch-finally](try-catch-finally.md).
 
 ## <a name="exceptions-in-async-methods"></a>Exceptions dans les méthodes async
-Une méthode async est marquée par un modificateur [async](async.md) et contient généralement une ou plusieurs expressions ou instructions await. Une expression await applique l’opérateur [await](await.md) à un <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601>.
+
+Une méthode async est marquée par un modificateur [async](async.md) et contient généralement une ou plusieurs expressions ou instructions await. Une expression await applique l’opérateur [await](../operators/await.md) à un <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601>.
 
 Quand le contrôle atteint un `await` dans la méthode async, la progression de la méthode est interrompue jusqu'à ce que la tâche attendue se termine. Quand la tâche est terminée, l’exécution peut reprendre dans la méthode. Pour plus d’informations, consultez [Programmation asynchrone avec Async et Await](../../programming-guide/concepts/async/index.md) et [Flux de contrôle dans les programmes Async](../../programming-guide/concepts/async/control-flow-in-async-programs.md).
 
 La tâche terminée à laquelle `await` est appliqué peut être dans un état d'erreur en raison d'une exception non gérée dans la méthode qui retourne la tâche. L'attente de la tâche lève une exception. Une tâche peut également se terminer dans un état annulé si le processus asynchrone qui la retourne est annulé. L'attente d'une tâche annulée lève une `OperationCanceledException`. Pour plus d’informations sur la façon d’annuler un processus asynchrone, consultez [Réglage de votre application Async](../../programming-guide/concepts/async/fine-tuning-your-async-application.md).
 
-Pour intercepter l'exception, attendez la tâche dans un bloc `try`, puis interceptez l'exception dans le bloc `catch` associé. Pour obtenir un exemple, consultez la section « Exemple ».
+Pour intercepter l'exception, attendez la tâche dans un bloc `try`, puis interceptez l'exception dans le bloc `catch` associé. Pour obtenir un exemple, consultez la section [Exemple de la méthode async](#async-method-example).
 
-Une tâche peut être dans un état d'erreur car plusieurs exceptions se sont produites dans la méthode async attendue. Par exemple, la tâche peut être le résultat d'un appel à <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Quand vous attendez une telle tâche, une seule des exceptions est interceptée et vous ne pouvez pas prévoir laquelle. Pour obtenir un exemple, consultez la section « Exemple ».
+Une tâche peut être dans un état d'erreur car plusieurs exceptions se sont produites dans la méthode async attendue. Par exemple, la tâche peut être le résultat d'un appel à <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Quand vous attendez une telle tâche, une seule des exceptions est interceptée et vous ne pouvez pas prévoir laquelle. Pour obtenir un exemple, consultez la section [Exemple Task.WhenAll](#taskwhenall-example).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Dans l'exemple suivant, le bloc `try` contient un appel à la méthode `ProcessString` qui risque de provoquer une exception. La clause `catch` clause contient le gestionnaire d'exceptions qui affiche simplement un message à l'écran. Quand l'instruction `throw` est appelée depuis `MyMethod`, le système recherche l'instruction `catch` et affiche le message `Exception caught`.
 
 [!code-csharp[csrefKeywordsExceptions#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsExceptions/CS/csrefKeywordsExceptions.cs#2)]
 
-## <a name="example"></a>Exemple
+## <a name="two-catch-blocks-example"></a>Exemple de deux blocs catch
 
 Dans l'exemple suivant, deux blocs catch sont utilisés, et l'exception la plus spécifique, qui apparaît la première, est interceptée.
 
@@ -157,7 +156,7 @@ Si vous placez le bloc catch le moins spécifique en premier dans l'exemple, le 
 
 [!code-csharp[csrefKeywordsExceptions#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsExceptions/CS/csrefKeywordsExceptions.cs#3)]
 
-## <a name="example"></a>Exemple
+## <a name="async-method-example"></a>Exemple de la méthode async
 
 L'exemple suivant illustre la gestion des exceptions pour les méthodes async. Pour intercepter une exception levée par une tâche async, placez l'expression `await` dans un bloc `try` et interceptez-la dans un bloc `catch`.
 
@@ -167,7 +166,7 @@ Supprimez les marques de commentaire de la ligne `throw new OperationCanceledExc
 
 [!code-csharp[csAsyncExceptions#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csasyncexceptions/cs/class1.cs#2)]  
 
-## <a name="example"></a>Exemple
+## <a name="taskwhenall-example"></a>Exemple Task.WhenAll
 
 L’exemple suivant illustre la gestion des exceptions quand plusieurs tâches peuvent entraîner plusieurs exceptions. Le bloc `try` attend la tâche retournée par un appel à <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. La tâche est terminée quand les trois tâches auxquelles WhenAll est appliqué sont terminées.
 
@@ -177,7 +176,7 @@ Chacune de ces trois tâches provoque une exception. Le bloc `catch` itère au s
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Pour plus d’informations, consultez la section [Instruction try](~/_csharplang/spec/statements.md#the-try-statement) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
 
 ## <a name="see-also"></a>Voir aussi
 

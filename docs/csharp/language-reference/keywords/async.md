@@ -9,12 +9,12 @@ helpviewer_keywords:
 - async method [C#]
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
-ms.openlocfilehash: e0c8f52193639c067252878127ee95a0897b9582
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 71e3781b08bca3441dbd55704bcb0f7de635097e
+ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69922441"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70168645"
 ---
 # <a name="async-c-reference"></a>async (référence C#)
 
@@ -27,7 +27,7 @@ public async Task<int> ExampleMethodAsync()
 }  
 ```  
 
-Si vous débutez en programmation asynchrone ou que vous ne comprenez pas comment une méthode async utilise le mot clé `await` pour un travail potentiellement long sans bloquer le thread de l’appelant, lisez l’introduction dans [Programmation asynchrone avec async et await](../../programming-guide/concepts/async/index.md). Le code suivant se trouve dans une méthode async et appelle la méthode <xref:System.Net.Http.HttpClient.GetStringAsync%2a?displayProperty=nameWithType> : 
+Si vous débutez en programmation asynchrone ou que vous ne comprenez pas comment une méthode async utilise l’[opérateur `await`](../operators/await.md) pour un travail potentiellement long sans bloquer le thread de l’appelant, lisez l’introduction dans [Programmation asynchrone avec async et await](../../programming-guide/concepts/async/index.md). Le code suivant se trouve dans une méthode async et appelle la méthode <xref:System.Net.Http.HttpClient.GetStringAsync%2a?displayProperty=nameWithType> :
   
 ```csharp  
 string contents = await httpClient.GetStringAsync(requestUrl);  
@@ -87,6 +87,6 @@ Pour obtenir plus d’informations et des exemples, consultez [Types de retour A
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute>
-- [await](./await.md)
+- [await](../operators/await.md)
 - [Procédure pas à pas : Accès au web avec Async et Await](../../programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Programmation asynchrone avec Async et Await](../../programming-guide/concepts/async/index.md)

@@ -33,7 +33,7 @@ Les stratégies pour la gestion des défaillances partielles sont les suivantes.
 - **Ajout de résilience et optimisation des performances**\
   <https://docs.microsoft.com/previous-versions/msp-n-p/jj591574(v=pandp.10)>
 
-- **Cloisonnement.** Dépôt GitHub. Implémentation de la stratégie de Polly.
+- **Cloisonnement.** Dépôt GitHub. Implémentation de la stratégie de Polly.\
   <https://github.com/App-vNext/Polly/wiki/Bulkhead>
 
 - **Conception d’applications résilientes pour Azure**\
