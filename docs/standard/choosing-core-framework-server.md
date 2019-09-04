@@ -4,12 +4,12 @@ description: Guide sur l’implémentation de .NET à envisager pour générer u
 author: cartermp
 ms.author: mairaw
 ms.date: 06/19/2018
-ms.openlocfilehash: 520920566e8a55eef2d506dc4a8085f57ef1c0bb
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 37f7a4e3d543711af9ef40e458edfa1cac076db2
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70107291"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70254213"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Choix entre .NET Core et .NET Framework pour les applications serveur
 
@@ -28,7 +28,7 @@ Utilisez .NET Framework pour votre application serveur quand :
 - Votre application utilise le .NET Framework (nous vous recommandons de privilégier l’extension à la migration).
 - Votre application utilise des packages NuGet ou des bibliothèques .NET tiers non disponibles pour .NET Core.
 - Votre application utilise des technologies .NET non disponibles pour .NET Core.
-- Votre application utilise une plateforme qui ne prend pas en charge .NET Core.
+- Votre application utilise une plateforme qui ne prend pas en charge .NET Core. Windows, macOS et Linux prennent en charge .NET Core.
 
 ## <a name="when-to-choose-net-core"></a>Quand choisir .NET Core
 
@@ -48,7 +48,7 @@ Il existe de nombreuses plateformes d’infrastructure. [Azure Service Fabric](h
 
 Pour plus d’informations sur l’architecture en microservices, consultez [Microservices .NET. Architecture pour les applications .NET en conteneurs](../architecture/microservices/index.md).
 
-### <a name="containers"></a>Conteneurs
+### <a name="containers"></a>Containers
 
 Les conteneurs sont couramment utilisés conjointement avec une architecture en microservices. Les conteneurs peuvent également servir à mettre en conteneur des applications ou services web qui suivent un modèle d’architecture. Le .NET Framework peut être utilisé pour les conteneurs Windows, mais par sa modularité et sa légèreté, .NET Core est un meilleur choix pour les conteneurs. Quand vous créez et déployez un conteneur, la taille de son image est beaucoup plus petite avec .NET Core qu’avec le .NET Framework. Grâce à sa nature multiplateforme, vous pouvez déployer des applications serveur sur des conteneurs Docker Linux, par exemple.
 

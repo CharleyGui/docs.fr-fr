@@ -7,53 +7,60 @@ f1_keywords:
 - whereconstraint_CSharpKeyword
 helpviewer_keywords:
 - where (generic type constraint) [C#]
-ms.openlocfilehash: 1608cd7b888a67af3ccb98b16323e74a9c5ad4a9
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 4e51c5dd226533e7d1ce79a136dba19cbb252f92
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69608407"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253913"
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where (contrainte de type générique) (Référence C#)
 
-La clause `where` dans une définition générique spécifie des contraintes sur les types qui sont utilisés comme arguments pour les paramètres de type d’un type générique, d’une méthode, d’un délégué ou d’une fonction locale. Les contraintes peuvent spécifier des interfaces ou des classes de base, ou nécessiter un type générique comme référence, valeur ou type non managé. Elles déclarent des fonctionnalités que l’argument de type doit posséder.
+La clause `where` dans une définition générique spécifie des contraintes sur les types qui sont utilisés comme arguments pour les paramètres de type d’un type générique, d’une méthode, d’un délégué ou d’une fonction locale. Les contraintes peuvent spécifier des interfaces, des classes de base ou exiger qu’un type générique soit une référence, une valeur ou un type non managé. Elles déclarent des fonctionnalités que l’argument de type doit posséder.
 
 Vous pouvez, par exemple, déclarer une classe générique, `MyGenericClass`, de telle sorte que le paramètre de type `T` implémente l’interface <xref:System.IComparable%601> :
 
-[!code-csharp[using an interface constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#1)]
+[!code-csharp[using an interface constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#1)]
 
 > [!NOTE]
 > Pour plus d’informations sur la clause where dans une expression de requête, consultez [where, clause](where-clause.md).
 
 La clause `where` peut également inclure une contrainte de classe de base. La contrainte de classe de base indique qu’un type à utiliser comme argument de type pour ce type générique a la classe spécifiée comme classe de base (ou est la classe de base) à utiliser comme argument de type pour ce type générique. Si la contrainte de classe de base est utilisée, elle doit apparaître avant toute autre contrainte sur ce paramètre de type. Certains types ne sont pas autorisés comme contrainte de classe de base : <xref:System.Object>, <xref:System.Array> et <xref:System.ValueType>. Avant C# 7.3, <xref:System.Enum>, <xref:System.Delegate> et <xref:System.MulticastDelegate> n’étaient pas non plus autorisés comme contraintes de classe de base. L’exemple suivant montre les types qui peuvent maintenant être spécifiés comme classe de base :
 
-[!code-csharp[using an interface constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#2)]
+[!code-csharp[using an interface constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#2)]
 
 La clause `where` peut spécifier que le type est une `class` ou un `struct`. La contrainte `struct` supprime la nécessité de spécifier une contrainte de classe de base de `System.ValueType`. Le type `System.ValueType` ne doit pas être utilisé comme contrainte de classe de base. L’exemple suivant montre les contraintes `class` et `struct` :
 
-[!code-csharp[using the class and struct constraints](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#3)]
+[!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#3)]
+
+La `where` clause peut inclure la `notnull` contrainte. La `notnull` contrainte limite le paramètre de type aux types non nullables. Ce type peut être un type [valeur](struct.md) ou un type référence non Nullable. La `notnull` contrainte est disponible à partir C# de 8,0 pour le code compilé dans un [ `nullable enable` contexte](../../nullable-references.md#nullable-contexts). Contrairement à d’autres contraintes, si un argument de type `notnull` viole la contrainte, le compilateur génère un avertissement au lieu d’une erreur. Les avertissements sont générés uniquement `nullable enable` dans un contexte. 
+
+> [!IMPORTANT]
+> Les déclarations génériques qui incluent `notnull` la contrainte peuvent être utilisées dans un contexte oublie Nullable, mais le compilateur n’applique pas la contrainte.
+
+[!code-csharp[using the nonnull constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#NotNull)]
 
 La clause `where` peut aussi inclure une contrainte `unmanaged`. La contrainte `unmanaged` limite le paramètre de type aux types connus sous le nom de [types non managés](../builtin-types/unmanaged-types.md). La contrainte `unmanaged` facilite l’écriture de code interop de bas niveau en C#. Cette contrainte permet des routines réutilisables sur tous les types non managés. La contrainte `unmanaged` ne peut pas être combinée avec la contrainte `class` ou `struct`. La contrainte `unmanaged` exige que le type doit être un `struct` :
 
-[!code-csharp[using the unmanaged constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#4)]
+[!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#4)]
 
-La clause `where` peut également inclure une contrainte de constructeur, `new()`. Cette contrainte permet de créer une instance d’un paramètre de type à l’aide de l’opérateur `new`. La [contrainte new()](new-constraint.md) fait savoir au compilateur que tout argument de type fourni doit avoir un constructeur accessible sans paramètre, ou par défaut. Par exemple :
+La clause `where` peut également inclure une contrainte de constructeur, `new()`. Cette contrainte permet de créer une instance d’un paramètre de type à l’aide de l’opérateur `new`. La [contrainte new()](new-constraint.md) fait savoir au compilateur que tout argument de type fourni doit avoir un constructeur accessible sans paramètre, ou par défaut. Par exemple :
 
-[!code-csharp[using the new constraint](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#5)]
+[!code-csharp[using the new constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#5)]
 
 La contrainte `new()` apparaît en dernier dans la clause `where`. La contrainte `new()` ne peut pas être combinée avec les contraintes `struct` ou `unmanaged`. Tous les types répondant à ces contraintes doivent avoir un constructeur sans paramètre accessible, ce qui rend la contrainte `new()` redondante.
 
 Avec plusieurs paramètres de type, utilisez une clause `where` pour chaque paramètre de type, par exemple :
 
-[!code-csharp[using multiple where constraints](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#6)]
+[!code-csharp[using multiple where constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#6)]
 
 Vous pouvez également joindre des contraintes aux paramètres de type des méthodes génériques, comme montré dans l’exemple suivant :
 
-[!code-csharp[where constraints with generic methods](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#7)]
+[!code-csharp[where constraints with generic methods](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#7)]
 
 Notez que la syntaxe décrivant les contraintes de paramètre de type sur les délégués est la même que celle des méthodes :
 
-[!code-csharp[where constraints with generic methods](../../../../samples/snippets/csharp/keywords/GenericWhereConstraints.cs#8)]
+[!code-csharp[where constraints with generic methods](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#8)]
 
 Pour plus d’informations sur les délégués génériques, consultez [Délégués génériques](../../programming-guide/generics/generic-delegates.md).
 
