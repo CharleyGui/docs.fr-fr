@@ -2,15 +2,15 @@
 title: System, type (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 818a505b-a196-41dd-aaac-2ccd5f7a2f1a
-ms.openlocfilehash: d86c97834b9cc6698da8664ff2a09ceda7cc0043
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7f9b41181d9a7a7f23123f2e1b71893000b34d4a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64641232"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248937"
 ---
 # <a name="type-system-entity-sql"></a>System, type (Entity SQL)
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)] prend en charge un nombre de types :  
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)]prend en charge plusieurs types :  
   
 - Les types primitifs (simples), tels que `Int32` et `String.`  
   
@@ -18,26 +18,26 @@ ms.locfileid: "64641232"
   
 - Les types anonymes qui ne sont pas définis explicitement dans le schéma : <xref:System.Data.Metadata.Edm.CollectionType>, <xref:System.Data.Metadata.Edm.RowType> et <xref:System.Data.Metadata.Edm.RefType>.  
   
- Cette section décrit les types anonymes qui ne sont pas définis explicitement dans le schéma mais qui sont prises en charge par Entity SQL. Pour plus d’informations sur les types primitifs et nominaux, voir [Types du modèle conceptuel (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#conceptual-model-types-csdl).  
+ Cette section décrit les types anonymes qui ne sont pas définis explicitement dans le schéma, mais qui sont pris en charge par Entity SQL. Pour plus d’informations sur les types primitifs et nominaux, consultez [types de modèles conceptuels (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#conceptual-model-types-csdl).  
   
 ## <a name="rows"></a>Lignes  
- La structure d'une ligne dépend de la séquence de membres typés et nommés que la ligne contient. Un type de ligne n'a aucune identité et ne peut pas faire l'objet d'un héritage. Les instances du même type de ligne sont équivalentes si les membres sont respectivement équivalents. Les lignes n'ont aucun comportement au-delà de leur équivalence structurelle et n'ont aucun équivalent dans le Common Language Runtime. Les requêtes peuvent donner des structures qui contiennent des lignes ou des collections de lignes. La liaison d’API entre les requêtes [!INCLUDE[esql](../../../../../../includes/esql-md.md)] et le langage hôte définit la façon dont les lignes sont réalisées dans la requête qui a produit le résultat. Pour plus d’informations sur la façon de construire une instance de la ligne, consultez [Types construction](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md).  
+ La structure d'une ligne dépend de la séquence de membres typés et nommés que la ligne contient. Un type de ligne n'a aucune identité et ne peut pas faire l'objet d'un héritage. Les instances du même type de ligne sont équivalentes si les membres sont respectivement équivalents. Les lignes n'ont aucun comportement au-delà de leur équivalence structurelle et n'ont aucun équivalent dans le Common Language Runtime. Les requêtes peuvent donner des structures qui contiennent des lignes ou des collections de lignes. La liaison d’API entre les requêtes [!INCLUDE[esql](../../../../../../includes/esql-md.md)] et le langage hôte définit la façon dont les lignes sont réalisées dans la requête qui a produit le résultat. Pour plus d’informations sur la construction d’une instance de ligne, consultez [construction de types](constructing-types-entity-sql.md).  
   
 ## <a name="collections"></a>Collections  
- Les types de collections représentent zéro instance ou plus d’autres objets. Pour plus d’informations sur la façon de construire une collection, consultez [Types construction](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md).  
+ Les types de collections représentent zéro instance ou plus d’autres objets. Pour plus d’informations sur la construction d’une collection, consultez [construction de types](constructing-types-entity-sql.md).  
   
 ## <a name="references"></a>Références  
  Une référence est un pointeur logique vers une entité spécifique dans un jeu d'entités spécifique.  
   
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] prend en charge les opérateurs suivants pour construire, déconstruire et explorer les références :  
   
-- [REF](../../../../../../docs/framework/data/adonet/ef/language-reference/ref-entity-sql.md)  
+- [REF](ref-entity-sql.md)  
   
-- [CREATEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/createref-entity-sql.md)  
+- [CREATEREF](createref-entity-sql.md)  
   
-- [KEY](../../../../../../docs/framework/data/adonet/ef/language-reference/key-entity-sql.md)  
+- [KEY](key-entity-sql.md)  
   
-- [DEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/deref-entity-sql.md)  
+- [DEREF](deref-entity-sql.md)  
   
  Vous pouvez explorer une référence en utilisant l'opérateur `.` (point) d'accès au membre. L'extrait de code suivant extrait la propriété ID (de Order) en explorant la propriété r (référence).  
   
@@ -50,7 +50,7 @@ from (select ref(o) as r from LOB.Orders as o) as o2
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble d’Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
-- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [CAST](../../../../../../docs/framework/data/adonet/ef/language-reference/cast-entity-sql.md)
-- [Spécifications CSDL, SSDL et MSL](../../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)
+- [Vue d’ensemble d’Entity SQL](entity-sql-overview.md)
+- [Référence Entity SQL](entity-sql-reference.md)
+- [CAST](cast-entity-sql.md)
+- [Spécifications CSDL, SSDL et MSL](csdl-ssdl-and-msl-specifications.md)

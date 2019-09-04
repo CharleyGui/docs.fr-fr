@@ -2,12 +2,12 @@
 title: 'Procédure : Trier des éléments (C#)'
 ms.date: 07/20/2015
 ms.assetid: aee6fbbc-81fd-4b3e-b40f-6ed7b3bd3fee
-ms.openlocfilehash: 074428413fa57d8f0e5ae94970c2aeeeb9e4cc7c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: e5f76518437954ac683ec2e3e30ad9007c280f83
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592456"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253298"
 ---
 # <a name="how-to-sort-elements-c"></a>Procédure : Trier des éléments (C#)
 Cet exemple montre comment écrire une requête qui trie ses résultats.  
@@ -28,7 +28,7 @@ foreach (decimal el in prices)
   
  Ce code génère la sortie suivante :  
   
-```  
+```output  
 0.99  
 4.95  
 6.99  
@@ -38,7 +38,7 @@ foreach (decimal el in prices)
 89.99  
 ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [Vue d’ensemble des espaces de noms (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Données numériques dans un espace de noms](./sample-xml-file-numerical-data-in-a-namespace.md).  
@@ -57,7 +57,7 @@ foreach (decimal el in prices)
   
  Ce code génère la sortie suivante :  
   
-```  
+```output  
 0.99  
 4.95  
 6.99  

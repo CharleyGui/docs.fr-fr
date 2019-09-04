@@ -2,12 +2,12 @@
 title: 'Procédure : Effectuer le streaming de fragments XML à partir d’un XmlReader (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4a8f0e45-768a-42e2-bc5f-68bdf0e0a726
-ms.openlocfilehash: c27c2165af95b8b781564e14efc0668f596e3057
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: e5aeb5111931ff6a35a3b7806abc24e0fbbf9621
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592412"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253289"
 ---
 # <a name="how-to-stream-xml-fragments-from-an-xmlreader-c"></a>Procédure : Effectuer le streaming de fragments XML à partir d’un XmlReader (C#)
 Lorsque vous devez traiter de grands fichiers XML, il peut être impossible de charger l’intégralité de l’arborescence XML en mémoire. Cette rubrique montre comment diffuser des fragments en continu à l'aide d'un objet <xref:System.Xml.XmlReader>.  
@@ -75,7 +75,7 @@ static void Main(string[] args)
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 bbb  
 ccc  
 ```  

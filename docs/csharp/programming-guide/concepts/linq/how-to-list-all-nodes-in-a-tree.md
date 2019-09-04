@@ -2,12 +2,12 @@
 title: 'Procédure : Répertorier tous les nœuds dans une arborescence (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3e934371-f4c6-458b-9f6b-f9061b596f5b
-ms.openlocfilehash: 16d61e146e3721d8d5110d89e651aeb33ee556cd
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
-ms.translationtype: HT
+ms.openlocfilehash: a6c50bba528dd250195edea80bcaebea08fa701c
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486676"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253568"
 ---
 # <a name="how-to-list-all-nodes-in-a-tree-c"></a>Procédure : Répertorier tous les nœuds dans une arborescence (C#)
 Il est parfois utile de répertorier tous les nœuds d’une arborescence. Cela peut être utile pour savoir exactement comment une méthode ou une propriété affecte l'arborescence. L'une des manières de répertorier tous les nœuds sous forme textuelle consiste à générer une expression XPath qui identifie exactement et spécifiquement tout nœud dans l'arborescence.  
@@ -39,7 +39,7 @@ Il est parfois utile de répertorier tous les nœuds d’une arborescence. Cela 
   
  Voici la liste des nœuds dans l'arborescence XML ci-dessus, exprimés en tant qu'expressions XPath :  
   
-```  
+```text  
 /processing-instruction()  
 /Root  
 /Root/@AttName  
@@ -317,7 +317,7 @@ class Program
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
 <?target data?>  
 <Root AttName="An Attribute" xmlns:aw="http://www.adventure-works.com">  

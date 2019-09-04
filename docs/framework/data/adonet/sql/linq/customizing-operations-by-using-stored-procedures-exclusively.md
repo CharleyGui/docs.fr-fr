@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 441e8ef3-998c-4d12-8825-ce66a178f90f
-ms.openlocfilehash: 61230ffc5cd055ee64de9d519cdfb4d76c856ca3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a242ecdc774d67721aee640e75847317c1b815d6
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62038049"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70247545"
 ---
 # <a name="customizing-operations-by-using-stored-procedures-exclusively"></a>Personnalisation d'opérations à l'aide de procédures stockées uniquement
 L'accès aux données se fait couramment à l'aide de procédures stockées uniquement.  
@@ -18,7 +18,7 @@ L'accès aux données se fait couramment à l'aide de procédures stockées uniq
 ## <a name="example"></a>Exemple  
   
 ### <a name="description"></a>Description  
- Vous pouvez modifier l’exemple fourni dans [personnalisation des opérations par à l’aide de procédures stockées](../../../../../../docs/framework/data/adonet/sql/linq/customizing-operations-by-using-stored-procedures.md) en remplaçant la première requête (ce qui provoque l’exécution de SQL dynamique) par un appel de méthode qui encapsule une procédure stockée.  
+ Vous pouvez modifier l’exemple fourni dans [Personnalisation des opérations à l’aide de procédures stockées](customizing-operations-by-using-stored-procedures.md) en remplaçant même la première requête (qui provoque une exécution SQL dynamique) par un appel de méthode qui encapsule une procédure stockée.  
   
  Supposons que `CustomersByCity` est la méthode, comme illustré dans l'exemple suivant.  
   
@@ -33,4 +33,4 @@ L'accès aux données se fait couramment à l'aide de procédures stockées uniq
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Responsabilités du développeur en matière de substitution du comportement par défaut](../../../../../../docs/framework/data/adonet/sql/linq/responsibilities-of-the-developer-in-overriding-default-behavior.md)
+- [Responsabilités du développeur en matière de substitution du comportement par défaut](responsibilities-of-the-developer-in-overriding-default-behavior.md)

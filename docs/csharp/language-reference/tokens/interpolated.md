@@ -1,28 +1,27 @@
 ---
-title: $ - interpolation de chaîne - Référence C#
+title: interpolation de C# chaîne $-Reference
 ms.custom: seodec18
 description: L’interpolation de chaîne fournit une syntaxe plus lisible et plus pratique pour mettre en forme la sortie de chaîne que la traditionnelle mise en forme composite de chaîne.
-ms.date: 04/29/2019
+ms.date: 09/02/2019
 f1_keywords:
 - $_CSharpKeyword
 - $
 helpviewer_keywords:
 - $ special character [C#]
-- $ language element [C#]
 - string interpolation [C#]
 - interpolated string [C#]
 author: pkulikov
 ms.author: ronpet
-ms.openlocfilehash: 1f0d63a549daa9fecd0cce3a7e5a6496929c37d2
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.openlocfilehash: 53a8938a373136df65e23c162b94c4d8dc1f30b4
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202959"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253868"
 ---
-# <a name="---string-interpolation-c-reference"></a>$ - interpolation de chaîne (Référence C#)
+# <a name="---string-interpolation-c-reference"></a>$-interpolation de chaîne (C# référence)
 
-Le caractère spécial `$` identifie un littéral de chaîne comme une *chaîne interpolée*. Une chaîne interpolée est un littéral de chaîne qui peut contenir des *expressions d’interpolation*. Quand une chaîne interpolée est résolue en une chaîne de résultat, les éléments avec des expressions d’interpolation sont remplacés par les représentations sous forme de chaîne des résultats des expressions. Cette fonctionnalité est disponible dans C# 6 et les versions ultérieures du langage.
+Le caractère spécial `$` identifie un littéral de chaîne comme une *chaîne interpolée*. Une chaîne interpolée est un littéral de chaîne qui peut contenir des *expressions d’interpolation*. Quand une chaîne interpolée est résolue en une chaîne de résultat, les éléments avec des expressions d’interpolation sont remplacés par les représentations sous forme de chaîne des résultats des expressions. Cette fonctionnalité est disponible à partir C# de 6.
 
 L’interpolation de chaîne offre une syntaxe plus lisible et plus simple pour créer des chaînes mises en forme que la fonctionnalité de [mise en forme de chaîne composite](../../../standard/base-types/composite-formatting.md). L’exemple suivant utilise les deux fonctionnalités pour produire la même sortie :
 
@@ -30,7 +29,7 @@ L’interpolation de chaîne offre une syntaxe plus lisible et plus simple pour 
 
 ## <a name="structure-of-an-interpolated-string"></a>Structure d’une chaîne interpolée
 
-Pour identifier un littéral de chaîne comme chaîne interpolée, préfixez-la du symbole `$`. N’ajoutez pas d’espace entre les signes `$` et `"` au début d’un littéral de chaîne. Cela provoque une erreur de compilation.
+Pour identifier un littéral de chaîne comme chaîne interpolée, préfixez-la du symbole `$`. N’ajoutez pas d’espace entre les signes `$` et `"` au début d’un littéral de chaîne.
 
 La structure d’un élément avec une expression d’interpolation se présente comme suit :
 
@@ -42,8 +41,8 @@ Les éléments entre crochets sont facultatifs. Le tableau suivant décrit chaqu
 
 |Élément|Description|
 |-------------|-----------------|
-|`interpolationExpression`|Expression qui produit un résultat à mettre en forme. La représentation sous forme de chaîne du résultat `null` est <xref:System.String.Empty?displayProperty=nameWithType>.|
-|`alignment`|Expression constante dont la valeur définit le nombre minimal de caractères dans la représentation sous forme de chaîne du résultat de l’expression d’interpolation. Si le nombre est positif, la représentation sous forme de chaîne est alignée à droite ; s’il est négatif, elle est alignée à gauche. Pour plus d'informations, consultez [Composant d’alignement](../../../standard/base-types/composite-formatting.md#alignment-component).|
+|`interpolationExpression`|Expression qui produit un résultat à mettre en forme. La représentation sous `null` forme <xref:System.String.Empty?displayProperty=nameWithType>de chaîne de est.|
+|`alignment`|Expression constante dont la valeur définit le nombre minimal de caractères dans la représentation sous forme de chaîne du résultat de l’expression. Si le nombre est positif, la représentation sous forme de chaîne est alignée à droite ; s’il est négatif, elle est alignée à gauche. Pour plus d'informations, consultez [Composant d’alignement](../../../standard/base-types/composite-formatting.md#alignment-component).|
 |`formatString`|Chaîne de format qui est prise en charge par le type de résultat de l’expression. Pour plus d'informations, consultez [Composant de chaîne de format](../../../standard/base-types/composite-formatting.md#format-string-component).|
 
 L’exemple suivant utilise les composants de mise en forme facultatifs décrits ci-dessus :
@@ -60,24 +59,24 @@ L’exemple suivant montre comment ajouter une accolade dans une chaîne de rés
 
 [!code-csharp-interactive[example with ternary conditional operator](~/samples/snippets/csharp/language-reference/tokens/string-interpolation.cs#3)]
 
-Une chaîne interpolée textuelle commence par le caractère `$` suivi du caractère `@`. Pour plus d’informations sur les chaînes textuelles, consultez les rubriques [string](../keywords/string.md) et [Identificateur textuel](verbatim.md).
+Une chaîne textuelle interpolée commence par le `$` caractère suivi du `@` caractère. Pour plus d’informations sur les chaînes textuelles, consultez les rubriques [string](../keywords/string.md) et [Identificateur textuel](verbatim.md).
 
 > [!NOTE]
-> Le jeton `$` doit apparaître avant le jeton `@` dans une chaîne interpolée textuelle.
+> À C# partir de 8,0, vous pouvez utiliser `$` les `@` `$@"..."` jetons et dans n’importe quel ordre : `@$"..."` et sont des chaînes textuelles interpolées valides. Dans les C# versions antérieures, `$` le jeton doit apparaître avant `@` le jeton.
 
-## <a name="implicit-conversions-and-specifying-iformatprovider-implementation"></a>Conversions implicites et spécification de l’implémentation de `IFormatProvider`
+## <a name="implicit-conversions-and-how-to-specify-iformatprovider-implementation"></a>Conversions implicites et comment spécifier `IFormatProvider` l’implémentation
 
 Trois conversions implicites sont possibles à partir d’une chaîne interpolée :
 
-1. Conversion d’une chaîne interpolée en instance de <xref:System.String> qui est le résultat de la résolution d’une chaîne interpolée avec des éléments d’expression d’interpolation remplacés par la représentation sous forme de chaîne correctement mise en forme de leurs résultats. Cette conversion utilise la culture actuelle.
+1. Conversion d’une chaîne interpolée en instance de <xref:System.String> qui est le résultat de la résolution d’une chaîne interpolée avec des éléments d’expression d’interpolation remplacés par la représentation sous forme de chaîne correctement mise en forme de leurs résultats. Cette conversion utilise pour <xref:System.Globalization.CultureInfo.CurrentCulture> mettre en forme les résultats de l’expression.
 
-1. Conversion d’une chaîne interpolée en instance <xref:System.FormattableString> qui représente une chaîne de format composite avec les résultats d’expression à mettre en forme. Cette conversion vous permet de créer plusieurs chaînes de résultat avec du contenu propre à la culture à partir d’une seule instance de <xref:System.FormattableString>. Pour ce faire, appelez l’une des méthodes suivantes :
+1. Conversion d’une chaîne interpolée en instance <xref:System.FormattableString> qui représente une chaîne de format composite avec les résultats d’expression à mettre en forme. Cette conversion vous permet de créer plusieurs chaînes de résultat avec du contenu propre à la culture à partir d’une seule instance de <xref:System.FormattableString>. Pour ce faire, appelez l’une des méthodes suivantes :
 
       - Une surcharge <xref:System.FormattableString.ToString> qui produit une chaîne de résultat pour <xref:System.Globalization.CultureInfo.CurrentCulture>.
       - Une méthode <xref:System.FormattableString.Invariant%2A> qui produit une chaîne de résultat pour <xref:System.Globalization.CultureInfo.InvariantCulture>.
       - Une méthode <xref:System.FormattableString.ToString(System.IFormatProvider)> qui produit une chaîne de résultat pour une culture spécifiée.
 
-    Vous pouvez également utiliser la méthode <xref:System.FormattableString.ToString(System.IFormatProvider)> pour fournir une implémentation définie par l’utilisateur de l’interface <xref:System.IFormatProvider> qui prend en charge une mise en forme personnalisée. Pour plus d’informations, consultez [Mise en forme personnalisée avec ICustomFormatter](../../../standard/base-types/formatting-types.md#custom-formatting-with-icustomformatter).
+    Vous pouvez également utiliser la méthode <xref:System.FormattableString.ToString(System.IFormatProvider)> pour fournir une implémentation définie par l’utilisateur de l’interface <xref:System.IFormatProvider> qui prend en charge une mise en forme personnalisée. Pour plus d’informations, consultez la section [mise en forme personnalisée avec ICustomFormatter](../../../standard/base-types/formatting-types.md#custom-formatting-with-icustomformatter) de l’article [mise en forme des types dans .net](../../../standard/base-types/formatting-types.md) .
 
 1. Conversion d’une chaîne interpolée en instance <xref:System.IFormattable> qui vous permet aussi de créer plusieurs chaînes de résultat avec du contenu propre à la culture à partir d’une seule instance de <xref:System.IFormattable>.
 
@@ -101,12 +100,9 @@ Pour plus d’informations, consultez la section [Chaînes interpolées](~/_csha
 
 ## <a name="see-also"></a>Voir aussi
 
-- <xref:System.String.Format%2A?displayProperty=nameWithType>
-- <xref:System.FormattableString?displayProperty=nameWithType>
-- <xref:System.IFormattable?displayProperty=nameWithType>
-- [Mise en forme composite](../../../standard/base-types/composite-formatting.md)
-- [Tableau des formats des résultats numériques](../keywords/formatting-numeric-results-table.md)
-- [Chaînes](../../programming-guide/strings/index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
+- [Informations de référence sur C#](../index.md)
 - [Caractères spéciaux C#](index.md)
-- [Référence C#](../index.md)
+- [Chaînes](../../programming-guide/strings/index.md)
+- [Tableau des formats des résultats numériques](../keywords/formatting-numeric-results-table.md)
+- [Mise en forme composite](../../../standard/base-types/composite-formatting.md)
+- <xref:System.String.Format%2A?displayProperty=nameWithType>

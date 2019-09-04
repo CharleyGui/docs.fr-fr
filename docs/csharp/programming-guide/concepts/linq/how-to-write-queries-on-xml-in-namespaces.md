@@ -2,12 +2,12 @@
 title: 'Procédure : Écrire des requêtes à exécuter sur du code XML dans des espaces de noms (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7c54df81-15e4-4091-8c81-a87637029130
-ms.openlocfilehash: ef7d970b5e34106bd6f17d4a2caf4ca378dd2258
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
-ms.translationtype: HT
+ms.openlocfilehash: 1ded47ced44bebfda92b96f4dc908f1c1b2bbf6b
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68709891"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253192"
 ---
 # <a name="how-to-write-queries-on-xml-in-namespaces-c"></a>Procédure : Écrire des requêtes à exécuter sur du code XML dans des espaces de noms (C#)
 Pour écrire des requêtes sur du code XML qui est dans un espace de noms, vous devez utiliser des objets <xref:System.Xml.Linq.XName> qui ont l'espace de noms correct.  
@@ -39,13 +39,13 @@ foreach (XElement el in c1)
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 1  
 2  
 3  
 ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  En C#, vous écrivez des requêtes de la même manière, que ce soit sur une arborescence XML qui utilise un espace de noms avec un préfixe ou sur une arborescence XML avec un espace de noms par défaut.  
   
  L’exemple suivant crée une arborescence XML qui est dans un espace de noms avec un préfixe. Il récupère ensuite une collection d'éléments.  
@@ -70,7 +70,7 @@ foreach (XElement el in c1)
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 1  
 2  
 3  

@@ -2,14 +2,14 @@
 title: Collecte des données de télémétrie par la CLI ML.NET
 description: Découvrez les fonctionnalités de télémétrie de la CLI ML.NET, qui collectent des informations d’utilisation à des fins d’analyse, les types de données collectées et comment désactiver la télémétrie. En outre, vous trouverez des liens vers le contrat de licence de .NET et des informations sur la conformité de Microsoft au RGPD.
 ms.topic: conceptual
-ms.date: 05/05/2019
+ms.date: 09/03/2019
 ms.custom: ''
-ms.openlocfilehash: b9f6ccf7ff76f0cf4ce806f39909b7607a20b9f6
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
-ms.translationtype: HT
+ms.openlocfilehash: e7b3b3d7789f2368ebc4448e73add817986a5906
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567493"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70254008"
 ---
 # <a name="telemetry-collection-by-the-mlnet-cli"></a>Collecte des données de télémétrie par la CLI ML.NET
 
@@ -21,11 +21,11 @@ L’équipe de produit utilise les données de télémétrie collectées par la 
 
 Bien que l’équipe de produit apprécie cet insight, nous savons également que tout le monde n’est pas disposé à envoyer ces données. [Découvrez comment désactiver la télémétrie.](#opt-out-of-data-collection)
 
-## <a name="scope"></a>Portée
+## <a name="scope"></a>`Scope`
 
 La commande `mlnet` lance l’interface CLI ML.NET, mais ne collecte pas elle-même les données de télémétrie.
 
-La télémétrie *n’est pas activée* quand vous exécutez la commande `mlnet` sans aucune autre commande attachée. Par exemple :
+La télémétrie *n’est pas activée* quand vous exécutez la commande `mlnet` sans aucune autre commande attachée. Par exemple :
 
 - `mlnet`
 - `mlnet --help`
@@ -36,14 +36,14 @@ La télémétrie *est activée* quand vous exécutez une [commande CLI ML.NET](.
 
 La fonctionnalité de télémétrie de la CLI ML.NET est activée par défaut.
 
-Pour la désactiver, affectez la valeur `1` ou `true` à la variable d’environnement `MLDOTNET_CLI_TELEMETRY_OPTOUT`. Cette variable d’environnement s’applique globalement à l’outil CLI .NET.
+Pour la désactiver, affectez la valeur `1` ou `true` à la variable d’environnement `MLDOTNET_CLI_TELEMETRY_OPTOUT`. Cette variable d’environnement s’applique globalement à l’outil CLI ML.NET.
 
 ## <a name="data-points-collected"></a>Points de données collectés
 
 La fonctionnalité recueille les données suivantes :
 
 - Des commandes ont été appelées, comme `auto-train`
-- Noms de paramètres de ligne de commande utilisés (par exemple, « dataset-name, label-column-name, ml-task, output-path, max-exploration-time, verbosity »)
+- Noms des paramètres de ligne de commande utilisés (autrement dit, "nom du DataSet, étiquette-colonne-nom, ml-tâche, sortie-chemin, Max-exploration-temps, commentaires")
 - Adresse MAC hachée : ID unique et anonyme chiffré (SHA256) pour une machine
 - Horodatage d’un appel
 - Adresse IP de trois octets (non complète) utilisée uniquement pour déterminer l’emplacement géographique
@@ -52,7 +52,7 @@ La fonctionnalité recueille les données suivantes :
 - Compartiment de taille de fichier de jeu de données
 - Système d’exploitation et version
 - Valeur du paramètre --task : valeurs de catégorie, telles que `regression`, `binary-classification` et `multiclass-classification`
-- Version de CLI ML.NET (par exemple, 0.3.27703.4)
+- Version de ML.NET CLI (c’est-à-dire, 0.3.27703.4)
 
 Les données sont envoyées de manière sécurisée à des serveurs Microsoft à l’aide de la technologie [Azure Application Insights](https://azure.microsoft.com/services/application-insights/), stockées à un emplacement dont l’accès est strictement limité et utilisées conformément à des contrôles de sécurité stricts à partir de systèmes [Stockage Azure](https://azure.microsoft.com/services/storage/) sécurisés.
 

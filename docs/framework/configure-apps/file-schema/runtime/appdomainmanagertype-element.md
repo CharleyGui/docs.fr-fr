@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: ae8d5a7e-e7f7-47f7-98d9-455cc243a322
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5b535ba67ab05dabd7e0a23e79692bbf69e25b55
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 7ffb297cc38f20917e720b216607e9ccfc966866
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663919"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252832"
 ---
 # <a name="appdomainmanagertype-element"></a>\<appDomainManagerType >, élément
 Spécifie le type qui sert de Gestionnaire de domaine d’application au domaine d’application par défaut.  
   
- \<configuration>  
-\<runtime>  
-\<appDomainManagerType>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<appDomainManagerType>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -60,7 +60,7 @@ Spécifie le type qui sert de Gestionnaire de domaine d’application au domaine
   
  Cet élément de configuration n’est disponible que dans le .NET Framework 4 et versions ultérieures.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant montre comment spécifier que le gestionnaire de domaine d’application pour le domaine d’application par défaut d’un `MyMgr` processus est le `AdMgrExample` type dans l’assembly.  
   
 ```xml  

@@ -9,21 +9,21 @@ helpviewer_keywords:
 - container tags, <assemblyIdentity> element
 - assemblyIdentity element
 ms.assetid: cea4d187-6398-4da4-af09-c1abc6a349c1
-ms.openlocfilehash: 815e1c26a328d986f91992a1e67e438a563ffea6
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 7cce12f6fb4b957d740cd590bd84851fa16a117d
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663885"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252798"
 ---
 # <a name="assemblyidentity-element-for-runtime"></a>\<élément assemblyIdentity > pour \<le runtime >
 Contient des informations d’identification sur l’assembly.  
   
- \<configuration>  
-\<runtime>  
-\<assemblyBinding>  
-\<dependentAssembly>  
-\<assemblyIdentity>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding >** ](assemblybinding-element-for-runtime.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> dependentAssembly**](dependentassembly-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<assemblyIdentity>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,11 +44,11 @@ culture="assembly culture"/>
 |`name`|Attribut requis.<br /><br /> Nom de l’assembly|  
 |`culture`|Attribut facultatif.<br /><br /> Chaîne qui spécifie la langue et le pays/la région de l’assembly.|  
 |`publicKeyToken`|Attribut facultatif.<br /><br /> Valeur hexadécimale qui spécifie le nom fort de l’assembly.|  
-|`processorArchitecture`|Attribut facultatif.<br /><br /> L’une des valeurs «x86», «amd64», «MSIL» ou «ia64», spécifiant l’architecture de processeur pour un assembly qui contient du code spécifique au processeur. Les valeurs ne respectent pas la casse. Si une autre valeur est assignée à l’attribut `<assemblyIdentity>` , la totalité de l’élément est ignorée. Consultez <xref:System.Reflection.ProcessorArchitecture>.|  
+|`processorArchitecture`|Attribut facultatif.<br /><br /> L’une des valeurs « x86 », « amd64 », « MSIL » ou « ia64 », spécifiant l’architecture de processeur pour un assembly qui contient du code spécifique au processeur. Les valeurs ne respectent pas la casse. Si une autre valeur est assignée à l’attribut `<assemblyIdentity>` , la totalité de l’élément est ignorée. Consultez <xref:System.Reflection.ProcessorArchitecture>.|  
   
 ## <a name="processorarchitecture-attribute"></a>processorArchitecture (attribut)  
   
-|`Value`|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |`amd64`|Architecture AMD x86-64 uniquement.|  
 |`ia64`|Architecture Intel Itanium uniquement.|  
@@ -101,7 +101,7 @@ culture="assembly culture"/>
   
  Si un fichier de configuration contient `<assemblyIdentity>` un élément `processorArchitecture` sans attribut et qu’il ne contient pas d’élément qui correspond à la plateforme, l’élément `processorArchitecture` sans l’attribut est utilisé.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre comment fournir des informations sur un assembly.  
   
 ```xml  

@@ -2,12 +2,12 @@
 title: Fonctions et types de données
 ms.date: 03/30/2017
 ms.assetid: 683413c5-0312-4e60-8619-9a97bdc6e62a
-ms.openlocfilehash: 58633259d62e4191f4420eb866febc7b4c8cbe31
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 864c3a4668e3a405260d897596c4e94cc83419a8
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65582832"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70247222"
 ---
 # <a name="data-types-and-functions"></a>Fonctions et types de données
 Les rubriques répertoriées dans le tableau suivant décrivent la prise en charge de LINQ to SQL pour les membres, les constructions et les casts du Common Language Runtime (CLR). Les membres et constructions pris en charge peuvent être utilisés dans vos requêtes LINQ to SQL.  
@@ -16,22 +16,22 @@ Les rubriques répertoriées dans le tableau suivant décrivent la prise en char
   
 |Rubrique|Description|  
 |-----------|-----------------|  
-|[Mappage de type SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)|Fournit une matrice détaillée des mappages entre les types CLR et les types SQL Server.|  
-|[Types de données de base](../../../../../../docs/framework/data/adonet/sql/linq/basic-data-types.md)|Résume les différences de comportement de .NET Framework.|  
-|[Types de données Boolean](../../../../../../docs/framework/data/adonet/sql/linq/boolean-data-types.md)|Résume les différences de comportement de .NET Framework.|  
-|[Sémantique Null](../../../../../../docs/framework/data/adonet/sql/linq/null-semantics.md)|Fournit des liens vers des rubriques [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] qui abordent les questions des types null et nullables.|  
-|[Opérateurs de comparaison et opérateurs numériques](../../../../../../docs/framework/data/adonet/sql/linq/numeric-and-comparison-operators.md)|Résume les différences de comportement de .NET Framework.|  
-|[Opérateurs de séquence](../../../../../../docs/framework/data/adonet/sql/linq/sequence-operators.md)|Résume les différences de comportement de .NET Framework.|  
-|[System.Convert, méthodes](../../../../../../docs/framework/data/adonet/sql/linq/system-convert-methods.md)|Résume les différences de comportement de .NET Framework.|  
-|[System.DateTime, méthodes](../../../../../../docs/framework/data/adonet/sql/linq/system-datetime-methods.md)|Décrit la prise en charge de LINQ to SQL pour les membres de la structure <xref:System.DateTime?displayProperty=nameWithType>.|  
-|[System.DateTimeOffset, méthodes](../../../../../../docs/framework/data/adonet/sql/linq/system-datetimeoffset-methods.md)|Décrit la prise en charge de LINQ to SQL pour les membres de la structure <xref:System.DateTimeOffset?displayProperty=nameWithType>.|  
-|[System.Math, méthodes](../../../../../../docs/framework/data/adonet/sql/linq/system-math-methods.md)|Résume les différences de comportement de .NET Framework.|  
-|[System.Object, méthodes](../../../../../../docs/framework/data/adonet/sql/linq/system-object-methods.md)|Résume les différences de comportement de .NET Framework.|  
-|[System.String, méthodes](../../../../../../docs/framework/data/adonet/sql/linq/system-string-methods.md)|Résume les différences de comportement de .NET Framework.|  
-|[System.TimeSpan, méthodes](../../../../../../docs/framework/data/adonet/sql/linq/system-timespan-methods.md)|Décrit la prise en charge de LINQ to SQL pour les membres de la structure <xref:System.TimeSpan?displayProperty=nameWithType>.|  
-|[Fonctionnalité non prise en charge](../../../../../../docs/framework/data/adonet/sql/linq/unsupported-functionality.md)|Décrit les fonctionnalités qui ne sont pas prises en charge dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].|  
+|[Mappage de type SQL-CLR](sql-clr-type-mapping.md)|Fournit une matrice détaillée des mappages entre les types CLR et les types SQL Server.|  
+|[Types de données de base](basic-data-types.md)|Résume les différences de comportement par rapport au .NET Framework.|  
+|[Types de données Boolean](boolean-data-types.md)|Résume les différences de comportement par rapport au .NET Framework.|  
+|[Sémantique Null](null-semantics.md)|Fournit des liens vers des rubriques [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] qui abordent les questions des types null et nullables.|  
+|[Opérateurs de comparaison et opérateurs numériques](numeric-and-comparison-operators.md)|Résume les différences de comportement par rapport au .NET Framework.|  
+|[Opérateurs de séquence](sequence-operators.md)|Résume les différences de comportement par rapport au .NET Framework.|  
+|[System.Convert, méthodes](system-convert-methods.md)|Résume les différences de comportement par rapport au .NET Framework.|  
+|[System.DateTime, méthodes](system-datetime-methods.md)|Décrit la prise en charge de LINQ to SQL pour les membres de la structure <xref:System.DateTime?displayProperty=nameWithType>.|  
+|[System.DateTimeOffset, méthodes](system-datetimeoffset-methods.md)|Décrit la prise en charge de LINQ to SQL pour les membres de la structure <xref:System.DateTimeOffset?displayProperty=nameWithType>.|  
+|[System.Math, méthodes](system-math-methods.md)|Résume les différences de comportement par rapport au .NET Framework.|  
+|[System.Object, méthodes](system-object-methods.md)|Résume les différences de comportement par rapport au .NET Framework.|  
+|[System.String, méthodes](system-string-methods.md)|Résume les différences de comportement par rapport au .NET Framework.|  
+|[System.TimeSpan, méthodes](system-timespan-methods.md)|Décrit la prise en charge de LINQ to SQL pour les membres de la structure <xref:System.TimeSpan?displayProperty=nameWithType>.|  
+|[Fonctionnalité non prise en charge](unsupported-functionality.md)|Décrit les fonctionnalités qui ne sont pas prises en charge dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].|  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Incompatibilité entre types SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)
-- [Référence](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+- [Incompatibilité entre types SQL-CLR](sql-clr-type-mismatches.md)
+- [Référence](reference.md)

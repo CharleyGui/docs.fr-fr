@@ -2,12 +2,12 @@
 title: 'Procédure : Récupérer la valeur superficielle d’un élément (C#)'
 ms.date: 07/20/2015
 ms.assetid: 924a2699-72f6-4be1-aaa6-de62f8ec73b9
-ms.openlocfilehash: 2b37cc19e2ec5149589131497b36ad381900336b
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 662c20cf2b17b9f93e00f0fd3c5cf925b5274de5
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592513"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253367"
 ---
 # <a name="how-to-retrieve-the-shallow-value-of-an-element-c"></a>Procédure : Récupérer la valeur superficielle d’un élément (C#)
 Cette rubrique montre comment obtenir la valeur superficielle d'un élément. La valeur superficielle est la valeur de l'élément spécifique uniquement, par opposition à la valeur profonde, qui inclut les valeurs de tous les éléments descendants concaténés dans une chaîne unique.  
@@ -16,7 +16,7 @@ Cette rubrique montre comment obtenir la valeur superficielle d'un élément. La
   
  L'exemple suivant déclare une méthode d'extension qui extrait la valeur superficielle d'un élément. Il utilise ensuite la méthode d’extension dans une requête pour répertorier tous les éléments qui contiennent une valeur calculée.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Le fichier texte suivant, Report.xml, est la source pour cet exemple.  
   
 ```xml  
@@ -72,7 +72,7 @@ class Program
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 Column  Name="CustomerId"   =Customer.CustomerId.Heading  
 Column  Name="Name"         =Customer.Name.Heading  
 Column  Name="CustomerId"   =Customer.CustomerId  

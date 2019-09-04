@@ -7,17 +7,17 @@ helpviewer_keywords:
 - validating numeric input [C#]
 - strings [C#], numeric
 ms.assetid: a4e84e10-ea0a-489f-a868-503dded9d85f
-ms.openlocfilehash: 831f0fc83c8a7066b40d64e4765a312b8b4847bc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 8fc5051893882a6dbdbb4c9097949794d4430a93
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921780"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252952"
 ---
 # <a name="how-to-determine-whether-a-string-represents-a-numeric-value-c-programming-guide"></a>Procédure : Déterminer si une chaîne représente une valeur numérique (Guide de programmation C#)
 Pour déterminer si une chaîne est une représentation valide d’un type numérique spécifié, utilisez la méthode statique `TryParse` implémentée par tous les types numériques primitifs et par les types tels que <xref:System.DateTime> et <xref:System.Net.IPAddress>. L’exemple suivant montre comment déterminer si « 108 » est une chaîne [int](../../language-reference/builtin-types/integral-numeric-types.md) valide.  
   
-```  
+```csharp  
 int i = 0;   
 string s = "108";  
 bool result = int.TryParse(s, out i); //i now = 108  
@@ -42,7 +42,7 @@ bool result = int.TryParse(s, out i); //i now = 108
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide pratique pour convertir un tableau d’octets en int](../types/how-to-convert-a-byte-array-to-an-int.md)
-- [Guide pratique pour convertir une chaîne en nombre](../types/how-to-convert-a-string-to-a-number.md)
+- [Guide pratique : convertir une chaîne en nombre](../types/how-to-convert-a-string-to-a-number.md)
 - [Guide pratique pour effectuer une conversion entre des chaînes hexadécimales et des types numériques](../types/how-to-convert-between-hexadecimal-strings-and-numeric-types.md)
 - [Analyse de chaînes numériques](../../../standard/base-types/parsing-numeric.md)
 - [Mise en forme des types](../../../standard/base-types/formatting-types.md)

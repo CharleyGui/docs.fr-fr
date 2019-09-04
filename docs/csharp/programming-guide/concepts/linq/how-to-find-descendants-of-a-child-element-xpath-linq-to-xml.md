@@ -2,12 +2,12 @@
 title: 'Procédure : Rechercher les descendants d’un élément enfant (XPath-LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 505b7512-bb8b-4f85-abbf-491f039c961e
-ms.openlocfilehash: a049ede1d533c4afc67892b7889debbe673e51c8
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
-ms.translationtype: HT
+ms.openlocfilehash: f17d723aa03c45daa4e7e741ea6b14c637537ccf
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485486"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253700"
 ---
 # <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a>Procédure : Rechercher les descendants d’un élément enfant (XPath-LINQ to XML) (C#)
 Cette rubrique montre comment obtenir les éléments descendants d'un élément enfant avec un nom particulier.  
@@ -70,7 +70,7 @@ Console.WriteLine(str2);
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 Results are identical  
 This is the start of a sentence.  This is a second sentence.  
 ```  

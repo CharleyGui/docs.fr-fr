@@ -9,21 +9,21 @@ helpviewer_keywords:
 - container tags, <bindingRedirect> element
 - bindingRedirect element
 ms.assetid: 67784ecd-9663-434e-bd6a-26975e447ac0
-ms.openlocfilehash: 7cdea10cc6e0562f6062470240b01743aa439bde
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 7d51ef5c4107fc6a40a472a660f53bb0ded59683
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658936"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252782"
 ---
 # <a name="bindingredirect-element"></a>\<bindingRedirect >, élément
 Redirige une version d'assembly vers une autre.  
   
- \<configuration>  
-\<runtime>  
-\<assemblyBinding>  
-\<dependentAssembly>  
-\<bindingRedirect>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding >** ](assemblybinding-element-for-runtime.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> dependentAssembly**](dependentassembly-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<bindingRedirect>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,7 +41,7 @@ newVersion="new assembly version"/>
 |Attribut|Description|  
 |---------------|-----------------|  
 |`oldVersion`|Attribut requis.<br /><br /> Spécifie la version de l'assembly demandée initialement. Le format d’un numéro de version d’assembly est *major. minor. Build. Revision*. Les valeurs valides pour chaque partie de ce numéro de version vont de 0 à 65535.<br /><br /> Vous pouvez également spécifier une plage de versions en respectant le format suivant :<br /><br /> *n. n. n. n-n. n. n*|  
-|`newVersion`|Attribut requis.<br /><br /> Spécifie la version de l’assembly à utiliser à la place de la version initialement demandée au format: *n. n. n. n*<br /><br /> Cette valeur peut spécifier une version antérieure à `oldVersion`.|  
+|`newVersion`|Attribut requis.<br /><br /> Spécifie la version de l’assembly à utiliser à la place de la version initialement demandée au format : *n. n. n. n*<br /><br /> Cette valeur peut spécifier une version antérieure à `oldVersion`.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -63,7 +63,7 @@ newVersion="new assembly version"/>
   
  Vous pouvez rediriger plusieurs versions d'assembly en incluant plusieurs éléments `bindingRedirect` dans un élément `dependentAssembly`. Vous pouvez également rediriger une version plus récente vers une version antérieure de l'assembly.  
   
- La redirection de liaison d’assembly explicite dans un fichier de configuration de l’application nécessite une autorisation de sécurité. Cela s'applique à la redirection des assemblys .NET Framework et des assemblys tiers. L’autorisation est accordée en définissant <xref:System.Security.Permissions.SecurityPermissionFlag> l’indicateur <xref:System.Security.Permissions.SecurityPermission>sur. Pour plus d’informations, consultez [autorisation de sécurité pour la redirection des liaisons](../../assembly-binding-redirection-security-permission.md)d’assembly.  
+ La redirection de liaison d’assembly explicite dans un fichier de configuration de l’application nécessite une autorisation de sécurité. Cela s'applique à la redirection des assemblys .NET Framework et des assemblys tiers. L’autorisation est accordée en définissant <xref:System.Security.Permissions.SecurityPermissionFlag> l’indicateur <xref:System.Security.Permissions.SecurityPermission>sur. Pour plus d’informations, consultez [autorisation de sécurité pour la redirection des liaisons d’assembly](../../assembly-binding-redirection-security-permission.md).  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant montre comment rediriger une version d'assembly vers une autre.  

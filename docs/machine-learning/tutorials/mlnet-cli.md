@@ -1,19 +1,19 @@
 ---
-title: Générer automatiquement un classifieur binaire à l’aide de la CLI ML.NET
+title: Analyser les sentiments à l’aide de l’interface CLI ML.NET
 description: Générer automatiquement un modèle ML et le code C# associé à partir d’un exemple de jeu de données
 author: cesardl
 ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: c0e188286821f0e3822fde4af74a1561edfbb868
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 7b740f2c93096c971da009e8abf6865ac1b8e966
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70107272"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70254159"
 ---
-# <a name="auto-generate-a-binary-classifier-using-the-cli"></a>Générer automatiquement un classifieur binaire à l’aide de la CLI
+# <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analyser les sentiments à l’aide de l’interface CLI ML.NET
 
 Découvrez comment utiliser la CLI ML.NET pour générer automatiquement un modèle ML.NET et le code C# sous-jacent. Vous fournissez simplement votre jeu de données et la tâche de machine learning que vous souhaitez implémenter, et la CLI utilise le moteur AutoML pour créer le code source nécessaire à la génération et au déploiement du modèle, ainsi que le modèle binaire.
 
@@ -51,7 +51,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 
 2. Copiez le fichier `yelp_labelled.txt` dans un dossier que vous avez créé précédemment (par exemple, `/cli-test`).
 
-3. Ouvrez votre invite de commandes standard et accédez au dossier où vous avez copié le fichier de jeu de données. Par exemple :
+3. Ouvrez votre invite de commandes standard et accédez au dossier où vous avez copié le fichier de jeu de données. Par exemple :
 
     ```console
     > cd /cli-test
@@ -95,7 +95,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
     La CLI affiche une sortie de ce type :
 
     <!-- markdownlint-disable MD023 -->
-    # <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
+    # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
     ![Commande auto-train de l’interface CLI ML.NET dans PowerShell](./media/mlnet-cli/mlnet-auto-train-binary-classification-powershell.gif)
 
@@ -192,7 +192,7 @@ Toutes les ressources listées ci-dessus seront décrites dans les étapes suiva
 
 1. Exécutez le projet, soit en utilisant l’exemple de données initialement chargé de la première ligne du jeu de données, soit en fournissant votre propre exemple de données personnalisées codées en dur. Vous devez obtenir une prédiction comparable à ceci :
 
-    # <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
+    # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
     Exécutez l’application console à partir de Visual Studio en appuyant sur F5 (bouton de lecture) :
 
@@ -231,7 +231,7 @@ Pour le deuxième objet, l’objet `PredictionEngine`, l’optimisation n’est 
 
 Toutefois, les choses sont heureusement beaucoup plus simples pour vous que ce qui est expliqué dans ce billet de blog. Dans un souci de vous proposer une approche plus simple, nous avons créé un **« package d’intégration .NET Core »** très utile. Vous pouvez facilement vous en servir dans vos applications et services ASP.NET Core en l’inscrivant auprès des services DI, puis en l’utilisant directement à partir de votre code. Consultez le tutoriel et l’exemple ci-dessous pour savoir comment faire :
 
-- [Tutoriel : Exécuter des modèles ML.NET sur des applications web et API web ASP.NET Core scalables](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [Tutoriel : Exécuter des modèles ML.NET sur des applications web et API web ASP.NET Core scalables](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
 - [Exemple : Modèle ML.NET scalable sur une API web ASP.NET Core](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
 
 ## <a name="explore-the-generated-c-code-that-was-used-to-train-the-best-quality-model"></a>Explorer le code C# généré ayant servi à entraîner le modèle de « meilleure qualité » 
@@ -242,14 +242,14 @@ Ce « code de modèle d’entraînement » est actuellement généré dans la 
 
 Plus important encore, pour ce scénario particulier (modèle « Analyse des sentiments »), vous pouvez également comparer ce code d’entraînement généré avec le code décrit dans le tutoriel suivant :
 
-- Comparaison : [Tutoriel : Utiliser ML.NET dans un scénario de classification binaire d’une analyse de sentiments](sentiment-analysis.md).
+- Comparaison : [Tutoriel : Utiliser ML.NET dans un scénario de classification binaire d’une analyse de sentiments](sentiment-analysis.md).
 
 Il est intéressant de comparer la configuration d’algorithme et de pipeline choisie dans le tutoriel avec le code généré par l’outil CLI. Selon la durée d’itération et de recherche de meilleurs modèles, l’algorithme choisi peut être différent, tout comme sa configuration d’hyperparamètres et de pipeline.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Automatiser l’entraînement du modèle avec la CLI ML.NET](../automate-training-with-cli.md)
-- [Tutoriel : Exécuter des modèles ML.NET sur des applications web et API web ASP.NET Core scalables](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [Tutoriel : Exécuter des modèles ML.NET sur des applications web et API web ASP.NET Core scalables](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
 - [Exemple : Modèle ML.NET scalable sur une API web ASP.NET Core](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
 - [Informations de référence sur la commande auto-train de la CLI ML.NET](../reference/ml-net-cli-reference.md) 
 - [Guide pratique pour installer l’outil CLI ML.NET](../how-to-guides/install-ml-net-cli.md)
@@ -257,7 +257,7 @@ Il est intéressant de comparer la configuration d’algorithme et de pipeline c
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce didacticiel, vous avez appris à :
+Dans ce tutoriel, vous avez appris à :
 > [!div class="checklist"]
 > - Préparer vos données pour la tâche ML sélectionnée (problème à résoudre)
 > - Exécuter la commande « mlnet auto-train » dans l’outil CLI

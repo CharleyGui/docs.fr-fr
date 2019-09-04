@@ -3,12 +3,12 @@ title: Bien démarrer avec l’analyse sémantique
 description: Ce tutoriel fournit une vue d’ensemble de l’utilisation de l’analyse sémantique avec le SDK du compilateur .NET.
 ms.date: 02/06/2018
 ms.custom: mvc
-ms.openlocfilehash: 188104c3430b4ca32578cd35d3e161a6eb0e0e1a
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: HT
+ms.openlocfilehash: 80a814054ab95a5b6585289e8580a725b18ca44e
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59611742"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252934"
 ---
 # <a name="get-started-with-semantic-analysis"></a>Bien démarrer avec l’analyse sémantique
 
@@ -40,7 +40,7 @@ Vous pouvez trouver le code complet de cet exemple dans [notre dépôt GitHub](h
 Créez un projet C# **Outil d’analyse du code autonome** :
 
 * Dans Visual Studio, choisissez **Fichier** > **Nouveau** > **Projet** pour afficher la boîte de dialogue Nouveau projet.
-* Sous **Visual C#** > **Extensibilité**, choisissez **Outil d’analyse du code autonome**.
+* Sous **Visual C#**  > **Extensibilité**, choisissez **Outil d’analyse du code autonome**.
 * Nommez votre projet « **SemanticQuickStart** » et cliquez sur OK.
 
 Vous allez analyser le programme simple « Hello World! » montré précédemment.
@@ -78,7 +78,7 @@ Le code précédent montre comment lier le nom dans la première directive `usin
 
 Exécutez le programme ; vous devez normalement voir la sortie suivante :
 
-```
+```output
 System.Collections
 System.Configuration
 System.Deployment
@@ -135,7 +135,7 @@ Vous pouvez aussi créer toute la requête avec la syntaxe de requête LINQ, pui
 
 Générez et exécutez le programme. Vous devez voir la sortie suivante :
 
-```
+```output
 Join
 Substring
 Trim

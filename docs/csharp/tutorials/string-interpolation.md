@@ -2,13 +2,13 @@
 title: Interpolation de chaîne en C#
 description: Découvrez comment inclure des résultats d’expressions mises en forme dans une chaîne de résultat en C# avec une interpolation de chaîne.
 author: pkulikov
-ms.date: 05/09/2018
-ms.openlocfilehash: 2990298821fddc8a69430a4cf4bb5e3dd9df314d
-ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
-ms.translationtype: HT
+ms.date: 09/02/2019
+ms.openlocfilehash: d3a3a08d5911b5323aa61c571f05318d10380339
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66251029"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252925"
 ---
 # <a name="string-interpolation-in-c"></a>Interpolation de chaîne en C\#
 
@@ -16,7 +16,7 @@ Ce tutoriel vous montre comment utiliser une [interpolation de chaîne](../langu
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
-## <a name="introduction"></a>Introduction
+## <a name="introduction"></a>Présentation
 
 La fonctionnalité [Interpolation de chaîne](../language-reference/tokens/interpolated.md) s’appuie sur la fonctionnalité [Mise en forme composite](../../standard/base-types/composite-formatting.md) et fournit une syntaxe plus lisible et plus pratique pour inclure des résultats d’expressions mises en forme dans une chaîne de résultat.
 
@@ -26,7 +26,7 @@ Pour identifier un littéral de chaîne comme chaîne interpolée, préfixez-la 
 
 Comme le montre l’exemple, vous incluez une expression dans une chaîne interpolée en la plaçant entre des accolades :
 
-```
+```csharp
 {<interpolationExpression>}
 ```
 
@@ -36,7 +36,7 @@ Les chaînes interpolées prennent en charge toutes les fonctions de la fonction
 
 Vous spécifiez une chaîne de format prise en charge par le type du résultat d’expression en plaçant un signe deux-points (« : ») et la chaîne de format après l’expression d’interpolation :
 
-```
+```csharp
 {<interpolationExpression>:<formatString>}
 ```
 
@@ -50,7 +50,7 @@ Pour plus d’informations, consultez la section [Composant de chaîne de format
 
 Vous spécifiez la largeur minimale du champ et l’alignement du résultat de l’expression mise en forme en plaçant une virgule (« , ») et l’expression constante après l’expression d’interpolation :
 
-```
+```csharp
 {<interpolationExpression>,<alignment>}
 ```
 
@@ -58,7 +58,7 @@ Si la valeur de *l’alignement* est positive, le résultat de l’expression mi
 
 Si vous devez spécifier à la fois un alignement et une chaîne de format, commencez par le composant d’alignement :
 
-```
+```csharp
 {<interpolationExpression>,<alignment>:<formatString>}
 ```
 
@@ -74,7 +74,7 @@ Pour plus d’informations, consultez la section [Composant d’alignement](../.
 
 Les chaînes interpolées prennent en charge toutes les séquences d’échappement qui peuvent être utilisés dans les littéraux de chaîne ordinaires. Pour plus d’informations, consultez [Séquences d’échappement de chaîne](../programming-guide/strings/index.md#string-escape-sequences).
 
-Pour interpréter les séquences d’échappement littéralement, utilisez un littéral de chaîne [textuelle](../language-reference/tokens/verbatim.md). Une chaîne interpolée textuelle commence par le caractère `$` suivi du caractère `@`.
+Pour interpréter les séquences d’échappement littéralement, utilisez un littéral de chaîne [textuelle](../language-reference/tokens/verbatim.md). Une chaîne textuelle interpolée commence par le `$` caractère suivi du `@` caractère. À C# partir de 8,0, vous pouvez utiliser `$` les `@` `$@"..."` jetons et dans n’importe quel ordre : `@$"..."` et sont des chaînes textuelles interpolées valides.
 
 Pour inclure une accolade, « { » ou «} », dans une chaîne de résultat, utilisez deux accolades, « {{ » ou «}} ». Pour plus d’informations, consultez la section [Échappement des accolades](../../standard/base-types/composite-formatting.md#escaping-braces) de la rubrique [Mise en forme composite](../../standard/base-types/composite-formatting.md).
 

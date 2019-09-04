@@ -3,19 +3,20 @@ title: <tokenReplayDetection>
 ms.date: 03/30/2017
 ms.assetid: ac3f588e-5f75-4275-b969-2d492ecc3b47
 author: BrucePerlerMS
-ms.openlocfilehash: 2e2159a73ca79fc362a8138eea95dbd173dafb11
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a4454042e1d97fb3cc2d6f2735104dadda6e7b5a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69944300"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251772"
 ---
 # <a name="tokenreplaydetection"></a>\<tokenReplayDetection>
 Active la détection de relecture de jetons et spécifie l’heure d’expiration des jetons.  
   
- \<system.identityModel>  
-\<identityConfiguration>  
-\<tokenReplayDetection>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<tokenReplayDetection >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,7 +39,7 @@ Active la détection de relecture de jetons et spécifie l’heure d’expiratio
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|enabled|Valeur qui spécifie si la détection de relecture de jetons est activée; «true» pour activer la détection de relecture de jetons.|  
+|enabled|Valeur qui spécifie si la détection de relecture de jetons est activée ; « true » pour activer la détection de relecture de jetons.|  
 |expirationPeriod|<xref:System.TimeSpan> Qui spécifie la durée maximale avant qu’un élément soit considéré comme expiré et supprimé du cache.  Pour plus d’informations sur la spécification <xref:System.TimeSpan> des valeurs, consultez [TimeSpan values](../windows-workflow-foundation/index.md).|  
   
 ### <a name="child-elements"></a>Éléments enfants  

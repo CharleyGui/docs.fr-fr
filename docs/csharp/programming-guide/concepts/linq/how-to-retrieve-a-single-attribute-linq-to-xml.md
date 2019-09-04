@@ -2,19 +2,19 @@
 title: 'Procédure : Récupérer un seul attribut (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 1b6b07b9-933f-47e9-874e-e790cab49dc5
-ms.openlocfilehash: 4a1be51c7f0e89a8f211ae523eb102282bd9747b
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: d8c8d0e3a99f94c4404f0ab23a5edf082be77952
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592650"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253412"
 ---
 # <a name="how-to-retrieve-a-single-attribute-linq-to-xml-c"></a>Procédure : Récupérer un seul attribut (LINQ to XML) (C#)
 Cette rubrique explique comment récupérer un seul attribut d'un élément, étant donné le nom de l'attribut. Ceci est utile pour écrire des expressions de requête où vous souhaitez rechercher un élément qui possède un attribut particulier.  
   
  La méthode <xref:System.Xml.Linq.XElement.Attribute%2A> de la classe <xref:System.Xml.Linq.XElement> retourne l'objet <xref:System.Xml.Linq.XAttribute> avec le nom spécifié.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple suivant utilise la méthode <xref:System.Xml.Linq.XElement.Attribute%2A>.  
   
 ```csharp  
@@ -37,7 +37,7 @@ foreach (XElement el in elList)
   
  Ce code génère la sortie suivante :  
   
-```  
+```output  
 home  
 work  
 ```  
@@ -63,14 +63,14 @@ foreach (XElement el in elList)
   
  Ce code génère la sortie suivante :  
   
-```  
+```output  
 home  
 work  
 ```  
   
  [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] fournit des opérateurs de conversion explicites pour la classe <xref:System.Xml.Linq.XAttribute> vers `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID` et `GUID?`.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple suivant illustre le même code pour un attribut qui est dans un espace de noms. Pour plus d’informations, consultez [Vue d’ensemble des espaces de noms (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
 ```csharp  
@@ -92,7 +92,7 @@ foreach (XElement el in elList)
   
  Ce code génère la sortie suivante :  
   
-```  
+```output  
 home  
 work  
 ```  

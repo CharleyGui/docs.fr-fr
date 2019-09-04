@@ -2,12 +2,12 @@
 title: 'Procédure : Rechercher un élément avec un élément enfant spécifique (C#)'
 ms.date: 07/20/2015
 ms.assetid: 00cf5555-374e-4369-bf93-7bd2e7f21db3
-ms.openlocfilehash: 80539c7ccd21bc38967479d7b724e6f3361d24ac
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: f007bddcbecc1cb938d05c7d444d29b6047749e8
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593550"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253742"
 ---
 # <a name="how-to-find-an-element-with-a-specific-child-element-c"></a>Procédure : Rechercher un élément avec un élément enfant spécifique (C#)
 Cette rubrique montre comment rechercher un élément particulier qui a un élément enfant avec une valeur spécifique.  
@@ -29,12 +29,12 @@ foreach (XElement el in tests)
   
  Ce code génère la sortie suivante :  
   
-```  
+```output  
 0002  
 0006  
 ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [Vue d’ensemble des espaces de noms (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Configuration de test dans un espace de noms](./sample-xml-file-test-configuration-in-a-namespace1.md).  
@@ -52,7 +52,7 @@ foreach (XElement el in tests)
   
  Ce code génère la sortie suivante :  
   
-```  
+```output  
 0002  
 0006  
 ```  

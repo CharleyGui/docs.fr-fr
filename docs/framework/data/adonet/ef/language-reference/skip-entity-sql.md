@@ -2,12 +2,12 @@
 title: SKIP (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: e2139412-8ea4-451b-8f10-91af18dfa3ec
-ms.openlocfilehash: b6335086ce5b61cf23db2bf967d1a82f322e83b3
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 19d3001fb8f226b02f16167dfb51ce1caa80ba3b
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70043621"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70249221"
 ---
 # <a name="skip-entity-sql"></a>SKIP (Entity SQL)
 
@@ -36,11 +36,11 @@ Si une sous-clause d'expression SKIP est présente dans une clause ORDER BY, les
 >
 > `SELECT [E] FROM Container.EntitySet AS [E] ORDER BY [E].[NonKeyColumn] DESC SKIP 5L`
 
-La [!INCLUDE[esql](../../../../../../includes/esql-md.md)] requête dans [Comment: La page à travers](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100)) les résultats de la requête utilise l’opérateur Order By avec skip pour spécifier l’ordre de tri utilisé sur les objets retournés dans une instruction SELECT.
+La [!INCLUDE[esql](../../../../../../includes/esql-md.md)] requête dans [Comment : La page à travers](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100)) les résultats de la requête utilise l’opérateur Order By avec skip pour spécifier l’ordre de tri utilisé sur les objets retournés dans une instruction SELECT.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md)
+- [ORDER BY](order-by-entity-sql.md)
 - [Guide pratique pour Page des résultats de la requête](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100))
-- [Pagination](../../../../../../docs/framework/data/adonet/ef/language-reference/paging-entity-sql.md)
-- [TOP](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)
+- [Pagination](paging-entity-sql.md)
+- [TOP](top-entity-sql.md)

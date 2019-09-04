@@ -2,12 +2,12 @@
 title: 'Procédure : Utiliser des annotations dans le but de transformer des arborescences LINQ to XML en un style XSLT (C#)'
 ms.date: 07/20/2015
 ms.assetid: 12a95902-a6b7-4a1e-ad52-04a518db226f
-ms.openlocfilehash: 3aaf141a8ac5d8f3fc75d0a31b460fc84733a62e
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
-ms.translationtype: HT
+ms.openlocfilehash: d6975601855e736082662ffb0319b5c6563cedc6
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484800"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253262"
 ---
 # <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-c"></a>Procédure : Utiliser des annotations dans le but de transformer des arborescences LINQ to XML en un style XSLT (C#)
 Les annotations peuvent servir à faciliter les transformations d’une arborescence XML.  
@@ -122,7 +122,7 @@ Console.WriteLine(newData);
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 Before Transform  
 ----------------  
 <Root>  
@@ -147,7 +147,7 @@ After Transform
   
 - Le pseudo code de la fonction est assez simple :  
   
-```  
+```text  
 The function takes an XElement as an argument and returns an XElement.   
 If an element has an XElement annotation, then  
     Return a new XElement  
@@ -393,7 +393,7 @@ class Program
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 Before Transform  
 ----------------  
 <Root Att1="123">  

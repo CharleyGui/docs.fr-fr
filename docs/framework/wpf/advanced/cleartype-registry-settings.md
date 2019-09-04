@@ -5,12 +5,12 @@ helpviewer_keywords:
 - ClearType [WPF], registry settings
 - typography [WPF], ClearType registry settings
 ms.assetid: 56f314bb-b30b-4f67-8492-8b8a9fa432ae
-ms.openlocfilehash: 2104cb4e853888efffe6b289ac1400530be25473
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 5113de6d8d333983e6e26579ff9803a9f5a62816
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015610"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70254171"
 ---
 # <a name="cleartype-registry-settings"></a>Paramètres du Registre ClearType
 Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsoft ClearType qui sont utilisés par les applications WPF.  
@@ -19,7 +19,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsof
 ## <a name="technology-overview"></a>Vue d’ensemble de la technologie  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]les applications qui restituent du texte sur un périphérique d’affichage utilisent des fonctionnalités ClearType pour offrir une expérience de lecture améliorée. ClearType est une technologie logicielle développée par Microsoft qui améliore la lisibilité du texte sur les écrans LCD existants (affichages à cristaux liquides), tels que les écrans d’ordinateurs portables, les écrans de Pocket PC et les écrans plats. ClearType fonctionne en accédant aux éléments individuels de la bande de couleur verticale dans chaque pixel d’un écran LCD. Pour plus d’informations sur ClearType, consultez [vue d’ensemble de ClearType](cleartype-overview.md).  
   
- Le texte rendu avec ClearType peut apparaître considérablement différent quand il est affiché sur différents périphériques d’affichage. Par exemple, un petit nombre d’analyses implémentent les éléments de la bande de couleur dans l’ordre bleu, vert, rouge plutôt que dans l’ordre rouge, [!INCLUDE[TLA#tla_rgb](../../../../includes/tlasharptla-rgb-md.md)]vert, bleu () le plus courant.  
+ Le texte rendu avec ClearType peut apparaître considérablement différent quand il est affiché sur différents périphériques d’affichage. Par exemple, un petit nombre d’analyses implémentent les éléments de la bande de couleur dans l’ordre bleu, vert et rouge plutôt que dans l’ordre rouge, vert, bleu (RVB) le plus courant.  
   
  Le texte rendu avec ClearType peut également apparaître considérablement différent quand il est affiché par des individus avec des niveaux de sensibilité de couleur différents. Certains individus peuvent détecter mieux que d’autres les variations chromatiques légères.  
   
@@ -27,7 +27,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsof
   
 <a name="registry_settings"></a>   
 ## <a name="registry-settings"></a>Paramètres du Registre  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]spécifie quatre paramètres de Registre pour le contrôle des fonctionnalités ClearType:  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]spécifie quatre paramètres de Registre pour le contrôle des fonctionnalités ClearType :  
   
 |Paramètre|Description|  
 |-------------|-----------------|  
@@ -50,7 +50,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsof
  Le niveau ClearType est une valeur entière comprise entre 0 et 100. Le niveau par défaut est 100, ce qui signifie que ClearType utilise la capacité maximale des éléments de la bande de couleur du périphérique d’affichage. Toutefois, un niveau ClearType de 0 rend le texte sous forme de nuances de gris. En affectant au niveau ClearType une valeur comprise entre 0 et 100, vous pouvez créer un niveau intermédiaire adapté à la sensibilité des couleurs d’un individu.  
   
 ### <a name="registry-setting"></a>Paramètre du Registre  
- L’emplacement du paramètre de Registre pour le niveau ClearType est un paramètre utilisateur individuel qui correspond à un nom d’écran d’affichage spécifique:  
+ L’emplacement du paramètre de Registre pour le niveau ClearType est un paramètre utilisateur individuel qui correspond à un nom d’écran d’affichage spécifique :  
   
  `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\<displayName>`  
   

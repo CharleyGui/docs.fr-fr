@@ -2,12 +2,12 @@
 title: Constructeur de type nommé (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 549dea04-d93d-4c87-a292-f81b1598dbfd
-ms.openlocfilehash: f95f0dcb92068675b2efff0af7e97b349976bf42
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c7027614e5667acedb02d871a09df1ac9d799405
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760452"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250004"
 ---
 # <a name="named-type-constructor-entity-sql"></a>Constructeur de type nommé (Entity SQL)
 Permet de créer des instances des types nominaux de modèle conceptuel, tels que les types d'entités ou complexes.  
@@ -20,7 +20,7 @@ Permet de créer des instances des types nominaux de modèle conceptuel, tels qu
   
 ## <a name="arguments"></a>Arguments  
  `identifier`  
- Valeur correspondant à un identificateur simple ou entre guillemets. Pour plus d’informations, consultez [identificateurs](../../../../../../docs/framework/data/adonet/ef/language-reference/identifiers-entity-sql.md)  
+ Valeur correspondant à un identificateur simple ou entre guillemets. Pour plus d’informations, consultez [identificateurs](identifiers-entity-sql.md)  
   
  `expression`  
  Attributs du type supposés se trouver dans le même ordre d'apparition que dans la déclaration du type.  
@@ -52,7 +52,7 @@ Permet de créer des instances des types nominaux de modèle conceptuel, tels qu
 ## <a name="example"></a>Exemple  
  La requête Entity SQL ci-dessous utilise le constructeur de type nommé pour créer une instance d'un type de modèle conceptuel. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite dans [Comment : Exécuter une requête qui retourne des résultats StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-structuraltype-results.md)de StructuralType.  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   
@@ -60,5 +60,5 @@ Permet de créer des instances des types nominaux de modèle conceptuel, tels qu
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Construction de types](../../../../../../docs/framework/data/adonet/ef/language-reference/constructing-types-entity-sql.md)
-- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Construction de types](constructing-types-entity-sql.md)
+- [Référence Entity SQL](entity-sql-reference.md)

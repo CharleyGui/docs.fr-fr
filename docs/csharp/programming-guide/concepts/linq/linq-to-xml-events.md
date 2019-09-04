@@ -2,12 +2,12 @@
 title: Événements LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: ce7de951-cba7-4870-9962-733eb01cd680
-ms.openlocfilehash: 8278d3eac9d1e149cbfe64e184439ef9ac3cd39b
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
-ms.translationtype: HT
+ms.openlocfilehash: 8e0cb4519dd0fc2bed443d9a62b9a2545d10e161
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66484340"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253172"
 ---
 # <a name="linq-to-xml-events-c"></a>Événements LINQ to XML (C#)
 Les événements [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vous permettent d’être averti quand une arborescence XML est modifiée.  
@@ -26,7 +26,7 @@ Les événements [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vous perm
   
  Les événements suivants sont déclenchés lorsque vous modifiez une arborescence XML :  
   
-|événement|Description|  
+|Événement|Description|  
 |-----------|-----------------|  
 |<xref:System.Xml.Linq.XObject.Changing>|Se produit juste avant que cet objet <xref:System.Xml.Linq.XObject> ou l'un de ses descendants ne change.|  
 |<xref:System.Xml.Linq.XObject.Changed>|Se produit lorsqu'un objet <xref:System.Xml.Linq.XObject> ou l'un des ses descendants a changé.|  
@@ -78,7 +78,7 @@ Console.WriteLine(root);
 ### <a name="comments"></a>Commentaires  
  Ce code génère la sortie suivante :  
   
-```  
+```output  
 Changed System.Xml.Linq.XElement Add  
 Changed System.Xml.Linq.XElement Add  
 Changed System.Xml.Linq.XText Remove  

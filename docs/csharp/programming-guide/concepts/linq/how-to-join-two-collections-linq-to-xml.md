@@ -2,12 +2,12 @@
 title: 'Procédure : Joindre deux collections (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7b817ede-911a-4cff-9dd3-639c3fc228c9
-ms.openlocfilehash: aa774e23cfd232709f9824826f5084fe6049ef37
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 82083a24da9a5356a8ff8e8430b61bb5d41f7c72
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593198"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253574"
 ---
 # <a name="how-to-join-two-collections-linq-to-xml-c"></a>Procédure : Joindre deux collections (LINQ to XML) (C#)
 Un élément ou attribut dans un document XML peut parfois faire référence à un autre élément ou attribut. Par exemple, le document XML [Exemple de fichier XML : Clients et commandes (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md) contient une liste de clients et une liste de commandes. Chaque élément `Customer` contient un attribut `CustomerID`. Chaque élément `Order` contient un élément `CustomerID`. L'élément `CustomerID` dans chaque commande fait référence à l'attribut `CustomerID` dans un client.  
@@ -20,7 +20,7 @@ Un élément ou attribut dans un document XML peut parfois faire référence à 
   
  Pour obtenir des informations détaillées sur `join`, consultez [Opérations de jointure (C#)](./join-operations.md).  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple suivant joint les éléments `Customer` aux éléments `Order` et génère un nouveau document XML qui inclut l'élément `CompanyName` dans les commandes.  
   
  Avant d’exécuter la requête, l’exemple vérifie que le document est conforme au schéma spécifié dans [Exemple de fichier XSD : Clients et commandes](./sample-xsd-file-customers-and-orders1.md). Cela permet de s'assurer que la clause de jointure fonctionnera toujours.  
@@ -76,7 +76,7 @@ if (!errors)
   
  Ce code génère la sortie suivante :  
   
-```  
+```output  
 Attempting to validate, custOrdDoc validated  
 <Root>  
   <Order>  

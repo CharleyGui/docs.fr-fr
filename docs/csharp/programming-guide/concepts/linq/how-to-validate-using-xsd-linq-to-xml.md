@@ -2,12 +2,12 @@
 title: 'Procédure : Valider à l’aide de XSD (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 6a7f83a9-2d74-4c2b-8417-0a8595879516
-ms.openlocfilehash: 47704a5aa06bb837c9d76516762330e4aa24e074
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 0e35e12efa9530fd5bbcf7a21e86ed03c1325bc4
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592241"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253252"
 ---
 # <a name="how-to-validate-using-xsd-linq-to-xml-c"></a>Procédure : Valider à l’aide de XSD (LINQ to XML) (C#)
 L'espace de noms <xref:System.Xml.Schema> contient des méthodes d'extension qui facilitent la validation d'une arborescence XML par rapport à un fichier XSD (XML Schema Definition Language). Pour plus d'informations, consultez la documentation sur la méthode <xref:System.Xml.Schema.Extensions.Validate%2A>.  
@@ -66,7 +66,7 @@ Console.WriteLine("doc2 {0}", errors ? "did not validate" : "validated");
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 Validating doc1  
 doc1 validated  
   
@@ -111,7 +111,7 @@ Console.WriteLine("custOrdDoc {0}", errors ? "did not validate" : "validated");
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 Attempting to validate  
 custOrdDoc validated  
   

@@ -2,12 +2,12 @@
 title: 'Procédure : Joindre du contenu issu de fichiers non similaires (LINQ) (C#)'
 ms.date: 06/27/2018
 ms.assetid: aa2d12a6-70a9-492f-a6db-b2b850d46811
-ms.openlocfilehash: 14f9c9917aedbc0beeeddae789b835613d1badc8
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: eb2e5d8e598b7b671afe9271e6e591c5ce0ada2b
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593158"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253548"
 ---
 # <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>Procédure : Joindre du contenu issu de fichiers non similaires (LINQ) (C#)
 
@@ -17,7 +17,7 @@ Cet exemple montre comment joindre des données de deux fichiers CSV qui partage
   
 1. Copiez les lignes suivantes dans un fichier nommé *scores.csv*, puis enregistrez-le dans votre dossier de projet. Le fichier représente les données de feuille de calcul. La colonne 1 est l’ID de l’étudiant et les colonnes 2 à 5 correspondent à des résultats d’examens.  
   
-    ```  
+    ```csv  
     111, 97, 92, 81, 60  
     112, 75, 84, 91, 39  
     113, 88, 94, 65, 91  
@@ -34,7 +34,7 @@ Cet exemple montre comment joindre des données de deux fichiers CSV qui partage
   
 2. Copiez les lignes suivantes dans un fichier nommé *names.csv*, puis enregistrez-le dans votre dossier de projet. Le fichier représente une feuille de calcul qui contient le nom, le prénom et l’ID de l’étudiant.  
   
-    ```  
+    ```csv  
     Omelchenko,Svetlana,111  
     O'Donnell,Claire,112  
     Mortensen,Sven,113  
@@ -49,7 +49,7 @@ Cet exemple montre comment joindre des données de deux fichiers CSV qui partage
     Tucker,Michael,122  
     ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
 
 ```csharp
 using System;

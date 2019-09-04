@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: 345840ad45add21c6088abd0fb45e2e591b7df21
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 6f071f907fe38b226a5083699e758bc5fb8bffce
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923885"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252990"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Arguments de ligne de commande (Guide de programmation C#)
 Vous pouvez envoyer des arguments à la méthode `Main` en définissant la méthode de l’une des manières suivantes :  
@@ -28,25 +28,25 @@ Vous pouvez envoyer des arguments à la méthode `Main` en définissant la méth
   
  Vous pouvez également convertir les arguments de chaîne en types numériques à l’aide de la classe <xref:System.Convert> ou de la méthode `Parse`. Par exemple, l’instruction suivante convertit `string` en nombre `long` en utilisant la méthode <xref:System.Int64.Parse%2A> :  
   
-```  
+```csharp  
 long num = Int64.Parse(args[0]);  
 ```  
   
  Il est également possible d’utiliser le type C# `long`, qui sert d’alias à `Int64` :  
   
-```  
+```csharp  
 long num = long.Parse(args[0]);  
 ```  
   
  Vous pouvez également utiliser la méthode `ToInt64` de la classe `Convert` pour obtenir le même résultat :  
   
-```  
+```csharp  
 long num = Convert.ToInt64(s);  
 ```  
   
  Pour plus d’informations, consultez <xref:System.Int64.Parse%2A> et <xref:System.Convert>.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre comment utiliser des arguments de ligne de commande dans une application console. L’application prend un argument au moment de l’exécution, le convertit en entier, puis calcule la factorielle du nombre. Si aucun argument n’est fourni, l’application affiche un message pour expliquer comment le programme doit être utilisé.  
   
  Pour compiler et exécuter l’application à partir d’une invite de commandes, procédez comme suit :  

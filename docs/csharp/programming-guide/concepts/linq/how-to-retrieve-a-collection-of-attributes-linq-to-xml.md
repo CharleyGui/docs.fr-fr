@@ -2,17 +2,17 @@
 title: 'Procédure : Récupérer une collection d’attributs (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: a49ee7a3-b2c2-4d49-9b5c-b7c6c41f4f13
-ms.openlocfilehash: b37600f02cd012e688d161a079c3c8647545cb2c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: b1721de5ac396faab010dab691bfd88991bad638
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592665"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253433"
 ---
 # <a name="how-to-retrieve-a-collection-of-attributes-linq-to-xml-c"></a>Procédure : Récupérer une collection d’attributs (LINQ to XML) (C#)
 Cette rubrique présente la méthode <xref:System.Xml.Linq.XElement.Attributes%2A>. Cette méthode récupère les attributs d'un élément.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre comment itérer au sein de la collection d’attributs d’un élément.  
   
 ```csharp  
@@ -30,7 +30,7 @@ foreach (XAttribute a in listOfAttributes)
   
  Ce code génère la sortie suivante :  
   
-```  
+```output  
 ID="1243"  
 Type="int"  
 ConvertableTo="double"  

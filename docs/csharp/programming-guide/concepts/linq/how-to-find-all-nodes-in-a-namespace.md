@@ -2,17 +2,17 @@
 title: 'Procédure : Rechercher tous les nœuds dans un espace de noms (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3a38b913-a53e-4d0e-a19d-8782bffd3364
-ms.openlocfilehash: 512ca398831541c30a6c0c1e305c5c6269c13ddb
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: f8a6f33084417e0dd489002eaa5d2de509e30d39
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593643"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253789"
 ---
 # <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Procédure : Rechercher tous les nœuds dans un espace de noms (C#)
 Vous pouvez filtrer sur l'espace de noms de chaque élément ou attribut afin de rechercher les nœuds dans cet espace de noms particulier.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant crée une arborescence XML avec deux espaces de noms. Il itère ensuite au sein de l'arborescence et imprime les noms de tous les éléments et attributs dans l'un de ces espaces de noms.  
   
 ```csharp  
@@ -37,7 +37,7 @@ foreach (XElement el in awElements)
   
  Ce code génère la sortie suivante :  
   
-```  
+```output  
 Nodes in the http://www.adventure-works.com namespace  
 {http://www.adventure-works.com}Child3  
 {http://www.adventure-works.com}GrandChild2  

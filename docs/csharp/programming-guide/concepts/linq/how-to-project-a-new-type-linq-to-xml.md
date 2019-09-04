@@ -2,12 +2,12 @@
 title: 'Procédure : Projeter un nouveau type (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 48145cf9-1e0b-4e73-bbfd-28fc04800dc4
-ms.openlocfilehash: bec4e7c7d87dffb90b49b76aa00a5de093d68436
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 32c3de9f4dd967cf0aafa7f4e571d8714ca41e3a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593045"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253503"
 ---
 # <a name="how-to-project-a-new-type-linq-to-xml-c"></a>Procédure : Projeter un nouveau type (LINQ to XML) (C#)
 
@@ -53,7 +53,7 @@ Cet exemple utilise la méthode <xref:System.Xml.Linq.XContainer.Element%2A> int
 
 Cet exemple génère la sortie suivante :
 
-```console
+```output
 Lawnmower:1
 Baby Monitor:2
 ```

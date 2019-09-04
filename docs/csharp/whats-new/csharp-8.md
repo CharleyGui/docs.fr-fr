@@ -1,17 +1,17 @@
 ---
 title: Nouveautés de C# 8.0 – Guide C#
 description: Vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 8.0. Cet article a été actualisé par rapport à la préversion 5.
-ms.date: 02/12/2019
-ms.openlocfilehash: 14c86fe4b1ecd1c89ebbbb082c5c9956bc51e03e
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.date: 09/02/2019
+ms.openlocfilehash: 7210f2e978f307b3ecef2eff272fea0d19025de6
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105510"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252899"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 
-Vous pouvez d’ores et déjà tester les nombreuses améliorations apportées au langage C#. 
+Vous pouvez d’ores et déjà tester les nombreuses améliorations apportées au langage C#.
 
 - [Membres ReadOnly](#readonly-members)
 - [Membres d’interface par défaut](#default-interface-members)
@@ -26,6 +26,7 @@ Vous pouvez d’ores et déjà tester les nombreuses améliorations apportées a
 - [Types de référence Nullable](#nullable-reference-types)
 - [Flux asynchrones](#asynchronous-streams)
 - [Index et plages](#indices-and-ranges)
+- [Amélioration des chaînes textuelles interpolées](#enhancement-of-interpolated-verbatim-strings)
 
 > [!NOTE]
 > La dernière mise à jour de cet article date de la préversion 5 de C# 8.0.
@@ -376,7 +377,8 @@ Vous pouvez essayer par vous-même les flux asynchrones dans notre tutoriel [Cr�
 
 Les plages et les index offrent une syntaxe concise pour spécifier des sous-plages dans un tableau, <xref:System.Span%601> ou <xref:System.ReadOnlySpan%601>.
 
-Cette prise en charge linguistique s’appuie sur deux nouveaux types et deux nouveaux opérateurs.
+Cette prise en charge de langage s’appuie sur deux nouveaux types et deux nouveaux opérateurs :
+
 - <xref:System.Index?displayProperty=nameWithType> représente un index au sein d’une séquence.
 - L’opérateur `^` spécifie qu’un index est relatif à la fin de la séquence.
 - <xref:System.Range?displayProperty=nameWithType> représente une sous-plage d’une séquence.
@@ -444,3 +446,7 @@ var text = words[phrase];
 ```
 
 Pour explorer davantage les index et les plages, consultez le tutoriel sur [les index et les plages](../tutorials/ranges-indexes.md).
+
+## <a name="enhancement-of-interpolated-verbatim-strings"></a>Amélioration des chaînes textuelles interpolées
+
+L' `$` ordre des jetons `@` et dans les chaînes `$@"..."` textuelles [interpolées](../language-reference/tokens/interpolated.md) peut être any : et `@$"..."` sont des chaînes textuelles interpolées valides. Dans les C# versions antérieures, `$` le jeton doit apparaître avant `@` le jeton.

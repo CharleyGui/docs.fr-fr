@@ -3,12 +3,12 @@ title: Mettre à jour des interfaces de manière sécurisée à l’aide des mem
 description: Ce tutoriel avancé explore comment vous pouvez ajouter de manière sécurisée de nouvelles fonctionnalités aux définitions d’une interface existante sans rompre toutes les classes et tous les structs qui implémentent cette interface.
 ms.date: 05/06/2019
 ms.custom: mvc
-ms.openlocfilehash: 2d7265b7705fc931d356a3b7fe3504ab7f21c0b3
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
-ms.translationtype: HT
+ms.openlocfilehash: 9e0e4324b2474292064a760db9727d7dec6561d4
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68971439"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252917"
 ---
 # <a name="tutorial-update-interfaces-with-default-interface-members-in-c-80"></a>Tutoriel : Mettre à jour des interfaces avec les membres d’interface par défaut dans C# 8.0
 
@@ -37,7 +37,7 @@ Elle a défini une deuxième interface qui représente une commande :
 
 À partir de ces interfaces, l’équipe a pu générer une bibliothèque pour les utilisateurs permettant de créer une meilleure expérience pour ses clients. Son objectif était de créer une relation plus étroite avec les clients existants et d’améliorer ses relations avec les nouveaux clients.
 
-À présent, il est temps de mettre à niveau la bibliothèque pour la prochaine version. L’une des fonctionnalités demandées permet une remise de fidélité pour les clients qui ont un grand nombre de commandes. Cette nouvelle remise de fidélité est appliquée chaque fois qu’un client passe une commande. La remise spécifique est une propriété de chaque client. Chaque implémentation d’ICustomer peut définir des règles différentes pour la remise de fidélité. 
+À présent, il est temps de mettre à niveau la bibliothèque pour la prochaine version. L’une des fonctionnalités demandées permet une remise de fidélité pour les clients qui ont un grand nombre de commandes. Cette nouvelle remise de fidélité est appliquée chaque fois qu’un client passe une commande. La remise spécifique est une propriété de chaque client. Chaque implémentation de `ICustomer` peut définir des règles différentes pour la remise de fidélité. 
 
 La façon la plus naturelle d’ajouter cette fonctionnalité consiste à améliorer l’interface `ICustomer` avec une méthode pour appliquer une remise de fidélité. La suggestion de cette conception a suscité l’inquiétude des développeurs expérimentés : « Les interfaces sont immuables une fois lancées ! Il s’agit d’une modification avec rupture ! » C# 8.0 ajoute des *implémentations d’interface par défaut* pour la mise à niveau des interfaces. Les auteurs de bibliothèque peuvent ajouter de nouveaux membres à l’interface et fournir une implémentation par défaut pour ces membres.
 
@@ -47,7 +47,7 @@ Les implémentations d’interface par défaut permettent aux développeurs de m
 
 L’équipe s’est mise d’accord sur l’implémentation par défaut la plus vraisemblable : une remise de fidélité pour les clients.
 
-La mise à niveau doit fournir la fonctionnalité permettant de définir deux propriétés : le nombre de commandes nécessaires pour pouvoir bénéficier de la remise et le pourcentage de celle-ci. Ainsi, le scénario est idéal pour les membres d’interface par défaut. Vous pouvez ajouter une méthode à l’interface ICustomer et fournir l’implémentation la plus probable. Toutes les implémentations existantes et nouvelles peuvent utiliser l’implémentation par défaut ou fournir la leur.
+La mise à niveau doit fournir la fonctionnalité permettant de définir deux propriétés : le nombre de commandes nécessaires pour pouvoir bénéficier de la remise et le pourcentage de celle-ci. Ainsi, le scénario est idéal pour les membres d’interface par défaut. Vous pouvez ajouter une méthode à l' `ICustomer` interface et fournir l’implémentation la plus probable. Toutes les implémentations existantes et nouvelles peuvent utiliser l’implémentation par défaut ou fournir la leur.
 
 Tout d’abord, ajoutez la nouvelle méthode à l’implémentation :
 
@@ -69,7 +69,7 @@ C’est un bon début. Toutefois, l’implémentation par défaut est trop restr
 
 [!code-csharp[VersionTwoImplementation](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/ICustomer.cs?name=SnippetLoyaltyDiscountVersionTwo)]
 
-Ce petit fragment de code montre de nombreuses nouvelles fonctionnalités de langage. Les interfaces peuvent maintenant inclure des membres statiques, notamment des champs et des méthodes. Différents modificateurs d’accès sont également activés. Les champs supplémentaires sont privés, tandis que la nouvelle méthode est publique. Tout modificateur est autorisé sur les membres d’interface.
+De nombreuses nouvelles fonctionnalités de langage sont présentées dans ce petit fragment de code. Les interfaces peuvent maintenant inclure des membres statiques, notamment des champs et des méthodes. Différents modificateurs d’accès sont également activés. Les champs supplémentaires sont privés, tandis que la nouvelle méthode est publique. Tout modificateur est autorisé sur les membres d’interface.
 
 Les applications qui utilisent la formule générale pour le calcul de la remise de fidélité, mais des paramètres différents, n’ont pas besoin de fournir une implémentation personnalisée ; elles peuvent définir les arguments par le biais d’une méthode statique. Par exemple, le code suivant définit une « évaluation du client » qui récompense tout client membre depuis plus d’un mois :
 

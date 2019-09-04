@@ -2,12 +2,12 @@
 title: THEN (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 54222642-23c6-4f61-9861-67caca53ac5f
-ms.openlocfilehash: 8d2d7f9a3a1d6ff9f25db3f19bf8f39781469f9f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c64e440e8cd8f86706db69d923ba7085d0cb3b3a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61797642"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248994"
 ---
 # <a name="then-entity-sql"></a>THEN (Entity SQL)
 Résultat d'une clause WHEN lorsqu'elle prend la valeur `true`.  
@@ -28,12 +28,12 @@ WHEN when_expression THEN then_expression
 ## <a name="remarks"></a>Notes  
  Si `when_expression` prend la valeur `true`, le résultat est l'expression `then-expression`correspondante. Si aucune des conditions WHEN n'est remplie, `else-expression` est évaluée. Toutefois, en l'absence d'une expression `else-expression`, le résultat est Null.  
   
- Pour obtenir un exemple, consultez [cas](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md).  
+ Pour obtenir un exemple, consultez [case](case-entity-sql.md).  
   
 ## <a name="example"></a>Exemple  
  La requête Entity SQL ci-dessous utilise l'expression CASE pour évaluer un ensemble d'expressions `Boolean` . Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite dans [Comment : Exécuter une requête qui retourne les résultats PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-primitivetype-results.md)de PrimitiveType.  
   
 2. Transmettez à la méthode `ExecutePrimitiveTypeQuery` la requête suivante en tant qu'argument :  
   
@@ -41,5 +41,5 @@ WHEN when_expression THEN then_expression
   
 ## <a name="see-also"></a>Voir aussi
 
-- [CASE](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md)
-- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [CASE](case-entity-sql.md)
+- [Référence Entity SQL](entity-sql-reference.md)

@@ -2,12 +2,12 @@
 title: Programmation avec des nœuds (C#)
 ms.date: 07/20/2015
 ms.assetid: c38df0f2-c805-431a-93ff-9103a4284c2f
-ms.openlocfilehash: 7229b03e1bbb4f7cd861cb946307867b87234a21
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
-ms.translationtype: HT
+ms.openlocfilehash: 8c4c858cbc1fad4041c2e5ce62ca8a01dd1cfb2c
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487300"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253147"
 ---
 # <a name="programming-with-nodes-c"></a>Programmation avec des nœuds (C#)
 Les développeurs [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] qui doivent écrire des programmes tels qu'un éditeur XML, un système de transformation ou un générateur de rapports doivent souvent écrire des programmes qui fonctionnent à un niveau de granularité plus élevé que les éléments et attributs. Ils doivent souvent travailler au niveau des nœuds, manipuler des nœuds de texte et traiter des instructions et des commentaires. Cette rubrique fournit quelques détails sur la programmation au niveau nœud.  
@@ -28,7 +28,7 @@ Console.WriteLine(doc.Root.Parent == null);
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 True  
 True  
 ```  
@@ -54,7 +54,7 @@ Console.WriteLine(xmlTree.Nodes().OfType<XText>().Count());
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 1  
 1  
 2  
@@ -76,7 +76,7 @@ Console.WriteLine(">>{0}<<", textNode2);
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 >><<  
 ```  
   
@@ -116,7 +116,7 @@ foreach (XAttribute att in root.Attributes())
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 xmlns="http://www.adventure-works.com"  IsNamespaceDeclaration:True  
 xmlns:fc="www.fourthcoffee.com"  IsNamespaceDeclaration:True  
 AnAttribute="abc"  IsNamespaceDeclaration:False  
@@ -144,7 +144,7 @@ Console.WriteLine(((IEnumerable)root.XPathEvaluate("text()")).OfType<XText>().Co
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 3  
 0  
 ```  
@@ -166,7 +166,7 @@ Console.WriteLine(doc.Nodes().Count());
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>  
 <Root />  
 1  

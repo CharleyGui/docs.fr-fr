@@ -2,12 +2,12 @@
 title: 'Procédure : Rechercher l’élément racine (XPath-LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4fd824e0-4d39-429b-b092-f6a5c046ee6c
-ms.openlocfilehash: 1fea4cc630dd708a86a0f0595ac727f8b8fa40af
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: d53fbaf089e54d50422e39cd047ee960bc8e46c3
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593380"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253597"
 ---
 # <a name="how-to-find-the-root-element-xpath-linq-to-xml-c"></a>Procédure : Rechercher l’élément racine (XPath-LINQ to XML) (C#)
 Cette rubrique montre comment obtenir l'élément racine avec XPath et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
@@ -16,7 +16,7 @@ Cette rubrique montre comment obtenir l'élément racine avec XPath et [!INCLUDE
   
  `/PurchaseOrders`  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Cet exemple recherche l'élément racine.  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
@@ -39,7 +39,7 @@ Console.WriteLine(el1.Name);
   
  Cet exemple génère la sortie suivante :  
   
-```  
+```output  
 Results are identical  
 PurchaseOrders  
 ```  

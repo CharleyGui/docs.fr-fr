@@ -2,12 +2,12 @@
 title: 'Procédure : Rechercher des éléments dans un espace de noms (XPath-LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: cae1c4ac-6cd5-46cf-9b1c-bd85bc9b7ea9
-ms.openlocfilehash: 63f3d883964df4a94bb30ad78f50f814562840a4
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
-ms.translationtype: HT
+ms.openlocfilehash: d85426cf7a7073c35b51157e59687e2b3bcdcf8a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690049"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253682"
 ---
 # <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-c"></a>Procédure : Rechercher des éléments dans un espace de noms (XPath-LINQ to XML) (C#)
 
@@ -43,7 +43,7 @@ foreach (XElement el in list2)
 
 Cet exemple génère la sortie suivante :
 
-```
+```output
 Results are identical
 <aw:PurchaseOrder PONumber="11223" Date="2000-01-15" xmlns:aw="http://www.adventure-works.com">
     <aw:ShippingAddress>
