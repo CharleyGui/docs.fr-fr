@@ -4,18 +4,18 @@ description: Découvrez comment déployer une application .NET pour Apache Spark
 ms.date: 05/17/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 4769c194520790ce217d46d1d3197b20742d4f1a
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
-ms.translationtype: HT
+ms.openlocfilehash: 81d1af1fd4e3329c4a289eea388edf8af57d7c4e
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "69576946"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70243944"
 ---
 # <a name="deploy-a-net-for-apache-spark-application-to-azure-hdinsight"></a>Déployer une application .NET pour Apache Spark sur Azure HDInsight
 
 Ce tutoriel explique comment déployer une application .NET pour Apache Spark sur Azure HDInsight.
 
-Dans ce didacticiel, vous apprendrez à :
+Ce tutoriel vous montre comment effectuer les opérations suivantes :
 
 > [!div class="checklist"]
 > * Préparer Microsoft.Spark.Worker
@@ -79,12 +79,12 @@ Cette étape n’est nécessaire qu’une seule fois pour votre cluster.
 
 Exécutez `install-worker.sh` sur le cluster en utilisant des [actions de script HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux).
 
-|Paramètre|Value|
+|Paramètre|Valeur|
 |-------|-----|
 |Type de script|Personnalisé|
 |Name|Installer Microsoft.Spark.Worker|
 |URI de script bash|URI vers lequel vous avez chargé `install-worker.sh`. Par exemple, `abfss://<your-file-system-name>@<your-storage-account-name>.dfs.core.windows.net/<some dir>/install-worker.sh`.|
-|Type(s) de nœud|Worker|
+|Type (s) de nœud|Collabor|
 |Paramètres|Paramètres de `install-worker.sh`. Par exemple, si vous avez chargé `install-worker.sh` dans Azure Data Lake Gen 2, il s’agit de `azure abfss://<your-file-system-name>@<your-storage-account-name>.dfs.core.windows.net/<some dir>/Microsoft.Spark.Worker.<release>.tar.gz /usr/local/bin`.|
 
 ![Image d’action de script](./media/hdinsight-deployment/deployment-hdi-action-script.png)
@@ -99,12 +99,12 @@ Vous pouvez utiliser la commande [spark-submit](https://spark.apache.org/docs/la
  
 1. `ssh` dans un des nœuds principaux de votre cluster.
 
-1. Exécutez `spark-submit` :
+1. Exécutez `spark-submit`:
 
    ```bash
    spark-submit \
    --master yarn \
-   --class org.apache.spark.deploy.DotnetRunner \
+   --class org.apache.spark.deploy.dotnet.DotnetRunner \
    --files <comma-separated list of assemblies that contain UDF definitions, if any> \
    abfss://<your-file-system-name>@<your-storage-account-name>.dfs.core.windows.net/<some dir>/microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar \
    abfss://<your-file-system-name>@<your-storage-account-name>.dfs.core.windows.net/<some dir>/<your app>.zip <your app> <app arg 1> <app arg 2> ... <app arg n>
@@ -124,7 +124,7 @@ curl -k -v -X POST "https://<your spark cluster>.azurehdinsight.net/livy/batches
 -d @- << EOF
 {
     "file":"abfss://<your-file-system-name>@<your-storage-account-name>.dfs.core.windows.net/<some dir>/microsoft-spark-<spark_majorversion.spark_minorversion.x>-<spark_dotnet_version>.jar",
-    "className":"org.apache.spark.deploy.DotnetRunner",
+    "className":"org.apache.spark.deploy.dotnet.DotnetRunner",
     "files":["abfss://<your-file-system-name>@<your-storage-account-name>.dfs.core.windows.net/<some dir>/<udf assembly>", "abfss://<your-file-system-name>@<your-storage-account-name>.dfs.core.windows.net/<some dir>/<file>"],
     "args":["abfss://<your-file-system-name>@<your-storage-account-name>.dfs.core.windows.net/<some dir>/<your app>.zip","<your app>","<app arg 1>","<app arg 2>,"...","<app arg n>"]
 }
@@ -136,4 +136,4 @@ EOF
 Dans ce tutoriel, vous avez déployé votre application .NET pour Apache Spark sur Azure HDInsight. Pour plus d’informations sur HDInsight, consultez la documentation d’Azure HDInsight.
 
 > [!div class="nextstepaction"]
-> [Documentation Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/)
+> [Documentation Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/)
