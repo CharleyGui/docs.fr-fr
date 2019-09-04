@@ -26,12 +26,14 @@
                   href: bindingredirect-element.md
                 - name: Élément <codeBase>
                   href: codebase-element.md
+                - name: Élément <publisherPolicy>
+                  href: publisherpolicy-element.md
             - name: Élément <probing>
               href: probing-element.md
-            - name: Élément <publisherPolicy>
-              href: publisherpolicy-element.md
             - name: Élément <qualifyAssembly>
               href: qualifyassembly-element.md
+            - name: Élément <supportPortability>
+              href: supportportability-element.md
         - name: Élément <bypassTrustedAppStrongNames>
           href: bypasstrustedappstrongnames-element.md
         - name: Élément <CompatSortNLSVersion>
@@ -82,23 +84,6 @@
           href: relativebindforresources-element.md
         - name: Élément <shadowCopyVerifyByTimestamp>
           href: shadowcopyverifybytimestamp-element.md
-        - name: Élément <supportPortability>
-          href: supportportability-element.md
-        - name: '<system.runtime.caching>, élément (paramètres de cache)'
-          href: system-runtime-caching-element-cache-settings.md
-          items:
-            - name: '<memoryCache>, élément (paramètres de cache)'
-              href: memorycache-element-cache-settings.md
-              items:
-                - name: '<namedCaches>, élément (paramètres de cache)'
-                  href: namedcaches-element-cache-settings.md
-                  items:
-                    - name: '<add>, élément de <namedCaches>'
-                      href: add-element-for-namedcaches.md
-                    - name: '<clear>, élément de <namedCaches>'
-                      href: clear-element-for-namedcaches.md
-                    - name: '<remove>, élément de <namedCaches>'
-                      href: remove-element-for-namedcaches.md
         - name: '<Thread_UseAllCpuGroups>, élément'
           href: thread-useallcpugroups-element.md
         - name: Élément <ThrowUnobservedTaskExceptions>
@@ -111,3 +96,18 @@
           href: userandomizedstringhashalgorithm-element.md
         - name: Élément <UseSmallInternalThreadStacks>
           href: usesmallinternalthreadstacks-element.md
+    - name: '<system.runtime.caching>, élément (paramètres de cache)'
+      href: system-runtime-caching-element-cache-settings.md
+      items:
+        - name: '<memoryCache>, élément (paramètres de cache)'
+          href: memorycache-element-cache-settings.md
+          items:
+            - name: '<namedCaches>, élément (paramètres de cache)'
+              href: namedcaches-element-cache-settings.md
+              items:
+                - name: '<add>, élément de <namedCaches>'
+                  href: add-element-for-namedcaches.md
+                - name: '<clear>, élément de <namedCaches>'
+                  href: clear-element-for-namedcaches.md
+                - name: Élément <remove> pour <namedCaches>
+                  href: remove-element-for-namedcaches.md
