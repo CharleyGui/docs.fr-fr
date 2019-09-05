@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: acd71129-5ff0-4b4e-b266-c72cc0c53601
-ms.openlocfilehash: 66af3395d7ba7271323ad6461e8e1fb8c823a1c6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7be3491af48ad29cd7892dd31a077aa7ac44ca63
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913901"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250500"
 ---
 # <a name="known-issues-and-considerations-in-linq-to-entities"></a>Problèmes connus et éléments à prendre en compte dans LINQ to Entities
 Cette section fournit des informations sur les problèmes connus liés aux requêtes LINQ to Entities.  
@@ -35,7 +35,7 @@ Cette section fournit des informations sur les problèmes connus liés aux requ�
   
 <a name="OrderingInfoLost"></a>   
 ## <a name="ordering-information-lost"></a>Perte des informations de tri  
- La projection de colonnes dans un type anonyme entraîne la perte des informations de classement dans certaines requêtes exécutées sur une base de données SQL Server 2005 définie à un niveau de compatibilité de «80».  Cela se produit lorsqu'un nom de colonne figurant dans la liste Order by correspond à un nom de colonne dans le sélecteur, comme l'illustre l'exemple suivant :  
+ La projection de colonnes dans un type anonyme entraîne la perte des informations de classement dans certaines requêtes exécutées sur une base de données SQL Server 2005 définie à un niveau de compatibilité de « 80 ».  Cela se produit lorsqu'un nom de colonne figurant dans la liste Order by correspond à un nom de colonne dans le sélecteur, comme l'illustre l'exemple suivant :  
   
  [!code-csharp[DP L2E Conceptual Examples#SBUDT543840](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#sbudt543840)]
  [!code-vb[DP L2E Conceptual Examples#SBUDT543840](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#sbudt543840)]  
@@ -81,4 +81,4 @@ Cette section fournit des informations sur les problèmes connus liés aux requ�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)
+- [LINQ to Entities](linq-to-entities.md)
