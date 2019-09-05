@@ -2,26 +2,26 @@
 title: EDM Generator (EdmGen.exe)
 ms.date: 03/30/2017
 ms.assetid: fe8297a1-1fc3-48ce-8eeb-f70f63f857aa
-ms.openlocfilehash: f9c75cd7589b1c5fb28112a22390acf90f46e465
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 688989fea6037cc989267e14b103210c2a995afa
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65584591"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251627"
 ---
 # <a name="edm-generator-edmgenexe"></a>EDM Generator (EdmGen.exe)
 
 EdmGen.exe est un outil en ligne de commande utilisé avec le modèle [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] et les fichiers de mappage. Vous pouvez utiliser l'outil EdmGen.exe pour effectuer les opérations suivantes :
 
-- Vous connecter à une source de données en utilisant un fournisseur de données .NET Framework spécifique à la source de données, et générer les fichiers de modèle conceptuel (.csdl), de modèle de stockage (.ssdl) et de mappage (.msl) utilisés par [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Pour plus d'informations, voir [Procédure : Utiliser EdmGen.exe pour générer des fichiers de modèle et mappage](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md).
+- Vous connecter à une source de données en utilisant un fournisseur de données .NET Framework spécifique à la source de données, et générer les fichiers de modèle conceptuel (.csdl), de modèle de stockage (.ssdl) et de mappage (.msl) utilisés par [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Pour plus d'informations, voir [Procédure : Utilisez EdmGen. exe pour générer les fichiers](how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)de modèle et de mappage.
 
-- Valider un modèle existant. Pour plus d'informations, voir [Procédure : Utiliser EdmGen.exe pour valider les fichiers de modèle et mappage](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md).
+- Valider un modèle existant. Pour plus d’informations, consultez [Guide pratique pour Utilisez EdmGen. exe pour valider les fichiers](how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)de modèle et de mappage.
 
-- Générer un fichier de code C# ou Visual Basic qui contient les classes d'objets générées à partir d'un fichier de modèle conceptuel (.csdl). Pour plus d'informations, voir [Procédure : Utiliser EdmGen.exe pour générer le Code de couche objet](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-object-layer-code.md).
+- Générer un fichier de code C# ou Visual Basic qui contient les classes d'objets générées à partir d'un fichier de modèle conceptuel (.csdl). Pour plus d'informations, voir [Procédure : Utilisez EdmGen. exe pour générer le code](how-to-use-edmgen-exe-to-generate-object-layer-code.md)de couche objet.
 
-- Générez un fichier de code C# ou Visual Basic qui contient les vues prégénérées d'un modèle existant. Pour plus d’informations, [Comment : Prégénérer des vues pour améliorer les performances de requête](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100)).
+- Générez un fichier de code C# ou Visual Basic qui contient les vues prégénérées d'un modèle existant. Pour plus d’informations [, procédez comme suit : Prégénérez des vues pour améliorer les](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100))performances des requêtes.
 
-L’outil EdmGen.exe est installé dans le répertoire .NET Framework. Dans de nombreux cas, celui-ci se trouve dans C:\windows\Microsoft.NET\Framework\v4.0. Pour les systèmes 64 bits, il se trouve dans C:\windows\Microsoft.NET\Framework64\v4.0. Vous pouvez également accéder à l’outil EdmGen.exe à partir de l’invite de commandes de Visual Studio (cliquez sur **Démarrer**, pointez sur **tous les programmes**, pointez sur **Microsoft Visual Studio 2010**, pointez sur **Visual Studio Tools**, puis cliquez sur **invite de commandes de Visual Studio 2010**).
+L’outil EdmGen. exe est installé dans le répertoire .NET Framework. Dans de nombreux cas, celui-ci se trouve dans C:\windows\Microsoft.NET\Framework\v4.0. Pour les systèmes 64 bits, il se trouve dans C:\windows\Microsoft.NET\Framework64\v4.0. Vous pouvez également accéder à l’outil EdmGen. exe à partir de l’invite de commandes de Visual Studio (cliquez sur **Démarrer**, pointez sur **tous les programmes**, sur **Microsoft Visual Studio 2010**, sur **Visual Studio Tools**, puis cliquez sur **Visual Studio 2010 Invite de commandes**).
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -45,7 +45,7 @@ Lorsque vous utilisez l'outil EdmGen.exe, vous devez spécifier l'un des modes s
 
 |Option|Description|
 |------------|-----------------|
-|`/p[roject]:`\<string>|Spécifie le nom de projet à utiliser. Le nom de projet est utilisé comme valeur par défaut pour le paramètre d'espace de noms, le nom du modèle et des fichiers de mappage, le nom du fichier source de l'objet et le nom de fichier source de génération de vues. Le nom de conteneur d’entités a la valeur \<projet > contexte.|
+|`/p[roject]:`\<string>|Spécifie le nom de projet à utiliser. Le nom de projet est utilisé comme valeur par défaut pour le paramètre d'espace de noms, le nom du modèle et des fichiers de mappage, le nom du fichier source de l'objet et le nom de fichier source de génération de vues. Le nom du conteneur d’entités est \<défini sur projet > contexte.|
 |`/prov[ider]:`\<string>|Nom du fournisseur de données .NET Framework à utiliser pour générer le fichier de modèle de stockage (.ssdl). Le fournisseur par défaut est le fournisseur de données .NET Framework pour SQL Server (<xref:System.Data.SqlClient?displayProperty=nameWithType>).|
 |`/c[onnectionstring]:`\<chaîne de connexion >|Spécifie la chaîne utilisée pour se connecter à la source de données.|
 |`/incsdl:`\<file>|Spécifie le fichier .csdl ou un répertoire où se trouvent les fichiers .csdl. Cet argument peut être spécifié plusieurs fois afin de pouvoir spécifier plusieurs répertoires ou fichiers .csdl. La spécification de plusieurs répertoires peut être utile pour générer des classes (`/mode:EntityClassGeneration`) ou des vues (`/mode:ViewGeneration`) lorsque le modèle conceptuel est divisé en plusieurs fichiers. Cela peut également être utile lorsque vous voulez valider plusieurs modèles (`/mode:ValidateArtifacts`).|
@@ -60,7 +60,7 @@ Lorsque vous utilisez l'outil EdmGen.exe, vous devez spécifier l'un des modes s
 |`/language:`[VB&#124;CSharp]|Spécifie le langage des fichiers de code source générés. Le langage par défaut est C#.|
 |`/namespace:`\<string>|Spécifie l'espace de noms du modèle à utiliser. L'espace de noms est défini dans le fichier .csdl lors de l'exécution de `/mode:FullGeneration` ou de `/mode:FromSSDLGeneration`. L'espace de noms n'est pas utilisé lors de l'exécution de `/mode:EntityClassGeneration`.|
 |`/entitycontainer:`\<string>|Spécifie le nom à appliquer à l'élément `<EntityContainer>` dans le modèle et les fichiers de mappage générés.|
-|`/pl[uralize]`|Applique aux noms `Entity`, `EntitySet` et `NavigationProperty` dans le modèle conceptuel les règles de la langue anglaise pour les singuliers et les pluriels. Cette option effectuera les actions suivantes :<br /><br /> -Vérifiez tous les `EntityType` noms au singulier.<br />-Vérifiez tous les `EntitySet` noms au pluriel.<br />-Pour chaque `NavigationProperty` qui retourne au plus une entité, mettre le nom au singulier.<br />-Pour chaque `NavigationProperty` qui retourne plusieurs entités, mettre le nom au pluriel.|
+|`/pl[uralize]`|Applique aux noms `Entity`, `EntitySet` et `NavigationProperty` dans le modèle conceptuel les règles de la langue anglaise pour les singuliers et les pluriels. Cette option effectuera les actions suivantes :<br /><br /> -Définir tous `EntityType` les noms au singulier.<br />-Définir tous `EntitySet` les noms au pluriel.<br />-Pour chaque `NavigationProperty` qui retourne au plus une entité, définissez le nom au singulier.<br />-Pour chaque `NavigationProperty` qui retourne plusieurs entités, définissez le nom au pluriel.|
 |`/SuppressForeignKeyProperties or /nofk`|Empêche que des colonnes de clé étrangère soient exposées comme propriétés scalaires sur les types d'entité dans le modèle conceptuel.|
 |`/help` ou `?`|Affiche la syntaxe et les options de commande de l'outil.|
 |`/nologo`|Supprime l'affichage du message de copyright.|
@@ -68,14 +68,14 @@ Lorsque vous utilisez l'outil EdmGen.exe, vous devez spécifier l'un des modes s
 
 ## <a name="in-this-section"></a>Dans cette section
 
-[Guide pratique pour Utiliser EdmGen.exe pour générer des fichiers de modèle et mappage](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)
+[Guide pratique : Utiliser EdmGen. exe pour générer les fichiers de modèle et de mappage](how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)
 
-[Guide pratique pour Utiliser EdmGen.exe pour générer le Code de couche objet](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-generate-object-layer-code.md)
+[Guide pratique : Utiliser EdmGen. exe pour générer le code de couche objet](how-to-use-edmgen-exe-to-generate-object-layer-code.md)
 
-[Guide pratique pour Utiliser EdmGen.exe pour valider les fichiers de modèle et mappage](../../../../../docs/framework/data/adonet/ef/how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)
+[Guide pratique : Utiliser EdmGen. exe pour valider les fichiers de modèle et de mappage](how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [ADO.NET Entity Data Model Tools](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
-- [Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md)
-- [Spécifications CSDL, SSDL et MSL](../../../../../docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)
+- [Outils de Entity Data Model ADO.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [Entity Data Model](../entity-data-model.md)
+- [Spécifications CSDL, SSDL et MSL](./language-reference/csdl-ssdl-and-msl-specifications.md)
