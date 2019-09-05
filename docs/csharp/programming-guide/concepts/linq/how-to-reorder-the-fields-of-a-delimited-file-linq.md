@@ -2,12 +2,12 @@
 title: 'Procédure : Réorganiser les champs d’un fichier délimité (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4e62d82c-61b7-4f18-b9a1-86723746d7d2
-ms.openlocfilehash: 1507d0f743070f15b8e64d5dcfb1b9499470b123
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 31cb7b936f58653e6223501f3b03cd9472b92453
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592691"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70253458"
 ---
 # <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-c"></a>Procédure : Réorganiser les champs d’un fichier délimité (LINQ) (C#)
 Un fichier de valeurs séparées par des virgules (CSV) est un fichier texte qui est souvent utilisé pour stocker des données de feuille de calcul ou autres données tabulaires qui sont représentées sous forme de lignes et de colonnes. En utilisant la méthode <xref:System.String.Split%2A> pour séparer les champs, il est très facile d’interroger et de manipuler des fichiers CSV à l’aide de LINQ. En fait, la même technique peut servir à réorganiser les sections de n’importe quelle ligne de texte structurée et ne se limite donc pas aux fichiers CSV.  
@@ -18,7 +18,7 @@ Un fichier de valeurs séparées par des virgules (CSV) est un fichier texte qui
   
 1. Copiez les lignes suivantes dans un fichier texte nommé spreadsheet1.csv. Enregistrez le fichier dans votre dossier de projet.  
   
-    ```  
+    ```csv  
     Adams,Terry,120  
     Fakhouri,Fadi,116  
     Feng,Hanying,117  
