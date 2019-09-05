@@ -5,10 +5,10 @@ author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: 148a79e39c047897719e4f97efd84676b1b92636
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: MT
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 09/05/2019
 ms.locfileid: "70222831"
 ---
 # <a name="serverless-apps-architecture-patterns-and-azure-implementation"></a>Applications serverless : architecture, modèles et implémentation Azure
@@ -45,7 +45,7 @@ Auteur :
 
 > **[Jeremy Likness](https://twitter.com/jeremylikness)** , Cloud Developer Advocate senior, APEX, Microsoft Corp.
 
-Collaborateur :
+Contributeur :
 
 > **[Cecil Phillip](https://twitter.com/cecilphillip)** , Cloud Developer Advocate II, APEX, Microsoft Corp.
 
@@ -59,7 +59,7 @@ Participants et réviseurs :
 
 > **[Steve Smith](https://twitter.com/ardalis)** , propriétaire, Ardalis Services.
 
-## <a name="introduction"></a>Présentation
+## <a name="introduction"></a>Introduction
 
 Le modèle [serverless](https://azure.microsoft.com/solutions/serverless/) incarne l’évolution des plateformes cloud vers du code natif cloud pur. Il rapproche les développeurs d’une logique métier en les éloignant des problèmes d’infrastructure. Il ne s’agit pas d’un modèle qui n’implique « aucun serveur », mais plutôt d’un modèle qui implique « moins de serveurs ». Le code serverless est basé sur les événements. Le code peut être déclenché par n’importe quoi, une requête web HTTP traditionnelle, un minuteur ou le résultat du chargement d’un fichier. L’infrastructure derrière le modèle serverless permet une mise à l’échelle instantanée pour répondre à des besoins élastiques et offre une micro-facturation pour un vrai « paiement à l’utilisation. » Le modèle serverless demande de penser et d’approcher autrement la création d’applications et n’est pas la solution à tous les problèmes. En tant que développeur, vous devez déterminer :
 
