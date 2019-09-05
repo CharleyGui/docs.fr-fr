@@ -7,62 +7,62 @@ helpviewer_keywords:
 ms.assetid: 1e3f6ec0-1cac-4e1c-9c81-17d948ae5874
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8ee4df12a017429de333dd4e93df27973b658dad
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 515ea076c5eaead50b41e45e415725d0439914bc
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920678"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252206"
 ---
-# <a name="usesmallinternalthreadstacks-element"></a><span data-ttu-id="b8b22-102">\<UseSmallInternalThreadStacks >, élément</span><span class="sxs-lookup"><span data-stu-id="b8b22-102">\<UseSmallInternalThreadStacks> Element</span></span>
-<span data-ttu-id="b8b22-103">Demande que le common language runtime (CLR) réduit l’utilisation de la mémoire en spécifiant des tailles de pile explicites lorsqu’il crée certains threads qu’il utilise en interne, au lieu d’utiliser la taille de pile par défaut pour ces threads.</span><span class="sxs-lookup"><span data-stu-id="b8b22-103">Requests that the common language runtime (CLR) reduce memory use by specifying explicit stack sizes when it creates certain threads that it uses internally, instead of using the default stack size for those threads.</span></span>  
+# <a name="usesmallinternalthreadstacks-element"></a><span data-ttu-id="568d4-102">\<UseSmallInternalThreadStacks >, élément</span><span class="sxs-lookup"><span data-stu-id="568d4-102">\<UseSmallInternalThreadStacks> Element</span></span>
+<span data-ttu-id="568d4-103">Demande que le common language runtime (CLR) réduit l’utilisation de la mémoire en spécifiant des tailles de pile explicites lorsqu’il crée certains threads qu’il utilise en interne, au lieu d’utiliser la taille de pile par défaut pour ces threads.</span><span class="sxs-lookup"><span data-stu-id="568d4-103">Requests that the common language runtime (CLR) reduce memory use by specifying explicit stack sizes when it creates certain threads that it uses internally, instead of using the default stack size for those threads.</span></span>  
   
- <span data-ttu-id="b8b22-104">\<Élément de > de configuration</span><span class="sxs-lookup"><span data-stu-id="b8b22-104">\<configuration> Element</span></span>  
-<span data-ttu-id="b8b22-105">\<Élément > du Runtime</span><span class="sxs-lookup"><span data-stu-id="b8b22-105">\<runtime> Element</span></span>  
-<span data-ttu-id="b8b22-106">\<UseSmallInternalThreadStacks >, élément</span><span class="sxs-lookup"><span data-stu-id="b8b22-106">\<UseSmallInternalThreadStacks> Element</span></span>  
+<span data-ttu-id="568d4-104">[ **\<configuration>** ](../configuration-element.md)</span><span class="sxs-lookup"><span data-stu-id="568d4-104">[**\<configuration>**](../configuration-element.md)</span></span>\
+<span data-ttu-id="568d4-105">&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)</span><span class="sxs-lookup"><span data-stu-id="568d4-105">&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)</span></span>\
+<span data-ttu-id="568d4-106">&nbsp;&nbsp;&nbsp;&nbsp; **\<UseSmallInternalThreadStacks>**</span><span class="sxs-lookup"><span data-stu-id="568d4-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<UseSmallInternalThreadStacks>**</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b8b22-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b8b22-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="568d4-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="568d4-107">Syntax</span></span>  
   
 ```xml  
 <UseSmallInternalThreadStacks enabled="true|false" />  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="b8b22-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="b8b22-108">Attributes and Elements</span></span>  
- <span data-ttu-id="b8b22-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="b8b22-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="568d4-108">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="568d4-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="568d4-109">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="568d4-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="b8b22-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="b8b22-110">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="568d4-110">Attributs</span><span class="sxs-lookup"><span data-stu-id="568d4-110">Attributes</span></span>  
   
-|<span data-ttu-id="b8b22-111">Attribut</span><span class="sxs-lookup"><span data-stu-id="b8b22-111">Attribute</span></span>|<span data-ttu-id="b8b22-112">Description</span><span class="sxs-lookup"><span data-stu-id="b8b22-112">Description</span></span>|  
+|<span data-ttu-id="568d4-111">Attribut</span><span class="sxs-lookup"><span data-stu-id="568d4-111">Attribute</span></span>|<span data-ttu-id="568d4-112">Description</span><span class="sxs-lookup"><span data-stu-id="568d4-112">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="b8b22-113">enabled</span><span class="sxs-lookup"><span data-stu-id="b8b22-113">enabled</span></span>|<span data-ttu-id="b8b22-114">Attribut requis.</span><span class="sxs-lookup"><span data-stu-id="b8b22-114">Required attribute.</span></span><br /><br /> <span data-ttu-id="b8b22-115">Spécifie s’il faut demander que le CLR utilise des tailles de pile explicites au lieu de la taille de la pile par défaut lorsqu’il crée certains threads qu’il utilise en interne.</span><span class="sxs-lookup"><span data-stu-id="b8b22-115">Specifies whether to request that the CLR use explicit stack sizes instead of the default stack size when it creates certain threads that it uses internally.</span></span> <span data-ttu-id="b8b22-116">Les tailles de pile explicites sont inférieures à la taille de pile par défaut de 1 Mo.</span><span class="sxs-lookup"><span data-stu-id="b8b22-116">The explicit stack sizes are smaller than the default stack size of 1 MB.</span></span>|  
+|<span data-ttu-id="568d4-113">enabled</span><span class="sxs-lookup"><span data-stu-id="568d4-113">enabled</span></span>|<span data-ttu-id="568d4-114">Attribut requis.</span><span class="sxs-lookup"><span data-stu-id="568d4-114">Required attribute.</span></span><br /><br /> <span data-ttu-id="568d4-115">Spécifie s’il faut demander que le CLR utilise des tailles de pile explicites au lieu de la taille de la pile par défaut lorsqu’il crée certains threads qu’il utilise en interne.</span><span class="sxs-lookup"><span data-stu-id="568d4-115">Specifies whether to request that the CLR use explicit stack sizes instead of the default stack size when it creates certain threads that it uses internally.</span></span> <span data-ttu-id="568d4-116">Les tailles de pile explicites sont inférieures à la taille de pile par défaut de 1 Mo.</span><span class="sxs-lookup"><span data-stu-id="568d4-116">The explicit stack sizes are smaller than the default stack size of 1 MB.</span></span>|  
   
-## <a name="enabled-attribute"></a><span data-ttu-id="b8b22-117">Attribut enabled</span><span class="sxs-lookup"><span data-stu-id="b8b22-117">enabled Attribute</span></span>  
+## <a name="enabled-attribute"></a><span data-ttu-id="568d4-117">Attribut enabled</span><span class="sxs-lookup"><span data-stu-id="568d4-117">enabled Attribute</span></span>  
   
-|<span data-ttu-id="b8b22-118">Valeur</span><span class="sxs-lookup"><span data-stu-id="b8b22-118">Value</span></span>|<span data-ttu-id="b8b22-119">Description</span><span class="sxs-lookup"><span data-stu-id="b8b22-119">Description</span></span>|  
+|<span data-ttu-id="568d4-118">Valeur</span><span class="sxs-lookup"><span data-stu-id="568d4-118">Value</span></span>|<span data-ttu-id="568d4-119">Description</span><span class="sxs-lookup"><span data-stu-id="568d4-119">Description</span></span>|  
 |-----------|-----------------|  
-|<span data-ttu-id="b8b22-120">true</span><span class="sxs-lookup"><span data-stu-id="b8b22-120">true</span></span>|<span data-ttu-id="b8b22-121">Demander des tailles de pile explicites.</span><span class="sxs-lookup"><span data-stu-id="b8b22-121">Request explicit stack sizes.</span></span>|  
-|<span data-ttu-id="b8b22-122">false</span><span class="sxs-lookup"><span data-stu-id="b8b22-122">false</span></span>|<span data-ttu-id="b8b22-123">Utilisez la taille de pile par défaut.</span><span class="sxs-lookup"><span data-stu-id="b8b22-123">Use the default stack size.</span></span> <span data-ttu-id="b8b22-124">Il s’agit de la valeur par défaut pour le .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="b8b22-124">This is the default for the .NET Framework 4.</span></span>|  
+|<span data-ttu-id="568d4-120">true</span><span class="sxs-lookup"><span data-stu-id="568d4-120">true</span></span>|<span data-ttu-id="568d4-121">Demander des tailles de pile explicites.</span><span class="sxs-lookup"><span data-stu-id="568d4-121">Request explicit stack sizes.</span></span>|  
+|<span data-ttu-id="568d4-122">false</span><span class="sxs-lookup"><span data-stu-id="568d4-122">false</span></span>|<span data-ttu-id="568d4-123">Utilisez la taille de pile par défaut.</span><span class="sxs-lookup"><span data-stu-id="568d4-123">Use the default stack size.</span></span> <span data-ttu-id="568d4-124">Il s’agit de la valeur par défaut pour le .NET Framework 4.</span><span class="sxs-lookup"><span data-stu-id="568d4-124">This is the default for the .NET Framework 4.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="b8b22-125">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="b8b22-125">Child Elements</span></span>  
- <span data-ttu-id="b8b22-126">Aucun.</span><span class="sxs-lookup"><span data-stu-id="b8b22-126">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="568d4-125">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="568d4-125">Child Elements</span></span>  
+ <span data-ttu-id="568d4-126">Aucun.</span><span class="sxs-lookup"><span data-stu-id="568d4-126">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="b8b22-127">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="b8b22-127">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="568d4-127">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="568d4-127">Parent Elements</span></span>  
   
-|<span data-ttu-id="b8b22-128">Élément</span><span class="sxs-lookup"><span data-stu-id="b8b22-128">Element</span></span>|<span data-ttu-id="b8b22-129">Description</span><span class="sxs-lookup"><span data-stu-id="b8b22-129">Description</span></span>|  
+|<span data-ttu-id="568d4-128">Élément</span><span class="sxs-lookup"><span data-stu-id="568d4-128">Element</span></span>|<span data-ttu-id="568d4-129">Description</span><span class="sxs-lookup"><span data-stu-id="568d4-129">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|<span data-ttu-id="b8b22-130">Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="b8b22-130">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
-|`runtime`|<span data-ttu-id="b8b22-131">Contient des informations sur les liaisons d’assembly et l’opération garbage collection.</span><span class="sxs-lookup"><span data-stu-id="b8b22-131">Contains information about assembly binding and garbage collection.</span></span>|  
+|`configuration`|<span data-ttu-id="568d4-130">Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="568d4-130">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`runtime`|<span data-ttu-id="568d4-131">Contient des informations sur les liaisons d’assembly et l’opération garbage collection.</span><span class="sxs-lookup"><span data-stu-id="568d4-131">Contains information about assembly binding and garbage collection.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="b8b22-132">Notes</span><span class="sxs-lookup"><span data-stu-id="b8b22-132">Remarks</span></span>  
- <span data-ttu-id="b8b22-133">Cet élément de configuration est utilisé pour demander une utilisation réduite de la mémoire virtuelle dans un processus, car les tailles de thread explicites utilisées par le CLR pour ses threads internes, si la demande est honorée, sont inférieures à la taille par défaut.</span><span class="sxs-lookup"><span data-stu-id="b8b22-133">This configuration element is used to request reduced virtual memory use in a process, because the explicit thread sizes that the CLR uses for its internal threads, if the request is honored, are smaller than the default size.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="568d4-132">Notes</span><span class="sxs-lookup"><span data-stu-id="568d4-132">Remarks</span></span>  
+ <span data-ttu-id="568d4-133">Cet élément de configuration est utilisé pour demander une utilisation réduite de la mémoire virtuelle dans un processus, car les tailles de thread explicites utilisées par le CLR pour ses threads internes, si la demande est honorée, sont inférieures à la taille par défaut.</span><span class="sxs-lookup"><span data-stu-id="568d4-133">This configuration element is used to request reduced virtual memory use in a process, because the explicit thread sizes that the CLR uses for its internal threads, if the request is honored, are smaller than the default size.</span></span>  
   
 > [!IMPORTANT]
-> <span data-ttu-id="b8b22-134">Cet élément de configuration est une demande au CLR plutôt qu’une exigence absolue.</span><span class="sxs-lookup"><span data-stu-id="b8b22-134">This configuration element is a request to the CLR rather than an absolute requirement.</span></span> <span data-ttu-id="b8b22-135">Dans le .NET Framework 4, la demande est honorée uniquement pour l’architecture x86.</span><span class="sxs-lookup"><span data-stu-id="b8b22-135">In the .NET Framework 4, the request is honored only for the x86 architecture.</span></span> <span data-ttu-id="b8b22-136">Cet élément peut être complètement ignoré dans les futures versions du CLR ou remplacé par des tailles de pile explicites qui sont toujours utilisées pour les threads internes sélectionnés.</span><span class="sxs-lookup"><span data-stu-id="b8b22-136">This element might be ignored completely in future versions of the CLR, or replaced by explicit stack sizes that are always used for selected internal threads.</span></span>  
+> <span data-ttu-id="568d4-134">Cet élément de configuration est une demande au CLR plutôt qu’une exigence absolue.</span><span class="sxs-lookup"><span data-stu-id="568d4-134">This configuration element is a request to the CLR rather than an absolute requirement.</span></span> <span data-ttu-id="568d4-135">Dans le .NET Framework 4, la demande est honorée uniquement pour l’architecture x86.</span><span class="sxs-lookup"><span data-stu-id="568d4-135">In the .NET Framework 4, the request is honored only for the x86 architecture.</span></span> <span data-ttu-id="568d4-136">Cet élément peut être complètement ignoré dans les futures versions du CLR ou remplacé par des tailles de pile explicites qui sont toujours utilisées pour les threads internes sélectionnés.</span><span class="sxs-lookup"><span data-stu-id="568d4-136">This element might be ignored completely in future versions of the CLR, or replaced by explicit stack sizes that are always used for selected internal threads.</span></span>  
   
- <span data-ttu-id="b8b22-137">La spécification de cet élément de configuration pour la fiabilité pour une plus petite utilisation de la mémoire virtuelle si le CLR honore la demande, parce que les plus petites tailles de pile peuvent potentiellement rendre les débordements de pile plus probables.</span><span class="sxs-lookup"><span data-stu-id="b8b22-137">Specifying this configuration element trades reliability for smaller virtual memory use if the CLR honors the request, because smaller stack sizes could potentially make stack overflows more likely.</span></span>  
+ <span data-ttu-id="568d4-137">La spécification de cet élément de configuration pour la fiabilité pour une plus petite utilisation de la mémoire virtuelle si le CLR honore la demande, parce que les plus petites tailles de pile peuvent potentiellement rendre les débordements de pile plus probables.</span><span class="sxs-lookup"><span data-stu-id="568d4-137">Specifying this configuration element trades reliability for smaller virtual memory use if the CLR honors the request, because smaller stack sizes could potentially make stack overflows more likely.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="b8b22-138">Exemple</span><span class="sxs-lookup"><span data-stu-id="b8b22-138">Example</span></span>  
- <span data-ttu-id="b8b22-139">L’exemple suivant montre comment demander que le CLR utilise des tailles de pile explicites pour certains threads qu’il utilise en interne.</span><span class="sxs-lookup"><span data-stu-id="b8b22-139">The following example shows how to request that the CLR use explicit stack sizes for certain threads that it uses internally.</span></span>  
+## <a name="example"></a><span data-ttu-id="568d4-138">Exemple</span><span class="sxs-lookup"><span data-stu-id="568d4-138">Example</span></span>  
+ <span data-ttu-id="568d4-139">L’exemple suivant montre comment demander que le CLR utilise des tailles de pile explicites pour certains threads qu’il utilise en interne.</span><span class="sxs-lookup"><span data-stu-id="568d4-139">The following example shows how to request that the CLR use explicit stack sizes for certain threads that it uses internally.</span></span>  
   
 ```xml  
 <configuration>  
@@ -72,7 +72,7 @@ ms.locfileid: "69920678"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="b8b22-140">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b8b22-140">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="568d4-140">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="568d4-140">See also</span></span>
 
-- [<span data-ttu-id="b8b22-141">Schéma des paramètres d’exécution</span><span class="sxs-lookup"><span data-stu-id="b8b22-141">Runtime Settings Schema</span></span>](index.md)
-- [<span data-ttu-id="b8b22-142">Schéma des fichiers de configuration</span><span class="sxs-lookup"><span data-stu-id="b8b22-142">Configuration File Schema</span></span>](../index.md)
+- [<span data-ttu-id="568d4-141">Schéma des paramètres d’exécution</span><span class="sxs-lookup"><span data-stu-id="568d4-141">Runtime Settings Schema</span></span>](index.md)
+- [<span data-ttu-id="568d4-142">Schéma des fichiers de configuration</span><span class="sxs-lookup"><span data-stu-id="568d4-142">Configuration File Schema</span></span>](../index.md)

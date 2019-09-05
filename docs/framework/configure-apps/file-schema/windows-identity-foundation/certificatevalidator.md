@@ -3,22 +3,23 @@ title: <certificateValidator>
 ms.date: 03/30/2017
 ms.assetid: 86161897-c20f-4ad8-9d7f-050c247251bf
 author: BrucePerlerMS
-ms.openlocfilehash: c25f183679f41f51ffee4f482bfe7a64763647d9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 30f81dd5948a7d366c1116cffd347c85a396f5ae
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941905"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252126"
 ---
-# <a name="certificatevalidator"></a><span data-ttu-id="af1a0-101">\<certificateValidator></span><span class="sxs-lookup"><span data-stu-id="af1a0-101">\<certificateValidator></span></span>
-<span data-ttu-id="af1a0-102">Spécifie un type personnalisé pour la validation du certificat.</span><span class="sxs-lookup"><span data-stu-id="af1a0-102">Specifies a custom type for certificate validation.</span></span> <span data-ttu-id="af1a0-103">Ce type est utilisé uniquement si l' `certificateValidationMode` attribut de l' [ \<élément certificateValidation >](certificatevalidation.md) a la valeur «Custom».</span><span class="sxs-lookup"><span data-stu-id="af1a0-103">This type is used only if the `certificateValidationMode` attribute of the [\<certificateValidation>](certificatevalidation.md) element is set to "Custom".</span></span>  
+# <a name="certificatevalidator"></a><span data-ttu-id="20de9-101">\<certificateValidator></span><span class="sxs-lookup"><span data-stu-id="20de9-101">\<certificateValidator></span></span>
+<span data-ttu-id="20de9-102">Spécifie un type personnalisé pour la validation du certificat.</span><span class="sxs-lookup"><span data-stu-id="20de9-102">Specifies a custom type for certificate validation.</span></span> <span data-ttu-id="20de9-103">Ce type est utilisé uniquement si l' `certificateValidationMode` attribut de l' [ \<élément certificateValidation >](certificatevalidation.md) a la valeur « Custom ».</span><span class="sxs-lookup"><span data-stu-id="20de9-103">This type is used only if the `certificateValidationMode` attribute of the [\<certificateValidation>](certificatevalidation.md) element is set to "Custom".</span></span>  
   
- <span data-ttu-id="af1a0-104">\<system.identityModel></span><span class="sxs-lookup"><span data-stu-id="af1a0-104">\<system.identityModel></span></span>  
-<span data-ttu-id="af1a0-105">\<identityConfiguration></span><span class="sxs-lookup"><span data-stu-id="af1a0-105">\<identityConfiguration></span></span>  
-<span data-ttu-id="af1a0-106">\<certificateValidation></span><span class="sxs-lookup"><span data-stu-id="af1a0-106">\<certificateValidation></span></span>  
-<span data-ttu-id="af1a0-107">\<certificateValidator></span><span class="sxs-lookup"><span data-stu-id="af1a0-107">\<certificateValidator></span></span>  
+<span data-ttu-id="20de9-104">[ **\<configuration>** ](../configuration-element.md)</span><span class="sxs-lookup"><span data-stu-id="20de9-104">[**\<configuration>**](../configuration-element.md)</span></span>\
+<span data-ttu-id="20de9-105">&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)</span><span class="sxs-lookup"><span data-stu-id="20de9-105">&nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)</span></span>\
+<span data-ttu-id="20de9-106">&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)</span><span class="sxs-lookup"><span data-stu-id="20de9-106">&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityConfiguration>**](identityconfiguration.md)</span></span>\
+<span data-ttu-id="20de9-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<certificateValidation >** ](certificatevalidation.md)</span><span class="sxs-lookup"><span data-stu-id="20de9-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<certificateValidation>**](certificatevalidation.md)</span></span>\
+<span data-ttu-id="20de9-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<certificateValidator >**</span><span class="sxs-lookup"><span data-stu-id="20de9-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<certificateValidator>**</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="af1a0-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="af1a0-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="20de9-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="20de9-109">Syntax</span></span>  
   
 ```xml  
 <system.identityModel>  
@@ -31,25 +32,25 @@ ms.locfileid: "69941905"
 </system.identityModel>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="af1a0-109">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="af1a0-109">Attributes and Elements</span></span>  
- <span data-ttu-id="af1a0-110">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="af1a0-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="20de9-110">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="20de9-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="20de9-111">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="20de9-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="af1a0-111">Attributs</span><span class="sxs-lookup"><span data-stu-id="af1a0-111">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="20de9-112">Attributs</span><span class="sxs-lookup"><span data-stu-id="20de9-112">Attributes</span></span>  
   
-|<span data-ttu-id="af1a0-112">Attribut</span><span class="sxs-lookup"><span data-stu-id="af1a0-112">Attribute</span></span>|<span data-ttu-id="af1a0-113">Description</span><span class="sxs-lookup"><span data-stu-id="af1a0-113">Description</span></span>|  
+|<span data-ttu-id="20de9-113">Attribut</span><span class="sxs-lookup"><span data-stu-id="20de9-113">Attribute</span></span>|<span data-ttu-id="20de9-114">Description</span><span class="sxs-lookup"><span data-stu-id="20de9-114">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="af1a0-114">type</span><span class="sxs-lookup"><span data-stu-id="af1a0-114">type</span></span>|<span data-ttu-id="af1a0-115">Spécifie un type personnalisé qui dérive de <xref:System.IdentityModel.Selectors.X509CertificateValidator> la classe.</span><span class="sxs-lookup"><span data-stu-id="af1a0-115">Specifies a custom type that derives from the <xref:System.IdentityModel.Selectors.X509CertificateValidator> class.</span></span> <span data-ttu-id="af1a0-116">Affectez `certificateValidationMode` la valeur "Custom" à l’attribut de l' [ \<élément certificateValidation >](certificatevalidation.md) pour utiliser ce type.</span><span class="sxs-lookup"><span data-stu-id="af1a0-116">Set the `certificateValidationMode` attribute of the [\<certificateValidation>](certificatevalidation.md) element to "Custom" to use this type.</span></span> <span data-ttu-id="af1a0-117">Pour plus d’informations sur la spécification de `type` l’attribut, consultez [références de types personnalisés](../windows-workflow-foundation/index.md).</span><span class="sxs-lookup"><span data-stu-id="af1a0-117">For more information about how to specify the `type` attribute, see [Custom Type References](../windows-workflow-foundation/index.md).</span></span> <span data-ttu-id="af1a0-118">facultatif.</span><span class="sxs-lookup"><span data-stu-id="af1a0-118">Optional.</span></span>|  
+|<span data-ttu-id="20de9-115">type</span><span class="sxs-lookup"><span data-stu-id="20de9-115">type</span></span>|<span data-ttu-id="20de9-116">Spécifie un type personnalisé qui dérive de <xref:System.IdentityModel.Selectors.X509CertificateValidator> la classe.</span><span class="sxs-lookup"><span data-stu-id="20de9-116">Specifies a custom type that derives from the <xref:System.IdentityModel.Selectors.X509CertificateValidator> class.</span></span> <span data-ttu-id="20de9-117">Affectez `certificateValidationMode` la valeur "Custom" à l’attribut de l' [ \<élément certificateValidation >](certificatevalidation.md) pour utiliser ce type.</span><span class="sxs-lookup"><span data-stu-id="20de9-117">Set the `certificateValidationMode` attribute of the [\<certificateValidation>](certificatevalidation.md) element to "Custom" to use this type.</span></span> <span data-ttu-id="20de9-118">Pour plus d’informations sur la spécification de `type` l’attribut, consultez [références de types personnalisés](../windows-workflow-foundation/index.md).</span><span class="sxs-lookup"><span data-stu-id="20de9-118">For more information about how to specify the `type` attribute, see [Custom Type References](../windows-workflow-foundation/index.md).</span></span> <span data-ttu-id="20de9-119">facultatif.</span><span class="sxs-lookup"><span data-stu-id="20de9-119">Optional.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="af1a0-119">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="af1a0-119">Child Elements</span></span>  
- <span data-ttu-id="af1a0-120">Aucun</span><span class="sxs-lookup"><span data-stu-id="af1a0-120">None</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="20de9-120">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="20de9-120">Child Elements</span></span>  
+ <span data-ttu-id="20de9-121">Aucun</span><span class="sxs-lookup"><span data-stu-id="20de9-121">None</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="af1a0-121">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="af1a0-121">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="20de9-122">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="20de9-122">Parent Elements</span></span>  
   
-|<span data-ttu-id="af1a0-122">Élément</span><span class="sxs-lookup"><span data-stu-id="af1a0-122">Element</span></span>|<span data-ttu-id="af1a0-123">Description</span><span class="sxs-lookup"><span data-stu-id="af1a0-123">Description</span></span>|  
+|<span data-ttu-id="20de9-123">Élément</span><span class="sxs-lookup"><span data-stu-id="20de9-123">Element</span></span>|<span data-ttu-id="20de9-124">Description</span><span class="sxs-lookup"><span data-stu-id="20de9-124">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="af1a0-124">\<certificateValidation></span><span class="sxs-lookup"><span data-stu-id="af1a0-124">\<certificateValidation></span></span>](certificatevalidation.md)|<span data-ttu-id="af1a0-125">Contrôle les paramètres que les gestionnaires de jetons utilisent pour valider les certificats.</span><span class="sxs-lookup"><span data-stu-id="af1a0-125">Controls the settings that token handlers use to validate certificates.</span></span>|  
+|[<span data-ttu-id="20de9-125">\<certificateValidation></span><span class="sxs-lookup"><span data-stu-id="20de9-125">\<certificateValidation></span></span>](certificatevalidation.md)|<span data-ttu-id="20de9-126">Contrôle les paramètres que les gestionnaires de jetons utilisent pour valider les certificats.</span><span class="sxs-lookup"><span data-stu-id="20de9-126">Controls the settings that token handlers use to validate certificates.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="af1a0-126">Exemples</span><span class="sxs-lookup"><span data-stu-id="af1a0-126">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="20de9-127">Exemple</span><span class="sxs-lookup"><span data-stu-id="20de9-127">Example</span></span>  
   
 ```xml  
 <certificateValidation certificateValidationMode="Custom"  
