@@ -2,15 +2,15 @@
 title: BETWEEN (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 4dcdd754-ae01-4e78-bf28-8a117fb2b73e
-ms.openlocfilehash: eae4387bcd5cbaf381ebf7169b6bc54d60328377
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 41036e629837bd5861368df545bed9423eac5b23
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59309301"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251294"
 ---
 # <a name="between-entity-sql"></a>BETWEEN (Entity SQL)
-Détermine si une expression a pour résultat une valeur contenue dans une plage spécifiée. Le [!INCLUDE[esql](../../../../../../includes/esql-md.md)] entre l’expression a les mêmes fonctionnalités que l’expression Transact-SQL BETWEEN.  
+Détermine si une expression a pour résultat une valeur contenue dans une plage spécifiée. L' [!INCLUDE[esql](../../../../../../includes/esql-md.md)] expression between a les mêmes fonctionnalités que Transact-SQL entre les expressions.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,12 +38,12 @@ expression [ NOT ] BETWEEN begin_expression AND end_expression
  `true` si `expression` est entre la plage indiquée par `begin_expression` et `end_expression` ; sinon, `false`. La valeur `null` est retournée si `expression` a la valeur `null` ou si `begin_expression` ou `end_expression` a la valeur `null`.  
   
 ## <a name="remarks"></a>Notes  
- Pour spécifier un intervalle exclusif, utilisez le signe supérieur à (>) et inférieur à (<) opérateurs place de BETWEEN.  
+ Pour spécifier une plage exclusive, utilisez les opérateurs « supérieur à » (>) et « inférieur à » (<) au lieu de BETWEEN.  
   
 ## <a name="example"></a>Exemple  
  La requête Entity SQL ci-dessous utilise l'opérateur BETWEEN pour déterminer si une expression génère une valeur située dans une plage spécifiée. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite dans [Comment : Exécuter une requête qui retourne des résultats StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-structuraltype-results.md)de StructuralType.  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   
@@ -51,4 +51,4 @@ expression [ NOT ] BETWEEN begin_expression AND end_expression
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Référence Entity SQL](entity-sql-reference.md)

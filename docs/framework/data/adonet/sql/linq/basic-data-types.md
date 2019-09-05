@@ -2,12 +2,12 @@
 title: Types de données de base
 ms.date: 03/30/2017
 ms.assetid: eca2c472-9548-4800-bd31-5d8d9f11752b
-ms.openlocfilehash: b01a49afa99fc7ecdb7a113a5056e37d901527a1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e85adb928925bf161e6e2d6ef935a20606f8eb32
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964067"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248025"
 ---
 # <a name="basic-data-types"></a>Types de données de base
 Les requêtes LINQ to SQL sont traduites en données Transact-SQL avant d'être exécutées sur Microsoft SQL Server. LINQ to SQL prend en charge une grande partie des fonctionnalités intégrées que SQL Server prend en charge pour les types de données de base.  
@@ -18,11 +18,11 @@ Les requêtes LINQ to SQL sont traduites en données Transact-SQL avant d'êtr
 ## <a name="equality-operators"></a>Opérateurs d'égalité  
  LINQ to SQL prend en charge les opérateurs d'égalité suivants sur les types de données de base à l'intérieur des requêtes LINQ to SQL :  
   
-- Opérateur d’égalité et d’inégalité: Les opérateurs d’égalité et d’inégalité sont pris <xref:System.Boolean>en <xref:System.DateTime>charge pour <xref:System.TimeSpan> les types numériques,, et. Pour plus d’informations sur `=` les `<>`opérateurs Visual Basic et, consultez [opérateurs de comparaison](../../../../../visual-basic/language-reference/operators/comparison-operators.md). Pour plus d’informations C# sur les `==` opérateurs `!=`de comparaison et, consultez [opérateurs d’égalité](../../../../../csharp/language-reference/operators/equality-operators.md).
+- Opérateur d’égalité et d’inégalité : Les opérateurs d’égalité et d’inégalité sont pris <xref:System.Boolean>en <xref:System.DateTime>charge pour <xref:System.TimeSpan> les types numériques,, et. Pour plus d’informations sur `=` les `<>`opérateurs Visual Basic et, consultez [opérateurs de comparaison](../../../../../visual-basic/language-reference/operators/comparison-operators.md). Pour plus d’informations C# sur les `==` opérateurs `!=`de comparaison et, consultez [opérateurs d’égalité](../../../../../csharp/language-reference/operators/equality-operators.md).
   
-- Opérateur is: L' `IS` opérateur a une traduction prise en charge lorsque le mappage d’héritage est utilisé. Il peut être utilisé à la place du test direct de la colonne de discriminateur afin de déterminer si un objet correspond à un type d'entité spécifique et se traduit en un contrôle sur la colonne de discriminateur. Pour plus d’informations sur les opérateurs C# Visual Basic et is, consultez [opérateur is](../../../../../visual-basic/language-reference/operators/is-operator.md) et [is](../../../../../csharp/language-reference/operators/type-testing-and-cast.md#is-operator).  
+- Opérateur is : L' `IS` opérateur a une traduction prise en charge lorsque le mappage d’héritage est utilisé. Il peut être utilisé à la place du test direct de la colonne de discriminateur afin de déterminer si un objet correspond à un type d'entité spécifique et se traduit en un contrôle sur la colonne de discriminateur. Pour plus d’informations sur les opérateurs C# Visual Basic et is, consultez [opérateur is](../../../../../visual-basic/language-reference/operators/is-operator.md) et [is](../../../../../csharp/language-reference/operators/type-testing-and-cast.md#is-operator).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mappage de type SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)
-- [Fonctions et types de données](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+- [Mappage de type SQL-CLR](sql-clr-type-mapping.md)
+- [Fonctions et types de données](data-types-and-functions.md)

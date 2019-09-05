@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: aedbecc1-c33c-4fb4-8861-fdf7e1dc6b8a
-ms.openlocfilehash: 08cc8aedac545ffa5648034119fc2267c860d499
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 63f4cb3cbb90afc37629b336972b5e09d20346b3
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963290"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70247527"
 ---
 # <a name="customizing-operations-by-using-stored-procedures"></a>Personnalisation d'opérations à l'aide de procédures stockées
 Les procédures stockées représentent une approche courante de la substitution du comportement par défaut. Les exemples de cette rubrique vous indiquent comment utiliser des wrappers de méthodes générés pour les procédures stockées et comment appeler directement des procédures stockées.  
@@ -18,7 +18,7 @@ Les procédures stockées représentent une approche courante de la substitution
  Si vous utilisez Visual Studio, vous pouvez utiliser la Concepteur Objet Relationnel pour assigner des procédures stockées afin d’effectuer des insertions, des mises à jour et des suppressions.  
   
 > [!NOTE]
-> Pour relire des valeurs générées par une base de données, utilisez des paramètres de sortie dans vos procédures stockées. Si vous ne pouvez pas utiliser de paramètres de sortie, écrivez une implémentation de méthode partielle au lieu de vous appuyer sur les substitutions générées par l’Concepteur Objet Relationnel. Les membres mappés aux valeurs générées par une base de données doivent avoir des valeurs appropriées une fois que les opérations `INSERT` ou `UPDATE` ont abouti avec succès. Pour plus d’informations, consultez [responsabilités du développeur en matière de substitution du comportement par défaut](../../../../../../docs/framework/data/adonet/sql/linq/responsibilities-of-the-developer-in-overriding-default-behavior.md).  
+> Pour relire des valeurs générées par une base de données, utilisez des paramètres de sortie dans vos procédures stockées. Si vous ne pouvez pas utiliser de paramètres de sortie, écrivez une implémentation de méthode partielle au lieu de vous appuyer sur les substitutions générées par l’Concepteur Objet Relationnel. Les membres mappés aux valeurs générées par une base de données doivent avoir des valeurs appropriées une fois que les opérations `INSERT` ou `UPDATE` ont abouti avec succès. Pour plus d’informations, consultez [responsabilités du développeur en matière de substitution du comportement par défaut](responsibilities-of-the-developer-in-overriding-default-behavior.md).  
   
 ## <a name="example"></a>Exemple  
   
@@ -49,4 +49,4 @@ Les procédures stockées représentent une approche courante de la substitution
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Responsabilités du développeur en matière de substitution du comportement par défaut](../../../../../../docs/framework/data/adonet/sql/linq/responsibilities-of-the-developer-in-overriding-default-behavior.md)
+- [Responsabilités du développeur en matière de substitution du comportement par défaut](responsibilities-of-the-developer-in-overriding-default-behavior.md)

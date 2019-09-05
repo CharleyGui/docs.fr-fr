@@ -2,16 +2,16 @@
 title: Mappage de la méthode CLR aux fonctions de chaînes canoniques
 ms.date: 03/30/2017
 ms.assetid: e3363261-2cb8-4b54-9555-2870be99b929
-ms.openlocfilehash: 16d447e82959f5ade7210b36dcf9d06bed9c9b00
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6f14ad8d9e8f919fe820447cc991b102319b38d5
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61605715"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251226"
 ---
 # <a name="clr-method-to-canonical-function-mapping"></a>Mappage de la méthode CLR aux fonctions de chaînes canoniques
 
-Entity Framework fournit un ensemble de fonctions canoniques chargées d'implémenter des fonctionnalités communes à de nombreux systèmes de base de données, notamment la manipulation de chaînes et les fonctions mathématiques. Cela permet aux développeurs de cibler un large éventail de systèmes de base de données. Lorsqu'elles sont appelées via une technologie de requête comme LINQ to Entities, ces fonctions canoniques sont traduites dans la fonction de magasin correspondante du fournisseur utilisé. Les appels de fonction peuvent ainsi être exprimés sous une forme commune dans toutes les sources de données, ce qui procure une expérience de requête cohérente. Les opérateurs au niveau du bit AND, OR, NOT et XOR sont également mappés à des fonctions canoniques lorsque l'opérande est de type numérique. Dans le cas des opérandes booléens, les opérateurs au niveau du bit AND, OR, NOT et XOR calculent les opérations logiques AND, OR, NOT et XOR de leurs opérandes. Pour plus d’informations, consultez [fonctions canoniques](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md).
+Entity Framework fournit un ensemble de fonctions canoniques chargées d'implémenter des fonctionnalités communes à de nombreux systèmes de base de données, notamment la manipulation de chaînes et les fonctions mathématiques. Cela permet aux développeurs de cibler un large éventail de systèmes de base de données. Lorsqu'elles sont appelées via une technologie de requête comme LINQ to Entities, ces fonctions canoniques sont traduites dans la fonction de magasin correspondante du fournisseur utilisé. Les appels de fonction peuvent ainsi être exprimés sous une forme commune dans toutes les sources de données, ce qui procure une expérience de requête cohérente. Les opérateurs au niveau du bit AND, OR, NOT et XOR sont également mappés à des fonctions canoniques lorsque l'opérande est de type numérique. Dans le cas des opérandes booléens, les opérateurs au niveau du bit AND, OR, NOT et XOR calculent les opérations logiques AND, OR, NOT et XOR de leurs opérandes. Pour plus d’informations, consultez [fonctions canoniques](canonical-functions.md).
 
 Pour les scénarios LINQ, les requêtes exécutées sur Entity Framework impliquent le mappage de certaines méthodes CLR aux méthodes au niveau de la source de données sous-jacente au moyen de fonctions canoniques. Les appels de méthode d'une requête LINQ to Entities qui ne sont pas explicitement mappés à une fonction canonique entraîneront la levée d'une exception d'exécution <xref:System.NotSupportedException>.
 
@@ -41,16 +41,16 @@ Pour les scénarios LINQ, les requêtes exécutées sur Entity Framework impliqu
 |Méthode System.String (d'instance)|Fonction canonique|Notes|
 |---------------------------------------|------------------------|-----------|
 |Boolean Contains(String `value`)|`this` LIKE '%`value`%'|Si `value` n’est pas une constante, cela mappe à IndexOf (`this`, `value`) > 0|
-|Boolean EndsWith(String `value`)|`this` COMME `'` % `value`'|Si `value` n'est pas une constante, cela mappe à Right (`this`, length(`value`)) = `value`.|
+|Boolean EndsWith(String `value`)|`this`LIKE `'` '% `value`|Si `value` n'est pas une constante, cela mappe à Right (`this`, length(`value`)) = `value`.|
 |Boolean StartsWith(String `value`)|`this` LIKE '`value`%'|Si `value` n'est pas une constante, cela mappe à IndexOf (`this`, `value`) = 1.|
 |Longueur|Length(`this`)||
 |Int32 IndexOf(String `value`)|IndexOf(`this`, `value`) - 1||
 |System.String Insert(Int32 `startIndex`, String `value`)|Concat(Concat(Substring(`this`, 1, `startIndex`), `value`), Substring(`this`, `startIndex`+1, Length(`this`) - `startIndex`))||
 |System.String Remove(Int32 `startIndex`)|Substring(`this`, 1, `startIndex`)||
-|System.String Remove(Int32 `startIndex`, Int32 `count`)|Concat (sous-chaîne (`this`, 1, `startIndex`), Substring (`this`, `startIndex`  +  `count` + 1, la longueur (`this`)-(`startIndex` + `count`)))|La méthode Remove(`startIndex`, `count`) n'est prise en charge que si `count` est un entier supérieur ou égal à 0.|
+|System.String Remove(Int32 `startIndex`, Int32 `count`)|Concat (sous-chaîne`this`(, 1 `startIndex`,), sous-`this`chaîne `startIndex` (, +   +  `count` + 1,`this`longueur ()`startIndex`-(`count`)))|La méthode Remove(`startIndex`, `count`) n'est prise en charge que si `count` est un entier supérieur ou égal à 0.|
 |System.String Replace(String `oldValue`, String `newValue`)|Replace(`this`, `oldValue`, `newValue`)||
 |System.String Substring(Int32 `startIndex`)|Substring(`this`, `startIndex` +1, Length(`this`) - `startIndex`)||
-|System.String Substring(Int32 `startIndex`, Int32 `length`)|SUBSTRING (`this`, `startIndex` + 1, `length`)||
+|System.String Substring(Int32 `startIndex`, Int32 `length`)|Substring (`this`, `startIndex` + 1, `length`)||
 |System.String ToLower()|ToLower(`this`)||
 |System.String ToUpper()|ToUpper(`this`)||
 |System.String Trim()|Trim(`this`)||
@@ -66,12 +66,12 @@ Pour les scénarios LINQ, les requêtes exécutées sur Entity Framework impliqu
 |System.DateTime.Now|CurrentDateTime()||
 |System.DateTime.UtcNow|CurrentUtcDateTime()||
 |Boolean op_Equality(DateTime `d1`, DateTime `d2`)|= (opérateur)||
-|Boolean op_GreaterThan(DateTime `t1`, DateTime `t2`)|> opérateur||
+|Boolean op_GreaterThan(DateTime `t1`, DateTime `t2`)|opérateur >||
 |Boolean op_GreaterThanOrEqual(DateTime `t1`, DateTime `t2`)|> =, opérateur||
 |Boolean op_Inequality(DateTime `t1`, DateTime `t2`)|!= (opérateur)||
-|Boolean op_LessThan (DateTime `t1`, DateTime `t2`)|< opérateur||
+|Op_LessThan booléen (DateTime `t1`, DateTime `t2`)|opérateur <||
 |Boolean op_LessThanOrEqual(DateTime `t1`, DateTime `t2`)|< =, opérateur||
-|Microsoft.VisualBasic.DateAndTime.DatePart( _<br /><br /> ByVal `Interval` comme DateInterval, \_<br /><br /> ByVal `DateValue` comme date/heure, \_<br /><br /> ByVal facultatif `FirstDayOfWeekValue` comme FirstDayOfWeek = VbSunday, \_<br /><br /> ByVal facultatif `FirstWeekOfYearValue` comme FirstWeekOfYear = VbFirstJan1 \_<br /><br /> ) As Integer||Consultez la section concernant la fonction DatePart pour plus d'informations.|
+|Microsoft.VisualBasic.DateAndTime.DatePart( _<br /><br /> ByVal `Interval` comme DateInterval,\_<br /><br /> ByVal `DateValue` comme DateTime,\_<br /><br /> ByVal `FirstDayOfWeekValue` facultatif comme FirstDayOfWeek = vbSunday,\_<br /><br /> ByVal `FirstWeekOfYearValue` facultatif comme FirstWeekOfYear = vbFirstJan1\_<br /><br /> ) As Integer||Consultez la section concernant la fonction DatePart pour plus d'informations.|
 |Microsoft.VisualBasic.DateAndTime.Now|CurrentDateTime()||
 |Microsoft.VisualBasic.DateAndTime.Year(DateTime `TimeValue`)|Year()||
 |Microsoft.VisualBasic.DateAndTime.Month(DateTime `TimeValue`)|Month()||
@@ -85,13 +85,13 @@ Pour les scénarios LINQ, les requêtes exécutées sur Entity Framework impliqu
 |Méthode System.DateTime (instance)|Fonction canonique|
 |-----------------------------------------|------------------------|
 |Boolean Equals(DateTime `value`)|= (opérateur)|
-|Jour|Day(`this`)|
+|jour|Day(`this`)|
 |Heure|Hour(`this`)|
 |Milliseconde|Millisecond(`this`)|
 |Minute|Minute(`this`)|
 |Mois|Month(`this`)|
 |Seconde|Second(`this`)|
-|Année|Year(`this`)|
+|Year|Year(`this`)|
 
 ## <a name="systemdatetimeoffset-method-instance-mapping"></a>Mappage de la méthode System.DateTimeOffset (d'instance)
 
@@ -99,13 +99,13 @@ Mappage indiqué pour les méthodes `get` sur les propriétés répertoriées.
 
 |Mappage de la méthode System.DateTimeOffset (d'instance)|Fonction canonique|Notes|
 |-----------------------------------------------|------------------------|-----------|
-|Jour|Day(`this`)|Non pris en charge dans SQL Server 2005.|
+|jour|Day(`this`)|Non pris en charge dans SQL Server 2005.|
 |Heure|Hour(`this`)|Non pris en charge dans SQL Server 2005.|
 |Milliseconde|Millisecond(`this`)|Non pris en charge dans SQL Server 2005.|
 |Minute|Minute(`this`)|Non pris en charge dans SQL Server 2005.|
 |Mois|Month(`this`)|Non pris en charge dans SQL Server 2005.|
 |Seconde|Second(`this`)|Non pris en charge dans SQL Server 2005.|
-|Année|Year(`this`)|Non pris en charge dans SQL Server 2005.|
+|Year|Year(`this`)|Non pris en charge dans SQL Server 2005.|
 
 > [!NOTE]
 > La méthode <xref:System.DateTimeOffset.Equals%2A> retourne `true` si les objets <xref:System.DateTimeOffset> comparés sont égaux ; sinon `false`. La méthode <xref:System.DateTimeOffset.CompareTo%2A> retourne 0, 1 ou -1 selon que l'objet <xref:System.DateTimeOffset> comparé est égal, supérieur ou inférieur, respectivement.
@@ -203,4 +203,4 @@ La fonction `DatePart` est mappée à l'une des diverses fonctions canoniques, e
 
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/linq-to-entities.md)
+- [LINQ to Entities](linq-to-entities.md)

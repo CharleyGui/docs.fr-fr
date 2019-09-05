@@ -2,12 +2,12 @@
 title: '> (Supérieur à) (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: 4cea865c-677c-4b06-99a1-010f2ae2394a
-ms.openlocfilehash: e1d13fa863eb79982d239f4e2dc298f7fcd1346f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0b57f36681575ccbe3239220e89804c804f13f39
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61879487"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250887"
 ---
 # <a name="-greater-than-entity-sql"></a>> (Supérieur à) (Entity SQL)
 Compare deux expressions pour déterminer si la valeur de l'expression de gauche est supérieure à celle de l'expression de droite.  
@@ -25,10 +25,10 @@ expression > expression
 ## <a name="result-types"></a>Types de résultats  
  `true` si la valeur de l'expression de gauche est supérieure à celle de l'expression de droite ; sinon, `false`.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  La requête Entity SQL ci-dessous utilise l'opérateur de comparaison > pour comparer deux expressions afin de déterminer si la valeur de l'expression de gauche est supérieure à celle de l'expression de droite. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite dans [Comment : Exécuter une requête qui retourne des résultats StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-structuraltype-results.md)de StructuralType.  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   
@@ -36,4 +36,4 @@ expression > expression
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Référence Entity SQL](entity-sql-reference.md)

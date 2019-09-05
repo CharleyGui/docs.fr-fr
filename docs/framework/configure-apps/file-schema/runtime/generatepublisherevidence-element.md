@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 7d208f50-e8d5-4a42-bc1a-1cf3590706a8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a5314fe5927abf2d3855acb45c763507ab6cb3c8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3dd3105e573d40ae234ba7e122f20566911124d4
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920746"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252536"
 ---
 # <a name="generatepublisherevidence-element"></a>\<generatePublisherEvidence >, élément
 Spécifie si le runtime <xref:System.Security.Policy.Publisher> crée une preuve pour la sécurité d’accès du code (cas).  
   
- \<configuration>  
-\<runtime>  
-\<generatePublisherEvidence>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<generatePublisherEvidence>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +39,7 @@ Spécifie si le runtime <xref:System.Security.Policy.Publisher> crée une preuve
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |`false`|Ne crée <xref:System.Security.Policy.Publisher> pas de preuve.|  
 |`true`|Crée <xref:System.Security.Policy.Publisher> une preuve. Il s'agit de la valeur par défaut.|  
@@ -57,7 +57,7 @@ Spécifie si le runtime <xref:System.Security.Policy.Publisher> crée une preuve
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
-> Dans le .NET Framework 4 et versions ultérieures, cet élément n’a aucun effet sur les temps de chargement des assemblys. Pour plus d’informations, consultez la section «simplification de la stratégie de sécurité» dans [modifications de sécurité](../../../security/security-changes.md).  
+> Dans le .NET Framework 4 et versions ultérieures, cet élément n’a aucun effet sur les temps de chargement des assemblys. Pour plus d’informations, consultez la section « simplification de la stratégie de sécurité » dans [modifications de sécurité](../../../security/security-changes.md).  
   
  Le Common Language Runtime (CLR) tente de vérifier la signature Authenticode au moment du chargement pour <xref:System.Security.Policy.Publisher> créer la preuve de l’assembly. Toutefois, par défaut, la plupart des applications n' <xref:System.Security.Policy.Publisher> ont pas besoin de preuve. La <xref:System.Security.Policy.PublisherMembershipCondition>stratégie cas standard ne repose pas sur. Vous devez éviter les coûts de démarrage inutiles associés à la vérification de la signature de l’éditeur, sauf si votre application s’exécute sur un ordinateur doté d’une stratégie cas, ou s' <xref:System.Security.Permissions.PublisherIdentityPermission> il a l’intention de satisfaire les demandes de dans un environnement de confiance partielle. (Les demandes d’autorisations d’identité fonctionnent toujours dans un environnement de confiance totale.)  
   

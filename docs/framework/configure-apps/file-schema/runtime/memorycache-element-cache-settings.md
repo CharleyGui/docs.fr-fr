@@ -6,19 +6,19 @@ helpviewer_keywords:
 - caching [.NET Framework], configuration
 - memoryCache element
 ms.assetid: 182a622f-f7cf-472d-9d0b-451d2fd94525
-ms.openlocfilehash: 46f430f7cf112da40aa3b25bfb280c5014612eae
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 25467fc751ad772e74ca714e6059bc5134300ed6
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663617"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252486"
 ---
 # <a name="memorycache-element-cache-settings"></a>\<memoryCache >, élément (paramètres de cache)
 Définit un élément qui est utilisé pour configurer un cache basé sur la classe <xref:System.Runtime.Caching.MemoryCache> . La classe <xref:System.Runtime.Caching.Configuration.MemoryCacheElement> définit un élément [memoryCache](memorycache-element-cache-settings.md) que vous pouvez utiliser pour configurer le cache. Vous pouvez utiliser plusieurs instances de la classe <xref:System.Runtime.Caching.MemoryCache> dans une même application. Chaque élément `memoryCache` dans le fichier de configuration peut contenir des paramètres pour une instance <xref:System.Runtime.Caching.MemoryCache> nommée.  
   
- \<configuration>  
-\<system.runtime.caching>  
-\<memoryCache>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. Runtime. Caching >** ](system-runtime-caching-element-cache-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<> memoryCache**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -55,6 +55,7 @@ Définit un élément qui est utilisé pour configurer un cache basé sur la cla
   
 |Élément|Description|  
 |-------------|-----------------|  
+|[\<configuration>](../configuration-element.md)|Spécifie l’élément racine dans chaque fichier de configuration utilisé par les applications common language runtime et .NET Framework.|  
 |[\<system.runtime.caching>](system-runtime-caching-element-cache-settings.md)|Contient des types qui vous permettent d’implémenter la mise en cache de sortie dans les applications intégrées au .NET Framework.|  
   
 ## <a name="remarks"></a>Notes  
@@ -71,7 +72,7 @@ Définit un élément qui est utilisé pour configurer un cache basé sur la cla
 - <xref:System.Runtime.Caching.MemoryCache.PollingInterval%2A>  
   
 ## <a name="example"></a>Exemples  
- L’exemple suivant montre comment définir le nom de l' <xref:System.Runtime.Caching.MemoryCache> objet dans le cache par défaut en affectant à l' `name` attribut la valeur «default».  
+ L’exemple suivant montre comment définir le nom de l' <xref:System.Runtime.Caching.MemoryCache> objet dans le cache par défaut en affectant à l' `name` attribut la valeur « default ».  
   
  Les attributs `cacheMemoryLimitMegabytes` et `physicalMemoryLimitPercentage` sont définis sur zéro. La définition de ces attributs sur zéro signifie que les heuristiques à dimensionnement automatique de <xref:System.Runtime.Caching.MemoryCache> sont utilisées par défaut. L’implémentation du cache doit comparer la charge de mémoire actuelle aux limites de mémoire en valeur absolue et en pourcentage toutes les deux minutes.  
   

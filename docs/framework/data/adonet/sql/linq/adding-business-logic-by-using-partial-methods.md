@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3a73991e-fd4e-4610-93fb-7ced4dc6b7f9
-ms.openlocfilehash: e3f82c260a2cab85270a9f33a87eb9a9f04b72c7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 251d7a05971ff7940f85ec9d555d26f2e57067c3
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964144"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248135"
 ---
 # <a name="adding-business-logic-by-using-partial-methods"></a>Ajout d'une logique métier à l'aide de méthodes partielles
 Vous pouvez personnaliser Visual Basic et C# le code généré dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vos projets à l’aide de *méthodes partielles*. Le code généré par [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] définit des signatures comme faisant partie d'une méthode partielle. Si vous souhaitez implémenter la méthode, vous pouvez ajouter votre propre méthode partielle. Si vous n'ajoutez pas votre propre implémentation, le compilateur ignore la signature de méthodes partielles et appelle les méthodes par défaut dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
@@ -32,7 +32,7 @@ Vous pouvez personnaliser Visual Basic et C# le code généré dans [!INCLUDE[vb
   
  Pour plus d’informations, consultez [méthodes partielles](../../../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md) (Visual Basic) ou [Partial (méthodeC# ) (référence)](../../../../../csharp/language-reference/keywords/partial-method.md) (C#).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
   
 ### <a name="description"></a>Description  
  L'exemple suivant montre d'abord `ExampleClass` tel qu'il pourrait être défini par un outil de génération de code tel que SQLMetal, puis comment vous pouvez implémenter l'une des deux méthodes seulement.  
@@ -52,5 +52,5 @@ Vous pouvez personnaliser Visual Basic et C# le code généré dans [!INCLUDE[vb
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Apport et soumission de modifications de données](../../../../../../docs/framework/data/adonet/sql/linq/making-and-submitting-data-changes.md)
-- [Personnalisation des opérations d’insertion, de mise à jour et de suppression](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md)
+- [Apport et soumission de modifications de données](making-and-submitting-data-changes.md)
+- [Personnalisation des opérations d’insertion, de mise à jour et de suppression](customizing-insert-update-and-delete-operations.md)

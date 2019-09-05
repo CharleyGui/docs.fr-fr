@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 2f1648e5-997b-435e-a4f9-d236c574c66c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6f3ea57364832553d16c7e34fc887b1c9f821602
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 79d44ff255b1fc12efc6e8488eeab231b9276b90
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663448"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252321"
 ---
 # <a name="shadowcopyverifybytimestamp-element"></a>\<shadowCopyVerifyByTimestamp>, élément
 Spécifie si les clichés instantanés utilisent le comportement de démarrage par défaut introduit dans le .NET Framework 4, ou repassent au comportement de démarrage des versions antérieures du .NET Framework.  
   
- \<Élément de > de configuration  
-\<Élément > du Runtime  
-\<shadowCopyVerifyByTimestamp>, élément  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<shadowCopyVerifyByTimestamp >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,7 +54,7 @@ Spécifie si les clichés instantanés utilisent le comportement de démarrage p
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
 ## <a name="remarks"></a>Notes  
- À partir du .NET Framework 4, les assemblys sont des clichés instantanés uniquement si leurs horodatages indiquent qu’ils ont été modifiés depuis leur dernière copie dans le répertoire des clichés instantanés. Cela permet d’améliorer les temps de démarrage de nombreuses applications qui utilisent des clichés instantanés, comme décrit dans clichés instantanés d' [assemblys](../../../app-domains/shadow-copy-assemblies.md). Les applications qui ont un pourcentage élevé et la fréquence des mises à jour d’assembly peuvent ne pas tirer parti de ce changement de comportement. Dans ce cas, vous pouvez utiliser cet élément pour restaurer le comportement des versions précédentes du .NET Framework.  
+ À partir du .NET Framework 4, les assemblys sont des clichés instantanés uniquement si leurs horodatages indiquent qu’ils ont été modifiés depuis leur dernière copie dans le répertoire des clichés instantanés. Cela permet d’améliorer les temps de démarrage de nombreuses applications qui utilisent des clichés instantanés, comme décrit dans [clichés instantanés d’assemblys](../../../app-domains/shadow-copy-assemblies.md). Les applications qui ont un pourcentage élevé et la fréquence des mises à jour d’assembly peuvent ne pas tirer parti de ce changement de comportement. Dans ce cas, vous pouvez utiliser cet élément pour restaurer le comportement des versions précédentes du .NET Framework.  
   
 ## <a name="example"></a>Exemples  
  L’exemple suivant montre comment désactiver le comportement de démarrage par défaut des clichés instantanés dans le .NET Framework 4 et rétablir le comportement de démarrage des versions précédentes du .NET Framework.  

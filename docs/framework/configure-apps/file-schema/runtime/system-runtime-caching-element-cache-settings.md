@@ -8,19 +8,19 @@ helpviewer_keywords:
 ms.assetid: 9b44daee-874a-4bd1-954e-83bf53565590
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 67ead643afd34b4c3422d85e6f7876879de477ba
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e36e2ed96a0748a69f2bd9ee32432901f0bf0898
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927240"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252286"
 ---
 # <a name="systemruntimecaching-element-cache-settings"></a>\<System. Runtime. Caching >, élément (paramètres de cache)
 
 Fournit la configuration pour l’implémentation de <xref:System.Runtime.Caching.ObjectCache> en mémoire par défaut via l’entrée `memoryCache` dans le fichier de configuration.  
   
- \<configuration>  
-\<system.runtime.caching>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp; **\<System. Runtime. Caching >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -59,7 +59,7 @@ Les classes de cet espace de noms fournissent un moyen d’utiliser des fonction
   
 ## <a name="example"></a>Exemple
 
-L’exemple suivant montre comment configurer un cache basé sur la classe <xref:System.Runtime.Caching.MemoryCache> . L’exemple montre comment configurer une instance de l’entrée `namedCaches` pour le cache mémoire. Le nom du cache est défini sur le nom de l’entrée de cache par défaut `name` en affectant à l’attribut la valeur «default».  
+L’exemple suivant montre comment configurer un cache basé sur la classe <xref:System.Runtime.Caching.MemoryCache> . L’exemple montre comment configurer une instance de l’entrée `namedCaches` pour le cache mémoire. Le nom du cache est défini sur le nom de l’entrée de cache par défaut `name` en affectant à l’attribut la valeur « default ».  
   
 Les attributs `cacheMemoryLimitMegabytes` et `physicalMemoryPercentage` sont définis sur zéro. La définition de ces attributs sur zéro signifie que les heuristiques à dimensionnement automatique de <xref:System.Runtime.Caching.MemoryCache> sont utilisées par défaut. L’implémentation du cache doit comparer la charge de mémoire actuelle aux limites de mémoire en valeur absolue et en pourcentage toutes les deux minutes.  
   

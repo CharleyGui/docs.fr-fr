@@ -2,12 +2,12 @@
 title: LIKE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 8300e6d2-875b-481e-9ef4-e1e7c12d46fa
-ms.openlocfilehash: 58828b812ce374a664e4d232b707f22d5ca438c1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fbe27f6e25c9d69f092a060fa2c3fbf0abc93318
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912283"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250510"
 ---
 # <a name="like-entity-sql"></a>LIKE (Entity SQL)
 Détermine si une `String` de caractères donnée correspond à un modèle spécifié.  
@@ -43,8 +43,8 @@ match [NOT] LIKE pattern [ESCAPE escape]
 |------------------------|-----------------|-------------|  
 |%|Toute chaîne (`string`) de zéro, un ou plusieurs caractères.|`title like '%computer%'`recherche tous les titres avec le `"computer"` mot n’importe où dans le titre.|  
 |_ (caractère de soulignement)|N'importe quel caractère unique.|`firstname like '_ean'`recherche tous les prénoms de quatre lettres qui se `"ean`terminent par, par exemple Dean ou Jean.|  
-|[ ]|Tout caractère unique se trouvant dans la plage ([a-f]) ou l'ensemble spécifié ([abcdef]).|`lastname like '[C-P]arsen'`recherche les derniers noms se terminant par «faiblen» et commençant par n’importe quel caractère unique entre C et P, par exemple Carsen ou Larsen.|  
-|[^]|Tout caractère unique ne se trouvant pas dans la plage ([^a-f]) ou l'ensemble spécifié ([^abcdef]).|`lastname like 'de[^l]%'`recherche tous les noms qui commencent par «de» et n’inclut pas «l» comme lettre suivante.|  
+|[ ]|Tout caractère unique se trouvant dans la plage ([a-f]) ou l'ensemble spécifié ([abcdef]).|`lastname like '[C-P]arsen'`recherche les derniers noms se terminant par « faiblen » et commençant par n’importe quel caractère unique entre C et P, par exemple Carsen ou Larsen.|  
+|[^]|Tout caractère unique ne se trouvant pas dans la plage ([^a-f]) ou l'ensemble spécifié ([^abcdef]).|`lastname like 'de[^l]%'`recherche tous les noms qui commencent par « de » et n’inclut pas « l » comme lettre suivante.|  
   
 > [!NOTE]
 > L'opérateur [!INCLUDE[esql](../../../../../../includes/esql-md.md)] LIKE et la clause ESCAPE ne peuvent pas être appliqués aux valeurs de `System.DateTime` ou `System.Guid`.  
@@ -65,10 +65,10 @@ match [NOT] LIKE pattern [ESCAPE escape]
   
  Dans cette expression de recherche, le caractère générique de pourcentage (%) qui suit immédiatement le point d'exclamation (!) est traité comme un littéral et non comme un caractère générique. Vous pouvez utiliser n’importe quel caractère comme caractère d’échappement, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] à l’exception des caractères génériques et`[ ]`des crochets (). Dans l'exemple précédent, le point d'exclamation (!) fait office de caractère d'échappement.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Les deux [!INCLUDE[esql](../../../../../../includes/esql-md.md)] requêtes suivantes utilisent les opérateurs like et Escape pour déterminer si une chaîne de caractères spécifique correspond à un modèle spécifié. La première requête recherche le `Name` qui commence par les caractères. `Down_` Cette requête utilise l'option ESCAPE car le caractère de soulignement (`_`) est un caractère générique. Sans l'option ESCAPE, la requête rechercherait toutes les valeurs `Name` commençant par le mot `Down` suivi de tout caractère unique autre que le caractère de soulignement. Les requêtes sont basées sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite [dans la rubrique Procédure: Exécutez une requête qui retourne les résultats](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md)de PrimitiveType.  
+1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-primitivetype-results.md)de PrimitiveType.  
   
 2. Transmettez à la méthode `ExecutePrimitiveTypeQuery` la requête suivante en tant qu'argument :  
   
@@ -76,4 +76,4 @@ match [NOT] LIKE pattern [ESCAPE escape]
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Référence Entity SQL](entity-sql-reference.md)

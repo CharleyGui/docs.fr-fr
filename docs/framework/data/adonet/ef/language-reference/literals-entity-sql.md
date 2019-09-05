@@ -2,12 +2,12 @@
 title: Littéraux (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 092ef693-6e5f-41b4-b868-5b9e82928abf
-ms.openlocfilehash: 6196c1b026b49847bd06cc9cda5ea6b6af289858
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9aba737b522f75f1f81cc054fb87b414b06f9611
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69953287"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250338"
 ---
 # <a name="literals-entity-sql"></a>Littéraux (Entity SQL)
 Cette rubrique décrit la prise en charge des littéraux dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
@@ -15,9 +15,9 @@ Cette rubrique décrit la prise en charge des littéraux dans [!INCLUDE[esql](..
 ## <a name="null"></a>Null  
  Le littéral Null est utilisé pour représenter la valeur Null d'un type quel qu'il soit. Un littéral Null est compatible avec n'importe quel type.  
   
- Des valeurs Null typées peuvent être créées par cast sur un littéral Null. Pour plus d’informations, consultez [Cast](../../../../../../docs/framework/data/adonet/ef/language-reference/cast-entity-sql.md).  
+ Des valeurs Null typées peuvent être créées par cast sur un littéral Null. Pour plus d’informations, consultez [Cast](cast-entity-sql.md).  
   
- Pour connaître les règles permettant d’utiliser des littéraux NULL flottants libres, consultez [littéraux NULL et inférence de type](../../../../../../docs/framework/data/adonet/ef/language-reference/null-literals-and-type-inference-entity-sql.md).  
+ Pour connaître les règles permettant d’utiliser des littéraux NULL flottants libres, consultez [littéraux NULL et inférence de type](null-literals-and-type-inference-entity-sql.md).  
   
 ## <a name="boolean"></a>Boolean  
  Les littéraux booléens sont représentés par les mots clés `true` et `false`.  
@@ -45,7 +45,7 @@ N"This is a string!"
 ## <a name="datetime"></a>DateTime  
  Un littéral de date/heure (datetime) est indépendant des paramètres régionaux. Il est composé d'une partie date et d'une partie heure. Ces deux parties sont obligatoires et il n'existe pas de valeur par défaut.  
   
- La partie date doit avoir le format: `YYYY` - - `MM` `DD` `MM` , où `YYYY` est une valeur d’année à quatre chiffres comprise entre 0001 et 9999, est le mois compris entre 1 et 12 et est `DD` valeur de jour qui est valide pour le mois `MM`donné.  
+ La partie date doit avoir le format : `YYYY` - - `MM` `DD` `MM` , où `YYYY` est une valeur d’année à quatre chiffres comprise entre 0001 et 9999, est le mois compris entre 1 et 12 et est `DD` valeur de jour qui est valide pour le mois `MM`donné.  
   
  La partie heure doit avoir le format : `HH`:`MM`[:`SS`[.fffffff]], où `HH` est la valeur des heures comprise entre 0 et 23 inclus, `MM` est la valeur des minutes comprise entre 0 et 59 inclus, `SS` est la valeur des secondes comprise entre 0 et 59 inclus, et fffffff est la valeur des fractions de seconde comprise entre 0 et 9999999. Toutes les plages de valeurs sont inclusives. Les fractions de secondes sont facultatives. Les secondes sont facultatives à moins que les fractions de secondes soient spécifiées ; auquel cas, les secondes sont requises. Lorsque les secondes ou les fractions de secondes ne sont pas spécifiées, la valeur par défaut zéro est utilisée.  
   
@@ -67,7 +67,7 @@ TIME‘01:01:00.1234567’
 ```  
   
 ## <a name="datetimeoffset"></a>DateTimeOffset  
- Un littéral datetimeoffset est indépendant des paramètres régionaux. Il est composé d'une partie date, d'une partie heure et d'une partie décalage. Toutes ces parties sont obligatoires et il n'existe pas de valeur par défaut. La partie date doit respecter le format YYYY-MM-DD, où YYYY est une année à quatre chiffres comprise entre 0001 et 9999, MM est une valeur comprise entre 1 et 12 qui représente le mois et DD est la valeur du jour valide pour le mois donné. La partir heure doit respecter le format HH:MM[:SS[.fffffff]], où HH est la valeur des heures comprise entre 0 et 23 inclus, MM est la valeur des minutes comprise entre 0 et 59 inclus, SS est la valeur des secondes comprise entre 0 et 59 inclus, et fffffff est la valeur des fractions de seconde comprise entre 0 et 9999999 inclus. Toutes les plages de valeurs sont inclusives. Les fractions de secondes sont facultatives. Les secondes sont facultatives à moins que les fractions de secondes soient spécifiées ; auquel cas, les secondes sont requises. Lorsque les secondes ou les fractions de secondes ne sont pas spécifiées, la valeur par défaut zéro est utilisée. La partie de décalage doit avoir le format {&#124;+-} hh: mm, où HH et mm ont la même signification que dans la partie heure. Toutefois, la plage du décalage doit être comprise entre -14:00 et +14:00.  
+ Un littéral datetimeoffset est indépendant des paramètres régionaux. Il est composé d'une partie date, d'une partie heure et d'une partie décalage. Toutes ces parties sont obligatoires et il n'existe pas de valeur par défaut. La partie date doit respecter le format YYYY-MM-DD, où YYYY est une année à quatre chiffres comprise entre 0001 et 9999, MM est une valeur comprise entre 1 et 12 qui représente le mois et DD est la valeur du jour valide pour le mois donné. La partir heure doit respecter le format HH:MM[:SS[.fffffff]], où HH est la valeur des heures comprise entre 0 et 23 inclus, MM est la valeur des minutes comprise entre 0 et 59 inclus, SS est la valeur des secondes comprise entre 0 et 59 inclus, et fffffff est la valeur des fractions de seconde comprise entre 0 et 9999999 inclus. Toutes les plages de valeurs sont inclusives. Les fractions de secondes sont facultatives. Les secondes sont facultatives à moins que les fractions de secondes soient spécifiées ; auquel cas, les secondes sont requises. Lorsque les secondes ou les fractions de secondes ne sont pas spécifiées, la valeur par défaut zéro est utilisée. La partie de décalage doit avoir le format {&#124;+-} hh : mm, où HH et mm ont la même signification que dans la partie heure. Toutefois, la plage du décalage doit être comprise entre -14:00 et +14:00.  
   
  Le symbole DATETIMEOFFSET et la charge utile du littéral peuvent être séparés d'autant d'espaces que nécessaire, mais pas de nouvelles lignes.  
   
@@ -92,7 +92,7 @@ X'' –- empty binary string
 ```  
   
 ## <a name="guid"></a>Guid  
- Un littéral `GUID` représente un identificateur global unique. Il s’agit d’une séquence formée par `GUID` le mot clé suivi de chiffres hexadécimaux sous la forme «format de *Registre* »: 8-4-4-4-12 entre guillemets simples. Les chiffres hexadécimaux ne respectent pas la casse.  
+ Un littéral `GUID` représente un identificateur global unique. Il s’agit d’une séquence formée par `GUID` le mot clé suivi de chiffres hexadécimaux sous la forme « format de *Registre* » : 8-4-4-4-12 entre guillemets simples. Les chiffres hexadécimaux ne respectent pas la casse.  
   
  Le symbole GUID et la charge utile du littéral peuvent être séparés d'autant d'espaces que nécessaire, mais pas de nouvelles lignes.  
   
@@ -103,4 +103,4 @@ GUID  '1AFC7F5C-FFA0-4741-81CF-F12EAAB822BF'
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble d’Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+- [Vue d’ensemble d’Entity SQL](entity-sql-overview.md)

@@ -3,21 +3,22 @@ title: <serviceTokenResolver>
 ms.date: 03/30/2017
 ms.assetid: 6e9001e1-e064-4f47-84b2-46225c177746
 author: BrucePerlerMS
-ms.openlocfilehash: 69d34cb54c2236f178ac4291ed24a3f5b45db48e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 30a53c11b551623311f7ca3f957143fc702568a1
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923107"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251853"
 ---
 # <a name="servicetokenresolver"></a>\<serviceTokenResolver>
 Inscrit le programme de résolution de jetons de service qui est utilisé par les gestionnaires dans la collection de gestionnaires de jetons. Le programme de résolution de jetons de service est utilisé pour résoudre le jeton de chiffrement sur les jetons et les messages entrants.  
   
- \<system.identityModel>  
-\<identityConfiguration>  
-\<securityTokenHandlers>  
-\<securityTokenHandlerConfiguration>  
-\<serviceTokenResolver>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<securityTokenHandlers >** ](securitytokenhandlers.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<securityTokenHandlerConfiguration >** ](securitytokenhandlerconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<serviceTokenResolver >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -60,8 +61,9 @@ Inscrit le programme de résolution de jetons de service qui est utilisé par le
 > [!NOTE]
 > La spécification `<serviceTokenResolver>` de l’élément en tant qu’élément enfant de l' [ \<élément identityConfiguration >](identityconfiguration.md) a été dépréciée, mais est toujours prise en charge pour la compatibilité descendante. Les paramètres de `<securityTokenHandlerConfiguration>` l’élément remplacent ceux de `<identityConfiguration>` l’élément.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ```xml  
 <serviceTokenResolver type="MyNamespace.CustomTokenResolver, MyAssembly" />  
 ```
+ 

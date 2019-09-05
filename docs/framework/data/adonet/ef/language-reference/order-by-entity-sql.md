@@ -2,12 +2,12 @@
 title: ORDER BY (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: c0b61572-ecee-41eb-9d7f-74132ec8a26c
-ms.openlocfilehash: e691816ec3d0a66c9f43f9a13cffa26b755b3c39
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f3310274766ff3619604e30bfb5f5ca437cb1acd
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64641778"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70249750"
 ---
 # <a name="order-by-entity-sql"></a>ORDER BY (Entity SQL)
 Spécifie l'ordre de classement utilisé sur les objets retournés dans une instruction SELECT.  
@@ -115,10 +115,10 @@ SELECT C2.FirstName, C2.LastName
         ORDER BY C1.LastName) as C2  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  La requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ci-dessous utilise l'opérateur ORDER BY pour spécifier l'ordre de tri employé sur les objets retournés dans une instruction SELECT. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite dans [Comment : Exécuter une requête qui retourne des résultats StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-structuraltype-results.md)de StructuralType.  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   
@@ -126,8 +126,8 @@ SELECT C2.FirstName, C2.LastName
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Expressions de requête](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)
-- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [SKIP](../../../../../../docs/framework/data/adonet/ef/language-reference/skip-entity-sql.md)
-- [LIMIT](../../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md)
-- [TOP](../../../../../../docs/framework/data/adonet/ef/language-reference/top-entity-sql.md)
+- [Expressions de requête](query-expressions-entity-sql.md)
+- [Référence Entity SQL](entity-sql-reference.md)
+- [SKIP](skip-entity-sql.md)
+- [LIMIT](limit-entity-sql.md)
+- [TOP](top-entity-sql.md)

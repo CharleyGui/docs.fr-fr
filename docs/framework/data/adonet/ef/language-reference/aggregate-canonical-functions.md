@@ -2,20 +2,20 @@
 title: Fonctions d'agrégation canoniques
 ms.date: 03/30/2017
 ms.assetid: 3bcff826-ca90-41b3-a791-04d6ff0e5085
-ms.openlocfilehash: 2738d649190b088c34272de5b3e8732d87811a59
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 3f4bb84c45e503fc0018e7869f3b41ddab4581a6
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489514"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251352"
 ---
 # <a name="aggregate-canonical-functions"></a>Fonctions d'agrégation canoniques
 
 Les agrégats sont des expressions qui réduisent une série de valeurs d'entrée en, par exemple, une seule valeur. Ils sont normalement utilisés avec la clause GROUP BY de l'expression SELECT et leur utilisation est sujette à certaines contraintes.
 
-## <a name="aggregate-entity-sql-canonical-functions"></a>Fonctions d’agrégation canoniques Entity SQL
+## <a name="aggregate-entity-sql-canonical-functions"></a>Fonctions canoniques d’agrégation Entity SQL
 
-Les fonctions canoniques Entity SQL d’agrégation sont les suivantes :
+Voici les fonctions d’agrégation Entity SQL canoniques.
 
 ### <a name="avgexpression"></a>Avg(expression)
 
@@ -23,11 +23,11 @@ Retourne la moyenne des valeurs non Null.
 
 **Arguments**
 
-Un `Int32`, `Int64`, `Double`, et `Decimal`.
+,, Et`Decimal`. `Int32` `Int64` `Double`
 
 **Valeur de retour**
 
-Le type de `expression`, ou `null` si toutes les valeurs d’entrée sont `null` valeurs.
+Type de `expression`ou `null` si toutes les valeurs d’entrée sont `null` des valeurs.
 
 **Exemple**
 
@@ -78,7 +78,7 @@ Retourne la valeur maximale des valeurs non-Null.
 
 **Valeur de retour**
 
-Le type de `expression`, ou `null` si toutes les valeurs d’entrée sont `null` valeurs.
+Type de `expression`ou `null` si toutes les valeurs d’entrée sont `null` des valeurs.
 
 **Exemple**
 
@@ -95,7 +95,7 @@ Retourne la valeur minimale des valeurs non Null.
 
 **Valeur de retour**
 
-Le type de `expression`, ou `null` si toutes les valeurs d’entrée sont `null` valeurs.
+Type de `expression`ou `null` si toutes les valeurs d’entrée sont `null` des valeurs.
 
 **Exemple**
 
@@ -129,7 +129,7 @@ Retourne l'écart type pour le remplissage de toutes les valeurs.
 
 **Valeur de retour**
 
-Un `Double`, ou `null` si toutes les valeurs d’entrée sont `null` valeurs.
+Ou si toutes les valeurs d’entrée sont `null` des valeurs. `null` `Double`
 
 **Exemple**
 
@@ -146,7 +146,7 @@ Retourne la somme des valeurs non-Null.
 
 **Valeur de retour**
 
-Un `Double`, ou `null` si toutes les valeurs d’entrée sont `null` valeurs.
+Ou si toutes les valeurs d’entrée sont `null` des valeurs. `null` `Double`
 
 **Exemple**
 
@@ -163,7 +163,7 @@ Retourne la variance de toutes les valeurs non-Null.
 
 **Valeur de retour**
 
-Un `Double`, ou `null` si toutes les valeurs d’entrée sont `null` valeurs.
+Ou si toutes les valeurs d’entrée sont `null` des valeurs. `null` `Double`
 
 **Exemple**
 
@@ -180,18 +180,18 @@ Retourne la variance pour le remplissage de toutes les valeurs non-Null.
 
 **Valeur de retour**
 
-Un `Double`, ou `null` si toutes les valeurs d’entrée sont `null` valeurs.
+Ou si toutes les valeurs d’entrée sont `null` des valeurs. `null` `Double`
 
 **Exemple**
 
 [!code-csharp[DP EntityServices Concepts#EDM_VARP](~/samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/entitysql.cs#edm_varp)]
 [!code-sql[DP EntityServices Concepts#EDM_VARP](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#edm_varp)]
 
-Des fonctionnalités équivalentes sont disponibles dans le fournisseur managé Client Microsoft SQL. Pour plus d’informations, consultez [fonctions SqlClient pour Entity Framework](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md).
+Des fonctionnalités équivalentes sont disponibles dans le fournisseur managé Client Microsoft SQL. Pour plus d’informations, consultez [SqlClient pour les fonctions de Entity Framework](../sqlclient-for-ef-functions.md).
 
-## <a name="collection-based-aggregates"></a>Agrégats basés sur les collections
+## <a name="collection-based-aggregates"></a>Agrégats basés sur des collections
 
-Les agrégats basés sur des collections (fonctions de collection) opèrent sur des collections et retournent une valeur. Par exemple si ORDERS est une collection de toutes les commandes, vous pouvez calculer la première date d’expédition avec l’expression suivante :
+Les agrégats basés sur des collections (fonctions de collection) opèrent sur des collections et retournent une valeur. Par exemple, si ORDERs est une collection de toutes les commandes, vous pouvez calculer la première date d’expédition à l’aide de l’expression suivante :
 
 ```sql
 min(select value o.ShipDate from LOB.Orders as o)
@@ -199,7 +199,7 @@ min(select value o.ShipDate from LOB.Orders as o)
 
 Les expressions figurant dans des agrégats basés sur des collections sont évalués dans la résolution de noms de portée ambiante actuelle.
 
-## <a name="group-based-aggregates"></a>Agrégats basés sur le groupe
+## <a name="group-based-aggregates"></a>Agrégats basés sur des groupes
 
 Les agrégats basés sur des groupes sont calculés sur un groupe défini par la clause GROUP BY. Pour chaque groupe du résultat, un agrégat distinct est calculé en utilisant les éléments de chaque groupe fourni en entrée pour le calcul. Lorsqu'une clause group-by est utilisée dans une expression select, seuls des noms d'expressions de regroupement, des agrégats ou des expressions constantes peuvent figurer dans la projection ou la clause order-by.
 
@@ -210,7 +210,7 @@ select p, avg(ol.Quantity) from LOB.OrderLines as ol
   group by ol.Product as p
 ```
 
-Il est possible d’avoir un agrégat basé sur le groupe sans une clause group by explicite dans l’expression SELECT. Dans ce cas, tous les éléments sont traités comme un seul groupe. Cela est équivalent de spécifier un regroupement basé sur une constante. L'expression suivante, par exemple :
+Il est possible d’avoir un agrégat basé sur des groupes sans clause GROUP-BY explicite dans l’expression SELECT. Dans ce cas, tous les éléments sont traités comme un seul groupe. Cela équivaut à spécifier un regroupement basé sur une constante. L'expression suivante, par exemple :
 
 ```sql
 select avg(ol.Quantity) from LOB.OrderLines as ol
@@ -224,8 +224,8 @@ select avg(ol.Quantity) from LOB.OrderLines as ol group by 1
 
 Les expressions figurant dans des agrégats basés sur des groupes sont évalués dans la résolution de noms de portée qui serait visible pour l’expression de la clause WHERE.
 
-Comme dans Transact-SQL, les agrégats basés sur le groupe peuvent également spécifier un ALL ou modificateur DISTINCT. Si le modificateur DISTINCT est spécifié, les doublons sont éliminés de la collection d’entrée de l’agrégat, avant que celui-ci ne soit calculé. Si le modificateur ALL est spécifié (ou si aucun modificateur ne l'est), les doublons ne sont pas éliminés.
+Comme dans Transact-SQL, les agrégats basés sur des groupes peuvent également spécifier un modificateur ALL ou DISTINCT. Si le modificateur DISTINCT est spécifié, les doublons sont éliminés de la collection d’entrée de l’agrégat, avant que celui-ci ne soit calculé. Si le modificateur ALL est spécifié (ou si aucun modificateur ne l'est), les doublons ne sont pas éliminés.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions canoniques](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)
+- [Fonctions canoniques](canonical-functions.md)

@@ -2,12 +2,12 @@
 title: ISNULL (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: dc7a0173-3664-4c90-a57b-5cbb0a8ed7ee
-ms.openlocfilehash: aaecce3ff74d64b8e07b31329ced5b5e581fca5b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d54c350196ad1ef7cfafa6d931d9d1ad8f267177
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780404"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250555"
 ---
 # <a name="isnull-entity-sql"></a>ISNULL (Entity SQL)
 Détermine si une expression de requête a la valeur NULL.  
@@ -57,9 +57,9 @@ select c from LOB.Customer as c where c.DOB is not null
 |RowType IS NULL|Génère une erreur.|  
   
 ## <a name="example"></a>Exemple  
- Ce qui suit [!INCLUDE[esql](../../../../../../includes/esql-md.md)] requête utilise l’opérateur IS NOT NULL pour déterminer si une expression de requête n’est pas null. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
+ La requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)] suivante utilise l’opérateur is not null pour déterminer si une expression de requête n’a pas la valeur null. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite dans [Comment : Exécuter une requête qui retourne des résultats StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-structuraltype-results.md)de StructuralType.  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   
@@ -67,4 +67,4 @@ select c from LOB.Customer as c where c.DOB is not null
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Référence Entity SQL](entity-sql-reference.md)

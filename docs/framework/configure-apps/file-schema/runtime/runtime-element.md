@@ -9,19 +9,19 @@ helpviewer_keywords:
 - runtime element
 - container tags, <runtime> element
 ms.assetid: 1eb2fae3-de4b-45b6-852f-517c39b751bd
-ms.openlocfilehash: 3cf99a4dcf64b82846729d8663e398385b7a1086
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: e703b9739ea93d3c7bf08371bc264bbdcb05b716
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663467"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252327"
 ---
 # <a name="runtime-element"></a>\<Élément > du Runtime
 
 Fournit des informations utilisées par le common language runtime pour configurer des applications.
 
-\<configuration>\
-\<runtime>
+[ **\<configuration>** ](../configuration-element.md)  
+&nbsp;&nbsp; **\<runtime>**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -91,7 +91,7 @@ Aucun.
 
 Les éléments enfants de la [ \<section > du Runtime](runtime-element.md) d’un fichier de configuration sont utilisés par le Common Language Runtime pour configurer le mode d’exécution d’une application. Par exemple, l' [ \<élément gcServer >](gcserver-element.md) détermine si le garbage collector utilise des garbage collection de station de travail ou de serveur garbage collection, l’élément de [ \<> UseRandomizedStringHashAlgorithm](userandomizedstringhashalgorithm-element.md) détermine si le Common Language Runtime calcule des codes de hachage pour une chaîne par application ou par domaine d’application, et l’élément permet `AppContextSwitchOverrides` aux utilisateurs de la bibliothèque d’accepter ou de refuser les fonctionnalités modifiées fournies par une bibliothèque.
 
-Les éléments de la [ \<section > du Runtime](runtime-element.md) sont lus automatiquement par le Common Language Runtime au démarrage de l’application. Vous pouvez également définir le fichier de configuration pour un domaine d’application non défini par défaut en fournissant son nom <xref:System.AppDomainSetup.ConfigurationFile%2A?displayProperty=nameWithType> à la propriété; ses paramètres sont lus automatiquement lorsque le domaine d’application est chargé. Vous devriez rarement, voire jamais, avoir besoin de lire directement les paramètres dans la [ \<section > du Runtime](runtime-element.md) dans le fichier de configuration de votre application.
+Les éléments de la [ \<section > du Runtime](runtime-element.md) sont lus automatiquement par le Common Language Runtime au démarrage de l’application. Vous pouvez également définir le fichier de configuration pour un domaine d’application non défini par défaut en fournissant son nom <xref:System.AppDomainSetup.ConfigurationFile%2A?displayProperty=nameWithType> à la propriété ; ses paramètres sont lus automatiquement lorsque le domaine d’application est chargé. Vous devriez rarement, voire jamais, avoir besoin de lire directement les paramètres dans la [ \<section > du Runtime](runtime-element.md) dans le fichier de configuration de votre application.
 
 ## <a name="see-also"></a>Voir aussi
 

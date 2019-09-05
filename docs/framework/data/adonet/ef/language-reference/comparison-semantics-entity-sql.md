@@ -2,12 +2,12 @@
 title: Sémantique de comparaison (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: b36ce28a-2fe4-4236-b782-e5f7c054deae
-ms.openlocfilehash: 2ca91861d4830321168e96fb200c4889dc33b04b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: da7b8f662d10376abd649e674701b43b7b740a6f
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64631720"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251182"
 ---
 # <a name="comparison-semantics-entity-sql"></a>Sémantique de comparaison (Entity SQL)
 L'exécution des opérateurs [!INCLUDE[esql](../../../../../../includes/esql-md.md)] suivants implique une comparaison d'instances de type :  
@@ -66,17 +66,17 @@ L'exécution des opérateurs [!INCLUDE[esql](../../../../../../includes/esql-md.
 ## <a name="supported-combinations"></a>Combinaisons prises en charge  
  Le tableau suivant répertorie toutes les combinaisons prises en charge des opérateurs de comparaison pour chaque type :  
   
-|**Type**|**=**<br /><br /> **\!=**|**GROUP BY**<br /><br /> **DISTINCT**|**UNION**<br /><br /> **INTERSECT**<br /><br /> **EXCEPT**<br /><br /> **SET**<br /><br /> **OVERLAPS**|**IN**|**<   <=**<br /><br /> **>   >=**|**ORDER BY**|**A LA VALEUR NULL**<br /><br /> **N’EST PAS NULL**|  
+|**Type**|**=**<br /><br /> **\!=**|**GROUP BY**<br /><br /> **DISTINCT**|**UNION**<br /><br /> **INTERSECT**<br /><br /> **EXCEPT**<br /><br /> **SET**<br /><br /> **OVERLAPS**|**IN**|**<   <=**<br /><br /> **>   >=**|**ORDER BY**|**EST NULL**<br /><br /> **N’EST PAS NULL**|  
 |-|-|-|-|-|-|-|-|  
-|Type d'entité|Ref<sup>1</sup>|Toutes les propriétés<sup>2</sup>|Toutes les propriétés<sup>2</sup>|Toutes les propriétés<sup>2</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Ref<sup>1</sup>|  
-|Type complexe|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|  
-|Ligne|Toutes les propriétés<sup>4</sup>|Toutes les propriétés<sup>4</sup>|Toutes les propriétés<sup>4</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Toutes les propriétés<sup>4</sup>|Throw<sup>3</sup>|  
+|Type d'entité|Réf.<sup>1</sup>|Toutes les propriétés<sup>2</sup>|Toutes les propriétés<sup>2</sup>|Toutes les propriétés<sup>2</sup>|Lever<sup>3</sup>|Lever<sup>3</sup>|Réf.<sup>1</sup>|  
+|Type complexe|Lever<sup>3</sup>|Lever<sup>3</sup>|Lever<sup>3</sup>|Lever<sup>3</sup>|Lever<sup>3</sup>|Lever<sup>3</sup>|Lever<sup>3</sup>|  
+|Ligne|Toutes les propriétés<sup>4</sup>|Toutes les propriétés<sup>4</sup>|Toutes les propriétés<sup>4</sup>|Lever<sup>3</sup>|Lever<sup>3</sup>|Toutes les propriétés<sup>4</sup>|Lever<sup>3</sup>|  
 |Type primitif|Spécifique au fournisseur|Spécifique au fournisseur|Spécifique au fournisseur|Spécifique au fournisseur|Spécifique au fournisseur|Spécifique au fournisseur|Spécifique au fournisseur|  
-|Multiset|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|  
+|Multiset|Lever<sup>3</sup>|Lever<sup>3</sup>|Lever<sup>3</sup>|Lever<sup>3</sup>|Lever<sup>3</sup>|Lever<sup>3</sup>|Lever<sup>3</sup>|  
 |Ref|Oui<sup>5</sup>|Oui<sup>5</sup>|Oui<sup>5</sup>|Oui<sup>5</sup>|Throw|Throw|Oui<sup>5</sup>|  
-|Association<br /><br /> type|Throw<sup>3</sup>|Throw|Throw|Throw|Throw<sup>3</sup>|Throw<sup>3</sup>|Throw<sup>3</sup>|  
+|Association<br /><br /> type|Lever<sup>3</sup>|Throw|Throw|Throw|Lever<sup>3</sup>|Lever<sup>3</sup>|Lever<sup>3</sup>|  
   
- <sup>1</sup>les références des instances du type d’entité donnée sont comparées implicitement, comme indiqué dans l’exemple suivant :  
+ <sup>1</sup> Les références des instances de type d’entité données sont comparées implicitement, comme illustré dans l’exemple suivant :  
   
 ```  
 SELECT p1, p2   
@@ -94,14 +94,14 @@ FROM AdventureWorksEntities.Product AS p1
 WHERE p1 != REF(p2)  
 ```  
   
- <sup>2</sup>propriétés de types complexes sont aplanies avant d’être envoyés au magasin, afin de pouvoir être comparées (tant que toutes leurs propriétés peuvent être comparées). Consultez également <sup>4.</sup>  
+ <sup>2</sup> Les propriétés des types complexes sont aplaties avant d’être envoyées au magasin. elles deviennent donc comparables (à condition que toutes leurs propriétés soient comparables). Consultez également <sup>4.</sup>  
   
- <sup>3</sup>runtime de l’Entity Framework détecte le cas non pris en charge et lève une exception explicite sans engager le fournisseur/magasin.  
+ <sup>3</sup> Le runtime Entity Framework détecte le cas non pris en charge et lève une exception significative sans engager le fournisseur/magasin.  
   
- <sup>4</sup>une tentative est faite pour comparer toutes les propriétés. Si une propriété est d'un type non comparable, tel que text, ntext ou image, une exception de serveur peut être levée.  
+ <sup>4</sup> Une tentative est effectuée pour comparer toutes les propriétés. Si une propriété est d'un type non comparable, tel que text, ntext ou image, une exception de serveur peut être levée.  
   
- <sup>5</sup>tous les éléments individuels des références sont comparés (Cela inclut le nom de jeu d’entités et de toutes les propriétés de clé du type d’entité).  
+ <sup>5</sup> Tous les éléments individuels des références sont comparés (cela comprend le nom du jeu d’entités et toutes les propriétés de clé du type d’entité).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble d’Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+- [Vue d’ensemble d’Entity SQL](entity-sql-overview.md)

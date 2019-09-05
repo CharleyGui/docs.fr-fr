@@ -5,28 +5,28 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cb23c25c-1075-4cc3-a8ff-4db72e536c0d
-ms.openlocfilehash: 8f09983aa90be666cc13ae4eba018db2ae706daa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c3a9bcef1944d0d018134383d3e556fe6ac24822
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760595"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250217"
 ---
 # <a name="method-based-query-syntax-examples-grouping"></a>Exemples de syntaxe de requête fondée sur une méthode : Regroupement
-Les exemples de cette rubrique vous montrent comment utiliser le `GroupBy` méthode pour interroger le [AdventureWorks Sales Model](https://archive.codeplex.com/?p=msftdbprodsamples) à l’aide de la syntaxe de requête fondée sur une méthode. Le modèle de vente AdventureWorks Sales Model utilisé dans ces exemples est construit à partir des tables Contact, Address, Product, SalesOrderHeader et SalesOrderDetail de l'exemple de base de données AdventureWorks.  
+Les exemples de cette rubrique montrent comment utiliser la méthode pour `GroupBy` interroger le [modèle de vente AdventureWorks Sales Model](https://archive.codeplex.com/?p=msftdbprodsamples) à l’aide de la syntaxe de requête fondée sur une méthode. Le modèle de vente AdventureWorks Sales Model utilisé dans ces exemples est construit à partir des tables Contact, Address, Product, SalesOrderHeader et SalesOrderDetail de l'exemple de base de données AdventureWorks.  
   
- Les exemples de cette rubrique utilisent les éléments suivants `using` / `Imports` instructions :  
+ Les exemples de cette rubrique utilisent les instructions `using` suivantes / `Imports` :  
   
  [!code-csharp[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#importsusing)]
  [!code-vb[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#importsusing)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple suivant utilise la méthode `GroupBy` pour retourner les objets `Address` qui sont regroupés par code postal. Les résultats sont projetés dans un type anonyme.  
   
  [!code-csharp[DP L2E Examples#GroupBySimple3_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#groupbysimple3_mq)]
  [!code-vb[DP L2E Examples#GroupBySimple3_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#groupbysimple3_mq)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple suivant utilise la méthode `GroupBy` pour retourner les objets `Contact` qui sont regroupés en fonction de la première lettre du nom de famille des contacts. Les résultats sont également triés selon la première lettre du nom de famille et projetés dans un type anonyme.  
   
  [!code-csharp[DP L2E Examples#GroupBySimple2_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#groupbysimple2_mq)]
@@ -40,4 +40,4 @@ Les exemples de cette rubrique vous montrent comment utiliser le `GroupBy` méth
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Requêtes dans LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)
+- [Requêtes dans LINQ to Entities](queries-in-linq-to-entities.md)

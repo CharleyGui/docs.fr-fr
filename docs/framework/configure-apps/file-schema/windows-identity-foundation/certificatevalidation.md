@@ -3,19 +3,20 @@ title: <certificateValidation>
 ms.date: 03/30/2017
 ms.assetid: 6c54c704-b55e-4631-88ff-4d4a5621554c
 author: BrucePerlerMS
-ms.openlocfilehash: 8185153eb02c5794b0f6ac02a6837806f2073c07
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c2d1a5d36cb5616ef06eedc093dd70a68a164a81
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941918"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252138"
 ---
 # <a name="certificatevalidation"></a>\<certificateValidation>
 Contrôle les paramètres que les gestionnaires de jetons utilisent pour valider les certificats. Ces paramètres sont substitués si un gestionnaire spécifique est configuré avec son propre validateur.  
   
- \<system.identityModel>  
-\<identityConfiguration>  
-\<certificateValidation>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<certificateValidation >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,15 +39,15 @@ Contrôle les paramètres que les gestionnaires de jetons utilisent pour valider
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|certificateValidationMode|<xref:System.ServiceModel.Security.X509CertificateValidationMode> Valeur qui spécifie le mode de validation à utiliser pour le certificat X. 509. La valeur par défaut est «PeerOrChainTrust». Pour spécifier un validateur personnalisé, affectez la valeur «Custom» à cet attribut et spécifiez le validateur à l’aide de l' [ \<élément certificateValidator >](certificatevalidator.md) . facultatif.|  
-|revocationMode|<xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> Valeur qui spécifie le mode de révocation à utiliser pour le certificat X. 509. La valeur par défaut est «online». facultatif.|  
-|trustedStoreLocation|<xref:System.Security.Cryptography.X509Certificates.StoreLocation> Valeur qui spécifie le magasin de certificats X. 509. La valeur par défaut est «LocalMachine». facultatif.|  
+|certificateValidationMode|<xref:System.ServiceModel.Security.X509CertificateValidationMode> Valeur qui spécifie le mode de validation à utiliser pour le certificat X. 509. La valeur par défaut est « PeerOrChainTrust ». Pour spécifier un validateur personnalisé, affectez la valeur « Custom » à cet attribut et spécifiez le validateur à l’aide de l' [ \<élément certificateValidator >](certificatevalidator.md) . facultatif.|  
+|revocationMode|<xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> Valeur qui spécifie le mode de révocation à utiliser pour le certificat X. 509. La valeur par défaut est « online ». facultatif.|  
+|trustedStoreLocation|<xref:System.Security.Cryptography.X509Certificates.StoreLocation> Valeur qui spécifie le magasin de certificats X. 509. La valeur par défaut est « LocalMachine ». facultatif.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<certificateValidator>](certificatevalidator.md)|Spécifie un type personnalisé pour la validation du certificat. Ce type est utilisé uniquement si l' `certificateValidationMode` attribut de l' [ \<élément certificateValidation >](certificatevalidation.md) a la valeur «Custom».|  
+|[\<certificateValidator>](certificatevalidator.md)|Spécifie un type personnalisé pour la validation du certificat. Ce type est utilisé uniquement si l' `certificateValidationMode` attribut de l' [ \<élément certificateValidation >](certificatevalidation.md) a la valeur « Custom ».|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

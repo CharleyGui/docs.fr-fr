@@ -4,20 +4,20 @@ ms.date: 04/26/2017
 ms.assetid: c2cf97f0-9262-4f1f-a754-5568b51110ad
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2d79479d1836963fcbdaaf8d40bfc3648b88c4a3
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 3b783a82b1ef964de308532ef544bbfab2397400
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663410"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252224"
 ---
 # <a name="uselegacyjit-element"></a>\<useLegacyJit>, élément
 
 Détermine si le common language runtime utilise le compilateur JIT 64 bits hérité pour la compilation juste-à-temps.  
   
-\<configuration>  
-\<runtime>  
-\<useLegacyJit>
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<useLegacyJit>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +39,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
   
 ### <a name="enabled-attribute"></a>attribut activé  
   
-| Valeur | Description                                                                                                         |  
+| `Value` | Description                                                                                                         |  
 | ----- | ------------------------------------------------------------------------------------------------------------------- |  
 | 0     | Le common language runtime utilise le nouveau compilateur JIT 64 bits inclus dans les .NET Framework 4,6 et versions ultérieures. |  
 | 1     | Le common language runtime utilise l’ancien compilateur JIT 64 bits.                                                     |  
@@ -62,7 +62,7 @@ Aucun
 > [!NOTE]
 > L' `<useLegacyJit>` élément affecte uniquement la compilation JIT 64 bits. La compilation avec le compilateur JIT 32 bits n’est pas affectée.  
   
-Au lieu d’utiliser un paramètre de fichier de configuration, vous pouvez activer le compilateur JIT 64 bits hérité de deux manières:  
+Au lieu d’utiliser un paramètre de fichier de configuration, vous pouvez activer le compilateur JIT 64 bits hérité de deux manières :  
   
 - Définition d’une variable d’environnement
 

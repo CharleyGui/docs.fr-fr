@@ -7,20 +7,20 @@ helpviewer_keywords:
 ms.assetid: 07132b9c-4a72-4710-99d7-e702405e02d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 881862b6b81ace1c1923b2a22d2fbe54d939d84e
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 2cd6f937811ae503dd4de7ff989510c4eb8b8933
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663569"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252447"
 ---
 # <a name="netfx40_legacysecuritypolicy-element"></a>\<NetFx40_LegacySecurityPolicy >, élément
 
 Indique si le runtime utilise la stratégie héritée de sécurité d’accès du code (CAS).
 
-\<configuration>\
-\<> du runtime \
-\<NetFx40_LegacySecurityPolicy >
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<NetFx40_LegacySecurityPolicy >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -78,7 +78,7 @@ L’application `<NetFx40_LegacySecurityPolicy>` de l’élément à un assembly
 
 Cet élément peut être utilisé uniquement dans le fichier de configuration de l’application.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L’exemple suivant montre comment activer la stratégie CAS héritée pour une application.
 

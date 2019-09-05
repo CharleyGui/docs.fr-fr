@@ -2,12 +2,12 @@
 title: Résolution de surcharge des fonctions (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 9c648054-3808-4a69-9d3e-98e6a4f9c5ca
-ms.openlocfilehash: 0248fdd3f3ba6afb5c7edca740d9aad3ca74bd03
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1aeebc501487a6fc443df00c24beb2bc6aa5fc49
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62034175"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250919"
 ---
 # <a name="function-overload-resolution-entity-sql"></a>Résolution de surcharge des fonctions (Entity SQL)
 Cette rubrique décrit comment résoudre les fonctions [!INCLUDE[esql](../../../../../../includes/esql-md.md)].  
@@ -20,9 +20,9 @@ Cette rubrique décrit comment résoudre les fonctions [!INCLUDE[esql](../../../
   
 2. **Correspondance exacte sur le type**. Chaque type d’argument de la fonction correspond exactement au type de paramètre ou correspond au littéral Null.  
   
-3. **Concordance sur le sous-type**. Chaque type d'argument de la fonction correspond exactement au type de paramètre ou en est un sous-type, ou l'argument correspond au littéral Null. Au cas où plusieurs fonctions diffèrent uniquement par le nombre de conversions de sous-types requis, la fonction avec le moins de conversions de sous-types est la fonction résolue.  
+3. **Correspondance sur le sous-type**. Chaque type d'argument de la fonction correspond exactement au type de paramètre ou en est un sous-type, ou l'argument correspond au littéral Null. Au cas où plusieurs fonctions diffèrent uniquement par le nombre de conversions de sous-types requis, la fonction avec le moins de conversions de sous-types est la fonction résolue.  
   
-4. **Correspondance sur la promotion de type ou sous-type**. Chaque type d'argument de la fonction correspond exactement au type de paramètre, en est un sous-type ou peut être converti dans le type de paramètre, ou l'argument correspond au littéral Null. Encore une fois, au cas où plusieurs fonctions diffèrent uniquement par le nombre de promotions et de conversions de sous-types, la fonction avec le moins de promotions et de conversions de sous-types est la fonction résolue.  
+4. **Correspondance sur le sous-type ou la promotion de type**. Chaque type d'argument de la fonction correspond exactement au type de paramètre, en est un sous-type ou peut être converti dans le type de paramètre, ou l'argument correspond au littéral Null. Encore une fois, au cas où plusieurs fonctions diffèrent uniquement par le nombre de promotions et de conversions de sous-types, la fonction avec le moins de promotions et de conversions de sous-types est la fonction résolue.  
   
  Si aucun de ces critères ne permet la sélection d'une fonction unique, l'expression d'appel de la fonction est ambiguë.  
   
@@ -32,6 +32,6 @@ Cette rubrique décrit comment résoudre les fonctions [!INCLUDE[esql](../../../
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [Vue d’ensemble d’Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
-- [Fonctions](../../../../../../docs/framework/data/adonet/ef/language-reference/functions-entity-sql.md)
+- [Référence Entity SQL](entity-sql-reference.md)
+- [Vue d’ensemble d’Entity SQL](entity-sql-overview.md)
+- [Fonctions](functions-entity-sql.md)

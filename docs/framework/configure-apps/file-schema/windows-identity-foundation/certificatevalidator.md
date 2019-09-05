@@ -3,20 +3,21 @@ title: <certificateValidator>
 ms.date: 03/30/2017
 ms.assetid: 86161897-c20f-4ad8-9d7f-050c247251bf
 author: BrucePerlerMS
-ms.openlocfilehash: c25f183679f41f51ffee4f482bfe7a64763647d9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 30f81dd5948a7d366c1116cffd347c85a396f5ae
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941905"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252126"
 ---
 # <a name="certificatevalidator"></a>\<certificateValidator>
-Spécifie un type personnalisé pour la validation du certificat. Ce type est utilisé uniquement si l' `certificateValidationMode` attribut de l' [ \<élément certificateValidation >](certificatevalidation.md) a la valeur «Custom».  
+Spécifie un type personnalisé pour la validation du certificat. Ce type est utilisé uniquement si l' `certificateValidationMode` attribut de l' [ \<élément certificateValidation >](certificatevalidation.md) a la valeur « Custom ».  
   
- \<system.identityModel>  
-\<identityConfiguration>  
-\<certificateValidation>  
-\<certificateValidator>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<certificateValidation >** ](certificatevalidation.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<certificateValidator >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,7 +50,7 @@ Spécifie un type personnalisé pour la validation du certificat. Ce type est ut
 |-------------|-----------------|  
 |[\<certificateValidation>](certificatevalidation.md)|Contrôle les paramètres que les gestionnaires de jetons utilisent pour valider les certificats.|  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ```xml  
 <certificateValidation certificateValidationMode="Custom"  

@@ -2,12 +2,12 @@
 title: DEREF (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 4c78e833-b260-453d-9bf4-eb39857dd0fa
-ms.openlocfilehash: 1ba562ba6542e6ab0d62f1f8348434ae4f4c9b13
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 10c5ecb2b44c85dccd758cc1cf63a152da045cc1
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785305"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251078"
 ---
 # <a name="deref-entity-sql"></a>DEREF (Entity SQL)
 Déréférence une valeur de référence et génère le résultat de ce déréférencement.  
@@ -26,12 +26,12 @@ SELECT DEREF ( o.expression ) from Table as o;
  Valeur de l'entité référencée.  
   
 ## <a name="remarks"></a>Notes  
- L'opérateur DEREF déréférence une valeur de référence et génère le résultat de ce déréférencement. Par exemple, si `r` est une référence de type ref\<T >, `Deref(r)` est une expression de type `T` qui génère l’entité référencée par `r`. Si la valeur de référence est null ou non résolue (autrement dit, la cible de la référence n'existe pas), le résultat de l'opérateur DEREF est null.  
+ L'opérateur DEREF déréférence une valeur de référence et génère le résultat de ce déréférencement. Par exemple, si `r` est une référence de type Ref\<T >, `Deref(r)` est une expression de type `T` qui génère l’entité référencée par `r`. Si la valeur de référence est null ou non résolue (autrement dit, la cible de la référence n'existe pas), le résultat de l'opérateur DEREF est null.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  La requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ci-dessous utilise l'opérateur DEREF pour déréférencer une valeur de référence et générer le résultat de ce déréférencement. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite dans [Comment : Exécuter une requête qui retourne les résultats PrimitiveType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-primitivetype-results.md).  
+1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-primitivetype-results.md)de PrimitiveType.  
   
 2. Passez à la méthode ExecutePrimitiveTypeQuery la requête suivante en tant qu'argument :  
   
@@ -39,8 +39,8 @@ SELECT DEREF ( o.expression ) from Table as o;
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [REF](../../../../../../docs/framework/data/adonet/ef/language-reference/ref-entity-sql.md)
-- [CREATEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/createref-entity-sql.md)
-- [KEY](../../../../../../docs/framework/data/adonet/ef/language-reference/key-entity-sql.md)
-- [Types structurés autorisant la valeur null](../../../../../../docs/framework/data/adonet/ef/language-reference/nullable-structured-types-entity-sql.md)
+- [Référence Entity SQL](entity-sql-reference.md)
+- [REF](ref-entity-sql.md)
+- [CREATEREF](createref-entity-sql.md)
+- [KEY](key-entity-sql.md)
+- [Types structurés autorisant la valeur null](nullable-structured-types-entity-sql.md)

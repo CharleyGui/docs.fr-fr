@@ -3,19 +3,20 @@ title: <securityTokenHandlers>
 ms.date: 03/30/2017
 ms.assetid: f11a631d-4094-4e11-bb03-4ede74b30281
 author: BrucePerlerMS
-ms.openlocfilehash: 678e5c705181c55257b1ddb853690ada60ecd17a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 017309436660991c69da569e9cc4219e842ecaa3
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69942457"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251878"
 ---
 # <a name="securitytokenhandlers"></a>\<securityTokenHandlers>
 Spécifie une collection de gestionnaires de jetons de sécurité inscrits auprès du point de terminaison.  
   
- \<system.identityModel>  
-\<identityConfiguration>  
-\<securityTokenHandlers>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<securityTokenHandlers >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,7 +36,7 @@ Spécifie une collection de gestionnaires de jetons de sécurité inscrits aupr�
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|name|Spécifie le nom d’une collection de gestionnaires de jetons. Les seules valeurs reconnues par l’infrastructure sont «ActAs» et «OnBehalfOf». Si les collections de gestionnaires de jetons sont spécifiées avec l’un de ces noms, la collection sera utilisée lors du traitement des jetons ActAs ou OnBehalfOf, respectivement.|  
+|name|Spécifie le nom d’une collection de gestionnaires de jetons. Les seules valeurs reconnues par l’infrastructure sont « ActAs » et « OnBehalfOf ». Si les collections de gestionnaires de jetons sont spécifiées avec l’un de ces noms, la collection sera utilisée lors du traitement des jetons ActAs ou OnBehalfOf, respectivement.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -53,7 +54,7 @@ Spécifie une collection de gestionnaires de jetons de sécurité inscrits aupr�
 |[\<identityConfiguration>](identityconfiguration.md)|Spécifie les paramètres d’identité au niveau du service.|  
   
 ## <a name="remarks"></a>Notes  
- Vous pouvez spécifier une ou plusieurs collections nommées de gestionnaires de jetons de sécurité dans une configuration de service. Vous pouvez spécifier un nom pour une collection à l’aide `name` de l’attribut. Les seuls noms que le Framework gère sont «ActAs» et «OnBehalfOf». Si des gestionnaires existent dans ces collections, ils sont utilisés par un service d’émission de jeton de sécurité (STS) à la place des `ActAs` gestionnaires `OnBehalfOf` par défaut lors du traitement et des jetons.  
+ Vous pouvez spécifier une ou plusieurs collections nommées de gestionnaires de jetons de sécurité dans une configuration de service. Vous pouvez spécifier un nom pour une collection à l’aide `name` de l’attribut. Les seuls noms que le Framework gère sont « ActAs » et « OnBehalfOf ». Si des gestionnaires existent dans ces collections, ils sont utilisés par un service d’émission de jeton de sécurité (STS) à la place des `ActAs` gestionnaires `OnBehalfOf` par défaut lors du traitement et des jetons.  
   
  Par défaut, la collection est remplie avec les types de gestionnaires suivants <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler>: <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler>, <xref:System.IdentityModel.Tokens.KerberosSecurityTokenHandler>, <xref:System.IdentityModel.Tokens.WindowsUserNameSecurityTokenHandler>, <xref:System.IdentityModel.Tokens.RsaSecurityTokenHandler>, <xref:System.IdentityModel.Tokens.X509SecurityTokenHandler>, et <xref:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler>. Vous pouvez modifier la collection à l’aide `<add>`des `<remove>`éléments, `<clear>` et. Vous devez vous assurer qu’il n’existe qu’un seul gestionnaire d’un type particulier dans la collection. Par exemple, si vous dérivez un gestionnaire <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> de la classe, votre gestionnaire ou <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> le peut être configuré dans une seule collection, mais pas les deux.  
   

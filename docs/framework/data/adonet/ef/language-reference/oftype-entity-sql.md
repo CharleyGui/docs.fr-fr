@@ -2,12 +2,12 @@
 title: OFTYPE (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 6d259ca7-bbf0-40f8-a154-181d25c0d67e
-ms.openlocfilehash: bbc3ffd4902fe8c1c41aebe88317d0e3c32f7771
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 36701a5e75e804ea541d242aaff243de0b24cec3
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760361"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70249793"
 ---
 # <a name="oftype-entity-sql"></a>OFTYPE (Entity SQL)
 Retourne une collection d'objets à partir d'une expression de requête d'un type spécifique.  
@@ -66,4 +66,4 @@ OfType(executives, NamespaceName.Manager)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Référence Entity SQL](entity-sql-reference.md)

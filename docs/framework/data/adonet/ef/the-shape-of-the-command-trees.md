@@ -2,12 +2,12 @@
 title: Forme des arborescences de commandes
 ms.date: 03/30/2017
 ms.assetid: 2215585e-ca47-45f8-98d4-8cb982f8c1d3
-ms.openlocfilehash: 08a67c8d181188cbc14c6f60876a7e26cd6de25a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a3568f3deeaeeb31b69b41ac7c767001b792a8eb
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61763982"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248219"
 ---
 # <a name="the-shape-of-the-command-trees"></a>Forme des arborescences de commandes
 
@@ -75,9 +75,9 @@ Les types de fonction suivants peuvent être passés :
 
 - Fonctions définies par l'utilisateur.
 
-Fonctions canoniques (consultez [fonctions canoniques](../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md) pour plus d’informations) sont spécifiés dans le cadre de la [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], et les fournisseurs doivent fournir des implémentations pour les fonctions canoniques en fonction de ces spécifications. Les fonctions de magasin sont basées sur les spécifications présentes dans le manifeste du fournisseur correspondant. Les fonctions définies par l'utilisateur sont basées sur les spécifications présentes dans le SSDL.
+Les fonctions canoniques (consultez [fonctions canoniques](./language-reference/canonical-functions.md) pour plus d’informations) sont spécifiées dans le [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]cadre du, et les fournisseurs doivent fournir des implémentations pour les fonctions canoniques en fonction de ces spécifications. Les fonctions de magasin sont basées sur les spécifications présentes dans le manifeste du fournisseur correspondant. Les fonctions définies par l'utilisateur sont basées sur les spécifications présentes dans le SSDL.
 
-De plus, les fonctions qui ont l'attribut NiladicFunction n'ont pas d'arguments et doivent être traduites sans parenthèses à la fin.  Autrement dit, en  *\<functionName >* au lieu de  *\<functionName > ()*.
+De plus, les fonctions qui ont l'attribut NiladicFunction n'ont pas d'arguments et doivent être traduites sans parenthèses à la fin.  Autrement dit, pour  *\<nomfonction >* au lieu de  *\<nomfonction > ()* .
 
 #### <a name="dbnewinstanceexpression"></a>DbNewInstanceExpression
 
@@ -87,7 +87,7 @@ DbNewInstanceExpression peut se produire uniquement dans les deux cas suivants 
 
   - Le type de résultat doit être un type de ligne.
 
-  - Chacun de ses arguments est une expression qui produit un résultat avec un type primitif. En général, chaque argument est une expression scalaire, comme un PropertyExpression sur un DbVariableReferenceExpression, un appel de fonction ou un calcul arithmétique de DbPropertyExpression sur un DbVariableReferenceExpression ou un appel de fonction. Toutefois, une expression qui représente une sous-requête scalaire peut également se produire dans la liste d'arguments pour un DbNewInstanceExpression. Une expression qui représente une sous-requête scalaire est une arborescence d’expression qui représente une sous-requête qui retourne une seule ligne et une colonne d’un type primitif avec une racine de l’objet DbElementExpression
+  - Chacun de ses arguments est une expression qui produit un résultat avec un type primitif. En général, chaque argument est une expression scalaire, comme un PropertyExpression sur un DbVariableReferenceExpression, un appel de fonction ou un calcul arithmétique de DbPropertyExpression sur un DbVariableReferenceExpression ou un appel de fonction. Toutefois, une expression qui représente une sous-requête scalaire peut également se produire dans la liste d'arguments pour un DbNewInstanceExpression. Une expression qui représente une sous-requête scalaire est une arborescence d’expression qui représente une sous-requête qui retourne exactement une ligne et une colonne d’un type primitif avec une racine d’objet DbElementExpression
 
 - Avec un type de retour de collection, auquel cas il définit une nouvelle collection des expressions fournies comme arguments.
 
@@ -105,11 +105,11 @@ La propriété Limit peut être uniquement un DbConstantExpression ou un DbParam
 
 #### <a name="dbscanexpression"></a>DbScanExpression
 
-Lorsqu’il est utilisé dans les arborescences de commandes de sortie, DbScanExpression représente efficacement une analyse sur une table, une vue ou une requête de magasin, représenté par EntitySetBase::Target.
+Lorsqu’il est utilisé dans les arborescences de commandes de sortie, DbScanExpression représente efficacement une analyse sur une table, une vue ou une requête de magasin, représentée par EntitySetBase :: target.
 
-Si la propriété de métadonnées « Defining Query » de la cible est non null, elle représente une requête, le texte de requête pour ce qui est fourni dans cette propriété de métadonnées dans la langue spécifique du fournisseur (ou le dialecte) tel que spécifié dans la définition de schéma du magasin.
+Si la propriété de métadonnées « définition de la requête » de la cible n’est pas null, elle représente une requête, le texte de requête pour lequel est fourni dans cette propriété de métadonnées dans le langage spécifique du fournisseur (ou le dialecte) tel que spécifié dans la définition de schéma du magasin.
 
-Sinon, la cible représente une table ou une vue. Son préfixe de schéma se trouve dans la propriété de métadonnées « Schema », si ce n’est pas null, sinon est le nom de conteneur d’entités.  Le nom de la table ou la vue est soit la propriété de métadonnées « Table », si ce n’est pas null, sinon la propriété de nom de l’entité définie base.
+Sinon, la cible représente une table ou une vue. Son préfixe de schéma est soit dans la propriété de métadonnées « Schema », si elle n’est pas null, soit le nom du conteneur d’entités.  Le nom de la table ou de la vue est la propriété de métadonnées « table », si elle n’est pas null, sinon la propriété Name de la base du jeu d’entités.
 
 Toutes ces propriétés proviennent de la définition de l'EntitySet correspondant dans le fichier de définition de schéma du magasin (SSDL).
 
@@ -119,4 +119,4 @@ Lorsque les types primitifs sont référencés dans les arborescences de command
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Génération SQL](../../../../../docs/framework/data/adonet/ef/sql-generation.md)
+- [Génération SQL](sql-generation.md)

@@ -13,12 +13,12 @@ ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
 author: rpetrusha
 ms.author: ronpet
 ms.custom: serodec18
-ms.openlocfilehash: 8d887bb32d1bdd398353d00aba16c2cc8adfcacb
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
-ms.translationtype: HT
+ms.openlocfilehash: a945c53f3206f29cf2b07fea86ba3e8e3af11645
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988827"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70254223"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Bonnes pratiques pour les expressions régulières dans .NET
 <a name="top"></a> Le moteur d’expressions régulières de .NET est un outil puissant et complet. Il traite le texte en fonction de correspondances de modèles plutôt qu’en comparant et en confrontant le texte littéral. Dans la plupart des cas, il exécute les critères spéciaux de façon rapide et efficace. Toutefois, dans certains cas, le moteur des expressions régulières peut sembler très lent. Dans des cas extrêmes, il semble même cesser de répondre. Il traite en effet peu d'entrées sur une période de plusieurs heures ou même de plusieurs jours.  
@@ -71,7 +71,7 @@ ms.locfileid: "69988827"
   
 - Testez intégralement votre expression régulière à l'aide d'entrées non valides et presque valides, ainsi que d'entrées valides. Pour générer de manière aléatoire une entrée pour une expression régulière spécifique, vous pouvez utiliser [Rex](https://www.microsoft.com/en-us/research/project/rex-regular-expression-exploration/), l’outil d’exploration d’expressions régulières de Microsoft Research.  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="ObjectInstantiation"></a>   
 ## <a name="handle-object-instantiation-appropriately"></a>Gestion correcte de l'instanciation d'objet  
@@ -96,7 +96,7 @@ ms.locfileid: "69988827"
 > La forme de l'appel de méthode (statique, interprétée, compilée) affecte les performances si une même expression régulière est utilisée à plusieurs reprises dans les appels de méthode, ou si une application entraîne l'utilisation intensive d'objets d'expression régulière.  
   
 ### <a name="static-regular-expressions"></a>Expressions régulières statiques  
- Les méthodes d'expression régulière statiques sont recommandées pour éviter d'instancier à plusieurs reprises un objet d'expression régulière avec la même expression régulière. À la différence des modèles d’expressions régulières utilisés par les objets d’expression régulière, les codes d’opération ou le langage compilé MSIL (Microsoft intermediate langage) des modèles utilisés dans les appels de méthode d’instance sont mis en cache en interne par le moteur des expressions régulières.  
+ Les méthodes d'expression régulière statiques sont recommandées pour éviter d'instancier à plusieurs reprises un objet d'expression régulière avec la même expression régulière. Contrairement aux modèles d’expressions régulières utilisés par les objets d’expression régulière, les codes d’opération ou le langage MSIL (Microsoft Intermediate Language) compilé à partir des modèles utilisés dans les appels de méthode statique sont mis en cache en interne par le moteur des expressions régulières.  
   
  Par exemple, un gestionnaire d'événements appelle fréquemment une autre méthode pour valider l'entrée d'utilisateur. Ceci se reflète dans le code suivant, dans lequel l'événement <xref:System.Windows.Forms.Button> d'un contrôle <xref:System.Windows.Forms.Control.Click> est utilisé pour appeler une méthode nommée `IsValidCurrency`, qui vérifie si l'utilisateur a entré un symbole monétaire suivi d'au moins un chiffre décimal.  
   
@@ -170,7 +170,7 @@ ms.locfileid: "69988827"
  [!code-csharp[Conceptual.RegularExpressions.BestPractices#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/compile2.cs#7)]
  [!code-vb[Conceptual.RegularExpressions.BestPractices#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/compile2.vb#7)]  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="Backtracking"></a>   
 ## <a name="take-charge-of-backtracking"></a>Prise en charge de la rétroaction  
@@ -229,7 +229,7 @@ ms.locfileid: "69988827"
 |`(?<=` `subexpression` `)`|Postanalyse positive de largeur nulle. Effectuer une postanalyse de la position actuelle pour déterminer si `subexpression` correspond à la chaîne d'entrée.|  
 |`(?<!` `subexpression` `)`|Postanalyse négative de largeur nulle. Effectuer une postanalyse de la position actuelle pour déterminer si `subexpression` ne correspond pas à la chaîne d'entrée.|  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="Timeouts"></a>   
 ## <a name="use-time-out-values"></a>Utilisation de valeurs de délai d'attente  
@@ -250,7 +250,7 @@ ms.locfileid: "69988827"
  [!code-csharp[Conceptual.RegularExpressions.BestPractices#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/timeout1.cs#12)]
  [!code-vb[Conceptual.RegularExpressions.BestPractices#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/timeout1.vb#12)]  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="Capture"></a>   
 ## <a name="capture-only-when-necessary"></a>Capture uniquement lorsque cela s'avère nécessaire  
@@ -289,7 +289,7 @@ ms.locfileid: "69988827"
   
 - Utilisez l'option `n` dans l'élément de langage `(?imnsx:subexpression)`. Cette option désactive toutes les captures implicites ou sans nom dans `subexpression`. Les captures effectuées par les groupes de capture imbriqués implicites ou sans nom sont également désactivées.  
   
- [Retour au début](#top)  
+ [Revenir en haut](#top)  
   
 <a name="RelatedTopics"></a>   
 ## <a name="related-topics"></a>Rubriques connexes  

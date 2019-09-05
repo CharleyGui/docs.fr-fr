@@ -11,19 +11,19 @@ helpviewer_keywords:
 ms.assetid: 60e79a8c-415a-497d-be29-b9d0fd9bdee3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d7c7f866cdbcd39194d61a3db821bf973b4e057e
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 0253c3ced52b575097fe5d18abb8ce188c0164fb
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663818"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252694"
 ---
 # <a name="developmentmode-element"></a>\<Mode developmentmode >, élément
 Indique si le runtime recherche des assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH.  
   
- \<configuration>  
-\<runtime>  
-\<developmentMode>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<developmentMode>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +42,7 @@ Indique si le runtime recherche des assemblys dans les répertoires spécifiés 
   
 ## <a name="developerinstallation-attribute"></a>Attribut developerInstallation  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |**true**|Recherche les assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH.|  
 |**false**|Ne recherche pas les assemblys dans les répertoires spécifiés par la variable d’environnement DEVPATH. Il s’agit de la valeur par défaut|  

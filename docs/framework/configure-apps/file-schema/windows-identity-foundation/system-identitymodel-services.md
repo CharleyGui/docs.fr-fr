@@ -3,17 +3,18 @@ title: <system.identityModel.services>
 ms.date: 03/30/2017
 ms.assetid: fa1624dd-2d74-4ae3-942e-498cee261ac5
 author: BrucePerlerMS
-ms.openlocfilehash: bef061c5c982fb0e740f889336a3b334bc19225e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e9488c0681e1a5f0fe94112a36b65ec73bf9fd09
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943658"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251807"
 ---
 # <a name="systemidentitymodelservices"></a>\<system.identityModel.services>
 Section de configuration pour l’authentification à l’aide du protocole WS-Federation.  
   
- \<system.identityModel.services>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp; **\<System. identityModel. services >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

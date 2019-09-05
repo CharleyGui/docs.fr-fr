@@ -10,19 +10,19 @@ helpviewer_keywords:
 ms.assetid: 6e00af10-42f3-4235-8415-1bb2db78394e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: da01d0dac2e67d6c0131a2b5965472bbd19213fe
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: cd09598800b74c4807163bc921806f5b470e0d24
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927329"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252498"
 ---
 # <a name="legacyimpersonationpolicy-element"></a>\<legacyImpersonationPolicy >, élément
 Spécifie que l’identité Windows n’est pas transmise entre des points asynchrones, indépendamment des paramètres de flux du contexte d’exécution sur le thread actif.  
   
- \<configuration>  
-\<runtime>  
-\<legacyImpersonationPolicy>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<legacyImpersonationPolicy>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +42,7 @@ Spécifie que l’identité Windows n’est pas transmise entre des points async
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|`Value`|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |`false`|<xref:System.Security.Principal.WindowsIdentity>passe entre des points asynchrones en fonction <xref:System.Threading.ExecutionContext> des paramètres de flux du thread actuel. Il s'agit de la valeur par défaut.|  
 |`true`|<xref:System.Security.Principal.WindowsIdentity>n’est pas transmis entre des points asynchrones, <xref:System.Threading.ExecutionContext> quels que soient les paramètres de flow sur le thread actuel.|  
@@ -65,7 +65,7 @@ Spécifie que l’identité Windows n’est pas transmise entre des points async
 > [!NOTE]
 > Le common language runtime (CLR) tient compte des opérations d’emprunt d’identité effectuées à l’aide du code managé uniquement, et non de l’emprunt d’identité effectué en dehors du code managé, par exemple par le biais de l’appel de code non managé au code non managé ou via des appels directs à des fonctions Win32. Seuls les <xref:System.Security.Principal.WindowsIdentity> objets managés peuvent circuler entre des points `alwaysFlowImpersonationPolicy` asynchrones, sauf si l’élément`<alwaysFlowImpersonationPolicy enabled="true"/>`a la valeur true (). L’affectation `alwaysFlowImpersonationPolicy` de la valeur true à l’élément spécifie que l’identité Windows est toujours transmise entre des points asynchrones, indépendamment du mode d’emprunt d’identité. Pour plus d’informations sur le passage de l’emprunt d’identité non managé entre des points asynchrones, consultez [ \<alwaysFlowImpersonationPolicy > Element](alwaysflowimpersonationpolicy-element.md).  
   
- Vous pouvez modifier ce comportement par défaut de deux manières:  
+ Vous pouvez modifier ce comportement par défaut de deux manières :  
   
 1. En code managé pour chaque thread.  
   
@@ -82,7 +82,7 @@ Spécifie que l’identité Windows n’est pas transmise entre des points async
   
  Pour une application ASP.net, le workflow d’emprunt d’identité peut être configuré dans le fichier Aspnet. config qui se \<trouve dans le dossier Windows > répertoire \Microsoft.NET\Framework\vx.x.xxxx.  
   
- Par défaut, ASP.NET désactive le workflow d’emprunt d’identité dans le fichier Aspnet. config à l’aide des paramètres de configuration suivants:  
+ Par défaut, ASP.NET désactive le workflow d’emprunt d’identité dans le fichier Aspnet. config à l’aide des paramètres de configuration suivants :  
   
 ``` xml
 <configuration>  
@@ -93,7 +93,7 @@ Spécifie que l’identité Windows n’est pas transmise entre des points async
 </configuration>  
 ```  
   
- Dans ASP.NET, si vous souhaitez autoriser le workflow d’emprunt d’identité à la place, vous devez utiliser explicitement les paramètres de configuration suivants:  
+ Dans ASP.NET, si vous souhaitez autoriser le workflow d’emprunt d’identité à la place, vous devez utiliser explicitement les paramètres de configuration suivants :  
   
 ```xml  
 <configuration>  

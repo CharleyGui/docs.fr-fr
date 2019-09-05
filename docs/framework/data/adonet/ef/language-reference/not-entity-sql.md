@@ -2,12 +2,12 @@
 title: '! (NOT) (Entity SQL)'
 ms.date: 03/30/2017
 ms.assetid: a1447a34-df06-4393-93c3-0612ebd41abc
-ms.openlocfilehash: 51d3bdbc4adb0b5fd6275629219698dd9b42fa86
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4055d56d878b817fe88bb0dacb53ea39061bc4b2
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760374"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70249859"
 ---
 # <a name="-not-entity-sql"></a>! (NOT) (Entity SQL)
 Inverse une expression `Boolean` .  
@@ -30,7 +30,7 @@ or
 ## <a name="example"></a>Exemple  
  La requête Entity SQL ci-dessous utilise l'opérateur NOT pour inverser une expression `Boolean` . Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite dans [Comment : Exécuter une requête qui retourne des résultats StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-structuraltype-results.md)de StructuralType.  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   
@@ -38,4 +38,4 @@ or
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
+- [Référence Entity SQL](entity-sql-reference.md)

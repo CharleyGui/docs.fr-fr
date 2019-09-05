@@ -5,30 +5,30 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a0bfa4b1-99e5-4dd1-9912-4b825a9dc25c
-ms.openlocfilehash: 56ae913da3ca06a08b5bacc5ce225597980467a6
-ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
+ms.openlocfilehash: c749a7bb1575ee52418f0953ff8216bf4221b674
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67539459"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250145"
 ---
 # <a name="method-based-query-syntax-examples-navigating-relationships"></a>Exemples de syntaxe de requête fondée sur une méthode : Exploration des relations
-Les propriétés de navigation dans [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] sont des propriétés de raccourci utilisées pour rechercher les entités situées aux terminaisons d'une association. Les propriétés de navigation permettent à un utilisateur de naviguer d'une entité à une autre ou d'une entité à des entités associées par le biais d'un ensemble d'associations. Cette rubrique fournit des exemples de syntaxe de requête fondée sur une méthode d’Explorer des relations par le biais des propriétés de navigation dans LINQ aux requêtes d’entités.  
+Les propriétés de navigation dans [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] sont des propriétés de raccourci utilisées pour rechercher les entités situées aux terminaisons d'une association. Les propriétés de navigation permettent à un utilisateur de naviguer d'une entité à une autre ou d'une entité à des entités associées par le biais d'un ensemble d'associations. Cette rubrique fournit des exemples de syntaxe de requête fondée sur une méthode montrant comment parcourir les relations à l’aide des propriétés de navigation dans LINQ to Entities des requêtes.  
   
  Le modèle de vente AdventureWorks Sales Model utilisé dans ces exemples est construit à partir des tables Contact, Address, Product, SalesOrderHeader et SalesOrderDetail de l'exemple de base de données AdventureWorks.  
   
- Les exemples de cette rubrique utilisent les éléments suivants `using` / `Imports` instructions :  
+ Les exemples de cette rubrique utilisent les instructions `using` suivantes / `Imports` :  
   
  [!code-csharp[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#importsusing)]
  [!code-vb[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#importsusing)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple suivant de syntaxe de requête fondée sur une méthode utilise la méthode <xref:System.Linq.Queryable.SelectMany%2A> pour obtenir toutes les commandes des contacts dont le nom de famille est « Zhou ». La propriété de navigation `Contact.SalesOrderHeader` est utilisée pour obtenir la collection des objets `SalesOrderHeader` de chaque contact.  
   
  [!code-csharp[DP L2E Examples#SelectEachContactsOrders_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#selecteachcontactsorders_mq)]
  [!code-vb[DP L2E Examples#SelectEachContactsOrders_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#selecteachcontactsorders_mq)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple suivant de syntaxe de requête fondée sur une méthode utilise la méthode <xref:System.Linq.Queryable.Select%2A> pour obtenir tous les ID de contact et la somme du montant total dû pour chaque contact dont le nom est « Zhou ». La propriété de navigation `Contact.SalesOrderHeader` est utilisée pour obtenir la collection des objets `SalesOrderHeader` de chaque contact. La méthode `Sum` utilise la propriété de navigation `Contact.SalesOrderHeader` pour calculer la somme du montant total dû pour l'ensemble des commandes de chaque contact.  
   
  [!code-csharp[DP L2E Examples#SelectEachContactsOrders2_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#selecteachcontactsorders2_mq)]
@@ -54,5 +54,5 @@ Les propriétés de navigation dans [!INCLUDE[adonet_ef](../../../../../../inclu
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Relations, les propriétés de navigation et les clés étrangères](/ef/ef6/fundamentals/relationships)
-- [Requêtes dans LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)
+- [Relations, propriétés de navigation et clés étrangères](/ef/ef6/fundamentals/relationships)
+- [Requêtes dans LINQ to Entities](queries-in-linq-to-entities.md)

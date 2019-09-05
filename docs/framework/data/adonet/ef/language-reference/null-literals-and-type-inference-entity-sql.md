@@ -2,15 +2,15 @@
 title: Littéraux null et inférence de type (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: edd56afb-af1b-4e7d-b210-cb8998143426
-ms.openlocfilehash: 3fea03146549f3d42bf08bbd5e7ce355d25bd4eb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bb2d9184e17ee2a9916a731eb20eefa105a73753
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64641809"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70249822"
 ---
 # <a name="null-literals-and-type-inference-entity-sql"></a>Littéraux null et inférence de type (Entity SQL)
-Les littéraux Null sont compatibles avec n'importe quel type dans le système de type [!INCLUDE[esql](../../../../../../includes/esql-md.md)]. Toutefois, pour le type d’un littéral null soit correctement déduit, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] impose certaines contraintes sur où un littéral null peut être utilisé.  
+Les littéraux Null sont compatibles avec n'importe quel type dans le système de type [!INCLUDE[esql](../../../../../../includes/esql-md.md)]. Toutefois, pour que le type d’un littéral null soit déduit correctement, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] impose certaines contraintes sur l’emplacement où un littéral null peut être utilisé.  
   
 ## <a name="typed-nulls"></a>Valeurs Null typées  
  Les valeurs Null typées peuvent être utilisées dans n'importe quel contexte. L'inférence de type n'est pas requise pour les valeurs Null typées car leur type est connu. Par exemple, vous pouvez construire une valeur Null de type Int16 avec la construction [!INCLUDE[esql](../../../../../../includes/esql-md.md)] suivante :  
@@ -42,4 +42,4 @@ Les littéraux Null sont compatibles avec n'importe quel type dans le système d
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble d’Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+- [Vue d’ensemble d’Entity SQL](entity-sql-overview.md)

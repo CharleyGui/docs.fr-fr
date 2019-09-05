@@ -2,16 +2,16 @@
 title: Fonctions mathématiques canoniques
 ms.date: 03/30/2017
 ms.assetid: 6f6cddc6-b561-4ebe-84b6-841ef5b4113b
-ms.openlocfilehash: f575785bb198251ef50ba3563e736946253c9526
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9417ff9836912017c9d88bb24a18849aaac2836a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760634"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250308"
 ---
 # <a name="math-canonical-functions"></a>Fonctions mathématiques canoniques
 
-Entity SQL inclut les fonctions canoniques mathématiques suivantes :
+Entity SQL comprend les fonctions canoniques mathématiques suivantes :
   
 ## <a name="absvalue"></a>Abs(valeur)
 
@@ -19,7 +19,7 @@ Retourne la valeur absolue de `value`.
 
 **Arguments**
 
-Un `Int16`, `Int32`, `Int64`, `Byte`, `Single`, `Double`, et `Decimal`.
+`Int16` ,,`Double`, ,,`Decimal`Et. `Byte` `Int32` `Int64` `Single`
 
 **Valeur de retour**
 
@@ -35,7 +35,7 @@ Retourne le plus petit entier qui n'est pas inférieur à `value`.
 
 **Arguments**
 
-Un `Single`, `Double`, et `Decimal`.
+`Single` ,`Double`Et .`Decimal`
 
 **Valeur de retour**
 
@@ -52,7 +52,7 @@ Retourne le plus grand entier qui n'est pas supérieur à `value`.
 
 **Arguments**
 
-Un `Single`, `Double`, et `Decimal`.
+`Single` ,`Double`Et .`Decimal`
 
 **Valeur de retour**
 
@@ -71,8 +71,8 @@ Retourne le résultat de `value` à l'exposant `exponent` spécifié.
 
 |  |  |
 |--|--|
-|`value` | Un `Int32, Int64, Double`, ou `Decimal`. |
-|`exponent` | Un `Int64`, `Double`, ou `Decimal`. |
+|`value` | `Int32, Int64, Double`, Ou`Decimal`. |
+|`exponent` | `Int64` ,`Double`Ou .`Decimal` |
 
 **Valeur de retour**
 
@@ -88,7 +88,7 @@ Retourne la partie entière de `value`, arrondie à l'entier le plus proche.
 
 **Arguments**
 
-Un `Single`, `Double`, et `Decimal`.
+`Single` ,`Double`Et .`Decimal`
 
 **Valeur de retour**
 
@@ -138,8 +138,8 @@ Type d'élément `value`.
   
  Ces fonctions retournent `null` si une entrée de valeur `null` est fournie.  
   
- Des fonctionnalités équivalentes sont disponibles dans le fournisseur managé Client Microsoft SQL. Pour plus d’informations, consultez [fonctions SqlClient pour Entity Framework](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md).  
+ Des fonctionnalités équivalentes sont disponibles dans le fournisseur managé Client Microsoft SQL. Pour plus d’informations, consultez [SqlClient pour les fonctions de Entity Framework](../sqlclient-for-ef-functions.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions canoniques](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md)
+- [Fonctions canoniques](canonical-functions.md)

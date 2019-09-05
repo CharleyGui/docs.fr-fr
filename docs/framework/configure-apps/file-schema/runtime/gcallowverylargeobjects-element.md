@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: 5c7ea24a-39ac-4e5f-83b7-b9f9a1b556ab
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 643e28217d41e825f0b3a3f4a4f062c30835cae8
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 3f638a880aaa21bc41d2575f3609dabae158c1a0
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040666"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252574"
 ---
 # <a name="gcallowverylargeobjects-element"></a>\<gcAllowVeryLargeObjects >, élément
 Sur les plateformes 64 bits, autorise les tableaux dont la taille totale est supérieure à 2 gigaoctets (Go).  
   
- \<Élément de > de configuration  
-\<Élément > du Runtime  
-\<gcAllowVeryLargeObjects >, élément  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<gcAllowVeryLargeObjects>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -55,7 +55,7 @@ Sur les plateformes 64 bits, autorise les tableaux dont la taille totale est sup
 |`runtime`|Contient des informations sur les options d'initialisation du runtime.|  
   
 ## <a name="remarks"></a>Notes  
- L’utilisation de cet élément dans le fichier de configuration de votre application permet aux tableaux dont la taille est supérieure à 2 Go, mais ne modifie pas les autres limites de taille d’objet ou de taille de tableau:  
+ L’utilisation de cet élément dans le fichier de configuration de votre application permet aux tableaux dont la taille est supérieure à 2 Go, mais ne modifie pas les autres limites de taille d’objet ou de taille de tableau :  
   
 - Le nombre maximal d’éléments dans un tableau est <xref:System.UInt32.MaxValue?displayProperty=nameWithType>.  
   
@@ -66,7 +66,7 @@ Sur les plateformes 64 bits, autorise les tableaux dont la taille totale est sup
 > [!CAUTION]
 > Avant d’activer cette fonctionnalité, assurez-vous que votre application n’inclut pas de code non sécurisé qui suppose que la taille de tous les tableaux est inférieure à 2 Go. Par exemple, le code unsafe qui utilise des tableaux comme mémoires tampons peut être vulnérable aux dépassements de mémoire tampon s’il est écrit en supposant que les tableaux ne dépasseront pas 2 Go.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant montre comment activer cette fonctionnalité pour une application.  
   
 ```xml  

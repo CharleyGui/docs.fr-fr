@@ -3,19 +3,20 @@ title: <claimsAuthenticationManager>
 ms.date: 03/30/2017
 ms.assetid: 6d30a450-6d13-4671-81a8-77e0204500c5
 author: BrucePerlerMS
-ms.openlocfilehash: 3602a4805e86833ba6070d801cef6758aaee8a5c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c901daf4d442a206345301795c7a4bdc076329cd
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941829"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252092"
 ---
 # <a name="claimsauthenticationmanager"></a>\<claimsAuthenticationManager>
 Inscrit un gestionnaire d’authentification des revendications pour les revendications entrantes.  
   
- \<system.identityModel>  
-\<identityConfiguration>  
-\<claimsAuthenticationManager>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<claimsAuthenticationManager >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +40,7 @@ Inscrit un gestionnaire d’authentification des revendications pour les revendi
 |type|Spécifie un type personnalisé qui dérive de <xref:System.Security.Claims.ClaimsAuthenticationManager> la classe. Pour plus d’informations sur la spécification de `type` l’attribut, consultez [références de types personnalisés].|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- S’il n’y `type` a aucun attribut, ou `type` si l’attribut <xref:System.Security.Claims.ClaimsAuthenticationManager> fait référence à `<claimsAuthenticationManager>` la classe, l’élément ne prend pas d’éléments enfants; <xref:System.Security.Claims.ClaimsAuthenticationManager> Toutefois, les classes dérivées de peuvent définir des éléments de configuration enfants.  
+ S’il n’y `type` a aucun attribut, ou `type` si l’attribut <xref:System.Security.Claims.ClaimsAuthenticationManager> fait référence à `<claimsAuthenticationManager>` la classe, l’élément ne prend pas d’éléments enfants ; <xref:System.Security.Claims.ClaimsAuthenticationManager> Toutefois, les classes dérivées de peuvent définir des éléments de configuration enfants.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   

@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d00f0efa-9084-4c17-843f-54904fcb4204
-ms.openlocfilehash: 700c29222d10177774e118e53fb51f177b723679
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2f26f937901debd27cb936d1f642e0a5149b167a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61760530"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250136"
 ---
 # <a name="method-based-query-syntax-examples-join-operators"></a>Exemples de syntaxe de requête fondée sur une méthode : Opérateurs de jointure
-Les exemples de cette rubrique montrent comment utiliser le <xref:System.Linq.Enumerable.Join%2A> et <xref:System.Linq.Enumerable.GroupJoin%2A> méthodes permettant d’interroger la [AdventureWorks Sales Model](https://archive.codeplex.com/?p=msftdbprodsamples) à l’aide de la syntaxe de requête fondée sur une méthode. Le modèle de vente AdventureWorks Sales Model utilisé dans ces exemples est construit à partir des tables Contact, Address, Product, SalesOrderHeader et SalesOrderDetail de l'exemple de base de données AdventureWorks.  
+Les exemples de cette rubrique montrent comment utiliser les méthodes <xref:System.Linq.Enumerable.Join%2A> et <xref:System.Linq.Enumerable.GroupJoin%2A> pour interroger le [modèle de vente AdventureWorks Sales Model](https://archive.codeplex.com/?p=msftdbprodsamples) à l’aide de la syntaxe de requête fondée sur une méthode. Le modèle de vente AdventureWorks Sales Model utilisé dans ces exemples est construit à partir des tables Contact, Address, Product, SalesOrderHeader et SalesOrderDetail de l'exemple de base de données AdventureWorks.  
   
- Les exemples de cette rubrique utilisent les éléments suivants `using` / `Imports` instructions :  
+ Les exemples de cette rubrique utilisent les instructions `using` suivantes / `Imports` :  
   
  [!code-csharp[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#importsusing)]
  [!code-vb[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#importsusing)]  
@@ -28,7 +28,7 @@ Les exemples de cette rubrique montrent comment utiliser le <xref:System.Linq.En
  [!code-csharp[DP L2E Examples#GroupJoin2_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#groupjoin2_mq)]
  [!code-vb[DP L2E Examples#GroupJoin2_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#groupjoin2_mq)]  
   
-### <a name="example"></a>Exemple  
+### <a name="example"></a>Exemples  
  L'exemple ci-dessous effectue une jointure <xref:System.Linq.Enumerable.GroupJoin%2A> sur les tables Contact et SalesOrderHeader pour trouver le nombre de commandes par contact. Le nombre de commandes et les ID de chaque contact sont affichés.  
   
  [!code-csharp[DP L2E Examples#GroupJoin_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#groupjoin_mq)]
@@ -50,4 +50,4 @@ Les exemples de cette rubrique montrent comment utiliser le <xref:System.Linq.En
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Requêtes dans LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)
+- [Requêtes dans LINQ to Entities](queries-in-linq-to-entities.md)

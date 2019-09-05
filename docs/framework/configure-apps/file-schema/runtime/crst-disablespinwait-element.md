@@ -7,20 +7,20 @@ helpviewer_keywords:
 - Crst_DisableSpinWait element
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a52dd671f1fbf6fda5bdc92c0935784181eb4b03
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 8a91e21120ecebbe7af2fb93798bc68d274fa92c
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663839"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252713"
 ---
 # <a name="crst_disablespinwait-element"></a>\<Crst_DisableSpinWait >, élément
 
 Spécifie s’il faut désactiver l’attente de spin pour une section critique en cas de conflit.  
   
- \<configuration>  
-\<runtime>  
-\<Crst_DisableSpinWait>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<Crst_DisableSpinWait >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -55,7 +55,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les différents paramètres de configuration du Runtime.|  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
 
 L’exemple suivant désactive l’attente de spin-Wait dans les sections critiques en cas de conflit.  
   

@@ -2,12 +2,12 @@
 title: Spécification de manifeste du fournisseur
 ms.date: 03/30/2017
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
-ms.openlocfilehash: 9ae528105119241e05be5182db418312c4120112
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 6b924f484e6635760d08d0eba9fb9436bdd8bc88
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67422717"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248586"
 ---
 # <a name="provider-manifest-specification"></a>Spécification de manifeste du fournisseur
 Cette section explique comment un fournisseur de banques de données peut prendre en charge les types et les fonctions dans la banque de données.  
@@ -23,9 +23,9 @@ Cette section explique comment un fournisseur de banques de données peut prendr
   
  Le manifeste du fournisseur doit pouvoir être chargé par les outils au moment du design sans devoir ouvrir une connexion à la banque de données.  
   
- Le [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] respecte la casse, mais le magasin de données sous-jacent ne peut pas être. Lorsque les artefacts EDM (identificateurs et noms de type, par exemple) sont définis et utilisés dans le manifeste, ils doivent utiliser le respect de la casse d’[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Si des éléments de la banque de données respectueux de la casse apparaissent dans le manifeste du fournisseur, cette casse doit être conservée dans le manifeste du fournisseur.  
+ Respecte [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] la casse, mais le magasin de données sous-jacent n’est peut-être pas. Lorsque les artefacts EDM (identificateurs et noms de type, par exemple) sont définis et utilisés dans le manifeste, ils doivent utiliser le respect de la casse d’[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Si des éléments de la banque de données respectueux de la casse apparaissent dans le manifeste du fournisseur, cette casse doit être conservée dans le manifeste du fournisseur.  
   
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] requiert un manifeste du fournisseur pour tous les fournisseurs de données. Si vous essayez d’utiliser un fournisseur qui n’a pas de fournisseur de manifeste avec le [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], vous obtiendrez une erreur.  
+ [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] requiert un manifeste du fournisseur pour tous les fournisseurs de données. Si vous essayez d’utiliser un fournisseur qui n’a pas de manifeste de fournisseur avec [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]le, vous obtiendrez une erreur.  
   
  Le tableau suivant décrit les types d'exceptions levés par [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] si des exceptions sont déclenchées par l'interaction d'un fournisseur :  
   
@@ -39,7 +39,7 @@ Cette section explique comment un fournisseur de banques de données peut prendr
  Un fournisseur doit prendre en charge les scénarios suivants :  
   
 ### <a name="writing-a-provider-with-symmetric-type-mapping"></a>Écriture d'un fournisseur avec mappage de type symétrique  
- Vous pouvez écrire un fournisseur pour le [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] où chaque type de banque est mappé à un type EDM unique, indépendamment du sens du mappage. Pour un type de fournisseur ayant un mappage très simple correspondant à un type EDM, vous pouvez utiliser une solution symétrique parce que le système de type est simple ou correspond à des types EDM.  
+ Vous pouvez écrire un fournisseur pour le [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] où chaque type de magasin est mappé à un type EDM unique, indépendamment du sens du mappage. Pour un type de fournisseur ayant un mappage très simple correspondant à un type EDM, vous pouvez utiliser une solution symétrique parce que le système de type est simple ou correspond à des types EDM.  
   
  Vous pouvez utiliser la simplicité de leur domaine et produire un manifeste du fournisseur déclaratif statique.  
   
@@ -54,21 +54,21 @@ Cette section explique comment un fournisseur de banques de données peut prendr
   
  Vous écrivez un fichier XML qui a deux sections :  
   
-- Une liste de types de fournisseurs exprimés en termes d’EDM et définir le mappage dans les deux sens : EDM-à-fournisseur et fournisseur-à-EDM.  
+- Liste des types de fournisseurs exprimés en termes EDM et définition du mappage pour les deux sens : EDM-à-fournisseur et fournisseur-à-EDM.  
   
 - Liste de fonctions prises en charge par le fournisseur dans lesquelles les types de paramètres et les types de retour sont exprimés en termes EDM.  
   
 ## <a name="provider-manifest-discoverability"></a>Manifeste du fournisseur Discoverability  
  Le manifeste est utilisé de manière indirecte par plusieurs types de composants dans les Services d'entités (par exemple Outils ou Requête), mais il est plus directement exploité par les métadonnées via l'utilisation du chargeur de métadonnées de la banque de données.  
   
- ![dfb3d02b&#45;7a8c&#45;4d51&#45;ac5a&#45;a73d8aa145e6](../../../../../docs/framework/data/adonet/ef/media/dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6.gif "dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6")  
+ ![dfb3d02b&#45;7a8c&#45;4d51&#45;ac5a&#45;a73d8aa145e6](./media/dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6.gif "dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6")  
   
  Toutefois, un fournisseur donné peut prendre en charge différentes banques ou différentes versions de la même banque. Par conséquent, un fournisseur doit signaler un manifeste différent pour chaque banque de données prise en charge.  
   
 ### <a name="provider-manifest-token"></a>Jeton du manifeste du fournisseur.  
  Lorsqu'une connexion de banque de données est ouverte, le fournisseur peut demander des informations pour retourner le bon manifeste. Cela risque de ne pas être possible dans les scénarios hors connexion où les informations de connexion ne sont pas disponibles ou lorsqu'il est impossible de se connecter à la banque. Identifiez le manifeste en utilisant l'attribut `ProviderManifestToken` de l'élément `Schema` dans le fichier .ssdl. Il n'existe aucun format obligatoire pour cet attribut ; le fournisseur choisit les informations minimales nécessaires pour identifier un manifeste sans ouvrir une connexion à la banque.  
   
- Par exemple :  
+ Par exemple :  
   
 ```xml  
 <Schema Namespace="Northwind" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:edm="http://schemas.microsoft.com/ado/2006/04/edm/ssdl" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">  
@@ -77,13 +77,13 @@ Cette section explique comment un fournisseur de banques de données peut prendr
 ## <a name="provider-manifest-programming-model"></a>Modèle de programmation de manifeste du fournisseur  
  Les fournisseurs dérivent de <xref:System.Data.Common.DbXmlEnabledProviderManifest>, qui leur permet de spécifier leurs manifestes de façon déclarative. L'illustration suivante montre la hiérarchie de classes d'un fournisseur :  
   
- ![None](../../../../../docs/framework/data/adonet/ef/media/d541eba3-2ee6-4cd1-88f5-89d0b2582a6c.gif "d541eba3-2ee6-4cd1-88f5-89d0b2582a6c")  
+ ![None](./media/d541eba3-2ee6-4cd1-88f5-89d0b2582a6c.gif "d541eba3-2ee6-4cd1-88f5-89d0b2582a6c")  
   
 ### <a name="discoverability-api"></a>API Discoverability  
  Le manifeste du fournisseur est chargé par le chargeur de métadonnées de la banque (StoreItemCollection), à l'aide d'une connexion de la banque de données ou d'un jeton du manifeste du fournisseur.  
   
 #### <a name="using-a-data-store-connection"></a>Utilisation d'une connexion de banque de données  
- Lors de la connexion du magasin de données est disponible, appelez <xref:System.Data.Common.DbProviderServices.GetProviderManifestToken%2A?displayProperty=nameWithType> pour retourner le jeton qui est passé à la <xref:System.Data.Common.DbProviderServices.GetProviderManifest%2A> (méthode), qui retourne <xref:System.Data.Common.DbProviderManifest>. Cette méthode délègue à l’implémentation du fournisseur de `GetDbProviderManifestToken`.  
+ Lorsque la connexion au magasin de données est disponible <xref:System.Data.Common.DbProviderServices.GetProviderManifestToken%2A?displayProperty=nameWithType> , appelez pour retourner le jeton qui est passé <xref:System.Data.Common.DbProviderServices.GetProviderManifest%2A> à la méthode, <xref:System.Data.Common.DbProviderManifest>qui retourne. Cette méthode délègue à l’implémentation du fournisseur `GetDbProviderManifestToken`de.  
   
 ```csharp
 public string GetProviderManifestToken(DbConnection connection);  
@@ -91,7 +91,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 ```  
   
 #### <a name="using-a-provider-manifest-token"></a>Utilisation d'un jeton du manifeste du fournisseur.  
- Pour le scénario hors connexion, le jeton est sélectionné dans une représentation SSDL. Le langage SSDL vous permet de spécifier un ProviderManifestToken (consultez [élément de schéma (SSDL)](/ef/ef6/modeling/designer/advanced/edmx/ssdl-spec#schema-element-ssdl) pour plus d’informations). Par exemple, si une connexion ne peut pas être ouverte, le langage SSDL a un jeton du manifeste du fournisseur qui spécifie des informations sur le manifeste.  
+ Pour le scénario hors connexion, le jeton est sélectionné dans une représentation SSDL. Le langage SSDL vous permet de spécifier un ProviderManifestToken (voir [élément Schema (SSDL)](/ef/ef6/modeling/designer/advanced/edmx/ssdl-spec#schema-element-ssdl) pour plus d’informations). Par exemple, si une connexion ne peut pas être ouverte, le langage SSDL a un jeton du manifeste du fournisseur qui spécifie des informations sur le manifeste.  
   
 ```  
 public DbProviderManifest GetProviderManifest(string manifestToken);  
@@ -250,7 +250,7 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
   
 |Nom d'attribut|Type de données|Obligatoire|Valeur par défaut|Description|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Nom|Chaîne|Oui|N/A|Nom de type de données spécifique au fournisseur|  
+|Nom|String|Oui|N/A|Nom de type de données spécifique au fournisseur|  
 |PrimitiveTypeKind|PrimitiveTypeKind|Oui|N/A|Nom du type EDM|  
   
 ###### <a name="function-node"></a>Nœud Function  
@@ -258,12 +258,12 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
   
 |Nom d'attribut|Type de données|Obligatoire|Valeur par défaut|Description|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Nom|Chaîne|Oui|N/A|Identificateur/nom de la fonction|  
-|ReturnType|Chaîne|Non|Void|Type de retour EDM de la fonction|  
-|Aggregate|Booléen|Non|False|True si la fonction est une fonction d'agrégation|  
-|BuiltIn|Booléen|Non|True|True si la fonction est intégrée à la banque de données|  
-|StoreFunctionName|Chaîne|Non|\<Name>|Nom de fonction dans la banque de données.  Permet un niveau de redirection de noms de fonction.|  
-|NiladicFunction|Booléen|Non|False|True si la fonction ne requiert pas de paramètres et est appelée sans paramètre|  
+|Nom|String|Oui|N/A|Identificateur/nom de la fonction|  
+|ReturnType|String|Non|Void|Type de retour EDM de la fonction|  
+|Aggregate|Boolean|Non|False|True si la fonction est une fonction d'agrégation|  
+|BuiltIn|Boolean|Non|True|True si la fonction est intégrée à la banque de données|  
+|StoreFunctionName|String|Non|\<Name>|Nom de fonction dans la banque de données.  Permet un niveau de redirection de noms de fonction.|  
+|NiladicFunction|Boolean|Non|False|True si la fonction ne requiert pas de paramètres et est appelée sans paramètre|  
 |ParameterType<br /><br /> Sémantique|ParameterSemantics|Non|AllowImplicit<br /><br /> Conversion|Choix de la façon dont le pipeline de requête doit gérer la substitution de type de paramètre :<br /><br /> -   ExactMatchOnly<br />-   AllowImplicitPromotion<br />-   AllowImplicitConversion|  
   
  **Nœud Paramètres**  
@@ -272,13 +272,13 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
   
 |Nom d'attribut|Type de données|Obligatoire|Valeur par défaut|Description|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Nom|Chaîne|Oui|N/A|Identificateur/nom du paramètre.|  
-|Type|Chaîne|Oui|N/A|Type EDM du paramètre.|  
-|Mode|Paramètre<br /><br /> Sens|Oui|N/A|Direction de paramètre :<br /><br /> -   in<br />-out<br />-   inout|  
+|Nom|String|Oui|N/A|Identificateur/nom du paramètre.|  
+|Type|String|Oui|N/A|Type EDM du paramètre.|  
+|Mode|Paramètre<br /><br /> Direction|Oui|N/A|Direction de paramètre :<br /><br /> -   in<br />-out<br />-   inout|  
   
 ##### <a name="namespace-attribute"></a>Attribut Namespace  
- Chaque fournisseur de banque de données doit définir un espace de noms ou un groupe d'espaces de noms pour les informations définies dans le manifeste. Cet espace de noms peut être utilisé dans les requêtes Entity SQL pour résoudre des noms de fonctions et de types. Par exemple : SQL Server. Cet espace de noms doit être différent de l'espace de noms canonique, EDM, défini par les Services d'entités pour les fonctions standard à prendre en charge par les requêtes Entity SQL.  
+ Chaque fournisseur de banque de données doit définir un espace de noms ou un groupe d'espaces de noms pour les informations définies dans le manifeste. Cet espace de noms peut être utilisé dans les requêtes Entity SQL pour résoudre des noms de fonctions et de types. Par exemple : Biais. Cet espace de noms doit être différent de l'espace de noms canonique, EDM, défini par les Services d'entités pour les fonctions standard à prendre en charge par les requêtes Entity SQL.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Écriture d’un fournisseur de données Entity Framework](../../../../../docs/framework/data/adonet/ef/writing-an-ef-data-provider.md)
+- [Écriture d’un fournisseur de données Entity Framework](writing-an-ef-data-provider.md)

@@ -2,12 +2,12 @@
 title: Génération SQL à partir d'arborescences de commandes - meilleures pratiques
 ms.date: 03/30/2017
 ms.assetid: 71ef6a24-4c4f-4254-af3a-ffc0d855b0a8
-ms.openlocfilehash: 6ac46b577f071bca6c79e23b8b77f9b267ac879b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 366e27f8c8a04c5d2507ab37459ad6d5abc255ae
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61606665"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251573"
 ---
 # <a name="generating-sql-from-command-trees---best-practices"></a>Génération SQL à partir d'arborescences de commandes - meilleures pratiques
 
@@ -125,7 +125,7 @@ Prenons le premier exemple de cette rubrique. Si nous effectuons une traduction 
 
 ## <a name="join-alias-flattening"></a>Aplanissement d'alias de jointure
 
-Contrairement à toute autre expression relationnelle dans une arborescence de commandes de sortie, DbJoinExpression produit un type de résultat qui consiste en une ligne composée de deux colonnes, chacune correspondant à l’une des entrées. Quand un DbPropertyExpression est généré pour accéder à une propriété scalaire provenant d’une jointure, il est sur un autre DbPropertyExpression.
+Contrairement à toute autre expression relationnelle dans une arborescence de commandes de sortie, DbJoinExpression produit un type de résultat qui consiste en une ligne composée de deux colonnes, chacune correspondant à l’une des entrées. Lorsqu’un DbPropertyExpression est créé pour accéder à une propriété scalaire provenant d’une jointure, il se trouve sur un autre DbPropertyExpression.
 
 Les exemples incluent « a.b.y » dans l'exemple 2 et « b.c.y » dans l'exemple 3. Toutefois dans les instructions SQL correspondantes, ils sont référencés en tant que « b.y ». Cette redéfinition d'alias est appelée aplanissement d'alias de jointure.
 
@@ -137,7 +137,7 @@ Lors de l'aplanissement des jointures, les tables participantes (ou sous-requêt
 
 ## <a name="avoid-select-"></a>Éviter SELECT *
 
-N'utilisez pas `SELECT *` pour sélectionner des tables de base. Le modèle de stockage dans un [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] application peut inclure uniquement un sous-ensemble des colonnes qui se trouvent dans la table de base de données. Dans ce cas, `SELECT *` peut produire un résultat incorrect. À la place, vous devez spécifier toutes les colonnes participantes en utilisant les noms de colonne du type de résultat des expressions participantes.
+N'utilisez pas `SELECT *` pour sélectionner des tables de base. Le modèle de stockage d' [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] une application ne peut inclure qu’un sous-ensemble des colonnes qui se trouvent dans la table de base de données. Dans ce cas, `SELECT *` peut produire un résultat incorrect. À la place, vous devez spécifier toutes les colonnes participantes en utilisant les noms de colonne du type de résultat des expressions participantes.
 
 ## <a name="reuse-of-expressions"></a>Réutilisation d'expressions
 
@@ -145,8 +145,8 @@ Les expressions peuvent être réutilisées dans l’arborescence de commandes d
 
 ## <a name="mapping-primitive-types"></a>Mappage de types primitifs
 
-Lorsque vous mappez des types conceptuels (EDM) à des types de fournisseur, vous devez mapper au type le plus large (Int32) afin que toutes les valeurs possibles puissent correspondre. Évitez également de mapper aux types qui ne peut pas être utilisé pour de nombreuses opérations, telles que des types d’objets BLOB (par exemple, `ntext` dans SQL Server).
+Lorsque vous mappez des types conceptuels (EDM) à des types de fournisseur, vous devez mapper au type le plus large (Int32) afin que toutes les valeurs possibles puissent correspondre. Évitez également de mapper aux types qui ne peuvent pas être utilisés pour de nombreuses opérations, comme les types d' `ntext` objets BLOB (par exemple, dans SQL Server).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Génération SQL](../../../../../docs/framework/data/adonet/ef/sql-generation.md)
+- [Génération SQL](sql-generation.md)

@@ -3,20 +3,21 @@ title: <securityTokenHandlerConfiguration>
 ms.date: 03/30/2017
 ms.assetid: 28724cc6-020c-4a06-9a1f-d7594f315019
 author: BrucePerlerMS
-ms.openlocfilehash: 0aefaa808dfc32085a208420fcd582b1671acc64
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 330e52bd73a8032e4073fe434c852e5bdf8e1d47
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69942444"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251885"
 ---
 # <a name="securitytokenhandlerconfiguration"></a>\<securityTokenHandlerConfiguration>
 Fournit la configuration pour la collection de gestionnaires de jetons.  
   
- \<system.identityModel>  
-\<identityConfiguration>  
-\<securityTokenHandlers>  
-\<securityTokenHandlerConfiguration>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<securityTokenHandlers >** ](securitytokenhandlers.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<securityTokenHandlerConfiguration >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,7 +41,7 @@ Fournit la configuration pour la collection de gestionnaires de jetons.
 |Attribut|Description|  
 |---------------|-----------------|  
 |saveBootstrapContext|Spécifie si les jetons de démarrage doivent être inclus dans le jeton de session. La valeur peut également être définie sur une collection de gestionnaires de jetons en `saveBootstrapContext` définissant l’attribut sur l' [ \<élément identityConfiguration >](identityconfiguration.md) . Une valeur définie sur la collection de gestionnaires de jetons remplace la valeur définie sur le service.|  
-|maximumClockSkew|Qui <xref:System.TimeSpan> spécifie la variation d’horloge maximale autorisée. Contrôle la variation d’horloge maximale autorisée lors de l’exécution d’opérations sensibles au temps, telles que la validation du délai d’expiration d’une session de connexion. La valeur par défaut est 5 minutes, «00:05:00». Pour plus d’informations sur la spécification <xref:System.TimeSpan> des valeurs, consultez [TimeSpan values](../windows-workflow-foundation/index.md). Le décalage d’horloge maximal peut également être défini au niveau du service en définissant l' `maximumClockSkew` attribut sur l' [ \<élément identityConfiguration >](identityconfiguration.md) . Une valeur définie sur la collection de gestionnaires de jetons remplace la valeur définie sur le service.|  
+|maximumClockSkew|Qui <xref:System.TimeSpan> spécifie la variation d’horloge maximale autorisée. Contrôle la variation d’horloge maximale autorisée lors de l’exécution d’opérations sensibles au temps, telles que la validation du délai d’expiration d’une session de connexion. La valeur par défaut est 5 minutes, « 00:05:00 ». Pour plus d’informations sur la spécification <xref:System.TimeSpan> des valeurs, consultez [TimeSpan values](../windows-workflow-foundation/index.md). Le décalage d’horloge maximal peut également être défini au niveau du service en définissant l' `maximumClockSkew` attribut sur l' [ \<élément identityConfiguration >](identityconfiguration.md) . Une valeur définie sur la collection de gestionnaires de jetons remplace la valeur définie sur le service.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
   

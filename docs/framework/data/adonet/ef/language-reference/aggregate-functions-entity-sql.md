@@ -2,23 +2,23 @@
 title: Fonctions d'agrégation (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: acfd3149-f519-4c6e-8fe1-b21d243a0e58
-ms.openlocfilehash: b01c7dca675e79c61b87bcc1fb30455286db3118
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: c79071e73763b56c0dde906499f3eef1d296ce0c
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66489966"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251338"
 ---
 # <a name="aggregate-functions-entity-sql"></a>Fonctions d'agrégation (Entity SQL)
 Un agrégat est une construction de langage qui condense une collection en un scalaire dans le cadre d'une opération de groupe. Les agrégats [!INCLUDE[esql](../../../../../../includes/esql-md.md)] se présentent sous deux formes :  
   
-- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] fonctions de collection qui peuvent être utilisées n’importe où dans une expression. Cela inclut l'utilisation de fonctions d'agrégation dans les projections et les prédicats qui agissent sur les collections. Dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)], la spécification des agrégats s’effectue de préférence par fonctions de collection.  
+- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]fonctions de collection qui peuvent être utilisées n’importe où dans une expression. Cela inclut l'utilisation de fonctions d'agrégation dans les projections et les prédicats qui agissent sur les collections. Dans [!INCLUDE[esql](../../../../../../includes/esql-md.md)], la spécification des agrégats s’effectue de préférence par fonctions de collection.  
   
-- Les agrégats de groupe dans les expressions de requête dotées d'une clause GROUP BY. Comme dans Transact-SQL, les agrégats de groupe acceptent DISTINCT et ALL comme modificateurs pour l’entrée de l’agrégat.  
+- Les agrégats de groupe dans les expressions de requête dotées d'une clause GROUP BY. Comme dans Transact-SQL, les agrégats de groupe acceptent DISTINCT et ALL comme modificateurs de l’entrée d’agrégation.  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] tente d’abord d’interpréter une expression comme une fonction de la collection et si l’expression est dans le contexte d’une expression SELECT il l’interprète comme un agrégat de groupe.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)]tente d’abord d’interpréter une expression comme une fonction de collection et si l’expression est dans le contexte d’une expression SELECT, elle l’interprète comme un agrégat de groupe.  
   
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] définit un opérateur d’agrégation spécial appelé [GROUPPARTITION](../../../../../../docs/framework/data/adonet/ef/language-reference/grouppartition-entity-sql.md). Cet opérateur vous permet d’obtenir une référence au jeu d’entrée groupé. Cela permet d’exécuter des requêtes de regroupement améliorées, où les résultats de la clause GROUP BY peuvent être utilisés à des emplacements autres qu’un agrégat de groupe ou des fonctions de collection.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)]définit un opérateur d’agrégation spécial appelé [GROUPPARTITION](grouppartition-entity-sql.md). Cet opérateur vous permet d’obtenir une référence au jeu de données d’entrée groupé. Cela permet d’exécuter des requêtes de regroupement améliorées, où les résultats de la clause GROUP BY peuvent être utilisés à des emplacements autres qu’un agrégat de groupe ou des fonctions de collection.  
   
 ## <a name="collection-functions"></a>Fonctions de collection  
  Les fonctions de collection fonctionnent sur des collections et retournent une valeur scalaire. Par exemple, si `orders` est une collection de toutes les commandes `orders`, vous pouvez calculer la première date d’expédition grâce à l’expression suivante :  
@@ -44,4 +44,4 @@ Un agrégat est une construction de langage qui condense une collection en un sc
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions](../../../../../../docs/framework/data/adonet/ef/language-reference/functions-entity-sql.md)
+- [Fonctions](functions-entity-sql.md)

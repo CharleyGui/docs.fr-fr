@@ -3,20 +3,21 @@ title: <sessionSecurityTokenCache>
 ms.date: 03/30/2017
 ms.assetid: d43e676c-0153-485c-ab31-0257a2db7507
 author: BrucePerlerMS
-ms.openlocfilehash: 9be3bf980c3756678d26d8652271113d4daaba43
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e949b16f76f20191b84bbbbb6e8b019d913316f0
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943709"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251828"
 ---
 # <a name="sessionsecuritytokencache"></a>\<sessionSecurityTokenCache>
 Inscrit un cache pour les jetons de session avec un service ou une collection de gestionnaires de jetons de sécurité.  
   
- \<system.identityModel>  
-\<identityConfiguration>  
-\<caches>  
-\<sessionSecurityTokenCache>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<caches >** ](caches.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<sessionSecurityTokenCache >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,7 +50,7 @@ Inscrit un cache pour les jetons de session avec un service ou une collection de
 |-------------|-----------------|  
 |[\<caches>](caches.md)|Inscrit les caches utilisés par un service ou une collection de gestionnaires de jetons de sécurité.|  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Le code XML suivant montre la configuration d’un cache personnalisé pour la conservation des jetons de<xref:System.IdentityModel.Tokens.SessionSecurityToken>sécurité de session (). La configuration est extraite de `ClaimsAwareWebFarm` l’exemple. Pour plus d’informations sur cet exemple, consultez [exemple d’index de code WIF](../../../security/wif-code-sample-index.md).  
   
 ```xml  

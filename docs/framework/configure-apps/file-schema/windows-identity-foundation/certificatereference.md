@@ -3,20 +3,21 @@ title: <certificateReference>
 ms.date: 03/30/2017
 ms.assetid: 2ac8bc14-e9f1-48fb-b662-f5991558fbe4
 author: BrucePerlerMS
-ms.openlocfilehash: da8ea128466457409334cd0b4ee3246a923f969a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 782ca3344774b8412a18e3cf13bff5f969751ea3
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941928"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252140"
 ---
 # <a name="certificatereference"></a>\<certificateReference>
 Spécifie les paramètres utilisés pour rechercher et valider un certificat X. 509 dans un magasin de certificats.  
   
- \<system.identityModel.services>  
-\<federationConfiguration>  
-\<serviceCertificate>  
-\<certificateReference>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. identityModel. services >** ](system-identitymodel-services.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<federationConfiguration >** ](federationconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceCertificate >** ](servicecertificate.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<certificateReference >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,11 +44,11 @@ Spécifie les paramètres utilisés pour rechercher et valider un certificat X. 
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|storeName|Nom du magasin de certificats X. 509. La valeur par défaut est «My». facultatif.|  
-|storeLocation|<xref:System.Security.Cryptography.X509Certificates.StoreLocation> Valeur qui spécifie l’emplacement du magasin de certificats X. 509. La valeur par défaut est «LocalMachine». facultatif.|  
-|x509FindType|<xref:System.Security.Cryptography.X509Certificates.X509FindType> Valeur qui spécifie le type de recherche à exécuter. La valeur par défaut est «FindBySubjectDistinguishedName». facultatif.|  
+|storeName|Nom du magasin de certificats X. 509. La valeur par défaut est « My ». facultatif.|  
+|storeLocation|<xref:System.Security.Cryptography.X509Certificates.StoreLocation> Valeur qui spécifie l’emplacement du magasin de certificats X. 509. La valeur par défaut est « LocalMachine ». facultatif.|  
+|x509FindType|<xref:System.Security.Cryptography.X509Certificates.X509FindType> Valeur qui spécifie le type de recherche à exécuter. La valeur par défaut est « FindBySubjectDistinguishedName ». facultatif.|  
 |findValue|Valeur à rechercher dans le magasin de certificats X.509. facultatif.|  
-|isChainIncluded|Spécifie si la validation doit être effectuée à l’aide de la chaîne de certificats. La valeur par défaut est «true». la validation est effectuée à l’aide de la chaîne de certificats. facultatif.|  
+|isChainIncluded|Spécifie si la validation doit être effectuée à l’aide de la chaîne de certificats. La valeur par défaut est « true ». la validation est effectuée à l’aide de la chaîne de certificats. facultatif.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun  

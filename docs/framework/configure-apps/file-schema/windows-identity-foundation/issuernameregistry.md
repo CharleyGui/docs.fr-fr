@@ -3,21 +3,22 @@ title: <issuerNameRegistry>
 ms.date: 03/30/2017
 ms.assetid: 58b39d12-c953-40c4-88af-d7eb3343ca28
 author: BrucePerlerMS
-ms.openlocfilehash: d0a1f8dd0c29aaee56c2ca1162cc70cc1e5ed106
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 209e702da80f2569f2b6c068f50f1af4489157f6
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69942666"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251968"
 ---
 # <a name="issuernameregistry"></a>\<issuerNameRegistry>
 Configure le registre des noms d’émetteurs qui est utilisé par les gestionnaires dans la collection de gestionnaires de jetons.  
   
- \<system.identityModel>  
-\<identityConfiguration>  
-\<securityTokenHandlers>  
-\<securityTokenHandlerConfiguration>  
-\<issuerNameRegistry>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<identityConfiguration >** ](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<securityTokenHandlers >** ](securitytokenhandlers.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<securityTokenHandlerConfiguration >** ](securitytokenhandlerconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<issuerNameRegistry >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

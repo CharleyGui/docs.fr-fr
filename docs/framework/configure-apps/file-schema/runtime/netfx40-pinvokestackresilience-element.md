@@ -7,20 +7,20 @@ helpviewer_keywords:
 ms.assetid: 39fb1588-72a4-4479-af74-0605233b68bd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cf97cc1ec544c7cf640c43b1b45760fca8cffe89
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 8f4dffe5428ccb7541055fa4f3f335f57deaf2ec
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663557"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252428"
 ---
 # <a name="netfx40_pinvokestackresilience-element"></a>\<NetFx40_PInvokeStackResilience >, élément
 
 Indique si le runtime corrige automatiquement les déclarations incorrectes d’appel de code non managé à l’exécution, au prix de transitions plus lentes entre le code managé et le code non managé.
 
-\<configuration>\
-\<> du runtime \
-\<NetFx40_PInvokeStackResilience>
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<NetFx40_PInvokeStackResilience >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,7 +40,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="enabled-attribute"></a>Attribut enabled
 
-|Valeur|Description|
+|`Value`|Description|
 |-----------|-----------------|
 |`0`|Le runtime utilise l’architecture de marshaling d’interopérabilité plus rapide introduite dans le .NET Framework 4, qui ne détecte pas et ne corrige pas les déclarations d’appel de code non managé incorrectes. Il s'agit de la valeur par défaut.|
 |`1`|Le runtime utilise des transitions plus lentes qui détectent et corrigent les déclarations d’appel de code non managé incorrectes.|
@@ -70,7 +70,7 @@ Pour traiter les scénarios où votre application utilise des composants que vou
 
 Cet élément peut être utilisé uniquement dans le fichier de configuration de l’application.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 L’exemple suivant montre comment opter pour une meilleure résilience par rapport aux déclarations d’appel de code non managé incorrectes pour une application, au détriment de transitions plus lentes entre le code managé et le code non managé.
 

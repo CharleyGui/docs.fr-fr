@@ -10,20 +10,20 @@ helpviewer_keywords:
 ms.assetid: 865e7207-d050-4442-b574-57ea29d5e2d6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f16a2bbd2470b4aec9e95ab67ccb0e736c4c6d02
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 64bf667c5c9bc20db14f08f18fa6f4f84fa12a24
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920690"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252249"
 ---
 # <a name="timespan_legacyformatmode-element"></a>\<TimeSpan_LegacyFormatMode >, élément
 
 Détermine si le runtime conserve le comportement hérité dans les opérations de mise en <xref:System.TimeSpan?displayProperty=nameWithType> forme avec des valeurs.
 
-\<configuration>\
-\<> du runtime \
-\<TimeSpan_LegacyFormatMode>
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<TimeSpan_LegacyFormatMode >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -44,7 +44,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="enabled-attribute"></a>Attribut enabled
 
-|`Value`|Description|
+|Valeur|Description|
 |-----------|-----------------|
 |`false`|Le runtime ne restaure pas le comportement de mise en forme hérité.|
 |`true`|Le runtime restaure le comportement de mise en forme hérité.|
@@ -75,13 +75,13 @@ L’exemple suivant instancie un <xref:System.TimeSpan> objet et tente de le met
 [!code-csharp[TimeSpan.BreakingChanges#1](../../../../../samples/snippets/csharp/VS_Snippets_CLR/timespan.breakingchanges/cs/legacyformatmode1.cs#1)]
 [!code-vb[TimeSpan.BreakingChanges#1](../../../../../samples/snippets/visualbasic/VS_Snippets_CLR/timespan.breakingchanges/vb/legacyformatmode1.vb#1)]
 
-Lorsque vous exécutez l’exemple sur la .NET Framework 3,5 ou sur une version antérieure, la sortie suivante s’affiche:
+Lorsque vous exécutez l’exemple sur la .NET Framework 3,5 ou sur une version antérieure, la sortie suivante s’affiche :
 
 ```
 12:30:45
 ```
 
-Cela diffère de façon marquée de la sortie si vous exécutez l’exemple sur le .NET Framework 4 ou version ultérieure:
+Cela diffère de façon marquée de la sortie si vous exécutez l’exemple sur le .NET Framework 4 ou version ultérieure :
 
 ```
 Invalid Format

@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: c35509c4-35cf-43c0-bb47-75e4208aa24e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f13243ddef7020f4d7a50e519ae8281702b0d261
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f90abf9f6c2bc0aed2cf01558b2c0cca4e967e81
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69927416"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252646"
 ---
 # <a name="enforcefipspolicy-element"></a>\<enforceFIPSPolicy >, élément
 Indique s’il faut appliquer la condition de configuration d’ordinateur selon laquelle les algorithmes de chiffrement doivent être conformes aux normes FIPS (Federal Information Processing Standard).  
   
- \<Élément de > de configuration  
-\<Élément > du Runtime  
-\<enforceFIPSPolicy >, élément  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<enforceFIPSPolicy>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -60,7 +60,7 @@ Indique s’il faut appliquer la condition de configuration d’ordinateur selon
   
  Si votre application s’exécute sur des ordinateurs dont les configurations nécessitent une compatibilité avec FIPS et que votre application utilise un algorithme qui n’est pas compatible avec FIPS, vous pouvez utiliser cet élément dans votre fichier de configuration pour empêcher le common language runtime (CLR) à partir de application de la conformité FIPS. Cet élément a été introduit dans le .NET Framework 2,0 Service Pack 1.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre comment empêcher le CLR d’appliquer la conformité FIPS.  
   
 ```xml  

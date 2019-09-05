@@ -11,20 +11,20 @@ helpviewer_keywords:
 ms.assetid: 09c80fc9-1ba5-4192-89f7-3a79b2e4b024
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2b00a5349e22feb3cce404ff504edd798ff9e304
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 05634cb319ac69bd76e16e592ba59490b30c9c9d
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663525"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252396"
 ---
 # <a name="probing-element"></a>\<détection de l’élément >
 Spécifie les sous-répertoires de base de l’application pour le common language runtime à rechercher lors du chargement des assemblys.  
   
- \<configuration>  
-\<runtime>  
-\<assemblyBinding>  
-\<probing>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding >** ](assemblybinding-element-for-runtime.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<probing>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,7 +42,8 @@ Spécifie les sous-répertoires de base de l’application pour le common langua
 |`privatePath`|Attribut requis.<br /><br /> Spécifie les sous-répertoires du répertoire de base de l’application qui peuvent contenir des assemblys. Délimitez chaque sous-répertoire par un point-virgule.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun.  
+
+Aucun.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -52,7 +53,7 @@ Spécifie les sous-répertoires de base de l’application pour le common langua
 |`configuration`|Élément racine de chaque fichier de configuration utilisé par le Common Language Runtime et les applications .NET Framework.|  
 |`runtime`|Contient des informations sur les liaisons d’assembly et l’opération garbage collection.|  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant montre comment spécifier les sous-répertoires de base de l’application que le runtime doit rechercher pour les assemblys.  
   
 ```xml  

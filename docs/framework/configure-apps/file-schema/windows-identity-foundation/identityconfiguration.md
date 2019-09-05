@@ -3,19 +3,20 @@ title: <identityConfiguration>
 ms.date: 03/30/2017
 ms.assetid: 1db76253-07da-447b-9e7a-3705c7228cf4
 author: BrucePerlerMS
-ms.openlocfilehash: 9f5e0c5ded3d750a1102492c7a506e6d5643b2d4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0fa8c574fd5663606cf081f1000a24884306edfe
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69942748"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251994"
 ---
 # <a name="identityconfiguration"></a>\<identityConfiguration>
 
 Spécifie les paramètres d’identité au niveau du service.
 
- \<system.identityModel>\
-\<identityConfiguration>
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. identityModel >** ](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<identityConfiguration >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -39,7 +40,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 |---------------|-----------------|
 |name|Nom de la section de configuration de l’identité. Vous pouvez utiliser ce nom pour faire référence à une section de configuration spécifique. Si aucun `name` attribut n’est spécifié, la section définit la configuration par défaut. La configuration par défaut est toujours utilisée pour les scénarios de fédération passive. Pour plus d’informations, consultez l' [ \<élément federationConfiguration >](federationconfiguration.md) .|
 |saveBootstrapContext|Spécifie si les jetons de démarrage doivent être inclus dans le jeton de session. La valeur peut également être définie sur une collection de gestionnaires de jetons en `saveBootstrapContext` définissant l’attribut sur l' [ \<élément securityTokenHandlerConfiguration >](securitytokenhandlerconfiguration.md) . Une valeur définie sur la collection de gestionnaires de jetons remplace la valeur définie sur le service.|
-|maximumClockSkew|Qui <xref:System.TimeSpan> spécifie la variation d’horloge maximale autorisée. Contrôle la variation d’horloge maximale autorisée lors de l’exécution d’opérations sensibles au temps, telles que la validation du délai d’expiration d’une session de connexion. La valeur par défaut est 5 minutes, «00:05:00». Pour plus d’informations sur la spécification <xref:System.TimeSpan> des valeurs, consultez [TimeSpan values](../windows-workflow-foundation/index.md). La décalage d’horloge maximal peut également être défini sur une collection de gestionnaires de jetons `maximumClockSkew` en définissant l’attribut sur l' [ \<élément securityTokenHandlerConfiguration >](securitytokenhandlerconfiguration.md) . Une valeur définie sur la collection de gestionnaires de jetons remplace la valeur définie sur le service.|
+|maximumClockSkew|Qui <xref:System.TimeSpan> spécifie la variation d’horloge maximale autorisée. Contrôle la variation d’horloge maximale autorisée lors de l’exécution d’opérations sensibles au temps, telles que la validation du délai d’expiration d’une session de connexion. La valeur par défaut est 5 minutes, « 00:05:00 ». Pour plus d’informations sur la spécification <xref:System.TimeSpan> des valeurs, consultez [TimeSpan values](../windows-workflow-foundation/index.md). La décalage d’horloge maximal peut également être défini sur une collection de gestionnaires de jetons `maximumClockSkew` en définissant l’attribut sur l' [ \<élément securityTokenHandlerConfiguration >](securitytokenhandlerconfiguration.md) . Une valeur définie sur la collection de gestionnaires de jetons remplace la valeur définie sur le service.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -61,7 +62,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="remarks"></a>Notes
 
-Plusieurs configurations d’identité peuvent être définies, chacune avec un nom unique. Le comportement est le suivant:
+Plusieurs configurations d’identité peuvent être définies, chacune avec un nom unique. Le comportement est le suivant :
 
 1. Si aucun `<identityConfiguration>` élément n’est spécifié. Une configuration d’identité par défaut est créée au moment de l’exécution et remplie avec les valeurs par défaut.
 
@@ -87,9 +88,9 @@ L' `<identityConfiguration>` élément est représenté par la <xref:System.Iden
 > - [\<issuerTokenResolver>](issuertokenresolver.md)
 > - [\<serviceTokenResolver>](servicetokenresolver.md)
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
-L’exemple suivant crée une configuration d’identité nommée «alternateConfiguration». La configuration d’identité spécifie les paramètres par défaut.
+L’exemple suivant crée une configuration d’identité nommée « alternateConfiguration ». La configuration d’identité spécifie les paramètres par défaut.
 
 ```xml
 <system.identityModel>

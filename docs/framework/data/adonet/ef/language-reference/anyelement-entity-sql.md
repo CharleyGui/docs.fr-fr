@@ -2,12 +2,12 @@
 title: ANYELEMENT (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 475a9ad6-8c8d-4f49-9970-af273e5360f1
-ms.openlocfilehash: ff79417008b7807fbf206d4bcb65b4e5ea1cc576
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4eea3d43ef6ae9ea91432ea277326526e5e91fbc
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61606027"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251328"
 ---
 # <a name="anyelement-entity-sql"></a>ANYELEMENT (Entity SQL)
 Extrait un élément d'une collection à valeurs multiples.  
@@ -23,7 +23,7 @@ ANYELEMENT ( expression )
  Toute expression de requête valide qui retourne une collection dont extraire un élément.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Élément unique de la collection ou élément arbitraire si la collection en comporte plusieurs ; si la collection est vide, retourne `null`. Si `collection` est une collection de type `Collection<T>`, puis `ANYELEMENT(collection)` est une expression valide qui produit une instance de type `T`.  
+ Élément unique de la collection ou élément arbitraire si la collection en comporte plusieurs ; si la collection est vide, retourne `null`. Si `collection` est une collection de type `Collection<T>`, `ANYELEMENT(collection)` est une expression valide qui produit une instance de type `T`.  
   
 ## <a name="remarks"></a>Notes  
  ANYELEMENT extrait un élément arbitraire d'une collection à valeurs multiples. L'exemple ci-dessous tente d'extraire un élément singleton du jeu `Customers`.  
@@ -35,7 +35,7 @@ ANYELEMENT(Customers)
 ## <a name="example"></a>Exemple  
  La requête [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ci-dessous utilise l'opérateur ANYELEMENT pour extraire un élément d'une collection à valeurs multiples. Cette requête est basée sur le modèle de vente AdventureWorks Sales Model. Pour compiler et exécuter cette requête, procédez comme suit :  
   
-1. Suivez la procédure décrite dans [Comment : Exécuter une requête qui retourne des résultats StructuralType](../../../../../../docs/framework/data/adonet/ef/how-to-execute-a-query-that-returns-structuraltype-results.md).  
+1. Suivez la procédure décrite [dans la rubrique Procédure : Exécutez une requête qui retourne les résultats](../how-to-execute-a-query-that-returns-structuraltype-results.md)de StructuralType.  
   
 2. Transmettez à la méthode `ExecuteStructuralTypeQuery` la requête suivante en tant qu'argument :  
   
@@ -43,5 +43,5 @@ ANYELEMENT(Customers)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [Types structurés autorisant la valeur null](../../../../../../docs/framework/data/adonet/ef/language-reference/nullable-structured-types-entity-sql.md)
+- [Référence Entity SQL](entity-sql-reference.md)
+- [Types structurés autorisant la valeur null](nullable-structured-types-entity-sql.md)

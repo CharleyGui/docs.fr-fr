@@ -2,22 +2,22 @@
 title: Mappage basé sur les attributs
 ms.date: 03/30/2017
 ms.assetid: 6dd89999-f415-4d61-b8c8-237d23d7924e
-ms.openlocfilehash: 41152aa81ab84a2ab77e9a4ebf16e102ee5c0e3f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1e11a2efc3d1afa56a27d6e2c60149a509511080
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964091"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248062"
 ---
 # <a name="attribute-based-mapping"></a>Mappage basé sur les attributs
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]mappe une base de données SQL Server [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] à un modèle objet en appliquant des attributs ou à l’aide d’un fichier de mappage externe. Cette rubrique présente l'approche basée sur les attributs.  
   
- Dans sa forme de base, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mappe une base de données à un <xref:System.Data.Linq.DataContext>, une table à une classe, ainsi que des colonnes et des relations aux propriétés sur ces classes. Vous pouvez également utiliser des attributs pour mapper une hiérarchie d'héritage dans votre modèle objet. Pour plus d'informations, voir [Procédure : Générez le modèle objet dans Visual Basic C# ](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)ou.  
+ Dans sa forme de base, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mappe une base de données à un <xref:System.Data.Linq.DataContext>, une table à une classe, ainsi que des colonnes et des relations aux propriétés sur ces classes. Vous pouvez également utiliser des attributs pour mapper une hiérarchie d'héritage dans votre modèle objet. Pour plus d'informations, voir [Procédure : Générez le modèle objet dans Visual Basic C# ](how-to-generate-the-object-model-in-visual-basic-or-csharp.md)ou.  
   
- Les développeurs qui utilisent Visual Studio effectuent généralement un mappage basé sur les attributs à l’aide de l’Concepteur Objet Relationnel. Vous pouvez aussi utiliser l'outil en ligne de commande SQLMetal ou coder manuellement ces attributs. Pour plus d’informations, consultez [Guide pratique pour Générez le modèle objet dans Visual Basic C# ](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)ou.  
+ Les développeurs qui utilisent Visual Studio effectuent généralement un mappage basé sur les attributs à l’aide de l’Concepteur Objet Relationnel. Vous pouvez aussi utiliser l'outil en ligne de commande SQLMetal ou coder manuellement ces attributs. Pour plus d'informations, voir [Procédure : Générez le modèle objet dans Visual Basic C# ](how-to-generate-the-object-model-in-visual-basic-or-csharp.md)ou.  
   
 > [!NOTE]
-> Vous pouvez également mapper à l'aide d'un fichier XML externe. Pour plus d’informations, consultez [mappage externe](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
+> Vous pouvez également mapper à l'aide d'un fichier XML externe. Pour plus d’informations, consultez [mappage externe](external-mapping.md).  
   
  Les sections suivantes décrivent plus en détail le mappage basé sur les attributs. Pour plus d'informations, consultez l'espace de noms <xref:System.Data.Linq.Mapping>.  
   
@@ -64,7 +64,7 @@ ms.locfileid: "69964091"
 > Les valeurs des propriétés AssociationAttribute et ColumnAttribute Storage respectent la casse. Assurez-vous, par exemple que les valeurs utilisées dans l'attribut de la propriété AssociationAttribute.Storage correspondent à la casse des noms de propriétés correspondants utilisés ailleurs dans le code. Cela s’applique à tous les langages de programmation .NET, même ceux qui ne sont généralement pas sensibles à la casse, y compris les Visual Basic. Pour plus d'informations sur la propriété Storage, consultez <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.  
   
 ## <a name="associationattribute-attribute"></a>Attribut AssociationAttribute  
- Utilisez cet attribut pour désigner une propriété comment représentant une association dans la base de données, telle qu'une relation entre une clé étrangère et une clé primaire. Pour plus d’informations sur les relations [, consultez Procédure: mapper des relations de base de données](../../../../../../docs/framework/data/adonet/sql/linq/how-to-map-database-relationships.md).  
+ Utilisez cet attribut pour désigner une propriété comment représentant une association dans la base de données, telle qu'une relation entre une clé étrangère et une clé primaire. Pour plus d’informations sur les relations [, consultez Procédure : mapper des relations de base de données](how-to-map-database-relationships.md).  
   
  Le tableau suivant décrit les propriétés de cet attribut.  
   
@@ -144,4 +144,4 @@ ms.locfileid: "69964091"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence](../../../../../../docs/framework/data/adonet/sql/linq/reference.md)
+- [Référence](reference.md)

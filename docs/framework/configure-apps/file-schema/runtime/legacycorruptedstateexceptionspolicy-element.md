@@ -7,19 +7,19 @@ helpviewer_keywords:
 ms.assetid: e0a55ddc-bfa8-4f3e-ac14-d1fc3330e4bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2715548a40579375cebbdd5fb9003738a42ff714
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 6566437d899b768cda1bab74bb1310deb7aa74db
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663650"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252513"
 ---
 # <a name="legacycorruptedstateexceptionspolicy-element"></a>\<legacyCorruptedStateExceptionsPolicy >, élément
 Spécifie si le common language runtime permet au code managé d’intercepter les violations d’accès et d’autres exceptions d’état endommagé.  
   
- \<configuration>  
-\<runtime>  
-\<legacyCorruptedStateExceptionsPolicy>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<legacyCorruptedStateExceptionsPolicy>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -56,7 +56,7 @@ Spécifie si le common language runtime permet au code managé d’intercepter l
 ## <a name="remarks"></a>Notes  
  Dans la .NET Framework version 3,5 et les versions antérieures, le common language runtime permettait au code managé d’intercepter les exceptions levées par des États de processus endommagés. Une violation d’accès est un exemple de ce type d’exception.  
   
- À partir du .NET Framework 4, le code managé n’intercepte plus ces types d' `catch` exceptions dans des blocs. Toutefois, vous pouvez remplacer cette modification et maintenir la gestion des exceptions d’état endommagé de deux manières:  
+ À partir du .NET Framework 4, le code managé n’intercepte plus ces types d' `catch` exceptions dans des blocs. Toutefois, vous pouvez remplacer cette modification et maintenir la gestion des exceptions d’état endommagé de deux manières :  
   
 - Affectez `<legacyCorruptedStateExceptionsPolicy>` `enabled` à`true`l’attribut de l’élément la valeur. Ce paramètre de configuration est appliqué échelle et affecte toutes les méthodes.  
   

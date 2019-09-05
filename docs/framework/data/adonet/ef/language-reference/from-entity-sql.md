@@ -2,15 +2,15 @@
 title: FROM (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: ff3e3048-0d5d-4502-ae5c-9187fcbd0514
-ms.openlocfilehash: 3da9c9a2864219836c8aff6e0dc9e98656ba673f
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 993e71e6fee2e18806da789bdb10a488337d030f
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70043709"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70250949"
 ---
 # <a name="from-entity-sql"></a>FROM (Entity SQL)
-Spécifie la collection utilisée dans les instructions [Select](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md) .
+Spécifie la collection utilisée dans les instructions [Select](select-entity-sql.md) .
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -167,6 +167,6 @@ select {1} from {2, 3}
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [Expressions de requête](../../../../../../docs/framework/data/adonet/ef/language-reference/query-expressions-entity-sql.md)
-- [Types structurés autorisant la valeur null](../../../../../../docs/framework/data/adonet/ef/language-reference/nullable-structured-types-entity-sql.md)
+- [Référence Entity SQL](entity-sql-reference.md)
+- [Expressions de requête](query-expressions-entity-sql.md)
+- [Types structurés autorisant la valeur null](nullable-structured-types-entity-sql.md)

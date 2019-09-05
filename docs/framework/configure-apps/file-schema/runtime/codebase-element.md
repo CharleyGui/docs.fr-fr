@@ -9,18 +9,22 @@ helpviewer_keywords:
 - container tags, <codeBase> element
 - codeBase element
 ms.assetid: d48a3983-2297-43ff-a14d-1f29d3995822
-ms.openlocfilehash: a06daa0b2aa5374c9959cbbe778d62856819a40e
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: bd170b817c5ccc337711f8f79968653c29f3eda4
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69663868"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252746"
 ---
 # <a name="codebase-element"></a>\<Élément codebais >
 
 Spécifie où le common language runtime peut trouver un assembly.
 
-\<configuration> \<runtime> \<assemblyBinding> \<dependentAssembly> \<codeBase>
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<assemblyBinding >** ](assemblybinding-element-for-runtime.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> dependentAssembly**](dependentassembly-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<codeBase>**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -43,7 +47,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="version-attribute"></a>Attribut de version
 
-|`Value`|Description|
+|Valeur|Description|
 |-----------|-----------------|
 |Les valeurs valides pour chaque partie du numéro de version sont comprises entre 0 et 65535.|Non applicable.|
 
@@ -62,13 +66,13 @@ Aucun.
 
 ## <a name="remarks"></a>Notes
 
-Pour que le runtime utilise le  **\<** paramètre CODEBASE > dans un fichier de configuration machine ou un fichier de stratégie d’éditeur, le fichier doit également rediriger la version de l’assembly. Les fichiers de configuration de l’application peuvent avoir un paramètre code base sans rediriger la version de l’assembly. Après avoir déterminé la version de l’assembly à utiliser, le runtime applique le paramètre de code base du fichier qui détermine la version. Si aucun code base n’est indiqué, le runtime détecte l’assembly de la façon habituelle.
+Pour que le runtime utilise le  **\<paramètre CODEBASE >** dans un fichier de configuration machine ou un fichier de stratégie d’éditeur, le fichier doit également rediriger la version de l’assembly. Les fichiers de configuration de l’application peuvent avoir un paramètre code base sans rediriger la version de l’assembly. Après avoir déterminé la version de l’assembly à utiliser, le runtime applique le paramètre de code base du fichier qui détermine la version. Si aucun code base n’est indiqué, le runtime détecte l’assembly de la façon habituelle.
 
 Si l’assembly a un nom fort, le paramètre de code base peut se trouver n’importe où sur l’intranet local ou sur Internet. Si l’assembly est un assembly privé, le paramètre de code base doit être un chemin d’accès relatif au répertoire de l’application.
 
 Pour les assemblys sans nom fort, la version est ignorée et le chargeur utilise la première apparence \<du code base > dans \<le > dependentAssembly. S’il y a une entrée dans le fichier de configuration de l’application qui redirige la liaison vers un autre assembly, la redirection aura la priorité, même si la version de l’assembly ne correspond pas à la demande de liaison.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L’exemple suivant montre comment spécifier où le runtime peut trouver un assembly.
 

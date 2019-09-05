@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ec7637a9-01d5-4a95-8bb0-478311cd263b
-ms.openlocfilehash: 4b0d7e668526fd71943513db2fc3c076c8bd3bad
-ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
+ms.openlocfilehash: d0926bb1a0e35caa058f268f0a0c414e805a8674
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67539933"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251170"
 ---
 # <a name="comparison-expressions"></a>Comparaison des expressions
-Une expression de comparaison définit une valeur constante, une valeur de propriété ou un résultat de méthode par rapport à une autre valeur (égal, différent de, supérieur à ou inférieur à). Si une comparaison particulière n’est pas valide pour LINQ to Entities, une exception sera levée. Toutes les comparaisons, implicites et explicites, requièrent que tous les composants soient comparables dans la source de données. Des expressions de comparaison sont souvent utilisées dans des clauses `Where` pour restreindre les résultats d'une requête.  
+Une expression de comparaison définit une valeur constante, une valeur de propriété ou un résultat de méthode par rapport à une autre valeur (égal, différent de, supérieur à ou inférieur à). Si une comparaison particulière n’est pas valide pour LINQ to Entities, une exception est levée. Toutes les comparaisons, implicites et explicites, requièrent que tous les composants soient comparables dans la source de données. Des expressions de comparaison sont souvent utilisées dans des clauses `Where` pour restreindre les résultats d'une requête.  
   
  L'exemple suivant dans la syntaxe d'expression de requête présente une requête qui retourne des résultats dans lesquels le numéro de commande client est égal à SO43663 :  
   
@@ -40,7 +40,7 @@ Une expression de comparaison définit une valeur constante, une valeur de propr
  [!code-csharp[DP L2E Conceptual Examples#ConstantExpression](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#constantexpression)]
  [!code-vb[DP L2E Conceptual Examples#ConstantExpression](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#constantexpression)]  
   
- LINQ to Entities ne prend pas en charge à l’aide d’une classe d’utilisateur en tant que constante. Toutefois, une référence de propriété sur une classe d'utilisateur est considérée comme une constante. Elle est donc convertie en expression constante d'arborescence de commandes et exécutée sur la source de données.  
+ LINQ to Entities ne prend pas en charge l’utilisation d’une classe d’utilisateur en tant que constante. Toutefois, une référence de propriété sur une classe d'utilisateur est considérée comme une constante. Elle est donc convertie en expression constante d'arborescence de commandes et exécutée sur la source de données.  
   
  [!code-csharp[DP L2E Conceptual Examples#MyClass](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#myclass)]
  [!code-vb[DP L2E Conceptual Examples#MyClass](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#myclass)]  
@@ -55,4 +55,4 @@ Une expression de comparaison définit une valeur constante, une valeur de propr
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Expressions dans les requêtes LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/expressions-in-linq-to-entities-queries.md)
+- [Expressions dans les requêtes LINQ to Entities](expressions-in-linq-to-entities-queries.md)

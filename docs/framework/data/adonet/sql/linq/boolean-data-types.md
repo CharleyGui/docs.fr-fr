@@ -2,12 +2,12 @@
 title: Types de données Boolean
 ms.date: 03/30/2017
 ms.assetid: 57f7376b-4b11-4b35-98a9-780382053ceb
-ms.openlocfilehash: f200445d2ba7846f9dc467c7f06bce4225c88865
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9fa3327315593bd54fc51f67bf9964da8d683c5d
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964079"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70248052"
 ---
 # <a name="boolean-data-types"></a>Types de données Boolean
 Les opérateurs booléens fonctionnent conformément aux attentes dans le Common Language Runtime (CLR) mais le comportement de court-circuit n'est pas traduit. Par exemple, l'opérateur Visual Basic `AndAlso` se comporte comme l'opérateur `And`. L'opérateur C# `&&` se comporte comme l'opérateur `&`.  
@@ -25,4 +25,4 @@ Les opérateurs booléens fonctionnent conformément aux attentes dans le Common
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions et types de données](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+- [Fonctions et types de données](data-types-and-functions.md)

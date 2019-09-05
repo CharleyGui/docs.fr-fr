@@ -10,19 +10,19 @@ helpviewer_keywords:
 ms.assetid: 3559d46a-7640-4c72-9a11-7e980768929e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d3071b25392048161ebb40c39842f5da0dce3475
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2fa32d64f3ce440981c5f26d731051a118ed9254
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69920830"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252666"
 ---
 # <a name="disablecommitthreadstack-element"></a>\<disableCommitThreadStack >, élément
 Spécifie si la pile des threads complète est validée quand un thread est démarré.  
   
- \<configuration>  
-\<runtime>  
-\<disableCommitThreadStack>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<disableCommitThreadStack>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,7 +41,7 @@ Spécifie si la pile des threads complète est validée quand un thread est dém
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|`Value`|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |0|Ne pas désactiver le comportement par défaut du Common Language Runtime, qui consiste à valider la pile des threads complète quand un thread est démarré.|  
 |1|Désactiver le comportement par défaut du Common Language Runtime, qui consiste à valider la pile des threads complète quand un thread est démarré.|  

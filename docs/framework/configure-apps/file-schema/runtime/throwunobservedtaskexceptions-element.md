@@ -10,19 +10,19 @@ helpviewer_keywords:
 ms.assetid: cea7e588-8b8d-48d2-9ad5-8feaf3642c18
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 876452a0a56d10f169526138cdbbbd153572f457
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 3ed1e66c4aadab656455686a7a1e5028b035676a
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69658849"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70252263"
 ---
 # <a name="throwunobservedtaskexceptions-element"></a>\<ThrowUnobservedTaskExceptions >, élément
 Indique si les exceptions de tâches non gérées doivent arrêter un processus en cours d’exécution.  
   
- \<configuration>  
-\<runtime>  
-\<ThrowUnobservedTaskExceptions>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<> d’exécution**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<ThrowUnobservedTaskExceptions>**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -67,13 +67,13 @@ Indique si les exceptions de tâches non gérées doivent arrêter un processus 
   
  Dans le .NET Framework 4,5, vous pouvez utiliser l' [ \<élément ThrowUnobservedTaskExceptions >](throwunobservedtaskexceptions-element.md) dans un fichier de configuration de l’application pour permettre au comportement .NET Framework 4 de lever une exception.  
   
- Vous pouvez également spécifier le comportement de l’exception de l’une des manières suivantes:  
+ Vous pouvez également spécifier le comportement de l’exception de l’une des manières suivantes :  
   
 - En définissant la variable `COMPlus_ThrowUnobservedTaskExceptions` d'`set COMPlus_ThrowUnobservedTaskExceptions=1`environnement ().  
   
 - En définissant la valeur de Registre DWORD ThrowUnobservedTaskExceptions = 1 dans\\le HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft. Clé NETFramework.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant montre comment activer la levée d’exceptions dans des tâches à l’aide d’un fichier de configuration de l’application.  
   
 ```xml  
