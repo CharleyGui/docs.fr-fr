@@ -1,12 +1,12 @@
 ---
 title: Attributs (C#)
 ms.date: 04/26/2018
-ms.openlocfilehash: 42a7035a9dae146ad7a303da41c83891e5e19ef8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 7b78d5832c15d3d1142b80d2ccb96a72e4e20390
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61668612"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70374366"
 ---
 # <a name="attributes-c"></a>Attributs (C#)
 
@@ -57,7 +57,7 @@ Le premier paramètre, le nom de la DLL, est positionnel et se place toujours en
 
 ### <a name="attribute-targets"></a>Cibles d’attribut
 
-La *cible* d’un attribut est l’entité à laquelle s’applique l’attribut. Par exemple, un attribut peut s’appliquer à une classe, à une méthode particulière ou à un assembly entier. Par défaut, un attribut s’applique à l’élément qu’il précède. Mais vous pouvez également identifier de manière explicite, par exemple, si un attribut s’applique à une méthode, à son paramètre ou à sa valeur renvoyée.
+La *cible* d’un attribut est l’entité à laquelle s’applique l’attribut. Par exemple, un attribut peut s’appliquer à une classe, à une méthode particulière ou à un assembly entier. Par défaut, un attribut s’applique à l’élément qui le suit. Mais vous pouvez également identifier de manière explicite, par exemple, si un attribut s’applique à une méthode, à son paramètre ou à sa valeur renvoyée.
 
 Pour identifier de manière explicite une cible d’attribut, utilisez la syntaxe suivante :
 
@@ -72,10 +72,10 @@ La liste des valeurs `target` possibles est présentée dans le tableau suivant.
 |`assembly`|Assembly entier|
 |`module`|Module d’assembly actuel|
 |`field`|Champ dans une classe ou un struct|
-|`event`|événement|
+|`event`|Événement|
 |`method`|Méthode ou accesseurs de propriété `get` et `set`|
 |`param`|Paramètres de méthode ou paramètres d’accesseur de propriété `set`|
-|`property`|Property|
+|`property`|Propriété|
 |`return`|Valeur de retour d’une méthode, indexeur de propriété ou accesseur de propriété `get`|
 |`type`|Struct, classe, interface, énumération ou délégué|
 
@@ -119,7 +119,7 @@ Pour plus d'informations, voir :
 
 - [Création d’attributs personnalisés (C#)](creating-custom-attributes.md)  
 - [Accès à des attributs à l’aide de la réflexion (C#)](accessing-attributes-by-using-reflection.md)  
-- [Guide pratique pour créer une union C/C++ à l’aide d’attributs (C#)](how-to-create-a-c-cpp-union-by-using-attributes.md)  
+- [Guide pratique : créer une union C/C++ à l’aide d’attributs (C#)](how-to-create-a-c-cpp-union-by-using-attributes.md)  
 - [Attributs courants (C#)](common-attributes.md)  
 - [Informations relatives à l’appelant (C#)](../caller-information.md)  
 

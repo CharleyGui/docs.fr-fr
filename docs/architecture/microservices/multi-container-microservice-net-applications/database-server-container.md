@@ -2,12 +2,12 @@
 title: Utilisation d’un serveur de base de données s’exécutant en tant que conteneur
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Utilisation d’un serveur de base de données s’exécutant en tant que conteneur ? Uniquement pour le développement ! Comprendre pourquoi.
 ms.date: 10/02/2018
-ms.openlocfilehash: 5fd92a28a09cab041225c4c817a10f5ecfedc038
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 312f986b5aa710fe51c7c3488776395194526e51
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68676196"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70296883"
 ---
 # <a name="using-a-database-server-running-as-a-container"></a>Utilisation d’un serveur de base de données s’exécutant en tant que conteneur
 
@@ -31,7 +31,7 @@ Le conteneur SQL Server de l’exemple d’application est configuré avec le c
 
 De même, au lieu d’utiliser `docker-compose`, la commande `docker run` suivante peut exécuter ce conteneur :
 
-```
+```console
   docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pass@word' -p 5433:1433 -d microsoft/mssql-server-linux:2017-latest
 ```
 
@@ -167,7 +167,7 @@ Redis fournit une image Docker. Cette image est accessible à partir de Docker H
 
 Vous pouvez exécuter directement un conteneur Docker Redis en utilisant la commande Docker CLI suivante à l’invite de commandes :
 
-```
+```console
   docker run --name some-redis -d redis
 ```
 

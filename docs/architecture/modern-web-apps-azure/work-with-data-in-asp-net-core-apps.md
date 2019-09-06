@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: e4303a3046981756cae6951483c100b37425dc80
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 3b251003a2da998936a11acff3cc2975c4b78838
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105448"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373994"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Utilisation de données dans les applications ASP.NET Core
 
@@ -76,9 +76,9 @@ Une fois que vous avez installé Core EF, que vous avez créé un type enfant Db
 
 Vous pouvez voir les requêtes qu’EF Core exécute en configurant un enregistreur d’événements et en réglant son niveau au moins sur Informations, comme indiqué dans la Figure 8-1.
 
-![](./media/image8-1.png)
+![Journalisation des requêtes de EF Core sur la console](./media/image8-1.png)
 
-Figure 8-1 Journalisation des requêtes EF Core dans la console
+**Figure 8-1** : Journalisation des requêtes de EF Core sur la console
 
 ### <a name="fetching-and-storing-data"></a>Extraction et stockage des données
 

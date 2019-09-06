@@ -2,12 +2,12 @@
 title: Raisons de moderniser des applications .NET existantes dans des applications optimisées pour le Cloud
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Raisons de moderniser des applications .NET existantes dans des applications optimisées pour le Cloud
 ms.date: 04/28/2018
-ms.openlocfilehash: 5aa9828f65f76138461c18711fe03bdbe6a70ffd
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: aabce73efaae520a3b59c70d53519b847f2c6a94
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "69578122"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373930"
 ---
 # <a name="reasons-to-modernize-existing-net-apps-to-cloud-optimized-applications"></a>Raisons de moderniser des applications .NET existantes dans des applications optimisées pour le Cloud
 
@@ -21,7 +21,7 @@ La ligne inférieure est que lorsqu’une organisation crée et gère des applic
 
 ## <a name="cloud-optimized-application-principles-and-tenets"></a>Principes et principes d’application optimisés pour le Cloud 
 
-Les améliorations du Cloud sont principalement axées sur la réalisation de deux objectifs: Réduisez les coûts et améliorez la croissance de l’entreprise en améliorant l’agilité. Ces objectifs sont atteints en simplifiant les processus et en réduisant les frottements lorsque vous publiez et expédiez des applications.
+Les améliorations du Cloud sont principalement axées sur la réalisation de deux objectifs : Réduisez les coûts et améliorez la croissance de l’entreprise en améliorant l’agilité. Ces objectifs sont atteints en simplifiant les processus et en réduisant les frottements lorsque vous publiez et expédiez des applications.
 
 Votre application est optimisée pour le Cloud si vous pouvez le faire de façon agile, développer votre application de manière autonome à partir d’autres applications locales, puis libérer, déployer, mettre à l’échelle automatiquement, surveiller et dépanner votre application dans le Cloud.
 
@@ -29,7 +29,7 @@ La clé est l' *agilité*. Vous ne pouvez pas fournir une agilité, sauf si vous
 
 Pour obtenir de l’agilité, vous avez également besoin de processus DevOps automatisés basés sur des pipelines CI/CD qui se libèrent sur des plateformes évolutives dans le Cloud. Les plateformes CI/CD (comme Azure DevOps Services ou Jenkins) qui sont déployées sur une plateforme Cloud évolutive et résiliente (comme Azure App Service ou le service Kubernetes Azure) sont des technologies clés pour atteindre l’agilité dans le Cloud.
 
-La liste suivante décrit les principales principes ou pratiques des applications optimisées pour le Cloud. Notez que vous pouvez adopter tout ou partie de ces principes en adoptant une approche progressive ou incrémentielle:
+La liste suivante décrit les principales principes ou pratiques des applications optimisées pour le Cloud. Notez que vous pouvez adopter tout ou partie de ces principes en adoptant une approche progressive ou incrémentielle :
 
 - **Conteneurs**. Les conteneurs vous permettent d’inclure des dépendances d’application avec l’application elle-même. La création de conteneurs réduit considérablement le nombre de problèmes que vous pouvez rencontrer quand vous déployez dans des environnements de production ou que vous testez dans des environnements intermédiaires. Enfin, les conteneurs améliorent l’agilité de la livraison des applications.
 
@@ -41,9 +41,9 @@ La liste suivante décrit les principales principes ou pratiques des application
 
 La figure 4-2 montre les principaux piliers facultatifs d’une application optimisée pour le Cloud. Plus vous implémentez de piliers, plus votre application sera prête à répondre aux attentes de vos clients.
 
-> ![Principaux piliers d’une application optimisée pour le Cloud](./media/image2.png)
->
-> **Figure 4-2.** Principaux piliers d’une application optimisée pour le Cloud
+![Principaux piliers d’une application optimisée pour le Cloud](./media/image2.png)
+
+**Figure 4-2.** Principaux piliers d’une application optimisée pour le Cloud
 
 Pour résumer, une application optimisée pour le Cloud est une approche de la création et de la gestion d’applications qui tirent parti du modèle cloud computing, tout en utilisant une combinaison de conteneurs, d’une infrastructure cloud gérée, de techniques d’applications résilientes, la surveillance, la livraison continue et DevOps, sans avoir besoin de remanier et de réécrire vos applications existantes.
 
@@ -51,13 +51,13 @@ Votre organisation peut adopter ces technologies et approches de manière progre
 
 ## <a name="benefits-of-a-cloud-optimized-application"></a>Avantages d’une application optimisée pour le Cloud
 
-Vous pouvez bénéficier des avantages suivants en convertissant une application existante en application optimisée pour le Cloud (sans remaniement ou codage):
+Vous pouvez bénéficier des avantages suivants en convertissant une application existante en application optimisée pour le Cloud (sans remaniement ou codage) :
 
 - **Réduction des coûts, car l’infrastructure gérée est gérée par le fournisseur de Cloud**. Les applications optimisées pour le Cloud bénéficient des avantages du Cloud en utilisant l’élasticité prête à l’emploi du Cloud, la mise à l’échelle automatique et la haute disponibilité. Les avantages sont liés non seulement aux fonctionnalités de calcul (machines virtuelles et conteneurs), mais également aux ressources dans le Cloud, telles que DBaaS, CaaS et toute infrastructure dont une application peut avoir besoin.
 
-- **Application et infrastructure résilientes**. Lorsque vous migrez vers le Cloud, vous devez adopter des échecs temporaires. des erreurs se produisent dans le Cloud. En outre, l’infrastructure et le matériel de Cloud sont «remplaçables», ce qui augmente les opportunités de temps mort transitoire. En même temps, les fonctionnalités de cloud interne et certaines techniques de développement d’applications qui implémentent la résilience et automatisent la récupération facilitent grandement la récupération suite à des défaillances inattendues dans le Cloud.
+- **Application et infrastructure résilientes**. Lorsque vous migrez vers le Cloud, vous devez adopter des échecs temporaires. des erreurs se produisent dans le Cloud. En outre, l’infrastructure et le matériel de Cloud sont « remplaçables », ce qui augmente les opportunités de temps mort transitoire. En même temps, les fonctionnalités de cloud interne et certaines techniques de développement d’applications qui implémentent la résilience et automatisent la récupération facilitent grandement la récupération suite à des défaillances inattendues dans le Cloud.
 
-- Informations plus approfondies **sur les performances des applications**. Les outils de surveillance du Cloud comme Azure Application Insights fournissent une visualisation pour la gestion de l’intégrité, la journalisation et les notifications. Les journaux d’audit rendent les applications faciles à déboguer et à auditer, fondamentales pour une application Cloud fiable.
+- Informations plus **approfondies sur les performances des applications**. Les outils de surveillance du Cloud comme Azure Application Insights fournissent une visualisation pour la gestion de l’intégrité, la journalisation et les notifications. Les journaux d’audit rendent les applications faciles à déboguer et à auditer, fondamentales pour une application Cloud fiable.
 
 - La **portabilité des applications, avec des déploiements agile**. Les conteneurs (conteneurs Linux ou Windows basés sur le moteur de l’arrimeur) offrent la meilleure solution pour éviter une application verrouillée dans le Cloud. En utilisant des conteneurs, des hôtes de station d’accueil et des orchestrateurs multiclouds, vous pouvez facilement vous déplacer d’un environnement ou d’un Cloud vers un autre. Les conteneurs éliminent le frottement qui se produit généralement dans les déploiements dans n’importe quel environnement (phase, test/production).
 

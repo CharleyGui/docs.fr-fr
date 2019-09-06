@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 22cb673f09faf7b0eabcfa5b3f6700d33242d84b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: e257410c51d70af31b565d99a8d28ef82ce681d7
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68675376"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373794"
 ---
 # <a name="common-web-application-architectures"></a>Architectures courantes des applications web
 
@@ -28,7 +28,7 @@ L’architecture d’une application peut se réduire à un seul projet. Dans ce
 
 Tout nouveau projet ASP.NET Core, créé dans Visual Studio ou à partir de la ligne de commande, est au début une simple application monolithique « tout-en-un ». Le projet contient le comportement complet de l’application, y compris la logique de présentation, métier et d’accès aux données. La figure 5-1 montre la structure de fichiers d’une application à projet unique.
 
-![](./media/image5-1.png)
+![Application ASP.NET Core à projet unique](./media/image5-1.png)
 
 **Figure 5-1.** Application ASP.NET Core à projet unique.
 
@@ -59,7 +59,7 @@ La mise en couches logiques est une technique courante pour améliorer l’organ
 
 La figure 5-2 illustre l’organisation la plus courante d’une logique d’application en couches.
 
-![](./media/image5-2.png)
+![Couches d’application standard](./media/image5-2.png)
 
 **Figure 5-2.** Couches d’application classiques.
 
@@ -69,19 +69,19 @@ Cette approche en couches classique a un inconvénient, à savoir que les dépen
 
 La figure 5-3 montre un exemple de solution qui scinde l’application en trois projets par responsabilité (ou couche).
 
-![](./media/image5-3.png)
+![Application monolithique simple avec trois projets](./media/image5-3.png)
 
 **Figure 5-3.** Application monolithique simple constituée de trois projets.
 
 Même si cette application utilise plusieurs projets à des fins d’organisation, elle reste déployée en tant qu’unité simple et ses clients interagissent avec elle en la considérant comme une application web unique. Cela simplifie nettement le processus de déploiement. La figure 5-4 montre comment une application de ce type peut être hébergée en utilisant Azure.
 
-![](./media/image5-4.png)
+![Déploiement simple d’une application web Azure](./media/image5-4.png)
 
 **Figure 5-4.** Déploiement simple d’une application web Azure
 
 Quand l’application doit grossir, des solutions de déploiement plus complexes et robustes peuvent être nécessaires. La figure 5-5 montre un exemple de plan de déploiement plus complexe qui prend en charge des fonctionnalités supplémentaires.
 
-![](./media/image5-5.png)
+![Déploiement d’une application web sur Azure App Service](./media/image5-5.png)
 
 **Figure 5-5.** Déploiement d’une application web sur Azure App Service
 
@@ -91,7 +91,7 @@ Il est possible d’augmenter ou de diminuer la taille des instances de cette un
 
 L’approche la plus simple pour mettre à l’échelle une application web dans Azure est de configurer la mise à l’échelle manuellement dans le plan App Service de l’application. La figure 5-6 illustre le tableau de bord Azure qui permet de configurer le nombre d’instances au service d’une application.
 
-![](./media/image5-6.png)
+![Mise à l’échelle du plan App Service dans Azure](./media/image5-6.png)
 
 **Figure 5-6.** Mise à l’échelle du plan App Service dans Azure.
 
@@ -104,7 +104,7 @@ Les applications conçues selon le principe d’inversion des dépendances et le
 
 L’architecture propre met la logique métier et le modèle d’application au centre même de l’application. Au lieu que la logique métier dépende des préoccupations de l’accès aux données ou d’une autre infrastructure, cette dépendance est inversée : les détails de l’infrastructure et de l’implémentation dépendent du noyau de l’application. Cela s’obtient par la définition d’abstractions, ou interfaces, dans la couche Noyau de l’application, lesquels sont ensuite implémentés par les types définis dans la couche Infrastructure. Cette architecture est souvent représentée sous la forme d’une série de cercles concentriques, à l’image des couches d’un oignon. La figure 5-7 montre un exemple de ce style de représentation architecturale.
 
-![](./media/image5-7.png)
+![Architecture propre ; représentation des couches en oignon](./media/image5-7.png)
 
 **Figure 5-7.** Architecture propre ; représentation des couches en oignon
 
@@ -112,7 +112,7 @@ Dans ce diagramme, le flux des dépendances va du cercle extérieur vers le cerc
 
 La figure 5-8-X illustre un diagramme de couches horizontal plus classique, qui reflète mieux la dépendance entre la couche Interface utilisateur et les autres couches.
 
-![](./media/image5-8.png)
+![Architecture propre ; représentation horizontale des couches](./media/image5-8.png)
 
 **Figure 5-8.** Architecture propre ; représentation horizontale des couches
 
@@ -120,7 +120,7 @@ Notez que les flèches pleines représentent les dépendances à la compilation,
 
 La figure 5-9 est une représentation plus détaillée de l’architecture d’une application ASP.NET Core conçue selon ces recommandations.
 
-![Architecture ASPNET Core](./media/image5-9.png)
+![Diagramme d’architecture de ASP.NET Core suivant l’architecture propre](./media/image5-9.png)
 
 **Figure 5-9**. Diagramme d’une architecture ASP.NET Core propre.
 
@@ -262,7 +262,7 @@ networks:
 
 Le fichier `docker-compose.yml` référence le `Dockerfile` dans le projet `Web`. Le `Dockerfile` sert à spécifier le conteneur de base qui sera utilisé et la façon dont l’application sera configurée dans ce dernier. Voici le `Dockerfile` de `Web` :
 
-```
+```Dockerfile
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
 WORKDIR /app
 

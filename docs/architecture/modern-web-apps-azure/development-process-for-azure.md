@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 286ffdb73425794e5979cde902e21ebd90a26969
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: dcd2616cd5638aa712c11e370d35111b248e88ec
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68675146"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70374050"
 ---
 # <a name="development-process-for-azure"></a>Processus de développement pour Azure
 
@@ -28,7 +28,7 @@ Que vous préfériez un IDE complet et puissant ou un éditeur léger et agile, 
 
 **Visual Studio 2017.** Si vous utilisez *Visual Studio 2017*, vous pouvez générer des applications ASP.NET Core, tant que vous avez installé la charge de travail *Développement multiplateforme .NET Core*. La Figure 10-1 montre la charge de travail nécessaire dans la boîte de dialogue du programme d’installation de Visual Studio 2017.
 
-![](./media/image10-1.png)
+![Installation de la charge de travail .NET Core dans Visual Studio 2017](./media/image10-1.png)
 
 **Figure 10-1.** Installation de la charge de travail .NET Core dans Visual Studio 2017.
 

@@ -2,12 +2,12 @@
 title: Tirez et passez des applications .NET existantes à Azure IaaS (Cloud Infrastructure-prêt)
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure.
 ms.date: 04/28/2018
-ms.openlocfilehash: e25ddbf9b6e62c264f3f4d4580d7df3553d262ea
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: ae181784e7de5f66b34d2dc38c6e9ec2e004a0c3
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660743"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373981"
 ---
 # <a name="lift-and-shift-existing-net-apps-to-azure-iaas-cloud-infrastructure-ready"></a>Tirez et passez des applications .NET existantes à Azure IaaS (Cloud Infrastructure-prêt)
 
@@ -17,11 +17,11 @@ Avant d' *apprendre* à migrer vos applications existantes vers la plateforme Az
 
 Un autre point à analyser est la *raison pour laquelle* vous souhaiterez peut-être migrer vers le Cloud IaaS pur plutôt que d’ajouter simplement des services gérés plus avancés dans Azure. Déterminez les cas qui peuvent nécessiter IaaS en premier lieu.
 
-La figure 2-1 positionne les applications prêtes pour l’infrastructure cloud dans les niveaux de maturité de modernisation:
+La figure 2-1 positionne les applications prêtes pour l’infrastructure cloud dans les niveaux de maturité de modernisation :
 
 ![Positionnement des applications prêtes pour l’infrastructure cloud](./media/image2-1.png)
 
-> **Figure 2-1.** Positionnement des applications prêtes pour l’infrastructure cloud
+**Figure 2-1.** Positionnement des applications prêtes pour l’infrastructure cloud
 
 ## <a name="why-migrate-existing-net-web-applications-to-azure-iaas"></a>Pourquoi migrer des applications Web .NET existantes vers Azure IaaS
 
@@ -31,7 +31,7 @@ Une fois que vous avez pris la décision de migrer vos applications vers le Clou
 
 Toutefois, le fait d’avoir le chemin le plus rapide vers le Cloud ne signifie pas que vous tirerez le meilleur parti de l’exécution de vos applications dans le Cloud. Toute organisation bénéficiera des avantages les plus significatifs d’une migration Cloud aux niveaux de maturité déjà introduits dans le Cloud et optimisés pour le Cloud.
 
-Il est également évident que les applications sont plus faciles à moderniser et à remanier dans le futur quand elles s’exécutent déjà dans le Cloud, même sur IaaS. La migration des données d’application a déjà été effectuée. En outre, votre organisation aura acquis les compétences nécessaires pour travailler dans le Cloud et a fait passer le fonctionnement dans une «culture Cloud».
+Il est également évident que les applications sont plus faciles à moderniser et à remanier dans le futur quand elles s’exécutent déjà dans le Cloud, même sur IaaS. La migration des données d’application a déjà été effectuée. En outre, votre organisation aura acquis les compétences nécessaires pour travailler dans le Cloud et a fait passer le fonctionnement dans une « culture Cloud ».
 
 ## <a name="when-to-migrate-to-iaas-instead-of-to-paas"></a>Quand migrer vers IaaS au lieu de PaaS
 
@@ -45,9 +45,9 @@ Toutefois, gardez à l’esprit que la configuration, la sécurisation et la mai
 
 ## <a name="use-azure-migrate-to-analyze-and-migrate-your-existing-applications-to-azure"></a>Utiliser Azure Migrate pour analyser et migrer vos applications existantes vers Azure
 
-La migration vers le Cloud n’a pas besoin d’être difficile. Toutefois, de nombreuses organisations éprouvent des difficultés à démarrer: pour bénéficier d’une visibilité détaillée de l’environnement et des interdépendances étroites entre les applications, les charges de travail et les données. Sans cette visibilité, il peut être difficile de planifier le chemin vers l’avant. Sans informations détaillées sur les éléments requis pour une migration réussie, vous ne pouvez pas avoir les bonnes conversations au sein de votre organisation. Vous ne connaissez pas les avantages en matière de coûts potentiels, ou si les charges de travail peuvent simplement être levées et déplacées ou nécessiter un retravail important pour réussir la migration. Il n’est pas étonnant que de nombreuses organisations hésitent.
+La migration vers le Cloud n’a pas besoin d’être difficile. Toutefois, de nombreuses organisations éprouvent des difficultés à démarrer : pour bénéficier d’une visibilité détaillée de l’environnement et des interdépendances étroites entre les applications, les charges de travail et les données. Sans cette visibilité, il peut être difficile de planifier le chemin vers l’avant. Sans informations détaillées sur les éléments requis pour une migration réussie, vous ne pouvez pas avoir les bonnes conversations au sein de votre organisation. Vous ne connaissez pas les avantages en matière de coûts potentiels, ou si les charges de travail peuvent simplement être levées et déplacées ou nécessiter un retravail important pour réussir la migration. Il n’est pas étonnant que de nombreuses organisations hésitent.
 
-[Azure Migrate](https://aka.ms/azuremigrate) est un nouveau service qui fournit des conseils, des Insights et des mécanismes nécessaires pour vous aider à migrer vers Azure. Azure Migrate fournit:
+[Azure Migrate](https://aka.ms/azuremigrate) est un nouveau service qui fournit des conseils, des Insights et des mécanismes nécessaires pour vous aider à migrer vers Azure. Azure Migrate fournit :
 
 - Découverte et évaluation pour les machines virtuelles locales
 
@@ -65,7 +65,7 @@ La figure 2-2 montre le mappage de dépendances intégré pour toutes les connex
 
 ![Positionnement des applications prêtes pour l’infrastructure cloud](./media/image2-2.png)
 
-> **Figure 2-2.** Positionnement des applications prêtes pour l’infrastructure cloud
+**Figure 2-2.** Positionnement des applications prêtes pour l’infrastructure cloud
 
 ## <a name="use-azure-site-recovery-to-migrate-your-existing-vms-to-azure-vms"></a>Utiliser Azure Site Recovery pour migrer vos machines virtuelles existantes vers des machines virtuelles Azure
 
@@ -77,7 +77,7 @@ La figure 2-3 illustre l’exécution de plusieurs migrations de machine virtuel
 
 ![Positionnement des applications prêtes pour l’infrastructure cloud](./media/image2-3.png)
 
-> **Figure 2-3.** Positionnement des applications prêtes pour l’infrastructure cloud
+**Figure 2-3.** Positionnement des applications prêtes pour l’infrastructure cloud
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 

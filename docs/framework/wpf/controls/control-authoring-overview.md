@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], authoring overview
 - authoring overview for controls [WPF]
 ms.assetid: 3d864748-cff0-4e63-9b23-d8e5a635b28f
-ms.openlocfilehash: 3ea5519259ba2ee31bfd6bc25f6bedf1f1250799
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: 61cd7b61a586afa2addd55acff7cac6d16d92a1f
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68401549"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70374526"
 ---
 # <a name="control-authoring-overview"></a>Vue d’ensemble de la création de contrôles
 
@@ -56,7 +56,7 @@ En cas de génération correcte <xref:System.Windows.Controls.UserControl> , un 
 
 #### <a name="benefits-of-deriving-from-usercontrol"></a>Avantages de la dérivation de UserControl
 
-Envisagez de <xref:System.Windows.Controls.UserControl> dériver de si tous les éléments suivants s’appliquent:
+Envisagez de <xref:System.Windows.Controls.UserControl> dériver de si tous les éléments suivants s’appliquent :
 
 - Vous souhaitez générer votre contrôle de la même façon que vous créez une application.
 
@@ -70,7 +70,7 @@ La dérivation à partir <xref:System.Windows.Controls.Control> de la classe est
 
 #### <a name="benefits-of-deriving-from-control"></a>Avantages de la dérivation de Control
 
-Envisagez de <xref:System.Windows.Controls.Control> dériver de au <xref:System.Windows.Controls.UserControl> lieu d’utiliser la classe si l’une des conditions suivantes s’applique:
+Envisagez de <xref:System.Windows.Controls.Control> dériver de au <xref:System.Windows.Controls.UserControl> lieu d’utiliser la classe si l’une des conditions suivantes s’applique :
 
 - Vous souhaitez que l’apparence de votre contrôle soit personnalisable via le <xref:System.Windows.Controls.ControlTemplate>.
 
@@ -80,11 +80,11 @@ Envisagez de <xref:System.Windows.Controls.Control> dériver de au <xref:System.
 
 Les contrôles qui dérivent de ou <xref:System.Windows.Controls.UserControl> <xref:System.Windows.Controls.Control> s’appuient sur la composition d’éléments existants. Pour de nombreux scénarios, il s’agit d’une solution acceptable, car tout objet qui <xref:System.Windows.FrameworkElement> hérite de peut <xref:System.Windows.Controls.ControlTemplate>être dans un. Dans certains cas, l’apparence d’un contrôle nécessite toutefois des fonctionnalités autres que celles de la composition d’éléments simples. Pour ces scénarios, la base d’un <xref:System.Windows.FrameworkElement> composant sur est le bon choix.
 
-Il existe deux méthodes standard pour les <xref:System.Windows.FrameworkElement>composants basés sur la génération: le rendu direct et la composition d’éléments personnalisés. Le rendu direct implique de remplacer <xref:System.Windows.UIElement.OnRender%2A> la méthode <xref:System.Windows.FrameworkElement> de et <xref:System.Windows.Media.DrawingContext> de fournir des opérations qui définissent explicitement les éléments visuels du composant. Il s’agit de la méthode <xref:System.Windows.Controls.Image> utilisée <xref:System.Windows.Controls.Border>par et. La composition d’éléments personnalisés implique l’utilisation <xref:System.Windows.Media.Visual> d’objets de type pour composer l’apparence de votre composant. Pour obtenir un exemple, consultez [Utilisation d’objets DrawingVisual](../graphics-multimedia/using-drawingvisual-objects.md). <xref:System.Windows.Controls.Primitives.Track>est un exemple de contrôle dans qui [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise la composition d’éléments personnalisés. Il est également possible de combiner le rendu direct et la composition d’éléments personnalisés au sein du même contrôle.
+Il existe deux méthodes standard pour les <xref:System.Windows.FrameworkElement>composants basés sur la génération : le rendu direct et la composition d’éléments personnalisés. Le rendu direct implique de remplacer <xref:System.Windows.UIElement.OnRender%2A> la méthode <xref:System.Windows.FrameworkElement> de et <xref:System.Windows.Media.DrawingContext> de fournir des opérations qui définissent explicitement les éléments visuels du composant. Il s’agit de la méthode <xref:System.Windows.Controls.Image> utilisée <xref:System.Windows.Controls.Border>par et. La composition d’éléments personnalisés implique l’utilisation <xref:System.Windows.Media.Visual> d’objets de type pour composer l’apparence de votre composant. Pour obtenir un exemple, consultez [Utilisation d’objets DrawingVisual](../graphics-multimedia/using-drawingvisual-objects.md). <xref:System.Windows.Controls.Primitives.Track>est un exemple de contrôle dans qui [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise la composition d’éléments personnalisés. Il est également possible de combiner le rendu direct et la composition d’éléments personnalisés au sein du même contrôle.
 
 #### <a name="benefits-of-deriving-from-frameworkelement"></a>Avantages de la dérivation de FrameworkElement
 
-Envisagez de <xref:System.Windows.FrameworkElement> dériver de si l’une des conditions suivantes s’applique:
+Envisagez de <xref:System.Windows.FrameworkElement> dériver de si l’une des conditions suivantes s’applique :
 
 - Vous souhaitez avoir un contrôle précis sur l’apparence de votre contrôle au-delà des fonctionnalités proposées par la composition d’éléments simples.
 
@@ -114,7 +114,7 @@ Si vous souhaitez qu’une propriété de votre contrôle prenne en charge l’u
 
 - Définissez un <xref:System.Windows.DependencyProperty> identificateur nommé `ValueProperty` en tant que `public` `static` champ`readonly` .
 
-- Inscrivez le nom de la propriété auprès du système de propriétés <xref:System.Windows.DependencyProperty.Register%2A?displayProperty=nameWithType>, en appelant, pour spécifier les éléments suivants:
+- Inscrivez le nom de la propriété auprès du système de propriétés <xref:System.Windows.DependencyProperty.Register%2A?displayProperty=nameWithType>, en appelant, pour spécifier les éléments suivants :
 
   - Nom de la propriété.
 
@@ -149,7 +149,7 @@ L’exemple suivant montre comment définir un événement routé :
 
 - Définissez un <xref:System.Windows.RoutedEvent> identificateur nommé `ValueChangedEvent` en tant que `public` `static` champ`readonly` .
 
-- Enregistrez l’événement routé en appelant la <xref:System.Windows.EventManager.RegisterRoutedEvent%2A?displayProperty=nameWithType> méthode. L’exemple spécifie les informations suivantes quand il <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>appelle:
+- Enregistrez l’événement routé en appelant la <xref:System.Windows.EventManager.RegisterRoutedEvent%2A?displayProperty=nameWithType> méthode. L’exemple spécifie les informations suivantes quand il <xref:System.Windows.EventManager.RegisterRoutedEvent%2A>appelle :
 
   - Le nom de l’événement est `ValueChanged`.
 
@@ -191,13 +191,13 @@ Pour obtenir de l’aide sur les contrôles WPF personnalisés dans le [!INCLUDE
 
 #### <a name="dependency-properties"></a>Propriétés de dépendance
 
-Veillez à implémenter `get` le `set` CLR et les accesseurs comme décrit précédemment dans la section «utiliser les propriétés de dépendance». Les concepteurs peuvent utiliser le wrapper pour détecter la présence d’une propriété de dépendance, mais, à l’instar de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et des clients du contrôle, ils ne sont pas tenus d’appeler les accesseurs durant l’obtention ou la définition de la propriété.
+Veillez à implémenter `get` le `set` CLR et les accesseurs comme décrit précédemment dans la section « utiliser les propriétés de dépendance ». Les concepteurs peuvent utiliser le wrapper pour détecter la présence d’une propriété de dépendance, mais, à l’instar de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et des clients du contrôle, ils ne sont pas tenus d’appeler les accesseurs durant l’obtention ou la définition de la propriété.
 
 #### <a name="attached-properties"></a>Propriétés jointes
 
 Pour implémenter des propriétés jointes sur des contrôles personnalisés, tenez compte des indications suivantes :
 
-- Ont un `public` `static` <xref:System.Windows.DependencyProperty.RegisterAttached%2A> de la forme  PropertyNamecrééeàl’aidedelaméthode`Property`. `readonly` <xref:System.Windows.DependencyProperty> Le nom de la propriété qui est <xref:System.Windows.DependencyProperty.RegisterAttached%2A> passé à doit correspondre à *PropertyName*.
+- Ont un `public` `static` <xref:System.Windows.DependencyProperty.RegisterAttached%2A> de la forme PropertyNamecrééeàl’aidedelaméthode`Property`. `readonly` <xref:System.Windows.DependencyProperty> Le nom de la propriété qui est <xref:System.Windows.DependencyProperty.RegisterAttached%2A> passé à doit correspondre à *PropertyName*.
 
 - Implémentez une paire de méthodes CLR `public` `static` nommées `Set`*NomPropriété* et `Get`*NomPropriété*. Les deux méthodes doivent accepter une classe dérivée de <xref:System.Windows.DependencyProperty> comme leur premier argument. La méthode `Set`*NomPropriété* accepte également un argument dont le type correspond au type de données inscrit pour la propriété. La méthode `Get`*NomPropriété* doit retourner une valeur du même type. Si la méthode `Set`*NomPropriété* est manquante, la propriété est marquée en lecture seule.
 
@@ -264,7 +264,7 @@ Les ressources spécifiques à un thème sont conservées dans un dictionnaire d
 
 Il n’est pas nécessaire de définir une ressource pour chaque thème. Si une ressource n’est pas définie pour un thème spécifique, le contrôle vérifie `Classic.xaml` pour la ressource. Si la ressource n’est pas définie dans le fichier correspondant au thème actif ou dans `Classic.xaml`, le contrôle utilise la ressource générique, qui se trouve dans un fichier de dictionnaire de ressources nommé `generic.xaml`.  Le fichier `generic.xaml` se trouve dans le même dossier que les fichiers de dictionnaire de ressources spécifiques au thème. Bien que `generic.xaml` ne corresponde pas à un thème spécifique de Windows, il s’agit néanmoins d’un dictionnaire au niveau du thème.
 
-[Exemple de contrôle personnalisé NumericUpDown avec prise en charge des thèmes et d’UI Automation](https://go.microsoft.com/fwlink/?LinkID=160025) contient deux dictionnaires de ressources pour le contrôle `NumericUpDown` : l’un dans generic.xaml et l’autre dans Luna.NormalColor.xaml.  Vous pouvez exécuter l’application et basculer entre le thème Argent de Windows XP et un autre thème pour voir la différence entre les deux modèles de contrôle. (Si vous exécutez Windows Vista, vous pouvez renommer Luna.NormalColor.xaml en Aero.NormalColor.xaml et basculer entre deux thèmes, tels que Windows Classic et le thème par défaut de Windows Vista.)
+L' [C#](https://github.com/dotnet/samples/tree/master/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp) exemple de contrôle personnalisé NumericUpDown ou [Visual Basic](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/VS_Snippets_Wpf/CustomControlNumericUpDown/visualbasic) avec thème et prise en charge d’UI Automation contient deux dictionnaires de ressources pour le `NumericUpDown` contrôle : l’un est dans Generic. xaml et l’autre dans Luna. NormalColor. Xaml. 
 
 Quand vous placez un <xref:System.Windows.Controls.ControlTemplate> dans un fichier de dictionnaire de ressources spécifique au thème, vous devez créer un constructeur statique pour votre contrôle et appeler la <xref:System.Windows.DependencyProperty.OverrideMetadata%28System.Type%2CSystem.Windows.PropertyMetadata%29> méthode sur <xref:System.Windows.FrameworkElement.DefaultStyleKey%2A>, comme illustré dans l’exemple suivant.
 

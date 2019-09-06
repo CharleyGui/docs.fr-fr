@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 4dc0618eceda4df7c5aa76aee3ac649deb9f5310
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 3a44b017c6160639ed1be7374b893e103ee5f5d8
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68675436"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373904"
 ---
 # <a name="common-client-side-web-technologies"></a>Technologies web courantes côté client
 
@@ -28,9 +28,9 @@ Le langage HTML (HyperText Markup Language) est le langage de balisage standard 
 
 Le code CSS (feuilles de style en cascade) est utilisé pour contrôler l’apparence et la disposition des éléments HTML. Les styles CSS peuvent être appliqués directement à un élément HTML, définis séparément dans la même page ou définis dans un fichier distinct référencé par la page. Les styles sont organisés en cascade selon la manière dont ils sont utilisés pour sélectionner un élément HTML donné. Par exemple, un style qui s’applique à l’ensemble d’un document est remplacé par un style appliqué à un élément particulier. De même, un style propre à un élément est remplacé par un style appliqué à la classe CSS appliquée à l’élément, qui à son tour est remplacé par un style qui cible une instance spécifique de l’élément (via son ID). Figure 6-1
 
-**Figure 6-1.** Règles de spécificité CSS, dans l’ordre.
+![Règles de spécificité CSS](./media/image6-1.png)
 
-![](./media/image6-1.png)
+**Figure 6-1.** Règles de spécificité CSS, dans l’ordre.
 
 Il est préférable de conserver les styles dans leurs propres fichiers de feuille de style séparés et d’utiliser une cascade basée sur la sélection pour implémenter des styles cohérents et réutilisables au sein de l’application. Évitez autant que possible de placer des règles de style dans le HTML et, si vous devez appliquer des styles à des éléments individuels (plutôt qu’à toute une classe d’éléments ou à des éléments sur lesquels est appliquée une classe CSS particulière), faites-le à titre exceptionnel.
 

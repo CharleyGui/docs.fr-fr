@@ -2,16 +2,16 @@
 title: Moderniser vos applications avec la surveillance et la télémétrie
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Moderniser vos applications avec la surveillance et la télémétrie
 ms.date: 04/30/2018
-ms.openlocfilehash: 5bffb336234f63dca150acc9ef31f9efa2e3937b
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 65c464e27e326f6a60b4879ec787253dea019d92
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "69578172"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373953"
 ---
 # <a name="modernize-your-apps-with-monitoring-and-telemetry"></a>Moderniser vos applications avec la surveillance et la télémétrie
 
-Lorsque vous exécutez une application en production, il est essentiel de disposer d’informations sur le fonctionnement de votre application. Est-il en cours de réalisation à un niveau élevé? Les utilisateurs reçoivent-ils des erreurs ou l’application est-elle stable et fiable? Vous avez besoin d’une analyse des performances riche, d’alertes puissantes et de tableaux de bord pour vous assurer que votre application est disponible et qu’elle fonctionne comme prévu. Vous devez également être en mesure de voir rapidement si un problème survient, de déterminer le nombre de clients affectés et d’effectuer une analyse de la cause première pour trouver et résoudre le problème.
+Lorsque vous exécutez une application en production, il est essentiel de disposer d’informations sur le fonctionnement de votre application. Est-il en cours de réalisation à un niveau élevé ? Les utilisateurs reçoivent-ils des erreurs ou l’application est-elle stable et fiable ? Vous avez besoin d’une analyse des performances riche, d’alertes puissantes et de tableaux de bord pour vous assurer que votre application est disponible et qu’elle fonctionne comme prévu. Vous devez également être en mesure de voir rapidement si un problème survient, de déterminer le nombre de clients affectés et d’effectuer une analyse de la cause première pour trouver et résoudre le problème.
 
 ## <a name="monitor-your-application-with-application-insights"></a>Surveillez votre application avec Application Insights
 
@@ -21,7 +21,7 @@ La figure 4-10 montre un exemple de la façon dont Application Insights surveill
 
 ![Tableau de bord de surveillance Application Insights](./media/image10.png)
 
-> **Figure 4-10.** Tableau de bord de surveillance Application Insights
+**Figure 4-10.** Tableau de bord de surveillance Application Insights
 
 ## <a name="monitor-your-docker-infrastructure-with-log-analytics-and-its-container-monitoring-solution"></a>Surveillez votre infrastructure d’ancrage avec Log Analytics et sa solution de surveillance de conteneur
 
@@ -45,9 +45,9 @@ La figure 4-11 montre les relations entre les différents hôtes de conteneur et
 
 ![Solution de surveillance des conteneurs Log Analytics](./media/image11.png)
 
-> **Figure 4-11.** Solution de surveillance des conteneurs Log Analytics
+**Figure 4-11.** Solution de surveillance des conteneurs Log Analytics
 
-Vous pouvez utiliser la solution de surveillance des conteneurs Log Analytics pour:
+Vous pouvez utiliser la solution de surveillance des conteneurs Log Analytics pour :
 
 - Consultez les informations sur tous les hôtes de conteneur à un seul emplacement.
 
@@ -57,7 +57,7 @@ Vous pouvez utiliser la solution de surveillance des conteneurs Log Analytics po
 
 - Résolvez les problèmes en affichant et en recherchant des journaux centralisés sans connexion distante aux hôtes de la station d’accueil.
 
-- Recherchez les conteneurs qui peuvent être des «voisins bruyants» et consomment des ressources excédentaires sur un ordinateur hôte.
+- Recherchez les conteneurs qui peuvent être des « voisins bruyants » et consomment des ressources excédentaires sur un ordinateur hôte.
 
 - Affichez les informations relatives à l’utilisation du processeur, de la mémoire, du stockage et du réseau, ainsi que les informations sur les performances, pour les conteneurs.
 
@@ -71,7 +71,7 @@ Vous pouvez utiliser la solution de surveillance des conteneurs Log Analytics po
 
 <https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview>
 
-- **Qu’est-ce que Log Analytics?**
+- **Qu’est-ce que Log Analytics ?**
 
 <https://docs.microsoft.com/azure/log-analytics/log-analytics-overview>
 
@@ -83,7 +83,7 @@ Vous pouvez utiliser la solution de surveillance des conteneurs Log Analytics po
 
 <https://docs.microsoft.com/azure/azure-monitor/overview>
 
-- **Qu’est-ce qu’Operations Management Suite (OMS)?**
+- **Qu’est-ce qu’Operations Management Suite (OMS) ?**
 
 <https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview>
 

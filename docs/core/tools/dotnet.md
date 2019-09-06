@@ -2,18 +2,18 @@
 title: Commande dotnet
 description: Découvrez la commande dotnet (le pilote générique des outils .NET Core CLI) et comment l’utiliser.
 ms.date: 06/04/2018
-ms.openlocfilehash: 61542a3fff8bba6e2c3e55a4db5a746620d79ca1
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.openlocfilehash: 328fd24cd72110bd235c177398f6f147fbb9d144
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202513"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373751"
 ---
 # <a name="dotnet-command"></a>Commande dotnet
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet` - Outil de gestion du code source et des ressources binaires .NET.
 
@@ -94,9 +94,9 @@ Affiche les kits de développement logiciel .NET Core installés.
 `--roll-forward-on-no-candidate-fx <N>`
 
 Définit le comportement quand le framework partagé requis n’est pas disponible. `N` peut être :
-* `0` : désactiver l’extrapolation même pour les versions mineures.
-* `1` : extrapoler la version mineure, mais pas la version majeure. Il s'agit du comportement par défaut.
-* `2` : extrapoler les versions majeures et mineures.
+- `0` : désactiver l’extrapolation même pour les versions mineures.
+- `1` : extrapoler la version mineure, mais pas la version majeure. Il s’agit du comportement par défaut.
+- `2` : extrapoler les versions majeures et mineures.
 
  Pour plus d'informations, consultez [Restauration par progression](../whats-new/dotnet-core-2-1.md#roll-forward).
 
@@ -210,7 +210,7 @@ Affiche la version du SDK .NET Core en cours d’utilisation.
 
 ## <a name="dotnet-commands"></a>Commandes dotnet
 
-### <a name="general"></a>Général
+### <a name="general"></a>Généralités
 
 # <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
@@ -305,7 +305,7 @@ Commande | Fonction
 
 À partir de .NET Core SDK 2.1.300, un certain nombre d’outils qui étaient disponibles uniquement par projet à l’aide de `DotnetCliToolReference` sont désormais disponibles dans le cadre du Kit de développement .NET Core. Ces outils sont répertoriés dans le tableau suivant :
 
-| Outil                                              | Fonction                                                     |
+| Tool                                              | Fonction                                                     |
 | ------------------------------------------------- | ------------------------------------------------------------ |
 | dev-certs                                         | Crée et gère les certificats de développement.                |
 | [ef](/ef/core/miscellaneous/cli/dotnet)           | Outils en ligne de commande Entity Framework Core.                    |

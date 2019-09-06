@@ -14,12 +14,12 @@ ms.assetid: 020c9df4-fdc5-4dae-815a-963ecae5668c
 author: gewarren
 ms.author: gewarren
 manager: jillfra
-ms.openlocfilehash: 2fbb0715d148b443b1eca8f400e4ad43eb51fa43
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 4fd1f1dc0c2c0ad9ae2009ed592e48b8eeaa2783
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015733"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373683"
 ---
 # <a name="walkthrough-serialize-collections-of-standard-types"></a>Procédure pas à pas : Sérialiser des collections de types standard
 
@@ -37,7 +37,7 @@ La première étape consiste à créer un contrôle qui a une collection sérial
 
 1. Dans Visual Studio, créez un projet de bibliothèque de contrôles Windows, puis nommez-le **SerializationDemoControlLib**.
 
-2. `UserControl1` Renommez `SerializationDemoControl`-le. Pour plus d’informations, consultez [Renommer un symbole de code](/visualstudio/ide/reference/rename)refactorisation.
+2. `UserControl1` Renommez `SerializationDemoControl`-le. Pour plus d’informations, consultez [Renommer un symbole de code refactorisation](/visualstudio/ide/reference/rename).
 
 3. Dans la fenêtre **Propriétés** , affectez à la <xref:System.Windows.Forms.Padding.All%2A?displayProperty=nameWithType> propriété la valeur **10**.
 
@@ -69,7 +69,7 @@ La première étape consiste à créer un contrôle qui a une collection sérial
 
 8. Appuyez sur **F5** pour générer le projet et exécuter votre contrôle dans le **conteneur de test UserControl**.
 
-9. Recherchez la propriété Strings dans <xref:System.Windows.Forms.PropertyGrid> le du **conteneur de test UserControl**. Sélectionnez la **propriété chaînes** , puis cliquez sur le bouton![de sélection (...) dans le bouton fenêtre Propriétés de Visual Studio](./media/visual-studio-ellipsis-button.png)) pour ouvrir l' **éditeur de collections String**.
+9. Recherchez la propriété **Strings** dans <xref:System.Windows.Forms.PropertyGrid> le du **conteneur de test UserControl**. Sélectionnez la **propriété chaînes** , puis cliquez sur le bouton![de sélection (...) dans le bouton fenêtre Propriétés de Visual Studio](./media/visual-studio-ellipsis-button.png)) pour ouvrir l' **éditeur de collections String**.
 
 10. Entrez plusieurs chaînes dans l **'éditeur de collections String**. Séparez-les en appuyant sur la touche **entrée** à la fin de chaque chaîne. Cliquez sur **OK** lorsque vous avez terminé d’entrer des chaînes.
 
@@ -90,14 +90,14 @@ Pour tester le comportement de sérialisation de votre contrôle, vous devez le 
 
 5. Tapez plusieurs chaînes dans l **'éditeur de collections String**. Séparez-les en appuyant sur **entrée** à la fin de chaque chaîne. Cliquez sur **OK** lorsque vous avez terminé d’entrer des chaînes.
 
-> [!NOTE]
-> Les chaînes que vous avez tapées <xref:System.Windows.Forms.TextBox> apparaissent dans `SerializationDemoControl`le de.
+    > [!NOTE]
+    > Les chaînes que vous avez tapées <xref:System.Windows.Forms.TextBox> apparaissent dans `SerializationDemoControl`le de.
 
 6. Dans l’**Explorateur de solutions**, cliquez sur le bouton **Afficher tous les fichiers**.
 
 7. Ouvrez le nœud **Form1** . En dessous, il s’agit d’un fichier nommé **Form1.Designer.cs** ou **Form1. Designer. vb**. Il s’agit du fichier dans lequel le **Concepteur Windows Forms** émet du code représentant l’État au moment du design de votre formulaire et de ses contrôles enfants. Ouvrez ce fichier dans **l’éditeur de code**.
 
-8. Ouvrez la région appelée **code généré par le Concepteur Windows Form** et recherchez la section intitulée **serializationDemoControl1**. Sous cette étiquette se trouve le code qui représente l’État sérialisé de votre contrôle. Les chaînes que vous avez tapées à l’étape 5 apparaissent dans `Strings` une assignation à la propriété. Les exemples de code suivants C# dans et Visual Basic, montrent un code similaire à ce que vous verrez si vous avez tapé les chaînes «Red», «orange» et «Yellow».
+8. Ouvrez la région appelée **code généré par le Concepteur Windows Form** et recherchez la section intitulée **serializationDemoControl1**. Sous cette étiquette se trouve le code qui représente l’État sérialisé de votre contrôle. Les chaînes que vous avez tapées à l’étape 5 apparaissent dans `Strings` une assignation à la propriété. Les exemples de code suivants C# dans et Visual Basic, montrent un code similaire à ce que vous verrez si vous avez tapé les chaînes « Red », « orange » et « Yellow ».
 
     ```csharp
     this.serializationDemoControl1.Strings = new string[] {
@@ -127,7 +127,7 @@ Pour tester le comportement de sérialisation de votre contrôle, vous devez le 
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Une fois que vous savez comment sérialiser une collection de types standard, envisagez d’intégrer vos contrôles personnalisés plus profondément dans l’environnement au moment du Design. Les rubriques suivantes décrivent comment améliorer l’intégration au moment du design de vos contrôles personnalisés:
+Une fois que vous savez comment sérialiser une collection de types standard, envisagez d’intégrer vos contrôles personnalisés plus profondément dans l’environnement au moment du Design. Les rubriques suivantes décrivent comment améliorer l’intégration au moment du design de vos contrôles personnalisés :
 
 - [Architecture au moment du design](/previous-versions/visualstudio/visual-studio-2013/c5z9s1h4(v=vs.120))
 

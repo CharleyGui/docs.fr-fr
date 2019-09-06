@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 02/16/2019
-ms.openlocfilehash: 93a0fd5c484e27853ec9a6919aa573f68471ceaa
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 91bb3be207c9919eb7eb0119e96e76aae94858be
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105482"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373764"
 ---
 # <a name="architectural-principles"></a>Principes de l’architecture
 
@@ -36,13 +36,13 @@ Dans les classes, l’encapsulation est obtenue en limitant l’accès externe �
 
 Le sens de la dépendance au sein de l’application doit être celui de l’abstraction, et non pas des détails d’implémentation. La plupart des applications sont écrites de telle sorte que les dépendances de compilation aillent dans le sens de l’exécution du runtime. Ceci produit un graphe des dépendances directes. Autrement dit, si le module A appelle une fonction dans le module B, qui appelle une fonction dans le module C, au moment de la compilation, A dépend de B, qui dépend de C, comme le montre la figure 4-1.
 
-![](./media/image4-1.png)
+![Graphique de dépendance directe](./media/image4-1.png)
 
 **Figure 4-1.** Graphe des dépendances directes.
 
 L’application du principe d’inversion de dépendance permet à A d’appeler des méthodes sur une abstraction implémentée par B, ce qui permet à A d’appeler B à l’exécution, mais à B de dépendre d’une interface contrôlée par A au moment de la compilation (*inversant* ainsi la dépendance classique au moment de la compilation). À l’exécution, le flux de l’exécution du programme reste inchangé, mais l’introduction d’interfaces signifie que des implémentations différentes de ces interfaces peuvent facilement être connectées.
 
-![](./media/image4-2.png)
+![Graphique de dépendance inversé](./media/image4-2.png)
 
 **Figure 4-2.** Graphe des dépendances inversées.
 

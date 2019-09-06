@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 9f8c9c47757379d641b821f312b89666456343d4
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 51feb770e84af170bf31a6ba363a1d9e72616284
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105463"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373773"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Développer des applications ASP.NET Core MVC
 
@@ -51,7 +51,7 @@ app.UseMvc(routes =>
 
 Dans cet exemple, une route nommée « default » a été ajoutée à la table de routage. Elle définit un modèle de routage avec des espaces réservés pour _controller_, _action_ et _id_. Les valeurs par défaut sont spécifiées pour les espaces réservés controller et action (« Home » et « Index », respectivement), tandis que l’espace réservé id est facultatif (ce qui est dénoté par « ? »). Selon la convention définie ici, la première partie d’une requête doit correspondre au nom du contrôleur, la deuxième partie à l’action et la troisième partie, s’il y a lieu, à un paramètre id. Les routes conventionnelles sont généralement définies dans un seul emplacement pour l’application, par exemple dans la méthode Configure de la classe Startup.
 
-Les routes par attributs ne sont pas spécifiées globalement. Au lieu de cela, elles sont appliquées directement aux contrôleurs et aux actions. L’avantage, c’est que ces routes sont plus facilement détectables quand vous examinez une méthode particulière. Mais cela signifie aussi que les informations de routage ne sont pas conservées au même endroit dans l’application. Avec les routes par attributs, vous pouvez facilement spécifier plusieurs routes pour une action donnée, mais aussi combiner des routes entre les contrôleurs et les actions. Par exemple :
+Les routes par attributs ne sont pas spécifiées globalement. Au lieu de cela, elles sont appliquées directement aux contrôleurs et aux actions. L’avantage, c’est que ces routes sont plus facilement détectables quand vous examinez une méthode particulière. Mais cela signifie aussi que les informations de routage ne sont pas conservées au même endroit dans l’application. Avec les routes par attributs, vous pouvez facilement spécifier plusieurs routes pour une action donnée, mais aussi combiner des routes entre les contrôleurs et les actions. Par exemple :
 
 ```csharp
 [Route("Home")]
@@ -176,9 +176,9 @@ Par défaut, les applications ASP.NET Core organisent leur structure de dossiers
 
 À cet effet, ASP.NET Core MVC prend en charge Areas. Les zones vous permettent de créer des jeux distincts de dossiers Controllers et Views (ainsi que tout modèle associé) dans chaque dossier Area. La Figure 7-1 montre un exemple de structure de dossiers avec Areas.
 
-![](./media/image7-1.png)
+![Exemple d’organisation de zone](./media/image7-1.png)
 
-Figure 7-1 Exemple d’organisation avec Areas
+**Figure 7-1**. Exemple d’organisation de zone
 
 Quand vous utilisez Areas, vous devez utiliser des attributs pour décorer vos contrôleurs avec le nom de la zone à laquelle ils appartiennent :
 
@@ -245,7 +245,7 @@ ASP.NET Core MVC utilise également une convention pour localiser les vues. Vous
 
 ![La requête est traitée à travers les filtres d’autorisations, les filtres de ressources, la liaison de modèle, les filtres d’actions, l’exécution d’actions et la conversion des résultats d’actions, les filtres d’exceptions, les filtres de résultats et l’exécution de résultats. En sortie, la requête est traitée seulement par les filtres de résultats et les filtres de ressources avant de devenir une réponse envoyée au client.](./media/image7-2.png)
 
-Figure 7-2 Exécution d’une requête à travers les filtres et le pipeline de requête.
+**Figure 7-2**. Demander l’exécution via des filtres et un pipeline de requête.
 
 Les filtres sont généralement implémentés en tant qu’attributs, ce qui vous permet de les appliquer à des contrôleurs ou à des actions (voire globalement). Si vous les ajoutez de cette manière, les filtres spécifiés au niveau de l’action remplacent ou développent les filtres spécifiés au niveau du contrôleur, qui à leur tour remplacent les filtres globaux. Par exemple, l’attribut \[Route\] peut être utilisé pour générer des routes entre des contrôleurs et des actions. De même, l’autorisation peut être configurée au niveau du contrôleur, puis remplacée par des actions individuelles, comme dans l’exemple suivant :
 
@@ -328,15 +328,15 @@ Pour découvrir plus en détail les filtres d’implémentation et télécharger
 
 La sécurisation des applications web est un vaste sujet qui suscite de nombreuses questions. Au niveau de sécurité le plus élémentaire, vous devez savoir d’où provient une requête donnée et vérifier qu’elle a uniquement accès aux ressources appropriées. L’authentification est le processus qui consiste à comparer les informations d’identification fournies avec une requête à celles contenues dans un magasin de données approuvé pour savoir si la requête doit être traitée comme provenant d’une entité connue. L’autorisation est le processus qui consiste à limiter l’accès à certaines ressources en fonction de l’identité de l’utilisateur. Les écoutes clandestines effectuées par des tiers constituent un problème de sécurité. Pour protéger les requêtes, vous devez au moins [vérifier que votre application utilise le protocole SSL](/aspnet/core/security/enforcing-ssl).
 
-### <a name="authentication"></a>Authentification
+### <a name="authentication"></a>Authentication
 
 ASP.NET Core Identity est un système d’abonnement que vous pouvez utiliser pour prendre en charge la fonctionnalité de connexion pour votre application. Il prend en charge les comptes d’utilisateurs locaux et les fournisseurs de connexion externes : compte Microsoft, Twitter, Facebook, Google, etc. Outre ASP.NET Core Identity, votre application peut utiliser l’authentification Windows ou un fournisseur d’identité tiers comme [Identity Server](https://github.com/IdentityServer/IdentityServer4).
 
 ASP.NET Core Identity est inclus dans les nouveaux modèles de projet si l’option Comptes d’utilisateur individuels est sélectionnée. Ce modèle inclut la prise en charge de l’inscription, de la connexion, des connexions externes et des mots de passe oubliés, ainsi que d’autres fonctionnalités.
 
-![](./media/image7-3.png)
+![Sélectionner des comptes d’utilisateur individuels pour lesquels l’identité est préconfigurée](./media/image7-3.png)
 
-Figure 7-3 Sélection de l’option Comptes d’utilisateur individuels pour préconfigurer Identity.
+**Figure 7-3**. Sélectionnez des comptes d’utilisateur individuels pour lesquels l’identité est préconfigurée.
 
 La prise en charge d’Identity est configurée dans Startup, à la fois dans ConfigureServices et dans Configure :
 
@@ -369,7 +369,7 @@ UseIdentity doit impérativement apparaître avant UseMvc dans la méthode Confi
 
 Pour découvrir plus en détail [la configuration de l’authentification à deux facteurs](/aspnet/core/security/authentication/2fa) et [l’activation des fournisseurs de connexion externes](/aspnet/core/security/authentication/social/), consultez la documentation officielle d’ASP.NET Core.
 
-### <a name="authorization"></a>Autorisation
+### <a name="authorization"></a>Authorization
 
 La forme d’autorisation la plus simple consiste à restreindre l’accès aux utilisateurs anonymes. Pour cela, il vous suffit d’appliquer l’attribut \[Authorize\] à certains contrôleurs ou à certaines actions. Si des rôles sont utilisés, l’attribut peut être étendu de manière à restreindre l’accès aux utilisateurs appartenant à certains rôles, comme indiqué ici :
 
@@ -563,13 +563,13 @@ Outre un gestionnaire de processus, les applications ASP.NET Core hébergées su
 
 ![Kestrel à Internet](./media/image7-5.png)
 
-Figure 7-5 ASP.NET hébergé dans Kestrel derrière un serveur proxy inverse
+**Figure 7-5**. ASP.NET hébergé dans Kestrel derrière un serveur proxy inverse
 
 Un proxy inverse peut également être utile pour sécuriser plusieurs applications avec SSL/HTTPS. Dans ce cas, SSL ne doit être configuré que sur le proxy inverse. Les communications entre le serveur proxy inverse et Kestrel peuvent avoir lieu sur TTP, comme indiqué dans la Figure 7-6.
 
-![](./media/image7-6.png)
+![ASP.NET hébergé derrière un serveur proxy inversé sécurisé HTTPs](./media/image7-6.png)
 
-Figure 7-6 ASP.NET hébergé derrière un serveur proxy inverse sécurisé avec HTTPS
+**Figure 7-6**. ASP.NET hébergé derrière un serveur proxy inversé sécurisé HTTPs
 
 Une approche de plus en plus répandue consiste à héberger votre application ASP.NET Core dans un conteneur Docker que vous pouvez ensuite héberger localement ou déployer sur Azure pour l’héberger dans le cloud. Le conteneur Docker contient le code de votre application, exécuté sur Kestrel, et est déployé derrière un serveur proxy inverse, comme indiqué ci-dessus.
 

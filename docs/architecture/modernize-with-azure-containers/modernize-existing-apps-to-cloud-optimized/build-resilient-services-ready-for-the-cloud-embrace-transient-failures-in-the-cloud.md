@@ -2,12 +2,12 @@
 title: Créez des services résilients prêts pour le Cloud. gérer les échecs passagers dans le cloud
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Créez des services résilients prêts pour le Cloud. gérer les échecs passagers dans le cloud
 ms.date: 04/30/2018
-ms.openlocfilehash: 5d25fb0d15ff7b9f04b9491454d1368e4aa7f593
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 5f44029a214cf1f366fc787e27a9ac34599c4dca
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "69578352"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373968"
 ---
 # <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Créer des services résilients compatibles avec le cloud : gérer les échecs passagers dans le cloud
 
@@ -25,11 +25,11 @@ Par exemple, considérez une application .NET monolithique qui accède à une ba
 
 Un scénario similaire peut se produire dans une application qui consomme des services HTTP. Le réseau ou le service lui-même peut ne pas être disponible dans le Cloud en cas de défaillance temporaire.
 
-Une application résiliente telle que celle illustrée dans la figure 4-9 doit implémenter des techniques telles que «nouvelles tentatives avec interruption exponentielle» pour permettre à l’application de gérer les défaillances temporaires dans les ressources. Vous devez également utiliser des «disjoncteurs» dans vos applications. Un disjoncteur empêche une application d’essayer d’accéder à une ressource lorsqu’il s’agit d’une défaillance à long terme. À l’aide d’un disjoncteur, l’application évite de provoquer un déni de service à lui-même.
+Une application résiliente telle que celle illustrée dans la figure 4-9 doit implémenter des techniques telles que « nouvelles tentatives avec interruption exponentielle » pour permettre à l’application de gérer les défaillances temporaires dans les ressources. Vous devez également utiliser des « disjoncteurs » dans vos applications. Un disjoncteur empêche une application d’essayer d’accéder à une ressource lorsqu’il s’agit d’une défaillance à long terme. À l’aide d’un disjoncteur, l’application évite de provoquer un déni de service à lui-même.
 
 ![Échecs partiels gérés par les nouvelles tentatives avec interruption exponentielle](./media/image9.png)
 
-> **Figure 4-9.** Échecs partiels gérés par les nouvelles tentatives avec interruption exponentielle
+**Figure 4-9.** Échecs partiels gérés par les nouvelles tentatives avec interruption exponentielle
 
 Vous pouvez utiliser ces techniques à la fois dans les ressources HTTP et dans les ressources de base de données. Dans la figure 4-9, l’application est basée sur une architecture à trois niveaux. vous avez donc besoin de ces techniques au niveau des services (HTTP) et au niveau de la couche données (TCP). Dans une application monolithique qui n’utilise qu’un seul niveau d’application en plus de la base de données (pas de services ou de microservices supplémentaires), la gestion des échecs temporaires au niveau de la connexion de base de données peut suffire. Dans ce scénario, une seule configuration particulière de la connexion de base de données est requise.
 

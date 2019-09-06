@@ -2,12 +2,12 @@
 title: Scénarios de migration vers le cloud hybride
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Migrer vers des scénarios de Cloud hybride
 ms.date: 04/30/2018
-ms.openlocfilehash: 04c618681c61f5584e641e0a4735e1261ab34fa3
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 313608c41427b3833bbc873398595ceb37bd7c7d
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "69578212"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373947"
 ---
 # <a name="migrate-to-hybrid-cloud-scenarios"></a>Scénarios de migration vers le cloud hybride
 
@@ -27,9 +27,9 @@ La figure 4-13 montre une vue d’ensemble de la véritable plateforme Cloud hyb
 
 ![Plateforme Cloud hybride Microsoft avec Azure Stack et Azure](./media/image13.jpg)
 
-> **Figure 4-13.** Plateforme Cloud hybride Microsoft avec Azure Stack et Azure
+**Figure 4-13.** Plateforme Cloud hybride Microsoft avec Azure Stack et Azure
 
-Azure Stack est proposé dans deux options de déploiement pour répondre à vos besoins:
+Azure Stack est proposé dans deux options de déploiement pour répondre à vos besoins :
 
 - Systèmes intégrés Azure Stack
 

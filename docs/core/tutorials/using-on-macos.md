@@ -4,12 +4,12 @@ description: Ce document présente les étapes et les flux de travail permettant
 author: bleroy
 ms.date: 03/23/2017
 ms.custom: seodec18
-ms.openlocfilehash: e79f5dd90124d2a1902194af2edbde0f5df107c7
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: f1cb9b45c0ed1b4315361846fc065209088b57f8
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633979"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373788"
 ---
 # <a name="get-started-with-net-core-on-macos"></a>Bien démarrer avec .NET Core sur macOS
 
@@ -56,7 +56,7 @@ Le fichier *library.csproj* contient les informations suivantes :
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
 </Project>
@@ -72,7 +72,7 @@ Cette opération ajoute `Newtonsoft.Json` et ses dépendances au projet de bibli
 
 ```xml
 <ItemGroup>
-  <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
+  <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
 </ItemGroup>
 ```
 

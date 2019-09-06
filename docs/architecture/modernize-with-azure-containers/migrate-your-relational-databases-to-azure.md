@@ -2,12 +2,12 @@
 title: Migrer vos bases de données relationnelles vers Azure
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | migrer vos bases de données relationnelles vers Azure
 ms.date: 04/28/2018
-ms.openlocfilehash: 982050d99aaa66cde1168a2f2fa64ed5f3e9163b
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: b2153e65a12706b97fae11c5f23846c83bcd6642
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660734"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70374097"
 ---
 # <a name="migrate-your-relational-databases-to-azure"></a>Migrer vos bases de données relationnelles vers Azure
 
@@ -17,7 +17,7 @@ Dans Azure, vous pouvez migrer vos serveurs de base de données directement vers
 
 ![Chemins de migration de base de données dans Azure](./media/image3-1.png)
 
-> **Figure 3-1** : Chemins de migration de base de données dans Azure
+**Figure 3-1** : Chemins de migration de base de données dans Azure
 
 ## <a name="when-to-migrate-to-azure-sql-database-managed-instance"></a>Quand migrer vers Azure SQL Database Managed Instance
 
@@ -29,11 +29,11 @@ Par exemple, une organisation qui a fait des investissements approfondis dans le
 
 Une organisation qui opère dans un secteur hautement réglementé et qui doit maintenir l’isolation pour des raisons de sécurité, peut également tirer parti du choix du modèle SQL Managed Instance.
 
-Managed Instance dans Azure SQL Database présente les caractéristiques suivantes:
+Managed Instance dans Azure SQL Database présente les caractéristiques suivantes :
 
 - Isolation de la sécurité via le réseau virtuel Azure
 
-- Compatibilité avec les fonctionnalités de l’application, avec les fonctionnalités suivantes:
+- Compatibilité avec les fonctionnalités de l’application, avec les fonctionnalités suivantes :
 
   - SQL Server Agent et SQL Server Profiler
 
@@ -41,7 +41,7 @@ Managed Instance dans Azure SQL Database présente les caractéristiques suivant
 
 - Taille de la base de données jusqu’à 35 to
 
-- Migration minimale des temps d’arrêt, avec les fonctionnalités suivantes:
+- Migration minimale des temps d’arrêt, avec les fonctionnalités suivantes :
 
   - Azure Database Migration Service
 
@@ -59,7 +59,7 @@ En raison de ses fonctionnalités PaaS complètes, d’une meilleure tarificatio
 
 Azure SQL Database est le seul service de base de données Cloud intelligent conçu pour les développeurs d’applications. C’est également le seul service de base de données Cloud qui évolue à la volée, sans temps d’arrêt, pour vous aider à fournir efficacement des applications mutualisées. Au final, Azure SQL Database vous laisse plus de temps pour innover et accélère votre délai de commercialisation. Vous pouvez créer des applications sécurisées et vous connecter à votre base de données SQL à l’aide des langages et des plateformes que vous préférez.
 
-Azure SQL Database offre les avantages suivants:
+Azure SQL Database offre les avantages suivants :
 
 - Intelligence intégrée (Machine Learning) qui apprend et s’adapte à votre application
 
@@ -104,7 +104,7 @@ Pour savoir comment migrer des bases de données à l’aide de Azure Database M
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Choisissez une option de SQL Server Cloud: Azure SQL Database (PaaS) ou SQL Server sur une machine virtuelle Azure (IaaS)**
+- **Choisissez une option de SQL Server Cloud : Azure SQL Database (PaaS) ou SQL Server sur une machine virtuelle Azure (IaaS)**
 
     <https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas>
 

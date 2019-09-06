@@ -2,12 +2,12 @@
 title: Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 description: Les véritables applications de production doivent être déployées et gérées avec des orchestrateurs qui gèrent l’intégrité, la charge de travail et les cycles de vie de tous les conteneurs.
 ms.date: 02/15/2019
-ms.openlocfilehash: bde9a2815d0496608b3172582481c169cab37f04
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 8c1161127eb6b239384444c369de7f11abd3d424
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68672416"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70373690"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 
@@ -38,7 +38,7 @@ Les concepts de cluster et de planificateur sont étroitement liés : les produi
 | Plateforme | Commentaires |
 |:---:|:---|
 | **Kubernetes** <br/> ![Logo Kubernetes](./media/kubernetes-logo.png) | [*Kubernetes*](https://kubernetes.io/) est un produit open source qui offre des fonctionnalités allant de l’infrastructure de cluster et la planification de conteneurs aux fonctionnalités d’orchestration. Il vous permet d’automatiser le déploiement, la mise à l’échelle et le fonctionnement de conteneurs d’application entre des clusters d’hôtes. <br/> <br/> *Kubernetes* fournit une infrastructure orientée conteneur, qui regroupe les conteneurs d’application dans des unités logiques pour en faciliter la gestion et la découverte. <br/> <br/> *Kubernetes* est suffisamment mature dans Linux, mais il l’est moins dans Windows. |
-| **Azure Kubernetes Service (AKS)** <br/> ![Logo Azure Kubernetes Service](./media/aks-logo.png) | [AKS (Azure Kubernetes Service)](https://azure.microsoft.com/services/kubernetes-service/) est un service managé d’orchestration de conteneur Kubernetes dans Azure, qui simplifie la gestion, le déploiement et les opérations liés au cluster Kubernetes. |
+| **Service Azure Kubernetes (AKS)** <br/> ![Logo Azure Kubernetes Service](./media/aks-logo.png) | [AKS (Azure Kubernetes Service)](https://azure.microsoft.com/services/kubernetes-service/) est un service managé d’orchestration de conteneur Kubernetes dans Azure, qui simplifie la gestion, le déploiement et les opérations liés au cluster Kubernetes. |
 | **Azure Service Fabric** <br/> ![Logo Azure Service Fabric](./media/service-fabric-logo.png) | [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) est une plateforme de microservices de Microsoft pour la création d’applications. Il s’agit d’un [orchestrateur](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-introduction) de services, qui crée des clusters de machines. Service Fabric peut déployer des services en tant que conteneurs ou en tant que processus standard. Il peut même combiner des services dans des processus avec des services dans des conteneurs au sein de la même application et du même cluster. <br/> <br/> Vous pouvez déployer les clusters *Service Fabric* dans Azure, localement ou dans un cloud. Toutefois, le déploiement dans Azure est simplifié grâce à une approche managée. <br/> <br/> *Service Fabric* fournit des [modèles de programmation Service Fabric](https://azure.microsoft.com/documentation/articles/service-fabric-choose-framework/) supplémentaires prescriptifs et facultatifs, par exemple les [services avec état](https://azure.microsoft.com/documentation/articles/service-fabric-reliable-services-introduction/) et [Reliable Actors](https://azure.microsoft.com/documentation/articles/service-fabric-reliable-actors-introduction/). <br/> <br/> *Service Fabric* est suffisamment mature dans Windows (plusieurs années d’évolution dans Windows), mais il l’est moins dans Linux. <br/> <br/> Les conteneurs Linux et Windows sont pris en charge dans Service Fabric depuis 2017. |
 | **Azure Service Fabric Mesh** <br/> ![Logo Azure Service Fabric Mesh](./media/azure-service-fabric-mesh-logo.png) | [*Azure Service Fabric Mesh*](https://docs.microsoft.com/azure/service-fabric-mesh/service-fabric-mesh-overview) offre la même fiabilité, les mêmes performances critiques et la même scalabilité que Service Fabric, tout en proposant en plus une plateforme complètement managée et serverless. Vous n’avez pas besoin de gérer un cluster, des machines virtuelles, le stockage ou la configuration réseau. Vous vous concentrez uniquement sur le développement de votre application. <br/> <br/> *Service Fabric Mesh* prend en charge les conteneurs Windows et Linux, ce qui vous permet de développer avec le langage et le framework de programmation de votre choix.
 
@@ -179,7 +179,7 @@ Pour plus informations sur la prise en charge des conteneurs dans Azure Service 
 
 Comme mentionné précédemment, chaque microservice (contexte délimité logique) doit avoir son modèle de domaine (données et logique). Dans le cas de microservices sans état, les bases de données sont externes et utilisent des options relationnelles (par exemple SQL Server), ou des options NoSQL (par exemple Azure Cosmos DB ou MongoDB).
 
-Cependant, les services eux-mêmes peuvent également être avec état dans Service Fabric, ce qui signifie que les données se trouvent dans le microservice. Ces données peuvent exister non seulement sur le même serveur, mais aussi dans le processus du microservice et en mémoire, et être conservées sur des disques durs et répliquées sur d’autres nœuds. La figure 4-30 montre les différentes approches.
+Cependant, les services eux-mêmes peuvent également être avec état dans Service Fabric, ce qui signifie que les données se trouvent dans le microservice. Ces données peuvent exister non seulement sur le même serveur, mais aussi dans le processus du microservice et en mémoire, et être conservées sur des disques durs et répliquées sur d’autres nœuds. La figure 4-14 montre les différentes approches.
 
 ![Dans les services sans état, l’état (persistance, base de données) est maintenu à l’extérieur du microservice. Dans les services avec état, l’état est maintenu à l’intérieur du microservice.](./media/stateless-vs-stateful-microservices.png)
 
@@ -189,7 +189,7 @@ Une approche sans état est parfaitement valide et est plus facile à implément
 
 En revanche, les [microservices avec état](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis) peuvent exceller dans les scénarios avancés, car il n’existe aucune latence entre la logique et les données du domaine. Les traitements de données lourds, les back-end de jeux, les bases de données en tant que service et tous les autres scénarios avec une latence faible tirent parti des services avec état, qui permettent un état local pour un accès plus rapide.
 
-Les services sans état et avec état sont complémentaires. Par exemple, comme vous pouvez le voir dans le diagramme de droite de la figure 4-31, un service avec état peut être divisé en plusieurs partitions. Pour accéder à ces partitions, vous pouvez avoir besoin d’un service sans état agissant comme un service de passerelle, qui sait comment atteindre chaque partition en fonction de clés de partition.
+Les services sans état et avec état sont complémentaires. Par exemple, comme vous pouvez le voir dans le diagramme de droite de la figure 4-14, un service avec état peut être fractionné en plusieurs partitions. Pour accéder à ces partitions, vous pouvez avoir besoin d’un service sans état agissant comme un service de passerelle, qui sait comment atteindre chaque partition en fonction de clés de partition.
 
 Les services avec état présentent des inconvénients. Leur scale-out impose un haut niveau de complexité. Les fonctionnalités qui seraient habituellement implémentées par des systèmes de base de données externes doivent être fournies pour des tâches comme la réplication des données entre des microservices avec état et le partitionnement des données. C’est un des domaines où un orchestrateur comme [Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-platform-architecture) avec ses [services fiables avec état](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis) peut être le plus utile, en simplifiant le développement et le cycle de vie des microservices avec état grâce à [l’API Reliable Services](https://docs.microsoft.com/azure/service-fabric/service-fabric-work-with-reliable-collections) et [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction).
 
