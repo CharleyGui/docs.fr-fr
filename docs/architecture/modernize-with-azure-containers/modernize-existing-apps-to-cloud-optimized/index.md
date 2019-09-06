@@ -2,12 +2,12 @@
 title: Moderniser les applications .NET existantes en applications optimisées pour le cloud
 description: Modernisez des applications .NET existantes avec le cloud Azure et des conteneurs Windows.
 ms.date: 04/28/2018
-ms.openlocfilehash: 00385ac1e2f41d2005606fa7f943618ec253ffc2
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
-ms.translationtype: HT
+ms.openlocfilehash: 92dc0cde11bb35797fe3c4e8442a2a6514a27e08
+ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/05/2019
-ms.locfileid: "70222856"
+ms.locfileid: "70374063"
 ---
 # <a name="modernize-existing-net-apps-to-cloud-optimized-applications"></a>Moderniser les applications .NET existantes en applications optimisées pour le cloud
 
@@ -19,7 +19,7 @@ La modernisation partielle d’une application ne signifie pas nécessairement u
 
 ![Positionnement des applications optimisées pour le cloud](./media/image1.png)
 
-> **Figure 4-1.** Positionnement des applications optimisées pour le cloud
+**Figure 4-1.** Positionnement des applications optimisées pour le cloud
 
 >[!div class="step-by-step"]
 >[Précédent](../migrate-your-relational-databases-to-azure.md)
