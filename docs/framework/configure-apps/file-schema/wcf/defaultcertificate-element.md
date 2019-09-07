@@ -2,23 +2,24 @@
 title: Élément <defaultCertificate>
 ms.date: 03/30/2017
 ms.assetid: f1ddf364-9a00-45d3-b989-ff381c154ce6
-ms.openlocfilehash: 93410e815a156f91db1962f05fb1aa6baca7f955
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: cce236bf80fa00f01a3b5f4680d975f83fde0c16
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69919259"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70400429"
 ---
 # <a name="defaultcertificate-element"></a>\<defaultCertificate >, élément
 Spécifie un certificat X.509 à utiliser lorsqu'un service ou un service d'émission de jeton de sécurité n'en fournit pas un via un protocole de négociation.  
   
- \<system.ServiceModel>  
-\<behaviors>  
-section endpointBehaviors  
-\<> de comportement  
-\<clientCredentials>  
-\<serviceCertificate>  
-\<defaultCertificate>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<comportements >** ](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de comportement**](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<clientCredentials >** ](clientcredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceCertificate >** ](servicecertificate-of-clientcredentials-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<defaultCertificate >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,13 +44,13 @@ section endpointBehaviors
   
 ## <a name="findvalue-attribute"></a>findValue, attribute  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |String|La valeur dépend du champ (spécifié par l'attribut X509FindType) qui est recherché. Par exemple, lors de la recherche d'une empreinte numérique, la valeur doit être une chaîne de nombres hexadécimaux.|  
   
 ## <a name="x509findtype-attribute"></a>x509FindType, attribut  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |Énumération|Les valeurs incluent : FindByThumbprint, FindBySubjectName, FindBySubjectDistinguishedName, FindByIssuerName, FindByIssuerDistinguishedName, FindBySerialNumber, FindByTimeValid, FindByTimeNotYetValid, FindBySerialNumber, FindByTimeExpired, FindByTemplateName , FindByApplicationPolicy, FindByCertificatePolicy, FindByExtension, FindByKeyUsage, FindBySubjectKeyIdentifier.|  
   
@@ -61,7 +62,7 @@ section endpointBehaviors
   
 ## <a name="storename-attribute"></a>storeName, attribut  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |Énumération|Les valeurs incluent : AddressBook, AuthRoot, CertificateAuthority, non autorisé, My, root, TrustedPeople et TrustedPublisher.|  
   

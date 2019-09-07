@@ -2,23 +2,24 @@
 title: <transport> de <wsHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 21e38acf-450a-4bda-82b6-de305e1f7cd8
-ms.openlocfilehash: 384267e3d018d714f95356461eb303bc9ec0cb3e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 95cfa076f62f767af431ff5a0bcc2ca31b824e30
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934637"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399242"
 ---
 # <a name="transport-of-wshttpbinding"></a>\<> de transport \<de wsHttpBinding >
 
 Définit les paramètres d'authentification correspondant au transport HTTP.
 
-\<system.serviceModel>\
-\<bindings>\
-\<wsHttpBinding>\
-\<liaison > \
-\<> de sécurité \
-\<transport>
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<wsHttpBinding >** ](wshttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de sécurité**](security-of-wshttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de transport**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -59,7 +60,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="clientcredentialtype-attribute"></a>Attribut clientCredentialType
 
-|`Value`|Description|
+|Valeur|Description|
 |-----------|-----------------|
 |`None`|La sécurité est désactivée.|
 |`Basic`|Utilise l'authentification de base.|
@@ -70,7 +71,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="proxycredentialtype-attribute"></a>Attribut proxyCredentialType
 
-|Valeur|Description|
+|`Value`|Description|
 |-----------|-----------------|
 |`None`|La sécurité est désactivée.|
 |`Basic`|Utilise l'authentification de base.|

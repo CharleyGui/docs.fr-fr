@@ -2,21 +2,22 @@
 title: <serviceDebug>
 ms.date: 03/30/2017
 ms.assetid: 6d7ea986-f232-49fe-842c-f934d9966889
-ms.openlocfilehash: 5ca1d4e7f9107c798213d760d9780dbeded9eae0
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 4eb79cc91ef489501c4c8bb6311f240d855ed053
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70041264"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399640"
 ---
 # <a name="servicedebug"></a>\<serviceDebug>
 Spécifie les fonctionnalités de débogage et d’informations d’aide pour un service Windows Communication Foundation (WCF).  
   
- \<system.ServiceModel>  
-\<behaviors>  
-\<serviceBehaviors>  
-\<> de comportement  
-\<serviceDebug>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<comportements >** ](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceBehaviors >** ](servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de comportement**](behavior-of-servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<serviceDebug >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -64,11 +65,11 @@ Spécifie les fonctionnalités de débogage et d’informations d’aide pour un
 > [!CAUTION]
 > Le retour d'informations sur les exceptions managées aux clients peut constituer un problème de sécurité, car les détails d'exception exposent des informations relatives à l'implémentation de service interne que des clients non autorisés pourraient utiliser. En raison des risques de sécurité encourus, il est fortement recommandé de n'utiliser cette méthode que dans le cadre de scénarios de débogage contrôlés. Vous devez affecter la valeur `includeExceptionDetailInFaults` à `false` lors du déploiement de l'application.  
   
- Pour plus d’informations sur les problèmes de sécurité liés à l’exception managée, consultez [spécification et gestion des erreurs dans les contrats et les services](../../../wcf/specifying-and-handling-faults-in-contracts-and-services.md). Pour obtenir un exemple de code, consultez comportement de débogage de [service](../../../wcf/samples/service-debug-behavior.md).  
+ Pour plus d’informations sur les problèmes de sécurité liés à l’exception managée, consultez [spécification et gestion des erreurs dans les contrats et les services](../../../wcf/specifying-and-handling-faults-in-contracts-and-services.md). Pour obtenir un exemple de code, consultez [comportement de débogage de service](../../../wcf/samples/service-debug-behavior.md).  
   
  Vous pouvez également définir `httpsHelpPageEnabled` et `httpsHelpPageUrl` pour activer ou désactiver la page d'aide. Chaque service peut éventuellement exposer une page d'aide qui contient des informations sur le service, et notamment le point de terminaison permettant d'obtenir le WSDL pour le service. Pour ce faire, affectez `httpHelpPageEnabled` à `true`. Cela permet de retourner la page d'aide dans une demande GET à l'adresse de base du service. Pour modifier cette adresse, définissez l'attribut `httpHelpPageUrl`. En outre, vous pouvez faire sécuriser cette procédure en utilisant HTTPS au lieu de HTTP.  
   
- Les attributs facultatifs `httpHelpPageBinding` et `httpHelpPageBinding` vous permettent de configurer les liaisons utilisées pour accéder à la page Web du service. S’ils ne sont pas spécifiés, les liaisons par défaut (`HttpTransportBindingElement` dans le cas de HTTP et `HttpsTransportBindingElement` dans le cas de HTTPS) sont utilisées pour accéder à la page d’aide du service. Notez que vous ne pouvez pas utiliser ces attributs avec les liaisons WCF intégrées. Seules les liaisons avec des éléments de liaison internes qui prennent en charge XREF: System. ServiceModel. Channels. IReplyChannel > sont prises en charge. En outre, la propriété <xref:System.ServiceModel.Channels.MessageVersion?displayProperty=nameWithType> de la liaison doit être <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType>.  
+ Les attributs facultatifs `httpHelpPageBinding` et `httpHelpPageBinding` vous permettent de configurer les liaisons utilisées pour accéder à la page Web du service. S’ils ne sont pas spécifiés, les liaisons par défaut (`HttpTransportBindingElement` dans le cas de HTTP et `HttpsTransportBindingElement` dans le cas de HTTPS) sont utilisées pour accéder à la page d’aide du service. Notez que vous ne pouvez pas utiliser ces attributs avec les liaisons WCF intégrées. Seules les liaisons avec des éléments de liaison internes qui prennent en charge XREF : System. ServiceModel. Channels. IReplyChannel > sont prises en charge. En outre, la propriété <xref:System.ServiceModel.Channels.MessageVersion?displayProperty=nameWithType> de la liaison doit être <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Voir aussi
 

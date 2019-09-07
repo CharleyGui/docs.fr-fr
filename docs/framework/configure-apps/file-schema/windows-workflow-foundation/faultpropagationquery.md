@@ -3,12 +3,12 @@ title: <faultPropagationQuery>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 4fb5c2b1-3dad-4eca-9c7f-3efb51899813
-ms.openlocfilehash: f77a613f4eb0456a0085096aa478d37c78122217
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6b43a570b4d4534adce1ef5ab394849651e3ac0e
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946316"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70398715"
 ---
 # <a name="faultpropagationquery"></a>\<faultPropagationQuery>
 
@@ -16,12 +16,13 @@ Représente une requête qui permet d'effectuer le suivi de la gestion des erreu
 
  Pour plus d’informations sur le suivi des requêtes de profils, consultez [suivi des profils](../../../windows-workflow-foundation/tracking-profiles.md).
 
-\<system.serviceModel>\
-\<suivi des > \
-\<trackingProfile > \
-\<Workflow > \
-\<faultPropagationQueries>\
-\<faultPropagationQuery>
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<requise. > ServiceModel**](system-servicemodel-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<suivi des >** ](tracking.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<trackingProfile >** ](trackingprofile.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de flux de travail**](workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<faultPropagationQueries >** ](faultpropagationqueries.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<faultPropagationQuery >**
 
 ## <a name="syntax"></a>Syntaxe
 

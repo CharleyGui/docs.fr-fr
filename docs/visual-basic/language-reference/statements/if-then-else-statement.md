@@ -21,12 +21,12 @@ helpviewer_keywords:
 - If function [Visual Basic], and If...Then...Else statements
 - Else statement [Visual Basic]
 ms.assetid: 790068a2-1307-4e28-8a72-be5ebda099e9
-ms.openlocfilehash: e0b365afaa8cf7dff130cf01d2937be629e5f7a8
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: db81a1c41809b563d5f9d0777c3feb064c5e540b
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106516"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70400713"
 ---
 # <a name="ifthenelse-statement-visual-basic"></a>If...Then...Else, instruction (Visual Basic)
 
@@ -34,7 +34,7 @@ Exécute un groupe d'instructions soumises à une condition, en fonction de la v
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```vb
 ' Multiline syntax:
 If condition [ Then ]
     [ statements ]
@@ -50,7 +50,7 @@ If condition Then [ statements ] [ Else [ elsestatements ] ]
 
 ## <a name="quick-links-to-example-code"></a>Liens rapides vers l’exemple de code
 
-Cet article contient plusieurs exemples qui illustrent les `If`utilisations de... `Then`... `Else` instruction:
+Cet article contient plusieurs exemples qui illustrent les `If`utilisations de... `Then`... `Else` instruction :
 
 - [Exemple de syntaxe multiligne](#multi-line)
 - [Exemple de syntaxe imbriquée](#nested)
@@ -61,10 +61,10 @@ Cet article contient plusieurs exemples qui illustrent les `If`utilisations de..
 `condition` \
 Requis. Formule. Doit correspondre à `True` ou `False`à, ou à un type de données qui est implicitement `Boolean`convertible en.
 
-Si l’expression est une variable [Nullable](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) `Boolean` qui prend la valeur [Nothing](../../../visual-basic/language-reference/nothing.md), la condition est traitée comme si l’expression était `False` et le `Else` bloc est exécuté.
+Si l’expression est une variable [Nullable](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) `Boolean` qui prend la valeur [Nothing](../../../visual-basic/language-reference/nothing.md), la condition est traitée comme si l’expression était `False`, et les `ElseIf` blocs sont évalués s’ils existent, ou le `Else` bloc est exécuté s’il existe.
 
 `Then` \
-Obligatoire dans la syntaxe sur une seule ligne; facultatif dans la syntaxe multiligne.
+Obligatoire dans la syntaxe sur une seule ligne ; facultatif dans la syntaxe multiligne.
 
 `statements` \
 facultatif. Une ou plusieurs instructions qui `If`suivent... qui sont exécutés `condition` si prend la `True`valeur. `Then`
