@@ -2,22 +2,23 @@
 title: <transport> de <netHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 3b180006-1661-43bf-a699-96fd3da469af
-ms.openlocfilehash: f9f784329081f6a18560991378a4527c731f4d31
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 521aaf3913a1d30d10a674b71d4d98affcabc296
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934708"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399339"
 ---
 # <a name="transport-of-nethttpbinding"></a>\<> de transport \<de NetHttpBinding >
 Définit les propriétés qui déterminent les paramètres d'authentification pour le transport HTTP.  
   
-\<system.serviceModel>  
-\<bindings>  
-\<netHttpBinding>  
-\<binding>  
-\<> de sécurité  
-\<transport>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netHttpBinding >** ](nethttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de sécurité**](security-of-nethttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de transport**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,7 +55,7 @@ Définit les propriétés qui déterminent les paramètres d'authentification po
   
 ## <a name="clientcredentialtype-attribute"></a>Attribut clientCredentialType  
   
-|`Value`|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |Aucun|Les messages ne sont pas sécurisés pendant le transfert.|  
 |De base|Spécifie l'authentification de base.|  
@@ -64,11 +65,11 @@ Définit les propriétés qui déterminent les paramètres d'authentification po
   
 ## <a name="proxycredentialtype-attribute"></a>Attribut proxyCredentialType  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |Aucun|-Les messages ne sont pas sécurisés lors du transfert.|  
-|De base|Spécifie l’authentification de base telle que définie par RFC 2617 – authentification HTTP: Authentification de base et Digest.|  
-|Digest|Spécifie l’authentification Digest telle que définie par RFC 2617 – authentification HTTP: Authentification de base et Digest.|  
+|De base|Spécifie l’authentification de base telle que définie par RFC 2617 – authentification HTTP : Authentification de base et Digest.|  
+|Digest|Spécifie l’authentification Digest telle que définie par RFC 2617 – authentification HTTP : Authentification de base et Digest.|  
 |Ntlm|Spécifie l'authentification NTLM le cas échéant et en cas d'échec d'authentification Windows.|  
 |Windows|Spécifie l'authentification intégrée Windows.|  
 |Certificat|Effectue l'authentification du client à l'aide d'un certificat. Cette option fonctionne uniquement si l'attribut `Mode` de l'élément `security` parent est configuré pour le transport et ne fonctionnera pas s'il a la valeur TransportCredentialOnly.|  
@@ -82,7 +83,7 @@ Définit les propriétés qui déterminent les paramètres d'authentification po
 |-------------|-----------------|  
 |[\<> de sécurité](security-of-nethttpbinding.md)|Définit les fonctionnalités de sécurité pour le [ \<> NetHttpBinding](nethttpbinding.md).|  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple suivant montre l'utilisation de la sécurité de transport SSL avec la liaison de base. Par défaut, la liaison de base prend en charge la communication HTTP.  
   
 ```xml  

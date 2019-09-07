@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c27cb89c-1c1d-4988-9f38-950eda3cb275
-ms.openlocfilehash: 84de36b79ed646d73a8f2d8e00c26d8dcf6de4b7
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 4ce4e28df3a09ddf718b000725afb0c9125bdd77
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70249503"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70397105"
 ---
 # <a name="query-expression-syntax-examples-filtering"></a>Exemples de syntaxe d’expression de requête : Filtrage
-Les exemples de cette rubrique montrent comment utiliser les méthodes `Where` et `Where…Contains` pour interroger le [modèle de vente AdventureWorks Sales Model](https://archive.codeplex.com/?p=msftdbprodsamples) à l’aide de la syntaxe d’expression de requête. Remarque : où...`Contains` ne peut pas être utilisé dans le cadre d’une [requête compilée](compiled-queries-linq-to-entities.md).  
+Les exemples de cette rubrique montrent comment utiliser les méthodes `Where` et `Where…Contains` pour interroger le [modèle de vente AdventureWorks Sales Model](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks) à l’aide de la syntaxe d’expression de requête. Remarque : où...`Contains` ne peut pas être utilisé dans le cadre d’une [requête compilée](compiled-queries-linq-to-entities.md).  
   
  Le modèle de vente AdventureWorks Sales Model utilisé dans ces exemples est construit à partir des tables Contact, Address, Product, SalesOrderHeader et SalesOrderDetail de l'exemple de base de données AdventureWorks.  
   
@@ -24,13 +24,13 @@ Les exemples de cette rubrique montrent comment utiliser les méthodes `Where` e
   
 ## <a name="where"></a>Where  
   
-### <a name="example"></a>Exemple  
+### <a name="example"></a>Exemples  
  L'exemple suivant retourne toutes les commandes en ligne.  
   
  [!code-csharp[DP L2E Examples#Where1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#where1)]
  [!code-vb[DP L2E Examples#Where1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#where1)]  
   
-### <a name="example"></a>Exemple  
+### <a name="example"></a>Exemples  
  L'exemple suivant retourne les commandes où la quantité commandée est supérieure à 2 et inférieure à 6.  
   
  [!code-csharp[DP L2E Examples#Where2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#where2)]

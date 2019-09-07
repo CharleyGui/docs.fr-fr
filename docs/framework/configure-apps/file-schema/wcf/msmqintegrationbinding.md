@@ -4,19 +4,22 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - msmqIntegrationBinding Element
 ms.assetid: edf277f3-e3bf-4ed8-9f55-83b5788430a7
-ms.openlocfilehash: 52f488bfc77cbe6c0942c0e38c0201fa8d7d2d9c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b692d0610a975247d74798feff2411317db68dfd
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69928889"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70397739"
 ---
 # <a name="msmqintegrationbinding"></a>\<msmqIntegrationBinding>
 Définit une liaison qui prend en charge la mise en file d’attente par routage des messages via MSMQ.  
   
- \<system.ServiceModel>  
-\<bindings>  
-msmqIntegrationBinding  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<msmqIntegrationBinding >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -64,7 +67,7 @@ msmqIntegrationBinding
 |receiveErrorHandling|Valeur <xref:System.ServiceModel.ReceiveErrorHandling> qui spécifie la façon dont sont gérés les messages incohérents et ne pouvant être distribués.|  
 |receiveRetryCount|Entier indiquant le nombre maximal de nouvelles tentatives immédiates devant être effectuées par le gestionnaire de files d'attente si la transmission d'un message entre la file d'attente de l'application et l'application échoue.<br /><br /> Si le nombre maximal de tentatives de remise est atteint sans que l'application accède au message, ce dernier est envoyé à une file d'attente de nouvelles tentatives. La durée qui s'écoule avant que le message ne soit renvoyé à la file d'attente émettrice est contrôlée par `retryCycleDelay`. Si les cycles de nouvelles tentatives atteignent la valeur `maxRetryCycles`, soit le message est envoyé à la file d'attente de messages incohérents, soit un accusé de réception négatif est renvoyé à l'expéditeur.|  
 |receiveTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération de réception. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:10:00.|  
-|receiveContextEnabled|Valeur booléenne qui spécifie si le contexte de réception pour le traitement des messages dans les files d'attente est activé. Lorsque la valeur `true`est, un service peut «lire» un message dans la file d’attente pour commencer à le traiter, et, en cas de problème et qu’une exception est levée, il reste dans la file d’attente. Les services peuvent également «verrouiller» les messages afin d’effectuer une nouvelle tentative de traitement à un point ultérieur dans le temps. ReceiveContext fournit un mécanisme pour «finaliser» le message une fois traité afin de pouvoir être supprimé de la file d’attente. Les messages ne sont plus lus et réécrits dans les files d’attente sur le réseau, et les messages individuels ne rebondissent pas entre les différentes instances de service au cours du traitement.|  
+|receiveContextEnabled|Valeur booléenne qui spécifie si le contexte de réception pour le traitement des messages dans les files d'attente est activé. Lorsque la valeur `true`est, un service peut « lire » un message dans la file d’attente pour commencer à le traiter, et, en cas de problème et qu’une exception est levée, il reste dans la file d’attente. Les services peuvent également « verrouiller » les messages afin d’effectuer une nouvelle tentative de traitement à un point ultérieur dans le temps. ReceiveContext fournit un mécanisme pour « finaliser » le message une fois traité afin de pouvoir être supprimé de la file d’attente. Les messages ne sont plus lus et réécrits dans les files d’attente sur le réseau, et les messages individuels ne rebondissent pas entre les différentes instances de service au cours du traitement.|  
 |retryCycleDelay|Valeur TimeSpan qui spécifie l'intervalle entre les cycles de nouvelles tentatives de remise d'un message n'ayant pas pu être remis immédiatement. Cette valeur définit uniquement le délai d'attente minimum, car le temps d'attente réel peut être plus long. La valeur par défaut est 00:30:00. Pour plus d'informations, consultez <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A>.|  
 |sendTimeout|<xref:System.TimeSpan> qui spécifie l'intervalle de temps prévu pour la réalisation d'une opération d'envoi. Cette valeur doit être supérieure ou égale à <xref:System.TimeSpan.Zero>. La valeur par défaut est 00:01:00.|  
 |serializationFormat|Définit le format utilisé pour la sérialisation du corps du message. Cet attribut est de type <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat>.|  
@@ -74,7 +77,7 @@ msmqIntegrationBinding
   
 ## <a name="serializationformat-attribute"></a>Attribut {serializationFormat}  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |xml|Format XML|  
 |Binary|Format binaire|  

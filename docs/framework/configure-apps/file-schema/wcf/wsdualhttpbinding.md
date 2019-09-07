@@ -4,19 +4,20 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - wsDualHttpBinding Element
 ms.assetid: fd8ac4e2-5641-473b-9115-73f14ab1c065
-ms.openlocfilehash: 8fd758258a34fd63882c3d06b49cbe53bd2d105d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ca841499f5a1584d5fd5c1bb763da4f3460c4f13
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915123"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399039"
 ---
 # <a name="wsdualhttpbinding"></a>\<wsDualHttpBinding>
 Définit une liaison sécurisée, fiable et interopérable qui est appropriée pour les contrats de service ou les communications en duplex à travers des intermédiaires SOAP.  
   
- \<system.ServiceModel>  
-\<bindings>  
-\<wsDualHttpBinding>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<wsDualHttpBinding >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -97,7 +98,7 @@ Définit une liaison sécurisée, fiable et interopérable qui est appropriée p
   
  Par défaut, cette liaison génère une pile de runtime avec WS-ReliableMessaging pour la fiabilité, WS-Security pour la sécurité et l’authentification des messages, HTTP pour la remise de messages et un encodage de messages Texte/XML.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ```xml  
 <configuration>

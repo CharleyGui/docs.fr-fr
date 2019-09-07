@@ -3,20 +3,21 @@ title: <behavior>de <serviceBehaviors> Workflow
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 6a4b718a-1b40-4957-935a-f6122819ab3c
-ms.openlocfilehash: 91883c42aa7bc0aa8fa0c63c3c45184ba69225d0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 65bde45ffdd4af166d5b44308162c23257659802
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946079"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70398888"
 ---
 # <a name="behavior-of-servicebehaviors-of-workflow"></a>\<> de comportement \<de la > serviceBehaviors du flux de travail
 L’élément **Behavior** contient une collection de paramètres pour le comportement d’un service. Chaque comportement est indexé par son **nom**. Les services peuvent être liés à chaque comportement via ce nom à l’aide de l’attribut **behaviorConfiguration** de l' [ \<élément de point de terminaison >](../wcf/endpoint-element.md) . Ceci permet aux points de terminaison de partager des configurations de comportement communes sans redéfinir les paramètres.  
   
-\<system.ServiceModel>  
-\<behaviors>  
-\<serviceBehaviors>  
-\<> de comportement  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<requise. > ServiceModel**](system-servicemodel-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<comportements >** ](behaviors-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceBehaviors >** ](servicebehaviors-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de comportement**  
   
 ## <a name="syntax"></a>Syntaxe  
   

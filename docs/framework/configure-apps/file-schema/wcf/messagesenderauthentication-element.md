@@ -2,25 +2,26 @@
 title: <messageSenderAuthentication>, élément
 ms.date: 03/30/2017
 ms.assetid: 8d979dfc-a6f9-42ec-96d5-7fbc13a48118
-ms.openlocfilehash: 1e63b6fa93e1abfa87c83da4b5d46f492c59b9bc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bab0e50d7feba3ea55d505be07cfa41427a5cbbc
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69931375"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70397789"
 ---
 # <a name="messagesenderauthentication-element"></a>\<messageSenderAuthentication >, élément
 Spécifie les options d'authentification pour les expéditeurs du message du réseau pair à pair.  
   
  Pour plus d’informations sur la programmation d’égal à égal, consultez [mise en réseau pair à pair](../../../wcf/feature-details/peer-to-peer-networking.md).  
   
- \<system.ServiceModel>  
-\<behaviors>  
-\<endpointBehaviors>  
-\<> de comportement  
-\<clientCredentials>  
-\<> homologues  
-\<messageSenderAuthentication>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<comportements >** ](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de comportement**](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<clientCredentials >** ](clientcredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> homologues**](peer-of-clientcredentials-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<messageSenderAuthentication >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,7 +46,7 @@ Spécifie les options d'authentification pour les expéditeurs du message du ré
   
 ## <a name="customcertificatevalidatortype-attribute"></a>customCertificateValidatorType, attribut  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |String|facultatif. Spécifie le nom de type, l'assembly et d'autres données utilisées pour rechercher le type. Au minimum, un espace de noms et un nom de type sont requis. Les informations facultatives incluent : le nom de l'assembly, le numéro de version, la culture et le jeton de clé publique.|  
   
@@ -57,7 +58,7 @@ Spécifie les options d'authentification pour les expéditeurs du message du ré
   
 ## <a name="revocationmode-attribute"></a>revocationMode, attribut  
   
-|`Value`|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |Énumération|Une des valeurs suivantes : `NoCheck`, `Online` et `Offline`. Par défaut, il s’agit de `Online`.<br /><br /> Pour plus d’informations, consultez [utilisation des certificats](../../../wcf/feature-details/working-with-certificates.md).|  
   
@@ -79,7 +80,7 @@ Spécifie les options d'authentification pour les expéditeurs du message du ré
 ## <a name="remarks"></a>Notes  
  Cet élément doit être configuré si l'authentification des messages est sélectionnée. Pour les canaux de sortie, chaque message est signé à l’aide du certificat fourni par [ \<le certificat >](certificate-element.md). Avant d'être remis à l'application, tous les messages sont vérifiés par rapport aux informations d'identification de message à l'aide du validateur spécifié par l'attribut `customCertificateValidatorType` de cet élément. Le validateur peut accepter ou rejeter les informations d'identification.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Les jeux de codes suivants affectent le mode de validation de l’expéditeur du message à `PeerOrChainTrust`.  
   
 ```xml  

@@ -2,20 +2,21 @@
 title: <customBinding>
 ms.date: 03/30/2017
 ms.assetid: 9da4f960-f64e-4d8a-894d-2b09eba5ce4b
-ms.openlocfilehash: 0b6f26c7b9e9d02b3ff20b53f42b09d671699ea5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1fd0a12b62c416ce71946e59e7868abc7638a274
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69919389"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70398123"
 ---
 # <a name="custombinding"></a>\<customBinding>
 
 Fournit le contrôle total sur la pile de messagerie pour l'utilisateur.
 
-\<system.serviceModel>\
-\<bindings>\
-\<customBinding>
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<customBinding >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -230,7 +231,7 @@ Une liaison personnalisée est construite à l'aide d'une collection <xref:Syste
 
 - Puis figure un <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> facultatif qui fournit une session et un mécanisme de classement tel que défini dans la spécification WS-ReliableMessaging. Cette notion de session peut traverser les intermédiaires SOAP et de transport.
 
-- Puis figure un élément de liaison facultatif qui fournit des fonctionnalités de sécurité telles que l'autorisation, l'authentification, la protection et la confidentialité. Les éléments de liaison de sécurité suivants sont fournis par Windows Communication Foundation (WCF):
+- Puis figure un élément de liaison facultatif qui fournit des fonctionnalités de sécurité telles que l'autorisation, l'authentification, la protection et la confidentialité. Les éléments de liaison de sécurité suivants sont fournis par Windows Communication Foundation (WCF) :
 
   - <xref:System.ServiceModel.Channels.SecurityBindingElement>
 
@@ -260,7 +261,7 @@ Une liaison personnalisée est construite à l'aide d'une collection <xref:Syste
 
   - <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>
 
-- Au bas de la pile se trouve un élément de transport obligatoire. Vous pouvez utiliser votre propre transport ou utiliser l’un des éléments de liaison de transport fournis par Windows Communication Foundation (WCF):
+- Au bas de la pile se trouve un élément de transport obligatoire. Vous pouvez utiliser votre propre transport ou utiliser l’un des éléments de liaison de transport fournis par Windows Communication Foundation (WCF) :
 
   - <xref:System.ServiceModel.Channels.TcpTransportBindingElement>
 
@@ -290,7 +291,7 @@ Le tableau suivant récapitule les options de chaque couche.
 
 De plus, vous pouvez définir vos propres éléments de liaison et les insérer entre chacune des couches définies précédentes.
 
-Pour plus d’informations sur l’utilisation d’une liaison personnalisée pour modifier une liaison fournie par le système [, consultez Procédure: Personnaliser une liaison](../../../wcf/extending/how-to-customize-a-system-provided-binding.md)fournie par le système.
+Pour plus d’informations sur l’utilisation d’une liaison personnalisée pour modifier une liaison fournie par le système [, consultez Procédure : Personnaliser une liaison](../../../wcf/extending/how-to-customize-a-system-provided-binding.md)fournie par le système.
 
 ## <a name="see-also"></a>Voir aussi
 

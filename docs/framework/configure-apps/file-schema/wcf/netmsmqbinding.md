@@ -2,19 +2,20 @@
 title: <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: a68b44d7-7799-43a3-9e63-f07c782810a6
-ms.openlocfilehash: 4cb8488a1c633f9b7158f9bebfa617381b407a63
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a315ec508b378d1a3ba0189b0867c7b6b61e34d2
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933062"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70398315"
 ---
 # <a name="netmsmqbinding"></a>\<netMsmqBinding>
 Définit une liaison mise en file d’attente adaptée à la communication entre ordinateurs.  
   
- \<system.ServiceModel>  
-\<bindings>  
-\<netMsmqBinding>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<netMsmqBinding >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

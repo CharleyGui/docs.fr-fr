@@ -2,21 +2,22 @@
 title: <reliableSession>
 ms.date: 03/30/2017
 ms.assetid: 129b4a59-37f0-4030-b664-03795d257d29
-ms.openlocfilehash: 548c4884ecd2f4b9a71fcc9d6647a9e258b183c1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ef9416b2031bd457322b33dfa491d3fae766bf8c
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934246"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70400009"
 ---
 # <a name="reliablesession"></a>\<reliableSession>
 Définit le paramètre pour la messagerie WS-Reliable. Lorsque cet élément est ajouté à une liaison personnalisée, le canal résultant peut prendre en charge des assurances de remise EOD (Exactly-Once-Delivery).  
   
- \<system.serviceModel>  
-\<bindings>  
-\<customBinding>  
-\<binding>  
-\<reliableSession>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<reliableSession >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -63,7 +64,7 @@ Définit le paramètre pour la messagerie WS-Reliable. Lorsque cet élément est
   
  Pour plus d’informations, consultez [sessions fiables](../../../wcf/feature-details/reliable-sessions.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant montre comment configurer une liaison personnalisée avec plusieurs éléments de transport et d’encodage de message, en activant surtout des sessions fiables qui maintiennent l’état du client et spécifient des assurances de remise dans l’ordre. Cette fonctionnalité est configurée dans les fichiers de configuration de l'application pour le client et le service. L'exemple présente la configuration du service.  
   
 ```xml  

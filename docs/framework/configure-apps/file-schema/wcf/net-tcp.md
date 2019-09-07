@@ -2,18 +2,19 @@
 title: <net.tcp>
 ms.date: 03/30/2017
 ms.assetid: 8bc2f2be-11c1-4bab-9018-1d21ae568d94
-ms.openlocfilehash: 63cef2b85aa57b5c1c0e0add1794ebedc73d96c1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4a3a17655f5469fe84c0b684ebdac9848bbfba84
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933049"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70397691"
 ---
 # <a name="nettcp"></a>\<net.tcp>
 Spécifie les paramètres de configuration du service de partage de port NET.TCP, qui permet à plusieurs processus de partager le même port TCP.  
   
- \<system.serviceModel.activation>  
-\<net.tcp>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel. activation >** ](system-servicemodel-activation.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<NET. TCP >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

@@ -2,22 +2,23 @@
 title: <transport> de <basicHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 4c5ba293-3d7e-47a6-b84e-e9022857b7e5
-ms.openlocfilehash: af5852c3c7850f91686d50294c8846f85574e909
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2cf69c48a51ce2c687ebcfe9f87f7c22f5f86084
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918632"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399382"
 ---
 # <a name="transport-of-basichttpbinding"></a>\<> de transport \<de BasicHttpBinding >
 Définit les propriétés qui déterminent les paramètres d'authentification pour le transport HTTP.  
   
- \<system.ServiceModel>  
-\<bindings>  
-\<basicHttpBinding>  
-\<binding>  
-\<> de sécurité  
-\<transport>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> basicHttpBinding**](basichttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de sécurité**](security-of-basichttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de transport**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,7 +55,7 @@ Définit les propriétés qui déterminent les paramètres d'authentification po
   
 ## <a name="clientcredentialtype-attribute"></a>Attribut clientCredentialType  
   
-|`Value`|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |Aucun|Les messages ne sont pas sécurisés pendant le transfert.|  
 |De base|Spécifie l'authentification de base.|  
@@ -67,8 +68,8 @@ Définit les propriétés qui déterminent les paramètres d'authentification po
 |Valeur|Description|  
 |-----------|-----------------|  
 |Aucun|-Les messages ne sont pas sécurisés lors du transfert.|  
-|De base|Spécifie l’authentification de base telle que définie par RFC 2617 – authentification HTTP: Authentification de base et Digest.|  
-|Digest|Spécifie l’authentification Digest telle que définie par RFC 2617 – authentification HTTP: Authentification de base et Digest.|  
+|De base|Spécifie l’authentification de base telle que définie par RFC 2617 – authentification HTTP : Authentification de base et Digest.|  
+|Digest|Spécifie l’authentification Digest telle que définie par RFC 2617 – authentification HTTP : Authentification de base et Digest.|  
 |Ntlm|Spécifie l'authentification NTLM le cas échéant et en cas d'échec d'authentification Windows.|  
 |Windows|Spécifie l'authentification intégrée Windows.|  
 |Certificat|Effectue l'authentification du client à l'aide d'un certificat. Cette option fonctionne uniquement si l'attribut `Mode` de l'élément `security` parent est configuré pour le transport et ne fonctionnera pas s'il a la valeur TransportCredentialOnly.|  

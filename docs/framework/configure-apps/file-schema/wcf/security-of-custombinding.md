@@ -2,21 +2,22 @@
 title: <security> de <customBinding>
 ms.date: 03/30/2017
 ms.assetid: 243a5148-bbd1-447f-a8a5-6e7792c0a3f1
-ms.openlocfilehash: 89fb1f766906c02a5e3ef9a9cdd1aef94ede80fa
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 165d1f2b9b770fd7c3f05143c1d85955c6008463
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936712"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399876"
 ---
 # <a name="security-of-custombinding"></a>\<> de sécurité \<de CustomBinding >
 Spécifie les options de sécurité d’une liaison personnalisée.  
   
- \<system.serviceModel>  
-\<bindings>  
-\<customBinding>  
-\<binding>  
-\<> de sécurité  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de sécurité**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -61,7 +62,7 @@ Spécifie les options de sécurité d’une liaison personnalisée.
   
 ## <a name="authenticationmode-attribute"></a>authenticationMode, attribut  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |String|`AnonymousForCertificate`<br /><br /> `AnonymousForSslNegotiated`<br /><br /> `CertificateOverTransport`<br /><br /> `IssuedToken`<br /><br /> `IssuedTokenForCertificate`<br /><br /> `IssuedTokenForSslNegotiated`<br /><br /> `IssuedTokenOverTransport`<br /><br /> `Kerberos`<br /><br /> `KerberosOverTransport`<br /><br /> `MutualCertificate`<br /><br /> `MutualCertificateDuplex`<br /><br /> `MutualSslNegotiated`<br /><br /> `SecureConversation`<br /><br /> `SspiNegotiated`<br /><br /> `UserNameForCertificate`<br /><br /> `UserNameForSslNegotiated`<br /><br /> `UserNameOverTransport`<br /><br /> `SspiNegotiatedOverTransport`|  
   
@@ -102,9 +103,9 @@ Spécifie les options de sécurité d’une liaison personnalisée.
 |[\<binding>](../../../misc/binding.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
 ## <a name="remarks"></a>Notes  
- Pour plus d’informations sur l’utilisation de cet élément, consultez [modes d’authentification SecurityBindingElement](../../../wcf/feature-details/securitybindingelement-authentication-modes.md) et [procédure: Créez une liaison personnalisée à l’aide](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)de SecurityBindingElement.  
+ Pour plus d’informations sur l’utilisation de cet élément, consultez [modes d’authentification SecurityBindingElement](../../../wcf/feature-details/securitybindingelement-authentication-modes.md) et [procédure : Créez une liaison personnalisée à l’aide](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)de SecurityBindingElement.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre comment configurer la sécurité à l’aide d’une liaison personnalisée. Il indique également comment utiliser une liaison personnalisée afin d’activer la sécurité de niveau message à l’aide d’un transport sécurisé. Cette configuration est utile lorsqu'un transport sécurisé est requis pour la transmission des messages entre le client et le service et que ces messages doivent en même temps bénéficier d'une sécurité de niveau message. Cette configuration n’est pas prise en charge par les liaisons fournies par le système.  
   
  La configuration du service définit une liaison personnalisée qui prend en charge la communication TCP protégée à l'aide du protocole TLS/SSL et de la sécurité des messages Windows. La liaison personnalisée utilise un certificat de service afin d’authentifier le service au niveau du transport et de protéger les messages pendant leur transmission entre le client et le service. Cela est accompli par l' [ \<](sslstreamsecurity.md) élément de liaison section sslStreamSecurity >. Le certificat du service est configuré à l'aide d'un comportement de service.  
@@ -175,5 +176,5 @@ Spécifie les options de sécurité d’une liaison personnalisée.
 - [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
 - [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
 - [\<customBinding>](custombinding.md)
-- [Guide pratique pour Créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Guide pratique : Créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
 - [Sécurité de liaison personnalisée](../../../wcf/samples/custom-binding-security.md)

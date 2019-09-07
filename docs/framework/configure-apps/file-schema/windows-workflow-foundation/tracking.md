@@ -3,20 +3,21 @@ title: <tracking>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: fd9b50ed-98a1-4518-836d-e4e02c670822
-ms.openlocfilehash: 79230c65d8eb8c15cef5dce73698448ca7b1e003
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 28d73bb74c4a49052589040adc26194b1300668c
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947314"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70397601"
 ---
 # <a name="tracking"></a>\<tracking>
 Représente une section de configuration permettant de définir les paramètres de suivi d'un service de flux de travail.  
   
- Pour plus d’informations sur le suivi de workflow et sa configuration, consultez [suivi et traçage](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) de workflows et [configuration du suivi pour un workflow](../../../windows-workflow-foundation/configuring-tracking-for-a-workflow.md).  
+ Pour plus d’informations sur le suivi de workflow et sa configuration, consultez [suivi et traçage de workflows](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) et [configuration du suivi pour un workflow](../../../windows-workflow-foundation/configuring-tracking-for-a-workflow.md).  
   
-\<system.serviceModel>  
-\<tracking>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<requise. > ServiceModel**](system-servicemodel-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<suivi des >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

@@ -2,22 +2,23 @@
 title: <transport> de <netPeerTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: c44d86d2-1160-44d7-9c7a-297b12eccc7f
-ms.openlocfilehash: 837d01540fa63579877ab4085bd8034c78f2fbe0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 08be5d752f8422ebe6442b295195f21b16a274c0
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915560"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399307"
 ---
 # <a name="transport-of-netpeertcpbinding"></a>\<> de transport \<de NetPeerTcpBinding >
 Spécifie les paramètres de sécurité au niveau du transport lors de l’utilisation du [ \<> NetPeerTcpBinding](netpeertcpbinding.md).  
   
- \<system.ServiceModel>  
-\<bindings>  
-\<netPeerTcpBinding>  
-\<binding>  
-\<> de sécurité  
-\<transport>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netPeerTcpBinding >** ](netpeertcpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de sécurité**](security-of-netpeerbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de transport**  
   
 ## <a name="syntax"></a>Syntaxe  
   

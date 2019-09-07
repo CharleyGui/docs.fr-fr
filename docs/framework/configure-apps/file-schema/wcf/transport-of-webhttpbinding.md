@@ -2,22 +2,23 @@
 title: <transport> de <webHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: f150fb19-7de1-44af-81f4-86cad881cd05
-ms.openlocfilehash: f78add5397644dc40bfd22f10bd84aa5c5eb29e6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 98cdaa86441f91552c7133d8e5694f88019a6dbf
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923208"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399280"
 ---
 # <a name="transport-of-webhttpbinding"></a>\<> de transport \<de WebHttpBinding >
 Définit les paramètres de sécurité au niveau du transport pour un point de terminaison de service configuré pour recevoir des demandes HTTP.  
   
- \<system.ServiceModel>  
-\<bindings>  
-\<webHttpBinding>  
-\<binding>  
-\<> de sécurité  
-\<transport>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<webHttpBinding >** ](webhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de sécurité**](security-of-webhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de transport**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -56,7 +57,7 @@ Définit les paramètres de sécurité au niveau du transport pour un point de t
   
 ## <a name="clientcredentialtype-attribute"></a>Attribut clientCredentialType  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |`None`|La sécurité est désactivée.|  
 |`Basic`|Utilise l'authentification de base.|  

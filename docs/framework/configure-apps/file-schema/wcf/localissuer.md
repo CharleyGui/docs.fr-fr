@@ -2,23 +2,24 @@
 title: <localIssuer>
 ms.date: 03/30/2017
 ms.assetid: 26bdd0df-0e7d-4b9e-bbeb-f28c53769385
-ms.openlocfilehash: 4ec5a99139112ae600c1c2bc44feb6d3f62da1e0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 055b7b49d1f775d49ac20de18c18ca0433716a23
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69931743"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70397860"
 ---
 # <a name="localissuer"></a>\<localIssuer>
 Spécifie l'adresse et la liaison de l'émetteur local à utiliser pour obtenir un jeton de sécurité.  
   
- \<system.ServiceModel>  
-\<behaviors>  
-section endpointBehaviors  
-\<> de comportement  
-\<clientCredentials>  
-\<issuedToken>  
-\<localIssuer>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<comportements >** ](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de comportement**](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<clientCredentials >** ](clientcredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<issuedToken >** ](issuedtoken.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<localIssuer >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -53,9 +54,9 @@ section endpointBehaviors
 |[\<issuedToken>](issuedtoken.md)|Spécifie un jeton personnalisé utilisé pour authentifier un client auprès d'un service.|  
   
 ## <a name="remarks"></a>Notes  
- Lors de l'obtention d'un jeton émis depuis un service d'émission de jeton de sécurité (STS), l'application cliente doit être configurée avec l'adresse et la liaison à utiliser pour pouvoir communiquer avec le STS. Lorsque ne fournit pas d’URL pour le service d’émission de jeton de sécurité, ou lorsque l’adresse de l’émetteur d' `http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous` une `null`liaison fédérée est ou, le canal de Windows Communication Foundation (WCF) du client utilise les valeurs spécifiées par <xref:System.ServiceModel.WSFederationHttpBinding> `address` et`binding` communiquent avec le STS pour obtenir le jeton émis. Pour plus d’informations sur la configuration d’un émetteur local, [consultez Procédure: Configurez un émetteur](../../../wcf/feature-details/how-to-configure-a-local-issuer.md)local.  
+ Lors de l'obtention d'un jeton émis depuis un service d'émission de jeton de sécurité (STS), l'application cliente doit être configurée avec l'adresse et la liaison à utiliser pour pouvoir communiquer avec le STS. Lorsque ne fournit pas d’URL pour le service d’émission de jeton de sécurité, ou lorsque l’adresse de l’émetteur d' `http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous` une `null`liaison fédérée est ou, le canal de Windows Communication Foundation (WCF) du client utilise les valeurs spécifiées par <xref:System.ServiceModel.WSFederationHttpBinding> `address` et`binding` communiquent avec le STS pour obtenir le jeton émis. Pour plus d’informations sur la configuration d’un émetteur local, [consultez Procédure : Configurez un émetteur](../../../wcf/feature-details/how-to-configure-a-local-issuer.md)local.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple suivant définit les attributs `address`, `binding` et `bindingConfiguration` d'un élément `localIssuer`.  
   
 ```xml  
@@ -83,7 +84,7 @@ section endpointBehaviors
 - <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>
 - <xref:System.ServiceModel.Security.IssuedTokenClientCredential>
 - [Comportements de sécurité](../../../wcf/feature-details/security-behaviors-in-wcf.md)
-- [Guide pratique pour Configurer un émetteur local](../../../wcf/feature-details/how-to-configure-a-local-issuer.md)
+- [Guide pratique : Configurer un émetteur local](../../../wcf/feature-details/how-to-configure-a-local-issuer.md)
 - [Identité du service et authentification](../../../wcf/feature-details/service-identity-and-authentication.md)
 - [Comportements de sécurité](../../../wcf/feature-details/security-behaviors-in-wcf.md)
 - [Fédération et jetons émis](../../../wcf/feature-details/federation-and-issued-tokens.md)

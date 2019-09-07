@@ -2,21 +2,22 @@
 title: <security> de <wsFederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: a8e5e854-b8dc-4921-843d-34b6a4a6a8ba
-ms.openlocfilehash: 875ce7d548d59f32465da817e9e956217f346f60
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6c07d1ca18837f66548411262b84b9a326f5ec4a
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936537"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399729"
 ---
 # <a name="security-of-wsfederationhttpbinding"></a>\<> de sécurité \<de wsFederationHttpBinding >
 Définit les paramètres de sécurité de l' [ \<> WSFederationHttpBinding](wsfederationhttpbinding.md).  
   
- \<system.ServiceModel>  
-\<bindings>  
-\<wsFederatedBinding>  
-\<binding>  
-\<> de sécurité  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<wsFederationHttpBinding >** ](wsfederationhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de sécurité**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -89,7 +90,7 @@ Définit les paramètres de sécurité de l' [ \<> WSFederationHttpBinding](wsfe
   
 ## <a name="mode-attribute"></a>Mode, attribut  
   
-|`Value`|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |Aucun|Le message SOAP n'est pas sécurisé pendant le transfert.|  
 |Message|L'intégrité, la confidentialité, l'authentification du serveur et l'authentification du client sont fournies à l'aide de la sécurité des messages SOAP. Par défaut, le corps est chiffré et signé. Le service doit être configuré avec un certificat. L'authentification du client est basée sur le jeton émis au client par un service d'émission de jeton de sécurité|  

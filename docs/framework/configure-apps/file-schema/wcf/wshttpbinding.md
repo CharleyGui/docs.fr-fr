@@ -4,19 +4,20 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - wsHttpBinding Element
 ms.assetid: 0eee8ced-ad68-427d-b95a-97260e98deed
-ms.openlocfilehash: 81f0101ce1dc2195cfc2f556e38a8551f674d13b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fc86a97ebae160f5bf2c8fcb2df9295ed7803963
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941507"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399018"
 ---
 # <a name="wshttpbinding"></a>\<wsHttpBinding>
-Définit une liaison sécurisée, fiable, interopérable adaptée aux contrats de service non duplex. La liaison implémente les spécifications suivantes: WS-Reliable Messaging pour la fiabilité et WS-Security pour la sécurité et l’authentification des messages. Le protocole de transport est HTTP et l'encodage de message est Text/XML.  
+Définit une liaison sécurisée, fiable, interopérable adaptée aux contrats de service non duplex. La liaison implémente les spécifications suivantes : WS-Reliable Messaging pour la fiabilité et WS-Security pour la sécurité et l’authentification des messages. Le protocole de transport est HTTP et l'encodage de message est Text/XML.  
   
- \<system.ServiceModel>  
-\<bindings>  
-\<wsHttpBinding>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<wsHttpBinding >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -98,7 +99,7 @@ Définit une liaison sécurisée, fiable, interopérable adaptée aux contrats d
 ## <a name="remarks"></a>Notes  
  `WSHttpBinding` est semblable à `BasicHttpBinding` mais fournit plus de fonctionnalités de service Web. Il utilise le transport HTTP et assure la sécurité des messages, comme BasicHttpBinding, mais il fournit également des transactions, une messagerie fiable et WS-Addressing, qu’il soit actif par défaut ou disponible par l’intermédiaire d’un paramètre de contrôle unique.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
   
 ```xml  
 <configuration>

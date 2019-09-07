@@ -2,24 +2,24 @@
 title: Élément <scopedCertificates>
 ms.date: 03/30/2017
 ms.assetid: c7b6fc35-d4b2-4c18-98bd-83e09591f1d3
-ms.openlocfilehash: ed53a42575a8d57c365f7a329a1a9c1df075d6d4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3c06159709df0afe2a475de1e186b0114af32bc2
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69935224"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399953"
 ---
 # <a name="scopedcertificates-element"></a>\<scopedCertificates >, élément
 Représente une collection de certificats X.509 fournie par les services spécifiques (étendus) à des fins d’authentification. Cette collection est utilisée en général pour spécifier les certificats de service pour les services d’émission de jeton de sécurité dans un scénario fédéré.  
   
- \<system.ServiceModel>  
-\<behaviors>  
-section endpointBehaviors  
-\<> de comportement  
-\<clientCredentials>  
-\<serviceCertificate>  
-\<scopedCertificates >, élément  
-\<Ajouter > élément pour \<scopedCertificates >  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<comportements >** ](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de comportement**](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<clientCredentials >** ](clientcredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceCertificate >** ](servicecertificate-of-clientcredentials-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<scopedCertificates >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -56,7 +56,7 @@ section endpointBehaviors
   
  Le certificat par défaut est utilisé si une liaison requiert un certificat pour le service et qu’aucun certificat spécifique de l’URL du service n’est trouvé dans ScopedCertificates.  
   
- Pour plus d’informations, consultez la section «certificats délimités [» de la rubrique How to: Créez un client](../../../wcf/feature-details/how-to-create-a-federated-client.md)fédéré.  
+ Pour plus d’informations, consultez la section « certificats délimités [» de la rubrique How to : Créez un client](../../../wcf/feature-details/how-to-create-a-federated-client.md)fédéré.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant spécifie un certificat de service que le client doit utiliser lors de la communication avec les points `http://www.contoso.com` de terminaison dont le nom de domaine se trouve sur le protocole http.  

@@ -2,23 +2,24 @@
 title: <authentication>d' <clientCertificate> élément
 ms.date: 03/30/2017
 ms.assetid: 4a55eea2-1826-4026-b911-b7cc9e9c8bfe
-ms.openlocfilehash: 4a7fee3bd8441a9612e954160397cc56aca163d1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 99084f6b7afbdd8586ee706cd6ec44b349d81ff2
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69926515"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70398265"
 ---
 # <a name="authentication-of-clientcertificate-element"></a>\<> d’authentification \<de l’élément ClientCertificate >
 Spécifie les comportements d'authentification des certificats clients utilisés par un service.  
   
- \<system.ServiceModel>  
-\<behaviors>  
-\<serviceBehaviors>  
-\<> de comportement  
-\<serviceCredentials>  
-\<clientCertificate>  
-\<authentication>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<comportements >** ](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceBehaviors >** ](servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de comportement**](behavior-of-servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceCredentials >** ](servicecredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> clientCertificate**](clientcertificate-of-servicecredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> d’authentification**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,13 +48,13 @@ Spécifie les comportements d'authentification des certificats clients utilisés
   
 ## <a name="customcertificatevalidatortype-attribute"></a>customCertificateValidatorType, attribut  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |String|Spécifie le nom de type, l'assembly et d'autres données utilisées pour rechercher le type.|  
   
 ## <a name="certificatevalidationmode-attribute"></a>certificateValidationMode, attribut  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |Énumération|L’une des valeurs suivantes : None, PeerTrust, ChainTrust, PeerOrChainTrust, Custom.<br /><br /> Pour plus d’informations, consultez [utilisation des certificats](../../../wcf/feature-details/working-with-certificates.md).|  
   
@@ -65,7 +66,7 @@ Spécifie les comportements d'authentification des certificats clients utilisés
   
 ## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation, attribut  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |Énumération|Une des valeurs suivantes : `LocalMachine` ou `CurrentUser`. Par défaut, il s’agit de `CurrentUser`. Si l'application cliente s'exécute sous un compte système, le certificat se trouve généralement dans `LocalMachine`. Si l'application cliente s'exécute sous un compte d'utilisateur, le certificat se trouve généralement dans `CurrentUser`.|  
   
@@ -112,5 +113,5 @@ Spécifie les comportements d'authentification des certificats clients utilisés
 - <xref:System.ServiceModel.Configuration.X509InitiatorCertificateServiceElement.Authentication%2A>
 - <xref:System.ServiceModel.Configuration.X509ClientCertificateAuthenticationElement>
 - [Comportements de sécurité](../../../wcf/feature-details/security-behaviors-in-wcf.md)
-- [Guide pratique : Créer un service qui utilise un validateur de certificat personnalisé](../../../wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)
+- [Guide pratique pour Créer un service qui utilise un validateur de certificat personnalisé](../../../wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md)
 - [Utilisation des certificats](../../../wcf/feature-details/working-with-certificates.md)

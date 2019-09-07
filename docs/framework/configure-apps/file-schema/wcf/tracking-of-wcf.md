@@ -2,20 +2,21 @@
 title: <tracking>de WCF
 ms.date: 03/30/2017
 ms.assetid: 70cfaf24-a91c-4e56-ac47-d2ed87a963b3
-ms.openlocfilehash: ad4f85139ff0a0f587bc47f63334fe97e25440b0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e8f74d635299a965b754536234e6be28e4e7a104
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69932377"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399416"
 ---
 # <a name="tracking-of-wcf"></a>\<suivi des > de WCF
 Représente une section de configuration permettant de définir les paramètres de suivi d'un service de flux de travail.  
   
- Pour plus d’informations sur le suivi de workflow et sa configuration, consultez [suivi et traçage](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) de workflows et [configuration du suivi pour un workflow](../../../windows-workflow-foundation/configuring-tracking-for-a-workflow.md).  
+ Pour plus d’informations sur le suivi de workflow et sa configuration, consultez [suivi et traçage de workflows](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) et [configuration du suivi pour un workflow](../../../windows-workflow-foundation/configuring-tracking-for-a-workflow.md).  
   
- \<system.serviceModel>  
-\<tracking>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<suivi des >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

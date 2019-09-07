@@ -2,22 +2,23 @@
 title: <transport> de <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 692befa3-8b0b-4ec5-b601-755874e98eb0
-ms.openlocfilehash: ce8b2acb7d87b094958e20ca0b6cca9fc8266a8d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4ea60ccaba58bc0b3fa8f2263295bf1413d25e89
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911987"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399268"
 ---
 # <a name="transport-of-ws2007httpbinding"></a>\<> de transport \<de WS2007HttpBinding >
 Définit les paramètres d'authentification correspondant au transport HTTP.  
   
- \<system.serviceModel>  
-\<bindings>  
-\<ws2007HttpBinding>  
-\<binding>  
-\<> de sécurité  
-\<transport>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<ws2007HttpBinding >** ](ws2007httpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de sécurité**](security-of-ws2007httpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de transport**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,7 +55,7 @@ Définit les paramètres d'authentification correspondant au transport HTTP.
   
 ## <a name="proxycredentialtype-attribute"></a>Attribut proxyCredentialType  
   
-|`Value`|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |Aucun|La sécurité est désactivée.|  
 |De base|Utilise l'authentification de base.|  

@@ -2,22 +2,23 @@
 title: <message>élément de<ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 52cd941d-e230-4c82-8b29-333a7d20eca8
-ms.openlocfilehash: 4340727026cb151f2efe813dfa005c1c5a1908be
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b1128bda6068a1fe3d8f5bb5ac29cc349f023b5b
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69931622"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70397850"
 ---
 # <a name="message-element-of-ws2007federationhttpbinding"></a>\<message > élément de \<WS2007FederationHttpBinding >
 Définit des paramètres pour la sécurité au niveau du message pour l' [ \<élément WS2007FederationHttpBinding >](ws2007federationhttpbinding.md) .  
   
- \<system.ServiceModel>  
-\<bindings>  
-\<ws2007FederationHttpBinding>  
-\<binding>  
-\<> de sécurité  
-\<message>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<ws2007FederationHttpBinding >** ](ws2007federationhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de sécurité**](security-element-of-ws2007federationhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de messages**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -93,7 +94,7 @@ Définit des paramètres pour la sécurité au niveau du message pour l' [ \<él
   
 ## <a name="algorithmsuite-attribute"></a>Attribut algorithmSuite  
   
-|`Value`|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |Basic128|Utilisez le chiffrement Aes128, Sha1 pour le résumé du message et Rsa-oaep-mgf1p pour la clé de type WRAP.|  
 |Basic192|Utilisez le chiffrement Aes192, Sha1 pour le résumé du message et Rsa-oaep-mgf1p pour la clé de type WRAP.|  

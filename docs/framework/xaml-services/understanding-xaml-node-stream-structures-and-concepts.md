@@ -6,12 +6,12 @@ helpviewer_keywords:
 - nodes [XAML Services], XAML node stream
 - XAML [XAML Services], XAML node streams
 ms.assetid: 7c11abec-1075-474c-9d9b-778e5dab21c3
-ms.openlocfilehash: c873961982cd1642d8b354e5d77b06105c0b7a1e
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: d6b2975b8e0338b121d00f5ec7f4ffb69d32ab6a
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364307"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70400737"
 ---
 # <a name="understanding-xaml-node-stream-structures-and-concepts"></a>Fonctionnement des concepts et structures du flux de nœud XAML
 
@@ -85,9 +85,6 @@ Cet exemple de base d'une boucle de nœud XAML de chemin de chargement connecte 
 ### <a name="accessing-xaml-beyond-the-node-loop-concept"></a>Accès au code XAML au-delà du concept de boucle de nœud
 
 Vous pouvez éventuellement utiliser une représentation XAML autrement que sous forme de boucle de nœud XAML. Par exemple, un lecteur XAML peut lire un nœud indexé ou accéder aux nœuds directement par le biais de `x:Name`, `x:Uid`ou d'autres identificateurs. Les services XAML .NET Framework ne permettent pas une implémentation complète, mais suggèrent un modèle par le biais de services et de types de support. Pour plus d’informations, consultez <xref:System.Xaml.IXamlIndexingReader> et <xref:System.Xaml.XamlNodeList>.
-
-> [!TIP]
-> Microsoft produit également une version hors-bande appelée Microsoft XAML Toolkit. Cette version hors bande est encore au stade préliminaire. Toutefois, si vous acceptez d'utiliser des composants préliminaires, Microsoft XAML Toolkit fournit des ressources intéressantes pour les outils XAML et l'analyse statique du code XAML. Microsoft XAML Toolkit inclut une API DOM XAML, la prise en charge de l'analyse FxCop et un contexte de schéma XAML pour Silverlight. Pour plus d’informations, consultez [Microsoft XAML Toolkit](https://code.msdn.microsoft.com/XAML).
 
 <a name="working_with_the_current_node"></a>
 
@@ -212,17 +209,17 @@ Certains membres sont présentés dans un flux de nœud XAML en raison des inter
 
 La liste suivante répertorie tous les cas où un lecteur XAML doit présenter un nœud de membre de directive XAML, et comment ce nœud membre est identifié dans les implémentations des services XAML .NET Framework.
 
-- **Texte d’initialisation d’un nœud d’objet:** Le nom de ce nœud membre est `_Initialization`, il représente une directive XAML et il est défini dans l’espace de noms XAML du langage XAML. Vous pouvez en obtenir une entité statique à partir de <xref:System.Xaml.XamlLanguage.Initialization%2A>.
+- **Texte d’initialisation d’un nœud d’objet :** Le nom de ce nœud membre est `_Initialization`, il représente une directive XAML et il est défini dans l’espace de noms XAML du langage XAML. Vous pouvez en obtenir une entité statique à partir de <xref:System.Xaml.XamlLanguage.Initialization%2A>.
 
-- **Paramètres positionnels d’une extension de balisage:** Le nom de ce nœud membre est `_PositionalParameters`, et il est défini dans l’espace de noms XAML du langage XAML. Il contient toujours une liste générique d'objets, chacun d'eux étant un paramètre positionnel préalablement séparé par fractionnement à partir du caractère délimiteur `,` fourni dans le XAML d'entrée. Vous pouvez obtenir une entité statique pour la directive de paramètres positionnels à partir de <xref:System.Xaml.XamlLanguage.PositionalParameters%2A>.
+- **Paramètres positionnels d’une extension de balisage :** Le nom de ce nœud membre est `_PositionalParameters`, et il est défini dans l’espace de noms XAML du langage XAML. Il contient toujours une liste générique d'objets, chacun d'eux étant un paramètre positionnel préalablement séparé par fractionnement à partir du caractère délimiteur `,` fourni dans le XAML d'entrée. Vous pouvez obtenir une entité statique pour la directive de paramètres positionnels à partir de <xref:System.Xaml.XamlLanguage.PositionalParameters%2A>.
 
-- **Contenu inconnu:** Le nom de ce nœud membre est `_UnknownContent`. Proprement dit, il s'agit d'une directive <xref:System.Xaml.XamlDirective>définie dans l'espace de noms XAML du langage XAML. Cette directive est utilisée comme sentinelle au cas où  un élément objet XAML contient le contenu de la source XAML, mais qu'aucune propriété de contenu ne peut être déterminée dans le contexte de schéma XAML actuellement disponible. Vous pouvez détecter ce cas dans un flux de nœud XAML en recherchant les membres nommés `_UnknownContent`. Si aucune autre action n'est effectuée dans un flux de nœud XAML de chemin de chargement, le nœud <xref:System.Xaml.XamlObjectWriter> par défaut lève une exception sur une tentative de `WriteEndObject` quand il rencontre le membre `_UnknownContent` sur un objet. Le writer <xref:System.Xaml.XamlXmlWriter> par défaut ne lève pas d'exception et traite le membre comme s'il était implicite. Vous pouvez obtenir une entité statique pour `_UnknownContent` à partir de <xref:System.Xaml.XamlLanguage.UnknownContent%2A>.
+- **Contenu inconnu :** Le nom de ce nœud membre est `_UnknownContent`. Proprement dit, il s'agit d'une directive <xref:System.Xaml.XamlDirective>définie dans l'espace de noms XAML du langage XAML. Cette directive est utilisée comme sentinelle au cas où  un élément objet XAML contient le contenu de la source XAML, mais qu'aucune propriété de contenu ne peut être déterminée dans le contexte de schéma XAML actuellement disponible. Vous pouvez détecter ce cas dans un flux de nœud XAML en recherchant les membres nommés `_UnknownContent`. Si aucune autre action n'est effectuée dans un flux de nœud XAML de chemin de chargement, le nœud <xref:System.Xaml.XamlObjectWriter> par défaut lève une exception sur une tentative de `WriteEndObject` quand il rencontre le membre `_UnknownContent` sur un objet. Le writer <xref:System.Xaml.XamlXmlWriter> par défaut ne lève pas d'exception et traite le membre comme s'il était implicite. Vous pouvez obtenir une entité statique pour `_UnknownContent` à partir de <xref:System.Xaml.XamlLanguage.UnknownContent%2A>.
 
-- **Propriété de collection d’une collection:** Bien que le type CLR de stockage d’une classe de collection utilisée pour XAML ait généralement une propriété nommée dédiée qui contient les éléments de collection, cette propriété n’est pas connue d’un système de type XAML avant la résolution de type de stockage. Au lieu de cela, le flux de nœud XAML présente un espace réservé `Items` en tant que membre du type XAML de la collection. Dans l'implémentation des services XAML .NET Framework, le nom de cette directive/ce membre dans le flux de nœud est `_Items`. Une constante pour cette directive peut être obtenue à partir de <xref:System.Xaml.XamlLanguage.Items%2A>.
+- **Propriété de collection d’une collection :** Bien que le type CLR de stockage d’une classe de collection utilisée pour XAML ait généralement une propriété nommée dédiée qui contient les éléments de collection, cette propriété n’est pas connue d’un système de type XAML avant la résolution de type de stockage. Au lieu de cela, le flux de nœud XAML présente un espace réservé `Items` en tant que membre du type XAML de la collection. Dans l'implémentation des services XAML .NET Framework, le nom de cette directive/ce membre dans le flux de nœud est `_Items`. Une constante pour cette directive peut être obtenue à partir de <xref:System.Xaml.XamlLanguage.Items%2A>.
 
     Notez qu’un flux de nœud XAML peut contenir une propriété Items avec des éléments qui ne peuvent pas être analysés en fonction de la résolution de type de stockage et du contexte de schéma XAML. Par exemple,
 
-- **Membres définis par XML:** Les membres définis par `xml:base`XML `xml:lang` , `xml:space` et sont signalés comme des directives `base`XAML `lang`nommées `space` , et dans les implémentations de services XAML .NET Framework. L'espace de noms pour ces directives est l'espace de noms XML `http://www.w3.org/XML/1998/namespace`. Des constantes pour chacune d'elles peuvent être obtenues à partir de <xref:System.Xaml.XamlLanguage>.
+- **Membres définis par XML :** Les membres définis par `xml:base`XML `xml:lang` , `xml:space` et sont signalés comme des directives `base`XAML `lang`nommées `space` , et dans les implémentations de services XAML .NET Framework. L'espace de noms pour ces directives est l'espace de noms XML `http://www.w3.org/XML/1998/namespace`. Des constantes pour chacune d'elles peuvent être obtenues à partir de <xref:System.Xaml.XamlLanguage>.
 
 ## <a name="node-order"></a>Ordre des nœuds
 

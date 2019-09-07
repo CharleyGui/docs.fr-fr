@@ -2,18 +2,19 @@
 title: <serviceHostingEnvironment>
 ms.date: 03/30/2017
 ms.assetid: 4f8a7c4f-e735-4987-979a-b74fcdae2652
-ms.openlocfilehash: b81c9f3c4260f415f057cd74b6f113d88f635978
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 165dbed1b78d00f8d4dd3e482b9fee8a23db60da
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936286"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399612"
 ---
 # <a name="servicehostingenvironment"></a>\<serviceHostingEnvironment>
 Cet élément définit le type instancié par l'environnement d'hébergement de service correspondant à un transport particulier. Si cet élément est vide, c'est le type par défaut qui est utilisé. Cet élément ne peut être utilisé qu'au niveau des fichiers de configuration de l'application ou de l'ordinateur.  
   
- \<system.ServiceModel>  
-\<ServiceHostingEnvironment>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<serviceHostingEnvironment >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

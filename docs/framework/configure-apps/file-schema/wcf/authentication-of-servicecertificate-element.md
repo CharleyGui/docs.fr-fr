@@ -2,23 +2,24 @@
 title: <authentication>d' <serviceCertificate> élément
 ms.date: 03/30/2017
 ms.assetid: 733b67b4-08a1-4d25-9741-10046f9357ef
-ms.openlocfilehash: d770ba1f9a0a18c927b3a4bf6d4141286e3a380c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 29170f032469b4d55b50f57ca06ce403a5aeaf2c
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69919981"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70398224"
 ---
 # <a name="authentication-of-servicecertificate-element"></a>\<> d’authentification \<de l’élément > serviceCertificate
 Spécifie les paramètres utilisés par le proxy client pour authentifier les certificats de service obtenus à l'aide de la négociation SSL/TLS.  
   
- \<system.ServiceModel>  
-\<behaviors>  
-section endpointBehaviors  
-\<> de comportement  
-\<clientCredentials>  
-\<serviceCertificate>  
-\<authentication>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<comportements >** ](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de comportement**](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<clientCredentials >** ](clientcredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceCertificate >** ](servicecertificate-of-clientcredentials-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> d’authentification**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,7 +44,7 @@ section endpointBehaviors
   
 ## <a name="customcertificatevalidator-attribute"></a>customCertificateValidator, attribut  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |String|Spécifie le nom de type, l'assembly et d'autres données utilisées pour rechercher le type.|  
   
@@ -55,13 +56,13 @@ section endpointBehaviors
   
 ## <a name="revocationmode-attribute"></a>revocationMode, attribut  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |Énumération|L’une des valeurs suivantes : NOCHECK, en ligne, hors connexion.<br /><br /> Pour plus d’informations, consultez [utilisation des certificats](../../../wcf/feature-details/working-with-certificates.md).|  
   
 ## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation, attribut  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |Énumération|L’une des valeurs suivantes : LocalMachine ou CurrentUser. La valeur par défaut est CurrentUser. Si l'application cliente s'exécute sous un compte système, le certificat se trouve généralement dans LocalMachine. Si l'application cliente s'exécute sous un compte d'utilisateur, le certificat se trouve généralement dans CurrentUser.|  
   
@@ -79,7 +80,7 @@ section endpointBehaviors
   
  L'attribut `revocationMode` spécifie le mode de vérification des certificats à révoquer. La valeur par défaut est `online`, qui indique que les certificats sont automatiquement vérifiés pour révocation. Pour plus d’informations, consultez [utilisation des certificats](../../../wcf/feature-details/working-with-certificates.md).  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Dans l’exemple suivant, deux tâches sont effectuées : Il spécifie d’abord un certificat de service que le client doit utiliser lors de la communication avec les `www.contoso.com` points de terminaison dont le nom de domaine se trouve sur le protocole http. Deuxièmement, le mode de révocation et l'emplacement de magasin utilisés pendant l'authentification sont définis.  
   
 ```xml  

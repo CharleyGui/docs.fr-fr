@@ -2,26 +2,25 @@
 title: Élément <issuerChannelBehaviors>
 ms.date: 03/30/2017
 ms.assetid: f7378673-8e9b-45b2-98d1-cf5dccdd8c40
-ms.openlocfilehash: e0e41b4f6d66cd4455c43dda7c77798553f2b58f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2c0e0d8d041565edd25c4b2c2802bfd2a589b4f7
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929924"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70397899"
 ---
 # <a name="issuerchannelbehaviors-element"></a>\<issuerChannelBehaviors >, élément
 
 Contient une collection de comportements de point de terminaison client Windows Communication Foundation (WCF) (définis dans la configuration) à utiliser lors de la communication avec les services de jeton de service spécifiés. Les comportements définis ne peuvent pas inclure d' [ \<éléments > ClientCredentials](clientcredentials.md) .
 
-```xml
-<system.ServiceModel>
-  <behaviors>
-    <endpointBehaviors>
-      <behavior>
-        <clientCredentials>
-          <issuedToken>
-            <issuerChannelBehaviors>
-```
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<comportements >** ](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de comportement**](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<clientCredentials >** ](clientcredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<issuedToken >** ](issuedtoken.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<issuerChannelBehaviors >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -68,5 +67,5 @@ Utilisez cet élément lorsque des comportements (autres que ceux qui contiennen
 - [Sécurisation des services et des clients](../../../wcf/feature-details/securing-services-and-clients.md)
 - [Sécurisation des clients](../../../wcf/securing-clients.md)
 - [Guide pratique pour Créer un client fédéré](../../../wcf/feature-details/how-to-create-a-federated-client.md)
-- [Guide pratique pour Configurer un émetteur local](../../../wcf/feature-details/how-to-configure-a-local-issuer.md)
+- [Guide pratique : Configurer un émetteur local](../../../wcf/feature-details/how-to-configure-a-local-issuer.md)
 - [Fédération et jetons émis](../../../wcf/feature-details/federation-and-issued-tokens.md)

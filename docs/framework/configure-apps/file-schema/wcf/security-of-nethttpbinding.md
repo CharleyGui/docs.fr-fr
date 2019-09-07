@@ -2,22 +2,23 @@
 title: <security> de <netHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: dc41f6f7-cabc-4a64-9fa0-ceabf861b348
-ms.openlocfilehash: f2750036aa4d3fbe41062ad041e50ff3a4be32b5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 890cee3271c410a921b3a88f78d0705ba8718252
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61670559"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399854"
 ---
-# <a name="security-of-nethttpbinding"></a>\<security> of \<netHttpBinding>
+# <a name="security-of-nethttpbinding"></a>\<> de sécurité \<de NetHttpBinding >
 
-Définit les fonctionnalités de sécurité de la [ \<basicHttpBinding >](basichttpbinding.md).
+Définit les fonctionnalités de sécurité de l' [ \<> NetHttpBinding](nethttpbinding.md).
 
-\<system.ServiceModel>\
-\<bindings>\
-\<netHttpBinding>\
-\<liaison > \
-\<security>
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netHttpBinding >** ](nethttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de sécurité**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -39,17 +40,17 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Attribut|Description|
 |---------------|-----------------|
-|mode|Optionnel. Spécifie le type de sécurité qui est utilisé. La valeur par défaut est `None`. Cet attribut est de type <xref:System.ServiceModel.BasicHttpSecurityMode>.|
+|mode|facultatif. Spécifie le type de sécurité qui est utilisé. Par défaut, il s’agit de `None`. Cet attribut est de type <xref:System.ServiceModel.BasicHttpSecurityMode>.|
 
 ## <a name="mode-attribute"></a>attribut mode
 
-|Value|Description|
+|Valeur|Description|
 |-----------|-----------------|
-|Aucun.|-Les messages ne sont pas sécurisés pendant le transfert.|
+|Aucun|-Les messages ne sont pas sécurisés lors du transfert.|
 |Transport|La sécurité est fournie à l'aide du transport HTTPS. Les messages SOAP sont sécurisés par HTTPS. Le service est authentifié auprès du client à l'aide du certificat X.509 du service. Le client est authentifié à l'aide du ClientCredentialType fourni.|
 |Message|La sécurité est fournie à l'aide de la sécurité des messages SOAP. Par défaut, le corps est chiffré et signé. Pour cette liaison, le système impose que le certificat de serveur soit fourni au client hors bande. Le seul `ClientCredentialType` valide pour cette liaison est `Certificate`.|
 |TransportWithMessageCredential|L'intégrité, la confidentialité et l'authentification de serveur sont fournies par la sécurité du transport. L'authentification du client est fournie au moyen de la sécurité des messages SOAP. Ce mode est utile lorsque l'utilisateur effectue une authentification à l'aide du nom d'utilisateur/mot de passe et qu'il existe un déploiement HTTP pour sécuriser le transfert des messages.|
-|TransportCredentialOnly|Ce mode n'assure pas l'intégrité et la confidentialité des messages. Il fournit l'authentification du client basée sur http. Ce mode doit être utilisé avec précaution. Elle doit être utilisée dans les environnements où la sécurité de transport est fournie par d’autres moyens (tels que IPSec) et seulement l’authentification du client est fournie par l’infrastructure WCF.|
+|TransportCredentialOnly|Ce mode n'assure pas l'intégrité et la confidentialité des messages. Il fournit l'authentification du client basée sur http. Ce mode doit être utilisé avec précaution. Elle doit être utilisée dans les environnements où la sécurité de transport est fournie par d’autres moyens (par exemple, IPSec) et que seule l’authentification du client est fournie par l’infrastructure WCF.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
@@ -62,7 +63,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 |Élément|Description|
 |-------------|-----------------|
-|liaison|L’élément de liaison de la [ \<basicHttpBinding >](basichttpbinding.md).|
+|liaison|Élément de liaison de l' [ \<> BasicHttpBinding](basichttpbinding.md).|
 
 ## <a name="remarks"></a>Notes
 

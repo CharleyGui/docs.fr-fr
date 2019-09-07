@@ -2,21 +2,22 @@
 title: <security>élément de<ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 826219b4-3a16-45fc-832d-0cd7cbbd3b84
-ms.openlocfilehash: 61b56ca1fae5c328cda0bbebef4026f0784095a3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 450b2403b8cd4ec43a41fd27bccb3b77202820bb
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936823"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399906"
 ---
 # <a name="security-element-of-ws2007federationhttpbinding"></a>\<élément Security > de \<WS2007FederationHttpBinding >
 Définit les paramètres de sécurité de l' [ \<élément WS2007FederationHttpBinding >](ws2007federationhttpbinding.md) .  
   
- \<system.ServiceModel>  
-\<bindings>  
-\<ws2007FederationHttpBinding>  
-\<binding>  
-\<> de sécurité  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<ws2007FederationHttpBinding >** ](ws2007federationhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de sécurité**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,7 +47,7 @@ Définit les paramètres de sécurité de l' [ \<élément WS2007FederationHttpB
   
 ## <a name="mode-attribute"></a>Attribut Mode  
   
-|`Value`|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
 |Aucun|Le message SOAP n'est pas sécurisé pendant le transfert.|  
 |Message|L'intégrité, la confidentialité, l'authentification du serveur et l'authentification du client sont fournies à l'aide de la sécurité des messages SOAP. Par défaut, le corps est chiffré et signé. Le service doit être configuré à l'aide d'un certificat. L'authentification du client est basée sur le jeton émis au client par un service d'émission de jeton de sécurité.|  

@@ -2,21 +2,22 @@
 title: <serviceSecurityAudit>
 ms.date: 03/30/2017
 ms.assetid: ba517369-a034-4f8e-a2c4-66517716062b
-ms.openlocfilehash: a1fcc59550904a34eced8e87fa9bc54a334acd03
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 10888f26053014ffb1fec49d1dfe87c7fd09ab54
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937168"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399576"
 ---
 # <a name="servicesecurityaudit"></a>\<serviceSecurityAudit>
 Spécifie des paramètres qui activent l'audit d'événements de sécurité pendant des opérations de service.  
   
- \<system.ServiceModel>  
-\<behaviors>  
-\<serviceBehaviors>  
-\<> de comportement  
-\<serviceSecurityAudit>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<comportements >** ](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceBehaviors >** ](servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de comportement**](behavior-of-servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<serviceSecurityAudit >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -53,7 +54,7 @@ Spécifie des paramètres qui activent l'audit d'événements de sécurité pend
   
  Pour obtenir un exemple détaillé de l’utilisation de cet élément de configuration, consultez [comportement de l’audit de service](../../../wcf/samples/service-auditing-behavior.md).  
   
- Par défaut, sur Windows XP, les événements d’audit peuvent être consultés dans le journal des applications, tandis que sur Windows Server 2003 et Windows Vista, ils peuvent être consultés dans le journal de sécurité. L'emplacement des événements d'audit peut être spécifié en affectant la valeur 'Application' ou 'Security' à l'attribut `auditLogLocation`. Pour plus d’informations, consultez [Guide pratique pour Auditer les](../../../wcf/feature-details/how-to-audit-wcf-security-events.md)événements de sécurité. Si les événements sont écrits dans le journal de sécurité, LocalSecurityPolicy-> activer l’accès aux objets doit être défini sur «Success» et «Failure».  
+ Par défaut, sur Windows XP, les événements d’audit peuvent être consultés dans le journal des applications, tandis que sur Windows Server 2003 et Windows Vista, ils peuvent être consultés dans le journal de sécurité. L'emplacement des événements d'audit peut être spécifié en affectant la valeur 'Application' ou 'Security' à l'attribut `auditLogLocation`. Pour plus d’informations, consultez [Guide pratique pour Auditer les](../../../wcf/feature-details/how-to-audit-wcf-security-events.md)événements de sécurité. Si les événements sont écrits dans le journal de sécurité, LocalSecurityPolicy-> activer l’accès aux objets doit être défini sur « Success » et « Failure ».  
   
  Lors de la consultation du journal des événements, la source des événements d'audit est « ServiceModel Audit 3.0.0.0 ». Les enregistrements de l'audit d'authentification du message portent la catégorie « MessageAuthentication », tandis que les enregistrements de l'audit d'autorisation du service portent la catégorie « ServiceAuthorization ».  
   
@@ -84,5 +85,5 @@ Spécifie des paramètres qui activent l'audit d'événements de sécurité pend
 - <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>
 - [Comportements de sécurité](../../../wcf/feature-details/security-behaviors-in-wcf.md)
 - [Audit](../../../wcf/feature-details/auditing-security-events.md)
-- [Guide pratique : Auditer les événements de sécurité](../../../wcf/feature-details/how-to-audit-wcf-security-events.md)
+- [Guide pratique pour Auditer les événements de sécurité](../../../wcf/feature-details/how-to-audit-wcf-security-events.md)
 - [Comportement de l’audit de service](../../../wcf/samples/service-auditing-behavior.md)

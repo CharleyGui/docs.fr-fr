@@ -2,19 +2,20 @@
 title: <webHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 84179d77-825d-44b9-895a-ab08e7aa044d
-ms.openlocfilehash: 70c99c29d4febae51b9fed54d37d681ff922f9f6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8ba4780cb73011fd7841fa41e1fac8d467f9f6a2
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940490"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399178"
 ---
 # <a name="webhttpbinding"></a>\<webHttpBinding>
 Définit un élément de liaison utilisé pour configurer des points de terminaison pour les services Web Windows Communication Foundation (WCF) qui répondent aux requêtes HTTP au lieu des messages SOAP.  
   
-\<system.ServiceModel>  
-\<bindings>  
-\<webHttpBinding>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<webHttpBinding >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -86,7 +87,7 @@ Définit un élément de liaison utilisé pour configurer des points de terminai
 |[\<bindings>](bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
   
 ## <a name="remarks"></a>Notes  
- Le modèle de programmation Web WCF permet aux développeurs d’exposer des services Web WCF par le biais de requêtes HTTP qui utilisent la messagerie de style «Plain Old XML» (POX) au lieu de la messagerie basée sur SOAP. Pour que les clients communiquent avec un service à l’aide de requêtes http, un point de terminaison du service doit être configuré avec \<le [ \<> WebHttpBinding](webhttpbinding.md) auquel le > WebHttpBehavior est attaché.  
+ Le modèle de programmation Web WCF permet aux développeurs d’exposer des services Web WCF par le biais de requêtes HTTP qui utilisent la messagerie de style « Plain Old XML » (POX) au lieu de la messagerie basée sur SOAP. Pour que les clients communiquent avec un service à l’aide de requêtes http, un point de terminaison du service doit être configuré avec \<le [ \<> WebHttpBinding](webhttpbinding.md) auquel le > WebHttpBehavior est attaché.  
   
  Prise en charge dans WCF pour la syndication et ASP. L’intégration d’AJAX s’appuie sur le modèle de programmation Web. Pour plus d’informations sur le modèle, consultez [modèle de programmation http Web WCF](../../../wcf/feature-details/wcf-web-http-programming-model.md).  
   

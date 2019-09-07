@@ -2,21 +2,22 @@
 title: <httpTransport>
 ms.date: 03/30/2017
 ms.assetid: 8b30c065-b32a-4fa3-8eb4-5537a9c6b897
-ms.openlocfilehash: 2d651101b720d427391274d0e02690588123cd53
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 51558a7f51ddeab4652abcc72376cb50a22c239b
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69925507"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70400373"
 ---
 # <a name="httptransport"></a>\<httpTransport>
 Spécifie un transport HTTP pour la transmission des messages SOAP d’une liaison personnalisée.  
   
- \<system.serviceModel>  
-\<bindings>  
-\<customBinding>  
-\<binding>  
-\<httpTransport>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<httpTransport >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,7 +46,7 @@ Spécifie un transport HTTP pour la transmission des messages SOAP d’une liais
 |allowCookies|Valeur booléenne qui spécifie si le client accepte les cookies et les propage dans de futures demandes. Par défaut, il s’agit de `false`.<br /><br /> Vous pouvez utiliser cet attribut lorsque vous interagissez avec les services Web ASMX qui utilisent des cookies. De cette manière, vous avez la certitude que les cookies retournés par le serveur sont automatiquement copiés dans toutes les futures demandes du client pour ce service.|  
 |authenticationScheme|Spécifie le protocole utilisé pour authentifier des demandes du client qui sont traitées par un écouteur HTTP. Les valeurs valides sont les suivantes :<br /><br /> Voyage Spécifie l’authentification Digest.<br />Prescrit Négocie avec le client afin de déterminer le schéma d’authentification. Si le client et le serveur prennent tous les deux en charge Kerberos, ce protocole est utilisé ; sinon, NTLM est utilisé.<br />NTLM Spécifie l'authentification NTLM.<br />Bases Spécifie l'authentification de base.<br />Façon Spécifie l'authentification anonyme.<br /><br /> La valeur par défaut est Anonymous. Cet attribut est de type <xref:System.Net.AuthenticationSchemes>. Cet attribut ne peut être défini qu'une fois.|  
 |bypassProxyOnLocal|Valeur booléenne qui indique s'il faut ignorer le serveur proxy pour les adresses locales. Par défaut, il s’agit de `false`.<br /><br /> Une adresse locale est une adresse sur le réseau local ou l'intranet.<br /><br /> Windows Communication Foundation (WCF) ignore toujours le proxy si l’adresse de service commence `http://localhost`par.<br /><br /> Utilisez le nom d'hôte plutôt que localhost si vous souhaitez que les clients passent par un proxy lorsqu'ils communiquent avec des services sur le même ordinateur.|  
-|hostnameComparisonMode|Spécifie le mode de comparaison du nom d'hôte HTTP utilisé pour analyser des URI. Les valeurs valides sont :<br /><br /> -StrongWildcard: ("+") correspond à tous les noms d’hôtes possibles dans le contexte du schéma, du port et de l’URI relatif spécifiés.<br />-Exact: aucun caractère générique<br />-WeakWildcard: ("\*") correspond à tous les noms d’hôte possibles dans le contexte du schéma spécifié, du port et des URI relatifs qui n’ont pas été mis en correspondance explicitement ni par le biais du mécanisme à caractères génériques forts.<br /><br /> Cet attribut est de type <xref:System.ServiceModel.HostNameComparisonMode>. Par défaut, il s’agit de <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>.|  
+|hostnameComparisonMode|Spécifie le mode de comparaison du nom d'hôte HTTP utilisé pour analyser des URI. Les valeurs valides sont :<br /><br /> -StrongWildcard : ("+") correspond à tous les noms d’hôtes possibles dans le contexte du schéma, du port et de l’URI relatif spécifiés.<br />-Exact : aucun caractère générique<br />-WeakWildcard : ("\*") correspond à tous les noms d’hôte possibles dans le contexte du schéma spécifié, du port et des URI relatifs qui n’ont pas été mis en correspondance explicitement ni par le biais du mécanisme à caractères génériques forts.<br /><br /> Cet attribut est de type <xref:System.ServiceModel.HostNameComparisonMode>. Par défaut, il s’agit de <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>.|  
 |KeepAliveEnabled|Valeur booléenne qui spécifie si une connexion persistante doit être établie avec la ressource Internet.|  
 |maxBufferSize|Entier positif qui spécifie la taille maximale de la mémoire tampon. La valeur par défaut est 524 288.|  
 |proxyAddress|URI qui spécifie l'adresse du proxy HTTP. Si `useSystemWebProxy` est `true`, ce paramètre doit avoir la valeur `null`. Par défaut, il s’agit de `null`.|  

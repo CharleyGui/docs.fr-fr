@@ -2,19 +2,22 @@
 title: <webSocketSettings>
 ms.date: 03/30/2017
 ms.assetid: bbf97e02-8dd1-4922-acac-3cd33397b249
-ms.openlocfilehash: 5c9dbec13dd0d71ba1b92ea971d067540013b6f9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 80784f40130e572ae374bd9b26e701360dbfcaa5
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940320"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399134"
 ---
 # <a name="websocketsettings"></a>\<webSocketSettings>
 Élément de configuration utilisé pour spécifier des paramètres WebSocket.  
   
-\<system.ServiceModel>  
-\<bindings>  
-\<netHttpBinding>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netHttpBinding >** ](nethttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<webSocketSettings >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,7 +54,7 @@ ms.locfileid: "69940320"
   
 ## <a name="transportusage-attribute"></a>Attribut transportUsage  
   
-|Valeur|Description|  
+|`Value`|Description|  
 |-----------|-----------------|  
 |WhenDuplex|Utilisez le protocole WebSocket lorsque le contrat est en duplex.|  
 |Always|Utilisez toujours le protocole WebSocket indépendamment du contrat.|  

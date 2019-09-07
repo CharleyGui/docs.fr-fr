@@ -4,20 +4,21 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - wsFederationBinding element
 ms.assetid: 9c3312b4-2137-4e71-bf3f-de1cf8e9be79
-ms.openlocfilehash: 3c4edc17fd669fbe23ec38ff26a61e867c04c561
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a605d3241ec62f5648e3439b327153f3fb4590df
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915067"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399031"
 ---
 # <a name="wsfederationhttpbinding"></a>\<wsFederationHttpBinding>
 
 Définit une liaison qui prend en charge WS-Federation.
 
-\<system.ServiceModel>\
-\<bindings>\
-wsFederationBinding (élément)
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<wsFederationHttpBinding >**  
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -159,9 +160,9 @@ Maintenir la sécurité de la stratégie est particulièrement important dans le
 
 Dans les scénarios de fédération utilisant cette liaison, la stratégie de service comporte potentiellement des informations importantes, telles que la clé à utiliser pour chiffrer le jeton émis (SAML), le type de revendications à mettre dans le jeton, etc. Si cette stratégie était falsifiée, un intrus pourrait découvrir la clé du jeton émis, entraînant davantage de falsification, de divulgation d'informations et autres comportements malveillants. Pour que ce type de problème puisse être évité, la stratégie doit être obtenue de manière sécurisée auprès du service (par exemple à l'aide de HTTPS).
 
-Pour plus d’informations sur cette liaison, [consultez Procédure: Créez un WSFederationHttpBinding](../../../wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md).
+Pour plus d’informations sur cette liaison, [consultez Procédure : Créez un WSFederationHttpBinding](../../../wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md).
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 ```xml
 <configuration>

@@ -2,19 +2,20 @@
 title: <routing>
 ms.date: 03/30/2017
 ms.assetid: a210c209-3940-4288-9a8e-39b1e62606bc
-ms.openlocfilehash: 3c7e9cb1284ab55c8dd199d9fb47a223698814f0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fcf2d4eec93fd7127c6f800e1c739ad1fac49203
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934123"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399974"
 ---
 # <a name="routing"></a>\<routing>
 
 Représente une section de configuration permettant de définir un jeu de filtres de routage, qui détermine le type de Windows Communication Foundation <xref:System.ServiceModel.Dispatcher.MessageFilter> (WCF) à utiliser lors de l’évaluation des messages entrants, ainsi que les tables de routage qui définissent les points de terminaison cibles Envoyer des messages à lorsqu’un filtre correspond.
 
-[ **\<system.serviceModel>** ](system-servicemodel.md)   
-&nbsp;&nbsp; **\<routing>**
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<> de routage**
   
 ## <a name="syntax"></a>Syntaxe  
   
