@@ -2,25 +2,27 @@
 title: <xmlElement>
 ms.date: 03/30/2017
 ms.assetid: 395205c2-d8c0-4a5e-90f3-7ce3c085fccd
-ms.openlocfilehash: cc178dcc3684ab338282acc369e0ab5c789c15e4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 841331f233bb8c42c25c88ad8e9b4fb1a86faa76
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941437"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70398996"
 ---
-# <a name="xmlelement"></a><span data-ttu-id="a3643-101">\<xmlElement></span><span class="sxs-lookup"><span data-stu-id="a3643-101">\<xmlElement></span></span>
-<span data-ttu-id="a3643-102">Spécifie un élément XML qui est envoyé dans le corps du message au service d'émission de jeton de sécurité (STS) lors de la demande d'un jeton.</span><span class="sxs-lookup"><span data-stu-id="a3643-102">Specifies an XML element that is sent in the message body to the Security Token Service when requesting a token.</span></span>  
+# <a name="xmlelement"></a><span data-ttu-id="c6a17-101">\<xmlElement></span><span class="sxs-lookup"><span data-stu-id="c6a17-101">\<xmlElement></span></span>
+<span data-ttu-id="c6a17-102">Spécifie un élément XML qui est envoyé dans le corps du message au service d'émission de jeton de sécurité (STS) lors de la demande d'un jeton.</span><span class="sxs-lookup"><span data-stu-id="c6a17-102">Specifies an XML element that is sent in the message body to the Security Token Service when requesting a token.</span></span>  
   
- <span data-ttu-id="a3643-103">\<system.ServiceModel></span><span class="sxs-lookup"><span data-stu-id="a3643-103">\<system.ServiceModel></span></span>  
-<span data-ttu-id="a3643-104">\<bindings></span><span class="sxs-lookup"><span data-stu-id="a3643-104">\<bindings></span></span>  
-<span data-ttu-id="a3643-105">\<wsFederatedBinding></span><span class="sxs-lookup"><span data-stu-id="a3643-105">\<wsFederatedBinding></span></span>  
-<span data-ttu-id="a3643-106">\<binding></span><span class="sxs-lookup"><span data-stu-id="a3643-106">\<binding></span></span>  
-<span data-ttu-id="a3643-107">\<> de sécurité</span><span class="sxs-lookup"><span data-stu-id="a3643-107">\<security></span></span>  
-<span data-ttu-id="a3643-108">\<message></span><span class="sxs-lookup"><span data-stu-id="a3643-108">\<message></span></span>  
-<span data-ttu-id="a3643-109">\<tokenRequestParameters></span><span class="sxs-lookup"><span data-stu-id="a3643-109">\<tokenRequestParameters></span></span>  
+<span data-ttu-id="c6a17-103">[ **\<configuration>** ](../configuration-element.md)</span><span class="sxs-lookup"><span data-stu-id="c6a17-103">[**\<configuration>**](../configuration-element.md)</span></span>\
+<span data-ttu-id="c6a17-104">&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)</span><span class="sxs-lookup"><span data-stu-id="c6a17-104">&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)</span></span>\
+<span data-ttu-id="c6a17-105">&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)</span><span class="sxs-lookup"><span data-stu-id="c6a17-105">&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)</span></span>\
+<span data-ttu-id="c6a17-106">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<wsFederationHttpBinding >** ](wsfederationhttpbinding.md)</span><span class="sxs-lookup"><span data-stu-id="c6a17-106">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<wsFederationHttpBinding>**](wsfederationhttpbinding.md)</span></span>\
+<span data-ttu-id="c6a17-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**</span><span class="sxs-lookup"><span data-stu-id="c6a17-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**</span></span>\
+<span data-ttu-id="c6a17-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de sécurité**](security-of-wsfederationhttpbinding.md)</span><span class="sxs-lookup"><span data-stu-id="c6a17-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-of-wsfederationhttpbinding.md)</span></span>\
+<span data-ttu-id="c6a17-109">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de messages**](message-element-of-wsfederationhttpbinding.md)</span><span class="sxs-lookup"><span data-stu-id="c6a17-109">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<message>**](message-element-of-wsfederationhttpbinding.md)</span></span>\
+<span data-ttu-id="c6a17-110">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<tokenRequestParameters >** ](tokenrequestparameters.md)</span><span class="sxs-lookup"><span data-stu-id="c6a17-110">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<tokenRequestParameters>**](tokenrequestparameters.md)</span></span>\
+<span data-ttu-id="c6a17-111">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> xmlElement**</span><span class="sxs-lookup"><span data-stu-id="c6a17-111">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<xmlElement>**</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a3643-110">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a3643-110">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c6a17-112">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c6a17-112">Syntax</span></span>  
   
 ```xml  
 <tokenRequestParameters>
@@ -28,30 +30,30 @@ ms.locfileid: "69941437"
 </tokenRequestParameters>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="a3643-111">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="a3643-111">Attributes and Elements</span></span>  
- <span data-ttu-id="a3643-112">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="a3643-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="c6a17-113">Attributs et éléments</span><span class="sxs-lookup"><span data-stu-id="c6a17-113">Attributes and Elements</span></span>  
+ <span data-ttu-id="c6a17-114">Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.</span><span class="sxs-lookup"><span data-stu-id="c6a17-114">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="a3643-113">Attributs</span><span class="sxs-lookup"><span data-stu-id="a3643-113">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="c6a17-115">Attributs</span><span class="sxs-lookup"><span data-stu-id="c6a17-115">Attributes</span></span>  
   
-|<span data-ttu-id="a3643-114">Attribut</span><span class="sxs-lookup"><span data-stu-id="a3643-114">Attribute</span></span>|<span data-ttu-id="a3643-115">Description</span><span class="sxs-lookup"><span data-stu-id="a3643-115">Description</span></span>|  
+|<span data-ttu-id="c6a17-116">Attribut</span><span class="sxs-lookup"><span data-stu-id="c6a17-116">Attribute</span></span>|<span data-ttu-id="c6a17-117">Description</span><span class="sxs-lookup"><span data-stu-id="c6a17-117">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="a3643-116">xmlElement</span><span class="sxs-lookup"><span data-stu-id="a3643-116">xmlElement</span></span>|<span data-ttu-id="a3643-117">Chaîne spécifiant un élément XML qui est envoyé dans le corps du message au service d'émission de jeton de sécurité (STS) lors de la demande d'un jeton.</span><span class="sxs-lookup"><span data-stu-id="a3643-117">A string specifying an XML element that is sent in the message body to the Security Token Service when requesting a token.</span></span>|  
+|<span data-ttu-id="c6a17-118">xmlElement</span><span class="sxs-lookup"><span data-stu-id="c6a17-118">xmlElement</span></span>|<span data-ttu-id="c6a17-119">Chaîne spécifiant un élément XML qui est envoyé dans le corps du message au service d'émission de jeton de sécurité (STS) lors de la demande d'un jeton.</span><span class="sxs-lookup"><span data-stu-id="c6a17-119">A string specifying an XML element that is sent in the message body to the Security Token Service when requesting a token.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="a3643-118">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="a3643-118">Child Elements</span></span>  
- <span data-ttu-id="a3643-119">Aucun.</span><span class="sxs-lookup"><span data-stu-id="a3643-119">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="c6a17-120">Éléments enfants</span><span class="sxs-lookup"><span data-stu-id="c6a17-120">Child Elements</span></span>  
+ <span data-ttu-id="c6a17-121">Aucun.</span><span class="sxs-lookup"><span data-stu-id="c6a17-121">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="a3643-120">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="a3643-120">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="c6a17-122">Éléments parents</span><span class="sxs-lookup"><span data-stu-id="c6a17-122">Parent Elements</span></span>  
   
-|<span data-ttu-id="a3643-121">Élément</span><span class="sxs-lookup"><span data-stu-id="a3643-121">Element</span></span>|<span data-ttu-id="a3643-122">Description</span><span class="sxs-lookup"><span data-stu-id="a3643-122">Description</span></span>|  
+|<span data-ttu-id="c6a17-123">Élément</span><span class="sxs-lookup"><span data-stu-id="c6a17-123">Element</span></span>|<span data-ttu-id="c6a17-124">Description</span><span class="sxs-lookup"><span data-stu-id="c6a17-124">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="a3643-123">\<tokenRequestParameters></span><span class="sxs-lookup"><span data-stu-id="a3643-123">\<tokenRequestParameters></span></span>](tokenrequestparameters.md)|<span data-ttu-id="a3643-124">Collection de paramètres de demande de jeton.</span><span class="sxs-lookup"><span data-stu-id="a3643-124">A collection of token request parameters.</span></span> <span data-ttu-id="a3643-125">Chaque paramètre est un élément XML.</span><span class="sxs-lookup"><span data-stu-id="a3643-125">Each parameter is an XML element.</span></span>|  
+|[<span data-ttu-id="c6a17-125">\<tokenRequestParameters></span><span class="sxs-lookup"><span data-stu-id="c6a17-125">\<tokenRequestParameters></span></span>](tokenrequestparameters.md)|<span data-ttu-id="c6a17-126">Collection de paramètres de demande de jeton.</span><span class="sxs-lookup"><span data-stu-id="c6a17-126">A collection of token request parameters.</span></span> <span data-ttu-id="c6a17-127">Chaque paramètre est un élément XML.</span><span class="sxs-lookup"><span data-stu-id="c6a17-127">Each parameter is an XML element.</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="a3643-126">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a3643-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c6a17-128">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c6a17-128">See also</span></span>
 
 - <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.TokenRequestParameters%2A>
 - <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.TokenRequestParameters%2A>
-- [<span data-ttu-id="a3643-127">Identité du service et authentification</span><span class="sxs-lookup"><span data-stu-id="a3643-127">Service Identity and Authentication</span></span>](../../../wcf/feature-details/service-identity-and-authentication.md)
-- [<span data-ttu-id="a3643-128">Fédération et jetons émis</span><span class="sxs-lookup"><span data-stu-id="a3643-128">Federation and Issued Tokens</span></span>](../../../wcf/feature-details/federation-and-issued-tokens.md)
-- [<span data-ttu-id="a3643-129">Fonctionnalités de sécurité avec des liaisons personnalisées</span><span class="sxs-lookup"><span data-stu-id="a3643-129">Security Capabilities with Custom Bindings</span></span>](../../../wcf/feature-details/security-capabilities-with-custom-bindings.md)
-- [<span data-ttu-id="a3643-130">Fédération et jetons émis</span><span class="sxs-lookup"><span data-stu-id="a3643-130">Federation and Issued Tokens</span></span>](../../../wcf/feature-details/federation-and-issued-tokens.md)
-- [<span data-ttu-id="a3643-131">Liaisons</span><span class="sxs-lookup"><span data-stu-id="a3643-131">Bindings</span></span>](../../../wcf/bindings.md)
+- [<span data-ttu-id="c6a17-129">Identité du service et authentification</span><span class="sxs-lookup"><span data-stu-id="c6a17-129">Service Identity and Authentication</span></span>](../../../wcf/feature-details/service-identity-and-authentication.md)
+- [<span data-ttu-id="c6a17-130">Fédération et jetons émis</span><span class="sxs-lookup"><span data-stu-id="c6a17-130">Federation and Issued Tokens</span></span>](../../../wcf/feature-details/federation-and-issued-tokens.md)
+- [<span data-ttu-id="c6a17-131">Fonctionnalités de sécurité avec des liaisons personnalisées</span><span class="sxs-lookup"><span data-stu-id="c6a17-131">Security Capabilities with Custom Bindings</span></span>](../../../wcf/feature-details/security-capabilities-with-custom-bindings.md)
+- [<span data-ttu-id="c6a17-132">Fédération et jetons émis</span><span class="sxs-lookup"><span data-stu-id="c6a17-132">Federation and Issued Tokens</span></span>](../../../wcf/feature-details/federation-and-issued-tokens.md)
+- [<span data-ttu-id="c6a17-133">Liaisons</span><span class="sxs-lookup"><span data-stu-id="c6a17-133">Bindings</span></span>](../../../wcf/bindings.md)
