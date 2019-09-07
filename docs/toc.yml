@@ -262,7 +262,7 @@
     - name: Docker
       items:
         - name: Introduction à .NET et à Docker
-          href: core/docker/intro-net-docker.md
+          href: core/docker/introduction.md
         - name: Conteneuriser une application .NET Core
           href: core/docker/build-container.md
         - name: Outils de conteneur dans Visual Studio
