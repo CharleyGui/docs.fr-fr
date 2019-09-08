@@ -16,34 +16,34 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5bd705ef549de3a8018efe731ef8735ef7b6b915
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 929909a7f2c4fa1799c8fed94787b8f853c7eac2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697236"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796510"
 ---
-# <a name="idefinitionappid-interface"></a><span data-ttu-id="01273-102">IDefinitionAppId, interface</span><span class="sxs-lookup"><span data-stu-id="01273-102">IDefinitionAppId Interface</span></span>
-<span data-ttu-id="01273-103">Représente un identificateur unique pour le code qui définit l’application dans la portée actuelle.</span><span class="sxs-lookup"><span data-stu-id="01273-103">Represents a unique identifier for the code that defines the application in the current scope.</span></span>  
+# <a name="idefinitionappid-interface"></a><span data-ttu-id="18750-102">IDefinitionAppId, interface</span><span class="sxs-lookup"><span data-stu-id="18750-102">IDefinitionAppId Interface</span></span>
+<span data-ttu-id="18750-103">Représente un identificateur unique pour le code qui définit l’application dans l’étendue actuelle.</span><span class="sxs-lookup"><span data-stu-id="18750-103">Represents a unique identifier for the code that defines the application in the current scope.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="01273-104">Méthodes</span><span class="sxs-lookup"><span data-stu-id="01273-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="18750-104">Méthodes</span><span class="sxs-lookup"><span data-stu-id="18750-104">Methods</span></span>  
   
-|<span data-ttu-id="01273-105">Méthode</span><span class="sxs-lookup"><span data-stu-id="01273-105">Method</span></span>|<span data-ttu-id="01273-106">Description</span><span class="sxs-lookup"><span data-stu-id="01273-106">Description</span></span>|  
+|<span data-ttu-id="18750-105">Méthode</span><span class="sxs-lookup"><span data-stu-id="18750-105">Method</span></span>|<span data-ttu-id="18750-106">Description</span><span class="sxs-lookup"><span data-stu-id="18750-106">Description</span></span>|  
 |------------|-----------------|  
-|`IDefinitionAppId::get_Codebase`|<span data-ttu-id="01273-107">Obtient une chaîne mise en forme qui représente le code de cette `IDefinitionAppId` objet.</span><span class="sxs-lookup"><span data-stu-id="01273-107">Gets a formatted string that represents the code in this `IDefinitionAppId` object.</span></span>|  
-|`IDefinitionAppId::put_Codebase`|<span data-ttu-id="01273-108">Définit le code de cet `IDefinitionAppId` objet spécifié à la mise en forme la valeur de chaîne.</span><span class="sxs-lookup"><span data-stu-id="01273-108">Sets the code of this `IDefinitionAppId` object to the specified formatted string value.</span></span>|  
-|`IDefinitionAppId::EnumAppPath`|<span data-ttu-id="01273-109">Obtient un pointeur d’interface vers un [IEnumDefinitionIdentity](../../../../docs/framework/unmanaged-api/fusion/ienumdefinitionidentity-interface.md) objet qui contient les assemblys dans le chemin d’accès d’application actuel.</span><span class="sxs-lookup"><span data-stu-id="01273-109">Gets an interface pointer to an [IEnumDefinitionIdentity](../../../../docs/framework/unmanaged-api/fusion/ienumdefinitionidentity-interface.md) object that contains the assemblies in the current application path.</span></span>|  
-|`IDefinitionAppId::SetAppPath`|<span data-ttu-id="01273-110">Définit le chemin d’accès de l’application pour l’assembly dans la portée actuelle à la valeur référencée par le [IDefinitionIdentity](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md) objet.</span><span class="sxs-lookup"><span data-stu-id="01273-110">Sets the application path for the assembly in the current scope to the value referenced by the specified [IDefinitionIdentity](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md) object.</span></span>|  
-|`IDefinitionAppId::get_SubscriptionId`|<span data-ttu-id="01273-111">Obtient un pointeur vers une représentation sous forme de chaîne de l’identificateur de jeton pour un abonnement à ce `IDefinitionAppId` objet.</span><span class="sxs-lookup"><span data-stu-id="01273-111">Gets a pointer to a string representation of the token identifier for a subscription to this `IDefinitionAppId` object.</span></span>|  
-|`IDefinitionAppId::put_SubscriptionId`|<span data-ttu-id="01273-112">Définit l’identificateur de jeton pour un abonnement à ce `IDefinitionAppId` objet à la valeur de chaîne spécifiée.</span><span class="sxs-lookup"><span data-stu-id="01273-112">Sets the token identifier for a subscription to this `IDefinitionAppId` object to the specified string value.</span></span>|  
+|`IDefinitionAppId::get_Codebase`|<span data-ttu-id="18750-107">Obtient une chaîne mise en forme qui représente le code `IDefinitionAppId` de cet objet.</span><span class="sxs-lookup"><span data-stu-id="18750-107">Gets a formatted string that represents the code in this `IDefinitionAppId` object.</span></span>|  
+|`IDefinitionAppId::put_Codebase`|<span data-ttu-id="18750-108">Définit le code de cet `IDefinitionAppId` objet à la valeur de chaîne mise en forme spécifiée.</span><span class="sxs-lookup"><span data-stu-id="18750-108">Sets the code of this `IDefinitionAppId` object to the specified formatted string value.</span></span>|  
+|`IDefinitionAppId::EnumAppPath`|<span data-ttu-id="18750-109">Obtient un pointeur d’interface vers un objet [IEnumDefinitionIdentity](ienumdefinitionidentity-interface.md) qui contient les assemblys dans le chemin d’accès de l’application actuelle.</span><span class="sxs-lookup"><span data-stu-id="18750-109">Gets an interface pointer to an [IEnumDefinitionIdentity](ienumdefinitionidentity-interface.md) object that contains the assemblies in the current application path.</span></span>|  
+|`IDefinitionAppId::SetAppPath`|<span data-ttu-id="18750-110">Définit le chemin d’accès de l’application de l’assembly dans la portée actuelle à la valeur référencée par l’objet [IDefinitionIdentity](idefinitionidentity-interface.md) spécifié.</span><span class="sxs-lookup"><span data-stu-id="18750-110">Sets the application path for the assembly in the current scope to the value referenced by the specified [IDefinitionIdentity](idefinitionidentity-interface.md) object.</span></span>|  
+|`IDefinitionAppId::get_SubscriptionId`|<span data-ttu-id="18750-111">Obtient un pointeur vers une représentation sous forme de chaîne de l’identificateur de jeton pour un `IDefinitionAppId` abonnement à cet objet.</span><span class="sxs-lookup"><span data-stu-id="18750-111">Gets a pointer to a string representation of the token identifier for a subscription to this `IDefinitionAppId` object.</span></span>|  
+|`IDefinitionAppId::put_SubscriptionId`|<span data-ttu-id="18750-112">Définit l’identificateur de jeton pour un abonnement à cet `IDefinitionAppId` objet à la valeur de chaîne spécifiée.</span><span class="sxs-lookup"><span data-stu-id="18750-112">Sets the token identifier for a subscription to this `IDefinitionAppId` object to the specified string value.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="01273-113">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="01273-113">Requirements</span></span>  
- <span data-ttu-id="01273-114">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="01273-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="18750-113">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="18750-113">Requirements</span></span>  
+ <span data-ttu-id="18750-114">**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="18750-114">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="01273-115">**En-tête :** Isolation.h</span><span class="sxs-lookup"><span data-stu-id="01273-115">**Header:** Isolation.h</span></span>  
+ <span data-ttu-id="18750-115">**En-tête :** Isolation. h</span><span class="sxs-lookup"><span data-stu-id="18750-115">**Header:** Isolation.h</span></span>  
   
- <span data-ttu-id="01273-116">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="01273-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="18750-116">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="18750-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="01273-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="01273-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="18750-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="18750-117">See also</span></span>
 
-- [<span data-ttu-id="01273-118">Interfaces de fusion</span><span class="sxs-lookup"><span data-stu-id="01273-118">Fusion Interfaces</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
+- [<span data-ttu-id="18750-118">Interfaces de fusion</span><span class="sxs-lookup"><span data-stu-id="18750-118">Fusion Interfaces</span></span>](fusion-interfaces.md)
