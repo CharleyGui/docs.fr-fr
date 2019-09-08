@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: e065d458-a128-44f2-9f17-66af9d5be954
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e7e316f874a2b559cb3fe9d64a9ec7cf25addbe5
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
-ms.translationtype: HT
+ms.openlocfilehash: 12b26c8cc01b7af1c3b345d2f274a1d25a19d689
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557780"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70789843"
 ---
 # <a name="mitigation-serialization-of-control-characters-with-the-datacontractjsonserializer"></a>Atténuation : sérialisation des caractères de contrôle avec DataContractJsonSerializer
 
@@ -42,4 +42,4 @@ Si ce comportement n’est pas souhaitable, vous pouvez désactiver cette foncti
  
 ## <a name="see-also"></a>Voir aussi
 
-- [Reciblage des modifications dans le .NET Framework 4.7](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-7.md)
+- [Reciblage des modifications dans le .NET Framework 4.7](retargeting-changes-in-the-net-framework-4-7.md)

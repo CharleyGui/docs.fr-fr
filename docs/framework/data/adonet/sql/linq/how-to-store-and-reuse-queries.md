@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a012bd79-1809-45e3-adea-0229532396cc
-ms.openlocfilehash: f8400b214bc9ba3a28eeec05f6171953b42bc6f5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c023f7610576c017c91fdb919322acdf9003767a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938747"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781641"
 ---
 # <a name="how-to-store-and-reuse-queries"></a>Procédure : Stocker et réutiliser des requêtes
 Lorsque vous possédez une application qui exécute de nombreuses fois des requêtes similaires d'un point de vue structurel, vous pouvez souvent améliorer les performances en compilant la requête une fois et en l'exécutant plusieurs fois avec des paramètres différents. Par exemple, une application peut avoir besoin de récupérer tous les clients d'une ville spécifique, où la ville est spécifiée à l'exécution par l'utilisateur dans un formulaire. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]prend en charge l’utilisation de *requêtes compilées* à cet effet.  
@@ -36,5 +36,5 @@ Lorsque vous possédez une application qui exécute de nombreuses fois des requ�
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Data.Linq.CompiledQuery>
-- [Concepts relatifs aux requêtes](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)
-- [Interrogation de la base de données](../../../../../../docs/framework/data/adonet/sql/linq/querying-the-database.md)
+- [Concepts relatifs aux requêtes](query-concepts.md)
+- [Interrogation de la base de données](querying-the-database.md)

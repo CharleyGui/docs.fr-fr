@@ -5,16 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 34d1d971-5e18-4c22-9bf6-d3612e27ea59
-ms.openlocfilehash: e04f64338eaa87755510a84e7c84773c7fede807
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c3c80fb48635199f45acb1e72bf756bbc65d2e14
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634669"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780412"
 ---
 # <a name="create-the-data-service"></a>Créer le service de données
 
-Dans cette rubrique, vous créez un exemple de service de données qui utilise WCF Data Services pour exposer un [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] flux basé sur la base de données Northwind. La tâche implique les étapes fondamentales suivantes :
+Dans cette rubrique, vous allez créer un exemple de service de données qui utilise WCF Data Services [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] pour exposer un flux basé sur l’exemple de base de données Northwind. La tâche implique les étapes fondamentales suivantes :
 
 1. Créez une application Web ASP.NET.
 
@@ -24,35 +24,35 @@ Dans cette rubrique, vous créez un exemple de service de données qui utilise W
 
 4. Activez l'accès au service de données.
 
-## <a name="create-the-aspnet-web-app"></a>Créer l’application web ASP.NET
+## <a name="create-the-aspnet-web-app"></a>Créer l’application Web ASP.NET
 
-1. Dans Visual Studio, sur le **fichier** menu, sélectionnez **New** > **projet**.
+1. Dans Visual Studio, dans le menu **fichier** , sélectionnez **nouveau** > **projet**.
 
-1. Dans le **nouveau projet** boîte de dialogue, sous Visual Basic ou Visual c#, sélectionnez le **Web** catégorie, puis sélectionnez **Application Web ASP.NET**.
+1. Dans la boîte de dialogue **nouveau projet** , sous Visual Basic ou visuel C# , sélectionnez la catégorie **Web** , puis sélectionnez **application Web ASP.net**.
 
-1. Entrez `NorthwindService` en tant que le nom du projet et sélectionnez **OK**.
+1. Entrez `NorthwindService` comme nom du projet, puis sélectionnez **OK**.
 
-1. Dans le **nouvelle Application Web ASP.NET** boîte de dialogue, sélectionnez **vide** , puis sélectionnez **OK**.
+1. Dans la boîte de dialogue **nouvelle application Web ASP.net** , sélectionnez **vide** , puis cliquez sur **OK**.
 
-1. (Facultatif) Spécifiez un numéro de port spécifique pour votre application Web. Remarque : le numéro de port `12345` est utilisé dans cette série de rubriques de guide de démarrage rapide.
+1. (Facultatif) Spécifiez un numéro de port spécifique pour votre application Web. Remarque : le numéro `12345` de port est utilisé dans cette série de rubriques de démarrage rapide.
 
-    1. Dans **l’Explorateur de solutions**, avec le bouton droit sur le projet ASP.NET que vous venez de créer, puis choisissez **propriétés**.
+    1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet ASP.net que vous venez de créer, puis choisissez **Propriétés**.
 
-    2. Sélectionnez le **Web** onglet et définissez la valeur de la **port spécifique** zone de texte `12345`.
+    2. Sélectionnez l’onglet **Web** et définissez la valeur de la zone de texte **port spécifique** sur `12345`.
 
 ## <a name="define-the-data-model"></a>Définir le modèle de données
 
-1. Dans **l’Explorateur de solutions**, cliquez sur le nom du projet ASP.NET, puis cliquez sur **ajouter** > **un nouvel élément**.
+1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet ASP.net, puis cliquez sur **Ajouter** > **un nouvel élément**.
 
-2. Dans le **ajouter un nouvel élément** boîte de dialogue, sélectionnez le **données** catégorie, puis sélectionnez **ADO.NET Entity Data Model**.
+2. Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez la catégorie **données** , puis sélectionnez **ADO.NET Entity Data Model**.
 
 3. Pour le nom du modèle de données, entrez `Northwind.edmx`.
 
-4. Dans le **Assistant Entity Data Model**, sélectionnez **Entity Framework Designer à partir de la base de données**, puis cliquez sur **suivant**.
+4. Dans l' **assistant Entity Data Model**, sélectionnez le **Concepteur EF à partir de la base de données**, puis cliquez sur **suivant**.
 
-5. Connectez le modèle de données à la base de données en effectuant l’une des étapes suivantes, puis cliquez sur **suivant**:
+5. Connectez le modèle de données à la base de données en procédant de l’une des manières suivantes, puis cliquez sur **suivant**:
 
-    - Si vous n’avez pas déjà configuré une connexion de base de données, cliquez sur **nouvelle connexion** et créer une nouvelle connexion. Pour plus d'informations, voir [Procédure : Créer des connexions aux bases de données SQL Server](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90)). Cette instance SQL Server doit avoir l'exemple de base de données Northwind joint.
+    - Si aucune connexion de base de données n’est déjà configurée, cliquez sur **nouvelle connexion** et créez une nouvelle connexion. Pour plus d'informations, voir [Procédure : Créer des connexions aux bases de](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90))données SQL Server. Cette instance SQL Server doit avoir l'exemple de base de données Northwind joint.
 
          \- ou -
 
@@ -64,25 +64,25 @@ Dans cette rubrique, vous créez un exemple de service de données qui utilise W
 
 ## <a name="create-the-wcf-data-service"></a>Créer le service de données WCF
 
-1. Dans **l’Explorateur de solutions**, avec le bouton droit sur le projet ASP.NET, puis choisissez **ajouter** > **un nouvel élément**.
+1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet ASP.net, puis choisissez **Ajouter** > **un nouvel élément**.
 
-2. Dans le **ajouter un nouvel élément** boîte de dialogue, sélectionnez le **Service de données WCF** modèle d’élément de la **Web** catégorie.
+2. Dans la boîte de dialogue **Ajouter un nouvel élément** , sélectionnez le modèle élément de **service de données WCF** dans la catégorie **Web** .
 
-   ![Modèle d’élément de Service de données WCF dans Visual Studio 2015](media/wcf-data-service-item-template.png)
+   ![Modèle d’élément de service de données WCF dans Visual Studio 2015](media/wcf-data-service-item-template.png)
 
    > [!NOTE]
-   > Le **Service de données WCF** modèle est disponible dans Visual Studio 2015, mais pas dans Visual Studio 2017.
+   > Le modèle de **service de données WCF** est disponible dans visual studio 2015, mais pas dans visual studio 2017.
 
 3. Pour le nom du service, tapez `Northwind`.
 
-     Visual Studio crée le balisage XML et des fichiers de code pour le nouveau service. La fenêtre de l'éditeur de code s'ouvre par défaut. Dans **l’Explorateur de solutions**, le service a le nom Northwind avec l’extension *. svc.cs* ou *. svc.vb*.
+     Visual Studio crée le balisage XML et des fichiers de code pour le nouveau service. La fenêtre de l'éditeur de code s'ouvre par défaut. Dans **Explorateur de solutions**, le service porte le nom Northwind avec l’extension *. svc.cs* ou *. svc. vb*.
 
 4. Dans le code du service de données, remplacez le commentaire `/* TODO: put your data source class name here */` dans la définition de la classe qui définit le service de données par le type qui est le conteneur d'entités du modèle de données, dans ce cas `NorthwindEntities`. La définition de classe doit ressembler aux éléments suivants:
 
      [!code-csharp[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_service/cs/northwind.svc.cs#servicedefinition)]
      [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_service/vb/northwind.svc.vb#servicedefinition)]
 
-## <a name="enable-access-to-data-service-resources"></a>Activer l’accès aux ressources de service de données
+## <a name="enable-access-to-data-service-resources"></a>Activer l’accès aux ressources du service de données
 
 1. Dans le code du service de données, remplacez le code d'espace réservé dans la fonction `InitializeService` par le code suivant :
 
@@ -92,15 +92,15 @@ Dans cette rubrique, vous créez un exemple de service de données qui utilise W
      Cela permet aux clients autorisés d'accéder aux ressources en lecture et en écriture pour les jeux d'entités spécifiés.
 
     > [!NOTE]
-    > Tout client qui peut accéder à l'application ASP.NET peut également accéder aux ressources exposées par le service de données. Dans un service de données de production, pour empêcher l'accès non autorisé aux ressources, vous devez également sécuriser l'application elle-même. Pour plus d'informations, consultez [Securing WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).
+    > Tout client qui peut accéder à l'application ASP.NET peut également accéder aux ressources exposées par le service de données. Dans un service de données de production, pour empêcher l'accès non autorisé aux ressources, vous devez également sécuriser l'application elle-même. Pour plus d'informations, consultez [Securing WCF Data Services](securing-wcf-data-services.md).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Vous avez créé un nouveau service de données qui expose un flux OData est basé sur la base de données Northwind, et que vous avez activé l’accès au flux pour les clients qui ont des autorisations sur l’application Web ASP.NET. Ensuite, vous allez démarrer le service de données à partir de Visual Studio et accéder au flux en soumettant des demandes HTTP GET via un navigateur Web OData :
+Vous avez correctement créé un nouveau service de données qui expose un flux OData basé sur l’exemple de base de données Northwind, et vous avez activé l’accès au flux pour les clients qui ont des autorisations sur l’application Web ASP.NET. Ensuite, vous allez démarrer le service de données à partir de Visual Studio et accéder au flux OData en soumettant des demandes HTTP d’extraction via un navigateur Web :
 
 > [!div class="nextstepaction"]
-> [Accéder au service à partir d’un navigateur web](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)
+> [Accéder au service à partir d’un navigateur Web](accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [ADO.NET Entity Data Model Tools](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [Outils de Entity Data Model ADO.NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))

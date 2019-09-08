@@ -5,12 +5,12 @@ ms.assetid: b27c779b-9355-4dc7-b95f-7dfd504b6e48
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 618abc8e681a6f43a1054d0ca2cec2fbdec853f5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1366e8f5f79a8e695e52c405e20a894861453ae7
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943564"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781771"
 ---
 # <a name="how-to-map-inheritance-hierarchies"></a>Procédure : Mapper des hiérarchies d’héritage
 Pour implémenter un mappage d'héritage dans [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)], vous devez spécifier les attributs et les propriétés d'attribut sur la classe racine de la hiérarchie d'héritage, comme décrit dans les étapes suivantes. Les développeurs qui utilisent Visual Studio peuvent utiliser le Concepteur Objet Relationnel pour mapper des hiérarchies d’héritage. Voir [Guide pratique pour configurer l’héritage à l’aide du Concepteur O/R](/visualstudio/data-tools/how-to-configure-inheritance-by-using-the-o-r-designer).  
@@ -40,7 +40,7 @@ Pour implémenter un mappage d'héritage dans [!INCLUDE[vbteclinq](../../../../.
   
      Cette propriété signifie qu'il s'agit de la colonne qui contient la valeur <xref:System.Data.Linq.Mapping.InheritanceMappingAttribute.Code%2A>.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 > [!NOTE]
 > Si vous utilisez Visual Studio, vous pouvez utiliser la Concepteur Objet Relationnel pour configurer l’héritage. Voir [Guide pratique pour configurer l’héritage à l’aide du Concepteur O/R](/visualstudio/data-tools/how-to-configure-inheritance-by-using-the-o-r-designer)  
@@ -52,5 +52,5 @@ Pour implémenter un mappage d'héritage dans [!INCLUDE[vbteclinq](../../../../.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Prise en charge de l’héritage](../../../../../../docs/framework/data/adonet/sql/linq/inheritance-support.md)
-- [Guide pratique pour Personnaliser des classes d’entité à l’aide de l’éditeur de code](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md)
+- [Prise en charge de l’héritage](inheritance-support.md)
+- [Guide pratique : Personnaliser des classes d’entité à l’aide de l’éditeur de code](how-to-customize-entity-classes-by-using-the-code-editor.md)

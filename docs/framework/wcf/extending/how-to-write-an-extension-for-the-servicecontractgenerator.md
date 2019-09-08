@@ -2,12 +2,12 @@
 title: 'Procédure : écrire une extension pour le ServiceContractGenerator'
 ms.date: 03/30/2017
 ms.assetid: 876ca823-bd16-4bdf-9e0f-02092df90e51
-ms.openlocfilehash: c9e10efccf0d51e6b78aace1296d227a78a9f91d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b13b881a221ae0aa757b04c206125716a55f5b8c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766998"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795525"
 ---
 # <a name="how-to-write-an-extension-for-the-servicecontractgenerator"></a>Procédure : écrire une extension pour le ServiceContractGenerator
 Cette rubrique décrit comment écrire une extension pour le <xref:System.ServiceModel.Description.ServiceContractGenerator>. Cela peut être fait en implémentant l'interface <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> sur un comportement d'opération ou en implémentant l'interface <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> sur un comportement de contrat. Cette rubrique indique comment implémenter l'interface <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> sur un comportement du contrat.  
@@ -100,5 +100,5 @@ Cette rubrique décrit comment écrire une extension pour le <xref:System.Servic
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Métadonnées](../../../../docs/framework/wcf/feature-details/metadata.md)
-- [Guide pratique pour Importer le fichier WSDL personnalisé](../../../../docs/framework/wcf/extending/how-to-import-custom-wsdl.md)
+- [Métadonnées](../feature-details/metadata.md)
+- [Guide pratique pour Importer un fichier WSDL personnalisé](how-to-import-custom-wsdl.md)

@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d6dc2792b572aae30e9989c81967b86f340d7b83
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: d72b0da43971a74a08a249b19dfc0d446eeb5e6a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69038261"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798542"
 ---
 # <a name="getpropertyhandle-function"></a>GetPropertyHandle, fonction
 
@@ -60,9 +60,9 @@ dans Chaîne se terminant par un caractère null de caractères encodés en UTF1
 
 ## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code:
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |`Value`  |Description  |
+|Constante  |Valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_NOT_FOUND` | 0x80041002 | Le nom de la propriété spécifiée est introuvable. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
@@ -71,7 +71,7 @@ Les valeurs suivantes retournées par cette fonction sont définies dans le fich
 
 ## <a name="remarks"></a>Notes
 
-Cette fonction encapsule un appel à la méthode [IWbemClassObject:: GetPropertyHandle](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemobjectaccess-getpropertyhandle) .
+Cette fonction encapsule un appel à la méthode [IWbemClassObject :: GetPropertyHandle](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemobjectaccess-getpropertyhandle) .
 
 Vous pouvez utiliser ce handle pour identifier les propriétés lors de l’utilisation de méthodes [IWbemObjectAccess](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectaccess) pour lire ou écrire des valeurs de propriété.
 
@@ -79,7 +79,7 @@ Les handles peuvent être récupérés pour les propriétés de tous `CIM_OBJECT
 
 ## <a name="requirements"></a>Configuration requise
 
-**Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
 **En-tête :** WMINet_Utils.idl
 

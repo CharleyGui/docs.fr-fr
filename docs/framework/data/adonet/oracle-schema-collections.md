@@ -2,12 +2,12 @@
 title: Collections de schémas Oracle
 ms.date: 03/30/2017
 ms.assetid: 89a75de8-dee8-45e2-a97f-254d7e62e7e1
-ms.openlocfilehash: 016a21b2106e955fd9806c5fb62833bc37da1f2f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cb91a90ae7323283556954caa401646a2063a37e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61878473"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783294"
 ---
 # <a name="oracle-schema-collections"></a>Collections de schémas Oracle
 
@@ -51,32 +51,32 @@ Le fournisseur de données Microsoft .NET Framework pour Oracle prend en charge 
 
 ## <a name="columns"></a>Colonnes
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|OWNER|Chaîne|Propriétaire de la table, de la vue ou du cluster.|
-|TABLE_NAME|Chaîne|Nom de table, de vue ou de cluster.|
-|COLUMN_NAME|Chaîne|Nom de la colonne.|
-|Id|Decimal|Numéro de séquence de la colonne lors de sa création.|
-|DATATYPE|Chaîne|Type de données de la colonne.|
+|OWNER|String|Propriétaire de la table, de la vue ou du cluster.|
+|TABLE_NAME|String|Nom de table, de vue ou de cluster.|
+|COLUMN_NAME|String|Nom de la colonne.|
+|ID|Decimal|Numéro de séquence de la colonne lors de sa création.|
+|DATATYPE|String|Type de données de la colonne.|
 |LENGTH|Decimal|Longueur de la colonne en octets.|
 |PRECISION|Decimal|Précision décimale du type de données NUMBER ; précision binaire du type de données FLOAT, null pour tous les autres types de données.|
 |SCALE|Decimal|Chiffres à droite de la virgule décimale dans un nombre.|
-|NULLABLE|Chaîne|Indique si une colonne accepte les valeurs NULL. La valeur est N s'il y a une contrainte NOT NULL sur la colonne ou si la colonne fait partie d'une PRIMARY KEY.|
+|NULLABLE|String|Indique si une colonne accepte les valeurs NULL. La valeur est N s'il y a une contrainte NOT NULL sur la colonne ou si la colonne fait partie d'une PRIMARY KEY.|
 
 ## <a name="indexes"></a>Index
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|OWNER|Chaîne|Propriétaire de l'index.|
-|INDEX_NAME|Chaîne|Nom de l'index.|
-|INDEX_TYPE|Chaîne|Type d'index (NORMAL, BITMAP, FUNCTION-BASED NORMAL, FUNCTION-BASED BITMAP ou DOMAIN).|
-|TABLE_OWNER|Chaîne|Propriétaire de l'objet indexé.|
-|TABLE_NAME|Chaîne|Nom de l'objet indexé.|
-|TABLE_TYPE|Chaîne|Type de l'objet indexé (par exemple, TABLE, CLUSTER).|
-|UNIQUENESS|Chaîne|Indique si l'index est UNIQUE ou NONUNIQUE.|
-|COMPRESSION|Chaîne|Indique si l'index est activé (ENABLED) ou désactivé (DISABLED).|
+|OWNER|String|Propriétaire de l'index.|
+|INDEX_NAME|String|Nom de l'index.|
+|INDEX_TYPE|String|Type d'index (NORMAL, BITMAP, FUNCTION-BASED NORMAL, FUNCTION-BASED BITMAP ou DOMAIN).|
+|TABLE_OWNER|String|Propriétaire de l'objet indexé.|
+|TABLE_NAME|String|Nom de l'objet indexé.|
+|TABLE_TYPE|String|Type de l'objet indexé (par exemple, TABLE, CLUSTER).|
+|UNIQUENESS|String|Indique si l'index est UNIQUE ou NONUNIQUE.|
+|COMPRESSION|String|Indique si l'index est activé (ENABLED) ou désactivé (DISABLED).|
 |PREFIX_LENGTH|Decimal|Nombre de colonnes dans le préfixe de la clé de compression.|
-|TABLESPACE_NAME|Chaîne|Nom de l'espace de table contenant l'index.|
+|TABLESPACE_NAME|String|Nom de l'espace de table contenant l'index.|
 |INI_TRANS|Decimal|Nombre initial de transactions.|
 |MAX_TRANS|Decimal|Nombre maximal de transactions.|
 |INITIAL_EXTENT|Decimal|Taille de l'extension initiale.|
@@ -89,297 +89,297 @@ Le fournisseur de données Microsoft .NET Framework pour Oracle prend en charge 
 |FREELISTS|Decimal|Nombre de listes libres de processus allouées à ce segment.|
 |FREELIST_GROUPS|Decimal|Nombre de groupes de liste libre alloués à ce segment.|
 |PCT_FREE|Decimal|Pourcentage minimal d'espace libre dans un bloc.|
-|LOGGING|Chaîne|Informations de connexion.|
+|LOGGING|String|Informations de connexion.|
 |BLEVEL|Decimal|B*-Niveau de l'arborescence : profondeur de l'index à partir de son bloc racine jusqu'à ses blocs feuille. Une profondeur 0 indique que le bloc racine et le bloc feuille sont identiques.|
-|LEAF_BLOCKS|Decimal|Nombre de blocs feuille dans l'index |
+|LEAF_BLOCKS|Decimal|Nombre de blocs feuille dans l'index|
 |DISTINCT_KEYS|Decimal|Nombre de valeurs indexées distinctes. Pour les index qui appliquent des contraintes UNIQUE et PRIMARY KEY, cette valeur est égale au nombre de lignes de la table (USER_TABLES.NUM_ROWS).|
-|AVG_LEAF_BLOCKS_PER_KEY|Decimal|Nombre moyen de blocs feuille dans lesquels chaque valeur distincte de l'index apparaît arrondie au nombre entier le plus proche. Pour les index qui appliquent des contraintes UNIQUE et PRIMARY KEY, cette valeur est toujours 1. |
+|AVG_LEAF_BLOCKS_PER_KEY|Decimal|Nombre moyen de blocs feuille dans lesquels chaque valeur distincte de l'index apparaît arrondie au nombre entier le plus proche. Pour les index qui appliquent des contraintes UNIQUE et PRIMARY KEY, cette valeur est toujours 1.|
 |AVG_LEAF_BLOCKS_PER_KEY|Decimal|Nombre moyen de blocs de données de la table sur lesquels pointe une valeur distincte de l'index, arrondie au nombre entier le plus proche. Cette statistique est le nombre moyen de blocs de données qui contiennent des lignes contenant une valeur données pour les colonnes indexées.|
 |CLUSTERING_FACTOR|Decimal|Indique la quantité de commande des lignes de la table en se basant sur les valeurs de l'index.|
-|STATUT|Chaîne|Indique si un index non partitionné est valide (VALID) ou inutilisable (UNUSABLE).|
+|STATUT|String|Indique si un index non partitionné est valide (VALID) ou inutilisable (UNUSABLE).|
 |NUM_ROWS|Decimal|Nombre de lignes de l'index.|
 |SAMPLE_SIZE|Decimal|Taille de l'exemple utilisé pour analyser l'index.|
 |LAST_ANALYZED|DateTime|Date à laquelle cet index a été analysé pour la dernière fois.|
-|DEGREE|Chaîne|Nombre de threads par instance pour l'analyse de l'index.|
-|INSTANCES|Chaîne|Nombre d'instances via lesquelles les index doivent être analysés.|
-|PARTITIONED|Chaîne|Indique si cet index est partitionné (YES &#124; non).|
-|TEMPORARY|Chaîne|Indique si l'index figure dans une table temporaire.|
-|GENERATED|Chaîne|Si le nom de l’index est générée par le système (Y&#124;N).|
-|SECONDARY|Chaîne|Indique si l’index est un objet secondaire créé par la méthode ODCIIndexCreate de la cartouche de données Oracle9i (Y&#124;N).|
-|BUFFER_POOL|Chaîne|Nom du pool de tampons par défaut à utiliser pour les blocs d'index.|
-|USER_STATS|Chaîne|Indique si les statistiques ont été entrées directement par l'utilisateur.|
-|DURATION|Chaîne|Indique la durée d'une table temporaire : (1) SYS$ SESSION : les lignes sont conservées pendant la durée de la session, 2) SYS$ TRANSACTION : les lignes sont supprimées après COMMIT, 3) Null pour Table permanente.|
-|PCT_DIRECT_ACCESS|Decimal|Pour un index secondaire sur une table indexée, pourcentage de lignes avec une prédiction VALID |
-|ITYP_OWNER|Chaîne|Pour un index de domaine, propriétaire du type d'index.|
-|ITYP_NAME|Chaîne|Pour un index de domaine, nom du type d'index.|
-|PARAMETERS|Chaîne|Pour un index de domaine, chaîne de paramètres.|
-|GLOBAL_STATS|Chaîne|Pour des index partitionnés, indique si les statistiques ont été collectées en analysant l'index dans son ensemble (YES) ou ont été estimées sur la base de statistiques relatives aux partitions et sous-partitions d'index sous-jacentes (NO).|
-|DOMIDX_STATUS|Chaîne|Indique l'état de l'index de domaine. NULL : l'index spécifié n'est pas un index de domaine. VALID : l'index est un index de domaine valide. IDXTYP_INVLD : le type d'index de cet index de domaine n'est pas valide.|
-|DOMIDX_OPSTATUS|Chaîne|Indique l'état d'une opération effectuée sur un index de domaine : NULL : l'index spécifié n'est pas un index de domaine. VALID : l'opération a été effectuée sans erreur. FAILED : l'opération a échoué en générant une erreur.|
-|FUNCIDX_STATUS|Chaîne|Indique l'état d'un index basé sur une fonction : NULL : Ceci n’est pas une fonction d’index, activé : l’index basé sur une fonction est activé, désactivé : l’index basé sur une fonction est désactivée.|
-|JOIN_INDEX|Chaîne|Indique s'il s'agit ou non d'un index de jointure.|
+|DEGREE|String|Nombre de threads par instance pour l'analyse de l'index.|
+|INSTANCES|String|Nombre d'instances via lesquelles les index doivent être analysés.|
+|PARTITIONED|String|Indique si cet index est partitionné (oui &#124; non).|
+|TEMPORARY|String|Indique si l'index figure dans une table temporaire.|
+|GENERATED|String|Indique si le nom de l’index est généré par le&#124;système (Y N).|
+|SECONDARY|String|Indique si l’index est un objet secondaire créé par la méthode ODCIIndexCreate de la cartouche de données Oracle9i&#124;(Y N).|
+|BUFFER_POOL|String|Nom du pool de tampons par défaut à utiliser pour les blocs d'index.|
+|USER_STATS|String|Indique si les statistiques ont été entrées directement par l'utilisateur.|
+|DURATION|String|Indique la durée d'une table temporaire : 1) SYS $ SESSION : les lignes sont conservées pendant la durée de la session, 2) SYS $ TRANSACTION : les lignes sont supprimées après validation, 3) null pour la table permanente.|
+|PCT_DIRECT_ACCESS|Decimal|Pour un index secondaire sur une table indexée, pourcentage de lignes avec une prédiction VALID|
+|ITYP_OWNER|String|Pour un index de domaine, propriétaire du type d'index.|
+|ITYP_NAME|String|Pour un index de domaine, nom du type d'index.|
+|PARAMETERS|String|Pour un index de domaine, chaîne de paramètres.|
+|GLOBAL_STATS|String|Pour des index partitionnés, indique si les statistiques ont été collectées en analysant l'index dans son ensemble (YES) ou ont été estimées sur la base de statistiques relatives aux partitions et sous-partitions d'index sous-jacentes (NO).|
+|DOMIDX_STATUS|String|Indique l'état de l'index de domaine. NULL : l'index spécifié n'est pas un index de domaine. VALID : l'index est un index de domaine valide. IDXTYP_INVLD : le type d'index de cet index de domaine n'est pas valide.|
+|DOMIDX_OPSTATUS|String|Indique l'état d'une opération effectuée sur un index de domaine : NULL : l'index spécifié n'est pas un index de domaine. VALID : l'opération a été effectuée sans erreur. FAILED : l'opération a échoué en générant une erreur.|
+|FUNCIDX_STATUS|String|Indique l'état d'un index basé sur une fonction : NULL : il ne s’agit pas d’un index basé sur une fonction, activé : l’index basé sur une fonction est activé, désactivé : l’index basé sur une fonction est désactivé.|
+|JOIN_INDEX|String|Indique s'il s'agit ou non d'un index de jointure.|
 
 ## <a name="indexcolumns"></a>IndexColumns
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|INDEX_OWNER|Chaîne|Propriétaire de l'index.|
-|INDEX_NAME|Chaîne|Nom de l'index.|
-|TABLE_OWNER|Chaîne|Propriétaire de la table ou du cluster.|
-|TABLE_NAME|Chaîne|Nom de la table ou du cluster.|
-|COLUMN_NAME|Chaîne|Nom ou attribut de colonne d'une colonne de type objet.|
+|INDEX_OWNER|String|Propriétaire de l'index.|
+|INDEX_NAME|String|Nom de l'index.|
+|TABLE_OWNER|String|Propriétaire de la table ou du cluster.|
+|TABLE_NAME|String|Nom de la table ou du cluster.|
+|COLUMN_NAME|String|Nom ou attribut de colonne d'une colonne de type objet.|
 |COLUMN_POSITION|Decimal|Position de colonne ou d'attribut dans l'index.|
 |COLUMN_LENGTH|Decimal|Longueur indexée de la colonne.|
 |CHAR_LENGTH|Decimal|Longueur maximale de points de code de la colonne.|
-|DESCEND|Chaîne|Indique si la colonne est triée en ordre décroissant.|
+|DESCEND|String|Indique si la colonne est triée en ordre décroissant.|
 
 ## <a name="procedures"></a>Procédures
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|OWNER|Chaîne|Propriétaire de l'objet.|
-|OBJECT_NAME|Chaîne|Nom de l'objet.|
-|SUBOBJECT_NAME|Chaîne|Nom du sous-objet (par exemple, partition).|
+|OWNER|String|Propriétaire de l'objet.|
+|OBJECT_NAME|String|Nom de l'objet.|
+|SUBOBJECT_NAME|String|Nom du sous-objet (par exemple, partition).|
 |OBJECT_ID|Decimal|Numéro d'objet de dictionnaire de l'objet.|
 |DATA_OBJECT_ID|Decimal|Numéro d'objet de dictionnaire du segment contenant l'objet.|
 |LAST_DDL_TIME|DateTime|Horodateur de la dernière modification de l'objet résultant d'une commande DDL (par exemple, d'octroi ou de révocation).|
-|TIMESTAMP|Chaîne|Horodateur de la spécification de l'objet (données de type caractère).|
-|STATUT|Chaîne|État de l'objet (VALID, INVALID ou N/A).|
-|TEMPORARY|Chaîne|Indique si l'objet est temporaire (la session actuelle ne peut voir que les données placées dans cet objet proprement dit).|
-|GENERATED|Chaîne|Le nom de cet objet a-t-il été généré par le système ? (Y &AMP;#124; N).|
-|SECONDARY|Chaîne|S’il s’agit d’un objet secondaire créé par la méthode ODCIIndexCreate de la cartouche de données Oracle9i (Y &#124; N).|
+|TIMESTAMP|String|Horodateur de la spécification de l'objet (données de type caractère).|
+|STATUT|String|État de l'objet (VALID, INVALID ou N/A).|
+|TEMPORARY|String|Indique si l'objet est temporaire (la session actuelle ne peut voir que les données placées dans cet objet proprement dit).|
+|GENERATED|String|Le nom de cet objet a-t-il été généré par le système ? (Y &#124; N).|
+|SECONDARY|String|Indique s’il s’agit d’un objet secondaire créé par la méthode ODCIIndexCreate de la cartouche de &#124; données Oracle9i (Y N).|
 |CREATED|DateTime|Date à laquelle l'objet a été créé.|
 
 ## <a name="sequences"></a>Séquences
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|SEQUENCE_OWNER|Chaîne|Nom du propriétaire de la séquence.|
-|SEQUENCE_NAME|Chaîne|Nom de la séquence.|
+|SEQUENCE_OWNER|String|Nom du propriétaire de la séquence.|
+|SEQUENCE_NAME|String|Nom de la séquence.|
 |MIN_VALUE|Decimal|Valeur minimale de la séquence.|
 |MAX_VALUE|Decimal|Valeur maximale de la séquence.|
 |INCREMENT_BY|Decimal|Valeur d'incrémentation de la séquence.|
-|CYCLE_FLAG|Chaîne|Indique si la séquence reprend au début lorsqu'elle atteint la limite.|
-|ORDER_FLAG|Chaîne|Indique si les numéros de séquence sont générés dans l'ordre.|
+|CYCLE_FLAG|String|Indique si la séquence reprend au début lorsqu'elle atteint la limite.|
+|ORDER_FLAG|String|Indique si les numéros de séquence sont générés dans l'ordre.|
 |CACHE_SIZE|Decimal|Nombre de numéros de séquence à mettre en cache.|
 |LAST_NUMBER|Decimal|Dernier numéro de séquence écrit sur le disque. Si une séquence utilise une mise en cache, le numéro écrit sur le disque est le dernier numéro placé dans la cache de la séquence. Ce numéro est probablement supérieur au dernier numéro de séquence utilisé.|
 
 ## <a name="synonyms"></a>Synonymes
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|OWNER|Chaîne|Propriétaire du synonyme.|
-|SYNONYM_NAME|Chaîne|Nom du synonyme.|
-|TABLE_OWNER|Chaîne|Propriétaire de l'objet référencé par le synonyme.|
-|TABLE_NAME|Chaîne|Nom de l'objet référencé par le synonyme.|
-|DB_LINK|Chaîne|Nom du lien de base de données éventuellement référencé.|
+|OWNER|String|Propriétaire du synonyme.|
+|SYNONYM_NAME|String|Nom du synonyme.|
+|TABLE_OWNER|String|Propriétaire de l'objet référencé par le synonyme.|
+|TABLE_NAME|String|Nom de l'objet référencé par le synonyme.|
+|DB_LINK|String|Nom du lien de base de données éventuellement référencé.|
 
 ## <a name="tables"></a>Tables
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|OWNER|Chaîne|Propriétaire de la table.|
-|TABLE_NAME|Chaîne|Nom de la table.|
-|TYPE|Chaîne|Type de table.|
+|OWNER|String|Propriétaire de la table.|
+|TABLE_NAME|String|Nom de la table.|
+|TYPE|String|Type de table.|
 
 ## <a name="users"></a>Utilisateurs
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|NAME|Chaîne|Nom de l'utilisateur.|
-|Id|Decimal|Numéro d'ID de l'utilisateur.|
+|NAME|String|Nom de l'utilisateur.|
+|ID|Decimal|Numéro d'ID de l'utilisateur.|
 |CREATEDATE|DateTime|Date de création de l'utilisateur.|
 
 ## <a name="views"></a>Affichages
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|OWNER|Chaîne|Propriétaire de la vue.|
-|VIEW_NAME|Chaîne|Nom de la vue.|
+|OWNER|String|Propriétaire de la vue.|
+|VIEW_NAME|String|Nom de la vue.|
 |TEXT_LENGTH|Decimal|Longueur du texte de la vue.|
-|TEXT|Chaîne|Texte de la vue.|
+|TEXT|String|Texte de la vue.|
 |TYPE_TEXT_LENGTH|Decimal|Longueur de la clause type de la vue typée.|
-|TYPE_TEXT|Chaîne|Clause type de la vue typée.|
+|TYPE_TEXT|String|Clause type de la vue typée.|
 |OID_TEXT_LENGTH|Decimal|Longueur de la clause WITH OID de la vue typée.|
-|OID_TEXT|Chaîne|Clause WITH OID de la vue typée.|
-|VIEW_TYPE_OWNER|Chaîne|Propriétaire du type de la vue s'il s'agit d'une vue typée.|
-|VIEW_TYPE|Chaîne|Type de la vue s'il s'agit d'une vue typée.|
-|SUPERVIEW_NAME|Chaîne|Nom de la super-vue.|
+|OID_TEXT|String|Clause WITH OID de la vue typée.|
+|VIEW_TYPE_OWNER|String|Propriétaire du type de la vue s'il s'agit d'une vue typée.|
+|VIEW_TYPE|String|Type de la vue s'il s'agit d'une vue typée.|
+|SUPERVIEW_NAME|String|Nom de la super-vue.|
 
 ## <a name="functions"></a>Fonctions
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|OWNER|Chaîne|Propriétaire de l'objet.|
-|OBJECT_NAME|Chaîne|Nom de l'objet.|
-|SUBOBJECT_NAME|Chaîne|Nom du sous-objet (par exemple, partition).|
+|OWNER|String|Propriétaire de l'objet.|
+|OBJECT_NAME|String|Nom de l'objet.|
+|SUBOBJECT_NAME|String|Nom du sous-objet (par exemple, partition).|
 |OBJECT_ID|Decimal|Numéro d'objet de dictionnaire de l'objet.|
 |DATA_OBJECT_ID|Decimal|Numéro d'objet de dictionnaire du segment contenant l'objet.|
-|OBJECT_TYPE|Chaîne|Type de l'objet.|
+|OBJECT_TYPE|String|Type de l'objet.|
 |CREATED|DateTime|Date à laquelle l'objet a été créé.|
 |LAST_DDL_TIME|DateTime|Horodateur de la dernière modification de l'objet résultant d'une commande DDL (par exemple, d'octroi ou de révocation).|
-|TIMESTAMP|Chaîne|Horodateur de la spécification de l'objet (données de type caractère).|
-|STATUT|Chaîne|État de l'objet (VALID, INVALID ou N/A).|
-|TEMPORARY|Chaîne|Indique si l'objet est temporaire (la session actuelle ne peut voir que les données placées dans cet objet proprement dit).|
-|GENERATED|Chaîne|Le nom de cet objet a-t-il été généré par le système ? (Y &AMP;#124; N).|
-|SECONDARY|Chaîne|S’il s’agit d’un objet secondaire créé par la méthode ODCIIndexCreate de la cartouche de données Oracle9i (Y &#124; N).|
+|TIMESTAMP|String|Horodateur de la spécification de l'objet (données de type caractère).|
+|STATUT|String|État de l'objet (VALID, INVALID ou N/A).|
+|TEMPORARY|String|Indique si l'objet est temporaire (la session actuelle ne peut voir que les données placées dans cet objet proprement dit).|
+|GENERATED|String|Le nom de cet objet a-t-il été généré par le système ? (Y &#124; N).|
+|SECONDARY|String|Indique s’il s’agit d’un objet secondaire créé par la méthode ODCIIndexCreate de la cartouche de &#124; données Oracle9i (Y N).|
 
 ## <a name="packages"></a>Packages
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|OWNER|Chaîne|Propriétaire de l'objet.|
-|OBJECT_NAME|Chaîne|Nom de l'objet.|
-|SUBOBJECT_NAME|Chaîne|Nom du sous-objet (par exemple, partition).|
+|OWNER|String|Propriétaire de l'objet.|
+|OBJECT_NAME|String|Nom de l'objet.|
+|SUBOBJECT_NAME|String|Nom du sous-objet (par exemple, partition).|
 |OBJECT_ID|Decimal|Numéro d'objet de dictionnaire de l'objet.|
 |DATA_OBJECT_ID|Decimal|Numéro d'objet de dictionnaire du segment contenant l'objet.|
 |LAST_DDL_TIME|DateTime|Horodateur de la dernière modification de l'objet résultant d'une commande DDL (par exemple, d'octroi ou de révocation).|
-|TIMESTAMP|Chaîne|Horodateur de la spécification de l'objet (données de type caractère).|
-|STATUT|Chaîne|État de l'objet (VALID, INVALID ou N/A).|
-|TEMPORARY|Chaîne|Indique si l'objet est temporaire (la session actuelle ne peut voir que les données placées dans cet objet proprement dit).|
-|GENERATED|Chaîne|Le nom de cet objet a-t-il été généré par le système ? (Y &AMP;#124; N).|
-|SECONDARY|Chaîne|S’il s’agit d’un objet secondaire créé par la méthode ODCIIndexCreate de la cartouche de données Oracle9i (Y &#124; N).|
+|TIMESTAMP|String|Horodateur de la spécification de l'objet (données de type caractère).|
+|STATUT|String|État de l'objet (VALID, INVALID ou N/A).|
+|TEMPORARY|String|Indique si l'objet est temporaire (la session actuelle ne peut voir que les données placées dans cet objet proprement dit).|
+|GENERATED|String|Le nom de cet objet a-t-il été généré par le système ? (Y &#124; N).|
+|SECONDARY|String|Indique s’il s’agit d’un objet secondaire créé par la méthode ODCIIndexCreate de la cartouche de &#124; données Oracle9i (Y N).|
 |CREATED|DateTime|Date à laquelle l'objet a été créé.|
 
 ## <a name="packagebodies"></a>PackageBodies
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|OWNER|Chaîne|Propriétaire de l'objet.|
-|OBJECT_NAME|Chaîne|Nom de l'objet.|
-|SUBOBJECT_NAME|Chaîne|Nom du sous-objet (par exemple, partition).|
+|OWNER|String|Propriétaire de l'objet.|
+|OBJECT_NAME|String|Nom de l'objet.|
+|SUBOBJECT_NAME|String|Nom du sous-objet (par exemple, partition).|
 |OBJECT_ID|Decimal|Numéro d'objet de dictionnaire de l'objet.|
 |DATA_OBJECT_ID|Decimal|Numéro d'objet de dictionnaire du segment contenant l'objet.|
 |LAST_DDL_TIME|DateTime|Horodateur de la dernière modification de l'objet résultant d'une commande DDL (par exemple, d'octroi ou de révocation).|
-|TIMESTAMP|Chaîne|Horodateur de la spécification de l'objet (données de type caractère).|
-|STATUT|Chaîne|État de l'objet (VALID, INVALID ou N/A).|
-|TEMPORARY|Chaîne|Indique si l'objet est temporaire (la session actuelle ne peut voir que les données placées dans cet objet proprement dit).|
-|GENERATED|Chaîne|Le nom de cet objet a-t-il été généré par le système ? (Y &AMP;#124; N).|
-|SECONDARY|Chaîne|S’il s’agit d’un objet secondaire créé par la méthode ODCIIndexCreate de la cartouche de données Oracle9i (Y &#124; N).|
+|TIMESTAMP|String|Horodateur de la spécification de l'objet (données de type caractère).|
+|STATUT|String|État de l'objet (VALID, INVALID ou N/A).|
+|TEMPORARY|String|Indique si l'objet est temporaire (la session actuelle ne peut voir que les données placées dans cet objet proprement dit).|
+|GENERATED|String|Le nom de cet objet a-t-il été généré par le système ? (Y &#124; N).|
+|SECONDARY|String|Indique s’il s’agit d’un objet secondaire créé par la méthode ODCIIndexCreate de la cartouche de &#124; données Oracle9i (Y N).|
 |CREATED|DateTime|Date à laquelle l'objet a été créé.|
 
 ## <a name="arguments"></a>Arguments
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|OWNER|Chaîne|Nom du propriétaire de l'objet.|
-|PACKAGE_NAME|Chaîne|Nom du package.|
-|OBJECT_NAME|Chaîne|Nom de la procédure ou de la fonction.|
-|ARGUMENT_NAME|Chaîne|Nom de l’argument.|
+|OWNER|String|Nom du propriétaire de l'objet.|
+|PACKAGE_NAME|String|Nom du package.|
+|OBJECT_NAME|String|Nom de la procédure ou de la fonction.|
+|ARGUMENT_NAME|String|Nom de l’argument.|
 |POSITION|Decimal|Position dans la liste d’arguments ou NULL pour une valeur de retour de fonction.|
 |SEQUENCE|Decimal|Séquence d'arguments, y compris tous les niveaux d'imbrication.|
-|DEFAULT_VALUE|Chaîne|Valeur par défaut de l'argument.|
+|DEFAULT_VALUE|String|Valeur par défaut de l'argument.|
 |DEFAULT_LENGTH|Decimal|Longueur de la valeur par défaut de l’argument.|
-|IN_OUT|Chaîne|Direction de l’argument (IN, OUT ou IN/OUT).|
+|IN_OUT|String|Direction de l’argument (IN, OUT ou IN/OUT).|
 |DATA_LENGTH|Decimal|Longueur de la colonne en octets.|
 |DATA_PRECISION|Decimal|Longueur en chiffres décimaux (NUMBER) ou en chiffres binaires (FLOAT).|
 |DATA_SCALE|Decimal|Chiffres à droite de la virgule décimale dans un nombre.|
-|DATA_TYPE|Chaîne|Type de données de l'argument.|
+|DATA_TYPE|String|Type de données de l'argument.|
 
 ## <a name="uniquekeys"></a>UniqueKeys
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|OWNER|Chaîne|Propriétaire de la définition de contrainte.|
-|CONSTRAINT_NAME|Chaîne|Nom de la définition de contrainte.|
-|TABLE_NAME|Chaîne|Nom associé à la table (ou la vue) avec une définition de contrainte.|
-|SEARCH_CONDITION|Chaîne|Texte de la condition de recherche d'une contrainte de validation.|
-|R_OWNER|Chaîne|Propriétaire de la table à laquelle fait référence une contrainte référentielle.|
-|R_CONSTRAINT_NAME|Chaîne|Nom de la définition de contrainte unique pour une table référencée.|
-|DELETE_RULE|Chaîne|Règle de suppression pour une contrainte référentielle (CASCADE ou NO ACTION).|
-|STATUT|Chaîne|État d'application d'une contrainte (ENABLED ou DISABLED).|
-|DEFERRABLE|Chaîne|Indique si la contrainte peut être différée.|
-|VALIDATED|Chaîne|Indique si toutes les données obéissent à la contrainte (VALIDATED ou NOT VALIDATED).|
-|GENERATED|Chaîne|Indique si le nom de la contrainte est généré par l'utilisateur ou le système.|
-|BAD|Chaîne|La valeur YES indique que cette contrainte spécifie un siècle de façon ambiguë. Pour éviter les erreurs résultant de cette ambiguïté, réécrivez la contrainte à l'aide de la fonction TO_DATE avec une année à quatre chiffres.|
-|RELY|Chaîne|Indique si une contrainte activée est appliquée ou non appliquée.|
-|LAST_CHANGE|DateTime|Indique quand la contrainte a été activée ou désactivée pour la dernière fois. |
-|INDEX_OWNER|Chaîne|Nom de l'utilisateur propriétaire de l'index.|
-|INDEX_NAME|Chaîne|Nom de l'index.|
+|OWNER|String|Propriétaire de la définition de contrainte.|
+|CONSTRAINT_NAME|String|Nom de la définition de contrainte.|
+|TABLE_NAME|String|Nom associé à la table (ou la vue) avec une définition de contrainte.|
+|SEARCH_CONDITION|String|Texte de la condition de recherche d'une contrainte de validation.|
+|R_OWNER|String|Propriétaire de la table à laquelle fait référence une contrainte référentielle.|
+|R_CONSTRAINT_NAME|String|Nom de la définition de contrainte unique pour une table référencée.|
+|DELETE_RULE|String|Règle de suppression pour une contrainte référentielle (CASCADE ou NO ACTION).|
+|STATUT|String|État d'application d'une contrainte (ENABLED ou DISABLED).|
+|DEFERRABLE|String|Indique si la contrainte peut être différée.|
+|VALIDATED|String|Indique si toutes les données obéissent à la contrainte (VALIDATED ou NOT VALIDATED).|
+|GENERATED|String|Indique si le nom de la contrainte est généré par l'utilisateur ou le système.|
+|BAD|String|La valeur YES indique que cette contrainte spécifie un siècle de façon ambiguë. Pour éviter les erreurs résultant de cette ambiguïté, réécrivez la contrainte à l'aide de la fonction TO_DATE avec une année à quatre chiffres.|
+|RELY|String|Indique si une contrainte activée est appliquée ou non appliquée.|
+|LAST_CHANGE|DateTime|Indique quand la contrainte a été activée ou désactivée pour la dernière fois.|
+|INDEX_OWNER|String|Nom de l'utilisateur propriétaire de l'index.|
+|INDEX_NAME|String|Nom de l'index.|
 
 ## <a name="primarykeys"></a>PrimaryKeys
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|OWNER|Chaîne|Propriétaire de la définition de contrainte.|
-|CONSTRAINT_NAME|Chaîne|Nom de la définition de contrainte.|
-|TABLE_NAME|Chaîne|Nom associé à la table (ou la vue) avec une définition de contrainte.|
-|SEARCH_CONDITION|Chaîne|Texte de la condition de recherche d'une contrainte de validation.|
-|R_OWNER|Chaîne|Propriétaire de la table à laquelle fait référence une contrainte référentielle.|
-|R_CONSTRAINT_NAME|Chaîne|Nom de la définition de contrainte unique pour une table référencée.|
-|DELETE_RULE|Chaîne|Règle de suppression pour une contrainte référentielle (CASCADE ou NO ACTION).|
-|STATUT|Chaîne|État d'application d'une contrainte (ENABLED ou DISABLED).|
-|DEFERRABLE|Chaîne|Indique si la contrainte peut être différée.|
-|VALIDATED|Chaîne|Indique si toutes les données obéissent à la contrainte (VALIDATED ou NOT VALIDATED).|
-|GENERATED|Chaîne|Indique si le nom de la contrainte est généré par l'utilisateur ou le système.|
-|BAD|Chaîne|La valeur YES indique que cette contrainte spécifie un siècle de façon ambiguë. Pour éviter les erreurs résultant de cette ambiguïté, réécrivez la contrainte à l'aide de la fonction TO_DATE avec une année à quatre chiffres.|
-|RELY|Chaîne|Indique si une contrainte activée est appliquée ou non appliquée.|
-|LAST_CHANGE|DateTime|Indique quand la contrainte a été activée ou désactivée pour la dernière fois. |
-|INDEX_OWNER|Chaîne|Nom de l'utilisateur propriétaire de l'index.|
-|INDEX_NAME|Chaîne|Nom de l'index.|
+|OWNER|String|Propriétaire de la définition de contrainte.|
+|CONSTRAINT_NAME|String|Nom de la définition de contrainte.|
+|TABLE_NAME|String|Nom associé à la table (ou la vue) avec une définition de contrainte.|
+|SEARCH_CONDITION|String|Texte de la condition de recherche d'une contrainte de validation.|
+|R_OWNER|String|Propriétaire de la table à laquelle fait référence une contrainte référentielle.|
+|R_CONSTRAINT_NAME|String|Nom de la définition de contrainte unique pour une table référencée.|
+|DELETE_RULE|String|Règle de suppression pour une contrainte référentielle (CASCADE ou NO ACTION).|
+|STATUT|String|État d'application d'une contrainte (ENABLED ou DISABLED).|
+|DEFERRABLE|String|Indique si la contrainte peut être différée.|
+|VALIDATED|String|Indique si toutes les données obéissent à la contrainte (VALIDATED ou NOT VALIDATED).|
+|GENERATED|String|Indique si le nom de la contrainte est généré par l'utilisateur ou le système.|
+|BAD|String|La valeur YES indique que cette contrainte spécifie un siècle de façon ambiguë. Pour éviter les erreurs résultant de cette ambiguïté, réécrivez la contrainte à l'aide de la fonction TO_DATE avec une année à quatre chiffres.|
+|RELY|String|Indique si une contrainte activée est appliquée ou non appliquée.|
+|LAST_CHANGE|DateTime|Indique quand la contrainte a été activée ou désactivée pour la dernière fois.|
+|INDEX_OWNER|String|Nom de l'utilisateur propriétaire de l'index.|
+|INDEX_NAME|String|Nom de l'index.|
 
 ## <a name="foreignkeys"></a>ForeignKeys
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|PRIMARY_KEY_CONSTRAINT_NAME|Chaîne|Nom de la définition de contrainte.|
-|PRIMARY_KEY_OWNER|Chaîne|Propriétaire de la définition de contrainte.|
-|PRIMARY_KEY_TABLE_NAME|Chaîne|Nom associé à la table (ou la vue) avec une définition de contrainte.|
-|FOREIGN_KEY_OWNER|Chaîne|Propriétaire de la définition de contrainte.|
-|FOREIGN_KEY_CONSTRAINT_NAME|Chaîne|Nom de la définition de contrainte.|
-|FOREIGN_KEY_TABLE_NAME|Chaîne|Nom associé à la table (ou la vue) avec une définition de contrainte.|
-|SEARCH_CONDITION|Chaîne|Texte de la condition de recherche d'une contrainte de validation.|
-|R_OWNER|Chaîne|Propriétaire de la table à laquelle fait référence une contrainte référentielle.|
-|R_CONSTRAINT_NAME|Chaîne|Nom de la définition de contrainte unique pour une table référencée.|
-|DELETE_RULE|Chaîne|Règle de suppression pour une contrainte référentielle (CASCADE ou NO ACTION).|
-|STATUT|Chaîne|État d'application d'une contrainte (ENABLED ou DISABLED).|
-|VALIDATED|Chaîne|Indique si toutes les données obéissent à la contrainte (VALIDATED ou NOT VALIDATED).|
-|GENERATED|Chaîne|Indique si le nom de la contrainte est généré par l'utilisateur ou le système.|
-|RELY|Chaîne|Indique si une contrainte activée est appliquée ou non appliquée.|
-|LAST_CHANGE|DateTime|Indique quand la contrainte a été activée ou désactivée pour la dernière fois. |
-|INDEX_OWNER|Chaîne|Nom de l'utilisateur propriétaire de l'index.|
-|INDEX_NAME|Chaîne|Nom de l'index.|
+|PRIMARY_KEY_CONSTRAINT_NAME|String|Nom de la définition de contrainte.|
+|PRIMARY_KEY_OWNER|String|Propriétaire de la définition de contrainte.|
+|PRIMARY_KEY_TABLE_NAME|String|Nom associé à la table (ou la vue) avec une définition de contrainte.|
+|FOREIGN_KEY_OWNER|String|Propriétaire de la définition de contrainte.|
+|FOREIGN_KEY_CONSTRAINT_NAME|String|Nom de la définition de contrainte.|
+|FOREIGN_KEY_TABLE_NAME|String|Nom associé à la table (ou la vue) avec une définition de contrainte.|
+|SEARCH_CONDITION|String|Texte de la condition de recherche d'une contrainte de validation.|
+|R_OWNER|String|Propriétaire de la table à laquelle fait référence une contrainte référentielle.|
+|R_CONSTRAINT_NAME|String|Nom de la définition de contrainte unique pour une table référencée.|
+|DELETE_RULE|String|Règle de suppression pour une contrainte référentielle (CASCADE ou NO ACTION).|
+|STATUT|String|État d'application d'une contrainte (ENABLED ou DISABLED).|
+|VALIDATED|String|Indique si toutes les données obéissent à la contrainte (VALIDATED ou NOT VALIDATED).|
+|GENERATED|String|Indique si le nom de la contrainte est généré par l'utilisateur ou le système.|
+|RELY|String|Indique si une contrainte activée est appliquée ou non appliquée.|
+|LAST_CHANGE|DateTime|Indique quand la contrainte a été activée ou désactivée pour la dernière fois.|
+|INDEX_OWNER|String|Nom de l'utilisateur propriétaire de l'index.|
+|INDEX_NAME|String|Nom de l'index.|
 
 ## <a name="foreignkeycolumns"></a>ForeignKeyColumns
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|OWNER|Chaîne|Propriétaire de la définition de contrainte.|
-|CONSTRAINT_NAME|Chaîne|Nom de la définition de contrainte.|
-|TABLE_NAME|Chaîne|Nom de la table contenant la définition de contrainte.|
-|COLUMN_NAME|Chaîne|Nom de la colonne ou de l'attribut de la colonne de type d'objet spécifié dans la définition de contrainte.|
+|OWNER|String|Propriétaire de la définition de contrainte.|
+|CONSTRAINT_NAME|String|Nom de la définition de contrainte.|
+|TABLE_NAME|String|Nom de la table contenant la définition de contrainte.|
+|COLUMN_NAME|String|Nom de la colonne ou de l'attribut de la colonne de type d'objet spécifié dans la définition de contrainte.|
 |POSITION|Decimal|Position originale de la colonne ou de l'attribut dans la définition de l'objet.|
 
 ## <a name="procedureparameters"></a>ProcedureParameters
 
-|Nom de colonne|Type de données|Description|
+|ColumnName|Type de données|Description|
 |----------------|--------------|-----------------|
-|OWNER|Chaîne|Propriétaire de l'objet.|
-|OBJECT_NAME|Chaîne|Nom de la procédure ou de la fonction.|
-|PACKAGE_NAME|Chaîne|Nom de la procédure ou de la fonction.|
+|OWNER|String|Propriétaire de l'objet.|
+|OBJECT_NAME|String|Nom de la procédure ou de la fonction.|
+|PACKAGE_NAME|String|Nom de la procédure ou de la fonction.|
 |OBJECT_ID|Decimal|Numéro de l'objet.|
-|OVERLOAD|Chaîne|Identificateur unique de surcharge.|
-|ARGUMENT_NAME|Chaîne|Nom de l’argument.|
+|OVERLOAD|String|Identificateur unique de surcharge.|
+|ARGUMENT_NAME|String|Nom de l’argument.|
 |POSITION|Decimal|Position dans la liste d’arguments ou NULL pour une valeur de retour de fonction.|
 |SEQUENCE|Decimal|Séquence d'arguments, y compris tous les niveaux d'imbrication.|
 |DATA_LEVEL|Decimal|Profondeur d’imbrication de l’argument pour les types composites.|
-|DATA_TYPE|Chaîne|Type de données de l'argument.|
-|DEFAULT_VALUE|Chaîne|Valeur par défaut de l'argument.|
+|DATA_TYPE|String|Type de données de l'argument.|
+|DEFAULT_VALUE|String|Valeur par défaut de l'argument.|
 |DEFAULT_LENGTH|Decimal|Longueur de la valeur par défaut de l'argument.|
-|IN_OUT|Chaîne|Direction de l’argument (IN, OUT ou IN/OUT).|
+|IN_OUT|String|Direction de l’argument (IN, OUT ou IN/OUT).|
 |DATA_LENGTH|Decimal|Longueur de la colonne (en octets).|
 |DATA_PRECISION|Decimal|Longueur en chiffres décimaux (NUMBER) ou en chiffres binaires (FLOAT).|
 |DATA_SCALE|Decimal|Chiffres à droite de la virgule décimale dans un nombre.|
 |RADIX|Decimal|Radical d’argument pour un nombre.|
-|CHARACTER_SET_NAME|Chaîne|Nom de l’ensemble de caractères pour l’argument.|
-|TYPE_OWNER|Chaîne|Propriétaire du type de l’argument.|
-|TYPE_NAME|Chaîne|Nom du type de l'argument. Si le type est un type de package local (c'est-à-dire qu'il est déclaré dans une spécification de package), cette colonne affiche le nom du package.|
-|TYPE_SUBNAME|Chaîne|Pertinent uniquement pour les types de package locaux. Affiche le nom du type déclaré dans le package identifié dans la colonne TYPE_NAME.|
-|TYPE_LINK|Chaîne|Pertinent uniquement pour les types de package locaux lorsque le package identifié dans la colonne TYPE_NAME est un package distant. Cette colonne affiche le lien de base de données utilisé pour faire référence au package distant.|
-|PLS_TYPE|Chaîne|Pour les arguments numériques, nom du type PL/SQL de l’argument. Sinon, Null.|
+|CHARACTER_SET_NAME|String|Nom de l’ensemble de caractères pour l’argument.|
+|TYPE_OWNER|String|Propriétaire du type de l’argument.|
+|TYPE_NAME|String|Nom du type de l'argument. Si le type est un type de package local (c'est-à-dire qu'il est déclaré dans une spécification de package), cette colonne affiche le nom du package.|
+|TYPE_SUBNAME|String|Pertinent uniquement pour les types de package locaux. Affiche le nom du type déclaré dans le package identifié dans la colonne TYPE_NAME.|
+|TYPE_LINK|String|Pertinent uniquement pour les types de package locaux lorsque le package identifié dans la colonne TYPE_NAME est un package distant. Cette colonne affiche le lien de base de données utilisé pour faire référence au package distant.|
+|PLS_TYPE|String|Pour les arguments numériques, nom du type PL/SQL de l’argument. Sinon, Null.|
 |CHAR_LENGTH|Decimal|Limite de caractères pour les données de type string.|
-|CHAR_USED|Chaîne|Indique si la limite d'octets (B) ou la limite de caractères (C) est officielle pour la chaîne.|
+|CHAR_USED|String|Indique si la limite d'octets (B) ou la limite de caractères (C) est officielle pour la chaîne.|
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

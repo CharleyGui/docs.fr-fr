@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1d50c8b4-f550-4775-bbb6-eab6e874cb43
-ms.openlocfilehash: 5d812ae9b5fd0a796588d3366b8546ef84c982c3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bc490b579e841a0e9b3724fe0e8789cc9411683d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61877355"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782193"
 ---
 # <a name="group-elements-in-a-sequence"></a>Comment : regrouper des éléments dans une séquence
 L'opérateur <xref:System.Linq.Enumerable.GroupBy%2A> regroupe les éléments d'une séquence. Les exemples suivants utilisent la base de données Northwind.  
   
 > [!NOTE]
->  Les valeurs de colonne null dans les requêtes <xref:System.Linq.Enumerable.GroupBy%2A> peuvent parfois lever une exception <xref:System.InvalidOperationException>. Pour plus d’informations, consultez la section « GroupBy InvalidOperationException » de [dépannage](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md).  
+> Les valeurs de colonne null dans les requêtes <xref:System.Linq.Enumerable.GroupBy%2A> peuvent parfois lever une exception <xref:System.InvalidOperationException>. Pour plus d’informations, consultez la section « GroupBy InvalidOperationException » de la rubrique [Troubleshooting](troubleshooting.md).  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant partitionne `Products` par `CategoryID`.  
@@ -54,7 +54,7 @@ L'opérateur <xref:System.Linq.Enumerable.GroupBy%2A> regroupe les éléments d'
  [!code-csharp[DLinqQueryExamples#32](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#32)]
  [!code-vb[DLinqQueryExamples#32](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#32)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple suivant regroupe les produits par `CategoryID` et `SupplierID`.  
   
  [!code-csharp[DLinqQueryExamples#33](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#33)]
@@ -74,5 +74,5 @@ L'opérateur <xref:System.Linq.Enumerable.GroupBy%2A> regroupe les éléments d'
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de requêtes](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)
-- [Téléchargement d’exemples de base de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+- [Exemples de requêtes](query-examples.md)
+- [Téléchargement d’exemples de base de données](downloading-sample-databases.md)

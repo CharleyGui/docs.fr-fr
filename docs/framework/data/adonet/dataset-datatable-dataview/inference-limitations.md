@@ -2,12 +2,12 @@
 title: Limitations des inférences
 ms.date: 03/30/2017
 ms.assetid: 78517994-5d57-44f8-9d20-38812977de09
-ms.openlocfilehash: 4e0f63776162b60c9333ba47be58ea78a9b6805d
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 10347abc5b01edb4ec6fbf97221d44f4bfb88f54
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204831"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784583"
 ---
 # <a name="inference-limitations"></a>Limitations des inférences
 Le processus d'inférence d'un schéma de l'objet <xref:System.Data.DataSet> à partir de XML peut aboutir à des schémas différents en fonction des éléments XML figurant dans chaque document. Examinons, par exemple, les documents XML suivants.  
@@ -29,7 +29,7 @@ Le processus d'inférence d'un schéma de l'objet <xref:System.Data.DataSet> à 
 </DocumentElement>  
 ```  
   
- Pour «Document1», le processus d’inférence produit un **DataSet** nommé «DocumentElement» et une table nommée «Element1», car «Element1» est un élément répétitif.  
+ Pour « Document1 », le processus d’inférence produit un **DataSet** nommé « DocumentElement » et une table nommée « Element1 », car « Element1 » est un élément répétitif.  
   
  **Ensemble** DocumentElement  
   
@@ -40,7 +40,7 @@ Le processus d'inférence d'un schéma de l'objet <xref:System.Data.DataSet> à 
 |Text1|  
 |Text2|  
   
- Toutefois, pour «document2», le processus d’inférence produit un **jeu de données** nommé «NewDataSet» et une table nommée «documentElement». « Element1 » est déduit en tant que colonne car il n'a ni attribut, ni élément enfant.  
+ Toutefois, pour « document2 », le processus d’inférence produit un **jeu de données** nommé « NewDataSet » et une table nommée « documentElement ». « Element1 » est déduit en tant que colonne car il n'a ni attribut, ni élément enfant.  
   
  **Ensemble** NewDataSet  
   
@@ -61,4 +61,4 @@ Le processus d'inférence d'un schéma de l'objet <xref:System.Data.DataSet> à 
 - [Chargement des informations de schéma de DataSet à partir de XML](loading-dataset-schema-information-from-xml.md)
 - [Utilisation de XML dans un DataSet](using-xml-in-a-dataset.md)
 - [DataSets, DataTables et DataViews](index.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

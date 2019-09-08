@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 97afc121-fb8b-465b-bab3-6d844420badb
-ms.openlocfilehash: 561ebd7ac6948fa42f73ebb4f1eb97c574e6d7e7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f3add49d48a569664d4cbb6b5c26d5f3379b6f18
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963180"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794412"
 ---
 # <a name="retrieve-data-using-a-datareader"></a>Récupérer des données à l’aide d’un DataReader
 Pour récupérer des données à l’aide d’un **DataReader**, créez une instance de l’objet de **commande** , puis créez un **DataReader** en appelant **Command. ExecuteReader** pour récupérer des lignes d’une source de données. Le **DataReader** fournit un flux de données non mis en mémoire tampon qui permet à la logique procédurale de traiter efficacement les résultats d’une source de données de manière séquentielle. Le **DataReader** est un bon choix lorsque vous récupérez de grandes quantités de données, car les données ne sont pas mises en cache dans la mémoire.
@@ -57,7 +57,7 @@ Utilisez la méthode **DataReader. Read** pour obtenir une ligne à partir des r
 ## <a name="working-with-ole-db-chapters"></a>Utilisation des chapitres OLE DB  
  Les ensembles de lignes hiérarchiques ou chapitres (OLE DB type **DBTYPE_HCHAPTER**, type ADO **adChapter**), peuvent être récupérés à l’aide du <xref:System.Data.OleDb.OleDbDataReader>. Lorsqu’une requête qui comprend un chapitre est retournée en tant que **DataReader**, le chapitre est retourné en tant que colonne dans ce **DataReader** et est exposé en tant qu’objet **DataReader** .  
   
- Le **jeu de données** ADO.net peut également être utilisé pour représenter des ensembles de lignes hiérarchiques à l’aide de relations parent-enfant entre les tables. Pour plus d’informations, consultez [DataSets, DataTables et DataView](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md).  
+ Le **jeu de données** ADO.net peut également être utilisé pour représenter des ensembles de lignes hiérarchiques à l’aide de relations parent-enfant entre les tables. Pour plus d’informations, consultez [DataSets, DataTables et DataView](./dataset-datatable-dataview/index.md).  
   
  L'exemple de code suivant utilise le fournisseur MSDataShape pour générer une colonne chapitre de commandes pour chaque client d'une liste de clients.  
   
@@ -255,11 +255,11 @@ adapter.Fill(ds);
 ```
 
 > [!NOTE]
-> Pour éviter une **exception OverflowException**, nous vous recommandons de gérer également toute conversion du type de nombre Oracle en un type de .NET Framework valide avant de stocker la <xref:System.Data.DataRow>valeur dans un. Vous pouvez utiliser l' <xref:System.Data.Common.DataAdapter.FillError> événement pour déterminer si une **exception OverflowException** s’est produite. Pour plus d’informations sur <xref:System.Data.Common.DataAdapter.FillError> l’événement, consultez [gestion des événements DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
+> Pour éviter une **exception OverflowException**, nous vous recommandons de gérer également toute conversion du type de nombre Oracle en un type de .NET Framework valide avant de stocker la <xref:System.Data.DataRow>valeur dans un. Vous pouvez utiliser l' <xref:System.Data.Common.DataAdapter.FillError> événement pour déterminer si une **exception OverflowException** s’est produite. Pour plus d’informations sur <xref:System.Data.Common.DataAdapter.FillError> l’événement, consultez [gestion des événements DataAdapter](handling-dataadapter-events.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [DataAdapters et DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [Commandes et paramètres](../../../../docs/framework/data/adonet/commands-and-parameters.md)
-- [Récupération des informations de schéma de base de données](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [DataAdapters et DataReaders](dataadapters-and-datareaders.md)
+- [Commandes et paramètres](commands-and-parameters.md)
+- [Récupération des informations de schéma de base de données](retrieving-database-schema-information.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

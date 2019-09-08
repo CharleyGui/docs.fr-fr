@@ -2,20 +2,20 @@
 title: Création d’un élément de liaison
 ms.date: 03/30/2017
 ms.assetid: 01a35307-a41f-4ef6-a3db-322af40afc99
-ms.openlocfilehash: 0c08494315f43f35f60d70abf643f596a013c302
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4b760f9373e64e153bd5a21469eb7a503283d35c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587335"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795822"
 ---
 # <a name="creating-a-bindingelement"></a>Création d’un élément de liaison
-Liaisons et éléments de liaison (objets qui étendent <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> et <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>, respectivement) sont l’endroit où le modèle d’application Windows Communication Foundation (WCF) est associé avec les fabriques et les écouteurs de canal. Sans liaisons, à l’aide de canaux personnalisés nécessite une programmation au niveau du canal comme décrit dans [de programmation au niveau du canal de Service](../../../../docs/framework/wcf/extending/service-channel-level-programming.md) et [de programmation au niveau du canal de Client](../../../../docs/framework/wcf/extending/client-channel-level-programming.md). Cette rubrique décrit la configuration minimale requise pour permettre l’utilisation de votre canal dans WCF, le développement d’un <xref:System.ServiceModel.Channels.BindingElement> pour votre canal et activer l’utilisation de l’application, comme décrit à l’étape 4 de [canaux de développement](../../../../docs/framework/wcf/extending/developing-channels.md).  
+Les liaisons et les éléments de liaison (objets <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType> qui <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>étendent et, respectivement) sont l’endroit où le modèle d’application Windows Communication Foundation (WCF) est associé aux fabriques de canaux et aux écouteurs de canal. Sans liaisons, l’utilisation de canaux personnalisés requiert la programmation au niveau du canal, comme décrit dans programmation au niveau du [canal de service](service-channel-level-programming.md) et [programmation au niveau du canal client](client-channel-level-programming.md). Cette rubrique décrit la configuration minimale requise pour activer l’utilisation de votre canal dans WCF, le développement <xref:System.ServiceModel.Channels.BindingElement> d’un pour votre canal et activer l’utilisation à partir de l’application, comme décrit à l’étape 4 du [développement de canaux](developing-channels.md).  
   
-## <a name="overview"></a>Vue d'ensemble  
- Création d’un <xref:System.ServiceModel.Channels.BindingElement> pour votre canal permet aux développeurs d’utiliser dans une application WCF. <xref:System.ServiceModel.Channels.BindingElement> objets peuvent être utilisés à partir de la <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> classe pour connecter une application WCF à votre canal sans avoir aux informations de type précis de votre canal.  
+## <a name="overview"></a>Présentation  
+ La création <xref:System.ServiceModel.Channels.BindingElement> d’un pour votre canal permet aux développeurs de l’utiliser dans une application WCF. <xref:System.ServiceModel.Channels.BindingElement>les objets peuvent être utilisés à <xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> partir de la classe pour connecter une application WCF à votre canal sans avoir besoin des informations de type précises de votre canal.  
   
- Une fois un <xref:System.ServiceModel.Channels.BindingElement> a été créé, vous pouvez activer des fonctionnalités supplémentaires selon vos besoins en suivant les étapes de développement de canal restantes décrites dans [canaux de développement](../../../../docs/framework/wcf/extending/developing-channels.md).  
+ Une fois <xref:System.ServiceModel.Channels.BindingElement> qu’un a été créé, vous pouvez activer davantage de fonctionnalités en fonction de vos besoins en suivant les étapes de développement de canal restantes décrites dans [développement de canaux](developing-channels.md).  
   
 ## <a name="adding-a-binding-element"></a>Ajout d'un élément de liaison  
  Pour implémenter un élément <xref:System.ServiceModel.Channels.BindingElement>personnalisé, écrivez une classe qui hérite de <xref:System.ServiceModel.Channels.BindingElement>. Par exemple, si vous avez développé un canal `ChunkingChannel` capable de fragmenter de grands messages en plusieurs segments, puis de les recomposer en fin de traitement, vous pouvez utiliser ce canal sur n'importe quelle liaison en implémentant un élément <xref:System.ServiceModel.Channels.BindingElement> et en configurant la liaison de sorte à ce qu'elle puisse utiliser ce dernier. Un canal `ChunkingChannel` est utilisé à titre d’exemple dans cette rubrique afin d’illustrer les exigences à l’implémentation d’un élément de liaison.  
@@ -26,7 +26,7 @@ Liaisons et éléments de liaison (objets qui étendent <xref:System.ServiceMode
   
  <xref:System.ServiceModel.Channels.BindingElement.BuildChannelListener%2A> utilise une implémentation similaire pour créer `ChunkingChannelListener` et lui passer l'écouteur de canal interne.  
   
- Autre exemple à l’aide d’un canal de transport, le [Transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md) exemple fournit la substitution suivante.  
+ Pour un autre exemple d’utilisation d’un canal [de transport, le transport : L'](../samples/transport-udp.md) exemple UDP fournit la substitution suivante.  
   
  Dans notre exemple, l'élément de liaison est `UdpTransportBindingElement`, lequel dérive de <xref:System.ServiceModel.Channels.TransportBindingElement>. Dans le code ci-dessous se rapportant à notre exemple, les méthodes suivantes sont substituées pour générer les fabrications associées au canal.  
   
@@ -45,7 +45,7 @@ public IChannelListener<TChannel> BuildChannelListener<TChannel>(BindingContext 
  Il contient également des membres permettant de cloner `BindingElement` et de retourner notre schéma (soap.udp).  
   
 #### <a name="protocol-binding-elements"></a>Protocole d’éléments de liaison  
- Les nouveaux éléments de liaison peuvent remplacer ou augmenter tout élément de liaison inclus en ajoutant de nouveaux transports, encodages ou protocoles de niveau supérieur. Pour créer un nouvel élément de liaison de protocole, commencez par étendre la classe <xref:System.ServiceModel.Channels.BindingElement>. Au minimum, vous devez ensuite implémenter les <xref:System.ServiceModel.Channels.BindingElement.Clone%2A?displayProperty=nameWithType> et implémenter la `ChannelProtectionRequirements` à l’aide de <xref:System.ServiceModel.Channels.IChannel.GetProperty%2A?displayProperty=nameWithType>. Cette opération retourne <xref:System.ServiceModel.Security.ChannelProtectionRequirements> pour l’élément de liaison défini.  Pour plus d'informations, consultez <xref:System.ServiceModel.Security.ChannelProtectionRequirements>.  
+ Les nouveaux éléments de liaison peuvent remplacer ou augmenter tout élément de liaison inclus en ajoutant de nouveaux transports, encodages ou protocoles de niveau supérieur. Pour créer un nouvel élément de liaison de protocole, commencez par étendre la classe <xref:System.ServiceModel.Channels.BindingElement>. Au minimum, vous devez implémenter <xref:System.ServiceModel.Channels.BindingElement.Clone%2A?displayProperty=nameWithType> et `ChannelProtectionRequirements` implémenter à l’aide <xref:System.ServiceModel.Channels.IChannel.GetProperty%2A?displayProperty=nameWithType>de. Cette opération retourne <xref:System.ServiceModel.Security.ChannelProtectionRequirements> pour l’élément de liaison défini.  Pour plus d'informations, consultez <xref:System.ServiceModel.Security.ChannelProtectionRequirements>.  
   
  <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> doit retourner une nouvelle copie de cet élément de liaison. Dans le cadre de nos meilleures pratiques, nous vous recommandons d’implémenter, en tant que créateur de cet élément de liaison, la méthode <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> à l’aide d’un constructeur de copie qui appelle le constructeur de copie de base, puis clone tous les champs supplémentaires figurant dans cette classe.  
   
@@ -54,7 +54,7 @@ public IChannelListener<TChannel> BuildChannelListener<TChannel>(BindingContext 
   
  <xref:System.ServiceModel.Channels.BindingElement.Clone%2A> doit retourner une nouvelle copie de cet élément de liaison.  Dans le cadre de nos meilleures pratiques, nous vous recommandons d’implémenter, en tant que créateur de cet élément de liaison, la méthode de clonage à l’aide d’un constructeur de copie qui appelle le constructeur de copie de base, puis clone tous les champs supplémentaires figurant dans cette classe.  
   
- <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> : la propriété <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> retourne le modèle URI correspondant au protocole de transport représenté par l'élément de liaison. Par exemple, le <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> et <xref:System.ServiceModel.Channels.TcpTransportBindingElement?displayProperty=nameWithType> retournent « http » et « net.tcp » à partir de leurs détenteurs respectifs <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> propriétés.  
+ <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> : la propriété <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> retourne le modèle URI correspondant au protocole de transport représenté par l'élément de liaison. Par exemple, le <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> et le <xref:System.ServiceModel.Channels.TcpTransportBindingElement?displayProperty=nameWithType> renvoient « http » et « net. TCP » à partir <xref:System.ServiceModel.Channels.TransportBindingElement.Scheme%2A> de leurs propriétés respectives.  
   
 #### <a name="encoding-binding-elements"></a>Éléments de liaison d’encodage  
  Pour créer un nouvel élément de liaison d'encodage, commencez par étendre la classe <xref:System.ServiceModel.Channels.BindingElement> et implémenter la classe <xref:System.ServiceModel.Channels.MessageEncodingBindingElement?displayProperty=nameWithType>. Vous devez ensuite implémenter au minimum les méthodes <xref:System.ServiceModel.Channels.BindingElement.Clone%2A>, <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A?displayProperty=nameWithType> ainsi que la propriété <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.MessageVersion%2A?displayProperty=nameWithType>.  
@@ -67,12 +67,12 @@ public IChannelListener<TChannel> BuildChannelListener<TChannel>(BindingContext 
   
  Pour une liste exhaustive des méthodes et propriétés optionnelles compatibles avec les éléments de liaison d'encodage définis par l'utilisateur, consultez <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>.  
   
- Pour plus d’informations sur la création d’un nouvel élément de liaison, consultez [Creating liaisons](../../../../docs/framework/wcf/extending/creating-user-defined-bindings.md).  
+ Pour plus d’informations sur la création d’un nouvel élément de liaison, consultez [création de liaisons définies par l’utilisateur](creating-user-defined-bindings.md).  
   
- Une fois que vous avez créé un élément de liaison de votre canal, revenez à la [canaux de développement](../../../../docs/framework/wcf/extending/developing-channels.md) rubrique pour voir si vous souhaitez ajouter la prise en charge des fichiers de configuration à votre élément de liaison, si et comment ajouter la prise en charge de publication de métadonnées, et Si et comment pour construire une liaison définie par l’utilisateur qui utilise votre élément de liaison.  
+ Une fois que vous avez créé un élément de liaison pour votre canal, revenez à la rubrique [développement de canaux](developing-channels.md) pour déterminer si vous souhaitez ajouter la prise en charge des fichiers de configuration à votre élément de liaison, si et comment ajouter la prise en charge de la publication des métadonnées, et si et comment Construisez une liaison définie par l’utilisateur qui utilise votre élément de liaison.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.Channels.BindingElement>
-- [Développement de canaux](../../../../docs/framework/wcf/extending/developing-channels.md)
-- [Transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md)
+- [Développement de canaux](developing-channels.md)
+- [Transport PASSERELLE](../samples/transport-udp.md)

@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: de1646cdbc11369b43a821d8b762879d1df7ed2e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e0bcabb32d50b236d42a555c073b50ba3a234dde
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751536"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796482"
 ---
-# <a name="identityattribute-structure"></a>IDENTITY_ATTRIBUTE, structure
-Contient des informations d’attribut de métadonnées sur une [IDefinitionIdentity](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md) instance.  
+# <a name="identity_attribute-structure"></a>IDENTITY_ATTRIBUTE, structure
+Contient des informations sur les attributs de métadonnées concernant une instance de [IDefinitionIdentity](idefinitionidentity-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,24 +40,24 @@ typedef struct _IDENTITY_ATTRIBUTE {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`pszNamespace`|Un pointeur vers une chaîne de caractères se terminant par null qui contient l’espace de noms de l’attribut est dans.|  
-|`pszName`|Un pointeur vers une chaîne de caractères se terminant par null qui contient le nom de l’attribut.|  
-|`pszValue`|Un pointeur vers une chaîne de caractères se terminant par null qui contient la valeur de l’attribut.|  
+|`pszNamespace`|Pointeur vers une chaîne de caractères se terminant par un caractère null qui contient l’espace de noms dans lequel se trouve l’attribut.|  
+|`pszName`|Pointeur vers une chaîne de caractères se terminant par un caractère null qui contient le nom de l’attribut.|  
+|`pszValue`|Pointeur vers une chaîne de caractères se terminant par un caractère null qui contient la valeur de l’attribut.|  
   
 ## <a name="remarks"></a>Notes  
- Le `IDENTITY_ATTRIBUTE` structure contient trois pointeurs vers des chaînes de caractères se terminant par null. Ces trois chaînes décrivent un attribut.  
+ La `IDENTITY_ATTRIBUTE` structure contient trois pointeurs vers des chaînes de caractères se terminant par un caractère null. Ces trois chaînes décrivent un attribut.  
   
- Une instance d’un `IDENTITY_ATTRIBUTE` structure est associée à une instance d’un [IDENTITY_ATTRIBUTE_BLOB](../../../../docs/framework/unmanaged-api/fusion/identity-attribute-blob-structure.md) structure. Le `IDENTITY_ATTRIBUTE` structure contient les chaînes réelles et correspondants `IDENTITY_ATTRIBUTE_BLOB` structure répertorie les offsets pour les trois chaînes répertoriées dans le `IDENTITY_ATTRIBUTE` structure.  
+ Une instance d’une `IDENTITY_ATTRIBUTE` structure est associée à une instance d’une structure [IDENTITY_ATTRIBUTE_BLOB](identity-attribute-blob-structure.md) . La `IDENTITY_ATTRIBUTE` structure contient les chaînes réelles et la structure correspondante `IDENTITY_ATTRIBUTE_BLOB` répertorie les offsets aux trois chaînes répertoriées dans la `IDENTITY_ATTRIBUTE` structure.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** Isolation.h  
+ **En-tête :** Isolation. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IDefinitionIdentity, interface](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md)
-- [IDENTITY_ATTRIBUTE_BLOB, structure](../../../../docs/framework/unmanaged-api/fusion/identity-attribute-blob-structure.md)
-- [Structures de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)
+- [IDefinitionIdentity, interface](idefinitionidentity-interface.md)
+- [IDENTITY_ATTRIBUTE_BLOB, structure](identity-attribute-blob-structure.md)
+- [Structures de fusion](fusion-structures.md)

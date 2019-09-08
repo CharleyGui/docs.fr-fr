@@ -2,12 +2,12 @@
 title: Applications clientes sécurisées
 ms.date: 03/30/2017
 ms.assetid: 6239592e-fa7d-4dea-9f00-d296d0048b01
-ms.openlocfilehash: 1312ddc079bdf8f08aebe8eb27e4bab9bf914fa8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 15d2b2199344644392be0e9a530c046a77db8523
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963152"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794383"
 ---
 # <a name="secure-client-applications"></a>Applications clientes sécurisées
 Les applications se composent généralement de nombreuses parties qui doivent toutes être protégées face aux vulnérabilités susceptibles d'entraîner une perte de données ou compromettre d'une autre manière le système. La création d'interfaces utilisateur sécurisées peut empêcher de nombreux problèmes en bloquant les attaquants avant qu'ils puissent accéder aux données ou aux ressources système.  
@@ -24,7 +24,7 @@ Les applications se composent généralement de nombreuses parties qui doivent t
  [Validation de l’entrée d’utilisateur dans pages Web ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/7kh55542(v=vs.100))  
  Vue d’ensemble de la validation d’une entrée d’utilisateur à l’aide des contrôles de validation ASP.NET.  
   
- [Entrées d’utilisateur dans les Windows Forms](../../../../docs/framework/winforms/user-input-in-windows-forms.md)  
+ [Entrées d’utilisateur dans les Windows Forms](../../winforms/user-input-in-windows-forms.md)  
  Fournit des liens et des informations relatifs à la validation des entrées de la souris et au clavier dans une application Windows Forms.  
   
  [.NET Framework (expressions régulières)](../../../standard/base-types/regular-expressions.md)  
@@ -33,10 +33,10 @@ Les applications se composent généralement de nombreuses parties qui doivent t
 ## <a name="windows-applications"></a>Applications Windows  
  Auparavant, les applications Windows s'exécutaient généralement avec toutes les autorisations. Le .NET Framework fournit l'infrastructure permettant de restreindre l'exécution du code dans une application Windows en utilisant la sécurité d'accès du code. Toutefois, la sécurité d'accès du code seule n'est pas suffisante pour protéger votre application.  
   
- [Sécurité de Windows Forms](../../../../docs/framework/winforms/windows-forms-security.md)  
+ [Sécurité de Windows Forms](../../winforms/windows-forms-security.md)  
  Explique comment sécuriser des applications Windows Forms et fournit des liens vers des rubriques connexes.  
   
- [Applications Windows Forms et non managées](../../../../docs/framework/winforms/advanced/windows-forms-and-unmanaged-applications.md)  
+ [Applications Windows Forms et non managées](../../winforms/advanced/windows-forms-and-unmanaged-applications.md)  
  Explique comment interagir avec des applications non managées dans une application Windows Forms.  
   
  [Déploiement ClickOnce pour les Windows Forms](../../winforms/clickonce-deployment-for-windows-forms.md)  
@@ -63,12 +63,12 @@ Les applications se composent généralement de nombreuses parties qui doivent t
 |--------------|-----------------|  
 |[Configuration des applications distantes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b8tysty8(v=vs.100))|Explique comment configurer les applications de communication à distance pour éviter les problèmes courants.|  
 |[Sécurité dans la communication à distance](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/9hwst9th(v=vs.100))|Décrit l'authentification et le chiffrement, ainsi que des rubriques de sécurité supplémentaires relatives à la communication à distance.|  
-|[Considérations relatives à la sécurité et à la communication à distance](../../../../docs/framework/misc/security-and-remoting-considerations.md)|Décrit les problèmes de sécurité liés aux objets protégés et au franchissement de domaine d'application.|  
+|[Considérations relatives à la sécurité et à la communication à distance](../../misc/security-and-remoting-considerations.md)|Décrit les problèmes de sécurité liés aux objets protégés et au franchissement de domaine d'application.|  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sécurisation des applications ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
+- [Sécurisation des applications ADO.NET](securing-ado-net-applications.md)
 - [Recommandations pour les stratégies d’accès aux données](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))
 - [Sécurisation des applications](/visualstudio/ide/securing-applications)
-- [Protection des informations de connexion](../../../../docs/framework/data/adonet/protecting-connection-information.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Protection des informations de connexion](protecting-connection-information.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

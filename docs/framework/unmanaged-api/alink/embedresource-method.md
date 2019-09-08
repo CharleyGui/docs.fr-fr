@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: af5a200578c34464b5f8d86e568d08d814b46a29
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5f6140e5f85a7ee21773c96a5abdccadaddab92e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742146"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777462"
 ---
 # <a name="embedresource-method"></a>EmbedResource, méthode
 Déclare une ressource incorporée. Cette méthode n’incorpore pas réellement la ressource.  
@@ -44,25 +44,25 @@ HRESULT EmbedResource(
  ID de l’assembly.  
   
  `FileToken`  
- ID de jeton ou l’assembly du fichier qui contient la ressource de fichier.  
+ Jeton de fichier ou ID d’assembly du fichier qui contient la ressource.  
   
  `pszResourceName`  
  Nom de la ressource.  
   
  `dwOffset`  
- Décalage de la ressource à partir de l’adresse RVA.  
+ Décalage de la ressource à partir de RVA.  
   
  `dwFlags`  
- Accessibilité indicateurs tels que `mrPublic` et `mrPrivate`. Ces indicateurs peuvent être passés à [DefineExportedType, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md).  
+ Indicateurs d’accessibilité tels `mrPublic` que `mrPrivate`et. Ces indicateurs peuvent être passés à la [méthode DefineExportedType,](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h.  
+ Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink, interface](ialink-interface.md)
+- [IALink2, interface](ialink2-interface.md)
+- [API ALink](index.md)

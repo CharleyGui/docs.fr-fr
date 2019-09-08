@@ -2,17 +2,17 @@
 title: Mapper les relations spécifiées pour les éléments imbriqués
 ms.date: 03/30/2017
 ms.assetid: 24a2d3e5-4af7-4f9a-ab7a-fe6684c9e4fe
-ms.openlocfilehash: 510a5e676df7bac274c6086b94e9a23e7540da20
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: e8cdf73b6277abdaab1256ca87e615a5e25e7336
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204637"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786089"
 ---
 # <a name="map-relations-specified-for-nested-elements"></a>Mapper les relations spécifiées pour les éléments imbriqués
-Un schéma peut inclure une annotation **msdata: Relationship** pour spécifier explicitement le mappage entre deux éléments quelconques dans le schéma. Les deux éléments spécifiés dans **msdata: Relationship** peuvent être imbriqués dans le schéma, mais n’ont pas besoin d’être. Le processus de mappage utilise l' **Annotation msdata: Relationship** dans le schéma pour générer la relation clé primaire/clé étrangère entre les deux colonnes.  
+Un schéma peut inclure une annotation **msdata : Relationship** pour spécifier explicitement le mappage entre deux éléments quelconques dans le schéma. Les deux éléments spécifiés dans **msdata : Relationship** peuvent être imbriqués dans le schéma, mais n’ont pas besoin d’être. Le processus de mappage utilise l' **Annotation msdata : Relationship** dans le schéma pour générer la relation clé primaire/clé étrangère entre les deux colonnes.  
   
- L’exemple suivant illustre un schéma XML dans lequel l’élément **OrderDetail** est un élément enfant de **Order**. L' **Annotation msdata: Relationship** identifie cette relation parent-enfant et spécifie que la colonne **OrderNumber** de la table **Order** obtenue est associée à la colonne **OrderNo** de la table **OrderDetail** résultante.  
+ L’exemple suivant illustre un schéma XML dans lequel l’élément **OrderDetail** est un élément enfant de **Order**. L' **Annotation msdata : Relationship** identifie cette relation parent-enfant et spécifie que la colonne **OrderNumber** de la table **Order** obtenue est associée à la colonne **OrderNo** de la table **OrderDetail** résultante.  
   
 ```xml  
 <xs:schema id="MyDataSet" xmlns=""   
@@ -61,7 +61,7 @@ Un schéma peut inclure une annotation **msdata: Relationship** pour spécifier 
     OrderDetail(OrderNo, ItemNo)  
     ```  
   
-- Relation entre les tables **Order** et **OrderDetail** . La propriété Nested de cette relation a la valeur **true** , car les éléments **Order** et **OrderDetail** sont imbriqués dans le schéma.  
+- Relation entre les tables **Order** et **OrderDetail** . La propriété **Nested** de cette relation a la valeur **true** , car les éléments **Order** et **OrderDetail** sont imbriqués dans le schéma.  
   
     ```  
     ParentTable: Order  
@@ -78,4 +78,4 @@ Un schéma peut inclure une annotation **msdata: Relationship** pour spécifier 
 
 - [Génération de relations de DataSet à partir du schéma XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)
 - [Mappage des contraintes de schéma XML (XSD) aux contraintes de DataSet](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

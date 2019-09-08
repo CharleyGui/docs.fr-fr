@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 09ccf731f0494b6eda49f6a15d04970a723c473b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 5d8827f46a12bd090fa27e71072d833607d34677
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742059"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777351"
 ---
 # <a name="enumcustomattributes-method"></a>EnumCustomAttributes, méthode
-Récupère les attributs personnalisés de niveau assembly.  
+Récupère des attributs personnalisés au niveau de l’assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,22 +47,22 @@ HRESULT EnumCustomAttributes(
  Type des attributs à énumérer. Utilisez `mdTokenNill` pour tous les attributs.  
   
  `rCustomValues`  
- Reçoit les jetons d’attributs personnalisés.  
+ Reçoit des jetons d’attributs personnalisés.  
   
  `cMax`  
- Spécifie la taille de `rCustomValues` tableau.  
+ Spécifie la `rCustomValues` taille du tableau.  
   
  `pcCustomValues`  
- Si vous le souhaitez reçoit le nombre de valeurs de jeton.  
+ Reçoit éventuellement le nombre de valeurs de jeton.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h  
+ Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink, interface](ialink-interface.md)
+- [IALink2, interface](ialink2-interface.md)
+- [API ALink](index.md)

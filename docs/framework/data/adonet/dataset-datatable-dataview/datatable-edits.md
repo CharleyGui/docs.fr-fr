@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f08008a9-042e-4de9-94f3-4f0e502b1eb5
-ms.openlocfilehash: a970ebda76f5bb6bdea704dabef2ee305436c613
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 689a297eb5368d35c2e7dd034426edbe665e7ed2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205016"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785384"
 ---
 # <a name="datatable-edits"></a>Modifications de DataTable
 Lorsque vous modifiez les valeurs de colonne d'un objet <xref:System.Data.DataRow>, les modifications sont immédiatement placées dans l'état actuel de la ligne. <xref:System.Data.DataRow.AcceptChanges%2A> <xref:System.Data.DataRow.RejectChanges%2A>Est ensuite défini sur modifié, et les modifications sont acceptées ou rejetées à l’aide des méthodes ou du DataRow. <xref:System.Data.DataRowState> Le **DataRow** fournit également trois méthodes que vous pouvez utiliser pour suspendre l’état de la ligne pendant que vous la modifiez. Ces méthodes sont <xref:System.Data.DataRow.BeginEdit%2A>, <xref:System.Data.DataRow.EndEdit%2A> et <xref:System.Data.DataRow.CancelEdit%2A>.  
   
- Lorsque vous modifiez directement les valeurs de colonne dans un **DataRow** , **DataRow** gère les valeurs de colonne à l’aide des versions de ligne **actuelles**, **par défaut**et **d’origine** . En plus de ces versions de ligne, les méthodes **BeginEdit**, **EndEdit**et **CancelEdit** utilisent une quatrième version de ligne: **Proposé**. Pour plus d’informations sur les versions de ligne, consultez [États de ligne et versions de ligne](row-states-and-row-versions.md).  
+ Lorsque vous modifiez directement les valeurs de colonne dans un **DataRow** , **DataRow** gère les valeurs de colonne à l’aide des versions de ligne **actuelles**, **par défaut**et **d’origine** . En plus de ces versions de ligne, les méthodes **BeginEdit**, **EndEdit**et **CancelEdit** utilisent une quatrième version de ligne : **Proposé**. Pour plus d’informations sur les versions de ligne, consultez [États de ligne et versions de ligne](row-states-and-row-versions.md).  
   
  La version de ligne **proposée** existe pendant une opération de modification qui commence par appeler **BeginEdit** et qui se termine à l’aide de **EndEdit** ou **CancelEdit,** ou en appelant **AcceptChanges** ou **RejectChanges**.  
   
@@ -93,4 +93,4 @@ protected static void OnColumnChanged(
 - <xref:System.Data.DataRowVersion>
 - [Manipulation des données dans un DataTable](manipulating-data-in-a-datatable.md)
 - [Gestion des événements de DataTable](handling-datatable-events.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

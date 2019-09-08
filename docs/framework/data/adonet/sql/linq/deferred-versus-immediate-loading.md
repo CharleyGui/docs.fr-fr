@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d1d7247f-a3b7-460b-b342-5c1a2365aa1a
-ms.openlocfilehash: 7196d172b7bec051b5407f1c8e27ec642d230fc2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2045cab19e7400f94888297571a172de1578094d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64581395"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794136"
 ---
 # <a name="deferred-versus-immediate-loading"></a>Comparaison entre le chargement différé et le chargement immédiat
-Lorsque vous recherchez un objet, vous récupérez en réalité uniquement l'objet que vous avez demandé. Le *connexes* objets ne sont pas automatiquement extraits en même temps. (Pour plus d’informations, consultez [interrogation de relations](../../../../../../docs/framework/data/adonet/sql/linq/querying-across-relationships.md).) Vous ne pouvez pas voir que les objets connexes ne sont pas déjà chargés car une tentative d'accès à ceux-ci génère une demande qui les récupère.  
+Lorsque vous recherchez un objet, vous récupérez en réalité uniquement l'objet que vous avez demandé. Les objets *connexes* ne sont pas automatiquement extraits en même temps. (Pour plus d’informations, consultez [interrogation des relations](querying-across-relationships.md).) Vous ne pouvez pas voir que les objets connexes ne sont pas déjà chargés car une tentative d'accès à ceux-ci génère une demande qui les récupère.  
   
- Par exemple, vous souhaiterez peut-être interroger un ensemble particulier de commandes et ensuite qu’occasionnellement vous envoyer une notification par e-mail à des clients particuliers. Vous n'auriez pas nécessairement besoin de récupérer au début toutes les données des clients pour chaque commande. Vous pouvez utiliser le chargement différé pour différer la récupération d'informations supplémentaires jusqu'au moment où cela devient indispensable. Prenons l'exemple suivant :  
+ Par exemple, vous souhaiterez peut-être interroger un ensemble spécifique de commandes, puis envoyer occasionnellement une notification par courrier électronique à des clients particuliers. Vous n'auriez pas nécessairement besoin de récupérer au début toutes les données des clients pour chaque commande. Vous pouvez utiliser le chargement différé pour différer la récupération d'informations supplémentaires jusqu'au moment où cela devient indispensable. Prenons l'exemple suivant :  
   
  [!code-csharp[DLinqQueryConcepts#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#1)]
  [!code-vb[DLinqQueryConcepts#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#1)]  
@@ -25,9 +25,9 @@ Lorsque vous recherchez un objet, vous récupérez en réalité uniquement l'obj
  [!code-csharp[DLinqQueryConcepts#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryConcepts/cs/Program.cs#2)]
  [!code-vb[DLinqQueryConcepts#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryConcepts/vb/Module1.vb#2)]  
   
- Vous pouvez également associer les clients et les commandes dans une requête à l'aide du produit croisé et en récupérant tous les bits relatifs des données sous forme d'une grande projection. Toutefois, ces résultats ne sont pas des entités. (Pour plus d’informations, consultez [le modèle LINQ to SQL objet](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)). Les entités sont des objets qui ont une identité et que vous pouvez modifier, alors que ces résultats seraient des projections qui ne peuvent pas être modifiées et rendues persistantes. Dans le pire des cas, vous récupéreriez beaucoup de données redondantes, étant donné que chaque client est répété pour chaque commande dans les résultats de la jointure à deux dimensions.  
+ Vous pouvez également associer les clients et les commandes dans une requête à l'aide du produit croisé et en récupérant tous les bits relatifs des données sous forme d'une grande projection. Toutefois, ces résultats ne sont pas des entités. (Pour plus d’informations, consultez [le modèle objet LINQ to SQL](the-linq-to-sql-object-model.md)). Les entités sont des objets qui ont une identité et que vous pouvez modifier, alors que ces résultats seraient des projections qui ne peuvent pas être modifiées et rendues persistantes. Dans le pire des cas, vous récupéreriez beaucoup de données redondantes, étant donné que chaque client est répété pour chaque commande dans les résultats de la jointure à deux dimensions.  
   
- Vous avez principalement besoin d'une méthode pour récupérer simultanément un ensemble d'objets connexes. Cet ensemble est une section délimitée d'un graphique pour que vous ne récupériez jamais plus ou moins de données nécessaires que prévu pour votre utilisation. Pour cela, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fournit <xref:System.Data.Linq.DataLoadOptions> pour le chargement immédiat d’une région de votre modèle objet. Méthodes incluses :  
+ Vous avez principalement besoin d'une méthode pour récupérer simultanément un ensemble d'objets connexes. Cet ensemble est une section délimitée d'un graphique pour que vous ne récupériez jamais plus ou moins de données nécessaires que prévu pour votre utilisation. À cet effet, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fournit <xref:System.Data.Linq.DataLoadOptions> le chargement immédiat d’une région de votre modèle objet. Méthodes incluses :  
   
 - Méthode <xref:System.Data.Linq.DataLoadOptions.LoadWith%2A> pour charger immédiatement des données en rapport avec la cible principale.  
   
@@ -35,4 +35,4 @@ Lorsque vous recherchez un objet, vous récupérez en réalité uniquement l'obj
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts relatifs aux requêtes](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)
+- [Concepts relatifs aux requêtes](query-concepts.md)

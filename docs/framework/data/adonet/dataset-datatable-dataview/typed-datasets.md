@@ -2,12 +2,12 @@
 title: Datasets typés
 ms.date: 03/30/2017
 ms.assetid: 033d2548-cf24-4c05-8179-67d8b009c048
-ms.openlocfilehash: 33876cb9f614a93cab2fa3fd9d056f94dd1e9038
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 7c8111e0e62a57b6745a5ea0387fc65a05839df8
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203152"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785840"
 ---
 # <a name="typed-datasets"></a>Datasets typés
 En plus d'un accès par liaison tardive aux valeurs via des variables faiblement typées, l'objet <xref:System.Data.DataSet> permet un accès aux données par l'intermédiaire d'une métaphore fortement typée. Les tables et les colonnes qui font partie du **jeu de données** sont accessibles à l’aide de noms conviviaux et de variables fortement typées.  
@@ -26,4 +26,4 @@ En plus d'un accès par liaison tardive aux valeurs via des variables faiblement
 ## <a name="see-also"></a>Voir aussi
 
 - [DataSets, DataTables et DataViews](index.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

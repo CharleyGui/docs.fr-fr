@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cb846617-2b1a-44ff-bd7f-5835f5ea37fa
-ms.openlocfilehash: f60ef817773b6234b19856bfc0727eedb67e113e
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: d8a7762c4ec5d650295ca0626180285723549051
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205175"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786512"
 ---
 # <a name="copying-dataset-contents"></a>Copie de contenu de DataSet
-Vous pouvez créer une copie de <xref:System.Data.DataSet> afin de pouvoir utiliser des données sans affecter les données d’origine, ou utiliser un sous-ensemble des données d’un **DataSet**. Lors de la copie d’un **jeu de données**, vous pouvez:  
+Vous pouvez créer une copie de <xref:System.Data.DataSet> afin de pouvoir utiliser des données sans affecter les données d’origine, ou utiliser un sous-ensemble des données d’un **DataSet**. Lors de la copie d’un **jeu de données**, vous pouvez :  
   
 - Créez une copie exacte du **DataSet**, y compris le schéma, les données, les informations d’état de ligne et les versions de ligne.  
   
@@ -31,7 +31,7 @@ Dim copyDataSet As DataSet = customerDataSet.Copy()
 DataSet copyDataSet = customerDataSet.Copy();  
 ```  
   
- Pour créer une copie d’un **DataSet** qui comprend le schéma et uniquement les données qui représentent des lignes **ajoutées**, **modifiées**ou supprimées <xref:System.Data.DataSet.GetChanges%2A> , utilisez la méthode du **DataSet**. Vous pouvez également utiliser **GetChanges** pour retourner uniquement les lignes avec un état de ligne spécifié en passant une valeur **DataRowState** lors de l’appel de **GetChanges**. L’exemple de code suivant montre comment passer un **DataRowState** lors de l’appel de **GetChanges**.  
+ Pour créer une copie d’un **DataSet** qui comprend le schéma et uniquement les données qui représentent des lignes **ajoutées**, **modifiées**ou **supprimées** , utilisez la <xref:System.Data.DataSet.GetChanges%2A> méthode du **DataSet**. Vous pouvez également utiliser **GetChanges** pour retourner uniquement les lignes avec un état de ligne spécifié en passant une valeur **DataRowState** lors de l’appel de **GetChanges**. L’exemple de code suivant montre comment passer un **DataRowState** lors de l’appel de **GetChanges**.  
   
 ```vb  
 ' Copy all changes.  
@@ -99,4 +99,4 @@ foreach (DataRow copyRow in copyRows)
 - <xref:System.Data.DataSet>
 - <xref:System.Data.DataTable>
 - [DataSets, DataTables et DataViews](index.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

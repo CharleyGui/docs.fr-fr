@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 55c545e5-dcd5-4323-a5b9-3825c2157462
-ms.openlocfilehash: a12fa587d5df0ed95dd0f15ccfbe2ef886185b9e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0926e3c6513a698ae47b9983d0e6ad195394a4df
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61934119"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780617"
 ---
 # <a name="updating-data-in-a-data-source"></a>Mise à jour des données dans une source de données
-Les instructions SQL qui modifient les données (comme INSERT, UPDATE ou DELETE) ne retournent pas de ligne. De même, de nombreuses procédures stockées effectuent une action mais ne retournent pas de ligne. Pour exécuter des commandes qui ne retournent pas de lignes, créez un **commande** objet avec la commande SQL appropriée et un **connexion**, y compris ceux requis **paramètres**. Exécutez la commande avec le **ExecuteNonQuery** méthode de la **commande** objet.  
+Les instructions SQL qui modifient les données (comme INSERT, UPDATE ou DELETE) ne retournent pas de ligne. De même, de nombreuses procédures stockées effectuent une action mais ne retournent pas de ligne. Pour exécuter des commandes qui ne retournent pas de lignes, créez un objet **Command** avec la commande SQL appropriée et une **connexion**, y compris tous les **paramètres**requis. Exécutez la commande avec la méthode **ExecuteNonQuery** de l’objet **Command** .  
   
- Le **ExecuteNonQuery** méthode retourne un entier qui représente le nombre de lignes affectées par l’instruction ou une procédure stockée qui a été exécutée. Si plusieurs instructions sont exécutées, la valeur retournée est la somme des enregistrements affectés par toutes ces instructions.  
+ La méthode **ExecuteNonQuery** retourne un entier qui représente le nombre de lignes affectées par l’instruction ou la procédure stockée qui a été exécutée. Si plusieurs instructions sont exécutées, la valeur retournée est la somme des enregistrements affectés par toutes ces instructions.  
   
 ## <a name="example"></a>Exemple  
- L’exemple de code suivant exécute une instruction INSERT pour insérer un enregistrement dans une base de données à l’aide **ExecuteNonQuery**.  
+ L’exemple de code suivant exécute une instruction INSERT pour insérer un enregistrement dans une base de données à l’aide de **ExecuteNonQuery**.  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -42,9 +42,9 @@ SqlCommand command = new SqlCommand(queryString, connection);
 Int32 recordsAffected = command.ExecuteNonQuery();  
 ```  
   
- L’exemple de code suivant exécute la procédure stockée créée par l’exemple de code dans [exécution d’opérations de catalogue](../../../../docs/framework/data/adonet/performing-catalog-operations.md). Aucune ligne n’est retournées par la procédure stockée, par conséquent, le **ExecuteNonQuery** méthode est utilisée, mais la procédure stockée ne reçoit pas un paramètre d’entrée et retourne un paramètre de sortie et une valeur de retour.  
+ L’exemple de code suivant exécute la procédure stockée créée par l’exemple de code lors de l' [exécution d’opérations de catalogue](performing-catalog-operations.md). Aucune ligne n’est retournée par la procédure stockée. la méthode **ExecuteNonQuery** est donc utilisée, mais la procédure stockée ne reçoit pas de paramètre d’entrée et retourne un paramètre de sortie et une valeur de retour.  
   
- Pour le <xref:System.Data.OleDb.OleDbCommand> objet, le **ReturnValue** paramètre doit être ajouté à la **paramètres** collection premier.  
+ Pour l' <xref:System.Data.OleDb.OleDbCommand> objet, le paramètre **returnValue** doit être d’abord ajouté à la collection **Parameters** .  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -93,7 +93,7 @@ Int32 rowCount = (Int32) command.Parameters["@RowCount"].Value;
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation des commandes pour modifier les données](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)
-- [Mise à jour de sources de données avec des DataAdapters](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
-- [Commandes et paramètres](../../../../docs/framework/data/adonet/commands-and-parameters.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Utilisation des commandes pour modifier les données](using-commands-to-modify-data.md)
+- [Mise à jour de sources de données avec des DataAdapters](updating-data-sources-with-dataadapters.md)
+- [Commandes et paramètres](commands-and-parameters.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

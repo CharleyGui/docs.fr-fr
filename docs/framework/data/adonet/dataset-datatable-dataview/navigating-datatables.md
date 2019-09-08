@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 202026a1-ec79-435e-b507-12a77f5011b2
-ms.openlocfilehash: b5837d647b72f8dd17c4a6d3664faf8976243d36
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 5008f8397b7d396b14fdfe8e24f1e59785c4319d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204560"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785255"
 ---
 # <a name="navigating-datatables"></a>Navigation sur les DataTable
 L'objet <xref:System.Data.DataTableReader> obtient le contenu d'un ou plusieurs objets <xref:System.Data.DataTable> sous la forme d'un ou plusieurs jeux de résultats en lecture seule et en avant uniquement.  
@@ -26,4 +26,4 @@ L'objet <xref:System.Data.DataTableReader> obtient le contenu d'un ou plusieurs 
 ## <a name="see-also"></a>Voir aussi
 
 - [DataTableReaders](datatablereaders.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

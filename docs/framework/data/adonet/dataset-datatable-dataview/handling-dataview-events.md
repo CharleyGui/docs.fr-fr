@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e5675663-fc91-4e0d-87a9-481b25b64c0f
-ms.openlocfilehash: b3a1077bff9bf457b4aef0b05357d4a9260f8973
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: c36c68b0375e7d03aac36de7d02b2c9579ea9316
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204820"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784587"
 ---
 # <a name="handling-dataview-events"></a>Gestion des événements de DataView
 Vous pouvez utiliser l'événement <xref:System.Data.DataView.ListChanged> du <xref:System.Data.DataView> pour déterminer si une vue a été mise à jour. Les mises à jour qui déclenchent l'événement incluent l'ajout, la suppression ou la modification d'une ligne dans la table sous-jacente, l'ajout ou la suppression d'une colonne dans le schéma de la table sous-jacente et une modification d'une relation parente ou enfant. L’événement **ListChanged** vous avertit également si la liste des lignes que vous affichez a changé de manière significative en raison de l’application d’un nouvel ordre de tri ou d’un filtre.  
@@ -56,4 +56,4 @@ protected static void OnListChanged(object sender,
 - <xref:System.Data.DataView>
 - <xref:System.ComponentModel.ListChangedEventHandler>
 - [DataViews](dataviews.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

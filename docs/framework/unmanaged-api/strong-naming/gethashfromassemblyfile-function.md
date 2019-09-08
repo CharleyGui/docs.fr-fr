@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 026115adc01e7dcdac3012255f0378cff6348f89
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9f984d44d0a8acb85562a58653dfd2882053a0ce
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780701"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799284"
 ---
 # <a name="gethashfromassemblyfile-function"></a>GetHashFromAssemblyFile, fonction
 Obtient un hachage du fichier d’assembly spécifié, à l’aide de l’algorithme de hachage spécifié.  
   
- Cette fonction a été déconseillée. Utilisez le [ICLRStrongName::GetHashFromAssemblyFile](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromassemblyfile-method.md) méthode à la place.  
+ Cette fonction a été dépréciée. Utilisez la méthode [ICLRStrongName :: GetHashFromAssemblyFile (](../hosting/iclrstrongname-gethashfromassemblyfile-method.md) à la place.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,31 +42,31 @@ HRESULT GetHashFromAssemblyFile (
   
 ## <a name="parameters"></a>Paramètres  
  `szFilePath`  
- [in] Le chemin d’accès au fichier à hacher.  
+ dans Chemin d’accès au fichier à hacher.  
   
  `piHashAlg`  
  [in, out] Constante qui spécifie l’algorithme de hachage. Utilisez zéro pour l’algorithme de hachage par défaut.  
   
  `pbHash`  
- [out] La mémoire tampon de hachage retournée.  
+ à Mémoire tampon de hachage retournée.  
   
  `cchHash`  
- [in] La taille maximale demandée de `pbHash`.  
+ dans Taille maximale demandée de `pbHash`.  
   
  `pchHash`  
- [out] L’a retourné la taille, en octets, de `pbHash`.  
+ à Taille retournée, en octets, de `pbHash`.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** StrongName.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [GetHashFromAssemblyFile, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromassemblyfile-method.md)
-- [GetHashFromAssemblyFileW, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromassemblyfilew-method.md)
-- [ICLRStrongName, interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [GetHashFromAssemblyFile, méthode](../hosting/iclrstrongname-gethashfromassemblyfile-method.md)
+- [GetHashFromAssemblyFileW, méthode](../hosting/iclrstrongname-gethashfromassemblyfilew-method.md)
+- [ICLRStrongName, interface](../hosting/iclrstrongname-interface.md)

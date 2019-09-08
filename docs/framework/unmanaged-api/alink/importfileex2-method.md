@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e6584d31674670bcd005161a846b74df71a27a5f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a1c950e9a6e53e04cc0f2e52a140612562b32ff1
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741650"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70776981"
 ---
 # <a name="importfileex2-method"></a>ImportFileEx2, méthode
-Importe des assemblys et modules indépendants. Cette méthode est comparable à [ImportFile, méthode](../../../../docs/framework/unmanaged-api/alink/importfile-method.md), mais fonctionne même si le fichier importé n’existe pas sur le disque.  
+Importe les assemblys et les modules indépendants. Cette méthode est semblable à la [méthode ImportFile](importfile-method.md), mais fonctionne même si le fichier importé n’existe pas sur le disque.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,31 +49,31 @@ HRESULT ImportFileEx2(
  Nom facultatif du fichier cible.  
   
  `pAssemblyScopeIn`  
- Portée d’importation facultative [IMetaDataAssemblyImport, Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) interface.  
+ Option de l’interface de l’interface [IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md) facultative.  
   
  `fSmartImport`  
- Si la valeur est TRUE, ImportTypes est utilisé, sinon l’importation doit être effectuée manuellement.  
+ Si la valeur est TRUE, ImportTypes, est utilisé, sinon l’importation doit être effectuée manuellement.  
   
  `dwOpenFlags`  
- Indicateurs à passer à [OpenScope, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md).  
+ Indicateurs à passer à la [méthode OpenScope](../metadata/imetadatadispenser-openscope-method.md).  
   
  `pImportToken`  
- Reçoit l’ID unique du fichier ou l’assembly.  
+ Reçoit l’ID unique de l’assembly ou du fichier.  
   
  `ppAssemblyScope`  
- Reçoit la portée d’importation assembly [IMetaDataAssemblyImport, Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) interface. Peut être NULL si le fichier n'est pas un assembly.  
+ Reçoit l’interface de l’interface d’importation d’assembly [IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md) . Peut avoir la valeur NULL si le fichier n’est pas un assembly.  
   
  `pdwCountOfScopes`  
- Reçoit le nombre de fichiers et/ou de portées importés.  
+ Reçoit le nombre de fichiers et/ou d’étendues importés.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h.  
+ Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink2, interface](ialink2-interface.md)
+- [IALink, interface](ialink-interface.md)
+- [API ALink](index.md)

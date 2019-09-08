@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cf09732a-ab54-4d98-89e2-4d0a1f28fbce
-ms.openlocfilehash: 2548ad9382b406978dac0a3d366207626278f501
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 5e4a36829107480a44980c7210b39c21231c67f4
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205129"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786452"
 ---
 # <a name="creating-autoincrement-columns"></a>Création de colonnes AutoIncrement
 Pour garantir que les valeurs de colonne sont uniques, vous pouvez les définir de sorte qu'elles s'incrémentent automatiquement lors de l'ajout de lignes à la table. Pour créer une auto-incrémentation <xref:System.Data.DataColumn>, affectez <xref:System.Data.DataColumn.AutoIncrement%2A> la valeur **true**à la propriété de la colonne. Le <xref:System.Data.DataColumn> commence par la valeur définie dans la <xref:System.Data.DataColumn.AutoIncrementSeed%2A> propriété, et chaque ligne ajoutée à la valeur de la colonne **AutoIncrement** augmente de la valeur définie dans la <xref:System.Data.DataColumn.AutoIncrementStep%2A> propriété de la colonne.  
@@ -40,4 +40,4 @@ workColumn.AutoIncrementStep = 3;
 - <xref:System.Data.DataColumn>
 - [Définition de schéma de DataTable](datatable-schema-definition.md)
 - [DataTables](datatables.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

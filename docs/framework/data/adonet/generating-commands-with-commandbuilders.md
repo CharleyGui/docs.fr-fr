@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6e3fb8b5-373b-4f9e-ab03-a22693df8e91
-ms.openlocfilehash: 42463249a6636e625729f90fc31fa7589ef7ef74
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7cc8ff5391fca7c3315dda433785a182f476bca7
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61878785"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783877"
 ---
 # <a name="generating-commands-with-commandbuilders"></a>Génération de commandes avec CommandBuilders
 Lorsque la propriété `SelectCommand` est spécifiée de manière dynamique au moment de l'exécution, par l'intermédiaire d'un outil de requête qui prend une commande textuelle provenant de l'utilisateur par exemple, il est possible que vous ne puissiez pas spécifier les propriétés `InsertCommand`, `UpdateCommand` ou `DeleteCommand` appropriées au moment de la conception. Si l'objet <xref:System.Data.DataTable> est mappé à une table de base de données unique ou est généré par elle, vous pouvez tirer parti de l'objet <xref:System.Data.Common.DbCommandBuilder> pour générer automatiquement les propriétés `DeleteCommand`, `InsertCommand` et `UpdateCommand` de l'objet <xref:System.Data.Common.DbDataAdapter>.  
@@ -23,9 +23,9 @@ Lorsque la propriété `SelectCommand` est spécifiée de manière dynamique au 
   
  Lorsqu'il est associé à `DataAdapter`, l'objet <xref:System.Data.Common.DbCommandBuilder> génère automatiquement les propriétés `InsertCommand`, `UpdateCommand` et `DeleteCommand` du `DataAdapter` si ce sont des références null. Si une `Command` existe déjà pour une propriété, la `Command` existante est utilisée.  
   
- Les vues de base de données qui sont créées en reliant deux ou plusieurs tables ne sont pas considérées comme une table de base de données unique. Dans ce cas, vous ne pouvez pas utiliser l'objet <xref:System.Data.Common.DbCommandBuilder> pour générer automatiquement des commandes et devez spécifier vos commandes explicitement. Pour plus d’informations sur la définition explicite de commandes pour répercuter les mises à jour à un `DataSet` à la source de données, consultez [la mise à jour des Sources de données avec des DataAdapters](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md).  
+ Les vues de base de données qui sont créées en reliant deux ou plusieurs tables ne sont pas considérées comme une table de base de données unique. Dans ce cas, vous ne pouvez pas utiliser l'objet <xref:System.Data.Common.DbCommandBuilder> pour générer automatiquement des commandes et devez spécifier vos commandes explicitement. Pour plus d’informations sur la définition explicite de commandes pour résoudre des `DataSet` mises à jour vers la source de données, consultez [mise à jour des sources de données avec des DataAdapters](updating-data-sources-with-dataadapters.md).  
   
- Il est possible de mapper les paramètres de sortie à la ligne mise à jour d'un `DataSet`. Une tâche courante consisterait à extraire la valeur d'un champ Identité généré automatiquement ou d'un horodatage provenant de la source de données. L'objet <xref:System.Data.Common.DbCommandBuilder> ne mappera pas les paramètres de sortie aux colonnes dans une ligne mise à jour par défaut. Dans ce cas, vous devez explicitement spécifier votre commande. Pour obtenir un exemple de mappage d’un champ identité généré automatiquement à une colonne d’une ligne insérée, consultez [récupération des valeurs d’identité ou NuméroAuto](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md).  
+ Il est possible de mapper les paramètres de sortie à la ligne mise à jour d'un `DataSet`. Une tâche courante consisterait à extraire la valeur d'un champ Identité généré automatiquement ou d'un horodatage provenant de la source de données. L'objet <xref:System.Data.Common.DbCommandBuilder> ne mappera pas les paramètres de sortie aux colonnes dans une ligne mise à jour par défaut. Dans ce cas, vous devez explicitement spécifier votre commande. Pour obtenir un exemple de mappage d’un champ d’identité généré automatiquement à une colonne d’une ligne insérée, consultez [extraction des valeurs d’identité ou de numérotation](retrieving-identity-or-autonumber-values.md)automatique.  
   
 ## <a name="rules-for-automatically-generated-commands"></a>Règles pour les commandes générées automatiquement  
  Le tableau suivant présente les règles de génération des commandes générées automatiquement.  
@@ -37,7 +37,7 @@ Lorsque la propriété `SelectCommand` est spécifiée de manière dynamique au 
 |`DeleteCommand`|Supprime les lignes dans la source de données pour toutes les lignes de la table dont la propriété `RowState` a la valeur <xref:System.Data.DataRowState.Deleted>. Supprime toutes les lignes où les valeurs de colonne correspondent aux valeurs de colonne de clé primaire de la ligne et où les colonnes restantes de la source de données correspondent aux valeurs d'origine de la ligne. Pour plus d'informations, voir « Modèle d'accès simultané optimiste pour les mises à jour et les suppressions », plus loin dans cette rubrique.|  
   
 ## <a name="optimistic-concurrency-model-for-updates-and-deletes"></a>Modèle d'accès simultané optimiste pour les mises à jour et les suppressions  
- La logique de génération automatique de commandes pour les instructions UPDATE et DELETE est basée sur *d’accès concurrentiel optimiste*--autrement dit, les enregistrements ne sont pas verrouillés pour modification et peut être modifiés par d’autres utilisateurs ou d’un processus à tout moment. Puisqu'un enregistrement aurait pu être modifié après avoir été retourné de l'instruction SELECT mais avant que l'instruction UPDATE ou DELETE ne soit émise, l'instruction UPDATE ou DELETE générée automatiquement contient une clause WHERE spécifiant qu'une ligne n'est mise à jour que si elle contient toutes les valeurs d'origine et n'a pas été supprimée de la source de données. Cela permet d'éviter le remplacement de nouvelles données. Quand une mise à jour générée automatiquement tente de mettre à jour une ligne qui a été supprimée ou qui ne contient pas les valeurs d'origine qui se trouvent dans l'objet <xref:System.Data.DataSet>, la commande n'affecte pas d'enregistrement et un objet <xref:System.Data.DBConcurrencyException> est généré.  
+ La logique de génération automatique de commandes pour les instructions UPDATE et DELETE est basée sur l' *accès concurrentiel optimiste*, autrement dit, les enregistrements ne sont pas verrouillés pour modification et peuvent être modifiés par d’autres utilisateurs ou processus à tout moment. Puisqu'un enregistrement aurait pu être modifié après avoir été retourné de l'instruction SELECT mais avant que l'instruction UPDATE ou DELETE ne soit émise, l'instruction UPDATE ou DELETE générée automatiquement contient une clause WHERE spécifiant qu'une ligne n'est mise à jour que si elle contient toutes les valeurs d'origine et n'a pas été supprimée de la source de données. Cela permet d'éviter le remplacement de nouvelles données. Quand une mise à jour générée automatiquement tente de mettre à jour une ligne qui a été supprimée ou qui ne contient pas les valeurs d'origine qui se trouvent dans l'objet <xref:System.Data.DataSet>, la commande n'affecte pas d'enregistrement et un objet <xref:System.Data.DBConcurrencyException> est généré.  
   
  Si vous souhaitez que les instructions UPDATE ou DELETE soient exécutées indépendamment des valeurs d'origine, vous devez explicitement définir la propriété `UpdateCommand` pour le `DataAdapter` et ne pas compter sur la génération automatique de commandes.  
   
@@ -48,7 +48,7 @@ Lorsque la propriété `SelectCommand` est spécifiée de manière dynamique au 
  La logique de génération automatique de commandes génère des instructions INSERT, UPDATE ou DELETE pour les tables autonomes sans prendre en compte les relations avec les autres tables au niveau de la source de données. En conséquence, il est possible que l'appel à `Update`, pour soumettre les modifications pour une colonne qui participe à une contrainte de clé étrangère dans la base de données, échoue. Pour éviter cette exception, n'utilisez pas l'objet <xref:System.Data.Common.DbCommandBuilder> pour mettre à jour les colonnes impliquées dans une contrainte de clé étrangère et spécifiez plutôt explicitement les instructions utilisées pour effectuer l'opération.  
   
 ### <a name="table-and-column-names"></a>Noms de table et de colonne  
- La logique de génération automatique de commandes peut échouer si les noms de colonne ou de table contiennent des caractères spéciaux (notamment espaces, points, points d'interrogation ou autres caractères non alphanumériques), même s'ils sont délimités par des crochets. Selon le fournisseur, le fait de définir les paramètres QuotePrefix et QuoteSuffix peut permettre à la logique de génération de traiter les espaces, mais pas les caractères spéciaux d'échappement. Noms qualifiés complets table sous la forme de *catalog.schema.table* sont pris en charge.  
+ La logique de génération automatique de commandes peut échouer si les noms de colonne ou de table contiennent des caractères spéciaux (notamment espaces, points, points d'interrogation ou autres caractères non alphanumériques), même s'ils sont délimités par des crochets. Selon le fournisseur, le fait de définir les paramètres QuotePrefix et QuoteSuffix peut permettre à la logique de génération de traiter les espaces, mais pas les caractères spéciaux d'échappement. Les noms de table qualifiés complets sous la forme *Catalog. Schema. table* sont pris en charge.  
   
 ## <a name="using-the-commandbuilder-to-automatically-generate-an-sql-statement"></a>Utilisation de CommandBuilder pour générer automatiquement une instruction SQL  
  Pour générer automatiquement des instructions SQL pour un `DataAdapter`, commencez par définir la propriété `SelectCommand` du `DataAdapter`, puis créez un objet `CommandBuilder` et spécifiez comme argument le `DataAdapter` pour lequel l’objet `CommandBuilder` génère automatiquement des instructions SQL.  
@@ -90,7 +90,7 @@ Console.WriteLine(builder.GetUpdateCommand().CommandText)
 Console.WriteLine(builder.GetUpdateCommand().CommandText);
 ```
   
- L'exemple suivant recrée la table `Customers` dans le dataset `custDS`. Le **RefreshSchema** méthode est appelée pour actualiser les commandes générées automatiquement avec ces nouvelles informations de colonne.  
+ L'exemple suivant recrée la table `Customers` dans le dataset `custDS`. La méthode **RefreshSchema** est appelée pour actualiser les commandes générées automatiquement avec ces nouvelles informations de colonne.  
   
 ```vb  
 ' Assumes an open SqlConnection and SqlDataAdapter inside of a Using block.  
@@ -114,7 +114,7 @@ adapter.Fill(custDS, "Customers");
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Commandes et paramètres](../../../../docs/framework/data/adonet/commands-and-parameters.md)
-- [Exécution d’une commande](../../../../docs/framework/data/adonet/executing-a-command.md)
-- [DbConnection, DbCommand et DbException](../../../../docs/framework/data/adonet/dbconnection-dbcommand-and-dbexception.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Commandes et paramètres](commands-and-parameters.md)
+- [Exécution d’une commande](executing-a-command.md)
+- [DbConnection, DbCommand et DbException](dbconnection-dbcommand-and-dbexception.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

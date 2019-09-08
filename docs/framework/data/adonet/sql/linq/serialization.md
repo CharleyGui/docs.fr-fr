@@ -5,26 +5,26 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a15ae411-8dc2-4ca3-84d2-01c9d5f1972a
-ms.openlocfilehash: 1ff6f8b58e01c86ae1c1e2e1533b1997ba2eb6b0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bf303f9a79fbcab85d33fcb3ebb132d1d3e2041d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742889"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781112"
 ---
 # <a name="serialization"></a>Sérialisation
-Cette rubrique décrit [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fonctions de sérialisation. Les paragraphes qui suivent fournissent des informations sur l'ajout de la sérialisation pendant la génération de code au moment du design et le comportement de sérialisation à l'exécution de classes [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+Cette rubrique décrit [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] les fonctionnalités de sérialisation. Les paragraphes qui suivent fournissent des informations sur l'ajout de la sérialisation pendant la génération de code au moment du design et le comportement de sérialisation à l'exécution de classes [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
  Vous pouvez ajouter du code de sérialisation au moment du design selon l'un des méthodes suivantes :  
   
-- Dans le concepteur objet/relationnel, modifiez le **Mode de sérialisation** propriété **Serialization**.  
+- Dans le Concepteur Objet Relationnel, remplacez la valeur de la propriété **mode de sérialisation** par **unidirectionnelle**.  
   
-- Sur la ligne de commande SQLMetal, ajoutez le **/serialization** option. Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
+- Sur la ligne de commande SQLMetal, ajoutez l’option **/Serialization** . Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../tools/sqlmetal-exe-code-generation-tool.md).  
   
 ## <a name="overview"></a>Présentation  
- Le code généré par [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fournit des fonctions de chargement différé par défaut. Le chargement différé est très utile au niveau intermédiaire pour le chargement transparent de données à la demande. Il pose toutefois problème pour la sérialisation car le sérialiseur déclenche un chargement différé, qu'il soit voulu ou non. En effet, lorsqu'un objet est sérialisé, sa fermeture transitive dans toutes les références à chargement différé en sortie est sérialisée.  
+ Le code généré par [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fournit des fonctionnalités de chargement différé par défaut. Le chargement différé est très utile au niveau intermédiaire pour le chargement transparent de données à la demande. Il pose toutefois problème pour la sérialisation car le sérialiseur déclenche un chargement différé, qu'il soit voulu ou non. En effet, lorsqu'un objet est sérialisé, sa fermeture transitive dans toutes les références à chargement différé en sortie est sérialisée.  
   
- Le [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fonctionnalité de sérialisation résout ce problème, principalement par le biais de deux mécanismes :  
+ La [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fonctionnalité de sérialisation résout ce problème, principalement par le biais de deux mécanismes :  
   
 - Un mode <xref:System.Data.Linq.DataContext> pour désactiver le chargement différé (<xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A>). Pour plus d'informations, consultez <xref:System.Data.Linq.DataContext>.  
   
@@ -32,9 +32,9 @@ Cette rubrique décrit [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdli
   
 ### <a name="definitions"></a>Définitions  
   
-- *Sérialiseur DataContract*: Sérialiseur par défaut utilisé par le composant de Windows Communication Framework (WCF) du .NET Framework 3.0 ou versions ultérieures.  
+- *Sérialiseur DataContract*: Sérialiseur par défaut utilisé par le composant Windows Communication Framework (WCF) du .NET Framework 3,0 ou versions ultérieures.  
   
-- *Sérialisation unidirectionnelle*: La version sérialisée d’une classe qui contient uniquement une propriété d’association unidirectionnelle (pour éviter un cycle). Par convention, la propriété sur le côté parent d'une relation de clé primaire-étrangère est marquée pour sérialisation. L'autre côté d'une association bidirectionnelle n'est pas sérialisé.  
+- *Sérialisation unidirectionnelle*: Version sérialisée d’une classe qui contient uniquement une propriété d’association unidirectionnelle (pour éviter un cycle). Par convention, la propriété sur le côté parent d'une relation de clé primaire-étrangère est marquée pour sérialisation. L'autre côté d'une association bidirectionnelle n'est pas sérialisé.  
   
      La sérialisation unidirectionnelle est le seul type de sérialisation pris en charge par [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
@@ -67,13 +67,13 @@ Cette rubrique décrit [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdli
 ### <a name="self-recursive-relationships"></a>Relations auto-récursives  
  Les relations auto-récursives suivent le même modèle. La propriété d'association qui correspond à la clé étrangère n'a pas d'attribut <xref:System.Runtime.Serialization.DataMemberAttribute>, contrairement à la propriété parente.  
   
- Considérez la classe suivante, qui a deux relations auto-récursives : Employee.Manager/Reports et Employee.mentor/mentees.  
+ Considérons la classe suivante qui a deux relations auto-récursives : Employee. Manager/Reports et Employee. mentor.  
   
  [!code-csharp[DLinqSerialization#7](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSerialization/cs/northwind-ser.cs#7)]
  [!code-vb[DLinqSerialization#7](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSerialization/vb/northwind-ser.vb#7)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations générales](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
-- [SqlMetal.exe (outil de génération de code)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)
-- [Guide pratique pour Rendre les entités sérialisables](../../../../../../docs/framework/data/adonet/sql/linq/how-to-make-entities-serializable.md)
+- [Informations générales](background-information.md)
+- [SqlMetal.exe (outil de génération de code)](../../../../tools/sqlmetal-exe-code-generation-tool.md)
+- [Guide pratique pour Rendre les entités sérialisables](how-to-make-entities-serializable.md)

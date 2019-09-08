@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e5b5f7ce6a4ce8f542b3c49fe4749bfde23ecf84
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 58919936bdc62d52437f429146f04c66d49294b2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67744492"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796584"
 ---
 # <a name="iassemblynamegetversion-method"></a>IAssemblyName::GetVersion, méthode
-Obtient les informations de version pour l’assembly référencé par ce [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objet.  
+Obtient les informations de version de l’assembly référencé par cet objet [IAssemblyName](iassemblyname-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,18 +38,18 @@ HRESULT GetVersion (
   
 ## <a name="parameters"></a>Paramètres  
  `pdwVersionHi`  
- [out] 32 bits de poids fort de la version.  
+ à 32 bits de poids fort de la version.  
   
  `pdwVersionLow`  
- [out] 32 bits de poids faibles de la version.  
+ à Les 32 bits de version basse de la version.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** Fusion.h  
+ **En-tête :** Fusion. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IAssemblyName, interface](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
+- [IAssemblyName, interface](iassemblyname-interface.md)

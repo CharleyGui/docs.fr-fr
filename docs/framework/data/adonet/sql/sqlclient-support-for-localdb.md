@@ -2,18 +2,18 @@
 title: Prise en charge de SqlClient pour LocalDB
 ms.date: 03/30/2017
 ms.assetid: cf796898-5575-46f2-ae6e-21e5aa8c4123
-ms.openlocfilehash: 23fe0d19ad31c0b09e1a12b5ea25e45a973a14f4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 200db3b1014278e711062bcbdff81be8d27c3351
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645828"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780769"
 ---
 # <a name="sqlclient-support-for-localdb"></a>Prise en charge de SqlClient pour LocalDB
-À compter de SQL Server, nom de code Denali, une version légère de SQL Server, appelée LocalDB, sera disponible. Cette rubrique explique comment se connecter à une base de données LocalDB.  
+À compter de SQL Server nom de code Denali, une version allégée de SQL Server, appelée base de données locale, sera disponible. Cette rubrique explique comment se connecter à une base de données LocalDB.  
   
 ## <a name="remarks"></a>Notes  
- Pour plus d’informations sur la base de données locale, y compris comment installer LocalDB et configurer votre instance de base de données locale, consultez la documentation en ligne de SQL Server.  
+ Pour plus d’informations sur la base de données locale, notamment sur l’installation de la base de données locale et configurer votre instance de base de données locale, consultez Documentation en ligne de SQL Server  
   
  Pour résumer les opérations possibles avec LocalDB :  
   
@@ -31,7 +31,7 @@ ms.locfileid: "64645828"
   
  Vous ne pouvez pas utiliser`User Instance=True` lors de la connexion à une base de données LocalDB.  
   
- Vous pouvez télécharger LocalDB à partir de [Microsoft SQL Server 2012 Feature Pack](https://www.microsoft.com/download/en/details.aspx?id=29065). Si vous devez utiliser sqlcmd.exe pour modifier des données dans votre instance de base de données locale, vous devez sqlcmd à partir de SQL Server 2012, vous pouvez également obtenir à partir de SQL Server 2012 Feature Pack.  
+ Vous pouvez télécharger LocalDB à partir de [Microsoft SQL Server 2012 Feature Pack](https://www.microsoft.com/download/en/details.aspx?id=29065). Si vous souhaitez utiliser SQLCMD. exe pour modifier des données dans votre instance de base de données locale, vous aurez besoin de sqlcmd de SQL Server 2012, que vous pouvez également récupérer à partir de la SQL Server 2012 Feature Pack.  
   
 ## <a name="programmatically-create-a-named-instance"></a>Créer par programme une instance nommée  
  Une application peut créer une instance nommée et spécifier une base de données comme suit :  
@@ -60,5 +60,5 @@ ms.locfileid: "64645828"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctionnalités SQL Server et ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Fonctionnalités SQL Server et ADO.NET](sql-server-features-and-adonet.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

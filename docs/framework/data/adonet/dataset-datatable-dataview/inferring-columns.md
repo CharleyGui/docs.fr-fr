@@ -2,15 +2,15 @@
 title: Déduction des colonnes
 ms.date: 03/30/2017
 ms.assetid: 0e022699-c922-454c-93e2-957dd7e7247a
-ms.openlocfilehash: 651d132fd76ba9015d4730a5e519bc679608e275
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 2718cbcf29799f99c8648b129fdb6079a6f6d344
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203591"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786178"
 ---
 # <a name="inferring-columns"></a>Déduction des colonnes
-Après avoir déterminé les éléments à déduire en tant que tables pour un objet <xref:System.Data.DataSet> à partir d'un document XML, ADO.NET déduit les colonnes pour ces tables. ADO.NET 2,0 a introduit un nouveau moteur d’inférence de schéma qui déduit un type de données fortement typé pour chaque élément **simpleType** . Dans les versions précédentes, le type de données d’un élément **simpleType** inféré était toujours **xsd: String**.  
+Après avoir déterminé les éléments à déduire en tant que tables pour un objet <xref:System.Data.DataSet> à partir d'un document XML, ADO.NET déduit les colonnes pour ces tables. ADO.NET 2,0 a introduit un nouveau moteur d’inférence de schéma qui déduit un type de données fortement typé pour chaque élément **simpleType** . Dans les versions précédentes, le type de données d’un élément **simpleType** inféré était toujours **xsd : String**.  
   
 ## <a name="migration-and-backward-compatibility"></a>Migration et compatibilité ascendante  
  La méthode **ReadXml** accepte un argument de type **InferSchema**. Cet argument vous permet de spécifier un comportement d’inférence compatible avec les versions précédentes. Les valeurs disponibles pour l’énumération **InferSchema** sont indiquées dans le tableau suivant.  
@@ -25,7 +25,7 @@ Après avoir déterminé les éléments à déduire en tant que tables pour un o
  Ignore tout schéma inline et lit les données dans le schéma <xref:System.Data.DataSet> existant.  
   
 ## <a name="attributes"></a>Attributs  
- Comme défini dans l’inférence des [tables](inferring-tables.md), un élément avec des attributs est déduit en tant que table. Les attributs de cet élément seront ensuite déduits en tant que colonnes de cette table. La propriété **ColumnMapping** des colonnes aura pour valeur **MappingType. Attribute**afin de s’assurer que les noms de colonne seront écrits comme des attributs si le schéma est réécrit en XML. Les valeurs des attributs sont stockées dans une ligne de la table. Examinons, par exemple, le code XML suivant :  
+ Comme défini dans l' [inférence des tables](inferring-tables.md), un élément avec des attributs est déduit en tant que table. Les attributs de cet élément seront ensuite déduits en tant que colonnes de cette table. La propriété **ColumnMapping** des colonnes aura pour valeur **MappingType. Attribute**afin de s’assurer que les noms de colonne seront écrits comme des attributs si le schéma est réécrit en XML. Les valeurs des attributs sont stockées dans une ligne de la table. Examinons, par exemple, le code XML suivant :  
   
 ```xml  
 <DocumentElement>  
@@ -72,4 +72,4 @@ Après avoir déterminé les éléments à déduire en tant que tables pour un o
 - [Chargement des informations de schéma de DataSet à partir de XML](loading-dataset-schema-information-from-xml.md)
 - [Utilisation de XML dans un DataSet](using-xml-in-a-dataset.md)
 - [DataSets, DataTables et DataViews](index.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

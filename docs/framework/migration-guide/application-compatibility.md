@@ -8,16 +8,16 @@ helpviewer_keywords:
 ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 56f0ebccc1bd46a26b5247ac2668e963cbeac828
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: f547180995ec155f9121eeace109e7dfb07c7827
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106484"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70790113"
 ---
 # <a name="application-compatibility-in-the-net-framework"></a>Compatibilité des applications dans le .NET Framework
 
-## <a name="introduction"></a>Introduction
+## <a name="introduction"></a>Présentation
 La compatibilité est un objectif très important de chaque version de .NET. La compatibilité garantit que chaque version est additive et que les versions précédentes fonctionnent donc toujours. En revanche, les modifications apportées aux fonctionnalités précédentes (pour améliorer les performances, résoudre des problèmes de sécurité ou corriger des bogues) peuvent provoquer des problèmes de compatibilité dans le code ou des applications qui s’exécutent sous une version ultérieure. Le .NET Framework reconnaît les modifications de reciblage et du runtime. Les modifications de reciblage concernent les applications qui ciblent une version spécifique du .NET Framework, mais sont exécutées sur une version ultérieure. Les modifications du runtime concernent toutes les applications qui s’exécutent sur une version particulière.
 
 Chaque application cible une version spécifique du .NET Framework, qui peut être indiquée par :
@@ -68,7 +68,7 @@ Chaque problème comprend les informations suivantes :
 
 - Les ID des diagnostics disponibles
 
-## <a name="usage"></a>Utilisation
+## <a name="usage"></a>Usage
 Pour commencer, sélectionnez le type de modification de la compatibilité ci-dessous :
 
 - [Modifications de reciblage](./retargeting/index.md)
@@ -76,6 +76,6 @@ Pour commencer, sélectionnez le type de modification de la compatibilité ci-de
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Versions et dépendances](../../../docs/framework/migration-guide/versions-and-dependencies.md)
-- [Nouveautés](../../../docs/framework/whats-new/index.md)
-- [Éléments obsolètes dans la bibliothèque de classes](../../../docs/framework/whats-new/whats-obsolete.md)
+- [Versions et dépendances](versions-and-dependencies.md)
+- [Nouveautés](../whats-new/index.md)
+- [Éléments obsolètes dans la bibliothèque de classes](../whats-new/whats-obsolete.md)

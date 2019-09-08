@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f21e6aba-b76d-46ad-a83e-2ad8e0af1e12
-ms.openlocfilehash: 772763b5927ca845d6c2ccba50382652e410ae4f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 83fc3101b0eb428def6cbc446e634e9bb45de350
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69951239"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785611"
 ---
 # <a name="dataadapter-parameters"></a>Paramètres DataAdapter
 L'objet <xref:System.Data.Common.DbDataAdapter> possède quatre propriétés qui sont utilisées pour récupérer des données dans la source de données et y mettre des données à jour : la propriété <xref:System.Data.Common.DbDataAdapter.SelectCommand%2A> retourne des données de la source de données et les propriétés <xref:System.Data.Common.DbDataAdapter.InsertCommand%2A>, <xref:System.Data.Common.DbDataAdapter.UpdateCommand%2A> et <xref:System.Data.Common.DbDataAdapter.DeleteCommand%2A> sont utilisées pour gérer les modifications au niveau de la source de données. La  propriété `SelectCommand` doit être définie avant d'appeler la méthode `Fill` du `DataAdapter`. Les propriétés `InsertCommand`, `UpdateCommand` ou `DeleteCommand` doivent être définies avant que la méthode `Update` du `DataAdapter` ne soit appelée, en fonction des modifications qui ont été apportées aux données dans le <xref:System.Data.DataTable>. Par exemple, si des lignes ont été ajoutées, `InsertCommand` doit être défini avant d'appeler `Update`. Lorsque `Update` traite une ligne insérée, mise à jour ou supprimée, le `DataAdapter` utilise la propriété `Command` respective pour traiter l'action. Les informations actuelles concernant la ligne modifiée sont passées à l’objet `Command` par le biais de la collection `Parameters`.  
@@ -39,7 +39,7 @@ parameter.SourceVersion = DataRowVersion.Original
  La méthode `Add` de la collection `Parameters` prend le nom du paramètre, le type de données, la taille (si elle est applicable au type) et le nom de la propriété <xref:System.Data.Common.DbParameter.SourceColumn%2A> du `DataTable`. Notez que la propriété <xref:System.Data.Common.DbParameter.SourceVersion%2A> du paramètre `@CustomerID` a la valeur `Original`. Cela garantit que la ligne existante dans la source de données est mise à jour si la valeur de la ou des colonnes d'identification a été modifiée dans l'objet <xref:System.Data.DataRow>. Dans ce cas, la valeur de ligne `Original` correspondrait à la valeur actuelle de la source de données et la valeur de ligne `Current` contiendrait la valeur mise à jour. Le `SourceVersion` du paramètre `@CompanyName` n'est pas défini et utilise la valeur de ligne `Current` par défaut.  
   
 > [!NOTE]
-> Pour les `Fill` opérations `DataAdapter` `Get` du`DataReader`et des méthodes du, le type de .NET Framework est déduit du type retourné par le fournisseur de données .NET Framework. Les types de .NET Framework déduits et les méthodes d’accesseur pour les types de données Microsoft SQL Server, OLE DB et ODBC sont décrits dans mappages de [types de données dans ADO.net](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md).  
+> Pour les `Fill` opérations `DataAdapter` `Get` du`DataReader`et des méthodes du, le type de .NET Framework est déduit du type retourné par le fournisseur de données .NET Framework. Les types de .NET Framework déduits et les méthodes d’accesseur pour les types de données Microsoft SQL Server, OLE DB et ODBC sont décrits dans [mappages de types de données dans ADO.net](data-type-mappings-in-ado-net.md).  
   
 ## <a name="parametersourcecolumn-parametersourceversion"></a>Parameter.SourceColumn, Parameter.SourceVersion  
  Le `SourceColumn` et `SourceVersion` peuvent être passés comme arguments au constructeur `Parameter`ou définis comme propriétés d'un `Parameter` existant. `SourceColumn` est le nom de l'objet <xref:System.Data.DataColumn> provenant de l'objet <xref:System.Data.DataRow> dans lequel la valeur de `Parameter` sera récupérée. `SourceVersion` spécifie la version du `DataRow` que le `DataAdapter` utilise pour récupérer la valeur.  
@@ -162,13 +162,13 @@ adapter.Fill(customers, "Customers");
 ```  
   
 > [!NOTE]
-> Si aucun nom de paramètre n’est fourni pour un paramètre, le paramètre reçoit un nom incrémentiel par défaut de paramètre*N* *,* commençant par «paramètre1». Nous vous recommandons d’éviter la Convention de nommage des paramètres*N* lorsque vous fournissez un nom de paramètre, car le nom que vous fournissez peut être en conflit avec `ParameterCollection`un nom de paramètre par défaut existant dans le. Si le nom fourni existe déjà, une exception est levée.  
+> Si aucun nom de paramètre n’est fourni pour un paramètre, le paramètre reçoit un nom incrémentiel par défaut de paramètre*N* *,* commençant par « paramètre1 ». Nous vous recommandons d’éviter la Convention de nommage des paramètres*N* lorsque vous fournissez un nom de paramètre, car le nom que vous fournissez peut être en conflit avec `ParameterCollection`un nom de paramètre par défaut existant dans le. Si le nom fourni existe déjà, une exception est levée.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [DataAdapters et DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [Commandes et paramètres](../../../../docs/framework/data/adonet/commands-and-parameters.md)
-- [Mise à jour de sources de données avec des DataAdapters](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
-- [Modification des données avec les procédures stockées](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)
-- [Mappages de types de données dans ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [DataAdapters et DataReaders](dataadapters-and-datareaders.md)
+- [Commandes et paramètres](commands-and-parameters.md)
+- [Mise à jour de sources de données avec des DataAdapters](updating-data-sources-with-dataadapters.md)
+- [Modification des données avec les procédures stockées](modifying-data-with-stored-procedures.md)
+- [Mappages de types de données dans ADO.NET](data-type-mappings-in-ado-net.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

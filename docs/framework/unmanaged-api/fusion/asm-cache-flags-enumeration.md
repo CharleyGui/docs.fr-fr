@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 27caa9916b5adab2b2049a8f66ac34fed40e4d7f
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 0e3e9da3db71d3e24b2a60ff032a631680055b88
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778574"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795273"
 ---
-# <a name="asmcacheflags-enumeration"></a>ASM_CACHE_FLAGS, énumération
-Indique la source d’un assembly qui est représenté par [IAssemblyCacheItem](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md) dans le global assembly cache.  
+# <a name="asm_cache_flags-enumeration"></a>ASM_CACHE_FLAGS, énumération
+Indique la source d’un assembly qui est représenté par [IAssemblyCacheItem](iassemblycacheitem-interface.md) dans le global assembly cache.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,23 +42,23 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`ASM_CACHE_ZAP`|Énumère le cache d’assemblys précompilés à l’aide de Ngen.exe.|  
-|`ASM_CACHE_GAC`|Énumère le global assembly cache.|  
-|`ASM_CACHE_DOWNLOAD`|Énumère les assemblys qui ont été téléchargées à la demande ou qui ont été une copie fantôme.|  
-|`ASM_CACHE_ROOT`|Indique que le [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md) fonction doit retourner le chemin d’accès dans le global assembly cache pour le common language runtime (CLR) version 2.0. Pertinent uniquement dans le contexte d’un appel à [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md).|  
-|`ASM_CACHE_ROOT_EX`|Indique que le [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md) fonction doit retourner le chemin d’accès dans le global assembly cache pour le CLR version 4. Pertinent uniquement dans le contexte d’un appel à [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md).|  
+|`ASM_CACHE_ZAP`|Énumère le cache des assemblys précompilés à l’aide de Ngen. exe.|  
+|`ASM_CACHE_GAC`|Énumère les Global Assembly Cache.|  
+|`ASM_CACHE_DOWNLOAD`|Énumère les assemblys qui ont été téléchargés à la demande ou qui ont été copiés par des clichés instantanés.|  
+|`ASM_CACHE_ROOT`|Indique que la fonction [GetCachePath](getcachepath-function.md) doit retourner le chemin d’accès au global assembly cache pour la Common Language Runtime (CLR) version 2,0. Significatif uniquement dans le contexte d’un appel à [GetCachePath](getcachepath-function.md).|  
+|`ASM_CACHE_ROOT_EX`|Indique que la fonction [GetCachePath](getcachepath-function.md) doit retourner le chemin d’accès au global assembly cache de CLR version 4. Significatif uniquement dans le contexte d’un appel à [GetCachePath](getcachepath-function.md).|  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** Fusion.h  
+ **En-tête :** Fusion. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [GetCachePath, fonction](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md)
-- [IAssemblyCacheItem, interface](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md)
-- [Énumérations de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+- [GetCachePath, fonction](getcachepath-function.md)
+- [IAssemblyCacheItem, interface](iassemblycacheitem-interface.md)
+- [Énumérations de fusion](fusion-enumerations.md)

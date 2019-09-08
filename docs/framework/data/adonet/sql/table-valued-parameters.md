@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
-ms.openlocfilehash: 59c6732dacf225097e22957ebe6536308a2798d4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 316ccb19ca9e384be97a83e992af46934702aa0c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938447"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780692"
 ---
 # <a name="table-valued-parameters"></a>Paramètres table
 Les paramètres table fournissent un moyen simple de marshaler plusieurs lignes de données d'une application cliente vers SQL Server sans avoir recours à plusieurs allers-retours ou à une logique côté serveur spéciale pour le traitement des données. Les paramètres table vous permettent d'encapsuler des lignes de données dans une application cliente et d'envoyer les données au serveur dans une commande paramétrée unique. Les lignes de données entrantes sont stockées dans une variable de table qui peut ensuite être traitée en utilisant Transact-SQL.  
@@ -274,8 +274,8 @@ insertCommand.ExecuteNonQuery()
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Configuration des paramètres et des types de données des paramètres](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)
-- [Commandes et paramètres](../../../../../docs/framework/data/adonet/commands-and-parameters.md)
-- [Paramètres DataAdapter](../../../../../docs/framework/data/adonet/dataadapter-parameters.md)
-- [Opérations sur les données SQL Server dans ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-operations.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Configuration des paramètres et des types de données des paramètres](../configuring-parameters-and-parameter-data-types.md)
+- [Commandes et paramètres](../commands-and-parameters.md)
+- [Paramètres DataAdapter](../dataadapter-parameters.md)
+- [Opérations sur les données SQL Server dans ADO.NET](sql-server-data-operations.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

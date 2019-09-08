@@ -9,22 +9,22 @@ helpviewer_keywords:
 ms.assetid: 5c0a3d14-5f26-4267-94a9-82c30f8db09a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9f41a233e9b5338bdb0a324ff9af267a97821d4e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: a95ff535a4d0847fbd4b8af28f873b67a1829a4f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61967698"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798822"
 ---
 # <a name="tlbexp-helper-functions-unmanaged-api-reference"></a>Fonctions d'assistance de Tlbexp (Informations de référence sur les API non managées)
-L’[outil Type Library Exporter](../../../../docs/framework/tools/tlbexp-exe-type-library-exporter.md) (Tlbexp.exe) charge une bibliothèque de liens dynamiques nommée TlbRef.dll. Cette DLL contient deux fonctions d’assistance et une interface que l’outil exportateur utilise pendant le processus de conversion de l’assembly à la bibliothèque de types.  
+L’[outil Type Library Exporter](../../tools/tlbexp-exe-type-library-exporter.md) (Tlbexp.exe) charge une bibliothèque de liens dynamiques nommée TlbRef.dll. Cette DLL contient deux fonctions d’assistance et une interface que l’outil exportateur utilise pendant le processus de conversion de l’assembly à la bibliothèque de types.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [GetTypeLibInfo, fonction](../../../../docs/framework/unmanaged-api/tlbexp/gettypelibinfo-function.md)  
+ [GetTypeLibInfo, fonction](gettypelibinfo-function.md)  
  Fournit des informations sur la localisation et le système d’exploitation pour une bibliothèque de types.  
   
- [LoadTypeLibWithResolver, fonction](../../../../docs/framework/unmanaged-api/tlbexp/loadtypelibwithresolver-function.md)  
- Charge une bibliothèque de types à l’aide d’une implémentation de l’[interface ITypeLibResolver](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md) pour résoudre tous les types de bibliothèques référencés.  
+ [LoadTypeLibWithResolver, fonction](loadtypelibwithresolver-function.md)  
+ Charge une bibliothèque de types à l’aide d’une implémentation de l’[interface ITypeLibResolver](itypelibresolver-interface.md) pour résoudre tous les types de bibliothèques référencés.  
   
- [ITypeLibResolver, interface](../../../../docs/framework/unmanaged-api/tlbexp/itypelibresolver-interface.md)  
- Fournit la [méthode ResolveTypeLib](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md), qui retourne le chemin d’accès complet d’une bibliothèque de types.
+ [ITypeLibResolver, interface](itypelibresolver-interface.md)  
+ Fournit la [méthode ResolveTypeLib](resolvetypelib-method.md), qui retourne le chemin d’accès complet d’une bibliothèque de types.

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: a0bb52de-d279-419d-8f23-4b12d1a3f36e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e41a51dcdf243091d3962278f1a59a85a2722894
-ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
-ms.translationtype: HT
+ms.openlocfilehash: a74c25a9bf4dd8b9ab86bd280881fe1a7999e1d5
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66251127"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70789993"
 ---
 # <a name="mitigation-path-colon-checks"></a>Atténuation : vérifications des signes deux-points dans les chemins d’accès
 À compter des applications qui ciblent .NET Framework 4.6.2, plusieurs modifications ont été apportées pour prendre en charge les chemins d’accès non pris en charge précédemment (à la fois en termes de longueur et de format). En particulier, les vérifications de bonne syntaxe de séparateur de lecteur (le signe deux-points) ont été rendues plus correctes.  
@@ -34,4 +34,4 @@ ms.locfileid: "66251127"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modifications de reciblage](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-2.md)
+- [Modifications de reciblage](retargeting-changes-in-the-net-framework-4-6-2.md)

@@ -2,18 +2,18 @@
 title: Collections de schémas OLE DB
 ms.date: 03/30/2017
 ms.assetid: 6380c36b-658e-4d67-91e8-7131ef4a7c2c
-ms.openlocfilehash: 6c3441e86d4c5267418cf8002ba17d539c464d5c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2d5718c12100ebea49a6b6fab29a3790918c6ad3
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645899"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783451"
 ---
 # <a name="ole-db-schema-collections"></a>Collections de schémas OLE DB
 Cette section traite de la prise en charge des collections de schémas pour les fournisseurs OLE DB de Microsoft SQL Server, Oracle et Microsoft Jet.  
   
 ## <a name="microsoft-sql-server-ole-db-provider"></a>Fournisseur Microsoft SQL Server OLE DB  
- Le pilote OLE DB Microsoft SQL Server prend en charge les collections de schémas spécifiques suivantes en plus des collections de schémas courantes :  
+ Le pilote Microsoft SQL Server OLE DB prend en charge les collections de schémas spécifiques suivantes en plus des collections de schémas courantes :  
   
 - Tables  
   
@@ -29,127 +29,127 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ### <a name="tables"></a>Tables  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|TABLE_CATALOG|Chaîne|  
-|TABLE_SCHEMA|Chaîne|  
-|TABLE_NAME|Chaîne|  
-|TABLE_TYPE|Chaîne|  
-|TABLE_GUID|GUID|  
-|DESCRIPTION|Chaîne|  
+|TABLE_CATALOG|String|  
+|TABLE_SCHEMA|String|  
+|TABLE_NAME|String|  
+|TABLE_TYPE|String|  
+|TABLE_GUID|Guid|  
+|Description|String|  
 |TABLE_PROPID|Int64|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="columns"></a>Colonnes  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|TABLE_CATALOG|Chaîne|  
-|TABLE_SCHEMA|Chaîne|  
-|TABLE_NAME|Chaîne|  
-|COLUMN_NAME|Chaîne|  
-|COLUMN_GUID|GUID|  
+|TABLE_CATALOG|String|  
+|TABLE_SCHEMA|String|  
+|TABLE_NAME|String|  
+|COLUMN_NAME|String|  
+|COLUMN_GUID|Guid|  
 |COLUMN_PROPID|Int64|  
 |ORDINAL_POSITION|Int64|  
-|COLUMN_HASDEFAULT|Booléen|  
-|COLUMN_DEFAULT|Chaîne|  
+|COLUMN_HASDEFAULT|Boolean|  
+|COLUMN_DEFAULT|String|  
 |COLUMN_FLAGS|Int64|  
-|IS_NULLABLE|Booléen|  
+|IS_NULLABLE|Boolean|  
 |DATA_TYPE|Int32|  
-|TYPE_GUID|GUID|  
+|TYPE_GUID|Guid|  
 |CHARACTER_MAXIMUM_LENGTH|Int64|  
 |CHARACTER_OCTET_LENGTH|Int64|  
 |NUMERIC_PRECISION|Int32|  
 |NUMERIC_SCALE|Int16|  
 |DATETIME_PRECISION|Int64|  
-|CHARACTER_SET_CATALOG|Chaîne|  
-|CHARACTER_SET_SCHEMA|Chaîne|  
-|CHARACTER_SET_NAME|Chaîne|  
-|COLLATION_CATALOG|Chaîne|  
-|COLLATION_SCHEMA|Chaîne|  
-|COLLATION_NAME|Chaîne|  
-|DOMAIN_CATALOG|Chaîne|  
-|DOMAIN_SCHEMA|Chaîne|  
-|DOMAIN_NAME|Chaîne|  
-|DESCRIPTION|Chaîne|  
+|CHARACTER_SET_CATALOG|String|  
+|CHARACTER_SET_SCHEMA|String|  
+|CHARACTER_SET_NAME|String|  
+|COLLATION_CATALOG|String|  
+|COLLATION_SCHEMA|String|  
+|COLLATION_NAME|String|  
+|DOMAIN_CATALOG|String|  
+|DOMAIN_SCHEMA|String|  
+|DOMAIN_NAME|String|  
+|Description|String|  
 |COLUMN_LCID|Int32|  
 |COLUMN_COMPFLAGS|Int32|  
 |COLUMN_SORTID|Int32|  
 |COLUMN_TDSCOLLATION|Byte[]|  
-|IS_COMPUTED|Booléen|  
+|IS_COMPUTED|Boolean|  
   
 ### <a name="procedures"></a>Procédures  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|PROCEDURE_CATALOG|Chaîne|  
-|PROCEDURE_SCHEMA|Chaîne|  
-|PROCEDURE_NAME|Chaîne|  
+|PROCEDURE_CATALOG|String|  
+|PROCEDURE_SCHEMA|String|  
+|PROCEDURE_NAME|String|  
 |PROCEDURE_TYPE|Int16|  
-|PROCEDURE_DEFINITION|Chaîne|  
-|DESCRIPTION|Chaîne|  
+|PROCEDURE_DEFINITION|String|  
+|Description|String|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="procedureparameters"></a>ProcedureParameters  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|PROCEDURE_CATALOG|Chaîne|  
-|PROCEDURE_SCHEMA|Chaîne|  
-|PROCEDURE_NAME|Chaîne|  
-|PARAMETER_NAME|Chaîne|  
+|PROCEDURE_CATALOG|String|  
+|PROCEDURE_SCHEMA|String|  
+|PROCEDURE_NAME|String|  
+|PARAMETER_NAME|String|  
 |ORDINAL_POSITION|Int32|  
 |PARAMETER_TYPE|Int32|  
-|PARAMETER_HASDEFAULT|Booléen|  
-|PARAMETER_DEFAULT|Chaîne|  
-|IS_NULLABLE|Booléen|  
+|PARAMETER_HASDEFAULT|Boolean|  
+|PARAMETER_DEFAULT|String|  
+|IS_NULLABLE|Boolean|  
 |DATA_TYPE|Int32|  
 |CHARACTER_MAXIMUM_LENGTH|Int64|  
 |CHARACTER_OCTET_LENGTH|Int64|  
 |NUMERIC_PRECISION|Int32|  
 |NUMERIC_SCALE|Int16|  
-|DESCRIPTION|Chaîne|  
-|TYPE_NAME|Chaîne|  
-|LOCAL_TYPE_NAME|Chaîne|  
+|Description|String|  
+|TYPE_NAME|String|  
+|LOCAL_TYPE_NAME|String|  
   
 ### <a name="catalog"></a>Catalogue  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|CATALOG_NAME|Chaîne|  
-|DESCRIPTION|Chaîne|  
+|CATALOG_NAME|String|  
+|Description|String|  
   
 ### <a name="indexes"></a>Index  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|TABLE_CATALOG|Chaîne|  
-|TABLE_SCHEMA|Chaîne|  
-|TABLE_NAME|Chaîne|  
-|INDEX_CATALOG|Chaîne|  
-|INDEX_SCHEMA|Chaîne|  
-|INDEX_NAME|Chaîne|  
-|PRIMARY_KEY|Booléen|  
-|UNIQUE|Booléen|  
-|CLUSTERED|Booléen|  
+|TABLE_CATALOG|String|  
+|TABLE_SCHEMA|String|  
+|TABLE_NAME|String|  
+|INDEX_CATALOG|String|  
+|INDEX_SCHEMA|String|  
+|INDEX_NAME|String|  
+|PRIMARY_KEY|Boolean|  
+|UNIQUE|Boolean|  
+|CLUSTERED|Boolean|  
 |TYPE|Int32|  
 |FILL_FACTOR|Int32|  
 |INITIAL_SIZE|Int32|  
 |NULLS|Int32|  
-|SORT_BOOKMARKS|Booléen|  
-|AUTO_UPDATE|Booléen|  
+|SORT_BOOKMARKS|Boolean|  
+|AUTO_UPDATE|Boolean|  
 |NULL_COLLATION|Int32|  
 |ORDINAL_POSITION|Int64|  
-|COLUMN_NAME|Chaîne|  
-|COLUMN_GUID|GUID|  
+|COLUMN_NAME|String|  
+|COLUMN_GUID|Guid|  
 |COLUMN_PROPID|Int64|  
 |COLLATION|Int16|  
 |CARDINALITY|Decimal|  
 |PAGES|Int32|  
-|FILTER_CONDITION|Chaîne|  
-|INTEGRATED|Booléen|  
+|FILTER_CONDITION|String|  
+|INTEGRATED|Boolean|  
   
 ## <a name="microsoft-oracle-ole-db-provider"></a>Fournisseur Microsoft Oracle OLE DB  
  Le pilote Microsoft Oracle OLE DB prend en charge les collections de schémas spécifiques suivantes en plus des collections de schémas courantes :  
@@ -170,129 +170,129 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ### <a name="tables"></a>Tables  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|TABLE_CATALOG|Chaîne|  
-|TABLE_SCHEMA|Chaîne|  
-|TABLE_NAME|Chaîne|  
-|TABLE_TYPE|Chaîne|  
-|TABLE_GUID|GUID|  
-|DESCRIPTION|Chaîne|  
+|TABLE_CATALOG|String|  
+|TABLE_SCHEMA|String|  
+|TABLE_NAME|String|  
+|TABLE_TYPE|String|  
+|TABLE_GUID|Guid|  
+|Description|String|  
 |TABLE_PROPID|Int64|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="columns"></a>Colonnes  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|TABLE_CATALOG|Chaîne|  
-|TABLE_SCHEMA|Chaîne|  
-|TABLE_NAME|Chaîne|  
-|COLUMN_NAME|Chaîne|  
-|COLUMN_GUID|GUID|  
+|TABLE_CATALOG|String|  
+|TABLE_SCHEMA|String|  
+|TABLE_NAME|String|  
+|COLUMN_NAME|String|  
+|COLUMN_GUID|Guid|  
 |COLUMN_PROPID|Int64|  
 |ORDINAL_POSITION|Int64|  
-|COLUMN_HASDEFAULT|Booléen|  
-|COLUMN_DEFAULT|Chaîne|  
+|COLUMN_HASDEFAULT|Boolean|  
+|COLUMN_DEFAULT|String|  
 |COLUMN_FLAGS|Int64|  
-|IS_NULLABLE|Booléen|  
+|IS_NULLABLE|Boolean|  
 |DATA_TYPE|Int32|  
-|TYPE_GUID|GUID|  
+|TYPE_GUID|Guid|  
 |CHARACTER_MAXIMUM_LENGTH|Int64|  
 |CHARACTER_OCTET_LENGTH|Int64|  
 |NUMERIC_PRECISION|Int32|  
 |NUMERIC_SCALE|Int16|  
 |DATETIME_PRECISION|Int64|  
-|CHARACTER_SET_CATALOG|Chaîne|  
-|CHARACTER_SET_SCHEMA|Chaîne|  
-|CHARACTER_SET_NAME|Chaîne|  
-|COLLATION_CATALOG|Chaîne|  
-|COLLATION_SCHEMA|Chaîne|  
-|COLLATION_NAME|Chaîne|  
-|DOMAIN_CATALOG|Chaîne|  
-|DOMAIN_SCHEMA|Chaîne|  
-|DOMAIN_NAME|Chaîne|  
-|DESCRIPTION|Chaîne|  
+|CHARACTER_SET_CATALOG|String|  
+|CHARACTER_SET_SCHEMA|String|  
+|CHARACTER_SET_NAME|String|  
+|COLLATION_CATALOG|String|  
+|COLLATION_SCHEMA|String|  
+|COLLATION_NAME|String|  
+|DOMAIN_CATALOG|String|  
+|DOMAIN_SCHEMA|String|  
+|DOMAIN_NAME|String|  
+|Description|String|  
   
 ### <a name="procedures"></a>Procédures  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|PROCEDURE_CATALOG|Chaîne|  
-|PROCEDURE_SCHEMA|Chaîne|  
-|PROCEDURE_NAME|Chaîne|  
+|PROCEDURE_CATALOG|String|  
+|PROCEDURE_SCHEMA|String|  
+|PROCEDURE_NAME|String|  
 |PROCEDURE_TYPE|Int16|  
-|PROCEDURE_DEFINITION|Chaîne|  
-|DESCRIPTION|Chaîne|  
+|PROCEDURE_DEFINITION|String|  
+|Description|String|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="procedurecolumns"></a>ProcedureColumns  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|PROCEDURE_CATALOG|Chaîne|  
-|PROCEDURE_SCHEMA|Chaîne|  
-|PROCEDURE_NAME|Chaîne|  
-|COLUMN_NAME|Chaîne|  
-|COLUMN_GUID|GUID|  
+|PROCEDURE_CATALOG|String|  
+|PROCEDURE_SCHEMA|String|  
+|PROCEDURE_NAME|String|  
+|COLUMN_NAME|String|  
+|COLUMN_GUID|Guid|  
 |COLUMN_PROPID|Int64|  
 |ROWSET_NUMBER|Int64|  
 |ORDINAL_POSITION|Int64|  
-|IS_NULLABLE|Booléen|  
+|IS_NULLABLE|Boolean|  
 |DATA_TYPE|Int32|  
-|TYPE_GUID|GUID|  
+|TYPE_GUID|Guid|  
 |CHARACTER_MAXIMUM_LENGTH|Int64|  
 |CHARACTER_OCTET_LENGTH|Int64|  
 |NUMERIC_PRECISION|Int32|  
 |NUMERIC_SCALE|Int16|  
-|DESCRIPTION|Chaîne|  
+|Description|String|  
 |OVERLOAD|Int16|  
   
 ### <a name="views"></a>Affichages  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|TABLE_CATALOG|Chaîne|  
-|TABLE_SCHEMA|Chaîne|  
-|TABLE_NAME|Chaîne|  
-|VIEW_DEFINITION|Chaîne|  
-|CHECK_OPTION|Booléen|  
-|IS_UPDATABLE|Booléen|  
-|DESCRIPTION|Chaîne|  
+|TABLE_CATALOG|String|  
+|TABLE_SCHEMA|String|  
+|TABLE_NAME|String|  
+|VIEW_DEFINITION|String|  
+|CHECK_OPTION|Boolean|  
+|IS_UPDATABLE|Boolean|  
+|Description|String|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="indexes"></a>Index  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|TABLE_CATALOG|Chaîne|  
-|TABLE_SCHEMA|Chaîne|  
-|TABLE_NAME|Chaîne|  
-|INDEX_CATALOG|Chaîne|  
-|INDEX_SCHEMA|Chaîne|  
-|INDEX_NAME|Chaîne|  
-|PRIMARY_KEY|Booléen|  
-|UNIQUE|Booléen|  
-|CLUSTERED|Booléen|  
+|TABLE_CATALOG|String|  
+|TABLE_SCHEMA|String|  
+|TABLE_NAME|String|  
+|INDEX_CATALOG|String|  
+|INDEX_SCHEMA|String|  
+|INDEX_NAME|String|  
+|PRIMARY_KEY|Boolean|  
+|UNIQUE|Boolean|  
+|CLUSTERED|Boolean|  
 |TYPE|Int32|  
 |FILL_FACTOR|Int32|  
 |INITIAL_SIZE|Int32|  
 |NULLS|Int32|  
-|SORT_BOOKMARKS|Booléen|  
-|AUTO_UPDATE|Booléen|  
+|SORT_BOOKMARKS|Boolean|  
+|AUTO_UPDATE|Boolean|  
 |NULL_COLLATION|Int32|  
 |ORDINAL_POSITION|Int64|  
-|COLUMN_NAME|Chaîne|  
-|COLUMN_GUID|GUID|  
+|COLUMN_NAME|String|  
+|COLUMN_GUID|Guid|  
 |COLUMN_PROPID|Int64|  
 |COLLATION|Int16|  
 |CARDINALITY|Decimal|  
 |PAGES|Int32|  
-|FILTER_CONDITION|Chaîne|  
-|INTEGRATED|Booléen|  
+|FILTER_CONDITION|String|  
+|INTEGRATED|Boolean|  
   
 ## <a name="microsoft-jet-ole-db-provider"></a>Fournisseur Microsoft Jet OLE DB  
  Le pilote Microsoft Jet OLE DB prend en charge les collections de schémas spécifiques suivantes en plus des collections de schémas courantes :  
@@ -309,108 +309,108 @@ Cette section traite de la prise en charge des collections de schémas pour les 
   
 ### <a name="tables"></a>Tables  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|TABLE_CATALOG|Chaîne|  
-|TABLE_SCHEMA|Chaîne|  
-|TABLE_NAME|Chaîne|  
-|TABLE_TYPE|Chaîne|  
-|TABLE_GUID|GUID|  
-|DESCRIPTION|Chaîne|  
+|TABLE_CATALOG|String|  
+|TABLE_SCHEMA|String|  
+|TABLE_NAME|String|  
+|TABLE_TYPE|String|  
+|TABLE_GUID|Guid|  
+|Description|String|  
 |TABLE_PROPID|Int64|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="columns"></a>Colonnes  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|TABLE_CATALOG|Chaîne|  
-|TABLE_SCHEMA|Chaîne|  
-|TABLE_NAME|Chaîne|  
-|COLUMN_NAME|Chaîne|  
-|COLUMN_GUID|GUID|  
+|TABLE_CATALOG|String|  
+|TABLE_SCHEMA|String|  
+|TABLE_NAME|String|  
+|COLUMN_NAME|String|  
+|COLUMN_GUID|Guid|  
 |COLUMN_PROPID|Int64|  
 |ORDINAL_POSITION|Int64|  
-|COLUMN_HASDEFAULT|Booléen|  
-|COLUMN_DEFAULT|Chaîne|  
+|COLUMN_HASDEFAULT|Boolean|  
+|COLUMN_DEFAULT|String|  
 |COLUMN_FLAGS|Int64|  
-|IS_NULLABLE|Booléen|  
+|IS_NULLABLE|Boolean|  
 |DATA_TYPE|Int32|  
-|TYPE_GUID|GUID|  
+|TYPE_GUID|Guid|  
 |CHARACTER_MAXIMUM_LENGTH|Int64|  
 |CHARACTER_OCTET_LENGTH|Int64|  
 |NUMERIC_PRECISION|Int32|  
 |NUMERIC_SCALE|Int16|  
 |DATETIME_PRECISION|Int64|  
-|CHARACTER_SET_CATALOG|Chaîne|  
-|CHARACTER_SET_SCHEMA|Chaîne|  
-|CHARACTER_SET_NAME|Chaîne|  
-|COLLATION_CATALOG|Chaîne|  
-|COLLATION_SCHEMA|Chaîne|  
-|COLLATION_NAME|Chaîne|  
-|DOMAIN_CATALOG|Chaîne|  
-|DOMAIN_SCHEMA|Chaîne|  
-|DOMAIN_NAME|Chaîne|  
-|DESCRIPTION|Chaîne|  
+|CHARACTER_SET_CATALOG|String|  
+|CHARACTER_SET_SCHEMA|String|  
+|CHARACTER_SET_NAME|String|  
+|COLLATION_CATALOG|String|  
+|COLLATION_SCHEMA|String|  
+|COLLATION_NAME|String|  
+|DOMAIN_CATALOG|String|  
+|DOMAIN_SCHEMA|String|  
+|DOMAIN_NAME|String|  
+|Description|String|  
   
 ### <a name="procedures"></a>Procédures  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|PROCEDURE_CATALOG|Chaîne|  
-|PROCEDURE_SCHEMA|Chaîne|  
-|PROCEDURE_NAME|Chaîne|  
+|PROCEDURE_CATALOG|String|  
+|PROCEDURE_SCHEMA|String|  
+|PROCEDURE_NAME|String|  
 |PROCEDURE_TYPE|Int16|  
-|PROCEDURE_DEFINITION|Chaîne|  
-|DESCRIPTION|Chaîne|  
+|PROCEDURE_DEFINITION|String|  
+|Description|String|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="views"></a>Affichages  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|TABLE_CATALOG|Chaîne|  
-|TABLE_SCHEMA|Chaîne|  
-|TABLE_NAME|Chaîne|  
-|VIEW_DEFINITION|Chaîne|  
-|CHECK_OPTION|Booléen|  
-|IS_UPDATABLE|Booléen|  
-|DESCRIPTION|Chaîne|  
+|TABLE_CATALOG|String|  
+|TABLE_SCHEMA|String|  
+|TABLE_NAME|String|  
+|VIEW_DEFINITION|String|  
+|CHECK_OPTION|Boolean|  
+|IS_UPDATABLE|Boolean|  
+|Description|String|  
 |DATE_CREATED|DateTime|  
 |DATE_MODIFIED|DateTime|  
   
 ### <a name="indexes"></a>Index  
   
-|Nom de colonne|Type de données|  
+|ColumnName|Type de données|  
 |----------------|--------------|  
-|TABLE_CATALOG|Chaîne|  
-|TABLE_SCHEMA|Chaîne|  
-|TABLE_NAME|Chaîne|  
-|INDEX_CATALOG|Chaîne|  
-|INDEX_SCHEMA|Chaîne|  
-|INDEX_NAME|Chaîne|  
-|PRIMARY_KEY|Booléen|  
-|UNIQUE|Booléen|  
-|CLUSTERED|Booléen|  
+|TABLE_CATALOG|String|  
+|TABLE_SCHEMA|String|  
+|TABLE_NAME|String|  
+|INDEX_CATALOG|String|  
+|INDEX_SCHEMA|String|  
+|INDEX_NAME|String|  
+|PRIMARY_KEY|Boolean|  
+|UNIQUE|Boolean|  
+|CLUSTERED|Boolean|  
 |TYPE|Int32|  
 |FILL_FACTOR|Int32|  
 |INITIAL_SIZE|Int32|  
 |NULLS|Int32|  
-|SORT_BOOKMARKS|Booléen|  
-|AUTO_UPDATE|Booléen|  
+|SORT_BOOKMARKS|Boolean|  
+|AUTO_UPDATE|Boolean|  
 |NULL_COLLATION|Int32|  
 |ORDINAL_POSITION|Int64|  
-|COLUMN_NAME|Chaîne|  
-|COLUMN_GUID|GUID|  
+|COLUMN_NAME|String|  
+|COLUMN_GUID|Guid|  
 |COLUMN_PROPID|Int64|  
 |COLLATION|Int16|  
 |CARDINALITY|Decimal|  
 |PAGES|Int32|  
-|FILTER_CONDITION|Chaîne|  
-|INTEGRATED|Booléen|  
+|FILTER_CONDITION|String|  
+|INTEGRATED|Boolean|  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 158d47b1-ba6d-4fa6-8963-a012666bdc31
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5b1c704113c8e05e493cdb3ef24f6376ab54b1cb
-ms.sourcegitcommit: 26f4a7697c32978f6a328c89dc4ea87034065989
-ms.translationtype: HT
+ms.openlocfilehash: bc5ea69d80a225adfc2f409e8303ee1c241398db
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66251112"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70779347"
 ---
 # <a name="mitigation-path-normalization"></a>Atténuation : normalisation des chemins d’accès
 À compter des applications qui ciblent .NET Framework 4.6.2, la normalisation des chemins d’accès dans le .NET Framework a été modifiée.  
@@ -45,7 +45,7 @@ Pour les applications qui ciblent .NET Framework 4.6.2 ou ultérieur, ces modifi
 Les applications qui ciblent .NET Framework 4.6.1 et les versions antérieures, mais s’exécutent sur .NET Framework 4.6.2 ou une version ultérieure ne sont pas concernées par ce changement.  
   
 ## <a name="mitigation"></a>Atténuation  
- Les applications qui ciblent .NET Framework 4.6.2 ou ultérieur peuvent refuser ce changement et utiliser la normalisation héritée en ajoutant le code suivant à la section [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) du fichier de configuration de l’application :  
+ Les applications qui ciblent .NET Framework 4.6.2 ou ultérieur peuvent refuser ce changement et utiliser la normalisation héritée en ajoutant le code suivant à la section [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) du fichier de configuration de l’application :  
   
 ```xml  
 <runtime>  
@@ -53,7 +53,7 @@ Les applications qui ciblent .NET Framework 4.6.1 et les versions antérieures, 
 </runtime>  
 ```  
   
-Les applications qui ciblent .NET Framework 4.6.1 ou antérieur, mais qui s’exécutent sous .NET Framework 4.6.2 ou ultérieur peuvent activer les changements apportés à la normalisation des chemins en ajoutant la ligne suivante à la section [\<runtime>](../../../docs/framework/configure-apps/file-schema/runtime/runtime-element.md) du fichier .configuration de l’application :  
+Les applications qui ciblent .NET Framework 4.6.1 ou antérieur, mais qui s’exécutent sous .NET Framework 4.6.2 ou ultérieur peuvent activer les changements apportés à la normalisation des chemins en ajoutant la ligne suivante à la section [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) du fichier .configuration de l’application :  
   
 ```xml  
 <runtime>  
@@ -63,4 +63,4 @@ Les applications qui ciblent .NET Framework 4.6.1 ou antérieur, mais qui s’e
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modifications de reciblage](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6-2.md)
+- [Modifications de reciblage](retargeting-changes-in-the-net-framework-4-6-2.md)

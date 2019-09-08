@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 70b40095ffcfea37414b7de2a678ad8555423b12
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8befdb454a564ec834532653dd44cf230fa43d79
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778544"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795215"
 ---
-# <a name="asmdisplayflags-enumeration"></a>ASM_DISPLAY_FLAGS, énumération
-Indique la version, la build, la culture, la signature et ainsi de suite, de l’assembly dont le nom complet sera récupéré par le [IAssemblyName::GetDisplayName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-getdisplayname-method.md) (méthode).  
+# <a name="asm_display_flags-enumeration"></a>ASM_DISPLAY_FLAGS, énumération
+Indique la version, la build, la culture, la signature, etc. de l’assembly dont le nom d’affichage sera récupéré par la méthode [IAssemblyName :: GetDisplayName](iassemblyname-getdisplayname-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,18 +52,18 @@ typedef enum {
 ```  
   
 ## <a name="remarks"></a>Notes  
- `ASM_DISPLAYF_FULL` reflète les modifications apportées à la version de la [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objet. Ne supposez pas que la valeur retournée est immuable.  
+ `ASM_DISPLAYF_FULL`reflète toutes les modifications apportées à la version de l’objet [IAssemblyName](iassemblyname-interface.md) . Ne partez pas du principe que la valeur retournée est immuable.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** Fusion.h  
+ **En-tête :** Fusion. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IAssemblyName, interface](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [Énumérations de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+- [IAssemblyName, interface](iassemblyname-interface.md)
+- [Énumérations de fusion](fusion-enumerations.md)

@@ -5,41 +5,41 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d8072ede-0521-4670-9bec-1778ceeb875b
-ms.openlocfilehash: b0037f56947a86627ee9ea84369527aec859a0f8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 002a644ff5d48b25351228dcd74330707491d6c8
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032602"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782097"
 ---
 # <a name="formulate-joins-and-cross-product-queries"></a>Comment : formuler des jointures et des requêtes de produit croisé
 Les exemples suivants expliquent comment combiner les résultats de plusieurs tables.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise la navigation de clé étrangère dans la `From` clause en Visual Basic (`from` clause dans C#) pour sélectionner toutes les commandes des clients de Londres.  
+ L’exemple suivant utilise la navigation de clé étrangère `From` dans la clause dans`from` Visual Basic ( C#clause dans) pour sélectionner toutes les commandes pour les clients de Londres.  
   
  [!code-csharp[DLinqQueryExamples#47](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#47)]
  [!code-vb[DLinqQueryExamples#47](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#47)]  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise la navigation de clé étrangère dans la `Where` clause en Visual Basic (`where` clause dans C#) pour filtrer de rupture de stock `Products` dont `Supplier` est aux États-Unis.  
+ L’exemple suivant utilise la navigation de clé étrangère `Where` dans la clause dans`where` Visual Basic ( C#clause dans) pour filtrer les ruptures de `Products` stock `Supplier` dont se trouve dans le États-Unis.  
   
  [!code-csharp[DLinqQueryExamples#48](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#48)]
  [!code-vb[DLinqQueryExamples#48](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#48)]  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise la navigation de clé étrangère dans la `From` clause en Visual Basic (`from` clause dans C#) pour filtrer les employés de Seattle et répertorier leurs territoires.  
+ L’exemple suivant utilise la navigation de clé étrangère `From` dans la clause dans`from` Visual Basic ( C#clause dans) pour filtrer les employés de Seattle et répertorier leurs territoires.  
   
  [!code-csharp[DLinqQueryExamples#49](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#49)]  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise la navigation de clé étrangère dans la `Select` clause en Visual Basic (`select` clause dans C#) pour filtrer les paires d’employés où un employé est subordonné à l’autre et où les deux employés sont de la même `City`.  
+ L’exemple suivant utilise la navigation de clé étrangère `Select` dans la clause dans`select` Visual Basic ( C#clause dans) pour filtrer les paires d’employés où un employé est reporté à l’autre et où les `City`deux employés sont de la même.  
   
  [!code-csharp[DLinqQueryExamples#50](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#50)]
  [!code-vb[DLinqQueryExamples#50](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#50)]  
   
 ## <a name="example"></a>Exemple  
- L’exemple Visual Basic suivant recherche tous les clients et commandes, permet de s’assurer que les commandes sont mis en correspondance avec les clients et de garantit qu’un nom de contact est fourni pour chaque client de cette liste.  
+ L’exemple de Visual Basic suivant recherche tous les clients et les commandes, vérifie que les commandes sont mises en correspondance avec les clients et garantit que pour chaque client de cette liste, un nom de contact est fourni.  
   
  [!code-vb[DLinqQueryExamples#50v](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#50v)]  
   
@@ -67,7 +67,7 @@ Les exemples suivants expliquent comment combiner les résultats de plusieurs ta
  [!code-csharp[DLinqQueryExamples#54](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#54)]
  [!code-vb[DLinqQueryExamples#54](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#54)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple suivant affiche une `join` avec une clé composite.  
   
  [!code-csharp[DLinqQueryExamples#55](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#55)]
@@ -81,4 +81,4 @@ Les exemples suivants expliquent comment combiner les résultats de plusieurs ta
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de requêtes](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)
+- [Exemples de requêtes](query-examples.md)

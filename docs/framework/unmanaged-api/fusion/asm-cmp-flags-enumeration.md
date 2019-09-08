@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 28157d2ed223d89af4b4314035e7c03d572be7b8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a56785d84a07122080efda22d41ec43721474789
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778569"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795267"
 ---
-# <a name="asmcmpflags-enumeration"></a>ASM_CMP_FLAGS, énumération
-Indique la version, la build, la culture, la signature et ainsi de suite, de deux assemblys à comparer par le [IAssemblyName::IsEqual](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-isequal-method.md) (méthode).  
+# <a name="asm_cmp_flags-enumeration"></a>ASM_CMP_FLAGS, énumération
+Indique la version, la build, la culture, la signature, etc. de deux assemblys à comparer par la méthode [IAssemblyName :: IsEqual](iassemblyname-isequal-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -68,15 +68,15 @@ typedef enum {
 ```  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** Fusion.h  
+ **En-tête :** Fusion. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IAssemblyName, interface](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [Énumérations de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+- [IAssemblyName, interface](iassemblyname-interface.md)
+- [Énumérations de fusion](fusion-enumerations.md)

@@ -2,12 +2,12 @@
 title: Gestion des autorisations avec les procédures stockées dans SQL Server
 ms.date: 03/30/2017
 ms.assetid: 08fa34e8-2ffa-470d-ba62-e511a5f8558e
-ms.openlocfilehash: 1a057ed88c792dfdeb89227d6cf1957f74b6d7a1
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 412d2a0a292e2ac83e6c42cf721c83e63633408c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623423"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780952"
 ---
 # <a name="managing-permissions-with-stored-procedures-in-sql-server"></a>Gestion des autorisations avec les procédures stockées dans SQL Server
 Une méthode pour créer plusieurs lignes de défense autour de votre base de données consiste à implémenter tous les accès aux données à l'aide de procédures stockées ou de fonctions définies par l'utilisateur. Vous révoquez ou refusez toutes les autorisations sur les objets sous-jacents, tels que les tables, et accordez les autorisations EXECUTE sur les procédures stockées De cette manière, vous créez un périmètre de sécurité autour vos objets de données et de base de données.  
@@ -15,7 +15,7 @@ Une méthode pour créer plusieurs lignes de défense autour de votre base de do
 ## <a name="stored-procedure-benefits"></a>Avantages des procédures stockées  
  Les procédures stockées ont les avantages suivants :  
   
-- Les règles d'entreprise et la logique des données peuvent être encapsulées de telle sorte que les utilisateurs ont accès aux données et aux objets uniquement selon les méthodes définies par les développeurs et les administrateurs de bases de données.   
+- Les règles d'entreprise et la logique des données peuvent être encapsulées de telle sorte que les utilisateurs ont accès aux données et aux objets uniquement selon les méthodes définies par les développeurs et les administrateurs de bases de données.  
   
 - Des procédures stockées paramétrées et chargées de valider toutes les entrées d'utilisateur peuvent servir à contrer les attaques par injection SQL. Si vous utilisez du code SQL dynamique, veillez à paramétrer vos commandes et n'incluez jamais de valeurs de paramètre directement dans une chaîne de requête.  
   
@@ -30,7 +30,7 @@ Une méthode pour créer plusieurs lignes de défense autour de votre base de do
 - Les procédures stockées peuvent réduire le trafic réseau en associant plusieurs opérations dans un appel de procédure.  
   
 ## <a name="stored-procedure-execution"></a>Exécution des procédures stockées  
- Les procédures stockées tirent parti du chaînage des propriétés permettant de fournir l'accès aux données pour ne pas que les utilisateurs aient l'autorisation explicite d'accéder aux objets de base de données. Une chaîne de propriétés existe lorsque les objets qui sont accessibles les uns aux autres de manière séquentielle sont détenus par le même utilisateur. Par exemple, une procédure stockée peut appeler d'autres procédures stockées, ou une procédure stockée peut accéder à plusieurs tables. Si tous les objets dans la chaîne d'exécution ont le même propriétaire, SQL Server se contente de vérifier l'autorisation EXECUTE pour l'appelant, et non les autorisations de l'appelant sur d'autres objets. Par conséquent, il vous suffit d'accorder les autorisations EXECUTE sur les procédures stockées ; vous pouvez révoquer ou refuser toutes les autorisations sur les tables sous-jacentes.   
+ Les procédures stockées tirent parti du chaînage des propriétés permettant de fournir l'accès aux données pour ne pas que les utilisateurs aient l'autorisation explicite d'accéder aux objets de base de données. Une chaîne de propriétés existe lorsque les objets qui sont accessibles les uns aux autres de manière séquentielle sont détenus par le même utilisateur. Par exemple, une procédure stockée peut appeler d'autres procédures stockées, ou une procédure stockée peut accéder à plusieurs tables. Si tous les objets dans la chaîne d'exécution ont le même propriétaire, SQL Server se contente de vérifier l'autorisation EXECUTE pour l'appelant, et non les autorisations de l'appelant sur d'autres objets. Par conséquent, il vous suffit d'accorder les autorisations EXECUTE sur les procédures stockées ; vous pouvez révoquer ou refuser toutes les autorisations sur les tables sous-jacentes.  
   
 ## <a name="best-practices"></a>Meilleures pratiques  
  La simple écriture de procédures stockées ne suffit pas à sécuriser votre application de façon adéquate. Vous devez également envisager les défaillances de sécurité potentielles suivantes.  
@@ -58,11 +58,11 @@ Une méthode pour créer plusieurs lignes de défense autour de votre base de do
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sécurisation des applications ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Vue d’ensemble de la sécurité SQL Server](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
-- [Scénarios de sécurité des applications dans SQL Server](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
-- [Écriture de code SQL dynamique sécurisé dans SQL Server](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)
-- [Signature de procédures stockées dans SQL Server](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)
-- [Personnalisation des autorisations avec l’emprunt d’identité dans SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)
-- [Modification des données avec les procédures stockées](../../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Sécurisation des applications ADO.NET](../securing-ado-net-applications.md)
+- [Vue d’ensemble de la sécurité SQL Server](overview-of-sql-server-security.md)
+- [Scénarios de sécurité des applications dans SQL Server](application-security-scenarios-in-sql-server.md)
+- [Écriture de code SQL dynamique sécurisé dans SQL Server](writing-secure-dynamic-sql-in-sql-server.md)
+- [Signature de procédures stockées dans SQL Server](signing-stored-procedures-in-sql-server.md)
+- [Personnalisation des autorisations avec l’emprunt d’identité dans SQL Server](customizing-permissions-with-impersonation-in-sql-server.md)
+- [Modification des données avec les procédures stockées](../modifying-data-with-stored-procedures.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

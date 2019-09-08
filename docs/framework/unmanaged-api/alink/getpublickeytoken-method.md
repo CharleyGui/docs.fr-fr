@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ec2c357cd56670f4f2deed8023bed7842a7f4ed7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 158ecc036d56e2ad9a3fa650677c04ebcbfd7696
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741875"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777223"
 ---
 # <a name="getpublickeytoken-method"></a>GetPublicKeyToken, méthode
-Récupère le jeton de clé publique pour un fichier de clé ou conteneur de clé.  
+Récupère le jeton de clé publique pour un KeyFile ou un conteneur de clé donné.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,19 +45,19 @@ HRESULT GetPublicKeyToken(
  Nom du conteneur de clé.  
   
  `pvPublicKeyToken`  
- Adresse où le jeton de clé doit être stocké.  
+ Adresse à laquelle le jeton de clé doit être stocké.  
   
  `pcbPublicKeyToken`  
- Spécifie la taille, en octets, de la mémoire tampon indiqué par `pvPublicKeyToken`. Au retour, contient le nombre réel d’octets utilisés.  
+ Spécifie la taille, en octets, de la mémoire tampon `pvPublicKeyToken`indiquée par. Lors du retour, contient le nombre réel d’octets utilisés.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h.  
+ Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink2, interface](ialink2-interface.md)
+- [IALink, interface](ialink-interface.md)
+- [API ALink](index.md)

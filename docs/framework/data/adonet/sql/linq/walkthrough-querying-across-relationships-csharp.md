@@ -2,12 +2,12 @@
 title: 'Procédure pas à pas : Interrogation entre relations (C#)'
 ms.date: 03/30/2017
 ms.assetid: 552abeb1-18f2-4e93-a9c6-ef7b2db30c32
-ms.openlocfilehash: a9e0583b14c07df2b1de23ba37fa88552a4c5c7c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ebf96bc575ef68e1190c5b9be7111902c0f69fef
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946941"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780991"
 ---
 # <a name="walkthrough-querying-across-relationships-c"></a>Procédure pas à pas : Interrogation entre relations (C#)
 Cette procédure pas à pas montre [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] comment utiliser des *associations* pour représenter les relations de clé étrangère dans la base de données.  
@@ -17,7 +17,7 @@ Cette procédure pas à pas montre [!INCLUDE[vbtecdlinq](../../../../../../inclu
  Cette procédure pas à pas a été écrite à l'aide des paramètres de développement Visual C#.  
   
 ## <a name="prerequisites"></a>Prérequis  
- Vous devez avoir terminé [la procédure pas à pas: Modèle objet simple et requête (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md). Cette procédure pas à pas est basée sur cette dernière, y compris la présence du fichier northwnd.mdf dans c:\linqtest5.  
+ Vous devez avoir terminé [la procédure pas à pas : Modèle objet simple et requête (C#)](walkthrough-simple-object-model-and-query-csharp.md). Cette procédure pas à pas est basée sur cette dernière, y compris la présence du fichier northwnd.mdf dans c:\linqtest5.  
   
 ## <a name="overview"></a>Présentation  
  Cette procédure pas à pas se compose de trois tâches principales :  
@@ -86,8 +86,8 @@ Cette procédure pas à pas montre [!INCLUDE[vbtecdlinq](../../../../../../inclu
 4. Appuyez sur Entrée dans la fenêtre de console pour arrêter le débogage.  
   
 ## <a name="next-steps"></a>Étapes suivantes  
- La procédure pas à[pas suivante (procédure pas à pas: La manipulation de donnéesC#(](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md))) montre comment manipuler les données. Cette procédure pas à pas ne requiert pas d'enregistrer les deux procédures pas à pas de cette série que vous avez déjà terminées.  
+ La procédure pas à[pas suivante (procédure pas à pas : La manipulation de donnéesC#(](walkthrough-manipulating-data-csharp.md))) montre comment manipuler les données. Cette procédure pas à pas ne requiert pas d'enregistrer les deux procédures pas à pas de cette série que vous avez déjà terminées.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Apprentissage par les procédures pas à pas](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)
+- [Apprentissage par les procédures pas à pas](learning-by-walkthroughs.md)

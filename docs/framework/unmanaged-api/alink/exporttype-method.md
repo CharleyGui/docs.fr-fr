@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dd1ec9caa70dd7016253ae4385b16dbfb982f956
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 455f71c5b576d1b57db591dab2a3e59f8a5eed67
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742022"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777288"
 ---
 # <a name="exporttype-method"></a>ExportType, méthode
-Spécifie qu’un type est exportable.  
+Spécifie qu’un type peut être exportable.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,10 +41,10 @@ HRESULT ExportType(
   
 ## <a name="parameters"></a>Paramètres  
  `AssemblyID`  
- ID de l’assembly à exporter à partir de.  
+ ID de l’assembly à partir duquel effectuer l’exportation.  
   
  `FileToken`  
- Jeton ou l’assembly ID de fichier du fichier qui définit le type exportable.  
+ Jeton de fichier ou ID d’assembly du fichier qui définit le type exportable.  
   
  `TypeToken`  
  Jeton de type à rendre exportable.  
@@ -53,19 +53,19 @@ HRESULT ExportType(
  Nom de type qualifié complet à rendre exportable.  
   
  `dwFlags`  
- `ComType` indicateurs tels que `tdPublic` ou `tdNested`. Ce paramètre peut être passé à [DefineExportedType, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md).  
+ `ComType`indicateurs tels que `tdPublic` ou `tdNested`. Ce paramètre peut être passé à la [méthode DefineExportedType,](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
   
  `pType`  
  Reçoit le jeton pour le type exporté.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h  
+ Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink, interface](ialink-interface.md)
+- [IALink2, interface](ialink2-interface.md)
+- [API ALink](index.md)

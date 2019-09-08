@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c4577590-7b12-42e1-84a6-95aa2562727e
-ms.openlocfilehash: 31a5aa0f147d43e94ce885c541f11b9aec4ae6d2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5261aab1ef6641651f856b8ebb024f64ad32ee59
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938650"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781428"
 ---
 # <a name="implementing-business-logic-linq-to-sql"></a>Implémentation de la logique métier (LINQ to SQL)
 Le terme "logique métier" utilisé dans cette rubrique désigne toutes les règles ou tests de validation personnalisés que vous appliquez aux données avant de les insérer, de les mettre à jour ou de les supprimer de la base de données. La logique métier est parfois également désignée par le terme "règles métier" ou "logique de domaine". Dans les applications multicouches, elle est généralement conçue comme une couche logique de manière à ce qu'elle puisse être modifiée indépendamment de la couche Présentation ou de la couche Data Access. La logique métier peut être appelée par la couche Data Access avant ou après toute mise à jour, insertion ou suppression de données dans la base de données.  
@@ -25,7 +25,7 @@ Le terme "logique métier" utilisé dans cette rubrique désigne toutes les règ
  Dans la définition d'implémentation que vous écrivez dans votre fichier de code distinct, vous pouvez exécuter toute logique personnalisée requise. Vous pouvez utiliser votre classe partielle elle-même comme votre couche de domaine, ou vous pouvez l'appeler à partir de votre définition d'implémentation de la méthode partielle dans un objet ou des objets séparés. Dans l'un et l'autre cas, votre logique métier est nettement séparée de votre code d'accès aux données et de votre code de couche Présentation.  
   
 ## <a name="a-closer-look-at-the-extensibility-points"></a>Présentation détaillée des points d'extensibilité  
- L’exemple suivant montre une partie du code généré par l’Concepteur Objet Relationnel pour la `DataContext` classe qui a deux tables: `Customers` et `Orders`. Notez que les méthodes Insert, Update et Delete sont définies pour chaque table de la classe.  
+ L’exemple suivant montre une partie du code généré par l’Concepteur Objet Relationnel pour la `DataContext` classe qui a deux tables : `Customers` et `Orders`. Notez que les méthodes Insert, Update et Delete sont définies pour chaque table de la classe.  
   
 ```vb  
 Partial Public Class Northwnd  
@@ -177,7 +177,7 @@ partial class Customer
   
  Pour plus d'informations sur l'ajout de la logique métier à votre application à l'aide des méthodes partielles, consultez les rubriques suivantes :  
   
- [Guide pratique pour ajouter une validation à des classes d’entité](/visualstudio/data-tools/how-to-add-validation-to-entity-classes)  
+ [Guide pratique : ajouter une validation à des classes d’entité](/visualstudio/data-tools/how-to-add-validation-to-entity-classes)  
   
  [Procédure pas à pas : Personnaliser l’insertion, mettre à jour et supprimer le comportement de classes d’entités](/visualstudio/data-tools/walkthrough-customizing-the-insert-update-and-delete-behavior-of-entity-classes)  
   
@@ -188,4 +188,4 @@ partial class Customer
 - [Classes et méthodes partielles](../../../../../csharp/programming-guide/classes-and-structs/partial-classes-and-methods.md)
 - [Méthodes partielles](../../../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md)
 - [Outils LINQ to SQL dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)
-- [SqlMetal.exe (outil de génération de code)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md)
+- [SqlMetal.exe (outil de génération de code)](../../../../tools/sqlmetal-exe-code-generation-tool.md)

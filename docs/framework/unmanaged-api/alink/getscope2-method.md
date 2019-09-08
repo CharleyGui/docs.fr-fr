@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0c0abc63610f3f1ed6e8a556c44ee15edc1ea20b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f08c4a97b8cbc61a735bb9c1e6a31a698e7eefc1
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741844"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787346"
 ---
 # <a name="getscope2-method"></a>GetScope2, méthode
-Obtient une portée d’importation.  
+Obtient une étendue d’importation.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,22 +42,22 @@ HRESULT GetScope2(
  ID de l’assembly cible.  
   
  `FileToken`  
- ID du fichier à partir duquel importer.  
+ ID du fichier à partir duquel effectuer l’importation.  
   
  `dwScope`  
- Portée de base zéro à importer.  
+ Étendue de base zéro à importer.  
   
  `ppImportScope`  
- Reçoit le pointeur vers [IMetaDataImport2, Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md) interface pour la portée indiquée.  
+ Reçoit un pointeur vers l’interface d' [interface IMetaDataImport2](../metadata/imetadataimport2-interface.md) pour la portée indiquée.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h.  
+ Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink2, interface](ialink2-interface.md)
+- [IALink, interface](ialink-interface.md)
+- [API ALink](index.md)

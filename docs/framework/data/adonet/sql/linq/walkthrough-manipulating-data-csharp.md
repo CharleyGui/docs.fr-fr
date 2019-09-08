@@ -2,12 +2,12 @@
 title: 'Procédure pas à pas : Manipulation de données (C#)'
 ms.date: 03/30/2017
 ms.assetid: 24adfbe0-0ad6-449f-997d-8808e0770d2e
-ms.openlocfilehash: 7921f0aa7582e70967f7fec633f37ef0dbc766de
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8941ac30a67406346e5448ca5af4af8512d168a8
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946975"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781004"
 ---
 # <a name="walkthrough-manipulating-data-c"></a>Procédure pas à pas : Manipulation de données (C#)
 Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] complet essentiel pour l'ajout, la modification et la suppression de données dans une base de données. Vous utiliserez une copie de l'exemple de base de données Northwind pour ajouter un client, modifier le nom d'un client et supprimer une commande.  
@@ -23,7 +23,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 - Exemple de base de données Northwind.  
   
-     Si cette base de données n'est pas disponible sur votre ordinateur de développement, vous pouvez la télécharger à partir du site de téléchargement Microsoft. Pour obtenir des instructions, consultez [téléchargement d’exemples de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md). Après avoir téléchargé la base de données, copiez le fichier northwnd.mdf dans le dossier c:\linqtest6.  
+     Si cette base de données n'est pas disponible sur votre ordinateur de développement, vous pouvez la télécharger à partir du site de téléchargement Microsoft. Pour obtenir des instructions, consultez [téléchargement d’exemples de bases de données](downloading-sample-databases.md). Après avoir téléchargé la base de données, copiez le fichier northwnd.mdf dans le dossier c:\linqtest6.  
   
 - Fichier de code C# généré à partir de la base de données Northwind.  
   
@@ -31,7 +31,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
      **sqlmetal /code:"c:\linqtest6\northwind.cs" /language:csharp "C:\linqtest6\northwnd.mdf" /pluralize**  
   
-     Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
+     Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../tools/sqlmetal-exe-code-generation-tool.md).  
   
 ## <a name="overview"></a>Présentation  
  Cette procédure pas à pas se compose de six tâches principales :  
@@ -104,7 +104,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
      Une fenêtre de **console** s’ouvre.  
   
-     Vous pouvez fermer l’application en appuyant sur entrée dans la fenêtre de **console** , ou en cliquant sur **arrêter** le débogage dans le menu Déboguer de Visual Studio.  
+     Vous pouvez fermer l’application en appuyant sur entrée dans la fenêtre de **console** , ou en cliquant sur **arrêter le débogage** dans le menu **Déboguer** de Visual Studio.  
   
 ## <a name="creating-a-new-entity"></a>Création d'une entité  
  La création d'une entité est une opération simple. Vous pouvez créer des objets (`Customer`, par exemple) à l'aide du mot clé `new`.  
@@ -163,4 +163,4 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Apprentissage par les procédures pas à pas](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)
+- [Apprentissage par les procédures pas à pas](learning-by-walkthroughs.md)

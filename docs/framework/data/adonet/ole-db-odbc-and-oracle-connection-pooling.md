@@ -2,12 +2,12 @@
 title: Regroupement de connexions OLE DB, ODBC et Oracle Connection
 ms.date: 03/30/2017
 ms.assetid: 2bd83b1e-3ea9-43c4-bade-d9cdb9bbbb04
-ms.openlocfilehash: 7552f4a95af51774071f0a4017637570d648dd86
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b83b53550964b3149f3bc711eaf119e749d1834b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929255"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794695"
 ---
 # <a name="ole-db-odbc-and-oracle-connection-pooling"></a>Regroupement de connexions OLE DB, ODBC et Oracle Connection
 Le regroupement de connexions peut considérablement améliorer les performances et l'évolutivité de votre application. Cette section traite du regroupement de connexions pour les fournisseurs de données .NET Framework pour OLE DB, ODBC et Oracle.  
@@ -70,6 +70,6 @@ Provider=SQLOLEDB;OLE DB Services=-4;Data Source=localhost;Integrated Security=S
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Regroupement de connexions](../../../../docs/framework/data/adonet/connection-pooling.md)
-- [Compteurs de performance](../../../../docs/framework/data/adonet/performance-counters.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Regroupement de connexions](connection-pooling.md)
+- [Compteurs de performance](performance-counters.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

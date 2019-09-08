@@ -2,12 +2,12 @@
 title: Mappage des contraintes de schéma XML (XSD) aux contraintes de DataSet
 ms.date: 03/30/2017
 ms.assetid: 3d0d1a4b-9104-434f-ac04-6c01ab5716b5
-ms.openlocfilehash: b0082b534b8df10ac5277cf2f5aa5b2d2e40c11b
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: b44c3193e1b9e2e52e086111eab0ab0b0cae5c97
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204620"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786074"
 ---
 # <a name="mapping-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mappage des contraintes de schéma XML (XSD) aux contraintes de DataSet
 Le langage XSD (XML Schema Definition) permet la spécification de contraintes sur les éléments et attributs qu'il définit. Lors du mappage d’un schéma XML à un schéma relationnel <xref:System.Data.DataSet>dans un, les contraintes de schéma XML sont mappées à des contraintes relationnelles appropriées sur les tables et les colonnes du **jeu de données**.  
@@ -20,7 +20,7 @@ Le langage XSD (XML Schema Definition) permet la spécification de contraintes s
   
 - Contrainte keyref spécifiée à l’aide de l’élément **keyref** .  
   
- En utilisant une contrainte sur un élément ou un attribut, vous spécifiez certaines restrictions sur les valeurs de l'élément dans toute instance du document. Par exemple, une contrainte de clé sur un élément enfant **CustomerID** d' un élément Customer dans le schéma indique que les valeurs de l’élément enfant **CustomerID** doivent être uniques dans toute instance de document et que les valeurs NULL ne sont pas autorisées.  
+ En utilisant une contrainte sur un élément ou un attribut, vous spécifiez certaines restrictions sur les valeurs de l'élément dans toute instance du document. Par exemple, une contrainte de clé sur un élément enfant **CustomerID** d’un élément **Customer** dans le schéma indique que les valeurs de l’élément enfant **CustomerID** doivent être uniques dans toute instance de document et que les valeurs NULL ne sont pas autorisées.  
   
  Des contraintes peuvent également être spécifiées entre les éléments et les attributs figurant dans un document afin d'établir une relation dans ce document. Les contraintes key et keyref sont utilisées dans le schéma pour spécifier les contraintes au sein du document, créant ainsi une relation entre éléments et attributs du document.  
   
@@ -45,4 +45,4 @@ Le langage XSD (XML Schema Definition) permet la spécification de contraintes s
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

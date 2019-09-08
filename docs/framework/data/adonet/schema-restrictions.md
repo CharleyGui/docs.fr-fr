@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 73d2980e-e73c-4987-913a-8ddc93d09144
-ms.openlocfilehash: 1a2c32d133799ee5338c18d0f51bced49cb3dc4b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d0250e573dc24bfcad97a2f2606cb2e6c8e520da
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963173"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782761"
 ---
 # <a name="schema-restrictions"></a>Restrictions de schéma
 Le deuxième paramètre facultatif de la méthode **GetSchema** correspond aux restrictions utilisées pour limiter la quantité d’informations de schéma retournées, et il est passé à la méthode **GetSchema** sous la forme d’un tableau de chaînes. La position dans le tableau détermine les valeurs que vous pouvez passer et équivaut au numéro de restriction.  
@@ -25,7 +25,7 @@ Le deuxième paramètre facultatif de la méthode **GetSchema** correspond aux r
 |TableType|@TableType|TABLE_TYPE|4|  
   
 ## <a name="specifying-restriction-values"></a>Spécification des valeurs de restriction  
- Pour utiliser l’une des restrictions de la collection de schémas « Tables », créez simplement un tableau de chaînes contenant quatre éléments, puis placez une valeur dans l’élément correspondant au numéro de restriction. Par exemple, pour restreindre les tables retournées par la méthode **GetSchema** aux seules tables du schéma «Sales», définissez le deuxième élément du tableau sur «sales» avant de le passer à la méthode **GetSchema** .  
+ Pour utiliser l’une des restrictions de la collection de schémas « Tables », créez simplement un tableau de chaînes contenant quatre éléments, puis placez une valeur dans l’élément correspondant au numéro de restriction. Par exemple, pour restreindre les tables retournées par la méthode **GetSchema** aux seules tables du schéma « Sales », définissez le deuxième élément du tableau sur « sales » avant de le passer à la méthode **GetSchema** .  
   
 > [!NOTE]
 > Les collections de restrictions pour `SqlClient` et `OracleClient` comportent une colonne `ParameterName` supplémentaire. La colonne par défaut de la restriction est encore là pour la compatibilité ascendante, mais est désormais ignorée. Il convient d'utiliser des requêtes paramétrées plutôt qu'un remplacement de chaîne afin de minimiser le risque d'attaque par injection SQL lors de la spécification de valeurs de restriction.  
@@ -33,10 +33,10 @@ Le deuxième paramètre facultatif de la méthode **GetSchema** correspond aux r
 > [!NOTE]
 > Le nombre d'éléments du tableau doit être inférieur ou égal au nombre de restrictions prises en charge pour la collection de schémas spécifiée, sans quoi une exception <xref:System.ArgumentException> est levée. Il peut y avoir moins de restrictions que le nombre maximal de restrictions. Les restrictions manquantes sont supposées avoir la valeur null (aucune restriction).  
   
- Vous pouvez interroger un fournisseur managé .NET Framework pour déterminer la liste des restrictions prises en charge en appelant la méthode **GetSchema** avec le nom de la collection de schémas de restrictions, qui est «restrictions». Cette opération retourne un <xref:System.Data.DataTable> contenant une liste des noms de collections, des noms de restriction, des valeurs de restriction par défaut et des numéros de restriction.  
+ Vous pouvez interroger un fournisseur managé .NET Framework pour déterminer la liste des restrictions prises en charge en appelant la méthode **GetSchema** avec le nom de la collection de schémas de restrictions, qui est « restrictions ». Cette opération retourne un <xref:System.Data.DataTable> contenant une liste des noms de collections, des noms de restriction, des valeurs de restriction par défaut et des numéros de restriction.  
   
-### <a name="example"></a>Exemples  
- Les exemples suivants montrent comment utiliser la <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> méthode de la .NET Framework fournisseur de données pour la classe SQL Server <xref:System.Data.SqlClient.SqlConnection> pour récupérer des informations de schéma sur toutes les tables contenues dans l’exemple de base de données **AdventureWorks** , et pour limiter les informations retournées aux seules tables du schéma «Sales»:  
+### <a name="example"></a>Exemple  
+ Les exemples suivants montrent comment utiliser la <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> méthode de la .NET Framework fournisseur de données pour la classe SQL Server <xref:System.Data.SqlClient.SqlConnection> pour récupérer des informations de schéma sur toutes les tables contenues dans l’exemple de base de données **AdventureWorks** , et pour limiter les informations retournées aux seules tables du schéma « Sales » :  
   
 ```vb  
 Imports System.Data.SqlClient  
@@ -143,7 +143,7 @@ class Program
   
 |Nom de restriction|nom du paramètre|Valeur par défaut de la restriction|Numéro de restriction|  
 |----------------------|--------------------|-------------------------|------------------------|  
-|Nom|@Name|Nom|1|  
+|Name|@Name|Name|1|  
   
 ### <a name="tables"></a>Tables  
   
@@ -204,7 +204,7 @@ class Program
 |----------------------|--------------------|-------------------------|------------------------|  
 |Catalogue|@Catalog|SPECIFIC_CATALOG|1|  
 |Propriétaire|@Owner|SPECIFIC_SCHEMA|2|  
-|Nom|@Name|SPECIFIC_NAME|3|  
+|Name|@Name|SPECIFIC_NAME|3|  
 |Type|@Type|ROUTINE_TYPE|4|  
   
 ### <a name="indexcolumns"></a>IndexColumns  
@@ -263,4 +263,4 @@ class Program
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

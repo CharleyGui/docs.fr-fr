@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c2b84dfe-7fec-489a-92de-45215cec4518
-ms.openlocfilehash: 22614be8e53d975c4efdf7004f41906c58639c61
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d32faf026789923ca4343271c9fd1b6bbdb068df
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938695"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793093"
 ---
 # <a name="how-to-use-stored-procedures-mapped-for-multiple-result-shapes"></a>Procédure : Utiliser des procédures stockées mappées pour plusieurs formes de résultats
 Lorsqu'une procédure stockée peut retourner plusieurs formes de résultats, le type de retour ne peut pas être fortement typé en une forme de projection unique. Bien [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] que puisse générer tous les types de projection possibles, il ne peut pas connaître l’ordre dans lequel ils sont retournés.  
   
- Comparez ce scénario avec les procédures stockées qui produisent plusieurs formes de résultats de manière séquentielle. Pour plus d’informations, consultez [Guide pratique pour Utilisez des procédures stockées mappées pour des formes](../../../../../../docs/framework/data/adonet/sql/linq/how-to-use-stored-procedures-mapped-for-sequential-result-shapes.md)de résultats séquentielles.  
+ Comparez ce scénario avec les procédures stockées qui produisent plusieurs formes de résultats de manière séquentielle. Pour plus d'informations, voir [Procédure : Utilisez des procédures stockées mappées pour des formes](how-to-use-stored-procedures-mapped-for-sequential-result-shapes.md)de résultats séquentielles.  
   
  L'attribut <xref:System.Data.Linq.Mapping.ResultTypeAttribute> est appliqué aux procédures stockées qui retournent plusieurs types de résultats pour spécifier l'ensemble de types que la procédure peut retourner.  
   
@@ -45,4 +45,4 @@ else if(@shape = 2)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Procédures stockées](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)
+- [Procédures stockées](stored-procedures.md)

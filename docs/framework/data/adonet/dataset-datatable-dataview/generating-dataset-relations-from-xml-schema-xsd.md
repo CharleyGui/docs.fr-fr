@@ -2,21 +2,21 @@
 title: Génération de relations de DataSet à partir du schéma XML (XSD)
 ms.date: 03/30/2017
 ms.assetid: 1c9a1413-c0d2-4447-88ba-9a2b0cbc0aa8
-ms.openlocfilehash: fd32d024acca393dcc8241f047a305e763682866
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: d00f07ee3338941b7de1bb890f71cd3c2d120246
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204857"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784643"
 ---
 # <a name="generating-dataset-relations-from-xml-schema-xsd"></a>Génération de relations de DataSet à partir du schéma XML (XSD)
-Dans un objet <xref:System.Data.DataSet>, vous créez une association entre deux ou plusieurs colonnes en établissant une relation parent-enfant. Il existe trois façons de représenter une relation de **DataSet** dans un schéma en langage XSD (XML Schema Definition):  
+Dans un objet <xref:System.Data.DataSet>, vous créez une association entre deux ou plusieurs colonnes en établissant une relation parent-enfant. Il existe trois façons de représenter une relation de **DataSet** dans un schéma en langage XSD (XML Schema Definition) :  
   
 - spécifier des types complexes imbriqués ;  
   
-- Utilisez l’annotation **msdata: Relationship** .  
+- Utilisez l’annotation **msdata : Relationship** .  
   
-- Spécifiez un **XS: keyref** sans l’annotation **msdata: ConstraintOnly** .  
+- Spécifiez un **XS : keyref** sans l’annotation **msdata : ConstraintOnly** .  
   
 ## <a name="nested-complex-types"></a>Types complexes imbriqués  
  Les définitions de types complexes imbriqués dans un schéma indiquent les relations parent-enfant des éléments. Le fragment de schéma XML suivant montre que **OrderDetail** est un élément enfant de l’élément **Order** .  
@@ -36,7 +36,7 @@ Dans un objet <xref:System.Data.DataSet>, vous créez une association entre deux
  Le processus de mappage de schéma XML crée dans le **DataSet** des tables qui correspondent aux types complexes imbriqués dans le schéma. Il crée également des colonnes supplémentaires qui sont utilisées comme **-** colonnes enfants parentes pour les tables générées. Notez que ces colonnes **-** enfants parentes spécifient des relations, ce qui n’est pas le même que la spécification de contraintes de clé primaire/clé étrangère.  
   
 ## <a name="msdatarelationship-annotation"></a>Annotation msdata:Relationship  
- L’annotation **msdata: Relationship** vous permet de spécifier explicitement les relations parent-enfant entre les éléments du schéma qui ne sont pas imbriqués. L’exemple suivant illustre la structure de l’élément **Relationship** .  
+ L’annotation **msdata : Relationship** vous permet de spécifier explicitement les relations parent-enfant entre les éléments du schéma qui ne sont pas imbriqués. L’exemple suivant illustre la structure de l’élément **Relationship** .  
   
 ```xml  
 <msdata:Relationship name="CustOrderRelationship"    
@@ -46,9 +46,9 @@ msdata:parentkey=""
 msdata:childkey="" />  
 ```  
   
- Les attributs de l’annotation **msdata: Relationship** identifient les éléments impliqués dans la relation parent-enfant, ainsi que les éléments et attributs **ParentKey** et **childkey** impliqués dans la relation. Le processus de mappage utilise ces informations pour générer des tables dans le **jeu de données** et pour créer la relation clé primaire/clé étrangère entre ces tables.  
+ Les attributs de l’annotation **msdata : Relationship** identifient les éléments impliqués dans la relation parent-enfant, ainsi que les éléments et attributs **ParentKey** et **childkey** impliqués dans la relation. Le processus de mappage utilise ces informations pour générer des tables dans le **jeu de données** et pour créer la relation clé primaire/clé étrangère entre ces tables.  
   
- Par exemple, le fragment de schéma suivant spécifie les éléments **Order** et **OrderDetail** au même niveau (non imbriqué). Le schéma spécifie une annotation **msdata: Relationship** , qui spécifie la relation parent-enfant entre ces deux éléments. Dans ce cas, une relation explicite doit être spécifiée à l’aide de l’annotation **msdata: Relationship** .  
+ Par exemple, le fragment de schéma suivant spécifie les éléments **Order** et **OrderDetail** au même niveau (non imbriqué). Le schéma spécifie une annotation **msdata : Relationship** , qui spécifie la relation parent-enfant entre ces deux éléments. Dans ce cas, une relation explicite doit être spécifiée à l’aide de l’annotation **msdata : Relationship** .  
   
 ```xml  
  <xs:element name="MyDataSet" msdata:IsDataSet="true">  
@@ -99,4 +99,4 @@ msdata:childkey="" />
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

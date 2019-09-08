@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d6aa8474-7bde-48f7-949d-20dc38a1625b
-ms.openlocfilehash: 91c635e2bc2ed617e8c45171d9ec7d7359b9ca88
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 2a001ac8b3d4b8cd9618b3ced7bdf578ebae2e22
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205481"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786592"
 ---
 # <a name="adding-data-to-a-datatable"></a>Ajout de données à un DataTable
 Après avoir créé un objet <xref:System.Data.DataTable> et défini sa structure à l'aide de colonnes et de contraintes, vous pouvez ajouter de nouvelles lignes de données à la table. Pour ajouter une nouvelle ligne, déclarez une nouvelle variable comme type <xref:System.Data.DataRow>. Un nouvel objet **DataRow** est retourné lorsque vous appelez la <xref:System.Data.DataTable.NewRow%2A> méthode. Le **DataTable** crée ensuite l’objet **DataRow** en fonction de la structure de la table, comme <xref:System.Data.DataColumnCollection>défini par.  
@@ -92,4 +92,4 @@ for (int i = 0; i <= 9; i++)
 - <xref:System.Data.DataRowCollection>
 - <xref:System.Data.DataTable>
 - [Manipulation des données dans un DataTable](manipulating-data-in-a-datatable.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
