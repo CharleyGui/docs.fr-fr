@@ -18,17 +18,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: da77d2eb848419c35e57ffacc8bf3d4580106fa5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d696326ff8861ed8496474f76e9eaf89b4ead3e8
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67764323"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795391"
 ---
-# <a name="createinstallreferenceenum-function"></a><span data-ttu-id="0e5ff-102">Fonction CreateInstallReferenceEnum</span><span class="sxs-lookup"><span data-stu-id="0e5ff-102">CreateInstallReferenceEnum Function</span></span>
-<span data-ttu-id="0e5ff-103">Obtient un pointeur vers un [IInstallReferenceEnum](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-interface.md) instance qui représente une liste de références d’une application à l’assembly spécifié.</span><span class="sxs-lookup"><span data-stu-id="0e5ff-103">Gets a pointer to an [IInstallReferenceEnum](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-interface.md) instance that represents a list of an application's references to the specified assembly.</span></span>  
+# <a name="createinstallreferenceenum-function"></a><span data-ttu-id="bd749-102">Fonction CreateInstallReferenceEnum</span><span class="sxs-lookup"><span data-stu-id="bd749-102">CreateInstallReferenceEnum Function</span></span>
+<span data-ttu-id="bd749-103">Obtient un pointeur vers une instance [IInstallReferenceEnum](iinstallreferenceenum-interface.md) qui représente une liste des références d’une application à l’assembly spécifié.</span><span class="sxs-lookup"><span data-stu-id="bd749-103">Gets a pointer to an [IInstallReferenceEnum](iinstallreferenceenum-interface.md) instance that represents a list of an application's references to the specified assembly.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="0e5ff-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0e5ff-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="bd749-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bd749-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT CreateInstallReferenceEnum (  
@@ -39,30 +39,30 @@ HRESULT CreateInstallReferenceEnum (
  );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="0e5ff-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="0e5ff-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="bd749-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="bd749-105">Parameters</span></span>  
  `ppRefEnum`  
- <span data-ttu-id="0e5ff-106">[out] Retourné `IInstallReferenceEnum` pointeur.</span><span class="sxs-lookup"><span data-stu-id="0e5ff-106">[out] The returned `IInstallReferenceEnum` pointer.</span></span>  
+ <span data-ttu-id="bd749-106">à Pointeur retourné `IInstallReferenceEnum` .</span><span class="sxs-lookup"><span data-stu-id="bd749-106">[out] The returned `IInstallReferenceEnum` pointer.</span></span>  
   
  `pName`  
- <span data-ttu-id="0e5ff-107">[in] Le [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) qui identifie l’assembly pour lequel énumérer des références.</span><span class="sxs-lookup"><span data-stu-id="0e5ff-107">[in] The [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) that identifies the assembly for which to enumerate references.</span></span>  
+ <span data-ttu-id="bd749-107">dans [IAssemblyName](iassemblyname-interface.md) qui identifie l’assembly pour lequel énumérer les références.</span><span class="sxs-lookup"><span data-stu-id="bd749-107">[in] The [IAssemblyName](iassemblyname-interface.md) that identifies the assembly for which to enumerate references.</span></span>  
   
  `dwFlags`  
- <span data-ttu-id="0e5ff-108">[in] Indicateurs qui influencent le comportement de l’énumérateur.</span><span class="sxs-lookup"><span data-stu-id="0e5ff-108">[in] Flags that influence the enumerator's behavior.</span></span>  
+ <span data-ttu-id="bd749-108">dans Indicateurs qui influencent le comportement de l’énumérateur.</span><span class="sxs-lookup"><span data-stu-id="bd749-108">[in] Flags that influence the enumerator's behavior.</span></span>  
   
  `pvReserved`  
- <span data-ttu-id="0e5ff-109">[in] Réservé pour une extensibilité future.</span><span class="sxs-lookup"><span data-stu-id="0e5ff-109">[in] Reserved for future extensibility.</span></span> <span data-ttu-id="0e5ff-110">`pvReserved` doit être une référence null.</span><span class="sxs-lookup"><span data-stu-id="0e5ff-110">`pvReserved` must be a null reference.</span></span>  
+ <span data-ttu-id="bd749-109">dans Réservé pour une future extensibilité.</span><span class="sxs-lookup"><span data-stu-id="bd749-109">[in] Reserved for future extensibility.</span></span> <span data-ttu-id="bd749-110">`pvReserved`doit être une référence null.</span><span class="sxs-lookup"><span data-stu-id="bd749-110">`pvReserved` must be a null reference.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="0e5ff-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="0e5ff-111">Requirements</span></span>  
- <span data-ttu-id="0e5ff-112">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="0e5ff-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="bd749-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="bd749-111">Requirements</span></span>  
+ <span data-ttu-id="bd749-112">**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bd749-112">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="0e5ff-113">**En-tête :** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="0e5ff-113">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="bd749-113">**En-tête :** Fusion. h</span><span class="sxs-lookup"><span data-stu-id="bd749-113">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="0e5ff-114">**Bibliothèque :** Le fichier fusion.dll et Mscorwks.dll.</span><span class="sxs-lookup"><span data-stu-id="0e5ff-114">**Library:** Fusion.dll and Mscorwks.dll.</span></span> <span data-ttu-id="0e5ff-115">Utilisez le fichier Fusion.dll plutôt que Mscorwks.dll pour vous assurer que vous ciblez la version correcte du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="0e5ff-115">Use Fusion.dll instead of Mscorwks.dll to ensure that you target the correct version of the .NET Framework.</span></span>  
+ <span data-ttu-id="bd749-114">**Bibliothèque** Fusion. dll et mscorwks. dll.</span><span class="sxs-lookup"><span data-stu-id="bd749-114">**Library:** Fusion.dll and Mscorwks.dll.</span></span> <span data-ttu-id="bd749-115">Utilisez fusion. dll au lieu de Mscorwks. dll pour vous assurer que vous ciblez la version correcte du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="bd749-115">Use Fusion.dll instead of Mscorwks.dll to ensure that you target the correct version of the .NET Framework.</span></span>  
   
- <span data-ttu-id="0e5ff-116">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0e5ff-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="bd749-116">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="bd749-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0e5ff-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0e5ff-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bd749-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="bd749-117">See also</span></span>
 
-- [<span data-ttu-id="0e5ff-118">IInstallReferenceEnum, interface</span><span class="sxs-lookup"><span data-stu-id="0e5ff-118">IInstallReferenceEnum Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iinstallreferenceenum-interface.md)
-- [<span data-ttu-id="0e5ff-119">IAssemblyName, interface</span><span class="sxs-lookup"><span data-stu-id="0e5ff-119">IAssemblyName Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [<span data-ttu-id="0e5ff-120">Fonctions statiques globales de fusion</span><span class="sxs-lookup"><span data-stu-id="0e5ff-120">Fusion Global Static Functions</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [<span data-ttu-id="bd749-118">IInstallReferenceEnum, interface</span><span class="sxs-lookup"><span data-stu-id="bd749-118">IInstallReferenceEnum Interface</span></span>](iinstallreferenceenum-interface.md)
+- [<span data-ttu-id="bd749-119">IAssemblyName, interface</span><span class="sxs-lookup"><span data-stu-id="bd749-119">IAssemblyName Interface</span></span>](iassemblyname-interface.md)
+- [<span data-ttu-id="bd749-120">Fonctions statiques globales de fusion</span><span class="sxs-lookup"><span data-stu-id="bd749-120">Fusion Global Static Functions</span></span>](fusion-global-static-functions.md)
