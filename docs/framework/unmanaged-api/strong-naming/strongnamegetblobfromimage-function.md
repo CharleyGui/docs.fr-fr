@@ -16,19 +16,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b076c39ccf40ca5b613cab94ecc75716158d97a9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 86b99b29a85f498a6bfa0363a446bf589876bff9
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780128"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799084"
 ---
-# <a name="strongnamegetblobfromimage-function"></a><span data-ttu-id="5860c-102">StrongNameGetBlobFromImage, fonction</span><span class="sxs-lookup"><span data-stu-id="5860c-102">StrongNameGetBlobFromImage Function</span></span>
-<span data-ttu-id="5860c-103">Obtient une représentation binaire de l’image de l’assembly à l’adresse mémoire spécifiée.</span><span class="sxs-lookup"><span data-stu-id="5860c-103">Gets a binary representation of the assembly image at the specified memory address.</span></span>  
+# <a name="strongnamegetblobfromimage-function"></a><span data-ttu-id="21539-102">StrongNameGetBlobFromImage, fonction</span><span class="sxs-lookup"><span data-stu-id="21539-102">StrongNameGetBlobFromImage Function</span></span>
+<span data-ttu-id="21539-103">Obtient une représentation binaire de l’image de l’assembly à l’adresse mémoire spécifiée.</span><span class="sxs-lookup"><span data-stu-id="21539-103">Gets a binary representation of the assembly image at the specified memory address.</span></span>  
   
- <span data-ttu-id="5860c-104">Cette fonction a été déconseillée.</span><span class="sxs-lookup"><span data-stu-id="5860c-104">This function has been deprecated.</span></span> <span data-ttu-id="5860c-105">Utilisez le [ICLRStrongName::StrongNameGetBlobFromImage](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblobfromimage-method.md) méthode à la place.</span><span class="sxs-lookup"><span data-stu-id="5860c-105">Use the [ICLRStrongName::StrongNameGetBlobFromImage](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblobfromimage-method.md) method instead.</span></span>  
+ <span data-ttu-id="21539-104">Cette fonction a été dépréciée.</span><span class="sxs-lookup"><span data-stu-id="21539-104">This function has been deprecated.</span></span> <span data-ttu-id="21539-105">Utilisez la méthode [ICLRStrongName :: StrongNameGetBlobFromImage (](../hosting/iclrstrongname-strongnamegetblobfromimage-method.md) à la place.</span><span class="sxs-lookup"><span data-stu-id="21539-105">Use the [ICLRStrongName::StrongNameGetBlobFromImage](../hosting/iclrstrongname-strongnamegetblobfromimage-method.md) method instead.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5860c-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5860c-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="21539-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="21539-106">Syntax</span></span>  
   
 ```cpp  
 BOOLEAN StrongNameGetBlobFromImage (  
@@ -39,36 +39,36 @@ BOOLEAN StrongNameGetBlobFromImage (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="5860c-107">Paramètres</span><span class="sxs-lookup"><span data-stu-id="5860c-107">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="21539-107">Paramètres</span><span class="sxs-lookup"><span data-stu-id="21539-107">Parameters</span></span>  
  `pbBase`  
- <span data-ttu-id="5860c-108">[in] L’adresse mémoire du manifeste d’assembly mappé.</span><span class="sxs-lookup"><span data-stu-id="5860c-108">[in] The memory address of the mapped assembly manifest.</span></span>  
+ <span data-ttu-id="21539-108">dans Adresse mémoire du manifeste de l’assembly mappé.</span><span class="sxs-lookup"><span data-stu-id="21539-108">[in] The memory address of the mapped assembly manifest.</span></span>  
   
  `dwLength`  
- <span data-ttu-id="5860c-109">[in] La taille, en octets, de l’image à `pbBase`.</span><span class="sxs-lookup"><span data-stu-id="5860c-109">[in] The size, in bytes, of the image at `pbBase`.</span></span>  
+ <span data-ttu-id="21539-109">dans Taille, en octets, de l’image à `pbBase`.</span><span class="sxs-lookup"><span data-stu-id="21539-109">[in] The size, in bytes, of the image at `pbBase`.</span></span>  
   
  `pbBlob`  
- <span data-ttu-id="5860c-110">[in] Une mémoire tampon pour contenir la représentation binaire de l’image.</span><span class="sxs-lookup"><span data-stu-id="5860c-110">[in] A buffer to contain the binary representation of the image.</span></span>  
+ <span data-ttu-id="21539-110">dans Mémoire tampon destinée à contenir la représentation binaire de l’image.</span><span class="sxs-lookup"><span data-stu-id="21539-110">[in] A buffer to contain the binary representation of the image.</span></span>  
   
  `pcbBlob`  
- <span data-ttu-id="5860c-111">[in, out] La taille maximale en octets, demandée de `pbBlob`.</span><span class="sxs-lookup"><span data-stu-id="5860c-111">[in, out] The requested maximum size, in bytes, of `pbBlob`.</span></span> <span data-ttu-id="5860c-112">Au retour, la taille réelle, en octets, de `pbBlob`.</span><span class="sxs-lookup"><span data-stu-id="5860c-112">Upon return, the actual size, in bytes, of `pbBlob`.</span></span>  
+ <span data-ttu-id="21539-111">[in, out] Taille maximale demandée, en octets, de `pbBlob`.</span><span class="sxs-lookup"><span data-stu-id="21539-111">[in, out] The requested maximum size, in bytes, of `pbBlob`.</span></span> <span data-ttu-id="21539-112">Lors du retour, taille réelle, en octets, de `pbBlob`.</span><span class="sxs-lookup"><span data-stu-id="21539-112">Upon return, the actual size, in bytes, of `pbBlob`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="5860c-113">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="5860c-113">Return Value</span></span>  
- <span data-ttu-id="5860c-114">`true` de réussite ; Sinon, `false`.</span><span class="sxs-lookup"><span data-stu-id="5860c-114">`true` on successful completion; otherwise, `false`.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="21539-113">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="21539-113">Return Value</span></span>  
+ <span data-ttu-id="21539-114">`true`en cas de réussite de l’opération ; Sinon, `false`.</span><span class="sxs-lookup"><span data-stu-id="21539-114">`true` on successful completion; otherwise, `false`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="5860c-115">Notes</span><span class="sxs-lookup"><span data-stu-id="5860c-115">Remarks</span></span>  
- <span data-ttu-id="5860c-116">Si le `StrongNameGetBlobFromImage` (fonction) ne pas aboutir, appelez le [StrongNameErrorInfo](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) fonction pour récupérer la dernière erreur générée.</span><span class="sxs-lookup"><span data-stu-id="5860c-116">If the `StrongNameGetBlobFromImage` function does not complete successfully, call the [StrongNameErrorInfo](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) function to retrieve the last generated error.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="21539-115">Notes</span><span class="sxs-lookup"><span data-stu-id="21539-115">Remarks</span></span>  
+ <span data-ttu-id="21539-116">Si la `StrongNameGetBlobFromImage` fonction ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.</span><span class="sxs-lookup"><span data-stu-id="21539-116">If the `StrongNameGetBlobFromImage` function does not complete successfully, call the [StrongNameErrorInfo](strongnameerrorinfo-function.md) function to retrieve the last generated error.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5860c-117">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="5860c-117">Requirements</span></span>  
- <span data-ttu-id="5860c-118">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5860c-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="21539-117">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="21539-117">Requirements</span></span>  
+ <span data-ttu-id="21539-118">**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="21539-118">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="5860c-119">**En-tête :** StrongName.h</span><span class="sxs-lookup"><span data-stu-id="5860c-119">**Header:** StrongName.h</span></span>  
+ <span data-ttu-id="21539-119">**En-tête :** StrongName.h</span><span class="sxs-lookup"><span data-stu-id="21539-119">**Header:** StrongName.h</span></span>  
   
- <span data-ttu-id="5860c-120">**Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="5860c-120">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="21539-120">**Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="21539-120">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="5860c-121">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5860c-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="21539-121">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="21539-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5860c-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5860c-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="21539-122">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="21539-122">See also</span></span>
 
-- [<span data-ttu-id="5860c-123">StrongNameGetBlobFromImage, méthode</span><span class="sxs-lookup"><span data-stu-id="5860c-123">StrongNameGetBlobFromImage Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblobfromimage-method.md)
-- [<span data-ttu-id="5860c-124">StrongNameGetBlob, méthode</span><span class="sxs-lookup"><span data-stu-id="5860c-124">StrongNameGetBlob Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamegetblob-method.md)
-- [<span data-ttu-id="5860c-125">ICLRStrongName, interface</span><span class="sxs-lookup"><span data-stu-id="5860c-125">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [<span data-ttu-id="21539-123">StrongNameGetBlobFromImage, méthode</span><span class="sxs-lookup"><span data-stu-id="21539-123">StrongNameGetBlobFromImage Method</span></span>](../hosting/iclrstrongname-strongnamegetblobfromimage-method.md)
+- [<span data-ttu-id="21539-124">StrongNameGetBlob, méthode</span><span class="sxs-lookup"><span data-stu-id="21539-124">StrongNameGetBlob Method</span></span>](../hosting/iclrstrongname-strongnamegetblob-method.md)
+- [<span data-ttu-id="21539-125">ICLRStrongName, interface</span><span class="sxs-lookup"><span data-stu-id="21539-125">ICLRStrongName Interface</span></span>](../hosting/iclrstrongname-interface.md)
