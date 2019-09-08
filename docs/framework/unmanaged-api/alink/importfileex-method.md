@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fcf714cb0c1c1dd59ae2ec56279870c0bb3e1c4a
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: bd138d0418bb9667a86419d719bf0b95a4bb1b12
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741721"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777115"
 ---
 # <a name="importfileex-method"></a>ImportFileEx, méthode
-Importations indiqué assembly ou module indépendant.  
+Importe l’assembly ou le module indépendant indiqué.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,34 +42,34 @@ HRESULT ImportFileEx(
   
 ## <a name="parameters"></a>Paramètres  
  `pszFilename`  
- Nom qualifié complet du fichier à partir duquel importer.  
+ Nom complet du fichier à partir duquel effectuer l’importation.  
   
  `pszTargetName`  
  Nom facultatif du fichier cible.  
   
  `fSmartImport`  
- Si la valeur est TRUE, ImportTypes est utilisé, sinon l’importation doit être effectuée manuellement.  
+ Si la valeur est TRUE, ImportTypes, est utilisé, sinon l’importation doit être effectuée manuellement.  
   
  `dwOpenFlags`  
- Indicateurs à passer à [OpenScope, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md).  
+ Indicateurs à passer à la [méthode OpenScope](../metadata/imetadatadispenser-openscope-method.md).  
   
  `pImportToken`  
  Reçoit l’ID du fichier en cours d’importation.  
   
  `ppAssemblyScope`  
- Reçoit la portée d’importation assembly [IMetaDataAssemblyImport, Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) interface. A la valeur null si le fichier n’est pas un assembly.  
+ Reçoit l’interface de l’interface d’importation d’assembly [IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md) . A la valeur NULL si le fichier n’est pas un assembly.  
   
  `pdwCountOfScopes`  
- Reçoit le nombre de fichiers importés et/ou étendues.  
+ Reçoit le nombre de fichiers et/ou d’étendues importés.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h.  
+ Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink2, interface](ialink2-interface.md)
+- [IALink, interface](ialink-interface.md)
+- [API ALink](index.md)

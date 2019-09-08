@@ -2,12 +2,12 @@
 title: Authentification dans SQL Server
 ms.date: 05/22/2018
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
-ms.openlocfilehash: 1723552a48ebfa41e8d6a0f963154fc3b864119d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 49835ebf8ebe4d5bd200ed771477edc8af580b7d
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69957493"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794297"
 ---
 # <a name="authentication-in-sql-server"></a>Authentification dans SQL Server
 SQL Server prend en charge deux modes d'authentification, le mode d'authentification Windows et le mode mixte.  
@@ -49,7 +49,7 @@ SQL Server prend en charge deux modes d'authentification, le mode d'authentifica
 > La spécification de l'authentification Windows ne désactive pas les connexions SQL Server. Utilisez l'instruction Transact-SQL ALTER LOGIN DISABLE pour désactiver des connexions SQL Server dotées de privilèges élevés.  
   
 ## <a name="login-types"></a>Types de connexions  
- SQL Server prend en charge trois types de connexions:  
+ SQL Server prend en charge trois types de connexions :  
   
 - Compte d'utilisateur Windows local ou compte de domaine approuvé. SQL Server s'appuie sur Windows pour authentifier les comptes d'utilisateurs Windows.  
   
@@ -69,7 +69,7 @@ SQL Server prend en charge deux modes d'authentification, le mode d'authentifica
  SQL Server fournit des mécanismes de stratégie de mot de passe Windows pour les connexions SQL Server [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] lorsqu’il s’exécute sur ou versions ultérieures. Les stratégies de complexité des mots de passe sont conçues pour prévenir les attaques en force brute en augmentant le nombre de mots de passe possibles. SQL Server pouvez appliquer les mêmes stratégies de complexité et d’expiration [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] que celles utilisées dans aux mots de passe utilisés dans SQL Server.  
   
 > [!IMPORTANT]
-> La concaténation des chaînes de connexion à partir des entrées utilisateur peut vous rendre vulnérable à une attaque par injection de chaîne de connexion. Utilisez le <xref:System.Data.SqlClient.SqlConnectionStringBuilder> pour créer des chaînes de connexion valides du point de vue de la syntaxe au moment de l'exécution. Pour plus d’informations, consultez [Builders de chaînes de connexion](../../../../../docs/framework/data/adonet/connection-string-builders.md).  
+> La concaténation des chaînes de connexion à partir des entrées utilisateur peut vous rendre vulnérable à une attaque par injection de chaîne de connexion. Utilisez le <xref:System.Data.SqlClient.SqlConnectionStringBuilder> pour créer des chaînes de connexion valides du point de vue de la syntaxe au moment de l'exécution. Pour plus d’informations, consultez [Builders de chaînes de connexion](../connection-string-builders.md).  
   
 ## <a name="external-resources"></a>Ressources externes  
  Pour plus d'informations, voir les ressources ci-dessous.  
@@ -80,8 +80,8 @@ SQL Server prend en charge deux modes d'authentification, le mode d'authentifica
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sécurisation des applications ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Scénarios de sécurité des applications dans SQL Server](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
-- [Connexion à une source de données](../../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
-- [Chaînes de connexion](../../../../../docs/framework/data/adonet/connection-strings.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Sécurisation des applications ADO.NET](../securing-ado-net-applications.md)
+- [Scénarios de sécurité des applications dans SQL Server](application-security-scenarios-in-sql-server.md)
+- [Connexion à une source de données](../connecting-to-a-data-source.md)
+- [Chaînes de connexion](../connection-strings.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

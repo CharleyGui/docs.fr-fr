@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 265d3edbd3175eebcf6fd35be24f5b66144c960f
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 17304dc8330e4f8571f25b8544f1049dff229f2b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69037953"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798596"
 ---
 # <a name="get-function"></a>Get, fonction
 
@@ -66,15 +66,15 @@ dans Nom de la propriété.
 `plFlavor`\
 à Si la fonction est correctement retournée, reçoit des informations sur l’origine de la propriété. Sa valeur peut être `null`, ou l’une des constantes WBEM_FLAVOR_TYPE suivantes définies dans le fichier d’en-tête *WbemCli. h* : 
 
-|Constante  |Valeur  |Description  |
+|Constante  |`Value`  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAVOR_ORIGIN_SYSTEM` | 0x40 | La propriété est une propriété système standard. |
-| `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | Pour une classe: La propriété est héritée de la classe parente. <br> Pour une instance: La propriété, bien qu’héritée de la classe parente, n’a pas été modifiée par l’instance de.  |
-| `WBEM_FLAVOR_ORIGIN_LOCAL` | 0 | Pour une classe: La propriété appartient à la classe dérivée. <br> Pour une instance: La propriété est modifiée par l’instance; autrement dit, une valeur a été fournie ou un qualificateur a été ajouté ou modifié. |
+| `WBEM_FLAVOR_ORIGIN_PROPAGATED` | 0x20 | Pour une classe : La propriété est héritée de la classe parente. <br> Pour une instance : La propriété, bien qu’héritée de la classe parente, n’a pas été modifiée par l’instance de.  |
+| `WBEM_FLAVOR_ORIGIN_LOCAL` | 0 | Pour une classe : La propriété appartient à la classe dérivée. <br> Pour une instance : La propriété est modifiée par l’instance ; autrement dit, une valeur a été fournie ou un qualificateur a été ajouté ou modifié. |
 
 ## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code:
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
 |Constante  |Valeur  |Description  |
 |---------|---------|---------|
@@ -86,7 +86,7 @@ Les valeurs suivantes retournées par cette fonction sont définies dans le fich
 
 ## <a name="remarks"></a>Notes
 
-Cette fonction encapsule un appel à la méthode [IWbemClassObject:: obtenir](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-get) .
+Cette fonction encapsule un appel à la méthode [IWbemClassObject :: obtenir](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-get) .
 
 La `Get` fonction peut également retourner des propriétés système.
 
@@ -94,7 +94,7 @@ Le `pVal` type et la valeur corrects pour le qualificateur et la fonction com [V
 
 ## <a name="requirements"></a>Configuration requise
 
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
  **En-tête :** WMINet_Utils.idl
 

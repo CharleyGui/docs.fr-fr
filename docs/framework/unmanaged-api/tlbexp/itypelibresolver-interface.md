@@ -16,32 +16,32 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fa3135465673bedea1c6827da622903279d1bcf1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6ebc885e000f902670dbf74d5ecc11fd956f8c81
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61964630"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798874"
 ---
 # <a name="itypelibresolver-interface"></a>ITypeLibResolver, interface
-Fournit le [ResolveTypeLib, méthode](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md), ce qui donne le chemin d’accès de fichier d’une bibliothèque de types.  
+Fournit la [méthode ResolveTypeLib (](resolvetypelib-method.md), qui résout le chemin d’accès au fichier d’une bibliothèque de types.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[ResolveTypeLib, méthode](../../../../docs/framework/unmanaged-api/tlbexp/resolvetypelib-method.md)|Résout le nom simple d’une bibliothèque de types en retournant son chemin d’accès qualifié complet.|  
+|[ResolveTypeLib, méthode](resolvetypelib-method.md)|Résout le nom simple d’une bibliothèque de types en retournant son chemin d’accès qualifié complet.|  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** TlbRef.idl, TlbRef.h  
+ **En-tête :** TlbRef. idl, TlbRef. h  
   
- **Bibliothèque :** TlbRef.lib  
+ **Bibliothèque** TlbRef.lib  
   
- **Version du .NET framework :** 4, 3.5, 3.0, 2.0  
+ **Version de .NET Framework :** 4, 3.5, 3.0, 2.0  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions d’assistance Tlbexp](../../../../docs/framework/unmanaged-api/tlbexp/index.md)
-- [LoadTypeLibEx de le dont (fonction)](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)
+- [Fonctions d’assistance Tlbexp](index.md)
+- [LoadTypeLibEx fonction)](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5e7ff0be-3f23-4996-a92c-bd54d65c3836
-ms.openlocfilehash: 07c705b9daeeb043ef36f1e3272a3bf259a3c23e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 05e3cf25352e731d320061001f08a835cd520b15
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70043879"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780929"
 ---
 # <a name="single-bulk-copy-operations"></a>Opérations uniques de copie en bloc
 
@@ -19,7 +19,7 @@ L'approche la plus simple de l'exécution d'une opération de copie en bloc SQL 
 > [!NOTE]
 > Si vous devez restaurer tout ou partie de la copie en bloc en cas d’erreur, vous pouvez soit utiliser une transaction <xref:System.Data.SqlClient.SqlBulkCopy> managée, soit effectuer une opération de copie en bloc à l’intérieur d’une transaction existante. **SqlBulkCopy** fonctionne également avec <xref:System.Transactions> si la connexion est inscrite (implicitement ou explicitement) dans une transaction **System. transactions** .
 >
-> Pour plus d’informations, consultez [transaction et opérations de copie en bloc](../../../../../docs/framework/data/adonet/sql/transaction-and-bulk-copy-operations.md).
+> Pour plus d’informations, consultez [transaction et opérations de copie en bloc](transaction-and-bulk-copy-operations.md).
 
 Les étapes générales pour l'exécution d'une opération de copie en bloc sont les suivantes :
 
@@ -40,12 +40,12 @@ Les étapes générales pour l'exécution d'une opération de copie en bloc sont
 > [!CAUTION]
 > Il est recommandé que les types de données des colonnes source et cible correspondent. Si les types de données ne correspondent pas, **SqlBulkCopy** tente de convertir chaque valeur source en type de données cible, à l’aide des <xref:System.Data.SqlClient.SqlParameter.Value%2A>règles utilisées par. Les conversions peuvent affecter les performances et générer des erreurs inattendues. Par exemple, un type de données `Double` peut généralement être converti en un type de données `Decimal`, mais pas toujours.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L'application console suivante montre comment charger des données à l'aide de la classe <xref:System.Data.SqlClient.SqlBulkCopy>. Dans cet exemple, un <xref:System.Data.SqlClient.SqlDataReader> est utilisé pour copier des données de la table **production. Product** de la base de données SQL Server **AdventureWorks** dans une table similaire de la même base de données.
 
 > [!IMPORTANT]
-> Cet exemple ne s’exécute pas, sauf si vous avez créé les tables de travail comme décrit dans l' [exemple de configuration de copie en bloc](../../../../../docs/framework/data/adonet/sql/bulk-copy-example-setup.md). Ce code est fourni pour illustrer la syntaxe de l’utilisation de **SqlBulkCopy** uniquement. Si les tables sources et de destination se trouvent dans la même instance SQL Server, il est plus facile et plus rapide d'utiliser une instruction Transact-SQL `INSERT … SELECT` pour copier les données.
+> Cet exemple ne s’exécute pas, sauf si vous avez créé les tables de travail comme décrit dans l' [exemple de configuration de copie en bloc](bulk-copy-example-setup.md). Ce code est fourni pour illustrer la syntaxe de l’utilisation de **SqlBulkCopy** uniquement. Si les tables sources et de destination se trouvent dans la même instance SQL Server, il est plus facile et plus rapide d'utiliser une instruction Transact-SQL `INSERT … SELECT` pour copier les données.
 
 [!code-csharp[DataWorks BulkCopy.Single#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks BulkCopy.Single/CS/source.cs#1)]
 [!code-vb[DataWorks BulkCopy.Single#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks BulkCopy.Single/VB/source.vb#1)]
@@ -84,5 +84,5 @@ command.ExecuteNonQuery();
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Opérations de copie en bloc dans SQL Server](../../../../../docs/framework/data/adonet/sql/bulk-copy-operations-in-sql-server.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Opérations de copie en bloc dans SQL Server](bulk-copy-operations-in-sql-server.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

@@ -2,12 +2,12 @@
 title: Prise en charge de SqlClient pour la haute disponibilité et la récupération d'urgence
 ms.date: 03/30/2017
 ms.assetid: 61e0b396-09d7-4e13-9711-7dcbcbd103a0
-ms.openlocfilehash: 104fdd78ce3f4b9c18f09fc41fddebe46815d217
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b51c3cb1eb3c8726b7de007a1c1519eae0733392
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938472"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791614"
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>Prise en charge de SqlClient pour la haute disponibilité et la récupération d'urgence
 Cette rubrique traite de la prise en charge de SqlClient (ajoutée dans .NET Framework 4,5) pour la haute disponibilité et la récupération d’urgence--groupes de disponibilité AlwaysOn.  Groupes de disponibilité AlwaysOn fonctionnalité a été ajoutée à SQL Server 2012. Pour plus d’informations sur groupes de disponibilité AlwaysOn, consultez Documentation en ligne de SQL Server.  
@@ -19,7 +19,7 @@ Cette rubrique traite de la prise en charge de SqlClient (ajoutée dans .NET Fra
 > [!NOTE]
 > L'augmentation du délai de connexion et l'implémentation de la logique de nouvelles tentatives de connexion augmentent la probabilité qu'une application se connecte à un groupe de disponibilité. En outre, étant donné qu'une connexion peut échouer en raison d'un basculement, vous devez implémenter la logique pour les nouvelles tentatives de connexion, nouvelle tentative de connexion jusqu'à reconnexion.  
   
- Les propriétés de connexion suivantes ont été ajoutées à SqlClient dans .NET Framework 4,5:  
+ Les propriétés de connexion suivantes ont été ajoutées à SqlClient dans .NET Framework 4,5 :  
   
 - `ApplicationIntent`  
   
@@ -43,7 +43,7 @@ Cette rubrique traite de la prise en charge de SqlClient (ajoutée dans .NET Fra
   
  La `MultiSubnetFailover=True` spécification de lors de la connexion à un élément autre qu’un écouteur de groupe de disponibilité ou une instance de cluster de basculement SQL Server 2012 peut avoir un impact négatif sur les performances et n’est pas prise en charge.  
   
- Utilisez les instructions suivantes pour vous connecter à un serveur dans un groupe de disponibilité ou une instance de cluster de basculement SQL Server 2012:  
+ Utilisez les instructions suivantes pour vous connecter à un serveur dans un groupe de disponibilité ou une instance de cluster de basculement SQL Server 2012 :  
   
 - Utilisez la propriété de connexion `MultiSubnetFailover` lors de la connexion à un sous-réseau unique ou à un multi-sous-réseau ; elle permet d'améliorer les performances pour les deux.  
   
@@ -51,7 +51,7 @@ Cette rubrique traite de la prise en charge de SqlClient (ajoutée dans .NET Fra
   
 - La connexion à une instance de SQL Server configurée avec plus de 64 adresses IP entraîne un échec de connexion.  
   
-- Le comportement d’une application qui utilise `MultiSubnetFailover` la propriété de connexion n’est pas affecté par le type d’authentification: Authentification SQL Server, authentification Kerberos ou authentification Windows.  
+- Le comportement d’une application qui utilise `MultiSubnetFailover` la propriété de connexion n’est pas affecté par le type d’authentification : Authentification SQL Server, authentification Kerberos ou authentification Windows.  
   
 - Augmentez la valeur de `Connect Timeout` pour permettre la prise en charge pour le temps de basculement et réduire les tentatives de nouvelle connexion d'application.  
   
@@ -98,5 +98,5 @@ Cette rubrique traite de la prise en charge de SqlClient (ajoutée dans .NET Fra
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctionnalités SQL Server et ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Fonctionnalités SQL Server et ADO.NET](sql-server-features-and-adonet.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

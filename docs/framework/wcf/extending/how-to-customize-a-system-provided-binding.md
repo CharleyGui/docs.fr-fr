@@ -5,23 +5,23 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f8b97862-e8bb-470d-8b96-07733c21fe26
-ms.openlocfilehash: 0c5474a65bee7d3d290372e79f8423ea9986235f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6b92382b4a37168c33f9e97077ad292d27ea5bc3
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61767115"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797025"
 ---
 # <a name="how-to-customize-a-system-provided-binding"></a>Procédure : personnaliser une liaison fournie par le système
-Windows Communication Foundation (WCF) inclut plusieurs liaisons fournies par le système qui vous permettent de configurer certaines propriétés des éléments de liaison sous-jacente, mais pas toutes les propriétés. Cette rubrique explique comment attribuer des propriétés aux éléments de liaison afin de créer une liaison personnalisée.  
+Windows Communication Foundation (WCF) comprend plusieurs liaisons fournies par le système qui vous permettent de configurer certaines des propriétés des éléments de liaison sous-jacents, mais pas toutes les propriétés. Cette rubrique explique comment attribuer des propriétés aux éléments de liaison afin de créer une liaison personnalisée.  
   
- Pour plus d’informations sur comment directement créer et configurer des éléments de liaison sans utiliser les liaisons fournies par le système, consultez [liaisons personnalisées](../../../../docs/framework/wcf/extending/custom-bindings.md).  
+ Pour plus d’informations sur la façon de créer et de configurer directement des éléments de liaison sans utiliser les liaisons fournies par le système, consultez [liaisons personnalisées](custom-bindings.md).  
   
- Pour plus d’informations sur la création et extension des liaisons personnalisées, consultez [extension de liaisons](../../../../docs/framework/wcf/extending/extending-bindings.md).  
+ Pour plus d’informations sur la création et l’extension de liaisons personnalisées, consultez [extension des liaisons](extending-bindings.md).  
   
- Dans WCF toutes les liaisons sont constituées de *éléments de liaison*. Chaque élément de liaison dérive de la classe <xref:System.ServiceModel.Channels.BindingElement>. Les liaisons fournies par le système telles que <xref:System.ServiceModel.BasicHttpBinding> créent et configurent leurs propres éléments de liaison. Cette rubrique vous indique comment accéder aux propriétés de ces éléments de liaison qui ne sont pas exposés directement sur la liaison et comment les modifier ; il s’agit, notamment, de la classe <xref:System.ServiceModel.BasicHttpBinding>.  
+ Dans WCF, toutes les liaisons sont composées d' *éléments de liaison*. Chaque élément de liaison dérive de la classe <xref:System.ServiceModel.Channels.BindingElement>. Les liaisons fournies par le système telles que <xref:System.ServiceModel.BasicHttpBinding> créent et configurent leurs propres éléments de liaison. Cette rubrique vous indique comment accéder aux propriétés de ces éléments de liaison qui ne sont pas exposés directement sur la liaison et comment les modifier ; il s’agit, notamment, de la classe <xref:System.ServiceModel.BasicHttpBinding>.  
   
- Les éléments de liaison individuels sont contenus dans une collection représentée par la <xref:System.ServiceModel.Channels.BindingElementCollection> classe et sont ajoutés dans cet ordre : Flux de transaction, Session fiable, sécurité, Duplex Composite, unidirectionnel, sécurité de Stream, encodage de Message et Transport. Notez que les éléments de liaison répertoriés ne sont pas tous requis dans chaque liaison. Les éléments de liaison définis par l’utilisateur peuvent également apparaître dans cette collection et doivent figurer dans le même ordre que précédemment. Par exemple, un transport défini par l'utilisateur doit être le dernier élément de la collection d'éléments de liaison.  
+ Les éléments de liaison individuels sont contenus dans une collection représentée par <xref:System.ServiceModel.Channels.BindingElementCollection> la classe et sont ajoutés dans cet ordre : Flux de transaction, session fiable, sécurité, duplex composite, unidirectionnel, sécurité de flux, encodage de message et transport. Notez que les éléments de liaison répertoriés ne sont pas tous requis dans chaque liaison. Les éléments de liaison définis par l’utilisateur peuvent également apparaître dans cette collection et doivent figurer dans le même ordre que précédemment. Par exemple, un transport défini par l'utilisateur doit être le dernier élément de la collection d'éléments de liaison.  
   
  La classe <xref:System.ServiceModel.BasicHttpBinding> contient trois éléments de liaison :  
   
@@ -31,7 +31,7 @@ Windows Communication Foundation (WCF) inclut plusieurs liaisons fournies par le
   
 3. Un élément de liaison de transport requis, <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, ou <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>.  
   
- Dans cet exemple, nous créer une instance de la liaison, générer un *liaison personnalisée* à partir de celui-ci, examinez les éléments de liaison dans la liaison personnalisée, et lorsque nous aurons trouvé l’élément de liaison HTTP, nous avons défini son `KeepAliveEnabled` propriété `false`. La propriété `KeepAliveEnabled` n’est pas exposée directement sur `BasicHttpBinding`, nous devons donc créer une liaison personnalisée pour naviguer jusqu’à l’élément de liaison et définir cette propriété.  
+ Dans cet exemple, nous créons une instance de la liaison, générons une *liaison personnalisée* à partir de celle-ci, nous examinons les éléments de liaison dans la liaison personnalisée et, lorsque nous `KeepAliveEnabled` trouvons l' `false`élément de liaison http, nous définissons sa propriété sur. La propriété `KeepAliveEnabled` n’est pas exposée directement sur `BasicHttpBinding`, nous devons donc créer une liaison personnalisée pour naviguer jusqu’à l’élément de liaison et définir cette propriété.  
   
 ### <a name="to-modify-a-system-provided-binding"></a>Pour modifier une liaison fournie par le système  
   
@@ -55,4 +55,4 @@ Windows Communication Foundation (WCF) inclut plusieurs liaisons fournies par le
 - <xref:System.ServiceModel.Channels.HttpTransportBindingElement>
 - <xref:System.ServiceModel.BasicHttpBinding>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [Liaisons personnalisées](../../../../docs/framework/wcf/extending/custom-bindings.md)
+- [Liaisons personnalisées](custom-bindings.md)

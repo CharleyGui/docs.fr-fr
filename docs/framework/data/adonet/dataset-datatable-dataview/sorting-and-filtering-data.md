@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fdd9c753-39df-48cd-9822-2781afe76200
-ms.openlocfilehash: 0907aa2a66e1bf51fefc7bed8ea2612cc0c830fa
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 09cee2f2b2c3288c835912c9f311bf2511c7b0d0
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203216"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785913"
 ---
 # <a name="sorting-and-filtering-data"></a>Tri et filtre de données
 L'objet <xref:System.Data.DataView> offre plusieurs méthodes de tri et de filtrage de données dans un objet <xref:System.Data.DataTable> :  
@@ -35,8 +35,8 @@ L'objet <xref:System.Data.DataView> offre plusieurs méthodes de tri et de filtr
     |**ModifiedCurrent**|Version de ligne **actuelle** de toutes les lignes **modifiées** .|  
     |**ModifiedOriginal**|Version de ligne d' **origine** de toutes les lignes **modifiées** .|  
     |**Aucun**|Aucune ligne.|  
-    |**OriginalRows**|Version de ligne d' **origine** de toutes les lignes inchangées, **modifiées**et **supprimées** .|  
-    |**Inchangé**|Version de ligne **actuelle** de toutes les lignes inchangées.|  
+    |**OriginalRows**|Version de ligne d' **origine** de toutes les lignes **inchangées**, **modifiées**et **supprimées** .|  
+    |**Inchangé**|Version de ligne **actuelle** de toutes les lignes **inchangées** .|  
   
  Pour plus d’informations sur les États de ligne et les versions de ligne, consultez [États de ligne et versions de ligne](row-states-and-row-versions.md).  
   
@@ -63,4 +63,4 @@ DataView prodView = new DataView(prodDS.Tables["Products"],
 - <xref:System.Data.DataTable>
 - <xref:System.Data.DataView>
 - [DataViews](dataviews.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

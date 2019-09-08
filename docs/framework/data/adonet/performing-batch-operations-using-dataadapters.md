@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e72ed5af-b24f-486c-8429-c8fd2208f844
-ms.openlocfilehash: bb3f35f17b2dd451b41035c8e34f7b3a886a26e8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8667cffb032daf0043915d3bee7127ef9b70756b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61878289"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794508"
 ---
 # <a name="performing-batch-operations-using-dataadapters"></a>Exécution d'opérations en lot à l'aide des DataAdapter
 La prise en charge des lots dans ADO.NET permet à un objet <xref:System.Data.Common.DataAdapter> de grouper des opérations INSERT, UPDATE et DELETE à partir d'un objet <xref:System.Data.DataSet> ou d'un objet <xref:System.Data.DataTable> pour le serveur, au lieu d'envoyer les opérations successivement. La réduction du nombre d'allers-retours vers le serveur entraîne généralement des gains de performances importants. Les mises à jour par lots sont prises en charge pour les fournisseurs de données .NET pour SQL Server (<xref:System.Data.SqlClient>) et Oracle (<xref:System.Data.OracleClient>).  
@@ -24,7 +24,7 @@ La prise en charge des lots dans ADO.NET permet à un objet <xref:System.Data.Co
 ## <a name="using-the-updatebatchsize-property"></a>Utilisation de la propriété UpdateBatchSize  
  Lorsque les mises à jour par lots sont activées, la valeur <xref:System.Data.IDbCommand.UpdatedRowSource%2A> ou `UpdateCommand` doit être affectée à la propriété `InsertCommand` de `DeleteCommand`, <xref:System.Data.UpdateRowSource.None> et <xref:System.Data.UpdateRowSource.OutputParameters> du DataAdapter. Lors de l'exécution d'une mise à jour par lots, les valeurs <xref:System.Data.IDbCommand.UpdatedRowSource%2A> ou <xref:System.Data.UpdateRowSource.FirstReturnedRecord> de la propriété <xref:System.Data.UpdateRowSource.Both> de la commande ne sont pas valides.  
   
- La procédure suivante illustre l'utilisation de la propriété `UpdateBatchSize`. La procédure accepte deux arguments, un <xref:System.Data.DataSet> objet comportant des colonnes représentant la **ProductCategoryID** et **nom** champs dans le **Production.ProductCategory**table et un entier qui représente la taille de lot (le nombre de lignes dans le lot). Le code crée un nouvel objet <xref:System.Data.SqlClient.SqlDataAdapter>, en définissant ses propriétés <xref:System.Data.SqlClient.SqlDataAdapter.UpdateCommand%2A>, <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A> et <xref:System.Data.SqlClient.SqlDataAdapter.DeleteCommand%2A>. Le code est basé sur l'hypothèse que l'objet <xref:System.Data.DataSet> comporte des lignes modifiées. Il définit la propriété `UpdateBatchSize` et effectue la mise à jour.  
+ La procédure suivante illustre l'utilisation de la propriété `UpdateBatchSize`. La procédure accepte deux arguments, un <xref:System.Data.DataSet> objet qui contient des colonnes représentant les champs **ProductCategoryID** et **Name** dans la table **production. ProductCategory** et un entier représentant la taille du lot (le nombre de lignes du lot). Le code crée un nouvel objet <xref:System.Data.SqlClient.SqlDataAdapter>, en définissant ses propriétés <xref:System.Data.SqlClient.SqlDataAdapter.UpdateCommand%2A>, <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A> et <xref:System.Data.SqlClient.SqlDataAdapter.DeleteCommand%2A>. Le code est basé sur l'hypothèse que l'objet <xref:System.Data.DataSet> comporte des lignes modifiées. Il définit la propriété `UpdateBatchSize` et effectue la mise à jour.  
   
 ```vb  
 Public Sub BatchUpdate( _  
@@ -126,7 +126,7 @@ public static void BatchUpdate(DataTable dataTable,Int32 batchSize)
 ```  
   
 ## <a name="handling-batch-update-related-events-and-errors"></a>Gestion des événements et des erreurs liés aux mises à jour par lots.  
- Le **DataAdapter** comporte deux événements liés à la mise à jour : **RowUpdating** et **RowUpdated**. Dans les versions précédentes d'ADO.NET, en cas de désactivation du traitement par lots, chacun de ces événements était généré une fois pour chaque ligne traitée. **RowUpdating** est générée avant la mise à jour se produit, et **RowUpdated** est généré après la mise à jour de la base de données a été effectuée.  
+ Le **DataAdapter** comporte deux événements liés à la mise à jour : **RowUpdating** et **RowUpdated**. Dans les versions précédentes d'ADO.NET, en cas de désactivation du traitement par lots, chacun de ces événements était généré une fois pour chaque ligne traitée. **RowUpdating** est généré avant la mise à jour, et **RowUpdated** est généré une fois la mise à jour de la base de données terminée.  
   
 ### <a name="event-behavior-changes-with-batch-updates"></a>Changements de comportement d'événement avec les mises à jour par lots  
  Lorsque le traitement par lots est activé, plusieurs lignes sont mises à jour en une seule opération de base de données. Par conséquent, un seul événement `RowUpdated` se produit pour chaque lot, tandis que l'événement `RowUpdating` se produit pour chaque ligne traitée. Lorsque le traitement par lots est désactivé, les deux événements sont déclenchés avec un entrelacement de un à un où un événement `RowUpdating` et un événement `RowUpdated` se déclenchent pour une ligne, puis un événement `RowUpdating` et un événement `RowUpdated` se déclenchent pour la ligne suivante, jusqu'à ce que toutes les lignes aient été traitées.  
@@ -143,7 +143,7 @@ public static void BatchUpdate(DataTable dataTable,Int32 batchSize)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [DataAdapters et DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [Mise à jour de sources de données avec des DataAdapters](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
-- [Gestion des événements DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [DataAdapters et DataReaders](dataadapters-and-datareaders.md)
+- [Mise à jour de sources de données avec des DataAdapters](updating-data-sources-with-dataadapters.md)
+- [Gestion des événements DataAdapter](handling-dataadapter-events.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

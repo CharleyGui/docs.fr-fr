@@ -2,15 +2,15 @@
 title: 'Procédure : Générer le modèle objet sous forme de fichier externe'
 ms.date: 03/30/2017
 ms.assetid: 2496fa06-3df4-4ecb-86c4-70a49ea08565
-ms.openlocfilehash: 7451dfbaf85c1cbd4635ae0cce1219853a2b01a3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3fd84d878ab07411bba41a13ff3eef91b2425e8a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911942"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793589"
 ---
 # <a name="how-to-generate-the-object-model-as-an-external-file"></a>Procédure : Générer le modèle objet sous forme de fichier externe
-Comme alternative au mappage basé sur les attributs, vous pouvez générer votre modèle objet comme un fichier XML externe à l'aide de l'outil de ligne de commande SQLMetal. Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md). En utilisant un fichier de mappage XML externe, vous réduisez l'encombrement dans votre code. Vous pouvez également modifier le comportement en modifiant le fichier externe sans recompiler les binaires de votre application. Pour plus d’informations, consultez [mappage externe](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
+Comme alternative au mappage basé sur les attributs, vous pouvez générer votre modèle objet comme un fichier XML externe à l'aide de l'outil de ligne de commande SQLMetal. Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../tools/sqlmetal-exe-code-generation-tool.md). En utilisant un fichier de mappage XML externe, vous réduisez l'encombrement dans votre code. Vous pouvez également modifier le comportement en modifiant le fichier externe sans recompiler les binaires de votre application. Pour plus d’informations, consultez [mappage externe](external-mapping.md).  
   
 > [!NOTE]
 > Le Concepteur Objet Relationnel ne prend pas en charge la génération d’un fichier de mappage externe.  
@@ -50,6 +50,6 @@ sqlmetal /server:myserver /database:northwind /map:externalfile.xml
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Création du modèle objet](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
-- [Mappage externe](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)
-- [Guide pratique pour générer le modèle objet en Visual Basic ou C#](../../../../../../docs/framework/data/adonet/sql/linq/how-to-generate-the-object-model-in-visual-basic-or-csharp.md)
+- [Création du modèle objet](creating-the-object-model.md)
+- [Mappage externe](external-mapping.md)
+- [Guide pratique : générer le modèle objet en Visual Basic ou C#](how-to-generate-the-object-model-in-visual-basic-or-csharp.md)

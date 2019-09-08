@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d023260a-a66a-4c39-b8f4-090cd130e730
-ms.openlocfilehash: eb6841dd24c4c7587cc2424cc1e606194da34585
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 357812aa95ea731fe86fbe49b2cb1b2806e3915a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69944061"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784864"
 ---
 # <a name="dataadapter-datatable-and-datacolumn-mappings"></a>Mappages de DataAdapter DataTable et DataColumn
-Un **DataAdapter** contient une collection de zéro ou plusieurs <xref:System.Data.Common.DataTableMapping> objets dans sa propriété **TableMappings** . Un **DataTableMapping** fournit un mappage principal entre les données retournées par une requête sur une source de données <xref:System.Data.DataTable>et un. Le nom **DataTableMapping** peut être passé à la place du nom du **DataTable** à la méthode **Fill** du **DataAdapter**. L’exemple suivant crée un **DataTableMapping** nommé **AuthorsMapping** pour la table authors.  
+Un **DataAdapter** contient une collection de zéro ou plusieurs <xref:System.Data.Common.DataTableMapping> objets dans sa propriété **TableMappings** . Un **DataTableMapping** fournit un mappage principal entre les données retournées par une requête sur une source de données <xref:System.Data.DataTable>et un. Le nom **DataTableMapping** peut être passé à la place du nom du **DataTable** à la méthode **Fill** du **DataAdapter**. L’exemple suivant crée un **DataTableMapping** nommé **AuthorsMapping** pour la table **Authors** .  
   
 ```vb  
 workAdapter.TableMappings.Add("AuthorsMapping", "Authors")  
@@ -25,9 +25,9 @@ workAdapter.TableMappings.Add("AuthorsMapping", "Authors");
   
  Un **DataTableMapping** vous permet d’utiliser des noms de colonnes dans un **DataTable** qui sont différents de ceux de la base de données. Le **DataAdapter** utilise le mappage pour faire correspondre les colonnes lorsque la table est mise à jour.  
   
- Si vous ne spécifiez pas de nom **TableName** ou **DataTableMapping** lors de l’appel de la méthode **Fill** ou **Update** du **DataAdapter**, le **DataAdapter** recherche un **DataTableMapping** nommé «table». Si ce **DataTableMapping** n’existe pas, le **TableName** du **DataTable** est «table». Vous pouvez spécifier un **DataTableMapping** par défaut en créant un **DataTableMapping** portant le nom «table».  
+ Si vous ne spécifiez pas de nom **TableName** ou **DataTableMapping** lors de l’appel de la méthode **Fill** ou **Update** du **DataAdapter**, le **DataAdapter** recherche un **DataTableMapping** nommé « table ». Si ce **DataTableMapping** n’existe pas, le **TableName** du **DataTable** est « table ». Vous pouvez spécifier un **DataTableMapping** par défaut en créant un **DataTableMapping** portant le nom « table ».  
   
- L’exemple de code suivant crée un **DataTableMapping** (à <xref:System.Data.Common> partir de l’espace de noms) et en fait le mappage par défaut pour le **DataAdapter** spécifié en le nommant «table». L’exemple mappe ensuite les colonnes de la première table du résultat de la requête ( la table Customers de la base de données **Northwind** ) à un ensemble de noms plus conviviaux dans la table Customers <xref:System.Data.DataSet>de **Northwind** dans le. Pour les colonnes qui ne sont pas mappées, le nom de la colonne de la source de données est utilisé.  
+ L’exemple de code suivant crée un **DataTableMapping** (à <xref:System.Data.Common> partir de l’espace de noms) et en fait le mappage par défaut pour le **DataAdapter** spécifié en le nommant « table ». L’exemple mappe ensuite les colonnes de la première table du résultat de la requête (la table **Customers** de la base de données **Northwind** ) à un ensemble de noms plus conviviaux dans la table **Customers de Northwind** dans le <xref:System.Data.DataSet>. Pour les colonnes qui ne sont pas mappées, le nom de la colonne de la source de données est utilisé.  
   
 ```vb  
 Dim mapping As DataTableMapping = _  
@@ -51,7 +51,7 @@ adapter.Fill(custDS);
   
  Dans les situations plus avancées, vous pouvez décider que vous souhaitez que le même **DataAdapter** prenne en charge le chargement de différentes tables avec des mappages différents. Pour ce faire, ajoutez simplement des objets **DataTableMapping** supplémentaires.  
   
- Quand la méthode **Fill** reçoit une instance d’un **DataSet** et un nom **DataTableMapping** , si un mappage portant ce nom existe, il est utilisé; dans le cas contraire, un **DataTable** portant ce nom est utilisé.  
+ Quand la méthode **Fill** reçoit une instance d’un **DataSet** et un nom **DataTableMapping** , si un mappage portant ce nom existe, il est utilisé ; dans le cas contraire, un **DataTable** portant ce nom est utilisé.  
   
  Les exemples suivants créent un **DataTableMapping** avec un nom **Customers** et un nom **DataTable** **BizTalkSchema**. L’exemple mappe ensuite les lignes retournées par l’instruction SELECT au **DataTable** **BizTalkSchema** .  
   
@@ -90,7 +90,7 @@ adapter.Fill(custDS, "Customers");
 adapter.Fill(customersDataSet, "Customers")  
 ```  
   
- Deux tables sont créées dans le **jeu de données**: **Clients** et **Customers1**. Vous pouvez utiliser des mappages de table pour vous assurer que la deuxième table est nommée Orders au lieu de **Customers1**. Pour ce faire, mappez la table source de **Customers1** à la table **Orders**du **DataSet** , comme indiqué dans l’exemple suivant.  
+ Deux tables sont créées dans le **jeu de données**: **Clients** et **Customers1**. Vous pouvez utiliser des mappages de table pour vous assurer que la deuxième table est nommée **Orders** au lieu de **Customers1**. Pour ce faire, mappez la table source de **Customers1** à la table **Orders**du **DataSet** , comme indiqué dans l’exemple suivant.  
   
 ```  
 adapter.TableMappings.Add("Customers1", "Orders")  
@@ -99,6 +99,6 @@ adapter.Fill(customersDataSet, "Customers")
   
 ## <a name="see-also"></a>Voir aussi
 
-- [DataAdapters et DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [Extraction et modification de données dans ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [DataAdapters et DataReaders](dataadapters-and-datareaders.md)
+- [Extraction et modification de données dans ADO.NET](retrieving-and-modifying-data.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

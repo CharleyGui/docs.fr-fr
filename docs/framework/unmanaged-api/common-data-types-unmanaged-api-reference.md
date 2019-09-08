@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: e4ab2c4c-9433-4eba-9e9a-096de406cafb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b56840ce68caa3eed50773668c64e2622a646ddf
-ms.sourcegitcommit: 46c68557bf6395f0ab9915f7558f2faae0097695
+ms.openlocfilehash: 5b0a27eae744fb22c87634aaf6a0274a9825d981
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68892080"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70776470"
 ---
 # <a name="common-data-types-unmanaged-api-reference"></a>Types de données communs (Référence des API non managées)
 Cette rubrique répertorie les types de données simples utilisés par les API non managées pour .NET Framework, qui sont définis par des instructions `typedef` en C/C++. Ces types de données sont généralement des alias pour des types de données primitifs C/C++. Les valeurs de ces types de données sont en général opaques, c'est-à-dire qu'elles sont retournées par une fonction ou une méthode particulière pour pouvoir être passées à d'autres fonctions ou méthodes sans modification.  
@@ -38,9 +38,9 @@ Cette rubrique répertorie les types de données simples utilisés par les API n
 |ProcessID|`typedef UINT_PTR ProcessID;`|corprof.h|L'identificateur d'un processus managé.|  
 |ReJITID|`typedef UINT_PTR ReJITID;`|corprof.h|Identificateur d'une fonction traitée juste-à-temps.|  
 |SIZE_T|`typedef ULONG_PTR SIZE_T;`|CorSym. h|Pointeur vers une adresse mémoire 64 bits.|
-|TASKID|`typedef UINT64 TASKID;`|cordebug.h, mscoree.h|Identificateur d’une instance d' [ICLRTask](../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md) .|  
+|TASKID|`typedef UINT64 TASKID;`|cordebug.h, mscoree.h|Identificateur d’une instance d' [ICLRTask](./hosting/iclrtask-interface.md) .|  
 |ThreadID|`typedef UINT_PTR ThreadID;`|corprof.h|L'identificateur d'un thread managé.|  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur les API non managées](../../../docs/framework/unmanaged-api/index.md)
+- [Informations de référence sur les API non managées](index.md)

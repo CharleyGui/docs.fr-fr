@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 70d7c058-0280-4815-a008-6f290093591a
-ms.openlocfilehash: b7a2588b9e5082915dff4d371adff2ad3d232d74
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ebef8cb373da4021fd68fd7ce38de8cb06eb81ec
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032537"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782170"
 ---
 # <a name="find-the-maximum-value-in-a-numeric-sequence"></a>Comment : rechercher la valeur maximale dans une séquence numérique
 Utilisez l'opérateur <xref:System.Linq.Enumerable.Max%2A> pour rechercher la valeur la plus élevée dans une séquence de valeurs numériques.  
@@ -31,7 +31,7 @@ Utilisez l'opérateur <xref:System.Linq.Enumerable.Max%2A> pour rechercher la va
  [!code-csharp[DLinqQueryExamples#7](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#7)]
  [!code-vb[DLinqQueryExamples#7](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#7)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple suivant utilise Max pour rechercher les `Products` dont le prix unitaire est le plus élevé dans chaque catégorie. Les résultats sont ensuite répertoriés par catégorie.  
   
  [!code-csharp[DLinqQueryExamples#8](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#8)]
@@ -73,5 +73,5 @@ Utilisez l'opérateur <xref:System.Linq.Enumerable.Max%2A> pour rechercher la va
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Requêtes d’agrégation](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)
-- [Téléchargement d’exemples de base de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+- [Requêtes d’agrégation](aggregate-queries.md)
+- [Téléchargement d’exemples de base de données](downloading-sample-databases.md)

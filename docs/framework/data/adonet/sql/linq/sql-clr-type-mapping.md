@@ -2,17 +2,17 @@
 title: Mappage de type SQL-CLR
 ms.date: 07/23/2018
 ms.assetid: 4ed76327-54a7-414b-82a9-7579bfcec04b
-ms.openlocfilehash: 0ac2c62388e554dad31beb54966fa2a4d5ffea2e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b209283f5d4e87d1faab06184bda3f79bf1adaed
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69945029"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792521"
 ---
 # <a name="sql-clr-type-mapping"></a>Mappage de type SQL-CLR
 Dans vbtecdlinq, le modèle de données d'une base de données relationnelle mappe à un modèle objet qui est exprimé dans le langage de programmation de votre choix. Lors de l'exécution de l'application, LINQ to SQL traduit les requêtes LINQ dans le modèle objet en SQL et les envoie à la base de données pour exécution. Lorsque la base de données retourne les résultats, LINQ to SQL traduit ces derniers en objets que vous pouvez utiliser dans votre propre langage de programmation.  
   
- Pour convertir des données entre le modèle objet et la base de données, vous devez définir un *mappage de type* . LINQ to SQL utilise un mappage de type pour faire correspondre chaque type CLR (Common Language Runtime) à un type SQL Server particulier. Vous pouvez définir des mappages de types et d'autres informations de mappage, telles que la structure de la base de données et les relations entre les tables, à l'intérieur du modèle objet à l'aide du mappage basé sur des attributs. Vous pouvez également spécifier les informations de mappage en dehors du modèle objet à l'aide d'un fichier de mappage externe. Pour plus d’informations, consultez [mappage basé sur les attributs](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md) et [mappage externe](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md).  
+ Pour convertir des données entre le modèle objet et la base de données, vous devez définir un *mappage de type* . LINQ to SQL utilise un mappage de type pour faire correspondre chaque type CLR (Common Language Runtime) à un type SQL Server particulier. Vous pouvez définir des mappages de types et d'autres informations de mappage, telles que la structure de la base de données et les relations entre les tables, à l'intérieur du modèle objet à l'aide du mappage basé sur des attributs. Vous pouvez également spécifier les informations de mappage en dehors du modèle objet à l'aide d'un fichier de mappage externe. Pour plus d’informations, consultez [mappage basé sur les attributs](attribute-based-mapping.md) et [mappage externe](external-mapping.md).  
   
  Cette rubrique aborde les points suivants :  
   
@@ -36,9 +36,9 @@ Dans vbtecdlinq, le modèle de données d'une base de données relationnelle map
   
 <a name="DefaultTypeMapping"></a>   
 ## <a name="default-type-mapping"></a>Mappage de type par défaut  
- Vous pouvez créer automatiquement le modèle objet ou le fichier de mappage externe à l'aide du Concepteur Objet/Relationnel (Concepteur O/R) ou de l'outil de ligne de commande SQLMetal. Les mappages de types par défaut pour ces outils définissent les types CLR qui sont choisis pour mapper à des colonnes à l'intérieur de la base de données SQL Server. Pour plus d’informations sur l’utilisation de ces outils, consultez [création du modèle objet](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md).  
+ Vous pouvez créer automatiquement le modèle objet ou le fichier de mappage externe à l'aide du Concepteur Objet/Relationnel (Concepteur O/R) ou de l'outil de ligne de commande SQLMetal. Les mappages de types par défaut pour ces outils définissent les types CLR qui sont choisis pour mapper à des colonnes à l'intérieur de la base de données SQL Server. Pour plus d’informations sur l’utilisation de ces outils, consultez [création du modèle objet](creating-the-object-model.md).  
   
- Vous pouvez également utiliser la méthode <xref:System.Data.Linq.DataContext.CreateDatabase%2A> pour créer une base de données SQL Server basée sur les informations de mappage contenues dans le modèle objet ou le fichier de mappage externe. Les mappages de types par défaut pour la méthode <xref:System.Data.Linq.DataContext.CreateDatabase%2A> définissent le type des colonnes SQL Server qui sont créées pour mapper aux types CLR définis dans le modèle objet. Pour plus d’informations, consultez [Guide pratique pour Créer dynamiquement une base](../../../../../../docs/framework/data/adonet/sql/linq/how-to-dynamically-create-a-database.md)de données.  
+ Vous pouvez également utiliser la méthode <xref:System.Data.Linq.DataContext.CreateDatabase%2A> pour créer une base de données SQL Server basée sur les informations de mappage contenues dans le modèle objet ou le fichier de mappage externe. Les mappages de types par défaut pour la méthode <xref:System.Data.Linq.DataContext.CreateDatabase%2A> définissent le type des colonnes SQL Server qui sont créées pour mapper aux types CLR définis dans le modèle objet. Pour plus d’informations, consultez [Guide pratique pour Créer dynamiquement une base](how-to-dynamically-create-a-database.md)de données.  
   
 <a name="BehaviorMatrix"></a>   
 ## <a name="type-mapping-run-time-behavior-matrix"></a>Matrice de comportement au moment de l'exécution de mappages de types  
@@ -50,7 +50,7 @@ Dans vbtecdlinq, le modèle de données d'une base de données relationnelle map
 > Certains mappages de types peuvent entraîner des exceptions de dépassement de capacité ou de perte de données lors de la traduction à partir de la base de données ou vers celle-ci.  
   
 ### <a name="custom-type-mapping"></a>Mappage de type personnalisé  
- Avec LINQ to SQL, vous n'êtes pas limité aux mappages de types par défaut utilisés par le Concepteur O/R, SQLMetal et la méthode <xref:System.Data.Linq.DataContext.CreateDatabase%2A>. Vous pouvez créer des mappages de types personnalisés en les spécifiant explicitement dans un fichier DBML. Ce fichier vous permet ensuite de créer le fichier de code du modèle objet et de mappage. Pour plus d’informations, consultez mappages de [types personnalisés SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md).  
+ Avec LINQ to SQL, vous n'êtes pas limité aux mappages de types par défaut utilisés par le Concepteur O/R, SQLMetal et la méthode <xref:System.Data.Linq.DataContext.CreateDatabase%2A>. Vous pouvez créer des mappages de types personnalisés en les spécifiant explicitement dans un fichier DBML. Ce fichier vous permet ensuite de créer le fichier de code du modèle objet et de mappage. Pour plus d’informations, consultez [mappages de types personnalisés SQL-CLR](sql-clr-custom-type-mappings.md).  
   
 <a name="BehaviorDiffs"></a>   
 ## <a name="behavior-differences-between-clr-and-sql-execution"></a>Différences de comportement entre l'exécution CLR et l'exécution SQL  
@@ -79,9 +79,9 @@ Dans vbtecdlinq, le modèle de données d'une base de données relationnelle map
 > [!NOTE]
 > Lors du mappage de types texte SQL à un type <xref:System.Enum?displayProperty=nameWithType> CLR, incluez uniquement les noms des membres <xref:System.Enum> dans la colonne SQL mappée. Les autres valeurs ne sont pas prises en charge dans la colonne SQL mappée à <xref:System.Enum>.  
   
- Le Concepteur O/R et l'outil de ligne de commande SQLMetal ne peuvent pas mapper automatiquement un type à une classe <xref:System.Enum> CLR. Vous devez configurer explicitement ce mappage en personnalisant un fichier DBML destiné à être utilisé par le Concepteur O/R et SQLMetal. Pour plus d’informations sur le mappage de type personnalisé, consultez [mappages de types personnalisés SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md).  
+ Le Concepteur O/R et l'outil de ligne de commande SQLMetal ne peuvent pas mapper automatiquement un type à une classe <xref:System.Enum> CLR. Vous devez configurer explicitement ce mappage en personnalisant un fichier DBML destiné à être utilisé par le Concepteur O/R et SQLMetal. Pour plus d’informations sur le mappage de type personnalisé, consultez [mappages de types personnalisés SQL-CLR](sql-clr-custom-type-mappings.md).  
   
- Étant donné qu’une colonne SQL destinée à l’énumération sera du même type que les autres colonnes numériques et de texte; ces outils ne reconnaîtront pas votre intention et le mappage par défaut comme décrit dans les sections de mappage [numérique](#NumericMapping) et de [texte et de mappage XML](#TextMapping) suivantes. Pour plus d’informations sur la génération de code avec le fichier DBML, consultez [génération de code dans LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md).  
+ Étant donné qu’une colonne SQL destinée à l’énumération sera du même type que les autres colonnes numériques et de texte ; ces outils ne reconnaîtront pas votre intention et le mappage par défaut comme décrit dans les sections de mappage [numérique](#NumericMapping) et de [texte et de mappage XML](#TextMapping) suivantes. Pour plus d’informations sur la génération de code avec le fichier DBML, consultez [génération de code dans LINQ to SQL](code-generation-in-linq-to-sql.md).  
   
  La méthode <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> crée une colonne SQL de type numérique pour mapper un type <xref:System.Enum?displayProperty=nameWithType> CLR.  
   
@@ -199,10 +199,10 @@ Dans vbtecdlinq, le modèle de données d'une base de données relationnelle map
 ### <a name="systemdatetime"></a>System.DateTime  
  La plage et la précision du type <xref:System.DateTime?displayProperty=nameWithType> CLR sont supérieures à celles du type `DATETIME` SQL Server, qui est le mappage de type par défaut pour la méthode <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType>. Afin d'éviter les exceptions liées à des dates en dehors de la plage de `DATETIME`, utilisez `DATETIME2`, qui est disponible à partir de Microsoft SQL Server 2008. `DATETIME2`peut correspondre à la plage et à la précision <xref:System.DateTime?displayProperty=nameWithType>du CLR.  
   
- Les dates SQL Server n’ont aucun concept de <xref:System.TimeZone>, une fonctionnalité qui est largement prise en charge dans le CLR. Les valeurs <xref:System.TimeZone> sont enregistrées telles quelles dans la base de données sans conversion <xref:System.TimeZone>, indépendamment des informations <xref:System.DateTimeKind> d'origine. Lorsque les valeurs <xref:System.DateTime> sont récupérées de la base de données, leur valeur est chargé telle quelle dans un <xref:System.DateTime> avec un <xref:System.DateTimeKind> de <xref:System.DateTimeKind.Unspecified>. Pour plus d’informations sur <xref:System.DateTime?displayProperty=nameWithType> les méthodes prises en charge, consultez [méthodes System. DateTime](../../../../../../docs/framework/data/adonet/sql/linq/system-datetime-methods.md).  
+ Les dates SQL Server n’ont aucun concept de <xref:System.TimeZone>, une fonctionnalité qui est largement prise en charge dans le CLR. Les valeurs <xref:System.TimeZone> sont enregistrées telles quelles dans la base de données sans conversion <xref:System.TimeZone>, indépendamment des informations <xref:System.DateTimeKind> d'origine. Lorsque les valeurs <xref:System.DateTime> sont récupérées de la base de données, leur valeur est chargé telle quelle dans un <xref:System.DateTime> avec un <xref:System.DateTimeKind> de <xref:System.DateTimeKind.Unspecified>. Pour plus d’informations sur <xref:System.DateTime?displayProperty=nameWithType> les méthodes prises en charge, consultez [méthodes System. DateTime](system-datetime-methods.md).  
   
 ### <a name="systemtimespan"></a>System.TimeSpan  
- Microsoft SQL Server 2008 et .NET Framework 3.5 SP1 vous permettent de mapper le type <xref:System.TimeSpan?displayProperty=nameWithType> CLR au type `TIME` SQL Server. Toutefois, il y a une grande différence entre la plage prise en charge par le type <xref:System.TimeSpan?displayProperty=nameWithType> CLR et celle prise en charge par le type `TIME` SQL Server. Les valeurs de mappage inférieures à 0 ou supérieures à 23:59:59.9999999 heures sur le type `TIME` SQL entraînent des exceptions de dépassement de capacité. Pour plus d’informations, consultez [System. TimeSpan, méthodes](../../../../../../docs/framework/data/adonet/sql/linq/system-timespan-methods.md).  
+ Microsoft SQL Server 2008 et .NET Framework 3.5 SP1 vous permettent de mapper le type <xref:System.TimeSpan?displayProperty=nameWithType> CLR au type `TIME` SQL Server. Toutefois, il y a une grande différence entre la plage prise en charge par le type <xref:System.TimeSpan?displayProperty=nameWithType> CLR et celle prise en charge par le type `TIME` SQL Server. Les valeurs de mappage inférieures à 0 ou supérieures à 23:59:59.9999999 heures sur le type `TIME` SQL entraînent des exceptions de dépassement de capacité. Pour plus d’informations, consultez [System. TimeSpan, méthodes](system-timespan-methods.md).  
   
  Dans Microsoft SQL Server 2000 et SQL Server 2005, vous ne pouvez pas mapper des champs de base de données à <xref:System.TimeSpan>. Toutefois, les opérations sur <xref:System.TimeSpan> sont prises en charge car des valeurs <xref:System.TimeSpan> peuvent être retournées par la soustraction <xref:System.DateTime> ou introduites dans une expression sous forme de variable littérale ou liée.  
   
@@ -258,7 +258,7 @@ Dans vbtecdlinq, le modèle de données d'une base de données relationnelle map
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mappage basé sur les attributs](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)
-- [Mappage externe](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)
-- [Fonctions et types de données](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
-- [Incompatibilité entre types SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)
+- [Mappage basé sur les attributs](attribute-based-mapping.md)
+- [Mappage externe](external-mapping.md)
+- [Fonctions et types de données](data-types-and-functions.md)
+- [Incompatibilité entre types SQL-CLR](sql-clr-type-mismatches.md)

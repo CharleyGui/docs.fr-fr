@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7d8e9a46-1af6-4a02-bf61-969d77ae07e0
-ms.openlocfilehash: ebf5c61010a6f658d846ed435ea3a7d18d0d3832
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 46c92301b717e285c4c18241f84d0069069c7bdc
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934437"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783527"
 ---
 # <a name="modifying-data-with-stored-procedures"></a>Modification des données avec les procédures stockées
 Les procédures stockées peuvent accepter des données en tant que paramètres d'entrée et retourner des données en tant que paramètres de sortie, jeux de résultats et valeurs de retour. L'exemple ci-dessous montre comment ADO.NET envoie et reçoit des paramètres d'entrée, des paramètres de sortie et des valeurs de retour. L'exemple insère un nouvel enregistrement dans une table où la colonne de clé primaire est une colonne d'identité dans une base de données SQL Server.  
@@ -18,7 +18,7 @@ Les procédures stockées peuvent accepter des données en tant que paramètres 
 > [!NOTE]
 > Si vous utilisez des procédures stockées SQL Server pour modifier ou supprimer des données à l'aide de <xref:System.Data.SqlClient.SqlDataAdapter>, assurez-vous que vous n'utilisez pas SET NOCOUNT ON dans la définition de procédure stockée. En effet, le nombre de lignes affectées retourné serait alors la valeur zéro, ce que `DataAdapter` interprète comme un conflit d'accès concurrentiel. Dans ce cas, l'exception <xref:System.Data.DBConcurrencyException> est levée.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple utilise la procédure stockée suivante pour insérer une nouvelle catégorie dans la table des **catégories** **Northwind** . La procédure stockée prend la valeur dans la colonne **CategoryName** en tant que paramètre d’entrée et utilise la fonction SCOPE_IDENTITY () pour récupérer la nouvelle valeur du champ Identity, **CategoryID**, et la renvoyer dans un paramètre OUTPUT. L’instruction return utilise la@ROWCOUNT fonction @ pour retourner le nombre de lignes insérées.  
   
 ```sql
@@ -41,7 +41,7 @@ RETURN @@ROWCOUNT
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Extraction et modification de données dans ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [DataAdapters et DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [Exécution d’une commande](../../../../docs/framework/data/adonet/executing-a-command.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Extraction et modification de données dans ADO.NET](retrieving-and-modifying-data.md)
+- [DataAdapters et DataReaders](dataadapters-and-datareaders.md)
+- [Exécution d’une commande](executing-a-command.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

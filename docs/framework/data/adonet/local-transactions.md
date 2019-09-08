@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8ae3712f-ef5e-41a1-9ea9-b3d0399439f1
-ms.openlocfilehash: a0cb72913c10712ece188a782095b93f98cdc0b2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 979d51a97245bc9616349679ec8cf05cae8c595a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69955772"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783703"
 ---
 # <a name="local-transactions"></a>Transactions locales
 Les transactions dans ADO.NET sont utilisées lorsque vous souhaitez lier plusieurs tâches ensemble afin qu’elles s’exécutent comme une seule unité de travail. Par exemple, imaginez qu'une application effectue deux tâches. Premièrement, elle met à jour une table avec des informations de commande. Deuxièmement, elle met à jour une table qui contient des informations de stock, en débitant les articles commandés. Si l’une des tâches échoue, les deux mises à jour sont annulées.  
@@ -49,7 +49,7 @@ Les transactions dans ADO.NET sont utilisées lorsque vous souhaitez lier plusie
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Transactions et accès concurrentiel](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)
-- [Transactions distribuées](../../../../docs/framework/data/adonet/distributed-transactions.md)
-- [Intégration de System.Transactions à SQL Server](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Transactions et accès concurrentiel](transactions-and-concurrency.md)
+- [Transactions distribuées](distributed-transactions.md)
+- [Intégration de System.Transactions à SQL Server](system-transactions-integration-with-sql-server.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

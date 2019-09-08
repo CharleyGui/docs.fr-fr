@@ -2,17 +2,17 @@
 title: Types de données SQL Server et ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 81b43550-23e8-43bb-b460-7eb8ac825c33
-ms.openlocfilehash: 9e81e54f223d35a3db9c943edf6f9f9b24110faa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 642fe0d541aca01d6ffb2d9279c4d0fa91eadb63
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61876796"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780850"
 ---
 # <a name="sql-server-data-types-and-adonet"></a>Types de données SQL Server et ADO.NET
 SQL Server et le .NET Framework sont basés sur des systèmes de types différents, ce qui peut entraîner une perte de données potentielle. Afin de protéger l’intégrité des données, le fournisseur de données .NET Framework pour SQL Server (<xref:System.Data.SqlClient>) fournit des méthodes d’accesseur typé pour utiliser les données SQL Server. Vous pouvez également utiliser les énumérations des classes <xref:System.Data.SqlDbType> pour spécifier les types de données <xref:System.Data.SqlClient.SqlParameter>.  
   
- Pour plus d’informations et une table qui décrit les mappages de types de données entre SQL Server et les types de données .NET Framework, consultez [mappages de Type de données SQL Server](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md).  
+ Pour plus d’informations et pour obtenir un tableau décrivant les mappages de types de données entre SQL Server et les types de données .NET Framework, consultez [SQL Server mappages de types de données](../sql-server-data-type-mappings.md).  
   
  SQL Server 2008 introduit de nouveaux types de données conçus pour répondre aux besoins des entreprises en termes d'utilisation des données de date et d'heure, structurées, semi-structurées et non structurées. Ceux-ci sont décrits dans la documentation en ligne de SQL Server 2008.  
   
@@ -20,25 +20,25 @@ SQL Server et le .NET Framework sont basés sur des systèmes de types différen
   
  **Documentation en ligne de SQL Server**  
   
-1. [Types de données (moteur de base de données)](https://go.microsoft.com/fwlink/?LinkID=107468)  
+1. [Types de données (Moteur de base de données)](https://go.microsoft.com/fwlink/?LinkID=107468)  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [SqlTypes et le DataSet](../../../../../docs/framework/data/adonet/sql/sqltypes-and-the-dataset.md)  
+ [SqlTypes et le DataSet](sqltypes-and-the-dataset.md)  
  Décrit la prise en charge de type pour `SqlTypes` dans le `DataSet`.  
   
- [Gestion des valeurs null](../../../../../docs/framework/data/adonet/sql/handling-null-values.md)  
+ [Gestion des valeurs null](handling-null-values.md)  
  Montre comment utiliser des valeurs null et la logique à trois valeurs.  
   
- [Comparaison du GUID et des valeurs uniqueidentifier](../../../../../docs/framework/data/adonet/sql/comparing-guid-and-uniqueidentifier-values.md)  
+ [Comparaison du GUID et des valeurs uniqueidentifier](comparing-guid-and-uniqueidentifier-values.md)  
  Montre comment utiliser des valeurs GUID et d'identificateur unique dans SQL Server et le .NET Framework.  
   
- [Données de date et d’heure](../../../../../docs/framework/data/adonet/sql/date-and-time-data.md)  
+ [Données de date et d’heure](date-and-time-data.md)  
  Explique comment utiliser les nouveaux types de données de date et d'heure introduits dans SQL Server 2008.  
   
- [Grands types définis par l’utilisateur](../../../../../docs/framework/data/adonet/sql/large-udts.md)  
+ [Grands types définis par l’utilisateur](large-udts.md)  
  Montre comment récupérer des données des UDT volumineux introduits dans SQL Server 2008.  
   
- [Données XML dans SQL Server](../../../../../docs/framework/data/adonet/sql/xml-data-in-sql-server.md)  
+ [Données XML dans SQL Server](xml-data-in-sql-server.md)  
  Décrit comment utiliser des données XML récupérées dans SQL Server.  
   
 ## <a name="reference"></a>Référence  
@@ -56,8 +56,8 @@ SQL Server et le .NET Framework sont basés sur des systèmes de types différen
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mappages de types de données SQL Server](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)
-- [Configuration des paramètres et des types de données des paramètres](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)
-- [Paramètres table](../../../../../docs/framework/data/adonet/sql/table-valued-parameters.md)
-- [Données binaires et de valeur élevée SQL Server](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Mappages de types de données SQL Server](../sql-server-data-type-mappings.md)
+- [Configuration des paramètres et des types de données des paramètres](../configuring-parameters-and-parameter-data-types.md)
+- [Paramètres table](table-valued-parameters.md)
+- [Données binaires et de valeur élevée SQL Server](sql-server-binary-and-large-value-data.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

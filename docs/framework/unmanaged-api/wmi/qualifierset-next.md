@@ -1,5 +1,5 @@
 ---
-title: QualifierSet_Next (fonction) (référence des API non managées)
+title: Fonction QualifierSet_Next (référence des API non managées)
 description: La fonction QualifierSet_Next récupère le qualificateur suivant dans une énumération.
 ms.date: 11/06/2017
 api_name:
@@ -16,14 +16,14 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ac5cc8633881749bdc167e1b3925a83f7adf3b3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f97a19f236b87a7f4c5b2014aca6ee4abd338c63
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760304"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798280"
 ---
-# <a name="qualifiersetnext-function"></a>QualifierSet_Next (fonction)
+# <a name="qualifierset_next-function"></a>QualifierSet_Next fonction)
 Récupère le qualificateur suivant dans une énumération commencée avec un appel à la fonction [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md).   
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -44,45 +44,45 @@ HRESULT QualifierSet_Next (
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`   
-[in] Ce paramètre n’est pas utilisé.
+dans Ce paramètre n’est pas utilisé.
 
 `ptr`   
-[in] Un pointeur vers un [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.
+dans Pointeur vers une instance [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) .
 
 `lFlags`   
-[in] Réservée. Ce paramètre doit être 0.
+[in] Réservée. Ce paramètre doit avoir la valeur 0.
 
 `pstrName`   
-[out] Le nom du qualificateur. Si `null`, ce paramètre est ignoré ; sinon, `pstrName` ne doit pas pointer vers un valide `BSTR` ou une fuite de mémoire se produit. Si non null, la fonction alloue toujours un nouveau `BSTR` quand il renvoie `WBEM_S_NO_ERROR`.
+à Nom du qualificateur. Si `null`la valeur est, ce paramètre est ignoré `pstrName` ; sinon, ne doit pas `BSTR` pointer vers un valide ou une fuite de mémoire se produit. Si la valeur n’est pas null, la fonction alloue `BSTR` toujours une nouvelle `WBEM_S_NO_ERROR`quand elle retourne.
 
 `pVal`   
-[out] Cas de réussite, la valeur du qualificateur. Si la fonction échoue, le `VARIANT` vers lequel pointe `pVal` n’est pas modifié. Si ce paramètre est `null`, le paramètre est ignoré.
+à En cas de réussite, il s’agit de la valeur du qualificateur. Si la fonction échoue, le `VARIANT` pointé par `pVal` n’est pas modifié. Si ce paramètre est `null`, le paramètre est ignoré.
 
 `plFlavor`   
-[out] Pointeur vers un entier LONG qui reçoit le type de qualificateur. Si les informations de version ne sont pas souhaitées, ce paramètre peut être `null`. 
+à Pointeur vers une valeur de type LONG qui reçoit la version du qualificateur. Si les informations de version ne sont pas souhaitées, `null`ce paramètre peut avoir la la. 
 
 ## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |`Value`  |Description  |
+|Constante  |Valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
 |`WBEM_E_UNEXPECTED` | 0x8004101d | L’appelant n’a pas appelé [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md). |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Pas assez de mémoire est disponible pour commencer une nouvelle énumération. |
-| `WBEM_S_NO_MORE_DATA` | 0x40005 | Aucuns plus de qualificateurs ne sont laissées dans l’énumération. |
-|`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Mémoire disponible insuffisante pour commencer une nouvelle énumération. |
+| `WBEM_S_NO_MORE_DATA` | 0x40005 | Aucun qualificateur supplémentaire n’est laissé dans l’énumération. |
+|`WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
   
 ## <a name="remarks"></a>Notes
 
-Cette fonction encapsule un appel à la [IWbemQualifierSet::Next](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-next) (méthode).
+Cette fonction encapsule un appel à la méthode [IWbemQualifierSet :: Next](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-next) .
 
-Vous appelez le `QualifierSet_Next` fonction à plusieurs reprises pour énumérer tous les qualificateurs jusqu'à ce que le retour de fonction `WBEM_S_NO_MORE_DATA`. Pour terminer l’énumération au début, appelez le [QualifierSet_EndEnumeration](qualifierset-endenumeration.md) (fonction).
+Vous appelez la `QualifierSet_Next` fonction à plusieurs reprises pour énumérer tous les qualificateurs jusqu’à ce `WBEM_S_NO_MORE_DATA`que la fonction retourne. Pour terminer l’énumération tôt, appelez la fonction [QualifierSet_EndEnumeration](qualifierset-endenumeration.md) .
 
-L’ordre des qualificateurs retourné lors de l’énumération n’est pas défini.
+L’ordre des qualificateurs retournés pendant l’énumération n’est pas défini.
 
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  
   
@@ -90,4 +90,4 @@ L’ordre des qualificateurs retourné lors de l’énumération n’est pas dé
   
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performances (référence des API non managées)](index.md)
+- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)

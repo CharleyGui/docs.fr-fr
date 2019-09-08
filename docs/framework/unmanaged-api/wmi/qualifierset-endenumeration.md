@@ -1,5 +1,5 @@
 ---
-title: QualifierSet_EndEnumeration (fonction) (référence des API non managées)
+title: Fonction QualifierSet_EndEnumeration (référence des API non managées)
 description: La fonction QualifierSet_EndEnumeration met fin à une énumération.
 ms.date: 11/06/2017
 api_name:
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 206d6448835b60c55b378636ff5daa5fa4f8b5d0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2c5a817174ec4c4e4407c19bb1d6d2d852d86dd2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782594"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798320"
 ---
-# <a name="qualifiersetendenumeration-function"></a>QualifierSet_EndEnumeration (fonction)
-Met fin à l’énumération commencée avec un appel à la [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) (fonction).  
+# <a name="qualifierset_endenumeration-function"></a>QualifierSet_EndEnumeration fonction)
+Termine l’énumération commencée par un appel à la fonction [QualifierSet_BeginEnumeration](qualifierset-beginenumeration.md) .  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -40,28 +40,28 @@ HRESULT QualifierSet_EndEnumeration (
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`  
-[in] Ce paramètre n’est pas utilisé.
+dans Ce paramètre n’est pas utilisé.
 
 `ptr`   
-[in] Un pointeur vers un [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) instance.
+dans Pointeur vers une instance [IWbemQualifierSet](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemqualifierset) .
 
 ## <a name="return-value"></a>Valeur de retour
 
-La valeur suivante est retournée par cette fonction est définie dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez la définir en tant que constante dans votre code :
+La valeur suivante retournée par cette fonction est définie dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez la définir en tant que constante dans votre code :
 
-|Constante  |`Value`  |Description  |
+|Constante  |Valeur  |Description  |
 |---------|---------|---------|
-|`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
+|`WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
   
 ## <a name="remarks"></a>Notes
 
-Cette fonction encapsule un appel à la [IWbemQualifierSet::EndEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-endenumeration) (méthode).
+Cette fonction encapsule un appel à la méthode [IWbemQualifierSet :: EndEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemqualifierset-endenumeration) .
 
 Cet appel est recommandé, mais pas obligatoire. Il libère immédiatement les ressources associées à l’énumération.
 
 ## <a name="requirements"></a>Configuration requise  
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
 **En-tête :** WMINet_Utils.idl  
   
@@ -69,4 +69,4 @@ Cet appel est recommandé, mais pas obligatoire. Il libère immédiatement les r
   
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performances (référence des API non managées)](index.md)
+- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)

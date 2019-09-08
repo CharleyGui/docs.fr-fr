@@ -2,12 +2,12 @@
 title: Déduction du texte d'un élément
 ms.date: 03/30/2017
 ms.assetid: 789799e5-716f-459f-a168-76c5cf22178b
-ms.openlocfilehash: d8d64c0cbb0aecf736a54fa6816e286ab7efa191
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 3fdd110a14ddfd6065ed552171a8d76ef64e2fb5
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203531"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784540"
 ---
 # <a name="inferring-element-text"></a>Déduction du texte d'un élément
 Si un élément contient du texte et qu’il n’a aucun élément enfant à déduire en tant que tables (comme des éléments avec des attributs ou des éléments répétés), une nouvelle colonne portant le nom **TableName_Text** sera ajoutée à la table déduite pour l’élément. Le texte contenu dans l'élément sera ajouté à une ligne de la table et stocké dans la nouvelle colonne. La propriété **ColumnMapping** de la nouvelle colonne sera définie sur **MappingType. SimpleContent**.  
@@ -20,7 +20,7 @@ Si un élément contient du texte et qu’il n’a aucun élément enfant à dé
 </DocumentElement>  
 ```  
   
- Le processus d’inférence produira une table nommée **element1** avec deux colonnes: **attr1** et **Element1_Text**. La propriété **ColumnMapping** de la colonne **attr1** aura pour valeur **MappingType. Attribute**. La propriété **ColumnMapping** de la colonne **Element1_Text** aura pour valeur **MappingType. SimpleContent**.  
+ Le processus d’inférence produira une table nommée **element1** avec deux colonnes : **attr1** et **Element1_Text**. La propriété **ColumnMapping** de la colonne **attr1** aura pour valeur **MappingType. Attribute**. La propriété **ColumnMapping** de la colonne **Element1_Text** aura pour valeur **MappingType. SimpleContent**.  
   
  **Ensemble** DocumentElement  
   
@@ -57,4 +57,4 @@ Si un élément contient du texte et qu’il n’a aucun élément enfant à dé
 - [Chargement des informations de schéma de DataSet à partir de XML](loading-dataset-schema-information-from-xml.md)
 - [Utilisation de XML dans un DataSet](using-xml-in-a-dataset.md)
 - [DataSets, DataTables et DataViews](index.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

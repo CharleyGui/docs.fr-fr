@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 989d046bba1ba3170649e9d908a850bd1177fdd2
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 269e3702c21532f377735ba6087abb1603dde4f7
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773832"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796317"
 ---
 # <a name="isframeworkassembly-function"></a>IsFrameworkAssembly, fonction
-Obtient une valeur qui indique si l’assembly spécifié est géré.  
+Obtient une valeur qui indique si l’assembly spécifié est managé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,13 +39,13 @@ HRESULT IsFrameworkAssembly (
   
 ## <a name="parameters"></a>Paramètres  
  `pwzAssemblyReference`  
- [in] Le nom de l’assembly à vérifier.  
+ dans Nom de l’assembly à vérifier.  
   
  `pbIsFrameworkAssembly`  
- [out] Une valeur booléenne qui indique si l’assembly est géré.  
+ à Valeur booléenne qui indique si l’assembly est managé.  
   
  `pwzFrameworkAssemblyIdentity`  
- [in] Chaîne non canonique qui contient l’identité unique de l’assembly.  
+ dans Chaîne non canonique qui contient l’identité unique de l’assembly.  
   
  `pccSize`  
  [in] Taille de `pwzFrameworkAssemblyIdentity`.  
@@ -53,13 +53,13 @@ HRESULT IsFrameworkAssembly (
 ## <a name="remarks"></a>Notes  
  Le `pwzAssemblyReference` paramètre est un pointeur vers une chaîne de caractères qui contient le nom d’un assembly.  
   
- Si cet assembly fait partie du .NET Framework, le `pbIsFrameworkAssembly` paramètre contient une valeur booléenne `true`.  
+ Si cet assembly fait partie du .NET Framework, le `pbIsFrameworkAssembly` paramètre contient une `true`valeur booléenne.  
   
- Si l’assembly nommé ne fait pas partie du .NET Framework, ou si le `pwzAssemblyReference` paramètre ne désigne pas un assembly, `pbIsFrameworkAssembly` contiendra une valeur booléenne `false`.  
+ Si l’assembly nommé ne fait pas partie de la .NET Framework, ou `pwzAssemblyReference` si le paramètre ne nomme pas d' `pbIsFrameworkAssembly` assembly, `false`contient une valeur booléenne.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions statiques globales de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [Fonctions statiques globales de fusion](fusion-global-static-functions.md)

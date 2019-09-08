@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 576079e4-debe-4ab5-9204-fcbe2ca7a5e2
-ms.openlocfilehash: 5dd2bfa0884eac6864630bf393e232cf45bd1c99
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1f8cb573d051970414f3962057f6329683eea5bd
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938195"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782395"
 ---
 # <a name="enabling-multiple-active-result-sets"></a>Activation de MARS (Multiple Active Result Sets)
 MARS est une fonctionnalité qui opère avec SQL Server pour permettre l’exécution de plusieurs lots sur une seule connexion. Lorsque MARS est activé pour une utilisation avec SQL Server, chaque objet de commande utilisé ajoute une session à la connexion.  
@@ -68,7 +68,7 @@ string connectionString = "Data Source=MSSQL1;" +
  Les opérations MARS ne sont pas thread-safe.  
   
 ### <a name="connection-pooling"></a>Regroupement de connexions  
- Les connexions de type MARS sont regroupées comme toute autre connexion. Si une application ouvre deux connexions, l'une avec MARS activé et l'autre avec MARS désactivé, les deux connexions se trouvent dans des pools séparés. Pour plus d’informations, consultez [Regroupement de connexions SQL Server (ADO.NET)](../../../../../docs/framework/data/adonet/sql-server-connection-pooling.md).  
+ Les connexions de type MARS sont regroupées comme toute autre connexion. Si une application ouvre deux connexions, l'une avec MARS activé et l'autre avec MARS désactivé, les deux connexions se trouvent dans des pools séparés. Pour plus d’informations, consultez [Regroupement de connexions SQL Server (ADO.NET)](../sql-server-connection-pooling.md).  
   
 ### <a name="sql-server-batch-execution-environment"></a>Environnement d'exécution par lots SQL Server  
  Lors de l'ouverture d'une connexion, un environnement par défaut est défini. Cet environnement est ensuite copié dans une session MARS logique.  
@@ -90,11 +90,11 @@ string connectionString = "Data Source=MSSQL1;" +
 ### <a name="parallel-execution"></a>Exécution en parallèle  
  MARS n’est pas conçu pour supprimer toutes les exigences de connexions multiples dans une application. Si une application a besoin d'une véritable exécution en parallèle de commandes par rapport à un serveur, il convient d'utiliser plusieurs connexions.  
   
- Observez par exemple le scénario suivant. Deux objets de commande sont créés, l'un pour le traitement d'un ensemble de résultats et un autre pour la mise à jour de données ; ils partagent une connexion commune via MARS. Dans ce scénario, le `Transaction`.`Commit` échoue sur la mise à jour tant que tous les résultats n’ont pas été lus sur le premier objet de commande, ce qui a généré l’exception suivante:  
+ Observez par exemple le scénario suivant. Deux objets de commande sont créés, l'un pour le traitement d'un ensemble de résultats et un autre pour la mise à jour de données ; ils partagent une connexion commune via MARS. Dans ce scénario, le `Transaction`.`Commit` échoue sur la mise à jour tant que tous les résultats n’ont pas été lus sur le premier objet de commande, ce qui a généré l’exception suivante :  
   
  Message : Contexte de transaction utilisé par une autre session.  
   
- Source: Fournisseur de données SqlClient .NET  
+ Source : Fournisseur de données SqlClient .NET  
   
  Attendu : (null)  
   
@@ -113,5 +113,5 @@ string connectionString = "Data Source=MSSQL1;" +
   
 ## <a name="see-also"></a>Voir aussi
 
-- [MARS (Multiple Active Result Sets)](../../../../../docs/framework/data/adonet/sql/multiple-active-result-sets-mars.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [MARS (Multiple Active Result Sets)](multiple-active-result-sets-mars.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fbc96fa9-b5d1-4f97-b099-c89b0e14ce2c
-ms.openlocfilehash: f788e1732f083c01542fcdacdfc042553741350b
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 272b76c0448da9e069fba331c3ae99c1de02ed16
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204420"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784265"
 ---
 # <a name="synchronizing-a-dataset-with-an-xmldatadocument"></a>Synchronisation d'un DataSet et d'un XmlDataDocument
 Cette section décrit l’une des étapes du traitement d’un bon de commande à l’aide d’un objet <xref:System.Data.DataSet> fortement typé, synchronisé avec un objet <xref:System.Xml.XmlDataDocument>. Les exemples qui suivent créent un **jeu de données** avec un schéma réduit qui correspond uniquement à une partie du document XML source. Les exemples utilisent un **XmlDataDocument** pour préserver la fidélité du document XML source, ce qui permet d’utiliser le **DataSet** pour exposer un sous-ensemble du document XML.  
@@ -234,4 +234,4 @@ public class Sample
 ## <a name="see-also"></a>Voir aussi
 
 - [Synchronisation DataSet et XmlDataDocument](dataset-and-xmldatadocument-synchronization.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

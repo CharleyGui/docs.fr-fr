@@ -8,18 +8,18 @@ helpviewer_keywords:
 - WCF Data Services, changing data
 - WCF Data Services, client library
 ms.assetid: 00d993be-ffed-4dea-baf7-6eea982cdb54
-ms.openlocfilehash: f65e3775c260eedc1d76f209d5cb76524d61b939
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5cf7a6e563069e35a4ac0fe729a616dc1c56bdb5
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69953215"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70779746"
 ---
 # <a name="updating-the-data-service-wcf-data-services"></a>Mise à jour du service de données (services de données WCF)
 Lorsque vous utilisez la [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] bibliothèque cliente pour consommer [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] un flux, la bibliothèque traduit les entrées du flux en instances de classes de service de données client. Ces classes de service de données sont suivies à l'aide de l'objet <xref:System.Data.Services.Client.DataServiceContext> auquel <xref:System.Data.Services.Client.DataServiceQuery%601> appartient. Le client suit les modifications apportées aux entités que vous signalez à l'aide des méthodes sur <xref:System.Data.Services.Client.DataServiceContext>. Ces méthodes permettent au client de suivre les entités ajoutées et supprimées, ainsi que les modifications que vous apportez aux valeurs de propriété ou aux relations entre les instances d'entités. Ces modifications suivies sont renvoyées au service de données sous forme d'opérations REST lorsque vous appelez la méthode <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A>.  
   
 > [!NOTE]
-> Lorsque vous utilisez une instance de <xref:System.Data.Services.Client.DataServiceCollection%601> pour lier des données et des contrôles, les modifications apportées aux données dans le contrôle lié sont automatiquement signalées à l'objet <xref:System.Data.Services.Client.DataServiceContext>. Pour plus d’informations, consultez [liaison de données à des contrôles](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).  
+> Lorsque vous utilisez une instance de <xref:System.Data.Services.Client.DataServiceCollection%601> pour lier des données et des contrôles, les modifications apportées aux données dans le contrôle lié sont automatiquement signalées à l'objet <xref:System.Data.Services.Client.DataServiceContext>. Pour plus d’informations, consultez [liaison de données à des contrôles](binding-data-to-controls-wcf-data-services.md).  
   
 ## <a name="adding-modifying-and-changing-entities"></a>Ajout, modification et changement d'entités  
  Quand vous utilisez la boîte de dialogue **Ajouter une référence de service** dans Visual Studio pour ajouter une référence [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] à un flux, les classes de service de données client résultantes ont chacune une méthode *Create* statique qui accepte un paramètre pour chaque propriété d’entité non Nullable . Vous pouvez utiliser cette méthode pour créer des instances de classes de type d'entité, comme dans l'exemple suivant :  
@@ -27,7 +27,7 @@ Lorsque vous utilisez la [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.
  [!code-csharp[Astoria Northwind Client#CreateNewProduct](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#createnewproduct)]
  [!code-vb[Astoria Northwind Client#CreateNewProduct](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#createnewproduct)]  
   
- Pour ajouter une instance d’entité, appelez la méthode *AddTo* appropriée sur <xref:System.Data.Services.Client.DataServiceContext> la classe générée par la boîte de dialogue **Ajouter une référence de service** , comme dans l’exemple suivant:  
+ Pour ajouter une instance d’entité, appelez la méthode *AddTo* appropriée sur <xref:System.Data.Services.Client.DataServiceContext> la classe générée par la boîte de dialogue **Ajouter une référence de service** , comme dans l’exemple suivant :  
   
  [!code-csharp[Astoria Northwind Client#AddProductSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addproductspecific)]
  [!code-vb[Astoria Northwind Client#AddProductSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addproductspecific)]  
@@ -44,7 +44,7 @@ Lorsque vous utilisez la [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.
  [!code-csharp[Astoria Northwind Client#DeleteProductSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#deleteproductspecific)]
  [!code-vb[Astoria Northwind Client#DeleteProductSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#deleteproductspecific)]  
   
- Pour plus d’informations, consultez [Guide pratique pour Ajoutez, modifiez et supprimez des](../../../../docs/framework/data/wcf/how-to-add-modify-and-delete-entities-wcf-data-services.md)entités.  
+ Pour plus d’informations, consultez [Guide pratique pour Ajoutez, modifiez et supprimez des](how-to-add-modify-and-delete-entities-wcf-data-services.md)entités.  
   
 ## <a name="attaching-entities"></a>Attachement d'entités  
  La bibliothèque cliente vous permet d'enregistrer des mises à jour apportées à une entité sans exécuter en premier une requête pour charger l'entité dans <xref:System.Data.Services.Client.DataServiceContext>. Utilisez la méthode <xref:System.Data.Services.Client.DataServiceContext.AttachTo%2A> pour joindre un objet existant à un jeu d'entités spécifique dans <xref:System.Data.Services.Client.DataServiceContext>. Vous pouvez modifier ensuite l'objet et enregistrer les modifications apportées au service de données. Dans l'exemple suivant, un objet client été modifié et joint au contexte, puis <xref:System.Data.Services.Client.DataServiceContext.UpdateObject%2A> est appelé pour marquer l'objet attaché comme <xref:System.Data.Services.Client.EntityStates.Modified> avant l'appel de <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> :  
@@ -62,12 +62,12 @@ Lorsque vous utilisez la [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.
   
 - La surcharge de méthode <xref:System.Data.Services.Client.DataServiceContext.AttachTo%28System.String%2CSystem.Object%2CSystem.String%29> qui utilise un paramètre `etag` est utilisée lorsque vous attachez un objet entité ayant été reçu avec une valeur eTag. Cette valeur eTag est ensuite utilisée pour vérifier l'accès concurrentiel lorsque les modifications apportées à l'objet attaché sont enregistrées.  
   
- Pour plus d'informations, voir [Procédure : Attachez une entité existante au DataServiceContext](../../../../docs/framework/data/wcf/attach-an-existing-entity-to-dc-wcf-data.md).  
+ Pour plus d'informations, voir [Procédure : Attachez une entité existante au DataServiceContext](attach-an-existing-entity-to-dc-wcf-data.md).  
   
 ## <a name="creating-and-modifying-relationship-links"></a>Création et modification des liens de relation  
  Lorsque vous ajoutez une nouvelle entité à l’aide de <xref:System.Data.Services.Client.DataServiceContext.AddObject%2A> la méthode ou de la méthode *AddTo* appropriée <xref:System.Data.Services.Client.DataServiceContext> de la classe générée par la boîte de dialogue **Ajouter une référence de service** , les relations entre la nouvelle entité et les entités associées sont non défini automatiquement.  
   
- Vous pouvez créer et modifier les relations entre des instances d'entité et faire répercuter par la bibliothèque cliente ces modifications dans le service de données. Les relations entre les entités sont définies comme des associations dans le modèle, et <xref:System.Data.Services.Client.DataServiceContext> suit chaque relation comme un objet de lien dans le contexte. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]fournit les méthodes suivantes sur la <xref:System.Data.Services.Client.DataServiceContext> classe pour créer, modifier et supprimer ces liens:  
+ Vous pouvez créer et modifier les relations entre des instances d'entité et faire répercuter par la bibliothèque cliente ces modifications dans le service de données. Les relations entre les entités sont définies comme des associations dans le modèle, et <xref:System.Data.Services.Client.DataServiceContext> suit chaque relation comme un objet de lien dans le contexte. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]fournit les méthodes suivantes sur la <xref:System.Data.Services.Client.DataServiceContext> classe pour créer, modifier et supprimer ces liens :  
   
 |Méthode|Description|  
 |------------|-----------------|  
@@ -88,16 +88,16 @@ Lorsque vous utilisez la [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.
  [!code-csharp[Astoria Northwind Client#SetNavProps](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#setnavprops)]
  [!code-vb[Astoria Northwind Client#SetNavProps](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#setnavprops)]  
   
- Pour plus d'informations, voir [Procédure : Définir des relations](../../../../docs/framework/data/wcf/how-to-define-entity-relationships-wcf-data-services.md)d’entité.  
+ Pour plus d’informations, consultez [Guide pratique pour Définir des relations](how-to-define-entity-relationships-wcf-data-services.md)d’entité.  
   
 ## <a name="saving-changes"></a>Enregistrement des modifications  
- Les modifications sont suivies dans l'instance <xref:System.Data.Services.Client.DataServiceContext> mais ne sont pas envoyées au serveur immédiatement. Une fois que vous avez terminé d'effectuer les modifications requises pour une activité spécifiée, appelez <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> afin de soumettre toutes les modifications au service de données. Pour plus d’informations, consultez [gestion du contexte du service de données](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md). Vous pouvez également enregistrer des modifications de façon asynchrone à l'aide des méthodes <xref:System.Data.Services.Client.DataServiceContext.BeginSaveChanges%2A> et <xref:System.Data.Services.Client.DataServiceContext.EndSaveChanges%2A>. Pour plus d’informations, consultez [opérations asynchrones](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md).  
+ Les modifications sont suivies dans l'instance <xref:System.Data.Services.Client.DataServiceContext> mais ne sont pas envoyées au serveur immédiatement. Une fois que vous avez terminé d'effectuer les modifications requises pour une activité spécifiée, appelez <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> afin de soumettre toutes les modifications au service de données. Pour plus d’informations, consultez [gestion du contexte du service de données](managing-the-data-service-context-wcf-data-services.md). Vous pouvez également enregistrer des modifications de façon asynchrone à l'aide des méthodes <xref:System.Data.Services.Client.DataServiceContext.BeginSaveChanges%2A> et <xref:System.Data.Services.Client.DataServiceContext.EndSaveChanges%2A>. Pour plus d’informations, consultez [opérations asynchrones](asynchronous-operations-wcf-data-services.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Bibliothèque cliente WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
-- [Interrogation du service de données](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)
-- [Opérations asynchrones](../../../../docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)
-- [Opérations de traitement par lots](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md)
-- [Matérialisation d’objet](../../../../docs/framework/data/wcf/object-materialization-wcf-data-services.md)
-- [Gestion du contexte du service de données](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md)
+- [Bibliothèque cliente WCF Data Services](wcf-data-services-client-library.md)
+- [Interrogation du service de données](querying-the-data-service-wcf-data-services.md)
+- [Opérations asynchrones](asynchronous-operations-wcf-data-services.md)
+- [Opérations de traitement par lots](batching-operations-wcf-data-services.md)
+- [Matérialisation d’objet](object-materialization-wcf-data-services.md)
+- [Gestion du contexte du service de données](managing-the-data-service-context-wcf-data-services.md)

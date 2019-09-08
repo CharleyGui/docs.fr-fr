@@ -2,12 +2,12 @@
 title: Sécuriser l'accès aux données
 ms.date: 03/30/2017
 ms.assetid: 473ebd69-21a3-4627-b95e-4e04d035c56f
-ms.openlocfilehash: 7aa68842ab3733943f84e9d6d9157f7a3d65cac7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 122bdaf8467994f8f56ce3f6c92457be6b8b3155
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963144"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782776"
 ---
 # <a name="secure-data-access"></a>Sécuriser l'accès aux données
 Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes de sécurité disponibles dans la base de données ou le magasin de données sous-jacent. Vous devez également prendre en compte les implications relatives à la sécurité des autres fonctionnalités ou composants que votre application peut contenir.  
@@ -23,10 +23,10 @@ Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes d
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[Protection des informations de connexion](../../../../docs/framework/data/adonet/protecting-connection-information.md)|Décrit les techniques et meilleures pratiques de sécurité permettant de protéger les informations de connexion, telles que l'utilisation d'une configuration protégée pour chiffrer les chaînes de connexion.|  
+|[Protection des informations de connexion](protecting-connection-information.md)|Décrit les techniques et meilleures pratiques de sécurité permettant de protéger les informations de connexion, telles que l'utilisation d'une configuration protégée pour chiffrer les chaînes de connexion.|  
 |[Recommandations pour les stratégies d’accès aux données](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))|Fournit des recommandations pour l'accès aux données et l'exécution d'opérations de base de données.|  
-|[Générateurs de chaînes de connexion](../../../../docs/framework/data/adonet/connection-string-builders.md)|Décrit comment créer des chaînes de connexion à partir de l'entrée de l'utilisateur au moment de l'exécution.|  
-|[Vue d’ensemble de la sécurité SQL Server](../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)|Décrit l'architecture de sécurité de SQL Server.|  
+|[Générateurs de chaînes de connexion](connection-string-builders.md)|Décrit comment créer des chaînes de connexion à partir de l'entrée de l'utilisateur au moment de l'exécution.|  
+|[Vue d’ensemble de la sécurité SQL Server](./sql/overview-of-sql-server-security.md)|Décrit l'architecture de sécurité de SQL Server.|  
   
 ## <a name="parameterized-commands-and-sql-injection"></a>Commandes paramétrées et injection de code SQL  
  L'utilisation des commandes paramétrées aide à se protéger des attaques par injection de code SQL, dans lesquelles un attaquant « injecte » une commande dans une instruction SQL qui compromet la sécurité sur le serveur. Les commandes paramétrées protègent contre une attaque par injection de code SQL en garantissant que les valeurs reçues à partir d'une source externe sont passées en tant que valeurs uniquement et non pas comme partie intégrante de l'instruction Transact-SQL. Par conséquent, les commandes Transact-SQL insérées dans une valeur ne sont pas exécutées au niveau de la source de données. Au lieu de cela, les valeurs sont évaluées uniquement comme valeurs de paramètre. Outre les avantages relatifs à la sécurité, les commandes paramétrées fournissent une méthode pratique d'organisation des valeurs passées avec une instruction Transact-SQL ou à une procédure stockée.  
@@ -35,9 +35,9 @@ Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes d
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[Paramètres DataAdapter](../../../../docs/framework/data/adonet/dataadapter-parameters.md)|Décrit comment utiliser des paramètres avec un `DataAdapter`.|  
-|[Modification des données avec les procédures stockées](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)|Décrit comment spécifier des paramètres et obtenir une valeur de retour.|  
-|[Gestion des autorisations avec les procédures stockées dans SQL Server](../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)|Décrit comment utiliser des procédures stockées SQL Server pour encapsuler l'accès aux données.|  
+|[Paramètres DataAdapter](dataadapter-parameters.md)|Décrit comment utiliser des paramètres avec un `DataAdapter`.|  
+|[Modification des données avec les procédures stockées](modifying-data-with-stored-procedures.md)|Décrit comment spécifier des paramètres et obtenir une valeur de retour.|  
+|[Gestion des autorisations avec les procédures stockées dans SQL Server](./sql/managing-permissions-with-stored-procedures-in-sql-server.md)|Décrit comment utiliser des procédures stockées SQL Server pour encapsuler l'accès aux données.|  
   
 ## <a name="script-exploits"></a>Attaques de script  
  Une attaque de script est une autre forme d’injection qui utilise des caractères nuisibles insérés dans une page web. Le navigateur ne valide pas les caractères insérés et les traitera dans le cadre de la page.  
@@ -84,14 +84,14 @@ Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes d
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[Interopération avec du code non managé](../../../../docs/framework/interop/index.md)|Contient des rubriques qui décrivent comment exposer les composants COM au .NET Framework et comment exposer les composants .NET Framework à COM.|
+|[Interopération avec du code non managé](../../interop/index.md)|Contient des rubriques qui décrivent comment exposer les composants COM au .NET Framework et comment exposer les composants .NET Framework à COM.|
 |[Interopérabilité COM avancée](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))|Contient des sujets avancés tels que les assemblys PIA (Primary Interop Assembly), les threads et le marshaling personnalisé.|
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Sécurisation des applications ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Sécurité SQL Server](../../../../docs/framework/data/adonet/sql/sql-server-security.md)
+- [Sécurisation des applications ADO.NET](securing-ado-net-applications.md)
+- [Sécurité SQL Server](./sql/sql-server-security.md)
 - [Recommandations pour les stratégies d’accès aux données](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))
-- [Protection des informations de connexion](../../../../docs/framework/data/adonet/protecting-connection-information.md)
-- [Générateurs de chaînes de connexion](../../../../docs/framework/data/adonet/connection-string-builders.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Protection des informations de connexion](protecting-connection-information.md)
+- [Générateurs de chaînes de connexion](connection-string-builders.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

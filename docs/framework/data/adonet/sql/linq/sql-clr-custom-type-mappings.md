@@ -2,17 +2,17 @@
 title: Mappages de types personnalisés SQL-CLR
 ms.date: 03/30/2017
 ms.assetid: d916c7fb-4b56-4214-acbe-5e23365047b2
-ms.openlocfilehash: 5aff9a78349cbf9443c5b663a41d7c13a109e625
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8901998533ec14e733ea072dd1a69b465e596328
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69945043"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781086"
 ---
 # <a name="sql-clr-custom-type-mappings"></a>Mappages de types personnalisés SQL-CLR
 Le mappage de type entre SQL Server et le langage Common Language Runtime (CLR) est automatiquement spécifié lorsque vous utilisez l'outil de ligne de commande SQLMetal ou le Concepteur Objet/Relationnel (Concepteur O/R).  
   
- Quand aucun mappage personnalisé n’est effectué, ces outils assignent des mappages de types par défaut, comme décrit dans [mappage de type SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md). Si vous souhaitez que les mappages de types s'effectuent différemment de ceux par défaut, vous devez les personnaliser.  
+ Quand aucun mappage personnalisé n’est effectué, ces outils assignent des mappages de types par défaut, comme décrit dans [mappage de type SQL-CLR](sql-clr-type-mapping.md). Si vous souhaitez que les mappages de types s'effectuent différemment de ceux par défaut, vous devez les personnaliser.  
   
  Lors de la personnalisation des mappages de types, l'approche recommandée consiste à modifier un fichier DBML intermédiaire. Vous devez ensuite utiliser ce fichier DBML personnalisé lorsque vous créez les fichiers de code et de mappage à l'aide de SQLMetal ou du Concepteur O/R.  
   
@@ -24,7 +24,7 @@ Le mappage de type entre SQL Server et le langage Common Language Runtime (CLR) 
  Pour personnaliser des mappages de types à l'aide de SQLMetal ou du Concepteur OR, commencez par générer un fichier DBML. Puis, avant de générer le fichier de code ou de mappage, modifiez ce fichier DBML de façon à identifier les mappages de types souhaités. Si vous utilisez SQLMetal, vous devez modifier manuellement les attributs `Type` et `DbType` dans le fichier DBML pour personnaliser les mappages de types. Si vous utilisez le Concepteur O/R, vous pouvez apporter vos modifications dans celui-ci. Pour plus d’informations sur l’utilisation du Concepteur O/R, consultez [LINQ to SQL Tools dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
 > [!NOTE]
-> Certains mappages de types peuvent entraîner des exceptions de dépassement de capacité ou de perte de données lors de la traduction à partir de la base de données ou vers celle-ci. Examinez attentivement la matrice de comportement au moment de l’exécution du mappage de type dans le [mappage de type SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md) avant d’effectuer des personnalisations.  
+> Certains mappages de types peuvent entraîner des exceptions de dépassement de capacité ou de perte de données lors de la traduction à partir de la base de données ou vers celle-ci. Examinez attentivement la matrice de comportement au moment de l’exécution du mappage de type dans le [mappage de type SQL-CLR](sql-clr-type-mapping.md) avant d’effectuer des personnalisations.  
   
  Pour que SQLMetal ou le Concepteur O/R reconnaisse les personnalisations de mappage de type, vous devez vous assurer que ces outils incluent le chemin d'accès à votre fichier DBML personnalisé lorsque vous générez le fichier de code ou de mappage externe. Même si cela n'est pas requis dans le cadre de la personnalisation de mappage de type, nous vous recommandons de séparer systématiquement les informations de mappage de type du fichier de code et de générer le fichier de mappage externe supplémentaire. Cela offre une certaine souplesse en vous évitant d'avoir à recompiler le fichier de code.  
   
@@ -33,5 +33,5 @@ Le mappage de type entre SQL Server et le langage Common Language Runtime (CLR) 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mappage de type SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)
-- [Génération de code dans LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/code-generation-in-linq-to-sql.md)
+- [Mappage de type SQL-CLR](sql-clr-type-mapping.md)
+- [Génération de code dans LINQ to SQL](code-generation-in-linq-to-sql.md)

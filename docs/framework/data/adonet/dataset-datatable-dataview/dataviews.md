@@ -2,17 +2,17 @@
 title: DataViews
 ms.date: 03/30/2017
 ms.assetid: 0fe5dfa2-c1cd-435f-90b6-b4dd2e3ef34b
-ms.openlocfilehash: f362e4807bce4fb0e3e8c9ae8cdd6b4704fc28aa
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 8a06accb11631f2dce6b0d39587d7274223c0e68
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203809"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786345"
 ---
 # <a name="dataviews"></a>DataViews
 Un objet <xref:System.Data.DataView> vous permet de créer différentes vues des données stockées dans un objet <xref:System.Data.DataTable>, possibilité qui est souvent utilisée dans les applications de liaison de données. À l’aide d’un **DataView**, vous pouvez exposer les données d’une table avec différents ordres de tri, et vous pouvez filtrer les données par État de ligne ou en fonction d’une expression de filtre.  
   
- Un **DataView** fournit une vue dynamique des données dans le **DataTable**sous-jacent: le contenu, le classement et l’appartenance reflètent les modifications à mesure qu’elles se produisent. Ce comportement diffère de la méthode **Select** du **DataTable**, qui retourne un <xref:System.Data.DataRow> tableau à partir d’une table en fonction d’un filtre et/ou d’un ordre de tri particulier: ce contenu reflète les modifications apportées à la table sous-jacente, mais son appartenance et l’ordonnancement reste statique. Les fonctionnalités dynamiques du **DataView** la rendent idéale pour les applications de liaison de données.  
+ Un **DataView** fournit une vue dynamique des données dans le **DataTable**sous-jacent : le contenu, le classement et l’appartenance reflètent les modifications à mesure qu’elles se produisent. Ce comportement diffère de la méthode **Select** du **DataTable**, qui retourne un <xref:System.Data.DataRow> tableau à partir d’une table en fonction d’un filtre et/ou d’un ordre de tri particulier : ce contenu reflète les modifications apportées à la table sous-jacente, mais son appartenance et l’ordonnancement reste statique. Les fonctionnalités dynamiques du **DataView** la rendent idéale pour les applications de liaison de données.  
   
  Un **DataView** vous offre une vue dynamique d’un seul jeu de données, comme une vue de base de données, à laquelle vous pouvez appliquer différents critères de tri et de filtrage. Toutefois, contrairement à une vue de base de données, un **DataView** ne peut pas être traité comme une table et ne peut pas fournir une vue des tables jointes. Vous ne pouvez pas non plus exclure des colonnes si elles existent dans la table source, ou ajouter des colonnes, telles que des colonnes de calcul qui n'existent pas dans la table source.  
   
@@ -61,4 +61,4 @@ Un objet <xref:System.Data.DataView> vous permet de créer différentes vues des
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
