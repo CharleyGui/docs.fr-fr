@@ -2,12 +2,12 @@
 title: SecurityNegotiationFailure
 ms.date: 03/30/2017
 ms.assetid: 2060a678-f97b-4491-acd9-6c57c732afd7
-ms.openlocfilehash: 9115fa12539150fe2f23bc9799053364d624fd46
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c4d753c9fcaae2990d27445e5b71ad5f3894f27f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61944506"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796136"
 ---
 # <a name="securitynegotiationfailure"></a>SecurityNegotiationFailure
 Id : 172  
@@ -21,5 +21,5 @@ Id : 172
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Journalisation des événements](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
-- [Informations de référence générales sur les événements](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+- [Journalisation des événements](index.md)
+- [Informations de référence générales sur les événements](events-general-reference.md)

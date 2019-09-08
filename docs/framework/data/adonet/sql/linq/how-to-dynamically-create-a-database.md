@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fb7f23c4-4572-4c38-9898-a287807d070c
-ms.openlocfilehash: 92db9bdb209a542cc4fa269b35bfa98f8f20d2b7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4cadf20cdadb39483f26a29619cae058eac47e50
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940087"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793659"
 ---
 # <a name="how-to-dynamically-create-a-database"></a>Procédure : Créer dynamiquement une base de données
 Dans LINQ to SQL, un modèle objet est mappé à une base de données relationnelle. Le mappage est activé à l'aide du mappage basé sur les attributs ou d'un fichier de mappage externe pour décrire la structure de la base de données relationnelle. Dans les deux scénarios, il existe suffisamment d'informations sur la base de données relationnelle pour pouvoir créer une nouvelle instance de la base de données à l'aide de la méthode <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType>.  
@@ -28,19 +28,19 @@ Dans LINQ to SQL, un modèle objet est mappé à une base de données relation
 > [!NOTE]
 > Si possible, utilisez la sécurité intégrée Windows pour vous connecter à la base de données de façon à ce que les mots de passe ne soient pas requis dans la chaîne de connexion.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Le code suivant fournit un exemple de création d'une nouvelle base de données nommée MyDVDs.mdf.  
   
  [!code-csharp[DLinqSubmittingChanges#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSubmittingChanges/cs/Program.cs#5)]
  [!code-vb[DLinqSubmittingChanges#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSubmittingChanges/vb/Module1.vb#5)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Vous pouvez utiliser le modèle objet pour créer une base de données en procédant comme suit :  
   
  [!code-csharp[DLinqSubmittingChanges#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqSubmittingChanges/cs/Program.cs#6)]
  [!code-vb[DLinqSubmittingChanges#6](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqSubmittingChanges/vb/Module1.vb#6)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Lors de la création d’une application qui s’installe automatiquement sur le système d’un client, vérifiez si la base de données existe déjà et supprimez-la avant d’un créer une nouvelle. La classe <xref:System.Data.Linq.DataContext> fournit les méthodes <xref:System.Data.Linq.DataContext.DatabaseExists%2A> et <xref:System.Data.Linq.DataContext.DeleteDatabase%2A> pour vous aider dans cette tâche.  
   
  L'exemple suivant illustre une utilisation de ces méthodes pour implémenter cette approche :  
@@ -50,8 +50,8 @@ Dans LINQ to SQL, un modèle objet est mappé à une base de données relation
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mappage basé sur les attributs](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)
-- [Mappage externe](../../../../../../docs/framework/data/adonet/sql/linq/external-mapping.md)
-- [Mappage de type SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)
-- [Informations générales](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
-- [Apport et soumission de modifications de données](../../../../../../docs/framework/data/adonet/sql/linq/making-and-submitting-data-changes.md)
+- [Mappage basé sur les attributs](attribute-based-mapping.md)
+- [Mappage externe](external-mapping.md)
+- [Mappage de type SQL-CLR](sql-clr-type-mapping.md)
+- [Informations générales](background-information.md)
+- [Apport et soumission de modifications de données](making-and-submitting-data-changes.md)

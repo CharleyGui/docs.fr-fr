@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c34b5012-aee9-4994-9364-1d99d12b7463
-ms.openlocfilehash: c8a4c29b1faa3c05f2cf32e9a60104b43a9b1c40
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ec288d5ac2f6466860362be82c619c89204e8f31
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033512"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781420"
 ---
 # <a name="local-method-calls"></a>Appels de méthodes locaux
-Un appel de méthode local est un appel exécuté dans le modèle objet. Un appel de méthode distant est un appel que [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] traduit en SQL et est transmis au moteur de base de données pour l'exécution. Appels de méthode locaux sont nécessaires lorsque [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne peut pas traduire l’appel en SQL. Sinon, une exception <xref:System.InvalidOperationException> est levée.  
+Un appel de méthode local est un appel exécuté dans le modèle objet. Un appel de méthode distant est un appel que [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] traduit en SQL et est transmis au moteur de base de données pour l'exécution. Les appels de méthode locaux sont [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] nécessaires lorsque ne peut pas traduire l’appel en SQL. Sinon, une exception <xref:System.InvalidOperationException> est levée.  
   
 ## <a name="example-1"></a>Exemple 1  
  Dans l'exemple suivant, une classe `Order` est mappée à la table Orders dans l'exemple de base de données Northwind. Une méthode d'instance locale a été ajoutée à la classe.  
@@ -28,4 +28,4 @@ Un appel de méthode local est un appel exécuté dans le modèle objet. Un appe
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations générales](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
+- [Informations générales](background-information.md)

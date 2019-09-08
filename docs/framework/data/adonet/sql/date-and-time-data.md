@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
-ms.openlocfilehash: 016e2efae68c02c8c5a10ab74419599bc41be3a8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 90a70eaa2b5aeb8ef1f1659d7912b9ae5abc4eca
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959391"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794238"
 ---
 # <a name="date-and-time-data"></a>Données de date et d'heure
 SQL Server 2008 introduit de nouveaux types de manipulation de données de date et d'heure. Ces nouveaux types de données incluent des types distincts pour la date et l’heure, ainsi que des types de données développés prenant en charge une plage plus vaste de valeurs, la précision et les fuseaux horaires. À partir du .NET Framework version 3.5 Service Pack (SP) 1, le fournisseur de données .NET Framework pour SQL Server (<xref:System.Data.SqlClient>) assure la prise en charge complète de l’ensemble des nouvelles fonctionnalités du moteur de base de données SQL Server 2008. Vous devez installer le .NET Framework 3.5 SP1 (ou version ultérieure) pour utiliser ces nouvelles fonctionnalités avec SqlClient.  
@@ -31,7 +31,7 @@ SQL Server 2008 introduit de nouveaux types de manipulation de données de date
 |`date`|Le type de données `date` est situé dans une plage comprise entre le 1er janvier 01 et le 31 décembre 9999, avec une précision d'un jour. La valeur par défaut est le 1er janvier 1900. La taille de stockage est égale à 3 octets.|  
 |`time`|Le type de données `time` stocke les valeurs d'heure uniquement en fonction d'une horloge au format 24 heures. Le type de données `time` présente une plage comprise entre 00:00:00.0000000 et 23:59:59.9999999 avec une précision de 100 nanosecondes. La valeur par défaut est 00:00:00.0000000 (minuit). Le type de données `time` prend en charge une précision à la fraction de seconde, et la taille de stockage varie entre 3 et 6 octets selon la précision spécifiée.|  
 |`datetime2`|Le type de données `datetime2` combine la plage et la précision des types de données `date` et `time` en un seul type de données.<br /><br /> Les valeurs par défaut et les formats littéraux de chaîne sont identiques à ceux définis dans les types de données `date` et `time`.|  
-|`datetimeoffset`|Le type de données `datetimeoffset` présente toutes les fonctionnalités du type de données `datetime2` avec en plus un décalage horaire. Le décalage de fuseau horaire est représenté sous la&#124;forme [+-] HH: mm. HH correspond à 2 chiffres situés entre 00 et 24 qui représentent le nombre d'heures de décalage horaire. MM correspond à 2 chiffres situés entre 00 et 59 qui représentent le nombre de minutes supplémentaires dans le décalage horaire. Les formats d'heure sont pris en charge jusqu'à une précision de 100 nanosecondes. Le signe + ou  - obligatoire indique si le décalage est ajouté ou soustrait de l'heure universelle UTC (Universal Time Coordinate ou heure de Greenwich) pour obtenir l'heure locale.|  
+|`datetimeoffset`|Le type de données `datetimeoffset` présente toutes les fonctionnalités du type de données `datetime2` avec en plus un décalage horaire. Le décalage de fuseau horaire est représenté sous la&#124;forme [+-] HH : mm. HH correspond à 2 chiffres situés entre 00 et 24 qui représentent le nombre d'heures de décalage horaire. MM correspond à 2 chiffres situés entre 00 et 59 qui représentent le nombre de minutes supplémentaires dans le décalage horaire. Les formats d'heure sont pris en charge jusqu'à une précision de 100 nanosecondes. Le signe + ou  - obligatoire indique si le décalage est ajouté ou soustrait de l'heure universelle UTC (Universal Time Coordinate ou heure de Greenwich) pour obtenir l'heure locale.|  
   
 > [!NOTE]
 > Pour plus d'informations sur l'utilisation du mot clé `Type System Version`, consultez <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>.  
@@ -88,7 +88,7 @@ Vous pouvez spécifier le type de données d' <xref:System.Data.SqlClient.SqlPar
   
 |Propriété|Description|  
 |--------------|-----------------|  
-|<xref:System.Data.SqlClient.SqlParameter.IsNullable%2A>|Obtient ou définit si une valeur peut être nulle. Lorsque vous envoyez une valeur de paramètre null au serveur, vous devez spécifier <xref:System.DBNull>, plutôt que `null` (`Nothing` dans Visual Basic). Pour plus d’informations sur les valeurs Null de base de données, consultez [Handling Null Values](../../../../../docs/framework/data/adonet/sql/handling-null-values.md).|  
+|<xref:System.Data.SqlClient.SqlParameter.IsNullable%2A>|Obtient ou définit si une valeur peut être nulle. Lorsque vous envoyez une valeur de paramètre null au serveur, vous devez spécifier <xref:System.DBNull>, plutôt que `null` (`Nothing` dans Visual Basic). Pour plus d’informations sur les valeurs Null de base de données, consultez [Handling Null Values](handling-null-values.md).|  
 |<xref:System.Data.SqlClient.SqlParameter.Precision%2A>|Obtient ou définit le nombre maximal de chiffres utilisés pour représenter la valeur. Ce paramètre est ignoré pour les types de données de date et d'heure.|  
 |<xref:System.Data.SqlClient.SqlParameter.Scale%2A>|Obtient ou définit le nombre de décimales pour lequel la partie heure de la valeur est résolue `Time`, `DateTime2`et `DateTimeOffset`. La valeur par défaut est 0, ce qui signifie que l'échelle réelle est déduite de la valeur et envoyée au serveur.|  
 |<xref:System.Data.SqlClient.SqlParameter.Size%2A>|Ignoré pour les types de données de date et d'heure|  
@@ -101,7 +101,7 @@ Vous pouvez spécifier le type de données d' <xref:System.Data.SqlClient.SqlPar
 ### <a name="creating-parameters"></a>Création de paramètres  
  Vous pouvez créer un objet <xref:System.Data.SqlClient.SqlParameter> à l’aide de son constructeur ou en l’ajoutant à une collection <xref:System.Data.SqlClient.SqlCommand><xref:System.Data.SqlClient.SqlCommand.Parameters%2A> en appelant la méthode `Add` de <xref:System.Data.SqlClient.SqlParameterCollection>. La méthode `Add` prendra comme entrée les arguments de constructeur ou un objet paramètre existant.  
   
- Les sections suivantes présentées dans cette rubrique fournissent des exemples montrant comment spécifier des paramètres de date et d'heure. Pour obtenir des exemples supplémentaires d’utilisation des paramètres, consultez [Configuration des paramètres et des types de données de paramètre](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md) et des [paramètres DataAdapter](../../../../../docs/framework/data/adonet/dataadapter-parameters.md).  
+ Les sections suivantes présentées dans cette rubrique fournissent des exemples montrant comment spécifier des paramètres de date et d'heure. Pour obtenir des exemples supplémentaires d’utilisation des paramètres, consultez [Configuration des paramètres et des types de données de paramètre](../configuring-parameters-and-parameter-data-types.md) et des [paramètres DataAdapter](../dataadapter-parameters.md).  
   
 ### <a name="date-example"></a>Exemple relatif au paramètre date  
  Le fragment de code suivant montre comment spécifier un paramètre `date`.  
@@ -241,7 +241,7 @@ command.Parameters.AddWithValue( _
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mappages de types de données SQL Server](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)
-- [Configuration des paramètres et des types de données des paramètres](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)
-- [Types de données SQL Server et ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Mappages de types de données SQL Server](../sql-server-data-type-mappings.md)
+- [Configuration des paramètres et des types de données des paramètres](../configuring-parameters-and-parameter-data-types.md)
+- [Types de données SQL Server et ADO.NET](sql-server-data-types.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

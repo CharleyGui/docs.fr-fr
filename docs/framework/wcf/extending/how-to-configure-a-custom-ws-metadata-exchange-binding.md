@@ -5,15 +5,15 @@ helpviewer_keywords:
 - WS-Metadata Exchange [WCF]
 - WS-Metadata Exchange [WCF], configuring a custom binding
 ms.assetid: cdba4d73-da64-4805-bc56-9822becfd1e4
-ms.openlocfilehash: 51681e258e6a21b3a7ae604d1c0ef65d320bfb4f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c3582ba3c434bb763889faebcc27407f67af7b1e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61991222"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795651"
 ---
 # <a name="how-to-configure-a-custom-ws-metadata-exchange-binding"></a>Procédure : configurer une liaison WS-Metadata Exchange personnalisée
-Cette rubrique explique comment configurer une liaison d'échange WS-Metadata personnalisée. Windows Communication Foundation (WCF) inclut quatre liaisons de métadonnées définie par le système, mais vous pouvez publier des métadonnées à l’aide de la liaison de que votre choix. Cette rubrique indique comment publier des métadonnées à l'aide du `wsHttpBinding`. Cette liaison vous donne la possibilité d’exposer des métadonnées de manière sécurisée. Le code dans cet article est basé sur le [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
+Cette rubrique explique comment configurer une liaison d'échange WS-Metadata personnalisée. Windows Communication Foundation (WCF) comprend quatre liaisons de métadonnées définies par le système, mais vous pouvez publier des métadonnées à l’aide de n’importe quelle liaison de votre choix. Cette rubrique indique comment publier des métadonnées à l'aide du `wsHttpBinding`. Cette liaison vous donne la possibilité d’exposer des métadonnées de manière sécurisée. Le code de cet article est basé sur le [prise en main](../samples/getting-started-sample.md).  
   
 ### <a name="using-a-configuration-file"></a>Utilisation d'un fichier de configuration  
   
@@ -115,8 +115,8 @@ Cette rubrique explique comment configurer une liaison d'échange WS-Metadata pe
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Comportement de publication des métadonnées](../../../../docs/framework/wcf/samples/metadata-publishing-behavior.md)
-- [Récupérer des métadonnées](../../../../docs/framework/wcf/samples/retrieve-metadata.md)
-- [Métadonnées](../../../../docs/framework/wcf/feature-details/metadata.md)
-- [Publication de métadonnées](../../../../docs/framework/wcf/feature-details/publishing-metadata.md)
-- [Publication de points de terminaison de métadonnées](../../../../docs/framework/wcf/publishing-metadata-endpoints.md)
+- [Comportement de publication des métadonnées](../samples/metadata-publishing-behavior.md)
+- [Récupérer des métadonnées](../samples/retrieve-metadata.md)
+- [Métadonnées](../feature-details/metadata.md)
+- [Publication de métadonnées](../feature-details/publishing-metadata.md)
+- [Publication de points de terminaison de métadonnées](../publishing-metadata-endpoints.md)

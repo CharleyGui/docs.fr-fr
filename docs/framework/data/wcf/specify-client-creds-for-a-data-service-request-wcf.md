@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Spécifiez les informations d’identification du Client pour un Service de données demandent (WCF Data Services)'
+title: 'Procédure : Spécifier les informations d’identification du client pour une demande de service de données (WCF Data Services)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,20 +7,20 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, customizing requests
 ms.assetid: 1632f9af-e45f-4363-9222-03823daa8e28
-ms.openlocfilehash: ed32cb7d1c9da8a98333bc7eddd3e5707e4664ff
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 4177b7f5138bd3e3ddd63e4a0d8d4bcb2be01fbb
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64660862"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70790326"
 ---
-# <a name="how-to-specify-client-credentials-for-a-data-service-request-wcf-data-services"></a>Procédure : Spécifiez les informations d’identification du Client pour un Service de données demandent (WCF Data Services)
-Par défaut, la bibliothèque cliente ne fournit aucune information d'identification lors de l'envoi d'une demande à un service [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. Toutefois, vous pouvez spécifier que les informations d'identification soient transmises aux demandes authentifiées sur le service de données en fournissant un <xref:System.Net.NetworkCredential> pour la propriété <xref:System.Data.Services.Client.DataServiceContext.Credentials%2A> du <xref:System.Data.Services.Client.DataServiceContext>. Pour plus d'informations, consultez [Securing WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md). L'exemple de cette rubrique décrit comment fournir explicitement des informations d'identification utilisées par le client [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] lors d'une demande de données au service de données.  
+# <a name="how-to-specify-client-credentials-for-a-data-service-request-wcf-data-services"></a>Procédure : Spécifier les informations d’identification du client pour une demande de service de données (WCF Data Services)
+Par défaut, la bibliothèque cliente ne fournit aucune information d'identification lors de l'envoi d'une demande à un service [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]. Toutefois, vous pouvez spécifier que les informations d'identification soient transmises aux demandes authentifiées sur le service de données en fournissant un <xref:System.Net.NetworkCredential> pour la propriété <xref:System.Data.Services.Client.DataServiceContext.Credentials%2A> du <xref:System.Data.Services.Client.DataServiceContext>. Pour plus d'informations, consultez [Securing WCF Data Services](securing-wcf-data-services.md). L'exemple de cette rubrique décrit comment fournir explicitement des informations d'identification utilisées par le client [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] lors d'une demande de données au service de données.  
   
- L'exemple dans cette rubrique utilise l'exemple de service de données Northwind et des classes de service de données clientes générées automatiquement. Ce service et les classes de données client sont créés lorsque vous complétez le [démarrage rapide WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md). Vous pouvez également utiliser le [service de données exemple Northwind](https://go.microsoft.com/fwlink/?LinkId=187426) qui est publié sur le [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] site Web ; cet exemple de données service est en lecture seule et essayez d’enregistrer les modifications retourne une erreur. Les exemples de données des services sur le [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] site Web autoriser une authentification anonyme.  
+ L'exemple dans cette rubrique utilise l'exemple de service de données Northwind et des classes de service de données clientes générées automatiquement. Ce service et les classes de données clientes sont créés lorsque vous terminez le [démarrage rapide WCF Data Services](quickstart-wcf-data-services.md). Vous pouvez également utiliser l' [exemple de service de données Northwind](https://go.microsoft.com/fwlink/?LinkId=187426) publié sur le [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] site Web. cet exemple de service de données est en lecture seule et toute tentative d’enregistrement des modifications retourne une erreur. Les exemples de services de données [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] sur le site Web autorisent l’authentification anonyme.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant provient de la page code-behind pour un fichier d’Extensible Application Markup Language (XAML) qui est la page principale de l’application Windows Presentation Framework. Cet exemple affiche une instance `LoginWindow` pour collecter les informations d'authentification de l'utilisateur, puis les utilise pour la création d'une demande au service de données.  
+ L’exemple suivant provient de la page code-behind pour un fichier Extensible Application Markup Language (XAML) qui est la page principale de l’application Windows Presentation Framework. Cet exemple affiche une instance `LoginWindow` pour collecter les informations d'authentification de l'utilisateur, puis les utilise pour la création d'une demande au service de données.  
   
  [!code-csharp[Astoria Northwind Client#ClientCredentials](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/clientcredentials.xaml.cs#clientcredentials)]  
  [!code-vb[Astoria Northwind Client#ClientCredentials](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/clientcredentials.xaml.vb#clientcredentials)]
@@ -36,7 +36,7 @@ Par défaut, la bibliothèque cliente ne fournit aucune information d'identifica
  [!code-csharp[Astoria Northwind Client#ClientCredentialsLogin](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/clientcredentialslogin.xaml.cs#clientcredentialslogin)]  
  [!code-vb[Astoria Northwind Client#ClientCredentialsLogin](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/clientcredentialslogin.xaml.vb#clientcredentialslogin)]
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Vous trouverez ci-après le code XAML qui définit la connexion de l'application WPF.  
   
  [!code-xaml[Astoria Northwind Client#ClientCredentialsLoginXaml](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/clientcredentialslogin.xaml#clientcredentialsloginxaml)]  
@@ -50,9 +50,9 @@ Par défaut, la bibliothèque cliente ne fournit aucune information d'identifica
   
 - Les données transmises avec une authentification de base et Digest ne sont pas chiffrées, par conséquent les données sont visibles par tous. De plus, les informations d'authentification de base (nom d'utilisateur et mot de passe) sont envoyées en texte clair et peuvent être interceptées.  
   
- Pour plus d'informations, consultez [Securing WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).  
+ Pour plus d'informations, consultez [Securing WCF Data Services](securing-wcf-data-services.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sécurisation de WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md)
-- [Bibliothèque cliente WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
+- [Sécurisation de WCF Data Services](securing-wcf-data-services.md)
+- [Bibliothèque cliente WCF Data Services](wcf-data-services-client-library.md)

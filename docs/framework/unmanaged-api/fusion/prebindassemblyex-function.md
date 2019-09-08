@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a23d3c4fd8eef2e361abf1602157cb4fbb820b48
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8aa2d174200db76f5c7a6db43e14bb6904604226
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67773863"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796327"
 ---
 # <a name="prebindassemblyex-function"></a>Fonction PreBindAssemblyEx
-Obtient le nom complet de la stratégie après d’un assembly.  
+Obtient le nom complet de la stratégie d’un assembly.  
   
- Cette fonction prend en charge l’infrastructure .NET Framework et n’est pas destinée à être utilisée directement depuis votre code.  
+ Cette fonction prend en charge l’infrastructure .NET Framework et n’est pas destinée à être utilisée directement à partir de votre code.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,35 +43,35 @@ HRESULT PreBindAssemblyEx (
   
 ## <a name="parameters"></a>Paramètres  
  `pAppCtx`  
- [in] Identifie le contexte de l’application.  
+ dans Identifie le contexte de l’application.  
   
  `pName`  
- [in] Identifie le nom de l’assembly.  
+ dans Identifie le nom de l’assembly.  
   
  `pAsmParent`  
- [in] Identifie l’assembly parent. Ce paramètre est ignoré.  
+ dans Identifie l’assembly parent. Ce paramètre est ignoré.  
   
  `pwzRuntimeVersion`  
- [in] Identifie la version du runtime.  
+ dans Identifie la version du Runtime.  
   
  `ppNamePostPolicy`  
- [out] Contient le nom complet de la stratégie après.  
+ à Contient le nom complet de la stratégie.  
   
  `pvReserved`  
- [in] Réservé pour une extensibilité future. `pvReserved` doit être une référence null.  
+ dans Réservé pour une future extensibilité. `pvReserved`doit être une référence null.  
   
 ## <a name="remarks"></a>Notes  
- Le `ppNamePostPolicy` paramètre de sortie est défini uniquement si la fonction retourne HRESULT FUSION_E_REF_DEF_MISMATCH. Sinon, elle a la valeur null.  
+ Le `ppNamePostPolicy` paramètre de sortie est défini uniquement si la fonction retourne HRESULT FUSION_E_REF_DEF_MISMATCH. Dans le cas contraire, la valeur est null.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** Fusion.h  
+ **En-tête :** Fusion. h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions statiques globales de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [Fonctions statiques globales de fusion](fusion-global-static-functions.md)

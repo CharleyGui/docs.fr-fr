@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 801dff0f-2508-45aa-9416-f45d6887740c
-ms.openlocfilehash: 0c949f0d1ed43b66f72afc4059014c92293f3d75
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3622e21978377aed42958e2dc96ef9aa5a872d00
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61651660"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782913"
 ---
 # <a name="ref-cursor-parameters-in-an-oracledatareader"></a>Paramètres REF CURSOR dans un OracleDataReader
 Cet exemple Microsoft Visual Basic exécute une procédure stockée PL/SQL qui retourne un paramètre REF CURSOR et lit la valeur comme un <xref:System.Data.OracleClient.OracleDataReader>.  
@@ -45,5 +45,5 @@ End Sub
   
 ## <a name="see-also"></a>Voir aussi
 
-- [REF CURSOR Oracle](../../../../docs/framework/data/adonet/oracle-ref-cursors.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [REF CURSOR Oracle](oracle-ref-cursors.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

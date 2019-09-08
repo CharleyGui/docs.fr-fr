@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8ee8e389-53cf-45cf-80bd-1df63ef34f2e
-ms.openlocfilehash: 381f796bec31bece354001ad46bf5079381d1b3d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ccfe40f218e3f09de53d6cb596a31b2520d9ff9b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69914558"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783475"
 ---
 # <a name="oracle-and-adonet"></a>Oracle et ADO.NET
 > [!NOTE]
@@ -20,7 +20,7 @@ ms.locfileid: "69914558"
   
  La .NET Framework Fournisseur de données pour Oracle permet d’accéder à une base de données Oracle à l’aide de l’interface OCI (Oracle Call Interface) fournie par le logiciel client Oracle. La fonctionnalité du fournisseur de données est conçue pour être similaire à celle des fournisseurs de données .NET Framework pour SQL Server, OLE DB et ODBC.  
   
- Pour utiliser le fournisseur de données .NET Framework pour Oracle, une application doit faire référence <xref:System.Data.OracleClient> à l’espace de noms comme suit:  
+ Pour utiliser le fournisseur de données .NET Framework pour Oracle, une application doit faire référence <xref:System.Data.OracleClient> à l’espace de noms comme suit :  
   
 ```vb  
 Imports System.Data.OracleClient  
@@ -37,47 +37,47 @@ csc /r:System.Data.OracleClient.dll
 ```  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Configuration système requise](../../../../docs/framework/data/adonet/system-requirements-for-the-dotnet-data-provider-for-oracle.md)  
+ [Configuration système requise](system-requirements-for-the-dotnet-data-provider-for-oracle.md)  
  Décrit la configuration requise pour l’utilisation du Fournisseur de données .NET Framework pour Oracle et décrit un certain nombre de problèmes à prendre en compte lors de son utilisation.  
   
- [BFILE Oracle](../../../../docs/framework/data/adonet/oracle-bfiles.md)  
+ [BFILE Oracle](oracle-bfiles.md)  
  Décrit la classe <xref:System.Data.OracleClient.OracleBFile> qui est utilisée pour travailler avec le type de données Oracle BFILE.  
   
- [LOB Oracle](../../../../docs/framework/data/adonet/oracle-lobs.md)  
+ [LOB Oracle](oracle-lobs.md)  
  Décrit la classe <xref:System.Data.OracleClient.OracleLob> qui est utilisée pour travailler avec les types de données Oracle LOB.  
   
- [REF CURSOR Oracle](../../../../docs/framework/data/adonet/oracle-ref-cursors.md)  
+ [REF CURSOR Oracle](oracle-ref-cursors.md)  
  Décrit la prise en charge pour le type de données Oracle REF CURSOR.  
   
- [OracleTypes](../../../../docs/framework/data/adonet/oracletypes.md)  
+ [OracleTypes](oracletypes.md)  
  Décrit les structures que vous pouvez utiliser pour travailler avec des types de données Oracle, notamment <xref:System.Data.OracleClient.OracleNumber> et <xref:System.Data.OracleClient.OracleString>.  
   
- [Séquences Oracle](../../../../docs/framework/data/adonet/oracle-sequences.md)  
+ [Séquences Oracle](oracle-sequences.md)  
  Décrit la prise en charge de l'extraction des valeurs de séquence Oracle générées par le serveur.  
   
- [Mappages de types de données Oracle](../../../../docs/framework/data/adonet/oracle-data-type-mappings.md)  
+ [Mappages de types de données Oracle](oracle-data-type-mappings.md)  
  Répertorie les types de données Oracle et leurs mappages sur le <xref:System.Data.OracleClient.OracleDataReader>.  
   
- [Transactions distribuées Oracle](../../../../docs/framework/data/adonet/oracle-distributed-transactions.md)  
+ [Transactions distribuées Oracle](oracle-distributed-transactions.md)  
  Décrit la manière dont l’objet <xref:System.Data.OracleClient.OracleConnection> s’inscrit automatiquement dans une transaction distribuée existante s’il détermine qu’une transaction est active.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Sécurisation des applications ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
+ [Sécurisation des applications ADO.NET](securing-ado-net-applications.md)  
  Décrit des pratiques de codage sécurisées dans ADO.NET.  
   
- [DataSets, DataTables et DataViews](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
+ [DataSets, DataTables et DataViews](./dataset-datatable-dataview/index.md)  
  Explique comment créer et utiliser des `DataSets`, des `DataSets` typés, des `DataTables` et des `DataViews`.  
   
- [Extraction et modification de données dans ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)  
+ [Extraction et modification de données dans ADO.NET](retrieving-and-modifying-data.md)  
  Décrit comment utiliser des données dans ADO.NET.  
   
- [SQL Server et ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)  
+ [SQL Server et ADO.NET](./sql/index.md)  
  Décrit comment utiliser des fonctions et fonctionnalités spécifiques à SQL Server.  
   
- [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)  
+ [DbProviderFactories](dbproviderfactories.md)  
  Décrit des classes génériques qui vous permettent d'écrire du code indépendant du fournisseur dans ADO.NET.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ADO.NET](../../../../docs/framework/data/adonet/index.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [ADO.NET](index.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

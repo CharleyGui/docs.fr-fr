@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e6a58316-f005-4477-92e1-45cc2eb8c5b4
-ms.openlocfilehash: 839642c4fea45f4f37c5dc351d71417d46d07093
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3719188064388b00c756dd037d4a475ca6debd13
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61877667"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782420"
 ---
 # <a name="detecting-changes-with-sqldependency"></a>Détection des modifications avec SqlDependency
 
@@ -18,9 +18,9 @@ Un objet <xref:System.Data.SqlClient.SqlDependency> peut être associé à un ob
 
 ## <a name="security-considerations"></a>Considérations relatives à la sécurité
 
-L'infrastructure de dépendance repose sur un objet <xref:System.Data.SqlClient.SqlConnection> qui est ouvert lorsque la méthode <xref:System.Data.SqlClient.SqlDependency.Start%2A> est appelée pour recevoir des notifications de modification des données sous-jacentes pour une commande donnée. La capacité d'un client à lancer l'appel de la méthode `SqlDependency.Start` est contrôlée par le biais de l'utilisation de <xref:System.Data.SqlClient.SqlClientPermission> et des attributs de sécurité d'accès du code. Pour plus d’informations, consultez [l’activation des Notifications de requêtes](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md) et [Code Access Security and ADO.NET](../../../../../docs/framework/data/adonet/code-access-security.md).
+L'infrastructure de dépendance repose sur un objet <xref:System.Data.SqlClient.SqlConnection> qui est ouvert lorsque la méthode <xref:System.Data.SqlClient.SqlDependency.Start%2A> est appelée pour recevoir des notifications de modification des données sous-jacentes pour une commande donnée. La capacité d'un client à lancer l'appel de la méthode `SqlDependency.Start` est contrôlée par le biais de l'utilisation de <xref:System.Data.SqlClient.SqlClientPermission> et des attributs de sécurité d'accès du code. Pour plus d’informations, consultez [activation des notifications de requêtes](enabling-query-notifications.md) et de la [sécurité d’accès du code et ADO.net](../code-access-security.md).
 
-### <a name="example"></a>Exemple
+### <a name="example"></a>Exemples
 
 Les étapes suivantes montrent comment déclarer une dépendance, exécuter une commande et recevoir un notification lorsque le jeu de résultats change :
 
@@ -127,5 +127,5 @@ void Termination()
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Notifications de requête dans SQL Server](../../../../../docs/framework/data/adonet/sql/query-notifications-in-sql-server.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Notifications de requête dans SQL Server](query-notifications-in-sql-server.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

@@ -8,16 +8,16 @@ helpviewer_keywords:
 - claims [WCF], comparing
 - claims [WCF]
 ms.assetid: 0c4ec84d-53df-408f-8953-9bc437f56c28
-ms.openlocfilehash: e2d3d33900dd894eea77420aac444ebde0df9a43
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 29254bd661e72b926b21695ccb646480c53b5475
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68970774"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797101"
 ---
 # <a name="how-to-compare-claims"></a>Procédure : comparer des revendications
 
-L’infrastructure de modèle d’identité dans Windows Communication Foundation (WCF) est utilisée pour effectuer une vérification d’autorisation. L’une des tâches fréquentes de cette infrastructure de contrôle consiste notamment à comparer les revendications émises dans le cadre des autorisations à celles requises pour l’exécution des requêtes d’action ou des requêtes d’accès aux ressources. Cette rubrique contient des instructions qui permettent de comparer des revendications, notamment les types de revendication intégrés et personnalisés. Pour plus d’informations sur l’infrastructure du modèle d’identité, consultez [gestion des revendications et autorisation avec le modèle d’identité](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).
+L’infrastructure de modèle d’identité dans Windows Communication Foundation (WCF) est utilisée pour effectuer une vérification d’autorisation. L’une des tâches fréquentes de cette infrastructure de contrôle consiste notamment à comparer les revendications émises dans le cadre des autorisations à celles requises pour l’exécution des requêtes d’action ou des requêtes d’accès aux ressources. Cette rubrique contient des instructions qui permettent de comparer des revendications, notamment les types de revendication intégrés et personnalisés. Pour plus d’informations sur l’infrastructure du modèle d’identité, consultez [gestion des revendications et autorisation avec le modèle d’identité](../feature-details/managing-claims-and-authorization-with-the-identity-model.md).
 
 Comparer des revendications signifie comparer leurs trois composantes, à savoir leur type, leurs droits et leurs ressources avec les composantes d'autres revendications, et ce afin de savoir si elles sont égales. Consultez l’exemple qui suit.
 
@@ -65,7 +65,7 @@ Les types de revendication personnalisés peuvent également être comparés à 
 
 6. Effectuez la comparaison personnalisée nécessaire pour comparer de manière adéquate la revendication en cours à la revendication spécifiée.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 L'exemple suivant illustre le cas d'une comparaison où le type de ressource des revendications personnalisées comparées n'est pas primitif.
 
@@ -74,5 +74,5 @@ L'exemple suivant illustre le cas d'une comparaison où le type de ressource des
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Gestion des revendications et autorisation avec le modèle d’identité](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
-- [Guide pratique pour Créer une revendication personnalisée](../../../../docs/framework/wcf/extending/how-to-create-a-custom-claim.md)
+- [Gestion des revendications et autorisation avec le modèle d’identité](../feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+- [Guide pratique pour Créer une revendication personnalisée](how-to-create-a-custom-claim.md)

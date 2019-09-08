@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e828566-fffe-4d38-abb2-4d68fd73f663
-ms.openlocfilehash: 56d1d11240934036994a14e454cf1a1d8b95226a
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 6082a171d24c55ea52c153bbd920bb7486be78a7
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204539"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784372"
 ---
 # <a name="performing-an-xpath-query-on-a-dataset"></a>Exécution d’une requête XPath sur un DataSet
 La relation entre une synchronisée <xref:System.Data.DataSet> et <xref:System.Xml.XmlDataDocument> vous permet d’utiliser des services XML, tels que la requête XPath (XML Path Language), qui accèdent au **XmlDataDocument** et peuvent exécuter certaines fonctionnalités plus facilement que accès direct au **jeu de données** . Par exemple, au lieu d’utiliser la méthode **Select** d' <xref:System.Data.DataTable> un objet pour parcourir les relations vers d’autres tables dans un **DataSet**, vous pouvez exécuter une requête XPath sur un **XmlDataDocument** synchronisé avec le **DataSet**, pour obtenir un liste d’éléments XML sous la forme d’un <xref:System.Xml.XmlNodeList>. Les nœuds de **XmlNodeList**, castés <xref:System.Xml.XmlElement> en tant que nœuds, peuvent ensuite être passés à la méthode **GetRowFromElement** de **XmlDataDocument**pour <xref:System.Data.DataRow> retourner des références correspondantes aux lignes de la table dans le  **Jeu de données**.  
   
- Ainsi, l'exemple de code suivant exécute une requête XPath « petit-enfant ». Le **jeu de données** est rempli avec trois tables: **Customers**, **Orders**et **OrderDetails**. Dans l’exemple, une relation parent-enfant est d’abord créée entre les tables Customers et **Orders** , et entre les tables **Orders** et **OrderDetails** . Une requête XPath est ensuite exécutée pour retourner un **XmlNodeList** de nœuds **Customers** où un nœud petit-enfant **OrderDetails** a un nœud **ProductID** avec la valeur 43. Fondamentalement, l’exemple utilise la requête XPath pour déterminer quels sont les clients qui ont commandé le produit dont le **ProductID** est 43.  
+ Ainsi, l'exemple de code suivant exécute une requête XPath « petit-enfant ». Le **jeu de données** est rempli avec trois tables : **Customers**, **Orders**et **OrderDetails**. Dans l’exemple, une relation parent-enfant est d’abord créée entre les tables **Customers** et **Orders** , et entre les tables **Orders** et **OrderDetails** . Une requête XPath est ensuite exécutée pour retourner un **XmlNodeList** de nœuds **Customers** où un nœud petit-enfant **OrderDetails** a un nœud **ProductID** avec la valeur 43. Fondamentalement, l’exemple utilise la requête XPath pour déterminer quels sont les clients qui ont commandé le produit dont le **ProductID** est 43.  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection.  
@@ -104,4 +104,4 @@ foreach (XmlNode xmlNode in nodeList)
 ## <a name="see-also"></a>Voir aussi
 
 - [Synchronisation DataSet et XmlDataDocument](dataset-and-xmldatadocument-synchronization.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

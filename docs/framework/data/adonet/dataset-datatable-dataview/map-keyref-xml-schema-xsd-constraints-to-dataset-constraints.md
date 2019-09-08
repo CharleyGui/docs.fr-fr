@@ -2,12 +2,12 @@
 title: Mapper les contraintes keyref de schéma XML (XSD) aux contraintes de DataSet
 ms.date: 03/30/2017
 ms.assetid: 5b634fea-cc1e-4f6b-9454-10858105b1c8
-ms.openlocfilehash: 611322065a4df53d1a3149ef4e1ca5592f149081
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: b5ffe69886b08903feab4373b1cd5c5244b3b3b9
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203439"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784513"
 ---
 # <a name="map-keyref-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapper les contraintes keyref de schéma XML (XSD) aux contraintes de DataSet
 L’élément **keyref** vous permet d’établir des liens entre des éléments dans un document. Le résultat est similaire à une relation de clé étrangère dans une base de données relationnelle. Si un schéma spécifie l’élément **keyref** , l’élément est converti pendant le processus de mappage de schéma en une contrainte de clé étrangère correspondante sur les colonnes dans <xref:System.Data.DataSet>les tables de. Par défaut, l’élément **keyref** génère également une relation, avec les **Propriétés ParentTable**, **ChildTable**, **ParentColumn**et **ChildColumn** spécifiées sur la relation.  
@@ -16,7 +16,7 @@ L’élément **keyref** vous permet d’établir des liens entre des éléments
   
 |Nom d'attribut|Description|  
 |--------------------|-----------------|  
-|**msdata:ConstraintOnly**|Si **ConstraintOnly = "true"** est spécifié sur l’élément **keyref** du schéma, une contrainte est créée, mais aucune relation n’est créée. Si cet attribut n’est pas spécifié (ou a lavaleur false), la contrainte et la relation sont créées dans le **DataSet**.|  
+|**msdata:ConstraintOnly**|Si **ConstraintOnly = "true"** est spécifié sur l’élément **keyref** du schéma, une contrainte est créée, mais aucune relation n’est créée. Si cet attribut n’est pas spécifié (ou a la valeur **false**), la contrainte et la relation sont créées dans le **DataSet**.|  
 |**msdata:ConstraintName**|Si l’attribut **ConstraintName** est spécifié, sa valeur est utilisée comme nom de la contrainte. Dans le cas contraire, l’attribut **Name** de l’élément **keyref** dans le schéma fournit le nom de la contrainte dans le **DataSet**.|  
 |**msdata:UpdateRule**|Si l’attribut **UpdateRule** est spécifié dans l’élément **keyref** du schéma, sa valeur est assignée à la propriété **UpdateRule** de la contrainte dans le **DataSet**. Sinon, la propriété **UpdateRule** a la valeur **cascade**.|  
 |**msdata:DeleteRule**|Si l’attribut **DeleteRule** est spécifié dans l’élément **keyref** du schéma, sa valeur est assignée à la propriété de contrainte **DeleteRule** dans le **DataSet**. Sinon, la propriété **DeleteRule** a la valeur **cascade**.|  
@@ -66,14 +66,14 @@ L’élément **keyref** vous permet d’établir des liens entre des éléments
 </xs:schema>  
 ```  
   
- Le processus de mappage de schéma en langage XSD (XML Schema Definition) génère le **jeu de données** suivant avec deux tables:  
+ Le processus de mappage de schéma en langage XSD (XML Schema Definition) génère le **jeu de données** suivant avec deux tables :  
   
 ```  
 OrderDetail(OrderNo, ItemNo) and  
 Order(OrderNumber, EmpNumber)  
 ```  
   
- En outre, le **jeu de données** définit les contraintes suivantes:  
+ En outre, le **jeu de données** définit les contraintes suivantes :  
   
 - Contrainte unique sur la table **Order** .  
   
@@ -85,7 +85,7 @@ Order(OrderNumber, EmpNumber)
     IsPrimaryKey: False  
     ```  
   
-- Relation entre les tables **Order** et **OrderDetail** . La propriété Nested a la valeur **false** , car les deux éléments ne sont pas imbriqués dans le schéma.  
+- Relation entre les tables **Order** et **OrderDetail** . La propriété **Nested** a la valeur **false** , car les deux éléments ne sont pas imbriqués dans le schéma.  
   
     ```  
               ParentTable: Order  
@@ -113,4 +113,4 @@ Order(OrderNumber, EmpNumber)
 
 - [Mappage des contraintes de schéma XML (XSD) aux contraintes de DataSet](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
 - [Génération de relations de DataSet à partir du schéma XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

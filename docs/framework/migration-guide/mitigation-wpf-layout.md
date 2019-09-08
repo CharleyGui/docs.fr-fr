@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 805ffd7f-8d1e-427e-a648-601ca8ec37a5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c261a025548b2d22f6df3051dbcdb637723d4324
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: d266ad33110d2bda8f7911d89981c372624c3f36
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64599473"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70779068"
 ---
 # <a name="mitigation-wpf-layout"></a>Atténuation : disposition WPF
 La disposition des contrôles WPF peut varier légèrement.  
@@ -40,4 +40,4 @@ La disposition des contrôles WPF peut varier légèrement.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modifications de reciblage](../../../docs/framework/migration-guide/retargeting-changes-in-the-net-framework-4-6.md)
+- [Modifications de reciblage](retargeting-changes-in-the-net-framework-4-6.md)

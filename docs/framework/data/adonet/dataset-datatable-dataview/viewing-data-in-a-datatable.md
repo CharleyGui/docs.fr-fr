@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1d26e0fb-f6e0-4afa-9a9c-b8d55b8f20dc
-ms.openlocfilehash: ea92b8a5e46bdaa8e94756cd28a3fbcb2789d7b3
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: c13f0b802b2714a17ea4014625a65ebd1b0011f4
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204391"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785854"
 ---
 # <a name="viewing-data-in-a-datatable"></a>Affichage des données dans un DataTable
 
@@ -87,7 +87,7 @@ else
 }
 ```
 
-La méthode **Select** peut être utilisée pour retourner des lignes avec des valeurs **RowState** ou Field différentes. L’exemple suivant retourne un tableau **DataRow** qui référence toutes les lignes qui ont été supprimées, et retourne un autre tableau **DataRow** qui référence toutes les lignes, classées par **CustLName**, où la colonne **CustID** est supérieure à 5. Pour plus d’informations sur l’affichage des informations dans la ligne supprimée, consultez [États des lignes et versions de ligne](row-states-and-row-versions.md).
+La méthode **Select** peut être utilisée pour retourner des lignes avec des valeurs **RowState** ou Field différentes. L’exemple suivant retourne un tableau **DataRow** qui référence toutes les lignes qui ont été supprimées, et retourne un autre tableau **DataRow** qui référence toutes les lignes, classées par **CustLName**, où la colonne **CustID** est supérieure à 5. Pour plus d’informations sur l’affichage des informations dans la ligne **supprimée** , consultez [États des lignes et versions de ligne](row-states-and-row-versions.md).
 
 ```vb
 ' Retrieve all deleted rows.
@@ -115,4 +115,4 @@ DataRow[] custRows = workTable.Select("CustID > 5", "CustLName ASC");
 - <xref:System.Data.DataViewRowState>
 - [Manipulation des données dans un DataTable](manipulating-data-in-a-datatable.md)
 - [États des lignes et versions des lignes](row-states-and-row-versions.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

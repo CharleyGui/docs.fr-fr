@@ -2,12 +2,12 @@
 title: System.DateTimeOffset, méthodes
 ms.date: 03/30/2017
 ms.assetid: 25b3e5c0-7603-4a70-b3e5-2149e3da69a2
-ms.openlocfilehash: a638a4fcc156727f734ff480a18b9997bc9d2e34
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2e29cf02d4f7e8004782264bf940bb1faf393269
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959083"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781551"
 ---
 # <a name="systemdatetimeoffset-methods"></a>System.DateTimeOffset, méthodes
 Une fois mappés dans le modèle objet ou le fichier de mappage externe, LINQ to SQL vous permet d'appeler la plupart des méthodes, opérateurs et propriétés <xref:System.DateTimeOffset?displayProperty=nameWithType> à partir des requêtes LINQ to SQL.  
@@ -28,6 +28,6 @@ Une fois mappés dans le modèle objet ou le fichier de mappage externe, LINQ to
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts relatifs aux requêtes](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)
-- [Création du modèle objet](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
-- [Mappage de type SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)
+- [Concepts relatifs aux requêtes](query-concepts.md)
+- [Création du modèle objet](creating-the-object-model.md)
+- [Mappage de type SQL-CLR](sql-clr-type-mapping.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ddf1c83c-9d40-45e6-b04d-9828c6cbbfdc
-ms.openlocfilehash: 304387197c7c6ca31d76ce429cd1516be27ba7b9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c464762e82a24aab399a23ecb26420b5dce61f55
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938171"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782389"
 ---
 # <a name="enumerating-instances-of-sql-server-adonet"></a>Énumération des instances de SQL Server (ADO.NET)
 SQL Server permet aux applications de trouver des instances de SQL Server dans le réseau actuel. La classe <xref:System.Data.Sql.SqlDataSourceEnumerator> expose ces informations au développeur d'applications, en fournissant un <xref:System.Data.DataTable> contenant des informations sur tous les serveurs visibles. Cette table retournée contient une liste d’instances de serveur disponibles sur le réseau qui correspond à la liste fournie lorsqu’un utilisateur tente de créer une nouvelle connexion, puis développe la liste déroulante contenant tous les serveurs disponibles dans les **Propriétés de connexion.** boîte de dialogue. Les résultats affichés ne sont pas toujours complets.  
@@ -60,7 +60,7 @@ System.Data.DataTable dataTable = instance.GetDataSources();
   
  SQL Server fournit des informations sur <xref:System.Data.Sql.SqlDataSourceEnumerator> l’utilisation d’un service Windows externe nommé SQL Browser. Ce service est activé par défaut mais les administrateurs peuvent l'arrêter ou le désactiver, ce qui rend l'instance du serveur invisible pour cette classe.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'application console suivante extrait des informations sur toutes les instances de SQL Server visibles et affiche les informations dans la fenêtre de console.  
   
 ```vb  
@@ -126,5 +126,5 @@ class Program
   
 ## <a name="see-also"></a>Voir aussi
 
-- [SQL Server et ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [SQL Server et ADO.NET](index.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

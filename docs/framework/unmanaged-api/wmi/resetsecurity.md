@@ -1,6 +1,6 @@
 ---
-title: ResetSecurity (fonction) (référence des API non managées)
-description: La fonction ResetSecurity assigne un jeton d’emprunt d’identité pour le thread actuel.
+title: Fonction ResetSecurity (référence des API non managées)
+description: La fonction ResetSecurity assigne un jeton d’emprunt d’identité au thread actuel.
 ms.date: 11/06/2017
 api_name:
 - ResetSecurity
@@ -16,14 +16,14 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d3d87fa10dafba326147bcaa39836b631291ef1c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1636d7de8273389e785131dbc1145affd5d3b45f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67783127"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798257"
 ---
-# <a name="resetsecurity-function"></a>ResetSecurity (fonction)
+# <a name="resetsecurity-function"></a>ResetSecurity fonction)
 Assigne le jeton d’emprunt d’identité fourni au thread actif.   
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -39,16 +39,16 @@ HRESULT ResetSecurity (
 ## <a name="parameters"></a>Paramètres
 
 `token`  
-[in] Le jeton d’emprunt d’identité à associer avec le thread actuel. Sa valeur peut être `null`. 
+dans Jeton d’emprunt d’identité à associer au thread actuel. Sa valeur peut être `null`. 
 
 ## <a name="return-value"></a>Valeur de retour
 
-Si la fonction réussit, la valeur de retour est `S_OK` (0).
+Si la fonction est réussie, la valeur de retour `S_OK` est (0).
 
-Si la fonction échoue, la valeur de retour est un code d’erreur différent de zéro. Pour obtenir les informations d’erreur étendues, appelez le [GetErrorInfo](geterrorinfo.md) (fonction).
+Si la fonction échoue, la valeur de retour est un code d’erreur différent de zéro. Pour afficher les informations d’erreur étendues, appelez la fonction [GetErrorInfo](geterrorinfo.md) .
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  
   
@@ -56,4 +56,4 @@ Si la fonction échoue, la valeur de retour est un code d’erreur différent de
   
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performances (référence des API non managées)](index.md)
+- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)

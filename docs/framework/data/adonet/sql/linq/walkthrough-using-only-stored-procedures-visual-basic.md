@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 5a736a30-ba66-4adb-b87c-57d19476e862
-ms.openlocfilehash: 159b65b4b58b9142a168401ea2a881af2714df5f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a1994d100c4d18d5fa3642e27d0dcb8823800549
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946641"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70780972"
 ---
 # <a name="walkthrough-using-only-stored-procedures-visual-basic"></a>Procédure pas à pas : Utilisation de procédures stockées uniquement (Visual Basic)
 Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] de base complet pour accéder aux données à l'aide de procédures stockées uniquement. Cette approche est souvent utilisée par les administrateurs de base de données pour limiter les moyens d'accès au magasin de données.  
   
 > [!NOTE]
-> Vous pouvez également utiliser des procédures stockées dans les applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pour substituer le comportement par défaut, plus particulièrement pour les processus `Create`, `Update` et `Delete`. Pour plus d’informations, consultez [Personnalisation des opérations d’insertion, de mise à jour et de suppression](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md).  
+> Vous pouvez également utiliser des procédures stockées dans les applications [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pour substituer le comportement par défaut, plus particulièrement pour les processus `Create`, `Update` et `Delete`. Pour plus d’informations, consultez [Personnalisation des opérations d’insertion, de mise à jour et de suppression](customizing-insert-update-and-delete-operations.md).  
   
- Dans le cadre de cette procédure pas à pas, vous allez utiliser deux méthodes qui ont été mappées à des procédures stockées dans l’exemple de base de données Northwind: CustOrdersDetail et CustOrderHist. Le mappage se produit lorsque vous exécutez l’outil en ligne de commande SqlMetal pour générer un fichier Visual Basic. Pour plus d'informations, consultez la section Composants requis par la suite dans cette procédure pas à pas.  
+ Dans le cadre de cette procédure pas à pas, vous allez utiliser deux méthodes qui ont été mappées à des procédures stockées dans l’exemple de base de données Northwind : CustOrdersDetail et CustOrderHist. Le mappage se produit lorsque vous exécutez l’outil en ligne de commande SqlMetal pour générer un fichier Visual Basic. Pour plus d'informations, consultez la section Composants requis par la suite dans cette procédure pas à pas.  
   
  Cette procédure pas à pas ne repose pas sur le Concepteur Objet Relationnel. Les développeurs qui utilisent Visual Studio peuvent également utiliser le Concepteur O/R pour implémenter les fonctionnalités de procédure stockée. Consultez [LINQ to SQL Tools dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
@@ -32,7 +32,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 - Exemple de base de données Northwind.  
   
-     Si cette base de données n'est pas disponible sur votre ordinateur de développement, vous pouvez la télécharger à partir du site de téléchargement Microsoft. Pour obtenir des instructions, consultez [téléchargement d’exemples de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md). Après avoir téléchargé la base de données, copiez le fichier northwnd.mdf dans le dossier c:\linqtest3.  
+     Si cette base de données n'est pas disponible sur votre ordinateur de développement, vous pouvez la télécharger à partir du site de téléchargement Microsoft. Pour obtenir des instructions, consultez [téléchargement d’exemples de bases de données](downloading-sample-databases.md). Après avoir téléchargé la base de données, copiez le fichier northwnd.mdf dans le dossier c:\linqtest3.  
   
 - Fichier de code Visual Basic généré à partir de la base de données Northwind.  
   
@@ -40,7 +40,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
      **sqlmetal /code:"c:\linqtest3\northwind.vb" /language:vb "c:\linqtest3\northwnd.mdf" /sprocs /functions /pluralize**  
   
-     Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../../../docs/framework/tools/sqlmetal-exe-code-generation-tool.md).  
+     Pour plus d’informations, consultez [SqlMetal.exe (outil de génération de code)](../../../../tools/sqlmetal-exe-code-generation-tool.md).  
   
 ## <a name="overview"></a>Présentation  
  Cette procédure pas à pas se compose de six tâches principales :  
@@ -131,9 +131,9 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 4. Cliquez avec le bouton droit sur **Label1**, puis cliquez sur **Propriétés**.  
   
-5. Modifiez la propriété **Text** de **Label1** en **Enter OrderID:** .  
+5. Modifiez la propriété **Text** de **Label1** en **Enter OrderID :** .  
   
-6. De la même façon pour **Label2**, modifiez la propriété **Text** de **Label2** en **Enter CustomerID:** .  
+6. De la même façon pour **Label2**, modifiez la propriété **Text** de **Label2** en **Enter CustomerID :** .  
   
 7. De la même façon, modifiez la propriété **Text** de **Button1** en **Order Details**.  
   
@@ -182,7 +182,7 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
      Cliquez sur **OK** pour fermer la boîte de message.  
   
-5. Dans le menu Déboguer, cliquez sur **arrêter**le débogage.  
+5. Dans le menu **Déboguer** , cliquez sur **arrêter le débogage**.  
   
      La session de débogage s'arrête.  
   
@@ -193,5 +193,5 @@ Cette procédure pas à pas fournit un scénario [!INCLUDE[vbtecdlinq](../../../
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Apprentissage par les procédures pas à pas](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)
-- [Procédures stockées](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)
+- [Apprentissage par les procédures pas à pas](learning-by-walkthroughs.md)
+- [Procédures stockées](stored-procedures.md)

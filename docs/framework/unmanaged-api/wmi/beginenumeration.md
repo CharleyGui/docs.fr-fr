@@ -1,6 +1,6 @@
 ---
-title: BeginEnumeration, fonction (référence des API non managées)
-description: La fonction BeginEnumeration réinitialise l’énumérateur au début de l’énumération
+title: Fonction BeginEnumeration (référence des API non managées)
+description: La fonction BeginEnumeration réinitialise un énumérateur au début de l’énumération
 ms.date: 11/06/2017
 api_name:
 - BeginEnumeration
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ccf39c019094d896ca20534fccbbccf38ab1dd3
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: de36650aa2b206b5e9734b38c6067a3a79de610c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67761808"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798790"
 ---
 # <a name="beginenumeration-function"></a>BeginEnumeration, fonction
-Réinitialise l’énumérateur au début de l’énumération.  
+Rétablit un énumérateur au début de l’énumération.  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -41,64 +41,64 @@ HRESULT BeginEnumeration (
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`\
-[in] Ce paramètre n’est pas utilisé.
+dans Ce paramètre n’est pas utilisé.
 
 `ptr`\
-[in] Un pointeur vers un [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `lEnumFlags`\
-[in] Une combinaison au niveau du bit des indicateurs ou des valeurs décrites dans le [notes](#remarks) section qui contrôle les propriétés incluses dans l’énumération.
+dans Combinaison d’opérations de bits des indicateurs ou valeurs décrites dans la section [Notes](#remarks) qui contrôle les propriétés incluses dans l’énumération.
 
 ## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |`Value`  |Description  |
+|Constante  |Valeur  |Description  |
 |---------|---------|---------|
-|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | La combinaison d’indicateurs dans `lEnumFlags` n’est pas valide ou non valide argument a été spécifié. |
-|`WBEM_E_UNEXPECTED` | 0x8004101d | Un deuxième appel à `BeginEnumeration` a été effectuée sans appel intermédiaire à [ `EndEnumeration` ](endenumeration.md). |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Pas assez de mémoire est disponible pour commencer une nouvelle énumération. |
-|`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
+|`WBEM_E_INVALID_PARAMETER` | 0x80041008 | La combinaison d’indicateurs dans `lEnumFlags` n’est pas valide ou un argument non valide a été spécifié. |
+|`WBEM_E_UNEXPECTED` | 0x8004101d | Un deuxième appel à `BeginEnumeration` a été effectué sans appel à. [`EndEnumeration`](endenumeration.md) |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Mémoire disponible insuffisante pour commencer une nouvelle énumération. |
+|`WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
   
 ## <a name="remarks"></a>Notes
 
-Cette fonction encapsule un appel à la [IWbemClassObject::BeginEnumeration](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) (méthode).
+Cette fonction encapsule un appel à la méthode [IWbemClassObject :: BeginEnumeration](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
-Les indicateurs qui peuvent être passés en tant que le `lEnumFlags` argument sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code.  Vous pouvez combiner un indicateur de chaque groupe avec n’importe quel indicateur à partir d’un autre groupe. Toutefois, les indicateurs à partir du même groupe sont mutuellement exclusifs. 
+Les indicateurs qui peuvent être passés en tant `lEnumFlags` qu’argument sont définis dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code.  Vous pouvez associer un indicateur de chaque groupe à n’importe quel indicateur de n’importe quel autre groupe. Toutefois, les indicateurs du même groupe s’excluent mutuellement. 
 
 **Groupe 1**
 
 |Constante  |Valeur  |Description  |
 |---------|---------|---------|
-|`WBEM_FLAG_KEYS_ONLY` | 0x4 | Inclure les propriétés qui constituent la clé uniquement. |
-|`WBEM_FLAG_REFS_ONLY` | 0x8 | Inclure les propriétés qui sont des références d’objet. |
+|`WBEM_FLAG_KEYS_ONLY` | 0x4 | Inclut les propriétés qui constituent la clé uniquement. |
+|`WBEM_FLAG_REFS_ONLY` | 0x8 | Inclut les propriétés qui sont des références d’objet uniquement. |
 
 **Groupe 2**
 
 Constante  |Valeur  |Description  |
 |---------|---------|---------|
-|`WBEM_FLAG_SYSTEM_ONLY` | 0x30 | Limiter l’énumération aux propriétés du système. |
-|`WBEM_FLAG_NONSYSTEM_ONLY` | 0x40 | Les propriétés locales et propagées mais exclut les propriétés système à partir de l’énumération. |
+|`WBEM_FLAG_SYSTEM_ONLY` | 0x30 | Limitez l’énumération aux propriétés système uniquement. |
+|`WBEM_FLAG_NONSYSTEM_ONLY` | 0x40 | Incluez les propriétés locales et propagées, mais excluez les propriétés système de l’énumération. |
 
 Pour les classes :
 
 Constante  |Valeur  |Description  |
 |---------|---------|---------|
-|`WBEM_FLAG_CLASS_OVERRIDES_ONLY` | 0x100 | Limiter l’énumération aux propriétés de substitution dans la définition de classe. |
-|`WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES` | 0x100 | Limiter l’énumération aux propriétés de substitution dans la définition de classe en cours et de nouvelles propriétés définies dans la classe. |
-| `WBEM_MASK_CLASS_CONDITION` | 0x300 | Un masque (au lieu d’un indicateur) à appliquer par rapport à un `lEnumFlags` valeur à vérifier si `WBEM_FLAG_CLASS_OVERRIDES_ONLY` ou `WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES` est définie. |
-| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Limiter l’énumération aux propriétés qui sont définies ou modifiées dans la classe elle-même. |
-| `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Limiter l’énumération de propriétés qui sont héritées de classes de base. |
+|`WBEM_FLAG_CLASS_OVERRIDES_ONLY` | 0x100 | Limitez l’énumération aux propriétés substituées dans la définition de classe. |
+|`WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES` | 0x100 | Limitez l’énumération aux propriétés substituées dans la définition de classe actuelle et aux nouvelles propriétés définies dans la classe. |
+| `WBEM_MASK_CLASS_CONDITION` | 0x300 | Masque (plutôt qu’un indicateur) à appliquer à une `lEnumFlags` valeur pour vérifier `WBEM_FLAG_CLASS_OVERRIDES_ONLY` si ou `WBEM_FLAG_CLASS_LOCAL_AND_OVERRIDES` est défini. |
+| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Limitez l’énumération aux propriétés définies ou modifiées dans la classe elle-même. |
+| `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Limitez l’énumération aux propriétés héritées des classes de base. |
 
 Pour les instances :
 
-Constante  |Valeur  |Description  |
+Constante  |`Value`  |Description  |
 |---------|---------|---------|
-| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Limiter l’énumération aux propriétés qui sont définies ou modifiées dans la classe elle-même. |
-| `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Limiter l’énumération de propriétés qui sont héritées de classes de base. |
+| `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Limitez l’énumération aux propriétés définies ou modifiées dans la classe elle-même. |
+| `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Limitez l’énumération aux propriétés héritées des classes de base. |
 
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  
   
@@ -106,4 +106,4 @@ Constante  |Valeur  |Description  |
   
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performances (référence des API non managées)](index.md)
+- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)

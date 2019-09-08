@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 09f2e4ee-1d08-4ba8-8936-83394fee319d
-ms.openlocfilehash: 8bff92fe40ec668dfa634c3b97f2f1df238f159b
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: d9767844400d67e81c7065148b22c62352af0428
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203962"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784787"
 ---
 # <a name="applying-an-xslt-transform-to-a-dataset"></a>Application d'une transformation XSLT à un DataSet
 La méthode **WriteXml** de <xref:System.Data.DataSet> vous permet d’écrire le contenu d’un **DataSet** sous forme de données XML. La tâche qui suit généralement consiste à transformer ce XML en un autre format à l'aide de transformations XSL (XSLT). Toutefois, la synchronisation d’un DataSet <xref:System.Xml.XmlDataDocument> avec un objet vous permet d’appliquer une feuille de style XSLT au contenu d’un **DataSet** sans avoir à écrire d’abord le contenu du **DataSet** sous forme de données XML à l’aide de **WriteXml**.  
@@ -126,4 +126,4 @@ writer.Close();
 ## <a name="see-also"></a>Voir aussi
 
 - [Synchronisation DataSet et XmlDataDocument](dataset-and-xmldatadocument-synchronization.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

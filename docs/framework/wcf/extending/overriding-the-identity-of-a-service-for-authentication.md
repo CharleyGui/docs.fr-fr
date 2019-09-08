@@ -5,24 +5,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d613a22b-07d7-41a4-bada-1adc653b9b5d
-ms.openlocfilehash: ec1acc009e58408fc41c60134538340486f19f75
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: eed8a1edaae5fab03ad9e78d29803676debd1b9a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949675"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796911"
 ---
 # <a name="overriding-the-identity-of-a-service-for-authentication"></a>Substitution de l'identité d'un service pour l'authentification
-Généralement, vous n'avez pas besoin de définir l'identité sur un service car la sélection d'un type d'informations d'identification du client impose le type d'identité exposé dans les métadonnées du service. Par exemple, le code de configuration suivant utilise l' `clientCredentialType` [ \<élément WSHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) et affecte à l’attribut la valeur Windows.  
+Généralement, vous n'avez pas besoin de définir l'identité sur un service car la sélection d'un type d'informations d'identification du client impose le type d'identité exposé dans les métadonnées du service. Par exemple, le code de configuration suivant utilise l' `clientCredentialType` [ \<élément WSHttpBinding >](../../configure-apps/file-schema/wcf/wshttpbinding.md) et affecte à l’attribut la valeur Windows.  
 
  Le fragment WSDL (Web Services Description Language) suivant affiche l'identité du point de terminaison défini précédemment. Dans cet exemple, le service s’exécute en tant que service auto-hébergé sous un compte d’utilisateurusername@contoso.comparticulier () et, par conséquent, l’identité UPN (nom d’utilisateur principal) contient le nom du compte. L'UPN est également appelé nom de connexion d'utilisateur dans un domaine Windows.  
 
- Pour obtenir un exemple d’application illustrant le paramètre d’identité, consultez [exemple d’identité de service](../../../../docs/framework/wcf/samples/service-identity-sample.md). Pour plus d’informations sur l’identité du service, consultez [identité du service et authentification](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Pour obtenir un exemple d’application illustrant le paramètre d’identité, consultez [exemple d’identité de service](../samples/service-identity-sample.md). Pour plus d’informations sur l’identité du service, consultez [identité du service et authentification](../feature-details/service-identity-and-authentication.md).  
   
 ## <a name="kerberos-authentication-and-identity"></a>Authentification et identité Kerberos  
- Par défaut, lorsqu’un service est configuré pour utiliser des informations d’identification Windows, une [ \<identité >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md) élément contenant un [ \<élément userPrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/userprincipalname.md) ou [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) est généré dans le WSDL. Si le service s’exécute sous le `LocalSystem`compte `LocalService`, ou `NetworkService` , un nom de principal du service (SPN) est généré par défaut sous la forme `host/`d’un nom d' \< *hôte*>, car ces comptes ont accès à données SPN de l’ordinateur. Si le service s’exécute sous un compte différent, Windows Communication Foundation (WCF) génère un UPN au \<format *NomUtilisateur*>@<*nom_domaine*`>`. Cela est dû au fait que l'authentification Kerberos requiert qu'un UPN ou SPN soit fourni au client pour authentifier le service.  
+ Par défaut, lorsqu’un service est configuré pour utiliser des informations d’identification Windows, une [ \<identité >](../../configure-apps/file-schema/wcf/identity.md) élément contenant un [ \<élément userPrincipalName >](../../configure-apps/file-schema/wcf/userprincipalname.md) ou [ \<servicePrincipalName >](../../configure-apps/file-schema/wcf/serviceprincipalname.md) est généré dans le WSDL. Si le service s’exécute sous le `LocalSystem`compte `LocalService`, ou `NetworkService` , un nom de principal du service (SPN) est généré par défaut sous la forme `host/`d’un nom d' \< *hôte*>, car ces comptes ont accès à données SPN de l’ordinateur. Si le service s’exécute sous un compte différent, Windows Communication Foundation (WCF) génère un UPN au \<format *NomUtilisateur*>@<*nom_domaine*`>`. Cela est dû au fait que l'authentification Kerberos requiert qu'un UPN ou SPN soit fourni au client pour authentifier le service.  
   
- Vous pouvez également utiliser l'outil Setspn.exe pour inscrire un SPN supplémentaire avec un compte de service dans un domaine. Vous pouvez ensuite utiliser le SPN comme identité du service. Pour télécharger l’outil, consultez [outil du kit de ressources Windows 2000: Setspn. exe](https://go.microsoft.com/fwlink/?LinkId=91752). Pour plus d’informations sur l’outil, consultez [vue d’ensemble de setspn](https://go.microsoft.com/fwlink/?LinkId=61374).  
+ Vous pouvez également utiliser l'outil Setspn.exe pour inscrire un SPN supplémentaire avec un compte de service dans un domaine. Vous pouvez ensuite utiliser le SPN comme identité du service. Pour télécharger l’outil, consultez [outil du kit de ressources Windows 2000 : Setspn. exe](https://go.microsoft.com/fwlink/?LinkId=91752). Pour plus d’informations sur l’outil, consultez [vue d’ensemble de setspn](https://go.microsoft.com/fwlink/?LinkId=61374).  
   
 > [!NOTE]
 > Pour utiliser le type d'informations d'identification Windows sans négociation, le compte d'utilisateur du service doit avoir accès au SPN inscrit avec le domaine Active Directory. Pour ce faire, vous pouvez procéder de différentes façons :  
@@ -59,5 +59,5 @@ Généralement, vous n'avez pas besoin de définir l'identité sur un service ca
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Créer un vérificateur d’identité client personnalisé](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)
-- [Identité du service et authentification](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+- [Guide pratique pour Créer un vérificateur d’identité client personnalisé](how-to-create-a-custom-client-identity-verifier.md)
+- [Identité du service et authentification](../feature-details/service-identity-and-authentication.md)

@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 91e27206-01fb-4c7a-8afc-1383a6ac5067
-ms.openlocfilehash: ff33196f83e2c0d8d759e4ffc3fb7442e8ba0e3b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2de0182cc0b87768a9cff553b7ec6e77f8ccc7b8
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940092"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793773"
 ---
 # <a name="how-to-detect-and-resolve-conflicting-submissions"></a>Procédure : Détecter et résoudre des soumissions en conflit
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fournit de nombreuses ressources pour détecter et résoudre des conflits issus de modifications effectuées par plusieurs utilisateurs dans la base de données. Pour plus d'informations, voir [Procédure : Gérer les conflits](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)de modification.  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] fournit de nombreuses ressources pour détecter et résoudre des conflits issus de modifications effectuées par plusieurs utilisateurs dans la base de données. Pour plus d'informations, voir [Procédure : Gérer les conflits](how-to-manage-change-conflicts.md)de modification.  
   
 ## <a name="example"></a>Exemple  
  L’exemple suivant montre un `try` / `catch` bloc qui intercepte <xref:System.Data.Linq.ChangeConflictException> une exception. La fenêtre de console affiche des informations sur les entités et les membres de chaque conflit.  
@@ -26,5 +26,5 @@ ms.locfileid: "69940092"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Apport et soumission de modifications de données](../../../../../../docs/framework/data/adonet/sql/linq/making-and-submitting-data-changes.md)
-- [Guide pratique pour Gérer les conflits de modification](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)
+- [Apport et soumission de modifications de données](making-and-submitting-data-changes.md)
+- [Guide pratique pour Gérer les conflits de modification](how-to-manage-change-conflicts.md)

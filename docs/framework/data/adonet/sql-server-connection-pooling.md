@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7e51d44e-7c4e-4040-9332-f0190fe36f07
-ms.openlocfilehash: 7581031b022c9c53568a616de66584be9ef7229c
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 2c73bec644a9a76ba05d3299183e8f1643c8e870
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70041193"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794318"
 ---
 # <a name="sql-server-connection-pooling-adonet"></a>Regroupement de connexions SQL Server (ADO.NET)
 La connexion à un serveur de base de données consiste généralement en plusieurs étapes de longue durée. Un canal physique tel qu'un socket ou un canal nommé doit être établi, le contrôle initial avec le serveur doit avoir lieu, les informations de chaîne de connexion doivent être analysées, la connexion doit être authentifiée par le serveur, des contrôles doivent être effectués pour l'inscription dans la transaction en cours, etc.  
@@ -67,7 +67,7 @@ using (SqlConnection connection = new SqlConnection(
  Le dispositif de regroupement de connexions répond à ces requêtes de connexion en réallouant les connexions à mesure qu'elles se libèrent dans le pool. Si la taille maximale du pool est atteinte et qu'aucune connexion utilisable n'est disponible, la requête est mise en attente. Le dispositif de regroupement de connexions tente ensuite de récupérer des connexions jusqu'à ce que le délai de temporisation ait expiré (la valeur par défaut est de 15 secondes). Si le dispositif de regroupement de connexions ne peut pas répondre à la requête avant que le délai de temporisation de la connexion ait expiré, une exception est levée.  
   
 > [!CAUTION]
-> Il est vivement recommandé de toujours fermer la connexion lorsque vous avez terminé de l'utiliser, de sorte qu'elle soit retournée au pool. Pour ce faire, vous pouvez utiliser `Close` les `Dispose` méthodes ou de `Connection` l’objet, ou ouvrir toutes les connexions à `using` l’intérieur C#d’une instruction `Using` dans, ou une instruction dans Visual Basic. Les connexions qui ne sont pas explicitement fermées risquent de ne pas être ajoutées ni retournées au pool. Pour plus d’informations, consultez Using, [ [instruction](../../../csharp/language-reference/keywords/using-statement.md) ou How to: Supprime une ressource](../../../visual-basic/programming-guide/language-features/control-flow/how-to-dispose-of-a-system-resource.md) système pour Visual Basic.  
+> Il est vivement recommandé de toujours fermer la connexion lorsque vous avez terminé de l'utiliser, de sorte qu'elle soit retournée au pool. Pour ce faire, vous pouvez utiliser `Close` les `Dispose` méthodes ou de `Connection` l’objet, ou ouvrir toutes les connexions à `using` l’intérieur C#d’une instruction `Using` dans, ou une instruction dans Visual Basic. Les connexions qui ne sont pas explicitement fermées risquent de ne pas être ajoutées ni retournées au pool. Pour plus d’informations, consultez Using, [ [instruction](../../../csharp/language-reference/keywords/using-statement.md) ou How to : Supprime une ressource](../../../visual-basic/programming-guide/language-features/control-flow/how-to-dispose-of-a-system-resource.md) système pour Visual Basic.  
   
 > [!NOTE]
 > N'appelez pas une commande `Close` ou `Dispose` sur une `Connection`, un `DataReader` ou tout autre objet managé dans la méthode `Finalize` de votre classe. Dans un finaliseur, libérez seulement les ressources non managées que votre classe possède directement. Si votre classe ne possède pas de ressource non managée, n'incluez pas une méthode `Finalize` dans la définition de classe. Pour plus d’informations, consultez [garbage collection](../../../standard/garbage-collection/index.md).  
@@ -127,11 +127,11 @@ using (SqlConnection connection = new SqlConnection(
  Après qu'un rôle d'application SQL Server a été activé en appelant la procédure stockée système `sp_setapprole`, le contexte de sécurité de cette connexion ne peut pas être rétabli. Toutefois, lorsque le regroupement est activé, la connexion est retournée au pool et une erreur se produit en cas de réutilisation de la connexion regroupée. Pour plus d’informations, consultez l’article de la base de connaissances, «[Erreurs de rôle d’application SQL avec OLE DB regroupement de ressources](https://support.microsoft.com/default.aspx?scid=KB;EN-US;Q229564)».  
   
 ### <a name="application-role-alternatives"></a>Alternatives aux rôles d'application  
- Il est recommandé de tirer parti des mécanismes de sécurité qui peuvent être employés à la place des rôles d'application. Pour plus d’informations, consultez [création de rôles d’application dans SQL Server](../../../../docs/framework/data/adonet/sql/creating-application-roles-in-sql-server.md).  
+ Il est recommandé de tirer parti des mécanismes de sécurité qui peuvent être employés à la place des rôles d'application. Pour plus d’informations, consultez [création de rôles d’application dans SQL Server](./sql/creating-application-roles-in-sql-server.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Regroupement de connexions](../../../../docs/framework/data/adonet/connection-pooling.md)
-- [SQL Server et ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)
-- [Compteurs de performance](../../../../docs/framework/data/adonet/performance-counters.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Regroupement de connexions](connection-pooling.md)
+- [SQL Server et ADO.NET](./sql/index.md)
+- [Compteurs de performance](performance-counters.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

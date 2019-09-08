@@ -18,12 +18,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 92366190c769344b41923cbb25ed4b04afceaae9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b1c28f32a4b24393483241bd2d7d6f550b8b65ba
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778669"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796910"
 ---
 # <a name="getcachepath-function"></a>GetCachePath, fonction
 Obtient le chemin d’accès à l’assembly mis en cache, à l’aide des indicateurs spécifiés.  
@@ -40,22 +40,22 @@ HRESULT GetCachePath (
   
 ## <a name="parameters"></a>Paramètres  
  `dwCacheFlags`  
- [in] Un [ASM_CACHE_FLAGS](../../../../docs/framework/unmanaged-api/fusion/asm-cache-flags-enumeration.md) valeur qui indique la source de l’assembly mis en cache.  
+ dans Valeur [ASM_CACHE_FLAGS](asm-cache-flags-enumeration.md) qui indique la source de l’assembly mis en cache.  
   
  `pwzCachePath`  
- [out] Le pointeur retourné pour le chemin d’accès.  
+ à Pointeur retourné vers le chemin d’accès.  
   
  `pcchPath`  
- [in, out] La longueur maximale demandée de `pwzCachePath`et au retour, la longueur réelle des `pwzCachePath`.  
+ [in, out] La longueur maximale demandée de `pwzCachePath`, et au retour, la longueur réelle de `pwzCachePath`.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** Fusion.h  
+ **En-tête :** Fusion. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ASM_CACHE_FLAGS, énumération](../../../../docs/framework/unmanaged-api/fusion/asm-cache-flags-enumeration.md)
-- [Fonctions statiques globales de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [ASM_CACHE_FLAGS, énumération](asm-cache-flags-enumeration.md)
+- [Fonctions statiques globales de fusion](fusion-global-static-functions.md)

@@ -2,12 +2,12 @@
 title: États des objets et suivi des modifications
 ms.date: 03/30/2017
 ms.assetid: 7a808b00-9c3c-479a-aa94-717280fefd71
-ms.openlocfilehash: a60afab5158d0d5f66d12d6913ee890abc8ca730
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: a9df200f4d2e5f64bf5883c7bc513ba7129dcaad
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70043517"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781276"
 ---
 # <a name="object-states-and-change-tracking"></a>États des objets et suivi des modifications
 
@@ -21,7 +21,7 @@ Le tableau suivant répertorie les états possibles pour les objets [!INCLUDE[vb
 |-----------|-----------------|
 |`Untracked`|Objet non suivi par [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]. Exemples :<br /><br /> -Objet non interrogé via le actuel <xref:System.Data.Linq.DataContext> (tel qu’un objet nouvellement créé).<br />-Objet créé via la désérialisation<br />: Objet interrogé via un différent <xref:System.Data.Linq.DataContext>.|
 |`Unchanged`|Objet récupéré en utilisant le <xref:System.Data.Linq.DataContext> actuel et dont aucune modification n'est connue depuis sa création.|
-|`PossiblyModified`|Objet qui est *attaché* à un <xref:System.Data.Linq.DataContext>. Pour plus d’informations, consultez [extraction de données et opérations CUD dans les applications multicouches (LINQ to SQL)](../../../../../../docs/framework/data/adonet/sql/linq/data-retrieval-and-cud-operations-in-n-tier-applications.md).|
+|`PossiblyModified`|Objet qui est *attaché* à un <xref:System.Data.Linq.DataContext>. Pour plus d’informations, consultez [extraction de données et opérations CUD dans les applications multicouches (LINQ to SQL)](data-retrieval-and-cud-operations-in-n-tier-applications.md).|
 |`ToBeInserted`|Objet qui n'est pas récupéré en utilisant le <xref:System.Data.Linq.DataContext> actuel. Cela entraîne un `INSERT` dans la base de données pendant <xref:System.Data.Linq.DataContext.SubmitChanges%2A>.|
 |`ToBeUpdated`|Objet dont la modification est connue depuis sa récupération. Cela entraîne un `UPDATE` dans la base de données pendant <xref:System.Data.Linq.DataContext.SubmitChanges%2A>.|
 |`ToBeDeleted`|Objet marqué pour être supprimé, ce qui entraîne une `DELETE` de la base de données pendant <xref:System.Data.Linq.DataContext.SubmitChanges%2A>.|
@@ -31,7 +31,7 @@ Le tableau suivant répertorie les états possibles pour les objets [!INCLUDE[vb
 
 Vous pouvez demander explicitement des `Inserts` à l'aide de <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>. Vous pouvez également déduire `Inserts` en recherchant des objets connectés à l’un des objets connus qui doivent être mis à jour. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Par exemple, si vous ajoutez un `Untracked` objet à un <xref:System.Data.Linq.EntitySet%601> ou si vous <xref:System.Data.Linq.EntityRef%601> affectez `Untracked` un à un objet, `Untracked` vous rendez l’objet accessible par le biais d’objets suivis dans le graphique. Lors du <xref:System.Data.Linq.DataContext.SubmitChanges%2A>traitement [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] , parcourt les objets suivis et Découvre tous les objets persistants accessibles qui ne sont pas suivis. Ces objets peuvent être insérés dans la base de données.
 
-Pour les classes dans une hiérarchie d' <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>héritage`o`, () définit également la valeur du membre désigné comme *discriminateur* pour qu’il corresponde au type `o`de l’objet. La valeur du discriminateur est par conséquent substituée par la valeur par défaut si un type correspond à la valeur du discriminateur par défaut. Pour plus d’informations, consultez [prise en charge de l’héritage](../../../../../../docs/framework/data/adonet/sql/linq/inheritance-support.md).
+Pour les classes dans une hiérarchie d' <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>héritage`o`, () définit également la valeur du membre désigné comme *discriminateur* pour qu’il corresponde au type `o`de l’objet. La valeur du discriminateur est par conséquent substituée par la valeur par défaut si un type correspond à la valeur du discriminateur par défaut. Pour plus d’informations, consultez [prise en charge de l’héritage](inheritance-support.md).
 
 > [!IMPORTANT]
 > Un objet ajouté à un `Table` n'est pas dans le cache d'identité. Le cache d'identité reflète uniquement ce qui est récupéré de la base de données. Après un appel à <xref:System.Data.Linq.Table%601.InsertOnSubmit%2A>, l'entité ajoutée n'apparaît pas dans les requêtes sur la base de données tant que <xref:System.Data.Linq.DataContext.SubmitChanges%2A> ne s'est pas terminé avec succès.
@@ -40,7 +40,7 @@ Pour les classes dans une hiérarchie d' <xref:System.Data.Linq.Table%601.Insert
 
 Vous pouvez marquer un objet suivi `o` pour le supprimer en appelant <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A> (o) sur le type <xref:System.Data.Linq.Table%601> approprié. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]considère la suppression d’un objet d’un <xref:System.Data.Linq.EntitySet%601> comme une opération de mise à jour et la valeur de clé étrangère correspondante est null. La cible de l'opération (`o`) n'est pas supprimée de sa table. Par exemple, `cust.Orders.DeleteOnSubmit(ord)` indique une mise à jour où la relation entre `cust` et `ord` est rompue en affectant à la clé étrangère `ord.CustomerID` la valeur null. Cela n'entraîne pas la suppression de la ligne qui correspond à `ord`.
 
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]effectue le traitement suivant lorsqu’un objet est supprimé (<xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>) de sa table:
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]effectue le traitement suivant lorsqu’un objet est supprimé (<xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A>) de sa table :
 
 - Lorsque <xref:System.Data.Linq.DataContext.SubmitChanges%2A> est appelé, une opération de `DELETE` est effectuée pour cet objet.
 
@@ -69,5 +69,5 @@ Si vous mettez à jour à la fois la référence requise et la clé étrangère 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations générales](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
-- [Opérations d’insertion, de mise à jour et de suppression](../../../../../../docs/framework/data/adonet/sql/linq/insert-update-and-delete-operations.md)
+- [Informations générales](background-information.md)
+- [Opérations d’insertion, de mise à jour et de suppression](insert-update-and-delete-operations.md)

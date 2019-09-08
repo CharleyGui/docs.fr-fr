@@ -2,12 +2,12 @@
 title: Utilisation de Windows Management Instrumentation pour les diagnostics
 ms.date: 03/30/2017
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
-ms.openlocfilehash: e1f5ccb8849d5f8f6bd9156cd428d395a86b1301
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 90aae0e22feec5d26fa7ee4c690904ed893489b4
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046018"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795916"
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Utilisation de Windows Management Instrumentation pour les diagnostics
 Windows Communication Foundation (WCF) expose les données d’inspection d’un service au moment de l’exécution via un fournisseur WMI (Windows Management Instrumentation WCF).  
@@ -17,7 +17,7 @@ Windows Communication Foundation (WCF) expose les données d’inspection d’un
   
  Un fournisseur WMI est un composant qui expose l'instrumentation au moment de l'exécution par l'intermédiaire d'une interface WBEM compatible. Il se compose d'un jeu d'objets WMI qui ont des paires attribut/valeur. Les paires peuvent être plusieurs types simples. Les outils de gestion peuvent se connecter aux services au moment de l'exécution par l'intermédiaire de l'interface. WCF expose des attributs de services tels que les adresses, les liaisons, les comportements et les écouteurs.  
   
- Le fournisseur WMI intégré peut être activé dans le fichier de configuration de l'application. Cela s’effectue par le `wmiProviderEnabled` biais de l’attribut de l' [ \<> Diagnostics](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md) dans la [ \<section System. ServiceModel >](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) , comme indiqué dans l’exemple de configuration suivant.  
+ Le fournisseur WMI intégré peut être activé dans le fichier de configuration de l'application. Cela s’effectue par le `wmiProviderEnabled` biais de l’attribut de l' [ \<> Diagnostics](../../../configure-apps/file-schema/wcf/diagnostics.md) dans la [ \<section System. ServiceModel >](../../../configure-apps/file-schema/wcf/system-servicemodel.md) , comme indiqué dans l’exemple de configuration suivant.  
   
 ```xml  
 <system.serviceModel>  
@@ -35,9 +35,9 @@ Windows Communication Foundation (WCF) expose les données d’inspection d’un
 > [!CAUTION]
 > Si vous utilisez les méthodes fournies par le .NET Framework pour accéder par programme aux données WMI, vous devez savoir que ces méthodes peuvent lever des exceptions lorsque la connexion est établie. La connexion n'est pas établie pendant la construction de l'instance <xref:System.Management.ManagementObject>, mais sur la première demande qui implique l'échange concret des données. Par conséquent, vous devez utiliser un bloc `try..catch` pour intercepter les exceptions possibles.  
   
- Vous pouvez modifier le niveau du suivi et de l'enregistrement des messages, ainsi que les options d'enregistrement des messages pour la source de suivi `System.ServiceModel` dans WMI. Pour ce faire, vous pouvez accéder à l’instance [AppDomainInfo](../../../../../docs/framework/wcf/diagnostics/wmi/appdomaininfo.md) , qui expose ces propriétés booléennes `LogMessagesAtTransportLevel`: `LogMalformedMessages` `LogMessagesAtServiceLevel`,, `TraceLevel`et. Par conséquent, si vous configurez un écouteur de suivi pour l'enregistrement des messages, mais affectez la valeur `false` à ces options dans la configuration, vous pourrez leur affecter ultérieurement la valeur `true` pendant l'exécution de l'application. Ceci permet en fait d'activer l'enregistrement des messages pendant l'exécution. De la même façon, si vous activez l'enregistrement des messages dans votre fichier de configuration, vous pouvez le désactiver pendant l'exécution à l'aide de WMI.  
+ Vous pouvez modifier le niveau du suivi et de l'enregistrement des messages, ainsi que les options d'enregistrement des messages pour la source de suivi `System.ServiceModel` dans WMI. Pour ce faire, vous pouvez accéder à l’instance [AppDomainInfo](appdomaininfo.md) , qui expose ces propriétés booléennes `LogMessagesAtTransportLevel`: `LogMalformedMessages` `LogMessagesAtServiceLevel`,, `TraceLevel`et. Par conséquent, si vous configurez un écouteur de suivi pour l'enregistrement des messages, mais affectez la valeur `false` à ces options dans la configuration, vous pourrez leur affecter ultérieurement la valeur `true` pendant l'exécution de l'application. Ceci permet en fait d'activer l'enregistrement des messages pendant l'exécution. De la même façon, si vous activez l'enregistrement des messages dans votre fichier de configuration, vous pouvez le désactiver pendant l'exécution à l'aide de WMI.  
   
- Vous devez savoir que si aucun écouteur de suivi d'enregistrement des messages pour l'enregistrement des messages ou aucun écouteur de suivi `System.ServiceModel` pour le suivi n'est défini dans le fichier de configuration, aucune de vos modifications ne sont prises en compte, même si les modifications sont acceptées par WMI. Pour plus d’informations sur la configuration correcte des écouteurs respectifs, consultez [configuration](../../../../../docs/framework/wcf/diagnostics/configuring-message-logging.md) de la journalisation des messages et [configuration du suivi](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Le niveau de suivi de toutes les autres sources de suivi spécifiées par configuration est effectif lorsque l'application démarre, et ne peut pas être changé.  
+ Vous devez savoir que si aucun écouteur de suivi d'enregistrement des messages pour l'enregistrement des messages ou aucun écouteur de suivi `System.ServiceModel` pour le suivi n'est défini dans le fichier de configuration, aucune de vos modifications ne sont prises en compte, même si les modifications sont acceptées par WMI. Pour plus d’informations sur la configuration correcte des écouteurs respectifs, consultez [configuration de la journalisation des messages](../configuring-message-logging.md) et configuration du [suivi](../tracing/configuring-tracing.md). Le niveau de suivi de toutes les autres sources de suivi spécifiées par configuration est effectif lorsque l'application démarre, et ne peut pas être changé.  
   
  WCF expose une `GetOperationCounterInstanceName` méthode pour l’écriture de scripts. Cette méthode retourne un nom d'instance de compteur de performance si vous lui fournissez un nom d'opération. Toutefois, elle ne valide pas votre entrée. Par conséquent, si vous fournissez un nom d'opération erroné, un nom de compteur incorrect est retourné.  
   
@@ -50,7 +50,7 @@ Windows Communication Foundation (WCF) expose les données d’inspection d’un
   
  De plus, si vous relâchez les autorisations d'accès pour le fichier MOF, les correspondants d'un niveau de confiance moindre peuvent manipuler le comportement de WMI et modifier les objets chargés dans le schéma WMI. Par exemple, des champs peuvent être supprimés au point que des données critiques sont dissimulées à l'administrateur ou que des champs qui ne se remplissent pas ou lèvent des exceptions sont ajoutés au fichier.  
   
- Par défaut, le fournisseur WMI WCF accorde l’autorisation «exécuter la méthode», «fournisseur d’écriture» et «activer le compte» pour l’administrateur et l’autorisation «activer le compte» pour ASP.NET, service local et service réseau. En particulier, sur les plateformes non [!INCLUDE[wv](../../../../../includes/wv-md.md)], le compte ASP.NET a accès en lecture à l'espace de noms WMI ServiceModel. Si vous ne souhaitez pas accorder ces privilèges à un groupe d'utilisateurs particulier, vous devez désactiver le fournisseur WMI (désactivé par défaut) ou désactiver l'accès pour le groupe d'utilisateurs spécifique.  
+ Par défaut, le fournisseur WMI WCF accorde l’autorisation « exécuter la méthode », « fournisseur d’écriture » et « activer le compte » pour l’administrateur et l’autorisation « activer le compte » pour ASP.NET, service local et service réseau. En particulier, sur les plateformes non [!INCLUDE[wv](../../../../../includes/wv-md.md)], le compte ASP.NET a accès en lecture à l'espace de noms WMI ServiceModel. Si vous ne souhaitez pas accorder ces privilèges à un groupe d'utilisateurs particulier, vous devez désactiver le fournisseur WMI (désactivé par défaut) ou désactiver l'accès pour le groupe d'utilisateurs spécifique.  
   
  De plus, lorsque vous essayez d'activer WMI par configuration, WMI peut ne pas être activé en raison de privilège utilisateur insuffisant. Toutefois, aucun événement n'est écrit dans le journal des événements pour enregistrer cette défaillance.  
   
@@ -65,7 +65,7 @@ Windows Communication Foundation (WCF) expose les données d’inspection d’un
 4. Sélectionnez le groupe ou l’utilisateur spécifique pour lequel vous souhaitez contrôler l’accès et utilisez la case à cocher **autoriser** ou **refuser** pour configurer les autorisations.  
   
 ## <a name="granting-wcf-wmi-registration-permissions-to-additional-users"></a>Octroi d'autorisations d'inscription WCF WMI à des utilisateurs supplémentaires  
- WCF expose des données de gestion à WMI. Pour ce faire, il héberge un fournisseur WMI in-process, parfois appelé «fournisseur découplé». Pour que les données de gestion soient exposées, le compte qui inscrit ce fournisseur doit disposer des autorisations appropriées. Dans Windows, seul un petit ensemble de comptes privilégiés peuvent inscrire des fournisseurs découplés par défaut. Cela pose problème car les utilisateurs souhaitent généralement exposer des données WMI à partir d'un service WCF s'exécutant sous un compte qui ne figure pas dans l'ensemble par défaut.  
+ WCF expose des données de gestion à WMI. Pour ce faire, il héberge un fournisseur WMI in-process, parfois appelé « fournisseur découplé ». Pour que les données de gestion soient exposées, le compte qui inscrit ce fournisseur doit disposer des autorisations appropriées. Dans Windows, seul un petit ensemble de comptes privilégiés peuvent inscrire des fournisseurs découplés par défaut. Cela pose problème car les utilisateurs souhaitent généralement exposer des données WMI à partir d'un service WCF s'exécutant sous un compte qui ne figure pas dans l'ensemble par défaut.  
   
  Pour fournir cet accès, un administrateur doit octroyer les autorisations suivantes au compte supplémentaire dans l'ordre suivant :  
   
@@ -110,7 +110,7 @@ Windows Communication Foundation (WCF) expose les données d’inspection d’un
     write-host ""  
     ```  
   
-     Ce script PowerShell utilise le langage SDDL (Security Descriptor Definition Language) pour accorder au groupe d’utilisateurs intégré l’accès à l’espace de noms WMI «root/ServiceModel». Il spécifie les listes de contrôle d'accès (ACL) suivantes :  
+     Ce script PowerShell utilise le langage SDDL (Security Descriptor Definition Language) pour accorder au groupe d’utilisateurs intégré l’accès à l’espace de noms WMI « root/ServiceModel ». Il spécifie les listes de contrôle d'accès (ACL) suivantes :  
   
     - Administrateurs intégrés (BA) - Bénéficie déjà d'un accès.  
   
@@ -157,7 +157,7 @@ Whoami /user
   
  **Outils Files\WMI%windir%\Program\\**  
   
-1. Dans la fenêtre **se connecter à l’espace de noms:** , tapez **root\ServiceModel** et cliquez sur **OK.**  
+1. Dans la fenêtre **se connecter à l’espace de noms :** , tapez **root\ServiceModel** et cliquez sur **OK.**  
   
 2. Dans la fenêtre de **connexion WMI CIM Studio** , cliquez sur le bouton **Options > >** pour développer la fenêtre. Sélectionnez **confidentialité du paquet** pour **niveau d’authentification**, puis cliquez sur **OK**.  
   

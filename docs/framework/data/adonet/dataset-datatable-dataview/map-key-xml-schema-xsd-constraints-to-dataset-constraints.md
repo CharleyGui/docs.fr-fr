@@ -2,12 +2,12 @@
 title: Mapper les contraintes clés de schéma XML (XSD) aux contraintes de DataSet
 ms.date: 03/30/2017
 ms.assetid: 22664196-f270-4ebc-a169-70e16a83dfa1
-ms.openlocfilehash: d6fcdae77c2f2ac07ea5cd16baf07cd5de36d25b
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 8543f5b34ee2a80ff0154897cf7678b244a8d357
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203464"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786105"
 ---
 # <a name="map-key-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapper les contraintes clés de schéma XML (XSD) aux contraintes de DataSet
 Dans un schéma, vous pouvez spécifier une contrainte de clé sur un élément ou un attribut à l’aide de l’élément **Key** . L'élément ou attribut sur lequel une contrainte de clé est spécifiée doit avoir des valeurs uniques dans toute instance du schéma et ne peut pas avoir de valeurs null.  
@@ -19,7 +19,7 @@ Dans un schéma, vous pouvez spécifier une contrainte de clé sur un élément 
 |Nom d'attribut|Description|  
 |--------------------|-----------------|  
 |**msdata:ConstraintName**|Si cet attribut est spécifié, sa valeur est utilisée comme nom de la contrainte. Dans le cas contraire, l’attribut **Name** fournit la valeur du nom de la contrainte.|  
-|**msdata:PrimaryKey**|Si `PrimaryKey="true"` est présent, la propriété de contrainte **IsPrimaryKey** a la valeur **true**, ce qui en fait une clé primaire. La propriété de la colonne **AllowDBNull** ala valeur false, car les clés primaires ne peuvent pas avoir de valeurs NULL.|  
+|**msdata:PrimaryKey**|Si `PrimaryKey="true"` est présent, la propriété de contrainte **IsPrimaryKey** a la valeur **true**, ce qui en fait une clé primaire. La propriété de la colonne **AllowDBNull** a la valeur **false**, car les clés primaires ne peuvent pas avoir de valeurs NULL.|  
   
  Lors de la conversion d’un schéma dans lequel une contrainte de clé est spécifiée, le processus de mappage crée une contrainte unique sur la table avec la propriété de colonne **AllowDBNull** définie sur **false** pour chaque colonne de la contrainte. La propriété **IsPrimaryKey** de la contrainte unique a également la valeur **false** , sauf si `msdata:PrimaryKey="true"` vous avez spécifié sur l’élément **Key** . Ce mode de fonctionnement est identique à celui d'une contrainte unique dans le schéma faisant apparaître `PrimaryKey="true"`.  
   
@@ -76,10 +76,10 @@ TableName: customers
   
  Dans le **DataSet** généré, la propriété **IsPrimaryKey** de **UniqueConstraint** a la valeur **true** car le schéma spécifie `msdata:PrimaryKey="true"` dans l’élément **Key** .  
   
- La valeur de la propriété **ConstraintName** de **UniqueConstraint** dans le **DataSet** est la valeur de l’attribut **msdata: ConstraintName** spécifié dans l’élément **Key** du schéma.  
+ La valeur de la propriété **ConstraintName** de **UniqueConstraint** dans le **DataSet** est la valeur de l’attribut **msdata : ConstraintName** spécifié dans l’élément **Key** du schéma.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Mappage des contraintes de schéma XML (XSD) aux contraintes de DataSet](mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)
 - [Génération de relations de DataSet à partir du schéma XML (XSD)](generating-dataset-relations-from-xml-schema-xsd.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

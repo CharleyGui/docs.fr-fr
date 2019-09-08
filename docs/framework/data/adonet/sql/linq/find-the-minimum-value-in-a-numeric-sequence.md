@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 78203093-f242-4572-9b31-9495b10926aa
-ms.openlocfilehash: 84002609c550cc2de76f9948bf77f9fd88261f64
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d8aee43f13ec92f649b4df20505ac56c336fe07a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62038452"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793835"
 ---
 # <a name="find-the-minimum-value-in-a-numeric-sequence"></a>Comment : rechercher la valeur minimale dans une séquence numérique
 Utilisez l'opérateur <xref:System.Linq.Enumerable.Min%2A> pour retourner la valeur minimale d'une séquence de valeurs numériques.  
@@ -23,7 +23,7 @@ Utilisez l'opérateur <xref:System.Linq.Enumerable.Min%2A> pour retourner la val
  [!code-csharp[DLinqQueryExamples#9](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#9)]
  [!code-vb[DLinqQueryExamples#9](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#9)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple suivant recherche le montant de fret le plus bas parmi les commandes.  
   
  Si vous exécutez cette requête sur l'exemple de base de données Northwind, vous obtenez le résultat suivant : `0.0200`.  
@@ -73,5 +73,5 @@ Utilisez l'opérateur <xref:System.Linq.Enumerable.Min%2A> pour retourner la val
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Requêtes d’agrégation](../../../../../../docs/framework/data/adonet/sql/linq/aggregate-queries.md)
-- [Téléchargement d’exemples de base de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+- [Requêtes d’agrégation](aggregate-queries.md)
+- [Téléchargement d’exemples de base de données](downloading-sample-databases.md)

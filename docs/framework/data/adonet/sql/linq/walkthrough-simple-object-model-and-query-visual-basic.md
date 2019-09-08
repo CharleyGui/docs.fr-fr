@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: c878e457-f715-46e4-a136-ff14d6c86018
-ms.openlocfilehash: e0840adba62e10640ef16908db6b57519191f7f7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c21a187739ba19be2dc8e89b4dddc94ad799f036
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946783"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792118"
 ---
 # <a name="walkthrough-simple-object-model-and-query-visual-basic"></a>Procédure pas à pas : Requête et modèle objet simples (Visual Basic)
 
@@ -25,7 +25,7 @@ Cette procédure pas à pas a été écrite à l'aide des paramètres de dévelo
 
 - Les fichiers sont stockés dans un dossier dédié, c:\linqtest. Vous devez créer ce dossier avant de commencer la procédure pas à pas.
 
-- Cette procédure pas à pas requiert l'exemple de base de données Northwind. Si cette base de données n'est pas disponible sur votre ordinateur de développement, vous pouvez la télécharger à partir du site de téléchargement Microsoft. Pour obtenir des instructions, consultez [téléchargement d’exemples de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md). Après avoir téléchargé la base de données, copiez le fichier dans le dossier c:\linqtest.
+- Cette procédure pas à pas requiert l'exemple de base de données Northwind. Si cette base de données n'est pas disponible sur votre ordinateur de développement, vous pouvez la télécharger à partir du site de téléchargement Microsoft. Pour obtenir des instructions, consultez [téléchargement d’exemples de bases de données](downloading-sample-databases.md). Après avoir téléchargé la base de données, copiez le fichier dans le dossier c:\linqtest.
 
 ## <a name="overview"></a>Présentation
 
@@ -144,7 +144,7 @@ Dans cette étape, vous allez exécuter la requête. Les expressions de requête
 2. Appuyez sur F5 pour déboguer l'application.
 
     > [!NOTE]
-    > Si votre application génère une erreur d’exécution, consultez la section résolution des problèmes d' [apprentissage par les procédures pas à pas](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md).
+    > Si votre application génère une erreur d’exécution, consultez la section résolution des problèmes d' [apprentissage par les procédures pas à pas](learning-by-walkthroughs.md).
 
      Le message affiche une liste de six clients. La fenêtre de console affiche le code SQL généré.
 
@@ -158,10 +158,10 @@ Dans cette étape, vous allez exécuter la requête. Les expressions de requête
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-La [procédure pas à pas: L’interrogation de relations (Visual Basic](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-visual-basic.md) ) se poursuit là où cette procédure pas à pas se termine. La procédure pas à pas relative à l' [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] interrogation des relations montre comment peut interroger des tables, comme les *jointures* d’une base de données relationnelle.
+La [procédure pas à pas : L’interrogation de relations (Visual Basic](walkthrough-querying-across-relationships-visual-basic.md) ) se poursuit là où cette procédure pas à pas se termine. La procédure pas à pas relative à l' [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] interrogation des relations montre comment peut interroger des tables, comme les *jointures* d’une base de données relationnelle.
 
 Si vous souhaitez suivre la procédure pas à pas Interrogation de relations, pensez à enregistrer la solution de la procédure que vous venez d'exécuter, car elle est indispensable.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Apprentissage par les procédures pas à pas](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)
+- [Apprentissage par les procédures pas à pas](learning-by-walkthroughs.md)

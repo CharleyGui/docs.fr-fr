@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e380edac-da67-4276-80a5-b64decae4947
-ms.openlocfilehash: 37641056f2f3110685c24266d2612845ffbf0b3d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a8cca707f8fa82e97e988fcbe015b55e35b93499
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929239"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794682"
 ---
 # <a name="optimistic-concurrency"></a>Accès concurrentiel optimiste
 Dans un environnement multi-utilisateur, il existe deux modèles pour la mise à jour de données dans une base de données : l'accès simultané optimiste et l'accès simultané pessimiste. L'objet <xref:System.Data.DataSet> est conçu pour privilégier l'utilisation de l'accès simultané optimiste pour les activités longues, comme lors de la communication à distance de données ou de l'interaction avec ces dernières.  
@@ -42,7 +42,7 @@ Dans un environnement multi-utilisateur, il existe deux modèles pour la mise à
   
  À 13h01, l'utilisateur 2 lit la même ligne.  
   
- À 1:03 h 00, utilisateur2 remplace **FirstName** de «Bob» par «Robert» et met à jour la base de données.  
+ À 1:03 h 00, utilisateur2 remplace **FirstName** de « Bob » par « Robert » et met à jour la base de données.  
   
 |Nom de la colonne|Valeur d'origine|Valeur actuelle|Valeur dans la base de données|  
 |-----------------|--------------------|-------------------|-----------------------|  
@@ -71,7 +71,7 @@ Dans un environnement multi-utilisateur, il existe deux modèles pour la mise à
 SELECT Col1, Col2, Col3 FROM Table1  
 ```  
   
- Pour tester une violation de l’accès concurrentiel optimiste lors de la mise à jour d’une ligne dans **table1**, vous devez émettre l’instruction UPDATE suivante:  
+ Pour tester une violation de l’accès concurrentiel optimiste lors de la mise à jour d’une ligne dans **table1**, vous devez émettre l’instruction UPDATE suivante :  
   
 ```  
 UPDATE Table1 Set Col1 = @NewCol1Value,  
@@ -96,9 +96,9 @@ UPDATE Table1 Set Col1 = @NewVal1
  Vous pouvez aussi choisir d'appliquer des critères moins restrictifs lorsque vous utilisez un modèle d'accès simultané optimiste. Par exemple, utiliser uniquement les colonnes de clé primaire dans la clause WHERE aboutit au remplacement des données, que les autres colonnes aient ou non subi une mise à jour depuis la dernière requête. Vous pouvez aussi appliquer une clause WHERE à certaines colonnes uniquement, ce qui aura pour effet de remplacer les données, sauf si des champs spécifiques ont été mis à jour depuis la dernière requête les concernant.  
   
 ### <a name="the-dataadapterrowupdated-event"></a>Événement DataAdapter.RowUpdated  
- L’événement **RowUpdated** de l' <xref:System.Data.Common.DataAdapter> objet peut être utilisé conjointement avec les techniques décrites précédemment, afin de fournir une notification à votre application en cas de violations de l’accès concurrentiel optimiste. **RowUpdated** se produit après chaque tentative de mise à jour d’une ligne **modifiée** à partir d’un **DataSet**. Cela vous permet d'ajouter un code de gestion spécial, qui traitera les exceptions le cas échéant, ajoutera des informations d'erreur personnalisées, ajoutera une logique pour les nouvelles tentatives, etc. L' <xref:System.Data.Common.RowUpdatedEventArgs> objet retourne une propriété **RecordsAffected** contenant le nombre de lignes affectées par une commande de mise à jour particulière pour une ligne modifiée dans une table. En définissant la commande de mise à jour pour tester l’accès concurrentiel optimiste, la propriété **RecordsAffected** retourne la valeur 0 lorsqu’une violation d’accès concurrentiel optimiste s’est produite, car aucun enregistrement n’a été mis à jour. Dans ce cas, une exception est levée. L’événement **RowUpdated** vous permet de gérer cette occurrence et d’éviter l’exception en définissant une valeur **RowUpdatedEventArgs. Status** appropriée, telle que **UpdateStatus. SkipCurrentRow**. Pour plus d’informations sur l’événement **RowUpdated** , consultez [gestion des événements DataAdapter](../../../../docs/framework/data/adonet/handling-dataadapter-events.md).  
+ L’événement **RowUpdated** de l' <xref:System.Data.Common.DataAdapter> objet peut être utilisé conjointement avec les techniques décrites précédemment, afin de fournir une notification à votre application en cas de violations de l’accès concurrentiel optimiste. **RowUpdated** se produit après chaque tentative de mise à jour d’une ligne **modifiée** à partir d’un **DataSet**. Cela vous permet d'ajouter un code de gestion spécial, qui traitera les exceptions le cas échéant, ajoutera des informations d'erreur personnalisées, ajoutera une logique pour les nouvelles tentatives, etc. L' <xref:System.Data.Common.RowUpdatedEventArgs> objet retourne une propriété **RecordsAffected** contenant le nombre de lignes affectées par une commande de mise à jour particulière pour une ligne modifiée dans une table. En définissant la commande de mise à jour pour tester l’accès concurrentiel optimiste, la propriété **RecordsAffected** retourne la valeur 0 lorsqu’une violation d’accès concurrentiel optimiste s’est produite, car aucun enregistrement n’a été mis à jour. Dans ce cas, une exception est levée. L’événement **RowUpdated** vous permet de gérer cette occurrence et d’éviter l’exception en définissant une valeur **RowUpdatedEventArgs. Status** appropriée, telle que **UpdateStatus. SkipCurrentRow**. Pour plus d’informations sur l’événement **RowUpdated** , consultez [gestion des événements DataAdapter](handling-dataadapter-events.md).  
   
- Si vous le souhaitez, vous pouvez affecter à **DataAdapter. ContinueUpdateOnError** la **valeur true**, avant d’appeler **Update**, et répondre aux informations d’erreur stockées dans la propriété **RowError** d’une ligne particulière lorsque la **mise à jour** est terminée. Pour plus d’informations, consultez [informations sur les erreurs de ligne](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md).  
+ Si vous le souhaitez, vous pouvez affecter à **DataAdapter. ContinueUpdateOnError** la **valeur true**, avant d’appeler **Update**, et répondre aux informations d’erreur stockées dans la propriété **RowError** d’une ligne particulière lorsque la **mise à jour** est terminée. Pour plus d’informations, consultez [informations sur les erreurs de ligne](./dataset-datatable-dataview/row-error-information.md).  
   
 ## <a name="optimistic-concurrency-example"></a>Exemple d'accès simultané optimiste  
  Voici un exemple simple qui définit le **UpdateCommand** d’un **DataAdapter** pour tester l’accès concurrentiel optimiste, puis utilise l’événement **RowUpdated** pour tester les violations de l’accès concurrentiel optimiste. En cas de violation de l’accès concurrentiel optimiste, l’application définit le **RowError** de la ligne pour laquelle la mise à jour a été émise afin de refléter une violation d’accès concurrentiel optimiste.  
@@ -208,8 +208,8 @@ protected static void OnRowUpdated(object sender, SqlRowUpdatedEventArgs args)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Extraction et modification de données dans ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [Mise à jour de sources de données avec des DataAdapters](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)
-- [Informations sur l’erreur de ligne](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)
-- [Transactions et accès concurrentiel](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Extraction et modification de données dans ADO.NET](retrieving-and-modifying-data.md)
+- [Mise à jour de sources de données avec des DataAdapters](updating-data-sources-with-dataadapters.md)
+- [Informations sur l’erreur de ligne](./dataset-datatable-dataview/row-error-information.md)
+- [Transactions et accès concurrentiel](transactions-and-concurrency.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

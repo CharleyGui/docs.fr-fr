@@ -2,12 +2,12 @@
 title: Attribution d'autorisations de niveau ligne dans SQL Server
 ms.date: 03/30/2017
 ms.assetid: a55aaa12-34ab-41cd-9dec-fd255b29258c
-ms.openlocfilehash: 891b5114551c5784b11504f2463525087125131f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: df5fcb4a6c73e12bec2ab17501fdfb02cf672324
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62033902"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782353"
 ---
 # <a name="granting-row-level-permissions-in-sql-server"></a>Attribution d'autorisations de niveau ligne dans SQL Server
 
@@ -63,10 +63,10 @@ L’exemple suivant décrit comment configurer le filtrage au niveau des lignes 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Sécurité de niveau ligne](/sql/relational-databases/security/row-level-security)
-- [Sécurisation des applications ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Vue d’ensemble de la sécurité SQL Server](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
-- [Scénarios de sécurité des applications dans SQL Server](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
-- [Gestion des autorisations avec les procédures stockées dans SQL Server](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)
-- [Écriture de code SQL dynamique sécurisé dans SQL Server](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Sécurité au niveau des lignes](/sql/relational-databases/security/row-level-security)
+- [Sécurisation des applications ADO.NET](../securing-ado-net-applications.md)
+- [Vue d’ensemble de la sécurité SQL Server](overview-of-sql-server-security.md)
+- [Scénarios de sécurité des applications dans SQL Server](application-security-scenarios-in-sql-server.md)
+- [Gestion des autorisations avec les procédures stockées dans SQL Server](managing-permissions-with-stored-procedures-in-sql-server.md)
+- [Écriture de code SQL dynamique sécurisé dans SQL Server](writing-secure-dynamic-sql-in-sql-server.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

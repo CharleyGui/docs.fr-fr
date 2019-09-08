@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 35900aa2-5615-4174-8212-ba184c6b82fb
-ms.openlocfilehash: f2bc67b4130633fba3a6e42e2b6925fc09f835c3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d47f5b7eaf6b5f6a3174982e6b4cf43859c031a5
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62032420"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794152"
 ---
 # <a name="inserting-an-image-from-a-file"></a>Insertion d'une image à partir d'un fichier
 Vous pouvez écrire des objets binaires volumineux (BLOB) dans une base de données sous forme de données de type binaire ou caractère en fonction du type du champ de votre source de données. BLOB est un terme générique qui fait référence aux types de données `text`, `ntext` et `image` qui contiennent généralement des documents et des images.  
   
- Pour écrire une valeur BLOB dans votre base de données, utilisez l’instruction INSERT ou UPDATE appropriée et passez la valeur BLOB en tant que paramètre d’entrée (consultez [configuration des paramètres et Types de données de paramètre](../../../../../docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)). Si le BLOB est stocké sous forme de texte, dans le cas, par exemple, d'un champ `text` SQL Server, vous pouvez le passer en tant que paramètre de chaîne. Si le BLOB est stocké sous forme binaire, dans le cas, par exemple, d'un champ `image` SQL Server, vous pouvez passer un tableau de type `byte` en tant que paramètre binaire.  
+ Pour écrire une valeur d’objet BLOB dans votre base de données, émettez l’instruction INSERT ou UPDATE appropriée et transmettez la valeur de l’objet BLOB en tant que paramètre d’entrée (consultez [Configuration des paramètres et des types de données de paramètre](../configuring-parameters-and-parameter-data-types.md)). Si le BLOB est stocké sous forme de texte, dans le cas, par exemple, d'un champ `text` SQL Server, vous pouvez le passer en tant que paramètre de chaîne. Si le BLOB est stocké sous forme binaire, dans le cas, par exemple, d'un champ `image` SQL Server, vous pouvez passer un tableau de type `byte` en tant que paramètre binaire.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple de code suivant ajoute les informations relatives à un employé dans la table Employees de la base de données Northwind. Une photo de l'employé est lue dans un fichier et ajoutée dans le champ Photo de la table, qui est un champ image.  
   
 ```vb  
@@ -132,8 +132,8 @@ public static byte[] GetPhoto(string filePath)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation des commandes pour modifier les données](../../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)
-- [Récupération de données binaires](../../../../../docs/framework/data/adonet/retrieving-binary-data.md)
-- [Données binaires et de valeur élevée SQL Server](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)
-- [Mappages de types de données SQL Server](../../../../../docs/framework/data/adonet/sql-server-data-type-mappings.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Utilisation des commandes pour modifier les données](../using-commands-to-modify-data.md)
+- [Récupération de données binaires](../retrieving-binary-data.md)
+- [Données binaires et de valeur élevée SQL Server](sql-server-binary-and-large-value-data.md)
+- [Mappages de types de données SQL Server](../sql-server-data-type-mappings.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

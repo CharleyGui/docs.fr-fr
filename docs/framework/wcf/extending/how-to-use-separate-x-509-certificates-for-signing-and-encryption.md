@@ -9,18 +9,18 @@ helpviewer_keywords:
 - ClientCredentials class
 - ClientCredentialsSecurityTokenManager class
 ms.assetid: 0b06ce4e-7835-4d82-8baf-d525c71a0e49
-ms.openlocfilehash: e118c9ec29b8d4e46fe799f24bb8a96929bf2ed8
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: e464aff46f311ede1cd629fb459ade9a6e627d59
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663253"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796959"
 ---
 # <a name="how-to-use-separate-x509-certificates-for-signing-and-encryption"></a>Procédure : utiliser des certificats X.509 distincts pour les signatures et le chiffrement
 
-Cette rubrique montre comment configurer Windows Communication Foundation (WCF) pour utiliser différents certificats pour la signature des messages et le chiffrement sur le client et le service.
+Cette rubrique montre comment configurer Windows Communication Foundation (WCF) pour utiliser des certificats différents pour la signature et le chiffrement des messages sur le client et le service.
 
-Pour activer différents certificats à utiliser pour la signature et le chiffrement, un client personnalisé ou service informations d’identification (et/ou) doit être créés car WCF ne fournit pas d’une API permettant de définir plusieurs certificats de client ou le service. En outre, un gestionnaire de jetons de sécurité doit être configuré pour permettre l'exploitation des informations de l'ensemble des certificats et la création d'un fournisseur de jetons de sécurité qui convienne à l'utilisation des clés et à la direction des messages spécifiées.
+Pour permettre l’utilisation de certificats distincts pour la signature et le chiffrement, les informations d’identification d’un client ou d’un service personnalisé (ou les deux) doivent être créées, car WCF ne fournit pas d’API pour définir plusieurs certificats de client ou de service. En outre, un gestionnaire de jetons de sécurité doit être configuré pour permettre l'exploitation des informations de l'ensemble des certificats et la création d'un fournisseur de jetons de sécurité qui convienne à l'utilisation des clés et à la direction des messages spécifiées.
 
 Le diagramme suivant montre les classes principales utilisées, les classes (indiquées par une flèche pointant vers le haut) desquelles ils héritent et les types de retour de certaines méthodes et propriétés.
 
@@ -34,17 +34,17 @@ Le diagramme suivant montre les classes principales utilisées, les classes (ind
 
   - Sa méthode <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager.CreateSecurityTokenProvider%2A> retourne une instance de <xref:System.IdentityModel.Selectors.X509SecurityTokenProvider>.
 
-![Graphique montrant l’utilisation des informations d’identification client](../../../../docs/framework/wcf/extending/media/e4971edd-a59f-4571-b36f-7e6b2f0d610f.gif "e4971edd-a59f-4571-b36f-7e6b2f0d610f")
+![Graphique illustrant l’utilisation des informations d’identification du client](./media/e4971edd-a59f-4571-b36f-7e6b2f0d610f.gif "e4971edd-a59f-4571-B36F-7e6b2f0d610f")
 
-Pour plus d’informations sur les informations d’identification personnalisées, consultez [procédure pas à pas : Création du Client personnalisés et les informations d’identification du Service](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md).
+Pour plus d’informations sur les informations d’identification [personnalisées, consultez Procédure pas à pas : Création d’informations d’identification](walkthrough-creating-custom-client-and-service-credentials.md)de client et de service personnalisées.
 
 De plus, vous devez créer un vérificateur d’identité personnalisé et le lier à un élément de liaison de sécurité dans une liaison personnalisée. Vous devez également utiliser les informations d'identification personnalisées au lieu des informations d'identification par défaut.
 
 Le diagramme suivant indique les classes impliquées dans la liaison personnalisée, et comment le vérificateur d'identité personnalisé est lié. Plusieurs éléments de liaison sont impliqués, qui héritent tous de <xref:System.ServiceModel.Channels.BindingElement>. <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> a la propriété <xref:System.ServiceModel.Channels.LocalClientSecuritySettings>, qui retourne une instance de <xref:System.ServiceModel.Security.IdentityVerifier>, à partir de laquelle `MyIdentityVerifier` est personnalisé.
 
-![Graphique montrant un élément de liaison personnalisé](../../../../docs/framework/wcf/extending/media/dddea4a2-0bb4-4921-9bf4-20d4d82c3da5.gif "dddea4a2-0bb4-4921-9bf4-20d4d82c3da5")
+![Graphique présentant un élément de liaison personnalisé](./media/dddea4a2-0bb4-4921-9bf4-20d4d82c3da5.gif "dddea4a2-0bb4-4921-9bf4-20d4d82c3da5")
 
-Pour plus d’informations sur la création d’un vérificateur d’identité personnalisé, consultez Comment : [Guide pratique pour Créer un vérificateur d’identité Client personnalisé](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md).
+Pour plus d’informations sur la création d’un vérificateur d’identité personnalisé, consultez Procédure : [Guide pratique : Créer un vérificateur](how-to-create-a-custom-client-identity-verifier.md)d’identité client personnalisé.
 
 ### <a name="to-use-separate-certificates-for-signing-and-encryption"></a>Pour utiliser différents certificats dans les signatures et le chiffrement
 
@@ -97,4 +97,4 @@ Pour plus d’informations sur la création d’un vérificateur d’identité p
 - <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager>
 - <xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager>
 - <xref:System.ServiceModel.Security.IdentityVerifier>
-- [Procédure pas à pas : Création du Client personnalisés et les informations d’identification de Service](../../../../docs/framework/wcf/extending/walkthrough-creating-custom-client-and-service-credentials.md)
+- [Procédure pas à pas : Création d’informations d’identification de client et de service personnalisées](walkthrough-creating-custom-client-and-service-credentials.md)

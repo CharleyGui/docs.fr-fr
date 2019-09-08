@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
-ms.openlocfilehash: 3a1b0b947b97eac52e06626d2ed6d47bb9700147
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a98239886d6745bbb6e13e71a12764008460cdd7
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949459"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785672"
 ---
 # <a name="connection-strings-and-configuration-files"></a>Chaînes de connexion et fichiers de configuration
-L'incorporation de chaînes de connexion dans le code de votre application peut entraîner des vulnérabilités de sécurité et des problèmes de maintenance. Les chaînes de connexion non chiffrées compilées dans le code source d’une application peuvent être affichées à l’aide de l’outil [Ildasm.exe (IL Disassembler)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md). En outre, si la chaîne de connexion change, votre application doit être recompilée. Pour ces raisons, nous vous recommandons de stocker les chaînes de connexion dans un fichier de configuration de l'application.  
+L'incorporation de chaînes de connexion dans le code de votre application peut entraîner des vulnérabilités de sécurité et des problèmes de maintenance. Les chaînes de connexion non chiffrées compilées dans le code source d’une application peuvent être affichées à l’aide de l’outil [Ildasm.exe (IL Disassembler)](../../tools/ildasm-exe-il-disassembler.md). En outre, si la chaîne de connexion change, votre application doit être recompilée. Pour ces raisons, nous vous recommandons de stocker les chaînes de connexion dans un fichier de configuration de l'application.  
   
 ## <a name="working-with-application-configuration-files"></a>Utilisation de fichiers de configuration de l'application  
  Les fichiers de configuration de l'application contiennent des paramètres spécifiques à une application particulière. Par exemple, une application ASP.NET peut avoir un ou plusieurs fichiers **web.config**, alors qu’une application Windows peut avoir un fichier **app.config** facultatif. Les fichiers de configuration partagent des éléments communs, bien que le nom et l'emplacement d'un fichier de configuration varient selon l'hôte de l'application.  
@@ -36,7 +36,7 @@ L'incorporation de chaînes de connexion dans le code de votre application peut 
 ```  
   
 > [!NOTE]
-> Vous pouvez enregistrer une partie d'une chaîne de connexion dans un fichier de configuration et utiliser la classe <xref:System.Data.Common.DbConnectionStringBuilder> pour la compléter au moment de l'exécution. Cela est utile dans des scénarios où vous ne connaissez pas à l'avance les éléments de la chaîne de connexion ou lorsque vous ne voulez pas enregistrer des informations sensibles dans un fichier de configuration. Pour plus d’informations, consultez [Builders de chaînes de connexion](../../../../docs/framework/data/adonet/connection-string-builders.md).  
+> Vous pouvez enregistrer une partie d'une chaîne de connexion dans un fichier de configuration et utiliser la classe <xref:System.Data.Common.DbConnectionStringBuilder> pour la compléter au moment de l'exécution. Cela est utile dans des scénarios où vous ne connaissez pas à l'avance les éléments de la chaîne de connexion ou lorsque vous ne voulez pas enregistrer des informations sensibles dans un fichier de configuration. Pour plus d’informations, consultez [Builders de chaînes de connexion](connection-string-builders.md).  
   
 ### <a name="using-external-configuration-files"></a>Utilisation de fichiers de configuration externes  
  Les fichiers de configuration externes sont des fichiers distincts qui contiennent un fragment d'un fichier de configuration composé d'une section unique. Le fichier de configuration externe est ensuite référencé par le fichier de configuration principal. Le stockage de la section **connectionStrings** dans un fichier physique distinct est utile dans des situations où les chaînes de connexion peuvent être modifiées après le déploiement de l’application. Par exemple, le comportement ASP.NET standard consiste à redémarrer un domaine d'application lorsque les fichiers de configuration sont modifiés, ce qui entraîne la perte des informations d'état. Toutefois, la modification d'un fichier de configuration externe n'entraîne pas le redémarrage d'une application. Les fichiers de configuration externes ne sont pas limités à ASP.NET ; ils peuvent également être utilisés par des applications Windows. En outre, la sécurité et les autorisations d'accès aux fichiers permettent de limiter l'accès aux fichiers de configuration externes. L'utilisation de fichiers de configuration externes au moment de l'exécution est transparente et ne requiert aucun codage spécial.  
@@ -167,13 +167,13 @@ L'incorporation de chaînes de connexion dans le code de votre application peut 
  [!code-csharp[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/CS/source.cs#1)]
  [!code-vb[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/VB/source.vb#1)]  
   
- Pour plus d’informations sur la sécurisation des applications ASP.NET, consultez Sécurisation des [sites web ASP.net](https://docs.microsoft.com/previous-versions/aspnet/91f66yxt(v=vs.100)).  
+ Pour plus d’informations sur la sécurisation des applications ASP.NET, consultez [sécurisation des sites web ASP.net](https://docs.microsoft.com/previous-versions/aspnet/91f66yxt(v=vs.100)).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Générateurs de chaînes de connexion](../../../../docs/framework/data/adonet/connection-string-builders.md)
-- [Protection des informations de connexion](../../../../docs/framework/data/adonet/protecting-connection-information.md)
+- [Générateurs de chaînes de connexion](connection-string-builders.md)
+- [Protection des informations de connexion](protecting-connection-information.md)
 - [Utilisation des classes de configuration](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms228063(v=vs.90))
-- [Configuration d'applications](../../../../docs/framework/configure-apps/index.md)
+- [Configuration d'applications](../../configure-apps/index.md)
 - [Administration de site web ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/6hy1xzbw(v=vs.100))
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

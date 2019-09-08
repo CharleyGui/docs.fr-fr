@@ -2,32 +2,32 @@
 title: clé d'entité
 ms.date: 03/30/2017
 ms.assetid: 0d447a6d-fa7a-4db0-8e7a-fd45e385fca0
-ms.openlocfilehash: bf8ab7ffacd7565e408e4851ed0f1ef4636b5d80
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: db867b3a853bd29f1faf1be2faf77776e48be2d2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64599643"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795137"
 ---
 # <a name="entity-key"></a>clé d'entité
-Un *clé d’entité* est un [propriété](../../../../docs/framework/data/adonet/property.md) ou un jeu de propriétés d’un [type d’entité](../../../../docs/framework/data/adonet/entity-type.md) qui servent à déterminer l’identité. Les propriétés qui composent une clé d'entité sont choisies au moment du design. Les valeurs des propriétés de clé d’entité doivent identifier de manière unique une instance de type d’entité dans un [jeu d’entités](../../../../docs/framework/data/adonet/entity-set.md) en cours d’exécution. Les propriétés qui composent une clé d'entité doivent être choisies pour garantir l'unicité des instances dans un jeu d'entités.  
+Une *clé d’entité* est une [propriété](property.md) ou un ensemble de propriétés d’un [type d’entité](entity-type.md) qui sont utilisées pour déterminer l’identité. Les propriétés qui composent une clé d'entité sont choisies au moment du design. Les valeurs des propriétés de clé d’entité doivent identifier de manière unique une instance de type d’entité dans un [jeu d’entités](entity-set.md) au moment de l’exécution. Les propriétés qui composent une clé d'entité doivent être choisies pour garantir l'unicité des instances dans un jeu d'entités.  
   
  Pour être une clé d’entité, un jeu de propriétés doit répondre aux exigences suivantes :  
   
 - Il ne peut pas y avoir deux clés d'entité identiques dans un même jeu d'entités. Autrement dit, pour deux entités quelconques dans un jeu d'entités, les valeurs de toutes les propriétés qui constituent une clé ne peuvent pas être les mêmes. Toutefois, quelques-unes des valeurs (mais pas toutes) qui composent une clé d'entité peuvent être les mêmes.  
   
-- Une clé d’entité doit se composer d’un ensemble de non nullable, immuable, [propriétés de type primitif](../../../../docs/framework/data/adonet/entity-data-model-primitive-data-types.md).  
+- Une clé d’entité doit se composer d’un jeu de [Propriétés de type primitif](entity-data-model-primitive-data-types.md), non Nullable, immuables.  
   
 - Les propriétés qui composent une clé d'entité pour un type d'entité donné ne peuvent pas être modifiées. Vous ne pouvez pas autoriser plusieurs clés d'entité possibles pour un type d'entité donné ; les clés de substitution ne sont pas prises en charge.  
   
-- Lorsqu'une entité est impliquée dans une hiérarchie d'héritage, l'entité racine doit contenir toutes les propriétés qui composent la clé d'entité, et la clé d'entité doit être définie sur le type d'entité racine. Pour plus d’informations, consultez [Entity Data Model : L’héritage](../../../../docs/framework/data/adonet/entity-data-model-inheritance.md).  
+- Lorsqu'une entité est impliquée dans une hiérarchie d'héritage, l'entité racine doit contenir toutes les propriétés qui composent la clé d'entité, et la clé d'entité doit être définie sur le type d'entité racine. Pour plus d’informations, [consultez Entity Data Model : Héritage](entity-data-model-inheritance.md).  
   
 ## <a name="example"></a>Exemple  
  Le diagramme suivant montre un modèle conceptuel avec trois types d'entités : `Book`, `Publisher` et `Author`. Les propriétés de chaque type d'entité qui composent sa clé d'entité sont signalées par « (Key) ». Notez que le type d'entité `Author` possède une clé d'entité composée de deux propriétés : `Name` et `Address`.  
   
  ![Exemple de modèle avec trois types d’entité](./media/entity-key/example-model-three-entity-types.gif)  
   
- Le [ADO.NET Entity Framework](../../../../docs/framework/data/adonet/ef/index.md) utilise un langage spécifique à un domaine (DSL) appelé langage de définition de schéma conceptuel ([CSDL](../../../../docs/framework/data/adonet/ef/language-reference/csdl-specification.md)) pour définir des modèles conceptuels. Le CSDL suivant définit le type d'entité `Book` présenté dans le diagramme ci-dessus. Notez que la clé d'entité est définie en référençant la propriété `ISBN` du type d'entité.  
+ Le [Entity Framework ADO.net](./ef/index.md) utilise un langage spécifique à un domaine (DSL) appelé Conceptual Schema Definition Language ([CSDL](./ef/language-reference/csdl-specification.md)) pour définir des modèles conceptuels. Le CSDL suivant définit le type d'entité `Book` présenté dans le diagramme ci-dessus. Notez que la clé d'entité est définie en référençant la propriété `ISBN` du type d'entité.  
   
  [!code-xml[EDM_Example_Model#EntityExample](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books.edmx#entityexample)]  
   
@@ -41,5 +41,5 @@ Un *clé d’entité* est un [propriété](../../../../docs/framework/data/adone
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts clés d’Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model-key-concepts.md)
-- [Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md)
+- [Concepts clés d’Entity Data Model](entity-data-model-key-concepts.md)
+- [Entity Data Model](entity-data-model.md)

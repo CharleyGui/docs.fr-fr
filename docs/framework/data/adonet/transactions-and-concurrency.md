@@ -2,12 +2,12 @@
 title: Transactions et accès simultané
 ms.date: 03/30/2017
 ms.assetid: f46570de-9e50-4fe6-8710-a8c31fa8569b
-ms.openlocfilehash: c78031150d9b1209372dece49813dfcf0a03b9d5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 837fe6c42d64f7416dbd895e56a38d1a409e567a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965210"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791319"
 ---
 # <a name="transactions-and-concurrency"></a>Transactions et accès simultané
 Une transaction est composée d’une seule commande ou d’un groupe de commandes qui s’exécutent sous forme de package. Les transactions vous permettent de combiner plusieurs opérations en une seule unité de travail. Si une panne se produit pendant la transaction, toutes les mises à jour sont ramenées dans l’état qui était le leur avant le début de la transaction.  
@@ -22,23 +22,23 @@ Une transaction est composée d’une seule commande ou d’un groupe de command
  Les transactions impliquant différents gestionnaires de ressources, telles qu’une transaction entre SQL Server et Oracle, requièrent une transaction distribuée.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Transactions locales](../../../../docs/framework/data/adonet/local-transactions.md)  
+ [Transactions locales](local-transactions.md)  
  Montre comment effectuer des transactions sur une base de données.  
   
- [Transactions distribuées](../../../../docs/framework/data/adonet/distributed-transactions.md)  
+ [Transactions distribuées](distributed-transactions.md)  
  Décrit comment effectuer des transactions distribuées dans ADO.NET.  
   
- [Intégration de System.Transactions à SQL Server](../../../../docs/framework/data/adonet/system-transactions-integration-with-sql-server.md)  
+ [Intégration de System.Transactions à SQL Server](system-transactions-integration-with-sql-server.md)  
  Décrit <xref:System.Transactions> l’intégration avec SQL Server pour l’utilisation de transactions distribuées.  
   
- [Accès concurrentiel optimiste](../../../../docs/framework/data/adonet/optimistic-concurrency.md)  
+ [Accès concurrentiel optimiste](optimistic-concurrency.md)  
  Décrit les accès concurrentiels optimiste et pessimiste et la manière de tester les violations d'accès concurrentiel.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Notions de base des transactions](../../../../docs/framework/data/transactions/transaction-fundamentals.md)
-- [Connexion à une source de données](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
-- [Commandes et paramètres](../../../../docs/framework/data/adonet/commands-and-parameters.md)
-- [DataAdapters et DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Notions de base des transactions](../transactions/transaction-fundamentals.md)
+- [Connexion à une source de données](connecting-to-a-data-source.md)
+- [Commandes et paramètres](commands-and-parameters.md)
+- [DataAdapters et DataReaders](dataadapters-and-datareaders.md)
+- [DbProviderFactories](dbproviderfactories.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

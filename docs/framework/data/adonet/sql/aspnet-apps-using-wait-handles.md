@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f588597a-49de-4206-8463-4ef377e112ff
-ms.openlocfilehash: 0a17755af4027238393890545c051a063d607b6e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c1d97ed04de25d4db0fbf17e26a1d169d356a72c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61877758"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794392"
 ---
 # <a name="aspnet-applications-using-wait-handles"></a>Applications ASP.NET utilisant les handles d'attente
 Les modèles de rappel et d'interrogation pour le traitement d'opérations asynchrones sont utiles lorsque votre application ne traite qu'une opération asynchrone à la fois. Les modèles d'attente offrent un traitement plus souple des multiples opérations asynchrones. Il existe deux modèles d'attente nommés pour les méthodes <xref:System.Threading.WaitHandle> utilisées pour leur implémentation : le modèle d'attente (un) et le modèle d'attente (tout).  
@@ -21,7 +21,7 @@ Les modèles de rappel et d'interrogation pour le traitement d'opérations async
   
  Les avantages des modèles d'attente sont plus évidents lorsque vous avez besoin d'exécuter plusieurs opérations de même longueur sur différents serveurs ou lorsque votre serveur est suffisamment puissant pour traiter toutes les requêtes à la fois. Dans les exemples présentés ici, trois requêtes émulent de longs processus en ajoutant des commandes WAITFOR de longueurs variées à des requêtes SELECT important peu.  
   
-## <a name="example-wait-any-model"></a>Exemple : modèle d'attente (un)  
+## <a name="example-wait-any-model"></a>Exemple : modèle d'attente (un)  
  L'exemple suivant illustre le modèle d'attente (un). Une fois les trois processus asynchrones démarrés, la méthode <xref:System.Threading.WaitHandle.WaitAny%2A> est appelée pour attendre l'achèvement de l'un d'eux. À chaque achèvement de processus, la méthode <xref:System.Data.SqlClient.SqlCommand.EndExecuteReader%2A> est appelée et l'objet <xref:System.Data.SqlClient.SqlDataReader> résultant est lu. À ce stade, une application réelle utiliserait plus volontiers le <xref:System.Data.SqlClient.SqlDataReader> pour remplir une portion de la page. Dans cet exemple simple, l'heure d'achèvement du processus est ajoutée à une zone de texte correspondant au processus. Prises ensemble, ces heures dans les zones de texte illustrent le point suivant : le code est exécuté chaque fois qu'un processus s'achève.  
   
  Pour configurer cet exemple, créez un projet de site web ASP.NET. Placez un contrôle <xref:System.Web.UI.WebControls.Button> et quatre contrôles <xref:System.Web.UI.WebControls.TextBox> sur la page (en acceptant le nom par défaut pour chaque contrôle).  
@@ -312,7 +312,7 @@ void Button1_Click(object sender, System.EventArgs e)
 }  
 ```  
   
-## <a name="example-wait-all-model"></a>Exemple : modèle d'attente (tout)  
+## <a name="example-wait-all-model"></a>Exemple : modèle d'attente (tout)  
  L'exemple suivant illustre le modèle d'attente (tout). Une fois les trois processus asynchrones démarrés, la méthode <xref:System.Threading.WaitHandle.WaitAll%2A> est appelée pour attendre l'achèvement ou l'expiration des processus.  
   
  À l'instar de l'exemple du modèle d'attente (un), l'heure d'achèvement du processus est ajoutée à une zone de texte correspondant au processus. Là encore, ces heures dans les zones de texte illustrent le point suivant : d'après la méthode <xref:System.Threading.WaitHandle.WaitAny%2A>, le code est exécuté uniquement après l'achèvement de tous les processus.  
@@ -581,5 +581,5 @@ void Button1_Click(object sender, System.EventArgs e)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Opérations asynchrones](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Opérations asynchrones](asynchronous-operations.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

@@ -2,24 +2,24 @@
 title: Regroupement de connexions
 ms.date: 03/30/2017
 ms.assetid: 955c057f-aea8-4ba8-aa6d-e3dfa18ba8d5
-ms.openlocfilehash: 4cba53993489f51ed39ac52bff4fa252beb9aafd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c431011cf57fd9ef79c2f0a099ab1080116c571f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61880014"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786715"
 ---
 # <a name="connection-pooling"></a>Regroupement de connexions
-Se connecter à une source de données peut prendre beaucoup de temps. Pour réduire le coût de l’ouverture de connexions, ADO.NET utilise une technique d’optimisation nommée *le regroupement de connexions*, ce qui réduit le coût des ouvertures et fermeture des connexions. Le regroupement de connexions est géré différemment pour les fournisseurs de données .NET Framework.  
+Se connecter à une source de données peut prendre beaucoup de temps. Pour réduire le coût de l’ouverture des connexions, ADO.NET utilise une technique d’optimisation appelée *regroupement de connexions*, qui réduit le coût de l’ouverture et de la fermeture à plusieurs reprises des connexions. Le regroupement de connexions est géré différemment pour les fournisseurs de données .NET Framework.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Regroupement de connexions SQL Server (ADO.NET)](../../../../docs/framework/data/adonet/sql-server-connection-pooling.md)  
- Fournit une vue d’ensemble du regroupement de connexions et décrit le fonctionne du regroupement de connexions dans SQL Server.  
+ [Regroupement de connexions SQL Server (ADO.NET)](sql-server-connection-pooling.md)  
+ Fournit une vue d’ensemble du regroupement de connexions et décrit le fonctionnement du regroupement de connexions dans SQL Server.  
   
- [Regroupement de connexions OLE DB, ODBC et Oracle](../../../../docs/framework/data/adonet/ole-db-odbc-and-oracle-connection-pooling.md)  
+ [Regroupement de connexions OLE DB, ODBC et Oracle](ole-db-odbc-and-oracle-connection-pooling.md)  
  Décrit le regroupement de connexions pour les fournisseurs de données .NET Framework pour OLE DB, ODBC et Oracle.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Extraction et modification de données dans ADO.NET](../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Extraction et modification de données dans ADO.NET](retrieving-and-modifying-data.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

@@ -17,16 +17,16 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a98273307003485202d8c12d5c27fda04ff5a0ae
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 5af7dc4e1694b66fc4a5ce37e515c71e9fa3db49
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65629872"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796729"
 ---
 # <a name="iassemblycacheitemcreatestream-method"></a>IAssemblyCacheItem::CreateStream, méthode
 
-Crée un flux avec le format et le nom spécifié.
+Crée un flux de donnée avec le nom et le format spécifiés.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -44,28 +44,28 @@ HRESULT CreateStream (
 ## <a name="parameters"></a>Paramètres
 
 `dwFlags`\
-[in] Indicateurs définis dans Fusion.idl.
+dans Indicateurs définis dans fusion. idl.
 
 `pszStreamName`\
-[in] Le nom du flux doit être créé.
+dans Nom du flux à créer.
 
 `dwFormat`\
-[in] Le format du fichier à être diffusé en continu.
+dans Format du fichier à diffuser en continu.
 
 `dwFormatFlags`\
-[in] Indicateurs spécifiques au format définis dans Fusion.idl.
+dans Indicateurs spécifiques au format définis dans fusion. idl.
 
 `ppIStream`\
-[out] Un pointeur vers l’adresse de retourné [IStream](/windows/desktop/api/objidl/nn-objidl-istream) instance.
+à Pointeur vers l’adresse de l’instance [IStream](/windows/desktop/api/objidl/nn-objidl-istream) retournée.
 
 `puliMaxSize`\
-[in, optional] La taille maximale du flux référencé par `ppIStream`.
+[in, facultatif] Taille maximale du flux référencé par `ppIStream`.
 
 ## <a name="requirements"></a>Configuration requise
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
-**En-tête :** Fusion.h
+**En-tête :** Fusion. h
 
 **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
 

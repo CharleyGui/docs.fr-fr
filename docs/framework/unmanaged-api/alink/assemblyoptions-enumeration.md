@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 324e30f6cbcaa1d1d81c7c03967dbb629d2cd6e9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 49e7b73559e8def890f8df8f596fbe8ad5bb5d3b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742263"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777478"
 ---
 # <a name="assemblyoptions-enumeration"></a>Énumération AssemblyOptions
 Énumère les options de l’assembly.  
@@ -58,32 +58,32 @@ typedef enum _AssemblyOptions {
   
 |Champ|Description|  
 |-----------|-----------------|  
-|optAssemTitle|Chaîne - représente le titre de l’assembly.|  
-|optAssemDescription|Chaîne - contient la description de l’assembly.|  
-|optAssemConfig|Chaîne - contient la configuration de l’assembly.|  
-|optAssemOS|Chaîne - encodée comme : « dwOSPlatformId.dwOSMajorVersion.dwOSMinorVersion ».|  
+|optAssemTitle|String : représente le titre de l’assembly.|  
+|optAssemDescription|Chaîne : contient la description de l’assembly.|  
+|optAssemConfig|Chaîne : contient la configuration de l’assembly.|  
+|optAssemOS|Encodée sous forme de chaîne comme : "dwOSPlatformId. dwOSMajorVersion. dwOSMinorVersion".|  
 |optAssemProcessor|ULONG|  
-|optAssemLocale|Chaîne - contient les paramètres régionaux d’assembly.|  
-|optAssemVersion|Chaîne - encodée sous la forme : « Major.Minor.Build.Revision ».|  
-|optAssemCompany|Chaîne - contient la société.|  
-|optAssemProduct|Chaîne - contient le nom du produit.|  
-|optAssemProductVersion|Chaîne (également appelé InformationalVersion).|  
-|optAssemCopyright|Chaîne - contient les informations de copyright.|  
-|optAssemTrademark|Chaîne - contient les informations de marque.|  
-|optAssemKeyFile|String (nom de fichier).|  
-|optAssemKeyName|Chaîne (le nom de clé).|  
+|optAssemLocale|Chaîne : contient les paramètres régionaux de l’assembly.|  
+|optAssemVersion|Codé sous forme de chaîne en tant que : « Major. mineure. Build. revision ».|  
+|optAssemCompany|Chaîne : contient la société.|  
+|optAssemProduct|Chaîne : contient le nom du produit.|  
+|optAssemProductVersion|Chaîne (également appelée InformationalVersion).|  
+|optAssemCopyright|Chaîne : contient les informations de copyright.|  
+|optAssemTrademark|Chaîne : contient les informations relatives à la marque.|  
+|optAssemKeyFile|Chaîne (nom de fichier).|  
+|optAssemKeyName|Chaîne (nom de la clé).|  
 |optAssemAlgID|ULONG|  
 |optAssemFlags|ULONG|  
 |optAssemHalfSign|Bool (également appelé DelaySign).|  
-|optAssemFileVersion|Chaîne - codée comme « Major.Minor.Build.Revision » - identique à la version de produit.|  
-|optAssemSatelliteVer|Chaîne - encodée sous la forme « Major.Minor.Build.Revision ».|  
-|optLastAssemOption|Un compteur du nombre d’éléments.|  
+|optAssemFileVersion|Encodée sous forme de chaîne « major. minor. Build. Revision »--identique à ProductVersion.|  
+|optAssemSatelliteVer|Encodée sous forme de chaîne « major. minor. Build. revision ».|  
+|optLastAssemOption|Compteur du nombre d’éléments.|  
   
 ## <a name="requirements"></a>Configuration requise  
- **En-tête :** alink.h  
+ **En-tête :** ALink. h  
   
- **Bibliothèque**: alink.dll  
+ **Bibliothèque**: ALink. dll  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Al.exe (Assembly Linker)](../../../../docs/framework/tools/al-exe-assembly-linker.md)
+- [Al.exe (Assembly Linker)](../../tools/al-exe-assembly-linker.md)

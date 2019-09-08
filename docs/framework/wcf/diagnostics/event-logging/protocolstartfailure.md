@@ -2,12 +2,12 @@
 title: ProtocolStartFailure
 ms.date: 03/30/2017
 ms.assetid: b722d1d5-bfef-4dc9-bfa3-85178b6d2ae3
-ms.openlocfilehash: 4e7aa1305d6998577ec92896ace357b8eceae18a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3fe3e34fddf36bbdc5ff09a1d114545d1518dbba
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61999048"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797620"
 ---
 # <a name="protocolstartfailure"></a>ProtocolStartFailure
 Id : 143  
@@ -21,5 +21,5 @@ Id : 143
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Journalisation des événements](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
-- [Informations de référence générales sur les événements](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+- [Journalisation des événements](index.md)
+- [Informations de référence générales sur les événements](events-general-reference.md)

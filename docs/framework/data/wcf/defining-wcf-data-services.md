@@ -4,61 +4,61 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 05006ff3-02dc-410e-831e-54ec3e7e24ef
-ms.openlocfilehash: ac75f5fd91f68d9403dc7b42325bf8970f0c6794
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b9280936a16d50283c01120c9dc046e65a0a79ae
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61765646"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70790872"
 ---
 # <a name="defining-wcf-data-services"></a>Définition des services de données WCF
 
-Cette section décrit comment créer et configurer les Services de données WCF pour exposer des données sous un [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] flux. Pour plus d’informations sur les étapes de base requises pour créer un service de données, consultez [exposer vos données en tant que Service](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md).
+Cette section décrit comment créer et configurer des WCF Data Services pour exposer des données sous [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] forme de flux. Pour plus d’informations sur les étapes de base nécessaires à la création d’un service de données, consultez [exposition de vos données en tant que service](exposing-your-data-as-a-service-wcf-data-services.md).
 
 ## <a name="in-this-section"></a>Dans cette section
 
- [Configuration du service de données](../../../../docs/framework/data/wcf/configuring-the-data-service-wcf-data-services.md)
+ [Configuration du service de données](configuring-the-data-service-wcf-data-services.md)
 
- Décrit les options de configuration de service de données fournies par WCF Data Services.
+ Décrit les options de configuration du service de données fournies par WCF Data Services.
 
- [Fournisseurs de services de données](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md)
+ [Fournisseurs de services de données](data-services-providers-wcf-data-services.md)
 
  Décrit les modèles de fournisseur pour l'exposition de données sous la forme d'un service de données.
 
- [Opérations de service](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md)
+ [Opérations de service](service-operations-wcf-data-services.md)
 
  Décrit comment définir des opérations de service qui exposent des méthodes sur le serveur.
 
- [Personnalisation des flux](../../../../docs/framework/data/wcf/feed-customization-wcf-data-services.md)
+ [Personnalisation des flux](feed-customization-wcf-data-services.md)
 
  Décrit comment créer un mappage entre les entités du modèle de données défini par le fournisseur de services de données et les éléments du flux de données.
 
- [Intercepteurs](../../../../docs/framework/data/wcf/interceptors-wcf-data-services.md)
+ [Intercepteurs](interceptors-wcf-data-services.md)
 
  Décrit comment définir des méthodes d'intercepteur pour appliquer une logique métier personnalisée sur des requêtes au service de données.
 
- [Développement et déploiement de WCF Data Services](../../../../docs/framework/data/wcf/developing-and-deploying-wcf-data-services.md)
+ [Développement et déploiement de WCF Data Services](developing-and-deploying-wcf-data-services.md)
 
  Explique comment développer et déployer un service de données à l'aide de Visual Studio.
 
- [Sécurisation de WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md)
+ [Sécurisation de WCF Data Services](securing-wcf-data-services.md)
 
  Décrit l'authentification et l'autorisation du service de données et fournit des considérations sur la sécurité.
 
- [Hébergement du service de données](../../../../docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)
+ [Hébergement du service de données](hosting-the-data-service-wcf-data-services.md)
 
  Décrit comment sélectionner un hôte pour votre service de données.
 
- [Gestion de version d’un service de données](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md)
+ [Gestion de version d’un service de données](data-service-versioning-wcf-data-services.md)
 
- Décrit comment travailler avec différentes versions d’OData.
+ Décrit comment utiliser les différentes versions d’OData.
 
- [Détails relatifs à l’implémentation du protocole WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-protocol-implementation-details.md)
+ [Détails relatifs à l’implémentation du protocole WCF Data Services](wcf-data-services-protocol-implementation-details.md)
 
- Décrit les fonctionnalités facultatives du protocole OData qui ne sont pas actuellement implémentées par WCF Data Services.
+ Décrit les fonctionnalités facultatives du protocole OData qui ne sont pas implémentées actuellement par WCF Data Services.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Bibliothèque cliente WCF Data Services](../../../../docs/framework/data/wcf/wcf-data-services-client-library.md)
-- [Accès aux ressources d’un service de données](../../../../docs/framework/data/wcf/accessing-data-service-resources-wcf-data-services.md)
-- [Prise en main](../../../../docs/framework/data/wcf/getting-started-with-wcf-data-services.md)
+- [Bibliothèque cliente WCF Data Services](wcf-data-services-client-library.md)
+- [Accès aux ressources d’un service de données](accessing-data-service-resources-wcf-data-services.md)
+- [Prise en main](getting-started-with-wcf-data-services.md)

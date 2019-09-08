@@ -2,12 +2,12 @@
 title: Syntaxe des chaînes de connexion
 ms.date: 05/22/2018
 ms.assetid: 0977aeee-04d1-4cce-bbed-750c77fce06e
-ms.openlocfilehash: 9b43dc780b8570bd671f6b5d9db14a0c98e822d8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 00b8dc4c7592daa200f1a2a6c3c7fa9a3c587087
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949474"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784915"
 ---
 # <a name="connection-string-syntax"></a>Syntaxe des chaînes de connexion
 Chaque fournisseur de données .NET Framework a un objet `Connection` qui hérite de <xref:System.Data.Common.DbConnection> et d'une propriété <xref:System.Data.Common.DbConnection.ConnectionString%2A> spécifique au fournisseur. La syntaxe de chaîne de connexion spécifique à chaque fournisseur est documentée dans sa propriété `ConnectionString`. Le tableau suivant répertorie les quatre fournisseurs de données inclus dans le .NET Framework.  
@@ -30,7 +30,7 @@ Chaque fournisseur de données .NET Framework a un objet `Connection` qui hérit
   
 - <xref:System.Data.OracleClient.OracleConnectionStringBuilder>  
   
- Les générateurs de chaînes de connexion vous permettent de générer des chaînes de connexion valides lors de l'exécution, vous évitant ainsi d'avoir à concaténer manuellement les valeurs de chaîne dans votre code. Pour plus d’informations, consultez [Builders de chaînes de connexion](../../../../docs/framework/data/adonet/connection-string-builders.md).  
+ Les générateurs de chaînes de connexion vous permettent de générer des chaînes de connexion valides lors de l'exécution, vous évitant ainsi d'avoir à concaténer manuellement les valeurs de chaîne dans votre code. Pour plus d’informations, consultez [Builders de chaînes de connexion](connection-string-builders.md).  
 
 ## <a name="windows-authentication"></a>Authentification Windows  
  Nous vous recommandons d’utiliser l’authentification Windows (parfois appelée *sécurité intégrée*) pour vous connecter aux sources de données qui la prennent en charge. La syntaxe employée dans la chaîne de connexion varie en fonction du fournisseur. Le tableau suivant présente la syntaxe de l'authentification Windows utilisée avec les fournisseurs de données .NET Framework.  
@@ -90,7 +90,7 @@ Vous pouvez également définir la propriété <xref:System.Data.SqlClient.SqlCo
 ## <a name="connecting-and-attaching-to-sql-server-express-user-instances"></a>Connexion et attachement aux instances utilisateur de SQL Server Express  
  Les instances utilisateur sont une fonctionnalité de SQL Server Express. Elles permettent à un utilisateur qui s'exécute sur un compte Windows local disposant de privilèges minimum de se connecter à une base de données SQL Server et de l'exécuter sans nécessiter de privilèges d'administrateur. Une instance utilisateur s'exécute avec les informations d'identification Windows de l'utilisateur, pas en tant que service.  
   
- Pour plus d’informations sur l’utilisation des instances utilisateur, consultez [SQL Server Express des instances utilisateur](../../../../docs/framework/data/adonet/sql/sql-server-express-user-instances.md).  
+ Pour plus d’informations sur l’utilisation des instances utilisateur, consultez [SQL Server Express des instances utilisateur](./sql/sql-server-express-user-instances.md).  
   
 ## <a name="using-trustservercertificate"></a>Utilisation de TrustServerCertificate  
  Le `TrustServerCertificate` mot clé est valide uniquement lors de la connexion à une instance de SQL Server avec un certificat valide. Lorsque `TrustServerCertificate` a la valeur `true`, la couche de transport fait appel au protocole SSL pour chiffrer le canal et ignore la chaîne du certificat pour valider la confiance.  
@@ -103,20 +103,20 @@ Vous pouvez également définir la propriété <xref:System.Data.SqlClient.SqlCo
 > Si `TrustServerCertificate` a la valeur `true` et le chiffrement est activé, le niveau de chiffrement spécifié sur le serveur sera utilisé même si  `Encrypt` a la valeur `false` dans la chaîne de connexion. Sinon, la connexion échouera.  
   
 ### <a name="enabling-encryption"></a>Activation du chiffrement  
- Pour activer le chiffrement lorsqu’un certificat n’a pas été configuré sur le serveur, les options forcer le chiffrement du **protocole** et **faire confiance au certificat de serveur** doivent être définies dans Gestionnaire de configuration SQL Server. Dans ce cas, le chiffrement fait appel à un certificat de serveur auto-signé sans validation en l’absence de tout certificat vérifiable sur le serveur.  
+ Pour activer le chiffrement lorsqu’un certificat n’a pas été configuré sur le serveur, les options **forcer le chiffrement du protocole** et **faire confiance au certificat de serveur** doivent être définies dans Gestionnaire de configuration SQL Server. Dans ce cas, le chiffrement fait appel à un certificat de serveur auto-signé sans validation en l’absence de tout certificat vérifiable sur le serveur.  
   
- Les paramètres d'application ne peuvent pas réduire le niveau de la sécurité configurée dans SQL Server, mais peuvent éventuellement la renforcer. Une application peut demander le chiffrement en `TrustServerCertificate` définissant les `true`Mots clés et `Encrypt` sur, garantissant que le chiffrement a lieu, même lorsqu’un certificat de serveur n’a pas été configuré et que le chiffrement du protocole n’a pas été **appliqué** . configuré pour le client. Toutefois, si `TrustServerCertificate` n'est pas activé dans la configuration cliente, un certificat de serveur fourni est toujours nécessaire.  
+ Les paramètres d'application ne peuvent pas réduire le niveau de la sécurité configurée dans SQL Server, mais peuvent éventuellement la renforcer. Une application peut demander le chiffrement en `TrustServerCertificate` définissant les `true`Mots clés et `Encrypt` sur, garantissant que le chiffrement a lieu, même lorsqu’un certificat de serveur n’a pas été configuré et que le **chiffrement du protocole** n’a pas été appliqué. configuré pour le client. Toutefois, si `TrustServerCertificate` n'est pas activé dans la configuration cliente, un certificat de serveur fourni est toujours nécessaire.  
   
  Le tableau ci-dessous décrit tous les cas.  
   
 |Paramètre client Forcer le chiffrement du protocole|Paramètre client Faire confiance au certificat de serveur|Attribut/chaîne de connexion Chiffrer/Utiliser le chiffrement pour les données|Attribut/chaîne de connexion Faire confiance au certificat de serveur|Résultat|  
 |----------------------------------------------|---------------------------------------------|-------------------------------------------------------------------|-----------------------------------------------------------|------------|  
-|Non|S.O.|Non (valeur par défaut)|Ignoré|Aucun chiffrement ne se produit.|  
+|Non|N/A|Non (valeur par défaut)|Ignoré|Aucun chiffrement ne se produit.|  
 |Non|S.O.|Oui|Non (valeur par défaut)|Le chiffrement se produit uniquement en présence d'un certificat de serveur vérifiable, sinon la tentative de connexion échoue.|  
-|Non|S.O.|Oui|Oui|Le chiffrement se produit toujours, mais peut utiliser un certificat de serveur auto-signé.|  
-|Oui|Non|Ignoré|Ignoré|Le chiffrement se produit uniquement s’il existe un certificat de serveur vérifiable; dans le cas contraire, la tentative de connexion échoue.|  
+|Non|N/A|Oui|Oui|Le chiffrement se produit toujours, mais peut utiliser un certificat de serveur auto-signé.|  
+|Oui|Non|Ignoré|Ignoré|Le chiffrement se produit uniquement s’il existe un certificat de serveur vérifiable ; dans le cas contraire, la tentative de connexion échoue.|  
 |Oui|Oui|Non (valeur par défaut)|Ignoré|Le chiffrement se produit toujours, mais peut utiliser un certificat de serveur auto-signé.|  
-|Oui|OUI|Oui|Non (valeur par défaut)|Le chiffrement se produit uniquement s’il existe un certificat de serveur vérifiable; dans le cas contraire, la tentative de connexion échoue.|  
+|Oui|OUI|Oui|Non (valeur par défaut)|Le chiffrement se produit uniquement s’il existe un certificat de serveur vérifiable ; dans le cas contraire, la tentative de connexion échoue.|  
 |Oui|OUI|OUI|Oui|Le chiffrement se produit toujours, mais peut utiliser un certificat de serveur auto-signé.|  
   
  Pour plus d’informations, consultez [utilisation du chiffrement sans validation](/sql/relational-databases/native-client/features/using-encryption-without-validation).
@@ -196,6 +196,6 @@ Data Source=Oracle9i;User ID=*****;Password=*****;
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Chaînes de connexion](../../../../docs/framework/data/adonet/connection-strings.md)
-- [Connexion à une source de données](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Chaînes de connexion](connection-strings.md)
+- [Connexion à une source de données](connecting-to-a-data-source.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

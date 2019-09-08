@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 0332dabc-72c5-4bdc-8975-20d717802b17
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6df750872e90572b00cdf427461b4a9782c47d63
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 07f9ae01fae5e4badbc13670ee56a2f05e303c0c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968520"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70779351"
 ---
 # <a name="mitigation-new-64-bit-jit-compiler"></a>Atténuation : nouveau compilateur JIT 64 bits
 À compter du .NET Framework 4.6, le runtime comprend un nouveau compilateur JIT 64 bits pour la compilation juste-à-temps. Ce changement n’affecte pas la compilation avec le compilateur JIT 32 bits.  
@@ -52,7 +52,7 @@ ms.locfileid: "69968520"
 ## <a name="mitigation-of-other-issues"></a>Atténuation des autres problèmes  
  Si vous rencontrez une autre différence de comportement entre le code compilé avec l’ancien compilateur JIT 64 bits et celui compilé avec le nouveau compilateur, ou entre les versions Debug et Release de votre application lorsque les deux sont compilées avec le nouveau compilateur JIT 64 bits, vous pouvez procéder comme suit pour compiler votre application avec l’ancien compilateur JIT 64 bits :  
   
-- Pour chaque application le nécessitant, vous pouvez ajouter l’élément [ \<useLegacyJit>](../../../docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md) au fichier de configuration de votre application. Ce qui suit désactive la compilation avec le nouveau compilateur JIT 64 bits et utilise l’ancien compilateur à la place.  
+- Pour chaque application le nécessitant, vous pouvez ajouter l’élément [ \<useLegacyJit>](../configure-apps/file-schema/runtime/uselegacyjit-element.md) au fichier de configuration de votre application. Ce qui suit désactive la compilation avec le nouveau compilateur JIT 64 bits et utilise l’ancien compilateur à la place.  
   
     ```xml  
     <?xml version ="1.0"?>  
@@ -71,5 +71,5 @@ ms.locfileid: "69968520"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modifications du runtime](../../../docs/framework/migration-guide/runtime-changes-in-the-net-framework-4-6.md)
-- [Élément \<useLegacyJit>](../../../docs/framework/configure-apps/file-schema/runtime/uselegacyjit-element.md)
+- [Modifications du runtime](runtime-changes-in-the-net-framework-4-6.md)
+- [Élément \<useLegacyJit>](../configure-apps/file-schema/runtime/uselegacyjit-element.md)

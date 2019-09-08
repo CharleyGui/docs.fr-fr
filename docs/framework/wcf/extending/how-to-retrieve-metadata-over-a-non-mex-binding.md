@@ -2,15 +2,15 @@
 title: 'Procédure : récupérer des métadonnées sur une liaison non-MEX'
 ms.date: 03/30/2017
 ms.assetid: 2292e124-81b2-4317-b881-ce9c1ec66ecb
-ms.openlocfilehash: 4a127e3e2283050018705c85606bd7c03c36de8b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6cd6e0ce5dc287c826179c152b989b5f7842bb6e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766777"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795573"
 ---
 # <a name="how-to-retrieve-metadata-over-a-non-mex-binding"></a>Procédure : récupérer des métadonnées sur une liaison non-MEX
-Cette rubrique décrit comment récupérer les métadonnées d'un point de terminaison MEX sur une liaison non-MEX. Le code dans cet exemple est basé sur le [personnalisé sécuriser les métadonnées de point de terminaison](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) exemple.  
+Cette rubrique décrit comment récupérer les métadonnées d'un point de terminaison MEX sur une liaison non-MEX. Le code de cet exemple est basé sur l’exemple de [point de terminaison de métadonnées sécurisé personnalisé](../samples/custom-secure-metadata-endpoint.md) .  
   
 ### <a name="to-retrieve-metadata-over-a-non-mex-binding"></a>Pour récupérer des métadonnées sur une liaison non-MEX  
   
@@ -121,8 +121,8 @@ Cette rubrique décrit comment récupérer les métadonnées d'un point de termi
     ServiceEndpointCollection endpoints = importer.ImportAllEndpoints();  
     ```  
   
-5. À ce stade, vous disposez d’une collection de points de terminaison de service. Pour plus d’informations sur l’importation de métadonnées, consultez [Comment : Importer des métadonnées dans les points de terminaison de Service](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md).  
+5. À ce stade, vous disposez d’une collection de points de terminaison de service. Pour plus d’informations sur l’importation des [métadonnées, consultez Procédure : Importez des métadonnées](../feature-details/how-to-import-metadata-into-service-endpoints.md)dans des points de terminaison de service.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Métadonnées](../../../../docs/framework/wcf/feature-details/metadata.md)
+- [Métadonnées](../feature-details/metadata.md)

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 335d80255f7a3f5a22e8a69aa91c9e5b0843ea1e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 763b7a776007c2ce8dac42c6a5f7f00f6eb58a10
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741590"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70776943"
 ---
 # <a name="linkresource-method"></a>LinkResource, méthode
 Liens dans une ressource.  
@@ -46,22 +46,22 @@ HRESULT LinkResource(
  Nom du fichier.  
   
  `pszNewLocation`  
- Nouveau nom de fichier facultatif. Si non NULL, `pszFileName` sera copié vers pszNewLocation.  
+ Nouveau nom de fichier facultatif. Si la valeur est non `pszFileName` null, sera copié dans pszNewLocation.  
   
  `pszResourceName`  
  Nom de la ressource.  
   
  `dwFlags`  
- Accessibilité indicateurs tels que `mrPublic` et `mrPrivate`. Ce paramètre peut être passé à [DefineManifestResource, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definemanifestresource-method.md).  
+ Indicateurs d’accessibilité tels `mrPublic` que `mrPrivate`et. Ce paramètre peut être passé à la [méthode DefineManifestResource,](../metadata/imetadataassemblyemit-definemanifestresource-method.md).  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h.  
+ Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink, interface](ialink-interface.md)
+- [IALink2, interface](ialink2-interface.md)
+- [API ALink](index.md)

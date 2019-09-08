@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a4a564fb-c1c4-4135-b6c2-b030e51195e4
-ms.openlocfilehash: fde1e2ace09e31234d199876ae7f063e01e7a7e4
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 8157d296636d0f8661a35af35de561f5cc49c30b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203970"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784808"
 ---
 # <a name="adding-datarelations"></a>Ajout de DataRelations
 Dans un objet <xref:System.Data.DataSet> contenant plusieurs objets <xref:System.Data.DataTable>, vous pouvez utiliser des objets <xref:System.Data.DataRelation> pour associer une table à une autre, pour vous déplacer dans les tables et pour retourner les lignes enfants ou parentes d'une table associée.  
@@ -33,9 +33,9 @@ customerOrders.Relations.Add("CustOrders",
   customerOrders.Tables["Orders"].Columns["CustID"]);  
 ```  
   
- Un **DataRelation** a également une propriété imbriquée qui, lorsqu’elle est définie sur **true**, fait en sorte que les lignes de la table enfant soient imbriquées dans la ligne associée de la table parente lorsqu' <xref:System.Data.DataSet.WriteXml%2A> elles sont écrites en tant qu’éléments XML à l’aide de. Pour plus d’informations, consultez [Utilisation de XML dans un DataSet](using-xml-in-a-dataset.md).  
+ Un **DataRelation** a également une propriété **imbriquée** qui, lorsqu’elle est définie sur **true**, fait en sorte que les lignes de la table enfant soient imbriquées dans la ligne associée de la table parente lorsqu' <xref:System.Data.DataSet.WriteXml%2A> elles sont écrites en tant qu’éléments XML à l’aide de. Pour plus d’informations, consultez [Utilisation de XML dans un DataSet](using-xml-in-a-dataset.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [DataSets, DataTables et DataViews](index.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

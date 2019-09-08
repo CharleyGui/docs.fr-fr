@@ -5,16 +5,16 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - WCF Data Services, querying
 ms.assetid: f0dbf7b0-0292-4e31-9ae4-b98288336dc1
-ms.openlocfilehash: d45d472a2996c0b501af70a0a2a6d2d669dedb4d
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 89357b1d05526438c939a73663c5b7b6273df4ac
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70043529"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70790393"
 ---
 # <a name="object-materialization-wcf-data-services"></a>Matérialisation d'objet (services de données WCF)
 
-Lorsque vous utilisez la boîte de dialogue **Ajouter une référence de service** pour [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] consommer un flux dans une application cliente basée sur .NET Framework, des classes de données équivalentes sont générées pour chaque type d’entité dans le modèle de données exposé par le flux. Pour plus d’informations, consultez [génération de la bibliothèque cliente du service de données](../../../../docs/framework/data/wcf/generating-the-data-service-client-library-wcf-data-services.md). Les données d'entité retournées par une requête sont matérialisées dans une instance de l'une de ces classes de service de données client générées. Pour plus d’informations sur les options de fusion et la résolution d’identité pour les objets suivis, consultez [gestion du contexte du service de données](../../../../docs/framework/data/wcf/managing-the-data-service-context-wcf-data-services.md).
+Lorsque vous utilisez la boîte de dialogue **Ajouter une référence de service** pour [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] consommer un flux dans une application cliente basée sur .NET Framework, des classes de données équivalentes sont générées pour chaque type d’entité dans le modèle de données exposé par le flux. Pour plus d’informations, consultez [génération de la bibliothèque cliente du service de données](generating-the-data-service-client-library-wcf-data-services.md). Les données d'entité retournées par une requête sont matérialisées dans une instance de l'une de ces classes de service de données client générées. Pour plus d’informations sur les options de fusion et la résolution d’identité pour les objets suivis, consultez [gestion du contexte du service de données](managing-the-data-service-context-wcf-data-services.md).
 
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vous permet également de définir vos propres classes de service de données client plutôt que d'utiliser les classes de données générées par outil. Cela vous permet d'utiliser vos propres classes de données, également appelées classes de données POCO (plain-old CLR object). Lors de l’utilisation de ces types de classes de données personnalisées, vous devez attribuer <xref:System.Data.Services.Common.DataServiceKeyAttribute> à <xref:System.Data.Services.Common.DataServiceEntityAttribute> la classe de données la valeur ou et vous assurer que les noms de types sur le client correspondent aux noms de type dans le modèle de données du service de données.
 
@@ -38,10 +38,10 @@ Une fois que la bibliothèque reçoit le message de réponse de requête, elle m
 
     - Les propriétés complexes sont définies sur une nouvelle instance de type complexe, définie avec les propriétés du type complexe de la réponse.
 
-    - Les propriétés de navigation qui retournent une collection d’entités associées sont définies sur une instance nouvelle ou existante de <xref:System.Collections.Generic.ICollection%601>, où `T` est le type d’entité associée. Cette collection est vide à moins que les objets connexes aient été chargés dans <xref:System.Data.Services.Client.DataServiceContext>. Pour plus d’informations, consultez chargement d’un [contenu différé](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).
+    - Les propriétés de navigation qui retournent une collection d’entités associées sont définies sur une instance nouvelle ou existante de <xref:System.Collections.Generic.ICollection%601>, où `T` est le type d’entité associée. Cette collection est vide à moins que les objets connexes aient été chargés dans <xref:System.Data.Services.Client.DataServiceContext>. Pour plus d’informations, consultez chargement d’un [contenu différé](loading-deferred-content-wcf-data-services.md).
 
       > [!NOTE]
-      > Lorsque les classes de données clientes générées prennent en charge la liaison de données, les propriétés de navigation retournent des instances de la classe <xref:System.Data.Services.Client.DataServiceCollection%601> à la place. Pour plus d’informations, consultez [liaison de données à des contrôles](../../../../docs/framework/data/wcf/binding-data-to-controls-wcf-data-services.md).
+      > Lorsque les classes de données clientes générées prennent en charge la liaison de données, les propriétés de navigation retournent des instances de la classe <xref:System.Data.Services.Client.DataServiceCollection%601> à la place. Pour plus d’informations, consultez [liaison de données à des contrôles](binding-data-to-controls-wcf-data-services.md).
 
 4. L'événement <xref:System.Data.Services.Client.DataServiceContext.ReadingEntity> est déclenché.
 
@@ -49,5 +49,5 @@ Une fois que la bibliothèque reçoit le message de réponse de requête, elle m
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interrogation du service de données](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md)
-- [Projections de requête](../../../../docs/framework/data/wcf/query-projections-wcf-data-services.md)
+- [Interrogation du service de données](querying-the-data-service-wcf-data-services.md)
+- [Projections de requête](query-projections-wcf-data-services.md)

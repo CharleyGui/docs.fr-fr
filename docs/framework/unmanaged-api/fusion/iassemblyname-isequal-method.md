@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f1fc128d15c56981f4bc6122e38e0514d006e29e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 926bdcee3a3c3974c8546f3a6dfe98f0b62c93c8
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67768620"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796570"
 ---
 # <a name="iassemblynameisequal-method"></a>IAssemblyName::IsEqual, méthode
-Détermine si une certaine [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objet est égal à ce `IAssemblyName`, selon les indicateurs de comparaison spécifié.  
+Détermine si un objet [IAssemblyName](iassemblyname-interface.md) spécifié est égal à ce `IAssemblyName`, en fonction des indicateurs de comparaison spécifiés.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT IsEqual (
   
 ## <a name="parameters"></a>Paramètres  
  `pName`  
- [in] Le `IAssemblyName` objet auquel comparer cette `IAssemblyName`.  
+ dans Objet auquel comparer ce `IAssemblyName`. `IAssemblyName`  
   
  `dwCmpFlags`  
- [in] Une combinaison au niveau du bit de [ASM_CMP_FLAGS pour](../../../../docs/framework/unmanaged-api/fusion/asm-cmp-flags-enumeration.md) valeurs influencer la comparaison.  
+ dans Combinaison d’opérations de bits de valeurs [ASM_CMP_FLAGS](asm-cmp-flags-enumeration.md) qui influencent la comparaison.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** Fusion.h  
+ **En-tête :** Fusion. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IAssemblyName, interface](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [Énumérations de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+- [IAssemblyName, interface](iassemblyname-interface.md)
+- [Énumérations de fusion](fusion-enumerations.md)

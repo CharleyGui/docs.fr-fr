@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c1a78fa8-9f0c-40bc-a372-5575a48708fe
-ms.openlocfilehash: f6677e894e09b41e1f406d6b6485abf4168b5d6e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5aaf33e5e2379ace4d32c59bd842889d0f9e32da
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946259"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794540"
 ---
 # <a name="queries-in-linq-to-dataset"></a>Requêtes dans LINQ to DataSet
 Une requête est une expression qui récupère des données d'une source de données. En général, les requêtes sont exprimées dans un langage de requête spécialisé, tel que SQL pour les bases de données relationnelles et Xquery pour XML. Par conséquent, les développeurs ont dû apprendre un nouveau langage de requête pour chaque type de source de données ou format de données qu'ils interrogent. [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] offre un modèle simplifié et cohérent qui permet d'utiliser des données de types de sources et de formats diversifiés. Dans une requête [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)], vous travaillez toujours avec des objets de programmation.  
@@ -26,7 +26,7 @@ Une requête est une expression qui récupère des données d'une source de donn
  Contrairement aux requêtes différées qui retournent une séquence de valeurs, les requêtes qui retournent une valeur singleton sont exécutées immédiatement. Les requêtes <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Max%2A>, <xref:System.Linq.Enumerable.Average%2A> et <xref:System.Linq.Enumerable.First%2A> en sont quelques exemples. Elles s'exécutent immédiatement parce que les résultats de la requête sont nécessaires pour calculer le résultat singleton. Par exemple, pour trouver la moyenne des résultats, la requête doit être exécutée pour que la fonction de moyenne dispose de données sur lesquelles effectuer ses calculs. Vous pouvez également utiliser les méthodes <xref:System.Linq.Enumerable.ToList%2A> ou <xref:System.Linq.Enumerable.ToArray%2A> sur une requête pour forcer l'exécution immédiate d'une requête qui ne produit pas de valeur singleton. Ces techniques peuvent être utiles lorsque vous souhaitez mettre en cache les résultats d'une requête.
   
 ## <a name="queries"></a>Requêtes  
- LINQ to DataSet requêtes peuvent être formulées dans deux syntaxes différentes: la syntaxe d’expression de requête et la syntaxe de requête fondée sur une méthode.  
+ LINQ to DataSet requêtes peuvent être formulées dans deux syntaxes différentes : la syntaxe d’expression de requête et la syntaxe de requête fondée sur une méthode.  
   
 ### <a name="query-expression-syntax"></a>Syntaxe d'expression de requête  
  Les expressions de requête utilisent une syntaxe de requête déclarative. Cette syntaxe permet au développeur d'écrire des requêtes en C# ou Visual Basic dans un format similaire à SQL. En utilisant la syntaxe d'expression de requête, vous pouvez même effectuer des opérations de filtrage, de classement et de regroupement complexes sur des sources de données avec un minimum de code. Pour plus d’informations, consultez [expressions de requête LINQ](../../../csharp/linq/index.md#query-expression-overview) et [opérations de requête de base (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).
@@ -61,7 +61,7 @@ Une requête est une expression qui récupère des données d'une source de donn
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation](../../../../docs/framework/data/adonet/programming-guide-linq-to-dataset.md)
-- [Interrogation de DataSets](../../../../docs/framework/data/adonet/querying-datasets-linq-to-dataset.md)
+- [Guide de programmation](programming-guide-linq-to-dataset.md)
+- [Interrogation de DataSets](querying-datasets-linq-to-dataset.md)
 - [Bien démarrer avec LINQ en C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
 - [Bien démarrer avec LINQ en Visual Basic](../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)

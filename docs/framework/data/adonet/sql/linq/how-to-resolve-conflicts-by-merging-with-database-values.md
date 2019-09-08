@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1988b79c-3bfc-4c5c-a08a-86cf638bbe17
-ms.openlocfilehash: ccd2e37457e686bc5faed6d8979c2b266d05c829
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 18a7eceeec63d9caadefab8d98942f10d82c99ca
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943439"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793350"
 ---
 # <a name="how-to-resolve-conflicts-by-merging-with-database-values"></a>Procédure : Résoudre les conflits d’accès concurrentiel en fusionnant des valeurs de base de données
-Pour harmoniser des différences entre des valeurs de base de données attendues et réelles avant de soumettre à nouveau vos modifications, vous pouvez utiliser <xref:System.Data.Linq.RefreshMode.KeepChanges> pour fusionner des valeurs de base de données avec les valeurs de membre client actuelles. Pour plus d’informations, [consultez accès concurrentiel optimiste: Vue](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md)d’ensemble.  
+Pour harmoniser des différences entre des valeurs de base de données attendues et réelles avant de soumettre à nouveau vos modifications, vous pouvez utiliser <xref:System.Data.Linq.RefreshMode.KeepChanges> pour fusionner des valeurs de base de données avec les valeurs de membre client actuelles. Pour plus d’informations, [consultez accès concurrentiel optimiste : Vue](optimistic-concurrency-overview.md)d’ensemble.  
   
 > [!NOTE]
 > Dans tous les cas, l'enregistrement sur le client est actualisé lors de la récupération des données mises à jour de la base de données. Cette action permet de s'assurer que la prochaine tentative de mise à jour n'échouera pas sur les mêmes vérifications d'accès concurrentiel.  
@@ -42,6 +42,6 @@ Pour harmoniser des différences entre des valeurs de base de données attendues
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique : Résoudre les conflits en remplaçant les valeurs de la base de données](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-overwriting-database-values.md)
-- [Guide pratique pour Résoudre les conflits en conservant les valeurs de la base de données](../../../../../../docs/framework/data/adonet/sql/linq/how-to-resolve-conflicts-by-retaining-database-values.md)
-- [Guide pratique pour Gérer les conflits de modification](../../../../../../docs/framework/data/adonet/sql/linq/how-to-manage-change-conflicts.md)
+- [Guide pratique pour Résoudre les conflits en remplaçant les valeurs de la base de données](how-to-resolve-conflicts-by-overwriting-database-values.md)
+- [Guide pratique pour Résoudre les conflits en conservant les valeurs de la base de données](how-to-resolve-conflicts-by-retaining-database-values.md)
+- [Guide pratique pour Gérer les conflits de modification](how-to-manage-change-conflicts.md)

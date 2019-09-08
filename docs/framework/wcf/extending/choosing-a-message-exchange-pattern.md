@@ -2,15 +2,15 @@
 title: Sélection d’un modèle d’échange de messages
 ms.date: 03/30/2017
 ms.assetid: 0f502ca1-6a8e-4607-ba15-59198c0e6146
-ms.openlocfilehash: 518a21ef34d52ef4b70871ba8bad7876374dd319
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7dcbea30b53142ed68db9ac138f8c7a665ca1729
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69951859"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797292"
 ---
 # <a name="choosing-a-message-exchange-pattern"></a>Sélection d’un modèle d’échange de messages
-La première étape de l’écriture d’un transport personnalisé consiste à décider quels *modèles d’échange de messages* (ou MEP) sont requis pour le canal que vous développez. Cette rubrique contient des explications sur les options disponibles ainsi que sur les différentes exigences. Il s’agit de la première tâche de la liste des tâches de développement de canaux décrite dans [développement de canaux](../../../../docs/framework/wcf/extending/developing-channels.md).  
+La première étape de l’écriture d’un transport personnalisé consiste à décider quels *modèles d’échange de messages* (ou MEP) sont requis pour le canal que vous développez. Cette rubrique contient des explications sur les options disponibles ainsi que sur les différentes exigences. Il s’agit de la première tâche de la liste des tâches de développement de canaux décrite dans [développement de canaux](developing-channels.md).  
   
 ## <a name="six-message-exchange-patterns"></a>Modèles d'échange de messages  
  Trois MEP sont disponibles :  
@@ -27,7 +27,7 @@ La première étape de l’écriture d’un transport personnalisé consiste à 
   
      Le MEP duplex permet à un nombre aléatoire de messages d'être envoyés par un client et d'être reçus dans un ordre indifférencié. Le MEP duplex est similaire à une conversation téléphonique, où chaque mot prononcé correspond à un message. Les deux côtés pouvant envoyer et recevoir des messages dans ce MEP, l'interface implémentée par les canaux du client et du service est <xref:System.ServiceModel.Channels.IDuplexChannel>.  
   
- ![Choix d’un modèle d’échange de messages](../../../../docs/framework/wcf/extending/media/wcfc-basicthreemepsc.gif "wcfc_BasicThreeMEPsc")  
+ ![Choix d’un modèle d’échange de messages](./media/wcfc-basicthreemepsc.gif "wcfc_BasicThreeMEPsc")  
 Les trois modèles d’échange de messages de base. De haut en bas : datagramme, demande-réponse et duplex.  
   
  Chacun de ces MEP peut également prendre en charge des *sessions*. Une session (et une implémentation de <xref:System.ServiceModel.Channels.ISessionChannel%601?displayProperty=nameWithType> de type <xref:System.ServiceModel.Channels.ISession?displayProperty=nameWithType>) met en corrélation tous les messages envoyés et reçus sur un canal. Le modèle de demande-réponse correspond à une session autonome à deux messages, la demande et la réponse étant corrélées. Par comparaison, lorsque le modèle demande-réponse prend en charge les sessions, cela signifie que toutes les paires demande-réponse envoyées et reçues sur le canal doivent être corrélées les unes avec les autres. Vous pouvez donc choisir entre six MEP au total :  
@@ -52,7 +52,7 @@ Les trois modèles d’échange de messages de base. De haut en bas : datagramm
   
  Dans le modèle d'objet de canal, chaque session logique se manifeste sous forme d'instance de canal de session. Par conséquent, chaque nouvelle session créée par le client et acceptée par le service correspond à un nouveau canal de session de part et d'autre. Le diagramme suivant contient, dans sa partie supérieure, la structure des canaux sans session et, dans sa partie inférieure, la structure des canaux de session.  
   
- ![Choix d’un modèle d’échange de messages](../../../../docs/framework/wcf/extending/media/wcfc-sessionandsessionlesschannelsc.gif "wcfc_SessionAndSessionlessChannelsc")  
+ ![Choix d’un modèle d’échange de messages](./media/wcfc-sessionandsessionlesschannelsc.gif "wcfc_SessionAndSessionlessChannelsc")  
   
  Un client crée un nouveau canal de session, puis envoie un message. Du côté du service, l'écouteur de canal reçoit ce message et détecte qu'il appartient à une nouvelle session. Il crée par conséquent un nouveau canal de session qu'il transmet à l'application (en réponse à l'appel AcceptChannel transmis par cette dernière). L'application reçoit alors le message ainsi que tous les messages suivants envoyés dans la même session via le même canal de session.  
   
@@ -94,4 +94,4 @@ Les trois modèles d’échange de messages de base. De haut en bas : datagramm
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble du modèle de canal](../../../../docs/framework/wcf/extending/channel-model-overview.md)
+- [Vue d’ensemble du modèle de canal](channel-model-overview.md)

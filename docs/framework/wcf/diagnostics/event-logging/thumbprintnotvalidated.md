@@ -2,12 +2,12 @@
 title: ThumbPrintNotValidated
 ms.date: 03/30/2017
 ms.assetid: e3e110f5-2853-4150-99c9-18236df320e2
-ms.openlocfilehash: c15db842d48db38fa200ca157a6846e06c0b0961
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a4a1400bc3efb195b18eb3507a9807f0b63f779a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61944415"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797523"
 ---
 # <a name="thumbprintnotvalidated"></a>ThumbPrintNotValidated
 Id : 153  
@@ -21,5 +21,5 @@ Id : 153
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Journalisation des événements](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md)
-- [Informations de référence générales sur les événements](../../../../../docs/framework/wcf/diagnostics/event-logging/events-general-reference.md)
+- [Journalisation des événements](index.md)
+- [Informations de référence générales sur les événements](events-general-reference.md)

@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 263dc0f9d686440aaa23e359c26db1b4d3d09b1e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7421e0d0e1a1f0e1a5fbe0d0eb7d5a0ab2a48b9a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61609098"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796420"
 ---
 # <a name="iidentityauthority-interface"></a>IIdentityAuthority, interface
 
@@ -31,33 +31,33 @@ Gère les clés d’identité pour les objets de code.
 
 |Méthode|Description|
 |------------|-----------------|
-|`IIdentityAuthority::AreDefinitionsEqual`|Obtient une valeur qui indique si les deux spécifié [IDefinitionIdentity](../../../../docs/framework/unmanaged-api/fusion/idefinitionidentity-interface.md) instances sont égales.|
-|`IIdentityAuthority::AreReferencesEqual`|Obtient une valeur qui indique si les deux spécifié [IReferenceIdentity](../../../../docs/framework/unmanaged-api/fusion/ireferenceidentity-interface.md) instances sont égales.|
-|`IIdentityAuthority::AreTextualDefinitionsEqual`|Obtient une valeur qui indique si les deux représentations sous forme de chaîne spécifiée définition identity sont égaux.|
-|`IIdentityAuthority::AreTextualReferencesEqual`|Obtient une valeur qui indique si les deux représentations d’identité de référence de chaîne spécifié sont égale.|
-|`IIdentityAuthority::CreateDefinition`|Obtient un pointeur vers un nouveau `IDefinitionIdentity` instance qui représente l’objet de code dans la portée actuelle.|
-|`IIdentityAuthority::CreateReference`|Obtient un pointeur vers un nouveau `IReferenceIdentity` instance qui représente l’objet de code dans la portée actuelle.|
-|`IIdentityAuthority::DefinitionToText`|Obtient une version de la chaîne mise en forme de l’objet `IDefinitionIdentity`.|
-|`IIdentityAuthority::DefinitionToTextBuffer`|Remplit la mémoire tampon de caractères larges spécifié avec une version de chaîne de l’objet `IDefinitionIdentity`.|
-|`IIdentityAuthority::DoesDefinitionMatchReference`|Obtient une valeur qui indique si le texte spécifié `IDefinitionIdentity` et `IReferenceIdentity` instances font référence au même objet de code.|
+|`IIdentityAuthority::AreDefinitionsEqual`|Obtient une valeur qui indique si les deux instances de [IDefinitionIdentity](idefinitionidentity-interface.md) spécifiées sont égales.|
+|`IIdentityAuthority::AreReferencesEqual`|Obtient une valeur qui indique si les deux instances [IReferenceIdentity](ireferenceidentity-interface.md) spécifiées sont égales.|
+|`IIdentityAuthority::AreTextualDefinitionsEqual`|Obtient une valeur qui indique si les deux représentations d’identité de définition de chaîne spécifiées sont égales.|
+|`IIdentityAuthority::AreTextualReferencesEqual`|Obtient une valeur qui indique si les deux représentations d’identité de référence de chaîne spécifiées sont égales.|
+|`IIdentityAuthority::CreateDefinition`|Obtient un pointeur vers une nouvelle `IDefinitionIdentity` instance de qui représente l’objet de code dans l’étendue actuelle.|
+|`IIdentityAuthority::CreateReference`|Obtient un pointeur vers une nouvelle `IReferenceIdentity` instance de qui représente l’objet de code dans l’étendue actuelle.|
+|`IIdentityAuthority::DefinitionToText`|Obtient une version de chaîne mise en forme `IDefinitionIdentity`du spécifié.|
+|`IIdentityAuthority::DefinitionToTextBuffer`|Remplit la mémoire tampon de caractères larges spécifiée avec une version de chaîne du `IDefinitionIdentity`spécifié.|
+|`IIdentityAuthority::DoesDefinitionMatchReference`|Obtient une valeur qui indique si les instances `IDefinitionIdentity` et `IReferenceIdentity` spécifiées font référence au même objet de code.|
 |`IIdentityAuthority::DoesTextualDefinitionMatchTextualReference`|Obtient une valeur qui indique si les chaînes spécifiées font référence au même objet de code.|
-|`IIdentityAuthority::GenerateDefinitionKey`|Obtient un pointeur vers une clé de chaîne qui vient d’être créée pour spécifié `IDefinitionIdentity`.|
-|`IIdentityAuthority::GenerateReferenceKey`|Obtient un pointeur vers une clé de chaîne qui vient d’être créée pour spécifié `IReferenceIdentity`.|
-|`IIdentityAuthority::HashDefinition`|Obtient une valeur de hachage spécifié `IDefinitionIdentity`.|
-|`IIdentityAuthority::HashReference`|Obtient une valeur de hachage spécifié `IReferenceIdentity`.|
-|`IIdentityAuthority::ReferenceToText`|Obtient une version de la chaîne mise en forme de l’objet `IReferenceIdentity`.|
-|`IIdentityAuthority::ReferenceToTextBuffer`|Remplit la mémoire tampon de caractères larges spécifié avec une version de chaîne de l’objet `IReferenceIdentity`.|
-|`IIdentityAuthority::TextToDefinition`|Obtient un pointeur d’interface vers un `IDefinitionIdentity` instance générée à partir du spécifié au format chaîne.|
-|`IIdentityAuthority::TextToReference`|Obtient un pointeur d’interface vers un `IReferenceIdentity` instance générée à partir du spécifié au format chaîne.|
+|`IIdentityAuthority::GenerateDefinitionKey`|Obtient un pointeur vers une clé de chaîne nouvellement créée pour le `IDefinitionIdentity`spécifié.|
+|`IIdentityAuthority::GenerateReferenceKey`|Obtient un pointeur vers une clé de chaîne nouvellement créée pour le `IReferenceIdentity`spécifié.|
+|`IIdentityAuthority::HashDefinition`|Obtient une valeur de hachage pour le `IDefinitionIdentity`spécifié.|
+|`IIdentityAuthority::HashReference`|Obtient une valeur de hachage pour le `IReferenceIdentity`spécifié.|
+|`IIdentityAuthority::ReferenceToText`|Obtient une version de chaîne mise en forme `IReferenceIdentity`du spécifié.|
+|`IIdentityAuthority::ReferenceToTextBuffer`|Remplit la mémoire tampon de caractères larges spécifiée avec une version de chaîne du `IReferenceIdentity`spécifié.|
+|`IIdentityAuthority::TextToDefinition`|Obtient un pointeur d’interface vers `IDefinitionIdentity` une instance générée à partir de la chaîne mise en forme spécifiée.|
+|`IIdentityAuthority::TextToReference`|Obtient un pointeur d’interface vers `IReferenceIdentity` une instance générée à partir de la chaîne mise en forme spécifiée.|
 
 ## <a name="requirements"></a>Configuration requise
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
-**En-tête :** Isolation.h
+**En-tête :** Isolation. h
 
 **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
+- [Interfaces de fusion](fusion-interfaces.md)

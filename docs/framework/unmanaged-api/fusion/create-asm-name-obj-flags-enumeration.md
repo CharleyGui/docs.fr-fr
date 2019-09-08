@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 871ad81cd83c40d7299f39ede404e274b95b2ac0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9897e396424b9076da8f30c61b5a14cfa9539690
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778459"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795423"
 ---
-# <a name="createasmnameobjflags-enumeration"></a>CREATE_ASM_NAME_OBJ_FLAGS, énumération
-Spécifie les attributs d’un [IAssemblyName, Interface](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) de l’objet lorsqu’il est construit par la [CreateAssemblyNameObject](../../../../docs/framework/unmanaged-api/fusion/createassemblynameobject-function.md) (fonction).  
+# <a name="create_asm_name_obj_flags-enumeration"></a>CREATE_ASM_NAME_OBJ_FLAGS, énumération
+Spécifie les attributs d’un objet d' [interface IAssemblyName](iassemblyname-interface.md) lorsqu’il est construit par la fonction [CreateAssemblyNameObject,](createassemblynameobject-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,19 +45,19 @@ typedef enum {
 |Membre|Description|  
 |------------|-----------------|  
 |`CANOF_PARSE_DISPLAY_NAME`|Indique que le paramètre passé est une identité textuelle.|  
-|`CANOF_SET_DEFAULT_VALUES`|Définit le nombre de valeurs par défaut.|  
-|`CANOF_VERIFY_FRIEND_ASSEMBLYNAME`|Vérifie la règle d’assembly friend (uniquement un nom et clé publique). Ce membre est à usage interne uniquement.|  
-|`CANOF_PARSE_FRIEND_DISPLAY_NAME`|Une combinaison de la `CANOF_PARSE_DISPLAY_NAME` et `CANOF_VERIFY_FRIEND_ASSEMBLYNAME` indicateurs. Ce membre est à usage interne uniquement.|  
+|`CANOF_SET_DEFAULT_VALUES`|Définit quelques valeurs par défaut.|  
+|`CANOF_VERIFY_FRIEND_ASSEMBLYNAME`|Vérifie la règle d’assembly friend (nom et clé publique uniquement). Ce membre est destiné à un usage interne uniquement.|  
+|`CANOF_PARSE_FRIEND_DISPLAY_NAME`|Combinaison des `CANOF_PARSE_DISPLAY_NAME` indicateurs et `CANOF_VERIFY_FRIEND_ASSEMBLYNAME` . Ce membre est destiné à un usage interne uniquement.|  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** Fusion.h  
+ **En-tête :** Fusion. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IAssemblyName, interface](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [CreateAssemblyNameObject, fonction](../../../../docs/framework/unmanaged-api/fusion/createassemblynameobject-function.md)
-- [Énumérations de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+- [IAssemblyName, interface](iassemblyname-interface.md)
+- [CreateAssemblyNameObject, fonction](createassemblynameobject-function.md)
+- [Énumérations de fusion](fusion-enumerations.md)

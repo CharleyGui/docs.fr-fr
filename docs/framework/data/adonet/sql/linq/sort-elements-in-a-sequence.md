@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d59b93a9-50c8-4770-a114-d902f6a0ea76
-ms.openlocfilehash: f6f112a63dd976a1d6ae91f2fafd6678a9f40846
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 21fa2f9e1dc2f255fe94f2420ba90a809ab5b05e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69945092"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792663"
 ---
 # <a name="sort-elements-in-a-sequence"></a>Trier les éléments d'une séquence
 Utilisez l'opérateur <xref:System.Linq.Enumerable.OrderBy%2A> pour trier une séquence selon une ou plusieurs clés.  
@@ -18,7 +18,7 @@ Utilisez l'opérateur <xref:System.Linq.Enumerable.OrderBy%2A> pour trier une s�
 > [!NOTE]
 > [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]est conçu pour prendre en charge le classement par types primitifs `string`simples `int`, tels que,, et ainsi de suite. Il ne prend pas en charge le classement des classes complexes à valeurs multiples, telles que les types anonymes. Il ne prend pas non plus en charge de types de données `byte`.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple suivant trie `Employees` par date d'embauche.  
   
  [!code-csharp[DLinqQueryExamples#20](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#20)]
@@ -42,7 +42,7 @@ Utilisez l'opérateur <xref:System.Linq.Enumerable.OrderBy%2A> pour trier une s�
  [!code-csharp[DLinqQueryExamples#24](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#24)]
  [!code-vb[DLinqQueryExamples#24](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#24)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant trie les commandes `EmployeeID 1` de `ShipCountry`par, puis de fret le plus élevé au plus bas.  
   
  [!code-csharp[DLinqQueryExamples#25](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#25)]
@@ -90,5 +90,5 @@ Utilisez l'opérateur <xref:System.Linq.Enumerable.OrderBy%2A> pour trier une s�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de requêtes](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)
-- [Téléchargement d’exemples de base de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md)
+- [Exemples de requêtes](query-examples.md)
+- [Téléchargement d’exemples de base de données](downloading-sample-databases.md)

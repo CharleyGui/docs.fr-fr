@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d619976b-eda3-475e-ac23-c7988a2dceb0
-ms.openlocfilehash: 1c1c1e050cfef36aa53b83a764c0b7e308783394
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 399aba1a6ad70ae37355f529a291ab2f604af03f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619615"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797088"
 ---
 # <a name="how-to-create-a-custom-claim"></a>Procédure : créer une revendication personnalisée
-L’infrastructure de modèle d’identité dans Windows Communication Foundation (WCF) fournit un ensemble de types de revendication intégrés et des droits avec les fonctions d’assistance pour la création de <xref:System.IdentityModel.Claims.Claim> instances avec ces types et droits. Ces revendications intégrées sont conçues pour modeler données trouvées dans les types d’informations d’identification de client WCF prend en charge par défaut. Dans la plupart des cas, les revendications intégrées sont suffisantes ; toutefois, certaines applications peuvent requérir des revendications personnalisées. Une revendication comporte trois volets : le type de revendication, la ressource à laquelle la revendication s'applique et le droit revendiqué sur cette ressource. Cette rubrique décrit comment créer une revendication personnalisée.  
+L’infrastructure de modèle d’identité dans Windows Communication Foundation (WCF) fournit un ensemble de types de revendication intégrés et des droits avec les fonctions d’assistance <xref:System.IdentityModel.Claims.Claim> pour créer des instances avec ces types et droits. Ces revendications intégrées sont conçues pour modéliser les informations qui se trouvent dans les types d’informations d’identification du client prises en charge par WCF par défaut. Dans la plupart des cas, les revendications intégrées sont suffisantes ; toutefois, certaines applications peuvent requérir des revendications personnalisées. Une revendication comporte trois volets : le type de revendication, la ressource à laquelle la revendication s'applique et le droit revendiqué sur cette ressource. Cette rubrique décrit comment créer une revendication personnalisée.  
   
 ### <a name="to-create-a-custom-claim-that-is-based-on-a-primitive-data-type"></a>Pour créer une revendication personnalisée basée sur un type de données primitif  
   
@@ -21,15 +21,15 @@ L’infrastructure de modèle d’identité dans Windows Communication Foundatio
   
     1. Choisissez une valeur unique pour le type de revendication.  
   
-         Le type de revendication est un identificateur de chaîne unique. Il incombe au concepteur de la revendication personnalisée de vérifier que l'identificateur de chaîne utilisé pour le type de revendication est unique. Pour obtenir la liste des types de revendications sont définies par WCF, consultez la <xref:System.IdentityModel.Claims.ClaimTypes> classe.  
+         Le type de revendication est un identificateur de chaîne unique. Il incombe au concepteur de la revendication personnalisée de vérifier que l'identificateur de chaîne utilisé pour le type de revendication est unique. Pour obtenir la liste des types de revendications définis par WCF, consultez la <xref:System.IdentityModel.Claims.ClaimTypes> classe.  
   
     2. Choisissez le type de données primitif et la valeur de la ressource.  
   
-         Une ressource est un objet. Le type CLR de la ressource peut être une primitive, telle que <xref:System.String> ou <xref:System.Int32>, ou tout type sérialisable. Le type CLR de la ressource doit être sérialisable, étant donné que les revendications sont sérialisées en différents points par WCF. Les types primitifs sont sérialisables.  
+         Une ressource est un objet. Le type CLR de la ressource peut être une primitive, telle que <xref:System.String> ou <xref:System.Int32>, ou tout type sérialisable. Le type CLR de la ressource doit être sérialisable, car les revendications sont sérialisées à différents points par WCF. Les types primitifs sont sérialisables.  
   
     3. Choisissez un droit défini par WCF ou une valeur unique pour un droit personnalisé.  
   
-         Un droit est un identificateur de chaîne unique. Les droits qui sont définies par WCF sont définis dans le <xref:System.IdentityModel.Claims.Rights> classe.  
+         Un droit est un identificateur de chaîne unique. Les droits définis par WCF sont définis dans la <xref:System.IdentityModel.Claims.Rights> classe.  
   
          Il incombe au concepteur de la revendication personnalisée de vérifier que l'identificateur de chaîne utilisé pour le droit est unique.  
   
@@ -44,11 +44,11 @@ L’infrastructure de modèle d’identité dans Windows Communication Foundatio
   
     1. Choisissez une valeur unique pour le type de revendication.  
   
-         Le type de revendication est un identificateur de chaîne unique. Il incombe au concepteur de la revendication personnalisée de vérifier que l'identificateur de chaîne utilisé pour le type de revendication est unique. Pour obtenir la liste des types de revendications sont définies par WCF, consultez la <xref:System.IdentityModel.Claims.ClaimTypes> classe.  
+         Le type de revendication est un identificateur de chaîne unique. Il incombe au concepteur de la revendication personnalisée de vérifier que l'identificateur de chaîne utilisé pour le type de revendication est unique. Pour obtenir la liste des types de revendications définis par WCF, consultez la <xref:System.IdentityModel.Claims.ClaimTypes> classe.  
   
     2. Choisissez ou définissez un type non primitif sérialisable pour la ressource.  
   
-         Une ressource est un objet. Le type CLR de la ressource doit être sérialisable, étant donné que les revendications sont sérialisées en différents points par WCF. Les types primitifs sont déjà sérialisables.  
+         Une ressource est un objet. Le type CLR de la ressource doit être sérialisable, car les revendications sont sérialisées à différents points par WCF. Les types primitifs sont déjà sérialisables.  
   
          Lorsqu'un nouveau type est défini, appliquez <xref:System.Runtime.Serialization.DataContractAttribute> à la classe. Appliquez également l'attribut <xref:System.Runtime.Serialization.DataMemberAttribute> à tous les membres du nouveau type qui doivent être sérialisés dans le cadre de la revendication.  
   
@@ -59,7 +59,7 @@ L’infrastructure de modèle d’identité dans Windows Communication Foundatio
   
     3. Choisissez un droit défini par WCF ou une valeur unique pour un droit personnalisé.  
   
-         Un droit est un identificateur de chaîne unique. Les droits qui sont définies par WCF sont définis dans le <xref:System.IdentityModel.Claims.Rights> classe.  
+         Un droit est un identificateur de chaîne unique. Les droits définis par WCF sont définis dans la <xref:System.IdentityModel.Claims.Rights> classe.  
   
          Il incombe au concepteur de la revendication personnalisée de vérifier que l'identificateur de chaîne utilisé pour le droit est unique.  
   
@@ -68,7 +68,7 @@ L’infrastructure de modèle d’identité dans Windows Communication Foundatio
          [!code-csharp[c_CustomClaim#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaim/cs/c_customclaim.cs#5)] 
          [!code-vb[c_CustomClaim#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaim/vb/c_customclaim.vb#5)]     
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple de code suivant montre comment créer une revendication personnalisée avec un type de ressource primitif et un type de ressource non primitif.  
   
  [!code-csharp[c_CustomClaim#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaim/cs/c_customclaim.cs#0)]
@@ -81,4 +81,4 @@ L’infrastructure de modèle d’identité dans Windows Communication Foundatio
 - <xref:System.IdentityModel.Claims.ClaimTypes>
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
-- [Gestion des revendications et autorisation avec le modèle d’identité](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+- [Gestion des revendications et autorisation avec le modèle d’identité](../feature-details/managing-claims-and-authorization-with-the-identity-model.md)

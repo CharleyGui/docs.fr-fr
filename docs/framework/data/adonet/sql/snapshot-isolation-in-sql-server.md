@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 43ae5dd3-50f5-43a8-8d01-e37a61664176
-ms.openlocfilehash: 9f9dfd4f1f299817aa424716aac4408a0b77a240
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2f17e9828f46e6355cdbbddb1b8a83f1188b1a01
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69958008"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791743"
 ---
 # <a name="snapshot-isolation-in-sql-server"></a>Isolation d'instantanés dans SQL Server
 L'isolation de capture instantanée améliore l'accès concurrentiel aux applications OLTP.  
@@ -109,7 +109,7 @@ SqlTransaction sqlTran =
  [!code-csharp[DataWorks SnapshotIsolation.Demo#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SnapshotIsolation.Demo/CS/source.cs#1)]
  [!code-vb[DataWorks SnapshotIsolation.Demo#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SnapshotIsolation.Demo/VB/source.vb#1)]  
   
-### <a name="example"></a>Exemples  
+### <a name="example"></a>Exemple  
  L'exemple suivant illustre le comportement d'une isolation d'instantané en cas de modification de données. Le code exécute les actions suivantes :  
   
 - Établit une connexion à l’exemple de base de données **AdventureWorks** et active l’isolement d’instantané.  
@@ -143,6 +143,6 @@ SELECT * FROM TestSnapshotUpdate WITH (UPDLOCK)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [SQL Server et ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [SQL Server et ADO.NET](index.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
 - [Guide du verrouillage des transactions et du contrôle de version de ligne](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide)

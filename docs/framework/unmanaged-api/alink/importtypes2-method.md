@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a7fddfffed499537f5746998a94a3ef32d035685
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ce09eca30e1edb9e1afc02216a07955a5fed4fd2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741599"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787252"
 ---
 # <a name="importtypes2-method"></a>ImportTypes2, méthode
-Lance l’importation de types. Appelez cette méthode pour commencer l’importation de types de chaque portée importée par [ImportFile, méthode](../../../../docs/framework/unmanaged-api/alink/importfile-method.md).  
+Initialise l’importation de types. Appelez cette méthode pour commencer l’importation de types à partir de chaque étendue importée via la [méthode ImportFile](importfile-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,31 +41,31 @@ HRESULT ImportTypes2(
   
 ## <a name="parameters"></a>Paramètres  
  `AssemblyID`  
- ID de l’assembly dans lequel vous voulez importer.  
+ ID de l’assembly dans lequel effectuer l’importation.  
   
  `FileToken`  
- ID du fichier à partir duquel importer.  
+ ID du fichier à partir duquel effectuer l’importation.  
   
  `dwScope`  
- Portée de base zéro à partir duquel importer.  
+ Étendue de base zéro à partir de laquelle effectuer l’importation.  
   
  `phEnum`  
- Reçoit le handle d’énumérateur pour les types dans l’étendue donnée.  
+ Reçoit un handle d’énumérateur pour les types dans l’étendue donnée.  
   
  `ppImportScope`  
- Si vous le souhaitez reçoit [IMetaDataImport2, Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md) interface.  
+ Reçoit éventuellement l’interface d' [interface IMetaDataImport2](../metadata/imetadataimport2-interface.md) .  
   
  `pdwCountOfTypes`  
- Si vous le souhaitez reçoit le nombre de types dans la portée spécifiée.  
+ Reçoit éventuellement le nombre de types dans l’étendue spécifiée.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h  
+ Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink2, interface](ialink2-interface.md)
+- [IALink, interface](ialink-interface.md)
+- [API ALink](index.md)
