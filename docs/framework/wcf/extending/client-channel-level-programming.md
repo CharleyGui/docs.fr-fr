@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3b787719-4e77-4e77-96a6-5b15a11b995a
-ms.openlocfilehash: ea56c99d7d122dd20fc217f8ecb2937bcf81bec3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4f24c558b1d5303b2417416beb14555539f498ea
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61923264"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797273"
 ---
 # <a name="client-channel-level-programming"></a>Programmation au niveau du canal client
-Cette rubrique décrit comment écrire une application cliente de Windows Communication Foundation (WCF) sans utiliser le <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType> classe et son modèle objet associé.  
+Cette rubrique explique comment écrire une application cliente Windows Communication Foundation (WCF) sans utiliser la <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType> classe et son modèle objet associé.  
   
 ## <a name="sending-messages"></a>Envoi des messages  
  Pour pouvoir envoyer des messages, puis recevoir et traiter les réponses, vous devez procéder comme suit :  
@@ -29,7 +29,7 @@ Cette rubrique décrit comment écrire une application cliente de Windows Commun
 5. Fermer tous les objets de canal.  
   
 #### <a name="creating-a-binding"></a>Création d’une liaison  
- Comme pour le cas de réception (consultez [de programmation au niveau du canal de Service](../../../../docs/framework/wcf/extending/service-channel-level-programming.md)), envoi de messages démarre en créant une liaison. Cet exemple crée une nouvelle liaison <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> et ajoute <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> à sa collection Elements.  
+ Comme dans le cas de la réception (voir [programmation au niveau du canal de service](service-channel-level-programming.md)), l’envoi de messages commence par la création d’une liaison. Cet exemple crée une nouvelle liaison <xref:System.ServiceModel.Channels.CustomBinding?displayProperty=nameWithType> et ajoute <xref:System.ServiceModel.Channels.HttpTransportBindingElement?displayProperty=nameWithType> à sa collection Elements.  
   
 #### <a name="building-a-channelfactory"></a>Génération de ChannelFactory  
  Au lieu de créer <xref:System.ServiceModel.Channels.IChannelListener?displayProperty=nameWithType>, nous créons cette fois <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> en appelant <xref:System.ServiceModel.ChannelFactory.CreateFactory%2A?displayProperty=nameWithType> sur la liaison où le paramètre de type est <xref:System.ServiceModel.Channels.IRequestChannel?displayProperty=nameWithType>. Les écouteurs de canal sont utilisés par le côté qui attend les messages entrants et les fabrications de canaux le sont par le côté qui initialise la communication pour créer un canal. À l'instar des écouteurs de canal, les fabrications de canaux doivent d'abord être ouvertes avant de pouvoir être utilisées.  

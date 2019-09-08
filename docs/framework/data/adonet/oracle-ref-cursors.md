@@ -2,12 +2,12 @@
 title: REF CURSOR Oracle
 ms.date: 03/30/2017
 ms.assetid: c6b25b8b-0bdd-41b2-9c7c-661f070c2247
-ms.openlocfilehash: 7c6b326b15a2af58da9206adf28070e57fec600c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7cd29a6a20015c7ce4475b0211cb07f7ee78b530
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963512"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794870"
 ---
 # <a name="oracle-ref-cursors"></a>REF CURSOR Oracle
 Le Fournisseur de données .NET Framework pour Oracle prend en charge le type de données Oracle **REF CURSOR** . Lorsque vous utilisez le fournisseur de données pour travailler avec des REF CURSOR Oracle, vous devez tenir compte des comportements suivants.  
@@ -30,19 +30,19 @@ Le Fournisseur de données .NET Framework pour Oracle prend en charge le type de
 - Le type de données de la **table** PL/SQL n’est pas pris en charge. Toutefois, les REF CURSOR sont plus efficaces. Si vous devez utiliser un type de données de **table** , utilisez le fournisseur de données OLE DB .net avec MSDAORA.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Exemples REF CURSOR](../../../../docs/framework/data/adonet/ref-cursor-examples.md)  
+ [Exemples REF CURSOR](ref-cursor-examples.md)  
  Contient trois exemples qui illustrent l'utilisation des REF CURSOR.  
   
- [Paramètres REF CURSOR dans un OracleDataReader](../../../../docs/framework/data/adonet/ref-cursor-parameters-in-an-oracledatareader.md)  
+ [Paramètres REF CURSOR dans un OracleDataReader](ref-cursor-parameters-in-an-oracledatareader.md)  
  Montre comment exécuter une procédure stockée PL/SQL qui retourne un paramètre REF CURSOR et lit la valeur comme un **OracleDataReader**.  
   
- [Récupération de données à partir de plusieurs REF CURSOR à l’aide d’un OracleDataReader](../../../../docs/framework/data/adonet/retrieving-data-from-multiple-ref-cursors.md)  
+ [Récupération de données à partir de plusieurs REF CURSOR à l’aide d’un OracleDataReader](retrieving-data-from-multiple-ref-cursors.md)  
  Montre comment exécuter une procédure stockée PL/SQL qui retourne deux paramètres REF CURSOR et lit les valeurs à l’aide d’un **OracleDataReader**.  
   
- [Remplissage d’un DataSet à l’aide d’un ou de plusieurs REF CURSOR](../../../../docs/framework/data/adonet/filling-a-dataset-using-one-or-more-ref-cursors.md)  
+ [Remplissage d’un DataSet à l’aide d’un ou de plusieurs REF CURSOR](filling-a-dataset-using-one-or-more-ref-cursors.md)  
  Montre comment exécuter une procédure stockée PL/SQL qui retourne deux paramètres REF CURSOR et remplit un <xref:System.Data.DataSet> avec les lignes qui sont retournées.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Oracle et ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Oracle et ADO.NET](oracle-and-adonet.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

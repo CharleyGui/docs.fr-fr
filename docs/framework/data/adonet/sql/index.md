@@ -2,12 +2,12 @@
 title: SQL Server et ADO.NET
 ms.date: 03/30/2017
 ms.assetid: c18b1fb1-2af1-4de7-80a4-95e56fd976cb
-ms.openlocfilehash: c58c6da7a6028c9167c73af820e922f59b528f15
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b54725fa8dbff7db82ed197f4961e773a06895e4
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938093"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70782332"
 ---
 # <a name="sql-server-and-adonet"></a>SQL Server et ADO.NET
 Cette section décrit des fonctions et des comportements spécifiques au fournisseur de données .NET Framework pour SQL Server (<xref:System.Data.SqlClient>).  
@@ -18,22 +18,22 @@ Cette section décrit des fonctions et des comportements spécifiques au fournis
 > Pour utiliser le fournisseur de données .NET Framework pour SQL Server, une application doit faire référence à l'espace de noms <xref:System.Data.SqlClient>.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Sécurité SQL Server](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
+ [Sécurité SQL Server](sql-server-security.md)  
  Fournit une vue d’ensemble des fonctionnalités de sécurité de SQL Server et des scénarios d’application consacrés à la création d’applications ADO.NET sécurisées ciblant SQL Server.  
   
- [Types de données SQL Server et ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-types.md)  
+ [Types de données SQL Server et ADO.NET](sql-server-data-types.md)  
  Décrit comment utiliser les types de données SQL Server et comment ces derniers interagissent avec les types de données .NET Framework.  
   
- [Données binaires et de valeur élevée SQL Server](../../../../../docs/framework/data/adonet/sql/sql-server-binary-and-large-value-data.md)  
+ [Données binaires et de valeur élevée SQL Server](sql-server-binary-and-large-value-data.md)  
  Décrit comment utiliser des données de valeur élevée dans SQL Server.  
   
- [Opérations sur les données SQL Server dans ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-operations.md)  
+ [Opérations sur les données SQL Server dans ADO.NET](sql-server-data-operations.md)  
  Décrit comment utiliser des données dans SQL Server. Contient des sections consacrées aux opérations de copie en bloc, à MARS, aux opérations asynchrones et aux paramètres table.  
   
- [Fonctionnalités SQL Server et ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
+ [Fonctionnalités SQL Server et ADO.NET](sql-server-features-and-adonet.md)  
  Décrit les fonctionnalités de SQL Server utiles aux développeurs d’applications ADO.NET.  
   
- [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
+ [LINQ to SQL](./linq/index.md)  
  Décrit les blocs de construction, les processus et les techniques de base requis pour la création d'applications LINQ to SQL.  
   
  Pour la documentation complète du moteur de base de données SQL Server, consultez la documentation en ligne de SQL Server correspondant à la version de SQL Server que vous utilisez.  
@@ -42,8 +42,8 @@ Cette section décrit des fonctions et des comportements spécifiques au fournis
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sécurisation des applications ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Mappages de types de données dans ADO.NET](../../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)
-- [DataSets, DataTables et DataViews](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)
-- [Extraction et modification de données dans ADO.NET](../../../../../docs/framework/data/adonet/retrieving-and-modifying-data.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Sécurisation des applications ADO.NET](../securing-ado-net-applications.md)
+- [Mappages de types de données dans ADO.NET](../data-type-mappings-in-ado-net.md)
+- [DataSets, DataTables et DataViews](../dataset-datatable-dataview/index.md)
+- [Extraction et modification de données dans ADO.NET](../retrieving-and-modifying-data.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

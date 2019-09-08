@@ -2,12 +2,12 @@
 title: Déduction de tables
 ms.date: 03/30/2017
 ms.assetid: 74a288d4-b8e9-4f1a-b2cd-10df92c1ed1f
-ms.openlocfilehash: 84cee828f2d3c918a12e449da5b01a3d72d86333
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 52ffd3fe90eb491dd01acf8538276cc828fdb309
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203518"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784494"
 ---
 # <a name="inferring-tables"></a>Déduction de tables
 Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir d'un document XML, ADO.NET identifie d'abord les éléments XML qui représentent des tables. Les structures XML suivantes aboutissent à une table pour le schéma du **DataSet** :  
@@ -87,7 +87,7 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
 </DocumentElement>  
 ```  
   
- Le processus d’inférence produit un **DataSet** nommé «DocumentElement» qui contient une table nommée «Element1».  
+ Le processus d’inférence produit un **DataSet** nommé « DocumentElement » qui contient une table nommée « Element1 ».  
   
  **Ensemble** DocumentElement  
   
@@ -125,4 +125,4 @@ Lors de l'inférence du schéma d'un objet <xref:System.Data.DataSet> à partir 
 - [Chargement des informations de schéma de DataSet à partir de XML](loading-dataset-schema-information-from-xml.md)
 - [Utilisation de XML dans un DataSet](using-xml-in-a-dataset.md)
 - [DataSets, DataTables et DataViews](index.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

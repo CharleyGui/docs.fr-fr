@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a5333e19-8e55-4aa9-82dc-ca8745e516ed
-ms.openlocfilehash: 0c377e02d5be7cb4de41d62b1e3734f790115086
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9919bad113eb11a38ce137a2cbbf6c67bd5b21ef
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651228"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794087"
 ---
 # <a name="enabling-query-notifications"></a>Activation de notifications de requête
 Les applications qui utilisent des notifications de requête ont un ensemble commun d’exigences. Votre source de données doit être correctement configurée pour prendre en charge les notifications de requête SQL et l'utilisateur doit disposer des autorisations appropriées côté client et côté serveur.  
@@ -28,28 +28,28 @@ Les applications qui utilisent des notifications de requête ont un ensemble com
 ## <a name="query-notifications-requirements"></a>Exigences des notifications de requête  
  Les notifications de requête ne sont prises en charge que pour les instructions SELECT qui répondent à une liste de spécifications précises. Le tableau suivant présente des liens vers la documentation consacrée à Service Broker et aux notifications de requête dans la documentation en ligne de SQL Server.  
   
- **Documentation de SQL Server**  
+ **Documentation SQL Server**  
   
-- [Création d’une requête pour Notification](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms181122(v=sql.105))  
+- [Création d’une requête de notification](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms181122(v=sql.105))  
   
-- [Considérations de sécurité pour Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms166059(v=sql.90))  
+- [Considérations sur la sécurité pour Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms166059(v=sql.90))  
   
-- [Sécurité et Protection (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522911(v=sql.105))  
+- [Sécurité et protection (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522911(v=sql.105))  
   
-- [Considérations de sécurité pour les Services de Notifications](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms172604(v=sql.90))  
+- [Considérations sur la sécurité des services de notification](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms172604(v=sql.90))  
   
-- [Autorisations de Notification de requête](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms188311(v=sql.105))  
+- [Autorisations de notification de requête](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms188311(v=sql.105))  
   
-- [Observations à caractère internationales pour Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms166028(v=sql.90))  
+- [Considérations internationales relatives à Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2005/ms166028(v=sql.90))  
   
-- [Considérations de conception de solution (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522899(v=sql.105))  
+- [Considérations relatives à la conception de la solution (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522899(v=sql.105))  
   
 - [Centre d’informations du développeur Service Broker](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms166100(v=sql.105))  
   
 - [Guide du développeur (Service Broker)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/bb522908(v=sql.105))  
   
 ## <a name="enabling-query-notifications-to-run-sample-code"></a>Activation des notifications de requête pour exécuter l'exemple de code  
- Pour activer Service Broker sur le **AdventureWorks** de base de données à l’aide de SQL Server Management Studio, exécutez l’instruction Transact-SQL suivante :  
+ Pour activer Service Broker sur la base de données **AdventureWorks** à l’aide de SQL Server Management Studio, exécutez l’instruction Transact-SQL suivante :  
   
  `ALTER DATABASE AdventureWorks SET ENABLE_BROKER;`  
   
@@ -86,5 +86,5 @@ CREATE SERVICE ContactChangeNotifications
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Notifications de requête dans SQL Server](../../../../../docs/framework/data/adonet/sql/query-notifications-in-sql-server.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Notifications de requête dans SQL Server](query-notifications-in-sql-server.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

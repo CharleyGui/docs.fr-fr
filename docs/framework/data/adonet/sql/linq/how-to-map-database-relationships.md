@@ -5,28 +5,28 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 538def39-8399-46fb-b02d-60ede4e050af
-ms.openlocfilehash: 42e7a715c8137574bff617715c1f174314080131
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b6b1eba063c9ec72ae14c12028dd0950b2ad95f5
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943611"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70793521"
 ---
 # <a name="how-to-map-database-relationships"></a>Procédure : Mapper des relations de base de données
 Vous pouvez encoder comme références de propriété dans votre classe d'entité toutes les relations de données qui seront toujours fixes. Dans l'exemple de base de données Northwind, par exemple, comme les clients passent généralement des commandes, il existe toujours une relation dans le modèle entre les clients et leurs commandes.  
   
- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]définit un <xref:System.Data.Linq.Mapping.AssociationAttribute> attribut pour aider à représenter de telles relations. Cet attribut est utilisé avec les types <xref:System.Data.Linq.EntitySet%601> et <xref:System.Data.Linq.EntityRef%601> pour représenter ce qui serait une relation de clé étrangère dans une base de données. Pour plus d’informations, consultez la section attribut d’association du [mappage basé sur les attributs](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
+ [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]définit un <xref:System.Data.Linq.Mapping.AssociationAttribute> attribut pour aider à représenter de telles relations. Cet attribut est utilisé avec les types <xref:System.Data.Linq.EntitySet%601> et <xref:System.Data.Linq.EntityRef%601> pour représenter ce qui serait une relation de clé étrangère dans une base de données. Pour plus d’informations, consultez la section attribut d’association du [mappage basé sur les attributs](attribute-based-mapping.md).  
   
 > [!NOTE]
 > Les valeurs des propriétés AssociationAttribute et ColumnAttribute Storage respectent la casse. Assurez-vous, par exemple que les valeurs utilisées dans l'attribut de la propriété AssociationAttribute.Storage correspondent à la casse des noms de propriétés correspondants utilisés ailleurs dans le code. Cela s’applique à tous les langages de programmation .NET, même ceux qui ne sont généralement pas sensibles à la casse, y compris les Visual Basic. Pour plus d'informations sur la propriété Storage, consultez <xref:System.Data.Linq.Mapping.DataAttribute.Storage%2A?displayProperty=nameWithType>.  
   
  La plupart des relations sont de type un-à-plusieurs, comme dans l'exemple présenté ultérieurement dans cette rubrique. Vous pouvez également représenter les relations de type un-à-un et plusieurs à plusieurs comme suit :  
   
-- Un-à-un: Représente ce type de relation en incluant <xref:System.Data.Linq.EntitySet%601> les deux côtés.  
+- Un-à-un : Représente ce type de relation en incluant <xref:System.Data.Linq.EntitySet%601> les deux côtés.  
   
      Par exemple, considérez `Customer` une - `SecurityCode` relation créée de sorte que le code de sécurité du client ne soit pas trouvé `Customer` dans la table et qu’il soit accessible uniquement par les personnes autorisées.  
   
-- Plusieurs-à-plusieurs: Dans les relations plusieurs-à-plusieurs, la clé primaire de la table de liens (également appelée table de *jonction* ) est souvent formée par un composite des clés étrangères des deux autres tables.  
+- Plusieurs-à-plusieurs : Dans les relations plusieurs-à-plusieurs, la clé primaire de la table de liens (également appelée table de *jonction* ) est souvent formée par un composite des clés étrangères des deux autres tables.  
   
      Par exemple, considérez `Employee` une - `Project` relation plusieurs-à-plusieurs formée à l’aide `EmployeeProject`de la table de liens. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] exige qu'une telle relation soit modélisée à l'aide de trois classes : `Employee`, `Project` et `EmployeeProject`. Dans ce cas, la modification de la relation entre `Employee` et `Project` peut sembler nécessiter une mise à jour de la clé primaire `EmployeeProject`. Toutefois, la modélisation recommandée dans ce cas consiste à supprimer le `EmployeeProject` existant et à créer un autre `EmployeeProject`.  
   
@@ -44,16 +44,16 @@ Vous pouvez encoder comme références de propriété dans votre classe d'entit�
  [!code-csharp[DlinqCustomize#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqCustomize/cs/Program.cs#3)]
  [!code-vb[DlinqCustomize#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqCustomize/vb/Module1.vb#3)]  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Vous pouvez également inverser la situation. Au lieu d'utiliser la classe `Customer` pour décrire l'association entre les clients et les commandes, vous pouvez utiliser la classe `Order`. La classe `Order` utilise le type <xref:System.Data.Linq.EntityRef%601> pour décrire la relation au client, comme dans l'exemple de code suivant.  
   
 > [!NOTE]
-> La <xref:System.Data.Linq.EntityRef%601> classe prend en charge le *chargement différé*. Pour plus d’informations, *consultez* [différé et chargement immédiat](../../../../../../docs/framework/data/adonet/sql/linq/deferred-versus-immediate-loading.md).  
+> La <xref:System.Data.Linq.EntityRef%601> classe prend en charge le *chargement différé*. Pour plus d’informations, *consultez* [différé et chargement immédiat](deferred-versus-immediate-loading.md).  
   
  [!code-csharp[DLinqCustomize#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqCustomize/cs/Program.cs#5)]
  [!code-vb[DLinqCustomize#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqCustomize/vb/Module1.vb#5)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique : Personnaliser des classes d’entité à l’aide de l’éditeur de code](../../../../../../docs/framework/data/adonet/sql/linq/how-to-customize-entity-classes-by-using-the-code-editor.md)
-- [Modèle objet LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)
+- [Guide pratique pour Personnaliser des classes d’entité à l’aide de l’éditeur de code](how-to-customize-entity-classes-by-using-the-code-editor.md)
+- [Modèle objet LINQ to SQL](the-linq-to-sql-object-model.md)

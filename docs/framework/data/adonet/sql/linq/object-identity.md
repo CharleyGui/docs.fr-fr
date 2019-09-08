@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c788f2f9-65cc-4455-9907-e8388a268e00
-ms.openlocfilehash: dff5642b2490cd3935dba3b3d04cd62082249c32
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 053c861bae951f044d30d048951aa072b3d85a42
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915725"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792941"
 ---
 # <a name="object-identity"></a>Identité d'un objet
 Les identités des objets du runtime sont uniques. Deux variables qui font référence au même objet font en réalité référence à la même instance de l'objet. Par conséquent, les modifications que vous apportez avec un chemin d'accès via une variable sont immédiatement visibles via l'autre variable.  
@@ -21,7 +21,7 @@ Les identités des objets du runtime sont uniques. Deux variables qui font réf�
   
  Vous souhaitez obtenir quelque chose de très différent avec les objets. Si vous demandez à plusieurs reprises les mêmes informations au <xref:System.Data.Linq.DataContext>, vous vous attendez à ce que celui-ci vous donne la même instance d'objet. Ce comportement est attendu, étant donné que les objets ont une signification particulière pour votre application, et vous vous attendez à ce qu'ils se comportent comme des objets. Vous les avez conçus comme des hiérarchies ou des graphiques. Vous comptez les récupérer comme tels et ne pas recevoir de nombreuses instances répliquées uniquement parce que vous avez effectué la même demande plusieurs fois.  
   
- Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], le <xref:System.Data.Linq.DataContext> gère l'identité de l'objet. À chaque fois que vous récupérez une nouvelle ligne de la base de données, elle est entrée dans une table d'identités par sa clé primaire et un objet est créé. À chaque fois que vous récupérez cette ligne, l'instance d'objet d'origine est remise à l'application. De cette façon, le <xref:System.Data.Linq.DataContext> traduit le concept d'identité tel que la base de données l'a vu (autrement dit, des clés primaire) en concept d'identité vu par le langage (autrement dit, des instances). L'application voit uniquement l'objet dans l'état dans lequel il a été récupéré la première fois. Si les nouvelles données sont différentes, elles sont ignorées. Pour plus d’informations, consultez [récupération d’objets à partir du cache d’identité](../../../../../../docs/framework/data/adonet/sql/linq/retrieving-objects-from-the-identity-cache.md).  
+ Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], le <xref:System.Data.Linq.DataContext> gère l'identité de l'objet. À chaque fois que vous récupérez une nouvelle ligne de la base de données, elle est entrée dans une table d'identités par sa clé primaire et un objet est créé. À chaque fois que vous récupérez cette ligne, l'instance d'objet d'origine est remise à l'application. De cette façon, le <xref:System.Data.Linq.DataContext> traduit le concept d'identité tel que la base de données l'a vu (autrement dit, des clés primaire) en concept d'identité vu par le langage (autrement dit, des instances). L'application voit uniquement l'objet dans l'état dans lequel il a été récupéré la première fois. Si les nouvelles données sont différentes, elles sont ignorées. Pour plus d’informations, consultez [récupération d’objets à partir du cache d’identité](retrieving-objects-from-the-identity-cache.md).  
   
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]utilise cette approche pour gérer l’intégrité des objets locaux afin de prendre en charge les mises à jour optimistes. Étant donné que les seules modifications qui se produisent une fois que l'objet a été créé sont celles effectuées par l'application, le rôle de l'application est correctement défini. Si un tiers extérieur a effectué des modifications dans l'intervalle, elles sont identifiées au moment où `SubmitChanges()` est appelé.  
   
@@ -44,4 +44,4 @@ Les identités des objets du runtime sont uniques. Deux variables qui font réf�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations générales](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
+- [Informations générales](background-information.md)

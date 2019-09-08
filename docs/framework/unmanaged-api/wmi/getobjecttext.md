@@ -1,6 +1,6 @@
 ---
-title: Getobjecttext, fonction (référence des API non managées)
-description: Getobjecttext, de la fonction retourne un rendu textuel d’un objet dans la syntaxe MOF.
+title: Fonction GetObjectText (référence des API non managées)
+description: La fonction GetObjectText retourne un rendu textuel d’un objet dans la syntaxe MOF.
 ms.date: 11/06/2017
 api_name:
 - GetObjectText
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4438b000a8ecf95949350d3665267276a1d959ec
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d47fcd59204a4d114fc9f0dc5bc4550ba1681f33
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67746499"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798506"
 ---
 # <a name="getobjecttext-function"></a>GetObjectText, fonction
-Retourne un rendu textuel de l’objet dans la syntaxe de Format MOF (Managed Object).
+Retourne un rendu textuel de l’objet dans la syntaxe du format MOF (MOF).
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
@@ -42,43 +42,43 @@ HRESULT GetObjectText (
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`  
-[in] Ce paramètre n’est pas utilisé.
+dans Ce paramètre n’est pas utilisé.
 
 `ptr`  
-[in] Un pointeur vers un [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `lFlags`  
-[in] Généralement 0. Si `WBEM_FLAG_NO_FLAVORS` (ou 0 x 1) est spécifiée, les qualificateurs sont inclus sans les informations de la propagation ou la version.
+dans Normalement 0. Si `WBEM_FLAG_NO_FLAVORS` (ou 0x1) est spécifié, les qualificateurs sont inclus sans propagation ni informations de version.
 
 `pstrObjectText`   
-[out] Un pointeur vers un `null` sur ENTRÉE. Moment du retour, qui vient d’être alloué `BSTR` qui contient un rendu de la syntaxe MOF de l’objet.  
+à Pointeur vers un `null` à l’entrée. Au retour, un qui vient `BSTR` d’être alloué contient un rendu de syntaxe MOF de l’objet.  
 
 ## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
 |Constante  |Valeur  |Description  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Il y a eu une défaillance générale. |
+|`WBEM_E_FAILED` | 0x80041001 | Une défaillance générale s’est produite. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Mémoire est insuffisante pour terminer l’opération. |
-|`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | La mémoire disponible est insuffisante pour terminer l’opération. |
+|`WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
   
 ## <a name="remarks"></a>Notes
 
-Cette fonction encapsule un appel à la [IWbemClassObject::GetObjectText](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getobjecttext) (méthode).
+Cette fonction encapsule un appel à la méthode [IWbemClassObject :: GetObjectText](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getobjecttext) .
 
-Le texte MOF retourné ne contient pas toutes les informations sur l’objet, mais suffisamment d’informations pour le compilateur MOF être en mesure de recréer l’objet d’origine. Par exemple, aucun qualificateurs propagés ou les propriétés de la classe parent ne sont incluses.
+Le texte MOF retourné ne contient pas toutes les informations relatives à l’objet, mais uniquement les informations nécessaires au compilateur MOF pour pouvoir recréer l’objet d’origine. Par exemple, aucun qualificateur propagé ou propriété de classe parente n’est inclus.
 
 L’algorithme suivant est utilisé pour reconstruire le texte des paramètres d’une méthode :
 
-1. Les paramètres sont resequenced dans l’ordre de leurs valeurs d’identificateur.
-1. Les paramètres sont spécifiés en tant que `[in]` et `[out]` sont combinés en un seul paramètre.
+1. Les paramètres sont reséquencés dans l’ordre de leurs valeurs d’identificateur.
+1. Les paramètres spécifiés en `[in]` tant `[out]` que et sont combinés en un seul paramètre.
  
-`pstrObjectText` doit être un pointeur vers un `null` lorsque la fonction est appelée ; il ne doit pas pointer vers une chaîne qui est valide avant l’appel de méthode, car le pointeur n’est pas libéré.
+`pstrObjectText`doit être un pointeur vers un `null` lorsque la fonction est appelée ; elle ne doit pas pointer vers une chaîne valide avant l’appel de la méthode, car le pointeur n’est pas libéré.
 
 ## <a name="requirements"></a>Configuration requise  
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  
   
@@ -86,4 +86,4 @@ L’algorithme suivant est utilisé pour reconstruire le texte des paramètres d
   
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performances (référence des API non managées)](index.md)
+- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)

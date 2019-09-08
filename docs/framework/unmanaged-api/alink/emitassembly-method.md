@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b0e6250987997b8d1c833b7b33a985900510fb03
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a2adf53d1e29fda077cdcf7b79891f6271993109
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742137"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787584"
 ---
 # <a name="emitassembly-method"></a>EmitAssembly, méthode
-Crée l’assembly. Appelez cette méthode après la fermeture de tous les autres fichiers à l’exception du fichier d’assembly. N’appelez pas cette méthode lors de la production de modules indépendants.  
+Crée l’assembly. Appelez cette méthode une fois que tous les autres fichiers sont fermés, à l’exception du fichier d’assembly. N’appelez pas cette méthode lors de la génération de modules indépendants.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,13 +40,13 @@ HRESULT EmitAssembly(
  ID de l’assembly.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h  
+ Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink, interface](ialink-interface.md)
+- [IALink2, interface](ialink2-interface.md)
+- [API ALink](index.md)

@@ -2,39 +2,39 @@
 title: Encodeurs personnalisés
 ms.date: 03/30/2017
 ms.assetid: fa0e1d7f-af36-4bf4-aac9-cd4eab95bc4f
-ms.openlocfilehash: d553859ed622cefffc946bca94796204b2fe6456
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 586207af0bfbe106512dfb61ee7439d4f5ce64c6
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587283"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70797219"
 ---
 # <a name="custom-encoders"></a>Encodeurs personnalisés
 Cette rubrique décrit comment créer des encodeurs personnalisés.  
   
- Dans Windows Communication Foundation (WCF), vous utilisez un *liaison* pour spécifier comment transférer des données sur un réseau entre les points de terminaison. Une liaison est composée d’une séquence de *éléments de liaison*. Une liaison inclut des éléments de liaison de protocole facultatifs tels que sécurité, un *encodeur de Message* élément de liaison et un élément de liaison de transport requis. Un encodeur de message est représenté par un élément de liaison d'encodage de message. Trois encodeurs de message sont inclus dans WCF : Binaire, Message Transmission Optimization Mechanism (MTOM) et texte.  
+ Dans Windows Communication Foundation (WCF), vous utilisez une *liaison* pour spécifier comment transférer des données sur un réseau entre des points de terminaison. Une liaison est constituée d’une séquence d' *éléments de liaison*. Une liaison comprend des éléments de liaison de protocole facultatifs tels que la sécurité, un élément de liaison d' *encodeur de message* requis et un élément de liaison de transport requis. Un encodeur de message est représenté par un élément de liaison d'encodage de message. Les trois encodeurs de message sont inclus dans WCF : Binaire, MTOM (Message Transmission Optimization Mechanism) et texte.  
   
  Un élément de liaison d'encodage de message sérialise un <xref:System.ServiceModel.Channels.Message> sortant et le passe au transport ou reçoit la forme sérialisée d'un message du transport et le transmet à la couche de protocole (si celle-ci est présente), ou à l'application (dans le cas contraire).  
   
  Les encodeurs de message transforment des instances <xref:System.ServiceModel.Channels.Message> vers une représentation sur le câble ou à partir de celle-ci. Même si les encodeurs sont décrits comme étant situés au-dessus de la couche de transport dans la pile des canaux, ils résident en fait à l'intérieur de cette couche. Les transports (par exemple HTTP) mettent en forme le message selon les exigences de la norme de transport. Les encodeurs (par exemple Text Xml) se contentent d'encoder le message.  
   
- Lorsque vous vous connectez à un client ou à un serveur préexistant, vous n'aurez peut-être pas le choix de l'utilisation d'un encodage de message particulier. Toutefois, les services WCF peuvent être accessibles via plusieurs points de terminaison, chacun avec un encodeur de message différents. Lorsqu'un encodeur unique ne couvre pas toute l'audience de votre service, vous pouvez exposer votre service sur plusieurs points de terminaison. Les applications clientes peuvent utiliser ensuite le point de terminaison le mieux adapté. L’utilisation de plusieurs points de terminaison vous permet de combiner les avantages des encodeurs de message différents avec d’autres éléments de liaison.  
+ Lorsque vous vous connectez à un client ou à un serveur préexistant, vous n'aurez peut-être pas le choix de l'utilisation d'un encodage de message particulier. Toutefois, les services WCF peuvent être rendus accessibles via plusieurs points de terminaison, chacun avec un encodeur de message différent. Lorsqu'un encodeur unique ne couvre pas toute l'audience de votre service, vous pouvez exposer votre service sur plusieurs points de terminaison. Les applications clientes peuvent utiliser ensuite le point de terminaison le mieux adapté. L’utilisation de plusieurs points de terminaison vous permet de combiner les avantages des encodeurs de message différents avec d’autres éléments de liaison.  
   
 ## <a name="system-provided-encoders"></a>Encodeurs fournis par le système  
- WCF fournit plusieurs liaisons fournies par le système qui sont conçues pour couvrir des scénarios d’application les plus courants. Chacune de ces liaisons associe un transport, un encodeur de message et d’autres options (la sécurité, par exemple). Cette rubrique décrit comment étendre le `Text`, `Binary`, et `MTOM` encodeurs qui sont inclus dans WCF, ou créer votre propre encodeur personnalisé de message. L'encodeur de message texte prend en charge un encodage XML ordinaire ainsi que des encodages SOAP. Le mode d'encodage XML brut de l'encodeur de message texte est appelé POX (Plain Old XML) afin de le distinguer de l'encodage SOAP basé sur le texte.  
+ WCF fournit plusieurs liaisons fournies par le système qui sont conçues pour couvrir les scénarios d’application les plus courants. Chacune de ces liaisons associe un transport, un encodeur de message et d’autres options (la sécurité, par exemple). Cette rubrique décrit comment étendre les `Text`encodeurs de message, `Binary`et `MTOM` inclus dans WCF, ou créer votre propre encodeur personnalisé. L'encodeur de message texte prend en charge un encodage XML ordinaire ainsi que des encodages SOAP. Le mode d'encodage XML brut de l'encodeur de message texte est appelé POX (Plain Old XML) afin de le distinguer de l'encodage SOAP basé sur le texte.  
   
- Pour plus d’informations sur les combinaisons d’éléments de liaison fournies par les liaisons fournies par le système, consultez la section correspondante dans [choix d’un Transport](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).  
+ Pour plus d’informations sur les combinaisons d’éléments de liaison fournies par les liaisons fournies par le système, consultez la section correspondante dans [choix d’un transport](../feature-details/choosing-a-transport.md).  
   
 ## <a name="how-to-work-with-system-provided-encoders"></a>Comment utiliser des encodeurs fournis par le système  
  Un encodage est ajouté à une liaison à l’aide d’une classe dérivée de <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>.  
   
- WCF fournit les types suivants d’éléments de liaison dérivés de la <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> classe qui peut fournir pour le texte, binaire et l’encodage de Message Transmission Optimization Mechanism (MTOM) :  
+ WCF fournit les types d’éléments de liaison suivants dérivés <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> de la classe qui peuvent fournir des encodages de texte, binaire et MTOM (Message Transmission Optimization Mechanism) :  
   
-- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>: Le plus interopérable, mais l’encodeur moins efficace pour les messages XML. Un service Web ou un client de service Web comprend généralement le langage XML textuel. Toutefois, transmettre de larges blocs de données binaires sous la forme de texte n'est pas efficace.  
+- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>: L’encodeur le plus interopérable, mais le moins efficace pour les messages XML. Un service Web ou un client de service Web comprend généralement le langage XML textuel. Toutefois, transmettre de larges blocs de données binaires sous la forme de texte n'est pas efficace.  
   
-- <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>: Représente l’élément de liaison qui spécifie l’encodage de caractères et de message utilisé par le contrôle de version pour les messages XML binaires. Cela est plus efficace des options d’encodage, mais la moins interopérable, car il est uniquement pris en charge par les points de terminaison WCF.  
+- <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>: Représente l’élément de liaison qui spécifie l’encodage de caractères et le contrôle de version de message utilisés pour les messages XML binaires. Il s’agit de l’option d’encodage la plus efficace, mais la moins interopérable, car elle est uniquement prise en charge par les points de terminaison WCF.  
   
-- <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>: Représente l’élément de liaison qui spécifie l’encodage de caractères et le versioning de messages utilisés pour un message à l’aide d’un encodage de Message Transmission Optimization Mechanism (MTOM). MTOM est une technologie efficace de transmission de données binaires dans les messages WCF. L'encodeur MTOM tente de parvenir à un équilibre entre rendement et interopérabilité. L'encodage MTOM transmet la plupart du XML sous forme textuelle, mais optimise les grands blocs de données binaires en les transmettant tels quels, sans conversion en texte.  
+- <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>: Représente l’élément de liaison qui spécifie l’encodage de caractères et le contrôle de version de message utilisés pour un message à l’aide d’un encodage MTOM (Message Transmission Optimization Mechanism). MTOM est une technologie efficace de transmission de données binaires dans les messages WCF. L'encodeur MTOM tente de parvenir à un équilibre entre rendement et interopérabilité. L'encodage MTOM transmet la plupart du XML sous forme textuelle, mais optimise les grands blocs de données binaires en les transmettant tels quels, sans conversion en texte.  
   
  L’élément de liaison crée un <xref:System.ServiceModel.Channels.MessageEncoderFactory> Binary, MTOM ou Text. La fabrique crée une instance <xref:System.ServiceModel.Channels.MessageEncoderFactory> Binary, MTOM ou Text. En général, il n'y a qu'une instance unique. Toutefois si des sessions sont utilisées, un encodeur différent peut être fourni à chaque session. L'encodeur Binary utilise celle-ci pour coordonner des dictionnaires dynamiques (consultez Infrastructure XML).  
   
@@ -57,14 +57,14 @@ Cette rubrique décrit comment créer des encodeurs personnalisés.
   
  Les chaînes sont ajoutées au message par une méthode `AddSessionInformationToMessage` interne. Elle ajoute les chaînes au format UTF-8 au début du message précédées de leur longueur. Puis l'en-tête entier de dictionnaire est préfixé avec la longueur de ses données. L'opération inverse est effectuée par une méthode interne `ExtractSessionInformationFromMessage`.  
   
- En plus de traiter des clés de dictionnaire dynamiques, les messages de session en mémoire tampon sont reçus d'une manière unique. Au lieu de créer un lecteur sur le document et de le traiter, l'encodeur binaire utilise la classe interne `MessagePatterns` pour déconstruire le flux binaire. L’idée est que la plupart des messages ont un certain ensemble d’en-têtes qui s’affichent dans un certain ordre lorsque généré par WCF. Le système de modèle décompose le message en fonction de ce qu’il en attend. Si l'opération aboutie, il initialise un objet <xref:System.ServiceModel.Channels.MessageHeaders> sans analyser le XML. Dans le cas contraire, il revient à la méthode standard.  
+ En plus de traiter des clés de dictionnaire dynamiques, les messages de session en mémoire tampon sont reçus d'une manière unique. Au lieu de créer un lecteur sur le document et de le traiter, l'encodeur binaire utilise la classe interne `MessagePatterns` pour déconstruire le flux binaire. L’idée est que la plupart des messages ont un certain ensemble d’en-têtes qui s’affichent dans un certain ordre lorsqu’ils sont générés par WCF. Le système de modèle décompose le message en fonction de ce qu’il en attend. Si l'opération aboutie, il initialise un objet <xref:System.ServiceModel.Channels.MessageHeaders> sans analyser le XML. Dans le cas contraire, il revient à la méthode standard.  
   
 ### <a name="mtom-encoding"></a>MTOM Encoding  
  La classe <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> a une propriété de configuration supplémentaire appelée <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement.MaxBufferSize%2A>. Celle-ci place une limite supérieure sur la quantité de données qu'il est possible de mettre en mémoire tampon pendant la lecture d'un message. Le jeu d'informations XML (Infoset), ou d'autres parties MIME, peuvent nécessiter leur mise en mémoire tampon pour réassembler toutes les parties MIME dans un message unique.  
   
  Pour fonctionner correctement avec HTTP, la classe d'encodeur de message MTOM interne fournit des API internes pour `GetContentType` (qui est aussi interne) et `WriteMessage` qui est public et peut être substitué. Il doit s'effectuer plus de communication pour que les valeurs dans les en-têtes HTTP soient conformes aux valeurs dans les en-têtes MIME.  
   
- En interne, l’encodeur de message MTOM utilise les lecteurs de texte de WCF et est similaire à l’encodeur de texte. La différence principale est qu'il optimise des segments importants de binaire, ou BLOB (Binary Large Objects) en ne les convertissant pas en encodage de base 64 avant d'être incorporé dans les octets de message. À la place, ces BLOB restent extraits et référencés comme des pièces jointes MIME.  
+ En interne, l’encodeur de message MTOM utilise des lecteurs de texte WCF et est semblable à l’encodeur de texte. La différence principale est qu'il optimise des segments importants de binaire, ou BLOB (Binary Large Objects) en ne les convertissant pas en encodage de base 64 avant d'être incorporé dans les octets de message. À la place, ces BLOB restent extraits et référencés comme des pièces jointes MIME.  
   
 ## <a name="writing-your-own-encoder"></a>Écriture de votre propre encodeur  
  Pour implémenter votre propre encodeur de message personnalisé, vous devez fournir des implémentations personnalisées des classes de base abstraites suivantes :  
@@ -89,13 +89,13 @@ Cette rubrique décrit comment créer des encodeurs personnalisés.
   
  Puis connectez votre <xref:System.ServiceModel.Channels.MessageEncoderFactory> personnalisé à la pile d’élément de liaison utilisée pour configurer le service ou le client en substituant la méthode <xref:System.ServiceModel.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory%2A> pour retourner une instance de cette fabrique.  
   
- Il existe deux exemples fournis avec WCF qui illustrent ce processus avec l’exemple de code : [Encodeur de Message personnalisé : Encodeur de texte personnalisé](../../../../docs/framework/wcf/samples/custom-message-encoder-custom-text-encoder.md) et [encodeur de Message personnalisé : Encodeur de compression](../../../../docs/framework/wcf/samples/custom-message-encoder-compression-encoder.md).  
+ Il existe deux exemples fournis avec WCF qui illustrent ce processus avec un exemple de code : [Encodeur de message personnalisé : Encodeur](../samples/custom-message-encoder-custom-text-encoder.md) de [texte personnalisé et encodeur de message personnalisé : Encodeur](../samples/custom-message-encoder-compression-encoder.md)de compression.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>
 - <xref:System.ServiceModel.Channels.MessageEncoderFactory>
 - <xref:System.ServiceModel.Channels.MessageEncoder>
-- [Vue d’ensemble de l’architecture de transfert de données](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)
-- [Sélection d’un encodeur de message](../../../../docs/framework/wcf/feature-details/choosing-a-message-encoder.md)
-- [Choix d’un transport](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md)
+- [Vue d’ensemble de l’architecture de transfert de données](../feature-details/data-transfer-architectural-overview.md)
+- [Sélection d’un encodeur de message](../feature-details/choosing-a-message-encoder.md)
+- [Choix d’un transport](../feature-details/choosing-a-transport.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7dfaedad48291ac09f6959bc7b314ae0d9da76e5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 570e48788a11045882ef546bf6bc22315c2a02b0
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742042"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777278"
 ---
 # <a name="exportnestedtype-method"></a>ExportNestedType, méthode
-Spécifie les types imbriqués comme étant exportables. Le [ExportType, méthode](../../../../docs/framework/unmanaged-api/alink/exporttype-method.md) peut également exporter les types imbriqués, mais cette méthode est plus rapide.  
+Spécifie que les types imbriqués sont exportables. La [méthode ExportType](exporttype-method.md) peut également exporter des types imbriqués, mais cette méthode est plus rapide.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,13 +43,13 @@ HRESULT ExportNestedType(
   
 ## <a name="parameters"></a>Paramètres  
  `AssemblyID`  
- ID de l’assembly à exporter à partir de.  
+ ID de l’assembly à partir duquel effectuer l’exportation.  
   
  `FileToken`  
- Jeton de fichier ou l’Assembly du fichier qui définit le type à rendre exportable.  
+ Jeton de fichier ou assembly de fichier qui définit le type à rendre exportable.  
   
  `TypeToken`  
- Type de jeton de type à rendre exportable.  
+ Jeton de type de type à rendre exportable.  
   
  `ParentType`  
  Jeton de type parent.  
@@ -58,19 +58,19 @@ HRESULT ExportNestedType(
  Nom de type qualifié complet à exporter.  
   
  `dwFlags`  
- `ComType` indicateurs tels que `tdPublic` ou `tdNested`. Cette valeur peut être passée à [DefineExportedType, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md).  
+ `ComType`indicateurs tels que `tdPublic` ou `tdNested`. Cette valeur peut être passée à la [méthode DefineExportedType,](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
   
  `pType`  
  Reçoit le jeton pour le type exporté.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h  
+ Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink, interface](ialink-interface.md)
+- [IALink2, interface](ialink2-interface.md)
+- [API ALink](index.md)

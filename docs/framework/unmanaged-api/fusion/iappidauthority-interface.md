@@ -16,44 +16,44 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 724ee01e91f1e9f4e34d2262610152a977ed4f53
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 91ab2f71e7fb74f8e0e517b566d46d61c316ebe2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697574"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796841"
 ---
 # <a name="iappidauthority-interface"></a>IAppIdAuthority, interface
-Fournit des méthodes qui génèrent et comparer les clés pour les identités d’application et les références.  
+Fournit des méthodes qui génèrent et comparent des clés pour les identités et les références d’application.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|`IAppIdAuthority::AreDefinitionsEqual`|Obtient une valeur qui indique si les deux spécifié [IDefinitionAppId](../../../../docs/framework/unmanaged-api/fusion/idefinitionappid-interface.md) instances sont égales. Vous pouvez passer la valeur d’indicateur IAPPIDAUTHORITY_ARE_DEFINITIONS_EQUAL_FLAG_IGNORE_VERSION pour ignorer leurs informations de version respective.|  
-|`IAppIdAuthority::AreReferencesEqual`|Obtient une valeur qui indique si les deux spécifié [IReferenceAppId](../../../../docs/framework/unmanaged-api/fusion/ireferenceappid-interface.md) instances sont égales. Vous pouvez passer la valeur d’indicateur IAPPIDAUTHORITY_ARE_REFERENCES_EQUAL_FLAG_IGNORE_VERSION pour ignorer leurs informations de version respective.|  
-|`IAppIdAuthority::AreTextualDefinitionsEqual`|Obtient une valeur qui indique si les deux définitions de chaîne spécifié sont égale. Vous pouvez passer la valeur d’indicateur IAPPIDAUTHORITY_ARE_DEFINITIONS_EQUAL_FLAG_IGNORE_VERSION pour ignorer leurs informations de version respective.|  
-|`IAppIdAuthority::AreTextualReferencesEqual`|Obtient une valeur qui indique si les deux références de chaîne spécifié sont égaux. Vous pouvez passer la valeur d’indicateur IAPPIDAUTHORITY_ARE_REFERENCES_EQUAL_FLAG_IGNORE_VERSION pour ignorer leurs informations de version respective.|  
-|`IAppIdAuthority::CreateDefinition`|Obtient un pointeur d’interface généré récemment `IDefinitionAppId` instance qui représente l’assembly dans la portée actuelle.|  
-|`IAppIdAuthority::CreateReference`|Obtient un pointeur d’interface nouvellement créé `IReferenceAppId` qui représente l’assembly dans la portée actuelle.|  
-|`IAppIdAuthority::DefinitionToText`|Obtient une version de chaîne de l’objet `IDefinitionAppId`, en utilisant les valeurs d’indicateur spécifié.|  
-|`IAppIdAuthority::DoesDefinitionMatchReference`|Obtient une valeur qui indique si le texte spécifié `IDefinitionAppId` et `IReferenceAppId` représentent le même assembly.|  
-|`IAppIdAuthority::DoesTextualDefinitionMatchTextualReference`|Obtient une valeur qui indique si la chaîne de définition spécifié et la chaîne de référence représentent le même assembly.|  
-|`IAppIdAuthority::GenerateDefinitionKey`|Obtient une clé de chaîne qui représente le texte spécifié `IDefinitionAppId` instance.|  
-|`IAppIdAuthority::GenerateReferenceKey`|Obtient une clé de chaîne qui représente le texte spécifié `IReferenceAppId` instance.|  
-|`IAppIdAuthority::HashDefinition`|Obtient une clé de hachage pour le texte spécifié `IDefinitionAppId` instance.|  
-|`IAppIdAuthority::HashReference`|Obtient une clé de hachage pour le texte spécifié `IReferenceAppId` instance.|  
-|`IAppIdAuthority::ReferenceToText`|Obtient une version de chaîne de l’objet `IReferenceAppId`, en utilisant les valeurs d’indicateur spécifié.|  
-|`IAppIdAuthority::TextToDefinition`|Obtient un pointeur d’interface vers un `IDefinitionAppId` instance qui représente l’assembly référencé par la clé de chaîne spécifiée.|  
-|`IAppIdAuthority::TextToReference`|Obtient un pointeur d’interface vers un `IReferenceAppId` instance qui représente l’assembly référencé par la clé de chaîne spécifiée.|  
+|`IAppIdAuthority::AreDefinitionsEqual`|Obtient une valeur qui indique si les deux instances [IDefinitionAppId](idefinitionappid-interface.md) spécifiées sont égales. Vous pouvez passer la valeur d’indicateur IAPPIDAUTHORITY_ARE_DEFINITIONS_EQUAL_FLAG_IGNORE_VERSION pour ignorer leurs informations de version respectives.|  
+|`IAppIdAuthority::AreReferencesEqual`|Obtient une valeur qui indique si les deux instances [IReferenceAppId](ireferenceappid-interface.md) spécifiées sont égales. Vous pouvez passer la valeur d’indicateur IAPPIDAUTHORITY_ARE_REFERENCES_EQUAL_FLAG_IGNORE_VERSION pour ignorer leurs informations de version respectives.|  
+|`IAppIdAuthority::AreTextualDefinitionsEqual`|Obtient une valeur qui indique si les deux définitions de chaîne spécifiées sont égales. Vous pouvez passer la valeur d’indicateur IAPPIDAUTHORITY_ARE_DEFINITIONS_EQUAL_FLAG_IGNORE_VERSION pour ignorer leurs informations de version respectives.|  
+|`IAppIdAuthority::AreTextualReferencesEqual`|Obtient une valeur qui indique si les deux références de chaîne spécifiées sont égales. Vous pouvez passer la valeur d’indicateur IAPPIDAUTHORITY_ARE_REFERENCES_EQUAL_FLAG_IGNORE_VERSION pour ignorer leurs informations de version respectives.|  
+|`IAppIdAuthority::CreateDefinition`|Obtient un pointeur d’interface vers une instance `IDefinitionAppId` nouvellement générée qui représente l’assembly dans la portée actuelle.|  
+|`IAppIdAuthority::CreateReference`|Obtient un pointeur d’interface vers un objet `IReferenceAppId` qui vient d’être créé et qui représente l’assembly dans l’étendue actuelle.|  
+|`IAppIdAuthority::DefinitionToText`|Obtient une version de chaîne du spécifié `IDefinitionAppId`, à l’aide des valeurs d’indicateur spécifiées.|  
+|`IAppIdAuthority::DoesDefinitionMatchReference`|Obtient une valeur qui indique si le spécifié `IDefinitionAppId` et `IReferenceAppId` représente le même assembly.|  
+|`IAppIdAuthority::DoesTextualDefinitionMatchTextualReference`|Obtient une valeur qui indique si la chaîne de définition et la chaîne de référence spécifiées représentent le même assembly.|  
+|`IAppIdAuthority::GenerateDefinitionKey`|Obtient une clé de chaîne qui représente l' `IDefinitionAppId` instance spécifiée.|  
+|`IAppIdAuthority::GenerateReferenceKey`|Obtient une clé de chaîne qui représente l' `IReferenceAppId` instance spécifiée.|  
+|`IAppIdAuthority::HashDefinition`|Obtient une clé de hachage pour l' `IDefinitionAppId` instance spécifiée.|  
+|`IAppIdAuthority::HashReference`|Obtient une clé de hachage pour l' `IReferenceAppId` instance spécifiée.|  
+|`IAppIdAuthority::ReferenceToText`|Obtient une version de chaîne du spécifié `IReferenceAppId`, à l’aide des valeurs d’indicateur spécifiées.|  
+|`IAppIdAuthority::TextToDefinition`|Obtient un pointeur d’interface vers `IDefinitionAppId` une instance de qui représente l’assembly référencé par la clé de chaîne spécifiée.|  
+|`IAppIdAuthority::TextToReference`|Obtient un pointeur d’interface vers `IReferenceAppId` une instance de qui représente l’assembly référencé par la clé de chaîne spécifiée.|  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** Isolation.h  
+ **En-tête :** Isolation. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)
+- [Interfaces de fusion](fusion-interfaces.md)

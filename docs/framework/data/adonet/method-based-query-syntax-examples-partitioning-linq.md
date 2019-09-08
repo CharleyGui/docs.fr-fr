@@ -1,30 +1,30 @@
 ---
-title: 'Exemples de syntaxe de requête fondée sur une méthode : Partitionnement (LINQ'
+title: 'Exemples de syntaxe de requête fondée sur une méthode : Partitionnement (LINQ)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: a582c53f-f203-44ae-a797-d7f169a4fbb5
-ms.openlocfilehash: bfc26835258606ff20dd066ecb6e4c874d0be2f2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7e01bd9702ae267f80ecf24de0c0cc90d638a84c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772149"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783596"
 ---
-# <a name="method-based-query-syntax-examples-partitioning-linq"></a>Exemples de syntaxe de requête fondée sur une méthode : Partitionnement (LINQ
+# <a name="method-based-query-syntax-examples-partitioning-linq"></a>Exemples de syntaxe de requête fondée sur une méthode : Partitionnement (LINQ)
 Les exemples de cette rubrique montrent comment utiliser les méthodes <xref:System.Linq.Enumerable.Skip%2A>, <xref:System.Linq.Enumerable.SkipWhile%2A>, <xref:System.Linq.Enumerable.Take%2A> et <xref:System.Linq.Enumerable.TakeWhile%2A> pour interroger un <xref:System.Data.DataSet> à l'aide de la syntaxe d'expression de requête.  
   
- Le `FillDataSet` méthode utilisé dans ces exemples est spécifiée dans [chargement des données dans un jeu de données](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md).  
+ La `FillDataSet` méthode utilisée dans ces exemples est spécifiée lors [du chargement des données dans un DataSet](loading-data-into-a-dataset.md).  
   
  Les exemples de cette rubrique utilisent les tables Contact, Address, Product, SalesOrderHeader et SalesOrderDetail de l'exemple de base de données AdventureWorks.  
   
- Les exemples de cette rubrique utilisent les éléments suivants `using` / `Imports` instructions :  
+ Les exemples de cette rubrique utilisent les instructions `using` suivantes / `Imports` :  
   
  [!code-csharp[DP LINQ to DataSet Examples#ImportsUsing](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#importsusing)]
  [!code-vb[DP LINQ to DataSet Examples#ImportsUsing](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#importsusing)]  
   
- Pour plus d'informations, voir [Procédure : Créer un projet LINQ to DataSet dans Visual Studio](../../../../docs/framework/data/adonet/how-to-create-a-linq-to-dataset-project-in-vs.md).  
+ Pour plus d’informations, consultez [Guide pratique pour Créez un projet de LINQ to DataSet dans Visual](how-to-create-a-linq-to-dataset-project-in-vs.md)Studio.  
   
 ## <a name="skip"></a>Ignorer  
   
@@ -56,7 +56,7 @@ Les exemples de cette rubrique montrent comment utiliser les méthodes <xref:Sys
  [!code-csharp[DP LINQ to DataSet Examples#TakeSimple](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#takesimple)]
  [!code-vb[DP LINQ to DataSet Examples#TakeSimple](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#takesimple)]  
   
-### <a name="example"></a>Exemple  
+### <a name="example"></a>Exemples  
  Cet exemple utilise la méthode <xref:System.Linq.Enumerable.Take%2A> pour obtenir les trois premières adresses de Seattle.  
   
  [!code-csharp[DP LINQ to DataSet Examples#TakeNested](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#takenested)]
@@ -72,7 +72,7 @@ Les exemples de cette rubrique montrent comment utiliser les méthodes <xref:Sys
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Chargement de données dans un DataSet](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md)
-- [Exemples LINQ to DataSet](../../../../docs/framework/data/adonet/linq-to-dataset-examples.md)
+- [Chargement de données dans un DataSet](loading-data-into-a-dataset.md)
+- [Exemples LINQ to DataSet](linq-to-dataset-examples.md)
 - [Vue d’ensemble des opérateurs de requête standard (C#)](../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)

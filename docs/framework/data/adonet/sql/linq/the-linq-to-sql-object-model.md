@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 81dd0c37-e2a4-4694-83b0-f2e49e693810
-ms.openlocfilehash: 6518e4edeccdd533487f717122ba6832f13436a3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b73904e2347c501b21b2c5933d0b43c7abafeb7c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947070"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792314"
 ---
 # <a name="the-linq-to-sql-object-model"></a>Modèle objet LINQ to SQL
 Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], un modèle objet exprimé dans le langage de programmation du développeur est mappé au modèle de données d’une base de données relationnelle. Les opérations sur les données sont ensuite effectuées en fonction du modèle objet.  
@@ -19,7 +19,7 @@ Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], un mod
   
  ![Capture d’écran qui montre le modèle d’objet LINQ.](./media/the-linq-to-sql-object-model/linq-object-model-two-tier.png)  
   
- Les éléments les plus fondamentaux dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] le modèle objet et leur relation aux éléments dans le modèle de données relationnelles sont résumés dans le tableau suivant:  
+ Les éléments les plus fondamentaux dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] le modèle objet et leur relation aux éléments dans le modèle de données relationnelles sont résumés dans le tableau suivant :  
   
 |Modèle d'objet LINQ to SQL|Modèle de données relationnel|  
 |------------------------------|---------------------------|  
@@ -40,7 +40,7 @@ Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], un mod
   
  Seules les instances de classes déclarées comme des tables (classes d'entité) peuvent être enregistrées dans la base de données.  
   
- Pour plus d’informations, consultez la section attribut de table du [mappage basé sur les attributs](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
+ Pour plus d’informations, consultez la section attribut de table du [mappage basé sur les attributs](attribute-based-mapping.md).  
   
 ## <a name="linq-to-sql-class-members-and-database-columns"></a>Membres de classe et colonnes de base de données LINQ to SQL  
  Vous pouvez non seulement associer des classes à des tables, mais également désigner des champs ou des propriétés pour représenter des colonnes de base de données. À cette fin, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] définit l'attribut <xref:System.Data.Linq.Mapping.ColumnAttribute>, comme dans l'exemple suivant :  
@@ -51,7 +51,7 @@ Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], un mod
   
  Seuls les champs et les propriétés mappés à des colonnes sont rendus persistants ou récupérés dans la base de données. Ceux qui ne sont pas déclarés comme des colonnes sont considérés comme des éléments temporaires de votre logique d'application.  
   
- L'attribut <xref:System.Data.Linq.Mapping.ColumnAttribute> possède diverses propriétés que vous pouvez utiliser pour personnaliser les membres qui représentent des colonnes (par exemple, désigner un membre comme représentant d'une colonne de clé primaire). Pour plus d’informations, consultez la section attribut de colonne du [mappage basé sur les attributs](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
+ L'attribut <xref:System.Data.Linq.Mapping.ColumnAttribute> possède diverses propriétés que vous pouvez utiliser pour personnaliser les membres qui représentent des colonnes (par exemple, désigner un membre comme représentant d'une colonne de clé primaire). Pour plus d’informations, consultez la section attribut de colonne du [mappage basé sur les attributs](attribute-based-mapping.md).  
   
 ## <a name="linq-to-sql-associations-and-database-foreign-key-relationships"></a>Associations et relations de clé étrangère de base de données LINQ to SQL  
  Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], vous représentez les associations de base de données (telles que les relations de clé étrangère à <xref:System.Data.Linq.Mapping.AssociationAttribute> clé primaire) en appliquant l’attribut. Dans le segment de code suivant, la `Order` classe contient une `Customer` propriété qui a un <xref:System.Data.Linq.Mapping.AssociationAttribute> attribut. Cette propriété et son attribut fournissent à la classe `Order` une relation avec la classe `Customer`.  
@@ -62,7 +62,7 @@ Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], un mod
  [!code-csharp[DLinqObjectModel#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqObjectModel/cs/northwind.cs#3)]
  [!code-vb[DLinqObjectModel#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqObjectModel/vb/northwind.vb#3)]  
   
- Pour plus d’informations, consultez la section attribut d’association du [mappage basé sur les attributs](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md).  
+ Pour plus d’informations, consultez la section attribut d’association du [mappage basé sur les attributs](attribute-based-mapping.md).  
   
 ## <a name="linq-to-sql-methods-and-database-stored-procedures"></a>Méthodes et procédures stockées de base de données LINQ to SQL  
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prend en charge des procédures stockées et des fonctions définies par l'utilisateur. Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], vous mappez ces abstractions définies par la base de données aux objets clients afin que vous puissiez y accéder de manière fortement typée à partir du code client. Les signatures de méthode sont aussi semblables que possible aux signatures des procédures et fonctions définies dans la base de données. Vous pouvez utiliser IntelliSense pour découvrir ces méthodes.  
@@ -78,9 +78,9 @@ Dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], un mod
  [!code-csharp[DLinqObjectModel#4](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqObjectModel/cs/northwind.cs#4)]
  [!code-vb[DLinqObjectModel#4](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqObjectModel/vb/northwind.vb#4)]  
   
- Pour plus d’informations, consultez les sections attribut de fonction, attribut de procédure stockée et attribut de paramètre du mappage et des [procédures stockées](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md) [basés sur des attributs](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md) .  
+ Pour plus d’informations, consultez les sections attribut de fonction, attribut de procédure stockée et attribut de paramètre du mappage et des [procédures stockées](stored-procedures.md) [basés sur des attributs](attribute-based-mapping.md) .  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mappage basé sur les attributs](../../../../../../docs/framework/data/adonet/sql/linq/attribute-based-mapping.md)
-- [Informations générales](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
+- [Mappage basé sur les attributs](attribute-based-mapping.md)
+- [Informations générales](background-information.md)

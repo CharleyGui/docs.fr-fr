@@ -2,12 +2,12 @@
 title: Connexion de contexte
 ms.date: 03/30/2017
 ms.assetid: e443ca86-9243-4234-a822-ed10a53a9de0
-ms.openlocfilehash: 83e9f4a9672d2703514c0a86ad8d41b968c255fd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 26578d0c6a5e4553e57673561f94090b9a1fd1a5
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61915224"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791513"
 ---
 # <a name="the-context-connection"></a>Connexion de contexte
 Le problème de l'accès aux données interne est un scénario assez courant. Vous souhaitez accéder au même serveur, celui sur lequel s'exécute votre procédure stockée Common Language Runtime (CLR) ou fonction. Une option consiste à créer une connexion à l'aide de <xref:System.Data.SqlClient.SqlConnection>, à spécifier une chaîne de connexion pointant vers le serveur local, puis à ouvrir la connexion. Cela nécessite la spécification d'informations d'identification pour la connexion. La connexion s’opère dans une session de base de données différente de la procédure stockée ou de la fonction, elle peut avoir des options `SET` différentes, elle est dans une transaction séparée, elle ne voit pas vos tables temporaires, etc. Si votre code de fonction ou de procédure stockée managée s'exécute dans le processus SQL Server, c'est parce que quelqu'un s'est connecté à ce serveur et a exécuté une instruction SQL pour l'invoquer. Vous souhaitez probablement que la fonction ou la procédure stockée s’exécute dans le contexte de cette connexion, ainsi qu’avec sa transaction, les options `SET`, etc. C'est ce que l'on appelle une connexion de contexte.  
@@ -20,4 +20,4 @@ Le problème de l'accès aux données interne est un scénario assez courant. Vo
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

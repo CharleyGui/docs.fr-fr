@@ -2,12 +2,12 @@
 title: Chaînes de connexion dans ADO.NET
 ms.date: 10/10/2018
 ms.assetid: 745c5f95-2f02-4674-b378-6d51a7ec2490
-ms.openlocfilehash: 02fe8d984f1287673477bb142b3f9626e248898e
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 8f726ca71ba955ef542d15e0e8318c2b310e607e
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363751"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784904"
 ---
 # <a name="connection-strings-in-adonet"></a>Chaînes de connexion dans ADO.NET
 
@@ -15,7 +15,7 @@ Une chaîne de connexion contient des informations d'initialisation qui sont pas
 
 ## <a name="connection-string-syntax"></a>Syntaxe de chaîne de connexion
 
-Une chaîne de connexion est une liste délimitée par des points-virgules de paires de paramètres clé/valeur:
+Une chaîne de connexion est une liste délimitée par des points-virgules de paires de paramètres clé/valeur :
 
 ```
 keyword1=value; keyword2=value;
@@ -30,21 +30,21 @@ Keyword=" whitespace  ";
 Keyword='special;character';
 ```
 
-Le caractère englobant peut ne pas se trouver dans la valeur qu’il englobe. Par conséquent, une valeur contenant des guillemets simples peut être placée entre guillemets doubles, et vice versa:
+Le caractère englobant peut ne pas se trouver dans la valeur qu’il englobe. Par conséquent, une valeur contenant des guillemets simples peut être placée entre guillemets doubles, et vice versa :
 
 ```
 Keyword='double"quotation;mark';
 Keyword="single'quotation;mark";
 ```
 
-Vous pouvez également échapper le caractère englobant à l’aide de deux d’entre eux:
+Vous pouvez également échapper le caractère englobant à l’aide de deux d’entre eux :
 
 ```
 Keyword="double""quotation";
 Keyword='single''quotation';
 ```
 
-Les guillemets eux-mêmes, ainsi que le signe égal, ne nécessitent pas d’échappement, donc les chaînes de connexion suivantes sont valides:
+Les guillemets eux-mêmes, ainsi que le signe égal, ne nécessitent pas d’échappement, donc les chaînes de connexion suivantes sont valides :
 
 ```
 Keyword=no "escaping" 'required';
@@ -57,23 +57,23 @@ Toutes les chaînes de connexion partagent la même syntaxe de base décrite ci-
 
 Les erreurs de frappe peuvent entraîner des erreurs. Par exemple, `Integrated Security=true` est valide, mais `IntegratedSecurity=true` génère une erreur.
 
-Les chaînes de connexion construites manuellement au moment de l’exécution à partir d’une entrée utilisateur non validée sont vulnérables aux attaques par injection de chaîne et mettent en péril la sécurité au niveau de la source de données. Pour résoudre ces problèmes, *ADO.NET* 2,0 a introduit les générateurs de [chaînes de connexion](../../../../docs/framework/data/adonet/connection-string-builders.md) pour chaque fournisseur de données *.NET Framework* . Ces générateurs de chaînes de connexion exposent des paramètres en tant que propriétés fortement typées et permettent de valider la chaîne de connexion avant qu’elle ne soit envoyée à la source de données.
+Les chaînes de connexion construites manuellement au moment de l’exécution à partir d’une entrée utilisateur non validée sont vulnérables aux attaques par injection de chaîne et mettent en péril la sécurité au niveau de la source de données. Pour résoudre ces problèmes, *ADO.NET* 2,0 a introduit les [générateurs de chaînes de connexion](connection-string-builders.md) pour chaque fournisseur de données *.NET Framework* . Ces générateurs de chaînes de connexion exposent des paramètres en tant que propriétés fortement typées et permettent de valider la chaîne de connexion avant qu’elle ne soit envoyée à la source de données.
 
 ## <a name="in-this-section"></a>Dans cette section
 
-[Générateurs de chaînes de connexion](../../../../docs/framework/data/adonet/connection-string-builders.md)\
+[Générateurs de chaînes de connexion](connection-string-builders.md)\
 Montre comment utiliser les classes `ConnectionStringBuilder` pour générer des chaînes de connexion valides au moment de l'exécution.
 
-[Chaînes de connexion et fichiers de configuration](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md)\
+[Chaînes de connexion et fichiers de configuration](connection-strings-and-configuration-files.md)\
 Montre comment stocker et extraire des chaînes de connexion dans des fichiers de configuration.
 
-[Syntaxe de chaîne de connexion](../../../../docs/framework/data/adonet/connection-string-syntax.md)\
+[Syntaxe de chaîne de connexion](connection-string-syntax.md)\
 Décrit comment configurer des chaînes de connexion spécifiques au fournisseur pour `SqlClient`, `OracleClient`, `OleDb` et `Odbc`.
 
-[Protection des informations de connexion](../../../../docs/framework/data/adonet/protecting-connection-information.md)\
+[Protection des informations de connexion](protecting-connection-information.md)\
 Montre des techniques pour la protection des informations utilisées pour la connexion à une source de données.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Connexion à une source de données](/cpp/data/odbc/connecting-to-a-data-source)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

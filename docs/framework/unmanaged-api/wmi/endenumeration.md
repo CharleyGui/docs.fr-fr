@@ -1,5 +1,5 @@
 ---
-title: EndEnumeration, fonction (référence des API non managées)
+title: Fonction EndEnumeration (référence des API non managées)
 description: La fonction EndEnumeration met fin à une énumération.
 ms.date: 11/06/2017
 api_name:
@@ -16,16 +16,16 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d5c576cb808ee92452c193c3fbce4f1d2c2cad05
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 0065dcd25430e102b965d5598c7e9a04c7857eb3
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636775"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798813"
 ---
 # <a name="endenumeration-function"></a>EndEnumeration, fonction
 
-Met fin à une séquence d’énumération démarrée avec un appel à la [BeginEnumeration, fonction](beginenumeration.md).
+Termine une séquence d’énumération démarrée avec un appel à la [fonction BeginEnumeration](beginenumeration.md).
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
 
@@ -41,29 +41,29 @@ HRESULT EndEnumeration (
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`\
-[in] Ce paramètre n’est pas utilisé.
+dans Ce paramètre n’est pas utilisé.
 
 `ptr`\
-[in] Un pointeur vers un [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 ## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Value  |Description  |
+|Constante  |Valeur  |Description  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Il y a eu une défaillance générale. |
-|`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
+|`WBEM_E_FAILED` | 0x80041001 | Une défaillance générale s’est produite. |
+|`WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
 
 ## <a name="remarks"></a>Notes
 
-Cette fonction encapsule un appel à la [IWbemClassObject::EndEnumeration](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) (méthode).
+Cette fonction encapsule un appel à la méthode [IWbemClassObject :: EndEnumeration](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
-Un appel à la `EndEnumeration` fonction n’est pas obligatoire, mais il est recommandé car il libère les ressources associées à l’énumération. Toutefois, les ressources sont libérées automatiquement lors de l’énumération suivante est démarrée ou l’objet est libéré.
+Un appel à la `EndEnumeration` fonction n’est pas obligatoire, mais il est recommandé, car il libère les ressources associées à l’énumération. Toutefois, les ressources sont désallouées automatiquement lorsque l’énumération suivante est démarrée ou lorsque l’objet est libéré.
 
 ## <a name="requirements"></a>Configuration requise
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
 **En-tête :** WMINet_Utils.idl
 
@@ -71,4 +71,4 @@ Un appel à la `EndEnumeration` fonction n’est pas obligatoire, mais il est re
 
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performances (référence des API non managées)](index.md)
+- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)

@@ -2,12 +2,12 @@
 title: 'Client : Fabrications de canaux et canaux'
 ms.date: 03/30/2017
 ms.assetid: ef245191-fdab-4468-a0da-7c6f25d2110f
-ms.openlocfilehash: 9a54607e54950ace1fda5b97e4df885119259f3c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3dfcca0d5492a3fa376ec184f4bdd9bfa03b53c0
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664936"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795858"
 ---
 # <a name="client-channel-factories-and-channels"></a>Client : Fabrications de canaux et canaux
 Cette rubrique décrit la création de fabrications de canaux et de canaux.  
@@ -15,22 +15,22 @@ Cette rubrique décrit la création de fabrications de canaux et de canaux.
 ## <a name="channel-factories-and-channels"></a>Fabrications de canaux et canaux  
  Les fabrications de canaux sont chargées de créer des canaux. Les canaux créés par les fabrications de canaux sont utilisés pour l'envoi de messages. Ces canaux sont chargés d'obtenir le message de la couche supérieure, quel que soit le traitement nécessaire pour y arriver, puis de l'envoyer à la couche inférieure. Le graphique ci-dessous illustre ce processus.  
   
- ![Client fabriques et canaux](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure2highlevelfactgoriesc.gif "wcfc_WCFChannelsigure2HIghLevelFactgoriesc")  
+ ![Fabriques et canaux clients](./media/wcfc-wcfchannelsigure2highlevelfactgoriesc.gif "wcfc_WCFChannelsigure2HIghLevelFactgoriesc")  
 Une fabrication de canal crée des canaux.  
   
  Une fois fermées, les fabrications de canaux sont chargées de fermer tous les canaux qu'elles ont créés et qui ne sont pas déjà fermés. Notez que le modèle présenté ici est asymétrique car lorsqu'un écouteur de canal est fermé, il cesse seulement d'accepter de nouveaux canaux mais laisse les canaux existants ouverts afin qu'ils puissent continuer à recevoir des messages.  
   
- WCF fournit des Assistants de classe de base pour ce processus. (Pour un diagramme des classes d’assistance canal décrits dans cette rubrique, consultez [vue d’ensemble du modèle de canal](../../../../docs/framework/wcf/extending/channel-model-overview.md).)  
+ WCF fournit des applications auxiliaires de classe de base pour ce processus. (Pour obtenir un diagramme des classes d’assistance de canal abordées dans cette rubrique, consultez [vue d’ensemble du modèle de canal](channel-model-overview.md).)  
   
-- Le <xref:System.ServiceModel.Channels.CommunicationObject> la classe implémente <xref:System.ServiceModel.ICommunicationObject> et applique l’ordinateur d’état décrit à l’étape 2 de [canaux de développement](../../../../docs/framework/wcf/extending/developing-channels.md).  
+- La <xref:System.ServiceModel.Channels.CommunicationObject> classe<xref:System.ServiceModel.ICommunicationObject> implémente et applique l’ordinateur d’état décrit à l’étape 2 du [développement de canaux](developing-channels.md).  
   
-- Le <xref:System.ServiceModel.Channels.ChannelManagerBase> la classe implémente <xref:System.ServiceModel.Channels.CommunicationObject> et fournit une classe de base unifiée pour <xref:System.ServiceModel.Channels.ChannelFactoryBase?displayProperty=nameWithType> et <xref:System.ServiceModel.Channels.ChannelListenerBase?displayProperty=nameWithType>. La classe <xref:System.ServiceModel.Channels.ChannelManagerBase> fonctionne avec <xref:System.ServiceModel.Channels.ChannelBase>, qui est une classe de base implémentant <xref:System.ServiceModel.Channels.IChannel>.
+- La <xref:System.ServiceModel.Channels.ChannelManagerBase> classe <xref:System.ServiceModel.Channels.ChannelFactoryBase?displayProperty=nameWithType> <xref:System.ServiceModel.Channels.ChannelListenerBase?displayProperty=nameWithType>implémente et fournit une classe de base unifiée pour et. <xref:System.ServiceModel.Channels.CommunicationObject> La classe <xref:System.ServiceModel.Channels.ChannelManagerBase> fonctionne avec <xref:System.ServiceModel.Channels.ChannelBase>, qui est une classe de base implémentant <xref:System.ServiceModel.Channels.IChannel>.
   
-- Le <xref:System.ServiceModel.Channels.ChannelFactoryBase> la classe implémente <xref:System.ServiceModel.Channels.ChannelManagerBase> et <xref:System.ServiceModel.Channels.IChannelFactory> et consolide les `CreateChannel` dans une des surcharges `OnCreateChannel` méthode abstraite.
+- La <xref:System.ServiceModel.Channels.ChannelFactoryBase> <xref:System.ServiceModel.Channels.IChannelFactory> classe `CreateChannel` implémente `OnCreateChannel` et consolide les surcharges dans une méthode abstraite. <xref:System.ServiceModel.Channels.ChannelManagerBase>
   
-- Le <xref:System.ServiceModel.Channels.ChannelListenerBase> la classe implémente <xref:System.ServiceModel.Channels.IChannelListener>. Elle se charge de la gestion d'état de base. 
+- La <xref:System.ServiceModel.Channels.ChannelListenerBase> classe<xref:System.ServiceModel.Channels.IChannelListener>implémente. Elle se charge de la gestion d'état de base. 
   
- La discussion suivante est basée sur le [Transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md) exemple.  
+ La discussion suivante est basée sur le [transport : Exemple](../samples/transport-udp.md) UDP.  
   
 ### <a name="creating-a-channel-factory"></a>Création d'une fabrication de canal  
  `UdpChannelFactory` dérive de <xref:System.ServiceModel.Channels.ChannelFactoryBase>. L'exemple substitue <xref:System.ServiceModel.Channels.ChannelFactoryBase.GetProperty%2A> pour fournir un accès à la version du message de l'encodeur de message. L'exemple substitue également <xref:System.ServiceModel.Channels.ChannelFactoryBase.OnClose%2A> pour détruire notre instance de <xref:System.ServiceModel.Channels.BufferManager> lors des transitions d'ordinateurs d'état.  
@@ -55,7 +55,7 @@ this.socket.Close();
 base.OnClose(timeout);  
 ```  
   
- Implémentez `Send()` et `BeginSend()` / `EndSend()`. Deux phases peuvent alors être distinguées. Tout d'abord, la sérialisation du message dans un tableau d'octets :  
+ `Send()` Implémentez `BeginSend()`et ./ `EndSend()` Deux phases peuvent alors être distinguées. Tout d'abord, la sérialisation du message dans un tableau d'octets :  
   
 ```csharp  
 ArraySegment<byte> messageBuffer = EncodeMessage(message);  
@@ -75,4 +75,4 @@ this.socket.SendTo(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Développement de canaux](../../../../docs/framework/wcf/extending/developing-channels.md)
+- [Développement de canaux](developing-channels.md)

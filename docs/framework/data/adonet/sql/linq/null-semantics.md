@@ -2,23 +2,23 @@
 title: Sémantique Null
 ms.date: 03/30/2017
 ms.assetid: a97017ae-d634-4cf3-bbaf-054a528fd683
-ms.openlocfilehash: eb1e96ba44c5d64e8366a654c2d06d89c9b46c9a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d0b18c0a699840d11f5e4add05147672f9bb69e9
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61767535"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792980"
 ---
 # <a name="null-semantics"></a>Sémantique Null
-Le tableau suivant fournit des liens vers différentes parties de la [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documentation où `null` (`Nothing` en Visual Basic) problèmes sont abordés.  
+Le tableau suivant fournit des liens vers différentes parties de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] la documentation `null` ,`Nothing` où les problèmes (dans Visual Basic) sont abordés.  
   
 |Rubrique|Description|  
 |-----------|-----------------|  
-|[Incompatibilité entre types SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)|La section « Sémantique Null » de cette rubrique inclut la discussion de trois états SQL booléenne et le common language runtime (CLR) de deux états <xref:System.Boolean>, le littéral `Nothing` (Visual Basic) et `null` (C#) et autres similaires problèmes.|  
-|[Traduction des opérateurs de requête standard](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)|La section « Sémantique Null » de cette rubrique décrit la sémantique de comparaison Null dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].|  
-|[System.String, méthodes](../../../../../../docs/framework/data/adonet/sql/linq/system-string-methods.md)|La section « Différences par rapport à .NET » de cette rubrique décrit comment un retour de 0 de <xref:System.String.LastIndexOf%2A> peut signifier que la chaîne a la valeur null ou que la position trouvée est 0.|  
-|[Calculer la somme de valeurs dans une séquence numérique](../../../../../../docs/framework/data/adonet/sql/linq/compute-the-sum-of-values-in-a-numeric-sequence.md)|Décrit comment la <xref:System.Linq.Enumerable.Sum%2A> opérateur a la valeur `null` (`Nothing` en Visual Basic) au lieu de 0 pour une séquence qui contient uniquement des valeurs NULL ou une séquence vide.|  
+|[Incompatibilité entre types SQL-CLR](sql-clr-type-mismatches.md)|La section « sémantique null » de cette rubrique présente la description de la valeur booléenne SQL à trois États par rapport à la Common Language Runtime à deux États <xref:System.Boolean>(CLR) `Nothing` , le littéral ( `null` Visual BasicC#) et (), ainsi que d’autres liés.|  
+|[Traduction des opérateurs de requête standard](standard-query-operator-translation.md)|La section « Sémantique Null » de cette rubrique décrit la sémantique de comparaison Null dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].|  
+|[System.String, méthodes](system-string-methods.md)|La section « Différences par rapport à .NET » de cette rubrique décrit comment un retour de 0 de <xref:System.String.LastIndexOf%2A> peut signifier que la chaîne a la valeur null ou que la position trouvée est 0.|  
+|[Calculer la somme de valeurs dans une séquence numérique](compute-the-sum-of-values-in-a-numeric-sequence.md)|Décrit comment l' <xref:System.Linq.Enumerable.Sum%2A> opérateur prend `null` la valeur (`Nothing` dans Visual Basic) au lieu de 0 pour une séquence qui contient uniquement des valeurs null ou pour une séquence vide.|  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions et types de données](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+- [Fonctions et types de données](data-types-and-functions.md)

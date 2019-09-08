@@ -1,6 +1,6 @@
 ---
-title: WritePropertyValue (fonction) (référence des API non managées)
-description: La fonction WritePropertyValue écrit les octets à une propriété.
+title: Fonction WritePropertyValue (référence des API non managées)
+description: La fonction WritePropertyValue écrit des octets dans une propriété.
 ms.date: 11/06/2017
 api_name:
 - WritePropertyValue
@@ -16,14 +16,14 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 47120ff9de9e6e4802c5aea990841b235cd6c74c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a3c42129835f9b30bed493a0992d49d7e2a458e2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67783066"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798176"
 ---
-# <a name="writepropertyvalue-function"></a>WritePropertyValue (fonction)
+# <a name="writepropertyvalue-function"></a>WritePropertyValue fonction)
 Écrit un nombre spécifié d’octets dans une propriété identifiée par un descripteur de propriété.
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -43,40 +43,40 @@ HRESULT WritePropertyValue (
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`  
-[in] Ce paramètre n’est pas utilisé.
+dans Ce paramètre n’est pas utilisé.
 
 `ptr`  
-[in] Un pointeur vers un [IWbemObjectAccess](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectaccess) instance.
+dans Pointeur vers une instance [IWbemObjectAccess](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectaccess) .
 
 `lHandle`  
-[in] Entier qui contient le handle qui identifie cette propriété. Le handle peut être récupéré en appelant le [GetPropertyHandle](getpropertyhandle.md) (fonction).   
+dans Entier qui contient le handle qui identifie cette propriété. Le descripteur peut être récupéré en appelant la fonction [GetPropertyHandle](getpropertyhandle.md) .   
 
 `lNumBytes`  
-[in] Le nombre d’octets écrits dans la propriété. Consultez le [notes](#remarks) section pour plus d’informations.
+dans Nombre d’octets écrits dans la propriété. Pour plus d’informations, consultez la section [Notes](#remarks) .
 
 `pHandle`   
-[out] Pointeur vers le tableau d’octets qui contient les données.
+à Pointeur vers le tableau d’octets qui contient les données.
 
 ## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
 |Constante  |Valeur  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
 |`WBEM_E_TYPE_MISMATCH` | 0x80041005 | Une incompatibilité de type s’est produite. |
-|`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
+|`WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
   
 ## <a name="remarks"></a>Notes
 
-Cette fonction encapsule un appel à la [IWbemClassObject::WritePropertyValue](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemobjectaccess-writepropertyvalue) (méthode).
+Cette fonction encapsule un appel à la méthode [IWbemClassObject :: WritePropertyValue](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemobjectaccess-writepropertyvalue) .
 
-Utilisez cette fonction pour définir la chaîne et tous les autres non -`DWORD` ou non-`QWORD` données.
+Utilisez cette fonction pour définir la chaîne et toutes les autres`DWORD` `QWORD` données non ou non.
 
-Pour les valeurs de propriété sans chaînes, `lNumBytes` doit être la taille des données correctes du type de propriété spécifié. Pour les valeurs de propriété de chaîne, `lNumBytes` doit être la longueur de la chaîne spécifiée en octets et la chaîne lui-même doit être de même longueur en octets et être suivie d’un caractère de fin de la valeur null.
+Pour les valeurs de propriété qui `lNumBytes` ne sont pas de type chaîne, doit être la bonne taille de données du type de propriété spécifié. Pour les valeurs de propriété `lNumBytes` de type chaîne, doit correspondre à la longueur de la chaîne spécifiée en octets, et la chaîne elle-même doit être de longueur égale en octets et être suivie d’un caractère de fin null.
 
 ## <a name="requirements"></a>Configuration requise  
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  
   
@@ -84,4 +84,4 @@ Pour les valeurs de propriété sans chaînes, `lNumBytes` doit être la taille 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performances (référence des API non managées)](index.md)
+- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)

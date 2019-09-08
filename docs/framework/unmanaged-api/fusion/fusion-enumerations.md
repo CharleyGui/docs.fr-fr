@@ -8,38 +8,38 @@ helpviewer_keywords:
 ms.assetid: 5817b4bc-b0ba-4b2f-a11c-a03dd8cb8f84
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ffee9084bd07882079b2d44de25391f2491a1520
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e7670e19d764518cc8d88f702f169610b72642a9
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936459"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795332"
 ---
 # <a name="fusion-enumerations"></a>Énumérations de fusion
 Cette section décrit les énumérations non managées utilisées par l’API de fusion.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [ASM_CACHE_FLAGS, énumération](../../../../docs/framework/unmanaged-api/fusion/asm-cache-flags-enumeration.md)  
- Indique la source d’un assembly représenté par [IAssemblyCacheItem](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md) dans le global assembly cache.  
+ [ASM_CACHE_FLAGS, énumération](asm-cache-flags-enumeration.md)  
+ Indique la source d’un assembly représenté par [IAssemblyCacheItem](iassemblycacheitem-interface.md) dans le global assembly cache.  
   
- [ASM_CMP_FLAGS, énumération](../../../../docs/framework/unmanaged-api/fusion/asm-cmp-flags-enumeration.md)  
- Indique la version, la build, la culture, la signature et ainsi de suite, de deux assemblys à comparer par le [IAssemblyName::IsEqual](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-isequal-method.md) (méthode).  
+ [ASM_CMP_FLAGS, énumération](asm-cmp-flags-enumeration.md)  
+ Indique la version, la build, la culture, la signature, etc. de deux assemblys à comparer par la méthode [IAssemblyName :: IsEqual](iassemblyname-isequal-method.md) .  
   
- [ASM_DISPLAY_FLAGS, énumération](../../../../docs/framework/unmanaged-api/fusion/asm-display-flags-enumeration.md)  
- Indique la version, la build, la culture, la signature et ainsi de suite, de l’assembly dont le nom complet sera récupéré par le [IAssemblyName::GetDisplayName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-getdisplayname-method.md) (méthode).  
+ [ASM_DISPLAY_FLAGS, énumération](asm-display-flags-enumeration.md)  
+ Indique la version, la build, la culture, la signature, etc. de l’assembly dont le nom d’affichage sera récupéré par la méthode [IAssemblyName :: GetDisplayName](iassemblyname-getdisplayname-method.md) .  
   
- [ASM_NAME, énumération](../../../../docs/framework/unmanaged-api/fusion/asm-name-enumeration.md)  
- Indique la version, la build, la culture, la signature et ainsi de suite, de l’assembly dont les propriétés seront récupérées ou définies [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) méthodes.  
+ [ASM_NAME, énumération](asm-name-enumeration.md)  
+ Indique la version, la build, la culture, la signature, etc. de l’assembly dont les propriétés seront récupérées ou définies par les méthodes [IAssemblyName](iassemblyname-interface.md) .  
   
- [AssemblyComparisonResult, énumération](../../../../docs/framework/unmanaged-api/fusion/assemblycomparisonresult-enumeration.md)  
- Indique l’équivalence de deux identités d’assembly, tel que déterminé par le [CompareAssemblyIdentity](../../../../docs/framework/unmanaged-api/fusion/compareassemblyidentity-function.md) (fonction).  
+ [AssemblyComparisonResult, énumération](assemblycomparisonresult-enumeration.md)  
+ Indique l’équivalence de deux identités d’assembly, telle que déterminée par la fonction [CompareAssemblyIdentity](compareassemblyidentity-function.md) .  
   
- [CREATE_ASM_NAME_OBJ_FLAGS, énumération](../../../../docs/framework/unmanaged-api/fusion/create-asm-name-obj-flags-enumeration.md)  
- Spécifie les attributs d’un `IAssemblyName` de l’objet lorsqu’il est construit par la [CreateAssemblyNameObject](../../../../docs/framework/unmanaged-api/fusion/createassemblynameobject-function.md) (fonction).  
+ [CREATE_ASM_NAME_OBJ_FLAGS, énumération](create-asm-name-obj-flags-enumeration.md)  
+ Spécifie les attributs d' `IAssemblyName` un objet lorsqu’il est construit par la fonction [CreateAssemblyNameObject,](createassemblynameobject-function.md) .  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Interfaces de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-interfaces.md)  
+ [Interfaces de fusion](fusion-interfaces.md)  
   
- [Fonctions statiques globales de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)  
+ [Fonctions statiques globales de fusion](fusion-global-static-functions.md)  
   
- [Structures de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-structures.md)
+ [Structures de fusion](fusion-structures.md)

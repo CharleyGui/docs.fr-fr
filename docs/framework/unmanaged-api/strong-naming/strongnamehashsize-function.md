@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8093a702069e4ecd4dad761ad0a431abe81d6141
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 53384a5aa7f8d11f868057f892f7b60aac2e9f02
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780423"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799042"
 ---
 # <a name="strongnamehashsize-function"></a>StrongNameHashSize, fonction
 Obtient la taille de mémoire tampon requise pour un hachage, à l’aide de l’algorithme de hachage spécifié.  
   
- Cette fonction a été déconseillée. Utilisez le [ICLRStrongName::StrongNameHashSize](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamehashsize-method.md) méthode à la place.  
+ Cette fonction a été dépréciée. Utilisez la méthode [ICLRStrongName :: StrongNameHashSize (](../hosting/iclrstrongname-strongnamehashsize-method.md) à la place.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,27 +39,27 @@ BOOLEAN StrongNameHashSize (
   
 ## <a name="parameters"></a>Paramètres  
  `ulHashAlg`  
- [in] L’algorithme de hachage utilisé pour calculer la taille du tampon.  
+ dans Algorithme de hachage utilisé pour calculer la taille de la mémoire tampon.  
   
  `pcbSize`  
- [out] La taille de la mémoire tampon retournée, en octets.  
+ à Taille de la mémoire tampon retournée, en octets.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `true` de réussite ; Sinon, `false`.  
+ `true`en cas de réussite de l’opération ; Sinon, `false`.  
   
 ## <a name="remarks"></a>Notes  
- Si le `StrongNameHashSize` (fonction) ne pas aboutir, appelez le [StrongNameErrorInfo](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) fonction pour récupérer la dernière erreur générée.  
+ Si la `StrongNameHashSize` fonction ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** StrongName.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [StrongNameHashSize, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamehashsize-method.md)
-- [ICLRStrongName, interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [StrongNameHashSize, méthode](../hosting/iclrstrongname-strongnamehashsize-method.md)
+- [ICLRStrongName, interface](../hosting/iclrstrongname-interface.md)

@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c434595414fd5bdabeae96d959aaa6be6d84af2b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 38f48f2d95829d2c8111065e5f4ede4e43a16d63
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753966"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70796654"
 ---
 # <a name="iassemblynamegetdisplayname-method"></a>IAssemblyName::GetDisplayName, méthode
-Obtient le nom lisible de l’assembly référencé par ce [IAssemblyName](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md) objet.  
+Obtient le nom explicite de l’assembly référencé par cet objet [IAssemblyName](iassemblyname-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +39,22 @@ HRESULT GetDisplayName (
   
 ## <a name="parameters"></a>Paramètres  
  `szDisplayName`  
- [out] La mémoire tampon de chaîne qui contient le nom de l’assembly référencé.  
+ à Mémoire tampon de chaîne qui contient le nom de l’assembly référencé.  
   
  `pccDisplayName`  
- [in, out] La taille de `szDisplayName` en caractères larges, y compris un caractère de marque de fin null.  
+ [in, out] Taille de `szDisplayName` en caractères larges, y compris un caractère de fin null.  
   
  `dwDisplayFlags`  
- [in] Une combinaison au niveau du bit de [ASM_DISPLAY_FLAGS pour](../../../../docs/framework/unmanaged-api/fusion/asm-display-flags-enumeration.md) valeurs qui influencent les fonctionnalités de `szDisplayName`.  
+ dans Combinaison d’opérations de bits de valeurs [ASM_DISPLAY_FLAGS](asm-display-flags-enumeration.md) qui influencent `szDisplayName`les fonctionnalités de.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **En-tête :** Fusion.h  
+ **En-tête :** Fusion. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IAssemblyName, interface](../../../../docs/framework/unmanaged-api/fusion/iassemblyname-interface.md)
-- [Énumérations de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+- [IAssemblyName, interface](iassemblyname-interface.md)
+- [Énumérations de fusion](fusion-enumerations.md)

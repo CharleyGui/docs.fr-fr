@@ -2,12 +2,12 @@
 title: Vue d’ensemble de LINQ to XML (C#)
 ms.date: 10/30/2018
 ms.assetid: 716b94d3-0091-4de1-8e05-41bc069fa9dd
-ms.openlocfilehash: 46a2c0282da01000f3f524614a7a4cf851b7f4e1
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 313abae6e8a82414ead90d5a4fdab7406492784f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69591895"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70785238"
 ---
 # <a name="linq-to-xml-overview-c"></a>Vue d’ensemble de LINQ to XML (C#)
 
@@ -41,7 +41,7 @@ var filename = "PurchaseOrder.xml";
 var currentDirectory = Directory.GetCurrentDirectory();
 var purchaseOrderFilepath = Path.Combine(currentDirectory, filename);
 
-XElement purchaseOrder = XElement.Load($"{purchaseOrderFilepath}");
+XElement purchaseOrder = XElement.Load(purchaseOrderFilepath);
 
 IEnumerable<string> partNos =  from item in purchaseOrder.Descendants("Item")
                                select (string) item.Attribute("PartNumber");
@@ -61,7 +61,7 @@ var filename = "PurchaseOrder.xml";
 var currentDirectory = Directory.GetCurrentDirectory();
 var purchaseOrderFilepath = Path.Combine(currentDirectory, filename);
 
-XElement purchaseOrder = XElement.Load($"{purchaseOrderFilepath}");
+XElement purchaseOrder = XElement.Load(purchaseOrderFilepath);
 
 IEnumerable<XElement> pricesByPartNos =  from item in purchaseOrder.Descendants("Item")
                                  where (int) item.Element("Quantity") * (decimal) item.Element("USPrice") > 100

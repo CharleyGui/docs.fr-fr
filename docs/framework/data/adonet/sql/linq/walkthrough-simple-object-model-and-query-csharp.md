@@ -2,12 +2,12 @@
 title: 'Procédure pas à pas : Requête et modèle objet simples (C#)'
 ms.date: 03/30/2017
 ms.assetid: 419961cc-92d6-45f5-ae8a-d485bdde3a37
-ms.openlocfilehash: 4661dffa037504d9157f30af12d4308a4d7644a2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a9b3b57e37331cd13f2cd30b8a7663f2fb39d8c1
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946924"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792130"
 ---
 # <a name="walkthrough-simple-object-model-and-query-c"></a>Procédure pas à pas : Requête et modèle objet simples (C#)
 
@@ -23,7 +23,7 @@ Cette procédure pas à pas a été écrite à l'aide des paramètres de dévelo
 
 - Les fichiers sont stockés dans un dossier dédié, c:\linqtest5. Vous devez créer ce dossier avant de commencer la procédure pas à pas.
 
-- Cette procédure pas à pas requiert l'exemple de base de données Northwind. Si cette base de données n'est pas disponible sur votre ordinateur de développement, vous pouvez la télécharger à partir du site de téléchargement Microsoft. Pour obtenir des instructions, consultez [téléchargement d’exemples de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md). Après avoir téléchargé la base de données, copiez le fichier dans le dossier c:\linqtest5.
+- Cette procédure pas à pas requiert l'exemple de base de données Northwind. Si cette base de données n'est pas disponible sur votre ordinateur de développement, vous pouvez la télécharger à partir du site de téléchargement Microsoft. Pour obtenir des instructions, consultez [téléchargement d’exemples de bases de données](downloading-sample-databases.md). Après avoir téléchargé la base de données, copiez le fichier dans le dossier c:\linqtest5.
 
 ## <a name="overview"></a>Présentation
 
@@ -140,7 +140,7 @@ Dans cette étape, vous allez exécuter la requête. Les expressions de requête
 2. Appuyez sur F5 pour déboguer l'application.
 
     > [!NOTE]
-    > Si votre application génère une erreur d’exécution, consultez la section résolution des problèmes d' [apprentissage par les procédures pas à pas](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md).
+    > Si votre application génère une erreur d’exécution, consultez la section résolution des problèmes d' [apprentissage par les procédures pas à pas](learning-by-walkthroughs.md).
 
      Les résultats de la requête dans la fenêtre de console doivent apparaître comme suit :
 
@@ -160,10 +160,10 @@ Dans cette étape, vous allez exécuter la requête. Les expressions de requête
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-La [procédure pas à pas: L’interrogation de relationsC#(](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-csharp.md) ) se poursuit là où cette procédure pas à pas se termine. La procédure pas à pas interroger [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] les relations montre comment peut interroger des tables, comme les *jointures* dans une base de données relationnelle.
+La [procédure pas à pas : L’interrogation de relationsC#(](walkthrough-querying-across-relationships-csharp.md) ) se poursuit là où cette procédure pas à pas se termine. La procédure pas à pas interroger [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] les relations montre comment peut interroger des tables, comme les *jointures* dans une base de données relationnelle.
 
 Si vous souhaitez suivre la procédure pas à pas Interrogation de relations, pensez à enregistrer la solution de la procédure que vous venez d'exécuter car elle est indispensable.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Apprentissage par les procédures pas à pas](../../../../../../docs/framework/data/adonet/sql/linq/learning-by-walkthroughs.md)
+- [Apprentissage par les procédures pas à pas](learning-by-walkthroughs.md)

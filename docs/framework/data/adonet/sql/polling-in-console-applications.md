@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4ff084d5-5956-4db1-8e18-c5a66b000882
-ms.openlocfilehash: 31239033c56303af33899ac88f1745e90f052377
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5b21b2bdf3447e3a61c8fff0a311b4144ecaecb2
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61645953"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791921"
 ---
 # <a name="polling-in-console-applications"></a>Interrogation dans les applications console
 Les opérations asynchrones dans ADO.NET vous permettent de lancer des opérations de base de données de longue durée sur un thread tout en exécutant d’autres tâches dans un autre thread. Toutefois, dans la plupart des scénarios, vous risquez d'atteindre un point où votre application ne doit pas continuer jusqu'à ce que l'opération de base de données soit terminée. Dans de tels cas, il est utile d'interroger l'opération asynchrone afin de déterminer si elle a été exécutée ou non.  
   
  Vous pouvez utiliser la propriété <xref:System.IAsyncResult.IsCompleted%2A> pour vérifier si l'opération a été exécutée ou non.  
   
-## <a name="example"></a>Exemple  
- L’application console suivante met à jour les données dans le **AdventureWorks** base de données exemple opérant de façon asynchrone. Pour émuler un processus de longue durée, cet exemple insère une instruction WAITFOR dans le texte de commande. Normalement, vous ne devez pas tenter d'exécuter vos commandes plus lentement mais procéder de la sorte dans ce cas facilite la démonstration d'un comportement asynchrone.  
+## <a name="example"></a>Exemples  
+ L’application console suivante met à jour les données de l’exemple de base de données **AdventureWorks** , en procédant de manière asynchrone. Pour émuler un processus de longue durée, cet exemple insère une instruction WAITFOR dans le texte de commande. Normalement, vous ne devez pas tenter d'exécuter vos commandes plus lentement mais procéder de la sorte dans ce cas facilite la démonstration d'un comportement asynchrone.  
   
 ```vb  
 Imports System  
@@ -192,5 +192,5 @@ class Class1
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Opérations asynchrones](../../../../../docs/framework/data/adonet/sql/asynchronous-operations.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Opérations asynchrones](asynchronous-operations.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

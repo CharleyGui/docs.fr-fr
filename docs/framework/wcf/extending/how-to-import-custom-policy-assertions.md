@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f41d787-accb-4a10-bfc6-a807671d1581
-ms.openlocfilehash: 627b68d707dbedfaf6a291f2ab22dbc9a4f60835
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
+ms.openlocfilehash: 4510eac2d9c1b3bb64420b0678b3a47a90887188
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68363859"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795623"
 ---
 # <a name="how-to-import-custom-policy-assertions"></a>Procédure : importer des assertions de stratégie personnalisées
 Les assertions de stratégie décrivent les fonctions et les exigences d’un point de terminaison de service.  Les applications clientes peuvent utiliser des assertions de stratégie dans les métadonnées de service pour configurer la liaison cliente ou personnaliser le contrat de service d’un point de terminaison de service.  
@@ -25,7 +25,7 @@ Les assertions de stratégie décrivent les fonctions et les exigences d’un po
   
 3. Utilisation d'un fichier de configuration. Reportez-vous aux procédures ci-dessous.  
   
-4. Utilisation d’un fichier de configuration avec l' [outil utilitaire de métadonnées ServiceModel (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Reportez-vous aux procédures ci-dessous.  
+4. Utilisation d’un fichier de configuration avec l' [outil utilitaire de métadonnées ServiceModel (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md). Reportez-vous aux procédures ci-dessous.  
   
 5. Insertion par programme de l'importateur de stratégie. Reportez-vous aux procédures ci-dessous.  
   
@@ -44,7 +44,7 @@ Les assertions de stratégie décrivent les fonctions et les exigences d’un po
   
 ### <a name="to-insert-the-custom-policy-importer-into-the-metadata-system-using-a-configuration-file"></a>Pour insérer l'importateur de stratégie personnalisé dans le système de métadonnées à l'aide d'un fichier de configuration  
   
-1. Ajoutez le type d’importateur à `<extensions>` l’élément à l’intérieur de l' [ \<élément policyImporters >](../../../../docs/framework/configure-apps/file-schema/wcf/policyimporters.md) dans le fichier de configuration client.  
+1. Ajoutez le type d’importateur à `<extensions>` l’élément à l’intérieur de l' [ \<élément policyImporters >](../../configure-apps/file-schema/wcf/policyimporters.md) dans le fichier de configuration client.  
   
      [!code-xml[CustomPolicySample#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/custompolicysample/cs/client.exe.config#7)]   
   
@@ -55,9 +55,9 @@ Les assertions de stratégie décrivent les fonctions et les exigences d’un po
   
 ### <a name="to-insert-the-custom-policy-importer-into-the-metadata-system-using-svcutilexe"></a>Pour insérer l'importateur de stratégie personnalisé dans le système de métadonnées à l'aide de Svcutil.exe  
   
-1. Ajoutez le type d’importateur à `<extensions>` l’élément à l’intérieur de l' [ \<élément policyImporters >](../../../../docs/framework/configure-apps/file-schema/wcf/policyimporters.md) dans le fichier de configuration Svcutil. exe. config. Vous pouvez également pointer Svcutil.exe pour charger les types d'importateur de stratégie enregistrés dans un autre fichier de configuration à l'aide de l'option `/svcutilConfig`.  
+1. Ajoutez le type d’importateur à `<extensions>` l’élément à l’intérieur de l' [ \<élément policyImporters >](../../configure-apps/file-schema/wcf/policyimporters.md) dans le fichier de configuration Svcutil. exe. config. Vous pouvez également pointer Svcutil.exe pour charger les types d'importateur de stratégie enregistrés dans un autre fichier de configuration à l'aide de l'option `/svcutilConfig`.  
   
-2. Utilisez l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pour importer les métadonnées et l’importateur est appelé automatiquement.  
+2. Utilisez l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) pour importer les métadonnées et l’importateur est appelé automatiquement.  
   
 ### <a name="to-insert-the-custom-policy-importer-into-the-metadata-system-programmatically"></a>Pour insérer par programme l'importateur de stratégie personnalisé dans le système de métadonnées  
   
@@ -68,4 +68,4 @@ Les assertions de stratégie décrivent les fonctions et les exigences d’un po
 - <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Description.MetadataResolver?displayProperty=nameWithType>
-- [Extension du système de métadonnées](../../../../docs/framework/wcf/extending/extending-the-metadata-system.md)
+- [Extension du système de métadonnées](extending-the-metadata-system.md)

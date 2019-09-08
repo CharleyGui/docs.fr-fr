@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 05b0549b-882d-4660-b6f0-5678543e5475
-ms.openlocfilehash: 05130e809356369ee2b43d9af86acf69fe527e9a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5d5268cd2171bdccc3885cd599fdc8c277e61aa4
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61902328"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795702"
 ---
 # <a name="how-to-create-a-custom-authorization-policy"></a>Procédure : créer une stratégie d’autorisation personnalisée
-L’infrastructure de modèle d’identité dans Windows Communication Foundation (WCF) prend en charge un modèle d’autorisation basée sur les revendications. Les revendications, une fois extraites des jetons, sont traitées par une stratégie d'autorisation personnalisée lorsqu'une telle stratégie a été définie, puis placées dans un <xref:System.IdentityModel.Policy.AuthorizationContext>, lequel peut ensuite être examiné afin de délivrer ou non les autorisations. Il est possible d'utiliser une stratégie personnalisée afin de transformer les revendications émanant des jetons entrants en revendications escomptées par l'application. De cette façon, la couche d’application peut être isolée des détails sur les différentes revendications pris en charge par les différents types de jetons qui prend en charge par WCF. Cette rubrique contient des instructions permettant d'implémenter une stratégie d'autorisation personnalisée et d'ajouter celle-ci à la collection de stratégies utilisées par un service donné.  
+L’infrastructure de modèle d’identité dans Windows Communication Foundation (WCF) prend en charge un modèle d’autorisation basé sur les revendications. Les revendications, une fois extraites des jetons, sont traitées par une stratégie d'autorisation personnalisée lorsqu'une telle stratégie a été définie, puis placées dans un <xref:System.IdentityModel.Policy.AuthorizationContext>, lequel peut ensuite être examiné afin de délivrer ou non les autorisations. Il est possible d'utiliser une stratégie personnalisée afin de transformer les revendications émanant des jetons entrants en revendications escomptées par l'application. De cette façon, la couche d’application peut être isolée des détails sur les revendications différentes servies par les différents types de jetons pris en charge par WCF. Cette rubrique contient des instructions permettant d'implémenter une stratégie d'autorisation personnalisée et d'ajouter celle-ci à la collection de stratégies utilisées par un service donné.  
   
 ### <a name="to-implement-a-custom-authorization-policy"></a>Pour implémenter une stratégie d'autorisation personnalisée  
   
@@ -29,7 +29,7 @@ L’infrastructure de modèle d’identité dans Windows Communication Foundatio
   
 1. Deux paramètres sont passés à cette méthode : une instance de la classe <xref:System.IdentityModel.Policy.EvaluationContext> ainsi qu'une référence d'objet.  
   
-2. Si la stratégie d’autorisation personnalisée ajoute <xref:System.IdentityModel.Claims.ClaimSet> instances indépendamment du contenu actuel de la <xref:System.IdentityModel.Policy.EvaluationContext>, puis ajoutez chaque `ClaimSet` en appelant le <xref:System.IdentityModel.Policy.EvaluationContext.AddClaimSet%28System.IdentityModel.Policy.IAuthorizationPolicy%2CSystem.IdentityModel.Claims.ClaimSet%29> méthode et retournez `true` à partir de la <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> (méthode). Le renvoi de la valeur `true` indique à l'infrastructure d'autorisation que la stratégie d'autorisation a terminé son travail et qu'il n'est plus nécessaire de l'appeler.  
+2. Si la stratégie d’autorisation personnalisée <xref:System.IdentityModel.Claims.ClaimSet> ajoute <xref:System.IdentityModel.Policy.EvaluationContext>des instances sans tenir compte du contenu actuel du, ajoutez chacune `ClaimSet` d’elles <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> en <xref:System.IdentityModel.Policy.EvaluationContext.AddClaimSet%28System.IdentityModel.Policy.IAuthorizationPolicy%2CSystem.IdentityModel.Claims.ClaimSet%29> appelant la méthode `true` et en retournant la méthode. Le renvoi de la valeur `true` indique à l'infrastructure d'autorisation que la stratégie d'autorisation a terminé son travail et qu'il n'est plus nécessaire de l'appeler.  
   
 3. Si la stratégie d'autorisation personnalisée ajoute des ensembles de revendications uniquement lorsque des revendications sont déjà présentes dans le `EvaluationContext`, recherchez ces revendications en examinant les instances `ClaimSet` retournées par la propriété <xref:System.IdentityModel.Policy.EvaluationContext.ClaimSets%2A>. Si des revendications sont déjà présentes, ajoutez les nouveaux ensembles de revendications en appelant la méthode <xref:System.IdentityModel.Policy.EvaluationContext.AddClaimSet%28System.IdentityModel.Policy.IAuthorizationPolicy%2CSystem.IdentityModel.Claims.ClaimSet%29>, puis, lorsqu'il n'y a plus d'ensembles de revendications à ajouter, retournez la valeur `true` afin d'indiquer à l'infrastructure d'autorisation que la stratégie d'autorisation a terminé son travail. En l'absence de revendications, retournez la valeur `false` afin d'indiquer que la stratégie d'autorisation doit encore être appelée lorsque d'autres stratégies d'autorisation souhaitent ajouter de nouveaux ensembles de revendications au `EvaluationContext`.  
   
@@ -69,7 +69,7 @@ L’infrastructure de modèle d’identité dans Windows Communication Foundatio
      [!code-csharp[c_CustomAuthPol#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customauthpol/cs/c_customauthpol.cs#8)]
      [!code-vb[c_CustomAuthPol#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customauthpol/vb/source.vb#8)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Dans l'exemple suivant, la stratégie <xref:System.IdentityModel.Policy.IAuthorizationPolicy> est implémentée de manière exhaustive.  
   
  [!code-csharp[c_CustomAuthPol#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customauthpol/cs/c_customauthpol.cs#5)]
@@ -78,6 +78,6 @@ L’infrastructure de modèle d’identité dans Windows Communication Foundatio
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.ServiceAuthorizationManager>
-- [Guide pratique pour Comparer des revendications](../../../../docs/framework/wcf/extending/how-to-compare-claims.md)
-- [Guide pratique pour Créer un gestionnaire d’autorisation personnalisé pour un Service](../../../../docs/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md)
-- [Stratégie d’autorisation](../../../../docs/framework/wcf/samples/authorization-policy.md)
+- [Guide pratique pour Comparer les revendications](how-to-compare-claims.md)
+- [Guide pratique pour Créer un gestionnaire d’autorisations personnalisé pour un service](how-to-create-a-custom-authorization-manager-for-a-service.md)
+- [Stratégie d’autorisation](../samples/authorization-policy.md)

@@ -2,12 +2,12 @@
 title: Écriture de Dynamic SQL sécurisé dans SQL Server
 ms.date: 03/30/2017
 ms.assetid: df5512b0-c249-40d2-82f9-f9a2ce6665bc
-ms.openlocfilehash: 9b0c903c04c82c9a0f61197642645c5ba93ba099
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c02455ba8798df1de1d52f6b4db3426d41b95daf
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645912"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791423"
 ---
 # <a name="writing-secure-dynamic-sql-in-sql-server"></a>Écriture de Dynamic SQL sécurisé dans SQL Server
 L'injection SQL est le processus qui permet à un utilisateur malveillant d'entrer des instructions Transact-SQL au lieu d'une entrée valide. Si l’entrée est transmise directement au serveur sans validation et si l’application exécute accidentellement le code injecté, l’attaque risque d’endommager ou de détruire des données.  
@@ -35,7 +35,7 @@ L'injection SQL est le processus qui permet à un utilisateur malveillant d'entr
   
 - Dans les environnements multicouches, toutes les données doivent être validées avant admission dans la zone de confiance.  
   
-- N’acceptez pas les chaînes suivantes dans les champs à partir de laquelle les noms de fichiers peuvent être construits : AUX, CLOCK$, COM1 à COM8, CON, CONFIG$, LPT1 à LPT8, NUL et PRN.  
+- N’acceptez pas les chaînes suivantes dans les champs à partir desquels les noms de fichiers peuvent être construits : Aux, CLOCK $, COM1 à COM8, CON, CONFIG $, LPT1 à LPT8, NUL et PRN.  
   
 - Utilisez des objets <xref:System.Data.SqlClient.SqlParameter>  avec des procédures stockées et des commandes pour fournir le contrôle de type et la validation de longueur.  
   
@@ -46,9 +46,9 @@ L'injection SQL est le processus qui permet à un utilisateur malveillant d'entr
   
  SQL Server dispose de méthodes pour accorder aux utilisateurs l'accès aux données à l'aide de procédures stockées et de fonctions définies par l'utilisateur qui exécutent du code SQL dynamique.  
   
-- Utilisation de l’emprunt d’identité avec la clause Transact-SQL EXECUTE AS, comme décrit dans [Personnalisation des autorisations avec l’emprunt d’identité dans SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md).  
+- Utilisation de l’emprunt d’identité avec la clause Transact-SQL EXECUTE AS, comme décrit dans [Personnalisation des autorisations avec l’emprunt d’identité dans SQL Server](customizing-permissions-with-impersonation-in-sql-server.md).  
   
-- Signature de procédures stockées avec des certificats, comme décrit dans [Signature de procédures stockées dans SQL Server](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md).  
+- Signature de procédures stockées avec des certificats, comme décrit dans [Signature de procédures stockées dans SQL Server](signing-stored-procedures-in-sql-server.md).  
   
 ### <a name="execute-as"></a>EXECUTE AS  
  La clause EXECUTE AS remplace les autorisations de l'appelant par celles de l'utilisateur spécifié dans la clause EXECUTE AS. Les procédures stockées ou déclencheurs imbriqués s'exécutent dans le contexte de sécurité de l'utilisateur proxy. Les applications qui reposent sur la sécurité de niveau ligne ou qui nécessitent un audit risquent alors de s'arrêter. Certaines fonctions qui retournent l'identité de l'utilisateur retournent l'utilisateur spécifié dans la clause EXECUTE AS, et non l'appelant d'origine. Le contexte d'exécution de l'appelant d'origine est rétabli uniquement après exécution de la procédure ou lorsqu'une instruction REVERT est émise.  
@@ -68,10 +68,10 @@ L'injection SQL est le processus qui permet à un utilisateur malveillant d'entr
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sécurisation des applications ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Vue d’ensemble de la sécurité SQL Server](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
-- [Scénarios de sécurité des applications dans SQL Server](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
-- [Gestion des autorisations avec les procédures stockées dans SQL Server](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)
-- [Signature de procédures stockées dans SQL Server](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)
-- [Personnalisation des autorisations avec l’emprunt d’identité dans SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Sécurisation des applications ADO.NET](../securing-ado-net-applications.md)
+- [Vue d’ensemble de la sécurité SQL Server](overview-of-sql-server-security.md)
+- [Scénarios de sécurité des applications dans SQL Server](application-security-scenarios-in-sql-server.md)
+- [Gestion des autorisations avec les procédures stockées dans SQL Server](managing-permissions-with-stored-procedures-in-sql-server.md)
+- [Signature de procédures stockées dans SQL Server](signing-stored-procedures-in-sql-server.md)
+- [Personnalisation des autorisations avec l’emprunt d’identité dans SQL Server](customizing-permissions-with-impersonation-in-sql-server.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

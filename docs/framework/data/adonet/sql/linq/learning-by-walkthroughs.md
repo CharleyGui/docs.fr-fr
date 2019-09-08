@@ -2,12 +2,12 @@
 title: Apprentissage par les procédures pas à pas
 ms.date: 03/30/2017
 ms.assetid: a8ae2965-6a49-4155-89b0-7fab2c488ab1
-ms.openlocfilehash: f1061842343d7a700d3af5da5fdc6aec2f79396d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4beb9944a13fd2f76d7305b4d84230fcc33483be
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929209"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781318"
 ---
 # <a name="learning-by-walkthroughs"></a>Apprentissage par les procédures pas à pas
 La [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documentation fournit plusieurs procédures pas à pas. Cette rubrique aborde certains problèmes généraux de procédure pas à pas (y compris leur résolution) et fournit des liens vers plusieurs procédures pas à pas de base pour découvrir [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
@@ -22,22 +22,22 @@ La [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documenta
   
 |Objectif|Visual Basic|C#|  
 |---------------|------------------|---------|  
-|Créez une classe d'entité et exécutez une requête simple.|[Procédure pas à pas : Requête et modèle objet simples (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-visual-basic.md)|[Procédure pas à pas : Requête et modèle objet simples (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md)|  
-|Ajoutez une deuxième classe et exécutez une requête plus complexe.<br /><br /> (Requiert l'achèvement de la procédure pas à pas précédente).|[Procédure pas à pas : Interrogation de relations (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-visual-basic.md)|[Procédure pas à pas : Interrogation de relations (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-csharp.md)|  
-|Ajoutez, modifiez et supprimez des éléments dans la base de données.|[Procédure pas à pas : Manipulation de données (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-visual-basic.md)|[Procédure pas à pas : Manipulation de données (C#)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)|  
-|Utilisez des procédures stockées.|[Procédure pas à pas : Utilisation de procédures stockées uniquement (Visual Basic)](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-visual-basic.md)|[Procédure pas à pas : Utilisation de procédures stockées uniquementC#()](../../../../../../docs/framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-csharp.md)|  
+|Créez une classe d'entité et exécutez une requête simple.|[Procédure pas à pas : Requête et modèle objet simples (Visual Basic)](walkthrough-simple-object-model-and-query-visual-basic.md)|[Procédure pas à pas : Requête et modèle objet simples (C#)](walkthrough-simple-object-model-and-query-csharp.md)|  
+|Ajoutez une deuxième classe et exécutez une requête plus complexe.<br /><br /> (Requiert l'achèvement de la procédure pas à pas précédente).|[Procédure pas à pas : Interrogation de relations (Visual Basic)](walkthrough-querying-across-relationships-visual-basic.md)|[Procédure pas à pas : Interrogation de relations (C#)](walkthrough-querying-across-relationships-csharp.md)|  
+|Ajoutez, modifiez et supprimez des éléments dans la base de données.|[Procédure pas à pas : Manipulation de données (Visual Basic)](walkthrough-manipulating-data-visual-basic.md)|[Procédure pas à pas : Manipulation de données (C#)](walkthrough-manipulating-data-csharp.md)|  
+|Utilisez des procédures stockées.|[Procédure pas à pas : Utilisation de procédures stockées uniquement (Visual Basic)](walkthrough-using-only-stored-procedures-visual-basic.md)|[Procédure pas à pas : Utilisation de procédures stockées uniquementC#()](walkthrough-using-only-stored-procedures-csharp.md)|  
   
 ## <a name="general"></a>Généralités  
  Les informations suivantes se rapportent à ces procédures pas à pas en général :  
   
 - Environnement : Chaque [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] procédure pas à pas utilise Visual Studio comme environnement de développement intégré (IDE).  
   
-- Moteurs SQL: Ces procédures pas à pas sont écrites pour être implémentées à l’aide de SQL Server Express. Si vous n'avez pas SQL Server Express, vous pouvez le télécharger gratuitement. Pour plus d’informations, consultez [téléchargement d’exemples de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+- Moteurs SQL : Ces procédures pas à pas sont écrites pour être implémentées à l’aide de SQL Server Express. Si vous n'avez pas SQL Server Express, vous pouvez le télécharger gratuitement. Pour plus d’informations, consultez [téléchargement d’exemples de bases de données](downloading-sample-databases.md).  
   
     > [!NOTE]
-    > Les procédures pas à pas [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] utilisent un nom de fichier comme chaîne de connexion. La simple spécification d'un nom de fichier est une commodité fournie par [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pour les utilisateurs de SQL Server Express. Faites toujours attention aux problèmes de sécurité. Pour plus d’informations, consultez [sécurité dans LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md).  
+    > Les procédures pas à pas [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] utilisent un nom de fichier comme chaîne de connexion. La simple spécification d'un nom de fichier est une commodité fournie par [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pour les utilisateurs de SQL Server Express. Faites toujours attention aux problèmes de sécurité. Pour plus d’informations, consultez [sécurité dans LINQ to SQL](security-in-linq-to-sql.md).  
   
-- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]les procédures pas à pas requièrent généralement l’exemple de base de données Northwind. Pour plus d’informations, consultez [téléchargement d’exemples de bases de données](../../../../../../docs/framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]les procédures pas à pas requièrent généralement l’exemple de base de données Northwind. Pour plus d’informations, consultez [téléchargement d’exemples de bases de données](downloading-sample-databases.md).  
   
 - Les boîtes de dialogue et les commandes de menu que vous voyez dans les procédures pas à pas peuvent différer de celles décrites dans l’aide, en fonction de vos paramètres actifs ou de l’édition de Visual Studio. Pour modifier ces paramètres, cliquez sur **Importation et exportation de paramètres** dans le menu **Outils** . Pour plus d’informations, consultez [Personnaliser l’IDE Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
@@ -89,4 +89,4 @@ La [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documenta
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Prise en main](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)
+- [Prise en main](getting-started.md)

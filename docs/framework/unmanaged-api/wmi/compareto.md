@@ -1,5 +1,5 @@
 ---
-title: Fonction CompareTo (référence des API non managées)
+title: CompareTo, fonction (référence des API non managées)
 description: La fonction CompareTo compare un objet à un autre objet WMI.
 ms.date: 11/06/2017
 api_name:
@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3566b9b8a3b4183f936c82c39c38dc5daa3aeae1
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 2ec42dff333422e247a11b4a3a5b9aed9bd316fa
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636688"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798772"
 ---
 # <a name="compareto-function"></a>CompareTo, fonction
 
@@ -43,54 +43,54 @@ HRESULT CompareTo (
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`\
-[in] Ce paramètre n’est pas utilisé.
+dans Ce paramètre n’est pas utilisé.
 
 `ptr`\
-[in] Un pointeur vers un [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `flags`\
-[in] Combinaison de bits des indicateurs qui spécifient les caractéristiques des objets à prendre en compte pour la comparaison. Consultez le [notes](#remarks) section pour plus d’informations.
+dans Combinaison d’opérations de bits des indicateurs qui spécifient les caractéristiques d’objet à prendre en compte pour la comparaison. Pour plus d’informations, consultez la section [Notes](#remarks) .
 
 `pCompareTo`\
-[in] Objet pour la comparaison. `pCompareTo` doit être un [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance ; il ne peut pas être `null`.
+dans Objet à comparer. `pCompareTo`doit être une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) valide ; elle ne peut `null`pas être.
 
 ## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Value  |Description  |
+|Constante  |`Value`  |Description  |
 |---------|---------|---------|
 | `WBEM_E_FAILED` | 0x80041001 | Une erreur non spécifiée s’est produite. |
 | `WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
-| `WBEM_E_UNEXPECTED` | 0x8004101d | Un deuxième appel à `BeginEnumeration` a été effectuée sans appel intermédiaire à [ `EndEnumeration` ](endenumeration.md). |
-| `WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
+| `WBEM_E_UNEXPECTED` | 0x8004101d | Un deuxième appel à `BeginEnumeration` a été effectué sans appel à. [`EndEnumeration`](endenumeration.md) |
+| `WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
 | `WBEM_S_DIFFERENT` | 0x40003 | Les objets sont différents. |
-| `WBEM_S_SAME` | 0 | Les objets sont identiques selon les indicateurs de comparaison. |
+| `WBEM_S_SAME` | 0 | Les objets sont les mêmes en fonction des indicateurs de comparaison. |
 
 ## <a name="remarks"></a>Notes
 
-Cette fonction encapsule un appel à la [IWbemClassObject::CompareTo](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-compareto) (méthode).
+Cette fonction encapsule un appel à la méthode [IWbemClassObject :: CompareTo](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-compareto) .
 
-Les indicateurs qui peuvent être passés en tant que le `lEnumFlags` argument sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code. Vous pouvez spécifier les caractéristiques individuelles impliquées dans la comparaison en spécifiant une combinaison au niveau du bit des indicateurs suivants :
+Les indicateurs qui peuvent être passés en tant `lEnumFlags` qu’argument sont définis dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code. Vous pouvez spécifier les caractéristiques individuelles impliquées dans la comparaison en spécifiant une combinaison d’opérations de bits des indicateurs suivants :
 
-|Constante  |Value  |Description  |
+|Constante  |`Value`  |Description  |
 |---------|---------|---------|
-| `WBEM_FLAG_IGNORE_OBJECT_SOURCE` | 2 | Ignorer la source (le serveur et l’espace de noms que dont elles sont issues). |
-| `WBEM_FLAG_IGNORE_QUALIFIERS` | 1 | Ignorer tous les qualificateurs (y compris **clé** et **dynamique**) |
-| `WBEM_FLAG_IGNORE_DEFAULT_VALUES` | 4 | Ignorer les valeurs par défaut des propriétés. Cet indicateur s’applique uniquement à la comparaison des classes. |
-| `WBEM_FLAG_IGNORE_FLAVOR` | 0x20 | Ignorer les versions de qualificateur. Cet indicateur toujours tienne compte, de qualificateurs mais ignore les distinctions de version telles que les règles de propagation et remplace les restrictions. |
-| `WBEM_FLAG_IGNORE_CASE` | 0x10 | Ignorer la casse pour comparer les valeurs de chaîne. Cela s’applique à la fois aux chaînes et aux valeurs de qualificateur. La comparaison des noms de propriété et le qualificateur est toujours la casse, même si cet indicateur est défini. |
-| `WBEM_FLAG_IGNORE_CLASS` | 0x8 | Supposons que les objets comparés sont des instances de la même classe. Par conséquent, cet indicateur compare uniquement des informations relatives aux instances. Utilisez cette indicateurs pour optimiser les performances. Si les objets ne sont pas de la même classe, les résultats sont indéfinis. |
+| `WBEM_FLAG_IGNORE_OBJECT_SOURCE` | 2 | Ignorez la source (le serveur et l’espace de noms à partir desquels ils proviennent). |
+| `WBEM_FLAG_IGNORE_QUALIFIERS` | 1 | Ignorer tous les qualificateurs (y compris les **clés** et **dynamiques**) |
+| `WBEM_FLAG_IGNORE_DEFAULT_VALUES` | 4 | Ignore les valeurs par défaut des propriétés. Cet indicateur s’applique uniquement à la comparaison des classes. |
+| `WBEM_FLAG_IGNORE_FLAVOR` | 0x20 | Ignore les versions de qualificateur. Cet indicateur prend toujours en compte les qualificateurs, mais ignore les distinctions de parfum telles que les règles de propagation et les restrictions de remplacement. |
+| `WBEM_FLAG_IGNORE_CASE` | 0x10 | Ignorer la casse lors de la comparaison des valeurs de chaîne. Cela s’applique à la fois aux chaînes et aux valeurs de qualificateur. La comparaison des noms de propriétés et de qualificateurs respecte toujours la casse, que cet indicateur soit défini ou non. |
+| `WBEM_FLAG_IGNORE_CLASS` | 0x8 | Supposons que les objets comparés sont des instances de la même classe. Par conséquent, cet indicateur ne compare que les informations relatives à l’instance. Utilisez cet indicateur pour optimiser les performances. Si les objets ne sont pas de la même classe, les résultats ne sont pas définis. |
 
-Ou vous pouvez spécifier un indicateur composite unique comme suit :
+Vous pouvez aussi spécifier un seul indicateur composite comme suit :
 
-|Constante  |Value  |Description  |
+|Constante  |`Value`  |Description  |
 |---------|---------|---------|
-|`WBEM_COMPARISON_INCLUDE_ALL` | 0 | Prendre en compte toutes les fonctionnalités dans la comparaison. |
+|`WBEM_COMPARISON_INCLUDE_ALL` | 0 | Examinez toutes les fonctionnalités de la comparaison. |
 
 ## <a name="requirements"></a>Configuration requise
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
 **En-tête :** WMINet_Utils.idl
 
@@ -98,4 +98,4 @@ Ou vous pouvez spécifier un indicateur composite unique comme suit :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performances (référence des API non managées)](index.md)
+- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)

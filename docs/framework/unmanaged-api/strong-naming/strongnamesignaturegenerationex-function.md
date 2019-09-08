@@ -16,17 +16,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e9d2d5786ee7db334b8b9b0817c2319a6257dc9e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 89398c221dcf9d6f89027f15da4062bc7ed67e3f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67751743"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798982"
 ---
 # <a name="strongnamesignaturegenerationex-function"></a>StrongNameSignatureGenerationEx, fonction
 Génère une signature de nom fort pour l’assembly spécifié, en fonction des indicateurs spécifiés.  
   
- Cette fonction a été déconseillée. Utilisez le [ICLRStrongName::StrongNameSignatureGenerationEx](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegenerationex-method.md) méthode à la place.  
+ Cette fonction a été dépréciée. Utilisez la méthode [ICLRStrongName :: StrongNameSignatureGenerationEx (](../hosting/iclrstrongname-strongnamesignaturegenerationex-method.md) à la place.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,61 +44,61 @@ BOOLEAN StrongNameSignatureGenerationEx (
   
 ## <a name="parameters"></a>Paramètres  
  `wszFilePath`  
- [in] Le chemin d’accès au fichier qui contient le manifeste de l’assembly pour lequel la signature de nom fort est générée.  
+ dans Chemin d’accès au fichier qui contient le manifeste de l’assembly pour lequel la signature de nom fort sera générée.  
   
  `wszKeyContainer`  
- [in] Le nom du conteneur de clé qui contient la paire de clés publique/privée.  
+ dans Nom du conteneur de clé qui contient la paire de clés publique/privée.  
   
- Si `pbKeyBlob` a la valeur null, `wszKeyContainer` doit spécifier un conteneur valid dans le fournisseur de services de chiffrement (CSP). Dans ce cas, la paire de clés stockée dans le conteneur est utilisée pour signer le fichier.  
+ Si `pbKeyBlob` a la valeur `wszKeyContainer` null, doit spécifier un conteneur valide dans le fournisseur de services de chiffrement (CSP). Dans ce cas, la paire de clés stockée dans le conteneur est utilisée pour signer le fichier.  
   
- Si `pbKeyBlob` n’est pas null, la paire de clés est supposée être contenue dans l’objet binaire volumineux (BLOB) de clé.  
+ Si `pbKeyBlob` n’a pas la valeur null, la paire de clés est supposée être contenue dans l’objet BLOB (Binary Large Object) clé.  
   
  `pbKeyBlob`  
- [in] Pointeur vers la paire de clés publique/privée. Cette paire est au format créé par Win32 `CryptExportKey` (fonction). Si `pbKeyBlob` est null, le conteneur de clé spécifié par `wszKeyContainer` est supposée pour contenir la paire de clés.  
+ dans Pointeur vers la paire de clés publique/privée. Cette paire est au format créé par la fonction Win32 `CryptExportKey` . Si `pbKeyBlob` a la valeur null, le conteneur de `wszKeyContainer` clé spécifié par est supposé contenir la paire de clés.  
   
  `cbKeyBlob`  
- [in] La taille, en octets, de `pbKeyBlob`.  
+ dans Taille, en octets, de `pbKeyBlob`.  
   
  `ppbSignatureBlob`  
- [out] Pointeur vers l’emplacement auquel le common language runtime retourne la signature. Si `ppbSignatureBlob` est null, le runtime stocke la signature dans le fichier spécifié par `wszFilePath`.  
+ à Pointeur vers l’emplacement vers lequel le common language runtime retourne la signature. Si `ppbSignatureBlob` a la valeur null, le runtime stocke la signature dans le `wszFilePath`fichier spécifié par.  
   
- Si `ppbSignatureBlob` est non null, le common language runtime alloue de l’espace dans lequel retourner la signature. L’appelant doit libérer cet espace à l’aide de la [StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/strong-naming/strongnamefreebuffer-function.md) (fonction).  
+ Si `ppbSignatureBlob` n’a pas la valeur null, le Common Language Runtime alloue de l’espace dans lequel retourner la signature. L’appelant doit libérer cet espace à l’aide de la fonction [StrongNameFreeBuffer](strongnamefreebuffer-function.md) .  
   
  `pcbSignatureBlob`  
- [out] La taille, en octets, de la signature retournée.  
+ à Taille, en octets, de la signature retournée.  
   
  `dwFlags`  
- [in] Un ou plusieurs des valeurs suivantes :  
+ dans Une ou plusieurs des valeurs suivantes :  
   
-- `SN_SIGN_ALL_FILES` (0 x 00000001) - recalculez tous les hachages pour les modules liés.  
+- `SN_SIGN_ALL_FILES`(0x00000001)-recalcule tous les hachages pour les modules liés.  
   
-- `SN_TEST_SIGN` (0 x 00000002) - test-signer l’assembly.  
+- `SN_TEST_SIGN`(0x00000002) : testez la signature de l’assembly.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `true` de réussite ; Sinon, `false`.  
+ `true`en cas de réussite de l’opération ; Sinon, `false`.  
   
 ## <a name="remarks"></a>Notes  
- Spécifiez null pour `wszFilePath` pour calculer la taille de la signature sans créer la signature.  
+ Spécifiez NULL `wszFilePath` pour pour calculer la taille de la signature sans créer la signature.  
   
- La signature peut être stockée directement dans le fichier, ou retournée à l’appelant.  
+ La signature peut être stockée directement dans le fichier ou être retournée à l’appelant.  
   
- Si `SN_SIGN_ALL_FILES` est spécifié, mais une clé publique n’est pas incluse (les deux `pbKeyBlob` et `wszFilePath` ont la valeur null), les hachages pour les modules liés sont recalculés, mais l’assembly n’est pas signé de nouveau.  
+ Si `SN_SIGN_ALL_FILES` est spécifié mais qu’une clé publique n’est pas incluse `pbKeyBlob` ( `wszFilePath` et que la valeur est null), les hachages des modules liés sont recalculés, mais l’assembly n’est pas à nouveau signé.  
   
- Si `SN_TEST_SIGN` est spécifié, l’en-tête du common language runtime n’est pas modifié pour indiquer que l’assembly est signé avec un nom fort.  
+ Si `SN_TEST_SIGN` est spécifié, l’en-tête Common Language Runtime n’est pas modifié pour indiquer que l’assembly est signé avec un nom fort.  
   
- Si le `StrongNameSignatureGenerationEx` (fonction) ne pas aboutir, appelez le [StrongNameErrorInfo](../../../../docs/framework/unmanaged-api/strong-naming/strongnameerrorinfo-function.md) fonction pour récupérer la dernière erreur générée.  
+ Si la `StrongNameSignatureGenerationEx` fonction ne se termine pas correctement, appelez la fonction [StrongNameErrorInfo](strongnameerrorinfo-function.md) pour récupérer la dernière erreur générée.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** StrongName.h  
   
- **Bibliothèque :** Inclus en tant que ressource dans MsCorEE.dll  
+ **Bibliothèque** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [StrongNameSignatureGenerationEx, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegenerationex-method.md)
-- [StrongNameSignatureGeneration, méthode](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamesignaturegeneration-method.md)
-- [ICLRStrongName, interface](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+- [StrongNameSignatureGenerationEx, méthode](../hosting/iclrstrongname-strongnamesignaturegenerationex-method.md)
+- [StrongNameSignatureGeneration, méthode](../hosting/iclrstrongname-strongnamesignaturegeneration-method.md)
+- [ICLRStrongName, interface](../hosting/iclrstrongname-interface.md)

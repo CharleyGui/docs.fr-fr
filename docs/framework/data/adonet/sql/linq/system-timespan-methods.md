@@ -2,12 +2,12 @@
 title: System.TimeSpan, méthodes
 ms.date: 03/30/2017
 ms.assetid: 9333fee8-1454-4374-855b-8c14c002f48f
-ms.openlocfilehash: ec27f8f17a6709efef1a8230b521778095ae1257
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9a7eb3c979219003d497ec752b36ec54ef081b43
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947091"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781043"
 ---
 # <a name="systemtimespan-methods"></a>System.TimeSpan, méthodes
 La prise en charge des membres pour <xref:System.TimeSpan?displayProperty=nameWithType> dépend beaucoup des versions du .NET Framework et de Microsoft SQL Server que vous utilisez.  
@@ -34,11 +34,11 @@ La prise en charge des membres pour <xref:System.TimeSpan?displayProperty=nameWi
 > La capacité à mapper <xref:System.TimeSpan?displayProperty=nameWithType> à une colonne `TIME` SQL à l'aide de LINQ to SQL requiert .NET Framework 3.5 SP1 et version ultérieure. Le type de données `TIME` SQL est uniquement disponible à partir de Microsoft SQL Server 2008.  
   
 ### <a name="addition-and-subtraction"></a>Addition et soustraction  
- Contrairement au type <xref:System.TimeSpan?displayProperty=nameWithType> SQL, le type `TIME` CLR prend en charge l'addition et la soustraction. De ce fait, les requêtes LINQ to SQL génèrent des erreurs en cas de tentative d'addition et de soustraction lorsqu'elles sont mappées au type `TIME` SQL. Vous pouvez trouver d’autres considérations relatives à l’utilisation des types de date et d’heure SQL dans [le mappage de type SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md).  
+ Contrairement au type <xref:System.TimeSpan?displayProperty=nameWithType> SQL, le type `TIME` CLR prend en charge l'addition et la soustraction. De ce fait, les requêtes LINQ to SQL génèrent des erreurs en cas de tentative d'addition et de soustraction lorsqu'elles sont mappées au type `TIME` SQL. Vous pouvez trouver d’autres considérations relatives à l’utilisation des types de date et d’heure SQL dans [le mappage de type SQL-CLR](sql-clr-type-mapping.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts relatifs aux requêtes](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)
-- [Création du modèle objet](../../../../../../docs/framework/data/adonet/sql/linq/creating-the-object-model.md)
-- [Mappage de type SQL-CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mapping.md)
-- [Fonctions et types de données](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)
+- [Concepts relatifs aux requêtes](query-concepts.md)
+- [Création du modèle objet](creating-the-object-model.md)
+- [Mappage de type SQL-CLR](sql-clr-type-mapping.md)
+- [Fonctions et types de données](data-types-and-functions.md)

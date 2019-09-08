@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a73530de-5a4e-4d9c-8d66-abb19c225b11
-ms.openlocfilehash: e51ebacb3f6be849f7b871f2d12db3ea7476b117
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bae10e823a274304f21292cf55947a4d4eaccc10
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61877069"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781455"
 ---
 # <a name="how-to-use-stored-procedures-mapped-for-sequential-result-shapes"></a>Procédure : Utiliser des procédures stockées mappées pour des formes de résultats séquentielles
-Ce type de procédure stockée peut générer plusieurs formes de résultats, mais vous savez dans quel ordre les résultats sont retournés. Comparez ce scénario à celui dans lequel vous ne connaissez pas la séquence des retours. Pour plus d'informations, voir [Procédure : Utilisez les procédures stockées mappées pour plusieurs formes de résultats](../../../../../../docs/framework/data/adonet/sql/linq/how-to-use-stored-procedures-mapped-for-multiple-result-shapes.md).  
+Ce type de procédure stockée peut générer plusieurs formes de résultats, mais vous savez dans quel ordre les résultats sont retournés. Comparez ce scénario à celui dans lequel vous ne connaissez pas la séquence des retours. Pour plus d'informations, voir [Procédure : Utilisez des procédures stockées mappées pour plusieurs formes](how-to-use-stored-procedures-mapped-for-multiple-result-shapes.md)de résultats.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Le T-SQL d'une procédure stockée qui retourne plusieurs formes de résultats de manière séquentielle est présenté ci-dessous :  
   
 ```  
@@ -36,4 +36,4 @@ select * from customers
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Procédures stockées](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)
+- [Procédures stockées](stored-procedures.md)

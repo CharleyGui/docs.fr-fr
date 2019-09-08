@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 81a31acd-e0f1-4bca-9a12-fa1ad5752374
-ms.openlocfilehash: 75cb5ea166c36de5c0921fbbd830021719497cda
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a5c32afc913443787ad8371f31f1fe330b126398
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963859"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70792751"
 ---
 # <a name="return-or-skip-elements-in-a-sequence"></a>Comment : retourner ou ignorer des éléments d'une séquence
 Utilisez l'opérateur <xref:System.Linq.Queryable.Take%2A> pour retourner un nombre donné d'éléments dans une séquence et ignorer le reste.  
@@ -18,7 +18,7 @@ Utilisez l'opérateur <xref:System.Linq.Queryable.Take%2A> pour retourner un nom
  Utilisez l'opérateur <xref:System.Linq.Queryable.Skip%2A> pour ignorer un nombre donné d'éléments dans une séquence et retourner le reste.  
   
 > [!NOTE]
-> <xref:System.Linq.Enumerable.Take%2A> et <xref:System.Linq.Enumerable.Skip%2A> sont soumis à certaines limites lorsqu'ils sont utilisés dans des requêtes SQL Server 2000. Pour plus d’informations, consultez l’entrée «ignorer et prendre des exceptions dans SQL Server 2000» dans [résolution des problèmes](../../../../../../docs/framework/data/adonet/sql/linq/troubleshooting.md).  
+> <xref:System.Linq.Enumerable.Take%2A> et <xref:System.Linq.Enumerable.Skip%2A> sont soumis à certaines limites lorsqu'ils sont utilisés dans des requêtes SQL Server 2000. Pour plus d’informations, consultez l’entrée « ignorer et prendre des exceptions dans SQL Server 2000 » dans [résolution des problèmes](troubleshooting.md).  
   
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]traduit <xref:System.Linq.Queryable.Skip%2A> à l’aide d’une sous-requête avec la `NOT EXISTS` clause SQL. Cette traduction présente les limites suivantes :  
   
@@ -32,7 +32,7 @@ Utilisez l'opérateur <xref:System.Linq.Queryable.Take%2A> pour retourner un nom
  [!code-csharp[DLinqQueryExamples#16](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#16)]
  [!code-vb[DLinqQueryExamples#16](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#16)]  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple suivant utilise <xref:System.Linq.Queryable.Skip%2A> pour sélectionner tous les `Products` exceptés les dix produits les plus chers.  
   
  [!code-csharp[DLinqQueryExamples#17](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#17)]
@@ -51,7 +51,7 @@ Utilisez l'opérateur <xref:System.Linq.Queryable.Take%2A> pour retourner un nom
 > [!NOTE]
 > La traduction est différente pour SQL Server 2000 et SQL Server 2005. Si vous envisagez <xref:System.Linq.Queryable.Skip%2A> d’utiliser avec une requête de toute complexité, utilisez SQL Server 2005.  
   
- Examinez la [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] requête suivante pour SQL Server 2000:  
+ Examinez la [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] requête suivante pour SQL Server 2000 :  
   
  [!code-csharp[DLinqQueryExamples#19](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#19)]
  [!code-vb[DLinqQueryExamples#19](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#19)]  
@@ -80,5 +80,5 @@ ORDER BY [t0].[CustomerID]
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de requêtes](../../../../../../docs/framework/data/adonet/sql/linq/query-examples.md)
-- [Traduction des opérateurs de requête standard](../../../../../../docs/framework/data/adonet/sql/linq/standard-query-operator-translation.md)
+- [Exemples de requêtes](query-examples.md)
+- [Traduction des opérateurs de requête standard](standard-query-operator-translation.md)

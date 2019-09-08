@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: de85d264d709da747fab636f40c99bc0d0752251
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c3a6892dbed172c0be3b036014d393657dbc8593
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742358"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777518"
 ---
 # <a name="addfile2-method"></a>AddFile2, méthode
 Ajoute des fichiers à l’assembly. Peut également être utilisé pour créer des modules indépendants.  
@@ -47,22 +47,22 @@ HRESULT AddFile2(
  Nom du fichier à ajouter.  
   
  `dwFlags`  
- COM + `FileDef` indicateurs tels que `ffContainsNoMetaData` et `ffWriteable`. `dwFlags` est passé à [DefineFile, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md).  
+ Indicateurs `FileDef` com+ tels que `ffContainsNoMetaData` et `ffWriteable`. `dwFlags`est passé à la [méthode DefineFile](../metadata/imetadataassemblyemit-definefile-method.md).  
   
  `pEmitter`  
- Interface à [IMetaDataEmit2, Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md) interface.  
+ Interface de l’interface de l' [interface IMetaDataEmit2](../metadata/imetadataemit2-interface.md) .  
   
  `pFileToken`  
- Reçoit l’ID du fichier à ajouter.  
+ Reçoit l’ID du fichier en cours d’ajout.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h.  
+ Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink2, interface](ialink2-interface.md)
+- [IALink, interface](ialink-interface.md)
+- [API ALink](index.md)

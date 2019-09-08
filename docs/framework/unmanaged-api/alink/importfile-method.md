@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d76e9b4e18b46d0b546d6c66fa572c35cb9fcefe
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f7fee7a91de99e2db69609cbc7c73e22d85d045f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741769"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70777060"
 ---
 # <a name="importfile-method"></a>ImportFile, méthode
-Importe des assemblys et modules indépendants.  
+Importe les assemblys et les modules indépendants.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,31 +41,31 @@ HRESULT ImportFile(
   
 ## <a name="parameters"></a>Paramètres  
  `pszFilename`  
- Nom qualifié complet du fichier à importer.  
+ Nom complet du fichier à importer.  
   
  `pszTargetName`  
- Nom de fichier de sortie facultatif qui peut être utilisé pour renommer le fichier car il est lié dans l’assembly.  
+ Nom de fichier de sortie facultatif qui peut être utilisé pour renommer le fichier, car il est lié à l’assembly.  
   
  `fSmartImport`  
- Si la valeur est TRUE, ImportTypes est utilisé, sinon l’importation doit être effectuée manuellement.  
+ Si la valeur est TRUE, ImportTypes, est utilisé, sinon l’importation doit être effectuée manuellement.  
   
  `pImportToken`  
- Pointeur vers le jeton où un ID de fichier unique sera stocké. Le fichier peut être un assembly ou un fichier.  
+ Pointeur vers le jeton dans lequel un ID de fichier unique sera stocké. Le fichier peut être un assembly ou un fichier.  
   
  `ppAssemblyScope`  
- Reçoit le pointeur vers [IMetaDataAssemblyImport, Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md). Peut être NULL si le fichier n'est pas un assembly.  
+ Reçoit un pointeur vers l' [interface IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md). Peut avoir la valeur NULL si le fichier n’est pas un assembly.  
   
  `pdwCountOfScopes`  
- Pointeur vers le nombre de fichiers et/ou des étendues qui ont été importés.  
+ Pointeur vers le nombre de fichiers et/ou de portées qui ont été importés.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h  
+ Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink, interface](ialink-interface.md)
+- [IALink2, interface](ialink2-interface.md)
+- [API ALink](index.md)

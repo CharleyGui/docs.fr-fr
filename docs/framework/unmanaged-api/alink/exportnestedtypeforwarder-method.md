@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bb8fba433c5f7ef9701caf61971841672f46b425
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: eb8112d6d2b5c2cbb257db2f20ff4be5a84e827b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67742038"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787466"
 ---
 # <a name="exportnestedtypeforwarder-method"></a>ExportNestedTypeForwarder, méthode
-Ajoute un redirecteur de type pour un type imbriqué à la table de type de l’assembly donné.  
+Ajoute un redirecteur de type pour un type imbriqué à la table de types de l’assembly donné.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,10 +42,10 @@ HRESULT ExportNestedTypeForwarder(
   
 ## <a name="parameters"></a>Paramètres  
  `AssemblyID`  
- ID de l’assembly à exporter à partir de.  
+ ID de l’assembly à partir duquel effectuer l’exportation.  
   
  `FileToken`  
- ID de jeton ou l’assembly du fichier qui définit le type de fichier.  
+ Jeton de fichier ou ID d’assembly du fichier qui définit le type.  
   
  `TypeToken`  
  Jeton pour le type.  
@@ -57,19 +57,19 @@ HRESULT ExportNestedTypeForwarder(
  Nom de type qualifié complet à exporter.  
   
  `dwFlags`  
- `ComType` indicateurs tels que `tdPublic` ou `tdNested`.  
+ `ComType`indicateurs tels que `tdPublic` ou `tdNested`.  
   
  `pType`  
- Reçoit le jeton de type d’exportation. Cela est nécessaire uniquement pour émettre des types imbriqués.  
+ Reçoit le jeton de type d’exportation. Cela est nécessaire uniquement pour l’émission de types imbriqués.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h  
+ Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink, interface](ialink-interface.md)
+- [IALink2, interface](ialink2-interface.md)
+- [API ALink](index.md)

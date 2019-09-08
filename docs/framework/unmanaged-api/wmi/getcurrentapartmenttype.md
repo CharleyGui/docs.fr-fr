@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 68eb4ba653098d847022da45e610cb4fa5496a8c
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: ff64be47802a46979818ab54cc3efb4112dd05e0
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69037967"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798614"
 ---
 # <a name="getcurrentapartmenttype-function"></a>GetCurrentApartmentType fonction)
 Récupère le type de cloisonnement dans lequel l’appelant s’exécute.   
@@ -51,17 +51,17 @@ dans Pointeur vers une instance [IComThreadingInfo](/windows/desktop/api/objidlb
 
 ## <a name="return-value"></a>Valeur de retour
 
-|Constante  |Valeur  |Description  |
+|Constante  |`Value`  |Description  |
 |---------|---------|---------|
 | `S_OK` | 0 | La fonction s’est terminée avec succès. |
 | `E_FAIL` | 0x80000008 | L’appelant ne s’exécute pas dans un cloisonnement. |
   
 ## <a name="remarks"></a>Notes
 
-Cette fonction encapsule un appel à la méthode [IComThreadingInfo:: GetCurrentApartmentType](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype) .
+Cette fonction encapsule un appel à la méthode [IComThreadingInfo :: GetCurrentApartmentType](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype) .
 
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils.idl  
   

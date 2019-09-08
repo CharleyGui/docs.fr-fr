@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1776f48f-9bea-41f6-83a4-c990c7a2c991
-ms.openlocfilehash: 90ec7653f7de931bd8127263643b5467998325b5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3115bfb80d4e5e61ed49da11e36eaa37bc24334f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780300"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70791534"
 ---
 # <a name="sqlcommand-execution-with-a-sqlnotificationrequest"></a>Exécution de SqlCommand avec une SqlNotificationRequest
 
@@ -75,5 +75,5 @@ command.ExecuteReader();
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Notifications de requête dans SQL Server](../../../../../docs/framework/data/adonet/sql/query-notifications-in-sql-server.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Notifications de requête dans SQL Server](query-notifications-in-sql-server.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

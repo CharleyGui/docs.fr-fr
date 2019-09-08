@@ -1,6 +1,6 @@
 ---
-title: Créer une application WPF dans Visual Studio
-ms.date: 03/20/2019
+title: 'Tutoriel : Créer votre première application WPF dans Visual Studio 2019-.NET Framework'
+ms.date: 09/06/2019
 dev_langs:
 - csharp
 - vb
@@ -8,44 +8,41 @@ helpviewer_keywords:
 - getting started [WPF], WPF
 - WPF [WPF], getting started
 ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
+ms.topic: tutorial
+ms.custom: vs-dotnet
 author: mairaw
 ms.author: mairaw
-ms.custom: vs-dotnet
-ms.openlocfilehash: 4919424339df1f8d2c68465bd9f9af42f344fe37
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: c8b7f6f3bdbf3adc7c355e88cfe1f569cc0cb76f
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70254072"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70799330"
 ---
-# <a name="walkthrough-my-first-wpf-desktop-application"></a>Procédure pas à pas : Ma première application de bureau WPF
+# <a name="tutorial-create-your-first-wpf-application-in-visual-studio-2019"></a>Tutoriel : Créer votre première application WPF dans Visual Studio 2019
 
 Cet article explique comment développer une application de bureau Windows Presentation Foundation (WPF) qui comprend les éléments communs à la plupart des applications WPF : Balisage (XAML) Extensible Application Markup Language, code-behind, définitions d’application, contrôles, disposition, liaison de données et styles. Pour développer l’application, vous allez utiliser Visual Studio. 
 
-Cette procédure pas à pas comprend les étapes suivantes :
+Ce tutoriel vous montre comment effectuer les opérations suivantes :
+> [!div class="checklist"]
+> - Créez un projet WPF.
+> - Utilisez XAML pour concevoir l’apparence de l’interface utilisateur de l’application.
+> - Écrivez du code pour générer le comportement de l’application.
+> - Créez une définition d’application pour gérer l’application.
+> - Ajoutez des contrôles et créez la disposition pour composer l’interface utilisateur de l’application.
+> - Créer des styles pour une apparence cohérente dans l’interface utilisateur de l’application.
+> - Liez l’interface utilisateur aux données, à la fois pour remplir l’interface utilisateur à partir des données et pour maintenir la synchronisation des données et de l’interface utilisateur.
 
-- Utilisez XAML pour concevoir l’apparence de l’interface utilisateur de l’application.
-
-- Écrivez du code pour générer le comportement de l’application.
-
-- Créez une définition d’application pour gérer l’application.
-
-- Ajoutez des contrôles et créez la disposition pour composer l’interface utilisateur de l’application.
-
-- Créer des styles pour une apparence cohérente dans l’interface utilisateur de l’application.
-
-- Liez l’interface utilisateur aux données, à la fois pour remplir l’interface utilisateur à partir des données et pour maintenir la synchronisation des données et de l’interface utilisateur.
-
-À la fin de la procédure pas à pas, vous aurez créé une application Windows autonome qui permet aux utilisateurs d’afficher les notes de frais pour les personnes sélectionnées. L’application est composée de plusieurs pages WPF qui sont hébergées dans une fenêtre de style navigateur.
+À la fin du didacticiel, vous aurez créé une application Windows autonome qui permet aux utilisateurs d’afficher les notes de frais pour les personnes sélectionnées. L’application est composée de plusieurs pages WPF qui sont hébergées dans une fenêtre de style navigateur.
 
 > [!TIP]
-> L’exemple de code utilisé pour générer cette procédure pas à pas est disponible pour les C# Visual Basic et au niveau de l’exemple de code de l' [application WPF](https://github.com/Microsoft/WPF-Samples/tree/master/Getting%20Started/WalkthroughFirstWPFApp).
+> L’exemple de code utilisé dans ce didacticiel est disponible pour les Visual Basic et C# dans le [didacticiel exemple de code d’application WPF](https://github.com/Microsoft/WPF-Samples/tree/master/Getting%20Started/WalkthroughFirstWPFApp).
 >
-> Vous pouvez basculer le langage de code de l’exemple de C# code entre et Visual Basic à l’aide de la **\< />** liste déroulante située dans la partie supérieure droite de cet article.
+> Vous pouvez basculer le langage de code de l’exemple de C# code entre et Visual Basic à l’aide du sélecteur de langue en haut de cette page.
 
 ## <a name="prerequisites"></a>Prérequis
 
-- Visual Studio 2017 ou version ultérieure (cet article utilise Visual Studio 2019)
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail **développement .net Desktop** installée.
 
    Pour plus d’informations sur l’installation de la dernière version de Visual Studio, consultez [installer Visual Studio](/visualstudio/install/install-visual-studio).
 
@@ -210,7 +207,7 @@ Dans cette section, vous allez ajouter deux pages et une image à l’applicatio
 
     [!code-vb[ExpenseIt#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/ExpenseReportPage.xaml.vb#5)]
 
-1. Ajoutez une image nommée *Watermark. png* au projet. Vous pouvez créer votre propre image, copier le fichier à partir de l’exemple de code ou l’afficher [ici](https://raw.githubusercontent.com/microsoft/WPF-Samples/master/Getting%20Started/WalkthroughFirstWPFApp/csharp/watermark.png).
+1. Ajoutez une image nommée *Watermark. png* au projet. Vous pouvez créer votre propre image, copier le fichier à partir de l’exemple de code ou l’extraire à partir du référentiel GitHub [Microsoft/WPF-Samples](https://raw.githubusercontent.com/microsoft/WPF-Samples/master/Getting%20Started/WalkthroughFirstWPFApp/csharp/watermark.png) .
 
     1. Cliquez avec le bouton droit sur le nœud du projet et sélectionnez **Ajouter** > un**élément existant**, ou appuyez sur **MAJ**+**ALT**+**A**.
 
@@ -475,11 +472,8 @@ L’illustration suivante montre les deux pages de `ExpenseIt` l’application a
 > Cet exemple illustre une fonctionnalité spécifique de WPF et ne suit pas toutes les méthodes recommandées pour la sécurité, la localisation et l’accessibilité. Pour une couverture complète de WPF et des meilleures pratiques en matière de développement d’applications .NET, consultez les rubriques suivantes :
 >
 > - [Accessibilité](../../ui-automation/accessibility-best-practices.md)
->
 > - [Sécurité](../security-wpf.md)
->
 > - [Globalisation et localisation pour WPF](../advanced/wpf-globalization-and-localization-overview.md)
->
 > - [Performances WPF](../advanced/optimizing-wpf-application-performance.md)
 
 ## <a name="next-steps"></a>Étapes suivantes

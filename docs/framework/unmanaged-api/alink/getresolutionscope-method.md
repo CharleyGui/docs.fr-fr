@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c6c2e741df594e265fdef51a602a9a4927733b7c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a2bfb43002b79fd3e499272b87756bdc3ab0b589
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741862"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787338"
 ---
 # <a name="getresolutionscope-method"></a>GetResolutionScope, méthode
-Récupère l’étendue d’un type donné.  
+Récupère la portée d’un type donné.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,19 +45,19 @@ HRESULT GetResolutionScope(
  Fichier qui a besoin d’une référence.  
   
  `TargetFile`  
- Jeton du fichier dans lequel le type est défini, généralement récupéré avec [ImportFile, méthode](../../../../docs/framework/unmanaged-api/alink/importfile-method.md).  
+ Jeton du fichier dans lequel le type est défini dans, généralement récupéré à l’aide de la [méthode ImportFile](importfile-method.md).  
   
  `pScope`  
- Reçoit la référence d’assembly ou module.  
+ Reçoit la référence de l’assembly ou du module.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h.  
+ Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink, interface](ialink-interface.md)
+- [IALink2, interface](ialink2-interface.md)
+- [API ALink](index.md)

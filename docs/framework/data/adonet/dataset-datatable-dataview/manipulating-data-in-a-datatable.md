@@ -2,12 +2,12 @@
 title: Manipulation des données dans un DataTable
 ms.date: 03/30/2017
 ms.assetid: 5cb86d48-a987-4af4-80e0-8cc2c8373d62
-ms.openlocfilehash: 83b1a4b6c0e477ac918a2bb4e454718fc58ece0b
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 421680a4f39dd68c09dfe20e62f2eec86259b9f0
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70203490"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70786155"
 ---
 # <a name="manipulating-data-in-a-datatable"></a>Manipulation des données dans un DataTable
 Après avoir créé un objet <xref:System.Data.DataTable> dans un objet <xref:System.Data.DataSet>, vous pouvez réaliser les mêmes opérations que lorsque vous utilisez une table d'une base de données. Vous pouvez ajouter, afficher, modifier et supprimer les données de la table, surveiller les erreurs et les événements et interroger les données de la table. Lorsque vous modifiez des données dans un **DataTable**, vous pouvez également vérifier si les modifications sont exactes et déterminer si les modifications doivent être acceptées ou rejetées par programmation.  
@@ -41,4 +41,4 @@ Après avoir créé un objet <xref:System.Data.DataTable> dans un objet <xref:Sy
 
 - [DataTables](datatables.md)
 - [Gestion des événements de DataTable](handling-datatable-events.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

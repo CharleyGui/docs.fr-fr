@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fa360c46-e5f8-411e-a711-46997771133d
-ms.openlocfilehash: 023efcc15d7080afc1583f4ad8984e152b86cf23
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1dbaa159314bf7bb05ff75287f601f619834fd7c
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61878382"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794614"
 ---
 # <a name="paging-through-a-query-result"></a>Pagination à travers un résultat de requête
 Ce mode d'affichage consiste à retourner les résultats d'une requête sous forme de sous-ensembles, plus petits, de données, aussi appelés pages. Cette façon de procéder est courante lorsqu'il s'agit de présenter à l'utilisateur un affichage des résultats par petits segments, plus faciles à gérer.  
   
- Le **DataAdapter** propose une fonctionnalité permettant de retourner uniquement une page de données, via les surcharges de la **remplir** (méthode). Toutefois, cela peut être le meilleur choix pour la pagination des résultats de requête de grande taille, car, bien que le **DataAdapter** remplit la cible <xref:System.Data.DataTable> ou <xref:System.Data.DataSet> avec uniquement les enregistrements demandés, les ressources pour retourner le intégralité de la requête sont toujours utilisés. Pour retourner une page de données provenant d'une source de donnée sans solliciter les ressources requises pour retourner l'intégralité de la requête, spécifiez des critères supplémentaires pour votre requête afin de limiter le nombre de lignes retournées à celles qui sont requises.  
+ Le **DataAdapter** fournit une fonctionnalité permettant de retourner uniquement une page de données, par le biais de surcharges de la méthode **Fill** . Toutefois, ce n’est peut-être pas le meilleur choix pour la pagination via des résultats de requête volumineux, car même <xref:System.Data.DataTable> si <xref:System.Data.DataSet> le **DataAdapter** remplit la cible ou avec uniquement les enregistrements demandés, les ressources pour retourner l’ensemble de la requête sont toujours utilisées . Pour retourner une page de données provenant d'une source de donnée sans solliciter les ressources requises pour retourner l'intégralité de la requête, spécifiez des critères supplémentaires pour votre requête afin de limiter le nombre de lignes retournées à celles qui sont requises.  
   
- Pour utiliser le **remplir** méthode pour retourner une page de données, spécifiez un **startRecord** paramètre, pour le premier enregistrement dans la page de données et un **maxRecords** paramètre, le nombre de enregistrements dans la page de données.  
+ Pour utiliser la méthode **Fill** pour retourner une page de données, spécifiez un paramètre **startRecord** , pour le premier enregistrement de la page de données, et un paramètre **maxRecords** , pour le nombre d’enregistrements dans la page de données.  
   
- L’exemple de code suivant montre comment utiliser le **remplir** méthode pour retourner la première page de résultats d’une requête dont la taille est de cinq enregistrements.  
+ L’exemple de code suivant montre comment utiliser la méthode **Fill** pour retourner la première page d’un résultat de requête où la taille de la page est de cinq enregistrements.  
   
 ```vb  
 Dim currentIndex As Integer = 0  
@@ -46,7 +46,7 @@ DataSet dataSet = new DataSet();
 adapter.Fill(dataSet, currentIndex, pageSize, "Orders");  
 ```  
   
- Dans l’exemple précédent, le **DataSet** ne reçoit que cinq enregistrements, mais l’intégralité de **commandes** table est retournée. Pour remplir le **DataSet** avec ces cinq mêmes enregistrements, mais ne retournant que cinq enregistrements, utilisez la partie supérieure la clause WHERE dans votre instruction SQL, comme dans l’exemple de code suivant.  
+ Dans l’exemple précédent, le **jeu de données** ne contient que cinq enregistrements, mais l’intégralité de la table **Orders** est retournée. Pour remplir le **DataSet** avec ces cinq mêmes enregistrements, mais ne retournent que cinq enregistrements, utilisez les clauses Top et Where dans votre instruction SQL, comme dans l’exemple de code suivant.  
   
 ```vb  
 Dim pageSize As Integer = 5  
@@ -83,7 +83,7 @@ string lastRecord =
   dataSet.Tables["Orders"].Rows[pageSize - 1]["OrderID"].ToString();  
 ```  
   
- Pour retourner la page suivante des enregistrements à l’aide de la surcharge de la **remplir** méthode qui prend le **startRecord** et **maxRecords** paramètres, incrémentez l’index en cours d’enregistrement par la taille de page et le remplissage de la table. N’oubliez pas que le serveur de base de données retourne les résultats de la requête entière, bien qu’une seule page d’enregistrements est ajoutée à la **DataSet**. Dans l'exemple de code suivant, les lignes de la table sont vidées de leur contenu avant de recevoir la page de données suivante. Vous avez la possibilité de conserver dans un cache local un certain nombre de lignes retournées afin de limiter les sollicitations du serveur de base de données.  
+ Pour retourner la page d’enregistrements suivante à l’aide de la surcharge de la méthode **Fill** qui accepte les paramètres **startRecord** et **maxRecords** , incrémentez l’index actuel de l’enregistrement en utilisant la taille de la page et remplissez la table. N’oubliez pas que le serveur de base de données renvoie l’intégralité des résultats de la requête, même si une seule page d’enregistrements est ajoutée au **jeu**de données. Dans l'exemple de code suivant, les lignes de la table sont vidées de leur contenu avant de recevoir la page de données suivante. Vous avez la possibilité de conserver dans un cache local un certain nombre de lignes retournées afin de limiter les sollicitations du serveur de base de données.  
   
 ```vb  
 currentIndex = currentIndex + pageSize  
@@ -125,5 +125,5 @@ adapter.Fill(dataSet, "Orders");
   
 ## <a name="see-also"></a>Voir aussi
 
-- [DataAdapters et DataReaders](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [DataAdapters et DataReaders](dataadapters-and-datareaders.md)
+- [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

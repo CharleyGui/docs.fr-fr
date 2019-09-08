@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 681d7ce42b2b8d16353e4f5b3523f1a953a49d95
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 65a6d9eab9708f762d14e5361697b85ffb73f54a
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69037886"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798630"
 ---
 # <a name="formatfromrawvalue-function"></a>FormatFromRawValue, fonction
 Convertit une valeur de données de performances brute au format spécifié, ou deux valeurs de données de performances brutes si la conversion de format est basé sur l’heure. 
@@ -47,17 +47,17 @@ int FormatFromRawValue (
 dans Type de compteur. Pour obtenir la liste des types de compteurs, consultez [types de compteurs de performance WMI](/windows/desktop/WmiSdk/wmi-performance-counter-types). `dwCounterType`peut être n’importe quel type de `PERF_LARGE_RAW_FRACTION` compteur `PERF_LARGE_RAW_BASE`à l’exception de et. 
 
 `dwFormat`\
-dans Format dans lequel convertir les données de performances brutes. Il peut s’agir de l’une des valeurs suivantes:
+dans Format dans lequel convertir les données de performances brutes. Il peut s’agir de l’une des valeurs suivantes :
 
-|Constante  |`Value`  |Description |
+|Constante  |Valeur  |Description |
 |---------|---------|---------|
 | `PDH_FMT_DOUBLE` |0x00000200 | Retourne la valeur calculée sous la forme d’une valeur à virgule flottante double précision. | 
 | `PDH_FMT_LARGE` | 0x00000400 | Retourne la valeur calculée sous la forme d’un entier 64 bits. |
 | `PDH_FMT_LONG` | 0x00000100 | Retourne la valeur calculée sous la forme d’un entier 32 bits. |
 
-L’une des valeurs précédentes peut être associée à l’un des indicateurs de mise à l’échelle suivants:
+L’une des valeurs précédentes peut être associée à l’un des indicateurs de mise à l’échelle suivants :
 
-|Constante  |Valeur  |Description |
+|Constante  |`Value`  |Description |
 |---------|---------|---------|
 | `PDH_FMT_NOSCALE` | 0x00001000 | N’appliquez pas les facteurs de mise à l’échelle du compteur. |
 | `PDH_FMT_1000` | 0x00002000 | Multipliez la valeur finale par 1 000. | 
@@ -75,7 +75,7 @@ dans Pointeur vers une [`PDH_RAW_COUNTER`](/windows/win32/api/pdh/ns-pdh-pdh_raw
 
 ## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes sont retournées par cette fonction:
+Les valeurs suivantes sont retournées par cette fonction :
 
 |Constante  |`Value`  |Description  |
 |---------|---------|---------|
@@ -89,7 +89,7 @@ Cette fonction encapsule un appel à la fonction [FormatFromRawValue](https://do
 
 ## <a name="requirements"></a>Configuration requise
 
- **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
  **Bibliothèque** PerfCounter.dll
 

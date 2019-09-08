@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2ea85959-e763-4669-8bd9-46a9dab894bd
-ms.openlocfilehash: dbfd8a8b207c0da9403ac1f8ab36557c4abe383b
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 0f87b1b730eecf0edad75bd87ca8b491b96e1d2b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70204910"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70784709"
 ---
 # <a name="defining-primary-keys"></a>Définition des clés primaires
 Une table de base de données a généralement une colonne ou un groupe de colonnes identifiant de façon unique chaque ligne de la table. Cette colonne ou ce groupe de colonnes d'identification s'appelle la clé primaire.  
   
- Lorsque vous identifiez un <xref:System.Data.DataColumn> unique <xref:System.Data.DataTable.PrimaryKey%2A> comme pour un <xref:System.Data.DataTable>, la table affecte <xref:System.Data.DataColumn.AllowDBNull%2A> automatiquement à la propriété de la colonne la **valeur false** et à la propriété la <xref:System.Data.DataColumn.Unique%2A> **valeur true**. Pour les clés primaires à plusieurs colonnes, seule la propriété **AllowDBNull** a automatiquement lavaleur false.  
+ Lorsque vous identifiez un <xref:System.Data.DataColumn> unique <xref:System.Data.DataTable.PrimaryKey%2A> comme pour un <xref:System.Data.DataTable>, la table affecte <xref:System.Data.DataColumn.AllowDBNull%2A> automatiquement à la propriété de la colonne la **valeur false** et à la propriété la <xref:System.Data.DataColumn.Unique%2A> **valeur true**. Pour les clés primaires à plusieurs colonnes, seule la propriété **AllowDBNull** a automatiquement la valeur **false**.  
   
  La propriété **PrimaryKey** d’un <xref:System.Data.DataTable> objet reçoit comme valeur un tableau d’un ou plusieurs objets **DataColumn** , comme indiqué dans les exemples suivants. Le premier exemple définit une colonne unique comme clé primaire.  
   
@@ -70,4 +70,4 @@ workTable.PrimaryKey = keyColumn;
 - <xref:System.Data.DataTable>
 - [Définition de schéma de DataTable](datatable-schema-definition.md)
 - [DataTables](datatables.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

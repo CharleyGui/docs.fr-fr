@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a820d5d742c722b495a5a4b3952450a0434110fd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d4cf862ae3676b85a7fc3f09a4f5794e01284737
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67741552"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70787236"
 ---
 # <a name="precloseassembly-method"></a>PreCloseAssembly, méthode
-Ferme le fichier d’assembly. Appelez cette méthode après la fermeture de tous les autres fichiers, mais avant de fermer le fichier d’assembly. N’appelez pas cette méthode pour les modules indépendants.  
+Ferme le fichier d’assembly. Appelez cette méthode après avoir fermé tous les autres fichiers, mais avant de fermer le fichier d’assembly. N’appelez pas cette méthode pour les modules indépendants.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,13 +39,13 @@ HRESULT PreCloseAssembly(
  ID de l’assembly.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Retourne S_OK si la méthode réussit.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="requirements"></a>Configuration requise  
- Nécessite alink.h.  
+ Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [IALink, interface](../../../../docs/framework/unmanaged-api/alink/ialink-interface.md)
-- [IALink2, interface](../../../../docs/framework/unmanaged-api/alink/ialink2-interface.md)
-- [API ALink](../../../../docs/framework/unmanaged-api/alink/index.md)
+- [IALink, interface](ialink-interface.md)
+- [IALink2, interface](ialink2-interface.md)
+- [API ALink](index.md)

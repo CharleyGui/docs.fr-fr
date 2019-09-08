@@ -16,15 +16,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ee30d4f32e05fab27ae70052b28d3d152594cf90
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2710d14d6e73879fd17a6b58659463ea205f2384
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778415"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70795367"
 ---
 # <a name="createhistoryreader-function"></a>CreateHistoryReader, fonction
-Crée un lecteur de l’historique pour le fichier spécifié.  
+Crée un lecteur d’historique pour le fichier spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,26 +37,26 @@ HRESULT CreateHistoryReader (
   
 ## <a name="parameters"></a>Paramètres  
  `wzFilePath`  
- [in] Le chemin d’accès du fichier.  
+ dans Chemin d’accès du fichier.  
   
  `ppHistoryReader`  
- [out] Opération réussie, contient un pointeur vers le lecteur de l’historique.  
+ à En cas de réussite, contient un pointeur vers le lecteur d’historique.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Cette méthode retourne des codes d’erreur COM standard, tel que défini dans WinError.h, en plus des valeurs décrites dans le tableau suivant.  
+ Cette méthode retourne les codes d’erreur COM standard tels qu’ils sont définis dans WinError. h, en plus des valeurs décrites dans le tableau suivant.  
   
 |Code de retour|Description|  
 |-----------------|-----------------|  
-|S_OK|Indique que la méthode a réussi.|  
-|E_INVALIDARG|Indique que `wzFilePath` ou `ppHistoryReader` sont définies sur une référence null.|  
+|S_OK|Indique que la méthode s’est terminée avec succès.|  
+|E_INVALIDARG|Indique que `wzFilePath` ou `ppHistoryReader` sont définis sur une référence null.|  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
- **Bibliothèque :** Fusion.dll  
+ **Bibliothèque** Fusion.dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fonctions statiques globales de fusion](../../../../docs/framework/unmanaged-api/fusion/fusion-global-static-functions.md)
+- [Fonctions statiques globales de fusion](fusion-global-static-functions.md)

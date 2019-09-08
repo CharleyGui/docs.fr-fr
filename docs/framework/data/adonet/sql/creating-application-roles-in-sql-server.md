@@ -2,12 +2,12 @@
 title: Création de rôles d'applications dans SQL Server
 ms.date: 03/30/2017
 ms.assetid: 27442435-dfb2-4062-8c59-e2960833a638
-ms.openlocfilehash: e7060e1b171ee1791b9986250fe6f2050ec77acd
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 212bda6f64829792e965dd6714428a05b30c995b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69961163"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794274"
 ---
 # <a name="creating-application-roles-in-sql-server"></a>Création de rôles d'applications dans SQL Server
 Les rôles d'application constituent un moyen d'affecter des autorisations à une application plutôt qu'à un rôle ou à un utilisateur de base de données. Les utilisateurs peuvent se connecter à la base de données, activer le rôle d'application et assumer les autorisations accordées à l'application. Les autorisations accordées au rôle d'application sont en vigueur pour la durée de la connexion.  
@@ -47,9 +47,9 @@ Les rôles d'application constituent un moyen d'affecter des autorisations à un
   
  Vous pouvez prendre en compte les alternatives suivantes.  
   
-- Utilisez le changement de contexte avec l'instruction AS EXECUTE et ses clauses NO REVERT et WITH COOKIE. Vous pouvez créer un compte d'utilisateur dans une base de données qui n'est pas mappée à une connexion. Vous pouvez ensuite affecter des autorisations à ce compte. L'utilisation d'EXECUTE AS avec un utilisateur sans connexion est plus sûre, car elle est basée sur les autorisations, pas sur le mot de passe. Pour plus d’informations, consultez [Personnalisation des autorisations avec l’emprunt d’identité dans SQL Server](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md).  
+- Utilisez le changement de contexte avec l'instruction AS EXECUTE et ses clauses NO REVERT et WITH COOKIE. Vous pouvez créer un compte d'utilisateur dans une base de données qui n'est pas mappée à une connexion. Vous pouvez ensuite affecter des autorisations à ce compte. L'utilisation d'EXECUTE AS avec un utilisateur sans connexion est plus sûre, car elle est basée sur les autorisations, pas sur le mot de passe. Pour plus d’informations, consultez [Personnalisation des autorisations avec l’emprunt d’identité dans SQL Server](customizing-permissions-with-impersonation-in-sql-server.md).  
   
-- Signez des procédures stockées à l'aide de certificats, en accordant uniquement l'autorisation d'exécuter les procédures. Pour plus d’informations, consultez [signature de procédures stockées dans SQL Server](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md).  
+- Signez des procédures stockées à l'aide de certificats, en accordant uniquement l'autorisation d'exécuter les procédures. Pour plus d’informations, consultez [signature de procédures stockées dans SQL Server](signing-stored-procedures-in-sql-server.md).  
   
 ## <a name="external-resources"></a>Ressources externes  
  Pour plus d'informations, voir les ressources ci-dessous.  
@@ -60,7 +60,7 @@ Les rôles d'application constituent un moyen d'affecter des autorisations à un
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Sécurisation des applications ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)
-- [Vue d’ensemble de la sécurité SQL Server](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)
-- [Scénarios de sécurité des applications dans SQL Server](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Sécurisation des applications ADO.NET](../securing-ado-net-applications.md)
+- [Vue d’ensemble de la sécurité SQL Server](overview-of-sql-server-security.md)
+- [Scénarios de sécurité des applications dans SQL Server](application-security-scenarios-in-sql-server.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

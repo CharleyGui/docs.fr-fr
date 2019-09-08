@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 96c13903-ccb6-4a0e-ab6a-8ca955ca314d
-ms.openlocfilehash: ef771d924d9b508c29061f75a45808b5f81abb53
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d14b15f72bd196d8b3a61f22c614516e17d2e95b
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963834"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70781245"
 ---
 # <a name="retrieving-objects-from-the-identity-cache"></a>Récupération d'objets du cache d'identité
 Cette rubrique décrit les types des requêtes LINQ to SQL qui retournent un objet à partir du cache d'identité qui est géré par le <xref:System.Data.Linq.DataContext>.  
@@ -20,7 +20,7 @@ Cette rubrique décrit les types des requêtes LINQ to SQL qui retournent un obj
  Généralement, pour qu'une requête LINQ to SQL retourne un objet à partir du cache d'identité, la requête doit être basée sur la clé primaire d'un objet et doit retourner un objet unique. En particulier, la requête doit se présenter sous l'une des formes générales suivantes.  
   
 > [!NOTE]
-> Les requêtes précompilées ne retournent pas d'objets à partir du cache d'identité. Pour plus d’informations sur les requêtes précompilées <xref:System.Data.Linq.CompiledQuery> , [consultez et procédure: Stocker et réutiliser](../../../../../../docs/framework/data/adonet/sql/linq/how-to-store-and-reuse-queries.md)des requêtes.  
+> Les requêtes précompilées ne retournent pas d'objets à partir du cache d'identité. Pour plus d’informations sur les requêtes précompilées <xref:System.Data.Linq.CompiledQuery> , [consultez et procédure : Stocker et réutiliser](how-to-store-and-reuse-queries.md)des requêtes.  
   
  Une requête doit se présenter sous l'une des formes générales suivantes pour pouvoir récupérer un objet à partir du cache d'identité :  
   
@@ -66,7 +66,7 @@ Cette rubrique décrit les types des requêtes LINQ to SQL qui retournent un obj
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Concepts relatifs aux requêtes](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)
-- [Identité d’un objet](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)
-- [Informations générales](../../../../../../docs/framework/data/adonet/sql/linq/background-information.md)
-- [Identité d’un objet](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)
+- [Concepts relatifs aux requêtes](query-concepts.md)
+- [Identité d’un objet](object-identity.md)
+- [Informations générales](background-information.md)
+- [Identité d’un objet](object-identity.md)

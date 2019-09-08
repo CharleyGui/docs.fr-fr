@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a16e4a4d-6a5b-45db-8635-19570e4572ae
-ms.openlocfilehash: dd4bca48c35b9b636a96fe5d4a724272abc4f71d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: bde442e344ae8aa710d75c61d0957bff9264bf01
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934405"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70783534"
 ---
 # <a name="obtaining-a-dbproviderfactory"></a>Obtention d'un DbProviderFactory
 Le processus d'obtention d'un objet <xref:System.Data.Common.DbProviderFactory> implique de passer des informations à propos d'un fournisseur de données à la classe <xref:System.Data.Common.DbProviderFactories>. En fonction de ces informations, la méthode <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> crée une fabrique de fournisseurs fortement typée. Par exemple, pour créer un objet <xref:System.Data.SqlClient.SqlClientFactory>, vous pouvez passer à `GetFactory` une chaîne avec le nom du fournisseur spécifié comme « System.Data.SqlClient ». L'autre surcharge de `GetFactory` prend un objet <xref:System.Data.DataRow>. Une fois que vous avez créé la fabrique de fournisseurs, vous pouvez ensuite utiliser ses méthodes pour créer des objets supplémentaires. Parmi les méthodes d'un `SqlClientFactory`, citons <xref:System.Data.SqlClient.SqlClientFactory.CreateConnection%2A>, <xref:System.Data.SqlClient.SqlClientFactory.CreateCommand%2A> et <xref:System.Data.SqlClient.SqlClientFactory.CreateDataAdapter%2A>.  
@@ -34,7 +34,7 @@ Le processus d'obtention d'un objet <xref:System.Data.Common.DbProviderFactory> 
 </system.data>  
 ```  
   
- L' attribut invariant identifie le fournisseur de données sous-jacent. Cette syntaxe d'attribution de nom en trois parties est également utilisée lors de la création d'une fabrique et pour l'identification du fournisseur dans un fichier de configuration d'application de manière à ce que le nom du fournisseur, ainsi que sa chaîne de connexion associée, puissent être récupérés au moment de l'exécution.  
+ L’attribut **invariant** identifie le fournisseur de données sous-jacent. Cette syntaxe d'attribution de nom en trois parties est également utilisée lors de la création d'une fabrique et pour l'identification du fournisseur dans un fichier de configuration d'application de manière à ce que le nom du fournisseur, ainsi que sa chaîne de connexion associée, puissent être récupérés au moment de l'exécution.  
   
 ## <a name="retrieving-provider-information"></a>Récupération des informations relatives aux fournisseurs  
  Vous pouvez récupérer les informations relatives à tous les fournisseurs de données installés sur l'ordinateur local à l'aide de la méthode <xref:System.Data.Common.DbProviderFactories.GetFactoryClasses%2A>. Elle retourne un <xref:System.Data.DataTable> nommé **DbProviderFactories** qui contient les colonnes décrites dans le tableau suivant.  
@@ -57,7 +57,7 @@ Le processus d'obtention d'un objet <xref:System.Data.Common.DbProviderFactory> 
 ## <a name="using-application-configuration-files-to-store-factory-information"></a>Utilisation de fichiers de configuration d'application pour stocker des informations sur les fabriques  
  Le modèle de conception utilisé pour travailler avec les fabriques implique le stockage des informations de fournisseur et de chaîne de connexion dans un fichier de configuration d’application, tel que **app. config** pour une application Windows et **Web. config** pour une application ASP.net.  
   
- Le fragment de fichier de configuration suivant montre comment enregistrer deux chaînes de connexion nommées : « NorthwindSQL » pour une connexion dans la base de données Northwind dans SQL Server, et « NorthwindAccess » pour une connexion dans la base de données Northwind dans Access/Jet. Le nom invariant est utilisé pour l’attribut **providerName** .  
+ Le fragment de fichier de configuration suivant montre comment enregistrer deux chaînes de connexion nommées : « NorthwindSQL » pour une connexion dans la base de données Northwind dans SQL Server, et « NorthwindAccess » pour une connexion dans la base de données Northwind dans Access/Jet. Le nom **invariant** est utilisé pour l’attribut **providerName** .  
   
 ```xml  
 <configuration>  
@@ -79,7 +79,7 @@ Le processus d'obtention d'un objet <xref:System.Data.Common.DbProviderFactory> 
 ```  
   
 ### <a name="retrieving-a-connection-string-by-provider-name"></a>Récupération d'une chaîne de connexion à l'aide du nom du fournisseur  
- Pour créer une fabrique de fournisseurs, vous devez fournir une chaîne de connexion ainsi que le nom du fournisseur. Cet exemple montre comment récupérer une chaîne de connexion à partir d’un fichier de configuration d’application en passant le nom du fournisseur dans le format invariant «*System. Data. ProviderName*». Le code itère au sein de l'objet <xref:System.Configuration.ConnectionStringSettingsCollection>. Il retourne la propriété <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A> en cas de réussite; sinon `null` (`Nothing` dans Visual Basic). S'il existe plusieurs entrées pour un fournisseur, la première occurrence trouvée est retournée. Pour plus d’informations et pour obtenir des exemples de récupération de chaînes de connexion à partir de fichiers de configuration, consultez [chaînes de connexion et fichiers de configuration](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md).  
+ Pour créer une fabrique de fournisseurs, vous devez fournir une chaîne de connexion ainsi que le nom du fournisseur. Cet exemple montre comment récupérer une chaîne de connexion à partir d’un fichier de configuration d’application en passant le nom du fournisseur dans le format invariant «*System. Data. ProviderName*». Le code itère au sein de l'objet <xref:System.Configuration.ConnectionStringSettingsCollection>. Il retourne la propriété <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A> en cas de réussite; sinon `null` (`Nothing` dans Visual Basic). S'il existe plusieurs entrées pour un fournisseur, la première occurrence trouvée est retournée. Pour plus d’informations et pour obtenir des exemples de récupération de chaînes de connexion à partir de fichiers de configuration, consultez [chaînes de connexion et fichiers de configuration](connection-strings-and-configuration-files.md).  
   
 > [!NOTE]
 > Une référence à `System.Configuration.dll` est requise pour que le code s'exécute.  
@@ -97,7 +97,7 @@ Le processus d'obtention d'un objet <xref:System.Data.Common.DbProviderFactory> 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)
-- [Chaînes de connexion](../../../../docs/framework/data/adonet/connection-strings.md)
+- [DbProviderFactories](dbproviderfactories.md)
+- [Chaînes de connexion](connection-strings.md)
 - [Utilisation des classes de configuration](https://docs.microsoft.com/previous-versions/aspnet/ms228063(v=vs.100))
 - [Vue d’ensemble d’ADO.NET](ado-net-overview.md)

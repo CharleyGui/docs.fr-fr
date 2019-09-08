@@ -1,6 +1,6 @@
 ---
-title: Getpropertyorigin, fonction (référence des API non managées)
-description: Getpropertyorigin, de la fonction détermine la classe dans laquelle une propriété est déclarée.
+title: Fonction GetPropertyOrigin (référence des API non managées)
+description: La fonction GetPropertyOrigin détermine la classe dans laquelle une propriété est déclarée.
 ms.date: 11/06/2017
 api_name:
 - GetPropertyOrigin
@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 542c4a01a9fd56587d51421709ffb990707f2ae0
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 0c2d0f23f3dd2d52f73f09c32d4e3118a9ed5ea3
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636783"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798490"
 ---
 # <a name="getpropertyorigin-function"></a>GetPropertyOrigin, fonction
 
@@ -43,40 +43,40 @@ HRESULT GetPropertyOrigin (
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`\
-[in] Ce paramètre n’est pas utilisé.
+dans Ce paramètre n’est pas utilisé.
 
 `ptr`\
-[in] Un pointeur vers un [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `wszMethodName`\
-[in] Le nom de la propriété de l’objet dont la classe propriétaire est demandée.
+dans Nom de la propriété pour l’objet dont la classe propriétaire est demandée.
 
 `pstrClassName`\
-[out] Reçoit le nom de la classe qui possède la propriété.
+à Reçoit le nom de la classe qui possède la propriété.
 
 ## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Value  |Description  |
+|Constante  |Valeur  |Description  |
 |---------|---------|---------|
-|`WBEM_E_FAILED` | 0x80041001 | Il y a eu une défaillance générale. |
+|`WBEM_E_FAILED` | 0x80041001 | Une défaillance générale s’est produite. |
 |`WBEM_E_NOT_FOUND` | 0x80041002 | La propriété spécifiée est introuvable. |
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | Un paramètre n’est pas valide. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Mémoire est insuffisante pour terminer l’opération. |
-|`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | La mémoire disponible est insuffisante pour terminer l’opération. |
+|`WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
 
 ## <a name="remarks"></a>Notes
 
-Cette fonction encapsule un appel à la [IWbemClassObject::GetPropertyOrigin](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getpropertyorigin) (méthode).
+Cette fonction encapsule un appel à la méthode [IWbemClassObject :: GetPropertyOrigin](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getpropertyorigin) .
 
-Car une classe peut hériter des propriétés d’une ou plusieurs classes de base, les développeurs souhaitent souvent de déterminer la propriété dans lequel une méthode donnée est définie.
+Étant donné qu’une classe peut hériter des propriétés d’une ou de plusieurs classes de base, les développeurs veulent souvent déterminer la propriété dans laquelle une méthode donnée est définie.
 
-Le `pstrClassName` paramètre ne doit pas pointer vers un valide `BSTR` avant que la fonction est appelée, car il s’agit d’un `out` paramètre ; ce pointeur n’est pas libéré une fois que la fonction retourne.
+Le `pstrClassName` paramètre ne doit pas pointer vers `BSTR` un valide avant que la fonction soit appelée, `out` car il s’agit d’un paramètre ; ce pointeur n’est pas libéré après le retour de la fonction.
 
 ## <a name="requirements"></a>Configuration requise
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
 **En-tête :** WMINet_Utils.idl
 
@@ -84,4 +84,4 @@ Le `pstrClassName` paramètre ne doit pas pointer vers un valide `BSTR` avant qu
 
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performances (référence des API non managées)](index.md)
+- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)

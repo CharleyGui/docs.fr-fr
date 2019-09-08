@@ -2,17 +2,17 @@
 title: Exemple de configuration de copie en bloc
 ms.date: 03/30/2017
 ms.assetid: d4dde6ac-b8b6-4593-965a-635c8fb2dadb
-ms.openlocfilehash: 2a7c0ddef42ff56306a42288c6960987ce7f714a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ac09ed85315aee7c6b29952916088ebe6e301eb9
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918090"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70794420"
 ---
 # <a name="bulk-copy-example-setup"></a>Exemple de configuration de copie en bloc
 La classe <xref:System.Data.SqlClient.SqlBulkCopy> permet d'écrire des données uniquement dans des tables SQL Server. Les exemples de code présentés dans cette rubrique utilisent l’exemple de base de données SQL Server, **AdventureWorks**. Pour éviter de modifier les exemples de code des tables existantes, créez des tables et écrivez des données dans celles-ci.  
   
- Les tables **BulkCopyDemoMatchingColumns** et **BulkCopyDemoDifferentColumns** sont toutes deux basées sur la table **AdventureWorks** **production. Products** . Dans les exemples de code qui utilisent ces tables, les données sont ajoutées à partir de la table **production. Products** à l’un de ces exemples de tables. La table **BulkCopyDemoDifferentColumns** est utilisée lorsque l’exemple montre comment mapper les colonnes des données sources à la table de destination; **BulkCopyDemoMatchingColumns** est utilisé pour la plupart des autres exemples.  
+ Les tables **BulkCopyDemoMatchingColumns** et **BulkCopyDemoDifferentColumns** sont toutes deux basées sur la table **AdventureWorks** **production. Products** . Dans les exemples de code qui utilisent ces tables, les données sont ajoutées à partir de la table **production. Products** à l’un de ces exemples de tables. La table **BulkCopyDemoDifferentColumns** est utilisée lorsque l’exemple montre comment mapper les colonnes des données sources à la table de destination ; **BulkCopyDemoMatchingColumns** est utilisé pour la plupart des autres exemples.  
   
  Quelques exemples de code montrent comment utiliser une classe <xref:System.Data.SqlClient.SqlBulkCopy> pour écrire plusieurs tables. Pour ces exemples, les tables **tables BulkCopyDemoOrderHeader** et **BulkCopyDemoOrderDetail** sont utilisées comme tables de destination. Ces tables sont basées sur les tables **Sales. SalesOrderHeader** et **Sales. SalesOrderDetail** dans **AdventureWorks**.  
   
@@ -83,5 +83,5 @@ CREATE TABLE [dbo].[BulkCopyDemoOrderDetail]([SalesOrderID] [int] NOT NULL,
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Opérations de copie en bloc dans SQL Server](../../../../../docs/framework/data/adonet/sql/bulk-copy-operations-in-sql-server.md)
-- [Fournisseurs managés ADO.NET et centre de développement DataSet](https://go.microsoft.com/fwlink/?LinkId=217917)
+- [Opérations de copie en bloc dans SQL Server](bulk-copy-operations-in-sql-server.md)
+- [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)
