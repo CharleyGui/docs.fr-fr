@@ -99,7 +99,7 @@ Après leur déploiement initial, et potentiellement plusieurs fois pendant leur
  À l'instar du contrôle de version des contrats de données, celui concernant les contrats de service implique également des opérations d'ajout, de modification et de suppression.  
   
 ### <a name="specifying-name-namespace-and-action"></a>Spécification du nom, de l'espace de noms et de l'action  
- Par défaut, le nom d'un contrat de service correspond à celui de l'interface. Son espace de noms par http://tempuri.org défaut est «», et l’action de http://tempuri.org/contractname/methodname chaque opération est «». Il est recommandé de spécifier explicitement un nom et un espace de noms pour le contrat de service, ainsi qu’une action pour chaque opération "http://tempuri.org " afin d’éviter d’utiliser «» et d’empêcher l’exposition des noms d’interface et de méthode dans le contrat du service.  
+ Par défaut, le nom d'un contrat de service correspond à celui de l'interface. Son espace de noms par "http://tempuri.org" défaut est , et l’action de "http://tempuri.org/contractname/methodname" chaque opération est «». Il est recommandé de spécifier explicitement un nom et un espace de noms pour le contrat de service, ainsi qu’une action pour chaque opération "http://tempuri.org" afin d’éviter d’utiliser «» et d’empêcher l’exposition des noms d’interface et de méthode dans le contrat du service.  
   
 ### <a name="adding-parameters-and-operations"></a>Ajout de paramètres et d'opérations  
  L'ajout des opérations de service exposées par le service est une modification sans rupture car les clients existants n'ont pas à se soucier de ces nouvelles opérations.  
