@@ -2,19 +2,20 @@
 title: <mexHttpsBinding>
 ms.date: 03/30/2017
 ms.assetid: f2ed3774-78b9-4a15-b79b-655f1ad68b86
-ms.openlocfilehash: 30d1aa27ce29b6aa4091c3e7be05746ad462102a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d32db2180e06cba6662ed853ab1a259805680ea1
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69931268"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70397824"
 ---
 # <a name="mexhttpsbinding"></a>\<mexHttpsBinding>
 Spécifie les paramètres pour une liaison utilisée dans le cadre de l’échange de messages WS-MetadataExchange (WS-MEX) sur HTTPS.  
   
- \<system.ServiceModel>  
-\<bindings>  
-\<mexHttpsBinding>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<mexHttpsBinding >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,15 +53,15 @@ Spécifie les paramètres pour une liaison utilisée dans le cadre de l’échan
 |[\<bindings>](bindings.md)|Cet élément conserve une collection de liaisons standard et personnalisées.|  
   
 ## <a name="remarks"></a>Notes  
- Cette liaison est essentiellement une liaison `WSHttpBinding` qui prend en charge la sécurité au niveau du transport à l’aide de certificats. Pour plus d’informations sur la configuration et l’utilisation de ce type de [point de terminaison de métadonnées, consultez Procédure: Configurer une liaison](../../../wcf/extending/how-to-configure-a-custom-ws-metadata-exchange-binding.md)de WS-Metadata Exchange personnalisée [, procédure: Récupérez les métadonnées sur une liaison](../../../wcf/extending/how-to-retrieve-metadata-over-a-non-mex-binding.md)non MEX et l’exemple de [point de terminaison de métadonnées sécurisé personnalisé](../../../wcf/samples/custom-secure-metadata-endpoint.md).  
+ Cette liaison est essentiellement une liaison `WSHttpBinding` qui prend en charge la sécurité au niveau du transport à l’aide de certificats. Pour plus d’informations sur la configuration et l’utilisation de ce type de [point de terminaison de métadonnées, consultez Procédure : Configurer une liaison](../../../wcf/extending/how-to-configure-a-custom-ws-metadata-exchange-binding.md)de WS-Metadata Exchange personnalisée [, procédure : Récupérez les métadonnées sur une liaison](../../../wcf/extending/how-to-retrieve-metadata-over-a-non-mex-binding.md)non MEX et l’exemple de [point de terminaison de métadonnées sécurisé personnalisé](../../../wcf/samples/custom-secure-metadata-endpoint.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.ServiceModel.Description.MetadataExchangeBindings.CreateMexHttpsBinding%2A>
 - <xref:System.ServiceModel.Configuration.MexHttpsBindingElement>
-- [Guide pratique pour Publier les métadonnées d’un service à l’aide d’un fichier de configuration](../../../wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)
+- [Guide pratique : Publier les métadonnées d’un service à l’aide d’un fichier de configuration](../../../wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)
 - [Publication et récupération de métadonnées sur une liaison personnalisée](../../../wcf/extending/publishing-and-retrieving-metadata-over-a-custom-binding.md)
-- [Guide pratique : Configurer une liaison d’échange WS-Metadata personnalisée](../../../wcf/extending/how-to-configure-a-custom-ws-metadata-exchange-binding.md)
+- [Guide pratique pour Configurer une liaison de WS-Metadata Exchange personnalisée](../../../wcf/extending/how-to-configure-a-custom-ws-metadata-exchange-binding.md)
 - [Guide pratique pour Récupérer des métadonnées sur une liaison non MEX](../../../wcf/extending/how-to-retrieve-metadata-over-a-non-mex-binding.md)
 - [Point de terminaison de métadonnées sécurisé personnalisé](../../../wcf/samples/custom-secure-metadata-endpoint.md)
 - [Métadonnées](../../../wcf/feature-details/metadata.md)

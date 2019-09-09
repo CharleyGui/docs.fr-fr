@@ -2,21 +2,22 @@
 title: <security> de <webHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 727cf3d2-6f56-48ad-a59f-ba423edb9c83
-ms.openlocfilehash: 806cf8524ed1a1439ca85a4b918e8e486e5dc94b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2f0bc97e10fcd72f2f33cc20730320cbbfc42dd8
+ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936589"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70399766"
 ---
 # <a name="security-of-webhttpbinding"></a>\<> de sécurité \<de WebHttpBinding >
 Spécifie les exigences de sécurité pour un point de terminaison configuré avec un [ \<> WebHttpBinding](webhttpbinding.md).  
   
- \<system.ServiceModel>  
-\<bindings>  
-\<webHttpBinding>  
-\<binding>  
-\<> de sécurité  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<liaisons >** ](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<webHttpBinding >** ](webhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de liaison**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> de sécurité**  
   
 ## <a name="syntax"></a>Syntaxe  
   
