@@ -5,35 +5,35 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f814ff82-fe2b-4614-aebb-b768c3e61179
-ms.openlocfilehash: a7784f37c9e8009adc3735974a6fb0423f24ea37
-ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
+ms.openlocfilehash: 07f0e5dc232411633626add460ffc29cc7a79d81
+ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68238516"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70044351"
 ---
 # <a name="how-to-run-a-workflow"></a>Procédure : exécuter un workflow
-Cette rubrique est la suite du didacticiel le Guide de mise en route de Windows Workflow Foundation et explique comment créer un hôte de workflow et exécuter le workflow défini dans le précédent [Comment : Créer un flux de travail](how-to-create-a-workflow.md) rubrique.
+Cette rubrique est une suite de la Windows Workflow Foundation prise en main didacticiel et explique comment créer un hôte de workflow et exécuter le workflow défini dans la procédure précédente [: Créer une rubrique](how-to-create-a-workflow.md) de Workflow.
 
 > [!NOTE]
->  Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour terminer cette rubrique, vous devez tout d’abord effectuer [Comment : Créer une activité](how-to-create-an-activity.md) et [Comment : Créer un flux de travail](how-to-create-a-workflow.md).
+> Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour suivre cette rubrique, vous devez d' [abord effectuer les opérations suivantes : Créer une activité](how-to-create-an-activity.md) et [Comment : Créer un flux](how-to-create-a-workflow.md)de travail.
 
 > [!NOTE]
->  Pour télécharger une version complète du didacticiel, consultez [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976)(Windows Workflow Foundation (WF45) - Didacticiel de mise en route).  
+> Pour télécharger une version complète du didacticiel, consultez [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976)(Windows Workflow Foundation (WF45) - Didacticiel de mise en route).  
   
 ### <a name="to-create-the-workflow-host-project"></a>Pour créer le projet d'hôte du workflow  
   
-1. Ouvrez la solution à partir de la précédente [Comment : Créer une activité](how-to-create-an-activity.md) rubrique à l’aide de Visual Studio 2012.  
+1. Ouvrez la solution à partir de [la procédure précédente Comment : Créez une rubrique](how-to-create-an-activity.md) d’activité à l’aide de Visual Studio 2012.  
   
 2. Dans l' **Explorateur de solutions** , cliquez avec le bouton droit sur la solution **WF45GettingStartedTutorial** , puis sélectionnez **Ajouter**, **Nouveau projet**.  
   
     > [!TIP]
-    >  Si la fenêtre **Explorateur de solutions** n'est pas affichée, sélectionnez **Explorateur de solutions** dans le menu **Affichage** .
+    > Si la fenêtre **Explorateur de solutions** n'est pas affichée, sélectionnez **Explorateur de solutions** dans le menu **Affichage** .
 
 3. Dans le nœud **Installé** , sélectionnez **Visual C#** , **Workflow** (ou **Visual Basic**, **Workflow**).
 
     > [!NOTE]
-    >  En fonction du langage de programmation qui est configuré comme langage principal dans Visual Studio, le nœud **Visual C#** ou **Visual Basic** peut se trouver sous le nœud **Autres langages** dans le nœud **Installé** .
+    > En fonction du langage de programmation qui est configuré comme langage principal dans Visual Studio, le nœud **Visual C#** ou **Visual Basic** peut se trouver sous le nœud **Autres langages** dans le nœud **Installé** .
 
      Dans la liste déroulante de la version du .NET Framework, vérifiez que **.NET Framework 4.5** est sélectionné. Dans la liste **Workflow** , sélectionnez **Application console de workflow** . Dans la zone `NumberGuessWorkflowHost` Nom **, tapez** et cliquez sur **OK**. Une application de workflow de démarrage est ainsi créée, ainsi qu'un support d'hébergement de workflow de base. Le code d'hébergement de base est modifié et sert à exécuter l'application de workflow.
 
@@ -46,7 +46,7 @@ Cette rubrique est la suite du didacticiel le Guide de mise en route de Windows 
 1. Double-cliquez sur **Program.cs** ou sur **Module1.vb** dans l' **Explorateur de solutions** pour afficher le code.
 
     > [!TIP]
-    >  Si la fenêtre **Explorateur de solutions** n'est pas affichée, sélectionnez **Explorateur de solutions** dans le menu **Affichage** .
+    > Si la fenêtre **Explorateur de solutions** n'est pas affichée, sélectionnez **Explorateur de solutions** dans le menu **Affichage** .
 
      Étant donné que ce projet a été créé à l'aide du modèle **Application console de workflow** , **Program.cs** ou **Module1.vb** contient le code d'hébergement de workflow de base suivant.
 
@@ -77,7 +77,7 @@ Cette rubrique est la suite du didacticiel le Guide de mise en route de Windows 
      Remplacez les lignes de code qui utilisent <xref:System.Activities.WorkflowInvoker> par le code d'hébergement <xref:System.Activities.WorkflowApplication> de base suivant. Cet exemple de code d'hébergement montre les étapes de base pour l'hébergement et l'appel d'un workflow, mais ne contient pas encore les fonctionnalités pour exécuter avec succès le workflow à partir de cette rubrique. Au cours des étapes suivantes, le code de base est modifié et des fonctionnalités supplémentaires sont ajoutées jusqu'à ce que l'application soit terminée.
 
     > [!NOTE]
-    >  Remplacez `Workflow1` dans ces exemples par `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`, ou `StateMachineNumberGuessWorkflow`, en fonction du workflow que vous avez finalisé dans le précédent [Comment : Créer un flux de travail](how-to-create-a-workflow.md) étape. Si vous ne substituez pas `Workflow1` , vous obtiendrez des erreurs de build lors de la génération ou de l'exécution du workflow.
+    > Remplacez `Workflow1` dans ces exemples par `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`ou `StateMachineNumberGuessWorkflow`, selon le flux de travail que vous avez effectué dans la procédure [précédente : Créer une étape](how-to-create-a-workflow.md) de flux de travail. Si vous ne substituez pas `Workflow1` , vous obtiendrez des erreurs de build lors de la génération ou de l'exécution du workflow.
 
      [!code-csharp[CFX_WF_GettingStarted#4](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/extrasnippets.cs#4)]
      [!code-vb[CFX_WF_GettingStarted#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/extrasnippets.vb#4)]
@@ -94,7 +94,7 @@ Cette rubrique est la suite du didacticiel le Guide de mise en route de Windows 
 2. Remplacez la ligne de code qui crée le <xref:System.Activities.WorkflowApplication> par le code suivant qui crée et passe un dictionnaire de paramètres au workflow lorsqu'il est créé.
 
     > [!NOTE]
-    >  Remplacez `Workflow1` dans ces exemples par `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`, ou `StateMachineNumberGuessWorkflow`, en fonction du workflow que vous avez finalisé dans le précédent [Comment : Créer un flux de travail](how-to-create-a-workflow.md) étape. Si vous ne substituez pas `Workflow1` , vous obtiendrez des erreurs de build lors de la génération ou de l'exécution du workflow.
+    > Remplacez `Workflow1` dans ces exemples par `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`ou `StateMachineNumberGuessWorkflow`, selon le flux de travail que vous avez effectué dans la procédure [précédente : Créer une étape](how-to-create-a-workflow.md) de flux de travail. Si vous ne substituez pas `Workflow1` , vous obtiendrez des erreurs de build lors de la génération ou de l'exécution du workflow.
 
      [!code-csharp[CFX_WF_GettingStarted#6](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#6)]
      [!code-vb[CFX_WF_GettingStarted#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#6)]
@@ -120,10 +120,10 @@ Cette rubrique est la suite du didacticiel le Guide de mise en route de Windows 
      [!code-csharp[CFX_WF_GettingStarted#9](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#9)]
      [!code-vb[CFX_WF_GettingStarted#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#9)]
 
-     Chaque fois que le workflow devient inactif en attendant l’estimation suivante, ce gestionnaire est appelé et le `idleAction` <xref:System.Threading.AutoResetEvent> est défini. Le code de l'étape suivante utilise `idleEvent` et `syncEvent` pour déterminer si le workflow attend l'estimation suivante ou s'il est terminé.
+     Chaque fois que le workflow devient inactif, en attendant la prochaine estimation, ce gestionnaire est `idleAction` appelé et le <xref:System.Threading.AutoResetEvent> est défini. Le code de l'étape suivante utilise `idleEvent` et `syncEvent` pour déterminer si le workflow attend l'estimation suivante ou s'il est terminé.
 
     > [!NOTE]
-    >  Dans cet exemple, l'application hôte utilise des événements à réinitialisation automatique dans les gestionnaires <xref:System.Activities.WorkflowApplication.Completed%2A> et <xref:System.Activities.WorkflowApplication.Idle%2A> pour synchroniser l'application hôte avec la progression du workflow. Il n'est pas nécessaire de bloquer et d'attendre que le workflow devienne inactif avant de reprendre un signet mais, dans cet exemple, les événements de synchronisation sont nécessaires afin que l'hôte sache si le workflow est terminé ou s'il attend une ou plusieurs autres entrées d'utilisateur à l'aide de <xref:System.Activities.Bookmark>. Pour plus d’informations, consultez [signets](bookmarks.md).
+    > Dans cet exemple, l'application hôte utilise des événements à réinitialisation automatique dans les gestionnaires <xref:System.Activities.WorkflowApplication.Completed%2A> et <xref:System.Activities.WorkflowApplication.Idle%2A> pour synchroniser l'application hôte avec la progression du workflow. Il n'est pas nécessaire de bloquer et d'attendre que le workflow devienne inactif avant de reprendre un signet mais, dans cet exemple, les événements de synchronisation sont nécessaires afin que l'hôte sache si le workflow est terminé ou s'il attend une ou plusieurs autres entrées d'utilisateur à l'aide de <xref:System.Activities.Bookmark>. Pour plus d’informations, consultez [signets](bookmarks.md).
 
 3. Supprimez l'appel à `WaitOne`et remplacez-le par du code pour recueillir l'entrée de l'utilisateur et reprendre le <xref:System.Activities.Bookmark>.
 
@@ -148,13 +148,13 @@ Cette rubrique est la suite du didacticiel le Guide de mise en route de Windows 
      [!code-csharp[CFX_WF_GettingStarted#6](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#6)]
      [!code-vb[CFX_WF_GettingStarted#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#6)]
 
-     Pour savoir comment ajouter la persistance à une application de workflow, consultez la rubrique suivante, [Comment : Créer et exécuter un Long en cours d’exécution du flux de travail](how-to-create-and-run-a-long-running-workflow.md).
+     Pour obtenir des instructions sur la façon d’ajouter la persistance à une application de workflow, [consultez la rubrique suivante, comment : Créer et exécuter un flux de travail](how-to-create-and-run-a-long-running-workflow.md)à long terme.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
  L'exemple suivant constitue l'intégralité du code de la méthode `Main` .
 
 > [!NOTE]
->  Remplacez `Workflow1` dans ces exemples par `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`, ou `StateMachineNumberGuessWorkflow`, en fonction du workflow que vous avez finalisé dans le précédent [Comment : Créer un flux de travail](how-to-create-a-workflow.md) étape. Si vous ne substituez pas `Workflow1` , vous obtiendrez des erreurs de build lors de la génération ou de l'exécution du workflow.
+> Remplacez `Workflow1` dans ces exemples par `FlowchartNumberGuessWorkflow`, `SequentialNumberGuessWorkflow`ou `StateMachineNumberGuessWorkflow`, selon le flux de travail que vous avez effectué dans la procédure [précédente : Créer une étape](how-to-create-a-workflow.md) de flux de travail. Si vous ne substituez pas `Workflow1` , vous obtiendrez des erreurs de build lors de la génération ou de l'exécution du workflow.
 
  [!code-csharp[CFX_WF_GettingStarted#12](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_wf_gettingstarted/cs/program.cs#12)]
  [!code-vb[CFX_WF_GettingStarted#12](~/samples/snippets/visualbasic/VS_Snippets_CFX/cfx_wf_gettingstarted/vb/module1.vb#12)]
@@ -166,6 +166,6 @@ Cette rubrique est la suite du didacticiel le Guide de mise en route de Windows 
 - [Programmation Windows Workflow Foundation](programming.md)
 - [Didacticiel Bien démarrer](getting-started-tutorial.md)
 - [Guide pratique pour Créer un flux de travail](how-to-create-a-workflow.md)
-- [Guide pratique pour Créer et exécuter un Long en cours d’exécution du flux de travail](how-to-create-and-run-a-long-running-workflow.md)
+- [Guide pratique : Créer et exécuter un flux de travail à long terme](how-to-create-and-run-a-long-running-workflow.md)
 - [Attente d’une entrée dans un workflow](waiting-for-input-in-a-workflow.md)
 - [Hébergement de workflows](hosting-workflows.md)

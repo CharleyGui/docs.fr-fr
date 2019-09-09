@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC42025
 ms.assetid: db3337e5-c349-42bf-86df-d9c1e00952a5
-ms.openlocfilehash: 311f4c025072162e0cfb6b87587f8602d33fcd19
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3174d463744303e8c90ed0b2e1a4d86ed08fbcfb
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64646866"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69947695"
 ---
 # <a name="access-of-shared-member-through-an-instance-qualifying-expression-will-not-be-evaluated"></a>Accès d'un membre partagé via une instance ; l'expression qualifiante ne sera pas évaluée
-Une variable d’instance d’une classe ou une structure est utilisée pour accéder à un `Shared` variable, la propriété, la procédure ou événement défini dans cette classe ou structure. Cet avertissement peut également se produire si une variable d’instance est utilisée pour accéder à un membre implicitement partagé d’une classe ou une structure, comme une constante ou énumération, ou une classe imbriquée ou une structure.  
+Une variable d’instance d’une classe ou d’une structure est utilisée `Shared` pour accéder à une variable, une propriété, une procédure ou un événement défini dans cette classe ou structure. Cet avertissement peut également se produire si une variable d’instance est utilisée pour accéder à un membre implicitement partagé d’une classe ou d’une structure, par exemple une constante ou une énumération, ou une classe ou une structure imbriquée.  
   
- Le partage d’un membre vise à créer une seule copie de ce membre et le rendre disponible à chaque instance de la classe ou structure dans laquelle elle est déclarée. Il est cohérent avec cet effet pour accéder à un `Shared` membre via le nom de sa classe ou structure, plutôt que via une variable qui conserve une instance de cette classe ou structure.  
+ L’objectif du partage d’un membre est de créer une seule copie de ce membre et de rendre cette copie disponible pour chaque instance de la classe ou de la structure dans laquelle elle est déclarée. Elle est cohérente dans le but d’accéder `Shared` à un membre par le biais du nom de sa classe ou de sa structure, plutôt que par le biais d’une variable qui contient une instance individuelle de cette classe ou structure.  
   
- L’accès à un `Shared` membre via une variable d’instance peut rendre votre code plus difficile à comprendre en occultant le fait que le membre est `Shared`. En outre, si ce type d’accès fait partie d’une expression qui exécute d’autres actions, comme un `Function` procédure qui retourne une instance du membre partagé, Visual Basic ignore l’expression et toutes les autres actions il exécuterait dans le cas contraire.  
+ L’accès à `Shared` un membre via une variable d’instance peut rendre votre code plus difficile à comprendre en masquant le fait que le `Shared`membre est. En outre, si un tel accès fait partie d’une expression qui effectue d’autres actions, `Function` telles qu’une procédure qui retourne une instance du membre partagé, Visual Basic ignore l’expression et toutes les autres actions qu’il exécuterait autrement.  
   
- Pour plus d’informations et un exemple, consultez [partagé](../../../visual-basic/language-reference/modifiers/shared.md).  
+ Pour plus d’informations et un exemple, consultez [Shared](../../../visual-basic/language-reference/modifiers/shared.md).  
   
  Par défaut, ce message est un avertissement. Pour plus d’informations sur le masquage des avertissements ou le traitement des avertissements en tant qu’erreurs, consultez [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
@@ -29,7 +29,7 @@ Une variable d’instance d’une classe ou une structure est utilisée pour acc
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-- Utilisez le nom de la classe ou structure qui définit le `Shared` membre à y accéder, comme illustré dans l’exemple suivant.  
+- Utilisez le nom de la classe ou de la structure qui `Shared` définit le membre pour y accéder, comme indiqué dans l’exemple suivant.  
   
 ```vb  
 Public Class testClass  
@@ -53,9 +53,9 @@ End Module
 ```  
   
 > [!NOTE]
->  Être alerte pour les effets de la portée lorsque deux éléments de programmation portent le même nom. Dans l’exemple précédent, si vous déclarez une instance à l’aide de `Dim testClass as testClass = Nothing`, le compilateur traite un appel à `testClass.sayHello()` comme un accès de la méthode via le nom de classe et aucun avertissement se produit.  
+> Soyez averti des effets de la portée lorsque deux éléments de programmation portent le même nom. Dans l’exemple précédent, si vous déclarez une instance à `Dim testClass as testClass = Nothing`l’aide de, le compilateur traite `testClass.sayHello()` un appel à comme un accès à la méthode via le nom de la classe, et aucun avertissement ne se produit.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Shared](../../../visual-basic/language-reference/modifiers/shared.md)
-- [Portée dans Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Étendue dans Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)

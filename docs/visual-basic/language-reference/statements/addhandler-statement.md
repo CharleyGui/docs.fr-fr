@@ -8,15 +8,15 @@ f1_keywords:
 helpviewer_keywords:
 - AddHandler statement [Visual Basic]
 ms.assetid: cfe69799-2a0f-42c0-a99e-09fed954da01
-ms.openlocfilehash: 1e8d8f512f163d82f074a5ad53fbb38a10904dfa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a9913cd682e52562422ba140e27187d37c592684
+ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054300"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69928936"
 ---
 # <a name="addhandler-statement"></a>AddHandler, instruction
-Associe un événement à un gestionnaire d’événements en cours d’exécution.  
+Associe un événement à un gestionnaire d’événements au moment de l’exécution.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,19 +27,19 @@ AddHandler event, AddressOf eventhandler
 ## <a name="parts"></a>Composants  
 |||
 |---|---|
-|événement|Le nom de l’événement à gérer.|  
-|`eventhandler`|Le nom d’une procédure qui gère l’événement.|
+|événement|Nom de l’événement à gérer.|  
+|`eventhandler`|Nom d’une procédure qui gère l’événement.|
 |||
   
 ## <a name="remarks"></a>Notes  
- Le `AddHandler` et `RemoveHandler` vous permettent de démarrer et arrêter la gestion des événements à tout moment pendant l’exécution du programme.  
+ Les `AddHandler` instructions `RemoveHandler` et vous permettent de démarrer et d’arrêter la gestion des événements à tout moment pendant l’exécution du programme.  
   
- La signature de la `eventhandler` procédure doit correspondre à la signature de l’événement `event`.  
+ La signature de la `eventhandler` procédure doit correspondre à la signature de l' `event`événement.  
   
- Le mot clé `Handles` et l'instruction `AddHandler` vous permettent de spécifier que des procédures particulières gèrent des événements particuliers, mais il existe des différences. L'instruction `AddHandler` connecte les procédures aux événements au moment de l'exécution. Utilisez le mot clé `Handles` quand vous définissez une procédure pour indiquer qu'elle gère un événement particulier. Pour plus d’informations, consultez [gère](../../../visual-basic/language-reference/statements/handles-clause.md).  
+ Le mot clé `Handles` et l'instruction `AddHandler` vous permettent de spécifier que des procédures particulières gèrent des événements particuliers, mais il existe des différences. L'instruction `AddHandler` connecte les procédures aux événements au moment de l'exécution. Utilisez le mot clé `Handles` quand vous définissez une procédure pour indiquer qu'elle gère un événement particulier. Pour plus d’informations, consultez [Handles](../../../visual-basic/language-reference/statements/handles-clause.md).  
   
 > [!NOTE]
->  Pour les événements personnalisés, le `AddHandler` instruction appelle de l’événement `AddHandler` accesseur. Pour plus d’informations sur les événements personnalisés, consultez [Event, instruction](../../../visual-basic/language-reference/statements/event-statement.md).  
+> Pour les événements personnalisés, `AddHandler` l’instruction appelle l’accesseur `AddHandler` de l’événement. Pour plus d’informations sur les événements personnalisés, consultez [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md).  
   
 ## <a name="example"></a>Exemple  
  [!code-vb[VbVbalrEvents#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#17)]  
