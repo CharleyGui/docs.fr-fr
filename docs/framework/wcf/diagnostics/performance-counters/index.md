@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - performance counters [WCF]
 ms.assetid: f559b2bd-ed83-4988-97a1-e88f06646609
-ms.openlocfilehash: 4368bd57718f52816d4efad39932bcc0959b67a2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a9bddcbd907e37d9bdf757b1999946c99e10440c
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69951304"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855630"
 ---
 # <a name="wcf-performance-counters"></a>Compteurs de performance WCF
 Windows Communication Foundation (WCF) comprend un grand nombre de compteurs de performances pour vous aider à évaluer les performances de votre application.  
   
 ## <a name="enabling-performance-counters"></a>Activation des compteurs de performance  
- Vous pouvez activer les compteurs de performance pour un service WCF par le biais du fichier de configuration App. config du service WCF, comme suit:  
+ Vous pouvez activer les compteurs de performance pour un service WCF par le biais du fichier de configuration App. config du service WCF, comme suit :  
   
 ```xml  
 <configuration>  
@@ -39,7 +39,7 @@ Windows Communication Foundation (WCF) comprend un grand nombre de compteurs de 
   
  Vous pouvez aussi activer des compteurs de performance dans votre code comme suit.  
   
-```  
+```csharp
 using System.Configuration;  
 using System.ServiceModel.Configuration;  
 using System.ServiceModel.Diagnostics;  
@@ -59,7 +59,7 @@ config.Save();
 ## <a name="increasing-memory-size-for-performance-counters"></a>Augmentation de la taille de la mémoire pour les compteurs de performance  
  WCF utilise une mémoire partagée distincte pour ses catégories de compteurs de performance.  
   
- Par défaut, la mémoire partagée séparée a pour valeur un quart de la taille de la mémoire globale des compteurs de performance. La mémoire globale des compteurs de performance par défaut est de 524 288 octets. Par conséquent, les trois catégories de compteurs de performance WCF ont une taille par défaut d’environ 128 Ko chacune. En fonction des caractéristiques d’exécution des applications WCF sur un ordinateur, la mémoire du compteur de performance peut être épuisée. Dans ce cas, WCF écrit une erreur dans le journal des événements de l’application. Le contenu de l’erreur indique qu’un compteur de performance n’a pas été chargé et que l’entrée contient l’exception «System. InvalidOperationException: La vue du fichier des compteurs personnalisés est insuffisante.» Si le suivi est activé au niveau de l'erreur, cette défaillance est également suivie. Si la mémoire du compteur de performance est épuisée, la poursuite de l’exécution de vos applications WCF avec des compteurs de performances activés peut entraîner une dégradation des performances. Si vous êtes un administrateur de l'ordinateur, vous devez le configurer pour allouer suffisamment de mémoire afin de prendre en charge le nombre maximal de compteurs de performance pouvant exister à tout moment.  
+ Par défaut, la mémoire partagée séparée a pour valeur un quart de la taille de la mémoire globale des compteurs de performance. La mémoire globale des compteurs de performance par défaut est de 524 288 octets. Par conséquent, les trois catégories de compteurs de performance WCF ont une taille par défaut d’environ 128 Ko chacune. En fonction des caractéristiques d’exécution des applications WCF sur un ordinateur, la mémoire du compteur de performance peut être épuisée. Dans ce cas, WCF écrit une erreur dans le journal des événements de l’application. Le contenu de l’erreur indique qu’un compteur de performance n’a pas été chargé et que l’entrée contient l’exception «System. InvalidOperationException : La vue du fichier des compteurs personnalisés est insuffisante.» Si le suivi est activé au niveau de l'erreur, cette défaillance est également suivie. Si la mémoire du compteur de performance est épuisée, la poursuite de l’exécution de vos applications WCF avec des compteurs de performances activés peut entraîner une dégradation des performances. Si vous êtes un administrateur de l'ordinateur, vous devez le configurer pour allouer suffisamment de mémoire afin de prendre en charge le nombre maximal de compteurs de performance pouvant exister à tout moment.  
   
  Vous pouvez modifier la quantité de mémoire du compteur de performances pour les catégories WCF dans le registre. Pour cela, vous devez ajouter une nouvelle valeur DWORD nommée `FileMappingSize` aux trois emplacements suivants et lui affecter en octets la valeur désirée. Redémarrez votre ordinateur afin que ces modifications prennent effet.  
   
@@ -72,24 +72,22 @@ config.Save();
  Lorsqu'un grand nombre d'objets (par exemple, ServiceHost) sont supprimés mais sont en attente d'être récupérés par le garbage collector, le compteur de performance `PrivateBytes` enregistre un nombre exceptionnellement élevé. Pour résoudre ce problème, vous pouvez ajouter vos propres compteurs spécifiques à l'application ou utiliser l'attribut `performanceCounters` pour activer des compteurs au niveau du service uniquement.  
   
 ## <a name="types-of-performance-counters"></a>Types de compteurs de performance  
- Les compteurs de performances sont étendus à trois niveaux différents: Service, point de terminaison et opération.  
+ Les compteurs de performances sont étendus à trois niveaux différents : Service, point de terminaison et opération.  
   
  Vous pouvez utiliser WMI pour récupérer le nom d'une instance de compteur de performance. Par exemple,  
   
-- Le nom de l’instance du compteur de service peut être obtenu via la propriété «CounterInstanceName» de l’instance de [service](../../../../../docs/framework/wcf/diagnostics/wmi/service.md) WMI.  
+- Le nom de l’instance du compteur de service peut être obtenu via la propriété « CounterInstanceName » de l’instance de [service](../../../../../docs/framework/wcf/diagnostics/wmi/service.md) WMI.  
   
-- Le nom de l’instance du compteur de point de terminaison peut être obtenu via la propriété «CounterInstanceName» de l’instance de [point de terminaison](../../../../../docs/framework/wcf/diagnostics/wmi/endpoint.md) WMI.  
+- Le nom de l’instance du compteur de point de terminaison peut être obtenu via la propriété « CounterInstanceName » de l’instance de [point de terminaison](../../../../../docs/framework/wcf/diagnostics/wmi/endpoint.md) WMI.  
   
-- Le nom de l’instance de compteur d’opération peut être obtenu via la méthode «GetOperationCounterInstanceName» de l’instance de [point de terminaison](../../../../../docs/framework/wcf/diagnostics/wmi/endpoint.md) WMI.  
+- Le nom de l’instance de compteur d’opération peut être obtenu via la méthode « GetOperationCounterInstanceName » de l’instance de [point de terminaison](../../../../../docs/framework/wcf/diagnostics/wmi/endpoint.md) WMI.  
   
  Pour plus d’informations sur WMI, consultez [utilisation de Windows Management Instrumentation pour les diagnostics](../../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
   
 ### <a name="service-performance-counters"></a>Compteurs de performance de service  
  Les compteurs de performance de service mesurent le comportement du service dans son ensemble et peuvent être utilisés pour diagnostiquer les performances de la totalité du service. Ils se trouvent sous l'objet de performance `ServiceModelService 4.0.0.0` dans l'affichage de l'analyseur de performances. Les instances sont nommées à l'aide du modèle suivant :  
   
-```  
-ServiceName@ServiceBaseAddress  
-```  
+`ServiceName@ServiceBaseAddress`
   
  Un compteur dans une portée de service est issu du compteur dans une collection de points de terminaison.  
   
@@ -98,9 +96,7 @@ ServiceName@ServiceBaseAddress
 ### <a name="endpoint-performance-counters"></a>Compteurs de performance de point de terminaison  
  Les compteurs de performance de point de terminaison vous permettent de consulter des données en reflétant la manière dont un point de terminaison accepte des messages. Ils se trouvent sous l'objet de performance `ServiceModelEndpoint 4.0.0.0` dans l'affichage de l'analyseur de performances. Les instances sont nommées à l'aide du modèle suivant :  
   
-```  
-(ServiceName).(ContractName)@(endpoint listener address)  
-```  
+`(ServiceName).(ContractName)@(endpoint listener address)`
   
  Les données sont semblables à celles recueillies pour des opérations individuelles, mais sont regroupées uniquement sur le point de terminaison.  
   
@@ -112,9 +108,7 @@ ServiceName@ServiceBaseAddress
 ### <a name="operation-performance-counters"></a>Compteurs de performance d'opération  
  Les compteurs de performance d'opération se trouvent sous l'objet de performance `ServiceModelOperation 4.0.0.0` dans l'affichage de l'analyseur de performances. Chaque opération a une instance individuelle. Autrement dit, si un contrat donné a 10 opérations, 10 instances de compteur d'opération sont associées à ce contrat. Les instances d’objet sont nommées à l’aide du modèle suivant :  
   
-```  
-(ServiceName).(ContractName).(OperationName)@(first endpoint listener address)  
-```  
+`(ServiceName).(ContractName).(OperationName)@(first endpoint listener address)`
   
  Ce compteur vous permet de mesurer la manière dont l'appel est utilisé et comment l'opération s'exécute.  
   

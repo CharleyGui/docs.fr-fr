@@ -5,12 +5,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 07/05/2018
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: 644e0bb281525fad12e263b31263bb9caba149f0
-ms.sourcegitcommit: 7156c0b9e4ce4ce5ecf48ce3d925403b638b680c
-ms.translationtype: HT
+ms.openlocfilehash: 41377cb47836624160a5b402e0a85270b68eba4f
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58463811"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70850986"
 ---
 # <a name="inheritance-in-c-and-net"></a>Héritage dans C# et .NET
 
@@ -18,7 +18,7 @@ Ce didacticiel vous présente l’héritage dans C#. L’héritage est une fonct
 
 ## <a name="prerequisites"></a>Prérequis
 
-Ce didacticiel suppose que vous avez installé .NET Core. Pour des instructions d'installation, consultez le [Guide d’installation de .NET Core](https://www.microsoft.com/net/core). Il vous faut également un éditeur de code. Ce didacticiel utilise [Visual Studio Code](https://code.visualstudio.com), mais vous pouvez utiliser l’éditeur de code de votre choix.
+Ce didacticiel part du principe que vous avez installé le kit SDK .NET Core. Visitez la page des [téléchargements .net Core](https://dotnet.microsoft.com/download) pour le télécharger. Il vous faut également un éditeur de code. Ce didacticiel utilise [Visual Studio Code](https://code.visualstudio.com), mais vous pouvez utiliser l’éditeur de code de votre choix.
 
 ## <a name="running-the-examples"></a>Exécution des exemples
 

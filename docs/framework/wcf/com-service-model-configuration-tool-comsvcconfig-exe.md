@@ -5,19 +5,19 @@ helpviewer_keywords:
 - Windows Communication Foundation, COM+ integration
 - WCF, COM+ integration
 ms.assetid: 7717c6c2-85fc-418b-a8ed-bad8e61cec5c
-ms.openlocfilehash: 89462d05b9da7fc63bda58955517bfa9f0c50ab9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 98c8e50ea4a9efe1c69a0c7b959b228a045dfca1
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964199"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855657"
 ---
 # <a name="com-service-model-configuration-tool-comsvcconfigexe"></a>Outil de configuration de modèle de service COM+ (ComSvcConfig.exe)
 L'outil en ligne de configuration de modèle de service COM+ (ComSvcConfig.exe) permet de configurer des interfaces COM+ à exposer en tant que services Web.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 ComSvcConfig.exe /install | /uninstall | /list [/application:<ApplicationID | ApplicationName>] [/contract:<ClassID | ProgID | *,InterfaceID | InterfaceName | *>] [/hosting:<complus | was>] [/webSite:<WebsiteName>] [/webDirectory:<WebDirectoryName>] [/mex] [/id] [/nologo] [/verbose] [/help] [/partial]  
 ```  
   
@@ -30,7 +30,7 @@ ComSvcConfig.exe /install | /uninstall | /list [/application:<ApplicationID | Ap
   
  %SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation\  
   
- Pour plus d’informations sur ComSvcConfig. exe, [consultez Procédure: Utilisez l’outil](../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)de configuration de modèle de service com+.  
+ Pour plus d’informations sur ComSvcConfig. exe, [consultez Procédure : Utilisez l’outil](../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)de configuration de modèle de service com+.  
   
  Le tableau suivant décrit les modes qui peuvent être utilisés avec ComSvcConfig.exe.  
   
@@ -63,7 +63,7 @@ ComSvcConfig.exe /install | /uninstall | /list [/application:<ApplicationID | Ap
   
 ### <a name="code"></a>Code  
   
-```  
+```console  
 ComSvcConfig.exe /install /application:OnlineStore /contract:ItemOrders.Financial,IFinances /hosting:complus /verbose  
 ```  
   
@@ -72,7 +72,7 @@ ComSvcConfig.exe /install /application:OnlineStore /contract:ItemOrders.Financia
   
 ### <a name="code"></a>Code  
   
-```  
+```console  
 ComSvcConfig.exe /install /application:OnlineWarehouse /contract:ItemInventory.Warehouse,IStockLevels /hosting:was /webDirectory:root/OnlineWarehouse  
 ```  
   
@@ -81,7 +81,7 @@ ComSvcConfig.exe /install /application:OnlineWarehouse /contract:ItemInventory.W
   
 ### <a name="code"></a>Code  
   
-```  
+```console  
 ComSvcConfig.exe /uninstall /application:OnlineStore /interface:ItemOrders.Financial,IFinances /hosting:complus  
 ```  
   
@@ -90,7 +90,7 @@ ComSvcConfig.exe /uninstall /application:OnlineStore /interface:ItemOrders.Finan
   
 ### <a name="code"></a>Code  
   
-```  
+```console  
 ComSvcConfig.exe /list /application:OnlineStore /hosting:complus  
 ```  
   

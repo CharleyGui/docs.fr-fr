@@ -2,20 +2,21 @@
 title: <namespaceTable>
 ms.date: 03/30/2017
 ms.assetid: 64801766-01b7-4c65-9ce6-70ad5af67689
-ms.openlocfilehash: 0316e983446644671ead2f8f843dc91b493b29c9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: aefe7beec7335d80341e670961800907c2bd0200
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933171"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855095"
 ---
 # <a name="namespacetable"></a>\<namespaceTable>
 
 Représente une section de configuration qui permet de définir un ensemble d’éléments contenant des mappages espace de noms-préfixe qui peuvent ensuite être utilisés dans des filtres XPath pour le routage.
 
-**\<system.serviceModel>**    
-&nbsp;&nbsp; **\<routing>**    
-&nbsp;&nbsp;&nbsp;&nbsp; **\<namespaceTable>**
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de routage**](routing.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<namespaceTable >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

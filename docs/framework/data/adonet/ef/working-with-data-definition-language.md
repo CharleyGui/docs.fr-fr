@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ec50083d-44f4-4093-9b23-5eacd601f96e
-ms.openlocfilehash: c2812e261278af7763bc6b2e1a493b97cb35e3ab
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 83d6fc1294f6aa37389db9e517b02866ef000b50
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911632"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854222"
 ---
 # <a name="working-with-data-definition-language"></a>Utilisation du langage de définition de données
-À partir de la .NET Framework version 4, [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] le prend en charge le langage de définition de données (DDL). Cela vous permet de créer ou de supprimer une instance de base de données selon la chaîne de connexion et les métadonnées du modèle de stockage (SSDL).  
+À partir du .NET Framework version 4, le Entity Framework prend en charge le langage de définition de données (DDL). Cela vous permet de créer ou de supprimer une instance de base de données selon la chaîne de connexion et les métadonnées du modèle de stockage (SSDL).  
   
  Les méthodes suivantes sur l'objet <xref:System.Data.Objects.ObjectContext> utilisent la chaîne de connexion et le contenu SSDL pour effectuer les opérations suivantes : créer ou supprimer la base de données, vérifier si la base de données existe et consulter le script DDL généré :  
   
@@ -40,7 +40,7 @@ ms.locfileid: "69911632"
   
 2. Ajoutez un modèle existant à votre application.  
   
-    1. Ajoutez un modèle vide nommé `SchoolModel`. Pour créer un modèle vide, reportez-vous à la [procédure: Créer un nouveau fichier](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716703(v=vs.100)) . edmx.  
+    1. Ajoutez un modèle vide nommé `SchoolModel`. Pour créer un modèle vide, reportez-vous à la [procédure : Créer un nouveau fichier](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716703(v=vs.100)) . edmx.  
   
      Le fichier SchoolModel.edmx est ajouté à votre projet.  
   

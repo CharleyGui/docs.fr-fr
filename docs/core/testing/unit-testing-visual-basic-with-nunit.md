@@ -4,12 +4,12 @@ description: Apprenez les concepts des tests unitaires dans .NET Core de manièr
 author: rprouse
 ms.date: 10/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: c48b2777b451598a0f3ccbb383d702d0069ff6ff
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 1682cf7cb351951d3bea9a64d963cd6a8995c083
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373818"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849680"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-nunit"></a>Effectuer des tests unitaires sur les bibliothèques .NET Core Visual Basic à l’aide de dotnet test et de NUnit
 
@@ -19,7 +19,7 @@ Ce didacticiel vous guide pas à pas dans la création d’un exemple de solutio
 
 ## <a name="prerequisites"></a>Prérequis
 
-- [Kit SDK .NET Core 2.1](https://www.microsoft.com/net/download) (ou version ultérieure).
+- [Kit SDK .NET Core 2.1](https://dotnet.microsoft.com/download) (ou version ultérieure).
 - Un éditeur de texte ou un éditeur de code de votre choix.
 
 ## <a name="creating-the-source-project"></a>Création du projet source

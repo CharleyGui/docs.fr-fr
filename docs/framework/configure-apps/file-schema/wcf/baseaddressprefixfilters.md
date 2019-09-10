@@ -2,21 +2,23 @@
 title: <baseAddressPrefixFilters>
 ms.date: 03/30/2017
 ms.assetid: 8cab2a9a-c51f-4283-bb60-2ad0c274fd46
-ms.openlocfilehash: 55ffcfb5c0c84d68033d082cbe451696bd3c9dc2
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: a22623c0856dd6d9b7c8c75e0b3feccc2d9350bd
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988360"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70850201"
 ---
 # <a name="baseaddressprefixfilters"></a>\<baseAddressPrefixFilters>
 Représente une collection d’éléments de configuration qui spécifient des filtres de passage, qui fournissent un mécanisme permettant de sélectionner les liaisons d’Internet Information Services (IIS) appropriées lors de l’hébergement de l’application Windows Communication Foundation (WCF) dans IIS.  
   
 > [!WARNING]
-> \<baseAddressPrefixFilters > ne reconnaît pas «localhost», utilisez le nom d’ordinateur complet à la place.  
+> \<baseAddressPrefixFilters > ne reconnaît pas « localhost »; Utilisez le nom d’ordinateur complet à la place.  
   
- \<system.ServiceModel>  
-\<ServiceHostingEnvironment>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceHostingEnvironment >** ](servicehostingenvironment.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<baseAddressPrefixFilters >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

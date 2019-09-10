@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 57ab5eb418b5f0a9175074c87837c7cac8936346
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e00197b72ca7fc8941475ae51159351d53da12d3
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799045"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855971"
 ---
 # <a name="blessiwbemservices-function"></a>BlessIWbemServices, fonction
 Indique si les informations d’identification de l’utilisateur autorisent l’accès à la classe [IWbemServices](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemservices) spécifiée.   
@@ -30,7 +30,7 @@ Indique si les informations d’identification de l’utilisateur autorisent l�
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp
 HRESULT BlessIWbemServices (
    [in] IWbemServices* pIWbemServices,
    [in] BSTR strUser, 

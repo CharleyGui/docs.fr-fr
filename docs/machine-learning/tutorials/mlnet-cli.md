@@ -1,19 +1,19 @@
 ---
-title: Analyser les sentiments à l’aide de l’interface CLI ML.NET
+title: Analyser les sentiments à l’aide de la CLI ML.NET
 description: Générer automatiquement un modèle ML et le code C# associé à partir d’un exemple de jeu de données
 author: cesardl
 ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: 7b740f2c93096c971da009e8abf6865ac1b8e966
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 6dbd69c8424227f85d8bf3cdcaf6cf9dbf7e1f4c
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70254159"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70856021"
 ---
-# <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analyser les sentiments à l’aide de l’interface CLI ML.NET
+# <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analyser les sentiments à l’aide de la CLI ML.NET
 
 Découvrez comment utiliser la CLI ML.NET pour générer automatiquement un modèle ML.NET et le code C# sous-jacent. Vous fournissez simplement votre jeu de données et la tâche de machine learning que vous souhaitez implémenter, et la CLI utilise le moteur AutoML pour créer le code source nécessaire à la génération et au déploiement du modèle, ainsi que le modèle binaire.
 
@@ -26,7 +26,7 @@ Dans ce tutoriel, vous allez effectuer les étapes suivantes :
 > - Explorer le code C# généré ayant servi à entraîner le modèle
 
 > [!NOTE]
-> Cette rubrique fait référence à l’outil CLI ML.NET, actuellement en préversion. Les ressources sont donc susceptibles d’être modifiées. Pour plus d’informations, consultez [l’introduction à ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
+> Cette rubrique fait référence à l’outil CLI ML.NET, actuellement en préversion. Les ressources sont donc susceptibles d’être modifiées. Pour plus d’informations, consultez la page [ml.net](https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet) .
 
 Intégrée à ML.NET, l’interface CLI ML.NET a pour objectif principal de « démocratiser » ML.NET auprès des développeurs .NET qui débutent avec ML.NET afin de leur éviter d’écrire le code de zéro quand ils commencent.
 

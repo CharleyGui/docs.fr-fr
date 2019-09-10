@@ -3,12 +3,12 @@ title: 'Procédure : Activer WIF pour une application de service web WCF'
 ms.date: 03/30/2017
 ms.assetid: bfc64b3d-64e9-4093-a6a4-72e933917af7
 author: BrucePerlerMS
-ms.openlocfilehash: b9fa1f815a962adc0b3c91177021788734b92bb6
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 809009642caf743f4f067591adfa63ccb154a577
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70041456"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851532"
 ---
 # <a name="how-to-enable-wif-for-a-wcf-web-service-application"></a>Procédure : Activer WIF pour une application de service web WCF
 ## <a name="applies-to"></a>S'applique à
@@ -19,7 +19,7 @@ ms.locfileid: "70041456"
 
 ## <a name="summary"></a>Récapitulatif
 
-Cette procédure fournit des informations détaillées pour activer WIF dans un service Web WCF. Elle fournit également des instructions décrivant comment tester l'application pour vérifier que le service Web répertorie correctement les revendications lorsque l'application est exécutée. Cette procédure ne fournit pas d'instructions détaillées pour créer un service d'émission de jeton de sécurité (STS, Security Token Service), et utilise à la place le développement STS fourni avec l'outil Identité et accès. Le développement STS n'exécute de véritable authentification et est destiné à des fins de test uniquement. Vous devez installer l'outil Identité et accès pour exécuter cette procédure. Il peut être téléchargé à partir de l’emplacement suivant: [Outil identité et accès](https://go.microsoft.com/fwlink/?LinkID=245849)
+Cette procédure fournit des informations détaillées pour activer WIF dans un service Web WCF. Elle fournit également des instructions décrivant comment tester l'application pour vérifier que le service Web répertorie correctement les revendications lorsque l'application est exécutée. Cette procédure ne fournit pas d'instructions détaillées pour créer un service d'émission de jeton de sécurité (STS, Security Token Service), et utilise à la place le développement STS fourni avec l'outil Identité et accès. Le développement STS n'exécute de véritable authentification et est destiné à des fins de test uniquement. Vous devez installer l'outil Identité et accès pour exécuter cette procédure. Il peut être téléchargé à partir de l’emplacement suivant : [Outil identité et accès](https://go.microsoft.com/fwlink/?LinkID=245849)
 
 ## <a name="contents"></a>Sommaire
 
@@ -241,11 +241,11 @@ Dans cette étape, vous allez tester votre application WCF activée pour WIF et 
 
 #### <a name="to-test-your-wif-enabled-wcf-application-for-claims"></a>Pour tester votre application WCF activée pour WIF pour les revendications
 
-1. Appuyez sur **F5** pour générer et exécuter l’application. Une fenêtre de console et le texte suivant doivent s’affichent: **Appuyez sur la touche entrée pour appeler le service, toute autre clé pour quitter l’application:**
+1. Appuyez sur **F5** pour générer et exécuter l’application. Une fenêtre de console et le texte suivant doivent s’affichent : **Appuyez sur la touche entrée pour appeler le service, toute autre clé pour quitter l’application :**
 
 2. Appuyez sur **Entrée** et les informations sur les revendications suivantes doivent apparaître dans la console :
 
-    ```
+    ```output
     Computed by Service1
     Input received from client: Hello World
     Client Name: Terry

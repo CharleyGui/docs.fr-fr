@@ -3,16 +3,16 @@ title: Modèles personnalisés pour dotnet new
 description: Découvrez les modèles personnalisés pour tout type de projet ou de fichier .NET.
 author: thraka
 ms.date: 06/14/2019
-ms.openlocfilehash: d513965a60416392fb8acd15c9f89c8af0ec7876
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
-ms.translationtype: HT
+ms.openlocfilehash: be49e28d3aa09c9b3a3cb169ca39ff817a062b8f
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660590"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849845"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>Modèles personnalisés pour dotnet new
 
-Le [SDK .NET Core](https://www.microsoft.com/net/download/core) est fourni avec de nombreux modèles déjà installés et prêts à l’emploi. La [commande `dotnet new`](dotnet-new.md) n’est pas simplement une façon d’utiliser un modèle, mais montre aussi comment installer et désinstaller des modèles. À compter de .NET Core 2.0, vous pouvez créer vos propres modèles personnalisés pour tout type de projet, tel qu’une application, un service, un outil ou une bibliothèque de classes. Vous pouvez même créer un modèle qui génère un ou plusieurs fichiers indépendants, comme un fichier de configuration.
+Le [SDK .NET Core](https://dotnet.microsoft.com/download) est fourni avec de nombreux modèles déjà installés et prêts à l’emploi. La [commande `dotnet new`](dotnet-new.md) n’est pas simplement une façon d’utiliser un modèle, mais montre aussi comment installer et désinstaller des modèles. À compter de .NET Core 2.0, vous pouvez créer vos propres modèles personnalisés pour tout type de projet, tel qu’une application, un service, un outil ou une bibliothèque de classes. Vous pouvez même créer un modèle qui génère un ou plusieurs fichiers indépendants, comme un fichier de configuration.
 
 Vous pouvez installer des modèles personnalisés à partir d’un package NuGet sur tout flux NuGet, en référençant un fichier *nupkg* NuGet directement ou en spécifiant un répertoire de système de fichiers qui contient le modèle. Le moteur de modèle offre des fonctionnalités qui vous permettent de remplacer des valeurs, d’inclure et d’exclure des fichiers, ainsi que d’exécuter des opérations de traitement personnalisées quand votre modèle est utilisé.
 
@@ -22,7 +22,7 @@ Pour suivre une procédure pas à pas et créer un modèle, consultez le didacti
 
 ### <a name="net-default-templates"></a>Modèles par défaut .NET
 
-Quand vous installez le [SDK .NET Core](https://www.microsoft.com/net/download/core), vous obtenez plus d’une dizaine de modèles intégrés pour la création de projets et de fichiers, notamment des applications de console, des bibliothèques de classes, des projets de test unitaire, des applications ASP.NET Core (dont les projets [Angular](https://angular.io/) et [React](https://facebook.github.io/react/)) et des fichiers de configuration. Pour lister les modèles intégrés, exécutez la commande `dotnet new` avec l’option `-l|--list` :
+Quand vous installez le [SDK .NET Core](https://dotnet.microsoft.com/download), vous obtenez plus d’une dizaine de modèles intégrés pour la création de projets et de fichiers, notamment des applications de console, des bibliothèques de classes, des projets de test unitaire, des applications ASP.NET Core (dont les projets [Angular](https://angular.io/) et [React](https://facebook.github.io/react/)) et des fichiers de configuration. Pour lister les modèles intégrés, exécutez la commande `dotnet new` avec l’option `-l|--list` :
 
 ```console
 dotnet new --list
@@ -63,7 +63,7 @@ Le fichier *template.json* est placé dans un dossier *.template.config* dans le
 
 Le schéma complet pour le fichier *template.json* se trouve dans le [magasin de schémas JSON](http://json.schemastore.org/template). Pour plus d’informations sur le fichier *template.json*, consultez le [Wiki de création de modèles dotnet](https://github.com/dotnet/templating/wiki).
 
-#### <a name="example"></a>Exemples
+#### <a name="example"></a>Exemple
 
 Par exemple, voici un dossier de modèle qui contient deux fichiers de contenu : *console.cs* et *readme.txt*. Notez que la présence du dossier requis nommé *.template.config*, qui contient le fichier *template.json*.
 

@@ -2,19 +2,20 @@
 title: <endpoint> de <client>
 ms.date: 03/30/2017
 ms.assetid: de6238ae-bbf8-48e9-a1b5-e24c0bea8afa
-ms.openlocfilehash: 2bf59972ff2f75995e94a3c1934e88944d65fcc7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f1ffbc1e8efac70523d7f631c8cf9ba9a1622bfc
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69919096"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855316"
 ---
 # <a name="endpoint-of-client"></a>\<> de point \<de terminaison du > client
 Spécifie les propriétés du contrat, de la liaison et de l’adresse du point de terminaison du canal employées par les clients pour se connecter aux points de terminaison de service sur le serveur.  
   
- \<system.ServiceModel>  
-\<client>  
-\<endpoint>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> client**](client.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<point de terminaison >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -59,7 +60,7 @@ Spécifie les propriétés du contrat, de la liaison et de l’adresse du point 
 |-------------|-----------------|  
 |[\<client>](client.md)|Section de configuration qui définit une liste des points de terminaison auxquels un client peut se connecter.|  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Il s'agit d'un exemple de configuration de point de terminaison de canal.  
   
 ```xml  

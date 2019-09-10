@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 44cd98ba-95e5-40a1-874d-e8e163612c51
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ad580ecace07d3d6fdf206ff660dc4bac4bceb09
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f3ea64668272b6625a9e43c9610496a7e7392129
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614292"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854034"
 ---
 # <a name="releasehandlefailed-mda"></a>releaseHandleFailed (MDA)
 L'Assistant Débogage managé (MDA) `releaseHandleFailed` est activé pour avertir les développeurs que la méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> d'une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> ou de <xref:System.Runtime.InteropServices.CriticalHandle> retourne la valeur `false`.  
@@ -34,7 +34,7 @@ L'Assistant Débogage managé (MDA) `releaseHandleFailed` est activé pour avert
   
 - Un échec survenant pendant l’exécution de la méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> empêche la libération de la ressource, et constitue un bogue dans l’implémentation de la méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> elle-même. C'est au programmeur qu'il revient de s'assurer que le contrat est respecté, même si ce code appelle du code créé par un autre utilisateur pour exécuter sa fonction.  
   
-## <a name="resolution"></a>Résolution  
+## <a name="resolution"></a>Résolution :  
  Passez en revue le code utilisant le type <xref:System.Runtime.InteropServices.SafeHandle> (ou <xref:System.Runtime.InteropServices.CriticalHandle>) spécifique qui a déclenché la notification de l’Assistant Débogage managé et recherchez les endroits où la valeur du handle brut est extraite de <xref:System.Runtime.InteropServices.SafeHandle> et copiée ailleurs. C'est la cause de la plupart des échecs dans les implémentations de <xref:System.Runtime.InteropServices.SafeHandle> ou de <xref:System.Runtime.InteropServices.CriticalHandle>, car le runtime n'effectue plus de suivi de l'utilisation de la valeur du handle brut. Si la copie du handle brut est fermée par la suite, cela peut provoquer l'échec d'un appel ultérieur à <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A>, car c'est le même handle, désormais non valide, qui fait l'objet d'une tentative de fermeture.  
   
  Une duplication de handle incorrecte peut se produire dans plusieurs cas :  
@@ -53,9 +53,9 @@ L'Assistant Débogage managé (MDA) `releaseHandleFailed` est activé pour avert
  Cet Assistant Débogage managé n'a aucun effet sur le CLR.  
   
 ## <a name="output"></a>Sortie  
- Message indiquant qu’un <xref:System.Runtime.InteropServices.SafeHandle> ou un <xref:System.Runtime.InteropServices.CriticalHandle> n’a pas réussi à libérer correctement le handle. Exemple :  
+ Message indiquant qu’un <xref:System.Runtime.InteropServices.SafeHandle> ou un <xref:System.Runtime.InteropServices.CriticalHandle> n’a pas réussi à libérer correctement le handle. Par exemple :  
   
-```  
+```output
 "A SafeHandle or CriticalHandle of type 'MyBrokenSafeHandle'   
 failed to properly release the handle with value 0x0000BEEF. This   
 usually indicates that the handle was released incorrectly via   
@@ -73,7 +73,7 @@ and closing it directly or building another SafeHandle around it."
 </mdaConfig>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'exemple de code suivant peut activer l'Assistant Débogage managé `releaseHandleFailed`.  
   
 ```csharp

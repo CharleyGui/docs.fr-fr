@@ -2,16 +2,16 @@
 title: Scripts dotnet-install
 description: Découvrez les scripts dotnet-install pour installer les outils CLI .NET Core et le runtime partagé.
 ms.date: 01/16/2019
-ms.openlocfilehash: ed1a3341e678b405ae4aca35e3b49ada89eb069a
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 867be93b5a4c66258df438ce718dabbd4ef2891c
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253898"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849576"
 ---
 # <a name="dotnet-install-scripts-reference"></a>Documentation sur les scripts dotnet-install
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet-install.ps1` | `dotnet-install.sh` : script utilisé pour installer les outils .NET Core CLI et le runtime partagé.
 
@@ -55,7 +55,7 @@ Vous pouvez installer une version spécifique à l’aide de l’argument `--ver
   - Version en deux parties au format X.Y représentant une version spécifique (par exemple, `2.0` ou `1.0`).
   - Nom de la branche. Par exemple, `release/2.0.0`, `release/2.0.0-preview2` ou `master` (pour les publications de nuit).
 
-  La valeur par défaut est `LTS`. Pour plus d’informations sur les canaux de prise en charge de .NET, consultez la page [Stratégie de prise en charge .NET](https://www.microsoft.com/net/platform/support-policy#dotnet-core).
+  La valeur par défaut est `LTS`. Pour plus d’informations sur les canaux de prise en charge de .NET, consultez la page [Stratégie de prise en charge .NET](https://dotnet.microsoft.com/platform/support/policy/dotnet-core).
 
 - **`-Version <VERSION>`**
 

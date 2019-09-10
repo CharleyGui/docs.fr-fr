@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: 4fe17546-d56e-4344-a930-6d8e4a545914
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5e552f7014c21e2ead61b83ca9909655def6333b
-ms.sourcegitcommit: a36cfc9dbbfc04bd88971f96e8a3f8e283c15d42
-ms.translationtype: HT
+ms.openlocfilehash: 7ab80cfbd0ae2130f465216ca77812bda0002c24
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54221074"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854002"
 ---
 # <a name="how-to-debug-clr-activation-issues"></a>Guide pratique pour déboguer les problèmes d’activation du CLR
 
@@ -35,19 +35,19 @@ La journalisation de l’activation reste active jusqu’à ce que vous supprimi
 
 - Affectez à la variable d’environnement `COMPLUS_CLRLoadLogDir` une chaîne qui représente le chemin complet d’un répertoire existant où vous souhaitez stocker les journaux d’activation du CLR.
 
-     La façon dont vous définissez la variable d’environnement détermine sa portée :
+    La façon dont vous définissez la variable d’environnement détermine sa portée :
 
-    - Si vous la définissez au niveau du système, la journalisation de l’activation est activée pour toutes les applications .NET Framework sur cet ordinateur jusqu’à ce que la variable d’environnement soit supprimée.
+  - Si vous la définissez au niveau du système, la journalisation de l’activation est activée pour toutes les applications .NET Framework sur cet ordinateur jusqu’à ce que la variable d’environnement soit supprimée.
 
-    - Si vous la définissez au niveau de l’utilisateur, la journalisation de l’activation est activée uniquement pour le compte d’utilisateur actuel. La journalisation continue jusqu’à ce que la variable d’environnement soit supprimée.
+  - Si vous la définissez au niveau de l’utilisateur, la journalisation de l’activation est activée uniquement pour le compte d’utilisateur actuel. La journalisation continue jusqu’à ce que la variable d’environnement soit supprimée.
 
-    - Si vous la définissez à l’intérieur du processus avant le chargement du CLR, la journalisation de l’activation est activée jusqu’à ce que le processus se termine.
+  - Si vous la définissez à l’intérieur du processus avant le chargement du CLR, la journalisation de l’activation est activée jusqu’à ce que le processus se termine.
 
-    - Si vous la définissez à une invite de commandes avant d’exécuter une application, la journalisation de l’activation est activée pour toute application exécutée à partir de cette invite de commandes.
+  - Si vous la définissez à une invite de commandes avant d’exécuter une application, la journalisation de l’activation est activée pour toute application exécutée à partir de cette invite de commandes.
 
-     Par exemple, pour stocker les journaux d’activation dans le répertoire c:\clrloadlogs avec une portée au niveau du processus, ouvrez une fenêtre d’invite de commandes et tapez ce qui suit avant d’exécuter l’application :
+    Par exemple, pour stocker les journaux d’activation dans le répertoire c:\clrloadlogs avec une portée au niveau du processus, ouvrez une fenêtre d’invite de commandes et tapez ce qui suit avant d’exécuter l’application :
 
-    ```
+    ```console
     set COMPLUS_CLRLoadLogDir=c:\clrloadlogs
     ```
 
@@ -65,56 +65,56 @@ Le journal reflète l’ordre dans lequel les API d’hébergement du CLR ont é
 
 Dans l’exemple de journal d’activation suivant, les informations les plus utiles sont mises en surbrillance et décrites après le journal.
 
-```
-532,205950.367,CLR Loading log for C:\Tests\myapp.exe 
-532,205950.367,Log started at 4:26:12 PM on 10/6/2011 
-532,205950.367,----------------------------------- 
-532,205950.382,FunctionCall: _CorExeMain 
-532,205950.382,FunctionCall: ClrCreateInstance, Clsid: {2EBCD49A-1B47-4A61-B13A-4A03701E594B}, Iid: {E2190695-77B2-492E-8E14-C4B3A7FDD593} 
-532,205950.382,MethodCall: ICLRMetaHostPolicy::GetRequestedRuntime. Version: (null), Metahost Policy Flags: 0x168, Binary: (null), Iid: {BD39D1D2-BA2F-486A-89B0-B4B0CB466891} 
-532,205950.382,Installed Runtime: v4.0.30319. VERSION_ARCHITECTURE: 0 
-532,205950.382,Input values for ComputeVersionString follow this line 
-532,205950.382,----------------------------------- 
-532,205950.382,Default Application Name: C:\Tests\myapp.exe 
-532,205950.382,IsLegacyBind is: 0 
-532,205950.382,IsCapped is 0 
-532,205950.382,SkuCheckFlags are 0 
-532,205950.382,ShouldEmulateExeLaunch is 0 
-532,205950.382,LegacyBindRequired is 0 
-532,205950.382,----------------------------------- 
-532,205950.382,Parsing config file: C:\Tests\myapp.exe 
-532,205950.382,UseLegacyV2RuntimeActivationPolicy is set to 0 
-532,205950.382,LegacyFunctionCall: GetFileVersion. Filename: C:\Tests\myapp.exe 
-532,205950.382,LegacyFunctionCall: GetFileVersion. Filename: C:\Tests\myapp.exe 
-532,205950.382,C:\Tests\myapp.exe was built with version: v2.0.50727 
-532,205950.382,ERROR: Version v2.0.50727 is not present on the machine. 
-532,205950.398,SEM_FAILCRITICALERRORS is set to 0 
-532,205950.398,Launching feature-on-demand installation. CmdLine: C:\Windows\system32\fondue.exe /enable-feature:NetFx3 
-532,205950.398,FunctionCall: RealDllMain. Reason: 0 
+```output
+532,205950.367,CLR Loading log for C:\Tests\myapp.exe
+532,205950.367,Log started at 4:26:12 PM on 10/6/2011
+532,205950.367,-----------------------------------
+532,205950.382,FunctionCall: _CorExeMain
+532,205950.382,FunctionCall: ClrCreateInstance, Clsid: {2EBCD49A-1B47-4A61-B13A-4A03701E594B}, Iid: {E2190695-77B2-492E-8E14-C4B3A7FDD593}
+532,205950.382,MethodCall: ICLRMetaHostPolicy::GetRequestedRuntime. Version: (null), Metahost Policy Flags: 0x168, Binary: (null), Iid: {BD39D1D2-BA2F-486A-89B0-B4B0CB466891}
+532,205950.382,Installed Runtime: v4.0.30319. VERSION_ARCHITECTURE: 0
+532,205950.382,Input values for ComputeVersionString follow this line
+532,205950.382,-----------------------------------
+532,205950.382,Default Application Name: C:\Tests\myapp.exe
+532,205950.382,IsLegacyBind is: 0
+532,205950.382,IsCapped is 0
+532,205950.382,SkuCheckFlags are 0
+532,205950.382,ShouldEmulateExeLaunch is 0
+532,205950.382,LegacyBindRequired is 0
+532,205950.382,-----------------------------------
+532,205950.382,Parsing config file: C:\Tests\myapp.exe
+532,205950.382,UseLegacyV2RuntimeActivationPolicy is set to 0
+532,205950.382,LegacyFunctionCall: GetFileVersion. Filename: C:\Tests\myapp.exe
+532,205950.382,LegacyFunctionCall: GetFileVersion. Filename: C:\Tests\myapp.exe
+532,205950.382,C:\Tests\myapp.exe was built with version: v2.0.50727
+532,205950.382,ERROR: Version v2.0.50727 is not present on the machine.
+532,205950.398,SEM_FAILCRITICALERRORS is set to 0
+532,205950.398,Launching feature-on-demand installation. CmdLine: C:\Windows\system32\fondue.exe /enable-feature:NetFx3
+532,205950.398,FunctionCall: RealDllMain. Reason: 0
 532,205950.398,FunctionCall: OnShimDllMainCalled. Reason: 0
 ```
 
 - **CLR Loading log** fournit le chemin du fichier exécutable qui a démarré le processus ayant chargé du code managé. Notez qu’il peut s’agir d’un hôte natif.
 
-    ```
+    ```output
     532,205950.367,CLR Loading log for C:\Tests\myapp.exe
     ```
 
 - **Installed Runtime** est l’ensemble des versions du CLR installées sur l’ordinateur qui sont des candidats pour la demande d’activation.
 
-    ```
+    ```output
     532,205950.382,Installed Runtime: v4.0.30319. VERSION_ARCHITECTURE: 0
     ```
 
 - **built with version** est la version du CLR qui a été utilisée pour générer le fichier binaire fourni à une méthode comme [ICLRMetaHostPolicy::GetRequestedRuntime](../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md).
 
-    ```
+    ```output
     532,205950.382,C:\Tests\myapp.exe was built with version: v2.0.50727
     ```
 
 - **feature-on-demand installation** fait référence à l’activation du .NET Framework 3.5 sur Windows 8. Pour plus d’informations sur ce scénario, consultez [Erreurs d’initialisation du .NET Framework : gestion de l’expérience utilisateur](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md).
 
-    ```
+    ```output
     532,205950.398,Launching feature-on-demand installation. CmdLine: C:\Windows\system32\fondue.exe /enable-feature:NetFx3
     ```
 

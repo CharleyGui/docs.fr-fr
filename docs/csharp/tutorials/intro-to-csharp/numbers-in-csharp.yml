@@ -11,12 +11,12 @@ metadata:
   nextTutorialTitle: Branches et boucles en C#
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 7122bda62465482340ebdd2b1dc37577de9a0e69
-  ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
-  ms.translationtype: HT
+  ms.openlocfilehash: af06d938f86841620784909b16e72d000452fc2a
+  ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+  ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 07/09/2019
-  ms.locfileid: "67661019"
+  ms.lasthandoff: 09/10/2019
+  ms.locfileid: "70850672"
 items:
 - durationInMinutes: 1
   content: >
@@ -412,7 +412,7 @@ items:
 
     > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - content: >
-    Vous avez terminé le tutoriel interactif « Nombres en C# ». Vous pouvez cliquer sur le lien **Branches et boucles** ci-dessous pour commencer le tutoriel interactif suivant, ou bien consulter le [site .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) pour télécharger le kit SDK .NET Core, créer un projet sur votre ordinateur et continuer à coder. L’étape « Continuer à apprendre » vous ramène à ces tutoriels.
+    Vous avez terminé le tutoriel interactif « Nombres en C# ». Vous pouvez cliquer sur le lien **Branches et boucles** ci-dessous pour commencer le tutoriel interactif suivant, ou bien consulter le [site .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .NET Core, créer un projet sur votre ordinateur et continuer à coder. La section « étapes suivantes » vous ramène à ces didacticiels.
 
 
     Pour en savoir plus sur les nombres en C#, consultez les rubriques suivantes :

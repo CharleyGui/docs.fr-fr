@@ -2,32 +2,32 @@
 title: Spécification de manifeste du fournisseur
 ms.date: 03/30/2017
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
-ms.openlocfilehash: 6b924f484e6635760d08d0eba9fb9436bdd8bc88
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: cc58bbc82f3930f087b5da0c64afb4f9f03e905b
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248586"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854506"
 ---
 # <a name="provider-manifest-specification"></a>Spécification de manifeste du fournisseur
 Cette section explique comment un fournisseur de banques de données peut prendre en charge les types et les fonctions dans la banque de données.  
   
  Les Services d'entités fonctionnent indépendamment d'un fournisseur de banques de données spécifique, mais permettent encore à un fournisseur de données de définir explicitement la manière dont les modèles, les mappages et les requêtes interagissent avec une banque de données sous-jacente. Sans couche d'abstraction, les Services d'entités seraient uniquement destinés à une banque de données ou un fournisseur de données spécifique.  
   
- Les types pris en charge par le fournisseur sont pris en charge directement ou indirectement par la base de données sous-jacente. Ces types ne sont pas nécessairement des types de banque exacts, mais les types que le fournisseur utilise pour prendre en charge [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Les types de fournisseurs/banques sont décrits en termes EDM (Entity Data Model).  
+ Les types pris en charge par le fournisseur sont pris en charge directement ou indirectement par la base de données sous-jacente. Ces types ne sont pas nécessairement les types de magasins exacts, mais les types utilisés par le fournisseur pour prendre en charge l’Entity Framework. Les types de fournisseurs/banques sont décrits en termes EDM (Entity Data Model).  
   
  Les types de paramètres et les types de retour pour les fonctions prises en charge par la banque de données sont spécifiés en termes EDM.  
   
 ## <a name="requirements"></a>Configuration requise  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] et la banque de données doivent être en mesure de se passer des données entre eux dans des types connus sans aucune perte ni troncation de données.  
+ Le Entity Framework et le magasin de données doivent être en mesure de transmettre des données dans les types connus sans perte de données ni troncation.  
   
  Le manifeste du fournisseur doit pouvoir être chargé par les outils au moment du design sans devoir ouvrir une connexion à la banque de données.  
   
- Respecte [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] la casse, mais le magasin de données sous-jacent n’est peut-être pas. Lorsque les artefacts EDM (identificateurs et noms de type, par exemple) sont définis et utilisés dans le manifeste, ils doivent utiliser le respect de la casse d’[!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Si des éléments de la banque de données respectueux de la casse apparaissent dans le manifeste du fournisseur, cette casse doit être conservée dans le manifeste du fournisseur.  
+ La Entity Framework est sensible à la casse, mais le magasin de données sous-jacent peut ne pas l’être. Lorsque les artefacts EDM (identificateurs et noms de type, par exemple) sont définis et utilisés dans le manifeste, ils doivent utiliser le respect de la casse Entity Framework. Si des éléments de la banque de données respectueux de la casse apparaissent dans le manifeste du fournisseur, cette casse doit être conservée dans le manifeste du fournisseur.  
   
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] requiert un manifeste du fournisseur pour tous les fournisseurs de données. Si vous essayez d’utiliser un fournisseur qui n’a pas de manifeste de fournisseur avec [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]le, vous obtiendrez une erreur.  
+ L’Entity Framework nécessite un manifeste du fournisseur pour tous les fournisseurs de données. Si vous essayez d’utiliser un fournisseur qui n’a pas de manifeste de fournisseur avec le Entity Framework, vous obtiendrez une erreur.  
   
- Le tableau suivant décrit les types d'exceptions levés par [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] si des exceptions sont déclenchées par l'interaction d'un fournisseur :  
+ Le tableau suivant décrit les types d’exceptions que le Entity Framework lèvera lorsque des exceptions surviennent lors de l’interaction du fournisseur :  
   
 |Problème|Exception|  
 |-----------|---------------|  
@@ -39,7 +39,7 @@ Cette section explique comment un fournisseur de banques de données peut prendr
  Un fournisseur doit prendre en charge les scénarios suivants :  
   
 ### <a name="writing-a-provider-with-symmetric-type-mapping"></a>Écriture d'un fournisseur avec mappage de type symétrique  
- Vous pouvez écrire un fournisseur pour le [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] où chaque type de magasin est mappé à un type EDM unique, indépendamment du sens du mappage. Pour un type de fournisseur ayant un mappage très simple correspondant à un type EDM, vous pouvez utiliser une solution symétrique parce que le système de type est simple ou correspond à des types EDM.  
+ Vous pouvez écrire un fournisseur pour le Entity Framework où chaque type de magasin est mappé à un type EDM unique, indépendamment du sens du mappage. Pour un type de fournisseur ayant un mappage très simple correspondant à un type EDM, vous pouvez utiliser une solution symétrique parce que le système de type est simple ou correspond à des types EDM.  
   
  Vous pouvez utiliser la simplicité de leur domaine et produire un manifeste du fournisseur déclaratif statique.  
   
@@ -50,7 +50,7 @@ Cette section explique comment un fournisseur de banques de données peut prendr
 - Liste de fonctions prises en charge par le fournisseur dans lesquelles les types de paramètres et les types de retour sont exprimés en termes EDM.  
   
 ### <a name="writing-a-provider-with-asymmetric-type-mapping"></a>Écriture d'un fournisseur avec mappage de type asymétrique  
- Lors de l'écriture d'un fournisseur de banques de données pour [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], le mappage des types EDM vers les types fournisseur pour certains types peut être différent du mappage des types fournisseur vers les types EDM. Par exemple, unbounded EDM PrimitiveTypeKind.String peut être mappé à nvarchar (4000) sur le fournisseur, alors que nvarchar (4000) est mappé à EDM PrimitiveTypeKind.String (MaxLength=4000).  
+ Lors de l’écriture d’un fournisseur de magasin de données pour le Entity Framework, le mappage de type EDM-à-fournisseur pour certains types peut être différent du mappage de type fournisseur-à-EDM. Par exemple, unbounded EDM PrimitiveTypeKind.String peut être mappé à nvarchar (4000) sur le fournisseur, alors que nvarchar (4000) est mappé à EDM PrimitiveTypeKind.String (MaxLength=4000).  
   
  Vous écrivez un fichier XML qui a deux sections :  
   

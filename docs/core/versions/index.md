@@ -4,12 +4,12 @@ description: Cet article vous explique comment les .NET Core versions du SDK et 
 author: bleroy
 ms.date: 07/26/2018
 ms.custom: seodec18
-ms.openlocfilehash: dcf74f6fa892446555541f13a33130a93787cf70
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 4674cd8750f5a5e628945c1712ac579d88385b94
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104958"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849282"
 ---
 # <a name="overview-of-how-net-core-is-versioned"></a>Vue d’ensemble de la gestion des versions .NET Core
 
@@ -108,6 +108,6 @@ Chaque version de .NET Core implémente une version de .NET Standard. L’implé
 
 - [Frameworks cibles](../../standard/frameworks.md)
 - [Empaquetage de la distribution de .NET Core](../build/distribution-packaging.md)
-- [Fiche d’information sur le cycle de vie de support .NET Core](https://www.microsoft.com/net/core/support)
+- [Fiche d’information sur le cycle de vie de support .NET Core](https://dotnet.microsoft.com/platform/support/policy)
 - [.NET Core 2+ Version Binding](https://github.com/dotnet/designs/issues/3)
 - [Images Docker pour .NET Core](https://hub.docker.com/_/microsoft-dotnet-core/)

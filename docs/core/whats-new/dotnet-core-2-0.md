@@ -4,12 +4,12 @@ description: Découvrez les nouvelles fonctionnalités de .NET Core.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 08/13/2017
-ms.openlocfilehash: f48b8e88a716df0f07a5626bdc8f66000cfaeed8
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: c208f565bebedc06e244de1f6554129f21c77b8c
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68626357"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849936"
 ---
 # <a name="whats-new-in-net-core-20"></a>Nouveautés de .NET Core 2.0
 
@@ -154,7 +154,7 @@ Vous pouvez maintenant installer le Kit SDK .NET Core indépendamment de Visual 
 
 ### <a name="net-application-architecture"></a>Architecture de l’application .NET
 
-[L’architecture de l’application .NET](https://www.microsoft.com/net/learn/architecture) vous donne accès à un ensemble de livres électroniques qui fournissent des instructions, des bonnes pratiques et des exemples d’applications lors de l’utilisation de .NET pour générer :
+[L’architecture de l’application .NET](https://dotnet.microsoft.com/learn/dotnet/architecture-guides) vous donne accès à un ensemble de livres électroniques qui fournissent des instructions, des bonnes pratiques et des exemples d’applications lors de l’utilisation de .NET pour générer :
 
 - [Containers de microservices et Docker](../../architecture/microservices/index.md)
 - [Applications web avec ASP.NET](../../architecture/modern-web-apps-azure/index.md)

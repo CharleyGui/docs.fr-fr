@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: acd71129-5ff0-4b4e-b266-c72cc0c53601
-ms.openlocfilehash: 7be3491af48ad29cd7892dd31a077aa7ac44ca63
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 4fb7d574fdb9bd6bd9465cffaf0fda5069b2c0ee
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250500"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854387"
 ---
 # <a name="known-issues-and-considerations-in-linq-to-entities"></a>Problèmes connus et éléments à prendre en compte dans LINQ to Entities
 Cette section fournit des informations sur les problèmes connus liés aux requêtes LINQ to Entities.  
@@ -42,7 +42,7 @@ Cette section fournit des informations sur les problèmes connus liés aux requ�
   
 <a name="UnsignedIntsUnsupported"></a>   
 ## <a name="unsigned-integers-not-supported"></a>Entiers non signés non pris en charge  
- La spécification d’un type d’entier non signé dans une requête LINQ to Entities n’est pas [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] prise en charge, car ne prend pas en charge les entiers non signés. Si vous spécifiez un entier non signé, une <xref:System.ArgumentException> exception est levée pendant la traduction de l’expression de requête, comme illustré dans l’exemple suivant. Dans cet exemple, la requête vise à extraire une commande dont le numéro est 48000.  
+ La spécification d’un type d’entier non signé dans une requête LINQ to Entities n’est pas prise en charge, car le Entity Framework ne prend pas en charge les entiers non signés. Si vous spécifiez un entier non signé, une <xref:System.ArgumentException> exception est levée pendant la traduction de l’expression de requête, comme illustré dans l’exemple suivant. Dans cet exemple, la requête vise à extraire une commande dont le numéro est 48000.  
   
  [!code-csharp[DP L2E Conceptual Examples#UIntAsQueryParam](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Conceptual Examples/CS/Program.cs#uintasqueryparam)]
  [!code-vb[DP L2E Conceptual Examples#UIntAsQueryParam](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Conceptual Examples/VB/Module1.vb#uintasqueryparam)]  

@@ -2,31 +2,33 @@
 title: <udpDiscoveryEndpoint>
 ms.date: 03/30/2017
 ms.assetid: 1f485329-2771-43bc-88de-df8f2faa3bb7
-ms.openlocfilehash: e6e567e8a657b4c1683ae4abfb14f96a0f272e4a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1729255c68c75f824b8cd8c87f106a4a9b3550f6
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69934592"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854896"
 ---
 # <a name="udpdiscoveryendpoint"></a>\<udpDiscoveryEndpoint>
 Cet élément de configuration définit un point de terminaison standard préconfiguré pour les opérations de découverte sur une liaison de multidiffusion UDP. Ce point de terminaison a un contrat fixe et prend en charge deux versions de protocole WS-Discovery. De plus, il a une liaison UDP fixe et une valeur d’adresse par défaut indiquée dans les spécifications WS-Discovery (WS-Discovery Avril 2005 ou WS-Discovery V1.1).  
   
- \<system.ServiceModel>  
-\<standardEndpoints>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<standardEndpoints >** ](standardendpoints.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<udpDiscoveryEndpoint >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
 <system.serviceModel>
   <standardEndpoints>
-    <discoveryEndpoint>
+    <udpDiscoveryEndpoint>
       <standardEndpoint discoveryMode="Adhoc/Managed"
                         discoveryVersion="WSDiscovery11/WSDiscoveryApril2005"
                         maxResponseDelay="Timespan"
                         multicastAddress="Uri"
                         name="String" />
-    </discoveryEndpoint>
+    </udpDiscoveryEndpoint>
   </standardEndpoints>
 </system.serviceModel>
 ```  
@@ -38,7 +40,7 @@ Cet élément de configuration définit un point de terminaison standard précon
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|discoveryMode|Chaîne qui spécifie le mode de protocole de découverte. Les valeurs valides sont «adhoc» et «Managed». En mode managé, le protocole repose sur un proxy de découverte, qui fait office de référentiel des services détectables. Le mode ad hoc nécessite que le protocole utilise le mécanisme de multidiffusion UDP pour rechercher les services disponibles. Cette valeur est de type <xref:System.ServiceModel.Discovery.ServiceDiscoveryMode>.|  
+|discoveryMode|Chaîne qui spécifie le mode de protocole de découverte. Les valeurs valides sont « adhoc » et « Managed ». En mode managé, le protocole repose sur un proxy de découverte, qui fait office de référentiel des services détectables. Le mode ad hoc nécessite que le protocole utilise le mécanisme de multidiffusion UDP pour rechercher les services disponibles. Cette valeur est de type <xref:System.ServiceModel.Discovery.ServiceDiscoveryMode>.|  
 |discoveryVersion|Chaîne qui spécifie l'une des deux versions du protocole WS-Discovery. Les valeurs valides sont WSDiscovery11 et WSDiscoveryApril2005. Cette valeur est de type <xref:System.ServiceModel.Discovery.DiscoveryVersion>.|  
 |maxResponseDelay|Valeur Timespan qui indique la valeur maximale du délai d'attente du protocole de découverte avant l'envoi de certains messages, tels que ceux de type Probe Match ou Resolve Match.<br /><br /> Si tous les messages ProbeMatches sont envoyés en même temps, une tempête de réseau peut en résulter. Pour empêcher cet effet, les messages ProbeMatches sont envoyés avec un délai aléatoire entre chaque message ProbeMatch. Le délai aléatoire est compris entre 0 et la valeur définie par cet attribut. Si l'attribut a la valeur 0, les messages ProbeMatches sont envoyés dans une boucle serrée sans délai. Sinon, les messages ProbeMatches sont envoyés avec un délai aléatoire de sorte que la durée totale nécessaire à l'envoi de tous les messages ProbeMatches ne dépasse pas le maxResponseDelay. Cette valeur est uniquement pertinente pour les services, elle n'est pas utilisée par les clients.|  
 |multicastAddress|URI qui spécifie une adresse de multidiffusion à utiliser pour l'envoi et la réception des messages de découverte. La valeur par défaut est représentée par l'adresse de multidiffusion conforme à la spécification du protocole.|  

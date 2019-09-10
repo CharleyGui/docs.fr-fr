@@ -2,19 +2,20 @@
 title: <messageLogging>
 ms.date: 03/30/2017
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
-ms.openlocfilehash: f54028489ec5aa34ae38115d7a582b01b9da92f9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 9291c38af28c18d20e23e34e8316b4a9fe523123
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69931412"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855125"
 ---
 # <a name="messagelogging"></a>\<messageLogging>
 Cet élément définit les paramètres pour les fonctions d'enregistrement des messages de Windows Communication Foundation (WCF).  
   
- \<system.ServiceModel>  
-\<> de diagnostic  
-\<messageLogging>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> de diagnostic**](diagnostics.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<messageLogging >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -106,7 +107,7 @@ Cet élément définit les paramètres pour les fonctions d'enregistrement des m
 </system.diagnostics>
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
   
 ```xml  
 <messageLogging logEntireMessage="true"

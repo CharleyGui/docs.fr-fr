@@ -11,12 +11,12 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.custom: mvc
-  ms.openlocfilehash: ef52031f75bd2004bcb5927524a9c82ac8fbf36f
-  ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-  ms.translationtype: HT
+  ms.openlocfilehash: 36254062835b9ab70ba470f6286b7515003dec11
+  ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+  ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/05/2019
-  ms.locfileid: "57370317"
+  ms.lasthandoff: 09/10/2019
+  ms.locfileid: "70850799"
 items:
 - durationInMinutes: 1
   content: >
@@ -296,7 +296,7 @@ items:
 
     > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - content: >
-    Vous avez terminé la présentation du tutoriel C# « Hello C# ». Vous pouvez cliquer sur le lien **Nombres dans C#** ci-dessous pour démarrer le tutoriel interactif suivant, ou vous pouvez visiter le [site .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial) pour télécharger le SDK .NET Core, créer un projet sur votre machine et continuer à coder. L’étape « Continuer à apprendre » vous ramène à ces tutoriels.
+    Vous avez terminé la présentation du tutoriel C# « Hello C# ». Vous pouvez cliquer sur le lien **Nombres dans C#** ci-dessous pour démarrer le tutoriel interactif suivant, ou vous pouvez visiter le [site .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le SDK .NET Core, créer un projet sur votre machine et continuer à coder. La section « étapes suivantes » vous ramène à ces didacticiels.
 
 
     Pour plus d’informations sur le type `string` :

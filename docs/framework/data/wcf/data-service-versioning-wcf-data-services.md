@@ -6,12 +6,12 @@ helpviewer_keywords:
 - versioning [WCF Data Services]
 - WCF Data Services, versioning
 ms.assetid: e3e899cc-7f25-4f67-958f-063f01f79766
-ms.openlocfilehash: 03ac1e0a5fec2d7def91466a9dc31853e2007f57
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f2007e5c2fa638d64c5c1e0d6879e12c7bcc901d
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791068"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854102"
 ---
 # <a name="data-service-versioning-wcf-data-services"></a>Contrôle de version d'un service de données (WCF Data Services)
 Vous [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] permet de créer des services de données afin que les clients puissent accéder aux données en tant que ressources à l’aide d’URI basés sur un modèle de données. OData prend également en charge la définition d’opérations de service. Après leur déploiement initial, et potentiellement plusieurs fois pendant leur durée de vie, il peut s’avérer nécessaire de modifier ces services de données pour diverses raisons, telles que l’évolution des besoins de l’entreprise, des exigences informatiques, ou pour résoudre d’autres problèmes. Lorsque vous apportez des modifications à un service de données existant, vous devez choisir de définir une nouvelle version de votre service de données et comment mieux réduire l'impact sur les applications clientes existantes. Cette rubrique fournit des conseils sur le moment et la façon de créer une nouvelle version d'un service de données. Elle explique également comment WCF Data Services gère un échange entre les clients et les services de données qui prennent en charge différentes versions du protocole OData.
@@ -69,7 +69,7 @@ Vous [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] permet de c
 |Version 3|-Vous pouvez télécharger et installer une version préliminaire qui prend en charge OData version 3 à partir du [Centre de téléchargement Microsoft](https://go.microsoft.com/fwlink/?LinkId=203885).|
 
 ### <a name="metadata-versions"></a>Versions de métadonnées
- Par défaut, WCF Data Services utilise la version 1,1 de CSDL pour représenter un modèle de données. C'est toujours le cas pour les modèles de données basés sur un fournisseur de réflexion ou un fournisseur de services de données personnalisé. Toutefois, lorsque le modèle de données est défini à l'aide d'[!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)], la version de CSDL retournée est la même que celle utilisée par l'[!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]. La version du langage CSDL est déterminée par l’espace de noms de l' [élément de schéma (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#schema-element-csdl).
+ Par défaut, WCF Data Services utilise la version 1,1 de CSDL pour représenter un modèle de données. C'est toujours le cas pour les modèles de données basés sur un fournisseur de réflexion ou un fournisseur de services de données personnalisé. Toutefois, lorsque le modèle de données est défini à l'aide d'Entity Framework, la version de CSDL retournée est la même que celle utilisée par Entity Framework. La version du langage CSDL est déterminée par l’espace de noms de l' [élément de schéma (CSDL)](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#schema-element-csdl).
 
  L'élément `DataServices` des métadonnées retournées contient également un attribut `DataServiceVersion`, qui est la même valeur que l'en-tête `DataServiceVersion` du message de réponse. Les applications clientes, telles que la boîte de dialogue **Ajouter une référence de service** dans Visual Studio, utilisent ces informations pour générer des classes de service de données client qui fonctionnent correctement avec la version de WCF Data Services qui hébergent le service de données. Pour plus d’informations, [consultez OData : Contrôle de version](https://go.microsoft.com/fwlink/?LinkId=186071)du protocole.
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 0a1a3ba3-7e46-4df2-afd3-f3a8237e1c4f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 991053a2728ec7b8c5d9157dbf6307e0974479c6
-ms.sourcegitcommit: 4735bb7741555bcb870d7b42964d3774f4897a6e
-ms.translationtype: HT
+ms.openlocfilehash: 5c71816b1bd2e9c95e8c7efb44e3e689dce4ab93
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66379929"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70853963"
 ---
 # <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Procédure : suivre la progression du programme d’installation de .NET Framework 4.5
 
@@ -22,15 +22,13 @@ ms.locfileid: "66379929"
 
 - **Invocation**. Pour appeler le programme d’installation de .NET Framework 4.5 et recevoir des informations sur la progression à partir de la section MMIO, votre programme d’installation doit effectuer les opérations suivantes :
 
-    1. Appeler le programme redistribuable de .NET Framework 4.5 :
+    1. Appelez le programme redistribuable .NET Framework 4,5 :
 
-        ```
-        dotNetFx45_Full_x86_x64.exe /q /norestart /pipe section-name
-        ```
+        `dotNetFx45_Full_x86_x64.exe /q /norestart /pipe section-name`
 
         où *section-name* est le nom que vous souhaitez utiliser pour identifier votre application. Le programme d’installation du .NET Framework lit et écrit dans la section MMIO de façon asynchrone. Vous trouverez donc peut-être utile d’utiliser des événements et des messages pendant cette période. Dans l’exemple, le processus d’installation du .NET Framework est créé par un constructeur qui alloue la section MMIO (`TheSectionName`) et définit un événement (`TheEventName`) :
 
-        ```
+        ```cpp
         Server():ChainerSample::MmioChainer(L"TheSectionName", L"TheEventName")
         ```
 

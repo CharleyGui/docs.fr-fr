@@ -3,12 +3,12 @@ title: 'Procédure : Afficher l’état Connecté à l’aide de WIF'
 ms.date: 03/30/2017
 ms.assetid: 4d1174e4-5397-4962-9a5f-3b1ad7b3fc14
 author: BrucePerlerMS
-ms.openlocfilehash: e44dc80260e46b81ac723ada32085390a18a153a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d2500c6ded485fca76715425b9a52258e07be08d
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69945699"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851566"
 ---
 # <a name="how-to-display-signed-in-status-using-wif"></a>Procédure : Afficher l’état Connecté à l’aide de WIF
 ## <a name="applies-to"></a>S'applique à  
@@ -99,7 +99,7 @@ ms.locfileid: "69945699"
   
 2. Remplacez le balisage existant dans le fichier **Default.aspx** par le balisage suivant :  
   
-    ```  
+    ```aspx-csharp  
     <%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>  
   
     <!DOCTYPE html>  
@@ -153,4 +153,4 @@ ms.locfileid: "69945699"
   
 1. Dans Visual Studio, appuyez sur **F5** pour démarrer le débogage de l’application. Si aucune erreur n’est trouvée, une nouvelle fenêtre de navigateur s’ouvre.  
   
-2. Vous pouvez remarquer que le navigateur redirige en mode silencieux votre demande vers le service STS, puis ouvre la page Default.aspx. Si WIF est correctement configuré, le site doit afficher le texte suivant: **«Vous êtes connecté»** .
+2. Vous pouvez remarquer que le navigateur redirige en mode silencieux votre demande vers le service STS, puis ouvre la page Default.aspx. Si WIF est correctement configuré, le site doit afficher le texte suivant : **« Vous êtes connecté »** .

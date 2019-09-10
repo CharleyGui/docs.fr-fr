@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: afc0929b8f1b12f4e0b4551d826b8a1d59990154
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 12ec27277fe57bd1a291c2cfe491ea2c6f40c30e
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69952881"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851159"
 ---
 # <a name="functiontailcall-function"></a>FunctionTailcall (fonction)
 Indique au profileur que la fonction en cours d’exécution est sur le paragraphe d’effectuer un appel tail à une autre fonction.  
@@ -31,7 +31,7 @@ Indique au profileur que la fonction en cours d’exécution est sur le paragrap
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp
 void __stdcall FunctionTailcall (  
     [in] FunctionID funcID  
 );  
@@ -44,7 +44,7 @@ void __stdcall FunctionTailcall (
 ## <a name="remarks"></a>Notes  
  La fonction cible de l’appel tail utilise le frame de pile actuel et retourne directement à l’appelant de la fonction qui a effectué l’appel tail. Cela signifie qu’un rappel [FunctionLeave](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md) ne sera pas émis pour une fonction qui est la cible d’un appel tail.  
   
- La `FunctionTailcall` fonction est un rappel; vous devez l’implémenter. L’implémentation doit utiliser l' `__declspec`attribut`naked`de classe de stockage ().  
+ La `FunctionTailcall` fonction est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser l' `__declspec`attribut`naked`de classe de stockage ().  
   
  Le moteur d’exécution n’enregistre aucun registre avant d’appeler cette fonction.  
   
@@ -63,7 +63,7 @@ void __stdcall FunctionTailcall (
   
  **Bibliothèque** CorGuids.lib  
   
- **Versions de .NET Framework:** 1.1, 1.0  
+ **Versions de .NET Framework :** 1.1, 1.0  
   
 ## <a name="see-also"></a>Voir aussi
 

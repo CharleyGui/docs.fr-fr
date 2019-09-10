@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 5ffd2857-d0ba-4342-9824-9ffe04ec135d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 62064286fecc4736f39ad790f0fd7f0e6d84b149
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 80473e01581a372c193c4b816a37166b73d57824
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61754269"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854143"
 ---
 # <a name="jitcompilationstart-mda"></a>Assistant Débogage managé jitCompilationStart
 L’Assistant Débogage managé `jitCompilationStart` est activé pour signaler le moment où le compilateur juste-à-temps (JIT, Just-In-Time) commence à compiler une fonction.  
@@ -25,7 +25,7 @@ L’Assistant Débogage managé `jitCompilationStart` est activé pour signaler 
 ## <a name="cause"></a>Cause  
  Les assemblys dont dépend le programme n’ont pas tous été générés au format natif, ou ceux qui l’ont été ne sont pas correctement inscrits.  
   
-## <a name="resolution"></a>Résolution  
+## <a name="resolution"></a>Résolution :  
  L’activation de cet Assistant Débogage managé vous permet de déterminer la fonction qui est compilée juste-à-temps. Déterminez si l’assembly qui contient la fonction est généré au format natif et s’il est correctement inscrit.  
   
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
@@ -34,12 +34,12 @@ L’Assistant Débogage managé `jitCompilationStart` est activé pour signaler 
 ## <a name="output"></a>Sortie  
  L’exemple de code suivant illustre une sortie. Dans ce cas, la sortie montre que, dans l’assembly Test, la méthode m sur la classe ns2.CO a été compilée juste-à-temps.  
   
-```  
+```output
 method name="Test!ns2.C0::m"  
 ```  
   
 ## <a name="configuration"></a>Configuration  
- Le fichier de configuration suivant présente divers filtres qui peuvent être utilisés pour filtrer les méthodes signalées quand elles sont d’abord compilées juste-à-temps. Vous pouvez spécifier que toutes les méthodes soient signalés en définissant la valeur de l’attribut de nom à \*.  
+ Le fichier de configuration suivant présente divers filtres qui peuvent être utilisés pour filtrer les méthodes signalées quand elles sont d’abord compilées juste-à-temps. Vous pouvez spécifier que toutes les méthodes soient signalées en définissant la valeur de l' \*attribut Name sur.  
   
 ```xml  
 <mdaConfig>  

@@ -9,18 +9,18 @@ helpviewer_keywords:
 - data types [Visual Basic], ranges
 - operators [Visual Basic], result data types
 ms.assetid: 9d524533-e1a1-4aa8-b1b8-622068173d06
-ms.openlocfilehash: b0ebdb723df6bdb4f74e1558537c307ddb917f64
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: bc7f29ae0e29a4c2fbfdf2e40d2226e174a06d3a
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2019
-ms.locfileid: "69923272"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70856049"
 ---
 # <a name="data-types-of-operator-results-visual-basic"></a>Types de données des résultats d'opérateur (Visual Basic)
 Visual Basic détermine le type de données de résultat d’une opération en fonction des types de données des opérandes. Dans certains cas, il peut s’agir d’un type de données avec une plage supérieure à celle de l’un des opérandes.  
   
 ## <a name="data-type-ranges"></a>plages de types de données  
- Les plages des types de données pertinents, dans l’ordre du plus petit au plus grand, sont les suivantes:  
+ Les plages des types de données pertinents, dans l’ordre du plus petit au plus grand, sont les suivantes :  
   
 - [Booléen](../../../visual-basic/language-reference/data-types/boolean-data-type.md) : deux valeurs possibles  
   
@@ -53,7 +53,7 @@ Visual Basic détermine le type de données de résultat d’une opération en f
 ### <a name="-and--operators"></a>Opérateurs/et ^  
  L' `/` opérateur est défini uniquement pour les types de données [Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md), [Single](../../../visual-basic/language-reference/data-types/single-data-type.md)et [double](../../../visual-basic/language-reference/data-types/double-data-type.md) . Visual Basic élargit chaque opérande si nécessaire au type de données approprié avant l’opération, et le résultat a ce type de données.  
   
- Le tableau suivant présente les types de données de résultat `/` pour l’opérateur. Notez que ce tableau est symétrique; pour une combinaison donnée de types de données d’opérandes, le type de données de résultat est le même, quel que soit l’ordre des opérandes.  
+ Le tableau suivant présente les types de données de résultat `/` pour l’opérateur. Notez que ce tableau est symétrique ; pour une combinaison donnée de types de données d’opérandes, le type de données de résultat est le même, quel que soit l’ordre des opérandes.  
   
 ||||||  
 |---|---|---|---|---|  
@@ -66,7 +66,7 @@ Visual Basic détermine le type de données de résultat d’une opération en f
  L' `^` opérateur est défini uniquement pour le `Double` type de données. Visual Basic élargit chaque opérande en fonction des `Double` besoins avant l’opération, et le type de données de `Double`résultat est toujours.  
   
 ## <a name="integer-arithmetic"></a>Arithmétiques sur les entiers  
- Le type de données de résultat d’une opération entière dépend des types de données des opérandes. En général, Visual Basic utilise les stratégies suivantes pour déterminer le type de données de résultat:  
+ Le type de données de résultat d’une opération entière dépend des types de données des opérandes. En général, Visual Basic utilise les stratégies suivantes pour déterminer le type de données de résultat :  
   
 - Si les deux opérandes d’un opérateur binaire ont le même type de données, le résultat a ce type de données. Une exception est `Boolean`, qui est forcée `Short`à.  
   
@@ -98,8 +98,8 @@ Visual Basic détermine le type de données de résultat d’une opération en f
   
  Si l’opérande de gauche `Decimal`est `Single`, `Double`, ou `String`, Visual Basic tente de le convertir en `Long` avant l’opération, et le type de données de `Long`résultat est. L’opérande de droite (le nombre de positions de bits à déplacer) `Integer` doit être ou un type qui s' `Integer`étend à.  
   
-### <a name="binary----and-mod-operators"></a>Opérateurs Binary +, –, * et mod  
- Le tableau suivant présente les types de données de résultat pour `+` les `–` opérateurs binaires `*` et `Mod` et. Notez que ce tableau est symétrique; pour une combinaison donnée de types de données d’opérandes, le type de données de résultat est le même, quel que soit l’ordre des opérandes.  
+### <a name="binary----and-mod-operators"></a>Opérateurs Binary +, – \*, et mod  
+ Le tableau suivant présente les types de données de résultat pour `+` les `–` opérateurs binaires `*` et `Mod` et. Notez que ce tableau est symétrique ; pour une combinaison donnée de types de données d’opérandes, le type de données de résultat est le même, quel que soit l’ordre des opérandes.  
   
 |||||||||||  
 |---|---|---|---|---|---|---|---|---|---|  
@@ -114,8 +114,8 @@ Visual Basic détermine le type de données de résultat d’une opération en f
 |`Long`|long|long|long|long|long|long|long|long|Decimal|  
 |`ULong`|Decimal|Decimal|ULong|Decimal|ULong|Decimal|ULong|Decimal|ULong|  
   
-### <a name="-operator"></a>\, opérateur  
- Le tableau suivant présente les types de données de résultat `\` pour l’opérateur. Notez que ce tableau est symétrique; pour une combinaison donnée de types de données d’opérandes, le type de données de résultat est le même, quel que soit l’ordre des opérandes.  
+### <a name="-operator"></a>\\, opérateur  
+ Le tableau suivant présente les types de données de résultat `\` pour l’opérateur. Notez que ce tableau est symétrique ; pour une combinaison donnée de types de données d’opérandes, le type de données de résultat est le même, quel que soit l’ordre des opérandes.  
   
 |||||||||||  
 |---|---|---|---|---|---|---|---|---|---|  
@@ -151,7 +151,7 @@ Visual Basic détermine le type de données de résultat d’une opération en f
  Si l’opérande est `Decimal`, `Single`, `Double`ou `String`, Visual Basic tente de le convertir en `Long` avant l’opération, et le type de données de résultat `Long`est.  
   
 ### <a name="bitwise-and-or-and-xor-operators"></a>Opérateurs de bits and, or et XOR  
- Le tableau suivant présente les types de données de résultat pour `And`les `Or`opérateurs de `Xor` bits, et. Notez que ce tableau est symétrique; pour une combinaison donnée de types de données d’opérandes, le type de données de résultat est le même, quel que soit l’ordre des opérandes.  
+ Le tableau suivant présente les types de données de résultat pour `And`les `Or`opérateurs de `Xor` bits, et. Notez que ce tableau est symétrique ; pour une combinaison donnée de types de données d’opérandes, le type de données de résultat est le même, quel que soit l’ordre des opérandes.  
   
 |||||||||||  
 |---|---|---|---|---|---|---|---|---|---|  

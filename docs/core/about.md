@@ -3,12 +3,12 @@ title: À propos de .NET Core
 description: Découvrez plus en détail .NET Core.
 author: richlander
 ms.date: 08/01/2018
-ms.openlocfilehash: d81c6ad15c12d7bb1e866aef3bd1e799d5b62cde
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
-ms.translationtype: HT
+ms.openlocfilehash: ea9253bacf2bcee63430cd45f2a9ed412ce629e7
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67421886"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849142"
 ---
 # <a name="about-net-core"></a>À propos de .NET Core
 
@@ -20,7 +20,7 @@ ms.locfileid: "67421886"
 - **Souplesse de déploiement :** Peut être inclus dans votre application ou installé côte à côte (installations à l’échelle de l’utilisateur ou à l’échelle du système). Peut être utilisé avec des [conteneurs Docker](docker/index.md).
 - **Compatibilité :** .NET Core est compatible avec le .NET Framework, Xamarin et Mono via [.NET Standard](../standard/net-standard.md).
 - **Open Source :** la plateforme .NET Core est open source et utilise des licences MIT et Apache 2. .NET Core est un projet [.NET Foundation](https://dotnetfoundation.org/).
-- **Pris en charge par Microsoft :** Le .NET Core est pris en charge par Microsoft, via le [Support .NET Core](https://www.microsoft.com/net/core/support/).
+- **Pris en charge par Microsoft :** Le .NET Core est pris en charge par Microsoft, via le [Support .NET Core](https://dotnet.microsoft.com/platform/support/policy).
 
 ## <a name="languages"></a>Langages
 
@@ -57,9 +57,9 @@ Plusieurs frameworks ont été construits à partir de .NET Core :
 
 Ces composants sont distribués de la façon suivante :
 
-- [Runtime .NET Core](https://www.microsoft.com/net/download/dotnet-core/2.1) : inclut le runtime .NET Core et des bibliothèques de framework.
-- [Runtime ASP.NET Core](https://www.microsoft.com/net/download/dotnet-core/2.1) : inclut le runtime ASP.NET Core et .NET Core, et des bibliothèques de framework.
-- [SDK .NET Core](https://www.microsoft.com/net/download/dotnet-core/2.1) : inclut les outils CLI .NET, le runtime ASP.NET Core ainsi que le runtime et le framework .NET Core.
+- [Runtime .NET Core](https://dotnet.microsoft.com/download) : inclut le runtime .NET Core et des bibliothèques de framework.
+- [Runtime ASP.NET Core](https://dotnet.microsoft.com/download) : inclut le runtime ASP.NET Core et .NET Core, et des bibliothèques de framework.
+- [SDK .NET Core](https://dotnet.microsoft.com/download) : inclut les outils CLI .NET, le runtime ASP.NET Core ainsi que le runtime et le framework .NET Core.
 
 ### <a name="open-source"></a>Open source
 

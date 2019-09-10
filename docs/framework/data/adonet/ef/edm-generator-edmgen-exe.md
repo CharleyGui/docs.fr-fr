@@ -2,22 +2,22 @@
 title: EDM Generator (EdmGen.exe)
 ms.date: 03/30/2017
 ms.assetid: fe8297a1-1fc3-48ce-8eeb-f70f63f857aa
-ms.openlocfilehash: 688989fea6037cc989267e14b103210c2a995afa
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 82166782e25cb7a7ea23fe7faf7a30cb0e68d631
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251627"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854721"
 ---
 # <a name="edm-generator-edmgenexe"></a>EDM Generator (EdmGen.exe)
 
-EdmGen.exe est un outil en ligne de commande utilisé avec le modèle [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] et les fichiers de mappage. Vous pouvez utiliser l'outil EdmGen.exe pour effectuer les opérations suivantes :
+EdmGen. exe est un outil de ligne de commande utilisé pour utiliser des fichiers de modèle et de mappage Entity Framework. Vous pouvez utiliser l'outil EdmGen.exe pour effectuer les opérations suivantes :
 
-- Vous connecter à une source de données en utilisant un fournisseur de données .NET Framework spécifique à la source de données, et générer les fichiers de modèle conceptuel (.csdl), de modèle de stockage (.ssdl) et de mappage (.msl) utilisés par [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Pour plus d'informations, voir [Procédure : Utilisez EdmGen. exe pour générer les fichiers](how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)de modèle et de mappage.
+- Connectez-vous à une source de données à l’aide d’un fournisseur de données .NET Framework spécifique à une source de données et générez les fichiers de modèle conceptuel (. CSDL), de modèle de stockage (. SSDL) et de mappage (. MSL) utilisés par le Entity Framework. Pour plus d’informations, consultez [Guide pratique pour Utilisez EdmGen. exe pour générer les fichiers](how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)de modèle et de mappage.
 
 - Valider un modèle existant. Pour plus d’informations, consultez [Guide pratique pour Utilisez EdmGen. exe pour valider les fichiers](how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)de modèle et de mappage.
 
-- Générer un fichier de code C# ou Visual Basic qui contient les classes d'objets générées à partir d'un fichier de modèle conceptuel (.csdl). Pour plus d'informations, voir [Procédure : Utilisez EdmGen. exe pour générer le code](how-to-use-edmgen-exe-to-generate-object-layer-code.md)de couche objet.
+- Générer un fichier de code C# ou Visual Basic qui contient les classes d'objets générées à partir d'un fichier de modèle conceptuel (.csdl). Pour plus d’informations, consultez [Guide pratique pour Utilisez EdmGen. exe pour générer le code](how-to-use-edmgen-exe-to-generate-object-layer-code.md)de couche objet.
 
 - Générez un fichier de code C# ou Visual Basic qui contient les vues prégénérées d'un modèle existant. Pour plus d’informations [, procédez comme suit : Prégénérez des vues pour améliorer les](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100))performances des requêtes.
 
@@ -68,11 +68,11 @@ Lorsque vous utilisez l'outil EdmGen.exe, vous devez spécifier l'un des modes s
 
 ## <a name="in-this-section"></a>Dans cette section
 
-[Guide pratique : Utiliser EdmGen. exe pour générer les fichiers de modèle et de mappage](how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)
+[Guide pratique pour Utiliser EdmGen. exe pour générer les fichiers de modèle et de mappage](how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)
 
-[Guide pratique : Utiliser EdmGen. exe pour générer le code de couche objet](how-to-use-edmgen-exe-to-generate-object-layer-code.md)
+[Guide pratique pour Utiliser EdmGen. exe pour générer le code de couche objet](how-to-use-edmgen-exe-to-generate-object-layer-code.md)
 
-[Guide pratique : Utiliser EdmGen. exe pour valider les fichiers de modèle et de mappage](how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)
+[Guide pratique pour Utiliser EdmGen. exe pour valider les fichiers de modèle et de mappage](how-to-use-edmgen-exe-to-validate-model-and-mapping-files.md)
 
 ## <a name="see-also"></a>Voir aussi
 

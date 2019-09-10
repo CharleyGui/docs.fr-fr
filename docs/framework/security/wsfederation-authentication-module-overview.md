@@ -3,18 +3,18 @@ title: Vue d’ensemble du module d’authentification WSFederation
 ms.date: 03/30/2017
 ms.assetid: 02c4d5e8-f0a7-49ee-9cf5-3647578510ad
 author: BrucePerlerMS
-ms.openlocfilehash: 9ade6b0d9e4aadb353ca148f868d548fbaacfbc3
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: eaf53a352238161ccec1b481649074d322954905
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69987704"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851504"
 ---
 # <a name="wsfederation-authentication-module-overview"></a>Vue d’ensemble du module d’authentification WSFederation
 Windows Identity Foundation (WIF) prend en charge l’authentification fédérée dans les applications ASP.NET par le biais du module WS-FAM (WS-Federated Authentication Module). Cette rubrique explique le fonctionnement et l’utilisation de l’authentification fédérée.  
   
 ### <a name="overview-of-federated-authentication"></a>Vue d’ensemble de l’authentification fédérée  
- L’authentification fédérée permet à un service d’émission de jeton de sécurité (STS) dans un domaine d’approbation de fournir des informations d’authentification à un STS situé dans un autre domaine d’approbation avec lequel il a une relation d’approbation. Vous en trouverez un exemple dans l’illustration suivante:  
+ L’authentification fédérée permet à un service d’émission de jeton de sécurité (STS) dans un domaine d’approbation de fournir des informations d’authentification à un STS situé dans un autre domaine d’approbation avec lequel il a une relation d’approbation. Vous en trouverez un exemple dans l’illustration suivante :  
   
  ![Diagramme montrant le scénario d’authentification fédérée.](./media/wsfederation-authentication-module-overview/federated-authentication.gif)  
   
@@ -35,7 +35,7 @@ Windows Identity Foundation (WIF) prend en charge l’authentification fédéré
   
  Vous configurez le module WS-FAM pour spécifier le STS vers lequel les demandes non authentifiées doivent être redirigées. WIF vous permet d’authentifier un utilisateur selon deux méthodes :  
   
-1. Redirection passive: Lorsqu’un utilisateur non authentifié tente d’accéder à une ressource protégée et que vous souhaitez simplement le rediriger vers un STS sans avoir besoin d’une page de connexion, il s’agit de la bonne approche. Le STS vérifie l’identité de l’utilisateur et émet un jeton de sécurité qui contient les revendications appropriées pour cet utilisateur. Cette méthode nécessite l’ajout du module WS-FAM dans le pipeline des modules HTTP. L’outil Identity and Access pour Visual Studio 2012 vous permet de modifier le fichier de configuration de votre application afin d’utiliser le module WS-FAM et la fédération avec un STS. Pour plus d’informations, consultez [Identity and Access Tool pour Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md).  
+1. Redirection passive : Lorsqu’un utilisateur non authentifié tente d’accéder à une ressource protégée et que vous souhaitez simplement le rediriger vers un STS sans avoir besoin d’une page de connexion, il s’agit de la bonne approche. Le STS vérifie l’identité de l’utilisateur et émet un jeton de sécurité qui contient les revendications appropriées pour cet utilisateur. Cette méthode nécessite l’ajout du module WS-FAM dans le pipeline des modules HTTP. L’outil Identity and Access pour Visual Studio 2012 vous permet de modifier le fichier de configuration de votre application afin d’utiliser le module WS-FAM et la fédération avec un STS. Pour plus d’informations, consultez [Identity and Access Tool pour Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md).  
   
 2. Vous pouvez appeler la méthode <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn%2A?displayProperty=nameWithType> ou la méthode <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider%2A> à partir du code-behind pour afficher une page de connexion dans votre application par partie de confiance.  
   
@@ -67,7 +67,7 @@ Windows Identity Foundation (WIF) prend en charge l’authentification fédéré
   
 - L’événement <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated?displayProperty=nameWithType> est déclenché quand l’infrastructure ASP.NET appelle la méthode <xref:System.IdentityModel.Services.HttpModuleBase.Init%2A> pour la première fois sur l’un des modules de l’application qui dérivent de <xref:System.IdentityModel.Services.HttpModuleBase>. Cette méthode accède à la propriété <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType> statique, qui spécifie le chargement de la configuration à partir du fichier Web.config. Cet événement est déclenché uniquement lors du premier accès à cette propriété. L’objet <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> initialisé à partir de la configuration est accessible par le biais de la propriété <xref:System.IdentityModel.Services.Configuration.FederationConfigurationCreatedEventArgs.FederationConfiguration%2A?displayProperty=nameWithType> dans un gestionnaire d’événements. Vous pouvez utiliser cet événement pour modifier la configuration avant de l’appliquer aux modules. Vous pouvez ajouter un gestionnaire pour cet événement dans la méthode Application_Start :  
   
-    ```  
+    ```csharp
     void Application_Start(object sender, EventArgs e)  
     {  
         FederatedAuthentication.FederationConfigurationCreated += new EventHandler<FederationConfigurationCreatedEventArgs>(FederatedAuthentication_FederationConfigurationCreated);  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 179170c0cafc67027012d2306281eb2cd1d967a4
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
-ms.translationtype: HT
+ms.openlocfilehash: 8dd7bac8c0cb14421016efad60a7ec0d672e5622
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170657"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854023"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Guide de déploiement du .NET Framework pour les développeurs
 Cette rubrique fournit des informations destinées aux développeurs qui souhaitent installer une version du .NET Framework (du .NET Framework 4.5 au [!INCLUDE[net_current](../../../includes/net-current-version.md)]) avec leurs applications.
@@ -200,31 +200,23 @@ Ces deux méthodes vous permettent d'utiliser le programme d'installation web ou
 
 Pour chaîner en mode silencieux le processus d'installation du .NET Framework et laisser le programme d'installation du .NET Framework fournir l'interface utilisateur, ajoutez la commande suivante à votre programme d'installation :
 
-```
-<.NET Framework redistributable> /q /norestart /ChainingPackage <PackageName>
-```
+`<.NET Framework redistributable> /q /norestart /ChainingPackage <PackageName>`
 
 Par exemple, si votre programme exécutable est Contoso.exe et que vous souhaitez installer en mode silencieux le package redistribuable .NET Framework 4.5 hors connexion, utilisez la commande :
 
-```
-dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage Contoso
-```
+`dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage Contoso`
 
-Vous pouvez utiliser des options de ligne de commande supplémentaires pour personnaliser l'installation. Par exemple :
+Vous pouvez utiliser des options de ligne de commande supplémentaires pour personnaliser l'installation. Par exemple :
 
 - Pour permettre aux utilisateurs de fermer les applications .NET Framework en cours d'exécution, afin de réduire le nombre de redémarrages système, basculez en mode passif et utilisez l'option `/showrmui` comme suit :
 
-    ```
-    dotNetFx45_Full_x86_x64.exe /norestart /passive /showrmui /ChainingPackage Contoso
-    ```
+    `dotNetFx45_Full_x86_x64.exe /norestart /passive /showrmui /ChainingPackage Contoso`
 
      Cette commande permet au Gestionnaire de redémarrage d'afficher une boîte de message permettant aux utilisateurs de fermer les applications .NET Framework avant d'installer .NET Framework.
 
 - Si vous utilisez le programme d'installation web, vous pouvez utiliser l'option `/LCID` pour spécifier un module linguistique. Par exemple, pour chaîner le programme d'installation web .NET Framework 4.5 à votre programme d'installation Contoso et installer le module linguistique japonais, ajoutez la commande suivante au processus d'installation de votre application :
 
-    ```
-    dotNetFx45_Full_setup.exe /q /norestart /ChainingPackage Contoso /LCID 1041
-    ```
+    `dotNetFx45_Full_setup.exe /q /norestart /ChainingPackage Contoso /LCID 1041`
 
      Si vous ne spécifiez pas l'option `/LCID` , le programme d'installation installe le module linguistique qui correspond au paramètre MUI de l'utilisateur.
 
@@ -294,13 +286,13 @@ Le programme d'installation du .NET Framework écrit des clés de Registre lorsq
 
 Vous pouvez vérifier si un module linguistique spécifique est installé en recherchant la valeur DWORD `Release` dans le dossier HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\\*LCID* du Registre. (Notez que « NET Framework Setup » ne commence pas par un point.) *LCID* spécifie un identificateur de paramètres régionaux. Pour connaître la liste, consultez [Langues prises en charge](#supported-languages).
 
-Par exemple, pour détecter si le module linguistique japonais complet (LCID=1041) est installé, recherchez les valeurs suivantes dans le Registre :
+Par exemple, pour détecter si le module linguistique japonais complet (LCID = 1041) est installé, récupérez la valeur nommée suivante dans le registre :
 
-```
-Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1041
-Name: Release
-Type: DWORD
-```
+| | |
+|-|-|
+| Clé | HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\1041 |
+| Name | Libérer |
+| Type | DWORD |
 
 Pour déterminer si la version finale d’un module linguistique est installée pour une version spécifique du .NET Framework (versions 4.5 à 4.7.2), vérifiez la valeur DWORD de la clé RELEASE décrite dans la section précédente, [Détection du .NET Framework](#detect_net).
 
@@ -337,9 +329,7 @@ Le .NET Framework fournit un ensemble de fichiers exécutables de modules lingui
 
 Pour installer un module linguistique à l'aide du programme d'installation hors connexion du .NET Framework, vous devez le chaîner à l'installation de votre application. Par exemple, pour déployer le programme d'installation hors connexion de .NET Framework 4.5.1 avec le module linguistique japonais, utilisez la commande suivante :
 
-```
-NDP451-KB2858728-x86-x64-AllOS-JPN.exe /q /norestart /ChainingPackage <ProductName>
-```
+`NDP451-KB2858728-x86-x64-AllOS-JPN.exe /q /norestart /ChainingPackage <ProductName>`
 
 Vous n'êtes pas tenu de chaîner les modules linguistiques si vous utilisez le programme d'installation web. Ce dernier installe le module linguistique qui correspond au paramètre MUI de l'utilisateur. Pour installer une autre langue, vous pouvez utiliser l'option `/LCID` pour spécifier un module linguistique.
 
@@ -413,7 +403,7 @@ Le tableau ci-dessous répertorie les options que vous pouvez inclure lorsque vo
 
 Le tableau ci-dessous répertorie les modules linguistiques du .NET Framework disponibles pour .NET Framework 4.5 et ses versions intermédiaires.
 
-|dans le dossier HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\|Langue – pays/région|culture|
+|LCID|Langue – pays/région|culture|
 |----------|--------------------------------|-------------|
 |1025|Arabe - Arabie saoudite|ar|
 |1028|Chinois – Traditionnel|zh-Hant|
@@ -446,4 +436,4 @@ Le tableau ci-dessous répertorie les modules linguistiques du .NET Framework di
 - [Installer le .NET Framework pour les développeurs](../../../docs/framework/install/guide-for-developers.md)
 - [Résolution des problèmes liés aux installations et désinstallations bloquées du .NET Framework](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
 - [Réduction des redémarrages système lors des installations du .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)
-- [Guide pratique pour pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)
+- [Guide pratique : pour obtenir la progression à partir du programme d’installation du .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)

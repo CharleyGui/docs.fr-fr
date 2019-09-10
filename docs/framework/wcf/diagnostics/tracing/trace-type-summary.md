@@ -2,17 +2,17 @@
 title: Liste des types de suivis
 ms.date: 03/30/2017
 ms.assetid: e639410b-d1d1-479c-b78e-a4701d4e4085
-ms.openlocfilehash: 44446b58510e58758934a5eb964efc8643854879
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8f54f71ef63338708a29fac5557c7c7e8f257f58
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647190"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70856008"
 ---
 # <a name="trace-type-summary"></a>Liste des types de suivis
-[Niveaux de source](https://go.microsoft.com/fwlink/?LinkID=94943) définit différents niveaux de suivi : Critique, erreur, avertissement, Information et Verbose, et fournit une description de la `ActivityTracing` indicateur qui active ou désactive la sortie de traçage des événements de transfert de limite et d’activité.  
+Les [niveaux source](https://go.microsoft.com/fwlink/?LinkID=94943) définissent différents niveaux de suivi : Critique, Error, Warning, information et Verbose, ainsi que fournit une description de l' `ActivityTracing` indicateur, qui bascule la sortie des événements de limite de suivi et de transfert d’activité.  
   
- Vous pouvez également consulter [TraceEventType](https://go.microsoft.com/fwlink/?LinkId=95169) pour les types de suivis qui peuvent être émis à partir de <xref:System.Diagnostics>.  
+ Vous pouvez également consulter [TraceEventType](https://go.microsoft.com/fwlink/?LinkId=95169) pour connaître les types de traces qui peuvent être émises <xref:System.Diagnostics>à partir de.  
   
  Le tableau suivant répertorie les plus importants.  
   
@@ -22,7 +22,7 @@ ms.locfileid: "64647190"
 |Error|Erreur récupérable.|  
 |Warning|Message d'informations.|  
 |Information|Problème non critique.|  
-|Verbose|Suivi de débogage.|  
+|Détaillé|Suivi de débogage.|  
 |Start|Démarrage d'une unité logique de traitement.|  
 |Interrompre|Interruption d'une unité logique de traitement.|  
 |Reprendre|Reprise d'une unité logique de traitement.|  
@@ -47,12 +47,8 @@ ms.locfileid: "64647190"
   
  Le code suivant est une expression régulière qui définit une activité idéale dans la portée globale,  
   
-```  
-R+   
-```  
+`R+`  
   
  R étant l'expression régulière d'une activité dans l'étendue locale. Cela se traduit par :  
   
-```  
-[R+ = Start ( Critical | Error | Warning | Information | Verbose | Transfer | (Transfer Suspend Transfer Resume) )* Stop]+  
-```
+`[R+ = Start ( Critical | Error | Warning | Information | Verbose | Transfer | (Transfer Suspend Transfer Resume) )* Stop]+`

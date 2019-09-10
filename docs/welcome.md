@@ -5,12 +5,12 @@ author: mairaw
 ms.author: mairaw
 ms.date: 05/06/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 8407bedc6b7b9e5e3263b37747050eba82eea653
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: 2927b892f8f83366a46cb113b3f0233bbd168974
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "68952242"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855470"
 ---
 # <a name="welcome-to-net"></a>Bienvenue dans .NET
 
@@ -68,4 +68,4 @@ Cette documentation est entièrement [open source](https://github.com/dotnet/doc
 - [Windows Forms](https://github.com/dotnet/winforms)
 - [WPF](https://github.com/dotnet/wpf)
 
-Vous pouvez rejoindre les membres de la [Communauté .NET](https://www.microsoft.com/net/community) pour connaître les nouveautés ou demander de l’aide.
+Vous pouvez rejoindre les membres de la [Communauté .NET](https://dotnet.microsoft.com/platform/community) pour connaître les nouveautés ou demander de l’aide.

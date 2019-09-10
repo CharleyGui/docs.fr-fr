@@ -2,20 +2,24 @@
 title: <userPrincipalName>
 ms.date: 03/30/2017
 ms.assetid: 68032f69-149e-4613-bae4-18314d4fd294
-ms.openlocfilehash: 423a3249a9298675517f0cff08566c3735fa35f1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 299af8c4a013d17d7c5b7285f6fb89892c4164a8
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69940516"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854823"
 ---
 # <a name="userprincipalname"></a>\<userPrincipalName>
 Indique le nom d'utilisateur principal (UPN) d'un service à authentifier par le client.  
   
- Pour plus d’informations sur la définition de l’UPN, consultez [identité du service et authentification](../../../wcf/feature-details/service-identity-and-authentication.md).  
+Pour plus d’informations sur la définition de l’UPN, consultez [identité du service et authentification](../../../wcf/feature-details/service-identity-and-authentication.md).  
   
-\<identity>  
-\<userPrincipalName>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> client**](client.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<point de terminaison >** ](endpoint-of-client.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<> d’identité**](identity.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<> userPrincipalName**  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,7 +34,7 @@ Indique le nom d'utilisateur principal (UPN) d'un service à authentifier par le
   
 |Attribut|Description|  
 |---------------|-----------------|  
-|value|Nom de compte d'utilisateur (parfois connu sous le nom de connexion d'utilisateur) et nom de domaine identifiant le domaine dans lequel se trouve le compte d'utilisateur. Il s'agit de la méthode de connexion standard à un domaine Windows. Le format est le someone@example.com suivant: (comme pour une adresse de messagerie).|  
+|value|Nom de compte d'utilisateur (parfois connu sous le nom de connexion d'utilisateur) et nom de domaine identifiant le domaine dans lequel se trouve le compte d'utilisateur. Il s'agit de la méthode de connexion standard à un domaine Windows. Le format est le someone@example.com suivant : (comme pour une adresse de messagerie).|  
   
 ### <a name="child-elements"></a>Éléments enfants  
  Aucun.  
@@ -44,7 +48,7 @@ Indique le nom d'utilisateur principal (UPN) d'un service à authentifier par le
 ## <a name="remarks"></a>Notes  
  Un client Windows Communication Foundation sécurisé (WCF) qui se connecte à un point de terminaison avec cette identité utilise l’UPN lors de l’exécution de l’authentification SSPI avec le point de terminaison.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Le code de configuration suivant indique le nom UPN du service devant être authentifié par le client.  
   
 ```xml  

@@ -2,17 +2,19 @@
 title: <extensions>section
 ms.date: 03/30/2017
 ms.assetid: 53a59fb6-dede-47ec-9384-b3c2e8f0c1fa
-ms.openlocfilehash: 4c8b5fe6eef1863ee3f02cb761a3aac61406e446
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 35621acaf96a80ffa3ffe4a3c6605143c48995a5
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918967"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855357"
 ---
 # <a name="extensions-section"></a>\<section > des extensions
 Cette section de configuration contient une collection d’extensions, qui permettent à l’utilisateur de créer des liaisons, des comportements et d’autres aspects d’extensions définis par l’utilisateur.  
   
-\<system.ServiceModel>  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<extensions >**  
   
 ## <a name="syntax"></a>Syntaxe  
   

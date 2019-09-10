@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7e953b43-1374-4bbc-814f-53ca1b6b52bb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7ad7ce5dd3739b1edcf8a8a03a2f57376ceba138
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: d13c2d2cc391e61c8ed764c26e5e5b5e7ea2a3bb
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948589"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851385"
 ---
 # <a name="certmgrexe-certificate-manager-tool"></a>Certmgr.exe (outil de gestionnaire de certificats)
 L'outil Certificate Manager (Certmgr.exe) gère les certificats, les listes de certificats de confiance (CTL) et les listes de révocation de certificats (CRL).  
@@ -38,7 +38,7 @@ L'outil Certificate Manager (Certmgr.exe) gère les certificats, les listes de c
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
       certmgr [/add | /del | /put] [options]  
 [/s[/r registryLocation]] [sourceStorename]  
 [/s[/r registryLocation]] [destinationStorename]  
@@ -59,7 +59,7 @@ L'outil Certificate Manager (Certmgr.exe) gère les certificats, les listes de c
 |**/CRL**|Ajoute des listes de révocation de certificats si utilisée avec **/add**. Supprime des listes de révocation de certificats si utilisée avec **/del**. Enregistre des listes de révocation de certificats si utilisée avec **/put**. Affiche les listes de révocation des certificats si utilisée sans les options **/add**, **/del** ou **/put**.|  
 |**/CTL**|Ajoute des listes de certificats de confiance si utilisée avec **/add**. Supprime des listes de certificats de confiance si utilisée avec **/del**. Enregistre des listes de certificats de confiance si utilisée avec **/put**. Affiche des listes de certificats de confiance si utilisée sans l'option **/add**, **/del** ou **/put**.|  
 |**/del**|Supprime des certificats, listes de certificats de confiance et listes de révocation de certificats dans un magasin de certificats.|  
-|**/e** *type d’encodage*|Spécifie le type d'encodage des certificats. La valeur par défaut est `X509_ASN_ENCODING`.|  
+|**/e** *type d’encodage*|Spécifie le type d'encodage des certificats. Par défaut, il s’agit de `X509_ASN_ENCODING`.|  
 |**/f** *dwFlags*|Spécifie l'indicateur d'ouverture du magasin. Il s'agit du paramètre *dwFlags* passé à **CertOpenStore**. Sa valeur par défaut est CERT_SYSTEM_STORE_CURRENT_USER. Cette option n'est prise en compte que si l'option **/y** est utilisée.|  
 |**/h**[**elp**]|Affiche la syntaxe et les options de commande de l'outil.|  
 |**/n** *nam*|Spécifie le nom commun du certificat à ajouter, à supprimer ou à enregistrer. Cette option ne peut être utilisée qu'avec des certificats ; elle n'est pas compatible avec les listes de certificats de confiance, ni avec les listes de révocation de certificats.|  
@@ -72,7 +72,7 @@ L'outil Certificate Manager (Certmgr.exe) gère les certificats, les listes de c
 |**/7**|Enregistre le magasin de destination comme un objet PKCS #7.|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Certmgr.exe exécute les fonctions de base suivantes :  
   
 - Affiche les certificats, listes de certificats de confiance et listes de révocation de certificats dans la console.  
@@ -97,43 +97,43 @@ L'outil Certificate Manager (Certmgr.exe) gère les certificats, les listes de c
 ## <a name="examples"></a>Exemples  
  La commande suivante affiche un magasin système par défaut appelé `my` avec une sortie des commentaires.  
   
-```  
+```console  
 certmgr /v /s my  
 ```  
   
  La commande suivante ajoute tous les certificats contenus dans un fichier nommé `myFile.ext` dans un nouveau fichier appelé `newFile.ext`.  
   
-```  
+```console  
 certmgr /add /all /c myFile.ext newFile.ext  
 ```  
   
  La commande suivante ajoute le certificat dans un fichier nommé `testcert.cer` au magasin système `my`.  
   
-```  
+```console  
 certmgr /add /c testcert.cer /s my  
 ```  
   
  La commande suivante ajoute le certificat dans un fichier nommé `TrustedCert.cer` dans le magasin de certificats racines.  
   
-```  
+```console  
 certmgr /c /add TrustedCert.cer /s root  
 ```  
   
  La commande suivante enregistre un certificat avec le nom commun `myCert` dans le magasin système `my` vers un fichier nommé `newCert.cer`.  
   
-```  
+```console  
 certmgr /add /c /n myCert /s my newCert.cer  
 ```  
   
  La commande suivante supprime toutes les listes de certificats de confiance du magasin système `my` et enregistre le magasin qui en résulte dans un fichier nommé `newStore.str`.  
   
-```  
+```console  
 certmgr /del /all /ctl /s my newStore.str  
 ```  
   
  La commande suivante enregistre un certificat dans le magasin système `my` du fichier `newFile`. Vous devez saisir le numéro du certificat de `my` à placer dans `newFile`.  
   
-```  
+```console  
 certmgr /put /c /s my newFile  
 ```  
   

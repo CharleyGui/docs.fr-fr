@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5d22b4292483a94153864cad3439933837aed3b2
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
-ms.translationtype: HT
+ms.openlocfilehash: 7be86a71ae4b3f873395c48750cc22c74d7ff983
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70043404"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70853989"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Méthode de localisation des assemblys par le runtime
 
@@ -64,7 +64,7 @@ Le runtime effectue les étapes suivantes pour résoudre une référence d'assem
 
 <a name="step1"></a>
 
-## <a name="step-1-examining-the-configuration-files"></a>Étape 1 : examen des fichiers de configuration
+## <a name="step-1-examining-the-configuration-files"></a>Étape 1 : examen des fichiers de configuration
 
 Le comportement de la liaison d'assembly peut être configuré à différents niveaux à l'aide de ces trois fichiers XML :
 
@@ -122,7 +122,7 @@ Voici un exemple de fichier de configuration de stratégie d'éditeur :
 
 Pour créer un assembly, utilisez l’outil [Al.exe (Assembly Linker)](../../../docs/framework/tools/al-exe-assembly-linker.md) avec une commande telle que la suivante :
 
-```
+```console
 Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v:3.0.0.0
 ```
 
@@ -147,7 +147,7 @@ Finalement, le runtime examine le fichier de configuration de l'ordinateur. Ce f
 
 <a name="step2"></a>
 
-## <a name="step-2-checking-for-previously-referenced-assemblies"></a>Étape 2 : rechercher les assemblys précédemment référencés
+## <a name="step-2-checking-for-previously-referenced-assemblies"></a>Étape 2 : rechercher les assemblys précédemment référencés
 
 Si l'assembly demandé a aussi été demandé lors d'appels précédents, le common language runtime utilise l'assembly qui est déjà chargé. Ceci peut avoir des implications au moment de l'attribution des noms des assemblys qui composent une application. Pour plus d'informations sur l'attribution des noms des assemblys, voir [Noms d'assemblys](../../../docs/framework/app-domains/assembly-names.md).
 
@@ -158,13 +158,13 @@ Si une précédente demande de chargement de l'assembly avait échoué, toute no
 
 <a name="step3"></a>
 
-## <a name="step-3-checking-the-global-assembly-cache"></a>Étape 3 : vérifier le Global Assembly Cache
+## <a name="step-3-checking-the-global-assembly-cache"></a>Étape 3 : vérifier le Global Assembly Cache
 
 Pour les assemblys avec un nom fort, le processus de liaison examine ensuite le Global Assembly Cache. Le Global Assembly Cache stocke des assemblys qui peuvent être utilisés par plusieurs applications sur un ordinateur. Tous les assemblys figurant dans le Global Assembly Cache doivent avoir un nom fort.
 
 <a name="step4"></a>
 
-## <a name="step-4-locating-the-assembly-through-codebases-or-probing"></a>Étape 4 : localisation de l’assembly par le biais des bases de code ou de la détection
+## <a name="step-4-locating-the-assembly-through-codebases-or-probing"></a>Étape 4 : localisation de l’assembly par le biais des bases de code ou de la détection
 
 Une fois que la version correcte de l'assembly a été déterminée d'après les informations contenues dans la référence de l'assembly appelant et dans les fichiers de configuration, et après la vérification du Global Assembly Cache (uniquement pour les assemblys avec un nom fort), le common language runtime tente de trouver l'assembly. Le processus de localisation d'un assembly implique les étapes suivantes :
 

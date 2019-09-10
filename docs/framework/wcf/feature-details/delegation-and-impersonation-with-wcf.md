@@ -8,15 +8,15 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-ms.openlocfilehash: 6e79346a448012255020cc28b6534e734980b1db
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 39b71d3b5cbcfdc8bde3449560587f033c437d50
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968849"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70856169"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Délégation et emprunt d'identité avec WCF
-L'*emprunt d'identité* est une technique courante utilisée par les services pour restreindre l'accès du client aux ressources d'un domaine de service. Les ressources de domaine de service peuvent être des ressources d'ordinateur, telles que des fichiers locaux (emprunt d'identité), ou une ressource sur un autre ordinateur, tel qu'un partage de fichiers (délégation). Pour obtenir un exemple d'application, consultez [Impersonating the Client](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Pour obtenir un exemple d’utilisation de l’emprunt d’identité, [consultez Procédure: Emprunter l’identité d’un client sur un](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)service.  
+L'*emprunt d'identité* est une technique courante utilisée par les services pour restreindre l'accès du client aux ressources d'un domaine de service. Les ressources de domaine de service peuvent être des ressources d'ordinateur, telles que des fichiers locaux (emprunt d'identité), ou une ressource sur un autre ordinateur, tel qu'un partage de fichiers (délégation). Pour obtenir un exemple d'application, consultez [Impersonating the Client](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Pour obtenir un exemple d’utilisation de l’emprunt d’identité, [consultez Procédure : Emprunter l’identité d’un client sur un](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)service.  
   
 > [!IMPORTANT]
 > Sachez que lors de l'emprunt d'identité d'un client sur un service, le service s'exécute avec les informations d'identification du client, qui peut avoir des privilèges plus élevés que le processus serveur.  
@@ -57,9 +57,9 @@ L'*emprunt d'identité* est une technique courante utilisée par les services po
  L'étendue à laquelle le service peut emprunter l'identité du client dépend des privilèges dont le compte de service dispose lorsqu'il tente l'emprunt d'identité, du type d'emprunt d'identité utilisé, et éventuellement de l'étendue d'emprunt d'identité autorisée par le client.  
   
 > [!NOTE]
-> Lorsque le client et le service s'exécutent sur le même ordinateur et que le client s'exécute sous un compte système (par exemple, `Local System` ou `Network Service`), il n'est pas possible d'emprunter l'identité du client lorsqu'une session sécurisée est établie avec les jetons de contexte de sécurité avec état. Une application Windows Forms ou console s'exécute en général sous le compte actuellement connecté, afin que l'emprunt d'identité du compte puisse être effectué par défaut. Toutefois, lorsque le client est une page ASP.net et que la page est hébergée dans IIS 6,0 ou IIS 7,0, le client s’exécute sous `Network Service` le compte par défaut. Toutes les liaisons fournies par le système qui prennent en charge des sessions sécurisées utilisent par défaut un jeton de contexte de sécurité sans état. Toutefois, si le client est une page ASP.NET, et que des sessions sécurisées avec SCT avec état sont utilisées, le client ne peut pas faire l’emprunt d’identité. Pour plus d’informations sur l’utilisation de SCT avec état dans une session [sécurisée, consultez Procédure: Créez un jeton de contexte de sécurité pour une](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)session sécurisée.  
+> Lorsque le client et le service s'exécutent sur le même ordinateur et que le client s'exécute sous un compte système (par exemple, `Local System` ou `Network Service`), il n'est pas possible d'emprunter l'identité du client lorsqu'une session sécurisée est établie avec les jetons de contexte de sécurité avec état. Une application Windows Forms ou console s'exécute en général sous le compte actuellement connecté, afin que l'emprunt d'identité du compte puisse être effectué par défaut. Toutefois, lorsque le client est une page ASP.net et que la page est hébergée dans IIS 6,0 ou IIS 7,0, le client s’exécute sous `Network Service` le compte par défaut. Toutes les liaisons fournies par le système qui prennent en charge des sessions sécurisées utilisent par défaut un jeton de contexte de sécurité sans état. Toutefois, si le client est une page ASP.NET, et que des sessions sécurisées avec SCT avec état sont utilisées, le client ne peut pas faire l’emprunt d’identité. Pour plus d’informations sur l’utilisation de SCT avec état dans une session [sécurisée, consultez Procédure : Créez un jeton de contexte de sécurité pour une](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)session sécurisée.  
   
-## <a name="impersonation-in-a-service-method-declarative-model"></a>Emprunt d’identité dans une méthode de service: Modèle déclaratif  
+## <a name="impersonation-in-a-service-method-declarative-model"></a>Emprunt d’identité dans une méthode de service : Modèle déclaratif  
  La plupart des scénarios d'emprunt d'identité impliquent l'exécution de la méthode de service dans le contexte de l'appelant. WCF fournit une fonctionnalité d’emprunt d’identité qui facilite cette opération en permettant à l’utilisateur de spécifier l’exigence d’emprunt d’identité dans <xref:System.ServiceModel.OperationBehaviorAttribute> l’attribut. Par exemple, dans le code suivant, l’infrastructure WCF emprunte l’identité de l’appelant avant `Hello` d’exécuter la méthode. Toute tentative d'accès aux ressources natives à l'intérieur de la méthode `Hello` réussit uniquement si la liste de contrôle d'accès (ACL, Access Control List) de la ressource autorise les privilèges d'accès de l'appelant. Pour activer l'emprunt d'identité, affectez l'une des valeurs d'énumération <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> ( <xref:System.ServiceModel.ImpersonationOption> ou <xref:System.ServiceModel.ImpersonationOption.Required?displayProperty=nameWithType> ) à la propriété <xref:System.ServiceModel.ImpersonationOption.Allowed?displayProperty=nameWithType>, tel qu'indiqué dans l'exemple suivant.  
   
 > [!NOTE]
@@ -73,7 +73,7 @@ L'*emprunt d'identité* est une technique courante utilisée par les services po
 > [!NOTE]
 > Sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)], l'emprunt d'identité échoue si un jeton de contexte de sécurité avec état est créé, ce qui génère un <xref:System.InvalidOperationException>. Pour plus d’informations, consultez [scénarios non pris en charge](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md).  
   
-## <a name="impersonation-in-a-service-method-imperative-model"></a>Emprunt d’identité dans une méthode de service: Modèle impératif  
+## <a name="impersonation-in-a-service-method-imperative-model"></a>Emprunt d’identité dans une méthode de service : Modèle impératif  
  Un appelant n'a parfois pas besoin d'emprunter l'identité de l'ensemble de la méthode de service pour fonctionner, mais uniquement une partie de celle-ci. Dans ce cas, obtenez l'identité Windows de l'appelant à l'intérieur de la méthode de service et exécutez l'emprunt d'identité de manière impérative. Pour ce faire, utilisez la propriété <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> de <xref:System.ServiceModel.ServiceSecurityContext> pour retourner une instance de la classe <xref:System.Security.Principal.WindowsIdentity> , et appelez la méthode <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> avant d'utiliser l'instance.  
   
 > [!NOTE]
@@ -158,7 +158,7 @@ L'*emprunt d'identité* est une technique courante utilisée par les services po
   
  Le code suivant indique comment configurer le service.  
   
-```  
+```csharp
 // Create a binding that sets a certificate as the client credential type.  
 WSHttpBinding b = new WSHttpBinding();  
 b.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;  

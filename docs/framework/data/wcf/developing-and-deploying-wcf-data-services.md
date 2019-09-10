@@ -7,12 +7,12 @@ helpviewer_keywords:
 - deploying [WCF Data Services
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
-ms.openlocfilehash: 578c480940d70fa84edf18d572992e755c8efed5
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d7ddae58874c69468eb6ff1762db9083897b1acd
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780319"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854069"
 ---
 # <a name="develop-and-deploy-wcf-data-services"></a>Développez et déployez des WCF Data Services
 
@@ -42,7 +42,7 @@ Lorsque vous développez un service de données WCF comme une application ASP.NE
 
 1. **Serveur IIS local**
 
-     Lorsque vous créez un service de données qui est une application ASP.NET ou un site Web ASP.NET qui s’exécute sur Internet Information Services (IIS), nous vous recommandons de développer et de tester votre service de données à l’aide d’IIS sur l’ordinateur local. L'exécution du service de données sur IIS facilite le suivi des demandes HTTP pendant le débogage. Elle permet également de prédéfinir les droits requis par IIS pour accéder aux fichiers, aux bases de données et aux autres ressources requises par le service de données. Pour exécuter votre service de données sur IIS, vous devez vous assurer qu’IIS et Windows Communication Foundation (WCF) sont installés et configurés correctement et qu’ils accordent l’accès aux comptes IIS dans le système de fichiers et les bases de données. Pour plus d'informations, voir [Procédure : Développez un service de données WCF s'](how-to-develop-a-wcf-data-service-running-on-iis.md)exécutant sur IIS.
+     Lorsque vous créez un service de données qui est une application ASP.NET ou un site Web ASP.NET qui s’exécute sur Internet Information Services (IIS), nous vous recommandons de développer et de tester votre service de données à l’aide d’IIS sur l’ordinateur local. L'exécution du service de données sur IIS facilite le suivi des demandes HTTP pendant le débogage. Elle permet également de prédéfinir les droits requis par IIS pour accéder aux fichiers, aux bases de données et aux autres ressources requises par le service de données. Pour exécuter votre service de données sur IIS, vous devez vous assurer qu’IIS et Windows Communication Foundation (WCF) sont installés et configurés correctement et qu’ils accordent l’accès aux comptes IIS dans le système de fichiers et les bases de données. Pour plus d’informations, consultez [Guide pratique pour Développez un service de données WCF s'](how-to-develop-a-wcf-data-service-running-on-iis.md)exécutant sur IIS.
 
     > [!NOTE]
     > Vous devez exécuter Visual Studio avec des droits d’administrateur pour permettre à l’environnement de développement de configurer le serveur IIS local.
@@ -96,7 +96,7 @@ WCF Data Service permet de choisir le processus qui héberge le service de donn�
 
   - **Technologies de déploiement des applications Web ASP.NET**
 
-    - [Guide pratique : Créer un package de déploiement Web dans Visual Studio](https://docs.microsoft.com/previous-versions/aspnet/dd465323(v=vs.110))
+    - [Guide pratique pour Créer un package de déploiement Web dans Visual Studio](https://docs.microsoft.com/previous-versions/aspnet/dd465323(v=vs.110))
 
     - [Guide pratique : Déployer un projet Web à l’aide de la publication en un clic dans Visual Studio](https://docs.microsoft.com/previous-versions/aspnet/dd465337(v=vs.110))
 
@@ -121,7 +121,7 @@ WCF Data Service permet de choisir le processus qui héberge le service de donn�
 
 Vous devez tenir compte de ce qui suit lorsque vous déployez un service de données :
 
-- Lorsque vous déployez un service de données qui utilise le fournisseur [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] pour accéder à une base de données SQL Server, vous devrez peut-être propager des structures de données, des données, ou les deux à votre déploiement de service de données. Visual Studio peut créer automatiquement des scripts (fichiers. Sql) pour effectuer cette opération dans la base de données de destination, et ces scripts peuvent être inclus dans le package de déploiement Web d’une application ASP.NET. Pour plus d’informations, consultez [Guide pratique pour Déployez une base de données avec un](https://docs.microsoft.com/previous-versions/dd465343(v=vs.100))projet d’application Web. Pour un site Web ASP.NET, vous pouvez le faire à l’aide de l' **Assistant Publication de base de données** dans Visual Studio. Pour plus d’informations, consultez [publication d’un SQL Database](https://docs.microsoft.com/previous-versions/aspnet/bb907585(v=vs.100)).
+- Lorsque vous déployez un service de données qui utilise le fournisseur de Entity Framework pour accéder à une base de données SQL Server, vous devrez peut-être également propager des structures de données, des données, ou les deux avec votre déploiement de service de données. Visual Studio peut créer automatiquement des scripts (fichiers. Sql) pour effectuer cette opération dans la base de données de destination, et ces scripts peuvent être inclus dans le package de déploiement Web d’une application ASP.NET. Pour plus d’informations, consultez [Guide pratique pour Déployez une base de données avec un](https://docs.microsoft.com/previous-versions/dd465343(v=vs.100))projet d’application Web. Pour un site Web ASP.NET, vous pouvez le faire à l’aide de l' **Assistant Publication de base de données** dans Visual Studio. Pour plus d’informations, consultez [publication d’un SQL Database](https://docs.microsoft.com/previous-versions/aspnet/bb907585(v=vs.100)).
 
 - Étant donné que WCF Data Services comprend une implémentation WCF de base, vous pouvez utiliser Windows Server AppFabric pour surveiller un service de données déployé sur IIS exécuté sur Windows Server. Pour plus d’informations sur l’utilisation de Windows Server AppFabric pour surveiller un service de données, consultez le [WCF Data Services de suivi de la publication avec Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkID=202005).
 

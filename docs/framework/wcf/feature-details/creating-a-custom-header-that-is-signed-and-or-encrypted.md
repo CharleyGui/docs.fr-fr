@@ -2,12 +2,12 @@
 title: Création d’un en-tête personnalisé signé et/ou chiffré
 ms.date: 03/30/2017
 ms.assetid: e8668b37-c79f-4714-9de5-afcb88b9ff02
-ms.openlocfilehash: 76bfb6040f6b78765ed42ce7fbf86cdbd62c1e48
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d737647f8c0442a3d6fa0d077a1ffe2c251ea043
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857374"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70856178"
 ---
 # <a name="creating-a-custom-header-that-is-signed-and-or-encrypted"></a>Création d’un en-tête personnalisé signé et/ou chiffré
 Si vous appelez un service autre que WCF à l'aide d'un client WCF, il est parfois nécessaire d'utiliser des en-têtes SOAP personnalisés. Un bogue de canonisation dans WCF empêche les en-têtes personnalisés qui sont signés et chiffrés de fonctionner avec un service non-WCF. Le problème est causé par la canonisation incorrecte des espaces de noms XML par défaut. Ceci pose problème uniquement si vous appelez des services autres que WCF avec en-têtes personnalisés qui sont signés et/ou chiffrés.  Lorsque le service reçoit le message contenant l'en-tête personnalisé signé et/ou chiffré, il n'est pas en mesure de vérifier la signature. Cette solution de contournement évite le bogue de canonisation, permet l'interopérabilité avec les services autres que WCF, mais n'empêche pas l'interopérabilité avec les services WCF.  
@@ -15,7 +15,7 @@ Si vous appelez un service autre que WCF à l'aide d'un client WCF, il est parfo
 ## <a name="defining-the-custom-header"></a>Définition de l'en-tête personnalisé  
  Les en-têtes personnalisés sont définis en spécifiant un contrat de message et en marquant les membres à envoyer comme en-têtes avec un attribut  <xref:System.ServiceModel.MessageHeaderAttribute>. Pour contourner le bogue de canonisation, vous devez vous assurer que le sérialiseur XML déclare l'espace de noms de l'en-tête personnalisé avec un préfixe plutôt qu'une déclaration d'espace de noms par défaut. Le code suivant montre comment définir le type de données qui sera utilisé en tant qu'en-tête de message avec la déclaration d'espace de noms appropriée.  
   
-```  
+```csharp
 [System.CodeDom.Compiler.GeneratedCodeAttribute("svcutil", "3.0.4506.648")]  
 [System.SerializableAttribute()]  
 [System.Diagnostics.DebuggerStepThroughAttribute()]  
@@ -45,7 +45,7 @@ public partial class msgHeaderElement
   
  Ce code déclare un nouveau type appelé `msgHeaderElement` qui sera sérialisé à l'aide du sérialiseur XML. Lorsq'une instance de ce type est sérialisée, elle définit un espace de noms avec un préfixe « h », ce qui permet de contourner le bogue de canonisation.  Le contrat de message définit alors une instance de `msgHeaderElement` et la marque avec l'attribut  <xref:System.ServiceModel.MessageHeaderAttribute>, comme illustré dans l'exemple suivant.  
   
-```  
+```csharp
 [MessageContract]  
 public  class MyMessageContract  
 {  

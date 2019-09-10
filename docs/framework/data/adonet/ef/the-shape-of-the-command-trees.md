@@ -2,12 +2,12 @@
 title: Forme des arborescences de commandes
 ms.date: 03/30/2017
 ms.assetid: 2215585e-ca47-45f8-98d4-8cb982f8c1d3
-ms.openlocfilehash: a3568f3deeaeeb31b69b41ac7c767001b792a8eb
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 8368354049a77a56a5aa54ab500619576f41b0dc
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248219"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854266"
 ---
 # <a name="the-shape-of-the-command-trees"></a>Forme des arborescences de commandes
 
@@ -17,7 +17,7 @@ Le module de génération SQL est chargé de la génération d’une requête SQ
 
 Une arborescence de commandes de requête est une représentation de modèle objet d'une requête. Les arborescences de commandes de requête ont deux objectifs :
 
-- exprimer une requête d'entrée spécifiée par rapport à [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] ;
+- Pour exprimer une requête d’entrée spécifiée par rapport au Entity Framework.
 
 - exprimer une requête de sortie qui est donnée à un fournisseur et décrire une requête par rapport au serveur.
 
@@ -25,7 +25,7 @@ Les arborescences de commandes de requête prennent en charge des sémantiques p
 
 La propriété DBQueryCommandTree.Query est la racine de l’arborescence d’expression qui décrit la logique de requête. La propriété DBQueryCommandTree.Parameters contient une liste des paramètres utilisés dans la requête. L'arborescence d'expression est composée d'objets DbExpression.
 
-Un objet DbExpression représente un calcul. Plusieurs types d'expressions sont fournis par [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] pour composer des expressions de requête, notamment des constantes, des variables, des fonctions, des constructeurs et des opérateurs relationnels standard comme filtre et jointure. Chaque objet DbExpression a une propriété ResultType qui représente le type du résultat produit par cette expression. Ce type est exprimé sous la forme d'un TypeUsage.
+Un objet DbExpression représente un calcul. Plusieurs types d’expressions sont fournis par le Entity Framework pour composer des expressions de requête, y compris des constantes, des variables, des fonctions, des constructeurs et des opérateurs relationnels standard tels que Filter et Join. Chaque objet DbExpression a une propriété ResultType qui représente le type du résultat produit par cette expression. Ce type est exprimé sous la forme d'un TypeUsage.
 
 ## <a name="shapes-of-the-output-query-command-tree"></a>Formes de l’arborescence de commandes de requête de sortie
 
@@ -75,7 +75,7 @@ Les types de fonction suivants peuvent être passés :
 
 - Fonctions définies par l'utilisateur.
 
-Les fonctions canoniques (consultez [fonctions canoniques](./language-reference/canonical-functions.md) pour plus d’informations) sont spécifiées dans le [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]cadre du, et les fournisseurs doivent fournir des implémentations pour les fonctions canoniques en fonction de ces spécifications. Les fonctions de magasin sont basées sur les spécifications présentes dans le manifeste du fournisseur correspondant. Les fonctions définies par l'utilisateur sont basées sur les spécifications présentes dans le SSDL.
+Les fonctions canoniques (consultez [fonctions canoniques](./language-reference/canonical-functions.md) pour plus d’informations) sont spécifiées dans le cadre de la Entity Framework, et les fournisseurs doivent fournir des implémentations pour les fonctions canoniques en fonction de ces spécifications. Les fonctions de magasin sont basées sur les spécifications présentes dans le manifeste du fournisseur correspondant. Les fonctions définies par l'utilisateur sont basées sur les spécifications présentes dans le SSDL.
 
 De plus, les fonctions qui ont l'attribut NiladicFunction n'ont pas d'arguments et doivent être traduites sans parenthèses à la fin.  Autrement dit, pour  *\<nomfonction >* au lieu de  *\<nomfonction > ()* .
 

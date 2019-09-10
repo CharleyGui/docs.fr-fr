@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 320d059e82bfb58e827432fe5f4ec3eb3857510e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
-ms.translationtype: HT
+ms.openlocfilehash: dd27bebdc71c70226a61ad8d912135e0e1671dd8
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70041417"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851247"
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe (Visionneuse du journal de liaison d’assembly)
 
@@ -29,7 +29,7 @@ Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’
 
 À l'invite de commandes, tapez le texte suivant :
 
-```
+```console
 fuslogvw
 ```
 
@@ -66,7 +66,7 @@ La visionneuse affiche une entrée pour chaque liaison d'assembly ayant échoué
 
 L'exemple d'entrée de journal suivant montre des informations détaillées sur l'échec d'une liaison d'assembly.
 
-```
+```output
 *** Assembly Binder Log Entry  (3/5/2007 @ 12:54:20 PM) ***
 
 The operation failed.
@@ -130,7 +130,7 @@ Par défaut, Fuslogvw.exe enregistre les demandes de liaison d'assembly normales
 
 Le journal suivant affiche un échec provoqué par une dépendance qui n'existait pas au moment de la création de l'image native pour l'application. Si les dépendances au moment de l'exécution diffèrent des dépendances lorsque Ngen.exe est exécuté, la liaison à une image native n'est pas autorisée.
 
-```
+```output
 *** Assembly Binder Log Entry  (12/8/2006 @ 5:22:07 PM) ***
 
 The operation failed.
@@ -154,7 +154,7 @@ LOG: Bind to native image assembly did not succeed. Use IL image.
 
 Le journal suivant montre un échec de liaison à une image native qui s'est produit parce que les paramètres de sécurité sur l'ordinateur au moment où l'application a été exécutée étaient différents des paramètres de sécurité en vigueur au moment où l'image native a été créée.
 
-```
+```output
 *** Assembly Binder Log Entry  (12/8/2006 @ 5:29:09 PM) ***
 
 The operation failed.

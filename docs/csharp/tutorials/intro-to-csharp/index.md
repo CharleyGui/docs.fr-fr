@@ -3,12 +3,12 @@ title: Présentation de C# - Tutoriels interactifs
 description: Découvrez C# dans votre navigateur et prenez en main votre propre environnement de développement
 ms.date: 08/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 65526dcf04525f3f2afb358a5b6289ff8bba7de8
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
-ms.translationtype: HT
+ms.openlocfilehash: 1712e32175a95373ca85464bbdebed9ef99fb375
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70015005"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70850768"
 ---
 # <a name="introduction-to-c"></a>Présentation de C\#
 
@@ -45,4 +45,4 @@ Ce tutoriel part du principe que vous avez fini les leçons listées ci-dessus.
 Ce dernier tutoriel, qui s’exécute sur votre ordinateur, fait appel à votre propre environnement de développement local et à .NET Core.
 Vous allez créer une application console et voir les fonctionnalités orientées objet de base qui font partie du langage C#.
 
-Ce tutoriel prend pour acquis que vous avez terminé les tutoriels de présentation en ligne et que vous avez installé le [SDK .NET Core](https://www.microsoft.com/net/download) et [Visual Studio Code](https://code.visualstudio.com/).
+Ce tutoriel prend pour acquis que vous avez terminé les tutoriels de présentation en ligne et que vous avez installé le [SDK .NET Core](https://dotnet.microsoft.com/download) et [Visual Studio Code](https://code.visualstudio.com/).

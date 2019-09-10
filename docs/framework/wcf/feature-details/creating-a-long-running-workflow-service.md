@@ -2,12 +2,12 @@
 title: Création d'un service de workflow de longue durée
 ms.date: 03/30/2017
 ms.assetid: 4c39bd04-5b8a-4562-a343-2c63c2821345
-ms.openlocfilehash: e6206babdb728b6ce38c94441f775e1fdffe7d79
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: ceda43cc41ceb3381b4700d6ea8b1871e368dccc
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040413"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70856203"
 ---
 # <a name="creating-a-long-running-workflow-service"></a>Création d'un service de workflow de longue durée
 
@@ -85,15 +85,15 @@ Les logiciels suivants doivent être installés pour suivre cette procédure pas
 
     4. Cliquez sur le lien **définir...** dans l’activité **SendReplyToStartOrder** et définissez les propriétés affichées dans l’illustration suivante. Notez que la case d’option **paramètres** est sélectionnée. un paramètre nommé `p_orderId` est lié à la `orderId` variable. Ce paramètre spécifie que l'activité SendReplyToStartOrder retournera une valeur de type String à l'appelant.
 
-        ![Configuration des données de contenu de l’activité SendReply] Configurez le (./media/creating-a-long-running-workflow-service/setreplycontent-for-sendreplytostartorder-activity.png "paramètre de l’activité SetReplyToStartOrder.")
+        ![Configuration des données de contenu de l’activité SendReply](./media/creating-a-long-running-workflow-service/setreplycontent-for-sendreplytostartorder-activity.png "Configurez le paramètre de l’activité SetReplyToStartOrder.")
 
-    5. Faites glisser et déposez une activité Assign entre les activités **Receive** et **SendReply** et définissez les propriétés comme indiqué dans l’illustration suivante:
+    5. Faites glisser et déposez une activité Assign entre les activités **Receive** et **SendReply** et définissez les propriétés comme indiqué dans l’illustration suivante :
 
         ![Ajout d’une activité Assign](./media/creating-a-long-running-workflow-service/add-an-assign-activity.png "Ajoutez une activité Assign.")
 
         Cette action permet de créer un nouvel ID de commande et de placer la valeur dans la variable orderId.
 
-    6. Sélectionnez l’activité **ReplyToStartOrder** . Dans la fenêtre Propriétés, cliquez sur le bouton de sélection pour **CorrelationInitializers**. Sélectionnez le lien **Ajouter** un initialiseur, `orderIdHandle` entrez dans la zone de texte initialiseur, sélectionnez l’initialiseur de corrélation de requête pour le type de corrélation et sélectionnez p_orderId sous la zone de liste déroulante requêtes XPath. Ces paramètres sont indiqués dans l'illustration suivante. Cliquez sur **OK**.  Cette action permet d'initialiser une corrélation entre le client et cette instance du service de workflow. Lorsqu'un message contenant cet ID de commande est reçu, il est routé vers cette instance du service de workflow.
+    6. Sélectionnez l’activité **ReplyToStartOrder** . Dans la fenêtre Propriétés, cliquez sur le bouton de sélection pour **CorrelationInitializers**. Sélectionnez le lien **Ajouter un initialiseur** , `orderIdHandle` entrez dans la zone de texte initialiseur, sélectionnez l’initialiseur de corrélation de requête pour le type de corrélation et sélectionnez p_orderId sous la zone de liste déroulante requêtes XPath. Ces paramètres sont indiqués dans l'illustration suivante. Cliquez sur **OK**.  Cette action permet d'initialiser une corrélation entre le client et cette instance du service de workflow. Lorsqu'un message contenant cet ID de commande est reçu, il est routé vers cette instance du service de workflow.
 
         ![Ajout d’un initialiseur de corrélation](./media/creating-a-long-running-workflow-service/add-correlationinitializers.png "Ajoutez un initialiseur de corrélation.")
 
@@ -105,14 +105,14 @@ Les logiciels suivants doivent être installés pour suivre cette procédure pas
 
         Ajoutez `orderResult` également As **String** dans l' `Sequence` étendue.
 
-    2. Sélectionnez l’activité **Receive** et définissez les propriétés affichées dans l’illustration suivante:
+    2. Sélectionnez l’activité **Receive** et définissez les propriétés affichées dans l’illustration suivante :
 
         ![Définir les propriétés de l’activité Receive](./media/creating-a-long-running-workflow-service/set-receive-activities-properties.png "Définissez les propriétés de l’activité Receive.")
 
         > [!NOTE]
         > N’oubliez pas de modifier le champ `../IAddItem`ServiceContractName avec.
 
-    3. Cliquez sur le lien **définir...** dans l’activité **ReceiveAddItem** et ajoutez les paramètres indiqués dans l’illustration suivante: Cela configure l’activité Receive pour accepter deux paramètres, l’ID de commande et l’ID de l’élément en cours de tri.
+    3. Cliquez sur le lien **définir...** dans l’activité **ReceiveAddItem** et ajoutez les paramètres indiqués dans l’illustration suivante : Cela configure l’activité Receive pour accepter deux paramètres, l’ID de commande et l’ID de l’élément en cours de tri.
 
         ![Spécification des paramètres pour la seconde réception](./media/creating-a-long-running-workflow-service/add-receive-two-parameters.png "Configurez l’activité Receive pour recevoir deux paramètres.")
 
@@ -191,7 +191,7 @@ Les logiciels suivants doivent être installés pour suivre cette procédure pas
 
 5. Générez la solution et exécutez l'application `OrderClient`. Le client affiche le texte suivant :
 
-    ```Output
+    ```output
     Sending start messageWorkflow service is idle...Press [ENTER] to send an add item message to reactivate the workflow service...
     ```
 
@@ -201,7 +201,7 @@ Les logiciels suivants doivent être installés pour suivre cette procédure pas
 
 7. Appuyez sur Entrée pour envoyer le message d'ajout d'élément au service de workflow. Le client affiche le texte suivant :
 
-    ```Output
+    ```output
     Sending add item messageService returned: Item added to orderPress any key to continue . . .
     ```
 

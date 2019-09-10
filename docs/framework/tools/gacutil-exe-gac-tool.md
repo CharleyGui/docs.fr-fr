@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: 4c7be9c8-72ae-481f-a01c-1a4716806e99
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 47d0aba8be60611527d6216227a6c4939479fc38
-ms.sourcegitcommit: 438919211260bb415fc8f96ca3eabc33cf2d681d
-ms.translationtype: HT
+ms.openlocfilehash: 31f9d045b4d784357896a628135d68365cc29937
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59613042"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70851238"
 ---
 # <a name="gacutilexe-global-assembly-cache-tool"></a>Gacutil.exe (outil Global Assembly Cache)
 
@@ -36,7 +36,7 @@ Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```console
 gacutil [options] [assemblyName | assemblyPath | assemblyListFile]
 ```
 
@@ -56,21 +56,21 @@ gacutil [options] [assemblyName | assemblyPath | assemblyListFile]
 |**/i** *assemblyPath*|Installe un assembly dans le Global Assembly Cache.|
 |**/if**  *assemblyPath*|Installe un assembly dans le Global Assembly Cache. Si un assembly portant le même nom existe déjà dans le Global Assembly Cache, l'outil le remplace.<br /><br /> La spécification de cette option revient à spécifier les options **/i** et **/f** ensemble.|
 |**/il** *assemblyListFile*|Installe un ou plusieurs assemblys spécifiés dans *assemblyListFile* dans le Global Assembly Cache.|
-|**/ir**  *assemblyPath*<br /><br /> *scheme*<br /><br /> *ID*<br /><br /> *description*|Installe un assembly dans le Global Assembly Cache et ajoute une référence pour compter l'assembly. Vous devez spécifier les paramètres *assemblyPath*, *scheme*, *id* et *description* avec cette option. Pour obtenir une description des valeurs valides que vous pouvez spécifier pour ces paramètres, consultez l’option **/r**.<br /><br /> La spécification de cette option revient à spécifier les options **/i** et **/r** ensemble.|
+|**/ir**  *assemblyPath*<br /><br /> *scheme*<br /><br /> *id*<br /><br /> *description*|Installe un assembly dans le Global Assembly Cache et ajoute une référence pour compter l'assembly. Vous devez spécifier les paramètres *assemblyPath*, *scheme*, *id* et *description* avec cette option. Pour obtenir une description des valeurs valides que vous pouvez spécifier pour ces paramètres, consultez l’option **/r**.<br /><br /> La spécification de cette option revient à spécifier les options **/i** et **/r** ensemble.|
 |**/l** [*assemblyName*]|Affiche le contenu du Global Assembly Cache. Si vous spécifiez le paramètre *assemblyName*, l’outil ne répertorie que les assemblys correspondant à ce nom.|
 |**/ldl**|Répertorie le contenu du cache de fichiers téléchargés.|
 |**/lr** [*assemblyName*]|Répertorie tous les assemblys et leurs décomptes de références correspondants. Si vous spécifiez le paramètre *assemblyName*, l’outil ne répertorie que les assemblys correspondant à ce nom et leurs décomptes de références correspondants.|
 |**/nologo**|Supprime l'affichage de la bannière de démarrage Microsoft.|
-|**/r** [*assemblyName &#124; assemblyPath*]<br /><br /> *scheme*<br /><br /> *ID*<br /><br /> *description*|Spécifie une référence avec trace à un assembly ou des assemblys à installer ou à désinstaller. Spécifiez cette option avec les options **/i**, **/il**, **/u** ou **/ul**.<br /><br /> Pour installer un assembly, spécifiez les paramètres *assemblyPath*, *scheme*, *id* et *description* avec cette option. Pour désinstaller un assembly, spécifiez les paramètres *assemblyName*, *scheme*, *id* et *description*.<br /><br /> Pour supprimer une référence à un assembly, vous devez spécifier les mêmes paramètres *scheme*, *id* et *description* que ceux spécifiés avec les options **/i** et **/r** (ou **/ir**) lors de l’installation de l’assembly. Si vous désinstallez un assembly, l'outil supprime également l'assembly du Global Assembly Cache s'il s'agit de la dernière référence à supprimer et si Windows Installer ne possède aucune référence en suspens à l'assembly.<br /><br /> Le paramètre *scheme* spécifie le type de schéma d’installation. Vous pouvez spécifier l'une des valeurs suivantes :<br /><br /> - UNINSTALL_KEY : Spécifiez cette valeur si le programme d’installation ajoute l’application à Ajout/Suppression de programmes dans Microsoft Windows. Les applications s'ajoutent elles-mêmes à Ajout/Suppression de programmes en ajoutant une clé de Registre à HKLM\Software\Microsoft\Windows\CurrentVersion.<br />- FILEPATH : Spécifiez cette valeur si le programme d’installation n’ajoute pas l’application à Ajout/Suppression de programmes.<br />- OPAQUE : Spécifiez cette valeur si l’indication d’une clé de Registre ou d’un chemin de fichier ne s’applique pas à votre scénario d’installation. Cette valeur vous permet de spécifier des informations personnalisées pour le paramètre *id*.<br /><br /> La valeur à spécifier pour le paramètre *id* dépend de la valeur spécifiée pour le paramètre *scheme* :<br /><br /> - Si vous spécifiez UNINSTALL_KEY pour le paramètre *scheme*, spécifiez le nom de l’application défini dans la clé de Registre HKLM\Software\Microsoft\Windows\CurrentVersion. Par exemple, si la clé de Registre est HKLM\Software\Microsoft\Windows\CurrentVersion\MyApp, spécifiez MyApp pour le paramètre *id*.<br />- Si vous spécifiez FILEPATH pour le paramètre *scheme*, spécifiez le chemin complet du fichier exécutable qui installe l’assembly en tant que paramètre *id*.<br />- Si vous spécifiez OPAQUE pour le paramètre *scheme*, vous pouvez fournir n’importe quelles données en tant que paramètre *id*. Les données que vous spécifiez doivent être mises entre guillemets ("").<br /><br /> Le paramètre *description* vous permet de spécifier un texte descriptif concernant l’application à installer. Ces informations sont affichées lorsque des références sont énumérées.|
+|**/r** [*assemblyName &#124; assemblyPath*]<br /><br /> *scheme*<br /><br /> *id*<br /><br /> *description*|Spécifie une référence avec trace à un assembly ou des assemblys à installer ou à désinstaller. Spécifiez cette option avec les options **/i**, **/il**, **/u** ou **/ul**.<br /><br /> Pour installer un assembly, spécifiez les paramètres *assemblyPath*, *scheme*, *id* et *description* avec cette option. Pour désinstaller un assembly, spécifiez les paramètres *assemblyName*, *scheme*, *id* et *description*.<br /><br /> Pour supprimer une référence à un assembly, vous devez spécifier les mêmes paramètres *scheme*, *id* et *description* que ceux spécifiés avec les options **/i** et **/r** (ou **/ir**) lors de l’installation de l’assembly. Si vous désinstallez un assembly, l'outil supprime également l'assembly du Global Assembly Cache s'il s'agit de la dernière référence à supprimer et si Windows Installer ne possède aucune référence en suspens à l'assembly.<br /><br /> Le paramètre *scheme* spécifie le type de schéma d’installation. Vous pouvez spécifier l'une des valeurs suivantes :<br /><br /> - UNINSTALL_KEY : Spécifiez cette valeur si le programme d’installation ajoute l’application à Ajout/Suppression de programmes dans Microsoft Windows. Les applications s'ajoutent elles-mêmes à Ajout/Suppression de programmes en ajoutant une clé de Registre à HKLM\Software\Microsoft\Windows\CurrentVersion.<br />- FILEPATH : Spécifiez cette valeur si le programme d’installation n’ajoute pas l’application à Ajout/Suppression de programmes.<br />- OPAQUE : Spécifiez cette valeur si l’indication d’une clé de Registre ou d’un chemin de fichier ne s’applique pas à votre scénario d’installation. Cette valeur vous permet de spécifier des informations personnalisées pour le paramètre *id*.<br /><br /> La valeur à spécifier pour le paramètre *id* dépend de la valeur spécifiée pour le paramètre *scheme* :<br /><br /> - Si vous spécifiez UNINSTALL_KEY pour le paramètre *scheme*, spécifiez le nom de l’application défini dans la clé de Registre HKLM\Software\Microsoft\Windows\CurrentVersion. Par exemple, si la clé de Registre est HKLM\Software\Microsoft\Windows\CurrentVersion\MyApp, spécifiez MyApp pour le paramètre *id*.<br />- Si vous spécifiez FILEPATH pour le paramètre *scheme*, spécifiez le chemin complet du fichier exécutable qui installe l’assembly en tant que paramètre *id*.<br />- Si vous spécifiez OPAQUE pour le paramètre *scheme*, vous pouvez fournir n’importe quelles données en tant que paramètre *id*. Les données que vous spécifiez doivent être mises entre guillemets ("").<br /><br /> Le paramètre *description* vous permet de spécifier un texte descriptif concernant l’application à installer. Ces informations sont affichées lorsque des références sont énumérées.|
 |**/silent**|Supprime l'affichage de toutes les sorties.|
 |**/u**  *assemblyName*|Désinstalle un assembly du Global Assembly Cache.|
 |**/uf**  *assemblyName*|Force la désinstallation d'un assembly spécifié en supprimant toutes les références à cet assembly.<br /><br /> La spécification de cette option revient à spécifier les options **/u** et **/f** ensemble. **Remarque :**  cette option ne permet pas de supprimer un assembly installé avec Microsoft Windows Installer. Si vous tentez cette opération, l'outil affiche un message d'erreur.|
 |**/ul** *assemblyListFile*|Désinstalle un ou plusieurs assemblys spécifiés dans *assemblyListFile* du Global Assembly Cache.|
 |**/u**[**ngen**] *assemblyName*|Désinstalle un assembly spécifié du Global Assembly Cache. S'il existe des décomptes de références pour l'assembly spécifié, l'outil les affiche et ne supprime pas l'assembly du Global Assembly Cache. **Remarque :**  dans la version 2.0 de .NET Framework, `/ungen` n’est pas pris en charge. Utilisez plutôt la commande `uninstall` de [Ngen.exe (Native Image Generator)](../../../docs/framework/tools/ngen-exe-native-image-generator.md). <br /><br /> Dans le .NET Framework versions 1.0 et 1.1, la spécification de **/ungen** conduit Gacutil.exe à supprimer l’assembly du cache des images natives. Ce cache stocke les images natives pour les assemblys qui ont été créés à l’aide de [Ngen.exe (Native Image Generator)](../../../docs/framework/tools/ngen-exe-native-image-generator.md).|
-|**/ur**  *assemblyName*<br /><br /> *scheme*<br /><br /> *ID*<br /><br /> *description*|Désinstalle une référence à un assembly spécifié du Global Assembly Cache. Pour supprimer une référence à un assembly, vous devez spécifier les mêmes paramètres *scheme*, *id* et *description* que ceux spécifiés avec les options **/i** et **/r** (ou **/ir)** lors de l’installation de l’assembly. Pour obtenir une description des valeurs valides que vous pouvez spécifier pour ces paramètres, consultez l’option **/r**.<br /><br /> La spécification de cette option revient à spécifier les options **/u** et **/r** ensemble.|
+|**/ur**  *assemblyName*<br /><br /> *scheme*<br /><br /> *id*<br /><br /> *description*|Désinstalle une référence à un assembly spécifié du Global Assembly Cache. Pour supprimer une référence à un assembly, vous devez spécifier les mêmes paramètres *scheme*, *id* et *description* que ceux spécifiés avec les options **/i** et **/r** (ou **/ir)** lors de l’installation de l’assembly. Pour obtenir une description des valeurs valides que vous pouvez spécifier pour ces paramètres, consultez l’option **/r**.<br /><br /> La spécification de cette option revient à spécifier les options **/u** et **/r** ensemble.|
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 > [!NOTE]
 > Vous devez disposer des droits d'administrateur pour utiliser Gacutil.exe.
@@ -81,7 +81,7 @@ Gacutil.exe fournit des options qui prennent en charge le décompte de référen
 
 Utilisez les options **/il** ou **/ul** pour installer ou désinstaller une liste d’assemblys stockés dans un fichier texte ANSI. Le contenu du fichier texte doit être correctement mis en forme. Pour utiliser un fichier texte afin d'installer des assemblys, spécifiez le chemin d'accès de chaque assembly sur une ligne distincte dans le fichier. L'exemple suivant illustre le contenu d'un fichier contenant des assemblys à installer.
 
-```
+```text
 myAssembly1.dll
 myAssembly2.dll
 myAssembly3.dll
@@ -89,7 +89,7 @@ myAssembly3.dll
 
 Pour utiliser un fichier texte afin de désinstaller des assemblys, indiquez le nom qualifié complet de chaque assembly sur une ligne distincte dans le fichier. L'exemple suivant illustre le contenu d'un fichier contenant des assemblys à désinstaller.
 
-```
+```text
 myAssembly1,Version=1.1.0.0,Culture=en,PublicKeyToken=874e23ab874e23ab
 myAssembly2,Version=1.1.0.0,Culture=en,PublicKeyToken=874e23ab874e23ab
 myAssembly3,Version=1.1.0.0,Culture=en,PublicKeyToken=874e23ab874e23ab
@@ -98,7 +98,7 @@ myAssembly3,Version=1.1.0.0,Culture=en,PublicKeyToken=874e23ab874e23ab
 > [!NOTE]
 > Si vous tentez d’installer un assembly dont le nom de fichier dépasse les 79-91 caractères (sans compter l’extension du fichier), vous risquez de rencontrer l’erreur suivante :
 >
-> ```
+> ```output
 > Failure adding assembly to the cache:   The file name is too long.
 > ```
 >
@@ -117,13 +117,13 @@ myAssembly3,Version=1.1.0.0,Culture=en,PublicKeyToken=874e23ab874e23ab
 
 La commande suivante installe l'assembly `mydll.dll` dans le Global Assembly Cache.
 
-```
+```console
 gacutil /i mydll.dll
 ```
 
 La commande suivante supprime l'assembly `hello` du Global Assembly Cache si aucun décompte de références n'existe pour l'assembly.
 
-```
+```console
 gacutil /u hello
 ```
 
@@ -131,49 +131,49 @@ Notez que la commande précédente peut supprimer plusieurs assemblys du cache d
 
 Suivez l'exemple suivant pour éviter de supprimer plusieurs assemblys. Cette commande supprime uniquement l'assembly `hello` correspondant au numéro de version, à la culture et à la clé publique intégralement spécifiés.
 
-```
+```console
 gacutil /u hello, Version=1.0.0.1, Culture="de",PublicKeyToken=45e343aae32233ca
 ```
 
 La commande suivante installe les assemblys spécifiés dans le fichier `assemblyList.txt` du Global Assembly Cache.
 
-```
+```console
 gacutil /il assemblyList.txt
 ```
 
 La commande suivante supprime les assemblys spécifiés dans le fichier `assemblyList.txt` du Global Assembly Cache.
 
-```
+```console
 gacutil /ul assemblyList.txt
 ```
 
 La commande suivante installe `myDll.dll` dans le Global Assembly Cache et ajoute une référence pour le décompter. L'assembly `myDll.dll` est utilisé par l'application `MyApp`. Le paramètre `UNINSTALL_KEY MyApp` spécifie la clé de Registre qui ajoute `MyApp` à Ajout/Suppression de programmes dans Windows. Le paramètre description est spécifié en tant que `My Application Description`.
 
-```
+```console
 gacutil /i /r myDll.dll UNINSTALL_KEY MyApp "My Application Description"
 ```
 
 La commande suivante installe `myDll.dll` dans le Global Assembly Cache et ajoute une référence pour le décompter. Le paramètre scheme, `FILEPATH`, et le paramètre id, `c:\applications\myApp\myApp.exe`, spécifient le chemin de l’application qui installe `myDll.dll.`. Le paramètre description est spécifié en tant que `MyApp`.
 
-```
+```console
 gacutil /i /r myDll.dll FILEPATH c:\applications\myApp\myApp.exe MyApp
 ```
 
 La commande suivante installe `myDll.dll` dans le Global Assembly Cache et ajoute une référence pour le décompter. Le paramètre scheme, `OPAQUE`, vous permet de personnaliser les paramètres id et description.
 
-```
+```console
 gacutil /i /r mydll.dll OPAQUE "Insert custom application details here" "Insert Custom description information here"
 ```
 
 La commande suivante supprime la référence à `myDll.dll` par l'application `myApp`. S'il s'agit de la dernière référence à l'assembly, elle supprime également l'assembly du Global Assembly Cache.
 
-```
+```console
 gacutil /u /r myDll.dll FILEPATH c:\applications\myApp\myApp.exe MyApp
 ```
 
 La commande suivante répertorie le contenu du Global Assembly Cache.
 
-```
+```console
 gacutil /l
 ```
 

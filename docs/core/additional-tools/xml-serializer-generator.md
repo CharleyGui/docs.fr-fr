@@ -5,12 +5,12 @@ author: mlacouture
 ms.date: 01/19/2017
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 74d10b0fb27a4acf477fc66451a5cf6fc1f4317c
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: 252d5f6655336669ba516393e17eb3d070611ea6
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65631694"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70849237"
 ---
 # <a name="using-microsoft-xml-serializer-generator-on-net-core"></a>Utilisation de Microsoft XML Serializer Generator sur .NET Core
 
@@ -27,9 +27,9 @@ Comme l’outil [XML Serializer Generator (sgen.exe)](../../standard/serializati
 
 ## <a name="prerequisites"></a>Prérequis
 
-Pour suivre ce didacticiel :
+Pour suivre ce tutoriel :
 
-* [SDK .NET Core 2.1](https://www.microsoft.com/net/download) ou version ultérieure
+* [SDK .NET Core 2.1](https://dotnet.microsoft.com/download) ou version ultérieure
 * Votre éditeur de code favori.
 
 > [!TIP]
@@ -51,7 +51,7 @@ dotnet new console
 
 Utilisez la commande [`dotnet add package`](../tools//dotnet-add-package.md) pour ajouter la référence dans votre projet.
 
-Type :
+Tapez :
 
 ```console
 dotnet add package Microsoft.XmlSerializer.Generator -v 1.0.0

@@ -2,12 +2,12 @@
 title: Génération SQL à partir d'arborescences de commandes - meilleures pratiques
 ms.date: 03/30/2017
 ms.assetid: 71ef6a24-4c4f-4254-af3a-ffc0d855b0a8
-ms.openlocfilehash: 366e27f8c8a04c5d2507ab37459ad6d5abc255ae
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 9859c7df941ae6681c991001e0d1e5a50c7ffc60
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251573"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855001"
 ---
 # <a name="generating-sql-from-command-trees---best-practices"></a>Génération SQL à partir d'arborescences de commandes - meilleures pratiques
 
@@ -137,11 +137,11 @@ Lors de l'aplanissement des jointures, les tables participantes (ou sous-requêt
 
 ## <a name="avoid-select-"></a>Éviter SELECT *
 
-N'utilisez pas `SELECT *` pour sélectionner des tables de base. Le modèle de stockage d' [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] une application ne peut inclure qu’un sous-ensemble des colonnes qui se trouvent dans la table de base de données. Dans ce cas, `SELECT *` peut produire un résultat incorrect. À la place, vous devez spécifier toutes les colonnes participantes en utilisant les noms de colonne du type de résultat des expressions participantes.
+N'utilisez pas `SELECT *` pour sélectionner des tables de base. Le modèle de stockage d’une application Entity Framework ne peut inclure qu’un sous-ensemble des colonnes qui se trouvent dans la table de base de données. Dans ce cas, `SELECT *` peut produire un résultat incorrect. À la place, vous devez spécifier toutes les colonnes participantes en utilisant les noms de colonne du type de résultat des expressions participantes.
 
 ## <a name="reuse-of-expressions"></a>Réutilisation d'expressions
 
-Les expressions peuvent être réutilisées dans l’arborescence de commandes de requête transmise par [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Ne partez pas du principe que chaque expression apparaît une seule fois que dans l’arborescence de commandes de requête.
+Les expressions peuvent être réutilisées dans l’arborescence de commandes de requête transmise par l’Entity Framework. Ne partez pas du principe que chaque expression apparaît une seule fois que dans l’arborescence de commandes de requête.
 
 ## <a name="mapping-primitive-types"></a>Mappage de types primitifs
 

@@ -2,12 +2,12 @@
 title: Différences entre Entity SQL et Transact-SQL
 ms.date: 03/30/2017
 ms.assetid: 9c9ee36d-f294-4c8b-a196-f0114c94f559
-ms.openlocfilehash: 1a4bf8267ee5f036effc5f7bc91c28d1485b7612
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: e809cea2f853eed51d28e55f81a411f7af2e5a33
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250859"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854476"
 ---
 # <a name="how-entity-sql-differs-from-transact-sql"></a>Différences entre Entity SQL et Transact-SQL
 Cette rubrique décrit les différences entre [!INCLUDE[esql](../../../../../../includes/esql-md.md)] et Transact-SQL.  
@@ -189,7 +189,7 @@ SELECT C2.FirstName, C2.LastName
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ne fournit pas (encore) de prise en charge pour les fonctions analytiques.  
   
  Fonctions et opérateurs intégrés  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)]prend en charge un sous-ensemble des fonctions et des opérateurs intégrés de Transact-SQL. Ces opérateurs et ces fonctions seront vraisemblablement pris en charge par les principaux fournisseurs de stockage. [!INCLUDE[esql](../../../../../../includes/esql-md.md)]utilise les fonctions spécifiques au magasin déclarées dans un manifeste du fournisseur. En outre, vous [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] permet de déclarer des fonctions de magasin existantes intégrées et définies par l’utilisateur pour [!INCLUDE[esql](../../../../../../includes/esql-md.md)] que utilise.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)]prend en charge un sous-ensemble des fonctions et des opérateurs intégrés de Transact-SQL. Ces opérateurs et ces fonctions seront vraisemblablement pris en charge par les principaux fournisseurs de stockage. [!INCLUDE[esql](../../../../../../includes/esql-md.md)]utilise les fonctions spécifiques au magasin déclarées dans un manifeste du fournisseur. En outre, le Entity Framework vous permet de déclarer des fonctions de magasin existantes intégrées et définies par l’utilisateur, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] pour que utilise.  
   
  Indicateurs  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ne fournit pas de mécanismes pour les indicateurs de requête.  

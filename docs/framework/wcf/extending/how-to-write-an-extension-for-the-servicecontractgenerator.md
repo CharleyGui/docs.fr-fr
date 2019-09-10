@@ -2,12 +2,12 @@
 title: 'Procédure : écrire une extension pour le ServiceContractGenerator'
 ms.date: 03/30/2017
 ms.assetid: 876ca823-bd16-4bdf-9e0f-02092df90e51
-ms.openlocfilehash: b13b881a221ae0aa757b04c206125716a55f5b8c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: af23babd9255c45b9fa89b5c167de6960f0f690e
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795525"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70855719"
 ---
 # <a name="how-to-write-an-extension-for-the-servicecontractgenerator"></a>Procédure : écrire une extension pour le ServiceContractGenerator
 Cette rubrique décrit comment écrire une extension pour le <xref:System.ServiceModel.Description.ServiceContractGenerator>. Cela peut être fait en implémentant l'interface <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> sur un comportement d'opération ou en implémentant l'interface <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> sur un comportement de contrat. Cette rubrique indique comment implémenter l'interface <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> sur un comportement du contrat.  
@@ -18,7 +18,7 @@ Cette rubrique décrit comment écrire une extension pour le <xref:System.Servic
   
 1. Implémentez <xref:System.ServiceModel.Description.IServiceContractGenerationExtension>. Pour modifier le contrat de service généré, utilisez l'instance <xref:System.ServiceModel.Description.ServiceContractGenerationContext> passée dans la méthode <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29>.  
   
-    ```  
+    ```csharp
     public void GenerateContract(ServiceContractGenerationContext context)  
     {  
         Console.WriteLine("In generate contract.");  
@@ -28,7 +28,7 @@ Cette rubrique décrit comment écrire une extension pour le <xref:System.Servic
   
 2. Implémentez <xref:System.ServiceModel.Description.IWsdlImportExtension> sur la même classe. La méthode <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> peut traiter une extension WSDL spécifique (annotations WSDL dans ce cas) en ajoutant une extension de génération de code à l'instance <xref:System.ServiceModel.Description.ContractDescription> importée.  
   
-    ```  
+    ```csharp
     public void ImportContract(WsdlImporter importer, WsdlContractConversionContext context)  
        {  
                 // Contract documentation  
@@ -72,7 +72,7 @@ Cette rubrique décrit comment écrire une extension pour le <xref:System.Servic
   
 4. Dans le code client, créez un `MetadataExchangeClient` et appelez `GetMetadata`.  
   
-    ```  
+    ```csharp  
     MetadataExchangeClient mexClient = new MetadataExchangeClient(metadataAddress);  
     mexClient.ResolveMetadataReferences = true;  
     MetadataSet metaDocs = mexClient.GetMetadata();  
@@ -80,13 +80,13 @@ Cette rubrique décrit comment écrire une extension pour le <xref:System.Servic
   
 5. Créez un `WsdlImporter` et appelez `ImportAllContracts`.  
   
-    ```  
+    ```csharp  
     WsdlImporter importer = new WsdlImporter(metaDocs);            System.Collections.ObjectModel.Collection<ContractDescription> contracts = importer.ImportAllContracts();  
     ```  
   
 6. Créez un `ServiceContractGenerator` et appelez `GenerateServiceContractType` pour chaque contrat.  
   
-    ```  
+    ```csharp  
     ServiceContractGenerator generator = new ServiceContractGenerator();  
     foreach (ContractDescription contract in contracts)  
     {  
@@ -101,4 +101,4 @@ Cette rubrique décrit comment écrire une extension pour le <xref:System.Servic
 ## <a name="see-also"></a>Voir aussi
 
 - [Métadonnées](../feature-details/metadata.md)
-- [Guide pratique pour Importer un fichier WSDL personnalisé](how-to-import-custom-wsdl.md)
+- [Guide pratique : Importer un fichier WSDL personnalisé](how-to-import-custom-wsdl.md)

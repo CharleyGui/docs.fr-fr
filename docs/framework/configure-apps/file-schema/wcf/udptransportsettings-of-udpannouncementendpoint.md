@@ -2,20 +2,22 @@
 title: <udpTransportSettings> de <udpAnnouncementEndpoint>
 ms.date: 03/30/2017
 ms.assetid: a7ddff1a-5eed-4bbc-8580-b95ef8890e1f
-ms.openlocfilehash: 901b7e1429c3afc19e9b609026dc632730c35024
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b67bdf825948dffe18aabe91b0de236eb929bccc
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61788165"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854847"
 ---
-# <a name="udptransportsettings-of-udpannouncementendpoint"></a>\<udpTransportSettings> of \<udpAnnouncementEndpoint>
+# <a name="udptransportsettings-of-udpannouncementendpoint"></a>\<udpTransportSettings > de \<udpAnnouncementEndpoint >
 Cet élément de configuration expose les paramètres de transport UDP pour [ \<udpAnnouncementEndpoint >](udpannouncementendpoint.md).  
   
-\<system.ServiceModel>  
-\<standardEndpoints>  
-\<udpAnnouncementEndpoint>  
-  
+[ **\<configuration>** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<standardEndpoints >** ](standardendpoints.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<udpAnnouncementEndpoint >** ](udpannouncementendpoint.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<updTransportSettings >**  
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  

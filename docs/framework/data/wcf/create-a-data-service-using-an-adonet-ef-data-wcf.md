@@ -5,18 +5,18 @@ helpviewer_keywords:
 - WCF Data Services, providers
 - WCF Data Services, Entity Framework
 ms.assetid: 6d11fec8-0108-42f5-8719-2a7866d04428
-ms.openlocfilehash: ae4176fd986f870523e44a11eee48850e2dddd7c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1d3c3628a32439d4847505e234b12b084b47ba3d
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791078"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70854120"
 ---
 # <a name="how-to-create-a-data-service-using-an-adonet-entity-framework-data-source-wcf-data-services"></a>Procédure : Créer un service de données à l’aide d’une source de données ADO.NET Entity Framework (WCF Data Services)
 
-WCF Data Services expose les données d’entité en tant que service de données. Ces données d’entité sont fournies par le[!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] ADO.net lorsque la source de données est une base de données relationnelle. Cette rubrique vous montre comment créer un [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)]modèle de données basé sur dans une application Web Visual Studio basée sur une base de données existante et utiliser ce modèle de données pour créer un nouveau service de données.
+WCF Data Services expose les données d’entité en tant que service de données. Ces données d’entité sont fournies par l’infrastructure ADO. NETEntity Framework lorsque la source de données est une base de données relationnelle. Cette rubrique vous indique comment créer un modèle de données basé sur Entity Framework dans une application Web Visual Studio qui repose sur une base de données existante et utilise ce modèle de données pour créer un service de données.
 
-Fournit également un outil en ligne de commande qui peut générer [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] un modèle en dehors d’un projet Visual Studio. [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] Pour plus d’informations, consultez [Guide pratique pour Utilisez EdmGen. exe pour générer les fichiers](../adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)de modèle et de mappage.
+Entity Framework fournit également un outil en ligne de commande qui peut générer un modèle Entity Framework en dehors d'un projet Visual Studio. Pour plus d'informations, voir [Procédure : Utilisez EdmGen. exe pour générer les fichiers](../adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)de modèle et de mappage.
 
 ## <a name="to-add-an-entity-framework-model-that-is-based-on-an-existing-database-to-an-existing-web-application"></a>Pour ajouter à une application Web existante un modèle Entity Framework qui repose sur une base de données existante
 
@@ -45,7 +45,7 @@ Fournit également un outil en ligne de commande qui peut générer [!INCLUDE[ad
 
 9. Cliquez sur **Terminer** pour terminer l’Assistant.
 
-     Cela crée un modèle de données par défaut basé sur la base de données spécifique. [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] permet de personnaliser le modèle de données. Pour plus d’informations, consultez [Entity Data Model des tâches d’outils](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738480(v=vs.100)).
+     Cela crée un modèle de données par défaut basé sur la base de données spécifique. Entity Framework permet de personnaliser le modèle de données. Pour plus d’informations, consultez [Entity Data Model des tâches d’outils](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738480(v=vs.100)).
 
 ## <a name="to-create-the-data-service-by-using-the-new-data-model"></a>Pour créer le service de données à l'aide du nouveau modèle de données
 
@@ -77,4 +77,4 @@ Fournit également un outil en ligne de commande qui peut générer [!INCLUDE[ad
 - [Définition de WCF Data Services](defining-wcf-data-services.md)
 - [Fournisseurs de services de données](data-services-providers-wcf-data-services.md)
 - [Guide pratique pour Créer un service de données à l’aide du fournisseur de réflexion](create-a-data-service-using-rp-wcf-data-services.md)
-- [Guide pratique pour Créer un service de données à l’aide d’une source de données LINQ to SQL](create-a-data-service-using-linq-to-sql-wcf.md)
+- [Guide pratique : Créer un service de données à l’aide d’une source de données LINQ to SQL](create-a-data-service-using-linq-to-sql-wcf.md)
