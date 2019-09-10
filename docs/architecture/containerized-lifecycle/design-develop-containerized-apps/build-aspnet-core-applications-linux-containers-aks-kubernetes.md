@@ -2,12 +2,12 @@
 title: Créer des applications ASP.NET Core 2.2 déployées en tant que conteneurs Linux dans des clusters AKS/Kubernetes
 description: Cycle de vie des applications Docker en conteneur avec la plateforme et les outils Microsoft
 ms.date: 02/25/2019
-ms.openlocfilehash: 89843e0041c12f001f974360da2e5903499155d1
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: ab64a0423ceceb8285c159af276d6d97e12379d8
+ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68672576"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848756"
 ---
 # <a name="build-aspnet-core-22-applications-deployed-as-linux-containers-into-an-akskubernetes-orchestrator"></a>Créer des applications ASP.NET Core 2.2 déployées en tant que conteneurs Linux dans un orchestrateur AKS/Kubernetes
 
@@ -43,7 +43,7 @@ Vérifiez que vous avez sélectionné le framework ASP.NET Core 2.2. .NET Core�
 
 **Figure 4-37**. Sélection du type de projet ASP.NET CORE 2.2 et API web
 
-Si vous avez des versions antérieures de .NET Core, vous pouvez télécharger et installer la version 2.2 à partir de <https://www.microsoft.com/net/download/core#/sdk>.
+Si vous avez des versions antérieures de .NET Core, vous pouvez télécharger et installer la version 2.2 à partir de <https://dotnet.microsoft.com/download>.
 
 Vous pouvez ajouter la prise en charge de Docker lors de la création du projet ou par la suite, de sorte à pouvoir « dockeriser » votre projet à tout moment. Pour ajouter la prise en charge de Docker après la création du projet, cliquez avec le bouton droit sur le nœud du projet dans l’Explorateur de solutions et sélectionnez **Ajouter** > **Prise en charge de Docker** dans le menu contextuel.
 
@@ -89,7 +89,7 @@ Si vous exécutez la commande `docker image`, vous voyez deux images créées, u
 
 ### <a name="create-a-new-tag-for-the-image"></a>Créer une balise pour l’image
 
-Chaque image de conteneur doit être marquée avec le `loginServer` nom du registre. Cette balise est utilisée pour l’acheminement lors de l’envoi des images de conteneur dans un registre d’images.
+Chaque image de conteneur doit être marquée avec le `loginServer` nom du Registre. Cette balise est utilisée pour le routage lors du push d’images de conteneur dans un registre d’images.
 
 Vous pouvez voir le nom `loginServer` à partir du portail Azure, en prenant les informations auprès d’Azure Container Registry.
 
