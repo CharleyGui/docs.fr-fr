@@ -9,26 +9,26 @@ helpviewer_keywords:
 ms.assetid: 125d2ab8-55a4-4e5f-af36-a7d401a37ab0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 46e2e1c327a683782b68069ace2ad6c40bbc856e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2d4d3b009e5792685ea39a3bcc2a15e082e1b8de
+ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61868990"
+ms.lasthandoff: 08/31/2019
+ms.locfileid: "70206098"
 ---
 # <a name="security-and-remoting-considerations"></a>Considérations sur la sécurité et la communication à distance
 La communication à distance vous permet de définir des appels transparents entre des domaines d'application, des processus ou des ordinateurs. Cependant, le parcours de pile de la sécurité d'accès du code ne peut pas traverser des processus ou des limites de machine (il s'applique pourtant entre les domaines d'application du même processus).  
   
  Toute classe accessible à distance (dérivée d'une classe <xref:System.MarshalByRefObject>) doit être responsable de la sécurité. Soit le code ne doit être utilisé que dans des environnements fermés où le code appelant peut faire l'objet d'une confiance implicite, soit des appels de communication à distance doivent être conçus de façon à ne pas soumettre de code protégé à une entrée externe qui pourrait être utilisée à des fins malveillantes.  
   
- En règle générale, vous devez exposer jamais de méthodes, propriétés ou événements qui sont protégés par déclarative [LinkDemand](../../../docs/framework/misc/link-demands.md) et <xref:System.Security.Permissions.SecurityAction.InheritanceDemand> les vérifications de sécurité. Avec la communication à distance, ces contrôles ne sont pas appliqués. Autres vérifications de sécurité, telles que <xref:System.Security.Permissions.SecurityAction.Demand>, [Assert](../../../docs/framework/misc/using-the-assert-method.md), et ainsi de suite, fonctionnent entre domaines d’application dans un processus, mais pas dans les scénarios entre processus ou entre ordinateurs.  
+ En règle générale, vous ne devez jamais exposer de méthodes, de propriétés ou d’événements protégés par un [LinkDemand](link-demands.md) déclaratif et des vérifications de sécurité <xref:System.Security.Permissions.SecurityAction.InheritanceDemand>. Avec la communication à distance, ces contrôles ne sont pas appliqués. D’autres vérifications de sécurité, <xref:System.Security.Permissions.SecurityAction.Demand>telles que, [Assert](using-the-assert-method.md), etc., fonctionnent entre les domaines d’application au sein d’un processus, mais ne fonctionnent pas dans les scénarios inter-processus ou inter-ordinateurs.  
   
 ## <a name="protected-objects"></a>Objets protégés  
  Certains objets comportent un état de sécurité. Ces objets ne doivent pas être passés à du code non fiable, qui obtiendrait alors des autorisations de sécurité n'entrant pas dans le champ de ses propres autorisations.  
   
  Un exemple consiste à créer un objet <xref:System.IO.FileStream>. Le <xref:System.Security.Permissions.FileIOPermission> est exigé au moment de la création et, en cas de réussite, l'objet de fichier est retourné. Toutefois, si cette référence d'objet est passée au code sans les autorisations de fichier, l'objet pourra lire et écrire dans ce fichier.  
   
- La défense la plus simple pour ce type d’objet est d’exiger le même **FileIOPermission** de n’importe quel code qui cherche à obtenir la référence d’objet via un élément d’API publique.  
+ La défense la plus simple pour un tel objet consiste à demander la même **autorisation FileIOPermission** de tout code visant à obtenir la référence d’objet via un élément d’API public.  
   
 ## <a name="application-domain-crossing-issues"></a>Questions relatives au franchissement de domaine d'application  
  Pour isoler du code dans des environnements d'hébergement managés, il est courant de générer plusieurs domaines d'application enfants dont la stratégie explicite réduit les niveaux d'autorisations pour divers assemblys. Cependant, la stratégie pour ces assemblys reste inchangée dans le domaine d'application par défaut. Si l'un des domaines d'application enfants peut forcer le domaine d'application par défaut à charger un assembly, l'effet de l'isolement du code est perdu et les types dans l'assembly chargé de force pourront exécuter du code à un niveau de confiance plus élevé.  
@@ -39,4 +39,4 @@ La communication à distance vous permet de définir des appels transparents ent
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Instructions de codage sécurisé](../../../docs/standard/security/secure-coding-guidelines.md)
+- [Instructions de codage sécurisé](../../standard/security/secure-coding-guidelines.md)

@@ -2,20 +2,20 @@
 title: Aide-mémoire Entity SQL
 ms.date: 03/30/2017
 ms.assetid: e53dad9e-5e83-426e-abb4-be3e78e3d6dc
-ms.openlocfilehash: b4e3eaf8abd82b63fa2663b47f878ecfa9584897
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7780359d981b130118cb73d4892f3dcb4b6e2e7d
+ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785253"
+ms.lasthandoff: 09/04/2019
+ms.locfileid: "70251025"
 ---
 # <a name="entity-sql-quick-reference"></a>Aide-mémoire Entity SQL
-Cette rubrique fournit un aide-mémoire sur les requêtes [!INCLUDE[esql](../../../../../../includes/esql-md.md)]. Les requêtes dans cette rubrique sont basées sur le modèle de vente AdventureWorks Sales Model.  
+Cette rubrique fournit un aide-mémoire sur les requêtes [!INCLUDE[esql](../../../../../../includes/esql-md.md)]. Les requêtes de cette rubrique sont basées sur le modèle de vente AdventureWorks Sales Model.  
   
 ## <a name="literals"></a>Littéraux  
   
-### <a name="string"></a>Chaîne  
- Les chaînes de caractères littérales peuvent être au format Unicode ou non-Unicode. Chaînes Unicode sont précédées de N. Par exemple, `N'hello'`.  
+### <a name="string"></a>String  
+ Les chaînes de caractères littérales peuvent être au format Unicode ou non-Unicode. Les chaînes Unicode sont précédées de N. Par exemple, `N'hello'`.  
   
  Exemple de littéral de chaîne non-Unicode :  
   
@@ -25,16 +25,16 @@ Cette rubrique fournit un aide-mémoire sur les requêtes [!INCLUDE[esql](../../
 "hello"  
 ```  
   
- Sortie :  
+ Sortie :  
   
-|Value|  
+|`Value`|  
 |-----------|  
 |hello|  
   
 ### <a name="datetime"></a>DateTime  
  Dans les littéraux DateTime, les parties date et heure sont obligatoires. Il n'existe pas de valeur par défaut.  
   
- Exemple :  
+ Exemple :  
   
 ```  
 DATETIME '2006-12-25 01:01:00.000'   
@@ -42,25 +42,25 @@ DATETIME '2006-12-25 01:01:00.000'
 DATETIME '2006-12-25 01:01'  
 ```  
   
- Sortie :  
+ Sortie :  
   
-|Value|  
+|Valeur|  
 |-----------|  
 |12/25/2006 1:01:00 AM|  
   
 ### <a name="integer"></a>Entier  
  Les littéraux d'entiers peuvent être de type Int32 (123), UInt32 (123U), Int64 (123L) et UInt64 (123UL).  
   
- Exemple :  
+ Exemple :  
   
 ```  
 --a collection of integers  
 {1, 2, 3}  
 ```  
   
- Sortie :  
+ Sortie :  
   
-|Value|  
+|Valeur|  
 |-----------|  
 |1|  
 |2|  
@@ -72,16 +72,16 @@ DATETIME '2006-12-25 01:01'
 ## <a name="type-constructors"></a>Constructeurs de type  
   
 ### <a name="row"></a>ROW  
- [LIGNE](../../../../../../docs/framework/data/adonet/ef/language-reference/row-entity-sql.md) construit une valeur anonyme, structurellement typée de (enregistrement) comme dans : `ROW(1 AS myNumber, ‘Name’ AS myName).`  
+ La fonction [Row](row-entity-sql.md) construit une valeur anonyme, structurellement typée (enregistrement) comme dans :`ROW(1 AS myNumber, ‘Name’ AS myName).`  
   
- Exemple :  
+ Exemple :  
   
 ```  
 SELECT VALUE row (product.ProductID as ProductID, product.Name   
     as ProductName) FROM AdventureWorksEntities.Product AS product  
 ```  
   
- Sortie :  
+ Sortie :  
   
 |ProductID|Nom|  
 |---------------|----------|  
@@ -91,26 +91,26 @@ SELECT VALUE row (product.ProductID as ProductID, product.Name
 |...|...|  
   
 ### <a name="multiset"></a>MULTISET  
- [MULTISET](../../../../../../docs/framework/data/adonet/ef/language-reference/multiset-entity-sql.md) construit des collections, telles que :  
+ Les collections de [multiensembles](multiset-entity-sql.md), telles que :  
   
  `MULTISET(1,2,2,3)` `--same as`-`{1,2,2,3}.`  
   
- Exemple :  
+ Exemple :  
   
 ```  
 SELECT VALUE product FROM AdventureWorksEntities.Product AS product WHERE product.ListPrice IN MultiSet (125, 300)  
 ```  
   
- Sortie :  
+ Sortie :  
   
 |ProductID|Nom|ProductNumber|…|  
 |---------------|----------|-------------------|-------|  
 |842|Touring-Panniers, Large|PA-T100|…|  
   
 ### <a name="object"></a>Object  
- [Nommé le constructeur de Type](../../../../../../docs/framework/data/adonet/ef/language-reference/named-type-constructor-entity-sql.md) construit les objets définis par l’utilisateur (nommés) comme `person("abc", 12)`.  
+ Le [constructeur de type nommé](named-type-constructor-entity-sql.md) construit (nommé) des objets définis par l’utilisateur `person("abc", 12)`, tels que.  
   
- Exemple :  
+ Exemple :  
   
 ```  
 SELECT VALUE AdventureWorksModel.SalesOrderDetail (o.SalesOrderDetailID, o.CarrierTrackingNumber, o.OrderQty,   
@@ -119,7 +119,7 @@ o.rowguid, o.ModifiedDate) FROM AdventureWorksEntities.SalesOrderDetail
 AS o  
 ```  
   
- Sortie :  
+ Sortie :  
   
 |SalesOrderDetailID|CarrierTrackingNumber|OrderQty|ProductID|...|  
 |------------------------|---------------------------|--------------|---------------|---------|  
@@ -130,15 +130,15 @@ AS o
 ## <a name="references"></a>Références  
   
 ### <a name="ref"></a>REF  
- [REF](../../../../../../docs/framework/data/adonet/ef/language-reference/ref-entity-sql.md) crée une référence à une instance de type d’entité. Par exemple, la requête suivante retourne les références à chaque entité Order dans le jeu d'entités Orders :  
+ [Ref](ref-entity-sql.md) crée une référence à une instance de type d’entité. Par exemple, la requête suivante retourne les références à chaque entité Order dans le jeu d'entités Orders :  
   
 ```  
 SELECT REF(o) AS OrderID FROM Orders AS o  
 ```  
   
- Sortie :  
+ Sortie :  
   
-|Value|  
+|Valeur|  
 |-----------|  
 |1|  
 |2|  
@@ -147,16 +147,16 @@ SELECT REF(o) AS OrderID FROM Orders AS o
   
  L'exemple suivant utilise l'opérateur d'extraction de propriété (.) pour accéder à une propriété d'entité. Lors de l'utilisation de l'opérateur d'extraction de propriété, la référence est automatiquement supprimée.  
   
- Exemple :  
+ Exemple :  
   
 ```  
 SELECT VALUE REF(p).Name FROM   
     AdventureWorksEntities.Product as p  
 ```  
   
- Sortie :  
+ Sortie :  
   
-|Value|  
+|Valeur|  
 |-----------|  
 |Adjustable Race|  
 |All-Purpose Bike Stand|  
@@ -164,18 +164,18 @@ SELECT VALUE REF(p).Name FROM
 |...|  
   
 ### <a name="deref"></a>DEREF  
- [DEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/deref-entity-sql.md) déréférence une valeur de référence et génère le résultat de ce déréférencement. Par exemple, la requête suivante génère les entités Order pour chaque élément Order du jeu d'entités Orders : `SELECT DEREF(o2.r) FROM (SELECT REF(o) AS r FROM LOB.Orders AS o) AS o2`.  
+ [Deref](deref-entity-sql.md) déréférence une valeur de référence et génère le résultat de ce déréférencement. Par exemple, la requête suivante génère les entités Order pour chaque élément Order du jeu d'entités Orders : `SELECT DEREF(o2.r) FROM (SELECT REF(o) AS r FROM LOB.Orders AS o) AS o2`.  
   
- Exemple :  
+ Exemple :  
   
 ```  
 SELECT VALUE DEREF(REF(p)).Name FROM   
     AdventureWorksEntities.Product as p  
 ```  
   
- Sortie :  
+ Sortie :  
   
-|Value|  
+|`Value`|  
 |-----------|  
 |Adjustable Race|  
 |All-Purpose Bike Stand|  
@@ -183,16 +183,16 @@ SELECT VALUE DEREF(REF(p)).Name FROM
 |...|  
   
 ### <a name="createref-and-key"></a>CREATEREF et KEY  
- [CREATEREF](../../../../../../docs/framework/data/adonet/ef/language-reference/createref-entity-sql.md) crée une référence qui passe une clé. [CLÉ](../../../../../../docs/framework/data/adonet/ef/language-reference/key-entity-sql.md) extrait la partie clé d’une expression avec référence de type.  
+ [CREATEREF](createref-entity-sql.md) crée une référence qui transmet une clé. La [clé](key-entity-sql.md) extrait la partie clé d’une expression avec une référence de type.  
   
- Exemple :  
+ Exemple :  
   
 ```  
 SELECT VALUE Key(CreateRef(AdventureWorksEntities.Product, row(p.ProductID)))   
     FROM AdventureWorksEntities.Product as p  
 ```  
   
- Sortie :  
+ Sortie :  
   
 |ProductID|  
 |---------------|  
@@ -203,10 +203,10 @@ SELECT VALUE Key(CreateRef(AdventureWorksEntities.Product, row(p.ProductID)))
   
 ## <a name="functions"></a>Fonctions  
   
-### <a name="canonical"></a>Canoniques  
- L’espace de noms [fonctions canoniques](../../../../../../docs/framework/data/adonet/ef/language-reference/canonical-functions.md) est Edm, comme dans `Edm.Length("string")`. Vous n'avez pas besoin de spécifier l'espace de noms sauf si un autre espace de noms est importé et qu'il contient une fonction portant le même nom qu'une fonction canonique. Si deux espaces de noms partagent la même fonction, l'utilisateur doit spécifier le nom complet.  
+### <a name="canonical"></a>Canonical  
+ L’espace de noms des [fonctions canoniques](canonical-functions.md) est EDM `Edm.Length("string")`, comme dans. Vous n'avez pas besoin de spécifier l'espace de noms sauf si un autre espace de noms est importé et qu'il contient une fonction portant le même nom qu'une fonction canonique. Si deux espaces de noms partagent la même fonction, l'utilisateur doit spécifier le nom complet.  
   
- Exemple :  
+ Exemple :  
   
 ```  
 SELECT Length(c. FirstName) As NameLen FROM   
@@ -214,18 +214,18 @@ SELECT Length(c. FirstName) As NameLen FROM
     WHERE c.ContactID BETWEEN 10 AND 12  
 ```  
   
- Sortie :  
+ Sortie :  
   
 |NameLen|  
 |-------------|  
-|6|  
-|6|  
-|5|  
+|6\.|  
+|6\.|  
+|5\.|  
   
 ### <a name="microsoft-provider-specific"></a>Spécifiques au fournisseur Microsoft  
- [Fonctions spécifiques au fournisseur de Microsoft](../../../../../../docs/framework/data/adonet/ef/sqlclient-for-ef-functions.md) se trouvent dans le `SqlServer` espace de noms.  
+ Les [fonctions spécifiques au fournisseur Microsoft](../sqlclient-for-ef-functions.md) se trouvent `SqlServer` dans l’espace de noms.  
   
- Exemple :  
+ Exemple :  
   
 ```  
 SELECT SqlServer.LEN(c.EmailAddress) As EmailLen FROM   
@@ -233,7 +233,7 @@ SELECT SqlServer.LEN(c.EmailAddress) As EmailLen FROM
     c.ContactID BETWEEN 10 AND 12  
 ```  
   
- Sortie :  
+ Sortie :  
   
 |EmailLen|  
 |--------------|  
@@ -242,49 +242,49 @@ SELECT SqlServer.LEN(c.EmailAddress) As EmailLen FROM
 |26|  
   
 ## <a name="namespaces"></a>Espaces de noms  
- [À l’aide de](../../../../../../docs/framework/data/adonet/ef/language-reference/using-entity-sql.md) spécifie les espaces de noms utilisés dans une expression de requête.  
+ [L’utilisation](using-entity-sql.md) de spécifie les espaces de noms utilisés dans une expression de requête.  
   
- Exemple :  
+ Exemple :  
   
 ```  
 using SqlServer; LOWER('AA');  
 ```  
   
- Sortie :  
+ Sortie :  
   
-|Value|  
+|`Value`|  
 |-----------|  
 |aa|  
   
 ## <a name="paging"></a>Pagination  
- La pagination peut être exprimée en déclarant un [SKIP](../../../../../../docs/framework/data/adonet/ef/language-reference/skip-entity-sql.md) et [limite](../../../../../../docs/framework/data/adonet/ef/language-reference/limit-entity-sql.md) sous-clauses pour le [ORDER BY](../../../../../../docs/framework/data/adonet/ef/language-reference/order-by-entity-sql.md) clause.  
+ La pagination peut être exprimée en déclarant une sous-clause [Skip](skip-entity-sql.md) et [Limit](limit-entity-sql.md) à la clause [order by](order-by-entity-sql.md) .  
   
- Exemple :  
+ Exemple :  
   
 ```  
 SELECT c.ContactID as ID, c.LastName as Name FROM   
     AdventureWorks.Contact AS c ORDER BY c.ContactID SKIP 9 LIMIT 3;  
 ```  
   
- Sortie :  
+ Sortie :  
   
-|Id|Nom|  
+|ID|Nom|  
 |--------|----------|  
 |10|Adina|  
 |11|Agcaoili|  
 |12|Aguilar|  
   
 ## <a name="grouping"></a>Regroupement  
- [REGROUPEMENT par](../../../../../../docs/framework/data/adonet/ef/language-reference/group-by-entity-sql.md) indique les groupes dans les objets retournés par une requête ([sélectionnez](../../../../../../docs/framework/data/adonet/ef/language-reference/select-entity-sql.md)) expression doivent être placés.  
+ [Regroupement par](group-by-entity-sql.md) spécifie les groupes dans lesquels les objets retournés par une expression de requête ([Select](select-entity-sql.md)) doivent être placés.  
   
- Exemple :  
+ Exemple :  
   
 ```  
 SELECT VALUE name FROM AdventureWorksEntities.Product as P   
     GROUP BY P.Name HAVING MAX(P.ListPrice) > 5  
 ```  
   
- Sortie :  
+ Sortie :  
   
 |name|  
 |----------|  
@@ -294,9 +294,9 @@ SELECT VALUE name FROM AdventureWorksEntities.Product as P
 |...|  
   
 ## <a name="navigation"></a>Navigation  
- L'opérateur de navigation de relations vous permet de parcourir la relation entre une entité (terminaison From) et une autre entité (terminaison To). [NAVIGATE](../../../../../../docs/framework/data/adonet/ef/language-reference/navigate-entity-sql.md) accepte le type de relation qualifié comme \<espace de noms >.\< nom de type de relation >. Accédez retourne Ref\<T > Si la cardinalité de la terminaison to est 1. Si la cardinalité de la terminaison to est n, la Collection < Ref\<T >> sera retourné.  
+ L'opérateur de navigation de relations vous permet de parcourir la relation entre une entité (terminaison From) et une autre entité (terminaison To). [Naviguer](navigate-entity-sql.md) prend le type de relation qualifié \<en tant qu'\< espace de noms >. nom du type de relation >. Navigate retourne\<Ref T > si la cardinalité de la terminaison to est 1. Si la cardinalité de la terminaison to est n, la collection < Ref\<T > > sera retourné.  
   
- Exemple :  
+ Exemple :  
   
 ```  
 SELECT a.AddressID, (SELECT VALUE DEREF(v) FROM   
@@ -304,7 +304,7 @@ SELECT a.AddressID, (SELECT VALUE DEREF(v) FROM
     FROM AdventureWorksEntities.Address AS a  
 ```  
   
- Sortie :  
+ Sortie :  
   
 |AddressID|  
 |---------------|  
@@ -316,15 +316,15 @@ SELECT a.AddressID, (SELECT VALUE DEREF(v) FROM
 ## <a name="select-value-and-select"></a>SELECT VALUE et SELECT  
   
 ### <a name="select-value"></a>SELECT VALUE  
- [!INCLUDE[esql](../../../../../../includes/esql-md.md)] fournit la clause SELECT VALUE pour ignorer la construction de ligne implicite. Un seul élément peut être spécifié dans une clause SELECT VALUE. Lorsqu’une telle clause est utilisée, aucun wrapper de ligne n’est construit autour des éléments dans la clause SELECT, et une collection de la forme souhaitée peut être générée, par exemple : `SELECT VALUE a`.  
+ [!INCLUDE[esql](../../../../../../includes/esql-md.md)] fournit la clause SELECT VALUE pour ignorer la construction de ligne implicite. Un seul élément peut être spécifié dans une clause SELECT VALUE. Lorsqu’une telle clause est utilisée, aucun Wrapper de ligne n’est construit autour des éléments de la clause SELECT, et une collection de la forme souhaitée peut être produite, par `SELECT VALUE a`exemple :.  
   
- Exemple :  
+ Exemple :  
   
 ```  
 SELECT VALUE p.Name FROM AdventureWorksEntities.Product as p  
 ```  
   
- Sortie :  
+ Sortie :  
   
 |Nom|  
 |----------|  
@@ -336,11 +336,11 @@ SELECT VALUE p.Name FROM AdventureWorksEntities.Product as p
 ### <a name="select"></a>SELECT  
  [!INCLUDE[esql](../../../../../../includes/esql-md.md)] fournit également le constructeur de ligne pour construire des lignes arbitraires. SELECT extrait un ou plusieurs éléments de la projection et produit un enregistrement de données avec des champs, par exemple : `SELECT a, b, c`.  
   
- Exemple :  
+ Exemple :  
   
  SELECT p.Name, p.ProductID FROM AdventureWorksEntities.Product as p Output:  
   
-|Nom|ProductID|  
+|Name|ProductID|  
 |----------|---------------|  
 |Adjustable Race|1|  
 |All-Purpose Bike Stand|879|  
@@ -348,21 +348,21 @@ SELECT VALUE p.Name FROM AdventureWorksEntities.Product as p
 |...|...|  
   
 ## <a name="case-expression"></a>Expression CASE  
- Le [cas expression](../../../../../../docs/framework/data/adonet/ef/language-reference/case-entity-sql.md) évalue un ensemble d’expressions booléennes pour déterminer le résultat.  
+ L' [expression case](case-entity-sql.md) évalue un jeu d’expressions booléennes pour déterminer le résultat.  
   
- Exemple :  
+ Exemple :  
   
 ```  
 CASE WHEN AVG({25,12,11}) < 100 THEN TRUE ELSE FALSE END  
 ```  
   
- Sortie :  
+ Sortie :  
   
-|Value|  
+|`Value`|  
 |-----------|  
 |TRUE|  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-reference.md)
-- [Vue d’ensemble d’Entity SQL](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+- [Référence Entity SQL](entity-sql-reference.md)
+- [Vue d’ensemble d’Entity SQL](entity-sql-overview.md)

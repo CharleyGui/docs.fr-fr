@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 419fb33155cfa91199e52110da29efd44d606f4b
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: b9cc185bf8cccb8ed3c24e28954afd86464602d7
+ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636608"
+ms.lasthandoff: 09/07/2019
+ms.locfileid: "70798568"
 ---
 # <a name="getmethod-function"></a>GetMethod, fonction
 
@@ -45,44 +45,44 @@ HRESULT GetMethod (
 ## <a name="parameters"></a>Paramètres
 
 `vFunc`\
-[in] Ce paramètre n’est pas utilisé.
+dans Ce paramètre n’est pas utilisé.
 
 `ptr`\
-[in] Un pointeur vers un [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.
+dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) .
 
 `wszName`\
-[in] Le nom de la méthode. Ce paramètre ne peut pas être `null` et doit pointer vers un valide `LPCWSTR`.
+dans Nom de la méthode. Ce paramètre ne peut `null` pas avoir la valeur et doit `LPCWSTR`pointer vers un valide.
 
 `lFlags`\
-[in] Réservée. Ce paramètre doit être 0.
+[in] Réservée. Ce paramètre doit avoir la valeur 0.
 
 `ppInSignature`\
-[out] Un pointeur vers l’adresse d’un [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance qui décrit les paramètres d’entrée à la méthode. Ce paramètre est ignoré si elle est définie sur `null`.
+à Pointeur vers l’adresse d’une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) qui décrit les paramètres in de la méthode. Ce paramètre est ignoré s’il est défini sur `null`.
 
 `ppOutSignature`\
-[out] Un pointeur vers l’adresse d’un [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance qui décrit les paramètres de sortie à la méthode. Ce paramètre est ignoré si elle est définie sur `null`.
+à Pointeur vers l’adresse d’une instance [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) qui décrit les paramètres de sortie de la méthode. Ce paramètre est ignoré s’il est défini sur `null`.
 
 ## <a name="return-value"></a>Valeur de retour
 
-Les valeurs suivantes est retournées par cette fonction sont définies dans le *WbemCli.h* fichier d’en-tête, ou vous pouvez les définir en tant que constantes dans votre code :
+Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |Value  |Description  |
+|Constante  |`Value`  |Description  |
 |---------|---------|---------|
 |`WBEM_E_NOT_FOUND` | 0x80041002 | La propriété spécifiée est introuvable. |
-|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | Mémoire est insuffisante pour terminer l’opération. |
-|`WBEM_S_NO_ERROR` | 0 | L’appel de fonction a réussi.  |
+|`WBEM_E_OUT_OF_MEMORY` | 0x80041006 | La mémoire disponible est insuffisante pour terminer l’opération. |
+|`WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
 
 ## <a name="remarks"></a>Notes
 
-Cette fonction encapsule un appel à la [IWbemClassObject::GetMethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod) (méthode).
+Cette fonction encapsule un appel à la méthode [IWbemClassObject :: GetMethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod) .
 
-Gestion de Windows peut définir le [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) pointeur vers `null` si la méthode n’a aucun paramètre in.
+La gestion Windows peut définir le pointeur [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) sur `null` si la méthode n’a pas de paramètres in.
 
-Dans `ppInSignature` et `ppOutSignature` décrivent respectivement, en tant que propriétés dans les paramètres, in et out un `IWbemClassObject` instance de la classe système [_Parameters](/windows/desktop/WmiSdk/--parameters). Les propriétés dans `ppInSignature` sont nommés `Param` *n*, où *n* correspond à la position du paramètre dans la signature de méthode (tel que `Param1`, `Param2`, etc..). Les propriétés dans `ppOutSignature` sont également appelés `Param` *n*, et la valeur de retour est nommée `ReturnValue`. Pour plus d’informations et un exemple, consultez [IWbemClassObject::GetMethod méthode](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod).
+Dans `ppInSignature` `IWbemClassObject` et `ppOutSignature` décrivent les paramètres in et out, respectivement, en tant que propriétés dans une instance de la classe système [_Parameters](/windows/desktop/WmiSdk/--parameters). Les propriétés de `ppInSignature` sont nommées `Param` *n*, où *n* est la position du paramètre dans la signature de la méthode ( `Param1`par `Param2`exemple,,, etc.). Les propriétés de `ppOutSignature` sont également `Param`nommées *n*, et la valeur de retour `ReturnValue`est nommée. Pour plus d’informations et pour obtenir un exemple, consultez [IWbemClassObject :: GetMethod, méthode](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-getmethod).
 
 ## <a name="requirements"></a>Configuration requise
 
-**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes** Consultez [Configuration requise](../../get-started/system-requirements.md).
 
 **En-tête :** WMINet_Utils.idl
 
@@ -90,4 +90,4 @@ Dans `ppInSignature` et `ppOutSignature` décrivent respectivement, en tant que 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [WMI et compteurs de performances (référence des API non managées)](index.md)
+- [WMI et compteurs de performance (informations de référence sur les API non managées)](index.md)
