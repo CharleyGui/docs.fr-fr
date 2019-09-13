@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 04/24/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: 6dbd69c8424227f85d8bf3cdcaf6cf9dbf7e1f4c
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: f3688b4492d3eb629f86a9d463b9127429260033
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70856021"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929121"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analyser les sentiments à l’aide de la CLI ML.NET
 
@@ -19,6 +19,7 @@ Découvrez comment utiliser la CLI ML.NET pour générer automatiquement un mod�
 
 Dans ce tutoriel, vous allez effectuer les étapes suivantes :
 > [!div class="checklist"]
+>
 > - Préparer vos données pour la tâche de machine learning sélectionnée
 > - Exécuter la commande « mlnet auto-train » à partir de la CLI
 > - Examiner les résultats des métriques de la qualité
@@ -259,6 +260,7 @@ Il est intéressant de comparer la configuration d’algorithme et de pipeline c
 
 Dans ce tutoriel, vous avez appris à :
 > [!div class="checklist"]
+>
 > - Préparer vos données pour la tâche ML sélectionnée (problème à résoudre)
 > - Exécuter la commande « mlnet auto-train » dans l’outil CLI
 > - Examiner les résultats des métriques de la qualité

@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 13b0ab04eba75a322d584bcc20cc6e90a54fb6fc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: fcc9ba5e379897247f50175603b1002d5688d215
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933664"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894688"
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe (Assembleur IL)
 
@@ -81,7 +81,7 @@ ilasm [options] filename [[options]filename...]
 > [!NOTE]
 > Aucune option d’*Ilasm.exe* ne respecte la casse et toutes se reconnaissent à leurs trois premières lettres. Par exemple, **/lis** équivaut à **/listing** et **/res:** myresfile.res équivaut à **/resource:** myresfile.res. Les options spécifiant des arguments prennent en charge les deux-points (:) ou le signe égal (=) en tant que séparateur entre l'option et l'argument. Par exemple, **/output**:*file.ext* équivaut à **/output**=*file.ext*.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 L'Assembleur IL permet aux fournisseurs d'outils de concevoir et d'implémenter des générateurs IL. Avec *Ilasm.exe*, les développeurs d’outils et de compilateurs peuvent se concentrer sur le langage IL et la génération de métadonnées sans se préoccuper de l’émission du langage IL au format de fichier exécutable portable.
 
@@ -110,7 +110,7 @@ Pour plus d’informations sur la grammaire du langage IL, consultez le fichier 
 
 À compter de .NET Framework 4.5, joignez un attribut personnalisé à une implémentation d’interface à l’aide d’un code semblable au suivant :
 
-```
+```il
 .class interface public abstract auto ansi IMyInterface
 {
   .method public hidebysig newslot abstract virtual
@@ -130,7 +130,7 @@ Pour plus d’informations sur la grammaire du langage IL, consultez le fichier 
 
 À compter de .NET Framework 4.5, spécifiez un objet blob (Binary Large Object) marshal arbitraire à l’aide de sa représentation binaire brute, comme indiqué dans le code suivant :
 
-```
+```il
 .method public hidebysig abstract virtual
         instance void
         marshal({ 38 01 02 FF })
@@ -175,7 +175,7 @@ public class Hello
 
 L'exemple de code IL suivant correspond à l'exemple de code C# précédent. Vous pouvez compiler ce code dans un assembly à l’aide de l’Assembleur IL. Les exemples de code IL et C# affichent « Hello World! » dans la console.
 
-```
+```il
 // Metadata version: v2.0.50215
 .assembly extern mscorlib
 {

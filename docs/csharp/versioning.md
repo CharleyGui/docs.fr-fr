@@ -3,12 +3,12 @@ title: Gestion de version C# - Guide C#
 description: Comprendre le fonctionnement de la gestion de version C# et .NET
 ms.date: 01/08/2017
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.openlocfilehash: 9ba18f82ad83749d5333628bf4431a0282b0964f
-ms.sourcegitcommit: 40364ded04fa6cdcb2b6beca7f68412e2e12f633
-ms.translationtype: HT
+ms.openlocfilehash: bfad7abe6b2b5c6a19324656963a79212a317110
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "56965668"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926583"
 ---
 # <a name="versioning-in-c"></a>Gestion de versions en C\#
 
@@ -41,9 +41,9 @@ Voici quelques éléments à prendre en compte quand vous tentez de maintenir la
 * Méthodes virtuelles : quand vous rendez une méthode virtuelle non virtuelle dans la nouvelle version, cela signifie que les projets qui substituent cette méthode doivent être mis à jour. Il s’agit là d’une modification avec rupture importante qui est vivement déconseillée.
 * Signatures de méthode : quand la mise à jour d’un comportement de méthode vous oblige à modifier également sa signature, vous devez créer à la place une surcharge afin que le code appelant cette méthode fonctionne toujours.
 Vous pouvez toujours manipuler l’ancienne signature de méthode pour appeler la nouvelle signature de méthode afin que l’implémentation reste cohérente.
-* [Attribut obsolète](programming-guide/concepts/attributes/common-attributes.md#Obsolete) : vous pouvez utiliser cet attribut dans votre code pour spécifier des classes ou membres de classe dépréciés et susceptibles d’être supprimés dans les prochaines versions.
-Cela garantit que les développeurs utilisant votre bibliothèque sont mieux préparés pour les modifications avec rupture.
+* [Attribut obsolète](programming-guide/concepts/attributes/common-attributes.md#Obsolete) : vous pouvez utiliser cet attribut dans votre code pour spécifier des classes ou membres de classe dépréciés et susceptibles d’être supprimés dans les prochaines versions. Cela garantit que les développeurs utilisant votre bibliothèque sont mieux préparés pour les modifications avec rupture.
 * Arguments de méthode facultatifs : quand vous rendez obligatoires des arguments de méthode auparavant facultatifs ou modifiez leur valeur par défaut, tout le code qui ne fournit pas ces arguments doit être mis à jour.
+
 > [!NOTE]
 > Le fait de rendre obligatoires des arguments facultatifs doit avoir très peu d’effet en particulier si le comportement de la méthode ne change pas.
 
@@ -111,3 +111,4 @@ Derived Method One: Derived Method One
 Le modificateur `override` est évalué au moment de la compilation et génère une erreur s’il ne trouve pas un membre virtuel à substituer.
 
 Votre connaissance des techniques présentées et des situations dans lesquelles les utiliser sera très utile pour passer en douceur d’une version de bibliothèque à une autre.
+ 

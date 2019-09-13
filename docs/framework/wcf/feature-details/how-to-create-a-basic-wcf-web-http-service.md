@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 877662d3-d372-4e08-b417-51f66a0095cd
-ms.openlocfilehash: d2d05e0c3bb24c44bf78dc41074b8759270cf49b
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: e9646235f9423f2a4df9cfe09a5e83a91dcdcace
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636515"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895178"
 ---
 # <a name="how-to-create-a-basic-wcf-web-http-service"></a>Procédure : créer un service HTTP web WCF de base
 
@@ -49,13 +49,13 @@ Windows Communication Foundation (WCF) vous permet de créer un service qui expo
     > [!NOTE]
     > Si vous n'ajoutez pas de point de terminaison, <xref:System.ServiceModel.Web.WebServiceHost> crée automatiquement un point de terminaison par défaut. <xref:System.ServiceModel.Web.WebServiceHost> ajoute également <xref:System.ServiceModel.Description.WebHttpBehavior> et désactive la page d'aide HTTP et la fonctionnalité WSDL (Web Services Description Language) GET afin que le point de terminaison des métadonnées n'interfère pas avec le point de terminaison HTTP par défaut.
     >
-    >  Ajouter un point de terminaison non-SOAP avec une URL "" provoque un comportement inattendu en cas de tentative d'appeler une opération sur le point de terminaison. La raison en est l’URI du point de terminaison est le même que l’URI de la page d’aide (la page qui s’affiche lorsque vous accédez à l’adresse de base d’un service WCF) d’écoute.
+    >  Ajouter un point de terminaison non-SOAP avec une URL "" provoque un comportement inattendu en cas de tentative d'appeler une opération sur le point de terminaison. Cela est dû au fait que l’URI d’écoute du point de terminaison est identique à l’URI de la page d’aide (la page qui s’affiche lorsque vous accédez à l’adresse de base d’un service WCF).
 
      Vous pouvez recourir à l'une des actions suivantes pour l'empêcher :
 
     - Spécifiez toujours un URI non vierge pour un point de terminaison non-SOAP.
 
-    - Désactivez la page d'aide. Cela est possible avec le code suivant :
+    - Désactivez la page d'aide. Pour ce faire, vous pouvez utiliser le code suivant :
 
      [!code-csharp[htBasicService#4](~/samples/snippets/csharp/VS_Snippets_CFX/htbasicservice/cs/snippets.cs#4)]
      [!code-vb[htBasicService#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/htbasicservice/vb/snippets.vb#4)]
@@ -67,7 +67,7 @@ Windows Communication Foundation (WCF) vous permet de créer un service qui expo
 
      Cet exemple montre comment héberger un service de style Web avec une application console. Vous pouvez également héberger un tel service dans IIS. Pour cela, spécifiez la classe <xref:System.ServiceModel.Activation.WebServiceHostFactory> dans un fichier .svc, comme indiqué dans le code suivant.
 
-    ```
+    ```text
     <%ServiceHost
         language=c#
         Debug="true"
@@ -77,7 +77,7 @@ Windows Communication Foundation (WCF) vous permet de créer un service qui expo
 
 ## <a name="to-call-service-operations-mapped-to-get-in-internet-explorer"></a>Pour appeler des opérations de service mappées à GET dans Internet Explorer
 
-1. Ouvrez Internet Explorer et tapez «`http://localhost:8000/EchoWithGet?s=Hello, world!`» et appuyez sur ENTRÉE. L’URL contient l’adresse de base du service (`http://localhost:8000/`), l’adresse relative du point de terminaison (« »), l’opération de service à appeler (« EchoWithGet ») et un point d’interrogation suivi d’une liste de paramètres séparés par une esperluette (&).
+1. Ouvrez Internet Explorer et tapez «`http://localhost:8000/EchoWithGet?s=Hello, world!`», puis appuyez sur entrée. L’URL contient l’adresse de base du service (`http://localhost:8000/`), l’adresse relative du point de terminaison (« »), l’opération de service à appeler («EchoWithGet ») et un point d’interrogation suivi d’une liste de paramètres nommés séparés par une esperluette (&).
 
 ## <a name="to-call-service-operations-in-code"></a>Pour appeler des opérations de service dans le code
 

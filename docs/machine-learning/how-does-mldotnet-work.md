@@ -6,12 +6,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: af91819c66a2376f446d0f18537d2f6e718b446e
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: d49a4bdfec133fe805bc9d534e04edf2f9ca5726
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104895"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929411"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Présentation de ML.NET et de son fonctionnement
 
@@ -82,6 +82,7 @@ Le code dans l’extrait suivant illustre l’application ML.NET la plus simple.
 ## <a name="code-workflow"></a>Workflow du code
 
 Le diagramme suivant représente la structure du code de l’application ainsi que le processus itératif de développement du modèle :
+
 - Collecter et charger des données d’entraînement dans un objet **IDataView**
 - Spécifier un pipeline d’opérations pour extraire des caractéristiques et appliquer un algorithme de machine learning
 - Entraîner un modèle en appelant **Fit()** sur le pipeline
@@ -98,7 +99,7 @@ Revoyons maintenant tous ces concepts un peu plus en détail.
 
 Un modèle ML.NET est un objet qui contient des transformations à effectuer sur vos données d’entrée pour produire la sortie prédite.
 
-### <a name="basic"></a>Basic
+### <a name="basic"></a>De base
 
 Le modèle de base, le plus simple, est la régression linéaire à deux dimensions, où une quantité continue est proportionnelle à une autre, comme dans l’exemple des prix de maisons ci-dessus. 
 
@@ -169,11 +170,11 @@ Au démarrage de toute application ML.NET, il y a un objet <xref:Microsoft.ML.ML
 |Préparation des données||<xref:Microsoft.ML.TransformsCatalog>||
 |Algorithmes d’entraînement|Classification binaire|<xref:Microsoft.ML.BinaryClassificationCatalog>||
 ||Classification multiclasse|<xref:Microsoft.ML.MulticlassClassificationCatalog>||
-||Détection d’anomalie|<xref:Microsoft.ML.AnomalyDetectionCatalog>||
+||Détection des anomalies|<xref:Microsoft.ML.AnomalyDetectionCatalog>||
 ||Clustering|<xref:Microsoft.ML.ClusteringCatalog>||
-||Prévisions|<xref:Microsoft.ML.ForecastingCatalog>||
+||Prévision|<xref:Microsoft.ML.ForecastingCatalog>||
 ||Classement|<xref:Microsoft.ML.RankingCatalog>||
-||Régression|<xref:Microsoft.ML.RegressionCatalog>||
+||régression ;|<xref:Microsoft.ML.RegressionCatalog>||
 ||Recommandation|<xref:Microsoft.ML.RecommendationCatalog>|Ajouter le package NuGet `Microsoft.ML.Recommender`|
 ||TimeSeries|<xref:Microsoft.ML.TimeSeriesCatalog>|Ajouter le package NuGet `Microsoft.ML.TimeSeries`|
 |Utilisation du modèle ||<xref:Microsoft.ML.ModelOperationsCatalog>||

@@ -2,18 +2,18 @@
 title: Commande dotnet restore
 description: Découvrez comment restaurer les dépendances et les outils spécifiques du projet avec la commande dotnet restore.
 ms.date: 05/29/2018
-ms.openlocfilehash: c510aec8411fb0650b8caa4c3926181aa8071a66
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 567316e98e161a7645db6bf55a03c3c006999fa9
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849610"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70893286"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet restore` : Restaure les dépendances et les outils d’un projet.
 
@@ -177,7 +177,7 @@ Spécifie un runtime pour la restauration du package. Cela permet de restaurer l
 
 `-s|--source <SOURCE>`
 
-Spécifie la source de package NuGet à utiliser pendant l’opération de restauration. Cela remplace toutes les sources spécifiées dans les fichiers *NuGet. config* , en lisant le fichier *NuGet. config* comme si l' <packageSource> élément était introuvable. Vous pouvez spécifier plusieurs sources en spécifiant cette option plusieurs fois.
+Spécifie la source de package NuGet à utiliser pendant l’opération de restauration. Cela remplace toutes les sources spécifiées dans les fichiers *NuGet. config* , en lisant le fichier *NuGet. config* comme si l' `<packageSource>` élément était introuvable. Vous pouvez spécifier plusieurs sources en spécifiant cette option plusieurs fois.
 
 `--verbosity <LEVEL>`
 

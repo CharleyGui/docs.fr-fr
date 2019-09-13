@@ -1,49 +1,43 @@
 ---
-title: Données et modélisation dans le .NET Framework
-ms.date: 03/30/2017
+title: Données et modélisation-.NET
+ms.date: 09/09/2019
 helpviewer_keywords:
 - .NET Framework, data access
 - data access [.NET Framework], about .NET Framework data access
 - data [.NET Framework], accessing
 ms.assetid: 8c37635d-e2c1-4b64-a258-61d9e87405e6
-ms.openlocfilehash: 74256cb52756e790a0e3eb8980f65f1a85445204
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: ad9e63f74f5a79eba937ef16310926ae9b9f287d
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205989"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894361"
 ---
-# <a name="data-and-modeling-in-the-net-framework"></a>Données et modélisation dans le .NET Framework
-Cette section fournit des informations sur la façon d'accéder aux données à l'aide d'ADO.NET, de LINQ (Language-Integrated Query), des services de données WCF et de XML.  
+# <a name="data-and-modeling-in-net"></a>Données et modélisation dans .NET
+
+Cette section fournit des informations sur l’accès aux données dans le .NET Framework.  
   
-## <a name="in-this-section"></a>Dans cette section  
+## <a name="in-this-section"></a>Dans cette section
+
+ [WCF Data Services 4.5](./wcf/index.md)  
+ Fournit des informations à propos de l'utilisation des services de données WCF pour déployer des services de données sur le Web ou un intranet.  
+
  [ADO.NET](./adonet/index.md)  
  Décrit l'architecture ADO.NET et la façon d'utiliser les classes ADO.NET pour gérer des données d'application et interagir avec des sources de données, dont Microsoft SQL Server, les sources de données OLE DB et XML.  
   
+ [Traitement transactionnel](./transactions/index.md)  
+ Traite de la prise en charge de .NET pour les transactions.  
+  
+## <a name="related-sections"></a>Rubriques connexes
+
  [LINQ (Language Integrated Query)](../../csharp/programming-guide/concepts/linq/index.md)  
  Fournit des liens vers la documentation appropriée relative à LINQ (Language Integrated C#Query) à l’aide de.  
   
  [Language-Integrated Query (LINQ) (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/index.md)  
  Fournit des liens vers la documentation appropriée relative à LINQ (Language Integrated Query) à l’aide de Visual Basic.  
   
- [Traitement transactionnel](./transactions/index.md)  
- Présente la prise en charge .NET Framework des transactions.  
-  
- [WCF Data Services 4.5](./wcf/index.md)  
- Fournit des informations à propos de l'utilisation des services de données WCF pour déployer des services de données sur le Web ou un intranet.  
-  
  [Documents et données XML](../../standard/data/xml/index.md)  
  Donne une vue d'ensemble d'un jeu de classes complet et intégré qui fonctionne avec les documents et les données XML dans le .NET Framework.  
   
- [Référence du standard XML](https://msdn.microsoft.com/library/79c78508-c9d0-423a-a00f-672e855de401)  
+ [Référence du standard XML](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256177(v=vs.100))  
  Fournit des informations de référence sur les standards XML que Microsoft prend en charge.  
-  
-## <a name="related-sections"></a>Rubriques connexes  
- [Technologies de modélisation Microsoft SQL Server](https://go.microsoft.com/fwlink/?LinkId=193039)  
- Décrit un ensemble de technologies qui permettent un développement et une conception rapide d'applications personnalisées basées sur les données.  
-  
- [Guide de développement](../development-guide.md)  
- Fournit un guide sur tous les domaines technologiques clés et les tâches relatives au développement d’applications, notamment la création, la configuration, le débogage, la sécurisation et le déploiement de votre application, ainsi que des informations sur la programmation dynamique, l’interopérabilité, l’extensibilité, la gestion de mémoire et les threads.  
-  
- [Sécurité](../../standard/security/index.md)  
- Fournit des liens vers d'autres informations sur les classes et services du Common Language Runtime et du .NET Framework, qui facilitent le développement d'applications sécurisées.

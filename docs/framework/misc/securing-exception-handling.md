@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: 1f3da743-9742-47ff-96e6-d0dd1e9e1c19
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 95dbaddc59a80b4f499a629dd00a52be678b4665
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 256d9c9b825081e3bcfafd6e0e09de825d046d20
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910875"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894545"
 ---
 # <a name="securing-exception-handling"></a>Sécurisation de la gestion des exceptions
-Dans Visual C++ et Visual Basic, une expression de filtre plus haut dans la pile s' exécute avant toute instruction finally. Le bloc **catch** associé à ce filtre s’exécute après l’instruction **finally** . Pour plus d’informations, consultez [utilisation d’exceptions filtrées par l’utilisateur](../../standard/exceptions/using-user-filtered-exception-handlers.md). Cette section examine les implications en matière de sécurité de cet ordre. Prenons l’exemple de pseudocode suivant qui illustre l’ordre dans lequel les instructions de filtre et les instructions finally s’exécutent.  
+Dans Visual C++ et Visual Basic, une expression de filtre plus haut dans la pile s’exécute avant toute instruction **finally** . Le bloc **catch** associé à ce filtre s’exécute après l’instruction **finally** . Pour plus d’informations, consultez [utilisation d’exceptions filtrées par l’utilisateur](../../standard/exceptions/using-user-filtered-exception-handlers.md). Cette section examine les implications en matière de sécurité de cet ordre. Prenons l’exemple de pseudocode suivant qui illustre l’ordre dans lequel les instructions de filtre et les instructions **finally** s’exécutent.  
   
 ```cpp  
 void Main()   
@@ -53,14 +53,14 @@ void Sub()
   
  Ce code imprime ce qui suit.  
   
-```  
+```output
 Throw  
 Filter  
 Finally  
 Catch  
 ```  
   
- Le filtre s’exécute avant l’instruction finally, de sorte que les problèmes de sécurité peuvent être introduits par tout ce qui modifie l’État à l’endroit où l’exécution d’un autre code peut en tirer parti. Par exemple :  
+ Le filtre s’exécute avant l’instruction **finally** , de sorte que les problèmes de sécurité peuvent être introduits par tout ce qui modifie l’État à l’endroit où l’exécution d’un autre code peut en tirer parti. Par exemple :  
   
 ```cpp  
 try   
@@ -136,7 +136,7 @@ YourObject.YourMethod()
 }  
 ```  
   
- Cela ne résout pas le problème, car l’instruction finally n’a `FilterFunc` pas été exécutée avant le contrôle obtient.  
+ Cela ne résout pas le problème, car l’instruction **finally** n’a `FilterFunc` pas été exécutée avant le contrôle obtient.  
   
  L’exemple suivant résout le problème en s’assurant que la clause **finally** a été exécutée avant d’offrir une exception aux blocs de filtres d’exception des appelants.  
   

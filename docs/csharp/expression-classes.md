@@ -3,12 +3,12 @@ title: Types de frameworks prenant en charge les arborescences d’expressions
 description: En savoir plus sur les types de frameworks prenant en charge les arborescences d’expressions, la création d’arborescences d’expressions et les techniques d’utilisation des API d’arborescences d’expressions.
 ms.date: 06/20/2016
 ms.assetid: e9c85021-0d36-48af-91b7-aaaa66f22654
-ms.openlocfilehash: c18bbfb1273156a4b070d1f195d9e823256fde9d
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: d11a13000019faf2ab5c35d41d48fa199e901d1c
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59198463"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70925968"
 ---
 # <a name="framework-types-supporting-expression-trees"></a>Types de frameworks prenant en charge les arborescences d’expressions
 
@@ -58,6 +58,7 @@ Vous pouvez constater d’après cet exemple simple que de nombreux types sont i
 
 ## <a name="navigating-the-apis"></a>Navigation dans les API
 Il existe des types de nœuds Expression qui mappent à presque tous les éléments de syntaxe du langage C#. Chaque type a des méthodes spécifiques pour ce type d’élément de langage. Cela fait beaucoup de choses à mémoriser en même temps. Plutôt que d’essayer de mémoriser tout, voici les techniques que je vous conseille d’appliquer quand vous travaillez avec des arborescences d’expressions :
+
 1. Examinez les membres de l’énumération `ExpressionType` pour déterminer les éventuels nœuds à examiner. Cela aide vraiment quand vous souhaitez parcourir et comprendre une arborescence d’expressions.
 2. Examinez les membres statiques de la classe `Expression` pour générer une expression. Ces méthodes peuvent générer tout type d’expression à partir d’un ensemble de ses nœuds enfants.
 3. Examinez la classe `ExpressionVisitor` pour générer une arborescence d’expressions modifiée.

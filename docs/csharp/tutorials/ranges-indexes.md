@@ -3,12 +3,12 @@ title: Explorer les plages de données à l’aide d’index et de plages
 description: Ce tutoriel avancé vous apprend à explorer les données à l’aide d’index et de plages pour examiner les tranches d’un jeu de données séquentiel.
 ms.date: 04/19/2019
 ms.custom: mvc
-ms.openlocfilehash: d53f32bcb310d4859cea67a742ac0e2c4be5d942
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 27f4b90f130345dd10517a5de78c759066afdf07
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105787"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926638"
 ---
 # <a name="indices-and-ranges"></a>Index et plages
 
@@ -17,6 +17,7 @@ Les plages et les index fournissent une syntaxe concise pour accéder à des él
 Dans ce tutoriel, vous allez apprendre à :
 
 > [!div class="checklist"]
+>
 > - Utiliser la syntaxe pour les plages dans une séquence.
 > - Comprendre les décisions de conception pour le début et la fin de chaque séquence.
 > - Découvrir des scénarios pour les types <xref:System.Index> et <xref:System.Range>.
@@ -24,6 +25,7 @@ Dans ce tutoriel, vous allez apprendre à :
 ## <a name="language-support-for-indices-and-ranges"></a>Prise en charge linguistique pour les index et les plages
 
 Cette prise en charge linguistique s’appuie sur deux nouveaux types et deux nouveaux opérateurs.
+
 - <xref:System.Index?displayProperty=nameWithType> représente un index au sein d’une séquence.
 - L’opérateur `^` spécifie qu’un index est relatif à la fin d’une séquence.
 - <xref:System.Range?displayProperty=nameWithType> représente une sous-plage d’une séquence.

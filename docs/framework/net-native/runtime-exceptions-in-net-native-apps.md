@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 ms.assetid: 5f050181-8fdd-4a4e-9d16-f84c22a88a97
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6472f02cf2633d936252bfd2a8daa3ff711a4db8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 68fe50d24ce547e1cad092e3d871c2d0990fd5af
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967880"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894980"
 ---
 # <a name="runtime-exceptions-in-net-native-apps"></a>Exceptions du runtime dans les applications natives .NET
 Il est important de tester les versions release de votre application de plateforme Windows universelle sur leurs plateformes cibles, car les configurations debug et release sont totalement différentes. Par défaut, la configuration debug utilise le runtime .NET Core pour compiler votre application, mais la configuration release utilise .NET Native pour compiler votre application en code natif.  
   
 > [!IMPORTANT]
-> Pour plus d’informations sur la gestion des exceptions [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)et [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) que vous pouvez rencontrer lors du test des versions release de votre application, consultez la section «étape 4: Résoudre manuellement les métadonnées manquantes: dans la rubrique [prise en main](../../../docs/framework/net-native/getting-started-with-net-native.md) , ainsi que la référence du fichier de configuration de la [réflexion et des .net Native](../../../docs/framework/net-native/reflection-and-net-native.md) et des [directives Runtime (Rd. Xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
+> Pour plus d’informations sur la gestion des exceptions [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md)et [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) que vous pouvez rencontrer lors du test des versions release de votre application, consultez la section «étape 4 : Résoudre manuellement les métadonnées manquantes : dans la rubrique [prise en main](../../../docs/framework/net-native/getting-started-with-net-native.md) , ainsi que la référence du fichier de configuration de la [réflexion et des .net Native](../../../docs/framework/net-native/reflection-and-net-native.md) et des [directives Runtime (Rd. Xml)](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md).  
   
 ## <a name="debug-and-release-builds"></a>Versions debug et release  
  Quand la version debug s’exécute sur le runtime .NET Core, elle n’a pas été compilée en code natif. Ainsi, tous les services normalement fournis par le runtime sont accessibles à votre application.  
@@ -37,7 +37,7 @@ Il est important de tester les versions release de votre application de platefor
 ## <a name="runtime-exception-messages"></a>Runtime exception messages  
  Pour réduire la taille de l’exécutable de l’application, .NET Native n’inclut pas le texte complet des messages d’exception. Ainsi, les exceptions du runtime levées dans les versions release risquent de ne pas afficher le texte complet des messages d’exception. Le texte peut plutôt consister en une sous-chaîne assortie d’un lien à suivre pour plus d’informations. Par exemple, les informations sur l’exception peuvent apparaître comme suit :  
   
-```  
+```output
 Exception thrown: '$16_System.AggregateException' in Unknown Module.  
   
 Additional information: AggregateException_ctor_DefaultMessage  
@@ -47,7 +47,7 @@ If there is a handler for this exception, the program may be safely continued.
   
  Si vous avez besoin de consulter la totalité du message d’exception, exécutez plutôt la version debug. Par exemple, les informations sur l’exception précédente issues de la version release peuvent apparaître comme suit dans la version debug :  
   
-```  
+```output
 Exception thrown: 'System.AggregateException' in NativeApp.exe.  
   
 Additional information: Value does not fall within the expected range.  

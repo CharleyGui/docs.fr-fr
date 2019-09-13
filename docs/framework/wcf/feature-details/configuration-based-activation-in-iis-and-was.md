@@ -2,12 +2,12 @@
 title: Activation basée sur la configuration dans les services IIS et WAS
 ms.date: 03/30/2017
 ms.assetid: 6a927e1f-b905-4ee5-ad0f-78265da38238
-ms.openlocfilehash: f4de4aff2fbe6b8e82dc3d6523f492d06494c79e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5b06f474d26b80f955b1508f01da83448a8708a3
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69909768"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928766"
 ---
 # <a name="configuration-based-activation-in-iis-and-was"></a>Activation basée sur la configuration dans les services IIS et WAS
 
@@ -31,8 +31,9 @@ L'activation basée sur la configuration prend les métadonnées qui étaient pl
  Grâce à ce code dans le fichier Web.config, vous pouvez placer le code source du service dans le répertoire App_Code de l'application ou un assembly compilé dans le répertoire Bin de l'application.
 
 > [!NOTE]
+>
 > - Lors d'une activation basée sur la configuration, le code inline dans les fichiers .svc n'est pas pris en charge.
-> - L' `relativeAddress` attribut doit être défini sur une adresse relative telle que «\<sous-répertoire >/service.svc» ou «~/\<Sub-Directory/Service. svc».
+> - L' `relativeAddress` attribut doit être défini sur une adresse relative telle que «\<sous-répertoire >/service.svc » ou « ~/\<Sub-Directory/Service. svc ».
 > - Une exception de configuration est levée si vous inscrivez une adresse relative sans extension connue, associée à WCF.
 > - L'adresse relative spécifiée est relative à la racine de l'application virtuelle.
 > - En raison du modèle hiérarchique de configuration, les adresses relatives enregistrées au niveau de l'ordinateur et du site sont héritées par les applications virtuelles.

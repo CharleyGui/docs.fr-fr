@@ -2,12 +2,12 @@
 title: Dead Letter Queues
 ms.date: 03/30/2017
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
-ms.openlocfilehash: 489de5d8147edd58d90be01975ddbc9927e29902
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: c8fea29fc420ea6bb922c93ea08e0e23d5bb941d
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045624"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928664"
 ---
 # <a name="dead-letter-queues"></a>Dead Letter Queues
 Cet exemple montre comment gérer et traiter des messages n'ayant pas pu être remis. Il est basé sur l’exemple de [liaison MSMQ transactionnelle](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) . Cet exemple utilise la liaison `netMsmqBinding`. Le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente.
@@ -272,7 +272,7 @@ public class PurchaseOrderDLQService : IOrderProcessor
 
  Lorsque le client est exécuté, il affiche le message :
 
-```
+```console
 Press <ENTER> to terminate client.
 ```
 
@@ -280,7 +280,7 @@ Press <ENTER> to terminate client.
 
  Vous exécutez alors le service de lettres mortes qui lit le message, affiche le code d'erreur et renvoie le message au service.
 
-```
+```console
 The dead letter service is ready.
 Press <ENTER> to terminate service.
 
@@ -295,7 +295,7 @@ Purchase order resent
 
  Le service démarre puis lit le message renvoyé et le traite.
 
-```
+```console
 The service is ready.
 Press <ENTER> to terminate service.
 
@@ -350,7 +350,7 @@ Processing Purchase Order: 97897eff-f926-4057-a32b-af8fb11b9bf9
     > L'affectation de `security mode` à `None` revient à affecter `MsmqAuthenticationMode` aux modes de sécurité `MsmqProtectionLevel`, `Message` et `None`.
 
 ## <a name="comments"></a>Commentaires
- Avec le transport de liaison `netMsmqBinding`, la sécurité est activée par défaut. Les propriétés `MsmqAuthenticationMode` et `MsmqProtectionLevel` déterminent toutes deux le type de sécurité du transport. Par défaut, le mode d'authentification a la valeur `Windows` et le niveau de protection a la valeur `Sign`. Pour que MSMQ fournisse la fonctionnalité d’authentification et de signature, il doit faire partie d’un domaine. Si vous exécutez cet exemple sur un ordinateur qui ne fait pas partie d’un domaine, vous recevez l’erreur suivante: «Le certificat Message Queuing interne de l’utilisateur n’existe pas».
+ Avec le transport de liaison `netMsmqBinding`, la sécurité est activée par défaut. Les propriétés `MsmqAuthenticationMode` et `MsmqProtectionLevel` déterminent toutes deux le type de sécurité du transport. Par défaut, le mode d'authentification a la valeur `Windows` et le niveau de protection a la valeur `Sign`. Pour que MSMQ fournisse la fonctionnalité d’authentification et de signature, il doit faire partie d’un domaine. Si vous exécutez cet exemple sur un ordinateur qui ne fait pas partie d’un domaine, vous recevez l’erreur suivante : « Le certificat Message Queuing interne de l’utilisateur n’existe pas ».
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  

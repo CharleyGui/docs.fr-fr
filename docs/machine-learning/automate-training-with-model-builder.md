@@ -4,12 +4,12 @@ description: Comment utiliser Model Builder ML.NET pour entraîner automatiqueme
 author: natke
 ms.date: 08/07/2019
 ms.custom: overview
-ms.openlocfilehash: 715c9f5854d9691fd9fc2cd771d38456405836ec
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 77b5e75fede1a4aa93eadcf7e21591d82f565cab
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104839"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929471"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>Qu’est-ce que Model Builder et comment fonctionne-t-il ?
 
@@ -28,7 +28,8 @@ Vous n’avez pas besoin d’une expertise en machine learning pour utiliser Mod
 
 Vous pouvez soumettre de nombreux scénarios différents à Model Builder pour générer un modèle Machine Learning pour votre application.
 
-Un scénario est une description du type de prédiction que vous voulez faire avec vos données. Par exemple :
+Un scénario est une description du type de prédiction que vous voulez faire avec vos données. Par exemple :
+
 - prédire le volume futur des ventes d’un produit en fonction de l’historique des données des ventes
 - classer des sentiments en positif ou en négatif en fonction d’avis émis par les utilisateurs
 - détecter si une transaction bancaire est frauduleuse
@@ -41,6 +42,7 @@ Dans Model Builder, vous devez sélectionner un type de modèle Machine Learning
 Pour les scénarios qui prédisent un nombre, le type de modèle Machine Learning est appelé `regression`.
 
 Pour les scénarios qui prédisent une catégorie, le type de modèle est `classification`. Il existe deux types de classification :
+
 - où il n’y a que 2 catégories : `binary classification`.
 - où il y a 3 catégories ou plus : `multiclass classification`.
 
@@ -89,10 +91,12 @@ Une fois que vous avez choisi votre type de modèle, Model Builder vous demande 
 ### <a name="choose-the-output-to-predict-label"></a>Choisir le résultat à prédire (étiquette)
 
 Un jeu de données est une table de lignes d’exemples et de colonnes d’attributs pour l’entraînement. Chaque ligne a :
+
 - une **étiquette** (l’attribut que vous voulez prédire)
 - des **caractéristiques** (des attributs qui sont utilisés comme entrées pour prédire l’étiquette).
 
 Pour le scénario de prédiction de prix d’une maison, les caractéristiques peuvent être :
+
 - la superficie de la maison
 - le nombre de chambres et de salles de bain
 - le code postal
@@ -107,11 +111,11 @@ Si vous n’avez pas encore vos propres données, essayez un de ces jeux de donn
 
 |Scénario|Type de modèle|Données|Etiquette|Fonctionnalités|
 |-|-|-|-|-|
-|Prédiction des prix|régression ;|[Données de courses de taxi](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|Tarifs|Heure, distance du trajet|
-|Détection d’anomalie|classification binaire ;|[Données de ventes de produits](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Ventes de produits|Mois|
-|analyse de sentiments|classification binaire ;|[Données de commentaires de site web](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Étiquette (0 quand le sentiment est négatif, 1 quand il est positif)|Commentaire, Année|
-|Détection des fraudes|classification binaire ;|[Données de carte de crédit](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Classe (1 en cas de fraude, sinon 0)|Quantité, V1-V28 (caractéristiques anonymisées)|
-|Classification de texte|classification multiclasse.|[Données de problèmes GitHub](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Domaine|Titre, Description|
+|Prédiction des prix|régression|[Données de courses de taxi](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|Tarifs|Heure, distance du trajet|
+|Détection des anomalies|Classification binaire|[Données de ventes de produits](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Ventes de produits|Mois|
+|analyse de sentiments|Classification binaire|[Données de commentaires de site web](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Étiquette (0 quand le sentiment est négatif, 1 quand il est positif)|Commentaire, Année|
+|Détection des fraudes|Classification binaire|[Données de carte de crédit](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Classe (1 en cas de fraude, sinon 0)|Quantité, V1-V28 (caractéristiques anonymisées)|
+|Classification de texte|Classification multiclasse|[Données de problèmes GitHub](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Domaine|Titre, Description|
 
 ## <a name="train"></a>Former
 

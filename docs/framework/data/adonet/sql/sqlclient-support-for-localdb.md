@@ -2,12 +2,12 @@
 title: Prise en charge de SqlClient pour LocalDB
 ms.date: 03/30/2017
 ms.assetid: cf796898-5575-46f2-ae6e-21e5aa8c4123
-ms.openlocfilehash: 200db3b1014278e711062bcbdff81be8d27c3351
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d02524cd5901adeca7bc36d6fd13c7abdc46c69b
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780769"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894402"
 ---
 # <a name="sqlclient-support-for-localdb"></a>Prise en charge de SqlClient pour LocalDB
 À compter de SQL Server nom de code Denali, une version allégée de SQL Server, appelée base de données locale, sera disponible. Cette rubrique explique comment se connecter à une base de données LocalDB.  
@@ -25,9 +25,7 @@ ms.locfileid: "70780769"
   
 - Spécifiez une instance de LocalDB dans votre chaîne de connexion. Par exemple, si le nom de l'instance est `myInstance`, la chaîne de connexion est la suivante :  
   
-    ```  
-    server=(localdb)\\myInstance  
-    ```  
+    `server=(localdb)\\myInstance`  
   
  Vous ne pouvez pas utiliser`User Instance=True` lors de la connexion à une base de données LocalDB.  
   

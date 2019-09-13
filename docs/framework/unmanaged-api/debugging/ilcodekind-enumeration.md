@@ -14,12 +14,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9f7e20618180961ab6d8ad0bbb79a626a4a7f4f7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fea08331fffb85c91721d60764bae8bfe8b30e27
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61993474"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928815"
 ---
 # <a name="ilcodekind-enumeration"></a>ILCodeKind, énumération
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
@@ -43,14 +43,14 @@ typedef enum ILCodeKind {
 |`ILCODE_REJIT_IL`|Le débogueur a accès aux informations de l'instrumentation ReJIT.|  
   
 ## <a name="remarks"></a>Notes  
- Un membre de la `ILCodeKind` énumération peut être passée à la [EnumerateLocalVariablesEx](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-enumeratelocalvariablesex-method.md) et [GetLocalVariableEx](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getlocalvariableex-method.md) méthodes pour déterminer si le débogueur peut accéder aux variables ajoutées dans le Générateur de profils L’instrumentation ReJIT et à la [GetCodeEx](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getcodeex-method.md) langage intermédiaire instrumenté de méthode pour déterminer si le débogueur peut accéder.  
+ Un membre de l' `ILCodeKind` énumération peut être passé aux méthodes [enumeratelocalvariablesex,](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-enumeratelocalvariablesex-method.md) et [getlocalvariableex,](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getlocalvariableex-method.md) pour déterminer si le débogueur peut accéder aux variables ajoutées dans l’instrumentation ReJIT du profileur, et au [ Méthode Getcodeex,](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-getcodeex-method.md) pour déterminer si le débogueur peut accéder au langage intermédiaire instrumenté.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
@@ -58,4 +58,4 @@ typedef enum ILCodeKind {
 
 - [Énumérations de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
 - [ICorDebugILFrame4, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-interface.md)
-- [ReJIT : Guide pratique](https://blogs.msdn.com/b/davbr/archive/2011/10/12/rejit-a-how-to-guide.aspx)
+- [ReJIT Guide pratique](https://blogs.msdn.microsoft.com/davbr/2011/10/12/rejit-a-how-to-guide/)

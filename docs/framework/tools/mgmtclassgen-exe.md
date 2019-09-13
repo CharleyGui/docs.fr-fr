@@ -13,19 +13,19 @@ helpviewer_keywords:
 ms.assetid: 02ce6699-49b5-4a0b-b0d5-1003c491232e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 60f48422d23fc5db743eeb05e3eddeb732bff102
-ms.sourcegitcommit: 30a83efb57c468da74e9e218de26cf88d3254597
-ms.translationtype: HT
+ms.openlocfilehash: ce281398fe7ea3a280355a7b79cc7144aba256be
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2019
-ms.locfileid: "68364024"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894650"
 ---
 # <a name="mgmtclassgenexe-management-strongly-typed-class-generator"></a>Mgmtclassgen.exe (Management Strongly Typed Class Generator)
 L'outil Management Strongly Typed Class Generator vous permet de générer rapidement une classe managée à liaison anticipée pour une classe WMI (Windows Management Instrumentation) spécifiée. La classe générée simplifie le code à écrire pour accéder à une instance de la classe WMI.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 mgmtclassgen   
 WMIClass [options]   
 ```  
@@ -45,7 +45,7 @@ WMIClass [options]
 |**/u**  *user name*|Définit le nom d’utilisateur à utiliser quand vous vous connectez à un ordinateur spécifié par l’option **/m**.|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Mgmtclassgen.exe utilise la méthode <xref:System.Management.ManagementClass.GetStronglyTypedClassCode%2A?displayProperty=nameWithType>. Vous pouvez donc utiliser n'importe quel fournisseur de code personnalisé pour générer le code dans des langages managés autres que C#, Visual Basic et JScript.  
   
  Notez que les classes générées sont liées au schéma pour lequel elles ont été créées. Si le schéma sous-jacent change, vous devez régénérer la classe pour que les modifications effectuées dans le schéma soient prises en compte.  
@@ -64,8 +64,8 @@ WMIClass [options]
 |CIM_UINT64|**UInt64**|  
 |CIM_REAL32|**Single**|  
 |CIM_REAL64|**Double**|  
-|CIM_BOOLEAN|**Booléen**|  
-|CIM_String|**Chaîne**|  
+|CIM_BOOLEAN|**Boolean**|  
+|CIM_String|**String**|  
 |CIM_DATETIME|**DateTime** ou **TimeSpan**|  
 |CIM_REFERENCE|**ManagementPath**|  
 |CIM_CHAR16|**Char**|  
@@ -96,7 +96,7 @@ WMIClass [options]
 ## <a name="examples"></a>Exemples  
  La commande suivante génère une classe managée en C# pour la classe WMI **Win32_LogicalDisk** dans l’espace de noms **Root\cimv2**. L’outil écrit la classe managée dans le fichier source sous c:\disk.cs dans l’espace de noms **ROOT.CIMV2.Win32**.  
   
-```  
+```console  
 mgmtclassgen Win32_LogicalDisk /n root\cimv2 /l CS /p c:\disk.cs  
 ```  
   
@@ -155,5 +155,5 @@ public class App
 - <xref:System.Management>
 - <xref:System.Management.ManagementClass.GetStronglyTypedClassCode%2A?displayProperty=nameWithType>
 - <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>
-- [outils](../../../docs/framework/tools/index.md)
+- [Outils](../../../docs/framework/tools/index.md)
 - [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

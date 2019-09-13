@@ -3,12 +3,12 @@ title: Commande auto-train dans l’outil CLI ML.NET
 description: Vue d’ensemble, exemples et informations de référence sur la commande auto-train dans l’outil CLI ML.NET.
 ms.date: 04/16/2019
 ms.custom: ''
-ms.openlocfilehash: 73bae0165af76226152de322d2951086646a1a1d
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
-ms.translationtype: HT
+ms.openlocfilehash: 8363a16ab5e793e715131ac37283106517850439
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397659"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929201"
 ---
 # <a name="the-auto-train-command-in-mlnet-cli"></a>Commande « auto-train » dans l’outil CLI ML.NET
 
@@ -76,7 +76,7 @@ Créer et entraîner un modèle de classification binaire avec un jeu de donnée
 > mlnet auto-train --task binary-classification --dataset "/MyDataSets/Population-Training.csv" --test-dataset "/MyDataSets/Population-Test.csv" --label-column-name "InsuranceRisk" --cache on --max-exploration-time 600
 ```
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `mlnet auto-train` : entraîne plusieurs modèles (« n » itérations) en fonction du jeu de données fourni, puis sélectionne le meilleur modèle, l’enregistre dans un fichier .zip sérialisé et génère le code C# associé pour l’évaluation et l’entraînement.
 
@@ -173,7 +173,7 @@ Quand vous utilisez un `validation dataset` ainsi que `test dataset`, la phase d
 1. Dans la première partie, vous examinez simplement vos modèles et sélectionnez l’approche la plus performante en utilisant les données de validation (=validation)
 2. Ensuite, vous estimez la précision de l’approche sélectionnée (= test).
 
-Ainsi, la séparation des données peut être 80/10/10 ou 75/15/10. Par exemple :
+Ainsi, la séparation des données peut être 80/10/10 ou 75/15/10. Par exemple :
 
 - Le fichier `training-dataset` doit avoir 75 % des données.
 - Le fichier `validation-dataset` doit avoir 15 % des données.
@@ -207,7 +207,7 @@ Avec cet argument, vous pouvez ignorer des colonnes existantes dans le fichier d
 
 Spécifiez les noms des colonnes que vous souhaitez ignorer. Utilisez « ,  » (virgule avec espace) ou «   » (espace) pour séparer plusieurs noms de colonne. Vous pouvez utiliser des guillemets pour les noms de colonnes contenant des espaces (par exemple, "utilisateur connecté").
 
-Exemple :
+Exemple :
 
 `--ignore-columns email, address, id, logged_in`
 
@@ -216,7 +216,8 @@ Exemple :
 `--has-header | -h` (booléen)
 
 Spécifiez si le ou les fichiers de jeu de données ont une ligne d’en-tête.
-Les valeurs possibles sont :
+Les valeurs possibles sont les suivantes :
+
 - `true`
 - `false`
 
@@ -292,5 +293,5 @@ Affiche l’aide de la commande avec une description de chacun de ses paramètre
 
 - [Guide pratique pour installer l’outil CLI ML.NET](../how-to-guides/install-ml-net-cli.md)
 - [Automatiser l’entraînement du modèle avec la CLI ML.NET](../automate-training-with-cli.md)
-- [Tutoriel : Générer automatiquement un classifieur binaire à l’aide de la CLI ML.NET](../tutorials/mlnet-cli.md)
+- [Tutoriel : Générer automatiquement un classifieur binaire à l’aide de la CLI ML.NET](../tutorials/mlnet-cli.md)
 - [Télémétrie dans la CLI ML.NET](../resources/ml-net-cli-telemetry.md)

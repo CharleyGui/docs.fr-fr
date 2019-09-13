@@ -3,12 +3,12 @@ title: Interprétation des expressions
 description: Découvrez comment écrire du code pour analyser la structure d’une arborescence d’expressions.
 ms.date: 06/20/2016
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.openlocfilehash: fcc16e7a0cef7b3ac24d99ccbddd93bed100a5bb
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.openlocfilehash: c9d80ca234e298df2f2e7ce48fbf92cb817fc8a7
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202972"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70925687"
 ---
 # <a name="interpreting-expressions"></a>Interprétation des expressions
 
@@ -357,6 +357,7 @@ Il représente une implémentation possible de la fonction mathématique *factor
 Je le pourrais s’il s’agissait déjà d’un délégué, mais je ne peux pas l’appeler sous sa forme d’arborescence d’expressions. Dans la section sur la [génération d’arborescences d’expressions](expression-trees-building.md), vous découvrirez des techniques pour surmonter ces restrictions.
 
 Dans cette expression, vous rencontrerez des nœuds de tous ces types :
+
 1. Égal (expression binaire)
 2. Multiplier (expression binaire)
 3. Conditionnel (l’expression ? :)

@@ -5,12 +5,12 @@ author: oliag
 ms.author: mairaw
 ms.date: 04/26/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 2d97921a3e98d85ac1e58c7686eadef3e979211f
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 584f9f952148ebf72c5d5aaed64a2a078be00ce5
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70107370"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929352"
 ---
 # <a name="net-api-analyzer"></a>Analyseur d’API .NET
 
@@ -30,6 +30,7 @@ L’analyseur d’API est fourni sous la forme d’un package NuGet [Microsoft.D
 ### <a name="what-are-deprecated-apis"></a>Que sont les API déconseillées ?
 
 La famille .NET est un ensemble de grands produits, qui sont constamment mis à niveau pour mieux répondre aux besoins des clients. Il est naturel de déconseiller certaines API et de les remplacer par d’autres. Une API est considérée comme déconseillées lorsqu’il existe une meilleure solution. Une API déconseillée, qu’il ne faut pas utiliser, peut être marquée avec l’attribut <xref:System.ObsoleteAttribute>. L’inconvénient de cette approche est qu’il n'existe qu’un seul ID de diagnostic pour toutes les API obsolètes (pour C#, [CS0612](../../csharp/misc/cs0612.md)). Cela signifie que :
+
 - Il est impossible d’avoir un document dédié à chacun des cas.
 - Il n’est pas possible de supprimer certaines catégories d’avertissements. On peut soit tous les supprimer, soit n’en supprimer aucun.
 - Pour informer les utilisateurs qu’une API est à présent déconseillée, il faut mettre à jour un package de ciblage ou un assembly de référence.

@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 07/15/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 1bdbe31e16408da2d7dfe17941c90a022f3d8c32
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: bc1dacdad436cc5384bca4bbce224acc18d69201
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70107140"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929432"
 ---
 # <a name="predict-prices-using-regression-with-model-builder"></a>Prédire des prix en utilisant la régression avec Model Builder
 
@@ -19,11 +19,12 @@ Découvrez comment utiliser Model Builder ML.NET pour générer un modèle de r�
 
 Le modèle de prédiction des prix de Model Builder peut être utilisé pour tout scénario nécessitant une valeur de prédiction numérique. Voici quelques exemples de scénarios : prédiction des prix de l’immobilier, prédiction de la demande et prévisions des ventes.
 
-Dans ce didacticiel, vous apprendrez à :
+Ce tutoriel vous montre comment effectuer les opérations suivantes :
 > [!div class="checklist"]
+>
 > - Préparer et comprendre les données
 > - Choisir un scénario
-> - Charger les données
+> - Chargement des données
 > - Effectuer l’apprentissage du modèle
 > - Évaluer le modèle
 > - Utiliser le modèle pour les prévisions
@@ -76,7 +77,7 @@ Pour entraîner votre modèle, vous devez sélectionner dans la liste des scéna
 1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet *TaxiFarePrediction*, puis sélectionnez **Ajouter** > **Machine Learning**.
 1. Dans l’étape de scénario de l’outil Model Builder, sélectionnez le scénario *Prédiction de prix*.
 
-## <a name="load-the-data"></a>Charger les données
+## <a name="load-the-data"></a>Chargement des données
 
 Model Builder accepte des données de deux sources : une base de données SQL Server, ou un fichier csv ou tsv local.
 
@@ -188,11 +189,12 @@ Si vous devez référencer ultérieurement les projets générés à l’intéri
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce didacticiel, vous avez appris à :
+Dans ce tutoriel, vous avez appris à :
 > [!div class="checklist"]
+>
 > - Préparer et comprendre les données
 > - Choisir un scénario
-> - Charger les données
+> - Chargement des données
 > - Effectuer l’apprentissage du modèle
 > - Évaluer le modèle
 > - Utiliser le modèle pour les prévisions

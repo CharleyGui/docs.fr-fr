@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: e55b3712-b9ea-4453-bd9a-ad5cfa2f6bfa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b0a033e6881f9c0c8741fda26211b0f565762de4
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 42daa241d0ebbfeb184b57e682fbb50bdaeead65
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59331323"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894197"
 ---
 # <a name="how-to-implement-callback-functions"></a>Procédure : implémenter des fonctions de rappel
 La procédure et l'exemple suivants montrent comment une application managée peut, à l'aide de l'appel de code non managé, imprimer la valeur de handle de chaque fenêtre sur l'ordinateur local. En particulier, ils utilisent la fonction **EnumWindows** pour parcourir la liste des fenêtres et une fonction de rappel managée (nommée CallBack) pour imprimer la valeur du handle des fenêtres.  
@@ -24,9 +24,9 @@ La procédure et l'exemple suivants montrent comment une application managée pe
   
 1. Examinez la signature de la fonction **EnumWindows** avant d’aller plus loin dans l’implémentation. **EnumWindows** possède la signature suivante :  
   
-    ```  
-    BOOL EnumWindows(WNDENUMPROC lpEnumFunc, LPARAM lParam)  
-    ```  
+    ```cpp
+    BOOL EnumWindows(WNDENUMPROC lpEnumFunc, LPARAM lParam)
+    ```
   
      La présence de l’argument **lpEnumFunc** indique que cette fonction nécessite un rappel. Le préfixe **lp** (pointeur long) est couramment associé au suffixe **Func** dans le nom des arguments qui acceptent un pointeur vers une fonction de rappel. Pour obtenir de la documentation sur les fonctions Win32, consultez le Kit de développement Microsoft Platform SDK.  
   

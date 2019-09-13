@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 9ac1b522-77ab-4cdc-852a-20fcdc9ae498
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0821b4a680db4822cea1787edb095309e6333cbf
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
-ms.translationtype: HT
+ms.openlocfilehash: c5033b32c1623885b5408f428ce4bc4202d50ce1
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66690171"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894619"
 ---
 # <a name="sosdll-sos-debugging-extension"></a>SOS.dll (extension de débogage SOS)
 
@@ -21,7 +21,7 @@ L’extension de débogage SOS (SOS.dll) vous aide à déboguer des programmes m
 
 ## <a name="syntax"></a>Syntaxe
 
-```shell
+```console
 ![command] [options]
 ```
 
@@ -33,7 +33,7 @@ L’extension de débogage SOS (SOS.dll) vous aide à déboguer des programmes m
 |**BPMD** [ **-nofuturemodule**] [\<*module name*> \<*method name*>] [ **-md** <`MethodDesc`>] **-list** **-clear** \<*pending breakpoint number*>  **-clearall**|Crée un point d'arrêt sur la méthode spécifiée dans le module spécifié.<br /><br /> Si le module et la méthode spécifiés n'ont pas été chargés, cette commande attend une notification indiquant que le module a été chargé et compilé juste-à-temps avant de créer un point d'arrêt.<br /><br /> Vous pouvez gérer la liste de points d’arrêt en attente à l’aide des options **-list**, **-clear** et **-clearall** :<br /><br /> L’option **-list** génère une liste de tous les points d’arrêt en attente. Si un point d'arrêt en attente a un ID de module non nul, ce point d'arrêt est spécifique à une fonction dans ce module spécifique chargé. Si le point d'arrêt en attente a un ID de module nul, ce point d'arrêt s'applique aux modules qui n'ont pas encore été chargés.<br /><br /> Utilisez l’option **-clear** ou **-clearall** pour supprimer des points d’arrêt en attente dans la liste.|
 |**CLRStack** [ **-a**] [ **-l**] [ **-p**] [ **-n**]|Fournit uniquement une trace de la pile du code managé.<br /><br /> L’option **-p** fournit les arguments à la fonction managée.<br /><br /> L’option **-l** fournit des informations sur les variables locales dans un frame. Comme l’extension de débogage SOS ne peut pas récupérer les noms locaux, la sortie retournée pour les noms locaux est au format \<*local address*>  **=** \<*value*>.<br /><br /> L’option **-a**(tout) est un raccourci de la combinaison de **-l** et **-p**.<br /><br /> L’option **-n** désactive l’affichage des noms de fichier source et des numéros de ligne. Si l'option SYMOPT_LOAD_LINES est spécifiée sur le débogueur, SOS recherche les symboles pour chaque frame managé et, s'il les trouve, affiche le nom de fichier source et le numéro de ligne correspondants. Le paramètre **-n** (aucun numéro de ligne) peut être spécifié pour désactiver ce comportement.<br /><br /> L’extension de débogage SOS n’affiche pas de frames de transition sur les plateformes x64 et IA-64.|
 |**COMState**|Répertorie le modèle cloisonné COM pour chaque thread et un pointeur `Context`, si disponible.|
-|**DumpArray** [ **-start** \<*startIndex*>] [ **-length** \<*length*>] [ **-details**] [ **-nofields**] \<*array object address*><br /><br /> - ou -<br /><br /> **DA** [ **-start** \<*startIndex*>] [ **-length** \<*length*>] [ **-detail**] [ **-nofields**] *array object address*>|Examine les éléments d'un objet tableau.<br /><br /> L’option **-start** spécifie l’index de départ à partir duquel les éléments doivent être affichés.<br /><br /> L’option **-length** spécifie le nombre d’éléments à afficher.<br /><br /> L’option **-details** affiche les détails de l’élément en utilisant les formats **DumpObj** et **DumpVC**.<br /><br /> L’option **-nofields** empêche l’affichage des tableaux. Cette option est disponible uniquement quand l’option **-detail** est spécifiée.|
+|**DumpArray** [ **-start** \<*startIndex*>] [ **-length** \<*length*>] [ **-details**] [ **-nofields**] \<*array object address*><br /><br /> ou<br /><br /> **DA** [ **-start** \<*startIndex*>] [ **-length** \<*length*>] [ **-detail**] [ **-nofields**] *array object address*>|Examine les éléments d'un objet tableau.<br /><br /> L’option **-start** spécifie l’index de départ à partir duquel les éléments doivent être affichés.<br /><br /> L’option **-length** spécifie le nombre d’éléments à afficher.<br /><br /> L’option **-details** affiche les détails de l’élément en utilisant les formats **DumpObj** et **DumpVC**.<br /><br /> L’option **-nofields** empêche l’affichage des tableaux. Cette option est disponible uniquement quand l’option **-detail** est spécifiée.|
 |**DumpAssembly** \<*assembly address*>|Affiche des informations concernant un assembly.<br /><br /> La commande **DumpAssembly** répertorie plusieurs modules, s’ils existent.<br /><br /> Vous pouvez obtenir une adresse d’assembly à l’aide de la commande **DumpDomain**.|
 |**DumpClass** \<*EEClass address*>|Affiche des informations sur la structure `EEClass` associée à un type.<br /><br /> La commande **DumpClass** affiche des valeurs de champ static, mais pas les valeurs de champ non static.<br /><br /> Utilisez la commande **DumpMT**, **DumpObj**, **Name2EE** ou **Token2EE** pour obtenir une adresse de structure `EEClass`.|
 |**DumpDomain** [\<*domain address*>]|Répertorie chaque objet <xref:System.Reflection.Assembly> chargé dans l'adresse d'objet <xref:System.AppDomain> spécifiée.  En cas d’appel sans paramètres, la commande **DumpDomain** répertorie tous les objets <xref:System.AppDomain> dans un processus.|
@@ -44,12 +44,12 @@ L’extension de débogage SOS (SOS.dll) vous aide à déboguer des programmes m
 |**DumpMT** [ **-MD**] \<*MethodTable address*>|Affiche des informations sur une table de méthodes à l'adresse spécifiée. Quand l’option **-MD** est spécifiée, une liste de toutes les méthodes définies avec l’objet s’affiche.<br /><br /> Chaque objet managé contient un pointeur de table de méthodes.|
 |**DumpMethodSig** \<*sigaddr*> <*moduleadd*`r`>|Affiche des informations sur une structure `MethodSig` à l'adresse spécifiée.|
 |**DumpModule** [ **-mt**] \<*Module address*>|Affiche des informations sur un module à l'adresse spécifiée. L’option **-mt** affiche les types définis dans un module et les types référencés par le module<br /><br /> Vous pouvez utiliser la commande **DumpDomain** ou **DumpAssembly** pour récupérer l’adresse d’un module.|
-|**DumpObj** [ **-nofields**] \<*object address*><br /><br /> - ou -<br /><br /> **DO** \<*object address*>|Affiche des informations sur un objet à l'adresse spécifiée. La commande **DumpObj** affiche les champs, les informations de la structure `EEClass`, la table de méthodes et la taille de l’objet.<br /><br /> Vous pouvez utiliser la commande **DumpStackObjects** pour récupérer l’adresse d’un objet.<br /><br /> Notez que vous pouvez exécuter la commande **DumpObj** dans les champs de type `CLASS`, car ce sont également des objets.<br /><br /> L’option `-`**nofields** empêche l’affichage des champs de l’objet, ce qui est utile pour des objets comme String.|
+|**DumpObj** [ **-nofields**] \<*object address*><br /><br /> ou<br /><br /> **DO** \<*object address*>|Affiche des informations sur un objet à l'adresse spécifiée. La commande **DumpObj** affiche les champs, les informations de la structure `EEClass`, la table de méthodes et la taille de l’objet.<br /><br /> Vous pouvez utiliser la commande **DumpStackObjects** pour récupérer l’adresse d’un objet.<br /><br /> Notez que vous pouvez exécuter la commande **DumpObj** dans les champs de type `CLASS`, car ce sont également des objets.<br /><br /> L’option `-`**nofields** empêche l’affichage des champs de l’objet, ce qui est utile pour des objets comme String.|
 |**DumpRuntimeTypes**|Affiche les objets de type au moment de l'exécution dans le tas de récupérateur de mémoire et répertorie leurs noms de types et tables de méthodes associés.|
 |**DumpStack** [ **-EE**] [ **-n**] [`top` *stack* [`bottom` *stac*`k`]]|Affiche une trace de la pile.<br /><br /> Quand l’option **-EE** est spécifiée, la commande **DumpStack** affiche uniquement les fonctions managées. Utilisez les paramètres `top` et `bottom` pour limiter les frames de pile affichés sur les plateformes x86.<br /><br /> L’option **-n** désactive l’affichage des noms de fichier source et des numéros de ligne. Si l'option SYMOPT_LOAD_LINES est spécifiée sur le débogueur, SOS recherche les symboles pour chaque frame managé et, s'il les trouve, affiche le nom de fichier source et le numéro de ligne correspondants. Le paramètre **-n** (aucun numéro de ligne) peut être spécifié pour désactiver ce comportement.<br /><br /> Sur les plateformes x86 et x64, la commande **DumpStack** crée une trace de pile détaillée.<br /><br /> Sur les plateformes IA-64, la commande **DumpStack** reproduit la commande **K** du débogueur. Les paramètres `top` et `bottom` sont ignorés sur les plateformes IA-64.|
 |**DumpSig** \<*sigaddr*> \<*moduleaddr*>|Affiche des informations sur une structure `Sig` à l'adresse spécifiée.|
 |**DumpSigElem** \<*sigaddr*> \<*moduleaddr*>|Affiche un élément unique d'un objet de signature. Dans la plupart des cas, vous devez utiliser **DumpSig** pour examiner des objets de signature individuels. Toutefois, si une signature est endommagée, vous pouvez utiliser **DumpSigElem** pour lire ses parties valides.|
-|**DumpStackObjects** [ **-verify**] [`top` *stack* [`bottom` *stack*]]<br /><br /> - ou -<br /><br /> **DSO** [ **-verify**] [`top` *stack* [`bottom` *stack*]]|Affiche tous les objets managés recherchés dans les limites de la pile actuelle.<br /><br /> L’option **-verify** valide chaque champ `CLASS` non static d’un champ d’objet.<br /><br /> Utilisez la commande **DumpStackObject** avec les commandes de traçage de la pile, comme la commande **K** et la commande **CLRStack**, pour déterminer les valeurs des variables et paramètres locaux.|
+|**DumpStackObjects** [ **-verify**] [`top` *stack* [`bottom` *stack*]]<br /><br /> ou<br /><br /> **DSO** [ **-verify**] [`top` *stack* [`bottom` *stack*]]|Affiche tous les objets managés recherchés dans les limites de la pile actuelle.<br /><br /> L’option **-verify** valide chaque champ `CLASS` non static d’un champ d’objet.<br /><br /> Utilisez la commande **DumpStackObject** avec les commandes de traçage de la pile, comme la commande **K** et la commande **CLRStack**, pour déterminer les valeurs des variables et paramètres locaux.|
 |**DumpVC** \<*MethodTable address*> \<*Address*>|Affiche des informations sur les champs d'une classe de valeur à l'adresse spécifiée.<br /><br /> Le paramètre **MethodTable** permet à la commande **DumpVC** d’interpréter correctement les champs. Les classes de valeur ne disposent pas d'une table de méthodes comme premier champ.|
 |**EEHeap** [ **-gc**] [ **-loader**]|Affiche des informations sur la mémoire du processus consommée par les structures de données internes du CLR.<br /><br /> Les options **-gc** et **-loader** limitent la sortie de cette commande aux structures de données du récupérateur de mémoire ou du chargeur.<br /><br /> Les informations pour le récupérateur de mémoire répertorient les plages de chaque segment dans le tas managé.  Si le pointeur se trouve dans une plage de segments spécifiée par **-gc**, il s’agit d’un pointeur d’objet.|
 |**EEStack** [ **-short**] [ **-EE**]|Exécute la commande **DumpStack** sur tous les threads dans le processus.<br /><br /> L’option **-EE** est passée directement à la commande **DumpStack**. Le paramètre **-short** limite la sortie aux types de threads suivants :<br /><br /> Threads avec un verrou.<br /><br /> Threads bloqués pour permettre un garbage collection.<br /><br /> Threads se trouvant actuellement dans le code managé.|
@@ -74,9 +74,9 @@ L’extension de débogage SOS (SOS.dll) vous aide à déboguer des programmes m
 |**IP2MD** \<*Code address*>|Affiche la structure `MethodDesc` à l'adresse spécifiée dans le code compilé juste-à-temps (JIT).|
 |`ListNearObj` (`lno`) *\<obj_address>*|Affiche les objets précédant et suivant l'adresse spécifiée. La commande recherche dans le tas de garbage collection l’adresse qui ressemble à un début valide d’objet managé (selon une table de méthodes valide), ainsi que l’objet qui suit l’adresse d’argument.|
 |**MinidumpMode** [**0**] [**1**]|Empêche l'exécution de commandes potentiellement dangereuses lors de l'utilisation d'un minidump.<br /><br /> Passez **0** pour désactiver cette fonctionnalité ou **1** pour l’activer. Par défaut, la valeur de **MinidumpMode** est **0**.<br /><br /> Les minidumps créés avec la commande **.dump /m** ou **.dump** ont des données propres à CLR limitées et vous permettent uniquement d’exécuter correctement un sous-ensemble de commandes SOS. Certaines commandes peuvent échouer avec des erreurs inattendues, car des zones de mémoire requises ne sont pas mappées ou ne sont mappées que partiellement. Cette option vous empêche d'exécuter des commandes potentiellement dangereuses dans les minidumps.|
-|**Name2EE** \<*nom du module*> \<*nom du type ou de la méthode*><br /><br /> - ou -<br /><br /> **Name2EE** \<*nom du module*> **!** \<*nom du type ou de la méthode*>|Affiche la structure `MethodTable` et la structure `EEClass` pour le type ou la méthode spécifié dans le module spécifié.<br /><br /> Le module spécifié doit être chargé dans le processus.<br /><br /> Pour obtenir le nom de type correct, parcourez le module à l’aide de [Ildasm.exe (désassembleur IL)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md). Vous pouvez également passer `*` en tant que paramètre de nom de module pour rechercher tous les modules managés chargés. Le paramètre *module name* peut également correspondre au nom du débogueur pour un module, comme `mscorlib` ou `image00400000`.<br /><br /> Cette commande prend en charge la syntaxe du débogueur Windows <`module`>`!`<`type`>. Le type doit être qualifié complet.|
+|**Name2EE** \<*nom du module*> \<*nom du type ou de la méthode*><br /><br /> ou<br /><br /> **Name2EE** \<*nom du module*> **!** \<*nom du type ou de la méthode*>|Affiche la structure `MethodTable` et la structure `EEClass` pour le type ou la méthode spécifié dans le module spécifié.<br /><br /> Le module spécifié doit être chargé dans le processus.<br /><br /> Pour obtenir le nom de type correct, parcourez le module à l’aide de [Ildasm.exe (désassembleur IL)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md). Vous pouvez également passer `*` en tant que paramètre de nom de module pour rechercher tous les modules managés chargés. Le paramètre *module name* peut également correspondre au nom du débogueur pour un module, comme `mscorlib` ou `image00400000`.<br /><br /> Cette commande prend en charge la syntaxe du débogueur Windows <`module`>`!`<`type`>. Le type doit être qualifié complet.|
 |**ObjSize** [\<*Object address*>] &#124; [ **-aggregate**] [ **-stat**]|Affiche la taille de l'objet spécifié. Si vous ne spécifiez aucun paramètre, la commande **ObjSize** affiche la taille de tous les objets trouvés dans les threads managés, ainsi que tous les handles du récupérateur de mémoire dans le processus et additionne la taille de tous les objets désignés par ces handles. La commande **ObjSize** inclut la taille de tous les objets enfants en plus du parent.<br /><br /> L’option **-aggregate** peut être utilisée avec l’argument **-stat** pour obtenir une vue détaillée des types qui sont encore associés à une racine. L’utilisation de **!dumpheap -stat** et **!objsize -aggregate -stat** vous permet de déterminer les objets qui ne sont plus associés à une racine et de diagnostiquer différents problèmes de mémoire.|
-|**PrintException** [ **-nested**] [ **-lines**] [\<*Exception object address*>]<br /><br /> - ou -<br /><br /> **PE** [ **-nested**] [\<*Exception object address*>]|Affiche et met en forme les champs de tous les objets dérivés de la classe <xref:System.Exception> à l'adresse spécifiée. Si vous ne spécifiez pas d’adresse, la commande **PrintException** affiche la dernière exception levée dans le thread actuel.<br /><br /> L’option **-nested** affiche des détails sur les objets d’exception imbriquée.<br /><br /> L’option **-lines** affiche des informations sur la source, si elles sont disponibles.<br /><br /> Vous pouvez utiliser cette commande pour mettre en forme et consulter le champ `_stackTrace` qui est un tableau binaire.|
+|**PrintException** [ **-nested**] [ **-lines**] [\<*Exception object address*>]<br /><br /> ou<br /><br /> **PE** [ **-nested**] [\<*Exception object address*>]|Affiche et met en forme les champs de tous les objets dérivés de la classe <xref:System.Exception> à l'adresse spécifiée. Si vous ne spécifiez pas d’adresse, la commande **PrintException** affiche la dernière exception levée dans le thread actuel.<br /><br /> L’option **-nested** affiche des détails sur les objets d’exception imbriquée.<br /><br /> L’option **-lines** affiche des informations sur la source, si elles sont disponibles.<br /><br /> Vous pouvez utiliser cette commande pour mettre en forme et consulter le champ `_stackTrace` qui est un tableau binaire.|
 |**ProcInfo** [ **-env**] [ **-time**] [ **-mem**]|Affiche les variables d'environnement pour le processus, le temps CPU noyau et les statistiques relatives à l'utilisation de la mémoire.|
 |**RCWCleanupList** \<*RCWCleanupList address*>|Affiche la liste des wrappers RCW (Runtime Callable Wrapper) à l'adresse spécifiée qui sont en attente de nettoyage.|
 |**SaveModule** \<*Base address*> \<*Filename*>|Écrit une image, chargée dans la mémoire à l'adresse spécifiée, dans le fichier spécifié.|
@@ -94,7 +94,7 @@ L’extension de débogage SOS (SOS.dll) vous aide à déboguer des programmes m
 |**VMMap**|Parcourt l'espace d'adressage virtuel et affiche le type de protection appliqué à chaque région.|
 |**VMStat**|Fournit un résumé de l’espace d’adressage virtuel, classé par type de protection appliqué à cette mémoire (libre, réservé, validé, privé, mappé, image). La colonne TOTAL affiche le résultat de la colonne MOYENNE multipliée par la colonne COMPTE BLQ.|
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 L’extension de débogage SOS vous permet d’afficher des informations sur l’exécution du code au sein du CLR. Par exemple, vous pouvez utiliser l’extension de débogage SOS pour afficher des informations sur le tas managé, rechercher des altérations du tas, afficher les types de données internes utilisés par le runtime et afficher des informations sur l’ensemble du code managé exécuté au sein du runtime.
 
@@ -104,7 +104,7 @@ Vous pouvez également utiliser l’extension de débogage SOS en la chargeant d
 
 Pour charger l’Extension de débogage SOS dans le débogueur WinDbg.exe, exécutez la commande suivante dans l’outil :
 
-```
+```console
 .loadby sos clr
 ```
 
@@ -114,7 +114,7 @@ Pour utiliser un fichier dump créé sur un autre ordinateur, vérifiez que le f
 
 Pour charger une version spécifique de SOS.dll, tapez la commande suivante dans le débogueur Windows :
 
-```
+```console
 .load <full path to sos.dll>
 ```
 
@@ -122,85 +122,85 @@ Pour charger une version spécifique de SOS.dll, tapez la commande suivante dans
 
 La commande suivante affiche le contenu d'un tableau à l'adresse `00ad28d0`.  L'affichage démarre à partir du deuxième élément et se poursuit avec les cinq éléments suivants.
 
-```
+```console
 !dumparray -start 2 -length 5 -detail 00ad28d0
 ```
 
 La commande suivante affiche le contenu d'un assembly à l'adresse `1ca248`.
 
-```
+```console
 !dumpassembly 1ca248
 ```
 
 La commande suivante affiche des informations sur le tas de récupérateur de mémoire.
 
-```
+```console
 !dumpheap
 ```
 
 La commande suivante écrit le contenu du journal de contrainte en mémoire dans un fichier appelé StressLog.txt (par défaut) dans le répertoire actif.
 
-```
+```console
 !DumpLog
 ```
 
 La commande suivante affiche la structure `MethodDesc` à l'adresse `902f40`.
 
-```
+```console
 !dumpmd 902f40
 ```
 
 La commande suivante affiche des informations sur un module à l'adresse `1caa50`.
 
-```
+```console
 !dumpmodule 1caa50
 ```
 
 La commande suivante affiche des informations sur un objet à l'adresse `a79d40`.
 
-```
+```console
 !DumpObj a79d40
 ```
 
 La commande suivante affiche les champs d'une classe de valeur à l'adresse `00a79d9c`, à l'aide de la table de méthodes à l'adresse `0090320c`.
 
-```
+```console
 !DumpVC 0090320c 00a79d9c
 ```
 
 La commande suivante affiche la mémoire du processus utilisée par le récupérateur de mémoire.
 
-```
+```console
 !eeheap -gc
 ```
 
 La commande suivante affiche tous les objets planifiés pour la finalisation.
 
-```
+```console
 !finalizequeue
 ```
 
 La commande suivante détermine le domaine d'application d'un objet à l'adresse `00a79d98`.
 
-```
+```console
 !findappdomain 00a79d98
 ```
 
 La commande suivante affiche tous les handles du récupérateur de mémoire dans le processus actuel.
 
-```
+```console
 !gcinfo 5b68dbb8
 ```
 
 La commande suivante affiche les structures `MethodTable` et `EEClass` pour la méthode `Main`, dans la classe `MainClass`, dans le module `unittest.exe`.
 
-```
+```console
 !name2ee unittest.exe MainClass.Main
 ```
 
 La commande suivante affiche des informations sur le jeton de métadonnées à l'adresse `02000003` dans le module `unittest.exe`.
 
-```
+```console
 !token2ee unittest.exe 02000003
 ```
 

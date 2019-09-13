@@ -4,12 +4,12 @@ description: Ce tutoriel explique comment conteneuriser une application .NET Cor
 ms.date: 06/26/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18
-ms.openlocfilehash: ec1c6eb5c1a78a631b8205da5d082e44884cde7a
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: f0e0fad9bde4c35fb5c5b0b505b9fa8441e432ba
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253948"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926301"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Tutoriel : Conteneuriser une application .NET Core
 
@@ -18,6 +18,7 @@ Ce tutoriel explique comment élaborer une image Docker contenant une applicatio
 Vous apprendrez à :
 
 > [!div class="checklist"]
+>
 > * Créer et publier une application .NET Core simple
 > * Créer et configurer un Dockerfile pour .NET Core
 > * Créer une image Docker

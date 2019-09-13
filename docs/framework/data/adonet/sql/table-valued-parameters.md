@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
-ms.openlocfilehash: 316ccb19ca9e384be97a83e992af46934702aa0c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6c01453556a71925c322e9f9aef8065cbddb3540
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780692"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894391"
 ---
 # <a name="table-valued-parameters"></a>Paramètres table
 Les paramètres table fournissent un moyen simple de marshaler plusieurs lignes de données d'une application cliente vers SQL Server sans avoir recours à plusieurs allers-retours ou à une logique côté serveur spéciale pour le traitement des données. Les paramètres table vous permettent d'encapsuler des lignes de données dans une application cliente et d'envoyer les données au serveur dans une commande paramétrée unique. Les lignes de données entrantes sont stockées dans une variable de table qui peut ensuite être traitée en utilisant Transact-SQL.  
@@ -43,14 +43,14 @@ Les paramètres table fournissent un moyen simple de marshaler plusieurs lignes 
   
  L'instruction suivante crée un type de table nommé CategoryTableType qui se compose des colonnes CategoryID et CategoryName :  
   
-```  
+```sql
 CREATE TYPE dbo.CategoryTableType AS TABLE  
     ( CategoryID int, CategoryName nvarchar(50) )  
 ```  
   
  Après avoir créé un type de table, vous pouvez déclarer des paramètres table basés sur celui-ci. Le fragment Transact-SQL suivant montre comment déclarer un paramètre table dans une définition de procédure stockée. Notez que le mot clé READONLY est obligatoire pour déclarer un paramètre table.  
   
-```  
+```sql
 CREATE PROCEDURE usp_UpdateCategories   
     (@tvpNewCategories dbo.CategoryTableType READONLY)  
 ```  
@@ -60,7 +60,7 @@ CREATE PROCEDURE usp_UpdateCategories
   
  L'instruction Transact-SQL UPDATE suivante montre comment utiliser un paramètre table en le joignant à la table Categories. Lorsque vous utilisez un paramètre table avec une condition JOIN dans une clause FROM, vous devez également créer des alias pour celui-ci, comme ci-après, où le paramètre table se voit attribuer l'alias "ec" :  
   
-```  
+```sql
 UPDATE dbo.Categories  
     SET Categories.CategoryName = ec.CategoryName  
     FROM dbo.Categories INNER JOIN @tvpEditedCategories AS ec  
@@ -69,7 +69,7 @@ UPDATE dbo.Categories
   
  Cet exemple Transact-SQL montre comment sélectionner des lignes d'un paramètre table pour effectuer une insertion (INSERT) dans une opération basée sur un jeu unique.  
   
-```  
+```sql
 INSERT INTO dbo.Categories (CategoryID, CategoryName)  
     SELECT nc.CategoryID, nc.CategoryName FROM @tvpNewCategories AS nc;  
 ```  

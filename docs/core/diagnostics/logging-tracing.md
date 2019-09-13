@@ -4,12 +4,12 @@ description: Présentation de la journalisation et du suivi de .NET Core.
 author: sdmaclea
 ms.author: stmaclea
 ms.date: 08/05/2019
-ms.openlocfilehash: 06781c6a5c1d771b1fa772539705cd1e2b3ad2d4
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 46e64a7f60b88c26ceef9ac817be885bfa180c8e
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "70234642"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926354"
 ---
 # <a name="net-core-logging-and-tracing"></a>Journalisation et suivi .NET Core
 
@@ -17,7 +17,7 @@ La journalisation et le suivi sont en fait deux noms pour la même technique. La
 
 ## <a name="reasons-to-use-logging-and-tracing"></a>Raisons pour utiliser la journalisation et le suivi
 
-Cette technique simple est étonnamment puissante. Il peut être utilisé dans les situations où un débogueur échoue:
+Cette technique simple est étonnamment puissante. Il peut être utilisé dans les situations où un débogueur échoue :
 
 - Les problèmes survenant sur de longues périodes de temps peuvent être difficiles à déboguer avec un débogueur traditionnel. Les journaux permettent d’obtenir des informations détaillées sur de longues périodes de temps. En revanche, les débogueurs sont limités à l’analyse en temps réel.
 - Les applications multithread et les applications distribuées sont souvent difficiles à déboguer.  L’attachement d’un débogueur tend à modifier les comportements. Les journaux détaillés peuvent être analysés en fonction des besoins pour comprendre les systèmes complexes.
@@ -31,7 +31,8 @@ Cette technique simple est étonnamment puissante. Il peut être utilisé dans l
 
 Les <xref:System.Console?displayProperty=nameWithType>classes <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, et<xref:System.Diagnostics.Debug?displayProperty=nameWithType> fournissent chacune des API de style d’impression similaires pratiques pour la journalisation.
 
-Vous avez le choix de l’API de style d’impression à utiliser. Les principales différences sont les suivantes:
+Vous avez le choix de l’API de style d’impression à utiliser. Les principales différences sont les suivantes :
+
 - <xref:System.Console?displayProperty=nameWithType>
   - Toujours activé et écrit toujours sur la console.
   - Utile pour les informations que votre client peut avoir besoin de voir dans la version.
@@ -55,7 +56,7 @@ Les API suivantes sont plus orientées événement. Au lieu d’enregistrer des 
   - Disponible dans toutes les versions de .NET Standard.
   - Autorise uniquement le suivi des objets sérialisables.
   - Écrit dans les [écouteurs d’événements](xref:System.Diagnostics.Tracing.EventListener)attachés.
-  - .NET Core fournit des écouteurs pour:
+  - .NET Core fournit des écouteurs pour :
     - EventPipe de .NET Core sur toutes les plateformes
     - [Suivi d’v nements pour Windows (ETW)](/windows/win32/etw/event-tracing-portal)
     - [Infrastructure de suivi LTTng pour Linux](https://lttng.org/)
@@ -79,7 +80,8 @@ Les API de bas niveau ne sont peut-être pas le bon choix pour vos besoins de jo
 
 L' <xref:Microsoft.Extensions.Logging.ILogger> interface a été utilisée pour créer une interface de journalisation commune dans laquelle les enregistreurs d’événements peuvent être insérés via l’injection de dépendances.
 
-Par exemple, pour vous permettre de choisir le meilleur choix pour votre application `ASP.NET` , vous pouvez prendre en charge une sélection de frameworks intégrés et tiers:
+Par exemple, pour vous permettre de choisir le meilleur choix pour votre application `ASP.NET` , vous pouvez prendre en charge une sélection de frameworks intégrés et tiers :
+
 - [ASP.NET intégrés aux fournisseurs de journalisation](/aspnet/core/fundamentals/logging/#built-in-logging-providers)
 - [ASP.NET fournisseurs de journalisation tiers](/aspnet/core/fundamentals/logging/#third-party-logging-providers)
 
@@ -87,7 +89,7 @@ Par exemple, pour vous permettre de choisir le meilleur choix pour votre applica
 
 - [Guide pratique : effectuer une compilation conditionnelle avec Trace et Debug](../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
 
-- [Guide pratique : Ajouter des instructions de suivi au code d’application](../../framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
+- [Guide pratique pour Ajouter des instructions de suivi au code d’application](../../framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
 
 - La [journalisation ASP.net](/aspnet/core/fundamentals/logging) fournit une vue d’ensemble des techniques de journalisation qu’elle prend en charge.
 
@@ -101,7 +103,8 @@ Par exemple, pour vous permettre de choisir le meilleur choix pour votre applica
 
 La mise en forme des chaînes peut prendre un temps de traitement de l’UC notable.
 
-Dans les applications critiques pour les performances, il est recommandé de:
+Dans les applications critiques pour les performances, il est recommandé de :
+
 - Évitez un grand nombre de journaux quand aucun n’est à l’écoute. Évitez de créer des messages de journalisation coûteux en vérifiant si la journalisation est activée en premier.
 - Consignez uniquement ce qui est utile.
 - Différer la mise en forme complète à l’étape d’analyse.

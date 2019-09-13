@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: c1d2b532-1b8e-4c7a-8ac5-53b801135ec6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 35e89584f3916d748809960d33a31eb4e8fb9c6a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 643f0644bdeb2d3bdf6a08b482d0494affd92209
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938020"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894637"
 ---
 # <a name="snexe-strong-name-tool"></a>Sn.exe (outil Strong Name Tool)
 L’outil Strong Name (Sn.exe) permet de signer des assemblys avec des [noms forts](../../../docs/framework/app-domains/strong-named-assemblies.md). Sn.exe fournit des options de gestion des clés, de génération des signatures et de vérification des signatures.  
@@ -36,7 +36,7 @@ L’outil Strong Name (Sn.exe) permet de signer des assemblys avec des [noms for
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 sn [-quiet][option [parameter(s)]]  
 ```  
   
@@ -57,7 +57,7 @@ sn [-quiet][option [parameter(s)]]
 |**-o**  *infile* [*outfile*]|Extrait la clé publique d’*infile* et la stocke dans un fichier .csv. Chaque octet de la clé publique est séparé par une virgule. Ce format s'avère utile pour les références de codage en dur aux clés sous forme de tableaux initialisés dans le code source. Si *outfile* n’est pas spécifié, cette option place la sortie dans le Presse-papiers. **Remarque :**  cette option ne vérifie pas si l’entrée consiste uniquement en une clé publique. Si `infile` contient une paire de clés dont une est privée, la clé privée est également extraite.|  
 |**-p** *infile outfile* [*hashalg*]|Extrait la clé publique de la paire de clés dans *infile* et la stocke dans *outfile*, éventuellement à l’aide de l’algorithme RSA spécifié par *hashalg*. Cette clé publique permet de différer la signature d’un assembly à l’aide des options **/delaysign+** et **/keyfile** d’[Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md). En cas signature différée d'un assembly, seule la clé publique est définie au moment de la compilation et un espace est réservé dans le fichier pour la signature qui sera ajoutée par la suite, lorsque la clé privée sera connue.|  
 |**-pc**  *container* *outfile* [*hashalg*]|Extrait la clé publique de la paire de clés figurant dans *container* et la stocke dans *outfile*. Si vous utilisez l’option *hashalg*, l’algorithme RSA est utilisé pour récupérer la clé publique.|  
-|**-Pb** [**y** *&#124;* **n**]|Spécifie si la stratégie permettant d'ignorer les noms forts est appliquée. Si vous spécifiez *y*, les noms forts pour les assemblys à confiance totale ne sont pas validés en cas de chargement dans un <xref:System.AppDomain> à confiance totale. Si vous spécifiez *n*, l’exactitude des noms forts est validée, mais pas pour un nom fort spécifique. Le <xref:System.Security.Permissions.StrongNameIdentityPermission> n'a aucun effet sur les assemblys à confiance totale. Vous devez procéder à votre propre contrôle pour une correspondance de nom fort.<br /><br /> Si ni `y`, ni `n` ne sont spécifiés, cette option affiche le paramètre actuel. La valeur par défaut est `y`. **Remarque :**  sur les ordinateurs 64 bits, ce paramètre doit être défini à la fois sur l’instance 32 bits et sur l’instance 64 bits de Sn.exe.|  
+|**-Pb** [**y** *&#124;* **n**]|Spécifie si la stratégie permettant d'ignorer les noms forts est appliquée. Si vous spécifiez *y*, les noms forts pour les assemblys à confiance totale ne sont pas validés en cas de chargement dans un <xref:System.AppDomain> à confiance totale. Si vous spécifiez *n*, l’exactitude des noms forts est validée, mais pas pour un nom fort spécifique. Le <xref:System.Security.Permissions.StrongNameIdentityPermission> n'a aucun effet sur les assemblys à confiance totale. Vous devez procéder à votre propre contrôle pour une correspondance de nom fort.<br /><br /> Si ni `y`, ni `n` ne sont spécifiés, cette option affiche le paramètre actuel. Par défaut, il s’agit de `y`. **Remarque :**  sur les ordinateurs 64 bits, ce paramètre doit être défini à la fois sur l’instance 32 bits et sur l’instance 64 bits de Sn.exe.|  
 |**-q**[**uiet**]|Spécifie le mode silencieux ; supprime l'affichage des messages d'opération réussie.|  
 |**-R**[**a**] *assembly* *infile*|Resigne un assembly ayant préalablement fait l’objet d’une signature ou dont la signature a été différée avec la paire de clés figurant dans *infile*.<br /><br /> Si **-Ra** est utilisé, les hachages sont recalculés pour tous les fichiers de l’assembly.|  
 |**-Rc**[**a**] *assembly container*|Resigne un assembly ayant préalablement fait l’objet d’une signature ou dont la signature a été différée avec la paire de clés figurant dans *container*.<br /><br /> Si **-Rca** est utilisé, les hachages sont recalculés pour tous les fichiers de l’assembly.|  
@@ -79,7 +79,7 @@ sn [-quiet][option [parameter(s)]]
 > [!NOTE]
 > Toutes les options de Sn.exe respectent la casse et doivent être tapées exactement comme indiqué pour pouvoir être reconnues par l'outil.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Les options **-R** et **-Rc** sont utiles avec les assemblys dont la signature a été différée. Dans ce cas, seule la clé publique est définie au moment de la compilation et la signature a lieu par la suite, lorsque la clé privée est connue.  
   
 > [!NOTE]
@@ -90,37 +90,37 @@ L’outil Strong Name suppose que les paires de clés publiques/privées sont g�
 ## <a name="examples"></a>Exemples  
  La commande suivante crée une nouvelle paire de clés aléatoire et la stocke dans `keyPair.snk`.  
   
-```  
+```console  
 sn -k keyPair.snk  
 ```  
   
  La commande suivante stocke la clé figurant dans `keyPair.snk` dans le conteneur `MyContainer` du fournisseur de services de chiffrement de noms forts.  
   
-```  
+```console  
 sn -i keyPair.snk MyContainer  
 ```  
   
  La commande suivante extrait la clé publique de `keyPair.snk` et la stocke dans `publicKey.snk`.  
   
-```  
+```console  
 sn -p keyPair.snk publicKey.snk  
 ```  
   
  La commande suivante affiche la clé publique et le jeton pour la clé publique contenue dans `publicKey.snk`.  
   
-```  
+```console  
 sn -tp publicKey.snk  
 ```  
   
  La commande suivante vérifie l'assembly `MyAsm.dll`.  
   
-```  
+```console  
 sn -v MyAsm.dll  
 ```  
   
  La commande suivante supprime `MyContainer` du fournisseur de services de chiffrement par défaut.  
   
-```  
+```console  
 sn -d MyContainer  
 ```  
   

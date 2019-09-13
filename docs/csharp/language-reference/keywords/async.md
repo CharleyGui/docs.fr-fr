@@ -9,12 +9,12 @@ helpviewer_keywords:
 - async method [C#]
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
-ms.openlocfilehash: 71e3781b08bca3441dbd55704bcb0f7de635097e
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: ab9c1be484d9cc77324e3105124a1b1f2257251d
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168645"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70925363"
 ---
 # <a name="async-c-reference"></a>async (référence C#)
 
@@ -39,7 +39,7 @@ Si la méthode que le mot clé `async` modifie ne contient pas une expression ou
   
  Le mot clé `async` est contextuel, car il est un mot clé uniquement lorsqu'il modifie une méthode, une expression lambda ou une méthode anonyme. Dans tous les autres contextes, il est interprété comme un identificateur.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
 L'exemple suivant montre la structure et le flux de contrôle entre un gestionnaire d'événements asynchrones, `StartButton_Click`, et une méthode async, `ExampleMethodAsync`. Le résultat de la méthode async est le nombre de caractères d’une page web. Le code convient pour une application WPF (Windows Presentation Foundation) ou une application du Windows Store que vous créez dans Visual Studio ; consultez les commentaires du code pour configurer l’application.  
 
 Vous pouvez exécuter ce code dans Visual Studio en tant qu’application Windows Presentation Foundation (WPF) ou qu’application du Windows Store. Vous avez besoin d’un contrôle Button nommé `StartButton` et d’un contrôle Textbox nommé `ResultsTextBox`. N’oubliez pas de définir les noms et le gestionnaire afin d’obtenir un résultat semblable à ceci :  
@@ -58,6 +58,7 @@ Pour exécuter le code en tant qu’application WPF :
 - Ajoutez une directive `using` à System.Net.Http.  
   
 Pour exécuter le code comme une application du Windows Store :  
+
 - Collez ce code dans la classe `MainPage` dans MainPage.xaml.cs.  
 - Ajouter des directives using pour System.Net.Http et System.Threading.Tasks.  
   

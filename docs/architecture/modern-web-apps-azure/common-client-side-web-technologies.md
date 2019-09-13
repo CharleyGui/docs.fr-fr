@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 3a44b017c6160639ed1be7374b893e103ee5f5d8
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 4dd747293fba4c18c2d10738d36f4d98cfd3f5b9
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373904"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926502"
 ---
 # <a name="common-client-side-web-technologies"></a>Technologies web courantes côté client
 
@@ -141,6 +141,7 @@ Quand vous devez choisir le framework JavaScript qui convient le mieux pour pren
 Les frameworks JavaScript évoluent très rapidement. Utilisez les considérations ci-dessus pour vous aider à limiter les risques en évitant de choisir un framework que vous pourriez regretter par la suite. Si vous ne voulez prendre aucun risque, choisissez un framework qui offre un support commercial et/ou est développé par une grande entreprise.
 
 > ### <a name="references--client-web-technologies"></a>Références - Technologies web clientes
+>
 > - **HTML et CSS**  
 > <https://www.w3.org/standards/webdesign/htmlcss>
 > - **Sass vs. LESS**  

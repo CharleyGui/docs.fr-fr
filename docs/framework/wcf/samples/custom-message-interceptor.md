@@ -2,12 +2,12 @@
 title: Custom Message Interceptor
 ms.date: 03/30/2017
 ms.assetid: 73f20972-53f8-475a-8bfe-c133bfa225b0
-ms.openlocfilehash: 4a91078ddb8eb66f1ee0f957005e9a0d290370c8
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: daa041bf63442dace0d33e1e3207d0857b6b7312
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045597"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928917"
 ---
 # <a name="custom-message-interceptor"></a>Custom Message Interceptor
 Cet exemple montre l'utilisation du modèle d'extensibilité des canaux. Indique en particulier comment implémenter un élément de liaison personnalisé qui crée des fabrications de canaux et des écouteurs de canal pour intercepter tous les messages entrants et sortants à un point particulier dans la pile d’exécution. L'exemple inclut également un client et serveur qui montrent l'utilisation de ces fabrications personnalisées.  
@@ -44,25 +44,35 @@ Cet exemple montre l'utilisation du modèle d'extensibilité des canaux. Indique
   
  Ces classes prennent une fabrication et un écouteur internes, puis leur délèguent tout les appels à l'exception de `OnCreateChannel` et `OnAcceptChannel`.  
   
-```  
+```csharp  
 class InterceptingChannelFactory<TChannel> : ChannelFactoryBase<TChannel>  
-{ ... }  
+{ 
+    //... 
+}
+
 class InterceptingChannelListener<TChannel> : ListenerFactoryBase<TChannel>  
-{ ... }  
+{ 
+    //...
+}  
 ```  
   
 ## <a name="adding-a-binding-element"></a>Ajout d'un élément de liaison  
  l’exemple définit un élément de liaison personnalisé : `InterceptingBindingElement`. `InterceptingBindingElement`prend un `ChannelMessageInterceptor` comme entrée et l' `ChannelMessageInterceptor` utilise pour manipuler les messages qui le traversent. C'est la seule classe qui doit être publique. La fabrication, l'écouteur et les canaux peuvent tous être des implémentations internes des interfaces d'exécution publiques.  
   
-```  
-public class InterceptingBindingElement : BindingElement  
+```csharp
+public class InterceptingBindingElement : BindingElement 
+{
+}
 ```  
   
 ## <a name="adding-configuration-support"></a>Ajout de la prise en charge de la configuration  
  Pour s'intégrer avec la configuration de liaison, la bibliothèque définit un gestionnaire de section de configuration comme section d'extension d'élément de liaison. Les fichiers de configuration du client et du serveur doivent enregistrer l'extension d'élément de liaison avec le système de configuration. Les implémenteurs qui souhaitent exposer leur élément de liaison au système de configuration peuvent dériver de cette classe.  
   
-```  
-public abstract class InterceptingElement : BindingElementExtensionElement { ... }  
+```csharp
+public abstract class InterceptingElement : BindingElementExtensionElement 
+{ 
+    //... 
+}
 ```  
   
 ## <a name="adding-policy"></a>Ajout d'une stratégie  
@@ -71,7 +81,7 @@ public abstract class InterceptingElement : BindingElementExtensionElement { ...
 ## <a name="example-droppable-message-inspector"></a>Exemple : Inspecteur de message déposant  
  L'exemple comporte un exemple d'implémentation de `ChannelMessageInspector` qui supprime des messages.  
   
-```  
+```csharp  
 class DroppingServerElement : InterceptingElement  
 {  
     protected override ChannelMessageInterceptor CreateMessageInterceptor()  
@@ -114,7 +124,7 @@ class DroppingServerElement : InterceptingElement
   
  La sortie du client suivante doit s'afficher après avoir exécuté le service puis le client.  
   
-```  
+```console  
 Reporting the next 10 wind speed  
 100 kph  
 Server dropped a message.  
@@ -138,18 +148,18 @@ Press ENTER to shut down client
   
  La sortie suivante doit s'afficher sur le service :  
   
-```  
+```console  
 Press ENTER to exit.  
 Dangerous wind detected! Reported speed (90) is greater than 64 kph.  
 Dangerous wind detected! Reported speed (70) is greater than 64 kph.  
 5 wind speed reports have been received.  
 ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
 1. Installez ASP.NET 4,0 à l’aide de la commande suivante.  
   
-    ```  
+    ```console  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   

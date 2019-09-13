@@ -2,12 +2,12 @@
 title: Configuration requise pour le fournisseur de données .NET Framework pour Oracle
 ms.date: 03/30/2017
 ms.assetid: 054f76b9-1737-43f0-8160-84a00a387217
-ms.openlocfilehash: 330bad6f58b1ba6b0d2fdb2baa86a04374946e80
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: b64a84b8d8246bae9028a6ca710f0a62cc85bf79
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780580"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894381"
 ---
 # <a name="system-requirements-for-the-net-framework-data-provider-for-oracle"></a>Configuration requise pour le fournisseur de données .NET Framework pour Oracle
 Le fournisseur de données .NET Framework pour Oracle requiert l'installation de Microsoft Data Access Components (MDAC) version 2.6 ou ultérieure. MDAC 2.8 SP1 est recommandé.  
@@ -22,9 +22,7 @@ Le fournisseur de données .NET Framework pour Oracle requiert l'installation de
 ### <a name="setting-the-unicode-value-in-a-connection-string-attribute"></a>Définition de la valeur Unicode dans un attribut de chaîne de connexion  
  Lorsque vous travaillez avec Oracle, vous pouvez utiliser l'attribut de chaîne de connexion  
   
-```  
-Unicode=True   
-```  
+`Unicode=True`
   
  pour initialiser les bibliothèques du client Oracle en mode UTF-16. Cela a pour effet que les bibliothèques du client Oracle acceptent UTF-16 (qui est très similaire à UCS-2) à la place des chaînes multioctet. Cela permet au fournisseur de données pour Oracle de pouvoir toujours travailler avec une page de code Oracle quelconque sans que cela nécessite un travail de conversion supplémentaire. Cette configuration ne fonctionne que si vous utilisez des clients Oracle 9i pour communiquer avec une base de données Oracle 9i à l'aide de l'ensemble de caractères de remplacement de AL16UTF16. Lorsqu’un client Oracle 9i communique avec un serveur Oracle 9i, des ressources supplémentaires sont requises pour convertir les valeurs **CommandText** Unicode dans le jeu de caractères multioctets approprié que le serveur Oracle9i utilise. Cela peut être évité lorsque vous savez que vous disposez de la configuration sécurisée en ajoutant `Unicode=True` à votre chaîne de connexion.  
   

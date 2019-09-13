@@ -17,32 +17,32 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d14d542a8c1d8adeaf56dc1564e8e10121cd4064
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 11dc050e2fe16a64db4ac95bb1386e2d90535e81
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650724"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895026"
 ---
 # <a name="isymunmanagedwritersetuserentrypoint-method"></a>ISymUnmanagedWriter::SetUserEntryPoint, méthode
-Spécifie la méthode définie par l’utilisateur qui est le point d’entrée pour ce module. Par exemple, ce point d’entrée peut être la méthode de l’utilisateur principal au lieu de stubs générés par le compilateur avant principal.  
+Spécifie la méthode définie par l’utilisateur qui est le point d’entrée de ce module. Par exemple, ce point d’entrée peut être la méthode main de l’utilisateur au lieu des stubs générés par le compilateur avant main.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT SetUserEntryPoint(  
     [in] mdMethodDef entryMethod);  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `entryMethod`  
- [in] Jeton de métadonnées pour la méthode qui est l’entrée utilisateur point.  
+ dans Jeton de métadonnées pour la méthode qui est le point d’entrée de l’utilisateur.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
 ## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 
