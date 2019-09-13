@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: c1676cca-3f1a-41ec-b469-9029566074fc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ce16365f8aa9975a6ccb26415a6d091f65e1eef2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ea61b3abf920a5261933f56c71011b50bcd52bb2
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69943857"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70927098"
 ---
 # <a name="net-framework-performance"></a>Performances .NET Framework
 Si vous voulez créer des applications dotées de hautes performances, vous devez concevoir et planifier les performances comme vous concevez n'importe quelle autre fonctionnalité de votre application. Vous pouvez utiliser les outils fournis par Microsoft pour mesurer les performances de votre application et, si nécessaire, apporter des améliorations à l'utilisation de la mémoire, au débit de code et à la réactivité. Cette rubrique répertorie les outils d'analyse de performance fournis par Microsoft et fournit des liens vers d'autres rubriques qui couvrent les performances dans des domaines spécifiques du développement d'applications.  
@@ -34,7 +34,7 @@ Si vous voulez créer des applications dotées de hautes performances, vous deve
 |----------|-----------------|  
 |Analyse des performances Visual Studio|Utilisez cet outil pour analyser l'utilisation de l'UC de vos applications .NET Framework qui seront déployées sur des ordinateurs exécutant le système d'exploitation Windows.<br /><br /> Vous trouverez cet outil dans le menu **Débogage** de Visual Studio après avoir ouvert votre projet. Pour plus d'informations, consultez [Explorateur de performances](/visualstudio/profiling/performance-explorer). **Remarque :**  Utilisez l'analyse de l'application Windows Phone (voir ligne suivante) quand vous ciblez Windows Phone.|  
 |Analyse de l'application Windows Phone|Utilisez cet outil pour analyser l'UC et la mémoire, le taux de transfert des données réseau, la réactivité de l'application et la consommation de la batterie dans vos applications Windows Phone.<br /><br /> Vous trouverez cet outil dans le menu **Débogage** de votre projet Windows Phone dans Visual Studio après avoir installé [Windows Phone SDK](https://go.microsoft.com/fwlink/?LinkId=265773). Pour plus d’informations, consultez [profilage d’application pour Windows Phone 8](https://docs.microsoft.com/previous-versions/windows/apps/jj215908(v=vs.105)).|  
-|[PerfView](https://www.microsoft.com/download/details.aspx?id=28567)|Utilisez ces outils pour identifier des problèmes de performances liés à l'UC et à la mémoire. Cet outil utilise le suivi d’événements pour Windows et des API de profilage du CLR pour assurer des investigations avancées de la mémoire et de l’UC, et pour fournir des informations sur le garbage collection et la compilation JIT. Pour plus d’informations sur l’utilisation de PerfView, consultez le didacticiel et les fichiers d’aide fournis dans l’application, les [didacticiels vidéo sur Channel 9](https://channel9.msdn.com/Series/PerfView-Tutorial) et les [billets de blog](https://blogs.msdn.com/b/vancem/archive/tags/perfview/).<br /><br /> Pour plus d’informations sur les problèmes de mémoire, consultez le didacticiel sur l’[utilisation de PerfView pour l’examen de la mémoire](https://channel9.msdn.com/Series/PerfView-Tutorial/PerfView-Tutorial-9-NET-Memory-Investigation-Basics-of-GC-Heap-Snapshots).|  
+|[PerfView](https://www.microsoft.com/download/details.aspx?id=28567)|Utilisez ces outils pour identifier des problèmes de performances liés à l'UC et à la mémoire. Cet outil utilise le suivi d’événements pour Windows et des API de profilage du CLR pour assurer des investigations avancées de la mémoire et de l’UC, et pour fournir des informations sur le garbage collection et la compilation JIT. Pour plus d’informations sur l’utilisation de PerfView, consultez le didacticiel et les fichiers d’aide fournis dans l’application, les [didacticiels vidéo sur Channel 9](https://channel9.msdn.com/Series/PerfView-Tutorial) et les [billets de blog](https://blogs.msdn.microsoft.com/vancem/tag/perfview/).<br /><br /> Pour plus d’informations sur les problèmes de mémoire, consultez le didacticiel sur l’[utilisation de PerfView pour l’examen de la mémoire](https://channel9.msdn.com/Series/PerfView-Tutorial/PerfView-Tutorial-9-NET-Memory-Investigation-Basics-of-GC-Heap-Snapshots).|  
 |[Windows Performance Analyzer](https://www.microsoft.com/download/details.aspx?id=30652)|Utilisez cet outil pour déterminer les performances globales du système telles que l'utilisation de la mémoire et du stockage par votre application quand plusieurs applications s'exécutent sur le même ordinateur. Cet outil est disponible à partir du centre de téléchargement dans le cadre du Kit de déploiement et d’évaluation Windows (Windows ADK) pour [!INCLUDE[win8](../../../includes/win8-md.md)]. Pour plus d’informations, consultez [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer).|  
   
 ### <a name="event-tracing-for-windows-etw"></a>Suivi d'événements pour Windows (ETW)  
@@ -43,7 +43,7 @@ Si vous voulez créer des applications dotées de hautes performances, vous deve
 ## <a name="performance-by-app-type"></a>Performances par type d'application  
  Chaque type d'application .NET Framework possède ses propres pratiques recommandées, considérations et outils pour évaluer les performances. Le tableau ci-dessous propose des liens vers des rubriques liées aux performances pour des types d'applications .NET Framework spécifiques.  
   
-|Type d'application|Voir|  
+|Type d'application|Consultez|  
 |--------------|---------|  
 |Applications .NET Framework pour toutes les plateformes|[Garbage Collection et performances](../../standard/garbage-collection/performance.md)<br /><br /> [Conseils relatifs aux performances](../../../docs/framework/performance/performance-tips.md)|  
 |Applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] écrites en C++, C# et Visual Basic|[Bonnes pratiques pour les performances des applications du Windows Store en C++, C# et Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh750313%28v=win.10%29)|  

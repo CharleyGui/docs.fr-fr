@@ -1,29 +1,30 @@
 ---
 title: 'Tutoriel : Détecter les anomalies dans les ventes de produits'
-description: Découvrez comment créer une application de détection des anomalies pour des données de ventes de produit. Ce tutoriel crée une application de console .NET Core à l’aide de C# dans Visual Studio 2019.
+description: Découvrez comment créer une application de détection des anomalies pour des données de ventes de produit. Ce didacticiel crée une application de console .NET Core à l’aide de C# dans Visual Studio 2019.
 ms.date: 07/17/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: 4228a68ad43416c6e32684441593d92dfdbfd808
-ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
-ms.translationtype: HT
+ms.openlocfilehash: ed75f1ba0b102ba73eb5671667b5731519c12eb0
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68733278"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929054"
 ---
 # <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Tutoriel : Détecter les anomalies dans les ventes de produits avec ML.NET
 
-Découvrez comment créer une application de détection des anomalies pour des données de ventes de produit. Ce tutoriel crée une application de console .NET Core à l’aide de C# dans Visual Studio.
+Découvrez comment créer une application de détection des anomalies pour des données de ventes de produit. Ce didacticiel crée une application de console .NET Core à l’aide de C# dans Visual Studio.
 
-Dans ce tutoriel, vous allez apprendre à :
+Ce tutoriel vous montre comment effectuer les opérations suivantes :
 > [!div class="checklist"]
-> * Charger les données
+>
+> * Chargement des données
 > * Créer une transformation pour la détection d’anomalie de pics
 > * Détecter des anomalies de pics avec la transformation
 > * Créer une transformation pour la détection d’anomalie de points de changement
 > * Détecter des anomalies de points de changement avec la transformation
 
-Vous trouverez le code source de ce tutoriel dans le dépôt [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/ProductSalesAnomalyDetection).
+Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/ProductSalesAnomalyDetection).
 
 ## <a name="prerequisites"></a>Prérequis
 
@@ -97,7 +98,7 @@ Ajoutez une nouvelle classe à votre projet :
 
 5. Créez deux champs globaux pour le chemin du fichier de jeu de données téléchargé et celui du fichier de modèle enregistré :
 
-    * `_dataPath` contient le chemin d’accès au jeu de données utilisé pour entraîner le modèle.
+    * `_dataPath` contient le chemin d’accès au jeu de données utilisé pour l’apprentissage du modèle.
     * `_docsize` contient le nombre d’enregistrements dans le fichier de jeu de données. Vous allez utiliser `_docSize` pour calculer `pvalueHistoryLength`.
 
 6. Ajoutez le code suivant à la ligne juste au-dessus de la méthode `Main` pour spécifier ces chemins :
@@ -112,7 +113,7 @@ Ajoutez une nouvelle classe à votre projet :
 
     La [classe MLContext](xref:Microsoft.ML.MLContext) est un point de départ pour toutes les opérations ML.NET, et l’initialisation de `mlContext` crée un environnement ML.NET qui peut être partagé par les objets de flux de travail de création de modèle. Sur le plan conceptuel, elle est similaire à `DBContext` dans Entity Framework.
 
-### <a name="load-the-data"></a>Charger les données
+### <a name="load-the-data"></a>Chargement des données
 
 Les données dans ML.NET sont représentées en tant que [classe IDataView](xref:Microsoft.ML.IDataView). `IDataView` est un moyen flexible et efficace de décrire des données tabulaires (numériques et texte). Les données peuvent être chargées à partir d’un fichier texte ou d’autres sources (par exemple, fichiers journaux ou de base de données SQL) dans un objet `IDataView`.
 
@@ -368,11 +369,12 @@ Alert   Score   P-Value Martingale value
 
 Félicitations ! Vous venez de générer des modèles de machine learning pour détecter des anomalies (pics et points de changement) dans des données de ventes.
 
-Vous trouverez le code source de ce tutoriel dans le dépôt [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/ProductSalesAnomalyDetection).
+Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/ProductSalesAnomalyDetection).
 
-Dans ce tutoriel, vous avez appris à :
+Dans ce tutoriel, vous avez appris à :
 > [!div class="checklist"]
-> * Charger les données
+>
+> * Chargement des données
 > * Entraîner le modèle pour détecter des pics
 > * Détecter des pics avec le modèle entraîné
 > * Entraîner le modèle pour détecter des points de changement
@@ -382,4 +384,4 @@ Dans ce tutoriel, vous avez appris à :
 
 Consultez le dépôt GitHub d’exemples de machine learning pour explorer un exemple de détection d’anomalie dans le domaine de la consommation d’énergie.
 > [!div class="nextstepaction"]
-> [Dépôt GitHub dotnet/machinelearning-samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/AnomalyDetection_PowerMeterReadings)
+> [Référentiel GitHub dotnet/machinelearning-samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/AnomalyDetection_PowerMeterReadings)

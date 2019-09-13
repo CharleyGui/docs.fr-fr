@@ -2,12 +2,12 @@
 title: AJAX Service Without Configuration
 ms.date: 03/30/2017
 ms.assetid: e6db7acd-5679-45d4-b98a-8449c6873838
-ms.openlocfilehash: b3c12801d14c7f6850a985c521c0e3fff92ba8e4
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 06af14ad551de0e56700b044aea25b59dbf890ce
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045812"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895130"
 ---
 # <a name="ajax-service-without-configuration"></a>AJAX Service Without Configuration
 
@@ -20,7 +20,7 @@ La prise en charge d’Ajax dans WCF est optimisée pour une `ScriptManager` uti
 
  Cet exemple est basé sur le service AJAX Service utilisant HTTP POST. Comme décrit dans l’exemple de [service Ajax](../../../../docs/framework/wcf/samples/basic-ajax-service.md) de <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> base, est utilisé pour héberger le service.
 
-```svc
+```text
 <%ServiceHost
     language=c#
     Debug="true"

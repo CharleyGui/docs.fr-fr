@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: cb8bc835-9221-4888-af53-1a4f5fad6c48
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 775a8b63a0ba7cd021c9e5072ef98c20f6ab2e81
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 0683499241f594b8b37b7dd69b91ed5929670024
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937923"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894572"
 ---
 # <a name="winresexe-windows-resource-localization-editor"></a>Winres.exe (Windows Resource Localization Editor)
 
@@ -28,7 +28,7 @@ Winres.exe est installé avec Visual Studio. Pour exécuter l’outil, utilisez 
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```console
 winres resourceFile
 winres /?
 ```
@@ -43,7 +43,7 @@ winres /?
 |------------|-----------------|
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 L'état des éléments d'interface d'un formulaire dans un projet Windows Forms est généralement stocké dans des fichiers de ressources, c'est-à-dire des fichiers XML portant l'extension .resx ou leurs versions binaires et compilées correspondantes, portant l'extension .resources. Winres.exe est un outil qui permet d'éditer de façon limitée les deux types de fichiers en dehors de l'environnement de design Visual Studio. Vous pouvez y effectuer les types de modifications suivants :
 
@@ -90,7 +90,7 @@ Winres.exe a les fonctions et fonctionnalités suivantes :
 
 Vous devez utiliser la version de Winres.exe publiée avec le .NET Framework que vous utilisez. Le tableau suivant répertorie les versions compatibles :
 
-|Visual Studio|.NET Framework|Winres.exe|
+|Visual Studio|.NET Framework|Winres.exe|
 |-------------------|--------------------|----------------|
 |Visual Studio .NET 2002|1.0|1.0|
 |Visual Studio .NET 2003|1.1|1.1|
@@ -110,19 +110,19 @@ Vous devez utiliser la version de Winres.exe publiée avec le .NET Framework que
 
 2. Pour ouvrir les ressources par défaut d’un formulaire à localiser, cliquez sur la commande **Ouvrir** dans le menu **Fichier** et accédez au fichier pour l’ouvrir.
 
-     -ou-
+     ou
 
      Spécifiez le fichier à ouvrir dans la ligne de commande lorsque vous démarrez Winres.exe.
 
      La commande suivante démarre Winres.exe et charge le formulaire associé à `TestApp.resx` dans le Concepteur de formulaires.
 
-    ```
+    ```console
     winres TestApp.resx
     ```
 
      La commande suivante démarre Winres.exe et charge le formulaire associé à `TestApp.resources` dans le Concepteur de formulaires.
 
-    ```
+    ```console
     winres TestApp.resources
     ```
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LINQ to SQL, DBML files
 - LINQ to SQL, SQLMetal
 ms.assetid: 819e5a96-7646-4fdb-b14b-fe31221b0614
-ms.openlocfilehash: f435c93f68feb564aaca0f52842e567aa688ac64
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 0d12196acab5a50f7dd6fc78e6dccc098cf3e2de
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69938005"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894606"
 ---
 # <a name="sqlmetalexe-code-generation-tool"></a>SqlMetal.exe (outil de génération de code)
 L’outil en ligne de commande SqlMetal génère le code et le mappage du composant [!INCLUDE[vbtecdlinq](../../../includes/vbtecdlinq-md.md)] du .NET Framework. En appliquant les options qui apparaissent ultérieurement dans cette rubrique, vous pouvez ordonner à SqlMetal d'exécuter plusieurs actions différentes, dont les suivantes :  
@@ -34,7 +34,7 @@ L’outil en ligne de commande SqlMetal génère le code et le mappage du compos
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 sqlmetal [options] [<input file>]  
 ```  
   
@@ -77,7 +77,7 @@ sqlmetal [options] [<input file>]
 |**/context:** *\<type>*|Spécifie le nom de la classe du contexte de données. Valeur par défaut : Dérivé du nom de base de données.|  
 |**/entitybase:** *\<type>*|Spécifie la classe de base des classes d'entité du code généré. Valeur par défaut : Les entités n’ont pas de classe de base.|  
 |**/pluralize**|Pluralise ou singularise automatiquement des noms de membre et de classe.<br /><br /> Cette option est disponible uniquement dans la version Anglais américain.|  
-|**/serialization:** *\<option>*|Génère des classes sérialisables.<br /><br /> *\<option>* valide : Aucun, Unidirectionnel. Valeur par défaut : Aucun.<br /><br /> Pour plus d’informations, consultez [Sérialisation](../../../docs/framework/data/adonet/sql/linq/serialization.md).|  
+|**/serialization:** *\<option>*|Génère des classes sérialisables.<br /><br /> *\<option>* valide : Aucun, Unidirectionnel. Valeur par défaut : Aucune.<br /><br /> Pour plus d’informations, consultez [Sérialisation](../../../docs/framework/data/adonet/sql/linq/serialization.md).|  
   
  **Fichier d'entrée**  
   
@@ -85,7 +85,7 @@ sqlmetal [options] [<input file>]
 |------------|-----------------|  
 |**\<fichier_entrée>**|Spécifie un fichier SQL Server Express .mdf, un fichier SQL Server Compact 3.5 .sdf, ou un fichier intermédiaire .dbml.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  La fonctionnalité SqlMetal implique en fait deux étapes :  
   
 - Extraction des métadonnées de la base de données dans un fichier .dbml.  

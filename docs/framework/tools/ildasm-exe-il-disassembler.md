@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: db27f6b2-f1ec-499e-be3a-7eecf95ca42b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 38a6b27ea0ba8b9d9e2af883db1fc3350d60494a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: d9e6d9e57528f3eae9b30706013a0529313877c7
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912489"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894865"
 ---
 # <a name="ildasmexe-il-disassembler"></a>Ildasm.exe (Désassembleur IL)
 
@@ -28,7 +28,7 @@ Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```console
 ildasm [options] [PEfilename] [options]
 ```
 
@@ -91,7 +91,7 @@ Les options suivantes sont valides pour les fichiers *.lib* uniquement pour la s
 > [!NOTE]
 > Aucune option d’*Ildasm.exe* ne respecte pas la casse et toutes sont reconnues à leurs trois premières lettres. Par exemple, **/quo** est équivalent à **/quoteallnames**. Les options spécifiant des arguments prennent en charge les deux-points (:) ou le signe égal (=) en tant que séparateur entre l'option et l'argument. Par exemple, **/output:** *filename* équivaut à **/output=** *filename*.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 *Ildasm.exe* ne fonctionne qu'avec des fichiers exécutables portables stockés sur le disque. Il ne fonctionne pas avec des fichiers installés dans le Global Assembly Cache.
 
@@ -117,14 +117,14 @@ Vous pouvez exécuter *Ildasm.exe* sur un fichier .exe ou *.dll* pour détermine
 public void Test([MarshalAs((short)70)] int test) { }
 ```
 
-```
+```il
 // IL from Ildasm.exe output
 .method public hidebysig instance void Test(int32  marshal({ 46 }) test) cil managed
 ```
 
 À compter de .NET Framework 4.5, *Ildasm.exe* affiche les attributs qui sont appliqués aux implémentations d’interfaces, comme indiqué dans l’extrait suivant de la sortie du fichier *Ildasm.exe* :
 
-```
+```il
 .class public auto ansi beforefieldinit MyClass
   extends [mscorlib]System.Object
   implements IMyInterface

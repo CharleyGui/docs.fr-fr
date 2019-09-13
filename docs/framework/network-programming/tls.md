@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Internet, security
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
-ms.openlocfilehash: 87ca9b75d641035b268c6737822f198d1eea87e3
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ad15c0d4bd69417fffd8bcad0805a3b78321e05b
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70777508"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894943"
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>Meilleures pratiques du protocole TLS (Transport Layer Security) avec .NET Framework
 
@@ -213,7 +213,7 @@ Pour plus d’informations sur .NET Framework 3.5.1, consultez [Prise en charge 
 
 Le fichier _. REG_ suivant définit les clés de Registre et leurs variantes sur leurs valeurs les plus sûres :
 
-```
+```text
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\.NETFramework\v2.0.50727]
@@ -260,7 +260,7 @@ Pour mettre à jour .NET Framework afin de permettre au système d’exploitatio
 Voir aussi :
 
 - [Versions et dépendances de .NET Framework](../migration-guide/versions-and-dependencies.md)
-- [Guide pratique : pour déterminer les versions du .NET Framework installées](../migration-guide/how-to-determine-which-versions-are-installed.md).
+- [Guide pratique pour pour déterminer les versions du .NET Framework installées](../migration-guide/how-to-determine-which-versions-are-installed.md).
 
 ## <a name="support-for-tls-12"></a>Prise en charge de TLS 1.2
 

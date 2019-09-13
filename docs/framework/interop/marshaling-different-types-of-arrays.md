@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: c5ac9920-5b6e-4dc9-bf2d-1f6f8ad3b0bf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fadccdf35429babce6e101d336c9ea1de150b276
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 358c7f1a339fd473271574a4e97e201f5c15f871
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648606"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894168"
 ---
 # <a name="marshaling-different-types-of-arrays"></a>Marshaling de différents types de tableaux
 Un tableau est un type référence compris dans du code managé qui contient un ou plusieurs éléments du même type. Même si les tableaux sont des types référence, ils sont passés comme des paramètres In aux fonctions non managées. Ce comportement est incohérent avec la manière dont les tableaux managés sont passés aux objets managés, c'est-à-dire en tant que paramètres In/Out. Pour plus d'informations, voir [Copie et épinglage](copying-and-pinning.md).  
@@ -31,7 +31,7 @@ Un tableau est un type référence compris dans du code managé qui contient un 
 |De structures avec des entiers.|Passe un tableau de structures contenant uniquement des entiers en tant que paramètre In.|  
 |De structures avec des chaînes.|Passe un tableau de structures contenant uniquement des chaînes en tant que paramètre In/Out. Les membres du tableau peuvent être modifiés.|  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Cet exemple montre comment passer les types de tableaux suivants :  
   
 - Tableau d'entiers par valeur.  
@@ -52,43 +52,43 @@ Un tableau est un type référence compris dans du code managé qui contient un 
   
 - **TestArrayOfInts** exporté depuis PinvokeLib.dll.  
   
-    ```  
+    ```cpp
     int TestArrayOfInts(int* pArray, int pSize);  
     ```  
   
 - **TestRefArrayOfInts** exporté depuis PinvokeLib.dll.  
   
-    ```  
+    ```cpp
     int TestRefArrayOfInts(int** ppArray, int* pSize);  
     ```  
   
 - **TestMatrixOfInts** exporté depuis PinvokeLib.dll.  
   
-    ```  
+    ```cpp
     int TestMatrixOfInts(int pMatrix[][COL_DIM], int row);  
     ```  
   
 - **TestArrayOfStrings** exporté depuis PinvokeLib.dll.  
   
-    ```  
+    ```cpp
     int TestArrayOfStrings(char** ppStrArray, int size);  
     ```  
   
 - **TestArrayOfStructs** exporté depuis PinvokeLib.dll.  
   
-    ```  
+    ```cpp
     int TestArrayOfStructs(MYPOINT* pPointArray, int size);  
     ```  
   
 - **TestArrayOfStructs2** exporté depuis PinvokeLib.dll.  
   
-    ```  
+    ```cpp
     int TestArrayOfStructs2 (MYPERSON* pPersonArray, int size);  
     ```  
   
  [PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) est une bibliothèque non managée personnalisée qui contient des implémentations pour les fonctions précédemment répertoriées, ainsi que les deux variables de structure **MYPOINT** et **MYPERSON**. Ces structures contiennent les éléments suivants :  
   
-```  
+```cpp
 typedef struct _MYPOINT  
 {  
    int x;   

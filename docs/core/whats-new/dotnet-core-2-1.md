@@ -7,12 +7,12 @@ dev_langs:
 author: rpetrusha
 ms.author: ronpet
 ms.date: 10/10/2018
-ms.openlocfilehash: d99d4bd646f0cfee31486a030f97801e9adfa8b8
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: d0f4e2997e6e847cfd3c41ddb13096379d75343e
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849886"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70925724"
 ---
 # <a name="whats-new-in-net-core-21"></a>Nouveautés de .NET Core 2.1
 
@@ -99,6 +99,7 @@ Toutes les applications .NET Core depuis .NET Core 2.0 extrapolent automatiquem
 > Ce comportement de restauration par progression ne s’applique pas aux préversions, Par défaut, il ne s’applique pas non plus aux versions majeures, mais vous pouvez changer ce comportement avec les paramètres ci-dessous.
 
 Vous pouvez modifier ce comportement en changeant le paramètre d’extrapolation en cas d’absence de framework partagé candidat. Les paramètres disponibles sont :
+
 - `0` : désactiver le comportement d’extrapolation de version mineure. Avec ce paramètre, une application conçue pour .NET Core 2.0.0 extrapole vers .NET Core 2.0.1, mais pas vers .NET Core 2.2.0 ou .NET Core 3.0.0.
 - `1` : activer le comportement d’extrapolation de version mineure. Il s’agit de la valeur par défaut pour ce paramètre. Avec ce paramètre, une application conçue pour .NET Core 2.0.0 extrapole vers .NET Core 2.0.1 ou .NET Core 2.2.0 (en fonction de la version installée), mais n’extrapole pas vers .NET Core 3.0.0.
 - `2` : activer le comportement d’extrapolation de version mineure et majeure. Si cette option est définie, même les versions majeures différentes sont prises en compte. Ainsi, une application conçue pour .NET Core 2.0.0 extrapole vers .NET Core 3.0.0.

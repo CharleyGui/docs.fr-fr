@@ -4,12 +4,12 @@ description: Découvrez comment héberger le runtime .NET Core à partir du code
 author: mjrousos
 ms.date: 12/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: 1f04ccfa56c399a4dba003ec0de8a87f888ef848
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 528d46f64c424dd0f58e57891c605ac5ab474240
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849330"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70925932"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>Écrire un hôte .NET Core personnalisé pour contrôler le runtime .NET à partir de votre code natif
 
@@ -44,6 +44,7 @@ Les étapes suivantes décrivent comment utiliser les bibliothèques `nethost` e
 ### <a name="step-1---load-hostfxr-and-get-exported-hosting-functions"></a>Étape 1 : Charger HostFxr et obtenir les fonctions d’hébergement exportées
 
 La bibliothèque `nethost` fournit la fonction `get_hostfxr_path` pour localiser la bibliothèque `hostfxr`. La bibliothèque `hostfxr` expose des fonctions pour l’hébergement du runtime .NET Core. Vous trouverez la liste complète des fonctions dans [`hostfxr.h`](https://github.com/dotnet/core-setup/blob/master/src/corehost/cli/hostfxr.h) et le [document de conception d’hébergement natif](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/native-hosting.md). L’exemple et ce didacticiel utilisent les éléments suivants :
+
 * `hostfxr_initialize_for_runtime_config`: Initialise un contexte d’hôte et le prépare pour l’initialisation du runtime .NET Core à l’aide de la configuration de runtime spécifiée.
 * `hostfxr_get_runtime_delegate`: Obtient un délégué pour la fonctionnalité de runtime.
 * `hostfxr_close`: Ferme un contexte d’hôte.

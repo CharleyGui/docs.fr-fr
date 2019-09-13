@@ -2,12 +2,12 @@
 title: Génération d'un client WCF à partir de métadonnées de service
 ms.date: 03/30/2017
 ms.assetid: 27f8f545-cc44-412a-b104-617e0781b803
-ms.openlocfilehash: c9a72228ddb32786f39585083d62e1f3f028763c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 938b1363be3b168fce74d80b47c9ae463d018669
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613365"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892749"
 ---
 # <a name="generating-a-wcf-client-from-service-metadata"></a>Génération d'un client WCF à partir de métadonnées de service
 Cette rubrique décrit comment utiliser plusieurs commutateurs dans Svcutil.exe pour générer des clients à partir de documents de métadonnées.  
@@ -18,11 +18,11 @@ Cette rubrique décrit comment utiliser plusieurs commutateurs dans Svcutil.exe 
   
 - Demande MEX à l'adresse fournie avec `/mex` ajouté.  
   
-- Demande DISCO (à l’aide de la [DiscoveryClientProtocol](https://go.microsoft.com/fwlink/?LinkId=94777) de services Web ASP.NET) à l’adresse fournie.  
+- Demande DISCO (à l’aide de [DiscoveryClientProtocol](https://go.microsoft.com/fwlink/?LinkId=94777) à partir des services Web ASP.net) à l’adresse fournie.  
   
- Svcutil.exe génère le client basé sur WSDL (Web Services Description Language) ou le fichier de stratégie reçu du service. Le nom d’utilisateur principal (UPN) est généré en concaténant le nom d’utilisateur avec «\@», puis en ajoutant un nom de domaine complet (FQDN). Toutefois, pour les utilisateurs qui sont enregistrés sur Active Directory, ce format n’est pas valide et l’UPN de l’outil génère provoque un échec de l’authentification Kerberos avec le message d’erreur suivant : **Échec de la tentative d’ouverture de session.** Pour résoudre ce problème, résolvez manuellement le fichier client que l'outil a généré.  
+ Svcutil.exe génère le client basé sur WSDL (Web Services Description Language) ou le fichier de stratégie reçu du service. Le nom d’utilisateur principal (UPN) est généré en concaténant le nom d’utilisateur\@avec «», puis en ajoutant un nom de domaine complet (FQDN). Toutefois, pour les utilisateurs qui se sont inscrits sur Active Directory, ce format n’est pas valide et l’UPN généré par l’outil provoque un échec dans l’authentification Kerberos avec le message d’erreur suivant : **La tentative d’ouverture de session a échoué.** Pour résoudre ce problème, résolvez manuellement le fichier client que l'outil a généré.  
   
-```  
+```console
 svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>  
 ```  
   
@@ -30,7 +30,7 @@ svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>
   
 |Option|Description|  
 |------------|-----------------|  
-|**/ reference :\<chemin d’accès de fichier >**|Référence les types contenus dans l'assembly spécifié. Lorsque vous générez des clients, utilisez cette option pour spécifier des assemblys qui peuvent contenir des types représentant les métadonnées importées.<br /><br /> Forme abrégée : `/r`|  
+|**/Reference :\<chemin du fichier >**|Référence les types contenus dans l'assembly spécifié. Lorsque vous générez des clients, utilisez cette option pour spécifier des assemblys qui peuvent contenir des types représentant les métadonnées importées.<br /><br /> Forme abrégée : `/r`|  
 |**/excludeType:\<type>**|Spécifie un nom de type qualifié complet ou qualifié d'assembly à exclure des types de contrat référencés.<br /><br /> Forme abrégée : `/et`|  
   
 ## <a name="choosing-a-serializer"></a>Choix d'un sérialiseur  
@@ -47,13 +47,13 @@ svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>
   
 |Option|Description|  
 |------------|-----------------|  
-|**/Language :\<langage >**|Spécifie le langage de programmation à utiliser pour la génération de code. Spécifiez un nom de langage enregistré dans le fichier Machine.config, ou le nom qualifié complet d'une classe qui hérite de <xref:System.CodeDom.Compiler.CodeDomProvider>.<br /><br /> Valeurs : C#, cs, csharp, vb, vbs, visualbasic, vbscript, javascript, c++, mc, cpp<br /><br /> Valeur par défaut : csharp<br /><br /> Forme abrégée : `/l`<br /><br /> Pour plus d’informations, consultez [classe CodeDomProvider](https://go.microsoft.com/fwlink/?LinkId=94778).|  
+|**/Language :\<langage >**|Spécifie le langage de programmation à utiliser pour la génération de code. Spécifiez un nom de langage enregistré dans le fichier Machine.config, ou le nom qualifié complet d'une classe qui hérite de <xref:System.CodeDom.Compiler.CodeDomProvider>.<br /><br /> Valeurs : C#, cs, csharp, vb, vbs, visualbasic, vbscript, javascript, c++, mc, cpp<br /><br /> Valeur par défaut : csharp<br /><br /> Forme abrégée : `/l`<br /><br /> Pour plus d’informations, consultez [CodeDomProvider, classe](https://go.microsoft.com/fwlink/?LinkId=94778).|  
   
 ## <a name="choosing-a-namespace-for-the-client"></a>Choix d'un espace de noms pour le client  
   
 |Option|Description|  
 |------------|-----------------|  
-|**/ namespace :\<chaîne, chaîne >**|Spécifie un mappage d'un schéma WSDL ou XML `targetNamespace` à un espace de noms du Common Language Runtime (CLR). L'utilisation d'un caractère générique (*) pour le `targetNamespace` mappe tous les `targetNamespaces` sans mappage explicite à cet espace de noms CLR.<br /><br /> Pour vérifier que le nom de contrat du message n'entre pas en collision avec le nom d'opération, qualifiez la référence de type avec des signes deux-points doubles `::`, ou vérifiez que les noms sont uniques.<br /><br /> Par défaut : Dérivé de l’espace de noms cible du document de schéma pour `DataContracts`. L'espace de noms par défaut est utilisé pour tous les autres types générés.<br /><br /> Forme abrégée : `/n`|  
+|**/Namespace :\<String, String >**|Spécifie un mappage d'un schéma WSDL ou XML `targetNamespace` à un espace de noms du Common Language Runtime (CLR). L'utilisation d'un caractère générique (*) pour le `targetNamespace` mappe tous les `targetNamespaces` sans mappage explicite à cet espace de noms CLR.<br /><br /> Pour vérifier que le nom de contrat du message n'entre pas en collision avec le nom d'opération, qualifiez la référence de type avec des signes deux-points doubles `::`, ou vérifiez que les noms sont uniques.<br /><br /> Par défaut : Dérivé de l’espace de noms cible du document de `DataContracts`schéma pour. L'espace de noms par défaut est utilisé pour tous les autres types générés.<br /><br /> Forme abrégée : `/n`|  
   
 ## <a name="choosing-a-data-binding"></a>Choix d’une liaison de données  
   

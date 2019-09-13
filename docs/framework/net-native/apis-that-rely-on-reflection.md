@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: f9532629-6594-4a41-909f-d083f30a42f3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b86775f78b02b09dd8fb7925a13625783520bce1
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: ba60b6d97d1441cefc9392067c797504f454ac59
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66052668"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894520"
 ---
 # <a name="apis-that-rely-on-reflection"></a>API qui s'appuient sur la réflexion
-Dans certains cas, l’utilisation de la réflexion dans le code n’est pas évidente, et par conséquent, la chaîne d’outils .NET Native ne conserve pas les métadonnées nécessaires au moment de l’exécution. Cette rubrique décrit certaines API courantes ou des modèles de programmation courants qui ne sont pas considérés comme faisant partie de l'API de réflexion, mais dont l'exécution s'appuie sur la réflexion. Si vous les utilisez dans votre code source, vous pouvez ajouter des informations les concernant au fichier de directives runtime (.rd.xml) pour que les appels de ces API ne lèvent pas d’exceptions, telles que [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), au moment de l’exécution.  
+Dans certains cas, l’utilisation de la réflexion dans le code n’est pas évidente, de sorte que la chaîne d’outils .NET Native ne conserve pas les métadonnées nécessaires au moment de l’exécution. Cette rubrique décrit certaines API courantes ou des modèles de programmation courants qui ne sont pas considérés comme faisant partie de l'API de réflexion, mais dont l'exécution s'appuie sur la réflexion. Si vous les utilisez dans votre code source, vous pouvez ajouter des informations les concernant au fichier de directives runtime (.rd.xml) pour que les appels de ces API ne lèvent pas d’exceptions, telles que [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), au moment de l’exécution.  
   
 ## <a name="typemakegenerictype-method"></a>Méthode Type.MakeGenericType  
  Vous pouvez instancier dynamiquement un type générique `AppClass<T>` en appelant la méthode <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> à l'aide d'un code tel que celui-ci :  
@@ -29,11 +29,9 @@ Dans certains cas, l’utilisation de la réflexion dans le code n’est pas év
   
  Toutefois, même quand vous ajoutez des métadonnées pour le type générique non instancié, l’appel de la méthode <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> lève une exception [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) :  
   
-```  
-This operation cannot be carried out as metadata for the following type was removed for performance reasons:  
+Impossible d’effectuer cette opération, car les métadonnées pour le type suivant ont été supprimées pour des raisons de performances :  
   
-App1.AppClass`1<System.Int32>.  
-```  
+`App1.AppClass`1 < System. Int32 >».  
   
  Vous pouvez ajouter la directive runtime suivante au fichier de directives runtime pour ajouter des métadonnées `Activate` pour l'instanciation spécifique sur `AppClass<T>` de <xref:System.Int32?displayProperty=nameWithType> :  
   
@@ -55,9 +53,9 @@ App1.AppClass`1<System.Int32>.
   
 - Les métadonnées `Browse` pour la méthode que vous souhaitez appeler.  S'il s'agit d'une méthode publique, l'ajout de métadonnées `Browse` publiques pour le type conteneur comprend également la méthode.  
   
-- Métadonnées dynamiques pour la méthode que vous souhaitez appeler, afin que le délégué d’appel de réflexion n’est pas supprimé par la chaîne d’outils .NET Native. Si des métadonnées dynamiques sont manquantes pour la méthode, l'exception suivante est levée quand la méthode <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> est appelée :  
+- Métadonnées dynamiques pour la méthode que vous souhaitez appeler, afin que le délégué d’appel de réflexion ne soit pas supprimé par la chaîne d’outils .NET Native. Si des métadonnées dynamiques sont manquantes pour la méthode, l'exception suivante est levée quand la méthode <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> est appelée :  
   
-    ```  
+    ```output
     MakeGenericMethod() cannot create this generic method instantiation because the instantiation was not metadata-enabled: 'App1.Class1.GenMethod<Int32>(Int32)'.  
     ```  
   
@@ -78,7 +76,7 @@ App1.AppClass`1<System.Int32>.
   
  Si aucune métadonnée de tableau n'est présente, l'erreur suivante se produit :  
   
-```  
+```output
 This operation cannot be carried out as metadata for the following type was removed for performance reasons:  
   
 App1.Class1[]  

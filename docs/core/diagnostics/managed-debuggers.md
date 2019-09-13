@@ -4,12 +4,12 @@ description: Vue d’ensemble de Visual Studio et Visual Studio Code les débogu
 author: sdmaclea
 ms.author: stmaclea
 ms.date: 08/05/2019
-ms.openlocfilehash: 8110ecb10ad2e6213e15df8848abab73d07d89b2
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 3741011d22ab6c4240b7f88a9ab790ea61ecd0d2
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "70234646"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926438"
 ---
 # <a name="net-core-managed-debuggers"></a>Débogueurs managés .NET Core
 
@@ -20,9 +20,11 @@ Microsoft fournit des débogueurs pour le code managé dans **Visual Studio** et
 ## <a name="visual-studio-managed-debugger"></a>Débogueur managé Visual Studio
 
 **Visual Studio** est un environnement de développement intégré avec le débogueur le plus complet disponible. Visual Studio est un excellent choix pour les développeurs qui travaillent sur Windows.
+
 - [Didacticiel-débogage d’une application .NET Core sur Windows avec Visual Studio](../tutorials/debugging-with-visual-studio.md)
 
 Alors que Visual Studio est une application Windows, il peut toujours être utilisé pour déboguer des applications Linux et macOS à distance.
+
 - [Débogage d’une application .NET Core sur Linux/OSX avec Visual Studio](https://github.com/Microsoft/MIEngine/wiki/Offroad-Debugging-of-.NET-Core-on-Linux---OSX-from-Visual-Studio)
 
  Le débogage des applications ASP.NET Core nécessite des instructions légèrement différentes.

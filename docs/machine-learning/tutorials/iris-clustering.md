@@ -5,19 +5,20 @@ author: pkulikov
 ms.date: 05/16/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18, title-hack-0516
-ms.openlocfilehash: 772558be14d207475d20083f5a6b729f03766471
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
-ms.translationtype: HT
+ms.openlocfilehash: e2aaeb8abc6981b420329f194aa7b82c90cae00a
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666645"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929097"
 ---
 # <a name="tutorial-categorize-iris-flowers-using-k-means-clustering-with-mlnet"></a>Tutoriel : Classer les fleurs d’iris à l’aide du clustering k-means avec ML.NET
 
 Ce tutoriel montre comment utiliser ML.NET pour générer un [modèle de clustering](../resources/tasks.md#clustering) pour le [jeu de données Iris](https://en.wikipedia.org/wiki/Iris_flower_data_set).
 
-Dans ce didacticiel, vous apprendrez à :
+Ce tutoriel vous montre comment effectuer les opérations suivantes :
 > [!div class="checklist"]
+>
 > - Comprendre le problème
 > - Sélectionner la tâche d’apprentissage automatique appropriée
 > - Préparer les données
@@ -70,7 +71,7 @@ Dans le cadre de cet exemple de clustering, ce tutoriel ignore la dernière colo
 
 Créez des classes pour les données d’entrée et les prédictions :
 
-1. Dans l **’Explorateur de solutions**, cliquez avec le bouton de droite sur le projet, puis sélectionnez **Ajouter** > **Nouvel élément**.
+1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **Nouvel élément**.
 1. Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez **Classe** et définissez la valeur du champ **Nom** sur *IrisData.cs*. Ensuite, sélectionnez le bouton **Ajouter**.
 1. Ajoutez la directive `using` suivante au nouveau fichier :
 
@@ -158,7 +159,7 @@ Pour effectuer des prédictions, utilisez la classe <xref:Microsoft.ML.Predictio
 
 Créez la classe `TestIrisData` qui contiendra les instances de données de test :
 
-1. Dans l **’Explorateur de solutions**, cliquez avec le bouton de droite sur le projet, puis sélectionnez **Ajouter** > **Nouvel élément**.
+1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **Nouvel élément**.
 1. Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez **Classe**, puis remplacez la valeur du champ **Nom** par *TestIrisData.cs*. Ensuite, sélectionnez le bouton **Ajouter**.
 1. Modifiez la classe pour la rendre statique, comme dans l’exemple suivant :
 
@@ -183,8 +184,9 @@ Félicitations ! Vous venez de créer un modèle d’apprentissage automatique 
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce didacticiel, vous avez appris à :
+Dans ce tutoriel, vous avez appris à :
 > [!div class="checklist"]
+>
 > - Comprendre le problème
 > - Sélectionner la tâche d’apprentissage automatique appropriée
 > - Préparer les données

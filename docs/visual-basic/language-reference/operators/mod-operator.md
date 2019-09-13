@@ -12,12 +12,12 @@ helpviewer_keywords:
 - arithmetic operators [Visual Basic], Mod
 - math operators [Visual Basic]
 ms.assetid: 6ff7e40e-cec8-4c77-bff6-8ddd2791c25b
-ms.openlocfilehash: dc1e866836bb7420ffe17210b5be7a5e1d4048d0
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 08e3eec08ba099e6f5c7796a459c55de09afa917
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374488"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929328"
 ---
 # <a name="mod-operator-visual-basic"></a>Mod, opérateur (Visual Basic)
 
@@ -84,6 +84,7 @@ Les opérateurs connexes sont les suivants :
 ## <a name="attempted-division-by-zero"></a>Division par zéro
 
 Si `number2` prend la valeur zéro, le comportement de l' `Mod` opérateur dépend du type de données des opérandes :
+
 - Une division intégrale lève une <xref:System.DivideByZeroException> exception si `number2` ne peut pas être déterminée au moment de la compilation et génère une erreur `BC30542 Division by zero occurred while evaluating this expression` au `number2` moment de la compilation si est évalué à zéro au moment de la compilation.
 - Une division à virgule flottante <xref:System.Double.NaN?displayProperty=nameWithType>retourne.
 

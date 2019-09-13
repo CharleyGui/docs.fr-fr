@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - virtual keyword [C#]
 ms.assetid: 5da9abae-bc1e-434f-8bea-3601b8dcb3b2
-ms.openlocfilehash: 2568eed5a889f6c03e237875194b8adcb9334ef7
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
-ms.translationtype: HT
+ms.openlocfilehash: 586e50818fc8ceaad5ca1925c0636b31015d81d4
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67401812"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70925369"
 ---
 # <a name="virtual-c-reference"></a>virtual (référence C#)
 
@@ -28,7 +28,7 @@ public virtual double Area()
 
 L’implémentation d’un membre virtuel peut être modifiée par un [membre de substitution](override.md) dans une classe dérivée. Pour plus d’informations sur l’utilisation du mot clé `virtual`, consultez [Gestion de version avec les mots clés override et new](../../programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) et [Savoir quand utiliser les mots clés override et new](../../programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Quand une méthode virtuelle est appelée, un membre de substitution est recherché dans le type d’objet au moment de l’exécution. Le membre de substitution de la classe la plus dérivée est appelé (cela peut être le membre d’origine), si aucune classe dérivée n’a substitué le membre.
 
@@ -44,7 +44,7 @@ Les propriétés virtuelles se comportent comme les méthodes abstraites, à l�
 
 - Une propriété virtuelle héritée peut être substituée dans une classe dérivée en incluant une déclaration de propriété qui utilise le modificateur `override`.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Dans cet exemple, la classe `Shape` contient les deux coordonnées `x` et `y`, ainsi que la méthode virtuelle `Area()`. Différentes classes de formes, telles que `Circle`, `Cylinder` et `Sphere`, héritent de la classe `Shape`, et la surface est calculée pour chaque figure. Chaque classe dérivée a sa propre implémentation de substitution de `Area()`.
 
@@ -64,10 +64,6 @@ Le programme suivant calcule et affiche la zone appropriée pour chaque figure e
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
-- [Guide de programmation C#](../../programming-guide/index.md)
-- [Modificateurs](modifiers.md)
-- [Mots clés C#](index.md)
 - [Polymorphisme](../../programming-guide/classes-and-structs/polymorphism.md)
 - [abstract](abstract.md)
 - [override](override.md)

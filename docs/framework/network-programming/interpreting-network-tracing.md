@@ -9,19 +9,19 @@ helpviewer_keywords:
 - text, network tracing output
 - includehex
 ms.assetid: ad22b4b8-00af-4778-9cca-cb609ce1f8ff
-ms.openlocfilehash: 00df193671255e7b40f5c4b86ee952a3e20e3a40
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 09f77a60255accc3e4b1c4fa5ea3d7526444e4cb
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59177565"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894726"
 ---
 # <a name="interpreting-network-tracing"></a>Interprétation du traçage réseau
 Quand le traçage réseau est activé, vous pouvez utiliser cette fonctionnalité pour capturer les appels effectués par votre application aux différents membres de la classe <xref:System.Net>. La sortie de ces appels peut ressembler aux exemples suivants.  
   
-```  
+```output
 [588]   (4357)   Entering Socket#33574638::Send()  
-[588]   (4387)   Exiting Socket#33574638::Send()-> 61#61  
+[588]   (4387)   Exiting Socket#33574638::Send()-> 61#61
 ```  
   
  Dans l’exemple précédent, [588] est l’identificateur unique du thread actuel. (4357) et (4387) sont des timestamps qui indiquent le nombre de millisecondes écoulées depuis le démarrage de l’application. Les données après les timestamps montrent l’entrée et la sortie de la méthode **Socket.Send** dans l’application. L’objet qui exécute la méthode **Send** a la valeur 33574638 comme identificateur unique. La trace de sortie de la méthode inclut la valeur de retour (61 dans l’exemple précédent).  

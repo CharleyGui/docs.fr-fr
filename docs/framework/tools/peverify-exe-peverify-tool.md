@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: f4f46f9e-8d08-4e66-a94b-0c69c9b0bbfa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 93820120e91d80a3215673982348fd17f2fdb5d9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: ac0b45db0e9aebae830155cbe2469514c392921d
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69957969"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894832"
 ---
 # <a name="peverifyexe-peverify-tool"></a>Peverify.exe (outil PEVerify)
 L’outil PEVerify Tool permet aux développeurs générant du langage MSIL (Microsoft Intermediate Language) (tels que des développeurs de moteurs de script, writers de compilateur, etc.) de déterminer si leur code MSIL et les métadonnées qui y sont associées répondent aux exigences de sécurité de type. Certains compilateurs génèrent du code de type sécurisé vérifié uniquement si vous évitez d'utiliser certaines constructions de langage. Si, en tant que développeur, vous utilisez ce type de compilateur, vous pouvez souhaiter vérifier que vous n'avez pas compromis la sécurité de type de votre code. Vous pouvez dans ce cas exécuter l'outil PEVerify Tool sur vos fichiers pour vérifier le langage MSIL et les métadonnées.  
@@ -28,7 +28,7 @@ L’outil PEVerify Tool permet aux développeurs générant du langage MSIL (Mic
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 peverify filename [options]  
 ```  
   
@@ -56,7 +56,7 @@ peverify filename [options]
 |**/verbose**|Dans le .NET Framework version 2.0, il affiche des informations supplémentaires dans les messages de vérification MSIL.|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le Common Language Runtime repose sur l'exécution de type sécurisé du code de l'application pour permettre de mettre en œuvre des mécanismes de sécurité et d'isolation. Le code qui n’est pas de [type sécurisé vérifié](../../standard/security/key-security-concepts.md#type-safety-and-security) ne peut normalement pas être exécuté, même si vous pouvez définir une stratégie de sécurité permettant l’exécution d’un code de confiance, mais non vérifiable.  
   
  Si ni l’option **/md** ni l’option **/il** ne sont spécifiées, Peverify.exe effectue ces deux types de contrôles. Peverify.exe procède en premier lieu aux contrôles **/md**. En l’absence d’erreurs, il effectue ensuite les contrôles **/il**. Si vous spécifiez à la fois les contrôles **/md** et **/il**, les contrôles **/il** sont effectués, y compris en cas d’erreurs dans les métadonnées. En l’absence d’erreurs dans les métadonnées, **peverify** *filename* équivaut alors à **peverify** *filename* **/md** **/il**.  
@@ -68,25 +68,25 @@ peverify filename [options]
 ## <a name="examples"></a>Exemples  
  La commande suivante procède aux contrôles de validation des métadonnées et aux contrôles de vérification de la sécurité de type MSIL pour les méthodes implémentées dans l'assembly `myAssembly.exe`.  
   
-```  
+```console  
 peverify myAssembly.exe /md /il  
 ```  
   
  Une fois les contrôles ci‑dessus terminés, Peverify.exe affiche le message suivant.  
   
-```  
+```output
 All classes and methods in myAssembly.exe Verified  
 ```  
   
  La commande suivante procède aux contrôles de validation des métadonnées et aux contrôles de vérification de la sécurité de type MSIL pour les méthodes implémentées dans l'assembly `myAssembly.exe`. L'outil affiche le temps requis pour effectuer ces vérifications.  
   
-```  
+```console  
 peverify myAssembly.exe /md /il /clock  
 ```  
   
  Une fois les contrôles ci‑dessus terminés, Peverify.exe affiche le message suivant.  
   
-```  
+```output
 All classes and methods in myAssembly.exe Verified  
 Timing: Total run     320 msec  
         MD Val.cycle  40 msec  
@@ -97,25 +97,25 @@ Timing: Total run     320 msec
   
  La commande suivante procède aux contrôles de validation des métadonnées et aux contrôles de vérification de la sécurité de type MSIL pour les méthodes implémentées dans l'assembly `myAssembly.exe`. Toutefois, Peverify.exe s'arrête lorsqu'il atteint le nombre d'erreurs maximal de 100. L'outil ignore également les codes d'erreur spécifiés.  
   
-```  
+```console  
 peverify myAssembly.exe /break=100 /ignore=0x12345678,0xABCD1234  
 ```  
   
  La commande suivante aboutit au même résultat que dans l'exemple précédent, mais elle spécifie les codes d'erreur à ignorer dans le fichier réponse `ignoreErrors.rsp`.  
   
-```  
+```console  
 peverify myAssembly.exe /break=100 /ignore@ignoreErrors.rsp  
 ```  
   
  Le fichier réponse peut comporter une liste de codes d'erreur avec la virgule comme séparateur.  
   
-```  
+```text
 0x12345678, 0xABCD1234  
 ```  
   
  Le fichier réponse peut également être mis en forme avec un code d'erreur par ligne.  
   
-```  
+```text
 0x12345678  
 0xABCD1234  
 ```  

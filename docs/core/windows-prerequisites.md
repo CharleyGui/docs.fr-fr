@@ -3,12 +3,12 @@ title: Configuration requise pour .NET Core sur Windows
 description: Découvrez les dépendances nécessaires sur votre machine Windows pour développer et exécuter des applications .NET Core.
 ms.custom: updateeachvsrelease
 ms.date: 04/08/2019
-ms.openlocfilehash: 1921ef565c2d04624009f7684e439ddba1cdf57e
-ms.sourcegitcommit: 09d699aca28ae9723399bbd9d3d44aa0cbd3848d
-ms.translationtype: HT
+ms.openlocfilehash: 82d336bc4efb34d336d5078952683c1673c3fa8a
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68331072"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926036"
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Configuration requise pour .NET Core sur Windows
 
@@ -97,8 +97,9 @@ Pur développer des applications .NET Core 1.x dans Visual Studio, [télécharge
 
 > [!IMPORTANT]
 > Bien que vous puissiez utiliser Visual Studio 2015 pour le développement .NET Core 1.x, nous vous le déconseillons pour les raisons suivantes :
-  > * Les outils .NET Core sont une préversion, qui n’est pas prise en charge.
-  > * Les projets sont basés sur project.json, configuration qui est dépréciée.
+>
+> * Les outils .NET Core sont une préversion, qui n’est pas prise en charge.
+> * Les projets sont basés sur project.json, configuration qui est dépréciée.
 >
 > Pour plus d’informations sur les changements de format de projet, consultez la page [Vue d’ensemble des modifications](./tools/cli-msbuild-architecture.md).
 

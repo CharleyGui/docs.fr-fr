@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 396b875a-d203-4ebe-a3a1-6a330d962e95
-ms.openlocfilehash: 5fef151fe9149e2693ee217e7be642427162322d
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: f9e563cb87ee376e33442cdf718f70202d300f40
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636281"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895166"
 ---
 # <a name="duplex-services"></a>Services duplex
 
 Un contrat de service duplex est un modèle d'échange de messages dans lequel les deux points de terminaison peuvent envoyer indépendamment des messages à l'autre. Un service duplex peut, par conséquent, renvoyer des messages au point de terminaison client, en fournissant un comportement de type événement. La communication duplex se produit lorsqu'un client se connecte à un service et lui fournit un canal sur lequel il peut lui renvoyer des messages. Notez que le comportement de type événement des services duplex ne fonctionne que dans une session.
 
-Pour créer un contrat duplex, créez une paire d'interfaces. La première est l'interface de contrat de service qui décrit les opérations qu'un client peut appeler. Ce contrat de service doit spécifier un *contrat de rappel* dans le <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> propriété. Le contrat de rappel est l'interface qui définit les opérations que le service peut appeler sur le point de terminaison client. Un contrat duplex ne requiert pas de session, bien que les liaisons duplex fournies par le système en utilisent.
+Pour créer un contrat duplex, créez une paire d'interfaces. La première est l'interface de contrat de service qui décrit les opérations qu'un client peut appeler. Ce contrat de service doit spécifier un *contrat* de rappel <xref:System.ServiceModel.ServiceContractAttribute.CallbackContract%2A?displayProperty=nameWithType> dans la propriété. Le contrat de rappel est l'interface qui définit les opérations que le service peut appeler sur le point de terminaison client. Un contrat duplex ne requiert pas de session, bien que les liaisons duplex fournies par le système en utilisent.
 
 Voici un exemple de contrat duplex :
 
@@ -33,7 +33,7 @@ Le client doit fournir une classe qui implémente l'interface de rappel du contr
 [!code-csharp[c_DuplexServices#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_duplexservices/cs/client.cs#2)]
 [!code-vb[c_DuplexServices#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_duplexservices/vb/client.vb#2)]
 
-Le client WCF généré pour un contrat duplex requiert une <xref:System.ServiceModel.InstanceContext> classe doit être fourni lors de sa création. Cette classe <xref:System.ServiceModel.InstanceContext> est utilisée comme site pour un objet qui implémente l'interface de rappel et gère les messages renvoyés à partir du service. Une classe <xref:System.ServiceModel.InstanceContext> est construite avec une instance de la classe `CallbackHandler`. Cet objet gère les messages envoyés par le service au client sur l'interface de rappel.
+Le client WCF généré pour un contrat duplex requiert qu’une <xref:System.ServiceModel.InstanceContext> classe soit fournie au moment de la construction. Cette classe <xref:System.ServiceModel.InstanceContext> est utilisée comme site pour un objet qui implémente l'interface de rappel et gère les messages renvoyés à partir du service. Une classe <xref:System.ServiceModel.InstanceContext> est construite avec une instance de la classe `CallbackHandler`. Cet objet gère les messages envoyés par le service au client sur l'interface de rappel.
 
 [!code-csharp[c_DuplexServices#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_duplexservices/cs/client.cs#3)]
 [!code-vb[c_DuplexServices#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_duplexservices/vb/client.vb#3)]
@@ -47,12 +47,12 @@ Sur le client, vous devez configurer une adresse que le serveur peut utiliser af
 
 Si vous créez un client/service à l'aide de l'élément `WSHttpBinding` et que vous n'incluez pas le point de terminaison de rappel client, vous recevrez l'erreur suivante.
 
-```
+```console
 HTTP could not register URL
 htp://+:80/Temporary_Listen_Addresses/<guid> because TCP port 80 is being used by another application.
 ```
 
-L’exemple de code suivant montre comment spécifier le client adresse de point de terminaison par programme.
+L’exemple de code suivant montre comment spécifier l’adresse de point de terminaison du client par programme.
 
 ```csharp
 WSDualHttpBinding binding = new WSDualHttpBinding();
@@ -87,10 +87,10 @@ L'exemple de code suivant indique comment spécifier l'adresse de point de termi
 ```
 
 > [!WARNING]
-> Le modèle duplex ne détecte pas automatiquement lorsqu’un service ou un client ferme son canal. Par conséquent, si un client se termine de façon inattendue, par défaut le service ne serez pas informé, ou si un service s’arrête de façon inattendue, le client n’est pas notifié. Si vous utilisez un service qui est déconnecté, le <xref:System.ServiceModel.CommunicationException> exception est levée. Les clients et les services peuvent implémenter leur propre protocole pour se notifier mutuellement s'ils le souhaitent. Pour plus d’informations sur la gestion des erreurs, consultez [gestion des erreurs de WCF](../wcf-error-handling.md)
+> Le modèle duplex ne détecte pas automatiquement quand un service ou un client ferme son canal. Par conséquent, si un client se termine de manière inattendue, par défaut, le service n’est pas notifié, ou si un service se termine de manière inattendue, le client n’est pas notifié. Si vous utilisez un service déconnecté, l' <xref:System.ServiceModel.CommunicationException> exception est levée. Les clients et les services peuvent implémenter leur propre protocole pour se notifier mutuellement s'ils le souhaitent. Pour plus d’informations sur la gestion des erreurs, consultez [gestion des erreurs WCF](../wcf-error-handling.md) .
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Duplex](../samples/duplex.md)
 - [Spécification du comportement du client au moment de l’exécution](../specifying-client-run-time-behavior.md)
-- [Guide pratique pour Créer une fabrique de canal et l’utiliser pour créer et gérer des canaux](how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels.md)
+- [Guide pratique pour Créer une fabrication de canal et l’utiliser pour créer et gérer des canaux](how-to-create-a-channel-factory-and-use-it-to-create-and-manage-channels.md)

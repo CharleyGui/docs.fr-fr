@@ -1,12 +1,13 @@
 ---
-ms.openlocfilehash: ae81904cb5def0932c00a15505f8c43f8a97783d
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
-ms.translationtype: HT
+ms.openlocfilehash: 45107e0754d6b13c92146201a97b2dd08d840df7
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65199007"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70927127"
 ---
-> [!div class="op_multi_selector" title1="From .NET Framework Version" title2="To .NET Framework Version"]
+> [!div class="op_multi_selector" title1="À partir de .NET Framework version" title2="Pour .NET Framework version"]
+>
 > - [(4.0 | 4.5)](~/docs/framework/migration-guide/runtime/4.0-4.5.md)
 > - [(4.0 | 4.5.1)](~/docs/framework/migration-guide/runtime/4.0-4.5.1.md)
 > - [(4.0 | 4.5.2)](~/docs/framework/migration-guide/runtime/4.0-4.5.2.md)

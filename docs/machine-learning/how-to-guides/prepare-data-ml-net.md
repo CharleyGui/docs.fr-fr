@@ -3,20 +3,20 @@ title: Préparer des données pour la génération d’un modèle
 description: Découvrez comment utiliser des transformations dans ML.NET pour manipuler et préparer des données en vue d’effectuer un traitement supplémentaire ou de générer un modèle.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 06/25/2019
+ms.date: 09/11/2019
 ms.custom: mvc, how-to, title-hack-0625
-ms.openlocfilehash: 4b7d5a09044e49f1b57b8276b893e0fc962a3be2
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
-ms.translationtype: HT
+ms.openlocfilehash: 4452aef351f33df532f3c673307dedbbf71631b8
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397721"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929372"
 ---
 # <a name="prepare-data-for-building-a-model"></a>Préparer des données pour la génération d’un modèle
 
 Découvrez comment utiliser ML.NET pour préparer des données en vue d’effectuer un traitement supplémentaire ou de générer un modèle.
 
-Les données sont souvent dans un format incorrect et disséminées. De plus, les algorithmes de machine Learning ML.NET s’attendent à ce que l’entrée ou les caractéristiques se trouvent dans un vecteur numérique unique. Ainsi, un des objectifs de la préparation des données consiste à obtenir les données dans le format attendu par les algorithmes ML.NET. 
+Les données sont souvent dans un format incorrect et disséminées. Les algorithmes Machine Learning ML.NET attendent que les entrées ou les fonctionnalités soient dans un vecteur numérique unique. De même, la valeur à prédire (étiquette), en particulier lorsqu’il s’agit de données catégoriques, doit être encodée. Ainsi, un des objectifs de la préparation des données consiste à obtenir les données dans le format attendu par les algorithmes ML.NET. 
 
 ## <a name="filter-data"></a>Filtrer les données
 

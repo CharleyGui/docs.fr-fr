@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5ead6db2c3df3662c4d689bd6ac2466c99b02a15
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 8d719debd39309415f996d655c68abd8c80ec5e3
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968265"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928424"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Procédure : déterminer les versions du .NET Framework installées
 
@@ -32,6 +32,7 @@ Le .NET Framework comporte deux principaux composants, dont les versions sont d�
 > Chaque nouvelle version du .NET Framework conserve les fonctionnalités des versions antérieures et en ajoute de nouvelles. Vous pouvez charger plusieurs versions du .NET Framework sur un seul ordinateur en même temps, ce qui signifie que vous pouvez installer le .NET Framework sans avoir à désinstaller les versions antérieures. En règle générale, il est préférable de ne pas désinstaller les versions antérieures du .NET Framework, car une application que vous utilisez peut dépendre d’une version spécifique et risquer de dysfonctionner si cette version est supprimée.
 >
 > Il existe une différence entre la version du .NET Framework et la version du CLR :
+>
 > - La version du .NET Framework dépend du jeu d’assemblys qui constituent la bibliothèque de classes du .NET Framework. Par exemple, 4.5, 4.6.1 et 4.7.2 sont des versions de .NET Framework.
 >- La version du CLR dépend du runtime sur lequel les applications .NET Framework s’exécutent. En règle générale, une version particulière du CLR prend en charge plusieurs versions du .NET Framework. Par exemple, le CLR version 4.0.30319.*xxxxx* prend en charge les versions 4 à 4.5.2 du .NET Framework, où *xxxxx* est inférieur à 42000, tandis que le CLR version 4.0.30319.42000 prend en charge toutes les versions du .NET Framework à partir de .NET Framework 4.6.
 >

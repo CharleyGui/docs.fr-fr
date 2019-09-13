@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - transactions [WCF], enabling flow
 ms.assetid: a03f5041-5049-43f4-897c-e0292d4718f7
-ms.openlocfilehash: 560b03b8e2788c88e6c92c64834bf36c750575ea
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2443e82dd9c6d8b5447c2fa16b537a9feed8ddaf
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626945"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895157"
 ---
 # <a name="enabling-transaction-flow"></a>Activation du flux de transaction
-Windows Communication Foundation (WCF) fournit des options très flexibles pour contrôler le flux de transaction. Les paramètres de flux de transaction d'un service peuvent être exprimés à l'aide d'une combinaison d'attributs et de configuration.  
+Windows Communication Foundation (WCF) offre des options très flexibles pour le contrôle du workflow des transactions. Les paramètres de flux de transaction d'un service peuvent être exprimés à l'aide d'une combinaison d'attributs et de configuration.  
   
 ## <a name="transaction-flow-settings"></a>Paramètres de flux de transaction  
  Les paramètres de flux de transaction sont générés pour un point de terminaison de service suite à l'intersection des trois valeurs suivantes :  
@@ -34,11 +34,11 @@ Windows Communication Foundation (WCF) fournit des options très flexibles pour 
 |Liaison<br /><br /> liaison|Propriété de liaison TransactionFlow|Protocole de liaison TransactionFlowProtocol|Type de flux de transaction|  
 |---------------------------------|--------------------------------------|----------------------------------------------|------------------------------|  
 |Obligatoire|true|WS-AT|La transaction doit être transmise dans le format WS-AT interopérable.|  
-|Obligatoire|true|OleTransactions|Transaction doit être transmise dans le format OleTransactions de WCF.|  
-|Obligatoire|False|Non applicable|Non applicable parce qu'il s'agit d'une configuration non valide.|  
+|Obligatoire|true|OleTransactions|La transaction doit être transmise au format WCF OleTransactions.|  
+|Obligatoire|false|Non applicable|Non applicable parce qu'il s'agit d'une configuration non valide.|  
 |Allowed|true|WS-AT|La transaction peut être transmise dans le format WS-AT interopérable.|  
-|Allowed|true|OleTransactions|Transaction peut être transmise dans le format OleTransactions de WCF.|  
-|Allowed|False|Valeur quelconque|Une transaction n’est pas transmise.|  
+|Allowed|true|OleTransactions|La transaction peut être transmise au format WCF OleTransactions.|  
+|Allowed|false|Valeur quelconque|Une transaction n’est pas transmise.|  
 |NotAllowed|Valeur quelconque|Valeur quelconque|Une transaction n’est pas transmise.|  
   
  Le tableau ci-dessous résume les résultats de traitement de message.  
@@ -49,32 +49,32 @@ Windows Communication Foundation (WCF) fournit des options très flexibles pour 
 |La transaction ne correspond pas au format de protocole prévu|Obligatoire|`MustUnderstand` est égal à `false`.|Rejet car une transaction est requise|  
 |La transaction ne correspond pas au format de protocole prévu|Allowed|`MustUnderstand` est égal à `false`.|Rejet car l'en-tête n'est pas compris|  
 |Transaction utilisant un format de protocole quelconque|NotAllowed|`MustUnderstand` est égal à `false`.|Rejet car l'en-tête n'est pas compris|  
-|Aucune transaction|Obligatoire|N/A|Rejet car une transaction est requise|  
-|Aucune transaction|Allowed|N/A|Process|  
-|Aucune transaction|NotAllowed|N/A|Process|  
+|Aucune transaction|Obligatoire|S.O.|Rejet car une transaction est requise|  
+|Aucune transaction|Allowed|S.O.|Process|  
+|Aucune transaction|NotAllowed|S.O.|Process|  
   
  Alors que chaque méthode sur un contrat peut avoir des exigences de flux de transaction différentes, le paramètre de protocole de flux de transaction est délimité au niveau de la liaison. Cela signifie que toutes les méthodes qui partagent le même point de terminaison (et par conséquent la même liaison) partagent également la même stratégie qui autorise ou requiert un flux de transaction, ainsi que le même protocole de transaction, le cas échéant.  
   
 ## <a name="enabling-transaction-flow-at-the-method-level"></a>Activation du flux de transaction au niveau de la méthode  
- Les exigences de flux de transaction ne sont pas toujours les mêmes pour toutes les méthodes dans un contrat de service. Par conséquent, WCF fournit également un mécanisme basé sur attribut pour autoriser les préférences de flux de transaction de chaque méthode exprimer. Cela est effectué à l’aide de l’attribut <xref:System.ServiceModel.TransactionFlowAttribute> qui spécifie le niveau dans lequel une opération de service accepte un en-tête de transaction. Vous devez marquer vos méthodes de contrat de service avec cet attribut si vous souhaitez activer le flux de transaction. Cet attribut accepte l'une des valeurs de l'énumération <xref:System.ServiceModel.TransactionFlowOption>, dans laquelle la valeur par défaut est <xref:System.ServiceModel.TransactionFlowOption.NotAllowed>. Si une valeur quelconque à l'exception de <xref:System.ServiceModel.TransactionFlowOption.NotAllowed> est spécifiée, la méthode ne doit pas être unidirectionnelle. Un développeur peut utiliser cet attribut pour spécifier des exigences de flux de transaction ou des contraintes au niveau de la méthode au moment du design.  
+ Les exigences de flux de transaction ne sont pas toujours les mêmes pour toutes les méthodes dans un contrat de service. Par conséquent, WCF fournit également un mécanisme basé sur les attributs qui permet d’exprimer les préférences de passage de la transaction de chaque méthode. Cela est effectué à l’aide de l’attribut <xref:System.ServiceModel.TransactionFlowAttribute> qui spécifie le niveau dans lequel une opération de service accepte un en-tête de transaction. Vous devez marquer vos méthodes de contrat de service avec cet attribut si vous souhaitez activer le flux de transaction. Cet attribut accepte l'une des valeurs de l'énumération <xref:System.ServiceModel.TransactionFlowOption>, dans laquelle la valeur par défaut est <xref:System.ServiceModel.TransactionFlowOption.NotAllowed>. Si une valeur quelconque à l'exception de <xref:System.ServiceModel.TransactionFlowOption.NotAllowed> est spécifiée, la méthode ne doit pas être unidirectionnelle. Un développeur peut utiliser cet attribut pour spécifier des exigences de flux de transaction ou des contraintes au niveau de la méthode au moment du design.  
   
 ## <a name="enabling-transaction-flow-at-the-endpoint-level"></a>Activant du flux de transaction au niveau du point de terminaison  
- En plus du paramètre de flux de transaction au niveau de la méthode le <xref:System.ServiceModel.TransactionFlowAttribute> attribut fournit, WCF fournit un paramètre au niveau du point de terminaison pour le flux de transaction pour permettre aux administrateurs de contrôler le flux de transaction à un niveau supérieur.  
+ Outre le paramètre de workflow de transaction au niveau de la <xref:System.ServiceModel.TransactionFlowAttribute> méthode fourni par l’attribut, WCF fournit un paramètre à l’échelle du point de terminaison pour le workflow de transaction afin de permettre aux administrateurs de contrôler le workflow de transaction à un niveau supérieur.  
   
  Cela est effectué à l’aide de <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>, qui vous permet d’activer ou de désactiver le flux de transaction entrant dans les paramètres de liaison d’un point de terminaison, ainsi que de spécifier le format de protocole de transaction souhaité pour les transactions entrantes.  
   
  Si le flux de transaction est désactivé pour la liaison, alors qu'une des opérations sur un contrat de service requiert une transaction entrante, une exception de validation est levée au démarrage du service.  
   
- La plupart des liaisons standard que WCF fournit contiennent les `transactionFlow` et `transactionProtocol` attributs vous permettent de configurer la liaison spécifique pour accepter les transactions entrantes. Pour plus d’informations sur la définition des éléments de configuration, consultez [ \<liaison >](../../../../docs/framework/misc/binding.md).  
+ La plupart des liaisons permanentes fournies par WCF contiennent `transactionFlow` les `transactionProtocol` attributs et pour vous permettre de configurer la liaison spécifique pour accepter les transactions entrantes. Pour plus d’informations sur la définition des éléments de configuration, consultez [ \<> de liaison](../../../../docs/framework/misc/binding.md).  
   
  Un administrateur ou un responsable du déploiement peuvent utiliser le flux de transaction au niveau du point de terminaison pour configurer des exigences ou des contraintes de flux de transaction au moment du déploiement, à l’aide du fichier de configuration.  
   
 ## <a name="security"></a>Sécurité  
  Pour garantir la sécurité et l’intégrité du système, vous devez sécuriser les échanges de messages lorsque vous transmettez des transactions entre des applications. Vous ne devez pas transmettre ni divulguer les détails d’une transaction à toute application qui n’est pas habilitée à participer à cette même transaction.  
   
- Lors de la génération de clients WCF pour les services Web inconnus ou non approuvés via l’utilisation d’échange de métadonnées, les appels aux opérations sur ces services Web doivent supprimer la transaction actuelle si possible. L'exemple suivant illustre la procédure à suivre pour réaliser cette opération.  
+ Lors de la génération de clients WCF sur des services Web inconnus ou non approuvés par le biais de l’échange de métadonnées, les appels aux opérations sur ces services Web doivent supprimer la transaction actuelle si possible. L'exemple suivant illustre la procédure à suivre pour réaliser cette opération.  
   
-```  
+```csharp
 //client code which has an ambient transaction  
 using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Suppress))  
 {  
@@ -88,8 +88,8 @@ using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Supp
  De plus, les services doivent être configurés pour accepter les transactions entrantes uniquement à partir de clients qu'ils ont authentifiés et autorisés. Les transactions entrantes doivent être acceptées uniquement si elles proviennent de clients hautement approuvés.  
   
 ## <a name="policy-assertions"></a>Assertions de stratégie  
- WCF utilise les assertions de stratégie pour contrôler le flux de transaction. Les assertions de stratégie se trouvent dans le document de stratégie d'un service, lequel est généré en regroupant les contrats, la configuration et les attributs. Le client peut obtenir le document de stratégie du service à l'aide d'une commande HTTP GET ou d'une demande-réponse WS-MetadataExchange. Les clients peuvent alors traiter le document de stratégie pour déterminer quelles opérations sur un contrat de service peuvent prendre en charge ou requérir le flux de transaction.  
+ WCF utilise des assertions de stratégie pour contrôler le workflow de transaction. Les assertions de stratégie se trouvent dans le document de stratégie d'un service, lequel est généré en regroupant les contrats, la configuration et les attributs. Le client peut obtenir le document de stratégie du service à l'aide d'une commande HTTP GET ou d'une demande-réponse WS-MetadataExchange. Les clients peuvent alors traiter le document de stratégie pour déterminer quelles opérations sur un contrat de service peuvent prendre en charge ou requérir le flux de transaction.  
   
  Les assertions de stratégie de flux de transaction affectent le flux de transaction en spécifiant les en-têtes SOAP qu’un client doit envoyer à un service pour représenter une transaction. Tous les en-têtes de transaction doivent être marqués avec `MustUnderstand` égal à `true`. Tout message avec un en-tête marqué autrement est rejeté avec une erreur SOAP.  
   
- Une seule assertion de stratégie liée aux transactions peut être présente sur une opération unique. Documents de stratégie avec plusieurs assertions de transaction sur une opération sont considérés comme non valides et sont rejetés par WCF. De plus, seul un protocole de transaction unique peut être présent au sein de chaque type de port. Documents de stratégie avec les opérations faisant référence à plusieurs protocoles de transaction à l’intérieur d’un type de port unique sont considérés comme non valides et sont rejetés par le [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Les documents de stratégie avec des assertions de transaction présentes sur les messages de sortie ou les messages d’entrée unidirectionnels sont également considérés non valides.
+ Une seule assertion de stratégie liée aux transactions peut être présente sur une opération unique. Les documents de stratégie avec plus d’une assertion de transaction sur une opération sont considérés comme non valides et sont rejetés par WCF. De plus, seul un protocole de transaction unique peut être présent au sein de chaque type de port. Les documents de stratégie avec des opérations faisant référence à plusieurs protocoles de transaction à l’intérieur d’un type de port unique sont considérés comme non valides et sont rejetés par l' [outil ServiceModel Metadata Utility (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Les documents de stratégie avec des assertions de transaction présentes sur les messages de sortie ou les messages d’entrée unidirectionnels sont également considérés non valides.

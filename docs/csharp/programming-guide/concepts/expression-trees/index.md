@@ -2,12 +2,12 @@
 title: Arborescences d’expressions (C#)
 ms.date: 07/20/2015
 ms.assetid: 7d0ac21a-6d90-4e2e-8903-528cb78615b7
-ms.openlocfilehash: eb0276f705ccb333e5739a4873ee6832e7a1878f
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 7e63bf28f10070daa9624daa67bd5118fa67874d
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595003"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926715"
 ---
 # <a name="expression-trees-c"></a>Arborescences d’expressions (C#)
 Les arborescences d'expressions représentent du code dans une structure de données arborescente, où chaque nœud est une expression, par exemple un appel de méthode ou une opération binaire comme `x < y`.  
@@ -91,7 +91,7 @@ Console.WriteLine(factorial);
 // Prints 120.  
 ```
 
-Pour plus d’informations, consultez [Génération de méthodes dynamiques avec des arborescences d’expressions dans Visual Studio 2010](https://blogs.msdn.microsoft.com/csharpfaq/2009/09/14/generating-dynamic-methods-with-expression-trees-in-visual-studio-2010/) (ou version ultérieure).
+Pour plus d’informations, consultez [Génération de méthodes dynamiques avec des arborescences d’expressions dans Visual Studio 2010](https://devblogs.microsoft.com/csharpfaq/generating-dynamic-methods-with-expression-trees-in-visual-studio-2010/) (ou version ultérieure).
   
 ## <a name="parsing-expression-trees"></a>Analyse des arborescences d’expressions  
  L’exemple de code suivant montre comment l’arborescence d’expressions qui représente l’expression lambda `num => num < 5` peut être décomposée selon ses différentes parties.  
@@ -118,7 +118,7 @@ Console.WriteLine("Decomposed expression: {0} => {1} {2} {3}",
 ```  
   
 ## <a name="immutability-of-expression-trees"></a>Immuabilité des arborescences d’expressions  
- Les arborescences d'expressions doivent être immuables. Cela signifie que si vous voulez modifier une arborescence d'expressions, vous devez construire une nouvelle arborescence d'expressions en copiant l'arborescence existante et en y remplaçant les nœuds. Vous pouvez utiliser un visiteur d’arborescence d’expressions pour parcourir l’arborescence d’expressions existante. Pour plus d'informations, voir [Procédure : Modifier des arborescences d’expressions (C#)](./how-to-modify-expression-trees.md).  
+ Les arborescences d'expressions doivent être immuables. Cela signifie que si vous voulez modifier une arborescence d'expressions, vous devez construire une nouvelle arborescence d'expressions en copiant l'arborescence existante et en y remplaçant les nœuds. Vous pouvez utiliser un visiteur d’arborescence d’expressions pour parcourir l’arborescence d’expressions existante. Pour plus d’informations, consultez [Guide pratique pour Modifier des arborescences d’expressions (C#)](./how-to-modify-expression-trees.md).  
   
 ## <a name="compiling-expression-trees"></a>Compilation des arborescences d’expressions  
  Le type <xref:System.Linq.Expressions.Expression%601> fournit la méthode <xref:System.Linq.Expressions.Expression%601.Compile%2A> qui compile le code représenté par une arborescence d'expressions en un délégué exécutable.  
@@ -145,13 +145,13 @@ Console.WriteLine(expr.Compile()(4));
 // Also prints True.  
 ```  
   
- Pour plus d'informations, voir [Procédure : Exécuter des arborescences d’expressions (C#)](./how-to-execute-expression-trees.md).  
+ Pour plus d’informations, consultez [Guide pratique pour Exécuter des arborescences d’expressions (C#)](./how-to-execute-expression-trees.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Linq.Expressions>
-- [Guide pratique pour exécuter des arborescences d’expressions (C#)](./how-to-execute-expression-trees.md)
-- [Guide pratique pour modifier des arborescences d’expressions (C#)](./how-to-modify-expression-trees.md)
+- [Guide pratique : exécuter des arborescences d’expressions (C#)](./how-to-execute-expression-trees.md)
+- [Guide pratique : modifier des arborescences d’expressions (C#)](./how-to-modify-expression-trees.md)
 - [Expressions lambda](../../statements-expressions-operators/lambda-expressions.md)
 - [Vue d’ensemble du Dynamic Language Runtime](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)
 - [Concepts de programmation (C#)](../index.md)

@@ -9,17 +9,18 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], properties
 - properties [WPF]
 ms.assetid: d6e0197f-f2c4-48ed-b45b-b9cdb64aab1c
-ms.openlocfilehash: c685a5227f4339a094ae74af4e1314d4c47f7585
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: d3d11950f919c13590a0212b8d03d394d59d3550
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400866"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928433"
 ---
 # <a name="properties-wpf"></a>Propriétés (WPF)
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]fournit un ensemble de services qui peuvent être utilisés pour étendre les fonctionnalités d’une propriété common language runtime (CLR). Ces services sont généralement regroupés sous le nom « système de propriétés WPF ». Une propriété stockée par le système de propriétés [!INCLUDE[TLA#tla_titlewinclient](../../../../includes/tlasharptla-titlewinclient-md.md)] est appelée « propriété de dépendance ».  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
 - [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md)
 - [Vue d'ensemble des propriétés jointes](attached-properties-overview.md)
 - [Propriétés de dépendance personnalisées](custom-dependency-properties.md)

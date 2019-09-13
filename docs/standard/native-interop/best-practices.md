@@ -4,12 +4,12 @@ description: Découvrez les meilleures pratiques pour interagir avec des composa
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: 09b25ed10958142f8eead6761f18bccbe2645448
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
-ms.translationtype: HT
+ms.openlocfilehash: 0405fd5aef9d89fc1f47123ed358e6358656d95b
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063075"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70923766"
 ---
 # <a name="native-interoperability-best-practices"></a>Meilleures pratiques pour l’interopérabilité native
 
@@ -29,7 +29,7 @@ Les instructions de cette section s’appliquent à tous les scénarios d’inte
 
 ## <a name="dllimport-attribute-settings"></a>Paramètres des attributs DllImport
 
-| Paramètre | Par défaut | Recommandation | Détails |
+| Paramètre | Default | Recommandation | Détails |
 |---------|---------|----------------|---------|
 | <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>   | `true` |  Conserver la valeur par défaut  | S’il est défini explicitement sur false, les valeurs de retour HRESULT en échec sont converties en exceptions (et la valeur de retour de la définition devient ainsi Null).|
 | <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError> | `false`  | Dépend de l'API  | Définissez-le sur true si l’API utilise GetLastError et Marshal.GetLastWin32Error pour obtenir la valeur. Si l’API définit une condition indiquant une erreur, récupérez l’erreur avant d’effectuer d’autres appels, de façon à éviter de la remplacer par inadvertance.|
@@ -50,7 +50,7 @@ N’oubliez pas de marquer `[DllImport]` comme `Charset.Unicode` sauf si vous so
 2. Appeler
    1. Alloue une mémoire tampon native **{2}**  
    2. Copie le contenu si `[In]` _(valeur par défaut d’un paramètre `StringBuilder`)_  
-   3. Copie la mémoire tampon native dans un tableau managé nouvellement alloué si `[Out]`**{3}** _(valeur par défaut de `StringBuilder` également)_  
+   3. Copie la mémoire tampon native dans un tableau managé nouvellement alloué si `[Out]` **{3}** _(valeur par défaut de `StringBuilder` également)_  
 3. `ToString()` alloue encore un autre tableau managé **{4}**
 
 Soit *{4}* allocations pour extraire une chaîne du code natif. Le mieux que l’on puisse faire pour réduire ce nombre est de réutiliser `StringBuilder` dans un autre appel, mais cela ne fait gagner que *1* allocation. Il est largement préférable d’utiliser et de mettre en cache une mémoire tampon de caractères à partir de `ArrayPool` : vous pourrez limiter l’allocation à `ToString()` lors des appels suivants.
@@ -67,6 +67,7 @@ Pour plus d’informations sur le marshaling des chaînes, consultez [Marshaling
 > Pour les chaînes `[Out]`, le CLR utilisera `CoTaskMemFree` par défaut pour libérer les chaînes ou `SysStringFree` pour les chaînes marquées `UnmanagedType.BSTR`.  
 **Pour la plupart des API avec mémoire tampon de chaîne de sortie :**  
 > Le nombre de caractères transmis doit inclure la valeur Null. Si la valeur de retour est inférieure au nombre de caractères transmis, c’est le signe que l’appel a réussi et que la valeur correspond au nombre de caractères *sans* la valeur Null de fin. Sinon, le nombre représente la taille requise de la mémoire tampon caractère Null *inclus*.  
+>
 > - Nombre transmis = 5, valeur de retour = 4 : la chaîne comporte 4 caractères avec une valeur Null de fin.
 > - Nombre transmis = 5, valeur de retour = 6 : la chaîne comporte 5 caractères et a besoin d’une mémoire tampon de 6 caractères pour inclure la valeur Null.  
 > [Types de données Windows pour les chaînes](/windows/desktop/Intl/windows-data-types-for-strings)

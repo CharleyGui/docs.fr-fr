@@ -2,12 +2,12 @@
 title: Traiter les tâches asynchrones terminées
 ms.date: 09/12/2018
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
-ms.openlocfilehash: 35b4e42d7da5b8bc9069083ffc47d990bcb637a8
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 464e6be108eef86a023a0bad225d2ad12bfb2c3e
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595592"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926747"
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-c"></a>Démarrer plusieurs tâches Async et les traiter une fois terminées (C#)
 
@@ -81,7 +81,7 @@ Dans le fichier MainWindow.xaml.cs du projet, apportez les modifications suivant
 Exécutez le programme plusieurs fois pour vérifier que les longueurs téléchargées n’apparaissent pas toujours dans le même ordre.
 
 > [!CAUTION]
-> Vous pouvez utiliser `WhenAny` dans une boucle, comme décrit dans l’exemple, pour résoudre les problèmes qui impliquent un petit nombre de tâches. Cependant, d’autres approches sont plus efficaces si vous avez un grand nombre de tâches à traiter. Pour plus d’informations et d’exemples, consultez [Traitement des tâches une fois terminées](https://blogs.msdn.microsoft.com/pfxteam/2012/08/02/processing-tasks-as-they-complete/).
+> Vous pouvez utiliser `WhenAny` dans une boucle, comme décrit dans l’exemple, pour résoudre les problèmes qui impliquent un petit nombre de tâches. Cependant, d’autres approches sont plus efficaces si vous avez un grand nombre de tâches à traiter. Pour plus d’informations et d’exemples, consultez [Traitement des tâches une fois terminées](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete/).
 
 ## <a name="complete-example"></a>Exemple complet
 

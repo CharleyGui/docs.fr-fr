@@ -3,12 +3,12 @@ title: Explorer le code avec le visualiseur de syntaxe Roslyn dans Visual Studio
 description: Le visualiseur de syntaxe offre un outil visuel qui permet d’explorer les modèles que le SDK .NET Compiler Platform génère pour le code.
 ms.date: 03/07/2018
 ms.custom: mvc, vs-dotnet
-ms.openlocfilehash: 2d1c6d0b9f65324ee2eadafaa7f98360f37e7bb7
-ms.sourcegitcommit: 75567a3cb437009db55949c6092f4e77ed1a9da4
-ms.translationtype: HT
+ms.openlocfilehash: 55a1aa555a82d286a0e8e4359e814dfe2cc301c8
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54307199"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926781"
 ---
 # <a name="explore-code-with-the-roslyn-syntax-visualizer-in-visual-studio"></a>Explorer le code avec le visualiseur de syntaxe Roslyn dans Visual Studio
 
@@ -44,6 +44,7 @@ Les arborescences de syntaxe comprennent trois types d’éléments : des *nœu
 Chaque élément de l’arborescence présente également sa propre **étendue**. L’**étendue** correspond aux index (position de départ et de fin) de ce nœud dans le fichier texte.  Dans le précédent exemple C#, le jeton « UsingKeyword [0..5) » a une **étendue** de cinq caractères de large, [0..5). La notation « [..) » signifie que l’index de départ fait partie de l’étendue, tandis que l’index de fin n’en fait pas partie.
 
 Il existe deux façons de naviguer dans l’arborescence :
+
 * Développez des éléments dans l’arborescence ou cliquez dessus. Le visualiseur sélectionne automatiquement le texte correspondant à l’étendue de cet élément dans l’éditeur de code.
 * Cliquez sur le texte ou sélectionnez-le dans l’éditeur de code. Dans le précédent exemple VB, si vous sélectionnez la ligne contenant « Module Module1 » dans l’éditeur de code, le visualiseur accède automatiquement au nœud ModuleStatement correspondant dans l’arborescence. 
 
@@ -82,7 +83,7 @@ Une autre option consiste à placer la fenêtre de graphique de syntaxe sur un d
 
 ## <a name="inspecting-semantics"></a>Inspection de la sémantique
 
-Le visualiseur de syntaxe permet une inspection rudimentaire des symboles et des informations sémantiques. Tapez `double x = 1 + 1;` au sein de Main() dans l’exemple C#. Ensuite, sélectionnez l’expression `1 + 1` dans la fenêtre de l’éditeur de code. Le visualiseur met en surbrillance le nœud **AddExpression** dans le visualiseur. Cliquez avec le bouton droit sur ce nœud **AddExpression**, puis cliquez sur **Afficher le symbole (le cas échéant)**. Notez que la plupart des éléments de menu présentent le qualificateur « le cas échéant ». Le visualiseur de syntaxe inspecte les propriétés d’un nœud, notamment celles qui ne sont éventuellement pas présentes pour tous les nœuds. 
+Le visualiseur de syntaxe permet une inspection rudimentaire des symboles et des informations sémantiques. Tapez `double x = 1 + 1;` au sein de Main() dans l’exemple C#. Ensuite, sélectionnez l’expression `1 + 1` dans la fenêtre de l’éditeur de code. Le visualiseur met en surbrillance le nœud **AddExpression** dans le visualiseur. Cliquez avec le bouton droit sur ce nœud **AddExpression**, puis cliquez sur **Afficher le symbole (le cas échéant)** . Notez que la plupart des éléments de menu présentent le qualificateur « le cas échéant ». Le visualiseur de syntaxe inspecte les propriétés d’un nœud, notamment celles qui ne sont éventuellement pas présentes pour tous les nœuds. 
 
 La grille des propriétés dans le visualiseur est mise à jour comme indiqué dans la figure suivante : Le symbole de l’expression est un **SynthesizedIntrinsicOperatorSymbol** avec **Kind = Method**.
 
@@ -114,7 +115,7 @@ Module Program
 End Module
 ```
 
-Ce code présente un alias nommé `C` qui se mappe sur le type `System.Console` en haut du fichier et utilise cet alias dans `Main()`. Sélectionnez l’utilisation de cet alias, le `C` dans `C.WriteLine()`, à l’intérieur de la méthode `Main()`. Le visualiseur sélectionne le nœud **IdentifierName** correspondant. Cliquez avec le bouton droit sur ce nœud et cliquez sur **Afficher le symbole (le cas échéant)**. La grille des propriétés indique que cet identificateur est lié au type `System.Console` comme l’illustre la figure suivante :
+Ce code présente un alias nommé `C` qui se mappe sur le type `System.Console` en haut du fichier et utilise cet alias dans `Main()`. Sélectionnez l’utilisation de cet alias, le `C` dans `C.WriteLine()`, à l’intérieur de la méthode `Main()`. Le visualiseur sélectionne le nœud **IdentifierName** correspondant. Cliquez avec le bouton droit sur ce nœud et cliquez sur **Afficher le symbole (le cas échéant)** . La grille des propriétés indique que cet identificateur est lié au type `System.Console` comme l’illustre la figure suivante :
 
 ![Propriétés des symboles](media/syntax-visualizer/symbol-visual-basic.png)
 
@@ -122,7 +123,7 @@ Essayez **Afficher AliasSymbol (le cas échéant)** pour le même nœud **Identi
 
 ![Propriétés d’un AliasSymbol](media/syntax-visualizer/alias-symbol.png)
 
-Examinez le symbole correspondant à un type, une méthode, une propriété qui ont été déclarés. Sélectionnez le nœud correspondant dans le visualiseur et cliquez sur **Afficher le symbole (le cas échéant)**. Sélectionnez la méthode `Sub Main()`, corps de la méthode compris. Cliquez sur **Afficher le symbole (le cas échéant)** pour le nœud **SubBlock** correspondant dans le visualiseur. La grille des propriétés montre que le **MethodSymbol** de ce **SubBlock** porte le nom `Main` avec un type de retour `Void`.
+Examinez le symbole correspondant à un type, une méthode, une propriété qui ont été déclarés. Sélectionnez le nœud correspondant dans le visualiseur et cliquez sur **Afficher le symbole (le cas échéant)** . Sélectionnez la méthode `Sub Main()`, corps de la méthode compris. Cliquez sur **Afficher le symbole (le cas échéant)** pour le nœud **SubBlock** correspondant dans le visualiseur. La grille des propriétés montre que le **MethodSymbol** de ce **SubBlock** porte le nom `Main` avec un type de retour `Void`.
 
 ![Affichage du symbole d’une déclaration de méthode](media/syntax-visualizer/method-symbol.png)
 

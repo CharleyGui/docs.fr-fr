@@ -3,12 +3,12 @@ title: Guide pratique pour utiliser l’API de ML automatisé ML.NET
 description: L’API de ML automatisé ML.NET automatise le processus de génération de modèle prêt pour le déploiement. Découvrez les options que vous pouvez utiliser pour configurer des tâches de machine learning automatisé.
 ms.date: 04/24/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: d624b999384dd92d41033e385d01fe556e10a065
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
-ms.translationtype: HT
+ms.openlocfilehash: 02e4203b0d9f388c7bd7133f3cd4e97cc60cff14
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65960415"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929397"
 ---
 # <a name="how-to-use-the-mlnet-automated-machine-learning-api"></a>Guide pratique pour utiliser l’API de machine learning automatisé ML.NET
 
@@ -21,21 +21,22 @@ Le machine learning automatisé (AutoML) automatise le processus d’application
 
 Le machine learning automatisé prend en charge le chargement d’un jeu de données dans un [IDataView](xref:Microsoft.ML.IDataView). Les données peuvent se présenter sous la forme de fichiers de valeurs séparées par une tabulation (TSV) et de fichiers de valeurs séparées par une virgule (CSV).
 
-Exemple :
+Exemple :
 
 ```csharp
 using Microsoft.ML;
 using Microsoft.ML.AutoML;
-    ...
+    // ...
     MLContext mlContext = new MLContext();
     IDataView trainDataView = mlContext.Data.LoadFromTextFile<SentimentIssue>("my-data-file.csv", hasHeader: true);
 ```
 
 ## <a name="select-the-machine-learning-task-type"></a>Sélectionner le type de tâche de machine learning
 Avant de créer une expérience, déterminer le type de problème de machine learning que vous voulez résoudre. Le machine learning automatisé prend en charge les tâches de ML suivantes :
+
 * Classification binaire
 * Classification multiclasse
-* Régression
+* régression ;
 
 ## <a name="create-experiment-settings"></a>Créer les paramètres de l’expérience
 
@@ -53,7 +54,7 @@ Créez les paramètres de l’expérience pour le type de tâche de ML détermin
   var experimentSettings = new MulticlassExperimentSettings();
   ```
 
-* Régression
+* régression ;
 
   ```csharp
   var experimentSettings = new RegressionExperimentSettings();
@@ -104,6 +105,7 @@ Voici quelques exemples :
     ```
 
 Vous trouverez la liste des entraîneurs pris en charge par tâche de ML en cliquant sur le lien correspondant ci-dessous :
+
 * [Algorithmes de classification binaire pris en charge](xref:Microsoft.ML.AutoML.BinaryClassificationTrainer)
 * [Algorithmes de classification multiclasse pris en charge](xref:Microsoft.ML.AutoML.MulticlassClassificationTrainer)
 * [Algorithmes de régression pris en charge](xref:Microsoft.ML.AutoML.RegressionTrainer)
@@ -210,6 +212,7 @@ Console.WriteLine($"Root Mean Squared Error: {metrics.RootMeanSquaredError:0.##}
 ```
 
 Voici toutes les métriques disponibles par tâche de ML :
+
 * [Métriques de classification binaire](xref:Microsoft.ML.AutoML.BinaryClassificationMetric)
 * [Métriques de classification multiclasse](xref:Microsoft.ML.AutoML.MulticlassClassificationMetric)
 * [Métriques de régression](xref:Microsoft.ML.AutoML.RegressionMetric)

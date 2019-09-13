@@ -2,12 +2,12 @@
 title: Déployer des applications .NET existantes en tant que conteneurs Windows
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Déployer des applications .NET existantes en tant que conteneurs Windows
 ms.date: 04/29/2018
-ms.openlocfilehash: 4d58be828418abe4964e26a983f194fd5d30b93d
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: d48acbb2e1c4858bf3146318f70dd7b8a7b62918
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374023"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926487"
 ---
 # <a name="deploy-existing-net-apps-as-windows-containers"></a>Déployer des applications .NET existantes en tant que conteneurs Windows
 
@@ -15,7 +15,7 @@ Les déploiements basés sur des conteneurs Windows s’appliquent aux applicati
 
 Toutefois, dans ce guide, et en particulier dans les sections suivantes, il se concentre principalement sur l’utilisation des conteneurs Windows pour les applications *optimisées* pour le Cloud où vous n’avez pas besoin de remanier votre application.
 
-## <a name="what-are-containers-linux-or-windows"></a>Que sont les conteneurs ? (Linux ou Windows)
+## <a name="what-are-containers-linux-or-windows"></a>Que sont les conteneurs? (Linux ou Windows)
 
 Les conteneurs sont un moyen d’encapsuler une application dans son propre package isolé. Dans son conteneur, l’application n’est pas affectée par les applications ou les processus qui existent en dehors du conteneur. Tout ce dont dépend l’application pour s’exécuter correctement en tant que processus se trouve à l’intérieur du conteneur. Partout où le conteneur peut se déplacer, les exigences de l’application sont toujours respectées, en termes de dépendances directes, car elles sont regroupées avec tout ce dont elles ont besoin pour s’exécuter (dépendances de bibliothèque, runtimes, etc.).
 
@@ -143,6 +143,7 @@ Toutefois, quand vous réfléchissez à l’environnement de déploiement de pro
 **Figure 4-7.5.** L’écosystème de conteneurs dans Azure
 
 À partir de l’écosystème de conteneurs dans Azure, les produits suivants prennent en charge les conteneurs qui sont considérés comme des infrastructures :
+
 - **Azure Container Instances (ACI)**
 - **Machines virtuelles Azure** (Avec prise en charge du conteneur)
 - **Virtual Machine Scale sets Azure** (Avec prise en charge du conteneur)

@@ -8,16 +8,16 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 7a7ab9e8f148eaab8250a7cb10c7d38d2f70e4cd
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
-ms.translationtype: HT
+ms.openlocfilehash: ff60bb5de403970f432e938cba81ca4e99476e8a
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660581"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70925987"
 ---
 # <a name="consume-a-net-standard-library-in-visual-studio-2017"></a>Consommer une bibliothèque .NET Standard dans Visual Studio 2017
 
-Une fois que vous avez créé une bibliothèque de classes .NET Standard en suivant les étapes de [Création d’une bibliothèque de classes C# avec .NET Core dans Visual Studio 2017](./library-with-visual-studio.md) ou [Création d’une bibliothèque de classes Visual Basic avec .NET Core dans Visual Studio 2017](vb-library-with-visual-studio.md), que vous l’avez testée en suivant les instructions dans [Test d’une bibliothèque de classes avec .NET Core dans Visual Studio 2017](testing-library-with-visual-studio.md) et que vous avez créé une version Release de la bibliothèque, l’étape suivante consiste à la rendre accessible aux appelants. Pour cela, deux solutions s'offrent à vous :
+Une fois que vous avez créé une bibliothèque de classes .NET Standard en suivant les étapes de [Création d’une bibliothèque de classes C# avec .NET Core dans Visual Studio 2017](./library-with-visual-studio.md) ou [Création d’une bibliothèque de classes Visual Basic avec .NET Core dans Visual Studio 2017](vb-library-with-visual-studio.md), que vous l’avez testée en suivant les instructions dans [Test d’une bibliothèque de classes avec .NET Core dans Visual Studio 2017](testing-library-with-visual-studio.md) et que vous avez créé une version Release de la bibliothèque, l’étape suivante consiste à la rendre accessible aux appelants. Il existe deux méthodes pour le faire :
 
 * Si la bibliothèque doit être utilisée par une seule solution (par exemple s’il s’agit d’un composant dans une seule application de grande taille), vous pouvez l’inclure en tant que projet dans votre solution.
 
@@ -28,6 +28,7 @@ Une fois que vous avez créé une bibliothèque de classes .NET Standard en suiv
 Tout comme vous avez inclus des tests unitaires dans la même solution que votre bibliothèque de classes, vous pouvez inclure votre application dans le cadre de cette solution. Par exemple, vous pouvez utiliser votre bibliothèque de classes dans une application console qui invite l’utilisateur à entrer une chaîne et indique si son premier caractère est une majuscule :
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
 1. Ouvrez la `ClassLibraryProjects` solution que vous avez créée dans la rubrique [Création d’une bibliothèque de classes C# avec .NET Core dans Visual Studio 2017](./library-with-visual-studio.md). Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur la solution **ClassLibraryProjects** et, dans le menu contextuel, sélectionnez **Ajouter** > **Nouveau projet**.
 
 1. Dans la boîte de dialogue **Ajouter un nouveau projet**, développez le nœud **Visual C#** et sélectionnez le nœud **.NET Core**, puis choisissez le modèle de projet **Application console (.NET Core)** . Dans la zone de texte **Nom**, tapez « ShowCase », puis sélectionnez le bouton **OK**.
@@ -57,7 +58,9 @@ Tout comme vous avez inclus des tests unitaires dans la même solution que votre
 1. Si nécessaire, changez la barre d’outils pour compiler la version **Debug** du projet `ShowCase`. Compilez et exécutez le programme en sélectionnant la flèche verte sur le bouton **ShowCase**.
 
    ![Barre d’outils d’un projet Visual Studio montrant le bouton Déboguer - C#](./media/consuming-library-with-visual-studio/visual-studio-project-toolbar.png)
+
 # <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
+
 1. Ouvrez la solution `ClassLibraryProjects` que vous avez créée dans la rubrique [Création d’une bibliothèque de classes avec Visual Basic et .NET Core dans Visual Studio 2017](vb-library-with-visual-studio.md). Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur la solution **ClassLibraryProjects** et, dans le menu contextuel, sélectionnez **Ajouter** > **Nouveau projet**.
 
 1. Dans la boîte de dialogue **Ajouter un nouveau projet**, développez le nœud **Visual Basic** et sélectionnez le nœud **.NET Core**, puis choisissez le modèle de projet **Application console (.NET Core)** . Dans la zone de texte **Nom**, tapez « ShowCase », puis sélectionnez le bouton **OK**.
@@ -87,6 +90,7 @@ Tout comme vous avez inclus des tests unitaires dans la même solution que votre
 1. Si nécessaire, changez la barre d’outils pour compiler la version **Debug** du projet `ShowCase`. Compilez et exécutez le programme en sélectionnant la flèche verte sur le bouton **ShowCase**.
 
    ![Déboguer sur la barre d’outils - Visual Basic](./media/consuming-library-with-visual-studio/visual-studio-project-toolbar.png)
+
 ---
 
 Vous pouvez déboguer et publier l’application qui utilise cette bibliothèque en suivant les étapes de [Débogage de votre application Hello World avec Visual Studio 2017](debugging-with-visual-studio.md) et de [Publication de votre application Hello World avec Visual Studio 2017](publishing-with-visual-studio.md).

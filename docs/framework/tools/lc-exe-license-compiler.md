@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows Forms, control licenses
 - licensed controls [Windows Forms]
 ms.assetid: 2de803b8-495e-4982-b209-19a72aba0460
-ms.openlocfilehash: 6c4432d94372ce10ee9ecdf6e441eda3318a20d7
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 753312005cd60b5be6bf5504fa9b7f14bd6367fe
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59298966"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894680"
 ---
 # <a name="lcexe-license-compiler"></a>Lc.exe (License Compiler)
 L'outil License Compiler lit les fichiers texte comportant des informations sur les licences et génère un fichier binaire pouvant être incorporé dans un exécutable du Common Language Runtime en tant que ressource.  
@@ -32,9 +32,9 @@ L'outil License Compiler lit les fichiers texte comportant des informations sur 
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console
       lc /target:  
-      targetPE /complist:filename [/outdir:path]  
+targetPE /complist:filename [/outdir:path]  
 /i:modules [/nologo] [/v]  
 ```  
   
@@ -52,34 +52,34 @@ L'outil License Compiler lit les fichiers texte comportant des informations sur 
   
 ## <a name="example"></a>Exemple  
   
-1. Si vous utilisez un contrôle sous licence `MyCompany.Samples.LicControl1` contenu dans `Samples.DLL`, dans une application appelée `HostApp.exe`*,* vous pouvez créer le fichier `HostAppLic.txt` contenant ce qui suit.  
+1. Si vous utilisez un contrôle sous licence `MyCompany.Samples.LicControl1` contenu dans `Samples.DLL`, dans une application appelée `HostApp.exe` *,* vous pouvez créer le fichier `HostAppLic.txt` contenant ce qui suit.  
   
-    ```  
+    ```text
     MyCompany.Samples.LicControl1, Samples.DLL  
     ```  
   
 2. Créez le fichier .licenses appelé `HostApp.exe.licenses` à l'aide de la commande suivante.  
   
-    ```  
+    ```console  
     lc /target:HostApp.exe /complist:hostapplic.txt /i:Samples.DLL /outdir:c:\bindir  
     ```  
   
 3. Générez `HostApp.exe` y compris le fichier .licenses en tant que ressource. Si vous étiez en train de générer une application C#, vous utiliseriez alors la commande suivante pour générer votre application.  
   
-    ```  
+    ```console
     csc /res:HostApp.exe.licenses /out:HostApp.exe *.cs  
     ```  
   
  La commande suivante compile `myApp.licenses` à partir des listes de composants sous licence spécifiées par `hostapplic.txt`, `hostapplic2.txt` et `hostapplic3.txt`. L'argument `modulesList` spécifie les modules qui comportent les composants sous licence.  
   
-```  
+```console  
 lc /target:myApp /complist:hostapplic.txt /complist:hostapplic2.txt /complist: hostapplic3.txt /i:modulesList  
 ```  
   
 ## <a name="response-file-example"></a>Exemple de fichier de réponse  
  La liste suivante montre un exemple de fichier réponse, `response.rsp`. Pour plus d’informations sur les fichiers réponse, consultez [Fichiers réponse](/visualstudio/msbuild/msbuild-response-files).  
   
-```  
+```text  
 /target:hostapp.exe  
 /complist:hostapplic.txt   
 /i:WFCPrj.dll   
@@ -88,7 +88,7 @@ lc /target:myApp /complist:hostapplic.txt /complist:hostapplic2.txt /complist: h
   
  La ligne de commande suivante utilise le fichier `response.rsp`.  
   
-```  
+```console  
 lc @response.rsp  
 ```  
   

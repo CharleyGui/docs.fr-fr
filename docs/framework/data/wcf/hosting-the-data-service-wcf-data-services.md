@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, configuring
 - WCF Data Services, Windows Communication Foundation
 ms.assetid: b48f42ce-22ce-4f8d-8f0d-f7ddac9125ee
-ms.openlocfilehash: ea60ac132fdd94d4e3a3676891964070b7150857
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 15122984dbaf3245436ff21836065c05131f71d1
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780271"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894331"
 ---
 # <a name="hosting-the-data-service-wcf-data-services"></a>Hébergement du service de données (services de données WCF)
 À l’aide de WCF Data Services, vous pouvez créer un service qui expose les [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] données sous forme de flux. Ce service de données est défini comme une classe qui hérite de <xref:System.Data.Services.DataService%601>. Cette classe fournit les fonctionnalités requises pour traiter les messages de demande, effectuer des mises à jour sur la source de données et générer des messages de réponse, comme requis par OData. Toutefois, un service de données ne peut pas effectuer de liaison et d’écoute sur un socket réseau pour les requêtes HTTP entrantes. Pour ces fonctionnalités requises, le service de données s'appuie sur un composant d'hébergement.
@@ -40,7 +40,7 @@ ms.locfileid: "70780271"
 
 Quand vous utilisez la boîte de dialogue **Ajouter un nouvel élément** dans Visual Studio 2015 pour définir un service de données dans une application ASP.net, l’outil génère deux nouveaux fichiers dans le projet. Le premier fichier a une extension `.svc` et indique à l’exécution WCF comment instancier le service de données. Voici un exemple de ce fichier pour l’exemple de service de données Northwind créé lorsque vous terminez le [démarrage rapide](quickstart-wcf-data-services.md):
 
-```
+```aspx-csharp
 <%@ ServiceHost Language="C#"
     Factory="System.Data.Services.DataServiceHostFactory,
             System.Data.Services, Version=4.0.0.0,

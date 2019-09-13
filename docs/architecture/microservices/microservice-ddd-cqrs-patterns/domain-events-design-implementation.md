@@ -2,12 +2,12 @@
 title: Événements de domaine. Conception et implémentation
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Obtenir une vue détaillée des événements de domaine, un concept essentiel pour établir la communication entre les agrégats.
 ms.date: 10/08/2018
-ms.openlocfilehash: 5f7084ef638a1d04e0050eab447cb8903c973f45
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 46341bbc3ee3e5713707cc6a18b678d51102b64d
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674256"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926548"
 ---
 # <a name="domain-events-design-and-implementation"></a>Événements de domaine : conception et implémentation
 
@@ -71,7 +71,7 @@ En revanche, si vous utilisez des événements de domaine, vous pouvez créer un
 2. Recevez la commande dans un gestionnaire de commandes.
    - Exécutez la transaction d’un seul agrégat.
    - (Facultatif) Déclenchez des événements de domaine pour les effets secondaires (par exemple, OrderStartedDomainEvent).
-3. Gérez les événements de domaine (dans le processus actuel) qui vont exécuter un nombre ouvert d’effets secondaires dans plusieurs agrégats ou actions d’application. Par exemple :
+3. Gérez les événements de domaine (dans le processus actuel) qui vont exécuter un nombre ouvert d’effets secondaires dans plusieurs agrégats ou actions d’application. Par exemple :
    - Vérifiez ou créez l’acheteur et la méthode de paiement.
    - Créez et envoyez un événement d’intégration associé au bus d’événements pour propager les états sur les microservices ou déclencher des actions externes, comme l’envoi d’un e-mail à l’acheteur.
    - Gérez les autres effets secondaires.
@@ -375,7 +375,7 @@ Comme nous l’avons vu, les événements de domaine permettent d’implémenter
   <https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/>
 
 - **Cesar de la Torre. Domain Events vs. Integration Events in DDD and microservices architectures** \
-  <https://blogs.msdn.microsoft.com/cesardelatorre/2017/02/07/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/>
+  <https://devblogs.microsoft.com/cesardelatorre/domain-events-vs-integration-events-in-domain-driven-design-and-microservices-architectures/>
 
 >[!div class="step-by-step"]
 >[Précédent](client-side-validation.md)

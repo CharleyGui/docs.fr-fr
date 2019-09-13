@@ -21,22 +21,22 @@ helpviewer_keywords:
 - Visual Basic code, line continuation in
 - statements [Visual Basic], line breaks in
 ms.assetid: dea01dad-a8ac-484a-bb3a-8c45a1b1eccc
-ms.openlocfilehash: 745974523bd747dd23f3cfaf7cb70bb6cd4513f0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f17f815ea0f1f91284d3223ff233a87dc7ff71eb
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69946211"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70892685"
 ---
 # <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a>Procédure : Fractionner et combiner des instructions dans le code (Visual Basic)
 Lors de l’écriture de votre code, vous pouvez parfois créer des instructions longues qui nécessitent un défilement horizontal dans l’éditeur de code. Bien que cela n’affecte pas la manière dont votre code s’exécute, cela complique la lecture du code tel qu’il apparaît sur le moniteur. Dans ce cas, vous devez envisager de fractionner une seule instruction longue en plusieurs lignes.  
   
 ### <a name="to-break-a-single-statement-into-multiple-lines"></a>Pour scinder une seule instruction en plusieurs lignes  
   
-- Utilisez le caractère de continuation de ligne, qui est un trait`_`de soulignement (), à l’endroit où vous souhaitez que la ligne s’arrête. Le trait de soulignement doit être immédiatement précédé d’un espace et immédiatement suivi d’un terminateur de ligne (retour chariot).  
+-   Utilisez le caractère de continuation de ligne, qui est un trait`_`de soulignement (), à l’endroit où vous souhaitez que la ligne s’arrête. Le trait de soulignement doit être immédiatement précédé d’un espace et immédiatement suivi d’un terminateur de ligne (retour chariot) ou (à partir de la version 16,0) d’un commentaire suivi d’un retour chariot. 
   
     > [!NOTE]
-    > Dans certains cas, si vous omettez le caractère de continuation de ligne, le compilateur Visual Basic continue implicitement l’instruction sur la ligne de code suivante. Pour obtenir la liste des éléments syntaxiques pour lesquels vous pouvez omettre le caractère de continuation de ligne, consultez «continuation de ligne implicite» dans les [instructions](../../../visual-basic/programming-guide/language-features/statements.md).  
+    > Dans certains cas, si vous omettez le caractère de continuation de ligne, le compilateur Visual Basic continue implicitement l’instruction sur la ligne de code suivante. Pour obtenir la liste des éléments syntaxiques pour lesquels vous pouvez omettre le caractère de continuation de ligne, consultez « continuation de ligne implicite » dans les [instructions](../../../visual-basic/programming-guide/language-features/statements.md).  
   
      Dans l’exemple suivant, l’instruction est divisée en quatre lignes avec des caractères de continuation de ligne qui terminent tous sauf la dernière ligne.  
   

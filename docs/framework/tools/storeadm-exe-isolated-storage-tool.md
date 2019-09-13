@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: b81202b8-d91d-4b23-9c53-4a112f74a44a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4b947ea2bfabe1c3fa9afb43cb5ecc41ab92be89
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 12de3cd1663d9dfea66f32fcb7f456d44e31dc60
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929904"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894596"
 ---
 # <a name="storeadmexe-isolated-storage-tool"></a>Storeadm.exe (outil Isolated Storage)
 L'outil Isolated Storage (Stockage isolé) répertorie ou supprime tous les magasins existants de l'utilisateur en cours.  
@@ -26,7 +26,7 @@ L'outil Isolated Storage (Stockage isolé) répertorie ou supprime tous les maga
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 storeadm [/list][/machine][/remove][/roaming][/quiet]  
 ```  
   
@@ -42,7 +42,7 @@ storeadm [/list][/machine][/remove][/roaming][/quiet]
 |**/roaming**|Sélectionne le magasin itinérant. Utilisez cette option avec l’option **/list** ou **/remove** pour spécifier que cette action doit s’appliquer au magasin itinérant.|  
 |**/?**|Affiche la syntaxe et les options de commande de l'outil.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Lorsque vous exécutez Storeadm.exe à partir de la ligne de commande sans spécifier d'options, la syntaxe et les options de l'outil s'affichent.  
   
  Les options **/list** et **/remove** sont généralement utilisées l’une après l’autre ; si deux options ou plus sont spécifiées, elles sont alors exécutées dans leur ordre d’apparition sur la ligne de commande.  

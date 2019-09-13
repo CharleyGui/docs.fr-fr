@@ -1,18 +1,18 @@
 ---
 title: Opérateur >= - Référence C#
 ms.custom: seodec18
-ms.date: 06/21/2019
+ms.date: 09/10/2019
 f1_keywords:
 - =_CSharpKeyword
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: f30b48fc6bd1e896658a7234a58409ea9a0f5e6f
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: a450a55524f33f4f06ed077aba864e8f641a458d
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69601942"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70924659"
 ---
 # <a name="-operator-c-reference"></a>Opérateur >= (référence C#)
 
@@ -61,6 +61,10 @@ x = x op y
 sauf que `x` n’est évalué qu’une seule fois.
 
 L’assignation composée est prise en charge par les opérateurs [arithmétiques](arithmetic-operators.md#compound-assignment), [logiques booléens](boolean-logical-operators.md#compound-assignment) et [logiques au niveau du bit et du décalage](bitwise-and-shift-operators.md#compound-assignment).
+
+## <a name="null-coalescing-assignment"></a>Assignation de fusion Null
+
+À partir C# de 8,0, vous pouvez utiliser l’opérateur `??=` d’assignation de fusion Null pour assigner la valeur de son opérande droit à son opérande gauche uniquement si l’opérande de gauche est évalué à. `null` Pour plus d’informations, consultez [les = l’article Operators](null-coalescing-operator.md) .
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 

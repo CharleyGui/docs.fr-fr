@@ -2,12 +2,12 @@
 title: Data Binding in a Windows Presentation Foundation Client
 ms.date: 03/30/2017
 ms.assetid: bb8c8293-5973-4aef-9b07-afeff5d3293c
-ms.openlocfilehash: 791afee9772a6f06e57fdd09ad8a47db2bd8ca63
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: b0f1eb8ca154ab8e37a15b35097f746662511f7c
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045100"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928633"
 ---
 # <a name="data-binding-in-a-windows-presentation-foundation-client"></a>Data Binding in a Windows Presentation Foundation Client
 Cet exemple illustre l’utilisation de la liaison de données dans un client Windows Presentation Foundation (WPF). L’exemple utilise un service Windows Communication Foundation (WCF) qui génère de manière aléatoire un tableau d’albums à retourner au client. Pour chaque album, un nom, un prix et une liste des pistes y figurant sont définis. Un nom et une durée sont indiqués pour chaque piste. Les informations retournées par le service sont automatiquement liées à l’interface utilisateur (IU) fournie par le client Windows Presentation Foundation (WPF).  
@@ -17,7 +17,7 @@ Cet exemple illustre l’utilisation de la liaison de données dans un client Wi
   
  La liaison de données permet à une source de données d’être automatiquement liée à une interface utilisateur. Cela simplifie le modèle de programmation car vous n'êtes pas obligé ainsi de mettre à jour par programme chaque élément de l'interface utilisateur avec les données provenant d'un objet de données ou d'un tableau d'objets de données. Vous pouvez lier un objet à un seul élément d'interface utilisateur ou un tableau à une commande acceptant plusieurs entrées, comme `ListBox`. Le code suivant indique comment lier des données au `DataContext` d'un élément d'interface utilisateur.  
   
-```  
+```csharp  
 // Event handler executed when call is complete  
 void client_GetAlbumListCompleted(object sender, GetAlbumListCompletedEventArgs e)  
 {  

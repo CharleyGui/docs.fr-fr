@@ -2,16 +2,16 @@
 title: MSMQ Activation
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-ms.openlocfilehash: 169881cdc0736fcc94818f6281c35b4e54e06dfe
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 038f4d7e3d713cfe4134ea98f7858ef71f29bab4
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039301"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895249"
 ---
 # <a name="msmq-activation"></a>MSMQ Activation
 
-Cet exemple illustre comment héberger des applications dans le service d'activation des processus Windows (WAS, Windows Process Activation Service), qui sont lues à partir d'une file d'attente de messages. Cet exemple utilise `netMsmqBinding` et est basé sur l’exemple de [communication](../../../../docs/framework/wcf/samples/two-way-communication.md) bidirectionnelle. Dans cet exemple, le service est une application hébergée par le Web et le client est auto-hébergé. Les résultats, qui s'affichent sur la console, permettent d'observer le statut des bons de commande envoyés.
+Cet exemple illustre comment héberger des applications dans le service d'activation des processus Windows (WAS, Windows Process Activation Service), qui sont lues à partir d'une file d'attente de messages. Cet exemple utilise `netMsmqBinding` et est basé sur l’exemple de [communication bidirectionnelle](../../../../docs/framework/wcf/samples/two-way-communication.md) . Dans cet exemple, le service est une application hébergée par le Web et le client est auto-hébergé. Les résultats, qui s'affichent sur la console, permettent d'observer le statut des bons de commande envoyés.
 
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.
@@ -86,21 +86,17 @@ La liaison du client à utiliser est spécifiée à l'aide d'un fichier de confi
 Le nom de la file d'attente MSMQ est spécifié dans la section appSettings de ce fichier de configuration. Le point de terminaison du service est défini dans la section System.ServiceModel de ce même fichier.
 
 > [!NOTE]
-> Le nom de la file d'attente MSMQ et l'adresse du point de terminaison utilisent des conventions d'adressage légèrement différentes. Le nom de la file d'attente MSMQ utilise un point (.) pour l'ordinateur local et des barres obliques inverses comme séparateur dans son chemin d'accès. L’adresse de point de terminaison WCF spécifie un schéma net. msmq:, utilise «localhost» pour l’ordinateur local et utilise des barres obliques dans son chemin d’accès. Pour lire une file d'attente hébergée sur un ordinateur distant, remplacez « . » et « localhost » par le nom de cet ordinateur.
+> Le nom de la file d'attente MSMQ et l'adresse du point de terminaison utilisent des conventions d'adressage légèrement différentes. Le nom de la file d'attente MSMQ utilise un point (.) pour l'ordinateur local et des barres obliques inverses comme séparateur dans son chemin d'accès. L’adresse de point de terminaison WCF spécifie un schéma net. msmq :, utilise « localhost » pour l’ordinateur local et utilise des barres obliques dans son chemin d’accès. Pour lire une file d'attente hébergée sur un ordinateur distant, remplacez « . » et « localhost » par le nom de cet ordinateur.
 
 Un fichier .svc comportant le nom de la classe est utilisé pour héberger le code de service dans WAS.
 
 Le fichier Service.svc contient une directive permettant de créer `OrderProcessorService`.
 
-```svc
-<%@ServiceHost language="c#" Debug="true" Service="Microsoft.ServiceModel.Samples.OrderProcessorService"%>
-```
+`<%@ServiceHost language="c#" Debug="true" Service="Microsoft.ServiceModel.Samples.OrderProcessorService"%>`
 
 Ce fichier contient également une directive d’assembly permettant de vérifier que System.Transactions.dll est chargé.
 
-```svc
-<%@Assembly name="System.Transactions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"%>
-```
+`<%@Assembly name="System.Transactions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"%>`
 
 Le client crée une étendue de transaction. La communication avec le service s’effectuant dans les limites de l’étendue de la transaction, elle est considérée comme une unité atomique dans laquelle l’intégralité des messages réussissent ou échouent. La transaction est validée par l'appel de la méthode `Complete` sur l'étendue de la transaction.
 
@@ -218,7 +214,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
 1. Assurez-vous qu’IIS 7,0 est installé, car il est requis pour l’activation WAS.
 
-2. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md). En outre, vous devez installer les composants d’activation non HTTP WCF:
+2. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md). En outre, vous devez installer les composants d’activation non HTTP WCF :
 
     1. Dans le menu **Démarrer**, cliquez sur **Panneau de configuration**.
 
@@ -306,7 +302,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
     > [!WARNING]
     > L'exécution du fichier de commandes réinitialise le DefaultAppPool de sorte qu'il s'exécute en utilisant .NET Framework version 2.0.
 
-Avec le transport de liaison `netMsmqBinding`, la sécurité est activée par défaut. Les propriétés `MsmqAuthenticationMode` et `MsmqProtectionLevel` déterminent toutes deux le type de sécurité du transport. Par défaut, le mode d'authentification a la valeur `Windows` et le niveau de protection a la valeur `Sign`. Pour que MSMQ fournisse la fonctionnalité d’authentification et de signature, il doit faire partie d’un domaine. Si vous exécutez cet exemple sur un ordinateur qui ne fait pas partie d’un domaine, l’erreur suivante est reçue: «Le certificat Message Queuing interne de l’utilisateur n’existe pas».
+Avec le transport de liaison `netMsmqBinding`, la sécurité est activée par défaut. Les propriétés `MsmqAuthenticationMode` et `MsmqProtectionLevel` déterminent toutes deux le type de sécurité du transport. Par défaut, le mode d'authentification a la valeur `Windows` et le niveau de protection a la valeur `Sign`. Pour que MSMQ fournisse la fonctionnalité d’authentification et de signature, il doit faire partie d’un domaine. Si vous exécutez cet exemple sur un ordinateur qui ne fait pas partie d’un domaine, l’erreur suivante est reçue : « Le certificat Message Queuing interne de l’utilisateur n’existe pas ».
 
 ### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup"></a>Pour exécuter l'exemple sur un ordinateur joint à un groupe de travail
 
@@ -333,7 +329,7 @@ Avec le transport de liaison `netMsmqBinding`, la sécurité est activée par d�
 
     1. Exécutez Inetmgr.exe.
 
-    2. Sous **pools d’applications**, cliquez avec le bouton droit sur le pool d’applications (en général, **DefaultAppPool**), puis choisissez **définir les valeurs par défaut des pools d’applications.**
+    2. Sous **pools d’applications**, cliquez avec le bouton droit **sur le pool** d’applications (en général, **DefaultAppPool**), puis choisissez **définir les valeurs par défaut des pools d’applications.**
 
     3. Modifiez les propriétés Identity en fonction du compte d'utilisateur à utiliser.
 

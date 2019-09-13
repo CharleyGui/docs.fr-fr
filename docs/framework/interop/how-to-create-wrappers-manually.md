@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: cc2a70d8-6a58-4071-a8cf-ce28c018c09b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f834eb52476e9b04ed6aaf294deed88213961045
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 5db0ec9050c74b27d3ee25a99dcf8e2319835ffb
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59304244"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894217"
 ---
 # <a name="how-to-create-wrappers-manually"></a>Procédure : créer manuellement des wrappers
 Si vous décidez de déclarer des types COM manuellement dans du code source managé, il est recommandé de démarrer avec un fichier IDL (Interface Definition Language) existant ou une bibliothèque de types existante. Quand vous ne disposez pas du fichier IDL ou ne pouvez pas générer un fichier de bibliothèque de types, vous pouvez simuler les types COM en créant des déclarations managées et en exportant l'assembly résultant dans une bibliothèque de types.  
@@ -39,7 +39,7 @@ Si vous décidez de déclarer des types COM manuellement dans du code source man
   
  **Fichier IDL ou de bibliothèque de types**  
   
-```  
+```cpp
  [  
 object,  
 uuid(40A8C65D-2448-447A-B786-64682CBEF133),  
@@ -103,7 +103,7 @@ namespace SAServer
 
 - [Personnalisation des wrappers RCW (Runtime Callable Wrapper)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100))
 - [Types de données COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sak564ww(v=vs.100))
-- [Guide pratique pour modifier des assemblys d’interopérabilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8zbc969t(v=vs.100))
+- [Guide pratique : modifier des assemblys d’interopérabilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8zbc969t(v=vs.100))
 - [Récapitulatif de la conversion d’une bibliothèque de types en assembly](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [Tlbimp.exe (importateur de bibliothèques de types)](../tools/tlbimp-exe-type-library-importer.md)
 - [Tlbexp.exe (exportateur de bibliothèques de types)](../tools/tlbexp-exe-type-library-exporter.md)

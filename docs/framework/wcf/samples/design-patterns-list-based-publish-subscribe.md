@@ -2,12 +2,12 @@
 title: 'Modèles de conception : Publication/Abonnement par liste'
 ms.date: 03/30/2017
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
-ms.openlocfilehash: 3dbdab152e05487f9dcc9fa00ed0c653d68ab65e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 3c05e66affad8e517b0b1b5001f726abeae7b100
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045574"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928839"
 ---
 # <a name="design-patterns-list-based-publish-subscribe"></a>Modèles de conception : Publication/Abonnement par liste
 Cet exemple illustre le modèle de publication/abonnement basé sur une liste implémenté en tant que programme Windows Communication Foundation (WCF).  
@@ -23,7 +23,7 @@ Cet exemple illustre le modèle de publication/abonnement basé sur une liste im
   
  Le service utilise la communication duplex. Le contrat de service `ISampleContract` est associé à un contrat de rappel `ISampleClientCallback`. Le service implémente les opérations d'abonnement et d'annulation d'abonnement que les clients utilisent pour rejoindre ou quitter la liste des abonnés. Le service implémente également l'opération de service `PublishPriceChange` que le programme de source de données appelle pour fournir le service avec de nouvelles informations. Le logiciel client implémente l'opération de service `PriceChange` que le service appelle pour prévenir tous les abonnés d'une modification de prix.  
   
-```  
+```csharp  
 // Create a service contract and define the service operations.  
 // NOTE: The service operations must be declared explicitly.  
 [ServiceContract(SessionMode=SessionMode.Required,  
@@ -48,7 +48,7 @@ public interface ISampleClientContract
   
  Le service utilise un événement .NET Framework comme mécanisme pour informer tous les abonnés à propos des nouvelles informations. Lorsqu'un client rejoint le service en appelant l'opération d'abonnement, il fournit un gestionnaire d'événements. Lorsqu'un client part, il annule son gestionnaire d'événements de l'événement. Lorsqu'une source de données appelle le service pour signaler une modification de prix, le service déclenche l'événement. Il appelle chaque instance du service, une pour chaque client qui s'est abonné, et entraîne l'exécution de leurs gestionnaires d'événements. Chaque gestionnaire d'événements transmet les informations à son client via sa fonction de rappel.  
   
-```  
+```csharp  
 public class PriceChangeEventArgs : EventArgs  
     {  
         public string Item;  
@@ -118,7 +118,7 @@ public class PriceChangeEventArgs : EventArgs
   
 ### <a name="to-run-the-sample-on-the-same-machine"></a>Pour exécuter l'exemple sur le même ordinateur  
   
-1. Vérifiez que vous pouvez accéder au service à l’aide d’un navigateur en entrant l' `http://localhost/servicemodelsamples/service.svc`adresse suivante:. Une page de confirmation doit s'afficher en réponse.  
+1. Vérifiez que vous pouvez accéder au service à l’aide d’un navigateur en entrant l' `http://localhost/servicemodelsamples/service.svc`adresse suivante :. Une page de confirmation doit s'afficher en réponse.  
   
 2. Exécutez client. exe à partir\\de \client\bin, dans le dossier propre à la langue. L'activité du client s'affiche dans sa fenêtre de console. Lancez plusieurs clients.  
   

@@ -5,12 +5,12 @@ author: thraka
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 31a6189c0126d6dff000bb84978c1527dbe4e2ae
-ms.sourcegitcommit: 6472349821dbe202d01182bc2cfe9d7176eaaa6c
-ms.translationtype: HT
+ms.openlocfilehash: 3455720d729f813d9b6f32e433adffa4dc40dce4
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67870618"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926133"
 ---
 # <a name="tutorial-create-a-project-template"></a>Tutoriel : Créer un modèle de projet
 
@@ -19,6 +19,7 @@ Avec .NET Core, vous pouvez créer et déployer des modèles qui génèrent des 
 Dans cette partie de la série, vous découvrirez comment :
 
 > [!div class="checklist"]
+>
 > * Créer les ressources d’un modèle de projet
 > * Créer le dossier et le fichier de configuration du modèle
 > * Installer un modèle à partir d’un chemin de fichier
@@ -82,7 +83,7 @@ Nous allons mettre à jour vers la version 8.0 la version de langage C# que le p
 </Project>
 ```
 
-## <a name="build-the-project"></a>Générer le projet
+## <a name="build-the-project"></a>Créer le projet
 
 Avant de terminer un modèle de projet, vous devez le tester pour vous assurer qu’il se compile et s’exécute correctement. Dans votre terminal, exécutez la commande `dotnet run`. La sortie suivante doit s’afficher :
 

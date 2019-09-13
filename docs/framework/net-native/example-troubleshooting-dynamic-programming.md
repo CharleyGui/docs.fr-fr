@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 42ed860a-a022-4682-8b7f-7c9870784671
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fef5894f7452bd32cc4e43433aa60166db241a12
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 85d64a5577acdaa15a40ae308eb728d75d6a4c69
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910600"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894488"
 ---
 # <a name="example-troubleshooting-dynamic-programming"></a>Exemple : Résolution des problèmes de programmation dynamique
 > [!NOTE]
@@ -17,7 +17,7 @@ ms.locfileid: "69910600"
   
  Les échecs de recherche de métadonnées dans les applications développées à l’aide de la chaîne d’outils .NET Native entraînent une exception.  Certains peuvent se manifester de manière imprévisible dans une application.  L'exemple suivant montre une violation d'accès provoquée par le référencement d'un objet null :  
   
-```  
+```output
 Access violation - code c0000005 (first chance)  
 App!$3_App::Core::Util::NavigationArgs.Setup  
 App!$3_App::Core::Util::NavigationArgs..ctor  
@@ -38,9 +38,7 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
 ## <a name="what-was-the-app-doing"></a>Que faisait l'application ?  
  La première chose à noter est le mécanisme de mot clé `async` à la base de la pile.  Déterminer ce que l'application était effectivement en train de faire dans une méthode `async` peut être problématique, car la pile a perdu le contexte de l'appel d'origine et a exécuté le code `async` sur un thread différent. Toutefois, nous pouvons déduire que l'application essaie de charger sa première page.  Dans l'implémentation de `NavigationArgs.Setup`, le code suivant a provoqué la violation d'accès :  
   
-```  
-AppViewModel.Current.LayoutVM.PageMap  
-```  
+`AppViewModel.Current.LayoutVM.PageMap`  
   
  Dans ce cas, la propriété `LayoutVM` sur `AppViewModel.Current` avait pour valeur **null**.  Une absence de métadonnées a provoqué une différence de comportement subtile et a abouti à la non-initialisation d'une propriété, alors qu'elle devait être définie du point de vue de l'application.  Définir un point d'arrêt dans le code là où `LayoutVM` aurait dû être initialisée peut nous éclairer sur la situation.  Toutefois, notez que le type de `LayoutVM` est `App.Core.ViewModels.Layout.LayoutApplicationVM`.  La seule directive de métadonnées présente jusqu'à présent dans le fichier rd.xml est la suivante :  
   

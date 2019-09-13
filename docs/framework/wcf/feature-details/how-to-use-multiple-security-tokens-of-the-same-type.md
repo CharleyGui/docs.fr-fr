@@ -2,15 +2,16 @@
 title: 'Procédure : utiliser plusieurs jetons de sécurité du même type'
 ms.date: 03/30/2017
 ms.assetid: cf179f48-4ed4-4caa-86a5-ef8eecc231cd
-ms.openlocfilehash: 1b383c6ccd96d1b3d7b091b2d7c67bb166da51df
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 84009eacca113fcd83a0e4908c7d6eb0c82db7d5
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589422"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928762"
 ---
 # <a name="how-to-use-multiple-security-tokens-of-the-same-type"></a>Procédure : utiliser plusieurs jetons de sécurité du même type
-- Dans .NET Framework 3.0, un message client ne contenait qu’un seul jeton d’un type donné. Désormais, les messages peuvent contenir plusieurs jetons d'un type donné. Cette rubrique explique comment inclure plusieurs jetons du même type dans un message client.  
+
+- Dans .NET Framework 3,0, un message client ne contenait qu’un seul jeton d’un type donné. Désormais, les messages peuvent contenir plusieurs jetons d'un type donné. Cette rubrique explique comment inclure plusieurs jetons du même type dans un message client.  
   
 - Notez que vous ne pouvez pas configurer un service ainsi : un service peut contenir un seul jeton de prise en charge.  
   

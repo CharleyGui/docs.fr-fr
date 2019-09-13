@@ -4,12 +4,12 @@ description: Découvrez sans serveur une approche pratique en accédant à des e
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: adc4e1f3249cd72c423430ad4cb5dbb8eea8baf9
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: cb761524976125c816aae925f0c369eb8c76e7de
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "69577282"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926470"
 ---
 # <a name="serverless-business-scenarios-and-use-cases"></a>Scénarios métier et cas d’usage serverless
 
@@ -27,7 +27,7 @@ Une application à page unique (SPA) distincte appelle une fonction sans serveur
 
 ![Galerie d’images automatisées](./media/automated-image-gallery.png)
 
-Le référentiel complet et les instructions pour créer l’application logique sont disponibles ici: [Collage](https://github.com/JeremyLikness/Event-Grid-Glue)de la grille d’événements.
+Le référentiel complet et les instructions pour créer l’application logique sont disponibles ici : [Collage](https://github.com/JeremyLikness/Event-Grid-Glue)de la grille d’événements.
 
 ## <a name="cross-platform-mobile-client-using-xamarinforms-and-functions"></a>Client mobile multiplateforme utilisant Xamarin. Forms et des fonctions
 
@@ -41,13 +41,13 @@ L’exemple utilise Azure Functions et Microsoft Cognitive Services Service Visi
 
 ![Photo et mosaïque de Orlando](./media/orlando-eye-both.png)
 
-Par exemple, vous pouvez former votre modèle avec des points de vue Orlando, tels que l’œil-Orlando. Custom Vision reconnaîtra une image de l’œil à Orlando, et la fonction créera une photo Mosaic composée de résultats de recherche d’images Bing pour «Orlando Eye».
+Par exemple, vous pouvez former votre modèle avec des points de vue Orlando, tels que l’œil-Orlando. Custom Vision reconnaîtra une image de l’œil à Orlando, et la fonction créera une photo Mosaic composée de résultats de recherche d’images Bing pour « Orlando Eye ».
 
-Pour plus d’informations, consultez [Azure Functions générateur](https://azure.microsoft.com/resources/samples/functions-dotnet-photo-mosaic/)de mosaïques de photos.
+Pour plus d’informations, consultez [Azure Functions générateur de mosaïques de photos](https://azure.microsoft.com/resources/samples/functions-dotnet-photo-mosaic/).
 
 ## <a name="migrate-an-existing-application-to-the-cloud"></a>Migrer une application existante vers le Cloud
 
-Comme nous l’avons vu dans les chapitres précédents, il est courant d’adopter une architecture multiniveau pour héberger votre application en local. Bien que la migration des ressources «en l’or» à l’aide de machines virtuelles soit le chemin le moins risqué du Cloud, de nombreuses entreprises choisissent d’utiliser l’opportunité de refactoriser leurs applications. Heureusement, la refactorisation ne doit pas nécessairement être un effort «tout ou rien». En fait, il est possible de migrer votre application, puis de remplacer les composants par fragments par des équivalents Cloud natifs.
+Comme nous l’avons vu dans les chapitres précédents, il est courant d’adopter une architecture multiniveau pour héberger votre application en local. Bien que la migration des ressources « en l’or » à l’aide de machines virtuelles soit le chemin le moins risqué du Cloud, de nombreuses entreprises choisissent d’utiliser l’opportunité de refactoriser leurs applications. Heureusement, la refactorisation ne doit pas nécessairement être un effort « tout ou rien ». En fait, il est possible de migrer votre application, puis de remplacer les composants par fragments par des équivalents Cloud natifs.
 
 L’application utilise la fonctionnalité proxys de Azure Functions pour permettre la refactorisation d’un point de terminaison à partir d’un code local hérité vers un point de terminaison sans serveur.
 
@@ -55,7 +55,7 @@ L’application utilise la fonctionnalité proxys de Azure Functions pour permet
 
 Le proxy fournit un point de terminaison d’API unique qui est mis à jour pour rediriger les demandes individuelles au fur et à mesure qu’elles sont déplacées dans des fonctions sans serveur.
 
-Vous pouvez afficher une vidéo qui vous guide tout au long de la migration: [Tirez et passez avec Azure Functions sans serveur](https://channel9.msdn.com/Events/Connect/2017/E102). Accédez à l’exemple de code: [Apportez votre propre application](https://github.com/JeremyLikness/bring-own-app-connect-17).
+Vous pouvez afficher une vidéo qui vous guide tout au long de la migration : [Tirez et passez avec Azure Functions sans serveur](https://channel9.msdn.com/Events/Connect/2017/E102). Accédez à l’exemple de code : [Apportez votre propre application](https://github.com/JeremyLikness/bring-own-app-connect-17).
 
 ## <a name="parse-a-csv-file-and-insert-into-a-database"></a>Analyser un fichier CSV et l’insérer dans une base de données
 
@@ -77,7 +77,7 @@ Vous pouvez ensuite créer un tableau de bord Power BI pour collecter des inform
 
 ![Exemple de Power BI](./media/power-bi-example.png)
 
-Le dépôt Raccourcisseur de liens complet avec des instructions est disponible ici: [URL sans serveur raccourcisseur](https://github.com/jeremylikness/serverless-url-shortener). Vous pouvez en savoir plus sur une version simplifiée ici: [Stockage Azure pour les applications .net sans serveur en quelques minutes](https://blogs.msdn.microsoft.com/webdev/2018/01/25/azure-storage-for-serverless-net-apps-in-minutes/).
+Le dépôt Raccourcisseur de liens complet avec des instructions est disponible ici : [URL sans serveur raccourcisseur](https://github.com/jeremylikness/serverless-url-shortener). Vous pouvez en savoir plus sur une version simplifiée ici : [Stockage Azure pour les applications .net sans serveur en quelques minutes](https://devblogs.microsoft.com/aspnet/azure-storage-for-serverless-net-apps-in-minutes/).
 
 ## <a name="verify-device-connectivity-using-a-ping"></a>Vérifier la connectivité de l’appareil à l’aide d’une commande ping
 
@@ -89,7 +89,7 @@ Pour plus d’informations, consultez [Azure IOT Hub ping](https://azure.microso
 
 * [Générateur de mosaïque de photos Azure Functions](https://azure.microsoft.com/resources/samples/functions-dotnet-photo-mosaic/)
 * [Test ping Azure IoT Hub](https://azure.microsoft.com/resources/samples/iot-hub-node-ping/)
-* [Stockage Azure pour les applications .NET sans serveur en quelques minutes](https://blogs.msdn.microsoft.com/webdev/2018/01/25/azure-storage-for-serverless-net-apps-in-minutes/)
+* [Stockage Azure pour les applications .NET sans serveur en quelques minutes](https://devblogs.microsoft.com/aspnet/azure-storage-for-serverless-net-apps-in-minutes/)
 * [Apporter votre propre application](https://github.com/JeremyLikness/bring-own-app-connect-17)
 * [Laboratoire d’importation CSV](https://github.com/JeremyLikness/azure-fn-file-process-hol)
 * [Collage dans la grille d’événements](https://github.com/JeremyLikness/Event-Grid-Glue)

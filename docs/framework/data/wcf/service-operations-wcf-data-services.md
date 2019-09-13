@@ -8,18 +8,18 @@ helpviewer_keywords:
 - service operations [WCF Data Services]
 - WCF Data Services, service operations
 ms.assetid: 583a690a-e60f-4990-8991-d6efce069d76
-ms.openlocfilehash: f905eb90b47cb5ab20fd912b1cbcc62947361992
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4f36081ef1a3eec84f3cc2ced3c629109acd6a38
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779774"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894269"
 ---
 # <a name="service-operations-wcf-data-services"></a>Opérations de service (services de données WCF)
 
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vous permet de définir des opérations de service sur un service de données pour exposer des méthodes sur le serveur. Comme d'autres ressources du service des données, les opérations de service sont adressées par les URI. Les opérations de service vous permettent d'exposer la logique métier dans un service de données, comme d'implémenter la logique de validation, pour appliquer la sécurité basée sur les rôles, ou exposer des fonctions d'interrogation spécialisées. Les opérations de service sont des méthodes ajoutées à la classe de service de données dérivée de <xref:System.Data.Services.DataService%601>. Comme pour toutes les autres ressources du service de données, vous pouvez fournir des paramètres à la méthode d'opération de service. Par exemple, l’URI d’opération de service suivant (basé sur le service de données de [démarrage rapide](quickstart-wcf-data-services.md) ) `city` passe la valeur `London` au paramètre :
 
-```
+```http
 http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'
 ```
 
@@ -28,7 +28,7 @@ La définition de cette opération de service est la suivante :
 [!code-csharp[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#serviceoperationdef)]
 [!code-vb[Astoria Northwind Service#ServiceOperationDef](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#serviceoperationdef)]
 
-Vous pouvez utiliser la <xref:System.Data.Services.DataService%601.CurrentDataSource%2A> du <xref:System.Data.Services.DataService%601> pour accéder directement à la source de données que le service de données utilise. Pour plus d'informations, voir [Procédure : Définir une opération](how-to-define-a-service-operation-wcf-data-services.md)de service.
+Vous pouvez utiliser la <xref:System.Data.Services.DataService%601.CurrentDataSource%2A> du <xref:System.Data.Services.DataService%601> pour accéder directement à la source de données que le service de données utilise. Pour plus d’informations, consultez [Guide pratique pour Définir une opération](how-to-define-a-service-operation-wcf-data-services.md)de service.
 
 Pour plus d’informations sur l’appel d’une opération de service à partir d’une application cliente .NET Framework, consultez [appel des opérations de service](calling-service-operations-wcf-data-services.md).
 
@@ -70,7 +70,7 @@ Les spécifications suivantes s'appliquent lors de la définition d'opérations 
 
 Vous pouvez adresser des opérations de service en plaçant le nom de la méthode dans le premier segment de chemin d’accès d’un URI. Par exemple, l'URI suivant accède à une opération `GetOrdersByState` qui retourne une collection <xref:System.Linq.IQueryable%601> d'objets `Orders`.
 
-```
+```http
 http://localhost:12345/Northwind.svc/GetOrdersByState?state='CA'&includeItems=true
 ```
 
@@ -86,7 +86,7 @@ Voici les types de retour valides pour une opération de service :
 
 Des segments de chemin d'accès ou des options de requêtes supplémentaires peuvent être ajoutés à l'URI en fonction du type de retour de l'opération de service. Par exemple, l’URI suivant accède à une opération `GetOrdersByCity` qui retourne une collection <xref:System.Linq.IQueryable%601> d’objets `Orders`, classée par `RequiredDate` dans l’ordre décroissant, avec les objets `Order_Details` connexes :
 
-```
+```http
 http://localhost:12345/Northwind.svc/GetOrdersByCity?city='London'&$expand=Order_Details&$orderby=RequiredDate desc
 ```
 
@@ -100,7 +100,7 @@ La visibilité des opérations de service à l'échelle du service est contrôl�
 > [!NOTE]
 > Si une opération de service possède un type de retour qui est masqué en restreignant l’accès sur les jeux d’entités sous-jacents, l’opération de service ne sera pas disponible pour les applications clientes.
 
-Pour plus d'informations, voir [Procédure : Définir une opération](how-to-define-a-service-operation-wcf-data-services.md)de service.
+Pour plus d’informations, consultez [Guide pratique pour Définir une opération](how-to-define-a-service-operation-wcf-data-services.md)de service.
 
 ## <a name="raising-exceptions"></a>Déclenchement des exceptions
 

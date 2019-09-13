@@ -9,12 +9,12 @@ helpviewer_keywords:
 - querying the data service [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: cc4ec9e9-348f-42a6-a78e-1cd40e370656
-ms.openlocfilehash: c0d2d1dac43dd178680adbc123d5ce4f88fc0cc0
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 659e3ba02367feee4539a984b679173ee4544d17
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779888"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894316"
 ---
 # <a name="linq-considerations-wcf-data-services"></a>Considérations sur LINQ (WCF Data Services)
 Cette rubrique fournit des informations sur la façon dont les requêtes LINQ sont composées et exécutées lorsque vous utilisez le client [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] et décrit les restrictions d'utilisation de LINQ pour interroger un service de données qui implémente [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. Pour plus d’informations sur la composition et l’exécution de requêtes [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]sur un service de données basé sur, consultez [interrogation du service de données](querying-the-data-service-wcf-data-services.md).  
@@ -32,7 +32,7 @@ Cette rubrique fournit des informations sur la façon dont les requêtes LINQ so
   
  Cette requête LINQ est traduite dans l’URI de requête suivant qui est exécuté sur le service de données de [démarrage rapide](quickstart-wcf-data-services.md) basé sur Northwind :  
   
-```  
+```http
 http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight gt 30  
 ```  
   

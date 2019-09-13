@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 1d8e3398-00d8-47d5-a084-214f9859d3d7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 764b0d535413fc1e5e23a2e47221789aa807ff38
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 6955c24c12936ef37bedea2a1dd290bac45a5a2e
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59321729"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894913"
 ---
 # <a name="accessing-custom-attributes"></a>Accès aux attributs personnalisés
 Une fois que des attributs associés aux éléments de programme, la réflexion peut être utilisée pour interroger leur existence et leurs valeurs. Dans le .NET Framework version 1.0 et 1.1, les attributs personnalisés sont examinés dans le contexte d’exécution. Le .NET Framework version 2.0 fournit un nouveau contexte de chargement, le contexte de réflexion uniquement, qui peut être utilisé pour examiner le code qui ne peut pas être chargé pour l’exécution.  
@@ -34,7 +34,7 @@ Une fois que des attributs associés aux éléments de programme, la réflexion 
   
  L’exemple C# suivant est un modèle de conception d’attribut personnalisé classique. Il illustre le modèle de réflexion d’attribut personnalisé du runtime.  
   
-```  
+```csharp
 System.DLL  
 public class DescriptionAttribute : Attribute  
 {  

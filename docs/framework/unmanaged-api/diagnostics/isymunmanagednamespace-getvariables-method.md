@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c5b65cdeb36b8abf17c74d41a7fc7dfb34fa5731
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 813f57377c1885b09190ada3c73f4391a3f2d931
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61939488"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895050"
 ---
 # <a name="isymunmanagednamespacegetvariables-method"></a>ISymUnmanagedNamespace::GetVariables, méthode
-Retourne toutes les variables définies avec une portée globale dans cet espace de noms.  
+Retourne toutes les variables définies au niveau de la portée globale au sein de cet espace de noms.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp
 HRESULT GetVariables(  
     [in]  ULONG32  cVars,  
     [out] ULONG32  *pcVars,  
@@ -39,19 +39,19 @@ HRESULT GetVariables(
   
 ## <a name="parameters"></a>Paramètres  
  `cVars`  
- [in] Un `ULONG32` qui indique la taille de la `pVars` tableau.  
+ dans Qui indique la taille `pVars` du tableau. `ULONG32`  
   
  `pcVars`  
- [out] Un pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les espaces de noms.  
+ à Pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les espaces de noms.  
   
  `pVars`  
- [out] Pointeur vers une mémoire tampon qui contient les espaces de noms.  
+ à Pointeur vers une mémoire tampon qui contient les espaces de noms.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK si la méthode réussit ; Sinon, E_FAIL ou un autre code d’erreur.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
 ## <a name="requirements"></a>Configuration requise  
- **En-tête :** CorSym.idl, CorSym.h  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

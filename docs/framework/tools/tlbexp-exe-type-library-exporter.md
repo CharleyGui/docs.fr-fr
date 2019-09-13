@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: a487d61b-d166-467b-a7ca-d8b52fbff42d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 23bb88127875e0e608c8e8de54ba669f84aa1da5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: f990c5194c2e5dc1422aab96c7608c019ae9855b
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937985"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894750"
 ---
 # <a name="tlbexpexe-type-library-exporter"></a>Tlbexp.exe (exportateur de bibliothèques de types)
 L'outil Type Library Exporter (Exportateur de bibliothèques de types) génère une bibliothèque de types décrivant les types définis dans un assembly du Common Language Runtime.  
@@ -26,7 +26,7 @@ L'outil Type Library Exporter (Exportateur de bibliothèques de types) génère 
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 tlbexp assemblyName [options]  
 ```  
   
@@ -56,7 +56,7 @@ tlbexp assemblyName [options]
 > [!NOTE]
 > Les options de ligne de commande de Tlbexp.exe ne respectent pas la casse et peuvent être fournies dans n'importe quel ordre. Il vous suffit de spécifier les éléments de l'option nécessaires à son identification de manière unique. Par exemple, **/n** équivaut à **/nologo**, et **/o:** *outfile.tlb* à **/out:** *outfile.tlb*.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Tlbexp.exe génère une bibliothèque de types comportant les définitions des types définis dans l'assembly. Des applications, telles que Visual Basic 6.0, peuvent utiliser la bibliothèque de types générée pour créer une liaison vers les types .NET définis dans l'assembly.  
   
 > [!IMPORTANT]
@@ -74,14 +74,14 @@ tlbexp assemblyName [options]
   
  Si vous utilisez l'attribut <xref:System.Runtime.InteropServices.MarshalAsAttribute> pour spécifier une valeur <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArraySubType> de `VT_UNKOWN` ou `VT_DISPATCH`, Tlbexp.exe ignore toute utilisation subséquente du champ <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType>. Examinons, par exemple, les signatures suivantes :  
   
-```  
+```csharp
 [return:MarshalAs(UnmanagedType.SafeArray, SafeArraySubType=VarEnum.VT_UNKNOWN, SafeArrayUserDefinedSubType=typeof(ConsoleKeyInfo))] public Array StructUnkSafe(){return null;}  
 [return:MarshalAs(UnmanagedType.SafeArray, SafeArraySubType=VarEnum.VT_DISPATCH, SafeArrayUserDefinedSubType=typeof(ConsoleKeyInfo))] public Array StructDispSafe(){return null;}  
 ```  
   
  la bibliothèque de types suivante est générée :  
   
-```  
+```cpp 
 [id(0x60020004)]  
 HRESULT StructUnkSafe([out, retval] SAFEARRAY(IUnknown*)* pRetVal);  
 [id(0x60020005)]  
@@ -99,13 +99,13 @@ HRESULT StructDispSafe([out, retval] SAFEARRAY(IDispatch*)* pRetVal);
 ## <a name="examples"></a>Exemples  
  La commande suivante génère une bibliothèque de types portant le même nom que celui de l'assembly figurant dans `myTest.dll`.  
   
-```  
+```console  
 tlbexp myTest.dll  
 ```  
   
  La commande suivante génère une bibliothèque de types portant le nom `clipper.tlb`.  
   
-```  
+```console  
 tlbexp myTest.dll /out:clipper.tlb  
 ```  
   
@@ -113,19 +113,19 @@ tlbexp myTest.dll /out:clipper.tlb
   
  Utilisez d'abord Tlbimp.exe pour importer la bibliothèque de types `myLib.tlb` et enregistrez-la sous `myLib.dll`.  
   
-```  
+```console  
 tlbimp myLib.tlb /out:myLib.dll  
 ```  
   
  La commande suivante utilise le compilateur C# pour compiler `Sample.dll,` faisant référence à `myLib.dll` créé au cours de l'exemple précédent.  
   
-```  
+```console  
 CSC Sample.cs /reference:myLib.dll /out:Sample.dll  
 ```  
   
  La commande suivante génère une bibliothèque de types pour `Sample.dll` faisant référence à `myLib.dll`.  
   
-```  
+```console  
 tlbexp Sample.dll  
 ```  
   

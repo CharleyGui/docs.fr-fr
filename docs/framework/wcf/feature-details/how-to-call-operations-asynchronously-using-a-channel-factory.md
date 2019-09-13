@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cc17dd47-b9ad-451c-a362-e36e0aac7ba0
-ms.openlocfilehash: 3080514d06119a2f1b621cff16056ac7577c30b3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: adc4d519e8d29fef5595ab7ddc3168462525c4e2
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966800"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895236"
 ---
 # <a name="how-to-call-operations-asynchronously-using-a-channel-factory"></a>Procédure : appeler des opérations de façon asynchrone à l’aide d’une fabrique de canaux
-Cette rubrique décrit comment un client peut accéder de façon asynchrone à une opération de service lors de l'utilisation d'une application cliente basée sur <xref:System.ServiceModel.ChannelFactory%601>. (Lors de l'utilisation d'un objet <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType> pour appeler un service, vous pouvez utiliser le modèle d'appel asynchrone commandé par événement. Pour plus d’informations, consultez [Guide pratique pour Appeler des opérations de service](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)de façon asynchrone. Pour plus d’informations sur le modèle d’appel asynchrone basé sur les événements, consultez [modèle asynchrone basé sur les événements (EAP)](../../../standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).)  
+Cette rubrique décrit comment un client peut accéder de façon asynchrone à une opération de service lors de l'utilisation d'une application cliente basée sur <xref:System.ServiceModel.ChannelFactory%601>. (Lors de l'utilisation d'un objet <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType> pour appeler un service, vous pouvez utiliser le modèle d'appel asynchrone commandé par événement. Pour plus d'informations, voir [Procédure : Appeler des opérations de service](../../../../docs/framework/wcf/feature-details/how-to-call-wcf-service-operations-asynchronously.md)de façon asynchrone. Pour plus d’informations sur le modèle d’appel asynchrone basé sur les événements, consultez [modèle asynchrone basé sur les événements (EAP)](../../../standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).)  
   
- Le service dans cette rubrique implémente l'interface `ICalculator`. Le client peut appeler les opérations sur cette interface de façon asynchrone, ce qui signifie que des opérations telles que `Add` sont divisées en deux méthodes : `BeginAdd` et `EndAdd`, la première initiant l'appel et la seconde récupérant le résultat au terme de l'opération. Pour obtenir un exemple illustrant comment implémenter une opération de façon asynchrone dans un [service, consultez Procédure: Implémentez une opération](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)de service asynchrone. Pour plus d’informations sur les opérations synchrones et asynchrones, consultez [opérations synchrones et asynchrones](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
+ Le service dans cette rubrique implémente l'interface `ICalculator`. Le client peut appeler les opérations sur cette interface de façon asynchrone, ce qui signifie que des opérations telles que `Add` sont divisées en deux méthodes : `BeginAdd` et `EndAdd`, la première initiant l'appel et la seconde récupérant le résultat au terme de l'opération. Pour obtenir un exemple illustrant comment implémenter une opération de façon asynchrone dans un [service, consultez Procédure : Implémentez une opération](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)de service asynchrone. Pour plus d’informations sur les opérations synchrones et asynchrones, consultez [opérations synchrones et asynchrones](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
   
 ## <a name="procedure"></a>Procédure  
   
@@ -23,7 +23,7 @@ Cette rubrique décrit comment un client peut accéder de façon asynchrone à u
   
 1. Exécutez l’outil [ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) avec `/async` l’option, comme indiqué dans la commande suivante.  
   
-    ```  
+    ```console
     svcutil /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost:8000/servicemodelsamples/service/mex /a  
     ```  
   

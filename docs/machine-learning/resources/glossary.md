@@ -4,12 +4,12 @@ description: La liste suivante est une compilation des principaux termes Machine
 ms.custom: seodec18
 ms.topic: reference
 ms.date: 07/31/2019
-ms.openlocfilehash: 1c979d2c4567285146ab87f359116efb506815a1
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
-ms.translationtype: HT
+ms.openlocfilehash: 4d4bb80c6582facbcb11664309fde230bcfa4e7b
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710538"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929266"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>Glossaire Machine Learning des principaux termes
 
@@ -37,7 +37,7 @@ Dans ML.NET, un catalogue est une collection de fonctions d’extension, regroup
 
 Par exemple, chaque tâche de machine learning (classification binaire, régression, classement, etc.) dispose d’un catalogue d’algorithmes de machine learning (entraîneurs). Le catalogue des entraîneurs de classification binaire est : <xref:Microsoft.ML.BinaryClassificationCatalog.BinaryClassificationTrainers>.
 
-## <a name="classification"></a>Classification
+## <a name="classification"></a>classification ;
 
 Lorsque les données sont utilisées pour prédire une catégorie, la tâche [Apprentissage automatique supervisé](#supervised-machine-learning) est appelée classification. [Classification binaire](#binary-classification) fait référence à la prédiction de deux catégories uniquement (par exemple, la classification d’une image en tant qu’image de « chat » ou de « chien »). [Classification multiclasse](#multiclass-classification) fait référence à la prédiction de plusieurs catégories (par exemple, lors de la classification d’une image en tant qu’image d’une race spécifique de chien).
 
@@ -48,6 +48,7 @@ Dans une [régression](#regression), une métrique d’évaluation qui indique l
 ## <a name="data"></a>Données
 
 Les données sont essentielles à toute application de machine learning. Dans ML.NET, les données sont représentées par des objets <xref:Microsoft.ML.IDataView>. Les objets de vue de données :
+
 - Sont composés de lignes et de colonnes
 - Sont évalués tardivement, autrement dit ils ne chargent des données que quand une opération les demande
 - Contiennent un schéma qui définit le type, le format et la longueur de chaque colonne
@@ -122,7 +123,7 @@ Un vecteur de [fonctionnalité](#feature) constitué uniquement de valeurs numé
 
 Toutes les opérations nécessaires pour adapter un modèle à un jeu de données. Un pipeline se compose des étapes d’importation, de transformation, de fonctionnalisation et d’apprentissage des données. Une fois son apprentissage terminé, le pipeline se transforme en modèle.
 
-## <a name="precision"></a>Précision
+## <a name="precision"></a>Precision
 
 Dans une [classification](#classification), la précision d’une classe correspond au nombre d’éléments correctement prévus comme appartenant à cette classe, divisé par le nombre total d’éléments prévus comme appartenant à la classe.
 
@@ -137,7 +138,7 @@ Dans une [classification](#classification), le rappel d’une classe correspond 
 - La régularisation $L_1$ attribue une pondération nulle aux caractéristiques non significatives. La taille du modèle enregistré peut être plus petite après ce type de régularisation.
 - La régularisation $L_2$ réduit la plage de pondérations des caractéristiques non significatives. Il s’agit d’un processus plus général et moins sensible aux valeurs hors norme.
 
-## <a name="regression"></a>Régression
+## <a name="regression"></a>régression ;
 
 Une tâche [Apprentissage automatique supervisé](#supervised-machine-learning) où la sortie est une valeur réelle, par exemple, double. Exemple : prédiction de cours d’actions. Pour plus d’informations, consultez la section [Régression](tasks.md#regression) de la rubrique [Tâches d’apprentissage automatique](tasks.md).
 
@@ -153,7 +154,7 @@ Dans une [régression](#regression), une métrique d’évaluation correspondant
 
 Dans une [régression](#regression), une métrique d’évaluation correspondant à la racine carrée de la moyenne des carrés des erreurs.
 
-## <a name="scoring"></a>Notation
+## <a name="scoring"></a>Soulign
 
 Le score est le processus qui consiste à appliquer de nouvelles données à un modèle d’apprentissage automatique entraîné et à générer des prédictions. Le calcul des scores est également appelé « inférence ». Selon le type de modèle, le score peut être une valeur brute, une probabilité ou une catégorie.
 

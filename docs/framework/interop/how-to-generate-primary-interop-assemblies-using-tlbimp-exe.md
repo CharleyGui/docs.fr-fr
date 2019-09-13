@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 5419011c-6e57-40f6-8c65-386db8f7a651
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 67b9b48587802b43e90a7f35ab8cbb3b2ee025b0
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
-ms.translationtype: HT
+ms.openlocfilehash: 5d88da9a043aa2ed75b25f1c59fa991b97576d52
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567254"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894202"
 ---
 # <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a>Procédure : générer des assemblys PIA à l’aide de Tlbimp.exe
 
@@ -49,23 +49,23 @@ Un assembly PIA avec un numéro de version différent de celui de la bibliothè
 
 Vous pouvez également encapsuler plusieurs versions d'une bibliothèque de types. Pour obtenir des instructions, consultez [Guide pratique pour encapsuler plusieurs versions de bibliothèques de types](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1565h6hc(v=vs.100)).
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Dans l'exemple suivant, la bibliothèque de types COM `LibUtil.tlb` est importée et l'assembly `LibUtil.dll` est signé avec un nom fort à l'aide du fichier de clé `CompanyA.snk`. En ne spécifiant pas de nom d'espace de noms, cet exemple génère l'espace de noms par défaut `LibUtil`.
 
-```
+```console
 tlbimp LibUtil.tlb /primary /keyfile:CompanyA.snk /out:LibUtil.dll
 ```
 
 Pour un nom plus descriptif (qui utilise la règle de nommage *Nom_fournisseur*.*Nom_bibliothèque*), l’exemple suivant remplace le nom de fichier d’assembly et le nom d’espace de noms par défaut.
 
-```
+```console
 tlbimp LibUtil.tlb /primary /keyfile:CompanyA.snk /namespace:CompanyA.LibUtil /out:CompanyA.LibUtil.dll
 ```
 
 L'exemple suivant importe `MyLib.tlb`, qui référence `CompanyA.LibUtil.dll`, et signe l'assembly `CompanyB.MyLib.dll` avec un nom fort à l'aide du fichier de clé `CompanyB.snk`. L'espace de noms `CompanyB.MyLib` remplace le nom d'espace de noms par défaut.
 
-```
+```console
 tlbimp MyLib.tlb /primary /keyfile:CompanyB.snk /namespace:CompanyB.MyLib /reference:CompanyA.LibUtil.dll /out:CompanyB.MyLib.dll
 ```
 

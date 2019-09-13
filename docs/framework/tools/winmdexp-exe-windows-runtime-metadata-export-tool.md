@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: d2ce0683-343d-403e-bb8d-209186f7a19d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7e6f9f553af4899d502584cbde5341f7061f169d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 0664a68d258380fd9e4824b80f0d7a244cb61e85
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937950"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894777"
 ---
 # <a name="winmdexpexe-windows-runtime-metadata-export-tool"></a>Winmdexp.exe (outil d'exportation de métadonnées Windows Runtime)
 L'outil Metadata Export Windows Runtime (Winmdexp.exe) transforme un module .NET Framework en un fichier qui contient des métadonnées Windows Runtime. Bien que les assemblys .NET Framework et les fichiers de métadonnées Windows Runtime utilisent le même format physique, il y a des différences dans le contenu des tables de métadonnées. Autrement dit, les assemblys .NET Framework ne sont pas utilisables automatiquement comme composants Windows Runtime. Le processus qui transforme un module .NET Framework en composant Windows Runtime s’appelle *exportation*. Dans .NET Framework 4.5 et .NET Framework 4.5.1, le fichier de métadonnées Windows (.winmd) résultant contient à la fois les métadonnées et l’implémentation.  
@@ -25,7 +25,7 @@ L'outil Metadata Export Windows Runtime (Winmdexp.exe) transforme un module .NET
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 winmdexp [options] winmdmodule  
 ```  
   
@@ -45,7 +45,7 @@ winmdexp [options] winmdmodule
 |`/warnaserror+`|Spécifie que tous les avertissements doivent être traités comme des erreurs.|  
 |**@** `responsefile`|Spécifie un fichier de réponse (.rsp) qui contient des options (et éventuellement `winmdmodule`). Chaque ligne dans `responsefile` doit contenir un seul argument ou une seule option.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Winmdexp.exe n'est pas conçu pour convertir un assembly. NET Framework arbitraire en un fichier .winmd. Il requiert un module compilé avec l'option `/target:winmdobj`, et des restrictions supplémentaires s'appliquent. La plus importante de ces restrictions est que tous les types qui sont exposés dans la surface API de l'assembly doivent être de type Windows Runtime. Pour plus d'informations, consultez la section « Déclaration de types dans les composants Windows Runtime » de l'article [Création de composants Windows Runtime en C# et Visual Basic](https://go.microsoft.com/fwlink/p/?LinkID=238313) dans le Centre de développement Windows.  
   
  Lorsque vous écrivez une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] ou un composant Windows Runtime avec C# ou Visual Basic, .NET Framework fournit le support pour effectuer la programmation avec Windows Runtime de manière plus naturelle. Ce sujet est abordé dans l’article [Prise en charge .NET Framework pour les applications Windows Store et Windows Runtime](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md). Dans le processus, certains types de Windows Runtime utilisés couramment sont mappés en types .NET Framework. Winmdexp.exe inverse ce processus et produit une surface API qui utilise les types Windows Runtime correspondants. Par exemple, les types qui sont construits à partir de l’interface <xref:System.Collections.Generic.IList%601> sont mappés à des types qui sont construits à partir de l’interface Windows Runtime[IVector\<T>](https://go.microsoft.com/fwlink/p/?LinkId=251132).  

@@ -3,16 +3,17 @@ title: Nouveautés de C# 7.0 | Guide C#
 description: Découvrez les nouvelles fonctionnalités disponibles dans la version 7.0 du langage C#.
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 148ecdf7a3a99ac73132593272ecff3a5bb4195e
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 0f26a9647503ebb667d961fefaa05a25a71ec6f5
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105716"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926574"
 ---
 # <a name="whats-new-in-c-70"></a>Nouveautés de C# 7.0
 
 C# 7.0 ajoute un certain nombre de nouvelles fonctionnalités au langage C# :
+
 - [Variables `out`](#out-variables)
   - Vous pouvez déclarer des valeurs `out` inline comme arguments de la méthode dans laquelle elles sont utilisées.
 - [Tuples](#tuples)

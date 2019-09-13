@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 823e9444-27aa-4f1f-be8e-0486d67f54c0
-ms.openlocfilehash: 21a0a02516a1fbe24378235b910df0a602900a21
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: cc0e8a5e7d254fc4b34566d2252869a2da4af3db
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790380"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894285"
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>interrogation du service de données (services de données WCF)
 
@@ -56,7 +56,7 @@ Le [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] client prend en c
 
 Cette requête LINQ est traduite dans l’URI de requête suivant qui est exécuté sur le service de données de [démarrage rapide](quickstart-wcf-data-services.md) basé sur Northwind :
 
-```
+```http
 http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight gt 30
 ```
 
@@ -77,7 +77,7 @@ Vous pouvez utiliser l'option de requête `$orderby` pour organiser et filtrer u
 [!code-csharp[Astoria Northwind Client#OrderWithFilter](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#orderwithfilter)]
 [!code-vb[Astoria Northwind Client#OrderWithFilter](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#orderwithfilter)]
 
-Vous pouvez appeler consécutivement la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> pour construire des expressions de requête complexes. Pour plus d'informations, voir [Procédure : Ajoutez des options de requête à une requête](how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)de service de données.
+Vous pouvez appeler consécutivement la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> pour construire des expressions de requête complexes. Pour plus d’informations, consultez [Guide pratique pour Ajoutez des options de requête à une requête](how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)de service de données.
 
 Les options de requête fournissent une autre méthode pour exprimer les composants syntactiques d'une requête LINQ. Pour plus d’informations, consultez [considérations relatives à LINQ](linq-considerations-wcf-data-services.md).
 
@@ -129,7 +129,7 @@ La quantité de données retournée par une requête peut également être rédu
 
 Dans certains scénarios, il est utile de connaître le nombre total d'entités d'un jeu d'entités et pas simplement le nombre retourné par la requête. Appelez la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.IncludeTotalCount%2A> sur l'instance <xref:System.Data.Services.Client.DataServiceQuery%601> pour demander que le nombre total d'entités du jeu soit inclus dans le résultat de la requête. Dans ce cas, la propriété <xref:System.Data.Services.Client.QueryOperationResponse%601.TotalCount%2A> du <xref:System.Data.Services.Client.QueryOperationResponse%601> retourné renvoie le nombre total d'entités du jeu.
 
-Vous pouvez également obtenir uniquement le nombre total d'entités du jeu comme un <xref:System.Int32> ou comme une valeur <xref:System.Int64> en appelant les méthodes <xref:System.Linq.Enumerable.Count%2A> ou <xref:System.Linq.Enumerable.LongCount%2A> respectivement. Lorsque ces méthodes sont appelées, le <xref:System.Data.Services.Client.QueryOperationResponse%601> n'est pas retourné ; seule la valeur du compteur est retournée. Pour plus d’informations, consultez [Guide pratique pour Déterminez le nombre d’entités retournées](number-of-entities-returned-by-a-query-wcf.md)par une requête.
+Vous pouvez également obtenir uniquement le nombre total d'entités du jeu comme un <xref:System.Int32> ou comme une valeur <xref:System.Int64> en appelant les méthodes <xref:System.Linq.Enumerable.Count%2A> ou <xref:System.Linq.Enumerable.LongCount%2A> respectivement. Lorsque ces méthodes sont appelées, le <xref:System.Data.Services.Client.QueryOperationResponse%601> n'est pas retourné ; seule la valeur du compteur est retournée. Pour plus d'informations, voir [Procédure : Déterminez le nombre d’entités retournées](number-of-entities-returned-by-a-query-wcf.md)par une requête.
 
 ## <a name="in-this-section"></a>Dans cette section
 
@@ -149,7 +149,7 @@ Vous pouvez également obtenir uniquement le nombre total d'entités du jeu comm
 
 - [Guide pratique pour Définir des en-têtes dans la demande du client](how-to-set-headers-in-the-client-request-wcf-data-services.md)
 
-- [Guide pratique pour Résultats de la requête de projet](how-to-project-query-results-wcf-data-services.md)
+- [Guide pratique : Résultats de la requête de projet](how-to-project-query-results-wcf-data-services.md)
 
 ## <a name="see-also"></a>Voir aussi
 

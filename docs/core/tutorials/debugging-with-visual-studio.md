@@ -3,12 +3,12 @@ title: Déboguer une application .NET Core Hello World avec Visual Studio 2017
 description: Découvrez comment déboguer une application Hello World écrite en C# ou Visual Basic avec Visual Studio 2017.
 ms.date: 12/15/2017
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 4c6a9fe46e29addf53319adf2351af3a7af05119
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
-ms.translationtype: HT
+ms.openlocfilehash: f318c163db6cfdd6de5aa99edebfeeb4bb470a02
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063052"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926165"
 ---
 # <a name="debug-your-c-or-visual-basic-net-core-hello-world-application-using-visual-studio-2017"></a>Déboguer une application Hello World .NET Core C# ou Visual Basic avec Visual Studio 2017
 
@@ -27,6 +27,7 @@ Vous devez toujours commencer par tester votre programme en mode Débogage. Le m
 Exécutez votre programme en mode Débogage et essayez quelques fonctionnalités de débogage :
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
 1. Un *point d’arrêt* interrompt temporairement l’exécution de l’application *avant* la ligne sur laquelle le point d’arrêt est exécuté. 
 
    Définissez un point d’arrêt sur la ligne `Console.WriteLine($"\nHello, {name}, on {date:d} at {date:t}!");` en cliquant dans la marge de gauche de la fenêtre de code ou en choisissant l’élément de menu **Débogage** > **Basculer le point d’arrêt** avec la ligne sélectionnée. Comme le montre l’illustration suivante, Visual Studio affiche la ligne sur laquelle le point d’arrêt est défini en la mettant en surbrillance et en affichant un cercle rouge dans la marge de gauche.
@@ -56,7 +57,9 @@ Exécutez votre programme en mode Débogage et essayez quelques fonctionnalités
    ![Fenêtre de console montrant la valeur Jack à l’invite What is your name?, suivie de Hello Gracie](./media/debugging-with-visual-studio/debug-changed-value.png)
 
 1. Appuyez sur n’importe quelle touche pour quitter l’application et terminer le mode Debug.
+
 # <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
+
 1. Un *point d’arrêt* interrompt temporairement l’exécution de l’application *avant* la ligne sur laquelle le point d’arrêt est exécuté. 
 
    Définissez un point d’arrêt sur la ligne `Console.WriteLine(vbCrLf + $"Hello, {name}, on {currentDate:d} at {currentDate:t}!")` en cliquant dans la marge de gauche de la fenêtre de code ou en choisissant l’élément de menu **Débogage** > **Basculer le point d’arrêt** avec la ligne sélectionnée. Comme le montre l’illustration suivante, Visual Studio affiche la ligne sur laquelle le point d’arrêt est défini en la mettant en surbrillance et en affichant un cercle rouge dans la marge de gauche.
@@ -82,6 +85,7 @@ Exécutez votre programme en mode Débogage et essayez quelques fonctionnalités
    ![Fenêtre de console montrant les valeurs modifiées entrées dans la fenêtre Exécution](./media/debugging-with-visual-studio/debug-changed-value.png)
 
 1. Appuyez sur n’importe quelle touche pour quitter l’application et terminer le mode Debug.
+
 ---
 
 ## <a name="setting-a-conditional-breakpoint"></a>Définition d’un point d'arrêt conditionnel
@@ -91,6 +95,7 @@ Votre programme affiche la chaîne entrée par l’utilisateur. Que se passe-t-i
 Pour définir un point d’arrêt conditionnel et voir ce qu’il se passe lorsque l’utilisateur n’entre pas de chaîne, procédez comme suit :
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
 1. Cliquez avec le bouton droit sur le point rouge qui représente le point d’arrêt. Dans le menu contextuel, sélectionnez **Conditions** pour ouvrir la boîte de dialogue **Paramètres de point d’arrêt**. Cochez la case **Conditions**.
 
    ![Éditeur montrant le panneau des paramètres de point d’arrêt - C#](./media/debugging-with-visual-studio/breakpoint-settings.png)
@@ -126,7 +131,9 @@ Pour définir un point d’arrêt conditionnel et voir ce qu’il se passe lorsq
 1. Appuyez sur une touche pour fermer la fenêtre de console et quitter le mode débogage.
 
 1. Supprimez le point d’arrêt en cliquant sur le point dans la marge gauche de la fenêtre de code, ou en choisissant l’élément de menu **Débogage > Basculer le point d’arrêt** avec la ligne sélectionnée.
+
 # <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
+
 1. Cliquez avec le bouton droit sur le point rouge qui représente le point d’arrêt. Dans le menu contextuel, sélectionnez **Conditions** pour ouvrir la boîte de dialogue **Paramètres de point d’arrêt**. Cochez la case **Conditions**.
 
    ![Éditeur montrant le panneau des paramètres de point d’arrêt - Visual Basic](./media/debugging-with-visual-studio/vb-breakpointsettings.png)
@@ -162,12 +169,14 @@ Pour définir un point d’arrêt conditionnel et voir ce qu’il se passe lorsq
 1. Appuyez sur une touche pour fermer la fenêtre de console et quitter le mode débogage.
 
 1. Supprimez le point d’arrêt en cliquant sur le point dans la marge gauche de la fenêtre de code, ou en choisissant l’élément de menu **Débogage > Basculer le point d’arrêt** avec la ligne sélectionnée.
+
 ---
 ## <a name="stepping-through-a-program"></a>Exécution pas à pas d’un programme
 
 Visual Studio vous permet également de parcourir un programme ligne par ligne et de surveiller son exécution. En règle générale, on définit un point d’arrêt et on utilise cette fonctionnalité pour suivre le déroulement du programme sur une petite portion de son code. Comme votre programme est petit, nous pouvons exécuter pas à pas la totalité du programme en procédant comme suit :
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
+
 1. Dans la barre de menus, choisissez **Débogage** > **Pas à pas détaillé** ou appuyez sur la touche F11. Visual Studio met en surbrillance et affiche une flèche en regard de la ligne suivante de l’exécution.
 
    ![Méthode pas à pas détaillée dans Visual Studio - C#](./media/debugging-with-visual-studio/step-into-method.png)
@@ -191,7 +200,9 @@ Visual Studio vous permet également de parcourir un programme ligne par ligne e
 1. Sélectionnez **Débogage** > **Pas à pas sortant**, ou appuyez sur Maj et la touche F11. Cela arrête l’exécution pas à pas. La fenêtre de console affiche un message et attend que vous appuyiez sur une touche.
 
 1. Appuyez sur une touche pour fermer la fenêtre de console et quitter le mode débogage.
+
 # <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
+
 1. Dans la barre de menus, choisissez **Débogage** > **Pas à pas détaillé** ou appuyez sur la touche F11. Visual Studio met en surbrillance et affiche une flèche en regard de la ligne suivante de l’exécution.
 
    ![Méthode pas à pas détaillée dans Visual Studio - Visual Basic](./media/debugging-with-visual-studio/vb-step-into-method.png)
@@ -215,6 +226,7 @@ Visual Studio vous permet également de parcourir un programme ligne par ligne e
 1. Sélectionnez **Débogage** > **Pas à pas sortant**, ou appuyez sur Maj et la touche F11. Cela arrête l’exécution pas à pas. La fenêtre de console affiche un message et attend que vous appuyiez sur une touche.
 
 1. Appuyez sur une touche pour fermer la fenêtre de console et quitter le mode débogage.
+
 ---
 
 ## <a name="building-a-release-version"></a>Génération d’une version Release

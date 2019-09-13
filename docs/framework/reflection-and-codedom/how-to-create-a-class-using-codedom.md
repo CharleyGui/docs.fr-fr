@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 0ceb70fe-36e1-49bb-922b-e9f615c20a14
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 906007902c6b66d88da0d3145625e56f2a7e2b55
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 6b3f7363ec5f8c954dd55a9500dcf8f2e302424f
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592516"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894893"
 ---
 # <a name="how-to-create-a-class-using-codedom"></a>Procédure : créer une classe à l’aide de CodeDOM
 Les procédures suivantes expliquent comment créer et compiler un graphique CodeDOM qui génère une classe contenant deux champs, trois propriétés, une méthode, un constructeur et un point d’entrée.  
@@ -107,7 +107,7 @@ Les procédures suivantes expliquent comment créer et compiler un graphique Cod
   
  Le code source généré produit la sortie suivante quand il est compilé et exécuté.  
   
-```  
+```output
 The object:  
  width = 5.3,  
  height = 6.9,  

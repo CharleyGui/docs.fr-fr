@@ -3,12 +3,12 @@ title: Utilisation de LINQ
 description: Ce didacticiel vous apprend à générer des séquences avec LINQ, à écrire des méthodes pour les requêtes LINQ et à faire la distinction entre l’évaluation stricte et l’évaluation paresseuse.
 ms.date: 10/29/2018
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: f80567510509ba0c7f205ccbd5e587f9ad31f531
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 72bb7475fc6b18650e0870bf99c4b8ddbac3ec9f
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785869"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926616"
 ---
 # <a name="working-with-linq"></a>Utilisation de LINQ
 
@@ -339,6 +339,7 @@ Dans la pratique, certains algorithmes fonctionnent bien avec l’évaluation st
 ## <a name="conclusion"></a>Conclusion
 
 Dans ce projet, nous avons vu comment :
+
 - utiliser des requêtes LINQ pour agréger des données en une séquence explicite ;
 - écrire des méthodes d’extension pour ajouter des fonctionnalités personnalisées aux requêtes LINQ ;
 - localiser les zones du code où les requêtes LINQ risquent de poser des problèmes de performances, comme une dégradation de la vitesse ;
@@ -347,6 +348,7 @@ Dans ce projet, nous avons vu comment :
 En dehors de LINQ, vous avez appris une technique de tour de cartes utilisée par les magiciens. Les magiciens utilisent le mélange faro pour pouvoir contrôler le déplacement de chaque carte dans le jeu. Maintenant que vous le savez, gardez le secret !
 
 Pour plus d’informations sur LINQ, voir :
+
 - [LINQ (Language Integrated Query)](../programming-guide/concepts/linq/index.md)
   - [Introduction à LINQ](../programming-guide/concepts/linq/index.md)
   - [Opérations de requête LINQ de base (C#)](../programming-guide/concepts/linq/basic-linq-query-operations.md)

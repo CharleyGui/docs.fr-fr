@@ -3,12 +3,12 @@ title: Utiliser les fonctionnalités de critères spéciaux pour étendre les ty
 description: Ce tutoriel avancé montre comment utiliser des techniques de critères spéciaux pour créer des fonctionnalités à l’aide de données et d’algorithmes créés séparément.
 ms.date: 03/13/2019
 ms.custom: mvc
-ms.openlocfilehash: b142bad9a4058a884d9e511424bc50856152b67e
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 366791b113d3b1f9ccef303553a3656f7e803a32
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105565"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926655"
 ---
 # <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Tutoriel : Utiliser les fonctionnalités de critères spéciaux pour étendre les types de données
 
@@ -17,6 +17,7 @@ C# 7 a introduit des fonctionnalités de critères spéciaux de base. Elles ont 
 Dans ce tutoriel, vous allez apprendre à :
 
 > [!div class="checklist"]
+>
 > - Reconnaître les situations dans lesquelles les critères spéciaux sont nécessaires.
 > - Utiliser des expressions de critères spéciaux pour implémenter des comportements en fonction des types et des valeurs de propriété.
 > - Combiner des critères spéciaux avec d’autres techniques pour créer des algorithmes complets.
@@ -293,7 +294,7 @@ Pour cette fonctionnalité, nous allons utiliser les critères spéciaux, mais e
 
 Le tableau suivant montre les combinaisons de valeurs d’entrée et le multiplicateur tarifaire :
 
-| Jour        | réflexion         | Sens | Multiplicateur |
+| jour        | Time         | Direction | Multiplicateur |
 | ---------- | ------------ | --------- |--------:|
 | Semaine    | Heure de pointe du matin | Vers l’intérieur de la ville   | x 2,00  |
 | Semaine    | Heure de pointe du matin | Vers l’extérieur de la ville  | x 1,00  |

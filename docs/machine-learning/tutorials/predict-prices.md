@@ -4,19 +4,20 @@ description: Ce tutoriel montre comment générer un modèle de régression avec
 ms.date: 05/09/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18, title-hack-0516
-ms.openlocfilehash: fe3afab4cbd3f77ed4498cc5081180910d7d0b9e
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
-ms.translationtype: HT
+ms.openlocfilehash: c9bf91ce5188a512524337f981366040ec09f6f6
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666622"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929445"
 ---
 # <a name="tutorial-predict-prices-using-regression-with-mlnet"></a>Tutoriel : Prédire des prix à l’aide de la régression avec ML.NET
 
 Ce tutoriel montre comment créer un [modèle de régression](../resources/glossary.md#regression) avec ML.NET pour prédire des prix, plus précisément, des courses de taxi à New York.
 
-Dans ce didacticiel, vous apprendrez à :
+Ce tutoriel vous montre comment effectuer les opérations suivantes :
 > [!div class="checklist"]
+>
 > * Préparer et comprendre les données
 > * Charger et transformer les données
 > * Choisir un algorithme d’apprentissage
@@ -62,7 +63,7 @@ Le jeu de données fourni contient les colonnes suivantes :
 
 Créez des classes pour les données d’entrée et les prédictions :
 
-1. Dans l **’Explorateur de solutions**, cliquez avec le bouton de droite sur le projet, puis sélectionnez **Ajouter** > **Nouvel élément**.
+1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **Nouvel élément**.
 1. Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez **Classe**, puis remplacez la valeur du champ **Nom** par *TaxiTrip.cs*. Ensuite, sélectionnez le bouton **Ajouter**.
 1. Ajoutez les directives `using` suivantes au nouveau fichier :
 
@@ -266,9 +267,10 @@ Félicitations ! Vous avez créé un modèle Machine Learning pour prédire le 
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce didacticiel, vous avez appris à :
+Dans ce tutoriel, vous avez appris à :
 
 > [!div class="checklist"]
+>
 > * Préparer et comprendre les données
 > * Créer un pipeline d’apprentissage
 > * Charger et transformer les données

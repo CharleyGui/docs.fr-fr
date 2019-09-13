@@ -2,12 +2,12 @@
 title: 'Procédure pas à pas : Accès au Web avec Async et await (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
-ms.openlocfilehash: 225046992badba7013193163a191dbf068f0da6a
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 72132c4884f3d9bc94de447a122354b3e0dc2ee5
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106960"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928449"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>Procédure pas à pas : Accès au Web avec Async et await (Visual Basic)
 
@@ -17,11 +17,12 @@ Pour plus d’informations sur la fonctionnalité Async, consultez [programmatio
 
 Cette procédure pas à pas commence avec une application Windows Presentation Foundation (WPF) synchrone qui additionne le nombre d’octets figurant dans une liste de sites web. La procédure pas à pas convertit ensuite l’application en solution asynchrone en utilisant les nouvelles fonctionnalités.
 
-Si vous ne souhaitez pas générer les applications vous-même, vous pouvez télécharger «exemple Async: Accès à la procédure pas àC# pas Web (et Visual Basic)» à partir des [exemples de code du développeur](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f).
+Si vous ne souhaitez pas générer les applications vous-même, vous pouvez télécharger «exemple Async : Accès à la procédure pas àC# pas Web (et Visual Basic)» à partir des [exemples de code du développeur](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f).
 
 Dans cette procédure pas à pas, vous effectuez les tâches suivantes :
 
 > [!div class="checklist"]
+>
 > - [Créer une application WPF](#create-a-wpf-application)
 > - [Concevoir un MainWindow simple WPF simple](#design-a-simple-wpf-mainwindow)
 > - [Ajouter une référence](#add-a-reference)
@@ -114,7 +115,7 @@ Visual Studio 2012 ou version ultérieure doit être installé sur votre ordina
 
 1. Dans la fenêtre de conception, MainWindow. xaml, double-cliquez sur le bouton **Démarrer** pour `startButton_Click` créer le gestionnaire d’événements dans MainWindow. Xaml. vb.
 
-2. Dans MainWindow. Xaml. vb, copiez le code suivant dans le corps `startButton_Click`de:
+2. Dans MainWindow. Xaml. vb, copiez le code suivant dans le corps `startButton_Click`de :
 
     ```vb
     resultsTextBox.Clear()
@@ -134,7 +135,7 @@ Visual Studio 2012 ou version ultérieure doit être installé sur votre ordina
 
     - `DisplayResults`, qui affiche le nombre d'octets dans le tableau d'octets pour chaque URL.
 
-    Copiez les quatre méthodes suivantes, puis collez-les `startButton_Click` sous le gestionnaire d’événements dans MainWindow. Xaml. vb:
+    Copiez les quatre méthodes suivantes, puis collez-les `startButton_Click` sous le gestionnaire d’événements dans MainWindow. Xaml. vb :
 
     ```vb
     Private Sub SumPageSizes()
@@ -269,7 +270,7 @@ Visual Studio 2012 ou version ultérieure doit être installé sur votre ordina
 
     L'appel à `webReq.GetResponseAsync` retourne un `Task(Of WebResponse)` ou `Task<WebResponse>`. Un `Await` opérateur est ensuite appliqué à la tâche pour récupérer la `WebResponse` valeur.
 
-    Si votre méthode async a un travail à effectuer qui ne dépend pas de l'achèvement de la tâche, elle peut poursuivre ce travail entre ces deux instructions, après l'appel à la méthode async et avant l'application de l'opérateur await. Pour obtenir des exemples, consultez [Guide pratique pour Effectuez plusieurs requêtes Web en parallèle en utilisant Async et await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md) et [Comment: Étendez la procédure pas à pas Async à l’aide de](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)Task. WhenAll (Visual Basic).
+    Si votre méthode async a un travail à effectuer qui ne dépend pas de l'achèvement de la tâche, elle peut poursuivre ce travail entre ces deux instructions, après l'appel à la méthode async et avant l'application de l'opérateur await. Pour obtenir des exemples, consultez [Guide pratique pour Effectuez plusieurs requêtes Web en parallèle en utilisant Async et await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md) et [Comment : Étendez la procédure pas à pas Async à l’aide de](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)Task. WhenAll (Visual Basic).
 
 3. Comme vous avez ajouté l’opérateur `Await` à l’étape précédente, une erreur de compilation se produit. L’opérateur peut être utilisé uniquement dans les méthodes marquées avec le modificateur [Async](../../../../visual-basic/language-reference/modifiers/async.md) . Ignorez l'erreur quand que vous répétez les étapes de conversion pour remplacer l'appel à `CopyTo` par un appel à `CopyToAsync`.
 

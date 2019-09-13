@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0face17f-43ca-417b-9b33-737c0fc360df
-ms.openlocfilehash: 2d075bfebf7b5cbd2b2ce031a1c3855a925405a2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2c0a6f1477ceec5471c22fa3e46d85f5856b298e
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964030"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895064"
 ---
 # <a name="how-to-call-wcf-service-operations-asynchronously"></a>Procédure : Appeler des opérations de service WCF de façon asynchrone
-Cette rubrique présente comment un client peut accéder de façon asynchrone à une opération de service. Le service dans cette rubrique implémente l'interface `ICalculator`. Le client peut appeler les opérations sur cette interface de manière asynchrone à l'aide du modèle d'appel asynchrone commandé par événement. (Pour plus d’informations sur le modèle d’appel asynchrone basé sur les événements, consultez [programmation multithread avec le modèle asynchrone basé sur les événements](https://go.microsoft.com/fwlink/?LinkId=248184)). Pour obtenir un exemple qui montre comment implémenter une opération de façon asynchrone dans un service [, consultez Procédure: Implémentez une opération](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)de service asynchrone. Pour plus d’informations sur les opérations synchrones et asynchrones, consultez [opérations synchrones et asynchrones](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
+Cette rubrique présente comment un client peut accéder de façon asynchrone à une opération de service. Le service dans cette rubrique implémente l'interface `ICalculator`. Le client peut appeler les opérations sur cette interface de manière asynchrone à l'aide du modèle d'appel asynchrone commandé par événement. (Pour plus d’informations sur le modèle d’appel asynchrone basé sur les événements, consultez [programmation multithread avec le modèle asynchrone basé sur les événements](https://go.microsoft.com/fwlink/?LinkId=248184)). Pour obtenir un exemple qui montre comment implémenter une opération de façon asynchrone dans un service [, consultez Procédure : Implémentez une opération](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)de service asynchrone. Pour plus d’informations sur les opérations synchrones et asynchrones, consultez [opérations synchrones et asynchrones](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md).  
   
 > [!NOTE]
-> Le modèle d'appel asynchrone commandé par événement n'est pas pris en charge lorsqu'il utilise un <xref:System.ServiceModel.ChannelFactory%601>. Pour plus d’informations sur l’exécution d' <xref:System.ServiceModel.ChannelFactory%601>appels asynchrones à l’aide de, consultez [procédure: Appeler des opérations de façon asynchrone à l'](../../../../docs/framework/wcf/feature-details/how-to-call-operations-asynchronously-using-a-channel-factory.md)aide d’une fabrique de canaux.  
+> Le modèle d'appel asynchrone commandé par événement n'est pas pris en charge lorsqu'il utilise un <xref:System.ServiceModel.ChannelFactory%601>. Pour plus d’informations sur l’exécution d' <xref:System.ServiceModel.ChannelFactory%601>appels asynchrones à l’aide de, consultez [procédure : Appeler des opérations de façon asynchrone à l'](../../../../docs/framework/wcf/feature-details/how-to-call-operations-asynchronously-using-a-channel-factory.md)aide d’une fabrique de canaux.  
   
 ## <a name="procedure"></a>Procédure  
   
@@ -24,11 +24,11 @@ Cette rubrique présente comment un client peut accéder de façon asynchrone à
   
 1. Exécutez l’outil [ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) avec `/async` les options de `/tcv:Version35` commande et, comme indiqué dans la commande suivante.  
   
-    ```  
+    ```console
     svcutil /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost:8000/servicemodelsamples/service/mex /a /tcv:Version35  
     ```  
   
-     Cela génère, en plus des opérations asynchrones synchrones et standard basées sur les délégués, une classe de client WCF qui contient:  
+     Cela génère, en plus des opérations asynchrones synchrones et standard basées sur les délégués, une classe de client WCF qui contient :  
   
     - Deux opérations`operationName` de <> `Async` pour une utilisation avec l’approche d’appel asynchrone basée sur les événements. Par exemple :  
   
@@ -65,4 +65,4 @@ Cette rubrique présente comment un client peut accéder de façon asynchrone à
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique : Implémenter une opération de service asynchrone](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)
+- [Guide pratique pour Implémenter une opération de service asynchrone](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)

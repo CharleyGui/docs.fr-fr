@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 027832a2-9b43-4fd9-9b45-7f4196261a4e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2411b69dac6ef8945336a4c4e014cbf6687f702a
-ms.sourcegitcommit: 56ac30a336668124cb7d95d8ace16bd985875147
-ms.translationtype: HT
+ms.openlocfilehash: 09179ebe123f1287c8b057783bb421153f5e1183
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65469726"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894184"
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>Marshaling de classes, de structures, et d'unions
 Les classes et les structures sont similaires dans .NET Framework. Elles peuvent toutes deux posséder des champs, des propriétés et des événements. Elles peuvent également posséder des méthodes statiques et non statiques. Une différence notable existe toutefois : les structures sont des types valeur et les classes sont des types référence.  
@@ -52,25 +52,25 @@ Les classes et les structures sont similaires dans .NET Framework. Elles peuvent
   
 - **TestStructInStruct** exportée depuis PinvokeLib.dll.  
   
-    ```  
+    ```cpp  
     int TestStructInStruct(MYPERSON2* pPerson2);  
     ```  
   
 - **TestStructInStruct3** exportée depuis PinvokeLib.dll.  
   
-    ```  
+    ```cpp  
     void TestStructInStruct3(MYPERSON3 person3);  
     ```  
   
 - **TestArrayInStruct** exportée depuis PinvokeLib.dll.  
   
-    ```  
+    ```cpp  
     void TestArrayInStruct( MYARRAYSTRUCT* pStruct );  
     ```  
   
  [PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) est une bibliothèque non managée personnalisée qui contient des implémentations des fonctions précédemment listées et quatre structures : **MYPERSON**, **MYPERSON2**, **MYPERSON3** et **MYARRAYSTRUCT**. Ces structures contiennent les éléments suivants :  
   
-```  
+```cpp  
 typedef struct _MYPERSON  
 {  
    char* first;   
@@ -135,13 +135,13 @@ typedef struct _MYARRAYSTRUCT
   
 - **FindFirstFile** exportée depuis Kernel32.dll.  
   
-    ```  
+    ```cpp
     HANDLE FindFirstFile(LPCTSTR lpFileName, LPWIN32_FIND_DATA lpFindFileData);  
     ```  
   
  La structure d'origine passée à la fonction contient les éléments suivants :  
   
-```  
+```cpp
 typedef struct _WIN32_FIND_DATA   
 {  
   DWORD    dwFileAttributes;   
@@ -178,13 +178,13 @@ typedef struct _WIN32_FIND_DATA
   
 - **TestUnion** exportée depuis PinvokeLib.dll.  
   
-    ```  
+    ```cpp
     void TestUnion(MYUNION u, int type);  
     ```  
   
  [PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll) est une bibliothèque non managée personnalisée qui contient une implémentation de la fonction précédemment répertoriée, ainsi que deux unions, **MYUNION** et **MYUNION2**. Les unions peuvent contenir les éléments suivants :  
   
-```  
+```cpp
 union MYUNION  
 {  
     int number;  
@@ -221,13 +221,13 @@ union MYUNION2
   
 - **GetSystemTime** exportée depuis Kernel32.dll.  
   
-    ```  
+    ```cpp
     VOID GetSystemTime(LPSYSTEMTIME lpSystemTime);  
     ```  
   
  La structure d'origine passée à la fonction contient les éléments suivants :  
   
-```  
+```cpp
 typedef struct _SYSTEMTIME {   
     WORD wYear;   
     WORD wMonth;   
@@ -256,7 +256,7 @@ typedef struct _SYSTEMTIME {
   
  Cet exemple utilise des fonctions wrapper et des appels de code non managé définis dans [PinvokeLib.dll](marshaling-data-with-platform-invoke.md#pinvokelibdll), également fournis dans les fichiers sources. Il utilise la fonction `TestOutArrayOfStructs` et la structure `MYSTRSTRUCT2`. La structure contient les éléments suivants :  
   
-```  
+```cpp
 typedef struct _MYSTRSTRUCT2  
 {  
    char* buffer;  

@@ -4,20 +4,21 @@ description: Découvrez comment exécuter une application .NET pour Apache Spark
 ms.date: 06/27/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 7ce7d7aec6c15385d3d797d5a548519eea33b764
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
-ms.translationtype: HT
+ms.openlocfilehash: 004256a2fe369b026b15151dfc72ae379da0be8e
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "69577006"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928484"
 ---
 # <a name="tutorial-get-started-with-net-for-apache-spark"></a>Tutoriel : Bien démarrer avec .NET pour Apache Spark
 
 Ce tutoriel vous explique comment exécuter une application .NET pour Apache Spark avec .NET Core sur Windows.
 
-Dans ce didacticiel, vous apprendrez à :
+Ce tutoriel vous montre comment effectuer les opérations suivantes :
 
 > [!div class="checklist"]
+>
 > * Préparer votre environnement Windows pour .NET pour Apache Spark
 > * Télécharger **Microsoft.Spark.Worker**
 > * Générer et exécuter une application .NET pour Apache Spark simple
@@ -122,8 +123,9 @@ Félicitations ! Vous avez créé et exécuté une application .NET pour Apache
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dans ce didacticiel, vous avez appris à :
+Dans ce tutoriel, vous avez appris à :
 > [!div class="checklist"]
+>
 > * Préparer votre environnement Windows pour .NET pour Apache Spark
 > * Télécharger **Microsoft.Spark.Worker**
 > * Générer et exécuter une application .NET pour Apache Spark simple

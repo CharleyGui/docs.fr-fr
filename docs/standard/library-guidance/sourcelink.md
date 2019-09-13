@@ -4,12 +4,12 @@ description: Bonnes pratiques relatives à l’utilisation de Source Link pour a
 author: jamesnk
 ms.author: mairaw
 ms.date: 01/15/2019
-ms.openlocfilehash: 9d3e2b0b3aedbab150072bf6eebff4acb5f8a0b7
-ms.sourcegitcommit: 0d0a6e96737dfe24d3257b7c94f25d9500f383ea
-ms.translationtype: HT
+ms.openlocfilehash: 7530c984ce4bbe9e40362bd550bec57ac585a550
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65211673"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928988"
 ---
 # <a name="source-link"></a>Source Link
 
@@ -31,6 +31,7 @@ Vous pouvez utiliser [NuGet Package Explorer](https://github.com/NuGetPackageExp
 
 > [!TIP]
 > Vous pouvez améliorer davantage l’expérience de débogage d’un développeur en ajoutant des attributs de débogueur à vos types.
+>
 > * <xref:System.Diagnostics.DebuggerDisplayAttribute> peut personnaliser la façon dont une classe ou un champ s’affiche dans les fenêtres de variables du débogueur.
 > * <xref:System.Diagnostics.DebuggerStepThroughAttribute> demande au débogueur de parcourir le code au lieu d’y effectuer un pas à pas détaillé.
 > * <xref:System.Diagnostics.DebuggerBrowsableAttribute> contrôle si un membre est affiché dans les fenêtres de variables du débogueur.

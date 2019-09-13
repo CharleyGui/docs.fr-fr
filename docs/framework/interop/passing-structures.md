@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 9b92ac73-32b7-4e1b-862e-6d8d950cf169
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e932481496aef7fd0533054316deb32f65e95deb
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
-ms.translationtype: HT
+ms.openlocfilehash: 9e1eff9d1ef9f36c80f71e738fdd4dc56a9b6ec6
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063179"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894137"
 ---
 # <a name="passing-structures"></a>Passage de structures
 De nombreuses fonctions non managées s’attendent à ce que vous passiez, en tant que paramètre de la fonction, des membres de structures (types définis par l’utilisateur en Visual Basic) ou des membres de classes qui sont définis dans le code managé. Lors du passage de structures ou de classes à du code non managé à l’aide de l’appel de code non managé, vous devez fournir des informations supplémentaires afin de conserver la disposition et l’alignement d’origine. Cette rubrique présente l’attribut <xref:System.Runtime.InteropServices.StructLayoutAttribute>, qui vous permet de définir des types mis en forme. Pour les classes et structures managées, vous pouvez sélectionner parmi plusieurs comportements de disposition prévisible fournis par l’énumération **LayoutKind**.  
@@ -38,7 +38,7 @@ De nombreuses fonctions non managées s’attendent à ce que vous passiez, en t
 ## <a name="declaring-and-passing-structures"></a>Déclaration et passage de structures  
  L’exemple suivant montre comment définir les structures `Point` et `Rect` dans le code managé, et comment passer les types en tant que paramètre à la fonction **PtInRect** dans le fichier User32.dll. **PtInRect** a la signature non managée suivante :  
   
-```  
+```cpp
 BOOL PtInRect(const RECT *lprc, POINT pt);  
 ```  
   
@@ -92,7 +92,7 @@ internal static class NativeMethods
 ## <a name="declaring-and-passing-classes"></a>Déclaration et passage de classes  
  Vous pouvez passer les membres d’une classe à une fonction DLL non managée, à condition que la classe ait une disposition de membre fixe. L’exemple suivant montre comment passer les membres de la classe `MySystemTime`, qui sont définis dans un ordre séquentiel, à **GetSystemTime** dans le fichier User32.dll. **GetSystemTime** a la signature non managée suivante :  
   
-```  
+```cpp
 void GetSystemTime(SYSTEMTIME* SystemTime);  
 ```  
   

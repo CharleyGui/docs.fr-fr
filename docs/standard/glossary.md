@@ -3,12 +3,12 @@ title: Glossaire .NET
 description: Découvrez la signification de certains termes utilisés dans la documentation .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: caff1ee4c8e3ad133016b774fdb235bd1ef59637
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: e1894d57a613531fecba6786529a735431d01423
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106921"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929080"
 ---
 # <a name="net-glossary"></a>Glossaire .NET
 
@@ -85,6 +85,7 @@ Le terme « écosystème .NET » diffère des termes tels que « pile .NET �
 En général, ensemble complet d’API qui facilite le développement et le déploiement d’applications basées sur une technologie particulière. Selon ce sens général, ASP.NET Core et Windows Forms sont des exemples de frameworks d’application. Voir aussi [bibliothèque](#library).
 
 Le mot « framework » a une signification technique plus spécifique dans les termes suivants :
+
 - [.NET Framework](#net-framework)
 - [framework cible](#target-framework)
 - [TFM (moniker de la version cible de .Net Framework)](#tfm)
@@ -174,7 +175,7 @@ Ensemble de bibliothèques et d’outils qui permettent aux développeurs de cr�
 
 Consultez [Vue d’ensemble du SDK .NET Core](../core/sdk.md).
 
-## <a name="net-framework"></a>.NET Framework
+## <a name="net-framework"></a>.NET Framework
 
 Implémentation de .NET qui s’exécute uniquement sur Windows. Inclut le Common Language Runtime (CLR), la bibliothèque de classes de base et des bibliothèques de framework d’application telles qu’ASP.NET, Windows Forms et WPF.
 
@@ -210,7 +211,7 @@ Un package NuGet &mdash; ou simplement un package &mdash; est un fichier *.zip* 
 
 Le fichier *.zip* porte l’extension *.nupkg* et peut contenir des composants, tels que des fichiers *.dll* et des fichiers *.xml*, à utiliser avec plusieurs frameworks et versions cibles. Quand ils sont installés dans une application ou une bibliothèque, les composants appropriés sont sélectionnés en fonction du framework cible spécifié par l’application ou la bibliothèque. Les composants qui définissent l’interface se trouvent dans le dossier *ref*, tandis que les ressources qui définissent l’implémentation se trouvent dans le dossier *lib*.
 
-## <a name="platform"></a>platform
+## <a name="platform"></a>plateforme
 
 Système d’exploitation et le matériel sur lequel il s’exécute, tel que Windows, macOS, Linux, iOS et Android.
 

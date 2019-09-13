@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 0c25ff6c-bff3-422e-b017-146a3ee86cb9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e210f14c74efe214be06a1cb901a144dd92af5e0
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: 46475cbc8517fc73d8b7fd868c7632e5c85a7726
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168875"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894796"
 ---
 # <a name="signtoolexe-sign-tool"></a>SignTool.exe (outil Sign Tool)
 L'outil Signature est un outil en ligne de commande qui signe numériquement les fichiers, vérifie les signatures dans les fichiers et horodate les fichiers.  
@@ -23,7 +23,7 @@ L'outil Signature est un outil en ligne de commande qui signe numériquement les
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 signtool [command] [options] [file_name | ...]  
 ```  
   
@@ -151,61 +151,61 @@ signtool [command] [options] [file_name | ...]
 ## <a name="examples"></a>Exemples  
  La commande suivante ajoute le fichier catalogue MyCatalogFileName.cat au composant système et à la base de données de pilotes. L'option `/u` génère un nom unique si nécessaire pour éviter de remplacer un fichier catalogue existant nommé `MyCatalogFileName.cat`.  
   
-```  
+```console  
 signtool catdb /v /u MyCatalogFileName.cat  
 ```  
   
  La commande suivante signe un fichier automatiquement à l'aide du meilleur certificat.  
   
-```  
+```console  
 signtool sign /a MyFile.exe  
 ```  
   
  La commande suivante signe numériquement un fichier à l'aide d'un certificat stocké dans un fichier PFX protégé par un mot de passe.  
   
-```  
+```console  
 signtool sign /f MyCert.pfx /p MyPassword MyFile.exe  
 ```  
   
  La commande suivante signe numériquement et horodate un fichier. Le certificat utilisé pour signer le fichier est stocké dans un fichier PFX.  
   
-```  
+```console  
 signtool sign /f MyCert.pfx /t http://timestamp.digicert.com MyFile.exe  
 ```  
   
  La commande suivante signe un fichier à l'aide d'un certificat situé dans le magasin `My` qui a un nom d'objet `My Company Certificate`.  
   
-```  
+```console  
 signtool sign /n "My Company Certificate" MyFile.exe  
 ```  
   
  La commande suivante signe un contrôle ActiveX et fournit des informations qui sont affichées par Internet Explorer lorsque l'utilisateur est invité à installer le contrôle.  
   
-```  
+```console  
 Signtool sign /f MyCert.pfx /d: "MyControl" /du http://www.example.com/MyControl/info.html MyControl.exe  
 ```  
   
  La commande suivante horodate à un fichier qui a déjà été signé numériquement.  
   
-```  
+```console  
 signtool timestamp /t http://timestamp.digicert.com MyFile.exe  
 ```  
   
  La commande suivante vérifie qu'un fichier a été signé.  
   
-```  
+```console  
 signtool verify MyFile.exe  
 ```  
   
  La commande suivante vérifie un fichier système qui a peut-être été signé dans un catalogue.  
   
-```  
+```console  
 signtool verify /a SystemFile.dll  
 ```  
   
  La commande suivante vérifie un fichier système qui est signé dans un catalogue nommé `MyCatalog.cat`.  
   
-```  
+```console  
 signtool verify /c MyCatalog.cat SystemFile.dll  
 ```  
   

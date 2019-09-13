@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: ec0a8d63-11b3-4acd-b398-da1e37e97382
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f9c34b237655eb49b6a44c366586b3cabb5a684f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: e8d9f7acfcd8dfc4d0653916138ecb05665eb420
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69937979"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894590"
 ---
 # <a name="tlbimpexe-type-library-importer"></a>Tlbimp.exe (Type Library Importer)
 L''importateur de bibliothèques de types convertit les définitions de types présentes dans une bibliothèque de types COM en définitions équivalentes dans un assembly de Common Language Runtime. Le résultat de Tlbimp.exe est un fichier binaire (un assembly) qui contient les métadonnées de runtime pour les types définis dans la bibliothèque de types d'origines. Vous pouvez examiner ce fichier à l’aide d’outils comme [Ildasm.exe](ildasm-exe-il-disassembler.md).  
@@ -28,7 +28,7 @@ L''importateur de bibliothèques de types convertit les définitions de types pr
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 tlbimp tlbFile [options]  
 ```  
   
@@ -73,7 +73,7 @@ tlbimp tlbFile [options]
 > [!NOTE]
 > Les options de ligne de commande de Tlbimp.exe ne font pas l'objet d'une distinction minuscules/majuscules et peuvent être fournies dans n'importe quel ordre. Il vous suffit de spécifier les éléments de l'option nécessaires à son identification de manière unique. Par conséquent, **/n** équivaut à **/nologo** et **/ou:** *outfile.dll* équivaut à **/out:** *outfile.dll*.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Tlbimp.exe effectue d'un seul tenant les conversions sur la totalité d'une bibliothèque de types. Vous ne pouvez pas utiliser cet outil dans le but de générer des informations de type pour un sous-ensemble de types définis dans une bibliothèque de types unique.  
   
  Il est souvent utile ou nécessaire d’assigner des [noms forts](../app-domains/strong-named-assemblies.md) aux assemblys. Par conséquent, Tlbimp.exe comprend des options permettant de fournir les informations nécessaires pour générer des assemblys portant un nom fort. Les options **/keyfile:** et **/keycontainer:** permettent de signer les assemblys avec des noms forts. Par conséquent, il est logique de fournir uniquement une seule de ces options à la fois.  
@@ -87,31 +87,31 @@ tlbimp tlbFile [options]
 ## <a name="examples"></a>Exemples  
  La commande suivante génère un assembly dont le nom est identique à celui de la bibliothèque de types présente dans `myTest.tlb` et qui porte l'extension .dll.  
   
-```  
+```console  
 tlbimp myTest.tlb   
 ```  
   
  La commande suivante génère un assembly portant le nom `myTest.dll`.  
   
-```  
+```console  
 tlbimp  myTest.tlb  /out:myTest.dll  
 ```  
   
  La commande suivante génère un assembly avec le même nom que celui de la bibliothèque de types spécifiée par `MyModule.dll\1` et avec l’extension .dll. `MyModule.dll\1` doit se trouver dans le répertoire actif.  
   
-```  
+```console  
 tlbimp MyModule.dll\1  
 ```  
   
  La commande suivante génère un assembly portant le nom `myTestLib.dll` pour la bibliothèque de types `TestLib.dll`. L’option **/transform:dispret** transforme tous les paramètres [out, retval] des méthodes sur les dispinterfaces dans la bibliothèque de types en valeur de retour dans la bibliothèque managée.  
   
-```  
+```console  
 tlbimp TestLib.dll /transform:dispret /out:myTestLib.dll  
 ```  
   
  Dans l'exemple précédent, la bibliothèque de types `TestLib.dll` contient une méthode dispinterface nommée `SomeMethod` qui retourne void et a un paramètre [out, retval]. Le code suivant est la signature de méthode de bibliothèque de types d'entrées de `SomeMethod` dans `TestLib.dll`.  
   
-```  
+```cpp  
 void SomeMethod([out, retval] VARIANT_BOOL*);  
 ```  
   

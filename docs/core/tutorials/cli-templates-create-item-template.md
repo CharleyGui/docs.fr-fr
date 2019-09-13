@@ -5,12 +5,12 @@ author: thraka
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 4d47146913ed83ff3dd029558f79f23b4f54ce19
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 5183781d6a131aa395cf7c1fd8a09e05ed0bd71d
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849510"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926152"
 ---
 # <a name="tutorial-create-an-item-template"></a>Tutoriel : Créer un modèle d’élément
 
@@ -19,6 +19,7 @@ Avec .NET Core, vous pouvez créer et déployer des modèles qui génèrent des 
 Dans cette partie de la série, vous découvrirez comment :
 
 > [!div class="checklist"]
+>
 > * Créer une classe pour un modèle d’élément
 > * Créer le dossier et le fichier de configuration du modèle
 > * Installer un modèle à partir d’un chemin de fichier

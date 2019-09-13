@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00c12376-cb26-4317-86ad-e6e9c089be57
-ms.openlocfilehash: 7cd02a0a315ffdb155af09ac4e4fabbea1724a4d
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: fabd9b94b8c0a3f0e0db220e84d6c2eca3537c50
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780831"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894421"
 ---
 # <a name="sql-server-express-user-instances"></a>Instances utilisateur SQL Server Express
 Microsoft SQL Server Express Edition (SQL Server Express) prend en charge une nouvelle fonctionnalité, l’instance utilisateur, disponible uniquement avec le fournisseur de données .NET Framework pour SQL Server (`SqlClient`). Une instance utilisateur est une instance séparée du moteur de base de données SQL Server Express qui est générée par une instance parente. Les instances utilisateur permettent aux utilisateurs qui ne sont pas des administrateurs système sur leur ordinateur local de s'attacher et de se connecter aux bases de données SQL Server Express. Chaque instance s'exécute dans le contexte de sécurité de l'utilisateur individuel, sur la base d'une instance par utilisateur.  
@@ -26,9 +26,9 @@ Microsoft SQL Server Express Edition (SQL Server Express) prend en charge une
 ## <a name="enabling-user-instances"></a>Activation des instances utilisateur  
  Pour générer des instances utilisateur, une instance parente de SQL Server Express doit être en cours d'exécution. Les instances utilisateur sont activées par défaut lors de l’installation de SQL Server Express, et elles peuvent être activées ou désactivées de manière explicite par un administrateur système qui exécute la procédure stockée système **sp_configure** sur l’instance parente.  
   
-```  
+```sql  
 -- Enable user instances.  
-sp_configure 'user instances enabled','1'   
+sp_configure 'user instances enabled','1'
   
 -- Disable user instances.  
 sp_configure 'user instances enabled','0'  
@@ -51,7 +51,7 @@ sp_configure 'user instances enabled','0'
   
 - La chaîne de substitution `|DataDirectory|` placée entre deux barres verticales fait référence au répertoire des données de l'application qui ouvre la connexion et fournit un chemin d'accès relatif à l'emplacement des fichiers journaux et de base de données .mdf et .ldf. Si vous souhaitez placer ces fichiers ailleurs, vous devez indiquer le chemin d’accès complet des fichiers.  
   
-```  
+```text
 Data Source=.\\SQLExpress;Integrated Security=true;  
 User Instance=true;AttachDBFilename=|DataDirectory|\InstanceDB.mdf;  
 Initial Catalog=InstanceDB;  
@@ -65,7 +65,7 @@ Initial Catalog=InstanceDB;
   
  L'emplacement physique que désigne `DataDirectory` varie en fonction du type d'application. Dans cet exemple, le fichier Northwind.mdf à joindre se trouve dans le dossier \app_data de l’application.  
   
-```  
+```text
 Data Source=.\\SQLExpress;Integrated Security=true;  
 User Instance=true;  
 AttachDBFilename=|DataDirectory|\app_data\Northwind.mdf;  

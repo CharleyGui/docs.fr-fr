@@ -17,19 +17,19 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b39467c067e50f2d553b35a41b0f783e0fc82156
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a7f62385031967c164915fd31735a6d962f557fa
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61988017"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894986"
 ---
 # <a name="icordebugmodulegetname-method"></a>ICorDebugModule::GetName, méthode
 Obtient le nom de fichier du module.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp
 HRESULT GetName(  
     [in] ULONG32 cchName,  
     [out] ULONG32 *pcchName,  
@@ -42,20 +42,20 @@ HRESULT GetName(
  [in] Taille du tableau `szName`.  
   
  `pcchName`  
- [in] Pointeur vers la longueur du nom retourné.  
+ dans Pointeur vers la longueur du nom retourné.  
   
  `szName`  
- [out] Tableau qui stocke le nom retourné.  
+ à Tableau qui stocke le nom retourné.  
   
 ## <a name="remarks"></a>Notes  
- Le `GetName` méthode retourne une valeur S_OK HRESULT si le nom de fichier du module correspond au nom sur le disque. `GetName` Retourne une valeur HRESULT S_FALSE si le nom est créé, comme pour un module dynamique ou en mémoire.  
+ La `GetName` méthode retourne un HRESULT S_OK si le nom de fichier du module correspond au nom sur le disque. `GetName`retourne un S_FALSE HRESULT si le nom est fabriqué, par exemple pour un module dynamique ou en mémoire.  
   
 ## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
+ **Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **En-tête :** CorDebug.idl, CorDebug.h  
+ **En-tête :** CorDebug. idl, CorDebug. h  
   
- **Bibliothèque :** CorGuids.lib  
+ **Bibliothèque** CorGuids.lib  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

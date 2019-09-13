@@ -2,12 +2,12 @@
 title: Point de terminaison de métadonnées sécurisé personnalisée
 ms.date: 03/30/2017
 ms.assetid: 9e369e99-ea4a-49ff-aed2-9fdf61091a48
-ms.openlocfilehash: 072d2551acaae87904bb12c5e8edafa788674322
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 32e6e0238637f9c2ef6814ace35ccb0b78110b60
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045135"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928682"
 ---
 # <a name="custom-secure-metadata-endpoint"></a>Point de terminaison de métadonnées sécurisé personnalisée
 Cet exemple montre comment implémenter un service avec un point de terminaison de métadonnées sécurisé qui utilise l’une des liaisons d’échange non-métadonnées, et comment configurer [ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ou des clients pour extraire les métadonnées d’un tel point de terminaison de métadonnées. Il existe deux liaisons fournies par le système pour exposer des points de terminaison de métadonnées : mexHttpBinding et mexHttpsBinding. mexHttpBinding est utilisé pour exposer un point de terminaison de métadonnées sur HTTP de façon non sécurisée. mexHttpsBinding est utilisé pour exposer un point de terminaison de métadonnées sur HTTPS de façon sécurisée. Cet exemple montre comment exposer un point de terminaison de métadonnées sécurisé à l'aide du <xref:System.ServiceModel.WSHttpBinding>. Cette opération peut être utile lorsque vous souhaitez modifier les paramètres de sécurité de la liaison sans devoir utiliser HTTPS. Si vous utilisez mexHttpsBinding, votre point de terminaison de métadonnées sera sécurisé, mais il n'existe aucun moyen de modifier les paramètres de la liaison.  
@@ -59,7 +59,7 @@ Cet exemple montre comment implémenter un service avec un point de terminaison 
 ## <a name="svcutil-client"></a>Client Svcutil  
  Lorsque la liaison par défaut héberge votre point de terminaison `IMetadataExchange`, vous pouvez exécuter Svcutil.exe en utilisant l’adresse de ce point de terminaison :  
   
-```  
+```console  
 svcutil http://localhost/servicemodelsamples/service.svc/mex  
 ```  
   
@@ -77,7 +77,7 @@ svcutil http://localhost/servicemodelsamples/service.svc/mex
   
  Le nom de point de terminaison doit correspondre au nom du schéma de l'adresse où sont hébergées les métadonnées et le contrat de point de terminaison doit correspondre à `IMetadataExchange`. Par conséquent, lorsque Svcutil.exe est exécuté à l'aide d'une ligne de commande telle que celle présentée ci-dessous :  
   
-```  
+```console  
 svcutil http://localhost/servicemodelsamples/service.svc/mex  
 ```  
   
@@ -85,7 +85,7 @@ svcutil http://localhost/servicemodelsamples/service.svc/mex
   
  Pour que l'outil Svcutil.exe puisse récupérer la configuration spécifiée dans le fichier Svcutil.exe.config, ils doivent tous deux se trouver dans le même répertoire. Vous devez copier l'outil Svcutil.exe depuis son emplacement d'installation vers le répertoire qui contient le fichier Svcutil.exe.config. À partir de ce répertoire, exécutez ensuite la commande suivante :  
   
-```  
+```console  
 .\svcutil.exe http://localhost/servicemodelsamples/service.svc/mex  
 ```  
   
@@ -96,7 +96,7 @@ svcutil http://localhost/servicemodelsamples/service.svc/mex
   
  La liaison ainsi que les informations de certificat apparues dans Svcutil.exe.config peuvent également être spécifiées à l'identique et de manière impérative sur le `MetadataExchangeClient` :  
   
-```  
+```csharp  
 // Specify the Metadata Exchange binding and its security mode  
 WSHttpBinding mexBinding = new WSHttpBinding(SecurityMode.Message);  
 mexBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;  
@@ -105,27 +105,27 @@ mexBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certifi
 MetadataExchangeClient mexClient = new MetadataExchangeClient(mexBinding);  
 mexClient.SoapCredentials.ClientCertificate.SetCertificate(    StoreLocation.CurrentUser, StoreName.My,  
     X509FindType.FindBySubjectName, "client.com");  
-mexClient.SoapCredentials.ServiceCertificate.Authentication.    CertificateValidationMode =    X509CertificateValidationMode.PeerOrChainTrust;  
+mexClient.SoapCredentials.ServiceCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.PeerOrChainTrust;  
 mexClient.SoapCredentials.ServiceCertificate.SetDefaultCertificate(    StoreLocation.CurrentUser, StoreName.TrustedPeople,  
     X509FindType.FindBySubjectName, "localhost");  
 ```  
   
  Grâce au `mexClient` configuré, nous pouvons énumérer les contrats auxquels nous nous intéressons et utiliser un `MetadataResolver` pour récupérer une liste des points de terminaison correspondant à ces contrats :  
   
-```  
+```csharp  
 // The contract we want to fetch metadata for  
-Collection<ContractDescription> contracts =    new Collection<ContractDescription>();  
-ContractDescription contract =    ContractDescription.GetContract(typeof(ICalculator));  
+Collection<ContractDescription> contracts = new Collection<ContractDescription>();  
+ContractDescription contract = ContractDescription.GetContract(typeof(ICalculator));  
 contracts.Add(contract);  
 // Find endpoints for that contract  
-EndpointAddress mexAddress = new    EndpointAddress(ConfigurationManager.AppSettings["mexAddress"]);  
-ServiceEndpointCollection endpoints =    MetadataResolver.Resolve(contracts, mexAddress, mexClient);  
+EndpointAddress mexAddress = new EndpointAddress(ConfigurationManager.AppSettings["mexAddress"]);  
+ServiceEndpointCollection endpoints = MetadataResolver.Resolve(contracts, mexAddress, mexClient);  
 ```  
   
  Enfin, nous pouvons utiliser les informations de ces points de terminaison pour initialiser la liaison et l’adresse de la fabrication `ChannelFactory` utilisée pour créer les canaux assurant la communication avec les points de terminaison d’application.  
   
-```  
-ChannelFactory<ICalculator> cf = new    ChannelFactory<ICalculator>(endpoint.Binding, endpoint.Address);  
+```csharp  
+ChannelFactory<ICalculator> cf = new ChannelFactory<ICalculator>(endpoint.Binding, endpoint.Address);  
 ```  
   
  L’objectif premier de cet exemple de client est de démontrer que si vous utilisez un `MetadataResolver` et que vous devez spécifier des liaisons ou comportements personnalisés pour la communication d’échange de métadonnées, vous pouvez utiliser un `MetadataExchangeClient` pour ce faire.  

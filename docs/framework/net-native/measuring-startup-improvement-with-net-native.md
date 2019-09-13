@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: c4d25b24-9c1a-4b3e-9705-97ba0d6c0289
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9546ddd12decb7457f4ff890658e2725a8b9dabe
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 74011a4c70cc8f7da3973698a43b1e97cffb9f9b
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69941750"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70927068"
 ---
 # <a name="measuring-startup-improvement-with-net-native"></a>Mesure de l'amélioration du démarrage avec .NET Native
 .NET Native améliore considérablement le temps de lancement des applications. Cette amélioration est particulièrement visible sur les appareils portables à basse consommation d'énergie hébergeant des applications complexes. Cette rubrique facilite la prise en main de l'instrumentation de base servant à mesurer cette amélioration du démarrage.  
@@ -47,7 +47,7 @@ ms.locfileid: "69941750"
   
 - Quand votre application a terminé la synchronisation des nouveaux articles  
   
- L’instrumentation d’une application est simple: Il vous suffit d’appeler la méthode appropriée sur la classe dérivée. À l'aide de la syntaxe `AppEventSource` utilisée dans l'exemple précédent, vous pouvez instrumenter une application comme suit :  
+ L’instrumentation d’une application est simple : Il vous suffit d’appeler la méthode appropriée sur la classe dérivée. À l'aide de la syntaxe `AppEventSource` utilisée dans l'exemple précédent, vous pouvez instrumenter une application comme suit :  
   
  [!code-csharp[ProjectN_ETW#2](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_etw/cs/etw2.cs#2)]  
   
@@ -57,11 +57,11 @@ ms.locfileid: "69941750"
  PerfView utilise des événements ETW pour vous aider à effectuer toutes sortes d'investigations de performances sur votre application. Il inclut également une interface utilisateur graphique de configuration qui vous permet d'activer ou de désactiver la journalisation de différents types d'événement. PerfView est un outil gratuit qui peut être téléchargé à partir du [Centre de téléchargement Microsoft](https://www.microsoft.com/download/details.aspx?id=28567). Pour plus d’informations, regardez les [vidéos du didacticiel PerfView](https://channel9.msdn.com/Series/PerfView-Tutorial).  
   
 > [!NOTE]
-> PerfView ne peut pas être utilisé pour collecter des événements sur les systèmes ARM. Pour collecter des événements sur les systèmes ARM, utilisez l'Enregistreur de performance Windows (WPR). Pour plus d’informations, consultez le [blog de Vance Morrison](https://blogs.msdn.com/b/vancem/archive/2012/12/19/collecting-etw-perfview-data-on-an-windows-rt-winrt-arm-surface-device.aspx).  
+> PerfView ne peut pas être utilisé pour collecter des événements sur les systèmes ARM. Pour collecter des événements sur les systèmes ARM, utilisez l'Enregistreur de performance Windows (WPR). Pour plus d’informations, consultez le [blog de Vance Morrison](https://blogs.msdn.microsoft.com/vancem/2012/12/19/collecting-etwperfview-data-on-an-windows-rt-winrt-arm-surface-device/).  
   
  Vous pouvez également appeler PerfView à partir de la ligne de commande. Pour consigner uniquement les événements à partir de votre fournisseur, ouvrez la fenêtre d'invite de commandes et entrez la commande suivante :  
   
-```  
+```console
 perfview -KernelEvents:Process -OnlyProviders:*MyCompany-MyApp collect outputFile   
 ```  
   
@@ -95,7 +95,7 @@ perfview -KernelEvents:Process -OnlyProviders:*MyCompany-MyApp collect outputFil
   
  Sélectionnez tous les événements répertoriés dans le volet de gauche (Ctrl+A), puis appuyez sur la touche **Entrée**. À présent, l'horodatage de chaque événement doit apparaître. Ces horodatages étant exprimés par rapport au début de la trace, vous devez soustraire l’heure de chaque événement de l’heure de début du processus pour identifier la durée calendaire depuis le démarrage. Si vous utilisez Ctrl+clic pour sélectionner deux horodatages, vous verrez la différence qui les sépare dans la barre d'état en bas de la page. Cela permet de voir facilement le temps écoulé entre deux événements dans l'affichage (y compris le début des processus). Vous pouvez ouvrir le menu contextuel de l'affichage pour accéder à de nombreuses options utiles, telles que l'exportation vers des fichiers CSV ou l'ouverture de Microsoft Excel pour enregistrer ou traiter les données.  
   
- En répétant la procédure pour votre application d’origine et la version que vous avez créée à l’aide de la .NET Native chaîne d’outils, vous pouvez comparer la différence de performances.   .NET Native applications démarrent généralement plus rapidement que les applications natives non-.NET. Si vous souhaitez en savoir plus, PerfView peut également identifier les parties de votre code qui prennent le plus de temps. Pour plus d’informations, regardez les [vidéos du didacticiel PerfView](https://channel9.msdn.com/Series/PerfView-Tutorial) ou lisez le [blog de Vance Morrison](https://blogs.msdn.com/b/vancem/archive/2011/12/28/publication-of-the-perfview-performance-analysis-tool.aspx).  
+ En répétant la procédure pour votre application d’origine et la version que vous avez créée à l’aide de la .NET Native chaîne d’outils, vous pouvez comparer la différence de performances.   .NET Native applications démarrent généralement plus rapidement que les applications natives non-.NET. Si vous souhaitez en savoir plus, PerfView peut également identifier les parties de votre code qui prennent le plus de temps. Pour plus d’informations, regardez les [vidéos du didacticiel PerfView](https://channel9.msdn.com/Series/PerfView-Tutorial) ou lisez le [blog de Vance Morrison](https://blogs.msdn.microsoft.com/vancem/2011/12/28/publication-of-the-perfview-performance-analysis-tool/).  
   
 ## <a name="see-also"></a>Voir aussi
 

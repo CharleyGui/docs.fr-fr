@@ -4,12 +4,12 @@ description: Meilleures pratiques recommandées pour l’empaquetage avec des bi
 author: jamesnk
 ms.author: mairaw
 ms.date: 01/15/2019
-ms.openlocfilehash: e08629adb8074fdfb73865d2dc156cbf6e46ab9c
-ms.sourcegitcommit: 5b6d778ebb269ee6684fb57ad69a8c28b06235b9
-ms.translationtype: HT
+ms.openlocfilehash: 9cf30fa41af2d31e416bae1d75d8880ece7dde3e
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59198177"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895213"
 ---
 # <a name="nuget"></a>NuGet
 
@@ -118,7 +118,7 @@ L’inconvénient des fichiers de symboles incorporés est qu’ils augmentent l
 
 > Les packages de symboles (`*.snupkg`) permettent aux développeurs d’effectuer un débogage à la demande sans gonfler inutilement la taille du package principal ni impacter les performances de restauration pour les utilisateurs qui ne comptent pas déboguer le package NuGet.
 >
-> L’inconvénient est qu’ils devront rechercher et configurer le serveur de symboles NuGet dans leur IDE (configuration unique) afin d’obtenir les fichiers de symboles. Visual Studio 2019 prévoit de fournir le serveur de symboles NuGet.org sous la forme d’une option prête à l’emploi. 
+> L’inconvénient est que les utilisateurs peuvent avoir besoin de rechercher et de configurer le serveur de symboles NuGet dans leur IDE (en tant que programme d’installation unique) pour obtenir des fichiers de symboles. Visual Studio 2019 version 16,1 a ajouté le serveur de symboles NuGet. org à la liste des serveurs de symboles par défaut.
 
 >[!div class="step-by-step"]
 >[Précédent](strong-naming.md)

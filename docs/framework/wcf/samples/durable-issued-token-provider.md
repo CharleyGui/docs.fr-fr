@@ -2,12 +2,12 @@
 title: Durable Issued Token Provider
 ms.date: 03/30/2017
 ms.assetid: 76fb27f5-8787-4b6a-bf4c-99b4be1d2e8b
-ms.openlocfilehash: 70c7237329d1ae5f6ecde2231a66bca53e220634
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: aa1180458b118132a632ea5d798db81283fffdab
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045016"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928819"
 ---
 # <a name="durable-issued-token-provider"></a>Durable Issued Token Provider
 Cet exemple montre comment implémenter un fournisseur de jetons émis client personnalisé.  
@@ -110,9 +110,9 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
  Le service d'émission de jeton de sécurité expose un point de terminaison unique à l'aide du wsHttpBinding standard. Le service d'émission de jeton de sécurité répond pour demander des jetons aux clients et, à la condition que le client s'authentifie à l'aide d'un compte Windows, il émet un jeton qui contient le nom d'utilisateur du client comme revendication dans le jeton émis. Dans le cadre de la création du jeton, le service d'émission de jeton de sécurité le signe à l'aide de la clé privée associée au certificat CN=STS. Par ailleurs, il crée une clé symétrique et la chiffre à l'aide de la clé publique associée au certificat CN=localhost. Lors du retour du jeton au client, le service d'émission de jeton de sécurité retourne également la clé symétrique. Le client présente le jeton émis au service de calculatrice et prouve qu'il connaît la clé symétrique en signant le message à l'aide de celle-ci.  
   
 ## <a name="custom-client-credentials-and-token-provider"></a>Informations d'identification client personnalisées et fournisseur de jetons personnalisé  
- Les étapes suivantes indiquent comment développer un fournisseur de jetons personnalisé qui met en cache les jetons émis et les intègre à WCF: Security.  
+ Les étapes suivantes indiquent comment développer un fournisseur de jetons personnalisé qui met en cache les jetons émis et les intègre à WCF : Security.  
   
-#### <a name="to-develop-a-custom-token-provider"></a>Pour développer un fournisseur de jetons personnalisé  
+### <a name="to-develop-a-custom-token-provider"></a>Pour développer un fournisseur de jetons personnalisé  
   
 1. Écrivez un fournisseur de jetons personnalisé.  
   
@@ -120,7 +120,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
   
      Pour effectuer cette tâche, le fournisseur de jetons personnalisé dérive la classe <xref:System.IdentityModel.Selectors.SecurityTokenProvider> et substitue la méthode <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore%2A>. Cette méthode tente d'obtenir un jeton provenant du cache, ou si aucun jeton n'est trouvé dans le cache, elle en récupère un du fournisseur sous-jacent, puis le met en cache. Dans les deux cas, la méthode retourne un `SecurityToken`.  
   
-    ```  
+    ```csharp
     protected override SecurityToken GetTokenCore(TimeSpan timeout)  
     {  
       GenericXmlSecurityToken token;  
@@ -137,7 +137,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
   
      <xref:System.IdentityModel.Selectors.SecurityTokenManager> permet de créer un <xref:System.IdentityModel.Selectors.SecurityTokenProvider> pour un <xref:System.IdentityModel.Selectors.SecurityTokenRequirement> spécifique qui lui est passé dans la méthode `CreateSecurityTokenProvider`. Le gestionnaire de jetons de sécurité permet également de créer des authentificateurs et des sérialiseurs de jeton, mais ceux-là ne sont pas traités dans cet exemple. Dans cet exemple, le gestionnaire de jetons de sécurité personnalisé hérite de la classe <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> et substitue la méthode `CreateSecurityTokenProvider` pour retourner le fournisseur de jetons personnalisé lorsque les exigences du jeton passé indiquent qu’un jeton émis est demandé.  
   
-    ```  
+    ```csharp
     class DurableIssuedTokenClientCredentialsTokenManager :  
      ClientCredentialsSecurityTokenManager  
     {  
@@ -154,7 +154,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
         {  
           return new DurableIssuedSecurityTokenProvider ((IssuedSecurityTokenProvider)base.CreateSecurityTokenProvider( tokenRequirement), this.cache);  
         }  
-        Else  
+        else  
         {  
           return base.CreateSecurityTokenProvider(tokenRequirement);  
         }  
@@ -166,7 +166,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
   
      Une classe d'informations d'identification client permet de représenter les informations d'identification qui sont configurées pour le proxy client et crée le gestionnaire de jetons de sécurité utilisé pour obtenir des authentificateurs, des fournisseurs et des sérialiseurs de jeton.  
   
-    ```  
+    ```csharp
     public class DurableIssuedTokenClientCredentials : ClientCredentials  
     {  
       IssuedTokenCache cache;  
@@ -182,11 +182,11 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
   
       public IssuedTokenCache IssuedTokenCache  
       {  
-        Get  
+        get  
         {  
           return this.cache;  
         }  
-        Set  
+        set  
         {  
           this.cache = value;  
         }  
@@ -206,18 +206,18 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
   
 4. Implémentez le cache du jeton. L'exemple d'implémentation utilise une classe de base abstraite par l'intermédiaire de laquelle les consommateurs d'un cache de jeton donné interagissent avec le cache.  
   
-    ```  
+    ```csharp
     public abstract class IssuedTokenCache  
     {  
       public abstract void AddToken ( GenericXmlSecurityToken token, EndpointAddress target, EndpointAddress issuer);  
       public abstract bool TryGetToken(EndpointAddress target, EndpointAddress issuer, out GenericXmlSecurityToken cachedToken);  
     }  
-    Configure the client to use the custom client credential.  
+    // Configure the client to use the custom client credential.  
     ```  
   
      Pour que le client puisse utiliser l'information d'identification client personnalisée, l'exemple supprime la classe d'informations d'identification client par défaut et fournit la nouvelle.  
   
-    ```  
+    ```csharp
     clientFactory.Endpoint.Behaviors.Remove<ClientCredentials>();  
     DurableIssuedTokenClientCredentials durableCreds = new DurableIssuedTokenClientCredentials();  
     durableCreds.IssuedTokenCache = cache;  
@@ -231,7 +231,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
 ## <a name="the-setupcmd-batch-file"></a>Fichier de commandes Setup.cmd  
  Le fichier de commandes Setup.cmd inclus avec cet exemple vous permet de configurer le serveur et le service d'émission de jeton de sécurité avec les certificats appropriés pour exécuter une application auto-hébergée. Il crée deux certificats dans le magasin de certificats CurrentUser/TrustedPeople. Le nom du sujet du premier certificat est CN=STS. Ce certificat est utilisé par le service d'émission de jeton de sécurité pour signer les jetons de sécurité qu'il émet au client. Le deuxième a le nom du sujet CN=localhost et est utilisé par le service d'émission de jeton de sécurité pour chiffrer un secret de sorte que le service puisse le déchiffrer.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
+### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
 1. Exécutez le fichier Setup.cmd pour créer les certificats requis.  
   
@@ -241,7 +241,7 @@ Cet exemple montre comment implémenter un fournisseur de jetons émis client pe
   
 4. Exécutez client.exe.  
   
-#### <a name="to-clean-up-after-the-sample"></a>Pour procéder au nettoyage après exécution de l'exemple  
+### <a name="to-clean-up-after-the-sample"></a>Pour procéder au nettoyage après exécution de l'exemple  
   
 1. Exécutez Cleanup.cmd dans le dossier d’exemples après avoir exécuté l’exemple.  
   

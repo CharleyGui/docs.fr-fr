@@ -2,12 +2,12 @@
 title: AJAX Service with JSON and XML, exemple
 ms.date: 03/30/2017
 ms.assetid: 8ea5860d-0c42-4ae9-941a-e07efdd8e29c
-ms.openlocfilehash: 62c573a844ce5382308814342330f778fa041a69
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: eadb884667a0b29ef36056f0c3bec4675b7f1b05
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045190"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895140"
 ---
 # <a name="ajax-service-with-json-and-xml-sample"></a>AJAX Service with JSON and XML, exemple
 
@@ -20,11 +20,9 @@ Cet exemple illustre comment commuter le type de réponse d'une opération entre
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.
 
-Pour permettre l'utilisation de clients AJAX non-ASP.NET, utilisez <xref:System.ServiceModel.Activation.WebServiceHostFactory> (pas <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>) dans le fichier .svc. <xref:System.ServiceModel.Activation.WebServiceHostFactory> ajoute un point de terminaison standard <xref:System.ServiceModel.Description.WebHttpEndpoint> au service. Le point de terminaison est configuré à une adresse vide relative au fichier. svc; Cela signifie que l’adresse du service est `http://localhost/ServiceModelSamples/service.svc`, sans suffixe supplémentaire autre que le nom de l’opération.
+Pour permettre l'utilisation de clients AJAX non-ASP.NET, utilisez <xref:System.ServiceModel.Activation.WebServiceHostFactory> (pas <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>) dans le fichier .svc. <xref:System.ServiceModel.Activation.WebServiceHostFactory> ajoute un point de terminaison standard <xref:System.ServiceModel.Description.WebHttpEndpoint> au service. Le point de terminaison est configuré à une adresse vide relative au fichier. svc ; Cela signifie que l’adresse du service est `http://localhost/ServiceModelSamples/service.svc`, sans suffixe supplémentaire autre que le nom de l’opération.
 
-```svc
-<%@ServiceHost language="c#" Debug="true" Service="Microsoft.Samples.XmlAjaxService.CalculatorService" Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>
-```
+`<%@ServiceHost language="c#" Debug="true" Service="Microsoft.Samples.XmlAjaxService.CalculatorService" Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>`
 
 La section suivante dans Web.config peut être utilisée pour apporter des modifications de configuration supplémentaires au point de terminaison. Elle peut être supprimée si aucune modification supplémentaire n'est requise.
 
@@ -49,7 +47,7 @@ Dans l’exemple suivant, le service est un service WCF standard avec deux opér
 MathResult DoMathXml(double n1, double n2);
 ```
 
-Le format de réponse pour l’opération est spécifié en tant que XML, qui est le paramètre [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md) par défaut pour le comportement de > Webhttp. Il est toutefois conseillé de spécifier explicitement le format de réponse.
+Le format de réponse pour l’opération est spécifié en tant que XML, qui est le paramètre par défaut pour le [ \<comportement de > Webhttp](../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md) . Il est toutefois conseillé de spécifier explicitement le format de réponse.
 
 L'autre opération utilise l'attribut `WebInvokeAttribute` et spécifie explicitement JSON au lieu de XML pour la réponse.
 

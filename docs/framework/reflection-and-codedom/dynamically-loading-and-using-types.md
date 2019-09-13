@@ -14,20 +14,19 @@ helpviewer_keywords:
 ms.assetid: db985bec-5942-40ec-b13a-771ae98623dc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0246f429b396a2606bbb827b7ae2a9034af00f11
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 5dbbf0f71eaefd0ef7fc7f2b5e69e47ce7b8db26
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915473"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894883"
 ---
 # <a name="dynamically-loading-and-using-types"></a>Chargement et utilisation dynamiques des types
 La réflexion fournit l’infrastructure utilisée par les compilateurs de langages pour implémenter la liaison tardive implicite. La liaison est le processus de localisation de la déclaration (en d’autres termes, l’implémentation) qui correspond à un type spécifié unique. Quand ce processus se produit au moment de l’exécution plutôt qu’au moment de la compilation, il est appelé liaison tardive. Visual Basic permet d’utiliser la liaison tardive implicite dans le code ; le compilateur Visual Basic appelle une méthode d’assistance qui utilise la réflexion pour récupérer le type d’objet. Les arguments passés à la méthode d’assistance entraînent l’appel de la méthode appropriée au moment de l’exécution. Ces arguments sont l’instance (un objet) sur laquelle appeler la méthode, le nom de la méthode appelée (une chaîne) et les arguments passés à la méthode appelée (un tableau d’objets).  
   
  Dans l’exemple suivant, le compilateur Visual Basic utilise implicitement la réflexion pour appeler une méthode sur un objet dont le type n’est pas connu au moment de la compilation. Une classe **HelloWorld** a une méthode **PrintHello** qui imprime « Hello World » concaténé à du texte passé à la méthode **PrintHello**. La méthode **PrintHello** appelée dans cet exemple équivaut en fait à un <xref:System.Type.InvokeMember%2A?displayProperty=nameWithType>. Le code Visual Basic permet à la méthode **PrintHello** d’être appelée comme si le type de l’objet (helloObj) était connu au moment de la compilation (liaison anticipée) plutôt qu’au moment de l’exécution (liaison tardive).  
   
-```  
-Imports System  
+```vb
 Module Hello  
     Sub Main()  
         ' Sets up the variable.  
@@ -67,7 +66,7 @@ End Module
   
  **BindToMethod** retourne le <xref:System.Reflection.MethodBase> à appeler ou une référence null (**Nothing** en Visual Basic) si aucun appel n’est possible. La valeur de retour de **MethodBase** n’est pas forcément contenue dans le paramètre *match*, même si cela est souvent le cas.  
   
- Quand les arguments ByRef sont présents, l’appelant souhaitera peut-être les récupérer. Ainsi, **Binder** autorise un client à mapper le tableau des arguments vers sa forme d’origine si **BindToMethod** a manipulé le tableau des arguments. Pour ce faire, l’appelant doit avoir la garantie que l’ordre des arguments n’a pas été changé. Quand des arguments sont passés par nom, **Binder** réorganise le tableau d’arguments, et c’est ce que voit l’appelant. Pour plus d’informations, consultez <xref:System.Reflection.Binder.ReorderArgumentArray%2A?displayProperty=nameWithType>.  
+ Quand les arguments ByRef sont présents, l’appelant souhaitera peut-être les récupérer. Ainsi, **Binder** autorise un client à mapper le tableau des arguments vers sa forme d’origine si **BindToMethod** a manipulé le tableau des arguments. Pour ce faire, l’appelant doit avoir la garantie que l’ordre des arguments n’a pas été changé. Quand des arguments sont passés par nom, **Binder** réorganise le tableau d’arguments, et c’est ce que voit l’appelant. Pour plus d'informations, consultez <xref:System.Reflection.Binder.ReorderArgumentArray%2A?displayProperty=nameWithType>.  
   
  L’ensemble des membres disponibles correspond aux membres définis dans le type ou n’importe quel type de base. Si <xref:System.Reflection.BindingFlags> est spécifié, les membres d’une accessibilité quelconque sont retournés dans l’ensemble. Si **BindingFlags.NonPublic** n’est pas spécifié, le binder doit appliquer les règles d’accessibilité. Quand vous spécifiez l’indicateur de liaison **Public** ou **NonPublic**, vous devez également spécifier l’indicateur de liaison **Instance** ou **Static**, sinon aucun membre n’est retourné.  
   

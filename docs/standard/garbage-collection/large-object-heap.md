@@ -8,12 +8,12 @@ helpviewer_keywords:
 - GC [.NET ], large object heap
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ebe856b3ed904b13201c6d59752a8a00f4060d5d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 70ea0110f22e741908ad857fa501553d93c4b98d
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753957"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929136"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Tas de grands objets sur les systèmes Windows
 
@@ -132,7 +132,7 @@ Avant de collecter des données de performances pour une zone spécifique, vous 
 
 2. Examiner toutes les autres zones connues sans trouver ce qui pourrait expliquer le problème de performances rencontré.
 
-Consultez le blog [Understand the problem before you try to find a solution](https://blogs.msdn.microsoft.com/maoni/2006/09/01/understand-the-problem-before-you-try-to-find-a-solution/) (Comprendre le problème avant d’essayer de chercher une solution) pour plus d’informations sur les principes fondamentaux de la mémoire et du processeur.
+Consultez le blog [Understand the problem before you try to find a solution](https://devblogs.microsoft.com/dotnet/understand-the-problem-before-you-try-to-find-a-solution/) (Comprendre le problème avant d’essayer de chercher une solution) pour plus d’informations sur les principes fondamentaux de la mémoire et du processeur.
 
 Vous pouvez utiliser les outils suivants pour collecter des données sur les performances du LOH :
 
@@ -168,13 +168,13 @@ Les compteurs de performances peuvent également être interrogés par programma
 
 Le récupérateur de mémoire fournit un riche ensemble d’événements ETW pour vous aider à comprendre ce que fait le tas et pourquoi. Les billets de blog suivants décrivent comment collecter et comprendre les événements GC avec ETW :
 
-- [Événements ETW de GC - 1](https://blogs.msdn.microsoft.com/maoni/2014/12/22/gc-etw-events-1/)
+- [Événements ETW de GC - 1](https://devblogs.microsoft.com/dotnet/gc-etw-events-1/)
 
-- [Événements ETW de GC - 2](https://blogs.msdn.microsoft.com/maoni/2014/12/25/gc-etw-events-2/)
+- [Événements ETW de GC - 2](https://devblogs.microsoft.com/dotnet/gc-etw-events-2/)
 
-- [Événements ETW de GC - 3](https://blogs.msdn.microsoft.com/maoni/2014/12/25/gc-etw-events-3/)
+- [Événements ETW de GC - 3](https://devblogs.microsoft.com/dotnet/gc-etw-events-3/)
 
-- [Événements ETW de GC - 4](https://blogs.msdn.microsoft.com/maoni/2014/12/30/gc-etw-events-4/)
+- [Événements ETW de GC - 4](https://devblogs.microsoft.com/dotnet/gc-etw-events-4/)
 
 Pour identifier le nombre excessif de GC de la génération 2 dus à des allocations de LOH temporaires, observez la colonne Raison du déclencheur pour les GC. Pour un test simple qui alloue uniquement des grands objets temporaires, vous pouvez collecter des informations sur les événements ETW avec la ligne de commande [PerfView](https://www.microsoft.com/download/details.aspx?id=28567) suivante :
 
@@ -198,7 +198,7 @@ perfview /GCOnly /AcceptEULA /nogui collect
 collecte un événement AllocationTick qui est déclenché toutes les 100 000 allocations environ. En d’autres termes, un événement est déclenché chaque fois qu’un grand objet est alloué. Vous pouvez alors examiner une des vues d’allocation de tas du récupérateur de mémoire qui indique les pile d’appels qui ont alloué des grands objets :
 
 ![Capture d’écran montrant une vue du tas garbage collector.](media/large-object-heap/garbage-collector-heap.png)
-Figure 6 : Une vue d’allocation de tas du récupérateur de mémoire
+Figure 6 : Une vue d’allocation de tas du récupérateur de mémoire
 
 Comme vous pouvez le voir, il s’agit d’un test très simple qui alloue simplement de grands objets à partir de sa méthode `Main`.
 

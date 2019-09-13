@@ -2,12 +2,12 @@
 title: Déploiement d'un service WCF hébergé dans Internet Information Services
 ms.date: 03/30/2017
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
-ms.openlocfilehash: b02c69e00aacafd928c59f06e0e7c050a2ca6509
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 95c56f767bbe8dce44ea742de00c65c357bd1378
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70856122"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895110"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>Déploiement d'un service WCF hébergé dans Internet Information Services
 
@@ -49,9 +49,7 @@ Notez que IIS 6,0 et versions ultérieures redémarrent périodiquement une appl
 
 Les services WCF hébergés dans IIS sont représentés sous forme de fichiers de contenu spéciaux (fichiers. svc) à l’intérieur de l’application IIS. Ce modèle est semblable à la façon dont les pages ASMX sont représentées dans une application IIS sous la forme de fichiers .asmx. Un fichier. svc contient une directive[\@](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md)de traitement spécifique à WCF qui permet à l’infrastructure d’hébergement WCF d’activer des services hébergés en réponse à des messages entrants. La syntaxe la plus courante d'un fichier .svc se trouve dans l'instruction suivante.
 
-```svc
-<% @ServiceHost Service="MyNamespace.MyServiceImplementationTypeName" %>
-```
+`<% @ServiceHost Service="MyNamespace.MyServiceImplementationTypeName" %>`
 
 Il se compose de [ \@](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) la directive ServiceHost et d’un attribut `Service`unique,. La valeur de l'attribut `Service` est le nom de type du Common Language Runtime (CLR) de l'implémentation de service. L'utilisation de cette directive revient essentiellement à créer un hôte de service à l'aide du code suivant :
 

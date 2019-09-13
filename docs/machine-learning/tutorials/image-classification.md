@@ -4,12 +4,12 @@ description: Apprenez à reformer un modèle de classification des images Tensor
 ms.date: 07/09/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: 65f94fa5e725703d79d0dddae761cbfbc3f89e0e
-ms.sourcegitcommit: d55e14eb63588830c0ba1ea95a24ce6c57ef8c8c
-ms.translationtype: HT
+ms.openlocfilehash: eb6e3d3f3a33aa7360802ce1bc6c16532539c828
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67804754"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929236"
 ---
 # <a name="tutorial-retrain-a-tensorflow-image-classifier-with-transfer-learning-and-mlnet"></a>Tutoriel : Reformer un classifieur d’images TensorFlow avec apprentissage par transfert et ML.NET
 
@@ -17,8 +17,9 @@ Apprenez à reformer un modèle de classification des images TensorFlow avec app
 
 Pour entraîner un modèle de [Classification d’images](https://en.wikipedia.org/wiki/Outline_of_object_recognition) à partir de zéro, il faut définir des millions de paramètres, disposer d’une multitude de données d’apprentissage étiquetées et posséder une grande quantité de ressources de calcul (des centaines d’heures GPU). S’il n’est pas aussi efficace que l’apprentissage d’un modèle personnalisé à partir de zéro, l’apprentissage par transfert permet de raccourcir ce processus : il s’agit de travailler avec des milliers (et non des millions) d’images étiquetées et de créer assez vite un modèle personnalisé (en une heure sur un ordinateur sans GPU).
 
-Dans ce didacticiel, vous apprendrez à :
+Ce tutoriel vous montre comment effectuer les opérations suivantes :
 > [!div class="checklist"]
+>
 > * Comprendre le problème
 > * Réutiliser et paramétrer le modèle préentraîné
 > * Classer des images
@@ -122,7 +123,7 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 
 ## <a name="create-a-console-application"></a>Créer une application console
 
-### <a name="create-a-project"></a>Créer un projet
+### <a name="create-a-project"></a>Création d’un projet
 
 1. Créer une **application console .NET Core** appelée « TransferLearningTF ».
 
@@ -170,7 +171,7 @@ Ajoutez le code suivant à la ligne juste au-dessus de la méthode `Main` pour s
 
 Créez des classes pour vos données d’entrée et vos prédictions. Ajoutez une nouvelle classe à votre projet :
 
-1. Dans l **’Explorateur de solutions**, cliquez avec le bouton de droite sur le projet, puis sélectionnez **Ajouter** > **Nouvel élément**.
+1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **Nouvel élément**.
 
 1. Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez **Classe** et remplacez la valeur du champ **Nom** par *ImageData.cs*. Ensuite, sélectionnez le bouton **Ajouter**.
 
@@ -189,7 +190,7 @@ Supprimez la définition de classe existante et ajoutez le code suivant pour la 
 
 Ajoutez une nouvelle classe à votre projet pour `ImagePrediction` :
 
-1. Dans l **’Explorateur de solutions**, cliquez avec le bouton de droite sur le projet, puis sélectionnez **Ajouter** > **Nouvel élément**.
+1. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter** > **Nouvel élément**.
 
 1. Dans la boîte de dialogue **Ajouter un nouvel élément**, sélectionnez **Classe** et remplacez la valeur du champ **Nom** par *ImagePrediction.cs*. Ensuite, sélectionnez le bouton **Ajouter**.
 
@@ -290,7 +291,7 @@ public static ITransformer ReuseAndTuneInceptionModel(MLContext mlContext, strin
 }
 ```
 
-### <a name="load-the-data"></a>Charger les données
+### <a name="load-the-data"></a>Chargement des données
 
 Les données dans ML.NET sont représentées en tant que [classe IDataView](xref:Microsoft.ML.IDataView). `IDataView` est un moyen flexible et efficace de décrire des données tabulaires (numériques et texte). Les données peuvent être chargées à partir d’un fichier texte ou en temps réel (par exemple, fichiers journaux ou de base de données SQL) dans un objet `IDataView`.
 
@@ -478,8 +479,9 @@ Félicitations ! Vous avez créé un modèle Machine Learning de classification
 
 Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TransferLearningTF).
 
-Dans ce didacticiel, vous avez appris à :
+Dans ce tutoriel, vous avez appris à :
 > [!div class="checklist"]
+>
 > * Comprendre le problème
 > * Réutiliser et paramétrer le modèle préentraîné
 > * Classer des images avec un modèle chargé

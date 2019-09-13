@@ -4,12 +4,12 @@ description: Vue d’ensemble de la <xref:System.Runtime.Loader.AssemblyLoadCont
 ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
-ms.openlocfilehash: 020b1d0342ae822021905d2e749037f45031eb22
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 2fa8a13bcb08a767fa965621f95bec8619aea5cc
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70234663"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926405"
 ---
 # <a name="default-probing"></a>Détection par défaut
 
@@ -19,7 +19,7 @@ L' <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=na
 
 Lorsque le runtime est démarré, l’hôte de Runtime fournit un ensemble de propriétés de détection nommées <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> qui configurent les chemins d’accès des sondes.
 
-Chaque propriété de détection est facultative.  Si elle est présente, chaque propriété est une valeur de chaîne qui contient une liste délimitée de chemins absolus. Le délimiteur est «;» sur Windows et «:» sur toutes les autres plateformes.
+Chaque propriété de détection est facultative.  Si elle est présente, chaque propriété est une valeur de chaîne qui contient une liste délimitée de chemins absolus. Le délimiteur est « ; » sur Windows et «  : » sur toutes les autres plateformes.
 
 |Nom de la propriété                 |Description  |
 |------------------------------|---------|
@@ -29,7 +29,7 @@ Chaque propriété de détection est facultative.  Si elle est présente, chaque
 |`APP_PATHS`                     | Liste des chemins d’accès aux répertoires dans lesquels rechercher des assemblys managés |
 |`APP_NI_PATHS`                  | Liste des chemins d’accès aux répertoires dans lesquels rechercher les images natives des assemblys managés. |
 
-### <a name="how-are-the-properties-populated"></a>Comment les propriétés sont-elles renseignées?
+### <a name="how-are-the-properties-populated"></a>Comment les propriétés sont-elles renseignées ?
 
 Il existe deux principaux scénarios pour remplir les propriétés selon que le `<myapp>.deps.json` fichier existe ou non.
 
@@ -40,13 +40,13 @@ En outre, les `*.deps.json` fichiers de toutes les infrastructures référencée
 
 Enfin, la variable `ADDITIONAL_DEPS` d’environnement peut être utilisée pour ajouter des dépendances supplémentaires.
 
-### <a name="how-do-i-see-the-probing-properties-from-managed-code"></a>Comment faire consultez les propriétés de détection à partir du code managé?
+### <a name="how-do-i-see-the-probing-properties-from-managed-code"></a>Comment faire consultez les propriétés de détection à partir du code managé ?
 
 Chaque propriété est disponible en appelant la <xref:System.AppContext.GetData(System.String)?displayProperty=nameWithType> fonction avec le nom de la propriété à partir du tableau ci-dessus.
 
-### <a name="how-do-i-debug-the-probing-properties-construction"></a>Comment faire déboguer la construction des propriétés de détection?
+### <a name="how-do-i-debug-the-probing-properties-construction"></a>Comment faire déboguer la construction des propriétés de détection ?
 
-L’hôte du Runtime .NET Core génère des messages de trace utiles lorsque certaines variables d’environnement sont activées:
+L’hôte du Runtime .NET Core génère des messages de trace utiles lorsque certaines variables d’environnement sont activées :
 
 |Variable d’environnement        |Description  |
 |----------------------------|---------|
@@ -56,7 +56,8 @@ L’hôte du Runtime .NET Core génère des messages de trace utiles lorsque cer
 
 ## <a name="managed-assembly-default-probing"></a>Détection par défaut de l’assembly managé
 
-Lors de la détection pour localiser un assembly managé <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> , le se présente dans l’ordre suivant:
+Lors de la détection pour localiser un assembly managé <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> , le se présente dans l’ordre suivant :
+
 - Fichiers correspondant à <xref:System.Reflection.AssemblyName.Name?displayProperty=nameWithType> la `TRUSTED_PLATFORM_ASSEMBLIES` dans (après la suppression des extensions de fichier).
 - Fichiers d’assembly d' `APP_NI_PATHS` images natives dans avec des extensions de fichier courantes.
 - Fichiers d’assembly dans `APP_PATHS` avec des extensions de fichier courantes.

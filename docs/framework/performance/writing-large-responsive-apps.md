@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 234c8a1f57af4030186afd48f727621713531b17
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 916523acf1d270830a2cb1fb5ae50e26d055404c
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915536"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70927014"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>Conception d'applications .NET Framework complexes et réactives
 Cet article fournit des conseils pour améliorer les performances d'applications .NET Framework volumineuses ou d'applications qui traitent de grandes quantités de données, telles que des fichiers ou des bases de données. Ces conseils proviennent de la réécriture des compilateurs C# et Visual Basic en code managé, et cet article inclut plusieurs exemples réels issus du compilateur C#. 
@@ -28,20 +28,20 @@ Cet article fournit des conseils pour améliorer les performances d'applications
 ## <a name="just-the-facts"></a>Les faits  
  Prenez en compte les faits suivants lorsque vous réglez les performances de vos applications .NET Framework pour les rendre plus réactives. 
   
-### <a name="fact-1-dont-prematurely-optimize"></a>Fait 1: N’optimisez pas prématurément  
+### <a name="fact-1-dont-prematurely-optimize"></a>Fait 1 : N’optimisez pas prématurément  
  L'écriture d'un code plus complexe que nécessaire entraîne des coûts de maintenance, de débogage et de finition. Les programmeurs expérimentés ont une compréhension intuitive de la manière de résoudre les problèmes de codage et écrivent des codes plus efficaces. Toutefois, ils optimisent parfois prématurément leur code. Par exemple, ils utilisent une table de hachage lorsqu'un simple tableau suffirait, ou ils utilisent une mise en cache compliquée susceptible d'engendrer des fuites de mémoire au lieu de simplement recalculer les valeurs. Même si vous êtes un programmeur expérimenté, vous devez tester les performances et analyser votre code quand vous décelez des problèmes. 
   
-### <a name="fact-2-if-youre-not-measuring-youre-guessing"></a>Fait 2: Si vous n’effectuez pas de mesures, vous êtes en train de deviner  
+### <a name="fact-2-if-youre-not-measuring-youre-guessing"></a>Fait 2 : Si vous n’effectuez pas de mesures, vous êtes en train de deviner  
  Les profils et les mesures ne trompent pas. Les profils vous montrent si l'UC est pleinement chargée ou si vous êtes bloqué au niveau des E/S de disque. Les profils indiquent le type et la quantité de mémoire que vous allouez et si le processus [garbage collection](../../standard/garbage-collection/index.md) (GC) utilise beaucoup de ressources de votre UC. 
   
  Vous devez définir des objectifs de performances pour des scénarios ou des expériences clients clés dans votre application, et écrire des tests pour mesurer les performances. Étudiez les échecs des tests en appliquant un raisonnement scientifique : utilisez des profils pour vous guider, avancez des hypothèses concernant la nature du problème et testez vos hypothèses en faisant des expériences ou en apportant des modifications au code. Établissez des mesures de performances de planning de référence au fil du temps en effectuant des tests réguliers, afin de pouvoir isoler les changements qui provoquent des régressions des performances. Grâce à une approche rigoureuse du traitement des performances, vous éviterez de perdre du temps avec des mises à jour de code inutiles. 
   
-### <a name="fact-3-good-tools-make-all-the-difference"></a>Fait 3: Des outils efficaces font toute la différence  
+### <a name="fact-3-good-tools-make-all-the-difference"></a>Fait 3 : Des outils efficaces font toute la différence  
  Des outils efficaces vous permettent de plonger directement au cœur des principaux problèmes de performances (UC, mémoire ou disque) et vous aident à localiser le code à l'origine des goulots d'étranglement. Microsoft fournit un large éventail d’outils de performances, tels que le [profileur Visual Studio](/visualstudio/profiling/beginners-guide-to-performance-profiling) et [PerfView](https://www.microsoft.com/download/details.aspx?id=28567). 
   
  PerfView est un outil gratuit et extrêmement puissant qui vous permet de porter toute votre attention sur des problèmes profonds liés par exemple aux E/S de disque, aux événements du GC et à la mémoire. Vous pouvez capturer des événements de [suivi d’événements pour Windows](../../../docs/framework/wcf/samples/etw-tracing.md) (ETW) liés aux performances et afficher aisément les informations pour chaque application, processus, pile et thread. PerfView vous montre la quantité et le type de mémoire que votre application alloue, ainsi que les fonctions ou les piles d'appels qui contribuent aux allocations de mémoire, et pour quels volumes. Pour plus de détails, consultez l’ensemble complet de rubriques d’aide, de démonstrations et de vidéos fournies avec l’outil (par exemple, les [didacticiels PerfView](https://channel9.msdn.com/Series/PerfView-Tutorial) sur Channel 9). 
   
-### <a name="fact-4-its-all-about-allocations"></a>Fait 4: Il s’agit de l’allocation  
+### <a name="fact-4-its-all-about-allocations"></a>Fait 4 : Il s’agit de l’allocation  
  Vous pouvez penser que la création d'une application .NET Framework réactive n'est qu'une question d'algorithmes, comme l'utilisation d'un tri rapide à la place d'un tri par propagation, mais ce n'est pas le cas. Le facteur principal qui intervient dans la création d'une application réactive et l'allocation de la mémoire, notamment quand votre application est très volumineuse ou traite de grandes quantités de données. 
   
  Quasiment tout le travail nécessaire pour créer des expériences IDE réactives avec les API des nouveaux compilateurs a impliqué d’éviter les allocations et de gérer les stratégies de mise en cache. Les traces PerfView indiquent que les performances des nouveaux compilateurs C# et Visual Basic sont rarement liées à l'UC. Les compilateurs peuvent être liés aux E/S lors de la lecture de centaines de milliers ou de millions de lignes de code, lors de la lecture des métadonnées ou lors de l'émission du code généré. Les retards de threads d’interface utilisateur sont quasiment tous dus au garbage collection. Le GC du .NET Framework fait l'objet d'un réglage précis pour les performances et effectue une grande part de son travail pendant que le code de l'application s'exécute. Toutefois, une seule allocation peut déclencher une collection [gen2](../../standard/garbage-collection/fundamentals.md) coûteuse, susceptible d’arrêter tous les threads. 
@@ -195,9 +195,9 @@ private bool TrimmedStringStartsWith(string text, int start, string prefix) {
 // etc... 
 ```  
   
- La première version de `WriteFormattedDocComment()` allouait un tableau, plusieurs sous-chaînes et une sous-chaîne tronquée avec un tableau `params` vide. Il a également été vérifié pour «///». Le code révisé utilise uniquement l'indexation et n'alloue rien. Il recherche le premier caractère qui n’est pas un espace blanc, puis vérifie caractère par caractère pour voir si la chaîne commence par «///». Le nouveau code utilise `IndexOfFirstNonWhiteSpaceChar` à la <xref:System.String.TrimStart%2A> place de pour retourner le premier index (après un index de début spécifié) où un caractère autre qu’un espace blanc se produit. Le correctif n'est pas complet, mais vous pouvez voir comment appliquer des correctifs similaires pour obtenir une solution complète. En appliquant cette approche dans l'ensemble du code, vous pouvez supprimer toutes les allocations dans `WriteFormattedDocComment()`. 
+ La première version de `WriteFormattedDocComment()` allouait un tableau, plusieurs sous-chaînes et une sous-chaîne tronquée avec un tableau `params` vide. Il a également été vérifié pour « /// ». Le code révisé utilise uniquement l'indexation et n'alloue rien. Il recherche le premier caractère qui n’est pas un espace blanc, puis vérifie caractère par caractère pour voir si la chaîne commence par « /// ». Le nouveau code utilise `IndexOfFirstNonWhiteSpaceChar` à la <xref:System.String.TrimStart%2A> place de pour retourner le premier index (après un index de début spécifié) où un caractère autre qu’un espace blanc se produit. Le correctif n'est pas complet, mais vous pouvez voir comment appliquer des correctifs similaires pour obtenir une solution complète. En appliquant cette approche dans l'ensemble du code, vous pouvez supprimer toutes les allocations dans `WriteFormattedDocComment()`. 
   
- **Exemple 4: StringBuilder**  
+ **Exemple 4 : StringBuilder**  
   
  Cet exemple utilise un objet <xref:System.Text.StringBuilder>. La fonction suivante génère un nom de type complet pour des types génériques :  
   
@@ -278,9 +278,9 @@ private static string GetStringAndReleaseBuilder(StringBuilder sb)
 ### <a name="linq-and-lambdas"></a>Expressions LINQ et lambda  
 LINQ (Language-Integrated Query), conjointement aux expressions lambda, est un exemple de fonctionnalité de productivité. Toutefois, son utilisation peut avoir un impact significatif sur les performances au fil du temps, et vous pouvez être amené à réécrire votre code.
   
- **Exemple 5: Expressions lambda, List\<t > et IEnumerable\<t >**  
+ **Exemple 5 : Expressions lambda, List\<t > et IEnumerable\<t >**  
   
- Cet exemple utilise du [code de style opérationnel et LINQ](https://blogs.msdn.com/b/charlie/archive/2007/01/26/anders-hejlsberg-on-linq-and-functional-programming.aspx) pour rechercher un symbole dans le modèle du compilateur, selon une chaîne de nom :  
+ Cet exemple utilise du [code de style opérationnel et LINQ](https://blogs.msdn.microsoft.com/charlie/2007/01/27/anders-hejlsberg-on-linq-and-functional-programming/) pour rechercher un symbole dans le modèle du compilateur, selon une chaîne de nom :  
   
 ```csharp  
 class Symbol {  
@@ -304,7 +304,7 @@ Func<Symbol, bool> predicate = s => s.Name == name;
      return symbols.FirstOrDefault(predicate);  
 ```  
   
- Dans la première ligne, l' [expression](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) `s => s.Name == name` lambda [se ferme sur](https://blogs.msdn.com/b/ericlippert/archive/2003/09/17/53028.aspx) la variable `name`locale. Cela signifie qu’en plus d’allouer un objet pour le [délégué](../../csharp/language-reference/keywords/delegate.md) contenu dans `predicate`, le code alloue une classe statique pour contenir l’environnement qui capture la valeur de `name`. Le compilateur génère un code similaire au suivant :  
+ Dans la première ligne, l' [expression](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) `s => s.Name == name` lambda [se ferme sur](https://blogs.msdn.microsoft.com/ericlippert/2003/09/17/what-are-closures/) la variable `name`locale. Cela signifie qu’en plus d’allouer un objet pour le [délégué](../../csharp/language-reference/keywords/delegate.md) contenu dans `predicate`, le code alloue une classe statique pour contenir l’environnement qui capture la valeur de `name`. Le compilateur génère un code similaire au suivant :  
   
 ```csharp  
 // Compiler-generated class to hold environment state for lambda  
@@ -412,7 +412,7 @@ class Compilation { /*...*/
   
  **Correctif pour l’exemple 6**  
   
- Pour supprimer l’allocation <xref:System.Threading.Tasks.Task> terminée, vous pouvez mettre en cache l’objet Task avec le résultat terminé:  
+ Pour supprimer l’allocation <xref:System.Threading.Tasks.Task> terminée, vous pouvez mettre en cache l’objet Task avec le résultat terminé :  
   
 ```csharp  
 class Compilation { /*...*/  

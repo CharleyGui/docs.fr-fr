@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 28a3f509-07e2-4dbe-81df-874c5e969cc4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e5320bc6c5105c95d63b1888e1adbc2ecf1bc5fb
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: b652fae47a321ca41e1f518e9077cd68f24c91c9
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59199997"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894859"
 ---
 # <a name="mdbgexe-net-framework-command-line-debugger"></a>MDbg.exe (débogueur de ligne de commande du .NET Framework)
 Le débogueur de ligne de commande du .NET Framework aide les fournisseurs d'outils et les développeurs d'applications à trouver et à corriger les bogues dans les programmes qui ont pour cible le Common Language Runtime du .NET Framework. Cet outil utilise l'API de débogage du runtime pour fournir des services de débogage. Vous pouvez utiliser MDbg.exe pour déboguer uniquement du code managé ; il n'y a pas de prise en charge du débogage du code non managé.  
@@ -23,12 +23,12 @@ Cet outil est disponible via NuGet. Pour plus d’informations sur l’installat
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 MDbg [ProgramName[arguments]] [options]  
 ```  
   
 ## <a name="commands"></a>Commandes  
- Quand vous êtes dans le débogueur (comme indiqué par l’invite **mdbg>**), tapez l’une des commandes décrites dans la section suivante :  
+ Quand vous êtes dans le débogueur (comme indiqué par l’invite **mdbg>** ), tapez l’une des commandes décrites dans la section suivante :  
   
  **commande** [*arguments*]  
   
@@ -52,7 +52,7 @@ MDbg [ProgramName[arguments]] [options]
 |**fo**[**reach**] [*OtherCommand*]|Exécute une commande sur tous les threads. *OtherCommand* est une commande valide qui fonctionne sur un thread ; **foreach** *OtherCommand* exécute la même commande sur tous les threads.|  
 |**f**[**unceval**] [`-ad` *Num*] *functionName* [*args ...* ]|Exécute une évaluation de fonction sur le thread actif actuel où la fonction à évaluer est *functionName*. Le nom de fonction doit être pleinement qualifié, espaces de noms compris.<br /><br /> L'option `-ad` spécifie le domaine d'application à utiliser pour résoudre la fonction. Si l'option `-ad` n'est pas spécifiée, le domaine d'application pour la résolution est par défaut le domaine d'application où se trouve le thread qui est utilisé pour l'évaluation de la fonction.<br /><br /> Si la fonction qui est évaluée n'est pas statique, le premier paramètre passé doit être un pointeur `this`. Les arguments de l'évaluation de fonction sont recherchés dans tous les domaines d'application.<br /><br /> Pour demander une valeur d'un domaine d'application, préfixez la variable avec le module et le nom du domaine d'application, par exemple `funceval -ad 0 System.Object.ToString hello.exe#0!MyClass.g_rootRef`. Cette commande évalue la fonction `System.Object.ToString` dans le domaine d'application `0`. Étant donné que la méthode `ToString` est une fonction d'instance, le premier paramètre doit être un pointeur `this`.|  
 |**g**[**o**]|Avec cette commande, le programme continue jusqu'à ce qu'il rencontre un point d'arrêt, que le programme se termine ou qu'un événement (par exemple, une exception non gérée) provoque l'arrêt du programme.|  
-|**h**[**elp**] [*command*]<br /><br /> - ou -<br /><br /> **?** [*command*]|Affiche une description de toutes les commandes ou une description détaillée d'une commande spécifiée.|  
+|**h**[**elp**] [*command*]<br /><br /> ou<br /><br /> **?** [*command*]|Affiche une description de toutes les commandes ou une description détaillée d'une commande spécifiée.|  
 |**ig**[**nore**] [*event*]|Entraîne l'arrêt du débogueur uniquement sur les exceptions non gérées.|  
 |**int**[**ercept**] *FrameNumber*|Restaure le débogueur à un numéro de frame spécifié.<br /><br /> Si le débogueur rencontre une exception, utilisez cette commande pour restaurer le débogueur au numéro de frame spécifié. Vous pouvez modifier l’état du programme à l’aide de la commande **set** et continuer à utiliser la commande **go**.|  
 |**k**[**ill**]|Arrête le processus actif.|  
@@ -61,13 +61,13 @@ MDbg [ProgramName[arguments]] [options]
 |**log** [*eventType*]|Définir ou afficher les événements à enregistrer.|  
 |**mo**[**de**] [*option on/off*]|Définit différentes options du débogueur. Utilisez `mode` sans option pour obtenir la liste des modes de débogage et leurs paramètres actuels.|  
 |**mon**[**itorInfo**] *monitorReference*|Affiche les informations de verrou du moniteur d'objet.|  
-|**newo**[**bj**] *typeName* [*arguments...*]|Crée un objet de type *typeName*.|  
+|**newo**[**bj**] *typeName* [*arguments...* ]|Crée un objet de type *typeName*.|  
 |**n**[**ext**]|Exécute le code et passe à la ligne suivante (même si la ligne suivante contient de nombreux appels de fonction).|  
 |**Opendump** *pathToDumpFile*|Ouvre le fichier dump spécifié pour le débogage.|  
 |**o**[**ut**]|Déplace le curseur à la fin de la fonction actuelle.|  
 |**pa**[**th**] [*pathName*]|Recherche dans le chemin d’accès spécifié les fichiers sources si l’emplacement dans les binaires n’est pas disponible.|  
 |**p**[**rint**] [*var*] &#124; [`-d`]|Imprime toutes les variables dans la portée (**print**), imprime la variable spécifiée (**print** *var*) ou imprime les variables du débogueur (**print**`-d`).|  
-|**printe**[**xception**] [*-r*]|Imprime la dernière exception sur le thread actuel. Utilisez l'option `–r` (récursive) pour parcourir la propriété `InnerException` sur l'objet exception pour obtenir des informations sur la chaîne entière des exceptions.|  
+|**printe**[**xception**] [ *-r*]|Imprime la dernière exception sur le thread actuel. Utilisez l'option `–r` (récursive) pour parcourir la propriété `InnerException` sur l'objet exception pour obtenir des informations sur la chaîne entière des exceptions.|  
 |**pro**[**cessenum**]|Affiche les processus actifs.|  
 |**q**[**uit**] [*exitcode*]|Quitte l'interpréteur de commandes MDbg.exe, en spécifiant éventuellement le code de sortie du processus.|  
 |**re**[**sume**] [`*` &#124; [`~`]*threadNumber*]|Reprend le thread actuel ou le thread spécifié par le paramètre *threadNumber*.<br /><br /> Si le paramètre *threadNumber* est spécifié comme `*` ou si le numéro de thread commence par `~`, la commande s’applique à tous les threads à l’exception de celui spécifié par *threadNumber*.<br /><br /> Reprendre un thread non suspendu n'a aucun effet.|  
@@ -83,14 +83,14 @@ MDbg [ProgramName[arguments]] [options]
 |**uwgc**[**handle**] [*var*] &#124; [*address*]|Imprime la variable suivie par un handle. Le handle peut être spécifié par un nom ou par une adresse.|  
 |**when**|Affiche les instructions `when` actuellement actives.<br /><br /> **when** **delete all** &#124; `num` [`num` [`num` …]] - Supprime l’instruction `when` spécifiée par le numéro ou toutes les instructions `when` si `all` est spécifié.<br /><br /> **when** `stopReason` [`specific_condition`] **do**`cmd` [`cmd` [`cmd` …] ] - Le paramètre *stopReason* peut avoir l’une des valeurs suivantes :<br /><br /> `StepComplete`, `ProcessExited`, `ThreadCreated`, `BreakpointHit`, `ModuleLoaded`, `ClassLoaded`, `AssemblyLoaded`, `AssemblyUnloaded`, `ControlCTrapped`, `ExceptionThrown`, `UnhandledExceptionThrown`, `AsyncStop`, `AttachComplete`, `UserBreak`, `EvalComplete`, `EvalException`, `RemapOpportunityReached`, `NativeStop`.<br /><br /> *specific_condition* peut avoir l’une des valeurs suivantes :<br /><br /> -   *number* - Pour `ThreadCreated` et `BreakpointHit`, déclenche l’action uniquement quand elle est arrêtée par un numéro d’ID/de point d’arrêt de thread de même valeur.<br />-   [`!`]*name* - Pour `ModuleLoaded`, `ClassLoaded`, `AssemblyLoaded`, `AssemblyUnloaded`, `ExceptionThrown` et `UnhandledExceptionThrown`, déclenche l’action uniquement quand le nom correspond au nom de *stopReason*.<br /><br /> *specific_condition* doit être vide pour d’autres valeurs de *stopReason*.|  
 |**w**[**here**] [`-v`] [`-c` *depth*] [*threadID*]|Affiche des informations de débogage sur des frames de pile.<br /><br /> -   L’option `-v` fournit des informations détaillées sur chacun des frames de pile affichés.<br />-   La spécification d’un nombre pour `depth` limite le nombre de frames affichés. Utilisez la commande **all** pour afficher tous les frames. La valeur par défaut est 100.<br />-   Si vous spécifiez le paramètre *threadID*, vous pouvez contrôler le thread qui est associé à la pile. La valeur par défaut est le thread actuel uniquement. Utilisez la commande **all** pour obtenir tous les threads.|  
-|**x** [`-c`*numSymbols*] [*module*[`!`*pattern*]]|Affiche les fonctions qui correspondent à `pattern` pour un module.<br /><br /> Si *numSymbols* est spécifié, la sortie est limitée au nombre spécifié. Si `!` (indiquant une expression régulière) n’est pas spécifié pour *pattern*, toutes les fonctions sont affichées. Si *module* n’est pas fourni, tous les modules chargés sont affichés. Les symboles (*~#*) peuvent être utilisés pour définir des points d’arrêt à l’aide de la commande **break**.|  
+|**x** [`-c`*numSymbols*] [*module*[`!`*pattern*]]|Affiche les fonctions qui correspondent à `pattern` pour un module.<br /><br /> Si *numSymbols* est spécifié, la sortie est limitée au nombre spécifié. Si `!` (indiquant une expression régulière) n’est pas spécifié pour *pattern*, toutes les fonctions sont affichées. Si *module* n’est pas fourni, tous les modules chargés sont affichés. Les symboles ( *~#* ) peuvent être utilisés pour définir des points d’arrêt à l’aide de la commande **break**.|  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Compilez l'application à déboguer à l'aide d'indicateurs spécifiques au compilateur, ce qui oblige ce dernier à générer des symboles de débogage. Pour plus d'informations sur ces indicateurs, consultez la documentation de votre compilateur. Il est toujours possible de déboguer des applications optimisées, mais il manquera certaines informations de débogage. Par exemple, un grand nombre de variables locales ne seront pas visibles et certaines lignes sources seront incorrectes.  
   
  Après avoir compilé votre application, tapez **mdbg** à l’invite de commandes pour démarrer une session de débogage, comme le montre l’exemple suivant.  
   
-```  
+```console  
 C:\Program Files\Microsoft Visual Studio 8\VC>mdbg  
 MDbg (Managed debugger) v2.0.50727.42 (RTM.050727-4200) started.  
 Copyright (C) Microsoft Corporation. All rights reserved.  

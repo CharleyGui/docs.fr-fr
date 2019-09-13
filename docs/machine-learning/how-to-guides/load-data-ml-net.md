@@ -1,14 +1,16 @@
 ---
 title: Charger des données depuis des fichiers et d’autres sources
 description: Ce guide pratique vous montre comment charger des données à des fins de traitement et d’entraînement dans ML.NET. Les données sont stockées à l’origine dans des fichiers ou d’autres sources de données, comme des bases de données, du JSON, du XML ou des collections en mémoire.
-ms.date: 08/01/2019
+ms.date: 09/11/2019
+author: luisquintanilla
+ms.author: luquinta
 ms.custom: mvc,how-to, title-hack-0625
-ms.openlocfilehash: d5f3aab14a60a8c9860dc67f1cc98f3b1b3188ed
-ms.sourcegitcommit: 8c6426a3d2adff5fbcbe1fed0f28eda718c15351
-ms.translationtype: HT
+ms.openlocfilehash: 419b32f2a460ca153d28206524a38c7c9fa86173
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68733363"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929379"
 ---
 # <a name="load-data-from-files-and-other-sources"></a>Charger des données depuis des fichiers et d’autres sources
 
@@ -52,6 +54,7 @@ L’attribut [`LoadColumn`](xref:Microsoft.ML.Data.LoadColumnAttribute) spécifi
 > [`LoadColumn`](xref:Microsoft.ML.Data.LoadColumnAttribute) est nécessaire uniquement lors du chargement de données à partir d’un fichier.
 
 Chargez les colonnes en tant que : 
+
 - Colonnes individuelles comme `Size` et `CurrentPrices` dans la classe `HousingData`.
 - Plusieurs colonnes à la fois sous la forme d’un vecteur comme `HistoricalPrices` dans la classe `HousingData`.
 
@@ -102,13 +105,65 @@ TextLoader textLoader = mlContext.Data.CreateTextLoader<HousingData>(separatorCh
 IDataView data = textLoader.Load("DataFolder/SubFolder1/1.txt", "DataFolder/SubFolder2/1.txt");
 ```
 
+## <a name="load-data-from-a-relational-database"></a>Charger des données à partir d’une base de données relationnelle
+
+> [!NOTE]
+> DatabaseLoader est actuellement en version préliminaire. Il peut être utilisé en référençant les packages NuGet [Microsoft. ml. expérimental](https://www.nuget.org/packages/Microsoft.ML.Experimental/0.16.0-preview) et [System. Data. SqlClient](https://www.nuget.org/packages/System.Data.SqlClient/4.6.1) . 
+
+ML.NET prend en charge le chargement de données à partir de diverses bases de [`System.Data`](xref:System.Data) données relationnelles prises en charge par, notamment SQL Server, Azure SQL Database, Oracle, SQLite, PostgreSQL, Progress, IBM DB2 et bien plus encore.
+
+À partir d’une base de données `House` avec une table nommée et le schéma suivant :
+
+```SQL
+CREATE TABLE [House] (
+    [HouseId] int NOT NULL IDENTITY,
+    [Size] real NOT NULL,
+    [Price] real NOT NULL
+    CONSTRAINT [PK_House] PRIMARY KEY ([HouseId])
+);
+```
+
+Les données peuvent être modélisées par une classe comme `HouseData`.
+
+```csharp
+public class HouseData
+{
+    public float Size { get; set; }
+
+    public float Price { get; set; }
+}
+```
+
+Ensuite, à l’intérieur de votre application, `DatabaseLoader`créez un.
+
+```csharp
+MLContext mlContext = new MLContext();
+
+DatabaseLoader loader = mlContext.Data.CreateDatabaseLoader<HouseData>();
+```
+
+Définissez votre chaîne de connexion, ainsi que la commande SQL à exécuter sur la base de données et `DatabaseSource` créez une instance. Cet exemple utilise une base de données locale SQL Server avec un chemin d’accès de fichier. Toutefois, DatabaseLoader prend en charge toute autre chaîne de connexion valide pour les bases de données locales et dans le Cloud.  
+
+```csharp
+string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=<YOUR-DB-FILEPATH>;Database=<YOUR-DB-NAME>;Integrated Security=True;Connect Timeout=30";
+
+string sqlCommand = "SELECT Size,Price FROM House";
+
+DatabaseSource dbSource = new DatabaseSource(SqlClientFactory.Instance,connectionString,sqlCommand);
+```
+
+Enfin, utilisez la `Load` méthode pour charger les données dans un [`IDataView`](xref:Microsoft.ML.IDataView).
+
+```csharp
+IDataView data = loader.Load(dbSource);
+```
+
 ## <a name="load-data-from-other-sources"></a>Charger des données depuis d’autres sources
 
 En plus du chargement de données stockées dans des fichiers, ML.NET prend en charge le chargement de données depuis des sources incluant notamment celles-ci :
 
 - Collections en mémoire
 - JSON/XML
-- Bases de données
 
 Notez que quand vous utilisez des sources de streaming, ML.NET s’attend à ce que l’entrée se présente sous la forme d’une collection en mémoire. Ainsi, quand vous utilisez des sources telles que JSON/XML, veillez à convertir les données en une collection en mémoire.
 

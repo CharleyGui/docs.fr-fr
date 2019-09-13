@@ -5,12 +5,12 @@ author: billwagner
 ms.author: wiwagn
 ms.date: 01/25/2018
 ms.technology: dotnet-standard
-ms.openlocfilehash: cbd9bcdb12a423f54aa4ff82d88f07c20023c48f
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: da5e72b96fec35404e7e9ae7930f3430143487d2
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59769461"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929305"
 ---
 # <a name="the-net-framework-analyzer"></a>L’analyseur .NET Framework
 
@@ -23,6 +23,7 @@ L’analyseur s’exécute de façon interactive dans Visual Studio au fil de l�
 Les analyseurs de sécurité .NET doivent être installés sous forme de package NuGet sur chaque projet où vous voulez qu’ils s’exécutent. Il suffit qu’un seul développeur les ajoute au projet. Le package de l’analyseur est une dépendance de projet et il s’exécute sur la machine de chaque développeur une fois qu’il dispose de la solution mise à jour.
 
 L’Analyseur .NET Framework est livré dans le package NuGet [Microsoft.NetFramework.Analyzers](https://www.nuget.org/packages/Microsoft.NetFramework.Analyzers/). Ce package fournit seulement les analyseurs spécifiques à .NET Framework, qui comprend des analyseurs de sécurité. Dans la plupart des cas, vous allez utiliser le package NuGet [Microsoft.CodeAnalysis.FxCopAnalyzers](https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers). Le package d’agrégation FxCopAnalyzers contient tous les analyseurs de framework inclus dans le package Framework.Analyzers, ainsi que les analyseurs suivants :
+
 - [Microsoft.CodeQuality.Analyzers](https://www.nuget.org/packages/Microsoft.CodeQuality.Analyzers) : Fournit des indications générales et des conseils pour les API .NET Standard.
 - [Microsoft.NetCore.Analyzers](https://www.nuget.org/packages/Microsoft.NetCore.Analyzers) : Fournit des analyseurs spécifiques des API .NET Core.
 - [Text.Analyzers](https://www.nuget.org/packages/Text.Analyzers) : Fournit des conseils pour le texte inclus en tant que code, notamment les commentaires.
@@ -78,7 +79,7 @@ public class MyItemType
 }
 ```
 
-**Catégorie :** Utilisation
+**Catégorie :** Usage
 
 **Gravité :** Warning
 
@@ -88,7 +89,7 @@ Informations complémentaires : [CA2229 : Implémentez des constructeurs de sé
 
 Un champ d'instance d'un type non sérialisable est déclaré dans un type sérialisable. Vous devez marquer explicitement ce champ avec <xref:System.NonSerializedAttribute> pour résoudre cet avertissement.
 
-**Catégorie :** Utilisation
+**Catégorie :** Usage
 
 **Gravité :** Warning
 
@@ -98,7 +99,7 @@ Informations complémentaires : [CA2235 : Marquez tous les champs non sérialis
 
 Pour être reconnus par le Common Language Runtime comme étant sérialisables, les types doivent être marqués avec l’attribut <xref:System.SerializableAttribute>, même s’ils utilisent une routine de sérialisation personnalisée en implémentant l’interface <xref:System.Runtime.Serialization.ISerializable>.
 
-**Catégorie :** Utilisation
+**Catégorie :** Usage
 
 **Gravité :** Warning
 

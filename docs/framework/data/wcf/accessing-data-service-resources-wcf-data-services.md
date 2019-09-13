@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF Data Services, getting started
 - WCF Data Services, accessing data
 ms.assetid: 9665ff5b-3e3a-495d-bf83-d531d5d060ed
-ms.openlocfilehash: eff8d682004bf437a9b5470a4eb91c9bd52bfad5
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 048cbb8708aa705fe6b03491ddfa9c107a21cda1
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791325"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894347"
 ---
 # <a name="accessing-data-service-resources-wcf-data-services"></a>Accès aux ressources d'un service de données (services de données WCF)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]prend en [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] charge le pour exposer vos données en tant que flux avec des ressources adressables par des URI. Ces ressources sont représentées selon les conventions de relation d’entité de l' [Entity Data Model](../adonet/entity-data-model.md). Dans ce modèle, les entités représentent des unités opérationnelles de données qui sont des types de données dans un domaine d'application, par exemple les clients, ordres, éléments et produits. Les données d'entité sont accessibles et modifiées au moyen de la sémantique REST (Representational State Transfer), en particulier les verbes HTTP standard GET, PUT, POST et DELETE.  
@@ -21,44 +21,44 @@ ms.locfileid: "70791325"
 ## <a name="addressing-resources"></a>Adressage des ressources  
  Dans [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)], vous adressez toutes les données exposées par le modèle de données à l'aide d'un URI. Par exemple, l’URI suivant retourne un flux qui est le jeu d’entités Customers, qui contient des entrées pour toutes les instances du type d’entité Customer :  
   
-```  
-http://services.odata.org/Northwind/Northwind.svc/Customers  
+```http
+https://services.odata.org/Northwind/Northwind.svc/Customers  
 ```  
   
  Les entités ont des propriétés spéciales appelées des clés d'entité. Une clé d'entité est utilisée pour identifier uniquement une entité unique dans un jeu d'entités. Cela vous permet d'adresser une instance spécifique d'un type d'entité dans le jeu d'entités. Par exemple, l'URI suivant retourne une entrée pour une instance spécifique du type d'entité Customer dont la valeur de clé est `ALFKI`:  
   
-```  
-http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')  
+```http  
+https://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')  
 ```  
   
  Les propriétés primitives et complexes d'une instance d'entité peuvent également être adressées individuellement. Par exemple, l'URI suivant retourne un élément XML qui contient la valeur de propriété `ContactName` pour un client spécifique :  
   
-```  
-http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/ContactName  
+```http  
+https://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/ContactName  
 ```  
   
  Lorsque vous incluez le point de terminaison `$value` dans l'URI précédent, seule la valeur de la propriété primitive est retournée dans le message de réponse. L'exemple suivant retourne uniquement la chaîne « Maria Anders » sans l'élément XML :  
   
-```  
-http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/ContactName/$value  
+```http  
+https://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/ContactName/$value  
 ```  
   
  Les associations définissent dans le modèle de données les relations entre les entités. Ces associations vous permettent d'adresser des jeux d'entités connexes à l'aide des propriétés de navigation d'une instance d'entité. Une propriété de navigation peut soit retourner une entité connexe unique, dans le cas d'une relation plusieurs-à-un, soit un jeu d'entités connexes, dans le cas d'une relation un-à-plusieurs. Par exemple, l'URI suivant retourne un flux qui constitue le jeu de toutes les commandes associées à un client spécifique :  
   
-```  
-http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders  
+```http  
+https://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders  
 ```  
   
  Les relations, qui sont habituellement bidirectionnelles, sont représentées par une paire de propriétés de navigation. Inversement à la relation de l'exemple précédent, l'URI suivant retourne une référence à l'entité Customer à laquelle appartient une entité Order spécifique :  
   
-```  
-http://services.odata.org/Northwind/Northwind.svc/Orders(10643)/Customer  
+```http  
+https://services.odata.org/Northwind/Northwind.svc/Orders(10643)/Customer  
 ```  
   
  [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]vous permet également d’adresser des ressources en fonction des résultats d’expressions de requête. Cela permet de filtrer des ensembles de ressources en fonction d’une expression évaluée. Par exemple, l'URI suivant filtre les ressources pour retourner uniquement les ordres du client spécifié expédiés depuis le 22 septembre 1997 :  
   
-```  
-http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders?$filter=ShippedDate gt datetime'1997-09-22T00:00:00'  
+```http  
+https://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders?$filter=ShippedDate gt datetime'1997-09-22T00:00:00'  
 ```  
   
  Pour plus d’informations, [consultez OData : Conventions](https://go.microsoft.com/fwlink/?LinkId=185564)d’URI.  
@@ -66,8 +66,8 @@ http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders?$fil
 ## <a name="system-query-options"></a>Option de requête système  
  [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]définit un ensemble d’options de requête système que vous pouvez utiliser pour effectuer des opérations de requête traditionnelles sur des ressources, telles que le filtrage, le tri et la pagination. Par exemple, l’URI suivant retourne le jeu de toutes les `Order` entités, ainsi que les `Order_Detail` entités associées, dont les codes postaux ne se terminent pas par `100`:  
   
-```  
-http://services.odata.org/Northwind/Northwind.svc/Orders?$filter=not endswith(ShipPostalCode,'100')&$expand=Order_Details&$orderby=ShipCity  
+```http  
+https://services.odata.org/Northwind/Northwind.svc/Orders?$filter=not endswith(ShipPostalCode,'100')&$expand=Order_Details&$orderby=ShipCity  
 ```  
   
  Les entrées du flux retourné sont également classées selon la valeur de la propriété ShipCity des commandes.  
@@ -87,8 +87,8 @@ http://services.odata.org/Northwind/Northwind.svc/Orders?$filter=not endswith(Sh
 ## <a name="addressing-relationships"></a>Adressage de relations  
  Outre l’adressage des jeux d’entités et des instances [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] d’entité, vous permet également de traiter les associations qui représentent des relations entre des entités. Cette fonctionnalité est nécessaire pour créer ou modifier une relation entre deux instances d'entité, telles que l'expéditeur associé à un ordre donné dans l'exemple de base de données Northwind. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]prend en `$link` charge un opérateur pour adresser spécifiquement les associations entre des entités. Par exemple, l'URI suivant est spécifié dans un message de demande HTTP PUT pour remplacer l'expéditeur pour l'ordre spécifié par un nouvel expéditeur.  
   
-```  
-http://services.odata.org/Northwind/Northwind.svc/Orders(10643)/$links/Shipper  
+```http 
+https://services.odata.org/Northwind/Northwind.svc/Orders(10643)/$links/Shipper  
 ```  
   
  Pour plus d’informations, [consultez OData : Adressage des liens entre](https://go.microsoft.com/fwlink/?LinkId=187351)les entrées.  

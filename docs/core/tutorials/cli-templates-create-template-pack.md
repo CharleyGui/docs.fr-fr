@@ -5,12 +5,12 @@ author: thraka
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: df8c33856195ba7feacd32203e4a885997b50ad2
-ms.sourcegitcommit: 6472349821dbe202d01182bc2cfe9d7176eaaa6c
-ms.translationtype: HT
+ms.openlocfilehash: 4bd51f579231b13b0831ef7114c2a648c55cd6a2
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67870628"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926077"
 ---
 # <a name="tutorial-create-a-template-pack"></a>Tutoriel : Créer un pack de modèles
 
@@ -19,7 +19,8 @@ Avec .NET Core, vous pouvez créer et déployer des modèles qui génèrent des 
 Dans cette partie de la série, vous découvrirez comment :
 
 > [!div class="checklist"]
-> * Créer un projet _. csproj* pour générer un pack de modèles
+>
+> * Créer un projet. csproj pour générer un pack de modèles \*
 > * Configurer le fichier projet pour la compression
 > * Installer un modèle à partir d’un fichier NuGet
 > * Désinstaller un modèle par ID de package

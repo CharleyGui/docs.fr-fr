@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 08b5dee94a9a23fdd1c9e635aa2ef848f59e86cf
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: e89545b5fa29f6e5bf99bb9b85322d7ee14422a4
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70169133"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929012"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Utilisation du modèle asynchrone basé sur les tâches
 
@@ -381,7 +381,7 @@ while(imageTasks.Count > 0)
 }
 ```
 
-#### <a name="throttling"></a>Throttling
+#### <a name="throttling"></a>Limitation
  Prenons l’exemple de l’entrelacement, sauf qu’ici l’utilisateur télécharge tant d’images que les téléchargements doivent être limités. Par exemple, vous ne souhaitez qu’un certain nombre de téléchargements simultanés. Pour ce faire, vous pouvez démarrer un sous-ensemble d’opérations asynchrones.  Lorsque les opérations sont terminées, vous pouvez démarrer des opérations supplémentaires pour prendre leur place :
 
 ```csharp
@@ -727,7 +727,7 @@ public class AsyncCache<TKey, TValue>
 }
 ```
 
- La classe [AsyncCache\<TKey,TValue>](https://blogs.msdn.microsoft.com/pfxteam/2010/04/23/parallelextensionsextras-tour-12-asynccache/) accepte en tant que délégué à son constructeur une fonction qui prend une `TKey` et retourne une <xref:System.Threading.Tasks.Task%601>.  Toutes les valeurs précédemment accessibles à partir du cache sont stockées dans le dictionnaire interne, et `AsyncCache` garantit qu’une seule tâche est générée par clé, même en cas d’accès simultané au cache.
+ La classe [AsyncCache\<TKey,TValue>](https://devblogs.microsoft.com/pfxteam/parallelextensionsextras-tour-12-asynccache/) accepte en tant que délégué à son constructeur une fonction qui prend une `TKey` et retourne une <xref:System.Threading.Tasks.Task%601>.  Toutes les valeurs précédemment accessibles à partir du cache sont stockées dans le dictionnaire interne, et `AsyncCache` garantit qu’une seule tâche est générée par clé, même en cas d’accès simultané au cache.
 
  Par exemple, vous pouvez créer un cache de pages web téléchargées :
 

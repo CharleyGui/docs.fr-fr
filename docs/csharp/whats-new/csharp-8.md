@@ -1,13 +1,13 @@
 ---
 title: Nouveautés de C# 8.0 – Guide C#
 description: Vue d’ensemble des nouvelles fonctionnalités disponibles dans C# 8.0. Cet article a été actualisé par rapport à la préversion 5.
-ms.date: 09/04/2019
-ms.openlocfilehash: b281c55a5911d81503a6af80e393469be1124280
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.date: 09/10/2019
+ms.openlocfilehash: 141f7a2fa0bc5f6a2a253e196a218938dd4c170e
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374014"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926523"
 ---
 # <a name="whats-new-in-c-80"></a>Nouveautés de C# 8.0
 
@@ -26,6 +26,7 @@ Vous pouvez d’ores et déjà tester les nombreuses améliorations apportées a
 - [Types de référence Nullable](#nullable-reference-types)
 - [Flux asynchrones](#asynchronous-streams)
 - [Index et plages](#indices-and-ranges)
+- [Assignation de fusion Null](#null-coalescing-assignment)
 - [Types construits non managés](#unmanaged-constructed-types)
 - [Amélioration des chaînes textuelles interpolées](#enhancement-of-interpolated-verbatim-strings)
 
@@ -447,6 +448,24 @@ var text = words[phrase];
 ```
 
 Pour explorer davantage les index et les plages, consultez le tutoriel sur [les index et les plages](../tutorials/ranges-indexes.md).
+
+## <a name="null-coalescing-assignment"></a>Assignation de fusion Null
+
+C#8,0 introduit l’opérateur `??=`d’assignation de fusion Null. Vous pouvez utiliser l' `??=` opérateur pour assigner la valeur de son opérande droit à son opérande gauche uniquement si l’opérande de gauche prend `null`la valeur.
+
+```csharp
+List<int> numbers = null;
+int? i = null;
+
+numbers ??= new List<int>();
+numbers.Add(i ??= 17);
+numbers.Add(i ??= 20);
+
+Console.WriteLine(string.Join(' ', numbers));  // output: 17 17
+Console.WriteLine(i);  // output: 17
+```
+
+Pour plus d’informations, consultez [les = l’article Operators](../language-reference/operators/null-coalescing-operator.md) .
 
 ## <a name="unmanaged-constructed-types"></a>Types construits non managés
 

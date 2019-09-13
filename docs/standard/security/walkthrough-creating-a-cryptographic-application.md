@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5cdd2f5538be0e39b5dd3a378825ccf81f314c03
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ee6dafa8578c59d23908bf0e184091bb4ceaeb45
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69916283"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895290"
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>Procédure pas à pas : création d’une application de chiffrement
 Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. Les exemples de code sont conçus pour une application Windows Forms. Cette application ne montre pas de scénarios du monde réel, tels que l'utilisation de cartes à puce. Elle montre les principes fondamentaux du chiffrement et du déchiffrement.  
@@ -53,7 +53,7 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
 ## <a name="creating-a-windows-forms-application"></a>Création d’une application Windows Forms  
  La plupart des exemples de code de cette procédure pas à pas sont conçus pour être des gestionnaires d'événements pour des contrôles de bouton. Le tableau suivant répertorie les contrôles requis par l'exemple d'application, ainsi que leur nom pour correspondre aux exemples de code.  
   
-|Contrôle|Name|Propriété Text (si nécessaire)|  
+|Contrôle|Nom|Propriété Text (si nécessaire)|  
 |-------------|----------|---------------------------------|  
 |<xref:System.Windows.Forms.Button>|`buttonEncryptFile`|Chiffrer le fichier|  
 |<xref:System.Windows.Forms.Button>|`buttonDecryptFile`|Déchiffrer le fichier|  
@@ -61,7 +61,7 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
 |<xref:System.Windows.Forms.Button>|`buttonExportPublicKey`|Exporter une clé publique|  
 |<xref:System.Windows.Forms.Button>|`buttonImportPublicKey`|Importer une clé publique|  
 |<xref:System.Windows.Forms.Button>|`buttonGetPrivateKey`|Obtenir une clé privée|  
-|<xref:System.Windows.Forms.Label>|`label1`||  
+|<xref:System.Windows.Forms.Label>|`label1`|Clé non définie|  
 |<xref:System.Windows.Forms.OpenFileDialog>|`openFileDialog1`||  
 |<xref:System.Windows.Forms.OpenFileDialog>|`openFileDialog2`||  
   
@@ -82,7 +82,7 @@ Cette procédure pas à pas montre comment chiffrer et déchiffrer du contenu. L
  [!code-vb[CryptoWalkThru#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#2)]  
   
 ## <a name="encrypting-a-file"></a>Chiffrement d'un fichier  
- Cette tâche implique deux méthodes: la méthode de gestionnaire d’événements `Encrypt File` pour le`buttonEncryptFile_Click`bouton () `EncryptFile` et la méthode. La première méthode affiche une boîte de dialogue permettant de sélectionner un fichier, puis passe le nom du fichier à la deuxième méthode qui effectue le chiffrement.  
+ Cette tâche implique deux méthodes : la méthode de gestionnaire d’événements `Encrypt File` pour le`buttonEncryptFile_Click`bouton () `EncryptFile` et la méthode. La première méthode affiche une boîte de dialogue permettant de sélectionner un fichier, puis passe le nom du fichier à la deuxième méthode qui effectue le chiffrement.  
   
  Le contenu chiffré, la clé et le vecteur d'initialisation sont enregistrés dans un <xref:System.IO.FileStream>, qui correspond au package de chiffrement.  
   

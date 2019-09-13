@@ -2,12 +2,12 @@
 title: Custom Token
 ms.date: 03/30/2017
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-ms.openlocfilehash: c3c6cfd9d1742f7e839d7b40220792ba455d7673
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: b073375325d2989a23624303f2c40b8f61a29d02
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70855510"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928649"
 ---
 # <a name="custom-token"></a>Custom Token
 
@@ -557,7 +557,7 @@ string GetCallerCreditCardNumber()
 
      Le certificat est stocké dans le magasin My (personnel) sous l'emplacement de magasin `LocalMachine`. Le certificat est stocké dans le magasin LocalMachine pour les services hébergés par IIS. Pour les services auto-hébergés, vous devez modifier le fichier de commandes en remplaçant la chaîne LocalMachine par CurrentUser afin de stocker le certificat de client dans l'emplacement de magasin CurrentUser.
 
-    ```
+    ```bat
     echo ************
     echo Server cert setup starting
     echo %SERVER_NAME%
@@ -571,7 +571,7 @@ string GetCallerCreditCardNumber()
 
      Les lignes suivantes du fichier de commandes Setup.bat copient le certificat de serveur dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple un certificat émis par Microsoft, cette étape de remplissage du magasin de certificats client avec le certificat de serveur n'est pas requise.
 
-    ```
+    ```bat
     echo ************
     echo copying server cert to client's TrustedPeople store
     echo ************
@@ -580,7 +580,7 @@ string GetCallerCreditCardNumber()
 
 - Pour activer l'accès à la clé privée du certificat à partir du service hébergé par IIS, le compte d'utilisateur sous lequel le processus hébergé par IIS s'exécute doit disposer des autorisations permettant d'y accéder. Cette opération est effectuée par les dernières étapes du script Setup.bat.
 
-    ```
+    ```bat
     echo ************
     echo setting privileges on server certificates
     echo ************

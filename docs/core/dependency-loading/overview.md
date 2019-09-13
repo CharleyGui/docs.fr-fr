@@ -5,12 +5,12 @@ ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
 ms.topic: overview
-ms.openlocfilehash: 69cca28606c64479d500e731ba95fe404bea38df
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 0388bd1fa29ce1caad93c917503dac9eed8974e1
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70234608"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926396"
 ---
 # <a name="dependency-loading-in-net-core"></a>Chargement des dépendances dans .NET Core
 
@@ -26,7 +26,8 @@ L' <xref:System.Runtime.Loader.AssemblyLoadContext> API est essentielle à la co
 
 ## <a name="loading-details"></a>Chargement des détails
 
-Les détails de l’algorithme de chargement sont présentés brièvement dans plusieurs articles:
+Les détails de l’algorithme de chargement sont présentés brièvement dans plusieurs articles :
+
 - [Algorithme de chargement d’assembly managé](loading-managed.md)
 - [Algorithme de chargement d’assembly satellite](loading-resources.md)
 - [Algorithme de chargement de bibliothèque non managée (natif)](loading-unmanaged.md)

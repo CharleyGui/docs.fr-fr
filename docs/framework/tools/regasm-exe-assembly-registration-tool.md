@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: e190e342-36ef-4651-a0b4-0e8c2c0281cb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 99e1b2cb67bb434cc3c3770900c6189a4ab22242
-ms.sourcegitcommit: 5137208fa414d9ca3c58cdfd2155ac81bc89e917
-ms.translationtype: HT
+ms.openlocfilehash: 44ab00322419b99aeac51da0d836c60264da5194
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57492437"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894664"
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (outil Assembly Registration Tool)
 
@@ -26,7 +26,7 @@ Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Vis
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```console
 regasm assemblyFile [options]
 ```
 
@@ -42,9 +42,9 @@ regasm assemblyFile [options]
 |**/registered**|Spécifie que cet outil fera uniquement référence aux bibliothèques de types qui ont déjà été inscrites.|
 |**/asmpath:directory**|Spécifie un répertoire contenant des références d'assembly. Doit être utilisé avec l’option **/regfile**.|
 |**/nologo**|Supprime l'affichage de la bannière de démarrage Microsoft.|
-|**/regfile** [**:** *regFile*]|Génère le fichier .reg spécifié pour l'assembly, qui comporte les entrées du Registre nécessaires. La spécification de cette option ne modifie pas le Registre. Vous ne pouvez pas utiliser cette option avec les options **/u** ou **/tlb**.|
+|**/regfile** [ **:** *regFile*]|Génère le fichier .reg spécifié pour l'assembly, qui comporte les entrées du Registre nécessaires. La spécification de cette option ne modifie pas le Registre. Vous ne pouvez pas utiliser cette option avec les options **/u** ou **/tlb**.|
 |**/silent** ou **/s**|Supprime l'affichage des messages indiquant la réussite des opérations.|
-|**/tlb** [**:** *typeLibFile*]|Génère, à partir de l'assembly spécifié, une bibliothèque de types comportant les définitions des types accessibles définis dans l'assembly.|
+|**/tlb** [ **:** *typeLibFile*]|Génère, à partir de l'assembly spécifié, une bibliothèque de types comportant les définitions des types accessibles définis dans l'assembly.|
 |**/unregister** ou **/u**|Annule l’inscription des classes pouvant être créées figurant dans *assemblyFile*. Si cette option n'est pas spécifiée, Regasm.exe inscrit les classes pouvant être créées dans l'assembly.|
 |**/verbose**|Spécifie le mode détaillé ; affiche la liste de tous les assemblys référencés pour lesquels une bibliothèque de types doit être générée, en cas de spécification avec l’option **/tlb**.|
 |**/?** ou **/help**|Affiche la syntaxe et les options de commande de l'outil.|
@@ -52,7 +52,7 @@ regasm assemblyFile [options]
 > [!NOTE]
 > Les options de ligne de commande de Regasm.exe ne respectent pas la casse. Il vous suffit d'indiquer les éléments de l'option nécessaires à son identification de manière unique. Par exemple, **/n** équivaut à **/nologo**, et **/t:** *outfile.tlb* à **/tlb:** *outfile.tlb*.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Vous pouvez utiliser l’option **/regfile** pour générer un fichier .reg comportant les entrées du Registre plutôt que d’apporter directement les modifications au Registre. Vous pouvez mettre à jour le Registre d'un ordinateur en important le fichier .reg à l'aide de l'Éditeur du Registre (Regedit.exe). Notez que le fichier .reg ne comporte pas de mises à jour du Registre pouvant être effectuées par des fonctions de Registre définies par l'utilisateur.  Notez que l’option **/regfile** émet seulement des entrées du Registre pour les classes managées.  Cette option n'émet pas d'entrée pour `TypeLibID` ou `InterfaceID`.
 
@@ -68,19 +68,19 @@ Après avoir inscrit un assembly à l’aide de Regasm.exe, vous pouvez l’inst
 
 La commande suivante inscrit toutes les classes publiques figurant dans `myTest.dll`.
 
-```
+```console
 regasm myTest.dll
 ```
 
 La commande suivante génère le fichier `myTest.reg`, qui comporte toutes les entrées du Registre nécessaires. Cette commande ne met pas à jour le Registre.
 
-```
+```console
 regasm myTest.dll /regfile:myTest.reg
 ```
 
 La commande suivante inscrit toutes les classes publiques figurant dans `myTest.dll` et elle génère et inscrit la bibliothèque de types `myTest.tlb`, qui comporte les définitions de tous les types publics définis dans `myTest.dll`.
 
-```
+```console
 regasm myTest.dll /tlb:myTest.tlb
 ```
 

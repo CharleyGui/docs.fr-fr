@@ -2,12 +2,12 @@
 title: Custom Service Host
 ms.date: 03/30/2017
 ms.assetid: fe16ff50-7156-4499-9c32-13d8a79dc100
-ms.openlocfilehash: 5da6497eadc6f02210c7f9d35d2889c98dc34ce4
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 80b2642fa202500aa22dc7d045476cb36677d47c
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039954"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928867"
 ---
 # <a name="custom-service-host"></a>Custom Service Host
 Cet exemple montre comment utiliser un dérivé personnalisé de la classe <xref:System.ServiceModel.ServiceHost> pour altérer le comportement d'exécution d'un service. Cette approche propose une alternative réutilisable à la configuration d'un grand nombre de services de manière commune. L'exemple montre également comment utiliser la classe <xref:System.ServiceModel.Activation.ServiceHostFactory> pour utiliser un ServiceHost personnalisé dans l'environnement d'hébergement des services IIS (Internet Information Services) ou WAS (Windows Process Activation Service).  
@@ -34,7 +34,7 @@ Cet exemple montre comment utiliser un dérivé personnalisé de la classe <xref
   
  Dans cet exemple, nous souhaitons générer un ServiceHost personnalisé qui ajoute ServiceMetadataBehavior, (lequel active l'édition de métadonnées) même si ce comportement n'est pas ajouté explicitement dans le fichier de configuration du service. Pour ce faire, nous créons une classe héritée de <xref:System.ServiceModel.ServiceHost> et qui remplace `ApplyConfiguration`().  
   
-```  
+```csharp  
 class SelfDescribingServiceHost : ServiceHost  
 {  
     public SelfDescribingServiceHost(Type serviceType, params Uri[] baseAddresses)  
@@ -59,7 +59,7 @@ class SelfDescribingServiceHost : ServiceHost
   
  Parce que nous ne souhaitons pas ignorer de configuration ayant été fournie dans le fichier de configuration de l'application, la première chose que notre substitution de `ApplyConfiguration`() fait est d'appeler l'implémentation de base. Une fois cette méthode terminée, nous pouvons ajouter impérativement le <xref:System.ServiceModel.Description.ServiceMetadataBehavior> à la description à l'aide du code impératif suivant.  
   
-```  
+```csharp  
 ServiceMetadataBehavior mexBehavior = this.Description.Behaviors.Find<ServiceMetadataBehavior>();  
 if (mexBehavior == null)  
 {  
@@ -76,7 +76,7 @@ else
   
  La dernière chose que notre substitution `ApplyConfiguration`() doit faire est ajouter le point de terminaison de métadonnées par défaut. Par convention, un point de terminaison de métadonnées est créé pour chaque URI dans la collection BaseAddresses de l’hôte de service.  
   
-```  
+```csharp  
 //Add a metadata endpoint at each base address  
 //using the "/mex" addressing convention  
 foreach (Uri baseAddress in this.BaseAddresses)  
@@ -113,7 +113,7 @@ foreach (Uri baseAddress in this.BaseAddresses)
 ## <a name="using-a-custom-servicehost-in-self-host"></a>Utilisation d'un ServiceHost personnalisé dans l'auto-hébergement  
  Maintenant que nous avons terminé notre implémentation ServiceHost personnalisée, nous pouvons l'utiliser pour ajouter des métadonnées qui publient le comportement sur tout service en hébergeant ce service dans une instance de notre `SelfDescribingServiceHost`. Le code suivant indique comment l'utiliser dans le scénario d'auto-hébergement.  
   
-```  
+```csharp  
 SelfDescribingServiceHost host =   
          new SelfDescribingServiceHost( typeof( Calculator ) );  
 host.Open();  
@@ -124,7 +124,7 @@ host.Open();
 ## <a name="using-a-custom-servicehost-in-iis-or-was"></a>Utilisation d'un ServiceHost personnalisé dans IIS ou WAS  
  L'utilisation d'un hôte de service personnalisé dans les scénarios d'auto-hébergement est simple, car c'est votre code d'application qui est finalement chargé de créer et d'ouvrir l'instance hôte du service. Toutefois, dans l’environnement d’hébergement IIS ou WAS, l’infrastructure WCF instancie dynamiquement l’hôte de votre service en réponse à des messages entrants. Les hôtes de service personnalisés peuvent également être utilisés dans cet environnement d'hébergement, mais ils ont besoin de code supplémentaire dans le formulaire d'un ServiceHostFactory. Le code suivant affiche une dérivée de <xref:System.ServiceModel.Activation.ServiceHostFactory> qui retourne des instances de notre `SelfDescribingServiceHost` personnalisé.  
   
-```  
+```csharp  
 public class SelfDescribingServiceHostFactory : ServiceHostFactory  
 {  
     protected override ServiceHost CreateServiceHost(Type serviceType,   

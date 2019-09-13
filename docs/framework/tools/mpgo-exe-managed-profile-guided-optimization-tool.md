@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: f6976502-a000-4fbe-aaf5-a7aab9ce4ec2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e72e091d9b120042254df5de323169f6f67c61d4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 1aa3bbfafb760a3002a218ef52d87957af47c4de
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64616058"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894845"
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (Outil d'optimisation guidée par profil managé)
 
@@ -29,7 +29,7 @@ Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’
   
 Pour les applications de bureau :  
   
-```  
+```console  
 mpgo –Scenario <command> [-Import <directory>] –AssemblyList <assembly1>  <assembly2> ... -OutDir <directory> [options]  
 ```  
   
@@ -37,7 +37,7 @@ Pour les applications de [!INCLUDE[win8_appname_long](../../../includes/win8-app
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```console  
 mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>  
 ```  
   
@@ -49,9 +49,9 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
 
 |Paramètre requis|Description|
 |------------------------|-----------------|
-|`-Scenario` \<*commande*><br /><br /> - ou -<br /><br /> `-Scenario` \<*nom_package*><br /><br /> - ou -<br /><br /> `-Import` \<*répertoire*>|Pour les applications de bureau, utilisez `–Scenario` pour spécifier la commande qui doit exécuter l'application que vous voulez optimiser, y compris tous les arguments de ligne de commande. Utilisez trois jeux de guillemets doubles autour de la *commande* si elle spécifie un chemin qui comprend des espaces, par exemple `mpgo.exe -scenario """C:\My App\myapp.exe""" -assemblylist """C:\My App\myapp.exe""" -outdir "C:\optimized files"`. N’utilisez pas de guillemets doubles ; ils ne fonctionneront pas correctement si la *commande* inclut des espaces.<br /><br /> - ou -<br /><br /> Pour les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], utilisez `–Scenario` pour spécifier le package pour lequel vous voulez générer des informations de profil. Si vous spécifiez le nom d'affichage du package ou le nom de famille du package au lieu du nom complet du package, Mpgo.exe sélectionnera le package qui correspond au nom que vous avez fourni s'il existe une seule correspondance. Si plusieurs packages correspondent au nom spécifié, Mpgo.exe vous invite à choisir un package.<br /><br /> - ou -<br /><br /> Utilisez `-Import` pour spécifier que les données d'optimisation des assemblys précédemment optimisés doivent être utilisées pour optimiser les assemblys dans `-AssemblyList`. Le *répertoire* représente le répertoire qui contient les fichiers précédemment optimisés. Les assemblys spécifiés dans `–AssemblyList` ou `–AssemblyListFile` sont les nouvelles versions d'assemblys à optimiser à l'aide des données des fichiers importés. Utiliser des données optimisées d'une version antérieure des assemblys vous permet d'optimiser les versions plus récentes des assemblys sans réexécuter le scénario.  Toutefois, si les assemblys importés et les assemblys cibles incluent du code considérablement différent, les données d'optimisation seront inefficaces. Les noms d’assemblys spécifiés dans `–AssemblyList` ou `–AssemblyListFile` doivent être présents dans le répertoire spécifié par `–Import`*répertoire*. Utilisez trois jeux de guillemets doubles autour du *répertoire* s’il spécifie un chemin qui comprend des espaces.<br /><br /> Vous devez spécifier `–Scenario` ou `–Import`, mais pas les deux paramètres.|
+|`-Scenario` \<*commande*><br /><br /> - ou -<br /><br /> `-Scenario` \<*nom_package*><br /><br /> ou<br /><br /> `-Import` \<*répertoire*>|Pour les applications de bureau, utilisez `–Scenario` pour spécifier la commande qui doit exécuter l'application que vous voulez optimiser, y compris tous les arguments de ligne de commande. Utilisez trois jeux de guillemets doubles autour de la *commande* si elle spécifie un chemin qui comprend des espaces, par exemple `mpgo.exe -scenario """C:\My App\myapp.exe""" -assemblylist """C:\My App\myapp.exe""" -outdir "C:\optimized files"`. N’utilisez pas de guillemets doubles ; ils ne fonctionneront pas correctement si la *commande* inclut des espaces.<br /><br /> ou<br /><br /> Pour les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], utilisez `–Scenario` pour spécifier le package pour lequel vous voulez générer des informations de profil. Si vous spécifiez le nom d'affichage du package ou le nom de famille du package au lieu du nom complet du package, Mpgo.exe sélectionnera le package qui correspond au nom que vous avez fourni s'il existe une seule correspondance. Si plusieurs packages correspondent au nom spécifié, Mpgo.exe vous invite à choisir un package.<br /><br /> - ou -<br /><br /> Utilisez `-Import` pour spécifier que les données d'optimisation des assemblys précédemment optimisés doivent être utilisées pour optimiser les assemblys dans `-AssemblyList`. Le *répertoire* représente le répertoire qui contient les fichiers précédemment optimisés. Les assemblys spécifiés dans `–AssemblyList` ou `–AssemblyListFile` sont les nouvelles versions d'assemblys à optimiser à l'aide des données des fichiers importés. Utiliser des données optimisées d'une version antérieure des assemblys vous permet d'optimiser les versions plus récentes des assemblys sans réexécuter le scénario.  Toutefois, si les assemblys importés et les assemblys cibles incluent du code considérablement différent, les données d'optimisation seront inefficaces. Les noms d’assemblys spécifiés dans `–AssemblyList` ou `–AssemblyListFile` doivent être présents dans le répertoire spécifié par `–Import`*répertoire*. Utilisez trois jeux de guillemets doubles autour du *répertoire* s’il spécifie un chemin qui comprend des espaces.<br /><br /> Vous devez spécifier `–Scenario` ou `–Import`, mais pas les deux paramètres.|
 |`-OutDir` \<*répertoire*>|Le répertoire dans lequel placer les assemblys optimisés. Si un assembly existe déjà dans le dossier de répertoire de sortie, une copie est créée et un numéro d’index est ajouté à son nom, par exemple *nom_assembly*-1.exe. Utilisez des guillemets doubles autour du *répertoire* s’il spécifie un chemin qui comprend des espaces.|
-|`-AssemblyList` \<*assembly1 assembly2 ...*><br /><br /> - ou -<br /><br /> `-AssemblyListFile` \<*fichier*>|Une liste d'assemblys (y compris les fichiers .exe et .dll), séparés par des espaces, dont vous voulez collecter des informations de profil. Vous pouvez spécifier `C:\Dir\*.dll` ou `*.dll` pour sélectionner tous les assemblys dans le répertoire de travail indiqué ou le répertoire actuel. Pour plus d'informations, consultez la section Notes.<br /><br /> - ou -<br /><br /> Un fichier texte contenant la liste des assemblys dont vous souhaitez collecter les informations de profil, classée avec un assembly par ligne. Si un nom d'assembly commence par un trait d'union (-), utilisez une liste de fichiers d'assembly ou renommez l'assembly.|
+|`-AssemblyList` \<*assembly1 assembly2 ...* ><br /><br /> - ou -<br /><br /> `-AssemblyListFile` \<*fichier*>|Une liste d'assemblys (y compris les fichiers .exe et .dll), séparés par des espaces, dont vous voulez collecter des informations de profil. Vous pouvez spécifier `C:\Dir\*.dll` ou `*.dll` pour sélectionner tous les assemblys dans le répertoire de travail indiqué ou le répertoire actuel. Pour plus d'informations, consultez la section Notes.<br /><br /> - ou -<br /><br /> Un fichier texte contenant la liste des assemblys dont vous souhaitez collecter les informations de profil, classée avec un assembly par ligne. Si un nom d'assembly commence par un trait d'union (-), utilisez une liste de fichiers d'assembly ou renommez l'assembly.|
 |`-AppID` \<*appId*>|L'ID de l'application dans le package spécifié. Si vous utilisez le caractère générique (\*), Mpgo.exe essaie d’énumérer les appId dans le package et revient à \<*nom_famille_packages*>!App s’il échoue. Si vous spécifiez une chaîne qui est précédée d’un point d’exclamation (!), Mpgo.exe concatènera le nom de famille de package avec l’argument fourni.|
 |`-Timeout` \<*secondes*>|La durée d'exécution allouée à l'application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] avant que l'application s'arrête.|
 
@@ -65,7 +65,7 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
 |`-LeaveNativeImages`|Spécifie que les images natives instrumentées ne doivent pas être supprimées après l'exécution du scénario. Cette option est principalement utilisée lorsque vous exécutez l'application que avez spécifiée pour le scénario. Cela empêchera la recréation d'images natives pour les exécutions suivantes de Mpgo.exe. Lorsque vous avez terminé d'exécuter votre application, il peut y avoir des images natives orphelines dans le cache si vous spécifiez cette option. Dans ce cas, exécutez Mpgo.exe avec le même scénario et la même liste des assemblys, et utilisez le paramètre `–RemoveNativeImages` pour supprimer ces images natives.|
 |`-RemoveNativeImages`|Nettoie dans une exécution où `–LeaveNativeImages` a été spécifié. Si vous spécifiez `-RemoveNativeImages`, Mpgo.exe ignore tous les arguments sauf `-64bit` et `–AssemblyList`, et s'arrête après avoir supprimé toutes les images natives instrumentées.|
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
  Vous pouvez utiliser `–AssemblyList` et `- AssemblyListFile` plusieurs fois sur la ligne de commande.
 
  Si vous ne spécifiez pas de chemins d'accès complets en spécifiant des assemblys, Mpgo.exe recherche dans le répertoire actif. Si vous spécifiez un chemin d'accès incorrect, Mpgo.exe affiche un message d'erreur mais continue à générer des données pour les autres assemblys. Si vous spécifiez un assembly qui n'est pas chargé pendant le scénario d'apprentissage, aucune donnée d'apprentissage n'est générée pour cet assembly.
@@ -110,19 +110,19 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
 ## <a name="examples"></a>Exemples  
  La commande Mpgoe.exe suivante d’une invite de commandes développeur pour Visual Studio optimise une application pour les taxes :  
   
-```  
+```console  
 mpgo –scenario "C:\MyApp\MyTax.exe /params par" –AssemblyList Mytax.dll MyTaxUtil2011.dll –OutDir C:\Optimized –TimeOut 15  
 ```  
   
  La commande Mpgo.exe suivante optimise une application pour le son :  
   
-```  
+```console  
 mpgo –scenario "C:\MyApp\wav2wma.exe –input song1.wav –output song1.wma" –AssemblyList transcode.dll –OutDir C:\Optimized –TimeOut 15  
 ```  
   
  La commande Mpgo.exe suivante utilise des données d'assemblys précédemment optimisés pour optimiser des versions plus récentes des assemblys :  
   
-```  
+```console  
 mpgo.exe -import "C:\Optimized" -assemblylist "C:\MyApp\MyTax.dll" "C:\MyApp\MyTaxUtil2011.dll" -outdir C:\ReOptimized  
 ```  
   

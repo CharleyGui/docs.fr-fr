@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: d1ad722b-5b49-4040-bff3-431b94bb8095
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a439e02046e04d8628415237d6717a74b9922371
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e8b1db291fbaf19ae9086fe1e2b76a475d198e19
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910946"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894562"
 ---
 # <a name="how-to-run-partially-trusted-code-in-a-sandbox"></a>Procédure : Exécuter du code partiellement fiable dans un bac à sable (sandbox)
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -57,7 +57,7 @@ AppDomain.CreateDomain( string friendlyName,
   
      Vous pouvez également utiliser un jeu d'autorisations nommé existant, tel qu'Internet.  
   
-    ```  
+    ```csharp
     Evidence ev = new Evidence();  
     ev.AddHostEvidence(new Zone(SecurityZone.Internet));  
     PermissionSet internetPS = SecurityManager.GetStandardSandbox(ev);  

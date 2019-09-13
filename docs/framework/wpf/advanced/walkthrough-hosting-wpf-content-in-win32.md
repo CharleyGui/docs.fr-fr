@@ -6,12 +6,12 @@ dev_langs:
 helpviewer_keywords:
 - hosting WPF content in Win32 window [WPF]
 ms.assetid: 38ce284a-4303-46dd-b699-c9365b22a7dc
-ms.openlocfilehash: 03a35d26fd1917d926f9a26d25ae8a8e32c476f4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3433819761c19b616a7c9c19fe52e250b0f028dc
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69917630"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70929187"
 ---
 # <a name="walkthrough-hosting-wpf-content-in-win32"></a>Procédure pas à pas : hébergement de contenu WPF dans Win32
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] propose un environnement de création d'applications élaboré. Cependant, si vous avez écrit une bonne partie du code [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)], il est peut-être plus judicieux d'ajouter la fonctionnalité [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] à votre application plutôt que de réécrire le code d'origine. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]fournit un mécanisme simple pour héberger [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] le contenu dans une [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] fenêtre.  
@@ -39,7 +39,7 @@ ms.locfileid: "69917630"
   
 3. Affectez au modèle de thread un thread unique cloisonné (STA, Single-Threaded Apartment).  
   
-4. Gérez la notification [WM_CREATE](/windows/desktop/winmsg/wm-create)dans votre procédure de fenêtre et procédez comme suit:  
+4. Gérez la notification [WM_CREATE](/windows/desktop/winmsg/wm-create)dans votre procédure de fenêtre et procédez comme suit :  
   
     1. Créez un objet <xref:System.Windows.Interop.HwndSource> en faisant de la fenêtre parente son paramètre `parent`.  
   
@@ -64,7 +64,6 @@ ms.locfileid: "69917630"
 ## <a name="implementing-the-host-application"></a>Implémentation de l'application hôte.
  Cette section décrit comment héberger [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] du contenu dans une [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] application de base. Le contenu lui-même est C++implémenté dans/CLI en tant que classe managée. Pour l'essentiel, il s'agit d'une programmation [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] simple. Les aspects clés de l’implémentation de contenu sont décrits dans [implémentation du contenu WPF](#implementing_the_wpf_page).
 
-<a name="autoNestedSectionsOUTLINE1"></a>
 - [Application de base](#the_basic_application)
 
 - [Hébergement du contenu WPF](#hosting_the_wpf_page)
@@ -169,7 +168,6 @@ ms.locfileid: "69917630"
 ## <a name="implementing-the-wpf-page"></a>Implémentation de la page WPF
  Vous pouvez héberger et utiliser [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] le contenu sans connaître l’implémentation réelle. Si le [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] contenu a été empaqueté dans une dll distincte, il aurait pu être créé dans n’importe quel langage de Common Language Runtime (CLR). Voici une brève procédure pas à pas C++de l’implémentation/CLI utilisée dans l’exemple. Cette section comprend les sous-sections suivantes.
 
-<a name="autoNestedSectionsOUTLINE2"></a>
 - [Disposition](#page_layout)
 
 - [Retour des données à la fenêtre hôte](#returning_data_to_window)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8aca5f00-d80e-4320-81b3-016d0466f7ee
-ms.openlocfilehash: 34f0a61329667a42aa42693e93169a5b6fb0aa5e
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0f029c81dd6ba5cd5202e6e59f33edd7cf8c0b90
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70792040"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70894439"
 ---
 # <a name="modifying-large-value-max-data-in-adonet"></a>Modification de données de valeurs élevées (max) dans ADO.NET
 Les types de données LOB sont ceux dont la taille maximale de ligne dépasse 8 kilo-octets (Ko). SQL Server fournit un spécificateur `max` pour les types de données `varchar`, `nvarchar` et `varbinary` pour permettre le stockage de valeurs pouvant atteindre 2^32 octets. Les colonnes de table et les variables Transact-SQL peuvent spécifier des types de données `varchar(max)`, `nvarchar(max)` ou `varbinary(max)`. Dans ADO.NET, les types de données `max` peuvent être extraits par un `DataReader` et spécifiés comme valeurs de paramètre d'entrée ou de sortie sans que cela nécessite une manipulation particulière. Pour les types de données `varchar` volumineux, il est possible d'extraire et de mettre à jour les données de façon incrémentielle.  
@@ -41,7 +41,7 @@ Les types de données LOB sont ceux dont la taille maximale de ligne dépasse 8�
   
  L'exemple suivant insère une photo dans la table ProductPhoto de l'exemple de base de données AdventureWorks. Lorsque vous utilisez `BULK OPENROWSET` le fournisseur, vous devez fournir la liste nommée des colonnes même si vous n’insérez pas de valeurs dans chaque colonne. Dans ce cas, la clé primaire est définie comme une colonne identité et peut être omise de la liste des colonnes. Notez que vous devez également fournir un nom de corrélation à la fin de l'instruction `OPENROWSET` ; en l'occurrence, il s'agit de ThumbnailPhoto. Cela établit une corrélation avec la colonne de la table `ProductPhoto` dans laquelle le fichier est chargé.  
   
-```  
+```sql  
 INSERT Production.ProductPhoto (  
     ThumbnailPhoto,   
     ThumbnailPhotoFilePath,   
@@ -75,10 +75,10 @@ FROM OPENROWSET
 > [!NOTE]
 > Ni `@Offset` ni `@Length` ne peuvent avoir pour valeur un nombre négatif.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Cet exemple Transact-SQL met à jour une valeur partielle dans DocumentSummary, colonne `nvarchar(max)` dans la table Document de la base de données AdventureWorks. Le mot « components » est remplacé par le mot « features » en spécifiant le mot de remplacement, l’emplacement où commence (offset) le mot à remplacer dans les données existantes et le nombre de caractères à remplacer (length). L'exemple inclut des instructions SELECT devant et derrière l'instruction UPDATE afin de comparer les résultats.  
   
-```  
+```sql
 USE AdventureWorks;  
 GO  
 --View the existing value.  
@@ -221,7 +221,7 @@ while (reader.Read())
 }  
 ```  
   
-### <a name="example"></a>Exemples  
+### <a name="example"></a>Exemple  
  Le code suivant extrait le nom et l'objet `LargePhoto` de la table `ProductPhoto` dans la base de données `AdventureWorks` et les enregistre dans un fichier. L'assembly doit être compilé avec une référence à l'espace de noms <xref:System.Drawing>.  La méthode <xref:System.Data.SqlClient.SqlDataReader.GetSqlBytes%2A> de l'objet <xref:System.Data.SqlClient.SqlDataReader> retourne un objet <xref:System.Data.SqlTypes.SqlBytes> qui expose une propriété `Stream`. Le code l’utilise pour créer un nouvel `Bitmap` objet, puis l’enregistre dans le GIF. `ImageFormat`  
   
  [!code-csharp[DataWorks LargeValueType.Photo#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks LargeValueType.Photo/CS/source.cs#1)]
@@ -230,7 +230,7 @@ while (reader.Read())
 ## <a name="using-large-value-type-parameters"></a>Utilisation de paramètres de types de valeur élevée  
  Vous pouvez utiliser des types de valeur élevée dans des objets <xref:System.Data.SqlClient.SqlParameter> de la même manière que des types de valeur moins élevée dans des objets <xref:System.Data.SqlClient.SqlParameter>. Vous pouvez récupérer des types de valeur <xref:System.Data.SqlClient.SqlParameter> élevée en tant que valeurs, comme indiqué dans l’exemple suivant. Le code est basé sur l'hypothèse que la procédure stockée GetDocumentSummary suivante existe dans l'exemple de base de données AdventureWorks. La procédure stockée prend un paramètre d' @DocumentID entrée nommé et retourne le contenu de la colonne DocumentSummary @DocumentSummary dans le paramètre de sortie.  
   
-```  
+```sql
 CREATE PROCEDURE GetDocumentSummary   
 (  
     @DocumentID int,  

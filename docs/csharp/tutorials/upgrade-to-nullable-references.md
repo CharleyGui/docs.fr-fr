@@ -3,12 +3,12 @@ title: Concevoir avec des types référence Nullable
 description: Ce tutoriel avancé présente les types référence Nullable. Il explique comment exprimer une intention de conception lorsque les valeurs de référence peuvent être Null et comment, dans le cas contraire, indiquer au compilateur qu’elles ne peuvent pas être Null.
 ms.date: 02/19/2019
 ms.custom: mvc
-ms.openlocfilehash: 357ebd13ca4c610f1c65009621ee628a90c70b15
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 0c95065e6c380fab6ba33432a32b3297e78027a3
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105773"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926630"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Tutoriel : Migrer du code existant avec des types de référence nullable
 
@@ -17,6 +17,7 @@ C# 8 introduit les **types référence Nullable**, qui viennent compléter les t
 Dans ce tutoriel, vous allez apprendre à :
 
 > [!div class="checklist"]
+>
 > - Activer les vérifications de référence null lorsque vous travaillez avec du code.
 > - Diagnostiquer et corriger les différents avertissements liés aux valeurs null.
 > - Gérer l’interface entre les contextes compatibles avec nullable et non compatibles avec nullable.

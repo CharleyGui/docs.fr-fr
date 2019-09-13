@@ -4,12 +4,12 @@ description: Vue d’ensemble de l’outil dotnet-svcutil Microsoft WCF, qui ajo
 author: mlacouture
 ms.date: 02/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 5e361ce85bec696fe5d76c4f43a444c543a9012d
-ms.sourcegitcommit: ca2ca60e6f5ea327f164be7ce26d9599e0f85fe4
-ms.translationtype: HT
+ms.openlocfilehash: 723855401f3a81edbd34c77481e4ff12db7dcdaf
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65063293"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926447"
 ---
 # <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>Outil WCF dotnet-svcutil pour .NET Core
 
@@ -25,16 +25,18 @@ L’outil **dotnet-svcutil** est une option alternative au fournisseur de servic
 ## <a name="prerequisites"></a>Prérequis
 
 # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[dotnet-svcutil 2.x](#tab/dotnetsvcutil2x)
+
 * [Kit SDK .NET Core 2.1](https://dotnet.microsoft.com/download) (ou version ultérieure)
 * Votre éditeur de code favori
 
 # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[dotnet-svcutil 1.x](#tab/dotnetsvcutil1x)
+
 * [Kit SDK .NET Core 1.0.4](https://dotnet.microsoft.com/download) (ou version ultérieure)
 * Votre éditeur de code favori
 
 ---
 
-## <a name="getting-started"></a>Bien démarrer
+## <a name="getting-started"></a>Prise en main
 
 L’exemple suivant explique les étapes à suivre pour ajouter une référence de services web à un projet web .NET Core et appeler le service. Vous allez créer une application web .NET Core nommée _HelloSvcutil_ et ajouter une référence à un service web qui implémente le contrat suivant :
 

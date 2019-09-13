@@ -3,12 +3,12 @@ title: Mettre à jour des interfaces de manière sécurisée à l’aide des mem
 description: Ce tutoriel avancé explore comment vous pouvez ajouter de manière sécurisée de nouvelles fonctionnalités aux définitions d’une interface existante sans rompre toutes les classes et tous les structs qui implémentent cette interface.
 ms.date: 05/06/2019
 ms.custom: mvc
-ms.openlocfilehash: 9e0e4324b2474292064a760db9727d7dec6561d4
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 6a723a116d420dd43d2adeef98b824445dd4f0d7
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252917"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70926703"
 ---
 # <a name="tutorial-update-interfaces-with-default-interface-members-in-c-80"></a>Tutoriel : Mettre à jour des interfaces avec les membres d’interface par défaut dans C# 8.0
 
@@ -17,6 +17,7 @@ Depuis C# 8.0 sur .NET Core 3.0, vous pouvez définir une implémentation lorsqu
 Dans ce tutoriel, vous allez apprendre à :
 
 > [!div class="checklist"]
+>
 > * Étendre des interfaces de manière sécurisée en ajoutant des méthodes avec des implémentations
 > * Créer des implémentations paramétrables pour fournir une plus grande flexibilité
 > * Permettre aux implémenteurs de fournir une implémentation plus spécifique sous la forme d’un remplacement
