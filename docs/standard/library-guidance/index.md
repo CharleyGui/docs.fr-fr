@@ -4,48 +4,49 @@ description: Recommandations de bonne pratique à l’attention des développeur
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/17/2018
-ms.openlocfilehash: 85d76c8b2bd0f030e3fbc1987e6ff51d6da44e76
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: eff6c822757af6fb85622e88714accd40c32bcf5
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644384"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928961"
 ---
-# <a name="open-source-library-guidance"></a><span data-ttu-id="11427-103">Conseils sur la bibliothèque open source</span><span class="sxs-lookup"><span data-stu-id="11427-103">Open-source library guidance</span></span>
+# <a name="open-source-library-guidance"></a><span data-ttu-id="d1f7e-103">Conseils sur la bibliothèque open source</span><span class="sxs-lookup"><span data-stu-id="d1f7e-103">Open-source library guidance</span></span>
 
-<span data-ttu-id="11427-104">Cette aide fournit des recommandations à l’attention des développeurs qui créent des bibliothèques .NET de qualité.</span><span class="sxs-lookup"><span data-stu-id="11427-104">This guidance provides recommendations for developers to create high-quality .NET libraries.</span></span> <span data-ttu-id="11427-105">Cette documentation se concentre sur le *quoi* et le *pourquoi* de la création d’une bibliothèque .NET, mais pas sur le *comment*.</span><span class="sxs-lookup"><span data-stu-id="11427-105">This documentation focuses on the *what* and the *why* when building a .NET library, not the *how*.</span></span>
+<span data-ttu-id="d1f7e-104">Cette aide fournit des recommandations à l’attention des développeurs qui créent des bibliothèques .NET de qualité.</span><span class="sxs-lookup"><span data-stu-id="d1f7e-104">This guidance provides recommendations for developers to create high-quality .NET libraries.</span></span> <span data-ttu-id="d1f7e-105">Cette documentation se concentre sur le *quoi* et le *pourquoi* de la création d’une bibliothèque .NET, mais pas sur le *comment*.</span><span class="sxs-lookup"><span data-stu-id="d1f7e-105">This documentation focuses on the *what* and the *why* when building a .NET library, not the *how*.</span></span>
 
-<span data-ttu-id="11427-106">Aspects des bibliothèques .NET open source de qualité :</span><span class="sxs-lookup"><span data-stu-id="11427-106">Aspects of high-quality open-source .NET libraries:</span></span>
+<span data-ttu-id="d1f7e-106">Aspects des bibliothèques .NET open source de qualité :</span><span class="sxs-lookup"><span data-stu-id="d1f7e-106">Aspects of high-quality open-source .NET libraries:</span></span>
 
 > [!div class="checklist"]
-> * <span data-ttu-id="11427-107">**Inclusives** - Les bonnes bibliothèques .NET s’efforcent de prendre en charge plusieurs plateformes, langages de programmation et applications.</span><span class="sxs-lookup"><span data-stu-id="11427-107">**Inclusive** - Good .NET libraries strive to support many platforms, programming languages, and applications.</span></span>
-> * <span data-ttu-id="11427-108">**Stables** - Les bonnes bibliothèques .NET coexistent dans l’écosystème .NET en s’exécutant dans les applications créées avec de nombreuses bibliothèques.</span><span class="sxs-lookup"><span data-stu-id="11427-108">**Stable** - Good .NET libraries coexist in the .NET ecosystem, running in applications built with many libraries.</span></span>
-> * <span data-ttu-id="11427-109">**Conçues pour évoluer** - Les bibliothèques .NET doivent s’améliorer et évoluer au fil du temps tout en prenant en charge les utilisateurs existants.</span><span class="sxs-lookup"><span data-stu-id="11427-109">**Designed to evolve** - .NET libraries should improve and evolve over time, while supporting existing users.</span></span>
-> * <span data-ttu-id="11427-110">**Débogables** - Les bibliothèques .NET doivent utiliser les derniers outils afin de créer une excellente expérience de débogage pour les utilisateurs.</span><span class="sxs-lookup"><span data-stu-id="11427-110">**Debuggable** - .NET libraries should use the latest tools to create a great debugging experience for users.</span></span>
-> * <span data-ttu-id="11427-111">**Approuvées** - Les bibliothèques .NET ont la confiance des développeurs en publiant sur NuGet à l’aide des bonnes pratiques de sécurité.</span><span class="sxs-lookup"><span data-stu-id="11427-111">**Trusted** - .NET libraries have developers' trust by publishing to NuGet using security best practices.</span></span>
+>
+> * <span data-ttu-id="d1f7e-107">**Inclusives** - Les bonnes bibliothèques .NET s’efforcent de prendre en charge plusieurs plateformes, langages de programmation et applications.</span><span class="sxs-lookup"><span data-stu-id="d1f7e-107">**Inclusive** - Good .NET libraries strive to support many platforms, programming languages, and applications.</span></span>
+> * <span data-ttu-id="d1f7e-108">**Stables** - Les bonnes bibliothèques .NET coexistent dans l’écosystème .NET en s’exécutant dans les applications créées avec de nombreuses bibliothèques.</span><span class="sxs-lookup"><span data-stu-id="d1f7e-108">**Stable** - Good .NET libraries coexist in the .NET ecosystem, running in applications built with many libraries.</span></span>
+> * <span data-ttu-id="d1f7e-109">**Conçues pour évoluer** - Les bibliothèques .NET doivent s’améliorer et évoluer au fil du temps tout en prenant en charge les utilisateurs existants.</span><span class="sxs-lookup"><span data-stu-id="d1f7e-109">**Designed to evolve** - .NET libraries should improve and evolve over time, while supporting existing users.</span></span>
+> * <span data-ttu-id="d1f7e-110">**Débogables** - Les bibliothèques .NET doivent utiliser les derniers outils afin de créer une excellente expérience de débogage pour les utilisateurs.</span><span class="sxs-lookup"><span data-stu-id="d1f7e-110">**Debuggable** - .NET libraries should use the latest tools to create a great debugging experience for users.</span></span>
+> * <span data-ttu-id="d1f7e-111">**Approuvées** - Les bibliothèques .NET ont la confiance des développeurs en publiant sur NuGet à l’aide des bonnes pratiques de sécurité.</span><span class="sxs-lookup"><span data-stu-id="d1f7e-111">**Trusted** - .NET libraries have developers' trust by publishing to NuGet using security best practices.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="11427-112">Bien démarrer</span><span class="sxs-lookup"><span data-stu-id="11427-112">Get Started</span></span>](./get-started.md)
+> [<span data-ttu-id="d1f7e-112">Bien démarrer</span><span class="sxs-lookup"><span data-stu-id="d1f7e-112">Get Started</span></span>](./get-started.md)
 
-## <a name="types-of-recommendations"></a><span data-ttu-id="11427-113">Types de suggestions</span><span class="sxs-lookup"><span data-stu-id="11427-113">Types of recommendations</span></span>
+## <a name="types-of-recommendations"></a><span data-ttu-id="d1f7e-113">Types de suggestions</span><span class="sxs-lookup"><span data-stu-id="d1f7e-113">Types of recommendations</span></span>
 
-<span data-ttu-id="11427-114">Chaque article présente quatre types de recommandations : **À faire**, **À envisager**, **À éviter** et **À ne pas faire**.</span><span class="sxs-lookup"><span data-stu-id="11427-114">Each article presents four types of recommendations: **Do**, **Consider**, **Avoid**, and **Do not**.</span></span> <span data-ttu-id="11427-115">Le type de suggestion indique si celle-ci doit être suivie ou pas.</span><span class="sxs-lookup"><span data-stu-id="11427-115">The type of recommendation indicates how strongly it should be followed.</span></span>
+<span data-ttu-id="d1f7e-114">Chaque article présente quatre types de recommandations : **À faire**, **À envisager**, **À éviter** et **À ne pas faire**.</span><span class="sxs-lookup"><span data-stu-id="d1f7e-114">Each article presents four types of recommendations: **Do**, **Consider**, **Avoid**, and **Do not**.</span></span> <span data-ttu-id="d1f7e-115">Le type de suggestion indique si celle-ci doit être suivie ou pas.</span><span class="sxs-lookup"><span data-stu-id="d1f7e-115">The type of recommendation indicates how strongly it should be followed.</span></span>
 
-<span data-ttu-id="11427-116">Vous devez presque toujours suivre une suggestion **À faire**.</span><span class="sxs-lookup"><span data-stu-id="11427-116">You should almost always follow a **Do** recommendation.</span></span> <span data-ttu-id="11427-117">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="11427-117">For example:</span></span>
+<span data-ttu-id="d1f7e-116">Vous devez presque toujours suivre une suggestion **À faire**.</span><span class="sxs-lookup"><span data-stu-id="d1f7e-116">You should almost always follow a **Do** recommendation.</span></span> <span data-ttu-id="d1f7e-117">Par exemple :</span><span class="sxs-lookup"><span data-stu-id="d1f7e-117">For example:</span></span>
 
-<span data-ttu-id="11427-118">**✔️ À FAIRE** : Distribuer votre bibliothèque à l’aide d’un package NuGet.</span><span class="sxs-lookup"><span data-stu-id="11427-118">**✔️ DO** distribute your library using a NuGet package.</span></span>
+<span data-ttu-id="d1f7e-118">**✔️ À FAIRE** : Distribuer votre bibliothèque à l’aide d’un package NuGet.</span><span class="sxs-lookup"><span data-stu-id="d1f7e-118">**✔️ DO** distribute your library using a NuGet package.</span></span>
 
-<span data-ttu-id="11427-119">En revanche, les recommandations **Envisager** doivent généralement être appliquées, mais il existe des exceptions à la règle qui sont fondées, c’est pourquoi vous ne devez pas vous inquiéter si vous ne les suivez pas :</span><span class="sxs-lookup"><span data-stu-id="11427-119">On the other hand, **Consider** recommendations should generally be followed, but there are legitimate exceptions to the rule and you shouldn't feel bad about not following the guidance:</span></span>
+<span data-ttu-id="d1f7e-119">En revanche, les recommandations **Envisager** doivent généralement être appliquées, mais il existe des exceptions à la règle qui sont fondées, c’est pourquoi vous ne devez pas vous inquiéter si vous ne les suivez pas :</span><span class="sxs-lookup"><span data-stu-id="d1f7e-119">On the other hand, **Consider** recommendations should generally be followed, but there are legitimate exceptions to the rule and you shouldn't feel bad about not following the guidance:</span></span>
 
-<span data-ttu-id="11427-120">**✔️ ENVISAGER** d’utiliser [SemVer 2.0.0](https://semver.org/) pour versionner votre package NuGet.</span><span class="sxs-lookup"><span data-stu-id="11427-120">**✔️ CONSIDER** using [SemVer 2.0.0](https://semver.org/) to version your NuGet package.</span></span>
+<span data-ttu-id="d1f7e-120">**✔️ ENVISAGER** d’utiliser [SemVer 2.0.0](https://semver.org/) pour versionner votre package NuGet.</span><span class="sxs-lookup"><span data-stu-id="d1f7e-120">**✔️ CONSIDER** using [SemVer 2.0.0](https://semver.org/) to version your NuGet package.</span></span>
 
-<span data-ttu-id="11427-121">Les suggestions **Éviter** indiquent quelque chose qui n’est généralement pas une bonne idée, mais enfreindre les règles peut parfois avoir du sens :</span><span class="sxs-lookup"><span data-stu-id="11427-121">**Avoid** recommendations mention things that are generally not a good idea, but breaking the rule sometimes makes sense:</span></span>
+<span data-ttu-id="d1f7e-121">Les suggestions **Éviter** indiquent quelque chose qui n’est généralement pas une bonne idée, mais enfreindre les règles peut parfois avoir du sens :</span><span class="sxs-lookup"><span data-stu-id="d1f7e-121">**Avoid** recommendations mention things that are generally not a good idea, but breaking the rule sometimes makes sense:</span></span>
 
-<span data-ttu-id="11427-122">**❌ ÉVITER** les références de package NuGet qui exigent une version précise.</span><span class="sxs-lookup"><span data-stu-id="11427-122">**❌ AVOID** NuGet package references that demand an exact version.</span></span>
+<span data-ttu-id="d1f7e-122">**❌ ÉVITER** les références de package NuGet qui exigent une version précise.</span><span class="sxs-lookup"><span data-stu-id="d1f7e-122">**❌ AVOID** NuGet package references that demand an exact version.</span></span>
 
-<span data-ttu-id="11427-123">Et enfin, les suggestions **À ne pas faire** désignent quelque chose que vous ne devez presque jamais faire :</span><span class="sxs-lookup"><span data-stu-id="11427-123">And finally, **Do not** recommendations indicate something you should almost never do:</span></span>
+<span data-ttu-id="d1f7e-123">Et enfin, les suggestions **À ne pas faire** désignent quelque chose que vous ne devez presque jamais faire :</span><span class="sxs-lookup"><span data-stu-id="d1f7e-123">And finally, **Do not** recommendations indicate something you should almost never do:</span></span>
 
-<span data-ttu-id="11427-124">**❌ À NE PAS FAIRE** : publier les versions avec nom fort et sans nom fort de votre bibliothèque.</span><span class="sxs-lookup"><span data-stu-id="11427-124">**❌ DO NOT** publish strong-named and non-strong-named versions of your library.</span></span> <span data-ttu-id="11427-125">Par exemple : `Contoso.Api` et `Contoso.Api.StrongNamed`.</span><span class="sxs-lookup"><span data-stu-id="11427-125">For example, `Contoso.Api` and `Contoso.Api.StrongNamed`.</span></span>
+<span data-ttu-id="d1f7e-124">**❌ À NE PAS FAIRE** : publier les versions avec nom fort et sans nom fort de votre bibliothèque.</span><span class="sxs-lookup"><span data-stu-id="d1f7e-124">**❌ DO NOT** publish strong-named and non-strong-named versions of your library.</span></span> <span data-ttu-id="d1f7e-125">Par exemple, `Contoso.Api` et `Contoso.Api.StrongNamed`.</span><span class="sxs-lookup"><span data-stu-id="d1f7e-125">For example, `Contoso.Api` and `Contoso.Api.StrongNamed`.</span></span>
 
 >[!div class="step-by-step"]
->[<span data-ttu-id="11427-126">Next</span><span class="sxs-lookup"><span data-stu-id="11427-126">Next</span></span>](get-started.md)
+>[<span data-ttu-id="d1f7e-126">Next</span><span class="sxs-lookup"><span data-stu-id="d1f7e-126">Next</span></span>](get-started.md)

@@ -1,65 +1,97 @@
 ---
-title: ?? Opérateur - Référence C#
+title: ?? et ?? = Operators C# -référence
 ms.custom: seodec18
-ms.date: 06/07/2019
+ms.date: 09/10/2019
 f1_keywords:
 - ??_CSharpKeyword
+- ??=_CSharpKeyword
 helpviewer_keywords:
 - null-coalescing operator [C#]
 - ?? operator [C#]
+- null-coalescing assignment [C#]
+- ??= operator [C#]
 ms.assetid: 088b1f0d-c1af-4fe1-b4b8-196fd5ea9132
-ms.openlocfilehash: a19b5558da36ffb11dabd1b9bec419a3623a0f17
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
-ms.translationtype: HT
+ms.openlocfilehash: 1e94038a41a6a6cc19be6c67bff2891397793fb3
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67024991"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70924679"
 ---
-# <a name="-operator-c-reference"></a><span data-ttu-id="91c51-103">??</span><span class="sxs-lookup"><span data-stu-id="91c51-103">??</span></span> <span data-ttu-id="91c51-104">Opérateur (référence C#)</span><span class="sxs-lookup"><span data-stu-id="91c51-104">operator (C# reference)</span></span>
+# <a name="-and--operators-c-reference"></a><span data-ttu-id="61021-103">??</span><span class="sxs-lookup"><span data-stu-id="61021-103">??</span></span> <span data-ttu-id="61021-104">et ?? =, opérateursC# (référence)</span><span class="sxs-lookup"><span data-stu-id="61021-104">and ??= operators (C# reference)</span></span>
 
-<span data-ttu-id="91c51-105">L’opérateur de fusion null `??` retourne la valeur de l’opérande de gauche si elle n’est pas `null` ; sinon, il évalue l’opérande de droite et retourne son résultat.</span><span class="sxs-lookup"><span data-stu-id="91c51-105">The null-coalescing operator `??` returns the value of its left-hand operand if it isn't `null`; otherwise, it evaluates the right-hand operand and returns its result.</span></span> <span data-ttu-id="91c51-106">L’opérateur `??` n’évalue pas son opérande de droite si l’opérande de gauche n’est pas Null.</span><span class="sxs-lookup"><span data-stu-id="91c51-106">The `??` operator doesn't evaluate its right-hand operand if the left-hand operand evaluates to non-null.</span></span>
+<span data-ttu-id="61021-105">L’opérateur de fusion null `??` retourne la valeur de l’opérande de gauche si elle n’est pas `null` ; sinon, il évalue l’opérande de droite et retourne son résultat.</span><span class="sxs-lookup"><span data-stu-id="61021-105">The null-coalescing operator `??` returns the value of its left-hand operand if it isn't `null`; otherwise, it evaluates the right-hand operand and returns its result.</span></span> <span data-ttu-id="61021-106">L’opérateur `??` n’évalue pas son opérande de droite si l’opérande de gauche n’est pas Null.</span><span class="sxs-lookup"><span data-stu-id="61021-106">The `??` operator doesn't evaluate its right-hand operand if the left-hand operand evaluates to non-null.</span></span>
 
-<span data-ttu-id="91c51-107">L’opérateur de fusion null est associatif à droite ; autrement dit, une expression de la forme</span><span class="sxs-lookup"><span data-stu-id="91c51-107">The null-coalescing operator is right-associative, that is, an expression of the form</span></span>
+<span data-ttu-id="61021-107">Disponible dans C# 8,0 et versions ultérieures, l’opérateur `??=` d’assignation de fusion Null affecte la valeur de son opérande droit à son opérande de gauche uniquement si l’opérande de gauche est évalué à `null`.</span><span class="sxs-lookup"><span data-stu-id="61021-107">Available in C# 8.0 and later, the null-coalescing assignment operator `??=` assigns the value of its right-hand operand to its left-hand operand only if the left-hand operand evaluates to `null`.</span></span> <span data-ttu-id="61021-108">L’opérateur `??=` n’évalue pas son opérande de droite si l’opérande de gauche n’est pas Null.</span><span class="sxs-lookup"><span data-stu-id="61021-108">The `??=` operator doesn't evaluate its right-hand operand if the left-hand operand evaluates to non-null.</span></span>
+
+[!code-csharp[null-coalescing assignment](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#Assignment)]
+
+<span data-ttu-id="61021-109">L’opérande gauche de l' `??=` opérateur doit être une variable, une [propriété](../../programming-guide/classes-and-structs/properties.md)ou un élément d' [indexeur](../../programming-guide/indexers/index.md) .</span><span class="sxs-lookup"><span data-stu-id="61021-109">The left-hand operand of the `??=` operator must be a variable, a [property](../../programming-guide/classes-and-structs/properties.md), or an [indexer](../../programming-guide/indexers/index.md) element.</span></span> <span data-ttu-id="61021-110">Pour plus d’informations sur l’affectation de la fusion Null, consultez la [Remarque relative](~/_csharplang/proposals/csharp-8.0/null-coalescing-assignment.md)à la proposition de fonctionnalité.</span><span class="sxs-lookup"><span data-stu-id="61021-110">For more information about null-coalescing assignment, see the [feature proposal note](~/_csharplang/proposals/csharp-8.0/null-coalescing-assignment.md).</span></span>
+
+<span data-ttu-id="61021-111">Dans C# 7,3 et les versions antérieures, le type de l’opérande gauche de l' `??` opérateur doit être un type référence ou un [type valeur Nullable](../../programming-guide/nullable-types/index.md).</span><span class="sxs-lookup"><span data-stu-id="61021-111">In C# 7.3 and earlier, the type of the left-hand operand of the `??` operator must be either a reference type or a [nullable value type](../../programming-guide/nullable-types/index.md).</span></span> <span data-ttu-id="61021-112">À partir C# de 8,0, cette spécification est remplacée par ce qui suit : le type de l’opérande gauche des `??` opérateurs et `??=` ne peut pas être un type valeur non Nullable.</span><span class="sxs-lookup"><span data-stu-id="61021-112">Beginning with C# 8.0, that requirement is replaced with the following: the type of the left-hand operand of the `??` and `??=` operators cannot be a non-nullable value type.</span></span> <span data-ttu-id="61021-113">En particulier, vous pouvez utiliser les opérateurs de fusion Null avec des paramètres de type sans contrainte C# dans 8,0 et versions ultérieures :</span><span class="sxs-lookup"><span data-stu-id="61021-113">In particular, you can use the null-coalescing operators with unconstrained type parameters in C# 8.0 and later:</span></span>
+
+[!code-csharp[unconstrained type parameter](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#UnconstrainedType)]
+
+<span data-ttu-id="61021-114">Les opérateurs de fusion Null sont associatifs à droite.</span><span class="sxs-lookup"><span data-stu-id="61021-114">The null-coalescing operators are right-associative.</span></span> <span data-ttu-id="61021-115">Autrement dit, les expressions de la forme</span><span class="sxs-lookup"><span data-stu-id="61021-115">That is, expressions of the form</span></span>
 
 ```csharp
 a ?? b ?? c
+d ??= e ??= f
 ```
 
-<span data-ttu-id="91c51-108">est évaluée comme étant</span><span class="sxs-lookup"><span data-stu-id="91c51-108">is evaluated as</span></span>
+<span data-ttu-id="61021-116">sont évaluées comme</span><span class="sxs-lookup"><span data-stu-id="61021-116">are evaluated as</span></span>
 
 ```csharp
 a ?? (b ?? c)
+d ??= (e ??= f)
 ```
 
-<span data-ttu-id="91c51-109">L’opérateur `??` peut être utile dans les scénarios suivants :</span><span class="sxs-lookup"><span data-stu-id="91c51-109">The `??` operator can be useful in the following scenarios:</span></span>
+## <a name="examples"></a><span data-ttu-id="61021-117">Exemples</span><span class="sxs-lookup"><span data-stu-id="61021-117">Examples</span></span>
 
-- <span data-ttu-id="91c51-110">Dans les expressions avec les [opérateurs conditionnels Null ?. et ?[]](member-access-operators.md#null-conditional-operators--and-), vous pouvez utiliser l’opérateur de fusion Null pour fournir une autre expression à évaluer au cas où le résultat de l’expression avec les opérations conditionnelles Null serait `null` :</span><span class="sxs-lookup"><span data-stu-id="91c51-110">In expressions with the [null-conditional operators ?. and ?[]](member-access-operators.md#null-conditional-operators--and-), you can use the null-coalescing operator to provide an alternative expression to evaluate in case the result of the expression with null-conditional operations is `null`:</span></span>
+<span data-ttu-id="61021-118">Les `??` opérateurs `??=` et peuvent être utiles dans les scénarios suivants :</span><span class="sxs-lookup"><span data-stu-id="61021-118">The `??` and `??=` operators can be useful in the following scenarios:</span></span>
+
+- <span data-ttu-id="61021-119">Dans les expressions avec les [opérateurs conditionnels Null ?. et ?[]](member-access-operators.md#null-conditional-operators--and-), vous pouvez utiliser l’opérateur de fusion Null pour fournir une autre expression à évaluer au cas où le résultat de l’expression avec les opérations conditionnelles Null serait `null` :</span><span class="sxs-lookup"><span data-stu-id="61021-119">In expressions with the [null-conditional operators ?. and ?[]](member-access-operators.md#null-conditional-operators--and-), you can use the null-coalescing operator to provide an alternative expression to evaluate in case the result of the expression with null-conditional operations is `null`:</span></span>
 
   [!code-csharp-interactive[with null-conditional](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#WithNullConditional)]
 
-- <span data-ttu-id="91c51-111">Quand vous travaillez avec des [types valeur Nullable](../../programming-guide/nullable-types/index.md) et que vous devez fournir une valeur d’un type valeur sous-jacent, utilisez l’opérateur de fusion Null pour spécifier la valeur à fournir au cas où une valeur de type Nullable serait `null` :</span><span class="sxs-lookup"><span data-stu-id="91c51-111">When you work with [nullable value types](../../programming-guide/nullable-types/index.md) and need to provide a value of an underlying value type, use the null-coalescing operator to specify the value to provide in case a nullable type value is `null`:</span></span>
+- <span data-ttu-id="61021-120">Quand vous travaillez avec des [types valeur Nullable](../../programming-guide/nullable-types/index.md) et que vous devez fournir une valeur d’un type valeur sous-jacent, utilisez l’opérateur de fusion Null pour spécifier la valeur à fournir au cas où une valeur de type Nullable serait `null` :</span><span class="sxs-lookup"><span data-stu-id="61021-120">When you work with [nullable value types](../../programming-guide/nullable-types/index.md) and need to provide a value of an underlying value type, use the null-coalescing operator to specify the value to provide in case a nullable type value is `null`:</span></span>
 
   [!code-csharp-interactive[with nullable types](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#WithNullableTypes)]
 
-  <span data-ttu-id="91c51-112">Utilisez la méthode <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType> si la valeur à utiliser quand une valeur de type Nullable est `null` doit être la valeur par défaut du type valeur sous-jacent.</span><span class="sxs-lookup"><span data-stu-id="91c51-112">Use the <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType> method if the value to be used when a nullable type value is `null` should be the default value of the underlying value type.</span></span>
+  <span data-ttu-id="61021-121">Utilisez la méthode <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType> si la valeur à utiliser quand une valeur de type Nullable est `null` doit être la valeur par défaut du type valeur sous-jacent.</span><span class="sxs-lookup"><span data-stu-id="61021-121">Use the <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType> method if the value to be used when a nullable type value is `null` should be the default value of the underlying value type.</span></span>
 
-- <span data-ttu-id="91c51-113">À compter de C# 7.0, vous pouvez utiliser une [expression `throw`](../keywords/throw.md#the-throw-expression) comme opérande droit de l’opérateur de fusion Null pour rendre le code de vérification d’argument plus concis :</span><span class="sxs-lookup"><span data-stu-id="91c51-113">Starting with C# 7.0, you can use a [`throw` expression](../keywords/throw.md#the-throw-expression) as the right-hand operand of the null-coalescing operator to make the argument-checking code more concise:</span></span>
+- <span data-ttu-id="61021-122">À compter de C# 7.0, vous pouvez utiliser une [expression `throw`](../keywords/throw.md#the-throw-expression) comme opérande droit de l’opérateur de fusion Null pour rendre le code de vérification d’argument plus concis :</span><span class="sxs-lookup"><span data-stu-id="61021-122">Starting with C# 7.0, you can use a [`throw` expression](../keywords/throw.md#the-throw-expression) as the right-hand operand of the null-coalescing operator to make the argument-checking code more concise:</span></span>
 
   [!code-csharp[with throw expression](~/samples/csharp/language-reference/operators/NullCoalescingOperator.cs#WithThrowExpression)]
 
-  <span data-ttu-id="91c51-114">L’exemple précédent montre également comment utiliser des [membres expression-bodied](../../programming-guide/statements-expressions-operators/expression-bodied-members.md) pour définir une propriété.</span><span class="sxs-lookup"><span data-stu-id="91c51-114">The preceding example also demonstrates how to use [expression-bodied members](../../programming-guide/statements-expressions-operators/expression-bodied-members.md) to define a property.</span></span>
+  <span data-ttu-id="61021-123">L’exemple précédent montre également comment utiliser des [membres expression-bodied](../../programming-guide/statements-expressions-operators/expression-bodied-members.md) pour définir une propriété.</span><span class="sxs-lookup"><span data-stu-id="61021-123">The preceding example also demonstrates how to use [expression-bodied members](../../programming-guide/statements-expressions-operators/expression-bodied-members.md) to define a property.</span></span>
 
-## <a name="operator-overloadability"></a><span data-ttu-id="91c51-115">Capacité de surcharge de l’opérateur</span><span class="sxs-lookup"><span data-stu-id="91c51-115">Operator overloadability</span></span>
+- <span data-ttu-id="61021-124">À partir C# de 8,0, vous pouvez utiliser `??=` l’opérateur pour remplacer le code du formulaire.</span><span class="sxs-lookup"><span data-stu-id="61021-124">Starting with C# 8.0, you can use the `??=` operator to replace the code of the form</span></span>
 
-<span data-ttu-id="91c51-116">L’opérateur de fusion Null ne peut pas être surchargé.</span><span class="sxs-lookup"><span data-stu-id="91c51-116">The null-coalescing operator cannot be overloaded.</span></span>
+  ```csharp
+  if (variable is null)
+  {
+      variable = expression;
+  }
+  ```
 
-## <a name="c-language-specification"></a><span data-ttu-id="91c51-117">spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="91c51-117">C# language specification</span></span>
+  <span data-ttu-id="61021-125">avec le code suivant :</span><span class="sxs-lookup"><span data-stu-id="61021-125">with the following code:</span></span>
 
-<span data-ttu-id="91c51-118">Pour plus d’informations, consultez la section [Opérateur de fusion Null](~/_csharplang/spec/expressions.md#the-null-coalescing-operator) de la [Spécification du langage C#](~/_csharplang/spec/introduction.md).</span><span class="sxs-lookup"><span data-stu-id="91c51-118">For more information, see [The null coalescing operator](~/_csharplang/spec/expressions.md#the-null-coalescing-operator) section of the [C# language specification](~/_csharplang/spec/introduction.md).</span></span>
+  ```csharp
+  variable ??= expression;
+  ```
 
-## <a name="see-also"></a><span data-ttu-id="91c51-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="91c51-119">See also</span></span>
+## <a name="operator-overloadability"></a><span data-ttu-id="61021-126">Capacité de surcharge de l’opérateur</span><span class="sxs-lookup"><span data-stu-id="61021-126">Operator overloadability</span></span>
 
-- [<span data-ttu-id="91c51-120">Informations de référence sur C#</span><span class="sxs-lookup"><span data-stu-id="91c51-120">C# reference</span></span>](../index.md)
-- [<span data-ttu-id="91c51-121">Opérateurs C#</span><span class="sxs-lookup"><span data-stu-id="91c51-121">C# operators</span></span>](index.md)
-- <span data-ttu-id="91c51-122">[Opérateurs ?. et ?[]](member-access-operators.md#null-conditional-operators--and-)</span><span class="sxs-lookup"><span data-stu-id="91c51-122">[?. and ?[] operators](member-access-operators.md#null-conditional-operators--and-)</span></span>
-- [<span data-ttu-id="91c51-123">?:, opérateur</span><span class="sxs-lookup"><span data-stu-id="91c51-123">?: operator</span></span>](conditional-operator.md)
+<span data-ttu-id="61021-127">Les opérateurs `??` et `??=` ne peuvent pas être surchargés.</span><span class="sxs-lookup"><span data-stu-id="61021-127">The operators `??` and `??=` cannot be overloaded.</span></span>
+
+## <a name="c-language-specification"></a><span data-ttu-id="61021-128">spécification du langage C#</span><span class="sxs-lookup"><span data-stu-id="61021-128">C# language specification</span></span>
+
+<span data-ttu-id="61021-129">Pour plus d’informations sur `??` l’opérateur, consultez [la section opérateur de fusion Null](~/_csharplang/spec/expressions.md#the-null-coalescing-operator) de la [ C# spécification de langage](~/_csharplang/spec/introduction.md).</span><span class="sxs-lookup"><span data-stu-id="61021-129">For more information about the `??` operator, see [The null coalescing operator](~/_csharplang/spec/expressions.md#the-null-coalescing-operator) section of the [C# language specification](~/_csharplang/spec/introduction.md).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="61021-130">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="61021-130">See also</span></span>
+
+- [<span data-ttu-id="61021-131">Informations de référence sur C#</span><span class="sxs-lookup"><span data-stu-id="61021-131">C# reference</span></span>](../index.md)
+- [<span data-ttu-id="61021-132">Opérateurs C#</span><span class="sxs-lookup"><span data-stu-id="61021-132">C# operators</span></span>](index.md)
+- <span data-ttu-id="61021-133">[Opérateurs ?. et ?[]](member-access-operators.md#null-conditional-operators--and-)</span><span class="sxs-lookup"><span data-stu-id="61021-133">[?. and ?[] operators](member-access-operators.md#null-conditional-operators--and-)</span></span>
+- [<span data-ttu-id="61021-134">?:, opérateur</span><span class="sxs-lookup"><span data-stu-id="61021-134">?: operator</span></span>](conditional-operator.md)
