@@ -1,0 +1,8 @@
+- name: Compatibilité des applications
+  items:
+    - name: Évaluer les changements cassants
+      href: index.md
+    - name: Modifications avec rupture
+      href: breaking-changes.md
+    - name: Catégories de changements cassants
+      href: categories.md
