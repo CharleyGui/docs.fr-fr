@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.custom: vs-dotnet
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c8b7f6f3bdbf3adc7c355e88cfe1f569cc0cb76f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: b2c8e36c1b8185f28a7ec20402e385f3a1ddf5ce
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799330"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991773"
 ---
 # <a name="tutorial-create-your-first-wpf-application-in-visual-studio-2019"></a>Tutoriel : Créer votre première application WPF dans Visual Studio 2019
 
@@ -25,6 +25,7 @@ Cet article explique comment développer une application de bureau Windows Prese
 
 Ce tutoriel vous montre comment effectuer les opérations suivantes :
 > [!div class="checklist"]
+>
 > - Créez un projet WPF.
 > - Utilisez XAML pour concevoir l’apparence de l’interface utilisateur de l’application.
 > - Écrivez du code pour générer le comportement de l’application.
@@ -323,7 +324,7 @@ L’illustration suivante montre les résultats de ce que vous venez d’ajouter
 
 ## <a name="add-code-to-handle-events"></a>Ajouter du code pour gérer les événements
 
-1. Dans *`ExpenseItHome.xaml`* , ajoutez un <xref:System.Windows.Controls.Primitives.ButtonBase.Click> gestionnaire d’événements à <xref:System.Windows.Controls.Button> l’élément. Pour plus d'informations, voir [Procédure : Créez un gestionnaire](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb675300(v=vs.100))d’événements simple.
+1. Dans *`ExpenseItHome.xaml`* , ajoutez un <xref:System.Windows.Controls.Primitives.ButtonBase.Click> gestionnaire d’événements à <xref:System.Windows.Controls.Button> l’élément. Pour plus d’informations, consultez [Guide pratique pour Créez un gestionnaire](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb675300(v=vs.100))d’événements simple.
 
     [!code-xaml[ExpenseIt#15](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt6/ExpenseItHome.xaml#15)]
 

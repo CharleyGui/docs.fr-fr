@@ -2,16 +2,16 @@
 title: Durable Instance Context
 ms.date: 03/30/2017
 ms.assetid: 97bc2994-5a2c-47c7-927a-c4cd273153df
-ms.openlocfilehash: 40af70c69438fc5eaa688963db6710fa6fde0a42
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 85a00c6d100001fad429f1e58d716f0d7bedcceb
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425554"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989989"
 ---
 # <a name="durable-instance-context"></a>Durable Instance Context
 
-Cet exemple montre comment personnaliser le runtime Windows Communication Foundation (WCF) pour activer des contextes d’instance fiables. Il utilise SQL Server 2005 comme magasin de sauvegarde (SQL Server 2005 Express dans ce cas précis). Toutefois, il permet également d'accéder aux mécanismes de stockage personnalisés.
+Cet exemple montre comment personnaliser le runtime Windows Communication Foundation (WCF) pour activer des contextes d’instance durables. Il utilise SQL Server 2005 comme magasin de sauvegarde (SQL Server 2005 Express dans ce cas précis). Toutefois, il permet également d'accéder aux mécanismes de stockage personnalisés.
 
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.
@@ -122,7 +122,7 @@ if (isFirstMessage)
 }
 ```
 
-Ces implémentations de canal sont ensuite ajoutées à l’exécution de canal WCF par le `DurableInstanceContextBindingElement` classe et `DurableInstanceContextBindingElementSection` manière appropriée. Consultez le [HttpCookieSession](../../../../docs/framework/wcf/samples/httpcookiesession.md) exemple de documentation pour plus d’informations sur les éléments de liaison et de sections d’éléments de liaison de canal.
+Ces implémentations de canal sont ensuite ajoutées au runtime du canal WCF par `DurableInstanceContextBindingElement` la classe `DurableInstanceContextBindingElementSection` et la classe de manière appropriée. Consultez la documentation de l’exemple de canal [HttpCookieSession](../../../../docs/framework/wcf/samples/httpcookiesession.md) pour plus d’informations sur les éléments de liaison et les sections d’éléments de liaison.
 
 ## <a name="service-model-layer-extensions"></a>Extensions de la couche de modèle de service
 
@@ -232,15 +232,15 @@ else
 
 L'infrastructure nécessaire pour lire et écrire des instances à partir du stockage persistant est implémentée. Les étapes nécessaires pour modifier le comportement de service doivent maintenant être effectuées.
 
-La première étape de ce processus consiste à enregistrer l'ID de contexte, qui a traversé la couche de canal jusqu'au InstanceContext actuel. InstanceContext est un composant runtime qui sert de lien entre le répartiteur WCF et l’instance de service. Il permet de fournir un comportement et un état supplémentaires à l'instance de service. Cet aspect est essentiel car dans la communication de session, l'ID de contexte est envoyé uniquement avec le premier message.
+La première étape de ce processus consiste à enregistrer l'ID de contexte, qui a traversé la couche de canal jusqu'au InstanceContext actuel. InstanceContext est un composant d’exécution qui agit comme lien entre le répartiteur WCF et l’instance de service. Il permet de fournir un comportement et un état supplémentaires à l'instance de service. Cet aspect est essentiel car dans la communication de session, l'ID de contexte est envoyé uniquement avec le premier message.
 
-WCF permet d’étendre son composant d’exécution InstanceContext en ajoutant un nouvel état et le comportement à l’aide de son modèle d’objet extensible. Le modèle d’objet extensible est utilisé dans WCF pour étendre les classes de runtime existantes avec de nouvelles fonctionnalités ou pour ajouter de nouvelles fonctionnalités d’état à un objet. Il existe trois interfaces dans le modèle d’objet extensible - IExtensibleObject\<T >, IExtension\<T > et IExtensionCollection\<T > :
+WCF permet d’étendre son composant d’exécution InstanceContext en ajoutant un nouvel État et un nouveau comportement à l’aide de son modèle d’objet extensible. Le modèle d’objet extensible est utilisé dans WCF pour étendre des classes d’exécution existantes avec de nouvelles fonctionnalités ou pour ajouter de nouvelles fonctionnalités d’État à un objet. Il existe trois interfaces dans le modèle d’objet extensible-\<IExtensibleObject t >,\<IExtension t > et IExtensionCollection\<t >:
 
-- IExtensibleObject\<T > interface est implémentée par les objets permettant des extensions qui personnalisent leurs fonctionnalités.
+- L’interface\<IExtensibleObject T > est implémentée par des objets qui autorisent les extensions qui personnalisent leurs fonctionnalités.
 
-- IExtension\<T > interface est implémentée par les objets qui sont des extensions de classes de type T.
+- L’interface\<IExtension T > est implémentée par des objets qui sont des extensions de classes de type T.
 
-- La IExtensionCollection\<T > interface est une collection de IExtensions qui permet de récupérer les IExtensions par leur type.
+- L’interface\<IExtensionCollection T > est une collection de IExtensions qui permet de récupérer des IExtensions à l’aide de leur type.
 
 Par conséquent, vous devez créer une classe InstanceContextExtension qui implémente l'interface IExtension et définit l'état requis pour enregistrer l'ID de contexte. Cette classe fournit également l'état permettant de conserver le gestionnaire de stockage utilisé. Une fois que le nouvel état est enregistré, il ne doit pas être possible de le modifier. L'état est donc fourni et enregistré dans l'instance au moment de sa construction et n'est ensuite accessible qu'en lecture seule.
 
@@ -282,7 +282,7 @@ public void Initialize(InstanceContext instanceContext, Message message)
 
 Comme décrit précédemment, l'ID de contexte est lu à partir de la collection `Properties` de la classe `Message`, puis il est passé au constructeur de la classe d'extension. Cette étape montre comment les informations peuvent être échangées entre les couches de façon cohérente.
 
-L'étape importante suivante consiste à substituer le processus de création d'instance de service. WCF permet d’implémenter des comportements d’instanciation personnalisés et de les raccorder à l’exécution à l’aide de l’interface IInstanceProvider. Pour ce faire, la nouvelle classe `InstanceProvider` est implémentée. Dans le constructeur, le type de service attendu du fournisseur d'instances est accepté. Il est par la suite utilisé pour créer des instances. Dans l'implémentation `GetInstance`, une instance d'un gestionnaire de stockage est créée afin de rechercher une instance persistante. Si elle retourne `null`, une nouvelle instance du type de service est instanciée et retournée à l'appelant.
+L'étape importante suivante consiste à substituer le processus de création d'instance de service. WCF permet d’implémenter des comportements d’instanciation personnalisés et de les raccorder au runtime à l’aide de l’interface IInstanceProvider. Pour ce faire, la nouvelle classe `InstanceProvider` est implémentée. Dans le constructeur, le type de service attendu du fournisseur d'instances est accepté. Il est par la suite utilisé pour créer des instances. Dans l'implémentation `GetInstance`, une instance d'un gestionnaire de stockage est créée afin de rechercher une instance persistante. Si elle retourne `null`, une nouvelle instance du type de service est instanciée et retournée à l'appelant.
 
 ```csharp
 public object GetInstance(InstanceContext instanceContext, Message message)
@@ -353,9 +353,9 @@ foreach (ChannelDispatcherBase cdb in serviceHostBase.ChannelDispatchers)
 
 En résumé des étapes effectuées jusqu'à présent, cet exemple a produit un canal qui a activé le protocole de câble personnalisé pour l'échange d'ID de contexte personnalisé et il remplace également le comportement d'instanciation par défaut afin de charger les instances à partir du stockage persistant.
 
-Il reste donc à enregistrer l'instance de service dans le stockage persistant. Comme indiqué précédemment, les fonctionnalités requises pour enregistrer l'état dans une implémentation `IStorageManager` existent déjà. Nous devons maintenant les intégrer cela avec le runtime WCF. Un autre attribut est requis et est applicable aux méthodes de la classe d'implémentation de service. Cet attribut est supposé s'appliquer aux méthodes qui modifient l'état de l'instance de service.
+Il reste donc à enregistrer l'instance de service dans le stockage persistant. Comme indiqué précédemment, les fonctionnalités requises pour enregistrer l'état dans une implémentation `IStorageManager` existent déjà. Nous devons maintenant intégrer ce avec le runtime WCF. Un autre attribut est requis et est applicable aux méthodes de la classe d'implémentation de service. Cet attribut est supposé s'appliquer aux méthodes qui modifient l'état de l'instance de service.
 
-La classe `SaveStateAttribute` implémente ces fonctionnalités. Il implémente également `IOperationBehavior` classe pour modifier le runtime WCF pour chaque opération. Lorsqu’une méthode est marquée avec cet attribut, le runtime WCF appelle les `ApplyBehavior` méthode approprié lors de la `DispatchOperation` est en cours de construction. Cette implémentation de méthode comporte une seule ligne de code :
+La classe `SaveStateAttribute` implémente ces fonctionnalités. Il implémente `IOperationBehavior` également la classe pour modifier le runtime WCF pour chaque opération. Quand une méthode est marquée avec cet attribut, le runtime WCF appelle la `ApplyBehavior` méthode pendant la construction de la appropriée. `DispatchOperation` Cette implémentation de méthode comporte une seule ligne de code :
 
 ```csharp
 dispatch.Invoker = new OperationInvoker(dispatch.Invoker);
@@ -378,7 +378,7 @@ return result;
 
 ## <a name="using-the-extension"></a>Utilisation de l'extension
 
-À la fois la couche de canal et les extensions de couche de modèle de service sont effectuées et ils peuvent désormais être utilisés dans les applications WCF. Les services doivent ajouter le canal dans la pile de canaux à l’aide d’une liaison personnalisée, puis marquer les classes d’implémentation de service avec les attributs appropriés.
+La couche de canal et les extensions de couche de modèle de service sont toutes deux effectuées et peuvent désormais être utilisées dans les applications WCF. Les services doivent ajouter le canal dans la pile de canaux à l’aide d’une liaison personnalisée, puis marquer les classes d’implémentation de service avec les attributs appropriés.
 
 ```csharp
 [DurableInstanceContext]
@@ -432,7 +432,7 @@ En outre, vous pouvez essayer d'implémenter une classe (par exemple, `StateBag`
 
 Lorsque vous exécutez l'exemple, la sortie suivante s'affiche. Le client ajoute deux éléments à son panier d'achat puis place la liste d'éléments dans celui-ci à partir du service. Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.
 
-```
+```console
 Enter the name of the product: apples
 Enter the name of the product: bananas
 
@@ -447,11 +447,11 @@ Press ENTER to shut down client
 
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple
 
-1. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Pour générer la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-3. Pour exécuter l’exemple dans une configuration unique ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
 > [!NOTE]
 > Vous devez exécuter SQL Server 2005 ou SQL Express 2005 pour exécuter cet exemple. Si vous exécutez SQL Server 2005, vous devez modifier la configuration de la chaîne de connexion du service. Lors de l'exécution sur plusieurs ordinateurs, SQL Server est uniquement requis sur l'ordinateur serveur.
@@ -461,6 +461,6 @@ Press ENTER to shut down client
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Durable`

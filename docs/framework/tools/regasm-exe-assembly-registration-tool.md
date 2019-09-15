@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: e190e342-36ef-4651-a0b4-0e8c2c0281cb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 44ab00322419b99aeac51da0d836c60264da5194
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 5e80e044fe01172c587ef029186035a64cdf0b42
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894664"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971223"
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (outil Assembly Registration Tool)
 
@@ -38,7 +38,7 @@ regasm assemblyFile [options]
 
 |Option|Description|
 |------------|-----------------|
-|**/codebase**|Crée une entrée Codebase dans le Registre. L'entrée Codebase spécifie le chemin d'accès du fichier d'un assembly qui n'est pas installé dans le Global Assembly Cache. Vous ne devez pas spécifier cette option si vous devez installer par la suite l'assembly que vous inscrivez dans le Global Assembly Cache. L’argument *assemblyFile* que vous spécifiez avec l’option **/codebase** doit être un [assembly avec nom fort](../../../docs/framework/app-domains/strong-named-assemblies.md).|
+|**/codebase**|Crée une entrée Codebase dans le Registre. L'entrée Codebase spécifie le chemin d'accès du fichier d'un assembly qui n'est pas installé dans le Global Assembly Cache. Vous ne devez pas spécifier cette option si vous devez installer par la suite l'assembly que vous inscrivez dans le Global Assembly Cache. L’argument *assemblyFile* que vous spécifiez avec l’option **/codebase** doit être un [assembly avec nom fort](../../standard/assembly/strong-named.md).|
 |**/registered**|Spécifie que cet outil fera uniquement référence aux bibliothèques de types qui ont déjà été inscrites.|
 |**/asmpath:directory**|Spécifie un répertoire contenant des références d'assembly. Doit être utilisé avec l’option **/regfile**.|
 |**/nologo**|Supprime l'affichage de la bannière de démarrage Microsoft.|

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - out compiler option [C#]
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
-ms.openlocfilehash: 51c66d6bc2064d8051415de2ac083da478355a99
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 6c8408c0c613e361dae0c1db19f854e9421ca467
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69602595"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970379"
 ---
 # <a name="-out-c-compiler-options"></a>-out (Options du compilateur C#)
 L’option **-out** spécifie le nom du fichier de sortie.  
@@ -28,7 +28,7 @@ L’option **-out** spécifie le nom du fichier de sortie.
  `filename`  
  Nom du fichier de sortie créé par le compilateur.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Sur la ligne de commande, il est possible de spécifier plusieurs fichiers de sortie pour une même compilation. Le compilateur s’attend à trouver un ou plusieurs fichiers de code source à la suite de l’option **-out**. Ensuite, tous les fichiers de code source sont compilés dans le fichier de sortie spécifié par cette option **-out**.  
   
  Spécifiez le nom complet et l’extension du fichier que vous voulez créer.  
@@ -45,7 +45,7 @@ L’option **-out** spécifie le nom du fichier de sortie.
   
  Les modules générés dans le cadre d’une compilation deviennent des fichiers associés à un assembly également généré pendant la compilation. Utilisez [ildasm.exe](../../../framework/tools/ildasm-exe-il-disassembler.md) pour afficher le manifeste d’assembly et identifier les fichiers associés.  
   
- L’option de compilateur -out est nécessaire pour faire d’un fichier exe la cible d’un assembly friend. Pour plus d’informations, consultez [Assemblys friend](../../../standard/assembly/friend-assemblies.md).  
+ L’option de compilateur -out est nécessaire pour faire d’un fichier exe la cible d’un assembly friend. Pour plus d’informations, consultez [Assemblys friend](../../../standard/assembly/friend.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Pour définir cette option du compilateur dans l'environnement de développement Visual Studio  
   
@@ -57,7 +57,7 @@ L’option **-out** spécifie le nom du fichier de sortie.
   
      Pour définir cette option de compilateur par programmation : <xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> est une propriété en lecture seule, qui est déterminée par une combinaison du type de projet (exe, bibliothèque, etc.) et le nom de l’assembly. Il est nécessaire de modifier l’une de ces propriétés (ou les deux) pour définir le nom du fichier de sortie.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Compilez `t.cs` et créez le fichier de sortie `t.exe`, puis générez `t2.cs` et créez le fichier de sortie de module `mymodule.netmodule` :  
   
 ```console  
@@ -67,5 +67,5 @@ csc t.cs -out:mymodule.netmodule -target:module t2.cs
 ## <a name="see-also"></a>Voir aussi
 
 - [Options du compilateur C#](./index.md)
-- [Assemblys friend](../../../standard/assembly/friend-assemblies.md)
+- [Assemblys friend](../../../standard/assembly/friend.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

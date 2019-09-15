@@ -2,12 +2,12 @@
 title: Propriétés d'exécution de workflow
 ms.date: 03/30/2017
 ms.assetid: a50e088e-3a45-4267-bd51-1a3e6c2d246d
-ms.openlocfilehash: 61bf53d9cab3ddefae3709958bd1e445fb4e69dd
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 87775ba6efb9ec26ed2445e1f9d0944c379ba04f
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69913608"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70988597"
 ---
 # <a name="workflow-execution-properties"></a>Propriétés d'exécution de workflow
 Par le biais du stockage local des threads (TLS), le CLR maintient un contexte d’exécution pour chaque thread. Ce contexte d’exécution gouverne des propriétés de thread connues, telles que l’identité de thread, la transaction ambiante et le jeu d’autorisations actuel, en plus des propriétés de thread définies par l’utilisateur (comme les emplacements nommés).  
@@ -147,7 +147,7 @@ WorkflowInvoker.Invoke(wf);
   
  Lorsque le workflow est appelé, la sortie suivante est écrite dans la fenêtre de console.  
   
-```  
+```console  
 Start blue text.  
 Start red text.  
 Start default text.  

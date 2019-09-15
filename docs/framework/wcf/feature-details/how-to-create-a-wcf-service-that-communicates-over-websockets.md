@@ -2,12 +2,12 @@
 title: 'Procédure : créer un service WCF qui communique sur WebSockets'
 ms.date: 03/30/2017
 ms.assetid: bafbbd89-eab8-4e9a-b4c3-b7b0178e12d8
-ms.openlocfilehash: 5190cdad08087b73eb247dfc236ae7b6f470af69
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 706c2886bda9497835d98eeeb594e68c2191d8d8
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626920"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970005"
 ---
 # <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>Procédure : créer un service WCF qui communique sur WebSockets
 Les services et les clients WCF peuvent utiliser la liaison <xref:System.ServiceModel.NetHttpBinding> pour communiquer sur WebSockets.  WebSockets est utilisé lorsque <xref:System.ServiceModel.NetHttpBinding> détermine que le contrat de service définit un contrat de rappel. Cette rubrique décrit comment implémenter un service WCF et un client qui utilise <xref:System.ServiceModel.NetHttpBinding> pour communiquer sur WebSockets.  
@@ -40,7 +40,7 @@ Les services et les clients WCF peuvent utiliser la liaison <xref:System.Service
   
 3. Implémentez le contrat de service.  
   
-    ```  
+    ```csharp
     public class StockQuoteService : IStockQuoteService  
         {  
             public async Task StartSendingQuotes()  
@@ -160,7 +160,7 @@ Les services et les clients WCF peuvent utiliser la liaison <xref:System.Service
   
          Il n'y a aucune opération particulière à effectuer dans la configuration du client, il suffit de spécifier point de terminaison côté client à l'aide de `NetHttpBinding`.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L'intégralité du code utilisé dans cette rubrique est présentée ci-dessous.  
   
 ```csharp  
@@ -191,7 +191,7 @@ namespace Server
 }  
 ```  
   
-```  
+```csharp
 // StockQuoteService.svc.cs  
 using System;  
 using System.Collections.Generic;  
@@ -257,7 +257,7 @@ namespace Server
 </configuration>  
 ```  
   
-```  
+```
 <!-- StockQuoteService.svc -->  
 <%@ ServiceHost Language="C#" Debug="true" Service="Server.StockQuoteService" CodeBehind="StockQuoteService.svc.cs" %>  
 ```  

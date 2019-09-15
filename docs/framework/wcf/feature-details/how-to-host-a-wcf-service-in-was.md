@@ -2,17 +2,17 @@
 title: 'Procédure : héberger un service WCF dans WAS'
 ms.date: 03/30/2017
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
-ms.openlocfilehash: cdab0876b65c190cd5d46f82218eb9fbb8234298
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: b6d3ace054260de1ca649fbf4bd54156bbea24ce
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988202"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972208"
 ---
 # <a name="how-to-host-a-wcf-service-in-was"></a>Procédure : héberger un service WCF dans WAS
 Cette rubrique décrit les étapes de base requises pour créer un service de Windows Communication Foundation hébergé (WCF) des services d’activation de processus Windows (également appelé WAS). WAS est le nouveau service d’activation de processus généralisant les fonctionnalités des services IIS (Internet Information Services) qui fonctionnent avec des protocoles de transport non-HTTP. WCF utilise l’interface d’adaptateur d’écouteur pour communiquer les demandes d’activation reçues sur les protocoles non-HTTP pris en charge par WCF, tels que TCP, les canaux nommés et les Message Queuing.  
   
- Cette option d'hébergement requiert que les composants d'activation WAS soient installés et configurés correctement, mais ne requiert pas l'écriture du code d'hébergement dans le cadre de l'application. Pour plus d’informations sur l’installation et la configuration de [was, consultez Procédure: Installez et configurez les](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)composants d’activation WCF.  
+ Cette option d'hébergement requiert que les composants d'activation WAS soient installés et configurés correctement, mais ne requiert pas l'écriture du code d'hébergement dans le cadre de l'application. Pour plus d’informations sur l’installation et la configuration de [was, consultez Procédure : Installez et configurez les](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)composants d’activation WCF.  
   
 > [!WARNING]
 > L’activation de WAS n’est pas prise en charge si le pipeline de traitement de demande du serveur web est en mode classique. Le pipeline de traitement de demande du serveur Web doit être en mode intégré si l'activation de WAS doit être utilisée.  
@@ -66,9 +66,9 @@ Cette rubrique décrit les étapes de base requises pour créer un service de Wi
   
 4. Créez un fichier Service.svc contenant le code suivant.  
   
-    ```  
-    <%@ServiceHost language=c# Service="CalculatorService" %>   
-    ```  
+   ```
+   <%@ServiceHost language=c# Service="CalculatorService" %>
+   ```
   
 5. Placez le fichier Service.svc dans votre rɰertoire virtuel IIS.  
   
@@ -76,8 +76,8 @@ Cette rubrique décrit les étapes de base requises pour créer un service de Wi
   
 1. Utilisez l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) à partir de la ligne de commande pour générer le code à partir des métadonnées de service.  
   
-    ```  
-    Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>   
+    ```console
+    Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
     ```  
   
 2. Le client généré contient l'interface `ICalculator` qui définit le contrat de service auquel l'implémentation du client doit satisfaire.  

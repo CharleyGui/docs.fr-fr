@@ -4,16 +4,16 @@ description: Meilleures pratiques recommandées pour l’affectation de noms for
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/16/2018
-ms.openlocfilehash: 79e44e89a94c1948ff29b9a8161f852c3a7c8cbb
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: 3a623f65d95d776e45af245a1fe241cc5ee25b93
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65640796"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70968970"
 ---
 # <a name="strong-naming"></a>Affectation de noms forts
 
-L’affectation de noms forts fait référence à la signature d’un assembly avec une clé, produisant un [assembly avec un nom fort](../../framework/app-domains/strong-named-assemblies.md). Lorsqu’un assembly a un nom fort, cela crée une identité unique basée sur le nom et le numéro de version de l’assembly, et cela peut aider à éviter les conflits de l’assembly.
+L’affectation de noms forts fait référence à la signature d’un assembly avec une clé, produisant un [assembly avec un nom fort](../assembly/strong-named.md). Lorsqu’un assembly a un nom fort, cela crée une identité unique basée sur le nom et le numéro de version de l’assembly, et cela peut aider à éviter les conflits de l’assembly.
 
 L’inconvénient de l’utilisation de noms forts est que le .NET Framework sur Windows permet le chargement strict des assemblys une fois qu’un assembly possède un nom fort. Une référence d’assembly avec un nom fort doit correspondre exactement à la version référencée par un assembly, ce qui force les développeurs à [configurer des redirections de liaison](../../framework/configure-apps/redirect-assembly-versions.md) lors de l’utilisation de l’assembly :
 

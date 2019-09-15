@@ -9,12 +9,12 @@ helpviewer_keywords:
 - application settings [Windows Forms], Windows Forms
 - application settings [Windows Forms], validating
 ms.assetid: 9f145ada-4267-436a-aa4c-c4dcffd0afb7
-ms.openlocfilehash: 220b86c0de57e60036527bb49f2d8de46390a9ed
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b3b2447b570f0635942183dcc62c0e4ed73800d1
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929788"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972244"
 ---
 # <a name="how-to-validate-application-settings"></a>Procédure : valider les paramètres d’application
 
@@ -43,7 +43,7 @@ Un gestionnaire d’événements exécute généralement l’une des actions sui
 
 Pour plus d’informations sur la gestion des événements, consultez [Vue d’ensemble des gestionnaires d’événements](../event-handlers-overview-windows-forms.md).
 
-Les procédures suivantes montrent comment tester une date de naissance valide à l’aide de <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> l' <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving> événement ou. Ces procédures ont été écrites en supposant que vous avez déjà créé vos paramètres d’application. Dans cet exemple, nous vérifions les limites d’un paramètre nommé `DateOfBirth`. Pour plus d’informations sur la création de [paramètres, consultez Procédure: Créer des paramètres](how-to-create-application-settings.md)d’application.
+Les procédures suivantes montrent comment tester une date de naissance valide à l’aide de <xref:System.Configuration.ApplicationSettingsBase.SettingChanging> l' <xref:System.Configuration.ApplicationSettingsBase.SettingsSaving> événement ou. Ces procédures ont été écrites en supposant que vous avez déjà créé vos paramètres d’application. Dans cet exemple, nous vérifions les limites d’un paramètre nommé `DateOfBirth`. Pour plus d’informations sur la création de [paramètres, consultez Procédure : Créer des paramètres](how-to-create-application-settings.md)d’application.
 
 ### <a name="to-obtain-the-application-settings-object"></a>Pour obtenir l’objet des paramètres de l’application
 
@@ -103,9 +103,11 @@ Les procédures suivantes ont été écrites en supposant que l’objet des para
     ```csharp
     private void MyCustomSettings_SettingChanging(Object sender, SettingChangingEventArgs e)
     {
-        if (e.SettingName.Equals("DateOfBirth")) {
-            Date newDate = (Date)e.NewValue;
-            If (newDate > Date.Now) {
+        if (e.SettingName.Equals("DateOfBirth"))
+        {
+            var newDate = (DateTime)e.NewValue;
+            if (newDate > DateTime.Now)
+            {
                 e.Cancel = true;
                 // Inform the user.
             }
@@ -164,4 +166,4 @@ Les procédures suivantes ont été écrites en supposant que l’objet des para
 ## <a name="see-also"></a>Voir aussi
 
 - [Création de gestionnaires d’événements dans les Windows Forms](../creating-event-handlers-in-windows-forms.md)
-- [Guide pratique : Créer des paramètres d’application](how-to-create-application-settings.md)
+- [Guide pratique pour Créer des paramètres d’application](how-to-create-application-settings.md)

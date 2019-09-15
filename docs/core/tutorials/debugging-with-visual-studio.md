@@ -3,12 +3,12 @@ title: Déboguer une application .NET Core Hello World avec Visual Studio 2017
 description: Découvrez comment déboguer une application Hello World écrite en C# ou Visual Basic avec Visual Studio 2017.
 ms.date: 12/15/2017
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: f318c163db6cfdd6de5aa99edebfeeb4bb470a02
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 7239ca52c0b90c4cfacd68581f569b9ac7d70eae
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926165"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969392"
 ---
 # <a name="debug-your-c-or-visual-basic-net-core-hello-world-application-using-visual-studio-2017"></a>Déboguer une application Hello World .NET Core C# ou Visual Basic avec Visual Studio 2017
 
@@ -25,6 +25,8 @@ Vous devez toujours commencer par tester votre programme en mode Débogage. Le m
 ## <a name="setting-a-breakpoint"></a>Définition d'un point d'arrêt
 
 Exécutez votre programme en mode Débogage et essayez quelques fonctionnalités de débogage :
+
+<!-- markdownlint-disable MD025 -->
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 

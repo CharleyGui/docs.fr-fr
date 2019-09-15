@@ -2,12 +2,12 @@
 title: ETW Tracing
 ms.date: 03/30/2017
 ms.assetid: ac99a063-e2d2-40cc-b659-d23c2f783f92
-ms.openlocfilehash: c484e3438ad3512bd6186297f3edf8068a60795e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: fb1a1dc77ee6a7be25aade18f76f89464bef0387
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045002"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989961"
 ---
 # <a name="etw-tracing"></a>ETW Tracing
 Cet exemple montre comment implémenter le suivi de bout en bout (E2E) à l'aide du suivi d'événements pour Windows (ETW, Event Tracing for Windows) et du `ETWTraceListener` fourni dans cet exemple. L’exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) et comprend le suivi ETW.  
@@ -15,7 +15,7 @@ Cet exemple montre comment implémenter le suivi de bout en bout (E2E) à l'aide
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération correspondant à cet exemple figurent en fin de rubrique.  
   
- Cet exemple suppose que vous êtes familiarisé avec [le suivi et](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md)la journalisation des messages.  
+ Cet exemple suppose que vous êtes familiarisé avec [le suivi et la journalisation des messages](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md).  
   
  Chaque source de suivi du modèle de suivi <xref:System.Diagnostics> peut disposer de plusieurs écouteurs de suivi qui déterminent où et comment les données sont suivies. Le type de ces écouteurs définit le format auquel les données de suivi sont enregistrées. L'exemple de code suivant indique comment ajouter un écouteur à la configuration.  
   
@@ -56,7 +56,7 @@ Cet exemple montre comment implémenter le suivi de bout en bout (E2E) à l'aide
   
  L'écouteur de suivi ETW prend en charge l'enregistrement circulaire. Pour activer cette fonctionnalité, accédez à **Démarrer**, **exécuter** et tapez `cmd` pour démarrer une console de commandes. Dans la commande suivante, remplacez le paramètre `<logfilename>` par le nom de votre fichier journal.  
   
-```  
+```console  
 logman create trace Wcf -o <logfilename> -p "{411a0819-c24b-428c-83e2-26b41091702e}" -f bincirc -max 1000  
 ```  
   
@@ -64,14 +64,14 @@ logman create trace Wcf -o <logfilename> -p "{411a0819-c24b-428c-83e2-26b4109170
   
  Pour démarrer la session, tapez la commande suivante.  
   
-```  
-Logman start Wcf  
+```console  
+logman start Wcf  
 ```  
   
  L'enregistrement terminé, vous pouvez arrêter la session à l'aide de la commande suivante.  
   
-```  
-Logman stop Wcf  
+```console  
+logman stop Wcf  
 ```  
   
  Ce processus génère des journaux circulaires binaires que vous pouvez traiter avec l’outil de votre choix, y compris l' [outil Service Trace Viewer (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) ou tracerpt.  

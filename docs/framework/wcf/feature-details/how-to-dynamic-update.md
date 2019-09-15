@@ -2,12 +2,12 @@
 title: 'Procédure : Mise à jour dynamique'
 ms.date: 03/30/2017
 ms.assetid: 9b8f6e0d-edab-4a7e-86e3-8c66bebc64bb
-ms.openlocfilehash: 3c651bc4ff23b2534e81f190fc8b63771c7587d6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0a103e980d0d1be08f3ae6850c6af64405582c7b
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911156"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972074"
 ---
 # <a name="how-to-dynamic-update"></a>Procédure : Mise à jour dynamique
 Cette rubrique présente les étapes de base nécessaires pour créer et mettre à jour de manière dynamique la configuration de routage. Dans cet exemple, la configuration de routage initiale provient du fichier de configuration et route tous les messages vers le service de calculatrice regularCalc, mais elle est ensuite mise à jour par programme pour modifier le point de terminaison de destination du service roundingCalc.  
@@ -64,7 +64,7 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
     </filterTables>  
     ```  
   
-3. Pour évaluer les messages entrants en fonction des filtres contenus dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage. L’exemple suivant montre l’Association de «filterTable1» au point de terminaison de service.  
+3. Pour évaluer les messages entrants en fonction des filtres contenus dans la table de filtres, vous devez associer la table de filtres aux points de terminaison de service à l'aide du comportement de routage. L’exemple suivant montre l’Association de « filterTable1 » au point de terminaison de service.  
   
     ```xml  
     <behaviors>  
@@ -165,7 +165,7 @@ Cette rubrique présente les étapes de base nécessaires pour créer et mettre 
 ## <a name="example"></a>Exemple  
  L'intégralité de l'application console utilisée dans cet exemple est présentée ci-dessous.  
   
-```  
+```csharp
 //-----------------------------------------------------------------  
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  
 //-----------------------------------------------------------------  
@@ -240,7 +240,7 @@ namespace Microsoft.Samples.AdvancedFilters
 }  
 ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'intégralité du fichier de configuration utilisé dans cet exemple est présentée ci-dessous.  
   
 ```xml  

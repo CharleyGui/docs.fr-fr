@@ -3,12 +3,12 @@ title: Explorer le code avec le visualiseur de syntaxe Roslyn dans Visual Studio
 description: Le visualiseur de syntaxe offre un outil visuel qui permet d’explorer les modèles que le SDK .NET Compiler Platform génère pour le code.
 ms.date: 03/07/2018
 ms.custom: mvc, vs-dotnet
-ms.openlocfilehash: 55a1aa555a82d286a0e8e4359e814dfe2cc301c8
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: fa3b4fdbb8d573805119e13e8aa93f156c4111f9
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926781"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972012"
 ---
 # <a name="explore-code-with-the-roslyn-syntax-visualizer-in-visual-studio"></a>Explorer le code avec le visualiseur de syntaxe Roslyn dans Visual Studio
 
@@ -29,6 +29,8 @@ Cette commande ouvre ce dernier dans une fenêtre Outil flottante. Si aucune fen
 Ancrez cette fenêtre Outil à un emplacement pratique dans Visual Studio, comme le côté gauche. Le visualiseur indique des informations sur le fichier de code actuel.
 
 Créez un projet à l’aide de la commande **Fichier** > **Nouveau projet**. Vous pouvez créer un projet VB ou C#. Quand Visual Studio ouvre le fichier de code principal de ce projet, le visualiseur en présente l’arborescence de syntaxe. Vous pouvez ouvrir n’importe quel fichier C#/VB existant dans cette instance Visual Studio pour que le visualiseur en présente l’arborescence de syntaxe. Si plusieurs fichiers de code sont ouverts dans Visual Studio, le visualiseur présente l’arborescence de syntaxe du fichier de code actif (celui qui a le focus clavier.)
+
+<!-- markdownlint-disable MD025 -->
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 ![Visualisation d’une arborescence de syntaxe C#](media/syntax-visualizer/visualize-csharp.png)

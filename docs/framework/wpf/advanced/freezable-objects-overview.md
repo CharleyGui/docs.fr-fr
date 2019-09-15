@@ -9,12 +9,12 @@ helpviewer_keywords:
 - unfreezing Freezable objects [WPF]
 - classes [WPF], Freezable
 ms.assetid: 89c71692-4f43-4057-b611-67c6a8a863a2
-ms.openlocfilehash: 854565e28e646ef57658e2bfdb7326d8453448d2
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 05cd3c27430146f575c23011f53995aa07aaf99e
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70856072"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991498"
 ---
 # <a name="freezable-objects-overview"></a>Vue d'ensemble des objets Freezable
 
@@ -100,13 +100,13 @@ Pour figer <xref:System.Windows.Freezable> un objet déclaré dans le balisage, 
 
 Pour utiliser l' `Freeze` attribut, vous devez mapper à l’espace de noms des `http://schemas.microsoft.com/winfx/2006/xaml/presentation/options`options de présentation :. `PresentationOptions`est le préfixe recommandé pour le mappage de cet espace de noms :
 
-```
+```xaml
 xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
 ```
 
 Étant donné que tous les lecteurs XAML ne reconnaissent pas cet attribut, il est recommandé d’utiliser l' [attribut MC : Ignorable](mc-ignorable-attribute.md) pour marquer l' `Presentation:Freeze` attribut comme étant pouvant être ignoré :
 
-```
+```xaml
 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="PresentationOptions"
 ```

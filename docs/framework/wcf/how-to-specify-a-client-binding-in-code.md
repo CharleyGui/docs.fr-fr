@@ -5,27 +5,27 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6bee5da4-adf7-42e6-8f78-63a9e5c6dbad
-ms.openlocfilehash: c95e30c65c6096140fca0c1241e76fbc7af4df3d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 37769a84ca623e2f7f246d36180aa17537e90bfa
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61929127"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990232"
 ---
 # <a name="how-to-specify-a-client-binding-in-code"></a>Procédure : spécifier une liaison de client dans le code
 Dans cet exemple, un client est créé afin d’utiliser un service de calculatrice et la liaison du client est spécifiée de manière impérative dans le code. Le client accède au service `CalculatorService`, lequel implémente l'interface `ICalculator`. Le service et le client utilisent la classe <xref:System.ServiceModel.BasicHttpBinding>.  
   
- Cette procédure part du principe que le service de calculatrice est en cours d'exécution. Pour plus d’informations sur la création du service, consultez [Comment : Spécifier une liaison de Service dans la Configuration](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md). Il utilise également le [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)Windows Communication Foundation (WCF) fournit pour générer automatiquement les composants du client. Cet outil génère le code client permettant d'accéder au service.  
+ Cette procédure part du principe que le service de calculatrice est en cours d'exécution. Pour plus d’informations sur la création du [service, consultez Procédure : Spécifiez une liaison de service](../../../docs/framework/wcf/how-to-specify-a-service-binding-in-configuration.md)dans la configuration. Il utilise également l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)Windows Communication Foundation (WCF) fournit pour générer automatiquement les composants du client. Cet outil génère le code client permettant d'accéder au service.  
   
  La construction du client se divise en deux parties. L'outil Svcutil.exe génère la calculatrice `ClientCalculator` qui implémente l'interface `ICalculator`. Cette application cliente est ensuite créée en construisant une instance de `ClientCalculator`, puis en spécifiant la liaison et l'adresse du service dans le code.  
   
- Pour la copie de la source de cet exemple, consultez le [BasicBinding](../../../docs/framework/wcf/samples/basicbinding.md) exemple.  
+ Pour obtenir la copie source de cet exemple, consultez l’exemple [BasicBinding](../../../docs/framework/wcf/samples/basicbinding.md) .  
   
 ### <a name="to-specify-a-custom-binding-in-code"></a>Pour spécifier une liaison personnalisée dans le code  
   
 1. Utilisez l'outil Svcutil.exe depuis la ligne de commande pour générer le code à partir des métadonnées de service.  
   
-    ```  
+    ```console  
     Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>   
     ```  
   

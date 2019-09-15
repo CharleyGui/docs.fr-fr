@@ -29,12 +29,12 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-ms.openlocfilehash: 09f0a1b34e88be995fb9a386161a930457e4bb56
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: d48398f31c1452821292a6feb2867dbd2971e739
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168988"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991413"
 ---
 # <a name="xaml-syntax-in-detail"></a>Syntaxe XAML en détail
 Cette rubrique définit les termes utilisés pour décrire les éléments de la syntaxe XAML. Ces termes sont fréquemment utilisés dans la suite de cette documentation, à la fois pour la documentation WPF et pour les autres infrastructures qui utilisent XAML ou les concepts XAML de base activés par la prise en charge du langage XAML au niveau de System. Xaml. Cette rubrique développe la terminologie de base présentée dans la rubrique [vue d’ensemble du langage XAML (WPF)](xaml-overview-wpf.md).  
@@ -108,11 +108,11 @@ Cette rubrique définit les termes utilisés pour décrire les éléments de la 
 #### <a name="enumeration-attribute-values"></a>Valeurs d’attribut d’énumération  
  Les énumérations en XAML sont traitées intrinsèquement par les analyseurs XAML, et les membres d’une énumération doivent être spécifiés en spécifiant le nom de chaîne de l’une des constantes nommées de l’énumération.  
   
- Pour les valeurs d’énumération sans indicateur, le comportement natif consiste à traiter la chaîne d’une valeur d’attribut et à la résoudre en l’une des valeurs d’énumération. Vous ne spécifiez pas l’énumération dansl’énumération de format., Comme vous le feriez dans le code. Au lieu de cela, vous spécifiez uniquement la *valeur*et l' *énumération* est déduite par le type de la propriété que vous définissez. Si vous spécifiez un attribut dansl’énumération. Format de *valeur* , elle ne sera pas résolue correctement.  
+ Pour les valeurs d’énumération sans indicateur, le comportement natif consiste à traiter la chaîne d’une valeur d’attribut et à la résoudre en l’une des valeurs d’énumération. Vous ne spécifiez pas l’énumération dansl’énumération de format. *, Comme*vous le feriez dans le code. Au lieu de cela, vous spécifiez uniquement la *valeur*et l' *énumération* est déduite par le type de la propriété que vous définissez. Si vous spécifiez un attribut dansl’énumération. Format de *valeur* , elle ne sera pas résolue correctement.  
   
  Pour les énumérations d’indicateurs, le comportement est basé <xref:System.Enum.Parse%2A?displayProperty=nameWithType> sur la méthode. Vous pouvez spécifier plusieurs valeurs pour une énumération d’indicateurs en séparant chaque valeur par une virgule. Toutefois, vous ne pouvez pas combiner des valeurs d’énumération qui n’ont pas d’indicateurs. Par exemple, vous ne pouvez pas utiliser la syntaxe de virgule pour tenter <xref:System.Windows.Trigger> de créer un qui agit sur plusieurs conditions d’une énumération sans indicateur:  
   
-```  
+```xaml  
 <!--This will not compile, because Visibility is not a flagwise enumeration.-->  
 ...  
 <Trigger Property="Visibility" Value="Collapsed,Hidden">  
@@ -197,7 +197,7 @@ Cette rubrique définit les termes utilisés pour décrire les éléments de la 
 ### <a name="xaml-content-property-values-must-be-contiguous"></a>Les valeurs de propriété de contenu XAML doivent être contiguës  
  La valeur d’une propriété de contenu XAML doit être fournie entièrement avant ou entièrement après tous les autres éléments de propriété sur cet élément objet. Cela est vrai si la valeur d’une propriété de contenu XAML est spécifiée en tant que chaîne ou en tant qu’un ou plusieurs objets. Par exemple, le balisage suivant n’analyse pas:  
   
-```  
+```xaml  
 <Button>I am a   
   <Button.Background>Blue</Button.Background>  
   blue button</Button>  
@@ -205,7 +205,7 @@ Cette rubrique définit les termes utilisés pour décrire les éléments de la 
   
  Ce n’est pas non plus conforme, car si cette syntaxe a été rendue explicite à l’aide de la syntaxe d’élément de propriété pour la propriété de contenu, la propriété de contenu est définie deux fois:  
   
-```xml  
+```xaml  
 <Button>  
   <Button.Content>I am a </Button.Content>  
   <Button.Background>Blue</Button.Background>  
@@ -215,7 +215,7 @@ Cette rubrique définit les termes utilisés pour décrire les éléments de la 
   
  Un exemple similaire non conforme est si la propriété de contenu est une collection et si les éléments enfants sont intercalés avec les éléments de propriété:  
   
-```xml  
+```xaml  
 <StackPanel>  
   <Button>This example</Button>  
   <StackPanel.Resources>  

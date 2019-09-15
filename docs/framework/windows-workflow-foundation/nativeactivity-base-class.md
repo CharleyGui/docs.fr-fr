@@ -2,12 +2,12 @@
 title: Classe de base NativeActivity
 ms.date: 03/30/2017
 ms.assetid: 254a4c50-425b-426d-a32f-0f7234925bac
-ms.openlocfilehash: d746bb92dab79e7e68075ad003c420e7e37ed683
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 604535e39937a75c6d268cf1abbc90dbcd506a16
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637502"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989551"
 ---
 # <a name="nativeactivity-base-class"></a>Classe de base NativeActivity
 
@@ -34,13 +34,13 @@ ms.locfileid: "65637502"
 
 ### <a name="to-create-a-custom-activity-that-inherits-from-nativeactivity"></a>Pour créer une activité personnalisée qui hérite de NativeActivity
 
-1. Ouvrez Visual Studio 2010.
+1. OpenVisual Studio 2010.
 
-2. Sélectionnez **fichier**, **nouveau**, puis **projet**. Sélectionnez **Workflow 4.0** sous **Visual C#** dans le **Types de projets** , puis sélectionnez le **v2010** nœud. Sélectionnez **bibliothèque d’activités** dans le **modèles** fenêtre. Nommez le nouveau projet HelloActivity.
+2. Sélectionnez **fichier**, **nouveau**, puis **projet**. Sélectionnez **Workflow 4,0** sous **visuel C#**  dans la fenêtre **types de projets** , puis sélectionnez le nœud **v2010** . Sélectionnez **bibliothèque d’activités** dans la fenêtre **modèles** . Nommez le nouveau projet HelloActivity.
 
-3. Cliquez sur Activity1.xaml dans le projet HelloActivity et sélectionnez **supprimer**.
+3. Cliquez avec le bouton droit sur Activity1. xaml dans le projet HelloActivity, puis sélectionnez **supprimer**.
 
-4. Cliquez sur le projet HelloActivity et sélectionnez **ajouter**, puis **classe**. Nommez la nouvelle classe HelloActivity.cs.
+4. Cliquez avec le bouton droit sur le projet HelloActivity et sélectionnez **Ajouter**, puis **classe**. Nommez la nouvelle classe HelloActivity.cs.
 
 5. Dans le fichier HelloActivity.cs, ajoutez les directives `using` suivantes.
 
@@ -68,7 +68,7 @@ ms.locfileid: "65637502"
 
 9. Utilisez l'objet <xref:System.Activities.NativeActivityContext> pour planifier un signet. Pour plus d'informations sur la création, la planification et la reprise d'un signet, consultez <xref:System.Activities.WorkflowApplicationIdleEventArgs.Bookmarks%2A>.
 
-    ```
+    ```csharp
     protected override void Execute(NativeActivityContext context)
         {
             // Create a Bookmark and wait for it to be resumed.

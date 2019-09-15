@@ -15,12 +15,12 @@ helpviewer_keywords:
 - characters [WPF], curly brace
 - DynamicResource markup extensions [WPF]
 ms.assetid: 618dc745-8b14-4886-833f-486d2254bb78
-ms.openlocfilehash: f0eb4a90b09f49ced45fa8453356e1d6fb3b4af1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 562eea34af44a8fb24199e81477a4cb2ddb1046c
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965276"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991830"
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>Extensions de balisage et XAML WPF
 Cette rubrique introduit le concept d’extensions de balisage pour XAML, notamment leurs règles de syntaxe, leur finalité et le modèle d’objet de classe sous-jacent. Les extensions de balisage sont une fonctionnalité générale du langage XAML et de l’implémentation .NET des services XAML. Cette rubrique détaille spécifiquement des extensions de balisage pour une utilisation dans le langage XAML de WPF.  
@@ -104,7 +104,7 @@ Cette rubrique introduit le concept d’extensions de balisage pour XAML, notamm
 ## <a name="nesting-markup-extensions-in-xaml-usage"></a>Imbrication d’extensions de balisage dans l’utilisation de XAML  
  L’imbrication de plusieurs extensions de balisage est prise en charge, et chaque extension de balisage est d’abord évaluée au plus profond. Penchons-nous, par exemple, sur l’utilisation suivante :  
   
-```  
+```xaml  
 <Setter Property="Background"  
   Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />  
 ```  

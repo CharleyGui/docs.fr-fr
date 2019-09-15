@@ -2,12 +2,12 @@
 title: Expressions-WF
 ms.date: 03/30/2017
 ms.assetid: c42341a9-43a1-462c-bffb-c5de004aa428
-ms.openlocfilehash: 93d437ae6d20f5d31d80ef3a40f409c589ae084e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 1c79d4294ce1e7d6f6fc13e8220f88919c8f6021
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962423"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989748"
 ---
 # <a name="expressions"></a>Expressions
 Une expression Windows Workflow Foundation (WF) est toute activité qui retourne un résultat. Toutes les activités d'expression dérivent indirectement de <xref:System.Activities.Activity%601>, qui contient une propriété <xref:System.Activities.OutArgument> nommée <xref:System.Activities.Activity%601.Result%2A> comme valeur de retour de l'activité. [!INCLUDE[wf1](../../../includes/wf1-md.md)] est fourni avec une large gamme d'activités d'expressions, simples comme <xref:System.Activities.Expressions.VariableValue%601> et <xref:System.Activities.Expressions.VariableReference%601>, qui permettent d'accéder à une variable de workflow unique via des activités d'opérateur, ou complexes telles que <xref:Microsoft.VisualBasic.Activities.VisualBasicReference%601> et <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601> qui permettent d'accéder à la totalité du langage Visual Basic pour produire le résultat. Des activités d'expressions supplémentaires peuvent être créées en dérivant de <xref:System.Activities.CodeActivity%601> ou <xref:System.Activities.NativeActivity%601>.  
@@ -41,7 +41,7 @@ Une expression Windows Workflow Foundation (WF) est toute activité qui retourne
   
  Lors de la définition d'un workflow dans le code, toutes les activités d'expressions peuvent être utilisées. L'exemple suivant illustre l'utilisation d'une composition d'activités d'opérateur pour ajouter trois nombres.  
   
-```  
+```csharp  
 Variable<int> a = new Variable<int>("a", 1);  
 Variable<int> b = new Variable<int>("b", 2);  
 Variable<int> c = new Variable<int>("c", 3);  
@@ -70,7 +70,7 @@ Sequence w = new Sequence
   
  Le même workflow peut être exprimé d’une manière plus compacte en utilisant des expressions lambda C#, comme indiqué dans l’exemple suivant.  
   
-```  
+```csharp  
 Variable<int> a = new Variable<int>("a", 1);  
 Variable<int> b = new Variable<int>("b", 2);  
 Variable<int> c = new Variable<int>("c", 3);  
@@ -91,7 +91,7 @@ Sequence w = new Sequence
   
  Le workflow peut également être exprimé à l'aide des activités d'expressions Visual Basic, comme indiqué dans l'exemple suivant.  
   
-```  
+```vb  
 Variable<int> a = new Variable<int>("a", 1);  
 Variable<int> b = new Variable<int>("b", 2);  
 Variable<int> c = new Variable<int>("c", 3);  
@@ -113,7 +113,7 @@ Sequence w = new Sequence
 ## <a name="extending-available-expressions-with-custom-expression-activities"></a>Extension d'expressions disponibles avec les activités d'expressions personnalisées  
  Les expressions dans [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] sont extensibles, ce qui permet la création d'activités d'expressions supplémentaires. L'exemple suivant affiche une activité qui retourne une somme de trois valeurs entières.  
   
-```  
+```csharp  
 using System;  
 using System.Collections.Generic;  
 using System.Linq;  
@@ -140,7 +140,7 @@ namespace ExpressionsDemo
   
  Avec cette nouvelle activité, vous pouvez réécrire le workflow précédent qui a ajouté trois valeurs comme indiqué dans l'exemple suivant.  
   
-```  
+```csharp  
 Variable<int> a = new Variable<int>("a", 1);  
 Variable<int> b = new Variable<int>("b", 2);  
 Variable<int> c = new Variable<int>("c", 3);  

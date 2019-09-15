@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: 649f1342-766b-49e6-a90d-5b019a751e11
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 47f211256b4820e3fb25339de2fe4db962171056
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 01fa0cf9811e72333b091858e2f78a80dda1d9ef
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911010"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969101"
 ---
 # <a name="side-by-side-execution-in-the-net-framework"></a>Exécution côte à côte dans .NET Framework
 L'exécution côte à côte désigne la possibilité d'exécuter plusieurs versions d'une application ou d'un composant sur le même ordinateur. Vous pouvez avoir plusieurs versions du Common Language Runtime et plusieurs versions d'applications et de composants qui utilisent une version du runtime sur le même ordinateur simultanément.  
@@ -35,7 +35,7 @@ L'exécution côte à côte désigne la possibilité d'exécuter plusieurs versi
   
 - Assemblys avec nom fort.  
   
-     L'exécution côte à côte utilise des assemblys avec nom fort pour lier des informations de type à une version spécifique d'un assembly. Cela permet d'éviter la liaison d'une application ou d'un composant à une version non valide d'un assembly. Les assemblys avec nom fort permettent également à plusieurs versions d'un fichier de se trouver sur le même ordinateur et d'être utilisé par des applications. Pour plus d’informations, consultez [Assemblys avec nom fort](../../../docs/framework/app-domains/strong-named-assemblies.md).  
+     L'exécution côte à côte utilise des assemblys avec nom fort pour lier des informations de type à une version spécifique d'un assembly. Cela permet d'éviter la liaison d'une application ou d'un composant à une version non valide d'un assembly. Les assemblys avec nom fort permettent également à plusieurs versions d'un fichier de se trouver sur le même ordinateur et d'être utilisé par des applications. Pour plus d’informations, consultez [Assemblys avec nom fort](../../standard/assembly/strong-named.md).  
   
 - Stockage de code prenant en compte la version.  
   
@@ -116,7 +116,7 @@ publicKeyToken=...,
 |[Guide pratique pour Activer et désactiver la redirection de liaison automatique](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)|Explique comment lier une application à une version spécifique d'un assembly.|  
 |[Configuration de la redirection de liaison d’assembly](../../../docs/framework/deployment/configuring-assembly-binding-redirection.md)|Explique comment rediriger les références de liaison d’assembly vers une version spécifique des assemblys du .NET Framework.|  
 |[Exécution côte à côte in-process](../../../docs/framework/deployment/in-process-side-by-side-execution.md)|Explique comment utiliser l'activation d'hôte du runtime côte à côte in-process pour exécuter plusieurs versions du CLR dans un même processus.|  
-|[Assemblys dans le Common Language Runtime](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)|Fournit une vue d'ensemble conceptuelle des assemblys.|  
+|[Assemblys dans .NET](../../standard/assembly/index.md)|Fournit une vue d'ensemble conceptuelle des assemblys.|  
 |[Domaines d’application](../../../docs/framework/app-domains/application-domains.md)|Fournit une vue d'ensemble conceptuelle des domaines d'application.|  
   
 ## <a name="reference"></a>Référence  

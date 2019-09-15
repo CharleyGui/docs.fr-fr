@@ -2,12 +2,12 @@
 title: Custom Binding Security
 ms.date: 03/30/2017
 ms.assetid: a6383dff-4308-46d2-bc6d-acd4e18b4b8d
-ms.openlocfilehash: a597e1fb7c239b49c03e964b513b4248a9c020c3
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: b0b293c58e13f7add6f2cb49ea3c108a86292691
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045611"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990008"
 ---
 # <a name="custom-binding-security"></a>Custom Binding Security
 
@@ -62,7 +62,7 @@ En outre, la liaison personnalisée utilise la sécurité de niveau message avec
 
 Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console cliente. Appuyez sur Entrée dans la fenêtre du client pour l'arrêter.
 
-```
+```console
 Press <ENTER> to terminate client.
 Result(100)
 Result(50)
@@ -97,7 +97,7 @@ Les informations suivantes fournissent une vue d'ensemble des différentes secti
 
   Les lignes suivantes du fichier Setup.bat copient le certificat de serveur dans le magasin de personnes de confiance du client. Cette étape est requise car les certificats générés par Makecert.exe ne sont pas implicitement approuvés par le système client. Si vous disposez déjà d'un certificat associé à un certificat racine approuvé du client, par exemple d'un certificat émis par Microsoft, il n'est pas nécessaire d'ajouter le certificat du serveur au magasin de certificats du client.
 
-  ```
+  ```console
   certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople
   ```
 
@@ -135,7 +135,7 @@ Les informations suivantes fournissent une vue d'ensemble des différentes secti
 
     3. Copiez les fichiers Setup.bat et Cleanup.bat sur l'ordinateur de service.
 
-    4. Exécutez la commande suivante dans un Invite de commandes développeur pour Visual Studio ouvert avec des privilèges d' `Setup.bat service`administrateur:. L'exécution de cette commande crée un certificat de service dont le nom du sujet correspond au nom de l'ordinateur sur lequel le fichier de commandes a été exécuté.
+    4. Exécutez la commande suivante dans un Invite de commandes développeur pour Visual Studio ouvert avec des privilèges d' `Setup.bat service`administrateur :. L'exécution de cette commande crée un certificat de service dont le nom du sujet correspond au nom de l'ordinateur sur lequel le fichier de commandes a été exécuté.
 
         > [!NOTE]
         > Le fichier de commandes Setup.bat est conçu pour s'exécuter à partir d'une invite de commandes de Visual Studio 2010. La variable d'environnement PATH doit pointer vers le répertoire d'installation du Kit de développement SDK. Cette variable est définie automatiquement dans une invite de commandes de Visual Studio 2010.
@@ -150,17 +150,17 @@ Les informations suivantes fournissent une vue d'ensemble des différentes secti
 
     2. Exécutez Cleanup.bat pour supprimer tous les anciens certificats d'exemples précédents.
 
-    3. Exportez le certificat du service en ouvrant une invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur et en exécutant la commande suivante sur l' `%SERVER_NAME%` ordinateur de service (remplacez par le nom complet de l’ordinateur où le service est en cours d’exécution):
+    3. Exportez le certificat du service en ouvrant une invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur et en exécutant la commande suivante sur l' `%SERVER_NAME%` ordinateur de service (remplacez par le nom complet de l’ordinateur où le service est en cours d’exécution) :
 
-        ```
+        ```console
         certmgr -put -r LocalMachine -s My -c -n %SERVER_NAME% %SERVER_NAME%.cer
         ```
 
     4. Copiez le fichier % SERVER_NAME%.cer sur l'ordinateur client (remplacez %SERVER_NAME% par le nom complet de l'ordinateur où le service s'exécute).
 
-    5. Importez le certificat du service en ouvrant une Invite de commandes développeur pour Visual Studio avec des privilèges d’administration, puis en exécutant la commande suivante sur l’ordinateur client (remplacez% SERVER_NAME% par le nom complet de l’ordinateur sur lequel le le service est en cours d’exécution):
+    5. Importez le certificat du service en ouvrant une Invite de commandes développeur pour Visual Studio avec des privilèges d’administration, puis en exécutant la commande suivante sur l’ordinateur client (remplacez% SERVER_NAME% par le nom complet de l’ordinateur sur lequel le le service est en cours d’exécution) :
 
-        ```
+        ```console
         certmgr.exe -add -c %SERVER_NAME%.cer -s -r CurrentUser TrustedPeople
         ```
 

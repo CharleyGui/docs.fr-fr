@@ -10,12 +10,12 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: 19fff39969933baa2510458400cabf9646e0c48d
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 8e99402752b3fafb486735d56d66737f03ceec30
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589125"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972087"
 ---
 # <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Procédure : Accéder aux objets Office Interop à l’aide des fonctionnalités Visual C# (Guide de programmation C#)
 
@@ -137,7 +137,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel 2007 et Micr
 
 ## <a name="to-set-the-embed-interop-types-property"></a>Pour définir la propriété Incorporer les types interop
 
-1. D'autres améliorations sont possibles lorsque vous appelez un type COM qui ne nécessite pas un assembly PIA (Primary Interop Assembly) au moment de l'exécution. La suppression de la dépendance vis-à-vis des assemblys PIA aboutit à l'indépendance des versions et facilite le déploiement. Pour plus d'informations sur les avantages de la programmation sans assemblys PIA, consultez [Procédure pas à pas : Incorporation de types provenant d’assemblys managés](../concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md).
+1. D'autres améliorations sont possibles lorsque vous appelez un type COM qui ne nécessite pas un assembly PIA (Primary Interop Assembly) au moment de l'exécution. La suppression de la dépendance vis-à-vis des assemblys PIA aboutit à l'indépendance des versions et facilite le déploiement. Pour plus d'informations sur les avantages de la programmation sans assemblys PIA, consultez [Procédure pas à pas : Incorporation de types provenant d’assemblys managés](../../../standard/assembly/embed-types-visual-studio.md).
 
      En outre, la programmation est plus facile, car les types qui sont requis et retournés par les méthodes COM peuvent être représentés par l'utilisation du type `dynamic` à la place d'`Object`. Les variables de type `dynamic` ne sont pas évaluées avant l'exécution, ce qui élimine la nécessité d'un cast explicite. Pour plus d’informations, consultez [Utilisation du type dynamic](../types/using-type-dynamic.md).
 
@@ -167,7 +167,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel 2007 et Micr
 
      [!code-csharp[csProgGuideOfficeHowTo#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#17)]
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 L'exemple de code suivant illustre l'exemple complet.
 

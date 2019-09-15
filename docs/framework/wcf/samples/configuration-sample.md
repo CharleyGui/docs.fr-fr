@@ -2,12 +2,12 @@
 title: Exemple Configuration
 ms.date: 03/30/2017
 ms.assetid: 75515b4a-8d70-44c8-99e0-7423df41380e
-ms.openlocfilehash: 52f8b5eae56db4b3a506d71c44ff2c49a8085067
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 87afeb0c562254e0f4cf6a85946a765a740c79ec
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040103"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990078"
 ---
 # <a name="configuration-sample"></a>Exemple Configuration
 Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un service détectable.  
@@ -67,9 +67,7 @@ Cet exemple illustre l'utilisation d'un fichier de configuration pour rendre un 
   
  Ce fichier de configuration va au delà de ces simples étapes en modifiant des comportements supplémentaires. Il est possible de contrôler les informations relatives à la découverte à l'aide de points de terminaison spécifiques. Autrement dit, un utilisateur peut contrôler si un point de terminaison peut être découvert et marquer ce point de terminaison avec <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior.Scopes%2A> et des métadonnées XML personnalisées. Pour cela, l'utilisateur doit ajouter une propriété `behaviorConfiguration` au point de terminaison d'application. Dans ce cas, la propriété suivante est ajoutée au point de terminaison d'application.  
   
-```  
-behaviorConfiguration="endpointBehaviorConfiguration"  
-```  
+`behaviorConfiguration="endpointBehaviorConfiguration"`  
   
  Vous pouvez à présent, via l'élément de configuration de comportement, contrôler les attributs relatifs à la découverte. Dans ce cas, deux portées sont ajoutées au point de terminaison d'application.  
   

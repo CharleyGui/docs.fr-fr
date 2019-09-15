@@ -1,13 +1,13 @@
 ---
 title: Commande dotnet build
 description: La commande dotnet build permet de générer un projet et l’ensemble de ses dépendances.
-ms.date: 04/24/2019
-ms.openlocfilehash: 6e577defb9f5c7795ee40efa18da30daee1b52c0
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.date: 08/08/2019
+ms.openlocfilehash: e92555dad2bc76d8c72eca9a30be1d3a8b5924f7
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168073"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70988526"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
@@ -17,7 +17,7 @@ ms.locfileid: "70168073"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet build` : Génère un projet et l’ensemble de ses dépendances.
 
@@ -25,7 +25,7 @@ ms.locfileid: "70168073"
 
 ```console
 dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--force] [--interactive] [--no-dependencies]
-    [--no-incremental] [--nologo] [--no-restore] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
+    [--no-incremental] [--no-restore] [--nologo] [-o|--output] [-r|--runtime] [-v|--verbosity] [--version-suffix]
 
 dotnet build [-h|--help]
 ```
@@ -94,13 +94,13 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
   Marque la build comme unsafe pour la génération incrémentielle. Cet indicateur désactive la compilation incrémentielle et force une regénération du graphique de dépendance du projet.
 
-* **`--no-logo`**
-
-  N’affiche pas la bannière de démarrage ni le message de copyright. Disponible à partir du kit SDK .NET Core 3.0.
-
 * **`--no-restore`**
 
   N’exécute pas de restauration implicite pendant la génération. Disponible à partir du kit SDK .NET Core 2.0.
+
+* **`--nologo`**
+
+  N’affiche pas la bannière de démarrage ni le message de copyright. Option disponible à partir du kit SDK .NET Core 3.0.
 
 * **`-o|--output <OUTPUT_DIRECTORY>`**
 
@@ -112,7 +112,7 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
 * **`-v|--verbosity <LEVEL>`**
 
-  Définit le niveau de détail MSBuild. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `minimal`.
+  Définit le niveau de détail MSBuild. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. Par défaut, il s’agit de `minimal`.
 
 * **`--version-suffix <VERSION_SUFFIX>`**
 

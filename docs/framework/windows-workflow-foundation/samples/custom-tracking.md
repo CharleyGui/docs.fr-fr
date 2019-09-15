@@ -2,12 +2,12 @@
 title: Suivi personnalisé
 ms.date: 03/30/2017
 ms.assetid: 2d191c9f-62f4-4c63-92dd-cda917fcf254
-ms.openlocfilehash: b53b22b485a7ac340821073d2f2914b13a7b7011
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 32abf1dc4c9607b4a86f836fa2c759af1dbf1b69
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044299"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989412"
 ---
 # <a name="custom-tracking"></a>Suivi personnalisé
 Cet exemple montre comment créer un participant de suivi personnalisé et écrire le contenu des données de suivi sur la console. De plus, il montre comment émettre des objets <xref:System.Activities.Tracking.CustomTrackingRecord> remplis avec des données définies par l'utilisateur. Le participant de suivi basé sur la console filtre les objets <xref:System.Activities.Tracking.TrackingRecord> émis par le workflow à l'aide d'un objet de modèle de suivi créé dans le code.
@@ -47,7 +47,7 @@ public abstract class TrackingParticipant
 }
 ```
 
- Le participant de suivi complet est implémenté dans le fichier ConsoleTrackingParticipant.cs. L'exemple de code suivant est la méthode <xref:System.Activities.Tracking.TrackingParticipant.Track%2A> pour le participant de suivi personnalisé.
+ Le participant de suivi complet est implémenté dans le fichier ConsoleTrackingParticipant.cs. L’exemple de code suivant est <xref:System.Activities.Tracking.TrackingParticipant.Track%2A> la méthode pour le participant de suivi personnalisé.
 
 ```csharp
 protected override void Track(TrackingRecord record, TimeSpan timeout)

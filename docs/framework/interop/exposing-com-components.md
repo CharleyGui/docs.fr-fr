@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: e78b14f1-e487-43cd-9c6d-1a07483f1730
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 230853abf73a368bfcd8b88375c216fdadfc7d46
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
-ms.translationtype: HT
+ms.openlocfilehash: a5059f629a341bb4689428855807fb3c66b0949b
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69567276"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969080"
 ---
 # <a name="exposing-com-components-to-the-net-framework"></a>Exposition de composants COM au .NET Framework
 Cette section résume le processus nécessaire pour exposer un composant COM existant à du code managé. Pour plus d’informations sur l’écriture de serveurs COM qui s’intègrent étroitement au .NET Framework, consultez [Considérations de design pour l’interopérabilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100)).
@@ -36,7 +36,7 @@ Cette section résume le processus nécessaire pour exposer un composant COM exi
   
 4. [Déploiement d’une application d’interopérabilité](deploying-an-interop-application.md).  
   
-     La meilleure façon de déployer des applications d’interopérabilité est de le faire en tant qu’assemblys signés [avec nom fort](../app-domains/strong-named-assemblies.md) dans le Global Assembly Cache.  
+     La meilleure façon de déployer des applications d’interopérabilité est de le faire en tant qu’assemblys signés [avec nom fort](../../standard/assembly/strong-named.md) dans le Global Assembly Cache.  
   
 ## <a name="see-also"></a>Voir aussi
 

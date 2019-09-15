@@ -6,12 +6,12 @@ helpviewer_keywords:
 - properties [C#], abstract
 - abstract properties [C#]
 ms.assetid: 672a90eb-47b9-4ae0-9914-af53852fddcb
-ms.openlocfilehash: fae526f5dcd452fbc381ee86c892b72e61956f0b
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 57fd2ed3a26bf5986f9c8a1a6cae6b041811e84c
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596871"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970896"
 ---
 # <a name="how-to-define-abstract-properties-c-programming-guide"></a>Procédure : Définir des propriétés abstraites (Guide de programmation C#)
 L’exemple suivant montre comment définir des propriétés [abstract](../../language-reference/keywords/abstract.md). Une déclaration de propriété abstraite ne fournit pas une implémentation des accesseurs de propriété ; elle déclare que la classe prend en charge des propriétés, mais laisse l’implémentation de l’accesseur aux classes dérivées. L’exemple suivant montre comment implémenter les propriétés abstraites héritées d’une classe de base.  
@@ -30,12 +30,12 @@ L’exemple suivant montre comment définir des propriétés [abstract](../../la
   
  Cette commande crée le fichier exécutable shapetest.exe.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Ce fichier déclare la classe `Shape` qui contient la propriété `Area` du type `double`.  
   
  [!code-csharp[csProgGuideInheritance#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#1)]  
   
-- Les modificateurs sur la propriété sont placés sur la déclaration de propriété proprement dite. Par exemple :  
+- Les modificateurs sur la propriété sont placés sur la déclaration de propriété proprement dite. Par exemple :  
   
     ```csharp  
     public abstract double Area  
@@ -48,7 +48,7 @@ L’exemple suivant montre comment définir des propriétés [abstract](../../la
   
  [!code-csharp[csProgGuideInheritance#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#2)]  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Le code suivant montre un programme de test qui crée un certain nombre d’objets dérivés de `Shape` et imprime les zones correspondantes.  
   
  [!code-csharp[csProgGuideInheritance#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#3)]  
@@ -59,4 +59,3 @@ L’exemple suivant montre comment définir des propriétés [abstract](../../la
 - [Classes et structs](./index.md)
 - [Classes abstract et sealed et membres de classe](./abstract-and-sealed-classes-and-class-members.md)
 - [Propriétés](./properties.md)
-- [Guide pratique pour créer et utiliser des assemblys à l’aide de la ligne de commande](../concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md)

@@ -15,19 +15,19 @@ ms.assetid: 567a4b8d-0e79-49dc-8df9-f4b1aa376a2a
 author: rpetrusha
 ms.author: ronpet
 ms.custom: seodec18
-ms.openlocfilehash: d478ae9e1db86718236da73917d772820707ea03
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: HT
+ms.openlocfilehash: 11df25617a618cdc835ca6555c671a187ce09f8d
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57678356"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991643"
 ---
 # <a name="backreference-constructs-in-regular-expressions"></a>Constructions de backreference dans les expressions régulières
 
 Les références arrière offrent un moyen pratique d’identifier un caractère répété ou une sous-chaîne répétée dans une chaîne. Par exemple, si la chaîne d’entrée contient plusieurs occurrences d’une sous-chaîne arbitraire, vous pouvez faire correspondre la première occurrence à un groupe de capture, puis utiliser une référence arrière pour faire correspondre les occurrences suivantes de la sous-chaîne.
 
 > [!NOTE]
-> Une syntaxe distincte est utilisée pour faire référence à des groupes de capture nommés et numérotés dans les chaînes de remplacement. Pour plus d'informations, consultez [Substitutions](substitutions-in-regular-expressions.md).
+> Une syntaxe distincte est utilisée pour faire référence à des groupes de capture nommés et numérotés dans les chaînes de remplacement. Pour plus d’informations, consultez [Substitutions](substitutions-in-regular-expressions.md).
 
 .NET définit des éléments de langage différents pour faire référence aux groupes de capture nommés et numérotés. Pour plus d’informations sur les groupes de capture, consultez [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
 
@@ -95,7 +95,7 @@ Si *nom* est la représentation d’un nombre sous forme de chaîne et qu’aucu
 [!code-csharp[Ordinal.Backreference](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference6.cs)]
 [!code-vb[Ordinal.BackReference](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference6.vb)]
 
-Cependant, si *nom* est la représentation sous forme de chaîne d’un nombre et qu’un nom numérique a été affecté explicitement à ce groupe de capture dans cette position, l’analyseur d’expression régulière ne peut pas identifier le groupe de capture par sa position ordinale. Au lieu de cela, elle lève une <xref:System.ArgumentException>. Le seul groupe de capture dans l’exemple suivant est nommé « 2 ». Comme la construction `\k` est utilisée pour définir une référence arrière nommée « 1 », l’analyseur d’expression régulière ne peut pas identifier le premier groupe de capture et lève une exception.
+Cependant, si *nom* est la représentation sous forme de chaîne d’un nombre et qu’un nom numérique a été affecté explicitement à ce groupe de capture dans cette position, l’analyseur d’expression régulière ne peut pas identifier le groupe de capture par sa position ordinale. Au lieu de cela, elle <xref:System.ArgumentException>lève une exception. Le seul groupe de capture dans l’exemple suivant est nommé « 2 ». Comme la construction `\k` est utilisée pour définir une référence arrière nommée « 1 », l’analyseur d’expression régulière ne peut pas identifier le premier groupe de capture et lève une exception.
 
 [!code-csharp[Ordinal.Backreference](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference7.cs)]
 [!code-vb[Ordinal.BackReference](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference7.vb)]

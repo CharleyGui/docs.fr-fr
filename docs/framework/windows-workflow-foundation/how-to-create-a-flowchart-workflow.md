@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 185d7aea-68a6-4bd8-adde-45050f33170a
-ms.openlocfilehash: 3afac76fc977f992e780d2ebe302c1ed94568835
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 0faf4d77b1ea2881ba8e029d544f2e42cf552349
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044403"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989691"
 ---
 # <a name="how-to-create-a-flowchart-workflow"></a>Procédure : créer un workflow d’organigramme
-Les workflows peuvent être construits aussi bien à partir d'activités intégrées que d'activités personnalisées. Cette rubrique explique comment créer un workflow qui utilise à la fois des activités intégrées telles que <xref:System.Activities.Statements.Flowchart> l’activité, et les activités personnalisées de [la procédure précédente Comment: Créer une rubrique](how-to-create-an-activity.md) d’activité. Le workflow modélise un jeu d'estimation de nombre.  
+Les workflows peuvent être construits aussi bien à partir d'activités intégrées que d'activités personnalisées. Cette rubrique explique comment créer un workflow qui utilise à la fois des activités intégrées telles que <xref:System.Activities.Statements.Flowchart> l’activité, et les activités personnalisées de [la procédure précédente Comment : Créer une rubrique](how-to-create-an-activity.md) d’activité. Le workflow modélise un jeu d'estimation de nombre.  
   
 > [!NOTE]
-> Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d’abord [effectuer les opérations suivantes: Créer une activité](how-to-create-an-activity.md).  
+> Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d’abord [effectuer les opérations suivantes : Créer une activité](how-to-create-an-activity.md).  
   
 > [!NOTE]
 > Pour télécharger une version complète du didacticiel, consultez [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976)(Windows Workflow Foundation (WF45) - Didacticiel de mise en route).  
@@ -64,7 +64,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 ### <a name="to-add-the-workflow-activities"></a>Pour ajouter les activités de flux de travail  
   
-1. Faites glisser une activité **Assign** de la section primitives de la **boîte à outils** et placez-la sur le nœud de **départ** , qui se trouve en haut de l’organigramme. Lorsque l’activité **Assign** se trouve sur le nœud de **départ** , trois triangles apparaissent autour du nœud de **démarrage** . Déposez l’activité **Assign** sur le triangle qui est directement sous le nœud **Start** . Cela permet de lier les deux éléments ensemble et de désigner l’activité **Assign** comme première activité dans l’organigramme.  
+1. Faites glisser une activité **Assign** de la section **primitives** de la **boîte à outils** et placez-la sur le nœud de **départ** , qui se trouve en haut de l’organigramme. Lorsque l’activité **Assign** se trouve sur le nœud de **départ** , trois triangles apparaissent autour du nœud de **démarrage** . Déposez l’activité **Assign** sur le triangle qui est directement sous le nœud **Start** . Cela permet de lier les deux éléments ensemble et de désigner l’activité **Assign** comme première activité dans l’organigramme.  
   
     > [!NOTE]
     > Les activités peuvent également être définies comme activité de départ dans le workflow en les liant manuellement au nœud de démarrage. Pour ce faire, placez le curseur de la souris sur le nœud de **démarrage** , cliquez sur l’un des rectangles qui s’affichent lorsque la souris se trouve sur le nœud de **départ** , puis faites glisser la ligne de connexion vers le bas jusqu’à l’activité souhaitée et déposez-la sur l’un des rectangles qui s’affichent. Vous pouvez également désigner une activité comme activité de départ en cliquant dessus avec le bouton droit, puis en choisissant **définir comme nœud de démarrage**.  
@@ -97,7 +97,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
     > [!TIP]
     > Si la **fenêtre Propriétés** n’est pas affichée, sélectionnez **fenêtre Propriétés** dans le menu **affichage** .  
   
-5. Faites glisser une activité **Assign** de la section primitives de la **boîte à outils** et connectez-la à l’aide de l’une des méthodes décrites à l’étape précédente afin qu’elle soit en dessous de l’activité **prompt** .  
+5. Faites glisser une activité **Assign** de la section **primitives** de la **boîte à outils** et connectez-la à l’aide de l’une des méthodes décrites à l’étape précédente afin qu’elle soit en dessous de l’activité **prompt** .  
   
 6. Tapez `Turns` dans la zone **à** , `Turns + 1` puis dans la zone **entrer une C# expression** ou **entrer une expression VB** .  
   
@@ -118,15 +118,15 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 9. Cliquez sur la deuxième activité **FlowDecision** pour la sélectionner. Dans la **fenêtre Propriétés**, tapez l’expression suivante dans la zone valeur de la propriété **condition** .  
   
-    ```
-    Guess < Target  
+    ```text
+    Guess < Target
     ```  
   
-10. Faites glisser deux activités **WriteLine** de la section primitives de la **boîte à outils** et déposez-les afin qu’elles soient côte à côte en dessous des deux activités **FlowDecision** . Connectez l’action **true** de l’activité **FlowDecision** inférieure à l’activité **WriteLine** la plus à gauche et l’action **false** à l’activité **WriteLine** la plus à droite.  
+10. Faites glisser deux activités **WriteLine** de la section **primitives** de la **boîte à outils** et déposez-les afin qu’elles soient côte à côte en dessous des deux activités **FlowDecision** . Connectez l’action **true** de l’activité **FlowDecision** inférieure à l’activité **WriteLine** la plus à gauche et l’action **false** à l’activité **WriteLine** la plus à droite.  
   
 11. Cliquez sur l’activité **WriteLine** la plus à gauche pour la sélectionner, puis tapez l’expression suivante dans la zone de valeur de propriété **texte** de la **fenêtre Propriétés**.  
   
-    ```
+    ```text
     "Your guess is too low."  
     ```  
   
@@ -134,7 +134,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 13. Cliquez sur l’activité **WriteLine** la plus à droite pour la sélectionner, puis tapez l’expression suivante dans la zone de valeur de propriété **texte** de la **fenêtre Propriétés**.  
   
-    ```
+    ```text
     "Your guess is too high."  
     ```  
   
@@ -148,7 +148,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 1. Appuyez sur Ctrl+Maj+B pour générer la solution.  
   
-     Pour obtenir des instructions sur l’exécution du flux de travail, consultez la rubrique [suivante, comment: Exécuter un flux](how-to-run-a-workflow.md)de travail. Si vous avez déjà effectué les [opérations suivantes: Exécuter une étape](how-to-run-a-workflow.md) de workflow avec un style différent de workflow et souhaitez l’exécuter à l’aide du flux de travail de l’organigramme à partir de cette étape, passez à la section [ [pour générer et exécuter l’application](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) de la procédure: Exécuter un flux](how-to-run-a-workflow.md)de travail.  
+     Pour obtenir des instructions sur l’exécution du flux de travail, consultez la rubrique [suivante, comment : Exécuter un flux](how-to-run-a-workflow.md)de travail. Si vous avez déjà effectué les [opérations suivantes : Exécuter une étape](how-to-run-a-workflow.md) de workflow avec un style différent de workflow et souhaitez l’exécuter à l’aide du flux de travail de l’organigramme à partir de cette étape, passez à la section [ [pour générer et exécuter l’application](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) de la procédure : Exécuter un flux](how-to-run-a-workflow.md)de travail.  
   
 ## <a name="see-also"></a>Voir aussi
 

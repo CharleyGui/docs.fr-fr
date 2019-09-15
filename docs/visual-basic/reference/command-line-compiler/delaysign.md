@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -delaysign compiler option [Visual Basic]
 - -delaysign compiler option [Visual Basic]
 ms.assetid: c76e61a4-1884-4252-9fb2-377f99caa690
-ms.openlocfilehash: 770dcad385c522a548a0c6fd3b6ef02dfbac82f5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6d3c89d598714446e04ba40155951f771d474866
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61649710"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971994"
 ---
 # <a name="-delaysign"></a>-delaysign
 Spécifie si l'assembly sera complètement ou partiellement signé.  
@@ -24,24 +24,24 @@ Spécifie si l'assembly sera complètement ou partiellement signé.
   
 ## <a name="arguments"></a>Arguments  
  `+` &#124; `-`  
- Optionnel. Utilisez `-delaysign-` si vous souhaitez obtenir un assembly complètement signé. Utilisez `-delaysign+` si vous souhaitez placer la clé publique dans l’espace d’assembly et réserve pour le hachage signé. La valeur par défaut est `-delaysign-`.  
+ facultatif. Utilisez `-delaysign-` si vous souhaitez obtenir un assembly complètement signé. Utilisez `-delaysign+` si vous souhaitez placer la clé publique dans l’assembly et réserver de l’espace pour le hachage signé. Par défaut, il s’agit de `-delaysign-`.  
   
 ## <a name="remarks"></a>Notes  
- Le `-delaysign` option est sans effet sauf si utilisée avec [- keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md) ou [- keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md).  
+ L' `-delaysign` option n’a aucun effet, sauf si elle est utilisée avec [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md) ou [-keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md).  
   
- Quand vous demandez un assembly totalement signé, le compilateur hache le fichier qui contient le manifeste (métadonnées de l’assembly) et signe ce hachage avec la clé privée. La signature numérique obtenue est stockée dans le fichier qui contient le manifeste. Lorsqu’un assembly est à signature différée, le compilateur ne calcule pas et stocker l’espace de signature mais les réserves de ressources dans le fichier pour la signature puisse être ajoutée plus tard.  
+ Quand vous demandez un assembly totalement signé, le compilateur hache le fichier qui contient le manifeste (métadonnées de l’assembly) et signe ce hachage avec la clé privée. La signature numérique obtenue est stockée dans le fichier qui contient le manifeste. Lorsqu’un assembly est signé différé, le compilateur ne calcule pas et ne stocke pas la signature, mais réserve de l’espace dans le fichier afin que la signature puisse être ajoutée ultérieurement.  
   
- Par exemple, en utilisant `-delaysign+`, un développeur d’une organisation peut distribuer des versions de test non signé d’un assembly qui les testeurs peuvent enregistrer dans le global assembly cache et utiliser. Lorsque le travail sur l’assembly est terminé, la personne responsable de la clé privée de l’organisation peut signer complètement l’assembly. Ce compartimentage protège la clé privée de l’organisation contre toute divulgation, tout en autorisant tous les développeurs de travailler sur les assemblys.  
+ Par exemple, en utilisant `-delaysign+`, un développeur dans une organisation peut distribuer des versions de test non signées d’un assembly que les testeurs peuvent inscrire auprès du global assembly cache et utiliser. Lorsque le travail sur l’assembly est terminé, la personne responsable de la clé privée de l’organisation peut signer complètement l’assembly. Ce cloisonnement empêche la divulgation de la clé privée de l’organisation, tout en permettant à tous les développeurs de travailler sur les assemblys.  
   
- Consultez [création et assemblys avec nom fort](../../../framework/app-domains/create-and-use-strong-named-assemblies.md) pour plus d’informations sur la signature d’un assembly.  
+ Pour plus d’informations sur la signature d’un assembly [, consultez Création et utilisation d’assemblys avec nom fort](../../../standard/assembly/create-use-strong-named.md) .  
   
-### <a name="to-set--delaysign-in-the-visual-studio-integrated-development-environment"></a>Pour définir delaysign - dans l’environnement de développement intégré Visual Studio  
+### <a name="to-set--delaysign-in-the-visual-studio-integrated-development-environment"></a>Pour définir-delaysign dans l’environnement de développement intégré Visual Studio  
   
 1. Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**.   
   
 2. Cliquez sur l’onglet **Signature**.  
   
-3. Définissez la valeur dans le **différer la signature uniquement** boîte.  
+3. Définissez la valeur dans la zone **différer la signature uniquement** .  
   
 ## <a name="see-also"></a>Voir aussi
 

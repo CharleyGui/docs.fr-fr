@@ -7,61 +7,61 @@ f1_keywords:
 helpviewer_keywords:
 - BC30145
 ms.assetid: 2e7eb2b9-eda6-4bdb-95cc-72c7f0be7528
-ms.openlocfilehash: 012284aa42dfa29ad1a5e4ec4a4df5eaacbd4fb7
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 530aaee40be92bf72ee4b83b4141108e9b81c8a1
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65642276"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70968855"
 ---
-# <a name="unable-to-emit-assembly-error-message"></a>Impossible de créer l’assembly : \<message d’erreur >
+# <a name="unable-to-emit-assembly-error-message"></a>Impossible d’émettre l’assembly : \<message d’erreur >
 
-Le compilateur Visual Basic appelle l’utilitaire Assembly Linker (*Al.exe*, également appelé Alink) pour générer un assembly avec un manifeste et l’éditeur de liens signale une erreur dans la phase d’émission de création de l’assembly.
+Le compilateur Visual Basic appelle Assembly Linker (*al. exe*, également appelé ALink) pour générer un assembly avec un manifeste, et l’éditeur de liens signale une erreur lors de la phase d’émission de création de l’assembly.
 
 **ID d’erreur :** BC30145
 
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur
 
-1. Examinez le message d’erreur cité et consultez la rubrique [Al.exe](../../../framework/tools/al-exe-assembly-linker.md) pour obtenir davantage d’explications et de conseils.
+1. Examinez le message d’erreur cité et consultez la rubrique [al. exe](../../../framework/tools/al-exe-assembly-linker.md) pour obtenir plus d’explications et de conseils.
 
-2. Essayez de signer l’assembly manuellement, à l’aide la [Al.exe](../../../framework/tools/al-exe-assembly-linker.md) ou [Sn.exe (Strong Name Tool)](../../../framework/tools/sn-exe-strong-name-tool.md).
+2. Essayez de signer l’assembly manuellement, à l’aide de [al. exe](../../../framework/tools/al-exe-assembly-linker.md) ou de [sn. exe (Strong Name Tool)](../../../framework/tools/sn-exe-strong-name-tool.md).
 
 3. Si l'erreur persiste, rassemblez des informations sur ses circonstances et avertissez les services de support technique Microsoft.
 
 ### <a name="to-sign-the-assembly-manually"></a>Pour signer manuellement l'assembly
 
-1. Utiliser le [Sn.exe (Strong Name Tool)](../../../framework/tools/sn-exe-strong-name-tool.md)) pour créer un fichier de paire de clés publique/privée.
+1. Utilisez [sn. exe (Strong Name Tool)](../../../framework/tools/sn-exe-strong-name-tool.md)) pour créer un fichier de paire de clés publique/privée.
 
-   Ce fichier a une *.snk* extension.
+   Ce fichier a une extension *. snk* .
 
 2. Supprimez la référence COM qui génère l'erreur de votre projet.
 
 3. Ouvrez le [invite de commandes développeur pour Visual Studio](../../../framework/tools/developer-command-prompt-for-vs.md).
 
-   Dans Windows 10, entrez **invite de commandes développeur** dans la zone de recherche sur la barre des tâches. Ensuite, sélectionnez **invite de commandes développeur pour VS 2017** à partir de la liste des résultats.
+   Dans Windows 10, entrez l' **invite de commandes développeur** dans la zone de recherche de la barre des tâches. Ensuite, sélectionnez **invite de commandes développeur pour VS 2017** dans la liste des résultats.
 
-4. Accédez au répertoire dans le répertoire où vous souhaitez placer le wrapper d’assembly.
+4. Remplacez le répertoire par le répertoire dans lequel vous souhaitez placer votre wrapper d’assembly.
 
-5. Entrez la commande suivante :
+5. Entrez la commande suivante :
 
     ```cmd
     tlbimp <path to COM reference file> /out:<output assembly name> /keyfile:<path to .snk file>
     ```
 
-   Est un exemple de la commande réelle, que vous pouvez entrer :
+   Voici un exemple de la commande réelle que vous pouvez entrer :
 
     ```cmd
     tlbimp c:\windows\system32\msi.dll /out:Interop.WindowsInstaller.dll /keyfile:"c:\documents and settings\mykey.snk"
     ```
 
    > [!TIP]
-   > Utilisez des guillemets si un fichier ou un chemin d’accès contient des espaces.
+   > Utilisez des guillemets doubles si un chemin d’accès ou un fichier contient des espaces.
 
-6. Dans Visual Studio, ajoutez une référence d’Assembly .NET au fichier que vous venez de créer.
+6. Dans Visual Studio, ajoutez une référence d’assembly .NET au fichier que vous venez de créer.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Al.exe](../../../framework/tools/al-exe-assembly-linker.md)
 - [Sn.exe (outil Strong Name)](../../../framework/tools/sn-exe-strong-name-tool.md)
-- [Guide pratique pour créer une paire de clés publique/privée](../../../framework/app-domains/how-to-create-a-public-private-key-pair.md)
+- [Guide pratique : créer une paire de clés publique/privée](../../../standard/assembly/create-public-private-key-pair.md)
 - [Nous contacter](/visualstudio/ide/talk-to-us)

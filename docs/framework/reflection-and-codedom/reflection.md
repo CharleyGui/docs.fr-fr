@@ -23,19 +23,19 @@ helpviewer_keywords:
 ms.assetid: d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 56c3b536954118b80db2ae7f2f0d0ffdc74bac68
-ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
-ms.translationtype: HT
+ms.openlocfilehash: 374a97eea7f6432833ebbcf40736ea6c7a6d4039
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70133746"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970950"
 ---
 # <a name="reflection-in-net"></a>Réflexion dans .NET
-Les classes de l’espace de noms <xref:System.Reflection> avec <xref:System.Type?displayProperty=nameWithType> vous permettent d’obtenir des informations sur les [assemblys](../app-domains/assemblies-in-the-common-language-runtime.md) chargés et sur les types définis dans ceux-ci, comme les types des [classes](../../standard/base-types/common-type-system.md#classes), des[interfaces](../../standard/base-types/common-type-system.md#interfaces) et des [valeurs](../../csharp/language-reference/keywords/value-types.md). Vous pouvez également utiliser la réflexion pour créer des instances de types au moment de l'exécution, et pour les appeler et y accéder. Pour obtenir des informations sur des aspects spécifiques de la réflexion, consultez [Rubriques connexes](#related_topics) à la fin de cette vue d’ensemble.
+Les classes de l’espace de noms <xref:System.Reflection> avec <xref:System.Type?displayProperty=nameWithType> vous permettent d’obtenir des informations sur les [assemblys](../../standard/assembly/index.md) chargés et sur les types définis dans ceux-ci, comme les types des [classes](../../standard/base-types/common-type-system.md#classes), des[interfaces](../../standard/base-types/common-type-system.md#interfaces) et des [valeurs](../../csharp/language-reference/keywords/value-types.md). Vous pouvez également utiliser la réflexion pour créer des instances de types au moment de l'exécution, et pour les appeler et y accéder. Pour obtenir des informations sur des aspects spécifiques de la réflexion, consultez [Rubriques connexes](#related_topics) à la fin de cette vue d’ensemble.
   
  Le chargeur du [common language runtime](../../standard/clr.md) gère les [domaines d’application](../../../docs/framework/app-domains/application-domains.md). Ceux-ci constituent des limites définies autour des objets qui ont la même portée d’application. Cette gestion comprend le chargement de chaque assembly dans le domaine d'application approprié et le contrôle de la disposition en mémoire de la hiérarchie des types dans chaque assembly.  
   
- Les [assemblys](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md) contiennent des modules, les modules contiennent des types, et les types contiennent des membres. La réflexion fournit des objets qui encapsulent les assemblys, les modules et les types. Vous pouvez utiliser la réflexion pour créer dynamiquement une instance d'un type, pour lier le type à un objet existant ou pour obtenir le type d'un objet existant. Vous pouvez ensuite appeler les méthodes du type ou accéder à ses champs et à ses propriétés. Les utilisations courantes de la réflexion sont les suivantes :  
+ Les [assemblys](../../../docs/framework/app-domains/index.md) contiennent des modules, les modules contiennent des types, et les types contiennent des membres. La réflexion fournit des objets qui encapsulent les assemblys, les modules et les types. Vous pouvez utiliser la réflexion pour créer dynamiquement une instance d'un type, pour lier le type à un objet existant ou pour obtenir le type d'un objet existant. Vous pouvez ensuite appeler les méthodes du type ou accéder à ses champs et à ses propriétés. Les utilisations courantes de la réflexion sont les suivantes :  
   
 - Utilisez <xref:System.Reflection.Assembly> pour définir et charger des assemblys, charger les modules répertoriés dans le manifeste d'assembly, et pour localiser un type de cet assembly et créer une instance de celui-ci.  
   

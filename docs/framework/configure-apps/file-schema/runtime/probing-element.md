@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 09c80fc9-1ba5-4192-89f7-3a79b2e4b024
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 05634cb319ac69bd76e16e592ba59490b30c9c9d
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: ae789e99a1306102c67f2252760e215989132406
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252396"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971626"
 ---
 # <a name="probing-element"></a>\<détection de l’élément >
 Spécifie les sous-répertoires de base de l’application pour le common language runtime à rechercher lors du chargement des assemblys.  
@@ -70,5 +70,5 @@ Aucun.
 
 - [Schéma des paramètres d’exécution](index.md)
 - [Schéma des fichiers de configuration](../index.md)
-- [Spécification de l'emplacement d'un assembly](../../specify-assembly-location.md)
+- [Spécifier l’emplacement d’un assembly](../../../../standard/assembly/location.md)
 - [Méthode de localisation des assemblys par le runtime](../../../deployment/how-the-runtime-locates-assemblies.md)

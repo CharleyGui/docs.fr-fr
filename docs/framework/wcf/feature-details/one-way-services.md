@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF [WCF], one-way service contracts
 - service contracts [WCF], defining one-way
 ms.assetid: 19053a36-4492-45a3-bfe6-0365ee0205a3
-ms.openlocfilehash: b29585eabcc2549876f4b50e6b6e55a7f8ef2eee
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d567674baa92ad096b10a1199fa3f04f05939df5
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64621342"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991170"
 ---
 # <a name="one-way-services"></a>Services monodirectionnels
 Le comportement par défaut d'une opération de service est le modèle demande-réponse. Dans un modèle demande-réponse, le client attend le message de réponse, même si l'opération de service est représentée dans le code en tant que méthode `void`. Avec une opération monodirectionnelle, un seul message est transmis. Le récepteur n'envoie pas de message de réponse, l'expéditeur n'en attend pas.  
@@ -26,7 +26,7 @@ Le comportement par défaut d'une opération de service est le modèle demande-r
   
  Pour créer un contrat de service monodirectionnel, définissez votre contrat de service, appliquez la classe <xref:System.ServiceModel.OperationContractAttribute> à chaque opération et affectez <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> à la propriété `true`, tel qu'indiqué dans l'exemple de code suivant.  
   
-```  
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface IOneWayCalculator  
 {  
@@ -41,10 +41,10 @@ public interface IOneWayCalculator
 }  
 ```  
   
- Pour obtenir un exemple complet, consultez la [unidirectionnel](../../../../docs/framework/wcf/samples/one-way.md) exemple.  
+ Pour obtenir un exemple complet, consultez l’exemple [unidirectionnel](../../../../docs/framework/wcf/samples/one-way.md) .  
   
 ## <a name="clients-blocking-with-one-way-operations"></a>Blocage de clients à l'aide d'opérations monodirectionnelles  
- Il est important de savoir que bien que certaines applications monodirectionnelles sont retournées dès que les données sortantes sont écrites à la connexion réseau, dans plusieurs scénarios de l’implémentation d’une liaison ou d’un service peut provoquer un client WCF bloquer à l’aide des opérations unidirectionnelles. Dans les applications clientes WCF, l’objet de client WCF ne retourne pas jusqu'à ce que les données sortantes a été écrit pour la connexion réseau. Cela se vérifie pour l'ensemble des modèles d'échange de messages, dont les opérations monodirectionnelles ; cela signifie que les problèmes d'écriture de données sur le transport empêchent le client de retourner. Selon le problème, le résultat peut être une exception ou un retard d'envoi des messages au service.  
+ Il est important de se rendre compte que bien que certaines applications monodirectionnelles retournent dès que les données sortantes sont écrites dans la connexion réseau, dans plusieurs scénarios, l’implémentation d’une liaison ou d’un service peut provoquer le blocage d’un client WCF à l’aide d’opérations unidirectionnelles. Dans les applications clientes WCF, l’objet client WCF ne retourne pas de valeur tant que les données sortantes n’ont pas été écrites dans la connexion réseau. Cela se vérifie pour l'ensemble des modèles d'échange de messages, dont les opérations monodirectionnelles ; cela signifie que les problèmes d'écriture de données sur le transport empêchent le client de retourner. Selon le problème, le résultat peut être une exception ou un retard d'envoi des messages au service.  
   
  Par exemple, si le transport ne peut pas trouver le point de terminaison, une exception <xref:System.ServiceModel.EndpointNotFoundException?displayProperty=nameWithType> est levée sans beaucoup de retard. Toutefois, il est également possible que le service ne puisse pas lire les données du câble pour une raison quelconque, ce qui empêche l'opération d'envoi du transport client de retourner. Dans ce cas, si le délai <xref:System.ServiceModel.Channels.Binding.SendTimeout%2A?displayProperty=nameWithType> sur la liaison de transport client est dépassé, une exception <xref:System.TimeoutException?displayProperty=nameWithType> est levée, mais pas tant que le délai d’attente n’a pas été dépassé. Il est également possible qu'il y ait un nombre si élevé de messages sur un service que celui-ci ne puisse pas les traiter passé un certain stade. Dans ce cas également, le client monodirectionnel se bloque jusqu'à ce que le service puisse traiter les messages ou jusqu'à ce qu'une exception soit levée.  
   

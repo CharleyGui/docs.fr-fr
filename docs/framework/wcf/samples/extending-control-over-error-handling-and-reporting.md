@@ -2,12 +2,12 @@
 title: Extending Control Over Error Handling and Reporting
 ms.date: 03/30/2017
 ms.assetid: 45f996a7-fa00-45cb-9d6f-b368f5778aaa
-ms.openlocfilehash: 09216d8b0ff58ac90a0fd6183f43fd2ccf82ad52
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: d7efc87d7d8a913642c4ac0e3d6d19cd0a9259c5
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039679"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989929"
 ---
 # <a name="extending-control-over-error-handling-and-reporting"></a>Extending Control Over Error Handling and Reporting
 Cet exemple montre comment étendre le contrôle sur la gestion des erreurs et le rapport d’erreurs dans un service Windows Communication Foundation ( <xref:System.ServiceModel.Dispatcher.IErrorHandler> WCF) à l’aide de l’interface. L’exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) avec un code supplémentaire ajouté au service pour gérer les erreurs. Le client force plusieurs conditions d'erreur. Le service intercepte les erreurs et les enregistre dans un fichier.  
@@ -21,7 +21,7 @@ Cet exemple montre comment étendre le contrôle sur la gestion des erreurs et l
   
  méthode <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A>, le `CalculatorErrorHandler` écrit l'erreur dans un fichier texte Error.txt dans c:\logs. Notez que l'exemple enregistre l'erreur et ne la supprime pas, ce qui permet de la signaler au client.  
   
-```  
+```csharp  
 public class CalculatorErrorHandler : IErrorHandler  
 {  
         // Provide a fault. The Message fault parameter can be replaced, or set to  
@@ -51,7 +51,7 @@ public class CalculatorErrorHandler : IErrorHandler
   
  L'`ErrorBehaviorAttribute` existe en tant que mécanisme d'enregistrement d'un gestionnaire d'erreurs avec un service. Cet attribut prend un paramètre de type unique. Ce type doit implémenter l'interface <xref:System.ServiceModel.Dispatcher.IErrorHandler> et doit avoir un constructeur vide public. L'attribut instancie ensuite une instance de ce type de gestionnaire d'erreurs et l'installe dans le service. Il fait ceci en implémentant l'interface <xref:System.ServiceModel.Description.IServiceBehavior> puis en utilisant la méthode <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> pour ajouter des instances du gestionnaire d'erreurs au service.  
   
-```  
+```csharp  
 // This attribute can be used to install a custom error handler for a service.  
 public class ErrorBehaviorAttribute : Attribute, IServiceBehavior  
 {  
@@ -98,7 +98,7 @@ public class ErrorBehaviorAttribute : Attribute, IServiceBehavior
   
  L'exemple implémente un service de calculatrice. Le client provoque délibérément deux erreurs sur le service en fournissant des paramètres avec des valeurs illégales. Le `CalculatorErrorHandler` utilise l'interface <xref:System.ServiceModel.Dispatcher.IErrorHandler> pour enregistrer les erreurs dans un fichier local puis leur permet d'être signalées au client. Le client force une division par zéro et une condition d’argument hors limites.  
   
-```  
+```csharp  
 try  
 {  
     Console.WriteLine("Forcing an error in Divide");  
@@ -132,9 +132,9 @@ FaultException: FaultException - Invalid Argument: The argument must be greater 
 Press <ENTER> to terminate client.  
 ```  
   
- Le fichier c:\logs\errors.txt contient les informations enregistrées à propos des erreurs par le service. Notez que pour le service écrive dans le répertoire, vous devez vous assurer que le processus sous lequel le service s'exécute (en général ASP.NET ou Service réseau) a l'autorisation d'écrire dans le répertoire.  
+ Le fichier c:\logs\errors.txt contient les informations enregistrées à propos des erreurs par le service. Notez que pour que le service écrive dans le répertoire, vous devez vous assurer que le processus sous lequel le service est en cours d’exécution (généralement ASP.NET ou service réseau) a l’autorisation d’écrire dans le répertoire.  
   
-```  
+```txt
 Fault: Reason = Invalid Argument: The second argument must not be zero.  
 Fault: Reason = Invalid Argument: The argument must be greater than zero.  
 ```  

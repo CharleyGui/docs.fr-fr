@@ -6,127 +6,127 @@ helpviewer_keywords:
 - event handlers [WPF], weak event pattern
 - IWeakEventListener interface [WPF]
 ms.assetid: e7c62920-4812-4811-94d8-050a65c856f6
-ms.openlocfilehash: 61e7f6d29cf9275004238ca776d5af9bf027004f
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: f4cbb22a3cdd7b966c36f6c8246b13b5c58e056d
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859914"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991785"
 ---
 # <a name="weak-event-patterns"></a>Modèles d'événement faible
-Dans les applications, il est possible que les gestionnaires qui sont attachés à des sources d’événements ne seront pas détruits en coordination avec l’objet écouteur qui joint le gestionnaire à la source. Cette situation peut entraîner des fuites de mémoire. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] introduit un modèle de conception qui peut être utilisé pour résoudre ce problème, en fournissant une classe de gestionnaire dédiée pour des événements particuliers et en implémentant une interface sur les écouteurs de cet événement. Ce modèle de conception est appelé le *modèle d’événement faible*.  
+Dans les applications, il est possible que les gestionnaires qui sont attachés à des sources d’événements ne soient pas détruits avec l’objet d’écouteur qui a attaché le gestionnaire à la source. Cette situation peut entraîner des fuites de mémoire. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]introduit un modèle de conception qui peut être utilisé pour résoudre ce problème, en fournissant une classe de gestionnaire dédiée pour des événements particuliers et en implémentant une interface sur les écouteurs de cet événement. Ce modèle de conception est connu sous le nom de *modèle d’événement faible*.  
   
 ## <a name="why-implement-the-weak-event-pattern"></a>Pourquoi implémenter le modèle d’événement faible ?  
- Écoute des événements peut entraîner des fuites de mémoire. La technique standard pour écouter un événement consiste à utiliser la syntaxe spécifique au langage qui attache un gestionnaire à un événement sur une source. Par exemple, dans C#, que la syntaxe est : `source.SomeEvent += new SomeEventHandler(MyEventHandler)`.  
+ L’écoute des événements peut entraîner des fuites de mémoire. La technique classique pour écouter un événement consiste à utiliser la syntaxe spécifique au langage qui attache un gestionnaire à un événement sur une source. Par exemple, dans C#, cette syntaxe est : `source.SomeEvent += new SomeEventHandler(MyEventHandler)`.  
   
- Cette technique crée une référence forte à partir de la source d’événements à l’écouteur d’événements. En règle générale, y attacher un gestionnaire d’événements pour un écouteur de provoque l’écouteur avoir une durée de vie d’objet qui est influencée par la durée de vie de la source (à moins que le Gestionnaire d’événements est supprimé explicitement). Toutefois, dans certaines circonstances, vous pouvez la durée de vie de l’écouteur à être contrôlé par d’autres facteurs, tels que si elle appartient actuellement à l’arborescence visuelle de l’application et non par la durée de vie de la source. Chaque fois que la durée de vie source s’étend au-delà de la durée de vie de l’écouteur, le modèle d’événement normal entraîne une fuite de mémoire : l’écouteur est maintenu actif plus longtemps que prévu.  
+ Cette technique crée une référence forte de la source de l’événement à l’écouteur d’événements. En règle générale, l’attachement d’un gestionnaire d’événements pour un écouteur amène l’écouteur à avoir une durée de vie d’objet influencée par la durée de vie de l’objet de la source (sauf si le gestionnaire d’événements est supprimé explicitement). Toutefois, dans certaines circonstances, vous souhaiterez peut-être que la durée de vie des objets de l’écouteur soit contrôlée par d’autres facteurs, par exemple s’il appartient actuellement à l’arborescence d’éléments visuels de l’application, et non par la durée de vie de la source. Chaque fois que la durée de vie de l’objet source s’étend au-delà de la durée de vie des objets de l’écouteur, le modèle d’événement normal entraîne une fuite de mémoire : l’écouteur reste actif plus longtemps que prévu.  
   
- Le modèle d’événement faible est conçu pour résoudre ce problème de fuite de mémoire. Le modèle d’événement faible peut être utilisé chaque fois qu’un écouteur doit s’inscrire à un événement, mais l’écouteur ne sait pas explicitement quand annuler l’inscription. Le modèle d’événement faible peut également servir à chaque fois que la durée de vie de la source dépasse la durée de vie utile de l’écouteur. (Dans ce cas, *utile* est déterminée par vous.) Le modèle d’événement faible permet à l’écouteur pour vous inscrire et recevoir l’événement sans affecter les caractéristiques de durée de vie d’objet de l’écouteur en aucune façon. En effet, la référence implicite à partir de la source ne détermine pas si l’écouteur est éligible pour le garbage collection. La référence est une référence faible, d'où le nom du modèle d’événement faible et les API connexes. L’écouteur peut être le garbage collector ou détruit, et la source peut continuer sans conserver des références de gestionnaire non-collectable à un objet détruit.  
+ Le modèle d’événement faible est conçu pour résoudre ce problème de fuite de mémoire. Le modèle d’événement faible peut être utilisé chaque fois qu’un écouteur doit s’inscrire pour un événement, mais l’écouteur ne sait pas explicitement quand annuler l’inscription. Le modèle d’événement faible peut également être utilisé chaque fois que la durée de vie d’objet de la source dépasse la durée de vie d’objet utile de l’écouteur. (Dans ce cas, *utile* est déterminé par vous.) Le modèle d’événement faible permet à l’écouteur de s’inscrire pour recevoir l’événement sans affecter les caractéristiques de durée de vie des objets de l’écouteur de quelque manière que ce soit. En effet, la référence implicite de la source ne détermine pas si l’écouteur est éligible pour garbage collection. La référence est une référence faible, donc la dénomination du modèle d’événement faible et les API associées. L’écouteur peut être récupéré par le garbage collector ou détruit, et la source peut continuer sans conserver les références de gestionnaire non collectées à un objet désormais détruit.  
   
 ## <a name="who-should-implement-the-weak-event-pattern"></a>Qui doit implémenter le modèle d’événement faible ?  
- L’implémentation du modèle d’événement faible est intéressante principalement pour les auteurs de contrôles. En tant qu’auteur de contrôle, il vous incombe en grande partie pour le comportement et la relation contenant-contenu de votre contrôle et l’impact sur les applications dans lequel elle est insérée. Cela inclut le comportement de durée de vie l’objet contrôle, notamment la gestion du problème de fuite de mémoire décrit.  
+ L’implémentation du modèle d’événement faible est particulièrement intéressante pour les auteurs de contrôle. En tant qu’auteur de contrôle, vous êtes en grande partie responsable du comportement et de la relation contenant-contenu de votre contrôle, ainsi que de l’impact qu’il a sur les applications dans lesquelles il est inséré. Cela comprend le comportement de durée de vie des objets de contrôle, en particulier la gestion du problème de fuite de mémoire décrit.  
   
- Certains scénarios, par nature, se prêtent à l’application du modèle d’événement faible. Un tel scénario est la liaison de données. Dans la liaison de données, il est courant de l’objet source soit complètement indépendante de l’objet de l’écouteur, qui est une cible d’une liaison. De nombreuses tâches associées [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] déjà une liaison de données ont le modèle d’événement faible appliqué dans la façon dont les événements sont implémentées.  
+ Certains scénarios se prêtent par nature à l’application du modèle d’événement faible. La liaison de données est un scénario de ce type. Dans la liaison de données, il est courant que l’objet source soit complètement indépendant de l’objet d’écouteur, qui est la cible d’une liaison. De nombreux aspects [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] de la liaison de données ont déjà le modèle d’événement faible qui est appliqué dans la manière dont les événements sont implémentés.  
   
 ## <a name="how-to-implement-the-weak-event-pattern"></a>Comment implémenter le modèle d’événement faible  
- Il existe trois façons d’implémenter le modèle d’événement faible. Le tableau suivant répertorie les trois approches et fournit quelques conseils pour l’utilisation de chacun.  
+ Il existe trois façons d’implémenter un modèle d’événement faible. Le tableau suivant répertorie les trois approches et fournit des conseils sur l’utilisation de chacune d’elles.  
   
-|Approche|Moment auquel implémenter|  
+|Approche|Quand implémenter|  
 |--------------|-----------------------|  
-|Utiliser une classe de gestionnaire d’événement faible existante|Si l’événement que vous voulez vous abonner correspond un <xref:System.Windows.WeakEventManager>, utilisez le Gestionnaire d’événement faible existant. Pour obtenir la liste des gestionnaires d’événements faible qui sont inclus avec WPF, consultez la hiérarchie d’héritage dans le <xref:System.Windows.WeakEventManager> classe. Étant donné que les gestionnaires d’événements faible inclus sont limitées, vous devrez probablement choisir l’une des autres approches.|  
-|Utiliser une classe de gestionnaire d’événement faible générique|Utiliser un générique <xref:System.Windows.WeakEventManager%602> lorsque existant <xref:System.Windows.WeakEventManager> est non disponible, vous cherchez un moyen simple d’implémenter, et vous ne le sont pas concernées par l’efficacité. Le modèle générique <xref:System.Windows.WeakEventManager%602> est moins efficace que d’un gestionnaire d’événements faibles existantes ou personnalisées. Par exemple, la classe générique fait plus de réflexion pour découvrir l’événement étant donné le nom de l’événement. En outre, le code pour inscrire l’événement à l’aide du modèle générique <xref:System.Windows.WeakEventManager%602> est plus longue que d’utiliser un existant ou personnalisé <xref:System.Windows.WeakEventManager>.|  
-|Créer une classe de gestionnaire d’événement faible personnalisé|Créer un personnalisé <xref:System.Windows.WeakEventManager> lorsque existant <xref:System.Windows.WeakEventManager> n’est pas disponible et que vous souhaitez plus d’efficacité. L’aide d’un <xref:System.Windows.WeakEventManager> pour vous abonner à un événement sera plus efficace, mais vous n’entraînent pas le coût de l’écriture de code plus au début.|  
-|Utiliser un gestionnaire d’événements faibles de tiers|NuGet a [plusieurs gestionnaires d’événements faible](https://www.nuget.org/packages?q=weak+event+manager&prerel=false) et de nombreuses infrastructures WPF prennent également en charge le modèle (par exemple, consultez [documentation de Prism sur l’abonnement aux événements faiblement couplés](https://github.com/PrismLibrary/Prism-Documentation/blob/master/docs/wpf/Communication.md#subscribing-to-events)).|
+|Utiliser une classe de gestionnaire d’événements faible existante|Si l’événement auquel vous souhaitez vous abonner a un <xref:System.Windows.WeakEventManager>correspondant, utilisez le gestionnaire d’événements faible existant. Pour obtenir la liste des gestionnaires d’événements faibles inclus dans WPF, consultez la hiérarchie d’héritage dans <xref:System.Windows.WeakEventManager> la classe. Étant donné que les gestionnaires d’événements faibles inclus sont limités, vous devrez probablement choisir l’une des autres approches.|  
+|Utiliser une classe de gestionnaire d’événements faible générique|Utilisez un générique <xref:System.Windows.WeakEventManager%602> lorsqu’un existant <xref:System.Windows.WeakEventManager> n’est pas disponible, vous avez besoin d’un moyen simple d’implémenter et vous ne vous inquiétez pas de l’efficacité. Le générique <xref:System.Windows.WeakEventManager%602> est moins efficace qu’un gestionnaire d’événements faible existant ou personnalisé. Par exemple, la classe générique fait plus de réflexion pour découvrir l’événement en fonction du nom de l’événement. En outre, le code permettant d’enregistrer l’événement à l' <xref:System.Windows.WeakEventManager%602> aide du générique est plus détaillé que l’utilisation d' <xref:System.Windows.WeakEventManager>un existant ou d’un personnalisé.|  
+|Créer une classe de gestionnaire d’événements faibles personnalisée|Créez un personnalisé <xref:System.Windows.WeakEventManager> lorsqu’un existant <xref:System.Windows.WeakEventManager> n’est pas disponible et que vous souhaitez obtenir une efficacité optimale. L’utilisation d' <xref:System.Windows.WeakEventManager> un personnalisé pour s’abonner à un événement est plus efficace, mais vous encourez le coût de l’écriture de code supplémentaire au début.|  
+|Utiliser un gestionnaire d’événements faibles tiers|NuGet possède [plusieurs gestionnaires d’événements faibles](https://www.nuget.org/packages?q=weak+event+manager&prerel=false) et de nombreuses infrastructures WPF prennent également en charge le modèle (par exemple, consultez la [documentation de Prism sur l’abonnement aux événements faiblement couplés](https://github.com/PrismLibrary/Prism-Documentation/blob/master/docs/wpf/Communication.md#subscribing-to-events)).|
 
- Les sections suivantes décrivent comment implémenter le modèle d’événement faible.  Pour les besoins de cette discussion, l’événement pour vous abonner à présente les caractéristiques suivantes.  
+ Les sections suivantes décrivent comment implémenter le modèle d’événement faible.  Dans le cadre de cette discussion, l’événement auquel s’abonner a les caractéristiques suivantes.  
   
-- Le nom de l’événement est `SomeEvent`.  
+- Le nom de l' `SomeEvent`événement est.  
   
 - L’événement est déclenché par la `EventSource` classe.  
   
-- Le Gestionnaire d’événements a le type : `SomeEventEventHandler` (ou `EventHandler<SomeEventEventArgs>`).  
+- Le gestionnaire d’événements a le `SomeEventEventHandler` type : `EventHandler<SomeEventEventArgs>`(ou).  
   
 - L’événement passe un paramètre de type `SomeEventEventArgs` aux gestionnaires d’événements.  
   
-### <a name="using-an-existing-weak-event-manager-class"></a>À l’aide d’une classe de gestionnaire d’événements faible existante  
+### <a name="using-an-existing-weak-event-manager-class"></a>Utilisation d’une classe de gestionnaire d’événements faible existante  
   
-1. Recherchez un événement existant de faible manager.  
+1. Recherchez un gestionnaire d’événements faible existant.  
   
-     Pour obtenir la liste des gestionnaires d’événements faible qui sont inclus avec WPF, consultez la hiérarchie d’héritage dans le <xref:System.Windows.WeakEventManager> classe.  
+     Pour obtenir la liste des gestionnaires d’événements faibles inclus dans WPF, consultez la hiérarchie d’héritage dans <xref:System.Windows.WeakEventManager> la classe.  
   
-2. Utilisez le nouveau gestionnaire d’événements faible au lieu de la connexion d’événements normal.  
+2. Utilisez le nouveau gestionnaire d’événements faible plutôt que le raccordement d’événement normal.  
   
-     Par exemple, si votre code utilise le modèle suivant pour vous abonner à un événement :  
+     Par exemple, si votre code utilise le modèle suivant pour s’abonner à un événement :  
   
-    ```  
+    ```csharp  
     source.SomeEvent += new SomeEventEventHandler(OnSomeEvent);  
     ```  
   
-     Modifier le modèle suivant :  
+     Remplacez-le par le modèle suivant :  
   
-    ```  
+    ```csharp  
     SomeEventWeakEventManager.AddHandler(source, OnSomeEvent);  
     ```  
   
-     De même, si votre code utilise le modèle suivant pour vous désabonner d’un événement :  
+     De même, si votre code utilise le modèle suivant pour se désabonner d’un événement :  
   
-    ```  
+    ```csharp  
     source.SomeEvent -= new SomeEventEventHandler(OnSomeEvent);  
     ```  
   
-     Modifier le modèle suivant :  
+     Remplacez-le par le modèle suivant :  
   
-    ```  
+    ```csharp  
     SomeEventWeakEventManager.RemoveHandler(source, OnSomeEvent);  
     ```  
   
-### <a name="using-the-generic-weak-event-manager-class"></a>À l’aide de la classe de gestionnaire d’événements faible générique  
+### <a name="using-the-generic-weak-event-manager-class"></a>Utilisation de la classe de gestionnaire d’événements faible générique  
   
-1. Utiliser le modèle générique <xref:System.Windows.WeakEventManager%602> classe au lieu de la connexion d’événements normal.  
+1. Utilisez la classe <xref:System.Windows.WeakEventManager%602> générique à la place de l’événement de raccordement normal.  
   
-     Lorsque vous utilisez <xref:System.Windows.WeakEventManager%602> pour inscrire les écouteurs d’événements, vous fournissez la source d’événements et <xref:System.EventArgs> type que les paramètres de type pour la classe et appelez <xref:System.Windows.WeakEventManager%602.AddHandler%2A> comme indiqué dans le code suivant :  
+     Quand vous utilisez <xref:System.Windows.WeakEventManager%602> pour inscrire des écouteurs d’événements, vous fournissez la source <xref:System.EventArgs> et le type de l’événement en tant que paramètres <xref:System.Windows.WeakEventManager%602.AddHandler%2A> de type à la classe et appelez comme indiqué dans le code suivant :  
   
-    ```  
+    ```csharp  
     WeakEventManager<EventSource, SomeEventEventArgs>.AddHandler(source, "SomeEvent", source_SomeEvent);  
     ```  
   
-### <a name="creating-a-custom-weak-event-manager-class"></a>Création d’une classe de gestionnaire d’événements faible personnalisée  
+### <a name="creating-a-custom-weak-event-manager-class"></a>Création d’une classe de gestionnaire d’événements faibles personnalisée  
   
-1. Copiez le modèle de classe suivant à votre projet.  
+1. Copiez le modèle de classe suivant dans votre projet.  
   
      Cette classe hérite de la <xref:System.Windows.WeakEventManager> classe.  
   
      [!code-csharp[WeakEvents#WeakEventManagerTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/WeakEvents/CSharp/WeakEventManagerTemplate.cs#weakeventmanagertemplate)]  
   
-2. Remplacez le `SomeEventWeakEventManager` nom avec votre propre nom.  
+2. Remplacez le `SomeEventWeakEventManager` nom par votre propre nom.  
   
-3. Remplacez les trois noms décrits précédemment avec les noms correspondants pour votre événement. (`SomeEvent`, `EventSource`, et `SomeEventEventArgs`)  
+3. Remplacez les trois noms décrits précédemment par les noms correspondants pour votre événement. (`SomeEvent`, `EventSource`et )`SomeEventEventArgs`  
   
-4. Définir la visibilité (publique / interne / privée) de la classe de gestionnaire d’événements faible pour la même visibilité que les événements qu’il gère.  
+4. Affectez à la visibilité (publique/interne/privée) de la classe de gestionnaire d’événements faible la même visibilité que l’événement qu’elle gère.  
   
-5. Utilisez le nouveau gestionnaire d’événements faible au lieu de la connexion d’événements normal.  
+5. Utilisez le nouveau gestionnaire d’événements faible plutôt que le raccordement d’événement normal.  
   
-     Par exemple, si votre code utilise le modèle suivant pour vous abonner à un événement :  
+     Par exemple, si votre code utilise le modèle suivant pour s’abonner à un événement :  
   
-    ```  
+    ```csharp  
     source.SomeEvent += new SomeEventEventHandler(OnSomeEvent);  
     ```  
   
-     Modifier le modèle suivant :  
+     Remplacez-le par le modèle suivant :  
   
-    ```  
+    ```csharp  
     SomeEventWeakEventManager.AddHandler(source, OnSomeEvent);  
     ```  
   
      De même, si votre code utilise le modèle suivant pour annuler l’abonnement à un événement :  
   
-    ```  
+    ```csharp  
     source.SomeEvent -= new SomeEventEventHandler(OnSome);  
     ```  
   
-     Modifier le modèle suivant :  
+     Remplacez-le par le modèle suivant :  
   
-    ```  
+    ```csharp  
     SomeEventWeakEventManager.RemoveHandler(source, OnSomeEvent);  
     ```  
   

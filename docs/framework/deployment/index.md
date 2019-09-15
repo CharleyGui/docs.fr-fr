@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 238d8284-6042-4a38-a7f6-1ee8efd719da
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e7da023c5ab9247cde0ccd1126d4d639c6f355e7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 8d9448edab101ef11447b54e12c53abcb578646a
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910968"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971601"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Déploiement d'applications et du .NET Framework
 
@@ -118,7 +118,7 @@ Le .NET Framework offre de nombreuses fonctionnalités de base qui facilitent le
 
 ## <a name="packaging-and-distributing-net-framework-applications"></a>Empaquetage et distribution d'applications .NET Framework
 
-Certains aspects de l'empaquetage et du déploiement pour le .NET Framework sont traités dans d'autres sections de la documentation. Ces sections comportent des informations sur les unités autodescriptives appelées [assemblys](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md), qui ne nécessitent aucune entrée de Registre, les [assemblys portant un nom fort](../../../docs/framework/app-domains/strong-named-assemblies.md), qui garantissent l'unicité des noms et empêchent l'usurpation de noms, et le [contrôle de version des assemblys](../../../docs/framework/app-domains/assembly-versioning.md), qui résout de nombreux problèmes liés aux conflits de DLL. Les sections suivantes fournissent des informations sur l'empaquetage et la distribution d'applications .NET Framework.
+Certains aspects de l'empaquetage et du déploiement pour le .NET Framework sont traités dans d'autres sections de la documentation. Ces sections comportent des informations sur les unités autodescriptives appelées [assemblys](../../standard/assembly/index.md), qui ne nécessitent aucune entrée de Registre, les [assemblys portant un nom fort](../../standard/assembly/strong-named.md), qui garantissent l'unicité des noms et empêchent l'usurpation de noms, et le [contrôle de version des assemblys](../../standard/assembly/versioning.md), qui résout de nombreux problèmes liés aux conflits de DLL. Les sections suivantes fournissent des informations sur l'empaquetage et la distribution d'applications .NET Framework.
 
 ### <a name="packaging"></a>Packages
 

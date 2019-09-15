@@ -3,15 +3,15 @@ title: Prédire des prix en utilisant la régression avec Model Builder
 description: Ce tutoriel montre comment créer un modèle de régression Model Builder ML.NET pour prédire des prix, plus précisément celui des courses de taxi à New York.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 07/15/2019
+ms.date: 09/12/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: bc1dacdad436cc5384bca4bbce224acc18d69201
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 675ca58ab071293fe5c04b1b85337fb1e48dfbea
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929432"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991349"
 ---
 # <a name="predict-prices-using-regression-with-model-builder"></a>Prédire des prix en utilisant la régression avec Model Builder
 
@@ -89,17 +89,9 @@ Model Builder accepte des données de deux sources : une base de données SQL S
 
 La tâche Machine Learning utilisée pour entraîner le modèle de prédiction des prix de ce tutoriel est la régression. Pendant le processus d’entraînement du modèle, Model Builder entraîne des modèles distincts en utilisant différents algorithmes et paramètres de régression pour trouver le modèle le plus performant pour votre jeu de données.
 
-Le temps nécessaire pour l’entraînement du modèle est proportionnel à la quantité de données. Utilisez ce graphique pour vous aider à sélectionner une valeur adéquate pour le champ `Time to train (seconds)` :
+Le temps nécessaire pour l’entraînement du modèle est proportionnel à la quantité de données. Le générateur de modèles sélectionne automatiquement une valeur par défaut pour le **temps de formation (en secondes)** en fonction de la taille de votre source de données.
 
-*Taille du jeu de données  | Type du jeu de données       | Avg. Durée de l’entraînement*
-------------- | ------------------ | --------------
-0 - 10 Mo     | Numérique et texte   | 10 s
-10 - 100 Mo   | Numérique et texte   | 10 min
-100 - 500 Mo  | Numérique et texte   | 30 min
-500 - 1 Go    | Numérique et texte   | 60 min
-\+ de 1 Go         | Numérique et texte   | \+ de 3 heures
-
-1. Le fichier de données d’entraînement ayant une taille supérieure à 10 Mo, utilisez 600 secondes (10 minutes) comme valeur pour *Durée de l’entraînement (secondes)* .
+1. Laissez la valeur par défaut telle quelle pour le *temps de formation (en secondes)* , sauf si vous préférez effectuer un apprentissage pour une durée plus longue.
 2. Sélectionnez *Commencer l’entraînement*.
 
 Tout au long du processus d’entraînement, des données sur la progression s’affichent dans la section `Progress` de l’étape d’entraînement.

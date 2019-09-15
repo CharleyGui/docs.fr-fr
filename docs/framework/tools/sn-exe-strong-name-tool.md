@@ -12,20 +12,20 @@ helpviewer_keywords:
 ms.assetid: c1d2b532-1b8e-4c7a-8ac5-53b801135ec6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 643f0644bdeb2d3bdf6a08b482d0494affd92209
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: ef977206bf0d5b818cfd9779f063fbc2bd50632e
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894637"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971848"
 ---
 # <a name="snexe-strong-name-tool"></a>Sn.exe (outil Strong Name Tool)
-L’outil Strong Name (Sn.exe) permet de signer des assemblys avec des [noms forts](../../../docs/framework/app-domains/strong-named-assemblies.md). Sn.exe fournit des options de gestion des clés, de génération des signatures et de vérification des signatures.  
+L’outil Strong Name (Sn.exe) permet de signer des assemblys avec des [noms forts](../../standard/assembly/strong-named.md). Sn.exe fournit des options de gestion des clés, de génération des signatures et de vérification des signatures.  
   
 > [!WARNING]
 > Ne comptez pas sur les noms forts pour la sécurité. Ils fournissent seulement une identité unique.
 
- Pour plus d’informations sur l’utilisation de noms forts et sur les assemblys avec des noms forts, consultez [Assemblys avec nom fort](../../../docs/framework/app-domains/strong-named-assemblies.md) et [Guide pratique pour signer un assembly avec un nom fort](../../../docs/framework/app-domains/how-to-sign-an-assembly-with-a-strong-name.md).  
+ Pour plus d’informations sur l’utilisation de noms forts et sur les assemblys avec des noms forts, consultez [Assemblys avec nom fort](../../standard/assembly/strong-named.md) et [Guide pratique pour signer un assembly avec un nom fort](../../standard/assembly/sign-strong-name.md).  
   
  Cet outil est installé automatiquement avec Visual Studio. Pour démarrer l'outil, utilisez l'invite de commandes développeur (ou l'invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md).  
 
@@ -128,5 +128,5 @@ sn -d MyContainer
 
 - [Outils](../../../docs/framework/tools/index.md)
 - [Al.exe (Assembly Linker)](../../../docs/framework/tools/al-exe-assembly-linker.md)
-- [Assemblys avec nom fort](../../../docs/framework/app-domains/strong-named-assemblies.md)
+- [Assemblys avec nom fort](../../standard/assembly/strong-named.md)
 - [Invites de commandes](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

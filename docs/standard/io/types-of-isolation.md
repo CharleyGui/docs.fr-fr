@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8875ed10c4cb144995b602287f904d3c98dcdb39
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: c6c5337fedd13cb18b8e5eeadec48a2e4695a543
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948762"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969355"
 ---
 # <a name="types-of-isolation"></a>Types d'isolation
 L’accès au stockage isolé est toujours limité à l’utilisateur qui l’a créé. Pour implémenter ce type d’isolation, le Common Language Runtime utilise la même notion d’identité de l’utilisateur reconnue par le système d’exploitation, c’est-à-dire l’identité associée au processus par lequel le code s’exécute lorsque le magasin est ouvert. Cette identité est l’identité d’un utilisateur, mais l’emprunt d’identité peut provoquer un changement dynamique de l’identité actuelle de l’utilisateur.  
@@ -34,7 +34,7 @@ L’accès au stockage isolé est toujours limité à l’utilisateur qui l’a 
   
 - L’identité de domaine constitue la preuve de l’application, et dans le cas d’une application Web, il peut s’agir de l’URL complète. Pour le code hébergé par l’interpréteur de commandes, l’identité de domaine peut être basée sur le chemin du répertoire de l’application. Par exemple, si l’exécutable s’exécute à partir du chemin d’accès C:\Office\MyApp.exe, l’identité de domaine serait C:\Office\MyApp.exe.  
   
-- L’identité d’assembly est la preuve de l’assembly. Elle peut provenir d’une signature numérique chiffrée, qui peut être le [nom fort](../../../docs/framework/app-domains/strong-named-assemblies.md) de l’assembly, de l’éditeur du logiciel de l’assembly, ou de son identité d’URL. Si un assembly possède un nom fort et une identité d’éditeur de logiciel, l’identité de l’éditeur de logiciel est utilisée. Si l’assembly provient d’Internet et n’est pas signé, l’identité d’URL est utilisée. Pour plus d’informations sur les assemblys et les noms forts, consultez [Programmation à l'aide d'assemblys](../../../docs/framework/app-domains/programming-with-assemblies.md).  
+- L’identité d’assembly est la preuve de l’assembly. Elle peut provenir d’une signature numérique chiffrée, qui peut être le [nom fort](../assembly/strong-named.md) de l’assembly, de l’éditeur du logiciel de l’assembly, ou de son identité d’URL. Si un assembly possède un nom fort et une identité d’éditeur de logiciel, l’identité de l’éditeur de logiciel est utilisée. Si l’assembly provient d’Internet et n’est pas signé, l’identité d’URL est utilisée. Pour plus d’informations sur les assemblys et les noms forts, consultez [Programmation à l'aide d'assemblys](../assembly/program.md).  
   
 - Les magasins itinérants se déplacent avec un utilisateur qui dispose d’un profil utilisateur itinérant. Les fichiers sont enregistrés dans un répertoire réseau et téléchargés sur n’importe quel ordinateur auquel l’utilisateur se connecte. Pour plus d'informations sur les profils utilisateur itinérants, consultez <xref:System.IO.IsolatedStorage.IsolatedStorageScope.Roaming?displayProperty=nameWithType>.  
   

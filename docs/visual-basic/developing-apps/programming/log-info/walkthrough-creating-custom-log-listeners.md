@@ -5,12 +5,12 @@ helpviewer_keywords:
 - custom log listeners
 - My.Application.Log object, custom log listeners
 ms.assetid: 0e019115-4b25-4820-afb1-af8c6e391698
-ms.openlocfilehash: 90135074a4d34ea73743faffb2531305fcb326fb
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: a4bd64d4c8232f9b6448baf98ee73ee497ccd5ca
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965259"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972110"
 ---
 # <a name="walkthrough-creating-custom-log-listeners-visual-basic"></a>Procédure pas à pas : Création d’écouteurs de journalisation personnalisés (Visual Basic)
 Cette procédure pas à pas illustre comment créer un écouteur de journalisation personnalisé et le configurer pour écouter la sortie de l’objet `My.Application.Log`.  
@@ -33,7 +33,7 @@ Cette procédure pas à pas illustre comment créer un écouteur de journalisati
   
  Pour vérifier que `My.Application.Log` utilise votre écouteur de journalisation, vous devez attribuer un nom fort à l’assembly qui le contient.  
   
- La procédure suivante fournit des étapes simples pour créer un assembly d’écouteur de journalisation portant un nom fort. Pour plus d’informations, consultez [Création et utilisation d’assemblys avec nom fort](../../../../framework/app-domains/create-and-use-strong-named-assemblies.md).  
+ La procédure suivante fournit des étapes simples pour créer un assembly d’écouteur de journalisation portant un nom fort. Pour plus d’informations, consultez [Création et utilisation d’assemblys avec nom fort](../../../../standard/assembly/create-use-strong-named.md).  
   
 #### <a name="to-strongly-name-the-log-listener-assembly"></a>Pour attribuer un nom fort à l’assembly de l’écouteur de journalisation  
   
@@ -76,7 +76,7 @@ Cette procédure pas à pas illustre comment créer un écouteur de journalisati
   
 1. Cliquez avec le bouton droit sur app.config dans l’**Explorateur de solutions** et sélectionnez **Ouvrir**.  
   
-     -ou-  
+     ou  
   
      S’il existe un fichier app.config :  
   

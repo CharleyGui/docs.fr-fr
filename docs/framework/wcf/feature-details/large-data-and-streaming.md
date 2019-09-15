@@ -2,12 +2,12 @@
 title: Données volumineuses et diffusion en continu
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-ms.openlocfilehash: b35fa4a6ca694fc9611869c7fcb03debf911542d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 70e43eaf4dc77e07af8ec65faf9cf0fa9a7a0fe4
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69911868"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991520"
 ---
 # <a name="large-data-and-streaming"></a>Données volumineuses et diffusion en continu
 Windows Communication Foundation (WCF) est une infrastructure de communication basée sur XML. Étant donné que les données XML sont généralement codées au format texte standard défini dans la [spécification XML 1,0](https://go.microsoft.com/fwlink/?LinkId=94838), les développeurs et les architectes de systèmes connectés se préoccupent généralement de l’empreinte (ou de la taille) des messages envoyés sur le réseau. l’encodage basé sur du texte de XML pose des difficultés spéciales pour le transfert efficace de données binaires.  
@@ -15,7 +15,7 @@ Windows Communication Foundation (WCF) est une infrastructure de communication b
 ## <a name="basic-considerations"></a>Considérations de base  
  Pour fournir des informations générales sur les informations suivantes pour WCF, cette section met en évidence certaines préoccupations générales et les considérations relatives aux encodages, aux données binaires et à la diffusion en continu qui s’appliquent généralement aux infrastructures de systèmes connectés.  
   
-### <a name="encoding-data-text-vs-binary"></a>Encodage de données: Texte et Binary  
+### <a name="encoding-data-text-vs-binary"></a>Encodage de données : Texte et Binary  
  Les préoccupations couramment exprimées par les développeurs incluent l’idée que le XML possède une charge mémoire considérable par rapport aux formats binaires en raison de la nature répétitive des étiquettes de début et de fin, que l’encodage de valeurs numériques est considéré comme nettement plus volumineux parce qu’elles sont exprimées en valeurs texte, et que ces données binaires ne peuvent pas être exprimées efficacement parce qu’elles doivent être encodées spécialement à des fins d’incorporation dans un format texte.  
   
  Même si de nombreuses préoccupations comme celle-ci ainsi que d’autres sont justifiées, la différence réelle entre les messages à encodage texte XML dans un environnement de services web XML et les messages à encodage binaire dans un environnement d’appel de procédure distante (RPC) hérité est souvent beaucoup moins importante que la considération initiale peut le suggérer.  
@@ -28,7 +28,7 @@ Windows Communication Foundation (WCF) est une infrastructure de communication b
   
  Par conséquent, pour choisir le format texte ou le format binaire, il ne suffit pas de partir du principe que les messages binaires sont toujours plus petits que les messages texte XML.  
   
- Un avantage net des messages texte XML est qu'ils sont basés sur des normes et qu'ils offrent le choix le plus large d'options d'interopérabilité et de prise en charge de plateformes. Pour plus d’informations, consultez la section «encodages» plus loin dans cette rubrique.  
+ Un avantage net des messages texte XML est qu'ils sont basés sur des normes et qu'ils offrent le choix le plus large d'options d'interopérabilité et de prise en charge de plateformes. Pour plus d’informations, consultez la section « encodages » plus loin dans cette rubrique.  
   
 ### <a name="binary-content"></a>Contenu binaire  
  Un domaine dans lequel les encodages binaires sont supérieurs aux encodages basés sur le texte en termes de taille des messages obtenus concerne les éléments de données binaires volumineux tels que les photos, vidéos, clips audio ou tout autre forme de données binaires et opaques qui doivent être échangées entre des services et leurs consommateurs. Pour adapter ces types de données au texte XML, l'approche courante consiste à les encoder à l'aide d'un encodage Base64.  
@@ -39,7 +39,7 @@ Windows Communication Foundation (WCF) est une infrastructure de communication b
   
  Un message SOAP MTOM est modifié par rapport à sa version non encodée afin que les balises d'éléments spéciales qui font référence aux parties MIME respectives prennent la place des éléments d'origine dans le message contenait des données binaires. En conséquence, le message SOAP fait référence au contenu binaire en pointant vers les parties MIME envoyées avec lui, mais sinon il transporte uniquement les données texte XML. Parce que ce modèle s'aligne étroitement sur le modèle SMTP bien établi, il existe une large prise en charge d'outils permettant d'encoder et de décoder les messages MTOM sur de nombreuses plateformes, ce qui en fait un choix extrêmement interopérable.  
   
- Pour autant, comme avec Base64, MTOM s'accompagne également d'une charge mémoire nécessaire pour le format MIME, de sorte que les avantages de l'utilisation de MTOM s'aperçoivent uniquement quand la taille d'un élément de données binaires dépasse 1 Ko environ. En raison de la charge mémoire, les messages encodés MTOM peuvent être plus volumineux que les messages qui utilisent l'encodage Base64 pour les données binaires, si la charge utile binaire reste sous ce seuil. Pour plus d’informations, consultez la section «encodages» plus loin dans cette rubrique.  
+ Pour autant, comme avec Base64, MTOM s'accompagne également d'une charge mémoire nécessaire pour le format MIME, de sorte que les avantages de l'utilisation de MTOM s'aperçoivent uniquement quand la taille d'un élément de données binaires dépasse 1 Ko environ. En raison de la charge mémoire, les messages encodés MTOM peuvent être plus volumineux que les messages qui utilisent l'encodage Base64 pour les données binaires, si la charge utile binaire reste sous ce seuil. Pour plus d’informations, consultez la section « encodages » plus loin dans cette rubrique.  
   
 ### <a name="large-data-content"></a>Contenu de données volumineux  
  L'encombrement du câble mis de côté, la charge utile de 500 Mo précédemment mentionnée représente également un grand challenge local pour le service et le client. Par défaut, WCF traite les messages en *mode de mise en mémoire tampon*. Cela signifie que le contenu entier d'un message est présent en mémoire avant son envoi ou après sa réception. Alors qu’il s’agit d’une bonne stratégie pour la plupart des scénarios et qu’elle est nécessaire pour les fonctionnalités de messagerie telles que les signatures numériques et la remise fiable, les messages volumineux peuvent épuiser les ressources d’un système.  
@@ -54,12 +54,12 @@ Windows Communication Foundation (WCF) est une infrastructure de communication b
   
 - ne sont pas disponibles dans leur intégralité lors de l'initialisation du transfert.  
   
- Pour les données qui ne présentent pas ces contraintes, il est en général préférable d'envoyer des séquences de messages au sein de la portée d'une session plutôt qu'un message volumineux. Pour plus d’informations, consultez la section «données de streaming» plus loin dans cette rubrique.  
+ Pour les données qui ne présentent pas ces contraintes, il est en général préférable d'envoyer des séquences de messages au sein de la portée d'une session plutôt qu'un message volumineux. Pour plus d’informations, consultez la section « données de streaming » plus loin dans cette rubrique.  
   
  Lorsque vous envoyez de grandes quantités de données, vous devez définir `maxAllowedContentLength` le paramètre IIS (pour plus d’informations, consultez [Configuration des limites des demandes IIS](https://go.microsoft.com/fwlink/?LinkId=253165)) et le `maxReceivedMessageSize` paramètre de liaison (par exemple, [ System. ServiceModel. BasicHttpBinding. MaxReceivedMessageSize](xref:System.ServiceModel.HttpBindingBase.MaxReceivedMessageSize%2A) ou <xref:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize%2A>). La `maxAllowedContentLength` valeur par défaut de la propriété est 28,6 `maxReceivedMessageSize` M et la propriété par défaut est 64 Ko.  
   
 ## <a name="encodings"></a>Encodages  
- Un *encodage* définit un ensemble de règles sur la façon de présenter des messages sur le câble. Un encodeur implémente ce type d’encodage et est responsable, du côté de l’expéditeur, de la <xref:System.ServiceModel.Channels.Message> transformation d’un en mémoire en un flux d’octets ou une mémoire tampon d’octets qui peut être envoyé sur le réseau. Du côté destinataire, l'encodeur transforme une séquence d'octets en un message en mémoire.  
+ Un *encodage* définit un ensemble de règles sur la façon de présenter des messages sur le câble. Un *encodeur* implémente ce type d’encodage et est responsable, du côté de l’expéditeur, de la <xref:System.ServiceModel.Channels.Message> transformation d’un en mémoire en un flux d’octets ou une mémoire tampon d’octets qui peut être envoyé sur le réseau. Du côté destinataire, l'encodeur transforme une séquence d'octets en un message en mémoire.  
   
  WCF comprend trois encodeurs et vous permet d’écrire et de brancher vos propres encodeurs, si nécessaire.  
   
@@ -99,7 +99,7 @@ Windows Communication Foundation (WCF) est une infrastructure de communication b
 ### <a name="programming-model"></a>Modèle de programmation  
  Quel que soit l'encodeur intégré que vous utilisiez dans votre application parmi les trois disponibles, l'expérience en matière de programmation est identique en ce qui concerne le transfert de données binaires. La différence réside dans la façon dont WCF gère les données en fonction de leurs types de données.  
   
-```  
+```csharp
 [DataContract]  
 class MyData  
 {  
@@ -127,7 +127,7 @@ class MyData
  Comme mentionné précédemment, activez uniquement la diffusion en continu pour les messages volumineux (avec un contenu texte ou binaire) si les données ne peuvent pas être segmentées, si le message doit être remis en temps voulu ou si les données ne sont pas encore complètement disponibles au moment où le transfert est initialisé.  
   
 ### <a name="restrictions"></a>Restrictions  
- Vous ne pouvez pas utiliser un nombre significatif de fonctionnalités WCF lorsque la diffusion en continu est activée:  
+ Vous ne pouvez pas utiliser un nombre significatif de fonctionnalités WCF lorsque la diffusion en continu est activée :  
   
 - Les signatures numériques pour le corps du message ne peuvent pas être effectuées parce qu'elles requièrent un calcul de hachage sur le contenu entier du message. Avec la diffusion en continu, le contenu n'est pas complètement disponible lorsque les en-têtes de message sont construits et envoyés et, par conséquent, une signature numérique ne peut pas être calculée.  
   
@@ -190,7 +190,7 @@ class MyData
 ### <a name="programming-model-for-streamed-transfers"></a>Modèle de programmation pour les transferts en continu  
  Le modèle de programmation pour la diffusion en continu est simple. Pour recevoir des données en continu, spécifiez un contrat d'opération qui possède un seul paramètre d'entrée <xref:System.IO.Stream> saisi. Pour renvoyer des données en continu, renvoyez une référence <xref:System.IO.Stream>.  
   
-```  
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface IStreamedService  
 {  
@@ -209,7 +209,7 @@ public interface IStreamedService
   
  Cette règle s'applique de la même façon aux contrats de message. Comme indiqué dans le contrat de message suivant, votre contrat de message peut uniquement comporter un seul membre de corps qui est un flux. Si vous souhaitez communiquer des informations supplémentaires avec le flux, ces informations doivent être transmises dans des en-têtes de message. Le corps du message est exclusivement réservé au contenu de flux.  
   
-```  
+```csharp
 [MessageContract]  
 public class UploadStreamMessage  
 {  
@@ -240,4 +240,4 @@ public class UploadStreamMessage
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique : Activer la diffusion en continu](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)
+- [Guide pratique pour Activer la diffusion en continu](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)

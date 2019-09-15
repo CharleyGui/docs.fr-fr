@@ -8,12 +8,12 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 88fb1a17-6ac9-4b57-8028-193aec1f727c
-ms.openlocfilehash: c9670b00ea4a6b552469b7f33e924b8ab128d9d0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c43ba119b92d4dc1a50b03d6359555ad25f37d08
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948023"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971562"
 ---
 # <a name="redirecting-assembly-versions"></a>Redirection des versions d'assemblys
 
@@ -65,7 +65,7 @@ Si un autre projet dans votre application référence la version 1.0.0.0 du mêm
 
 `<bindingRedirect oldVersion="1.0.0.0" newVersion="2.0.0.0" />`
 
-Vous pouvez activer la redirection de liaison automatique si votre application cible des versions antérieures du .NET Framework. Vous pouvez substituer ce comportement par défaut en fournissant des informations de redirection de liaison dans le fichier app. config pour n’importe quel assembly, ou en désactivant la fonctionnalité de redirection de liaison. Pour plus d’informations sur la façon d’activer ou de désactiver cette [fonctionnalité, consultez Procédure: Activer et désactiver la redirection de liaison automatique](how-to-enable-and-disable-automatic-binding-redirection.md).
+Vous pouvez activer la redirection de liaison automatique si votre application cible des versions antérieures du .NET Framework. Vous pouvez substituer ce comportement par défaut en fournissant des informations de redirection de liaison dans le fichier app. config pour n’importe quel assembly, ou en désactivant la fonctionnalité de redirection de liaison. Pour plus d’informations sur la façon d’activer ou de désactiver cette [fonctionnalité, consultez Procédure : Activer et désactiver la redirection de liaison automatique](how-to-enable-and-disable-automatic-binding-redirection.md).
 
 <a name="bypass_PP"></a>
 ### <a name="bypassing-publisher-policy"></a>Contournement de la stratégie d’éditeur
@@ -85,7 +85,7 @@ Vous pouvez activer la redirection de liaison automatique si votre application c
 
  L’exemple de code suivant montre divers scénarios de redirection de liaison. Cet exemple spécifie une redirection pour une plage de versions pour `myAssembly`, et une redirection de liaison unique pour `mySecondAssembly`. L’exemple spécifie également que le fichier de stratégie d’éditeur ne doit pas remplacer les redirections de liaison pour `myThirdAssembly`.
 
- Pour lier un assembly, vous devez spécifier la chaîne "urn: schemas-microsoft-com: ASM. v1" avec l’attribut **xmlns** dans la [ \<balise assemblyBinding >](./file-schema/runtime/assemblybinding-element-for-runtime.md) .
+ Pour lier un assembly, vous devez spécifier la chaîne "urn : schemas-microsoft-com : ASM. v1" avec l’attribut **xmlns** dans la [ \<balise assemblyBinding >](./file-schema/runtime/assemblybinding-element-for-runtime.md) .
 
 ```xml
 <configuration>
@@ -157,8 +157,8 @@ Vous pouvez activer la redirection de liaison automatique si votre application c
 - [Guide pratique pour Activer et désactiver la redirection de liaison automatique](how-to-enable-and-disable-automatic-binding-redirection.md)
 - [\<bindingRedirect >, élément](./file-schema/runtime/bindingredirect-element.md)
 - [Autorisation de sécurité pour la redirection de liaison d’assembly](assembly-binding-redirection-security-permission.md)
-- [Assemblys dans le Common Language Runtime](../app-domains/assemblies-in-the-common-language-runtime.md)
-- [Programmation à l’aide d’assemblys](../app-domains/programming-with-assemblies.md)
+- [Assemblys dans .NET](../../standard/assembly/index.md)
+- [Programmation à l’aide d’assemblys](../../standard/assembly/program.md)
 - [Méthode de localisation des assemblys par le runtime](../deployment/how-the-runtime-locates-assemblies.md)
 - [Configuration d'applications](index.md)
 - [Schéma des paramètres d’exécution](./file-schema/runtime/index.md)

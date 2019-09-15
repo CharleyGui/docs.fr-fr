@@ -3,12 +3,12 @@ title: Commande dotnet vstest
 description: La commande dotnet vstest permet de générer un projet et l’ensemble de ses dépendances.
 author: mairaw
 ms.date: 05/30/2018
-ms.openlocfilehash: 4630982ba21ab37b051895faf3dc0fcd8784cb18
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.openlocfilehash: da18fda6419cb9eaa1f488a3576161c3054b4426
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202777"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969813"
 ---
 # <a name="dotnet-vstest"></a>dotnet vstest
 
@@ -19,6 +19,8 @@ ms.locfileid: "70202777"
 `dotnet-vstest` - Exécute les tests à partir des fichiers spécifiés.
 
 ## <a name="synopsis"></a>Résumé
+
+<!-- markdownlint-disable MD025 -->
 
 # <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 

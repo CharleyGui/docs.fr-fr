@@ -6,24 +6,24 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], specifying location
 ms.assetid: 1cb92bd7-6bab-44cf-8fd3-36303ce84fea
-ms.openlocfilehash: 43cd1d0edbb607f69f27661aae3372e93564b3b7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f13b19dcd0aceac969d9639e6230ad33c6cd8d84
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69932333"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971548"
 ---
 # <a name="specifying-an-assemblys-location"></a>Spécification de l'emplacement d'un assembly
-Il existe deux façons de spécifier l’emplacement d’un assembly:  
+Il existe deux façons de spécifier l’emplacement d’un assembly :  
   
-- À l' [ \<](./file-schema/runtime/codebase-element.md) aide de l’élément CodeBase >.  
+- À l’aide de l' [ \<élément CodeBase >](./file-schema/runtime/codebase-element.md) .  
   
 - À l’aide de l’élément de [ \<> de détection](./file-schema/runtime/probing-element.md) .  
   
  Vous pouvez également utiliser l' [outil de Configuration .NET Framework (Mscorcfg. msc)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/2bc0cxhc(v=vs.100)) pour spécifier des emplacements d’assembly ou spécifier des emplacements pour le Common Language Runtime pour détecter les assemblys.  
   
 ## <a name="using-the-codebase-element"></a>Utilisation de \<l’élément CodeBase >  
- Vous pouvez utiliser l'  **\<** élément CodeBase > uniquement dans la configuration de l’ordinateur ou dans les fichiers de stratégie d’éditeur qui redirigent également la version de l’assembly. Lorsque le runtime détermine la version de l’assembly à utiliser, il applique le paramètre de base du code à partir du fichier qui détermine la version. Si aucune base de code n’est indiquée, le runtime détecte l’assembly de manière normale. Pour plus d’informations, consultez [Comment le runtime localise les assemblys](../deployment/how-the-runtime-locates-assemblies.md).  
+ Vous pouvez utiliser l'  **\<élément CodeBase >** uniquement dans la configuration de l’ordinateur ou dans les fichiers de stratégie d’éditeur qui redirigent également la version de l’assembly. Lorsque le runtime détermine la version de l’assembly à utiliser, il applique le paramètre de base du code à partir du fichier qui détermine la version. Si aucune base de code n’est indiquée, le runtime détecte l’assembly de manière normale. Pour plus d’informations, consultez [Comment le runtime localise les assemblys](../deployment/how-the-runtime-locates-assemblies.md).  
   
  L’exemple suivant montre comment spécifier l’emplacement d’un assembly.  
   
@@ -43,7 +43,7 @@ Il existe deux façons de spécifier l’emplacement d’un assembly:
 </configuration>  
 ```  
   
- L’attribut **version** est requis pour tous les assemblys avec nom fort, mais doit être omis pour les assemblys qui ne portent pas un nom fort. **L'\<** élément CodeBase > nécessite l’attribut **href** . Vous ne pouvez pas spécifier de plages  **\<** de versions dans l’élément CodeBase >.  
+ L’attribut **version** est requis pour tous les assemblys avec nom fort, mais doit être omis pour les assemblys qui ne portent pas un nom fort. **L'\<élément CodeBase >** nécessite l’attribut **href** . Vous ne pouvez pas spécifier de plages de versions dans l'  **\<élément CodeBase >** .  
   
 > [!NOTE]
 > Si vous fournissez un indicateur de base de code pour un assembly qui n’a pas un nom fort, l’indicateur doit pointer vers la base de l’application ou vers un sous-répertoire du répertoire de base de l’application.  
@@ -67,7 +67,7 @@ Il existe deux façons de spécifier l’emplacement d’un assembly:
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Assemblys dans le Common Language Runtime](../app-domains/assemblies-in-the-common-language-runtime.md)
-- [Programmation à l’aide d’assemblys](../app-domains/programming-with-assemblies.md)
+- [Assemblys dans .NET](../../standard/assembly/index.md)
+- [Programmation à l’aide d’assemblys](../../standard/assembly/program.md)
 - [Méthode de localisation des assemblys par le runtime](../deployment/how-the-runtime-locates-assemblies.md)
 - [Configuration d’applications à l’aide de fichiers de configuration](index.md)

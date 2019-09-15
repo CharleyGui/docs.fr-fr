@@ -2,17 +2,17 @@
 title: HttpCookieSession
 ms.date: 03/30/2017
 ms.assetid: 101cb624-8303-448a-a3af-933247c1e109
-ms.openlocfilehash: f0c6cee2eb7ed9552452f95b71db7e942e84bcb0
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 71147d98ada3d9814cdbcc8d3e7e85cad4dee0f2
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044924"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989873"
 ---
 # <a name="httpcookiesession"></a>HttpCookieSession
 Cet exemple montre comment générer un canal de protocole personnalisé pour utiliser des cookies HTTP pour la gestion des sessions. Ce canal active la communication entre les services Windows Communication Foundation (WCF) et les clients ASMX, ou entre les clients WCF et les services ASMX.  
   
- Lorsqu’un client appelle une méthode Web dans un service Web ASMX basé sur une session, le moteur ASP.NET effectue les opérations suivantes:  
+ Lorsqu’un client appelle une méthode Web dans un service Web ASMX basé sur une session, le moteur ASP.NET effectue les opérations suivantes :  
   
 - Il génère un ID unique (ID de session).  
   
@@ -41,7 +41,7 @@ Cet exemple montre comment générer un canal de protocole personnalisé pour ut
   
 - Lorsque l'écouteur de canal est ouvert, il accepte un canal interne de son écouteur interne. Vu que l'écouteur interne est un écouteur de datagramme et que la durée de vie d'un canal accepté est découplée de la durée de vie de l'écouteur, nous pouvons fermer l'écouteur interne et conserver uniquement le canal interne  
   
-    ```  
+    ```csharp  
                 this.innerChannelListener.Open(timeoutHelper.RemainingTime());  
     this.innerChannel = this.innerChannelListener.AcceptChannel(timeoutHelper.RemainingTime());  
     this.innerChannel.Open(timeoutHelper.RemainingTime());  
@@ -50,7 +50,7 @@ Cet exemple montre comment générer un canal de protocole personnalisé pour ut
   
 - Lorsque le processus ouvert se termine, nous installons une boucle de messages pour recevoir des messages du canal interne.  
   
-    ```  
+    ```csharp  
     IAsyncResult result = BeginInnerReceiveRequest();  
     if (result != null && result.CompletedSynchronously)  
     {  
@@ -65,13 +65,13 @@ Cet exemple montre comment générer un canal de protocole personnalisé pour ut
   
 - Lorsqu'un message arrive, le canal de service examine l'identificateur de session et procède à un démultiplexage vers le canal de session approprié. L'écouteur de canal maintient un dictionnaire qui mappe les identificateurs de session aux instances du canal de la session.  
   
-    ```  
+    ```csharp  
     Dictionary<string, IReplySessionChannel> channelMapping;  
     ```  
   
  La `HttpCookieReplySessionChannel` classe<xref:System.ServiceModel.Channels.IReplySessionChannel>implémente. Les niveaux supérieurs de la pile de canaux appellent la méthode <xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest%2A> pour lire des demandes pour cette session. Chaque canal de session a une file d'attente de messages privée remplie par le canal de service.  
   
-```  
+```csharp  
 InputQueue<RequestContext> requestQueue;  
 ```  
   
@@ -133,11 +133,11 @@ InputQueue<RequestContext> requestQueue;
 ```  
   
 ## <a name="test-code"></a>Code de test  
- Le code de test pour utiliser cet exemple de transport est disponible dans les répertoires Client et Service. Il se compose de deux tests: un test utilise une liaison `allowCookies` avec la `true` valeur sur le client. Le deuxième test active l’arrêt explicite (à l’aide de la fermeture de l’échange de messages) sur la liaison.  
+ Le code de test pour utiliser cet exemple de transport est disponible dans les répertoires Client et Service. Il se compose de deux tests : un test utilise une liaison `allowCookies` avec la `true` valeur sur le client. Le deuxième test active l’arrêt explicite (à l’aide de la fermeture de l’échange de messages) sur la liaison.  
   
  Lorsque vous exécutez l'exemple, vous devez obtenir la sortie suivante :  
   
-```  
+```console  
 Simple binding:  
 AddItem(10000,2): ItemCount=2  
 AddItem(10550,5): ItemCount=7  
@@ -160,7 +160,7 @@ Press <ENTER> to terminate client.
   
 1. Installez ASP.NET 4,0 à l’aide de la commande suivante.  
   
-    ```  
+    ```console  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   

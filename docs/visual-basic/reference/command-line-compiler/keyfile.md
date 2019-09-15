@@ -6,12 +6,12 @@ helpviewer_keywords:
 - keyfile compiler option [Visual Basic]
 - -keyfile compiler option [Visual Basic]
 ms.assetid: ffa82a4b-517a-4c6c-9889-5bae7b534bb8
-ms.openlocfilehash: b2084a1c0ee30478cdc9193cdfcb19476499ee93
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 30b890cf3d523d1e33b433a1ff6109759bd9a5e3
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924868"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972329"
 ---
 # <a name="-keyfile"></a>-keyfile
 Spécifie un fichier contenant une clé ou une paire de clés afin d'attribuer un nom fort à un assembly.  
@@ -39,12 +39,12 @@ Spécifie un fichier contenant une clé ou une paire de clés afin d'attribuer u
   
  Notez qu’un fichier de clé peut contenir uniquement la clé publique.  
   
- Pour plus d’informations sur la signature d’un assembly [, consultez Création et utilisation d’assemblys avec nom fort](../../../framework/app-domains/create-and-use-strong-named-assemblies.md) .  
+ Pour plus d’informations sur la signature d’un assembly [, consultez Création et utilisation d’assemblys avec nom fort](../../../standard/assembly/create-use-strong-named.md) .  
   
 > [!NOTE]
-> L' `-keyfile` option n’est pas disponible dans l’environnement de développement Visual Studio; elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
+> L' `-keyfile` option n’est pas disponible dans l’environnement de développement Visual Studio ; elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  Le code suivant compile le fichier `Input.vb` source et spécifie un fichier de clé.  
   
 ```console  

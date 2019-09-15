@@ -4,31 +4,31 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - raw input [WPF]
 ms.assetid: c4d37ecd-065a-4d1c-9e6c-26804ae968ca
-ms.openlocfilehash: 3531ff9f42289a3ad3b029f090f2dd4987e5886c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4fc7a5021f9f8d9e6badcd3e13266fb8f4bfe7a4
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947912"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991758"
 ---
 # <a name="getrawinputdevices"></a>GetRawInputDevices
 Permet à PresentationHost.exe de découvrir les périphériques d'entrée brute (périphériques d'interface utilisateur) qui intéressent l'application hôte.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```cpp  
 HRESULT GetRawInputDevices( [out] IEnumRAWINPUTDEVICE **ppEnum );  
 ```  
   
 ## <a name="parameters"></a>Paramètres  
  `ppEnum`  
   
- [out] Un pointeur vers un [IEnumRAWINPUTDEVICE](ienumrawinputdevice.md) pour l’énumération des périphériques d’entrée brutes.  
+ à Pointeur vers un [IEnumRAWINPUTDEVICE](ienumrawinputdevice.md) pour énumérer les périphériques d’entrée bruts.  
   
 ## <a name="property-valuereturn-value"></a>Valeur de propriété/valeur de retour  
  HRESULT :  
   
- S_OK - [IEnumRAWINPUTDEVICE](ienumrawinputdevice.md) servira uniquement par PresentationHost.exe si S_OK est retourné.  
+ S_OK- [IEnumRAWINPUTDEVICE](ienumrawinputdevice.md) sera utilisé uniquement par PresentationHost. exe si S_OK est retourné.  
   
  E_NOTIMPL  
   

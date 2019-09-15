@@ -2,12 +2,12 @@
 title: Réflexion (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: d991bc0f-d16a-4ac5-9351-70e5c5b9891b
-ms.openlocfilehash: 8a784f3b8647a74e21299e84e04eb7bda60b9cb6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6d1206d84dec4202a7dad8f03c3d88c8a97ff5ba
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64627458"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972118"
 ---
 # <a name="reflection-visual-basic"></a>Réflexion (Visual Basic)
 La réflexion fournit des objets (de type <xref:System.Type>) qui décrivent des assemblys, des modules et des types. Vous pouvez utiliser la réflexion pour créer dynamiquement une instance d’un type, lier le type à un objet existant ou obtenir le type à partir d’un objet existant et invoquer ses méthodes ou accéder à ses champs et propriétés. Si vous utilisez des attributs dans votre code, la réflexion vous permet d’y accéder. Pour plus d’informations, consultez [Attributs](../../../standard/attributes/index.md).  
@@ -64,4 +64,4 @@ System.Console.WriteLine(info)
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation Visual Basic](../../../visual-basic/programming-guide/index.md)
-- [Assemblys dans le Common Language Runtime](../../../framework/app-domains/assemblies-in-the-common-language-runtime.md)
+- [Assemblys dans .NET](../../../standard/assembly/index.md)

@@ -1,45 +1,43 @@
 ---
 title: Commande dotnet pack
 description: La commande dotnet pack crée des packages NuGet pour votre projet .NET Core.
-ms.date: 12/04/2018
-ms.openlocfilehash: c5c00f3bb06e5bc5579c0d3d6bdd39fbdf3db656
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.date: 08/08/2019
+ms.openlocfilehash: ba5a438d58963222c3fa55d2c585ef503dcd49db
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202843"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990408"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+**Cette rubrique s’applique à : ✓** SDK .NET Core 1.x et ultérieur
 
-## <a name="name"></a>Name
+<!-- todo: uncomment when all CLI commands are reviewed
+[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+-->
+
+## <a name="name"></a>Nom
 
 `dotnet pack` : Place le code dans un package NuGet.
 
 ## <a name="synopsis"></a>Résumé
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
-
 ```console
-dotnet pack [<PROJECT>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--no-build] [--no-dependencies]
-    [--no-restore] [-o|--output] [--runtime] [-s|--serviceable] [-v|--verbosity] [--version-suffix]
+dotnet pack [<PROJECT>|<SOLUTION>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--interactive] 
+    [--no-build] [--no-dependencies] [--no-restore] [--nologo] [-o|--output] [--runtime] [-s|--serviceable] 
+    [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-```console
-dotnet pack [<PROJECT>] [-c|--configuration] [--include-source] [--include-symbols] [--no-build] [-o|--output]
-    [-s|--serviceable] [-v|--verbosity] [--version-suffix]
-dotnet pack [-h|--help]
-```
-
----
 
 ## <a name="description"></a>Description
 
-La commande `dotnet pack` génère le projet et crée les packages NuGet. Le résultat de cette commande est un package NuGet. Si l’option `--include-symbols` est présente, un autre package contenant les symboles de débogage est créé.
+La commande `dotnet pack` génère le projet et crée les packages NuGet. Le résultat de cette commande est un package NuGet (autrement dit, un fichier *. nupkg* ). 
+
+Si vous souhaitez générer un package qui contient les symboles de débogage, deux options sont disponibles :
+
+- `--include-symbols`-Il crée le package de symboles.
+- `--include-source`-Il crée le package de symboles avec `src` un dossier contenant les fichiers sources.
 
 Les dépendances NuGet du projet empaqueté sont ajoutées dans le fichier  *.nuspec*, pour pouvoir être correctement résolues lors de l’installation du package. Les références entre projets ne sont pas empaquetées à l’intérieur du projet. Actuellement, vous devez disposer d’un package par projet si vous avez des dépendances entre projets.
 
@@ -59,13 +57,11 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 ## <a name="arguments"></a>Arguments
 
-* **`PROJECT`**
+`PROJECT | SOLUTION`
 
-  Projet à empaqueter. Il s’agit du chemin d’accès d’un [fichier csproj](csproj.md) ou d’un répertoire. Si aucune valeur n’est spécifiée, le répertoire actif est utilisé par défaut.
+  Projet ou solution à empaqueter. Il s’agit d’un chemin d’accès à un [fichier csproj](csproj.md), à un fichier solution ou à un répertoire. S’il n’est pas spécifié, la commande recherche un fichier projet ou solution dans le répertoire actif.
 
 ## <a name="options"></a>Options
-
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 * **`-c|--configuration {Debug|Release}`**
 
@@ -73,7 +69,7 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 * **`--force`**
 
-  Force la résolution de toutes les dépendances même si la dernière restauration a réussi. Définir cet indicateur revient à supprimer le fichier *project.assets.json*.
+  Force la résolution de toutes les dépendances même si la dernière restauration a réussi. Définir cet indicateur revient à supprimer le fichier *project.assets.json*. Option disponible à partir du kit SDK .NET Core 2.0.
 
 * **`-h|--help`**
 
@@ -81,11 +77,15 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 * **`--include-source`**
 
-  Inclut les fichiers sources dans le package NuGet. Les fichiers sources sont inclus dans le dossier `src` de `nupkg`.
+  Comprend les packages NuGet de symboles de débogage en plus des packages NuGet standard dans le répertoire de sortie. Les fichiers sources sont inclus dans le `src` dossier du package de symboles.
 
 * **`--include-symbols`**
 
-  Génère les symboles `nupkg`.
+  Comprend les packages NuGet de symboles de débogage en plus des packages NuGet standard dans le répertoire de sortie.
+
+* **`--interactive`**
+
+  Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (son authentification, par exemple). Option disponible à partir du kit SDK .NET Core 3.0.
 
 * **`--no-build`**
 
@@ -93,11 +93,15 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 * **`--no-dependencies`**
 
-  Ignore les références entre projets et restaure uniquement le projet racine.
+  Ignore les références entre projets et restaure uniquement le projet racine. Option disponible à partir du kit SDK .NET Core 2.0.
 
 * **`--no-restore`**
 
-  N’effectue pas de restauration implicite à l’exécution de la commande.
+  N’effectue pas de restauration implicite à l’exécution de la commande. Option disponible à partir du kit SDK .NET Core 2.0.
+
+* **`--nologo`**
+
+  N’affiche pas la bannière de démarrage ni le message de copyright. Option disponible à partir du kit SDK .NET Core 3.0.
 
 * **`-o|--output <OUTPUT_DIRECTORY>`**
 
@@ -105,7 +109,7 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 * **`--runtime <RUNTIME_IDENTIFIER>`**
 
-  Spécifie le runtime cible pour lequel restaurer les packages. Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md).
+  Spécifie le runtime cible pour lequel restaurer les packages. Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). Option disponible à partir du kit SDK .NET Core 2.0.
 
 * **`-s|--serviceable`**
 
@@ -118,46 +122,6 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 * **`-v|--verbosity <LEVEL>`**
 
   Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-* **`-c|--configuration {Debug|Release}`**
-
-  Définit la configuration de build. La valeur par défaut est `Debug`.
-
-* **`-h|--help`**
-
-  Affiche une aide brève pour la commande.
-
-* **`--include-source`**
-
-  Inclut les fichiers sources dans le package NuGet. Les fichiers sources sont inclus dans le dossier `src` de `nupkg`.
-
-* **`--include-symbols`**
-
-  Génère les symboles `nupkg`.
-
-* **`--no-build`**
-
-  Ne génère pas le projet avant de créer le package.
-
-* **`-o|--output <OUTPUT_DIRECTORY>`**
-
-  Place les packages générés dans le répertoire spécifié.
-
-* **`-s|--serviceable`**
-
-  Définit l’indicateur d’un état pouvant faire l’objet d’une maintenance dans le package. Pour plus d’informations, consultez [Blog .NET : .NET 4.5.1 prend en charge les mises à jour de sécurité de Microsoft pour les bibliothèques NuGet .NET](https://aka.ms/nupkgservicing).
-
-* **`--version-suffix <VERSION_SUFFIX>`**
-
-  Définit la valeur de la propriété MSBuild `$(VersionSuffix)` dans le projet.
-
-* **`-v|--verbosity <LEVEL>`**
-
-  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
-
----
 
 ## <a name="examples"></a>Exemples
 
@@ -212,5 +176,5 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 * Empaquetez le projet à l’aide d’un [fichier .nuspec](https://docs.microsoft.com/nuget/reference/msbuild-targets#packing-using-a-nuspec) :
 
   ```console
-  dotnet pack ~/projects/app1/project.csproj /p:NuspecFile=~/projects/app1/project.nuspec /p:NuspecBasePath=~/projects/app1/nuget
+  dotnet pack ~/projects/app1/project.csproj -p:NuspecFile=~/projects/app1/project.nuspec -p:NuspecBasePath=~/projects/app1/nuget
   ```
