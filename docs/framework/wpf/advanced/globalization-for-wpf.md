@@ -7,12 +7,12 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: 2f651b68d845e062ad950bb626e30c755d6d9df6
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
+ms.openlocfilehash: f1147bf090af23c2f27bac14ab895657ccee60e3
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70169167"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991557"
 ---
 # <a name="globalization-for-wpf"></a>Globalisation pour WPF
 Cette rubrique présente les problèmes que vous devez connaître lors de l' [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] écriture d’applications pour le marché mondial. Les éléments de programmation de la globalisation sont définis <xref:System.Globalization> dans .net dans l’espace de noms.
@@ -39,7 +39,7 @@ L’exemple suivant montre une référence de caractère hexadécimale. Notez qu
 ### <a name="encoding"></a>Encodage
  L’encodage pris [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] en charge par [!INCLUDE[TLA2#tla_unicode](../../../../includes/tla2sharptla-unicode-md.md)] est ASCII, UTF-16 et UTF-8. L’instruction Encoding se trouve au début du [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] document. Si aucun attribut d’encodage ni ordre d’octets n’existe, la valeur UTF-8 est affectée par défaut à l’analyseur. UTF-8 et UTF-16 sont les encodages par défaut. UTF-7 n’est pas pris en charge. L’exemple suivant montre comment spécifier un encodage UTF-8 dans un [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] fichier.
 
-```
+```xaml
 ?xml encoding="UTF-8"?
 ```
 
@@ -51,7 +51,7 @@ L’exemple suivant montre une référence de caractère hexadécimale. Notez qu
 
  L’exemple [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] suivant utilise l' `fr-CA` attribut Language pour spécifier le français canadien.
 
-```xml
+```xaml
 <TextBlock xml:lang="fr-CA">Découvrir la France</TextBlock>
 ```
 
@@ -173,7 +173,7 @@ L’exemple suivant montre une référence de caractère hexadécimale. Notez qu
 
  La solution à ce problème consiste à définir l’attribut de secours de langue neutre. Un développeur d’applications peut également supprimer des ressources de l’assembly principal pour les placer dans un assembly satellite correspondant à une culture spécifique. Pour contrôler ce processus, utilisez <xref:System.Resources.NeutralResourcesLanguageAttribute>le. Le constructeur de la <xref:System.Resources.NeutralResourcesLanguageAttribute> classe a deux signatures, une qui prend un <xref:System.Resources.UltimateResourceFallbackLocation> paramètre pour <xref:System.Resources.ResourceManager> spécifier l’emplacement où doit extraire les ressources de secours: assembly principal ou assembly satellite. L'exemple suivant montre comment utiliser l'attribut. Pour l’emplacement de secours ultime, le code fait <xref:System.Resources.ResourceManager> en sorte que le recherche les ressources dans le sous-répertoire «de» du répertoire de l’assembly en cours d’exécution.
 
-```
+```csharp
 [assembly: NeutralResourcesLanguageAttribute(
     "de" , UltimateResourceFallbackLocation.Satellite)]
 ```

@@ -2,19 +2,19 @@
 title: Activité personnalisée SendMail
 ms.date: 03/30/2017
 ms.assetid: 947a9ae6-379c-43a3-9cd5-87f573a5739f
-ms.openlocfilehash: 9325817a24fee3ba04c2c305ebfdfbc6ff6da1bd
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 5797620c4938d7dcffb1f506b682141336b21eab
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038111"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70988978"
 ---
 # <a name="sendmail-custom-activity"></a>Activité personnalisée SendMail
 Cet exemple montre comment créer une activité personnalisée dérivée de <xref:System.Activities.AsyncCodeActivity> pour envoyer du courrier à l'aide de SMTP afin de l'utiliser dans une application de workflow. L’activité personnalisée utilise les fonctionnalités de <xref:System.Net.Mail.SmtpClient> pour envoyer des courriers électroniques de manière asynchrone et pour envoyer du courrier électronique avec l’authentification. Elle fournit aussi certaines fonctionnalités d'utilisateur final telles que le mode Test, le remplacement des jetons, les modèles de fichier et le chemin d'accès de dépôt de test.  
   
  Le tableau suivant décrit en détail les arguments pour l’activité `SendMail`.  
   
-|Nom|type|Description|  
+|Name|type|Description|  
 |-|-|-|  
 |Hôte|String|Adresse du serveur hôte SMTP.|  
 |Port|String|Port du service SMTP dans l'hôte.|  
@@ -47,7 +47,7 @@ Cet exemple montre comment créer une activité personnalisée dérivée de <xre
 ### <a name="sending-an-email-using-tokens-specified-in-the-body"></a>Envoi d'un message électronique à l'aide de jetons spécifiés dans le corps  
  Cet extrait de code montre comment envoyer un message électronique avec des jetons dans le corps. Notez la façon dont les jetons sont fournis dans la propriété de corps. Les valeurs pour ces jetons sont fournies à la propriété de jetons.  
   
-```html  
+```csharp  
 IDictionary<string, string> tokens = new Dictionary<string, string>();  
 tokens.Add("@name", "John Doe");  
 tokens.Add("@date", DateTime.Now.ToString());  
@@ -69,7 +69,7 @@ new SendMail
 ### <a name="sending-an-email-using-a-template"></a>Envoi d'un message électronique à l'aide d'un modèle  
  Cet extrait de code montre comment envoyer un message électronique à l'aide de jetons de modèle dans le corps. Notez que lorsque vous définissez la propriété `BodyTemplateFilePath`, il n'est pas nécessaire de fournir la valeur pour la propriété Body (le contenu du modèle sera copié dans le corps).  
   
-```  
+```csharp  
 new SendMail  
 {    
     From = new LambdaValue<MailAddress>(ctx => new MailAddress("john.doe@contoso.com")),  
@@ -84,9 +84,9 @@ new SendMail
 ```  
   
 ### <a name="sending-mails-in-testing-mode"></a>Envoi de messages électronique en mode Test  
- Cet extrait de code montre comment définir les deux propriétés de test: en `TestMailTo` définissant sur tous les messages seront `john.doe@contoso.con` envoyés à (sans tenir compte des valeurs de à, CC, CCI). En définissant TestDropPath, tous les messages électroniques sortants seront aussi enregistrés dans le chemin d'accès fourni. Ces propriétés peuvent être définies indépendamment (elles ne sont pas liées).  
+ Cet extrait de code montre comment définir les deux propriétés de test : en `TestMailTo` définissant sur tous les messages seront `john.doe@contoso.con` envoyés à (sans tenir compte des valeurs de à, CC, CCI). En définissant TestDropPath, tous les messages électroniques sortants seront aussi enregistrés dans le chemin d'accès fourni. Ces propriétés peuvent être définies indépendamment (elles ne sont pas liées).  
   
-```  
+```csharp  
 new SendMail  
 {    
    From = new LambdaValue<MailAddress>(ctx => new MailAddress("john.doe@contoso.com")),  
@@ -111,7 +111,7 @@ new SendMail
   
 - [Configuration du service SMTP (IIS 6,0)](https://go.microsoft.com/fwlink/?LinkId=150456)  
   
-- [IIS 7,0: Configurer la messagerie SMTP](https://go.microsoft.com/fwlink/?LinkId=150457)  
+- [IIS 7,0 : Configurer la messagerie SMTP](https://go.microsoft.com/fwlink/?LinkId=150457)  
   
 - [Comment installer le service SMTP](https://go.microsoft.com/fwlink/?LinkId=150458)  
   

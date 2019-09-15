@@ -2,12 +2,12 @@
 title: Expected Exceptions
 ms.date: 03/30/2017
 ms.assetid: 299a6987-ae6b-43c6-987f-12b034b583ae
-ms.openlocfilehash: 963606f4cfd34acb1c4400324cdbb318e3186103
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: a874b291202cb8c3c8752c13b357679c7fd5a556
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039698"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989977"
 ---
 # <a name="expected-exceptions"></a>Expected Exceptions
 Cet exemple montre comment intercepter des exceptions attendues lors de l'utilisation d'un client typé. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente un service de calculatrice. Dans cet exemple, le client est une application console (.exe) et le service est hébergé par les services IIS (Internet Information Services).  
@@ -54,7 +54,7 @@ catch (CommunicationException exception)
   
  Le processus client exécute deux scénarios, qui essaient tous deux d'appeler `Add` puis `Divide`. Le premier scénario simule un problème de réseau en abandonnant le client avant de faire appel à `Divide`. Le deuxième scénario provoque une condition de délai d'attente en définissant un délai d'attente trop court pour que la méthode se termine. Le processus client est censé donner le résultat suivant :  
   
-```  
+```output
 Add(100,15.99) = 115.99  
 Simulated network problem occurs...  
 Got System.ServiceModel.CommunicationObjectAbortedException  

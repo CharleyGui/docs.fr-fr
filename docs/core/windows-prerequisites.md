@@ -3,12 +3,12 @@ title: Configuration requise pour .NET Core sur Windows
 description: Découvrez les dépendances nécessaires sur votre machine Windows pour développer et exécuter des applications .NET Core.
 ms.custom: updateeachvsrelease
 ms.date: 04/08/2019
-ms.openlocfilehash: 82d336bc4efb34d336d5078952683c1673c3fa8a
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 7b2bf2b8353c4f02fa11e9e7531e0d936007be0b
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926036"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970284"
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Configuration requise pour .NET Core sur Windows
 
@@ -60,6 +60,8 @@ Vous devez installer [Microsoft Visual C++ 2015 Redistributable Update 3](https:
 Vous pouvez utiliser l’éditeur de votre choix pour développer des applications .NET Core à l’aide du Kit SDK .NET Core. Visual Studio 2017 fournit un environnement de développement intégré pour les applications .NET Core sur Windows.
 
 Vous trouverez plus d’informations sur les modifications apportées à Visual Studio 2017 dans les [notes de publication](/visualstudio/releasenotes/vs2017-relnotes).
+
+<!-- markdownlint-disable MD025 -->
 
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 

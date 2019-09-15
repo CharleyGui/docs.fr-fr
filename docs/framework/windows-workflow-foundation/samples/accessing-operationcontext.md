@@ -2,12 +2,12 @@
 title: Accès à OperationContext
 ms.date: 03/30/2017
 ms.assetid: 4e92efe8-7e79-41f3-b50e-bdc38b9f41f8
-ms.openlocfilehash: 8d1c8543180a282a1b196393e5823dc3686aa16e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: dea990e275125dc1cd2255b88e506d363c3ac78e
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038406"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989388"
 ---
 # <a name="accessing-operationcontext"></a>Accès à OperationContext
 Cet exemple montre comment les activités de messagerie<xref:System.ServiceModel.Activities.Receive> ( <xref:System.ServiceModel.Activities.Send>et) peuvent être utilisées avec une activité d’étendue personnalisée <xref:System.ServiceModel.OperationContext.Current%2A> pour accéder à et attacher ou récupérer un en-tête de message personnalisé dans un message sortant ou entrant.  
@@ -22,7 +22,7 @@ Cet exemple montre comment les activités de messagerie<xref:System.ServiceModel
   
 1. Cet exemple expose un service de workflow à l'aide de points de terminaison HTTP. Pour exécuter cet exemple, des listes de contrôle d’accès d’URL appropriées doivent être ajoutées (pour plus d’informations, consultez [configuration de http et HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353) ), soit en exécutant Visual Studio en tant qu’administrateur, soit en exécutant la commande suivante à une invite de commandes avec élévation de privilèges pour ajouter les listes de contrôle d’accès appropriées. Vérifiez que vos domaine et nom d'utilisateur sont substitués.  
   
-    ```  
+    ```console  
     netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%  
     ```  
   

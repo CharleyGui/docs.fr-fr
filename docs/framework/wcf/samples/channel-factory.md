@@ -2,12 +2,12 @@
 title: Fabrique de canaux
 ms.date: 03/30/2017
 ms.assetid: 09b53aa1-b13c-476c-a461-e82fcacd2a8b
-ms.openlocfilehash: cd56c47223f0c98e48bd92376c9bbe9db6d2202e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 9b754531059e367a8102a96cfb50b6147da84978
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045732"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990098"
 ---
 # <a name="channel-factory"></a>Fabrique de canaux
 
@@ -48,7 +48,7 @@ Pour fermer le canal, il faut d'abord le caster en une interface <xref:System.Se
 
 Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console du client. Appuyez sur ENTER dans la fenêtre de l'application pour fermer l'application cliente.
 
-```
+```console
 Add(100,15.99) = 115.99
 Subtract(145,76.54) = 68.46
 Multiply(9,81.25) = 731.25

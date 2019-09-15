@@ -2,12 +2,12 @@
 title: Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 description: Découvrez les options qui permettent d’orchestrer des microservices et des applications multiconteneurs pour fournir une scalabilité et une disponibilité élevées. Découvrez également les possibilités offertes par Azure Dev Spaces durant le développement du cycle de vie des applications Kubernetes.
 ms.date: 09/20/2018
-ms.openlocfilehash: 76fa68cee41f8d1f34ec399c346f457efae57151
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 9540ea3941e90b0f9ebfb79dff6f84bb368d0fb0
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68675026"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991160"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 
@@ -15,7 +15,7 @@ L’utilisation d’orchestrateurs pour les applications prêtes pour la product
 
 La figure 4-23 illustre un déploiement dans un cluster d’une application composée de plusieurs microservices (conteneurs).
 
-![Applications Docker composées dans un cluster : vous utilisez un conteneur pour chaque instance de service. Les conteneurs Docker sont des « unités de déploiement », et un conteneur est une instance de Docker. Un hôte gère de nombreux conteneurs.](./media/image23.png)
+![Applications Docker composées dans un cluster : vous utilisez un conteneur pour chaque instance de service. Les conteneurs d’ancrage sont des « unités de déploiement » et un conteneur est une instance d’un ancrage. Un hôte gère de nombreux conteneurs](./media/image23.png)
 
 **Figure 4-23**. Un cluster de conteneurs
 
@@ -35,7 +35,7 @@ Les concepts de cluster et de planificateur sont étroitement liés : les produi
 
 ## <a name="software-platforms-for-container-clustering-orchestration-and-scheduling"></a>Plateformes logicielles pour le clustering, l’orchestration et la planification de conteneurs
 
-### <a name="kubernetes"></a>Kubernetes
+### <a name="kubernetes"></a>kubernetes
 
 ![Logo Kubernetes](./media/image24.png)
 

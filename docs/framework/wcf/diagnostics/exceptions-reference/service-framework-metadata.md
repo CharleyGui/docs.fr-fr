@@ -2,12 +2,12 @@
 title: Métadonnées de l'infrastructure de service
 ms.date: 03/30/2017
 ms.assetid: 76afc73a-0770-4084-93f3-6701a757911e
-ms.openlocfilehash: f65f53ff99202275876fb6e3c431bc49ae2bd38b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f3e73df54b3389b2c9f27001953be147b27eb6f8
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780794"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991203"
 ---
 # <a name="service-framework-metadata"></a>Métadonnées de l'infrastructure de service
 Cette rubrique répertorie toutes les exceptions générées par les métadonnées d'infrastructure de service.  
@@ -18,7 +18,7 @@ Cette rubrique répertorie toutes les exceptions générées par les métadonné
 |-------------------|---------------------|  
 |AsyncEndCalledOnWrongChannel|Une méthode End asynchrone a été appelée sur le canal incorrect.|  
 |AsyncEndCalledWithAnIAsyncResult|Une méthode End asynchrone a été appelée avec un IAsyncResult à partir d'une méthode Begin différente.|  
-|AttemptedToGetContractTypeForButThatTypeIs1|Tentative effectuée en vue d'obtenir le type de contrat pour le spécifié, mais ce type n'est pas un élément ServiceContract et il n'hérite pas d'un tel élément.|  
+|AttemptedToGetContractTypeForButThatTypeIs1|Tentative d’obtenir le type de contrat pour le spécifié. Le type n’est pas un ServiceContract et n’hérite pas d’un ServiceContract.|  
 |CannotHaveTwoOperationsWithTheSameName3|Deux opérations dans le même contrat ne peuvent pas avoir le même nom. Les méthodes spécifiées du type spécifié ne respectent pas cette règle. Modifiez le nom d'une des opérations en modifiant le nom de la méthode ou en utilisant la propriété Name de l'attribut OperationContractAttribute.|  
 |CannotInheritTwoOperationsWithTheSameName3|Impossible d'hériter de deux opérations différentes portant le même nom. L'opération spécifiée des contrats spécifiés violent cette règle. Modifiez le nom d'une des opérations en modifiant le nom de la méthode ou en utilisant la propriété Name de l'attribut OperationContractAttribute.|  
 |CantCreateChannelWithManualAddressing|Impossible de créer un canal pour un contrat qui requiert une demande/réponse et une liaison qui requiert l'adressage manuel mais prend en charge uniquement la communication duplex.|  

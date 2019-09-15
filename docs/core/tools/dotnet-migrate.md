@@ -1,28 +1,21 @@
 ---
 title: Commande dotnet migrate
 description: La commande dotnet migrate permet de migrer un projet et l’ensemble de ses dépendances.
-ms.date: 06/26/2019
-ms.openlocfilehash: 86f11592e774da12b010886aaa1e30cee063fea6
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.date: 08/08/2019
+ms.openlocfilehash: 790c607070ff348ca7cfe30137268de18dcb0293
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70202534"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990428"
 ---
 # <a name="dotnet-migrate"></a>dotnet migrate
 
-**Cette rubrique s’applique à : ✓** SDK .NET Core 1.x et ultérieur
-
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
+**Cet article s’applique à : ✓** .net Core 1. x SDK **✓** .net Core 2. x SDK
 
 ## <a name="name"></a>Name
 
 `dotnet migrate` : migre un projet .NET Core Preview 2 vers un projet de style SDK .NET Core.
-
-> [!NOTE]
-> `dotnet migrate` sera retiré du SDK .NET Core 3.0 dans la prochaine préversion.
 
 ## <a name="synopsis"></a>Résumé
 
@@ -49,6 +42,8 @@ La commande `dotnet migrate` conserve le fichier *project.json* migré dans un r
 Par défaut, l’opération de migration affiche l’état du processus de migration dans la sortie standard (STDOUT). Si vous utilisez l’option `--report-file <REPORT_FILE>`, la sortie est enregistrée dans le fichier spécifié.
 
 La commande `dotnet migrate` prend en charge uniquement les projets *project.json* Preview 2 valides. Cela signifie que vous ne pouvez pas l’utiliser pour migrer des projets *project.json* DNX ou Preview 1 directement vers des projets MSBuild/csproj. Vous devez tout d’abord migrer manuellement le projet vers un projet *project.json* Preview 2, puis utiliser la commande `dotnet migrate` pour migrer le projet.
+
+La `dotnet migrate` commande n’est plus disponible à partir du kit de développement logiciel (SDK) .net Core 3,0.
 
 ## <a name="arguments"></a>Arguments
 

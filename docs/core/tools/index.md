@@ -3,12 +3,12 @@ title: Outils de l’interface de ligne de commande (CLI) de .NET Core
 description: Présentation des outils et fonctionnalités de l’interface de ligne de commande (CLI) de .NET Core.
 ms.date: 08/14/2017
 ms.custom: seodec18
-ms.openlocfilehash: 20a083f3e7496521243bebd6585a48c8a562c548
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 50d1bbdd87ecd275b97603a1b47c6f13f879365a
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105045"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969879"
 ---
 # <a name="net-core-command-line-interface-cli-tools"></a>Outils de l’interface de ligne de commande (CLI) de .NET Core
 
@@ -27,11 +27,13 @@ Par défaut, l’interface CLI s’installe en parallèle (SxS) et plusieurs ver
 
 Les commandes suivantes sont installées par défaut :
 
+<!-- markdownlint-disable MD025 -->
+
 # <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 **Commandes de base**
 
-- [new](dotnet-new.md)
+- [nouveau](dotnet-new.md)
 - [restore](dotnet-restore.md)
 - [build](dotnet-build.md)
 - [publish](dotnet-publish.md)
@@ -65,7 +67,7 @@ Les commandes suivantes sont installées par défaut :
 
 **Commandes de base**
 
-- [new](dotnet-new.md)
+- [nouveau](dotnet-new.md)
 - [restore](dotnet-restore.md)
 - [build](dotnet-build.md)
 - [publish](dotnet-publish.md)
@@ -126,7 +128,7 @@ Le pilote s’intitule [dotnet](dotnet.md) et gère deux tâches : l’exécutio
 
 Pour exécuter une application dépendant du framework, spécifiez l’application après le pilote, par exemple `dotnet /path/to/my_app.dll`. Lors de l’exécution de la commande à partir du dossier où se trouve la DLL de l’application, vous devez simplement exécuter `dotnet my_app.dll`. Si vous souhaitez utiliser une version spécifique de .NET Core Runtime, choisissez l’option `--fx-version <VERSION>` (voir la référence [dotnet command](dotnet.md)).
 
-Lorsque vous fournissez une commande au pilote, `dotnet.exe` démarre le processus d’exécution de la commande CLI. Par exemple :
+Lorsque vous fournissez une commande au pilote, `dotnet.exe` démarre le processus d’exécution de la commande CLI. Par exemple :
 
 ```bash
 > dotnet build

@@ -2,12 +2,12 @@
 title: Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 description: Les véritables applications de production doivent être déployées et gérées avec des orchestrateurs qui gèrent l’intégrité, la charge de travail et les cycles de vie de tous les conteneurs.
 ms.date: 02/15/2019
-ms.openlocfilehash: 8c1161127eb6b239384444c369de7f11abd3d424
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 8f2cef774acde47e9a1bb4680342b5e2c66ac154
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70373690"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990497"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 
@@ -15,7 +15,7 @@ L’utilisation d’orchestrateurs pour les applications prêtes pour la product
 
 La figure 4-6 illustre un déploiement dans un cluster d’une application composée de plusieurs microservices (conteneurs).
 
-![Applications Docker composées dans un cluster : vous utilisez un conteneur pour chaque instance de service. Les conteneurs Docker sont des « unités de déploiement », et un conteneur est une instance de Docker. Un hôte gère de nombreux conteneurs.](./media/image6.png)
+![Applications Docker composées dans un cluster : vous utilisez un conteneur pour chaque instance de service. Les conteneurs d’ancrage sont des « unités de déploiement » et un conteneur est une instance d’un ancrage. Un hôte gère de nombreux conteneurs](./media/image6.png)
 
 **Figure 4-6**. Un cluster de conteneurs
 

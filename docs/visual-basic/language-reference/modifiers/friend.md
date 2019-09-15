@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Protected Friend keyword combination
 - Friend keyword [Visual Basic], and Protected
 ms.assetid: b664605e-1c79-4728-b996-aa59c50846bc
-ms.openlocfilehash: 3e30267c8aa11ce97b3b3064ff0954378dab57af
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 2a5a2d6b9d99693a551480fa047cedf42888fdf3
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69959798"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969050"
 ---
 # <a name="friend-visual-basic"></a>Friend (Visual Basic)
 Spécifie qu’un ou plusieurs éléments de programmation déclarés sont accessibles uniquement à partir de l’assembly qui contient leur déclaration.  
@@ -27,7 +27,7 @@ Spécifie qu’un ou plusieurs éléments de programmation déclarés sont acces
   
  `Friend`l’accès est souvent le niveau préféré pour les éléments de programmation d’une `Friend` application, et est le niveau d’accès par défaut d’une interface, d’un module, d’une classe ou d’une structure.  
   
- Vous pouvez utiliser `Friend` uniquement au niveau du module, de l’interface ou de l’espace de noms. Par conséquent, le contexte de Déclaration `Friend` pour un élément doit être un fichier source, un espace de noms, une interface, un module, une classe ou une structure; il ne peut pas s’agir d’une procédure.  
+ Vous pouvez utiliser `Friend` uniquement au niveau du module, de l’interface ou de l’espace de noms. Par conséquent, le contexte de Déclaration `Friend` pour un élément doit être un fichier source, un espace de noms, une interface, un module, une classe ou une structure ; il ne peut pas s’agir d’une procédure.  
 
 > [!NOTE]
 > Vous pouvez également utiliser le modificateur d’accès [Protected Friend](protected-friend.md) , qui rend un membre de classe accessible à partir de cette classe, des classes dérivées et du même assembly dans lequel la classe est définie. Pour restreindre l’accès à un membre à partir de sa classe et à partir de classes dérivées dans le même assembly, vous utilisez le modificateur d’accès [protected Private](private-protected.md) .
@@ -35,15 +35,15 @@ Spécifie qu’un ou plusieurs éléments de programmation déclarés sont acces
  Pour une comparaison de `Friend` et des autres modificateurs d’accès, consultez [niveaux d’accès dans Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
 > [!NOTE]
-> Vous pouvez spécifier qu’un autre assembly est un assembly friend, ce qui lui permet d’accéder à tous les types `Friend`et membres marqués comme. Pour plus d’informations, consultez [Assemblys friend](../../../standard/assembly/friend-assemblies.md).  
-  
+> Vous pouvez spécifier qu’un autre assembly est un assembly friend, ce qui lui permet d’accéder à tous les types `Friend`et membres marqués comme. Pour plus d’informations, consultez [Assemblys friend](../../../standard/assembly/friend.md).
+
 ## <a name="example"></a>Exemple  
  La classe suivante utilise le `Friend` modificateur pour permettre à d’autres éléments de programmation dans le même assembly d’accéder à certains membres.  
   
  [!code-vb[VbVbalrAccessModifiers#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalraccessmodifiers/vb/class1.vb#1)]  
   
 ## <a name="usage"></a>Usage  
- Vous pouvez utiliser le `Friend` modificateur dans ces contextes:  
+ Vous pouvez utiliser le `Friend` modificateur dans ces contextes :  
   
  [Class (instruction)](../../../visual-basic/language-reference/statements/class-statement.md)  
   

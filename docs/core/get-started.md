@@ -4,12 +4,12 @@ description: Découvrez des ressources qui vous apprendront à créer des applic
 author: thraka
 ms.author: adegeo
 ms.date: 06/27/2018
-ms.openlocfilehash: 5c45364cfe725d47cbb6108cd9d6ec9f981cef25
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 3c530c71d1cfa9d0c4cf09f38519970f6ef8da51
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70849124"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969896"
 ---
 # <a name="get-started-with-net-core"></a>Bien démarrer avec .NET Core
 
@@ -39,6 +39,8 @@ Félicitations ! Vous avez créé une application .NET Core simple. Vous pouvez
 ## <a name="tutorials"></a>Tutoriels
 
 Vous pouvez commencer à développer des applications .NET Core en suivant ces tutoriels pas à pas.
+
+<!-- markdownlint-disable MD025 -->
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 

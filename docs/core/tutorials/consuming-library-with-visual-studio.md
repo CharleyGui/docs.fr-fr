@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: ff60bb5de403970f432e938cba81ca4e99476e8a
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 31a9183f541afa5365862b1e89704354cf7bd527
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70925987"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969296"
 ---
 # <a name="consume-a-net-standard-library-in-visual-studio-2017"></a>Consommer une bibliothèque .NET Standard dans Visual Studio 2017
 
@@ -26,6 +26,8 @@ Une fois que vous avez créé une bibliothèque de classes .NET Standard en suiv
 ## <a name="including-a-library-as-a-project-in-a-solution"></a>Inclusion d’une bibliothèque en tant que projet dans une solution
 
 Tout comme vous avez inclus des tests unitaires dans la même solution que votre bibliothèque de classes, vous pouvez inclure votre application dans le cadre de cette solution. Par exemple, vous pouvez utiliser votre bibliothèque de classes dans une application console qui invite l’utilisateur à entrer une chaîne et indique si son premier caractère est une majuscule :
+
+<!-- markdownlint-disable MD025 -->
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 

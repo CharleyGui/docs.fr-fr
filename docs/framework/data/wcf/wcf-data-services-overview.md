@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services
 - WCF Data Services, about
 ms.assetid: 7924cf94-c9a6-4015-afc9-f5d22b1743bb
-ms.openlocfilehash: 66dd61210e36210f5444eb05355612eeb75c155a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: bca07bf776f20443c4ccd2af69fc8c0b4eec5a88
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790240"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991100"
 ---
 # <a name="wcf-data-services-overview"></a>Vue d'ensemble des services de données WCF
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]permet la création et la consommation de services de données pour le Web ou un intranet [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]à l’aide du. [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]vous permet d’exposer vos données en tant que ressources adressables par des URI. Cela vous permet d'accéder et de modifier des données en utilisant la sémantique REST (Representational State Transfer), en particulier les verbes HTTP standard GET, PUT, POST et DELETE. Cette rubrique fournit une vue d'ensemble des modèles et des pratiques définies par [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)], ainsi que des outils fournis par [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] pour tirer parti d'[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] dans les applications basées sur .NET Framework.  
@@ -18,9 +18,9 @@ ms.locfileid: "70790240"
 ## <a name="address-data-as-resources"></a>Adresser des données comme ressources  
  [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] expose des données comme des ressources adressables par des URI. Les chemins d'accès aux ressources sont construits selon les conventions de relation d'entité de l'Entity Data Model. Dans ce modèle, les entités représentent des unités opérationnelles de données dans un domaine d’application, telles que les clients, les commandes, les articles et les produits. Pour plus d’informations, consultez [Entity Data Model](../adonet/entity-data-model.md).  
   
- Dans [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)], vous adressez des ressources d'entité comme un jeu d'entités qui contient des instances de types d'entité. Par exemple, l’URI `http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders` retourne toutes les commandes `Northwind` du service de données qui sont liées `CustomerID` au client dont la valeur est`ALFKI.`  
+ Dans [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)], vous adressez des ressources d'entité comme un jeu d'entités qui contient des instances de types d'entité. Par exemple, l’URI <https://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders> retourne toutes les commandes `Northwind` du service de données qui sont liées `CustomerID` au client dont la valeur est`ALFKI.`  
   
- Les expressions de requête vous permettent d'effectuer des opérations de requête traditionnelles sur des ressources, telles que filtrer, trier et paginer. Par exemple, l'URI `http://services.odata.org/Northwind/Northwind.svc/Customers('ALFKI')/Orders?$filter=Freight gt 50` filtre les ressources de façon à retourner uniquement les commandes dont le coût de fret est supérieur à 50 $. Pour plus d’informations, consultez [accès aux ressources du service de données](accessing-data-service-resources-wcf-data-services.md).  
+ Les expressions de requête vous permettent d'effectuer des opérations de requête traditionnelles sur des ressources, telles que filtrer, trier et paginer. Par exemple, l’URI <https://services.odata.org/Northwind/Northwind.svc/Customers( « ALFKI »)/Orders ? $filter = Freight gt 50 > filtre les ressources pour retourner uniquement les commandes dont le coût de fret est supérieur à $50. Pour plus d’informations, consultez [accès aux ressources du service de données](accessing-data-service-resources-wcf-data-services.md).  
   
 ## <a name="interoperable-data-access"></a>Accès aux données interopérables  
  [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]s’appuie sur les protocoles Internet standard pour rendre les services de données interopérables avec les applications qui n’utilisent pas le .NET Framework. Étant donné que vous pouvez utiliser des URI standard pour adresser des données, votre application peut accéder aux données et les modifier à l’aide de la sémantique de representational state transfer (REST), en particulier les verbes HTTP standard de la requête d’extraction, de placement, de publication et de suppression. De cette manière, vous pouvez accéder à ces services depuis tout client qui peut analyser et accéder aux données transmises sur des protocoles HTTP standard.  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 5419011c-6e57-40f6-8c65-386db8f7a651
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5d88da9a043aa2ed75b25f1c59fa991b97576d52
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 4fff2d3309e5f8872a9333bf3d2f86e52bd67ea5
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894202"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971778"
 ---
 # <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a>Procédure : générer des assemblys PIA à l’aide de Tlbimp.exe
 
@@ -33,7 +33,7 @@ Il existe deux manières de générer un assembly PIA :
 
 - Par la création manuelle d'assemblys PIA dans le code source avec un langage conforme à la spécification CLS, tel que le C#. Cette approche est utile quand aucune bibliothèque de types n'est disponible.
 
-Pour signer un assembly avec un nom fort, vous devez avoir une paire de clés de chiffrement. Pour plus d’informations, consultez [Création d’une paire de clés](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md).
+Pour signer un assembly avec un nom fort, vous devez avoir une paire de clés de chiffrement. Pour plus d’informations, consultez [Création d’une paire de clés](../../standard/assembly/create-public-private-key-pair.md).
 
 ### <a name="to-generate-a-primary-interop-assembly-using-tlbimpexe"></a>Pour générer des assemblys PIA à l'aide de Tlbimp.exe
 
@@ -49,7 +49,7 @@ Un assembly PIA avec un numéro de version différent de celui de la bibliothè
 
 Vous pouvez également encapsuler plusieurs versions d'une bibliothèque de types. Pour obtenir des instructions, consultez [Guide pratique pour encapsuler plusieurs versions de bibliothèques de types](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1565h6hc(v=vs.100)).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a>Exemples
 
 Dans l'exemple suivant, la bibliothèque de types COM `LibUtil.tlb` est importée et l'assembly `LibUtil.dll` est signé avec un nom fort à l'aide du fichier de clé `CompanyA.snk`. En ne spécifiant pas de nom d'espace de noms, cet exemple génère l'espace de noms par défaut `LibUtil`.
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# Language, access modifiers
 - access modifiers [C#], about
 ms.assetid: 6e81ee82-224f-4a12-9baf-a0dca2656c5b
-ms.openlocfilehash: 266ece1e63bf6d32bf59406dbc72a9e6bd92eb45
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: b415bf143e7da46b3ecd2c0828a3f8151878435a
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924550"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971682"
 ---
 # <a name="access-modifiers-c-programming-guide"></a>Modificateurs d’accès (Guide de programmation C#)
 Tous les types et membres de type ont un niveau d’accessibilité, qui détermine s’ils peuvent être utilisés à partir d’un autre code de votre assembly ou d’autres assemblys. Utilisez les modificateurs d’accès suivants pour spécifier l’accessibilité d’un type ou d’un membre au moment où vous le déclarez :  
@@ -44,7 +44,7 @@ Tous les types et membres de type ont un niveau d’accessibilité, qui détermi
   
  Les classes dérivées ne peuvent pas avoir une accessibilité supérieure à celle de leurs types de base. Vous ne pouvez donc pas avoir une classe public `B` qui dérive d’une classe internal `A`. Si cela était autorisé, cela aurait pour effet de rendre `A` public, car tous les membres protected ou internal de `A` seraient accessibles à partir de la classe dérivée.  
   
- Vous pouvez utiliser InternalsVisibleToAttribute pour autoriser d’autres assemblys spécifiques à accéder à vos types internal. Pour plus d’informations, consultez [Assemblys friend](../../../standard/assembly/friend-assemblies.md).  
+ Vous pouvez utiliser InternalsVisibleToAttribute pour autoriser d’autres assemblys spécifiques à accéder à vos types internal. Pour plus d’informations, consultez [Assemblys friend](../../../standard/assembly/friend.md).  
   
 ## <a name="class-and-struct-member-accessibility"></a>Accessibilité des membres de classe et de struct  
  Vous pouvez déclarer les membres de classe (notamment les classes et structs imbriqués) avec l’un des six types d’accès. Les membres de struct ne peuvent pas être déclarés comme protected, car les structs ne prennent pas en charge l’héritage.  

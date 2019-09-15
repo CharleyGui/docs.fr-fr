@@ -24,12 +24,12 @@ helpviewer_keywords:
 - configuration files [.NET Framework], machine
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
-ms.openlocfilehash: 28a06139275f63571d9528d075946d97a19c9f3c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: b2da9600e6947a1efcb13fc8b1127665cea63071
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912881"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70972200"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>Configuration des applications à l'aide de fichiers de configuration
 Le .NET Framework, par le biais de fichiers de configuration, permet aux développeurs et administrateurs de contrôler la façon dont les applications s'exécutent avec la souplesse requise. Les fichiers de configuration sont des fichiers XML qui peuvent être modifiés selon les besoins. Un administrateur peut exercer un contrôle sur les ressources protégées auxquelles une application peut accéder, les versions d'assemblys utilisées par une application et l'endroit où sont situés les applications et objets distants. Les développeurs peuvent stocker des paramètres dans des fichiers de configuration, de façon à ce qu'il ne leur soit pas nécessaire de recompiler une application chaque fois qu'un paramètre change. Cette section décrit les éléments qui peuvent être configurés et explique en quoi la configuration d'une application peut se révéler utile.  
@@ -127,4 +127,4 @@ Le .NET Framework, par le biais de fichiers de configuration, permet aux dévelo
 - [Administration de site web ASP.NET](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/6hy1xzbw(v=vs.90))
 - [Gestion des stratégies de sécurité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))
 - [Caspol.exe (outil de stratégie de sécurité d’accès du code)](../tools/caspol-exe-code-access-security-policy-tool.md)
-- [Assemblys dans le Common Language Runtime](../app-domains/assemblies-in-the-common-language-runtime.md)
+- [Assemblys dans .NET](../../standard/assembly/index.md)

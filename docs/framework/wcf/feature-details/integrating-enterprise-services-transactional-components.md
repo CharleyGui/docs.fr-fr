@@ -2,15 +2,15 @@
 title: Intégration de composants transactionnels Enterprise Services
 ms.date: 03/30/2017
 ms.assetid: 05dab277-b8b2-48cf-b40c-826be128b175
-ms.openlocfilehash: 682bf5b92a5e01391766d614e955954019a4ce8d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c73be31bef67f1de818f7b04181a3540bbd7caa8
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638670"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991547"
 ---
 # <a name="integrating-enterprise-services-transactional-components"></a>Intégration de composants transactionnels Enterprise Services
-Windows Communication Foundation (WCF) fournit un mécanisme automatique pour l’intégration avec les Services d’entreprise (consultez [l’intégration à des Applications COM +](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)). Cependant, vous préférez peut-être pouvoir développer des services utilisant en interne des composants transactionnels hébergés par Enterprise Services. Étant donné que la fonctionnalité des Transactions de WCF s’appuie sur le <xref:System.Transactions> infrastructure, le processus d’intégration des Services d’entreprise avec WCF est identique à celle permettant de spécifier l’interopérabilité entre <xref:System.Transactions> Enterprise Services, comme indiqué dans [L’interopérabilité avec Enterprise Services et les Transactions COM +](https://go.microsoft.com/fwlink/?LinkId=94949).  
+Windows Communication Foundation (WCF) fournit un mécanisme automatique pour l’intégration à Enterprise Services (voir [intégration aux applications com+](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)). Cependant, vous préférez peut-être pouvoir développer des services utilisant en interne des composants transactionnels hébergés par Enterprise Services. Étant donné que la fonctionnalité des transactions WCF repose <xref:System.Transactions> sur l’infrastructure, le processus d’intégration de services d’entreprise avec WCF est identique à celui de <xref:System.Transactions> la spécification de l’interopérabilité entre et les services d’entreprise, comme indiqué dans [Interopérabilité avec Enterprise Services et les transactions com+](https://go.microsoft.com/fwlink/?LinkId=94949).  
   
  Afin d’offrir un niveau d’interopérabilité suffisant entre les transactions entrantes et les transactions de contexte COM+, l’implémentation de service doit créer une instance <xref:System.Transactions.TransactionScope> et utiliser la valeur appropriée de l’énumération <xref:System.Transactions.EnterpriseServicesInteropOption>.  
   
@@ -23,7 +23,7 @@ Windows Communication Foundation (WCF) fournit un mécanisme automatique pour l�
   
  Tous les appels de méthode supplémentaires se produisent également dans les limites de portée de transaction de la même opération.  
   
-```  
+```csharp
 [ServiceContract()]  
 public interface ICustomerServiceContract  
 {  
@@ -64,7 +64,7 @@ public class CustomerService : ICustomerServiceContract
 ## <a name="integrating-enterprise-services-with-a-client"></a>Intégration des composants Enterprise Services à un client  
  L'exemple de code suivant contient un code client qui utilise une instance <xref:System.Transactions.TransactionScope> avec le paramètre <xref:System.Transactions.EnterpriseServicesInteropOption.Full>. Dans cet exemple de code, les appels aux opérations de service qui prennent en charge le transfert des transactions se produisent dans les mêmes limites de portée de transaction que les appels aux composants Enterprise Services, leurs transactions étant identiques.  
   
-```  
+```csharp
 static void Main()  
 {  
     // Create a client  

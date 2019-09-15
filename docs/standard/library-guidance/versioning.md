@@ -4,12 +4,12 @@ description: Meilleures pratiques recommandées pour la gestion de version des b
 author: jamesnk
 ms.author: mairaw
 ms.date: 12/10/2018
-ms.openlocfilehash: e6f811039f74649564cbfb42ef67e0a406e4cd70
-ms.sourcegitcommit: e39d93d358974b9ed4541cedf4e25c0101015c3c
-ms.translationtype: HT
+ms.openlocfilehash: 9250e48707c0ea72cdf8bef9663f5a3516309b86
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55204741"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969010"
 ---
 # <a name="versioning"></a>Gestion de version
 
@@ -53,7 +53,7 @@ La version d’assembly correspond à ce que le CLR utilise lors de l’exécuti
 
 Le Kit de développement Windows .NET Framework CLR exige une correspondance exacte pour charger un assembly avec un nom fort. Par exemple, `Libary1, Version=1.0.0.0` a été compilé avec une référence à `Newtonsoft.Json, Version=11.0.0.0`. L’infrastructure .NET Framework chargera uniquement cette version particulière `11.0.0.0`. Pour charger une version différente lors de l’exécution, une redirection de liaison doit être ajoutée au fichier de configuration de l’application .NET.
 
-Les noms forts combinés avec la version de l’assembly permet un [chargement strict de la version d’assembly](../../framework/app-domains/assembly-versioning.md). Même si l’utilisation d’un nom fort pour une bibliothèque présente plusieurs avantages, cela génère souvent des exceptions d’exécution indiquant qu’un assembly est introuvable, et [nécessite des redirections de liaison](../../framework/configure-apps/redirect-assembly-versions.md) dans `app.config`/`web.config` pour corriger le problème. Le chargement d’assembly .NET Core a été simplifié, et le CLR .NET Core chargera automatiquement les assemblys lors de l’exécution avec une version ultérieure.
+Les noms forts combinés avec la version de l’assembly permet un [chargement strict de la version d’assembly](../assembly/versioning.md). Même si l’utilisation d’un nom fort pour une bibliothèque présente plusieurs avantages, cela génère souvent des exceptions d’exécution indiquant qu’un assembly est introuvable, et [nécessite des redirections de liaison](../../framework/configure-apps/redirect-assembly-versions.md) dans `app.config`/`web.config` pour corriger le problème. Le chargement d’assembly .NET Core a été simplifié, et le CLR .NET Core chargera automatiquement les assemblys lors de l’exécution avec une version ultérieure.
 
 **✔️ À ENVISAGER** : Inclure uniquement une version majeure dans AssemblyVersion.
 

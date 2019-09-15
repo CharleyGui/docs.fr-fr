@@ -2,12 +2,12 @@
 title: JSONP
 ms.date: 03/30/2017
 ms.assetid: c13b4d7b-dac7-4ffd-9f84-765c903511e1
-ms.openlocfilehash: 9f24ccb5ba14e0b43f0e3f911a1672db5821d228
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 1fc85838d7491f94b8da1e0ab458d6d021cd2b32
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039555"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989776"
 ---
 # <a name="jsonp"></a>JSONP
 Cet exemple montre comment prendre en charge JSON with Padding (JSONP) dans les services WCF REST. JSONP est une convention servant à appeler des scripts entre domaines en générant des balises de script dans le document actif. Le résultat est retourné dans une fonction de rappel spécifiée. JSONP repose sur l’idée que des balises telles `<script src="http://..." >` que peuvent évaluer des scripts de n’importe quel domaine et que le script récupéré par ces balises est évalué dans une étendue dans laquelle d’autres fonctions peuvent déjà être définies.
@@ -39,19 +39,19 @@ proxy.GetCustomer(onSuccess, onFail, null);
 
  ScriptManager gère l'interaction avec le service et cache la complexité de l'implémentation manuelle de l'accès JSONP. Lorsque `crossDomainScriptAccessEnabled` a la `true` valeur et que le format de la réponse d’une opération est JSON, l’infrastructure WCF inspecte l’URI de la demande pour un paramètre de chaîne de requête de rappel et encapsule la réponse JSON avec la valeur de la chaîne de requête de rappel. paramètre. Dans l'exemple, la page Web appelle le service WCF REST avec l'URI suivant.
 
-```
+```http
 http://localhost:33695/CustomerService/GetCustomer?callback=Sys._json0
 ```
 
  Étant donné que le paramètre de chaîne de requête de rappel a la valeur `JsonPCallback`, le service WCF retourne une réponse JSONP représentée dans l'exemple suivant.
 
-```
+```json
 Sys._json0({"__type":"Customer:#Microsoft.Samples.Jsonp","Address":"1 Example Way","Name":"Bob"});
 ```
 
  Cette réponse JSONP inclut les données client mises au format JSON et encapsulées avec le nom de la fonction de rappel que la page web a demandée. ScriptManager exécute ce rappel à l'aide d'une balise de script pour effectuer la demande entre domaines, puis passe le résultat au gestionnaire onSuccess qui a été passé à l'opération GetCustomer du proxy ASP.NET AJAX.
 
- L’exemple se compose de deux applications Web ASP.NET: l’une contient uniquement un service WCF, tandis que l’autre contient la page Web. aspx, qui appelle le service. Lors de l’exécution de la solution, Visual Studio 2012 héberge les deux sites Web sur des ports différents, ce qui crée un environnement dans lequel le service et le client se trouvent sur des domaines différents.
+ L’exemple se compose de deux applications Web ASP.NET : l’une contient uniquement un service WCF, tandis que l’autre contient la page Web. aspx, qui appelle le service. Lors de l’exécution de la solution, Visual Studio 2012 héberge les deux sites Web sur des ports différents, ce qui crée un environnement dans lequel le service et le client se trouvent sur des domaines différents.
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
@@ -68,4 +68,4 @@ Sys._json0({"__type":"Customer:#Microsoft.Samples.Jsonp","Address":"1 Example Wa
   
 2. Appuyez sur F5 pour `http://localhost:26648/JSONPClientPage.aspx` lancer dans le navigateur.  
   
-3. Notez qu’après le chargement de la page, les entrées de texte pour «name» et «Address» sont renseignées par des valeurs.  Ces valeurs ont été fournies par un appel au service WCF une fois que le navigateur a terminé le rendu de la page.
+3. Notez qu’après le chargement de la page, les entrées de texte pour « name » et « Address » sont renseignées par des valeurs.  Ces valeurs ont été fournies par un appel au service WCF une fois que le navigateur a terminé le rendu de la page.

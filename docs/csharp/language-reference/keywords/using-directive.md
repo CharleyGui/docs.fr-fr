@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - using directive [C#]
 ms.assetid: b42b8e61-5e7e-439c-bb71-370094b44ae8
-ms.openlocfilehash: 072af9850f792cb6d7322724f2adbc978465dc84
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
-ms.translationtype: HT
+ms.openlocfilehash: d6e3667861c2b1ac9a84ca7b4e2cabb5784d793d
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66421740"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970057"
 ---
 # <a name="using-directive-c-reference"></a>using, directive (référence C#)
 
@@ -54,7 +54,7 @@ class Program
 }
 ```
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 La portée d'une directive `using` se limite au fichier dans lequel elle apparaît.
 
@@ -75,8 +75,6 @@ using s.RegularExpressions;
 Créez une directive `using` pour utiliser les types dans un espace de noms sans avoir à spécifier l'espace de noms. Une directive `using` ne vous donne pas accès à des espaces de noms imbriqués dans l'espace de noms que vous spécifiez.
 
 Les espaces de noms sont organisés en deux catégories : définis par l'utilisateur et définis par le système. Les espaces de noms définis par l'utilisateur sont des espaces de noms définis dans votre code. Pour obtenir la liste des espaces de noms définis par le système, consultez [Navigateur d’API .NET](../../../../api/index.md).
-
-Pour obtenir des exemples de référencement de méthodes dans d’autres assemblys, consultez [Créer et utiliser des assemblys avec la ligne de commande](../../programming-guide/concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md).
 
 ## <a name="example-1"></a>Exemple 1
 

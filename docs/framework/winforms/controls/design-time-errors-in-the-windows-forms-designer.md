@@ -11,12 +11,12 @@ ms.assetid: ad408380-825a-46d8-9a4a-531b130b88ce
 author: gewarren
 ms.author: gewarren
 manager: jillfra
-ms.openlocfilehash: 96ec50e5d3aca2aa24d68d565a35ec7687df2a2e
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 3e2366513183337c3c5dd05ff45f8a6f724deaae
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70893240"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70988440"
 ---
 # <a name="windows-forms-designer-error-page"></a>Page d’erreur Concepteur Windows Forms
 
@@ -33,6 +33,7 @@ Lorsque la barre d’erreur jaune est développée, chaque instance de l’erreu
 ![Erreur Concepteur Windows Forms développée](media/windows-forms-designer-error-page-expanded.png)
 
 > [!NOTE]
+>
 > - Pour les applications Visual Basic, la page d’erreurs au moment du design n’affiche pas plus d’une erreur, mais elle peut afficher plusieurs instances de la même erreur.
 > - Pour C++ les applications, les erreurs n’ont pas de liens d’emplacement du code.
 

@@ -2,12 +2,12 @@
 title: 'Procédure : créer un service de workflow qui consomme un contrat de service existant'
 ms.date: 03/30/2017
 ms.assetid: 11d11b59-acc4-48bf-8e4b-e97b516aa0a9
-ms.openlocfilehash: f25e71aec03f9808b3263f0353328f92888ccc69
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6d7fa8c9faa84efc84243387cd27aa264f6155eb
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962318"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989625"
 ---
 # <a name="how-to-create-a-workflow-service-that-consumes-an-existing-service-contract"></a>Procédure : créer un service de workflow qui consomme un contrat de service existant
 .NET Framework 4,5 offre une meilleure intégration entre les services Web et les workflows sous la forme d’un développement de workflow contrat en premier. L'outil de développement de workflow Contrat en premier vous permet de concevoir le contrat dans le code en premier. L'outil génère automatiquement un modèle d'activité dans la boîte à outils pour les opérations du contrat.  
@@ -27,13 +27,13 @@ ms.locfileid: "69962318"
   
 2. En haut de la fenêtre de code qui apparaît, ajoutez une instruction Using à `System.Servicemodel`.  
   
-    ```  
+    ```csharp  
     using System.ServiceModel;  
     ```  
   
 3. Remplacez la définition d'exemple de classe par la définition d'interface suivante.  
   
-    ```  
+    ```csharp  
     [ServiceContract]  
         public interface IBookService  
         {  

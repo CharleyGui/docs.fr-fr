@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2e4e3b1768086a1c57979a4c74643036294299a3
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: c9f7a0bc3a7a41a77db3c90c2f88fb5ddfd7bfa0
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70787752"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971073"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>Versions et dépendances de .NET Framework
 Chaque version du .NET Framework contient le Common Language Runtime (CLR), les bibliothèques de classes de base et d'autres bibliothèques managées. Cette rubrique décrit les principales fonctionnalités du .NET Framework par version, fournit des informations sur les versions CLR sous-jacentes et les environnements de développement associés, et identifie les versions installées par le système d'exploitation Windows.  
@@ -68,7 +68,7 @@ Chaque version du .NET Framework contient le Common Language Runtime (CLR), les 
   
 ## <a name="targeting-and-running-apps-for-older-versions"></a>Ciblage et exécution d'applications pour les versions antérieures  
 
-Les versions .NET Framework 2.0, 3.0 et 3.5 sont générées avec la même version du CLR (CLR 2.0). Ces versions représentent les couches successives d'une même installation. Chaque version est générée de façon incrémentielle par-dessus les versions antérieures. Il n'est pas possible d'exécuter les versions 2.0, 3.0 et 3.5 côte à côte sur un ordinateur. Lorsque vous installez la version 3.5, vous obtenez automatiquement les couches 2.0 et 3.0, si bien que les applications conçues pour les versions 2.0, 3.0 et 3.5 peuvent toutes s'exécuter sur la version 3.5. Toutefois, .NET Framework 4 met fin à cette approche en couches et représente, ainsi que ses versions ultérieures (.NET Framework 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2 et 4.8), les couches successives d’une même installation.  Depuis .NET Framework 4, vous pouvez utiliser l’hébergement côte à côte in-process pour exécuter plusieurs versions du CLR dans un processus unique. Pour plus d’informations, consultez [Assemblys et exécution côte à côte](../app-domains/assemblies-and-side-by-side-execution.md).  
+Les versions .NET Framework 2.0, 3.0 et 3.5 sont générées avec la même version du CLR (CLR 2.0). Ces versions représentent les couches successives d'une même installation. Chaque version est générée de façon incrémentielle par-dessus les versions antérieures. Il n'est pas possible d'exécuter les versions 2.0, 3.0 et 3.5 côte à côte sur un ordinateur. Lorsque vous installez la version 3.5, vous obtenez automatiquement les couches 2.0 et 3.0, si bien que les applications conçues pour les versions 2.0, 3.0 et 3.5 peuvent toutes s'exécuter sur la version 3.5. Toutefois, .NET Framework 4 met fin à cette approche en couches et représente, ainsi que ses versions ultérieures (.NET Framework 4.5, 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1, 4.7.2 et 4.8), les couches successives d’une même installation.  Depuis .NET Framework 4, vous pouvez utiliser l’hébergement côte à côte in-process pour exécuter plusieurs versions du CLR dans un processus unique. Pour plus d’informations, consultez [Assemblys et exécution côte à côte](../../standard/assembly/side-by-side-execution.md).  
   
  De plus, si votre application cible la version 2.0, 3.0 ou 3.5, vos utilisateurs devront peut-être activer .NET Framework 3.5 sur un ordinateur Windows 8, Windows 8.1 ou Windows 10 avant de pouvoir exécuter votre application. Pour plus d’informations, consultez [Installer le .NET Framework 3.5 sur Windows 10, Windows 8.1 et Windows 8](../install/dotnet-35-windows-10.md).  
   

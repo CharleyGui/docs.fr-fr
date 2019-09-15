@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting WPF content in Windows Forms [WPF]
 ms.assetid: 0ac41286-4c1b-4b17-9196-d985cb844ce1
-ms.openlocfilehash: bff89f1d81b16c8c66d73901ef951626f6d2cb9e
-ms.sourcegitcommit: 24a4a8eb6d8cfe7b8549fb6d823076d7c697e0c6
+ms.openlocfilehash: a062095885e6c1fc8816a78847968b1c250eabf8
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68400623"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991459"
 ---
 # <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Procédure pas à pas : hébergement d’un contrôle composite WPF dans Windows Forms
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] propose un environnement de création d'applications élaboré. Toutefois, lorsque vous avez un investissement important dans [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] le code, il peut être plus efficace d’étendre votre [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] application existante [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] avec plutôt que de la réécrire à partir de zéro. Un scénario courant est lorsque vous souhaitez incorporer un ou plusieurs contrôles implémentés [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] avec dans votre application Windows Forms. Pour plus d’informations sur la personnalisation des contrôles WPF, consultez [personnalisation](../controls/control-customization.md)des contrôles.  
@@ -116,7 +116,7 @@ Cette procédure pas à pas nécessite Visual Studio.
 #### <a name="the-basic-structure-of-the-code-behind-file"></a>Structure de base du fichier code-behind  
  Le fichier code-behind se compose d’un espace de `MyControls`noms unique,, qui contient deux `MyControl1` classes `MyControlEventArgs`, et.  
   
-```  
+```csharp  
 namespace MyControls  
 {  
   public partial class MyControl1 : Grid  

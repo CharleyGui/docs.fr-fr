@@ -3,12 +3,12 @@ title: Accès de niveau élevé pour les commandes dotnet
 description: Découvrez les bonnes pratiques concernant les commandes dotnet qui nécessitent un accès de niveau élevé.
 author: wli3
 ms.date: 06/26/2019
-ms.openlocfilehash: b57e434fbb29a9c85ddf5086888a5291c7767ac9
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: b6de87f375a584da25e160d79f51f1bc48f3c302
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105078"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70969861"
 ---
 # <a name="elevated-access-for-dotnet-commands"></a>Accès de niveau élevé pour les commandes dotnet
 
@@ -27,7 +27,9 @@ Vous pouvez exécuter des commandes avec un compte racine, du moment que vous ne
 
 Les instructions suivantes montrent la méthode recommandée pour installer, exécuter et désinstaller les outils .NET Core dont l’exécution nécessite des autorisations élevées.
 
-# <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
+<!-- markdownlint-disable MD025 -->
+
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
 ### <a name="install-the-global-tool"></a>Installer l’outil global
 

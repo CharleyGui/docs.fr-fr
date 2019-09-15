@@ -2,12 +2,12 @@
 title: Instancing Initialization
 ms.date: 03/30/2017
 ms.assetid: 154d049f-2140-4696-b494-c7e53f6775ef
-ms.openlocfilehash: 4d6fdfedad9d522230a35014c0ee164e8b24fcfb
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: ca135aca8f84ddf79ec7447e7fa7814f61984419
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039609"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989843"
 ---
 # <a name="instancing-initialization"></a>Instancing Initialization
 Cet exemple étend l’exemple de [regroupement](../../../../docs/framework/wcf/samples/pooling.md) en définissant une interface `IObjectControl`,, qui personnalise l’initialisation d’un objet en l’activant et en le désactivant. Le client appelle des méthodes qui retournent l'objet au pool et d'autres qui ne retournent pas l'objet au pool.  
@@ -30,7 +30,7 @@ Cet exemple étend l’exemple de [regroupement](../../../../docs/framework/wcf/
 ## <a name="the-object-pool"></a>Mise en pool d’objets  
  La classe `ObjectPoolInstanceProvider` contient l'implémentation pour le mise en pool d’objets. Cette classe implémente l'interface <xref:System.ServiceModel.Dispatcher.IInstanceProvider> pour interagir avec la couche de modèle de service. Lorsque l'EndpointDispatcher appelle la méthode <xref:System.ServiceModel.Dispatcher.IInstanceProvider.GetInstance%2A>, au lieu de créer une instance, l'implémentation personnalisée recherche un objet existant dans un pool en mémoire. Si aucun n'est disponible, il est retourné. Sinon, `ObjectPoolInstanceProvider` vérifie si la propriété `ActiveObjectsCount` (nombre d'objets retournés depuis le pool) a atteint la taille de pool maximale. Si ce n'est pas le cas, une nouvelle instance est créée et retournée à l'appelant et `ActiveObjectsCount` est incrémenté par la suite. Sinon, une demande de création d'objet est mise en file d'attente pendant le laps de temps configuré. L'implémentation pour `GetObjectFromThePool` est présentée dans l'exemple de code suivant.  
   
-```  
+```csharp  
 private object GetObjectFromThePool()  
 {  
     bool didNotTimeout =   
@@ -74,7 +74,7 @@ ResourceHelper.GetString("ExObjectCreationTimeout"));
   
  L'implémentation `ReleaseInstance` personnalisée ajoute de nouveau l'instance libérée au pool et décrémente la valeur `ActiveObjectsCount`. L’EndpointDispatcher peut appeler ces méthodes à partir de différents threads et, par conséquent, l’accès synchronisé aux membres au niveau de la classe dans la classe `ObjectPoolInstanceProvider` est requis.  
   
-```  
+```csharp  
 public void ReleaseInstance(InstanceContext instanceContext, object instance)  
 {  
     lock (poolLock)  
@@ -127,7 +127,7 @@ public void ReleaseInstance(InstanceContext instanceContext, object instance)
   
  La `ReleaseInstance` méthode fournit une fonctionnalité *d’initialisation de nettoyage* . Normalement, le pool gère un nombre minimal d'objets pendant sa durée de vie. Toutefois, il peut y avoir des périodes d'utilisation excessive qui requièrent la création d'objets supplémentaires dans le pool afin d'atteindre la limite maximale spécifiée dans la configuration. Par la suite, lorsque le pool devient moins actif, ces objets en surplus peuvent devenir une surcharge supplémentaire. Par conséquent, lorsque le `activeObjectsCount` atteint zéro, une minuterie d'inactivité est démarrée, qui déclenche et effectue un cycle de nettoyage.  
   
-```  
+```csharp  
 if (activeObjectsCount == 0)  
 {  
     idleTimer.Start();   
@@ -136,13 +136,13 @@ if (activeObjectsCount == 0)
   
  Les extensions de couche ServiceModel sont raccordées à l’aide des comportements suivants :  
   
-- Comportements de service: permettent de personnaliser l'ensemble de l'exécution du service.  
+- Comportements de service : permettent de personnaliser l'ensemble de l'exécution du service.  
   
-- Comportements des points de terminaison: Celles-ci permettent la personnalisation d’un point de terminaison de service particulier, y compris EndpointDispatcher.  
+- Comportements des points de terminaison : Celles-ci permettent la personnalisation d’un point de terminaison de service particulier, y compris EndpointDispatcher.  
   
-- Comportements de contrat: Celles-ci permettent la personnalisation des <xref:System.ServiceModel.Dispatcher.ClientRuntime> classes ou <xref:System.ServiceModel.Dispatcher.DispatchRuntime> sur le client ou le service, respectivement.  
+- Comportements de contrat : Celles-ci permettent la personnalisation des <xref:System.ServiceModel.Dispatcher.ClientRuntime> classes ou <xref:System.ServiceModel.Dispatcher.DispatchRuntime> sur le client ou le service, respectivement.  
   
-- Comportements de l’opération: Celles-ci permettent la personnalisation des <xref:System.ServiceModel.Dispatcher.ClientOperation> classes ou <xref:System.ServiceModel.Dispatcher.DispatchOperation> sur le client ou le service, respectivement.  
+- Comportements de l’opération : Celles-ci permettent la personnalisation des <xref:System.ServiceModel.Dispatcher.ClientOperation> classes ou <xref:System.ServiceModel.Dispatcher.DispatchOperation> sur le client ou le service, respectivement.  
   
  Dans le cadre d’une extension de mise en pool d’objets, il est possible de créer un comportement de point de terminaison ou un comportement de service. Dans cet exemple, nous utilisons un comportement de service qui applique la capacité de mise en mise en pool d’objets à chaque point de terminaison du service. Pour ce faire, implémentez l'interface <xref:System.ServiceModel.Description.IServiceBehavior>. Il existe plusieurs méthodes pour que le ServiceModel tienne compte des comportements personnalisés :  
   
@@ -154,7 +154,7 @@ if (activeObjectsCount == 0)
   
  Cet exemple utilise un attribut personnalisé. Lorsque <xref:System.ServiceModel.ServiceHost> est généré, il examine les attributs utilisés dans la définition de type du service et ajoute les comportements disponibles à la collection de comportements de la description de service.  
   
- L' <xref:System.ServiceModel.Description.IServiceBehavior> interface a trois méthodes: <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> `,` <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> et.`,` <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> Ces méthodes sont appelées par WCF lorsque <xref:System.ServiceModel.ServiceHost> le est en cours d’initialisation. l'<xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A?displayProperty=nameWithType> est appelée en premier ; elle autorise l'inspection du service pour retrouver les éventuelles incohérences. l'<xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=nameWithType> est appelée ensuite ; cette méthode est requise uniquement dans les scénarios très avancés. l'<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> est appelée en dernier ; elle est responsable de la configuration de l'exécution. Les paramètres suivants sont passés dans <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> :  
+ L' <xref:System.ServiceModel.Description.IServiceBehavior> interface a trois méthodes : <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> `,` <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> et.`,` <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> Ces méthodes sont appelées par WCF lorsque <xref:System.ServiceModel.ServiceHost> le est en cours d’initialisation. l'<xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A?displayProperty=nameWithType> est appelée en premier ; elle autorise l'inspection du service pour retrouver les éventuelles incohérences. l'<xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A?displayProperty=nameWithType> est appelée ensuite ; cette méthode est requise uniquement dans les scénarios très avancés. l'<xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> est appelée en dernier ; elle est responsable de la configuration de l'exécution. Les paramètres suivants sont passés dans <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A?displayProperty=nameWithType> :  
   
 - `Description`: Ce paramètre fournit la description de service pour l’ensemble du service. Il permet d’inspecter les données de description des points de terminaison, des contrats et des liaisons, et les autres données associées au service.  
   
@@ -162,7 +162,7 @@ if (activeObjectsCount == 0)
   
  Dans l'implémentation <xref:System.ServiceModel.Description.IServiceBehavior> personnalisée, une nouvelle instance du `ObjectPoolInstanceProvider` est instanciée et assignée à la propriété <xref:System.ServiceModel.Dispatcher.DispatchRuntime.InstanceProvider%2A> dans chaque <xref:System.ServiceModel.Dispatcher.EndpointDispatcher> joint au <xref:System.ServiceModel.ServiceHostBase>.  
   
-```  
+```csharp  
 public void ApplyDispatchBehavior(ServiceDescription description, ServiceHostBase serviceHostBase)  
 {  
     if (enabled)  
@@ -192,7 +192,7 @@ public void ApplyDispatchBehavior(ServiceDescription description, ServiceHostBas
   
  Le comportement de mise en pool d’objets peut maintenant être ajouté à un service WCF en annotant l’implémentation de service `ObjectPooling` avec l’attribut personnalisé nouvellement créé.  
   
-```  
+```csharp  
 [ObjectPooling(MaxSize=1024, MinSize=10, CreationTimeout=30000]      
 public class PoolService : IPoolService  
 {  
@@ -207,7 +207,7 @@ public class PoolService : IPoolService
   
  Pour reproduire ces fonctionnalités, l'exemple déclare une interface publique (`IObjectControl`) avec les membres susmentionnés. Puis cette interface est implémentée par les classes de service conçues pour assurer l'initialisation spécifique au contexte. L’implémentation <xref:System.ServiceModel.Dispatcher.IInstanceProvider> doit être modifiée pour satisfaire ces exigences. À présent, chaque fois que vous récupérez un objet `GetInstance` en appelant la méthode, vous devez vérifier si l' `IObjectControl.` objet implémente, si c’est le `Activate` cas, vous devez appeler la méthode de manière appropriée.  
   
-```  
+```csharp  
 if (obj is IObjectControl)  
 {  
     ((IObjectControl)obj).Activate();  
@@ -216,7 +216,7 @@ if (obj is IObjectControl)
   
  Lors du retour d'un objet au pool, un contrôle de la propriété `CanBePooled` est requis avant d'ajouter de nouveau l'objet au pool.  
   
-```  
+```csharp  
 if (instance is IObjectControl)  
 {  
     IObjectControl objectControl = (IObjectControl)instance;  
@@ -230,7 +230,7 @@ if (instance is IObjectControl)
   
  Vu que le développeur de service peut décider si un objet peut être regroupé ou non, le nombre d'objets dans le pool à un moment donné peut être inférieur à la taille minimale. Par conséquent, vous devez vérifier si le nombre d'objets est inférieur au minimum et effectuer l'initialisation nécessaire dans la procédure de nettoyage.  
   
-```  
+```csharp  
 // Remove the surplus objects.  
 if (pool.Count > minPoolSize)  
 {  

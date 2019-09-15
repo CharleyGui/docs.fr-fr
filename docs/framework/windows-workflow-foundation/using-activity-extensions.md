@@ -2,29 +2,29 @@
 title: Utilisation d'extensions d'activité
 ms.date: 03/30/2017
 ms.assetid: 500eb96a-c009-4247-b6b5-b36faffdf715
-ms.openlocfilehash: e524f7e7127eb215be85b0c317474eee70830c2b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 551ce24db8c0adc8225ac94a1d05f998a26873a9
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669509"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70988632"
 ---
 # <a name="using-activity-extensions"></a>Utilisation d'extensions d'activité
 Les activités peuvent interagir avec les extensions d’application de workflow qui permettent à l’hôte de fournir des fonctionnalités supplémentaires qui ne sont pas explicitement modélisées dans le workflow.  Cette rubrique explique comment créer et utiliser une extension pour compter le nombre de fois où l'activité s'exécute.
 
 ### <a name="to-use-an-activity-extension-to-count-executions"></a>Pour utiliser une extension d’activité pour compter les exécutions
 
-1. Ouvrez Visual Studio 2010. Sélectionnez **nouveau**, **projet**. Sous le **Visual C#** nœud, sélectionnez **Workflow**.  Sélectionnez **Application Console de Workflow** à partir de la liste des modèles. Attribuez un nom au projet `Extensions`. Cliquez sur **OK** pour créer le projet.
+1. Ouvrez Visual Studio 2010. Sélectionnez **nouveau**, **projet**. Sous le **nœud C# visuel** , sélectionnez **flux de travail**.  Dans la liste des modèles, sélectionnez **application console de workflow** . Attribuez un nom au projet `Extensions`. Cliquez sur **OK** pour créer le projet.
 
-2. Ajouter un `using` instruction dans le fichier Program.cs pour le **System.Collections.Generic** espace de noms.
+2. Ajoutez une `using` instruction dans le fichier Program.cs pour l’espace de noms **System. Collections. Generic** .
 
-    ```
+    ```csharp
     using System.Collections.Generic;
     ```
 
-3. Dans le fichier Program.cs, créez une classe nommée **ExecutionCountExtension**. Le code suivant crée une extension de workflow qui assure le suivi des ID d’instance lors de son **inscrire** méthode est appelée.
+3. Dans le fichier Program.cs, créez une nouvelle classe nommée **ExecutionCountExtension**. Le code suivant crée une extension de workflow qui suit les ID d’instance lorsque sa méthode **Register** est appelée.
 
-    ```
+    ```csharp
     // This extension collects a list of workflow Ids
     public class ExecutionCountExtension
     {
@@ -56,9 +56,9 @@ Les activités peuvent interagir avec les extensions d’application de workflow
     }
     ```
 
-4. Créer une activité qui consomme le **ExecutionCountExtension**. Le code suivant définit une activité qui Récupère le **ExecutionCountExtension** objet à partir du runtime et appelle son **inscrire** méthode lorsque l’activité s’exécute.
+4. Créez une activité qui consomme **ExecutionCountExtension**. Le code suivant définit une activité qui récupère l’objet **ExecutionCountExtension** à partir du runtime et appelle sa méthode **Register** lorsque l’activité s’exécute.
 
-    ```
+    ```csharp
     // Activity that consumes an extension provided by the host. If the extension is available
     // in the context, it will invoke (in this case, registers the Id of the executing workflow)
     public class MyActivity: CodeActivity
@@ -75,9 +75,9 @@ Les activités peuvent interagir avec les extensions d’application de workflow
     }
     ```
 
-5. Implémentez l’activité dans le **Main** méthode du fichier program.cs. Le code suivant contient les méthodes pour générer deux workflows distincts, exécuter plusieurs fois chaque workflow et afficher les données résultantes contenues dans l’extension.
+5. Implémentez l’activité dans la méthode **main** du fichier Program.cs. Le code suivant contient les méthodes pour générer deux workflows distincts, exécuter plusieurs fois chaque workflow et afficher les données résultantes contenues dans l’extension.
 
-    ```
+    ```csharp
     class Program
     {
         // Creates a workflow that uses the activity that consumes the extension

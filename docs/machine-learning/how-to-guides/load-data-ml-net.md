@@ -5,12 +5,12 @@ ms.date: 09/11/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to, title-hack-0625
-ms.openlocfilehash: 419b32f2a460ca153d28206524a38c7c9fa86173
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 4008f38bf4a20113a3f5c865e38222e5b82f2acc
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929379"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991360"
 ---
 # <a name="load-data-from-files-and-other-sources"></a>Charger des données depuis des fichiers et d’autres sources
 
@@ -33,7 +33,7 @@ public class HousingData
 {
     [LoadColumn(0)]
     public float Size { get; set; }
- 
+
     [LoadColumn(1, 3)]
     [VectorType(3)]
     public float[] HistoricalPrices { get; set; }
@@ -53,7 +53,7 @@ L’attribut [`LoadColumn`](xref:Microsoft.ML.Data.LoadColumnAttribute) spécifi
 > [!IMPORTANT]
 > [`LoadColumn`](xref:Microsoft.ML.Data.LoadColumnAttribute) est nécessaire uniquement lors du chargement de données à partir d’un fichier.
 
-Chargez les colonnes en tant que : 
+Chargez les colonnes en tant que :
 
 - Colonnes individuelles comme `Size` et `CurrentPrices` dans la classe `HousingData`.
 - Plusieurs colonnes à la fois sous la forme d’un vecteur comme `HistoricalPrices` dans la classe `HousingData`.
@@ -108,7 +108,7 @@ IDataView data = textLoader.Load("DataFolder/SubFolder1/1.txt", "DataFolder/SubF
 ## <a name="load-data-from-a-relational-database"></a>Charger des données à partir d’une base de données relationnelle
 
 > [!NOTE]
-> DatabaseLoader est actuellement en version préliminaire. Il peut être utilisé en référençant les packages NuGet [Microsoft. ml. expérimental](https://www.nuget.org/packages/Microsoft.ML.Experimental/0.16.0-preview) et [System. Data. SqlClient](https://www.nuget.org/packages/System.Data.SqlClient/4.6.1) . 
+> DatabaseLoader est actuellement en version préliminaire. Il peut être utilisé en référençant les packages NuGet [Microsoft. ml. expérimental](https://www.nuget.org/packages/Microsoft.ML.Experimental/0.16.0-preview) et [System. Data. SqlClient](https://www.nuget.org/packages/System.Data.SqlClient/4.6.1) .
 
 ML.NET prend en charge le chargement de données à partir de diverses bases de [`System.Data`](xref:System.Data) données relationnelles prises en charge par, notamment SQL Server, Azure SQL Database, Oracle, SQLite, PostgreSQL, Progress, IBM DB2 et bien plus encore.
 
@@ -142,7 +142,7 @@ MLContext mlContext = new MLContext();
 DatabaseLoader loader = mlContext.Data.CreateDatabaseLoader<HouseData>();
 ```
 
-Définissez votre chaîne de connexion, ainsi que la commande SQL à exécuter sur la base de données et `DatabaseSource` créez une instance. Cet exemple utilise une base de données locale SQL Server avec un chemin d’accès de fichier. Toutefois, DatabaseLoader prend en charge toute autre chaîne de connexion valide pour les bases de données locales et dans le Cloud.  
+Définissez votre chaîne de connexion, ainsi que la commande SQL à exécuter sur la base de données et `DatabaseSource` créez une instance. Cet exemple utilise une base de données locale SQL Server avec un chemin d’accès de fichier. Toutefois, DatabaseLoader prend en charge toute autre chaîne de connexion valide pour les bases de données locales et dans le Cloud.
 
 ```csharp
 string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=<YOUR-DB-FILEPATH>;Database=<YOUR-DB-NAME>;Integrated Security=True;Connect Timeout=30";
@@ -196,7 +196,7 @@ HousingData[] inMemoryCollection = new HousingData[]
 Chargez la collection en mémoire dans un [`IDataView`](xref:Microsoft.ML.IDataView) avec la méthode [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) :
 
 > [!IMPORTANT]
-> La méthode [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) suppose que l’[`IEnumerable`](xref:System.Collections.IEnumerable) à partir duquel elle est chargée est thread-safe. 
+> La méthode [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) suppose que l’[`IEnumerable`](xref:System.Collections.IEnumerable) à partir duquel elle est chargée est thread-safe.
 
 ```csharp
 // Create MLContext

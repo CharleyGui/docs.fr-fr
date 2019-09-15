@@ -2,23 +2,23 @@
 title: Outil de recherche de clé privée (FindPrivateKey.exe)
 ms.date: 09/11/2017
 ms.assetid: b8846a95-3fcc-4e8c-b9c0-128d975a6307
-ms.openlocfilehash: 00ad27d28ee3a589d5ee8702bd036b05d8ceb4b3
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 316f55b93cf4d867b99878bf483b73cb3f09ad04
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637573"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990353"
 ---
 # <a name="find-private-key-tool-findprivatekeyexe"></a>Outil de recherche de clé privée (FindPrivateKey.exe)
 
-Cet outil de ligne de commande peut être utilisé pour récupérer une clé privée provenant d'un magasin de certificats. Par exemple, *FindPrivateKey.exe* peut être utilisé pour rechercher l’emplacement et le nom du fichier de clé privée associé à un certificat X.509 spécifique dans le magasin de certificats.
+Cet outil de ligne de commande peut être utilisé pour récupérer une clé privée provenant d'un magasin de certificats. Par exemple, *FindPrivateKey. exe* peut être utilisé pour Rechercher l’emplacement et le nom du fichier de clé privée associé à un certificat X. 509 spécifique dans le magasin de certificats.
 
 > [!IMPORTANT]
-> L'outil FindPrivateKey est fourni à titre d'exemple WCF. Pour plus d’informations sur l’accès à l’exemple et comment le créer, consultez [FindPrivateKey](./samples/findprivatekey.md).
+> L'outil FindPrivateKey est fourni à titre d'exemple WCF. Pour plus d’informations sur l’emplacement de l’exemple et sur la façon de le générer, consultez [FindPrivateKey](./samples/findprivatekey.md).
 
 ## <a name="syntax"></a>Syntaxe
 
-```
+```console
 FindPrivateKey<storeName> <storeLocation> [{ {-n <subjectName>} | {-t <thumbprint>} } [-f | -d | -a]]
 ```
 
@@ -43,12 +43,12 @@ Les tables suivantes décrivent les arguments et les options qui peuvent être u
 
 La commande suivante récupère la clé privée pour John Doe :
 
-```
+```console
 FindPrivateKey My CurrentUser -n "CN=John Doe"
 ```
 
 La commande suivante récupère la clé privée pour l’ordinateur local :
 
-```
+```console
 FindPrivateKey My LocalMachine -t "03 33 98 63 d0 47 e7 48 71 33 62 64 76 5c 4c 9d 42 1d 6b 52" –a
 ```

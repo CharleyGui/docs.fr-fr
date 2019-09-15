@@ -2,12 +2,12 @@
 title: ForEach non générique
 ms.date: 03/30/2017
 ms.assetid: 576cd07a-d58d-4536-b514-77bad60bff38
-ms.openlocfilehash: e467534ba2b233f1f3c279e89badf12846c6b7f7
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: cb040d8bd5fbb34cc00b246f2e51789866fd8e78
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038073"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989036"
 ---
 # <a name="non-generic-foreach"></a>ForEach non générique
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] fournit, dans sa boîte à outils, un ensemble d'activités de flux de contrôle, notamment <xref:System.Activities.Statements.ForEach%601>, qui permet l'itération au sein des collections <xref:System.Collections.Generic.IEnumerable%601>.  
@@ -24,7 +24,7 @@ ms.locfileid: "70038073"
 ## <a name="class-definition"></a>Définition de classes  
  L'exemple de code suivant illustre la définition d'une activité `ForEach` non générique.  
   
-```  
+```csharp  
 [ContentProperty("Body")]  
 public class ForEach : NativeActivity  
 {  
@@ -47,7 +47,7 @@ public class ForEach : NativeActivity
 ## <a name="example-of-using-foreach"></a>Exemple d'utilisation de ForEach  
  Le code suivant montre comment utiliser l'activité ForEach dans une application.  
   
-```  
+```csharp  
 string[] names = { "bill", "steve", "ray" };  
   
 DelegateInArgument<object> iterationVariable = new DelegateInArgument<object>() { Name = "iterationVariable" };  
@@ -74,7 +74,7 @@ Activity sampleUsage =
 ## <a name="foreach-designer"></a>Concepteur ForEach  
  Le concepteur d'activités de l'exemple est semblable, en apparence, au concepteur fourni pour l'activité <xref:System.Activities.Statements.ForEach%601> intégrée. Le concepteur s’affiche dans la boîte à outils dans la catégorie **exemples**, **activités non génériques** . Le concepteur est nommé **ForEachWithBodyFactory** dans la boîte à outils, car l’activité expose un <xref:System.Activities.Presentation.IActivityTemplateFactory> dans la boîte à outils, ce qui crée l’activité avec un correctement configuré. <xref:System.Activities.ActivityAction>  
   
-```  
+```csharp  
 public sealed class ForEachWithBodyFactory : IActivityTemplateFactory  
 {  
     public Activity Create(DependencyObject target)  

@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3ec60e8f-fad4-493e-a426-e7962d7aee8c
-ms.openlocfilehash: 451f9581ae997ad86fee968fa978713db2049455
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: e93f84f0bacf7ac205294c12c55afcab8d7319b7
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044386"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989809"
 ---
 # <a name="how-to-create-a-state-machine-workflow"></a>Procédure : Créer un workflow d'ordinateur d'état
-Les workflows peuvent être construits aussi bien à partir d'activités intégrées que d'activités personnalisées. Cette rubrique explique comment créer un workflow qui utilise à la fois des activités intégrées telles que <xref:System.Activities.Statements.StateMachine> l’activité, et les activités personnalisées de [la procédure précédente Comment: Créer une rubrique](how-to-create-an-activity.md) d’activité. Le workflow modélise un jeu d'estimation de nombre.  
+Les workflows peuvent être construits aussi bien à partir d'activités intégrées que d'activités personnalisées. Cette rubrique explique comment créer un workflow qui utilise à la fois des activités intégrées telles que <xref:System.Activities.Statements.StateMachine> l’activité, et les activités personnalisées de [la procédure précédente Comment : Créer une rubrique](how-to-create-an-activity.md) d’activité. Le workflow modélise un jeu d'estimation de nombre.  
   
 > [!NOTE]
-> Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d’abord [effectuer les opérations suivantes: Créer une activité](how-to-create-an-activity.md).  
+> Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d’abord [effectuer les opérations suivantes : Créer une activité](how-to-create-an-activity.md).  
   
 > [!NOTE]
 > Pour télécharger une version complète du didacticiel, consultez [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976)(Windows Workflow Foundation (WF45) - Didacticiel de mise en route).  
@@ -69,9 +69,9 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
     > [!TIP]
     > Si la **fenêtre Propriétés** n’est pas affichée, sélectionnez **fenêtre Propriétés** dans le menu **affichage** .  
   
-2. Double-cliquez sur l’État initialiser l’initialisation de la **cible** dans le concepteur de workflow pour la développer.  
+2. Double-cliquez sur l’état **initialiser l’initialisation** de la cible dans le concepteur de workflow pour la développer.  
   
-3. Faites glisser une activité **Assign** de la section primitives de la **boîte à outils** et déposez-la dans la section d' **entrée** de l’État. Tapez `Target` dans la zone **à** et l’expression suivante dans la zone **entrer C# une expression** ou **entrer une expression VB** .  
+3. Faites glisser une activité **Assign** de la section **primitives** de la **boîte à outils** et déposez-la dans la section d' **entrée** de l’État. Tapez `Target` dans la zone **à** et l’expression suivante dans la zone **entrer C# une expression** ou **entrer une expression VB** .  
   
     ```vb  
     New System.Random().Next(1, MaxNumber + 1)  
@@ -86,11 +86,11 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 4. Revenez à la vue globale de l’ordinateur d’État dans le concepteur de flux de travail en cliquant sur **StateMachine** dans l’affichage de navigation en haut du concepteur de Workflow.  
   
-5. Faites glisser une activité **State** de la section **machine à États** de la **boîte à outils** vers le concepteur de flux de travail et placez-la sur l’État initialiser la **cible** . Notez que quatre triangles apparaissent autour de l’État initialiser la **cible** lorsque le nouvel État est sur celui-ci. Déposez le nouvel État sur le triangle qui est immédiatement en dessous de l’État initialiser la **cible** . Cela place le nouvel État sur le workflow et crée une transition de l’état d’initialisation de la **cible** vers le nouvel État.  
+5. Faites glisser une activité **State** de la section **machine à États** de la **boîte à outils** vers le concepteur de flux de travail et placez-la sur l’état **initialiser la cible** . Notez que quatre triangles apparaissent autour de l’état **initialiser la cible** lorsque le nouvel État est sur celui-ci. Déposez le nouvel État sur le triangle qui est immédiatement en dessous de l’état **initialiser la cible** . Cela place le nouvel État sur le workflow et crée une transition de l’état d’initialisation de la **cible** vers le nouvel État.  
   
 6. Cliquez sur **State1** pour le sélectionner, remplacez **DisplayName** par `Enter Guess`, puis double-cliquez sur l’État dans le concepteur de workflow pour le développer.  
   
-7. Faites glisser une activité **WriteLine** de la section primitives de la **boîte à outils** et déposez-la dans la section d' **entrée** de l’État.  
+7. Faites glisser une activité **WriteLine** de la section **primitives** de la **boîte à outils** et déposez-la dans la section d' **entrée** de l’État.  
   
 8. Tapez l’expression suivante dans la zone de propriété **Text** de **WriteLine**.  
   
@@ -102,7 +102,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
     "Please enter a number between 1 and " + MaxNumber  
     ```  
   
-9. Faites glisser une activité **Assign** de la section primitives de la **boîte à outils** et déposez-la sur la section **Exit** de l’État.  
+9. Faites glisser une activité **Assign** de la section **primitives** de la **boîte à outils** et déposez-la sur la section **Exit** de l’État.  
   
 10. Tapez `Turns` dans la zone **à** , `Turns + 1` puis dans la zone **entrer une C# expression** ou **entrer une expression VB** .  
   
@@ -141,7 +141,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
     > [!NOTE]
     > Notez que si la condition <xref:System.Activities.Statements.Transition.Condition%2A> d'une transition a pour valeur `false` (ou si toutes les conditions d'une transition de déclencheur partagée ont la valeur `false`), la transition n'a pas lieu et tous les déclencheurs de toutes les transitions de l'état sont replanifiés. Dans ce didacticiel, cette situation ne peut pas se produire en raison de la façon dont les conditions sont configurées (il existe des actions spécifiques lorsque l'estimation est correcte ou incorrecte).  
   
-20. Double-cliquez sur la transition Guess incorrect dans le concepteur de flux de travail pour la développer. Notez que le **déclencheur** est déjà défini sur la même activité **ReadInt** que celle utilisée par la transition **estimation correcte** .  
+20. Double-cliquez sur la transition **Guess incorrect** dans le concepteur de flux de travail pour la développer. Notez que le **déclencheur** est déjà défini sur la même activité **ReadInt** que celle utilisée par la transition **estimation correcte** .  
   
 21. Tapez l’expression suivante dans la zone de valeur de propriété **condition** .  
   
@@ -157,21 +157,21 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 23. Tapez l’expression suivante dans la zone de valeur de propriété **condition** de l’activité **If** .  
   
-    ```
-    Guess < Target  
+    ```text
+    Guess < Target
     ```  
   
-24. Faites glisser deux activités **WriteLine** de la section primitives de **la boîte à outils** et déposez-les de façon à ce qu’elles se trouvent dans la section **Then** de l’activité **If** , et l’autre dans la section **else** .  
+24. Faites glisser deux activités **WriteLine** de la section **primitives** de **la boîte à outils** et déposez-les de façon à ce qu’elles se trouvent dans la section **Then** de l’activité **If** , et l’autre dans la section **else** .  
   
 25. Cliquez sur l’activité **WriteLine** dans la section **Then** pour la sélectionner, puis tapez l’expression suivante dans la zone de valeur de propriété **Text** .  
   
-    ```
+    ```text
     "Your guess is too low."  
     ```  
   
 26. Cliquez sur l’activité **WriteLine** dans la section **sinon** pour la sélectionner, puis tapez l’expression suivante dans la zone de valeur de propriété **texte** .  
   
-    ```
+    ```text
     "Your guess is too high."  
     ```  
   
@@ -185,7 +185,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
   
 1. Appuyez sur Ctrl+Maj+B pour générer la solution.  
   
-     Pour obtenir des instructions sur l’exécution du flux de travail, consultez la rubrique [suivante, comment: Exécuter un flux](how-to-run-a-workflow.md)de travail. Si vous avez déjà effectué les [opérations suivantes: Exécutez une étape](how-to-run-a-workflow.md) de workflow avec un style différent de workflow et souhaitez l’exécuter à l’aide du flux de travail de l’ordinateur d’État à partir de cette étape, passez à la [section [pour générer et exécuter l’application](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) dans How to: Exécuter un flux](how-to-run-a-workflow.md)de travail.  
+     Pour obtenir des instructions sur l’exécution du flux de travail, consultez la rubrique [suivante, comment : Exécuter un flux](how-to-run-a-workflow.md)de travail. Si vous avez déjà effectué les [opérations suivantes : Exécutez une étape](how-to-run-a-workflow.md) de workflow avec un style différent de workflow et souhaitez l’exécuter à l’aide du flux de travail de l’ordinateur d’État à partir de cette étape, passez à la [section [pour générer et exécuter l’application](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) dans How to : Exécuter un flux](how-to-run-a-workflow.md)de travail.  
   
 ## <a name="see-also"></a>Voir aussi
 

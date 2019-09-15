@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: 6f071f907fe38b226a5083699e758bc5fb8bffce
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 6e6fc815ee8c2d174db12f95eed8dc72a6ef5a62
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252990"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971965"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Arguments de ligne de commande (Guide de programmation C#)
 Vous pouvez envoyer des arguments à la méthode `Main` en définissant la méthode de l’une des manières suivantes :  
@@ -46,7 +46,7 @@ long num = Convert.ToInt64(s);
   
  Pour plus d’informations, consultez <xref:System.Int64.Parse%2A> et <xref:System.Convert>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a>Exemples  
  L’exemple suivant montre comment utiliser des arguments de ligne de commande dans une application console. L’application prend un argument au moment de l’exécution, le convertit en entier, puis calcule la factorielle du nombre. Si aucun argument n’est fourni, l’application affiche un message pour expliquer comment le programme doit être utilisé.  
   
  Pour compiler et exécuter l’application à partir d’une invite de commandes, procédez comme suit :  
@@ -71,8 +71,6 @@ long num = Convert.ToInt64(s);
   
 > [!NOTE]
 > Quand vous exécutez une application dans Visual Studio, vous pouvez spécifier des arguments de ligne de commande dans la [page Déboguer du Concepteur de projet](/visualstudio/ide/reference/debug-page-project-designer).  
-  
- Pour plus d’exemples sur l’utilisation des arguments de ligne de commande, consultez [Guide pratique : Créer et utiliser des assemblys à l’aide de la ligne de commande](../concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -2,12 +2,12 @@
 title: Utilisation de délégués d'activité
 ms.date: 03/30/2017
 ms.assetid: e33cf876-8979-440b-9b23-4a12d1139960
-ms.openlocfilehash: 8c9d82f47f709a89455f41691526b6ac9718a01f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 63f550549456404b237067c98afdb18a8758dd7a
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62004612"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70989085"
 ---
 # <a name="using-activity-delegates"></a>Utilisation de délégués d'activité
 Les délégués d'activité permettent aux auteurs d'activités d'exposer des rappels avec des signatures spécifiques pour lesquelles les utilisateurs de l'activité peuvent fournir des gestionnaires basés sur l'activité. Deux types de délégués d'activité sont disponibles : <xref:System.Activities.ActivityAction%601> est utilisé pour définir des délégués d'activité qui n'ont pas de valeur de retour et <xref:System.Activities.ActivityFunc%601> est utilisé pour définir des délégués d'activité qui ont une valeur de retour.
@@ -22,7 +22,7 @@ Plusieurs activités [!INCLUDE[netfx_current_short](../../../includes/netfx-curr
 
 L'actionArgument est utilisé pour transférer les éléments individuels dans la collection au WriteLine. Lorsque le workflow est appelé, la sortie suivante s'affiche sur la console.
 
-```
+```console
 HelloWorld.
 ```
 
@@ -30,9 +30,9 @@ Les exemples de cette rubrique utilisent la syntaxe d'initialisation d'objet. La
 
 [!code-csharp[CFX_ActivityExample#7](~/samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#7)]
 
-Pour plus d’informations sur les initialiseurs d’objets, consultez [Comment : Initialiser des objets sans appeler de constructeur (C# Guide de programmation)](https://go.microsoft.com/fwlink/?LinkId=161015) et [Comment : Déclarez un objet à l’aide d’un initialiseur d’objet](https://go.microsoft.com/fwlink/?LinkId=161016).
+Pour plus d’informations sur les initialiseurs d' [objets, consultez Procédure : Initialiser des objets sans appeler de constructeurC# (Guide de](https://go.microsoft.com/fwlink/?LinkId=161015) programmation [) et comment : Déclarez un objet à l’aide d’un](https://go.microsoft.com/fwlink/?LinkId=161016)initialiseur d’objet.
 
-Dans l'exemple suivant, une activité <xref:System.Activities.Statements.TryCatch> est utilisée dans un workflow. Un <xref:System.ApplicationException> est levé par le workflow et géré par une activité <xref:System.Activities.Statements.Catch%601>. Le gestionnaire pour le <xref:System.Activities.Statements.Catch%601> action de l’activité de l’activité est un <xref:System.Activities.Statements.WriteLine> l’activité et le détail de l’exception lui est transféré à l’aide de la `ex` <xref:System.Activities.DelegateInArgument%601>.
+Dans l'exemple suivant, une activité <xref:System.Activities.Statements.TryCatch> est utilisée dans un workflow. Un <xref:System.ApplicationException> est levé par le workflow et géré par une activité <xref:System.Activities.Statements.Catch%601>. Le gestionnaire de l' <xref:System.Activities.Statements.Catch%601> action d’activité de l’activité <xref:System.Activities.Statements.WriteLine> est une activité, et le détail de l’exception est transmis à celui `ex` -ci à l’aide <xref:System.Activities.DelegateInArgument%601>de.
 
 [!code-csharp[CFX_WorkflowApplicationExample#33](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#33)]
 

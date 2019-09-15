@@ -9,12 +9,12 @@ helpviewer_keywords:
 - container tags, <codeBase> element
 - codeBase element
 ms.assetid: d48a3983-2297-43ff-a14d-1f29d3995822
-ms.openlocfilehash: bd170b817c5ccc337711f8f79968653c29f3eda4
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 475b7df55ed509157c1da0aeb8f979de238c72b5
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70252746"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971886"
 ---
 # <a name="codebase-element"></a>\<Élément codebais >
 
@@ -72,7 +72,7 @@ Si l’assembly a un nom fort, le paramètre de code base peut se trouver n’im
 
 Pour les assemblys sans nom fort, la version est ignorée et le chargeur utilise la première apparence \<du code base > dans \<le > dependentAssembly. S’il y a une entrée dans le fichier de configuration de l’application qui redirige la liaison vers un autre assembly, la redirection aura la priorité, même si la version de l’assembly ne correspond pas à la demande de liaison.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 L’exemple suivant montre comment spécifier où le runtime peut trouver un assembly.
 
@@ -96,5 +96,5 @@ L’exemple suivant montre comment spécifier où le runtime peut trouver un ass
 
 - [Schéma des paramètres d’exécution](index.md)
 - [Schéma des fichiers de configuration](../index.md)
-- [Spécification de l'emplacement d'un assembly](../../specify-assembly-location.md)
+- [Spécifier l’emplacement d’un assembly](../../../../standard/assembly/location.md)
 - [Méthode de localisation des assemblys par le runtime](../../../deployment/how-the-runtime-locates-assemblies.md)

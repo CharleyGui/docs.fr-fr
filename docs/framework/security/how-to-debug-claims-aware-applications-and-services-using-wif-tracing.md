@@ -3,12 +3,12 @@ title: 'Procédure : Déboguer les applications prenant en charge les revendica
 ms.date: 03/30/2017
 ms.assetid: 3d51ba59-3adb-4ca4-bd33-5027531af687
 author: BrucePerlerMS
-ms.openlocfilehash: effd670a4d0e12f0bca10301fabc361c73e03328
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 604ebf5ad71197f6614ffa45b6d7c181d474e1aa
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625879"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70990481"
 ---
 # <a name="how-to-debug-claims-aware-applications-and-services-using-wif-tracing"></a>Procédure : Déboguer les applications prenant en charge les revendications et les services utilisant le suivi WIF
 ## <a name="applies-to"></a>S'applique à  
@@ -59,7 +59,7 @@ ms.locfileid: "64625879"
   
 #### <a name="to-configure-wif-tracing-using-webconfig-configuration-file"></a>Pour configurer le suivi WIF à l'aide du fichier de configuration Web.config  
   
-1. Ouvrez le fichier de configuration racine **Web.config** ou **App.config** dans l’éditeur Visual Studio en double-cliquant dessus dans l’**Explorateur de solutions**. Si votre solution n’a pas de fichier de configuration **Web.config** ou **App.config**, ajoutez-le en cliquant avec le bouton droit sur la solution dans l’**Explorateur de solutions** et en cliquant sur **Ajouter**, puis sur **Nouvel élément...**. Dans la boîte de dialogue **Nouvel élément**, sélectionnez **Fichier de configuration de l’application** pour **App.config** ou **Fichier de configuration web** pour **Web.config** dans la liste, puis cliquez sur **OK**.  
+1. Ouvrez le fichier de configuration racine **Web.config** ou **App.config** dans l’éditeur Visual Studio en double-cliquant dessus dans l’**Explorateur de solutions**. Si votre solution n’a pas de fichier de configuration **Web.config** ou **App.config**, ajoutez-le en cliquant avec le bouton droit sur la solution dans l’**Explorateur de solutions** et en cliquant sur **Ajouter**, puis sur **Nouvel élément...** . Dans la boîte de dialogue **Nouvel élément**, sélectionnez **Fichier de configuration de l’application** pour **App.config** ou **Fichier de configuration web** pour **Web.config** dans la liste, puis cliquez sur **OK**.  
   
 2. Ajoutez les entrées de configuration similaires aux suivantes au fichier de configuration dans le nœud **\<configuration>** à la fin du fichier de configuration :  
   
@@ -76,14 +76,14 @@ ms.locfileid: "64625879"
     </system.diagnostics>  
     ```  
   
-3. La configuration ci-dessus indique à WIF de générer des événements de suivi détaillés et de les consigner dans le fichier *WIFTrace.e2e*. Pour obtenir la liste complète des valeurs pour le **switchValue** commutateur, consultez le tableau niveau de Trace dans la rubrique suivante : [Configuration du traçage](../wcf/diagnostics/tracing/configuring-tracing.md).  
+3. La configuration ci-dessus indique à WIF de générer des événements de suivi détaillés et de les consigner dans le fichier *WIFTrace.e2e*. Pour obtenir la liste complète des valeurs du commutateur **switchValue** , reportez-vous à la table des niveaux de suivi figurant dans la rubrique suivante : [Configuration du suivi](../wcf/diagnostics/tracing/configuring-tracing.md).  
   
 ## <a name="step-2--analyze-wif-trace-files-using-trace-viewer-tool"></a>Étape 2 : analyser les fichiers de suivi WIF à l'aide de l'outil Trace Viewer  
  Dans cette étape, vous allez utiliser l'outil Trace Viewer (SvcTraceViewer.exe) pour analyser les journaux de suivi WIF.  
   
 #### <a name="to-analyze-wif-trace-logs-using-trace-viewer-tool-svctraceviewerexe"></a>Pour analyser les journaux de suivi WIF à l'aide de l'outil Trace Viewer (SvcTraceViewer.exe)  
   
-1. L'outil Trace Viewer (SvcTraceViewer.exe) est fourni avec le Kit de développement logiciel (SDK) Windows. Si vous n’avez pas déjà installé le Kit de développement Windows, vous pouvez le télécharger ici : [Windows SDK](https://www.microsoft.com/download/en/details.aspx?id=8279).  
+1. L'outil Trace Viewer (SvcTraceViewer.exe) est fourni avec le Kit de développement logiciel (SDK) Windows. Si vous n’avez pas encore installé le SDK Windows, vous pouvez le télécharger ici : [Kit de développement logiciel (SDK) Windows](https://www.microsoft.com/download/en/details.aspx?id=8279).  
   
 2. Exécutez l'outil Trace Viewer (SvcTraceViewer.exe). Celui-ci se trouve généralement dans le dossier **Bin** du chemin d’installation.  
   
@@ -91,7 +91,7 @@ ms.locfileid: "64625879"
   
 4. Examinez les entrées sous l’onglet **Activité**. Chaque entrée doit contenir un numéro d'activité, le nombre de suivis qui ont été consignés, la durée de l'activité et ses horodateurs de début et de fin.  
   
-5. Cliquez sur l’onglet **Activité**. Des entrées de suivi détaillées doivent s'afficher dans la zone principale de l'outil. Utilisez le **niveau** liste déroulante dans le menu pour filtrer un niveau spécifique de suivi, par exemple : **Tous les**, **avertissement**, **erreurs**, **informations**, etc.  
+5. Cliquez sur l’onglet **Activité**. Des entrées de suivi détaillées doivent s'afficher dans la zone principale de l'outil. Utilisez la liste déroulante **niveau** du menu pour filtrer le niveau spécifique des traces, par exemple : **Tout**, **Avertissement**, **Erreurs**, **informations**, etc.  
   
 6. Cliquez sur des entrées de suivi spécifiques pour les examiner dans le détail dans la zone inférieure de l’outil. Les détails peuvent être visualisés dans la vue **Mis en forme** ou **XML** en choisissant les onglets correspondants.  
   
@@ -104,7 +104,7 @@ ms.locfileid: "64625879"
   
 |**ID d’erreur**|**Message d'erreur**|**Mesure à prendre pour corriger l’erreur**|  
 |-|-|-|  
-|ID4175|L'émetteur du jeton de sécurité n'a pas été reconnu par IssuerNameRegistry.  Pour accepter les jetons de sécurité en provenance de cet émetteur, configurez IssuerNameRegistry pour qu'il retourne un nom valide pour cet émetteur.|Cette erreur peut être provoquée par la copie d’une empreinte numérique à partir du composant logiciel enfichable MMC et par son collage dans le fichier *Web.config*. Plus précisément, vous pouvez obtenir un caractère non imprimable supplémentaire dans la chaîne de texte en effectuant une copie à partir de la fenêtre de propriétés du certificat. Ce caractère supplémentaire entraîne l’échec de la correspondance d’empreinte numérique. Vous trouverez la procédure de copie correctement l’empreinte numérique dans [authentification unique basée sur les revendications-sur pour le Web et Microsoft Azure](https://docs.microsoft.com/previous-versions/msp-n-p/ff359102%28v=pandp.10%29).|  
+|ID4175|L'émetteur du jeton de sécurité n'a pas été reconnu par IssuerNameRegistry.  Pour accepter les jetons de sécurité en provenance de cet émetteur, configurez IssuerNameRegistry pour qu'il retourne un nom valide pour cet émetteur.|Cette erreur peut être provoquée par la copie d’une empreinte numérique à partir du composant logiciel enfichable MMC et par son collage dans le fichier *Web.config*. Plus précisément, vous pouvez obtenir un caractère non imprimable supplémentaire dans la chaîne de texte en effectuant une copie à partir de la fenêtre de propriétés du certificat. Ce caractère supplémentaire entraîne l’échec de la correspondance de l’empreinte numérique. La procédure de copie correcte de l’empreinte numérique se trouve dans [authentification unique basée sur les revendications pour le Web et Microsoft Azure](https://docs.microsoft.com/previous-versions/msp-n-p/ff359102%28v=pandp.10%29).|  
   
 ## <a name="related-items"></a>Éléments associés  
   

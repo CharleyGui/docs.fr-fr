@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: ee13c0a8-ab02-49f7-b8fb-9eab16c6c4f0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d7608ed964313774b806ba6f1bb4d8f0d322c361
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 1996c8b317bbfed6362c759a257cafef8400e919
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592767"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70971912"
 ---
 # <a name="running-intranet-applications-in-full-trust"></a>Exécution d'applications intranet de confiance totale
 À compter du .NET Framework version 3.5 Service Pack 1 (SP1), les applications et leurs assemblys de bibliothèque peuvent être exécutés comme des assemblys de confiance totale à partir d’un partage réseau. La preuve de zone <xref:System.Security.SecurityZone.MyComputer> est ajoutée automatiquement aux assemblys chargés sur l’intranet à partir d’un partage. Cette preuve fournit à ces assemblys le même jeu accordé (qui est généralement de confiance totale) qu’aux assemblys qui résident sur l’ordinateur. Cette fonctionnalité ne s’applique pas aux applications ClickOnce ou aux applications conçues pour s’exécuter sur un hôte.  
@@ -36,4 +36,4 @@ ms.locfileid: "64592767"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Programmation à l’aide d’assemblys](../../../docs/framework/app-domains/programming-with-assemblies.md)
+- [Programmation à l’aide d’assemblys](../../standard/assembly/program.md)

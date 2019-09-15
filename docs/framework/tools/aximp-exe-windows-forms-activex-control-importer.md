@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 482c0d83-7144-4497-b626-87d2351b78d0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c8c3c293e28788143cd1bed07acc941d448700f2
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: a5f76f60c8474b1503dc4cebeeafe241cd40be96
+ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70851470"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70970595"
 ---
 # <a name="aximpexe-windows-forms-activex-control-importer"></a>Aximp.exe (Windows Forms ActiveX Control Importer)
 L'importateur de contrôles ActiveX convertit les définitions de types d'une bibliothèque de types COM associées à un contrôle ActiveX en un contrôle Windows Forms.  
@@ -42,7 +42,7 @@ aximp [options]{file.dll | file.ocx}
   
 |Option|Description|  
 |------------|-----------------|  
-|`/delaysign`|Spécifie à Aximp.exe que le contrôle résultant doit être signé à l'aide du processus de signature différée. Vous devez spécifier cette option avec l’option `/keycontainer:`, `/keyfile:` ou `/publickey:`. Pour plus d’informations sur le processus de signature différée, consultez [Temporisation de signature d’un assembly](../../../docs/framework/app-domains/delay-sign-assembly.md).|  
+|`/delaysign`|Spécifie à Aximp.exe que le contrôle résultant doit être signé à l'aide du processus de signature différée. Vous devez spécifier cette option avec l’option `/keycontainer:`, `/keyfile:` ou `/publickey:`. Pour plus d’informations sur le processus de signature différée, consultez [Temporisation de signature d’un assembly](../../standard/assembly/delay-sign.md).|  
 |`/help`|Affiche la syntaxe et les options de commande de l'outil.|  
 |`/keycontainer:`*nom_conteneur*|Signe le contrôle obtenu avec un nom fort en utilisant la paire de clés publique/privée présente dans le conteneur de clé spécifié par *nom_conteneur*.|  
 |`/keyfile:` *nom_fichier*|Signe le contrôle résultant avec un nom fort en utilisant la paire de clés publique/privée officielle de l’éditeur présente dans *nom_fichier*.|  
