@@ -1,24 +1,6 @@
 - name: Concepts de programmation
   href: index.md
   items:
-    - name: Assemblys
-      items:
-        - name: Assemblys friend
-          items:
-            - name: "Procédure\_: créer des assemblys friend non signés"
-              href: assemblies-gac/how-to-create-unsigned-friend-assemblies.md
-            - name: "Procédure\_: créer des assemblys friend signés"
-              href: assemblies-gac/how-to-create-signed-friend-assemblies.md
-        - name: "Procédure\_: créer et utiliser des assemblys à l’aide de la ligne de commande"
-          href: assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md
-        - name: "Procédure\_: déterminer si un fichier est un assembly"
-          href: assemblies-gac/how-to-determine-if-a-file-is-an-assembly.md
-        - name: "Procédure\_: charger et décharger des assemblys"
-          href: assemblies-gac/how-to-load-and-unload-assemblies.md
-        - name: "Procédure\_: partager un assembly avec d’autres applications"
-          href: assemblies-gac/how-to-share-an-assembly-with-other-applications.md
-        - name: "Procédure pas à pas\_: Incorporation de types provenant d’assemblys managés dans Visual Studio"
-          href: assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md
     - name: Programmation asynchrone avec async et await
       href: async/
     - name: Attributs
