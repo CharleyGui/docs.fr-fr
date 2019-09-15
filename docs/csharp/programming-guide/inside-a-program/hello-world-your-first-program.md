@@ -1,7 +1,7 @@
 ---
-title: Hello World -- Votre premier programme - Guide de programmation C#
+title: Hello World--votre premier programme à l’aide de Visual Studio sur Windows C# ou Mac-Guide de programmation
 ms.custom: seodec18
-ms.date: 07/20/2015
+ms.date: 09/12/2019
 f1_keywords:
 - cs.program
 - vs.csharp.startpage.firstapplication
@@ -9,135 +9,123 @@ helpviewer_keywords:
 - examples [C#], Hello World
 - Hello World example [C#]
 ms.assetid: 6493182a-b0b6-4539-a719-518a168cb730
-ms.openlocfilehash: 9a50de0bb583a1dfccfa609be1cca732868505ba
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 0807e46d36a4cf031bc44ae0dc4efab79dd51d03
+ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589375"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70991340"
 ---
-# <a name="hello-world----your-first-program-c-programming-guide"></a><span data-ttu-id="747d3-102">Hello World -- Votre premier programme (Guide de programmation C#)</span><span class="sxs-lookup"><span data-stu-id="747d3-102">Hello World -- Your first program (C# Programming Guide)</span></span>
+# <a name="hello-world----your-first-program"></a><span data-ttu-id="5a303-102">Hello World--votre premier programme</span><span class="sxs-lookup"><span data-stu-id="5a303-102">Hello World -- Your first program</span></span>
 
-<span data-ttu-id="747d3-103">La procédure suivante crée une version C# du traditionnel programme « Hello World ! »</span><span class="sxs-lookup"><span data-stu-id="747d3-103">The following procedure creates a C# version of the traditional "Hello World!"</span></span> <span data-ttu-id="747d3-104">.</span><span class="sxs-lookup"><span data-stu-id="747d3-104">program.</span></span> <span data-ttu-id="747d3-105">Le programme affiche la chaîne `Hello World!`</span><span class="sxs-lookup"><span data-stu-id="747d3-105">The program displays the string `Hello World!`</span></span>
-
-<span data-ttu-id="747d3-106">Pour plus d’exemples concernant les concepts de base, consultez [Bien démarrer avec Visual Basic et Visual C#](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic).</span><span class="sxs-lookup"><span data-stu-id="747d3-106">For more examples of introductory concepts, see [Getting Started with Visual C# and Visual Basic](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic).</span></span>
+<span data-ttu-id="5a303-103">Dans cet article, vous allez utiliser Visual Studio pour créer le « Hello World ! » traditionnel</span><span class="sxs-lookup"><span data-stu-id="5a303-103">In this article, you'll use Visual Studio to create the traditional "Hello World!"</span></span> <span data-ttu-id="5a303-104">.</span><span class="sxs-lookup"><span data-stu-id="5a303-104">program.</span></span> <span data-ttu-id="5a303-105">Visual Studio est un environnement de développement intégré (IDE) professionnel avec de nombreuses fonctionnalités conçues pour le développement .NET.</span><span class="sxs-lookup"><span data-stu-id="5a303-105">Visual Studio is a professional Integrated Development Environment (IDE) with many features designed for .NET development.</span></span> <span data-ttu-id="5a303-106">Vous n’utiliserez que quelques-unes des fonctionnalités de Visual Studio pour créer ce programme.</span><span class="sxs-lookup"><span data-stu-id="5a303-106">You'll use only a few of the features in Visual Studio to create this program.</span></span> <span data-ttu-id="5a303-107">Pour en savoir plus sur Visual Studio, consultez [prise en main avec C# Visual et Visual Basic](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic).</span><span class="sxs-lookup"><span data-stu-id="5a303-107">To learn more about Visual Studio, see [Getting Started with Visual C# and Visual Basic](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic).</span></span>
 
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]
 
-## <a name="to-create-and-run-a-console-application"></a><span data-ttu-id="747d3-107">Pour créer et exécuter une application console</span><span class="sxs-lookup"><span data-stu-id="747d3-107">To create and run a console application</span></span>
+## <a name="create-a-new-application"></a><span data-ttu-id="5a303-108">Créer une application</span><span class="sxs-lookup"><span data-stu-id="5a303-108">Create a new application</span></span>
 
-1. <span data-ttu-id="747d3-108">Démarrez Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="747d3-108">Start Visual Studio.</span></span>
+<!-- markdownlint-disable MD025 -->
 
-2. <span data-ttu-id="747d3-109">Dans la barre de menus, sélectionnez **Fichier**, **Nouveau**, **Projet**.</span><span class="sxs-lookup"><span data-stu-id="747d3-109">On the menu bar, choose **File**, **New**, **Project**.</span></span>
+# <a name="windowstabwindows"></a>[<span data-ttu-id="5a303-109">Windows</span><span class="sxs-lookup"><span data-stu-id="5a303-109">Windows</span></span>](#tab/windows)
 
-     <span data-ttu-id="747d3-110">La boîte de dialogue **Nouveau projet** s'affiche.</span><span class="sxs-lookup"><span data-stu-id="747d3-110">The **New Project** dialog box opens.</span></span>
+<span data-ttu-id="5a303-110">Démarrez Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="5a303-110">Start Visual Studio.</span></span> <span data-ttu-id="5a303-111">L’image suivante s’affiche sur Windows :</span><span class="sxs-lookup"><span data-stu-id="5a303-111">You'll see the following image on Windows:</span></span>
 
-3. <span data-ttu-id="747d3-111">Développez **Installé**, **Modèles**, **Visual C#** , puis choisissez **Application console**.</span><span class="sxs-lookup"><span data-stu-id="747d3-111">Expand **Installed**, expand **Templates**, expand **Visual C#**, and then choose **Console Application**.</span></span>
+![Écran de bienvenue de Visual Studio sur Windows](./media/hello-world-your-first-program/visual-studio-windows-start-screen.png)
 
-4. <span data-ttu-id="747d3-112">Dans la zone de texte **Nom**, entrez un nom pour votre projet, puis choisissez le bouton **OK**.</span><span class="sxs-lookup"><span data-stu-id="747d3-112">In the **Name** box, specify a name for your project, and then choose the **OK** button.</span></span>
+<span data-ttu-id="5a303-113">Sélectionnez **créer un nouveau projet** dans le coin inférieur droit de l’image.</span><span class="sxs-lookup"><span data-stu-id="5a303-113">Select **Create a new project** in the lower right corner of the image.</span></span> <span data-ttu-id="5a303-114">Visual Studio affiche la boîte **de dialogue Nouveau projet** :</span><span class="sxs-lookup"><span data-stu-id="5a303-114">Visual Studio displays the **New Project** dialog:</span></span>
 
-     <span data-ttu-id="747d3-113">Le nouveau projet s’affiche dans l’**Explorateur de solutions**.</span><span class="sxs-lookup"><span data-stu-id="747d3-113">The new project appears in **Solution Explorer**.</span></span>
+![Écran nouveau projet de Visual Studio sur Windows](./media/hello-world-your-first-program/visual-studio-windows-new-project.png)
 
-5. <span data-ttu-id="747d3-114">Si Program.cs n’est pas ouvert dans l’**Éditeur de Code**, ouvrez le menu contextuel de **Program.cs** dans **l’Explorateur de solutions**, puis choisissez **Afficher le code**.</span><span class="sxs-lookup"><span data-stu-id="747d3-114">If Program.cs isn't open in the **Code Editor**, open the shortcut menu for **Program.cs** in **Solution Explorer**, and then choose **View Code**.</span></span>
+> [!NOTE]
+> <span data-ttu-id="5a303-116">S’il s’agit de la première fois que vous démarrez Visual Studio, la liste des **modèles de projet récents** est vide.</span><span class="sxs-lookup"><span data-stu-id="5a303-116">If this is the first time you've started Visual Studio, the **Recent project templates** list is empty.</span></span>
 
-6. <span data-ttu-id="747d3-115">Remplacez le contenu de Program.cs par le code suivant.</span><span class="sxs-lookup"><span data-stu-id="747d3-115">Replace the contents of Program.cs with the following code.</span></span>
+<span data-ttu-id="5a303-117">Dans la boîte de dialogue Nouveau projet, choisissez application console (.NET Core), puis cliquez sur **suivant**.</span><span class="sxs-lookup"><span data-stu-id="5a303-117">On the new project dialog, choose "Console App (.NET Core)" and then press **Next**.</span></span> <span data-ttu-id="5a303-118">Donnez un nom à votre projet, tel que « HelloWorld », puis appuyez sur **créer**.</span><span class="sxs-lookup"><span data-stu-id="5a303-118">Give your project a name, such as "HelloWorld", then press **Create**.</span></span>
 
-     [!code-csharp[csProgGuide#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#21)]
+<span data-ttu-id="5a303-119">Visual Studio ouvre votre projet.</span><span class="sxs-lookup"><span data-stu-id="5a303-119">Visual Studio opens your project.</span></span> <span data-ttu-id="5a303-120">Il s’agit déjà d’un « Hello World ! » de base.</span><span class="sxs-lookup"><span data-stu-id="5a303-120">It's already a basic "Hello World!"</span></span> <span data-ttu-id="5a303-121">« Hello, World! ».</span><span class="sxs-lookup"><span data-stu-id="5a303-121">example.</span></span> <span data-ttu-id="5a303-122">Appuyez `Ctrl`  +  sur pour exécuter votreprojet.`F5`</span><span class="sxs-lookup"><span data-stu-id="5a303-122">Press `Ctrl` + `F5` to run your project.</span></span> <span data-ttu-id="5a303-123">Visual Studio génère votre projet et convertit le code source en un fichier exécutable.</span><span class="sxs-lookup"><span data-stu-id="5a303-123">Visual Studio builds your project, converting the source code into an executable.</span></span> <span data-ttu-id="5a303-124">Ensuite, il lance une fenêtre de commande qui exécute votre nouvelle application.</span><span class="sxs-lookup"><span data-stu-id="5a303-124">Then, it launches a command window that runs your new application.</span></span> <span data-ttu-id="5a303-125">Vous devez voir le texte suivant dans la fenêtre :</span><span class="sxs-lookup"><span data-stu-id="5a303-125">You should see the following text in the window:</span></span>
 
-7. <span data-ttu-id="747d3-116">Appuyez sur la touche F5 pour exécuter le projet.</span><span class="sxs-lookup"><span data-stu-id="747d3-116">Choose the F5 key to run the project.</span></span> <span data-ttu-id="747d3-117">Une fenêtre d’invite de commandes s’affiche avec la ligne `Hello World!`</span><span class="sxs-lookup"><span data-stu-id="747d3-117">A Command Prompt window appears that contains the line `Hello World!`</span></span>
+```console
+Hello World!
 
-<span data-ttu-id="747d3-118">Ensuite, les parties importantes de ce programme sont examinées.</span><span class="sxs-lookup"><span data-stu-id="747d3-118">Next, the important parts of this program are examined.</span></span>
+C:\Program Files\dotnet\dotnet.exe (process 11964) exited with code 0.
+Press any key to close this window . . .
+```
 
-## <a name="comments"></a><span data-ttu-id="747d3-119">Commentaires</span><span class="sxs-lookup"><span data-stu-id="747d3-119">Comments</span></span>
+<span data-ttu-id="5a303-126">Appuyez sur une touche pour fermer la fenêtre.</span><span class="sxs-lookup"><span data-stu-id="5a303-126">Press a key to close the window.</span></span>
 
-<span data-ttu-id="747d3-120">La première ligne contient un commentaire.</span><span class="sxs-lookup"><span data-stu-id="747d3-120">The first line contains a comment.</span></span> <span data-ttu-id="747d3-121">Les caractères `//` convertissent le reste de la ligne en un commentaire.</span><span class="sxs-lookup"><span data-stu-id="747d3-121">The characters `//` convert the rest of the line to a comment.</span></span>
+# <a name="macostabmacos"></a>[<span data-ttu-id="5a303-127">macOS</span><span class="sxs-lookup"><span data-stu-id="5a303-127">macOS</span></span>](#tab/macos)
 
- [!code-csharp[csProgGuide#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#32)]
+<span data-ttu-id="5a303-128">Démarrez Visual Studio pour Mac.</span><span class="sxs-lookup"><span data-stu-id="5a303-128">Start Visual Studio for Mac.</span></span> <span data-ttu-id="5a303-129">L’image suivante s’affiche sur Mac :</span><span class="sxs-lookup"><span data-stu-id="5a303-129">You'll see the following image on Mac:</span></span>
 
-<span data-ttu-id="747d3-122">Vous pouvez également créer un commentaire à partir d’un bloc de texte en le plaçant entre les caractères `/*` et `*/`.</span><span class="sxs-lookup"><span data-stu-id="747d3-122">You can also comment out a block of text by enclosing it between the `/*` and `*/` characters.</span></span> <span data-ttu-id="747d3-123">L'exemple suivant le démontre.</span><span class="sxs-lookup"><span data-stu-id="747d3-123">This is shown in the following example.</span></span>
+![Écran de bienvenue de Visual Studio sur Mac](./media/hello-world-your-first-program/visual-studio-mac-start-screen.png)
 
- [!code-csharp[csProgGuide#33](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#33)]
+> [!NOTE]
+> <span data-ttu-id="5a303-131">S’il s’agit de la première fois que vous démarrez Visual Studio pour Mac, la liste des **projets récents** est vide.</span><span class="sxs-lookup"><span data-stu-id="5a303-131">If this is the first time you've started Visual Studio for Mac, the **Recent projects** list is empty.</span></span>
 
-## <a name="main-method"></a><span data-ttu-id="747d3-124">Main (méthode)</span><span class="sxs-lookup"><span data-stu-id="747d3-124">Main method</span></span>
+<span data-ttu-id="5a303-132">Sélectionnez **nouveau** dans le coin supérieur droit de l’image.</span><span class="sxs-lookup"><span data-stu-id="5a303-132">Select **New** in the upper right corner of the image.</span></span> <span data-ttu-id="5a303-133">Visual Studio pour Mac affiche la boîte **de dialogue Nouveau projet** :</span><span class="sxs-lookup"><span data-stu-id="5a303-133">Visual Studio for Mac displays the **New Project** dialog:</span></span>
 
-<span data-ttu-id="747d3-125">Une application console C# doit contenir une méthode `Main`, dans laquelle le contrôle commence et termine.</span><span class="sxs-lookup"><span data-stu-id="747d3-125">A C# console application must contain a `Main` method, in which control starts and ends.</span></span> <span data-ttu-id="747d3-126">C’est dans la méthode `Main` que vous créez des objets et exécutez d’autres méthodes.</span><span class="sxs-lookup"><span data-stu-id="747d3-126">The `Main` method is where you create objects and execute other methods.</span></span>
+![Écran nouveau projet de Visual Studio sur Mac](./media/hello-world-your-first-program/visual-studio-mac-new-project.png)
 
-<span data-ttu-id="747d3-127">La méthode `Main` est une méthode [static](../../language-reference/keywords/static.md) qui réside dans une classe ou un struct.</span><span class="sxs-lookup"><span data-stu-id="747d3-127">The `Main` method is a [static](../../language-reference/keywords/static.md) method that resides inside a class or a struct.</span></span> <span data-ttu-id="747d3-128">Dans l’exemple « Hello World ! »</span><span class="sxs-lookup"><span data-stu-id="747d3-128">In the previous "Hello World!"</span></span> <span data-ttu-id="747d3-129">précédent, il réside dans une classe nommée `Hello`.</span><span class="sxs-lookup"><span data-stu-id="747d3-129">example, it resides in a class named `Hello`.</span></span> <span data-ttu-id="747d3-130">Vous pouvez déclarer la méthode `Main` de l’une des façons suivantes :</span><span class="sxs-lookup"><span data-stu-id="747d3-130">You can declare the `Main` method in one of the following ways:</span></span>
+<span data-ttu-id="5a303-135">Dans la boîte de dialogue Nouveau projet, choisissez « .NET Core » et « application console », puis appuyez sur **suivant**.</span><span class="sxs-lookup"><span data-stu-id="5a303-135">On the new project dialog, choose ".NET Core", and "Console App" and then press **Next**.</span></span> <span data-ttu-id="5a303-136">Vous devez sélectionner la version cible de .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="5a303-136">You'll need to select the target framework.</span></span> <span data-ttu-id="5a303-137">La valeur par défaut est correcte. Appuyez sur suivant.</span><span class="sxs-lookup"><span data-stu-id="5a303-137">The default is fine, so press next.</span></span> <span data-ttu-id="5a303-138">Donnez un nom à votre projet, tel que « HelloWorld », puis appuyez sur **créer**.</span><span class="sxs-lookup"><span data-stu-id="5a303-138">Give your project a name, such as "HelloWorld", then press **Create**.</span></span> <span data-ttu-id="5a303-139">Vous pouvez utiliser l’emplacement de projet par défaut.</span><span class="sxs-lookup"><span data-stu-id="5a303-139">You can use the default project location.</span></span> <span data-ttu-id="5a303-140">N’ajoutez pas ce projet au contrôle de code source.</span><span class="sxs-lookup"><span data-stu-id="5a303-140">Don't add this project to source control.</span></span>
 
-- <span data-ttu-id="747d3-131">Elle peut retourner `void`.</span><span class="sxs-lookup"><span data-stu-id="747d3-131">It can return `void`.</span></span>
+<span data-ttu-id="5a303-141">Visual Studio pour Mac ouvre votre projet.</span><span class="sxs-lookup"><span data-stu-id="5a303-141">Visual Studio for Mac opens your project.</span></span> <span data-ttu-id="5a303-142">Il s’agit déjà d’un « Hello World ! » de base.</span><span class="sxs-lookup"><span data-stu-id="5a303-142">It's already a basic "Hello World!"</span></span> <span data-ttu-id="5a303-143">« Hello, World! ».</span><span class="sxs-lookup"><span data-stu-id="5a303-143">example.</span></span> <span data-ttu-id="5a303-144">Appuyez `Ctrl` surpour + exécuter votreprojet. +  `Fn` `F5`</span><span class="sxs-lookup"><span data-stu-id="5a303-144">Press `Ctrl` + `Fn` + `F5` to run your project.</span></span> <span data-ttu-id="5a303-145">Visual Studio pour Mac génère votre projet et convertit le code source en un fichier exécutable.</span><span class="sxs-lookup"><span data-stu-id="5a303-145">Visual Studio for Mac builds your project, converting the source code into an executable.</span></span> <span data-ttu-id="5a303-146">Ensuite, il lance une fenêtre de commande qui exécute votre nouvelle application.</span><span class="sxs-lookup"><span data-stu-id="5a303-146">Then, it launches a command window that runs your new application.</span></span> <span data-ttu-id="5a303-147">Vous devez voir le texte suivant dans la fenêtre :</span><span class="sxs-lookup"><span data-stu-id="5a303-147">You should see the following text in the window:</span></span>
 
-     [!code-csharp[csProgGuideMain#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#12)]
+```console
+Hello World!
 
-- <span data-ttu-id="747d3-132">Elle peut également retourner un entier.</span><span class="sxs-lookup"><span data-stu-id="747d3-132">It can also return an integer.</span></span>
+Press any key to close this window . . .
+```
 
-     [!code-csharp[csProgGuideMain#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#13)]
+<span data-ttu-id="5a303-148">Appuyez sur une touche pour mettre fin à la session.</span><span class="sxs-lookup"><span data-stu-id="5a303-148">Press a key to end the session.</span></span>
 
-- <span data-ttu-id="747d3-133">Elle peut accepter des arguments avec n’importe quel type de retour.</span><span class="sxs-lookup"><span data-stu-id="747d3-133">With either of the return types, it can take arguments.</span></span>
+---
 
-     [!code-csharp[csProgGuideMain#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#19)]
+## <a name="elements-of-a-c-program"></a><span data-ttu-id="5a303-149">Éléments d’un C# programme</span><span class="sxs-lookup"><span data-stu-id="5a303-149">Elements of a C# program</span></span>
 
-     <span data-ttu-id="747d3-134">-ou-</span><span class="sxs-lookup"><span data-stu-id="747d3-134">-or-</span></span>
+<span data-ttu-id="5a303-150">Examinons les parties importantes de ce programme.</span><span class="sxs-lookup"><span data-stu-id="5a303-150">Let's examine the important parts of this program.</span></span> <span data-ttu-id="5a303-151">La première ligne contient un commentaire.</span><span class="sxs-lookup"><span data-stu-id="5a303-151">The first line contains a comment.</span></span> <span data-ttu-id="5a303-152">Les caractères `//` convertissent le reste de la ligne en un commentaire.</span><span class="sxs-lookup"><span data-stu-id="5a303-152">The characters `//` convert the rest of the line to a comment.</span></span>
 
-     [!code-csharp[csProgGuideMain#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#18)]
+[!code-csharp[csProgGuide#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#32)]
 
-<span data-ttu-id="747d3-135">Le paramètre `args` de la méthode `Main` est un tableau `string` qui contient les arguments de la ligne de commande utilisés pour appeler le programme.</span><span class="sxs-lookup"><span data-stu-id="747d3-135">The parameter of the `Main` method, `args`, is a `string` array that contains the command-line arguments used to invoke the program.</span></span> <span data-ttu-id="747d3-136">Contrairement au langage C++, le tableau n’inclut pas le nom du fichier exécutable (exe).</span><span class="sxs-lookup"><span data-stu-id="747d3-136">Unlike in C++, the array does not include the name of the executable (exe) file.</span></span>
+<span data-ttu-id="5a303-153">Vous pouvez également créer un commentaire à partir d’un bloc de texte en le plaçant entre les caractères `/*` et `*/`.</span><span class="sxs-lookup"><span data-stu-id="5a303-153">You can also comment out a block of text by enclosing it between the `/*` and `*/` characters.</span></span> <span data-ttu-id="5a303-154">L'exemple suivant le démontre.</span><span class="sxs-lookup"><span data-stu-id="5a303-154">This is shown in the following example.</span></span>
 
-<span data-ttu-id="747d3-137">Pour plus d’informations sur l’utilisation des arguments de ligne de commande, consultez les exemples des rubriques [Main() et arguments de ligne de commande](../main-and-command-args/index.md) et [Guide pratique pour créer et utiliser des assemblys à l’aide de la ligne de commande](../concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md).</span><span class="sxs-lookup"><span data-stu-id="747d3-137">For more information about how to use command-line arguments, see the examples in [Main() and Command-Line Arguments](../main-and-command-args/index.md) and [How to: Create and Use Assemblies Using the Command Line](../concepts/assemblies-gac/how-to-create-and-use-assemblies-using-the-command-line.md).</span></span>
+[!code-csharp[csProgGuide#33](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#33)]
 
-<span data-ttu-id="747d3-138">L’appel à <xref:System.Console.ReadKey%2A> à la fin de la méthode `Main` empêche la fenêtre de console de se fermer avant que vous ayez pu lire la sortie quand vous exécutez votre programme en mode débogage, avec la touche F5.</span><span class="sxs-lookup"><span data-stu-id="747d3-138">The call to <xref:System.Console.ReadKey%2A> at the end of the `Main` method prevents the console window from closing before you have a chance to read the output when you run your program in debug mode, by pressing F5.</span></span>
+<span data-ttu-id="5a303-155">Une application console C# doit contenir une méthode `Main`, dans laquelle le contrôle commence et termine.</span><span class="sxs-lookup"><span data-stu-id="5a303-155">A C# console application must contain a `Main` method, in which control starts and ends.</span></span> <span data-ttu-id="5a303-156">C’est dans la méthode `Main` que vous créez des objets et exécutez d’autres méthodes.</span><span class="sxs-lookup"><span data-stu-id="5a303-156">The `Main` method is where you create objects and execute other methods.</span></span>
 
-## <a name="input-and-output"></a><span data-ttu-id="747d3-139">Entrée et sortie</span><span class="sxs-lookup"><span data-stu-id="747d3-139">Input and output</span></span>
+<span data-ttu-id="5a303-157">La méthode `Main` est une méthode [static](../../language-reference/keywords/static.md) qui réside dans une classe ou un struct.</span><span class="sxs-lookup"><span data-stu-id="5a303-157">The `Main` method is a [static](../../language-reference/keywords/static.md) method that resides inside a class or a struct.</span></span> <span data-ttu-id="5a303-158">Dans l’exemple « Hello World ! »</span><span class="sxs-lookup"><span data-stu-id="5a303-158">In the previous "Hello World!"</span></span> <span data-ttu-id="5a303-159">précédent, il réside dans une classe nommée `Hello`.</span><span class="sxs-lookup"><span data-stu-id="5a303-159">example, it resides in a class named `Hello`.</span></span> <span data-ttu-id="5a303-160">Vous pouvez déclarer la méthode `Main` de l’une des façons suivantes :</span><span class="sxs-lookup"><span data-stu-id="5a303-160">You can declare the `Main` method in one of the following ways:</span></span>
 
-<span data-ttu-id="747d3-140">Les programmes C# utilisent généralement les services d’entrée/sortie fournis par la bibliothèque runtime du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="747d3-140">C# programs generally use the input/output services provided by the run-time library of the .NET Framework.</span></span> <span data-ttu-id="747d3-141">L’instruction `System.Console.WriteLine("Hello World!");` utilise la méthode <xref:System.Console.WriteLine%2A>.</span><span class="sxs-lookup"><span data-stu-id="747d3-141">The statement `System.Console.WriteLine("Hello World!");` uses the <xref:System.Console.WriteLine%2A> method.</span></span> <span data-ttu-id="747d3-142">C’est l’une des méthodes de sortie de la classe <xref:System.Console> de la bibliothèque runtime.</span><span class="sxs-lookup"><span data-stu-id="747d3-142">This is one of the output methods of the <xref:System.Console> class in the run-time library.</span></span> <span data-ttu-id="747d3-143">Elle affiche son paramètre de chaîne dans le flux de sortie standard suivi d’une nouvelle ligne.</span><span class="sxs-lookup"><span data-stu-id="747d3-143">It displays its string parameter on the standard output stream followed by a new line.</span></span> <span data-ttu-id="747d3-144">D’autres méthodes <xref:System.Console> sont disponibles pour différentes opérations d’entrée et de sortie.</span><span class="sxs-lookup"><span data-stu-id="747d3-144">Other <xref:System.Console> methods are available for different input and output operations.</span></span> <span data-ttu-id="747d3-145">Si vous incluez la directive `using System;` au début du programme, vous pouvez utiliser directement les classes et les méthodes <xref:System> sans les qualifier complètement.</span><span class="sxs-lookup"><span data-stu-id="747d3-145">If you include the `using System;` directive at the beginning of the program, you can directly use the <xref:System> classes and methods without fully qualifying them.</span></span> <span data-ttu-id="747d3-146">Par exemple, vous pouvez appeler `Console.WriteLine` au lieu de `System.Console.WriteLine` :</span><span class="sxs-lookup"><span data-stu-id="747d3-146">For example, you can call `Console.WriteLine` instead of `System.Console.WriteLine`:</span></span>
+- <span data-ttu-id="5a303-161">Elle peut retourner `void`.</span><span class="sxs-lookup"><span data-stu-id="5a303-161">It can return `void`.</span></span> <span data-ttu-id="5a303-162">Cela signifie que votre programme ne retourne pas de valeur.</span><span class="sxs-lookup"><span data-stu-id="5a303-162">That means your program doesn't return a value.</span></span>
 
- [!code-csharp[csProgGuide#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/using.cs#1)]
+[!code-csharp[csProgGuideMain#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#12)]
 
- [!code-csharp[csProgGuide#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#23)]
+- <span data-ttu-id="5a303-163">Elle peut également retourner un entier.</span><span class="sxs-lookup"><span data-stu-id="5a303-163">It can also return an integer.</span></span> <span data-ttu-id="5a303-164">L’entier est le **Code de sortie** de votre application.</span><span class="sxs-lookup"><span data-stu-id="5a303-164">The integer is the **exit code** for your application.</span></span>
 
-<span data-ttu-id="747d3-147">Pour plus d’informations sur les méthodes d’entrée/sortie, consultez <xref:System.IO>.</span><span class="sxs-lookup"><span data-stu-id="747d3-147">For more information about input/output methods, see <xref:System.IO>.</span></span>
+[!code-csharp[csProgGuideMain#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#13)]
 
-## <a name="command-line-compilation-and-execution"></a><span data-ttu-id="747d3-148">Compilation et exécution en ligne de commande</span><span class="sxs-lookup"><span data-stu-id="747d3-148">Command-line compilation and execution</span></span>
+- <span data-ttu-id="5a303-165">Elle peut accepter des arguments avec n’importe quel type de retour.</span><span class="sxs-lookup"><span data-stu-id="5a303-165">With either of the return types, it can take arguments.</span></span>
 
-<span data-ttu-id="747d3-149">Vous pouvez compiler le programme « Hello World ! »</span><span class="sxs-lookup"><span data-stu-id="747d3-149">You can compile the "Hello World!"</span></span> <span data-ttu-id="747d3-150">à l’aide de la ligne de commande au lieu de l’environnement de développement intégré (IDE) Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="747d3-150">program by using the command line instead of the Visual Studio Integrated Development Environment (IDE).</span></span>
+[!code-csharp[csProgGuideMain#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#19)]
 
-### <a name="to-compile-and-run-from-a-command-prompt"></a><span data-ttu-id="747d3-151">Pour compiler et exécuter à partir d’une invite de commandes</span><span class="sxs-lookup"><span data-stu-id="747d3-151">To compile and run from a command prompt</span></span>
+<span data-ttu-id="5a303-166">ou</span><span class="sxs-lookup"><span data-stu-id="5a303-166">-or-</span></span>
 
-1. <span data-ttu-id="747d3-152">Copiez-collez le code de la procédure précédente dans un éditeur de texte, puis enregistrez le fichier en tant que fichier texte.</span><span class="sxs-lookup"><span data-stu-id="747d3-152">Paste the code from the preceding procedure into any text editor, and then save the file as a text file.</span></span> <span data-ttu-id="747d3-153">Nommez le fichier `Hello.cs`.</span><span class="sxs-lookup"><span data-stu-id="747d3-153">Name the file `Hello.cs`.</span></span> <span data-ttu-id="747d3-154">Les fichiers de code source C# utilisent l’extension `.cs`.</span><span class="sxs-lookup"><span data-stu-id="747d3-154">C# source code files use the extension `.cs`.</span></span>
+[!code-csharp[csProgGuideMain#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#18)]
 
-2. <span data-ttu-id="747d3-155">Effectuez l’une des opérations suivantes pour ouvrir une fenêtre d’invite de commandes :</span><span class="sxs-lookup"><span data-stu-id="747d3-155">Perform one of the following steps to open a command-prompt window:</span></span>
+<span data-ttu-id="5a303-167">Le paramètre `args` de la méthode `Main` est un tableau `string` qui contient les arguments de la ligne de commande utilisés pour appeler le programme.</span><span class="sxs-lookup"><span data-stu-id="5a303-167">The parameter of the `Main` method, `args`, is a `string` array that contains the command-line arguments used to invoke the program.</span></span>
 
-    - <span data-ttu-id="747d3-156">Dans Windows 10, dans le menu **Démarrer**, recherchez `Developer Command Prompt`, puis choisissez **Invite de commandes développeur pour VS 2017**.</span><span class="sxs-lookup"><span data-stu-id="747d3-156">In Windows 10, on the **Start** menu, search for `Developer Command Prompt`, and then tap or choose **Developer Command Prompt for VS 2017**.</span></span>
+<span data-ttu-id="5a303-168">Pour plus d’informations sur l’utilisation des arguments de ligne de commande, consultez les exemples dans [main () et arguments de ligne de commande](../main-and-command-args/index.md).</span><span class="sxs-lookup"><span data-stu-id="5a303-168">For more information about how to use command-line arguments, see the examples in [Main() and Command-Line Arguments](../main-and-command-args/index.md).</span></span>
 
-         <span data-ttu-id="747d3-157">Une fenêtre d’invite de commandes développeur s’affiche.</span><span class="sxs-lookup"><span data-stu-id="747d3-157">A Developer Command Prompt window appears.</span></span>
+## <a name="input-and-output"></a><span data-ttu-id="5a303-169">Entrée et sortie</span><span class="sxs-lookup"><span data-stu-id="5a303-169">Input and output</span></span>
 
-    - <span data-ttu-id="747d3-158">Dans Windows 7, ouvrez le menu **Démarrer**, développez le dossier de la version actuelle de Visual Studio, ouvrez le menu contextuel de **Visual Studio Tools**, puis choisissez **Invite de commandes de développeur de VS 2017**.</span><span class="sxs-lookup"><span data-stu-id="747d3-158">In Windows 7, open the **Start** menu, expand the folder for the current version of Visual Studio, open the shortcut menu for **Visual Studio Tools**, and then choose **Developer Command Prompt for VS 2017**.</span></span>
+<span data-ttu-id="5a303-170">Les programmes C# utilisent généralement les services d’entrée/sortie fournis par la bibliothèque runtime du .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="5a303-170">C# programs generally use the input/output services provided by the run-time library of the .NET Framework.</span></span> <span data-ttu-id="5a303-171">L’instruction `System.Console.WriteLine("Hello World!");` utilise la méthode <xref:System.Console.WriteLine%2A>.</span><span class="sxs-lookup"><span data-stu-id="5a303-171">The statement `System.Console.WriteLine("Hello World!");` uses the <xref:System.Console.WriteLine%2A> method.</span></span> <span data-ttu-id="5a303-172">C’est l’une des méthodes de sortie de la classe <xref:System.Console> de la bibliothèque runtime.</span><span class="sxs-lookup"><span data-stu-id="5a303-172">This is one of the output methods of the <xref:System.Console> class in the run-time library.</span></span> <span data-ttu-id="5a303-173">Elle affiche son paramètre de chaîne dans le flux de sortie standard suivi d’une nouvelle ligne.</span><span class="sxs-lookup"><span data-stu-id="5a303-173">It displays its string parameter on the standard output stream followed by a new line.</span></span> <span data-ttu-id="5a303-174">D’autres méthodes <xref:System.Console> sont disponibles pour différentes opérations d’entrée et de sortie.</span><span class="sxs-lookup"><span data-stu-id="5a303-174">Other <xref:System.Console> methods are available for different input and output operations.</span></span> <span data-ttu-id="5a303-175">Si vous incluez la directive `using System;` au début du programme, vous pouvez utiliser directement les classes et les méthodes <xref:System> sans les qualifier complètement.</span><span class="sxs-lookup"><span data-stu-id="5a303-175">If you include the `using System;` directive at the beginning of the program, you can directly use the <xref:System> classes and methods without fully qualifying them.</span></span> <span data-ttu-id="5a303-176">Par exemple, vous pouvez appeler `Console.WriteLine` au lieu de `System.Console.WriteLine` :</span><span class="sxs-lookup"><span data-stu-id="5a303-176">For example, you can call `Console.WriteLine` instead of `System.Console.WriteLine`:</span></span>
 
-         <span data-ttu-id="747d3-159">Une fenêtre d’invite de commandes développeur s’affiche.</span><span class="sxs-lookup"><span data-stu-id="747d3-159">A Developer Command Prompt window appears.</span></span>
+[!code-csharp[csProgGuide#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/using.cs#1)]
 
-    - <span data-ttu-id="747d3-160">Activez les générations en mode ligne de commande à partir d’une fenêtre d’invite de commandes standard.</span><span class="sxs-lookup"><span data-stu-id="747d3-160">Enable command-line builds from a standard Command Prompt window.</span></span>
+[!code-csharp[csProgGuide#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#23)]
 
-         <span data-ttu-id="747d3-161">Voir [Guide pratique pour définir des variables d’environnement pour la ligne de commande Visual Studio](../../language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md).</span><span class="sxs-lookup"><span data-stu-id="747d3-161">See [How to: Set Environment Variables for the Visual Studio Command Line](../../language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md).</span></span>
+<span data-ttu-id="5a303-177">Pour plus d’informations sur les méthodes d’entrée/sortie, consultez <xref:System.IO>.</span><span class="sxs-lookup"><span data-stu-id="5a303-177">For more information about input/output methods, see <xref:System.IO>.</span></span>
 
-3. <span data-ttu-id="747d3-162">Dans la fenêtre d’invite de commandes, accédez au dossier qui contient le fichier `Hello.cs`.</span><span class="sxs-lookup"><span data-stu-id="747d3-162">In the command-prompt window, navigate to the folder that contains your `Hello.cs` file.</span></span>
+## <a name="see-also"></a><span data-ttu-id="5a303-178">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5a303-178">See also</span></span>
 
-4. <span data-ttu-id="747d3-163">Entrez la commande suivante pour compiler `Hello.cs`.</span><span class="sxs-lookup"><span data-stu-id="747d3-163">Enter the following command to compile `Hello.cs`.</span></span>
-
-     `csc Hello.cs`
-
-     <span data-ttu-id="747d3-164">Si votre programme ne contient pas d’erreurs de compilation, un fichier exécutable nommé `Hello.exe` est créé.</span><span class="sxs-lookup"><span data-stu-id="747d3-164">If your program has no compilation errors, an executable file that is named `Hello.exe` is created.</span></span>
-
-5. <span data-ttu-id="747d3-165">Dans la fenêtre d’invite de commandes, entrez la commande suivante pour exécuter le programme :</span><span class="sxs-lookup"><span data-stu-id="747d3-165">In the command-prompt window, enter the following command to run the program:</span></span>
-
-     `Hello`
-
- <span data-ttu-id="747d3-166">Pour plus d’informations sur le compilateur C# et ses options, consultez [Options du compilateur C #](../../language-reference/compiler-options/index.md).</span><span class="sxs-lookup"><span data-stu-id="747d3-166">For more information about the C# compiler and its options, see [C# Compiler Options](../../language-reference/compiler-options/index.md).</span></span>
-
-## <a name="see-also"></a><span data-ttu-id="747d3-167">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="747d3-167">See also</span></span>
-
-- [<span data-ttu-id="747d3-168">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="747d3-168">C# Programming Guide</span></span>](../index.md)
-- [<span data-ttu-id="747d3-169">À l’intérieur d’un programme C#</span><span class="sxs-lookup"><span data-stu-id="747d3-169">Inside a C# Program</span></span>](./index.md)
-- [<span data-ttu-id="747d3-170">Chaînes</span><span class="sxs-lookup"><span data-stu-id="747d3-170">Strings</span></span>](../strings/index.md)
-- [<span data-ttu-id="747d3-171">Exemples et tutoriels</span><span class="sxs-lookup"><span data-stu-id="747d3-171">Samples and tutorials</span></span>](../../../samples-and-tutorials/index.md)
-- [<span data-ttu-id="747d3-172">Référence C#</span><span class="sxs-lookup"><span data-stu-id="747d3-172">C# Reference</span></span>](../../language-reference/index.md)
-- [<span data-ttu-id="747d3-173">Main() et arguments de ligne de commande</span><span class="sxs-lookup"><span data-stu-id="747d3-173">Main() and Command-Line Arguments</span></span>](../main-and-command-args/index.md)
-- [<span data-ttu-id="747d3-174">Mises en route de Visual Basic et Visual C#</span><span class="sxs-lookup"><span data-stu-id="747d3-174">Getting Started with Visual C# and Visual Basic</span></span>](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)
+- [<span data-ttu-id="5a303-179">Guide de programmation C#</span><span class="sxs-lookup"><span data-stu-id="5a303-179">C# Programming Guide</span></span>](../index.md)
+- [<span data-ttu-id="5a303-180">Exemples et tutoriels</span><span class="sxs-lookup"><span data-stu-id="5a303-180">Samples and tutorials</span></span>](../../../samples-and-tutorials/index.md)
+- [<span data-ttu-id="5a303-181">Main() et arguments de ligne de commande</span><span class="sxs-lookup"><span data-stu-id="5a303-181">Main() and Command-Line Arguments</span></span>](../main-and-command-args/index.md)
+- [<span data-ttu-id="5a303-182">Mises en route de Visual Basic et Visual C#</span><span class="sxs-lookup"><span data-stu-id="5a303-182">Getting Started with Visual C# and Visual Basic</span></span>](/visualstudio/ide/getting-started-with-visual-csharp-and-visual-basic)
