@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7ceee0c228000982be83c79fed2f7af43712b3ae
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: f4d7cbd00dbf94900185643490b952ced7887965
+ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963393"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70895222"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Comportement détaillé des expressions régulières
 Le moteur d’expression régulière du .NET Framework est un analyseur d’expression régulière rétroactive qui incorpore un moteur NFA (Nondeterministic Finite Automaton) tel que celui utilisé par Perl, Python, Emacs et Tcl. Cette particularité le distingue des moteurs d’expression régulière pure DFA (Deterministic Finite Automaton) plus rapides, mais plus limités, comme ceux d’awk, egrep ou lex. Elle le distingue également des moteurs NFA POSIX standardisés, mais plus lents. La section suivante décrit les trois types de moteurs d’expression régulière et explique pourquoi les expressions régulières dans le .NET Framework sont implémentées à l’aide d’un moteur NFA classique.  
@@ -98,7 +98,7 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
     |`^`|Commencer la correspondance au début d’une ligne.|  
     |`(?<Pvt>\<PRIVATE\>\s)?`|Mettre en correspondance zéro ou une occurrence de la chaîne `<PRIVATE>` suivie d’un espace blanc. Assigner la correspondance à un groupe de capture nommé `Pvt`.|  
     |`(?(Pvt)((\w+\p{P}?\s)+)`|Si le groupe de capture `Pvt` existe, mettre en correspondance une ou plusieurs occurrences d’un ou plusieurs caractères de mot suivis de zéro ou un séparateur de ponctuation suivi d’un espace blanc. Assigner la sous-chaîne au premier groupe de capture.|  
-    |<code>&#124;((\w+\p{P}?\s)+))<code>|Si le groupe de capture `Pvt` n’existe pas, mettre en correspondance une ou plusieurs occurrences d’un ou plusieurs caractères de mot suivis de zéro ou un séparateur de ponctuation suivi d’un espace blanc. Assigner la sous-chaîne au troisième groupe de capture.|  
+    |<code>&#124;((\w+\p{P}?\s)+))</code>|Si le groupe de capture `Pvt` n’existe pas, mettre en correspondance une ou plusieurs occurrences d’un ou plusieurs caractères de mot suivis de zéro ou un séparateur de ponctuation suivi d’un espace blanc. Assigner la sous-chaîne au troisième groupe de capture.|  
     |`\r?$`|Mettre en correspondance la fin d’une ligne ou la fin de la chaîne.|  
   
      Pour plus d’informations sur l’évaluation conditionnelle, consultez [Constructions d’alternative](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md).  
