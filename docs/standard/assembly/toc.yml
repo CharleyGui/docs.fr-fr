@@ -1,11 +1,66 @@
 - name: Assemblys dans .NET
   href: index.md
   items:
-    - name: Assemblys friend
-      items:
-        - name: Vue d'ensemble
-          href: friend-assemblies.md
-    - name: Format de fichier d’assembly .NET
+    - name: Contenu d’assembly
+      href: contents.md
+    - name: Manifeste d'assembly
+      href: manifest.md
+    - name: Assemblys avec nom fort
+      href: strong-named.md
+    - name: Aspects de la sécurité des assemblys
+      href: security-considerations.md
+    - name: Contrôle de version des assemblys
+      href: versioning.md
+    - name: Assemblys et exécution côte à côte
+      href: side-by-side-execution.md
+    - name: Format de fichier d’assembly
       href: file-format.md
-    - name: Comment utiliser et déboguer la non-chargeabilité d’assembly dans .NET Core
-      href: unloadability-howto.md
+    - name: "Procédure\_: Utiliser et déboguer la non-chargeabilité d’assembly dans .NET Core"
+      href: unloadability.md
+    - name: Résoudre les chargements d’assembly
+      href: resolve-loads.md
+    - name: Programmer avec des assemblys
+      href: program.md
+      items:
+        - name: Créer des assemblys
+          href: create.md
+        - name: Noms d’assembly
+          href: names.md
+        - name: "Procédure\_: Rechercher le nom complet d’un assembly"
+          href: find-fully-qualified-name.md
+        - name: Emplacement d’assembly
+          href: location.md
+        - name: Définir des attributs d’assembly
+          href: set-attributes.md
+        - name: Créer et utiliser des assemblys avec nom fort
+          href: create-use-strong-named.md
+          items:
+            - name: "Procédure\_: Créer une paire de clés publique/privée"
+              href: create-public-private-key-pair.md
+            - name: "Procédure\_: Signer un assembly avec un nom fort"
+              href: sign-strong-name.md
+            - name: Amélioration de l’utilisation de noms forts
+              href: enhanced-strong-naming.md
+            - name: "Procédure\_: Référencer un assembly avec un nom fort"
+              href: reference-strong-named.md
+            - name: "Procédure\_: Désactiver la fonctionnalité de contournement des noms forts"
+              href: disable-strong-name-bypass-feature.md
+        - name: Temporiser la signature d’un assembly
+          href: delay-sign.md
+        - name: "Procédure\_: Voir le contenu d’un assembly"
+          href: view-contents.md
+        - name: Transfert de type dans le Common Language Runtime
+          href: type-forwarding.md
+        - name: Assemblys friend
+          href: friend.md
+          items:
+            - name: "Procédure\_: Créer des assemblys friend non signés"
+              href: create-unsigned-friend.md
+            - name: "Procédure\_: Créer des assemblys friend signés"
+              href: create-signed-friend.md
+        - name: "Procédure\_: Déterminer si un fichier est un assembly"
+          href: identify.md
+        - name: "Procédure\_: Charger et décharger des assemblys"
+          href: load-unload.md
+        - name: "Procédure pas à pas\_: Incorporer des types d’assemblys managés dans Visual Studio"
+          href: embed-types-visual-studio.md
