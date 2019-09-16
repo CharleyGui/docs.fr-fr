@@ -5,13 +5,13 @@ hide_bc: true
 title: Documentation .NET
 description: Découvrez comment utiliser .NET pour créer diverses applications sur n’importe quelle plateforme en C#, Visual Basic et F#. Parcourez les informations de référence sur les API, les exemples de code, les didacticiels et plus encore.
 ms.custom: updateeachrelease
-ms.date: 12/04/2018
-ms.openlocfilehash: c2a70c2d297b1ec2ef797e9d6084339f32c59c48
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.date: 09/04/2019
+ms.openlocfilehash: ec8b780100a41109f31084de0f37bec8c0fc680c
+ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799290"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70928943"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">
@@ -80,8 +80,8 @@ ms.locfileid: "70799290"
                 <a data-default="true" href="#docs">Docs</a>
                 <ul id="docs">
                     <li>
-                        <a href="#getstarted">Bien démarrer</a>
-                        <ul id="getstarted" class="cardsF">
+                        <a href="#dotnetguides">Guides .NET</a>
+                        <ul id="dotnetguides" class="cardsF">
                             <li>
                                 <div class="cardSize">
                                     <div class="cardPadding">
@@ -94,6 +94,7 @@ ms.locfileid: "70799290"
                                             <div class="cardText">
                                                 <h3><a href="/dotnet/standard/">Guide de .NET</a></h3>
                                                 <p><a href="/dotnet/standard/get-started">Bien démarrer</a></p>
+                                                <p><a href="https://docs.microsoft.com/learn/browse/?roles=developer&products=dotnet">Modules d’apprentissage pratique</a></p>
                                                 <p><a href="/dotnet/standard/tour">Présentation de .NET</a></p>
                                                 <p><a href="/dotnet/standard/components">Concepts de l’architecture .NET</a></p>
                                             </div>
@@ -267,6 +268,68 @@ ms.locfileid: "70799290"
                         </ul>
                     </li>
                     <li>
+                        <a href="#getstarted">Bien démarrer</a>
+                        <ul id="getstarted" class="cardsC">
+                            <li>
+                                <a href="/dotnet/csharp/tutorials/intro-to-csharp/hello-world">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/net-docs-csharp.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Présentation de C#</h3>
+                                                    <p>Démarrage interactif rapide.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/dotnet/core/get-started">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/net-docs-dotnet-core.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Générer votre première application .NET Core</h3>
+                                                    <p>Apprenez à générer votre première application console .NET Core.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://dotnet.microsoft.com/learn/aspnet/hello-world-tutorial/intro">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage bgdAccent1">
+                                                        <img src="/dotnet/images/hub/net-docs-web-1.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Générer votre première application web</h3>
+                                                    <p>Apprenez à générer votre première application web ASP.NET Core.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="#web">Web</a>
                         <ul id="web" class="cardsC">
                             <li>
@@ -280,7 +343,7 @@ ms.locfileid: "70799290"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Créer votre première application web</h3>
+                                                    <h3>Générer votre première application web</h3>
                                                     <p>Apprenez à générer votre première application web ASP.NET Core.</p>
                                                 </div>
                                             </div>
