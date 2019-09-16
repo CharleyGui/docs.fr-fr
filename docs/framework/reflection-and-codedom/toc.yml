@@ -16,6 +16,8 @@
           href: dynamically-loading-and-using-types.md
         - name: "Procédure\_: charger des assemblys dans le contexte de réflexion uniquement"
           href: how-to-load-assemblies-into-the-reflection-only-context.md
+        - name: "Procédure\_: Obtenir des informations de type et de membre à l’aide de la réflexion"
+          href: get-type-member-information.md
         - name: Accès aux attributs personnalisés
           href: accessing-custom-attributes.md
         - name: Spécification des noms de types qualifiés complets
