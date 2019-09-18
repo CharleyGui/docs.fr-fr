@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d32b7f35-29d8-4fb7-ad71-d219edc5e359
-ms.openlocfilehash: 74cb739d381c0b1422d9277be8c3c338a46f8fba
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: b3d24a958ec93084d03d2ad2e0eb6d9d2507e155
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647416"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71048173"
 ---
-# <a name="how-to-request-a-web-page-and-retrieve-the-results-as-a-stream"></a><span data-ttu-id="be4cf-102">Procédure : demander une page web et récupérer les résultats sous forme de flux</span><span class="sxs-lookup"><span data-stu-id="be4cf-102">How to: Request a Web Page and Retrieve the Results as a Stream</span></span>
-<span data-ttu-id="be4cf-103">Cet exemple montre comment demander une page web et récupérer les résultats sous forme de flux.</span><span class="sxs-lookup"><span data-stu-id="be4cf-103">This example shows how to request a Web page and retrieve the results in a stream.</span></span>  
+# <a name="how-to-request-a-web-page-and-retrieve-the-results-as-a-stream"></a><span data-ttu-id="f68be-102">Procédure : demander une page web et récupérer les résultats sous forme de flux</span><span class="sxs-lookup"><span data-stu-id="f68be-102">How to: Request a Web Page and Retrieve the Results as a Stream</span></span>
+<span data-ttu-id="f68be-103">Cet exemple montre comment demander une page web et récupérer les résultats sous forme de flux.</span><span class="sxs-lookup"><span data-stu-id="f68be-103">This example shows how to request a Web page and retrieve the results in a stream.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="be4cf-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="be4cf-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="f68be-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="f68be-104">Example</span></span>  
   
 ```csharp  
 WebClient myClient = new WebClient();  
@@ -31,11 +31,11 @@ Dim response As Stream = myClient.OpenRead("http://www.contoso.com/index.htm")
 response.Close()  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="be4cf-105">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="be4cf-105">Compiling the Code</span></span>  
- <span data-ttu-id="be4cf-106">Cet exemple nécessite :</span><span class="sxs-lookup"><span data-stu-id="be4cf-106">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="f68be-105">Compilation du code</span><span class="sxs-lookup"><span data-stu-id="f68be-105">Compiling the Code</span></span>  
+ <span data-ttu-id="f68be-106">Cet exemple nécessite :</span><span class="sxs-lookup"><span data-stu-id="f68be-106">This example requires:</span></span>  
   
-- <span data-ttu-id="be4cf-107">Références aux espaces de noms <xref:System.IO> et <xref:System.Net>.</span><span class="sxs-lookup"><span data-stu-id="be4cf-107">References to the <xref:System.IO> and <xref:System.Net> namespaces.</span></span>  
+- <span data-ttu-id="f68be-107">Références aux espaces de noms <xref:System.IO> et <xref:System.Net>.</span><span class="sxs-lookup"><span data-stu-id="f68be-107">References to the <xref:System.IO> and <xref:System.Net> namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="be4cf-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="be4cf-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f68be-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f68be-108">See also</span></span>
 
-- [<span data-ttu-id="be4cf-109">Demande de données</span><span class="sxs-lookup"><span data-stu-id="be4cf-109">Requesting Data</span></span>](../../../docs/framework/network-programming/requesting-data.md)
+- [<span data-ttu-id="f68be-109">Demande de données</span><span class="sxs-lookup"><span data-stu-id="f68be-109">Requesting Data</span></span>](requesting-data.md)

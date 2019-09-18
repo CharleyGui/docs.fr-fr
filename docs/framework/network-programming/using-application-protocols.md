@@ -13,17 +13,17 @@ helpviewer_keywords:
 - receiving data, application protocols
 - requesting data from Internet, application protocols
 ms.assetid: 3aab4bcc-8397-4e1a-a1b6-bbd837a21430
-ms.openlocfilehash: a127776544830e299118aefadf1735a856c095dd
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: f9af668a30920daa4634e402ab1922946b014051
+ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70398514"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71046997"
 ---
-# <a name="using-application-protocols"></a><span data-ttu-id="97013-102">Utilisation de protocoles d’application</span><span class="sxs-lookup"><span data-stu-id="97013-102">Using Application Protocols</span></span>
-<span data-ttu-id="97013-103">.NET Framework prend en charge les protocoles d’application Internet couramment utilisés.</span><span class="sxs-lookup"><span data-stu-id="97013-103">The .NET Framework supports commonly used Internet application protocols.</span></span> <span data-ttu-id="97013-104">Cette section contient des informations sur l’utilisation des protocoles [HTTP](../../../docs/framework/network-programming/http.md), TCP et UDP, ainsi que sur l’utilisation de l’interface [Windows Sockets](../../../docs/framework/network-programming/sockets.md) pour implémenter des protocoles personnalisés.</span><span class="sxs-lookup"><span data-stu-id="97013-104">This section includes information on using the [HTTP](../../../docs/framework/network-programming/http.md), "TCP", and "UDP" protocols, as well as information on using the [Windows Sockets](../../../docs/framework/network-programming/sockets.md) interface to implement custom protocols.</span></span>  
+# <a name="using-application-protocols"></a><span data-ttu-id="f1275-102">Utilisation de protocoles d’application</span><span class="sxs-lookup"><span data-stu-id="f1275-102">Using Application Protocols</span></span>
+<span data-ttu-id="f1275-103">.NET Framework prend en charge les protocoles d’application Internet couramment utilisés.</span><span class="sxs-lookup"><span data-stu-id="f1275-103">The .NET Framework supports commonly used Internet application protocols.</span></span> <span data-ttu-id="f1275-104">Cette section contient des informations sur l’utilisation des protocoles [HTTP](http.md), TCP et UDP, ainsi que sur l’utilisation de l’interface [Windows Sockets](sockets.md) pour implémenter des protocoles personnalisés.</span><span class="sxs-lookup"><span data-stu-id="f1275-104">This section includes information on using the [HTTP](http.md), "TCP", and "UDP" protocols, as well as information on using the [Windows Sockets](sockets.md) interface to implement custom protocols.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="97013-105">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="97013-105">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f1275-105">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f1275-105">See also</span></span>
 
-- [<span data-ttu-id="97013-106">Programmation réseau dans le .NET Framework</span><span class="sxs-lookup"><span data-stu-id="97013-106">Network Programming in the .NET Framework</span></span>](../../../docs/framework/network-programming/index.md)
-- [<span data-ttu-id="97013-107">Exemples de programmation réseau</span><span class="sxs-lookup"><span data-stu-id="97013-107">Network Programming Samples</span></span>](../../../docs/framework/network-programming/network-programming-samples.md)
+- [<span data-ttu-id="f1275-106">Programmation réseau dans le .NET Framework</span><span class="sxs-lookup"><span data-stu-id="f1275-106">Network Programming in the .NET Framework</span></span>](index.md)
+- [<span data-ttu-id="f1275-107">Exemples de programmation réseau</span><span class="sxs-lookup"><span data-stu-id="f1275-107">Network Programming Samples</span></span>](network-programming-samples.md)
